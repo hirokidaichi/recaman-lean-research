@@ -200,13 +200,15 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 3. ~~同anchorでもより早いreturn crossingならstrict cycle exitになることを証明する。~~
 4. ~~非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ分類する。~~
 5. ~~旧crossingがendpoint以後なら、同anchor非進捗はliteral same timeに限ることを証明する。~~
+6. ~~canonical returnを同じzero-budget horizonの親へrebaseし、tail/minimumを保存する。~~
+7. ~~任意のrebaseがliteral stationary kernelを生み、cycle exit不能であるno-goを証明する。~~
 
 次の調査順序は次である。
 
-1. anchor growth枝に、forced-addition gapまたはfirst-occurrence履歴から下降量を与える。
-2. chronology mismatch枝では、endpoint以後にあるcanonical returnを次のparentとして選ぶcursor更新を設計する。
-3. literal stationary枝では、同じendpoint／crossing対の再訪を禁止するvisited phaseまたは別のhistorical minimumを抽出する。
-4. 三kernel residualの少なくとも一枝を消去し、残りをより狭いreachable certificateへ固定する。
+1. literal stationaryで同じendpoint／crossing対の再訪を禁止する有限visited量を設計する。
+2. 同じendpointを除外した次のhistorical minimum／downcrossが存在するか分類する。
+3. 代替がなければ、stationary coreが強制する算術・履歴の固定点条件をtyped residualにする。
+4. fixed-point条件からanchor growth矛盾または新しいfresh endpointを抽出する。
 5. cursor-refined cycle rankをrefined oracleのzero-budget crossing constructorへtypedに統合する。
 
 ### 完了条件

@@ -360,6 +360,13 @@ seenBelowCount, tailMinimum)`の五成分rankはwell-foundedで、同anchorで�
 anchor・時刻とも同一のliteral stationaryの三ケースに限られる。同じendpointですでにcanonicalな旧crossingは
 実際にstationary constructorを生むため、time cursorだけで全cycleを閉じることもできない。
 
+さらに`PermanentAboveCycleRebase`で、canonical returnを同じzero-budget horizonの新しい親にする操作を
+完全に型付けした。returnのforced addition、目標未出、座標、horizon以前性からready crossingを再構成し、
+旧permanent tailとtail minimumをそのまま持つcombined certificateを得る。ところが同じdowncross provenanceを
+新しい親から再生すると、canonical returnは親crossingそのものである。従ってanchorと時刻が一致した
+literal stationary kernelとcycle exit不成立が、任意の元discharge certificateから無条件に得られる。
+これはgrowth／chronology残余をcanonical rebaseで処理する案が、stationary coreへ正規化するだけというno-goである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -430,6 +437,8 @@ anchor・時刻とも同一のliteral stationaryの三ケースに限られる�
 | cursor-refined cycle rank | `tailCursorCycleProgress_wellFounded` | `PermanentAboveCycleExit.lean` |
 | cursor cycle exit同値 | `tailCursorCycle_exit_iff_cursorProgress` | `PermanentAboveCycleExit.lean` |
 | 三kernel residual分類 | `PermanentTailDischargeReturnCertificate.cycleExit_or_kernelResidual` | `PermanentAboveCycleExit.lean` |
+| canonical return rebase | `PermanentTailDischargeReturnCertificate.exists_canonicalReturnRebase` | `PermanentAboveCycleRebase.lean` |
+| rebased stationary no-go | `PermanentTailDischargeReturnCertificate.exists_rebase_with_noCycleExit` | `PermanentAboveCycleRebase.lean` |
 
 ## 8. 結論
 
@@ -455,6 +464,8 @@ earliest provenance単独では同時刻再選択を避けられないが、one-
 well-founded rankにより、historical内部の無限loopは排除された。crossing time cursorを追加すると
 equal-anchorかつearlier-timeのreturnもstrict exitへ変わる。残る義務は、完全分類された三kernel residual、
 すなわちanchor growth、chronology mismatch、literal stationaryの排除またはさらなる縮約である。
+canonical rebaseは前二者をliteral stationaryへ正規化できるが、その再生edgeはcycle rank上進捗しない。
+従って次の本質は、同じendpoint／crossing対を再利用しない履歴選択またはvisited量の構成である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

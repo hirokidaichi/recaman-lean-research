@@ -884,3 +884,16 @@ well-foundedで、strict anchor dropだけでなく、anchor等号かつreturn�
 同anchorの非進捗はliteral same timeに限られる。また旧crossing自身が同endpointからcanonicalなら、この
 stationary constructorが実際に生じる。したがってtime cursorは非canonicalな等anchor loopを除くが、同じ
 canonical crossingの再訪を除くにはvisited情報または別のhistorical choiceがなお必要である。
+
+### 第二十ラウンド：canonical rebaseのstationary no-go
+
+三kernel residualに対する最も自然な操作として、canonical return crossing自体を次の親へrebaseした。
+`CanonicalReturnRebaseCertificate`は、return crossingを旧zero-budget horizonへ載せたready crossing、同じ
+permanent tailとminimumを持つcombined certificate、同じhistorical downcrossを保持する新discharge certificateを
+まとめる。return crossingは親horizonより前で、targetは大域的に未出なので、この再構成は任意の元certificateで可能である。
+
+しかし新discharge certificateではold crossing timeがreturn timeそのもので、anchorも`a returnTime`に一致する。
+`exists_rebasedStationaryKernel`はliteral stationary constructorを、`exists_rebase_with_noCycleExit`は対応する
+五成分cycle exitの否定を返す。従ってgrowth／chronology mismatchをcanonical rebaseで正規化しても、同じ
+endpointを再生する限り必ずstationary coreへ入る。次はparentの数値だけでなく、使用済みendpointまたは
+別のhistorical minimumをproof dataとして保持しなければならない。

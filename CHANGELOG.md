@@ -21,7 +21,9 @@
 - historical downcross／canonical return／旧crossingをtyped discharge証明書へ統合
 - `(anchor, crossingTime)` cursorと五成分well-founded cycle rankを構成
 - 非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ完全分類
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`と公理監査を追加
+- canonical return rebaseがtail／horizon／minimumを保存することを証明
+- 任意のrebaseがliteral stationary coreとcycle exit不能を生むno-goを証明
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

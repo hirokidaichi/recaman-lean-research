@@ -367,6 +367,12 @@ historical downcrossからcanonical upcrossingで戻ってもcrossing-time curso
 `CanonicalDischargeKernelResidual`は、strict anchor growth、旧crossingがdowncross endpointより前にある
 chronology mismatch、anchorと時刻が同一のliteral stationaryの三constructorだけを持つ。
 
+### canonical return rebase / canonical return再基底化 — 研究固有
+
+historical downcross後の最初のupcrossingを、旧zero-budget horizonの新しいcrossing親として再構成する操作である。
+ready crossing、permanent tail、tail minimumは保存できる。しかし同じdowncross endpointから再びcanonical returnを
+選ぶと親自身へ戻るため、三kernel residualをliteral stationary coreへ正規化するだけで進捗にはならない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

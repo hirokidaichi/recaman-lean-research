@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース93モジュール
+- Leanソース94モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -60,6 +60,8 @@ Lean 4形式化プロジェクトです。
 - historical downcrossからcanonical returnまでを一つのtyped discharge証明書として構成済み
 - anchorにcrossing time cursorを加えた五成分cycle rankのwell-foundednessを証明済み
 - 非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ完全分類済み
+- canonical returnへのrebaseがtail・horizon・minimumを保存することを証明済み
+- 任意のdischarge residualがrebase後にliteral stationary coreへ正規化されるno-goを証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -90,6 +92,9 @@ crossing時刻を第二cursorとして加えると、同anchorでもより早い
 typed discharge証明書による完全分類の結果、残るのはanchor growth、旧crossingがdowncross endpointより
 前にあるchronology mismatch、anchor・時刻とも同じliteral stationaryの三ケースだけです。
 未解決点はこの三kernel residualの排除または、さらに狭い反例構造への縮約です。
+canonical return自体を新しい親にするrebaseも検証しました。この操作は三残余のgrowth／chronology差を
+正規化しますが、同じdowncrossを再生するとanchor・時刻とも同一のstationary coreになります。
+従って現在の未解決点は、同じendpoint／crossing対の再訪を破る新しい履歴情報の構成です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -107,8 +112,9 @@ flowchart TD
     K --> L["historical反復：finite budget drop"]
     L --> M["one-way cycle rank：証明済み"]
     M --> N["crossing-time cursor：証明済み"]
-    N --> O["3 kernel residual：未解決"]
-    O --> P["全射性：未証明"]
+    N --> O["canonical rebase：証明済み"]
+    O --> P["stationary core：未解決"]
+    P --> Q["全射性：未証明"]
 ```
 
 ## 文書
