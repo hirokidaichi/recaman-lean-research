@@ -247,6 +247,8 @@ constructor完全監査の結果、refined restricted oracleに残る証明義�
 これが次の型設計上の境界である。さらにcrossing nodeのanchorはtarget未満、非crossing refined
 nodeのanchorはtarget以上なので、両者のrank edgeはstrict history-budget dropを必ず伴う。
 同じhorizonのsuccessorはcrossingに限られることも形式化した。
+ただし保存horizon以後にactual downcrossが起きる場合、そのendpointはfreshなlegal-subtraction値なので、
+strict budget dropを使ってextended-historyへ退出できる。この条件付き枝もrefined stepとして閉じた。
 
 ## 4. 大域証明骨格
 
@@ -331,6 +333,7 @@ crossing-to-crossingの追加下降を構成する必要がある。
 | historical direct refined totality | `ExtendedHistoryNormalInvariant.refinedStep` | `ExtendedHistoryDirectRefined.lean` |
 | refined oracle境界 | `crossingRefinedStepHypothesis_implies_occurs` | `RefinedOracleBoundary.lean` |
 | crossing rank境界 | `crossing_refinedChild_budgetDrop_or_crossing` | `CrossingRefinedBoundary.lean` |
+| future downcross閉包 | `ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross` | `CrossingDowncrossRefined.lean` |
 
 ## 8. 結論
 
@@ -340,6 +343,8 @@ crossing-to-crossingの追加下降を構成する必要がある。
 normalはrefined局所totalityまで完成した。研究上の残余はcrossing recovery constructor自身に集中し、
 その入口で失われたpost-state debt provenanceとhorizon readiness、およびstrict budget下降か
 crossing内部下降を構成することへ限定された。
+保存horizon以後のdowncross枝は解消済みであり、残るのはhorizon時点ですでにbelow-targetである場合と、
+将来downcrossが得られない場合のcrossing内部解析である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

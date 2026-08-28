@@ -293,3 +293,5 @@ import Recaman
 #print axioms Recaman.crossing_to_nonCrossing_progress_forces_budgetDrop
 #print axioms Recaman.crossing_refinedChild_budgetDrop_or_crossing
 #print axioms Recaman.crossing_sameHorizon_refinedChild_is_crossing
+#print axioms Recaman.FutureDowncrossStep.strict_budget_drop
+#print axioms Recaman.ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross

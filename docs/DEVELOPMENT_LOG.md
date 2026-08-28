@@ -743,3 +743,20 @@ currentとextended-historyのanchorはtarget以上であり、ready debtのancho
 同じhistory horizonなら前者は不可能なのでsuccessorはcrossingに限られる。次の局所totalityには、
 source certificateの補強だけでなく、新しいbelow-target occurrenceを生むこと、またはcrossing間で
 下降する有限量を見つけることが必要である。
+
+### 第十三ラウンドのfuture-downcross閉包
+
+reachable producerが保持できる`target≤horizon+1`をcrossing certificateに追加した
+`ReadyCrossingSearchInvariant`を導入した。保存horizon以後に`target≤a t`から
+`a (t+1)<target`へdowncrossするstepがあれば、forced additionは値を増やすため不可能であり、
+そのstepはlegal subtractionである。したがってendpointは`valuesThrough t`に未出で、保存horizonの
+履歴にも未出である。
+
+`FutureDowncrossStep.strict_budget_drop`はこのfresh endpointから親horizonに対するstrict budget dropを
+証明する。元crossingのpost-addition stateはtarget以上で座標も保持されているため、これを
+representativeとし、downcross endpoint時刻を新horizonにしたextended-history childを構成できる。
+`ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross`が目標等号とこの退出を統合する。
+
+残る領域は、保存horizon時点ですでにbelow-targetである場合と、保存horizon以後にdowncrossが存在しない
+場合である。前者では次のupcrossingを構成できるが、旧pre-crossing anchorより下がるとは限らない。
+後者はabove-target側の長期挙動を追加解析する必要がある。

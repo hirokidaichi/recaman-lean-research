@@ -139,6 +139,11 @@ post-addition値のfirst occurrence、post値と旧anchorの比較、horizon rea
 非crossing successorへの進捗はhistory budgetの厳密下降を必ず伴う。同じhorizonならsuccessorは
 crossingに留まるしかない。次は生成時provenanceの保持に加え、このbudget／crossing下降を構成する。
 
+step 12のうち、保存crossing horizon以後にactual downcrossが存在する枝は閉じた。downcrossは
+forced additionではあり得ず、legal subtractionの着地点は直前履歴にfreshなので、親horizonから
+`missingBelowCount`が厳密に下がる。残るのは保存horizonですでにbelow-targetである枝と、以後の
+軌道がdowncrossしない枝である。
+
 ### 完了条件
 
 ```lean
