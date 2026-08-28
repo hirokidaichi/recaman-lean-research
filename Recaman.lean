@@ -24,5 +24,12 @@ import Recaman.Undershoot
 import Recaman.HistoryFrontier
 import Recaman.Diagonal
 import Recaman.PhaseSearch
+import Recaman.DebtAddition
+import Recaman.DebtSubtraction
+import Recaman.DebtInvariant
+import Recaman.DebtCrossing
+import Recaman.DebtStep
+import Recaman.DebtBackward
+import Recaman.InitialRegion
 import Recaman.Examples
 import Recaman.Oracle

@@ -1,5 +1,8 @@
 # 証明地図
 
+本書で使う`potential`、`borrow`、`blocker`、`epoch`、`oracle`、`debt`などの意味と、
+標準用語／研究固有用語の区別は[用語集](GLOSSARY.md)を参照。
+
 ## 全体依存関係
 
 ```mermaid
@@ -38,7 +41,7 @@ flowchart TD
 | 履歴探索帰納 | 証明済み | 三成分ランクと抽象オラクル | `HistoryBudget`, `HistoryFrontier` |
 | 対角後方履歴 | 証明済み | 極大減算鎖と早期blocker | `Diagonal` |
 | 位相探索 | 骨格証明済み | 四成分ランクと抽象オラクル | `PhaseSearch` |
-| 負債局所解析 | 未証明 | 目標・時間下降・anchor下降の三分岐 | 次エポック |
+| 負債局所解析 | 進行中 | 全分岐を分類済み、crossingとanchor等号境界のtotalityは未証明 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing` |
 | 全域局所被覆 | 未証明 | 任意ノードへの機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
 
@@ -95,6 +98,8 @@ OR a new parent y' < anchorParent
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |
 | エポック | `OneBorrowFrontier`, `NegativeEpoch`, `Undershoot` |
 | 大域探索 | `Coverage`, `HistoryBudget`, `HistoryFrontier`, `Diagonal`, `PhaseSearch` |
+| 負債局所解析 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing` |
+| 初期領域 | `InitialRegion` |
 | 検証 | `Examples`, `Audit` |
 
 ## 証明と計算実験の境界
@@ -103,4 +108,3 @@ OR a new parent y' < anchorParent
 - `experiments/`のC++結果は仮説選択にのみ使用する。
 - 計算実験の結果を証明の仮定として利用していない。
 - 具体例の小規模計算はLeanカーネルの`decide`で検証する。
-
