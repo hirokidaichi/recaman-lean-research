@@ -351,6 +351,15 @@ no-downcross renewed tailではseen/minimumが下降し、downcrossではdischar
 すべてのhistorical内部stepを受け入れる。dischargeからcrossingへのexitはstrict anchor dropと必要十分であり、
 stationary同anchor exitは拒否される。従来の`HistoricalCycleGrowthResidual`はこのrankでも正確にexit obstructionとなる。
 
+`PermanentAboveCycleExit`はこのexitを時刻provenanceまで精密化した。
+`PermanentTailDischargeReturnCertificate`はcombined obstruction、有限historical downcross、そのendpointからの
+最初のreturn upcrossing、親crossingの実時刻を同時に保持する。`(anchor, crossingTime, phase,
+seenBelowCount, tailMinimum)`の五成分rankはwell-foundedで、同anchorでもreturn crossingが旧crossingより
+早ければ厳密に退出できる。chronologicalに旧crossingがendpoint以後ならcanonicalityによりreturn時刻は
+旧時刻以下である。従って最終的な非進捗kernelは、strict anchor growth、旧crossingがendpointより前、
+anchor・時刻とも同一のliteral stationaryの三ケースに限られる。同じendpointですでにcanonicalな旧crossingは
+実際にstationary constructorを生むため、time cursorだけで全cycleを閉じることもできない。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -417,6 +426,10 @@ stationary同anchor exitは拒否される。従来の`HistoricalCycleGrowthResi
 | permanent-tail cycle rank | `tailCycleProgress_wellFounded` | `PermanentAboveCycleRank.lean` |
 | cycle exit/anchor同値 | `tailCycle_exitCrossing_iff_anchorDrop` | `PermanentAboveCycleRank.lean` |
 | growth residual exit obstruction | `HistoricalCycleGrowthResidual.tailCycleExitObstruction` | `PermanentAboveCycleRank.lean` |
+| typed canonical discharge return | `PermanentTailCombinedCertificate.exists_dischargeReturnCertificate` | `PermanentAboveCycleExit.lean` |
+| cursor-refined cycle rank | `tailCursorCycleProgress_wellFounded` | `PermanentAboveCycleExit.lean` |
+| cursor cycle exit同値 | `tailCursorCycle_exit_iff_cursorProgress` | `PermanentAboveCycleExit.lean` |
+| 三kernel residual分類 | `PermanentTailDischargeReturnCertificate.cycleExit_or_kernelResidual` | `PermanentAboveCycleExit.lean` |
 
 ## 8. 結論
 
@@ -439,8 +452,9 @@ historical blocker反復自体はminimum値下降により有限化され、必�
 到達する。しかしその後のupcrossingを同じcrossing親として再選択できるため、現行rankには停留residualが
 残る。次に必要なのはcrossing選択のcanonical provenanceまたは複数cycleを測る新rankである。
 earliest provenance単独では同時刻再選択を避けられないが、one-way cycle phaseとdual history budgetを持つ
-well-founded rankにより、historical内部の無限loopは排除された。残る義務はdischargeから再構成する
-crossingのstrict anchor dropだけであり、これはrank exitの必要十分条件として形式化されている。
+well-founded rankにより、historical内部の無限loopは排除された。crossing time cursorを追加すると
+equal-anchorかつearlier-timeのreturnもstrict exitへ変わる。残る義務は、完全分類された三kernel residual、
+すなわちanchor growth、chronology mismatch、literal stationaryの排除またはさらなる縮約である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

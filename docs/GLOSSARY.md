@@ -355,6 +355,18 @@ zero-budget領域で使う`(anchor, phase, seenBelowCount, tailMinimum)`の四�
 phaseは`crossing > backtrack > discharge`の一方向。historical探索内部はすべてstrictに下降する。
 dischargeからcrossingへ戻るにはstrict anchor dropが必要十分であり、同anchor stationary loopを拒否する。
 
+### crossing-time cursor / crossing時刻cursor — 研究固有
+
+permanent-tail cycleの外側比較をanchor単体から`(anchor, crossingTime)`へ精密化した辞書式量である。
+anchorが下がればもちろん進捗し、anchorが等しくてもcanonical returnの時刻が旧crossingより早ければ
+進捗する。phase、seen-below count、tail minimumと合わせた五成分rankもwell-foundedである。
+
+### canonical discharge kernel residual / canonical排出kernel残余 — 研究固有
+
+historical downcrossからcanonical upcrossingで戻ってもcrossing-time cursorが下がらない場合の最小分類である。
+`CanonicalDischargeKernelResidual`は、strict anchor growth、旧crossingがdowncross endpointより前にある
+chronology mismatch、anchorと時刻が同一のliteral stationaryの三constructorだけを持つ。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

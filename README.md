@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース91モジュール
+- Leanソース93モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -57,6 +57,9 @@ Lean 4形式化プロジェクトです。
 - 最初のfuture upcrossingをcanonicalかつ一意に構成し、earliest選択でも停留が残ることを証明済み
 - anchor／cycle phase／seen-below budget／minimum値の新しいwell-founded rankを構成済み
 - cycle dischargeからcrossingへ戻れる条件がstrict anchor dropと同値であることを証明済み
+- historical downcrossからcanonical returnまでを一つのtyped discharge証明書として構成済み
+- anchorにcrossing time cursorを加えた五成分cycle rankのwell-foundednessを証明済み
+- 非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ完全分類済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -82,8 +85,11 @@ zero-budget horizonへ載せるだけでは、親と同一のcrossingを再選�
 earliest upcrossingはcanonicalかつ一意に構成できましたが、同じdowncross endpointからの再選択は
 同じ時刻を返すため停留を解消しません。そこでzero-budget領域専用に、anchorを最外層、
 `crossing → backtrack → discharge`を一方向phase、`seenBelowCount`とtail minimumを内層に置く
-well-founded rankを追加しました。historical探索はすべてこのrankで厳密下降し、dischargeから
-crossingへ戻るにはstrict anchor dropが必要十分です。未解決点はこのexit anchor dropの構成です。
+well-founded rankを追加しました。historical探索はすべてこのrankで厳密下降します。さらに
+crossing時刻を第二cursorとして加えると、同anchorでもより早いreturn crossingはstrict exitになります。
+typed discharge証明書による完全分類の結果、残るのはanchor growth、旧crossingがdowncross endpointより
+前にあるchronology mismatch、anchor・時刻とも同じliteral stationaryの三ケースだけです。
+未解決点はこの三kernel residualの排除または、さらに狭い反例構造への縮約です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -100,8 +106,9 @@ flowchart TD
     J --> K["permanent tail：zero-budget crossing + historical blocker"]
     K --> L["historical反復：finite budget drop"]
     L --> M["one-way cycle rank：証明済み"]
-    M --> N["discharge exit anchor drop：未証明"]
-    N --> O["全射性：未証明"]
+    M --> N["crossing-time cursor：証明済み"]
+    N --> O["3 kernel residual：未解決"]
+    O --> P["全射性：未証明"]
 ```
 
 ## 文書

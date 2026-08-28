@@ -18,7 +18,10 @@
 - anchor／one-way cycle phase／seen／minimumの四成分well-founded rankを構成
 - dischargeからcrossingへのrank exitがstrict anchor dropと同値であることを証明
 - growth residualを新cycle rankのtyped exit obstructionへ接続
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`と公理監査を追加
+- historical downcross／canonical return／旧crossingをtyped discharge証明書へ統合
+- `(anchor, crossingTime)` cursorと五成分well-founded cycle rankを構成
+- 非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ完全分類
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

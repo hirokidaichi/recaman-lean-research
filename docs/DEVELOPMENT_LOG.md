@@ -865,3 +865,22 @@ anchor、`crossing > backtrack > discharge` phase、seen count、tail minimumで
 `tailCycle_exitCrossing_iff_anchorDrop`はdischargeからcrossingへ戻る進捗がstrict anchor dropと同値であることを
 証明する。同anchor stationary exitは拒否され、従来の`HistoricalCycleGrowthResidual`は新rank上でも
 `tailCycleExitObstruction`になる。これでhistorical内部の循環ではなく、exit anchor比較だけが残った。
+
+### 第十九ラウンド：typed discharge returnとcrossing-time cursor
+
+`PermanentTailDischargeReturnCertificate`を導入し、combined permanent-tail obstructionから、有限反復で得た
+historical downcross、そのfresh endpoint、endpointから最初のweak upcrossing、親crossingの実時刻を一つの
+proof objectへ統合した。canonical returnはhistorical tail開始前、従って親のzero-budget horizonより前に終わる。
+
+親子crossingを`(anchor, crossingTime)`で測る`TailCrossingCursorProgress`を定義した。この辞書式順序は
+well-foundedで、strict anchor dropだけでなく、anchor等号かつreturn時刻下降も進捗にする。さらに
+`crossing > backtrack > discharge`、seen count、tail minimumを内側に加えた五成分
+`TailCursorCycleProgress`を構成し、well-foundednessと、dischargeからcrossingへのexitがcursor下降と
+必要十分であることを証明した。
+
+`cycleExit_or_kernelResidual`は非進捗を三constructorへ完全分解する。return anchorが旧anchorより増える場合、
+旧crossingがdowncross endpointより前にあってcanonical比較の候補にならない場合、anchorとcrossing時刻が
+完全に同一なstationaryの場合である。旧crossingがendpoint以後ならcanonical returnは旧時刻以下なので、
+同anchorの非進捗はliteral same timeに限られる。また旧crossing自身が同endpointからcanonicalなら、この
+stationary constructorが実際に生じる。したがってtime cursorは非canonicalな等anchor loopを除くが、同じ
+canonical crossingの再訪を除くにはvisited情報または別のhistorical choiceがなお必要である。

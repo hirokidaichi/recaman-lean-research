@@ -86,5 +86,6 @@ import Recaman.PermanentAbovePotential
 import Recaman.PermanentAboveHistory
 import Recaman.PermanentAboveCanonical
 import Recaman.PermanentAboveCycleRank
+import Recaman.PermanentAboveCycleExit
 import Recaman.Examples
 import Recaman.Oracle
