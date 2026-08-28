@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース36モジュール
+- Leanソース44モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -21,9 +21,13 @@ Lean 4形式化プロジェクトです。
 - 通常探索／対角負債を扱う四成分well-foundedランクを構成済み
 - debt初出値の最終遷移分類と、合法減算・強制加算の初出時刻下降を証明済み
 - 合法減算debtを極大後方鎖により単一のanchor等号境界まで縮約済み
+- anchor等号境界をnormal下降へ接続し、負エポックを位相ランクへ無条件接続済み
+- 任意の正目標について意味的に認証されたcanonical探索開始点を構成済み
+- strict crossingの絶対時刻条件を有限catch-upで解消し、既存エポック解析へ接続済み
+- canonical／normal／debt／crossing recoveryを統合する意味的探索domainを構成済み
 
-現在の核心は、強制加算が目標を厳密にまたぐ分岐と、長さ1の合法減算尾で
-`anchor = value + 1`となる境界を、意味的不変条件を保つ探索進捗へ変換することです。
+現在の核心は、catch-up中に値またはanchorが増加する分岐を下降へ変換することと、
+負エポックのrank childへnormal／debtの意味的不変条件を一貫して保存することです。
 
 ```mermaid
 flowchart TD

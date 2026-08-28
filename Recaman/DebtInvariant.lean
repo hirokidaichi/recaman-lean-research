@@ -95,6 +95,22 @@ theorem debt_firstTime_pos
     omega
   · omega
 
+/-- Any node satisfying the strong debt invariant can return to normal mode
+at its own first-occurring value: the target lower bound is preserved and the
+stored value is already strictly below the anchor.  Thus the hard global
+problem is not local debt totality, but constructing this strong invariant by
+a rank-decreasing step from the preceding normal node. -/
+theorem debtInvariant_exitNormal_at_value
+    {target horizon anchor value firstTime : Nat}
+    (hinv : DebtInvariant target
+      ⟨horizon, anchor, .debt, firstTime⟩ value firstTime) :
+    target ≤ value ∧ FirstAt a value firstTime ∧
+      PhaseSearchProgress target
+        ⟨horizon, value, .normal, value⟩
+        ⟨horizon, anchor, .debt, firstTime⟩ := by
+  exact ⟨hinv.target_le, hinv.first,
+    phaseSearch_exitDebt_of_anchorDrop hinv.value_lt_anchor⟩
+
 /-- On the legal-subtraction branch, the predecessor has an earlier first
 occurrence and is strictly larger than the debt value.  This always decreases
 the rank's debt-time component, even though the predecessor need not remain

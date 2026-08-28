@@ -401,17 +401,14 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 本プロジェクトは、次をまだ主張しません。
 
-1. 負債位相で初出値 `y` の実軌道を解析し、目標出現、さらに早い初出時刻、
-   または `anchorParent` 未満の値のいずれかを得る。
-2. anchor下降の出口定理を負エポックへ輸送し、従来仮定していた
-   `DiagonalSuccessorProperty` を除去する。
-3. 局所前線を、座標・親の初出証明・探索地平を保持する全域的な
-   `HistorySearchOracle`へ統合する。
-4. `m≤n+1` を満たさない有限初期領域を、全ての可変目標について
-   一様に処理できる。
-5. 任意の初出値に対して、符号エポックまたは着地面機構を必ず適用できる。
-6. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
-7. レカマン数列が全ての非負整数を含む。
+1. catch-up中に値またはanchorが増加する枝を、目標出現または位相ランク下降へ変換する。
+2. 負エポックのparent-drop／forward-exit childで`NormalPhaseInvariant`を再構成するか、
+   現在明示されているobstructionを別の下降へ変換する。
+3. q=1 debt childについて欠ける`value < anchorParent`を示すか、anchor増加枝を処理する。
+4. 四constructorの`PhaseSemanticInvariant`を全分岐で保存し、
+   `SemanticPhaseSearchOracle`を追加仮定なしで構成する。
+5. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
+6. レカマン数列が全ての非負整数を含む。
 
 したがって、全射性証明はまだ完成していません。ただし符号をまたぐ局所軌道は
 三成分のwell-foundedランクへほぼ接続されました。負エポック内の唯一の
@@ -421,12 +418,12 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 ## 次の証明エポック
 
-次の主対象は、今回抽出した対角 blocker の輸送です。有望な順に、
+次の主対象は、今回型として抽出したsemantic obstructionの解消です。有望な順に、
 
-1. `FirstAt a y fy`, `m≤y`, `fy<debtTime` から始まる負債ノード用の局所二分法を作る。
-2. 新しい早期blockerなら `debtTime` を下げ、`y<anchorParent` なら通常位相へ戻す。
-3. この負債オラクルを負エポック前線へ差し込み、`DiagonalSuccessorProperty` を除く。
-4. 位相付きランクを全域 `PhaseSearchOracle` へ接続する。
+1. catch-up中の`value ≤ catchupValue`／`anchor ≤ catchupValue`成長枝を履歴下降へ変換する。
+2. normal parent-drop／forward-exitで不足する目標下界・負potential・anchor境界を補う。
+3. q=1 debt childの`value < anchorParent`不成立枝を、新しいanchor下降へ変換する。
+4. これらを`SemanticPhaseSearchOracle`へ統合する。
 
 単純な `(時刻,値)` の「どちらかが下がる」関係は循環し得るため、そのままでは
 well-foundedではありません。次の設計上の核心は、時間下降を許す局面を対角負債の
@@ -467,7 +464,15 @@ well-foundedではありません。次の設計上の核心は、時間下降�
 - `Recaman/DebtCrossing.lean` — 目標またぎ分岐の可能・不可能結果
 - `Recaman/DebtStep.lean` — debt局所分岐の完全な結果型
 - `Recaman/DebtBackward.lean` — 合法減算の極大後方延長とanchor境界
+- `Recaman/AnchorBoundary.lean` — anchor等号境界の局所形とnormal退出
+- `Recaman/CrossingRecovery.lean` — strict crossingの符号・エポック接続
+- `Recaman/CrossingGap.lean` — crossing後の有限clock catch-upと全符号epoch前線
+- `Recaman/PhaseEpoch.lean` — 負エポックから四成分位相ランクへの接続
+- `Recaman/PhaseProgress.lean` — 四成分位相進捗の推移律
 - `Recaman/InitialRegion.lean` — 可変目標に一様なエポック適用領域への入口
+- `Recaman/PhaseSearchStart.lean` — canonical開始点とrestricted oracle
+- `Recaman/NormalPhase.lean` — 負normal不変条件と保存失敗の完全分類
+- `Recaman/PhaseSemantic.lean` — 認証済み探索nodeを統合する意味的domain
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -527,3 +532,40 @@ well-foundedではありません。次の設計上の核心は、時間下降�
 以上を`debtStep_classify`へまとめ、未解決部分をcrossingとanchor等号境界として
 明示した。早い初出候補は固定horizonですでに履歴に含まれるため、それ自体から履歴
 予算下降を得ることも不可能である。
+
+### 第三ラウンドの統合
+
+長さ1の`anchor=y+1`境界は、既出のpredecessorではなく初出landing`y`自身をnormal
+childに選べばanchorが厳密に下がる。このため等号境界は閉じた。加えて、強い
+`DebtInvariant`を持つnodeは常に自身の値でnormalへ退出できることを明示した。
+
+strict crossingは専用の`CrossingRecoveryInvariant`として表現した。post-stateの
+ポテンシャルは必ずtarget未満であり、負または非負undershootのどちらも実例がある。
+既存エポック定理は`target≤time+1`なら適用できるが、対角由来のcrossingではこの条件が
+必ず成立しない。したがって次の研究対象は、絶対時刻条件をcrossing gapなどの相対量へ
+置き換えることである。
+
+三成分履歴ランクをnormal位相の四成分ランクへ埋め込み、q=1例外をdebtへのrank下降へ
+変換した。`negative_epoch_phaseSearchOutcome`は`DiagonalSuccessorProperty`なしで負エポック
+全体を目標出現または位相進捗へ接続する。
+
+初期領域についてはcanonical nodeと証明書を定義し、意味的domain上だけで動く
+`RestrictedPhaseSearchOracle`を構成した。これにより全tuple上のoracleではなく、実際に
+到達可能で不変条件を保存するnodeだけを対象にwell-founded探索を開始できる。
+
+### 第四ラウンドの意味的統合
+
+strict crossing後は時刻`target-1`または`target`まで有限前進することで、既存epoch APIの
+絶対時刻条件へ必ず入れることを示した。catch-up地点のpotentialは負、undershoot、
+target以上の非負領域の全てを既存定理へ接続した。相対crossing gapだけでは絶対時刻条件を
+導けない実軌道反例も形式化したため、残る本質はclockではなく、前進中の値／anchor成長である。
+
+負potentialのnormal nodeには`NormalPhaseInvariant`を導入し、負エポック結果を、目標出現、
+意味的不変条件を保存するnormal/debt child、または保存できない理由を保持するobstructionへ
+分類した。parent-dropとforward-exitではnormal条件の一部が現行APIから得られず、q=1 debtでは
+`value < anchorParent`だけが不足し得ることが定理型に現れた。
+
+最後に、canonical start、ordinary normal、strong debt、crossing recoveryを
+`PhaseSemanticInvariant`へ統合した。canonical開始、debtの自己normal退出、anchor等号境界、
+strict crossingではdomain保存を証明済みである。これにより全域数値tupleではなく、到達可能な
+証明付きnodeだけを対象とする`SemanticPhaseSearchOracle`が最終的な局所完了条件になった。

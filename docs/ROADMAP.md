@@ -44,6 +44,17 @@
 `debtStep_classify`は現時点の全分岐を、成功、normal退出、debt継続、明示的obstructionへ
 完全分類する。
 
+`anchor=value+1`境界は、landing値`value`自身を新しいnormal anchorにすることで
+厳密下降へ接続できることが判明した。さらに強い`DebtInvariant`を満たす任意のnodeは、
+その値自身へnormal退出できる。したがって局所debtの停止性ではなく、直前のglobal
+normal nodeからrankを下げながらこの意味的不変条件を構成することが本質である。
+
+strict crossing後のポテンシャルは常に目標未満であり、負領域またはundershootに入る。
+crossing直後は対角由来の`target≤time+1`が偽になるが、時刻`target-1`または`target`まで
+有限前進すればこの絶対時刻条件を必ず回復できる。相対gapだけでは絶対時刻条件を
+導けない反例も形式化した。したがって残る障害は時刻ではなく、catch-up中に元の
+debt値またはanchor以上へ成長する枝を下降へ変換することである。
+
 ### 完了条件
 
 - 負債ノードの全分岐が`PhaseSearchProgress`または目標出現になる。
@@ -54,6 +65,14 @@
 
 現在の`negative_epoch_historySearchOutcome`は`DiagonalSuccessorProperty`を仮定する。
 これを位相負債への遷移で置き換える。
+
+`negative_epoch_phaseSearchOutcome`により、`DiagonalSuccessorProperty`なしで負エポックの
+全分岐が目標出現または`PhaseSearchProgress`を返すことを証明した。ただしdebt childの
+意味的不変条件保存は別問題として残るため、これはrankレベルの統合完了である。
+
+`NormalPhase`ではこの意味的不変条件を明示し、各rank childを、保存されたnormal、
+保存されたdebt、または不足条件を証拠付きで示すobstructionへ完全分類した。現在の
+不足はparent-drop／forward-exitでのnormal条件と、q=1 debtでの`value<anchorParent`である。
 
 ### 完了条件
 
@@ -88,6 +107,15 @@
 実状態が存在することを`exists_targetReady_state_of_pos`で証明した。この定理は
 座標と現在値の初出証明も返す。残る作業は、このcanonical entryを全域normal
 ノードの探索インターフェースへ接続することである。
+
+`PhaseSearchStart`ではcanonical normal node、その証明書、意味的domain上だけに量化する
+`RestrictedPhaseSearchOracle`、およびdomainを保存する整礎帰納を構成した。これにより、
+到達不能な数値tupleを含む全node oracleを要求せず、認証済み開始点から探索できる。
+
+`PhaseSemantic`ではcanonical start、通常normal、強いdebt、crossing recoveryの四種を
+一つのproof-carrying domainへ統合した。開始点のdomain所属、debtの自己normal退出、
+anchor等号境界、strict crossingのdomain保存を証明し、このdomain上のoracleだけで
+目標出現が従うことを示した。
 
 ### 完了条件
 
