@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース62モジュール
+- Leanソース66モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -33,10 +33,14 @@ Lean 4形式化プロジェクトです。
 - ordinary normal証明書が現在horizonの軌道状態を保証しない境界を、具体反例付きで形式化済み
 - orbit-ready ordinary normal nodeの全符号・低level分岐を、残余なしのsemantic stepへ閉包済み
 - current／historicalを分離するprovenance-aware normal domainの基礎APIを構成済み
+- current normalを生成する8系統のOrbitReady adapterを構成済み
+- current parentのCoverageStepをhistorical normalではなくcurrent／debtへ完全分解済み
+- historical normalを5種類のtyped provenanceへ分け、extended-history残余へ接続済み
 
-現在の核心は、parent-drop／coverage／downcrossing／debt-exitが作るhistorical normal nodeを
-生成元別のprovenance constructorへ移し、そのdomain上で`SemanticPhaseSearchOracle`を
-構成することです。current-state normalの局所totalityは証明済みです。
+現在の核心は、historical nodeでrepresentative timeからhistory horizonまでに履歴予算が
+既に下がった場合の再始動です。この場合、representative stateからの局所rank下降をそのまま
+輸送すると向きが逆になります。current-state normalの局所totalityと、typed provenanceによる
+境界分類までは証明済みです。
 
 ```mermaid
 flowchart TD

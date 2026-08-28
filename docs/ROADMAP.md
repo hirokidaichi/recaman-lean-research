@@ -111,10 +111,13 @@ canonical開始点については全符号と低levelを分類し、次のいず
 
 1. ~~`OrbitReadyNormalCertificate`をcurrent-state normal constructorとして採用し、全符号stepを閉じる。~~
 2. ~~parent-drop、coverage、frontierから生成されるhistorical normal childをprovenance別に監査する。~~
-3. parent-drop／coverage anchor／downcross restart／debt exit／crossing frontierのtyped constructorを実装する。
-4. history horizonとrepresentative orbit timeを分離するextended-history local stepを証明する。
-5. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
-6. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
+3. ~~parent-drop／coverage anchor／downcross restart／debt exit／crossing frontierのtyped constructorを実装する。~~
+4. ~~history horizonとrepresentative orbit timeを分離し、直接輸送可能な条件と正確な残余を証明する。~~
+5. ~~current親のCoverageStepをfuture current／earlier debtへ分解し、historical normalを回避する。~~
+6. budget-gap residualをdowncross／debt／crossing固有の次stepへ変換する。
+7. representative-time readinessを生成元から復元するか、early representative専用機構で閉じる。
+8. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
+9. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
 
 ### 完了条件
 

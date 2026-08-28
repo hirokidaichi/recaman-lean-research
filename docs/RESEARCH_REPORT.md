@@ -228,19 +228,21 @@ totalな局所進捗オラクルから目標出現を導くwell-founded inductio
 
 ## 5. 現在の未証明部分
 
-最重要の未証明部分は、ordinary normal nodeのdomain設計である。現行証明書は
-`FirstAt a value firstTime`と`firstTime≤horizon`を持つが、`value=a horizon`も
-`target≤horizon+1`も要求しない。このため、任意のnormal constructorに現在座標を選び、
-既存epoch定理を適用することはできない。
+最重要の未証明部分は、historical normal nodeのbudget-gap処理である。current nodeの全局所分岐、
+current生成8系統のadapter、parent-drop／coverage anchor／downcross restart／debt exit／
+crossing frontierのtyped provenanceは構成済みである。
 
-24箇所のnormal semantic生成を監査した結果、8箇所はorbit-readyへ直接移行でき、残りは
-parent-drop、coverage anchor、downcross restart、debt exit、crossing frontierという
-historical provenanceを必要とすることが判明した。次に必要なのは以下である。
+representative timeがtime-readyで、そこからhistory horizonまで`missingBelowCount`が不変なら、
+完成済みcurrent stepをhistorical nodeへ輸送できる。残るのは次である。
 
-- parent-drop、coverage anchor、downcross restart、debt exit、crossing frontierをtyped constructorで表す
-- history horizonとrepresentative orbit timeを分離するextended-history stepを証明する
-- 各constructorで局所stepとdomain保存を証明する
-- 精密domain上の`SemanticPhaseSearchOracle`または`CoverageOracle`を構成する
+- `representativeTime+1<target`となるearly representative
+- history horizonまでに履歴予算が既に厳密下降したbudget gap
+- debt／crossing sourceからhorizon readinessを復元できない分岐
+
+budget gapではhistorical nodeがrepresentative nodeより既にrank下位なので、representative stateの
+局所下降を単純に合成できない。current親のCoverageStepについては、future初出をcurrentへ、
+earlier初出をstrong debtへ送ることでhistorical normal自体を回避できる。次に必要なのは、同様の
+mechanism-specificな迂回をdowncross／debt／crossingへ拡張し、精密domain上のoracleを構成することである。
 
 よって、全射性を証明済みとは主張しない。
 
@@ -272,13 +274,17 @@ historical provenanceを必要とすることが判明した。次に必要な�
 | ordinary normal境界 | `normalSearchInvariant_not_orbitReady` | `NormalSemanticBoundary.lean` |
 | current normal局所totality | `OrbitReadyNormalInvariant.phaseSemanticStep` | `OrbitReadyComplete.lean` |
 | provenance-aware normal domain | `ProvenancedNormalInvariant` | `NormalProvenance.lean` |
+| extended-history境界 | `ExtendedHistoryNormalCertificate.phaseSemanticStep_or_residual` | `ExtendedHistoryNormal.lean` |
+| typed historical生成元 | `TypedHistoricalNormalProvenance` | `TypedNormalProvenance.lean` |
+| Coverage current/debt分解 | `coverageStep_currentOrDebt` | `CoverageDebtBridge.lean` |
 
 ## 8. 結論
 
 本形式化により、座標上の未定義領域、多段借り、負領域の無限滞留、
 非負アンダーシュートの無限滞留、対角状態の後方履歴、crossing、canonical開始点の
-全局所分岐は既存の意味的ランクへ接続された。研究上の残余は、到達可能なordinary normal
-childだけを正確に表すprovenance付きdomainと、その上のtotal局所オラクルへ集中している。
+全局所分岐は既存の意味的ランクへ接続され、current normalは局所totalityまで完成した。
+研究上の残余は、historical nodeのbudget gapを生成機構固有のstepへ変換することと、
+その結果を精密domain上のtotal局所オラクルへ統合することに集中している。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

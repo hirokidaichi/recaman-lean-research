@@ -25,6 +25,10 @@ proof-carrying constructorを特定する。
 ただしgenericなprovenanceだけではhistorical childの次stepを構成できないため、上表のtyped dataと
 extended-history theoremが別途必要である。
 
+その後、5種類すべてを`TypedHistoricalNormalProvenance`として実装した。current生成8系統にも
+`OrbitReadyAdapters`でadapterを用意した。既存公開定理は互換性のため旧semantic resultを返すが、
+refined APIへの移行に必要なproof dataは揃っている。
+
 ## 生成箇所
 
 | モジュール／定理 | 分類 | orbit-ready化 | 次の対応 |
@@ -70,6 +74,15 @@ candidateは履歴由来なので、呼出し側で分岐を保持するか`cove
 
 したがって、current constructorそのものに局所残余はない。
 
+さらにcurrent親から得た`CoverageStep`は、candidateの初出時刻を親時刻と比較することで
+historical normalを使わずに処理できる。
+
+- 親より後の初出: 実際のfuture current nodeとしてorbit-ready
+- 親より前の初出: 親horizonとanchorを保ったstrong debt node
+- candidateがtargetそのもの: 初出時刻を直接witnessにする
+
+この分類は`coverageStep_currentOrDebt`で証明済みである。
+
 ## historical側の中心命題
 
 historical nodeでは二つの時刻を分離する必要がある。
@@ -88,15 +101,25 @@ typed provenance
 rank第一成分には拡張済みhistory budgetを使わなければならない。特にdowncross restartは
 `a historyHorizon < target`を持つため、nodeをcurrent-stateへ変換することは原理的にできない。
 
+`ExtendedHistoryNormalCertificate.phaseSemanticStep_or_residual`により、直接輸送の条件は正確に
+次の二つと判明した。
+
+1. `target ≤ representativeTime+1`
+2. representative timeとhistory horizonで`missingBelowCount`が等しい
+
+両方を満たせばorbit-ready total stepをhistorical nodeへ輸送できる。第一条件が失敗する実例と、
+第一条件を満たしながら第二条件が失敗する実例をLean化した。budget gapがある場合、historical
+nodeはrepresentative nodeより既にrank下位なので、既存local edgeの単純輸送は不可能である。
+
 debt exitでは現行`DebtInvariant`単独から`target ≤ historyHorizon+1`が従わない。debt domainを
 強めるか、debt生成元provenanceからtime readinessを復元する必要がある。
 
 ## 実装順序
 
-1. typed provenance constructorの共通時刻・座標データを確定する。
-2. extended-history local stepを証明する。
-3. current生成8箇所をorbit-readyへ移行する。
-4. parent-drop／coverage、downcross、debt／crossingを独立レーンで移行する。
+1. ~~typed provenance constructorの共通時刻・座標データを確定する。~~
+2. ~~extended-historyの直接輸送条件と残余を証明する。~~
+3. ~~current生成8系統のorbit-ready adapterを用意する。~~
+4. budget-gapとrepresentative-not-readyを生成機構固有のstepで処理する。
 5. refined semantic domain上のrestricted oracleへ統合する。
 
 計算実験はこの設計判断の仮定には使用しない。

@@ -47,7 +47,8 @@ flowchart TD
 | 負債局所解析 | semantic閉包済み | 同時成長は実在するが、frontier下降またはstrong debt self-exitで閉包 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap`, `CrossingGrowth`, `CrossingHorizon`, `CrossingIteration`, `CrossingFrontier` |
 | 負エポック位相接続 | ランク証明済み | 対角仮定なしで目標出現またはPhaseSearchProgress | `PhaseEpoch` |
 | canonical開始 | 局所閉包済み | 全符号とlevel 0/1/2を分類し、強制成長も二段先のCoverageStepへ回収 | `CanonicalOracle`, `CanonicalLevelZero`, `CanonicalLevelOne`, `CanonicalLevelTwo`, `CanonicalComplete`, `CanonicalForcedGrowth`, `CanonicalGrowthRecovery` |
-| 意味的探索domain | historical要精密化 | orbit-ready current normalは全分岐閉包済み。weak historical constructorだけが現在horizonとの整合性を保証しない | `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `OrbitReadyComplete` |
+| 意味的探索domain | historical残余を精密化済み | current normalは全分岐閉包。historicalは5 typed provenanceと二つの輸送残余へ分類 | `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `ExtendedHistoryNormal`, `TypedNormalProvenance`, `OrbitReadyComplete`, `OrbitReadyAdapters` |
+| Coverage blocker | current/debt閉包済み | current親からのCoverageStepは未来初出ならorbit-ready、過去初出ならstrong debtへ送る | `CoverageDebtBridge` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
@@ -106,10 +107,23 @@ CoordinatesAt time q r
 level 0/1/2をすべて閉じ、current-state normalの局所totalityを与える。
 
 `ProvenancedNormalInvariant`はcurrent nodeとrank edge付きhistorical nodeを分離する基礎APIを
-与える。生成箇所の監査により、historical側は少なくともparent-drop、coverage anchor、
-downcross restart、debt exit、crossing frontierへ分ける必要があると判明した。特に
-history horizonとanchorを実際に表すrepresentative timeを分離したextended-history stepが
-次の中心課題である。
+与える。`TypedHistoricalNormalProvenance`はparent-drop、coverage anchor、downcross restart、
+debt exit、crossing frontierの5種類を実装した。またcurrent親のCoverageStepは、candidateの
+初出時刻で分けるとfuture currentまたはstrong debtへ送れるため、generic historical normalを
+回避できる。
+
+extended-history stepは、代表時刻がtime-readyで、代表時刻からhistory horizonまで履歴予算が
+不変なら完全に閉じる。残余は次の二つだけであり、それぞれ独立な実例がある。
+
+```text
+representativeTime + 1 < target
+missingBelowCount target historyHorizon
+  < missingBelowCount target representativeTime
+```
+
+後者ではhistorical nodeがrepresentative nodeより既にrank下位にあり、representative nodeからの
+局所下降を輸送すると向きが逆になる。現在の核心は、このbudget gapをdowncrossなどの生成機構
+固有の次stepへ変換することである。
 
 ## モジュール層
 
@@ -123,7 +137,7 @@ history horizonとanchorを実際に表すrepresentative timeを分離したexte
 | エポック | `OneBorrowFrontier`, `NegativeEpoch`, `Undershoot` |
 | 大域探索 | `Coverage`, `HistoryBudget`, `HistoryFrontier`, `Diagonal`, `PhaseSearch` |
 | 負債局所解析 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap`, `CrossingGrowth`, `CrossingHorizon`, `CrossingIteration`, `CrossingFrontier` |
-| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `NonnegativeSemantic`, `OrbitReadyComplete` |
+| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `ExtendedHistoryNormal`, `TypedNormalProvenance`, `NonnegativeSemantic`, `OrbitReadyComplete`, `OrbitReadyAdapters`, `CoverageDebtBridge` |
 | 初期領域・canonical閉包 | `InitialRegion`, `CanonicalOracle`, `CanonicalLevelZero`, `CanonicalLevelOne`, `CanonicalLevelTwo`, `CanonicalComplete`, `CanonicalForcedGrowth`, `CanonicalGrowthRecovery` |
 | 検証 | `Examples`, `Audit` |
 

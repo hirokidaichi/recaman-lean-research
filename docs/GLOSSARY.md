@@ -260,6 +260,14 @@ historical childを安全に再帰探索へ戻すためのdomain constructorと�
 `ProvenancedNormalInvariant`はcurrent nodeとrank edge付きhistorical nodeを区別する基礎APIを
 実装している。total oracleには、parent-dropやdowncrossingなど生成機構別の追加データが必要である。
 
+### representative time / history horizon — 研究固有
+
+historical normal nodeで分離する二つの時刻である。`representative time`はanchor値と座標を
+実際に取る軌道時刻、`history horizon`は`missingBelowCount`を評価する後の履歴時刻である。
+両者が一致するのがcurrent nodeであり、前者が小さい場合をextended-history nodeと呼ぶ。
+代表時刻からhorizonまでに履歴予算が下がると、representative stateからのrank下降を単純には
+輸送できないため、この差は単なる実装詳細ではない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

@@ -15,6 +15,9 @@
 - ordinary normal証明書のhorizon不整合境界とorbit-ready代替を形式化
 - orbit-ready current normalの全符号・低level局所totalityを証明
 - current／historicalを分離するnormal provenance APIと生成箇所監査を追加
+- extended-history normalの直接輸送条件と二つの独立残余を形式化
+- historical normalの5種類のtyped provenanceとcurrent生成adapterを追加
+- current親のCoverage blockerをfuture current／earlier debtへ完全分解
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。

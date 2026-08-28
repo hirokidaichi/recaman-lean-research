@@ -484,6 +484,10 @@ ordinary normal証明書が現在horizonの値・座標・時刻条件を保持�
 - `Recaman/CanonicalGrowthRecovery.lean` — canonical開始点の完全な局所step
 - `Recaman/NormalProvenance.lean` — current／historical normalのprovenance-aware domain
 - `Recaman/OrbitReadyComplete.lean` — orbit-ready current normalの全符号局所step
+- `Recaman/ExtendedHistoryNormal.lean` — representative time／history horizon分離と輸送残余
+- `Recaman/TypedNormalProvenance.lean` — historical normalの5種類のtyped生成元
+- `Recaman/OrbitReadyAdapters.lean` — current normal生成枝のrefined adapter
+- `Recaman/CoverageDebtBridge.lean` — Coverage blockerのfuture current／earlier debt分解
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -641,3 +645,20 @@ mismatch例はcurrent constructorに入れず、rank edge付きのhistorical pro
 generic provenance chainはdomain admissionとしては安全だが、historical childのsuccessorを単独では
 与えない。次の核心は、history horizonとanchorを実際に表すrepresentative timeを分離した
 extended-history local step、および生成機構別のtyped constructorである。
+
+### 第九ラウンドのextended-history境界とCoverage/debt迂回
+
+historical normalについてrepresentative time、history horizon、first time、代表時刻座標を分離した。
+representative timeがtime-readyで、そこからhistory horizonまでbelow-target履歴予算が不変なら、
+完成済みorbit-ready stepをそのまま輸送できる。一方、representative readinessの失敗とbudget gapは
+独立であり、両方の具体例をLean化した。budget gapではhistorical nodeがrepresentative nodeより
+既にrank下位にあるため、代表状態からの局所下降を単純合成できない。
+
+parent-drop、coverage anchor、downcross restart、debt exit、crossing frontierをそれぞれtyped
+provenanceとして実装し、共通extended-history residualへ接続した。current生成8系統には
+orbit-ready adapterを追加し、既存APIで失われていた条件が`target≤time+1`だけであることも明示した。
+
+さらにcurrent親のCoverageStepはhistorical normalを経由する必要がない。candidateが親より後で
+初出ならorbit-ready current child、親より前なら同じhorizon／anchorのstrong debt childとなる。
+`coverageStep_currentOrDebt`によりこの分解を完全に証明した。残る中心はdowncross restartが必ず持つ
+budget-gap residualと、debt／crossing sourceで不足し得るhorizon readinessである。
