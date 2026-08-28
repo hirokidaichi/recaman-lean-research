@@ -305,6 +305,25 @@ at-or-above targetの軌道点から、目標がすでに出現するか、将�
 これは現在のready crossing局所totalityに残る数学的境界である。ただし、全targetに対する
 tail returnは`all_targetTailReturn_iff_surjective`により元の全射性予想と同値であり、弱い局所補題ではない。
 
+### missing permanent-above tail / 未出目標の恒久上方tail — 研究固有
+
+正のtargetが全軌道で未出、target未満の値があるhorizonまでにすべて既出、かつそのhorizon以後の
+軌道値が常にtargetより大きい状態を`MissingPermanentAboveTail`として表す。仮想的な最小未出targetは
+この証明書を持つ。tailの最小値では二連続forced additionが起き、直下値`a n - 1`の初出がtail開始前にある。
+
+### zero-budget crossing / 履歴予算0のcrossing — 研究固有
+
+`missingBelowCount target horizon = 0`を持つcrossingである。target未満の全値が既出なので、
+noncrossing refined子に必要なstrict budget dropは不可能になる。refined子が存在する場合はcrossingに
+留まり、pre-crossing anchorが厳密に下がる。`PermanentTailCrossingCertificate`は仮想反例から、
+tail内horizon、ready crossing、zero budget、future downcross不在をまとめて抽出する。
+
+### tail minimum historical blocker / tail最小値の履歴blocker — 研究固有
+
+恒久上方tailの最小値`a n`に対する直下値`a n - 1`と、そのtail開始前の初出証明である。
+`PermanentTailMinimumCertificate`は最小性、二連続forced addition、候補式、初出時刻、target下界を保持する。
+zero-budget crossingのanchor下降へこのblockerを接続することが現在の未証明点である。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

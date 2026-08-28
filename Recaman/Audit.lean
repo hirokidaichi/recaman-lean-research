@@ -303,3 +303,15 @@ import Recaman
 #print axioms Recaman.LeastMissingTarget.eventually_strictlyAbove
 #print axioms Recaman.all_targetTailReturn_iff_surjective
 #print axioms Recaman.ReadyCrossingSearchInvariant.refinedStep_of_tailDowncross
+#print axioms Recaman.forcedAddition_above_twoStep_coverage
+#print axioms Recaman.strictAboveTail_coverageStep
+#print axioms Recaman.MissingPermanentAboveTail.readyCurrentOrDebtStep_at
+#print axioms Recaman.missingBelowCount_eq_zero_of_belowCovered
+#print axioms Recaman.crossing_zeroBudget_no_nonCrossing_progress
+#print axioms Recaman.crossing_zeroBudget_progress_forces_anchorDrop
+#print axioms Recaman.MissingPermanentAboveTail.crossing_refinedChild_shape
+#print axioms Recaman.MissingPermanentAboveTail.exists_crossingCertificate
+#print axioms Recaman.exists_tailMinimumAt
+#print axioms Recaman.MissingPermanentAboveTail.exists_minimumCertificate
+#print axioms Recaman.PermanentTailMinimumCertificate.doubleForced
+#print axioms Recaman.doubleForced_potential_has_both_directions

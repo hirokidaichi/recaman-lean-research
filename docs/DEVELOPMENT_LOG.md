@@ -797,3 +797,28 @@ below-target endpointは既出である一方、downcrossならlegal subtraction
 `LeastMissingTarget.eventually_strictlyAbove`は、最小未出目標があれば軌道が最終的に常にそれより大きくなることを示す。
 さらに`all_targetTailReturn_iff_surjective`で、全targetのtail returnはRecamán全射性予想そのもと同値と証明した。
 よってtail returnを新しい局所仮定として採用しても未解決性は減らない。
+
+### 第十六ラウンド：permanent tailのzero-budget境界と最小値blocker
+
+`PermanentAboveTail`を追加し、strictly-above tailの各状態から高々二遷移で`CoverageStep`を
+抽出した。最初の減算が合法なら即時に値が下がる。forced additionなら次の減算候補は厳密に
+`a n - 1`であり、合法ならfreshな初出、blockedなら過去の初出を取り出せる。
+
+自然数値を取る無限tailが最小値を持つことを強帰納法で証明した。tail最小値では合法減算は
+最小性に反するため最初のstepがforced additionとなる。その次の候補`a n - 1`への合法減算も
+同じ理由で不可能なので二回目もforced additionである。候補は正で既出であり、その最初の出現が
+tail内なら最小値未満になって矛盾する。したがって初出時刻はtail開始前、値はtargetより大きい。
+
+below-target値がすべて既出なら`missingBelowCount=0`であることも帰納法で証明した。初期値0から
+tailまでの有限upcrossingを選び、horizonをtail内かつtarget-readyまで進めることで、budget 0・
+future downcrossなしの`PermanentTailCrossingCertificate`を構成した。crossingからnoncrossingへの
+rank edgeはstrict budget dropを要求するため、この証明書では不可能である。refined子があれば
+crossingに留まり、budget 0を保ち、pre-crossing anchorを厳密に下げる。
+
+`PermanentAbovePotential`では二連続forced additionを既存potentialの下降量にする案を監査した。
+実軌道の`2→7→13`ではpotentialが`2→-2`へ下がる一方、重なる`7→13→20`では`1→3`へ上がる。
+両例を`decide`でkernel検証し、二連続forced additionだけではpotentialの方向が定まらないことを
+定理`doubleForced_potential_has_both_directions`として固定した。
+
+次の証明対象は、tail最小値が返すhistorical predecessorの初出時刻からcrossing列を復元し、
+zero-budget crossing parentより小さいpre-crossing anchorを構成することである。

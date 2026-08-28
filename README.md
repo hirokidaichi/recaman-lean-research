@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース86モジュール
+- Leanソース88モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -48,6 +48,10 @@ Lean 4形式化プロジェクトです。
 - ready crossingの保存horizon以後のdowncrossをstrict budget下降でrefined childへ閉包済み
 - horizon時点がbelowのready crossingを、進捗または厳密のjoint-growth残余へ完全分類済み
 - no-future-downcrossがabove-target tailの永続と同値で、tail return仮説がready crossing局所stepを閉じると証明済み
+- permanent above-target tailでは各状態が高々二遷移で値下降CoverageStepを持つことを証明済み
+- 仮想反例からzero-budget ready crossingとtail最小値直下のhistorical blockerを抽出済み
+- zero-budget crossingのrefined子はcrossingに留まりanchorを厳密に下げることを証明済み
+- 二連続forced additionだけではpotentialが増減両方向に動くことを実軌道例で検証済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -62,6 +66,10 @@ horizonが既にbelowな枝も次のcrossingまで完全分類し、現行rank�
 無条件の核心は「目標が未出ならabove-target tailが将来belowへ戻る」という長期再帰命題です。
 さらに、仮想的な最小未出目標は逆にeventually-strictly-above tailを強制します。
 `all_targetTailReturn_iff_surjective`により、全targetのtail returnは元の全射性予想と同値です。
+さらにpermanent tailを直接解析すると、その履歴予算はすでに0で、ready crossingから
+noncrossing子へは退出不能です。許されるrefined子はzero-budget crossingかつstrict anchor dropに
+限られます。一方、tail最小値は`a n - 1`の最初の出現がtail開始前にあることと、二段の
+forced additionを与えます。このhistorical blockerをcrossing anchor下降へ接続することが現在の一点です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -75,8 +83,9 @@ flowchart TD
     G --> H["canonical局所オラクル：証明済み"]
     H --> I["refined非crossing domain：証明済み"]
     I --> J["ready crossing局所step：tail returnまで縮約"]
-    J --> K["tail return／refined oracle：未証明"]
-    K --> L["全射性：未証明"]
+    J --> K["permanent tail：zero-budget crossing + historical blocker"]
+    K --> L["crossing anchor下降：未証明"]
+    L --> M["全射性：未証明"]
 ```
 
 ## 文書

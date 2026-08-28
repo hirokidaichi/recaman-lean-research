@@ -309,6 +309,21 @@ legal subtractionによりfreshでなければならず、既出性と矛盾す�
 常にその目標より大きいことを証明する。`all_targetTailReturn_iff_surjective`により、全targetに対する
 tail returnは元のRecamán全射性予想と同値である。したがってこの境界を無条件に証明すること自体が本問題である。
 
+この境界の内側も追加解析した。`MissingPermanentAboveTail`は、正の未出target、target未満の
+履歴被覆、以後のstrictly-above tailを一つの証明書にする。tail内の任意の状態は高々二遷移で
+`CoverageStep`を持つ。tail最小値では直後の減算と、その次の候補`a n - 1`への減算がともに
+blockされるため二連続forced additionとなり、`a n - 1`の最初の出現はtail開始前にある。
+
+一方、履歴被覆により四成分rankの外側予算はすでに0である。仮想反例からは、tail内horizon、
+budget 0、future downcross不在を同時に持つ`PermanentTailCrossingCertificate`を構成できる。
+このcrossingからnoncrossing refined子へ出るには負の履歴予算が必要になるため不可能である。
+refined子が存在するなら、それはbudget 0のcrossingで、pre-crossing anchorを厳密に下げる。
+したがって現在の核心は、tail最小値のhistorical blockerと、このstrict anchor childを接続することである。
+
+座標potential単独はこの接続を与えない。二連続forced additionの実軌道例として、時刻4の
+`2→7→13`はpotentialを`2→-2`へ下げるが、時刻5の`7→13→20`は`1→3`へ上げる。
+両方をLeanカーネルで証明したため、二連続forced additionだけに基づくpotential単調性は棄却された。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -360,6 +375,11 @@ tail returnは元のRecamán全射性予想と同値である。したがって�
 | no-downcross/above-tail同値 | `no_futureDowncross_iff_tail_atOrAbove` | `CrossingTailRefined.lean` |
 | tail-return仮説下のready totality | `ReadyCrossingSearchInvariant.refinedStep_of_tailDowncross` | `CrossingTailRefined.lean` |
 | tail return/全射性同値 | `all_targetTailReturn_iff_surjective` | `CrossingTailRefined.lean` |
+| permanent tail二段Coverage | `strictAboveTail_coverageStep` | `PermanentAboveTail.lean` |
+| zero-budget crossing抽出 | `MissingPermanentAboveTail.exists_crossingCertificate` | `PermanentAboveTail.lean` |
+| tail最小値historical blocker | `MissingPermanentAboveTail.exists_minimumCertificate` | `PermanentAboveTail.lean` |
+| zero-budget crossing anchor境界 | `MissingPermanentAboveTail.crossing_refinedChild_shape` | `PermanentAboveTail.lean` |
+| potential非単調の実例 | `doubleForced_potential_has_both_directions` | `PermanentAbovePotential.lean` |
 
 ## 8. 結論
 
@@ -374,6 +394,10 @@ crossing内部下降を構成することへ限定された。
 その後のhorizon-below分類により、前者は次のcrossingと実在するgrowth残余へ縮約され、
 残余は必ずabove-sideへ戻ることが分かった。よってready crossingで未解決な数学的核心は、
 permanent above-target tailを排除する長期再帰命題である。
+permanent tailの追加解析により、仮想反例はzero-budget ready crossingと、tail最小値直下の
+historical blockerを同時に持つことまで分かった。前者の任意のrefined stepはcrossing anchorを
+厳密に下げなければならない。後者からそのstepを構成する接続は未証明であり、potential単独では
+二連続forced addition上でも単調にならないことを反例で確認した。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

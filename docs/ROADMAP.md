@@ -161,6 +161,25 @@ fresh below endpointを要求するdowncrossは不可能である。`LeastMissin
 `all_targetTailReturn_iff_surjective`により、全targetのtail returnを証明することは全射性予想そのもと同値である。
 したがってこれを「局所補題が残っただけ」と扱ってはならない。
 
+permanent tailの内部解析は一段進んだ。`PermanentAboveTail`で次を証明済みである。
+
+1. tailの各状態は高々二遷移で、元値より小さくtarget以上の`CoverageStep`を返す。
+2. tail最小値では二遷移ともforced additionで、候補`a n - 1`の初出時刻はtail開始前にある。
+3. below-target履歴予算は0で、仮想反例は将来downcrossを持たないready crossingを実際に生成する。
+4. そのcrossingのrefined子は、存在するならbudget 0のcrossingに留まりanchorを厳密に下げる。
+
+これによりstep 14は、任意のtail状態から一般的な局所解析を再実行する問題ではなく、
+`PermanentTailMinimumCertificate`のhistorical predecessorを、zero-budget crossingのstrict anchor childへ
+変換する問題へ縮まった。`PermanentAbovePotential`の実軌道二例により、二連続forced additionの
+potentialは増減両方向なので、potential単独を第五rank成分にする案は棄却済みである。
+
+次の調査順序は次である。
+
+1. final upcrossingとtail minimumの間にあるabove-target first-occurrence鎖を型付きで構成する。
+2. `a n - 1`の初出から次のdowncross／upcrossingを復元し、crossing predecessor anchorとの大小を比較する。
+3. anchor下降が得られない場合の最小反例をLean構造体で固定し、第二のhistorical blockerを抽出する。
+4. この反復がfirst-occurrence timeまたは値の辞書式下降になるか、実軌道反例で棄却する。
+
 ### 完了条件
 
 ```lean

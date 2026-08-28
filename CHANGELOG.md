@@ -1,5 +1,16 @@
 # Changelog
 
+## Permanent-tail analysis — 2026-08-29
+
+- strictly-above tailの各状態から高々二遷移で`CoverageStep`を抽出
+- below-target履歴被覆から`missingBelowCount = 0`を証明
+- 仮想反例からzero-budget・no-future-downcrossのready crossingを構成
+- zero-budget crossingのrefined子がcrossingに留まりanchorを厳密下降するrank境界を証明
+- 自然数値tailの最小値存在と、直下値のtail以前historical blockerを証明
+- tail最小値で二連続forced additionが起きることを証明
+- 二連続forced addition上でpotentialが増減両方向に動く実軌道例をkernel検証
+- `PermanentAboveTail`、`PermanentAbovePotential`と公理監査を追加
+
 ## Research baseline — 2026-08-28
 
 - Lean 4.33.1で再現可能な研究リポジトリとして整理

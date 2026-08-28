@@ -81,5 +81,7 @@ import Recaman.CrossingRefinedBoundary
 import Recaman.CrossingDowncrossRefined
 import Recaman.CrossingBelowRefined
 import Recaman.CrossingTailRefined
+import Recaman.PermanentAboveTail
+import Recaman.PermanentAbovePotential
 import Recaman.Examples
 import Recaman.Oracle
