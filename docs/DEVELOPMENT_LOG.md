@@ -401,30 +401,27 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 本プロジェクトは、次をまだ主張しません。
 
-1. canonical／ordinary normal nodeの符号・履歴分岐を網羅する。
-2. 四constructorの`PhaseSemanticInvariant`を全normal分岐で保存し、
+1. ordinary normal nodeを現在軌道または生成元provenanceと整合するdomainへ精密化する。
+2. 精密化したconstructorを全normal分岐で保存し、
    `SemanticPhaseSearchOracle`を追加仮定なしで構成する。
 3. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
 4. レカマン数列が全ての非負整数を含む。
 
-したがって、全射性証明はまだ完成していません。ただし符号をまたぐ局所軌道は
-三成分のwell-foundedランクへほぼ接続されました。負エポック内の唯一の
-非接続分岐では、対角後継値そのものを仮定する必要はなくなり、
-「値は増え得るが初出時刻が厳密に下がる blocker」を既存ランクへ輸送する問題へ
-縮約されました。
+したがって、全射性証明はまだ完成していません。ただしcanonical開始点の全符号・
+低level分岐は既存のwell-foundedランクへ接続されました。残る障害は局所力学ではなく、
+ordinary normal証明書が現在horizonの値・座標・時刻条件を保持しないdomain設計上の問題です。
 
 ## 次の証明エポック
 
-次の主対象は、今回型として抽出したsemantic obstructionの解消です。有望な順に、
+次の主対象は、ordinary normal domainのprovenance付き再設計です。有望な順に、
 
-1. canonical startをnormalの符号分類へ接続する。
-2. ordinary normal certificateから現在horizonの座標・局所機構を選ぶ。
-3. 負normalの完全stepと既存の非負frontierを`SemanticPhaseSearchOracle`へ統合する。
+1. current-state用の`OrbitReadyNormalCertificate`をconstructorへ昇格する。
+2. parent-drop、coverage、frontierが作るhistorical childを生成元別に分類する。
+3. 各constructorのlocal oracleとdomain保存を証明する。
+4. 精密domain上の`SemanticPhaseSearchOracle`へ統合する。
 
-単純な `(時刻,値)` の「どちらかが下がる」関係は循環し得るため、そのままでは
-well-foundedではありません。次の設計上の核心は、時間下降を許す局面を対角負債の
-一方向フェーズに限定し、通常の値下降との交互増加を防ぐ必要があります。この
-位相ランク自体は今回形式化済みで、残る核心は負債ノードの局所二分法です。
+既存の四成分位相ランクは維持でき、canonical低levelの強制成長にも新しいrankは不要でした。
+二段先のcandidateが元値より下がることを使えばCoverageStepへ戻せます。
 
 ## ファイル構成
 
@@ -476,6 +473,15 @@ well-foundedではありません。次の設計上の核心は、時間下降�
 - `Recaman/NormalClosure.lean` — parent-drop／forward-exitのsemantic閉包
 - `Recaman/BoundaryAudit.lean` — horizon輸送、横断予算、反例の境界監査
 - `Recaman/NormalComplete.lean` — 負normal全分岐の無条件semantic step
+- `Recaman/NormalSemanticBoundary.lean` — weak normal証明書の反例とorbit-ready境界
+- `Recaman/NonnegativeSemantic.lean` — 非負normal通常域のsemantic閉包
+- `Recaman/CanonicalOracle.lean` — canonical全符号分類と低level残余
+- `Recaman/CanonicalLevelZero.lean` — level 0とsuccessor residualの閉包
+- `Recaman/CanonicalLevelOne.lean` — level 1分岐とforced q=1残余
+- `Recaman/CanonicalLevelTwo.lean` — level 2分岐とforced growth状態
+- `Recaman/CanonicalComplete.lean` — 低level分類の統合
+- `Recaman/CanonicalForcedGrowth.lean` — forced growth共通形と二段回収
+- `Recaman/CanonicalGrowthRecovery.lean` — canonical開始点の完全な局所step
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -599,3 +605,21 @@ anchor厳密下降と同値であることも証明した。
 保持しており、frontier下降が得られない残余ではdebt値自身へのsemantic self-exitを選べる。
 `crossingGrowthObstruction_phaseSemanticStep`により、最終的に目標出現またはdomain保存rank下降へ
 無条件で接続した。
+
+### 第七ラウンドのcanonical閉包とdomain監査
+
+canonical開始点をpotentialの負・目標以上・通常非負undershoot・低levelへ完全分類した。
+非負通常域`3≤potential<target`は既存のhistory frontierからsemantic childへ輸送し、
+残余をlevel 0/1/2だけに限定した。level 0は二段以内の目標出現へ閉じ、level 1/2の
+合法減算と高quotient強制加算もCoverageStepへ接続した。
+
+quotient-oneで強制加算されるlevel 1/2は、直後に値とanchorが増え、below-target budgetが
+不変なので、元canonical parentからの即時`PhaseSearchProgress`にならない。target 5の実軌道で
+この境界を検証した。一方、その次の減算候補は`n+level`で、元値`n+1+level`より1小さい。
+合法ならfresh、blockedなら既出なので、どちらもCoverageStepとなる。この二段lookaheadにより
+新phaseを追加せず`targetStartInvariant_phaseSemanticStep`を得た。
+
+並行してordinary `NormalSearchInvariant`を監査した。この証明書は過去の初出値を後のhorizonへ
+自由に載せられるため、nodeのlocal valueが`a horizon`であることも`target≤horizon+1`も従わない。
+反例をLean化し、現在軌道に整合する`OrbitReadyNormalCertificate`を定義した。次のボトルネックは、
+既存のhistorical normal childを生成元provenanceごとに保持する精密domainの構成である。

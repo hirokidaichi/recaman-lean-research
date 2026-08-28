@@ -26,10 +26,11 @@ a_{n-1}+n & (\text{それ以外})
 符号付きポテンシャル、借用遷移、blocker、CoverageStepをLean 4で形式化した。
 その結果、軌道の大部分を有限降下またはwell-foundedな探索進捗へ変換できた。
 
-最新の到達点では、唯一残っていた対角状態の分岐から、目標以上の値を持ちながら
-初出時刻が厳密に早いblockerを無条件に抽出し、これを吸収する位相付き四成分
-well-foundedランクを構成した。残る中心課題は、この「対角負債」フェーズ内の
-局所二分法を構成し、全域オラクルへ接続することである。
+最新の到達点では、対角負債とcrossingを意味的domain内で閉じ、任意の正目標に対する
+canonical開始点の全符号・低level分岐を、目標出現または既存ランクの下降へ接続した。
+level 1/2の強制成長は即時にはrankを下げないが、二段先のcandidateが元値より小さくなる
+ためCoverageStepへ回収できる。残る中心課題は、ordinary normal証明書を現在horizonの
+軌道状態または生成元provenanceと整合するdomainへ精密化し、全域オラクルへ接続することである。
 
 ## 2. 形式化方針
 
@@ -195,6 +196,19 @@ y+2s=a_s
 この順序のwell-founded性、入口・内部下降・出口の各進捗補題、
 および`PhaseSearchOracle`から目標出現が従うことを証明した。
 
+### 3.9 canonical開始点の局所閉包
+
+任意の正目標について構成できるcanonical開始点を、potentialの負、目標以上、
+通常の非負undershoot、level 0/1/2へ分類した。負領域と通常の非負域は既存epoch定理へ、
+level 0は二段以内の目標出現へ接続した。level 1/2のquotient-one強制加算だけは直後に
+値とanchorが増え、履歴予算も不変なので即時rank下降にならない。しかし次の候補は
+元値より1小さく、legalならfresh、blockedなら既出であるため、両方をCoverageStepへ変換した。
+これにより`targetStartInvariant_phaseSemanticStep`を追加仮定なしで証明した。
+
+同時にordinary `NormalSearchInvariant`を監査し、過去の初出値を後のhorizonへ載せられるため、
+現在値との一致とepochの時刻条件が従わないことを具体反例で証明した。現在軌道に整合する
+`OrbitReadyNormalCertificate`では負normalのsemantic stepまで構成済みである。
+
 ## 4. 大域証明骨格
 
 既に証明済みの大域結論は次の形である。
@@ -213,19 +227,17 @@ totalな局所進捗オラクルから目標出現を導くwell-founded inductio
 
 ## 5. 現在の未証明部分
 
-最重要の未証明補題は、対角負債ノードにある初出値 \(y\) を解析して、
-次のいずれかを構成する局所二分法である。
+最重要の未証明部分は、ordinary normal nodeのdomain設計である。現行証明書は
+`FirstAt a value firstTime`と`firstTime≤horizon`を持つが、`value=a horizon`も
+`target≤horizon+1`も要求しない。このため、任意のnormal constructorに現在座標を選び、
+既存epoch定理を適用することはできない。
 
-1. 固定目標 \(m\) の実出現
-2. 現在よりさらに早い初出時刻を持つ新しい負債ノード
-3. `anchorParent`未満の親値を得て通常位相へ戻る進捗
+次に必要なのは以下である。
 
-この局所二分法が得られた後も、次が必要である。
-
-- 位相付き探索を負エポック前線へ統合する
-- 任意の初出親値を符号エポックまたは着地面機構へ接続する
-- 可変目標に対する有限初期領域を一様に処理する
-- 全域`PhaseSearchOracle`または`CoverageOracle`を構成する
+- current-state normalを`OrbitReadyNormalCertificate`で表す
+- parent-drop、coverage、frontier由来のhistorical childをprovenance別に表す
+- 各constructorで局所stepとdomain保存を証明する
+- 精密domain上の`SemanticPhaseSearchOracle`または`CoverageOracle`を構成する
 
 よって、全射性を証明済みとは主張しない。
 
@@ -252,14 +264,16 @@ totalな局所進捗オラクルから目標出現を導くwell-founded inductio
 | 四成分位相ランク | `phaseSearchProgress_wellFounded` | `PhaseSearch.lean` |
 | 対角負債への入口 | `diagonal_successor_or_entersPhaseDebt` | `PhaseSearch.lean` |
 | 位相オラクル帰納 | `phaseSearchOracle_implies_occurs` | `PhaseSearch.lean` |
+| canonical局所step | `targetStartInvariant_phaseSemanticStep` | `CanonicalGrowthRecovery.lean` |
+| forced growth二段回収 | `CanonicalForcedGrowthChamber.twoStep_phaseSemantic` | `CanonicalForcedGrowth.lean` |
+| ordinary normal境界 | `normalSearchInvariant_not_orbitReady` | `NormalSemanticBoundary.lean` |
 
 ## 8. 結論
 
 本形式化により、座標上の未定義領域、多段借り、負領域の無限滞留、
-非負アンダーシュートの無限滞留、および対角状態の不透明な後方履歴は解消された。
-研究上の残余は、早い初出時刻を持つ大きなblockerを、位相付き探索の内部で
-安全に処理する局所履歴命題へ集中している。
+非負アンダーシュートの無限滞留、対角状態の後方履歴、crossing、canonical開始点の
+全局所分岐は既存の意味的ランクへ接続された。研究上の残余は、到達可能なordinary normal
+childだけを正確に表すprovenance付きdomainと、その上のtotal局所オラクルへ集中している。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
-

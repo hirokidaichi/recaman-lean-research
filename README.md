@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース51モジュール
+- Leanソース60モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -28,9 +28,13 @@ Lean 4形式化プロジェクトです。
 - 負normalエポックの全分岐を、目標出現または意味的domainを保存するrank下降へ接続済み
 - crossing catch-upの唯一の残余を、値とanchorの同時成長obstructionとして反例付きで特定済み
 - crossing同時成長をfrontier下降または強いdebt証明のsemantic self-exitで閉包済み
+- canonical開始点の全符号・低レベル分岐を、目標出現またはsemantic rank下降へ閉包済み
+- quotient-oneの強制成長は即時rank下降しないが、二段先のCoverageStepで回収できることを証明済み
+- ordinary normal証明書が現在horizonの軌道状態を保証しない境界を、具体反例付きで形式化済み
 
-現在の核心は、canonical／ordinary normal nodeの全符号・履歴分岐を
-`SemanticPhaseSearchOracle`の一段遷移へ統合することです。
+現在の核心は、ordinary normal nodeを「現在horizonの軌道状態」と生成元の
+provenanceまで保持するdomainへ精密化し、そのdomain上で
+`SemanticPhaseSearchOracle`を構成することです。
 
 ```mermaid
 flowchart TD
@@ -40,9 +44,10 @@ flowchart TD
     D --> E["対角状態"]
     E --> F["早期 blocker"]
     F --> G["位相付き探索ランク"]
-    G --> H["負債局所二分法：未証明"]
-    H --> I["全域オラクル：未証明"]
-    I --> J["全射性：未証明"]
+    G --> H["canonical局所オラクル：証明済み"]
+    H --> I["reachable normal domain：未証明"]
+    I --> J["全域semantic oracle：未証明"]
+    J --> K["全射性：未証明"]
 ```
 
 ## 文書

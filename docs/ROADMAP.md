@@ -88,13 +88,30 @@ rank同値枝も、目標以上から目標未満への横断が目標出現ま�
 
 ## Milestone 3 — 全域PhaseSearchOracle
 
-任意の通常ノードについて、座標を取り、次のいずれかへ接続する。
+canonical開始点については全符号と低levelを分類し、次のいずれかへの局所接続を完了した。
 
 - 目標面
 - 負エポック
 - 非負アンダーシュート
 - blocker parent下降
 - 対角負債
+
+特にlevel 1/2のquotient-one強制加算は、直後の値とanchorが増えるため即時rank下降ではない。
+ただし二段目の減算候補が元のcanonical値より小さく、合法／blockedの両方でCoverageStepに
+なるため、新しいphaseやrank成分を追加せず閉じた。公開結果は
+`targetStartInvariant_phaseSemanticStep`である。
+
+一方、現行のordinary `NormalSearchInvariant`は、証明書中の初出値が現在horizonの実値である
+ことも、epoch適用に必要な`target≤horizon+1`も保証しない。この弱さは具体反例で証明済みで、
+全constructorをそのままtotal oracleのdomainにすることはできない。次はnormal domainを、
+現在軌道との整合性または生成元provenanceを保持する形へ精密化する。
+
+### 次の調査順序
+
+1. `OrbitReadyNormalCertificate`をcurrent-state normal constructorとして採用する。
+2. parent-drop、coverage、frontierから生成されるhistorical normal childをprovenance別に分類する。
+3. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
+4. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
 
 ### 完了条件
 
@@ -111,8 +128,9 @@ rank同値枝も、目標以上から目標未満への横断が目標出現ま�
 
 任意の正の`m`について、時刻`m-1`または`m`に`m≤a n`かつ`m≤n+1`を満たす
 実状態が存在することを`exists_targetReady_state_of_pos`で証明した。この定理は
-座標と現在値の初出証明も返す。残る作業は、このcanonical entryを全域normal
-ノードの探索インターフェースへ接続することである。
+座標と現在値の初出証明も返す。このcanonical entryの全符号・低level分岐は、
+目標出現またはsemantic rank下降へ接続済みである。残る作業は、返されたnormal childを
+Milestone 3の精密domainで再帰的に扱うことである。
 
 `PhaseSearchStart`ではcanonical normal node、その証明書、意味的domain上だけに量化する
 `RestrictedPhaseSearchOracle`、およびdomainを保存する整礎帰納を構成した。これにより、
@@ -121,7 +139,8 @@ rank同値枝も、目標以上から目標未満への横断が目標出現ま�
 `PhaseSemantic`ではcanonical start、通常normal、強いdebt、crossing recoveryの四種を
 一つのproof-carrying domainへ統合した。開始点のdomain所属、debtの自己normal退出、
 anchor等号境界、strict crossingのdomain保存を証明し、このdomain上のoracleだけで
-目標出現が従うことを示した。
+目標出現が従うことを示した。ただしordinary normal constructorは現在horizonとの整合性が
+不足しているため、整礎帰納のdomainとしては精密化が必要である。
 
 ### 完了条件
 

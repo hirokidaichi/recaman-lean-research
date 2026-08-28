@@ -239,6 +239,25 @@ oracleを仮定した停止証明は完成しているが、必要なoracleを�
 debtへの進入、debt中の初出時刻低下、anchor低下後のnormalへの復帰は、いずれも四成分ランクを
 真に下げるよう設計されている。
 
+### semantic domain / 意味的domain — 研究固有
+
+数値tupleとして作れる全`PhaseSearchNode`ではなく、実軌道・履歴・座標に関する証明を伴う
+nodeだけを探索対象にするためのproof-carrying domainである。`PhaseSemanticInvariant`は
+canonical、normal、debt、crossing recoveryを統合する。現在のweak normal constructorは
+過去の初出値と後のhorizonを組み合わせられるため、total oracle用にはさらに精密化が必要である。
+
+### orbit-ready normal — 研究固有
+
+normal nodeのlocal valueが実際に`a time`であり、目標時刻条件、目標下界、anchor上界、
+`CoordinatesAt time q r`を同時に持つ状態である。`OrbitReadyNormalCertificate`はこの条件を
+証明付きで保持し、現在horizonからepoch定理を適用できることを明示する。
+
+### provenance / 生成元証明 — 標準的発想＋研究固有の用途
+
+あるnormal childがparent-drop、CoverageStep、frontierなど、どの局所定理から生成されたかを
+保持する証明データである。一般語としてのprovenanceは標準的だが、本研究ではcurrent-stateでない
+historical childを安全に再帰探索へ戻すためのdomain constructorとして用いる予定である。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準
