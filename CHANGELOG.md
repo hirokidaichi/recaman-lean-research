@@ -9,7 +9,11 @@
 - 自然数値tailの最小値存在と、直下値のtail以前historical blockerを証明
 - tail最小値で二連続forced additionが起きることを証明
 - 二連続forced addition上でpotentialが増減両方向に動く実軌道例をkernel検証
-- `PermanentAboveTail`、`PermanentAbovePotential`と公理監査を追加
+- historical predecessorのdowncross／renewed-tail二分法を証明
+- renewed-tail minimum下降の強帰納でfinite historical downcrossとstrict budget dropを抽出
+- historical downcross後のupcrossingをanchor-drop childまたはgrowth residualへ分類
+- 任意crossing選択ではchild=parentのstationary residualが必ず構成可能というno-goを証明
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

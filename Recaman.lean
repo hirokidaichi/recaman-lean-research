@@ -83,5 +83,6 @@ import Recaman.CrossingBelowRefined
 import Recaman.CrossingTailRefined
 import Recaman.PermanentAboveTail
 import Recaman.PermanentAbovePotential
+import Recaman.PermanentAboveHistory
 import Recaman.Examples
 import Recaman.Oracle

@@ -324,6 +324,18 @@ refined子が存在するなら、それはbudget 0のcrossingで、pre-crossing
 `2→7→13`はpotentialを`2→-2`へ下げるが、時刻5の`7→13→20`は`1→3`へ上げる。
 両方をLeanカーネルで証明したため、二連続forced additionだけに基づくpotential単調性は棄却された。
 
+historical blockerの反復は有限化できた。直下値の初出時刻から将来downcrossがあれば、endpointは
+合法減算による初出のbelow-target値で、履歴予算が厳密に下がる。downcrossがなければ、その初出時刻を
+新しいstrictly-above tailの開始点にでき、新tail最小値は旧最小値より厳密に小さい。
+`MissingStrictAboveTail.exists_historicalDowncrossCertificate`はminimum valueへの強帰納により、
+必ず有限回で前者へ到達することを証明する。
+
+ただしこのbudget下降はzero-budget crossing親の未来ではなく、tail以前の履歴区間にある。
+downcross後のupcrossingを親と同じzero-budget horizonへ載せ、anchorが小さければrefined childになる。
+非下降の場合は`HistoricalCycleGrowthResidual`を返す。さらに親crossingをその再構成upcrossing自身に
+選ぶとchild=parentとなる停留residualを、任意の仮想permanent tailから構成できることも証明した。
+これは任意crossing選択を許したままでは、一回のhistorical cycleが新rankにならないというno-go結果である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -380,6 +392,10 @@ refined子が存在するなら、それはbudget 0のcrossingで、pre-crossing
 | tail最小値historical blocker | `MissingPermanentAboveTail.exists_minimumCertificate` | `PermanentAboveTail.lean` |
 | zero-budget crossing anchor境界 | `MissingPermanentAboveTail.crossing_refinedChild_shape` | `PermanentAboveTail.lean` |
 | potential非単調の実例 | `doubleForced_potential_has_both_directions` | `PermanentAbovePotential.lean` |
+| historical predecessor二分法 | `PermanentTailMinimumCertificate.historicalPredecessorOutcome` | `PermanentAboveHistory.lean` |
+| finite historical downcross | `MissingStrictAboveTail.exists_historicalDowncrossCertificate` | `PermanentAboveHistory.lean` |
+| historical cycle residual分類 | `PermanentTailCombinedCertificate.refinedStep_or_historicalCycleGrowth` | `PermanentAboveHistory.lean` |
+| stationary cycle no-go | `MissingPermanentAboveTail.exists_stationaryHistoricalCycleResidual` | `PermanentAboveHistory.lean` |
 
 ## 8. 結論
 
@@ -398,6 +414,9 @@ permanent tailの追加解析により、仮想反例はzero-budget ready crossi
 historical blockerを同時に持つことまで分かった。前者の任意のrefined stepはcrossing anchorを
 厳密に下げなければならない。後者からそのstepを構成する接続は未証明であり、potential単独では
 二連続forced addition上でも単調にならないことを反例で確認した。
+historical blocker反復自体はminimum値下降により有限化され、必ずtail以前のfresh downcrossとbudget下降へ
+到達する。しかしその後のupcrossingを同じcrossing親として再選択できるため、現行rankには停留residualが
+残る。次に必要なのはcrossing選択のcanonical provenanceまたは複数cycleを測る新rankである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

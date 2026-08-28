@@ -173,12 +173,21 @@ permanent tailの内部解析は一段進んだ。`PermanentAboveTail`で次を�
 変換する問題へ縮まった。`PermanentAbovePotential`の実軌道二例により、二連続forced additionの
 potentialは増減両方向なので、potential単独を第五rank成分にする案は棄却済みである。
 
-次の調査順序は次である。
+この調査順序は`PermanentAboveHistory`で次まで完了した。
 
-1. final upcrossingとtail minimumの間にあるabove-target first-occurrence鎖を型付きで構成する。
-2. `a n - 1`の初出から次のdowncross／upcrossingを復元し、crossing predecessor anchorとの大小を比較する。
-3. anchor下降が得られない場合の最小反例をLean構造体で固定し、第二のhistorical blockerを抽出する。
-4. この反復がfirst-occurrence timeまたは値の辞書式下降になるか、実軌道反例で棄却する。
+1. ~~final upcrossingとtail minimumの間にあるabove-target first-occurrence鎖を型付きで構成する。~~
+2. ~~`a n - 1`の初出から次のdowncross／upcrossingを復元し、crossing predecessor anchorとの大小を比較する。~~
+3. ~~anchor下降が得られない場合を`HistoricalCycleGrowthResidual`として固定する。~~
+4. ~~no-downcross分岐のminimum value下降を強帰納で反復し、有限historical downcrossへ到達する。~~
+
+得られたdowncross endpointはfreshでbudgetを厳密に下げる。続くupcrossingのanchorがcombined parentより
+小さければrefined crossing子を構成できる。しかし親をそのupcrossing自身に選ぶとchild=parentとなる
+stationary residualを仮想反例から常に構成できる。よって次の調査順序は次である。
+
+1. crossingをearliest、latest、または区間内minimum-anchorでcanonicalに選ぶ証明書を比較する。
+2. canonical選択がhistorical cycle後にstrict anchor dropを強制するか証明する。
+3. 強制しない場合、連続cycle間のfirst-occurrence time／downcross endpoint／anchorを組にしたrankを監査する。
+4. stationary residualを許さず、reachable constructorが保存する最小domainを設計する。
 
 ### 完了条件
 

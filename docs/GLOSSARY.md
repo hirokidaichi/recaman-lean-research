@@ -324,6 +324,19 @@ tail内horizon、ready crossing、zero budget、future downcross不在をまと�
 `PermanentTailMinimumCertificate`は最小性、二連続forced addition、候補式、初出時刻、target下界を保持する。
 zero-budget crossingのanchor下降へこのblockerを接続することが現在の未証明点である。
 
+### historical predecessor outcome / 履歴predecessor分岐 — 研究固有
+
+tail最小値直下の初出時刻以後にdowncrossがあるかを分類する`HistoricalPredecessorOutcome`である。
+downcross枝はfresh below-target endpointとstrict history-budget dropを返す。no-downcross枝は初出時刻から
+新しいstrict-above tailを作り、その最小値を厳密に下げる。後者は自然数下降なので有限回しか続かない。
+
+### historical cycle growth residual / 履歴cycle成長残余 — 研究固有
+
+historical downcross後のupcrossingをzero-budget crossing親と同じhorizonへ載せた際、pre-crossing anchorが
+下がらない残余である。`HistoricalCycleGrowthResidual`はdowncross、upcross、ready crossing子、same horizon、
+anchor非減少、rank進捗不成立を保持する。親をそのupcrossing自身に選ぶとchild=parentの停留例を常に
+構成できるため、単なる型情報不足ではなく、任意crossing選択を許す現行domainの本質的境界である。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

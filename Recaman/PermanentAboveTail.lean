@@ -75,6 +75,25 @@ structure MissingPermanentAboveTail (target start : Nat) : Prop where
     value ∈ valuesThrough start
   strictly_above : ∀ time, start ≤ time → target < a time
 
+/-- The recurrence-relevant core of a missing permanent tail.  Unlike
+`MissingPermanentAboveTail`, this form does not require that all smaller
+values have already been collected at the new start time. -/
+structure MissingStrictAboveTail (target start : Nat) : Prop where
+  target_positive : 0 < target
+  target_missing : ¬ ∃ time, a time = target
+  strictly_above : ∀ time, start ≤ time → target < a time
+
+/-- Forget the completed below-target history while retaining the strict
+tail used by minimum descent. -/
+theorem MissingPermanentAboveTail.toStrictAboveTail
+    {target start : Nat}
+    (h : MissingPermanentAboveTail target start) :
+    MissingStrictAboveTail target start := {
+  target_positive := h.target_positive
+  target_missing := h.target_missing
+  strictly_above := h.strictly_above
+}
+
 /-- A least missing target supplies a permanent above-tail certificate at a
 finite history horizon. -/
 theorem LeastMissingTarget.exists_missingPermanentAboveTail
@@ -258,6 +277,7 @@ structure PermanentTailCrossingCertificate
     (target start : Nat) (node : PhaseSearchNode) : Prop where
   ready_crossing : ReadyCrossingSearchInvariant target node
   horizon_in_tail : start ≤ node.horizon
+  tail_strictly_before_horizon : start < node.horizon
   budget_zero : missingBelowCount target node.horizon = 0
   horizon_strictly_above : target < a node.horizon
   no_future_downcross : ¬ ∃ time,
@@ -293,6 +313,8 @@ theorem MissingPermanentAboveTail.exists_crossingCertificate
     ⟨horizon, a crossingTime, .normal, a crossingTime⟩
   have hstartHorizon : start ≤ horizon := by
     exact Nat.le_trans (by omega) (Nat.le_max_left _ _)
+  have hstartBeforeHorizon : start < horizon := by
+    exact Nat.lt_of_lt_of_le (by omega) (Nat.le_max_left _ _)
   have hcrossingBefore : crossingTime + 1 < horizon := by
     have : crossingTime + 1 < start + 1 := by omega
     exact Nat.lt_of_lt_of_le this (Nat.le_max_left _ _)
@@ -334,6 +356,7 @@ theorem MissingPermanentAboveTail.exists_crossingCertificate
   exact ⟨node, {
     ready_crossing := hready
     horizon_in_tail := hstartHorizon
+    tail_strictly_before_horizon := hstartBeforeHorizon
     budget_zero := hbudgetHorizon
     horizon_strictly_above := hhorizonAbove
     no_future_downcross := hnoDowncross
@@ -387,11 +410,12 @@ structure PermanentTailMinimumCertificate
   firstTime_before_tail : firstTime < start
   target_lt_predecessor : target < a time - 1
 
-/-- Every missing permanent-above tail exposes a finite historical blocker
-immediately below its tail minimum. -/
-theorem MissingPermanentAboveTail.exists_minimumCertificate
+/-- Every missing strict-above tail exposes a finite historical blocker
+immediately below its tail minimum.  No completed below-target history is
+needed for this value descent. -/
+theorem MissingStrictAboveTail.exists_minimumCertificate
     {target start : Nat}
-    (h : MissingPermanentAboveTail target start) :
+    (h : MissingStrictAboveTail target start) :
     ∃ time firstTime,
       PermanentTailMinimumCertificate target start time firstTime := by
   rcases exists_tailMinimumAt start with ⟨time, hminimum⟩
@@ -452,5 +476,13 @@ theorem MissingPermanentAboveTail.exists_minimumCertificate
       firstTime_before_tail := hfirstTimeBefore
       target_lt_predecessor := htargetPredecessor
     }⟩
+
+/-- Completed-history wrapper for the strict-tail minimum theorem. -/
+theorem MissingPermanentAboveTail.exists_minimumCertificate
+    {target start : Nat}
+    (h : MissingPermanentAboveTail target start) :
+    ∃ time firstTime,
+      PermanentTailMinimumCertificate target start time firstTime :=
+  h.toStrictAboveTail.exists_minimumCertificate
 
 end Recaman

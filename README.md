@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース88モジュール
+- Leanソース89モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -52,6 +52,8 @@ Lean 4形式化プロジェクトです。
 - 仮想反例からzero-budget ready crossingとtail最小値直下のhistorical blockerを抽出済み
 - zero-budget crossingのrefined子はcrossingに留まりanchorを厳密に下げることを証明済み
 - 二連続forced additionだけではpotentialが増減両方向に動くことを実軌道例で検証済み
+- historical predecessor反復が有限回でfresh downcrossとstrict budget dropへ到達することを証明済み
+- 一回のhistorical cycleはchild=parentの停留growth residualを持ち得ることを証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -69,7 +71,11 @@ horizonが既にbelowな枝も次のcrossingまで完全分類し、現行rank�
 さらにpermanent tailを直接解析すると、その履歴予算はすでに0で、ready crossingから
 noncrossing子へは退出不能です。許されるrefined子はzero-budget crossingかつstrict anchor dropに
 限られます。一方、tail最小値は`a n - 1`の最初の出現がtail開始前にあることと、二段の
-forced additionを与えます。このhistorical blockerをcrossing anchor下降へ接続することが現在の一点です。
+forced additionを与えます。このhistorical blockerからcrossing anchor下降を作れるかを追加解析しました。
+blockerを反復すると、downcrossがなければtail最小値が厳密下降するため、有限回でfreshな
+below-target downcrossとhistory-budget下降に到達します。しかし、その後のupcrossingを同じ
+zero-budget horizonへ載せるだけでは、親と同一のcrossingを再選択でき、anchorが等しい停留 residualに
+なります。次の核心はcrossing選択をcanonicalに拘束するか、cycleを跨ぐ新rankを与えることです。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -84,8 +90,9 @@ flowchart TD
     H --> I["refined非crossing domain：証明済み"]
     I --> J["ready crossing局所step：tail returnまで縮約"]
     J --> K["permanent tail：zero-budget crossing + historical blocker"]
-    K --> L["crossing anchor下降：未証明"]
-    L --> M["全射性：未証明"]
+    K --> L["historical反復：finite budget drop"]
+    L --> M["stationary cycle residual：未解消"]
+    M --> N["全射性：未証明"]
 ```
 
 ## 文書

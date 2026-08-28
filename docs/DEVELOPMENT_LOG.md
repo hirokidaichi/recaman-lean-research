@@ -822,3 +822,24 @@ crossingに留まり、budget 0を保ち、pre-crossing anchorを厳密に下げ
 
 次の証明対象は、tail最小値が返すhistorical predecessorの初出時刻からcrossing列を復元し、
 zero-budget crossing parentより小さいpre-crossing anchorを構成することである。
+
+### 第十七ラウンド：historical predecessor反復の有限化と停留residual
+
+below-target履歴被覆を必要としない`MissingStrictAboveTail`を分離し、tail最小値定理をこのcoreへ一般化した。
+最小値直下のhistorical first occurrence以後を分類すると、future downcrossがある場合はそのendpointが
+legal subtractionによる`FirstAt`となり、`missingBelowCount`を厳密に下げる。downcrossがない場合は
+`no_futureDowncross_iff_tail_atOrAbove`とtarget missingから、そのfirst occurrenceを開始点とする新しい
+strict-above tailが得られ、その最小値は旧最小値より厳密に小さい。
+
+`HistoricalPredecessorOutcome`はこのbudget-drop／renewed-tail二分法を保持する。renewed-tail側の最小値を
+自然数の強帰納法で反復し、`exists_historicalDowncrossCertificate`で有限回後のfresh downcrossを抽出した。
+completed-history tailでは出発first occurrenceのbudgetが正、最終tail horizonのbudgetが0であることも示した。
+
+次にdowncross endpointから旧tailまでの有限区間でstrict upcrossingを再構成し、combined crossingと同じ
+zero-budget horizonへ載せた。anchorが下がれば`PhaseSearchProgress`を持つrefined crossing子になる。
+下がらない枝を`HistoricalCycleGrowthResidual`として固定した。
+
+最後に、このresidualが証明書の弱さだけではないことを示した。parent crossingを、まさにそのhistorical
+downcross後に再構成したupcrossing自身として選べば、再生childはparentと同じnumeric nodeになる。
+`exists_stationaryHistoricalCycleResidual`は、任意の仮想permanent tailから同anchor・同budget・no-progressの
+停留residualを構成する。したがって次の設計にはcanonical crossing selectionまたはcycle間rankが必要である。
