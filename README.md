@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース77モジュール
+- Leanソース82モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -40,12 +40,17 @@ Lean 4形式化プロジェクトです。
 - horizon-ready extended-history normalの局所stepを残余なしで証明済み
 - parent-dropと通常debt evolutionからhistorical self-exitを除去済み
 - ready current／debt／extended-history／crossingからなるrefined child domainを構成済み
+- orbit-ready normalとready debtの全生成分岐をclock情報を保ったrefined stepへ閉包済み
+- crossing frontierの二時計middle residualをhorizon-ready extended-historyへ閉包済み
+- extended-history normalをbroad semantic interfaceを経ずrefined domain内で完全閉包済み
+- refined restricted oracleの残余をcrossing recovery自身の局所stepひとつへ縮約済み
 
-extended-history normalの二残余は解消済みです。early representativeは直後または過去の
-below-target値から、history-budget gapは新しく出現したbelow-target値から、それぞれ将来の
-upcrossingを取り出し、既存四成分rankのanchorを下げるcrossing recoveryへ移します。
-現在の核心は、既存のblack-box semantic stepが消しているchild horizonのtime-readinessを、
-各生成分岐からrefined resultへ直接伝搬することです。全射性そのものは未証明です。
+child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
+extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
+refined domainを保存する局所stepを持ちます。現在の核心は`CrossingSearchInvariant`自身の
+局所stepです。この証明書はcrossingへの入口を保持しますが、元のstrong debtが持っていた
+post-addition値のfirst occurrence、旧anchorとの比較、horizon readinessを保持していません。
+全射性そのものは未証明です。
 
 ```mermaid
 flowchart TD
@@ -56,9 +61,10 @@ flowchart TD
     E --> F["早期 blocker"]
     F --> G["位相付き探索ランク"]
     G --> H["canonical局所オラクル：証明済み"]
-    H --> I["reachable normal domain：未証明"]
-    I --> J["全域semantic oracle：未証明"]
-    J --> K["全射性：未証明"]
+    H --> I["refined非crossing domain：証明済み"]
+    I --> J["crossing局所step：未証明"]
+    J --> K["refined oracle：未証明"]
+    K --> L["全射性：未証明"]
 ```
 
 ## 文書

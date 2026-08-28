@@ -104,8 +104,9 @@ canonical開始点については全符号と低levelを分類し、次のいず
 一方、現行のordinary `NormalSearchInvariant`は、証明書中の初出値が現在horizonの実値である
 ことも、epoch適用に必要な`target≤horizon+1`も保証しない。この弱さは具体反例で証明済みで、
 全constructorをそのままtotal oracleのdomainにすることはできない。current-state側は
-`OrbitReadyNormalInvariant.phaseSemanticStep`により全符号・低levelを残余なしで閉じた。
-次はhistorical normalを生成元provenance別に精密化する。
+`OrbitReadyNormalInvariant.phaseSemanticStep`により全符号・低levelを残余なしで閉じ、
+さらに生成分岐を直接たどるrefined stepまで構成した。historical normal、ready debt、
+crossing frontierもclock provenanceを保ったrefined resultへ接続済みである。
 
 ### 次の調査順序
 
@@ -117,18 +118,22 @@ canonical開始点については全符号と低levelを分類し、次のいず
 6. ~~budget-gap residualをdowncross／debt／crossing固有の次stepへ変換する。~~
 7. ~~representative-time readinessを生成元から復元するか、early representative専用機構で閉じる。~~
 8. ~~horizon-ready extended-history constructorのtotal semantic stepを証明する。~~
-9. orbit-ready局所定理の各生成分岐から、clock情報を失わないrefined childを直接返す。
-10. ready debt obstructionとcrossing frontierをrefined domain保存stepへ統合する。
-11. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
+9. ~~orbit-ready局所定理の各生成分岐から、clock情報を失わないrefined childを直接返す。~~
+10. ~~ready debt obstructionとcrossing frontierをrefined domain保存stepへ統合する。~~
+11. crossing recoveryにhorizon readinessと元debtのpost-state provenanceを保持させる。
+12. `CrossingSearchInvariant`自身のrefined局所stepを証明する。
+13. 精密domain上のrestricted oracleを無条件に構成する。
 
 step 6では、strict budget dropが新しいbelow-target実出現を与えることを逆向きに証明し、
 そこからfuture upcrossingとcrossing recoveryを構成した。step 7のlegal downcrossと
 forced below-candidateも同じ回復機構で閉じた。新しいphaseやrank成分は不要だった。
 
 現在のrefined child domainはorbit-ready current、horizon-ready debt、extended-history normal、
-crossing recoveryからなる。既存black-box semantic stepを事後精密化したときだけ、normal/debt
-childの`target≤horizon+1`が失われる。これは反例付きのAPI情報不足であり、次は局所分岐から
-refined resultを直接組み立てる。
+crossing recoveryからなる。最初の三constructorは残余なしのrefined stepを持ち、canonical startから
+restricted oracleを得るための残余は`CrossingSearchInvariant`自身だけになった。
+現行crossing証明書は入口のstrict crossingを保持する一方、元のstrong debtが持っていた
+post-addition値のfirst occurrence、post値と旧anchorの比較、horizon readinessを保持しない。
+次はこの生成時provenanceを保持したcrossing domainへ精密化する。
 
 ### 完了条件
 

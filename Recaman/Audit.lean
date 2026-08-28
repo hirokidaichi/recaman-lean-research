@@ -284,3 +284,9 @@ import Recaman
 #print axioms Recaman.ReadyDebtInvariant.step_or_obstruction
 #print axioms Recaman.coverageStep_readyCurrentOrDebt
 #print axioms Recaman.OrbitReadyNormalInvariant.refinedStep_or_horizonResidual
+#print axioms Recaman.OrbitReadyNormalInvariant.refinedStep
+#print axioms Recaman.ReadyDebtInvariant.refinedStep
+#print axioms Recaman.ReadyDebtInvariant.crossingFrontierFirstAt_refinedStep
+#print axioms Recaman.ExtendedHistoryNormalInvariant.refinedStep
+#print axioms Recaman.OrbitReadyRefinedInvariant.refinedStep_or_crossing
+#print axioms Recaman.crossingRefinedStepHypothesis_implies_occurs

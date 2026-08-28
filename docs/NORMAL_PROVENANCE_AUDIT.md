@@ -128,7 +128,10 @@ debt exitでは現行`DebtInvariant`単独から`target ≤ historyHorizon+1`が
 
 `OrbitReadyRefinedInvariant`はready current/debt、extended-history normal、crossing recoveryを統合する。
 broad `PhaseSemanticInvariant`のconstructor検査から精密化すると、normal/debt childのhorizon readiness
-だけが残余になる。次のAPIは生成分岐からこの条件を直接保持しなければならない。
+だけが残余になる。この事後精密化の限界に対し、生成分岐を直接たどるAPIを実装した。
+orbit-ready normal、ready debt、extended-history normalはclock条件を保持したまま全分岐を閉じ、
+crossing frontierの二時計middle区間もtyped extended-historyへ収容した。現在残るconstructorは
+`CrossingSearchInvariant`自身だけである。
 
 ## 実装順序
 
@@ -137,7 +140,9 @@ broad `PhaseSemanticInvariant`のconstructor検査から精密化すると、nor
 3. ~~current生成8系統のorbit-ready adapterを用意する。~~
 4. ~~budget-gapとrepresentative-not-readyをcrossing recoveryで処理する。~~
 5. ~~ready debtとrefined child domainを導入する。~~
-6. orbit-ready／debt／crossingの各局所分岐からrefined resultを直接返す。
-7. refined semantic domain上のrestricted oracleへ統合する。
+6. ~~orbit-ready／debt／historicalの各局所分岐からrefined resultを直接返す。~~
+7. ~~refined domainのconstructor監査をrestricted oracle境界へ統合する。~~
+8. crossing recovery生成時のready horizonとstrong debt provenanceを保持する。
+9. crossing-local stepを閉じ、conditionalなoracle境界から仮定を除く。
 
 計算実験はこの設計判断の仮定には使用しない。

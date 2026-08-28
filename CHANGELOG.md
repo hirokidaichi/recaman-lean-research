@@ -23,6 +23,10 @@
 - parent-dropをfuture current／earlier debtへ分解し、debt self-exitを局所戦略から除去
 - horizon-ready debtとready current/debt refined domainを追加
 - orbit-ready semantic childのrefinement境界をnormal/debt horizon readinessへ限定
+- orbit-ready normalの全生成分岐をdirect refined stepへ閉包
+- ready debt obstructionとcrossing frontier middle residualをrefined domainへ閉包
+- extended-history normalのdirect refined totalityを証明
+- refined restricted oracleの残余をcrossing-local stepひとつへ縮約
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。

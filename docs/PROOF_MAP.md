@@ -20,13 +20,14 @@ flowchart TD
     I --> J["四成分位相ランク"]
     J --> K["負債・crossing閉包"]
     K --> L["canonical局所オラクル"]
-    L --> M["reachable normal domain"]
-    M --> N["全域semantic oracle"]
-    N --> O["全射性"]
+    L --> M["refined非crossing domain"]
+    M --> N["crossing局所step"]
+    N --> O["refined restricted oracle"]
+    O --> P["全射性"]
 ```
 
-上図の`数列・履歴定義`から`canonical局所オラクル`までは証明済みである。
-`reachable normal domain`以降が未証明である。
+上図の`数列・履歴定義`から`refined非crossing domain`までは証明済みである。
+`crossing局所step`以降が未証明である。
 
 ## 状況一覧
 
@@ -49,8 +50,9 @@ flowchart TD
 | canonical開始 | 局所閉包済み | 全符号とlevel 0/1/2を分類し、強制成長も二段先のCoverageStepへ回収 | `CanonicalOracle`, `CanonicalLevelZero`, `CanonicalLevelOne`, `CanonicalLevelTwo`, `CanonicalComplete`, `CanonicalForcedGrowth`, `CanonicalGrowthRecovery` |
 | 意味的探索domain | extended-history局所閉包済み | current normalとhorizon-ready historical normalは全分岐閉包。generic budget gapとearly representativeもcrossing recoveryへ接続 | `NormalProvenance`, `ExtendedHistoryNormal`, `ExtendedHistoryBudgetClosure`, `ExtendedHistoryComplete`, `EarlyRepresentativeComplete`, `DowncrossBudgetGap` |
 | Coverage blocker | ready current/debt閉包済み | current親からのCoverageStepは未来初出ならorbit-ready、過去初出ならhorizon-ready strong debtへ送る | `CoverageDebtBridge`, `ReadyDebtInvariant`, `ReadyCurrentDebt` |
-| historical回避 | 一部閉包済み | current parent-dropはfuture current／earlier debtへ分解。通常debt evolutionはhistorical self-exit不要。crossing frontierは二時計区間を明示 | `HistoricalDebtBridge` |
-| refined child | clock残余を特定済み | broad semantic childをready current/debt、extended-history、crossingへ精密化。残る情報欠落はnormal/debt childのhorizon readiness | `OrbitReadyRefinedStep` |
+| historical回避 | refined閉包済み | parent-dropはfuture current／earlier ready debtへ分解。通常debtはtyped extended-history境界だけを使い、crossing frontierの二時計区間もhorizon-ready extended-historyへ収容 | `HistoricalDebtBridge`, `ReadyDebtRefined`, `CrossingFrontierRefined` |
+| refined child | 非crossing閉包済み | orbit-ready normal、ready debt、extended-historyは生成分岐から直接refined stepを返す | `OrbitReadyDirectRefined`, `ReadyDebtRefined`, `ExtendedHistoryDirectRefined` |
+| refined oracle境界 | crossingだけ未証明 | constructor監査とcanonical接続を完了し、残余を`CrossingRefinedStepHypothesis`ひとつへ縮約 | `RefinedOracleBoundary` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
@@ -128,7 +130,7 @@ below-target実出現を得る。budget gapでは、countのstrict dropそのも
 history horizonを拡張した`crossing_recovery` childへ移る。pre-crossing値はtarget未満なので、
 旧representative anchorより厳密に小さく、四成分rankのanchorが下降する。
 
-現在の残余はblack-box semantic resultの情報消失である。refined child domainは次を保持する。
+refined child domainは次を保持する。
 
 ```text
 OrbitReady current
@@ -137,9 +139,14 @@ ExtendedHistoryNormalInvariant
 CrossingSearchInvariant
 ```
 
-`PhaseSemanticInvariant`を後から検査すると、normal/debt childについて`target≤horizon+1`だけが
-復元できない。次はorbit-ready局所定理の各生成分岐からrefined resultを直接返し、このclock
-provenanceを消さない統合APIを構成する。
+orbit-ready normal、ready debt、extended-history normalについては、broad
+`PhaseSemanticInvariant`を経由せず生成分岐から直接refined resultを構成した。crossing frontierの
+二時計middle区間もready debt sourceのhorizon readinessを継承するextended-history childへ入る。
+したがってconstructor監査で残るのは`CrossingSearchInvariant`自身だけである。
+
+このcrossing証明書はpredecessor、forced addition、strict crossing、post-state coordinatesを持つが、
+元のstrong debtにあったpost値の`FirstAt`、post値が旧anchor未満であること、target-ready horizonを
+保持しない。既存debt-crossing closureを再利用する前に、このprovenance消失を修復する必要がある。
 
 ## モジュール層
 
@@ -153,7 +160,7 @@ provenanceを消さない統合APIを構成する。
 | エポック | `OneBorrowFrontier`, `NegativeEpoch`, `Undershoot` |
 | 大域探索 | `Coverage`, `HistoryBudget`, `HistoryFrontier`, `Diagonal`, `PhaseSearch` |
 | 負債局所解析 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap`, `CrossingGrowth`, `CrossingHorizon`, `CrossingIteration`, `CrossingFrontier` |
-| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `ExtendedHistoryNormal`, `TypedNormalProvenance`, `NonnegativeSemantic`, `OrbitReadyComplete`, `OrbitReadyAdapters`, `CoverageDebtBridge`, `DowncrossBudgetGap`, `EarlyRepresentative`, `EarlyRepresentativeClosure`, `EarlyForcedCandidateClosure`, `EarlyRepresentativeComplete`, `ExtendedHistoryBudgetClosure`, `ExtendedHistoryComplete`, `HistoricalDebtBridge`, `ReadyDebtInvariant`, `ReadyCurrentDebt`, `OrbitReadyRefinedStep` |
+| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete`, `NormalSemanticBoundary`, `NormalProvenance`, `ExtendedHistoryNormal`, `TypedNormalProvenance`, `NonnegativeSemantic`, `OrbitReadyComplete`, `OrbitReadyAdapters`, `CoverageDebtBridge`, `DowncrossBudgetGap`, `EarlyRepresentative`, `EarlyRepresentativeClosure`, `EarlyForcedCandidateClosure`, `EarlyRepresentativeComplete`, `ExtendedHistoryBudgetClosure`, `ExtendedHistoryComplete`, `HistoricalDebtBridge`, `ReadyDebtInvariant`, `ReadyCurrentDebt`, `OrbitReadyRefinedStep`, `OrbitReadyDirectRefined`, `ReadyDebtRefined`, `CrossingFrontierRefined`, `ExtendedHistoryDirectRefined`, `RefinedOracleBoundary` |
 | 初期領域・canonical閉包 | `InitialRegion`, `CanonicalOracle`, `CanonicalLevelZero`, `CanonicalLevelOne`, `CanonicalLevelTwo`, `CanonicalComplete`, `CanonicalForcedGrowth`, `CanonicalGrowthRecovery` |
 | 検証 | `Examples`, `Audit` |
 

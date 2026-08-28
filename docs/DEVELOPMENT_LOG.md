@@ -705,3 +705,25 @@ normal/debt childのhorizon readinessだけになった。
 次のクリティカルパスは、black-box semantic resultを事後精密化するのではなく、orbit-ready局所定理の
 各生成分岐からrefined resultを直接返すことである。その後、ready debt obstructionとcrossing frontierを
 統合し、restricted well-founded oracleへ接続する。
+
+### 第十一ラウンドのdirect refinementとcrossing oracle境界
+
+orbit-ready normalの全生成分岐をbroad semantic constructorへ変換する前に監査し、parent-drop、forward
+above、downcross、Coverage、低levelの各childへclock証明を直接伝搬した。
+`OrbitReadyNormalInvariant.refinedStep`は`normal_horizon_not_ready`／`debt_horizon_not_ready`をreachable
+resultから除去し、目標出現またはrefined domain保存stepを返す。
+
+ready debtではforced additionの二obstructionを専用crossing recoveryへ直接送り、合法減算が固定anchorへ
+達する枝だけをhorizon-ready extended-historyへ退出させた。この枝は`firstTime=debtTime<horizon`という
+二時計middle境界なので、future currentまたはearlier debtには分解できない。crossing frontierのmiddle
+residualもsource debtのhorizon readinessを継承する同じtyped childへ閉じた。
+
+extended-history側では、任意のactual below-target stateからfuture weak upcrossingを取り、拡張horizonと
+低いpre-crossing anchorを持つcrossing childへ移す共通refined adapterを構成した。これによりstableな
+representativeはdirect orbit-ready stepを輸送し、early／budget-gapはcrossingへ進む完全refined stepを得た。
+
+最後にrefined domainのconstructorを完全監査した。orbit-ready current、ready debt、extended-historyは
+無条件に閉じ、残るのは`CrossingSearchInvariant`自身だけである。
+`crossingRefinedStepHypothesis_implies_occurs`は、この単一typed obligationからcanonical startの目標出現を
+導く。現行crossing certificateはstrict crossingへの入口を保持する一方、元strong debtのpost-state
+`FirstAt`、post値と旧anchorの比較、horizon readinessを保持しない。このproof-data消失が次の研究対象である。
