@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース60モジュール
+- Leanソース62モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -31,10 +31,12 @@ Lean 4形式化プロジェクトです。
 - canonical開始点の全符号・低レベル分岐を、目標出現またはsemantic rank下降へ閉包済み
 - quotient-oneの強制成長は即時rank下降しないが、二段先のCoverageStepで回収できることを証明済み
 - ordinary normal証明書が現在horizonの軌道状態を保証しない境界を、具体反例付きで形式化済み
+- orbit-ready ordinary normal nodeの全符号・低level分岐を、残余なしのsemantic stepへ閉包済み
+- current／historicalを分離するprovenance-aware normal domainの基礎APIを構成済み
 
-現在の核心は、ordinary normal nodeを「現在horizonの軌道状態」と生成元の
-provenanceまで保持するdomainへ精密化し、そのdomain上で
-`SemanticPhaseSearchOracle`を構成することです。
+現在の核心は、parent-drop／coverage／downcrossing／debt-exitが作るhistorical normal nodeを
+生成元別のprovenance constructorへ移し、そのdomain上で`SemanticPhaseSearchOracle`を
+構成することです。current-state normalの局所totalityは証明済みです。
 
 ```mermaid
 flowchart TD
@@ -54,6 +56,7 @@ flowchart TD
 
 - [研究結果レポート](docs/RESEARCH_REPORT.md) — 問題設定、方法、主要成果、結論
 - [証明地図](docs/PROOF_MAP.md) — 証明済み／未証明の依存関係
+- [normal provenance監査](docs/NORMAL_PROVENANCE_AUDIT.md) — current／historical生成箇所と次のconstructor設計
 - [用語集](docs/GLOSSARY.md) — 標準用語と本研究独自の解析用語の区別
 - [今後のロードマップ](docs/ROADMAP.md) — 次の証明エポックと完了条件
 - [再現・検証手順](docs/REPRODUCIBILITY.md) — ビルド、公理監査、実験の再現

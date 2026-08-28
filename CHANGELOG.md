@@ -13,6 +13,8 @@
 - canonical開始点の全符号・低level分岐をsemantic rankへ接続
 - quotient-one forced growthを二段先のCoverageStepで回収
 - ordinary normal証明書のhorizon不整合境界とorbit-ready代替を形式化
+- orbit-ready current normalの全符号・低level局所totalityを証明
+- current／historicalを分離するnormal provenance APIと生成箇所監査を追加
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。

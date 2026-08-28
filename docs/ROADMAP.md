@@ -103,15 +103,18 @@ canonical開始点については全符号と低levelを分類し、次のいず
 
 一方、現行のordinary `NormalSearchInvariant`は、証明書中の初出値が現在horizonの実値である
 ことも、epoch適用に必要な`target≤horizon+1`も保証しない。この弱さは具体反例で証明済みで、
-全constructorをそのままtotal oracleのdomainにすることはできない。次はnormal domainを、
-現在軌道との整合性または生成元provenanceを保持する形へ精密化する。
+全constructorをそのままtotal oracleのdomainにすることはできない。current-state側は
+`OrbitReadyNormalInvariant.phaseSemanticStep`により全符号・低levelを残余なしで閉じた。
+次はhistorical normalを生成元provenance別に精密化する。
 
 ### 次の調査順序
 
-1. `OrbitReadyNormalCertificate`をcurrent-state normal constructorとして採用する。
-2. parent-drop、coverage、frontierから生成されるhistorical normal childをprovenance別に分類する。
-3. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
-4. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
+1. ~~`OrbitReadyNormalCertificate`をcurrent-state normal constructorとして採用し、全符号stepを閉じる。~~
+2. ~~parent-drop、coverage、frontierから生成されるhistorical normal childをprovenance別に監査する。~~
+3. parent-drop／coverage anchor／downcross restart／debt exit／crossing frontierのtyped constructorを実装する。
+4. history horizonとrepresentative orbit timeを分離するextended-history local stepを証明する。
+5. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
+6. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
 
 ### 完了条件
 

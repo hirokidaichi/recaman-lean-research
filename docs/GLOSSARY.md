@@ -256,7 +256,9 @@ normal nodeのlocal valueが実際に`a time`であり、目標時刻条件、�
 
 あるnormal childがparent-drop、CoverageStep、frontierなど、どの局所定理から生成されたかを
 保持する証明データである。一般語としてのprovenanceは標準的だが、本研究ではcurrent-stateでない
-historical childを安全に再帰探索へ戻すためのdomain constructorとして用いる予定である。
+historical childを安全に再帰探索へ戻すためのdomain constructorとして用いる。
+`ProvenancedNormalInvariant`はcurrent nodeとrank edge付きhistorical nodeを区別する基礎APIを
+実装している。total oracleには、parent-dropやdowncrossingなど生成機構別の追加データが必要である。
 
 ## Leanと証明監査の語
 

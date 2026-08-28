@@ -207,7 +207,8 @@ level 0は二段以内の目標出現へ接続した。level 1/2のquotient-one�
 
 同時にordinary `NormalSearchInvariant`を監査し、過去の初出値を後のhorizonへ載せられるため、
 現在値との一致とepochの時刻条件が従わないことを具体反例で証明した。現在軌道に整合する
-`OrbitReadyNormalCertificate`では負normalのsemantic stepまで構成済みである。
+`OrbitReadyNormalCertificate`については、負、高potential、非負undershoot、level 0/1/2の
+全分岐を残余なしのsemantic stepへ接続した。
 
 ## 4. 大域証明骨格
 
@@ -232,10 +233,12 @@ totalな局所進捗オラクルから目標出現を導くwell-founded inductio
 `target≤horizon+1`も要求しない。このため、任意のnormal constructorに現在座標を選び、
 既存epoch定理を適用することはできない。
 
-次に必要なのは以下である。
+24箇所のnormal semantic生成を監査した結果、8箇所はorbit-readyへ直接移行でき、残りは
+parent-drop、coverage anchor、downcross restart、debt exit、crossing frontierという
+historical provenanceを必要とすることが判明した。次に必要なのは以下である。
 
-- current-state normalを`OrbitReadyNormalCertificate`で表す
-- parent-drop、coverage、frontier由来のhistorical childをprovenance別に表す
+- parent-drop、coverage anchor、downcross restart、debt exit、crossing frontierをtyped constructorで表す
+- history horizonとrepresentative orbit timeを分離するextended-history stepを証明する
 - 各constructorで局所stepとdomain保存を証明する
 - 精密domain上の`SemanticPhaseSearchOracle`または`CoverageOracle`を構成する
 
@@ -267,6 +270,8 @@ totalな局所進捗オラクルから目標出現を導くwell-founded inductio
 | canonical局所step | `targetStartInvariant_phaseSemanticStep` | `CanonicalGrowthRecovery.lean` |
 | forced growth二段回収 | `CanonicalForcedGrowthChamber.twoStep_phaseSemantic` | `CanonicalForcedGrowth.lean` |
 | ordinary normal境界 | `normalSearchInvariant_not_orbitReady` | `NormalSemanticBoundary.lean` |
+| current normal局所totality | `OrbitReadyNormalInvariant.phaseSemanticStep` | `OrbitReadyComplete.lean` |
+| provenance-aware normal domain | `ProvenancedNormalInvariant` | `NormalProvenance.lean` |
 
 ## 8. 結論
 

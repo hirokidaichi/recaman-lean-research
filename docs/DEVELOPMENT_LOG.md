@@ -482,6 +482,8 @@ ordinary normal証明書が現在horizonの値・座標・時刻条件を保持�
 - `Recaman/CanonicalComplete.lean` — 低level分類の統合
 - `Recaman/CanonicalForcedGrowth.lean` — forced growth共通形と二段回収
 - `Recaman/CanonicalGrowthRecovery.lean` — canonical開始点の完全な局所step
+- `Recaman/NormalProvenance.lean` — current／historical normalのprovenance-aware domain
+- `Recaman/OrbitReadyComplete.lean` — orbit-ready current normalの全符号局所step
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -623,3 +625,19 @@ quotient-oneで強制加算されるlevel 1/2は、直後に値とanchorが増�
 自由に載せられるため、nodeのlocal valueが`a horizon`であることも`target≤horizon+1`も従わない。
 反例をLean化し、現在軌道に整合する`OrbitReadyNormalCertificate`を定義した。次のボトルネックは、
 既存のhistorical normal childを生成元provenanceごとに保持する精密domainの構成である。
+
+### 第八ラウンドのorbit-ready totalityとprovenance監査
+
+`OrbitReadyNormalCertificate`が表すcurrent-state normalについて、potentialの全符号を分類した。
+負領域は既存のnegative normal closureへ、高potentialの正商はCoverageStepへ接続した。商0の
+高potentialは強制加算後の低商候補を、商1の低level強制加算は二段先の候補を使って閉じた。
+これによりlevel 0/1/2を含む`OrbitReadyNormalInvariant.phaseSemanticStep`を残余なしで得た。
+
+同時に、currentとhistoricalを混同しない`ProvenancedNormalInvariant`を導入した。horizon/value
+mismatch例はcurrent constructorに入れず、rank edge付きのhistorical provenanceを要求する。
+既存24箇所のnormal semantic生成を監査した結果、8箇所はorbit-readyへ直接移行できる一方、
+残りはparent-drop、coverage anchor、downcross restart、debt exit、crossing frontierに分類される。
+
+generic provenance chainはdomain admissionとしては安全だが、historical childのsuccessorを単独では
+与えない。次の核心は、history horizonとanchorを実際に表すrepresentative timeを分離した
+extended-history local step、および生成機構別のtyped constructorである。

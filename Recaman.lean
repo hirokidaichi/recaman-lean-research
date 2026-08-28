@@ -47,6 +47,7 @@ import Recaman.NormalClosure
 import Recaman.BoundaryAudit
 import Recaman.NormalComplete
 import Recaman.NormalSemanticBoundary
+import Recaman.NormalProvenance
 import Recaman.NonnegativeSemantic
 import Recaman.CanonicalOracle
 import Recaman.CanonicalLevelZero
@@ -55,5 +56,6 @@ import Recaman.CanonicalLevelTwo
 import Recaman.CanonicalComplete
 import Recaman.CanonicalForcedGrowth
 import Recaman.CanonicalGrowthRecovery
+import Recaman.OrbitReadyComplete
 import Recaman.Examples
 import Recaman.Oracle

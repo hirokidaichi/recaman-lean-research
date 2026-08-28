@@ -247,3 +247,11 @@ import Recaman
 #print axioms Recaman.CanonicalForcedGrowthChamber.twoStep_phaseSemantic
 #print axioms Recaman.canonicalForcedGrowth_five_immediate_not_progress
 #print axioms Recaman.targetStartInvariant_phaseSemanticStep
+#print axioms Recaman.TargetStartInvariant.toOrbitReadyNormalInvariant
+#print axioms Recaman.DebtInvariant.selfExit_provenancedNormal
+#print axioms Recaman.NormalParentDropEvidence.toProvenancedNormal
+#print axioms Recaman.horizonMismatch_provenance_is_historical
+#print axioms Recaman.zeroQuotient_potential_aboveTarget_phaseSemanticStep
+#print axioms Recaman.quotientOne_forcedAddition_phaseSemanticStep
+#print axioms Recaman.OrbitReadyLowLevelResidual.phaseSemanticStep
+#print axioms Recaman.OrbitReadyNormalInvariant.phaseSemanticStep
