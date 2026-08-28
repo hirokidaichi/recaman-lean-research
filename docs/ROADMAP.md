@@ -182,12 +182,23 @@ potentialは増減両方向なので、potential単独を第五rank成分にす�
 
 得られたdowncross endpointはfreshでbudgetを厳密に下げる。続くupcrossingのanchorがcombined parentより
 小さければrefined crossing子を構成できる。しかし親をそのupcrossing自身に選ぶとchild=parentとなる
-stationary residualを仮想反例から常に構成できる。よって次の調査順序は次である。
+stationary residualを仮想反例から常に構成できる。この後、canonical選択とcycle rankを次まで形式化した。
 
-1. crossingをearliest、latest、または区間内minimum-anchorでcanonicalに選ぶ証明書を比較する。
-2. canonical選択がhistorical cycle後にstrict anchor dropを強制するか証明する。
-3. 強制しない場合、連続cycle間のfirst-occurrence time／downcross endpoint／anchorを組にしたrankを監査する。
-4. stationary residualを許さず、reachable constructorが保存する最小domainを設計する。
+1. ~~earliest future weak upcrossingをcanonicalに選び、存在と一意性を証明する。~~
+2. ~~earliest再選択が同時刻に戻るstationary条件を証明する。~~
+3. ~~`seenBelowCount`をdual-history measureとして導入し、monotonicityとstrict dropを証明する。~~
+4. ~~anchor／one-way phase／seen budget／minimumの四成分cycle rankとwell-foundednessを証明する。~~
+5. ~~combined obstruction、renewed tail、historical downcrossをcycle rankのstrict stepへ接続する。~~
+6. ~~dischargeからcrossingへのexitがstrict anchor dropと同値であることを証明する。~~
+
+earliest規則はwitness ambiguityを除くがstationaryを除かない。新cycle rankはstationaryを不正なexitとして
+正しく拒否し、historical内部をwell-foundedに閉じる。しかしanchor非減少residualからはcrossingへ戻れない。
+次の調査順序は次である。
+
+1. discharge certificateが持つfresh below endpointと次upcrossingのanchorを、旧anchorと比較する追加算術を探す。
+2. strict anchor dropが失敗する場合、同じdischargeから別のupcrossing／blockerを抽出してanchorを下げる。
+3. cycle rankをrefined oracleのzero-budget crossing constructorへtypedに統合する。
+4. exit obstructionが残るなら、その入力をさらに狭いreachable residualへ固定する。
 
 ### 完了条件
 

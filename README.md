@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース89モジュール
+- Leanソース91モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -54,6 +54,9 @@ Lean 4形式化プロジェクトです。
 - 二連続forced additionだけではpotentialが増減両方向に動くことを実軌道例で検証済み
 - historical predecessor反復が有限回でfresh downcrossとstrict budget dropへ到達することを証明済み
 - 一回のhistorical cycleはchild=parentの停留growth residualを持ち得ることを証明済み
+- 最初のfuture upcrossingをcanonicalかつ一意に構成し、earliest選択でも停留が残ることを証明済み
+- anchor／cycle phase／seen-below budget／minimum値の新しいwell-founded rankを構成済み
+- cycle dischargeからcrossingへ戻れる条件がstrict anchor dropと同値であることを証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -76,6 +79,11 @@ blockerを反復すると、downcrossがなければtail最小値が厳密下降
 below-target downcrossとhistory-budget下降に到達します。しかし、その後のupcrossingを同じ
 zero-budget horizonへ載せるだけでは、親と同一のcrossingを再選択でき、anchorが等しい停留 residualに
 なります。次の核心はcrossing選択をcanonicalに拘束するか、cycleを跨ぐ新rankを与えることです。
+earliest upcrossingはcanonicalかつ一意に構成できましたが、同じdowncross endpointからの再選択は
+同じ時刻を返すため停留を解消しません。そこでzero-budget領域専用に、anchorを最外層、
+`crossing → backtrack → discharge`を一方向phase、`seenBelowCount`とtail minimumを内層に置く
+well-founded rankを追加しました。historical探索はすべてこのrankで厳密下降し、dischargeから
+crossingへ戻るにはstrict anchor dropが必要十分です。未解決点はこのexit anchor dropの構成です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -91,8 +99,9 @@ flowchart TD
     I --> J["ready crossing局所step：tail returnまで縮約"]
     J --> K["permanent tail：zero-budget crossing + historical blocker"]
     K --> L["historical反復：finite budget drop"]
-    L --> M["stationary cycle residual：未解消"]
-    M --> N["全射性：未証明"]
+    L --> M["one-way cycle rank：証明済み"]
+    M --> N["discharge exit anchor drop：未証明"]
+    N --> O["全射性：未証明"]
 ```
 
 ## 文書

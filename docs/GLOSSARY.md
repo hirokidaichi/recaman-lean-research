@@ -337,6 +337,24 @@ historical downcross後のupcrossingをzero-budget crossing親と同じhorizon�
 anchor非減少、rank進捗不成立を保持する。親をそのupcrossing自身に選ぶとchild=parentの停留例を常に
 構成できるため、単なる型情報不足ではなく、任意crossing選択を許す現行domainの本質的境界である。
 
+### first weak upcrossing / 最初の弱上方crossing — 研究固有
+
+below-target開始点以後で最初に起きる`WeakUpcrossingStep`を`FirstWeakUpcrossingStep`として表す。
+既知witness時刻を上界にした自然数強帰納で存在し、任意の他witness以下なので一意である。
+ただし同じ開始点から再選択すれば同じ時刻へ戻るため、canonical化だけではstationary cycleを除けない。
+
+### seen-below count / 発見済み下側値数 — 研究固有
+
+`seenBelowCount target horizon = target - missingBelowCount target horizon`である。target未満の発見済み値数に
+対応し、missing countとの和はtargetになる。時間の進行では増加し、tail horizonからhistorical時刻へ
+戻るbacktrackingでは減少し得るため、過去向き探索のdual budgetとして使う。
+
+### permanent-tail cycle rank / 恒久tail cycleランク — 研究固有
+
+zero-budget領域で使う`(anchor, phase, seenBelowCount, tailMinimum)`の四成分辞書式rankである。
+phaseは`crossing > backtrack > discharge`の一方向。historical探索内部はすべてstrictに下降する。
+dischargeからcrossingへ戻るにはstrict anchor dropが必要十分であり、同anchor stationary loopを拒否する。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

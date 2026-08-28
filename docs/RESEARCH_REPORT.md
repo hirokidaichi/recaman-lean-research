@@ -336,6 +336,21 @@ downcross後のupcrossingを親と同じzero-budget horizonへ載せ、anchorが
 選ぶとchild=parentとなる停留residualを、任意の仮想permanent tailから構成できることも証明した。
 これは任意crossing選択を許したままでは、一回のhistorical cycleが新rankにならないというno-go結果である。
 
+canonical selectionも監査した。最初のfuture weak upcrossingは自然数強帰納で存在・一意に選べる。
+historical downcross endpointからこの規則を適用すると旧tail開始前にendpointがある。しかし同じendpointから
+再選択すれば一意性により同じcrossing時刻へ戻るため、earliest規則はwitness ambiguityだけを除き、
+stationary cycle自体は除かない。
+
+そこで`seenBelowCount = target - missingBelowCount`をdual-history量として導入した。実時間の増加に対して
+単調増加し、missing budgetのstrict dropとちょうど逆向きのstrict gainを持つ。zero-budget tail horizonから
+positive-missingなhistorical first occurrenceへ戻るとseen countは厳密に下がる。
+
+`PermanentAboveCycleRank`は`(anchor, phase, seenBelowCount, tailMinimum)`の四成分lex rankを定義する。
+phaseはcrossing、backtrack、dischargeの順に一方向下降する。combined obstructionからbacktrackへ入り、
+no-downcross renewed tailではseen/minimumが下降し、downcrossではdischargeへ入る。rankはwell-foundedで、
+すべてのhistorical内部stepを受け入れる。dischargeからcrossingへのexitはstrict anchor dropと必要十分であり、
+stationary同anchor exitは拒否される。従来の`HistoricalCycleGrowthResidual`はこのrankでも正確にexit obstructionとなる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -396,6 +411,12 @@ downcross後のupcrossingを親と同じzero-budget horizonへ載せ、anchorが
 | finite historical downcross | `MissingStrictAboveTail.exists_historicalDowncrossCertificate` | `PermanentAboveHistory.lean` |
 | historical cycle residual分類 | `PermanentTailCombinedCertificate.refinedStep_or_historicalCycleGrowth` | `PermanentAboveHistory.lean` |
 | stationary cycle no-go | `MissingPermanentAboveTail.exists_stationaryHistoricalCycleResidual` | `PermanentAboveHistory.lean` |
+| canonical first upcrossing | `exists_firstWeakUpcrossingStep_from_below` | `PermanentAboveCanonical.lean` |
+| dual history strict量 | `seenBelowCount_strict_of_missingBelowCount_strict` | `PermanentAboveCanonical.lean` |
+| historical rank strict entry | `PermanentTailCombinedCertificate.entersTailHistory` | `PermanentAboveCanonical.lean` |
+| permanent-tail cycle rank | `tailCycleProgress_wellFounded` | `PermanentAboveCycleRank.lean` |
+| cycle exit/anchor同値 | `tailCycle_exitCrossing_iff_anchorDrop` | `PermanentAboveCycleRank.lean` |
+| growth residual exit obstruction | `HistoricalCycleGrowthResidual.tailCycleExitObstruction` | `PermanentAboveCycleRank.lean` |
 
 ## 8. 結論
 
@@ -417,6 +438,9 @@ historical blockerを同時に持つことまで分かった。前者の任意�
 historical blocker反復自体はminimum値下降により有限化され、必ずtail以前のfresh downcrossとbudget下降へ
 到達する。しかしその後のupcrossingを同じcrossing親として再選択できるため、現行rankには停留residualが
 残る。次に必要なのはcrossing選択のcanonical provenanceまたは複数cycleを測る新rankである。
+earliest provenance単独では同時刻再選択を避けられないが、one-way cycle phaseとdual history budgetを持つ
+well-founded rankにより、historical内部の無限loopは排除された。残る義務はdischargeから再構成する
+crossingのstrict anchor dropだけであり、これはrank exitの必要十分条件として形式化されている。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

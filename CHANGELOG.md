@@ -13,7 +13,12 @@
 - renewed-tail minimum下降の強帰納でfinite historical downcrossとstrict budget dropを抽出
 - historical downcross後のupcrossingをanchor-drop childまたはgrowth residualへ分類
 - 任意crossing選択ではchild=parentのstationary residualが必ず構成可能というno-goを証明
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`と公理監査を追加
+- first future weak upcrossingの存在・一意性を強帰納で証明
+- dual-history量`seenBelowCount`とphase／seen／minimum rankを構成
+- anchor／one-way cycle phase／seen／minimumの四成分well-founded rankを構成
+- dischargeからcrossingへのrank exitがstrict anchor dropと同値であることを証明
+- growth residualを新cycle rankのtyped exit obstructionへ接続
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

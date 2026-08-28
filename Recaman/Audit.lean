@@ -322,3 +322,17 @@ import Recaman
 #print axioms Recaman.MissingPermanentAboveTail.exists_positiveBudget_historicalDowncross
 #print axioms Recaman.PermanentTailCombinedCertificate.refinedStep_or_historicalCycleGrowth
 #print axioms Recaman.MissingPermanentAboveTail.exists_stationaryHistoricalCycleResidual
+#print axioms Recaman.exists_firstWeakUpcrossingStep_from_below
+#print axioms Recaman.FirstWeakUpcrossingStep.unique
+#print axioms Recaman.seenBelowCount_strict_of_missingBelowCount_strict
+#print axioms Recaman.tailHistoryProgress_wellFounded
+#print axioms Recaman.HistoricalPredecessorOutcome.tailHistoryProgress
+#print axioms Recaman.PermanentTailCombinedCertificate.entersTailHistory
+#print axioms Recaman.MissingPermanentAboveTail.exists_firstHistoricalUpcrossing
+#print axioms Recaman.firstHistoricalUpcrossing_reselection_stationary
+#print axioms Recaman.tailCycleProgress_wellFounded
+#print axioms Recaman.tailCycle_exitCrossing_iff_anchorDrop
+#print axioms Recaman.HistoricalPredecessorOutcome.tailCycleProgress
+#print axioms Recaman.PermanentTailCombinedCertificate.entersTailCycle
+#print axioms Recaman.tailCycle_no_stationary_crossingExit
+#print axioms Recaman.HistoricalCycleGrowthResidual.tailCycleExitObstruction

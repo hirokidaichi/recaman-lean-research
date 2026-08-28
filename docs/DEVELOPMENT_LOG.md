@@ -843,3 +843,25 @@ zero-budget horizonへ載せた。anchorが下がれば`PhaseSearchProgress`を�
 downcross後に再構成したupcrossing自身として選べば、再生childはparentと同じnumeric nodeになる。
 `exists_stationaryHistoricalCycleResidual`は、任意の仮想permanent tailから同anchor・同budget・no-progressの
 停留residualを構成する。したがって次の設計にはcanonical crossing selectionまたはcycle間rankが必要である。
+
+### 第十八ラウンド：canonical upcrossingとone-way cycle rank
+
+`FirstWeakUpcrossingStep`を導入した。既存のfuture upcrossing witnessを上界とし、時刻への強帰納で
+より早いwitnessがある限り下げることで、最初のweak upcrossingを標準ライブラリだけで構成した。
+最初のwitnessは任意の他witness以下であり、一意である。historical downcross endpointから選んだ最初の
+upcrossingは旧strict tail開始前に終わる。しかし同じendpointから二度選べば一意性により同じ時刻なので、
+earliest canonicalization単独ではstationary residualを解消しない。
+
+履歴方向を逆に測る`seenBelowCount target horizon := target - missingBelowCount target horizon`を定義した。
+seenとmissingの和はtargetで、seen countは履歴とともに単調増加する。missing budgetがstrictに下がると
+seen countはstrictに上がるため、zero-budget tail horizonからpositive-missing historical pointへ戻る向きでは
+seen countがstrictに下がる。`TailHistoryProgress`はphase／seen／minimumのwell-founded rankとしてこれを確認した。
+
+さらにzero-budget crossing anchorを最外層に加えた`TailCycleProgress`を定義した。四成分は
+anchor、`crossing > backtrack > discharge` phase、seen count、tail minimumである。combined certificateは
+同anchorのbacktrackへ厳密に入り、renewed-tailはseen/minimum、historical downcrossはphaseを下げる。
+辞書式自然数四成分なのでwell-foundedである。
+
+`tailCycle_exitCrossing_iff_anchorDrop`はdischargeからcrossingへ戻る進捗がstrict anchor dropと同値であることを
+証明する。同anchor stationary exitは拒否され、従来の`HistoricalCycleGrowthResidual`は新rank上でも
+`tailCycleExitObstruction`になる。これでhistorical内部の循環ではなく、exit anchor比較だけが残った。
