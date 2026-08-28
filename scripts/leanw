@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+RECAMAN_PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+RECAMAN_WORKSPACE_ROOT="$(CDPATH= cd -- "$RECAMAN_PROJECT_ROOT/.." && pwd)"
+RECAMAN_ELAN_HOME="$RECAMAN_WORKSPACE_ROOT/.tools/elan"
+RECAMAN_TOOLCHAIN_ROOT="$RECAMAN_ELAN_HOME/toolchains/leanprover--lean4---v4.33.1"
+RECAMAN_SHIM="$RECAMAN_PROJECT_ROOT/.build/lean_app_path_shim.so"
+
+if [[ ! -f "$RECAMAN_SHIM" ]]; then
+  mkdir -p "$RECAMAN_PROJECT_ROOT/.build"
+  cc -shared -fPIC -O2 \
+    "$RECAMAN_PROJECT_ROOT/tools/lean_app_path_shim.c" \
+    -ldl -o "$RECAMAN_SHIM"
+fi
+
+export ELAN_HOME="$RECAMAN_ELAN_HOME"
+export XDG_CACHE_HOME="$RECAMAN_PROJECT_ROOT/.cache"
+export LEAN_SYSROOT="$RECAMAN_TOOLCHAIN_ROOT"
+export LEAN_APP_PATH_OVERRIDE="$RECAMAN_TOOLCHAIN_ROOT/bin/lean"
+export LD_PRELOAD="$RECAMAN_SHIM"
+export PATH="$RECAMAN_TOOLCHAIN_ROOT/bin:$PATH"
+
+exec "$RECAMAN_TOOLCHAIN_ROOT/bin/lean" "$@"
