@@ -282,6 +282,29 @@ strong `DebtInvariant`に`target ≤ node.horizon+1`を追加した状態で、L
 一方、旧`CoverageDebtChildCertificate`は親のclock条件を保持していないので、certificate単独から
 horizon readinessは導けない。
 
+### ready crossing / 時刻準備済みcrossing — 研究固有
+
+`CrossingSearchInvariant`に`target ≤ node.horizon+1`を追加した状態で、Leanでは
+`ReadyCrossingSearchInvariant`として表す。horizonの軌道値がtarget未満なら次の強制加算で
+weak upcrossingを作れ、horizon以後にdowncrossがあればfresh below-target値による
+history-budget下降を作れる。
+
+### crossing continuation growth residual — 研究固有
+
+horizon-below ready crossingから次のcrossingへ進んだとき、history budgetが不変で、
+pre-crossing anchorも下がらない残余である。Leanの
+`CrossingContinuationGrowthResidual`は新crossing、budget同値、anchor非減少、および
+`PhaseSearchProgress`不成立を同時に保持する。target 19の実軌道に実例があるため、
+単なinterfaceの弱さではない。
+
+### target tail return / 目標tail復帰 — 研究固有
+
+at-or-above targetの軌道点から、目標がすでに出現するか、将来below-targetの軌道点へ
+戻るという長期命題で、`TargetTailReturnHypothesis`として切り出す。future downcrossが
+存在しないことは、その開始点以降ずっとtarget以上に留まることと同値である。
+これは現在のready crossing局所totalityに残る数学的境界である。ただし、全targetに対する
+tail returnは`all_targetTailReturn_iff_surjective`により元の全射性予想と同値であり、弱い局所補題ではない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

@@ -122,7 +122,7 @@ crossing frontierもclock provenanceを保ったrefined resultへ接続済みで
 10. ~~ready debt obstructionとcrossing frontierをrefined domain保存stepへ統合する。~~
 11. crossing recoveryにhorizon readinessと元debtのpost-state provenanceを保持させる。
 12. crossingから新しいbelow-target値を抽出してhistory budget下降へ接続する。
-13. budget不変ならcrossing-to-crossingの追加下降量があるか、現行rankで不可能かを監査する。
+13. ~~budget不変ならcrossing-to-crossingの追加下降量があるか、現行rankで不可能かを監査する。~~
 14. `CrossingSearchInvariant`自身のrefined局所stepを証明する。
 15. 精密domain上のrestricted oracleを無条件に構成する。
 
@@ -143,6 +143,23 @@ step 12のうち、保存crossing horizon以後にactual downcrossが存在す�
 forced additionではあり得ず、legal subtractionの着地点は直前履歴にfreshなので、親horizonから
 `missingBelowCount`が厳密に下がる。残るのは保存horizonですでにbelow-targetである枝と、以後の
 軌道がdowncrossしない枝である。
+
+horizon-below枝は次のweak upcrossingまで完全分類した。新しいcrossingは、
+budget下降またはpre-crossing anchor下降があれば進捗する。どちらもない枝は
+`CrossingContinuationGrowthResidual`で厳密に記録し、target 19、horizon 31、anchor
+13→14で実在することをLeanで検証した。これによりstep 13の結論は「現行rankでは
+一般に不可能」である。ただし残余のchild horizonは必ずat-or-above targetであり、
+その後のdowncrossは中間crossingを迂回して元の親へ直接budget下降を与える。
+
+したがってready crossing局所totalityの残りは`TargetTailReturnHypothesis`、すなわち
+「目標が未出なら、任意のat-or-above開始点から将来below-targetへ戻る」へ縮約した。
+`no_futureDowncross_iff_tail_atOrAbove`はその否定がpermanent above-target tailと同値であること、
+`ReadyCrossingSearchInvariant.refinedStep_of_targetTailReturn`はこの長期仮説が局所stepに十分であることを示す。
+仮想的な最小未出目標では、それ未満の値が有限horizonまでにすべて既出になるため、
+fresh below endpointを要求するdowncrossは不可能である。`LeastMissingTarget.eventually_strictlyAbove`は
+この場合に軌道が最終的に常にtargetより大きくなることを示す。
+`all_targetTailReturn_iff_surjective`により、全targetのtail returnを証明することは全射性予想そのもと同値である。
+したがってこれを「局所補題が残っただけ」と扱ってはならない。
 
 ### 完了条件
 

@@ -126,4 +126,44 @@ theorem crossing_sameHorizon_refinedChild_is_crossing
     exact False.elim (Nat.lt_irrefl _ hdrop)
   · exact hcrossing
 
+/-- For the numeric shape used by crossing-recovery nodes, the four-part
+rank has only two possible strict components: the history budget or the
+below-target crossing anchor.  The phase and local coordinates duplicate
+constants already fixed by the anchor. -/
+theorem crossingNumeric_progress_iff_budgetDrop_or_anchorDrop
+    {target childHorizon childAnchor parentHorizon parentAnchor : Nat} :
+    PhaseSearchProgress target
+        ⟨childHorizon, childAnchor, .normal, childAnchor⟩
+        ⟨parentHorizon, parentAnchor, .normal, parentAnchor⟩ ↔
+      missingBelowCount target childHorizon <
+          missingBelowCount target parentHorizon ∨
+        (missingBelowCount target childHorizon =
+            missingBelowCount target parentHorizon ∧
+          childAnchor < parentAnchor) := by
+  constructor
+  · intro hprogress
+    unfold PhaseSearchProgress phaseSearchRank at hprogress
+    rcases Prod.lex_def.mp hprogress with hbudget | ⟨hbudgetEq, htail⟩
+    · exact Or.inl hbudget
+    · right
+      refine ⟨by simpa using hbudgetEq, ?_⟩
+      rcases Prod.lex_def.mp htail with hanchor | ⟨hanchorEq, htail⟩
+      · simpa using hanchor
+      · have hanchorEq' : childAnchor = parentAnchor := by
+          simpa using hanchorEq
+        subst parentAnchor
+        rcases Prod.lex_def.mp htail with hphase | ⟨_, hlocal⟩
+        · simp at hphase
+        · simp at hlocal
+  · intro hshape
+    rcases hshape with hbudget | ⟨hbudgetEq, hanchor⟩
+    · exact Prod.Lex.left _ _ hbudget
+    · change Prod.Lex Nat.lt (Prod.Lex Nat.lt (Prod.Lex Nat.lt Nat.lt))
+        (missingBelowCount target childHorizon,
+          (childAnchor, (SearchPhase.normal.rank, childAnchor)))
+        (missingBelowCount target parentHorizon,
+          (parentAnchor, (SearchPhase.normal.rank, parentAnchor)))
+      rw [hbudgetEq]
+      exact Prod.Lex.right _ (Prod.Lex.left _ _ hanchor)
+
 end Recaman

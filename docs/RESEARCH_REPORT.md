@@ -288,6 +288,27 @@ horizonを保持するconstructorを導入し、その局所stepを既存crossin
 ただしprovenance追加だけでは不十分であり、新しいbelow-target履歴によるbudget下降、または
 crossing-to-crossingの追加下降を構成する必要がある。
 
+horizon-below枝は次のweak upcrossingまで完全分類した。
+`crossingNumeric_progress_iff_budgetDrop_or_anchorDrop`により、新crossingが現行rankを下げるのは
+history budgetまたはpre-crossing anchorが下がる場合に限る。どちらも下がらない枝を
+`CrossingContinuationGrowthResidual`として固定し、target 19、horizon 31、anchor 13→14の
+実軌道で実在することをLeanで検証した。したがってcrossing-to-crossingの現行rank下降は
+無条件には成り立たない。
+
+ただしこのgrowth残余のchild horizonは必ずat-or-above targetであり、その後のdowncrossは
+中間のanchor growthを迂回して元の親へ直接strict budget edgeを作る。
+`no_futureDowncross_iff_tail_atOrAbove`は、future downcrossが一つもないことがpermanent
+above-target tailと同値だと示す。`TargetTailReturnHypothesis`はこのpermanent tailの排除を厳密に表し、
+`refinedStep_of_targetTailReturn`はそれがready crossingの全局所分岐を閉じることを証明する。
+よって残る数学的核心は、局所crossing構成ではなくabove-target tailの長期再帰である。
+
+この長期命題の強さも形式化した。仮想的な最小未出目標では、それ未満の値は個々に出現し、
+有限個しかないので一つのhistory horizonまでにすべて既出となる。その後のdowncross endpointは
+legal subtractionによりfreshでなければならず、既出性と矛盾する。
+`LeastMissingTarget.eventually_strictlyAbove`はこれを用いて、最小未出目標があれば軌道がある時刻以降
+常にその目標より大きいことを証明する。`all_targetTailReturn_iff_surjective`により、全targetに対する
+tail returnは元のRecamán全射性予想と同値である。したがってこの境界を無条件に証明すること自体が本問題である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -334,6 +355,11 @@ crossing-to-crossingの追加下降を構成する必要がある。
 | refined oracle境界 | `crossingRefinedStepHypothesis_implies_occurs` | `RefinedOracleBoundary.lean` |
 | crossing rank境界 | `crossing_refinedChild_budgetDrop_or_crossing` | `CrossingRefinedBoundary.lean` |
 | future downcross閉包 | `ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross` | `CrossingDowncrossRefined.lean` |
+| horizon-below完全分類 | `ReadyCrossingSearchInvariant.refinedStep_or_continuationGrowth_of_horizonBelow` | `CrossingBelowRefined.lean` |
+| crossing growth実例 | `crossingContinuationGrowth_actual_example` | `CrossingBelowRefined.lean` |
+| no-downcross/above-tail同値 | `no_futureDowncross_iff_tail_atOrAbove` | `CrossingTailRefined.lean` |
+| tail-return仮説下のready totality | `ReadyCrossingSearchInvariant.refinedStep_of_tailDowncross` | `CrossingTailRefined.lean` |
+| tail return/全射性同値 | `all_targetTailReturn_iff_surjective` | `CrossingTailRefined.lean` |
 
 ## 8. 結論
 
@@ -345,6 +371,9 @@ normalはrefined局所totalityまで完成した。研究上の残余はcrossing
 crossing内部下降を構成することへ限定された。
 保存horizon以後のdowncross枝は解消済みであり、残るのはhorizon時点ですでにbelow-targetである場合と、
 将来downcrossが得られない場合のcrossing内部解析である。
+その後のhorizon-below分類により、前者は次のcrossingと実在するgrowth残余へ縮約され、
+残余は必ずabove-sideへ戻ることが分かった。よってready crossingで未解決な数学的核心は、
+permanent above-target tailを排除する長期再帰命題である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

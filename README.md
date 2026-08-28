@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース84モジュール
+- Leanソース86モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -46,6 +46,8 @@ Lean 4形式化プロジェクトです。
 - refined restricted oracleの残余をcrossing recovery自身の局所stepひとつへ縮約済み
 - crossingから非crossing childへのrank下降にはhistory budgetの厳密下降が必須と証明済み
 - ready crossingの保存horizon以後のdowncrossをstrict budget下降でrefined childへ閉包済み
+- horizon時点がbelowのready crossingを、進捗または厳密のjoint-growth残余へ完全分類済み
+- no-future-downcrossがabove-target tailの永続と同値で、tail return仮説がready crossing局所stepを閉じると証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -55,6 +57,11 @@ post-addition値のfirst occurrence、旧anchorとの比較、horizon readiness�
 さらにcrossing nodeのanchorはtarget未満なので、同じhistory budgetのままtarget以上の
 normal／debtへ退出することはrank上不可能です。
 一方、保存horizon以後にdowncrossが起きる枝はfreshなbelow-target着地点を持つため閉じました。
+horizonが既にbelowな枝も次のcrossingまで完全分類し、現行rankが下がらない実例
+`target=19, horizon=31, anchor 13→14`をLeanで検証しました。この残余は必ずabove-sideへ戻るため、
+無条件の核心は「目標が未出ならabove-target tailが将来belowへ戻る」という長期再帰命題です。
+さらに、仮想的な最小未出目標は逆にeventually-strictly-above tailを強制します。
+`all_targetTailReturn_iff_surjective`により、全targetのtail returnは元の全射性予想と同値です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -67,8 +74,8 @@ flowchart TD
     F --> G["位相付き探索ランク"]
     G --> H["canonical局所オラクル：証明済み"]
     H --> I["refined非crossing domain：証明済み"]
-    I --> J["crossing局所step：未証明"]
-    J --> K["refined oracle：未証明"]
+    I --> J["ready crossing局所step：tail returnまで縮約"]
+    J --> K["tail return／refined oracle：未証明"]
     K --> L["全射性：未証明"]
 ```
 

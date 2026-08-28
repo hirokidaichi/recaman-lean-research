@@ -29,6 +29,9 @@
 - refined restricted oracleの残余をcrossing-local stepひとつへ縮約
 - crossingから非crossing refined childへの進捗がstrict budget dropを要求するrank境界を証明
 - ready crossingの保存horizon以後のfuture downcrossをbudget下降でrefined childへ閉包
+- horizon-below ready crossingを次のcrossing進捗またはstable-budget/anchor-growth残余へ完全分類
+- target 19の実軌道上にcrossing continuation growth残余が実在することをLeanで検証
+- no-future-downcrossをpermanent above-target tailと同値化し、tail-return仮説からready crossing局所totalityを証明
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。

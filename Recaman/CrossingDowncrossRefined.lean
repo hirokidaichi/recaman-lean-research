@@ -52,16 +52,18 @@ theorem FutureDowncrossStep.strict_budget_drop
     (Nat.le_trans h.horizon_le_time (by omega)) hfreshAtHorizon
     (current_mem_valuesThrough (time + 1))
 
-/-- Once a ready crossing has a future downcross after its stored horizon,
-it either hits the target at the downcross source or exits to an
-extended-history normal child through the forced budget decrease. -/
-theorem ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross
+/-- Strong form of the future-downcross exit which retains the strict budget
+drop in its result.  This extra field lets a caller bypass an intermediate
+crossing node whose anchor did not itself decrease. -/
+theorem ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross_withBudgetDrop
     {target : Nat} {node : PhaseSearchNode} {time : Nat}
     (h : ReadyCrossingSearchInvariant target node)
     (hdown : FutureDowncrossStep target node.horizon time) :
     (∃ witness, a witness = target) ∨
       ∃ child, OrbitReadyRefinedInvariant target child ∧
-        PhaseSearchProgress target child node := by
+        PhaseSearchProgress target child node ∧
+        missingBelowCount target child.horizon <
+          missingBelowCount target node.horizon := by
   by_cases hequal : a time = target
   · exact Or.inl ⟨time, hequal⟩
   rcases h.crossing with
@@ -89,6 +91,22 @@ theorem ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross
     }⟩
   have hprogress : PhaseSearchProgress target child node := by
     exact Prod.Lex.left _ _ hdown.strict_budget_drop
-  exact Or.inr ⟨child, Or.inr (Or.inl hextended), hprogress⟩
+  exact Or.inr ⟨child, Or.inr (Or.inl hextended), hprogress,
+    hdown.strict_budget_drop⟩
+
+/-- Once a ready crossing has a future downcross after its stored horizon,
+it either hits the target at the downcross source or exits to an
+extended-history normal child through the forced budget decrease. -/
+theorem ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross
+    {target : Nat} {node : PhaseSearchNode} {time : Nat}
+    (h : ReadyCrossingSearchInvariant target node)
+    (hdown : FutureDowncrossStep target node.horizon time) :
+    (∃ witness, a witness = target) ∨
+      ∃ child, OrbitReadyRefinedInvariant target child ∧
+        PhaseSearchProgress target child node := by
+  rcases h.refinedStep_of_futureDowncross_withBudgetDrop hdown with
+    hoccurs | ⟨child, hchild, hprogress, _⟩
+  · exact Or.inl hoccurs
+  · exact Or.inr ⟨child, hchild, hprogress⟩
 
 end Recaman

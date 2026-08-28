@@ -79,5 +79,7 @@ import Recaman.ExtendedHistoryDirectRefined
 import Recaman.RefinedOracleBoundary
 import Recaman.CrossingRefinedBoundary
 import Recaman.CrossingDowncrossRefined
+import Recaman.CrossingBelowRefined
+import Recaman.CrossingTailRefined
 import Recaman.Examples
 import Recaman.Oracle

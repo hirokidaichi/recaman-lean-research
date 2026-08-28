@@ -760,3 +760,40 @@ representativeとし、downcross endpoint時刻を新horizonにしたextended-hi
 残る領域は、保存horizon時点ですでにbelow-targetである場合と、保存horizon以後にdowncrossが存在しない
 場合である。前者では次のupcrossingを構成できるが、旧pre-crossing anchorより下がるとは限らない。
 後者はabove-target側の長期挙動を追加解析する必要がある。
+
+### 第十四ラウンド：horizon-below crossingの完全分類
+
+`crossingNumeric_progress_iff_budgetDrop_or_anchorDrop`を追加し、crossing数値ノード間の四成分rankを
+完全に逆解析した。phaseとlocal measureはnormal crossingではanchorによって既に固定されるため、
+進捗条件はstrict history-budget dropまたはstrict anchor dropの二つだけである。
+
+horizonの実軌道値がbelow-targetなready crossingでは、clock readinessから次のweak upcrossingが必ず存在する。
+`refinedStep_or_continuationGrowth_of_horizonBelow`は、目標出現、refined crossing進捗、または
+`CrossingContinuationGrowthResidual`の三分類を証明する。残余はbudget stable、anchor nondecreasing、
+かつ`PhaseSearchProgress`の否定をすべて保持する。
+
+この残余はtarget 19の実軌道上に実在する。time 6の13→20 crossingに対しhorizon 31を保存すると
+`a 31 = 14 < 19`であり、次の14→46 crossingはbudgetを下げずanchorを13→14へ増やす。
+`crossingContinuationGrowth_actual_example`がこれを計算実験ではなくLeanカーネル上の定理として検証する。
+
+### 第十五ラウンド：above-target tailへの縮約
+
+growth残余のchild horizonがbelow-targetなら、直前のabove endpointからのdowncross endpointがfreshな
+below-target値となりbudget stableに矛盾する。これにより残余childは必ずat-or-above targetに戻る。
+その後のdowncrossはchild budgetをstrictに下げ、childと元parentのbudgetは同じなので、中間の
+anchor growthを迂回した直接rank edgeを元parentへ作れる。
+
+`exists_futureDowncrossStep_between`はabove開始点と後のbelow点の間に隣接downcrossが存在すること、
+`no_futureDowncross_iff_tail_atOrAbove`はdowncross不在が以後のpermanent above-target tailと同値であることを
+証明する。`TargetTailReturnHypothesis`をこの長期再帰境界として切り出し、
+`ReadyCrossingSearchInvariant.refinedStep_of_targetTailReturn`で、これがready crossingの全局所分岐を閉じることを証明した。
+
+したがって次の無条件証明対象は、crossing直後の局所力学ではなく、目標未出のまま軌道が
+ある有限開始点以降ずっとtarget以上に留まる可能性を排除する長期命題である。
+
+この命題が元の予想とどの程度独立かも監査した。`LeastMissingTarget`を導入し、それ未満の
+個々の出現時刻を有限の一つのhistory horizonに集約できることを証明した。このhorizon以後の
+below-target endpointは既出である一方、downcrossならlegal subtractionにfreshでなければならず矛盾する。
+`LeastMissingTarget.eventually_strictlyAbove`は、最小未出目標があれば軌道が最終的に常にそれより大きくなることを示す。
+さらに`all_targetTailReturn_iff_surjective`で、全targetのtail returnはRecamán全射性予想そのもと同値と証明した。
+よってtail returnを新しい局所仮定として採用しても未解決性は減らない。
