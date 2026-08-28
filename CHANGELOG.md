@@ -23,7 +23,9 @@
 - 非進捗をanchor growth／chronology mismatch／literal stationaryの三kernel residualへ完全分類
 - canonical return rebaseがtail／horizon／minimumを保存することを証明
 - 任意のrebaseがliteral stationary coreとcycle exit不能を生むno-goを証明
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`と公理監査を追加
+- canonical downcross endpointからfirst returnまでのbelow corridorを証明
+- 即時corridorのexact valley equationと、全内部stepのbudget drop／target-bounded clock分類を証明
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

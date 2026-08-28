@@ -373,6 +373,12 @@ historical downcross後の最初のupcrossingを、旧zero-budget horizonの新�
 ready crossing、permanent tail、tail minimumは保存できる。しかし同じdowncross endpointから再びcanonical returnを
 選ぶと親自身へ戻るため、三kernel residualをliteral stationary coreへ正規化するだけで進捗にはならない。
 
+### canonical below corridor / canonical下側回廊 — 研究固有
+
+fresh historical downcross endpointから、その後最初のweak upcrossingの直前までの有限軌道区間である。
+canonicalityにより全値がtarget未満になる。内部の合法減算はfresh below値とhistory-budget下降を作り、
+forced additionはそのstep clockがtarget未満であることを強制する。即時returnはexact valleyになる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

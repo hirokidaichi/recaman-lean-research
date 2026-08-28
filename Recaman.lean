@@ -88,5 +88,6 @@ import Recaman.PermanentAboveCanonical
 import Recaman.PermanentAboveCycleRank
 import Recaman.PermanentAboveCycleExit
 import Recaman.PermanentAboveCycleRebase
+import Recaman.PermanentAboveCorridor
 import Recaman.Examples
 import Recaman.Oracle

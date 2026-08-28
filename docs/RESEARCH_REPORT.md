@@ -367,6 +367,13 @@ anchor・時刻とも同一のliteral stationaryの三ケースに限られる�
 literal stationary kernelとcycle exit不成立が、任意の元discharge certificateから無条件に得られる。
 これはgrowth／chronology残余をcanonical rebaseで処理する案が、stationary coreへ正規化するだけというno-goである。
 
+`PermanentAboveCorridor`はこのstationary coreの内部に進んだ。first weak upcrossingの最小性により、freshな
+downcross endpointからreturn predecessorまでの全軌道値はtarget未満である。returnがendpoint直後なら、
+downcrossは合法減算、returnはforced additionなので`a (d+2) = a d + 1`が成立する。遅延する場合、最初だけでなく
+任意の内部transitionについて、合法減算なら次値がfirst occurrenceで`missingBelowCount`が厳密下降し、
+forced additionならbelow状態を保つためstep clockがtarget未満になる。従ってstationary corridorの内部は、
+既存history budgetによるstrict stepと、固定targetに依存する有限clock領域へ分離された。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -439,6 +446,9 @@ literal stationary kernelとcycle exit不成立が、任意の元discharge certi
 | 三kernel residual分類 | `PermanentTailDischargeReturnCertificate.cycleExit_or_kernelResidual` | `PermanentAboveCycleExit.lean` |
 | canonical return rebase | `PermanentTailDischargeReturnCertificate.exists_canonicalReturnRebase` | `PermanentAboveCycleRebase.lean` |
 | rebased stationary no-go | `PermanentTailDischargeReturnCertificate.exists_rebase_with_noCycleExit` | `PermanentAboveCycleRebase.lean` |
+| canonical corridor below性 | `FirstWeakUpcrossingStep.value_below_of_between` | `PermanentAboveCorridor.lean` |
+| corridor first-step分類 | `CanonicalBelowCorridorCertificate.firstStepOutcome` | `PermanentAboveCorridor.lean` |
+| corridor内部strict代替 | `CanonicalBelowCorridorCertificate.internalStep_budgetDrop_or_clockBound` | `PermanentAboveCorridor.lean` |
 
 ## 8. 結論
 
@@ -466,6 +476,8 @@ equal-anchorかつearlier-timeのreturnもstrict exitへ変わる。残る義務
 すなわちanchor growth、chronology mismatch、literal stationaryの排除またはさらなる縮約である。
 canonical rebaseは前二者をliteral stationaryへ正規化できるが、その再生edgeはcycle rank上進捗しない。
 従って次の本質は、同じendpoint／crossing対を再利用しない履歴選択またはvisited量の構成である。
+stationary内部ではlegal subtractionがすべてbudgetを下げ、forced additionの時刻はtarget未満に有限化された。
+次のrank候補は、この有限clockをvisited cursorとしてbudgetの内側またはcycle phaseに統合することである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

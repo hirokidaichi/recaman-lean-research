@@ -897,3 +897,15 @@ permanent tailとminimumを持つcombined certificate、同じhistorical downcro
 五成分cycle exitの否定を返す。従ってgrowth／chronology mismatchをcanonical rebaseで正規化しても、同じ
 endpointを再生する限り必ずstationary coreへ入る。次はparentの数値だけでなく、使用済みendpointまたは
 別のhistorical minimumをproof dataとして保持しなければならない。
+
+### 第二十一ラウンド：stationary canonical below corridor
+
+stationary rebaseのfresh downcross endpointから最初のweak upcrossing predecessorまでを
+`CanonicalBelowCorridorCertificate`として切り出した。開始点がbelowであり、途中でtarget以上になればより早い
+weak upcrossingが存在してcanonicalityに反する。従って閉区間上の全軌道値はtarget未満である。
+
+gap 0ではdowncrossの合法減算と直後のforced additionを展開し、`a (d+2) = a d + 1`というexact valleyを得た。
+gap正では最初の内部transitionを二分した。合法減算なら次値はfirst occurrenceで、below-targetなので
+`missingBelowCount`を厳密に下げる。forced additionなら次値もbelowであるため、加えるclock自体が
+`d+2 < target`を満たす。この二分法を任意の内部transitionへ一般化し、legalならbudget drop、forcedなら
+`time+1 < target`を証明した。budget不変なall-addition部分は固定target未満の有限clock領域に閉じ込められる。

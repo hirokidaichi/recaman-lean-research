@@ -202,14 +202,17 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 5. ~~旧crossingがendpoint以後なら、同anchor非進捗はliteral same timeに限ることを証明する。~~
 6. ~~canonical returnを同じzero-budget horizonの親へrebaseし、tail/minimumを保存する。~~
 7. ~~任意のrebaseがliteral stationary kernelを生み、cycle exit不能であるno-goを証明する。~~
+8. ~~stationary endpointからfirst return predecessorまで全状態がbelow-targetであることを証明する。~~
+9. ~~即時returnをexact valley equation、遅延returnをbudget drop／clock boundへ分類する。~~
+10. ~~任意のcorridor内部stepに同じbudget drop／target-bounded clock分類を証明する。~~
 
 次の調査順序は次である。
 
-1. literal stationaryで同じendpoint／crossing対の再訪を禁止する有限visited量を設計する。
-2. 同じendpointを除外した次のhistorical minimum／downcrossが存在するか分類する。
-3. 代替がなければ、stationary coreが強制する算術・履歴の固定点条件をtyped residualにする。
-4. fixed-point条件からanchor growth矛盾または新しいfresh endpointを抽出する。
-5. cursor-refined cycle rankをrefined oracleのzero-budget crossing constructorへtypedに統合する。
+1. target未満に境界づけられたforced clockを有限visited量として設計する。
+2. corridor内の最初のlegal subtractionをcanonicalに選び、budget下降へ直接接続する。
+3. legal subtractionがないall-addition corridorの値公式と長さ上界を証明する。
+4. 即時valleyの再訪が強制するfirst-occurrenceまたはanchor算術をtyped residualにする。
+5. corridor rankをcursor-refined cycleとrefined oracleへ統合する。
 
 ### 完了条件
 
