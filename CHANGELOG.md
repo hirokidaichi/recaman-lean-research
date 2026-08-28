@@ -27,6 +27,7 @@
 - ready debt obstructionとcrossing frontier middle residualをrefined domainへ閉包
 - extended-history normalのdirect refined totalityを証明
 - refined restricted oracleの残余をcrossing-local stepひとつへ縮約
+- crossingから非crossing refined childへの進捗がstrict budget dropを要求するrank境界を証明
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。

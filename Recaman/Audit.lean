@@ -290,3 +290,6 @@ import Recaman
 #print axioms Recaman.ExtendedHistoryNormalInvariant.refinedStep
 #print axioms Recaman.OrbitReadyRefinedInvariant.refinedStep_or_crossing
 #print axioms Recaman.crossingRefinedStepHypothesis_implies_occurs
+#print axioms Recaman.crossing_to_nonCrossing_progress_forces_budgetDrop
+#print axioms Recaman.crossing_refinedChild_budgetDrop_or_crossing
+#print axioms Recaman.crossing_sameHorizon_refinedChild_is_crossing

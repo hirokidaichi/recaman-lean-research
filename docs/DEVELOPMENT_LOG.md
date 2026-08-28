@@ -727,3 +727,19 @@ representativeはdirect orbit-ready stepを輸送し、early／budget-gapはcros
 `crossingRefinedStepHypothesis_implies_occurs`は、この単一typed obligationからcanonical startの目標出現を
 導く。現行crossing certificateはstrict crossingへの入口を保持する一方、元strong debtのpost-state
 `FirstAt`、post値と旧anchorの比較、horizon readinessを保持しない。このproof-data消失が次の研究対象である。
+
+### 第十二ラウンドのcrossing rank境界
+
+refined経路で実際にcrossingを生成する中心はready debt forced additionとextended-historyからのfuture
+upcrossingである。source provenanceの不足に加え、crossing nodeそのもののrank形を監査した。
+
+crossing nodeのnumeric anchorはstrict crossing直前の値なのでtarget未満である。一方、orbit-ready
+currentとextended-historyのanchorはtarget以上であり、ready debtのanchorはtarget以上のdebt値より
+さらに大きい。したがってcrossingから非crossing refined childへ進むとき、anchor／phase／localの
+成分ではrankを下げられない。`crossing_to_nonCrossing_progress_forces_budgetDrop`は、そのようなedgeが
+必ず`missingBelowCount`のstrict dropを伴うことを証明する。
+
+この結果、任意のrefined successorは「strict budget drop」または「再びcrossing」の二択になる。
+同じhistory horizonなら前者は不可能なのでsuccessorはcrossingに限られる。次の局所totalityには、
+source certificateの補強だけでなく、新しいbelow-target occurrenceを生むこと、またはcrossing間で
+下降する有限量を見つけることが必要である。

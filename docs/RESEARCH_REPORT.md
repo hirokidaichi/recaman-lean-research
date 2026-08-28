@@ -244,7 +244,9 @@ typed childへ入る。extended-history側ではbelow-target occurrenceからfut
 constructor完全監査の結果、refined restricted oracleに残る証明義務は
 `CrossingRefinedStepHypothesis`ひとつになった。現行`CrossingSearchInvariant`は入口crossingを保持するが、
 元のstrong debtのpost-state first occurrence、post値と旧anchorの比較、horizon readinessを保持しない。
-これが次の型設計上の境界である。
+これが次の型設計上の境界である。さらにcrossing nodeのanchorはtarget未満、非crossing refined
+nodeのanchorはtarget以上なので、両者のrank edgeはstrict history-budget dropを必ず伴う。
+同じhorizonのsuccessorはcrossingに限られることも形式化した。
 
 ## 4. 大域証明骨格
 
@@ -281,6 +283,8 @@ refined child domainは次を含む。
 domain所属とconstructor監査を統合し、`CrossingSearchInvariant`の局所stepだけを仮定すれば目標出現が
 従うことを証明する。次に必要なのは、crossing生成時に消えているstrong debt provenanceとready
 horizonを保持するconstructorを導入し、その局所stepを既存crossing frontier解析へ接続することである。
+ただしprovenance追加だけでは不十分であり、新しいbelow-target履歴によるbudget下降、または
+crossing-to-crossingの追加下降を構成する必要がある。
 
 よって、全射性を証明済みとは主張しない。
 
@@ -326,6 +330,7 @@ horizonを保持するconstructorを導入し、その局所stepを既存crossin
 | crossing frontier middle閉包 | `ReadyDebtInvariant.crossingFrontierFirstAt_refinedStep` | `CrossingFrontierRefined.lean` |
 | historical direct refined totality | `ExtendedHistoryNormalInvariant.refinedStep` | `ExtendedHistoryDirectRefined.lean` |
 | refined oracle境界 | `crossingRefinedStepHypothesis_implies_occurs` | `RefinedOracleBoundary.lean` |
+| crossing rank境界 | `crossing_refinedChild_budgetDrop_or_crossing` | `CrossingRefinedBoundary.lean` |
 
 ## 8. 結論
 
@@ -333,7 +338,8 @@ horizonを保持するconstructorを導入し、その局所stepを既存crossin
 非負アンダーシュートの無限滞留、対角状態の後方履歴、crossing、canonical開始点の
 全局所分岐は既存の意味的ランクへ接続され、current normal、ready debt、horizon-ready historical
 normalはrefined局所totalityまで完成した。研究上の残余はcrossing recovery constructor自身に集中し、
-その入口で失われたpost-state debt provenanceとhorizon readinessを保持することへ限定された。
+その入口で失われたpost-state debt provenanceとhorizon readiness、およびstrict budget下降か
+crossing内部下降を構成することへ限定された。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース82モジュール
+- Leanソース83モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -44,12 +44,15 @@ Lean 4形式化プロジェクトです。
 - crossing frontierの二時計middle residualをhorizon-ready extended-historyへ閉包済み
 - extended-history normalをbroad semantic interfaceを経ずrefined domain内で完全閉包済み
 - refined restricted oracleの残余をcrossing recovery自身の局所stepひとつへ縮約済み
+- crossingから非crossing childへのrank下降にはhistory budgetの厳密下降が必須と証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
 refined domainを保存する局所stepを持ちます。現在の核心は`CrossingSearchInvariant`自身の
 局所stepです。この証明書はcrossingへの入口を保持しますが、元のstrong debtが持っていた
 post-addition値のfirst occurrence、旧anchorとの比較、horizon readinessを保持していません。
+さらにcrossing nodeのanchorはtarget未満なので、同じhistory budgetのままtarget以上の
+normal／debtへ退出することはrank上不可能です。
 全射性そのものは未証明です。
 
 ```mermaid

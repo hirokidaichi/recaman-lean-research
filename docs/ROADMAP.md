@@ -121,8 +121,10 @@ crossing frontierもclock provenanceを保ったrefined resultへ接続済みで
 9. ~~orbit-ready局所定理の各生成分岐から、clock情報を失わないrefined childを直接返す。~~
 10. ~~ready debt obstructionとcrossing frontierをrefined domain保存stepへ統合する。~~
 11. crossing recoveryにhorizon readinessと元debtのpost-state provenanceを保持させる。
-12. `CrossingSearchInvariant`自身のrefined局所stepを証明する。
-13. 精密domain上のrestricted oracleを無条件に構成する。
+12. crossingから新しいbelow-target値を抽出してhistory budget下降へ接続する。
+13. budget不変ならcrossing-to-crossingの追加下降量があるか、現行rankで不可能かを監査する。
+14. `CrossingSearchInvariant`自身のrefined局所stepを証明する。
+15. 精密domain上のrestricted oracleを無条件に構成する。
 
 step 6では、strict budget dropが新しいbelow-target実出現を与えることを逆向きに証明し、
 そこからfuture upcrossingとcrossing recoveryを構成した。step 7のlegal downcrossと
@@ -133,7 +135,9 @@ crossing recoveryからなる。最初の三constructorは残余なしのrefined
 restricted oracleを得るための残余は`CrossingSearchInvariant`自身だけになった。
 現行crossing証明書は入口のstrict crossingを保持する一方、元のstrong debtが持っていた
 post-addition値のfirst occurrence、post値と旧anchorの比較、horizon readinessを保持しない。
-次はこの生成時provenanceを保持したcrossing domainへ精密化する。
+またcrossing nodeのanchorはtarget未満で、非crossing refined nodeのanchorはtarget以上なので、
+非crossing successorへの進捗はhistory budgetの厳密下降を必ず伴う。同じhorizonならsuccessorは
+crossingに留まるしかない。次は生成時provenanceの保持に加え、このbudget／crossing下降を構成する。
 
 ### 完了条件
 
