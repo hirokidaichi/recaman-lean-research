@@ -114,10 +114,21 @@ canonical開始点については全符号と低levelを分類し、次のいず
 3. ~~parent-drop／coverage anchor／downcross restart／debt exit／crossing frontierのtyped constructorを実装する。~~
 4. ~~history horizonとrepresentative orbit timeを分離し、直接輸送可能な条件と正確な残余を証明する。~~
 5. ~~current親のCoverageStepをfuture current／earlier debtへ分解し、historical normalを回避する。~~
-6. budget-gap residualをdowncross／debt／crossing固有の次stepへ変換する。
-7. representative-time readinessを生成元から復元するか、early representative専用機構で閉じる。
-8. 各constructorが目標出現またはdomain保存rank下降を返すことを証明する。
-9. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
+6. ~~budget-gap residualをdowncross／debt／crossing固有の次stepへ変換する。~~
+7. ~~representative-time readinessを生成元から復元するか、early representative専用機構で閉じる。~~
+8. ~~horizon-ready extended-history constructorのtotal semantic stepを証明する。~~
+9. orbit-ready局所定理の各生成分岐から、clock情報を失わないrefined childを直接返す。
+10. ready debt obstructionとcrossing frontierをrefined domain保存stepへ統合する。
+11. 精密domain上の`SemanticPhaseSearchOracle`を構成する。
+
+step 6では、strict budget dropが新しいbelow-target実出現を与えることを逆向きに証明し、
+そこからfuture upcrossingとcrossing recoveryを構成した。step 7のlegal downcrossと
+forced below-candidateも同じ回復機構で閉じた。新しいphaseやrank成分は不要だった。
+
+現在のrefined child domainはorbit-ready current、horizon-ready debt、extended-history normal、
+crossing recoveryからなる。既存black-box semantic stepを事後精密化したときだけ、normal/debt
+childの`target≤horizon+1`が失われる。これは反例付きのAPI情報不足であり、次は局所分岐から
+refined resultを直接組み立てる。
 
 ### 完了条件
 

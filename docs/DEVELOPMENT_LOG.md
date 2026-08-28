@@ -488,6 +488,17 @@ ordinary normal証明書が現在horizonの値・座標・時刻条件を保持�
 - `Recaman/TypedNormalProvenance.lean` — historical normalの5種類のtyped生成元
 - `Recaman/OrbitReadyAdapters.lean` — current normal生成枝のrefined adapter
 - `Recaman/CoverageDebtBridge.lean` — Coverage blockerのfuture current／earlier debt分解
+- `Recaman/DowncrossBudgetGap.lean` — downcross endpointからのcrossing recovery閉包
+- `Recaman/EarlyRepresentative.lean` — early representativeの次遷移分類
+- `Recaman/EarlyRepresentativeClosure.lean` — legal downcross残余の閉包
+- `Recaman/EarlyForcedCandidateClosure.lean` — forced below-candidate残余の閉包
+- `Recaman/EarlyRepresentativeComplete.lean` — early representative全域step
+- `Recaman/ExtendedHistoryBudgetClosure.lean` — strict budget gapからの新規below-target抽出と閉包
+- `Recaman/ExtendedHistoryComplete.lean` — extended-history normal全域step
+- `Recaman/HistoricalDebtBridge.lean` — parent-drop／debt／crossingのcurrent/debt精密化
+- `Recaman/ReadyDebtInvariant.lean` — horizon-ready strong debt
+- `Recaman/ReadyCurrentDebt.lean` — ready current/debt domain保存step
+- `Recaman/OrbitReadyRefinedStep.lean` — refined semantic childとclock残余
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -662,3 +673,35 @@ orbit-ready adapterを追加し、既存APIで失われていた条件が`target
 初出ならorbit-ready current child、親より前なら同じhorizon／anchorのstrong debt childとなる。
 `coverageStep_currentOrDebt`によりこの分解を完全に証明した。残る中心はdowncross restartが必ず持つ
 budget-gap residualと、debt／crossing sourceで不足し得るhorizon readinessである。
+
+### 第十ラウンドのextended-history完全閉包とrefined clock監査
+
+downcross budget gapは、below-target endpointから将来のweak upcrossingを取り、その直前値を
+anchorにしたcrossing recoveryへ接続した。直前値はtarget未満、旧representative値はtarget以上なので、
+既存四成分rankのanchorが厳密に下がる。新しいphaseやrank成分は不要だった。
+
+early representativeを次遷移で分類すると、合法減算downcrossと、強制加算を起こした既出の
+below-target candidateの二残余だけになる。前者は直後のbelow-target値、後者はcandidateの過去の
+実出現から、それぞれrepresentative値までのupcrossingを構成できる。recovery horizonを
+`max oldHorizon (crossingTime+2)`とすることで履歴予算を悪化させず、両残余を閉じた。
+
+さらにstrict history-budget dropの定義を逆向きに解析し、representative historyでは未出だが
+later horizonまでに出現した`g<target`を抽出した。この一般補題により、downcross provenance固有の
+endpointがなくてもgeneric budget gapを同じcrossing recoveryへ送れる。結果として
+`ExtendedHistoryNormalCertificate.phaseSemanticStep`はhorizon-readyな任意のextended-history normalを
+残余なしで閉じる。
+
+historical normalの回避も進めた。current parent-dropはfirst occurrenceを比較し、futureなら
+orbit-ready current、earlierならstrong debtへ送れる。debtの通常局所解析ではhistorical self-exitを
+earlier debt継続に置き換えた。crossing frontierだけはdebt timeとhistory horizonの間の二時計区間を
+明示的に残すが、この中間残余は実軌道target 5にも存在する。
+
+debt側には`ReadyDebtInvariant`を導入し、`target≤horizon+1`をproof dataとして保持した。Coverageの
+current親からは親のtime readinessをdebt childへ伝搬できる一方、既存child certificate単独では
+この条件が従わない反例も形式化した。ready current/debt、extended-history normal、crossing recoveryを
+統合するrefined child domainを作り、broad semantic childを精密化した結果、残る情報不足は
+normal/debt childのhorizon readinessだけになった。
+
+次のクリティカルパスは、black-box semantic resultを事後精密化するのではなく、orbit-ready局所定理の
+各生成分岐からrefined resultを直接返すことである。その後、ready debt obstructionとcrossing frontierを
+統合し、restricted well-founded oracleへ接続する。

@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース66モジュール
+- Leanソース77モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -36,11 +36,16 @@ Lean 4形式化プロジェクトです。
 - current normalを生成する8系統のOrbitReady adapterを構成済み
 - current parentのCoverageStepをhistorical normalではなくcurrent／debtへ完全分解済み
 - historical normalを5種類のtyped provenanceへ分け、extended-history残余へ接続済み
+- downcross／early representative／generic history-budget gapをcrossing recoveryへ接続済み
+- horizon-ready extended-history normalの局所stepを残余なしで証明済み
+- parent-dropと通常debt evolutionからhistorical self-exitを除去済み
+- ready current／debt／extended-history／crossingからなるrefined child domainを構成済み
 
-現在の核心は、historical nodeでrepresentative timeからhistory horizonまでに履歴予算が
-既に下がった場合の再始動です。この場合、representative stateからの局所rank下降をそのまま
-輸送すると向きが逆になります。current-state normalの局所totalityと、typed provenanceによる
-境界分類までは証明済みです。
+extended-history normalの二残余は解消済みです。early representativeは直後または過去の
+below-target値から、history-budget gapは新しく出現したbelow-target値から、それぞれ将来の
+upcrossingを取り出し、既存四成分rankのanchorを下げるcrossing recoveryへ移します。
+現在の核心は、既存のblack-box semantic stepが消しているchild horizonのtime-readinessを、
+各生成分岐からrefined resultへ直接伝搬することです。全射性そのものは未証明です。
 
 ```mermaid
 flowchart TD

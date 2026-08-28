@@ -268,6 +268,20 @@ historical normal nodeで分離する二つの時刻である。`representative 
 代表時刻からhorizonまでに履歴予算が下がると、representative stateからのrank下降を単純には
 輸送できないため、この差は単なる実装詳細ではない。
 
+### crossing recovery / crossing回復 — 研究固有
+
+target未満の値から強制加算でtarget以上へ上向き横断した実遷移を保持するnormal状態である。
+pre-crossing値を新anchorにするため、旧anchorがtarget以上ならanchorを厳密に下げられる。
+extended-historyのearly representativeとhistory-budget gapはいずれも、below-target実出現から
+将来のcrossing recoveryを構成することで閉じる。
+
+### horizon-ready debt / 時刻準備済み負債 — 研究固有
+
+strong `DebtInvariant`に`target ≤ node.horizon+1`を追加した状態で、Leanでは
+`ReadyDebtInvariant`として表す。通常のdebt継続はhorizonを固定するためこの条件を保存する。
+一方、旧`CoverageDebtChildCertificate`は親のclock条件を保持していないので、certificate単独から
+horizon readinessは導けない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

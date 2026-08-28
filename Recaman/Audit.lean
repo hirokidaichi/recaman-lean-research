@@ -272,3 +272,15 @@ import Recaman
 #print axioms Recaman.CanonicalForcedGrowthChamber.nextState_orbitReady
 #print axioms Recaman.coverageStep_currentOrDebt
 #print axioms Recaman.CoverageCurrentDebtOutcome.toCurrentOrDebtStep
+#print axioms Recaman.exists_weakUpcrossingStep_from_below
+#print axioms Recaman.DowncrossRestartNormalProvenance.phaseSemanticStep
+#print axioms Recaman.EarlyRepresentativeCertificate.phaseSemanticStep
+#print axioms Recaman.exists_newBelow_of_missingBelowCount_strict
+#print axioms Recaman.ExtendedHistoryNormalCertificate.phaseSemanticStep
+#print axioms Recaman.TypedHistoricalNormalProvenance.phaseSemanticStep_of_horizonReady
+#print axioms Recaman.normalParentDrop_currentOrDebt
+#print axioms Recaman.crossingFrontierFirstAt_currentOrDebt_or_middle
+#print axioms Recaman.debtStep_classify_without_normalExit
+#print axioms Recaman.ReadyDebtInvariant.step_or_obstruction
+#print axioms Recaman.coverageStep_readyCurrentOrDebt
+#print axioms Recaman.OrbitReadyNormalInvariant.refinedStep_or_horizonResidual

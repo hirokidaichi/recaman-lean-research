@@ -26,8 +26,13 @@ proof-carrying constructorを特定する。
 extended-history theoremが別途必要である。
 
 その後、5種類すべてを`TypedHistoricalNormalProvenance`として実装した。current生成8系統にも
-`OrbitReadyAdapters`でadapterを用意した。既存公開定理は互換性のため旧semantic resultを返すが、
-refined APIへの移行に必要なproof dataは揃っている。
+`OrbitReadyAdapters`でadapterを用意した。さらにgeneric extended-history certificate自体について、
+horizon readinessさえあればearly representativeとbudget gapを含めてtotal semantic stepを証明した。
+
+parent-dropはfuture current／earlier debtへ完全分解でき、通常のdebt evolutionもhistorical self-exitを
+使わずearlier strong debtへ進める。refined domainではdebtにhorizon readinessを明示的に保持する。
+現在の残余は、既存公開定理が互換性のため返すbroad semantic resultからchild clock provenanceが
+消えることであり、normal/debt生成分岐の数学的未分類ではない。
 
 ## 生成箇所
 
@@ -101,8 +106,8 @@ typed provenance
 rank第一成分には拡張済みhistory budgetを使わなければならない。特にdowncross restartは
 `a historyHorizon < target`を持つため、nodeをcurrent-stateへ変換することは原理的にできない。
 
-`ExtendedHistoryNormalCertificate.phaseSemanticStep_or_residual`により、直接輸送の条件は正確に
-次の二つと判明した。
+`ExtendedHistoryNormalCertificate.phaseSemanticStep_or_residual`により、単純な直接輸送の条件は
+正確に次の二つと判明した。
 
 1. `target ≤ representativeTime+1`
 2. representative timeとhistory horizonで`missingBelowCount`が等しい
@@ -111,15 +116,28 @@ rank第一成分には拡張済みhistory budgetを使わなければならな�
 第一条件を満たしながら第二条件が失敗する実例をLean化した。budget gapがある場合、historical
 nodeはrepresentative nodeより既にrank下位なので、既存local edgeの単純輸送は不可能である。
 
-debt exitでは現行`DebtInvariant`単独から`target ≤ historyHorizon+1`が従わない。debt domainを
-強めるか、debt生成元provenanceからtime readinessを復元する必要がある。
+ただし単純輸送が不可能でも局所step自体は閉じる。early representativeの次遷移と、budget gapから
+抽出した新しいbelow-target occurrenceは、どちらもfuture upcrossingを持つ。recovery horizonを
+既存horizon以上に拡張し、below-targetのpre-crossing値を新anchorにすると、履歴予算を悪化させず
+anchorが厳密下降する。`ExtendedHistoryNormalCertificate.phaseSemanticStep`がこの全分岐を統合する。
+
+debt exitでは現行`DebtInvariant`単独から`target ≤ historyHorizon+1`が従わない。このため
+`ReadyDebtInvariant`を導入し、Coverageのcurrent親から生成するときに親のclock条件を明示的に
+伝搬する。ready debtの通常局所継続はreadinessを保存する。`CoverageDebtChildCertificate`単独では
+親clockを忘れているためreadinessが従わないことも実例で確認した。
+
+`OrbitReadyRefinedInvariant`はready current/debt、extended-history normal、crossing recoveryを統合する。
+broad `PhaseSemanticInvariant`のconstructor検査から精密化すると、normal/debt childのhorizon readiness
+だけが残余になる。次のAPIは生成分岐からこの条件を直接保持しなければならない。
 
 ## 実装順序
 
 1. ~~typed provenance constructorの共通時刻・座標データを確定する。~~
 2. ~~extended-historyの直接輸送条件と残余を証明する。~~
 3. ~~current生成8系統のorbit-ready adapterを用意する。~~
-4. budget-gapとrepresentative-not-readyを生成機構固有のstepで処理する。
-5. refined semantic domain上のrestricted oracleへ統合する。
+4. ~~budget-gapとrepresentative-not-readyをcrossing recoveryで処理する。~~
+5. ~~ready debtとrefined child domainを導入する。~~
+6. orbit-ready／debt／crossingの各局所分岐からrefined resultを直接返す。
+7. refined semantic domain上のrestricted oracleへ統合する。
 
 計算実験はこの設計判断の仮定には使用しない。

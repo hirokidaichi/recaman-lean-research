@@ -18,6 +18,11 @@
 - extended-history normalの直接輸送条件と二つの独立残余を形式化
 - historical normalの5種類のtyped provenanceとcurrent生成adapterを追加
 - current親のCoverage blockerをfuture current／earlier debtへ完全分解
+- generic extended-history normalのearly／budget-gap残余をcrossing recoveryで完全閉包
+- downcross restartのmechanism-specific total semantic stepを証明
+- parent-dropをfuture current／earlier debtへ分解し、debt self-exitを局所戦略から除去
+- horizon-ready debtとready current/debt refined domainを追加
+- orbit-ready semantic childのrefinement境界をnormal/debt horizon readinessへ限定
 - 研究レポート、証明地図、ロードマップ、再現手順を追加
 
 全射性そのものは未証明である。
