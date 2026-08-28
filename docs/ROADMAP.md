@@ -53,9 +53,11 @@ strict crossing後のポテンシャルは常に目標未満であり、負領�
 crossing直後は対角由来の`target≤time+1`が偽になるが、時刻`target-1`または`target`まで
 有限前進すればこの絶対時刻条件を必ず回復できる。相対gapだけでは絶対時刻条件を
 導けない反例も形式化した。混合ケースはCoverageStepまたはanchor下降へ接続でき、
-残るのはcatch-up値が元のdebt値とanchorの両方以上になる同時成長だけである。
-このobstructionはtarget 5の実軌道で実在し、現行rankで自然なnormal childへ戻れないことも
-必要十分に証明した。次はepoch frontier後の別機構でこの枝を下降へ変換する必要がある。
+残る局所形はcatch-up値が元のdebt値とanchorの両方以上になる同時成長である。
+このobstructionはtarget 5の実軌道で反復して実在し、catch-up時点のhorizon更新だけでは
+自然なnormal childへ戻れない。ただしfrontierからanchor下降またはbudget下降を得る枝は
+semantic childへ接続でき、残余でも元のstrong `DebtInvariant`が保持する値自身へのself-exitを
+使える。したがって`crossingGrowthObstruction_phaseSemanticStep`でこの分岐は閉包済みである。
 
 ### 完了条件
 

@@ -36,6 +36,9 @@ import Recaman.AnchorBoundary
 import Recaman.CrossingRecovery
 import Recaman.CrossingGap
 import Recaman.CrossingGrowth
+import Recaman.CrossingHorizon
+import Recaman.CrossingIteration
+import Recaman.CrossingFrontier
 import Recaman.InitialRegion
 import Recaman.PhaseSearchStart
 import Recaman.NormalPhase

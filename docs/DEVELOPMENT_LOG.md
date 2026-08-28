@@ -401,8 +401,8 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 本プロジェクトは、次をまだ主張しません。
 
-1. catch-up中に値とanchorが同時成長する実在obstructionを、epoch frontier後の下降へ変換する。
-2. 四constructorの`PhaseSemanticInvariant`を残るdebt／crossing分岐で保存し、
+1. canonical／ordinary normal nodeの符号・履歴分岐を網羅する。
+2. 四constructorの`PhaseSemanticInvariant`を全normal分岐で保存し、
    `SemanticPhaseSearchOracle`を追加仮定なしで構成する。
 3. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
 4. レカマン数列が全ての非負整数を含む。
@@ -417,9 +417,9 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 次の主対象は、今回型として抽出したsemantic obstructionの解消です。有望な順に、
 
-1. catch-up値が元のvalueとanchorの両方以上になる枝を、epoch frontier後の履歴下降へ変換する。
-2. horizonを正当に前進させる場合、履歴予算不変補題を使ってrankを再構成する。
-3. 残るdebt／crossing constructorを`SemanticPhaseSearchOracle`へ統合する。
+1. canonical startをnormalの符号分類へ接続する。
+2. ordinary normal certificateから現在horizonの座標・局所機構を選ぶ。
+3. 負normalの完全stepと既存の非負frontierを`SemanticPhaseSearchOracle`へ統合する。
 
 単純な `(時刻,値)` の「どちらかが下がる」関係は循環し得るため、そのままでは
 well-foundedではありません。次の設計上の核心は、時間下降を許す局面を対角負債の
@@ -464,6 +464,9 @@ well-foundedではありません。次の設計上の核心は、時間下降�
 - `Recaman/CrossingRecovery.lean` — strict crossingの符号・エポック接続
 - `Recaman/CrossingGap.lean` — crossing後の有限clock catch-upと全符号epoch前線
 - `Recaman/CrossingGrowth.lean` — catch-up成長枝の最強三分岐と実在obstruction
+- `Recaman/CrossingHorizon.lean` — horizon前進時のbudget／anchor rank境界
+- `Recaman/CrossingIteration.lean` — 同時成長の反復残余と実軌道例
+- `Recaman/CrossingFrontier.lean` — frontier符号分類とsemantic閉包
 - `Recaman/PhaseEpoch.lean` — 負エポックから四成分位相ランクへの接続
 - `Recaman/PhaseProgress.lean` — 四成分位相進捗の推移律
 - `Recaman/InitialRegion.lean` — 可変目標に一様なエポック適用領域への入口
@@ -583,3 +586,16 @@ rank同値枝は、目標以上から目標未満への軌道横断が目標出�
 生む一般補題によって排除した。q=1 debt例外も強いnormal不変条件と矛盾する。結果として
 `negativeNormal_phaseSemanticStep`は、負normal nodeから目標出現またはdomainを保存する
 `PhaseSearchProgress`を追加仮定なしで返す。
+
+### 第六ラウンドのcrossing閉包
+
+同時成長obstructionのepoch frontierを、即時Coverage、後続negative、後続Coverageへ分解した。
+frontierの初出値が旧anchor未満なら、実際の初出時刻までhorizonを拡張したsemantic normal childを
+構成できる。horizon前進時のdebt-to-normal rankは、budget厳密下降、またはbudget不変かつ
+anchor厳密下降と同値であることも証明した。
+
+一方、target 5ではcatch-up値7の次に値13・負potentialへ進み、budgetもanchorも下がらない。
+したがって同時成長の反復自体は実在する。それでもこの分岐の入力はstrong `DebtInvariant`を
+保持しており、frontier下降が得られない残余ではdebt値自身へのsemantic self-exitを選べる。
+`crossingGrowthObstruction_phaseSemanticStep`により、最終的に目標出現またはdomain保存rank下降へ
+無条件で接続した。

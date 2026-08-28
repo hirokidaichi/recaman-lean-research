@@ -223,3 +223,13 @@ import Recaman
 #print axioms Recaman.orbit_downcrossing_occurs_or_budgetDrop
 #print axioms Recaman.NormalEpochSharpObstruction.target_occurs
 #print axioms Recaman.negativeNormal_phaseSemanticStep
+#print axioms Recaman.exitDebt_advancingHorizon_iff_budgetDrop_or_anchorDrop
+#print axioms Recaman.diagonalCrossingCatchup_exitDebt_iff_anchorDrop
+#print axioms Recaman.exitDebt_at_laterEpoch_of_newFirstBelowTarget
+#print axioms Recaman.CrossingGrowthObstructionAt.refine_epoch_frontier
+#print axioms Recaman.crossingGrowth_negativeContinuation_actual_example
+#print axioms Recaman.crossingCatchup_potential_trichotomy
+#print axioms Recaman.crossingGrowthObstructionAt_frontier_phaseOutcome
+#print axioms Recaman.frontierFirstAt_phaseSemantic
+#print axioms Recaman.crossingGrowthObstructionAt_phaseSemanticStep
+#print axioms Recaman.crossingGrowthObstruction_phaseSemanticStep
