@@ -209,3 +209,17 @@ import Recaman
 #print axioms Recaman.debtCrossing_enters_phaseSemantic
 #print axioms Recaman.exists_phaseSemantic_start
 #print axioms Recaman.semanticPhaseSearchOracle_implies_occurs
+#print axioms Recaman.exitDebt_to_normal_iff_anchorDrop
+#print axioms Recaman.debtCoverageStep_target_or_phaseProgress
+#print axioms Recaman.debtCrossing_finite_catchup_phaseOutcome
+#print axioms Recaman.crossingGrowthObstruction_actual_example
+#print axioms Recaman.normalParentDrop_phaseSemantic
+#print axioms Recaman.normalEpochExit_phaseSemantic_or_sharp
+#print axioms Recaman.negativeNormal_phaseSemanticStep_or_residual
+#print axioms Recaman.diagonalCrossingCatchup_budget_eq_horizon
+#print axioms Recaman.normalPhase_qOneDebt_already_occurs
+#print axioms Recaman.normalParentDropEvidence_not_sufficient
+#print axioms Recaman.normalEpochExitEvidence_not_sufficient
+#print axioms Recaman.orbit_downcrossing_occurs_or_budgetDrop
+#print axioms Recaman.NormalEpochSharpObstruction.target_occurs
+#print axioms Recaman.negativeNormal_phaseSemanticStep

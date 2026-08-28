@@ -52,8 +52,10 @@ normal nodeからrankを下げながらこの意味的不変条件を構成す�
 strict crossing後のポテンシャルは常に目標未満であり、負領域またはundershootに入る。
 crossing直後は対角由来の`target≤time+1`が偽になるが、時刻`target-1`または`target`まで
 有限前進すればこの絶対時刻条件を必ず回復できる。相対gapだけでは絶対時刻条件を
-導けない反例も形式化した。したがって残る障害は時刻ではなく、catch-up中に元の
-debt値またはanchor以上へ成長する枝を下降へ変換することである。
+導けない反例も形式化した。混合ケースはCoverageStepまたはanchor下降へ接続でき、
+残るのはcatch-up値が元のdebt値とanchorの両方以上になる同時成長だけである。
+このobstructionはtarget 5の実軌道で実在し、現行rankで自然なnormal childへ戻れないことも
+必要十分に証明した。次はepoch frontier後の別機構でこの枝を下降へ変換する必要がある。
 
 ### 完了条件
 
@@ -70,9 +72,11 @@ debt値またはanchor以上へ成長する枝を下降へ変換することで�
 全分岐が目標出現または`PhaseSearchProgress`を返すことを証明した。ただしdebt childの
 意味的不変条件保存は別問題として残るため、これはrankレベルの統合完了である。
 
-`NormalPhase`ではこの意味的不変条件を明示し、各rank childを、保存されたnormal、
-保存されたdebt、または不足条件を証拠付きで示すobstructionへ完全分類した。現在の
-不足はparent-drop／forward-exitでのnormal条件と、q=1 debtでの`value<anchorParent`である。
+`NormalPhase`ではこの意味的不変条件を明示し、各rank childを分類した。その後、parent-dropは
+初出anchorを弱いsemantic normal childとして採用することで閉じた。forward-exitの見かけ上の
+rank同値枝も、目標以上から目標未満への横断が目標出現または履歴予算下降を必ず生むため
+不可能である。q=1 debt例外も元normal値の目標下界と矛盾する。したがって
+`negativeNormal_phaseSemanticStep`は負normal全分岐を追加仮定なしで閉じる。
 
 ### 完了条件
 

@@ -35,9 +35,13 @@ import Recaman.DebtBackward
 import Recaman.AnchorBoundary
 import Recaman.CrossingRecovery
 import Recaman.CrossingGap
+import Recaman.CrossingGrowth
 import Recaman.InitialRegion
 import Recaman.PhaseSearchStart
 import Recaman.NormalPhase
 import Recaman.PhaseSemantic
+import Recaman.NormalClosure
+import Recaman.BoundaryAudit
+import Recaman.NormalComplete
 import Recaman.Examples
 import Recaman.Oracle

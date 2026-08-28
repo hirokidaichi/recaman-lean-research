@@ -41,9 +41,9 @@ flowchart TD
 | 履歴探索帰納 | 証明済み | 三成分ランクと抽象オラクル | `HistoryBudget`, `HistoryFrontier` |
 | 対角後方履歴 | 証明済み | 極大減算鎖と早期blocker | `Diagonal` |
 | 位相探索 | 骨格証明済み | 四成分ランクと抽象オラクル | `PhaseSearch` |
-| 負債局所解析 | 進行中 | anchor等号境界とcrossingの時刻条件は解消、catch-up中の値／anchor増加枝が残る | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap` |
+| 負債局所解析 | 進行中 | catch-upの混合枝は解消、値とanchorの同時成長obstructionが実在 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap`, `CrossingGrowth` |
 | 負エポック位相接続 | ランク証明済み | 対角仮定なしで目標出現またはPhaseSearchProgress | `PhaseEpoch` |
-| 意味的探索domain | 骨格証明済み | canonical／normal／debt／crossing recoveryを統合、未閉包枝を明示 | `NormalPhase`, `PhaseSemantic` |
+| 意味的探索domain | 負normal閉包済み | canonical／normal／debt／crossing recoveryを統合し、負normal全分岐を無条件閉包 | `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete` |
 | 全域局所被覆 | 未証明 | 任意ノードへの機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
 
@@ -100,8 +100,8 @@ OR a new parent y' < anchorParent
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |
 | エポック | `OneBorrowFrontier`, `NegativeEpoch`, `Undershoot` |
 | 大域探索 | `Coverage`, `HistoryBudget`, `HistoryFrontier`, `Diagonal`, `PhaseSearch` |
-| 負債局所解析 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap` |
-| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic` |
+| 負債局所解析 | `DebtInvariant`, `DebtSubtraction`, `DebtAddition`, `DebtStep`, `DebtBackward`, `DebtCrossing`, `AnchorBoundary`, `CrossingRecovery`, `CrossingGap`, `CrossingGrowth` |
+| 位相統合 | `PhaseProgress`, `PhaseEpoch`, `PhaseSearchStart`, `NormalPhase`, `PhaseSemantic`, `NormalClosure`, `BoundaryAudit`, `NormalComplete` |
 | 初期領域 | `InitialRegion` |
 | 検証 | `Examples`, `Audit` |
 

@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース44モジュール
+- Leanソース48モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -25,9 +25,11 @@ Lean 4形式化プロジェクトです。
 - 任意の正目標について意味的に認証されたcanonical探索開始点を構成済み
 - strict crossingの絶対時刻条件を有限catch-upで解消し、既存エポック解析へ接続済み
 - canonical／normal／debt／crossing recoveryを統合する意味的探索domainを構成済み
+- 負normalエポックの全分岐を、目標出現または意味的domainを保存するrank下降へ接続済み
+- crossing catch-upの唯一の残余を、値とanchorの同時成長obstructionとして反例付きで特定済み
 
-現在の核心は、catch-up中に値またはanchorが増加する分岐を下降へ変換することと、
-負エポックのrank childへnormal／debtの意味的不変条件を一貫して保存することです。
+現在の核心は、catch-up中に値とanchorが同時に増加する実在分岐を、
+epoch frontier後の別機構によって下降へ変換することです。
 
 ```mermaid
 flowchart TD

@@ -42,6 +42,7 @@ structure NormalEpochExitEvidence
     (target time quotient remainder : Nat)
     (parent child : PhaseSearchNode) : Prop where
   child_eq : child = ⟨time, parent.anchorParent, .normal, a time⟩
+  time_advance : parent.horizon < time
   time_ready : target ≤ time + 1
   coordinates : CoordinatesAt time quotient remainder
   progress : PhaseSearchProgress target child parent
@@ -142,6 +143,7 @@ theorem negativeNormal_classify
     · exact .normal_child child hclosed hprogress'
     · exact .normal_obstruction child (.epoch_exit u p v {
         child_eq := rfl
+        time_advance := hnu
         time_ready := Nat.le_trans hinv.time_ready (by omega)
         coordinates := hucoord
         progress := hprogress'

@@ -401,14 +401,11 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 本プロジェクトは、次をまだ主張しません。
 
-1. catch-up中に値またはanchorが増加する枝を、目標出現または位相ランク下降へ変換する。
-2. 負エポックのparent-drop／forward-exit childで`NormalPhaseInvariant`を再構成するか、
-   現在明示されているobstructionを別の下降へ変換する。
-3. q=1 debt childについて欠ける`value < anchorParent`を示すか、anchor増加枝を処理する。
-4. 四constructorの`PhaseSemanticInvariant`を全分岐で保存し、
+1. catch-up中に値とanchorが同時成長する実在obstructionを、epoch frontier後の下降へ変換する。
+2. 四constructorの`PhaseSemanticInvariant`を残るdebt／crossing分岐で保存し、
    `SemanticPhaseSearchOracle`を追加仮定なしで構成する。
-5. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
-6. レカマン数列が全ての非負整数を含む。
+3. 全ての正整数 `m` について `CoverageOracle m` を構成できる。
+4. レカマン数列が全ての非負整数を含む。
 
 したがって、全射性証明はまだ完成していません。ただし符号をまたぐ局所軌道は
 三成分のwell-foundedランクへほぼ接続されました。負エポック内の唯一の
@@ -420,10 +417,9 @@ blocker、借り遷移、exact gate、局所脱出を同じ `CoverageStep`
 
 次の主対象は、今回型として抽出したsemantic obstructionの解消です。有望な順に、
 
-1. catch-up中の`value ≤ catchupValue`／`anchor ≤ catchupValue`成長枝を履歴下降へ変換する。
-2. normal parent-drop／forward-exitで不足する目標下界・負potential・anchor境界を補う。
-3. q=1 debt childの`value < anchorParent`不成立枝を、新しいanchor下降へ変換する。
-4. これらを`SemanticPhaseSearchOracle`へ統合する。
+1. catch-up値が元のvalueとanchorの両方以上になる枝を、epoch frontier後の履歴下降へ変換する。
+2. horizonを正当に前進させる場合、履歴予算不変補題を使ってrankを再構成する。
+3. 残るdebt／crossing constructorを`SemanticPhaseSearchOracle`へ統合する。
 
 単純な `(時刻,値)` の「どちらかが下がる」関係は循環し得るため、そのままでは
 well-foundedではありません。次の設計上の核心は、時間下降を許す局面を対角負債の
@@ -467,12 +463,16 @@ well-foundedではありません。次の設計上の核心は、時間下降�
 - `Recaman/AnchorBoundary.lean` — anchor等号境界の局所形とnormal退出
 - `Recaman/CrossingRecovery.lean` — strict crossingの符号・エポック接続
 - `Recaman/CrossingGap.lean` — crossing後の有限clock catch-upと全符号epoch前線
+- `Recaman/CrossingGrowth.lean` — catch-up成長枝の最強三分岐と実在obstruction
 - `Recaman/PhaseEpoch.lean` — 負エポックから四成分位相ランクへの接続
 - `Recaman/PhaseProgress.lean` — 四成分位相進捗の推移律
 - `Recaman/InitialRegion.lean` — 可変目標に一様なエポック適用領域への入口
 - `Recaman/PhaseSearchStart.lean` — canonical開始点とrestricted oracle
 - `Recaman/NormalPhase.lean` — 負normal不変条件と保存失敗の完全分類
 - `Recaman/PhaseSemantic.lean` — 認証済み探索nodeを統合する意味的domain
+- `Recaman/NormalClosure.lean` — parent-drop／forward-exitのsemantic閉包
+- `Recaman/BoundaryAudit.lean` — horizon輸送、横断予算、反例の境界監査
+- `Recaman/NormalComplete.lean` — 負normal全分岐の無条件semantic step
 - `Recaman/Examples.lean` — 小さい実例とfreshness反例
 - `Recaman/Oracle.lean` — `+---` 局所脱出族
 - `Recaman/Audit.lean` — 主要定理の公理依存監査
@@ -569,3 +569,17 @@ target以上の非負領域の全てを既存定理へ接続した。相対cross
 `PhaseSemanticInvariant`へ統合した。canonical開始、debtの自己normal退出、anchor等号境界、
 strict crossingではdomain保存を証明済みである。これにより全域数値tupleではなく、到達可能な
 証明付きnodeだけを対象とする`SemanticPhaseSearchOracle`が最終的な局所完了条件になった。
+
+### 第五ラウンドのobstruction精密化
+
+finite catch-upの二つの成長比較を統合し、CoverageStepが得られる枝とanchorが下がる枝は
+目標出現または位相進捗へ接続した。唯一残るのはcatch-up値が元のdebt値とanchorの両方以上に
+なる枝である。debtからnormalへの同一horizon rank下降はanchor下降と同値であるため、この枝を
+自然なnormal childで閉じることは原理的に不可能である。target 5、crossing 3→6、catch-up値7の
+実軌道例で完全obstructionが実在することもLean化した。
+
+normal側ではparent-dropを初出anchorのsemantic normal childへ接続した。forward-exitで一度残った
+rank同値枝は、目標以上から目標未満への軌道横断が目標出現またはbelow-target履歴予算の厳密下降を
+生む一般補題によって排除した。q=1 debt例外も強いnormal不変条件と矛盾する。結果として
+`negativeNormal_phaseSemanticStep`は、負normal nodeから目標出現またはdomainを保存する
+`PhaseSearchProgress`を追加仮定なしで返す。
