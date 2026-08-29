@@ -971,3 +971,14 @@ original historical corridorについて、immediate returnならsource>target�
 exact equationsを持つ`ImmediateHistoricalValleyCertificate`を構成した。delayed returnなら上の強帰納結果を
 finite crossing windowへ変換する。`terminalShape`は全typed dischargeをこの二形のどちらかへ正規化する。
 残る外側義務は、二形に共通するfreshnessまたはanchor progressを作ることである。
+
+### 第二十七ラウンド：terminal strict crossing balance
+
+immediate valleyとfinite all-forced windowの共通final stepを`StrictTerminalCrossingBalance`として切り出した。
+target missingによりupcross endpointはtargetより厳密に大きい。forced addition式を展開するとtarget gapとovershootの
+和は`returnTime + 1`に一致する。両差は正なので、それぞれ`returnTime`以下である。従来all-forced windowに保持して
+いた上界がimmediate valleyにも成立することが共通定理から従う。
+
+`NormalizedTerminalCrossingData`はこのbalanceと、original endpoint以後・return以前にあるfresh below endpoint、
+およびそのendpointから同じreturnへのcanonicalityをまとめる。terminal二形をcase splitするのはこの変換定理だけで、
+後続のouter progress設計はbranch-independentなinterfaceを利用できる。

@@ -415,6 +415,12 @@ sourceはtargetより上、fresh endpointはtarget未満で、二遷移後にsou
 delayed枝はterminal all-forced crossing windowへ到達し、全historical dischargeを有限windowまたはimmediate
 historical valleyの二形へ型付きで縮約する。
 
+### strict terminal crossing balance / 厳密終端crossing釣合い — 研究固有
+
+terminal二形に共通するfinal forced upcrossingの算術証明書である。crossing前のtarget gapと直後のovershootは
+ともに正で、その和はaddition clock `returnTime + 1`に等しい。従って各差は`returnTime`以下になる。
+`NormalizedTerminalCrossingData`はこの釣合いに加え、最終fresh below endpointとcanonical returnを保持する。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

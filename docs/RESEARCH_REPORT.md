@@ -408,6 +408,12 @@ all-forced suffixを返す。missing-target boundaryがchildのreturn着地を�
 これをoriginal corridorのimmediate/delayed分岐と合成し、全dischargeをexact historical valleyまたはfinite crossing
 windowの二つの型付きterminal shapeへ正規化した。
 
+`PermanentAboveCorridorBalance`は二形のfinal crossingを共通算術へ写す。strict crossingとforced addition式から、
+`(target - a return) + (a (return+1) - target) = return + 1`が得られる。二つの差は正なので、各々
+`return`以下である。このためfinite-window枝で得たgap/overshoot上界はimmediate-valley枝にも拡張された。
+`NormalizedTerminalCrossingData`はさらに、original endpoint以後かつreturn以前のfresh below endpointと、そこからの
+canonical first returnを保持し、次のouter progress定理が枝別の算術を扱わずに済むinterfaceを与える。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -500,6 +506,8 @@ windowの二つの型付きterminal shapeへ正規化した。
 | suffix terminal強帰納 | `CanonicalBelowCorridorSuffix.exists_terminalAllForced` | `PermanentAboveCorridorTerminal.lean` |
 | immediate valley証明書 | `CanonicalBelowCorridorCertificate.immediateHistoricalValley` | `PermanentAboveCorridorTerminal.lean` |
 | discharge terminal二形 | `PermanentTailDischargeReturnCertificate.terminalShape` | `PermanentAboveCorridorTerminal.lean` |
+| strict crossing gap partition | `WeakUpcrossingStep.strictTerminalCrossingBalance` | `PermanentAboveCorridorBalance.lean` |
+| normalized terminal共通interface | `PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData` | `PermanentAboveCorridorBalance.lean` |
 
 ## 8. 結論
 
@@ -537,7 +545,8 @@ legal endpointはreturnに到達できないため、post-legal terminalはall-f
 suffixのfinal upcross算術、またはoriginal immediate historical valleyを外側anchor変化へ接続する必要がある。
 all-forced terminalは有限crossing windowまで縮約され、suffix強帰納によって任意個のlegal endpoint後にも
 必ず到達する。全dischargeはこのwindowかimmediate historical valleyの二形へ型付き正規化された。
-次は両terminal shapeを共通のanchor下降または新しいfreshness条件へ接続することが外側cycle義務である。
+両形はさらに同じpositive gap partitionとfinal fresh endpoint interfaceを持つ。次はこの共通証明書を
+anchor下降または新しいfreshness条件へ接続することが外側cycle義務である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

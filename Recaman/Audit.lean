@@ -380,3 +380,7 @@ import Recaman
 #print axioms Recaman.CanonicalBelowCorridorSuffix.exists_terminalAllForced
 #print axioms Recaman.CanonicalBelowCorridorCertificate.immediateHistoricalValley
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalShape
+#print axioms Recaman.WeakUpcrossingStep.strictTerminalCrossingBalance
+#print axioms Recaman.PermanentTailDischargeTerminalShape.normalizedCrossingData
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.strictTerminalCrossingBalance
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData

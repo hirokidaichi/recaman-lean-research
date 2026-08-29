@@ -94,5 +94,6 @@ import Recaman.PermanentAboveCorridorSuffix
 import Recaman.PermanentAboveCorridorBoundary
 import Recaman.PermanentAboveCorridorWindow
 import Recaman.PermanentAboveCorridorTerminal
+import Recaman.PermanentAboveCorridorBalance
 import Recaman.Examples
 import Recaman.Oracle

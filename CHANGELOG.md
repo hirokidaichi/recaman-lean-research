@@ -35,7 +35,9 @@
 - terminal residualをstrict crossing、target gap／overshoot上界付き有限windowへ縮約
 - suffix cursorの強帰納で任意個のlegal endpoint後のall-forced terminal存在を証明
 - 全dischargeをimmediate historical valleyまたはfinite crossing windowの二形へ型付き正規化
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`と公理監査を追加
+- terminal二形に共通するgap＋overshoot＝final clockと両差のclock上界を証明
+- final fresh endpoint／canonical return／strict balanceの共通interfaceを構成
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 
