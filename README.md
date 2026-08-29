@@ -357,6 +357,10 @@ flowchart TD
 - [証明地図](docs/PROOF_MAP.md) — 証明済み／未証明の依存関係
 - [normal provenance監査](docs/NORMAL_PROVENANCE_AUDIT.md) — current／historical生成箇所と次のconstructor設計
 - [健全性監査](docs/SOUNDNESS_AUDIT.md) — 定義の正しさ・ギャップ地図・空虚性検査・過大主張の洗い出しと対応状況
+- [日本語証明レポート](docs/human-proofs/) — 各Leanモジュールの人間向け証明解説（書式は`docs/human-proofs/STYLE.md`）。
+  `viewer/index.html`が左に日本語レポート・右にLeanソースを並べる比較ビューワーで、
+  リポジトリルートで`bun run viewer/server.ts`を実行し`http://localhost:8642/viewer/`で開く。
+  `python3 viewer/gen_manifest.py`でモジュール一覧を再生成する（2026-08-29時点で185モジュール中138本にレポートあり）。
 - [用語集](docs/GLOSSARY.md) — 標準用語と本研究独自の解析用語の区別
 - [今後のロードマップ](docs/ROADMAP.md) — 次の証明エポックと完了条件
 - [再現・検証手順](docs/REPRODUCIBILITY.md) — ビルド、公理監査、実験の再現
