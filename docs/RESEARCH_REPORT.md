@@ -736,6 +736,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | missing-target terminal interface | `PermanentTailCombinedCertificate.terminalMissingOutcome` | `PermanentAboveCorridorReplayInterface.lean` |
 | history-edge fresh landing | `TerminalChronologyHistoryProgress.exists_freshLanding` | `PermanentAboveCorridorHistoryLanding.lean` |
 | anchored terminal interface | `PermanentTailCombinedCertificate.terminalAnchoredOutcome` | `PermanentAboveCorridorHistoryLanding.lean` |
+| horizon-anchored interface | `PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome` | `PermanentAboveCorridorLandingHorizon.lean` |
 
 ## 8. 結論
 
@@ -855,6 +856,9 @@ replayのcycle（crossing cursorとanchor）はdischargeごとに一意である
 history edgeはさらにanchorされた。missing-count dropの不等式単独から、window内に初出するbelow-target landingを
 逆算でき、そこからcanonical first upcrossingが再開する。従って全interface枝は、外側再帰が続行に使える
 具体的なsemantic素材（child、固定点、またはlanding+restart crossing）を必ず携える。
+landingにはhorizon境界も付いた。反例のbelow coverageと初出最小性からlandingはtail startより前にあり、
+restart crossingは`crossing + 1 ≤ start < parent.horizon`を満たす。landing機構はinstalled crossing nodeの
+形状条件（old crossingがparent horizonより前）と正確に一致する。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

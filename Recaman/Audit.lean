@@ -514,3 +514,4 @@ import Recaman
 #print axioms Recaman.exists_new_below_of_missingDrop
 #print axioms Recaman.TerminalChronologyHistoryProgress.exists_freshLanding
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalAnchoredOutcome
+#print axioms Recaman.PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome

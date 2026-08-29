@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース136モジュール
+- Leanソース137モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -110,6 +110,7 @@ Lean 4形式化プロジェクトです。
 - 実軌道step検証でclock 3/4/5を排除しclock≥6・target≥8、上側をupperTri包絡で挟撃済み
 - missing-target下のterminal interfaceをhistory edge／semantic child／replay固定点の三形へ確定済み
 - history edgeからfresh below-target landingとrestart crossingを逆算し、全interface枝をsemantic素材付きへ強化済み
+- landingとrestart crossingをparent history内（crossing+1≤start<horizon）へ束縛済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -197,6 +198,8 @@ semantic child・replay固定点の三形に確定し、replayが閉じるcycle�
 history edgeについては、missing-count下降の不等式単独からwindow内に初出するbelow-target landingを逆算でき、
 そこからcanonical first upcrossingが再開します。上流の定理を書き換えずに、全interface枝が外側再帰の
 continuation素材を携えるようになりました。
+さらに反例のbelow coverageと初出最小性から、landingはtail startより前、restart crossingは
+`crossing+1 ≤ start < parent.horizon`を満たします。これはinstalled crossing nodeの形状条件と一致します。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
