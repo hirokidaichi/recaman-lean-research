@@ -530,3 +530,5 @@ import Recaman
 #print axioms Recaman.TailFixedPointCore.exists_value_recurrence
 #print axioms Recaman.FirstWeakUpcrossingStep.all_below
 #print axioms Recaman.landing_cycle_corridor_below
+#print axioms Recaman.TailFixedPointCore.eighteen_le_crossingTime_or_target_eq_nineteen
+#print axioms Recaman.TailFixedPointCore.nineteen_le_target

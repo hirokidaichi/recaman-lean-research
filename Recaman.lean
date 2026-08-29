@@ -139,5 +139,6 @@ import Recaman.PermanentAboveCorridorFixedPointFloor
 import Recaman.PermanentAboveCorridorReplayFloorTwo
 import Recaman.PermanentAboveCorridorFixedPointShape
 import Recaman.PermanentAboveCorridorFixedPointCorridor
+import Recaman.PermanentAboveCorridorFixedPointFloorTwo
 import Recaman.Examples
 import Recaman.Oracle
