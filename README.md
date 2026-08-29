@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース179モジュール
+- Leanソース181モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -170,6 +170,7 @@ Lean 4形式化プロジェクトです。
 - history枝も旧定義（単なるbudget drop）では自由だったが、landing前置界作業が`TerminalHistoryCursor`を連言に加えたことで閉じた（新定義は`parentTime + 1`未満にtarget超の軌道値を要求する）
 - **頂点定理の固定点枝の床を無条件`32 ≤ clock`へ引き上げ済み**（従来は`18 ≤ clock ∨ target = 19`）。landing枝は前置界の輸送で、replay枝は自前のkernel掃過で満たす。ただしsemantic枝が空である事実は変わらないので、この二択そのものは依然として`0 < target`から出る
 - 前置界は`TerminalChronologyHistoryProgress`に`TerminalHistoryCursor`を連言として加える形でsource-freeに輸送した（Nat持ち上げ不要。history枝の情報量も同時に回復）
+- 精密版outcomeの頂点への伝播を8段中4段まで完了（ReplayInterface段・HistoryLanding段。`landing_cursor`も運ぶ形に更新済み）
 - crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし同時に`TargetTailReturnHypothesis target ↔ 出現`も証明されており、難しさは減っていない）
 - pinned配置は`f`だけで完全に決まり実軌道上で判定可能だが、候補は`f < 3×10⁶`で2438個あり累積が増え続けるため、kernel列挙では落ちないと確定。構造的議論が要る
 - tail最小値への遷移を無条件の二分法へ整理し、無条件`FirstAt a (a m) m`まで残り1点（`m + 1 < a m`）へ縮約。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が完全決定する

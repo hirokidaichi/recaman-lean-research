@@ -733,3 +733,5 @@ import Recaman
 #print axioms Recaman.landing_crossingTime_not_record
 #print axioms Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo
 #print axioms Recaman.LeastMissingTarget.semantic_or_thirtytwo
+#print axioms Recaman.PermanentTailCombinedCertificate.refinedTerminalMissingOutcome
+#print axioms Recaman.PermanentTailCombinedCertificate.refinedTerminalAnchoredOutcome

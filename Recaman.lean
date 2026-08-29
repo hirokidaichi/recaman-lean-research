@@ -169,6 +169,8 @@ import Recaman.RefinedSemanticOutcome
 import Recaman.PreTailBudgetSeparation
 import Recaman.RefinedSuccessorRank
 import Recaman.RefinedIterationClosure
+import Recaman.RefinedReplayInterface
+import Recaman.RefinedHistoryLanding
 import Recaman.RefinedLandingOutcome
 import Recaman.LandingFloorThirtytwo
 import Recaman.CrossingReadinessBridge

@@ -1756,3 +1756,15 @@ tail最小値の初出は残り1点へ縮約した。遷移は「減算（fresh�
 二分法で、後者は`5 ≤ m`と`a (m-1) ≠ 1`により死ぬ。残る穴は`m + 1 < a m`のみで、その場合は`a m - (m+1)`の
 出現witnessが手に入る。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が
 完全決定する。
+
+### 第八十三ラウンド：精密版の伝播（段3・段4）
+
+精密版outcomeの頂点への伝播を8段中4段まで進めた。段3（ReplayInterface、`RefinedTerminalMissingOutcome`）は
+予告どおり純粋な再包装で、`target_occurs`を`target_missing`で潰す一行だけが実質だった。段4（HistoryLanding、
+`RefinedTerminalAnchoredOutcome`）はlanding側の強化を取り込み、`landing_cursor`も運ぶ形にした。
+`progress.exists_freshLandingCursor`の第5成分をそのまま受けるだけで済む。写経はlanding復元の6行のみである。
+
+伝播は`TerminalChronologyHistoryProgress`の定義強化がsource-freeだったおかげでarity追随が一切発生していない。
+残りは段5（LandingHorizon）・段6（LandingMount）・段7（MountedIteration）・段8（FixedPointCore）で、
+写経が要るのは段5のhorizon評価約25行と段7の強帰納約55行だけと見積もられている。段8到達時には左枝の
+無料ルート探しを必ず実施する。忘却形が二度捏造されている以上、ここが最後の関門である。
