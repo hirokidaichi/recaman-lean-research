@@ -537,6 +537,11 @@ parentはPhaseSearchNodeとして同一である。original down endpointが違�
 strict missing-budget下降になる。残るhistorical first timeとminimum valueにはそれぞれ`< horizon`と`≤ upperTri horizon`の上界がある。
 down endpointを含む三座標をinstalled keyへ加えて有限selectionを構成し、residualを全数値historical provenanceのexact一致へ縮約した。
 
+`PermanentAboveCorridorCanonicalMinimum`は残るstart/minimum witnessを整理する。permanent startとhistorical tailStartはいずれも
+parent horizon未満なので有限selection keyへ追加できる。一方minimum witness time自体はunboundedなので、tailStart以後の同値の
+最初の出現`FirstAtOrAfter`へcanonical化する。shifted sequenceへ既存global `FirstAt`を適用することで、canonical witnessが元witness以下に
+存在することと一意性を証明した。同tailStart/minimum valueのexact revisitではcanonical timeも同一である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -665,6 +670,9 @@ down endpointを含む三座標をinstalled keyへ加えて有限selectionを構
 | crossing parent numeric uniqueness | `PermanentTailDischargeReturnCertificate.parent_eq_of_horizon_anchor` | `PermanentAboveCorridorExactRevisit.lean` |
 | original down endpoint comparison | `terminalExactWindowDownEndpointComparison_total` | `PermanentAboveCorridorExactRevisit.lean` |
 | exact history key selection | `TerminalExactInstalledHistorySelectionState.select` | `PermanentAboveCorridorExactRevisit.lean` |
+| relative first occurrence | `exists_firstAtOrAfter_bounded` | `PermanentAboveCorridorCanonicalMinimum.lean` |
+| canonical minimum uniqueness | `CanonicalHistoricalMinimumOccurrence.time_eq_of_same_tail_value` | `PermanentAboveCorridorCanonicalMinimum.lean` |
+| canonical tail key selection | `TerminalCanonicalTailHistorySelectionState.select` | `PermanentAboveCorridorCanonicalMinimum.lean` |
 
 ## 8. 結論
 
@@ -753,7 +761,9 @@ candidateの無限選択は排除される。さらにfull window provenanceを�
 window・anchor・old crossing timeがすべて同じexact installed snapshot revisitである。さらにoriginal down endpoint差をhistory下降へ
 接続し、historical first timeとminimum valueも固定horizon内で有限化した。従って残る最小kernelはこれら全数値provenanceまで一致する
 exact revisitであり、次は同じminimum valueを実現するminimum time／tail startの証明同一性が必要か、値の最小性だけで後続dischargeを
-決定できるかを解析する必要がある。
+決定できるかを解析する必要がある。start/tailStartの差も有限keyで除かれ、minimum timeはrelative first occurrenceへcanonical化された。
+従って次の境界は同一canonical tail/minimumからhistorical downcrossを再選択するときの選択一意性、または異なるdowncrossなら既に得た
+history progressへ戻す再帰的selection stateの統合である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

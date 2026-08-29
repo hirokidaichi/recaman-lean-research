@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース123モジュール
+- Leanソース124モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -97,6 +97,7 @@ Lean 4形式化プロジェクトです。
 - dischargeのold crossingがparent horizonより前というprovenanceを全構築経路で保存済み
 - `(window, anchor, old crossing)`を固定horizon内で有限列挙し、exact installed snapshot再訪まで縮約済み
 - original down endpointの差をstrict history下降へ分類し、historical first/minimum provenanceも固定horizon内で有限化済み
+- permanent/historical tail startを有限化し、tail minimum時刻を相対first occurrenceへcanonical化済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -141,6 +142,10 @@ exact installed revisitではready crossing証明がparentのphaseとlocal measu
 一致します。元のdown endpointが違えばfirst-occurrence history下降になり、同じ場合でもhistorical first timeはhorizon未満、tail minimum
 valueは`upperTri horizon`以下です。これらを拡張有限keyへ加えたため、残る再訪はwindow、parent cursor、down endpoint、historical first、
 minimum valueまで一致する場合に限定されました。
+残るminimum witness timeはhorizonで有界とは限りませんが、`tailStart`以後で同じminimum valueを取る最初の時刻へcanonical化できます。
+このrelative first occurrenceは任意の元witness以下に存在し、同じtailStart/valueに対して一意です。permanent startとhistorical tailStartは
+いずれもparent horizon未満なので有限keyへ追加済みです。従ってminimum timeの選択依存は新しい無限rankではなくcanonical identityで
+除去されました。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

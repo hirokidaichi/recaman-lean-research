@@ -117,5 +117,6 @@ import Recaman.PermanentAboveCorridorWindowSelection
 import Recaman.PermanentAboveCorridorWindowSnapshot
 import Recaman.PermanentAboveCorridorInstalledWindowSelection
 import Recaman.PermanentAboveCorridorExactRevisit
+import Recaman.PermanentAboveCorridorCanonicalMinimum
 import Recaman.Examples
 import Recaman.Oracle
