@@ -397,6 +397,12 @@ below-target corridor内のlegal subtraction endpointがfirst return predecessor
 直後のforced additionとの二歩式は元source値`+1`を返し、weak upcross条件と合わせるとexact targetになる。
 従ってmissing-target仮定ではこの境界は不可能で、legal childはreturnより厳密に前に留まる。
 
+### terminal all-forced crossing window / 終端全強制加算crossing窓 — 研究固有
+
+legal endpointを消費した後に残るall-forced suffixの有限算術証明書である。
+`endpoint < return < target`、strict crossing、final stepを含む加算traceを保持し、target gapとovershootは
+いずれも正でreturn clock以下になる。finite corridorとouter stationary cycleを区別した最小terminal residualである。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

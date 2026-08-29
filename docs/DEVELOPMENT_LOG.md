@@ -948,3 +948,14 @@ weak upcrossによりtarget以上、sourceのbelow性によりtarget以下とな
 `internalSubtraction_before_return`は全legal child endpointがreturnより厳密に前であることを返す。
 強化版child theoremはbudget下降、suffix cursor下降、strict endpoint境界を同時に保持し、さらに後続legal endpointが
 なければ残りsuffixがall-forcedであることを示す。これでpost-legal terminalの`at_return`枝を除去した。
+
+### 第二十五ラウンド：terminal all-forced crossing window
+
+all-forced suffixのtelescoping式を再構成し、final return stepのforced additionまで延長した。これにより
+`a (return+1)`はendpoint値と全clock和で明示される。`TerminalAllForcedSuffixCertificate`はtarget missing、
+endpointのreturn以前性、all-forced性をまとめる。
+
+`crossingWindow`はこの証明書から`endpoint < return < target`、`a return < target < a (return+1)`、
+final addition式、全traceを抽出する。また`target - a return`と`a (return+1) - target`がともに正で、
+return clock以下であることを証明した。legal child以後に後続legal endpointがなければ、このwindowと直前の
+strict history-budget dropが同時に得られる。outer residualは有限算術windowへ縮約された。

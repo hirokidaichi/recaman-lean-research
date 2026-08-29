@@ -31,7 +31,9 @@
 - legal endpoint移動をhistory-budgetとreturn-distanceの同時下降へ接続し、suffixを完全分類
 - legal subtraction直後のforced upcrossがexact targetを打つことを証明
 - target-missing下でlegal endpointのreturn着地を排除し、post-legal terminalをall-forcedへ縮約
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`と公理監査を追加
+- all-forced suffixのtraceをfinal return upcrossまで延長
+- terminal residualをstrict crossing、target gap／overshoot上界付き有限windowへ縮約
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

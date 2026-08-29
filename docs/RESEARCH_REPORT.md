@@ -395,6 +395,13 @@ sourceはtarget未満で、return endpointはtarget以上だから、この二�
 有限回消費した後のterminal suffixはall-forced枝に限られる。original historical endpointがreturnと等しい
 即時valleyはsourceがabove-targetなので、この排除とは別枝である。
 
+`PermanentAboveCorridorWindow`はpost-legal terminalのall-forced suffixを、有限なcrossing-window証明書へ
+変換した。internal traceをfinal forced upcrossまで延長し、endpointから`return+1`までの値を
+`forcedClockSum`で表した。target missingによりcrossingは`a return < target < a (return+1)`とstrictで、
+nonempty suffixの`return < target`も保持する。さらにtarget gap `target - a return`とovershoot
+`a (return+1) - target`は正で、いずれもreturn clock以下である。従って残るterminal枝の時刻・anchor・
+gap・overshootはすべてtargetに依存する有限領域に入る。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -481,6 +488,9 @@ sourceはtarget未満で、return endpointはtarget以上だから、この二�
 | subtraction/addition exact target | `legalSubtraction_forcedAddition_crossing_hits_target` | `PermanentAboveCorridorBoundary.lean` |
 | legal child strict境界 | `CanonicalBelowCorridorSuffix.internalSubtraction_before_return` | `PermanentAboveCorridorBoundary.lean` |
 | missing-tail suffix縮約 | `CanonicalReturnRebaseCertificate.legalSuffixChild_missingBoundary` | `PermanentAboveCorridorBoundary.lean` |
+| all-forced final trace | `AllForcedAdditionSuffix.final_value_eq_add_forcedClockSum` | `PermanentAboveCorridorWindow.lean` |
+| finite crossing window | `TerminalAllForcedSuffixCertificate.crossingWindow` | `PermanentAboveCorridorWindow.lean` |
+| post-legal terminal window | `CanonicalReturnRebaseCertificate.terminalWindow_of_legal` | `PermanentAboveCorridorWindow.lean` |
 
 ## 8. 結論
 
@@ -516,6 +526,8 @@ corridorを再走査することではなく、次回のhistorical dischargeを�
 別のreturn crossingを生むhistorical choiceを構成することが、次の外側cycle義務である。
 legal endpointはreturnに到達できないため、post-legal terminalはall-forcedに狭まった。次はこのfinite strictly-growing
 suffixのfinal upcross算術、またはoriginal immediate historical valleyを外側anchor変化へ接続する必要がある。
+all-forced terminalは有限crossing windowまで縮約された。次はそのgap／overshoot算術と、別枝のimmediate
+historical valleyを共通のanchor下降または新しいfreshness条件へ接続することが外側cycle義務である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

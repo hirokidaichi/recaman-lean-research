@@ -373,3 +373,7 @@ import Recaman
 #print axioms Recaman.CanonicalBelowCorridorSuffix.internalSubtraction_before_return
 #print axioms Recaman.CanonicalBelowCorridorSuffix.child_of_internalSubtraction_missing
 #print axioms Recaman.CanonicalReturnRebaseCertificate.legalSuffixChild_missingBoundary
+#print axioms Recaman.AllForcedAdditionSuffix.value_eq_add_forcedClockSum
+#print axioms Recaman.AllForcedAdditionSuffix.final_value_eq_add_forcedClockSum
+#print axioms Recaman.TerminalAllForcedSuffixCertificate.crossingWindow
+#print axioms Recaman.CanonicalReturnRebaseCertificate.terminalWindow_of_legal
