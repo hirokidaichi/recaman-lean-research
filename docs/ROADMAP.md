@@ -389,7 +389,12 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
 すべて完了し、旧優先度4（二連減算枝）は否定的に決着した。旧優先度5（comb圧縮検証）は下記の天井測定により
 縮小方針とした。現在の優先順位は次である。
 
-1. **計数以外の入力（最優先）。** 計数路線は閉じた。return-frequency lemma・coverage timeの上界・
+1. **計数以外の入力（最優先）——最初の注入として減算台帳が入った。** 厳密恒等式
+   `a t + 2·subSum t = upperTri t`（`SubtractionLedger`）は±分解そのものの情報であり、certificate
+   インターフェースに載っていない。パリティ（出現時刻のmod 4制限）・後方伝播（高値は過去の高さを強制）・
+   供給側カウンタ（減算着地の相異性と`subCount`の両側挟み）の三帰結が全前線の共通道具になる。
+   パリティは既に第3行の窓を`base − 1`分締めた。次はこの台帳を(a)第3行の残り、(b)coverage timeの
+   定量側、(c)帯列挙の半減、へ流す。計数路線は閉じた。return-frequency lemma・coverage timeの上界・
    tail startの上界の三つは**互いに同値**である（`returnFrequency_iff_coverage`）。したがって計数路線が
    自前の材料からどれかを作り出すことはできない。切り替え先の候補は (a) 軌道の局所構造からの上界、
    (b) semantic phase側の別ルート、(c) pinned配置の残り2行のような具体構造の潰し込み、である。

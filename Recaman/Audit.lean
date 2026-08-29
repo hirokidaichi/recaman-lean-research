@@ -836,3 +836,16 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.preTail_highCount_bound
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.firstRow_separation_by_density
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_density_gives_only_one
+#print axioms Recaman.ledger_identity
+#print axioms Recaman.parity_invariant
+#print axioms Recaman.occurrence_parity
+#print axioms Recaman.even_value_time_mod_four
+#print axioms Recaman.odd_value_time_mod_four
+#print axioms Recaman.backward_propagation
+#print axioms Recaman.firstAt_of_subtraction_step
+#print axioms Recaman.subSum_le_mul_subCount
+#print axioms Recaman.upperTri_subCount_le_subSum
+#print axioms Recaman.adjacent_occurrence_opposite_parity
+#print axioms Recaman.PinnedTailMinimumConfiguration.clock_mod_four_of_target_even
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_witness_beyond_adjacent
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_target_upper_bound_sharpened
