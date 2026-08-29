@@ -499,6 +499,13 @@ additionで、mounted nodeがparentを再生産する。最終統合定理はsem
 `a 8 = 12 < 19 ≤ 21 = a 9`で即時returnし、anchorは12、blocker defectは3（初出時刻2）、tail最小値は21である。
 tailは時刻131（`a 131 = 4`）より後にしか始まれず、19-反例は固定された歴史と未知のtailに二分される。
 
+### no late revisit / 遅い再訪不可能性 — 研究固有
+
+既出の値は自分より大きい時刻で再訪できないという力学補題である（`a_succ_ne_of_seen`）。減算着地は
+freshnessを要求して既出値に降りられず、加算着地は自分のclock以上の値になるため小さい既出値に届かない。
+replay固定点が強制するtail最小値の遅い再訪と矛盾させることで、深い初出の kernel 検証なしに例外targetを
+排除する主要武器である。
+
 ### comb run / 櫛状区間 — 研究固有
 
 forced additionと即時repaying legal subtractionの交互区間である。low railは1周期に1ずつ下降し、high railは

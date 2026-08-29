@@ -1338,3 +1338,17 @@ historical minimumデータも固定した。tail最小値のpredecessorはdownc
 しか始まれない。tailStart>131、start>131、horizon>132で、19-反例は「clock 9以下の完全に固定された歴史」と
 「kernel検証済みprefixの外に始まる未知のtail」に真っ二つに分かれる。最初の未知は、このprefix以後に軌道が
 20未満へ戻るか、という一点である。
+
+### 第六十二ラウンド：nineteen revisit forcing
+
+pinされたtail最小値21はtailStart（>131）以後に達成されるため、19が未出なら軌道は時刻131以後に21を
+再訪しなければならない。検証済みprefixで21はt=9の一度しか現れない。対偶として、21が131以後に再訪しない
+なら19-replayは存在しない。19問題は「a 99734 = 19の出現」と「21の遅い再訪」の二イベントに挟まれた。
+
+### 第六十三ラウンド：nineteen elimination
+
+挟み撃ちが閉じた。一般力学補題として、既出の値は自分より大きい時刻で再訪できない：減算着地はfreshnessを
+要求し、加算着地は自分のclock以上の値になる（`a_succ_ne_of_seen`）。21はt=9で既出なのでt>21の再訪は
+不可能であり、19-反例が強制する21再訪と矛盾する。従ってtarget 19のreplay固定点は存在しない。深い初出
+`a 99734 = 19`のkernel検証を一切使わずに例外target 19は全kernel floorから消え、無条件に`18 ≤ clock`、
+`32 ≤ clock ∨ target = 61`、`20 ≤ target`が成立する。
