@@ -561,3 +561,5 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.target_ne_sixtyone
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtyfour_le_target
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.no_subAdd_minimum_predecessor
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_shape
