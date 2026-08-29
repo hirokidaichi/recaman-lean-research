@@ -164,7 +164,9 @@ inductive PermanentTailTerminalCompleteInstalledOutcome
         parentTime) :
       PermanentTailTerminalCompleteInstalledOutcome source
   | finite_return_candidate
-      (membership : source.returnTime ∈ terminalReturnCandidates target) :
+      (terminalEndpoint : Nat)
+      (finite : TerminalFiniteReturnWindowCertificate source
+        terminalEndpoint) :
       PermanentTailTerminalCompleteInstalledOutcome source
   | immediate_insufficient
       (valley : ImmediateHistoricalValleyCertificate target source.downTime
@@ -187,8 +189,8 @@ theorem PermanentTailDischargeReturnCertificate.terminalCompleteInstalledOutcome
   cases h.terminalInstalledStepOutcome with
   | history_progress childTime parentTime progress =>
       exact .history_progress childTime parentTime progress
-  | finite_return_candidate membership =>
-      exact .finite_return_candidate membership
+  | finite_return_candidate terminalEndpoint finite =>
+      exact .finite_return_candidate terminalEndpoint finite
   | immediate_insufficient valley insufficient =>
       exact .immediate_insufficient valley insufficient
   | historical_step freshEndpoint candidate firstTime historical installed =>

@@ -446,3 +446,8 @@ import Recaman
 #print axioms Recaman.TerminalReturnSelectionState.select
 #print axioms Recaman.TerminalReturnFreshSelectionCertificate.laterProgress
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalReturnSelectedOutcome
+#print axioms Recaman.mem_terminalReturnWindowKeys_iff
+#print axioms Recaman.TerminalFiniteReturnWindowCertificate.key_mem
+#print axioms Recaman.terminalReturnWindowSelectionProgress_wellFounded
+#print axioms Recaman.TerminalReturnWindowSelectionState.select
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalWindowSelectedOutcome

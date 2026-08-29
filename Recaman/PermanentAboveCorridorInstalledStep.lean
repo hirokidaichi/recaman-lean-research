@@ -113,6 +113,21 @@ structure TerminalOuterHistoricalEligibleInstalledStep
   eligible : source.downTime + 1 ≤ source.oldCrossingTime
   outcome : TerminalOuterHistoricalInstalledStepOutcome historical
 
+/-- Full finite-window provenance retained instead of only its return-clock
+membership. -/
+structure TerminalFiniteReturnWindowCertificate
+    {target start : Nat} {parent : PhaseSearchNode}
+    (source : PermanentTailDischargeReturnCertificate target start parent)
+    (terminalEndpoint : Nat) : Prop where
+  origin_le : source.downTime + 1 ≤ terminalEndpoint
+  window : TerminalAllForcedCrossingWindow target terminalEndpoint
+    source.returnTime
+  insufficient : TerminalInsufficientValueCertificate target
+    source.returnTime
+  clock_band : TerminalFiniteClockBandCertificate target source.returnTime
+  candidate_membership :
+    source.returnTime ∈ terminalReturnCandidates target
+
 /-- Constructor-complete terminal step at discharge level. -/
 inductive PermanentTailTerminalInstalledStepOutcome
     {target start : Nat} {parent : PhaseSearchNode}
@@ -124,7 +139,9 @@ inductive PermanentTailTerminalInstalledStepOutcome
         parentTime) :
       PermanentTailTerminalInstalledStepOutcome source
   | finite_return_candidate
-      (membership : source.returnTime ∈ terminalReturnCandidates target) :
+      (terminalEndpoint : Nat)
+      (finite : TerminalFiniteReturnWindowCertificate source
+        terminalEndpoint) :
       PermanentTailTerminalInstalledStepOutcome source
   | immediate_insufficient
       (valley : ImmediateHistoricalValleyCertificate target source.downTime
@@ -146,34 +163,53 @@ theorem PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
     {target start : Nat} {parent : PhaseSearchNode}
     (h : PermanentTailDischargeReturnCertificate target start parent) :
     PermanentTailTerminalInstalledStepOutcome h := by
+  have ofNonClock :
+      PermanentTailTerminalNonClockResidual h →
+        PermanentTailTerminalInstalledStepOutcome h := by
+    intro nonClock
+    cases nonClock.rankOutcome with
+    | immediate_insufficient valley insufficient =>
+        exact .immediate_insufficient valley insufficient
+    | forward_budget_progress freshEndpoint candidate firstTime historical
+        original_lt_firstTime budget_drop backtrack =>
+        exact .history_progress firstTime (h.downTime + 1) budget_drop
+    | original_history_blocker freshEndpoint candidate firstTime historical
+        firstTime_le_original backtrack =>
+        by_cases holdEligible :
+            h.downTime + 1 ≤ h.oldCrossingTime
+        · exact .historical_step freshEndpoint candidate firstTime historical
+            {
+              eligible := holdEligible
+              outcome := historical.installedStepOutcome holdEligible
+            }
+        · have holdBefore : h.oldCrossingTime < h.downTime + 1 :=
+            Nat.lt_of_not_ge holdEligible
+          have hbudget := missingBelowCount_strict_of_firstAt
+            h.downcross.endpoint_below holdBefore h.endpoint_first
+          exact .history_progress (h.downTime + 1) h.oldCrossingTime hbudget
   rcases h.terminalBudgetProgress_or_outerResidual with
     ⟨terminalEndpoint, firstTime, endpoint_lt_firstTime, budget_drop⟩ |
       outer
   · exact .history_progress firstTime terminalEndpoint budget_drop
-  · rcases outer.finiteCandidate_or_nonClockResidual with
-      finiteCandidate | nonClock
-    · exact .finite_return_candidate finiteCandidate
-    · cases nonClock.rankOutcome with
-      | immediate_insufficient valley insufficient =>
-          exact .immediate_insufficient valley insufficient
-      | forward_budget_progress freshEndpoint candidate firstTime historical
-          original_lt_firstTime budget_drop backtrack =>
-          exact .history_progress firstTime (h.downTime + 1) budget_drop
-      | original_history_blocker freshEndpoint candidate firstTime historical
-          firstTime_le_original backtrack =>
-          by_cases holdEligible :
-              h.downTime + 1 ≤ h.oldCrossingTime
-          · exact .historical_step freshEndpoint candidate firstTime historical
-              {
-                eligible := holdEligible
-                outcome := historical.installedStepOutcome holdEligible
-              }
-          · have holdBefore : h.oldCrossingTime < h.downTime + 1 :=
-              Nat.lt_of_not_ge holdEligible
-            have hbudget := missingBelowCount_strict_of_firstAt
-              h.downcross.endpoint_below holdBefore h.endpoint_first
-            exact .history_progress (h.downTime + 1) h.oldCrossingTime
-              hbudget
+  · cases outer with
+    | immediate_insufficient valley insufficient =>
+        exact ofNonClock (.immediate_insufficient valley insufficient)
+    | immediate_historical candidate firstTime valley blocker hfirst =>
+        exact ofNonClock
+          (.immediate_historical candidate firstTime valley blocker hfirst)
+    | finite_insufficient terminalEndpoint origin_le window insufficient band =>
+        exact .finite_return_candidate terminalEndpoint {
+          origin_le := origin_le
+          window := window
+          insufficient := insufficient
+          clock_band := band
+          candidate_membership := band.mem_terminalReturnCandidates
+        }
+    | finite_outer_blocker terminalEndpoint candidate firstTime origin_le
+        window blocker hfirst =>
+        exact ofNonClock
+          (.finite_outer_blocker terminalEndpoint candidate firstTime
+            origin_le window blocker hfirst)
 
 end
 

@@ -131,6 +131,9 @@ inductive PermanentTailTerminalReturnSelectedOutcome
         parentTime) :
       PermanentTailTerminalReturnSelectedOutcome source state
   | finite_selection
+      (terminalEndpoint : Nat)
+      (finite : TerminalFiniteReturnWindowCertificate source
+        terminalEndpoint)
       (selection : TerminalReturnCandidateSelectionOutcome target
         source.returnTime state) :
       PermanentTailTerminalReturnSelectedOutcome source state
@@ -157,8 +160,9 @@ theorem PermanentTailDischargeReturnCertificate.terminalReturnSelectedOutcome
   cases h.terminalSemanticallyClosedOutcome with
   | history_progress childTime parentTime progress =>
       exact .history_progress childTime parentTime progress
-  | finite_return_candidate membership =>
-      exact .finite_selection (state.select membership)
+  | finite_return_candidate terminalEndpoint finite =>
+      exact .finite_selection terminalEndpoint finite
+        (state.select finite.candidate_membership)
   | immediate_semantic valley insufficient outcome =>
       exact .immediate_semantic valley insufficient outcome
   | historical_complete freshEndpoint candidate firstTime historical

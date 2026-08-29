@@ -516,6 +516,12 @@ insufficient-value subcertificateを保持していてもimmediate枝は残余�
 target以下でrelationはwell-foundedである。later selectionには既存remaining-clock rankも適用できる。candidateがglobal listには
 属するがremainingには無い場合だけをliteral revisitとして返し、未証明のsemantic no-revisit ruleを型境界にする。
 
+`PermanentAboveCorridorWindowSelection`はclock-only selectionで落ちていたendpoint provenanceを回復する。finite branchは
+`TerminalFiniteReturnWindowCertificate`を上位outcomeまで保持し、`endpoint < return < target`から全interval key
+`(returnTime, terminalEndpoint)`を二重rangeで有限列挙する。fresh keyのeraseはwell-foundedなlist-length下降である。
+この精密化により同clockの別endpointは再訪とみなされない。literal revisitは同じwindow区間まで一致する場合に限られ、残る義務は
+過去と現在のinstalled parent anchor／old crossing cursorを比較できるsemantic snapshot provenanceである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -636,6 +642,8 @@ target以下でrelationはwell-foundedである。later selectionには既存rem
 | above predecessor complete closure | `TerminalOuterHistoricalBlockerCertificate.completeStepOutcome` | `PermanentAboveCorridorAboveClosure.lean` |
 | immediate valley semantic closure | `ImmediateHistoricalValleyCertificate.semanticOutcome` | `PermanentAboveCorridorImmediateClosure.lean` |
 | finite return selection state | `TerminalReturnSelectionState.select` | `PermanentAboveCorridorReturnSelection.lean` |
+| finite window key membership | `TerminalFiniteReturnWindowCertificate.key_mem` | `PermanentAboveCorridorWindowSelection.lean` |
+| finite window selection state | `TerminalReturnWindowSelectionState.select` | `PermanentAboveCorridorWindowSelection.lean` |
 
 ## 8. 結論
 
@@ -718,8 +726,9 @@ above-target predecessorのearly/ready両caseは既存complete semantic theorem�
 immediate insufficientもexact +1 reboundからCoverageStepへ接続されsemanticに閉じた。これでterminal total outcomeに残る唯一の
 numeric branchは、長さtarget以下のexplicit listとwell-founded remaining-clock rankを持つfinite return candidateである。
 finite return branchにはremaining-list stateを追加し、各fresh selectionを別のwell-founded length rankへ接続した。従ってfresh
-candidateの無限選択は排除される。残る最小kernelは同じfinite return clockのliteral revisitであり、次は再訪時のwindow provenance
-からhistory/anchor/master progressを抽出する必要がある。
+candidateの無限選択は排除される。さらにfull window provenanceを保存して`(return, endpoint)`を候補keyにしたため、同じclockの
+別endpointは別fresh edgeとして有限回しか選べない。残る最小kernelは同一window区間のliteral revisitであり、次は再訪時に
+installed parent anchorとold crossing cursorのidentity provenanceを保存し、history/anchor/master progressを抽出する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

@@ -70,7 +70,9 @@ inductive PermanentTailTerminalSemanticallyClosedOutcome
         parentTime) :
       PermanentTailTerminalSemanticallyClosedOutcome source
   | finite_return_candidate
-      (membership : source.returnTime ∈ terminalReturnCandidates target) :
+      (terminalEndpoint : Nat)
+      (finite : TerminalFiniteReturnWindowCertificate source
+        terminalEndpoint) :
       PermanentTailTerminalSemanticallyClosedOutcome source
   | immediate_semantic
       (valley : ImmediateHistoricalValleyCertificate target source.downTime
@@ -96,8 +98,8 @@ theorem PermanentTailDischargeReturnCertificate.terminalSemanticallyClosedOutcom
   cases h.terminalCompleteInstalledOutcome with
   | history_progress childTime parentTime progress =>
       exact .history_progress childTime parentTime progress
-  | finite_return_candidate membership =>
-      exact .finite_return_candidate membership
+  | finite_return_candidate terminalEndpoint finite =>
+      exact .finite_return_candidate terminalEndpoint finite
   | immediate_insufficient valley insufficient =>
       exact .immediate_semantic valley insufficient
         (valley.semanticOutcome h.combined.tail.target_positive)

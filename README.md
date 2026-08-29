@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース119モジュール
+- Leanソース120モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -93,6 +93,7 @@ Lean 4形式化プロジェクトです。
 - above-target blocker predecessorのearly/ready両clockを既存complete semantic stepへ接続しsign残余を除去済み
 - immediate terminal valleyのexact +1 reboundからCoverageStepを構成しnumeric insufficient残余を除去済み
 - finite return候補にremaining-list selection stateを追加しfresh選択をwell-founded visited rankへ接続済み
+- finite returnの全crossing-window provenanceを上位まで保存し、`(return, endpoint)`候補選択を有限rank化済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -126,6 +127,10 @@ typed discharge証明書による完全分類の結果、残るのはanchor grow
 canonical return自体を新しい親にするrebaseも検証しました。この操作は三残余のgrowth／chronology差を
 正規化しますが、同じdowncrossを再生するとanchor・時刻とも同一のstationary coreになります。
 従って現在の未解決点は、同じendpoint／crossing対の再訪を破る新しい履歴情報の構成です。
+finite return選択ではreturn clockだけでは別endpointを同一視してしまうため、terminal window証明書を上位まで
+保持し、`(returnTime, terminalEndpoint)`を有限キーにしました。これで同じclockの異なるwindowは別々のfresh
+選択として数えられます。残る再訪は同じwindow区間に限られ、そのinstalled parent anchorとold crossing cursorを
+過去の選択と比較するprovenanceが次の境界です。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

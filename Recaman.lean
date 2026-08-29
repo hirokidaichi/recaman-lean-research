@@ -113,5 +113,6 @@ import Recaman.PermanentAboveCorridorInstalledStep
 import Recaman.PermanentAboveCorridorAboveClosure
 import Recaman.PermanentAboveCorridorImmediateClosure
 import Recaman.PermanentAboveCorridorReturnSelection
+import Recaman.PermanentAboveCorridorWindowSelection
 import Recaman.Examples
 import Recaman.Oracle
