@@ -1312,3 +1312,29 @@ comb stepを状態再評価なしのwitnessから構成した。加算がforced�
 comb runの値集合を表現定理として閉じた。run exitでのhistory membershipは事前履歴と二つのrailの直和に正確に
 分解され、両railは入口値だけで決まる算術帯に住む。系として、最終low rail未満でrun入口にfreshな値はrun全体を
 通じてfreshのままである。comb区間は床を守る深い遅延値（19、61、76）を黙って消費できない。
+
+### 第五十八ラウンド：nineteen replay identification
+
+例外target 19のreplay固定点を数値特定した。blockerのclock境界`clock+1 < 値 < 19`からclockは16以下に落ち、
+第二床の消去でclock 6と8だけが残る。各clockはanchor（13／12）、blocker defect（6／3）、初出時刻の一意性による
+blocker first time（3／2）まで固定される。first occurrenceの一意性補題`FirstAt.unique`も追加した。
+
+### 第五十九ラウンド：nineteen replay uniqueness
+
+dischargeのhistorical downcrossはcrossing以前に19以上の軌道値を要求するが、時刻6より前の軌道は13を超えない
+ため、clock 6は排除される。時刻8より前で19以上の値は`a 7 = 20`だけなので、downcross時刻は7、fresh endpointは
+crossing自身（即時return）に固定される。target 19のdischarge replayは「時刻7の`20→12`downcrossから
+`a 8 = 12 < 19 ≤ 21 = a 9`のcrossingで即時returnする、anchor 12・blocker 3（初出2）の唯一の完全明示cycle」である。
+
+### 第六十ラウンド：nineteen minimum pins
+
+historical minimumデータも固定した。tail最小値のpredecessorはdowncross時刻7以前に初出し19を超えるが、
+その範囲で19超の軌道値は`a 7 = 20`だけである。従ってpredecessor初出は7、tail最小値は21に確定する。
+19-反例は保存された全数値成分でpinされ、残る自由は有界でないtail時刻だけになった。
+
+### 第六十一ラウンド：nineteen tail bounds
+
+そのtail時刻に具体的下界を与えた。実軌道は時刻131でなお4を訪れるため、19より上に永続するtailは131より後に
+しか始まれない。tailStart>131、start>131、horizon>132で、19-反例は「clock 9以下の完全に固定された歴史」と
+「kernel検証済みprefixの外に始まる未知のtail」に真っ二つに分かれる。最初の未知は、このprefix以後に軌道が
+20未満へ戻るか、という一点である。

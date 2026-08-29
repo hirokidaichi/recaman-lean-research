@@ -17,7 +17,9 @@
 - `LeastMissingTarget 19 ↔ 19未出`を形式化し、最初の未検証instanceを一値へ確定
 - replay床をclock 32へ拡張し、targetを`19∨61∨34以上`へ三分（例外リスト{19,61}、次の壁76）
 - comb run閉形式・witness構成・値集合表現・freshness輸送を証明し、圧縮軌道検証の機構を整備
-- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`、`PermanentAboveCorridorFixedPointShape`、`PermanentAboveCorridorFixedPointCorridor`、`PermanentAboveCorridorFixedPointFloorTwo`、`PermanentAboveCorridorLeastMissingSummit`、`PermanentAboveCorridorNineteenBoundary`、`PermanentAboveCorridorReplayFloorThree`、`OrbitComb`、`OrbitCombWitness`、`OrbitCombValues`と公理監査を追加
+- target 19のreplayをclock 8の唯一cycle（downcross 7→即時return 8・anchor 12・blocker 3初出2）へ完全特定
+- 19-反例のtail最小値を21へ固定し、tailStart>131・horizon>132で固定歴史と未知tailへ二分
+- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`、`PermanentAboveCorridorFixedPointShape`、`PermanentAboveCorridorFixedPointCorridor`、`PermanentAboveCorridorFixedPointFloorTwo`、`PermanentAboveCorridorLeastMissingSummit`、`PermanentAboveCorridorNineteenBoundary`、`PermanentAboveCorridorReplayFloorThree`、`OrbitComb`、`OrbitCombWitness`、`OrbitCombValues`、`PermanentAboveCorridorNineteenReplay`、`PermanentAboveCorridorNineteenUnique`、`PermanentAboveCorridorNineteenMinimum`、`PermanentAboveCorridorNineteenTail`と公理監査を追加
 
 ## Successor iteration and replay fixed point — 2026-08-29
 

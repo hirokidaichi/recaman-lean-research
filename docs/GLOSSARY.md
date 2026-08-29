@@ -493,6 +493,18 @@ additionで、mounted nodeがparentを再生産する。最終統合定理はsem
 付き）の二形で終端する。kernel floorによりclockは6以上、targetは19以上（replay側）、上側はupperTri包絡で
 挟まれる。深い遅延初出値（19、61）だけがkernel計算による排除の射程外に残る。
 
+### nineteen cycle / 19固定cycle — 研究固有
+
+例外target 19のdischarge replayが取り得る唯一の形である。時刻7のdowncross`20→12`から時刻8のcrossing
+`a 8 = 12 < 19 ≤ 21 = a 9`で即時returnし、anchorは12、blocker defectは3（初出時刻2）、tail最小値は21である。
+tailは時刻131（`a 131 = 4`）より後にしか始まれず、19-反例は固定された歴史と未知のtailに二分される。
+
+### comb run / 櫛状区間 — 研究固有
+
+forced additionと即時repaying legal subtractionの交互区間である。low railは1周期に1ずつ下降し、high railは
+low railに現clockを足した値になる。値集合はrail二本と事前履歴の直和に分解され、最終low rail未満のfresh値は
+区間を通じてfreshのまま輸送される。圧縮軌道検証の基本単位である。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準
