@@ -501,6 +501,11 @@ insufficientは算術残余として返る。eligible historical blockerは生�
 below-target installed master stepへ分類する。below master outcomeはselected crossing certificateを保持し、そこから次の
 permanent-tail combined parentを必ずinstallできる。
 
+`PermanentAboveCorridorAboveClosure`はabove-target生成predecessorを既存complete local APIへ接続する。clockがreadyなら
+first-occurrence直前のactual nodeは`OrbitReadyNormalCertificate`となり、potential符号によらずtarget出現またはsemantic rank下降を
+持つ。clockがearlyなら同じactual valueをold ready horizonに置いた`EarlyRepresentativeCertificate`を構成でき、そのcomplete
+semantic stepが同じ二分法を返す。従って旧clock/sign residualは不要となり、above枝は完全に局所閉包された。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -618,6 +623,7 @@ permanent-tail combined parentを必ずinstallできる。
 | installed chronology下降 | `TerminalSelectedCrossingDischargeCertificate.iterationProgress` | `PermanentAboveCorridorChronologyRank.lean` |
 | installed master rank | `BelowTargetHistoricalPredecessorCertificate.masterRankOutcome` | `PermanentAboveCorridorMasterRank.lean` |
 | terminal installed total step | `PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome` | `PermanentAboveCorridorInstalledStep.lean` |
+| above predecessor complete closure | `TerminalOuterHistoricalBlockerCertificate.completeStepOutcome` | `PermanentAboveCorridorAboveClosure.lean` |
 
 ## 8. 結論
 
@@ -695,6 +701,8 @@ shapeから次のblocker/finite-clock/insufficient枝までを再生成するtot
 discharge-level total stepも完成し、terminal全枝はstrict history progress、finite return candidate、immediate insufficient、または
 typed historical stepへ分類された。historical below枝はinstalled master stateを保持する。残る主要residualはfinite return candidateの
 再訪選択、immediate insufficientの外側処理、above-target predecessorのearly/nonnegative条件である。
+above-target predecessorのearly/ready両caseは既存complete semantic theoremへ接続され、potential sign residualは消えた。
+従ってterminal total stepで真に非progressとして残るのはfinite return candidateとimmediate insufficientの二つの数値枝だけである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

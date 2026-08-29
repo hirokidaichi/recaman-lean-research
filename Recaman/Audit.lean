@@ -437,3 +437,5 @@ import Recaman
 #print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.installedStepOutcome
 #print axioms Recaman.TerminalBelowPredecessorMasterRankOutcome.exists_install
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
+#print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.completeStepOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalCompleteInstalledOutcome

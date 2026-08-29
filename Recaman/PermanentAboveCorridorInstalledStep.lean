@@ -102,6 +102,17 @@ theorem TerminalBelowPredecessorMasterRankOutcome.exists_install
       exact ⟨crossingTime, quotient, remainder, certificate,
         certificate.install⟩
 
+/-- Eligibility retained together with the corresponding historical outcome,
+so later refinements do not have to reconstruct the chronology proof. -/
+structure TerminalOuterHistoricalEligibleInstalledStep
+    {target start : Nat} {parent : PhaseSearchNode}
+    {source : PermanentTailDischargeReturnCertificate target start parent}
+    {freshEndpoint candidate firstTime : Nat}
+    (historical : TerminalOuterHistoricalBlockerCertificate source
+      freshEndpoint candidate firstTime) : Type where
+  eligible : source.downTime + 1 ≤ source.oldCrossingTime
+  outcome : TerminalOuterHistoricalInstalledStepOutcome historical
+
 /-- Constructor-complete terminal step at discharge level. -/
 inductive PermanentTailTerminalInstalledStepOutcome
     {target start : Nat} {parent : PhaseSearchNode}
@@ -125,7 +136,8 @@ inductive PermanentTailTerminalInstalledStepOutcome
       (freshEndpoint candidate firstTime : Nat)
       (historical : TerminalOuterHistoricalBlockerCertificate source
         freshEndpoint candidate firstTime)
-      (outcome : TerminalOuterHistoricalInstalledStepOutcome historical) :
+      (installed :
+        TerminalOuterHistoricalEligibleInstalledStep historical) :
       PermanentTailTerminalInstalledStepOutcome source
 
 /-- Every terminal discharge reaches a proved strict edge, a finite candidate,
@@ -152,7 +164,10 @@ theorem PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
           by_cases holdEligible :
               h.downTime + 1 ≤ h.oldCrossingTime
           · exact .historical_step freshEndpoint candidate firstTime historical
-              (historical.installedStepOutcome holdEligible)
+              {
+                eligible := holdEligible
+                outcome := historical.installedStepOutcome holdEligible
+              }
           · have holdBefore : h.oldCrossingTime < h.downTime + 1 :=
               Nat.lt_of_not_ge holdEligible
             have hbudget := missingBelowCount_strict_of_firstAt
