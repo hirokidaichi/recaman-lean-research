@@ -11,7 +11,7 @@ different installed parent.  This module records the three outer coordinates
 which can decide such a change: the history-budget cursor, parent anchor, and
 old crossing time.
 
-Two snapshots admit a total comparison.  The current occurrence can be a
+Two snapshots always have a total comparison.  The current occurrence can be a
 strict edge of the installed-cycle master rank, the stored occurrence can be
 a strict edge in the reverse direction, or all three rank coordinates agree.
 The reverse constructor is important: merely remembering a prior snapshot

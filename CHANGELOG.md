@@ -1,5 +1,19 @@
 # Changelog
 
+## Successor iteration and replay fixed point — 2026-08-29
+
+- installationが輸送する三成分（horizon budget・anchor gap・old crossing cursor）をdischarge-level iteration rankとして定義
+- installed successorをrankのstrict下降またはexact replay固定点へ完全分類
+- 三成分lexの整礎性でiteration constructorを再帰消去し、terminal解析を四形へ無条件閉包
+- replayで`returnTime = oldCrossingTime = crossingTime`の閉cycleを証明
+- ready crossing nodeの形状一意性からinstalled node=parentのnode-level固定点を証明
+- successor dischargeを同parent・同cursorへtransportするself-map化を証明
+- 固定点の全cursorをtarget未満のbelow corridor帯へ有限化
+- 実軌道step検証でclock 3/4/5を排除し、clock≥6・target≥8・target≤upperTri(clock+1)の挟撃を証明
+- missing-target下のterminal interfaceをhistory edge／semantic child／replay固定点の三形へ確定
+- replay cycleのdischargeごとの一意性を証明
+- `PermanentAboveCorridorSuccessorRank`、`PermanentAboveCorridorIterationClosure`、`PermanentAboveCorridorReplayPinning`、`PermanentAboveCorridorReplayCorridor`、`PermanentAboveCorridorReplayFloor`、`PermanentAboveCorridorReplayInterface`と公理監査を追加
+
 ## Permanent-tail analysis — 2026-08-29
 
 - strictly-above tailの各状態から高々二遷移で`CoverageStep`を抽出

@@ -1048,3 +1048,152 @@ forced addition枝ではpredecessorのfirst occurrenceを履歴から抽出し�
 predecessorとstep clockはいずれもtarget未満になる。subtraction failure reasonも保持する。
 最後にcandidate landing自体はtarget未満なので、target以上を要求する`NormalPhaseInvariantAt`と`DebtInvariant`には
 直接入れないことを証明した。残るsemantic gapはbelow-target historical/crossing domainへのadapterに限定された。
+
+### 第三十四〜第三十六ラウンド：semantic adapterと反復可能なmaster rank
+
+blockerを生成したpredecessorをtarget相対位置で分け、above-target側はearly/ready normalの既存complete theoremへ、
+below-target側はfirst occurrenceとcanonical future returnを保持するcrossing証明書へ接続した。crossing anchorが下がれば
+global phase progress、同値で時刻が早まればcursor progress、stationary再開ならblocker直前のseen budget、anchorが増えれば
+`target-anchor`をそれぞれ下降量にした。選んだcrossingを次のpermanent-tail parentへinstallし、chronology mismatchもfresh
+downcross endpointによるmissing-budget下降へ変換した。
+
+これらをmissing history、anchor gap、crossing time、restart seen、cycle phase、local seen、minimumの七成分
+`TailInstalledCycleProgress`へ統合した。重要なのは、個別のrank不等式だけでなく、selected crossing、old crossing time、
+history horizon、次のdischargeを再構成できるprovenanceを同じ証明書に残したことである。
+
+### 第三十七〜第三十九ラウンド：terminal全枝のsemantic closureと有限選択
+
+above-target predecessorのearly/ready残余を既存semantic theoremで閉じ、immediate insufficient枝はexact `+1` reboundから
+`CoverageStep`へ接続した。terminalで残ったfinite return branchには、returnだけでなくendpoint、parent anchor、old crossing、
+down endpoint、historical first time、tail start、minimum valueを段階的にkeyへ追加した。各keyは固定target/horizonの有限listに
+属し、fresh selectionは`erase`後のlist長を厳密に下げる。
+
+一方、minimum witness timeはparent horizonで直接有界とは限らない。ここでは有限keyへ無理に追加せず、shifted tail上の
+`FirstAtOrAfter`としてcanonical化し、同じtail startとminimum valueから得る時刻の一意性を証明した。これにより、
+「有界な選択は列挙して消費し、非有界なwitnessはcanonical identityで消す」という役割分担が明確になった。
+
+### 第四十ラウンド：visited-list no-goとexact replay境界
+
+canonical keyをvisited listから除去しても、同じ有効windowからexact revisit residualを再構成できることを証明した。
+従って「候補を一度使ったから次は選べない」というlist membershipだけでは数学的矛盾にならない。再訪を拒否する状態を
+増やす前に、このno-go theoremを置いたことで、残る義務がデータ構造ではなくexact canonical segment自身の算術であると判明した。
+
+### 第四十一ラウンド：finite terminal windowの算術的排除
+
+all-forced suffixの最後の一歩とinsufficient boundから直前値を1以下に抑え、traceをfresh endpointまで戻した。
+first occurrence条件によりendpointは時刻1・値1に固定され、長いsuffixは最初のclock 2だけで上界に反するためreturnは時刻2となる。
+strict crossingは`a 2 = 3 < target < a 3 = 6`なのでtargetは4または5だけである。しかしLeanカーネルが
+`a 131 = 4`と`a 129 = 5`を`decide`で検証し、target missingに矛盾する。これによりfinite branchとexact replayは追加仮定なしで消えた。
+
+### 第四十二ラウンド：progress-only outcomeとsuccessor provenance
+
+terminal outcomeをtarget occurrence、strict history progress、semantic phase progress、installed master progressの四形へ平坦化した。
+semantic枝は比較元のlocal parentを保持し、異なるrank contextを誤って比較しない。さらにinstalled master枝ではselected crossingの
+installとactual next dischargeの存在を結果に同梱した。terminal局所解析に残余はなく、次の未解決点は三種類のwell-founded relationを
+跨いでsuccessorを反復するglobal recursionだけである。
+
+## ここまでの証明から得た学びと進め方の指針
+
+### 数学・証明設計
+
+1. **残余は曖昧な命題でなくtyped constructorにする。** 非進捗をgrowth、chronology、stationary、insufficient、historicalなどへ
+   完全分類すると、各枝に不足している証明データと、本当に実在する反例が分離できる。
+2. **局所停止と大域進捗を混同しない。** corridor内のclock下降、history内のminimum下降、cycle間のanchor下降は別relationである。
+   まず各relationを独立にwell-founded化し、遷移方向が確定してから外側優先順位を持つ辞書式rankへ統合する。
+3. **証明書には次の一手を再構成するprovenanceを残す。** 値と不等式だけでは不足する。first occurrence、representative time、
+   history horizon、old crossing、tail start、選択endpoint、local parentをconstructorから失わないことが再帰化の条件になる。
+4. **有限選択とcanonical選択を使い分ける。** target/horizonで有界な時刻や値は明示listとerase-length rankで管理する。
+   有界でないwitnessは最初の出現などへcanonical化し、一意性で選択依存を消す。
+5. **visited情報はそれ自体では再訪矛盾を与えない。** 同じ数学的certificateは「使用済み」という外部状態と無関係に再構成できる。
+   stateを増やす前にno-go theoremを試し、再訪segmentから新しいstrict edgeか算術矛盾を抽出する。
+6. **抽象化の末端では定義を展開してexact equationへ戻る。** 今回はfinal forced addition、all-forced trace、first occurrenceを
+   組み合わせることで巨大なresidual treeが`endpoint=1`、`return=2`、`target∈{4,5}`へ崩れた。
+7. **反例は設計成果として形式化する。** potentialの増減両例、stationary rebase、visited-list no-goは失敗ではなく、無効なrankや
+   interfaceを再提案しないための境界定理である。
+
+### Leanでの実装・検証ループ
+
+1. まず既存APIを`rg`で探し、小さいadapter theoremで接続可能性を確認してから大きなoutcomeを変更する。
+2. 一つのIssueでは「残余の完全分類」「strict edgeまたはno-go」「semantic provenanceの保存」を一つの閉じた単位にする。
+3. 長いcase splitは安定した時点で`structure`／`inductive`へ昇格し、後続モジュールでは内部枝を再展開しない。
+4. `omega`へ渡す前にRecamán遷移、first occurrence、list membershipを専用補題でNatの等式・不等式へ落とす。
+5. 具体的な小時刻の値だけを`decide`でkernel検証し、計算観測を一般定理の仮定にはしない。
+6. 各ラウンドで`lake build`、`Recaman.Audit`、禁止語走査を行い、README・証明地図・研究レポートを同じコミットで同期する。
+
+### Issue #60への引き継ぎコンテキスト
+
+次はterminal caseをさらに分類するのではなく、`PermanentTailTerminalSuccessorOutcome`を消費するglobal predicateを先に設計する。
+そのpredicateはhistory cursor、local semantic `PhaseSearchNode`、installed `TailInstalledCycleSearchNode`の各帰納仮定と、
+installed successorが持つnext dischargeを表現できなければならない。実装順は、(1)各枝のcontinuation lemma、
+(2)cross-domain edgeの外側priority、(3)mutualまたはsum-stateのwell-founded induction、(4)permanent-tail contradictionへの接続とする。
+local parentをoriginal discharge parentへ同一視したり、三relationのstrictnessだけを並べて再帰呼出し可能とみなしてはならない。
+
+### 第三十四ラウンド：finite selectionからterminal successorまで
+
+finite return候補にremaining-list selection stateを導入し、fresh選択をwell-founded visited rankへ接続した。
+`(returnTime, terminalEndpoint)`のwindow key、installed snapshotの`(window, anchor, oldCrossingTime)`比較、
+original down endpoint差のhistory下降、historical first/minimum provenanceの固定horizon有限化、tail minimum時刻の
+relative first occurrenceへのcanonical化を順に重ね、残る再訪をexact canonical revisitへ縮約した。visited listだけでは
+exact replayを排除できないno-goを証明し、残務を単一のresolver interfaceへ集約した。
+
+resolverの算術本体を解くと、finite insufficient windowは`endpoint=1, return=2, target∈{4,5}`に強制され、
+`a 131=4`、`a 129=5`のkernel計算でmissing仮定と矛盾する。finite branchとexact replay branchはterminal分類から
+完全に除去された。残る枝を全展開し、target occurrence、strict chronology history、local-parent semantic phase、
+installed masterの四progress形へ平坦化した。installed master枝にはselected crossing、そのsemantic install、
+`TerminalSelectedCrossingDischargeCertificate`の存在を同梱し、strict master edgeのchildをparentとする次の
+terminal解析を証明オブジェクトから再開できるようにした。
+
+### 第三十五ラウンド：discharge iteration rank
+
+installed master edgeの七成分nodeは、内側cursorが各解析のblocker first timeに依存するため、連続する二解析間で
+比較できない。installationが正確に輸送するのは共有horizon、installed crossing anchor、old crossing cursorの
+三成分だけである。この三成分lexを`terminalDischargeIterationRank`としてdischarge-levelに定義した。
+
+anchor growth枝ではinstalled anchorがtarget未満のままparent anchorを厳密に超えるため第二成分が下降し、
+equal-anchor earlier crossing枝では第三成分が下降する。どちらでもない枝はanchorとcursorがともに一致する
+exact replayで、rankは等式として不動になる。`terminalIterationOutcome`は全terminal dischargeをtarget出現、
+既存history/semantic edge、strict iteration progress付きsuccessor、replay証明書の五形へ分類する。
+
+### 第三十六ラウンド：successor iteration closure
+
+三成分rankは`natTripleLex_wellFounded`により整礎なので、strict successor edgeに沿った再帰でiteration
+constructorを消去できる。`terminalReplayReducedOutcome`は任意のdischargeが有限回のinstalled successorの後、
+target出現・strict history・semantic phase・descendant discharge上のexact replay固定点のいずれかへ到達することを
+示す。combined permanent-tail certificateからも初期dischargeを経て同じ四形が従う。未解決の数学は無限反復ではなく
+単一のtyped固定点に集約された。
+
+### 第三十七ラウンド：exact replay cycle pinning
+
+replayが保持するeligibilityとselection上界`crossingTime ≤ returnTime ≤ oldCrossingTime`から
+`returnTime = oldCrossingTime = crossingTime`が従う。canonical returnはold crossingそのものへ閉じ、dischargeは
+fresh downcross endpointからold crossingへの文字通りのcycleになる。crossing clockは値より厳密に小さく、
+blocker候補はexact subtraction defect `a C - (C+1)`としてC未満に初出し、crossing stepはtargetをまたぐ明示的
+forced additionである。
+
+さらにready crossing nodeは`node_eq`によりhorizonとanchorで形状が決まるため、installed nodeはparentに一致する。
+successor dischargeはnode equalityに沿って同じparent・同じold crossing cursorの証明書へtransportでき、replayは
+rankだけでなくnode-levelのself-map固定点である。
+
+### 第三十八ラウンド：replay corridor band
+
+`clock+1 < a clock < target`からcrossing clockはtarget未満になり、return・old crossing・downcross endpoint・
+blocker first time・fresh endpointの全cursorがtarget未満の初期帯に収まる。endpointからcrossingまでの区間で
+target以上の値が現れると、中間のweak upcrossingがfirst returnのcanonicalityに反するため、区間は全値target未満の
+below corridorである。kernel計算により`a 0=0`, `a 1=1`, `a 2=3`は値境界を満たさず、crossing clockは3以上、
+targetは5以上に限られる。
+
+### 第三十九ラウンド：replay kernel floor
+
+replay crossingは実軌道のイベントなので、小さいclockは実軌道の遷移そのもので排除できる。clock 3は実stepが
+減算であること（`a 4 = 2 ≠ a 3 + 4`）、clock 4は値境界（`5 < a 4 = 2`が偽）、clock 5はまたぐtarget `8..13`が
+すべて時刻16までに実出現することとそれぞれ矛盾する。従ってreplayはclock 6以上・target 8以上に限られる。
+上側は`target ≤ a (C+1) ≤ upperTri (C+1)`の三角包絡で押さえられ、固定点の二parameterは両側から挟まれる。
+
+### 第四十ラウンド：missing-target terminal interface
+
+仮想反例内ではtarget-occurrence枝が`target_missing`と矛盾する。従ってcombined certificateが外側探索へ渡す
+情報はstrict history edge・semantic phase child・exact replay固定点の三形に確定した。さらにreplayの
+crossing cursorとanchor値はdischargeのold crossingで一意に決まり、複数のreplay証明書が異なるcycleを閉じる
+ことはない。Issue #60の調査順序のうち、installed successorのwell-founded induction接続（項目2）はこの
+三成分rankで完了し、残余はhistory/semantic枝のcontinuation（項目3）と、固定点を破る新しい大域情報の構成
+（項目5の縮約形）である。
