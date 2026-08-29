@@ -754,6 +754,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | unified core kernel floor | `TailFixedPointCore.six_le_crossingTime` | `PermanentAboveCorridorFixedPointFloor.lean` |
 | replay second floor | `TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime_or_target_eq_nineteen` | `PermanentAboveCorridorReplayFloorTwo.lean` |
 | unconditional target floor | `TerminalExactDischargeReplayCertificate.nineteen_le_target` | `PermanentAboveCorridorReplayFloorTwo.lean` |
+| fixed-point shape API | `TailFixedPointCore.exists_value_recurrence` | `PermanentAboveCorridorFixedPointShape.lean` |
 
 ## 8. 結論
 
