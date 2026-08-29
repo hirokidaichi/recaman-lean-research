@@ -539,3 +539,5 @@ import Recaman
 #print axioms Recaman.LeastMissingTarget.semantic_or_twenty_le_of_nineteen_occurs
 #print axioms Recaman.CombRun.low_rail
 #print axioms Recaman.CombRun.high_rail
+#print axioms Recaman.combStep_of_witness
+#print axioms Recaman.CombRun.low_rail_fresh

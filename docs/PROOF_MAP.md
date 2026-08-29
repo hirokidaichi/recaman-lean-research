@@ -127,6 +127,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | least-missing summit | 最小未出目標へ全解析を接続済み | LeastMissingTargetからsemantic childまたは床付き固定点core。系として「semantic progressか19≤target」 | `PermanentAboveCorridorLeastMissingSummit` |
 | nineteen boundary | 最初の未検証instanceを一値へ確定済み | 19未満は全出現がkernel検証済みなので`LeastMissingTarget 19 ↔ 19未出`。19出現なら固定点枝はtarget≥20 | `PermanentAboveCorridorNineteenBoundary` |
 | orbit comb run | 圧縮検証の基盤閉形式を証明済み | 交互区間のlow rail（1周期-1）・high rail閉形式。CombStep/CombRunはdecidableで区間一括検証可能 | `OrbitComb` |
+| comb witness構成 | stepのwitness化を完了済み | blocked理由・正値・freshnessの三条件からCombStepを構成。大域なのはfreshness一条件のみ | `OrbitCombWitness` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
@@ -587,12 +588,17 @@ permanent tail・combined certificate・unified outcomeを経て、semantic phas
 周期ごとの二遷移だけで区間全体の値を決定し、CombStep/CombRunはdecidableなので区間単位のkernel検証ができる。
 実軌道の時刻23からの4周期combを検証例として同梱した。
 
+`OrbitCombWitness`はcomb stepを状態再評価なしのwitnessから構成する。加算がforcedである理由（減算欠損の
+非正値または既出witness）と入口正値は局所的で、大域条件はdecrement値のfreshness一つだけである。逆向きには、
+comb run内部の各low-rail着地が実際にfreshであることも抽出できる。従ってcomb区間の圧縮検証に残る唯一の
+大域義務は、値集合の表現定理によるfreshness供給である。
+
 ## モジュール層
 
 | 層 | モジュール |
 |---|---|
 | 基礎 | `Basic`, `History`, `Coordinates` |
-| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb` |
+| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb`, `OrbitCombWitness` |
 | 下降・blocker | `ActualDescent`, `Blocker`, `TargetDescent` |
 | 目標面 | `Gate`, `Mechanisms`, `LandingSurfaces`, `PrestateCoverage` |
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |
