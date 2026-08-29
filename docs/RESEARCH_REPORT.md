@@ -600,6 +600,12 @@ crossing clock 3以上・target 5以上でしか存在できない。
 
 前置界を仮定すればcoverageエンジンはそのまま発火し、landing床は例外なし`32 ≤ crossingTime`へ上がる。この条件付き結果を統合outcomeへ持ち上げ、`PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap`として「semantic枝 ∨ `32 ≤ clock`付きcore ∨ landing gap」の三択を得た。landing gap枝は`crossingTime < predecessorFirstTime`かつ`target < a predecessorFirstTime`という具体的な形をしており、次エポックの攻撃点である。
 
+`ReplayDoubleSubtractDescent`はwitness付き二分法のもう一方の枝を構造化した。二連減算枝では`a (f+1) = a f - (f+1)`と`a (f+2) = a f - (f+1) - (f+2)`が確定し、三つの時刻`f`・`f+1`・`f+2`は相異なるfresh初出を持ち、いずれもtail開始より厳密に前にある。値の落差は`a (f+2) + (2f+4) = a m`という厳密な等式で表される。
+
+blocked枝で得た分離`target + 2 < a m`は**この枝へは輸送されない**。blocked枝の証明は「強制加算のおかげで次の減算候補がちょうど`a m - 2`になり必ず実現する」ことに依存していたが、二連減算枝が生む実現値`a m - f - 2`と`a m - 2f - 4`はどちらも`a m - 2`を厳密に下回るからである（`doubleSubtract_values_below_predecessorGap`）。残余義務は`tailMinimum_gap_of_attainment`として「`a m - 2`の実現witnessが一つでもあれば無条件化が完了する」形に切り出した。
+
+さらに重要なのは、**この枝の排除がpre-tail領域への下界なしには原理的に不可能である**という確定である。証明書が軌道に下界を課すのは`MissingStrictAboveTail.strictly_above`と`TailMinimumAt.minimal`のいずれもtail開始以降に限られるが、二連減算枝が語る時刻は全てtail開始より前にある。pre-tail領域に届く大域フックは`a f = a m - 1`とtargetの欠損の二本しかなく、両方とも消費済みである。代償として、corridorデータ経由で無条件の`f + 2 < target`、したがって`f + 3 < a f`と`f + 4 < a m`が得られた。既存境界を2段強化したもので、clock床上げの探索範囲を直接削る。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -806,6 +812,10 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | landing window below target | `FirstWeakUpcrossingStep.window_below` | `LandingRevisitTransport.lean` |
 | landing floor under prefix bound | `PermanentTailCombinedCertificate.thirtytwo_le_crossingTime_of_prefixBound` | `LandingRevisitTransport.lean` |
 | refined unified outcome | `PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap` | `LandingRevisitTransport.lean` |
+| double subtraction structure | `DoubleSubtractStep.exact_drop` | `ReplayDoubleSubtractDescent.lean` |
+| double subtraction is pre-tail | `TerminalExactDischargeReplayCertificate.doubleSubtract_before_tailStart` | `ReplayDoubleSubtractDescent.lean` |
+| sharpened clock separation | `TerminalExactDischargeReplayCertificate.minimum_predecessor_clock_below_target` | `ReplayDoubleSubtractDescent.lean` |
+| refined follow-up dichotomy | `TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp_refined` | `ReplayDoubleSubtractDescent.lean` |
 
 ## 8. 結論
 

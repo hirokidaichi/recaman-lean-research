@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース167モジュール
+- Leanソース168モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -147,6 +147,9 @@ Lean 4形式化プロジェクトです。
 - record排除を共有核レベルへ汎用化し、landing側ではpredecessor初出が窓の前にある場合に発火することを証明済み
 - landing側に欠けているのはdowncross前置界ただ一つと確定：`[landingTime, crossingTime]`は全区間target未満なのでpredecessor初出は窓の外の二択に縮約され、landing分岐にはその二択を決める情報が含まれていない
 - 前置界を仮定すればlanding床が即座に例外なし`32 ≤ clock`へ上がることを証明し、統合outcomeを「semantic ∨ 32≤clock ∨ landing gap」の三択へ精密化済み
+- 二連減算枝を構造化し、`f`・`f+1`・`f+2`が相異なるfresh初出であること、全てtail開始前にあること、`a (f+2) + (2f+4) = tail最小値`という厳密な等式を証明済み
+- 二連減算枝の排除は**pre-tail領域への下界なしには原理的に不可能**と確定（証明書が軌道に下界を課すのはtail開始以降だけで、この枝が語る時刻は全てtail開始前）
+- corridorデータ経由で無条件に`f + 2 < target`・`f + 3 < a f`・`f + 4 < tail最小値`を証明済み（既存境界の真の強化。床上げ側の探索範囲を直接削る）
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

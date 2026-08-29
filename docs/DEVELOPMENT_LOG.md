@@ -1535,3 +1535,26 @@ replay固有フィールドであり、combined証明書にもlanding分岐に�
 
 なおlanding側のcoverage cutoffは実測で131が上限であり（`a 32 = 46`の後継47の初出が時刻222）、
 32を超えるには先にtarget床を48以上へ上げてcutoff 222を解禁する必要がある。順序はreplay側と同じ階段になる。
+
+### 第七十四ラウンド：二連減算枝の構造化と排除不能性
+
+witness付き二分法のもう一方の枝を構造化した。`DoubleSubtractStep`として切り出し、`a (f+1) = a f - (f+1)`・
+`a (f+2) = a f - (f+1) - (f+2)`の確定、三時刻が相異なるfresh初出であること、いずれもtail開始より厳密に前に
+あること、`a (f+2) + (2f+4) = a m`の厳密等式を証明した。
+
+blocked枝で得た`target + 2 < a m`は**この枝へは輸送されない**。二連減算枝の実現値`a m - f - 2`と
+`a m - 2f - 4`はどちらも`a m - 2`を厳密に下回るためである（`0 < f`は`a 0 = 0`とclock boundの矛盾から従う）。
+残余義務は`tailMinimum_gap_of_attainment`として「`a m - 2`の実現witnessが一つあれば無条件化完了」の形に
+切り出した。
+
+**この枝の排除はpre-tail領域への下界なしには原理的に不可能である。** 証明書が軌道に下界を課すのは
+`MissingStrictAboveTail.strictly_above`と`TailMinimumAt.minimal`のいずれもtail開始以降に限られるが、
+二連減算枝が語る時刻は全てtail開始前にある。pre-tail領域へ届く大域フックは`a f = a m - 1`とtargetの欠損の
+二本しかなく、両方すでに消費している。corridor側の三ケースも`a m`と`target`の距離を挟むだけで矛盾に至らない。
+
+代償として無条件の強化が得られた。corridorデータ（`downcross.horizon_le_time` → `eligible` → `time_eq` →
+`crossingTime_lt_target`）を繋ぐと`f + 2 < target`が出て、`f + 3 < a f`・`f + 4 < a m`が従う。
+既存の`minimum_predecessor_value_above_clock`を2段強化したもので、clock床上げの探索範囲を直接削る。
+
+したがって`minimum_predecessor_followUp`は依然として二本枝であり、clock非依存の一般排除は
+「`a m - 2`の実現を枝に依らず取る」か「pre-tail領域に下界を持つ証明書フィールドの新設」のいずれかを要する。
