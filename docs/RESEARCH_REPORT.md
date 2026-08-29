@@ -542,6 +542,11 @@ parent horizon未満なので有限selection keyへ追加できる。一方minim
 最初の出現`FirstAtOrAfter`へcanonical化する。shifted sequenceへ既存global `FirstAt`を適用することで、canonical witnessが元witness以下に
 存在することと一意性を証明した。同tailStart/minimum valueのexact revisitではcanonical timeも同一である。
 
+`PermanentAboveCorridorCanonicalStateStep`はこの最終visited stateをterminal全分類へ統合する。terminalのhistory progress、immediate
+semantic outcome、historical complete outcomeを保持し、唯一のfinite branchだけをfresh state progressまたはexact revisitへ分解する。
+fresh progressは`∃ nextState, nextState = erase key ∧ length(next)<length(state)`として返るため、Prop-valued semantic theoremからでも
+well-founded inductionへ安全に接続できる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -673,6 +678,7 @@ parent horizon未満なので有限selection keyへ追加できる。一方minim
 | relative first occurrence | `exists_firstAtOrAfter_bounded` | `PermanentAboveCorridorCanonicalMinimum.lean` |
 | canonical minimum uniqueness | `CanonicalHistoricalMinimumOccurrence.time_eq_of_same_tail_value` | `PermanentAboveCorridorCanonicalMinimum.lean` |
 | canonical tail key selection | `TerminalCanonicalTailHistorySelectionState.select` | `PermanentAboveCorridorCanonicalMinimum.lean` |
+| terminal canonical state step | `PermanentTailDischargeReturnCertificate.terminalCanonicalStateStepOutcome` | `PermanentAboveCorridorCanonicalStateStep.lean` |
 
 ## 8. 結論
 
@@ -764,6 +770,8 @@ exact revisitであり、次は同じminimum valueを実現するminimum time／
 決定できるかを解析する必要がある。start/tailStartの差も有限keyで除かれ、minimum timeはrelative first occurrenceへcanonical化された。
 従って次の境界は同一canonical tail/minimumからhistorical downcrossを再選択するときの選択一意性、または異なるdowncrossなら既に得た
 history progressへ戻す再帰的selection stateの統合である。
+このselection stateのterminal total stepへの統合も完了した。残る唯一のfinite constructorはexact canonical revisitであり、次はこの
+同一key再生をsemantic determinismから矛盾へ送れるか、またはvisited stateをinstalled-cycle再帰全体の外側rankへ組み込む必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

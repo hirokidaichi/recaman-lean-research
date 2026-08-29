@@ -478,3 +478,6 @@ import Recaman
 #print axioms Recaman.TerminalFiniteReturnWindowCertificate.canonicalTailHistoryKey_mem
 #print axioms Recaman.terminalCanonicalTailHistorySelectionProgress_wellFounded
 #print axioms Recaman.TerminalCanonicalTailHistorySelectionState.select
+#print axioms Recaman.TerminalCanonicalTailHistoryFreshSelectionCertificate.toProgress
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalCanonicalStateStepOutcome
+#print axioms Recaman.TerminalCanonicalTailHistoryFreshProgress.strict
