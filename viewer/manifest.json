@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 814,
+   "lines": 831,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -9639,6 +9639,54 @@
    "hasReport": true
   },
   {
+   "name": "PinnedAdjacentWitness",
+   "lines": 178,
+   "imports": [
+    "PinnedRemainingRows"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "six_le_clock",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_values",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_witness_early",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_target_upper_bound",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_window_narrowed",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_second_forced_addition",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_second_witness",
+     "line": 160
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PinnedBackwardStep",
    "lines": 190,
    "imports": [
@@ -11473,6 +11521,84 @@
    "hasReport": true
   },
   {
+   "name": "ReturnFrequency",
+   "lines": 240,
+   "imports": [
+    "CoverageTimeBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "uncovered_at_tail_never_occurs",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "never_occurs_blocks_coverage",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "returnFrequency_dichotomy",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_coversBelow_of_all_occur",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "coversBelow_before_tail_of_all_occur",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "coverage_le_of_tailStart_bound",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "returnFrequency_iff_coverage",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "drop_le_upperTri_gap",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "return_time_lower_bound",
+     "line": 175
+    },
+    {
+     "kind": "theorem",
+     "name": "forced_addition_run_defects",
+     "line": 185
+    },
+    {
+     "kind": "theorem",
+     "name": "all_below_target_occur",
+     "line": 206
+    },
+    {
+     "kind": "theorem",
+     "name": "returnFrequency_is_coverage",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "returnFrequency_failure_mode_empty",
+     "line": 229
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SemanticOracleRecursion",
    "lines": 390,
    "imports": [
@@ -12164,6 +12290,6 @@
    "hasReport": true
   }
  ],
- "total": 198,
+ "total": 200,
  "withReport": 153
 }
