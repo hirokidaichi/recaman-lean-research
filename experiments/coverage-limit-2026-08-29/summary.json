@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-29",
+  "horizonSteps": 50000000000,
+  "CmaxScanned": 1000000,
+  "clockMin": 112,
+  "reproduction": {
+    "claim": "cutoff 99734 -> coverage through eligible clock 776; next obstacle clock 777, successor 879, first occurrence 328002",
+    "verdict": "CONFIRMED by two independent implementations"
+  },
+  "conversionRecords": [
+    {
+      "clockFloor": 111,
+      "reachNeeded": 4825,
+      "blockingClock": 112,
+      "blockingSuccessor": 371
+    },
+    {
+      "clockFloor": 192,
+      "reachNeeded": 56515,
+      "blockingClock": 193,
+      "blockingSuccessor": 834
+    },
+    {
+      "clockFloor": 776,
+      "reachNeeded": 328002,
+      "blockingClock": 777,
+      "blockingSuccessor": 879
+    },
+    {
+      "clockFloor": 4581,
+      "reachNeeded": 582493,
+      "blockingClock": 4582,
+      "blockingSuccessor": 14491
+    },
+    {
+      "clockFloor": 4604,
+      "reachNeeded": 1779261,
+      "blockingClock": 4605,
+      "blockingSuccessor": 19117
+    },
+    {
+      "clockFloor": 13507,
+      "reachNeeded": 10201340,
+      "blockingClock": 13508,
+      "blockingSuccessor": 18954
+    },
+    {
+      "clockFloor": 15845,
+      "reachNeeded": 18394609,
+      "blockingClock": 15846,
+      "blockingSuccessor": 18107
+    },
+    {
+      "clockFloor": 24260,
+      "reachNeeded": 2789105306,
+      "blockingClock": 24261,
+      "blockingSuccessor": 82547
+    },
+    {
+      "clockFloor": 53905,
+      "reachNeeded": null,
+      "blockingClock": 53906,
+      "blockingSuccessor": 167477
+    }
+  ],
+  "fits": {
+    "X_of_C_over_records": "X ~ 0.049 * C^2.01 (R^2=0.87)",
+    "X_of_C_over_all_clocks": "X ~ 2.24e-6 * C^3.21 (R^2=0.79)",
+    "endpointSlope": 2.35,
+    "localExponentLastJump": 6.29
+  },
+  "wall": {
+    "clock": 53906,
+    "anchor": 167475,
+    "blockingSuccessor": 167477,
+    "predecessorFirstOccurrence": 53904,
+    "successorUnseenThrough": 50000000000
+  },
+  "coverageCeiling": {
+    "eligibleClocksTo1e6": 213719,
+    "pctEliminableWithFull5e10History": 34.78
+  },
+  "verdict": "(b) cost explodes; coverage saturates well before the asymptotic regime"
+}
