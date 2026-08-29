@@ -1807,3 +1807,29 @@ permanent-tail証明書を保持しているので、`¬ ∃ t, a t = target`を
 実軌道のanchor下降を作ることに帰着し、固定点解析が現に戦っている内容そのものなので無料である可能性は低い。
 ただし出せてしまえば右枝が到達不能になるので、次エポックで一度専任で当てる価値がある。最悪でも今回の
 精密化は純利得である。旧左枝は情報量ゼロだったが、新左枝は少なくともtargetの欠損を含む。
+
+### 第八十六ラウンド：敵対的再検査の二巡目（空虚化ゼロ）
+
+第八十二〜八十五ラウンドの成果を再検査した。**今回は空虚化・自明化の検出がゼロ**である（一巡目は3件）。
+
+`TailFixedPointCore`を伴う右枝は実際に居住する。target 50・clock 32で`a 32 = 46 < 50 ≤ 79 = a 33`が
+強制加算のstraddleをなし、`node_reproduction`も`⟨0, 46, .normal, 46⟩`で成立する（5フィールドすべて`decide`）。
+したがって「右枝が居住不能で床定理が空虚に真」ではない。`landing_cursor`の空虚性も否定された。
+床`32 ≤ bound`の導出でも、cursorの第5条項`∀ witness, a witness ≤ target → witness < tailStart`が
+`hlow 131`から`131 < tailStart`を出す一点で実際に効いており、自由に得られる情報ではない。
+
+`orbitReadyNormalNonCrossingStep`は真に仮定ゼロで、`OrbitReadyDirectRefined`の強化でも既存の強さは
+失われていないことを確認した（強い版が新名、正準名が弱いままという命名の問題のみ）。
+`surjective_of_targetTailReturn`は`all_targetTailReturn_implies_surjective`より直接的だが強くはない。
+∀レベルで`(∀ target, TargetTailReturnHypothesis target) ↔ 全射性`が成立する。
+
+`PinnedTailMinimumConfiguration`は無条件反証が不可能で、居住性は全射性予想と同じ深さで開いている。
+ただしdocsの「候補2438個」は`target_missing`を含まない四条件の数であって住人の数ではないので、
+誤読を招かないよう訂正した。数値調査（`f < 60000`）では四条件を満たす候補310個のうち232個が
+targetの実出現により排除され、残る78個も400k項の範囲でwitnessが見つからないだけである。
+障害は候補が生き残ることではなく、witness時刻に一様上界がないことである。
+
+副産物として構造的リードが一つ出た。候補310個のうち**189個で`a (f - 2) = target`**が成立し、
+`elim_of_predecessor_witness`がwitness `f - 2`で発火する。全域では成り立たないが、
+`pinned_forward_orbit`が前方3ステップを決定しているのと対になる後方2ステップの決定が取れれば、
+pinned枝の6割強が構造的に落ちる。

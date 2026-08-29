@@ -747,3 +747,8 @@ import Recaman
 #print axioms Recaman.not_forall_pos_exists_refinedSemanticEdge
 #print axioms Recaman.not_forall_pos_refinedSummitLeft
 #print axioms Recaman.LeastMissingTarget.refinedSemanticEdge_or_flooredCore_nontrivial
+#print axioms Recaman.probe_fixedPointCore_thirtytwo_inhabited
+#print axioms Recaman.probe_not_pinned_62_21
+#print axioms Recaman.probe_not_pinned_113_36
+#print axioms Recaman.probe_targetTailReturn_iff_surjective
+#print axioms Recaman.probe_nonCrossing_implies_refinedStep

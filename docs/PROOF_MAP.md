@@ -163,8 +163,8 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | `regenerate`仮定の空虚性 | **仮定は偽。定理は空虚に真** | `BlockedFirstOccurrence 13 6`が実軌道に存在（`a 6 = 13`が初出、欠損6は既出）。「残余義務を型で固定」という位置づけは成立しない | `TrivialityProbe` |
 | history枝の情報量 | 定義強化により内容を持つようになった | 旧定義（単なるbudget drop）では`(1, 0)`で自由だったが、landing前置界作業が`TerminalHistoryCursor target (parentTime + 1)`を連言に加えたため閉じた。新定義は`parentTime + 1`未満にtarget超の軌道値を要求する | `PermanentAboveCorridorChronologyRank` |
 | 頂点定理の床 | **無条件`32 ≤ clock`へ引き上げ済み** | landing枝は`TerminalHistoryCursor`で輸送した前置界により、replay枝は自前のkernel掃過により満たす。従来の`18 ≤ clock ∨ target = 19`から改善。semantic枝が空である事実は不変 | `LandingFloorThirtytwo` |
-| 大域残余 | 仮定一本へ純化済み | `0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`。refined再帰・horizon clock・crossing-recovery構成子は解消。ただし同仮定は出現と同値なので難しさは移動しただけ | `CrossingReadinessClosure` |
-| pinned配置の列挙可能性 | **kernel列挙では落ちないと確定** | `target = a f - 1`より配置は`f`だけで決まるが、候補は`f < 10³`で25個、`f < 3×10⁶`で2438個と累積が増え続ける。上限の兆候なし | `PinnedConfigurationAttack` |
+| 大域残余 | 仮定一本へ純化済み（ただし全射性と同値） | `0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`。refined再帰・horizon clock・crossing-recovery構成子は解消。ただし同仮定は出現と同値なので難しさは移動しただけ | `CrossingReadinessClosure` |
+| pinned配置の列挙可能性 | **kernel列挙では落ちないと確定** | `target = a f - 1`より配置は`f`だけで決まる。四つの列挙可能条件を満たす候補は`f < 3×10⁶`で2438個と累積が増え続ける。各候補は出現witness一つで落ちるがwitness時刻に一様上界がない（実測で`first[target] - f`が3×10⁵超）。配置自体の居住性は予想と同じ深さで開いている | `PinnedConfigurationAttack` |
 | tail最小値の初出 | 残り1点へ縮約済み | 遷移は「減算（fresh初出）」か「強制加算かつ`m = tailStart`」の無条件二分法。後者は`a (m-1) ≠ 1`で死ぬ。残る穴は`m + 1 < a m`のみで、pinned配置内では`target < tailStart`により閉じる | `PinnedConfigurationAttack` |
 | semantic枝の消費者の値段 | 原理的下界を確定済み | semantic枝の閉包はtarget出現と同値。constructor局所の補題では閉じず、大域矛盾の一部でなければならない | `SemanticOracleRecursion` |
 | refined domain昇格 | horizon readiness仮定つきで4 constructor完全 | canonical start／normal／debt／crossing recoveryの全枝を`OrbitReadyRefinedInvariant`へ昇格。readiness仮定は具体反例により除去不能 | `SemanticOracleRecursion` |

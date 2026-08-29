@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース186モジュール
+- Leanソース187モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -178,8 +178,9 @@ Lean 4形式化プロジェクトです。
 - **新しいsemantic枝が捏造不能であることを一行で証明**：`RefinedSemanticEdge`は両コンストラクタとも
   permanent-tail証明書を保持するので`¬ ∃ t, a t = target`をそれ単独で含む。したがって`target = 1`で
   即座に反証でき、`0 < target`からの導出は構造的に不可能（`not_forall_pos_refinedSummitLeft`）
-- crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし同時に`TargetTailReturnHypothesis target ↔ 出現`も証明されており、難しさは減っていない）
-- pinned配置は`f`だけで完全に決まり実軌道上で判定可能だが、候補は`f < 3×10⁶`で2438個あり累積が増え続けるため、kernel列挙では落ちないと確定。構造的議論が要る
+- crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし∀レベルでも`(∀ target, TargetTailReturnHypothesis target) ↔ 全射性`が成立するので、難しさは減っておらず、減ったのは足場の量である）
+- **敵対的再検査の二巡目では空虚化ゼロ**。`TailFixedPointCore`を伴う右枝はtarget 50・clock 32で実際に居住し（`a 32 = 46`／`a 33 = 79`）、床`32 ≤ clock`は本物であることを確認済み
+- pinned配置は`f`だけで完全に決まる。**四つの列挙可能条件**（初出・二連合法減算・clock境界・target床）を満たす候補は`f < 3×10⁶`で2438個あり累積が増え続ける。各候補は`target`の出現witness一つで確実に排除できるが、**witness時刻に一様上界がない**（実測で`first[target] - f`が3×10⁵超）ためkernel列挙では落ちない。`target_missing`を含む配置そのものの居住性は全射性予想と同じ深さで開いている
 - tail最小値への遷移を無条件の二分法へ整理し、無条件`FirstAt a (a m) m`まで残り1点（`m + 1 < a m`）へ縮約。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が完全決定する
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
