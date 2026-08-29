@@ -511,3 +511,6 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.eight_le_target
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalMissingOutcome
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.crossingTime_unique
+#print axioms Recaman.exists_new_below_of_missingDrop
+#print axioms Recaman.TerminalChronologyHistoryProgress.exists_freshLanding
+#print axioms Recaman.PermanentTailCombinedCertificate.terminalAnchoredOutcome

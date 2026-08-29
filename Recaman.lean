@@ -129,5 +129,6 @@ import Recaman.PermanentAboveCorridorReplayPinning
 import Recaman.PermanentAboveCorridorReplayCorridor
 import Recaman.PermanentAboveCorridorReplayFloor
 import Recaman.PermanentAboveCorridorReplayInterface
+import Recaman.PermanentAboveCorridorHistoryLanding
 import Recaman.Examples
 import Recaman.Oracle

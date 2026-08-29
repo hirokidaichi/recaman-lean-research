@@ -734,6 +734,8 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | replay kernel floor | `TerminalExactDischargeReplayCertificate.six_le_crossingTime` | `PermanentAboveCorridorReplayFloor.lean` |
 | replay target envelope | `TerminalExactDischargeReplayCertificate.target_le_upperTri` | `PermanentAboveCorridorReplayFloor.lean` |
 | missing-target terminal interface | `PermanentTailCombinedCertificate.terminalMissingOutcome` | `PermanentAboveCorridorReplayInterface.lean` |
+| history-edge fresh landing | `TerminalChronologyHistoryProgress.exists_freshLanding` | `PermanentAboveCorridorHistoryLanding.lean` |
+| anchored terminal interface | `PermanentTailCombinedCertificate.terminalAnchoredOutcome` | `PermanentAboveCorridorHistoryLanding.lean` |
 
 ## 8. 結論
 
@@ -850,6 +852,9 @@ kernel排除は実軌道step検証まで拡張された。clock 3は実stepが�
 最終的に、missing-target下のterminal解析interfaceは三形に確定した。target枝は反例仮定と矛盾するため、
 permanent tailが外側探索へ渡せる情報はstrict history edge・semantic phase child・exact replay固定点だけであり、
 replayのcycle（crossing cursorとanchor）はdischargeごとに一意である。
+history edgeはさらにanchorされた。missing-count dropの不等式単独から、window内に初出するbelow-target landingを
+逆算でき、そこからcanonical first upcrossingが再開する。従って全interface枝は、外側再帰が続行に使える
+具体的なsemantic素材（child、固定点、またはlanding+restart crossing）を必ず携える。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
