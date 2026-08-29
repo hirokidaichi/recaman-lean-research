@@ -220,7 +220,7 @@ clock 18帯の61（初出t=181653）で、二つの深い遅延値はkernel計�
 かつtarget ≤ upperTri(clock+1)の帯に挟まれます。
 仮想反例内ではtarget出現枝が矛盾するため、permanent tail解析が外側探索へ渡す情報はhistory edge・
 semantic child・replay固定点の三形に確定し、replayが閉じるcycleはdischargeごとに一意です。
-セッション後半の突破として、既出値の遅い再訪不可能性（`a_suc_ne_of_seen`型の力学補題）を発見しました。
+セッション後半の突破として、既出値の遅い再訪不可能性（`a_succ_ne_of_seen`の力学補題）を発見しました。
 replay固定点はtail最小値の遅い再訪を強制しますが、その値が検証済みprefixで既出だと力学的に矛盾します。
 これにより深い初出（`a 99734 = 19`、`a 181653 = 61`）のkernel検証を一切使わずに、19と61の両replayが
 完全排除され、床は無条件に`32 ≤ clock`・`34 ≤ target`へ確定しました。
