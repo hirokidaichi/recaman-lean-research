@@ -424,3 +424,7 @@ import Recaman
 #print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.anchorGrowthCertificate
 #print axioms Recaman.TerminalCrossingAnchorGrowthCertificate.progress_of_selected
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome
+#print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.install
+#print axioms Recaman.TerminalSelectedCrossingInstallCertificate.exists_nextDischarge
+#print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.chronology
+#print axioms Recaman.TerminalCrossingAnchorGrowthCertificate.installedProgress

@@ -106,5 +106,6 @@ import Recaman.PermanentAboveCorridorPredecessorCrossing
 import Recaman.PermanentAboveCorridorPredecessorCursor
 import Recaman.PermanentAboveCorridorRestartRank
 import Recaman.PermanentAboveCorridorAnchorCandidates
+import Recaman.PermanentAboveCorridorSelectedInstall
 import Recaman.Examples
 import Recaman.Oracle

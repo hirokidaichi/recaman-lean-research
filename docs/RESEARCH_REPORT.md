@@ -478,6 +478,12 @@ predecessorはいずれもtarget未満なので`List.range target`の要素で�
 `target-new < target-old`で、remaining gap relationは自然数へのpullbackとしてwell-foundedである。growth certificateは
 両anchorのlist membershipとstrict gap progressを同時に保持し、新anchorを次parentに選ぶ場合のadapter theoremも持つ。
 
+`PermanentAboveCorridorSelectedInstall`は選択したcrossing nodeを次cycleのsemantic parentへ昇格する。同じhistory horizonを
+使うため、ready crossingだけでなくpermanent tail内のhorizon、zero missing budget、horizon上のstrict above、no future
+downcross、historical minimumを保存した`PermanentTailCombinedCertificate`が得られる。さらにcombined interfaceで失われる
+crossing時刻を補うため、selected timeを明示的にold crossingへ固定した次のdischarge certificateを直接構成する。これにより
+anchor-gap edgeはsemantic installed parent間で反復可能になる。残る条件は次downcross endpoint≤selected timeというeligibilityである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -591,6 +597,7 @@ predecessorはいずれもtarget未満なので`List.range target`の要素で�
 | predecessor crossing cursor分類 | `BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome` | `PermanentAboveCorridorPredecessorCursor.lean` |
 | stationary restart rank | `BelowTargetHistoricalPredecessorCertificate.restartRankOutcome` | `PermanentAboveCorridorRestartRank.lean` |
 | crossing anchor有限rank | `BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome` | `PermanentAboveCorridorAnchorCandidates.lean` |
+| selected crossing install | `TerminalSelectedCrossingInstallCertificate.exists_nextDischarge` | `PermanentAboveCorridorSelectedInstall.lean` |
 
 ## 8. 結論
 
@@ -656,6 +663,9 @@ anchor growthまたはliteral stationaryへ縮んだ。次の本質は、station
 strict anchor growthも長さtargetの候補列とremaining-gap well-founded rankへ有限化された。従ってhistorical blocker側の数値的な
 無限loop要因は除去され、残るのは選んだcrossingを次cycleのsemantic parentとしてinstallし、eligibilityとrestart cursorを
 反復間で保存する統合provenanceである。
+selected crossingのsemantic installと同一old-crossing時刻を持つ次dischargeの構成も完了した。anchor-gap progressは反復可能な
+parent間relationになった。残る反復境界は、次のhistorical downcross endpointがselected crossingより後になるchronology mismatch
+であり、これを別のhistory progressとして数えるか、selection ruleでeligible crossingを選ぶ必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
