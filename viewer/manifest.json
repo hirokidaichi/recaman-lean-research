@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 771,
+   "lines": 802,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -9750,6 +9750,109 @@
    "hasReport": false
   },
   {
+   "name": "PinnedMiddleRow",
+   "lines": 223,
+   "imports": [
+    "PinnedBackwardStep",
+    "PreTailBudgetSeparation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_le_shift",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_two_above",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "target_add_three_le_tailStart",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "three_le_clock",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "target_add_two_lt_tailStart_of_two_above",
+     "line": 143
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_row_absurd",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_row_absurd_of_pinned",
+     "line": 185
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_backward_dichotomy",
+     "line": 204
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PinnedRemainingRows",
+   "lines": 163,
+   "imports": [
+    "PinnedMiddleRow",
+    "TailStartHorizonBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "pinned_predecessor_covered",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "firstRow_target_add_three_le_tailStart",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_values_below_target",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_forced_addition",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_blocked_witness",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_backward_dichotomy_with_bound",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "firstRow_forbids_late_repeat",
+     "line": 150
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PreTailBudgetSeparation",
    "lines": 444,
    "imports": [
@@ -11962,6 +12065,6 @@
    "hasReport": true
   }
  ],
- "total": 195,
+ "total": 197,
  "withReport": 153
 }

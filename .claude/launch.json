@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "proof-viewer",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "viewer/server.ts"],
+      "port": 8642
+    }
+  ]
+}
