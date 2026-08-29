@@ -15,9 +15,9 @@ semantic phase child, or a fixed-point core whose crossing clock is at
 least eighteen unless the target is exactly nineteen — and whose target is
 at least nineteen in every case.
 
-In particular, the surjectivity conjecture is now equivalent to breaking
-this single floored core, and any counterexample below nineteen is already
-impossible without further hypotheses.
+The fixed-point branch therefore carries an unconditional target floor of
+nineteen; a counterexample below nineteen could only reach the outer
+recursion through the semantic branch.
 -/
 
 /-- Floors extracted from either fixed-point branch of the unified

@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース147モジュール
+- Leanソース148モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -120,7 +120,8 @@ Lean 4形式化プロジェクトです。
 - core形状API（parent一意決定・同値crossing・異clock同値再帰）を整備済み
 - first upcrossing一般all-below補題で両固定点のbelow corridorを統一済み
 - 統合coreの床もclock 18・target 19へ拡張し、両固定点の床を完全一致させ済み
-- 最小未出目標から頂点定理を合成：semantic progressまたは床付き固定点core（19未満の反例は不可能）
+- 最小未出目標から頂点定理を合成：semantic progressまたは床付き固定点core（固定点枝はtarget≥19）
+- `LeastMissingTarget 19 ↔ 19未出`を形式化し、床を守る最初の未検証instanceを一値（a‥=19の出現）へ確定済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -226,7 +227,8 @@ mounted nodeがparentを再生産するcanonical crossingです。最終統合�
 またはこの単一core構造で必ず終端し、今後の焦点はcoreを破る大域情報の構成に完全に絞られました。
 最終的に、最小未出目標からの頂点定理`LeastMissingTarget.semantic_or_flooredCore`が全解析を一本に合成します。
 仮想的な最小未出目標はsemantic phase childを渡すか、`18 ≤ clock ∨ target = 19`かつ`19 ≤ target`を満たす
-床付き固定点coreで終端します。19未満の反例は追加仮定なしで不可能です。
+床付き固定点coreで終端します。固定点で終端する反例のtargetは無条件に19以上で、19未満の反例が
+外側再帰へ到達し得る経路はsemantic枝だけです。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
