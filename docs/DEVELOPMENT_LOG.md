@@ -1390,3 +1390,15 @@ clock境界の櫛が大半を消し、真の再訪排除が必要だったのは
 `112 ≤ clock`・`114 ≤ target`となった。停止点はclock 112で、帯の最小前駆候補370の後続371の初出が
 t=4825とkernel射程外にある。19・61・76に続く第四の深部残留値であり、さらなる引き上げには再訪排除を
 深部値へ届かせる圧縮検証（comb機構）が要る。
+
+### 第六十九ラウンド：prefix-successor coverageとclock 112 pinning
+
+個別clockの再訪排除を`ReplayPrefixSuccessorCoverage`へ抽象化した。replay anchorより大きい全prefix値のsuccessorが
+later low witness以前に出現済みなら、historical tail minimumは既出値の遅い再訪となりreplayは不可能である。
+同じcoverageをclock区間へ一括適用するfloor定理と、唯一の未被覆successorをminimum値へpinするexcept版も証明した。
+
+clock 112ではkernel計算を時刻371までに限定したまま、未被覆successorが371だけであることを証明した。その結果、
+minimum値371、predecessor初出108、historical downcross 109、`152 < target ≤ 261`まで固定された。深い軌道等式を
+`native_decide`で持ち込むと追加公理になるため採用していない。外部監査ツールではcutoff 99734のcoverageがclock
+776まで続き、次の経験的障害はclock 777・successor 879（初出328002）と判明した。次はdeep traceをkernelで圧縮検証
+するか、pin済みの`108 → 109 → 110 → 112` cycleからrecord／blocker荷重の新しい矛盾を抽出する。

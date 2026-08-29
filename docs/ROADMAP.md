@@ -266,6 +266,12 @@ targetは8以上、上側は`target ≤ upperTri (clock+1)`で挟まれる。従
 または歴史の別canonical選択）の構成に縮約された。項目3の残余はhistory/semantic枝の
 continuationのみである。
 
+数値側では`ReplayPrefixSuccessorCoverage`を追加し、larger-prefix値のsuccessor既出性と
+later low witnessを一つのinterval floor条件へまとめた。clock 112はminimum=371、
+predecessor初出108、downcross 109、`152 < target ≤ 261`へpin済みである。次の優先課題は、
+深い実軌道等式を追加公理なしで圧縮検証するtrace certificate、またはこの完全pin cycleから
+record excursion／blocker loadの矛盾を抽出することである。
+
 項目3のhistory枝continuationはその後完了した。missing-count dropの不等式単独から
 window内のbelow-target fresh landingを逆算でき、反例のbelow coverageと初出最小性が
 これをparent history内へ束縛する。landingはready crossing nodeとしてsemantic domainへ

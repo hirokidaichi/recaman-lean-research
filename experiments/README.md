@@ -9,6 +9,7 @@ Build with a C++20 compiler:
 c++ -O3 -std=c++20 experiments/recaman_empirical.cpp -o /tmp/recaman_empirical
 c++ -O3 -std=c++20 experiments/recaman_b1_history.cpp -o /tmp/recaman_b1_history
 c++ -O3 -std=c++20 experiments/recaman_debt_history.cpp -o /tmp/recaman_debt_history
+c++ -O3 -std=c++20 experiments/replay_prefix_successor_coverage.cpp -o /tmp/replay_prefix_successor_coverage
 ```
 
 Example runs:
@@ -17,6 +18,7 @@ Example runs:
 /tmp/recaman_empirical 1000000
 /tmp/recaman_b1_history 1000000
 /tmp/recaman_debt_history 1000000
+/tmp/replay_prefix_successor_coverage 1000000 1000 99734 112
 ```
 
 The reported billion-step run used `1000000000` as the final argument. It requires
@@ -45,6 +47,15 @@ The summary also counts every positive diagonal state, including the small
 base case that has no two-step subtraction tail.  Thus a run with no
 debt-eligible row still records how far the stronger diagonal-uniqueness
 conjecture was checked.
+
+`replay_prefix_successor_coverage.cpp` audits the finite predicate formalized
+as `ReplayPrefixSuccessorCoverage`.  For every numerically eligible replay
+clock it finds the latest first occurrence of a successor of a larger prefix
+value.  With cutoff 99734, the first uncovered eligible clock below 1000 is
+777: predecessor value 878 has successor 879 first occurring at time 328002.
+This is empirical guidance only.  The Lean theorem additionally needs a
+kernel-checked low witness at the cutoff; the experiment never supplies one
+as a proof.
 
 An exact-history run through one billion steps found four positive diagonal
 states, at times `1`, `1520`, `9317`, and `31221`.  The three nontrivial states

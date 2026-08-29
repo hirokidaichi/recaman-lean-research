@@ -922,5 +922,13 @@ prefixで既出なら不可能である。これにより深い初出（`a 99734
 より床は最終的に無条件`112 ≤ clock`・`114 ≤ target`まで引き上げられた。次の壁は深部値371
 （初出t=4825）である。
 
+この壁は`ReplayPrefixSuccessorCoverage`として構造化した。replay clockより前にある全larger-prefix値について、
+その数値successorがlater low witness以前に既出なら、tail minimumは時間・値の双方で十分遅い再訪となり矛盾する。
+同一cutoffでclock区間全体を一度に押し上げる定理も証明した。clock 112ではcutoff 371までのkernel計算で未被覆
+successorが371だけであることを証明し、仮想replayをminimum値371、predecessor初出108、historical downcross 109、
+`152 < target ≤ 261`へ完全にpinした。深い事実`a 4825 = 371`や`a 99734 = 19`を`native_decide`で公理化はしていない。
+外部exact-history監査ではcutoff 99734のcoverageがeligible clock 776まで続き、次の壁はclock 777のsuccessor 879
+（初出328002）だった。これは補題選択用の経験的結果であり、Lean証明には未使用である。
+
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
