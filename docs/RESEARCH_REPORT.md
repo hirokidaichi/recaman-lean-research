@@ -760,6 +760,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | core target floor | `TailFixedPointCore.nineteen_le_target` | `PermanentAboveCorridorFixedPointFloorTwo.lean` |
 | least-missing summit | `LeastMissingTarget.semantic_or_flooredCore` | `PermanentAboveCorridorLeastMissingSummit.lean` |
 | nineteen boundary | `leastMissingTarget_nineteen_iff` | `PermanentAboveCorridorNineteenBoundary.lean` |
+| comb run closed forms | `CombRun.low_rail` | `OrbitComb.lean` |
 
 ## 8. 結論
 

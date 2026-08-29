@@ -142,5 +142,6 @@ import Recaman.PermanentAboveCorridorFixedPointCorridor
 import Recaman.PermanentAboveCorridorFixedPointFloorTwo
 import Recaman.PermanentAboveCorridorLeastMissingSummit
 import Recaman.PermanentAboveCorridorNineteenBoundary
+import Recaman.OrbitComb
 import Recaman.Examples
 import Recaman.Oracle

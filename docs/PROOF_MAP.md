@@ -126,6 +126,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | core kernel floor II | 統合coreの床も18へ拡張済み | blocker不要の帯排除だけでclock 6..17を処理。例外はやはり19のみ。無条件でtarget≥19が両固定点に成立 | `PermanentAboveCorridorFixedPointFloorTwo` |
 | least-missing summit | 最小未出目標へ全解析を接続済み | LeastMissingTargetからsemantic childまたは床付き固定点core。系として「semantic progressか19≤target」 | `PermanentAboveCorridorLeastMissingSummit` |
 | nineteen boundary | 最初の未検証instanceを一値へ確定済み | 19未満は全出現がkernel検証済みなので`LeastMissingTarget 19 ↔ 19未出`。19出現なら固定点枝はtarget≥20 | `PermanentAboveCorridorNineteenBoundary` |
+| orbit comb run | 圧縮検証の基盤閉形式を証明済み | 交互区間のlow rail（1周期-1）・high rail閉形式。CombStep/CombRunはdecidableで区間一括検証可能 | `OrbitComb` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
@@ -581,12 +582,17 @@ permanent tail・combined certificate・unified outcomeを経て、semantic phas
 経験的には19は時刻99734で出現するがkernel計算の射程外にあり、この一値の出現検証だけが固定点枝の床を
 20へ進める障害である。19の出現を仮定すれば、固定点で終端する最小未出目標は20以上になる。
 
+`OrbitComb`は圧縮検証へ向けた最初の基盤である。forced additionと即時repaying legal subtractionの交互区間
+（comb run）では、low railは1周期に1ずつ下降し、high railはlow railに現clockを足した値になる。この閉形式は
+周期ごとの二遷移だけで区間全体の値を決定し、CombStep/CombRunはdecidableなので区間単位のkernel検証ができる。
+実軌道の時刻23からの4周期combを検証例として同梱した。
+
 ## モジュール層
 
 | 層 | モジュール |
 |---|---|
 | 基礎 | `Basic`, `History`, `Coordinates` |
-| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds` |
+| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb` |
 | 下降・blocker | `ActualDescent`, `Blocker`, `TargetDescent` |
 | 目標面 | `Gate`, `Mechanisms`, `LandingSurfaces`, `PrestateCoverage` |
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |
