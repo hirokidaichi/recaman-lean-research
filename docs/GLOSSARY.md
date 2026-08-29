@@ -421,6 +421,12 @@ terminal二形に共通するfinal forced upcrossingの算術証明書である�
 ともに正で、その和はaddition clock `returnTime + 1`に等しい。従って各差は`returnTime`以下になる。
 `NormalizedTerminalCrossingData`はこの釣合いに加え、最終fresh below endpointとcanonical returnを保持する。
 
+### terminal forced reason / 終端強制理由 — 研究固有
+
+terminal crossingのfinal subtractionが失敗した理由の型付き二分である。predecessor値がstep clock以下なら
+`target < 2 * (returnTime + 1)`という数値境界を持つ。candidateが正なら既出値であり、そのfirst occurrenceは
+returnより厳密に前、candidate値はpredecessorとtargetより厳密に小さいhistorical blockerになる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

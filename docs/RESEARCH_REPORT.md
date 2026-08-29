@@ -414,6 +414,12 @@ windowの二つの型付きterminal shapeへ正規化した。
 `NormalizedTerminalCrossingData`はさらに、original endpoint以後かつreturn以前のfresh below endpointと、そこからの
 canonical first returnを保持し、次のouter progress定理が枝別の算術を扱わずに済むinterfaceを与える。
 
+`PermanentAboveCorridorBlocker`は共通final crossingのforced reasonを分類する。subtraction candidateが非正なら
+predecessorはstep clock以下であり、final endpointは`2 * (return+1)`以下、従ってtargetは同上界より厳密に小さい。
+candidateが正ならfailure reasonはhistory membershipに限られる。履歴からfirst occurrenceを取り出すと、その時刻は
+returnより厳密に前で、candidate値はpredecessorとtargetの双方より小さい。outer residualはこの有限数値帯または
+具体的なearlier below-target historical blockerへ狭まった。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -508,6 +514,8 @@ canonical first returnを保持し、次のouter progress定理が枝別の算�
 | discharge terminal二形 | `PermanentTailDischargeReturnCertificate.terminalShape` | `PermanentAboveCorridorTerminal.lean` |
 | strict crossing gap partition | `WeakUpcrossingStep.strictTerminalCrossingBalance` | `PermanentAboveCorridorBalance.lean` |
 | normalized terminal共通interface | `PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData` | `PermanentAboveCorridorBalance.lean` |
+| terminal forced reason | `StrictTerminalCrossingBalance.forcedReason` | `PermanentAboveCorridorBlocker.lean` |
+| discharge blocker adapter | `PermanentTailDischargeReturnCertificate.terminalForcedReason` | `PermanentAboveCorridorBlocker.lean` |
 
 ## 8. 結論
 
@@ -546,7 +554,8 @@ suffixのfinal upcross算術、またはoriginal immediate historical valleyを�
 all-forced terminalは有限crossing windowまで縮約され、suffix強帰納によって任意個のlegal endpoint後にも
 必ず到達する。全dischargeはこのwindowかimmediate historical valleyの二形へ型付き正規化された。
 両形はさらに同じpositive gap partitionとfinal fresh endpoint interfaceを持つ。次はこの共通証明書を
-anchor下降または新しいfreshness条件へ接続することが外側cycle義務である。
+final forced reasonへ接続し、有限double-clock枝またはstrictly earlier historical blockerへ縮約した。
+次はblocker first timeとfinal fresh endpointの順序を外側anchor下降または新しいfreshness条件へ接続することが義務である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

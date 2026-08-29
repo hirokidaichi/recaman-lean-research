@@ -384,3 +384,6 @@ import Recaman
 #print axioms Recaman.PermanentTailDischargeTerminalShape.normalizedCrossingData
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.strictTerminalCrossingBalance
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData
+#print axioms Recaman.StrictTerminalCrossingBalance.forcedReason
+#print axioms Recaman.NormalizedTerminalCrossingData.forcedReason
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalForcedReason

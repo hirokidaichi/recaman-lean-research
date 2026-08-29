@@ -37,7 +37,8 @@
 - 全dischargeをimmediate historical valleyまたはfinite crossing windowの二形へ型付き正規化
 - terminal二形に共通するgap＋overshoot＝final clockと両差のclock上界を証明
 - final fresh endpoint／canonical return／strict balanceの共通interfaceを構成
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`と公理監査を追加
+- final forced additionをdouble-clock数値境界またはstrictly earlier historical blockerへ分類
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

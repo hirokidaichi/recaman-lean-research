@@ -982,3 +982,14 @@ target missingによりupcross endpointはtargetより厳密に大きい。force
 `NormalizedTerminalCrossingData`はこのbalanceと、original endpoint以後・return以前にあるfresh below endpoint、
 およびそのendpointから同じreturnへのcanonicalityをまとめる。terminal二形をcase splitするのはこの変換定理だけで、
 後続のouter progress設計はbranch-independentなinterfaceを利用できる。
+
+### 第二十八ラウンド：terminal final blocker
+
+共通balanceが保持する`¬ CanSubtract`を、定義通り数値不足とhistory membershipへ分解した。ただし残余をそのまま
+返さず、strict crossingの算術と履歴APIで強化した。数値不足なら`a return ≤ return+1`であり、final addition式から
+`a (return+1) ≤ 2*(return+1)`、strict crossingから`target < 2*(return+1)`を得る。
+
+subtraction candidateが正なら、それが`valuesThrough return`に属する。first occurrenceを抽出し、candidateが
+`a return`より小さいことからfirst timeはreturnと一致できず、厳密に前になる。candidate自身も正で、predecessorと
+targetより小さい。`StrictTerminalCrossingBalance.ForcedReason`はこの二枝をtyped residualとして保持し、normalized
+terminal dataとdischarge certificateの双方から直接取得できる。

@@ -221,11 +221,13 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 24. ~~全dischargeをimmediate historical valley／finite crossing windowの二形へ型付き正規化する。~~
 25. ~~terminal二形に共通するstrict crossing balanceとgap partitionを証明する。~~
 26. ~~最終fresh endpointとcanonical returnを共通terminal interfaceに保持する。~~
+27. ~~final forced additionを数値不足／historical blockerへ型付き分類する。~~
+28. ~~数値枝でtarget<2(return+1)、履歴枝でfirstTime<returnを証明する。~~
 
 次の調査順序は次である。
 
-1. 共通gap partitionから次のhistorical blocker候補を制約する。
-2. 最終fresh endpointを次のouter anchor／freshness量へ接続する。
+1. historical blockerの初出時刻をfinal fresh endpointの前後で分類する。
+2. double-clock数値枝とall-forcedの`return < target`を有限区間へ統合する。
 3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
 5. terminal normalizationをcursor-refined outer cycleとrefined oracleへ統合する。
