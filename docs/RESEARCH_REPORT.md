@@ -910,5 +910,13 @@ semantic phase child、exact discharge replay、node不動landing固定点の三
 forced additionで、mounted nodeがparentを再生産するcanonical crossingである。最終統合定理により、
 仮想反例の解析はsemantic childまたはこの単一core構造（provenance付き）で必ず終端する。
 
+仮想反例の解析は最終的に次の形へ収束した。最小未出目標はsemantic phase childを渡すか、parent nodeを
+再生産するcanonical crossing固定点で終端する。discharge replay側の固定点については、既出値の遅い再訪
+不可能性という単純な力学補題が決定的だった：固定点が強制するtail最小値の遅い再訪は、その値が検証済み
+prefixで既出なら不可能である。これにより深い初出（`a 99734 = 19`、`a 181653 = 61`）のkernel検証なしに
+19と61の両replayが完全排除され、床は無条件に`32 ≤ clock`・`34 ≤ target`となった。さらにこの排除は
+一般テンプレート化され、生存replayのminimum predecessor直後は「既出witness付き即時加算」または
+「fresh landing付き二連減算」に制限される。
+
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
