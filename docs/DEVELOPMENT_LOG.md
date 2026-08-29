@@ -1037,3 +1037,14 @@ history探索の向きを逆に取ると、このseen gainは既存`TailCyclePro
 またblocker first timeをoriginal down endpointと比較し、後ならoriginal endpointからstrict forward budget drop、
 以前ならouter-history residualへ分類した。残る不足はpredecessor clockのrankではなく、対応するsemantic search nodeを
 構成・選択するprovenanceである。
+
+### 第三十三ラウンド：blocker generation semantic boundary
+
+terminal historical blockerのfirst occurrenceに`firstAt_final_transition`を適用した。candidateは正なのでtime-zero枝は
+不可能である。legal subtraction枝では`legalSubtraction_firstAt_predecessor`を再利用し、candidateより大きいpredecessor、
+そのearlier first occurrence、加法等式、candidate freshnessを保持した。predecessorのtarget相対位置も明示した。
+
+forced addition枝ではpredecessorのfirst occurrenceを履歴から抽出した。candidate<targetとaddition equationにより、
+predecessorとstep clockはいずれもtarget未満になる。subtraction failure reasonも保持する。
+最後にcandidate landing自体はtarget未満なので、target以上を要求する`NormalPhaseInvariantAt`と`DebtInvariant`には
+直接入れないことを証明した。残るsemantic gapはbelow-target historical/crossing domainへのadapterに限定された。

@@ -48,7 +48,10 @@
 - positive historical blockerの初出直前でstrict missing-drop／seen-gainを証明
 - blocker predecessor選択を既存tail-cycle backtrack rank下降へ接続
 - blockerをoriginal endpoint以前またはforward budget progressへ分類
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`、`PermanentAboveCorridorCandidates`、`PermanentAboveCorridorOuterHistory`と公理監査を追加
+- blocker first occurrenceのinitial枝を排除しlegal／forced生成遷移を完全分類
+- legal枝のlarger predecessor provenanceとforced枝のtarget-bounded predecessor/clockを抽出
+- below-target blocker landingがordinary normal/debt invariantへ直結不能であるno-goを証明
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`、`PermanentAboveCorridorCandidates`、`PermanentAboveCorridorOuterHistory`、`PermanentAboveCorridorBlockerGeneration`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

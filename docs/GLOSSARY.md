@@ -451,6 +451,12 @@ positive blockerのfirst occurrence直前へhistory clockを戻すrank moveで�
 直前からfirst timeへmissing budgetが下がりseen budgetが増える。逆向きの選択は既存tail-cycle backtrack rankを
 厳密に下げる。残る条件は、そのpredecessor clockを意味的探索nodeとして選ぶprovenanceである。
 
+### blocker generation boundary / blocker生成境界 — 研究固有
+
+historical blockerのfirst occurrenceを作ったactual transitionのlegal subtraction／forced addition分類である。
+legal枝はより大きいpredecessorのearlier first occurrence、forced枝はtarget未満のpredecessorとclockを返す。
+landing candidateはtarget未満なのでordinary normal/debt domainには直接入らず、below-target専用adapterが必要になる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

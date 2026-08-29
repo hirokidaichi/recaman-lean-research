@@ -233,10 +233,13 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 36. ~~positive historical blockerから初出直前のstrict missing/seen budget edgeを抽出する。~~
 37. ~~blocker predecessor選択を既存tail-cycle rank下降へ接続する。~~
 38. ~~blocker時刻をoriginal endpoint前後で分類し、後枝のforward budget下降を証明する。~~
+39. ~~blocker first occurrenceのinitial枝を排除し、legal／forced生成遷移を完全分類する。~~
+40. ~~legal生成のlarger predecessorとforced生成のtarget-bounded predecessor/clockを抽出する。~~
+41. ~~below-target landingがordinary normal/debt invariantへ直結不能であることを証明する。~~
 
 次の調査順序は次である。
 
-1. blocker predecessorを意味的historical search nodeとして選ぶprovenanceを構成する。
+1. blocker predecessorをbelow-target historical/crossing semantic nodeへ載せるadapterを構成する。
 2. finite candidate再訪でlater returnを強制するselection provenanceを設計する。
 3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。

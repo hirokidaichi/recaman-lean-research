@@ -443,6 +443,12 @@ immediate insufficient、immediate historical、finite outer blockerの三形だ
 original down endpointより後なら、original endpointからもstrict missing-budget dropが得られる。残る境界は、数値的に
 得られたpredecessor clockを意味的historical search nodeとして選択するprovenanceである。
 
+`PermanentAboveCorridorBlockerGeneration`はblocker candidateのfirst occurrenceを作ったactual transitionを分類する。
+candidateは正なのでinitial枝は不可能である。legal subtraction枝はcandidateより大きいpredecessor、そのearlier first
+occurrence、fresh subtraction equationを保持する。forced addition枝ではpredecessorとstep clockがともにtarget未満となり、
+forced reasonも残る。一方candidate landing自体はtarget未満なのでordinary normal/debt invariantのtarget lower boundに
+矛盾する。このため数値backtrackをsemantic stepにするにはbelow-target historical/crossing専用adapterが必要である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -549,6 +555,8 @@ original down endpointより後なら、original endpointからもstrict missing
 | blocker backtrack証明書 | `TerminalHistoricalBlockerCertificate.backtrackCertificate` | `PermanentAboveCorridorOuterHistory.lean` |
 | blocker tail-cycle edge | `TerminalHistoricalBacktrackCertificate.tailCycleProgress_of_selected` | `PermanentAboveCorridorOuterHistory.lean` |
 | non-clock rank分類 | `PermanentTailTerminalNonClockResidual.rankOutcome` | `PermanentAboveCorridorOuterHistory.lean` |
+| blocker生成遷移 | `TerminalHistoricalBlockerCertificate.generation` | `PermanentAboveCorridorBlockerGeneration.lean` |
+| normal/debt直結no-go | `TerminalHistoricalBlockerCertificate.semanticBoundary` | `PermanentAboveCorridorBlockerGeneration.lean` |
 
 ## 8. 結論
 
@@ -597,6 +605,8 @@ finite clock bandは明示候補listとwell-founded later-return rankへ変換�
 candidateを強制するselection provenanceであり、非clock側は三constructorに限定された。
 historical blocker二枝には初出直前へのstrict tail-cycle rank edgeが存在することも証明した。従ってhistory側の残務は
 rank不等式ではなく、そのpredecessorを有効な次nodeとして選ぶsemantic provenanceに限定された。
+生成遷移監査により、landingをordinary normal/debtへ直結する案も排除された。次に必要なのはlegal枝のlarger predecessor
+またはforced枝のtarget-bounded predecessorを受け取るbelow-target historical/crossing adapterである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

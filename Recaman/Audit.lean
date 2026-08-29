@@ -401,3 +401,8 @@ import Recaman
 #print axioms Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress
 #print axioms Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress_of_selected
 #print axioms Recaman.PermanentTailTerminalNonClockResidual.rankOutcome
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.generation
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.not_normalPhaseInvariantAt
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.not_debtInvariant
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.semanticBoundary
+#print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.semanticBoundary
