@@ -506,6 +506,14 @@ freshnessを要求して既出値に降りられず、加算着地は自分のcl
 replay固定点が強制するtail最小値の遅い再訪と矛盾させることで、深い初出の kernel 検証なしに例外targetを
 排除する主要武器である。
 
+### record exclusion / record排除 — 研究固有
+
+replay crossingは軌道のrunning maximumを更新できないという排除道具である。dischargeのdowncrossは
+missing target以上の値から始まり、straddleはcrossing値をtarget未満に保つため、crossing値は必ず
+より早い軌道値に支配される。record更新型のforced addition clockは帯検証なしで一括排除できる。
+downcross prefix境界（targetはcrossing以前の軌道最大値以下）・再訪不可能性と並ぶ、床引き上げの
+三種の機械的道具の一つである。
+
 ### comb run / 櫛状区間 — 研究固有
 
 forced additionと即時repaying legal subtractionの交互区間である。low railは1周期に1ずつ下降し、high railは
