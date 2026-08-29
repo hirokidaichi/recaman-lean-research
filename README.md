@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース187モジュール
+- Leanソース188モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -171,6 +171,9 @@ Lean 4形式化プロジェクトです。
 - **頂点定理の固定点枝の床を無条件`32 ≤ clock`へ引き上げ済み**（従来は`18 ≤ clock ∨ target = 19`）。landing枝は前置界の輸送で、replay枝は自前のkernel掃過で満たす。ただしsemantic枝が空である事実は変わらないので、この二択そのものは依然として`0 < target`から出る
 - 前置界は`TerminalChronologyHistoryProgress`に`TerminalHistoryCursor`を連言として加える形でsource-freeに輸送した（Nat持ち上げ不要。history枝の情報量も同時に回復）
 - 無条件`FirstAt a (a m) m`の残余枝を完全記述し、**計数路線が越えられない壁が`tailStart`の上界の不在である**ことを三度確認
+- **その壁が構造的であることを証明済み**：`MissingStrictAboveTail`の3フィールドも証明書のhorizon条件もすべて上方閉なので、`tailStart ≤ g(target)`型の定理は原理的に導出不可能
+- 最小修正も特定：`tail_minimal`フィールド1本（構築時に自明に満たせる）を足せば`target < tailStart ≤ bound + 1`の両側評価が出る。残る未知量はcoverage time（target未満の値が最後に初出する時刻）の上界ひとつ
+- 副産物`covered_forces_above`：あるレベル未満の値が全部既出になれば、時計がそのレベルとcoverage時刻の両方を過ぎた後は軌道は二度とそのレベル未満へ戻れない。tailの存在自体がこれで説明でき、`horizon_strictly_above`が独立フィールドである必要がないことも判明
 - pinned配置の前方展開は`m+3`まで強制加算で確定、`m+4`で分岐が避けられないことを算術的に証明済み
 - 精密版outcomeの頂点への伝播を8段中4段まで完了（ReplayInterface段・HistoryLanding段。`landing_cursor`も運ぶ形に更新済み）
 - **精密版outcomeの頂点への伝播が全8段完了**。頂点定理`LeastMissingTarget.refinedSemanticEdge_or_flooredCore`は

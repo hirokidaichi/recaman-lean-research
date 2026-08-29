@@ -464,7 +464,32 @@ pre-tail領域の計数路線（`coveredBelowCount`）は三ラウンド連続�
    これは遅延再出現による消去が必要とする`a m < m`のちょうど逆である。残余枝は消去の道具が働く条件を
    構造的に打ち消している。
 
-したがって**次エポックの最優先候補の一つは`tailStart`（または`parent.horizon`）の上界機構の新設**である。
+**この壁が構造的であることは証明された。** `MissingStrictAboveTail target s`の3フィールドはすべて`s`について
+上方閉であり（`MissingStrictAboveTail.mono`）、任意のboundを超えるvalidな`tailStart`が存在する
+（`missingStrictAboveTail_no_upper_bound`）。証明書のhorizon条件も全部上方閉である
+（`budget_zero`は`missingBelowCount_zero_mono`、`no_future_downcross`は`no_future_downcross_mono`、
+`horizon_strictly_above`は`budget_zero`から自動的に従う）。したがって`tailStart ≤ g(target)`型の定理は
+現行の証明書からは**原理的に導出不可能**である。`TerminalHistoryCursor`も方向が逆で、その内容は
+`strictly_above`の対偶と同値な下界にすぎない（`terminalHistoryCursor_lower_bound`）。
+
+**最小修正は最小性フィールド1本である。** `MissingStrictAboveTail`または
+`PermanentTailDischargeReturnCertificate`に
+
+```
+tail_minimal : ∀ s, MissingStrictAboveTail target s → tailStart ≤ s
+```
+
+を足せばよい。validなtail startの集合はℕの空でない上方閉集合なので最小元を持ち、構築時に自明に満たせる。
+これ一本で`tailStart_le_of_minimal`が上界を与え、`target < tailStart ≤ bound + 1`の両側評価が成立する
+（`bound`はtarget未満の全値が既出になる時刻）。証明書は既にcoverageを二箇所で持っているので追加の
+数学的入力は要らない。
+
+そのうえで**残る唯一の未知量はcoverage time自身の上界**、すなわち「target未満の値が最後に初出する時刻`n₀`」に
+対する`n₀ ≤ g(target)`である。鳩の巣からは`n₀ ≥ target - 1`の下界しか出ない。上界には
+`covered_forces_above`の逆向き、つまり「未被覆の値が残っている間は軌道が繰り返しその領域に降りてくる」型の
+議論が要る。これは新しい組合せ論的命題であり、計数路線の本当の核心である。
+
+したがって**次エポックの最優先候補の一つは最小性フィールドの追加とcoverage timeの上界**である。
 `old_crossing_before_horizon`と`tail_strictly_before_horizon`を経由して`parent.horizon`をcrossing側の量で
 挟み込めるかが、計数路線を生かす唯一の道である。これが立たない限り、pre-tail領域の計数は下界を出す道具に
 とどまる。

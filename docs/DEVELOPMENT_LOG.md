@@ -1833,3 +1833,24 @@ targetの実出現により排除され、残る78個も400k項の範囲でwitne
 `elim_of_predecessor_witness`がwitness `f - 2`で発火する。全域では成り立たないが、
 `pinned_forward_orbit`が前方3ステップを決定しているのと対になる後方2ステップの決定が取れれば、
 pinned枝の6割強が構造的に落ちる。
+
+### 第八十七ラウンド：壁の構造的確定と最小修正の特定
+
+三度当たった壁を正面から攻め、**上界が存在しない理由を定理にした**。`MissingStrictAboveTail target s`の
+3フィールドはすべて`s`について上方閉なので、任意のboundを超えるvalidな`tailStart`が存在する。証明書の
+horizon条件も全部上方閉である。特に`horizon_strictly_above`は`budget_zero`から自動的に従うことが判明し、
+独立フィールドである必要がないと分かった。したがって`tailStart ≤ g(target)`型の定理は現行の証明書からは
+原理的に導出不可能である。`TerminalHistoryCursor`も方向が逆で、内容は`strictly_above`の対偶と同値な下界に
+すぎなかった。
+
+**最小修正も特定した。** `tail_minimal : ∀ s, MissingStrictAboveTail target s → tailStart ≤ s`の1本を足せば
+よい。validなtail startの集合はℕの空でない上方閉集合なので最小元を持ち、構築時に自明に満たせる。これで
+`target < tailStart ≤ bound + 1`の両側評価が成立する。証明書は既にcoverageを二箇所で持っている。
+
+そのうえで残る唯一の未知量はcoverage time自身の上界、すなわち「target未満の値が最後に初出する時刻`n₀`」に
+対する`n₀ ≤ g(target)`である。これは新しい組合せ論的命題であり、計数路線の本当の核心である。
+
+副産物の`covered_forces_above`は独立に強い道具である。あるレベル未満の値が全部既出になれば、時計が
+そのレベルとcoverage時刻の両方を過ぎた後は軌道は二度とそのレベル未満へ戻れない（戻れば値が自分より
+大きい時刻で再出現することになり、減算のfreshnessと加算のovershootが両方それを禁じる）。tailの存在自体が
+これで説明できる。targetに限らず任意のレベルで使えるので、prefix-successor coverage側とも噛み合うはずである。

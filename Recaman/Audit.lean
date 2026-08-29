@@ -752,3 +752,14 @@ import Recaman
 #print axioms Recaman.probe_not_pinned_113_36
 #print axioms Recaman.probe_targetTailReturn_iff_surjective
 #print axioms Recaman.probe_nonCrossing_implies_refinedStep
+#print axioms Recaman.missingBelowCount_zero_covered
+#print axioms Recaman.covered_forces_above
+#print axioms Recaman.missingStrictAboveTail_of_budgetZero
+#print axioms Recaman.MissingStrictAboveTail.mono
+#print axioms Recaman.missingStrictAboveTail_no_upper_bound
+#print axioms Recaman.no_future_downcross_mono
+#print axioms Recaman.horizon_strictly_above_of_budgetZero
+#print axioms Recaman.terminalHistoryCursor_lower_bound
+#print axioms Recaman.tailStart_le_of_minimal
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.tailStart_pinned_of_minimal
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.tailStart_replaceable
