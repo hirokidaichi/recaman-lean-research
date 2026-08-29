@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース144モジュール
+- Leanソース145モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -118,6 +118,7 @@ Lean 4形式化プロジェクトです。
 - 統合coreにblocker不要のkernel floor（clock≥6、target≤upperTri包絡）を証明済み
 - replay floorをclock 17まで拡張し、深い遅延値19だけを例外に18≤clock∨target=19、無条件target≥19を証明済み
 - core形状API（parent一意決定・同値crossing・異clock同値再帰）を整備済み
+- first upcrossing一般all-below補題で両固定点のbelow corridorを統一済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

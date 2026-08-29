@@ -528,3 +528,5 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_le_target
 #print axioms Recaman.TailFixedPointCore.parent_shape
 #print axioms Recaman.TailFixedPointCore.exists_value_recurrence
+#print axioms Recaman.FirstWeakUpcrossingStep.all_below
+#print axioms Recaman.landing_cycle_corridor_below
