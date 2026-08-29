@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース168モジュール
+- Leanソース169モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -152,6 +152,9 @@ Lean 4形式化プロジェクトです。
 - corridorデータ経由で無条件に`f + 2 < target`・`f + 3 < a f`・`f + 4 < tail最小値`を証明済み（既存境界の真の強化。床上げ側の探索範囲を直接削る）
 - **床上げ機構（prefix-successor coverage）に構造的天井 clock ≈ 5.4×10⁴ が存在することを数値的に確定**。kernel射程を無限に伸ばしてもclock 10⁶までの65%はこの機構では消せない（実験、Lean証明には未使用）
 - kernel射程→clock床の換算式を測定：`射程 ≈ 0.049 · 床^2.01`（フロンティア付近の局所指数は6.29まで悪化）。深部検証への投資は正当化されないと判断
+- **semantic枝のpayloadを捏造不能な形へ強化済み**（`PermanentTailRefinedSuccessorOutcome`）。子はrefined domain所属を要求され、親は証明書自身のclockから決まる名前付きノードに固定される
+- 非捏造性を三本の定理で形式化：anchor bumpはrefined domainを必ず外れる／「どの親にも子がある」は偽／crossing枝は実軌道のstrict upcrossing証明書しか受け付けない
+- discharge証明書の四つのsemantic生成枝すべてを精密版で構成済み（immediate枝はcurrent-state経路からextended-history表現へ経路変更して解決）
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

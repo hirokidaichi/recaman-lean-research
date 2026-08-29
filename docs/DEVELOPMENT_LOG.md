@@ -1582,3 +1582,25 @@ clock 10⁶までの65%はcoverageでは消せない。
 投資判断として、深部軌道値のkernel検証（射程延長・圧縮証明書）への追加投資を行わないことを確定した。
 clock 112の障害`a 4825 = 371`を検証しても床は192までしか上がらない。主資源は大域組み立ての構造的欠陥の
 修復とclock非依存の一般排除へ投じる。これらの数値結果はLean証明には一切使用していない。
+
+### 第七十六ラウンド：semantic枝の捏造不能な精密化
+
+第七十一ラウンドで同定した情報欠落を実際に埋めた。精密版`PermanentTailRefinedSuccessorOutcome`の核心は
+二点である。(i) 子が広義`PhaseSemanticInvariant`ではなくrefined domain `OrbitReadyRefinedInvariant`に属する。
+(ii) 親を存在量化しない。四つのsemantic枝はそれぞれ証明書自身のclockから決まる名前付きノードを親に固定する。
+
+非捏造性を三本の定理で形式化した。refined domainのnormal相では`anchorParent = localMeasure`が要求されるので
+anchor bumpによる捏造はそこで詰まる。zero-budget親には子が存在しないので「どの親にも子がある」は偽である。
+crossing枝の子は親とhorizonを共有するのでstrict edgeはanchor下降からしか来ず、refined domainでanchorが
+target未満になれるのはcrossing recoveryだけなので、実軌道の本物のstrict crossing証明書が要る。
+
+限界も明示する。四枝を忘却した`RefinedDomainEdge`が`0 < target`から導出できないことは証明していない。
+非捏造性が確実なのは親を固定した各constructorであって忘却形ではない。下流は可能な限り精密版のまま扱い、
+`toEdge`は最後の接続点でだけ使う。
+
+immediate枝は元の`canonicalCoverage_phaseSemantic`経路が`target ≤ downTime + 3`を要求し、valley証明書から
+その時計が出ないため精密化できなかった。同じ値`a (downTime + 2)`を親のzero-budget horizonへ格納する
+extended-history表現へ経路変更して解決した（`immediateValley_extended`）。
+
+残余は伝播であり、頂点までの10モジュールのうち9段は純粋な再包装、唯一新規生成する`MountedIteration`も
+`crossing_refined`として構成できる。新しい数学は不要な機械的作業である。次エポックで加法的に積む。

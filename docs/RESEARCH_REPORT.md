@@ -606,6 +606,16 @@ blocked枝で得た分離`target + 2 < a m`は**この枝へは輸送されな�
 
 さらに重要なのは、**この枝の排除がpre-tail領域への下界なしには原理的に不可能である**という確定である。証明書が軌道に下界を課すのは`MissingStrictAboveTail.strictly_above`と`TailMinimumAt.minimal`のいずれもtail開始以降に限られるが、二連減算枝が語る時刻は全てtail開始より前にある。pre-tail領域に届く大域フックは`a f = a m - 1`とtargetの欠損の二本しかなく、両方とも消費済みである。代償として、corridorデータ経由で無条件の`f + 2 < target`、したがって`f + 3 < a f`と`f + 4 < a m`が得られた。既存境界を2段強化したもので、clock床上げの探索範囲を直接削る。
 
+`RefinedSemanticOutcome`は、第七十一ラウンドで同定したsemantic枝の情報欠落を実際に埋めた。精密版`PermanentTailRefinedSuccessorOutcome`の設計上の核心は二点である。(i) 子が広義`PhaseSemanticInvariant`ではなくrefined domain `OrbitReadyRefinedInvariant`に属する（horizon readiness込みで、整礎再帰の合法な開始点である）。(ii) **親を存在量化しない**。四つのsemantic枝はそれぞれ証明書自身のclockから決まる名前付きノード（post-valley representative、blocker predecessor二種、discharge parent自身）を親として固定する。
+
+非捏造性は三本の定理で形式化した。第一に、refined domainの四constructorはすべて数値タプルを実軌道状態へ固定するため、normal相では`anchorParent = localMeasure`が成り立つ。`exists_phaseSearchProgress_parent`の捏造は`anchorParent`だけを+1して`localMeasure`を据え置くので、まさにこの一致条件で詰まる（`refinedNormal_anchorBump_not_orbitReadyRefined`）。第二に、zero-budget親には子が存在しないので「どの親にも子がある」は偽である（`not_forall_exists_phaseSearchProgress_child`）。第三に、crossing枝の子は親とhorizonを共有するのでstrict edgeはanchor下降からしか来ず、そのanchorは既にtarget未満であるから、refined domainでanchorがtarget未満になれるcrossing recoveryの証明書、すなわち実軌道の本物のstrict crossingが要る（`crossingChild_anchorDrop_forces_crossingRecovery`）。
+
+ただし限界も明示する。四枝を忘却した`RefinedDomainEdge`について、`0 < target`から導出できないことは証明していない。実軌道には`target ≤ a t₁ < a t₂`なる時刻対が多数あると見込まれるためである。**非捏造性が確実なのは親を固定した各constructorであって、忘却形ではない。**
+
+immediate枝だけは元の経路では精密化できなかった。元の`canonicalCoverage_phaseSemantic`はcurrent-state経路であり`target ≤ downTime + 3`を要求するが、valley証明書からその時計は出ない。そこで同じ値`a (downTime + 2)`を親のzero-budget horizonへ格納するextended-history表現へ経路変更した（`immediateValley_extended`）。副次的にこの枝の親も`parent.horizon`基準に揃った。
+
+残余は伝播である。頂点までの10モジュールが広義outcomeを再包装しているが、調査の結果9段は純粋な再包装で、唯一新規生成する`PermanentAboveCorridorMountedIteration`も`ready.crossing`を手元に持つため`crossing_refined`として構成できる。新しい数学は不要な機械的作業である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -840,6 +850,10 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | double subtraction is pre-tail | `TerminalExactDischargeReplayCertificate.doubleSubtract_before_tailStart` | `ReplayDoubleSubtractDescent.lean` |
 | sharpened clock separation | `TerminalExactDischargeReplayCertificate.minimum_predecessor_clock_below_target` | `ReplayDoubleSubtractDescent.lean` |
 | refined follow-up dichotomy | `TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp_refined` | `ReplayDoubleSubtractDescent.lean` |
+| refined successor outcome | `PermanentTailDischargeReturnCertificate.refinedSuccessorOutcome` | `RefinedSemanticOutcome.lean` |
+| anchor bump leaves refined domain | `refinedNormal_anchorBump_not_orbitReadyRefined` | `RefinedSemanticOutcome.lean` |
+| crossing child needs real upcrossing | `crossingChild_anchorDrop_forces_crossingRecovery` | `RefinedSemanticOutcome.lean` |
+| refined summit at discharge level | `LeastMissingTarget.exists_refinedSuccessorOutcome` | `RefinedSemanticOutcome.lean` |
 
 ## 8. 結論
 
