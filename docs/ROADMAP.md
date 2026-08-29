@@ -289,7 +289,15 @@ floor引き上げは戦略として成立しない。従って残る調査順序
    replayは深い初出の検証なしに完全排除された。次はこの排除機構の一般化である。
    minimum predecessor `f`の直後が「減算→加算」なら`a (f+2) = a f + 1`がtail最小値
    `v`の早期出現になり、同じ矛盾が出る。残る形は`f`直後の遷移が異なるケースの分類
-   である。
+   である。**61も同機構で排除済み**であり、床は無条件に`32 ≤ clock`・`34 ≤ target`と
+   なった。clockごとの床引き上げは次の三種の機械的道具で進められる：
+   (i) record排除 — replay crossingは軌道running maximumを更新できない
+   （`crossingTime_not_record`）ため、櫛の上歯型clockは帯検証なしで消える；
+   (ii) downcross候補の有限化 — `target ≤ a downTime`かつ`downTime < clock`なので
+   prefix最大値がtarget未満のclockは消え、残るclockでもdownTime候補は少数；
+   (iii) 再訪不可能性 — minimum predecessor候補の後続値`a f + 1`が検証済みprefixで
+   既出なら排除（`a_succ_ne_of_seen`）。これらの反復適用はサブエージェント向きの
+   機械的作業である。
 2. semantic progress枝のchildを外側restricted oracle再帰のdomainへ接続し、
    ready crossing局所stepの残余を`TargetTailReturnHypothesis`の証明義務として
    単一定理へ統合する（Issue #60 項目1・4）。
