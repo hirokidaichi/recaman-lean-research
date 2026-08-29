@@ -177,6 +177,7 @@ import Recaman.CrossingReadinessBridge
 import Recaman.CrossingReadinessClosure
 import Recaman.TrivialityProbe
 import Recaman.PinnedConfigurationAttack
+import Recaman.PinnedForwardOrbit
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
 import Recaman.OrbitCombValues

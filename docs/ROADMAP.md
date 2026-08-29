@@ -449,6 +449,26 @@ clock 10⁶までの65%はcoverageでは消せない。
 
 これらの数値結果は仮説選択と投資判断のためのものであり、Lean証明には一切使用していない。
 
+## 三度確認された壁：`tailStart`の上界が存在しない
+
+pre-tail領域の計数路線（`coveredBelowCount`）は三ラウンド連続で同じ壁に当たった。計数が与えるのは常に
+「`tailStart`は十分大きい」方向の**下界**である。無条件の`target < tailStart`はその成果だが、矛盾を出すには
+`tailStart`の**上界**が要る。ところが証明書側の上界は`tailStart ≤ start < parent.horizon`だけで、
+`parent.horizon`は無制限である。
+
+同じ壁は三つの異なる文脈で現れた。
+
+1. 二連減算枝の排除（`ReplayDoubleSubtractDescent`）：証明書が軌道に下界を課すのはtail開始以降だけ。
+2. pre-tail budget（`PreTailBudgetSeparation`）：fresh初出3連発が食うのは3レベルだけで`target + 1`の桁に対し無視できる。
+3. 無条件`FirstAt a (a m) m`の残余枝（`PinnedForwardOrbit`）：残余枝は強制加算により`a m ≥ m`を要求し、
+   これは遅延再出現による消去が必要とする`a m < m`のちょうど逆である。残余枝は消去の道具が働く条件を
+   構造的に打ち消している。
+
+したがって**次エポックの最優先候補の一つは`tailStart`（または`parent.horizon`）の上界機構の新設**である。
+`old_crossing_before_horizon`と`tail_strictly_before_horizon`を経由して`parent.horizon`をcrossing側の量で
+挟み込めるかが、計数路線を生かす唯一の道である。これが立たない限り、pre-tail領域の計数は下界を出す道具に
+とどまる。
+
 ## 並行して行う保守
 
 - 一つの数学概念を一つの下位モジュールへ置く。
