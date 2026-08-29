@@ -132,5 +132,7 @@ import Recaman.PermanentAboveCorridorReplayInterface
 import Recaman.PermanentAboveCorridorHistoryLanding
 import Recaman.PermanentAboveCorridorLandingHorizon
 import Recaman.PermanentAboveCorridorLandingMount
+import Recaman.PermanentAboveCorridorLandingInstall
+import Recaman.PermanentAboveCorridorMountedIteration
 import Recaman.Examples
 import Recaman.Oracle

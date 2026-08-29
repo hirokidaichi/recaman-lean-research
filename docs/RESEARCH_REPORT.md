@@ -741,6 +741,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | mounted terminal interface | `PermanentTailCombinedCertificate.terminalMountedOutcome` | `PermanentAboveCorridorLandingMount.lean` |
 | landing combined install | `PermanentTailCombinedCertificate.installReadyCrossing` | `PermanentAboveCorridorLandingInstall.lean` |
 | re-entrant mounted analysis | `PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing` | `PermanentAboveCorridorLandingInstall.lean` |
+| mounted iteration closure | `PermanentTailCombinedCertificate.mountedIterationOutcome` | `PermanentAboveCorridorMountedIteration.lean` |
 
 ## 8. 結論
 
@@ -868,6 +869,9 @@ endpointはstrict crossingになり、crossing-recovery certificateの全フィ�
 閉じたterminal解析の三枝すべてが、外側探索のsemantic domainの実objectを渡す。
 さらにmounted nodeはcombined certificateの新parentへ昇格する。ready crossing以外の全fieldは共有horizonにのみ
 依存するためtransportは無条件で、terminal解析はmounted nodeから再入できる。landing枝は葉ではなく再帰点である。
+この再入反復も整礎に閉じた。anchor dropのlandingはsemantic childとして即時返却、anchor growthはanchor gapの
+強帰納で消去、equal anchorはmounted node = parentの文字通りの固定点になる。permanent-tail解析全体の終端は
+semantic phase child、exact discharge replay、node不動landing固定点の三形である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
