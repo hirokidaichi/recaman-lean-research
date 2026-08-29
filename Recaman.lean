@@ -148,6 +148,7 @@ import Recaman.PermanentAboveCorridorNineteenUnique
 import Recaman.PermanentAboveCorridorNineteenMinimum
 import Recaman.PermanentAboveCorridorNineteenTail
 import Recaman.PermanentAboveCorridorNineteenRevisit
+import Recaman.PermanentAboveCorridorNineteenElimination
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
 import Recaman.OrbitCombValues

@@ -554,3 +554,7 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_tailStart_bound
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_horizon_bounds
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_forces_twentyone_revisit
+#print axioms Recaman.a_succ_ne_of_seen
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.target_ne_nineteen
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.twenty_le_target
