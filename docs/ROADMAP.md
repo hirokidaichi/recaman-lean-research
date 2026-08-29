@@ -289,6 +289,23 @@ floor引き上げは戦略として成立しない。従って残る調査順序
    ready crossing局所stepの残余を`TargetTailReturnHypothesis`の証明義務として
    単一定理へ統合する（Issue #60 項目1・4）。
 
+その後、history枝のcontinuationは完了し、解析は頂点定理まで合成された。
+`LeastMissingTarget.semantic_or_flooredCore`により、最小未出目標はsemantic phase
+childを渡すか、床付き固定点core（`18 ≤ clock ∨ target = 19`かつ`19 ≤ target`）で
+終端する。19未満の全値の出現はkernel検証済みなので`LeastMissingTarget 19`は
+「19が未出」と同値であり、床を守る最初の未検証instanceは`a 99734 = 19`という
+一つの軌道値に確定した（次は`a 181653 = 61`）。
+
+この二値はkernel `decide`の射程（時刻数百）を大きく超える。有望な次の手法は
+**軌道区間の閉形式による圧縮検証**である。Recamánの軌道は櫛状区間で
+`a (s+2k) = a s - k`、`a (s+2k+1) = a s + s + 1 + k`型の交互パターンに従う。
+加算stepの正当性（減算候補の既出性）は直前2 stepの値でwitnessできるが、
+減算stepのfreshnessは大域条件であり、区間`[0, t]`の値集合の表現定理
+（低レール・高レールの区間和としての特徴付け）が必要になる。この表現定理を
+帰納で与えられれば、`a 99734 = 19`は数百区間の合成でkernel検証可能になり、
+固定点の床は20以上（次いで61の処理で62以上）へ進む。これは全射性の一般解決では
+ないが、床の引き上げと反例構造のさらなる狭窄に直結する。
+
 ### 完了条件
 
 ```lean
