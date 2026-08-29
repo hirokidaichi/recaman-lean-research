@@ -143,7 +143,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | predecessor follow-up witness | 二分法をwitness付きへ強化済み | predecessor値はclock超なので即addは必ず既出witness、二連subは初手がfresh landing。次エポックの攻撃点を明示 | `PermanentAboveCorridorMinimumFollowUp` |
 | crossing record exclusion | replay crossingのrecord性を排除済み | downcross値がcrossing値を厳密に支配。record更新型のforced addition clockは帯検証なしで一括排除可能 | `PermanentAboveCorridorCrossingRecord` |
 | replay kernel floor IV | 三種道具でdischarge replay枝の床をclock 112へ拡張済み | record排除・downcross前置界・再訪排除の反復で32..111を全消去。discharge replay枝について無条件112≤clock・114≤target（landing枝は据え置き）。次の壁は371（初出t=4825） | `PermanentAboveCorridorReplayFloorFour` |
-| prefix successor coverage | clock列挙を一括coverage条件へ抽象化済み | later low witness以前に全larger-prefix successorが既出ならreplayは矛盾。clock 112は唯一の例外371へpinされ、first=108・downcross=109・target∈[153,261] | `PermanentAboveCorridorPrefixSuccessorCoverage`, `ReplayWitnessDescent`, `SemanticOracleRecursion`, `LandingRevisitTransport`, `ReplayDoubleSubtractDescent`, `RefinedSemanticOutcome` |
+| prefix successor coverage | clock列挙を一括coverage条件へ抽象化済み | later low witness以前に全larger-prefix successorが既出ならreplayは矛盾。clock 112は唯一の例外371へpinされ、first=108・downcross=109・target∈[153,261] | `PermanentAboveCorridorPrefixSuccessorCoverage`, `ReplayWitnessDescent`, `SemanticOracleRecursion`, `LandingRevisitTransport`, `ReplayDoubleSubtractDescent`, `RefinedSemanticOutcome`, `PreTailBudgetSeparation` |
 | witness descent (blocked枝) | 一段で停止するno-goを確定済み | blocked枝は`(値, 初出)`のearlier-smaller辺をclock非依存に供給するが、`clock < 値`とblocked性がwitnessへ輸送されず整礎性が発火しない。残余義務を`regenerate`の二条件として明示し、それを仮定した一括排除定理へ縮約。副産物としてblocked枝で`target + 2 < a m` | `ReplayWitnessDescent` |
 | semantic枝の情報量 | **無情報であることを確定済み（重大な構造的発見）** | 頂点定理のsemantic disjunctは`0 < target`から導出可能。`stepParent`が存在量化のみでlex順の親を捏造できるため。固定点解析側は無傷で、失われているのは枝のpayload | `SemanticOracleRecursion` |
 | semantic枝の精密化 | **捏造不能な精密版を構成済み** | `PermanentTailRefinedSuccessorOutcome`。子は`OrbitReadyRefinedInvariant`所属、親は証明書のclockから決まる名前付きノードに固定。discharge証明書の四つのsemantic生成枝すべてで構成完了 | `RefinedSemanticOutcome` |
@@ -158,6 +158,9 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | landing床（前置界を仮定） | 例外なし`32 ≤ clock`へ | 前置界を仮定すればcoverageエンジンがそのまま発火。統合outcomeは「semantic ∨ 32≤clock付きcore ∨ landing gap」の三択へ精密化 | `LandingRevisitTransport` |
 | 二連減算枝の構造 | 完全に構造化済み | `f`・`f+1`・`f+2`は相異なるfresh初出で全てtail開始前。`a (f+2) + (2f+4) = a m`の厳密等式。実現値は`a m - 2`を`f`と`2f+2`だけ下回るのでblocked枝の分離は輸送されない | `ReplayDoubleSubtractDescent` |
 | 二連減算枝の排除 | **原理的に不可能と確定** | 証明書が軌道に下界を課すのはtail開始以降のみ。この枝が語る時刻は全てtail開始前なので、pre-tail領域への下界を持つ新フィールドなしには矛盾が引けない | `ReplayDoubleSubtractDescent` |
+| pre-tail計数枠組み | 新規インフラ`coveredBelowCount`を構成済み | `missingBelowCount`の厳密な補数。鳩の巣`coveredBelowCount k n ≤ n + 1`をMathlibなしで証明 | `PreTailBudgetSeparation` |
+| pre-tail下界 | **無条件`target < tailStart`** | target未満の全値がtailStart前に埋まる必要があるので鳩の巣で従う。kernel計算ゼロ・条件なし。既存のtailStart下界（`222 <`等）はすべて`a 222 = 47`型の条件付きkernel計算だった | `PreTailBudgetSeparation` |
+| `target + 2 < a m`の残余 | 単一配置へ釘付け済み | 破れるのは`a m = target + 2`・`a f = target + 1`・二連減算強制・`a(f+1) = target - f`・`a(f+2) = target - 2f - 2`・`2f + 2 < target`・`target < tailStart`の一配置のみ | `PreTailBudgetSeparation` |
 | clock-target分離の強化 | 無条件で2段強化済み | corridorデータ（downcross前置界→eligible→time_eq）経由で`f + 2 < target`、したがって`f + 3 < a f`・`f + 4 < a m` | `ReplayDoubleSubtractDescent` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |

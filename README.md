@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース169モジュール
+- Leanソース170モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -155,6 +155,8 @@ Lean 4形式化プロジェクトです。
 - **semantic枝のpayloadを捏造不能な形へ強化済み**（`PermanentTailRefinedSuccessorOutcome`）。子はrefined domain所属を要求され、親は証明書自身のclockから決まる名前付きノードに固定される
 - 非捏造性を三本の定理で形式化：anchor bumpはrefined domainを必ず外れる／「どの親にも子がある」は偽／crossing枝は実軌道のstrict upcrossing証明書しか受け付けない
 - discharge証明書の四つのsemantic生成枝すべてを精密版で構成済み（immediate枝はcurrent-state経路からextended-history表現へ経路変更して解決）
+- **pre-tail領域への初の一般的下界 `target < tailStart` を無条件に証明**（`coveredBelowCount`による鳩の巣。kernel計算ゼロ・条件なし・全replayで成立。既存のtailStart下界はすべて条件付きkernel計算だった）
+- `target + 2 < tail最小値`が破れる可能性を単一の完全に釘付けされた配置へ縮約済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

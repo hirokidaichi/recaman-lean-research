@@ -1604,3 +1604,45 @@ extended-history表現へ経路変更して解決した（`immediateValley_exten
 
 残余は伝播であり、頂点までの10モジュールのうち9段は純粋な再包装、唯一新規生成する`MountedIteration`も
 `crossing_refined`として構成できる。新しい数学は不要な機械的作業である。次エポックで加法的に積む。
+
+### 第七十七ラウンド：balanced kernel traceで時刻4825へ到達
+
+Issue #62のflat trace checkerを64-step leafとbalanced treeへ組み替え、さらに認証済み訪問集合を`Nat` bitsetで
+保持する`BitTraceMachine`を実装した。各branch codeは外部生成値にすぎず、`ValidBitTraceStep`、
+`BitTraceMachine.Represents`、既存`State`へのstep soundnessを通らなければ定理にはならない。
+
+通常のkernel reductionで`a 1024 = 3698`と`a 4825 = 371`を証明し、モジュール全体の型検査は約3.6秒だった。
+これにより「深部値371はkernel射程外」という技術的な壁自体は解消した。追加公理や禁止された評価機構は使わない。
+
+並行して、clock 112のtarget帯153..261から223を除く108値の明示witness表を9個程度のpiecewise-affine式へ
+圧縮し、表と式の一致をkernelで検証した。`Clock112ExactHistoryCertificate`を与えればreplay targetが223に
+一意化する。ただしflat 2622-step入力からcertificateを作る試行は150秒超で、bitset outputをtarget pinへ
+直接接続するadapterはまだない。
+
+重要な境界として、`a 4825 = 371`単独ではclock 112 replayを排除しない。tail minimum clockを4825へ同定して
+矛盾するには、それより後のlow witnessをkernelで与える必要がある。経験的な最初の候補は時刻99734の値19であり、
+これは今回の証明には使っていない。従ってformal replay floorは112のままで、Issue #61は継続する。
+
+tooling側ではbranch reason列と108値のwitness表を決定的Lean断片へ出すgeneratorを追加した。flat断片が
+kernel timeoutすることも再現し、balanced checkerが必要な理由を測定可能にした。coverage機構の構造的天井が
+別途確定したため、traceを時刻99734以降へ伸ばす追加投資は行わず、ここで得たcheckerは有限証明基盤として残す。
+
+### 第七十七ラウンド：pre-tail計数枠組みと無条件下界
+
+`ReplayDoubleSubtractDescent`が同定した構造的欠落——証明書が軌道に下界を課すのはtail開始以降だけ——に
+対する最初の一手を打った。`missingBelowCount`の厳密な補数`coveredBelowCount`を定義し、
+`coveredBelowCount k n + missingBelowCount k n = k`と鳩の巣`coveredBelowCount k n ≤ n + 1`を
+標準ライブラリのみの二重帰納法で証明した。
+
+replayへ適用すると**無条件の`target < tailStart`**が出る。既存のtailStart下界はすべて`a 222 = 47`型の
+条件付きkernel計算に依存していたが、こちらは計算ゼロ・条件なし・全replayで成立する。
+
+ただし計数だけでは矛盾に届かない。計数が与えるのは常に「`tailStart`は十分大きい」方向で、証明書側の
+`tailStart`上界は`tailStart ≤ start < parent.horizon`のみ、`parent.horizon`は無制限である。
+「fresh初出3連発がbudgetを食う」路線も消費が3レベルにとどまり無視できる量だった。矛盾へ変えるには
+`start`または`parent.horizon`の上界を与える別機構が要る。
+
+副産物として`target + 2 < a m`の残余を単一配置へ釘付けした。tail最小値の局所witnessは`a m - 1`と
+`a m - (m+1)`のどちらも`a m - 2`に届かない。`tailStart < m`なら`m-1 → m`の遷移は必ず減算になり
+`FirstAt a (a m) m`が従う。`target + k < a m`の一般化は`k = 2`で止まると判定した。blocked枝が`k = 2`を
+出せたのは強制加算の次の減算候補がちょうど`a m - 2`になる一回限りの偶然だからである。

@@ -616,6 +616,14 @@ immediate枝だけは元の経路では精密化できなかった。元の`cano
 
 残余は伝播である。頂点までの10モジュールが広義outcomeを再包装しているが、調査の結果9段は純粋な再包装で、唯一新規生成する`PermanentAboveCorridorMountedIteration`も`ready.crossing`を手元に持つため`crossing_refined`として構成できる。新しい数学は不要な機械的作業である。
 
+`PreTailBudgetSeparation`は、`ReplayDoubleSubtractDescent`が同定した構造的欠落——証明書が軌道に下界を課すのはtail開始以降だけである——に対する最初の一手である。`missingBelowCount`の厳密な補数として`coveredBelowCount`を定義し、`coveredBelowCount k n + missingBelowCount k n = k`と鳩の巣`coveredBelowCount k n ≤ n + 1`を標準ライブラリのみの二重帰納法で証明した。中核は「1時刻は高々1レベルしか埋めない」と「軌道値が`k`以上の時刻は1レベルも埋めない」の二補題である。
+
+これをreplayへ適用すると**無条件の`target < tailStart`**が出る。target未満の値はすべて既出であり（`below_covered`）、tailはtargetより上にある（`strictly_above`）ので、target個の値がすべて`tailStart`より前の時刻で埋まらねばならず、さらに最小predecessorが1レベル追加するからである。既存の`tailStart`下界（`222 <`、`367 <`など）はすべて`a 222 = 47`型のkernel計算に依存し`47 < target`のような条件付きだったが、こちらは計算ゼロ・条件なし・全replayで成立する。
+
+ただしこの計数だけでは矛盾に届かない。計数が与えるのは常に「`tailStart`は十分大きい」方向であり、証明書側の`tailStart`上界は`tailStart ≤ start < parent.horizon`のみで`parent.horizon`は無制限だからである。「fresh初出3連発がbudgetを食う」路線も、消費が3レベルにとどまり`tailStart ≥ target + 1`の桁に対して無視できることを確認した。数え上げを矛盾へ変えるには`start`または`parent.horizon`の上界を与える別機構が要る。
+
+副産物として`target + 2 < a m`の残余が単一配置へ釘付けされた。tail最小値の局所witnessは`a m - 1`（1つ上）と`a m - (m+1)`（`m - 1 ≥ 1`だけ下）のどちらも`a m - 2`に届かないことを証明し（`tailMinimum_local_witnesses_miss_gap`）、`tailStart < m`なら`m-1 → m`の遷移が必ず減算になること、したがって`FirstAt a (a m) m`が従うことも示した。破れ得る配置は`a m = target + 2`を含む完全に固定された一形のみである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -854,6 +862,9 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | anchor bump leaves refined domain | `refinedNormal_anchorBump_not_orbitReadyRefined` | `RefinedSemanticOutcome.lean` |
 | crossing child needs real upcrossing | `crossingChild_anchorDrop_forces_crossingRecovery` | `RefinedSemanticOutcome.lean` |
 | refined summit at discharge level | `LeastMissingTarget.exists_refinedSuccessorOutcome` | `RefinedSemanticOutcome.lean` |
+| pre-tail pigeonhole | `coveredBelowCount_le_time` | `PreTailBudgetSeparation.lean` |
+| unconditional pre-tail bound | `TerminalExactDischargeReplayCertificate.target_lt_tailStart` | `PreTailBudgetSeparation.lean` |
+| pinned residual configuration | `TerminalExactDischargeReplayCertificate.tailMinimum_gap_or_pinned` | `PreTailBudgetSeparation.lean` |
 
 ## 8. 結論
 
