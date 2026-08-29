@@ -187,6 +187,7 @@ import Recaman.TailStartHorizonBound
 import Recaman.TailStartTwoSided
 import Recaman.PinnedBackwardStep
 import Recaman.PinnedMiddleRow
+import Recaman.PinnedRemainingRows
 import Recaman.TrivialityProbeTwo
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness

@@ -399,10 +399,12 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
    → `exists_dischargeReturnCertificate`）で`tailStart`を`least`へ差し替えれば、証明書自身が両側評価を持つ。
    接続部品（`least_tailStart_minimumCertificate`・`least_tailStart_minimum_le`）は揃っている。
 3. **pinned配置の残り2行。** 後方2ステップは「両方減算」（12件相当）か「両方加算」（21件相当）の二択まで
-   縮んだ。両方加算は`a (f-2) = target - 2f + 2`が`target`未満で時刻`f-2`に載るため`target + 2`レベルの
-   鳩の巣ではidleにならない。別レベルの計数か`covered_forces_above`を`f-2 < tailStart`側で使う経路が要る。
-   両方減算は`coveredBelowCount_two_above`がそのまま効いて`target + 3 ≤ tailStart`は出るが、
-   late recurrenceの的がない。
+   縮んだ（当初310件の89.4%を排除済み）。**両方加算は計数では原理的に落ちない**ことが確定した——後方2値が
+   どちらもtarget未満なので鳩の巣の精密化はむしろsub-target値を増やす方向に働き、`covered_forces_above`も
+   `a (f+1)`のfresh初出のためboundが`f+1`以上になって射程外になる。攻めるべきは
+   `lastRow_blocked_witness`が固定した局所条件、すなわち隣接2値`target - 2f + 1`・`target - 2f + 2`が
+   `f-1`以前に揃うという強い制約である。両方減算は`target + 3 ≤ tailStart`まで出ているが
+   late recurrenceの的がなく、`firstRow_forbids_late_repeat`を発火させる相手を見つける必要がある。
 4. **精密版頂点定理の左枝、`discharge_step`経路。** `mounted_crossing`経路は`installReadyCrossing`による
    anchorの無限降下で塞がったが（`not_alwaysHorizonInternalAnchorDrop`）、`discharge_step`の
    immediate／early／ready各枝は`terminalFiniteClosedOutcome`の分岐出力を要求し、他の分岐に落ちる可能性を
