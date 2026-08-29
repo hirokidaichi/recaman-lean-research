@@ -553,3 +553,4 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_minimum_pins
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_tailStart_bound
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_horizon_bounds
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_forces_twentyone_revisit

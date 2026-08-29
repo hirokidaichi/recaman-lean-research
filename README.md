@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース156モジュール
+- Leanソース157モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -130,6 +130,7 @@ Lean 4形式化プロジェクトです。
 - downcross条件でclock 6を排除し、19-replayを唯一の完全明示cycle（7→8即時return、anchor 12）へ確定済み
 - 19-反例のtail最小値を21・minimum predecessor初出を7へ固定し、残る自由をtail時刻のみへ縮約済み
 - `a 131 = 4`によりtailStart>131・horizon>132を強制し、19-反例を固定歴史と未知tailへ二分済み
+- 19未出⟹21がt>131で再訪、という将来イベント強制を証明済み（prefixでは21はt=9の一度きり）
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

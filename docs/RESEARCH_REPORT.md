@@ -769,6 +769,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | nineteen replay uniqueness | `TerminalExactDischargeReplayCertificate.nineteen_replay_unique` | `PermanentAboveCorridorNineteenUnique.lean` |
 | nineteen minimum pins | `TerminalExactDischargeReplayCertificate.nineteen_minimum_pins` | `PermanentAboveCorridorNineteenMinimum.lean` |
 | nineteen tail bounds | `TerminalExactDischargeReplayCertificate.nineteen_tailStart_bound` | `PermanentAboveCorridorNineteenTail.lean` |
+| nineteen revisit forcing | `TerminalExactDischargeReplayCertificate.nineteen_forces_twentyone_revisit` | `PermanentAboveCorridorNineteenRevisit.lean` |
 
 ## 8. 結論
 
