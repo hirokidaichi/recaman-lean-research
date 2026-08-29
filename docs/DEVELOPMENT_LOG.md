@@ -1877,3 +1877,33 @@ horizon条件も全部上方閉である。特に`horizon_strictly_above`は`bud
 いるので、差は2だけである。詰まらない場合でも`middle_row_pins_minimum_time`により
 `m ∈ {target+1, target+2}`の2点に釘付けされる。第3行・第4行は`a (f-2)`がtargetから`2f-2`／`2f`離れており
 この道具では届かない。
+
+### 第八十九ラウンド：tail startの両側評価（既存モジュール無編集）
+
+前ラウンドで特定した最小修正を、既存モジュールを一行も編集せずに達成した。最小性を証明書のフィールドに
+しなくても「validなtail start全体の最小元を取る」定理を一本立てれば済むからである。`Nat.find`はMathlabなしの
+この環境に無いので、decidabilityを要求しない有界帰納法による最小元の存在定理を自前で書いた。結果として
+両側評価`target ≤ least ≤ bound + 1`が成立する。副産物は`a (least - 1) < target`と、`target ≤ s`が任意の
+valid tail startについて成立すること（前ラウンドの一般化）である。
+
+詰まりはまだ動かない。両側評価は`least`についてのもので、証明書の`source.tailStart`に対しては下界しか
+与えないからである。ただし`least_tailStart_minimumCertificate`によりtail最小値の機構一式を`least`の上に
+建て直せることは証明済みで、建て直せば残る未知量はcoverage timeの上界ひとつになる。tail startはもはや
+自由パラメータではない。
+
+### 第九十ラウンド：精密版頂点定理の二択が実質的な分岐であることの確定
+
+「左枝が`LeastMissingTarget`から無条件に出てしまわないか」という最後の高リスク課題に決着をつけた。
+**出ない。** 左枝の`mounted_crossing`経路が要求するのは単一の算術不等式`a crossingTime < parent.anchorParent`
+だけだが、これは全parentでは成立し得ない。anchor下降が取れると`landingReadyCrossing`でready crossingになり、
+`installReadyCrossing`が同じtail・同じ最小時刻の証明書をanchorがより小さい新しい親の上に再生産するので、
+反復すると自然数の無限狭義降下列ができる。証明書が無料で差し出す唯一の候補は親自身のcrossingで、
+`a crossingTime = parent.anchorParent`と狭義不等号をちょうど0だけ外す。
+
+さらに、**左枝はpermanent-above tailをまるごと持ち歩いている**ので、左枝単独で`TargetTailReturnHypothesis`と
+`CrossingRefinedStepHypothesis`の両方が反証される。左枝は楽な逃げ道ではなく右枝と同じ大域的障害を背負って
+おり、どちらの枝に落ちても残る義務は同一の一点（crossing局所step）である。したがって本日の床上げと
+landing前置界の輸送は大域的にも無駄ではなかった。
+
+`discharge_step`経路については形式的な不可能性証明は得ていない。各枝が`terminalFiniteClosedOutcome`の
+分岐出力を要求し、他の分岐に落ちる可能性を排除する手段がないためである。ここが残る唯一の未閉鎖点である。

@@ -669,6 +669,14 @@ LeastMissingTarget target →
 
 **残る留保を明示する。** 形式的に排除したのは「`0 < target`からの導出」である。より深い「`LeastMissingTarget target`から`RefinedSemanticEdge target start`が無条件に出るか」は排除していない。手で追う限りそれは`mounted_crossing`の`PhaseSearchProgress`、すなわち`a crossingTime < mountedParent.anchorParent`という実軌道のanchor下降を作ることに帰着し、これは固定点解析が現に戦っている内容そのものなので無料である可能性は低い。ただし仮にそれが出せてしまえば右枝が到達不能になるという意味で重大なので、次エポックで一度専任で当てる価値がある。最悪の場合でも今回の精密化は純利得である。旧左枝は情報量ゼロだったが、新左枝は少なくとも`¬ ∃ t, a t = target`を含む。
 
+`TailStartTwoSided`は前ラウンドで特定した最小修正を、**既存モジュールを一行も編集せずに**達成した。最小性を証明書のフィールドにしなくても、「validなtail start全体の最小元を取る」定理を一本立てれば既存の`MissingStrictAboveTail`のまま最小性が得られるからである。`Nat.find`はMathlibなしのこの環境に存在しないので、decidabilityを要求しない有界帰納法による最小元の存在定理を自前で書いた（`exists_least_of_bounded`）。結果として**両側評価`target ≤ least ≤ bound + 1`**が成立する。副産物として`a (least - 1) < target`（最小tail startの直前で軌道は必ずtargetを下回る）と、`target ≤ s`が任意のvalid tail startについて成立すること（前ラウンドの`target_lt_tailStart`の一般化）が得られた。詰まっていた箇所はまだ動かない。両側評価は`least`についてのもので、証明書の`source.tailStart`に対しては`least ≤ source.tailStart`という下界しか与えないからである。ただし`least_tailStart_minimumCertificate`により、tail最小値の機構一式を`least`の上に建て直せることは証明済みなので通路は開通した。そして建て直しても**残る未知量はcoverage timeの上界ひとつだけ**になる。サンドイッチがそれを明示している。tail startはもはや自由パラメータではない。
+
+`RefinedEdgeReachability`は精密版頂点定理の二択が**実質的な分岐である**ことを確定した。左枝の`mounted_crossing`経路が要求するのは単一の算術不等式`a crossingTime < parent.anchorParent`（`crossingTime`はhorizon内のfirst weak upcrossing）だけで、他のフィールドはすべて証明書から無料で出る。ところがこの不等式は全parentでは成立し得ない。anchor下降が取れると`landingReadyCrossing`でready crossingになり、`installReadyCrossing`が同じtail・同じ最小時刻の証明書をanchorがより小さい新しい親の上に再生産するので、反復すると自然数の無限狭義降下列ができるからである（`not_alwaysHorizonInternalAnchorDrop`）。証明書が無料で差し出す唯一の候補は親自身のcrossingで、`a crossingTime = parent.anchorParent`と**狭義不等号をちょうど0だけ外す**（`ownFirstUpcrossing`）。これが残余の正確な形である。
+
+さらに良い知らせがある。**左枝はpermanent-above tailをまるごと持ち歩いている**ので、左枝単独で`TargetTailReturnHypothesis`と`CrossingRefinedStepHypothesis`の両方が反証される（`RefinedSemanticEdge.stuckCrossing_and_obstructions`）。左枝は楽な逃げ道ではなく、右枝と同じ大域的障害を背負っている。どちらの枝に落ちても残る義務は同一の一点、すなわちcrossing局所stepである。したがって本日の床上げとlanding前置界の輸送は大域的にも無駄ではなかった。
+
+`discharge_step`経路については形式的な不可能性証明は得ていない。immediate／early／readyの各枝は`terminalFiniteClosedOutcome`の**分岐出力**を要求し、`history_progress`や`exact_replay`に落ちる分岐を排除する手段がないためである。ここが残る唯一の未閉鎖点である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
