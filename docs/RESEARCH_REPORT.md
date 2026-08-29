@@ -936,7 +936,7 @@ prefixで既出なら不可能である。これにより深い初出（`a 99734
 19と61の両replayが完全排除され、床は無条件に`32 ≤ clock`・`34 ≤ target`となった。さらにこの排除は
 一般テンプレート化され、生存replayのminimum predecessor直後は「既出witness付き即時加算」または
 「fresh landing付き二連減算」に制限される。三種道具（record排除・downcross前置界・再訪排除）の反復に
-より床は最終的に無条件`112 ≤ clock`・`114 ≤ target`まで引き上げられた。次の壁は深部値371
+より床は最終的にdischarge replay枝について無条件`112 ≤ clock`・`114 ≤ target`まで引き上げられた。landing固定点枝の床は共有核由来の`18 ≤ clock ∨ target = 19`・`19 ≤ target`のままであり、頂点定理が携える床もこちらである。次の壁は深部値371
 （初出t=4825）である。
 
 この壁は`ReplayPrefixSuccessorCoverage`として構造化した。replay clockより前にある全larger-prefix値について、

@@ -369,12 +369,17 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
 本プログラムの位置づけは、予想の真偽どちらの仮説の下でも変わらないが、期待すべき結末は変わる。
 
 - **予想が真の場合**：仮想反例の構造を締め上げて矛盾へ至る現在の方法は正攻法である。
-  固定点の排除が完了した時点で`TargetTailReturnHypothesis`が無条件化し、全射性が従う。
+  ただし固定点の排除だけでは`TargetTailReturnHypothesis`は無条件化しない。統合outcomeの
+  semantic枝は`stepParent`が自由変数のため無条件に居住可能であり（`semantic_or_flooredCore_of_pos`）、
+  固定点枝を潰しても矛盾は生じないからである。全射性へ到達するには、(i) semantic枝の`stepParent`を
+  外側再帰の現parentへ束縛する主張型の再設計、(ii) `CrossingRefinedStepHypothesis`の素の
+  `CrossingSearchInvariant`をready化する橋、の二つが追加で必要である。
 - **予想が偽の場合**：矛盾は永遠に導けず、固定点として記述している構造は実在する反例の
   忠実な記述である。この場合、証明済みの床（`112 ≤ clock`・`114 ≤ target`）や構造定理は
   「実際の最小未出値が満たす検証済み性質」という真の定理群として残る。
 
-経験的には852655が10²³⁰項を超えても未出であり、偽仮説は真剣に考慮すべきである。従って
+外部報告によれば852655が10²³⁰項を超えても未出とされる（本リポジトリでの独立検算は3×10⁶項までで、
+それ以上の規模は検証していない）。偽仮説は真剣に考慮すべきである。従って
 「いつかFalseが出る」ことだけを目標に床上げへ投資し続けることは避ける。床上げは1ラウンド
 ごとに成功するが、深部残留値は後退しても消えないため、漸近的には定理へ近づかない。
 今後の床上げは「一般排除機構のストレステスト」と位置づけ、エージェント作業として
@@ -393,7 +398,13 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
    一本になる。
 4. witnessed dichotomyの「二連減算」枝を調べる。「即時加算」枝の下降連鎖は一段で停止するno-goが
    確定済みであり（`ReplayWitnessDescent`）、clock非依存な一般排除の望みはもう一方の枝にしかない。
+   clock 112ではこの二分法を具体化し、109・110の二連合法減算へ固定した。さらにtail minimum clock
+   `m`を`FirstAt a 371 m`、`371 < m`、`a (m-1) = m + 371`を満たす一意な初出clockへ縮約した
+   （`PermanentAboveClock112Obstruction`）。局所構造だけでは矛盾せず、残る自由度は371の大域初出である。
 5. comb圧縮検証でkernel射程をt≈5000へ延長し、深部値371の壁を試す（埋め草・上限付き）。
+   `ChunkedTraceCertificate`で認証bitmap、branch理由、checkpoint合成、既存`State`へのsoundnessを
+   kernel内に実装した。15-step例は通常`decide`で通るが、step単位certificateの1024-step入力は
+   130秒超で、深部検証には不十分だった。次はcomb区間を一理由で検証するsublinear certificateが必要である。
 
 ## 並行して行う保守
 

@@ -4,6 +4,8 @@
 標準用語／研究固有用語の区別は[用語集](GLOSSARY.md)を参照。
 ordinary normal constructorの生成箇所と精密化方針は
 [normal provenance監査](NORMAL_PROVENANCE_AUDIT.md)にまとめる。
+形式化全体の健全性監査（定義の正しさ・ギャップ地図・空虚性検査・過大主張）は
+[健全性監査](SOUNDNESS_AUDIT.md)にまとめる。
 
 ## 全体依存関係
 
@@ -140,7 +142,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | minimum predecessor shape | 排除機構を一般テンプレート化済み | 順序境界下でsub→add follow-upは常に矛盾。生存replayのpredecessor直後は即add or 二連subに制限 | `PermanentAboveCorridorMinimumShape` |
 | predecessor follow-up witness | 二分法をwitness付きへ強化済み | predecessor値はclock超なので即addは必ず既出witness、二連subは初手がfresh landing。次エポックの攻撃点を明示 | `PermanentAboveCorridorMinimumFollowUp` |
 | crossing record exclusion | replay crossingのrecord性を排除済み | downcross値がcrossing値を厳密に支配。record更新型のforced addition clockは帯検証なしで一括排除可能 | `PermanentAboveCorridorCrossingRecord` |
-| replay kernel floor IV | 三種道具で床をclock 112へ拡張済み | record排除・downcross前置界・再訪排除の反復で32..111を全消去。無条件112≤clock・114≤target。次の壁は371（初出t=4825） | `PermanentAboveCorridorReplayFloorFour` |
+| replay kernel floor IV | 三種道具でdischarge replay枝の床をclock 112へ拡張済み | record排除・downcross前置界・再訪排除の反復で32..111を全消去。discharge replay枝について無条件112≤clock・114≤target（landing枝は据え置き）。次の壁は371（初出t=4825） | `PermanentAboveCorridorReplayFloorFour` |
 | prefix successor coverage | clock列挙を一括coverage条件へ抽象化済み | later low witness以前に全larger-prefix successorが既出ならreplayは矛盾。clock 112は唯一の例外371へpinされ、first=108・downcross=109・target∈[153,261] | `PermanentAboveCorridorPrefixSuccessorCoverage`, `ReplayWitnessDescent`, `SemanticOracleRecursion` |
 | witness descent (blocked枝) | 一段で停止するno-goを確定済み | blocked枝は`(値, 初出)`のearlier-smaller辺をclock非依存に供給するが、`clock < 値`とblocked性がwitnessへ輸送されず整礎性が発火しない。残余義務を`regenerate`の二条件として明示し、それを仮定した一括排除定理へ縮約。副産物としてblocked枝で`target + 2 < a m` | `ReplayWitnessDescent` |
 | semantic枝の情報量 | **無情報であることを確定済み（重大な構造的発見）** | 頂点定理のsemantic disjunctは`0 < target`から導出可能。`stepParent`が存在量化のみでlex順の親を捏造できるため。固定点解析側は無傷で、失われているのは枝のpayload | `SemanticOracleRecursion` |
@@ -595,7 +597,8 @@ clock解析と独立に無条件の`19 ≤ target`。従って両固定点は同
 `PermanentAboveCorridorLeastMissingSummit`は全解析を最小未出目標から一本に合成する。LeastMissingTargetから
 permanent tail・combined certificate・unified outcomeを経て、semantic phase childまたは床付き固定点core
 （`18 ≤ clock ∨ target = 19`かつ`19 ≤ target`）が従う。固定点で終端する反例のtargetは無条件に19以上で
-あり、19未満の反例が外側再帰へ到達し得る経路はsemantic枝だけである。
+ある。ただしsemantic枝は`stepParent`が自由変数のため任意の正targetについて無条件に居住可能であり
+（`semantic_or_flooredCore_of_pos`）、この二分岐は現時点ではtargetに対する制約を与えない。
 
 `PermanentAboveCorridorNineteenBoundary`は床を守る最初の未検証instanceを一つの具体値に確定する。19未満の
 全値の出現はkernel検証済みなので、`LeastMissingTarget 19`は「19が一度も出現しない」ことと同値である。

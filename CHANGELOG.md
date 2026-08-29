@@ -24,7 +24,7 @@
 - 無条件`18 ≤ clock`・`32 ≤ clock ∨ target = 61`・`20 ≤ target`へ床を更新
 - 同機構でtarget 61のreplayも完全排除（59分岐の全消去）、無条件`32 ≤ clock`・`34 ≤ target`へ確定
 - 排除機構を一般テンプレート化し、生存replayのpredecessor直後を即add／二連subへ制限
-- replay crossingのrecord性排除を証明し、三種道具の反復で床を無条件`112 ≤ clock`・`114 ≤ target`へ拡張
+- replay crossingのrecord性排除を証明し、三種道具の反復でdischarge replay枝の床を無条件`112 ≤ clock`・`114 ≤ target`へ拡張（landing固定点枝の床は据え置き）
 - prefix-successor coverageを一般化し、later low witnessとprefix successor既出性からreplayを一括排除するinterval floor theoremを証明
 - clock 112の唯一のuncovered successorを371へ固定し、minimum=371・predecessor初出108・downcross 109・`152 < target ≤ 261`まで数値pin
 - coverage frontier監査ツールを追加。cutoff 99734の経験的な次の未被覆eligible clockは777（successor 879、初出328002）

@@ -1278,8 +1278,9 @@ landing固定点もfresh landingから再生産crossingまで同じbelow-target 
 
 全解析を最小未出目標から一本に合成した。`LeastMissingTarget`からpermanent tail・combined certificate・
 unified outcomeを経て、semantic phase childまたは床付き固定点core（`18 ≤ clock ∨ target = 19`かつ
-`19 ≤ target`）が従う。固定点で終端する反例のtargetは無条件に19以上で、19未満の反例が外側再帰へ到達し得る
-経路はsemantic枝だけである。
+`19 ≤ target`）が従う。固定点で終端する反例のtargetは無条件に19以上である。（第七十一ラウンドの追記：semantic枝は
+`stepParent`が自由変数のため任意の正targetについて無条件に居住可能であり、この二分岐はtargetに対する
+制約を与えない。）
 
 ### 第五十三ラウンド：nineteen boundary
 
@@ -1467,3 +1468,48 @@ unready crossing漏れの三命題へ分解した。ROADMAPが名指ししてい
 次はsemantic枝のpayload強化である。生成元`PermanentAboveCorridorTerminalSuccessor`の`below_master`／
 `phase_exit`枝は既にrefined情報を持っているのにoutcome型で捨てているため、加法的な精密版outcome型を
 新設して拾い直す。
+
+### 第七十二ラウンド：Issue #61の三分割とclock 112残余
+
+prefix-successor coverageの次段を三つの子Issueへ分けた。#62はkernel検証可能なchunked trace、#63は
+clock 112固定cycleの構造矛盾、#64はcoverage certificate generatorを担当した。
+
+#62では認証bitmapと時刻別value配列を持つ`TraceMachine`を実装し、fresh／nonpositive／blocked witnessの
+三理由を小さなcheckerで検査する構成にした。compact stateが既存`State`を表す`Represents`不変条件、
+単chunkと複数checkpointのsoundness、`SeenBefore`／`FirstAt` adapterまでkernel内で証明した。15-step例は
+通常`decide`で0.5秒程度だが、step単位の1024-step certificateは130秒超となった。従ってprototypeは健全でも
+深部値371を実用的に検証する圧縮にはなっておらず、comb区間を一理由で検証する次形式が必要である。
+
+#63では深い等式`a 4825 = 371`を使わず、clock 112のpredecessor follow-upを時刻109・110の二連合法減算へ
+固定した。tail minimum clock `m`は`371 < m`、`FirstAt a 371 m`、時刻mの合法減算、
+`a (m-1) = m + 371`を満たす。異なるtarget・sourceのclock-112 replayも同じmを選ぶため、残る深い自由度は
+371のグローバル初出clock一つである。構造矛盾そのものは得られなかったが、追加補題の入力型は確定した。
+
+#64ではexact-history走査を決定的TSVへするgeneratorと回帰テストを追加した。clock 112 / cutoff 371の唯一の
+例外371、cutoff 99734によるeligible clock 112..776のcoverage、次の壁clock 777 / successor 879
+（初出328002）を再現した。全行を`empirical`と明示し、実験結果をkernel証明として扱わない境界を保った。
+
+### 第七十二ラウンド：敵対的健全性監査と過大主張の訂正
+
+独立したエージェントに読み取り専用の敵対的監査を依頼し、その指摘を反映した。全文は
+[健全性監査](SOUNDNESS_AUDIT.md)にある。
+
+**偽の定理・`sorry`・隠れ公理は発見されなかった。** Lean中の軌道等式96件を機械抽出して独立実装と照合し
+全件一致（1件の見かけ上の不一致は背理法の中間式）。docsにのみ書かれた数値（371の初出4825、19の99734、
+61の181653、76の181643、clock 112の帯、879の328002）もすべて一致した。定義は標準的なRecamán数列であり、
+最終目標も正真正銘の全射性で、すり替えはない。論理的循環もない。
+
+公理監査は依頼側が渡したログが切り詰め版だったため監査時は「未確認」と判定されたが、統合時に全出力を
+機械照合し、**全614宣言が`propext`・`Classical.choice`・`Quot.sound`のみに依存する**ことを確認した。
+指摘を受けて`scripts/check.sh`に公理集合のassertを追加し、許可集合外の公理が一つでも現れれば非ゼロ終了
+するようにした。監査から漏れていた5定理も`Audit.lean`へ追加した。
+
+訂正した過大主張は次の通り。(1) 「無条件112≤clock・114≤target」はdischarge replay枝限定であり、
+landing固定点枝の床は`18 ≤ clock ∨ target = 19`のままである（README・CHANGELOG・PROOF_MAP・
+RESEARCH_REPORT）。(2) 「例外リストを空に」はclock 32までの掃過に限る（床を112まで上げた段階で
+新たな深部残留値371が例外になる）。(3) 「19未満の反例が到達し得る経路はsemantic枝だけ」は制約に
+なっていない（第七十一ラウンドの発見）。(4) ROADMAPの「固定点の排除が完了した時点で全射性が従う」は
+誤りで、semantic枝の型再設計とready crossing橋の二つが追加で必要である。(5) 852655の10²³⁰項未出は
+外部報告であり本リポジトリでの検算は3×10⁶項までである旨を明記した。
+
+未対応として残したのは、ready crossing ⊊ crossing の型ギャップ（ROADMAP項目3として登録）である。

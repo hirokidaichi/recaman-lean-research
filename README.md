@@ -132,11 +132,11 @@ Lean 4形式化プロジェクトです。
 - `a 131 = 4`によりtailStart>131・horizon>132を強制し、19-反例を固定歴史と未知tailへ二分済み
 - 19未出⟹21がt>131で再訪、という将来イベント強制を証明済み（prefixでは21はt=9の一度きり）
 - 既出値の遅い再訪不可能性（一般力学補題）により**target 19のreplayを完全排除**、無条件18≤clock・target≥20
-- 同機構でtarget 61のreplayも完全排除し、例外リストを空に：無条件32≤clock・target≥34
+- 同機構でtarget 61のreplayも完全排除し、clock 32までの掃過について例外リストを空に：無条件32≤clock・target≥34（床を112まで上げた段階では新たな深部残留値371が例外として現れる）
 - 排除機構を一般テンプレート化：生存replayのpredecessor直後は即add or 二連subに制限済み
 - follow-up二分法をwitness付きへ強化：即addは既出witness必須、二連subはfresh landing必須
 - replay crossingは軌道recordであり得ないことを証明：record更新clockは帯検証なしで一括排除可能
-- 三種道具の反復でclock 32..111を全消去し、床を無条件112≤clock・114≤targetへ引き上げ済み
+- 三種道具の反復でclock 32..111を全消去し、**discharge replay枝の**床を無条件112≤clock・114≤targetへ引き上げ済み（landing固定点枝の床は依然18≤clock∨target=19・19≤target）
 - prefix-successor coverageを一般定理化し、clock 112の残余をminimum=371・predecessor初出108・downcross 109・target∈[153,261]へ完全pin済み
 - blocked枝から`(値, 初出)`のearlier-smaller下降辺をclock非依存に抽出したが、整礎性の発火に必要な再生成条件が輸送されず一段で停止するno-goを確定済み。残余義務二本を条件付き排除定理へ固定し、副産物としてblocked枝で`target + 2 < tail最小値`を証明済み
 - **頂点定理のsemantic枝が`0 < target`だけから導出可能である（＝現在の型では無情報）ことを形式的に確定**。`stepParent`が存在量化のみでlex順の親を捏造できることが原因で、固定点解析側の欠陥ではない
@@ -252,8 +252,10 @@ mounted nodeがparentを再生産するcanonical crossingです。最終統合�
 またはこの単一core構造で必ず終端し、今後の焦点はcoreを破る大域情報の構成に完全に絞られました。
 最終的に、最小未出目標からの頂点定理`LeastMissingTarget.semantic_or_flooredCore`が全解析を一本に合成します。
 仮想的な最小未出目標はsemantic phase childを渡すか、`18 ≤ clock ∨ target = 19`かつ`19 ≤ target`を満たす
-床付き固定点coreで終端します。固定点で終端する反例のtargetは無条件に19以上で、19未満の反例が
-外側再帰へ到達し得る経路はsemantic枝だけです。
+床付き固定点coreで終端します。固定点で終端する反例のtargetは無条件に19以上です。ただしこの二分岐は現時点ではtargetに対する
+制約を与えません。統合outcomeのsemantic枝は`stepParent`が自由変数なので、任意の正のtargetについて
+無条件に居住可能だからです（`semantic_or_flooredCore_of_pos`）。semantic枝を実質的な制約にするには、
+`stepParent`を外側再帰の現parentへ束縛する主張型の再設計が必要です。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
@@ -323,6 +325,7 @@ flowchart TD
 - [研究結果レポート](docs/RESEARCH_REPORT.md) — 問題設定、方法、主要成果、結論
 - [証明地図](docs/PROOF_MAP.md) — 証明済み／未証明の依存関係
 - [normal provenance監査](docs/NORMAL_PROVENANCE_AUDIT.md) — current／historical生成箇所と次のconstructor設計
+- [健全性監査](docs/SOUNDNESS_AUDIT.md) — 定義の正しさ・ギャップ地図・空虚性検査・過大主張の洗い出しと対応状況
 - [用語集](docs/GLOSSARY.md) — 標準用語と本研究独自の解析用語の区別
 - [今後のロードマップ](docs/ROADMAP.md) — 次の証明エポックと完了条件
 - [再現・検証手順](docs/REPRODUCIBILITY.md) — ビルド、公理監査、実験の再現
