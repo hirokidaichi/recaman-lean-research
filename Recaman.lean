@@ -153,6 +153,7 @@ import Recaman.PermanentAboveCorridorSixtyoneElimination
 import Recaman.PermanentAboveCorridorMinimumShape
 import Recaman.PermanentAboveCorridorMinimumFollowUp
 import Recaman.PermanentAboveCorridorCrossingRecord
+import Recaman.PermanentAboveCorridorReplayFloorFour
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
 import Recaman.OrbitCombValues

@@ -777,6 +777,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | predecessor shape restriction | `TerminalExactDischargeReplayCertificate.minimum_predecessor_shape` | `PermanentAboveCorridorMinimumShape.lean` |
 | witnessed follow-up dichotomy | `TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp` | `PermanentAboveCorridorMinimumFollowUp.lean` |
 | crossing record exclusion | `TerminalExactDischargeReplayCertificate.crossingTime_not_record` | `PermanentAboveCorridorCrossingRecord.lean` |
+| replay fourth floor | `TerminalExactDischargeReplayCertificate.onehundredtwelve_le_crossingTime` | `PermanentAboveCorridorReplayFloorFour.lean` |
 
 ## 8. 結論
 
@@ -917,7 +918,9 @@ forced additionで、mounted nodeがparentを再生産するcanonical crossing�
 prefixで既出なら不可能である。これにより深い初出（`a 99734 = 19`、`a 181653 = 61`）のkernel検証なしに
 19と61の両replayが完全排除され、床は無条件に`32 ≤ clock`・`34 ≤ target`となった。さらにこの排除は
 一般テンプレート化され、生存replayのminimum predecessor直後は「既出witness付き即時加算」または
-「fresh landing付き二連減算」に制限される。
+「fresh landing付き二連減算」に制限される。三種道具（record排除・downcross前置界・再訪排除）の反復に
+より床は最終的に無条件`112 ≤ clock`・`114 ≤ target`まで引き上げられた。次の壁は深部値371
+（初出t=4825）である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
