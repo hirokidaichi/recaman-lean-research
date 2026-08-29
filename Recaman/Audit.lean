@@ -500,3 +500,6 @@ import Recaman
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalIterationOutcome
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalReplayReducedOutcome
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.canonicalReturn_is_oldCrossing
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.installed_node_eq
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.exists_nextOnParent

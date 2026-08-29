@@ -122,6 +122,7 @@ structure TerminalExactDischargeReplayCertificate
   next : TerminalSelectedCrossingDischargeCertificate install
   anchor_eq : a crossingTime = parent.anchorParent
   time_eq : crossingTime = source.oldCrossingTime
+  eligible : source.downTime + 1 ≤ source.oldCrossingTime
   rank_eq : terminalDischargeIterationRank target next.discharge =
     terminalDischargeIterationRank target source
 
@@ -245,6 +246,7 @@ theorem PermanentTailDischargeReturnCertificate.terminalIterationOutcome
                       next := next
                       anchor_eq := hsame
                       time_eq := htime
+                      eligible := holdEligible
                       rank_eq := hrank
                     }
           · have holdBefore :

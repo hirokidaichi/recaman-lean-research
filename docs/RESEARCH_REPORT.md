@@ -575,6 +575,12 @@ successor discharge、またはanchor・cursorとも一致しrankが不動にな
 strict history edge、semantic phase edge、またはdescendant discharge上のexact replay固定点のいずれかへ必ず到達する。
 未解決の数学は無限反復ではなく、単一のtyped replay固定点に集約された。
 
+`PermanentAboveCorridorReplayPinning`はこの固定点の内部構造を確定する。replayでは`returnTime = oldCrossingTime =
+crossingTime`が成立し、canonical returnはold crossingそのものへ閉じる。crossing clockは値より厳密に小さく、
+blocker候補は`a C - (C+1)`としてC未満に初出し、crossingはtargetをまたぐ明示的forced additionである。さらに
+ready crossing nodeの形状一意性からinstalled nodeはparentに一致し、successor dischargeは同じparent・同じold
+crossing cursorを持つ証明書へtransportできる。固定点解析は単一nodeの自己再帰構造の解析に帰着した。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -716,6 +722,8 @@ strict history edge、semantic phase edge、またはdescendant discharge上のe
 | successor-carrying terminal outcome | `PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome` | `PermanentAboveCorridorTerminalSuccessor.lean` |
 | discharge iteration rank outcome | `PermanentTailDischargeReturnCertificate.terminalIterationOutcome` | `PermanentAboveCorridorSuccessorRank.lean` |
 | iteration-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome` | `PermanentAboveCorridorIterationClosure.lean` |
+| replay cycle closure | `TerminalExactDischargeReplayCertificate.canonicalReturn_is_oldCrossing` | `PermanentAboveCorridorReplayPinning.lean` |
+| replay node fixed point | `TerminalExactDischargeReplayCertificate.installed_node_eq` | `PermanentAboveCorridorReplayPinning.lean` |
 
 ## 8. 結論
 
@@ -820,6 +828,9 @@ successor反復自体は三成分discharge rankで整列された。連続する
 horizon・anchor・old crossing成分だけで反復は厳密に下降し、残る非進捗は同anchor同cursorのexact replay固定点に限られる。
 この反復は整礎帰納で完全に消去され、combined certificateからのterminal解析全体はtarget・strict history・semantic phase・
 exact replay固定点の四形へ無条件に閉じた。残る研究対象は反復列ではなく、この単一固定点の構造である。
+固定点自体はnode-levelのcycleに固定された。return crossingはold crossingと一致し、installed nodeはparentそのもので、
+successorは同parent同cursorのself-mapになる。従って残余は「同一ready crossing parentが同一old crossingを再選択し続ける
+自己再帰discharge」一形のみであり、その内部数値（clock<値、blocker defect、target跨ぎforced addition）はすべて明示された。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
