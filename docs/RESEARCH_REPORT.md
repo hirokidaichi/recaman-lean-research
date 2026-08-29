@@ -532,6 +532,11 @@ parent horizonより前であることを既に証明していたため、この
 fresh full keyはremaining listからeraseされるため、master prefixの向きに依存せずwell-founded selection progressになる。
 最終residualは同一horizonでwindow・anchor・old crossing timeがすべて一致するexact installed snapshot revisitである。
 
+`PermanentAboveCorridorExactRevisit`はexact installed snapshotの内側を調べる。ready crossingのnode equationにより同horizon/anchorの
+parentはPhaseSearchNodeとして同一である。original down endpointが違う場合は、後のendpointがbelow-target値のfirst occurrenceなので
+strict missing-budget下降になる。残るhistorical first timeとminimum valueにはそれぞれ`< horizon`と`≤ upperTri horizon`の上界がある。
+down endpointを含む三座標をinstalled keyへ加えて有限selectionを構成し、residualを全数値historical provenanceのexact一致へ縮約した。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -657,6 +662,9 @@ fresh full keyはremaining listからeraseされるため、master prefixの向�
 | installed snapshot comparison | `terminalInstalledWindowSnapshotComparison_total` | `PermanentAboveCorridorWindowSnapshot.lean` |
 | old crossing horizon bound | `PermanentTailDischargeReturnCertificate.windowSnapshot_crossing_below_horizon` | `PermanentAboveCorridorWindowSnapshot.lean` |
 | installed full-key selection | `TerminalReturnInstalledWindowSelectionState.select` | `PermanentAboveCorridorInstalledWindowSelection.lean` |
+| crossing parent numeric uniqueness | `PermanentTailDischargeReturnCertificate.parent_eq_of_horizon_anchor` | `PermanentAboveCorridorExactRevisit.lean` |
+| original down endpoint comparison | `terminalExactWindowDownEndpointComparison_total` | `PermanentAboveCorridorExactRevisit.lean` |
+| exact history key selection | `TerminalExactInstalledHistorySelectionState.select` | `PermanentAboveCorridorExactRevisit.lean` |
 
 ## 8. 結論
 
@@ -742,8 +750,10 @@ finite return branchにはremaining-list stateを追加し、各fresh selection�
 candidateの無限選択は排除される。さらにfull window provenanceを保存して`(return, endpoint)`を候補keyにしたため、同じclockの
 別endpointは別fresh edgeとして有限回しか選べない。installed snapshot比較とold-crossing horizon上界も追加し、固定horizonでは
 `(window, anchor, old crossing)`全体が有限候補になった。別snapshotは有限selection edgeとして消費される。残る最小kernelは
-window・anchor・old crossing timeがすべて同じexact installed snapshot revisitであり、次は同一snapshotから再生成される
-historical blocker／minimum provenanceを比較し、restart/master progressまたはsemantic determinismを抽出する必要がある。
+window・anchor・old crossing timeがすべて同じexact installed snapshot revisitである。さらにoriginal down endpoint差をhistory下降へ
+接続し、historical first timeとminimum valueも固定horizon内で有限化した。従って残る最小kernelはこれら全数値provenanceまで一致する
+exact revisitであり、次は同じminimum valueを実現するminimum time／tail startの証明同一性が必要か、値の最小性だけで後続dischargeを
+決定できるかを解析する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

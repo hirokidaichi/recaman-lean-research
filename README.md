@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース122モジュール
+- Leanソース123モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -96,6 +96,7 @@ Lean 4形式化プロジェクトです。
 - finite returnの全crossing-window provenanceを上位まで保存し、`(return, endpoint)`候補選択を有限rank化済み
 - dischargeのold crossingがparent horizonより前というprovenanceを全構築経路で保存済み
 - `(window, anchor, old crossing)`を固定horizon内で有限列挙し、exact installed snapshot再訪まで縮約済み
+- original down endpointの差をstrict history下降へ分類し、historical first/minimum provenanceも固定horizon内で有限化済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -136,6 +137,10 @@ finite return選択ではreturn clockだけでは別endpointを同一視して�
 reverse下降、prefix一致へ完全分類しました。さらに生成時に既知だった`oldCrossingTime + 1 < parent.horizon`をdischarge証明書へ
 保存したため、固定horizonでは`(window, anchor, oldCrossingTime)`全体が有限候補になります。full keyのfresh選択はremaining-listを
 厳密に減らし、残るのはwindow・anchor・crossing timeがすべて同じexact installed snapshot revisitだけです。
+exact installed revisitではready crossing証明がparentのphaseとlocal measureを一意に固定するため、同horizon/anchorならparent node自体が
+一致します。元のdown endpointが違えばfirst-occurrence history下降になり、同じ場合でもhistorical first timeはhorizon未満、tail minimum
+valueは`upperTri horizon`以下です。これらを拡張有限keyへ加えたため、残る再訪はwindow、parent cursor、down endpoint、historical first、
+minimum valueまで一致する場合に限定されました。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
