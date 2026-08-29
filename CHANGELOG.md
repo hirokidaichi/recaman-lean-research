@@ -1,5 +1,26 @@
 # Changelog
 
+## Refined summit and structural walls — 2026-08-29 (夕方)
+
+- 頂点定理のsemantic枝が`0 < target`だけから導出でき**情報量ゼロ**だったことを形式的に暴露（`semantic_or_flooredCore_of_pos`）
+- 忘却形`RefinedDomainEdge`も`0 < target`から直接導出可能と判明（`probe_refinedDomainEdge_of_pos`）。伝播ペイロードは生成証明書を保持する形へ設計変更
+- `blockedFirstOccurrence_impossible_of_regeneration`の仮定が実軌道で偽（`BlockedFirstOccurrence 13 6`）と判明し、「残余義務を型で固定」という位置づけを撤回
+- semantic枝のpayloadを捏造不能な形へ強化し（`RefinedSemanticOutcome`）、頂点まで全8段を伝播（`RefinedFixedPointCore`）
+- 新左枝の非自明性を証明：`RefinedSemanticEdge`はpermanent-tail証明書を保持するので`¬∃t, a t = target`を単独で含み、`target = 1`で反証できる
+- 左枝の`mounted_crossing`経路が`LeastMissingTarget`から無料で出ないことを`installReadyCrossing`によるanchorの無限降下で証明
+- 左枝から`TargetTailReturnHypothesis`と`CrossingRefinedStepHypothesis`の両方が反証されることを証明。両枝は同一の一点へ収束する
+- landing前置界を`TerminalChronologyHistoryProgress`のsource-freeな強化（`TerminalHistoryCursor`）として輸送し、頂点の固定点枝の床を無条件`32 ≤ clock`・`19 ≤ target`へ（旧`18 ≤ clock ∨ target = 19`）
+- crossing readiness橋を無仮定で完成させ、大域残余を`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本へ純化（同仮定は全射性と同値であることも明示）
+- unready crossingのliteralな非存在は証明不能と確定（target 12の具体反例）。残余は到達不能性でしか閉じない
+- `coveredBelowCount`（`missingBelowCount`の補数）と鳩の巣で無条件`target < tailStart`を証明。kernel計算ゼロ
+- `tailStart`に上界が存在しないことを構造的に証明（`MissingStrictAboveTail`の全フィールドと証明書のhorizon条件がすべて上方閉）
+- validなtail startの最小元を有界帰納法で取り、両側評価`target ≤ least ≤ bound + 1`を既存モジュール無編集で達成。残る自由度はcoverage timeの上界ひとつ
+- pinned配置の後方2ステップを完全決定し、混合形2通り（189件・88件）を排除。残りは「両方減算」「両方加算」の二択
+- 床上げ機構に構造的天井`clock ≈ 5.4×10⁴`を数値的に確定。kernel射程を無限に伸ばしてもclock 10⁶までの65%は消せない。深部検証への追加投資を打ち切り
+- 敵対的健全性監査を実施（`docs/SOUNDNESS_AUDIT.md`）。偽の定理・`sorry`・隠れ公理はゼロ、数値アンカー96件が独立計算と一致。docsの過大主張を訂正
+- `scripts/check.sh`に公理集合のassertを追加（従来は印字のみで検証していなかった）
+- 本日追加の15モジュールについて日本語証明レポートを整備し、`viewer/`を追跡対象に追加
+
 ## Landing recursion and fixed point floors — 2026-08-29
 
 - history edgeのfresh landingにhorizon境界（landing<start、crossing+1≤start<horizon）を事後導出

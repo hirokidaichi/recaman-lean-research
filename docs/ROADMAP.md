@@ -385,27 +385,34 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
 今後の床上げは「一般排除機構のストレステスト」と位置づけ、エージェント作業として
 上限付きで行う。主資源は次の優先順位に投じる。
 
-1. **semantic枝のpayloadを捏造不能な形へ強化する（最優先）。** 頂点定理のsemantic disjunctは
-   現在`0 < target`だけから導出でき、情報を持たない（`semantic_or_flooredCore_of_pos`）。
-   `stepParent`の存在量化とlex順だけのprogressが原因である。加法的な精密outcome型を新設し、
-   生成元が既に持っているrefined情報（`PermanentAboveCorridorTerminalSuccessor`の`below_master`・
-   `phase_exit`枝など）を拾い直す。固定点を全て排除してもこれ無しには大域組み立ては閉じない。
-2. landing固定点へ再訪排除を移植する。dischargeの`downTime ≤ clock - 1`に相当する
-   predecessor初出の上界をlanding側で見つけるか、存在しないことを確定する。
-   「二連減算」枝がfresh landingを生成する事実は、二つの固定点の接続を示唆する。
-3. `CrossingRecoveryInvariant`に`target ≤ horizon + 1`を持たせ、unready crossing漏れを閉じる
-   （Milestone 3 step 11の未完部分）。これが閉じれば大域残余は`ReadyCrossingRefinedStepHypothesis`
-   一本になる。
-4. witnessed dichotomyの「二連減算」枝を調べる。「即時加算」枝の下降連鎖は一段で停止するno-goが
-   確定済みであり（`ReplayWitnessDescent`）、clock非依存な一般排除の望みはもう一方の枝にしかない。
-   clock 112ではこの二分法を具体化し、109・110の二連合法減算へ固定した。さらにtail minimum clock
-   `m`を`FirstAt a 371 m`、`371 < m`、`a (m-1) = m + 371`を満たす一意な初出clockへ縮約した
-   （`PermanentAboveClock112Obstruction`）。局所構造だけでは矛盾せず、残る自由度は371の大域初出である。
-5. comb圧縮検証でkernel射程をt≈5000へ延長し、深部値371の壁を試す（**縮小方針**。下記の天井の
-   測定により、この路線への追加投資は正当化されない。既着手分の整理までに留める）。
-   `ChunkedTraceCertificate`で認証bitmap、branch理由、checkpoint合成、既存`State`へのsoundnessを
-   kernel内に実装した。15-step例は通常`decide`で通るが、step単位certificateの1024-step入力は
-   130秒超で、深部検証には不十分だった。次はcomb区間を一理由で検証するsublinear certificateが必要である。
+2026-08-29 の後半で旧優先度1〜3（semantic枝のpayload強化、landing前置界の輸送、unready crossing漏れ）は
+すべて完了し、旧優先度4（二連減算枝）は否定的に決着した。旧優先度5（comb圧縮検証）は下記の天井測定により
+縮小方針とした。現在の優先順位は次である。
+
+1. **coverage timeの上界（最優先・新規）。** 「target未満の値が最後に初出する時刻`n₀`」に対する
+   `n₀ ≤ g(target)`である。tail startの両側評価`target ≤ least ≤ bound + 1`が成立した結果
+   （`TailStartTwoSided`）、計数路線に残る自由度はこれ一つになった。鳩の巣からは下界`n₀ ≥ target - 1`しか
+   出ない。上界には`covered_forces_above`の逆向き、すなわち「未被覆の値が残る限り軌道は繰り返し低域へ
+   降りる」型の新しい組合せ論的議論が要る。**これは本プログラムで最も明確に定式化された未解決の補題である。**
+2. **証明書を`least`の上に建て直す。** 両側評価は`least`についてのもので、証明書の`source.tailStart`には
+   下界しか与えない。`PermanentTailDischargeReturnCertificate`の構築点（`exists_historicalDowncrossCertificate`
+   → `exists_dischargeReturnCertificate`）で`tailStart`を`least`へ差し替えれば、証明書自身が両側評価を持つ。
+   接続部品（`least_tailStart_minimumCertificate`・`least_tailStart_minimum_le`）は揃っている。
+3. **pinned配置の残り2行。** 後方2ステップは「両方減算」（12件相当）か「両方加算」（21件相当）の二択まで
+   縮んだ。両方加算は`a (f-2) = target - 2f + 2`が`target`未満で時刻`f-2`に載るため`target + 2`レベルの
+   鳩の巣ではidleにならない。別レベルの計数か`covered_forces_above`を`f-2 < tailStart`側で使う経路が要る。
+   両方減算は`coveredBelowCount_two_above`がそのまま効いて`target + 3 ≤ tailStart`は出るが、
+   late recurrenceの的がない。
+4. **精密版頂点定理の左枝、`discharge_step`経路。** `mounted_crossing`経路は`installReadyCrossing`による
+   anchorの無限降下で塞がったが（`not_alwaysHorizonInternalAnchorDrop`）、`discharge_step`の
+   immediate／early／ready各枝は`terminalFiniteClosedOutcome`の分岐出力を要求し、他の分岐に落ちる可能性を
+   排除する手段がない。頂点の二択解析に残る唯一の未閉鎖点である。
+5. **頂点床を32より上へ。** landing側のcoverage cutoffは131が上限で（`a 32 = 46`の後継47の初出が222）、
+   次段へはtarget床を48以上へ上げてcutoff 222を解禁する必要がある。replay側は既にdischarge枝で112まで
+   来ているので、両枝を揃える作業である。ただし下記の天井の測定により、この路線は上限付きで扱う。
+6. comb圧縮検証（**縮小方針**）。`ChunkedTraceCertificate`・`BalancedTraceCertificate`により
+   `a 4825 = 371`自体は追加公理なしで検証済みだが、証明済みfloorは112のままである。圧縮checkerの成立と
+   floor引き上げを混同しない。下記の天井測定により追加投資は正当化されない。
 
 ## 床上げ機構の構造的天井（2026-08-29 測定）
 
