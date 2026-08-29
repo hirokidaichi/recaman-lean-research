@@ -551,3 +551,5 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.crossingTime_eq_eight_of_nineteen
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_replay_unique
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_minimum_pins
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_tailStart_bound
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_horizon_bounds
