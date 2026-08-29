@@ -743,6 +743,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | re-entrant mounted analysis | `PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing` | `PermanentAboveCorridorLandingInstall.lean` |
 | mounted iteration closure | `PermanentTailCombinedCertificate.mountedIterationOutcome` | `PermanentAboveCorridorMountedIteration.lean` |
 | unified fixed-point outcome | `PermanentTailCombinedCertificate.unifiedOutcome` | `PermanentAboveCorridorFixedPointCore.lean` |
+| unified core kernel floor | `TailFixedPointCore.six_le_crossingTime` | `PermanentAboveCorridorFixedPointFloor.lean` |
 
 ## 8. 結論
 

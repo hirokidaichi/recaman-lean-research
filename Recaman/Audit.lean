@@ -522,3 +522,5 @@ import Recaman
 #print axioms Recaman.PermanentTailCombinedCertificate.mountedIterationOutcome
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.fixedPointCore
 #print axioms Recaman.PermanentTailCombinedCertificate.unifiedOutcome
+#print axioms Recaman.TailFixedPointCore.six_le_crossingTime
+#print axioms Recaman.TailFixedPointCore.target_le_upperTri

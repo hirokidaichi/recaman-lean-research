@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース141モジュール
+- Leanソース142モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -115,6 +115,7 @@ Lean 4形式化プロジェクトです。
 - combined certificateをmounted nodeへtransportし、terminal解析をlanding枝から再入可能化済み
 - landing再入反復をanchor gap強帰納で閉包し、残余をsemantic・discharge replay・landing固定点の三形へ縮約済み
 - 二固定点を共通核TailFixedPointCoreへ統合し、最終定理をsemanticまたはnode再生産固定点の二形へ確定済み
+- 統合coreにblocker不要のkernel floor（clock≥6、target≤upperTri包絡）を証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
