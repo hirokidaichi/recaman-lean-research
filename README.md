@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース128モジュール
+- Leanソース129モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -102,6 +102,7 @@ Lean 4形式化プロジェクトです。
 - exact replayがvisited list単独では排除不能なno-goを証明し、残務を単一resolver interfaceへ集約済み
 - finite insufficient windowを`endpoint=1, return=2, target∈{4,5}`へ縮約し、実軌道出現により完全排除済み
 - terminal全枝をtarget occurrence／strict history／semantic phase／installed masterの四progress形へ完全統合済み
+- installed master枝にselected crossing installと次terminal discharge存在を同梱し、反復provenanceを接続済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -164,6 +165,9 @@ exact replay branchはともにterminal classificationから完全に除去さ�
 残ったimmediate/historical枝も内側の既存定理を展開し、最終的な`terminalProgressOutcome`へ平坦化しました。これはtargetの実出現、
 `TerminalChronologyHistoryProgress`、`PhaseSearchProgress`を伴うsemantic child、`TailInstalledCycleProgress`の四constructorだけを持ちます。
 early/ready/immediate/selected-crossingで比較対象が違うため、semantic枝は実際のlocal parentを明示的に保存しています。
+さらにinstalled master枝はgeneric rank nodeだけで終わらず、選択されたcrossing証明書、そのpermanent-tail semantic install、
+`TerminalSelectedCrossingDischargeCertificate`の存在を同じconstructorに保持します。したがってstrict master edgeのchildをparentとする
+次のterminal解析を証明オブジェクトから再開できます。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

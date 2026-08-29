@@ -122,5 +122,6 @@ import Recaman.PermanentAboveCorridorCanonicalStateStep
 import Recaman.PermanentAboveCorridorReplayBoundary
 import Recaman.PermanentAboveCorridorFiniteClosure
 import Recaman.PermanentAboveCorridorTerminalProgress
+import Recaman.PermanentAboveCorridorTerminalSuccessor
 import Recaman.Examples
 import Recaman.Oracle

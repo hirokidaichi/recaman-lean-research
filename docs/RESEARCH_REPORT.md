@@ -561,6 +561,10 @@ target-missingに矛盾し、conditional resolverは無条件定理となった�
 historical completeのtarget/early/ready/below枝、below masterのphase/master枝を展開し、target occurrence、strict chronology history、
 semantic phase progress、installed master progressだけを返す。semantic edgeには元のdischarge parentとは限らない実local parentを保存する。
 
+`PermanentAboveCorridorTerminalSuccessor`はinstalled master progressに次の解析sourceを戻す。master-progress constructorが保持する
+selected crossingをsemantic parentへinstallし、既存theoremでそのparent上のnext discharge certificateを構成する。outcomeはcrossing、
+install、`Nonempty nextDischarge`、strict master edgeを同梱し、反復時にcrossing identityやold timeを再び失わない。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -699,6 +703,7 @@ semantic phase progress、installed master progressだけを返す。semantic ed
 | finite branch contradiction | `TerminalFiniteReturnWindowCertificate.false` | `PermanentAboveCorridorFiniteClosure.lean` |
 | finite-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome` | `PermanentAboveCorridorFiniteClosure.lean` |
 | terminal four-progress outcome | `PermanentTailDischargeReturnCertificate.terminalProgressOutcome` | `PermanentAboveCorridorTerminalProgress.lean` |
+| successor-carrying terminal outcome | `PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome` | `PermanentAboveCorridorTerminalSuccessor.lean` |
 
 ## 8. 結論
 
@@ -797,6 +802,8 @@ progressのどれかを抽出するresolverであり、データ構造の追加�
 finite branchは到達不能と証明された。残るterminal outcomeはstrict history、immediate semantic、historical completeの三形だけである。
 この三形も全展開され、target occurrenceまたは三種類の既存well-founded strict edgeへ統合された。次の統合課題はlocal semantic parentや
 installed master nodeをglobal search recursionの単一stateへ埋め込むことであり、terminal case analysis自体には残余がない。
+installed master childからnext dischargeへのsemantic provenanceも同梱されたため、残る統合点はhistory/semantic progress枝のcontinuationと
+master successor反復を一つのwell-founded recursion theoremへまとめることである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

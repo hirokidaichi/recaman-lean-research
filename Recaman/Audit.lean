@@ -493,3 +493,5 @@ import Recaman
 #print axioms Recaman.terminalExactCanonicalReplayResolver
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalProgressOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome
+#print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.parent_is_installed
