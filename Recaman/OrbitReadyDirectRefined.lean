@@ -9,6 +9,11 @@ debt children.  This module follows the generating branches before that
 erasure.  Parent drops are split into future current or earlier ready debt;
 actual above-target states remain orbit-ready; and downcross restarts retain
 their old representative as an extended-history certificate.
+
+The child constructor is retained as well.  Every branch lands in the ready
+current/debt part or in the extended-history part of the refined domain, so
+an orbit-ready current node never produces a crossing-recovery child.  The
+widened statements at the end of the module keep the earlier interface.
 -/
 
 /-- Parent-drop classification with the source clock copied to an earlier
@@ -18,7 +23,9 @@ theorem ParentDropCurrentDebtOutcome.toReadyRefinedStep
     (htimeReady : target ≤ parentTime + 1)
     (h : ParentDropCurrentDebtOutcome target parentTime activeParent) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child
           ⟨parentTime, activeParent, .normal, a parentTime⟩ := by
   cases h with
@@ -45,7 +52,9 @@ private theorem coverageReady_to_refined
       ∃ child, ReadyCurrentOrDebtInvariant target child ∧
         PhaseSearchProgress target child (targetStartNode n)) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child (targetStartNode n) := by
   rcases h with hoccurs | ⟨child, hchild, hprogress⟩
   · exact Or.inl hoccurs
@@ -60,7 +69,9 @@ theorem negativeNormal_refinedStep
     (hinv : NormalPhaseInvariantAt target
       ⟨n, activeParent, .normal, a n⟩ n q r) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child
           ⟨n, activeParent, .normal, a n⟩ := by
   rcases negative_epoch_historySearchOutcome_or_qOneDebt
@@ -119,7 +130,7 @@ theorem negativeNormal_refinedStep
             target_le_value := hinv.target_le_value
             coordinates := hinv.coordinates
           }⟩
-        exact Or.inr ⟨child, Or.inr (Or.inl hextended),
+        exact Or.inr ⟨child, Or.inr hextended,
           Prod.Lex.left _ _ hbudget⟩
   · exact Or.inl (normalPhase_qOneDebt_already_occurs hinv hnt htvalue
       htcoord htborrow hnonnegative hbelow)
@@ -137,7 +148,9 @@ theorem nonnegative_epoch_refinedStep
     (hcoord : CoordinatesAt n q r)
     (hpotential : potential q r = Int.ofNat g) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child
           ⟨n, activeParent, .normal, a n⟩ := by
   rcases nonnegative_epoch_historySearchOutcome hvalueBound htimeReady
@@ -192,7 +205,7 @@ theorem nonnegative_epoch_refinedStep
             target_le_value := htargetValue
             coordinates := hcoord
           }⟩
-        exact Or.inr ⟨child, Or.inr (Or.inl hextended),
+        exact Or.inr ⟨child, Or.inr hextended,
           Prod.Lex.left _ _ hbudget⟩
 
 /-- Quotient-zero high potential produces coverage while the source clock is
@@ -205,7 +218,9 @@ theorem zeroQuotient_potential_aboveTarget_refinedStep
     (hcoord : CoordinatesAt n 0 r)
     (habove : Int.ofNat target ≤ potential 0 r) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child (targetStartNode n) := by
   have hvalue : a n = r := by
     simpa [potential, upperTri] using hcoord.eqn
@@ -249,7 +264,9 @@ theorem quotientOne_forcedAddition_refinedStep
     (hpotential : potential 1 r = Int.ofNat level)
     (hnot : ¬ CanSubtract (n + 1) (stateAt n)) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child (targetStartNode n) := by
   have hr : r = 1 + level := by
     simpa [upperTri] using
@@ -309,7 +326,9 @@ theorem forcedAddition_twoQuotient_refinedStep
     (hq : 2 ≤ q)
     (hnot : ¬ CanSubtract (n + 1) (stateAt n)) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child (targetStartNode n) := by
   rcases coordinates_forcedAddition_twoQuotient_historySearchProgress
       htarget htimeReady (Nat.le_refl _) hcoord hq hnot with
@@ -349,7 +368,7 @@ theorem forcedAddition_twoQuotient_refinedStep
             target_le_value := Nat.le_of_lt htargetValue
             coordinates := hcoord
           }⟩
-        exact Or.inr ⟨child, Or.inr (Or.inl hextended),
+        exact Or.inr ⟨child, Or.inr hextended,
           Prod.Lex.left _ _ hbudget⟩
 
 /-- The exact low-level residual is total in the refined child domain. -/
@@ -357,7 +376,9 @@ theorem OrbitReadyLowLevelResidual.refinedStep
     {target : Nat} {parent : PhaseSearchNode}
     (h : OrbitReadyLowLevelResidual target parent) :
     (∃ witness, a witness = target) ∨
-      ∃ child, OrbitReadyRefinedInvariant target child ∧
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child parent := by
   cases h with
   | low n q r level hready hlow =>
@@ -396,7 +417,7 @@ theorem OrbitReadyLowLevelResidual.refinedStep
                 target_le_value := hlow.target_le_value
                 coordinates := hlow.coordinates
               }⟩
-            exact Or.inr ⟨child, Or.inr (Or.inl hextended),
+            exact Or.inr ⟨child, Or.inr hextended,
               Prod.Lex.left _ _ hbudget⟩
       · by_cases hqOne : q = 1
         · subst q
@@ -415,7 +436,9 @@ theorem OrbitReadyNormalCertificate.refinedStep_or_lowLevel
     {target : Nat} {parent : PhaseSearchNode} {time q r : Nat}
     (h : OrbitReadyNormalCertificate target parent time q r) :
     (∃ witness, a witness = target) ∨
-      (∃ child, OrbitReadyRefinedInvariant target child ∧
+      (∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
         PhaseSearchProgress target child parent) ∨
       OrbitReadyLowLevelResidual target parent := by
   have hparentEq := h.node_eq
@@ -493,18 +516,49 @@ theorem OrbitReadyNormalCertificate.refinedStep_or_lowLevel
         level_le_two := by omega
         level_lt_target := hlevelTarget
       }))
+/-- Certificate-level refined local totality, with the child constructor
+retained.  The crossing-recovery constructor is never reached from an
+orbit-ready current node. -/
+theorem OrbitReadyNormalCertificate.nonCrossingRefinedStep
+    {target : Nat} {parent : PhaseSearchNode} {time q r : Nat}
+    (h : OrbitReadyNormalCertificate target parent time q r) :
+    (∃ witness, a witness = target) ∨
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
+        PhaseSearchProgress target child parent := by
+  rcases h.refinedStep_or_lowLevel with hoccurs | hchild | hlow
+  · exact Or.inl hoccurs
+  · exact Or.inr hchild
+  · exact hlow.refinedStep
 
-/-- Certificate-level refined local totality. -/
+/-- Widening the child constructor recovers the earlier certificate-level
+statement unchanged. -/
 theorem OrbitReadyNormalCertificate.refinedStep
     {target : Nat} {parent : PhaseSearchNode} {time q r : Nat}
     (h : OrbitReadyNormalCertificate target parent time q r) :
     (∃ witness, a witness = target) ∨
       ∃ child, OrbitReadyRefinedInvariant target child ∧
         PhaseSearchProgress target child parent := by
-  rcases h.refinedStep_or_lowLevel with hoccurs | hchild | hlow
+  rcases h.nonCrossingRefinedStep with hoccurs | ⟨child, hchild, hprogress⟩
   · exact Or.inl hoccurs
-  · exact Or.inr hchild
-  · exact hlow.refinedStep
+  · refine Or.inr ⟨child, ?_, hprogress⟩
+    rcases hchild with hready | hextended
+    · exact Or.inl hready
+    · exact Or.inr (Or.inl hextended)
+
+/-- Orbit-ready current normal nodes have a residual-free refined step whose
+child is never a crossing-recovery node. -/
+theorem OrbitReadyNormalInvariant.nonCrossingRefinedStep
+    {target : Nat} {parent : PhaseSearchNode}
+    (h : OrbitReadyNormalInvariant target parent) :
+    (∃ witness, a witness = target) ∨
+      ∃ child,
+        (ReadyCurrentOrDebtInvariant target child ∨
+          ExtendedHistoryNormalInvariant target child) ∧
+        PhaseSearchProgress target child parent := by
+  rcases h with ⟨time, q, r, hcertificate⟩
+  exact hcertificate.nonCrossingRefinedStep
 
 /-- Orbit-ready current normal nodes have a residual-free refined step. -/
 theorem OrbitReadyNormalInvariant.refinedStep

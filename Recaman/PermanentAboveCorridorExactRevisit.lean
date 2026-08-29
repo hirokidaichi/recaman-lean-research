@@ -98,12 +98,14 @@ theorem terminalExactWindowDownEndpointComparison_total
     TerminalExactWindowDownEndpointComparison current stored := by
   by_cases hcurrent : stored.downTime + 1 < current.downTime + 1
   · exact .current_progress
-      (missingBelowCount_strict_of_firstAt
-        current.downcross.endpoint_below hcurrent current.endpoint_first)
+      ⟨missingBelowCount_strict_of_firstAt
+        current.downcross.endpoint_below hcurrent current.endpoint_first,
+        stored.terminalHistoryCursor (by omega)⟩
   · by_cases hstored : current.downTime + 1 < stored.downTime + 1
     · exact .stored_progress
-        (missingBelowCount_strict_of_firstAt
-          stored.downcross.endpoint_below hstored stored.endpoint_first)
+        ⟨missingBelowCount_strict_of_firstAt
+          stored.downcross.endpoint_below hstored stored.endpoint_first,
+          current.terminalHistoryCursor (by omega)⟩
     · exact .same_endpoint (by omega)
 
 /-- Finite numeric provenance after fixing the installed window. -/

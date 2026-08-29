@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース174モジュール
+- Leanソース179モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -138,22 +138,22 @@ Lean 4形式化プロジェクトです。
 - replay crossingは軌道recordであり得ないことを証明：record更新clockは帯検証なしで一括排除可能
 - 三種道具の反復でclock 32..111を全消去し、**discharge replay枝の**床を無条件112≤clock・114≤targetへ引き上げ済み（landing固定点枝の床は依然18≤clock∨target=19・19≤target）
 - prefix-successor coverageを一般定理化し、clock 112の残余をminimum=371・predecessor初出108・downcross 109・target∈[153,261]へ完全pin済み
-- blocked枝から`(値, 初出)`のearlier-smaller下降辺をclock非依存に抽出したが、整礎性の発火に必要な再生成条件が輸送されず一段で停止するno-goを確定済み。残余義務二本を条件付き排除定理へ固定し、副産物としてblocked枝で`target + 2 < tail最小値`を証明済み
+- blocked枝から`(値, 初出)`のearlier-smaller下降辺をclock非依存に抽出したが、整礎性の発火に必要な再生成条件が輸送されず一段で停止するno-goを確定済み。副産物としてblocked枝で`target + 2 < tail最小値`を証明済み（なお当初「残余義務を条件付き排除定理へ固定した」と記したが、後の敵対的検査でその仮定が**反証可能**と判明したため撤回。`regenerate`経路は死んでいる）
 - **頂点定理のsemantic枝が`0 < target`だけから導出可能である（＝現在の型では無情報）ことを形式的に確定**。`stepParent`が存在量化のみでlex順の親を捏造できることが原因で、固定点解析側の欠陥ではない
 - semantic枝の閉包はそのtargetの出現と論理的に同値と証明済み（constructor局所の補題では原理的に閉じない）
 - semantic childのrefined domain昇格をhorizon readiness仮定つきで4 constructor完全に構成し、その仮定が落とせないことを具体反例で確定済み
 - 大域組み立ての残余を「semantic枝の型強化」「ready crossing局所step」「unready crossing漏れ」の三つへ分解済み
-- **三種道具のうち再訪排除をlanding固定点側へ無条件移植済み**（`minimum_revisit_absurd`はcrossing clockを参照せずcombined証明書のみに依存）
+- **三種道具のうち再訪排除をlanding固定点側へcrossing clock非依存で移植済み**（`minimum_revisit_absurd`はcrossing clockを参照せずcombined証明書のみに依存。cutoff/witnessの4条件は依然必要）
 - record排除を共有核レベルへ汎用化し、landing側ではpredecessor初出が窓の前にある場合に発火することを証明済み
 - landing側に欠けているのはdowncross前置界ただ一つと確定：`[landingTime, crossingTime]`は全区間target未満なのでpredecessor初出は窓の外の二択に縮約され、landing分岐にはその二択を決める情報が含まれていない
 - 前置界を仮定すればlanding床が即座に例外なし`32 ≤ clock`へ上がることを証明し、統合outcomeを「semantic ∨ 32≤clock ∨ landing gap」の三択へ精密化済み
 - 二連減算枝を構造化し、`f`・`f+1`・`f+2`が相異なるfresh初出であること、全てtail開始前にあること、`a (f+2) + (2f+4) = tail最小値`という厳密な等式を証明済み
 - 二連減算枝の排除は**pre-tail領域への下界なしには原理的に不可能**と確定（証明書が軌道に下界を課すのはtail開始以降だけで、この枝が語る時刻は全てtail開始前）
-- corridorデータ経由で無条件に`f + 2 < target`・`f + 3 < a f`・`f + 4 < tail最小値`を証明済み（既存境界の真の強化。床上げ側の探索範囲を直接削る）
+- corridorデータ経由で**discharge replay枝において**無条件に`f + 2 < target`・`f + 3 < a f`・`f + 4 < tail最小値`を証明済み（既存境界の真の強化。床上げ側の探索範囲を直接削る）
 - **床上げ機構（prefix-successor coverage）に構造的天井 clock ≈ 5.4×10⁴ が存在することを数値的に確定**。kernel射程を無限に伸ばしてもclock 10⁶までの65%はこの機構では消せない（実験、Lean証明には未使用）
 - kernel射程→clock床の換算式を測定：`射程 ≈ 0.049 · 床^2.01`（フロンティア付近の局所指数は6.29まで悪化）。深部検証への投資は正当化されないと判断
 - **semantic枝のpayloadを捏造不能な形へ強化済み**（`PermanentTailRefinedSuccessorOutcome`）。子はrefined domain所属を要求され、親は証明書自身のclockから決まる名前付きノードに固定される
-- 非捏造性を三本の定理で形式化：anchor bumpはrefined domainを必ず外れる／「どの親にも子がある」は偽／crossing枝は実軌道のstrict upcrossing証明書しか受け付けない
+- 非捏造性を三本の定理で形式化：anchor bumpは**normal相の**refined domainを外れる（debt相では通ることを後に確認）／「どの親にも子がある」は偽／crossing枝は実軌道のstrict upcrossing証明書しか受け付けない
 - discharge証明書の四つのsemantic生成枝すべてを精密版で構成済み（immediate枝はcurrent-state経路からextended-history表現へ経路変更して解決）
 - **pre-tail領域への初の一般的下界 `target < tailStart` を無条件に証明**（`coveredBelowCount`による鳩の巣。kernel計算ゼロ・条件なし・全replayで成立。既存のtailStart下界はすべて条件付きkernel計算だった）
 - `target + 2 < tail最小値`が破れる可能性を単一の完全に釘付けされた配置へ縮約済み
@@ -164,6 +164,15 @@ Lean 4形式化プロジェクトです。
 - **unready crossing nodeは型としては実在するが、実際の生成箇所は一つも無いことを全数調査で確定**（target 12の具体反例を形式化。生成7箇所すべてで子はreadyを保つ）
 - readiness橋をready crossing → ready refined childまで通し、`RestrictedPhaseSearchOracle target (ReadyRefinedInvariant target)`を条件付きで構成済み
 - **`TargetTailReturnHypothesis`が単独targetで実際にoccurrenceを生むようになった**（従来は「認めても主残余が閉じない」とされていた）
+- **敵対的再検査で自明化を2件検出**：忘却形`RefinedDomainEdge`は`0 < target`だけから直接導出でき（`LeastMissingTarget`すら不要）、`historyEdge_or_refinedEdge_or_installedEdge`は空文、`stuckCrossing_of_refinedEdge`の仮定は死んでいる。`semantic_or_thirtytwo_or_landingGap`も第一disjunctが空semantic枝なので空虚
+- **debt相のanchor bumpはrefined domainを出ないという新しい捏造手口を検出**（`DebtInvariant`の`value_lt_anchor`がanchorを上げても保たれるため）。非捏造性の主張はnormal相限定と訂正
+- **`blockedFirstOccurrence_impossible_of_regeneration`の仮定は偽であり定理は空虚に真**と判明（`BlockedFirstOccurrence 13 6`が実軌道に存在）。「残余義務の型固定」という位置づけを撤回
+- history枝も旧定義（単なるbudget drop）では自由だったが、landing前置界作業が`TerminalHistoryCursor`を連言に加えたことで閉じた（新定義は`parentTime + 1`未満にtarget超の軌道値を要求する）
+- **頂点定理の固定点枝の床を無条件`32 ≤ clock`へ引き上げ済み**（従来は`18 ≤ clock ∨ target = 19`）。landing枝は前置界の輸送で、replay枝は自前のkernel掃過で満たす。ただしsemantic枝が空である事実は変わらないので、この二択そのものは依然として`0 < target`から出る
+- 前置界は`TerminalChronologyHistoryProgress`に`TerminalHistoryCursor`を連言として加える形でsource-freeに輸送した（Nat持ち上げ不要。history枝の情報量も同時に回復）
+- crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし同時に`TargetTailReturnHypothesis target ↔ 出現`も証明されており、難しさは減っていない）
+- pinned配置は`f`だけで完全に決まり実軌道上で判定可能だが、候補は`f < 3×10⁶`で2438個あり累積が増え続けるため、kernel列挙では落ちないと確定。構造的議論が要る
+- tail最小値への遷移を無条件の二分法へ整理し、無条件`FirstAt a (a m) m`まで残り1点（`m + 1 < a m`）へ縮約。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が完全決定する
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

@@ -172,7 +172,8 @@ theorem PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
         exact .immediate_insufficient valley insufficient
     | forward_budget_progress freshEndpoint candidate firstTime historical
         original_lt_firstTime budget_drop backtrack =>
-        exact .history_progress firstTime (h.downTime + 1) budget_drop
+        exact .history_progress firstTime (h.downTime + 1)
+          ⟨budget_drop, h.terminalHistoryCursor (by omega)⟩
     | original_history_blocker freshEndpoint candidate firstTime historical
         firstTime_le_original backtrack =>
         by_cases holdEligible :
@@ -182,15 +183,16 @@ theorem PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
               eligible := holdEligible
               outcome := historical.installedStepOutcome holdEligible
             }
-        · have holdBefore : h.oldCrossingTime < h.downTime + 1 :=
-            Nat.lt_of_not_ge holdEligible
-          have hbudget := missingBelowCount_strict_of_firstAt
-            h.downcross.endpoint_below holdBefore h.endpoint_first
-          exact .history_progress (h.downTime + 1) h.oldCrossingTime hbudget
+        · have hbudget := missingBelowCount_strict_of_firstAt
+            h.downcross.endpoint_below
+            (show h.downTime < h.downTime + 1 by omega) h.endpoint_first
+          exact .history_progress (h.downTime + 1) h.downTime
+            ⟨hbudget, h.terminalHistoryCursor (by omega)⟩
   rcases h.terminalBudgetProgress_or_outerResidual with
-    ⟨terminalEndpoint, firstTime, endpoint_lt_firstTime, budget_drop⟩ |
-      outer
-  · exact .history_progress firstTime terminalEndpoint budget_drop
+    ⟨terminalEndpoint, firstTime, origin_le, endpoint_lt_firstTime,
+      budget_drop⟩ | outer
+  · exact .history_progress firstTime terminalEndpoint
+      ⟨budget_drop, h.terminalHistoryCursor (by omega)⟩
   · cases outer with
     | immediate_insufficient valley insufficient =>
         exact ofNonClock (.immediate_insufficient valley insufficient)

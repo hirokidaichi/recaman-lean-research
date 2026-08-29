@@ -10,6 +10,24 @@ c++ -O3 -std=c++20 experiments/recaman_empirical.cpp -o /tmp/recaman_empirical
 c++ -O3 -std=c++20 experiments/recaman_b1_history.cpp -o /tmp/recaman_b1_history
 c++ -O3 -std=c++20 experiments/recaman_debt_history.cpp -o /tmp/recaman_debt_history
 c++ -O3 -std=c++20 experiments/replay_prefix_successor_coverage.cpp -o /tmp/replay_prefix_successor_coverage
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic \
+  experiments/prefix_successor_certificate_generator.cpp \
+  -o /tmp/prefix_successor_certificate_generator
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic \
+  experiments/prefix_successor_certificate_test.cpp \
+  -o /tmp/prefix_successor_certificate_test
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/lean_trace_witness_generator.cpp \
+  -o /tmp/lean_trace_witness_generator
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/lean_trace_witness_test.cpp \
+  -o /tmp/lean_trace_witness_test
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/balanced_trace_source_generator.cpp \
+  -o /tmp/balanced_trace_source_generator
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/balanced_trace_source_test.cpp \
+  -o /tmp/balanced_trace_source_test
 ```
 
 Example runs:
@@ -19,6 +37,12 @@ Example runs:
 /tmp/recaman_b1_history 1000000
 /tmp/recaman_debt_history 1000000
 /tmp/replay_prefix_successor_coverage 1000000 1000 99734 112
+/tmp/prefix_successor_certificate_test
+/tmp/prefix_successor_certificate_generator 400000 1000 99734 112
+/tmp/lean_trace_witness_test
+/tmp/lean_trace_witness_generator 2622 64
+/tmp/balanced_trace_source_test
+/tmp/balanced_trace_source_generator 4825 64
 ```
 
 The reported billion-step run used `1000000000` as the final argument. It requires
@@ -56,6 +80,33 @@ value.  With cutoff 99734, the first uncovered eligible clock below 1000 is
 This is empirical guidance only.  The Lean theorem additionally needs a
 kernel-checked low witness at the cutoff; the experiment never supplies one
 as a proof.
+
+`prefix_successor_certificate_generator.cpp` turns the same exact-history
+audit into deterministic TSV rows. Every row is explicitly marked
+`evidence_kind=empirical`; it is candidate data for a future Lean certificate,
+not a proof imported by the kernel. The companion regression test fixes the
+known clock-112 exception and checks that cutoff 99734 covers every eligible
+clock through 776 before exposing clock 777 / successor 879 as the next wall.
+The generator arguments are `steps`, `clockMax`, `cutoff`, and `clockMin` in
+that order.
+
+`lean_trace_witness_generator.cpp` emits the exact-history branch reasons and
+the 108 occurrence witnesses in the clock-112 target band as Lean source
+input. The output is deterministic and marked `EMPIRICAL INPUT ONLY`; its
+claims become proofs only after a sound Lean checker accepts them. The
+arguments are `traceSteps` and `chunkSize`. The flat generated term is useful
+as an interchange format but is intentionally not imported: at 2622 steps it
+exceeds practical kernel reduction time. `BalancedTraceCertificate` instead
+checks 64-step leaves through a balanced tree and reaches time 4825 in a few
+seconds.
+
+`balanced_trace_source_generator.cpp` is the reproducible source path for
+that balanced certificate. It emits compact branch codes, fixed-size leaves,
+and a deterministic midpoint-balanced tree, together with empirical metrics
+on standard error. The 4825-step source has 76 leaves and a fixed FNV-1a
+fingerprint `7e016593e1de83eb`. A measurement-only 99734-step generation has
+1,559 leaves and 486,466 source bytes; it is not imported or compiled by the
+Lean development.
 
 An exact-history run through one billion steps found four positive diagonal
 states, at times `1`, `1520`, `9317`, and `31221`.  The three nontrivial states

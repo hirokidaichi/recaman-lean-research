@@ -1605,7 +1605,7 @@ extended-history表現へ経路変更して解決した（`immediateValley_exten
 残余は伝播であり、頂点までの10モジュールのうち9段は純粋な再包装、唯一新規生成する`MountedIteration`も
 `crossing_refined`として構成できる。新しい数学は不要な機械的作業である。次エポックで加法的に積む。
 
-### 第七十七ラウンド：balanced kernel traceで時刻4825へ到達
+### 第七十七ラウンド補遺：balanced kernel traceで時刻4825へ到達
 
 Issue #62のflat trace checkerを64-step leafとbalanced treeへ組み替え、さらに認証済み訪問集合を`Nat` bitsetで
 保持する`BitTraceMachine`を実装した。各branch codeは外部生成値にすぎず、`ValidBitTraceStep`、
@@ -1616,16 +1616,22 @@ Issue #62のflat trace checkerを64-step leafとbalanced treeへ組み替え、�
 
 並行して、clock 112のtarget帯153..261から223を除く108値の明示witness表を9個程度のpiecewise-affine式へ
 圧縮し、表と式の一致をkernelで検証した。`Clock112ExactHistoryCertificate`を与えればreplay targetが223に
-一意化する。ただしflat 2622-step入力からcertificateを作る試行は150秒超で、bitset outputをtarget pinへ
-直接接続するadapterはまだない。
+一意化する。flat 2622-step入力からcertificateを作る試行は150秒超だったが、balanced 4825-step出力の
+認証bitsetを直接読むadapterへ切り替え、追加仮定なしでclock 112 replayの`target = 223`を証明した。
+
+同じtraceの4824-step prefixで値371のbitが未設定であることと、4825-step endpointを同時検証し、
+`FirstAt a 371 4825`を得た。clock 112 replayのhistorical minimum clockは4825に一意化され、残余は
+`4825 ≤ witness ∧ a witness ≤ target`を満たすfuture low witness一つへ縮約された。
 
 重要な境界として、`a 4825 = 371`単独ではclock 112 replayを排除しない。tail minimum clockを4825へ同定して
 矛盾するには、それより後のlow witnessをkernelで与える必要がある。経験的な最初の候補は時刻99734の値19であり、
 これは今回の証明には使っていない。従ってformal replay floorは112のままで、Issue #61は継続する。
 
 tooling側ではbranch reason列と108値のwitness表を決定的Lean断片へ出すgeneratorを追加した。flat断片が
-kernel timeoutすることも再現し、balanced checkerが必要な理由を測定可能にした。coverage機構の構造的天井が
-別途確定したため、traceを時刻99734以降へ伸ばす追加投資は行わず、ここで得たcheckerは有限証明基盤として残す。
+kernel timeoutすることも再現し、balanced checkerが必要な理由を測定可能にした。さらにcompact code・64-step
+leaf・balanced treeを再生成するsource generatorも追加し、4825-step生成物のhashを固定した。99734-stepなら
+1,559 leaf・約486KBになるという測定まで行ったが、coverage機構の構造的天井が別途確定したためLean importは
+行わない。ここで得たcheckerは有限証明基盤として残す。
 
 ### 第七十七ラウンド：pre-tail計数枠組みと無条件下界
 
@@ -1693,3 +1699,60 @@ unready漏れ→`ReadyCrossingReadyStepHypothesis`＋監査事実一つ、と進
 `0 < target ∧ OrbitReadyNormalNonCrossingStep target ∧ TargetTailReturnHypothesis target ⟹ ∃ t, a t = target`
 が成立する。従来tail return仮説は「認めても主残余が閉じない」とされていたので、これは実質的な前進である。
 難所を隠していないことは`readyCrossingReadyStep_iff_occurs`と`not_readyStep_pair`で明示している。
+
+### 第八十一ラウンド：新成果の敵対的再検査
+
+第七十〜第八十ラウンドの成果を敵対的に再検査した。**偽の定理・`sorry`・禁止機構は発見されなかった**が、
+「statementが意図した情報を運んでいない」型の欠陥が三件見つかった。
+
+第一に、忘却形`RefinedDomainEdge target`は**`0 < target`だけから直接導出できる**。
+`exists_targetReady_state_of_pos`を二度適用して`target ≤ a n < a n2`なる実時刻を取り、共通horizonへ
+`ExtendedHistoryNormalCertificate`として載せるだけでよい。捏造タプルは使わず、すべて実軌道の状態である。
+`occurs_or_refinedDomainEdge_of_pos`より真に強く、`LeastMissingTarget`仮説すら不要である。帰結として
+`historyEdge_or_refinedEdge_or_installedEdge`は空文、`stuckCrossing_of_refinedEdge`の仮定は死んでいる。
+`semantic_or_thirtytwo_or_landingGap`も第一disjunctが空semantic枝なので同様である。
+
+第二に、`refinedNormal_anchorBump_not_orbitReadyRefined`は`node.phase = .normal`を要求しており、
+**debt相はこの防御の外にある**。`DebtInvariant.value_lt_anchor`はanchorを上げても保たれるので、
+debt相ではanchor bumpがrefined domain内に留まる。非捏造性の主張はnormal相限定と訂正した。
+
+第三に、`blockedFirstOccurrence_impossible_of_regeneration`の仮定は**偽**である。実軌道にblocked first
+occurrenceが存在するため（`a 6 = 13`が初出、減算欠損6は既出）、結論が反証できる。第七十ラウンドの
+「残余義務を型で固定した」という位置づけを撤回する。
+
+検査側は「history枝も`(1, 0)`で自由である」とも報告した。これは**検査時点の定義に対しては正しかった**。
+当時`TerminalChronologyHistoryProgress`は単なるbudget dropで、値1が時刻1で初出するので`(1, 0)`が通った。
+ただし同時進行のlanding前置界作業がこの定義を`TerminalHistoryBudgetDrop`と
+`TerminalHistoryCursor target (parentTime + 1)`の連言へ強化したため、この穴は閉じた。統合時の再検証で
+提出された証明が型検査を通らないことに気づき、経過を追ってこの結論に至り、該当のprobe定理は取り下げた。
+エージェントの「全定理が型検査を通った」という報告を鵜呑みにせず統合時に必ず再検証する運用が機能した例である
+（この場合の原因はエージェントの誤りではなく、並行編集による定義の変化だった）。
+
+docsの該当箇所（「無条件移植」「無条件に`f + 2 < target`」「anchor bumpは必ず外れる」「残余義務の型固定」）を
+すべて訂正した。
+
+### 第八十二ラウンド：頂点床の無条件32化と残余の一本化
+
+landing側に欠けていた前置界を実際に輸送し、**頂点定理の固定点枝の床を無条件に`32 ≤ crossingTime`へ
+引き上げた**（従来は`18 ≤ crossingTime ∨ target = 19`）。輸送は当初想定の「コンストラクタへ2フィールド追加」
+ではなく、`TerminalChronologyHistoryProgress`の定義を`TerminalHistoryBudgetDrop`と
+`TerminalHistoryCursor target (parentTime + 1)`の連言へ強化する形になった。この型は元から
+`(target childTime parentTime)`だけで添字付けされているので、`source`依存が生成点に閉じ、下流6段を
+Nat持ち上げなしにsource-freeで通せる。副次的にhistory枝自身の情報量も回復した。ただしsemantic枝が空である
+事実は変わらないので、頂点定理の二択そのものは依然`0 < target`から出る。床の価値は枝の内容にある。
+
+readiness橋も無仮定になった。`OrbitReadyDirectRefined`の内部ヘルパー8本の結論を非crossingの連言へ強化し
+（証明本体の変更は4箇所）、`OrbitReadyNormalNonCrossingStep`を仮定ゼロの定理にした。大域残余は
+`0 < target ∧ TargetTailReturnHypothesis target ⟹ ∃ t, a t = target`の一本になり、refined再帰・horizon clock・
+crossing-recovery構成子はすべて解消された。価格も明示する。`targetTailReturn_iff_occurs`も同時に証明されて
+おり、この仮定は出現と同値である。難しさは減っていない。減ったのは足場の量である。
+
+`target + 2 < a m`の残余配置は否定的に決着した。`target = a f - 1`によりpinned配置は`f`だけで完全に決まり
+実軌道上で判定できるが、`a_le_upperTri`の窓は`2f + 2 < target`かつ`target + 1 ≤ upperTri f`で、下端
+`f ≳ √(2·target)`・上端`f ≲ target/2`とtargetとともに広がる。列挙すると候補は`f < 3×10⁶`で2438個、累積が
+増え続け上限の兆候がない。kernel列挙は床上げと同じ無限トレッドミルであり、pinned枝は構造的議論でしか落ちない。
+
+tail最小値の初出は残り1点へ縮約した。遷移は「減算（fresh初出）」か「強制加算かつ`m = tailStart`」の無条件
+二分法で、後者は`5 ≤ m`と`a (m-1) ≠ 1`により死ぬ。残る穴は`m + 1 < a m`のみで、その場合は`a m - (m+1)`の
+出現witnessが手に入る。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が
+完全決定する。

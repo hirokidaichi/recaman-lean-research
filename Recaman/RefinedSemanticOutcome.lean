@@ -464,8 +464,12 @@ theorem LeastMissingTarget.exists_refinedSuccessorOutcome
 
 /-- Refined summit.  A least missing target hands the outer recursion a
 history edge, a refined phase edge with both endpoints in the recursion
-domain, or an installed-cycle edge.  Unlike the broad semantic branch, the
-refined disjunct is not satisfied by the anchor-bump fabrication. -/
+domain, or an installed-cycle edge.  The anchor-bump fabrication does not
+satisfy the refined disjunct, but a different construction does: see
+`probe_refinedDomainEdge_of_pos`, which derives the refined edge from
+positivity of the target alone.  This statement therefore carries no more
+information than `0 < target`, and downstream consumers must use the
+certificate-carrying `RefinedSemanticEdge` instead. -/
 theorem LeastMissingTarget.historyEdge_or_refinedEdge_or_installedEdge
     {target : Nat} (h : LeastMissingTarget target) :
     (∃ childTime parentTime,

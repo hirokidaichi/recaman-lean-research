@@ -69,7 +69,8 @@ inductive PermanentTailUnifiedOutcome
       (next_crossing : FirstWeakUpcrossingStep target landingTime
         crossingTime)
       (crossing_before_start : crossingTime + 1 ≤ start)
-      (core : TailFixedPointCore target parent crossingTime) :
+      (core : TailFixedPointCore target parent crossingTime)
+      (landing_cursor : TerminalHistoryCursor target landingTime) :
       PermanentTailUnifiedOutcome target start
 
 /-- Final unified theorem: a missing-target permanent tail yields a semantic
@@ -89,7 +90,7 @@ theorem PermanentTailCombinedCertificate.unifiedOutcome
   | landing_fixed_point fixedParent mTime pTime combined childTime
       parentTime value landingTime crossingTime progress value_below
       landing_first next_crossing crossing_before_start ready anchor_eq
-      node_eq =>
+      node_eq after_parent landing_cursor =>
       have hcore : TailFixedPointCore target fixedParent crossingTime := {
         anchor_eq := anchor_eq
         below := next_crossing.crossing.below
@@ -100,7 +101,7 @@ theorem PermanentTailCombinedCertificate.unifiedOutcome
       }
       exact .landing_cycle fixedParent mTime pTime combined value
         landingTime crossingTime value_below landing_first next_crossing
-        crossing_before_start hcore
+        crossing_before_start hcore landing_cursor
 
 end
 

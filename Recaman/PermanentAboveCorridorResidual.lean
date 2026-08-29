@@ -146,6 +146,7 @@ theorem PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerR
     {target start : Nat} {parent : PhaseSearchNode}
     (h : PermanentTailDischargeReturnCertificate target start parent) :
     (∃ terminalEndpoint firstTime,
+      h.downTime + 1 ≤ terminalEndpoint ∧
       terminalEndpoint < firstTime ∧
       missingBelowCount target firstTime <
         missingBelowCount target terminalEndpoint) ∨
@@ -165,7 +166,8 @@ theorem PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerR
         firstTime origin_le window blocker hfirst)
   | finite_budget_progress terminalEndpoint candidate firstTime origin_le
       window blocker hendpoint hbudget =>
-      exact Or.inl ⟨terminalEndpoint, firstTime, hendpoint, hbudget⟩
+      exact Or.inl ⟨terminalEndpoint, firstTime, origin_le, hendpoint,
+        hbudget⟩
 
 end
 

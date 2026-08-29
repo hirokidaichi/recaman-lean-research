@@ -594,7 +594,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 
 前向きの成果として、semantic childのrefined domainへの昇格をhorizon readiness仮定のもとで四constructor完全に構成した（`PhaseSemanticInvariant.toOrbitReadyRefinedInvariant`）。この仮定は具体反例により除去できない（`not_forall_phaseSemantic_horizonReady`）。さらに無仮定で「任意のrefined nodeから降下すると目標到達かcrossing nodeでの停止に必ず至る」（`orbitReadyRefined_occurs_or_crossing`）を証明し、大域組み立ての残余を三つの明示的命題へ分解した。(1) semantic枝の型強化、(2) ready crossingの局所step`ReadyCrossingRefinedStepHypothesis`、(3) unready crossing漏れ`∃ unready, CrossingSearchInvariant target unready ∧ unready.horizon + 1 < target`の否定。(2)は`TargetTailReturnHypothesis`から従うが、それは最小未出目標下では反証されるため、結局は固定点矛盾からしか来ない。
 
-`LandingRevisitTransport`は、これまで武器が一つも届いていなかったlanding固定点側へ三種道具を移植し、成否を確定した。**再訪排除は無条件で移植できた**。`PermanentTailCombinedCertificate.minimum_revisit_absurd`はcrossing clockを一切参照せず、combined証明書だけから「既出値がcutoff以内のwitnessを持つならtail最小値の遅い再訪は不可能」を導く。record排除は共有核レベルの汎用形として無条件に成立し（`TailFixedPointCore.crossingTime_not_record_of_prefixAbove`）、landing分岐では`predecessorFirstTime < landingTime`のとき発火する。
+`LandingRevisitTransport`は、これまで武器が一つも届いていなかったlanding固定点側へ三種道具を移植し、成否を確定した。**再訪排除はcrossing clock非依存で移植できた**（cutoff・witness時刻・witness値・successor一致の4条件は依然必要である）。`PermanentTailCombinedCertificate.minimum_revisit_absurd`はcrossing clockを一切参照せず、combined証明書だけから「既出値がcutoff以内のwitnessを持つならtail最小値の遅い再訪は不可能」を導く。record排除は共有核レベルの汎用形として無条件に成立し（`TailFixedPointCore.crossingTime_not_record_of_prefixAbove`）、landing分岐では`predecessorFirstTime < landingTime`のとき発火する。
 
 **欠けているのはdowncross前置界ただ一つ**であり、その欠落の所在も正確に特定した。`FirstWeakUpcrossingStep.window_below`により`[landingTime, crossingTime]`は全区間target未満なので、target超のpredecessor初出は窓の外、すなわち`predecessorFirstTime < landingTime`か`crossingTime < predecessorFirstTime`の二択にしか居られない。ところがlanding分岐はこの二択を決める情報を一つも携えていない。discharge側で上界を与えていた三段連鎖（`downcross.horizon_le_time` → `eligible` → `time_eq`）のうち`eligible`はreplay固有フィールドであり、combined証明書にもlanding分岐にも存在しないためである。
 
@@ -604,13 +604,13 @@ crossing clock 3以上・target 5以上でしか存在できない。
 
 blocked枝で得た分離`target + 2 < a m`は**この枝へは輸送されない**。blocked枝の証明は「強制加算のおかげで次の減算候補がちょうど`a m - 2`になり必ず実現する」ことに依存していたが、二連減算枝が生む実現値`a m - f - 2`と`a m - 2f - 4`はどちらも`a m - 2`を厳密に下回るからである（`doubleSubtract_values_below_predecessorGap`）。残余義務は`tailMinimum_gap_of_attainment`として「`a m - 2`の実現witnessが一つでもあれば無条件化が完了する」形に切り出した。
 
-さらに重要なのは、**この枝の排除がpre-tail領域への下界なしには原理的に不可能である**という確定である。証明書が軌道に下界を課すのは`MissingStrictAboveTail.strictly_above`と`TailMinimumAt.minimal`のいずれもtail開始以降に限られるが、二連減算枝が語る時刻は全てtail開始より前にある。pre-tail領域に届く大域フックは`a f = a m - 1`とtargetの欠損の二本しかなく、両方とも消費済みである。代償として、corridorデータ経由で無条件の`f + 2 < target`、したがって`f + 3 < a f`と`f + 4 < a m`が得られた。既存境界を2段強化したもので、clock床上げの探索範囲を直接削る。
+さらに重要なのは、**この枝の排除がpre-tail領域への下界なしには原理的に不可能である**という確定である。証明書が軌道に下界を課すのは`MissingStrictAboveTail.strictly_above`と`TailMinimumAt.minimal`のいずれもtail開始以降に限られるが、二連減算枝が語る時刻は全てtail開始より前にある。pre-tail領域に届く大域フックは`a f = a m - 1`とtargetの欠損の二本しかなく、両方とも消費済みである。代償として、corridorデータ経由でdischarge replay枝における無条件の`f + 2 < target`、したがって`f + 3 < a f`と`f + 4 < a m`が得られた。既存境界を2段強化したもので、clock床上げの探索範囲を直接削る。
 
 `RefinedSemanticOutcome`は、第七十一ラウンドで同定したsemantic枝の情報欠落を実際に埋めた。精密版`PermanentTailRefinedSuccessorOutcome`の設計上の核心は二点である。(i) 子が広義`PhaseSemanticInvariant`ではなくrefined domain `OrbitReadyRefinedInvariant`に属する（horizon readiness込みで、整礎再帰の合法な開始点である）。(ii) **親を存在量化しない**。四つのsemantic枝はそれぞれ証明書自身のclockから決まる名前付きノード（post-valley representative、blocker predecessor二種、discharge parent自身）を親として固定する。
 
 非捏造性は三本の定理で形式化した。第一に、refined domainの四constructorはすべて数値タプルを実軌道状態へ固定するため、normal相では`anchorParent = localMeasure`が成り立つ。`exists_phaseSearchProgress_parent`の捏造は`anchorParent`だけを+1して`localMeasure`を据え置くので、まさにこの一致条件で詰まる（`refinedNormal_anchorBump_not_orbitReadyRefined`）。第二に、zero-budget親には子が存在しないので「どの親にも子がある」は偽である（`not_forall_exists_phaseSearchProgress_child`）。第三に、crossing枝の子は親とhorizonを共有するのでstrict edgeはanchor下降からしか来ず、そのanchorは既にtarget未満であるから、refined domainでanchorがtarget未満になれるcrossing recoveryの証明書、すなわち実軌道の本物のstrict crossingが要る（`crossingChild_anchorDrop_forces_crossingRecovery`）。
 
-ただし限界も明示する。四枝を忘却した`RefinedDomainEdge`について、`0 < target`から導出できないことは証明していない。実軌道には`target ≤ a t₁ < a t₂`なる時刻対が多数あると見込まれるためである。**非捏造性が確実なのは親を固定した各constructorであって、忘却形ではない。**
+ただし限界も明示する（この留保は後に的中し、忘却形は実際に導出可能と判明した。下記を参照）。四枝を忘却した`RefinedDomainEdge`について、`0 < target`から導出できないことは証明していない。実軌道には`target ≤ a t₁ < a t₂`なる時刻対が多数あると見込まれるためである。**非捏造性が確実なのは親を固定した各constructorであって、忘却形ではない。**
 
 immediate枝だけは元の経路では精密化できなかった。元の`canonicalCoverage_phaseSemantic`はcurrent-state経路であり`target ≤ downTime + 3`を要求するが、valley証明書からその時計は出ない。そこで同じ値`a (downTime + 2)`を親のzero-budget horizonへ格納するextended-history表現へ経路変更した（`immediateValley_extended`）。副次的にこの枝の親も`parent.horizon`基準に揃った。
 
@@ -637,6 +637,22 @@ immediate枝だけは元の経路では精密化できなかった。元の`cano
 そこで`OrbitReadyRefinedInvariant`のcrossing成分を作る生成箇所を全数調査した。7箇所すべてで**子は常にreadyであり、型がそれを記録していないだけ**であった。生成箇所1〜5についてはreadinessを保持する版を再証明し、`ReadyRefinedInvariant`を保存する`RestrictedPhaseSearchOracle`を構成した（`readyRefinedPhaseSearchOracle`）。残る1箇所は`OrbitReadyDirectRefined`の`refinedStep`で、目視監査では全分岐が非crossingへ落ちるが statement がそれを記録していない。これを`OrbitReadyNormalNonCrossingStep`として切り出し、既存定理の真の強化であることを証明した。最小修正は結論を`RefinedNonCrossingInvariant`へ差し替えるだけで、証明本体は不変である。
 
 この橋により残余の縮約が一段進んだ。`CrossingRefinedStepHypothesis`（素のcrossing全体）から`ReadyCrossingRefinedStepHypothesis`＋unready漏れを経て、`ReadyCrossingReadyStepHypothesis`（ready crossing → ready refined child）＋監査事実一つ、まで縮んだ。さらに重要なのは、`TargetTailReturnHypothesis target`からこの仮説が従うため、`0 < target ∧ OrbitReadyNormalNonCrossingStep target ∧ TargetTailReturnHypothesis target`から**実際にoccurrenceが出る**ようになった点である（`occurs_of_targetTailReturn`）。従来tail return仮説は「認めても主残余が閉じない」とされていた。難所を隠していないことは`readyCrossingReadyStep_iff_occurs`（監査事実の下でready-crossing ready stepはoccurrenceと同値）と`LeastMissingTarget.not_readyStep_pair`で明示している。
+
+新しい成果を敵対的に再検査した結果（`TrivialityProbe`）、自明化が二件見つかった。第一に、忘却形`RefinedDomainEdge target`は**`0 < target`だけから直接導出できる**（`probe_refinedDomainEdge_of_pos`）。`exists_targetReady_state_of_pos`を二度適用して`target ≤ a n < a n2`なる実時刻を取り、共通horizonへ`ExtendedHistoryNormalCertificate`として載せるだけでよい。捏造タプルは一切使わず、すべて実軌道の状態である。これは`occurs_or_refinedDomainEdge_of_pos`（出現枝との二択）より真に強く、`LeastMissingTarget`仮説さえ不要である。帰結として`LeastMissingTarget.historyEdge_or_refinedEdge_or_installedEdge`は空文であり、`LeastMissingTarget.stuckCrossing_of_refinedEdge`の`hedge`は完全に死んだ仮定である。第二に、`PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap`も第一disjunctが既知の空semantic枝であるため`0 < target`から出る。landing床を32へ上げた精密化は、この統合形では一切伝わっていない。有意な内容は非disjunctiveな`thirtytwo_le_crossingTime_of_prefixBound`の側にのみある。
+
+新しい捏造手口も一つ見つかった。`refinedNormal_anchorBump_not_orbitReadyRefined`は`node.phase = .normal`を要求しており、**debt相はこの防御の外にある**。`DebtInvariant.value_lt_anchor`はanchorを上げてもそのまま保たれるため、debt相ではanchor bumpがrefined domainの内側で完全に通る（`probe_debtAnchorBump_stays_orbitReadyRefined`、具体例`⟨3, 4, .debt, 2⟩ → ⟨3, 5, .debt, 2⟩`）。したがって非捏造性の主張はnormal相限定である。一方で`crossing_refined`枝は実際に守られていることが確認された。
+
+条件付き定理の仮定も検査し、一件が空虚だと判明した。`blockedFirstOccurrence_impossible_of_regeneration`の仮定は**偽**である。実軌道にblocked first occurrenceが存在し（`a 6 = 13`が初出、減算欠損`13 - 7 = 6`は既出）、結論`∀ value time, ¬ BlockedFirstOccurrence value time`が反証できるからである（`probe_blockedFirstOccurrence_thirteen`、`probe_not_blockedFirstOccurrence_regeneration`）。よって第七十ラウンドの「残余義務を型で固定した」という位置づけは撤回する。`regenerate`経路は死んでいる。波及して`minimum_predecessor_canSubtract_of_regeneration`と`minimum_predecessor_doubleSubtract_of_regeneration`も空虚に真である。これに対し`thirtytwo_le_crossingTime_of_prefixBound`と`tailMinimum_gap_of_attainment`の仮定は空虚でないことを確認した。
+
+検査側は「history枝も`(childTime, parentTime) = (1, 0)`で自由である」とも報告した。これは**検査時点の定義に対しては正しかった**。当時`TerminalChronologyHistoryProgress`は`missingBelowCount target childTime < missingBelowCount target parentTime`だけであり、値1が時刻1で初出するので`(1, 0)`で充足できた。ただし同時進行のlanding前置界作業がこの定義を強化し、`TerminalHistoryBudgetDrop`と`TerminalHistoryCursor target (parentTime + 1)`の連言へ変えたため、この穴は閉じた。新しい第二成分は`parentTime + 1`未満にtargetを超える軌道値を要求するので、`parentTime = 0`では`a 0 = 0`により充足できない。統合時の再検証でこの経過を確認し、該当のprobe定理は取り下げた。history枝は現在の定義では忘却形と違い実質的内容を持つ。
+
+`LandingFloorThirtytwo`は、landing側に欠けていた前置界を実際に輸送し、**頂点定理の固定点枝の床を無条件に`32 ≤ crossingTime`へ引き上げた**（従来は`18 ≤ crossingTime ∨ target = 19`）。輸送の方法は当初想定していた「コンストラクタへ2フィールド追加」ではなく、`TerminalChronologyHistoryProgress`の定義そのものを`TerminalHistoryBudgetDrop`と`TerminalHistoryCursor target (parentTime + 1)`の連言へ強化する形になった。`TerminalChronologyHistoryProgress`は元から`(target childTime parentTime)`だけで添字付けされているので、この形なら`source`依存が生成点に閉じ、下流6段をNat持ち上げなしにsource-freeで通せる。副次的効果としてhistory枝自身の情報量も回復した。ただし**semantic枝が空である事実は変わらない**ので、頂点定理の二択そのものは依然として`0 < target`から出る。床の価値は枝の内容にあり、二択の形にはない。
+
+`CrossingReadinessClosure`はreadiness橋を無仮定にした。`OrbitReadyDirectRefined`の内部ヘルパー8本の結論を非crossingの連言へ強化し（証明本体の変更は4箇所のみ）、`OrbitReadyNormalNonCrossingStep`を仮定ゼロの定理にした。その結果、大域残余は`0 < target ∧ TargetTailReturnHypothesis target ⟹ ∃ t, a t = target`の一本になり、refined再帰・horizon clock・crossing-recovery構成子はすべて解消された。`surjective_of_targetTailReturn`は`Nat.strongRecOn`も`LeastMissingTarget`も経由しない。**ただし価格も明示する。** 同じモジュールで`targetTailReturn_iff_occurs`も証明されており、この仮定はtargetの出現と論理的に同値である。したがって難しさは減っていない。減ったのは難しさを取り囲んでいた足場の量であり、残余が単一の力学的性質へ純化されたことが成果である。
+
+`PinnedConfigurationAttack`は`target + 2 < a m`の残余配置を攻撃し、否定的に決着させた。`target = a f - 1`により**pinned配置は`f`だけで完全に決まり実軌道上で機械的に判定できる**が、`a_le_upperTri`が与える窓は`2f + 2 < target`かつ`target + 1 ≤ upperTri f`で、下端`f ≳ √(2·target)`・上端`f ≲ target/2`と**targetとともに広がる**。実際に列挙すると候補は`f < 10³`で25個、`f < 10⁵`で423個、`f < 3×10⁶`で2438個と累積が増え続け、上限の兆候がない。kernel列挙は床上げ路線とまったく同じ無限トレッドミルであり、pinned枝は構造的議論でしか落ちない。
+
+同じモジュールでtail最小値の初出も進んだ。最小値への遷移は「減算（fresh初出）」か「強制加算かつ`m = tailStart`」の無条件二分法であり、後者は`5 ≤ m`と`a (m-1) ≠ 1`（新規に自前証明）により死ぬ。残る穴は`m + 1 < a m`の一点だけで、しかもその場合は`a m - (m+1)`の出現witnessが必ず手に入る。pinned配置内では前ラウンドの`target < tailStart`が効いて`a m ≤ m + 1`が自動成立し、穴が閉じる。その結果pinned配置では最小値前後4ステップの軌道が完全に決定する。
 
 よって、全射性を証明済みとは主張しない。
 
@@ -887,6 +903,14 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | unready crossing exists as a type | `crossingSearchInvariant_twelve_unready` | `CrossingReadinessBridge.lean` |
 | readiness-preserving oracle | `readyRefinedPhaseSearchOracle` | `CrossingReadinessBridge.lean` |
 | tail return now yields occurrence | `occurs_of_targetTailReturn` | `CrossingReadinessBridge.lean` |
+| forgetful edge from positivity alone | `probe_refinedDomainEdge_of_pos` | `TrivialityProbe.lean` |
+| debt-phase anchor bump survives | `probe_debtAnchorBump_stays_orbitReadyRefined` | `TrivialityProbe.lean` |
+| regeneration hypothesis refuted | `probe_not_blockedFirstOccurrence_regeneration` | `TrivialityProbe.lean` |
+| unconditional summit floor | `LeastMissingTarget.semantic_or_thirtytwo` | `LandingFloorThirtytwo.lean` |
+| readiness step is a theorem | `orbitReadyNormalNonCrossingStep` | `CrossingReadinessClosure.lean` |
+| residual purified to one hypothesis | `targetTailReturn_implies_occurs` | `CrossingReadinessClosure.lean` |
+| pinned configuration determined by clock | `PinnedTailMinimumConfiguration.target_eq` | `PinnedConfigurationAttack.lean` |
+| tail minimum transition dichotomy | `TerminalExactDischargeReplayCertificate.tailMinimum_transition` | `PinnedConfigurationAttack.lean` |
 
 ## 8. 結論
 

@@ -84,7 +84,9 @@ inductive PermanentTailTerminalMountedOutcome
       (crossing_before_start : nextCrossingTime + 1 ≤ start)
       (crossing_before_horizon : nextCrossingTime + 1 < parent.horizon)
       (ready : ReadyCrossingSearchInvariant target
-        (terminalPredecessorCrossingNode parent nextCrossingTime)) :
+        (terminalPredecessorCrossingNode parent nextCrossingTime))
+      (before_child : landingTime ≤ childTime)
+      (landing_cursor : TerminalHistoryCursor target landingTime) :
       PermanentTailTerminalMountedOutcome target start parent
   | semantic_progress
       (stepParent child : PhaseSearchNode)
@@ -109,10 +111,11 @@ theorem PermanentTailCombinedCertificate.terminalMountedOutcome
   cases h.terminalHorizonAnchoredOutcome with
   | fresh_landing childTime parentTime progress value landingTime
       nextCrossingTime hvalue hafter hbefore hfirst hnext hlandingLt
-      hcrossStart hcrossHorizon =>
+      hcrossStart hcrossHorizon hcursor =>
       exact .landing_crossing childTime parentTime progress value
         landingTime nextCrossingTime hvalue hafter hfirst hnext hcrossStart
-        hcrossHorizon (h.landingReadyCrossing hnext hcrossHorizon)
+        hcrossHorizon (h.landingReadyCrossing hnext hcrossHorizon) hbefore
+        hcursor
   | semantic_progress stepParent child semantic progress =>
       exact .semantic_progress stepParent child semantic progress
   | exact_replay replayParent replaySource replay =>

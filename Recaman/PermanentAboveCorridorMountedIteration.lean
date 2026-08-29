@@ -52,7 +52,9 @@ inductive PermanentTailMountedIterationOutcome
         (terminalPredecessorCrossingNode parent crossingTime))
       (anchor_eq : a crossingTime = parent.anchorParent)
       (node_eq : terminalPredecessorCrossingNode parent crossingTime =
-        parent) :
+        parent)
+      (after_parent : parentTime < landingTime)
+      (landing_cursor : TerminalHistoryCursor target landingTime) :
       PermanentTailMountedIterationOutcome target start
 
 /-- Iterating mounted landings terminates: only a semantic child, an exact
@@ -76,7 +78,7 @@ theorem PermanentTailCombinedCertificate.mountedIterationOutcome
         cases hc.terminalMountedOutcome with
         | landing_crossing childTime parentTime progress value landingTime
             crossingTime hvalue hafter hfirst hnext hcrossStart
-            hcrossHorizon ready =>
+            hcrossHorizon ready hbeforeChild hcursor =>
             by_cases hdrop : a crossingTime < parentNode.anchorParent
             · rcases hc.crossing.ready_crossing.crossing with
                 ⟨oldAnchor, oldTime, quotient, remainder, hold⟩
@@ -127,7 +129,7 @@ theorem PermanentTailCombinedCertificate.mountedIterationOutcome
                 exact .landing_fixed_point parentNode mTime pTime hc
                   childTime parentTime value landingTime crossingTime
                   progress hvalue hfirst hnext hcrossStart ready hsame
-                  hnodeEq
+                  hnodeEq hafter hcursor
         | semantic_progress stepParent child semantic progress =>
             exact .semantic_progress stepParent child semantic progress
         | exact_replay replayParent replaySource replay =>

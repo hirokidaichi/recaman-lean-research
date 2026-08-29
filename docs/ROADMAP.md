@@ -436,6 +436,11 @@ clock 10⁶までの65%はcoverageでは消せない。
 
 - **深部軌道値のkernel検証（射程延長・圧縮証明書）への追加投資は行わない。** clock 112の障害
   `a 4825 = 371`を検証しても床は192までしか上がらず、その先の階段は急速に不可能になる。
+  その後`BalancedTraceCertificate`により`a 4825 = 371`自体は追加公理なしで検証済みとなった。
+  ただし既存のformal floor theoremが必要とする後続low witnessはまだkernel検証されておらず、証明済みの
+  replay floorは112のままである。4824-prefixの未出bitから`FirstAt a 371 4825`、clock 112 replayから
+  `target = 223`とhistorical minimum clock 4825までは無条件に固定済みであり、残余は4825以後のlow witness
+  一件に縮約された。圧縮checkerの成立とfloor引き上げを混同しない。
 - **床上げは「一般排除機構のストレステスト」としての価値のみ**に限定する。これは以前からの方針だが、
   今回その上限が定量化された。
 - 主資源は上記優先順位1〜4、すなわち**大域組み立ての構造的欠陥の修復**と**clock非依存の一般排除**へ

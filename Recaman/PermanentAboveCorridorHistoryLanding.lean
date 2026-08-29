@@ -57,7 +57,7 @@ theorem exists_new_below_of_missingDrop
 first occurrence lies strictly after the parent cursor. -/
 theorem TerminalChronologyHistoryProgress.exists_freshLanding
     {target childTime parentTime : Nat}
-    (h : TerminalChronologyHistoryProgress target childTime parentTime) :
+    (h : TerminalHistoryBudgetDrop target childTime parentTime) :
     ∃ value landingTime, value < target ∧ parentTime < landingTime ∧
       landingTime ≤ childTime ∧ FirstAt a value landingTime := by
   rcases exists_new_below_of_missingDrop h with ⟨v, hv, hnp, hcv⟩
@@ -68,6 +68,19 @@ theorem TerminalChronologyHistoryProgress.exists_freshLanding
         (hnp (mem_valuesThrough_iff.mpr ⟨u, hle, hfirst.1⟩))
     · omega
   exact ⟨v, u, hv, hafter, hu, hfirst⟩
+
+/-- The same landing, together with the history cursor transported from the
+parent cursor to the landing time. -/
+theorem TerminalChronologyHistoryProgress.exists_freshLandingCursor
+    {target childTime parentTime : Nat}
+    (h : TerminalChronologyHistoryProgress target childTime parentTime) :
+    ∃ value landingTime, value < target ∧ parentTime < landingTime ∧
+      landingTime ≤ childTime ∧ FirstAt a value landingTime ∧
+      TerminalHistoryCursor target landingTime := by
+  rcases TerminalChronologyHistoryProgress.exists_freshLanding h.1 with
+    ⟨value, landingTime, hvalue, hafter, hbefore, hfirst⟩
+  exact ⟨value, landingTime, hvalue, hafter, hbefore, hfirst,
+    h.2.mono (by omega)⟩
 
 /-- Anchored interface: history edges are upgraded to a fresh landing plus
 its canonical restart crossing. -/
@@ -83,7 +96,8 @@ inductive PermanentTailTerminalAnchoredOutcome
       (before_child : landingTime ≤ childTime)
       (landing_first : FirstAt a value landingTime)
       (next_crossing : FirstWeakUpcrossingStep target landingTime
-        nextCrossingTime) :
+        nextCrossingTime)
+      (landing_cursor : TerminalHistoryCursor target landingTime) :
       PermanentTailTerminalAnchoredOutcome target start
   | semantic_progress
       (stepParent child : PhaseSearchNode)
@@ -108,15 +122,15 @@ theorem PermanentTailCombinedCertificate.terminalAnchoredOutcome
     PermanentTailTerminalAnchoredOutcome target start := by
   cases h.terminalMissingOutcome with
   | history_progress childTime parentTime progress =>
-      rcases progress.exists_freshLanding with
-        ⟨value, landingTime, hvalue, hafter, hbefore, hfirst⟩
+      rcases progress.exists_freshLandingCursor with
+        ⟨value, landingTime, hvalue, hafter, hbefore, hfirst, hcursor⟩
       have hbelow : a landingTime < target := by
         rw [hfirst.1]
         exact hvalue
       rcases exists_firstWeakUpcrossingStep_from_below
           h.tail.target_positive hbelow with ⟨nextCrossingTime, hnext⟩
       exact .fresh_landing childTime parentTime progress value landingTime
-        nextCrossingTime hvalue hafter hbefore hfirst hnext
+        nextCrossingTime hvalue hafter hbefore hfirst hnext hcursor
   | semantic_progress stepParent child semantic progress =>
       exact .semantic_progress stepParent child semantic progress
   | exact_replay replayParent replaySource replay =>

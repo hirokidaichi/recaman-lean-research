@@ -296,16 +296,15 @@ theorem PermanentTailDischargeReturnCertificate.refinedTerminalIterationOutcome
                       eligible := holdEligible
                       rank_eq := hrank
                     }
-          · have holdBefore :
-                source.oldCrossingTime < source.downTime + 1 :=
-              Nat.lt_of_not_ge holdEligible
-            have hbudget : TerminalChronologyHistoryProgress target
-                (source.downTime + 1) source.oldCrossingTime :=
-              missingBelowCount_strict_of_firstAt
-                source.downcross.endpoint_below holdBefore
-                source.endpoint_first
+          · have hbudget : TerminalChronologyHistoryProgress target
+                (source.downTime + 1) source.downTime :=
+              ⟨missingBelowCount_strict_of_firstAt
+                source.downcross.endpoint_below
+                (show source.downTime < source.downTime + 1 by omega)
+                source.endpoint_first,
+                source.terminalHistoryCursor (by omega)⟩
             exact .history_progress (source.downTime + 1)
-              source.oldCrossingTime hbudget
+              source.downTime hbudget
 
 end
 
