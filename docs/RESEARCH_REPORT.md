@@ -654,6 +654,21 @@ immediate枝だけは元の経路では精密化できなかった。元の`cano
 
 同じモジュールでtail最小値の初出も進んだ。最小値への遷移は「減算（fresh初出）」か「強制加算かつ`m = tailStart`」の無条件二分法であり、後者は`5 ≤ m`と`a (m-1) ≠ 1`（新規に自前証明）により死ぬ。残る穴は`m + 1 < a m`の一点だけで、しかもその場合は`a m - (m+1)`の出現witnessが必ず手に入る。pinned配置内では前ラウンドの`target < tailStart`が効いて`a m ≤ m + 1`が自動成立し、穴が閉じる。その結果pinned配置では最小値前後4ステップの軌道が完全に決定する。
 
+**精密版outcomeの頂点への伝播が全8段完了した**（`RefinedReplayInterface`から`RefinedFixedPointCore`まで）。新しい頂点定理は
+
+```
+LeastMissingTarget target →
+  (∃ start, MissingPermanentAboveTail target start ∧ RefinedSemanticEdge target start) ∨
+  (∃ parent crossingTime, ∃ _core : TailFixedPointCore target parent crossingTime,
+     32 ≤ crossingTime ∧ 19 ≤ target)
+```
+
+であり、旧`semantic_or_flooredCore`を二点で置き換える。左枝は捏造可能な`PhaseSemanticInvariant`ではなくpermanent-tail証明書を保持する`RefinedSemanticEdge`になり、右枝の床は`18 ≤ clock ∨ target = 19`から`32 ≤ clock ∧ 19 ≤ target`になった。伝播で写経が必要だったのは段5のhorizon評価（約25行）と段7のanchor gap強帰納（約55行）だけである。`TerminalChronologyHistoryProgress`の強化がsource-freeだったため、arity追随は一切発生しなかった。
+
+**新しい左枝が捏造不能であることは一行で示せる。** `RefinedSemanticEdge`の二つのコンストラクタはどちらもpermanent-tail証明書を保持しているので、`discharge.combined.tail.target_missing`ないし`combined.tail.target_missing`がそのまま取れる。すなわち`RefinedSemanticEdge target start`はそれ単独で`¬ ∃ t, a t = target`という全内容を含む（`RefinedSemanticEdge.target_missing`）。したがって`∀ target, 0 < target → ∃ start, RefinedSemanticEdge target start`は`target = 1`で即座に反証され（`a 1 = 1`）、`probe_refinedDomainEdge_of_pos`と同型の攻撃は**構造的に不可能**である。空虚化を三度踏んだ末に、初めて非自明性が形式的に確立された左枝が得られたことになる。
+
+**残る留保を明示する。** 形式的に排除したのは「`0 < target`からの導出」である。より深い「`LeastMissingTarget target`から`RefinedSemanticEdge target start`が無条件に出るか」は排除していない。手で追う限りそれは`mounted_crossing`の`PhaseSearchProgress`、すなわち`a crossingTime < mountedParent.anchorParent`という実軌道のanchor下降を作ることに帰着し、これは固定点解析が現に戦っている内容そのものなので無料である可能性は低い。ただし仮にそれが出せてしまえば右枝が到達不能になるという意味で重大なので、次エポックで一度専任で当てる価値がある。最悪の場合でも今回の精密化は純利得である。旧左枝は情報量ゼロだったが、新左枝は少なくとも`¬ ∃ t, a t = target`を含む。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -911,6 +926,9 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | residual purified to one hypothesis | `targetTailReturn_implies_occurs` | `CrossingReadinessClosure.lean` |
 | pinned configuration determined by clock | `PinnedTailMinimumConfiguration.target_eq` | `PinnedConfigurationAttack.lean` |
 | tail minimum transition dichotomy | `TerminalExactDischargeReplayCertificate.tailMinimum_transition` | `PinnedConfigurationAttack.lean` |
+| refined summit | `LeastMissingTarget.refinedSemanticEdge_or_flooredCore` | `RefinedFixedPointCore.lean` |
+| refined semantic edge is non-trivial | `RefinedSemanticEdge.target_missing` | `RefinedFixedPointCore.lean` |
+| refined left branch not free | `not_forall_pos_refinedSummitLeft` | `RefinedFixedPointCore.lean` |
 
 ## 8. 結論
 

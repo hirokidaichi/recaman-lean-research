@@ -1786,3 +1786,24 @@ pinned配置の前方展開は`m+3`まで強制加算で確定し、`m+4`で分�
 tailが効いたのは候補が`a m - 1`に落ちる第2段だけで、第3段は「既出」で決まり、その既出witnessが`a (m-1)`
 だったのはpinned配置で後方1ステップが確定していたおかげである。ただし分岐しても情報は失われず、
 どちらの枝でも`target + 2m + 4`が軌道上に出現する。
+
+### 第八十五ラウンド：精密版頂点定理の完成と左枝の非自明性
+
+精密版outcomeの頂点への伝播が全8段完了した。新しい頂点定理
+`LeastMissingTarget.refinedSemanticEdge_or_flooredCore`は、左枝がpermanent-tail証明書を保持する
+`RefinedSemanticEdge`、右枝が`32 ≤ crossingTime ∧ 19 ≤ target`の固定点coreである。旧
+`semantic_or_flooredCore`を二点で置き換えた形になる。写経が必要だったのは段5のhorizon評価（約25行）と
+段7のanchor gap強帰納（約55行）だけで、`TerminalChronologyHistoryProgress`の強化がsource-freeだったため
+arity追随は一切発生しなかった。
+
+**新しい左枝が捏造不能であることは一行で示せた。** `RefinedSemanticEdge`の二つのコンストラクタはどちらも
+permanent-tail証明書を保持しているので、`¬ ∃ t, a t = target`をそれ単独で含む
+（`RefinedSemanticEdge.target_missing`）。したがって`∀ target, 0 < target → ∃ start, RefinedSemanticEdge`は
+`target = 1`で即座に反証され、`probe_refinedDomainEdge_of_pos`と同型の攻撃は構造的に不可能である。
+本日三度踏んだ空虚化の罠を、四度目で初めて形式的に閉じたことになる。
+
+残る留保を明示する。排除したのは「`0 < target`からの導出」であり、「`LeastMissingTarget`から無条件に出るか」は
+排除していない。手で追う限りそれは`mounted_crossing`の`a crossingTime < mountedParent.anchorParent`という
+実軌道のanchor下降を作ることに帰着し、固定点解析が現に戦っている内容そのものなので無料である可能性は低い。
+ただし出せてしまえば右枝が到達不能になるので、次エポックで一度専任で当てる価値がある。最悪でも今回の
+精密化は純利得である。旧左枝は情報量ゼロだったが、新左枝は少なくともtargetの欠損を含む。

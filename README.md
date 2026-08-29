@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース182モジュール
+- Leanソース186モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -173,6 +173,11 @@ Lean 4形式化プロジェクトです。
 - 無条件`FirstAt a (a m) m`の残余枝を完全記述し、**計数路線が越えられない壁が`tailStart`の上界の不在である**ことを三度確認
 - pinned配置の前方展開は`m+3`まで強制加算で確定、`m+4`で分岐が避けられないことを算術的に証明済み
 - 精密版outcomeの頂点への伝播を8段中4段まで完了（ReplayInterface段・HistoryLanding段。`landing_cursor`も運ぶ形に更新済み）
+- **精密版outcomeの頂点への伝播が全8段完了**。頂点定理`LeastMissingTarget.refinedSemanticEdge_or_flooredCore`は
+  「permanent-tail証明書を保持するsemantic edge ∨ `32 ≤ clock`かつ`19 ≤ target`の固定点core」を与える
+- **新しいsemantic枝が捏造不能であることを一行で証明**：`RefinedSemanticEdge`は両コンストラクタとも
+  permanent-tail証明書を保持するので`¬ ∃ t, a t = target`をそれ単独で含む。したがって`target = 1`で
+  即座に反証でき、`0 < target`からの導出は構造的に不可能（`not_forall_pos_refinedSummitLeft`）
 - crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし同時に`TargetTailReturnHypothesis target ↔ 出現`も証明されており、難しさは減っていない）
 - pinned配置は`f`だけで完全に決まり実軌道上で判定可能だが、候補は`f < 3×10⁶`で2438個あり累積が増え続けるため、kernel列挙では落ちないと確定。構造的議論が要る
 - tail最小値への遷移を無条件の二分法へ整理し、無条件`FirstAt a (a m) m`まで残り1点（`m + 1 < a m`）へ縮約。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が完全決定する
