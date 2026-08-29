@@ -266,6 +266,29 @@ targetは8以上、上側は`target ≤ upperTri (clock+1)`で挟まれる。従
 または歴史の別canonical選択）の構成に縮約された。項目3の残余はhistory/semantic枝の
 continuationのみである。
 
+項目3のhistory枝continuationはその後完了した。missing-count dropの不等式単独から
+window内のbelow-target fresh landingを逆算でき、反例のbelow coverageと初出最小性が
+これをparent history内へ束縛する。landingはready crossing nodeとしてsemantic domainへ
+搭載され、combined certificateごとmounted nodeへtransportして解析を再入できる。
+この再入反復もanchor gapの強帰納で整礎に閉じ、permanent-tail解析全体の終端は
+semantic phase child・exact discharge replay・node不動landing固定点の三形になった。
+二固定点は共通核`TailFixedPointCore`（anchor同値・target跨ぎforced addition・
+parent node再生産）を持ち、最終統合定理はsemanticまたはprovenance付き固定点の二形である。
+
+固定点のkernel floorはclock 17まで拡張された。唯一の例外は初出が時刻99734と深い値19で、
+`18 ≤ clock ∨ target = 19`かつ無条件に`19 ≤ target`が成立する。次の壁は61
+（初出t=181653）である。数値走査実験によれば、軌道10¹⁰項でも5,640個の候補対が生存し、
+自帯域を時刻200以内に被覆できるclockは17ただ一つなので、kernel decideによる全域的な
+floor引き上げは戦略として成立しない。従って残る調査順序は次に更新される。
+
+1. 固定点core（parent node再生産のcanonical crossing）を破る非計算的な大域論法を
+   構成する。候補は、tail内部（tailStart以後）の無限構造から取り出す新event列、
+   遅い初出値（19、61、…）の遅延性を特徴付ける数論的構造、または歴史の別canonical
+   minimum／downcross選択である。
+2. semantic progress枝のchildを外側restricted oracle再帰のdomainへ接続し、
+   ready crossing局所stepの残余を`TargetTailReturnHypothesis`の証明義務として
+   単一定理へ統合する（Issue #60 項目1・4）。
+
 ### 完了条件
 
 ```lean

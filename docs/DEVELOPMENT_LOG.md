@@ -1197,3 +1197,60 @@ crossing cursorとanchor値はdischargeのold crossingで一意に決まり、�
 ことはない。Issue #60の調査順序のうち、installed successorのwell-founded induction接続（項目2）はこの
 三成分rankで完了し、残余はhistory/semantic枝のcontinuation（項目3）と、固定点を破る新しい大域情報の構成
 （項目5の縮約形）である。
+
+### 第四十一ラウンド：landing horizon bound
+
+anchored landingの時刻境界を、上流のhistory progress生成箇所を書き換えずに事後導出した。missing targetの
+反例では`below_covered`によりtarget未満の全値がtail startまでに出現済みで、first occurrenceの最小性から
+landing時刻はstartより厳密に前になる。tailはstart以後厳密にaboveなので、landingとstartの間に弱上抜けが
+存在し、canonical restart crossingは`crossing + 1 ≤ start < parent.horizon`を満たす。landingとその再開
+crossingはinstalled crossing nodeの形状条件と正確に一致する履歴内境界を得た。
+
+### 第四十二ラウンド：landing crossing mount
+
+境界付きlandingを実際のsemantic nodeへ搭載した。missing-target tailではupcross endpointがtargetと一致
+できないためstrict crossingになり、forced additionと正時刻coordinatesがそのまま得られる。parent horizonの
+readiness clockはnodeがhorizonを再利用するため輸送される。in-horizon first upcrossingは常に
+`CrossingRecoveryInvariant`を経てready crossing nodeを構成でき、閉じたterminal解析の全interface枝が
+外側探索のsemantic domainの実objectを渡すようになった。
+
+### 第四十三ラウンド：landing combined install
+
+combined certificateのready crossing以外の全fieldは共有horizonにのみ依存する。従ってmounted landing
+crossingへ全fieldがtransportし、terminal解析はmounted nodeから再入できる。landing枝はterminal leafでは
+なく同じ解析の新しいparentである。旧parentとの比較はinstalled successor反復と同じanchor二分法に従う。
+
+### 第四十四ラウンド：mounted iteration closure
+
+landing再入反復を整礎に閉じた。anchor dropのlanding crossingはready crossingのままsemantic childとして
+返り、anchor growthはanchor gap（自然数）を厳密に下げるため強帰納で消去できる。equal anchorではmounted
+nodeがparentと文字通り一致する。mounted反復の最終結果はsemantic phase child・exact discharge replay・
+node不動のlanding固定点の三形だけである。
+
+### 第四十五ラウンド：unified fixed point core
+
+二つの固定点の共通数値核を`TailFixedPointCore`として抽出した。どちらも、値がparent anchorと一致し、
+missing targetをまたぐ明示的forced additionであり、mounted nodeがparentを文字通り再生産するcanonical
+crossing選択である。最終統合定理`unifiedOutcome`により、missing-target permanent tailはsemantic phase
+childを渡すか、discharge replay／landing cycleのprovenanceを付けたparent-node再生産固定点で終端する。
+
+### 第四十六ラウンド：unified core kernel floor
+
+統合coreにblocker不要のkernel floorを与えた。straddleとforced additionは実軌道イベントなので、clock 3は
+実stepの減算、それ以外のclock 5以下はまたぐtargetの実出現と矛盾し、両固定点で共通にclock 6以上が従う。
+上側は`target ≤ upperTri (clock+1)`の三角包絡で押さえられる。
+
+### 第四十七ラウンド：replay floor second stage
+
+同じ三系統排除をclock 17まで進めた。本質的障害はただ一つ、値19の初出が時刻99734と深く、clock 6の帯
+`(13,20]`とclock 8の帯`(12,21]`の双方に19が含まれることである。他のtargetはすべて時刻31以内（clock 17の
+帯`(25,43]`は時刻111以内）に出現するため、`18 ≤ clock ∨ target = 19`と無条件の`19 ≤ target`が従う。
+次の壁はclock 18の帯に含まれる61（初出t=181653）で、二つの深い遅延値はkernel計算の射程外にある。
+
+### 第四十八ラウンド：replay固定点の数値走査実験
+
+固定点の必要条件を実軌道上で走査した（`experiments/replay_fixed_point_scan.cpp`、Lean証明から独立）。
+clock 10⁴以下の適格強制加算クロックは2132個で歩幅2の櫛状鎖として出現し、候補対は約1101万。軌道10¹⁰項でも
+5,640対（相異なるtarget 18個、すべて遅い初出値）が生存した。時刻200以内で自帯域を完全被覆できるclockは
+17ただ一つで、kernel decideによる全域的floor引き上げ戦略は成立しない。着地・blocker条件は候補対をひとつも
+排除しなかった。固定点の排除には非計算的な大域論法が必須という定量的根拠を得た。

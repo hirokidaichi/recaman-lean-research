@@ -1,5 +1,17 @@
 # Changelog
 
+## Landing recursion and fixed point floors — 2026-08-29
+
+- history edgeのfresh landingにhorizon境界（landing<start、crossing+1≤start<horizon）を事後導出
+- 境界付きlandingをready crossing nodeとしてsemantic domainへ搭載
+- combined certificateをmounted nodeへtransportし、terminal解析をlanding枝から再入可能化
+- landing再入反復をanchor gap強帰納で整礎閉包し、残余をnode不動landing固定点へ縮約
+- 二固定点の共通核`TailFixedPointCore`と最終統合定理`unifiedOutcome`を構成
+- 統合coreにblocker不要のkernel floor（clock≥6・target≤upperTri包絡）を証明
+- replay floorをclock 17まで拡張：例外は深い遅延値19のみ、`18≤clock∨target=19`と無条件`target≥19`
+- replay固定点候補の数値走査実験を追加：10¹⁰項でも5,640対が生存、decide全域排除戦略の不成立を定量確認
+- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`と公理監査を追加
+
 ## Successor iteration and replay fixed point — 2026-08-29
 
 - installationが輸送する三成分（horizon budget・anchor gap・old crossing cursor）をdischarge-level iteration rankとして定義
