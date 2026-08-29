@@ -420,3 +420,7 @@ import Recaman
 #print axioms Recaman.tailRestartCycle_exit_of_cursorProgress
 #print axioms Recaman.tailRestartCycle_exit_of_restartSeenDrop
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.restartRankOutcome
+#print axioms Recaman.terminalCrossingAnchorProgress_wellFounded
+#print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.anchorGrowthCertificate
+#print axioms Recaman.TerminalCrossingAnchorGrowthCertificate.progress_of_selected
+#print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome

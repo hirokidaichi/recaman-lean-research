@@ -473,6 +473,11 @@ cursorを導入した。anchor、crossing time、restart seen-budget、phase、l
 well-foundedである。stationary枝ではblocker first occurrenceの直前へ移るstrict seen-budget dropがphase上昇より先に比較される。
 これによりeligible kernelはphase progress、restart-cycle progress、strict anchor growthの三形となり、literal stationaryは消える。
 
+`PermanentAboveCorridorAnchorCandidates`は残るstrict anchor growthをtarget-indexed finite rankへ変換する。old/new crossing
+predecessorはいずれもtarget未満なので`List.range target`の要素であり、候補数はexactly targetである。old<newなら
+`target-new < target-old`で、remaining gap relationは自然数へのpullbackとしてwell-foundedである。growth certificateは
+両anchorのlist membershipとstrict gap progressを同時に保持し、新anchorを次parentに選ぶ場合のadapter theoremも持つ。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -585,6 +590,7 @@ well-foundedである。stationary枝ではblocker first occurrenceの直前へ�
 | below predecessor crossing接続 | `TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome` | `PermanentAboveCorridorPredecessorCrossing.lean` |
 | predecessor crossing cursor分類 | `BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome` | `PermanentAboveCorridorPredecessorCursor.lean` |
 | stationary restart rank | `BelowTargetHistoricalPredecessorCertificate.restartRankOutcome` | `PermanentAboveCorridorRestartRank.lean` |
+| crossing anchor有限rank | `BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome` | `PermanentAboveCorridorAnchorCandidates.lean` |
 
 ## 8. 結論
 
@@ -647,6 +653,9 @@ anchor growthまたはliteral stationaryへ縮んだ。次の本質は、station
 専用restart cursorを持つ六成分rankによりstationary再選択はstrict edgeになった。従ってeligible historical blocker側で残る
 非進捗はstrict anchor growthだけである。次はこのgrowth値をterminal predecessor/target/return clockで上界づけて有限候補化するか、
 次cycleで再利用できないfreshness量へ接続することが中心課題となる。
+strict anchor growthも長さtargetの候補列とremaining-gap well-founded rankへ有限化された。従ってhistorical blocker側の数値的な
+無限loop要因は除去され、残るのは選んだcrossingを次cycleのsemantic parentとしてinstallし、eligibilityとrestart cursorを
+反復間で保存する統合provenanceである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
