@@ -19,7 +19,10 @@
 - comb run閉形式・witness構成・値集合表現・freshness輸送を証明し、圧縮軌道検証の機構を整備
 - target 19のreplayをclock 8の唯一cycle（downcross 7→即時return 8・anchor 12・blocker 3初出2）へ完全特定
 - 19-反例のtail最小値を21へ固定し、tailStart>131・horizon>132で固定歴史と未知tailへ二分
-- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`、`PermanentAboveCorridorFixedPointShape`、`PermanentAboveCorridorFixedPointCorridor`、`PermanentAboveCorridorFixedPointFloorTwo`、`PermanentAboveCorridorLeastMissingSummit`、`PermanentAboveCorridorNineteenBoundary`、`PermanentAboveCorridorReplayFloorThree`、`OrbitComb`、`OrbitCombWitness`、`OrbitCombValues`、`PermanentAboveCorridorNineteenReplay`、`PermanentAboveCorridorNineteenUnique`、`PermanentAboveCorridorNineteenMinimum`、`PermanentAboveCorridorNineteenTail`と公理監査を追加
+- 19未出⟹21の遅い再訪、という将来イベント強制を証明
+- 既出値の遅い再訪不可能性（一般力学補題`a_succ_ne_of_seen`）でtarget 19のreplayを完全排除
+- 無条件`18 ≤ clock`・`32 ≤ clock ∨ target = 61`・`20 ≤ target`へ床を更新
+- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`、`PermanentAboveCorridorFixedPointShape`、`PermanentAboveCorridorFixedPointCorridor`、`PermanentAboveCorridorFixedPointFloorTwo`、`PermanentAboveCorridorLeastMissingSummit`、`PermanentAboveCorridorNineteenBoundary`、`PermanentAboveCorridorReplayFloorThree`、`OrbitComb`、`OrbitCombWitness`、`OrbitCombValues`、`PermanentAboveCorridorNineteenReplay`、`PermanentAboveCorridorNineteenUnique`、`PermanentAboveCorridorNineteenMinimum`、`PermanentAboveCorridorNineteenTail`、`PermanentAboveCorridorNineteenRevisit`、`PermanentAboveCorridorNineteenElimination`と公理監査を追加
 
 ## Successor iteration and replay fixed point — 2026-08-29
 
