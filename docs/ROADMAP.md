@@ -433,7 +433,12 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
    どちらもtarget未満なので鳩の巣の精密化はむしろsub-target値を増やす方向に働き、`covered_forces_above`も
    `a (f+1)`のfresh初出のためboundが`f+1`以上になって射程外になる。攻めるべきは
    `lastRow_blocked_witness`が固定した局所条件、すなわち隣接2値`target - 2f + 1`・`target - 2f + 2`が
-   `f-1`以前に揃うという強い制約である。両方減算は`target + 3 ≤ tailStart`まで出ているが
+   `f-1`以前に揃うという強い制約である。この線を追った結果、窓は
+   `2f + 3 ≤ target ≤ upperTri(f-3) + 2f - 1`まで縮み`f ≥ 6`も確定したが、上端は`f²/2`オーダー・
+   下端は`2f`オーダーなので**この方向の改善を何回積んでも交差しない**。また早期witnessの追加は
+   強制加算が自分で供給し続けるため、`ReplayWitnessDescent`で否定的に決着した降下と同じ形で発散する。
+   **必要なのは「区間`[0, f-1]`に値が`V`以上の時刻は高々何個か」型の密度側の上界**である
+   （`coveredBelowCount_two_above`の双対）。両方減算は`target + 3 ≤ tailStart`まで出ているが
    late recurrenceの的がなく、`firstRow_forbids_late_repeat`を発火させる相手を見つける必要がある。
 4. **精密版頂点定理の左枝、`discharge_step`経路。** `mounted_crossing`経路は`installReadyCrossing`による
    anchorの無限降下で塞がったが（`not_alwaysHorizonInternalAnchorDrop`）、`discharge_step`の

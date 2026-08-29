@@ -190,6 +190,7 @@ import Recaman.ReturnFrequency
 import Recaman.PinnedBackwardStep
 import Recaman.PinnedMiddleRow
 import Recaman.PinnedRemainingRows
+import Recaman.PinnedAdjacentWitness
 import Recaman.TrivialityProbeTwo
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
