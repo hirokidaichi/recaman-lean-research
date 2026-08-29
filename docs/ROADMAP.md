@@ -237,13 +237,34 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 40. ~~legal生成のlarger predecessorとforced生成のtarget-bounded predecessor/clockを抽出する。~~
 41. ~~below-target landingがordinary normal/debt invariantへ直結不能であることを証明する。~~
 
-次の調査順序は次である。
+上記の旧調査順序はすべて完了した。predecessor adapter、crossing install、有限selection、canonical minimum、
+exact replay解析を経て、finite terminal branch自体が算術的に不可能であることまで証明した。terminal outcomeは
+target occurrence、strict history progress、semantic phase progress、installed master progressの四形に閉じ、
+installed枝は次のdischargeも保持する。
 
-1. blocker predecessorをbelow-target historical/crossing semantic nodeへ載せるadapterを構成する。
-2. finite candidate再訪でlater returnを強制するselection provenanceを設計する。
-3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
-4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
-5. terminal normalizationをcursor-refined outer cycleとrefined oracleへ統合する。
+現在の調査順序（Issue #60）は次である。
+
+1. history cursor、`PhaseSearchNode`、`TailInstalledCycleSearchNode`を跨ぐglobal recursion predicateを定義する。
+2. ~~installed successorとnext dischargeをmaster well-founded inductionの帰納仮定へ接続する。~~
+3. history progress枝をhistory relation、semantic progress枝をlocal parent付きphase relationの帰納仮定へ接続する。
+4. 三relation間の遷移に外側priorityを与えるか、proof-carrying sum state上の単一well-founded relationを構成する。
+5. permanent-above tailの矛盾を導き、`CrossingRefinedStepHypothesis`の無条件化へ接続する。
+
+項目2は七成分master rankの帰納仮定を経由せずに解決した。連続する二解析のmaster node
+は内側cursor（blocker first time）が比較不能だが、installationが正確に輸送するのは
+共有horizon budget・installed anchor gap・old crossing cursorの三成分だけである。
+この三成分lexをdischarge-levelのiteration rankとすると、installed successorは
+strictに下降するか、anchorとcursorがともに一致するexact replayになる。rankの整礎性で
+反復constructorは消去され、terminal解析はmissing-target下でhistory edge・semantic
+child・exact replay固定点の三形interfaceへ無条件に閉じた。
+
+replay固定点自体も固定した。return crossingはold crossingと一致する閉cycleで、
+installed nodeはparentそのもの、successorは同parent同cursorへのself-mapである。
+全cursorはtarget未満のbelow corridor帯に収まり、kernel計算でcrossing clockは6以上・
+targetは8以上、上側は`target ≤ upperTri (clock+1)`で挟まれる。従って項目5の矛盾は、
+この有限帯self-recurrent cycleを破る新しい大域情報（tail内部の無限構造からの新event列、
+または歴史の別canonical選択）の構成に縮約された。項目3の残余はhistory/semantic枝の
+continuationのみである。
 
 ### 完了条件
 

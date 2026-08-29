@@ -733,6 +733,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | replay all-below corridor | `TerminalExactDischargeReplayCertificate.all_below_up_to_crossing` | `PermanentAboveCorridorReplayCorridor.lean` |
 | replay kernel floor | `TerminalExactDischargeReplayCertificate.six_le_crossingTime` | `PermanentAboveCorridorReplayFloor.lean` |
 | replay target envelope | `TerminalExactDischargeReplayCertificate.target_le_upperTri` | `PermanentAboveCorridorReplayFloor.lean` |
+| missing-target terminal interface | `PermanentTailCombinedCertificate.terminalMissingOutcome` | `PermanentAboveCorridorReplayInterface.lean` |
 
 ## 8. 結論
 
@@ -846,6 +847,9 @@ successorは同parent同cursorのself-mapになる。従って残余は「同一
 kernel排除は実軌道step検証まで拡張された。clock 3は実stepが減算、clock 4は値境界、clock 5はまたぐtarget
 `8..13`の実出現とそれぞれ矛盾するため、replayはclock 6以上・target 8以上に限られる。上側は
 `target ≤ upperTri (clock+1)`で押さえられ、固定点parameterは両側から有限帯に挟撃されている。
+最終的に、missing-target下のterminal解析interfaceは三形に確定した。target枝は反例仮定と矛盾するため、
+permanent tailが外側探索へ渡せる情報はstrict history edge・semantic phase child・exact replay固定点だけであり、
+replayのcycle（crossing cursorとanchor）はdischargeごとに一意である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
