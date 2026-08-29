@@ -532,3 +532,6 @@ import Recaman
 #print axioms Recaman.landing_cycle_corridor_below
 #print axioms Recaman.TailFixedPointCore.eighteen_le_crossingTime_or_target_eq_nineteen
 #print axioms Recaman.TailFixedPointCore.nineteen_le_target
+#print axioms Recaman.PermanentTailUnifiedOutcome.semantic_or_flooredCore
+#print axioms Recaman.LeastMissingTarget.semantic_or_flooredCore
+#print axioms Recaman.LeastMissingTarget.semanticProgress_or_nineteen_le
