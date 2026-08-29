@@ -767,6 +767,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | comb freshness transport | `CombRun.fresh_below_transport` | `OrbitCombValues.lean` |
 | nineteen replay identification | `TerminalExactDischargeReplayCertificate.crossingTime_eq_six_or_eight_of_nineteen` | `PermanentAboveCorridorNineteenReplay.lean` |
 | nineteen replay uniqueness | `TerminalExactDischargeReplayCertificate.nineteen_replay_unique` | `PermanentAboveCorridorNineteenUnique.lean` |
+| nineteen minimum pins | `TerminalExactDischargeReplayCertificate.nineteen_minimum_pins` | `PermanentAboveCorridorNineteenMinimum.lean` |
 
 ## 8. 結論
 

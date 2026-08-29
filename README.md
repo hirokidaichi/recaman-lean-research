@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース154モジュール
+- Leanソース155モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -128,6 +128,7 @@ Lean 4形式化プロジェクトです。
 - comb run値集合の表現定理とfreshness輸送を証明し、圧縮検証機構の核を完成済み
 - target 19のreplay固定点をclock∈{6,8}へ完全特定し、anchor・blocker・初出時刻まで一意化済み
 - downcross条件でclock 6を排除し、19-replayを唯一の完全明示cycle（7→8即時return、anchor 12）へ確定済み
+- 19-反例のtail最小値を21・minimum predecessor初出を7へ固定し、残る自由をtail時刻のみへ縮約済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
