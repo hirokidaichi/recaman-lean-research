@@ -517,3 +517,5 @@ import Recaman
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome
 #print axioms Recaman.PermanentTailCombinedCertificate.landingReadyCrossing
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalMountedOutcome
+#print axioms Recaman.PermanentTailCombinedCertificate.installReadyCrossing
+#print axioms Recaman.PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing

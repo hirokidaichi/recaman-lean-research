@@ -739,6 +739,8 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | horizon-anchored interface | `PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome` | `PermanentAboveCorridorLandingHorizon.lean` |
 | landing ready-crossing mount | `PermanentTailCombinedCertificate.landingReadyCrossing` | `PermanentAboveCorridorLandingMount.lean` |
 | mounted terminal interface | `PermanentTailCombinedCertificate.terminalMountedOutcome` | `PermanentAboveCorridorLandingMount.lean` |
+| landing combined install | `PermanentTailCombinedCertificate.installReadyCrossing` | `PermanentAboveCorridorLandingInstall.lean` |
+| re-entrant mounted analysis | `PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing` | `PermanentAboveCorridorLandingInstall.lean` |
 
 ## 8. 結論
 
@@ -864,6 +866,8 @@ restart crossingは`crossing + 1 ≤ start < parent.horizon`を満たす。landi
 この境界付きlandingはready crossing nodeとして実際にsemantic domainへ搭載された。missing-target性から
 endpointはstrict crossingになり、crossing-recovery certificateの全フィールドがlandingデータだけから構成できる。
 閉じたterminal解析の三枝すべてが、外側探索のsemantic domainの実objectを渡す。
+さらにmounted nodeはcombined certificateの新parentへ昇格する。ready crossing以外の全fieldは共有horizonにのみ
+依存するためtransportは無条件で、terminal解析はmounted nodeから再入できる。landing枝は葉ではなく再帰点である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
