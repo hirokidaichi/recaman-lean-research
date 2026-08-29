@@ -403,6 +403,18 @@ legal endpointを消費した後に残るall-forced suffixの有限算術証明�
 `endpoint < return < target`、strict crossing、final stepを含む加算traceを保持し、target gapとovershootは
 いずれも正でreturn clock以下になる。finite corridorとouter stationary cycleを区別した最小terminal residualである。
 
+### immediate historical valley / 即時履歴谷 — 研究固有
+
+historical downcross直後がfirst return predecessorでもある場合のexact valleyである。
+sourceはtargetより上、fresh endpointはtarget未満で、二遷移後にsource値`+1`へ戻る。
+`ImmediateHistoricalValleyCertificate`がmissing-target provenanceと三つの軌道等式を保持する。
+
+### corridor terminal normalization / 回廊終端正規化 — 研究固有
+
+`returnTime - endpointTime`への強帰納で、missing-target corridor内のlegal endpointを有限回消費する操作である。
+delayed枝はterminal all-forced crossing windowへ到達し、全historical dischargeを有限windowまたはimmediate
+historical valleyの二形へ型付きで縮約する。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

@@ -377,3 +377,6 @@ import Recaman
 #print axioms Recaman.AllForcedAdditionSuffix.final_value_eq_add_forcedClockSum
 #print axioms Recaman.TerminalAllForcedSuffixCertificate.crossingWindow
 #print axioms Recaman.CanonicalReturnRebaseCertificate.terminalWindow_of_legal
+#print axioms Recaman.CanonicalBelowCorridorSuffix.exists_terminalAllForced
+#print axioms Recaman.CanonicalBelowCorridorCertificate.immediateHistoricalValley
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalShape

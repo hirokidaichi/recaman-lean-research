@@ -33,7 +33,9 @@
 - target-missing下でlegal endpointのreturn着地を排除し、post-legal terminalをall-forcedへ縮約
 - all-forced suffixのtraceをfinal return upcrossまで延長
 - terminal residualをstrict crossing、target gap／overshoot上界付き有限windowへ縮約
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`と公理監査を追加
+- suffix cursorの強帰納で任意個のlegal endpoint後のall-forced terminal存在を証明
+- 全dischargeをimmediate historical valleyまたはfinite crossing windowの二形へ型付き正規化
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

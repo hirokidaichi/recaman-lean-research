@@ -217,14 +217,16 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 20. ~~terminal all-forced suffixのtraceをfinal forced upcrossまで延長する。~~
 21. ~~strict crossing windowとtarget gap／overshootのreturn-clock上界を証明する。~~
 22. ~~post-legal terminalを`TerminalAllForcedCrossingWindow`へtypedに縮約する。~~
+23. ~~suffix cursorの強帰納で任意個のlegal endpoint後にall-forced terminalを抽出する。~~
+24. ~~全dischargeをimmediate historical valley／finite crossing windowの二形へ型付き正規化する。~~
 
 次の調査順序は次である。
 
-1. finite crossing windowのgap／overshootをcrossing anchorまたは次候補のfreshnessへ接続する。
-2. original endpoint=returnの即時historical valleyを同じwindow言語と比較する。
-3. terminal windowから別のhistorical minimum／downcrossをcanonicalに選ぶ。
+1. 二つのterminal shapeに共通するouter anchor／freshness量を抽出する。
+2. finite crossing windowのgap／overshootから次のhistorical blocker候補を制約する。
+3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
-5. suffix budget下降をcursor-refined outer cycleとrefined oracleへ統合する。
+5. terminal normalizationをcursor-refined outer cycleとrefined oracleへ統合する。
 
 ### 完了条件
 

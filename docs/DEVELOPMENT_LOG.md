@@ -959,3 +959,15 @@ endpointのreturn以前性、all-forced性をまとめる。
 final addition式、全traceを抽出する。また`target - a return`と`a (return+1) - target`がともに正で、
 return clock以下であることを証明した。legal child以後に後続legal endpointがなければ、このwindowと直前の
 strict history-budget dropが同時に得られる。outer residualは有限算術windowへ縮約された。
+
+### 第二十六ラウンド：suffix強帰納とterminal二形正規化
+
+`returnTime - endpointTime`を帰納変数にして、任意のnonempty missing-target suffixがterminal all-forced suffixへ
+到達することを強帰納で証明した。legal endpointが存在する場合は`child_of_internalSubtraction_missing`が返す
+strict childへ移る。missing-target boundaryによりchildはreturnより前に残り、suffix cursorが厳密に減る。
+legal endpointが存在しない場合は定義からall-forcedである。従って任意個のlegal endpointを一つの定理で消費できる。
+
+original historical corridorについて、immediate returnならsource>target、fresh endpoint<target、down/add/valleyの
+exact equationsを持つ`ImmediateHistoricalValleyCertificate`を構成した。delayed returnなら上の強帰納結果を
+finite crossing windowへ変換する。`terminalShape`は全typed dischargeをこの二形のどちらかへ正規化する。
+残る外側義務は、二形に共通するfreshnessまたはanchor progressを作ることである。

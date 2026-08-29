@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース99モジュール
+- Leanソース100モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -72,6 +72,8 @@ Lean 4形式化プロジェクトです。
 - target-missing下でlegal suffix childがreturnへ着地できないことを証明済み
 - terminal all-forced suffixを有限crossing-window証明書へ縮約済み
 - target gapとovershootがreturn clock以下であることを証明済み
+- suffix cursorの強帰納で、任意個のlegal endpoint後にall-forced terminalが存在すると証明済み
+- 全dischargeをimmediate historical valleyまたはfinite crossing windowの二形へ正規化済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -117,10 +119,11 @@ crossingへ戻るため、これは外側cycle exitではありません。残�
 suffixへ到達します。残る外側の核心は、このterminal suffixから別のhistorical dischargeを選ぶことです。
 さらにlegal endpointがreturn時刻そのものなら、直前のbelow値へのsubtractionとreturnのforced additionが
 相殺し、crossing endpointは直前値`+1`になります。これはexact targetを強制するため仮想反例では不可能です。
-従ってlegal endpoint列のterminalはall-forced suffixに限られ、即時historical valleyだけが別枝として残ります。
+強帰納によりlegal endpoint列全体を実際に消費でき、delayed corridorは必ずall-forced terminalへ到達します。
+従って全dischargeのterminalはall-forced suffixか、original immediate historical valleyの二形に限られます。
 terminal all-forced枝はさらに`endpoint < return < target`、strict crossing、全加算traceを持ちます。
 crossing直前のtarget gapと直後のovershootはいずれもreturn clock以下です。現在のouter residualは、
-この有限crossing windowとoriginal immediate historical valleyの二形へ縮まりました。
+この有限crossing windowとoriginal immediate historical valleyの型付き直和へ縮まりました。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -144,8 +147,9 @@ flowchart TD
     Q --> R["legal suffix cursor：証明済み"]
     R --> S["legal-at-return排除：証明済み"]
     S --> T["finite crossing window：証明済み"]
-    T --> U["window / immediate valley：未解決"]
-    U --> V["全射性：未証明"]
+    T --> U["terminal二形への強正規化：証明済み"]
+    U --> V["共通outer progress：未解決"]
+    V --> W["全射性：未証明"]
 ```
 
 ## 文書
