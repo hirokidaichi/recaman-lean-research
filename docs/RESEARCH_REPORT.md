@@ -594,6 +594,12 @@ crossing clock 3以上・target 5以上でしか存在できない。
 
 前向きの成果として、semantic childのrefined domainへの昇格をhorizon readiness仮定のもとで四constructor完全に構成した（`PhaseSemanticInvariant.toOrbitReadyRefinedInvariant`）。この仮定は具体反例により除去できない（`not_forall_phaseSemantic_horizonReady`）。さらに無仮定で「任意のrefined nodeから降下すると目標到達かcrossing nodeでの停止に必ず至る」（`orbitReadyRefined_occurs_or_crossing`）を証明し、大域組み立ての残余を三つの明示的命題へ分解した。(1) semantic枝の型強化、(2) ready crossingの局所step`ReadyCrossingRefinedStepHypothesis`、(3) unready crossing漏れ`∃ unready, CrossingSearchInvariant target unready ∧ unready.horizon + 1 < target`の否定。(2)は`TargetTailReturnHypothesis`から従うが、それは最小未出目標下では反証されるため、結局は固定点矛盾からしか来ない。
 
+`LandingRevisitTransport`は、これまで武器が一つも届いていなかったlanding固定点側へ三種道具を移植し、成否を確定した。**再訪排除は無条件で移植できた**。`PermanentTailCombinedCertificate.minimum_revisit_absurd`はcrossing clockを一切参照せず、combined証明書だけから「既出値がcutoff以内のwitnessを持つならtail最小値の遅い再訪は不可能」を導く。record排除は共有核レベルの汎用形として無条件に成立し（`TailFixedPointCore.crossingTime_not_record_of_prefixAbove`）、landing分岐では`predecessorFirstTime < landingTime`のとき発火する。
+
+**欠けているのはdowncross前置界ただ一つ**であり、その欠落の所在も正確に特定した。`FirstWeakUpcrossingStep.window_below`により`[landingTime, crossingTime]`は全区間target未満なので、target超のpredecessor初出は窓の外、すなわち`predecessorFirstTime < landingTime`か`crossingTime < predecessorFirstTime`の二択にしか居られない。ところがlanding分岐はこの二択を決める情報を一つも携えていない。discharge側で上界を与えていた三段連鎖（`downcross.horizon_le_time` → `eligible` → `time_eq`）のうち`eligible`はreplay固有フィールドであり、combined証明書にもlanding分岐にも存在しないためである。
+
+前置界を仮定すればcoverageエンジンはそのまま発火し、landing床は例外なし`32 ≤ crossingTime`へ上がる。この条件付き結果を統合outcomeへ持ち上げ、`PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap`として「semantic枝 ∨ `32 ≤ clock`付きcore ∨ landing gap」の三択を得た。landing gap枝は`crossingTime < predecessorFirstTime`かつ`target < a predecessorFirstTime`という具体的な形をしており、次エポックの攻撃点である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -795,6 +801,11 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | semantic child promotion | `PhaseSemanticInvariant.toOrbitReadyRefinedInvariant` | `SemanticOracleRecursion.lean` |
 | refined descent trichotomy | `orbitReadyRefined_occurs_or_crossing` | `SemanticOracleRecursion.lean` |
 | residual three-way split | `occurs_or_unreadyCrossing_of_readyCrossingStep` | `SemanticOracleRecursion.lean` |
+| landing revisit transport | `PermanentTailCombinedCertificate.minimum_revisit_absurd` | `LandingRevisitTransport.lean` |
+| core-level record exclusion | `TailFixedPointCore.crossingTime_not_record_of_prefixAbove` | `LandingRevisitTransport.lean` |
+| landing window below target | `FirstWeakUpcrossingStep.window_below` | `LandingRevisitTransport.lean` |
+| landing floor under prefix bound | `PermanentTailCombinedCertificate.thirtytwo_le_crossingTime_of_prefixBound` | `LandingRevisitTransport.lean` |
+| refined unified outcome | `PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap` | `LandingRevisitTransport.lean` |
 
 ## 8. 結論
 

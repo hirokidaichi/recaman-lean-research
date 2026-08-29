@@ -1513,3 +1513,25 @@ RESEARCH_REPORT）。(2) 「例外リストを空に」はclock 32までの掃�
 外部報告であり本リポジトリでの検算は3×10⁶項までである旨を明記した。
 
 未対応として残したのは、ready crossing ⊊ crossing の型ギャップ（ROADMAP項目3として登録）である。
+
+### 第七十三ラウンド：landing固定点への三種道具移植
+
+これまで武器が一つも届いていなかったlanding固定点側へ、discharge側で有効だった三種道具を移植し、成否を
+確定した。**再訪排除は無条件で移植できた**。`PermanentTailCombinedCertificate.minimum_revisit_absurd`は
+crossing clockを一切参照せず、combined証明書だけで既出値の遅い再訪を禁じる。record排除は共有核レベルの
+汎用形として無条件に成立し、landing分岐では`predecessorFirstTime < landingTime`のとき発火する。
+
+**欠けているのはdowncross前置界ただ一つ**である。`window_below`により`[landingTime, crossingTime]`は
+全区間target未満なので、target超のpredecessor初出は窓の外の二択（landing前かcrossing後）にしか居られない。
+landing分岐はこの二択を決める情報を持たない。discharge側で上界を与えていた三段連鎖のうち`eligible`が
+replay固有フィールドであり、combined証明書にもlanding分岐にも存在しないためである。代替の上界候補は
+親の格納crossingしかなく、それも三通りにピン留めした（`exists_parentCrossing`・
+`aboveTarget_before_crossing_or_pinnedParent`）。
+
+前置界を仮定すればcoverageエンジンがそのまま発火し、landing床は例外なし`32 ≤ crossingTime`へ上がる。
+統合outcomeを`semantic_or_thirtytwo_or_landingGap`として「semantic枝 ∨ 32≤clock付きcore ∨ landing gap」の
+三択へ精密化した。landing gap枝は`crossingTime < predecessorFirstTime`かつ`target < a predecessorFirstTime`
+という具体形であり、次の攻撃点である。
+
+なおlanding側のcoverage cutoffは実測で131が上限であり（`a 32 = 46`の後継47の初出が時刻222）、
+32を超えるには先にtarget床を48以上へ上げてcutoff 222を解禁する必要がある。順序はreplay側と同じ階段になる。
