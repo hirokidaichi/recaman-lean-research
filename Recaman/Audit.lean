@@ -428,3 +428,6 @@ import Recaman
 #print axioms Recaman.TerminalSelectedCrossingInstallCertificate.exists_nextDischarge
 #print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.chronology
 #print axioms Recaman.TerminalCrossingAnchorGrowthCertificate.installedProgress
+#print axioms Recaman.terminalChronologyHistoryProgress_wellFounded
+#print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.chronologyProgress
+#print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.iterationProgress

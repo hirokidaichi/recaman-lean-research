@@ -484,6 +484,11 @@ downcross、historical minimumを保存した`PermanentTailCombinedCertificate`�
 crossing時刻を補うため、selected timeを明示的にold crossingへ固定した次のdischarge certificateを直接構成する。これにより
 anchor-gap edgeはsemantic installed parent間で反復可能になる。残る条件は次downcross endpoint≤selected timeというeligibilityである。
 
+`PermanentAboveCorridorChronologyRank`はeligibilityの否定をstrict history progressへ変換する。mismatchならselected crossing
+timeはnext downcross endpointより厳密に前である。endpointはbelow-target値のfirst occurrenceなので、この区間で
+`missingBelowCount`はstrict下降し、`seenBelowCount`はstrict増加する。missing budgetをmeasureとするchronology relationは
+well-foundedである。従ってinstalled next dischargeはrestart解析にeligibleか、すでにhistory rankを下降させている。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -598,6 +603,7 @@ anchor-gap edgeはsemantic installed parent間で反復可能になる。残る�
 | stationary restart rank | `BelowTargetHistoricalPredecessorCertificate.restartRankOutcome` | `PermanentAboveCorridorRestartRank.lean` |
 | crossing anchor有限rank | `BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome` | `PermanentAboveCorridorAnchorCandidates.lean` |
 | selected crossing install | `TerminalSelectedCrossingInstallCertificate.exists_nextDischarge` | `PermanentAboveCorridorSelectedInstall.lean` |
+| installed chronology下降 | `TerminalSelectedCrossingDischargeCertificate.iterationProgress` | `PermanentAboveCorridorChronologyRank.lean` |
 
 ## 8. 結論
 
@@ -666,6 +672,9 @@ strict anchor growthも長さtargetの候補列とremaining-gap well-founded ran
 selected crossingのsemantic installと同一old-crossing時刻を持つ次dischargeの構成も完了した。anchor-gap progressは反復可能な
 parent間relationになった。残る反復境界は、次のhistorical downcross endpointがselected crossingより後になるchronology mismatch
 であり、これを別のhistory progressとして数えるか、selection ruleでeligible crossingを選ぶ必要がある。
+chronology mismatchはfresh downcross endpointによるstrict missing-budget下降であることが証明され、独立well-founded rankへ
+接続された。従ってinstalled iterationにchronology残余はなく、eligibleならrestart/anchor有限rank解析へ、不適格ならhistory
+budget下降へ進む。次の統合課題はこれら複数rankの優先順序を一つの反復可能なmaster relationへまとめることである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
