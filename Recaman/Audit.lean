@@ -416,3 +416,7 @@ import Recaman
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.combinedRankOutcome
 #print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.cursorCycleProgress
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome
+#print axioms Recaman.tailRestartCycleProgress_wellFounded
+#print axioms Recaman.tailRestartCycle_exit_of_cursorProgress
+#print axioms Recaman.tailRestartCycle_exit_of_restartSeenDrop
+#print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.restartRankOutcome

@@ -467,6 +467,12 @@ timeが旧timeより早ければ既存`TailCrossingCursorProgress`が成立し�
 eligible witnessならcanonical returnが旧crossing以下で、新crossingはさらにreturn以下なので、chronology mismatchは
 同一anchor・同一crossing timeのliteral stationaryに縮約される。
 
+`PermanentAboveCorridorRestartRank`はstationary crossingをblocker backtrackと一つのmacro edgeとして数える。通常history
+clockをphaseより外へ移すと実downcross時のhistory前進を扱えないため、cycle中は固定されstationary再開時だけ減る専用restart
+cursorを導入した。anchor、crossing time、restart seen-budget、phase、local seen-budget、minimumの六成分lexicographic rankは
+well-foundedである。stationary枝ではblocker first occurrenceの直前へ移るstrict seen-budget dropがphase上昇より先に比較される。
+これによりeligible kernelはphase progress、restart-cycle progress、strict anchor growthの三形となり、literal stationaryは消える。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -578,6 +584,7 @@ eligible witnessならcanonical returnが旧crossing以下で、新crossingは�
 | blocker predecessor semantic分類 | `TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome` | `PermanentAboveCorridorPredecessorAdapter.lean` |
 | below predecessor crossing接続 | `TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome` | `PermanentAboveCorridorPredecessorCrossing.lean` |
 | predecessor crossing cursor分類 | `BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome` | `PermanentAboveCorridorPredecessorCursor.lean` |
+| stationary restart rank | `BelowTargetHistoricalPredecessorCertificate.restartRankOutcome` | `PermanentAboveCorridorRestartRank.lean` |
 
 ## 8. 結論
 
@@ -637,6 +644,9 @@ refined crossingへ入り、残る非進捗はcrossing anchor非下降だけで�
 cursor rankを併用するとequal-anchor earlier-timeはstrict cycle progressになり、eligibleな旧crossingのもとでは残余がstrict
 anchor growthまたはliteral stationaryへ縮んだ。次の本質は、stationary再選択をblocker first-occurrence backtrackと同時に
 数える複合edge、またはstrict anchor growthを有限化する外側measureである。
+専用restart cursorを持つ六成分rankによりstationary再選択はstrict edgeになった。従ってeligible historical blocker側で残る
+非進捗はstrict anchor growthだけである。次はこのgrowth値をterminal predecessor/target/return clockで上界づけて有限候補化するか、
+次cycleで再利用できないfreshness量へ接続することが中心課題となる。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
