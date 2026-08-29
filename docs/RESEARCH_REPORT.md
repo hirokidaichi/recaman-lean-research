@@ -449,6 +449,12 @@ occurrence、fresh subtraction equationを保持する。forced addition枝で�
 forced reasonも残る。一方candidate landing自体はtarget未満なのでordinary normal/debt invariantのtarget lower boundに
 矛盾する。このため数値backtrackをsemantic stepにするにはbelow-target historical/crossing専用adapterが必要である。
 
+`PermanentAboveCorridorPredecessorAdapter`はそのadapterの最小形を構成する。legal/forcedの両枝に共通なpredecessorと
+earlier first occurrenceを取り出し、target以上のpredecessorはclock readinessとpotentialの符号で分類する。readyかつ
+negativeなら既存negative normal invariantを構成でき、それ以外は不足したclockまたは非負符号を明示的に返す。target未満の
+predecessorは、first-occurrence provenanceに加え、その時刻からdischargeのcanonical returnまでのweak crossingを保持する。
+`firstTime=1`のときpredecessor時刻は0で座標が定義できないため、このinitial境界も正時刻の座標と分けて型に保持する。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -557,6 +563,7 @@ forced reasonも残る。一方candidate landing自体はtarget未満なのでor
 | non-clock rank分類 | `PermanentTailTerminalNonClockResidual.rankOutcome` | `PermanentAboveCorridorOuterHistory.lean` |
 | blocker生成遷移 | `TerminalHistoricalBlockerCertificate.generation` | `PermanentAboveCorridorBlockerGeneration.lean` |
 | normal/debt直結no-go | `TerminalHistoricalBlockerCertificate.semanticBoundary` | `PermanentAboveCorridorBlockerGeneration.lean` |
+| blocker predecessor semantic分類 | `TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome` | `PermanentAboveCorridorPredecessorAdapter.lean` |
 
 ## 8. 結論
 
@@ -607,6 +614,9 @@ historical blocker二枝には初出直前へのstrict tail-cycle rank edgeが�
 rank不等式ではなく、そのpredecessorを有効な次nodeとして選ぶsemantic provenanceに限定された。
 生成遷移監査により、landingをordinary normal/debtへ直結する案も排除された。次に必要なのはlegal枝のlarger predecessor
 またはforced枝のtarget-bounded predecessorを受け取るbelow-target historical/crossing adapterである。
+このadapterの最小形は完了し、above-target predecessorはnegative normalまたはclock/sign残余へ、below-target predecessorは
+first provenanceとfuture return付きhistorical certificateへ分類された。次の義務はbelow-target証明書からfuture returnを
+実際のrefined crossing childへ変換するか、initial predecessorを別のfinite base caseで閉じることである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

@@ -406,3 +406,6 @@ import Recaman
 #print axioms Recaman.TerminalHistoricalBlockerCertificate.not_debtInvariant
 #print axioms Recaman.TerminalHistoricalBlockerCertificate.semanticBoundary
 #print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.semanticBoundary
+#print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.exists_predecessorCertificate
+#print axioms Recaman.TerminalBlockerPredecessorCertificate.toBelowTargetHistorical
+#print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome
