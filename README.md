@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース196モジュール（約42,000行）
+- Leanソース197モジュール（約42,000行）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -186,7 +186,8 @@ Lean 4形式化プロジェクトです。
 - crossing readiness橋が無仮定で完成し、残余が`0 < target ∧ TargetTailReturnHypothesis target ⟹ 出現`の一本になった。refined再帰・horizon clock・crossing-recovery構成子はすべて解消済み（ただし∀レベルでも`(∀ target, TargetTailReturnHypothesis target) ↔ 全射性`が成立するので、難しさは減っておらず、減ったのは足場の量である）
 - **敵対的再検査の二巡目では空虚化ゼロ**。`TailFixedPointCore`を伴う右枝はtarget 50・clock 32で実際に居住し（`a 32 = 46`／`a 33 = 79`）、床`32 ≤ clock`は本物であることを確認済み
 - **pinned配置の後方2ステップを完全決定し、4通りのうち最大勢力（189/310）を排除済み**。「時刻`f`への遷移が強制加算かつ`f-1`への遷移が合法減算」なら`a (f-2) = target`が代数的に強制され、targetの欠損と直接矛盾する。数値切り分けと代数が完全一致した
-- 残る第2行（88件、`a (f-2) = target + 2`）は最小時刻を`m ∈ {target+1, target+2}`の2点へ釘付け済み。`target + 2 < historicalMinimumTime`が取れれば落ちる（現状`target < tailStart ≤ m`で差は2）
+- **第2行（88件）も排除済み。pinned後方形は「両方減算」か「両方加算」の二択へ縮んだ**（混合形は両方死んだ）。数値上の残余は当初310件の約11%
+- 鍵は鳩の巣の精密化`coveredBelowCount_two_above`：値が`k`以上の時刻は1レベルも埋めないので、pre-tailに遊んでいる時刻が2つあれば必要時刻数が2増える。中段行は自分自身の代数からその2つを供給して自滅する。**計数路線が初めて上界側で仕事をした**道具である
 - pinned配置は`f`だけで完全に決まる。**四つの列挙可能条件**（初出・二連合法減算・clock境界・target床）を満たす候補は`f < 3×10⁶`で2438個あり累積が増え続ける。各候補は`target`の出現witness一つで確実に排除できるが、**witness時刻に一様上界がない**（実測で`first[target] - f`が3×10⁵超）ためkernel列挙では落ちない。`target_missing`を含む配置そのものの居住性は全射性予想と同じ深さで開いている
 - tail最小値への遷移を無条件の二分法へ整理し、無条件`FirstAt a (a m) m`まで残り1点（`m + 1 < a m`）へ縮約。pinned配置内では`target < tailStart`が効いて穴が閉じ、最小値前後4ステップの軌道が完全決定する
 

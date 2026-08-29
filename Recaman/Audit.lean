@@ -786,3 +786,10 @@ import Recaman
 #print axioms Recaman.RefinedSemanticEdge.missingPermanentAboveTail
 #print axioms Recaman.RefinedSemanticEdge.not_targetTailReturn
 #print axioms Recaman.RefinedSemanticEdge.stuckCrossing_and_obstructions
+#print axioms Recaman.coveredBelowCount_le_shift
+#print axioms Recaman.coveredBelowCount_two_above
+#print axioms Recaman.target_add_three_le_tailStart
+#print axioms Recaman.PinnedTailMinimumConfiguration.three_le_clock
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.target_add_two_lt_tailStart_of_two_above
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.middle_row_absurd_of_pinned
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.pinned_backward_dichotomy
