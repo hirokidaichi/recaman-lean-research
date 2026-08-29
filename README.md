@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース126モジュール
+- Leanソース127モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -100,6 +100,7 @@ Lean 4形式化プロジェクトです。
 - permanent/historical tail startを有限化し、tail minimum時刻を相対first occurrenceへcanonical化済み
 - canonical visited stateをterminal全分岐へthreadし、finite枝をstrict state progress／exact revisitへ直接分解済み
 - exact replayがvisited list単独では排除不能なno-goを証明し、残務を単一resolver interfaceへ集約済み
+- finite insufficient windowを`endpoint=1, return=2, target∈{4,5}`へ縮約し、実軌道出現により完全排除済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -155,6 +156,10 @@ history progress、immediate semantic closure、historical complete step、fresh
 constructorをLean上で直接構成できます。従って残る数学はlist操作ではなく、exact replayからtarget出現、strict history下降、semantic
 phase下降、installed master下降のいずれかを導く`TerminalExactCanonicalReplayResolver`です。このresolverを仮定すればraw residualのない
 terminal total outcomeが得られることも証明済みです。
+さらにresolverの算術本体を解くと、finite insufficient windowは実は存在できません。最後のforced stepとpredecessor≤clockから
+直前値≤1、fresh first-occurrenceとall-forced traceから`terminalEndpoint=1`かつ`returnTime=2`が強制されます。strict crossingは
+`3<target<6`なのでtargetは4または5ですが、Lean kernel計算で`a 131=4`、`a 129=5`です。missing-targetと矛盾するため、finite branchと
+exact replay branchはともにterminal classificationから完全に除去されました。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

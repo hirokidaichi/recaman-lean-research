@@ -552,6 +552,11 @@ well-founded inductionへ安全に接続できる。
 `TerminalExactCanonicalReplayResolver`へ切り出した。resolverの結論はtarget occurrence、strict history edge、semantic phase edge、
 installed master edgeの四形である。resolverを仮定するとterminal total outcomeからraw exact-revisit constructorを除去できる。
 
+`PermanentAboveCorridorFiniteClosure`はresolverのfinite算術を完了する。insufficient branchでは最終forced additionの直前値が1以下である。
+all-forced traceとendpointのfirst-occurrence性によりendpoint time/valueは1、長いsuffixはclock 2の加算だけで上界に反するためreturn timeは2。
+従ってmissing targetは`a 2=3`と`a 3=6`の間の4または5だが、kernel計算で`a 131=4`, `a 129=5`を確認できる。finite certificateは
+target-missingに矛盾し、conditional resolverは無条件定理となった。terminal total classificationからfinite numeric branch自体が消える。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -686,6 +691,9 @@ installed master edgeの四形である。resolverを仮定するとterminal tot
 | terminal canonical state step | `PermanentTailDischargeReturnCertificate.terminalCanonicalStateStepOutcome` | `PermanentAboveCorridorCanonicalStateStep.lean` |
 | exact replay no-go | `TerminalFiniteReturnWindowCertificate.exactReplayTerminalOutcome_after_removeAll` | `PermanentAboveCorridorReplayBoundary.lean` |
 | replay conditional closure | `PermanentTailDischargeReturnCertificate.terminalReplayResolvedOutcome` | `PermanentAboveCorridorReplayBoundary.lean` |
+| finite endpoint/return rigidity | `TerminalFiniteReturnWindowCertificate.endpoint_return_eq` | `PermanentAboveCorridorFiniteClosure.lean` |
+| finite branch contradiction | `TerminalFiniteReturnWindowCertificate.false` | `PermanentAboveCorridorFiniteClosure.lean` |
+| finite-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome` | `PermanentAboveCorridorFiniteClosure.lean` |
 
 ## 8. 結論
 
@@ -780,7 +788,8 @@ history progressへ戻す再帰的selection stateの統合である。
 このselection stateのterminal total stepへの統合も完了した。残る唯一のfinite constructorはexact canonical revisitであり、次はこの
 同一key再生をsemantic determinismから矛盾へ送れるか、またはvisited stateをinstalled-cycle再帰全体の外側rankへ組み込む必要がある。
 list-only矛盾は実際に不可能であることがno-go theoremで確認された。従って次の研究対象はexact canonical segmentそのものから既存四種の
-progressのどれかを抽出するresolverであり、データ構造の追加ではない。
+progressのどれかを抽出するresolverであり、データ構造の追加ではない。このresolverはfinite-window剛性により無条件に解決され、
+finite branchは到達不能と証明された。残るterminal outcomeはstrict history、immediate semantic、historical completeの三形だけである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
