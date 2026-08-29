@@ -775,6 +775,7 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | sixtyone elimination | `TerminalExactDischargeReplayCertificate.target_ne_sixtyone` | `PermanentAboveCorridorSixtyoneElimination.lean` |
 | unconditional third floor | `TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime` | `PermanentAboveCorridorSixtyoneElimination.lean` |
 | predecessor shape restriction | `TerminalExactDischargeReplayCertificate.minimum_predecessor_shape` | `PermanentAboveCorridorMinimumShape.lean` |
+| witnessed follow-up dichotomy | `TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp` | `PermanentAboveCorridorMinimumFollowUp.lean` |
 
 ## 8. 結論
 

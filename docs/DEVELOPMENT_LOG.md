@@ -1368,3 +1368,9 @@ minimum時刻未満）の下で、minimum predecessor初出直後の「減算→
 再生産し、再訪力学と常に矛盾する（`no_subAdd_minimum_predecessor`）。従って生存し得るreplayの
 predecessor直後は「即時加算」または「二連減算」に制限される。次エポックはこの純局所二分法をclockごとに
 攻撃できる。
+
+### 第六十六ラウンド：predecessor follow-up witness
+
+二分法にwitnessを付けた。predecessor値はtargetを超え自分の後続clockも超えるため、即時加算がblockedされる
+理由は「減算欠損`a f - (f+1)`の既出」しかない。二連減算枝では合法減算のfreshnessから`f+1`にfreshな初出が
+生まれる。生存replayは必ず、具体的な既出witnessか新しいfresh landingのどちらかを局所データとして携える。
