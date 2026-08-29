@@ -1646,3 +1646,30 @@ replayへ適用すると**無条件の`target < tailStart`**が出る。既存�
 `a m - (m+1)`のどちらも`a m - 2`に届かない。`tailStart < m`なら`m-1 → m`の遷移は必ず減算になり
 `FirstAt a (a m) m`が従う。`target + k < a m`の一般化は`k = 2`で止まると判定した。blocked枝が`k = 2`を
 出せたのは強制加算の次の減算候補がちょうど`a m - 2`になる一回限りの偶然だからである。
+
+### 第七十八ラウンド：精密版の伝播開始と忘却形の捏造可能性
+
+精密版outcomeを頂点まで運ぶ作業に着手したところ、**忘却形もまた捏造可能である**ことが判明した。
+`RefinedDomainEdge target`はcanonical start自身がrefined nodeであり`OrbitReadyNormalInvariant.refinedStep`が
+局所全域なので、解析を一切使わずに構成できる（`occurs_or_refinedDomainEdge_of_pos`）。忘却形を伝播ペイロードに
+すると除去したはずの欠陥が復活するため、生成証明書を保持する`RefinedTerminalSemanticStep`／
+`RefinedSemanticEdge`へ設計し直し、忘却は最終接続点だけに限定した。前ラウンドで明示した留保が実際に効いた。
+
+チェーンの構造も訂正された。`terminalProgressOutcome`と`terminalSuccessorOutcome`は`Audit.lean`以外から
+参照されない形状監査用の袋小路である。頂点への実チェーンは8段で、先頭2段（SuccessorRank・IterationClosure）
+の精密化を完了した。SuccessorRank段は純粋な再包装ではなく`terminalFiniteClosedOutcome`から独立に再分類して
+いるため、`anchor_growth`側の3分岐は逐語コピーになった。`MountedIteration`の新規生成点はdischarge証明書では
+なくcombined証明書に紐づくので、`RefinedSemanticEdge`に第2コンストラクタとして先行して用意した。
+
+### 第七十九ラウンド：landing前置界の所在特定と新カーネル道具
+
+landing側の前置界問題を一段深く掘り、**必要な最小情報が`predecessorFirstTime < landingTime`ではなく
+`source.downTime < parentTime`である**ことを突き止めた。replay側のtool 3が使っているのはcombined証明書の
+最小値前駆ではなくhistorical tailの前駆であり、そちらは`downcross.horizon_le_time`で上から抑えられている
+ためである。一次消失点は`PermanentAboveCorridorInstalledStep`の`history_progress`で、3生成箇所のうち2つは
+自明に、残る1つも`oldCrossing_cursor`経由でabove-target cursorを供給できる。2フィールドを6モジュール
+素通しすれば`RefinedLandingCycle`が組め、landing床は無条件に例外なし`32 ≤ crossingTime`となる。
+
+副産物として新しい無条件カーネル道具（prefix最大値バンド消去）が得られた。共有核レベルで
+`32 ≤ clock ∨ (clock = 6 ∧ target = 19) ∨ (clock = 18 ∧ target = 61) ∨ (∃ t < clock, target ≤ a t)`へ
+分解でき、深部残留値19と61が時刻込みでピン留めされる。replay枝にも適用できる。

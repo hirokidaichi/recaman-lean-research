@@ -161,6 +161,9 @@ import Recaman.LandingRevisitTransport
 import Recaman.ReplayDoubleSubtractDescent
 import Recaman.RefinedSemanticOutcome
 import Recaman.PreTailBudgetSeparation
+import Recaman.RefinedSuccessorRank
+import Recaman.RefinedIterationClosure
+import Recaman.RefinedLandingOutcome
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
 import Recaman.OrbitCombValues

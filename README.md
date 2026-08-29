@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース170モジュール
+- Leanソース173モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -157,6 +157,10 @@ Lean 4形式化プロジェクトです。
 - discharge証明書の四つのsemantic生成枝すべてを精密版で構成済み（immediate枝はcurrent-state経路からextended-history表現へ経路変更して解決）
 - **pre-tail領域への初の一般的下界 `target < tailStart` を無条件に証明**（`coveredBelowCount`による鳩の巣。kernel計算ゼロ・条件なし・全replayで成立。既存のtailStart下界はすべて条件付きkernel計算だった）
 - `target + 2 < tail最小値`が破れる可能性を単一の完全に釘付けされた配置へ縮約済み
+- **忘却形`RefinedDomainEdge`も捏造可能であることを形式的に確定**（`LeastMissingTarget.refinedDomainEdge`が無条件に証明できる）。伝播ペイロードは生成証明書を保持する形へ設計変更済み
+- 頂点へ至る実チェーンが8段であることを確定（`terminalProgressOutcome`と`terminalSuccessorOutcome`は`Audit.lean`からしか参照されない形状監査用の袋小路）。先頭2段の精密化を完了
+- landing側に必要な最小情報が`predecessorFirstTime < landingTime`ではなく`downTime < parentTime`であると特定し、一次消失点を`InstalledStep.lean`の`history_progress`に確定。3生成箇所すべてで供給可能と確認済み
+- 新しい無条件カーネル道具（prefix最大値バンド消去）により、共有核レベルで`32 ≤ clock ∨ (clock=6 ∧ target=19) ∨ (clock=18 ∧ target=61) ∨ prefix above`へ分解済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

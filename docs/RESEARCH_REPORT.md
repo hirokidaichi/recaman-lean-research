@@ -624,6 +624,14 @@ immediate枝だけは元の経路では精密化できなかった。元の`cano
 
 副産物として`target + 2 < a m`の残余が単一配置へ釘付けされた。tail最小値の局所witnessは`a m - 1`（1つ上）と`a m - (m+1)`（`m - 1 ≥ 1`だけ下）のどちらも`a m - 2`に届かないことを証明し（`tailMinimum_local_witnesses_miss_gap`）、`tailStart < m`なら`m-1 → m`の遷移が必ず減算になること、したがって`FirstAt a (a m) m`が従うことも示した。破れ得る配置は`a m = target + 2`を含む完全に固定された一形のみである。
 
+精密版の伝播に着手したところ、**忘却形もまた捏造可能である**ことが判明した。`RefinedDomainEdge target`（生成証明書を捨て「refined childとrefined親とprogressが存在する」だけを述べる形）は、canonical start自身がrefined nodeであり`OrbitReadyNormalInvariant.refinedStep`が局所全域であるため、解析を一切使わずに構成できる（`occurs_or_refinedDomainEdge_of_pos`、`LeastMissingTarget.refinedDomainEdge`）。忘却形を伝播ペイロードにすると除去したはずの欠陥がそのまま復活する。そこで伝播ペイロードは生成証明書を保持する`RefinedTerminalSemanticStep`／`RefinedSemanticEdge`へ設計し直し、忘却は最終接続点だけで行うことにした。前ラウンドで明示した留保が実際に効いた形である。
+
+同時にチェーンの構造が訂正された。`terminalProgressOutcome`と`terminalSuccessorOutcome`は`Audit.lean`以外のどこからも参照されず、`terminalFiniteClosedOutcome`から独立に再分類する形状監査用の袋小路である。頂点へ至る実チェーンは8段（SuccessorRank → IterationClosure → ReplayInterface → HistoryLanding → LandingHorizon → LandingMount → MountedIteration → FixedPointCore）であり、先頭2段の精密化を完了した。
+
+`RefinedLandingOutcome`はlanding側の前置界問題を一段深く掘り、**必要な最小情報が`predecessorFirstTime < landingTime`ではなく`source.downTime < parentTime`である**ことを突き止めた。replay側のtool 3が実際に使っているのはcombined証明書の最小値前駆ではなくhistorical tailの前駆であり、そちらは`downcross.horizon_le_time`で上から抑えられているためである。一次消失点は`PermanentAboveCorridorInstalledStep`の`history_progress`で、3生成箇所のうち2つは自明に、残る1つも`oldCrossing_cursor`経由でabove-target cursorを供給できる。この2フィールドを6モジュール素通しすれば`RefinedLandingCycle`が組め、landing床は無条件に例外なし`32 ≤ crossingTime`となる。
+
+副産物として新しい無条件カーネル道具（prefix最大値バンド消去）が得られた。共有核レベルで`32 ≤ clock ∨ (clock = 6 ∧ target = 19) ∨ (clock = 18 ∧ target = 61) ∨ (∃ t < clock, target ≤ a t)`へ分解でき、既知の深部残留値19と61が時刻込みでピン留めされる。この定理はreplay枝にも適用できる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -865,6 +873,11 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | pre-tail pigeonhole | `coveredBelowCount_le_time` | `PreTailBudgetSeparation.lean` |
 | unconditional pre-tail bound | `TerminalExactDischargeReplayCertificate.target_lt_tailStart` | `PreTailBudgetSeparation.lean` |
 | pinned residual configuration | `TerminalExactDischargeReplayCertificate.tailMinimum_gap_or_pinned` | `PreTailBudgetSeparation.lean` |
+| forgetful edge is fabricable | `LeastMissingTarget.refinedDomainEdge` | `RefinedSuccessorRank.lean` |
+| refined iteration outcome | `PermanentTailDischargeReturnCertificate.refinedTerminalIterationOutcome` | `RefinedSuccessorRank.lean` |
+| refined replay-reduced outcome | `PermanentTailCombinedCertificate.refinedTerminalReplayReducedOutcome` | `RefinedIterationClosure.lean` |
+| prefix band elimination | `TailFixedPointCore.thirtytwo_or_straggler_or_prefixAbove` | `RefinedLandingOutcome.lean` |
+| landing floor under refined cycle | `RefinedLandingCycle.thirtytwo_le_crossingTime` | `RefinedLandingOutcome.lean` |
 
 ## 8. 結論
 
