@@ -570,6 +570,11 @@ blocker first timeに縛られ連続する二解析間で比較できないが�
 installationで正確に輸送される。terminal dischargeはtarget出現、既存history/semantic edge、この三成分lexの厳密下降を伴う
 successor discharge、またはanchor・cursorとも一致しrankが不動になるexact replay証明書のいずれかを返す。
 
+`PermanentAboveCorridorIterationClosure`はこの三成分rankの整礎性を使い、iteration constructor自体を再帰で消去する。
+任意のdischarge、および任意のcombined permanent-tail certificateは、有限回のinstalled successorの後にtarget出現、
+strict history edge、semantic phase edge、またはdescendant discharge上のexact replay固定点のいずれかへ必ず到達する。
+未解決の数学は無限反復ではなく、単一のtyped replay固定点に集約された。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -710,6 +715,7 @@ successor discharge、またはanchor・cursorとも一致しrankが不動にな
 | terminal four-progress outcome | `PermanentTailDischargeReturnCertificate.terminalProgressOutcome` | `PermanentAboveCorridorTerminalProgress.lean` |
 | successor-carrying terminal outcome | `PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome` | `PermanentAboveCorridorTerminalSuccessor.lean` |
 | discharge iteration rank outcome | `PermanentTailDischargeReturnCertificate.terminalIterationOutcome` | `PermanentAboveCorridorSuccessorRank.lean` |
+| iteration-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome` | `PermanentAboveCorridorIterationClosure.lean` |
 
 ## 8. 結論
 
@@ -812,6 +818,8 @@ installed master childからnext dischargeへのsemantic provenanceも同梱さ�
 master successor反復を一つのwell-founded recursion theoremへまとめることである。
 successor反復自体は三成分discharge rankで整列された。連続する二解析のmaster nodeは内側cursorが比較不能だが、輸送可能な
 horizon・anchor・old crossing成分だけで反復は厳密に下降し、残る非進捗は同anchor同cursorのexact replay固定点に限られる。
+この反復は整礎帰納で完全に消去され、combined certificateからのterminal解析全体はtarget・strict history・semantic phase・
+exact replay固定点の四形へ無条件に閉じた。残る研究対象は反復列ではなく、この単一固定点の構造である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

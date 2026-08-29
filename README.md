@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース130モジュール
+- Leanソース131モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -104,6 +104,7 @@ Lean 4形式化プロジェクトです。
 - terminal全枝をtarget occurrence／strict history／semantic phase／installed masterの四progress形へ完全統合済み
 - installed master枝にselected crossing installと次terminal discharge存在を同梱し、反復provenanceを接続済み
 - successor反復を三成分discharge rankの厳密下降またはexact replay固定点へ完全分類済み
+- 整礎帰納でiteration枝を消去し、terminal解析をtarget／strict edge／exact replay固定点へ無条件閉包済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -173,6 +174,9 @@ early/ready/immediate/selected-crossingで比較対象が違うため、semantic
 installationは共有horizon・installed anchor・old crossing cursorの三成分を正確に輸送します。この三成分lexを
 discharge-level rankとすると、installed successorはanchor growthまたはearlier equal-anchor crossingで厳密に下降し、
 残る非進捗はanchorとcursorがともに一致するexact replayだけで、そこではrankが等式として不動です。
+このrankの整礎性により反復constructor自体を再帰で消去しました。任意のdischargeとcombined certificateは、
+有限回のinstalled successorの後、target出現・strict history・semantic phase・descendant上のexact replay固定点の
+いずれかへ必ず到達します。未解決の数学は無限反復ではなく単一のtyped固定点構造に集約されました。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

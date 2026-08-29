@@ -498,3 +498,5 @@ import Recaman
 #print axioms Recaman.terminalDischargeIterationProgress_of_anchorGrowth
 #print axioms Recaman.terminalDischargeIterationProgress_of_earlierCrossing
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalIterationOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome
+#print axioms Recaman.PermanentTailCombinedCertificate.terminalReplayReducedOutcome

@@ -124,5 +124,6 @@ import Recaman.PermanentAboveCorridorFiniteClosure
 import Recaman.PermanentAboveCorridorTerminalProgress
 import Recaman.PermanentAboveCorridorTerminalSuccessor
 import Recaman.PermanentAboveCorridorSuccessorRank
+import Recaman.PermanentAboveCorridorIterationClosure
 import Recaman.Examples
 import Recaman.Oracle
