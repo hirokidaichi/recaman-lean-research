@@ -134,5 +134,6 @@ import Recaman.PermanentAboveCorridorLandingHorizon
 import Recaman.PermanentAboveCorridorLandingMount
 import Recaman.PermanentAboveCorridorLandingInstall
 import Recaman.PermanentAboveCorridorMountedIteration
+import Recaman.PermanentAboveCorridorFixedPointCore
 import Recaman.Examples
 import Recaman.Oracle

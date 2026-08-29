@@ -742,6 +742,7 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | landing combined install | `PermanentTailCombinedCertificate.installReadyCrossing` | `PermanentAboveCorridorLandingInstall.lean` |
 | re-entrant mounted analysis | `PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing` | `PermanentAboveCorridorLandingInstall.lean` |
 | mounted iteration closure | `PermanentTailCombinedCertificate.mountedIterationOutcome` | `PermanentAboveCorridorMountedIteration.lean` |
+| unified fixed-point outcome | `PermanentTailCombinedCertificate.unifiedOutcome` | `PermanentAboveCorridorFixedPointCore.lean` |
 
 ## 8. 結論
 
@@ -872,6 +873,9 @@ endpointはstrict crossingになり、crossing-recovery certificateの全フィ�
 この再入反復も整礎に閉じた。anchor dropのlandingはsemantic childとして即時返却、anchor growthはanchor gapの
 強帰納で消去、equal anchorはmounted node = parentの文字通りの固定点になる。permanent-tail解析全体の終端は
 semantic phase child、exact discharge replay、node不動landing固定点の三形である。
+二つの固定点は共通の数値核`TailFixedPointCore`を持つ：値がparent anchorに一致し、missing targetをまたぐ
+forced additionで、mounted nodeがparentを再生産するcanonical crossingである。最終統合定理により、
+仮想反例の解析はsemantic childまたはこの単一core構造（provenance付き）で必ず終端する。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
