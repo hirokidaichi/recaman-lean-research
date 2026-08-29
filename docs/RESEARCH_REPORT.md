@@ -588,6 +588,12 @@ crossing clock 3以上・target 5以上でしか存在できない。
 
 `ReplayWitnessDescent`は、床上げの有限反復を卒業する候補経路を一つ検証し、否定的に決着させた。witness付き二分法のblocked枝（即時加算が履歴で塞がれる側）は、減算欠損`a f - (f+1)`の既出witnessを持つ。このwitnessは値が真に小さく初出も真に早いので、`(値, 初出)`のearlier-smaller辺がclock列挙を一切使わずに取れる。しかしこの辺は整礎性を発火させない。blocked配置の三条件のうちwitnessへ輸送されるのは初出性だけであり、`clock < 値`とblocked性は輸送されないためである。連鎖の停止点（値がclock以下、または合法減算が可能）は実軌道に無数に存在し、tail側から輸送される情報（witnessがtail最小値未満かつtail開始前に出現する）はそれらと矛盾しない。したがってこの経路単独ではclock非依存の一般排除に届かない。残余義務は`BlockedFirstOccurrence.regenerate`の二条件として明示され、`blockedFirstOccurrence_impossible_of_regeneration`はそれを仮定すれば全blocked配置が一括で死ぬことを示す。副産物として、blocked枝では`f+2`の減算候補が`a m - 2`に確定することから、証明書自身が持つ`target + 1 < a m`を真に強めた`target + 2 < a m`がclock非依存に従う。
 
+`SemanticOracleRecursion`は、頂点定理のもう一方の枝を初めて正面から検査し、**現在の型ではsemantic枝が無情報である**ことを確定した。`PhaseSearchProgress`は四成分lex順に過ぎず、`stepParent`は存在量化されているだけなので、任意のchildに対しanchorを一つ上げた親を常に捏造できる（`exists_phaseSearchProgress_parent`）。加えて正のtargetは必ずcanonical semantic startを持つ。したがって頂点定理の結論そのものが`0 < target`だけから導出できる（`semantic_or_flooredCore_of_pos`）。これは固定点解析の欠陥ではない。右disjunctは実際に強い情報を持っており、失われているのは左disjunctのpayloadである。「semantic枝の消費者が存在しない」のではなく、**消費すべき情報がoutcome型で捨てられている**というのが正確な診断である。
+
+この枝の消費者が持つべき強さの下界も確定した。全semantic nodeについて閉包を要求する命題`SemanticBranchClosure target`は、そのtargetの出現と論理的に同値である（`semanticBranchClosure_iff_occurs`）。よってsemantic枝はconstructor局所の補題では原理的に閉じず、大域矛盾の一部でなければならない。
+
+前向きの成果として、semantic childのrefined domainへの昇格をhorizon readiness仮定のもとで四constructor完全に構成した（`PhaseSemanticInvariant.toOrbitReadyRefinedInvariant`）。この仮定は具体反例により除去できない（`not_forall_phaseSemantic_horizonReady`）。さらに無仮定で「任意のrefined nodeから降下すると目標到達かcrossing nodeでの停止に必ず至る」（`orbitReadyRefined_occurs_or_crossing`）を証明し、大域組み立ての残余を三つの明示的命題へ分解した。(1) semantic枝の型強化、(2) ready crossingの局所step`ReadyCrossingRefinedStepHypothesis`、(3) unready crossing漏れ`∃ unready, CrossingSearchInvariant target unready ∧ unready.horizon + 1 < target`の否定。(2)は`TargetTailReturnHypothesis`から従うが、それは最小未出目標下では反証されるため、結局は固定点矛盾からしか来ない。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -784,6 +790,11 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | blocked witness descent edge | `BlockedFirstOccurrence.earlierSmaller` | `ReplayWitnessDescent.lean` |
 | descent no-go (conditional elimination) | `blockedFirstOccurrence_impossible_of_regeneration` | `ReplayWitnessDescent.lean` |
 | blocked tail minimum gap | `TerminalExactDischargeReplayCertificate.tailMinimum_gap_of_blocked` | `ReplayWitnessDescent.lean` |
+| semantic branch is uninformative | `semantic_or_flooredCore_of_pos` | `SemanticOracleRecursion.lean` |
+| semantic closure price | `semanticBranchClosure_iff_occurs` | `SemanticOracleRecursion.lean` |
+| semantic child promotion | `PhaseSemanticInvariant.toOrbitReadyRefinedInvariant` | `SemanticOracleRecursion.lean` |
+| refined descent trichotomy | `orbitReadyRefined_occurs_or_crossing` | `SemanticOracleRecursion.lean` |
+| residual three-way split | `occurs_or_unreadyCrossing_of_readyCrossingStep` | `SemanticOracleRecursion.lean` |
 
 ## 8. 結論
 
@@ -937,6 +948,8 @@ successorが371だけであることを証明し、仮想replayをminimum値371�
 （初出328002）だった。これは補題選択用の経験的結果であり、Lean証明には未使用である。
 
 床上げの有限反復を卒業する経路として最有力だったwitness下降連鎖は、否定的に決着した。blocked枝が供給するearlier-smaller辺は本物だが一段で止まり、整礎性は発火しない。この否定的結果は、残る一般排除の望みがdichotomyのもう一方（二連減算枝）か、あるいは深部軌道値のkernel検証（圧縮軌道証明書）の側にあることを意味する。
+
+同時に、頂点定理の読み方には重要な訂正が要る。その結論はsemantic枝が無情報であるために`0 < target`だけから導出でき、定理そのものが伝える情報は右disjunctを実際に構成した経路にしかない。固定点解析の内容は無傷だが、大域組み立てを閉じるには先にsemantic枝のpayloadを捏造不能な形へ強化する必要がある。これは床上げより優先度の高い作業である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

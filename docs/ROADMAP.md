@@ -380,15 +380,20 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
 今後の床上げは「一般排除機構のストレステスト」と位置づけ、エージェント作業として
 上限付きで行う。主資源は次の優先順位に投じる。
 
-1. witnessed dichotomyの「即時加算」枝が持つ既出witness `a f - (f+1)`の下降連鎖を調査する。
-   witnessはより小さい値とより早い初出を持つため、well-foundedに落ちればdischarge固定点の
-   clock非依存な一般排除になり得る（高リスク・高リターン、タイムボックス必須）。
+1. **semantic枝のpayloadを捏造不能な形へ強化する（最優先）。** 頂点定理のsemantic disjunctは
+   現在`0 < target`だけから導出でき、情報を持たない（`semantic_or_flooredCore_of_pos`）。
+   `stepParent`の存在量化とlex順だけのprogressが原因である。加法的な精密outcome型を新設し、
+   生成元が既に持っているrefined情報（`PermanentAboveCorridorTerminalSuccessor`の`below_master`・
+   `phase_exit`枝など）を拾い直す。固定点を全て排除してもこれ無しには大域組み立ては閉じない。
 2. landing固定点へ再訪排除を移植する。dischargeの`downTime ≤ clock - 1`に相当する
    predecessor初出の上界をlanding側で見つけるか、存在しないことを確定する。
    「二連減算」枝がfresh landingを生成する事実は、二つの固定点の接続を示唆する。
-3. semantic枝の消費者（restricted oracle再帰、Issue #60 項目1・4）を構成する。
-   固定点が全て排除できたとしても、これが無ければ大域組み立ては完成しない最古の負債である。
-4. comb圧縮検証でkernel射程をt≈5000へ延長し、深部値371の壁を試す（埋め草・上限付き）。
+3. `CrossingRecoveryInvariant`に`target ≤ horizon + 1`を持たせ、unready crossing漏れを閉じる
+   （Milestone 3 step 11の未完部分）。これが閉じれば大域残余は`ReadyCrossingRefinedStepHypothesis`
+   一本になる。
+4. witnessed dichotomyの「二連減算」枝を調べる。「即時加算」枝の下降連鎖は一段で停止するno-goが
+   確定済みであり（`ReplayWitnessDescent`）、clock非依存な一般排除の望みはもう一方の枝にしかない。
+5. comb圧縮検証でkernel射程をt≈5000へ延長し、深部値371の壁を試す（埋め草・上限付き）。
 
 ## 並行して行う保守
 

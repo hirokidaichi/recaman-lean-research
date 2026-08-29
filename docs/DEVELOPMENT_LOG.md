@@ -1445,3 +1445,25 @@ clock列挙なしで供給することを証明した。尺度`値 - 時刻`も�
 
 判定：この経路は床上げの卒業には効かない。次に試すべきはdichotomyのもう一方（二連減算枝）で、
 `CanSubtract (f+1) ∧ CanSubtract (f+2)`が強制する大きな下降とtail構造の噛み合わせを見る。
+
+### 第七十一ラウンド：semantic枝が無情報であることの確定
+
+大域組み立ての最古の負債（semantic枝の消費者）を正面から検査し、診断が誤っていたことを確定した。
+`PhaseSearchProgress`は四成分lex順に過ぎず`stepParent`は存在量化されているだけなので、任意のchildに対し
+anchorを一つ上げた親を常に捏造できる（`exists_phaseSearchProgress_parent`）。正のtargetは必ずcanonical
+semantic startを持つので、頂点定理`LeastMissingTarget.semantic_or_flooredCore`の結論そのものが
+`0 < target`だけから導出できる（`semantic_or_flooredCore_of_pos`）。つまり「消費者が存在しない」のではなく
+「消費すべき情報がoutcome型で捨てられている」のが真因である。固定点解析側は無傷である。
+
+消費者が持つべき強さの下界も確定した。`SemanticBranchClosure target`はそのtargetの出現と論理的に同値であり
+（`semanticBranchClosure_iff_occurs`）、semantic枝はconstructor局所の補題では原理的に閉じない。
+
+前向きの成果は三つ。(1) semantic childのrefined domain昇格をhorizon readiness仮定つきで四constructor完全に
+構成し、その仮定が除去不能であることを具体反例で確定した。(2) 無仮定で「任意のrefined nodeから降下すると
+目標到達かcrossing停止に必ず至る」を証明した。(3) 大域残余をsemantic枝の型強化・ready crossing局所step・
+unready crossing漏れの三命題へ分解した。ROADMAPが名指ししていた「ordinary normal constructorのhorizon
+整合性」は三層のうち最も軽い層であり、唯一の障害ではなかった。
+
+次はsemantic枝のpayload強化である。生成元`PermanentAboveCorridorTerminalSuccessor`の`below_master`／
+`phase_exit`枝は既にrefined情報を持っているのにoutcome型で捨てているため、加法的な精密版outcome型を
+新設して拾い直す。

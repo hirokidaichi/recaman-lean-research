@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース165モジュール
+- Leanソース166モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -139,6 +139,10 @@ Lean 4形式化プロジェクトです。
 - 三種道具の反復でclock 32..111を全消去し、床を無条件112≤clock・114≤targetへ引き上げ済み
 - prefix-successor coverageを一般定理化し、clock 112の残余をminimum=371・predecessor初出108・downcross 109・target∈[153,261]へ完全pin済み
 - blocked枝から`(値, 初出)`のearlier-smaller下降辺をclock非依存に抽出したが、整礎性の発火に必要な再生成条件が輸送されず一段で停止するno-goを確定済み。残余義務二本を条件付き排除定理へ固定し、副産物としてblocked枝で`target + 2 < tail最小値`を証明済み
+- **頂点定理のsemantic枝が`0 < target`だけから導出可能である（＝現在の型では無情報）ことを形式的に確定**。`stepParent`が存在量化のみでlex順の親を捏造できることが原因で、固定点解析側の欠陥ではない
+- semantic枝の閉包はそのtargetの出現と論理的に同値と証明済み（constructor局所の補題では原理的に閉じない）
+- semantic childのrefined domain昇格をhorizon readiness仮定つきで4 constructor完全に構成し、その仮定が落とせないことを具体反例で確定済み
+- 大域組み立ての残余を「semantic枝の型強化」「ready crossing局所step」「unready crossing漏れ」の三つへ分解済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

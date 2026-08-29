@@ -141,8 +141,12 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | predecessor follow-up witness | 二分法をwitness付きへ強化済み | predecessor値はclock超なので即addは必ず既出witness、二連subは初手がfresh landing。次エポックの攻撃点を明示 | `PermanentAboveCorridorMinimumFollowUp` |
 | crossing record exclusion | replay crossingのrecord性を排除済み | downcross値がcrossing値を厳密に支配。record更新型のforced addition clockは帯検証なしで一括排除可能 | `PermanentAboveCorridorCrossingRecord` |
 | replay kernel floor IV | 三種道具で床をclock 112へ拡張済み | record排除・downcross前置界・再訪排除の反復で32..111を全消去。無条件112≤clock・114≤target。次の壁は371（初出t=4825） | `PermanentAboveCorridorReplayFloorFour` |
-| prefix successor coverage | clock列挙を一括coverage条件へ抽象化済み | later low witness以前に全larger-prefix successorが既出ならreplayは矛盾。clock 112は唯一の例外371へpinされ、first=108・downcross=109・target∈[153,261] | `PermanentAboveCorridorPrefixSuccessorCoverage`, `ReplayWitnessDescent` |
+| prefix successor coverage | clock列挙を一括coverage条件へ抽象化済み | later low witness以前に全larger-prefix successorが既出ならreplayは矛盾。clock 112は唯一の例外371へpinされ、first=108・downcross=109・target∈[153,261] | `PermanentAboveCorridorPrefixSuccessorCoverage`, `ReplayWitnessDescent`, `SemanticOracleRecursion` |
 | witness descent (blocked枝) | 一段で停止するno-goを確定済み | blocked枝は`(値, 初出)`のearlier-smaller辺をclock非依存に供給するが、`clock < 値`とblocked性がwitnessへ輸送されず整礎性が発火しない。残余義務を`regenerate`の二条件として明示し、それを仮定した一括排除定理へ縮約。副産物としてblocked枝で`target + 2 < a m` | `ReplayWitnessDescent` |
+| semantic枝の情報量 | **無情報であることを確定済み（重大な構造的発見）** | 頂点定理のsemantic disjunctは`0 < target`から導出可能。`stepParent`が存在量化のみでlex順の親を捏造できるため。固定点解析側は無傷で、失われているのは枝のpayload | `SemanticOracleRecursion` |
+| semantic枝の消費者の値段 | 原理的下界を確定済み | semantic枝の閉包はtarget出現と同値。constructor局所の補題では閉じず、大域矛盾の一部でなければならない | `SemanticOracleRecursion` |
+| refined domain昇格 | horizon readiness仮定つきで4 constructor完全 | canonical start／normal／debt／crossing recoveryの全枝を`OrbitReadyRefinedInvariant`へ昇格。readiness仮定は具体反例により除去不能 | `SemanticOracleRecursion` |
+| 大域残余の三分解 | 残余を3命題へ縮約済み | semantic枝の型強化／`ReadyCrossingRefinedStepHypothesis`／unready crossing漏れ。第2はtail return仮説から従うが最小未出目標下では反証される | `SemanticOracleRecursion` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
