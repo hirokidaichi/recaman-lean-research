@@ -506,3 +506,6 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.all_below_up_to_crossing
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.cursor_band
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.five_le_target
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.target_le_upperTri
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.six_le_crossingTime
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.eight_le_target
