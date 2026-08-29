@@ -541,3 +541,5 @@ import Recaman
 #print axioms Recaman.CombRun.high_rail
 #print axioms Recaman.combStep_of_witness
 #print axioms Recaman.CombRun.low_rail_fresh
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime_or_exceptional
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.target_split

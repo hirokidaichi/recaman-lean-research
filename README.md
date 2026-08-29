@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース150モジュール
+- Leanソース151モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -124,6 +124,7 @@ Lean 4形式化プロジェクトです。
 - `LeastMissingTarget 19 ↔ 19未出`を形式化し、床を守る最初の未検証instanceを一値（a‥=19の出現）へ確定済み
 - 圧縮軌道検証の基盤としてcomb run閉形式（low/high rail・decidable区間検証）を証明済み
 - comb stepのwitness構成を完了し、圧縮検証の大域義務をfreshness一条件へ限定済み
+- replay床をclock 32へ拡張し、targetを`19∨61∨34以上`へ三分済み（次の壁は76）
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
