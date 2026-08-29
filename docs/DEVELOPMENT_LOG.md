@@ -1360,3 +1360,11 @@ minimum predecessorの初出fは58以下に落ち、59分岐のうち42件は帯
 15件はすべて後続値`a f + 1`（63〜115）が時刻222以内に既出であり、tail最小値の遅い再訪が不可能になる。
 従ってtarget 61のreplayも存在せず、床は無条件に`32 ≤ clock`かつ`34 ≤ target`へ確定した。深い遅延値の
 例外リストは空になり、この排除機構は帯検証＋再訪不可能性の組合せとして任意のclockへ機械的に拡張できる。
+
+### 第六十五ラウンド：minimum predecessor shape
+
+19・61排除に共通するパターンを一般テンプレートとして一度だけ述べた。順序境界（early clockと値が
+minimum時刻未満）の下で、minimum predecessor初出直後の「減算→加算」follow-upはtail最小値の早期出現を
+再生産し、再訪力学と常に矛盾する（`no_subAdd_minimum_predecessor`）。従って生存し得るreplayの
+predecessor直後は「即時加算」または「二連減算」に制限される。次エポックはこの純局所二分法をclockごとに
+攻撃できる。
