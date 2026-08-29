@@ -737,6 +737,8 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | history-edge fresh landing | `TerminalChronologyHistoryProgress.exists_freshLanding` | `PermanentAboveCorridorHistoryLanding.lean` |
 | anchored terminal interface | `PermanentTailCombinedCertificate.terminalAnchoredOutcome` | `PermanentAboveCorridorHistoryLanding.lean` |
 | horizon-anchored interface | `PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome` | `PermanentAboveCorridorLandingHorizon.lean` |
+| landing ready-crossing mount | `PermanentTailCombinedCertificate.landingReadyCrossing` | `PermanentAboveCorridorLandingMount.lean` |
+| mounted terminal interface | `PermanentTailCombinedCertificate.terminalMountedOutcome` | `PermanentAboveCorridorLandingMount.lean` |
 
 ## 8. 結論
 
@@ -859,6 +861,9 @@ history edgeはさらにanchorされた。missing-count dropの不等式単独�
 landingにはhorizon境界も付いた。反例のbelow coverageと初出最小性からlandingはtail startより前にあり、
 restart crossingは`crossing + 1 ≤ start < parent.horizon`を満たす。landing機構はinstalled crossing nodeの
 形状条件（old crossingがparent horizonより前）と正確に一致する。
+この境界付きlandingはready crossing nodeとして実際にsemantic domainへ搭載された。missing-target性から
+endpointはstrict crossingになり、crossing-recovery certificateの全フィールドがlandingデータだけから構成できる。
+閉じたterminal解析の三枝すべてが、外側探索のsemantic domainの実objectを渡す。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

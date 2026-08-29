@@ -515,3 +515,5 @@ import Recaman
 #print axioms Recaman.TerminalChronologyHistoryProgress.exists_freshLanding
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalAnchoredOutcome
 #print axioms Recaman.PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome
+#print axioms Recaman.PermanentTailCombinedCertificate.landingReadyCrossing
+#print axioms Recaman.PermanentTailCombinedCertificate.terminalMountedOutcome
