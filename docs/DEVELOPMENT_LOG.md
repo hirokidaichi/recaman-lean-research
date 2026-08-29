@@ -1374,3 +1374,10 @@ predecessor直後は「即時加算」または「二連減算」に制限され
 二分法にwitnessを付けた。predecessor値はtargetを超え自分の後続clockも超えるため、即時加算がblockedされる
 理由は「減算欠損`a f - (f+1)`の既出」しかない。二連減算枝では合法減算のfreshnessから`f+1`にfreshな初出が
 生まれる。生存replayは必ず、具体的な既出witnessか新しいfresh landingのどちらかを局所データとして携える。
+
+### 第六十七ラウンド：crossing record exclusion
+
+replay crossingが軌道recordであり得ないことを示した。downcrossはmissing target以上から始まり、straddleは
+crossing値をtarget未満に保つため、crossing値はより早い軌道値（downcross値）に厳密に支配される。running
+maximumを更新する櫛の上歯型clockは、帯検証を行わず一括排除できる。この定理と帯検証・再訪不可能性を
+組み合わせれば、床のclockごとの引き上げは三種の機械的道具で進められる。

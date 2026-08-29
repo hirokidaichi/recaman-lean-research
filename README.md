@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース161モジュール
+- Leanソース162モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -135,6 +135,7 @@ Lean 4形式化プロジェクトです。
 - 同機構でtarget 61のreplayも完全排除し、例外リストを空に：無条件32≤clock・target≥34
 - 排除機構を一般テンプレート化：生存replayのpredecessor直後は即add or 二連subに制限済み
 - follow-up二分法をwitness付きへ強化：即addは既出witness必須、二連subはfresh landing必須
+- replay crossingは軌道recordであり得ないことを証明：record更新clockは帯検証なしで一括排除可能
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
