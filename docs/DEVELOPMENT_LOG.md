@@ -1954,6 +1954,31 @@ target未満なので、鳩の巣の精密化はむしろsub-target値をpre-tai
 pinned枝の総括：当初310件のうち277件（89.4%）を構造的に排除し、残る33件は2つの明示された残余へ縮約された。
 
 
+### 第九十三ラウンド：coverage timeへの帰着完了
+
+計数路線の未知量を一本に絞り切った。`CoversBelow target n`（target未満の全値が時刻`n`までに既出）を定義し、
+その最小元`coverage`について次を証明した。
+
+- 上方閉なので最小元だけが情報を持つ（tail startと同じ構図）。
+- **`least = coverage + 1`が無条件で成立**（`least_tailStart_eq_coverage_succ_final`）。
+  tail startはもはや独立した量ではなく、coverage timeの+1である。
+- 下界`target ≤ coverage`。鳩の巣は`target ≤ coverage + 1`までしか出ないが、時刻24で`a 24 = a 20`の再訪が
+  起きることをkernel計算で押さえ、そこで1スロット失われることを使って鋭化した（`target ≥ 25`が条件、
+  replay floor 114で自動充足）。
+- coverage timeはtarget未満の値の初出時刻であり、最小性は「最後の未被覆レベルがちょうどそのステップで
+  供給される」ことを意味する。
+
+したがって残るのは`coverage ≤ g(target)`ただ一つである。**足りない補題も precise に特定した**——
+「`¬ CoversBelow target n`ならば`n`から高々`h(target)`ステップ以内に`a t < target`となる`t`が存在する」
+という return-frequency lemma である。接続部品`least_tailStart_le_of_coverage_bound`は用意済みで、
+`CoversBelow target g`を仮定として受け取り`least ≤ g + 1`を返す。
+
+**なぜ現行の道具で出ないかも構造的に確定した。** 鳩の巣・`covered_forces_above`・`a n ≤ upperTri n`は
+すべて「被覆レベル数の上界」を与えるもので、それはcoverage timeの下界にしかならない。
+`a n ≤ upperTri n`も軌道がどれだけ高くなれるかを抑えるだけで「いつ降りてくるか」を一切言わない。
+上界には「降下の頻度」という逆向きの命題が要り、現行のツールキットには含まれていない。
+
+
 ### 2026-08-29 夕方セッション振り返り：三度の空虚化と、その後
 
 第七十〜第九十一ラウンド（22ラウンド、24コミット、新規22モジュール）を終えての評価を記す。

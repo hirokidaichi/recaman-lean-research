@@ -800,3 +800,15 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_blocked_witness
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.pinned_backward_dichotomy_with_bound
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.firstRow_forbids_late_repeat
+#print axioms Recaman.CoversBelow.mono
+#print axioms Recaman.exists_least_coversBelow
+#print axioms Recaman.coversBelow_pigeonhole
+#print axioms Recaman.least_coversBelow_firstAt
+#print axioms Recaman.least_coversBelow_lt_tailStart
+#print axioms Recaman.coveredBelowCount_step_of_seen
+#print axioms Recaman.revisit_at_twentyfour
+#print axioms Recaman.target_le_coversBelow
+#print axioms Recaman.least_tailStart_eq_coverage_succ_of_large
+#print axioms Recaman.least_tailStart_le_of_coverage_bound
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.exists_coverageTime
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.least_tailStart_eq_coverage_succ_final

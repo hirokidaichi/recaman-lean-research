@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース198モジュール（約42,000行）
+- Leanソース199モジュール（約42,000行）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -172,6 +172,8 @@ Lean 4形式化プロジェクトです。
 - 前置界は`TerminalChronologyHistoryProgress`に`TerminalHistoryCursor`を連言として加える形でsource-freeに輸送した（Nat持ち上げ不要。history枝の情報量も同時に回復）
 - 無条件`FirstAt a (a m) m`の残余枝を完全記述し、**計数路線が越えられない壁が`tailStart`の上界の不在である**ことを三度確認
 - **その壁が構造的であることを証明済み**：`MissingStrictAboveTail`の3フィールドも証明書のhorizon条件もすべて上方閉なので、`tailStart ≤ g(target)`型の定理は原理的に導出不可能
+- **`least = coverage + 1`が無条件で成立**（`coverage`はtarget未満の値が全部既出になる最小時刻）。計数路線の未知量は`tailStart`（無限の自由度）→`least`（正準化）→完全決定と潰れ、**残るは`coverage ≤ g(target)`ただ一つ**。下界`target ≤ coverage`は確定済み
+- 足りないのは**return-frequency lemma**（「未被覆レベルが残るなら高々`h(target)`ステップ以内に軌道がtarget未満へ降りる」）。手持ちの道具は全て被覆レベル数の上界＝coverage timeの下界しか与えず、`a n ≤ upperTri n`も「いつ降りてくるか」を一切言わない
 - **両側評価`target ≤ least ≤ bound + 1`を既存モジュール無編集で達成**（valid tail startの最小元を有界帰納法で取る形。`Nat.find`はMathlibなしでは使えないので自前で構成）。tail startはもはや自由パラメータではなく、**残る未知量はcoverage timeの上界ひとつ**である
 - **精密版頂点定理の二択が実質的な分岐であることを証明**：左枝の`mounted_crossing`経路は`installReadyCrossing`によるanchorの無限降下で塞がる（`not_alwaysHorizonInternalAnchorDrop`）。証明書が無料で差し出す候補は`a crossingTime = parent.anchorParent`で、狭義不等号をちょうど0だけ外す
 - **左枝に落ちても`CrossingRefinedStepHypothesis`と`TargetTailReturnHypothesis`は反証される**（左枝はpermanent-above tailをまるごと持ち歩くため）。両枝は同じ一点（crossing局所step）へ収束する

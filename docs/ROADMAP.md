@@ -389,11 +389,23 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
 すべて完了し、旧優先度4（二連減算枝）は否定的に決着した。旧優先度5（comb圧縮検証）は下記の天井測定により
 縮小方針とした。現在の優先順位は次である。
 
-1. **coverage timeの上界（最優先・新規）。** 「target未満の値が最後に初出する時刻`n₀`」に対する
-   `n₀ ≤ g(target)`である。tail startの両側評価`target ≤ least ≤ bound + 1`が成立した結果
-   （`TailStartTwoSided`）、計数路線に残る自由度はこれ一つになった。鳩の巣からは下界`n₀ ≥ target - 1`しか
-   出ない。上界には`covered_forces_above`の逆向き、すなわち「未被覆の値が残る限り軌道は繰り返し低域へ
-   降りる」型の新しい組合せ論的議論が要る。**これは本プログラムで最も明確に定式化された未解決の補題である。**
+1. **return-frequency lemma（最優先・新規）。** 必要な命題は次の一本に絞られた。
+
+   > `¬ CoversBelow target n` ならば、`n` から高々 `h(target)` ステップ以内に `a t < target` となる時刻 `t` が存在する
+
+   これがあれば未被覆レベルが1つ減るのに要する時間が抑えられ、`coverage ≤ target · h(target)` が出る。
+   接続部品`least_tailStart_le_of_coverage_bound`は`CoversBelow target g`を仮定として受け取り
+   `least ≤ g + 1`を返す形で用意済みである。
+
+   計数路線の未知量は段階的に潰れ、`tailStart`（無限の自由度）→ `least`（正準化）→
+   **`least = coverage + 1`（完全決定、無条件）** となった。下界`target ≤ coverage`も確定している
+   （鳩の巣を時刻24の軌道再訪で鋭化）。残るのは`coverage ≤ g(target)`ただ一つである。
+
+   **なぜ現行の道具で出ないかも構造的に確定している。** 鳩の巣`coveredBelowCount k n ≤ n + 1`、
+   `covered_forces_above`、`a n ≤ upperTri n`はすべて「被覆レベル数の上界」を与えるもので、
+   それはcoverage timeの**下界**にしかならない。`a n ≤ upperTri n`も軌道がどれだけ高くなれるかを抑えるだけで
+   **いつ降りてくるか**は一切言わない。上界には「降下の頻度」という逆向きの命題が要り、
+   これは現行のツールキットにまったく含まれていない。**本プログラムで最も明確に定式化された未解決の補題である。**
 2. **証明書を`least`の上に建て直す。** 両側評価は`least`についてのもので、証明書の`source.tailStart`には
    下界しか与えない。`PermanentTailDischargeReturnCertificate`の構築点（`exists_historicalDowncrossCertificate`
    → `exists_dischargeReturnCertificate`）で`tailStart`を`least`へ差し替えれば、証明書自身が両側評価を持つ。
