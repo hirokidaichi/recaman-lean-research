@@ -186,6 +186,7 @@ import Recaman.PinnedForwardOrbit
 import Recaman.TailStartHorizonBound
 import Recaman.TailStartTwoSided
 import Recaman.CoverageTimeBound
+import Recaman.ReturnFrequency
 import Recaman.PinnedBackwardStep
 import Recaman.PinnedMiddleRow
 import Recaman.PinnedRemainingRows

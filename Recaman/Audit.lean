@@ -812,3 +812,13 @@ import Recaman
 #print axioms Recaman.least_tailStart_le_of_coverage_bound
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.exists_coverageTime
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.least_tailStart_eq_coverage_succ_final
+#print axioms Recaman.returnFrequency_iff_coverage
+#print axioms Recaman.uncovered_at_tail_never_occurs
+#print axioms Recaman.returnFrequency_dichotomy
+#print axioms Recaman.coversBelow_before_tail_of_all_occur
+#print axioms Recaman.coverage_le_of_tailStart_bound
+#print axioms Recaman.drop_le_upperTri_gap
+#print axioms Recaman.return_time_lower_bound
+#print axioms Recaman.forced_addition_run_defects
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.returnFrequency_is_coverage
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.returnFrequency_failure_mode_empty
