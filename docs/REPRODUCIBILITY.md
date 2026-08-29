@@ -79,3 +79,12 @@ git status --short
 
 `.lake/`、`.build/`、`.cache/`はGit管理対象外である。
 
+
+replay固定点スキャンは次で再現できる。
+
+```bash
+c++ -O3 -std=c++20 experiments/replay_fixed_point_scan.cpp -o /tmp/replay_scan
+/tmp/replay_scan 10000000
+```
+
+引数は軌道長で、10¹⁰まで動作を確認している（約24秒・メモリ15GB）。
