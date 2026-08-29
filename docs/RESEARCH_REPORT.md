@@ -744,6 +744,8 @@ crossing clock 3以上・target 5以上でしか存在できない。
 | mounted iteration closure | `PermanentTailCombinedCertificate.mountedIterationOutcome` | `PermanentAboveCorridorMountedIteration.lean` |
 | unified fixed-point outcome | `PermanentTailCombinedCertificate.unifiedOutcome` | `PermanentAboveCorridorFixedPointCore.lean` |
 | unified core kernel floor | `TailFixedPointCore.six_le_crossingTime` | `PermanentAboveCorridorFixedPointFloor.lean` |
+| replay second floor | `TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime_or_target_eq_nineteen` | `PermanentAboveCorridorReplayFloorTwo.lean` |
+| unconditional target floor | `TerminalExactDischargeReplayCertificate.nineteen_le_target` | `PermanentAboveCorridorReplayFloorTwo.lean` |
 
 ## 8. 結論
 

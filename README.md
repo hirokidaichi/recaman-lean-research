@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース142モジュール
+- Leanソース143モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -116,6 +116,7 @@ Lean 4形式化プロジェクトです。
 - landing再入反復をanchor gap強帰納で閉包し、残余をsemantic・discharge replay・landing固定点の三形へ縮約済み
 - 二固定点を共通核TailFixedPointCoreへ統合し、最終定理をsemanticまたはnode再生産固定点の二形へ確定済み
 - 統合coreにblocker不要のkernel floor（clock≥6、target≤upperTri包絡）を証明済み
+- replay floorをclock 17まで拡張し、深い遅延値19だけを例外に18≤clock∨target=19、無条件target≥19を証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -195,6 +196,9 @@ installed nodeはparentそのものになり、successor dischargeは同じparen
 固定点の全cursor（downcross endpoint、return、old crossing、blocker初出、fresh endpoint）はtarget未満の
 初期帯に収まり、endpointからcrossingまでの軌道値もすべてtarget未満です。kernel計算によりclockは3以上、
 targetは5以上に限られます。自己再帰cycleは軌道の最初のtargetステップ以内の情報だけで構成されています。
+floorはclock 17まで拡張されました。障害は値19の初出が時刻99734と深いことだけで、これはclock 6と8の
+またぎ帯の双方に含まれます。従って`18 ≤ clock ∨ target = 19`、無条件で`target ≥ 19`です。次の壁は
+clock 18帯の61（初出t=181653）で、二つの深い遅延値はkernel計算の射程外です。
 さらにreplay crossingは実軌道のイベントなので、小さいclockはkernel計算で直接排除できます。clock 3は実stepが
 減算であること、clock 4は値境界、clock 5はまたぐtarget 8..13の実出現と矛盾し、replayはclock 6以上・target 8以上、
 かつtarget ≤ upperTri(clock+1)の帯に挟まれます。

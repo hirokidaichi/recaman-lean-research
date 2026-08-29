@@ -524,3 +524,5 @@ import Recaman
 #print axioms Recaman.PermanentTailCombinedCertificate.unifiedOutcome
 #print axioms Recaman.TailFixedPointCore.six_le_crossingTime
 #print axioms Recaman.TailFixedPointCore.target_le_upperTri
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime_or_target_eq_nineteen
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.nineteen_le_target
