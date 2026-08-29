@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース102モジュール
+- Leanソース103モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -76,6 +76,7 @@ Lean 4形式化プロジェクトです。
 - 全dischargeをimmediate historical valleyまたはfinite crossing windowの二形へ正規化済み
 - terminal二形に共通するgap＋overshoot＝final clockと各差のclock上界を証明済み
 - final forced additionをdouble-clock数値境界またはstrictly earlier historical blockerへ分類済み
+- historical blockerをfresh以前またはfresh以後のstrict history-budget dropへ分類済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -129,6 +130,8 @@ crossing直前のtarget gapと直後のovershootはいずれもreturn clock以�
 両枝はさらに共通のstrict crossing balanceを持ち、gapとovershootはfinal addition clockを正に分割します。
 final subtractionの失敗理由は、`target < 2·(return+1)`の有限数値帯か、`return`より前に初出する
 正のbelow-target subtraction candidateへ縮約されました。
+さらにcandidateのfirst timeがfinal fresh endpointより後ならhistory budgetが厳密下降し、以前ならouter historyとして
+明示されます。immediate valleyではfresh endpointがreturnなので、常に後者です。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -155,8 +158,9 @@ flowchart TD
     T --> U["terminal二形への強正規化：証明済み"]
     U --> V["共通crossing balance：証明済み"]
     V --> W["final blocker二分：証明済み"]
-    W --> X["共通outer progress：未解決"]
-    X --> Y["全射性：未証明"]
+    W --> X["blocker位置／budget下降：証明済み"]
+    X --> Y["共通outer progress：未解決"]
+    Y --> Z["全射性：未証明"]
 ```
 
 ## 文書

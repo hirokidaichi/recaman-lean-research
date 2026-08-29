@@ -387,3 +387,6 @@ import Recaman
 #print axioms Recaman.StrictTerminalCrossingBalance.forcedReason
 #print axioms Recaman.NormalizedTerminalCrossingData.forcedReason
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalForcedReason
+#print axioms Recaman.NormalizedTerminalCrossingData.blockerOutcome
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalBlockerOutcome

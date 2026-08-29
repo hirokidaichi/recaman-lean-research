@@ -420,6 +420,12 @@ candidateが正ならfailure reasonはhistory membershipに限られる。履歴
 returnより厳密に前で、candidate値はpredecessorとtargetの双方より小さい。outer residualはこの有限数値帯または
 具体的なearlier below-target historical blockerへ狭まった。
 
+`PermanentAboveCorridorBlockerPosition`は、そのblocker first timeをnormalized final fresh endpointと比較する。
+first timeがfreshより後なら、candidateはbelow-targetのfirst occurrenceなので`missingBelowCount`がfresh時点から
+厳密に下がる。first timeがfresh以前なら、blockerはcorridor内の新規履歴ではなくouter history側に保持される。
+immediate valleyではfresh endpointがreturn predecessorそのもので、blocker first timeはreturnより前だから、
+必ずouter-history枝に入る。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -516,6 +522,8 @@ returnより厳密に前で、candidate値はpredecessorとtargetの双方より
 | normalized terminal共通interface | `PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData` | `PermanentAboveCorridorBalance.lean` |
 | terminal forced reason | `StrictTerminalCrossingBalance.forcedReason` | `PermanentAboveCorridorBlocker.lean` |
 | discharge blocker adapter | `PermanentTailDischargeReturnCertificate.terminalForcedReason` | `PermanentAboveCorridorBlocker.lean` |
+| blocker位置分類 | `NormalizedTerminalCrossingData.blockerOutcome` | `PermanentAboveCorridorBlockerPosition.lean` |
+| immediate blocker順序 | `TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint` | `PermanentAboveCorridorBlockerPosition.lean` |
 
 ## 8. 結論
 
@@ -556,6 +564,8 @@ all-forced terminalは有限crossing windowまで縮約され、suffix強帰納�
 両形はさらに同じpositive gap partitionとfinal fresh endpoint interfaceを持つ。次はこの共通証明書を
 final forced reasonへ接続し、有限double-clock枝またはstrictly earlier historical blockerへ縮約した。
 次はblocker first timeとfinal fresh endpointの順序を外側anchor下降または新しいfreshness条件へ接続することが義務である。
+この順序分類も完了し、freshより後はstrict budget progressになった。従って残るhistory枝はfresh以前のouter blockerに
+限られる。次はこのblockerを既存のseen/minimum cycle rankへ接続することが義務である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

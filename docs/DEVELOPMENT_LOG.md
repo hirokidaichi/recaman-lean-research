@@ -993,3 +993,14 @@ subtraction candidateが正なら、それが`valuesThrough return`に属する�
 `a return`より小さいことからfirst timeはreturnと一致できず、厳密に前になる。candidate自身も正で、predecessorと
 targetより小さい。`StrictTerminalCrossingBalance.ForcedReason`はこの二枝をtyped residualとして保持し、normalized
 terminal dataとdischarge certificateの双方から直接取得できる。
+
+### 第二十九ラウンド：terminal blocker position
+
+`TerminalFreshEndpointCertificate`を独立させ、normalized terminalが返すfresh below endpointのorigin/return時刻境界、
+first occurrence、canonical returnを再利用可能にした。final historical blockerのfirst timeをこのfresh endpointと比較し、
+at-or-beforeとstrictly-afterへ分けた。
+
+strictly-after枝ではblocker candidateがtarget未満でfirst occurrenceを持つため、`missingBelowCount_strict_of_firstAt`を
+直接適用し、fresh時点からfirst timeへのstrict budget dropを得た。at-or-before枝はouter historical provenanceとして
+残す。immediate valleyはfresh endpoint=returnで、全historical blockerがfirst time<returnを満たすため、after枝を
+取らない。この結果、未解決のhistorical blocker residualはfresh以前に限定された。

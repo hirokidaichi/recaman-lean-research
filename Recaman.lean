@@ -96,5 +96,6 @@ import Recaman.PermanentAboveCorridorWindow
 import Recaman.PermanentAboveCorridorTerminal
 import Recaman.PermanentAboveCorridorBalance
 import Recaman.PermanentAboveCorridorBlocker
+import Recaman.PermanentAboveCorridorBlockerPosition
 import Recaman.Examples
 import Recaman.Oracle

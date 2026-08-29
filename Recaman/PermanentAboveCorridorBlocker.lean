@@ -13,25 +13,38 @@ the second case a positive, strictly smaller below-target value has a first
 occurrence no later than the return predecessor.
 -/
 
+/-- Explicit finite strip left when the terminal predecessor is too small
+for subtraction. -/
+structure TerminalInsufficientValueCertificate
+    (target returnTime : Nat) : Prop where
+  predecessor_le_clock : a returnTime ≤ returnTime + 1
+  endpoint_le_twice_clock :
+    a (returnTime + 1) ≤ 2 * (returnTime + 1)
+  target_lt_twice_clock : target < 2 * (returnTime + 1)
+
+/-- Positive historical subtraction candidate blocking the final step. -/
+structure TerminalHistoricalBlockerCertificate
+    (target returnTime candidate firstTime : Nat) : Prop where
+  candidate_eq : candidate = a returnTime - (returnTime + 1)
+  candidate_positive : 0 < candidate
+  candidate_first : FirstAt a candidate firstTime
+  firstTime_lt_return : firstTime < returnTime
+  candidate_below_predecessor : candidate < a returnTime
+  candidate_below_target : candidate < target
+
 /-- Typed reason why the final subtraction of a strict terminal crossing is
 blocked. -/
 inductive StrictTerminalCrossingBalance.ForcedReason
     {target returnTime : Nat}
     (balance : StrictTerminalCrossingBalance target returnTime) : Prop
   | insufficient_value
-      (predecessor_le_clock : a returnTime ≤ returnTime + 1)
-      (endpoint_le_twice_clock :
-        a (returnTime + 1) ≤ 2 * (returnTime + 1))
-      (target_lt_twice_clock : target < 2 * (returnTime + 1)) :
+      (certificate : TerminalInsufficientValueCertificate target
+        returnTime) :
       balance.ForcedReason
   | historical_blocker
       (candidate firstTime : Nat)
-      (candidate_eq : candidate = a returnTime - (returnTime + 1))
-      (candidate_positive : 0 < candidate)
-      (candidate_first : FirstAt a candidate firstTime)
-      (firstTime_lt_return : firstTime < returnTime)
-      (candidate_below_predecessor : candidate < a returnTime)
-      (candidate_below_target : candidate < target) :
+      (certificate : TerminalHistoricalBlockerCertificate target returnTime
+        candidate firstTime) :
       balance.ForcedReason
 
 /-- Every strict terminal crossing exposes either the double-clock numeric
@@ -62,8 +75,14 @@ theorem StrictTerminalCrossingBalance.forcedReason
         omega
       omega
     exact .historical_blocker
-      (a returnTime - (returnTime + 1)) firstTime rfl (by omega)
-      hfirst hfirstTimeLt hcandidateBelow (by omega)
+      (a returnTime - (returnTime + 1)) firstTime {
+        candidate_eq := rfl
+        candidate_positive := by omega
+        candidate_first := hfirst
+        firstTime_lt_return := hfirstTimeLt
+        candidate_below_predecessor := hcandidateBelow
+        candidate_below_target := by omega
+      }
   · have hpredecessorLe : a returnTime ≤ returnTime + 1 := by omega
     have hendpointLe : a (returnTime + 1) ≤
         2 * (returnTime + 1) := by
@@ -71,7 +90,11 @@ theorem StrictTerminalCrossingBalance.forcedReason
       omega
     have htargetLt : target < 2 * (returnTime + 1) :=
       Nat.lt_of_lt_of_le h.endpoint_above hendpointLe
-    exact .insufficient_value hpredecessorLe hendpointLe htargetLt
+    exact .insufficient_value {
+      predecessor_le_clock := hpredecessorLe
+      endpoint_le_twice_clock := hendpointLe
+      target_lt_twice_clock := htargetLt
+    }
 
 /-- The normalized branch-independent terminal interface exposes the same
 forced reason without reopening the immediate/all-forced split. -/

@@ -427,6 +427,12 @@ terminal crossingのfinal subtractionが失敗した理由の型付き二分で�
 `target < 2 * (returnTime + 1)`という数値境界を持つ。candidateが正なら既出値であり、そのfirst occurrenceは
 returnより厳密に前、candidate値はpredecessorとtargetより厳密に小さいhistorical blockerになる。
 
+### terminal blocker position / 終端blocker位置 — 研究固有
+
+historical blockerのfirst occurrenceとnormalized final fresh endpointの順序分類である。first timeがfreshより後なら
+新しいbelow-target first occurrenceなので`missingBelowCount`が厳密下降する。fresh以前なら既存outer historyとして残る。
+immediate valleyではfresh=returnかつfirst time<returnなので、必ずfresh以前枝になる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

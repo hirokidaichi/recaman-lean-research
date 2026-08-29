@@ -65,6 +65,19 @@ theorem WeakUpcrossingStep.strictTerminalCrossingBalance
     overshoot_le_clock := hoverLe
   }
 
+/-- A final fresh below-target endpoint and its canonical return. -/
+structure TerminalFreshEndpointCertificate
+    {target start : Nat} {parent : PhaseSearchNode}
+    (source : PermanentTailDischargeReturnCertificate target start parent)
+    (freshEndpoint : Nat) :
+    Prop where
+  origin_le : source.downTime + 1 ≤ freshEndpoint
+  fresh_le_return : freshEndpoint ≤ source.returnTime
+  fresh_first : FirstAt a (a freshEndpoint) freshEndpoint
+  fresh_below : a freshEndpoint < target
+  canonical_return : FirstWeakUpcrossingStep target freshEndpoint
+    source.returnTime
+
 /-- Common terminal data: a fresh below-target endpoint, its canonical first
 return, and the branch-independent strict crossing balance. -/
 structure NormalizedTerminalCrossingData
@@ -72,11 +85,7 @@ structure NormalizedTerminalCrossingData
     (source : PermanentTailDischargeReturnCertificate target start parent) :
     Prop where
   fresh_endpoint : ∃ freshEndpoint,
-    source.downTime + 1 ≤ freshEndpoint ∧
-    freshEndpoint ≤ source.returnTime ∧
-    FirstAt a (a freshEndpoint) freshEndpoint ∧
-    a freshEndpoint < target ∧
-    FirstWeakUpcrossingStep target freshEndpoint source.returnTime
+    TerminalFreshEndpointCertificate source freshEndpoint
   balance : StrictTerminalCrossingBalance target source.returnTime
 
 /-- Either normalized terminal branch yields the same fresh-endpoint and
@@ -89,20 +98,26 @@ theorem PermanentTailDischargeTerminalShape.normalizedCrossingData
   cases h with
   | immediate_valley certificate =>
       exact {
-        fresh_endpoint := ⟨source.downTime + 1, Nat.le_refl _,
-          Nat.le_of_eq (Eq.symm certificate.return_eq),
-          source.endpoint_first, certificate.endpoint_below,
-          source.return_crossing⟩
+        fresh_endpoint := ⟨source.downTime + 1, {
+          origin_le := Nat.le_refl _
+          fresh_le_return := Nat.le_of_eq (Eq.symm certificate.return_eq)
+          fresh_first := source.endpoint_first
+          fresh_below := certificate.endpoint_below
+          canonical_return := source.return_crossing
+        }⟩
         balance := source.return_crossing.crossing
           |>.strictTerminalCrossingBalance certificate.target_missing
       }
   | finite_crossing_window terminalEndpoint origin_le window =>
       exact {
-        fresh_endpoint := ⟨terminalEndpoint, origin_le,
-          Nat.le_of_lt window.certificate.endpoint_before_return,
-          window.certificate.suffix.endpoint_first,
-          window.certificate.suffix.endpoint_below,
-          window.certificate.suffix.first_return⟩
+        fresh_endpoint := ⟨terminalEndpoint, {
+          origin_le := origin_le
+          fresh_le_return := Nat.le_of_lt
+            window.certificate.endpoint_before_return
+          fresh_first := window.certificate.suffix.endpoint_first
+          fresh_below := window.certificate.suffix.endpoint_below
+          canonical_return := window.certificate.suffix.first_return
+        }⟩
         balance := window.certificate.suffix.first_return.crossing
           |>.strictTerminalCrossingBalance
             window.certificate.target_missing

@@ -38,7 +38,9 @@
 - terminal二形に共通するgap＋overshoot＝final clockと両差のclock上界を証明
 - final fresh endpoint／canonical return／strict balanceの共通interfaceを構成
 - final forced additionをdouble-clock数値境界またはstrictly earlier historical blockerへ分類
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`と公理監査を追加
+- historical blockerがfreshより後ならstrict history-budget drop、以前ならouter historyとなる位置分類を証明
+- immediate valleyではblockerが必ずfresh endpointより前になることを証明
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

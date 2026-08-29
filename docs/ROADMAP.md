@@ -223,10 +223,12 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 26. ~~最終fresh endpointとcanonical returnを共通terminal interfaceに保持する。~~
 27. ~~final forced additionを数値不足／historical blockerへ型付き分類する。~~
 28. ~~数値枝でtarget<2(return+1)、履歴枝でfirstTime<returnを証明する。~~
+29. ~~historical blockerをfinal fresh endpointの前後で完全分類する。~~
+30. ~~freshより後のblockerからstrict missing-budget dropを証明する。~~
 
 次の調査順序は次である。
 
-1. historical blockerの初出時刻をfinal fresh endpointの前後で分類する。
+1. fresh以前のhistorical blockerをouter cycleのseen/minimum rankへ接続する。
 2. double-clock数値枝とall-forcedの`return < target`を有限区間へ統合する。
 3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
