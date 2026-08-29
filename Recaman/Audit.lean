@@ -543,3 +543,5 @@ import Recaman
 #print axioms Recaman.CombRun.low_rail_fresh
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime_or_exceptional
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.target_split
+#print axioms Recaman.CombRun.mem_valuesThrough_iff
+#print axioms Recaman.CombRun.fresh_below_transport

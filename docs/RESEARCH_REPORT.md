@@ -763,6 +763,8 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | comb run closed forms | `CombRun.low_rail` | `OrbitComb.lean` |
 | comb witness construction | `combStep_of_witness` | `OrbitCombWitness.lean` |
 | replay third floor | `TerminalExactDischargeReplayCertificate.target_split` | `PermanentAboveCorridorReplayFloorThree.lean` |
+| comb value representation | `CombRun.mem_valuesThrough_iff` | `OrbitCombValues.lean` |
+| comb freshness transport | `CombRun.fresh_below_transport` | `OrbitCombValues.lean` |
 
 ## 8. 結論
 

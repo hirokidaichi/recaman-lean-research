@@ -129,6 +129,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | orbit comb run | 圧縮検証の基盤閉形式を証明済み | 交互区間のlow rail（1周期-1）・high rail閉形式。CombStep/CombRunはdecidableで区間一括検証可能 | `OrbitComb` |
 | comb witness構成 | stepのwitness化を完了済み | blocked理由・正値・freshnessの三条件からCombStepを構成。大域なのはfreshness一条件のみ | `OrbitCombWitness` |
 | replay kernel floor III | 床をclock 32へ拡張済み | 例外リストは{19, 61}で閉じ`target=19∨target=61∨34≤target`。次の壁は76（t=181643） | `PermanentAboveCorridorReplayFloorThree` |
+| comb value representation | run値集合の表現とfreshness輸送を証明済み | exit時のmembership＝事前履歴∨二rail。最終low rail未満のfresh値はrun全体でfreshのまま | `OrbitCombValues` |
 | 非負normal | 通常域閉包済み | `3≤potential<target`をsemantic rankへ接続し、残余をlevel 0/1/2に限定 | `NonnegativeSemantic` |
 | 全域局所被覆 | 未証明 | provenance付きreachable normal domain上の機構適用 | 将来エポック |
 | 全射性 | 未証明 | `∀m, ∃t, a t=m` | 最終目標 |
@@ -599,12 +600,17 @@ comb run内部の各low-rail着地が実際にfreshであることも抽出で�
 閉じたまま`32 ≤ clock ∨ target = 19 ∨ target = 61`が成立し、targetは`19∨61∨34以上`に三分される。
 clock 32の帯(46,79]は第三の深い遅延値76（初出t=181643）を含むため、そこが次の非計算的境界である。
 
+`OrbitCombValues`はcomb runの値集合を表現定理として閉じる。run exitでのhistory membershipは、事前履歴と
+上昇high rail・下降low railの直和に正確に分解される。両railは入口値だけで決まる算術帯に住むため、最終low
+rail未満でrun入口にfreshな値はrun全体を通じてfreshのままである。これが圧縮検証に必要なfreshness輸送機構
+であり、comb区間は床を守る深い遅延値を黙って消費できない。
+
 ## モジュール層
 
 | 層 | モジュール |
 |---|---|
 | 基礎 | `Basic`, `History`, `Coordinates` |
-| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb`, `OrbitCombWitness` |
+| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb`, `OrbitCombWitness`, `OrbitCombValues` |
 | 下降・blocker | `ActualDescent`, `Blocker`, `TargetDescent` |
 | 目標面 | `Gate`, `Mechanisms`, `LandingSurfaces`, `PrestateCoverage` |
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |
