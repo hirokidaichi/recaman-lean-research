@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 802,
+   "lines": 814,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -1726,6 +1726,105 @@
    "defs": 5,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "CoverageTimeBound",
+   "lines": 291,
+   "imports": [
+    "TailStartTwoSided",
+    "PermanentAboveCorridorReplayFloorFour"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "CoversBelow",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "CoversBelow.mono",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "coversBelow_no_upper_bound",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_least_coversBelow",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "coversBelow_pigeonhole",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "least_coversBelow_firstAt",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "least_coversBelow_lt_tailStart",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_eq_coverage_succ",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_step_of_seen",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_le_add",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "revisit_at_twentyfour",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "target_le_coversBelow",
+     "line": 182
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_eq_coverage_succ_of_large",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_le_of_coverage_bound",
+     "line": 210
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_coverageTime",
+     "line": 229
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_determined",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_eq_coverage_succ_final",
+     "line": 267
+    }
+   ],
+   "theorems": 16,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "CrossingBelowRefined",
@@ -12065,6 +12164,6 @@
    "hasReport": true
   }
  ],
- "total": 197,
+ "total": 198,
  "withReport": 153
 }
