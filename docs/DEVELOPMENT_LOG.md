@@ -1254,3 +1254,36 @@ clock 10⁴以下の適格強制加算クロックは2132個で歩幅2の櫛状�
 5,640対（相異なるtarget 18個、すべて遅い初出値）が生存した。時刻200以内で自帯域を完全被覆できるclockは
 17ただ一つで、kernel decideによる全域的floor引き上げ戦略は成立しない。着地・blocker条件は候補対をひとつも
 排除しなかった。固定点の排除には非計算的な大域論法が必須という定量的根拠を得た。
+
+### 第四十九ラウンド：fixed point shape API
+
+node再生産からparentは自anchor値のready-crossing形状`⟨horizon, a c, .normal, a c⟩`に一意決定される。
+phaseはnormal、localMeasureはanchorに一致する。同一parent上の全fixed-point coreは同じcrossing値を共有し、
+異なるclockの二coreは「同じbelow-target値が二度forced additionでtargetをまたぐ」exact value recurrenceに
+なり、endpointは必ず相違する。
+
+### 第五十ラウンド：fixed point corridor統一
+
+canonical first upcrossingまでの全下性を一般補題`FirstWeakUpcrossingStep.all_below`とした。途中にtarget以上の
+値があれば中間弱上抜けがfirst性に反する。replay側で証明済みだったall-below corridorはこの特殊化であり、
+landing固定点もfresh landingから再生産crossingまで同じbelow-target corridorを閉じ込める。
+
+### 第五十一ラウンド：core kernel floor第二段
+
+統合coreの床をclock 18へ引き上げた。coreはblockerを持たないため偶数clockもすべて帯排除で処理するが、
+結論はreplay側と完全に一致する：`18 ≤ clock ∨ target = 19`、そしてclock解析と独立に無条件の`19 ≤ target`。
+両固定点は同一の床を共有し、深い遅延値19（初出t=99734）と61（初出t=181653）だけがkernel計算の射程外に残る。
+
+### 第五十二ラウンド：least-missing summit
+
+全解析を最小未出目標から一本に合成した。`LeastMissingTarget`からpermanent tail・combined certificate・
+unified outcomeを経て、semantic phase childまたは床付き固定点core（`18 ≤ clock ∨ target = 19`かつ
+`19 ≤ target`）が従う。固定点で終端する反例のtargetは無条件に19以上で、19未満の反例が外側再帰へ到達し得る
+経路はsemantic枝だけである。
+
+### 第五十三ラウンド：nineteen boundary
+
+床を守る最初の未検証instanceを一つの具体値に確定した。19未満の全値の出現はkernel検証済みなので、
+`LeastMissingTarget 19`は「19が一度も出現しない」ことと同値である。19の出現（経験的にはt=99734）を仮定
+すれば、固定点で終端する最小未出目標は20以上になる。19の出現をkernel計算なしで証明するには、軌道の
+櫛状区間の閉形式を帰納で与える証明書コンパイラ的な手法が候補である。

@@ -10,7 +10,12 @@
 - 統合coreにblocker不要のkernel floor（clock≥6・target≤upperTri包絡）を証明
 - replay floorをclock 17まで拡張：例外は深い遅延値19のみ、`18≤clock∨target=19`と無条件`target≥19`
 - replay固定点候補の数値走査実験を追加：10¹⁰項でも5,640対が生存、decide全域排除戦略の不成立を定量確認
-- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`と公理監査を追加
+- 固定点coreの形状API（parent一意決定・同値crossing・異clock同値再帰）を追加
+- first upcrossing一般all-below補題で両固定点のbelow corridorを統一
+- 統合coreの床もclock 18・target 19へ拡張し、両固定点の床を完全一致
+- 最小未出目標からの頂点定理：semantic childまたは床付き固定点core
+- `LeastMissingTarget 19 ↔ 19未出`を形式化し、最初の未検証instanceを一値へ確定
+- `PermanentAboveCorridorLandingHorizon`、`PermanentAboveCorridorLandingMount`、`PermanentAboveCorridorLandingInstall`、`PermanentAboveCorridorMountedIteration`、`PermanentAboveCorridorFixedPointCore`、`PermanentAboveCorridorFixedPointFloor`、`PermanentAboveCorridorReplayFloorTwo`、`PermanentAboveCorridorFixedPointShape`、`PermanentAboveCorridorFixedPointCorridor`、`PermanentAboveCorridorFixedPointFloorTwo`、`PermanentAboveCorridorLeastMissingSummit`、`PermanentAboveCorridorNineteenBoundary`と公理監査を追加
 
 ## Successor iteration and replay fixed point — 2026-08-29
 
