@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース109モジュール
+- Leanソース110モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -83,6 +83,7 @@ Lean 4形式化プロジェクトです。
 - blocker first occurrenceのlegal/forced生成遷移を完全分類し、normal/debt直結不能境界を証明済み
 - blocker生成predecessorをnegative normal、readiness/sign残余、below-target履歴証明書の三形へ完全分類済み
 - below-target predecessorを時刻0も含めready crossingへ接続し、残余をanchor非下降一条件へ縮約済み
+- predecessor crossingのequal-anchor earlier-time枝を五成分cursor rankへ接続し、eligible残余をgrowth/stationaryへ縮約済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

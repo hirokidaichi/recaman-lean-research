@@ -413,3 +413,6 @@ import Recaman
 #print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.refined
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.crossingRankOutcome
 #print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome
+#print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.combinedRankOutcome
+#print axioms Recaman.TerminalBelowPredecessorCrossingCertificate.cursorCycleProgress
+#print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome

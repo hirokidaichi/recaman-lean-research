@@ -461,6 +461,12 @@ strictに越え、post-crossing時刻の座標から既存`ReadyCrossingSearchIn
 post-crossing時刻は正なので追加base caseは不要である。新nodeは旧parentと同じhistory horizonを使うため、即時rank下降しない
 場合の残余は新crossing predecessor anchorが旧anchor以上という一条件に限られる。
 
+`PermanentAboveCorridorPredecessorCursor`はphase rankで非下降なequal-anchor枝をcrossing-time cursorで再評価する。新crossing
+timeが旧timeより早ければ既存`TailCrossingCursorProgress`が成立し、五成分cycle rankのdischarge-to-crossing edgeを閉じる。
+従って一般kernelはstrict anchor growthまたはequal-anchor chronology mismatchに限られる。旧crossingがdown endpoint以後の
+eligible witnessならcanonical returnが旧crossing以下で、新crossingはさらにreturn以下なので、chronology mismatchは
+同一anchor・同一crossing timeのliteral stationaryに縮約される。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -571,6 +577,7 @@ post-crossing時刻は正なので追加base caseは不要である。新nodeは
 | normal/debt直結no-go | `TerminalHistoricalBlockerCertificate.semanticBoundary` | `PermanentAboveCorridorBlockerGeneration.lean` |
 | blocker predecessor semantic分類 | `TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome` | `PermanentAboveCorridorPredecessorAdapter.lean` |
 | below predecessor crossing接続 | `TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome` | `PermanentAboveCorridorPredecessorCrossing.lean` |
+| predecessor crossing cursor分類 | `BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome` | `PermanentAboveCorridorPredecessorCursor.lean` |
 
 ## 8. 結論
 
@@ -627,6 +634,9 @@ first provenanceとfuture return付きhistorical certificateへ分類された�
 このcrossing変換も完了し、initial predecessorはpost-crossing座標を使うことで同じ構成に吸収された。below-target枝は常に
 refined crossingへ入り、残る非進捗はcrossing anchor非下降だけである。次はこのanchor-growth枝を、blocker生成式または
 既存terminal balanceと組み合わせて排除・有限化・再度のstrict history progressへ接続する必要がある。
+cursor rankを併用するとequal-anchor earlier-timeはstrict cycle progressになり、eligibleな旧crossingのもとでは残余がstrict
+anchor growthまたはliteral stationaryへ縮んだ。次の本質は、stationary再選択をblocker first-occurrence backtrackと同時に
+数える複合edge、またはstrict anchor growthを有限化する外側measureである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
