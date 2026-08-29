@@ -208,14 +208,17 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 11. ~~delayed corridorをinternal legal subtractionまたはall-forced runへ完全分類する。~~
 12. ~~all-forced runで`returnTime < target`、gap上界、加算trace、値の厳密増加を証明する。~~
 13. ~~`target - time`のwell-founded corridor cursorとstrict forward stepを証明する。~~
+14. ~~later below suffixでも同じfirst returnがcanonicalであることを証明する。~~
+15. ~~legal subtraction endpointへの移動をbudget下降とsuffix-distance下降へ接続する。~~
+16. ~~suffixをreturn到達／later legal endpoint／all-forced suffixへ完全分類する。~~
 
 次の調査順序は次である。
 
-1. corridor内legal subtractionのstrict budget下降を、outer cycleのhistorical budgetへ接続する。
-2. all-forced run終了後に同じcrossingへ戻る際、別のhistorical minimum／downcrossをcanonicalに選ぶ。
-3. 即時valleyの再訪が強制するfirst-occurrenceまたはanchor算術をtyped residualにする。
-4. 使用済みdowncross endpointを除外する有限visited setまたは最小未使用cursorを設計する。
-5. corridor rankをcursor-refined cycleとrefined oracleへ統合する。
+1. terminal all-forced suffixまたはendpoint=returnから、別のhistorical minimum／downcrossをcanonicalに選ぶ。
+2. 即時valleyの再訪が強制するfirst-occurrenceまたはanchor算術をtyped residualにする。
+3. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
+4. suffix budget下降をcursor-refined outer cycleへ統合する。
+5. corridor/suffix rankをrefined oracleへ統合する。
 
 ### 完了条件
 

@@ -381,6 +381,13 @@ forcedなので、一般clock boundから`returnTime < target`とtarget-relative
 strict budget drop、またはall-forced有限runのどちらかに完全分類された。これはcorridor内部の無限滞留を
 排除するが、return crossingから同じrebased parentへ戻るouter stationary edgeは別問題として残す。
 
+`PermanentAboveCorridorSuffix`は同じreturn crossingに属するlegal endpoint列を有限化した。
+first weak upcrossingの証明は、区間内のlater below-target startへ移しても同じreturn時刻を保ち、より早い
+crossingがないというcanonical性も保存する。内部legal subtractionが作るfirst endpointは新しいsuffixとなり、
+history budgetを下げると同時に`returnTime - endpointTime`も厳密に下げる。このsuffix cursorはwell-foundedである。
+任意suffixはreturn自身、later legal endpoint、all-forced target-bounded suffixへ分類されるため、固定return内の
+legal endpoint消費は有限である。ただし固定したreturn crossingを変えないので、outer stationarityはなお残る。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -460,6 +467,10 @@ strict budget drop、またはall-forced有限runのどちらかに完全分類�
 | all-forced加算trace | `AllForcedAdditionCorridor.value_eq_add_forcedClockSum` | `PermanentAboveCorridorRank.lean` |
 | corridor clock rank | `corridorClockProgress_wellFounded` | `PermanentAboveCorridorRank.lean` |
 | delayed corridor全分類 | `CanonicalBelowCorridorCertificate.delayedOutcome` | `PermanentAboveCorridorRank.lean` |
+| first return suffix安定性 | `FirstWeakUpcrossingStep.suffix` | `PermanentAboveCorridorSuffix.lean` |
+| legal endpoint suffix下降 | `CanonicalBelowCorridorSuffix.child_of_internalSubtraction` | `PermanentAboveCorridorSuffix.lean` |
+| suffix cursor well-founded | `corridorSuffixProgress_wellFounded` | `PermanentAboveCorridorSuffix.lean` |
+| suffix全分類 | `CanonicalBelowCorridorSuffix.outcome` | `PermanentAboveCorridorSuffix.lean` |
 
 ## 8. 結論
 
@@ -491,6 +502,8 @@ stationary内部ではlegal subtractionがすべてbudgetを下げ、forced addi
 次のrank候補は、この有限clockをvisited cursorとしてbudgetの内側またはcycle phaseに統合することである。
 このcursorで有限segment自体は閉じたが、同じcanonical returnへの復帰は依然stationaryである。次の義務は
 corridorを再走査することではなく、次回のhistorical dischargeを異なるendpointへ送ることである。
+固定return内のlegal endpoint列もsuffix cursorで有限化された。terminal all-forced suffixまたはreturn endpointから
+別のreturn crossingを生むhistorical choiceを構成することが、次の外側cycle義務である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

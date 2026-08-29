@@ -923,3 +923,17 @@ forward stepはこのrankを厳密に下げる。
 最後に任意のdelayed corridorを、internal legal subtractionとstrict budget drop、またはall-forced runと
 return/gap boundへ分類した。rebased stationary certificateからもこのoutcomeを直接得られる。ただしremaining-clock
 rankはreturnへ到達する有限segmentだけを閉じ、returnから同じparent crossingへ戻るedgeは下げない。
+
+### 第二十三ラウンド：legal endpointのcanonical suffix cursor
+
+`FirstWeakUpcrossingStep.suffix`は、最初のreturn crossingまでのbelow corridor内で開始点を後ろへ移しても、
+同じreturnがfirst weak upcrossingであり続けることを証明する。これを使い、fresh below endpointとfirst returnを
+持つ`CanonicalBelowCorridorSuffix`を定義した。
+
+suffix内部のlegal subtractionは次時刻にfirst occurrenceを作る。その時刻を新endpointにすると同じreturnを
+持つchild suffixになり、history budgetと`returnTime - endpointTime`の両方が厳密下降する。
+`CorridorSuffixProgress`は後者を自然数順序へpullbackしたwell-founded relationである。
+
+任意suffixをendpoint=return、later legal endpoint、all-forced suffixへ完全分類した。all-forcedでsuffixが非空なら
+return時刻はtarget未満である。これにより固定return crossing内のlegal endpoint選択は有限化された。
+一方、return crossing自体は固定したままなので、次の外側progressには別のhistorical dischargeが必要である。

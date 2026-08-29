@@ -385,6 +385,12 @@ canonical below corridorの内部transitionがすべてforced additionである�
 target未満になり、値は追加clockの総和に従って厳密増加する。`target - time`がwell-foundedなremaining-clock
 rankを与えるが、これは有限corridor traversal用であり、外側stationary cycleのexitではない。
 
+### canonical corridor suffix / canonical回廊suffix — 研究固有
+
+canonical below corridorのlater fresh endpointから同じfirst return crossingまでを切り出した証明書である。
+内部legal subtractionのendpointへ移るとhistory budgetと`returnTime - endpointTime`が同時に下がる。
+このsuffix cursorは固定return内のlegal endpoint消費を有限化するが、outer crossing自体は変更しない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

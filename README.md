@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース96モジュール
+- Leanソース97モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -66,6 +66,8 @@ Lean 4形式化プロジェクトです。
 - corridor内部stepをfresh budget dropまたはtarget-bounded clockへ完全分類済み
 - delayed corridorをinternal budget dropまたはall-forced有限runへ完全分類済み
 - all-forced runのreturn時刻上界・加算トレース・remaining-clock rankを証明済み
+- first returnがlater below suffixでもcanonicalなままであることを証明済み
+- legal endpoint移動をbudgetとreturn-distanceの同時下降へ接続済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -106,6 +108,9 @@ stationary core内部も解析し、fresh downcross endpointから最初のretur
 all-forcedの場合はさらにreturn時刻自体が`target`未満で、値はclock和に従って厳密増加します。
 `target - time`のwell-founded rankでcorridor traversalは有限化できました。ただしreturn後は同じcanonical
 crossingへ戻るため、これは外側cycle exitではありません。残る核心は次のhistorical dischargeを変えることです。
+同じreturnを保ったsuffix解析では、legal subtractionが作るlater fresh endpointへ移るたび
+`returnTime - endpointTime`が厳密下降します。従ってlegal endpoint列は有限で、return自身またはall-forced
+suffixへ到達します。残る外側の核心は、このterminal suffixから別のhistorical dischargeを選ぶことです。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -126,8 +131,9 @@ flowchart TD
     N --> O["canonical rebase：証明済み"]
     O --> P["stationary below corridor：分類済み"]
     P --> Q["corridor finite rank：証明済み"]
-    Q --> R["alternate discharge：未解決"]
-    R --> S["全射性：未証明"]
+    Q --> R["legal suffix cursor：証明済み"]
+    R --> S["alternate discharge：未解決"]
+    S --> T["全射性：未証明"]
 ```
 
 ## 文書

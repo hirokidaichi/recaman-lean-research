@@ -362,3 +362,9 @@ import Recaman
 #print axioms Recaman.corridorClockProgress_wellFounded
 #print axioms Recaman.CanonicalBelowCorridorCertificate.delayedOutcome
 #print axioms Recaman.CanonicalReturnRebaseCertificate.corridorOutcome
+#print axioms Recaman.FirstWeakUpcrossingStep.suffix
+#print axioms Recaman.corridorSuffixProgress_wellFounded
+#print axioms Recaman.CanonicalBelowCorridorSuffix.child_of_internalSubtraction
+#print axioms Recaman.AllForcedAdditionSuffix.returnTime_lt_target
+#print axioms Recaman.CanonicalBelowCorridorSuffix.outcome
+#print axioms Recaman.CanonicalReturnRebaseCertificate.suffixOutcome
