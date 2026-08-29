@@ -457,6 +457,42 @@ historical blockerのfirst occurrenceを作ったactual transitionのlegal subtr
 legal枝はより大きいpredecessorのearlier first occurrence、forced枝はtarget未満のpredecessorとclockを返す。
 landing candidateはtarget未満なのでordinary normal/debt domainには直接入らず、below-target専用adapterが必要になる。
 
+### discharge iteration rank / discharge反復ランク — 研究固有
+
+installed successorへ正確に輸送される三成分（共有horizon budget・installed anchor gap・old crossing cursor）
+の辞書式ランクである。master rankの内側cursorはblocker first timeに依存し連続する二解析間で比較できないが、
+この三成分だけでinstalled successor反復は厳密に下降するか、exact replayで文字通り不動になる。
+
+### exact replay fixed point / 正確replay固定点 — 研究固有
+
+successor dischargeがiteration rankを動かさない停留である。return crossingはold crossingと一致する閉cycleに
+なり、installed nodeはparentそのもの、successorは同parent同cursorへのself-mapである。全cursorはtarget未満の
+below corridor帯に収まる。
+
+### fresh landing / 新規着地 — 研究固有
+
+missing-count strict dropの背後に必ず存在する、window内に初出するbelow-target値の出現である。drop不等式単独
+から逆算でき、反例のbelow coverageと初出最小性によりparent history内へ束縛される。canonical first upcrossing
+がそこから再開し、ready crossing nodeとしてsemantic domainへ搭載（mount）できる。
+
+### mounted node / 搭載node — 研究固有
+
+fresh landingのrestart crossingをold horizonに載せたready crossing node `⟨horizon, a c, .normal, a c⟩`である。
+combined certificateの他fieldは共有horizonにのみ依存するため全てtransportし、terminal解析はmounted nodeから
+再入できる。
+
+### landing fixed point / landing固定点 — 研究固有
+
+mounted反復のequal-anchor停留である。mounted nodeはparentと文字通り一致し、同じ解析の再入は同一状態を再生産
+する。discharge replayと並ぶ第二のnode-level固定点である。
+
+### `TailFixedPointCore` / 固定点共通核 — 研究固有
+
+二つの固定点が共有する数値核である。crossing値がparent anchorに一致し、missing targetをまたぐ明示的forced
+additionで、mounted nodeがparentを再生産する。最終統合定理はsemantic phase childまたはこのcore（provenance
+付き）の二形で終端する。kernel floorによりclockは6以上、targetは19以上（replay側）、上側はupperTri包絡で
+挟まれる。深い遅延初出値（19、61）だけがkernel計算による排除の射程外に残る。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準
