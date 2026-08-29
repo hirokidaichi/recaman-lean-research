@@ -1673,3 +1673,23 @@ landing側の前置界問題を一段深く掘り、**必要な最小情報が`p
 副産物として新しい無条件カーネル道具（prefix最大値バンド消去）が得られた。共有核レベルで
 `32 ≤ clock ∨ (clock = 6 ∧ target = 19) ∨ (clock = 18 ∧ target = 61) ∨ (∃ t < clock, target ≤ a t)`へ
 分解でき、深部残留値19と61が時刻込みでピン留めされる。replay枝にも適用できる。
+
+### 第八十ラウンド：unready crossing漏れの決着とreadiness橋
+
+大域残余の第三項を決着させた。漏れのliteralな形は**証明不能**である。target 12・node`⟨7, 7, .normal, 7⟩`が
+具体反例になる（`a 5 = 7 < 12 < 13 = a 6`、時刻6は強制加算、`12 ∉ valuesThrough 5`）。よってこの残余は
+非存在ではなく到達不能性で閉じるしかない。
+
+`OrbitReadyRefinedInvariant`のcrossing成分を作る生成箇所を全数調査したところ、7箇所すべてで**子は常にready
+であり、型がそれを記録していないだけ**だった。生成箇所1〜5はreadiness保持版を再証明し、
+`ReadyRefinedInvariant`を保存する`RestrictedPhaseSearchOracle`を構成した。残る1箇所
+`OrbitReadyDirectRefined.refinedStep`は目視監査では全分岐が非crossingへ落ちるが statement が記録していない。
+`OrbitReadyNormalNonCrossingStep`として切り出し、既存定理の真の強化であることを証明した。最小修正は結論を
+`RefinedNonCrossingInvariant`へ差し替えるだけで証明本体は不変である。
+
+残余の縮約は`CrossingRefinedStepHypothesis`（素のcrossing全体）→`ReadyCrossingRefinedStepHypothesis`＋
+unready漏れ→`ReadyCrossingReadyStepHypothesis`＋監査事実一つ、と進んだ。さらに
+`TargetTailReturnHypothesis target`からこの仮説が従うので、
+`0 < target ∧ OrbitReadyNormalNonCrossingStep target ∧ TargetTailReturnHypothesis target ⟹ ∃ t, a t = target`
+が成立する。従来tail return仮説は「認めても主残余が閉じない」とされていたので、これは実質的な前進である。
+難所を隠していないことは`readyCrossingReadyStep_iff_occurs`と`not_readyStep_pair`で明示している。

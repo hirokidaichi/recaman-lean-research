@@ -164,6 +164,7 @@ import Recaman.PreTailBudgetSeparation
 import Recaman.RefinedSuccessorRank
 import Recaman.RefinedIterationClosure
 import Recaman.RefinedLandingOutcome
+import Recaman.CrossingReadinessBridge
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness
 import Recaman.OrbitCombValues

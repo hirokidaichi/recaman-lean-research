@@ -632,6 +632,12 @@ immediate枝だけは元の経路では精密化できなかった。元の`cano
 
 副産物として新しい無条件カーネル道具（prefix最大値バンド消去）が得られた。共有核レベルで`32 ≤ clock ∨ (clock = 6 ∧ target = 19) ∨ (clock = 18 ∧ target = 61) ∨ (∃ t < clock, target ≤ a t)`へ分解でき、既知の深部残留値19と61が時刻込みでピン留めされる。この定理はreplay枝にも適用できる。
 
+`CrossingReadinessBridge`は大域残余の第三項「unready crossing漏れ」を決着させた。まず漏れの literal な形`¬ ∃ unready, CrossingSearchInvariant target unready ∧ unready.horizon + 1 < target`は**証明不能**である。target 12・node`⟨7, 7, .normal, 7⟩`が具体反例になる（`a 5 = 7 < 12 < 13 = a 6`で時刻6は強制加算、`12 ∉ valuesThrough 5`）。したがってこの残余は非存在ではなく到達不能性で閉じるしかない。
+
+そこで`OrbitReadyRefinedInvariant`のcrossing成分を作る生成箇所を全数調査した。7箇所すべてで**子は常にreadyであり、型がそれを記録していないだけ**であった。生成箇所1〜5についてはreadinessを保持する版を再証明し、`ReadyRefinedInvariant`を保存する`RestrictedPhaseSearchOracle`を構成した（`readyRefinedPhaseSearchOracle`）。残る1箇所は`OrbitReadyDirectRefined`の`refinedStep`で、目視監査では全分岐が非crossingへ落ちるが statement がそれを記録していない。これを`OrbitReadyNormalNonCrossingStep`として切り出し、既存定理の真の強化であることを証明した。最小修正は結論を`RefinedNonCrossingInvariant`へ差し替えるだけで、証明本体は不変である。
+
+この橋により残余の縮約が一段進んだ。`CrossingRefinedStepHypothesis`（素のcrossing全体）から`ReadyCrossingRefinedStepHypothesis`＋unready漏れを経て、`ReadyCrossingReadyStepHypothesis`（ready crossing → ready refined child）＋監査事実一つ、まで縮んだ。さらに重要なのは、`TargetTailReturnHypothesis target`からこの仮説が従うため、`0 < target ∧ OrbitReadyNormalNonCrossingStep target ∧ TargetTailReturnHypothesis target`から**実際にoccurrenceが出る**ようになった点である（`occurs_of_targetTailReturn`）。従来tail return仮説は「認めても主残余が閉じない」とされていた。難所を隠していないことは`readyCrossingReadyStep_iff_occurs`（監査事実の下でready-crossing ready stepはoccurrenceと同値）と`LeastMissingTarget.not_readyStep_pair`で明示している。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -878,6 +884,9 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | refined replay-reduced outcome | `PermanentTailCombinedCertificate.refinedTerminalReplayReducedOutcome` | `RefinedIterationClosure.lean` |
 | prefix band elimination | `TailFixedPointCore.thirtytwo_or_straggler_or_prefixAbove` | `RefinedLandingOutcome.lean` |
 | landing floor under refined cycle | `RefinedLandingCycle.thirtytwo_le_crossingTime` | `RefinedLandingOutcome.lean` |
+| unready crossing exists as a type | `crossingSearchInvariant_twelve_unready` | `CrossingReadinessBridge.lean` |
+| readiness-preserving oracle | `readyRefinedPhaseSearchOracle` | `CrossingReadinessBridge.lean` |
+| tail return now yields occurrence | `occurs_of_targetTailReturn` | `CrossingReadinessBridge.lean` |
 
 ## 8. 結論
 

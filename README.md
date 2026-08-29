@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース173モジュール
+- Leanソース174モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -161,6 +161,9 @@ Lean 4形式化プロジェクトです。
 - 頂点へ至る実チェーンが8段であることを確定（`terminalProgressOutcome`と`terminalSuccessorOutcome`は`Audit.lean`からしか参照されない形状監査用の袋小路）。先頭2段の精密化を完了
 - landing側に必要な最小情報が`predecessorFirstTime < landingTime`ではなく`downTime < parentTime`であると特定し、一次消失点を`InstalledStep.lean`の`history_progress`に確定。3生成箇所すべてで供給可能と確認済み
 - 新しい無条件カーネル道具（prefix最大値バンド消去）により、共有核レベルで`32 ≤ clock ∨ (clock=6 ∧ target=19) ∨ (clock=18 ∧ target=61) ∨ prefix above`へ分解済み
+- **unready crossing nodeは型としては実在するが、実際の生成箇所は一つも無いことを全数調査で確定**（target 12の具体反例を形式化。生成7箇所すべてで子はreadyを保つ）
+- readiness橋をready crossing → ready refined childまで通し、`RestrictedPhaseSearchOracle target (ReadyRefinedInvariant target)`を条件付きで構成済み
+- **`TargetTailReturnHypothesis`が単独targetで実際にoccurrenceを生むようになった**（従来は「認めても主残余が閉じない」とされていた）
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて

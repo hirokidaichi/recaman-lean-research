@@ -686,3 +686,14 @@ import Recaman
 #print axioms Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo_of_refinedLanding
 #print axioms Recaman.LeastMissingTarget.semantic_or_thirtytwo_of_refinedLanding
 #print axioms Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_residue
+#print axioms Recaman.crossingSearchInvariant_twelve_unready
+#print axioms Recaman.not_forall_crossing_horizonReady
+#print axioms Recaman.horizon_lt_of_budgetDrop
+#print axioms Recaman.readyRefinedInvariant_iff
+#print axioms Recaman.unreadyRefinedChild_shape
+#print axioms Recaman.readyRefinedPhaseSearchOracle
+#print axioms Recaman.occurs_of_readyCrossingReadyStep
+#print axioms Recaman.readyCrossingReadyStepHypothesis_of_targetTailReturn
+#print axioms Recaman.occurs_of_targetTailReturn
+#print axioms Recaman.readyCrossingReadyStep_iff_occurs
+#print axioms Recaman.LeastMissingTarget.not_readyStep_pair
