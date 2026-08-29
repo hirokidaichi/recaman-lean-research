@@ -1430,3 +1430,18 @@ semantic枝の消費者（restricted oracle再帰）は依然として存在し�
 ファイル分離の規約が有効）、数値走査実験が「kernel decideによる全域排除は不成立」を事前に示して
 再訪排除論法への転換を促した。反省点は、前半で指定時間枠を大幅に下回って切り上げたこと、
 root moduleへのimport追加を二度忘れたこと、docsに一度過大な主張を書いて修正したことである。
+
+### 第七十ラウンド：witness下降連鎖のno-go決着
+
+ROADMAP優先度1（clock非依存の一般排除）を検証し、否定的に決着させた。witness付き二分法のblocked枝から
+`BlockedFirstOccurrence`を切り出し、減算欠損`a f - (f+1)`の既出witnessが`(値, 初出)`のearlier-smaller辺を
+clock列挙なしで供給することを証明した。尺度`値 - 時刻`も真に減る。しかし整礎性は発火しない。blocked配置の
+三条件のうちwitnessへ輸送されるのは初出性のみで、`clock < 値`とblocked性が落ちるためである。連鎖の停止点は
+実軌道に無数に存在し、tail側から輸送される情報（witnessがtail最小値未満・tail開始前）はそれらと矛盾しない。
+
+残余義務は`regenerate`の二条件として型で固定し、`blockedFirstOccurrence_impossible_of_regeneration`により
+「それさえ埋まれば全blocked配置が一括で死ぬ」形へ縮約した。副産物として、blocked枝では`f+2`の減算候補が
+`a m - 2`に確定することから`target + 2 < a m`がclock非依存に従う（証明書自身の`target + 1 < a m`の真の強化）。
+
+判定：この経路は床上げの卒業には効かない。次に試すべきはdichotomyのもう一方（二連減算枝）で、
+`CanSubtract (f+1) ∧ CanSubtract (f+2)`が強制する大きな下降とtail構造の噛み合わせを見る。
