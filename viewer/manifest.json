@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 737,
+   "lines": 771,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -2250,7 +2250,7 @@
    "theorems": 34,
    "defs": 2,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "CrossingReadinessClosure",
@@ -2308,7 +2308,7 @@
    "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "CrossingRecovery",
@@ -3869,7 +3869,7 @@
    "theorems": 6,
    "defs": 0,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "LandingRevisitTransport",
@@ -3948,7 +3948,7 @@
    "theorems": 13,
    "defs": 0,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "LandingSurfaces",
@@ -9540,6 +9540,65 @@
    "hasReport": true
   },
   {
+   "name": "PinnedBackwardStep",
+   "lines": 190,
+   "imports": [
+    "PinnedForwardOrbit",
+    "PermanentAboveCorridorReplayFloorFour"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_le_clock",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "backward_one_step",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "backward_two_steps",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "not_add_then_subtract",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "backward_trichotomy",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "backward_value_ne_target",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "backward_trichotomy_general",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_row_forbids_late_minimum",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_row_pins_minimum_time",
+     "line": 176
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PinnedConfigurationAttack",
    "lines": 347,
    "imports": [
@@ -9644,6 +9703,49 @@
    ],
    "theorems": 18,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "PinnedForwardOrbit",
+   "lines": 178,
+   "imports": [
+    "PinnedConfigurationAttack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_le_target",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "tailMinimum_firstAt_or_tailStartAddition",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_forward_step_four",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_forward_attains",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_forward_candidate_above_tailMinimum",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "pinned_landing_below_tail_above",
+     "line": 154
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -9758,7 +9860,7 @@
    "theorems": 19,
    "defs": 1,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "PrestateCoverage",
@@ -10273,6 +10375,148 @@
    "hasReport": true
   },
   {
+   "name": "RefinedEdgeReachability",
+   "lines": 286,
+   "imports": [
+    "RefinedFixedPointCore"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.target_positive",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.exists_stuckCrossing",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.not_crossingRefinedStepHypothesis",
+     "line": 47
+    },
+    {
+     "kind": "def",
+     "name": "HorizonInternalAnchorDrop",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.of_horizonInternalAnchorDrop",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.mountedEdge_or_anchorNondecreasing",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.ownFirstUpcrossing",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "LeastMissingTarget.ownFirstUpcrossing_anchor_eq",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "refinedSummit_left_of_horizonInternalAnchorDrop",
+     "line": 166
+    },
+    {
+     "kind": "def",
+     "name": "AlwaysHorizonInternalAnchorDrop",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "not_alwaysHorizonInternalAnchorDrop",
+     "line": 200
+    },
+    {
+     "kind": "theorem",
+     "name": "leastMissingTarget_mountedRoute_not_free",
+     "line": 227
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.missingPermanentAboveTail",
+     "line": 248
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.not_targetTailReturn",
+     "line": 261
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.stuckCrossing_and_obstructions",
+     "line": 276
+    }
+   ],
+   "theorems": 13,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "RefinedFixedPointCore",
+   "lines": 181,
+   "imports": [
+    "RefinedMountedIteration",
+    "LandingFloorThirtytwo"
+   ],
+   "decls": [
+    {
+     "kind": "inductive",
+     "name": "RefinedPermanentTailUnifiedOutcome",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.refinedUnifiedOutcome",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedPermanentTailUnifiedOutcome.refinedSemantic_or_thirtytwo",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "LeastMissingTarget.refinedSemanticEdge_or_flooredCore",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "RefinedSemanticEdge.target_missing",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "not_forall_pos_exists_refinedSemanticEdge",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "not_forall_pos_refinedSummitLeft",
+     "line": 156
+    },
+    {
+     "kind": "theorem",
+     "name": "LeastMissingTarget.refinedSemanticEdge_or_flooredCore_nontrivial",
+     "line": 167
+    }
+   ],
+   "theorems": 7,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "RefinedHistoryLanding",
    "lines": 72,
    "imports": [
@@ -10294,7 +10538,7 @@
    "theorems": 1,
    "defs": 1,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "RefinedIterationClosure",
@@ -10318,6 +10562,59 @@
      "kind": "theorem",
      "name": "PermanentTailCombinedCertificate.refinedTerminalReplayReducedOutcome",
      "line": 83
+    }
+   ],
+   "theorems": 2,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "RefinedLandingHorizon",
+   "lines": 96,
+   "imports": [
+    "RefinedHistoryLanding",
+    "PermanentAboveCorridorLandingHorizon"
+   ],
+   "decls": [
+    {
+     "kind": "inductive",
+     "name": "RefinedTerminalHorizonAnchoredOutcome",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.refinedTerminalHorizonAnchoredOutcome",
+     "line": 54
+    }
+   ],
+   "theorems": 1,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "RefinedLandingMount",
+   "lines": 89,
+   "imports": [
+    "RefinedLandingHorizon",
+    "PermanentAboveCorridorLandingMount"
+   ],
+   "decls": [
+    {
+     "kind": "inductive",
+     "name": "RefinedTerminalMountedOutcome",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.refinedTerminalMountedOutcome",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.refinedTerminalMountedOutcome_of_landing",
+     "line": 75
     }
    ],
    "theorems": 2,
@@ -10444,6 +10741,30 @@
    "hasReport": false
   },
   {
+   "name": "RefinedMountedIteration",
+   "lines": 138,
+   "imports": [
+    "RefinedLandingMount",
+    "PermanentAboveCorridorMountedIteration"
+   ],
+   "decls": [
+    {
+     "kind": "inductive",
+     "name": "RefinedMountedIterationOutcome",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "PermanentTailCombinedCertificate.refinedMountedIterationOutcome",
+     "line": 58
+    }
+   ],
+   "theorems": 1,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "RefinedOracleBoundary",
    "lines": 75,
    "imports": [
@@ -10503,7 +10824,7 @@
    "theorems": 1,
    "defs": 1,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "RefinedSemanticOutcome",
@@ -10617,7 +10938,7 @@
    "theorems": 18,
    "defs": 2,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "RefinedSuccessorRank",
@@ -10671,7 +10992,7 @@
    "theorems": 5,
    "defs": 3,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "ReplayDoubleSubtractDescent",
@@ -10814,7 +11135,7 @@
    "theorems": 25,
    "defs": 1,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "ReplayWitnessDescent",
@@ -10947,7 +11268,7 @@
    "theorems": 23,
    "defs": 1,
    "hasEnglishDocstring": true,
-   "hasReport": false
+   "hasReport": true
   },
   {
    "name": "SemanticOracleRecursion",
@@ -11101,6 +11422,167 @@
    "theorems": 24,
    "defs": 4,
    "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "TailStartHorizonBound",
+   "lines": 240,
+   "imports": [
+    "PinnedForwardOrbit"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "missingBelowCount_zero_covered",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_forces_above",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "missingStrictAboveTail_of_covered",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "missingStrictAboveTail_of_budgetZero",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingStrictAboveTail.mono",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "missingStrictAboveTail_no_upper_bound",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "missingBelowCount_zero_mono",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "no_future_downcross_mono",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "horizon_strictly_above_of_budgetZero",
+     "line": 149
+    },
+    {
+     "kind": "theorem",
+     "name": "terminalHistoryCursor_lower_bound",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "tailStart_le_of_minimal",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "tailStart_available_at_horizon",
+     "line": 192
+    },
+    {
+     "kind": "theorem",
+     "name": "tailStart_available_at_own_coverage",
+     "line": 204
+    },
+    {
+     "kind": "theorem",
+     "name": "tailStart_pinned_of_minimal",
+     "line": 214
+    },
+    {
+     "kind": "theorem",
+     "name": "tailStart_replaceable",
+     "line": 231
+    }
+   ],
+   "theorems": 15,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TailStartTwoSided",
+   "lines": 237,
+   "imports": [
+    "TailStartHorizonBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "exists_least_of_bounded",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_least_missingStrictAboveTail",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "missingStrictAboveTail_pos",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "least_predecessor_below_target",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_before_tailStart",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "target_le_tailStart",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_twoSided",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_twoSided_of_late",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_minimumCertificate",
+     "line": 165
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_sandwich",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_minimum_le",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "least_tailStart_capped_by_horizon",
+     "line": 217
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -11217,6 +11699,51 @@
     }
    ],
    "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "TrivialityProbeTwo",
+   "lines": 86,
+   "imports": [
+    "LandingFloorThirtytwo",
+    "CrossingReadinessClosure",
+    "PinnedConfigurationAttack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "probe_fixedPointCore_thirtytwo_inhabited",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "probe_pinned_enumerable_fields_at_21",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "probe_not_pinned_62_21",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "probe_not_pinned_113_36",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "probe_targetTailReturn_iff_surjective",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "probe_nonCrossing_implies_refinedStep",
+     "line": 71
+    }
+   ],
+   "theorems": 6,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -11435,6 +11962,6 @@
    "hasReport": true
   }
  ],
- "total": 185,
- "withReport": 138
+ "total": 195,
+ "withReport": 153
 }
