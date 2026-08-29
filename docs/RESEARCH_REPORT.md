@@ -581,6 +581,11 @@ blocker候補は`a C - (C+1)`としてC未満に初出し、crossingはtargetを
 ready crossing nodeの形状一意性からinstalled nodeはparentに一致し、successor dischargeは同じparent・同じold
 crossing cursorを持つ証明書へtransportできる。固定点解析は単一nodeの自己再帰構造の解析に帰着した。
 
+`PermanentAboveCorridorReplayCorridor`はこの自己再帰構造の全cursorをtarget未満の初期帯へ有限化する。crossing clockは
+自身の値より小さく値はtarget未満なので、downcross endpointからcrossingまでの全時刻と全blocker cursorがtarget未満に
+収まり、その区間の軌道値もすべてtarget未満のbelow corridorをなす。kernel計算による小clock排除から、replay固定点は
+crossing clock 3以上・target 5以上でしか存在できない。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -724,6 +729,8 @@ crossing cursorを持つ証明書へtransportできる。固定点解析は単�
 | iteration-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome` | `PermanentAboveCorridorIterationClosure.lean` |
 | replay cycle closure | `TerminalExactDischargeReplayCertificate.canonicalReturn_is_oldCrossing` | `PermanentAboveCorridorReplayPinning.lean` |
 | replay node fixed point | `TerminalExactDischargeReplayCertificate.installed_node_eq` | `PermanentAboveCorridorReplayPinning.lean` |
+| replay corridor band | `TerminalExactDischargeReplayCertificate.cursor_band` | `PermanentAboveCorridorReplayCorridor.lean` |
+| replay all-below corridor | `TerminalExactDischargeReplayCertificate.all_below_up_to_crossing` | `PermanentAboveCorridorReplayCorridor.lean` |
 
 ## 8. 結論
 
@@ -831,6 +838,9 @@ exact replay固定点の四形へ無条件に閉じた。残る研究対象は�
 固定点自体はnode-levelのcycleに固定された。return crossingはold crossingと一致し、installed nodeはparentそのもので、
 successorは同parent同cursorのself-mapになる。従って残余は「同一ready crossing parentが同一old crossingを再選択し続ける
 自己再帰discharge」一形のみであり、その内部数値（clock<値、blocker defect、target跨ぎforced addition）はすべて明示された。
+さらに固定点の全cursorはtarget未満の初期帯に有限化され、endpointからcrossingまでの軌道は全below corridorである。
+小さいclockはkernel計算で排除され、replayはclock 3以上・target 5以上に限られる。残る核心は、この有限初期帯の
+自己再帰cycleが実軌道のグローバルな歴史（budget-zero horizonとtail構造）と両立し続けられるかの解析である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

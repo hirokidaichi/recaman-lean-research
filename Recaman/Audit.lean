@@ -503,3 +503,6 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.canonicalReturn_is_oldCrossing
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.installed_node_eq
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.exists_nextOnParent
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.all_below_up_to_crossing
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.cursor_band
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.five_le_target

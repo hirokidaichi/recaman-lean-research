@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース132モジュール
+- Leanソース133モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -106,6 +106,7 @@ Lean 4形式化プロジェクトです。
 - successor反復を三成分discharge rankの厳密下降またはexact replay固定点へ完全分類済み
 - 整礎帰納でiteration枝を消去し、terminal解析をtarget／strict edge／exact replay固定点へ無条件閉包済み
 - replay固定点をreturn=old crossingの閉cycleとnode-level self-mapへ数値固定済み
+- 固定点の全cursorをtarget未満のbelow corridor帯へ有限化し、clock≥3・target≥5を強制済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -182,6 +183,9 @@ discharge-level rankとすると、installed successorはanchor growthまたはe
 fresh downcross endpointからold crossingへ閉じるcycleです。ready crossing nodeはhorizonとanchorで決まるため
 installed nodeはparentそのものになり、successor dischargeは同じparent・同じold crossing cursorへtransportできます。
 残る核心は、この単一nodeの自己再帰dischargeを破る新しい大域情報の構成です。
+固定点の全cursor（downcross endpoint、return、old crossing、blocker初出、fresh endpoint）はtarget未満の
+初期帯に収まり、endpointからcrossingまでの軌道値もすべてtarget未満です。kernel計算によりclockは3以上、
+targetは5以上に限られます。自己再帰cycleは軌道の最初のtargetステップ以内の情報だけで構成されています。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
