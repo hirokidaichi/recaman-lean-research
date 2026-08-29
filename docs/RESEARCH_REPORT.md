@@ -772,6 +772,8 @@ clock 10⁴以下で条件を満たす強制加算クロックは2132個（歩�
 | nineteen revisit forcing | `TerminalExactDischargeReplayCertificate.nineteen_forces_twentyone_revisit` | `PermanentAboveCorridorNineteenRevisit.lean` |
 | no late revisit dynamics | `a_succ_ne_of_seen` | `PermanentAboveCorridorNineteenElimination.lean` |
 | nineteen elimination | `TerminalExactDischargeReplayCertificate.target_ne_nineteen` | `PermanentAboveCorridorNineteenElimination.lean` |
+| sixtyone elimination | `TerminalExactDischargeReplayCertificate.target_ne_sixtyone` | `PermanentAboveCorridorSixtyoneElimination.lean` |
+| unconditional third floor | `TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime` | `PermanentAboveCorridorSixtyoneElimination.lean` |
 
 ## 8. 結論
 

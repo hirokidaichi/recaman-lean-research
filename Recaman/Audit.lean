@@ -558,3 +558,6 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.target_ne_nineteen
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.twenty_le_target
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.target_ne_sixtyone
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.thirtyfour_le_target

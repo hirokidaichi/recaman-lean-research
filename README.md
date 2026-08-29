@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース158モジュール
+- Leanソース159モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -132,6 +132,7 @@ Lean 4形式化プロジェクトです。
 - `a 131 = 4`によりtailStart>131・horizon>132を強制し、19-反例を固定歴史と未知tailへ二分済み
 - 19未出⟹21がt>131で再訪、という将来イベント強制を証明済み（prefixでは21はt=9の一度きり）
 - 既出値の遅い再訪不可能性（一般力学補題）により**target 19のreplayを完全排除**、無条件18≤clock・target≥20
+- 同機構でtarget 61のreplayも完全排除し、例外リストを空に：無条件32≤clock・target≥34
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -219,6 +220,10 @@ clock 18帯の61（初出t=181653）で、二つの深い遅延値はkernel計�
 かつtarget ≤ upperTri(clock+1)の帯に挟まれます。
 仮想反例内ではtarget出現枝が矛盾するため、permanent tail解析が外側探索へ渡す情報はhistory edge・
 semantic child・replay固定点の三形に確定し、replayが閉じるcycleはdischargeごとに一意です。
+セッション後半の突破として、既出値の遅い再訪不可能性（`a_suc_ne_of_seen`型の力学補題）を発見しました。
+replay固定点はtail最小値の遅い再訪を強制しますが、その値が検証済みprefixで既出だと力学的に矛盾します。
+これにより深い初出（`a 99734 = 19`、`a 181653 = 61`）のkernel検証を一切使わずに、19と61の両replayが
+完全排除され、床は無条件に`32 ≤ clock`・`34 ≤ target`へ確定しました。
 history edgeについては、missing-count下降の不等式単独からwindow内に初出するbelow-target landingを逆算でき、
 そこからcanonical first upcrossingが再開します。上流の定理を書き換えずに、全interface枝が外側再帰の
 continuation素材を携えるようになりました。
