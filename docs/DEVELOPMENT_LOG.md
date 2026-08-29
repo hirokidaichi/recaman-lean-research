@@ -1287,3 +1287,28 @@ unified outcomeを経て、semantic phase childまたは床付き固定点core�
 `LeastMissingTarget 19`は「19が一度も出現しない」ことと同値である。19の出現（経験的にはt=99734）を仮定
 すれば、固定点で終端する最小未出目標は20以上になる。19の出現をkernel計算なしで証明するには、軌道の
 櫛状区間の閉形式を帰納で与える証明書コンパイラ的な手法が候補である。
+
+### 第五十四ラウンド：replay kernel floor第三段
+
+床をclock 32まで拡張した。clock 18の帯`(43,62]`とclock 20の帯`(42,63]`は61（初出t=181653）だけを生存させ、
+21..31は実軌道の減算またはclock境界で機械的に死ぬ。例外リストは{19, 61}で閉じたまま
+`32 ≤ clock ∨ target = 19 ∨ target = 61`が成立し、targetは`19 ∨ 61 ∨ 34以上`へ三分される。clock 32の帯
+`(46,79]`は第三の深い遅延値76（初出t=181643）を含むため、そこが次の非計算的境界である。
+
+### 第五十五ラウンド：comb run閉形式
+
+圧縮軌道検証の基盤として、forced additionと即時repaying legal subtractionの交互区間（comb run）の閉形式を
+証明した。low railは1周期に1ずつ下降し、high railはlow railに現clockを足した値になる。CombStep/CombRunは
+decidableで、実軌道の時刻23からの4周期combをkernel検証例として同梱した。
+
+### 第五十六ラウンド：comb witness構成
+
+comb stepを状態再評価なしのwitnessから構成した。加算がforcedである理由（減算欠損の非正値または既出witness）
+と入口正値は局所的で、大域条件はdecrement値のfreshness一つだけである。run内部の各low-rail着地のfreshnessも
+逆向きに抽出でき、圧縮検証の大域義務はfreshness供給一点に限定された。
+
+### 第五十七ラウンド：comb値集合表現とfreshness輸送
+
+comb runの値集合を表現定理として閉じた。run exitでのhistory membershipは事前履歴と二つのrailの直和に正確に
+分解され、両railは入口値だけで決まる算術帯に住む。系として、最終low rail未満でrun入口にfreshな値はrun全体を
+通じてfreshのままである。comb区間は床を守る深い遅延値（19、61、76）を黙って消費できない。
