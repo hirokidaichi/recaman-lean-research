@@ -431,3 +431,6 @@ import Recaman
 #print axioms Recaman.terminalChronologyHistoryProgress_wellFounded
 #print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.chronologyProgress
 #print axioms Recaman.TerminalSelectedCrossingDischargeCertificate.iterationProgress
+#print axioms Recaman.tailInstalledCycleProgress_wellFounded
+#print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.masterRankOutcome
+#print axioms Recaman.TerminalSelectedCrossingChronologyProgressCertificate.masterProgress

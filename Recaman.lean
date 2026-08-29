@@ -108,5 +108,6 @@ import Recaman.PermanentAboveCorridorRestartRank
 import Recaman.PermanentAboveCorridorAnchorCandidates
 import Recaman.PermanentAboveCorridorSelectedInstall
 import Recaman.PermanentAboveCorridorChronologyRank
+import Recaman.PermanentAboveCorridorMasterRank
 import Recaman.Examples
 import Recaman.Oracle

@@ -489,6 +489,12 @@ timeはnext downcross endpointより厳密に前である。endpointはbelow-tar
 `missingBelowCount`はstrict下降し、`seenBelowCount`はstrict増加する。missing budgetをmeasureとするchronology relationは
 well-foundedである。従ってinstalled next dischargeはrestart解析にeligibleか、すでにhistory rankを下降させている。
 
+`PermanentAboveCorridorMasterRank`はinstalled recurrenceに現れる複数rankを七成分lexicographic relationへまとめる。outerから
+missing below-target budget、remaining anchor gap、crossing time、restart seen-budget、cycle phase、local seen-budget、
+minimum valueである。chronology、growth、equal-anchor earlier-time、stationary restartはそれぞれ先頭から第一、第二、第三、
+第四成分をstrictに下げる。このrelationはwell-foundedである。anchor decreaseだけはgrowthと逆向きなのでmaster recurrenceには
+入れず、既存`PhaseSearchProgress`へのglobal exitとしてtotal outcomeの別constructorに保持する。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -604,6 +610,7 @@ well-foundedである。従ってinstalled next dischargeはrestart解析にelig
 | crossing anchor有限rank | `BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome` | `PermanentAboveCorridorAnchorCandidates.lean` |
 | selected crossing install | `TerminalSelectedCrossingInstallCertificate.exists_nextDischarge` | `PermanentAboveCorridorSelectedInstall.lean` |
 | installed chronology下降 | `TerminalSelectedCrossingDischargeCertificate.iterationProgress` | `PermanentAboveCorridorChronologyRank.lean` |
+| installed master rank | `BelowTargetHistoricalPredecessorCertificate.masterRankOutcome` | `PermanentAboveCorridorMasterRank.lean` |
 
 ## 8. 結論
 
@@ -675,6 +682,9 @@ parent間relationになった。残る反復境界は、次のhistorical downcro
 chronology mismatchはfresh downcross endpointによるstrict missing-budget下降であることが証明され、独立well-founded rankへ
 接続された。従ってinstalled iterationにchronology残余はなく、eligibleならrestart/anchor有限rank解析へ、不適格ならhistory
 budget下降へ進む。次の統合課題はこれら複数rankの優先順序を一つの反復可能なmaster relationへまとめることである。
+七成分master rankにより反復kernelの全progressは一つのwell-founded relationへ統合された。anchor decreaseはglobal phase exitとして
+分離される。残る本質的作業は、このmaster nodeとinstalled semantic certificateを一つの再帰的search stateに束ね、各回のterminal
+shapeから次のblocker/finite-clock/insufficient枝までを再生成するtotal step theoremである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
