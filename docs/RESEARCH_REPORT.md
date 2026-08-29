@@ -547,6 +547,11 @@ semantic outcome、historical complete outcomeを保持し、唯一のfinite bra
 fresh progressは`∃ nextState, nextState = erase key ∧ length(next)<length(state)`として返るため、Prop-valued semantic theoremからでも
 well-founded inductionへ安全に接続できる。
 
+`PermanentAboveCorridorReplayBoundary`はexact revisitがselection stateだけでは排除できないことを証明する。valid keyをremainingから
+全除去して同じfinite certificateを適用すれば、exact residualは再び構成できる。このno-goにより必要な数学を
+`TerminalExactCanonicalReplayResolver`へ切り出した。resolverの結論はtarget occurrence、strict history edge、semantic phase edge、
+installed master edgeの四形である。resolverを仮定するとterminal total outcomeからraw exact-revisit constructorを除去できる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -679,6 +684,8 @@ well-founded inductionへ安全に接続できる。
 | canonical minimum uniqueness | `CanonicalHistoricalMinimumOccurrence.time_eq_of_same_tail_value` | `PermanentAboveCorridorCanonicalMinimum.lean` |
 | canonical tail key selection | `TerminalCanonicalTailHistorySelectionState.select` | `PermanentAboveCorridorCanonicalMinimum.lean` |
 | terminal canonical state step | `PermanentTailDischargeReturnCertificate.terminalCanonicalStateStepOutcome` | `PermanentAboveCorridorCanonicalStateStep.lean` |
+| exact replay no-go | `TerminalFiniteReturnWindowCertificate.exactReplayTerminalOutcome_after_removeAll` | `PermanentAboveCorridorReplayBoundary.lean` |
+| replay conditional closure | `PermanentTailDischargeReturnCertificate.terminalReplayResolvedOutcome` | `PermanentAboveCorridorReplayBoundary.lean` |
 
 ## 8. 結論
 
@@ -772,6 +779,8 @@ exact revisitであり、次は同じminimum valueを実現するminimum time／
 history progressへ戻す再帰的selection stateの統合である。
 このselection stateのterminal total stepへの統合も完了した。残る唯一のfinite constructorはexact canonical revisitであり、次はこの
 同一key再生をsemantic determinismから矛盾へ送れるか、またはvisited stateをinstalled-cycle再帰全体の外側rankへ組み込む必要がある。
+list-only矛盾は実際に不可能であることがno-go theoremで確認された。従って次の研究対象はexact canonical segmentそのものから既存四種の
+progressのどれかを抽出するresolverであり、データ構造の追加ではない。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

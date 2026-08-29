@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース125モジュール
+- Leanソース126モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -99,6 +99,7 @@ Lean 4形式化プロジェクトです。
 - original down endpointの差をstrict history下降へ分類し、historical first/minimum provenanceも固定horizon内で有限化済み
 - permanent/historical tail startを有限化し、tail minimum時刻を相対first occurrenceへcanonical化済み
 - canonical visited stateをterminal全分岐へthreadし、finite枝をstrict state progress／exact revisitへ直接分解済み
+- exact replayがvisited list単独では排除不能なno-goを証明し、残務を単一resolver interfaceへ集約済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -150,6 +151,10 @@ minimum valueまで一致する場合に限定されました。
 最終canonical selection stateはfinite枝だけの補助APIではなく、terminal total outcomeへ統合済みです。任意のdischarge/stateはstrict
 history progress、immediate semantic closure、historical complete step、fresh canonical-key progress、exact canonical revisitのいずれかを
 返します。fresh枝はerase後のnext stateとwell-founded length下降を命題的に保持するため、そのまま再帰的証明へ利用できます。
+ただしvisited listは意味的なno-replay証明ではありません。同じfinite certificateのkeyをstateから全除去して再投入すると、exact revisit
+constructorをLean上で直接構成できます。従って残る数学はlist操作ではなく、exact replayからtarget出現、strict history下降、semantic
+phase下降、installed master下降のいずれかを導く`TerminalExactCanonicalReplayResolver`です。このresolverを仮定すればraw residualのない
+terminal total outcomeが得られることも証明済みです。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

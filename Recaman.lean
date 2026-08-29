@@ -119,5 +119,6 @@ import Recaman.PermanentAboveCorridorInstalledWindowSelection
 import Recaman.PermanentAboveCorridorExactRevisit
 import Recaman.PermanentAboveCorridorCanonicalMinimum
 import Recaman.PermanentAboveCorridorCanonicalStateStep
+import Recaman.PermanentAboveCorridorReplayBoundary
 import Recaman.Examples
 import Recaman.Oracle
