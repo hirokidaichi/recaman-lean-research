@@ -438,7 +438,12 @@ anchor等号境界、strict crossingのdomain保存を証明し、このdomain�
    下端は`2f`オーダーなので**この方向の改善を何回積んでも交差しない**。また早期witnessの追加は
    強制加算が自分で供給し続けるため、`ReplayWitnessDescent`で否定的に決着した降下と同じ形で発散する。
    **必要なのは「区間`[0, f-1]`に値が`V`以上の時刻は高々何個か」型の密度側の上界**である
-   （`coveredBelowCount_two_above`の双対）。両方減算は`target + 3 ≤ tailStart`まで出ているが
+   （`coveredBelowCount_two_above`の双対）。**この道具は`HighValueDensity`として構成済みである**——
+   `coveredBelowCount level n + highCount level n ≤ n + 1`（被覆レベルと高値時刻が同じ時間予算を奪い合う）。
+   ところが第3行の後方2値はどちらもtarget未満で高値時刻に該当しないため、密度からは既知の
+   `target < tailStart`しか出ない。**次に要るのは「小さい時刻に載る値の大きさ」型の制約**で、
+   `a t ≤ upperTri t`を複数時刻について同時に使う不等式が候補だが、Recamánは単調でないため
+   素朴な形は成立せず新しい着想が要る。両方減算は`target + 3 ≤ tailStart`まで出ているが
    late recurrenceの的がなく、`firstRow_forbids_late_repeat`を発火させる相手を見つける必要がある。
 4. **精密版頂点定理の左枝、`discharge_step`経路。** `mounted_crossing`経路は`installReadyCrossing`による
    anchorの無限降下で塞がったが（`not_alwaysHorizonInternalAnchorDrop`）、`discharge_step`の

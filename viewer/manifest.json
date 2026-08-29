@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 831,
+   "lines": 838,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -3508,6 +3508,84 @@
    "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "HighValueDensity",
+   "lines": 252,
+   "imports": [
+    "PinnedAdjacentWitness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "highCount",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "highCount_mono",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "highCount_step_high",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "one_le_highCount",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "two_le_highCount",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "three_le_highCount",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_add_highCount_le",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "highCount_le_of_covered",
+     "line": 159
+    },
+    {
+     "kind": "theorem",
+     "name": "three_high_forces_length",
+     "line": 169
+    },
+    {
+     "kind": "theorem",
+     "name": "coveredBelowCount_two_above_by_density",
+     "line": 180
+    },
+    {
+     "kind": "theorem",
+     "name": "preTail_highCount_bound",
+     "line": 197
+    },
+    {
+     "kind": "theorem",
+     "name": "firstRow_separation_by_density",
+     "line": 209
+    },
+    {
+     "kind": "theorem",
+     "name": "lastRow_density_gives_only_one",
+     "line": 231
+    }
+   ],
+   "theorems": 12,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "HistoricalDebtBridge",
@@ -12290,6 +12368,6 @@
    "hasReport": true
   }
  ],
- "total": 200,
+ "total": 201,
  "withReport": 153
 }

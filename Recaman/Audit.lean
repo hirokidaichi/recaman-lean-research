@@ -829,3 +829,10 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_window_narrowed
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_second_forced_addition
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_second_witness
+#print axioms Recaman.coveredBelowCount_add_highCount_le
+#print axioms Recaman.highCount_le_of_covered
+#print axioms Recaman.three_high_forces_length
+#print axioms Recaman.coveredBelowCount_two_above_by_density
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.preTail_highCount_bound
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.firstRow_separation_by_density
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.lastRow_density_gives_only_one
