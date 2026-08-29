@@ -102,5 +102,6 @@ import Recaman.PermanentAboveCorridorCandidates
 import Recaman.PermanentAboveCorridorOuterHistory
 import Recaman.PermanentAboveCorridorBlockerGeneration
 import Recaman.PermanentAboveCorridorPredecessorAdapter
+import Recaman.PermanentAboveCorridorPredecessorCrossing
 import Recaman.Examples
 import Recaman.Oracle

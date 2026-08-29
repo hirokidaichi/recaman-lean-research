@@ -455,6 +455,12 @@ negativeなら既存negative normal invariantを構成でき、それ以外は�
 predecessorは、first-occurrence provenanceに加え、その時刻からdischargeのcanonical returnまでのweak crossingを保持する。
 `firstTime=1`のときpredecessor時刻は0で座標が定義できないため、このinitial境界も正時刻の座標と分けて型に保持する。
 
+`PermanentAboveCorridorPredecessorCrossing`はbelow-target predecessorからfirst weak upcrossingを選ぶ。この時刻は保存済みの
+discharge return以下であり、従ってparent horizonより厳密に前である。仮想反例のtarget-missingによりendpointはtargetを
+strictに越え、post-crossing時刻の座標から既存`ReadyCrossingSearchInvariant`を構成できる。predecessor時刻が0でも
+post-crossing時刻は正なので追加base caseは不要である。新nodeは旧parentと同じhistory horizonを使うため、即時rank下降しない
+場合の残余は新crossing predecessor anchorが旧anchor以上という一条件に限られる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -564,6 +570,7 @@ predecessorは、first-occurrence provenanceに加え、その時刻からdischa
 | blocker生成遷移 | `TerminalHistoricalBlockerCertificate.generation` | `PermanentAboveCorridorBlockerGeneration.lean` |
 | normal/debt直結no-go | `TerminalHistoricalBlockerCertificate.semanticBoundary` | `PermanentAboveCorridorBlockerGeneration.lean` |
 | blocker predecessor semantic分類 | `TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome` | `PermanentAboveCorridorPredecessorAdapter.lean` |
+| below predecessor crossing接続 | `TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome` | `PermanentAboveCorridorPredecessorCrossing.lean` |
 
 ## 8. 結論
 
@@ -617,6 +624,9 @@ rank不等式ではなく、そのpredecessorを有効な次nodeとして選ぶs
 このadapterの最小形は完了し、above-target predecessorはnegative normalまたはclock/sign残余へ、below-target predecessorは
 first provenanceとfuture return付きhistorical certificateへ分類された。次の義務はbelow-target証明書からfuture returnを
 実際のrefined crossing childへ変換するか、initial predecessorを別のfinite base caseで閉じることである。
+このcrossing変換も完了し、initial predecessorはpost-crossing座標を使うことで同じ構成に吸収された。below-target枝は常に
+refined crossingへ入り、残る非進捗はcrossing anchor非下降だけである。次はこのanchor-growth枝を、blocker生成式または
+既存terminal balanceと組み合わせて排除・有限化・再度のstrict history progressへ接続する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
