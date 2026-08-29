@@ -391,6 +391,12 @@ canonical below corridorのlater fresh endpointから同じfirst return crossing
 内部legal subtractionのendpointへ移るとhistory budgetと`returnTime - endpointTime`が同時に下がる。
 このsuffix cursorは固定return内のlegal endpoint消費を有限化するが、outer crossing自体は変更しない。
 
+### legal return boundary / 合法減算return境界 — 研究固有
+
+below-target corridor内のlegal subtraction endpointがfirst return predecessorと一致する境界である。
+直後のforced additionとの二歩式は元source値`+1`を返し、weak upcross条件と合わせるとexact targetになる。
+従ってmissing-target仮定ではこの境界は不可能で、legal childはreturnより厳密に前に留まる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

@@ -368,3 +368,8 @@ import Recaman
 #print axioms Recaman.AllForcedAdditionSuffix.returnTime_lt_target
 #print axioms Recaman.CanonicalBelowCorridorSuffix.outcome
 #print axioms Recaman.CanonicalReturnRebaseCertificate.suffixOutcome
+#print axioms Recaman.legalSubtraction_forcedAddition_crossing_hits_target
+#print axioms Recaman.CanonicalBelowCorridorSuffix.internalSubtraction_ne_return
+#print axioms Recaman.CanonicalBelowCorridorSuffix.internalSubtraction_before_return
+#print axioms Recaman.CanonicalBelowCorridorSuffix.child_of_internalSubtraction_missing
+#print axioms Recaman.CanonicalReturnRebaseCertificate.legalSuffixChild_missingBoundary

@@ -388,6 +388,13 @@ history budgetを下げると同時に`returnTime - endpointTime`も厳密に下
 任意suffixはreturn自身、later legal endpoint、all-forced target-bounded suffixへ分類されるため、固定return内の
 legal endpoint消費は有限である。ただし固定したreturn crossingを変えないので、outer stationarityはなお残る。
 
+`PermanentAboveCorridorBoundary`はlegal endpointがreturn predecessorそのものになる場合を排除した。
+時刻`n`でlegal subtractionし、`n+1`でforced additionすると`a (n+2) = a n + 1`である。corridor内部の
+sourceはtarget未満で、return endpointはtarget以上だから、この二歩がreturn境界ならendpointはtargetに一致する。
+これはmissing-target仮定と矛盾する。従ってlegal child endpointは常にreturnより厳密に前であり、legal endpointを
+有限回消費した後のterminal suffixはall-forced枝に限られる。original historical endpointがreturnと等しい
+即時valleyはsourceがabove-targetなので、この排除とは別枝である。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -471,6 +478,9 @@ legal endpoint消費は有限である。ただし固定したreturn crossingを
 | legal endpoint suffix下降 | `CanonicalBelowCorridorSuffix.child_of_internalSubtraction` | `PermanentAboveCorridorSuffix.lean` |
 | suffix cursor well-founded | `corridorSuffixProgress_wellFounded` | `PermanentAboveCorridorSuffix.lean` |
 | suffix全分類 | `CanonicalBelowCorridorSuffix.outcome` | `PermanentAboveCorridorSuffix.lean` |
+| subtraction/addition exact target | `legalSubtraction_forcedAddition_crossing_hits_target` | `PermanentAboveCorridorBoundary.lean` |
+| legal child strict境界 | `CanonicalBelowCorridorSuffix.internalSubtraction_before_return` | `PermanentAboveCorridorBoundary.lean` |
+| missing-tail suffix縮約 | `CanonicalReturnRebaseCertificate.legalSuffixChild_missingBoundary` | `PermanentAboveCorridorBoundary.lean` |
 
 ## 8. 結論
 
@@ -504,6 +514,8 @@ stationary内部ではlegal subtractionがすべてbudgetを下げ、forced addi
 corridorを再走査することではなく、次回のhistorical dischargeを異なるendpointへ送ることである。
 固定return内のlegal endpoint列もsuffix cursorで有限化された。terminal all-forced suffixまたはreturn endpointから
 別のreturn crossingを生むhistorical choiceを構成することが、次の外側cycle義務である。
+legal endpointはreturnに到達できないため、post-legal terminalはall-forcedに狭まった。次はこのfinite strictly-growing
+suffixのfinal upcross算術、またはoriginal immediate historical valleyを外側anchor変化へ接続する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

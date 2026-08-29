@@ -91,5 +91,6 @@ import Recaman.PermanentAboveCycleRebase
 import Recaman.PermanentAboveCorridor
 import Recaman.PermanentAboveCorridorRank
 import Recaman.PermanentAboveCorridorSuffix
+import Recaman.PermanentAboveCorridorBoundary
 import Recaman.Examples
 import Recaman.Oracle

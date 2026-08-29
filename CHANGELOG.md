@@ -29,7 +29,9 @@
 - all-forced runのreturn/gap上界、加算trace、strict growth、remaining-clock rankを証明
 - first returnのlater below suffix安定性を証明
 - legal endpoint移動をhistory-budgetとreturn-distanceの同時下降へ接続し、suffixを完全分類
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`と公理監査を追加
+- legal subtraction直後のforced upcrossがexact targetを打つことを証明
+- target-missing下でlegal endpointのreturn着地を排除し、post-legal terminalをall-forcedへ縮約
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

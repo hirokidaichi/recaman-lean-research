@@ -937,3 +937,14 @@ suffix内部のlegal subtractionは次時刻にfirst occurrenceを作る。そ�
 任意suffixをendpoint=return、later legal endpoint、all-forced suffixへ完全分類した。all-forcedでsuffixが非空なら
 return時刻はtarget未満である。これにより固定return crossing内のlegal endpoint選択は有限化された。
 一方、return crossing自体は固定したままなので、次の外側progressには別のhistorical dischargeが必要である。
+
+### 第二十四ラウンド：legal return境界のexact target
+
+既存の`a_sub_then_add_eq_succ`をcanonical return境界へ接続した。corridor内部のbelow-target sourceでlegal subtractionし、
+そのendpointがreturn predecessorなら、次のreturn stepはforced additionである。二歩後の値はsource値`+1`で、
+weak upcrossによりtarget以上、sourceのbelow性によりtarget以下となるため、exact targetに一致する。
+
+仮想permanent tailではtargetが未出なので、このlast legal subtractionは不可能である。
+`internalSubtraction_before_return`は全legal child endpointがreturnより厳密に前であることを返す。
+強化版child theoremはbudget下降、suffix cursor下降、strict endpoint境界を同時に保持し、さらに後続legal endpointが
+なければ残りsuffixがall-forcedであることを示す。これでpost-legal terminalの`at_return`枝を除去した。
