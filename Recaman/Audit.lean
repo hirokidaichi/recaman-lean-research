@@ -442,3 +442,7 @@ import Recaman
 #print axioms Recaman.ImmediateHistoricalValleyCertificate.coverageStep
 #print axioms Recaman.ImmediateHistoricalValleyCertificate.semanticOutcome
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalSemanticallyClosedOutcome
+#print axioms Recaman.terminalReturnSelectionProgress_wellFounded
+#print axioms Recaman.TerminalReturnSelectionState.select
+#print axioms Recaman.TerminalReturnFreshSelectionCertificate.laterProgress
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalReturnSelectedOutcome

@@ -511,6 +511,11 @@ semantic stepが同じ二分法を返す。従って旧clock/sign residualは不
 `CoverageStep`になる。既存canonical coverage theoremによりtarget出現またはsemantic phase-rank下降が得られる。従って
 insufficient-value subcertificateを保持していてもimmediate枝は残余ではない。
 
+`PermanentAboveCorridorReturnSelection`は最後のfinite return branchへ明示的selection stateを追加する。stateは未消費の
+`terminalReturnCandidates target`をlistで保持し、fresh selectionはcandidateをeraseするためlengthがstrict下降する。初期lengthは
+target以下でrelationはwell-foundedである。later selectionには既存remaining-clock rankも適用できる。candidateがglobal listには
+属するがremainingには無い場合だけをliteral revisitとして返し、未証明のsemantic no-revisit ruleを型境界にする。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -630,6 +635,7 @@ insufficient-value subcertificateを保持していてもimmediate枝は残余�
 | terminal installed total step | `PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome` | `PermanentAboveCorridorInstalledStep.lean` |
 | above predecessor complete closure | `TerminalOuterHistoricalBlockerCertificate.completeStepOutcome` | `PermanentAboveCorridorAboveClosure.lean` |
 | immediate valley semantic closure | `ImmediateHistoricalValleyCertificate.semanticOutcome` | `PermanentAboveCorridorImmediateClosure.lean` |
+| finite return selection state | `TerminalReturnSelectionState.select` | `PermanentAboveCorridorReturnSelection.lean` |
 
 ## 8. 結論
 
@@ -711,6 +717,9 @@ above-target predecessorのearly/ready両caseは既存complete semantic theorem�
 従ってterminal total stepで真に非progressとして残るのはfinite return candidateとimmediate insufficientの二つの数値枝だけである。
 immediate insufficientもexact +1 reboundからCoverageStepへ接続されsemanticに閉じた。これでterminal total outcomeに残る唯一の
 numeric branchは、長さtarget以下のexplicit listとwell-founded remaining-clock rankを持つfinite return candidateである。
+finite return branchにはremaining-list stateを追加し、各fresh selectionを別のwell-founded length rankへ接続した。従ってfresh
+candidateの無限選択は排除される。残る最小kernelは同じfinite return clockのliteral revisitであり、次は再訪時のwindow provenance
+からhistory/anchor/master progressを抽出する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
