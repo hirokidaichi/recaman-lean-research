@@ -445,6 +445,12 @@ finite insufficient residualのclock bandを明示列挙する`terminalReturnCan
 `List.range target`を`target < 2*(return+1)`でfilterし、長さはtarget以下である。候補を後のreturnへ移すと
 `target-return` rankが厳密下降するため、候補探索の有限性を直接表す。
 
+### historical blocker backtrack / 履歴blocker後退 — 研究固有
+
+positive blockerのfirst occurrence直前へhistory clockを戻すrank moveである。candidateが正なのでfirst timeは非零で、
+直前からfirst timeへmissing budgetが下がりseen budgetが増える。逆向きの選択は既存tail-cycle backtrack rankを
+厳密に下げる。残る条件は、そのpredecessor clockを意味的探索nodeとして選ぶprovenanceである。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

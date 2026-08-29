@@ -1025,3 +1025,15 @@ finite insufficient枝のbandを`terminalReturnCandidates target`として明示
 候補間でlater returnへ移るとこのrankは厳密下降する。最後にmaster outer residualのfinite insufficient constructorを
 candidate membershipへ変換し、残るnon-clock residualをimmediate insufficient、immediate historical、
 finite outer blockerの三形へ限定した。
+
+### 第三十二ラウンド：outer historical blocker backtrack
+
+immediate historicalとfinite outer blockerを`TerminalOuterHistoricalBlockerCertificate`へ統一した。positive candidateが
+time 0に初出することは`a 0 = 0`に反するためfirst timeは非零である。first-time predecessorからfirst timeへ
+`missingBelowCount`が厳密下降し、`seenBelowCount`が厳密増加する証明書を構成した。
+
+history探索の向きを逆に取ると、このseen gainは既存`TailCycleProgress`のstrict backtrack edgeになる。
+`tailCycleProgress_of_selected`はnext history timeを`firstTime-1`に選ぶ条件をtheorem statementへ明示する。
+またblocker first timeをoriginal down endpointと比較し、後ならoriginal endpointからstrict forward budget drop、
+以前ならouter-history residualへ分類した。残る不足はpredecessor clockのrankではなく、対応するsemantic search nodeを
+構成・選択するprovenanceである。

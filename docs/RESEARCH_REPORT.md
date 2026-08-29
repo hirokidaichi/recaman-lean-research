@@ -437,6 +437,12 @@ finite outer blockerの四形に限られる。
 `target-return`が厳密下降し、そのrelationはwell-foundedである。finite-list枝を分離した後のnon-clock residualは
 immediate insufficient、immediate historical、finite outer blockerの三形だけになる。
 
+`PermanentAboveCorridorOuterHistory`は二つのhistorical blocker枝を既存rankへ接続する。candidateが正でfirst occurrenceを
+持つためfirst timeは非零である。その直前からfirst timeへmissing budgetが厳密に減り、dual seen budgetが厳密に増える。
+従って次のhistory clockとして`firstTime-1`を選べば、既存tail-cycle backtrack rankは厳密下降する。さらにfirst timeが
+original down endpointより後なら、original endpointからもstrict missing-budget dropが得られる。残る境界は、数値的に
+得られたpredecessor clockを意味的historical search nodeとして選択するprovenanceである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -540,6 +546,9 @@ immediate insufficient、immediate historical、finite outer blockerの三形だ
 | finite return membership | `mem_terminalReturnCandidates_iff` | `PermanentAboveCorridorCandidates.lean` |
 | finite return rank | `terminalReturnCandidateProgress_wellFounded` | `PermanentAboveCorridorCandidates.lean` |
 | finite／non-clock分離 | `PermanentTailTerminalOuterResidual.finiteCandidate_or_nonClockResidual` | `PermanentAboveCorridorCandidates.lean` |
+| blocker backtrack証明書 | `TerminalHistoricalBlockerCertificate.backtrackCertificate` | `PermanentAboveCorridorOuterHistory.lean` |
+| blocker tail-cycle edge | `TerminalHistoricalBacktrackCertificate.tailCycleProgress_of_selected` | `PermanentAboveCorridorOuterHistory.lean` |
+| non-clock rank分類 | `PermanentTailTerminalNonClockResidual.rankOutcome` | `PermanentAboveCorridorOuterHistory.lean` |
 
 ## 8. 結論
 
@@ -586,6 +595,8 @@ final forced reasonへ接続し、有限double-clock枝またはstrictly earlier
 この四形、特に二つのhistorical blocker枝とfinite clock bandの外側下降に限定される。
 finite clock bandは明示候補listとwell-founded later-return rankへ変換された。従って数値枝の残務は再訪時にlater
 candidateを強制するselection provenanceであり、非clock側は三constructorに限定された。
+historical blocker二枝には初出直前へのstrict tail-cycle rank edgeが存在することも証明した。従ってhistory側の残務は
+rank不等式ではなく、そのpredecessorを有効な次nodeとして選ぶsemantic provenanceに限定された。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

@@ -230,10 +230,13 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 33. ~~finite clock bandをtarget-indexedな明示候補listへ変換する。~~
 34. ~~候補数≤targetとlater-return well-founded rankを証明する。~~
 35. ~~finite candidate枝を分離し、non-clock residualを三形へ限定する。~~
+36. ~~positive historical blockerから初出直前のstrict missing/seen budget edgeを抽出する。~~
+37. ~~blocker predecessor選択を既存tail-cycle rank下降へ接続する。~~
+38. ~~blocker時刻をoriginal endpoint前後で分類し、後枝のforward budget下降を証明する。~~
 
 次の調査順序は次である。
 
-1. immediate historical／finite outer blockerをouter cycleのseen/minimum rankへ接続する。
+1. blocker predecessorを意味的historical search nodeとして選ぶprovenanceを構成する。
 2. finite candidate再訪でlater returnを強制するselection provenanceを設計する。
 3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。

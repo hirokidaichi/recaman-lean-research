@@ -45,7 +45,10 @@
 - finite clock bandを長さtarget以下の明示return候補listへ変換
 - later candidateで`target-return`が厳密下降するwell-founded rankを構成
 - finite candidate枝を除くnon-clock outer residualを三形へ限定
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`、`PermanentAboveCorridorCandidates`と公理監査を追加
+- positive historical blockerの初出直前でstrict missing-drop／seen-gainを証明
+- blocker predecessor選択を既存tail-cycle backtrack rank下降へ接続
+- blockerをoriginal endpoint以前またはforward budget progressへ分類
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`、`PermanentAboveCorridorCandidates`、`PermanentAboveCorridorOuterHistory`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

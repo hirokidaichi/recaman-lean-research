@@ -397,3 +397,7 @@ import Recaman
 #print axioms Recaman.terminalReturnCandidates_length_le
 #print axioms Recaman.terminalReturnCandidateProgress_wellFounded
 #print axioms Recaman.PermanentTailTerminalOuterResidual.finiteCandidate_or_nonClockResidual
+#print axioms Recaman.TerminalHistoricalBlockerCertificate.backtrackCertificate
+#print axioms Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress
+#print axioms Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress_of_selected
+#print axioms Recaman.PermanentTailTerminalNonClockResidual.rankOutcome
