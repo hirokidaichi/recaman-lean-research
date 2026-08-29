@@ -506,6 +506,11 @@ first-occurrence直前のactual nodeは`OrbitReadyNormalCertificate`となり、
 持つ。clockがearlyなら同じactual valueをold ready horizonに置いた`EarlyRepresentativeCertificate`を構成でき、そのcomplete
 semantic stepが同じ二分法を返す。従って旧clock/sign residualは不要となり、above枝は完全に局所閉包された。
 
+`PermanentAboveCorridorImmediateClosure`はimmediate terminal valleyをfinite clockへ押し込めずsemanticに閉じる。exact reboundは
+二歩後の値がsource値+1であることを言う。sourceはtargetより上なので、そのfirst occurrenceを再選択するとpost-rebound値に対する
+`CoverageStep`になる。既存canonical coverage theoremによりtarget出現またはsemantic phase-rank下降が得られる。従って
+insufficient-value subcertificateを保持していてもimmediate枝は残余ではない。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -624,6 +629,7 @@ semantic stepが同じ二分法を返す。従って旧clock/sign residualは不
 | installed master rank | `BelowTargetHistoricalPredecessorCertificate.masterRankOutcome` | `PermanentAboveCorridorMasterRank.lean` |
 | terminal installed total step | `PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome` | `PermanentAboveCorridorInstalledStep.lean` |
 | above predecessor complete closure | `TerminalOuterHistoricalBlockerCertificate.completeStepOutcome` | `PermanentAboveCorridorAboveClosure.lean` |
+| immediate valley semantic closure | `ImmediateHistoricalValleyCertificate.semanticOutcome` | `PermanentAboveCorridorImmediateClosure.lean` |
 
 ## 8. 結論
 
@@ -703,6 +709,8 @@ typed historical stepへ分類された。historical below枝はinstalled master
 再訪選択、immediate insufficientの外側処理、above-target predecessorのearly/nonnegative条件である。
 above-target predecessorのearly/ready両caseは既存complete semantic theoremへ接続され、potential sign residualは消えた。
 従ってterminal total stepで真に非progressとして残るのはfinite return candidateとimmediate insufficientの二つの数値枝だけである。
+immediate insufficientもexact +1 reboundからCoverageStepへ接続されsemanticに閉じた。これでterminal total outcomeに残る唯一の
+numeric branchは、長さtarget以下のexplicit listとwell-founded remaining-clock rankを持つfinite return candidateである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

@@ -439,3 +439,6 @@ import Recaman
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
 #print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.completeStepOutcome
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalCompleteInstalledOutcome
+#print axioms Recaman.ImmediateHistoricalValleyCertificate.coverageStep
+#print axioms Recaman.ImmediateHistoricalValleyCertificate.semanticOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalSemanticallyClosedOutcome

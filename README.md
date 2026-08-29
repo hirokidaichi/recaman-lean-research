@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース117モジュール
+- Leanソース118モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -91,6 +91,7 @@ Lean 4形式化プロジェクトです。
 - installed反復kernelのhistory/anchor/cursor/restart進捗を七成分master well-founded rankへ統合済み
 - 全terminal dischargeをstrict history進捗・finite clock・immediate numeric・typed installed historical stepへ統合済み
 - above-target blocker predecessorのearly/ready両clockを既存complete semantic stepへ接続しsign残余を除去済み
+- immediate terminal valleyのexact +1 reboundからCoverageStepを構成しnumeric insufficient残余を除去済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
