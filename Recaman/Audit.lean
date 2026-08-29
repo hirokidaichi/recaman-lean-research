@@ -390,3 +390,5 @@ import Recaman
 #print axioms Recaman.NormalizedTerminalCrossingData.blockerOutcome
 #print axioms Recaman.TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalBlockerOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalResidual
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerResidual

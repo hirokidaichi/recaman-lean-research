@@ -433,6 +433,12 @@ historical blockerのfirst occurrenceとnormalized final fresh endpointの順序
 新しいbelow-target first occurrenceなので`missingBelowCount`が厳密下降する。fresh以前なら既存outer historyとして残る。
 immediate valleyではfresh=returnかつfirst time<returnなので、必ずfresh以前枝になる。
 
+### master terminal residual / 主終端残余 — 研究固有
+
+terminal shape、strict balance、forced reason、blocker positionを一つに統合したexhaustive outcomeである。
+fresh以後のblockerはstrict budget progressとして分離され、残るouter residualはimmediate二形、有限clock band、
+finite outer blockerの四形だけになる。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

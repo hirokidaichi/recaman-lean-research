@@ -40,7 +40,9 @@
 - final forced additionをdouble-clock数値境界またはstrictly earlier historical blockerへ分類
 - historical blockerがfreshより後ならstrict history-budget drop、以前ならouter historyとなる位置分類を証明
 - immediate valleyではblockerが必ずfresh endpointより前になることを証明
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`と公理監査を追加
+- terminal解析をmaster residualへ統合し、strict budget progressを除くouter residualを四形へ限定
+- finite insufficient枝を`return < target < 2*(return+1)`のclock bandへ縮約
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

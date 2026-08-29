@@ -426,6 +426,11 @@ first timeがfreshより後なら、candidateはbelow-targetのfirst occurrence�
 immediate valleyではfresh endpointがreturn predecessorそのもので、blocker first timeはreturnより前だから、
 必ずouter-history枝に入る。
 
+`PermanentAboveCorridorResidual`はterminal shapeからblocker positionまでの全case splitをmaster outcomeへ統合した。
+finite insufficient枝では`return < target < 2*(return+1)`を一証明書に保持する。finite-after blockerはstrict budget
+progressとして分離できるため、真のouter residualはimmediate insufficient、immediate historical、finite insufficient、
+finite outer blockerの四形に限られる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -524,6 +529,8 @@ immediate valleyではfresh endpointがreturn predecessorそのもので、block
 | discharge blocker adapter | `PermanentTailDischargeReturnCertificate.terminalForcedReason` | `PermanentAboveCorridorBlocker.lean` |
 | blocker位置分類 | `NormalizedTerminalCrossingData.blockerOutcome` | `PermanentAboveCorridorBlockerPosition.lean` |
 | immediate blocker順序 | `TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint` | `PermanentAboveCorridorBlockerPosition.lean` |
+| master terminal分類 | `PermanentTailDischargeReturnCertificate.terminalResidual` | `PermanentAboveCorridorResidual.lean` |
+| budget progress／outer residual | `PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerResidual` | `PermanentAboveCorridorResidual.lean` |
 
 ## 8. 結論
 
@@ -566,6 +573,8 @@ final forced reasonへ接続し、有限double-clock枝またはstrictly earlier
 次はblocker first timeとfinal fresh endpointの順序を外側anchor下降または新しいfreshness条件へ接続することが義務である。
 この順序分類も完了し、freshより後はstrict budget progressになった。従って残るhistory枝はfresh以前のouter blockerに
 限られる。次はこのblockerを既存のseen/minimum cycle rankへ接続することが義務である。
+全terminal caseの統合も完了し、budget progressを除くouter residualは四constructorになった。次の研究対象は
+この四形、特に二つのhistorical blocker枝とfinite clock bandの外側下降に限定される。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

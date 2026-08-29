@@ -1004,3 +1004,13 @@ strictly-after枝ではblocker candidateがtarget未満でfirst occurrenceを持
 直接適用し、fresh時点からfirst timeへのstrict budget dropを得た。at-or-before枝はouter historical provenanceとして
 残す。immediate valleyはfresh endpoint=returnで、全historical blockerがfirst time<returnを満たすため、after枝を
 取らない。この結果、未解決のhistorical blocker residualはfresh以前に限定された。
+
+### 第三十ラウンド：master terminal residual
+
+terminal shape、strict balance、forced reason、blocker positionのcase splitを`PermanentTailTerminalResidual`へ統合した。
+immediate枝はinsufficient／historicalの二形、finite window枝はinsufficient／outer blocker／budget progressの三形を持つ。
+finite insufficientには`return < target < 2*(return+1)`のclock bandを保持する。
+
+`terminalBudgetProgress_or_outerResidual`はfinite-after blocker constructorをstrict `missingBelowCount`下降として左辺へ
+分離する。右辺に残る真のouter residualはimmediate insufficient、immediate historical、finite insufficient、
+finite outer blockerの四constructorだけである。後続研究はこの四形に対してのみouter rank下降を構成すればよい。
