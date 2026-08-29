@@ -183,6 +183,7 @@ import Recaman.TrivialityProbe
 import Recaman.PinnedConfigurationAttack
 import Recaman.PinnedForwardOrbit
 import Recaman.TailStartHorizonBound
+import Recaman.PinnedBackwardStep
 import Recaman.TrivialityProbeTwo
 import Recaman.OrbitComb
 import Recaman.OrbitCombWitness

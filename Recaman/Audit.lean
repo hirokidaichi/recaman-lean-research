@@ -763,3 +763,9 @@ import Recaman
 #print axioms Recaman.tailStart_le_of_minimal
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.tailStart_pinned_of_minimal
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.tailStart_replaceable
+#print axioms Recaman.PinnedTailMinimumConfiguration.backward_two_steps
+#print axioms Recaman.PinnedTailMinimumConfiguration.not_add_then_subtract
+#print axioms Recaman.PinnedTailMinimumConfiguration.backward_trichotomy
+#print axioms Recaman.PinnedTailMinimumConfiguration.backward_value_ne_target
+#print axioms Recaman.PinnedTailMinimumConfiguration.middle_row_forbids_late_minimum
+#print axioms Recaman.PinnedTailMinimumConfiguration.middle_row_pins_minimum_time
