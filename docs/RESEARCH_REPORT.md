@@ -557,6 +557,10 @@ all-forced traceとendpointのfirst-occurrence性によりendpoint time/valueは
 従ってmissing targetは`a 2=3`と`a 3=6`の間の4または5だが、kernel計算で`a 131=4`, `a 129=5`を確認できる。finite certificateは
 target-missingに矛盾し、conditional resolverは無条件定理となった。terminal total classificationからfinite numeric branch自体が消える。
 
+`PermanentAboveCorridorTerminalProgress`は残る三terminal shapeを四つの最終結果へ平坦化する。immediate semanticのtarget/phase枝、
+historical completeのtarget/early/ready/below枝、below masterのphase/master枝を展開し、target occurrence、strict chronology history、
+semantic phase progress、installed master progressだけを返す。semantic edgeには元のdischarge parentとは限らない実local parentを保存する。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -694,6 +698,7 @@ target-missingに矛盾し、conditional resolverは無条件定理となった�
 | finite endpoint/return rigidity | `TerminalFiniteReturnWindowCertificate.endpoint_return_eq` | `PermanentAboveCorridorFiniteClosure.lean` |
 | finite branch contradiction | `TerminalFiniteReturnWindowCertificate.false` | `PermanentAboveCorridorFiniteClosure.lean` |
 | finite-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome` | `PermanentAboveCorridorFiniteClosure.lean` |
+| terminal four-progress outcome | `PermanentTailDischargeReturnCertificate.terminalProgressOutcome` | `PermanentAboveCorridorTerminalProgress.lean` |
 
 ## 8. 結論
 
@@ -790,6 +795,8 @@ history progressへ戻す再帰的selection stateの統合である。
 list-only矛盾は実際に不可能であることがno-go theoremで確認された。従って次の研究対象はexact canonical segmentそのものから既存四種の
 progressのどれかを抽出するresolverであり、データ構造の追加ではない。このresolverはfinite-window剛性により無条件に解決され、
 finite branchは到達不能と証明された。残るterminal outcomeはstrict history、immediate semantic、historical completeの三形だけである。
+この三形も全展開され、target occurrenceまたは三種類の既存well-founded strict edgeへ統合された。次の統合課題はlocal semantic parentや
+installed master nodeをglobal search recursionの単一stateへ埋め込むことであり、terminal case analysis自体には残余がない。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

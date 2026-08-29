@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース127モジュール
+- Leanソース128モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -101,6 +101,7 @@ Lean 4形式化プロジェクトです。
 - canonical visited stateをterminal全分岐へthreadし、finite枝をstrict state progress／exact revisitへ直接分解済み
 - exact replayがvisited list単独では排除不能なno-goを証明し、残務を単一resolver interfaceへ集約済み
 - finite insufficient windowを`endpoint=1, return=2, target∈{4,5}`へ縮約し、実軌道出現により完全排除済み
+- terminal全枝をtarget occurrence／strict history／semantic phase／installed masterの四progress形へ完全統合済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -160,6 +161,9 @@ terminal total outcomeが得られることも証明済みです。
 直前値≤1、fresh first-occurrenceとall-forced traceから`terminalEndpoint=1`かつ`returnTime=2`が強制されます。strict crossingは
 `3<target<6`なのでtargetは4または5ですが、Lean kernel計算で`a 131=4`、`a 129=5`です。missing-targetと矛盾するため、finite branchと
 exact replay branchはともにterminal classificationから完全に除去されました。
+残ったimmediate/historical枝も内側の既存定理を展開し、最終的な`terminalProgressOutcome`へ平坦化しました。これはtargetの実出現、
+`TerminalChronologyHistoryProgress`、`PhaseSearchProgress`を伴うsemantic child、`TailInstalledCycleProgress`の四constructorだけを持ちます。
+early/ready/immediate/selected-crossingで比較対象が違うため、semantic枝は実際のlocal parentを明示的に保存しています。
 stationary core内部も解析し、fresh downcross endpointから最初のreturn predecessorまでの全値がtarget未満で
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が

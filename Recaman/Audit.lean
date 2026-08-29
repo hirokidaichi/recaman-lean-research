@@ -492,3 +492,4 @@ import Recaman
 #print axioms Recaman.TerminalFiniteReturnWindowCertificate.false
 #print axioms Recaman.terminalExactCanonicalReplayResolver
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalProgressOutcome
