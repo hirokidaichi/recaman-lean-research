@@ -545,3 +545,6 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.target_split
 #print axioms Recaman.CombRun.mem_valuesThrough_iff
 #print axioms Recaman.CombRun.fresh_below_transport
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.crossingTime_eq_six_or_eight_of_nineteen
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.six_replay_pins
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.eight_replay_pins
