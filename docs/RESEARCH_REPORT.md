@@ -495,6 +495,12 @@ minimum valueである。chronology、growth、equal-anchor earlier-time、stati
 第四成分をstrictに下げる。このrelationはwell-foundedである。anchor decreaseだけはgrowthと逆向きなのでmaster recurrenceには
 入れず、既存`PhaseSearchProgress`へのglobal exitとしてtotal outcomeの別constructorに保持する。
 
+`PermanentAboveCorridorInstalledStep`はdischarge-level terminal classificationを一つのtotal theoremへ集約する。finite corridor内の
+fresh-after blockerとold-crossing chronology mismatchはstrict history edge、finite insufficientは明示return候補、immediate
+insufficientは算術残余として返る。eligible historical blockerは生成predecessorをnormal-ready、above-target clock/sign residual、
+below-target installed master stepへ分類する。below master outcomeはselected crossing certificateを保持し、そこから次の
+permanent-tail combined parentを必ずinstallできる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -611,6 +617,7 @@ minimum valueである。chronology、growth、equal-anchor earlier-time、stati
 | selected crossing install | `TerminalSelectedCrossingInstallCertificate.exists_nextDischarge` | `PermanentAboveCorridorSelectedInstall.lean` |
 | installed chronology下降 | `TerminalSelectedCrossingDischargeCertificate.iterationProgress` | `PermanentAboveCorridorChronologyRank.lean` |
 | installed master rank | `BelowTargetHistoricalPredecessorCertificate.masterRankOutcome` | `PermanentAboveCorridorMasterRank.lean` |
+| terminal installed total step | `PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome` | `PermanentAboveCorridorInstalledStep.lean` |
 
 ## 8. 結論
 
@@ -685,6 +692,9 @@ budget下降へ進む。次の統合課題はこれら複数rankの優先順序�
 七成分master rankにより反復kernelの全progressは一つのwell-founded relationへ統合された。anchor decreaseはglobal phase exitとして
 分離される。残る本質的作業は、このmaster nodeとinstalled semantic certificateを一つの再帰的search stateに束ね、各回のterminal
 shapeから次のblocker/finite-clock/insufficient枝までを再生成するtotal step theoremである。
+discharge-level total stepも完成し、terminal全枝はstrict history progress、finite return candidate、immediate insufficient、または
+typed historical stepへ分類された。historical below枝はinstalled master stateを保持する。残る主要residualはfinite return candidateの
+再訪選択、immediate insufficientの外側処理、above-target predecessorのearly/nonnegative条件である。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

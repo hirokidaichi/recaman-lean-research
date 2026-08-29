@@ -434,3 +434,6 @@ import Recaman
 #print axioms Recaman.tailInstalledCycleProgress_wellFounded
 #print axioms Recaman.BelowTargetHistoricalPredecessorCertificate.masterRankOutcome
 #print axioms Recaman.TerminalSelectedCrossingChronologyProgressCertificate.masterProgress
+#print axioms Recaman.TerminalOuterHistoricalBlockerCertificate.installedStepOutcome
+#print axioms Recaman.TerminalBelowPredecessorMasterRankOutcome.exists_install
+#print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome
