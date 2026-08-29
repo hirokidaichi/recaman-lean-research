@@ -123,5 +123,6 @@ import Recaman.PermanentAboveCorridorReplayBoundary
 import Recaman.PermanentAboveCorridorFiniteClosure
 import Recaman.PermanentAboveCorridorTerminalProgress
 import Recaman.PermanentAboveCorridorTerminalSuccessor
+import Recaman.PermanentAboveCorridorSuccessorRank
 import Recaman.Examples
 import Recaman.Oracle

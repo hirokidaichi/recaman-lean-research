@@ -565,6 +565,11 @@ semantic phase progress、installed master progressだけを返す。semantic ed
 selected crossingをsemantic parentへinstallし、既存theoremでそのparent上のnext discharge certificateを構成する。outcomeはcrossing、
 install、`Nonempty nextDischarge`、strict master edgeを同梱し、反復時にcrossing identityやold timeを再び失わない。
 
+`PermanentAboveCorridorSuccessorRank`はsuccessor反復のためのdischarge-level rankを定義する。master rankの内側cursorは各解析の
+blocker first timeに縛られ連続する二解析間で比較できないが、共有horizon・installed anchor・old crossing cursorの三成分は
+installationで正確に輸送される。terminal dischargeはtarget出現、既存history/semantic edge、この三成分lexの厳密下降を伴う
+successor discharge、またはanchor・cursorとも一致しrankが不動になるexact replay証明書のいずれかを返す。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -704,6 +709,7 @@ install、`Nonempty nextDischarge`、strict master edgeを同梱し、反復時�
 | finite-free terminal outcome | `PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome` | `PermanentAboveCorridorFiniteClosure.lean` |
 | terminal four-progress outcome | `PermanentTailDischargeReturnCertificate.terminalProgressOutcome` | `PermanentAboveCorridorTerminalProgress.lean` |
 | successor-carrying terminal outcome | `PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome` | `PermanentAboveCorridorTerminalSuccessor.lean` |
+| discharge iteration rank outcome | `PermanentTailDischargeReturnCertificate.terminalIterationOutcome` | `PermanentAboveCorridorSuccessorRank.lean` |
 
 ## 8. 結論
 
@@ -804,6 +810,8 @@ finite branchは到達不能と証明された。残るterminal outcomeはstrict
 installed master nodeをglobal search recursionの単一stateへ埋め込むことであり、terminal case analysis自体には残余がない。
 installed master childからnext dischargeへのsemantic provenanceも同梱されたため、残る統合点はhistory/semantic progress枝のcontinuationと
 master successor反復を一つのwell-founded recursion theoremへまとめることである。
+successor反復自体は三成分discharge rankで整列された。連続する二解析のmaster nodeは内側cursorが比較不能だが、輸送可能な
+horizon・anchor・old crossing成分だけで反復は厳密に下降し、残る非進捗は同anchor同cursorのexact replay固定点に限られる。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
