@@ -356,3 +356,9 @@ import Recaman
 #print axioms Recaman.CanonicalBelowCorridorCertificate.internalSubtraction_budgetDrop
 #print axioms Recaman.CanonicalBelowCorridorCertificate.internalForced_clockBelowTarget
 #print axioms Recaman.CanonicalBelowCorridorCertificate.internalStep_budgetDrop_or_clockBound
+#print axioms Recaman.AllForcedAdditionCorridor.returnTime_lt_target
+#print axioms Recaman.AllForcedAdditionCorridor.value_eq_add_forcedClockSum
+#print axioms Recaman.AllForcedAdditionCorridor.value_strictMono
+#print axioms Recaman.corridorClockProgress_wellFounded
+#print axioms Recaman.CanonicalBelowCorridorCertificate.delayedOutcome
+#print axioms Recaman.CanonicalReturnRebaseCertificate.corridorOutcome

@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース95モジュール
+- Leanソース96モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -64,6 +64,8 @@ Lean 4形式化プロジェクトです。
 - 任意のdischarge residualがrebase後にliteral stationary coreへ正規化されるno-goを証明済み
 - stationary coreのdowncross endpointからcanonical returnまで全値がtarget未満と証明済み
 - corridor内部stepをfresh budget dropまたはtarget-bounded clockへ完全分類済み
+- delayed corridorをinternal budget dropまたはall-forced有限runへ完全分類済み
+- all-forced runのreturn時刻上界・加算トレース・remaining-clock rankを証明済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -101,6 +103,9 @@ stationary core内部も解析し、fresh downcross endpointから最初のretur
 あることを証明しました。即時returnは`above x → fresh e → x+1`という厳密な谷形です。遅延returnの
 各内部stepは、legal subtractionなら新しいbelow値によるbudget下降、forced additionなら絶対時刻が
 `target`未満という有限境界を持ちます。次の焦点は、この有限corridor情報をvisited rankへ統合することです。
+all-forcedの場合はさらにreturn時刻自体が`target`未満で、値はclock和に従って厳密増加します。
+`target - time`のwell-founded rankでcorridor traversalは有限化できました。ただしreturn後は同じcanonical
+crossingへ戻るため、これは外側cycle exitではありません。残る核心は次のhistorical dischargeを変えることです。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -120,8 +125,9 @@ flowchart TD
     M --> N["crossing-time cursor：証明済み"]
     N --> O["canonical rebase：証明済み"]
     O --> P["stationary below corridor：分類済み"]
-    P --> Q["finite visited rank：未解決"]
-    Q --> R["全射性：未証明"]
+    P --> Q["corridor finite rank：証明済み"]
+    Q --> R["alternate discharge：未解決"]
+    R --> S["全射性：未証明"]
 ```
 
 ## 文書

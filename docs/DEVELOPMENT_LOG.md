@@ -909,3 +909,17 @@ gap正では最初の内部transitionを二分した。合法減算なら次値�
 `missingBelowCount`を厳密に下げる。forced additionなら次値もbelowであるため、加えるclock自体が
 `d+2 < target`を満たす。この二分法を任意の内部transitionへ一般化し、legalならbudget drop、forcedなら
 `time+1 < target`を証明した。budget不変なall-addition部分は固定target未満の有限clock領域に閉じ込められる。
+
+### 第二十二ラウンド：all-forced corridorの有限rank
+
+内部legal subtractionを一つも持たない場合を`AllForcedAdditionCorridor`として定義した。delayed corridorの
+最後の内部timeにもforced clock boundが適用できるため、`returnTime < target`とgapのtarget-relative上界が従う。
+
+各stepの加算clockを足す`forcedClockSum`を定義し、all-forced runの軌道値が開始値とclock和の和に一致する
+telescoping式を帰納法で証明した。従ってrun内の値は厳密増加する。さらに`target - time`を残りclockとする
+`CorridorClockProgress`を定義し、自然数順序へのpullbackとしてwell-foundednessを証明した。target未満の
+forward stepはこのrankを厳密に下げる。
+
+最後に任意のdelayed corridorを、internal legal subtractionとstrict budget drop、またはall-forced runと
+return/gap boundへ分類した。rebased stationary certificateからもこのoutcomeを直接得られる。ただしremaining-clock
+rankはreturnへ到達する有限segmentだけを閉じ、returnから同じparent crossingへ戻るedgeは下げない。

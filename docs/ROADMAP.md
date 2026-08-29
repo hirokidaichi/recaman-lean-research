@@ -205,13 +205,16 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 8. ~~stationary endpointからfirst return predecessorまで全状態がbelow-targetであることを証明する。~~
 9. ~~即時returnをexact valley equation、遅延returnをbudget drop／clock boundへ分類する。~~
 10. ~~任意のcorridor内部stepに同じbudget drop／target-bounded clock分類を証明する。~~
+11. ~~delayed corridorをinternal legal subtractionまたはall-forced runへ完全分類する。~~
+12. ~~all-forced runで`returnTime < target`、gap上界、加算trace、値の厳密増加を証明する。~~
+13. ~~`target - time`のwell-founded corridor cursorとstrict forward stepを証明する。~~
 
 次の調査順序は次である。
 
-1. target未満に境界づけられたforced clockを有限visited量として設計する。
-2. corridor内の最初のlegal subtractionをcanonicalに選び、budget下降へ直接接続する。
-3. legal subtractionがないall-addition corridorの値公式と長さ上界を証明する。
-4. 即時valleyの再訪が強制するfirst-occurrenceまたはanchor算術をtyped residualにする。
+1. corridor内legal subtractionのstrict budget下降を、outer cycleのhistorical budgetへ接続する。
+2. all-forced run終了後に同じcrossingへ戻る際、別のhistorical minimum／downcrossをcanonicalに選ぶ。
+3. 即時valleyの再訪が強制するfirst-occurrenceまたはanchor算術をtyped residualにする。
+4. 使用済みdowncross endpointを除外する有限visited setまたは最小未使用cursorを設計する。
 5. corridor rankをcursor-refined cycleとrefined oracleへ統合する。
 
 ### 完了条件

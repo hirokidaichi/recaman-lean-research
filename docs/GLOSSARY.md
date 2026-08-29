@@ -379,6 +379,12 @@ fresh historical downcross endpointから、その後最初のweak upcrossingの
 canonicalityにより全値がtarget未満になる。内部の合法減算はfresh below値とhistory-budget下降を作り、
 forced additionはそのstep clockがtarget未満であることを強制する。即時returnはexact valleyになる。
 
+### all-forced addition corridor / 全強制加算回廊 — 研究固有
+
+canonical below corridorの内部transitionがすべてforced additionである場合である。遅延runではreturn時刻が
+target未満になり、値は追加clockの総和に従って厳密増加する。`target - time`がwell-foundedなremaining-clock
+rankを与えるが、これは有限corridor traversal用であり、外側stationary cycleのexitではない。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

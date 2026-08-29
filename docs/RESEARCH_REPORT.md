@@ -374,6 +374,13 @@ downcrossは合法減算、returnはforced additionなので`a (d+2) = a d + 1`�
 forced additionならbelow状態を保つためstep clockがtarget未満になる。従ってstationary corridorの内部は、
 既存history budgetによるstrict stepと、固定targetに依存する有限clock領域へ分離された。
 
+`PermanentAboveCorridorRank`は後者を`AllForcedAdditionCorridor`として閉じた。遅延runの最終internal stepも
+forcedなので、一般clock boundから`returnTime < target`とtarget-relative gap上界が従う。run上の値は
+`forcedClockSum`で表すtelescoping加算式を満たし、時刻とともに厳密増加する。`target - time`をrankとする
+`CorridorClockProgress`はwell-foundedである。さらに任意のdelayed corridorは、どこかのlegal subtractionと
+strict budget drop、またはall-forced有限runのどちらかに完全分類された。これはcorridor内部の無限滞留を
+排除するが、return crossingから同じrebased parentへ戻るouter stationary edgeは別問題として残す。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -449,6 +456,10 @@ forced additionならbelow状態を保つためstep clockがtarget未満にな�
 | canonical corridor below性 | `FirstWeakUpcrossingStep.value_below_of_between` | `PermanentAboveCorridor.lean` |
 | corridor first-step分類 | `CanonicalBelowCorridorCertificate.firstStepOutcome` | `PermanentAboveCorridor.lean` |
 | corridor内部strict代替 | `CanonicalBelowCorridorCertificate.internalStep_budgetDrop_or_clockBound` | `PermanentAboveCorridor.lean` |
+| all-forced return上界 | `AllForcedAdditionCorridor.returnTime_lt_target` | `PermanentAboveCorridorRank.lean` |
+| all-forced加算trace | `AllForcedAdditionCorridor.value_eq_add_forcedClockSum` | `PermanentAboveCorridorRank.lean` |
+| corridor clock rank | `corridorClockProgress_wellFounded` | `PermanentAboveCorridorRank.lean` |
+| delayed corridor全分類 | `CanonicalBelowCorridorCertificate.delayedOutcome` | `PermanentAboveCorridorRank.lean` |
 
 ## 8. 結論
 
@@ -478,6 +489,8 @@ canonical rebaseは前二者をliteral stationaryへ正規化できるが、そ�
 従って次の本質は、同じendpoint／crossing対を再利用しない履歴選択またはvisited量の構成である。
 stationary内部ではlegal subtractionがすべてbudgetを下げ、forced additionの時刻はtarget未満に有限化された。
 次のrank候補は、この有限clockをvisited cursorとしてbudgetの内側またはcycle phaseに統合することである。
+このcursorで有限segment自体は閉じたが、同じcanonical returnへの復帰は依然stationaryである。次の義務は
+corridorを再走査することではなく、次回のhistorical dischargeを異なるendpointへ送ることである。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。
