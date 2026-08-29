@@ -42,6 +42,7 @@ structure PermanentTailDischargeReturnCertificate
   return_crossing : FirstWeakUpcrossingStep target (downTime + 1) returnTime
   return_before_tail : returnTime + 1 ≤ tailStart
   old_crossing : WeakUpcrossingStep target 0 oldCrossingTime
+  old_crossing_before_horizon : oldCrossingTime + 1 < parent.horizon
   parent_anchor_eq : parent.anchorParent = a oldCrossingTime
 
 /-- The finite historical descent and least-upcrossing theorem assemble into
@@ -94,6 +95,7 @@ theorem PermanentTailCombinedCertificate.exists_dischargeReturnCertificate
     return_crossing := hreturn
     return_before_tail := hreturnBefore
     old_crossing := holdCrossing
+    old_crossing_before_horizon := hold.recovery.crossing_before_horizon
     parent_anchor_eq := hparentAnchor
   }⟩
 

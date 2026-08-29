@@ -522,6 +522,16 @@ target以下でrelationはwell-foundedである。later selectionには既存rem
 この精密化により同clockの別endpointは再訪とみなされない。literal revisitは同じwindow区間まで一致する場合に限られ、残る義務は
 過去と現在のinstalled parent anchor／old crossing cursorを比較できるsemantic snapshot provenanceである。
 
+`PermanentAboveCorridorWindowSnapshot`はそのsemantic snapshotを実装する。history budget、anchor gap、old crossing timeからなる
+master prefixを二 occurrence間で比較し、current strict下降、stored strict下降、prefix完全一致へ分類する。reverse下降が存在し得るため、
+単に過去snapshotを保存するだけではforward iteration rankにならない。一方、dischargeの三つの構築箇所はいずれもold crossingが
+parent horizonより前であることを既に証明していたため、この事実を基礎証明書へ追加し全経路で保存した。
+
+`PermanentAboveCorridorInstalledWindowSelection`は固定horizonをparameterにし、window interval、parent anchor、old crossing timeを
+一つの有限keyへまとめる。各座標はそれぞれ`endpoint < return < target`、`anchor < target`、`oldCrossingTime < horizon`で有界である。
+fresh full keyはremaining listからeraseされるため、master prefixの向きに依存せずwell-founded selection progressになる。
+最終residualは同一horizonでwindow・anchor・old crossing timeがすべて一致するexact installed snapshot revisitである。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -644,6 +654,9 @@ target以下でrelationはwell-foundedである。later selectionには既存rem
 | finite return selection state | `TerminalReturnSelectionState.select` | `PermanentAboveCorridorReturnSelection.lean` |
 | finite window key membership | `TerminalFiniteReturnWindowCertificate.key_mem` | `PermanentAboveCorridorWindowSelection.lean` |
 | finite window selection state | `TerminalReturnWindowSelectionState.select` | `PermanentAboveCorridorWindowSelection.lean` |
+| installed snapshot comparison | `terminalInstalledWindowSnapshotComparison_total` | `PermanentAboveCorridorWindowSnapshot.lean` |
+| old crossing horizon bound | `PermanentTailDischargeReturnCertificate.windowSnapshot_crossing_below_horizon` | `PermanentAboveCorridorWindowSnapshot.lean` |
+| installed full-key selection | `TerminalReturnInstalledWindowSelectionState.select` | `PermanentAboveCorridorInstalledWindowSelection.lean` |
 
 ## 8. 結論
 
@@ -727,8 +740,10 @@ immediate insufficientもexact +1 reboundからCoverageStepへ接続されsemant
 numeric branchは、長さtarget以下のexplicit listとwell-founded remaining-clock rankを持つfinite return candidateである。
 finite return branchにはremaining-list stateを追加し、各fresh selectionを別のwell-founded length rankへ接続した。従ってfresh
 candidateの無限選択は排除される。さらにfull window provenanceを保存して`(return, endpoint)`を候補keyにしたため、同じclockの
-別endpointは別fresh edgeとして有限回しか選べない。残る最小kernelは同一window区間のliteral revisitであり、次は再訪時に
-installed parent anchorとold crossing cursorのidentity provenanceを保存し、history/anchor/master progressを抽出する必要がある。
+別endpointは別fresh edgeとして有限回しか選べない。installed snapshot比較とold-crossing horizon上界も追加し、固定horizonでは
+`(window, anchor, old crossing)`全体が有限候補になった。別snapshotは有限selection edgeとして消費される。残る最小kernelは
+window・anchor・old crossing timeがすべて同じexact installed snapshot revisitであり、次は同一snapshotから再生成される
+historical blocker／minimum provenanceを比較し、restart/master progressまたはsemantic determinismを抽出する必要がある。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

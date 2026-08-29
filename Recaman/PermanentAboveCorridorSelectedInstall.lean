@@ -152,6 +152,10 @@ theorem TerminalSelectedCrossingInstallCertificate.exists_nextDischarge
     endpoint_ge := crossing.first_crossing.crossing.endpoint_ge
     forced_addition := crossing.first_crossing.crossing.forced_addition
   }
+  have hcrossingBefore : crossingTime + 1 < parent.horizon :=
+    Nat.lt_of_le_of_lt
+      (Nat.add_le_add_right crossing.crossingTime_le_return 1)
+      source.return_before_parentHorizon
   let discharge : PermanentTailDischargeReturnCertificate target start
       (terminalPredecessorCrossingNode parent crossingTime) := {
     combinedMinimumTime := source.combinedMinimumTime
@@ -172,6 +176,8 @@ theorem TerminalSelectedCrossingInstallCertificate.exists_nextDischarge
     return_crossing := hreturn
     return_before_tail := hreturnBefore
     old_crossing := holdCrossing
+    old_crossing_before_horizon := by
+      simpa [terminalPredecessorCrossingNode] using hcrossingBefore
     parent_anchor_eq := rfl
   }
   exact ⟨{

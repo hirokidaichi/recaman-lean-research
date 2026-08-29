@@ -124,6 +124,8 @@ theorem PermanentTailDischargeReturnCertificate.exists_canonicalReturnRebase
     return_crossing := h.return_crossing
     return_before_tail := h.return_before_tail
     old_crossing := holdCrossing
+    old_crossing_before_horizon := by
+      simpa [rebased] using h.return_before_parentHorizon
     parent_anchor_eq := by simp [rebased]
   }
   have hstationary : CanonicalDischargeKernelResidual discharge := by
