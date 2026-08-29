@@ -431,6 +431,12 @@ finite insufficient枝では`return < target < 2*(return+1)`を一証明書に�
 progressとして分離できるため、真のouter residualはimmediate insufficient、immediate historical、finite insufficient、
 finite outer blockerの四形に限られる。
 
+`PermanentAboveCorridorCandidates`はfinite insufficientのclock bandを明示的な有限listへ落とす。
+`terminalReturnCandidates target`は`List.range target`をlower clock inequalityでfilterしたもので、membershipは
+`return < target ∧ target < 2*(return+1)`と同値、長さはtarget以下である。候補をより後のreturnへ移せば
+`target-return`が厳密下降し、そのrelationはwell-foundedである。finite-list枝を分離した後のnon-clock residualは
+immediate insufficient、immediate historical、finite outer blockerの三形だけになる。
+
 よって、全射性を証明済みとは主張しない。
 
 ## 6. 計算実験の位置づけ
@@ -531,6 +537,9 @@ finite outer blockerの四形に限られる。
 | immediate blocker順序 | `TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint` | `PermanentAboveCorridorBlockerPosition.lean` |
 | master terminal分類 | `PermanentTailDischargeReturnCertificate.terminalResidual` | `PermanentAboveCorridorResidual.lean` |
 | budget progress／outer residual | `PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerResidual` | `PermanentAboveCorridorResidual.lean` |
+| finite return membership | `mem_terminalReturnCandidates_iff` | `PermanentAboveCorridorCandidates.lean` |
+| finite return rank | `terminalReturnCandidateProgress_wellFounded` | `PermanentAboveCorridorCandidates.lean` |
+| finite／non-clock分離 | `PermanentTailTerminalOuterResidual.finiteCandidate_or_nonClockResidual` | `PermanentAboveCorridorCandidates.lean` |
 
 ## 8. 結論
 
@@ -575,6 +584,8 @@ final forced reasonへ接続し、有限double-clock枝またはstrictly earlier
 限られる。次はこのblockerを既存のseen/minimum cycle rankへ接続することが義務である。
 全terminal caseの統合も完了し、budget progressを除くouter residualは四constructorになった。次の研究対象は
 この四形、特に二つのhistorical blocker枝とfinite clock bandの外側下降に限定される。
+finite clock bandは明示候補listとwell-founded later-return rankへ変換された。従って数値枝の残務は再訪時にlater
+candidateを強制するselection provenanceであり、非clock側は三constructorに限定された。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

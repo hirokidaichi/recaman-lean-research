@@ -439,6 +439,12 @@ terminal shape、strict balance、forced reason、blocker positionを一つに�
 fresh以後のblockerはstrict budget progressとして分離され、残るouter residualはimmediate二形、有限clock band、
 finite outer blockerの四形だけになる。
 
+### terminal return candidates / 終端return候補 — 研究固有
+
+finite insufficient residualのclock bandを明示列挙する`terminalReturnCandidates target`である。
+`List.range target`を`target < 2*(return+1)`でfilterし、長さはtarget以下である。候補を後のreturnへ移すと
+`target-return` rankが厳密下降するため、候補探索の有限性を直接表す。
+
 ## Leanと証明監査の語
 
 ### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準

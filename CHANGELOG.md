@@ -42,7 +42,10 @@
 - immediate valleyではblockerが必ずfresh endpointより前になることを証明
 - terminal解析をmaster residualへ統合し、strict budget progressを除くouter residualを四形へ限定
 - finite insufficient枝を`return < target < 2*(return+1)`のclock bandへ縮約
-- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`と公理監査を追加
+- finite clock bandを長さtarget以下の明示return候補listへ変換
+- later candidateで`target-return`が厳密下降するwell-founded rankを構成
+- finite candidate枝を除くnon-clock outer residualを三形へ限定
+- `PermanentAboveTail`、`PermanentAbovePotential`、`PermanentAboveHistory`、`PermanentAboveCanonical`、`PermanentAboveCycleRank`、`PermanentAboveCycleExit`、`PermanentAboveCycleRebase`、`PermanentAboveCorridor`、`PermanentAboveCorridorRank`、`PermanentAboveCorridorSuffix`、`PermanentAboveCorridorBoundary`、`PermanentAboveCorridorWindow`、`PermanentAboveCorridorTerminal`、`PermanentAboveCorridorBalance`、`PermanentAboveCorridorBlocker`、`PermanentAboveCorridorBlockerPosition`、`PermanentAboveCorridorResidual`、`PermanentAboveCorridorCandidates`と公理監査を追加
 
 ## Research baseline — 2026-08-28
 

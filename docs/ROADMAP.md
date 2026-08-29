@@ -227,11 +227,14 @@ earliest規則はwitness ambiguityを除くがstationaryを除かない。新cyc
 30. ~~freshより後のblockerからstrict missing-budget dropを証明する。~~
 31. ~~terminal shape／forced reason／blocker positionをmaster residualへ統合する。~~
 32. ~~strict budget progressを分離し、真のouter residualを四constructorへ限定する。~~
+33. ~~finite clock bandをtarget-indexedな明示候補listへ変換する。~~
+34. ~~候補数≤targetとlater-return well-founded rankを証明する。~~
+35. ~~finite candidate枝を分離し、non-clock residualを三形へ限定する。~~
 
 次の調査順序は次である。
 
 1. immediate historical／finite outer blockerをouter cycleのseen/minimum rankへ接続する。
-2. finite clock band内のreturn候補を明示的な有限集合として列挙する。
+2. finite candidate再訪でlater returnを強制するselection provenanceを設計する。
 3. terminal shapeから別のhistorical minimum／downcrossをcanonicalに選ぶ。
 4. 使用済みreturn crossingを除外する有限visited setまたは最小未使用cursorを設計する。
 5. terminal normalizationをcursor-refined outer cycleとrefined oracleへ統合する。

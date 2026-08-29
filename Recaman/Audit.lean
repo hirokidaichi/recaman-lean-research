@@ -392,3 +392,8 @@ import Recaman
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalBlockerOutcome
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalResidual
 #print axioms Recaman.PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerResidual
+#print axioms Recaman.mem_terminalReturnCandidates_iff
+#print axioms Recaman.TerminalFiniteClockBandCertificate.mem_terminalReturnCandidates
+#print axioms Recaman.terminalReturnCandidates_length_le
+#print axioms Recaman.terminalReturnCandidateProgress_wellFounded
+#print axioms Recaman.PermanentTailTerminalOuterResidual.finiteCandidate_or_nonClockResidual

@@ -1014,3 +1014,14 @@ finite insufficientには`return < target < 2*(return+1)`のclock bandを保持�
 `terminalBudgetProgress_or_outerResidual`はfinite-after blocker constructorをstrict `missingBelowCount`下降として左辺へ
 分離する。右辺に残る真のouter residualはimmediate insufficient、immediate historical、finite insufficient、
 finite outer blockerの四constructorだけである。後続研究はこの四形に対してのみouter rank下降を構成すればよい。
+
+### 第三十一ラウンド：finite terminal return candidates
+
+finite insufficient枝のbandを`terminalReturnCandidates target`として明示列挙した。これは`List.range target`を
+`target < 2*(return+1)`でfilterしたlistであり、membershipは二つのband不等式と同値である。filter前のrange長から
+候補数がtarget以下であることを証明した。
+
+候補のenvelope rankを`target-return`と定義し、自然数順序へのpullbackでwell-foundednessを証明した。同じtargetの
+候補間でlater returnへ移るとこのrankは厳密下降する。最後にmaster outer residualのfinite insufficient constructorを
+candidate membershipへ変換し、残るnon-clock residualをimmediate insufficient、immediate historical、
+finite outer blockerの三形へ限定した。

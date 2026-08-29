@@ -11,7 +11,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース104モジュール
+- Leanソース105モジュール
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - 実軌道上の多段借りを排除済み
@@ -78,6 +78,7 @@ Lean 4形式化プロジェクトです。
 - final forced additionをdouble-clock数値境界またはstrictly earlier historical blockerへ分類済み
 - historical blockerをfresh以前またはfresh以後のstrict history-budget dropへ分類済み
 - terminal全分類をmaster residualへ統合し、progress除去後のouter residualを四形へ限定済み
+- finite clock bandを長さtarget以下の明示候補リストとwell-founded return rankへ変換済み
 
 child clock provenanceの直接伝搬は、orbit-ready normal、ready debt、crossing frontier、
 extended-history normalについて完了しました。これら三種類の非crossing constructorはすべて
@@ -135,6 +136,7 @@ final subtractionの失敗理由は、`target < 2·(return+1)`の有限数値帯
 明示されます。immediate valleyではfresh endpointがreturnなので、常に後者です。
 全case splitを統合すると、strict budget progressまたは四つのouter residual
 （immediate×2、finite clock band、finite outer blocker）だけが残ります。
+finite clock bandは`List.range target`のfilterとして列挙され、後のreturn候補へ進むと`target-return`が厳密下降します。
 全射性そのものは未証明です。
 
 ```mermaid
@@ -163,8 +165,9 @@ flowchart TD
     V --> W["final blocker二分：証明済み"]
     W --> X["blocker位置／budget下降：証明済み"]
     X --> Y["master outer residual四形：証明済み"]
-    Y --> Z["outer residual下降：未解決"]
-    Z --> AA["全射性：未証明"]
+    Y --> Z["finite return候補rank：証明済み"]
+    Z --> AA["non-clock residual三形：未解決"]
+    AA --> AB["全射性：未証明"]
 ```
 
 ## 文書

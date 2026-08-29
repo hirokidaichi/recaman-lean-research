@@ -98,5 +98,6 @@ import Recaman.PermanentAboveCorridorBalance
 import Recaman.PermanentAboveCorridorBlocker
 import Recaman.PermanentAboveCorridorBlockerPosition
 import Recaman.PermanentAboveCorridorResidual
+import Recaman.PermanentAboveCorridorCandidates
 import Recaman.Examples
 import Recaman.Oracle
