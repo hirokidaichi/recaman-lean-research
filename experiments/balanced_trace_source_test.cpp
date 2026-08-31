@@ -66,7 +66,7 @@ int main() {
   // Filled with the deterministic FNV-1a fingerprint of the complete Lean
   // source.  A byte-level source change must be reviewed explicitly.
   constexpr std::uint64_t expected_4825_fingerprint =
-      0x7e016593e1de83ebULL;
+      0x600675d8573dbe4aULL;
   if (trace4825.fingerprint() != expected_4825_fingerprint) {
     std::cerr << "observed 4825 fingerprint: "
               << hexadecimal_u64(trace4825.fingerprint()) << '\n';
@@ -80,8 +80,36 @@ int main() {
           "99734 final leaf must have 22 codes");
   require(trace99734.expected_value == 19,
           "99734 endpoint regression");
-  require(!trace99734.source.empty(),
-          "99734 source-size measurement requires generated source");
+  constexpr std::uint64_t expected_99734_fingerprint =
+      0xd122a1781c70f149ULL;
+  require(trace99734.fingerprint() == expected_99734_fingerprint,
+          "99734 generated source fingerprint regression");
+
+  const auto trace181653 = generate(181653, 64);
+  require(trace181653.block_count == 2839,
+          "181653 steps must produce 2839 leaves");
+  require(trace181653.final_leaf_length == 21,
+          "181653 final leaf must have 21 codes");
+  require(trace181653.expected_value == 61,
+          "181653 endpoint regression");
+  constexpr std::uint64_t expected_181653_fingerprint =
+      0xf7c9baff6b448cddULL;
+  require(trace181653.fingerprint() == expected_181653_fingerprint,
+          "181653 generated source fingerprint regression");
+
+  // Next finite certificate isolated by the mex-879 bridge.  The generated
+  // source is not imported until its expensive Lean kernel check is run.
+  const auto trace328002 = generate(328002, 64);
+  require(trace328002.block_count == 5126,
+          "328002 steps must produce 5126 leaves");
+  require(trace328002.final_leaf_length == 2,
+          "328002 final leaf must have 2 codes");
+  require(trace328002.expected_value == 879,
+          "328002 endpoint regression");
+  constexpr std::uint64_t expected_328002_fingerprint =
+      0x538690d9af3ec36dULL;
+  require(trace328002.fingerprint() == expected_328002_fingerprint,
+          "328002 generated source fingerprint regression");
 
   std::cout << "balanced trace source generator regressions: PASS\n";
 }

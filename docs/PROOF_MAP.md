@@ -32,6 +32,38 @@ flowchart TD
 ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みである。
 この長期再帰命題とrefined oracleへのclocked domain統合以降が未証明である。
 
+## 最小tail正準経路
+
+2026-08-29深夜に、permanent-above tailの最小開始時刻を選ぶ新しい経路を
+追加した。この経路ではexact replay固定点が消滅し、最小未出目標から
+history progressまたはcertificate付きsemantic edgeへ直接進む。
+
+```mermaid
+flowchart LR
+    A["LeastMissingTarget"] --> B["least permanent-above tail"]
+    B --> C["coverage valley: tailStart = coverage + 1"]
+    C --> D["well-founded canonical discharge"]
+    D --> E["TerminalChronologyHistoryProgress"]
+    D --> F["RefinedSemanticEdge"]
+    C --> G["authenticated deep values 19 / 61"]
+    G --> H["suffix/mex: target ≥ 879, fixed target=879 exception or low≥879"]
+    C --> I["one-step backward normal form"]
+    I --> J["two fresh subtractions / six narrow cases / previous valley"]
+    C --> K["canonical chronology edge: budget 1 → 0"]
+```
+
+| 新規領域 | 状態 | 内容 | 主モジュール |
+|---|---|---|---|
+| 最小tail discharge | 整礎閉包済み | `tailStart = coverage + 1`、exact replay除去、history/semantic二択 | `LeastTailDischarge` |
+| canonical history edge | refined mountedまで接続済み | strict budget edge、fresh landing、即時upcrossing、cursor、元parent ready crossingをmounted outcomeへ搭載 | `LeastTailDischarge` |
+| 深部認証trace | kernel認証済み | `a 99734 = 19`、`a 181653 = 61`、後者のsuffixから`a 181643 = 76`、clock 181653のmexは879 | `DeepNineteenTraceCertificate`, `DeepSixtyoneTraceCertificate`, `DeepSixtyoneMexCertificate`, `BalancedTraceSuffix`, `DeepSeventysixFromSixtyone` |
+| 境界の有限例外消去 | 証明済み | 固定`(target,coverage,low)=(879,181653,61)` high枝、または`target ≥ 880 ∧ low ≥ 879`。固定証明書↔`target=879` | `LeastTailBoundaryElimination` |
+| 境界後方力学 | 一段分類済み | 二連続fresh減算、6 narrow cases、先行valley/budget 2 | `LeastTailBoundaryBackward` |
+| 後方valley鏖 | 正確なroomまで反復済み | room=`low+coverage-target`。非例外879段版はhigh／narrow／target≥1759。full-depth枝は既存`TerminalHistoryBudgetDrop`へ接続 | `LeastTailBackwardChain`, `LeastTailBoundaryElimination` |
+
+この経路の未証明部分は、history progressと`RefinedSemanticEdge`を共通の
+大域降下原理で消費すること、または後方valleyを反復可能に一般化することである。
+
 ## 状況一覧
 
 | 領域 | 状態 | 内容 | 主モジュール |
@@ -132,6 +164,9 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | comb witness構成 | stepのwitness化を完了済み | blocked理由・正値・freshnessの三条件からCombStepを構成。大域なのはfreshness一条件のみ | `OrbitCombWitness` |
 | replay kernel floor III | 床をclock 32へ拡張済み | 例外リストは{19, 61}で閉じ`target=19∨target=61∨34≤target`。次の壁は76（t=181643） | `PermanentAboveCorridorReplayFloorThree` |
 | comb value representation | run値集合の表現とfreshness輸送を証明済み | exit時のmembership＝事前履歴∨二rail。最終low rail未満のfresh値はrun全体でfreshのまま | `OrbitCombValues` |
+| target-relative comb charging | 第1gateを証明済み | below-target candidateの孤立、fresh low railのfirst-occurrence/disjoint性、terminal blockerの完了時刻への単射 | `TargetCandidateTransitions` |
+| target high excursion | 第2gateを証明・限界確定 | signed step則、全prefixのstrict ledger corridor、legal-subtraction出口、sharp window。endpoint総和は既存ledgerの再表現 | `TargetHighCandidateExcursion` |
+| target comb macro provenance | reset枝を二生成形へ縮約済み | 次intervalは旧blockerの下または新blockerが上。減算起源はentry超predecessor、加算起源は既存`EarlierSmaller`へ直結 | `TargetCombMacro` |
 | nineteen replay identification | target 19のreplayを完全数値特定済み | blocker境界からclock≤16、消去でclock∈{6,8}。各々anchor/blocker/初出時刻まで一意（13/6/3と12/3/2） | `PermanentAboveCorridorNineteenReplay` |
 | nineteen replay uniqueness | 19-replayを唯一cycleへ確定済み | downcross条件がclock 6を排除。clock=8・downTime=7・即時return・anchor 12・blocker 3/初出2の一意cycle | `PermanentAboveCorridorNineteenUnique` |
 | nineteen minimum pins | 19-反例のtail最小値も21へ固定済み | minimum predecessorの初出≤7で19超は`a 7=20`のみ。初出=7・tail最小値=21。残る自由はtail時刻のみ | `PermanentAboveCorridorNineteenMinimum` |
@@ -167,6 +202,7 @@ ready crossingの局所stepは`TargetTailReturnHypothesis`まで縮約済みで�
 | pinned配置の列挙可能性 | **kernel列挙では落ちないと確定** | `target = a f - 1`より配置は`f`だけで決まる。四つの列挙可能条件を満たす候補は`f < 3×10⁶`で2438個と累積が増え続ける。各候補は出現witness一つで落ちるがwitness時刻に一様上界がない（実測で`first[target] - f`が3×10⁵超）。配置自体の居住性は予想と同じ深さで開いている | `PinnedConfigurationAttack` |
 | pinned後方4パターン | **混合形2つを排除、89.4%を除去済み** | `(加算,減算)`189件は`a (f-2) = target`が強制され欠損と矛盾。`(減算,加算)`88件は鳩の巣の精密化で自滅。残るは`(減算,減算)`12件相当と`(加算,加算)`21件相当 | `PinnedBackwardStep`, `PinnedMiddleRow`, `PinnedRemainingRows`, `SubtractionLedger` |
 | 減算台帳 | **厳密恒等式を形式化済み（同値の輪の外からの最初の注入）** | `a t + 2·subSum t = upperTri t`。パリティ（出現時刻のmod 4制限）・後方伝播・供給側カウンタの三帰結。パリティは第3行の窓を実際に1段締めた | `SubtractionLedger` |
+| 最小tail ledger checkpoint | **低商・ledger corridor・canonical low座標を証明済み** | least missing targetの最小tail minimumで`q≤1`, `G≥-1`, `q=0 ∨ (q=1 ∧ r<target)`。一般positive earlier occurrenceには3-clock gapとsharp単一job`C=3` payment | `LeastTailLedgerMinimum`, `LeastTailLedgerProvenance` |
 | 計数の上界側での初仕事 | `coveredBelowCount_two_above` | 値が`k`以上の時刻は1レベルも埋めないので、pre-tailに遊休時刻が2つあれば必要時刻数が2増える。それまで計数は`tailStart`の下界しか生まなかった | `PinnedMiddleRow` |
 | tail最小値の初出 | 残り1点へ縮約済み | 遷移は「減算（fresh初出）」か「強制加算かつ`m = tailStart`」の無条件二分法。後者は`a (m-1) ≠ 1`で死ぬ。残る穴は`m + 1 < a m`のみで、pinned配置内では`target < tailStart`により閉じる | `PinnedConfigurationAttack` |
 | semantic枝の消費者の値段 | 原理的下界を確定済み | semantic枝の閉包はtarget出現と同値。constructor局所の補題では閉じず、大域矛盾の一部でなければならない | `SemanticOracleRecursion` |
@@ -658,12 +694,29 @@ clock 32の帯(46,79]は第三の深い遅延値76（初出t=181643）を含む�
 rail未満でrun入口にfreshな値はrun全体を通じてfreshのままである。これが圧縮検証に必要なfreshness輸送機構
 であり、comb区間は床を守る深い遅延値を黙って消費できない。
 
+`TargetCandidateTransitions`はcombを固定missing targetに相対化する。永久上側tailではtarget未満の
+subtraction candidateは被覆済み履歴によりforced additionとなり、target omissionが次candidateを厳密な
+high側へ押す。high-to-low subtractionから始まるfresh combの全low railはfirst occurrenceで、時間的に
+別のepisodeのrailとは交わらない。historical terminal blocker `b`はfinal fresh landing `b+1`に対応するため、
+同じ`b`が異なる完了時刻のcombを止めることはできない。raw blocker jobでは成立しなかった有限消費を、
+最大episode単位で回復した最初のcausal charging補題である。
+
+さらに時間順の二episodeについて、次entryが旧terminal blockerより下か、新terminal blockerが旧値より
+上かのinterval-order二分法を得た。terminal blocker自身はcomb rail上で生成されずentryより前に初出する。
+その初出がlegal subtractionなら生成元predecessorはfresh interval全体より上にあり、forced additionなら
+predecessorはblockerより下へstrictに降りる。
+
+`TargetHighCandidateExcursion`はsigned excessの局所変化を加算`+n`、減算`-(n+2)`として記録し、maximal
+high区間の全prefixをstrict ledger corridorへ置く。出口は必ずlegal subtractionで、直前余剰はclock幅未満である。
+`TargetCombMacro`はこの出口をterminal blockerのfirst-transition provenanceへ接続する。endpoint総和だけは
+`ledger_interval_balance`の望遠和なので新不変量ではなく、次の攻撃点はupward resetの生成枝に限定される。
+
 ## モジュール層
 
 | 層 | モジュール |
 |---|---|
 | 基礎 | `Basic`, `History`, `Coordinates` |
-| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb`, `OrbitCombWitness`, `OrbitCombValues` |
+| 局所遷移 | `CoordinateDynamics`, `MultiBorrow`, `OrbitBounds`, `OrbitComb`, `OrbitCombWitness`, `OrbitCombValues`, `TargetCandidateTransitions`, `TargetHighCandidateExcursion`, `TargetCombMacro` |
 | 下降・blocker | `ActualDescent`, `Blocker`, `TargetDescent` |
 | 目標面 | `Gate`, `Mechanisms`, `LandingSurfaces`, `PrestateCoverage` |
 | 回復 | `NegativeRegion`, `Recovery`, `RecoveryBudget`, `RecoveryFrontier`, `RecoveryWindows` |

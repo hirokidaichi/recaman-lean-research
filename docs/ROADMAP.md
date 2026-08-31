@@ -1,5 +1,19 @@
 # 証明ロードマップ
 
+> 最新の総合判定は [STATUS_REPORT_2026-08-30.md](./STATUS_REPORT_2026-08-30.md) を参照。
+> 本文には判断の時系列を残すため、当時の「active branch」という記述も保存しているが、
+> 同日後半の追加監査による「直接枝0本、部分定理候補へ移管」が現在の判定である。
+
+> 2026-08-30 以降の広域探索、枝ごとの継続・停止条件、研究サイクルは
+> [RESEARCH_PORTFOLIO.md](./RESEARCH_PORTFOLIO.md) に分離した。
+> 同日の並列監査結果は
+> [PARALLEL_RESEARCH_2026-08-30.md](./PARALLEL_RESEARCH_2026-08-30.md) に記録した。
+
+> 2026-08-31 の類似問題の一次文献調査と、そこから選んだ次の探索枝は
+> [LITERATURE_REVIEW_2026-08-31.md](./LITERATURE_REVIEW_2026-08-31.md) を参照。
+> Binary Enots Wolley の opportunity counting と EKG の frontier-window balance を組み合わせた
+> **target-relative transition charging** を、一回のexact probeに限って優先する。
+
 ## 目標
 
 最終目標は次をLeanで証明することである。
@@ -9,6 +23,200 @@
 ```
 
 現時点では、大域帰納の器は完成している。残作業は局所探索のtotalityを示すことである。
+
+## 2026-08-31 target-relative transition cycle
+
+文献から選んだopportunity-counting路線の第1gateは通過した。
+`Recaman/TargetCandidateTransitions.lean`で、永久上側tailの次候補
+
+```text
+d_n = a_n - (n+1)
+```
+
+をtarget相対に分類し、次を証明した。
+
+1. `d_n < target`なら次stepはforced addition
+2. target omissionの下で`d_(n+1) > target`、従ってlow状態は孤立
+3. high-to-low subtraction後の交互`+,-`区間は既存`CombRun`へ接続
+4. fresh combの全low railはfirst occurrenceで、時間的に別のlow railは互いに素
+5. historical terminal blocker `b`はfirst occurrence `b+1`へ注入され、別の完了combへ再利用不能
+
+20,000,000項の`target_transition_probe`は2,661本のepisode、5,779,960個のlow state、
+最大159,583 landingのcombをexactに確認し、episode protocol違反0だった。terminal blockerの
+最大再利用1は上のLean定理で説明される。
+
+この結果により、raw blocker jobで失敗した有限消費を**最大comb単位**で回復できた。一方、異なる
+terminal blockerが無限に上へ逃げる可能性はまだ排除できない。従って直接証明のactive branchは0のまま、
+exploratory branchだけを次へ進める。
+
+### 第2 macro gate — 完了
+
+`TargetHighCandidateExcursion`と`TargetCombMacro`で次を形式化した。
+
+1. signed candidate excessは加算で`+n`、減算で`-(n+2)`だけ動く
+2. high-only excursionの全prefixはstrictなclock-weighted ledger corridorに入り、最初のlowで反転する
+3. high-to-low出口は必ずlegal subtractionで、直前余剰は`0 < excess < finish+2`
+4. 時間順の完了combは「次entryが旧blocker未満」または「新blockerが旧blocker超」の二択
+5. terminal blockerの初出が減算ならpredecessorは新entryより上、forced additionならpredecessorは
+   blockerより下へstrict descentする
+
+ただしendpointの重み付き総和は既存`ledger_interval_balance`の望遠和であり、新しい不変量ではない。
+20M scanでも出口windowは最小slack 1、最大利用率99.9999%まで飽和した。このためuniform marginや
+endpoint balanceだけを強める枝は停止する。
+
+### 第3 macro gate — active
+
+次は稀なupward resetだけを扱う。20Mまでの連続historical comb 2,655辺は下降2,635、reset 20、等値0で、
+fresh intervalの旧blocker跨ぎは0だった。reset 20件は全てforced-addition起源で、減算起源は0である。
+
+次の一手は次の二択に限定する。
+
+1. upward resetの減算起源を一般に排除する
+2. 排除できなければ、`predecessor > entry`というvalue liftと`predecessorFirstTime < blockerFirstTime`を
+   組にしたwell-founded macro rankを構成する
+
+成功条件は、下降辺・addition-reset・subtraction-resetを同じrankでstrictに処理すること。単なる
+「実測ではresetが稀」「20Mでは全てaddition」だけならdirect branchへ戻さない。
+
+## 2026-08-30 新ロードマップ第1–2サイクル：選抜と停止
+
+low-quotient minimum、first-job Hall congestion、H6 affine chordを並列に調べ、次を得た。
+
+1. least missing targetの最小tail minimumは、Lean上で`q≤1`, `G≥-1`とledger corridorへ入った。
+   さらに`a_t≤t+target`、または`target≤r-1<a_t`を満たすearlier first-occurrence blockerが
+   存在する、という二分まで形式化した。
+2. exact Hall probeでは2,000万項までall jobs/first jobsの双方で`C_H^*=9`だった。
+   唯一の最悪区間は`[2,6]`であり、`C=8`のresidualは1、`C=9`のslackは0である。
+3. H6の21本はmod 4、parity、ledger、legal/forced初出生成のどれでも一つも消えない。
+   全21本を満たす一様抽象suffixは任意の高商stripへ拡張でき、残差はblocker provenanceだけである。
+
+従ってH6の独立合同類攻略を停止し、次の二枝だけを追加監査した。
+
+- **A/provenance:** earlier blockerを、新しいtail minimum、非自明なledger interval、または
+  反復可能なstrict certificateへ持ち上げる。
+- **B/congestion:** 初期例`[2,6]`を切り離し、異なるlast-occurrence episodeのfirst windowsが
+  実prefix上で過負荷にならないことを一様不等式にする。
+
+追加監査の結果、両枝とも全域性直接経路としての停止条件に到達した。
+
+- canonical least-missing witnessは既存上界から`a_t<t+target`であり、座標は
+  `q=0 ∨ (q=1 ∧ r<target)`に限られる。Aのhigh-blocker枝はこの正準点では空だった。
+  一般tailについては単一blockerのsharp `C=3` payment、3-clock gap、historical outcomeをLean化したが、
+  noncanonical部分定理であって主線の反復ではない。
+- Bは初期releaseを切ると500万項までall jobsでsharpな`C=3` Hall条件へ縮んだ。この`TailHall₃`が
+  真なら`liminf a_n/n≤3`が従い、ledger単独より強い。しかしlinear heightとpositive subtraction densityは
+  permanent-above tailと両立し、固定未出値との矛盾を与えない。
+
+従って新しい全域性直接サイクルは開始しない。形式化済みlow-coordinate/provenance定理、exact Hall probe、
+H6・自由履歴no-goを独立成果として整理する。再開条件は、linear height／positive subtraction densityと
+permanent-above性を矛盾させる独立入力、またはold blocker／nonpositive resetを一様に排除する定理が
+紙上で先に得られることである。
+
+## 2026-08-30 strategy gate：canonical閉包路線を停止
+
+最小tail正準化のあとに残ったhistory／mounted枝を再監査し、次をLeanで証明した。
+
+1. canonical edgeはmissing budget `1 → 0`へ進む。
+2. 到着点`coverage`からは`TerminalHistoryBudgetDrop`も
+   `TerminalChronologyHistoryProgress`も一歩も出ない。
+3. `Nonempty (LeastMissingCoverageValleyCertificate target)`は
+   `LeastMissingTarget target`と同値である。
+
+従ってhistory relationのwell-foundednessはこのedgeの停止を保証するだけで、反例仮定との
+矛盾を与えない。mounted側のequal-anchorもcanonical coverage crossingを親として再選択する
+node自己再現であり、既存rankの組合せからstrict progressへ変換する根拠はない。
+
+このため、次を主戦略から外す。
+
+- 深部trace／mex下限の追加
+- 固定段数の後方valley反復
+- 新しいoutcome型やrankの追加
+- provenanceを増やすだけのmounted interface拡張
+
+再開条件は、`LeastMissingCoverageValleyCertificate`の`permanent_above`と実際のRecamán遷移を
+使い、target出現・将来downcross・別の反復可能なstrict量のいずれかを与える新しい数学的補題が、
+Lean実装より先に紙上で得られることである。それまでは本路線を停止状態とする。
+
+### 追加portfolio audit
+
+次の路線も、全射性の主戦略として停止する。既存定理と検証済み構造は保存するが、追加投資はしない。
+
+- `TargetTailReturnHypothesis`／crossing oracleの精密化：単独targetの出現と同値で、局所interfaceを
+  増やしても数学的義務が弱くならない。
+- semantic outcomeの再包装とparent-binding：リポジトリの論理的品質改善にはなるが、semantic枝の
+  大域消費者はtarget出現と同値であり、全射性の証明戦略にはしない。
+- replay／fixed-pointのclock床上げ、prefix-successor coverage、深部mex：有限下限しか増やさず、
+  候補帯はclockとともに拡大する。
+- pinned配置のkernel列挙と固定段数の後方行展開：候補数はcutoffとともに増え、canonical等anchorの
+  主残余にも直接接続しない。
+- earlier-smaller blocker／`regenerate`：必要な再生成仮定は実軌道の具体例で偽と判明済み。
+- coverage time上界、return-frequency、tail-start上界を同じ計数材料から作る路線：三者は既に
+  同値であり、`upperTri`・鳩の巣・有限coverageだけでは下界しか出ない。
+- 減算台帳のparityだけを用いた有限帯半減：正しい補助結果だが、これ単独も有限列挙の変種である。
+
+当面の唯一のactive branchは、減算台帳をpermanent-above tailの**重み付きstep収支**へ適用する路線とする。
+`a n + 2 * subSum n = upperTri n`をendpoint parityではなく区間差として使い、次を紙上で検討する。
+
+1. tail最小値とそのpredecessor初出の間を、増加clockを持つ重み付き±pathとして記述する。
+2. legal subtractionがfresh値を供給し、positive forced additionが既出candidateを要求することから、
+   blockerの供給量・再利用量に一様な区間不等式を与える。
+3. nonpositive forced additionを別のreset eventとして数え、上の収支から漏らさない。
+4. その結果がtarget依存の有限床ではなく、permanent-above性と両立しない一様不等式になるか判定する。
+
+この枝の継続gateは、Leanの新しいstructureを作る前に、blocker質量またはtail-minimum区間について
+既存のledger恒等式・三角上界から自動的には従わない不等式を一つ紙上で示すことである。
+それが得られなければ、全射性証明を目的とする現在の研究プログラム全体を停止し、成果を局所構造定理・
+監査済みformalizationとして再整理する。
+
+## 2026-08-29 深夜の正準到達点
+
+permanent-above tailの開始時刻を最小化すると、その直前が最後の
+below-target被覆時刻`coverage`で、`tailStart = coverage + 1`となる。
+この正準化により従来のexact replay固定点は実不等式で矛盾し、頂点は
+次の二択まで無条件に閉じた。
+
+1. `TerminalChronologyHistoryProgress`
+2. permanent-tail証明書を保持する`RefinedSemanticEdge`
+
+さらにsource-free coverage valleyから、前者の具体例
+`TerminalChronologyHistoryProgress target coverage (coverage-1)`を無条件に構成できた。
+budgetは1から0へ厳密降下し、valley equationとpermanent-above性がcursor payloadを与える。
+さらにcanonical low自身をfresh landing、同じcoverageを即時first upcrossingとして、
+このedgeを`PermanentTailTerminalAnchoredOutcome`へ搭載済みである。
+同じpayloadは`RefinedTerminalAnchoredOutcome`のfresh branchにも直接入る。
+ただし単一edgeの存在だけでは整礎性と矛盾しない。次のcanonical証明書へこのedgeを反復可能に
+輸送することが残る大域義務である。
+source-preserving `BoundaryCertificate`では元combined parentのready crossingを保持した
+`RefinedTerminalMountedOutcome.landing_crossing`まで再搭載済みである。
+同じboundaryに`BoundaryRankOutcome`も同梱済みである。次の実装点は、等anchor枝から
+不足しているhistorical blocker/install provenanceを復元するか、別history dropへ送ることである。
+
+したがって、replay床やpinned固定点の追加列挙はもはやcanonical経路の
+主残余ではない。次の主戦場は、上の二つの証明書が保持する履歴を使った
+非計数的な大域閉包である。
+
+並行して得られた境界正規形は次の通り。
+
+- kernel認証済みの`a 99734 = 19`、`a 181653 = 61`、61traceの認証suffixから復元した`a 181643 = 76`、およびclock 181653の認証mex 879により、仮想的な最小未出目標は`879 ≤ target`。
+- 最後の新規被覆lowは、`target=879`かつ直前二段がfresh減算である完全固定例外`(coverage, low) = (181653, 61)`、または`879 ≤ low`。
+- より鋭く、固定例外証明書は`target=879`と同値。非例外枝では`880 ≤ target ∧ 879 ≤ low`。
+- 非例外枝では後方valleyを879段反復でき、high／`coverage ≤ low+2637`／budget 880のdepth-879 stageに分岐する。
+- depth-879 stage到達枝は数値的に`1759 ≤ target`を含む。
+- 同じ到達枝はstage cursorからcanonical境界cursorへの`TerminalHistoryBudgetDrop`を含み、既存の整礎履歴ランクへ接続済み。
+- 最大room比率枝は`2*low ≤ target`から`1758 ≤ target`へ数値化できる。
+- 一段後方は、二連続の初出減算着地、6通りの狭い`target/coverage`配置、
+  または欠損budget 2を持つ先行valleyのいずれか。
+
+先行valleyの欠損budgetを深さ`d`へ反復する一般定理は実装済みである。
+次の実装優先度は、(1) 履歴進展とsemantic edgeの共通の強降下量を抽出、
+(2) 61段後方定理の三枝（高い減算前値／`coverage ≤ low + 183`／budget 62のvalley）を
+それぞれ強制加算・減算条件に戻して解析、(3) 最大room
+`low + coverage - target`で得られた`2 * room ≤ coverage`枝をtarget/coverageの鋭い比率界に変換、
+の順とする。
+
+有限認証側の直近タスクは経験的等式`a 328002 = 879`である。これをkernel認証するだけで
+既に証明済みの`exists_eightHundredEightyBoundaryAlternative`へ接続でき、固定例外は消えて
+`880 ≤ target`かつ`879 ≤ boundaryLow`となる。この条件付き橋自体は完成している。
 
 ## Milestone 1 — 対角負債の局所二分法
 

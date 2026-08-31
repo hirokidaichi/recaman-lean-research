@@ -1,5 +1,62 @@
 # Changelog
 
+## Target-comb macro excursion and reset provenance — 2026-08-31
+
+- 時間順のhistory-terminated combについて、次fresh intervalが旧blockerより完全に下へ移るか、新blockerが旧blockerをstrictに越えるinterval-order二分法を証明
+- terminal blockerがcomb entryより前の履歴にあること、減算起源なら生成元predecessorがentryより上へstrict liftすることを証明
+- signed target-candidate excessのexact step則、high excursionのprefix ledger corridor、legal-subtraction出口、sharp exit windowをLean化（`TargetHighCandidateExcursion`）
+- 正のterminal blockerを、older high predecessorを持つ減算起源またはstrictly smaller predecessorを持つforced-addition起源へ完全分類（`TargetCombMacro`）
+- 20M macro scanで2,655辺を監査。blocker下降2,635、上向きreset 20、separator違反0。resetは全てaddition起源でsubtraction起源0
+- endpoint総和は既存ledgerの望遠和、exit windowはslack 1まで飽和するため、uniform-margin枝を停止。次gateをupward-reset provenance rankへ限定
+
+## Target-relative comb charging — 2026-08-31
+
+- permanent-above tailでbelow-target subtraction candidateがforced additionを起こし、missing仮定下で次candidateがstrict highへ戻ることを証明
+- high-to-low transition後のdescending combを既存`CombRun`へ接続
+- fresh combの全low railがfirst occurrenceで、時間的に別のepisodeのrailが互いに素であることを証明
+- historical terminal blockerをfinal fresh successorへ注入し、異なる完了時刻での再利用を排除
+- `target_transition_probe.cpp`を追加。2,000万項で2,661 episode、最長159,583 fresh landings、protocol違反0
+- 次の残余をcomb間high-only excursionのclock重み付き二側balanceへ限定
+
+## Low-quotient ledger checkpoint and research branch selection — 2026-08-30
+
+- least missing targetの最小tail minimumを`q≤1`, `G≥-1`とsharp ledger corridorへ置く定理を追加（`LeastTailLedgerMinimum`）
+- 一般低商minimumをbounded branchまたはearlier blockerへ分解し、ledger payment・historical outcomeへ接続（`LeastTailLedgerProvenance`）
+- canonical least-missing witnessではhigh blocker枝が空で、`q=0 ∨ (q=1 ∧ r<target)`まで縮むことを追加監査・形式化
+- positive earlier occurrenceの3-clock gap、exact interval ledger、sharp単一job`C=3` paymentを証明
+- positive blocker interval Hall条件のexact probeを追加。2,000万項まで必要最小定数`C_H^*=9`、最悪区間`[2,6]`
+- tail restriction probeを追加。500万項まで`p≥7`のall-job Hall定数はsharpに`C=3`、brute-force regression付き
+- H6の全21合同類を生存させる一様抽象suffixを構成し、mod 4/parityによる独立攻略を停止
+- `TailHall₃`が含意する`liminf a_n/n≤3`はpermanent-above性と両立するため、全域性の直接攻略を停止し部分定理へ移管
+
+## Least-tail canonicalisation and authenticated deep boundaries — 2026-08-29 (深夜)
+
+- permanent-above tailの最小開始時刻を証明書の正準点に選び、coverage境界が`tailStart = coverage + 1`を満たすことを証明（`LeastTailDischarge`）
+- 正準境界のanchor比較でexact replayの等号固定点を矛盾にし、well-foundedなdischarge反復からreplay分岐を完全除去
+- 最小未出目標の頂点定理を、固定点床なしの「strict history progressまたはcertificate付き`RefinedSemanticEdge`」に縮約
+- 最小tail境界の新規low、入射減算、三段の強制加算、直前の欠損budget 1をsource-free certificateとして抽出
+- canonical境界時点のbudget 0、直前budget 1、valley equation、permanent-above性から完全な`TerminalHistoryCursor`を構成し、`TerminalChronologyHistoryProgress target coverage (coverage-1)`を無条件化
+- canonical lowをfresh landing、同clockを即時first upcrossingとして、history edgeを`PermanentTailTerminalAnchoredOutcome`へ直接搭載
+- 同じlanding payloadをcertificate-preservingな`RefinedTerminalAnchoredOutcome`へも直接搭載
+- source-preserving `BoundaryCertificate`から元combined parentのready crossingを保つ`RefinedTerminalMountedOutcome.landing_crossing`を構成し、least-tail summitまで伝播
+- mounted landingと`BoundaryRankOutcome`を同一canonical boundary上で束ね、summitへ同梱
+- balanced trace checkerを深部ソースに対応させ、`a 99734 = 19`と`a 181653 = 61`をLean kernelで認証。最小未出目標に`62 ≤ target`、境界lowに`61 ≤ low`を導出
+- balanced treeの成功実行から右端leafの認証checkpointを抽出する汎用APIを追加。61traceの最後10更新を逆算し、別traceを再チェックせず`a 181643 = 76`を証明
+- 62〜75の初出がclock 99以内であることをkernel検証し、最小未出目標を`77 ≤ target`へ強化。境界lowは`(coverage, low) = (181653, 61)`または`76 ≤ low`
+- balanced trace終端のmexを認証する汎用APIを追加し、clock 181653で0〜878が全て既出・879が未出であることをkernel検証。最小未出目標を`879 ≤ target`へ強化
+- 61traceの右端leafをさらに分割して`a 181651 = 363366`、`a 181652 = 181714`と直前減算を証明。唯一のsub-76境界を`target=879`かつ二連続fresh減算の完全固定high枝へpin
+- mexの全既出情報とpermanent-above性を合成し、唯一のsub-879境界も同じ固定例外であることを証明。無条件境界分岐を固定例外または`879 ≤ boundaryLow`へ強化
+- canonical境界上で固定例外証明書と`target=879`の同値を証明。鋭い無条件summitを「完全固定879例外または`880 ≤ target ∧ 879 ≤ boundaryLow`」へ整理
+- `boundaryLow ≥ 879`を後方valley反復へ接続し、非例外枝の879段版（depth<879のhigh／`coverage ≤ low+2637`／budget 880のdepth-879 valley）を証明
+- finite chainの到達枝を任意low床からtarget床へ移す一般補題を追加。879段到達なら`1759 ≤ target`
+- 正depthの後方stageからcanonical境界cursorへの厳密な`TerminalHistoryBudgetDrop`を証明。879段到達枝を既存のwell-founded履歴関係へ直接接続
+- 任意のboundary low床を最大room三択へ移す一般補題を追加。floor 879の非例外枝では終端比率枝が`1758 ≤ target`
+- 任意の879出現証明から固定例外を消し、`880 ≤ target`・`879 ≤ boundaryLow`へ直結する条件付きsummitを証明。次の有限認証義務を経験的等式`a 328002 = 879`の一点へ分離
+- 正準境界を一段後方へ解析し、「二連続の初出減算着地／`target`と`coverage`の6通りの狭い配置／欠損budget 2を持つ先行valley」の完全分類を証明（`LeastTailBoundaryBackward`）
+- 後方valleyを深さ`d`へ反復し、高い減算前値またはclock/low接近が現れない限り、lowは`d`、欠損budgetは`d+1`へ増える鏖を証明。反復roomは正確に`low + coverage - target`で、深部low下界から61段版も導出（`LeastTailBackwardChain`）
+- 最大roomの終端stageを数倬freeに読み替え、後方鏖をhigh減算枝、実depth付きnarrow枝、`coverage + 2*low ≤ 2*target`枝の鋭い三択へ圧縮
+- 全射性自体は依然未証明。canonical edgeはrefined mountedまで到達したが、その特定landing枝のstrict mounted progress化と等anchor残余の閉包が残る
+
 ## Refined summit and structural walls — 2026-08-29 (夕方)
 
 - 頂点定理のsemantic枝が`0 < target`だけから導出でき**情報量ゼロ**だったことを形式的に暴露（`semantic_or_flooredCore_of_pos`）

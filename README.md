@@ -6,14 +6,59 @@ Lean 4形式化プロジェクトです。
 > [!IMPORTANT]
 > 全射性そのものはまだ証明していません。本リポジトリは、証明済みの局所力学、
 > well-foundedな大域証明骨格、そして残る証明義務を明確に分離しています。
+> 最新の研究判断は [現況レポート](docs/STATUS_REPORT_2026-08-30.md) にまとめています。
+> 類似するgreedy数列の解決例と次の探索枝は
+> [文献レビュー](docs/LITERATURE_REVIEW_2026-08-31.md) にまとめています。
+> 文献から選んだtarget-relative枝の最初の成果は
+> [causal run / gap sprint](docs/CAUSAL_RUN_GAP_SPRINT_2026-08-31.md) に記録しています。
 
 ## 現在地
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース203モジュール（約42,000行）
+- Leanソース216モジュール（61,974行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
+- least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
+  canonical座標を`q=0 ∨ (q=1 ∧ r<target)`まで縮約済み（`LeastTailLedgerMinimum`, `LeastTailLedgerProvenance`）
+- 一般のpositive earlier occurrenceについて、3-clock gap、exact ledger payment、sharpな単一job`C=3`
+  支払を証明。複数intervalのoverlapを扱うaggregate Hall定理ではない
+- positive blocker interval Hall条件のexact probeでは2,000万項まで必要最小定数`C_H^*=9`、
+  唯一の最悪区間`[2,6]`。tail `p≥7`では500万項までsharpな`C=3`
+- H6の全21合同類に局所条件を満たす抽象suffixがあるため、mod分類の独立枝を停止し、
+  causal provenanceのno-go regressionとして保存
+- `TailHall₃`が真でも現状の帰結は`liminf a_n/n≤3`でpermanent-above tailと両立するため、
+  全域性の直接攻略は停止条件に到達。部分定理・no-go結果の整理へ移行
+- target-relative low transitionをdescending combへ圧縮し、全low railのfirst-occurrence性・episode間
+  disjoint性・historical terminal blockerの一回消費をLeanで証明（`TargetCandidateTransitions`）
+- exact target-transition probeは2,000万項で2,661本のcomb、最長159,583 fresh landings、protocol違反0。
+  macro辺2,655本はblocker下降2,635・上向きreset 20・fresh interval跨ぎ0
+- high-only excursionのsigned step則、全prefix corridor、sharp exit windowを証明。
+  endpoint総和とuniform marginはno-goと判定し、次の探索点をupward-reset provenanceへ限定
+- 正のterminal blockerは、entryより上へliftする減算起源か、blockerより小さいpredecessorへ降りる
+  forced-addition起源。20Mのupward reset 20件は全て後者（`TargetHighCandidateExcursion`, `TargetCombMacro`）
+- permanent-above tailの最小開始時刻を正準化し、exact replayと固定点枝を整礎反復から完全に除去済み
+- 最小tail境界を「最後の新規low・減算入射・その後の強制加算」としてsource-freeに正規化済み
+- canonical境界のbudget `1→0`とvalley cursorから、無条件の`TerminalChronologyHistoryProgress target coverage (coverage-1)`を構成済み
+- 同edgeをcanonical fresh landing・即時first upcrossing・cursor付き`PermanentTailTerminalAnchoredOutcome`へ搭載済み
+- certificate-preservingな`RefinedTerminalAnchoredOutcome`のfresh branchにも直接搭載済み
+- source-preserving境界では元のcombined parent上の`RefinedTerminalMountedOutcome.landing_crossing`まで構成済み
+- 同じboundary payloadにsemantic／rank下降／等anchorの`BoundaryRankOutcome`も同梱
+- kernel認証traceで`a 99734 = 19`と`a 181653 = 61`を導入し、同じ61traceのsuffixから`a 181643 = 76`を追加チェックなしで復元
+- 同じ深部traceの履歴bitsetからclock 181653のmexが879であることを認証し、仮想的な最小未出目標を`879 ≤ target`へ強化
+- 境界lowを、`target = 879`かつ2連続fresh減算を持つ完全固定例外`(coverage, low) = (181653, 61)`、または`879 ≤ low`へ縮約
+- 固定例外の最大後方roomを180835と計算し、最大後方三択が深さ0のhigh枝に確定することを証明
+- canonical境界で「完全固定例外証明書 ↔ `target = 879`」を証明。非例外枝は同時に`880 ≤ target`・`879 ≤ low`
+- 非例外枝の後方valley反復を879段へ拡張：depth 879未満のhigh、`coverage ≤ low + 2637`、またはbudget 880のdepth-879 valley
+- 879段到達枝を数値化すると`1759 ≤ target`
+- 正depthの後方stageからcanonical境界へ厳密な`TerminalHistoryBudgetDrop`を構成し、879段到達枝を既存well-founded履歴関係へ接続
+- 最大roomの比率枝は非例外low床から`1758 ≤ target`へ強化
+- 最小tail境界の一段後方を「二連続の初出減算着地／6通りの狭い配置／欠損budget 2の先行valley」に完全分類
+- 先行valleyを正確なroom `low + coverage - target`まで反復し、深さ`d`でlowが`d`、欠損budgetが`d+1`に増える後方鏖を定式化。深部low下界から61段版も導出
+- 最大room後方鏖を「明示的な高値減算／実depth付きclock-low接近／`coverage + 2*low ≤ 2*target`」の鋭い三択に圧縮
+- strategy gateにより、canonical history edgeの到着点はmissing budget 0であり、同じhistory relationの次edgeが存在しないことを証明。well-foundednessではこの枝を矛盾にできない
+- `LeastMissingCoverageValleyCertificate`の存在は`LeastMissingTarget`と同値であり、正準化だけでは元問題を弱めていないこともLeanで明示
+- 全射性そのものは未証明。canonical mounted/history路線と深部trace延長は主戦略として停止し、permanent-above tailを直接破る新しい軌道不変量が得られた場合だけ再開する
 - 実軌道上の多段借りを排除済み
 - 負ポテンシャル領域から一段借りまでの有限到達を証明済み
 - 非負アンダーシュート帯の有限降下を証明済み

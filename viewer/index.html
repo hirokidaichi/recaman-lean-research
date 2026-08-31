@@ -52,6 +52,17 @@
     font-size: 12px;
   }
   header button:hover { border-color: var(--accent); }
+  header .headerLink {
+    background: #24304d;
+    color: var(--accent);
+    border: 1px solid #31456d;
+    border-radius: 6px;
+    padding: 5px 12px;
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  header .headerLink:hover { border-color: var(--accent); color: #fff; }
 
   #layout { flex: 1 1 auto; display: flex; min-height: 0; }
 
@@ -214,6 +225,7 @@
   <h1>Recamán 人間向け証明ビューワー</h1>
   <span class="stats" id="stats">読み込み中…</span>
   <span class="spacer"></span>
+  <a class="headerLink" href="status.html">研究現況レポート</a>
   <button id="reloadBtn" title="レポートの生成状況を再確認">↻ 生成状況を更新</button>
 </header>
 <div id="layout">

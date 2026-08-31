@@ -181,13 +181,16 @@ inline GeneratedSource generate(const ExactTrace& trace, Nat leaf_size) {
     out << "]\n\n";
   }
 
-  out << "def traceTree : BalancedTrace :=\n  ";
+  out << "set_option maxRecDepth 100000 in\n"
+         "def traceTree : BalancedTrace :=\n  ";
   write_tree_expression(out, 0, blocks, name_width);
   out << "\n\n"
+         "set_option maxRecDepth 100000 in\n"
+         "set_option maxHeartbeats 20000000 in\n"
          "theorem traceTree_length : traceTree.length = traceSteps := by\n"
          "  decide\n\n"
          "set_option maxRecDepth 100000 in\n"
-         "set_option maxHeartbeats 1000000 in\n"
+         "set_option maxHeartbeats 20000000 in\n"
          "theorem traceBits_checked :\n"
          "    traceTree.verifiesBitsValue traceCapacity 0\n"
          "      initialBitTraceMachine traceExpectedValue = true := by\n"

@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Recamán数列の全域性研究について、2026-08-31時点の証明済み成果、経験的証拠、類似問題の文献調査、停止判断、次の研究方針を整理した現況レポート。">
+<title>Recamán 全域性研究 — 現況レポート</title>
+<style>
+  :root {
+    --bg: #0d1016;
+    --surface: #141922;
+    --surface-2: #1a2130;
+    --surface-3: #202a3c;
+    --line: #2a3448;
+    --line-strong: #3a4860;
+    --text: #e7ebf3;
+    --muted: #97a2b7;
+    --blue: #7bb0ff;
+    --blue-soft: #172c4b;
+    --green: #5bd49a;
+    --green-soft: #153326;
+    --amber: #f2bd4b;
+    --amber-soft: #382c13;
+    --red: #f17676;
+    --red-soft: #3b1e25;
+    --violet: #b9a0ff;
+    --violet-soft: #292243;
+    --mono: "SFMono-Regular", "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: Inter, "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", sans-serif;
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  a { color: var(--blue); text-underline-offset: 3px; }
+  a:hover { color: #acd0ff; }
+  button { font: inherit; }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 54px;
+    padding: 8px 24px;
+    background: rgba(13, 16, 22, .94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+  }
+  .topbar__brand {
+    color: var(--text);
+    font-weight: 720;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .topbar__brand span { color: var(--muted); font-weight: 500; }
+  .topbar__nav {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topbar__nav::-webkit-scrollbar { display: none; }
+  .topbar__nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 5px 9px;
+    border-radius: 5px;
+  }
+  .topbar__nav a:hover, .topbar__nav a.active {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+  .topbar__spacer { flex: 1; }
+  .topbar__back {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+  section { scroll-margin-top: 72px; }
+
+  .masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+    gap: 40px;
+    padding: 70px 0 46px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    margin: 0 0 13px;
+    color: var(--blue);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    max-width: 760px;
+    font-family: var(--serif);
+    font-size: clamp(36px, 6vw, 66px);
+    font-weight: 650;
+    letter-spacing: -.035em;
+    line-height: 1.13;
+  }
+  .lede {
+    max-width: 720px;
+    margin: 23px 0 0;
+    color: #bec6d5;
+    font-size: 17px;
+  }
+  .status-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 26px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 10px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .pill::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .pill--stop { color: var(--red); border-color: #5d3138; background: var(--red-soft); }
+  .pill--open { color: var(--amber); border-color: #5b4921; background: var(--amber-soft); }
+  .pill--checked { color: var(--green); border-color: #26553d; background: var(--green-soft); }
+
+  .decision-card {
+    align-self: end;
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--amber);
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 22px;
+  }
+  .decision-card h2 {
+    margin: 0 0 9px;
+    font-size: 13px;
+    color: var(--amber);
+    letter-spacing: .08em;
+  }
+  .decision-card .decision {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 720;
+    line-height: 1.45;
+  }
+  .decision-card .why { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+  .decision-card .date { margin-top: 18px; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: 11px; }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--line);
+  }
+  .metric { padding: 25px 18px 24px; border-right: 1px solid var(--line); }
+  .metric:first-child { padding-left: 0; }
+  .metric:last-child { border-right: 0; }
+  .metric__value { font-family: var(--mono); font-size: 30px; font-weight: 740; line-height: 1; }
+  .metric__label { margin-top: 9px; color: var(--muted); font-size: 12px; }
+
+  .section {
+    padding: 58px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-heading {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 30px;
+    margin-bottom: 28px;
+  }
+  .section-kicker { color: var(--blue); font-family: var(--mono); font-size: 12px; }
+  .section-heading h2 { margin: 0; font-size: clamp(25px, 3vw, 36px); line-height: 1.25; }
+  .section-heading p { grid-column: 2; margin: -14px 0 0; max-width: 760px; color: var(--muted); }
+
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 18px;
+  }
+  .panel { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+  .panel__inner { padding: 24px; }
+  .panel h3 { margin: 0 0 12px; font-size: 18px; }
+  .panel p { margin: 0; color: #c2cad8; }
+  .panel p + p { margin-top: 13px; }
+  .quote {
+    font-family: var(--serif);
+    font-size: 23px;
+    line-height: 1.65;
+    color: var(--text) !important;
+  }
+  .action-list { display: grid; gap: 12px; margin-top: 17px; }
+  .action {
+    display: grid;
+    grid-template-columns: 27px 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  .action__n {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    color: var(--blue);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .action strong { display: block; font-size: 14px; }
+  .action span { display: block; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 18px 250px; }
+  .filter {
+    cursor: pointer;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    padding: 5px 11px;
+    font-size: 12px;
+  }
+  .filter:hover, .filter[aria-pressed="true"] { border-color: var(--blue); color: var(--text); background: var(--blue-soft); }
+  .evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .evidence {
+    min-height: 184px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+  .evidence[hidden] { display: none; }
+  .tag {
+    display: inline-flex;
+    border-radius: 4px;
+    padding: 3px 7px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .tag--proved { color: var(--green); background: var(--green-soft); }
+  .tag--empirical { color: var(--blue); background: var(--blue-soft); }
+  .tag--nogo { color: var(--red); background: var(--red-soft); }
+  .tag--open { color: var(--amber); background: var(--amber-soft); }
+  .evidence h3 { margin: 13px 0 8px; font-size: 16px; }
+  .evidence p { margin: 0; color: var(--muted); font-size: 13px; }
+  .formula {
+    margin-top: 13px;
+    color: #cbd6e7;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .funnel {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(110px, 1fr));
+    gap: 10px;
+    align-items: stretch;
+  }
+  .funnel__step {
+    position: relative;
+    min-height: 128px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface);
+    padding: 17px 14px;
+  }
+  .funnel__step:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -17px;
+    z-index: 2;
+    color: var(--line-strong);
+    transform: translateY(-50%);
+  }
+  .funnel__step small { color: var(--muted); font-family: var(--mono); }
+  .funnel__step strong { display: block; margin-top: 9px; font-size: 14px; line-height: 1.5; }
+  .funnel__step--end { border-color: #65333d; background: var(--red-soft); }
+  .funnel__step--end small { color: var(--red); }
+  .funnel-caption { margin: 17px 0 0; color: var(--muted); font-size: 13px; }
+
+  .branch-table { width: 100%; border-collapse: collapse; }
+  .branch-table th {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-align: left;
+  }
+  .branch-table td { padding: 15px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .branch-table tr:last-child td { border-bottom: 0; }
+  .branch-table td:first-child { font-weight: 650; }
+  .branch-table .finding { color: var(--muted); font-size: 13px; }
+  .score { min-width: 120px; }
+  .score__label { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+  .score__track { height: 5px; margin-top: 6px; border-radius: 99px; background: #252d3d; overflow: hidden; }
+  .score__bar { display: block; height: 100%; background: var(--amber); }
+  .state { white-space: nowrap; font-size: 12px; }
+  .state--stop { color: var(--red); }
+  .state--partial { color: var(--amber); }
+  .state--keep { color: var(--blue); }
+
+  .hall-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .hall-card { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 22px; }
+  .hall-card h3 { margin: 0; font-size: 15px; }
+  .hall-number { display: flex; align-items: baseline; gap: 9px; margin-top: 20px; }
+  .hall-number strong { font-family: var(--mono); font-size: 46px; line-height: 1; }
+  .hall-number span { color: var(--muted); font-size: 12px; }
+  .hall-bar { height: 12px; margin: 15px 0; background: #252d3d; border-radius: 2px; overflow: hidden; }
+  .hall-bar span { display: block; height: 100%; background: var(--blue); }
+  .hall-card--tail .hall-bar span { background: var(--green); }
+  .hall-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 17px; }
+  .hall-meta div { border-top: 1px solid var(--line); padding-top: 9px; }
+  .hall-meta strong { display: block; font-family: var(--mono); font-size: 12px; }
+  .hall-meta span { color: var(--muted); font-size: 11px; }
+  .callout {
+    margin-top: 14px;
+    border-left: 3px solid var(--amber);
+    background: var(--amber-soft);
+    padding: 13px 16px;
+    color: #e6d7b4;
+    font-size: 13px;
+  }
+
+  .gap-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 20px; }
+  .gap-core {
+    display: grid;
+    place-items: center;
+    min-height: 280px;
+    border: 1px solid #584626;
+    border-radius: 50%;
+    background: var(--amber-soft);
+    padding: 35px;
+    text-align: center;
+  }
+  .gap-core strong { display: block; max-width: 250px; font-family: var(--serif); font-size: 24px; line-height: 1.5; }
+  .gap-core span { display: block; margin-top: 12px; color: #cdbb91; font-size: 12px; }
+  .gap-items { display: grid; gap: 10px; }
+  .gap-item { border: 1px solid var(--line); border-radius: 7px; background: var(--surface); padding: 17px; }
+  .gap-item strong { display: block; font-size: 14px; }
+  .gap-item p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+
+  .roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+  .roadmap-card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden; }
+  .roadmap-card__head { padding: 18px 19px 14px; border-bottom: 1px solid var(--line); }
+  .roadmap-card__n { color: var(--blue); font-family: var(--mono); font-size: 11px; }
+  .roadmap-card h3 { margin: 8px 0 0; font-size: 17px; line-height: 1.4; }
+  .roadmap-card__body { flex: 1; padding: 17px 19px; color: var(--muted); font-size: 13px; }
+  .roadmap-card__gate { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 13px; color: #cad2df; }
+  .roadmap-card__gate b { display: block; margin-bottom: 4px; color: var(--amber); font-family: var(--mono); font-size: 10px; letter-spacing: .06em; }
+
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .rule-box { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 21px; }
+  .rule-box h3 { margin: 0 0 13px; font-size: 15px; }
+  .rule-box ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 13px; }
+  .rule-box li + li { margin-top: 7px; }
+  .rule-box--resume { border-top: 3px solid var(--green); }
+  .rule-box--avoid { border-top: 3px solid var(--red); }
+
+  .verify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .command {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #0a0d12;
+    padding: 17px 19px;
+    color: #cad6e8;
+    font-family: var(--mono);
+    font-size: 12px;
+    overflow-x: auto;
+  }
+  .link-list { display: grid; gap: 7px; }
+  .link-list a {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    background: var(--surface);
+  }
+  .link-list a:hover { border-color: var(--blue); }
+  .link-list span { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+
+  .footnote { padding: 30px 0 45px; color: var(--muted); font-size: 11px; }
+  .footnote strong { color: var(--text); }
+
+  @media (max-width: 900px) {
+    .topbar__nav { display: none; }
+    .masthead, .verdict-grid, .gap-layout, .verify-grid { grid-template-columns: 1fr; }
+    .masthead { gap: 25px; padding-top: 45px; }
+    .decision-card { align-self: auto; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .metric:nth-child(2) { border-right: 0; }
+    .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .metric:nth-child(3) { padding-left: 0; }
+    .section-heading { grid-template-columns: 150px 1fr; }
+    .filters { margin-left: 180px; }
+    .funnel { grid-template-columns: repeat(3, 1fr); }
+    .funnel__step:nth-child(3)::after { display: none; }
+    .roadmap { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 620px) {
+    main { width: min(100% - 28px, 1180px); }
+    .topbar { padding-inline: 14px; }
+    .topbar__brand span { display: none; }
+    .masthead { padding-top: 38px; }
+    h1 { font-size: 38px; }
+    .metrics { grid-template-columns: 1fr; }
+    .metric, .metric:first-child, .metric:nth-child(3) { padding: 17px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+    .metric:last-child { border-bottom: 0; }
+    .section { padding: 43px 0; }
+    .section-heading { display: block; }
+    .section-heading h2 { margin-top: 8px; }
+    .section-heading p { margin-top: 12px; }
+    .filters { margin-left: 0; }
+    .evidence-grid, .hall-grid, .rules { grid-template-columns: 1fr; }
+    .funnel { grid-template-columns: 1fr; }
+    .funnel__step:not(:last-child)::after { content: "↓"; top: auto; right: 50%; bottom: -21px; transform: translateX(50%); }
+    .funnel__step:nth-child(3)::after { display: block; }
+    .branch-table { display: block; overflow-x: auto; }
+    .gap-core { min-height: 235px; }
+  }
+
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --surface-2: #f5f6f8; --line: #d5d9e0; --line-strong: #aeb6c3; --text: #16191f; --muted: #5c6471; }
+    body { background: #fff; color: #16191f; font-size: 11px; }
+    .topbar, .filters { display: none; }
+    main { width: 100%; }
+    .masthead { padding-top: 20px; }
+    .section { break-inside: avoid; padding: 28px 0; }
+    .panel, .evidence, .funnel__step, .hall-card, .gap-item, .roadmap-card, .rule-box { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar__brand" href="#top">Recamán <span>/ research status</span></a>
+    <nav class="topbar__nav" aria-label="レポート内ナビゲーション">
+      <a href="#verdict">結論</a>
+      <a href="#evidence">証拠</a>
+      <a href="#funnel">縮約</a>
+      <a href="#branches">分岐</a>
+      <a href="#literature">類似問題</a>
+      <a href="#roadmap">次の方針</a>
+      <a href="#verification">検証</a>
+    </nav>
+    <span class="topbar__spacer"></span>
+    <a class="topbar__back" href="index.html">証明ビューワーへ</a>
+  </header>
+
+  <main id="top">
+    <section class="masthead" aria-labelledby="report-title">
+      <div>
+        <p class="eyebrow">Status report · 2026-08-31</p>
+        <h1 id="report-title">Recamán 全域性研究<br>現況レポート</h1>
+        <p class="lede">全域性は未解決。target-combのmacro二分法とhigh excursionのfirst-passage corridorまでLean化した。単純な総収支はno-goと判定し、稀なupward resetの生成provenanceへ焦点を移す。</p>
+        <div class="status-line" aria-label="現在の研究状態">
+          <span class="pill pill--stop">直接攻略を停止</span>
+          <span class="pill pill--open">macro探索を継続</span>
+          <span class="pill pill--open">部分定理候補あり</span>
+          <span class="pill pill--checked">形式検証は健全</span>
+        </div>
+      </div>
+      <aside class="decision-card" aria-label="現在の意思決定">
+        <h2>現在の判断</h2>
+        <p class="decision">direct branch は凍結のまま、<br>upward reset の起源を攻める。</p>
+        <p class="why">endpoint balanceは既存ledgerへ戻る。残った非ledger情報はfresh intervalの順序とblocker初出の生成枝。</p>
+        <div class="date">AS OF 2026-08-31 · JST</div>
+      </aside>
+    </section>
+
+    <div class="metrics" aria-label="検証指標">
+      <div class="metric"><div class="metric__value">0</div><div class="metric__label">全域性へ向かう active direct branch</div></div>
+      <div class="metric"><div class="metric__value">218</div><div class="metric__label">通過した Lean build jobs</div></div>
+      <div class="metric"><div class="metric__value">993</div><div class="metric__label">公理監査済み declarations</div></div>
+      <div class="metric"><div class="metric__value">0</div><div class="metric__label">sorry / admit / native_decide / user axiom</div></div>
+    </div>
+
+    <section class="section" id="verdict">
+      <div class="section-heading">
+        <span class="section-kicker">01 / VERDICT</span>
+        <h2>何が進み、何を止めるのか</h2>
+        <p>問題そのものは未解決だが、研究判断はかなり明確になった。直接枝を増やすフェーズから、欠けている因果情報を特定するフェーズへ移る。</p>
+      </div>
+      <div class="verdict-grid">
+        <article class="panel">
+          <div class="panel__inner">
+            <h3>研究上の結論</h3>
+            <p class="quote">局所の符号列・合同類・ledger identity は、正準反例をかなり狭い座標へ押し込む。しかし、それだけでは permanent-above tail を排除できない。</p>
+            <p>したがって、Leanの定義や有限分類を増やすことは、現時点では証明進捗ではない。新しい数学が紙上で出るまで直接形式化を再開しない。</p>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel__inner">
+            <h3>次の一手</h3>
+            <div class="action-list">
+              <div class="action"><span class="action__n">1</span><div><strong>Comb compression ✓</strong><span>low transitionをdescending fresh combへ圧縮し、terminal blocker一回消費を証明。</span></div></div>
+              <div class="action"><span class="action__n">2</span><div><strong>High-only excursion ✓</strong><span>signed step則・全prefix corridor・sharp exit windowをLean化。uniform marginは停止。</span></div></div>
+              <div class="action"><span class="action__n">3</span><div><strong>Reset provenance</strong><span>upward resetの減算起源を排除するか、value liftとfirst-time descentを一rankへ束ねる。</span></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="section-heading">
+        <span class="section-kicker">02 / EVIDENCE</span>
+        <h2>証拠の台帳</h2>
+        <p>「証明済み」「計算で支持」「no-go」「未証明候補」を混ぜない。ボタンで種類を絞り込める。</p>
+      </div>
+      <div class="filters" role="group" aria-label="証拠フィルター">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">すべて</button>
+        <button class="filter" type="button" data-filter="proved" aria-pressed="false">証明済み</button>
+        <button class="filter" type="button" data-filter="empirical" aria-pressed="false">経験的</button>
+        <button class="filter" type="button" data-filter="nogo" aria-pressed="false">no-go</button>
+        <button class="filter" type="button" data-filter="open" aria-pressed="false">未証明</button>
+      </div>
+      <div class="evidence-grid" id="evidenceGrid">
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>正準 tail minimum は低商に入る</h3>
+          <p>least missing target の最小tail minimumは <code>q≤1</code>、<code>G≥−1</code>、ledger corridorを同時に満たす。</p>
+          <div class="formula">2·subSum(t)+(target+2) ≤ upperTri(t)<br>upperTri(t) &lt; 2·subSum(t)+2t</div>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>canonical high branch は空</h3>
+          <p><code>aₜ &lt; t+target</code> かつ <code>q=0 ∨ (q=1 ∧ r&lt;target)</code>。前に有望視したhigh-blocker分岐は正準点では到達不能。</p>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>単一 blocker の sharp C=3 payment</h3>
+          <p>正のearlier occurrenceが後の増加を作ると、3-clock gapと正確なledger支払いが生じる。ただし一般tailの部分定理。</p>
+          <div class="formula">earlier+3 ≤ time<br>time+1 ≤ ΔsubSum+3</div>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>low candidate は孤立する</h3>
+          <p>永久上側tailでtarget未満のcandidateは既出なのでforced addition。その次はtarget omissionにより厳密にhighへ戻り、<code>LL</code>は不可能。</p>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>terminal blocker は一回消費</h3>
+          <p>fresh combの全low railはfirst occurrence。終端blocker <code>b</code>はfresh successor <code>b+1</code>に注入され、別の完了combへ再利用できない。</p>
+        </article>
+        <article class="evidence" data-kind="empirical">
+          <span class="tag tag--empirical">exact computation</span>
+          <h3>20M target-comb probe</h3>
+          <p>low state 5,779,960、comb 2,661本、最長159,583 fresh landings。protocol違反0、historical terminal blockerの最大episode再利用1。</p>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>macro interval-order 二分法</h3>
+          <p>次fresh intervalは旧blockerより完全に下へ移るか、新blockerが旧blockerをstrictに越える。旧blockerを跨ぐ第三形はない。</p>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>high excursion の first passage</h3>
+          <p>signed excessは加算で<code>+n</code>、減算で<code>−(n+2)</code>。全prefixがstrict corridorに入り、出口はlegal subtraction。</p>
+          <div class="formula">0 &lt; exit excess &lt; finish+2</div>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">20M macro audit</span>
+          <h3>upward reset は20件、全てaddition起源</h3>
+          <p>2,655 macro辺で下降2,635・上昇20・等値0・separator違反0。減算起源blocker 1,260件は全てpredecessorがentryより上。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">sharp no-go</span>
+          <h3>uniform exit margin は存在しない</h3>
+          <p>5,779,954出口で違反0だが最小slackは1、最大window利用率99.9999%。endpoint総和も既存ledgerの望遠和。</p>
+        </article>
+        <article class="evidence" data-kind="empirical">
+          <span class="tag tag--empirical">exact computation</span>
+          <h3>unrestricted Hall は C*=9</h3>
+          <p>20,000,000項まで検証。唯一の最悪区間は <code>[2,6]</code>、demand 13、subtraction mass 4、count 1。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--open">conjectural theorem</span>
+          <h3>tail interval は sharp C*=3</h3>
+          <p><code>p≥7</code> のall-job tail intervalで5,000,000項まで成立。候補 <code>TailHall₃</code> は未証明。</p>
+        </article>
+        <article class="evidence" data-kind="open">
+          <span class="tag tag--open">paper lemma</span>
+          <h3>最大加算runの長さ2は不可能</h3>
+          <p>減算後に2回加算すると、3回目の候補は減算前の値そのもの。したがって3回目も必ず加算し、run長は1または3以上。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">no-go</span>
+          <h3>H6の21類は局所算術で消えない</h3>
+          <p>mod 4、parity、ledger、legal/forced初出生成のすべてを通る抽象suffixがあり、局所合同類攻略を停止。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">countermodel</span>
+          <h3>free history は偽blockerを許す</h3>
+          <p>多数の局所不変量を満たしても、履歴を自由に選ぶとRecamán軌道ではないblockerを生成できる。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">causal probe</span>
+          <h3>10億項で最長加算runは6</h3>
+          <p>最初の記録は <code>[5026070,5026075]</code>。同じ値のsaturation source再利用も最大2。ただし両方とも未証明で、単独では全域性に届かない。</p>
+        </article>
+        <article class="evidence" data-kind="open">
+          <span class="tag tag--open">logical gap</span>
+          <h3>linear height だけでは矛盾しない</h3>
+          <p><code>TailHall₃</code> から期待される <code>liminf aₙ/n≤3</code> は非自明だが、固定missing targetのpermanent-above tailと両立する。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="funnel">
+      <div class="section-heading">
+        <span class="section-kicker">03 / FUNNEL</span>
+        <h2>正準化はここまで絞った</h2>
+        <p>行き止まりは失敗ではなく、主張を具体的にどこまで縮約したかを示す。最後に残るのは大域的な因果生成である。</p>
+      </div>
+      <div class="funnel" role="list" aria-label="正準化の縮約過程">
+        <div class="funnel__step" role="listitem"><small>ASSUME</small><strong>least missing target</strong></div>
+        <div class="funnel__step" role="listitem"><small>CANONICALIZE</small><strong>permanent-above tail</strong></div>
+        <div class="funnel__step" role="listitem"><small>MINIMIZE</small><strong>least tail minimum</strong></div>
+        <div class="funnel__step" role="listitem"><small>LEDGER</small><strong>q ≤ 1<br>G ≥ −1</strong></div>
+        <div class="funnel__step" role="listitem"><small>COORDINATES</small><strong>q=0 または<br>q=1, r&lt;target</strong></div>
+        <div class="funnel__step funnel__step--end" role="listitem"><small>STOP</small><strong>high branch は空<br>大域矛盾なし</strong></div>
+      </div>
+      <p class="funnel-caption">結論: quotient / parity / residue class の追加分類を続けても、permanent-above性を壊す機構は増えない。</p>
+    </section>
+
+    <section class="section" id="branches">
+      <div class="section-heading">
+        <span class="section-kicker">04 / BRANCHES</span>
+        <h2>研究分岐の有望度</h2>
+        <p>スコアは「全域性への直接到達可能性」。数学的・戦略的価値とは分けている。停止枝にも独立成果やno-goベンチとしての価値がある。</p>
+      </div>
+      <div class="panel" style="overflow:hidden">
+        <table class="branch-table">
+          <thead><tr><th>分岐</th><th>到達点</th><th>直接有望度</th><th>判定</th></tr></thead>
+          <tbody>
+            <tr><td>Low-quotient minimum</td><td class="finding">q≤1, G≥−1, low coordinates</td><td class="score"><span class="score__label">15 / 100</span><div class="score__track"><span class="score__bar" style="width:15%"></span></div></td><td class="state state--stop">直接枝停止</td></tr>
+            <tr><td>Tail interval Hall</td><td class="finding">500万項で sharp C=3</td><td class="score"><span class="score__label">25 / 100</span><div class="score__track"><span class="score__bar" style="width:25%"></span></div></td><td class="state state--partial">部分定理候補</td></tr>
+            <tr><td>H6 affine chord</td><td class="finding">10億項の経験則、21-class no-go</td><td class="score"><span class="score__label">15 / 100</span><div class="score__track"><span class="score__bar" style="width:15%"></span></div></td><td class="state state--stop">停止・保存</td></tr>
+            <tr><td>Generic provenance</td><td class="finding">single-blocker sharp C=3</td><td class="score"><span class="score__label">20 / 100</span><div class="score__track"><span class="score__bar" style="width:20%"></span></div></td><td class="state state--partial">部分定理</td></tr>
+            <tr><td>Free-history model</td><td class="finding">局所条件の不十分性を分離</td><td class="score"><span class="score__label">20 / 100</span><div class="score__track"><span class="score__bar" style="width:20%"></span></div></td><td class="state state--keep">戦略フィルタ</td></tr>
+            <tr><td>Fixed budget / reset</td><td class="finding">高再利用blockerが収支を破る</td><td class="score"><span class="score__label">5 / 100</span><div class="score__track"><span class="score__bar" style="width:5%"></span></div></td><td class="state state--stop">棄却</td></tr>
+            <tr><td>Target-relative transitions</td><td class="finding">interval-order + first-passage + origin split</td><td class="score"><span class="score__label">55 / 100</span><div class="score__track"><span class="score__bar" style="width:55%"></span></div></td><td class="state state--keep">reset provenanceへ継続</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="hall">
+      <div class="section-heading">
+        <span class="section-kicker">05 / HALL PROBES</span>
+        <h2>Hall実験が示した境界</h2>
+        <p>初期特異区間を外すと定数は9から3へ落ちる。これは本物の構造だが、全域性証明への最後の橋ではない。</p>
+      </div>
+      <div class="hall-grid">
+        <article class="hall-card">
+          <h3>Unrestricted intervals</h3>
+          <div class="hall-number"><strong>C*=9</strong><span>sharp through 20M</span></div>
+          <div class="hall-bar" aria-label="C 9"><span style="width:90%"></span></div>
+          <div class="hall-meta"><div><strong>[2,6]</strong><span>unique worst interval</span></div><div><strong>13 / 4 / 1</strong><span>demand / mass / count</span></div></div>
+        </article>
+        <article class="hall-card hall-card--tail">
+          <h3>Tail intervals, p ≥ 7</h3>
+          <div class="hall-number"><strong>C*=3</strong><span>sharp through 5M</span></div>
+          <div class="hall-bar" aria-label="C 3"><span style="width:30%"></span></div>
+          <div class="hall-meta"><div><strong>-++</strong><span>single-job worst pattern</span></div><div><strong>[16,18] …</strong><span>representative windows</span></div></div>
+        </article>
+      </div>
+      <div class="callout"><strong>解釈:</strong> <code>TailHall₃</code> が証明できれば <code>liminf aₙ/n≤3</code> の有力な独立部分定理になる。ただし linear height は permanent-above tail と両立するため、全域性の直接枝には戻さない。</div>
+    </section>
+
+    <section class="section" id="gap">
+      <div class="section-heading">
+        <span class="section-kicker">06 / MISSING INPUT</span>
+        <h2>不足している数学は何か</h2>
+        <p>どの停止枝も、最後には同じ空白へ到達する。個々の時刻の条件ではなく、履歴全体が一つのRecamán遷移から共同生成された事実を使えていない。</p>
+      </div>
+      <div class="gap-layout">
+        <div class="gap-core"><div><strong>Global causal generation of history</strong><span>free-history countermodel では偽、実軌道では真となる制約</span></div></div>
+        <div class="gap-items">
+          <div class="gap-item"><strong>Upward-reset origin</strong><p>endpoint balanceはledgerへ戻った。resetの減算起源を排除するか、strict value liftをfirst-time下降と統合する必要がある。</p></div>
+          <div class="gap-item"><strong>Nonpositive reset</strong><p>正のforced additionだけを数えると、非正候補によるresetが収支から漏れる。</p></div>
+          <div class="gap-item"><strong>Permanent-above contradiction</strong><p>線形成長や正の減算密度だけでは、固定targetを永遠に避けるtailを排除できない。</p></div>
+          <div class="gap-item"><strong>Joint history constraint</strong><p>blocker、訪問集合、符号列を独立に選ばせず、一つの再帰軌道として結び直す必要がある。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="literature">
+      <div class="section-heading">
+        <span class="section-kicker">07 / ANALOGUES</span>
+        <h2>解決された類似問題から何を借りるか</h2>
+        <p>全射性や大域構造まで証明されたgreedy数列の原論文を比較した。最も近いのは「目標が候補になる機会」と「妨害資源」を同じevent上で数える方法である。</p>
+      </div>
+      <div class="evidence-grid">
+        <article class="evidence">
+          <span class="tag tag--proved">permutation proved</span>
+          <h3><a href="https://arxiv.org/abs/math/0204011">EKG sequence</a></h3>
+          <p>素数ごとのleast-unused multiple frontierを作り、windowへのentry/exitとcontrolling-prime ladderをsieveで数える。</p>
+        </article>
+        <article class="evidence">
+          <span class="tag tag--proved">permutation proved</span>
+          <h3><a href="https://cs.uwaterloo.ca/journals/JIS/VOL18/Sloane/sloane9.html">Yellowstone permutation</a></h3>
+          <p>最小未出値を選ばせる局所状態遷移を作り、その遷移が永遠に消える可能性を素数の再来で排除する。</p>
+        </article>
+        <article class="evidence">
+          <span class="tag tag--proved">surjectivity proved</span>
+          <h3><a href="https://arxiv.org/abs/2207.01448">Binary Enots Wolley</a></h3>
+          <p>target opportunityが十分あれば出現する。P/Q/PQの二側計数で、目標を永久に妨害する仮定を矛盾させる。現在の最優先参照例。</p>
+        </article>
+        <article class="evidence">
+          <span class="tag tag--open">structural analogue</span>
+          <h3><a href="https://arxiv.org/abs/2209.04108">Binary Two-Up</a></h3>
+          <p>有限種類のatomsと局所倍化algorithmで全履歴を記述する。Recamánではrun長でなくgap provenanceが有限状態に閉じる場合だけ候補。</p>
+        </article>
+      </div>
+      <div class="callout"><strong>転用時の決定的な差:</strong> これらの列は全未使用整数から最小eligible候補を選べる。Recamánは候補が二点だけで、positive blockerも再利用される。したがって必要なのはglobal least-choiceの模倣ではなく、target levelを飛び越すepisodeをprovenance classへ課金する輸送補題である。</div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="section-heading">
+        <span class="section-kicker">08 / ROADMAP</span>
+        <h2>high excursionの次はreset provenance</h2>
+        <p>第2gateでfirst-passage corridorは得たが、総和は既存ledgerだった。次は20Mで20件だけ現れたupward resetを生成遷移まで戻す。</p>
+      </div>
+      <div class="roadmap">
+        <article class="roadmap-card">
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 01 · DONE</span><h3>Descending<br>comb compression</h3></div>
+          <div class="roadmap-card__body"><code>cₙ∈ℤ := aₙ₋₁−n</code>のlow stateをfresh low railへ圧縮。railのdisjoint性とterminal blocker注入をLean化した。<div class="roadmap-card__gate"><b>RESULT</b>raw jobでは偽だった有限消費がepisode単位で真。</div></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 02 · DONE</span><h3>High-only<br>first passage</h3></div>
+          <div class="roadmap-card__body">signed step則、全prefix corridor、legal-subtraction出口をLean化した。<div class="roadmap-card__gate"><b>RESULT</b>endpoint総和とuniform marginはno-go。prefix順序だけが残る。</div></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 03 · ACTIVE</span><h3>Upward reset<br>provenance</h3></div>
+          <div class="roadmap-card__body">addition起源はsmaller predecessorへ下降。subtraction起源はolder predecessorへstrict lift。<div class="roadmap-card__gate"><b>NEXT GATE</b>subtraction reset排除、または二成分well-founded rank。</div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-heading">
+        <span class="section-kicker">09 / RESEARCH RULES</span>
+        <h2>再開条件と、やらないこと</h2>
+        <p>停止を有効にするには、何が起きたら再開するかも固定する。これで同じ枝を別名で再導入するのを防ぐ。</p>
+      </div>
+      <div class="rules">
+        <article class="rule-box rule-box--resume">
+          <h3>直接形式化を再開してよい条件</h3>
+          <ul>
+            <li>permanent-above と linear height / subtraction density の矛盾</li>
+            <li>old blocker の無限再利用に対する一様償却</li>
+            <li>nonpositive resetを含む単一potential</li>
+            <li>free history と実軌道を分ける causal invariant</li>
+          </ul>
+        </article>
+        <article class="rule-box rule-box--avoid">
+          <h3>次にやらないこと</h3>
+          <ul>
+            <li>outcome型・certificate・rank wrapperの追加</li>
+            <li>q / parity / mod 4の追加有限分類</li>
+            <li>fixed horizonのtrace・mex・replay拡張</li>
+            <li>target出現と同値な仮説の言い換え</li>
+            <li>既存identityだけから自動的に出る評価</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="verification">
+      <div class="section-heading">
+        <span class="section-kicker">10 / REPRODUCIBILITY</span>
+        <h2>検証と原資料</h2>
+        <p>Lean監査とexact probeを分離して再実行できる。HTMLは判断用の要約で、Markdown版を文章上の正本とする。</p>
+      </div>
+      <div class="verify-grid">
+        <div>
+          <h3 style="margin-top:0;font-size:15px">全体検証</h3>
+          <div class="command">./scripts/check.sh</div>
+          <p style="color:var(--muted);font-size:12px">監査済み公理は <code>{propext, Classical.choice, Quot.sound}</code> のみ。C++20 warnings-as-errorsとself-testも通過。</p>
+        </div>
+        <div class="link-list" aria-label="関連資料">
+          <a href="../docs/STATUS_REPORT_2026-08-30.md">Markdown現況レポート <span>docs/</span></a>
+          <a href="../docs/ROADMAP.md">証明ロードマップ <span>docs/</span></a>
+          <a href="../docs/RESEARCH_PORTFOLIO.md">研究ポートフォリオ <span>docs/</span></a>
+          <a href="../docs/PARALLEL_RESEARCH_2026-08-30.md">並列監査 <span>docs/</span></a>
+          <a href="../docs/CAUSAL_INVARIANT_SPRINT_2026-08-30.md">Causal invariant sprint 1 <span>docs/</span></a>
+          <a href="../docs/CAUSAL_RUN_GAP_SPRINT_2026-08-31.md">Causal run / gap sprint <span>docs/</span></a>
+          <a href="../docs/LITERATURE_REVIEW_2026-08-31.md">類似問題の文献レビュー <span>docs/</span></a>
+          <a href="../Recaman/LeastTailLedgerMinimum.lean">LeastTailLedgerMinimum <span>Lean</span></a>
+          <a href="../Recaman/LeastTailLedgerProvenance.lean">LeastTailLedgerProvenance <span>Lean</span></a>
+          <a href="../Recaman/TargetCandidateTransitions.lean">TargetCandidateTransitions <span>Lean</span></a>
+          <a href="../Recaman/TargetHighCandidateExcursion.lean">TargetHighCandidateExcursion <span>Lean</span></a>
+          <a href="../Recaman/TargetCombMacro.lean">TargetCombMacro <span>Lean</span></a>
+          <a href="../experiments/blocker_interval_hall.cpp">Hall exact probe <span>C++</span></a>
+          <a href="../experiments/blocker_interval_tail.cpp">Tail Hall probe <span>C++</span></a>
+          <a href="../experiments/causal_blocker_probe.cpp">Causal blocker probe <span>C++</span></a>
+          <a href="../experiments/target_transition_probe.cpp">Target transition probe <span>C++</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footnote"><strong>Reading rule:</strong> 「経験的」は有限範囲のexact computationを意味する。macro interval-order、first-passage corridor、origin splitはLean証明済みだが、upward resetのsubtraction起源排除は未証明で、全域性のdirect branchを再開したことは意味しない。</footer>
+  </main>
+
+<script>
+  const filterButtons = [...document.querySelectorAll('.filter')];
+  const evidenceCards = [...document.querySelectorAll('#evidenceGrid .evidence')];
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      filterButtons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      evidenceCards.forEach((card) => {
+        const kinds = card.dataset.kind.split(' ');
+        card.hidden = selected !== 'all' && !kinds.includes(selected);
+      });
+    });
+  });
+
+  const navLinks = [...document.querySelectorAll('.topbar__nav a')];
+  const observed = navLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
+    });
+  }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, .1, .5] });
+
+  observed.forEach((section) => observer.observe(section));
+</script>
+</body>
+</html>
