@@ -20,8 +20,8 @@ additions, a legal subtraction exposes the pre-window value, so an eighth
 step subtraction is impossible.
 
 A seeded search confirms this law is local: every other forced-S census
-candidate at length at most eight admits an exact seeded realization,
-while this pattern and the length-four one admit none.
+candidate at length at most eight has an exact seeded realization, while
+this pattern and the length-four one have none.
 -/
 
 /-- After two legal subtractions, four forced additions, and one more
