@@ -1086,3 +1086,7 @@ import Recaman
 #print axioms Recaman.UnboundedRightTerminalStream.exists_upwardReset_after
 #print axioms Recaman.UnboundedRightTerminalStream.exists_upwardReset_entry_le_after
 #print axioms Recaman.MissingPermanentAboveTail.eventualHigh_or_infinitelyManyUpwardResets
+#print axioms Recaman.UnboundedRightTerminalStream.blocker_floor
+#print axioms Recaman.UnboundedRightTerminalStream.exists_blocker_gt
+#print axioms Recaman.UnboundedRightTerminalStream.exists_entry_gt
+#print axioms Recaman.UnboundedRightTerminalStream.blockers_escape_every_ceiling

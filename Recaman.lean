@@ -219,5 +219,6 @@ import Recaman.TargetMacroSuccessor
 import Recaman.SeededHighCorridorNoGo
 import Recaman.TargetTailResidualKernel
 import Recaman.TargetStreamUpwardResets
+import Recaman.TargetStreamBlockerUnbounded
 import Recaman.Examples
 import Recaman.Oracle
