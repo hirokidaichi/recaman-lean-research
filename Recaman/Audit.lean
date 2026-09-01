@@ -1107,3 +1107,6 @@ import Recaman
 #print axioms Recaman.corridor_forcedAddition_birth
 #print axioms Recaman.firstAt_succ_birth_dichotomy
 #print axioms Recaman.corridor_forcedAddition_birth_classified
+#print axioms Recaman.valuesThrough_length
+#print axioms Recaman.EventualHighCandidateTail.exists_second_missing
+#print axioms Recaman.EventualHighCandidateTail.missing_not_unique
