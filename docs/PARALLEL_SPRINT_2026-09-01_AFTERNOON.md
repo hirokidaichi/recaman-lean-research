@@ -305,3 +305,19 @@ statement-vs-intent攻撃・数値スポットチェックを実施した。結�
 - 注意: `AAAASAA`は1e8で不在→1e9で出現しており、深いL≥9の不在の多くは有限horizon影と推定
 
 `AASSAA`はseeded局所実現可能性の検査（canonical-prefix依存か局所法則かの判別）にかけている。
+
+### 13.1 `AASSAA`の判定: REFUTED-LOCALLY（canonical-prefix現象）
+
+パリティ攻撃はtautologyに退化（拘束なし）。窓の局所拘束（seen要求とfresh要求）は`n=3`の衝突を除き
+`a−5`に一切触れないことを exhaustive check（6≤a≤30, 1≤n≤30 の725/750）で確認。exact seeded反例が存在する:
+
+```text
+最小反例: state ⟨value 6, seen [6,5,1,0]⟩ at clock 4 → AASSAA（最後のAはa−5=1のseen-block）
+A文脈付き: ⟨value 8, seen [8,19,15,7,0]⟩ at clock 11 → A·AASSAA
+```
+
+従って`AASSAA`不在はright-record則と同型のcanonical-prefix現象であり、有界窓の強化では救えない。
+真の不変量は「AASSA窓は常に未訪問低値のフロンティアに乗る（3つの減算着地 a+n, a−4, a−5 が
+連続first occurrence）」という大域的provenance命題である。canonical 1e7の251出現すべてで
+`a−5`の初出がちょうど`n+6`であることも確認した。追跡するならLeastTailLedgerProvenanceの
+hole-provenance機構経由が推奨。局所Lean化は正しく見送った。
