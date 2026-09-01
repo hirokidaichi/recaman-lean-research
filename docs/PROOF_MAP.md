@@ -891,3 +891,12 @@ A枝の残余はこれにより「発散残余`a m − m → ∞`の排除」と
 forced additionへ、長さ2加算run禁止則（`NoDoubleAdditionRun`）が3本目へ、それぞれ無償変換される
 ことを示した。A枝の最終合成は`missingUnbounded_or_burstStream`：欠損値非有界か、需要`c+m`
 1個あたり加算3連burst（`c+2m+2 → c+3m+4 → c+4m+7`）の無限streamかである。
+
+**Round 8の追補（敵対的監査と修理）** — 新規12モジュールへのfree-conclusion監査で、
+`corridor_infinitely_many_forcedAdditions`と`corridor_forcedAddition_candidate_seen`の
+結論が無条件に真であることが判明した（前者は減算の時計条件のみで、後者は時計不成立時の
+候補が`0 = a 0`になることから）。`UnconditionalStepRecurrence`が両者を誠実な名前で記録し、
+回廊固有の内容（時計条件の成立＝純履歴ブロック）を`corridor_forcedAddition_clock_and_seen`で
+復元した。canonical軌道の両ステップ種は無条件に無限再発する。他の頭書き定理
+（value law・第二欠損値・rigid event・二分定理・発散代償・burst・upward reset群）は
+すべて仮定が実効であることを、kernel認証済み反例（`a 99734 = 19`）等で確認した。

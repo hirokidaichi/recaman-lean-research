@@ -259,7 +259,7 @@ positive-blocked reuse 21,718,335件で観測した。
 
 | 計測 | 結果 |
 |---|---|
-| 再利用inventory | распределение13,161,685値、最大20回使用 |
+| 再利用inventory | distinct使用値13,161,685、最大20回使用 |
 | use-gap比率 | 連続use比の76〜78%が1.1未満（狭い時計窓に密集）。倍化帯（1.5〜3）は10〜14%のみ |
 | 後続需要の充足率 | decade 7で0.036%、減衰 ≈ m^(−1/2)。burst streamは100%充足が必要 |
 | birth halving | addition-born供給の62.6%が`w/2`未満の初出（理論の方向と一致するが弱い）。subtraction-born供給が59%で優勢 |
@@ -269,3 +269,25 @@ positive-blocked reuse 21,718,335件で観測した。
 （倍化clock、100%継続）とは似ても似つかない。仮想A枝のrecurrence枝は、実軌道が一度も
 示さない機構でしか維持できない——「不可能である」証明への期待を支持する観測である。
 ただしこれは経験則であり、Lean定理の仮定には使っていない。
+
+## 12. 追記: 敵対的セマンティック監査（Round 8）
+
+新規12モジュールの頭書き定理に対して、free-conclusion攻撃・仮定整合性攻撃・
+statement-vs-intent攻撃・数値スポットチェックを実施した。結果:
+
+- **偽・空虚な定理は0件**。value law（`a 99734 = 19`のkernel認証済み反例で仮定の実効性を確認）、
+  第二欠損値（B枝ではcomb railが窓内に着地するため凍結が壊れることを確認——corridor仮定が実効）、
+  発散仮定（Lean上で反証も証明も不能な誠実なconditionalであることを確認）、二分定理の否定押し込み、
+  burst、upward reset群、いずれも仮定を正しく背負っている。
+- **無料ルート2件を検出・修理**: (1) `corridor_infinitely_many_forcedAdditions`の結論は無条件に真
+  （減算の時計条件だけで永久減算rayは不可能）。(2) `corridor_forcedAddition_candidate_seen`の
+  結論も無条件に真（時計不成立なら候補は`0 = a 0`に切り詰められ常に履歴内）。
+  両者を`UnconditionalStepRecurrence`として誠実な名前で記録し、corridorの真の寄与
+  （時計条件の成立＝ブロックは純粋に履歴由来）を`corridor_forcedAddition_clock_and_seen`として
+  復元、過大主張していたdocコメントを修正した。副産物として
+  **canonical軌道の両ステップ種が無条件に無限再発する**ことが揃った。
+- `NoDoubleAdditionRun`は実軌道2000項で検証: sub-add-add出現26回すべてで3本目の加算が発生、
+  sub-add-add-subは0回。
+
+過去に3度踏んだ「生成証明書を保持しない忘却形は必ず捏造される」の教訓どおり、
+敵対的検査は今回も通常の証明作業では見つからない指摘を返した。

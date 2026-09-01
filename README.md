@@ -23,7 +23,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース240モジュール（66,831行、認証済み深部traceを含む）
+- Leanソース241モジュール（66,934行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -66,6 +66,9 @@ Lean 4形式化プロジェクトです。
   「欠損値非有界 ∨ rigid event stream」（`DivergentCandidateMissing`）
 - event streamはさらに加算3連burst（`c+2m+2 → c+3m+4 → c+4m+7`）へ拡張され、真に新しい需要は
   `c+m`の1個だけと確定（`RecurringCandidateBurst`——run長2禁止則が仮想分岐内で仕事をした初例）
+- 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
+  ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
+  回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定
 - 両枝の精密化を`SharpCorridor`／`SharpResetStream`証明書に束ねる受け渡しkernelを追加
   （`SharpResidualKernel`）
 - terminal blocker自身をanchorにした2B監査では21,495/21,510が後続entryでstrict return。
