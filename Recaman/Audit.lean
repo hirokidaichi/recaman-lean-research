@@ -1095,3 +1095,5 @@ import Recaman
 #print axioms Recaman.exists_canSubtract_of_ray
 #print axioms Recaman.EventualHighCandidateTail.infinitely_many_high_fresh_landings
 #print axioms Recaman.corridor_forcedAddition_candidate_seen
+#print axioms Recaman.double_forcedAddition_candidate_returns
+#print axioms Recaman.double_forcedAddition_extends

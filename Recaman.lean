@@ -221,5 +221,6 @@ import Recaman.TargetTailResidualKernel
 import Recaman.TargetStreamUpwardResets
 import Recaman.TargetStreamBlockerUnbounded
 import Recaman.EventualHighCorridorStructure
+import Recaman.NoDoubleAdditionRun
 import Recaman.Examples
 import Recaman.Oracle
