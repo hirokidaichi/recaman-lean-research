@@ -1090,3 +1090,8 @@ import Recaman
 #print axioms Recaman.UnboundedRightTerminalStream.exists_blocker_gt
 #print axioms Recaman.UnboundedRightTerminalStream.exists_entry_gt
 #print axioms Recaman.UnboundedRightTerminalStream.blockers_escape_every_ceiling
+#print axioms Recaman.corridor_subtraction_lands_above_clock
+#print axioms Recaman.no_perpetual_forcedAddition_ray
+#print axioms Recaman.exists_canSubtract_of_ray
+#print axioms Recaman.EventualHighCandidateTail.infinitely_many_high_fresh_landings
+#print axioms Recaman.corridor_forcedAddition_candidate_seen
