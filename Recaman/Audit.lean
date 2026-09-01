@@ -1097,3 +1097,8 @@ import Recaman
 #print axioms Recaman.corridor_forcedAddition_candidate_seen
 #print axioms Recaman.double_forcedAddition_candidate_returns
 #print axioms Recaman.double_forcedAddition_extends
+#print axioms Recaman.corridor_value_law
+#print axioms Recaman.corridor_infinitely_many_forcedAdditions
+#print axioms Recaman.corridor_forcedAddition_supplier
+#print axioms Recaman.EventualHighCandidateTail.late_forcedAdditions_are_self_fueled
+#print axioms Recaman.corridor_supplier_clock_lower_bound
