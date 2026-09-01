@@ -1104,3 +1104,6 @@ import Recaman
 #print axioms Recaman.corridor_supplier_clock_lower_bound
 #print axioms Recaman.MissingPermanentAboveTail.sharpResidualKernel
 #print axioms Recaman.SharpResetStream.exists_blocker_in_band
+#print axioms Recaman.corridor_forcedAddition_birth
+#print axioms Recaman.firstAt_succ_birth_dichotomy
+#print axioms Recaman.corridor_forcedAddition_birth_classified
