@@ -40,7 +40,7 @@ canonical軌道（`a 0 = 0` からの実軌道）について: AASSA窓（forced
 - Adversarial or weakened-history model: seeded反例は既知（局所形は死んでいる）。
   攻撃対象はcanonical不変量のみ。
 - Discovery range: 1e9センサス（AASSA 1,476回、違反0）。
-- Frozen holdout range: 1e9〜4e9の未走査領域で同型カウントを1回だけ実施する。
+- Frozen holdout range: 1e9〜4e9で実施済み（違反0）。次のholdoutは4e9以降とする。
 - Maximum one permitted repair: 「a−5」を「窓直下の最初の未訪問値」に置換する弱形1回。
 - Stop condition: holdoutで違反が出る、または不変量の証明義務が
   「フロンティア値の将来出現」（＝全射性の再符号化）と同値になったとき。
@@ -52,6 +52,7 @@ canonical軌道（`a 0 = 0` からの実軌道）について: AASSA窓（forced
 | 2026-09-01 | `OBSERVED` | step_word_census_probe 1e9 | AASSA→S 1,476/1,476 |
 | 2026-09-01 | `REFUTED-LOCALLY` | aassaa_seed.py | seeded exact反例（3-blocker seed） |
 | 2026-09-01 | `OBSERVED` | canonical_check.py 1e7 | 251出現全てで a−5 初出 = n+6 |
+| 2026-09-01 | `OBSERVED` | aassa_holdout (1e9, 4e9] frozen | AASSA 698回・違反0、SAAASA 9,650回・違反0、SSAAAAS 686回でS継続0（定理と一致） |
 
 ## Semantic audit
 
