@@ -881,3 +881,8 @@ candidate ancestry chainの反復形式化が次の対象である。`EventualHi
 無条件二分を証明した（`candidate_diverges_or_recurrence` / `diverges_or_rigidEventStream`）。
 A枝の残余はこれにより「発散残余`a m − m → ∞`の排除」と「rigid event streamの需要
 `c + m ∈ 履歴`の供給injectivity」の二点へ正確に分かれた。
+
+**Round 6の追補（発散枝の代償）** — `DivergentCandidateMissing`は、candidate床が下の値窓を
+丸ごと凍結することから、**発散するcandidate walkは任意の限界を超える永久欠損値を残す**ことを
+証明した（`divergent_candidates_missing_unbounded`）。A枝の最終形は
+`missingUnbounded_or_rigidEventStream`：欠損値非有界か、再訪候補のrigid event streamかである。

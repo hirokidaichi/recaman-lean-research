@@ -203,6 +203,19 @@ Nodup部分集合長で閉じ、凍結段はcorridor value lawの1回適用＋om
 A枝の残余はこれで「発散残余の排除」と「event streamの需要`c+m∈履歴`の供給injectivity」の
 二点へ正確に分かれた。
 
+### `DivergentCandidateMissing`（Round 6、発散枝の代償）
+
+発散側の逃げ道に値段をつけた。candidate床`K < d(m)`（m ≥ N）は値法則`K + m + 1 < a(m)`を
+与え、窓`[0, N + B + 3]`の将来着地を全排除する。履歴の1時刻1値計数により窓上部`(B, N+B+3]`に
+未訪問値が残り、それは永久欠損である。ゆえに
+
+- `divergent_candidates_missing_unbounded`: **発散するcandidate walkは任意の限界を超える
+  永久欠損値を残す**
+- `missingUnbounded_or_rigidEventStream`: A枝の最終形——**欠損値非有界 ∨ rigid event stream**
+
+仮想反例のA枝は、「欠損値集合が非有界」という大きな構造的代償を払うか、rigid event streamの
+需要を無限に自己供給し続けるかのどちらかしかない。
+
 ## 8. 分岐スコアの更新
 
 | branch | 前回 | 今回 | 根拠 |
@@ -214,10 +227,10 @@ A枝の残余はこれで「発散残余の排除」と「event streamの需要`
 
 ## 9. 検証
 
-- `./scripts/check.sh`: 通過（build 240 jobs、公理監査1118宣言、禁止語0）
+- `./scripts/check.sh`: 通過（build 241 jobs、公理監査1121宣言、禁止語0）
 - 許可公理: `{propext, Classical.choice, Quot.sound}`のみ
-- 新規10モジュール（238 .leanファイル、66,604行）すべて初回`lake env lean`一発通過、
+- 新規11モジュール（239 .leanファイル、66,717行）すべて初回`lake env lean`一発通過、
   統合時の再検証で問題0件
-- 新規human-proofレポート10本、viewer manifest: 238 modules / 163 reports
+- 新規human-proofレポート11本、viewer manifest: 239 modules / 164 reports
 - probe: C++20 `-Wall -Wextra -Wpedantic -Werror`でコンパイル、1e5でPython独立実装とexact一致を確認
 - 計算結果は仮説選択にのみ使用し、Lean定理の仮定にはしていない

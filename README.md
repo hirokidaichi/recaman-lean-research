@@ -23,7 +23,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース238モジュール（66,604行、認証済み深部traceを含む）
+- Leanソース239モジュール（66,717行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -62,6 +62,8 @@ Lean 4形式化プロジェクトです。
 - **A枝の二分定理**: candidate walkは発散するか、最小の非有界再訪候補`c > target`が床を張り、
   任意に遅いuse clockで完全なrigid event（対角fresh減算入り・forced addition出・後続値`c+m`の
   既訪問強制）を演じる（`EventualHighCorridorRecurrence`, `EventualHighCorridorDichotomy`）
+- **発散枝の代償**: candidate walkの発散は任意の限界を超える永久欠損値を残す。A枝最終形は
+  「欠損値非有界 ∨ rigid event stream」（`DivergentCandidateMissing`）
 - 両枝の精密化を`SharpCorridor`／`SharpResetStream`証明書に束ねる受け渡しkernelを追加
   （`SharpResidualKernel`）
 - terminal blocker自身をanchorにした2B監査では21,495/21,510が後続entryでstrict return。

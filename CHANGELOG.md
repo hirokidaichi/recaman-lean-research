@@ -13,6 +13,7 @@
 - A枝: **第二の永久欠損値の強制**を証明——履歴の1時刻1値計数と、corridor value lawによる窓凍結から、欠損値はtargetだけではない（`EventualHighCorridorSecondMissing`）
 - A枝: 再訪候補のrigid event（入りは対角fresh減算・出はforced addition・後続値は既訪問強制）と有界再訪からの単一再訪値抽出を証明（`EventualHighCorridorRecurrence`）
 - A枝capstone: candidate walkの「発散 ∨ 最小再訪候補でのrigid event stream」二分定理を証明。床は最小性＋帯回避境界から構成（`EventualHighCorridorDichotomy`）
+- 発散枝の代償: candidate床は下の値窓を凍結するので、発散walkは任意の限界超えの永久欠損値を残す。A枝最終形は「欠損値非有界 ∨ rigid event stream」（`DivergentCandidateMissing`）
 - 紙上分析: A枝を「candidate walk発散 ∨ 最小再訪候補のrigid recurrence」へ縮約（`docs/CORRIDOR_SUPPLY_ANALYSIS_2026-09-01.md`）。B枝のblocker birth分類からは非自由入力が出ず、B枝はGate 3〜5形式化の成果で保存
 - 1e9 exact probe `corridor_structure_probe.cpp`を追加: 加算run長最大6、cone-exterior率~43%定常、low-candidate regimeは希薄化しつつ毎decade再入、mexは1355で1e6〜1e9凍結
 - 日本語human-proofレポートを新モジュール分追加し、viewer manifestを更新
