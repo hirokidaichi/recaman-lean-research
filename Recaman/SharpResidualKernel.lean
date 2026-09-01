@@ -23,7 +23,11 @@ disjunction and fills each bundle from the committed sharpenings.
 -/
 
 /-- Everything now known about the eventual high-candidate corridor,
-bundled at one explicit cutoff. -/
+bundled at one explicit cutoff.  Audit note: the `forced_additions` field
+is unconditionally true (`exists_forcedAddition_of_ray`); it is kept for
+interface completeness.  The corridor-bound content lives in
+`candidate_high`, `value_law`, `fresh_landings`, and the value-law
+conjunct of `self_fueled`. -/
 structure SharpCorridor (target tailStart cutoff : Nat) : Prop where
   tail_le : tailStart ≤ cutoff
   candidate_high : ∀ n, cutoff ≤ n → target < nextSubtractionCandidate (n + 1)

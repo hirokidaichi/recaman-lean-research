@@ -251,3 +251,21 @@ forced additionへそのまま変換され、`NoDoubleAdditionRun`（§3）が3�
 
 最終検証: build 242 jobs、公理監査1124宣言（`{propext, Classical.choice, Quot.sound}`のみ）、
 240 .leanファイル・66,831行、human-proof 165本、check.sh緑。
+
+## 11. 追記: 実軌道の再利用candidate probe（`candidate_reuse_probe.cpp`、1e8項）
+
+burst stream理論のper-use需要（use clock `m` ごとに後続値 `v + m` の既訪問）を、実軌道の
+positive-blocked reuse 21,718,335件で観測した。
+
+| 計測 | 結果 |
+|---|---|
+| 再利用inventory | распределение13,161,685値、最大20回使用 |
+| use-gap比率 | 連続use比の76〜78%が1.1未満（狭い時計窓に密集）。倍化帯（1.5〜3）は10〜14%のみ |
+| 後続需要の充足率 | decade 7で0.036%、減衰 ≈ m^(−1/2)。burst streamは100%充足が必要 |
+| birth halving | addition-born供給の62.6%が`w/2`未満の初出（理論の方向と一致するが弱い）。subtraction-born供給が59%で優勢 |
+| 最多使用値 | step-3の等差comb（値≈1.86×初使用時計、使用窓の時計比~1.22） |
+
+解釈: 実軌道の再利用は「generic＋comb幾何」であり、burst streamの自己供給格子
+（倍化clock、100%継続）とは似ても似つかない。仮想A枝のrecurrence枝は、実軌道が一度も
+示さない機構でしか維持できない——「不可能である」証明への期待を支持する観測である。
+ただしこれは経験則であり、Lean定理の仮定には使っていない。

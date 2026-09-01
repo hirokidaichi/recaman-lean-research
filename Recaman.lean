@@ -221,6 +221,7 @@ import Recaman.TargetTailResidualKernel
 import Recaman.TargetStreamUpwardResets
 import Recaman.TargetStreamBlockerUnbounded
 import Recaman.EventualHighCorridorStructure
+import Recaman.UnconditionalStepRecurrence
 import Recaman.NoDoubleAdditionRun
 import Recaman.EventualHighCorridorSupply
 import Recaman.EventualHighCorridorBirth

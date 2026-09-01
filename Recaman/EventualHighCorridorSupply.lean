@@ -10,9 +10,11 @@ where that supplier value can live.
 
 First, the corridor value law places every strictly-post-cutoff orbit value
 strictly above the missing target plus its own clock.  Second, the corridor
-keeps producing forced additions forever: a perpetual subtraction ray past
-the cutoff would drop the value by at least two per step, while the value
-law keeps it nonnegative, which is impossible.  Third, once a forced
+keeps producing forced additions forever.  Audit note: this recurrence is
+in fact free of the corridor hypothesis — the clock half of `CanSubtract`
+alone forbids a perpetual subtraction ray (see
+`exists_forcedAddition_of_ray` in `UnconditionalStepRecurrence`); the
+corridor proof below is retained as stated.  Third, once a forced
 addition's candidate exceeds the pre-cutoff value hull `upperTri cutoff`,
 its supplier must be a corridor-internal landing, and that landing itself
 obeys the corridor value law: the infinite corridor is a self-fueling
@@ -34,10 +36,11 @@ theorem corridor_value_law
   simp only [nextSubtractionCandidate] at h
   omega
 
-/-- **Corridor forced-addition recurrence.**  The corridor produces forced
-additions beyond every bound: a perpetual run of legal subtractions past the
-cutoff would drop the value by at least two per step, while the corridor
-value law keeps every post-cutoff value strictly positive. -/
+/-- The corridor produces forced additions beyond every bound.  Audit
+note: this conclusion is free — `exists_forcedAddition_of_ray` proves it
+with no corridor hypothesis, since the clock half of `CanSubtract` alone
+forbids a perpetual subtraction ray.  Kept in corridor form for the
+`SharpCorridor` interface. -/
 theorem corridor_infinitely_many_forcedAdditions
     {target cutoff : Nat}
     (hhigh : ∀ m, cutoff ≤ m → target < nextSubtractionCandidate (m + 1)) :

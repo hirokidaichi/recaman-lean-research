@@ -1125,3 +1125,6 @@ import Recaman
 #print axioms Recaman.recurringCandidate_second_forcedAddition
 #print axioms Recaman.recurringCandidate_addition_burst
 #print axioms Recaman.EventualHighCandidateTail.missingUnbounded_or_burstStream
+#print axioms Recaman.forcedAddition_candidate_historical
+#print axioms Recaman.exists_forcedAddition_of_ray
+#print axioms Recaman.corridor_forcedAddition_clock_and_seen

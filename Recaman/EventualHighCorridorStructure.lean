@@ -16,8 +16,12 @@ forced-addition ray grows so fast that its own candidate `a (n-1) - 1`
 escapes both the finite pre-ray history and the sparse ray values, so a
 legal subtraction eventually becomes available.  Combining the two, the
 corridor forces infinitely many fresh landings high above their clocks.
-Finally, every forced addition strictly inside the corridor is blocked by
-history, not by clock size: its candidate is an old value.
+Finally, every forced addition strictly inside the corridor exposes a
+historical candidate.  The 2026-09-01 audit showed this membership
+conclusion alone is free — it holds with no corridor hypothesis, because a
+failed clock half truncates the candidate to `0 = a 0` — so the genuinely
+corridor-bound half, the clock condition, is recorded separately in
+`UnconditionalStepRecurrence` as `corridor_forcedAddition_clock_and_seen`.
 -/
 
 /-- **Corridor landing law.**  A legal subtraction taken at a corridor index
@@ -148,9 +152,10 @@ theorem EventualHighCandidateTail.infinitely_many_high_fresh_landings
   have hlands := corridor_subtraction_lands_above_clock hhigh hcut hcan
   exact ⟨n, Nat.le_trans (Nat.le_max_left _ _) hn, hlands.1, hlands.2⟩
 
-/-- **Corridor blocking law.**  Strictly inside the corridor the clock half
-of `CanSubtract` always holds, so a forced addition can only come from the
-history half: its candidate is an old value. -/
+/-- A forced addition strictly inside the corridor exposes a historical
+candidate.  Audit note: this membership conclusion is free of the corridor
+hypothesis (see `forcedAddition_candidate_historical`); the corridor-bound
+clock half lives in `corridor_forcedAddition_clock_and_seen`. -/
 theorem corridor_forcedAddition_candidate_seen
     {target cutoff n : Nat}
     (hhigh : ∀ m, cutoff ≤ m → target < nextSubtractionCandidate (m + 1))
