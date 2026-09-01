@@ -1110,3 +1110,8 @@ import Recaman
 #print axioms Recaman.valuesThrough_length
 #print axioms Recaman.EventualHighCandidateTail.exists_second_missing
 #print axioms Recaman.EventualHighCandidateTail.missing_not_unique
+#print axioms Recaman.corridor_recurringCandidate_forcedAddition
+#print axioms Recaman.corridor_recurringCandidate_entry_subtraction
+#print axioms Recaman.corridor_recurringCandidate_successor_seen
+#print axioms Recaman.corridor_recurringCandidate_event
+#print axioms Recaman.corridor_candidate_bounded_recurrence
