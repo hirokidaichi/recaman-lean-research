@@ -1115,3 +1115,7 @@ import Recaman
 #print axioms Recaman.corridor_recurringCandidate_successor_seen
 #print axioms Recaman.corridor_recurringCandidate_event
 #print axioms Recaman.corridor_candidate_bounded_recurrence
+#print axioms Recaman.exists_least_recurring_candidate
+#print axioms Recaman.exists_uniform_bound_of_no_recurrence
+#print axioms Recaman.EventualHighCandidateTail.candidate_diverges_or_recurrence
+#print axioms Recaman.EventualHighCandidateTail.diverges_or_rigidEventStream
