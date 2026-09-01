@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1124,
+   "lines": 1127,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34435,6 +34435,36 @@
    "hasReport": true
   },
   {
+   "name": "RecurringCandidateBurst",
+   "lines": 111,
+   "imports": [
+    "EventualHighCorridorRecurrence",
+    "NoDoubleAdditionRun",
+    "DivergentCandidateMissing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "recurringCandidate_second_forcedAddition",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "recurringCandidate_addition_burst",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.missingUnbounded_or_burstStream",
+     "line": 80
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "RefinedEdgeReachability",
    "lines": 286,
    "imports": [
@@ -37132,6 +37162,6 @@
    "hasReport": true
   }
  ],
- "total": 239,
- "withReport": 164
+ "total": 240,
+ "withReport": 165
 }

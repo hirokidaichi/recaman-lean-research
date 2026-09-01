@@ -886,3 +886,8 @@ A枝の残余はこれにより「発散残余`a m − m → ∞`の排除」と
 丸ごと凍結することから、**発散するcandidate walkは任意の限界を超える永久欠損値を残す**ことを
 証明した（`divergent_candidates_missing_unbounded`）。A枝の最終形は
 `missingUnbounded_or_rigidEventStream`：欠損値非有界か、再訪候補のrigid event streamかである。
+
+**Round 7の追補（burst合成）** — `RecurringCandidateBurst`は、successor demandが2本目の
+forced additionへ、長さ2加算run禁止則（`NoDoubleAdditionRun`）が3本目へ、それぞれ無償変換される
+ことを示した。A枝の最終合成は`missingUnbounded_or_burstStream`：欠損値非有界か、需要`c+m`
+1個あたり加算3連burst（`c+2m+2 → c+3m+4 → c+4m+7`）の無限streamかである。

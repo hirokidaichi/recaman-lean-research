@@ -234,3 +234,20 @@ A枝の残余はこれで「発散残余の排除」と「event streamの需要`
 - 新規human-proofレポート11本、viewer manifest: 239 modules / 164 reports
 - probe: C++20 `-Wall -Wextra -Wpedantic -Werror`でコンパイル、1e5でPython独立実装とexact一致を確認
 - 計算結果は仮説選択にのみ使用し、Lean定理の仮定にはしていない
+
+## 10. 追記: Round 7（burst合成）
+
+`RecurringCandidateBurst`で、rigid eventの successor demand `c + m ∈ 履歴` が2本目の
+forced additionへそのまま変換され、`NoDoubleAdditionRun`（§3）が3本目を強制することを示した。
+無条件の運動法則が仮想分岐の内部で実際に仕事をした最初の例である。A枝の最終合成は
+
+```text
+欠損値非有界
+∨
+需要 c+m 1個あたり加算3連burst（c+2m+2 → c+3m+4 → c+4m+7）の無限event stream
+```
+
+である（`EventualHighCandidateTail.missingUnbounded_or_burstStream`）。
+
+最終検証: build 242 jobs、公理監査1124宣言（`{propext, Classical.choice, Quot.sound}`のみ）、
+240 .leanファイル・66,831行、human-proof 165本、check.sh緑。
