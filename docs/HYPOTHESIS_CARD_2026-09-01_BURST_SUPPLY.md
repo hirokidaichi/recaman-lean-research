@@ -56,6 +56,18 @@
 |---|---|---|---|
 | 2026-09-01 | `OBSERVED` | candidate_reuse_probe 1e8 | 需要充足率0.036%@d7、m^(−1/2)減衰、格子比率10-14%のみ |
 | 2026-09-01 | `PROVED-LEAN` | RecurringCandidateBurst | burst 3連・需要は`c+m`1個/use |
+| 2026-09-01 | `PROVED-PAPER` | periodic_nogo_check.py（機械検証済み） | **周期的スケジュール不可能**: 任意の周期p・切片A₀でledger赤字 −(2p+A₀²+A₀)/4 < 0。liminf有限のcorridorは必然的に非周期・成長excursion |
+| 2026-09-01 | `DERIVED-PAPER` | 同上 | **use-gap補題**: 連続low候補時計は n₂−n₁ ≥ √(6n₁)(1−o(1))、よって \|U∩[0,N]\| = O(√N)（実測のm^(−1/2)減衰と同指数） |
+| 2026-09-01 | `SURVIVED` | burst_schedule_sim.py 等5script | 抽象自己供給スケジュールは稠密seed・mod-3 ladder・混合格子いずれでも構成失敗（floor保護挿入~0.13/clockが減衰しない）。倍化格子整合は成立するが中間additionの供給が大域的に破綻。a ≤ upperTri n は一度もbindしない——障害は抽象モデル内部 |
+
+## Next targets (repair-compatible refinement)
+
+1. （Lean-ready）**periodic no-go**: 「eventually periodicなcorridor scheduleでliminf有限のものは
+   存在しない」。純粋なstep-law算術で、既存ledger機構で形式化可能な見込み。
+2. **use-gap補題**の形式化: use集合のO(√N)密度は、burst streamのper-use需要に対する
+   初の非自由な定量拘束である。
+3. 抽象モデル内部の障害が幾何cadence（drift-and-reset）にも及ぶかの判定。及ぶなら本予想は
+   canonical固有事実なしで証明可能（カードの想定より強い結果）になる。
 
 ## Semantic audit
 

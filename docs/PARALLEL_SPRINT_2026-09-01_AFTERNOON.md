@@ -335,3 +335,25 @@ L=8最小禁止因子と正確に一致する。L=12の族インスタンス29�
 
 step語の局所理論はこれで完結した: **局所禁止則 = ループ閉包族**、それ以外のセンサス不在は
 すべて「未訪問低値フロンティア」のcanonical provenance現象である。
+
+## 14. 追記: 抽象自己供給スケジュールの構成可否（H-20260901-01の第一反証ラウンド）
+
+カードの反証計画第一手として、burst streamのlocal拘束をすべて満たす抽象無限スケジュール
+（有限seed＋greedy則の決定的軌道）の構成を試みた。結果、構成は失敗し、代わりに次を得た。
+
+- **周期的スケジュール不可能定理**（PROVED-PAPER、機械検証済み）: eventually periodicな
+  corridor scheduleでcandidate walkのliminfが有限のものは存在しない。周期pの語について、
+  天井は毎周期pずつ上がる一方、floorが許すadd-latenessは必要量に対して常に
+  `−(2p + A₀² + A₀)/4` だけ不足する。従ってliminf有限のcorridorは**必然的に非周期・
+  成長excursion**である。
+- **use-gap補題**（DERIVED-PAPER）: floor付きscheduleでは連続するlow候補時計の間隔は
+  `≥ √(6n)(1−o(1))`、よってuse集合の密度はO(√N)。実測probe（§11）のm^(−1/2)減衰と
+  同じ指数であり、初の非自由な定量拘束である。
+- シミュレーション（稠密seed・mod-3 ladder・混合格子、horizon 1e6）はいずれも
+  floor保護のためのseed挿入率~0.13/clockが減衰せず、自己組織化しない。倍化格子
+  `m = 2m′+2` の整合自体は成立するが、burst間の中間additionの燃料が大域的に賄えない。
+- 注目点: `a ≤ upperTri n` は一度もbindしなかった。障害が抽象モデル内部にあるなら、
+  本予想はcanonical固有事実なしで証明できる（カードの想定より強い）可能性がある。
+
+カード`H-20260901-01`は本ラウンドを生き延び、次の標的は (1) periodic no-goのLean化、
+(2) use-gap補題の形式化、(3) drift-and-reset型幾何cadenceの判定、へ更新された。
