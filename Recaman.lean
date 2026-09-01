@@ -223,6 +223,7 @@ import Recaman.TargetStreamBlockerUnbounded
 import Recaman.EventualHighCorridorStructure
 import Recaman.UnconditionalStepRecurrence
 import Recaman.NoDoubleAdditionRun
+import Recaman.LoopClosingSubtraction
 import Recaman.EventualHighCorridorSupply
 import Recaman.EventualHighCorridorBirth
 import Recaman.EventualHighCorridorSecondMissing

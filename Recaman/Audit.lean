@@ -1128,3 +1128,5 @@ import Recaman
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen
+#print axioms Recaman.double_descent_loop_candidate_returns
+#print axioms Recaman.double_descent_loop_extends
