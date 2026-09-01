@@ -23,7 +23,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース241モジュール（66,934行、認証済み深部traceを含む）
+- Leanソース242モジュール（67,008行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -69,6 +69,10 @@ Lean 4形式化プロジェクトです。
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定
+- ステップ語の**ループ閉包族**を発見: `Σεᵢ=1 ∧ Σεᵢ·i=L`の語の直後の減算は窓開始値へ戻るため
+  不可能。族は`L≡0 (mod 4)`にのみ存在し、L=4が`SAAS`、L=8が`SSAAAASS`（`LoopClosingSubtraction`）。
+  10億項センサスの138最小禁止因子のうち局所法則はこの族のみで、残りはcanonical-prefix現象と
+  seeded反例で確定
 - 両枝の精密化を`SharpCorridor`／`SharpResetStream`証明書に束ねる受け渡しkernelを追加
   （`SharpResidualKernel`）
 - terminal blocker自身をanchorにした2B監査では21,495/21,510が後続entryでstrict return。

@@ -321,3 +321,17 @@ A文脈付き: ⟨value 8, seen [8,19,15,7,0]⟩ at clock 11 → A·AASSAA
 連続first occurrence）」という大域的provenance命題である。canonical 1e7の251出現すべてで
 `a−5`の初出がちょうど`n+6`であることも確認した。追跡するならLeastTailLedgerProvenanceの
 hole-provenance機構経由が推奨。局所Lean化は正しく見送った。
+
+### 13.2 ループ閉包族の発見とL=8定理（`LoopClosingSubtraction`）
+
+一括seeded判定により、L≤8のforced-S候補のうち局所法則は`SAAS`と`SSAAAASS`の2つだけと確定。
+後者の機構を特定した: ステップ符号`ε₁…ε_{L−1}`が`Σεᵢ = 1`かつ`Σεᵢ·i = L`を満たす語の
+直後の減算候補は**窓開始前の値そのもの**に一致し、既訪問なので減算不可能。整数条件から
+この「ループ閉包族」は`L ≡ 0 (mod 4)`にのみ存在し、L=4の唯一のインスタンスが`SAAS`
+（`NoDoubleAdditionRun`）、L=8でSAASを含まない唯一のインスタンスが`SSAAAASS`——センサスの
+L=8最小禁止因子と正確に一致する。L=12の族インスタンス29語のうち理論上minimalな10語の中から
+`SASASASAAASS`と`SSAAASASASAS`がセンサスの最小禁止因子リストに現れることも確認した。
+`double_descent_loop_extends`としてLean化済み（初回コンパイル一発通過）。
+
+step語の局所理論はこれで完結した: **局所禁止則 = ループ閉包族**、それ以外のセンサス不在は
+すべて「未訪問低値フロンティア」のcanonical provenance現象である。

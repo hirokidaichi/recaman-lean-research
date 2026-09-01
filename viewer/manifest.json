@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1130,
+   "lines": 1132,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27858,6 +27858,31 @@
    "hasReport": false
   },
   {
+   "name": "LoopClosingSubtraction",
+   "lines": 72,
+   "imports": [
+    "History",
+    "ActualDescent",
+    "CoordinateDynamics"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "double_descent_loop_candidate_returns",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "double_descent_loop_extends",
+     "line": 55
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "Mechanisms",
    "lines": 196,
    "imports": [
@@ -37190,6 +37215,6 @@
    "hasReport": true
   }
  ],
- "total": 241,
- "withReport": 166
+ "total": 242,
+ "withReport": 167
 }
