@@ -1119,3 +1119,6 @@ import Recaman
 #print axioms Recaman.exists_uniform_bound_of_no_recurrence
 #print axioms Recaman.EventualHighCandidateTail.candidate_diverges_or_recurrence
 #print axioms Recaman.EventualHighCandidateTail.diverges_or_rigidEventStream
+#print axioms Recaman.candidateFloor_forces_missing_above
+#print axioms Recaman.divergent_candidates_missing_unbounded
+#print axioms Recaman.EventualHighCandidateTail.missingUnbounded_or_rigidEventStream

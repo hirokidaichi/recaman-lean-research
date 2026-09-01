@@ -227,6 +227,7 @@ import Recaman.EventualHighCorridorBirth
 import Recaman.EventualHighCorridorSecondMissing
 import Recaman.EventualHighCorridorRecurrence
 import Recaman.EventualHighCorridorDichotomy
+import Recaman.DivergentCandidateMissing
 import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle
