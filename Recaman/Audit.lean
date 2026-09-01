@@ -1083,3 +1083,6 @@ import Recaman
 #print axioms Recaman.MissingPermanentAboveTail.exists_finiteRootTerminalNoEscape
 #print axioms Recaman.MissingPermanentAboveTail.eventualHigh_or_unboundedRightTerminal
 #print axioms Recaman.UnboundedRightTerminalStream.exists_targetMacroSuccessor
+#print axioms Recaman.UnboundedRightTerminalStream.exists_upwardReset_after
+#print axioms Recaman.UnboundedRightTerminalStream.exists_upwardReset_entry_le_after
+#print axioms Recaman.MissingPermanentAboveTail.eventualHigh_or_infinitelyManyUpwardResets

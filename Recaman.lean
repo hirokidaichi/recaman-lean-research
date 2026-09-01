@@ -218,5 +218,6 @@ import Recaman.TargetLadderClock
 import Recaman.TargetMacroSuccessor
 import Recaman.SeededHighCorridorNoGo
 import Recaman.TargetTailResidualKernel
+import Recaman.TargetStreamUpwardResets
 import Recaman.Examples
 import Recaman.Oracle
