@@ -223,5 +223,6 @@ import Recaman.TargetStreamBlockerUnbounded
 import Recaman.EventualHighCorridorStructure
 import Recaman.NoDoubleAdditionRun
 import Recaman.EventualHighCorridorSupply
+import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle

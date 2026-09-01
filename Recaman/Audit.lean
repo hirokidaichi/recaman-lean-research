@@ -1102,3 +1102,5 @@ import Recaman
 #print axioms Recaman.corridor_forcedAddition_supplier
 #print axioms Recaman.EventualHighCandidateTail.late_forcedAdditions_are_self_fueled
 #print axioms Recaman.corridor_supplier_clock_lower_bound
+#print axioms Recaman.MissingPermanentAboveTail.sharpResidualKernel
+#print axioms Recaman.SharpResetStream.exists_blocker_in_band
