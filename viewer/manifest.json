@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1109,
+   "lines": 1121,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -25544,6 +25544,108 @@
    "hasReport": true
   },
   {
+   "name": "EventualHighCorridorDichotomy",
+   "lines": 198,
+   "imports": [
+    "TargetTailResidualKernel",
+    "EventualHighCorridorRecurrence"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "exists_least_recurring_candidate",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_uniform_bound_of_no_recurrence",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.candidate_diverges_or_recurrence",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.diverges_or_rigidEventStream",
+     "line": 171
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "EventualHighCorridorRecurrence",
+   "lines": 181,
+   "imports": [
+    "EventualHighCorridorSupply",
+    "CoordinateDynamics"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "corridor_recurringCandidate_forcedAddition",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_recurringCandidate_entry_subtraction",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_recurringCandidate_successor_seen",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_recurringCandidate_event",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_candidate_bounded_recurrence",
+     "line": 145
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "EventualHighCorridorSecondMissing",
+   "lines": 97,
+   "imports": [
+    "EventualHighCorridorSupply",
+    "TargetTailResidualKernel"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "valuesThrough_length",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.exists_second_missing",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.missing_not_unique",
+     "line": 89
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "EventualHighCorridorStructure",
    "lines": 168,
    "imports": [
@@ -37001,6 +37103,6 @@
    "hasReport": true
   }
  ],
- "total": 235,
- "withReport": 160
+ "total": 238,
+ "withReport": 163
 }

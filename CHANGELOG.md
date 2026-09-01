@@ -1,5 +1,22 @@
 # Changelog
 
+## Sharp residual kernel sprint — 2026-09-01 午後
+
+- B枝: separator rootが全terminal blockerの床であることを証明（`TargetStreamBlockerUnbounded.blocker_floor`）
+- B枝: `Classical.choose`の時系列chainとone-use鳩の巣で、streamのblocker/entryが任意の天井を超えることを証明
+- B枝: consecutive macro pairのblocker降下をstrong inductionで停止させ、任意cutoff後のupward blocker resetを強制（`TargetStreamUpwardResets`）。大域kernelを「corridor ∨ 無限upward reset」へ精密化
+- A枝: canonical軌道が永久のforced addition rayを続けられないことを無条件で証明（`no_perpetual_forcedAddition_ray`）
+- A枝: corridorがclock超えのfresh着地とforced additionをともに無限個強制すること、corridor value law、および自給自足供給窓（`corridor_forcedAddition_supplier`）を証明
+- 無条件: 合法減算直後の加算2連は3連を強制し、長さ2の加算runが存在しないことを証明（`NoDoubleAdditionRun`）。10億項probeのhistogram（長さ2が0件）と一致
+- 両枝の精密化を`SharpCorridor`／`SharpResetStream`へ束ねる`SharpResidualKernel`を追加
+- A枝: 供給者を候補値の初出へ強化し、birthステップを「取られた減算」か「加算出力」へ無条件二分（`EventualHighCorridorBirth`）
+- A枝: **第二の永久欠損値の強制**を証明——履歴の1時刻1値計数と、corridor value lawによる窓凍結から、欠損値はtargetだけではない（`EventualHighCorridorSecondMissing`）
+- A枝: 再訪候補のrigid event（入りは対角fresh減算・出はforced addition・後続値は既訪問強制）と有界再訪からの単一再訪値抽出を証明（`EventualHighCorridorRecurrence`）
+- A枝capstone: candidate walkの「発散 ∨ 最小再訪候補でのrigid event stream」二分定理を証明。床は最小性＋帯回避境界から構成（`EventualHighCorridorDichotomy`）
+- 紙上分析: A枝を「candidate walk発散 ∨ 最小再訪候補のrigid recurrence」へ縮約（`docs/CORRIDOR_SUPPLY_ANALYSIS_2026-09-01.md`）。B枝のblocker birth分類からは非自由入力が出ず、B枝はGate 3〜5形式化の成果で保存
+- 1e9 exact probe `corridor_structure_probe.cpp`を追加: 加算run長最大6、cone-exterior率~43%定常、low-candidate regimeは希薄化しつつ毎decade再入、mexは1355で1e6〜1e9凍結
+- 日本語human-proofレポートを新モジュール分追加し、viewer manifestを更新
+
 ## Reset-repayment semantic audit — 2026-09-01
 
 - `UnboundedRightTerminalStream`を強化し、universal fixed-root no-escape、任意に遅いterminal start、target-low provenanceを同時に保持

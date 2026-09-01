@@ -1,5 +1,11 @@
 # 証明ロードマップ
 
+> 2026-09-01午後の並列スプリントで、residual kernelの両枝は
+> [sharp residual kernel](PARALLEL_SPRINT_2026-09-01_AFTERNOON.md) へ精密化された。
+> B枝の残余は「無限個のupward resetの返済」（reset repayment予想、STOPPED保存中）へ、
+> A枝の残余は「自給自足供給窓の無限持続の排除」へ、それぞれexactに絞られている。
+> 以後の研究サイクルは `SharpCorridor` / `SharpResetStream` の2証明書だけを消費すればよい。
+
 > 最新の総合判定は [STATUS_REPORT_2026-08-30.md](./STATUS_REPORT_2026-08-30.md) を参照。
 > 本文には判断の時系列を残すため、当時の「active branch」という記述も保存しているが、
 > 同日後半の追加監査による「直接枝0本、部分定理候補へ移管」が現在の判定である。

@@ -937,6 +937,16 @@ kernel射程Xから到達可能なclock床C(X)への換算は次の階段関数�
 | refined summit | `LeastMissingTarget.refinedSemanticEdge_or_flooredCore` | `RefinedFixedPointCore.lean` |
 | refined semantic edge is non-trivial | `RefinedSemanticEdge.target_missing` | `RefinedFixedPointCore.lean` |
 | refined left branch not free | `not_forall_pos_refinedSummitLeft` | `RefinedFixedPointCore.lean` |
+| stream blocker floor at the root | `UnboundedRightTerminalStream.blocker_floor` | `TargetStreamBlockerUnbounded.lean` |
+| stream blockers escape every ceiling | `UnboundedRightTerminalStream.exists_blocker_gt` | `TargetStreamBlockerUnbounded.lean` |
+| infinitely many upward resets | `UnboundedRightTerminalStream.exists_upwardReset_after` | `TargetStreamUpwardResets.lean` |
+| kernel with reset forcing | `MissingPermanentAboveTail.eventualHigh_or_infinitelyManyUpwardResets` | `TargetStreamUpwardResets.lean` |
+| no perpetual forced-addition ray | `no_perpetual_forcedAddition_ray` | `EventualHighCorridorStructure.lean` |
+| corridor fresh landings above the clock | `EventualHighCandidateTail.infinitely_many_high_fresh_landings` | `EventualHighCorridorStructure.lean` |
+| no length-two forced-addition run | `double_forcedAddition_extends` | `NoDoubleAdditionRun.lean` |
+| corridor value law | `corridor_value_law` | `EventualHighCorridorSupply.lean` |
+| corridor self-fueling supplier | `corridor_forcedAddition_supplier` | `EventualHighCorridorSupply.lean` |
+| sharp residual kernel | `MissingPermanentAboveTail.sharpResidualKernel` | `SharpResidualKernel.lean` |
 
 ## 8. 結論
 
@@ -1092,6 +1102,17 @@ successorが371だけであることを証明し、仮想replayをminimum値371�
 床上げの有限反復を卒業する経路として最有力だったwitness下降連鎖は、否定的に決着した。blocked枝が供給するearlier-smaller辺は本物だが一段で止まり、整礎性は発火しない。この否定的結果は、残る一般排除の望みがdichotomyのもう一方（二連減算枝）か、あるいは深部軌道値のkernel検証（圧縮軌道証明書）の側にあることを意味する。
 
 同時に、頂点定理の読み方には重要な訂正が要る。その結論はsemantic枝が無情報であるために`0 < target`だけから導出でき、定理そのものが伝える情報は右disjunctを実際に構成した経路にしかない。固定点解析の内容は無傷だが、大域組み立てを閉じるには先にsemantic枝のpayloadを捏造不能な形へ強化する必要がある。これは床上げより優先度の高い作業である。
+
+2026-09-01午後の並列スプリントで、residual kernelの両枝は`SharpResidualKernel`の
+受け渡し証明書まで精密化された。B枝（unbounded right-terminal stream）ではseparator rootが
+全terminal blockerの床になり、one-use鳩の巣によりblockerは任意の天井を超え、任意cutoffの後に
+必ずupward blocker resetが起きる。従ってB枝の残余は「無限個のupward resetがひとつも返済されない」
+ことの排除、すなわちreset repayment予想だけである。A枝（eventual-high corridor）では、canonical軌道が
+永久のforced addition rayを続けられないという無条件定理により、corridorはclockを超えるfresh着地と
+forced additionをともに無限個強制し、pre-cutoff hullを超えるcandidateの供給者はcorridor内部に限られる。
+無限corridorは有限seedと違い自給自足でなければならず、これは任意有限長seeded corridorのno-goを
+くぐり抜ける最初のcanonical構造である。副産物として、合法減算直後の加算2連が3連を強制するという
+無条件の運動法則が得られ、10億項probeで長さ2の加算runが厳密に0件である理由が閉じた。
 
 これは全射性の証明ではないが、未解決部分を明示的かつ機械検証可能な境界へ
 押し込めた研究基盤である。

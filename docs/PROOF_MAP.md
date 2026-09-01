@@ -834,3 +834,50 @@ no-escapeから従うため冗長として除いた。
 fixed-history blocker preloadはseeded exact continuationで`REFUTED`となった。exact permanent-tail repaymentは
 未反証だが、独立causal lemmaがないため研究枝は`STOPPED`である。詳細は
 `RESET_REPAYMENT_AUDIT_2026-09-01.md`を参照。
+
+## 2026-09-01 午後: sharp residual kernel（A/B両枝の並列精密化）
+
+5系統並列スプリントで、residual kernelの両枝を6モジュールで精密化した。
+
+**B枝（unbounded right-terminal stream）** — Round 16分解のGate 3〜5を完全Lean化した。
+`TargetStreamBlockerUnbounded`は、no-escapeの右entry床を`entry_below_or_anchor_le_blocker`で
+blocker床`root ≤ blocker`へ持ち上げ、`Classical.choose`による時系列chainと`same_blocker_finalTime_eq`の
+one-use鳩の巣（`exists_blocker_gt_of_many`）で、blockerとentryが任意の天井を超えることを示す。
+`TargetStreamUpwardResets`は、consecutive macro pairのblocker二択でblockerが厳密降下する枝を
+strong inductionで停止させ、任意cutoffの後にupward reset（`blocker₁ < blocker₂`、あわせて
+`a s₁ ≤ blocker₂`）が必ず起きることを示す。従ってB枝の残余は「無限個のupward resetがひとつも
+返済されない」ことのexactな排除、すなわちreset repayment（`STOPPED`中の予想）だけになった。
+
+**A枝（eventual-high candidate corridor）** — `EventualHighCorridorStructure`の中核は無条件定理
+`no_perpetual_forcedAddition_ray`である: canonical軌道は永久にforced additionを続けられない。
+ray値はpre-ray hull `upperTri M`を追い越し、ray内の隣接値は2以上離れるため、露出candidate
+`a(n-1) - 1`がいずれfreshになり合法減算が発生する。これによりcorridorはclockを超える
+fresh着地（`target + clock + 2 < 着地値`）を無限個強制する。`EventualHighCorridorSupply`は
+corridor value law（全時刻で`target + clock + 1 < a n`）とforced additionの無限再発を示し、
+pre-cutoff hullを超えるcandidateの供給者がcorridor内部の着地に限られること
+（`corridor_forcedAddition_supplier`）を証明した。無限corridorは有限seedを除き自給自足系であり、
+これは任意有限長のseeded corridor（`SeededHighCorridorNoGo`）が持たない構造である。
+
+**無条件の恒久資産** — `NoDoubleAdditionRun`は、合法減算の直後にforced additionが2回続くと
+次のcandidateが減算前の値そのもの（既訪問）へ戻るため3回目が強制されることを示す。
+ゆえに長さちょうど2の加算runは存在しない。10億ステップのexact probe
+（`experiments/corridor_structure_probe.cpp`: run長histogram 1:499935267, 2:0, 3:11957, 4:6012,
+5:951, 6:13）の「長さ2が厳密に0件」という観測を無条件に説明する。
+
+**受け渡しkernel** — `SharpResidualKernel`は両枝の精密化を`SharpCorridor`／`SharpResetStream`の
+2つのProp構造体に束ね、`MissingPermanentAboveTail.sharpResidualKernel`が仮想反例を
+どちらかのsharp証明書へ送る。以後の研究はこの2構造体だけを消費すればよい。
+
+**Round 3b/4の追補** — `EventualHighCorridorBirth`は供給者を候補値の初出（birth）へ強化し、
+birthステップを「取られた減算（＝より早い時計自身の候補の再露出）」か「加算出力」かに無条件二分した。
+candidate ancestry chainの反復形式化が次の対象である。`EventualHighCorridorSecondMissing`は、
+履歴リストが1時刻1値であることと窓`[0, cutoff + target + 2]`の計数、およびcorridor value lawによる
+窓全体の凍結から、**A枝がtargetより上に第二の永久欠損値を強制する**ことを証明した
+（`EventualHighCandidateTail.exists_second_missing`）。計数は証人の構成のみに使われ、
+非自由な段は「将来の着地の排除」を与えるvalue lawそのものである。
+
+**Round 5の追補（A枝capstone）** — `EventualHighCorridorDichotomy`は、candidate walkの
+「発散」と「最小再訪候補`c > target`が床を張り任意に遅いuse clockでrigid eventを演じる」の
+無条件二分を証明した（`candidate_diverges_or_recurrence` / `diverges_or_rigidEventStream`）。
+A枝の残余はこれにより「発散残余`a m − m → ∞`の排除」と「rigid event streamの需要
+`c + m ∈ 履歴`の供給injectivity」の二点へ正確に分かれた。

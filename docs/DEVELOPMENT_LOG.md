@@ -30,6 +30,34 @@ lake build Recaman.Audit
 ./scripts/lakew build Recaman.Audit
 ```
 
+## 2026-09-01 午後 sharp-kernel エポック
+
+5系統並列（Lean形式化×3、紙上分析×1、exact probe×1）→統合を5ラウンド回し、
+residual kernelの両枝を9+モジュールで精密化した。紙上分析（Round 4入力）は
+`CORRIDOR_SUPPLY_ANALYSIS_2026-09-01.md`として保存し、その2つの推奨定理
+（第二欠損値・rigid recurrence）を即日Lean化した。
+
+**Lean上の要点**
+
+- `TargetStreamBlockerUnbounded`: `Classical.choose`で`hstream.2`から時系列chainを再帰構成する際、
+  存在命題を`Nat × Nat × Nat`の単一∃へ先に整形してからchoose/choose_specを当てると滑らか。
+  chainのfinal time単調性→単射性→`Fin (B+2)`制限→`exists_blocker_gt_of_many`の合成で鳩の巣が閉じる。
+- `TargetStreamUpwardResets`: blocker値の`Nat.strongRecOn`。非reset枝では`a s₂ < blocker₁`と
+  `entry_eq_blocker_add_length`から`blocker₂ < blocker₁`が出て降下が止まる。
+- `EventualHighCorridorStructure`: 純加算rayの反証は「ray値がpre-ray hull `upperTri M`を追い越す」
+  「ray内の隣接値は2以上離れる」「露出candidateは直前値-1」の3点で、witness時刻を
+  `p = M + upperTri M + M + 2`と明示的に取る。`obtain ⟨p, hp⟩ : ∃ p, p = ...`でopaque化するとomegaが安定。
+- `NoDoubleAdditionRun`: 減算直後の加算2連の次candidateは
+  `a(n) - (n+1) + (n+2) + (n+3) - (n+4) = a(n)`で減算前の値に正確に戻る。probeの発見を即日Lean化。
+- 統合時の再検証で問題は0件。全6モジュールとも初回`lake env lean`通過だった。
+
+**probeの要点（1e9）**: 加算run長histogramは`1: 499935267, 2: 0, 3: 11957, 4: 6012, 5: 951, 6: 13`。
+長さ2の空白が`NoDoubleAdditionRun`の発見源。cone-exterior率は毎decade約43%で定常、
+low-candidate stepは毎decade再入しつつ頻度7e-8まで希薄化、mexは1355で1e6〜1e9の間凍結。
+
+**残余の現在形**: B枝はreset repayment予想（STOPPED中）のみ。A枝は自給自足供給窓の無限持続を
+排除する入力探し。詳細は`docs/PARALLEL_SPRINT_2026-09-01_AFTERNOON.md`。
+
 ## 2026-08-31 target-comb macro エポック
 
 descending fresh combを時間順のmacro頂点として接続した。単純なterminal blocker単調減少は20M scanの

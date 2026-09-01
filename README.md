@@ -23,7 +23,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース228モジュール（65,108行、認証済み深部traceを含む）
+- Leanソース238モジュール（66,604行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -46,6 +46,24 @@ Lean 4形式化プロジェクトです。
   0/28。seeded actual orbitにはrecord・subtraction初出反例があり、局所provenance課金を停止
 - 仮想missing tailを、eventual-high candidate corridorまたは一つのfinite pre-tail rootの右側を走る
   unbounded terminal streamへLeanでexactに二分（`TargetTailResidualKernel`）
+- B枝を精密化: stream内の全terminal blockerはseparator root以上で、one-use鳩の巣により任意の天井を
+  超え、任意cutoffの後に必ずupward blocker reset（`blocker₁ < blocker₂ ∧ a s₁ ≤ blocker₂`）が起きる
+  （`TargetStreamBlockerUnbounded`, `TargetStreamUpwardResets`）。B枝残余はreset repayment予想のみ
+- A枝を精密化: canonical軌道は永久のforced addition rayを続けられず（無条件）、corridorは
+  `target + clock`を超えるfresh着地とforced additionをともに無限個強制し、pre-cutoff hullを超える
+  candidateの供給者はcorridor内部に限られる＝無限corridorは自給自足系
+  （`EventualHighCorridorStructure`, `EventualHighCorridorSupply`）
+- 無条件の運動法則: 合法減算直後の加算2連は3連を強制（候補が減算前の値へ戻る）。長さ2の加算runは
+  存在せず、10億項probeのhistogram（長さ2が0件）を説明（`NoDoubleAdditionRun`）
+- A枝の供給を初出（birth）まで遡行: 遅いforced additionの候補値はcorridor内部で「取られた減算」
+  または「加算出力」として生まれる（`EventualHighCorridorBirth`）
+- **A枝は第二の永久欠損値を強制する**: 履歴は1時刻1値なので広い窓に未訪問値が残り、corridor value
+  lawが窓全体の将来着地を排除する。欠損値はtargetだけではない（`EventualHighCorridorSecondMissing`）
+- **A枝の二分定理**: candidate walkは発散するか、最小の非有界再訪候補`c > target`が床を張り、
+  任意に遅いuse clockで完全なrigid event（対角fresh減算入り・forced addition出・後続値`c+m`の
+  既訪問強制）を演じる（`EventualHighCorridorRecurrence`, `EventualHighCorridorDichotomy`）
+- 両枝の精密化を`SharpCorridor`／`SharpResetStream`証明書に束ねる受け渡しkernelを追加
+  （`SharpResidualKernel`）
 - terminal blocker自身をanchorにした2B監査では21,495/21,510が後続entryでstrict return。
   upward resetは26/28が次terminalで返済され、残る2件はtarget 4の実出現でepoch終了
 - finite historical anchorからは`semantic progress ∨ anchor≤future blocker`までexactに縮約。一方、
