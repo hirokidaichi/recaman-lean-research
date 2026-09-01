@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1085,
+   "lines": 1109,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -25515,6 +25515,127 @@
    "hasReport": false
   },
   {
+   "name": "EventualHighCorridorBirth",
+   "lines": 108,
+   "imports": [
+    "EventualHighCorridorSupply",
+    "CoordinateDynamics"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "corridor_forcedAddition_birth",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "firstAt_succ_birth_dichotomy",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_forcedAddition_birth_classified",
+     "line": 89
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "EventualHighCorridorStructure",
+   "lines": 168,
+   "imports": [
+    "TargetTailResidualKernel",
+    "OrbitBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "corridor_subtraction_lands_above_clock",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_step_value",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_growth_linear",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_growth_double",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "no_perpetual_forcedAddition_ray",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_canSubtract_of_ray",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.infinitely_many_high_fresh_landings",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_forcedAddition_candidate_seen",
+     "line": 154
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "EventualHighCorridorSupply",
+   "lines": 144,
+   "imports": [
+    "EventualHighCorridorStructure"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "corridor_value_law",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_infinitely_many_forcedAdditions",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_forcedAddition_supplier",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "EventualHighCandidateTail.late_forcedAdditions_are_self_fueled",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_supplier_clock_lower_bound",
+     "line": 121
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "Examples",
    "lines": 162,
    "imports": [
@@ -27918,6 +28039,31 @@
    "theorems": 10,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": true
+  },
+  {
+   "name": "NoDoubleAdditionRun",
+   "lines": 54,
+   "imports": [
+    "History",
+    "ActualDescent",
+    "CoordinateDynamics"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "double_forcedAddition_candidate_returns",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "double_forcedAddition_extends",
+     "line": 42
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": true,
    "hasReport": true
   },
   {
@@ -35349,6 +35495,41 @@
    "hasReport": true
   },
   {
+   "name": "SharpResidualKernel",
+   "lines": 116,
+   "imports": [
+    "TargetStreamUpwardResets",
+    "TargetStreamBlockerUnbounded",
+    "EventualHighCorridorSupply"
+   ],
+   "decls": [
+    {
+     "kind": "structure",
+     "name": "SharpCorridor",
+     "line": 27
+    },
+    {
+     "kind": "structure",
+     "name": "SharpResetStream",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.sharpResidualKernel",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "SharpResetStream.exists_blocker_in_band",
+     "line": 101
+    }
+   ],
+   "theorems": 2,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "SubtractionLedger",
    "lines": 445,
    "imports": [
@@ -36355,6 +36536,70 @@
    "hasReport": false
   },
   {
+   "name": "TargetStreamBlockerUnbounded",
+   "lines": 268,
+   "imports": [
+    "TargetTailResidualKernel",
+    "TargetCombSemanticMount",
+    "TargetCombFiniteCeiling"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.blocker_floor",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.exists_blocker_gt",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.exists_entry_gt",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.blockers_escape_every_ceiling",
+     "line": 251
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
+   "name": "TargetStreamUpwardResets",
+   "lines": 126,
+   "imports": [
+    "TargetTailResidualKernel",
+    "TargetCandidateTransitions"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.exists_upwardReset_after",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.exists_upwardReset_entry_le_after",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.eventualHigh_or_infinitelyManyUpwardResets",
+     "line": 101
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": true
+  },
+  {
    "name": "TargetTailResidualKernel",
    "lines": 293,
    "imports": [
@@ -36756,6 +37001,6 @@
    "hasReport": true
   }
  ],
- "total": 228,
- "withReport": 153
+ "total": 235,
+ "withReport": 160
 }
