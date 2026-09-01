@@ -53,6 +53,17 @@ terminal blockerの初出transitionを完全分類した。legal subtraction起�
 次のgateは、upward resetのsubtraction起源を排除するか、value liftとfirst-time descentをlexicographic rankへ
 統合することである。
 
+### 幅広macro監査
+
+reset provenance以外の可能性を、first-occurrence ancestry、値interval traversal、record gap fluxへ広げた。
+任意二つの時間順combのfresh intervalが完全に左右分離する`fresh_intervals_ordered`はLeanで成立した。
+
+一方、20M exact scanではupward ancestryが最大60,651 hop、edge再利用7、threshold crossing再利用4となり、
+短い／一回消費ancestryは成立しない。interval traversalもupwardで最大2,237本、downwardで最大71本の
+既存intervalを飛び越え、stack disciplineではない。upward 20件が全てglobal right recordという経験則だけが
+残ったが、record gap 17,820,564のうち9,518,181は20M時点でも未訪問であり、fresh intervalだけの閉じた
+保存則にはならない。次の限定枝をright-recordのcausal証明とhigh-reservoir込みgap fluxへ更新した。
+
 ## 今回のエポックの主結果
 
 時刻 `n>0` の実軌道を
@@ -2455,3 +2466,130 @@ historical predecessor `b`で止まるとfinal landingは`b+1`なので、同じ
 最大1で、Lean注入定理と一致する。残余は異なるblockerが上へ逃げるhigh-only excursionである。
 次ラウンドはsigned candidateのHH遷移をclock重み付きmacro balanceへし、disjoint fresh intervalの
 上界と同じevent族で衝突させられるかだけを調べる。
+### 第百八ラウンド：low-to-terminal抽出、semantic mount、finite-basin no-go
+
+2026-08-31 22:10 JSTから2時間枠で、target-comb、ancestry/ceiling、eventual-high causality、
+finite-basin escapeを並列監査した。各tail low candidate landingがfreshであることから、low railの
+自然数下降への強帰納法で有限 maximal comb suffixを抽出し、そのmaximal failureがhistorical
+terminal blockerであることをLean化した。これによりlow stateからcompleted macro episodeへの橋は閉じた。
+
+terminal blockerは現在horizonのOrbitReadyではないが、historical normalとして
+ExtendedHistory/Refined/Semantic domainへ正しくmountできる。時間順episodeではlater-entry-leftが
+strict progressを与え、upward resetも旧blockerがpre-tail triangular ceilingを越えていればtime ancestryで
+strict childへ接続できる。finite anchorについて残余はexactに`progress ∨ anchor≤future blocker`となった。
+
+しかし`blocker_j=r+j`, `entry_j=r+j+1`というright-moving singleton ladderはfresh interval order、
+terminal blocker one-use、unboundedness、historical provenanceを全て満たし、future entryを一度もanchorの
+左へ戻さない。このno-goをLeanで認証したため、finite-basinを現行macro interfaceだけで閉じる枝を停止した。
+
+eventual-high側ではpositive forced candidateのearlier first-time mapを構成したが、標準prefixでcandidate 285の
+再利用、既出output 2935への着地、異なるcandidateから同じoutput 265への衝突をLean認証した。2M replayでも
+same-candidate最大reuseは13へ増えた。weighted ledger、cut flux、raw causal chargingはいずれも独立枝として停止する。
+
+次の再開gateは、標準Recamán recurrenceだけが持つclock/legality no-escape、terminal利用ごとのfresh certificate
+injectivity、またはeventual-high tailを直接排除するstrict rankのいずれかである。全射性自体は未証明で、
+active direct branchは0本のままである。詳細は`docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md`。
+
+追加のclock監査ではterminal final直後の二clockがforcedであるexact launchを抽出し、singleton unit ladderの
+次entryに5-clock gapを証明した。ただし6-clock刻みはgapとparityを無限に満たすためsparsityだけでは足りない。
+20Mで`next blocker=previous entry`が0件だった事実は、visited-sensitive no-return候補として残す。
+
+その無条件版は標準prefixで偽だった。target 4のepisode `(38,13,39,25)`のfresh entry 39は、
+介在episode `(77,11,75,63)`の後、singleton `(111,0,40,39)`のterminal blockerへ戻る。この反例をLean認証した。
+一方、後のblockerが古いfresh interval内に入るならinterior railでなくentryそのものに限られ、20Mでは
+immediate same-target predecessor entryの再利用は0/2,655だった。残る候補を`TargetMacroSuccessor` gated no-returnへ限定する。
+
+finite-root waiting episodeのfresh interval幅を足す`Q`について、各episodeの幅が`k+1`、clock幅と
+`2Q=duration+2`で結ばれること、二episode版のhull boundをLean化した。20Mでは860系列・7,390 waitingで
+有限族版不等式に違反0だが、最大待ち例のhull密度22.75%なので単独potentialは飽和しない。
+
+eventual-highのcandidate reuse intervalにはexact subtraction balanceがあるが、標準prefixで5重overlapし、
+strict high block内のactive depthは21から427へ増えた。candidate別望遠和と時刻multiplicityの双方が
+reuse数を抑えないため、この集約枝も停止した。
+
+### 第百九ラウンド：canonical upward provenance監査とfresh-certificate枝の停止
+
+`target_upward_provenance_probe`を追加し、標準prefixを20M、200M、1B、2Bまで伸ばして、同一targetの
+連続terminal episodeにおけるupward resetを監査した。2Bまでに28件あり、28/28がterminal right record、
+28/28のblocker初出がforced additionだった。この規則は標準prefix上では強く安定している。
+
+しかし必要だった有限課金は成立しなかった。28 blockerのうち26個は対象epoch中に新規生成され、forced-addition
+birth candidateも19個がepoch中に新規生成された。さらにterminal fresh intervalに属するblockerは0/28だった。
+候補値の再利用が最大1でも、tail自身が新候補を供給し続けるため、有限初期資源の消費にはならない。
+
+加えて自由seedから実際の`Basic.step`を反復する探索で、target 5についてblockerが16から230へ上昇する
+terminal right-record resetを得た。230の初出はclock 96での`326 - 96`というlegal subtractionである。
+従って「upward terminal right recordならblocker初出はforced addition」という局所命題は偽であり、2Bの
+観測をLean化するにはcanonical prefix到達可能性を分離する独立不変量が必要である。
+
+この結果、terminal fresh certificate課金とlocal macro/historyだけによる証明枝を停止した。
+canonical generation-vs-reuseの有望度を30から20へ下げ、標準prefix上のaddition-origin則は25で保留する。
+現時点で相対的に残るのはfinite-root no-escape候補（45）だが、canonical reachability separatorが得られるまで
+Lean化しない。全射性は未証明であり、active direct branchは0本のままである。
+
+### 第百十ラウンド：finite-root残余のA/B kernel化
+
+finite-root no-escape、canonical separator、proof architectureを並列監査した。finite-root枝はterminal stream
+抽出、fixed-root separator、fresh interval packing、unbounded hull、infinitely many resetまで現行APIから
+届くが、right ladderを壊すreset repaymentだけが新数学として残る。standard mex epochの統計は永久欠落tailの
+直接観測でないため、finite-root枝を45から30へ下方修正した。
+
+各terminal blocker自身をanchorにした監査では、2Bの21,510件中21,495件が後続entryでstrictに下へ戻った。
+upward reset 28件では26件が次terminalで即時返済され、残る2件はtarget 4が実際に出現してepochが終了した。
+ただし最大一般waitは20,097 episodeまで増え、一様waiting boundは再棄却した。
+
+record gapのfuture consumptionもcohort固定で測った。200kまでのgapでrecord時未訪問だった44,341値は20Mまでに
+44,290値が初出し、2M cohortも20Mまでに92.06%が消費された。これは強いqueue現象だが、任意固定gapの
+eventual consumptionは全射性の再符号化になりやすいため診断用に留める。
+
+proof architectureは`TargetTailResidualKernel`としてLean化した。tail後first occurrenceは既存
+`coverageStep_at`で閉じるため、有限pre-tail oracleだけが不足する。全pre-tail rootがterminal escapeすると
+CoverageOracleからtarget occurrenceが出て矛盾するので、固定finite no-escape rootを抽出できる。さらにlow candidate
+のbounded/unboundedで仮想missing tailをeventual-high corridorまたはfixed-root unbounded right-terminal streamへ
+exactに二分した。canonical clock-4 separatorは決定的標準軌道の言い換えに退化し、5/100で停止した。
+
+### 第百十一ラウンド：target-low stream監査とreset repayment停止
+
+`H-20260901-17`として研究問い、受理条件、停止条件を先に固定し、proposer、falsifier、formalizer、auditorを
+分離した。statement auditにより、Round 16の`UnboundedRightTerminalStream`は構築過程で既知だった
+target-low predicate、late start clock、universal fixed-root no-escapeを結論型で失っていたと判明した。
+三点をconjunctionへ戻し、A/B kernel theoremを同じ仮定のまま強化した。
+
+unbounded startから任意の既存terminal finalより後のlow clockが存在する。その最小clockを強帰納で選び、
+間に別lowがあれば最小性に反すること、candidate equalityはmissing targetと矛盾することから全中間clockを
+strict highへ上げた。これにより`UnboundedRightTerminalStream.exists_targetMacroSuccessor`をLean化し、
+B枝からsame-target consecutive macroを反復選択できることを確定した。これはrepaymentを仮定しない。
+
+返済を導く最弱の有限資源候補はfixed-history blocker preloadだった。返済が起きない間、全後続blockerの
+first timeがreset startより前なら、one-useでblocker/first-timeが相異なり、unbounded streamから有限prefixへの
+単射が生じて矛盾する。この依存鎖は`PROVED-PAPER`である。
+
+しかしseed `seen={0,1,6,8,13}, current=13, nextClock=7`からexact greedy ruleを続けると、target 4の
+reset `6→14`後、entryが14未満へ戻る前にblocker 199がclock 65のforced addition`134+65`で初出する。
+コマンド`ruby experiments/target_reset_preload_counterexample.rb 1200`で再現でき、local preloadと即時返済を
+`REFUTED`とした。exact permanent-missing antecedentは有限計算でinstantiateできず未反証だが、global preloadへ
+修理すると返済またはtarget occurrenceの言い換えになる。
+
+seeded repayment probeはdiscovery `5000 200 10000 20260901`と独立holdout
+`1000 200 50000 20260902`へ固定した。前者は31,894 upward中31,259 repayment、337 target-end、298 censor、
+後者は8,753中8,652 repayment、77 target-end、24 end-censorだった。resolved wait最大は双方9 episodeで、
+uniform boundは仮定しない。これは`COMPUTED`であり永久欠落tailの証拠ではない。
+
+以上によりexact repayment statementは`CONJECTURED`のまま、仮説カードを`STOPPED`とした。有望度を40から15へ
+下げ、再開条件を「future return、target occurrence、canonical reachabilityを使わずpost-reset blocker birthを
+抑えるindependently testable global invariant」に限定した。active direct branchは0本である。
+
+検証コマンド：
+
+```text
+lake build Recaman.TargetTailResidualKernel  # 177/177
+lake build Recaman.Audit                     # 230/230
+ruby -c experiments/target_reset_repayment_probe.rb
+ruby -c experiments/target_reset_preload_counterexample.rb
+git diff --check
+./scripts/check.sh                            # 230 jobs; 1,082 declarations audited
+```
+
+全体監査は成功し、1,082 declarationsの公理依存が
+`{propext, Classical.choice, Quot.sound}`内であること、禁止された
+`sorry` / `admit` / `native_decide` / user-defined `axiom`がないことを確認した。

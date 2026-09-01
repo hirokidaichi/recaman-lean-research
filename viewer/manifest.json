@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 996,
+   "lines": 1085,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -25492,6 +25492,29 @@
    "hasReport": true
   },
   {
+   "name": "EventualHighCandidateLedger",
+   "lines": 42,
+   "imports": [
+    "TargetHighCandidateExcursion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_lt_candidate_iff_interval_ledger_strict",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "eventuallyHighCandidate_iff_forall_interval_ledger_strict",
+     "line": 28
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Examples",
    "lines": 162,
    "imports": [
@@ -25779,6 +25802,49 @@
    "hasReport": true
   },
   {
+   "name": "ForcedCandidateReuseBalance",
+   "lines": 112,
+   "imports": [
+    "HighCandidateCausalReuse"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "same_positive_candidate_reuse_subtraction_balance",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "same_positive_forcedCandidate_reuse_bundle",
+     "line": 37
+    },
+    {
+     "kind": "def",
+     "name": "HighForcedCandidateUse",
+     "line": 67
+    },
+    {
+     "kind": "def",
+     "name": "StrictlyCrossingIntervals",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "five_high_candidate_reuse_intervals_overlap_counterexample",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "high_candidate_reuse_intervals_cross_counterexample",
+     "line": 102
+    }
+   ],
+   "theorems": 4,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Gate",
    "lines": 42,
    "imports": [
@@ -25800,6 +25866,45 @@
    "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "HighCandidateCausalReuse",
+   "lines": 115,
+   "imports": [
+    "EventualHighCandidateLedger",
+    "DebtAddition"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "forcedAddition_positive_candidate_has_earlier_firstAt",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "nextCandidate_after_positive_forcedAddition",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "forcedAddition_same_candidate_outputs_strict",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "highCandidate_forcedReuse_and_nonfreshOutput_counterexample",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "highCandidate_distinctCandidates_sameOutput_counterexample",
+     "line": 103
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "HighValueDensity",
@@ -33673,6 +33778,97 @@
    "hasReport": true
   },
   {
+   "name": "RecordGapCutFlux",
+   "lines": 228,
+   "imports": [],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "cutClip",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "cutClip_monotone_lipschitz",
+     "line": 37
+    },
+    {
+     "kind": "def",
+     "name": "pathSignedFlux",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "pathSignedFlux_eq",
+     "line": 56
+    },
+    {
+     "kind": "def",
+     "name": "pathCutFlux",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "path_cut_balance",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "positivePart",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "self_eq_positivePart_sub_reverse",
+     "line": 93
+    },
+    {
+     "kind": "def",
+     "name": "pathPositiveCutFlux",
+     "line": 99
+    },
+    {
+     "kind": "def",
+     "name": "pathNegativeCutFlux",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "pathCutFlux_eq_positive_sub_negative",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "path_cut_positive_negative_balance",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "path_cut_le_positive_crossing",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "path_cut_zero_of_endpoints_above",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "path_positive_eq_negative_of_endpoints_above",
+     "line": 192
+    },
+    {
+     "kind": "theorem",
+     "name": "path_positive_negative_zero_of_all_above",
+     "line": 207
+    }
+   ],
+   "theorems": 10,
+   "defs": 6,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Recovery",
    "lines": 236,
    "imports": [
@@ -34936,6 +35132,69 @@
    "hasReport": false
   },
   {
+   "name": "SeededHighCorridorNoGo",
+   "lines": 158,
+   "imports": [
+    "ForcedCandidateReuseBalance"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "seededHighCandidate",
+     "line": 20
+    },
+    {
+     "kind": "def",
+     "name": "seededHighBaseSeen",
+     "line": 25
+    },
+    {
+     "kind": "def",
+     "name": "seededHighInitial",
+     "line": 30
+    },
+    {
+     "kind": "def",
+     "name": "seededHighState",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "seededHighCandidate_mem_baseSeen",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "one_lt_seededHighCandidate",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "one_not_mem_seededHighBaseSeen",
+     "line": 52
+    },
+    {
+     "kind": "structure",
+     "name": "SeededHighInvariant",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "seededHighInvariant",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrarilyLong_seededHigh_forcedAdditionCorridor",
+     "line": 126
+    }
+   ],
+   "theorems": 5,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SemanticOracleRecursion",
    "lines": 390,
    "imports": [
@@ -35437,7 +35696,7 @@
   },
   {
    "name": "TargetCandidateTransitions",
-   "lines": 353,
+   "lines": 714,
    "imports": [
     "PermanentAboveTail",
     "OrbitCombValues"
@@ -35450,121 +35709,407 @@
     },
     {
      "kind": "theorem",
+     "name": "entry_lt_clock_add_target_of_candidateBelow",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_eq_freshTarget_occurs_next",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidate_ne_target",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidateBelow_or_strictAbove",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidate_strictAbove_of_not_below",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.eventually_candidate_strictAbove_of_no_lows",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
      "name": "MissingPermanentAboveTail.candidateBelow_forcesAddition",
-     "line": 27
+     "line": 106
     },
     {
      "kind": "theorem",
      "name": "MissingPermanentAboveTail.forcedAddition_candidate_strictAbove",
-     "line": 41
+     "line": 120
     },
     {
      "kind": "theorem",
      "name": "MissingPermanentAboveTail.candidateBelow_forces_highNext",
-     "line": 80
+     "line": 159
     },
     {
      "kind": "theorem",
      "name": "MissingPermanentAboveTail.not_two_consecutive_candidateBelow",
-     "line": 92
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidateBelow_entry_first",
+     "line": 185
     },
     {
      "kind": "theorem",
      "name": "MissingPermanentAboveTail.candidateBelow_comb_or_historyBlocker",
-     "line": 105
+     "line": 199
     },
     {
      "kind": "structure",
      "name": "FreshCombEpisode",
-     "line": 145
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.exists_maximal_freshCombEpisode",
+     "line": 246
     },
     {
      "kind": "theorem",
      "name": "FreshCombEpisode.low_rail_first",
-     "line": 150
+     "line": 284
     },
     {
      "kind": "theorem",
      "name": "FreshCombEpisode.final_first",
-     "line": 170
+     "line": 304
     },
     {
      "kind": "theorem",
      "name": "FreshCombEpisode.low_rail_ne_of_before",
-     "line": 178
+     "line": 312
     },
     {
      "kind": "structure",
      "name": "HistoryTerminatedComb",
-     "line": 192
+     "line": 326
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.entry_eq_blocker_add_length",
+     "line": 337
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.twice_entry_gap_eq_duration_add_two",
+     "line": 346
+    },
+    {
+     "kind": "theorem",
+     "name": "FreshCombEpisode.historyTerminated_of_next_not_step",
+     "line": 356
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidateBelow_exists_historyTerminatedComb",
+     "line": 428
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.unbounded_historyTerminatedFinal_of_unbounded_candidateBelow",
+     "line": 445
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.blocker_occurs_before_entry",
-     "line": 201
+     "line": 461
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.blocker_has_firstAt_before_entry",
-     "line": 226
+     "line": 486
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.subtraction_origin_predecessor_above_entry",
-     "line": 240
+     "line": 500
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.repayment_forced",
-     "line": 278
+     "line": 538
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.same_blocker_finalTime_eq",
-     "line": 298
+     "line": 558
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.next_entry_below_or_blocker_lt",
-     "line": 318
+     "line": 578
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.fresh_intervals_ordered",
+     "line": 616
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.two_interval_mass_le_hull",
+     "line": 650
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.upward_reset_previous_entry_le_blocker",
+     "line": 676
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.upward_reset_failure_has_right_left_right",
+     "line": 696
     }
    ],
-   "theorems": 14,
+   "theorems": 31,
    "defs": 3,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
+   "name": "TargetCombCounterexample",
+   "lines": 75,
+   "imports": [
+    "TargetCandidateTransitions"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ungated_upward_reset_not_global_right_record",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "counterexample_old_entry_not_targetLow",
+     "line": 71
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetCombFiniteCeiling",
+   "lines": 102,
+   "imports": [
+    "TargetCombTimeAncestry",
+    "OrbitBounds",
+    "ActualDescent"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "FirstAt.ceilingObstruction_or_normalProgress",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.exists_blocker_gt_of_many",
+     "line": 51
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TargetCombMacro",
-   "lines": 133,
+   "lines": 191,
    "imports": [
     "TargetCandidateTransitions",
     "DebtInvariant"
    ],
    "decls": [
     {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.birthTime_le_start_or_predecessor_above",
+     "line": 20
+    },
+    {
      "kind": "inductive",
      "name": "PositiveTerminalBlockerOrigin",
-     "line": 16
+     "line": 30
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.positive_blocker_origin",
-     "line": 48
+     "line": 62
     },
     {
      "kind": "theorem",
      "name": "PositiveTerminalBlockerOrigin.earlierSmaller_or_lift",
-     "line": 97
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "PositiveTerminalBlockerOrigin.preTail_or_targetEarlierSmaller_or_lift",
+     "line": 142
     },
     {
      "kind": "theorem",
      "name": "HistoryTerminatedComb.upward_reset_origin",
-     "line": 125
+     "line": 183
     }
    ],
-   "theorems": 3,
+   "theorems": 5,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetCombSemanticMount",
+   "lines": 552,
+   "imports": [
+    "TargetCombTimeAncestry",
+    "PreTailBudgetSeparation",
+    "ExtendedHistoryDirectRefined"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.horizon_ready_of_start_le",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.blockerNormal_not_orbitReady",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.blockerNormal_not_currentOrDebt",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.tail_blocker_semanticMount",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.tail_blocker_refinedDebtStep",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.tail_blocker_refinedStepFromEntry",
+     "line": 173
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.budget_zero_of_start_le",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.laterNormal_progress_of_anchorDrop",
+     "line": 206
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.laterDebt_progress_from_normal",
+     "line": 227
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.extendedHistoryNormal_of_tail",
+     "line": 250
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.entry_below_or_anchor_le_blocker",
+     "line": 286
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.next_blockerNormalProgress_or_upwardReset",
+     "line": 320
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.next_extendedProgress_of_ceiling",
+     "line": 376
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.blockerNormalProgress_from_historicalAnchor",
+     "line": 442
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.blockerNormalProgress_or_anchor_le_blocker",
+     "line": 483
+    },
+    {
+     "kind": "theorem",
+     "name": "finiteBasin_rightLadder_countermodel",
+     "line": 516
+    }
+   ],
+   "theorems": 16,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetCombTimeAncestry",
+   "lines": 330,
+   "imports": [
+    "TargetCombMacro"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "FirstAt.preTail_or_aboveTarget_parent",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.exists_preTail_aboveTarget_ancestor",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.value_le_upperTri_of_time_le",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.preTail_anchorObstruction_or_normalProgress",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "FirstAt.normalProgress_of_preTailCeiling_lt_anchor",
+     "line": 184
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.tail_blocker_debtNormalProgress",
+     "line": 221
+    },
+    {
+     "kind": "theorem",
+     "name": "terminalGate_subtractionOrigin_preTailHigh_counterexample",
+     "line": 302
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -35677,6 +36222,208 @@
    ],
    "theorems": 8,
    "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetLadderClock",
+   "lines": 273,
+   "imports": [
+    "TargetCombSemanticMount",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.candidateBelow_entry_legal",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.two_forced_launch",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.singleton_unitLadder_gap_four",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.singleton_unitLadder_gap_five",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "upperTri_add_six",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "singleton_unitLadder_clock_constraints_have_infinite_model",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.later_blocker_on_freshInterval_eq_entry",
+     "line": 143
+    },
+    {
+     "kind": "theorem",
+     "name": "HistoryTerminatedComb.later_blocker_eq_freshEntry_forces_short",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "freshLowEntry_later_terminalBlocker_counterexample",
+     "line": 256
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetMacroSuccessor",
+   "lines": 315,
+   "imports": [
+    "TargetLadderClock",
+    "TargetHighCandidateExcursion",
+    "ForcedCandidateReuseBalance"
+   ],
+   "decls": [
+    {
+     "kind": "structure",
+     "name": "TargetMacroSuccessor",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.first_entry_legal",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.no_intermediate_targetTerminal",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.second_start_gap",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.high_excursion",
+     "line": 103
+    },
+    {
+     "kind": "structure",
+     "name": "TargetMacroEntryReturnResidual",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.entry_ne_or_returnResidual",
+     "line": 143
+    },
+    {
+     "kind": "def",
+     "name": "TargetMacroEntryHighReuseCertificate",
+     "line": 185
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroEntryReturnResidual.highReuse_or_avoidsHigh",
+     "line": 206
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroEntryReturnResidual.parity_compatible",
+     "line": 288
+    },
+    {
+     "kind": "theorem",
+     "name": "TargetMacroSuccessor.entry_ne_of_parity_incompatible",
+     "line": 303
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetTailResidualKernel",
+   "lines": 293,
+   "imports": [
+    "TargetMacroSuccessor"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "PreTailCoverageOracle",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.coverageOracle_of_preTail",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.not_preTailCoverageOracle",
+     "line": 44
+    },
+    {
+     "kind": "def",
+     "name": "FiniteRootTerminalEscape",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "FiniteRootTerminalEscape.toPreTailCoverageOracle",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.not_finiteRootTerminalEscape",
+     "line": 85
+    },
+    {
+     "kind": "def",
+     "name": "FiniteRootTerminalNoEscape",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.exists_finiteRootTerminalNoEscape",
+     "line": 109
+    },
+    {
+     "kind": "def",
+     "name": "EventualHighCandidateTail",
+     "line": 142
+    },
+    {
+     "kind": "def",
+     "name": "UnboundedRightTerminalStream",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "UnboundedRightTerminalStream.exists_targetMacroSuccessor",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "MissingPermanentAboveTail.eventualHigh_or_unboundedRightTerminal",
+     "line": 248
+    }
+   ],
+   "theorems": 7,
+   "defs": 5,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -36009,6 +36756,6 @@
    "hasReport": true
   }
  ],
- "total": 216,
+ "total": 228,
  "withReport": 153
 }

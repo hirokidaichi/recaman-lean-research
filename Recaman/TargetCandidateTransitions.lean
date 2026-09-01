@@ -22,6 +22,85 @@ branch is exactly the existing `CombStep` interface.
 def nextSubtractionCandidate (n : Nat) : Nat :=
   a n - (n + 1)
 
+/-- A target-low candidate places its entry inside the sharp target-clock
+cone.  This small inequality is exactly what excludes ungated singleton
+comb counterexamples whose entries sit too far above their clocks. -/
+theorem entry_lt_clock_add_target_of_candidateBelow
+    {target n : Nat}
+    (hlow : nextSubtractionCandidate n < target) :
+    a n < n + 1 + target := by
+  simp only [nextSubtractionCandidate] at hlow
+  omega
+
+/-- If the next subtraction candidate is a positive fresh target, the
+kernel must take it on the next step. -/
+theorem candidate_eq_freshTarget_occurs_next
+    {target n : Nat}
+    (hpositive : 0 < target)
+    (hfresh : target ∉ valuesThrough n)
+    (hequal : nextSubtractionCandidate n = target) :
+    CanSubtract (n + 1) (stateAt n) ∧ a (n + 1) = target := by
+  have hclock : n + 1 < a n := by
+    simp only [nextSubtractionCandidate] at hequal
+    omega
+  have hcan : CanSubtract (n + 1) (stateAt n) := by
+    constructor
+    · change n + 1 < a n
+      exact hclock
+    · change nextSubtractionCandidate n ∉ valuesThrough n
+      rw [hequal]
+      exact hfresh
+  refine ⟨hcan, ?_⟩
+  have hstep := a_succ_of_canSubtract hcan
+  change a (n + 1) = nextSubtractionCandidate n at hstep
+  exact hstep.trans hequal
+
+/-- Consequently a globally missing target never appears as a subtraction
+candidate at any clock. -/
+theorem MissingPermanentAboveTail.candidate_ne_target
+    {target start n : Nat}
+    (h : MissingPermanentAboveTail target start) :
+    nextSubtractionCandidate n ≠ target := by
+  intro hequal
+  have hfresh : target ∉ valuesThrough n := by
+    intro hseen
+    rcases mem_valuesThrough_iff.mp hseen with ⟨time, _, hvalue⟩
+    exact h.target_missing ⟨time, hvalue⟩
+  have hnext := candidate_eq_freshTarget_occurs_next
+    h.target_positive hfresh hequal
+  exact h.target_missing ⟨n + 1, hnext.2⟩
+
+/-- A globally missing target makes the target-relative candidate side a
+strict dichotomy: equality can never be the third case. -/
+theorem MissingPermanentAboveTail.candidateBelow_or_strictAbove
+    {target start n : Nat}
+    (h : MissingPermanentAboveTail target start) :
+    nextSubtractionCandidate n < target ∨
+      target < nextSubtractionCandidate n := by
+  have hne := h.candidate_ne_target (n := n)
+  omega
+
+/-- Consequently, once low candidates stop occurring, the remaining tail is
+exactly an eventual high-candidate corridor.  This is the logical bridge
+between the terminal-comb branch and `EventualHighCandidateLedger`. -/
+theorem MissingPermanentAboveTail.candidate_strictAbove_of_not_below
+    {target start n : Nat}
+    (h : MissingPermanentAboveTail target start)
+    (hnotLow : ¬ nextSubtractionCandidate n < target) :
+    target < nextSubtractionCandidate n := by
+  rcases h.candidateBelow_or_strictAbove (n := n) with hlow | hhigh
+  · exact False.elim (hnotLow hlow)
+  · exact hhigh
+
+theorem MissingPermanentAboveTail.eventually_candidate_strictAbove_of_no_lows
+    {target start cutoff : Nat}
+    (h : MissingPermanentAboveTail target start)
+    (hnoLow : ∀ n, cutoff ≤ n →
+      ¬ nextSubtractionCandidate n < target) :
+    ∀ n, cutoff ≤ n → target < nextSubtractionCandidate n := by
+  intro n hn
+  exact h.candidate_strictAbove_of_not_below (hnoLow n hn)
+
 /-- On a completed least-missing tail, every below-target candidate is an
 old value and therefore forces addition. -/
 theorem MissingPermanentAboveTail.candidateBelow_forcesAddition
@@ -99,6 +178,21 @@ theorem MissingPermanentAboveTail.not_two_consecutive_candidateBelow
   exact (Nat.not_lt_of_ge
     (Nat.le_of_lt (h.candidateBelow_forces_highNext htime hlow).2)) hlowNext
 
+/-- A low-candidate state strictly inside the permanent tail was itself
+created by a legal subtraction, hence is a fresh entry.  A forced addition
+at the preceding clock would make the current candidate strictly high by
+`forcedAddition_candidate_strictAbove`. -/
+theorem MissingPermanentAboveTail.candidateBelow_entry_first
+    {target start n : Nat}
+    (h : MissingPermanentAboveTail target start)
+    (htime : start ≤ n)
+    (hlow : nextSubtractionCandidate (n + 1) < target) :
+    FirstAt a (a (n + 1)) (n + 1) := by
+  by_cases hcan : CanSubtract (n + 1) (stateAt n)
+  · exact firstAt_succ_of_canSubtract hcan
+  · have hhigh := h.forcedAddition_candidate_strictAbove htime hcan
+    exact False.elim ((Nat.not_lt_of_ge (Nat.le_of_lt hhigh)) hlow)
+
 /-- If the high candidate exposed after a low state is fresh, the two-step
 episode is precisely one existing comb period.  Otherwise its failure is a
 historical blocker, not a positivity failure. -/
@@ -145,6 +239,46 @@ landing. -/
 structure FreshCombEpisode (s k : Nat) : Prop where
   entry_first : FirstAt a (a s) s
   run : CombRun s k
+
+/-- Every fresh landing starts a finite maximal comb suffix.  Each successful
+period lowers the low rail by one, so an infinite suffix would give a strict
+descent of the natural-valued orbit. -/
+theorem FirstAt.exists_maximal_freshCombEpisode
+    {s : Nat} (hfirst : FirstAt a (a s) s) :
+    ∃ k, FreshCombEpisode s k ∧ ¬ CombStep (s + 2 * k) := by
+  have haux : ∀ value s, a s = value → FirstAt a (a s) s →
+      ∃ k, FreshCombEpisode s k ∧ ¬ CombStep (s + 2 * k) := by
+    intro value
+    induction value using Nat.strongRecOn with
+    | ind value ih =>
+        intro s hvalue hentry
+        by_cases hstep : CombStep s
+        · have hlow := hstep.low_rail
+          have hdecrease : a (s + 2) < value := by omega
+          have hnextFirst : FirstAt a (a (s + 2)) (s + 2) := by
+            simpa [Nat.add_assoc] using
+              firstAt_succ_of_canSubtract hstep.legal_down
+          rcases ih (a (s + 2)) hdecrease (s + 2) rfl hnextFirst with
+            ⟨k, hnextEpisode, hnextMaximal⟩
+          have hrun : CombRun s (k + 1) := by
+            intro i hi
+            by_cases hizero : i = 0
+            · subst i
+              simpa using hstep
+            · have hiPositive : 0 < i := Nat.pos_of_ne_zero hizero
+              have htailStep := hnextEpisode.run (i - 1) (by omega)
+              have hclock : s + 2 + 2 * (i - 1) = s + 2 * i := by
+                omega
+              rw [hclock] at htailStep
+              exact htailStep
+          refine ⟨k + 1, ⟨hentry, hrun⟩, ?_⟩
+          have hclock : s + 2 * (k + 1) = s + 2 + 2 * k := by
+            omega
+          rw [hclock]
+          exact hnextMaximal
+        · refine ⟨0, ⟨hentry, fun i hi => by omega⟩, ?_⟩
+          simpa using hstep
+  exact haux (a s) s rfl hfirst
 
 /-- Every low-rail landing of a fresh comb episode is a first occurrence. -/
 theorem FreshCombEpisode.low_rail_first
@@ -195,6 +329,132 @@ structure HistoryTerminatedComb (s k blocker : Nat) : Prop where
     ¬ CanSubtract (s + 2 * k + 1) (stateAt (s + 2 * k))
   blocker_eq : a (s + 2 * k) = blocker + 1
   blocker_seen : blocker ∈ valuesThrough (s + 2 * k)
+
+/-- The fresh value interval consumed by a completed comb has exactly
+`k+1` points: its entry is `blocker+k+1`, while its final landing is the
+fresh successor `blocker+1`.  This is the local identity behind the
+fixed-root fresh-mass potential. -/
+theorem HistoryTerminatedComb.entry_eq_blocker_add_length
+    {s k blocker : Nat} (h : HistoryTerminatedComb s k blocker) :
+    a s = blocker + k + 1 := by
+  have hexit := h.episode.run.exit_value
+  rw [h.blocker_eq] at hexit
+  omega
+
+/-- Equivalently, twice the consumed interval width is the comb's clock
+duration plus two endpoint clocks. -/
+theorem HistoryTerminatedComb.twice_entry_gap_eq_duration_add_two
+    {s k blocker : Nat} (h : HistoryTerminatedComb s k blocker) :
+    2 * (a s - blocker) = (s + 2 * k - s) + 2 := by
+  rw [h.entry_eq_blocker_add_length]
+  omega
+
+/-- Any fresh comb which is maximal on a permanent missing-target tail ends
+in a genuine historical blocker.  The low-candidate condition propagates
+down the decreasing low rail, so the next up-step is forced; maximality can
+therefore fail only because repayment is blocked by an earlier value. -/
+theorem FreshCombEpisode.historyTerminated_of_next_not_step
+    {target tailStart s k : Nat}
+    (htail : MissingPermanentAboveTail target tailStart)
+    (htime : tailStart ≤ s)
+    (hlow : nextSubtractionCandidate s < target)
+    (hepisode : FreshCombEpisode s k)
+    (hmaximal : ¬ CombStep (s + 2 * k)) :
+    ∃ blocker, HistoryTerminatedComb s k blocker := by
+  let finalTime := s + 2 * k
+  have hfinalTime : tailStart ≤ finalTime := by
+    dsimp only [finalTime]
+    omega
+  have hfinalAbove : target < a finalTime :=
+    htail.strictly_above finalTime hfinalTime
+  have hexit := hepisode.run.exit_value
+  have hlowFinal : nextSubtractionCandidate finalTime < target := by
+    simp only [nextSubtractionCandidate]
+    dsimp only [finalTime] at hfinalAbove ⊢
+    simp only [nextSubtractionCandidate] at hlow
+    omega
+  have hforced : ¬ CanSubtract (finalTime + 1) (stateAt finalTime) :=
+    htail.candidateBelow_forcesAddition hfinalTime hlowFinal
+  have hnotLegal :
+      ¬ CanSubtract (finalTime + 2) (stateAt (finalTime + 1)) := by
+    intro hlegal
+    apply hmaximal
+    simpa only [finalTime] using (CombStep.mk hforced hlegal)
+  let blocker := a finalTime - 1
+  have hblockerEq : a finalTime = blocker + 1 := by
+    dsimp only [blocker]
+    have htargetPositive := htail.target_positive
+    omega
+  have hadd : a (finalTime + 1) = a finalTime + (finalTime + 1) :=
+    a_succ_of_not_canSubtract hforced
+  have hcandidate :
+      a (finalTime + 1) - (finalTime + 2) = blocker := by
+    rw [hadd]
+    dsimp only [blocker]
+    omega
+  have hpositive : finalTime + 2 < a (finalTime + 1) := by
+    rw [hadd]
+    have htargetPositive := htail.target_positive
+    omega
+  have hseenLater : blocker ∈ valuesThrough (finalTime + 1) := by
+    rcases not_canSubtract_cases (n := finalTime + 1) hnotLegal with
+      hnonpositive | hseen
+    · exact False.elim (by omega)
+    · change a (finalTime + 1) - (finalTime + 2) ∈
+          valuesThrough (finalTime + 1) at hseen
+      simpa only [hcandidate] using hseen
+  have hseen : blocker ∈ valuesThrough finalTime := by
+    rcases mem_valuesThrough_iff.mp hseenLater with
+      ⟨witness, hwitnessTime, hwitnessValue⟩
+    have hwitnessLe : witness ≤ finalTime := by
+      by_cases heq : witness = finalTime + 1
+      · subst witness
+        rw [hadd] at hwitnessValue
+        rw [hblockerEq] at hwitnessValue
+        omega
+      · omega
+    exact mem_valuesThrough_iff.mpr
+      ⟨witness, hwitnessLe, hwitnessValue⟩
+  exact ⟨blocker, {
+    episode := hepisode
+    final_forced := by simpa only [finalTime] using hforced
+    blocker_eq := by simpa only [finalTime] using hblockerEq
+    blocker_seen := by simpa only [finalTime] using hseen
+  }⟩
+
+/-- Every low-candidate state inside a hypothetical permanent missing tail
+therefore starts a finite fresh comb suffix with a historical terminal
+blocker. -/
+theorem MissingPermanentAboveTail.candidateBelow_exists_historyTerminatedComb
+    {target tailStart n : Nat}
+    (h : MissingPermanentAboveTail target tailStart)
+    (htime : tailStart ≤ n)
+    (hlow : nextSubtractionCandidate (n + 1) < target) :
+    ∃ k blocker, HistoryTerminatedComb (n + 1) k blocker := by
+  have hfirst := h.candidateBelow_entry_first htime hlow
+  rcases hfirst.exists_maximal_freshCombEpisode with
+    ⟨k, hepisode, hmaximal⟩
+  rcases hepisode.historyTerminated_of_next_not_step h
+      (by omega) hlow hmaximal with ⟨blocker, hcomb⟩
+  exact ⟨k, blocker, hcomb⟩
+
+/-- If low candidates occur arbitrarily late on the permanent tail, then
+completed historical-terminal combs also have arbitrarily late final times.
+This is the finite-witness form of the infinite-low extraction: no uniform
+bound on comb length or on the number of low states per comb is required. -/
+theorem MissingPermanentAboveTail.unbounded_historyTerminatedFinal_of_unbounded_candidateBelow
+    {target tailStart : Nat}
+    (h : MissingPermanentAboveTail target tailStart)
+    (hunbounded : ∀ cutoff, ∃ n,
+      tailStart ≤ n ∧ cutoff ≤ n ∧
+        nextSubtractionCandidate (n + 1) < target) :
+    ∀ cutoff, ∃ s k blocker,
+      cutoff < s + 2 * k ∧ HistoryTerminatedComb s k blocker := by
+  intro cutoff
+  rcases hunbounded cutoff with ⟨n, htailTime, hcutoff, hlow⟩
+  rcases h.candidateBelow_exists_historyTerminatedComb htailTime hlow with
+    ⟨k, blocker, hcomb⟩
+  exact ⟨n + 1, k, blocker, by omega, hcomb⟩
 
 /-- A terminal blocker cannot have been created on either rail of the comb
 which it terminates.  Its occurrence is genuinely pre-entry history. -/
@@ -349,5 +609,106 @@ theorem HistoryTerminatedComb.next_entry_below_or_blocker_lt
       ⟨earlier, hearlier, hvalue⟩
     exact False.elim
       (hfirst.2 earlier (by omega) (hvalue.trans hlanding.symm))
+
+/-- The fresh value intervals of any two chronological completed combs are
+totally ordered.  The later interval lies strictly below the earlier
+blocker, or the whole earlier interval lies below the later blocker. -/
+theorem HistoryTerminatedComb.fresh_intervals_ordered
+    {s₁ k₁ blocker₁ s₂ k₂ blocker₂ : Nat}
+    (h₁ : HistoryTerminatedComb s₁ k₁ blocker₁)
+    (h₂ : HistoryTerminatedComb s₂ k₂ blocker₂)
+    (hbefore : s₁ + 2 * k₁ < s₂) :
+    a s₂ < blocker₁ ∨ a s₁ ≤ blocker₂ := by
+  rcases h₁.next_entry_below_or_blocker_lt h₂ hbefore with
+    hbelow | hblockerOrder
+  · exact Or.inl hbelow
+  · apply Or.inr
+    by_cases hentry : a s₁ ≤ blocker₂
+    · exact hentry
+    · have hblocker₂Lt : blocker₂ < a s₁ := Nat.lt_of_not_ge hentry
+      let i := a s₁ - (blocker₂ + 1)
+      have hexit := h₁.episode.run.exit_value
+      rw [h₁.blocker_eq] at hexit
+      have hi : i ≤ k₁ := by
+        simp only [i]
+        omega
+      have hrail := h₁.episode.run.low_rail i hi
+      have hlanding : a (s₁ + 2 * i) = blocker₂ + 1 := by
+        simp only [i] at hrail
+        simp only [i]
+        omega
+      have hfinalFirst := h₂.episode.final_first
+      rw [h₂.blocker_eq] at hfinalFirst
+      exact False.elim
+        (hfinalFirst.2 (s₁ + 2 * i) (by omega)
+          hlanding)
+
+/-- Two chronological completed combs whose blockers stay above a fixed
+anchor consume at most the value hull from that anchor to their largest
+entry.  This is the two-interval base case of the fixed-root fresh-mass
+potential. -/
+theorem HistoryTerminatedComb.two_interval_mass_le_hull
+    {anchor s₁ k₁ blocker₁ s₂ k₂ blocker₂ : Nat}
+    (h₁ : HistoryTerminatedComb s₁ k₁ blocker₁)
+    (h₂ : HistoryTerminatedComb s₂ k₂ blocker₂)
+    (hbefore : s₁ + 2 * k₁ < s₂)
+    (hanchor₁ : anchor ≤ blocker₁)
+    (hanchor₂ : anchor ≤ blocker₂) :
+    (a s₁ - blocker₁) + (a s₂ - blocker₂) ≤
+      max (a s₁) (a s₂) - anchor := by
+  have hentry₁ := h₁.entry_eq_blocker_add_length
+  have hentry₂ := h₂.entry_eq_blocker_add_length
+  rcases h₁.fresh_intervals_ordered h₂ hbefore with hleft | hright
+  · have hmax : max (a s₁) (a s₂) = a s₁ :=
+      Nat.max_eq_left (by omega)
+    rw [hmax]
+    omega
+  · have hmax : max (a s₁) (a s₂) = a s₂ :=
+      Nat.max_eq_right (by omega)
+    rw [hmax]
+    omega
+
+/-- At an upward blocker reset, the immediately preceding fresh interval is
+wholly to the left of the new blocker.  Hence a failure of the empirical
+global right-record rule cannot be local: it would require an older interval
+to lie to the right, followed by this left interval, and then the new right
+interval. -/
+theorem HistoryTerminatedComb.upward_reset_previous_entry_le_blocker
+    {s₁ k₁ blocker₁ s₂ k₂ blocker₂ : Nat}
+    (h₁ : HistoryTerminatedComb s₁ k₁ blocker₁)
+    (h₂ : HistoryTerminatedComb s₂ k₂ blocker₂)
+    (hbefore : s₁ + 2 * k₁ < s₂)
+    (hreset : blocker₁ < blocker₂) :
+    a s₁ ≤ blocker₂ := by
+  rcases h₁.fresh_intervals_ordered h₂ hbefore with
+    hnextBelow | hpreviousLeft
+  · have hexit := h₂.episode.run.exit_value
+    rw [h₂.blocker_eq] at hexit
+    omega
+  · exact hpreviousLeft
+
+/-- Any counterexample to the global right-record rule has a precise
+right-left-right shape.  An older fresh interval whose entry still exceeds
+the new blocker must lie wholly to the right of the new interval, while the
+immediately preceding interval lies wholly to its left.  Thus the remaining
+research obligation is a genuine no-return/crossing statement, not another
+pairwise packing inequality. -/
+theorem HistoryTerminatedComb.upward_reset_failure_has_right_left_right
+    {s₀ k₀ blocker₀ s₁ k₁ blocker₁ s₂ k₂ blocker₂ : Nat}
+    (h₀ : HistoryTerminatedComb s₀ k₀ blocker₀)
+    (h₁ : HistoryTerminatedComb s₁ k₁ blocker₁)
+    (h₂ : HistoryTerminatedComb s₂ k₂ blocker₂)
+    (hbefore₀₁ : s₀ + 2 * k₀ < s₁)
+    (hbefore₁₂ : s₁ + 2 * k₁ < s₂)
+    (hreset : blocker₁ < blocker₂)
+    (hnotRecord : blocker₂ < a s₀) :
+    a s₂ < blocker₀ ∧ a s₁ ≤ blocker₂ := by
+  have hpreviousLeft :=
+    h₁.upward_reset_previous_entry_le_blocker h₂ hbefore₁₂ hreset
+  have hbefore₀₂ : s₀ + 2 * k₀ < s₂ := by omega
+  rcases h₀.fresh_intervals_ordered h₂ hbefore₀₂ with
+    holderRight | holderLeft
+  · exact ⟨holderRight, hpreviousLeft⟩
+  · omega
 
 end Recaman

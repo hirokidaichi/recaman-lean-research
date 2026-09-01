@@ -1,6 +1,6 @@
 # Recamán 全域性研究 — 現況レポート
 
-最終更新: 2026-08-31
+最終更新: 2026-09-01
 
 ## 結論
 
@@ -19,7 +19,9 @@ low-quotient minimum、Hall congestion、H6 affine chord はすべて直接証�
 
 - **直接証明のactive branch:** 0
 - **独立部分定理として残す候補:** `TailHall₃`
-- **active exploratory branch:** target-comb間のupward resetを生成遷移のprovenanceへ戻す
+- **exact residual kernel:** provenance監査済みのeventual-high corridorまたはfixed-root target-low unbounded terminal stream
+- **reset repayment:** exact命題は未反証だが、独立causal bridgeが尽きたため15/100・`STOPPED`
+- **canonical separator:** 決定的標準軌道の言い換えに退化し5/100で停止
 - **再開条件:** permanent-above tail と線形成長・正の減算密度を矛盾させる新しい大域入力、または
   old blocker / nonpositive reset を一様に償却する定理
 
@@ -35,6 +37,30 @@ fresh successor `b+1`と対になるため、異なる完了combへ再利用で�
 偽だった有限消費が、episode圧縮後には真になることを示す。次エポックではさらに、時間順の二episodeが
 「次のfresh interval全体を旧blockerより下へ置く」か「新blockerを旧blockerより上へresetする」かの
 厳密な二択に入ることを証明した。ただし後者を一様に排除できていないため、全域性の直接枝はまだ0本である。
+
+その後のcanonical監査では、標準prefixを2Bまで伸ばした28件のupward resetがすべてright recordかつ
+forced-addition初出だった。一方、terminal fresh interval由来は0/28で、blockerの26/28、birth candidateの
+19/28は対象epoch中に新規生成されていた。さらに自由seedから実際の`Basic.step`を反復すると、target 5で
+blocker `16→230`のright-record resetを作れ、230は`326−96`のlegal subtractionで初出する。
+従って標準prefixの28/28則は局所macro/history則ではなくcanonical到達可能性固有であり、独立separatorなしには
+Lean化しない。
+
+Round 16では、このseparatorを先に仮定せずに残余を再構成した。tail後のfirst occurrenceは既存
+`coverageStep_at`で全て処理できるため、有限pre-tail rootが全てterminal entryで左へescapeすれば
+`CoverageOracle`からtarget occurrenceが出て矛盾する。従って仮想missing tailは固定finite no-escape rootを持つ。
+さらにlow candidateのbounded/unboundedで、eventual-high corridorまたはそのrootの右側を走るunbounded terminal
+streamへLeanでexactに二分した。
+
+Round 17では、このB枝の型を意味論的に再監査した。構築時には分かっていたtarget-low start、start clockの
+非有界性、全future terminalに対するuniversal fixed-root no-escapeが結論型で失われていたため、三点を
+`UnboundedRightTerminalStream`へ戻した。さらにleast later low clockを選ぶことで、任意のtarget-low terminal
+からconsecutive `TargetMacroSuccessor`を構成できることをLeanで証明した。
+
+一方、reset repaymentを有限鳩の巣へ落とす最弱候補「返済前の全blockerはreset開始前に初出済み」は、
+seeded exact greedy continuationで偽だった。reset `6→14`の後、entryが14未満へ戻る前にblocker 199が
+clock 65のforced additionで新規生成される。永久欠落を加えた修正版は返済またはtarget出現の言い換えに
+なる。従ってexact repayment自体は`CONJECTURED`のままだが、研究枝は`STOPPED`とした。詳細は
+[Round 17 reset-repayment audit](./RESET_REPAYMENT_AUDIT_2026-09-01.md)を参照。
 
 ## 何が確定したか
 
@@ -71,6 +97,7 @@ least missing target を仮定した正準最小 tail witness について、次
    - fresh comb episodeの全low railはfirst occurrenceで、別episodeのlow railと交わらない
    - terminal blocker `b`は異なる完了combへ再利用できない
    - 後続fresh intervalは旧terminal blockerの下に全包含されるか、新blockerが旧blockerを厳密に越える
+   - 任意二つの時間順combのfresh intervalは値軸上で完全に分離・全順序化される
    - terminal blockerはcomb entryより前に初出し、減算起源ならそのpredecessorはentryより厳密に上
 
 5. `TargetHighCandidateExcursion`, `TargetCombMacro`
@@ -82,6 +109,14 @@ least missing target を仮定した正準最小 tail witness について、次
 
 4 は類似問題から移植した「妨害資源の有限消費」を、Recamánで初めて非自明なepisode単位に
 実現したものである。
+
+6. `TargetTailResidualKernel`
+   - finite `PreTailCoverageOracle`からglobal `CoverageOracle`へ直接接続
+   - 全pre-tail rootのterminal escapeはtarget missingと矛盾
+   - 全future terminal entryが右側に残る固定pre-tail rootを抽出
+   - 仮想missing tailを`EventualHighCandidateTail`または`UnboundedRightTerminalStream`へexactに二分
+   - right-streamはuniversal no-escape、任意に遅いtarget-low startを保持
+   - least later lowの選択からconsecutive `TargetMacroSuccessor`を構成
 
 ### 計算で強く支持される事実
 
@@ -106,6 +141,15 @@ least missing target を仮定した正準最小 tail witness について、次
   違反0、最小lift 37。20件の上向きresetはすべてforced-addition起源で、減算起源0
 - high-to-low出口5,779,954件でsigned window違反0。ただし最小slackは1、最大window利用率は
   99.9999%で、一様な加法・比例marginは期待できない
+- 幅広macro監査ではupward ancestry最大60,651 hop、edge再利用7で、短い／一回消費genealogyを棄却。
+  interval移動もupward最大2,237本、downward最大71本の既存intervalを飛び越え、stack traversalではない
+- upward reset 20件は全て過去全fresh intervalより右のglobal record。record gap mass 17,820,564のうち
+  reset時未訪問14,775,263、20Mでも未訪問9,518,181。right-record則は未証明
+- 2Bまでのupward reset 28件はすべてglobal right recordかつforced-addition初出。ただしterminal fresh
+  interval由来は0/28で、tail内の新規candidate生成を有限課金できない
+- 各terminal blocker自身をanchorにした2B監査では21,510件中21,495件が後続entryでstrictに下へ戻る。
+  upward reset 28件中26件は次terminalで即時return、残る2件はtarget 4の実出現でepoch終了
+- record時未訪問だった200k gap cohortは20Mまでに99.88%、2M cohortは20Mまでに92.06%が後から初出
 
 これらは経験的事実であり証明ではない。とくに候補 `TailHall₃` は、証明できれば
 `liminf a_n / n ≤ 3` という非自明な部分定理を与える見込みがある一方、permanent-above tail と
@@ -121,6 +165,8 @@ least missing target を仮定した正準最小 tail witness について、次
 - terminal blocker列の単純単調減少は偽で、20Mまでに20個の上向きresetがある。
 - high excursionのendpoint総和は既存`ledger_interval_balance`の言い換えで、新しい大域不変量ではない。
 - exit windowは整数slack 1まで実際に飽和するため、uniform marginを仮定する枝は停止する。
+- seeded actual orbitではupward right-record blockerがlegal subtractionで初出する。従って標準prefixの
+  addition-origin則をlocal legalityから導く枝は停止する。
 
 ## 分岐の現在地
 
@@ -132,7 +178,11 @@ least missing target を仮定した正準最小 tail witness について、次
 | generic blocker provenance | sharp `C=3` payment | 20/100 | noncanonical部分定理として保存 |
 | arbitrary-history model | 局所条件の不十分性を可視化 | 20/100 | 戦略フィルタとして常設 |
 | fixed budget / reset injection | 高再利用 blocker が破る | 5/100 | 棄却 |
-| target-relative transition charging | interval-order二分法、first-passage corridor、reset origin二分法 | 55/100 | endpoint balance枝は停止、reset provenanceへ継続 |
+| residual kernel decomposition | provenanceを保持したA/B二分とsuccessor選択 | 85/100 | architectureとして確定 |
+| finite-root/right-terminal no-escape | universal fixed-root target-low streamまでLean化 | 30/100 | 独立residualとして保存 |
+| upward reset repayment | exact命題は未反証、local preloadはseeded反例 | 15/100 | `STOPPED`、新global invariant待ち |
+| record-gap future consumption | old cohortを20Mで92--99.88%消費 | 20/100 | 診断のみ |
+| canonical reachability separator | exact continuationは決定的一意 | 5/100 | 言い換えとして停止 |
 
 ## なぜ直接攻略を止めるのか
 
@@ -163,6 +213,18 @@ blocker interval congestion
 
 ## 次の研究ロードマップ
 
+exact residual kernelの型監査とB枝の一回限りのreset-repayment探索は完了した。
+
+1. eventual-high corridorは12/100で保留する。arbitrary finite seeded high corridorが満たせない独立canonical入力が
+   紙上で得られるまでLean拡張しない。
+2. reset repaymentは15/100・`STOPPED`。post-reset blocker birthを、future return・target occurrence・canonical
+   reachabilityを使わずに有限化するglobal invariantが先に得られた場合だけ再開する。
+3. residual kernelとsuccessor selectorは、今後別アプローチを接続するための監査済みhandoff theoremとして保守する。
+
+canonical separator、terminal fresh-certificate課金、local addition-origin prohibition、fixed-history preloadは終了した。
+
+以下のtarget-relative各段階は、この停止判断までに評価した履歴である。
+
 ### 0. target-relative transition charging
 
 clock `n` の符号付き減算候補を整数上で `c_n = (a_(n-1):ℤ)-n` と置く。未出目標`m`について`c_n=m`が一度でも起これば
@@ -181,6 +243,12 @@ Lean化できたが、endpoint総和は既存ledgerの望遠和であり、windo
 その生成元predecessorは新entryより上へstrict liftする。forced additionならpredecessorは新blockerより
 strictに小さい。20Mのreset 20件は全て後者だった。次は「upward resetで減算起源が不可能」または
 「subtraction liftを初出時刻下降と組にしたwell-founded macro rank」のどちらか一つだけを試す。
+
+その後の幅広監査で、任意二episodeのfresh interval全順序をLean化した一方、bounded ancestryとstack traversalを
+具体的に棄却した。upward 20件が全てglobal right recordだったため、次はこのrecord則をactual provenanceから
+導けるかだけを先に試す。通った場合も、それ単独では不十分なのでrecord gapとhigh predecessor reservoirの
+二成分fluxにstrict driftが出たときだけdirect branchを再評価する。詳細は
+[macro幅広探索](./BROADENED_MACRO_EXPLORATION_2026-08-31.md)に記録した。
 
 ### 1. causal blocker graph / multiscale flow
 
@@ -207,29 +275,32 @@ causal graph と gap dynamics の局所特徴に限定する。
 
 全域性の直接形式化を再開するのは、次のいずれかを紙上または独立計算で得たときだけとする。
 
-1. permanent-above tail と linear height / positive subtraction density を矛盾させる定理
-2. old blocker の無限再利用を一様に償却する定理
-3. nonpositive reset を漏れなく同じpotentialへ組み込む定理
-4. free-history model と実軌道を分離する causal invariant
+1. eventual-high corridorを直接排除するcanonical不変量
+2. upward resetに`target occurs ∨ later entry < blocker`を与えるcausal lemma
+3. right-ladder countermodelを破り、target occurrenceを仮定しないglobal constraint
+4. gap backlogの増加をpermanent missingと矛盾させる非循環なflux定理
 
 逆に、次は再開理由にしない。
 
 - 新しい outcome 型、certificate、rank wrapper の追加
 - q / parity / mod 4 の追加有限分類
-- fixed horizon のtrace、mex、replay拡張
+- fixed horizon のtrace、mex、canonical replay拡張
+- fresh tokenやrecord-gap係数の再包装
 - target出現と同値な仮説の言い換え
 - 既存identityだけから自動的に出る評価
 
 ## 再現性
 
 - Lean全体検証: `scripts/check.sh`
-- 検証済み: 218 Lean jobs、993 audited declarations
+- 検証済み: 230 Lean jobs、1,082 audited declarations
 - 監査済み公理: `{propext, Classical.choice, Quot.sound}` のみ
 - 禁止事項: `sorry`, `admit`, `native_decide`, user axiom は0
 - exact probes:
   - `experiments/blocker_interval_hall.cpp`
   - `experiments/blocker_interval_tail.cpp`
   - `experiments/target_transition_probe.cpp`
+  - `experiments/target_upward_provenance_probe.cpp`
+  - `experiments/seeded_right_record_search.cpp --walk-record-sub`
 
 ## 関連資料
 
@@ -238,6 +309,9 @@ causal graph と gap dynamics の局所特徴に限定する。
 - [2026-08-30 並列監査](./PARALLEL_RESEARCH_2026-08-30.md)
 - [Causal invariant sprint 1](./CAUSAL_INVARIANT_SPRINT_2026-08-30.md)
 - [Causal run / gap sprint](./CAUSAL_RUN_GAP_SPRINT_2026-08-31.md)
+- [Right-record計算監査](./RIGHT_RECORD_COMPUTATIONAL_AUDIT_2026-08-31.md)
+- [Round 16 residual decomposition](./PARALLEL_RESIDUAL_DECOMPOSITION_2026-09-01.md)
+- [Round 17 reset-repayment audit](./RESET_REPAYMENT_AUDIT_2026-09-01.md)
 - [類似 greedy 数列の文献レビュー](./LITERATURE_REVIEW_2026-08-31.md)
 - [開発ログ](./DEVELOPMENT_LOG.md)
 - [証明マップ](./PROOF_MAP.md)

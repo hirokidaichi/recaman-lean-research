@@ -64,19 +64,25 @@ exploratory branchだけを次へ進める。
 20M scanでも出口windowは最小slack 1、最大利用率99.9999%まで飽和した。このためuniform marginや
 endpoint balanceだけを強める枝は停止する。
 
-### 第3 macro gate — active
+### 第3 macro gate — 幅広監査後のactive枝
 
 次は稀なupward resetだけを扱う。20Mまでの連続historical comb 2,655辺は下降2,635、reset 20、等値0で、
 fresh intervalの旧blocker跨ぎは0だった。reset 20件は全てforced-addition起源で、減算起源は0である。
 
-次の一手は次の二択に限定する。
+追加の幅広監査で、任意二episodeのfresh intervalが値軸上で完全に順序づく
+`HistoryTerminatedComb.fresh_intervals_ordered`を証明した。一方、ancestry pathは最大60,651 hop、
+edge再利用7、interval traversalはupwardで最大2,237本を飛び越えた。bounded ancestry chargingと
+単純stack traversalは停止する。詳細は
+[Target-comb macro 幅広探索](./BROADENED_MACRO_EXPLORATION_2026-08-31.md)を参照。
 
-1. upward resetの減算起源を一般に排除する
-2. 排除できなければ、`predecessor > entry`というvalue liftと`predecessorFirstTime < blockerFirstTime`を
-   組にしたwell-founded macro rankを構成する
+残す一手は次の二枝に限定する。
 
-成功条件は、下降辺・addition-reset・subtraction-resetを同じrankでstrictに処理すること。単なる
-「実測ではresetが稀」「20Mでは全てaddition」だけならdirect branchへ戻さない。
+1. 20Mで20/20成立した「upward resetは過去全fresh intervalより右のglobal record」をactual
+   blocker provenanceから導く
+2. record則が通った場合だけ、record拡張gapとhigh predecessor reservoirの二成分fluxを作る
+
+record則だけでは値が無限に右へ逃げる可能性を排除しない。成功条件はgap fluxにstrict driftを得ること。
+単なる「実測ではresetが稀」「20Mでは全てright record」だけならdirect branchへ戻さない。
 
 ## 2026-08-30 新ロードマップ第1–2サイクル：選抜と停止
 
@@ -755,6 +761,125 @@ tail_minimal : ∀ s, MissingStrictAboveTail target s → tailStart ≤ s
 `old_crossing_before_horizon`と`tail_strictly_before_horizon`を経由して`parent.horizon`をcrossing側の量で
 挟み込めるかが、計数路線を生かす唯一の道である。これが立たない限り、pre-tail領域の計数は下界を出す道具に
 とどまる。
+
+## 2026-09-01 更新：low-to-terminal後の最小残余
+
+2時間の並列監査により、各tail low candidateから有限 maximal fresh combとhistorical terminal blockerを
+抽出するところまでLeanで閉じた。terminal blocker normalは既存extended/refined/semantic domainへmountでき、
+later-entry-leftとpre-tail ceilingを越えたresetはstrict progressになる。lowが任意に遅く現れるならterminal
+final timeも任意に遅く現れることも形式化済みである。
+
+有限historical anchor `r`に対する残余はexactに
+
+```text
+future terminalからsemantic progress  or  r ≤ future blocker
+```
+
+である。後者はinterval order・blocker one-use・unboundednessだけではright-moving singleton ladderを許すため、
+現行macro補題の組替えでは閉じない。一方、20M実軌道ではdistinct pre-tail root 860個のうち851個が後続episodeで
+`entry < r`となり、未解決9個は全てtarget出現またはhorizon censorだった。最大待ちは653 episodeまで伸びるので
+uniform waiting boundは仮定しない。
+
+`TargetMacroSuccessor`はentry returnをhigh-word内のforced reuse balanceまたは全区間avoidanceへLeanで二分したが、
+現行ledgerは両枝を排除しない。一方、20Mの2,655 successor辺では`δ=|b₂-e₁|`について
+`δ odd ∨ q=e₂-b₂≤δ`が成立した。downward枝はinterval order、odd枝はparityで既に説明でき、新しい内容は
+upwardかつparity-compatibleな4辺だけである。任意有限長のseeded high forced-addition corridorもLean構成され、
+局所符号・ledger・parity・history legalityだけではuniform boundが出ないことも確定した。
+
+entry returnがparity-compatibleになること自体はLean化した。しかし新規4例の`δ/q`は2〜87、
+`q/high clocks`も大小混在し、共通provenanceは見つからなかった。既存fieldsからは`e₁≤b₂`、even parity、
+`q<s₁`までしか出ず、`e₁+q≤b₂`には届かない。従ってmass-gap hybridは有望度35/100へ下げ、
+新しいvisited-sensitive separationが出るまで停止する。
+
+次の優先順位を以下に更新する。
+
+1. **canonical generation-vs-reuse chronology**: blocker first occurrence、successor high word、terminal repaymentを
+   同一のglobal history eventとして結び、right ladderが必要とするblocker補充率を上回るdistinct fresh resource消費を示せるか。
+2. **fixed-root nonuniform no-escape**: 新しいglobal gateが得られた場合、各fixed pre-tail rootについてeventually
+   `future entry < root`へ進めるか。一様waiting boundは置かない。
+3. escape前fresh interval幅の和`Q`はepisode数以上、値hull以下であり、no-escapeなら非有界になる。
+   descentは支払えるがrecord gapが`Q+O(root)`を破るため、gap内global historyへのdistinct chargeが必要。
+4. raw high candidate/output charging、weighted ledger、cut telescoping、record gap massの係数調整は再開しない。
+
+再開gateはactual recurrenceだけがright-ladder countermodelを壊す補題である。4-case mass-gapはその機構を
+与えなかったため、canonical prefixのgeneration-vs-reuse chronologyへ戻る。全射性へのactive direct branchは
+引き続き0本であり、no-escapeは証明されるまでは経験的候補として扱う。
+
+### Round 15: canonical upward provenanceの監査結果
+
+専用probeでsame-target upward terminal resetを2Bまで伸ばした。28/28が過去terminal entry全体を越えるright
+recordで、次blockerは全てforced addition初出だった。しかし、そのadditionを強制したbirth candidateは19/28が
+target epoch内生成で、過去terminal fresh intervalに属するものは0/28だった。candidate再利用最大1は安定するが、
+有限pre-epoch reservoirにもfresh terminal massにも課金できない。
+
+さらにfinite signed-walk seedから実stepを続けると、target 5でblocker`16→230`のupward terminal right recordが
+生じ、`230`はclock 96のlegal subtraction`326-96`で初出する。従ってright-recordとaddition-originを合わせても
+local macro/history legalityの帰結ではない。標準prefix28/28則にはcanonical initial stateからのreachabilityが必要。
+
+この結果により優先順位1を停止条件付きへ変更する。
+
+1. **canonical reachability separator**: 標準prefixと上のseeded反例を分離する、terminal定義を言い換えない
+   独立不変量がまず必要。候補はupward blocker birthのforced candidate生成率だが、terminal fresh certificate
+   0/28のため既存comb資源は使わない。
+2. **fixed-root nonuniform no-escape**は45/100の経験的構造として保持するが、separatorが得られるまでLean化しない。
+3. standard upward addition-origin則は28/28・2Bで安定するものの、それだけではtail-born candidateの無限供給を
+   止めないため直接有望度25/100に留める。
+4. terminal fresh certificate課金は0/28、local origin prohibitionはseeded反例により0/100として停止する。
+
+canonical generation-vs-reuse chronology全体の直接有望度は30/100から20/100へ下げる。新不変量が単に
+「標準prefixから到達可能」と言い換えているだけなら再開しない。
+
+### Round 16: residual kernelへの再分解
+
+finite-root枝を6段へ分解した結果、terminal stream抽出、fixed-root separator、finite packing、unbounded hull、
+infinite reset extractionまでは現行APIから届く。唯一不足するのは、upward resetがtarget出現またはfuture entryの
+anchor下降で返済されることを示すcanonical causal lemmaである。right-ladder countermodelは前5段を全て満たす。
+
+`TargetTailResidualKernel`は仮想missing tailを次へexactに二分する。
+
+1. `EventualHighCandidateTail`: low candidateが有限回で、その後は全candidateがtargetよりstrict high。
+2. `UnboundedRightTerminalStream`: 一つのabove-target pre-tail rootを固定し、その右側に任意に遅いterminal combが存在。
+
+2B terminal-anchor auditは21,495/21,510 return、upward resetは26/28が次terminalで即時return、残る2件は
+target 4の実出現でepoch終了だった。ただし永久欠落tailは直接観測できず、一般waitは20,097まで増えた。
+finite-root/right-streamは30/100、reset repaymentは40/100で保持する。
+
+canonical prefixとseeded反例を分離するclock-4/kernel/envelope候補は、exact `Basic.step`を課すと軌道の
+決定的一意性そのものへ退化した。独立separatorは0件であり、この枝は5/100として停止する。
+
+次の研究はA/Bを独立に行う。Aはarbitrary finite seeded high corridorが満たせないcanonical eventual-high入力、
+Bは`target occurs ∨ later terminal entry < reset blocker`を与える非循環なreset repaymentだけを探索する。
+fresh token、record gap係数、canonical replayの言い換えは再開しない。
+
+### Round 17: target-low provenance修復とrepayment停止
+
+B枝を形式化前に再監査し、Round 16のstream型が構築時に既知だった三情報を落としていたことを確認した。
+
+1. selected terminal startの`nextSubtractionCandidate start < target`
+2. final timeだけでなくstart clock自身の非有界性
+3. selected witnessだけでなくtail内の全terminal combに対するfixed-root no-escape
+
+これらを`UnboundedRightTerminalStream`へ戻し、missing-tail A/B二分を強化した。さらに任意のtarget-low terminal
+combからleast later low clockを選び、no-intermediate-lowをminimalityで証明して
+`TargetMacroSuccessor`を構成する定理をLean化した。これはsame-target macro反復のproof-engineering gateを閉じる。
+
+返済の最弱causal候補はfixed-history blocker preloadだった。reset blocker `B`より左へentryが戻らない間、
+後続blockerのfirst timeが全てreset startより前なら、blocker one-useと有限鳩の巣で返済が従う。
+しかし有限seed `seen={0,1,6,8,13}, current=13, nextClock=7`からexact greedy stepを続けると、
+reset `6→14`後にentryが14未満へ戻る前、blocker 199がclock 65のforced additionで新規生成される。
+局所preloadと即時返済は`REFUTED`である。
+
+永久欠落を追加して「post-reset birthは有限」と修理すると、one-useの下では返済またはtarget occurrenceの
+言い換えになる。従ってexact repaymentは未反証の`CONJECTURED`として残すが、この枝は15/100・`STOPPED`とする。
+再開gateは、future return、target occurrence、canonical reachabilityを結論・仮定に含めず、post-reset blocker
+birthを真に抑える independently testable global invariant である。
+
+当面の判断は次の通り。
+
+1. A/B residual architectureとsuccessor selectorは85/100のhandoff theoremとして保守する。
+2. B repaymentは停止し、local macro/history条件の追加調整を行わない。
+3. A eventual-highは12/100で保留し、seeded corridorを排除する新しいcanonical inputが紙上で得られるまで進めない。
+4. 全射性へのactive direct branchは引き続き0本である。
 
 ## 並行して行う保守
 

@@ -1,5 +1,58 @@
 # Changelog
 
+## Reset-repayment semantic audit — 2026-09-01
+
+- `UnboundedRightTerminalStream`を強化し、universal fixed-root no-escape、任意に遅いterminal start、target-low provenanceを同時に保持
+- least later low clockからconsecutive `TargetMacroSuccessor`を構成する定理をLean化
+- fixed-history blocker preloadが返済を含意する有限鳩の巣縮約を紙上で確定
+- exact greedy seeded continuationでreset後に新blockerが生成される反例を固定し、local preloadとimmediate repaymentを停止
+- discovery/holdoutを分けた`target_reset_repayment_probe.rb`と明示seed replayを追加
+- exact repaymentは未反証のまま`STOPPED`とし、有望度を40/100から15/100へ更新
+
+## Missing-tail residual kernel and parallel decomposition — 2026-09-01
+
+- finite-root no-escapeを6段へ分解し、terminal stream、fixed-root separator、finite packing、unbounded hull、infinite resetまでは既存APIから到達可能と整理
+- `TargetTailResidualKernel`を追加し、finite pre-tail oracleからglobal `CoverageOracle`へ直接接続
+- 任意の仮想missing tailから、全future terminal entryが左へ越えられない固定pre-tail rootをLeanで抽出
+- 仮想反例をeventual-high candidate corridorまたはfixed-root unbounded right-terminal streamへexactに二分
+- terminal-anchor監査を2Bへ拡張し、21,510件中21,495件が後続entryでstrict return、upward reset 28件中26件が次terminalで返済されることを確認
+- record-gap cohortのfuture consumptionを追加監査。200k cohortは20Mまでに99.88%、2M cohortは20Mまでに92.06%を消費
+- canonical clock-4/kernel separator候補が決定的標準軌道の言い換えに退化すると判定し、separator枝を5/100へ下げて停止
+- finite-root/right-streamを30/100、reset repaymentを40/100へ再採点し、詳細を`docs/PARALLEL_RESIDUAL_DECOMPOSITION_2026-09-01.md`へ記録
+
+## Canonical upward-provenance audit — 2026-09-01
+
+- same-target upward terminal resetを2Bまで専用監査し、28/28がterminal right recordかつforced-addition初出であることを確認
+- blocker birth candidateは再利用最大1だが、19/28がtarget epoch内生成、terminal fresh interval由来0/28であるためfinite fresh-certificate課金を停止
+- ancestry pathは最大1,064,446 edge、subtraction edge最大532,214、pre-epoch root再利用最大8まで増え、単純addition genealogyではないことを確認
+- arbitrary signed-walk seedから続く実step orbitで、upward terminal right recordがlegal-subtraction初出になる反例を発見。local macro/history則からaddition-originを導く枝を停止
+- canonical generation-vs-reuse chronologyの直接有望度を30/100から20/100へ下げ、標準prefix reachabilityを本質的に使う新不変量がない限りLean化しない方針へ更新
+
+## Two-hour low/terminal and finite-basin audit — 2026-09-01
+
+- 各tail low candidateから有限 maximal fresh comb とhistorical terminal blockerを抽出する一連の定理をLean化
+- terminal blockerのhistorical normalをextended/refined/semantic domainへmountし、later-entry-leftとceiling超resetをstrict progressへ接続
+- finite historical anchorについて`semantic progress ∨ anchor ≤ future blocker`を証明
+- interval order・blocker one-use・unboundednessだけではfinite basinを脱出できないright-ladder countermodelをLean認証し、macro/interval direct branchを停止
+- positive forced candidateのearlier `FirstAt` mapとsame-candidate output strictnessを証明する一方、same-candidate reuse・nonfresh output・distinct-candidate output collisionをLean反例で認証
+- 20M low-to-terminal extraction probeと2M high-candidate reuse probeで、局所adapterを検証しraw causal chargingを棄却
+- terminal fresh intervalの幅`entry-blocker=k+1`とclock durationのexact関係、二episode版fresh-mass hull boundをLean化
+- singleton right ladderに5-clock gapを導いたが、gap/parityを満たす無限scheduleもLean化し、clock sparsity単独を停止
+- fresh entryが介在episode後にterminal blockerへ戻るtarget-4標準prefix反例をLean認証。候補をimmediate `TargetMacroSuccessor` gated no-returnへ縮約
+- same-candidate reuse intervalのexact subtraction balanceをLean化し、5重overlap反例と増大するhigh-block overlapで集約枝を停止
+- entry-return residualをhigh-word内のforced reuse balanceまたは全区間avoidanceへLeanで完全二分し、現行causal APIだけのsuccessor no-return枝を停止
+- immediate successor slackを20Mで監査し、entry returnのparity compatibilityをLean化。`δ odd ∨ next fresh mass≤δ`の新規残余は4辺だけで共通機構がなく、過適合寄りとして停止
+- 任意有限長のhigh forced-addition corridorを実`Basic.step`上のseeded historyからLean構成し、局所符号・ledger・parity・history legalityによるuniform boundをno-go化
+- 詳細な停止判断と次のgateを`docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md`に集約
+
+## Broadened target-comb macro exploration — 2026-08-31
+
+- 任意二つの時間順history-terminated combのfresh intervalが値軸上で完全に分離する`fresh_intervals_ordered`を証明
+- 20M reset ancestryを追加監査。最大60,651 hop、ancestry edge再利用7、threshold-crossing edge再利用4のため、bounded/unique ancestry chargingを停止
+- upward reset 20件は全てglobal right recordだが、17件は既存intervalを飛び越え最大2,237本を跨ぐ。単純stack traversalを棄却
+- record gap mass 17,820,564のうちreset時未訪問14,775,263、20M時点でも未訪問9,518,181。fresh intervalだけの閉じた収支を停止
+- 次の限定枝をglobal right-record則のprovenance証明と、record gap/high predecessor reservoirの二成分fluxへ更新
+
 ## Target-comb macro excursion and reset provenance — 2026-08-31
 
 - 時間順のhistory-terminated combについて、次fresh intervalが旧blockerより完全に下へ移るか、新blockerが旧blockerをstrictに越えるinterval-order二分法を証明

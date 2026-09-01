@@ -12,6 +12,20 @@ an older value strictly above the entire fresh comb interval.  The remaining
 branch is a forced-addition origin.
 -/
 
+/-- Any positive first-occurrence clock used by a blocker provenance lies
+either in the finite pre-tail prefix, or has a predecessor already strictly
+above the missing target.  In the forced-addition branch of
+`PositiveTerminalBlockerOrigin`, the second case is the target-bounded
+`EarlierSmaller` child needed by the existing debt recursion. -/
+theorem MissingPermanentAboveTail.birthTime_le_start_or_predecessor_above
+    {target start birthTime : Nat}
+    (h : MissingPermanentAboveTail target start)
+    (hpositive : 0 < birthTime) :
+    birthTime ≤ start ∨ target < a (birthTime - 1) := by
+  by_cases hpreTail : birthTime ≤ start
+  · exact Or.inl hpreTail
+  · exact Or.inr (h.strictly_above (birthTime - 1) (by omega))
+
 /-- Exact provenance split for a positive terminal blocker. -/
 inductive PositiveTerminalBlockerOrigin
     {s k blocker : Nat} (h : HistoryTerminatedComb s k blocker) : Prop
@@ -119,6 +133,50 @@ theorem PositiveTerminalBlockerOrigin.earlierSmaller_or_lift
       hpredecessorFirst hpredecessorTime hpredecessorLt =>
       exact Or.inl ⟨firstTime, predecessorFirstTime, hfirst,
         hpredecessorFirst, ⟨hpredecessorLt, hpredecessorTime⟩⟩
+
+/-- Tail-aware routing of blocker provenance.  A forced-addition birth is
+either confined to the finite pre-tail prefix or yields an `EarlierSmaller`
+child whose value is still strictly above the missing target.  The sole
+remaining branch is the existing subtraction-origin lift above the fresh
+comb entry. -/
+theorem PositiveTerminalBlockerOrigin.preTail_or_targetEarlierSmaller_or_lift
+    {target tailStart s k blocker : Nat}
+    {hcomb : HistoryTerminatedComb s k blocker}
+    (htail : MissingPermanentAboveTail target tailStart)
+    (horigin : PositiveTerminalBlockerOrigin hcomb) :
+    (exists firstTime predecessorFirstTime,
+      firstTime ≤ tailStart ∧
+      FirstAt a blocker firstTime ∧
+      FirstAt a (a (firstTime - 1)) predecessorFirstTime) ∨
+    (exists firstTime predecessorFirstTime,
+      target < a (firstTime - 1) ∧
+      FirstAt a blocker firstTime ∧
+      FirstAt a (a (firstTime - 1)) predecessorFirstTime ∧
+      EarlierSmaller
+        ⟨a (firstTime - 1), predecessorFirstTime⟩
+        ⟨blocker, firstTime⟩) ∨
+    (exists firstTime predecessorFirstTime,
+      firstTime < s ∧
+      FirstAt a blocker firstTime ∧
+      CanSubtract firstTime (stateAt (firstTime - 1)) ∧
+      FirstAt a (a (firstTime - 1)) predecessorFirstTime ∧
+      predecessorFirstTime < firstTime ∧
+      a s < a (firstTime - 1)) := by
+  cases horigin with
+  | legal_subtraction firstTime htime hfirst hlegal _
+      predecessorFirstTime hpredecessorFirst hpredecessorTime habove =>
+      exact Or.inr (Or.inr ⟨firstTime, predecessorFirstTime, htime,
+        hfirst, hlegal, hpredecessorFirst, hpredecessorTime, habove⟩)
+  | forced_addition firstTime _ hfirst _ _ predecessorFirstTime
+      hpredecessorFirst hpredecessorTime hpredecessorLt =>
+      have hpositive : 0 < firstTime := by omega
+      rcases htail.birthTime_le_start_or_predecessor_above hpositive with
+        hpreTail | haboveTarget
+      · exact Or.inl ⟨firstTime, predecessorFirstTime, hpreTail,
+          hfirst, hpredecessorFirst⟩
+      · exact Or.inr (Or.inl ⟨firstTime, predecessorFirstTime,
+          haboveTarget, hfirst, hpredecessorFirst,
+          ⟨hpredecessorLt, hpredecessorTime⟩⟩)
 
 /-- A strict upward reset therefore has only two explanations: an older
 predecessor above the new entry, or a forced-addition origin. -/

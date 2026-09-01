@@ -6,17 +6,24 @@ Lean 4形式化プロジェクトです。
 > [!IMPORTANT]
 > 全射性そのものはまだ証明していません。本リポジトリは、証明済みの局所力学、
 > well-foundedな大域証明骨格、そして残る証明義務を明確に分離しています。
+> 2026-09-01の最新判断は [2時間並列研究レポート](docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md)、
 > 最新の研究判断は [現況レポート](docs/STATUS_REPORT_2026-08-30.md) にまとめています。
+> finite-root残余の再分解と最新の並列監査は
+> [Round 16 residual decomposition](docs/PARALLEL_RESIDUAL_DECOMPOSITION_2026-09-01.md) にまとめています。
+> その後の型監査、successor選択、reset-repayment停止判断は
+> [Round 17 reset-repayment audit](docs/RESET_REPAYMENT_AUDIT_2026-09-01.md) にまとめています。
 > 類似するgreedy数列の解決例と次の探索枝は
 > [文献レビュー](docs/LITERATURE_REVIEW_2026-08-31.md) にまとめています。
 > 文献から選んだtarget-relative枝の最初の成果は
 > [causal run / gap sprint](docs/CAUSAL_RUN_GAP_SPRINT_2026-08-31.md) に記録しています。
+> AIとの研究で用いる役割分離、仮説管理、反証優先、コンテキスト設計、指示テンプレートは
+> [AI研究プロトコル](docs/AI_RESEARCH_PROTOCOL.md) にまとめています。
 
 ## 現在地
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース216モジュール（61,974行、認証済み深部traceを含む）
+- Leanソース228モジュール（65,108行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -31,12 +38,32 @@ Lean 4形式化プロジェクトです。
   全域性の直接攻略は停止条件に到達。部分定理・no-go結果の整理へ移行
 - target-relative low transitionをdescending combへ圧縮し、全low railのfirst-occurrence性・episode間
   disjoint性・historical terminal blockerの一回消費をLeanで証明（`TargetCandidateTransitions`）
+- 任意のtail low candidateから有限 maximal fresh comb とhistorical terminal blockerをLeanで抽出し、
+  terminal historical normalを既存extended/refined/semantic domainへ局所mount済み
+- same-target immediate successor 2,655辺では`δ odd ∨ next fresh mass≤δ`に20M違反0。downwardとodd枝を除くと、
+  新規部分はupward parity-compatible 4辺だけだが共通機構がなく、過適合寄りとして停止
+- canonical upward resetは2Bで28/28がright record・addition初出だが、birth candidateのterminal fresh interval由来は
+  0/28。seeded actual orbitにはrecord・subtraction初出反例があり、局所provenance課金を停止
+- 仮想missing tailを、eventual-high candidate corridorまたは一つのfinite pre-tail rootの右側を走る
+  unbounded terminal streamへLeanでexactに二分（`TargetTailResidualKernel`）
+- terminal blocker自身をanchorにした2B監査では21,495/21,510が後続entryでstrict return。
+  upward resetは26/28が次terminalで返済され、残る2件はtarget 4の実出現でepoch終了
+- finite historical anchorからは`semantic progress ∨ anchor≤future blocker`までexactに縮約。一方、
+  interval order・one-use・unboundednessを全て満たすright-ladder countermodelをLean認証したため、
+  finite-basinのmacro/interval direct branchを停止
+- eventual-high側ではpositive forced candidateのearlier first-time mapを証明したが、同一candidate再利用、
+  nonfresh output、異candidateの同output衝突をLean反例で認証し、raw causal chargingを停止
+- 任意長のhigh forced-addition corridorを実`Basic.step`上のseeded stateでLean構成し、局所ledger・parity・
+  finite-history legalityだけからuniform corridor boundが出ないことを認証
 - exact target-transition probeは2,000万項で2,661本のcomb、最長159,583 fresh landings、protocol違反0。
   macro辺2,655本はblocker下降2,635・上向きreset 20・fresh interval跨ぎ0
 - high-only excursionのsigned step則、全prefix corridor、sharp exit windowを証明。
   endpoint総和とuniform marginはno-goと判定し、次の探索点をupward-reset provenanceへ限定
 - 正のterminal blockerは、entryより上へliftする減算起源か、blockerより小さいpredecessorへ降りる
   forced-addition起源。20Mのupward reset 20件は全て後者（`TargetHighCandidateExcursion`, `TargetCombMacro`）
+- 任意二combのfresh intervalが値軸上で完全に順序づくことをLean証明。幅広監査では短いancestry・
+  一回消費genealogy・stack traversalを棄却し、未証明候補をglobal right-record則とgap fluxへ限定
+  （[macro幅広探索](docs/BROADENED_MACRO_EXPLORATION_2026-08-31.md)）
 - permanent-above tailの最小開始時刻を正準化し、exact replayと固定点枝を整礎反復から完全に除去済み
 - 最小tail境界を「最後の新規low・減算入射・その後の強制加算」としてsource-freeに正規化済み
 - canonical境界のbudget `1→0`とvalley cursorから、無条件の`TerminalChronologyHistoryProgress target coverage (coverage-1)`を構成済み

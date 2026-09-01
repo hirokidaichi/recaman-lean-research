@@ -92,6 +92,11 @@ struct MacroWitness {
   std::int64_t amount = 0;
 };
 
+struct ValueInterval {
+  Value lower = 0U;
+  Value upper = 0U;
+};
+
 Clock ParseHorizon(const char* text) {
   const unsigned long long parsed = std::stoull(text);
   if (parsed == 0U || parsed > std::numeric_limits<Clock>::max()) {
@@ -366,6 +371,10 @@ void Analyze(Clock horizon) {
   epochs.push_back(epoch);
 
   std::unordered_map<Value, ChainStats> previous_terminal_by_target;
+  std::unordered_map<Value, Value> minimum_interval_lower_by_target;
+  std::unordered_map<Value, Value> maximum_interval_upper_by_target;
+  std::unordered_map<Value, std::vector<ValueInterval>>
+      prior_intervals_by_target;
   std::uint64_t macro_edges = 0U;
   std::uint64_t blocker_up = 0U;
   std::uint64_t blocker_down = 0U;
@@ -373,6 +382,20 @@ void Analyze(Clock horizon) {
   std::uint64_t upward_subtraction_origin = 0U;
   std::uint64_t upward_addition_origin = 0U;
   std::uint64_t upward_origin_violations = 0U;
+  std::uint64_t upward_full_right_records = 0U;
+  std::uint64_t upward_gap_insertions = 0U;
+  std::uint64_t upward_predecessor_inside_prior_hull = 0U;
+  std::uint64_t upward_predecessor_above_prior_hull = 0U;
+  Value smallest_upward_record_gap = std::numeric_limits<Value>::max();
+  std::uint64_t upward_record_gap_mass = 0U;
+  std::uint64_t upward_gap_unseen_at_reset = 0U;
+  std::uint64_t upward_gap_unseen_at_horizon = 0U;
+  std::uint64_t downward_full_left_records = 0U;
+  std::uint64_t downward_gap_insertions = 0U;
+  std::uint64_t upward_moves_with_intervening_intervals = 0U;
+  std::uint64_t downward_moves_with_intervening_intervals = 0U;
+  Clock maximum_upward_intervening_intervals = 0U;
+  Clock maximum_downward_intervening_intervals = 0U;
   std::uint64_t first_time_up = 0U;
   std::uint64_t first_time_down = 0U;
   std::uint64_t first_time_equal = 0U;
@@ -387,6 +410,9 @@ void Analyze(Clock horizon) {
   for (const ChainStats& chain : chains) {
     if (chain.target_terminated) {
       previous_terminal_by_target.erase(chain.target);
+      minimum_interval_lower_by_target.erase(chain.target);
+      maximum_interval_upper_by_target.erase(chain.target);
+      prior_intervals_by_target.erase(chain.target);
       continue;
     }
     const auto previous_position =
@@ -401,6 +427,22 @@ void Analyze(Clock horizon) {
           static_cast<std::int64_t>(chain.blocker) -
           static_cast<std::int64_t>(previous.blocker);
       const std::uint64_t fresh_length = chain.entry - chain.blocker;
+      Clock intervening_intervals = 0U;
+      const Value next_lower = chain.blocker + 1U;
+      const Value previous_lower = previous.blocker + 1U;
+      for (const ValueInterval& interval :
+           prior_intervals_by_target[chain.target]) {
+        if (previous.entry < next_lower) {
+          if (previous.entry < interval.lower &&
+              interval.upper < next_lower) {
+            ++intervening_intervals;
+          }
+        } else if (chain.entry < previous_lower &&
+                   chain.entry < interval.lower &&
+                   interval.upper < previous_lower) {
+          ++intervening_intervals;
+        }
+      }
       signed_entry_motion_sum += entry_motion;
       fresh_length_sum += fresh_length;
       if (blocker_motion !=
@@ -413,6 +455,40 @@ void Analyze(Clock horizon) {
       }
       if (blocker_motion > 0) {
         ++blocker_up;
+        if (intervening_intervals != 0U) {
+          ++upward_moves_with_intervening_intervals;
+        }
+        maximum_upward_intervening_intervals = std::max(
+            maximum_upward_intervening_intervals, intervening_intervals);
+        const Value prior_upper =
+            maximum_interval_upper_by_target[chain.target];
+        if (prior_upper <= chain.blocker) {
+          ++upward_full_right_records;
+          upward_record_gap_mass += chain.blocker - prior_upper;
+          smallest_upward_record_gap = std::min(
+              smallest_upward_record_gap, chain.blocker - prior_upper);
+          for (Value gap_value = prior_upper + 1U;
+               gap_value <= chain.blocker; ++gap_value) {
+            const auto gap_position = occurrences.find(gap_value);
+            if (gap_position == occurrences.end() ||
+                chain.start_clock <= gap_position->second.first) {
+              ++upward_gap_unseen_at_reset;
+            }
+            if (gap_position == occurrences.end()) {
+              ++upward_gap_unseen_at_horizon;
+            }
+            if (gap_value == chain.blocker) {
+              break;
+            }
+          }
+        } else {
+          ++upward_gap_insertions;
+        }
+        if (chain.blocker_first_predecessor <= prior_upper) {
+          ++upward_predecessor_inside_prior_hull;
+        } else {
+          ++upward_predecessor_above_prior_hull;
+        }
         if (chain.blocker_first_was_subtraction) {
           ++upward_subtraction_origin;
           if (chain.blocker_first_predecessor <= chain.entry) {
@@ -440,6 +516,16 @@ void Analyze(Clock horizon) {
         }
       } else if (blocker_motion < 0) {
         ++blocker_down;
+        if (intervening_intervals != 0U) {
+          ++downward_moves_with_intervening_intervals;
+        }
+        maximum_downward_intervening_intervals = std::max(
+            maximum_downward_intervening_intervals, intervening_intervals);
+        if (chain.entry < minimum_interval_lower_by_target[chain.target]) {
+          ++downward_full_left_records;
+        } else {
+          ++downward_gap_insertions;
+        }
         const std::int64_t fall = -blocker_motion;
         if (fall > largest_blocker_fall.amount) {
           largest_blocker_fall = MacroWitness{
@@ -461,6 +547,90 @@ void Analyze(Clock horizon) {
       }
     }
     previous_terminal_by_target[chain.target] = chain;
+    const Value interval_lower = chain.blocker + 1U;
+    const auto minimum_position =
+        minimum_interval_lower_by_target.find(chain.target);
+    if (minimum_position == minimum_interval_lower_by_target.end()) {
+      minimum_interval_lower_by_target.emplace(chain.target, interval_lower);
+      maximum_interval_upper_by_target.emplace(chain.target, chain.entry);
+    } else {
+      minimum_position->second = std::min(minimum_position->second,
+                                          interval_lower);
+      maximum_interval_upper_by_target[chain.target] = std::max(
+          maximum_interval_upper_by_target[chain.target], chain.entry);
+    }
+    prior_intervals_by_target[chain.target].push_back(
+        ValueInterval{interval_lower, chain.entry});
+  }
+
+  std::uint64_t ancestry_failures = 0U;
+  std::uint64_t ancestry_total_steps = 0U;
+  Clock ancestry_max_steps = 0U;
+  Clock ancestry_max_subtraction_steps = 0U;
+  std::uint64_t ancestry_exact_old_blocker_hits = 0U;
+  std::uint64_t ancestry_crossing_subtraction = 0U;
+  std::uint64_t ancestry_crossing_addition = 0U;
+  std::unordered_map<Value, Clock> ancestry_edge_uses;
+  std::unordered_map<Value, Clock> ancestry_crossing_edge_uses;
+  std::unordered_map<TargetBlocker, Clock, TargetBlockerHash>
+      target_ancestry_edge_uses;
+  for (const MacroWitness& edge : upward_edges) {
+    Value current = edge.next_blocker;
+    Clock steps = 0U;
+    Clock subtraction_steps = 0U;
+    bool failed = false;
+    while (edge.previous_blocker < current) {
+      const auto position = occurrences.find(current);
+      if (position == occurrences.end() || position->second.first == 0U) {
+        failed = true;
+        break;
+      }
+      ++steps;
+      ++ancestry_edge_uses[current];
+      ++target_ancestry_edge_uses[TargetBlocker{edge.target, current}];
+      if (position->second.first_was_subtraction) {
+        ++subtraction_steps;
+      }
+      const Value parent = position->second.first_predecessor;
+      if (parent <= edge.previous_blocker) {
+        ++ancestry_crossing_edge_uses[current];
+        if (position->second.first_was_subtraction) {
+          ++ancestry_crossing_subtraction;
+        } else {
+          ++ancestry_crossing_addition;
+        }
+      }
+      current = parent;
+    }
+    if (failed) {
+      ++ancestry_failures;
+      continue;
+    }
+    ancestry_total_steps += steps;
+    ancestry_max_steps = std::max(ancestry_max_steps, steps);
+    ancestry_max_subtraction_steps = std::max(
+        ancestry_max_subtraction_steps, subtraction_steps);
+    if (current == edge.previous_blocker) {
+      ++ancestry_exact_old_blocker_hits;
+    }
+  }
+  Clock maximum_ancestry_edge_reuse = 0U;
+  for (const auto& [value_key, count] : ancestry_edge_uses) {
+    static_cast<void>(value_key);
+    maximum_ancestry_edge_reuse = std::max(maximum_ancestry_edge_reuse,
+                                           count);
+  }
+  Clock maximum_target_ancestry_edge_reuse = 0U;
+  for (const auto& [key, count] : target_ancestry_edge_uses) {
+    static_cast<void>(key);
+    maximum_target_ancestry_edge_reuse = std::max(
+        maximum_target_ancestry_edge_reuse, count);
+  }
+  Clock maximum_ancestry_crossing_edge_reuse = 0U;
+  for (const auto& [value_key, count] : ancestry_crossing_edge_uses) {
+    static_cast<void>(value_key);
+    maximum_ancestry_crossing_edge_reuse = std::max(
+        maximum_ancestry_crossing_edge_reuse, count);
   }
 
   std::sort(epochs.begin(), epochs.end(), [](const EpochStats& lhs,
@@ -606,6 +776,26 @@ void Analyze(Clock horizon) {
             << " upwardOrigin(sub/add)=" << upward_subtraction_origin << '/'
             << upward_addition_origin
             << " upwardOriginViolations=" << upward_origin_violations
+            << " intervalRecord(upRight/upGap/downLeft/downGap)="
+            << upward_full_right_records << '/' << upward_gap_insertions
+            << '/' << downward_full_left_records << '/'
+            << downward_gap_insertions
+            << " upPredecessor(inHull/above)="
+            << upward_predecessor_inside_prior_hull << '/'
+            << upward_predecessor_above_prior_hull;
+  if (upward_full_right_records != 0U &&
+      smallest_upward_record_gap != std::numeric_limits<Value>::max()) {
+    std::cout << " minUpRecordGap=" << smallest_upward_record_gap;
+  }
+  std::cout << " upGapMass=" << upward_record_gap_mass
+            << " unseen(reset/horizon)=" << upward_gap_unseen_at_reset
+            << '/' << upward_gap_unseen_at_horizon;
+  std::cout
+            << " intervening(up/down,maxUp/maxDown)="
+            << upward_moves_with_intervening_intervals << '/'
+            << downward_moves_with_intervening_intervals << '/'
+            << maximum_upward_intervening_intervals << '/'
+            << maximum_downward_intervening_intervals
             << " separatorViolations=" << separator_violations
             << " identityViolations=" << macro_identity_violations << '\n';
   std::cout << "    signedEntryMotionSum=" << signed_entry_motion_sum
@@ -625,6 +815,17 @@ void Analyze(Clock horizon) {
               << ",b'=" << largest_blocker_fall.next_blocker << ')';
   }
   std::cout << '\n';
+  std::cout << "    upward ancestry: failures=" << ancestry_failures
+            << " totalSteps=" << ancestry_total_steps
+            << " maxSteps=" << ancestry_max_steps
+            << " maxSubSteps=" << ancestry_max_subtraction_steps
+            << " exactOldBlockerHits=" << ancestry_exact_old_blocker_hits
+            << " crossingOrigin(sub/add)=" << ancestry_crossing_subtraction
+            << '/' << ancestry_crossing_addition
+            << " edgeReuse(global/target)=" << maximum_ancestry_edge_reuse
+            << '/' << maximum_target_ancestry_edge_reuse
+            << " crossingEdgeReuse="
+            << maximum_ancestry_crossing_edge_reuse << '\n';
 
   std::cout << "longest mex epochs:\n";
   const std::size_t epoch_limit = std::min<std::size_t>(15U, epochs.size());

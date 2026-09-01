@@ -164,7 +164,7 @@ flowchart LR
 | comb witness構成 | stepのwitness化を完了済み | blocked理由・正値・freshnessの三条件からCombStepを構成。大域なのはfreshness一条件のみ | `OrbitCombWitness` |
 | replay kernel floor III | 床をclock 32へ拡張済み | 例外リストは{19, 61}で閉じ`target=19∨target=61∨34≤target`。次の壁は76（t=181643） | `PermanentAboveCorridorReplayFloorThree` |
 | comb value representation | run値集合の表現とfreshness輸送を証明済み | exit時のmembership＝事前履歴∨二rail。最終low rail未満のfresh値はrun全体でfreshのまま | `OrbitCombValues` |
-| target-relative comb charging | 第1gateを証明済み | below-target candidateの孤立、fresh low railのfirst-occurrence/disjoint性、terminal blockerの完了時刻への単射 | `TargetCandidateTransitions` |
+| target-relative comb charging | interval構造まで証明済み | low isolation、terminal blocker単射、任意二combのfresh整数区間が値軸上で完全に順序づく | `TargetCandidateTransitions` |
 | target high excursion | 第2gateを証明・限界確定 | signed step則、全prefixのstrict ledger corridor、legal-subtraction出口、sharp window。endpoint総和は既存ledgerの再表現 | `TargetHighCandidateExcursion` |
 | target comb macro provenance | reset枝を二生成形へ縮約済み | 次intervalは旧blockerの下または新blockerが上。減算起源はentry超predecessor、加算起源は既存`EarlierSmaller`へ直結 | `TargetCombMacro` |
 | nineteen replay identification | target 19のreplayを完全数値特定済み | blocker境界からclock≤16、消去でclock∈{6,8}。各々anchor/blocker/初出時刻まで一意（13/6/3と12/3/2） | `PermanentAboveCorridorNineteenReplay` |
@@ -706,6 +706,10 @@ high側へ押す。high-to-low subtractionから始まるfresh combの全low rai
 その初出がlegal subtractionなら生成元predecessorはfresh interval全体より上にあり、forced additionなら
 predecessorはblockerより下へstrictに降りる。
 
+`fresh_intervals_ordered`はこの二分法を任意二episodeの完全な値区間順序へ強化する。later intervalが
+earlier blockerより下にあるか、earlier entry全体がlater blocker以下にある。これは経験的なright-record則
+そのものではない。三つ以上のintervalのglobal insertion順にはactual blocker provenanceがなお必要である。
+
 `TargetHighCandidateExcursion`はsigned excessの局所変化を加算`+n`、減算`-(n+2)`として記録し、maximal
 high区間の全prefixをstrict ledger corridorへ置く。出口は必ずlegal subtractionで、直前余剰はclock幅未満である。
 `TargetCombMacro`はこの出口をterminal blockerのfirst-transition provenanceへ接続する。endpoint総和だけは
@@ -733,3 +737,100 @@ high区間の全prefixをstrict ledger corridorへ置く。出口は必ずlegal 
 - `experiments/`のC++結果は仮説選択にのみ使用する。
 - 計算実験の結果を証明の仮定として利用していない。
 - 具体例の小規模計算はLeanカーネルの`decide`で検証する。
+
+## 2026-09-01: low-to-terminal抽出とfinite-basin境界
+
+`TargetCandidateTransitions`は、permanent missing-target tailの各low candidate landingがfreshであり、
+low railの自然数下降から有限 maximal `FreshCombEpisode`を持ち、その終端が必ず
+`HistoryTerminatedComb`になることを証明する。従ってlow側のmacro抽出は経験則ではなく全称定理になった。
+
+`TargetCombTimeAncestry`と`TargetCombFiniteCeiling`はterminal blockerのfirst occurrenceを
+pre-tail rootまたはtarget-above ancestryへ戻し、pre-tail値を`upperTri tailStart`で抑える。
+`TargetCombSemanticMount`はterminal blocker normalをextended/refined/semantic domainへ搭載し、
+later-entry-leftとceilingを越えたupward resetをstrict progressへ接続する。
+
+finite basinでは`blockerNormalProgress_or_anchor_le_blocker`がexact residualを返す。後者を現行macro条件だけで
+排除できないことは`finiteBasin_rightLadder_countermodel`が認証する。従って次の不足入力は
+標準Recamán漸化式固有のclock/legality no-escapeであり、interval orderの追加強化ではない。
+
+`EventualHighCandidateLedger`はeventual-high条件をweighted interval ledgerへ同値変形するが、これは新しい制約ではない。
+`HighCandidateCausalReuse`はpositive forced candidateをearlier `FirstAt`へ写す一方、標準prefix上の
+same-candidate reuse、nonfresh output、distinct-candidate output collisionも認証する。raw candidate課金は停止した。
+
+`TargetLadderClock`はterminal final直後の二forced additionsとsingleton unit ladderの5-clock gapを証明するが、
+gapとtriangular parityを満たす無限scheduleも認証する。`ForcedCandidateReuseBalance`は同一candidateの二利用間に
+exact subtraction paymentを置くが、標準prefixの5重interval overlapを認証する。前者はvisited-sensitive
+no-return、後者は独立なoverlap boundがない限り全域性へ進まない。
+
+`TargetMacroSuccessor`は間に同target terminalを挟まない連続episodeと、その間のstrict-high excursionを型にする。
+entry returnを仮定すると、旧entryがhigh word内でforced candidateとして再露出してterminal repaymentとのexact
+reuse balanceを持つか、high word全体で旧entryをavoidするかにLeanで二分できる。両枝は現行ledgerでは排除不能で、
+必要な新入力はcandidate値列のvisited-sensitive coverageである。entry returnが必要とするtriangular parity classは
+`TargetMacroEntryReturnResidual.parity_compatible`で形式化したが、compatible枝のmass-gap強化は20Mで新規4例しかなく、
+共通機構がないため証明候補には昇格させない。
+parity-incompatible枝のno-return自体は`TargetMacroSuccessor.entry_ne_of_parity_incompatible`で閉じている。
+
+`SeededHighCorridorNoGo`は任意有限長について、target 1を欠き、各high candidateが実際にhistory memberであるため
+`Basic.step`が全てforced additionになるseeded corridorを構成する。seedのcanonical到達可能性は主張しないが、
+局所符号、interval ledger、mod-2 parity、有限history legalityだけではuniform corridor boundが出ないことを分離する。
+
+## 2026-09-01: canonical upward provenanceの計算境界
+
+`experiments/target_upward_provenance_probe.cpp`は、標準prefixの同一target連続terminal episodeについて、
+upward reset、right-record性、blockerのfirst-transition branch、birth candidate、terminal fresh interval、
+first-time ancestryを監査する。2Bまでの28 upward resetはすべてright recordかつforced-addition originだったが、
+terminal fresh intervalに属するblockerは0件である。これは計算観測であり、Lean定理ではない。
+
+`experiments/seeded_right_record_search.cpp --walk-record-sub`は、自由seedから`Basic.step`を実行して、
+right-record upward resetのblockerがlegal subtractionで初出する反例を返す。従って上のforced-addition origin則は
+`HistoryTerminatedComb`、successor order、local legalityだけからは導けない。標準prefix固有の到達可能性separatorが
+ない限り、この観測を証明インターフェースへ追加しない。
+
+また、upward blockerの26/28、forced-addition birth candidateの19/28が対象epoch中に生成されるため、
+candidate one-useだけでは有限資源への注入にならない。terminal fresh-certificate charging枝はここで停止し、
+既存のLean証明境界を保つ。
+
+## 2026-09-01: missing-tail residual kernel
+
+`TargetTailResidualKernel`は、永久欠落tailの全first occurrenceをpre-tailとtail後に分ける。tail後は
+`MissingPermanentAboveTail.coverageStep_at`で既に`CoverageStep`を持つため、有限prefix上の
+`PreTailCoverageOracle`があればglobal `CoverageOracle`になり、target missingと矛盾する。
+
+`FiniteRootTerminalEscape`は各above-target pre-tail rootに対し、それ未満のfresh terminal entryを要求する。
+このescapeはrootからentryへの`CoverageStep`を直接与える。従って全root escapeは不可能であり、
+`exists_finiteRootTerminalNoEscape`が、全future terminal entryを右側に保つ固定pre-tail rootを抽出する。
+
+最後に`eventualHigh_or_unboundedRightTerminal`はlow candidateのbounded/unboundedでexactに分ける。仮想反例は
+
+```text
+eventual-high candidate corridor
+or
+fixed finite rootの右側を走るunbounded terminal stream
+```
+
+のどちらかである。この定理はsemantic closureやtarget-tail returnを使わず、全射性残余を二本へ縮約する。
+前者にはcanonical high不変量、後者にはreset repaymentが必要であり、いずれも本moduleでは仮定していない。
+
+## 2026-09-01: target-low stream semantic repair
+
+Round 17のstatement auditにより、`UnboundedRightTerminalStream`は次の二成分を保持する形へ強化された。
+
+```text
+tail内の全terminal combに対するuniversal fixed-root no-escape
+and
+任意cutoffより後に開始するtarget-low terminal comb
+```
+
+どちらも`eventualHigh_or_unboundedRightTerminal`の構築過程ですでに得ていた情報であり、新仮定ではない。
+旧型が保存していたlate final timeはlate startから従う。selected witnessだけのright-entry条件はuniversal
+no-escapeから従うため冗長として除いた。
+
+`UnboundedRightTerminalStream.exists_targetMacroSuccessor`は、既存terminal finalより後のtarget-low clockの
+非空集合からleast startを選ぶ。そのstartで`candidateBelow_exists_historyTerminatedComb`を再適用し、間にlowが
+あればleastnessに矛盾するため、全中間candidateをmissing-target dichotomyでstrict highへ上げる。
+従ってB枝は任意のtarget-low terminalからconsecutive `TargetMacroSuccessor`を再開できる。
+
+これは`PROVED-LEAN`のinterface/proof-engineering成果であり、repaymentは含まない。返済を有限鳩の巣へ落とす
+fixed-history blocker preloadはseeded exact continuationで`REFUTED`となった。exact permanent-tail repaymentは
+未反証だが、独立causal lemmaがないため研究枝は`STOPPED`である。詳細は
+`RESET_REPAYMENT_AUDIT_2026-09-01.md`を参照。

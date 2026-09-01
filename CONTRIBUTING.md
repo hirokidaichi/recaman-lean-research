@@ -7,6 +7,12 @@
 - 下位層は上位の探索オラクルへ依存させない。
 - 既存の定理名とAPIは、必要性が明確でない限り維持する。
 
+AIを用いた仮説探索、計算実験、形式化、意味監査では
+[`docs/AI_RESEARCH_PROTOCOL.md`](docs/AI_RESEARCH_PROTOCOL.md) とルートの`AGENTS.md`にも従う。
+新しい研究枝は原則として
+[`docs/HYPOTHESIS_CARD_TEMPLATE.md`](docs/HYPOTHESIS_CARD_TEMPLATE.md)から仮説カードを作り、
+受入条件と停止条件を実験前に固定する。
+
 ## 変更前後の確認
 
 ```bash
@@ -42,4 +48,3 @@
 - 実験コード
 
 定理探索と大規模API変更は別コミットにする。
-

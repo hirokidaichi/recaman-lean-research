@@ -40,6 +40,22 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/target_transition_probe.cpp \
   -o /tmp/target_transition_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_right_record_probe.cpp -o /tmp/target_right_record_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/seeded_right_record_search.cpp -o /tmp/seeded_right_record_search
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_ancestry_capacity_probe.cpp -o /tmp/target_ancestry_capacity_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_high_candidate_probe.cpp -o /tmp/target_high_candidate_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_comb_extraction_probe.cpp -o /tmp/target_comb_extraction_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_ladder_probe.cpp -o /tmp/target_ladder_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_successor_slack_probe.cpp -o /tmp/target_successor_slack_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/target_upward_provenance_probe.cpp -o /tmp/target_upward_provenance_probe
 ```
 
 Example runs:
@@ -62,6 +78,15 @@ Example runs:
 /tmp/causal_blocker_probe --saturation 20000000
 /tmp/causal_blocker_probe --saturation-lite 1000000000
 /tmp/target_transition_probe 5000000
+/tmp/target_right_record_probe 20000000
+/tmp/target_ancestry_capacity_probe 20000000
+/tmp/target_high_candidate_probe 2000000
+/tmp/target_comb_extraction_probe 20000000
+/tmp/target_ladder_probe 20000000
+/tmp/target_successor_slack_probe 20000000 2000
+/tmp/target_upward_provenance_probe 20000000
+/tmp/target_upward_provenance_probe 2000000000
+/tmp/seeded_right_record_search --walk-record-sub 12 250
 ```
 
 The reported billion-step run used `1000000000` as the final argument. It requires
@@ -86,6 +111,51 @@ The CSV data goes to standard output and aggregate diagnostics go to standard
 error.  A terminal classification of `legal_subtraction`, `target_candidate`,
 or `candidate_below_target` records where the empirical debt chain stopped.
 These observations select candidate lemmas; they are not proof assumptions.
+
+`target_upward_provenance_probe.cpp` reuses the exact macro extractor and
+dense first-occurrence ancestry metadata to audit every upward same-target
+terminal reset. It records whether the new blocker is a terminal right
+record, its first branch, the forced birth candidate, pre-epoch ancestry,
+and whether that candidate belongs to any earlier terminal fresh interval.
+It also audits nonuniform return below each terminal blocker and, separately,
+below each upward-reset blocker. At 2B, 21,495 of 21,510 terminal anchors had
+a later entry strictly below the anchor; 26 of 28 upward resets were repaid by
+the immediately next terminal episode. The remaining two belong to the early
+target-4 epoch, which ends when target 4 occurs.
+
+`target_ancestry_capacity_probe.cpp` additionally reports fixed record-gap
+cohorts at 200k and 2M. This separates values already visited when a record is
+created, values first visited later, and values still unvisited at the audit
+horizon. The result is a diagnostic future-consumption curve, not a proof of
+eventual coverage.
+
+`target_reset_repayment_probe.rb` is the frozen seeded falsification harness
+for Round 17. It starts from reproducible nonnegative signed-clock histories,
+then follows the exact greedy rule and classifies upward same-target terminal
+resets as later repaid, ended by target occurrence, or horizon-censored. The
+discovery and independent holdout commands are:
+
+```bash
+ruby experiments/target_reset_repayment_probe.rb 5000 200 10000 20260901
+ruby experiments/target_reset_repayment_probe.rb 1000 200 50000 20260902
+```
+
+`target_reset_preload_counterexample.rb` freezes the audited seed used to
+refute the local fixed-history-preload proof route:
+
+```bash
+ruby experiments/target_reset_preload_counterexample.rb 1200
+```
+
+The continuation obeys the exact greedy step rule, but the finite seed is not
+claimed reachable from the canonical initial state. These scripts falsify
+local causal generalizations; they cannot instantiate a permanent-missing
+tail and therefore do not refute the exact repayment conjecture.
+
+The `--walk-record-sub` seeded search is a no-go check: it finds a finite
+history whose subsequent real `Basic.step` orbit has an upward terminal
+record born by legal subtraction. Therefore the standard-prefix addition-
+origin law cannot be inferred from local step legality or the macro fields.
 The summary also counts every positive diagonal state, including the small
 base case that has no two-step subtraction tail.  Thus a run with no
 debt-eligible row still records how far the stronger diagonal-uniqueness
@@ -223,3 +293,24 @@ entry; all 20 upward resets are addition-origin. The high-to-low exit window
 has no violations, but its minimum integer slack is one and its maximum
 utilization is 999,999 ppm, so the probe rejects any uniform-margin
 strengthening.
+
+The broadened macro mode also follows first-occurrence ancestry and the
+value-axis order of all prior fresh intervals. At 20,000,000 steps, upward
+ancestry has maximum length 60,651 and edge reuse seven, rejecting bounded or
+injective genealogy charging. All 20 upward intervals are global right
+records, but 17 jump across prior intervals (maximum 2,237), while 1,142
+downward moves also cross intervening intervals. The interval sequence is not
+a local stack traversal. Upward record gaps have total mass 17,820,564;
+14,775,263 values are unseen at reset time and 9,518,181 remain unseen at the
+horizon, so fresh intervals alone are not a closed conservation system.
+
+The focused target probes split the later audit into reproducible units.
+`target_comb_extraction_probe` measures how maximal history-terminal combs
+cover all target-low states. `target_ancestry_capacity_probe` follows blocker
+first-time roots, fixed-root remounts, fresh-mass hulls, descent payments, and
+record gaps. `target_high_candidate_probe` audits the complementary high-only
+corridor. `target_ladder_probe` checks immediate and non-immediate reuse of
+fresh entries as later terminal blockers. `target_right_record_probe` and the
+seeded search separate standard-prefix evidence from claims that fail once an
+arbitrary reachable-looking history is allowed. All outputs are empirical;
+the corresponding exact finite examples are separately certified in Lean.

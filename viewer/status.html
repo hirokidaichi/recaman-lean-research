@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Recamán数列の全域性研究について、2026-08-31時点の証明済み成果、経験的証拠、類似問題の文献調査、停止判断、次の研究方針を整理した現況レポート。">
+<meta name="description" content="Recamán数列の全域性研究について、2026-09-01時点のlow-to-terminal抽出、finite-basin no-escape候補、停止判断、次の研究方針を整理した現況レポート。">
 <title>Recamán 全域性研究 — 現況レポート</title>
 <style>
   :root {
@@ -490,28 +490,28 @@
   <main id="top">
     <section class="masthead" aria-labelledby="report-title">
       <div>
-        <p class="eyebrow">Status report · 2026-08-31</p>
+        <p class="eyebrow">Status report · 2026-09-01</p>
         <h1 id="report-title">Recamán 全域性研究<br>現況レポート</h1>
-        <p class="lede">全域性は未解決。target-combのmacro二分法とhigh excursionのfirst-passage corridorまでLean化した。単純な総収支はno-goと判定し、稀なupward resetの生成provenanceへ焦点を移す。</p>
+        <p class="lede">全域性は未解決。仮想missing tailのA/B二分は、universal fixed-root no-escape・late target-low start・consecutive macro選択までLeanで監査済みになった。一方、upward reset repaymentの唯一の有限資源候補はseeded exact continuationで壊れ、この枝は15/100で停止した。</p>
         <div class="status-line" aria-label="現在の研究状態">
           <span class="pill pill--stop">直接攻略を停止</span>
-          <span class="pill pill--open">macro探索を継続</span>
+          <span class="pill pill--stop">reset repayment停止</span>
           <span class="pill pill--open">部分定理候補あり</span>
           <span class="pill pill--checked">形式検証は健全</span>
         </div>
       </div>
       <aside class="decision-card" aria-label="現在の意思決定">
         <h2>現在の判断</h2>
-        <p class="decision">direct branch は凍結のまま、<br>upward reset の起源を攻める。</p>
-        <p class="why">endpoint balanceは既存ledgerへ戻る。残った非ledger情報はfresh intervalの順序とblocker初出の生成枝。</p>
-        <div class="date">AS OF 2026-08-31 · JST</div>
+        <p class="decision">direct branch は0本。<br>Bの局所探索も停止。</p>
+        <p class="why">Bの型とsuccessor選択は閉じたが、post-reset blocker birthを有限化する局所則は反例を持つ。future return・target occurrenceを言い換えないglobal invariantだけを再開条件とする。</p>
+        <div class="date">AS OF 2026-09-01 · JST</div>
       </aside>
     </section>
 
     <div class="metrics" aria-label="検証指標">
       <div class="metric"><div class="metric__value">0</div><div class="metric__label">全域性へ向かう active direct branch</div></div>
-      <div class="metric"><div class="metric__value">218</div><div class="metric__label">通過した Lean build jobs</div></div>
-      <div class="metric"><div class="metric__value">993</div><div class="metric__label">公理監査済み declarations</div></div>
+      <div class="metric"><div class="metric__value">230</div><div class="metric__label">通過した Lean build jobs</div></div>
+      <div class="metric"><div class="metric__value">1,082</div><div class="metric__label">公理監査済み declarations</div></div>
       <div class="metric"><div class="metric__value">0</div><div class="metric__label">sorry / admit / native_decide / user axiom</div></div>
     </div>
 
@@ -533,9 +533,9 @@
           <div class="panel__inner">
             <h3>次の一手</h3>
             <div class="action-list">
-              <div class="action"><span class="action__n">1</span><div><strong>Comb compression ✓</strong><span>low transitionをdescending fresh combへ圧縮し、terminal blocker一回消費を証明。</span></div></div>
-              <div class="action"><span class="action__n">2</span><div><strong>High-only excursion ✓</strong><span>signed step則・全prefix corridor・sharp exit windowをLean化。uniform marginは停止。</span></div></div>
-              <div class="action"><span class="action__n">3</span><div><strong>Reset provenance</strong><span>upward resetの減算起源を排除するか、value liftとfirst-time descentを一rankへ束ねる。</span></div></div>
+              <div class="action"><span class="action__n">1</span><div><strong>Low → terminal extraction ✓</strong><span>各low landingから有限maximal fresh combとhistorical blockerを全称的に抽出。</span></div></div>
+              <div class="action"><span class="action__n">2</span><div><strong>Semantic mount ✓</strong><span>terminal normalをrefined domainへ搭載し、left entryとceiling超resetをstrict progressへ接続。</span></div></div>
+              <div class="action"><span class="action__n">3</span><div><strong>Residual kernel ✓</strong><span>missing tailをeventual-high corridorまたはfixed-root unbounded terminal streamへLeanでexactに二分。</span></div></div>
             </div>
           </div>
         </article>
@@ -583,6 +583,16 @@
           <h3>terminal blocker は一回消費</h3>
           <p>fresh combの全low railはfirst occurrence。終端blocker <code>b</code>はfresh successor <code>b+1</code>に注入され、別の完了combへ再利用できない。</p>
         </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>各lowからfinite terminalを抽出</h3>
+          <p>fresh landingからlow railの自然数下降へ強帰納し、有限maximal combを構成。その終端が必ずhistorical blockerになることまで証明。</p>
+        </article>
+        <article class="evidence" data-kind="proved">
+          <span class="tag tag--proved">proved in Lean</span>
+          <h3>terminal normalをsemantic mount</h3>
+          <p>historical terminal blockerをextended/refined/semantic domainへ搭載。later-entry-leftとpre-tail ceiling超resetはstrict progressになる。</p>
+        </article>
         <article class="evidence" data-kind="empirical">
           <span class="tag tag--empirical">exact computation</span>
           <h3>20M target-comb probe</h3>
@@ -590,8 +600,8 @@
         </article>
         <article class="evidence" data-kind="proved">
           <span class="tag tag--proved">proved in Lean</span>
-          <h3>macro interval-order 二分法</h3>
-          <p>次fresh intervalは旧blockerより完全に下へ移るか、新blockerが旧blockerをstrictに越える。旧blockerを跨ぐ第三形はない。</p>
+          <h3>fresh interval はpairwise全順序</h3>
+          <p>任意二つの時間順combで、later intervalはearlier blockerより下、またはearlier interval全体がlater blocker以下。値区間は交差しない。</p>
         </article>
         <article class="evidence" data-kind="proved">
           <span class="tag tag--proved">proved in Lean</span>
@@ -600,14 +610,84 @@
           <div class="formula">0 &lt; exit excess &lt; finish+2</div>
         </article>
         <article class="evidence" data-kind="empirical open">
-          <span class="tag tag--empirical">20M macro audit</span>
-          <h3>upward reset は20件、全てaddition起源</h3>
-          <p>2,655 macro辺で下降2,635・上昇20・等値0・separator違反0。減算起源blocker 1,260件は全てpredecessorがentryより上。</p>
+          <span class="tag tag--empirical">20M remount audit</span>
+          <h3>distinct root 851/860がanchor左へ戻る</h3>
+          <p>未解決9件はtarget出現またはhorizon censor。待ち時間は最大653 episodeへ伸びるためuniform boundは偽で、非一様no-escapeが候補。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">fresh-mass audit</span>
+          <h3>no-escapeならfresh massは非有界</h3>
+          <p><code>#waiting≤Q≤maxEntry−root</code>、resolved時<code>2Q≤clock gap</code>。20M違反0。ただし最長待ちのhull密度は22.75%で単独矛盾にはならない。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">Lean countermodel</span>
+          <h3>macro条件だけではfinite basinを脱出しない</h3>
+          <p><code>bⱼ=r+j, entryⱼ=r+j+1</code>のright ladderはinterval order・one-use・unboundednessを満たし、一度も<code>entry&lt;r</code>を起こさない。</p>
+        </article>
+        <article class="evidence" data-kind="proved nogo">
+          <span class="tag tag--nogo">clock audit</span>
+          <h3>singleton ladderは5 clock空くが排除不能</h3>
+          <p>terminal後の二加算とparityから次entryは5 clock以後。しかし<code>sⱼ=6j</code>が全clock条件を満たすため、必要なのはvisited-sensitive no-return。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">Lean prefix counterexample</span>
+          <h3>無条件fresh-entry no-returnは偽</h3>
+          <p>target 4でentry 39が介在episode後にterminal blocker 39として戻る。immediate predecessorに限るgated形だけが20Mで0/2,655。</p>
+        </article>
+        <article class="evidence" data-kind="proved nogo">
+          <span class="tag tag--nogo">exact residual no-go</span>
+          <h3>successor returnはreuseまたはavoidance</h3>
+          <p>旧entryがhigh wordで再露出すればforced reuse balance、しなければ全区間avoidance。現行ledgerはどちらも排除せず、局所successor枝を停止。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">20M successor audit</span>
+          <h3>parity-or-mass hybridは2,655辺で違反0</h3>
+          <p><code>δ odd ∨ q≤δ</code>。entry returnがparity-compatibleになることはLean化したが、新規は4辺だけで共通機構なし。過適合寄りとして停止。</p>
+        </article>
+        <article class="evidence" data-kind="proved nogo">
+          <span class="tag tag--nogo">Lean seeded family</span>
+          <h3>任意長のhigh forced corridor</h3>
+          <p>target 1を欠くfinite historyをseedすると、任意長だけ実<code>Basic.step</code>をhigh forced additionにできる。局所符号・ledger・parityからuniform boundは出ない。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">2B canonical audit</span>
+          <h3>upward reset 28/28はrecord・addition初出</h3>
+          <p>ただしbirth candidateは19/28がepoch内生成、terminal fresh interval由来0/28。再利用最大1でも有限capacityにはならない。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">seeded actual-orbit no-go</span>
+          <h3>upward recordのsubtraction初出は局所的に可能</h3>
+          <p>target 5でblocker <code>16→230</code>のright-record resetを構成。230は<code>326−96</code>で初出し、addition-origin則がcanonical固有だと確定。</p>
+        </article>
+        <article class="evidence" data-kind="proved open">
+          <span class="tag tag--proved">Lean exact kernel</span>
+          <h3>missing tailを二つの残余へ完全分解</h3>
+          <p>eventual-high candidate corridorまたはfixed finite rootの右側を走るunbounded terminal stream。有限pre-tail oracleから直接導出し、循環的なsemantic closureは使わない。</p>
+        </article>
+        <article class="evidence" data-kind="empirical open">
+          <span class="tag tag--empirical">2B terminal-anchor audit</span>
+          <h3>21,495 / 21,510 anchorsが後でstrict return</h3>
+          <p>upward reset 28件中26件は次terminalで返済。残る2件はtarget 4が実際に出現してepoch終了。ただし一般waitは最大20,097でuniform boundはない。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">macro no-go</span>
+          <h3>短いancestry / stack traversalは偽</h3>
+          <p>祖先鎖は最大60,651 hop、edge再利用7。interval移動はupwardで最大2,237本を飛び越え、局所stackではない。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">gap flux no-go</span>
+          <h3>record gapの半分以上が未訪問で残る</h3>
+          <p>gap mass 17,820,564、20Mでも未訪問9,518,181。cut balanceは望遠和へ退化し、独立枝として停止。</p>
         </article>
         <article class="evidence" data-kind="nogo">
           <span class="tag tag--nogo">sharp no-go</span>
           <h3>uniform exit margin は存在しない</h3>
           <p>5,779,954出口で違反0だが最小slackは1、最大window利用率99.9999%。endpoint総和も既存ledgerの望遠和。</p>
+        </article>
+        <article class="evidence" data-kind="nogo">
+          <span class="tag tag--nogo">Lean counterexamples</span>
+          <h3>high candidateのraw課金は多対一</h3>
+          <p>candidate 285の再利用、既出output 2935、異candidateの同output 265、reuse intervalの5重overlapを認証。strict high blockのoverlap深度は2Mで427。</p>
         </article>
         <article class="evidence" data-kind="empirical">
           <span class="tag tag--empirical">exact computation</span>
@@ -680,7 +760,14 @@
             <tr><td>Generic provenance</td><td class="finding">single-blocker sharp C=3</td><td class="score"><span class="score__label">20 / 100</span><div class="score__track"><span class="score__bar" style="width:20%"></span></div></td><td class="state state--partial">部分定理</td></tr>
             <tr><td>Free-history model</td><td class="finding">局所条件の不十分性を分離</td><td class="score"><span class="score__label">20 / 100</span><div class="score__track"><span class="score__bar" style="width:20%"></span></div></td><td class="state state--keep">戦略フィルタ</td></tr>
             <tr><td>Fixed budget / reset</td><td class="finding">高再利用blockerが収支を破る</td><td class="score"><span class="score__label">5 / 100</span><div class="score__track"><span class="score__bar" style="width:5%"></span></div></td><td class="state state--stop">棄却</td></tr>
-            <tr><td>Target-relative transitions</td><td class="finding">interval-order + first-passage + origin split</td><td class="score"><span class="score__label">55 / 100</span><div class="score__track"><span class="score__bar" style="width:55%"></span></div></td><td class="state state--keep">reset provenanceへ継続</td></tr>
+            <tr><td>Low → terminal extraction</td><td class="finding">有限maximal combを全称抽出</td><td class="score"><span class="score__label">70 / 100</span><div class="score__track"><span class="score__bar" style="width:70%"></span></div></td><td class="state state--keep">最有望の基盤</td></tr>
+            <tr><td>Macro-successor no-return</td><td class="finding">reuse balance / avoidanceへexact二分</td><td class="score"><span class="score__label">20 / 100</span><div class="score__track"><span class="score__bar" style="width:20%"></span></div></td><td class="state state--stop">現APIでは停止</td></tr>
+            <tr><td>Upward parity-compatible slack</td><td class="finding">新規4辺でq≤b₂−e₁、共通機構なし</td><td class="score"><span class="score__label">35 / 100</span><div class="score__track"><span class="score__bar" style="width:35%"></span></div></td><td class="state state--stop">過適合寄り</td></tr>
+            <tr><td>Residual kernel</td><td class="finding">provenance保持A/B二分＋successor選択</td><td class="score"><span class="score__label">85 / 100</span><div class="score__track"><span class="score__bar" style="width:85%"></span></div></td><td class="state state--keep">architecture確定</td></tr>
+            <tr><td>Finite-root right stream</td><td class="finding">universal no-escape＋late target-low stream</td><td class="score"><span class="score__label">30 / 100</span><div class="score__track"><span class="score__bar" style="width:30%"></span></div></td><td class="state state--partial">独立residual</td></tr>
+            <tr><td>Upward reset repayment</td><td class="finding">exact未反証、local preloadはseeded反例</td><td class="score"><span class="score__label">15 / 100</span><div class="score__track"><span class="score__bar" style="width:15%"></span></div></td><td class="state state--stop">停止</td></tr>
+            <tr><td>Canonical separator</td><td class="finding">決定的標準軌道の言い換え</td><td class="score"><span class="score__label">5 / 100</span><div class="score__track"><span class="score__bar" style="width:5%"></span></div></td><td class="state state--stop">停止</td></tr>
+            <tr><td>Eventual-high raw charging</td><td class="finding">reuse / output collision反例</td><td class="score"><span class="score__label">8 / 100</span><div class="score__track"><span class="score__bar" style="width:8%"></span></div></td><td class="state state--stop">停止</td></tr>
           </tbody>
         </table>
       </div>
@@ -718,10 +805,10 @@
       <div class="gap-layout">
         <div class="gap-core"><div><strong>Global causal generation of history</strong><span>free-history countermodel では偽、実軌道では真となる制約</span></div></div>
         <div class="gap-items">
-          <div class="gap-item"><strong>Upward-reset origin</strong><p>endpoint balanceはledgerへ戻った。resetの減算起源を排除するか、strict value liftをfirst-time下降と統合する必要がある。</p></div>
-          <div class="gap-item"><strong>Nonpositive reset</strong><p>正のforced additionだけを数えると、非正候補によるresetが収支から漏れる。</p></div>
-          <div class="gap-item"><strong>Permanent-above contradiction</strong><p>線形成長や正の減算密度だけでは、固定targetを永遠に避けるtailを排除できない。</p></div>
-          <div class="gap-item"><strong>Joint history constraint</strong><p>blocker、訪問集合、符号列を独立に選ばせず、一つの再帰軌道として結び直す必要がある。</p></div>
+          <div class="gap-item"><strong>A · Eventual-high</strong><p>任意長seeded high corridorを拒否する、標準prefix固有かつ有限replayでない不変量が必要。</p></div>
+          <div class="gap-item"><strong>B · Reset repayment</strong><p>upward resetごとにtarget出現またはfuture entryのanchor下降を与えるcausal lemmaが必要。</p></div>
+          <div class="gap-item"><strong>Finite-root stream</strong><p>packingとunboundednessはLean化可能だが、right-ladder countermodelも満たすため単独では矛盾しない。</p></div>
+          <div class="gap-item"><strong>Queue / gap flow</strong><p>old gapは後で大半消費されるが、任意値のeventual consumptionを仮定すると全射性の再符号化になる。</p></div>
         </div>
       </div>
     </section>
@@ -760,21 +847,25 @@
     <section class="section" id="roadmap">
       <div class="section-heading">
         <span class="section-kicker">08 / ROADMAP</span>
-        <h2>high excursionの次はreset provenance</h2>
-        <p>第2gateでfirst-passage corridorは得たが、総和は既存ledgerだった。次は20Mで20件だけ現れたupward resetを生成遷移まで戻す。</p>
+        <h2>exact kernelをhandoffとして保守する</h2>
+        <p>Bの局所repayment探索は停止。Aもseeded corridorを破る独立入力が紙上で得られるまで保留し、型やwrapperを増やさない。</p>
       </div>
       <div class="roadmap">
         <article class="roadmap-card">
-          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 01 · DONE</span><h3>Descending<br>comb compression</h3></div>
-          <div class="roadmap-card__body"><code>cₙ∈ℤ := aₙ₋₁−n</code>のlow stateをfresh low railへ圧縮。railのdisjoint性とterminal blocker注入をLean化した。<div class="roadmap-card__gate"><b>RESULT</b>raw jobでは偽だった有限消費がepisode単位で真。</div></div>
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 01 · DONE</span><h3>Low → finite<br>terminal extraction</h3></div>
+          <div class="roadmap-card__body">各tail low landingから自然数下降で有限maximal combを抽出し、historical terminal blockerで停止することをLean化。<div class="roadmap-card__gate"><b>RESULT</b>経験的macro抽出を全称定理へ昇格。</div></div>
         </article>
         <article class="roadmap-card">
-          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 02 · DONE</span><h3>High-only<br>first passage</h3></div>
-          <div class="roadmap-card__body">signed step則、全prefix corridor、legal-subtraction出口をLean化した。<div class="roadmap-card__gate"><b>RESULT</b>endpoint総和とuniform marginはno-go。prefix順序だけが残る。</div></div>
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 02 · DONE</span><h3>Semantic mount<br>/ exact residual</h3></div>
+          <div class="roadmap-card__body">terminal normalをrefined domainへ搭載し、残余を<code>progress ∨ anchor≤blocker</code>へ縮約。<div class="roadmap-card__gate"><b>RESULT</b>ceiling超は閉じ、有限basinだけが残る。</div></div>
         </article>
         <article class="roadmap-card">
-          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 03 · ACTIVE</span><h3>Upward reset<br>provenance</h3></div>
-          <div class="roadmap-card__body">addition起源はsmaller predecessorへ下降。subtraction起源はolder predecessorへstrict lift。<div class="roadmap-card__gate"><b>NEXT GATE</b>subtraction reset排除、または二成分well-founded rank。</div></div>
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 03 · DONE</span><h3>Missing-tail<br>residual kernel</h3></div>
+          <div class="roadmap-card__body">有限pre-tail oracleを使い、仮想反例をeventual-highまたはfixed-root right streamへLeanで二分。<div class="roadmap-card__gate"><b>RESULT</b>循環なしで不足入力を二点へ限定。</div></div>
+        </article>
+        <article class="roadmap-card">
+          <div class="roadmap-card__head"><span class="roadmap-card__n">TRACK 04 · STOPPED</span><h3>Reset repayment<br>causal audit</h3></div>
+          <div class="roadmap-card__body">fixed-history preloadはexact greedy seedで反証。exact repayment自体は未反証だが独立proof routeなし。<div class="roadmap-card__gate"><b>REOPEN GATE</b>post-reset birthを抑える非循環global invariant。</div></div>
         </article>
       </div>
     </section>
@@ -789,10 +880,10 @@
         <article class="rule-box rule-box--resume">
           <h3>直接形式化を再開してよい条件</h3>
           <ul>
-            <li>permanent-above と linear height / subtraction density の矛盾</li>
-            <li>old blocker の無限再利用に対する一様償却</li>
-            <li>nonpositive resetを含む単一potential</li>
-            <li>free history と実軌道を分ける causal invariant</li>
+            <li>eventual-high corridorを直接排除するcanonical不変量</li>
+            <li>post-reset blocker birthを有限化するindependently testable global invariant</li>
+            <li>right-ladder countermodelを破り、target occurrenceを仮定しないglobal constraint</li>
+            <li>gap backlogの増加をpermanent missingと矛盾させる非循環なflux定理</li>
           </ul>
         </article>
         <article class="rule-box rule-box--avoid">
@@ -800,7 +891,8 @@
           <ul>
             <li>outcome型・certificate・rank wrapperの追加</li>
             <li>q / parity / mod 4の追加有限分類</li>
-            <li>fixed horizonのtrace・mex・replay拡張</li>
+            <li>fixed horizonのtrace・mex・canonical replay拡張</li>
+            <li>fresh tokenやrecord-gap係数の再包装</li>
             <li>target出現と同値な仮説の言い換え</li>
             <li>既存identityだけから自動的に出る評価</li>
           </ul>
@@ -822,26 +914,39 @@
         </div>
         <div class="link-list" aria-label="関連資料">
           <a href="../docs/STATUS_REPORT_2026-08-30.md">Markdown現況レポート <span>docs/</span></a>
+          <a href="../docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md">2時間並列研究レポート <span>docs/</span></a>
+          <a href="../docs/PARALLEL_RESIDUAL_DECOMPOSITION_2026-09-01.md">Round 16 residual decomposition <span>docs/</span></a>
+          <a href="../docs/RESET_REPAYMENT_AUDIT_2026-09-01.md">Round 17 reset-repayment audit <span>docs/</span></a>
           <a href="../docs/ROADMAP.md">証明ロードマップ <span>docs/</span></a>
           <a href="../docs/RESEARCH_PORTFOLIO.md">研究ポートフォリオ <span>docs/</span></a>
           <a href="../docs/PARALLEL_RESEARCH_2026-08-30.md">並列監査 <span>docs/</span></a>
           <a href="../docs/CAUSAL_INVARIANT_SPRINT_2026-08-30.md">Causal invariant sprint 1 <span>docs/</span></a>
           <a href="../docs/CAUSAL_RUN_GAP_SPRINT_2026-08-31.md">Causal run / gap sprint <span>docs/</span></a>
+          <a href="../docs/BROADENED_MACRO_EXPLORATION_2026-08-31.md">Macro幅広探索 <span>docs/</span></a>
+          <a href="../docs/RIGHT_RECORD_COMPUTATIONAL_AUDIT_2026-08-31.md">Right-record計算監査 <span>docs/</span></a>
           <a href="../docs/LITERATURE_REVIEW_2026-08-31.md">類似問題の文献レビュー <span>docs/</span></a>
           <a href="../Recaman/LeastTailLedgerMinimum.lean">LeastTailLedgerMinimum <span>Lean</span></a>
           <a href="../Recaman/LeastTailLedgerProvenance.lean">LeastTailLedgerProvenance <span>Lean</span></a>
           <a href="../Recaman/TargetCandidateTransitions.lean">TargetCandidateTransitions <span>Lean</span></a>
           <a href="../Recaman/TargetHighCandidateExcursion.lean">TargetHighCandidateExcursion <span>Lean</span></a>
           <a href="../Recaman/TargetCombMacro.lean">TargetCombMacro <span>Lean</span></a>
+          <a href="../Recaman/TargetCombSemanticMount.lean">TargetCombSemanticMount <span>Lean</span></a>
+          <a href="../Recaman/TargetMacroSuccessor.lean">TargetMacroSuccessor <span>Lean</span></a>
+          <a href="../Recaman/SeededHighCorridorNoGo.lean">SeededHighCorridorNoGo <span>Lean</span></a>
+          <a href="../Recaman/TargetTailResidualKernel.lean">TargetTailResidualKernel <span>Lean</span></a>
+          <a href="../experiments/target_upward_provenance_probe.cpp">Upward provenance probe <span>C++</span></a>
+          <a href="../experiments/seeded_right_record_search.cpp">Seeded right-record search <span>C++</span></a>
+          <a href="../Recaman/HighCandidateCausalReuse.lean">HighCandidateCausalReuse <span>Lean</span></a>
           <a href="../experiments/blocker_interval_hall.cpp">Hall exact probe <span>C++</span></a>
           <a href="../experiments/blocker_interval_tail.cpp">Tail Hall probe <span>C++</span></a>
           <a href="../experiments/causal_blocker_probe.cpp">Causal blocker probe <span>C++</span></a>
           <a href="../experiments/target_transition_probe.cpp">Target transition probe <span>C++</span></a>
+          <a href="../experiments/target_successor_slack_probe.cpp">Successor slack probe <span>C++</span></a>
         </div>
       </div>
     </section>
 
-    <footer class="footnote"><strong>Reading rule:</strong> 「経験的」は有限範囲のexact computationを意味する。macro interval-order、first-passage corridor、origin splitはLean証明済みだが、upward resetのsubtraction起源排除は未証明で、全域性のdirect branchを再開したことは意味しない。</footer>
+    <footer class="footnote"><strong>Reading rule:</strong> 「経験的」は有限範囲のexact computationを意味する。low-to-terminal抽出と局所semantic mountはLean証明済みだが、fixed-root no-escapeは未証明で、全域性のdirect branchを再開したことは意味しない。</footer>
   </main>
 
 <script>
