@@ -1122,3 +1122,6 @@ import Recaman
 #print axioms Recaman.candidateFloor_forces_missing_above
 #print axioms Recaman.divergent_candidates_missing_unbounded
 #print axioms Recaman.EventualHighCandidateTail.missingUnbounded_or_rigidEventStream
+#print axioms Recaman.recurringCandidate_second_forcedAddition
+#print axioms Recaman.recurringCandidate_addition_burst
+#print axioms Recaman.EventualHighCandidateTail.missingUnbounded_or_burstStream
