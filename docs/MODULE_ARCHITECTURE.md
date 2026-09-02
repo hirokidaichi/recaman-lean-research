@@ -47,6 +47,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `DemandProvenanceCounterexample` | `History` | canonical prefixのsupplied-demand birth証人。`FirstAt`と履歴membershipだけを使う |
 | `MissingDensityDichotomy` | `EventualHighCorridorSecondMissing` | `valuesThrough_length`と`corridor_value_law`だけを使う無条件の二分定理 |
 | `DescendingChain` | `History` | step recurrenceと履歴membershipだけを使うchain補題 |
+| `HoleHopping` | `DescendingChain` | chain補題だけから導くhole-hopping規則とcomb sweep |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。

@@ -79,6 +79,9 @@ rising floor が成り立てば、時刻 `n` に `f(n)` 未満で未訪問の値
 | 2026-09-02 | `COMPUTED` | Chaffin 台帳、`chaffin_landing_analysis.py` | 弧は 8.45 本/decade で一定、深さ `D` は定常、10^41 以降 10^7 未満の着地なし。経験分布の外挿で 852655 の将来の着地期待回数は 10^612 以降 ≈ 10^-9。 |
 | 2026-09-02 | `COMPUTED` | `landing_depth_probe v0 300000000`（v0 = 0, 1, 2, 3, 5, …, 10000 の 27 本） | 弧の底の検出は canonical で A393814/A393815 の先頭 19 件と一致。3×10^8 まで、全ての generalized orbit で弧は各 decade 4 本、深さ `D` の中央値 2.3〜3.3、90% 点 3.6〜5.3 で canonical（2.53、3.61）と同程度。深さ分布は `initial` 固有ではない。 |
 | 2026-09-02 | `COMPUTED` | `run_length_recaman_simulator 10000000000000 accel`（`E-029`） | 1355 の初出 325,374,625,245 と mex 推移が OEIS と一致。2^20 未満の遅延着地は 1e9: 2309、1e10: 972、1e11: 430、1e12: 30 と減衰。 |
+| 2026-09-02 | `PROVED-LEAN` | `HoleHopping` | chainは自クラスの最初の穴に着地（`chain_lands_first_fresh`）、着地後は連続する穴を掃く（`comb_sweep`）、他クラスの穴は提示されない。 |
+| 2026-09-02 | `COMPUTED` | `hole_hopping_closure.py`（`E-031`） | 帯の生存を無制限にすると剰余類ゲームの閉包は852655を埋める。保護は組合せではなくarcの深さに依る。 |
+| 2026-09-02 | `COMPUTED` | simulator look-ahead census（`E-032`） | 区間終端は遅延着地61%・帯39%、`j_a/n > 10^−2`は1 decadeあたり約100件で、深いarcの本数（8.45/decade）と同程度。 |
 | 2026-09-02 | `PROVED-LEAN` | `DescendingChain` | 局所機構（1 の部品 `chain_descends`）と、2 の局所半分 `chain_band_fresh_at_start`：k 段の chain が消費する帯の値はすべて開始時刻 `n+1` に未訪問だった。 |
 
 ## Semantic audit

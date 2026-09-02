@@ -1,5 +1,12 @@
 # Changelog
 
+## Hole hopping (Lean) and closure census — 2026-09-02
+
+- `HoleHopping`：chainは自クラスの最初の穴に着地、着地後は連続する穴を掃く（registry `E-030`、250モジュール）
+- `experiments/hole_hopping_closure.py`：帯の生存を無制限とした剰余類ゲームの閉包は852655を埋める（`E-031`）。
+  保護はarcの深さに依る
+- simulatorの区間先読みcensus：終端は遅延着地61%・帯39%、帯の未訪問run長は典型的に`n·10^−6`（`E-032`）
+
 ## Run-length simulator to 10^13 — 2026-09-02
 
 - `experiments/run_length_recaman_simulator.cpp`（区間集合＋Chaffin式ping-pong先読み）：10^13を471秒、

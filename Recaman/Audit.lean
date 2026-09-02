@@ -1146,6 +1146,10 @@ import Recaman
 #print axioms Recaman.chain_band_fresh_at_start
 #print axioms Recaman.chain_small_candidate_mod_three
 #print axioms Recaman.late_landing_iff
+#print axioms Recaman.chain_lands_first_fresh
+#print axioms Recaman.comb_after_landing
+#print axioms Recaman.comb_sweep
+#print axioms Recaman.chain_never_presents_other_class
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

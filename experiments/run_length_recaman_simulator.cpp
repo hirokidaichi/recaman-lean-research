@@ -62,6 +62,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cstddef>
+#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>
@@ -280,6 +281,14 @@ struct Decade {
   Nat entries_mod3[kBands][3] = {};
   Nat late = 0U, late_fresh = 0U;
   Nat sections = 0U, section_clocks = 0U, max_pairs = 0U, plain_steps = 0U;
+  // Section look-ahead census: histograms of log10(j_a / n) and
+  // log10(j_b / n) in bins of width 0.5 from -12 to 0 (index 0 collects
+  // everything below -12), and which bound was binding.
+  static constexpr std::size_t kLogBins = 25U;
+  Nat hist_ja[kLogBins] = {};
+  Nat hist_jb[kLogBins] = {};
+  Nat jb_infinite = 0U;
+  Nat stop_a = 0U, stop_b = 0U, stop_cap = 0U;
 
   void UpdateMin(Nat h, Nat clock) {
     if (min_height == 0U || h < min_height ||
@@ -413,6 +422,23 @@ class Simulator {
     const Int cap = static_cast<Int>((last_allowed - n + 1U) / 2U);
     const Int pairs = std::min({j_a, j_b, cap});
     if (pairs < 1) return false;
+    {
+      Decade& dc = decades_[decade_];
+      const auto bin_of = [](Int x, Nat nn) {
+        const double r = std::log10(static_cast<double>(x) /
+                                    static_cast<double>(nn));
+        Int b = static_cast<Int>(std::floor((r + 12.0) * 2.0)) + 1;
+        if (b < 0) b = 0;
+        if (b > static_cast<Int>(Decade::kLogBins) - 1)
+          b = static_cast<Int>(Decade::kLogBins) - 1;
+        return static_cast<std::size_t>(b);
+      };
+      ++dc.hist_ja[bin_of(j_a, n)];
+      if (j_b == kInf) ++dc.jb_infinite; else ++dc.hist_jb[bin_of(j_b, n)];
+      if (pairs == j_a) ++dc.stop_a;
+      else if (pairs == j_b) ++dc.stop_b;
+      else ++dc.stop_cap;
+    }
     // Hazard: the lower range would cover the least missing value (or the
     // mex is not far below the clock).  Let the plain step handle it.
     if (mex_ >= n) {
@@ -656,6 +682,24 @@ void Simulator::Print() const {
     if (d.clocks == 0U) continue;
     std::cout << "1e" << k << ' ' << d.sections << ' ' << d.section_clocks
               << ' ' << d.max_pairs << ' ' << d.plain_steps << '\n';
+  }
+  std::cout << "section look-ahead per decade: stopA stopB stopCap jbInfinite\n";
+  for (std::size_t k = 0U; k < decades_.size(); ++k) {
+    const Decade& d = decades_[k];
+    if (d.sections == 0U) continue;
+    std::cout << "1e" << k << ' ' << d.stop_a << ' ' << d.stop_b << ' '
+              << d.stop_cap << ' ' << d.jb_infinite << '\n';
+  }
+  std::cout << "histogram bins: log10(x/n) in [-12,-11.5) ... [-0.5,0) plus"
+               " an underflow bin first\n";
+  for (std::size_t k = 0U; k < decades_.size(); ++k) {
+    const Decade& d = decades_[k];
+    if (d.sections == 0U) continue;
+    std::cout << "ja 1e" << k;
+    for (std::size_t b = 0U; b < Decade::kLogBins; ++b) std::cout << ' ' << d.hist_ja[b];
+    std::cout << "\njb 1e" << k;
+    for (std::size_t b = 0U; b < Decade::kLogBins; ++b) std::cout << ' ' << d.hist_jb[b];
+    std::cout << '\n';
   }
 }
 

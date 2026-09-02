@@ -127,6 +127,11 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - `E-029`（`COMPUTED`, run-length simulator 10^13）: 1355の初出とmex推移がOEISと一致。2^20未満の遅延着地は
   1 decadeあたり約2.3分の1に減り、10^12台では30件。高さ≤1356のinterior時刻は各decade数百〜二千件で、
   [1e9,3e9)の0件は揺らぎだった。
+- `E-030`（`PROVED-LEAN`, `HoleHopping`）: chainは自クラスの最初の未訪問candidateに着地し、小さい値への着地後は
+  連続する穴を掃く（comb）。小さい値の領域の力学は「穴の集合の上の剰余類ゲーム」である。
+- `E-031`（`COMPUTED`）: 帯の生存を無制限とした閉包はChaffinの穴をほぼ全て（852655を含む）埋めるので、
+  852655の保護は剰余類の組合せではなくarcの深さ（帯の生存）に依る。
+- `E-032`（`COMPUTED`）: 区間の終端は遅延着地61%・帯の既訪問値39%。帯の未訪問run長は典型的に`n·10^−6`。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -163,7 +168,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 249 modules、68,168 lines。
-- `./scripts/check.sh`: 251 jobs、1,149 audited declarations。
+- Lean source 250 modules、68,304 lines。
+- `./scripts/check.sh`: 252 jobs、1,154 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

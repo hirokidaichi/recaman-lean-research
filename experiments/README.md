@@ -33,6 +33,7 @@ python3 experiments/chaffin_landing_analysis.py rec-landings-1e612.txt rec-holes
 /tmp/landing_depth_probe 0 1000000000                # arc minima (A393814/A393815) and depth quantiles
 /tmp/rlsim 10000000000000 accel                    # run-length orbit to 1e13 in about 8 minutes
 /tmp/rlsim 10000000000 plain                        # step-by-step cross-check, 4 minutes
+python3 experiments/hole_hopping_closure.py docs/data/chaffin_rec-holes-2_32.txt  # residue-class game closure
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
