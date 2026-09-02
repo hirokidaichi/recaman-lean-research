@@ -81,6 +81,7 @@ H-G3  no generalized orbit with start v0 in the discovery or holdout range has a
 | 2026-09-02 | `COMPUTED` | `generalized_orbit_supply_probe 0 1000 100000` (SHA-256 `d0bfd13f…`) | 1,001 orbits, 47,175 internal demand uses, 0 strict-high links; every orbit has chain 1. `H-G3` not refuted. |
 | 2026-09-02 | `COMPUTED` | frozen `generalized_orbit_supply_probe 1001 2000 100000` (SHA-256 `7bc29ea1…`) | 1,000 orbits, 58,663 internal demand uses, 0 links, all chains 1. `H-G3` not refuted. |
 | 2026-09-02 | `COMPUTED` (diagnostic) | `generalized_orbit_supply_probe 0 200 1000000`; `2001 20000 100000` | 20,048 and 1,146,879 internal demand uses respectively, 0 links in both. |
+| 2026-09-02 | `COMPUTED` (diagnostic) | `cone_excursion_probe` on the same ranges | Every strict-high excursion after a burst use ends before clock `2m+2` (`t/m ≤ 1.098` for `m ≥ 100`), and no cone-exterior run reaches its doubling clock; see `E-022`. |
 
 ## Semantic audit
 
@@ -95,6 +96,10 @@ H-G3  no generalized orbit with start v0 in the discovery or holdout range has a
   absence of a positive control inside the population is itself the finding.
 - Reachability, freshness, time order, or actual-orbit provenance omitted?: none; births are
   exact first occurrences inside each orbit.
+- Strength of the between-use condition: strict-high (`candidate > clock`) is the 2026-09-01
+  protocol's condition and is stronger than the corridor's fixed-target floor; the link
+  conjecture therefore constrains cone-exterior self-supply only, not the corridor stream
+  (see `CONE_EXCURSION_CENSUS_2026-09-02.md`).
 
 ## Decision
 

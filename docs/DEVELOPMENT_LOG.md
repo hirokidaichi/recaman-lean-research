@@ -2939,3 +2939,30 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/generalized_orbi
 /tmp/generalized_orbit_supply_probe 1001 2000 100000   # holdout,   SHA-256 7bc29ea1...
 bash scripts/check_research_registry.sh                # 21 entries; 6 PROVED-LEAN rows
 ```
+
+### 第百二十二ラウンド：cone excursion census と strict-high条件の意味監査
+
+第百二十一ラウンドのlink 0件の理由を`cone_excursion_probe`で診断した。burst use（c ≥ 2）後に
+最初にcandidate ≤ clockとなるbreaker clock `t`は、canonical 2Mと20,000本のgeneralized orbit
+（100k）の全1,252,246件で倍化clock `2m+2`より前にあり、`t/m`の最大は1.44（m=25）、m ≥ 100では
+1.098、canonicalでは1.033だった。breakerが常にsubtraction stepであることは算術的に自明
+（addition後のcandidateは`a(t-1)-1 ≥ 2t-2`）。さらに`a t > 2t+1`のcone-exterior runを開始clock
+`≥ max(16, 4v0)`で数えると、約85M本のいずれも開始の2倍へ届かず、最大比は1.222（canonical、
+first=18）、clock 9,000以降は1.073以下だった。
+
+意味監査：strict-high（candidate > clock）は2026-09-01のfixed-seed protocolが採用したuse間条件で、
+corridorの実条件（candidate > 固定target）より強い。従って`E-021`（link no-go）と本ラウンドの
+excursion bound（`E-023`）はcone-exterior excursion経由の自己供給のみを拘束し、corridor streamは
+排除しない。この注意を`CURRENT_FRONTIER.md`と`H-20260902-04`に付記した。
+
+判断：census `E-022`（`COMPUTED`）、excursion bound `E-023`（独立部分命題、`CONJECTURED`）を登録。
+次のfixed-seed／preload-free unitは、use間条件を固定床型（candidate > floor）で再定義してから行う。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/cone_excursion_probe.cpp -o /tmp/cone_excursion_probe
+/tmp/cone_excursion_probe 0 0 2000000 ; /tmp/cone_excursion_probe 0 1000 100000
+/tmp/cone_excursion_probe 1001 2000 100000 ; /tmp/cone_excursion_probe 2001 20000 100000
+bash scripts/check_research_registry.sh   # 23 entries; 6 PROVED-LEAN rows
+```

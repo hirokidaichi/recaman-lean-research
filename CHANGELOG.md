@@ -1,5 +1,13 @@
 # Changelog
 
+## Cone excursion census — 2026-09-02
+
+- `experiments/cone_excursion_probe.cpp`: burst use後のstrict-high excursionは全1,252,246件で倍化clock前に
+  崩れ（m ≥ 100で`t/m ≤ 1.098`）、preload-free orbitのcone-exterior run約85M本は開始clockの2倍へ届かない
+  （registry `E-022`）。excursion boundを独立部分命題`E-023`（`CONJECTURED`）として登録
+- 意味監査：strict-high条件はcorridorの固定target床より強く、`E-021`/`E-023`はcorridor streamを排除しない。
+  今後のfixed-seed／preload-free unitはuse間条件を固定床型で再定義する
+
 ## Preload-free orbit supply census — 2026-09-02
 
 - `H-20260902-04`: 単一初期値のgeneralized orbit（history `{v0}`、exact `Basic.step`）を
