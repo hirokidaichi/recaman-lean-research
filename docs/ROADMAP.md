@@ -922,6 +922,8 @@ birthを真に抑える independently testable global invariant である。
 4. `H-20260902-03`により、既知の固定seed反例はすべてcanonical history density（`|seen| ≤ clock+1`、
    `max seen ≤ upperTri clock`）に違反する。densityを再開条件3の最初の候補とし、次のunitはblockerを
    exact prefixで生成するadmissible synthesizerかadmissible seedのuse数上界の紙上証明に限る。
+5. `H-20260902-04`により、preloadなしのgeneralized orbit 20,001本にstrict-high same-candidate linkは0件。
+   exact命題「generalized orbitにstrict-high linkは存在しない」を`CONJECTURED`とし、Lean化は紙上証明の後に限る。
 
 ## 並行して行う保守
 

@@ -97,6 +97,10 @@ Lean 4形式化プロジェクトです。
 - 既知の固定seed反例（3-use記録を含む）はすべて、kernel認証済みのhistory density
   （`|seen| ≤ clock+1`、`max seen ≤ upperTri clock`）に違反する。凍結protocolにadmissible seedは0件で、
   densityが再開条件3の最初の拘束的候補（[admissible seed density](docs/ADMISSIBLE_SEED_DENSITY_EPOCH_2026-09-02.md)）
+- preloadなしの単一初期値generalized orbit 20,001本（内部供給burst use 1.27M件）にはstrict-high
+  same-candidate linkが0件。既知の多use反例の機構はpreloaded blockerなしでは一度も現れず、
+  「generalized orbitにstrict-high linkは存在しない」を`CONJECTURED`として登録
+  （[generalized orbit supply](docs/GENERALIZED_ORBIT_SUPPLY_EPOCH_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

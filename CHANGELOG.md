@@ -1,5 +1,14 @@
 # Changelog
 
+## Preload-free orbit supply census — 2026-09-02
+
+- `H-20260902-04`: 単一初期値のgeneralized orbit（history `{v0}`、exact `Basic.step`）を
+  `experiments/generalized_orbit_supply_probe.cpp`で走査。`v0 = 0`はfalsifierのcanonical scanを再現
+- 20,001 orbit・内部供給burst use 1,272,765件でstrict-high same-candidate linkは0件、全orbitのchainは1。
+  凍結命題H-G3は未反証（`COMPUTED`、registry `E-020`）
+- exact命題「generalized orbitにstrict-high linkは存在しない」を`CONJECTURED`（`E-021`）として登録。
+  許可されるformalization routeは紙上証明のみ
+
 ## Admissible seed density check — 2026-09-02
 
 - `H-20260902-03`: kernel認証済みのhistory density invariant（`valuesThrough_length`, `a_le_upperTri`）を

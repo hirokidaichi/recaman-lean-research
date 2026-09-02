@@ -2911,3 +2911,31 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/fixed_seed_suppl
 /tmp/fixed_seed_supply_falsifier 2000000 4096 1    # canonical-density mode
 bash scripts/check_research_registry.sh            # 19 entries; 6 PROVED-LEAN rows
 ```
+
+### 第百二十一ラウンド：preload-free generalized orbitのsupply chain検査
+
+第百二十ラウンドの次の判断「blockerをpreloadせず生成する母集団」を最も単純な形で実装した。
+`generalized_orbit_supply_probe`は単一初期値`v0`（history `{v0}`）からexact `Basic.step`則で
+軌道を生成し、`fixed_seed_supply_falsifier`のcanonical scanと同じcounted-use意味論
+（legal low entry、3 addition burst、内部初出需要、strict-high same-candidate link、chain）で
+集計する。`v0 = 0`はfalsifierのcanonical scan（119 use、0 link、chain 1）を正確に再現した。
+
+凍結命題H-G3（chain ≥ 3を持つstartは存在しない）をdiscovery `[0,1000]`、holdout `[1001,2000]`
+（horizon 100,000）で検査し、いずれも未反証。実測は命題より強く、diagnosticの`[0,200]`@1M、
+`[2001,20000]`@100kを含めた20,001 orbit・内部供給burst use 1,272,765件でstrict-high linkは
+**0件**、全orbitのmax chainは1だった。既知のchain 2・3はboundary 45に489値をpreloadしたseedからしか
+得られていない。
+
+判断：`COMPUTED`（registry `E-020`）。exact命題「generalized orbitにstrict-high same-candidate linkは
+存在しない」を`CONJECTURED`（`E-021`）として登録。許可されるformalization routeは、最初のlinkが
+preloaded blockerを強制する紙上証明のみ。反証は1 startで足りる。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/generalized_orbit_supply_probe.cpp -o /tmp/generalized_orbit_supply_probe
+/tmp/generalized_orbit_supply_probe 0 0 2000000        # canonical control
+/tmp/generalized_orbit_supply_probe 0 1000 100000      # discovery, SHA-256 d0bfd13f...
+/tmp/generalized_orbit_supply_probe 1001 2000 100000   # holdout,   SHA-256 7bc29ea1...
+bash scripts/check_research_registry.sh                # 21 entries; 6 PROVED-LEAN rows
+```

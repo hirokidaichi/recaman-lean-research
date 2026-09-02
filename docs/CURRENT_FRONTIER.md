@@ -32,6 +32,7 @@ B枝のreset repaymentも、新しいglobal invariantがないため停止中で
 | A: supplier ancestry | forced class非閉包、generic parent merge | `E-008` | `REFUTED` |
 | A: one fixed seed | 内部供給つき3-use有限例、infinite no-goは未決 | `E-009`, `E-010` | 現proof branch `E-011`は`STOPPED` |
 | A: admissible seed density | 既知seedはすべてcanonical density（`valuesThrough_length`, `a_le_upperTri`）に違反 | `E-019` | `COMPUTED`、gate 3の最初の拘束的候補 |
+| A: preload-free orbits | 20,001 orbit・1.27M burst useにstrict-high link 0件 | `E-020`, `E-021` | `COMPUTED`、link no-goは`CONJECTURED` |
 | A: local use gap | `sqrt(6m)`のlocal読み | `E-012` | `REFUTED`、修理も`STOPPED` |
 | A: external blocker collision | same-candidate H4/H8 test | `E-015` | 20Mまで評価母集団0、設計を`STOPPED` |
 | A: window collision | 異candidate dyadic window集約の`E ∩ S` | `E-016` | 17適用windowすべて交わりなし、`REFUTED` |
@@ -71,6 +72,10 @@ A枝を再開するには、次のいずれかを先にexactな仮説カード�
    `H-20260902-03`により、既知の固定seed反例は全深度でこの拘束に違反する（`E-019`）。次のunitは
    blockerをpreloadせずexact prefixで生成するadmissible synthesizerか、admissible seedのuse数上界の
    紙上証明でなければならない。
+   `H-20260902-04`はpreloadなしの単一初期値generalized orbit 20,001本（内部供給burst use 1,272,765件）で
+   strict-high same-candidate linkが0件であることを示した（`E-020`）。exact命題「generalized orbitに
+   strict-high linkは存在しない」を`CONJECTURED`として登録し（`E-021`）、許可されるformalization routeは
+   「最初のlinkがpreloaded blockerを強制する」紙上証明のみとする。
 
 2026-09-02の最初のexternal collision unitは、同じcandidateの4回または8回のsupplied useで
 `E ∩ S`を要求した。しかしcanonical 20Mでは4,798 useに対し4,797 candidate、最大use数2で、

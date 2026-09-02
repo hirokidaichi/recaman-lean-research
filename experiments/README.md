@@ -25,6 +25,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/fixed_seed_supply_falsifier 2000000 4096      # arbitrary seeds (2026-09-01 record)
 /tmp/fixed_seed_supply_falsifier 2000000 4096 1    # canonically admissible seeds only
 /tmp/window_demand_provenance_probe 20000000
+/tmp/generalized_orbit_supply_probe 0 1000 100000     # preload-free orbits, discovery
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
@@ -72,6 +73,9 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/window_demand_provenance_probe.cpp \
   -o /tmp/window_demand_provenance_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/generalized_orbit_supply_probe.cpp \
+  -o /tmp/generalized_orbit_supply_probe
 ```
 
 Example runs:
