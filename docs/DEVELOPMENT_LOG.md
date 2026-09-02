@@ -2830,3 +2830,33 @@ frozen holdout 20Mは4,798 / 4,797で、4回use候補は双方0だった。最�
 （clocks 984,4596）で`E={643}`, `S=∅`。既知fixed seedも3-useのためH4/H8はいずれも評価母集団が
 空である。not-refutedを正の証拠とせず、同一candidate有限閾値のcollision設計を`STOPPED`とした。
 次の許可形は異candidate間または固定clock windowへ集約され、仮説を先取りせず非空なdebt量に限る。
+
+### 第百十八ラウンド：window集約demand provenanceの反証
+
+`H-20260902-01`の停止判断が要求した「異candidate間または固定clock windowで集約される非空な
+debt量」を`H-20260902-02`としてexact化した。低supplied use（`c ≤ m`、forced addition、需要
+`w = a m - 1 = c + m`既訪問）をdyadic window `[2^k, 2^(k+1))`へ集約し、blocked加算初出の
+blocker集合`E(W)`と減算初出需要集合`S(W)`の交わり（H-W）、減算初出の半clock縮約`2t < w`（H-S）、
+加算初出の非truncated性`2b < w`（H-A）の3命題を凍結した。discovery 2M、holdout 20M、許可修理は
+window形の変更1回のみとした。
+
+`window_demand_provenance_probe`の結果、3命題ともdiscoveryで反証された。2Mでは低use 971件、
+適用window 13件すべてで`E ∩ S = ∅`、near-diagonal減算初出444件、truncated加算初出259件。
+holdout 20Mでは低use 2,987件、適用window 17件すべて交わりなし、near-diagonal 1,533件、
+truncated 732件で、window `[2^23, 2^24)`では減算初出449件中401件がnear-diagonalだった。
+H-Sの最初の2証人（151@110、135@126）は`SupplyAncestryCounterexample`のkernel認証済み
+`FirstAt`と一致する。修理は行っていない。
+
+判断：collision型debt設計は同一candidate形（空虚）と集約形（反証）の双方で閉鎖。再開条件1は
+`|E|`のstrict growth形のみ残し、再開条件3のcanonical-only invariantはnear-diagonal減算sourceを
+許容する形に限る。registryへ`E-016`（`REFUTED`）と`E-017`（`COMPUTED`）を追加した。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/window_demand_provenance_probe.cpp -o /tmp/window_demand_provenance_probe
+/tmp/window_demand_provenance_probe 2000000    # SHA-256 4e9e4653...
+/tmp/window_demand_provenance_probe 20000000
+bash scripts/check_research_registry.sh        # 17 entries; 5 PROVED-LEAN rows
+lake build --no-build                          # 248 jobs up-to-date
+```

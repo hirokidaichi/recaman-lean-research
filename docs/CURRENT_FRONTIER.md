@@ -33,6 +33,8 @@ B枝のreset repaymentも、新しいglobal invariantがないため停止中で
 | A: one fixed seed | 内部供給つき3-use有限例、infinite no-goは未決 | `E-009`, `E-010` | 現proof branch `E-011`は`STOPPED` |
 | A: local use gap | `sqrt(6m)`のlocal読み | `E-012` | `REFUTED`、修理も`STOPPED` |
 | A: external blocker collision | same-candidate H4/H8 test | `E-015` | 20Mまで評価母集団0、設計を`STOPPED` |
+| A: window collision | 異candidate dyadic window集約の`E ∩ S` | `E-016` | 17適用windowすべて交わりなし、`REFUTED` |
+| A: demand provenance | 減算初出はnear-diagonalが多数、加算初出はtruncatedが約3割 | `E-017` | `COMPUTED`、gate 3の制約条件 |
 | B: reset repayment | exact命題は未反証、local bridgeは枯渇 | `E-013` | `STOPPED` |
 | 独立部分定理 | `TailHall₃`候補 | `E-014` | `CONJECTURED`、全射性の直接枝ではない |
 
@@ -59,8 +61,8 @@ least missing target
 
 A枝を再開するには、次のいずれかを先にexactな仮説カードへする。
 
-1. external addition blocker集合`E`とfuture fresh subtraction集合`S`について、
-   cutoff-independentに`|E|`が正成長するか`E ∩ S`が不可避となる不等式。
+1. external addition blocker集合`E`について、cutoff-independentに`|E|`が非collision量に対して
+   strict growthする不等式（`E ∩ S`型のcollisionは同一candidate形・window集約形ともに閉鎖済み）。
 2. reuse intervalのcrossingやparent merge後にも保存される非merge質量。
 3. arbitrary finite stateと`stateAt start`を、future returnやtarget occurrenceを仮定せず分離する
    canonical-only invariant。
@@ -69,6 +71,14 @@ A枝を再開するには、次のいずれかを先にexactな仮説カード�
 `E ∩ S`を要求した。しかしcanonical 20Mでは4,798 useに対し4,797 candidate、最大use数2で、
 既知fixed seedも3-useに留まるため評価母集団が空だった。この閾値設計は`STOPPED`とし、上の
 再開条件1を満たすには異candidate間または固定clock windowで集約される非空なdebt量を要求する。
+
+2026-09-02の第二unit（`H-20260902-02`）はその要求どおり、異candidate・dyadic window集約の
+collision `E(W) ∩ S(W) ≠ ∅`、減算初出需要の半clock縮約`2t < w`、加算初出需要の非truncated性
+`2b < w`の3命題を凍結した。3命題ともcanonical discovery 2Mで反証され、holdout 20Mでも
+17適用windowすべてで`E ∩ S = ∅`、near-diagonal減算初出1,533件、truncated加算初出732件だった。
+従ってcollision型のdebt設計は同一candidate形（空虚）と集約形（反証）の双方で閉じ、再開条件1は
+`|E|`のstrict growth形だけを残す。再開条件3のcanonical-only invariantは、canonicalで多数派である
+near-diagonal減算sourceを許容しなければならず、birth-clock縮約では固定seedと分離できない。
 
 B枝を再開するには、post-reset blocker birthをfuture repayment、target occurrence、canonical
 reachabilityなしに有限化するglobal invariantが必要である。

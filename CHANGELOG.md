@@ -1,5 +1,20 @@
 # Changelog
 
+## Window demand provenance falsification — 2026-09-02
+
+- `H-20260902-02`: 異candidate・dyadic window集約の`E ∩ S` collision、減算初出需要の`2t < w`、
+  加算初出需要の`2b < w`の3命題を凍結し、`experiments/window_demand_provenance_probe.cpp`で
+  canonical 2M/20Mを検査。3命題ともdiscoveryで`REFUTED`
+- 20Mまで適用window 17件すべてで`E ∩ S = ∅`。collision型のdebt設計は同一candidate形・集約形とも閉鎖
+- 減算初出需要はnear-diagonal（`2t ≥ w`）が多数派、加算初出需要はtruncated birthが約3割であることを
+  `COMPUTED`として記録し、`CURRENT_FRONTIER.md`の再開条件1・3を更新（registry `E-016`, `E-017`）
+
+## External blocker collision epoch — 2026-09-02
+
+- `H-20260902-01`: 同一candidateの4回／8回supplied useでの`E_c ∩ S_c ≠ ∅`を凍結し、
+  `experiments/external_blocker_collision_probe.cpp`で検査。20Mまで4回use候補が0で評価母集団が空、
+  設計を`STOPPED`（registry `E-015`）
+
 ## Foundation definition ownership refactor — 2026-09-01
 
 - 23 moduleで共有する`nextSubtractionCandidate`をL3の`TargetCandidateTransitions`から

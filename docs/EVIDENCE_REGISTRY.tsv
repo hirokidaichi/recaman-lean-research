@@ -14,3 +14,5 @@ E-012	REFUTED	A-use-gap	burst payloadからlocal sqrt(6m) use gapは導けない
 E-013	STOPPED	B-reset	upward reset repaymentを現local payloadから導くproof route	docs/RESET_REPAYMENT_AUDIT_2026-09-01.md	-	post-reset birthを有限化するglobal invariant
 E-014	CONJECTURED	partial-theorem	TailHall₃は独立したtail congestion部分定理候補である	docs/STATUS_REPORT_2026-08-30.md	-	全射性ではなくpartial theoremとしてのみ再開
 E-015	STOPPED	A-external-collision	same-candidate H4/H8 external-blocker collision evaluatorは20Mまで評価母集団が空で独立再開gateにならない	docs/EXTERNAL_BLOCKER_COLLISION_EPOCH_2026-09-02.md	-	異candidateまたは固定clock windowで集約する非空なcutoff-independent debt
+E-016	REFUTED	A-window-collision	異candidate間のdyadic window集約でもblocker集合Eと減算初出需要集合Sは20Mまで全17適用windowで交わらず、collision型debt設計は集約形でも死んでいる	docs/WINDOW_DEMAND_PROVENANCE_EPOCH_2026-09-02.md	-	collisionではない非collision量に対する|E|のstrict growthのみ
+E-017	COMPUTED	A-demand-provenance	canonical低supplied useの減算初出需要は大半がnear-diagonal（2t≥w、window [2^23,2^24)で449中401）で、加算初出需要は約3割がtruncated birthである	docs/HYPOTHESIS_CARD_2026-09-02_WINDOW_DEMAND_PROVENANCE.md	-	near-diagonal減算sourceを許容するcanonical-only invariantのみ

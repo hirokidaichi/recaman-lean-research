@@ -66,6 +66,9 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/fixed_seed_supply_falsifier.cpp \
   -o /tmp/fixed_seed_supply_falsifier
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/window_demand_provenance_probe.cpp \
+  -o /tmp/window_demand_provenance_probe
 ```
 
 Example runs:

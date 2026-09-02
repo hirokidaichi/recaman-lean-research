@@ -909,6 +909,17 @@ birthを真に抑える independently testable global invariant である。
 3. A eventual-highは12/100で保留し、seeded corridorを排除する新しいcanonical inputが紙上で得られるまで進めない。
 4. 全射性へのactive direct branchは引き続き0本である。
 
+## 2026-09-02の判断：collision型debt設計の閉鎖
+
+`H-20260902-01`（同一candidateの4回／8回supplied useでの`E_c ∩ S_c`）は20Mまで評価母集団が空で
+`STOPPED`、`H-20260902-02`（異candidate・dyadic window集約の`E(W) ∩ S(W)`、減算初出の`2t < w`、
+加算初出の`2b < w`）は3命題ともcanonical 2Mで`REFUTED`となった。判断は次の通り。
+
+1. `E ∩ S`型collisionは同一candidate形・集約形の双方で閉鎖し、再開条件1は`|E|`のstrict growth形のみ残す。
+2. near-diagonal減算初出はcanonicalの多数派であり、再開条件3のcanonical-only invariantはこの
+   channelを許容する形に限る。birth-clock縮約は固定seedとの分離に使えない。
+3. A枝・B枝ともactive direct branchは0本のまま。exact命題の`CONJECTURED`は変更しない。
+
 ## 並行して行う保守
 
 - 一つの数学概念を一つの下位モジュールへ置く。
