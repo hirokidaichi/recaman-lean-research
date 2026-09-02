@@ -180,6 +180,7 @@ attempt to infer a uniform finite corridor bound from local data.
 | 2026-09-01 | `PROVED-LEAN` | `SupplyAncestryCounterexample` | Forced subtraction-born reuse is not closed at birth, and distinct children can merge at one parent. |
 | 2026-09-01 | `REFUTED` | `SUPPLY_ANCESTRY_AUDIT_2026-09-01.md` | The one permitted subtraction-source repair gives neither closed ancestry nor an injective/additive resource. |
 | 2026-09-01 | `COMPUTED` | `fixed_seed_supply_falsifier 2000000 4096` | One fixed seed supports internally supplied counted uses at `94,286,862`; demands `114,306,882` are born at clocks `47,96,288`. No fourth use through clock `1,000,000`. |
+| 2026-09-02 | `COMPUTED` | `fixed_seed_supply_falsifier 2000000 4096 1` (`H-20260902-03`) | Under the canonical density filter `|seen| ≤ boundary+1`, `max seen ≤ upperTri boundary`, the same protocol yields no seed at any depth; the record seed and every other exact seed rely on inadmissible blocker preloading. |
 
 ## Semantic audit
 

@@ -919,6 +919,9 @@ birthを真に抑える independently testable global invariant である。
 2. near-diagonal減算初出はcanonicalの多数派であり、再開条件3のcanonical-only invariantはこの
    channelを許容する形に限る。birth-clock縮約は固定seedとの分離に使えない。
 3. A枝・B枝ともactive direct branchは0本のまま。exact命題の`CONJECTURED`は変更しない。
+4. `H-20260902-03`により、既知の固定seed反例はすべてcanonical history density（`|seen| ≤ clock+1`、
+   `max seen ≤ upperTri clock`）に違反する。densityを再開条件3の最初の候補とし、次のunitはblockerを
+   exact prefixで生成するadmissible synthesizerかadmissible seedのuse数上界の紙上証明に限る。
 
 ## 並行して行う保守
 

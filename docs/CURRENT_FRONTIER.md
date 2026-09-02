@@ -31,6 +31,7 @@ B枝のreset repaymentも、新しいglobal invariantがないため停止中で
 | A: periodic schedules | balanced有限核とeventually-periodic no-go | `E-006`, `E-007` | 非周期scheduleは未排除 |
 | A: supplier ancestry | forced class非閉包、generic parent merge | `E-008` | `REFUTED` |
 | A: one fixed seed | 内部供給つき3-use有限例、infinite no-goは未決 | `E-009`, `E-010` | 現proof branch `E-011`は`STOPPED` |
+| A: admissible seed density | 既知seedはすべてcanonical density（`valuesThrough_length`, `a_le_upperTri`）に違反 | `E-019` | `COMPUTED`、gate 3の最初の拘束的候補 |
 | A: local use gap | `sqrt(6m)`のlocal読み | `E-012` | `REFUTED`、修理も`STOPPED` |
 | A: external blocker collision | same-candidate H4/H8 test | `E-015` | 20Mまで評価母集団0、設計を`STOPPED` |
 | A: window collision | 異candidate dyadic window集約の`E ∩ S` | `E-016` | 17適用windowすべて交わりなし、`REFUTED` |
@@ -66,6 +67,10 @@ A枝を再開するには、次のいずれかを先にexactな仮説カード�
 2. reuse intervalのcrossingやparent merge後にも保存される非merge質量。
 3. arbitrary finite stateと`stateAt start`を、future returnやtarget occurrenceを仮定せず分離する
    canonical-only invariant。
+   最初の候補はhistory density（`|seen| ≤ clock+1`、`max seen ≤ upperTri clock`）である。
+   `H-20260902-03`により、既知の固定seed反例は全深度でこの拘束に違反する（`E-019`）。次のunitは
+   blockerをpreloadせずexact prefixで生成するadmissible synthesizerか、admissible seedのuse数上界の
+   紙上証明でなければならない。
 
 2026-09-02の最初のexternal collision unitは、同じcandidateの4回または8回のsupplied useで
 `E ∩ S`を要求した。しかしcanonical 20Mでは4,798 useに対し4,797 candidate、最大use数2で、

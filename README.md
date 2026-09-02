@@ -94,6 +94,9 @@ Lean 4形式化プロジェクトです。
   truncated birthが約3割で、birth-clock縮約はcanonical/seed分離に使えない。最小証人
   （m=5のtruncated加算初出、m=112のnear-diagonal減算初出）は`DemandProvenanceCounterexample`で
   kernel認証（[window demand provenance](docs/WINDOW_DEMAND_PROVENANCE_EPOCH_2026-09-02.md)）
+- 既知の固定seed反例（3-use記録を含む）はすべて、kernel認証済みのhistory density
+  （`|seen| ≤ clock+1`、`max seen ≤ upperTri clock`）に違反する。凍結protocolにadmissible seedは0件で、
+  densityが再開条件3の最初の拘束的候補（[admissible seed density](docs/ADMISSIBLE_SEED_DENSITY_EPOCH_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

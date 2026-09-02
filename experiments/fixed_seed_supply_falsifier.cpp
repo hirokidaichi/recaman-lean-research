@@ -71,7 +71,26 @@ enum class Failure {
   kPreloadedDemand,
   kLateDemand,
   kUseShape,
+  kInadmissibleDensity,
+  kInadmissibleHeight,
 };
+
+// When set, a synthesized seed must satisfy the two canonical history
+// invariants `valuesThrough_length` and `a_le_upperTri`: at most
+// boundary + 1 distinct values, all at most boundary * (boundary + 1) / 2.
+bool g_canonical_density = false;
+
+// Smallest observed excess |seen| - (boundary + 1) over all synthesized
+// plans, with the plan that attains it, reported in canonical-density mode.
+struct DensityExcess {
+  bool found = false;
+  Nat excess = 0U;
+  Nat seed_size = 0U;
+  Nat boundary = 0U;
+  Nat candidate = 0U;
+  std::size_t depth = 0U;
+};
+DensityExcess g_density_excess;
 
 const char* FailureName(Failure failure) {
   switch (failure) {
@@ -93,6 +112,10 @@ const char* FailureName(Failure failure) {
       return "late_or_absent_counted_demand";
     case Failure::kUseShape:
       return "use_shape_failure";
+    case Failure::kInadmissibleDensity:
+      return "inadmissible_history_density";
+    case Failure::kInadmissibleHeight:
+      return "inadmissible_history_height";
   }
   return "unknown";
 }
@@ -332,6 +355,24 @@ SynthesisResult Synthesize(const std::vector<Nat>& uses, Nat c,
     const auto first = planned_first.find(candidate);
     if (first == planned_first.end() || first->second > time) {
       initial.insert(candidate);
+    }
+  }
+
+  if (g_canonical_density) {
+    const Nat upper_tri = boundary * (boundary + 1U) / 2U;
+    const Nat seed_size = static_cast<Nat>(initial.size());
+    if (seed_size > boundary + 1U) {
+      const Nat excess = seed_size - (boundary + 1U);
+      if (!g_density_excess.found || excess < g_density_excess.excess) {
+        g_density_excess = DensityExcess{true, excess, seed_size, boundary,
+                                         c, words.size()};
+      }
+      return {Failure::kInadmissibleDensity, boundary, seed_size,
+              std::nullopt, {}};
+    }
+    if (*initial.rbegin() > upper_tri) {
+      return {Failure::kInadmissibleHeight, boundary, *initial.rbegin(),
+              std::nullopt, {}};
     }
   }
 
@@ -643,6 +684,12 @@ int main(int argc, char** argv) {
         argc >= 3 ? ParseBound(argv[2], 1U, 1000000U,
                                "random_trials_per_depth")
                   : kDefaultTrials;
+    g_canonical_density =
+        argc >= 4 && ParseBound(argv[3], 0U, 1U, "canonical_density") == 1U;
+    if (g_canonical_density) {
+      std::cout << "seed admissibility=canonical_density"
+                   " (|seen| <= boundary+1, max seen <= upperTri boundary)\n";
+    }
 
     const CanonicalScan canonical = ScanCanonical(canonical_horizon);
     std::cout << "canonical discovery horizon=" << canonical_horizon
@@ -730,6 +777,20 @@ int main(int argc, char** argv) {
                 << ' ';
       for (const auto& [failure, count] : census) {
         std::cout << FailureName(failure) << ':' << count << ' ';
+      }
+      std::cout << '\n';
+    }
+
+    if (g_canonical_density) {
+      std::cout << "density excess min=";
+      if (g_density_excess.found) {
+        std::cout << g_density_excess.excess
+                  << " seedSize=" << g_density_excess.seed_size
+                  << " boundary=" << g_density_excess.boundary
+                  << " c=" << g_density_excess.candidate
+                  << " intervals=" << g_density_excess.depth;
+      } else {
+        std::cout << "none";
       }
       std::cout << '\n';
     }

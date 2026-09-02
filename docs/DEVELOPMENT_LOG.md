@@ -2884,3 +2884,30 @@ bash scripts/check_module_architecture.sh                   # 246/246 reach; 5 c
 bash scripts/check_research_registry.sh                     # 18 entries; 6 PROVED-LEAN rows
 ./scripts/check.sh                                          # 249 jobs; 1,138 declarations audited
 ```
+
+### 第百二十ラウンド：canonically admissible seed densityの検査
+
+再開条件3（canonical-only invariant）の最初の具体候補として、kernel認証済みの2つのhistory
+invariant `valuesThrough_length`（`|seen| ≤ clock+1`）と`a_le_upperTri`（`max seen ≤ upperTri clock`）
+を`fixed_seed_supply_falsifier`の合成seedへ課した。第3引数`1`でseedをreplay前に
+`inadmissible_history_density`／`inadmissible_history_height`として棄却し、引数なしでは
+2026-09-01の記録をbyte-identicalに再現する（SHA-256 `209f96a0...`を確認）。
+
+結果は`COMPUTED`：depth 1で合成に到達した3,563 planはすべて不許容（size 2,608、height 955）、
+depth 2/3/4の357/104/15 planもすべてsize不許容で、admissible seedは0件。最小size超過は4
+（boundary 5、candidate 5、2 intervalで10値必要）。arbitrary modeでは同じplanから
+1,414/31/1/0のexact seedが得られていた。従って3-use記録（boundary 45に489値）を含む既知の
+固定seed反例は、canonical historyが持ち得ないblocker密度に依存している。
+
+これは無限no-goの証明ではない（samplerは非網羅、protocolはblockerをprefix内で生成しない）。
+判断：history densityをgate 3の最初の拘束的候補として登録（registry `E-019`）。次のunitは
+blockerをexact prefixで生成するadmissible synthesizer、またはadmissible seedのuse数の紙上上界。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/fixed_seed_supply_falsifier.cpp -o /tmp/fixed_seed_supply_falsifier
+/tmp/fixed_seed_supply_falsifier 2000000 4096      # byte-identical to 2026-09-01
+/tmp/fixed_seed_supply_falsifier 2000000 4096 1    # canonical-density mode
+bash scripts/check_research_registry.sh            # 19 entries; 6 PROVED-LEAN rows
+```

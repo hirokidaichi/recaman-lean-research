@@ -1,5 +1,13 @@
 # Changelog
 
+## Admissible seed density check — 2026-09-02
+
+- `H-20260902-03`: kernel認証済みのhistory density invariant（`valuesThrough_length`, `a_le_upperTri`）を
+  `fixed_seed_supply_falsifier`の第3引数`1`で合成seedへ課した。引数なしの出力は2026-09-01記録と
+  byte-identical
+- 凍結protocolのexact seedは全深度でcanonical densityに違反し、admissible seedは0件（最小超過4値）。
+  history densityを再開条件3の最初の拘束的候補として登録（registry `E-019`）
+
 ## Window demand provenance falsification — 2026-09-02
 
 - `H-20260902-02`: 異candidate・dyadic window集約の`E ∩ S` collision、減算初出需要の`2t < w`、

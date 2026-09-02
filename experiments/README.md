@@ -22,6 +22,9 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/lean_trace_witness_test.cpp \
   -o /tmp/lean_trace_witness_test
+/tmp/fixed_seed_supply_falsifier 2000000 4096      # arbitrary seeds (2026-09-01 record)
+/tmp/fixed_seed_supply_falsifier 2000000 4096 1    # canonically admissible seeds only
+/tmp/window_demand_provenance_probe 20000000
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
