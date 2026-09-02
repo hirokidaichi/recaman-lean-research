@@ -1,14 +1,36 @@
 # 証明ロードマップ
 
+> [!NOTE]
+> 本書は判断と研究gateの時系列を保存する。現在のactive/stopped判定は
+> [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、証拠labelは
+> [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を正本とする。
+
+> 2026-09-01のfixed-seed並列監査で、A枝の許可済み修理を完走した。
+> rigid需要のbirth分類とaddition枝のhalf-clock contractionは`PROVED-LEAN`だが、
+> subtraction-born forced ancestryは非閉包、generic parent ancestryは非単射で、
+> interval支払は既存ledgerへ退化した。同一固定seedのexact replayは内部供給useを3回まで
+> 実現し、raw demand countingも不足と判明。従ってfixed-seed supply命題自体は
+> `CONJECTURED`のまま、現proof branchは`STOPPED`とする。詳細は
+> [global supply parallel round](GLOBAL_SUPPLY_PARALLEL_ROUND_2026-09-01.md)。再開gateは
+> external blocker集合`E`とfuture fresh subtraction集合`S`のcutoff-independent strict
+> debt/collision不等式、または独立canonical invariantのいずれかである。
+
+> 2026-09-01夜のuse-gap監査で、`sqrt(6m)`評価のlocal読みは
+> `SeededUseGapCounterexample`と`A^(q+1)S^q`反例族により`REFUTED`となった。
+> `RecurringCandidateBurst`はrun長を下から3に抑えるだけで、少なくとも3で停止することを
+> 与えない。詳細は [use-gap監査](USE_GAP_AUDIT_2026-09-01.md)。この記録を受けて
+> 「単一有限seedからの大域自己供給」をexact化したが、上記の停止条件に到達した。
+> local gapは再開しない。
+
 > 2026-09-01午後の並列スプリントで、residual kernelの両枝は
 > [sharp residual kernel](PARALLEL_SPRINT_2026-09-01_AFTERNOON.md) へ精密化された。
 > B枝の残余は「無限個のupward resetの返済」（reset repayment予想、STOPPED保存中）へ、
 > A枝の残余は「自給自足供給窓の無限持続の排除」へ、それぞれexactに絞られている。
 > 以後の研究サイクルは `SharpCorridor` / `SharpResetStream` の2証明書だけを消費すればよい。
 
-> 最新の総合判定は [STATUS_REPORT_2026-08-30.md](./STATUS_REPORT_2026-08-30.md) を参照。
+> 当時の総合判定は [STATUS_REPORT_2026-08-30.md](./STATUS_REPORT_2026-08-30.md) を参照。
 > 本文には判断の時系列を残すため、当時の「active branch」という記述も保存しているが、
-> 同日後半の追加監査による「直接枝0本、部分定理候補へ移管」が現在の判定である。
+> 現在の判定には必ず`CURRENT_FRONTIER.md`を使う。
 
 > 2026-08-30 以降の広域探索、枝ごとの継続・停止条件、研究サイクルは
 > [RESEARCH_PORTFOLIO.md](./RESEARCH_PORTFOLIO.md) に分離した。

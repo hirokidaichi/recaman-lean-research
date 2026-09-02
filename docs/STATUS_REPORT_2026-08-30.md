@@ -1,5 +1,10 @@
 # Recamán 全域性研究 — 現況レポート
 
+> [!NOTE]
+> 本書は2026-09-01までの説明的snapshotであり、現在状態の正本ではない。
+> 最新のbranch statusと再開条件は[`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、
+> 個々のclaimの証拠は[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を参照する。
+
 最終更新: 2026-09-01
 
 ## 結論
@@ -21,6 +26,11 @@ low-quotient minimum、Hall congestion、H6 affine chord はすべて直接証�
 - **独立部分定理として残す候補:** `TailHall₃`
 - **exact residual kernel:** provenance監査済みのeventual-high corridorまたはfixed-root target-low unbounded terminal stream
 - **reset repayment:** exact命題は未反証だが、独立causal bridgeが尽きたため15/100・`STOPPED`
+- **A枝 fixed-seed supply:** exact無限no-goは`CONJECTURED`のまま。需要birth分類は
+  `PROVED-LEAN`だが、subtraction ancestryの非閉包・parent merge・no strict driftにより
+  現proof branchは`STOPPED`
+- **periodic schedule:** balanced有限核は`PROVED-LEAN`、eventually-periodic floor+recurrenceの
+  排除は`PROVED-PAPER`。非周期scheduleは未排除
 - **canonical separator:** 決定的標準軌道の言い換えに退化し5/100で停止
 - **再開条件:** permanent-above tail と線形成長・正の減算密度を矛盾させる新しい大域入力、または
   old blocker / nonpositive reset を一様に償却する定理
@@ -167,6 +177,14 @@ least missing target を仮定した正準最小 tail witness について、次
 - exit windowは整数slack 1まで実際に飽和するため、uniform marginを仮定する枝は停止する。
 - seeded actual orbitではupward right-record blockerがlegal subtractionで初出する。従って標準prefixの
   addition-origin則をlocal legalityから導く枝は停止する。
+- recurrence burstからのlocal `sqrt(6m)` use-gapは偽。「3連以上」を「ちょうど3連」と
+  読んでおり、exact seeded `Basic.step`の`m=120 → n=141`で`21²<6·120`。
+  `A^(q+1)S^q`族は`gap²/m→4`で、local gap形式化は`STOPPED`。
+- subtraction-born supplier ancestryは閉じない。forced use 42はlegal birth clock 20へ戻り、
+  distinct children 151/135はparent 261へmergeすることをLean認証。generic ancestry課金も停止する。
+- 一つの固定有限seedが内部供給需要つきcandidate 20をclocks 94/286/862の3回まで支える。
+  従ってraw demand countによる小さな一様boundは偽。4回目・無限streamは未発見で、これは
+  `COMPUTED`有限反例に限る。
 
 ## 分岐の現在地
 
@@ -183,6 +201,8 @@ least missing target を仮定した正準最小 tail witness について、次
 | upward reset repayment | exact命題は未反証、local preloadはseeded反例 | 15/100 | `STOPPED`、新global invariant待ち |
 | record-gap future consumption | old cohortを20Mで92--99.88%消費 | 20/100 | 診断のみ |
 | canonical reachability separator | exact continuationは決定的一意 | 5/100 | 言い換えとして停止 |
+| fixed-seed burst supply | demand birth分類、3-use exact seed、ancestry反例 | 10/100 | 命題は`CONJECTURED`、現枝`STOPPED` |
+| periodic candidate no-go | finite `-p²` Lean核＋全体paper proof | 70/100 | regression theoremとして保存 |
 
 ## なぜ直接攻略を止めるのか
 
@@ -292,7 +312,7 @@ causal graph と gap dynamics の局所特徴に限定する。
 ## 再現性
 
 - Lean全体検証: `scripts/check.sh`
-- 検証済み: 230 Lean jobs、1,082 audited declarations
+- 検証済み: 245 Lean jobs、1,130 audited declarations
 - 監査済み公理: `{propext, Classical.choice, Quot.sound}` のみ
 - 禁止事項: `sorry`, `admit`, `native_decide`, user axiom は0
 - exact probes:

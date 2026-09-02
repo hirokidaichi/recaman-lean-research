@@ -6,8 +6,15 @@ Lean 4形式化プロジェクトです。
 > [!IMPORTANT]
 > 全射性そのものはまだ証明していません。本リポジトリは、証明済みの局所力学、
 > well-foundedな大域証明骨格、そして残る証明義務を明確に分離しています。
-> 2026-09-01の最新判断は [2時間並列研究レポート](docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md)、
-> 最新の研究判断は [現況レポート](docs/STATUS_REPORT_2026-08-30.md) にまとめています。
+> 現在の研究状態と再開gateの正本は [current frontier](docs/CURRENT_FRONTIER.md)、
+> frontier-changing claimの機械可読な証拠台帳は
+> [evidence registry](docs/EVIDENCE_REGISTRY.tsv) です。
+> Lean sourceのentry point、依存層、frontier import契約は
+> [module architecture](docs/MODULE_ARCHITECTURE.md) に分離しています。
+> 以下の日付付きレポートは、
+> 判断の由来を残すhistorical handoffであり、現在状態の正本ではありません。
+> 2026-09-01の2時間監査は [2時間並列研究レポート](docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md)、
+> その説明的snapshotは [現況レポート](docs/STATUS_REPORT_2026-08-30.md) にまとめています。
 > finite-root残余の再分解と最新の並列監査は
 > [Round 16 residual decomposition](docs/PARALLEL_RESIDUAL_DECOMPOSITION_2026-09-01.md) にまとめています。
 > その後の型監査、successor選択、reset-repayment停止判断は
@@ -18,12 +25,14 @@ Lean 4形式化プロジェクトです。
 > [causal run / gap sprint](docs/CAUSAL_RUN_GAP_SPRINT_2026-08-31.md) に記録しています。
 > AIとの研究で用いる役割分離、仮説管理、反証優先、コンテキスト設計、指示テンプレートは
 > [AI研究プロトコル](docs/AI_RESEARCH_PROTOCOL.md) にまとめています。
+> A枝の単一固定seed供給を並列監査したhandoffは
+> [global supply parallel round](docs/GLOBAL_SUPPLY_PARALLEL_ROUND_2026-09-01.md) にまとめています。
 
 ## 現在地
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース242モジュール（67,008行、認証済み深部traceを含む）
+- Leanソース246モジュール（67,673行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -66,6 +75,19 @@ Lean 4形式化プロジェクトです。
   「欠損値非有界 ∨ rigid event stream」（`DivergentCandidateMissing`）
 - event streamはさらに加算3連burst（`c+2m+2 → c+3m+4 → c+4m+7`）へ拡張され、真に新しい需要は
   `c+m`の1個だけと確定（`RecurringCandidateBurst`——run長2禁止則が仮想分岐内で仕事をした初例）
+- burstは「少なくとも3連」であり「ちょうど3連」ではない。local
+  `sqrt(6m)` use-gapはexact seeded `Basic.step`反例（`m=120`, `n=141`, `21²<6·120`）と
+  `A^(q+1)S^q`反例族で棄却。主予想に残るのは単一有限seedからの大域自己供給のみ
+  （`SeededUseGapCounterexample`、[use-gap監査](docs/USE_GAP_AUDIT_2026-09-01.md)）
+- rigid需要`c+m`の初出をlegal subtraction／additionへLeanで完全分類し、late addition枝には
+  `target+2(t+1)<c+m`のhalf-clock contractionを得た（`RecurringCandidateDemandBirth`）
+- periodic候補scheduleのbalanced有限核をLean化：全cyclic phase driftの総和は`-p²`で、必ず
+  負drift phaseがある。eventually-periodic no-go全体は`PROVED-PAPER`、非周期streamは未排除
+  （`PeriodicCandidateNoGo`、[periodic no-go](docs/PERIODIC_CANDIDATE_NOGO_2026-09-01.md)）
+- subtraction-born supplier ancestryは閉じない。forced reuse 42はlegal birthへ戻り、相異なる
+  子151/135はparent 261でmergeすることをLean認証。同一固定seedでcandidate 20を
+  clocks 94/286/862の3回まで内部供給するexact有限例も得たため、raw birth countingと
+  ancestry/drift枝を`STOPPED`。無限fixed-seed no-go命題自体は`CONJECTURED`
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定
@@ -483,8 +505,10 @@ flowchart TD
 
 ## 文書
 
-- [研究結果レポート](docs/RESEARCH_REPORT.md) — 問題設定、方法、主要成果、結論
-- [証明地図](docs/PROOF_MAP.md) — 証明済み／未証明の依存関係
+- [current frontier](docs/CURRENT_FRONTIER.md) — 現在のbranch status、未証明義務、再開gateの正本
+- [evidence registry](docs/EVIDENCE_REGISTRY.tsv) — frontier-changing claim、証拠label、Audit定理の正本
+- [研究結果レポート](docs/RESEARCH_REPORT.md) — 2026-08-28時点の問題設定・主要成果snapshot
+- [証明地図](docs/PROOF_MAP.md) — 定理依存と過去の到達経路
 - [normal provenance監査](docs/NORMAL_PROVENANCE_AUDIT.md) — current／historical生成箇所と次のconstructor設計
 - [健全性監査](docs/SOUNDNESS_AUDIT.md) — 定義の正しさ・ギャップ地図・空虚性検査・過大主張の洗い出しと対応状況
 - [日本語証明レポート](docs/human-proofs/) — 各Leanモジュールの人間向け証明解説（書式は`docs/human-proofs/STYLE.md`）。
@@ -492,7 +516,7 @@ flowchart TD
   リポジトリルートで`bun run viewer/server.ts`を実行し`http://localhost:8642/viewer/`で開く。
   `python3 viewer/gen_manifest.py`でモジュール一覧を再生成する（2026-08-29時点で185モジュール中138本にレポートあり）。
 - [用語集](docs/GLOSSARY.md) — 標準用語と本研究独自の解析用語の区別
-- [今後のロードマップ](docs/ROADMAP.md) — 次の証明エポックと完了条件
+- [ロードマップ](docs/ROADMAP.md) — 判断と研究gateの時系列
 - [再現・検証手順](docs/REPRODUCIBILITY.md) — ビルド、公理監査、実験の再現
 - [開発記録](docs/DEVELOPMENT_LOG.md) — 各エポックで得られた詳細な技術記録
 - [コントリビューション方針](CONTRIBUTING.md)
@@ -512,6 +536,8 @@ lake env lean Recaman/Audit.lean
 ```bash
 ./scripts/check.sh
 ```
+
+この一括検証はevidence registryと`Recaman/Audit.lean`の同期も検査します。
 
 実験コードはLean証明から完全に分離されています。
 

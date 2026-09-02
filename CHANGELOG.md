@@ -1,5 +1,32 @@
 # Changelog
 
+## Foundation definition ownership refactor — 2026-09-01
+
+- 23 moduleで共有する`nextSubtractionCandidate`をL3の`TargetCandidateTransitions`から
+  L0の`Basic`へ移動。完全修飾名`Recaman.nextSubtractionCandidate`と全statementは不変
+- `SupplyAncestryCounterexample`の唯一のdirect importを`History`まで下げ、project dependency
+  closureを旧169／暫定82 moduleから5 moduleへ縮小
+- module import contractとarchitecture文書を新しいownershipへ同期
+
+## Lean module architecture refactor — 2026-09-01
+
+- root closure、project import解決、重複・self import、acyclic性を検査する
+  `scripts/check_module_architecture.sh`を追加し、full checkへ統合
+- 最近のfrontier 4 moduleのdirect importを`docs/MODULE_IMPORT_CONTRACTS.tsv`へ固定
+- `SupplyAncestryCounterexample`の依存を未使用の`HighCandidateCausalReuse`から
+  定義元`TargetCandidateTransitions`へ下げ、`PeriodicCandidateNoGo`の不要な`Std` importを削除
+- entry point、依存層、変更規約を`docs/MODULE_ARCHITECTURE.md`へ分離
+
+## Research information architecture refactor — 2026-09-01
+
+- `docs/CURRENT_FRONTIER.md`をcurrent branch statusと再開gateの唯一の正本として新設
+- frontier-changing claim 14件を`docs/EVIDENCE_REGISTRY.tsv`へ正規化
+- `PROVED-LEAN` rowのAudit symbol、artifact、frontier参照、証拠labelを検査する
+  `scripts/check_research_registry.sh`を追加し、`scripts/check.sh`へ統合
+- README、STATUS、ROADMAP、PROOF_MAP、RESEARCH_PORTFOLIO、RESEARCH_REPORT、
+  DEVELOPMENT_LOGの役割をcurrent truth／dependency atlas／historical snapshot／append-only logへ分離
+- exact命題の`CONJECTURED`と、証明ルートの`STOPPED`を別registry rowとして保持する運用を固定
+
 ## Sharp residual kernel sprint — 2026-09-01 午後
 
 - B枝: separator rootが全terminal blockerの床であることを証明（`TargetStreamBlockerUnbounded.blocker_floor`）

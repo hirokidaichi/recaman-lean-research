@@ -1,8 +1,13 @@
 # 開発記録 — Recamán sequence Lean 4 formalization
 
+> [!NOTE]
+> 本書はappend-onlyの実装・研究ログである。途中時点の「残余」「次の作業」は歴史記録として
+> 保存され、現在の指示ではない。current frontierは[`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、
+> 証拠labelは[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を参照する。
+
 この文書は各証明エポックで得られた詳細な技術記録である。
-研究全体の要約は[研究結果レポート](RESEARCH_REPORT.md)、現在の依存関係は
-[証明地図](PROOF_MAP.md)、次の作業は[ロードマップ](ROADMAP.md)を参照すること。
+研究全体の過去要約は[研究結果レポート](RESEARCH_REPORT.md)、依存関係は
+[証明地図](PROOF_MAP.md)、判断の時系列は[ロードマップ](ROADMAP.md)を参照すること。
 
 レカマン数列の全整数出現問題に向けた、機械検証済みの研究基盤です。
 大域的な全射性そのものはまだ証明していません。局所力学、履歴blocker、
@@ -2621,3 +2626,207 @@ git diff --check
 全体監査は成功し、1,082 declarationsの公理依存が
 `{propext, Classical.choice, Quot.sound}`内であること、禁止された
 `sorry` / `admit` / `native_decide` / user-defined `axiom`がないことを確認した。
+
+### 第百十二ラウンド：burst use-gapの意味監査とlocal反例
+
+`H-20260901-01`の次候補だった`sqrt(6m)` use-gapを形式化する前に、exact statementと
+導出artifactを再監査した。記録にある`periodic_nogo_check.py`と他の抽象schedule scriptは
+repositoryに存在せず、periodic no-goもschedule型・量化子・紙上証明を復元できない。
+よって`PROVED-PAPER`判定を取り下げ、`OBSERVED`へ戻した。
+
+use-gap導出の実質的な欠落は、`RecurringCandidateBurst`の「加算3連以上」を
+「ちょうど3連」と読んでいたことだった。反証器として`m=q^2+2q`、word
+`A^(q+1)S^q`、gap `2q+1`のseeded exact greedy continuationを構成した。この族は
+candidate floorを保って両端で同candidateを取り、中間はclockよりstrict high、後端も
+3-addition burstを持つが、`gap^2/m -> 4`である。
+
+`SeededUseGapCounterexample`は`q=10`, `m=120`, `n=141`をLean kernelで認証し、
+legal entry、中間high、`A^11S^10`、後端3-addition burst、`21^2 < 6*120`を一つの
+theoremに固定した。計算反証器`use_gap_counterexample.cpp`はdiscovery `q=3..100`と
+独立holdout `q=101..10000`を通過し、最終比は`3.999600090`だった。
+
+結論は次の通り。local `sqrt(6m)` use-gapは`REFUTED`とし、run長上限を追加する修理は
+`SeededHighCorridorNoGo`に反するため`STOPPED`とする。main burst-supply予想自体は反証されて
+いない。反例族は`q`ごとにseedを変えるため、残る最弱の問いは「単一の有限seedが
+per-use需要を無限に自己供給できるか」である。
+
+検証コマンド：
+
+```text
+lake env lean Recaman/SeededUseGapCounterexample.lean
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/use_gap_counterexample.cpp -o /tmp/use_gap_counterexample
+/tmp/use_gap_counterexample 3 100
+/tmp/use_gap_counterexample 101 10000
+./scripts/check.sh                            # 245 jobs; 1,130 declarations audited
+```
+
+全体監査は成功し、1,130 declarationsの公理依存が
+`{propext, Classical.choice, Quot.sound}`内であること、禁止された
+`sorry` / `admit` / `native_decide` / user-defined `axiom`がないことを確認した。
+
+### 第百十三ラウンド：fixed-seed global supply並列監査と停止判定
+
+`H-20260901-01`の最後に許可した修理を`H-20260901-02`へexact化し、需要birth、固定seed
+falsifier、subtraction ancestry、periodic no-go有限核を独立に進めた。
+
+`RecurringCandidateDemandBirth`はrigid需要`c+m`の初出をlegal subtraction birth／addition birthへ
+分類し、late addition枝に`target+2(t+1)<c+m`をLeanで証明した。これは真のhalf-clock contraction
+だが、subtraction枝は`CanSubtract(t+1)`を返すためforced supplier classに閉じない。
+
+`SupplyAncestryCounterexample`はcanonical prefixで二つの障害をkernel認証した。candidate 42は
+clock 20のlegal subtractionで初出しclock 36でforced reuseされるため、forced nodeからbirthへ
+戻るとpremise polarityが反転する。またdistinct children 151/135はclocks 110/126で同じparent
+261から生まれ、後にforced reuseされる。20M exact probeのholdoutでもshared parent 605746を得た。
+従ってclosed supplier ancestryとgeneric parent injectionは`REFUTED`、addition contractionと
+subtraction ledgerを足すdrift枝は`STOPPED`。
+
+fixed-seed falsifierは一つのbyte-identical state（boundary 45、value 113、candidate 20、seen 489、
+fingerprint `14161494152507716643`）から、bootstrap 46の後にclocks 94/286/862の3 counted usesを
+exact replayした。需要114/306/882はseedに含まれずclocks 47/96/288で内部初出する。holdout 8650と
+診断1Mはいずれも同じ3 useだけで、first post-plan non-highは868だった。出力SHA-256は
+`209f96a0ce2f9df65aed7713aaa8cac0ba695712a8231f974cae23d38b876b5c`。これは
+`COMPUTED`有限反例であり、無限fixed-seed countermodelではない。
+
+periodic no-goはexact recurrenceと三つのsign-sum caseを紙上で再構成した。balanced periodの
+actual cyclic phase drift総和`-p^2`と負phase存在を`PeriodicCandidateNoGo`でLean化し、periods
+1..22の8,388,606語で独立回帰検査した。full eventually-periodic no-goは`PROVED-PAPER`、有限核は
+`PROVED-LEAN`、非周期scheduleは未排除である。
+
+以上によりexact infinite supply命題は`CONJECTURED`のまま、H-20260901-01/02の現proof branchは
+predeclared stop conditionに到達して`STOPPED`。再開条件はexternal blocker集合`E`とfuture fresh
+subtraction集合`S`のcutoff-independent debt/collision不等式、またはfuture return等を仮定しない
+独立canonical invariantとした。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/periodic_candidate_nogo_check.cpp -o /tmp/periodic_candidate_nogo_check
+/tmp/periodic_candidate_nogo_check 1 16
+/tmp/periodic_candidate_nogo_check 17 22
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/supply_ancestry_probe.cpp -o /tmp/supply_ancestry_probe
+/tmp/supply_ancestry_probe 10000001 0 10000000
+/tmp/supply_ancestry_probe 20000001 10000001 20000000
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/fixed_seed_supply_falsifier.cpp -o /tmp/fixed_seed_supply_falsifier
+/tmp/fixed_seed_supply_falsifier 2000000 4096
+./scripts/check.sh                            # 248 jobs; 1,136 declarations audited
+```
+
+全体監査は成功し、1,136 declarationsの公理依存が
+`{propext, Classical.choice, Quot.sound}`内であること、禁止された
+`sorry` / `admit` / `native_decide` / user-defined `axiom`がないことを確認した。
+
+### 第百十四ラウンド：研究情報アーキテクチャのリファクタリング
+
+数学statementとLean APIを変更せず、研究状態の正本を`CURRENT_FRONTIER.md`へ集約した。
+全射性、A/B residual、fixed-seed supply、periodic no-go、ancestry反例、use-gap、reset repayment、
+`TailHall₃`を14件のfrontier-changing claimへ分け、`EVIDENCE_REGISTRY.tsv`にexact evidence label、
+artifact、Audit symbol、reopen gateを記録した。exact命題の`CONJECTURED`と、証明ルートの
+`STOPPED`は別rowに分離した。
+
+既存文書は削除・移動せず、役割を次のように固定した。
+
+- `CURRENT_FRONTIER`: current statusと再開gateの正本
+- `EVIDENCE_REGISTRY.tsv`: claim/evidenceの機械可読正本
+- `PROOF_MAP`: theorem dependency atlas
+- `ROADMAP`: 判断とgateの時系列
+- `STATUS_REPORT` / `RESEARCH_REPORT` / `RESEARCH_PORTFOLIO`: historical snapshot
+- `DEVELOPMENT_LOG`: append-only log
+- hypothesis card: 一つのbounded research unit
+
+`check_research_registry.sh`を追加し、label集合、7-field schema、ID一意性、artifact存在、全registry IDの
+current-frontier参照、および`PROVED-LEAN` rowの`Recaman/Audit.lean`登録を検査するようにした。
+同checkを`scripts/check.sh`のfull build前へ統合した。
+
+検証コマンド：
+
+```text
+bash -n scripts/check_research_registry.sh scripts/check.sh
+bash scripts/check_research_registry.sh      # 14 entries; 5 PROVED-LEAN rows
+git diff --check
+./scripts/check.sh                            # 248 jobs; 1,136 declarations audited
+```
+
+全体監査は成功した。定理名変更、module移動、proof term変更はなく、既存の研究成果と
+`recaman-visualizer/`には触れていない。
+
+### 第百十五ラウンド：Lean module architectureのリファクタリング
+
+数学statement、定理名、proof termを変えず、Lean sourceの依存境界を監査した。rootのdirect importは
+全sourceを列挙していないが、欠けて見えた5 moduleはいずれもtransitiveに到達しており、実際のroot
+closureは`Audit`を除く全library moduleを覆っていた。
+
+最近追加した4 moduleについてdirect importを一つずつ除く単体コンパイルを行った。
+`RecurringCandidateDemandBirth`の2 import、`SeededUseGapCounterexample`の`Basic`、
+`SupplyAncestryCounterexample`のcandidate定義元は必要だった。一方、`PeriodicCandidateNoGo`は
+`Std`なしで完結した。また`SupplyAncestryCounterexample`は`HighCandidateCausalReuse`の定理を
+使っていないため、direct dependencyを`TargetCandidateTransitions`へ下げた。
+
+構造の正本を`MODULE_ARCHITECTURE.md`、最近のfrontier境界の機械可読契約を
+`MODULE_IMPORT_CONTRACTS.tsv`とした。`check_module_architecture.sh`は全sourceからgraphを再構成し、
+project importの解決、duplicate/self import、root到達性、acyclic性、4件のdirect-import契約を検査する。
+同checkをfull build前へ統合した。
+
+検証コマンド：
+
+```text
+bash -n scripts/check_module_architecture.sh scripts/check.sh
+bash scripts/check_module_architecture.sh
+lake env lean Recaman/RecurringCandidateDemandBirth.lean
+lake env lean Recaman/PeriodicCandidateNoGo.lean
+lake env lean Recaman/SeededUseGapCounterexample.lean
+lake env lean Recaman/SupplyAncestryCounterexample.lean
+git diff --check
+./scripts/check.sh  # 248 jobs; 1,136 declarations audited
+```
+
+このラウンドではdefinition ownershipの移動やlegacy moduleの一括再階層化を行わない。次に構造上
+価値がある候補は、基礎概念`nextSubtractionCandidate`が高いbranch moduleに置かれている点を
+consumer数とrebuild影響から監査し、移動の便益が十分な場合だけ別change setにすることである。
+
+### 第百十六ラウンド：subtraction candidate definition ownershipの下位化
+
+第百十五ラウンドで残した設計監査を別change setとして行った。`nextSubtractionCandidate`は
+`a n - (n + 1)`というkernel-levelの式で、23 Lean moduleから参照されている一方、ownerは
+target固有の`TargetCandidateTransitions`だった。完全修飾名を維持したままdefinition本体だけを
+`Basic`へ移し、全consumerは既存のtransitive importでそのまま解決できた。
+
+特に`SupplyAncestryCounterexample`はtarget-tail theoremを使わず、canonical prefixの`FirstAt`と
+history membershipしか使わない。direct importを`History`へ下げた結果、project module dependency
+closureは旧`HighCandidateCausalReuse`経由169、暫定`TargetCandidateTransitions`経由82から5へ縮小した。
+定理名、statement、proof term、Audit symbolに変更はない。
+
+最初に`lake env lean Basic.lean`だけを実行したところ、consumerは更新前の`Basic.olean`を読むため
+未知識別子になった。これはsource graphの失敗ではなくownership移動時のcache orderingであり、
+`lake build Recaman.Basic Recaman.TargetCandidateTransitions Recaman.SupplyAncestryCounterexample`で
+依存順に84 jobsを再構築した後、全consumerのstandalone checkが通った。このpitfallをarchitecture
+手順にも固定した。
+
+検証コマンド：
+
+```text
+rg -l '\bnextSubtractionCandidate\b' Recaman --glob '*.lean' | wc -l  # 24 = owner 1 + consumers 23
+lake build Recaman.Basic Recaman.TargetCandidateTransitions Recaman.SupplyAncestryCounterexample
+lake env lean Recaman/TargetCandidateTransitions.lean
+lake env lean Recaman/SupplyAncestryCounterexample.lean
+bash scripts/check_module_architecture.sh
+shellcheck scripts/check_module_architecture.sh scripts/check_research_registry.sh scripts/check.sh
+git diff --check
+./scripts/check.sh  # 248 jobs; 1,136 declarations audited
+```
+
+L0 source変更によりdeep certificateも完全再計算され、`DeepSixtyoneTraceCertificate`は1,116秒、
+`DeepSixtyoneMexCertificate`は366秒を要した。最終的に248 jobsは全成功し、1,136 declarationsの
+公理依存は`{propext, Classical.choice, Quot.sound}`内、禁止proof escapeは0件だった。この実測から、
+今後のL0 ownership変更は依存削減の便益だけでなくdeep certificate再構築コストも事前評価する。
+
+### 第百十七ラウンド：external blocker collision閾値の空虚性監査
+
+`H-20260902-01`で、同一candidate `c`のsupplied successor demand `c+m`を、減算初出集合`S_c`と
+加算初出を強制した正の外部blocker集合`E_c`へ分け、4回useで`E_c ∩ S_c ≠ ∅`となるH4を凍結した。
+唯一の許可修理は閾値8とした。
+
+`external_blocker_collision_probe`のcanonical discovery 2Mは1,568 supplied uses / 1,567 candidates、
+frozen holdout 20Mは4,798 / 4,797で、4回use候補は双方0だった。最大はcandidate 723の2回
+（clocks 984,4596）で`E={643}`, `S=∅`。既知fixed seedも3-useのためH4/H8はいずれも評価母集団が
+空である。not-refutedを正の証拠とせず、同一candidate有限閾値のcollision設計を`STOPPED`とした。
+次の許可形は異candidate間または固定clock windowへ集約され、仮説を先取りせず非空なdebt量に限る。

@@ -56,6 +56,16 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/target_successor_slack_probe.cpp -o /tmp/target_successor_slack_probe
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/target_upward_provenance_probe.cpp -o /tmp/target_upward_provenance_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/use_gap_counterexample.cpp -o /tmp/use_gap_counterexample
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/periodic_candidate_nogo_check.cpp \
+  -o /tmp/periodic_candidate_nogo_check
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/supply_ancestry_probe.cpp -o /tmp/supply_ancestry_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/fixed_seed_supply_falsifier.cpp \
+  -o /tmp/fixed_seed_supply_falsifier
 ```
 
 Example runs:
@@ -87,7 +97,57 @@ Example runs:
 /tmp/target_upward_provenance_probe 20000000
 /tmp/target_upward_provenance_probe 2000000000
 /tmp/seeded_right_record_search --walk-record-sub 12 250
+/tmp/use_gap_counterexample 3 100
+/tmp/use_gap_counterexample 101 10000
+/tmp/periodic_candidate_nogo_check 1 16
+/tmp/periodic_candidate_nogo_check 17 22
+/tmp/supply_ancestry_probe 10000001 0 10000000
+/tmp/supply_ancestry_probe 20000001 10000001 20000000
+/tmp/fixed_seed_supply_falsifier 2000000 4096
 ```
+
+`use_gap_counterexample.cpp` is the frozen falsifier for the local reading
+of the burst-stream use-gap claim.  For every checked `q`, it follows the
+exact greedy rule from a finite seed, realizes the word `A^(q+1) S^q`
+between consecutive low-candidate clocks, checks the candidate floor and a
+three-addition burst at the second use, and verifies `gap^2 < 6m`.  The
+discovery range is `q=3..100`; the frozen holdout is `q=101..10000`.  The
+seed is not claimed canonically reachable and varies with `q`, so this
+refutes only a local floor/burst derivation.  Any surviving theorem must
+state a genuinely global finite-seed self-supply condition.
+
+`periodic_candidate_nogo_check.cpp` exhausts periodic addition/subtraction
+words and verifies the zero-sign-sum phase-drift identities behind the
+periodic candidate no-go.  Periods `1..16` are the discovery range and
+`17..22` the frozen holdout.  The proof is the signed-sum argument recorded
+in `docs/PERIODIC_CANDIDATE_NOGO_2026-09-01.md`; enumeration is only a
+regression check.
+
+`supply_ancestry_probe.cpp` classifies positive forced candidates by their
+first birth and follows subtraction-born values to their predecessor orbit
+value.  The frozen discovery and holdout windows expose both failures needed
+by the ancestry audit: a forced reuse maps back to a legal birth, and
+distinct subtraction-born children can share one predecessor value.  The
+smallest two examples are separately kernel-checked in
+`Recaman/SupplyAncestryCounterexample.lean`; the large-window census remains
+`COMPUTED` evidence only.
+
+`fixed_seed_supply_falsifier.cpp` replays one byte-identical finite state
+across all horizons and synthesizes candidate-return words on the three
+burst supply lattices.  With RNG seed `20260901`, it finds a fixed seed with
+fingerprint `14161494152507716643` supporting internally supplied uses of
+candidate 20 at clocks `94,286,862`.  The unchanged seed has no fourth use
+through clock one million.  This refutes only finite raw-demand deficits;
+it neither constructs nor excludes an infinite fixed-seed supply stream.
+
+`external_blocker_collision_probe.cpp` is the exact falsifier for
+`H-20260902-01`.  For each positive forced candidate `c`, it classifies the
+already-visited successor demands `c+m` by first birth: subtraction-born
+demands enter `S_c`, while a positive candidate forcing an addition birth
+enters `E_c`.  It tests whether the first four or eight supplied uses force
+`E_c ∩ S_c`.  The frozen 20M run has no candidate with four supplied uses,
+so both threshold hypotheses are vacuous and the branch is `STOPPED`; this
+absence is not a uniform bound.
 
 The reported billion-step run used `1000000000` as the final argument. It requires
 substantial time and memory because exact history membership is stored as a bitset.

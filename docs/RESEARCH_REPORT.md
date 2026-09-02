@@ -1,5 +1,10 @@
 # レカマン数列の全射性に向けたLean 4形式化 — 研究結果レポート
 
+> [!NOTE]
+> 本書は基準日2026-08-28のhistorical reportである。現在の研究状態は
+> [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、証拠labelは
+> [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を参照する。
+
 **基準日:** 2026-08-28  
 **形式化環境:** Lean 4.33.1  
 **研究状態:** 局所力学とwell-founded探索骨格は大幅に形式化済み。全射性は未証明。

@@ -32,9 +32,18 @@ lake env lean Recaman/Audit.lean
 
 このスクリプトは次を順に行う。
 
-1. 全Leanモジュールのビルド
-2. 公理監査
-3. `sorry`、`admit`、`native_decide`、ユーザー定義公理の走査
+1. module graphのroot到達性、import解決、acyclic性、frontier direct-import契約を検査
+2. `EVIDENCE_REGISTRY.tsv`のlabel、artifact、frontier参照、Audit定理を検査
+3. 全Leanモジュールのビルド
+4. 公理監査
+5. `sorry`、`admit`、`native_decide`、ユーザー定義公理の走査
+
+構造監査または研究registryだけを素早く検査する場合は次を使う。
+
+```bash
+bash scripts/check_module_architecture.sh
+bash scripts/check_research_registry.sh
+```
 
 ## Work環境
 
@@ -63,7 +72,7 @@ c++ -O3 -std=c++20 experiments/recaman_b1_history.cpp -o /tmp/recaman_b1_history
 
 ## 検証対象
 
-- ルート`Recaman.lean`が全モジュールをimportする。
+- ルート`Recaman.lean`が`Audit`以外の全library moduleへdirectまたはtransitiveに到達する。
 - `Recaman/Audit.lean`が主要な研究定理を監査する。
 - `Recaman/Examples.lean`が小さい軌道例とfreshness反例をカーネル評価する。
 

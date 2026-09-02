@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RECAMAN_PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+RECAMAN_PROJECT_ROOT="$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
 cd "$RECAMAN_PROJECT_ROOT"
 
 if command -v lake >/dev/null 2>&1; then
@@ -17,6 +17,11 @@ if ! command -v rg >/dev/null 2>&1; then
   echo "error: rg (ripgrep) was not found" >&2
   exit 1
 fi
+
+# Check the source graph and frontier import boundaries before spending time
+# on the full build, then synchronize research-status claims with evidence.
+bash ./scripts/check_module_architecture.sh
+bash ./scripts/check_research_registry.sh
 
 "${RECAMAN_LAKE[@]}" build
 

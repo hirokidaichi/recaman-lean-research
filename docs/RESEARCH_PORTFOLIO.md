@@ -1,11 +1,16 @@
 # Recamán 全域性研究ポートフォリオ
 
+> [!NOTE]
+> 本書は2026-08-30時点のbranch scoreと停止理由を保存するhistorical portfolioである。
+> 現在のactive/stopped判定は[`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、
+> 証拠labelは[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を参照する。
+
 最終更新: 2026-08-30
 
 > 同日の並列監査で、各枝の反例、縮約、有望度を更新した。
 > 詳細は [PARALLEL_RESEARCH_2026-08-30.md](./PARALLEL_RESEARCH_2026-08-30.md) を参照。
 
-## 最新の有望度
+## 2026-08-30時点の有望度
 
 | 枝 | 直接証明 | 戦略価値 | 現在の判定 |
 |---|---:|---:|---|

@@ -8,7 +8,9 @@
 **提案・反証・形式化・意味監査**の検証可能なループへ分解することである。現在のリポジトリは
 Leanによる証明監査と個別探索ログには強い。一方、セッションをまたいで仮説の意味、証拠レベル、
 棄却条件を保存する共通形式がなかった。本書と
-[`HYPOTHESIS_CARD_TEMPLATE.md`](HYPOTHESIS_CARD_TEMPLATE.md)をその境界面とする。
+[`HYPOTHESIS_CARD_TEMPLATE.md`](HYPOTHESIS_CARD_TEMPLATE.md)を個別研究unitの境界面とする。
+repository全体の現在状態は[`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、frontier-changing claimは
+[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)へ同期する。
 
 この運用の成功条件は「生成した定理数」ではない。次のいずれかを、再現可能な証拠付きで得ることとする。
 

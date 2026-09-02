@@ -1,0 +1,16 @@
+id	label	branch	claim	artifact	audit_symbols	reopen_gate
+E-001	CONJECTURED	global	標準Recamán数列は全射である	docs/CURRENT_FRONTIER.md	-	新しいglobal invariantまたは完全証明
+E-002	PROVED-LEAN	kernel	仮想missing tailはsharp A/B residual certificateへ分解される	Recaman/SharpResidualKernel.lean	Recaman.MissingPermanentAboveTail.sharpResidualKernel	architectureとして保守
+E-003	PROVED-LEAN	A-recurrence	A枝は欠損値非有界またはrigid recurrent burst streamへ縮約される	Recaman/RecurringCandidateBurst.lean	Recaman.EventualHighCandidateTail.missingUnbounded_or_burstStream	fixed-seed infinite supply no-go
+E-004	PROVED-LEAN	A-divergence	candidate発散は任意の限界を超える永久欠損値を残す	Recaman/DivergentCandidateMissing.lean	Recaman.divergent_candidates_missing_unbounded	構造定理として保守
+E-005	PROVED-LEAN	A-demand-birth	rigid需要の初出はsubtraction/additionへ分類されlate addition枝はclock contractionを持つ	Recaman/RecurringCandidateDemandBirth.lean	Recaman.corridor_recurringCandidate_demand_birth_classified;Recaman.corridor_recurringCandidate_late_demand_birth	consumerが現れたとき再利用
+E-006	PROVED-LEAN	periodic	balanced periodのcyclic phase drift総和は-p²で負phaseが存在する	Recaman/PeriodicCandidateNoGo.lean	Recaman.balanced_periodRotations_drift_sum;Recaman.balanced_periodRotations_has_negative	finite regression theoremとして保守
+E-007	PROVED-PAPER	periodic	lower floorを保つeventually-periodic candidate walkは全phaseで発散する	docs/PERIODIC_CANDIDATE_NOGO_2026-09-01.md	-	infinite-walk consumerが必要になった場合のみLean化
+E-008	REFUTED	A-ancestry	closed forced-supplier ancestryとgeneric parent injectionは成立しない	docs/SUPPLY_ANCESTRY_AUDIT_2026-09-01.md	Recaman.subtractionBorn_42_forcedReuse_counterexample;Recaman.subtractionBorn_sharedParent_counterexample	非merge質量が独立に得られた場合のみ
+E-009	COMPUTED	A-fixed-seed	一つの固定seedは内部需要供給つきcandidate useを3回支えられる	docs/FIXED_SEED_SUPPLY_FALSIFICATION_2026-09-01.md	-	fingerprinted seedを回帰反例として維持
+E-010	CONJECTURED	A-fixed-seed	一つの有限seedから無限recurrent supply corridorは存在しない	docs/HYPOTHESIS_CARD_2026-09-01_FIXED_SEED_SUPPLY.md	-	external blocker debtまたはcanonical-only invariant
+E-011	STOPPED	A-fixed-seed	ancestryとaddition-contractionを用いる現fixed-seed proof route	docs/HYPOTHESIS_CARD_2026-09-01_FIXED_SEED_SUPPLY.md	-	E対Sのcutoff-independent strict deficit
+E-012	REFUTED	A-use-gap	burst payloadからlocal sqrt(6m) use gapは導けない	docs/USE_GAP_AUDIT_2026-09-01.md	Recaman.seededUseGap_local_counterexample	addition run upper boundを仮定する修理は禁止
+E-013	STOPPED	B-reset	upward reset repaymentを現local payloadから導くproof route	docs/RESET_REPAYMENT_AUDIT_2026-09-01.md	-	post-reset birthを有限化するglobal invariant
+E-014	CONJECTURED	partial-theorem	TailHall₃は独立したtail congestion部分定理候補である	docs/STATUS_REPORT_2026-08-30.md	-	全射性ではなくpartial theoremとしてのみ再開
+E-015	STOPPED	A-external-collision	same-candidate H4/H8 external-blocker collision evaluatorは20Mまで評価母集団が空で独立再開gateにならない	docs/EXTERNAL_BLOCKER_COLLISION_EPOCH_2026-09-02.md	-	異candidateまたは固定clock windowで集約する非空なcutoff-independent debt

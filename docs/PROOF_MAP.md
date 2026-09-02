@@ -1,5 +1,11 @@
 # 証明地図
 
+> [!NOTE]
+> 本書は定理依存と到達経路のatlasである。初期sectionには各時点の未証明義務を現在形で
+> 保存しているため、現在の研究優先順位には使わない。current frontierは
+> [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、claim statusは
+> [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)を正本とする。
+
 本書で使う`potential`、`borrow`、`blocker`、`epoch`、`oracle`、`debt`などの意味と、
 標準用語／研究固有用語の区別は[用語集](GLOSSARY.md)を参照。
 ordinary normal constructorの生成箇所と精密化方針は
@@ -900,3 +906,30 @@ forced additionへ、長さ2加算run禁止則（`NoDoubleAdditionRun`）が3本
 復元した。canonical軌道の両ステップ種は無条件に無限再発する。他の頭書き定理
 （value law・第二欠損値・rigid event・二分定理・発散代償・burst・upward reset群）は
 すべて仮定が実効であることを、kernel認証済み反例（`a 99734 = 19`）等で確認した。
+
+**Round 9の追補（use-gap意味監査）** — `RecurringCandidateBurst`の結論は
+加算run長`>=3`であり`=3`ではない。`SeededUseGapCounterexample`は、
+exact `Basic.step`でclock `120`と`141`に同じlow candidate 10を持ち、中間は全candidateが
+clockよりstrict high、後端も3-addition burstを持つが`21^2 < 6*120`となるseeded反例を
+kernel認証する。紙上反例族`m=q^2+2q`, word `A^(q+1)S^q`で`gap^2/m -> 4`。
+従ってlocal `sqrt(6m)` use-gapは停止し、主予想は単一有限seedのglobal self-supplyに限定された。
+
+**Round 10の追補（rigid需要のbirth分類）** — `RecurringCandidateDemandBirth`は各late useの
+需要`c+m`について、corridor内部の初出時計`t+1`を保持したまま、legal subtraction birthと
+addition birthへ分類する。cutoff境界を一つ越えたlate版では`t<m`かつaddition枝に
+`2*(t+1)+target<c+m`を与える。これは真のhalf-clock contractionだが、subtraction枝は
+`CanSubtract(t+1)`を返し、forced supplierの再適用に必要な`¬CanSubtract(t+1)`とは逆である。
+
+**Round 11の追補（periodic有限核）** — `PeriodicCandidateNoGo`はbalanced整数sign wordの
+recurrence-generated phase driftとactual cyclic rotationsを一致させ、全phase drift総和が
+`-p²`であること、および非空periodに負drift phaseがあることをLean化した。三つのperiod sign-sum
+caseから「lower floorを保つeventually-periodic walkは発散」を得る転送は`PROVED-PAPER`。
+非周期的なdrift-and-reset self-supplyは未排除である。
+
+**Round 12の追補（fixed-seed supply停止監査）** — `SupplyAncestryCounterexample`はcanonical
+prefixで、42のforced reuseがlegal subtraction birthへ戻ることと、相異なるsubtraction-born
+値151/135が同じparent 261へmergeすることをkernel認証した。従ってclosed supplier ancestryは
+`REFUTED`、generic ancestryの単射課金も`REFUTED`。exact arbitrary-state replayでは一つの固定seed
+fingerprint `14161494152507716643`がcandidate 20をclocks 94/286/862で内部供給したが、clock 1Mまで
+4回目はない（`COMPUTED`）。addition contractionとsubtraction ledgerはstrict driftを作らず、
+H-20260901-01/02の現proof branchは`STOPPED`。exact infinite no-go命題自体は`CONJECTURED`である。
