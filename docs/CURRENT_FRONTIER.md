@@ -132,6 +132,11 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - `E-031`（`COMPUTED`）: 帯の生存を無制限とした閉包はChaffinの穴をほぼ全て（852655を含む）埋めるので、
   852655の保護は剰余類の組合せではなくarcの深さ（帯の生存）に依る。
 - `E-032`（`COMPUTED`）: 区間の終端は遅延着地61%・帯の既訪問値39%。帯の未訪問run長は典型的に`n·10^−6`。
+- `E-034`（`PROVED-LEAN`, `PopupLock`）: pop-up後に `2c+v+2` が既訪問なら `k=3/4` に固定され、その間 clock 未満の値は
+  訪問されず、`k=2` 候補は弧自身の直前の `k=2` 値である。arc trace の終端機構の局所部分は全て Lean 化された。
+- `E-033`（`COMPUTED`, arc trace 10^10）: 弧の底は最後の遅延着地であり、深い弧はcomb末端で
+  `2c+v+2` が既訪問のとき `k=3/4` に固定されて終わる（6/6）。その値は同じ弧が少し前に `k=2` 値として
+  訪問していた。弧の終端は位置エネルギー `Φ = 時刻+値` の走行最大値からの落差で記述できる。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -168,7 +173,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 250 modules、68,304 lines。
-- `./scripts/check.sh`: 252 jobs、1,154 audited declarations。
+- Lean source 251 modules、68,482 lines。
+- `./scripts/check.sh`: 253 jobs、1,160 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

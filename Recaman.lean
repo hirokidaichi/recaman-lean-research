@@ -239,6 +239,7 @@ import Recaman.DemandProvenanceCounterexample
 import Recaman.MissingDensityDichotomy
 import Recaman.DescendingChain
 import Recaman.HoleHopping
+import Recaman.PopupLock
 import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle

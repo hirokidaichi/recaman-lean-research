@@ -259,8 +259,13 @@ constexpr std::size_t kLateListSize = 20U;
 constexpr std::size_t kMexLogSize = 256U;
 // Values whose first landing clock is reported (OEIS A057167: 19 first
 // appears at index 99734, 1355 at index 325374625245).
-constexpr std::size_t kWatchedCount = 2U;
-constexpr Nat kWatched[kWatchedCount] = {19U, 1355U};
+constexpr std::size_t kWatchedCount = 8U;
+constexpr Nat kWatched[kWatchedCount] = {
+    19U, 1355U,
+    // level-two continuation values 2c+v+2 that locked the six deep arcs
+    // found through 1e10 (arc trace, 2026-09-02)
+    116114826U, 1808080190U, 3220375114U, 5578301875U, 9821537786U,
+    16833143412U};
 constexpr Nat kProgressStep = 1000000000ULL;
 
 // Band level of a height: the smallest i with h <= kBand[i] when

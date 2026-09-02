@@ -1,5 +1,13 @@
 # Changelog
 
+## Arc trace: the exact termination mechanism — 2026-09-02
+
+- `experiments/arc_trace_probe.cpp`：弧の底は最後の遅延着地。深い弧6本の終端はすべて「comb末端で
+  `2c+v+2` が既訪問 → `k=3/4` に固定 → 剰余尽き」で、`2c+v+2` は同じ弧が少し前に `k=2` 値として訪問していた
+  （registry `E-033`）
+- landing floor を「`Φ=2·時刻+高さ` の走行最大値からの落差が3に達する高さの法則」に言い換え、カードを更新
+- `PopupLock`：k=3/4 固定（入口、反復、clock 以上、自身の k=2 値）を Lean 化（registry `E-034`）
+
 ## Hole hopping (Lean) and closure census — 2026-09-02
 
 - `HoleHopping`：chainは自クラスの最初の穴に着地、着地後は連続する穴を掃く（registry `E-030`、250モジュール）
