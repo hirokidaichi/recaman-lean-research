@@ -77,6 +77,7 @@ rising floor が成り立てば、時刻 `n` に `f(n)` 未満で未訪問の値
 | Date | Label | Revision / command | Result |
 |---|---|---|---|
 | 2026-09-02 | `COMPUTED` | Chaffin 台帳、`chaffin_landing_analysis.py` | 弧は 8.45 本/decade で一定、深さ `D` は定常、10^41 以降 10^7 未満の着地なし。経験分布の外挿で 852655 の将来の着地期待回数は 10^612 以降 ≈ 10^-9。 |
+| 2026-09-02 | `COMPUTED` | `landing_depth_probe v0 300000000`（v0 = 0, 1, 2, 3, 5, …, 10000 の 27 本） | 弧の底の検出は canonical で A393814/A393815 の先頭 19 件と一致。3×10^8 まで、全ての generalized orbit で弧は各 decade 4 本、深さ `D` の中央値 2.3〜3.3、90% 点 3.6〜5.3 で canonical（2.53、3.61）と同程度。深さ分布は `initial` 固有ではない。 |
 | 2026-09-02 | `PROVED-LEAN` | `DescendingChain` | 局所機構（1 の部品 `chain_descends`）と、2 の局所半分 `chain_band_fresh_at_start`：k 段の chain が消費する帯の値はすべて開始時刻 `n+1` に未訪問だった。 |
 
 ## Semantic audit

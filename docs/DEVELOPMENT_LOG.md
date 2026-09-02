@@ -3097,3 +3097,15 @@ run長は添字に比例するスケールでしか現れない」という自�
 
 補遺：`chain_band_fresh_at_start`（k段のchainが消費する帯の値`n+h−1−i`は全て開始時刻`n+1`で未訪問）を
 `DescendingChain`に追加し、Auditへ登録した。landing floorカードの受入条件2の局所半分にあたる。
+
+### 第百二十九ラウンド：弧の底の検出器と generalized orbit の深さ分布
+
+`landing_depth_probe`（Chaffin と同じ「`a n mod n` が増加するまでの区間の最小値」）を実装し、
+canonical で A393814/A393815 の先頭 19 件（添字 1, 2, 4, 10, …, 99734、値 1, 3, 2, 11, …, 19）と
+一致することを確認した。単一初期値 v0 の generalized orbit 27 本（v0 = 0〜10000）を 3×10^8 まで
+走らせると、弧は各 decade 4 本、深さ `D = log₁₀ n − log₁₀ v` の中央値は 2.3〜3.3、90% 点は
+3.6〜5.3 で、canonical（2.53、3.61）と同程度だった。深さ分布は `initial` 固有の性質ではなく、
+この規模では初期値によらない。landing floor カード（`H-20260902-05`）の falsification plan の
+「generalized orbit での定常性」の最初の測定として記録した（`docs/data/landing_depth_generalized_3e8_2026-09-02.txt`）。
+Chaffin の台帳では弧の本数が 10^9 の 4 本/decade から 10^19 の 8.5 本/decade へ増えて一定になるため、
+深さ分布の定常性の比較は 10^12 以上（run-length simulator）で続ける。

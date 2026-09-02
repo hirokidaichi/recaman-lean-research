@@ -30,6 +30,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/cone_excursion_probe 0 1000 100000              # breaker and cone-exterior run census
 /tmp/near_diagonal_rate_probe 3000000000            # per-decade near-diagonal census, 25 s
 python3 experiments/chaffin_landing_analysis.py rec-landings-1e612.txt rec-holes-2_32.txt  # Chaffin's tables
+/tmp/landing_depth_probe 0 1000000000                # arc minima (A393814/A393815) and depth quantiles
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
@@ -84,6 +85,8 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/cone_excursion_probe.cpp -o /tmp/cone_excursion_probe
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/near_diagonal_rate_probe.cpp -o /tmp/near_diagonal_rate_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/landing_depth_probe.cpp -o /tmp/landing_depth_probe
 ```
 
 Example runs:
