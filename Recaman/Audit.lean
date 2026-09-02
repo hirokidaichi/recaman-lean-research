@@ -1143,6 +1143,7 @@ import Recaman
 #print axioms Recaman.chain_exit_up
 #print axioms Recaman.chain_late_landing
 #print axioms Recaman.chain_descends
+#print axioms Recaman.chain_band_fresh_at_start
 #print axioms Recaman.chain_small_candidate_mod_three
 #print axioms Recaman.late_landing_iff
 #print axioms Recaman.forcedAddition_candidate_historical

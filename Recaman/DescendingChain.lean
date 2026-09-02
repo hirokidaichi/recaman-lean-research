@@ -138,6 +138,25 @@ theorem chain_descends {n h : Nat} : ∀ k, 3 * k + 2 ≤ h →
       rw [hidx, hland]
       omega
 
+/-- Every band value consumed by a chain of `k` steps was already unvisited at time
+`n + 1`: a chain can only be as long as the fresh run below `n + h - 1` in the history
+at its start. -/
+theorem chain_band_fresh_at_start {n h k : Nat}
+    (hfresh : ∀ i, i < k → n + h - 1 - i ∉ valuesThrough (n + 2 * i + 1)) :
+    ∀ i, i < k → n + h - 1 - i ∉ valuesThrough (n + 1) := by
+  intro i hi hmem
+  apply hfresh i hi
+  have hmono : ∀ d, n + h - 1 - i ∈ valuesThrough (n + 1 + d) := by
+    intro d
+    induction d with
+    | zero => simpa using hmem
+    | succ d ih =>
+        show n + h - 1 - i ∈ valuesThrough (n + 1 + d + 1)
+        exact valuesThrough_persist ih
+  have hend := hmono (2 * i)
+  rw [show n + 1 + 2 * i = n + 2 * i + 1 by omega] at hend
+  exact hend
+
 /-- The small candidates of a chain stay in one residue class modulo three. -/
 theorem chain_small_candidate_mod_three (h i : Nat) (hi : 3 * i + 1 ≤ h) :
     (h - 1 - 3 * i) % 3 = (h - 1) % 3 := by

@@ -1,5 +1,10 @@
 # Changelog
 
+## Landing floor card (T4) — 2026-09-02
+
+- `H-20260902-05` landing floor（ある時刻以降の弧の底は852655を超える）を`CONJECTURED`として凍結（registry `E-028`）。
+  Chaffin台帳の絶対深さ`D`は定常（中央値7.4 decade、指数裾）で、852655の将来の着地期待回数は10^612以降≈10^-9
+
 ## Chaffin landing analysis — 2026-09-02
 
 - Chaffinの10^612項台帳（5,104件の弧の底）と2^32未満の穴（1,277,400個）を`experiments/chaffin_landing_analysis.py`で
