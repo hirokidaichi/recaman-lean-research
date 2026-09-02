@@ -102,6 +102,36 @@ theorem comb_sweep {j v : Nat} (hland : a j = v) (hle : v ≤ j) :
   have hstep := haux (i + 1) (by omega)
   omega
 
+/-- Pop-up after an isolated late landing.  If the orbit lands `v` at clock `i + 1`
+coming from height `v + 1` (so `a i = v + i + 1`), and `v - 1` is already visited, then
+the next three steps all add: the band candidate presented at clock `i + 3` is
+`v + i + 1`, the orbit's own previous value, so it is blocked. -/
+theorem late_landing_popup {i v : Nat} (hprev : a i = v + i + 1)
+    (hland : a (i + 1) = v) (hle : v ≤ i)
+    (hblocked : v - 1 ∈ valuesThrough (i + 2)) :
+    a (i + 2) = v + i + 2 ∧ a (i + 3) = v + 2 * i + 5 ∧ a (i + 4) = v + 3 * i + 9 := by
+  have h2 : a (i + 2) = v + i + 2 := by
+    have := comb_after_landing hland (by omega)
+    omega
+  have h3 : a (i + 3) = v + 2 * i + 5 := by
+    have hval : a (i + 2) = (i + 2) + v := by omega
+    have hstep := chain_forced_addition hval hblocked
+    rw [show i + 2 + 1 = i + 3 by omega] at hstep
+    omega
+  have hmem : v + i + 1 ∈ valuesThrough (i + 3) := by
+    have h0 : a i ∈ valuesThrough i := current_mem_valuesThrough i
+    rw [hprev] at h0
+    exact valuesThrough_persist (valuesThrough_persist (valuesThrough_persist h0))
+  have h4 : a (i + 4) = v + 3 * i + 9 := by
+    have hval : a (i + 3) = (i + 3) + (v + i + 2) := by omega
+    have hblocked' : v + i + 2 - 1 ∈ valuesThrough (i + 3) := by
+      rw [show v + i + 2 - 1 = v + i + 1 by omega]
+      exact hmem
+    have hstep := chain_forced_addition hval hblocked'
+    rw [show i + 3 + 1 = i + 4 by omega] at hstep
+    omega
+  exact ⟨h2, h3, h4⟩
+
 /-- Residue bookkeeping for hole hopping: every small candidate presented by the chain
 from height `h` is congruent to `h - 1` modulo three, so a hole `u` with
 `u % 3 ≠ (h - 1) % 3` is never presented by that chain. -/
