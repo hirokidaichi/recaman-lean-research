@@ -1,5 +1,12 @@
 # Changelog
 
+## Descending chain lemmas (T2/T3) — 2026-09-02
+
+- `DescendingChain`：強制加算、帯への着地（高さ`h−3`）、上方脱出、遅延着地、k段降下`chain_descends`、
+  mod 3剰余類、遅延着地の同値`late_landing_iff`をLean化（registry `E-026`、249モジュール、251 jobs）
+- OEIS確認：852655は10^612項まで欠損、1355の初出は第325,374,625,245項。Chaffinのping-pong区間は
+  本chainと同一機構で、A393814/A393815がchain終点の台帳
+
 ## Missing-density dichotomy (T1) — 2026-09-02
 
 - `MissingDensityDichotomy`：無条件の二分定理`missing_density_dichotomy`「無限個のnで`a n ≤ n+2`、または

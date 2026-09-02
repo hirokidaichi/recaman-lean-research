@@ -89,7 +89,7 @@ Lean 化は完了した（`missing_density_dichotomy`、`missing_window_of_law`�
 形式化では計数の結論が `m ≤ 4·|missing|` まで締まり、凍結は法則から直接出るため
 加減算の場合分けは不要だった。
 
-### T2. chain 補題（exact、Lean 化）
+### T2. chain 補題（`PROVED-LEAN`: `DescendingChain`、2026-09-02 完了）
 
 高さ `h ≥ 4` の interior 時刻 `n` で candidate `h − 1` が既訪問なら、
 `a (n+1) = 2n + h + 1`、`c (n+1) = n + h − 1`。この値が未訪問なら `a (n+2) = n + h − 1` で高さ `h − 3`。
@@ -99,7 +99,7 @@ Lean 化は完了した（`missing_density_dichotomy`、`missing_window_of_law`�
 既存の `HistoryTerminatedComb` 系は同じ対象を target 相対で扱っているので、target を外した形に
 一般化して剰余類の主張を加える。予定 2 ラウンド。
 
-### T3. 遅延着地の特徴づけ（Lean 化、小）
+### T3. 遅延着地の特徴づけ（`late_landing_iff` は `PROVED-LEAN`、残りは T4 へ）
 
 「`t < j` で `a j = t`」⟺「時刻 `j−1` は interior で高さ `t+1`、かつ `t` は時刻 `j−1` まで未訪問」。
 さらに T2 と合わせ、「小さな高さは chain の内部か chain の侵入時刻でしか現れない」を

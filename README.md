@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース248モジュール（67,982行、認証済み深部traceを含む）
+- Leanソース249モジュール（68,168行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -111,6 +111,9 @@ Lean 4形式化プロジェクトです。
   をLean化（`MissingDensityDichotomy`、`m ≤ 4·|missing|`のNodup証人リスト付き）。系としてA枝corridorは
   密度1/4の永久欠損を含意し、sub-diagonal再発は全targetのA枝を否定する
   （[roadmap](docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)）
+- descending chain（Chaffinのping-pong区間と同じ機構）をLean化（`DescendingChain`）：強制加算、帯への着地で
+  高さ`h−3`、k段降下、小candidateのmod 3剰余類、上方脱出／遅延着地の2出口、
+  遅延着地の同値条件`late_landing_iff`
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

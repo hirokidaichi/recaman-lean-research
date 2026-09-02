@@ -119,6 +119,8 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   全ての窓`[0, m+2]`（`m ≥ 2N+2`）に`m ≤ 4·|missing|`を満たす永久未訪問値のNodupリストがある」。
   系`EventualHighCandidateTail.missing_density`はA枝が密度1/4の欠損を含意することを、
   `not_eventualHigh_of_recurrent_low`は`a n ≤ n+2`の再発が全targetのA枝を否定することを示す。T1完了。
+- `E-026`（`PROVED-LEAN`, `DescendingChain`）: chain補題（T2）と遅延着地の特徴づけ`late_landing_iff`（T3）。
+  強制加算、帯への着地（高さ`h−3`）、k段の降下`chain_descends`、mod 3剰余類、上方脱出と遅延着地の2出口。
 - 両方向の証明はchainの侵入率・生存の定量定理（T4）に帰着する。侵入率が`c/n`なら全射、
   `n^{-1-ε}`なら非全射が見立てで、3e9では区別できない。run-length simulatorで1e12以上を見る。
 - 上の分岐表と再開条件は歴史的記録として残し、優先順位はロードマップのT1〜T5に従う。
@@ -151,7 +153,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 248 modules、67,982 lines。
-- `./scripts/check.sh`: 250 jobs、1,142 audited declarations。
+- Lean source 249 modules、68,168 lines。
+- `./scripts/check.sh`: 251 jobs、1,149 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

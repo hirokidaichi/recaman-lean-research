@@ -1138,6 +1138,13 @@ import Recaman
 #print axioms Recaman.missing_density_dichotomy
 #print axioms Recaman.EventualHighCandidateTail.missing_density
 #print axioms Recaman.not_eventualHigh_of_recurrent_low
+#print axioms Recaman.chain_forced_addition
+#print axioms Recaman.chain_landing
+#print axioms Recaman.chain_exit_up
+#print axioms Recaman.chain_late_landing
+#print axioms Recaman.chain_descends
+#print axioms Recaman.chain_small_candidate_mod_three
+#print axioms Recaman.late_landing_iff
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

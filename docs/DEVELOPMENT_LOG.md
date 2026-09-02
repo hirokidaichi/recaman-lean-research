@@ -3043,3 +3043,28 @@ bash scripts/check_module_architecture.sh    # 247/247 reach; 6 contracts
 bash scripts/check_research_registry.sh      # 25 entries; 7 PROVED-LEAN rows
 ./scripts/check.sh                           # 1,142 declarations audited
 ```
+
+### 第百二十六ラウンド：chain補題と遅延着地の特徴づけ（T2/T3）
+
+`DescendingChain`（direct importは`History`のみ）でロードマップT2/T3を完了した。
+サブエージェントが初回コンパイル一発で通し、親が`lake env lean`と禁止語走査で再検証した。
+定理：`chain_forced_addition`、`chain_landing`、`chain_exit_up`、`chain_late_landing`、
+`chain_descends`（kに関する帰納、4つのomega正規化）、`chain_small_candidate_mod_three`、
+`late_landing_iff`。証明はすべて`recurrence`の`CanSubtract`場合分けと、候補値の
+`show a n − (n+1) = …; omega`による書き換えで閉じる。
+
+OEIS確認：852655は10^612項まで欠損（Chaffin 2026-02-08、A064227）、1355の初出は第325,374,625,245項
+（A057167 b-file、A064227の第8項）、19の初出は99734。Chaffinの計算法「ping-pong区間の先読み」は
+本ラウンドのchainと同一機構で、区間長が指数的に伸びるため10^612項が到達できる。
+Chaffinの新規列A393814/A393815（各下降弧の最小値とその添字、n = 1..5104）はchainの終点の
+完全な台帳であり、T4の侵入率判定に直接使える。
+
+検証コマンド：
+
+```text
+lake env lean Recaman/DescendingChain.lean
+lake build                                   # 251 jobs
+bash scripts/check_module_architecture.sh    # 248/248 reach; 7 contracts
+bash scripts/check_research_registry.sh      # 26 entries; 8 PROVED-LEAN rows
+./scripts/check.sh                           # 1,149 declarations audited
+```

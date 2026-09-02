@@ -952,3 +952,11 @@ exterior）、`lowCount`の2時刻ごとの増分上界`lowCount_two_step`、`va
 が密度1/4の永久欠損を含意することを、`not_eventualHigh_of_recurrent_low`は`a n ≤ n+2`の再発が
 全ての正targetのA枝を否定することを示す。canonical 3e9ではsub-diagonal着地が28.6%なので、
 A枝は経験的に全targetで偽であり、残る非全射機構はdescending chain（B枝comb）である。
+
+**Round 13の追補（chain補題、T2/T3）** — `DescendingChain`はtargetもcutoffも使わない局所補題群：
+`chain_forced_addition`（`a n = n+h`、`h−1`既訪問 ⇒ `a (n+1) = 2n+h+1`）、`chain_landing`（帯の値
+`n+h−1`が未訪問 ⇒ `a (n+2) = n+h−1`、高さ`h−3`）、`chain_exit_up`（帯の値が既訪問 ⇒ `a (n+2) = 3n+h+3`）、
+`chain_late_landing`（`h−1`が未訪問 ⇒ `a (n+1) = h−1`）、`chain_descends`（k段で`a (n+2k) = n+h−k`）、
+`chain_small_candidate_mod_three`、`late_landing_iff`（`1 ≤ t ≤ n`で`a (n+1) = t ⟺ a n = n+(t+1) ∧ t ∉ valuesThrough n`）。
+これはChaffinの「ping-pong区間」（10^612項計算の加速機構）と同一の対象であり、B枝のcombを
+target非依存に一般化したものである。
