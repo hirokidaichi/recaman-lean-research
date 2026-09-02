@@ -97,13 +97,14 @@ Lean 4形式化プロジェクトです。
 - 既知の固定seed反例（3-use記録を含む）はすべて、kernel認証済みのhistory density
   （`|seen| ≤ clock+1`、`max seen ≤ upperTri clock`）に違反する。凍結protocolにadmissible seedは0件で、
   densityが再開条件3の最初の拘束的候補（[admissible seed density](docs/ADMISSIBLE_SEED_DENSITY_EPOCH_2026-09-02.md)）
-- preloadなしの単一初期値generalized orbit 20,001本（内部供給burst use 1.27M件）にはstrict-high
-  same-candidate linkが0件。既知の多use反例の機構はpreloaded blockerなしでは一度も現れず、
-  「generalized orbitにstrict-high linkは存在しない」を`CONJECTURED`として登録
+- preloadなしの単一初期値generalized orbit 20,001本（内部供給burst use 1.27M件）には
+  same-candidate linkが、strict-high形でもcorridor-faithfulなc-floor形（中間candidate ≥ c）でも0件。
+  既知の多use反例の機構はpreloaded blockerなしでは一度も現れず、
+  「generalized orbitにc-floor linkは存在しない」を`CONJECTURED`として登録
   （[generalized orbit supply](docs/GENERALIZED_ORBIT_SUPPLY_EPOCH_2026-09-02.md)）
 - 理由の診断：burst use後のstrict-high excursionは全1.25M件で倍化clock前に崩れ、cone-exterior runは
-  2倍のclockへ届かない（独立部分命題として`CONJECTURED`）。ただしstrict-high条件はcorridorの固定target床より
-  強く、これらはcorridor streamを排除しない（[cone excursion census](docs/CONE_EXCURSION_CENSUS_2026-09-02.md)）
+  2倍のclockへ届かない（独立部分命題として`CONJECTURED`）。このexcursion boundはcone-exterior条件に
+  依存し、corridor streamは排除しない（[cone excursion census](docs/CONE_EXCURSION_CENSUS_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

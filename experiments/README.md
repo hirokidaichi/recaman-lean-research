@@ -26,6 +26,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/fixed_seed_supply_falsifier 2000000 4096 1    # canonically admissible seeds only
 /tmp/window_demand_provenance_probe 20000000
 /tmp/generalized_orbit_supply_probe 0 1000 100000     # preload-free orbits, discovery
+/tmp/generalized_orbit_supply_probe 0 1000 100000 1   # same, corridor-faithful c-floor links
 /tmp/cone_excursion_probe 0 1000 100000              # breaker and cone-exterior run census
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \

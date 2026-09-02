@@ -32,7 +32,7 @@ B枝のreset repaymentも、新しいglobal invariantがないため停止中で
 | A: supplier ancestry | forced class非閉包、generic parent merge | `E-008` | `REFUTED` |
 | A: one fixed seed | 内部供給つき3-use有限例、infinite no-goは未決 | `E-009`, `E-010` | 現proof branch `E-011`は`STOPPED` |
 | A: admissible seed density | 既知seedはすべてcanonical density（`valuesThrough_length`, `a_le_upperTri`）に違反 | `E-019` | `COMPUTED`、gate 3の最初の拘束的候補 |
-| A: preload-free orbits | 20,001 orbit・1.27M burst useにstrict-high link 0件 | `E-020`, `E-021` | `COMPUTED`、link no-goは`CONJECTURED` |
+| A: preload-free orbits | 20,001 orbit・1.27M burst useにsame-candidate link 0件（strict-high形・c-floor形とも） | `E-020`, `E-021` | `COMPUTED`、c-floor link no-goは`CONJECTURED` |
 | A: cone excursions | burst後のstrict-high excursionは倍化clock前に崩れ、cone-exterior runは2倍へ届かない | `E-022`, `E-023` | `COMPUTED`、excursion boundは独立`CONJECTURED` |
 | A: local use gap | `sqrt(6m)`のlocal読み | `E-012` | `REFUTED`、修理も`STOPPED` |
 | A: external blocker collision | same-candidate H4/H8 test | `E-015` | 20Mまで評価母集団0、設計を`STOPPED` |
@@ -78,10 +78,12 @@ A枝を再開するには、次のいずれかを先にexactな仮説カード�
    strict-high linkは存在しない」を`CONJECTURED`として登録し（`E-021`）、許可されるformalization routeは
    「最初のlinkがpreloaded blockerを強制する」紙上証明のみとする。
    **意味上の注意**：strict-high（candidate > clock）は2026-09-01のfixed-seed protocolの
-   use間条件であり、corridorの実際の条件（candidate > 固定target）より強い。`E-021`・`E-023`は
-   cone-exterior excursion経由の自己供給だけを拘束し、corridor streamを排除しない（`E-022`の
-   census参照）。今後のfixed-seed／preload-free unitはuse間条件を固定床型で再定義してから
-   countermodel探索を行う。
+   use間条件であり、corridorの実際の条件（least recurring candidate cに対しcandidate ≥ c）より強い。
+   そこでprobeにc-floor mode（中間candidateが全て≥c）を追加して再検査したところ、censusは不変で
+   link 0件だった。従って`E-021`はc-floor形（corridor-faithful）で登録する。一方`E-023`の
+   excursion boundはcone-exterior条件に依存する独立部分命題であり、corridor streamを排除しない
+   （`E-022`参照）。同様に、2026-09-01のfixed-seed 3-use記録はstrict-high形の記録であり、
+   c-floor形での固定seed探索は未実施である。
 
 2026-09-02の最初のexternal collision unitは、同じcandidateの4回または8回のsupplied useで
 `E ∩ S`を要求した。しかしcanonical 20Mでは4,798 useに対し4,797 candidate、最大use数2で、

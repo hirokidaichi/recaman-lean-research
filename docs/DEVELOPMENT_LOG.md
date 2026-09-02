@@ -2966,3 +2966,24 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/cone_excursion_p
 /tmp/cone_excursion_probe 1001 2000 100000 ; /tmp/cone_excursion_probe 2001 20000 100000
 bash scripts/check_research_registry.sh   # 23 entries; 6 PROVED-LEAN rows
 ```
+
+### 第百二十三ラウンド：c-floor条件でのpreload-free link検査
+
+第百二十二ラウンドの意味監査を受け、`generalized_orbit_supply_probe`にcorridor-faithfulな
+use間条件（同一cの2回の内部供給burst useの間で中間candidateが全て`≥ c`、least recurring
+candidate条件そのもの）をc-floor mode（第4引数`1`）として追加した。strict-high形より弱い条件で
+linkは増え得るが、canonical 2M、discovery `[0,1000]`、holdout `[1001,2000]`、diagnostic
+`[0,200]`@1M・`[2001,20000]`@100kのすべてでlinkは0件、全chainは1のままだった。
+
+従って`E-021`をc-floor形（strict-high形を含意）へ強めて登録し直し、frontierの意味上の注意を
+「`E-023`のみcone-exterior条件に依存」へ修正した。2026-09-01の固定seed 3-use記録はstrict-high形で
+あり、c-floor形での固定seed探索は未実施であることも明記した。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/generalized_orbit_supply_probe.cpp -o /tmp/generalized_orbit_supply_probe
+/tmp/generalized_orbit_supply_probe 0 1000 100000 1     # c-floor discovery, SHA-256 9f0af821...
+/tmp/generalized_orbit_supply_probe 1001 2000 100000 1  # c-floor holdout,   SHA-256 a47871ba...
+bash scripts/check_research_registry.sh                 # 23 entries; 6 PROVED-LEAN rows
+```

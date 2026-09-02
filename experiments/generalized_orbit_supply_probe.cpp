@@ -13,7 +13,10 @@
 //   a burst use also has three additions at m+1, m+2, m+3;
 //   an internal demand use also has c + m first born at a clock in [1, m+1];
 //   a strict-high link joins two internal demand uses of the same c with
-//   every intermediate candidate strictly above its clock.
+//   every intermediate candidate strictly above its clock;
+//   in c-floor mode (fourth argument 1) the link instead requires every
+//   intermediate candidate to be at least c, which is the corridor's
+//   least-recurring-candidate condition.
 //
 // For every start in [lo, hi] the probe reports the maximal same-candidate
 // chain of strict-high links and a census of chain lengths.
@@ -83,7 +86,7 @@ Nat ParseNat(const char* text, Nat lower, Nat upper, const char* name) {
   return static_cast<Nat>(parsed);
 }
 
-OrbitResult ScanOrbit(Nat start, Clock horizon) {
+OrbitResult ScanOrbit(Nat start, Clock horizon, bool floor_mode) {
   const Clock simulation_end = horizon + 3U;
   DenseHistory history;
   history.Record(start, 0U);
@@ -116,6 +119,14 @@ OrbitResult ScanOrbit(Nat start, Clock horizon) {
   };
   std::unordered_map<Nat, ChainState> chains;
   Clock last_bad = 0U;
+  // Floor mode: a link requires every intermediate candidate to be >= c, the
+  // corridor's least-recurring-candidate condition.  It is checked directly
+  // over the interval instead of through last_bad.
+  const auto floor_link = [&candidates](Clock previous, Clock m, Nat c) {
+    for (Clock t = previous + 1U; t < m; ++t)
+      if (candidates[t] < c) return false;
+    return true;
+  };
   for (Clock m = 1U; m <= horizon; ++m) {
     const Nat c = candidates[m];
     const bool low_entry = 0U < c && c <= m &&
@@ -131,7 +142,11 @@ OrbitResult ScanOrbit(Nat start, Clock horizon) {
         if (birth != kNoClock && 0U < birth && birth <= m + 1U) {
           ++result.internal_demands;
           ChainState& state = chains[c];
-          if (state.has_previous && last_bad <= state.previous) {
+          const bool linked =
+              state.has_previous &&
+              (floor_mode ? floor_link(state.previous, m, c)
+                          : last_bad <= state.previous);
+          if (linked) {
             ++result.valid_links;
             ++state.chain;
             state.uses.push_back(m);
@@ -154,14 +169,14 @@ OrbitResult ScanOrbit(Nat start, Clock horizon) {
   return result;
 }
 
-void Run(Nat lo, Nat hi, Clock horizon) {
+void Run(Nat lo, Nat hi, Clock horizon, bool floor_mode) {
   std::map<Nat, Nat> chain_census;
   Nat overflow = 0U, total_links = 0U, total_demands = 0U;
   OrbitResult best;
   Nat best_start = 0U;
   std::vector<std::pair<Nat, OrbitResult>> long_chains;
   for (Nat start = lo; start <= hi; ++start) {
-    OrbitResult result = ScanOrbit(start, horizon);
+    OrbitResult result = ScanOrbit(start, horizon, floor_mode);
     if (result.overflow) {
       ++overflow;
       continue;
@@ -177,8 +192,9 @@ void Run(Nat lo, Nat hi, Clock horizon) {
       best_start = start;
     }
   }
-  std::cout << "generalized-orbit-supply starts=[" << lo << ',' << hi
-            << "] horizon=" << horizon << " overflow=" << overflow
+  std::cout << "generalized-orbit-supply mode="
+            << (floor_mode ? "c-floor" : "strict-high") << " starts=[" << lo
+            << ',' << hi << "] horizon=" << horizon << " overflow=" << overflow
             << " internalDemandUses=" << total_demands
             << " strictHighLinks=" << total_links << '\n';
   std::cout << "maxChain census:";
@@ -219,7 +235,9 @@ int main(int argc, char** argv) {
     const Clock horizon = static_cast<Clock>(
         argc >= 4 ? ParseNat(argv[3], 16U, 2000000000ULL, "horizon")
                   : 100000U);
-    Run(lo, hi, horizon);
+    const bool floor_mode =
+        argc >= 5 && ParseNat(argv[4], 0U, 1U, "floor_mode") == 1U;
+    Run(lo, hi, horizon, floor_mode);
   } catch (const std::exception& error) {
     std::cerr << "error: " << error.what() << '\n';
     return EXIT_FAILURE;

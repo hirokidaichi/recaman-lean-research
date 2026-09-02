@@ -26,7 +26,10 @@ Counted-use semantics are those of the canonical scan in `fixed_seed_supply_fals
 - an **internal demand use** also has `c + m` first born at a clock in `[1, m+1]`;
 - a **strict-high link** joins two internal demand uses `m < m'` of the same `c` such that
   every clock `t` with `m < t < m'` has candidate `a t - (t+1) > t`;
-- the **chain** of `c` is the number of consecutive strict-high linked uses.
+- a **c-floor link** (fourth argument `1`) instead requires every intermediate candidate to be
+  at least `c`; this is the corridor's least-recurring-candidate condition and is weaker than
+  strict-high, so it admits more links;
+- the **chain** of `c` is the number of consecutive linked uses.
 
 Frozen hypothesis:
 
@@ -78,9 +81,10 @@ H-G3  no generalized orbit with start v0 in the discovery or holdout range has a
 | Date | Label | Revision / command | Result |
 |---|---|---|---|
 | 2026-09-02 | `COMPUTED` | `2424e49` + working tree; `generalized_orbit_supply_probe 0 0 2000000` | Start `0` reproduces the falsifier's canonical scan: 119 internal demand uses, 0 strict-high links, chain 1. |
-| 2026-09-02 | `COMPUTED` | `generalized_orbit_supply_probe 0 1000 100000` (SHA-256 `d0bfd13f…`) | 1,001 orbits, 47,175 internal demand uses, 0 strict-high links; every orbit has chain 1. `H-G3` not refuted. |
-| 2026-09-02 | `COMPUTED` | frozen `generalized_orbit_supply_probe 1001 2000 100000` (SHA-256 `7bc29ea1…`) | 1,000 orbits, 58,663 internal demand uses, 0 links, all chains 1. `H-G3` not refuted. |
+| 2026-09-02 | `COMPUTED` | `generalized_orbit_supply_probe 0 1000 100000` (SHA-256 `e963f5a1…`, after the mode line was added) | 1,001 orbits, 47,175 internal demand uses, 0 strict-high links; every orbit has chain 1. `H-G3` not refuted. |
+| 2026-09-02 | `COMPUTED` | frozen `generalized_orbit_supply_probe 1001 2000 100000` (SHA-256 `488a3b59…`) | 1,000 orbits, 58,663 internal demand uses, 0 links, all chains 1. `H-G3` not refuted. |
 | 2026-09-02 | `COMPUTED` (diagnostic) | `generalized_orbit_supply_probe 0 200 1000000`; `2001 20000 100000` | 20,048 and 1,146,879 internal demand uses respectively, 0 links in both. |
+| 2026-09-02 | `COMPUTED` | c-floor mode: `generalized_orbit_supply_probe 0 1000 100000 1` (SHA-256 `9f0af821…`), `1001 2000 100000 1` (`a47871ba…`), `0 0 2000000 1`, `0 200 1000000 1`, `2001 20000 100000 1` | Under the corridor-faithful condition (every intermediate candidate `≥ c`) there are still 0 links in all 20,001 orbits and 1,272,765 internal demand uses; every chain has length 1. |
 | 2026-09-02 | `COMPUTED` (diagnostic) | `cone_excursion_probe` on the same ranges | Every strict-high excursion after a burst use ends before clock `2m+2` (`t/m ≤ 1.098` for `m ≥ 100`), and no cone-exterior run reaches its doubling clock; see `E-022`. |
 
 ## Semantic audit
@@ -97,9 +101,11 @@ H-G3  no generalized orbit with start v0 in the discovery or holdout range has a
 - Reachability, freshness, time order, or actual-orbit provenance omitted?: none; births are
   exact first occurrences inside each orbit.
 - Strength of the between-use condition: strict-high (`candidate > clock`) is the 2026-09-01
-  protocol's condition and is stronger than the corridor's fixed-target floor; the link
-  conjecture therefore constrains cone-exterior self-supply only, not the corridor stream
-  (see `CONE_EXCURSION_CENSUS_2026-09-02.md`).
+  protocol's condition and is stronger than the corridor's floor.  The c-floor mode repairs
+  this: it requires only `candidate ≥ c` between uses, exactly the least-recurring-candidate
+  condition of the rigid stream, and the census is unchanged (0 links).  The derived
+  conjecture below is stated in the c-floor form; the excursion bound `E-023` keeps the
+  strict-high caveat (see `CONE_EXCURSION_CENSUS_2026-09-02.md`).
 
 ## Decision
 
@@ -110,6 +116,7 @@ H-G3  no generalized orbit with start v0 in the discovery or holdout range has a
   such reuses.  Density is therefore binding on the mechanism, not only on the record.
 - Reopen only if: a preload-free orbit exhibits a strict-high link, or a paper argument shows
   that the first strict-high link forces a preloaded blocker.  The derived exact statement
-  “no generalized orbit has a strict-high same-candidate link” is registered as
-  `CONJECTURED` and is the next admissible falsification target, with the paper attempt as the
-  only permitted formalization route.
+  “no generalized orbit has a c-floor same-candidate link” (two internal demand burst uses of
+  one `c` with every intermediate candidate `≥ c`) is registered as `CONJECTURED` (`E-021`); it
+  implies the strict-high form and is the next admissible falsification target, with the paper
+  attempt as the only permitted formalization route.

@@ -6,7 +6,8 @@ Decision: `COMPUTED`
 
 ## Conclusion
 
-No preload-free orbit produces even one strict-high same-candidate link.  Across 20,001
+No preload-free orbit produces even one same-candidate link, under the strict-high condition
+or under the corridor-faithful c-floor condition.  Across 20,001
 generalized Recamán orbits (single initial value `v0 ∈ [0, 20000]`, exact greedy rule, history
 of exactly `n + 1` values at clock `n`) and 1,272,765 internally supplied burst uses, every
 candidate's chain length is one.  The frozen `H-G3` (no chain of length three) is not refuted,
@@ -80,9 +81,32 @@ best start=2001 maxChain=1 links=0 c=130 uses=493
 H-G3=not-refuted startsWithChain3=0
 ```
 
-Discovery and holdout outputs have SHA-256
-`d0bfd13f0818f291a8dc8891c43482120382034a9e6340c04521ed4f41bb33e8` and
-`7bc29ea1c1407ea468f81900f3045e184b3fd49e5d205be35986811121e0a071`.
+Before the `mode=` field was added to the first line, the discovery and holdout outputs had
+SHA-256 `d0bfd13f0818f291a8dc8891c43482120382034a9e6340c04521ed4f41bb33e8` and
+`7bc29ea1c1407ea468f81900f3045e184b3fd49e5d205be35986811121e0a071`; the current hashes are
+listed in the c-floor section below.
+
+## c-floor mode (corridor-faithful between-use condition)
+
+The strict-high condition is stronger than what the corridor requires.  The probe's fourth
+argument `1` replaces it by the least-recurring-candidate condition: two internal demand burst
+uses of one `c` are linked when every intermediate candidate is at least `c`.  This admits
+every strict-high link and many more.  The census is unchanged:
+
+```text
+generalized-orbit-supply mode=c-floor starts=[0,0] horizon=2000000 overflow=0 internalDemandUses=119 strictHighLinks=0
+generalized-orbit-supply mode=c-floor starts=[0,1000] horizon=100000 overflow=0 internalDemandUses=47175 strictHighLinks=0
+generalized-orbit-supply mode=c-floor starts=[1001,2000] horizon=100000 overflow=0 internalDemandUses=58663 strictHighLinks=0
+generalized-orbit-supply mode=c-floor starts=[0,200] horizon=1000000 overflow=0 internalDemandUses=20048 strictHighLinks=0
+generalized-orbit-supply mode=c-floor starts=[2001,20000] horizon=100000 overflow=0 internalDemandUses=1146879 strictHighLinks=0
+```
+
+(The counter is still labelled `strictHighLinks` in the output; in c-floor mode it counts
+c-floor links.)  Discovery and holdout outputs in c-floor mode have SHA-256 `9f0af82192f2d7d40586f58acb247badb141a7d9bd2f29ac64a748e282dbf6ec` and
+`a47871bab153b0bf2e15e5326709fd7e3ae011b462c0b5dab2e59b93b764a4f9`; the strict-high outputs after the mode line was added have `e963f5a1617e6d22485ffcdcaf8be85bbfa867237b1edbab875f184458b6f0e3` and `488a3b59b3ca71eb81dcf914bf4cfbed2f0516565606164a3c47dd3fee3b4083`.
+
+Hence the registered conjecture `E-021` is stated in the c-floor form, which is the
+corridor's actual between-use condition.
 
 ## Strongest evidence
 
@@ -107,11 +131,14 @@ produced the mechanism at all.  The proof obligation is unchanged.
 
 ## Next decision
 
-- Register the exact statement "no generalized orbit has a strict-high same-candidate link"
-  as `CONJECTURED`.  It has a nonempty population, no cutoff, no target, and no reachability
-  premise; a single refuting start closes it.
-- The only permitted formalization route is a paper argument that the first strict-high link
-  of a preload-free orbit forces a blocker that the orbit cannot have produced.  Do not start
-  Lean work before that argument exists.
+- Register the exact statement "no generalized orbit has a c-floor same-candidate link"
+  (two internal demand burst uses of one `c` with every intermediate candidate `≥ c`) as
+  `CONJECTURED`.  It implies the strict-high form, has a nonempty population, no cutoff, no
+  target, and no reachability premise; a single refuting start closes it.
+- The only permitted formalization route is a paper argument that the first c-floor link of a
+  preload-free orbit forces a blocker that the orbit cannot have produced.  Do not start Lean
+  work before that argument exists.
+- The 2026-09-01 fixed-seed record is a strict-high record; a c-floor fixed-seed search has
+  not been run and would be the next arbitrary-seed unit if one is wanted.
 - Branch-A status is unchanged: the fixed-seed infinite supply no-go remains `CONJECTURED`,
   with density and the link conjecture as the open gate-3 candidates.

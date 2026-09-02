@@ -1,5 +1,11 @@
 # Changelog
 
+## Corridor-faithful link condition — 2026-09-02
+
+- `generalized_orbit_supply_probe`にc-floor mode（第4引数`1`：use間の中間candidateが全て`≥ c`）を追加。
+  corridorのleast-recurring-candidate条件そのものでも、20,001 orbit・1.27M burst useにlinkは0件
+- `E-021`をc-floor形へ強めて再登録。strict-high条件の注意は`E-023`（excursion bound）のみに限定
+
 ## Cone excursion census — 2026-09-02
 
 - `experiments/cone_excursion_probe.cpp`: burst use後のstrict-high excursionは全1,252,246件で倍化clock前に

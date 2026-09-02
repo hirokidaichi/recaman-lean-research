@@ -924,8 +924,10 @@ birthを真に抑える independently testable global invariant である。
    exact prefixで生成するadmissible synthesizerかadmissible seedのuse数上界の紙上証明に限る。
 5. `H-20260902-04`により、preloadなしのgeneralized orbit 20,001本にstrict-high same-candidate linkは0件。
    exact命題「generalized orbitにstrict-high linkは存在しない」を`CONJECTURED`とし、Lean化は紙上証明の後に限る。
-6. strict-high（candidate > clock）はcorridorの固定target床より強い条件であり、`E-021`/`E-023`は
-   corridor streamを排除しない。次のcountermodel unitはuse間条件を固定床型で再定義してから行う。
+6. strict-high（candidate > clock）はcorridorのleast-recurring-candidate条件より強いため、probeに
+   c-floor mode（中間candidate ≥ c）を追加して再検査した。linkは依然0件で、`E-021`はc-floor形で登録。
+   `E-023`のexcursion boundだけがcone-exterior条件に依存し、corridor streamを排除しない。
+   固定seed探索のc-floor形はまだ行っていない。
 
 ## 並行して行う保守
 
