@@ -3,7 +3,7 @@
 - ID: `H-20260901-01`
 - Owner: sharp-kernel sprint
 - Created: 2026-09-01
-- Status: `CONJECTURED`
+- Status: `STOPPED`（命題自体は`CONJECTURED`）
 - Research branch: A枝（eventual-high corridor）、rigid event stream側
 
 ## Exact statement
@@ -56,18 +56,25 @@
 |---|---|---|---|
 | 2026-09-01 | `OBSERVED` | candidate_reuse_probe 1e8 | 需要充足率0.036%@d7、m^(−1/2)減衰、格子比率10-14%のみ |
 | 2026-09-01 | `PROVED-LEAN` | RecurringCandidateBurst | burst 3連・需要は`c+m`1個/use |
-| 2026-09-01 | `PROVED-PAPER` | periodic_nogo_check.py（機械検証済み） | **周期的スケジュール不可能**: 任意の周期p・切片A₀でledger赤字 −(2p+A₀²+A₀)/4 < 0。liminf有限のcorridorは必然的に非周期・成長excursion |
-| 2026-09-01 | `DERIVED-PAPER` | 同上 | **use-gap補題**: 連続low候補時計は n₂−n₁ ≥ √(6n₁)(1−o(1))、よって \|U∩[0,N]\| = O(√N)（実測のm^(−1/2)減衰と同指数） |
-| 2026-09-01 | `SURVIVED` | burst_schedule_sim.py 等5script | 抽象自己供給スケジュールは稠密seed・mod-3 ladder・混合格子いずれでも構成失敗（floor保護挿入~0.13/clockが減衰しない）。倍化格子整合は成立するが中間additionの供給が大域的に破綻。a ≤ upperTri n は一度もbindしない——障害は抽象モデル内部 |
+| 2026-09-01 | `OBSERVED` | `periodic_nogo_check.py`の記録のみ | eventually-periodic no-goはexact statementと検査scriptがrepositoryになく再現不能。Lean-ready / `PROVED-PAPER`の判定を取り下げ |
+| 2026-09-01 | `REFUTED` | `SeededUseGapCounterexample`, `USE_GAP_AUDIT_2026-09-01.md` | **local use-gap読みは偽**: exact `Basic.step` seedで`m=120`, `n=141`, 中間candidateは全てclockより上、両useは3-addition burstを持つが`21² < 6·120` |
+| 2026-09-01 | `PROVED-PAPER` | `USE_GAP_AUDIT_2026-09-01.md` | 反例族`m=q²+2q`, word `A^(q+1)S^q`, gap `2q+1`は`gap²/m → 4`。`sqrt(6m)`に必要だったのは未仮定の「addition run長≤3」 |
+| 2026-09-01 | `COMPUTED` | `use_gap_counterexample 3 100`; `101 10000` | discovery 98例・holdout 9,900例がexact greedy continuationを通過。最終比`gap²/m=3.999600090` |
+| 2026-09-01 | `OBSERVED` | 未収録の`burst_schedule_sim.py`等5scriptによる旧記録 | 稠密seed・mod-3 ladder・混合格子の構成失敗は再現artifactがないため観測扱いに限定 |
+| 2026-09-01 | `PROVED-LEAN` | `RecurringCandidateDemandBirth` | rigid需要`c+m`の初出をlegal subtraction birth／addition birthへ分類。late addition枝は`target+2(t+1)<c+m`のstrict contractionを持つ |
+| 2026-09-01 | `PROVED-LEAN` | `PeriodicCandidateNoGo` | balanced周期の全cyclic phase drift総和は`-p²`、従って負drift phaseが存在 |
+| 2026-09-01 | `PROVED-PAPER` | `PERIODIC_CANDIDATE_NOGO_2026-09-01.md` | lower floorを保つeventually-periodic候補walkは正sign-sumとなり全phaseで発散。非周期scheduleは未排除 |
+| 2026-09-01 | `PROVED-LEAN` | `SupplyAncestryCounterexample` | subtraction-born forced use `42`はbirthでlegalへ反転し、相異なる子`151,135`は同じparent `261`へmergeする |
+| 2026-09-01 | `REFUTED` | `SUPPLY_ANCESTRY_AUDIT_2026-09-01.md` | forced supplier ancestryはbranch polarityで非閉包。generic parent ancestryも非単射で、interval支払は既存ledgerへ退化 |
+| 2026-09-01 | `COMPUTED` | `fixed_seed_supply_falsifier 2000000 4096` | 同一seed fingerprint `14161494152507716643`が内部供給されたcandidate 20のcounted useを`94,286,862`の3回まで実現。4回目なし |
 
-## Next targets (repair-compatible refinement)
+## Closed refinement round
 
-1. （Lean-ready）**periodic no-go**: 「eventually periodicなcorridor scheduleでliminf有限のものは
-   存在しない」。純粋なstep-law算術で、既存ledger機構で形式化可能な見込み。
-2. **use-gap補題**の形式化: use集合のO(√N)密度は、burst streamのper-use需要に対する
-   初の非自由な定量拘束である。
-3. 抽象モデル内部の障害が幾何cadence（drift-and-reset）にも及ぶかの判定。及ぶなら本予想は
-   canonical固有事実なしで証明可能（カードの想定より強い結果）になる。
+1. **単一有限seedの大域自己供給deficit**は`H-20260901-02`としてexact化したが、許可した一回の
+   subtraction-source分解は非閉包・非単射・no-strict-driftで停止条件に到達した。
+2. **periodic no-go**は再現script・紙上証明・Lean有限核を収録した。これは非周期的な
+   drift-and-reset scheduleを排除しない。
+3. local `sqrt(6m)` use-gapもfixed-seed ancestry/driftも`STOPPED`。同じpayloadの再包装は行わない。
 
 ## Semantic audit
 
@@ -76,9 +83,16 @@
 - Could it be proved from weaker assumptions?: 「いずれw超え」型の結論を含まないこと（自由事実の罠）。
 - Omitted provenance risk: (iii)の一般着地は`d`-walkが`c+m`を踏むことと同値であり、
   「別の値の再訪」への再帰として定式化しないと循環する。
+- Failed semantic implication: `recurringCandidate_addition_burst`は「少なくとも3連」であり
+  「ちょうど3連」ではない。`sqrt(6m)`の導出はこの逆を暗黙に使っていた。
 
 ## Decision
 
-- Continue / formalize / refute / stop: `CONTINUE`（次エポックの最優先紙上課題）
-- Reason: A枝の残余2点のうち唯一、構造が完全にLean化済みで攻撃面が確定している。
-- Reopen only if: —
+- Continue / formalize / refute / stop: この研究カードは`STOPPED`。main supply命題そのものは
+  反証されず`CONJECTURED`のまま。
+- Reason: 許可した唯一の修理であるsource splitはaddition枝にstrict contractionを与えたが、
+  subtraction枝はforced supplier classを保存せず、generic ancestryはmergeし、use streamには
+  密度下界がない。従って需要・供給は同じ線形orderのままである。
+- Reopen only if: target occurrence、future return、canonical reachabilityを仮定せず、
+  external blocker debt `E` と必要fresh subtraction `S`の間にcutoff-independentなstrict deficit、
+  またはreuse intervalの非merge質量を与える独立不変量が得られたとき。

@@ -357,3 +357,50 @@ step語の局所理論はこれで完結した: **局所禁止則 = ループ閉
 
 カード`H-20260901-01`は本ラウンドを生き延び、次の標的は (1) periodic no-goのLean化、
 (2) use-gap補題の形式化、(3) drift-and-reset型幾何cadenceの判定、へ更新された。
+
+## 15. 追記: use-gapの再現性・意味監査
+
+結論から言うと、§14の`sqrt(6n)` use-gapのlocal読みは`REFUTED`である。
+`RecurringCandidateBurst`が与えるのは加算run長`>=3`であり`=3`ではない。旧導出は
+暗黙にそれ以上のadditionを禁止していた。
+
+exact seeded `Basic.step`反例を`SeededUseGapCounterexample`に認証した。clock `m=120`で
+candidate 10にlegal subtractionで入り、`A^11 S^10`を実行してclock `n=141`で
+candidate 10へ戻る。中間candidateは全て自分のclockよりstrict highで、後端も
+3-addition burstを持つが、`(n-m)^2=441<720=6m`である。
+
+さらに紙上族`m=q^2+2q`, word `A^(q+1)S^q`, gap `2q+1`はcandidate floorを
+保って同candidateへ戻り、`gap^2/m -> 4`。exact probeはdiscovery `q=3..100`と
+holdout `q=101..10000`を全通過した。これはclockごとに有限seedを選べるlocal反例であり、
+単一有限seedからの無限自己供給を反証しない。従ってH-20260901-01本体は
+`CONJECTURED`のままだが、local use-gapは`STOPPED`、次の許された修理は「単一有限seedの
+global self-supply deficit」だけである。
+
+また§14のperiodic no-goは、記載された`periodic_nogo_check.py`、exact statement、
+紙上証明のいずれもrepositoryに残っていない。再現できないため`PROVED-PAPER`を取り下げ、
+現時点では`OBSERVED`とする。詳細は`USE_GAP_AUDIT_2026-09-01.md`。
+
+## 16. 追記: fixed-seed global supply並列監査
+
+§15で残した一回限りの修理を`H-20260901-02`へexact化し、需要birth formalizer、fixed-seed
+falsifier、ancestry auditor、periodic finite-core formalizerを独立に走らせた。
+
+`RecurringCandidateDemandBirth`はrigid需要`c+m`の初出をlegal subtraction／additionへ分類し、
+late addition枝に`target+2(t+1)<c+m`を与える。一方、subtraction枝の`CanSubtract(t+1)`は
+recursive forced supplierに必要な否定と逆である。`SupplyAncestryCounterexample`は、42の
+forced reuseがlegal birthへ戻ることと、distinct children 151/135がparent 261へmergeすることを
+canonical prefixでLean認証した。従ってclosed ancestryとgeneric parent injectionは`REFUTED`。
+
+固定seed falsifierはfingerprint `14161494152507716643`の同一stateからcandidate 20を
+clocks 94/286/862の3回まで内部供給した。需要114/306/882はclocks 47/96/288でseed後に初出し、
+各linkはexact greedy replayでstrict highである。unchanged seedをclock 1,000,000まで延長しても
+4回目はなかった。この結果は`COMPUTED`であり、有限3-use deficitだけを棄却する。
+
+periodic no-goはexact statementとcheckerを再構成し、balanced全cyclic phase drift総和`-p²`と
+負phase存在を`PeriodicCandidateNoGo`でLean化した。full eventually-periodic no-goは
+`PROVED-PAPER`へ復帰するが、非周期scheduleは未排除である。
+
+以上よりH-20260901-01/02のexact infinite命題は`CONJECTURED`のまま、許可済みの
+ancestry/drift proof branchは停止条件に到達して`STOPPED`。再開条件はexternal blocker集合`E`と
+future fresh subtraction集合`S`のcutoff-independent debt/collision不等式、または独立canonical
+invariantである。詳細は`GLOBAL_SUPPLY_PARALLEL_ROUND_2026-09-01.md`。

@@ -6,8 +6,9 @@ Base: `Recaman/TargetTailResidualKernel.lean` (A/B kernel), `docs/TWO_HOUR_RESEA
 A mid-task course correction from the coordinator (strip freezing is free; refocus Q-B on blocker
 births) is incorporated throughout; Section 2 records the verification of that correction.
 
-Notation. `d m := nextSubtractionCandidate m = a m - (m+1)` (`Recaman/TargetCandidateTransitions.lean:22`).
-Step law (`Recaman/Basic.lean:48`): subtraction iff `m+1 < a m ∧ d m ∉ valuesThrough m`, giving
+Notation. `d m := nextSubtractionCandidate m = a m - (m+1)`（現在のdefinition ownerは
+`Recaman/Basic.lean`。当初は`TargetCandidateTransitions.lean`に置かれていた）。
+Step law (`Recaman/Basic.lean`): subtraction iff `m+1 < a m ∧ d m ∉ valuesThrough m`, giving
 `a (m+1) = d m` (a fresh first occurrence, `firstAt_succ_of_canSubtract`,
 `Recaman/ActualDescent.lean:43`); otherwise `a (m+1) = a m + (m+1)`.
 Candidate walk: addition ⟹ `d (m+1) = d m + m`; subtraction ⟹ `d (m+1) = d m - (m+2)`.

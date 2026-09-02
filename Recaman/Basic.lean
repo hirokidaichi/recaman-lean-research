@@ -39,6 +39,10 @@ def stateAt : Nat → State
 /-- The usual Recamán sequence. -/
 def a (n : Nat) : Nat := (stateAt n).value
 
+/-- The subtraction candidate presented at the transition after time `n`. -/
+def nextSubtractionCandidate (n : Nat) : Nat :=
+  a n - (n + 1)
+
 /-- The values a₀ through aₙ, in reverse chronological order. -/
 def valuesThrough (n : Nat) : List Nat := (stateAt n).seen
 

@@ -1125,6 +1125,13 @@ import Recaman
 #print axioms Recaman.recurringCandidate_second_forcedAddition
 #print axioms Recaman.recurringCandidate_addition_burst
 #print axioms Recaman.EventualHighCandidateTail.missingUnbounded_or_burstStream
+#print axioms Recaman.corridor_recurringCandidate_demand_birth_classified
+#print axioms Recaman.corridor_recurringCandidate_late_demand_birth
+#print axioms Recaman.balanced_periodRotations_drift_sum
+#print axioms Recaman.balanced_periodRotations_has_negative
+#print axioms Recaman.seededUseGap_local_counterexample
+#print axioms Recaman.subtractionBorn_42_forcedReuse_counterexample
+#print axioms Recaman.subtractionBorn_sharedParent_counterexample
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

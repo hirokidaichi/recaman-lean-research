@@ -18,10 +18,6 @@ rule needed by the target-level charging approach.  The optional repayment
 branch is exactly the existing `CombStep` interface.
 -/
 
-/-- The subtraction candidate presented by the transition after time `n`. -/
-def nextSubtractionCandidate (n : Nat) : Nat :=
-  a n - (n + 1)
-
 /-- A target-low candidate places its entry inside the sharp target-clock
 cone.  This small inequality is exactly what excludes ungated singleton
 comb counterexamples whose entries sit too far above their clocks. -/
