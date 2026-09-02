@@ -92,6 +92,7 @@ premise.
 | 2026-09-02 | `REFUTED` | same command | `H-W`, `H-S`, `H-A` all fail inside the discovery range. First witnesses: `H-S` at `m=112, c=39, w=151, t=110` and `m=132, c=3, w=135, t=126`; `H-A` at `m=5, c=1, w=6, b=3`. |
 | 2026-09-02 | `COMPUTED` | frozen `window_demand_provenance_probe 20000000` | 2,987 low and 1,811 high supplied uses in 25 windows. 17 applicable windows, all collision-free. 1,533 near-diagonal subtraction births, 732 truncated addition births. Window `[2^23, 2^24)`: 733 low uses, 449 subtraction-born of which 401 near-diagonal, 75 blocked and 209 truncated addition-born. |
 | 2026-09-02 | `PROVED-LEAN` (cross-check) | `SupplyAncestryCounterexample` | The first two `H-S` witnesses are the kernel-certified first occurrences `FirstAt a 151 110` and `FirstAt a 135 126`. |
+| 2026-09-02 | `PROVED-LEAN` | `DemandProvenanceCounterexample` | The first `H-A` witness (`m=5`, demand `6` born by the truncated addition at clock `3`) and the first `H-S` witness (`m=112`, demand `151` born by the legal subtraction at clock `110`) are kernel-certified as low supplied uses with the stated births. |
 
 The discovery output is deterministic; its SHA-256 is
 `4e9e46539e16e258682974ac719c9475f9ac118b46d7f5a896c7a3aaee80a57f`.

@@ -8,6 +8,8 @@
 - 20Mまで適用window 17件すべてで`E ∩ S = ∅`。collision型のdebt設計は同一candidate形・集約形とも閉鎖
 - 減算初出需要はnear-diagonal（`2t ≥ w`）が多数派、加算初出需要はtruncated birthが約3割であることを
   `COMPUTED`として記録し、`CURRENT_FRONTIER.md`の再開条件1・3を更新（registry `E-016`, `E-017`）
+- 最小証人（clock 5のtruncated加算初出、clock 112のnear-diagonal減算初出）を
+  `DemandProvenanceCounterexample`でkernel認証（registry `E-018`）。247モジュール、249 jobs
 
 ## External blocker collision epoch — 2026-09-02
 

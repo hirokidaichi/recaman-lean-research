@@ -2860,3 +2860,27 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/window_demand_pr
 bash scripts/check_research_registry.sh        # 17 entries; 5 PROVED-LEAN rows
 lake build --no-build                          # 248 jobs up-to-date
 ```
+
+### 第百十九ラウンド：supplied-demand provenance反例のkernel認証
+
+第百十八ラウンドでprobeが返したH-A／H-Sの最初の証人を`DemandProvenanceCounterexample`として
+Lean化した。`truncatedBirth_suppliedDemand_counterexample`は、clock 5の低supplied use
+（`a 5 = 7`、candidate 1、forced addition、需要`a 5 - 1 = 6 ∈ valuesThrough 5`）の需要6が
+clock 3のtruncated加算（`nextSubtractionCandidate 2 = 0`）で初出し`6 ≤ 2·3`であることを、
+`nearDiagonalBirth_suppliedDemand_counterexample`は、clock 112の低supplied use
+（`a 112 = 152`、candidate 39、forced addition、需要151既訪問）の需要151がclock 110のlegal
+subtraction（`a 109 = 261`）で初出し`151 ≤ 2·110`であることを、`FirstAt`証人つきで`decide`により
+認証する。direct importは`History`のみ（contract登録済み）。
+
+これでH-20260902-02の`REFUTED`判定は、probeの`COMPUTED`証拠に加えてkernel認証された最小反例
+（registry `E-018`）を持つ。corridor限定のlate addition contractionがcanonical prefixでは
+成立しないことも同時に確定した。
+
+検証コマンド：
+
+```text
+lake env lean Recaman/DemandProvenanceCounterexample.lean   # 1.1s
+bash scripts/check_module_architecture.sh                   # 246/246 reach; 5 contracts
+bash scripts/check_research_registry.sh                     # 18 entries; 6 PROVED-LEAN rows
+./scripts/check.sh                                          # 249 jobs; 1,138 declarations audited
+```

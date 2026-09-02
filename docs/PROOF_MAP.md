@@ -933,3 +933,12 @@ prefixで、42のforced reuseがlegal subtraction birthへ戻ることと、相�
 fingerprint `14161494152507716643`がcandidate 20をclocks 94/286/862で内部供給したが、clock 1Mまで
 4回目はない（`COMPUTED`）。addition contractionとsubtraction ledgerはstrict driftを作らず、
 H-20260901-01/02の現proof branchは`STOPPED`。exact infinite no-go命題自体は`CONJECTURED`である。
+
+**Round 12の追補2（collision型debt設計の閉鎖）** — `H-20260902-01`（同一candidateの4回use
+collision）は20Mまで母集団が空で`STOPPED`。`H-20260902-02`は低supplied use（forced addition、
+`c ≤ m`、需要`w = a m - 1`既訪問）をdyadic windowへ集約し、`E(W) ∩ S(W) ≠ ∅`、減算初出の`2t < w`、
+加算初出の`2b < w`を凍結したが、3命題ともcanonical 2Mで`REFUTED`（20Mでも適用window 17件すべて
+交わりなし）。`DemandProvenanceCounterexample`は最小証人をkernel認証する：clock 5の需要6は
+candidate 0のtruncated加算（clock 3）で生まれ、clock 112の需要151はclock 110のlegal subtractionで
+生まれる（`151 ≤ 2·110`）。従ってcorridor限定の`corridor_recurringCandidate_late_demand_birth`の
+縮約はcanonical prefixでは成立せず、canonical/seed分離にbirth-clock縮約は使えない。

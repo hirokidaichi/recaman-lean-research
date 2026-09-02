@@ -34,7 +34,7 @@ B枝のreset repaymentも、新しいglobal invariantがないため停止中で
 | A: local use gap | `sqrt(6m)`のlocal読み | `E-012` | `REFUTED`、修理も`STOPPED` |
 | A: external blocker collision | same-candidate H4/H8 test | `E-015` | 20Mまで評価母集団0、設計を`STOPPED` |
 | A: window collision | 異candidate dyadic window集約の`E ∩ S` | `E-016` | 17適用windowすべて交わりなし、`REFUTED` |
-| A: demand provenance | 減算初出はnear-diagonalが多数、加算初出はtruncatedが約3割 | `E-017` | `COMPUTED`、gate 3の制約条件 |
+| A: demand provenance | 減算初出はnear-diagonalが多数、加算初出はtruncatedが約3割 | `E-017`, `E-018` | `COMPUTED`、最小証人は`PROVED-LEAN`。gate 3の制約条件 |
 | B: reset repayment | exact命題は未反証、local bridgeは枯渇 | `E-013` | `STOPPED` |
 | 独立部分定理 | `TailHall₃`候補 | `E-014` | `CONJECTURED`、全射性の直接枝ではない |
 
@@ -116,7 +116,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 246 modules、67,673 lines。
-- `./scripts/check.sh`: 248 jobs、1,136 audited declarations。
+- Lean source 247 modules、67,763 lines。
+- `./scripts/check.sh`: 249 jobs、1,138 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

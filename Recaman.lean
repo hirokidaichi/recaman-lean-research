@@ -235,6 +235,7 @@ import Recaman.RecurringCandidateDemandBirth
 import Recaman.PeriodicCandidateNoGo
 import Recaman.SeededUseGapCounterexample
 import Recaman.SupplyAncestryCounterexample
+import Recaman.DemandProvenanceCounterexample
 import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle

@@ -116,6 +116,10 @@ Window 24 is incomplete because the horizon `20,000,000` lies inside `[2^24, 2^2
   the kernel agree on both clocks.
 - `REFUTED` `H-A`: `732` addition-born demands are truncated births.  The first is
   `a 3 = 6 = 3 + 3` with candidate `0`, later demanded at `m = 5` by candidate `1`.
+- `PROVED-LEAN`: `DemandProvenanceCounterexample` certifies both first witnesses in the kernel
+  (`truncatedBirth_suppliedDemand_counterexample`, `nearDiagonalBirth_suppliedDemand_counterexample`),
+  including the forced addition, the candidate bound `c ≤ m`, the supplied demand `a m - 1`, and
+  the `FirstAt` birth with its clock inequality.
 - `COMPUTED`: per window, subtraction-born demands are roughly 55–65% of low supplied uses,
   and near-diagonal births are roughly 85–90% of those.
 

@@ -27,7 +27,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | L2 semantic dynamics | `Coverage`, `PhaseSearch`, `PermanentAbove*` | target、tail、recovery、semantic domain |
 | L3 residual branches | `TargetCandidateTransitions`, `EventualHighCorridor*`, `TargetStream*` | A/B residualのbranch固有API |
 | L4 frontier results | `RecurringCandidateDemandBirth`, `PeriodicCandidateNoGo` | bounded theorem、finite no-go、composition result |
-| L5 regressions | `SeededUseGapCounterexample`, `SupplyAncestryCounterexample` | exact counterexampleと停止判断の回帰証拠 |
+| L5 regressions | `SeededUseGapCounterexample`, `SupplyAncestryCounterexample`, `DemandProvenanceCounterexample` | exact counterexampleと停止判断の回帰証拠 |
 
 これは既存246 sourceを一括移動するための厳密な型階層ではなく、新しい依存を上向きに増やさないための
 配置規則である。基礎概念が高い層に埋まっている場合は、利用側からさらに高いconsumerをimportして
@@ -44,6 +44,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `PeriodicCandidateNoGo` | なし | Recamán定義に依存しない純粋な有限整数・list恒等式 |
 | `SeededUseGapCounterexample` | `Basic` | arbitrary seed上の`State`、`step`、`CanSubtract`だけを使う |
 | `SupplyAncestryCounterexample` | `History` | canonical prefixの`FirstAt`と履歴membershipだけを使う |
+| `DemandProvenanceCounterexample` | `History` | canonical prefixのsupplied-demand birth証人。`FirstAt`と履歴membershipだけを使う |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。

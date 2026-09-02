@@ -1132,6 +1132,8 @@ import Recaman
 #print axioms Recaman.seededUseGap_local_counterexample
 #print axioms Recaman.subtractionBorn_42_forcedReuse_counterexample
 #print axioms Recaman.subtractionBorn_sharedParent_counterexample
+#print axioms Recaman.truncatedBirth_suppliedDemand_counterexample
+#print axioms Recaman.nearDiagonalBirth_suppliedDemand_counterexample
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

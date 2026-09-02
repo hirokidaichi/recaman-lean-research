@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース246モジュール（67,673行、認証済み深部traceを含む）
+- Leanソース247モジュール（67,763行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -91,8 +91,9 @@ Lean 4形式化プロジェクトです。
 - 2026-09-02のexternal blocker collision unit 2本で、collision型のdebt設計は閉鎖。同一candidateの
   4回use閾値は20Mまで母集団が空（`STOPPED`）、異candidate・dyadic window集約の`E ∩ S`は適用
   window 17件すべてで空（`REFUTED`）。減算初出需要はnear-diagonalが多数派、加算初出需要は
-  truncated birthが約3割で、birth-clock縮約はcanonical/seed分離に使えない
-  （[window demand provenance](docs/WINDOW_DEMAND_PROVENANCE_EPOCH_2026-09-02.md)）
+  truncated birthが約3割で、birth-clock縮約はcanonical/seed分離に使えない。最小証人
+  （m=5のtruncated加算初出、m=112のnear-diagonal減算初出）は`DemandProvenanceCounterexample`で
+  kernel認証（[window demand provenance](docs/WINDOW_DEMAND_PROVENANCE_EPOCH_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定
