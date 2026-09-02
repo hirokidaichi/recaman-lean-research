@@ -1,5 +1,11 @@
 # Changelog
 
+## Run-length simulator to 10^13 — 2026-09-02
+
+- `experiments/run_length_recaman_simulator.cpp`（区間集合＋Chaffin式ping-pong先読み）：10^13を471秒、
+  `plain`と10^10まで同一出力、1355の初出325,374,625,245とmex推移をOEISと一致（registry `E-029`）
+- 2^20未満の遅延着地は1 decadeあたり約2.3分の1に減衰（1e12で30件）。高さ≤1356の時刻は各decade数百〜二千件
+
 ## Landing floor card (T4) — 2026-09-02
 
 - `H-20260902-05` landing floor（ある時刻以降の弧の底は852655を超える）を`CONJECTURED`として凍結（registry `E-028`）。

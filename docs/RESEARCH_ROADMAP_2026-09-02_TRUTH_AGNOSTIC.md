@@ -194,7 +194,7 @@ hypothesis card 化して、まず §4 の計算基盤で `c/n` 則か減衰か�
 | 週 | 内容 | 成果物 |
 |---|---|---|
 | 1 | T1 の Lean 化、registry `E-025` を `PROVED-LEAN` へ | 2 module、frontier 更新 |
-| 1〜2 | run-length シミュレータ（1e9〜1e12）、Chaffin 台帳の解析（済）、T4 のカード化（済: `H-20260902-05`） | chain 統計、`E-027`、`E-028` |
+| 1〜2 | run-length シミュレータ（10^13 まで済: `E-029`）、Chaffin 台帳の解析（済）、T4 のカード化（済: `H-20260902-05`） | chain 統計、`E-027`〜`E-029` |
 | 2〜3 | T2/T3 の Lean 化、剰余類障害の認証 | 2〜3 module |
 | 3〜4 | T4 の紙上攻略（非全射方向: landing floor と帯の未訪問 run の自己相似構造） | card の `PROVED-PAPER`／`STOPPED` |
 | 並行 | T5 の紙上検討 | 構造定理の候補 |

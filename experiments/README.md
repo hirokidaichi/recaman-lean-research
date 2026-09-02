@@ -31,6 +31,8 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/near_diagonal_rate_probe 3000000000            # per-decade near-diagonal census, 25 s
 python3 experiments/chaffin_landing_analysis.py rec-landings-1e612.txt rec-holes-2_32.txt  # Chaffin's tables
 /tmp/landing_depth_probe 0 1000000000                # arc minima (A393814/A393815) and depth quantiles
+/tmp/rlsim 10000000000000 accel                    # run-length orbit to 1e13 in about 8 minutes
+/tmp/rlsim 10000000000 plain                        # step-by-step cross-check, 4 minutes
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
@@ -87,6 +89,8 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/near_diagonal_rate_probe.cpp -o /tmp/near_diagonal_rate_probe
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/landing_depth_probe.cpp -o /tmp/landing_depth_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/run_length_recaman_simulator.cpp -o /tmp/rlsim
 ```
 
 Example runs:

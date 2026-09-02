@@ -3109,3 +3109,17 @@ canonical で A393814/A393815 の先頭 19 件（添字 1, 2, 4, 10, …, 99734�
 「generalized orbit での定常性」の最初の測定として記録した（`docs/data/landing_depth_generalized_3e8_2026-09-02.txt`）。
 Chaffin の台帳では弧の本数が 10^9 の 4 本/decade から 10^19 の 8.5 本/decade へ増えて一定になるため、
 深さ分布の定常性の比較は 10^12 以上（run-length simulator）で続ける。
+
+### 第百三十ラウンド：run-length simulator（10^13）
+
+サブエージェントが`experiments/run_length_recaman_simulator.cpp`を実装した。訪問集合は極大閉区間の
+sorted vector、`accel`モードはChaffinのping-pong区間（descending chain）を先読みで一括適用し、
+census列を閉形式で更新する。親が`-Werror`で再コンパイルし、出力を確認した。`plain`は
+`near_diagonal_rate_probe`（3e9）と共有列が一致、`accel`は`plain`と10^9/3×10^9/10^10で同一出力。
+1355の初出325,374,625,245とmex推移（…→1355→2406）がOEISと一致した。
+
+10^13まで471秒。区間数は1 decadeあたり約2.9倍（10^13で254万）。高さ≤1356のinterior時刻は
+[10^9,10^13)で各decade 452〜2259件あり、[1e9,3e9)の0件は揺らぎだった。帯[1,1024]を掃いたchainは
+1e9: 1本、1e10: 2本、1e11: 5本、1e12: 3本。2^20未満の遅延着地は1e9: 2309、1e10: 972、1e11: 430、
+1e12: 30と約2.3分の1/decadeで減衰し、2^20未満の穴は10^13でほぼ固定されている。
+registry `E-029`。10^14の走行は継続中。
