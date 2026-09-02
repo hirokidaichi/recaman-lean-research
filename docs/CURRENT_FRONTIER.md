@@ -134,6 +134,9 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - `E-032`（`COMPUTED`）: 区間の終端は遅延着地61%・帯の既訪問値39%。帯の未訪問run長は典型的に`n·10^−6`。
 - `E-034`（`PROVED-LEAN`, `PopupLock`）: pop-up後に `2c+v+2` が既訪問なら `k=3/4` に固定され、その間 clock 未満の値は
   訪問されず、`k=2` 候補は弧自身の直前の `k=2` 値である。arc trace の終端機構の局所部分は全て Lean 化された。
+- `E-035`（`PROVED-LEAN`, `LevelTwoThree`）: pop-up後に `2c+v+2` が未訪問なら `k=2` へ戻り、`k=2/3` ping-pong は
+  1対ごとに offset が5減り、K対後の `k=1` への出口では位置エネルギー（値+時刻）が `2m+s−K`、すなわち
+  段の直前より `K−1` 低い。Φ を下げる唯一の局所機構が Lean 化された。
 - `E-033`（`COMPUTED`, arc trace 10^10）: 弧の底は最後の遅延着地であり、深い弧はcomb末端で
   `2c+v+2` が既訪問のとき `k=3/4` に固定されて終わる（6/6）。その値は同じ弧が少し前に `k=2` 値として
   訪問していた。弧の終端は位置エネルギー `Φ = 時刻+値` の走行最大値からの落差で記述できる。
@@ -173,7 +176,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 251 modules、68,482 lines。
-- `./scripts/check.sh`: 253 jobs、1,160 audited declarations。
+- Lean source 252 modules、68,625 lines。
+- `./scripts/check.sh`: 254 jobs、1,165 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

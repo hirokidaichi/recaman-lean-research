@@ -7,6 +7,8 @@
   （registry `E-033`）
 - landing floor を「`Φ=2·時刻+高さ` の走行最大値からの落差が3に達する高さの法則」に言い換え、カードを更新
 - `PopupLock`：k=3/4 固定（入口、反復、clock 以上、自身の k=2 値）を Lean 化（registry `E-034`）
+- `LevelTwoThree`：pop-up 後の k=2 復帰と k=2/3 ping-pong（offset −5/対、出口の位置エネルギー `2m+s−K`）を
+  Lean 化（registry `E-035`）
 
 ## Hole hopping (Lean) and closure census — 2026-09-02
 

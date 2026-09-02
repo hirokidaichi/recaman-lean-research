@@ -49,6 +49,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `DescendingChain` | `History` | step recurrenceと履歴membershipだけを使うchain補題 |
 | `HoleHopping` | `DescendingChain` | chain補題だけから導くhole-hopping規則とcomb sweep |
 | `PopupLock` | `HoleHopping` | pop-up後のk=3/4固定：入口、1対、反復、clock以上の値のみ、自身のk=2値との同一視 |
+| `LevelTwoThree` | `PopupLock` | pop-up後にk=2へ戻る場合、k=2→1の復帰、k=2/3 ping-pongの反復と出口の位置エネルギー |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。

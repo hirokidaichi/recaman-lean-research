@@ -3174,3 +3174,14 @@ comb 末端での固定は「`Φ` が走行最大値から 3 以上下がって�
 `level34_pair`、`level34_lock`（1対ごとに k=3 offset が 5 減る）、`level34_lock_above_clock`、
 `prelanding_upper_values`（k=2 候補 `2i+v+2−j` は着地前の chain の加算値）。サブエージェントが
 初回で通し、親が再検証した。registry `E-034`。
+
+### 第百三十五ラウンド：k=2/3 段の Lean 化（LevelTwoThree、E-035）
+
+`LevelTwoThree`（direct import `PopupLock`）：`popup_return_level_two`（pop-up 後に `2c+v+2` が未訪問なら
+着地して `k=2`）、`level2_to_level1`、`level23_pair`、`level23_phase`（offset −5/対）、`level23_exit`
+（K 対後の出口の位置エネルギー `value+clock = 2m+s−K`）。サブエージェントは依頼文の出口の式
+`2m+s−1−K` が偽であること（`a 7 = 20`, `K=0` で 20 ≠ 19）を見つけて `2m+s−K` に訂正した。
+段の直前の `k=1` 時刻（高さ `s+1`、Φ `= 2m+s−1`）と比べると出口の Φ は `1−K`、すなわち
+K 対の段で Φ は `K−1` 下がる。これが Φ を下げる唯一の局所機構であり、arc trace の
+「comb 末端で `2c+v+2` 既訪問」による固定と合わせて、弧の底の特徴づけの全ての局所部品が
+Lean 化された。

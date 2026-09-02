@@ -1156,6 +1156,11 @@ import Recaman
 #print axioms Recaman.level34_lock
 #print axioms Recaman.level34_lock_above_clock
 #print axioms Recaman.prelanding_upper_values
+#print axioms Recaman.popup_return_level_two
+#print axioms Recaman.level2_to_level1
+#print axioms Recaman.level23_pair
+#print axioms Recaman.level23_phase
+#print axioms Recaman.level23_exit
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

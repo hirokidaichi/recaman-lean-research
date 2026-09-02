@@ -89,6 +89,7 @@ landing floor は「`Φ` の落差が 3 に達する高さは 852656 を下回�
 | 2026-09-02 | `COMPUTED` | Chaffin 台帳、`chaffin_landing_analysis.py` | 弧は 8.45 本/decade で一定、深さ `D` は定常、10^41 以降 10^7 未満の着地なし。経験分布の外挿で 852655 の将来の着地期待回数は 10^612 以降 ≈ 10^-9。 |
 | 2026-09-02 | `COMPUTED` | `landing_depth_probe v0 300000000`（v0 = 0, 1, 2, 3, 5, …, 10000 の 27 本） | 弧の底の検出は canonical で A393814/A393815 の先頭 19 件と一致。3×10^8 まで、全ての generalized orbit で弧は各 decade 4 本、深さ `D` の中央値 2.3〜3.3、90% 点 3.6〜5.3 で canonical（2.53、3.61）と同程度。深さ分布は `initial` 固有ではない。 |
 | 2026-09-02 | `COMPUTED` | `run_length_recaman_simulator 10000000000000 accel`（`E-029`） | 1355 の初出 325,374,625,245 と mex 推移が OEIS と一致。2^20 未満の遅延着地は 1e9: 2309、1e10: 972、1e11: 430、1e12: 30 と減衰。 |
+| 2026-09-02 | `PROVED-LEAN` | `LevelTwoThree`（`E-035`） | pop-up 後の k=2 復帰、k=2/3 ping-pong（offset −5/対）、出口の位置エネルギー `2m+s−K`（段の直前より `K−1` 低い）：Φ が下がる唯一の局所機構。 |
 | 2026-09-02 | `PROVED-LEAN` | `PopupLock`（`E-034`） | k=3/4 固定の入口・反復・clock 以上・自身の k=2 値との同一視。arc trace の終端機構（`E-033`）の局所部分。 |
 | 2026-09-02 | `COMPUTED` | arc trace（`E-033`） | 深い弧 6 本の底はすべて「comb 末端で `2c+v+2` 既訪問 → 固定 → 剰余尽き」。`2c+v+2` は同じ弧の過去の k=2 値。 |
 | 2026-09-02 | `PROVED-LEAN` | `HoleHopping` | chainは自クラスの最初の穴に着地（`chain_lands_first_fresh`）、着地後は連続する穴を掃く（`comb_sweep`）、他クラスの穴は提示されない。 |
