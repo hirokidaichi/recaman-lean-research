@@ -106,6 +106,21 @@ reachabilityなしに有限化するglobal invariantが必要である。
 いずれも、exact statement、acceptance test、frozen falsifier、stopping conditionを持つ
 hypothesis cardが作られるまでactive branchへ昇格しない。
 
+## 2026-09-02 午前の方針転換（真偽を問わない証明計画）
+
+全射性が偽でもよいという方針のもとで、
+[`RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md`](RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)
+を作成した。要点は次の通り。
+
+- `E-024`（`COMPUTED`, canonical 3e9）: sub-diagonal着地は28.6%で安定し、A枝の無限corridorは
+  経験的に全targetで偽である。小さな高さはdescending chain（2時刻で高さ3減、既存のcomb）でしか
+  現れず、[1e8,1e9)の47件は1本のchainだった。mex 1355はchainの剰余類（mod 3）が合わず着地できない。
+- `E-025`（`PROVED-PAPER`）: 二分定理D「無限個のnで`a n ≤ n+2`、または未訪問整数の下密度≥1/4」。
+  A枝は密度1/4の欠損を含意する。Lean化がT1。
+- 両方向の証明はchainの侵入率・生存の定量定理（T4）に帰着する。侵入率が`c/n`なら全射、
+  `n^{-1-ε}`なら非全射が見立てで、3e9では区別できない。run-length simulatorで1e12以上を見る。
+- 上の分岐表と再開条件は歴史的記録として残し、優先順位はロードマップのT1〜T5に従う。
+
 ## 文書の役割
 
 | 文書 | 役割 | 更新規則 |

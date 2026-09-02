@@ -105,6 +105,10 @@ Lean 4形式化プロジェクトです。
 - 理由の診断：burst use後のstrict-high excursionは全1.25M件で倍化clock前に崩れ、cone-exterior runは
   2倍のclockへ届かない（独立部分命題として`CONJECTURED`）。このexcursion boundはcone-exterior条件に
   依存し、corridor streamは排除しない（[cone excursion census](docs/CONE_EXCURSION_CENSUS_2026-09-02.md)）
+- 方針転換（真偽を問わない）：canonical 3e9でsub-diagonal着地は28.6%で安定し、A枝のcorridorは
+  経験的に全targetで偽。遅延着地はdescending chain（2時刻で高さ3減）だけで起こり、mex 1355は
+  剰余類（mod 3）が合わず凍結している。紙上の二分定理D「`a n ≤ n+2`が無限回、または欠損の下密度≥1/4」
+  を`PROVED-PAPER`として登録（[roadmap](docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定
@@ -523,6 +527,7 @@ flowchart TD
 ## 文書
 
 - [current frontier](docs/CURRENT_FRONTIER.md) — 現在のbranch status、未証明義務、再開gateの正本
+- [truth-agnostic roadmap](docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md) — 全射性の真偽を問わない証明計画（二分定理D、chain補題、侵入率判定）
 - [evidence registry](docs/EVIDENCE_REGISTRY.tsv) — frontier-changing claim、証拠label、Audit定理の正本
 - [研究結果レポート](docs/RESEARCH_REPORT.md) — 2026-08-28時点の問題設定・主要成果snapshot
 - [証明地図](docs/PROOF_MAP.md) — 定理依存と過去の到達経路

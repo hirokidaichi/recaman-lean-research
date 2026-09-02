@@ -28,6 +28,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/generalized_orbit_supply_probe 0 1000 100000     # preload-free orbits, discovery
 /tmp/generalized_orbit_supply_probe 0 1000 100000 1   # same, corridor-faithful c-floor links
 /tmp/cone_excursion_probe 0 1000 100000              # breaker and cone-exterior run census
+/tmp/near_diagonal_rate_probe 3000000000            # per-decade near-diagonal census, 25 s
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
@@ -80,6 +81,8 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   -o /tmp/generalized_orbit_supply_probe
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/cone_excursion_probe.cpp -o /tmp/cone_excursion_probe
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/near_diagonal_rate_probe.cpp -o /tmp/near_diagonal_rate_probe
 ```
 
 Example runs:

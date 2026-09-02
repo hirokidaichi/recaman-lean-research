@@ -1,5 +1,13 @@
 # Changelog
 
+## Truth-agnostic roadmap and near-diagonal census — 2026-09-02
+
+- `experiments/near_diagonal_rate_probe.cpp`: canonical 3e9でsub-diagonal 28.6%、未訪問≤n約51%、
+  高さ≤1356の時刻が[1e9,3e9)で0件、[1e8,1e9)の47件は1本のdescending chain（registry `E-024`）
+- 二分定理D「`a n ≤ n+2`が無限回、または未訪問整数の下密度≥1/4」を紙上証明（`E-025`, `PROVED-PAPER`）。
+  A枝は密度1/4の欠損を含意し、経験的には消える
+- `docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md`：T1〜T5とrun-length simulatorの工程を固定
+
 ## Corridor-faithful link condition — 2026-09-02
 
 - `generalized_orbit_supply_probe`にc-floor mode（第4引数`1`：use間の中間candidateが全て`≥ c`）を追加。

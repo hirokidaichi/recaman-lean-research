@@ -929,6 +929,13 @@ birthを真に抑える independently testable global invariant である。
    `E-023`のexcursion boundだけがcone-exterior条件に依存し、corridor streamを排除しない。
    固定seed探索のc-floor形はまだ行っていない。
 
+## 2026-09-02 午前の方針転換
+
+全射性が偽でもよいという方針で、真偽を問わない証明計画を
+[`RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md`](RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)
+に固定した。二分定理D（`E-025`）のLean化を最初の作業とし、chainの侵入率判定（run-length
+simulator）で証明の方向を決める。以降の優先順位はこの文書のT1〜T5に従う。
+
 ## 並行して行う保守
 
 - 一つの数学概念を一つの下位モジュールへ置く。

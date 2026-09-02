@@ -2987,3 +2987,29 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/generalized_orbi
 /tmp/generalized_orbit_supply_probe 1001 2000 100000 1  # c-floor holdout,   SHA-256 a47871ba...
 bash scripts/check_research_registry.sh                 # 23 entries; 6 PROVED-LEAN rows
 ```
+
+### 第百二十四ラウンド：真偽を問わないロードマップと対角線近傍census
+
+「全射性が偽でもよい」という方針転換を受け、`near_diagonal_rate_probe`でcanonical 3e9の
+対角線近傍統計を取った（`E-024`）。sub-diagonal着地28.6%、interior 64.6%、時刻nで未訪問の値≤nが
+約51%でいずれも安定。高さ≤1356のinterior時刻は1e7まで各decade約1000件だが[1e8,1e9)で47件、
+[1e9,3e9)で0件。47件は高さ1355から1217へ2時刻ごとに3減る1本のchainで、B枝のcomb機構が
+そのまま実軌道の遅延着地機構であることがexactに確認された。chainの小さなcandidateはmod 3の
+1剰余類しか走らず、mex 1355（高さ1356、`≡0 mod 3`が必要）はこのchainでは着地できない。
+
+紙上で二分定理D（`E-025`, `PROVED-PAPER`）を得た：無限個のnで`a n ≤ n+2`、または未訪問整数の
+下密度≥1/4。証明は孤立補題（interior時刻の次はexterior）、凍結補題、`valuesThrough_length`による
+計数の3段で、A枝は密度1/4の欠損を含意する。データは第一の選択肢側であり、A枝のsupply系解析は
+実在しない対象を扱っていたことになる。
+
+ロードマップ`RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md`に、T1（DのLean化）、T2（chain補題）、
+T3（遅延着地の特徴づけ）、T4（chain侵入・生存の定量定理、真偽を決める本丸）、T5（非全射なら
+欠損無限個）と、run-length simulatorによる1e12以上の侵入率判定を固定した。
+
+検証コマンド：
+
+```text
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/near_diagonal_rate_probe.cpp -o /tmp/near_diagonal_rate_probe
+/tmp/near_diagonal_rate_probe 3000000000   # 25秒、docs/NEAR_DIAGONAL_CENSUS_3E9_2026-09-02.txt
+bash scripts/check_research_registry.sh    # 25 entries; 6 PROVED-LEAN rows
+```
