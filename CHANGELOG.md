@@ -1,5 +1,11 @@
 # Changelog
 
+## Chaffin landing analysis — 2026-09-02
+
+- Chaffinの10^612項台帳（5,104件の弧の底）と2^32未満の穴（1,277,400個）を`experiments/chaffin_landing_analysis.py`で
+  集計（registry `E-027`）。弧は1 decadeあたり8.45本で一定、深さ比の裾は急峻、10^41以降10^7未満の着地なし
+- 真偽の見立てを非全射側へ更新し、T4を「landing floor（chainの生存長の自己相似構造）」の証明に書き換え
+
 ## Descending chain lemmas (T2/T3) — 2026-09-02
 
 - `DescendingChain`：強制加算、帯への着地（高さ`h−3`）、上方脱出、遅延着地、k段降下`chain_descends`、

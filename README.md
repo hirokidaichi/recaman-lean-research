@@ -114,6 +114,9 @@ Lean 4形式化プロジェクトです。
 - descending chain（Chaffinのping-pong区間と同じ機構）をLean化（`DescendingChain`）：強制加算、帯への着地で
   高さ`h−3`、k段降下、小candidateのmod 3剰余類、上方脱出／遅延着地の2出口、
   遅延着地の同値条件`late_landing_iff`
+- Chaffinの10^612項台帳（弧の底5,104件、2^32未満の穴1,277,400個）を解析：弧は1 decadeあたり8.45本で
+  一定だが深さ比の裾は急峻で、10^41以降10^7未満の着地はない。852655は10^612項まで欠損、1355の初出は
+  第3.25×10^11項。見立ては非全射側（[analysis](docs/CHAFFIN_LANDING_ANALYSIS_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

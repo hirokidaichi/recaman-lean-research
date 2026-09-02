@@ -3068,3 +3068,18 @@ bash scripts/check_module_architecture.sh    # 248/248 reach; 7 contracts
 bash scripts/check_research_registry.sh      # 26 entries; 8 PROVED-LEAN rows
 ./scripts/check.sh                           # 1,149 declarations audited
 ```
+
+### 第百二十七ラウンド：Chaffinの10^612項台帳の解析（E-027）
+
+OEIS A005132/A057167/A064227/A393814/A393815とChaffinのページから、852655が10^612項まで欠損、
+1355の初出が第325,374,625,245項、Chaffinのping-pong区間がdescending chainと同一機構であることを
+確認した。`rec-landings-1e612.txt`（5,104件の弧の底）と`rec-holes-2_32.txt`（10^612項後の2^32未満の穴）を
+`experiments/chaffin_landing_analysis.py`で集計した（出力は`docs/data/`）。
+
+弧の本数は600 decadeにわたり1 decadeあたり8.45本で一定だが、深さ比`r=(log n−log v)/log n`は
+中央値0.027・99%点0.34・最大0.85で、10^41以降は10^7未満の着地が一度もない。穴は1,277,400個で
+`1007255+3k`の等差列を含み、`chain_small_candidate_mod_three`の実軌道での痕跡である。
+
+判断：真偽の見立ては非全射側へ。T4を「弧の発生率」から「弧の深さ＝chainの生存長が帯の未訪問run長で
+決まる自己相似構造」の証明（landing floor ⇒ 852655の永久欠損）へ書き換えた。ロードマップ§2・§4・T4、
+frontier、registry `E-027`を更新。

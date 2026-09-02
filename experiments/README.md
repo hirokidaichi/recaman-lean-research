@@ -29,6 +29,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
 /tmp/generalized_orbit_supply_probe 0 1000 100000 1   # same, corridor-faithful c-floor links
 /tmp/cone_excursion_probe 0 1000 100000              # breaker and cone-exterior run census
 /tmp/near_diagonal_rate_probe 3000000000            # per-decade near-diagonal census, 25 s
+python3 experiments/chaffin_landing_analysis.py rec-landings-1e612.txt rec-holes-2_32.txt  # Chaffin's tables
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
   -o /tmp/balanced_trace_source_generator
