@@ -1,0 +1,142 @@
+arc-potential-probe horizon=10000000000 elapsed=228.474s intervals=105347 mex=1355 finalValue=16705983634
+checkpoint(first 19 landings) PASS
+first landings: 1=1 2=3 4=2 10=11 16=8 31=14 64=26 131=4 222=47 403=92 770=111 1409=181 2652=150 4825=371 9078=361 16773=781 30768=828 56827=366 99734=19
+completed arcs=39
+verification: a(c+3)=3c+v+6 checked=44422 mismatches=0; step c+4 is addition <=> blocked checked=44422 mismatches=0
+
+comb ends resolved (completed arcs): total=44422 blocked=19738 dropUndefined=1 (blocked 0) dropNegative=0 (blocked 0)
+depth class: 0: 10v>=c, 1: 10v<c<=100v, 2: 100v<c<=1000v, 3: 1000v<c
+
+(i) blocked x continued (continued = the arc has a later late landing); columns: all | class0 class1 class2 class3
+  blocked & continued      = 19717 | 11893 6580 1054 190
+  blocked & not continued  = 21 | 0 2 6 13  (arc ended before c+4: 0)
+  fresh & continued        = 24669 | 21700 2638 268 63
+  fresh & not continued    = 15 | 8 4 2 1  (arc ended before c+4: 2)
+
+(ii) blocked x drop>=3 (defined, nonnegative drops only); columns: all | class0 class1 class2 class3
+  blocked & drop>=3  = 19420 | 11596 6562 1059 203
+  blocked & drop<3   = 318 | 297 20 1 0
+  fresh & drop>=3    = 2745 | 1145 1320 219 61
+  fresh & drop<3     = 21938 | 20562 1322 51 3
+(ii') blocked x drop>=2 (all classes):
+  blocked & drop>=2 = 19421  blocked & drop<2 = 317  fresh & drop>=2 = 2745  fresh & drop<2 = 21938
+
+blocked comb ends with drop < 3 (or undefined): count=318; first 20 (arc, c, v, class, drop, test=2c+v+2, arcStart):
+  arc=20 c=144897 v=51107 class=0 drop=0 test=340903 arcStart=99742
+  arc=21 c=250024 v=109636 class=0 drop=0 test=609686 arcStart=181694
+  arc=22 c=572779 v=28716 class=1 drop=0 test=1174276 arcStart=328256
+  arc=23 c=999644 v=57842 class=1 drop=0 test=2057132 arcStart=589933
+  arc=23 c=999824 v=57540 class=1 drop=0 test=2057190 arcStart=589933
+  arc=23 c=1008266 v=45415 class=1 drop=0 test=2061949 arcStart=589933
+  arc=23 c=1020130 v=27495 class=1 drop=0 test=2067757 arcStart=589933
+  arc=24 c=1567529 v=349831 class=0 drop=0 test=3484891 arcStart=1034839
+  arc=25 c=2815176 v=616108 class=0 drop=0 test=6246462 arcStart=1788538
+  arc=25 c=2886558 v=522483 class=0 drop=0 test=6295601 arcStart=1788538
+  arc=25 c=2896294 v=511135 class=0 drop=0 test=6303725 arcStart=1788538
+  arc=25 c=2926318 v=475199 class=0 drop=0 test=6327837 arcStart=1788538
+  arc=25 c=2927114 v=474231 class=0 drop=0 test=6328461 arcStart=1788538
+  arc=25 c=3014040 v=367542 class=0 drop=0 test=6395624 arcStart=1788538
+  arc=25 c=3061810 v=296179 class=1 drop=0 test=6419801 arcStart=1788538
+  arc=25 c=3066322 v=287241 class=1 drop=0 test=6419887 arcStart=1788538
+  arc=25 c=3076288 v=267686 class=1 drop=0 test=6420264 arcStart=1788538
+  arc=25 c=3094960 v=238604 class=1 drop=0 test=6428526 arcStart=1788538
+  arc=25 c=3124974 v=195595 class=1 drop=0 test=6445545 arcStart=1788538
+  arc=25 c=3126994 v=192451 class=1 drop=0 test=6446441 arcStart=1788538
+
+drop histogram at comb ends (defined, nonnegative; all classes):
+  drop total blocked fresh | continued notContinued
+  0 22254 317 21937 | 22240 14
+  1 1 0 1 | 1 0
+  2 1 1 0 | 1 0
+  3 2 2 0 | 2 0
+  4 1 1 0 | 1 0
+  5 1 1 0 | 1 0
+  6 2 2 0 | 2 0
+  7 1 1 0 | 1 0
+  8 4 4 0 | 4 0
+  9 1 1 0 | 1 0
+  10 1 1 0 | 1 0
+  11 0 0 0 | 0 0
+  12 2 2 0 | 2 0
+  13 1 1 0 | 1 0
+  14 0 0 0 | 0 0
+  15 4 4 0 | 4 0
+  16 1 1 0 | 1 0
+  17 2 2 0 | 2 0
+  18 2 2 0 | 2 0
+  19 1 1 0 | 1 0
+  20 1 1 0 | 1 0
+  >20 22138 19393 2745 | 22117 21
+  class 3 only (drop: total blocked fresh | continued notContinued):
+    0 3 0 3 | 2 1
+    >20 264 203 61 | 251 13
+  fresh & drop>=3 detail (class:drop:count, capped): 0:363:1 0:1055:1 0:1153:1 0:2715:1 0:2719:1 0:2748:1 0:2786:1 0:2997:1 0:3096:1 0:3362:1 0:3596:1 0:3638:1 0:3741:1 0:4153:1 0:4836:1 0:5318:1 0:5565:1 0:5736:1 0:5787:1 0:6915:1 0:6951:1 0:7297:1 0:8232:1 0:8666:1 0:9796:1 0:10245:1 0:10886:1 0:12105:1 0:13147:1 0:13896:1 0:13981:1 0:14359:1 0:15408:1 0:15582:1 0:15660:1 0:17715:1 0:17759:1 0:19456:1 0:20083:1 0:25772:1 0:26477:1 0:27658:1 0:27754:1 0:28565:1 0:29254:1 0:29306:1 0:30190:1 0:31667:1 0:36882:1 0:37299:1 0:39646:1 0:40663:1 0:42457:1 0:43962:1 0:44452:1 0:44978:1 0:45170:1 0:45466:1 0:45788:1 0:47721:1 0:47726:1 0:47744:1 0:47832:1 0:47907:1 0:48122:1 0:51230:1 0:53533:1 0:54416:1 0:54850:1 0:56142:1 0:59403:1 0:59439:1 0:60306:1 0:61744:1 0:62581:1 0:64240:1 0:64793:1 0:65660:1 0:70486:1 0:75043:1 0:75095:1 0:76182:1 0:76201:1 0:80041:1 0:90330:1 0:90866:1 0:95170:1 0:96390:1 0:96783:1 0:102414:1 0:102575:1 0:105876:1 0:106288:1 0:111745:1 0:114869:1 0:143747:1 0:144722:1 0:144730:1 0:145900:1 0:148632:1 0:156708:1 0:235053:1 0:265235:1 0:269207:1 0:271164:1 0:278792:1 0:279068:1 1:270:1 1:908:1 1:2584:1 1:3511:1 1:3880:1 1:4072:1 1:4396:1 1:4655:1 1:12786:1 1:13079:1 1:13456:1 1:13785:1 1:13892:1 1:14228:1 1:15008:1 1:15852:1 1:16037:1 1:17285:1 1:17307:1 1:18996:1 1:19137:1 1:19244:1 1:19375:1 1:20448:1 1:21305:1 1:23852:1 1:28499:1 1:32172:1 1:32240:1 1:32527:1 1:45485:1 1:55162:1 1:72872:1 1:73195:1 1:79031:1 1:82151:1 1:82174:1 1:83981:1 1:84293:1 1:84322:1 1:84347:1 1:84511:1 1:86081:1 1:89018:1 1:92002:1 1:95158:1 1:102545:1 1:103009:1 1:103410:1 1:103564:1 1:103717:1 1:104291:1 1:108575:1 1:112519:1 1:112862:1 1:112905:1 1:113086:1 1:113476:1 1:113737:1 1:114071:1 1:114095:1 1:114985:1 1:116436:1 1:117119:1 1:117254:1 1:127359:1 1:127610:1 1:128533:1 1:129866:1 1:130238:1 1:130791:1 1:133096:1 1:133181:1 1:133266:1 1:133287:1 1:158831:1 2:25968:1 2:27306:1 2:27382:1 2:27687:1 2:198871:1 2:199226:1 2:199313:1 2:199344:1 2:201827:1 2:281088:1 2:281298:1 3:52220:1 3:52341:1 3:52871:1 3:293554:1 3:298397:1 3:299377:1
+
+gap to the next late landing after continued comb ends (bin b: 2^b <= gap < 2^(b+1)); rows: blocked/fresh x class
+  fresh   class0: b2=94 b3=9 b4=44 b5=62 b6=143 b7=269 b8=425 b9=779 b10=1139 b11=1706 b12=2301 b13=2749 b14=3137 b15=2960 b16=2359 b17=1597 b18=1057 b19=519 b20=236 b21=87 b22=27 b23=1
+  fresh   class1: b2=20 b3=8 b4=37 b5=58 b6=72 b7=143 b8=217 b9=299 b10=309 b11=345 b12=311 b13=279 b14=205 b15=159 b16=86 b17=50 b18=28 b19=8 b20=1 b21=3
+  fresh   class2: b2=2 b3=4 b4=4 b5=6 b6=13 b7=18 b8=22 b9=21 b10=36 b11=26 b12=38 b13=28 b14=18 b15=12 b16=12 b17=5 b18=3
+  fresh   class3: b3=2 b5=4 b6=3 b7=4 b8=3 b9=3 b10=11 b11=7 b12=12 b13=6 b14=3 b15=3 b16=1 b17=1
+  blocked class0: b4=7 b5=27 b6=47 b7=122 b8=177 b9=345 b10=534 b11=820 b12=1206 b13=1589 b14=1754 b15=1759 b16=1527 b17=1031 b18=602 b19=238 b20=88 b21=18 b22=2
+  blocked class1: b3=1 b4=3 b5=6 b6=16 b7=29 b8=52 b9=130 b10=216 b11=393 b12=611 b13=891 b14=1098 b15=1051 b16=916 b17=570 b18=345 b19=171 b20=73 b21=7 b22=1
+  blocked class2: b4=2 b5=1 b6=3 b7=6 b8=11 b9=16 b10=39 b11=75 b12=120 b13=140 b14=159 b15=178 b16=140 b17=95 b18=47 b19=21 b20=1
+  blocked class3: b7=4 b8=3 b9=2 b10=8 b11=5 b12=19 b13=35 b14=46 b15=37 b16=14 b17=13 b18=4
+
+Phi decreases at level-1 clocks (completed arcs): total=45859 sizeSum=2579391150
+  size histogram (size:count): 1:71 2:14 3:78 4:20 5:22 6:23 7:14 8:16 9:30 10:15 11:15 12:19 13:23 14:17 15:17 16:15 17:15 18:20 19:12 20:13 >20:45390
+  height decade histogram (10^d <= h < 10^(d+1), d:count): 0:1 1:7 2:30 3:101 4:394 5:1291 6:3538 7:8309 8:19720 9:12468
+  max k between the two level-1 clocks (maxk:count): 3:21316 4:18157 5:5276 6:1037 7:66 8:7
+  pattern (gap between the two level-1 clocks, max k in between, size) : count [top 40]
+    gap=6 maxk=3 size=1 : 71
+    gap=6 maxk=4 size=3 : 52
+    gap=10 maxk=3 size=3 : 26
+    gap=14 maxk=3 size=5 : 22
+    gap=22 maxk=3 size=9 : 22
+    gap=30 maxk=3 size=13 : 21
+    gap=12 maxk=3 size=4 : 20
+    gap=118 maxk=3 size=57 : 19
+    gap=96 maxk=3 size=46 : 18
+    gap=554 maxk=3 size=275 : 18
+    gap=58 maxk=3 size=27 : 17
+    gap=48 maxk=3 size=22 : 16
+    gap=32 maxk=3 size=14 : 16
+    gap=20 maxk=3 size=8 : 16
+    gap=60 maxk=3 size=28 : 16
+    gap=88 maxk=3 size=42 : 15
+    gap=90 maxk=3 size=43 : 15
+    gap=16 maxk=3 size=6 : 15
+    gap=80 maxk=3 size=38 : 15
+    gap=72 maxk=3 size=34 : 15
+    gap=38 maxk=3 size=17 : 15
+    gap=36 maxk=3 size=16 : 15
+    gap=164 maxk=3 size=80 : 15
+    gap=26 maxk=3 size=11 : 15
+    gap=64 maxk=3 size=30 : 14
+    gap=8 maxk=3 size=2 : 14
+    gap=106 maxk=3 size=51 : 14
+    gap=46 maxk=3 size=21 : 14
+    gap=18 maxk=3 size=7 : 14
+    gap=112 maxk=3 size=54 : 14
+    gap=24 maxk=3 size=10 : 14
+    gap=260 maxk=4 size=384 : 14
+    gap=100 maxk=3 size=48 : 14
+    gap=152 maxk=3 size=74 : 14
+    gap=348 maxk=3 size=172 : 14
+    gap=134 maxk=3 size=65 : 13
+    gap=204 maxk=3 size=100 : 13
+    gap=70 maxk=3 size=33 : 13
+    gap=366 maxk=3 size=181 : 13
+    gap=618 maxk=3 size=307 : 13
+  distinct patterns=33056
+  size vs gap check: maxk=3 with size == gap/2 - 2: 21316 of 21316; maxk=4 with 2*size == 3*gap - 12: 16110 of 18157
+
+arc summary (completed arcs=39):
+  arcs with >=1 comb end=36 arcs with >=1 blocked comb end=29 arcs with >=1 drop>=3 comb end=29 arcs with >=1 class-3 blocked comb end=13
+  landing == first blocked comb end (clock and value): 0
+  landing == first drop>=3 comb end: 0
+  landing == first class-3 blocked comb end: 3 (arcs whose landing is class 3: 14)
+  landing is a comb end: 36; of these blocked: 21
+  landing is the last late landing: 36
+  first blocked == first drop>=3 (same comb end): 27
+
+open arc at horizon: ordinal=40 start=8416580355 minValue=6705983634 minClock=9999999999 lateTotal=576099553 combEnds=1514 blockedEnds=352 drop3Ends=362 combEndsC3=0 blockedEndsC3=0 decreases=1539 phiStar=26706627328
