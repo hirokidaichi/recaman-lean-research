@@ -3013,3 +3013,33 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror experiments/near_diagonal_ra
 /tmp/near_diagonal_rate_probe 3000000000   # 25秒、docs/NEAR_DIAGONAL_CENSUS_3E9_2026-09-02.txt
 bash scripts/check_research_registry.sh    # 25 entries; 6 PROVED-LEAN rows
 ```
+
+### 第百二十五ラウンド：二分定理DのLean化（T1）
+
+`MissingDensityDichotomy`を追加し、ロードマップT1を完了した。`lowCount n bound`
+（`valuesThrough n`のうち`bound`以下の要素数、重複込み）を定義し、`lowCount_succ`、`lowCount_le`
+（`≤ n+1`）、`lowCount_le_add`を得る。法則`∀ k ≥ N, k+3 ≤ a k`の下で孤立補題
+`exterior_succ_of_interior`（`a n ≤ 2n+1 → 2n+4 ≤ a (n+1)`）を`recurrence`の場合分けとomegaで示し、
+`lowCount_two_step`（後半の連続2時刻は窓へ高々1値）と`lowCount_block`（帰納）で
+`lowCount (s+2j) ≤ lowCount s + j`を得る。`missing_window_of_law`は`s = m/2+1`、`j = (m−s)/2`と置き、
+`List.range (m+3)`を「未訪問filter ++ 窓内filter」の部分集合として`Nodup.length_le_of_subset`で
+計数し、凍結は法則から直接（`t ≥ m+1 ≥ N`なら`a t ≥ m+4 > m+2`）出る。結論は
+`m ≤ 4 * missing.length`まで締まった（当初の`+8`は不要だった）。
+
+主定理`missing_density_dichotomy`は古典的場合分けで法則を取り出す。系
+`EventualHighCandidateTail.missing_density`（`corridor_value_law`から法則を得る）と
+`not_eventualHigh_of_recurrent_low`、および`recurrent_low_of_subDiagonal`を同梱。
+`lake env lean`は初回で4件のエラー（`+0`の正規化2件、`m ≤ 1`での`s+2j ≤ m`破れ1件→仮定を
+`2N+2 ≤ m`へ、`List.filter_sublist`は関数でなく項1件）を出し、修正後は無警告で通過した。
+direct importは`EventualHighCorridorSecondMissing`のみ（contract登録済み）。
+registry `E-025`を`PROVED-LEAN`へ昇格し、4定理をAuditへ追加した。
+
+検証コマンド：
+
+```text
+lake env lean Recaman/MissingDensityDichotomy.lean
+lake build                                   # 250 jobs
+bash scripts/check_module_architecture.sh    # 247/247 reach; 6 contracts
+bash scripts/check_research_registry.sh      # 25 entries; 7 PROVED-LEAN rows
+./scripts/check.sh                           # 1,142 declarations audited
+```

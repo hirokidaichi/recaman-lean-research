@@ -45,6 +45,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `SeededUseGapCounterexample` | `Basic` | arbitrary seed上の`State`、`step`、`CanSubtract`だけを使う |
 | `SupplyAncestryCounterexample` | `History` | canonical prefixの`FirstAt`と履歴membershipだけを使う |
 | `DemandProvenanceCounterexample` | `History` | canonical prefixのsupplied-demand birth証人。`FirstAt`と履歴membershipだけを使う |
+| `MissingDensityDichotomy` | `EventualHighCorridorSecondMissing` | `valuesThrough_length`と`corridor_value_law`だけを使う無条件の二分定理 |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。

@@ -62,7 +62,7 @@ candidate `c n = a n − (n+1)`。interior は `a n ≤ 2n+1`。
 
 ## 3. 定理ロードマップ（優先順）
 
-### T1. 二分定理 D（紙上証明済み、Lean化が最初の作業）
+### T1. 二分定理 D（`PROVED-LEAN`: `MissingDensityDichotomy`、2026-09-02 完了）
 
 **定理 D.** 次のいずれかが成り立つ。
 (I) 無限個の `n` で `a n ≤ n + 2`（candidate ≤ 1）。
@@ -84,9 +84,10 @@ candidate `c n = a n − (n+1)`。interior は `a n ≤ 2n+1`。
 
 意味: A枝は「欠損値が密度 1/4 以上」という強い構造を伴わなければ起こり得ない。データは (I) 側
 （28.6%）であり、A枝は経験的に消える。残る非全射機構は B枝＝chain だけである。
-Lean 化: `ConeInteriorIsolation`（孤立補題）、`MissingDensityDichotomy`（凍結＋計数）。
-既存部品 `valuesThrough_length`、`a_le_upperTri`、`coveredBelowCount_le_time`、
-`EventualHighCorridorSecondMissing` の凍結補題を再利用する。予定 1〜2 ラウンド。
+Lean 化は完了した（`missing_density_dichotomy`、`missing_window_of_law`、
+`EventualHighCandidateTail.missing_density`、`not_eventualHigh_of_recurrent_low`）。
+形式化では計数の結論が `m ≤ 4·|missing|` まで締まり、凍結は法則から直接出るため
+加減算の場合分けは不要だった。
 
 ### T2. chain 補題（exact、Lean 化）
 

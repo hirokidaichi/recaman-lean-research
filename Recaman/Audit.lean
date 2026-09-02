@@ -1134,6 +1134,10 @@ import Recaman
 #print axioms Recaman.subtractionBorn_sharedParent_counterexample
 #print axioms Recaman.truncatedBirth_suppliedDemand_counterexample
 #print axioms Recaman.nearDiagonalBirth_suppliedDemand_counterexample
+#print axioms Recaman.missing_window_of_law
+#print axioms Recaman.missing_density_dichotomy
+#print axioms Recaman.EventualHighCandidateTail.missing_density
+#print axioms Recaman.not_eventualHigh_of_recurrent_low
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

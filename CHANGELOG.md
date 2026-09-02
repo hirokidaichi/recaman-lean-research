@@ -1,5 +1,14 @@
 # Changelog
 
+## Missing-density dichotomy (T1) — 2026-09-02
+
+- `MissingDensityDichotomy`：無条件の二分定理`missing_density_dichotomy`「無限個のnで`a n ≤ n+2`、または
+  全ての窓`[0,m+2]`に`m ≤ 4·|missing|`のNodupな永久未訪問リストがある」をLean化。孤立補題、
+  `lowCount`の2時刻上界、`valuesThrough_length`による計数、法則による凍結の3段
+- 系：A枝corridorは密度1/4の永久欠損を含意（`EventualHighCandidateTail.missing_density`）、
+  `a n ≤ n+2`の再発は全targetのA枝を否定（`not_eventualHigh_of_recurrent_low`）
+- registry `E-025`を`PROVED-LEAN`へ。248モジュール、250 jobs、1,142 declarations
+
 ## Truth-agnostic roadmap and near-diagonal census — 2026-09-02
 
 - `experiments/near_diagonal_rate_probe.cpp`: canonical 3e9でsub-diagonal 28.6%、未訪問≤n約51%、

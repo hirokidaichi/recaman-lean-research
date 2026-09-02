@@ -115,8 +115,10 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - `E-024`（`COMPUTED`, canonical 3e9）: sub-diagonal着地は28.6%で安定し、A枝の無限corridorは
   経験的に全targetで偽である。小さな高さはdescending chain（2時刻で高さ3減、既存のcomb）でしか
   現れず、[1e8,1e9)の47件は1本のchainだった。mex 1355はchainの剰余類（mod 3）が合わず着地できない。
-- `E-025`（`PROVED-PAPER`）: 二分定理D「無限個のnで`a n ≤ n+2`、または未訪問整数の下密度≥1/4」。
-  A枝は密度1/4の欠損を含意する。Lean化がT1。
+- `E-025`（`PROVED-LEAN`, `MissingDensityDichotomy`）: 二分定理D「無限個のnで`a n ≤ n+2`、または
+  全ての窓`[0, m+2]`（`m ≥ 2N+2`）に`m ≤ 4·|missing|`を満たす永久未訪問値のNodupリストがある」。
+  系`EventualHighCandidateTail.missing_density`はA枝が密度1/4の欠損を含意することを、
+  `not_eventualHigh_of_recurrent_low`は`a n ≤ n+2`の再発が全targetのA枝を否定することを示す。T1完了。
 - 両方向の証明はchainの侵入率・生存の定量定理（T4）に帰着する。侵入率が`c/n`なら全射、
   `n^{-1-ε}`なら非全射が見立てで、3e9では区別できない。run-length simulatorで1e12以上を見る。
 - 上の分岐表と再開条件は歴史的記録として残し、優先順位はロードマップのT1〜T5に従う。
@@ -149,7 +151,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 247 modules、67,763 lines。
-- `./scripts/check.sh`: 249 jobs、1,138 audited declarations。
+- Lean source 248 modules、67,982 lines。
+- `./scripts/check.sh`: 250 jobs、1,142 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

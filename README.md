@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース247モジュール（67,763行、認証済み深部traceを含む）
+- Leanソース248モジュール（67,982行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -108,7 +108,9 @@ Lean 4形式化プロジェクトです。
 - 方針転換（真偽を問わない）：canonical 3e9でsub-diagonal着地は28.6%で安定し、A枝のcorridorは
   経験的に全targetで偽。遅延着地はdescending chain（2時刻で高さ3減）だけで起こり、mex 1355は
   剰余類（mod 3）が合わず凍結している。紙上の二分定理D「`a n ≤ n+2`が無限回、または欠損の下密度≥1/4」
-  を`PROVED-PAPER`として登録（[roadmap](docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)）
+  をLean化（`MissingDensityDichotomy`、`m ≤ 4·|missing|`のNodup証人リスト付き）。系としてA枝corridorは
+  密度1/4の永久欠損を含意し、sub-diagonal再発は全targetのA枝を否定する
+  （[roadmap](docs/RESEARCH_ROADMAP_2026-09-02_TRUTH_AGNOSTIC.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

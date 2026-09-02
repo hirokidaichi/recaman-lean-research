@@ -942,3 +942,13 @@ collision）は20Mまで母集団が空で`STOPPED`。`H-20260902-02`は低suppl
 candidate 0のtruncated加算（clock 3）で生まれ、clock 112の需要151はclock 110のlegal subtractionで
 生まれる（`151 ≤ 2·110`）。従ってcorridor限定の`corridor_recurringCandidate_late_demand_birth`の
 縮約はcanonical prefixでは成立せず、canonical/seed分離にbirth-clock縮約は使えない。
+
+**Round 13（真偽を問わない計画、二分定理D）** — `MissingDensityDichotomy`は target も cutoff も
+使わない無条件の二分定理を与える：`missing_density_dichotomy`は「無限個の`n`で`a n ≤ n+2`」または
+「`N`があって全ての`m ≥ N`で、`[0, m+2]`内の永久未訪問値のNodupリスト`missing`が`m ≤ 4·|missing|`を
+満たす」。証明は孤立補題`exterior_succ_of_interior`（法則`k+3 ≤ a k`の下でinterior時刻の次は
+exterior）、`lowCount`の2時刻ごとの増分上界`lowCount_two_step`、`valuesThrough_length`による窓の計数、
+法則そのものによる凍結の3段。系`EventualHighCandidateTail.missing_density`はA枝（`corridor_value_law`）
+が密度1/4の永久欠損を含意することを、`not_eventualHigh_of_recurrent_low`は`a n ≤ n+2`の再発が
+全ての正targetのA枝を否定することを示す。canonical 3e9ではsub-diagonal着地が28.6%なので、
+A枝は経験的に全targetで偽であり、残る非全射機構はdescending chain（B枝comb）である。
