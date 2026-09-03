@@ -1174,6 +1174,11 @@ import Recaman
 #print axioms Recaman.valuesThrough_mono_of_le
 #print axioms Recaman.popup_lock_candidate_blocked_by_run
 #print axioms Recaman.popup_lock_persists
+#print axioms Recaman.forced_addition_of_mem
+#print axioms Recaman.landing_of_fresh
+#print axioms Recaman.pingpong_pair
+#print axioms Recaman.pingpong_pair_residues
+#print axioms Recaman.pingpong_run
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

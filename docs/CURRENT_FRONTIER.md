@@ -152,6 +152,10 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   よらず弧が終わる）、固定の 1 対で剰余が 7 減ること、予算 `t<m+7`（comb 末端座標で `v<13+7K`）で対の内部に
   剰余増加が起きること、着地前 run が J 対なら固定が `⌊(J+2)/3⌋` 対以上続くことを Lean 化。`E-037` の wrap 条件と
   T=1 の break 下界（10^10 で 2,658/2,658）の局所部分が定理になった。
+- `E-039`（`PROVED-LEAN`, `PingPongRuns`）: 任意 level `p+2/p+1` の ping-pong の 1 対で剰余は `2p+3` 減り、K 対の run の
+  上側値は `a m + k`、下側値は `a m − (m+k+1)` の連続 run（候補の既訪問/未訪問だけで記述）。既訪問候補は加算を、
+  未訪問候補は減算を強制する。chain(p=0)・k=2/3 段(p=1)・固定(p=2) の共通形で、blocker provenance
+  （`H-20260903-01`、[card](HYPOTHESIS_CARD_2026-09-03_BLOCKER_PROVENANCE.md)）の仮説 (B) の裏付け。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -188,7 +192,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 253 modules、68,894 lines。
-- `./scripts/check.sh`: 255 jobs、1,178 audited declarations。
+- Lean source 254 modules、69,031 lines。
+- `./scripts/check.sh`: 256 jobs、1,183 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

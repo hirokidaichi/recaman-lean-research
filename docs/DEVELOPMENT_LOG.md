@@ -3224,3 +3224,16 @@ comb 末端座標（`m=i+5`、`t=i+v−1`）では予算が `13+7k ≤ v` にな
 （10^10 の T=1 break 2,658 件は全て下界を満たす）。初回 `lake env lean` は `valuesThrough_mono` が import 外で
 1 エラー、局所補題 `valuesThrough_mono_of_le` を足して通過した。残る局所部分は T≥2 の先行する歯の test 値
 （経験的に 13,193/13,268 で既訪問だが定理ではない）と、固定が破れた後の降下が穴へ届く条件である。
+
+### 第百三十九ラウンド：任意 level の ping-pong run の Lean 化（PingPongRuns、E-039）
+
+`PingPongRuns`（direct import `LockResidue`）：`forced_addition_of_mem`（既訪問候補は加算を強制）、
+`landing_of_fresh`（値未満の未訪問候補は減算を強制）、`pingpong_pair`／`pingpong_pair_residues`
+（上側 `a m = (p+2)m + r` から 1 対で下側 `(p+1)(m+1)+(r−(p+2))`、上側 `(p+2)(m+2)+(r−(2p+3)) = a m + 1`、
+剰余は `2p+3` 減る）、`pingpong_run`（候補形の仮定のもと K 対の run で上側値 `a m + k`、下側値
+`a m − (m+k+1)`）。`DescendingChain`（p=0、剰余 −3）、`LevelTwoThree`（p=1、−5）、`PopupLock`（p=2、−7）の
+共通形である。level 付きの K 対反復は `(2p+3)k` が omega の非線形項になるので候補形にとどめ、level と
+剰余は 1 対の補題を各対に当てて得る設計にした。初回 `lake env lean` 一発通過。
+同時に blocker provenance のカード `H-20260903-01`（test 値・固定候補・k=3 値・k=2→1 候補の初訪問の
+level・弧・run 所属を 10^10 で全数調査：(A) level ≥ 2、(B) ping-pong run に属する、(C) 同じ弧なら q=2、
+前の弧なら q ≥ 3）を起こし、2 パス probe をサブエージェントに依頼した。

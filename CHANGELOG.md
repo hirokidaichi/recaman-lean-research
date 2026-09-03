@@ -1,5 +1,11 @@
 # Changelog
 
+## Ping-pong runs at every level (Lean) — 2026-09-03
+
+- `PingPongRuns`：任意 level `p+2/p+1` の ping-pong の 1 対（剰余 −(2p+3)）と K 対の run（上側 `a m+k`、下側
+  `a m−(m+k+1)`）を候補形で Lean 化。chain・k=2/3 段・固定の共通形（registry `E-039`、254 モジュール）
+- blocker provenance のカード `H-20260903-01` を起票（[card](docs/HYPOTHESIS_CARD_2026-09-03_BLOCKER_PROVENANCE.md)）
+
 ## Residue law and the lock budget (Lean) — 2026-09-03
 
 - `LockResidue`：剰余則（両ステップで `(q,r)→(q±1,r−q)`、`r<q` で剰余が跳ね上がり弧が終わる）、固定の 1 対で
