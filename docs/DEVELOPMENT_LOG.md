@@ -3247,3 +3247,17 @@ blocker provenance probe の 10^9 discovery で、fresh な comb 末端の k=2�
 従って test 値未訪問の comb 末端の後の k=2/3 段は `⌊(T−2)/3⌋` 対以上続く（`level23_phase_of_comb`、
 `popup_lock_persists` の fresh 側対応物）。`CombExit`（direct import `LevelTwoThree`・`LockResidue`）。
 初回コンパイルは歯の値の上界 `v+2T ≤ i+1` が弱く omega が反例を出したので `v+3T ≤ i+1` に直して通過。
+
+### 第百四十一ラウンド：blocker provenance epoch（H-20260903-01、E-041）
+
+`experiments/blocker_provenance_probe.cpp`（サブエージェント実装、2 パス、10^10 で 437 秒）で、`E-037` の
+4 事象の既訪問値（test 19,738・lockcand 609・l3 3,478・entry23 22,263）と帯脱出値 6,140 の初訪問を全数調査
+した。pass 1 は死亡則 probe の comb 末端・blocked・固定結末を再現し、全 52,228 件が事象より前に初訪問
+されていた。凍結した (A) level ≥ 2、(B) ping-pong run 所属、(C) 同じ弧 ⇒ q=2／前の弧 ⇒ q≥3 は discovery
+（c < 10^9）で全て反証され、holdout（10^9 ≤ c < 10^10）で同じ構造が再現した：lock 側は全て level ≥ 2 で
+96% が同じ弧自身の run（k=2/3 段の下側 run 12,010、chain の上側 run 6,927、以前の固定の k=3 run 3,186）、
+前の弧の寄与は k=4 固定 run（777 件、`n/c ∈ [0.444, 0.618]`）；fresh 側は同じ弧の level-1 値が 87%
+（comb の歯 4 の加算値 gap=7 が 2,223 件）、前の弧の k=2 値（`n ≈ c/2`）が 12%；run 外は 115 件（0.22%）で
+全て梯子（4→3→2→1→0、79 件、70 件は遅延着地で終わる）・スパイク（31）・谷（5）。カードは `REFUTED`、
+後続命題 (A')(B')(C'') を epoch report §2.4 に書いた。結論：帯の履歴は「同じ弧の直近の run」と「前の弧の
+時刻 ≈ c/2 の run」の 2 成分で決まる（スケール半減の自己相似）。`docs/data/provenance/` に原本を格納。

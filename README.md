@@ -129,6 +129,9 @@ Lean 4形式化プロジェクトです。
   `a m−(m+k+1)`の連続run。chain・k=2/3段・固定の共通形
 - combがk=2/3段の出口を塞ぐことをLean化（`CombExit`）：歯sの後の加算値`i+v+2−s`が出口候補`i+v−2−3k`（`3k+5≤T`）を
   塞ぎ、test値未訪問のcomb末端の後の段は`⌊(T−2)/3⌋`対以上続く
+- blocker provenance（10^10、52,228件）：降下を塞ぐ値の96%（lock側）／87%（fresh側）は同じ弧自身のrun、残りは前の弧の
+  時刻≈c/2のrun（k=4固定run、k=2値）。99.78%がping-pong runに属する。帯の履歴は「同じ弧の直近＋前の弧のc/2」
+  （[epoch report](docs/BLOCKER_PROVENANCE_EPOCH_2026-09-03.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

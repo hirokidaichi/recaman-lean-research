@@ -99,6 +99,8 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/arc_potential_probe.cpp -o /tmp/arcpot
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/arc_death_rule_probe.cpp -o /tmp/deathrule
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/blocker_provenance_probe.cpp -o /tmp/provenance
 ```
 
 Example runs:

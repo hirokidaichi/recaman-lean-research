@@ -3,7 +3,8 @@
 - ID: `H-20260903-01`
 - Owner: AI research epoch 2026-09-03（真偽を問わない計画、T4 の帯の履歴部分）
 - Created: 2026-09-03
-- Status: `CONJECTURED`（probe 実行前）
+- Status: `REFUTED`（凍結した (A)(B)(C) の exact 形。観測された構造は `E-041` と
+  [epoch report](BLOCKER_PROVENANCE_EPOCH_2026-09-03.md) に記録）
 - Research branch: 非全射方向。landing floor（`H-20260902-05`）の非局所部分
 
 ## Exact statement
@@ -68,6 +69,9 @@
 
 | Date | Label | Revision / command | Result |
 |---|---|---|---|
+| 2026-09-03 | `COMPUTED` | `blocker_provenance_probe 10000000000`、holdout `10^9 ≤ c < 10^10`（30,412 件） | (A) 違反 12,856（全て fresh 側の同じ弧の level-1 値；lock 側は 0）、(B) 違反 36（梯子・スパイク・谷）、(C) 違反 15,146+1,515。discovery と同じ構造：test の 95.9% が同じ弧の k=2 値、前の弧は k=4 固定 run（`n/c ∈ [0.44,0.62]`）。 |
+| 2026-09-03 | `COMPUTED` | `blocker_provenance_probe 1000000000`、discovery `c < 10^9`（21,816 件） | (A) 違反 11,470、(B) 違反 79、(C) 違反 12,550+1,903。test の 96.3% が同じ弧の k=2 値（k=2/3 段の下側 run 4,135、chain の上側 run 2,292）、entry23 の 85% が同じ弧の level-1 値で gap=7（comb の歯 4 の加算値）が最頻。 |
+| 2026-09-03 | `PROVED-LEAN` | `CombExit`（`E-040`） | comb の加算値 `i+v+2−s` が k=2/3 段の出口候補を塞ぐ：entry23 の gap=7 署名の exact な説明。 |
 | 2026-09-03 | `PROVED-LEAN` | `PingPongRuns` | 任意 level の ping-pong 対で剰余は `2p+3` 減り、run の上側値は `a m + k`、下側値は `a m − (m+k+1)`（`pingpong_run`）。 |
 
 ## Semantic audit
@@ -85,6 +89,9 @@
 
 ## Decision
 
-- Continue / formalize / refute / stop: `CONJECTURED`。probe の結果で更新する。
-- Reason: landing floor の非局所部分（帯の履歴）に最初の構造仮説を置く。
-- Reopen only if: not applicable（active）。
+- Continue / formalize / refute / stop: `REFUTED`（(A)(B)(C) の凍結形）。修理は使わない（(C) の許可修理
+  「前の弧なら q ≥ 2」では違反が残る）。観測構造から後続命題 (A')(B')(C'') を epoch report §2.4 に書き、
+  新カードで凍結する。
+- Reason: 3 命題とも discovery で反証され、holdout で同じ構造が再現した。反証の内容（fresh 側は同じ弧の
+  level-1 値、例外は梯子・スパイク・谷、level は kind の L に依る）はそれ自体が帯の履歴の構造である。
+- Reopen only if: not applicable（closed）。

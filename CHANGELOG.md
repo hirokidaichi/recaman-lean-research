@@ -1,5 +1,13 @@
 # Changelog
 
+## Blocker provenance epoch — 2026-09-03
+
+- `experiments/blocker_provenance_probe.cpp`（registry `E-041`、カード `H-20260903-01` は `REFUTED`）：降下を塞ぐ値
+  52,228 件の初訪問を 10^10 で全数調査。lock 側は全て level ≥ 2 で 96% が同じ弧自身の run、前の弧の寄与は k=4 固定 run
+  （`n/c ∈ [0.44,0.62]`）；fresh 側は同じ弧の level-1 値 87%（comb の歯 4 の加算値）、前の弧の k=2 値 12%。
+  99.78% が ping-pong run、例外は梯子・スパイク・谷。帯の履歴は「同じ弧の直近」と「前の弧の c/2」で決まる
+  （[epoch report](docs/BLOCKER_PROVENANCE_EPOCH_2026-09-03.md)）
+
 ## The comb blocks the level-2/3 exits (Lean) — 2026-09-03
 
 - `CombExit`：comb の加算値 `i+v+2−s` が k=2/3 段の出口候補を塞ぎ、段は `⌊(T−2)/3⌋` 対以上続く

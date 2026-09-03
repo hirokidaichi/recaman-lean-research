@@ -160,6 +160,12 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   `i+v−2−3k`（`3k+5 ≤ T`）を塞ぐ。段は `⌊(T−2)/3⌋` 対以上続く（`popup_lock_persists` の fresh 側対応物）。
   provenance census（10^9）で entry23 blocker の 85% が同じ弧の level-1 値、その主成分が gap=7 の comb 加算値
   だったことの exact な説明。
+- `E-041`（`COMPUTED`, blocker provenance 10^10、`H-20260903-01` は `REFUTED`）: 降下を塞ぐ値 52,228 件の初訪問を
+  全数調査。lock 側（test/lockcand/l3）は全て level ≥ 2 で 96% が**同じ弧自身**の run（k=2/3 段の下側 run、chain の
+  上側 run、以前の固定の k=3 run）、残りは前の弧の k=4 固定 run（`n/c ∈ [0.44,0.62]`）。fresh 側（entry23/bandexit）は
+  同じ弧の level-1 値が 87%（comb の歯 4 の加算値 = gap 7、`CombExit`）、前の弧の k=2 値（`n ≈ c/2`）が 12%。
+  99.78% が ping-pong run に属し、例外は梯子・スパイク・谷のみ。**帯の履歴は「同じ弧の直近の run」と「前の弧の
+  時刻 ≈ c/2 の run」で決まる**（スケール半減の自己相似）。[epoch report](BLOCKER_PROVENANCE_EPOCH_2026-09-03.md)。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。

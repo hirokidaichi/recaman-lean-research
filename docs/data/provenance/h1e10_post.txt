@@ -1,0 +1,218 @@
+== (B) exceptions (upperRun=0 lowerRun=0): ladder classification ==
+   ladderSSS = subtraction at n, at n+1 (a(n+1) = w-(n+1)) and at n+2
+1 discovery bandexit q=2 ladderSSS=0
+18 discovery bandexit q=2 ladderSSS=1
+23 discovery bandexit q=3 ladderSSS=0
+7 discovery bandexit q=3 ladderSSS=1
+1 discovery bandexit q=6 ladderSSS=0
+1 discovery l3 q=3 ladderSSS=1
+5 discovery l3 q=5 ladderSSS=0
+1 discovery l3 q=6 ladderSSS=0
+1 discovery lockcand q=2 ladderSSS=0
+19 discovery lockcand q=2 ladderSSS=1
+2 discovery test q=2 ladderSSS=1
+3 holdout bandexit q=2 ladderSSS=1
+1 holdout l3 q=5 ladderSSS=0
+26 holdout lockcand q=2 ladderSSS=1
+3 holdout lockcand q=2 ladderSSS=0
+1 holdout lockcand q=4 ladderSSS=1
+2 holdout test q=2 ladderSSS=1
+
+== (B) exceptions: step pattern at clocks n-1, n, n+1, n+2 (A/S from the values), per kind and split ==
+   SSSS/ASSS = ladder through w; AASS = spike (w is the peak); SSAA = valley (w is the bottom)
+1 discovery bandexit q=2 pattern=SSAA sameArc=0
+18 discovery bandexit q=2 pattern=SSSS sameArc=0
+23 discovery bandexit q=3 pattern=AASS sameArc=0
+7 discovery bandexit q=3 pattern=SSSS sameArc=0
+1 discovery bandexit q=6 pattern=AASS sameArc=0
+1 discovery l3 q=3 pattern=SSSS sameArc=1
+5 discovery l3 q=5 pattern=AASS sameArc=0
+1 discovery l3 q=6 pattern=AASS sameArc=0
+1 discovery lockcand q=2 pattern=SSAA sameArc=1
+19 discovery lockcand q=2 pattern=SSSS sameArc=1
+2 discovery test q=2 pattern=SSSS sameArc=1
+3 holdout bandexit q=2 pattern=SSSS sameArc=0
+1 holdout l3 q=5 pattern=AASS sameArc=0
+3 holdout lockcand q=2 pattern=SSAA sameArc=1
+26 holdout lockcand q=2 pattern=SSSS sameArc=1
+1 holdout lockcand q=4 pattern=SSSS sameArc=0
+2 holdout test q=2 pattern=SSSS sameArc=1
+
+== (B) exceptions: ladders (S at n, n+1, n+2) that end in a late landing at n+2 (a(n+2) < n+2) ==
+25 bandexit ladderSSS=0 lateAtN+2=0
+7 bandexit ladderSSS=1 lateAtN+2=0
+21 bandexit ladderSSS=1 lateAtN+2=1
+7 l3 ladderSSS=0 lateAtN+2=0
+1 l3 ladderSSS=1 lateAtN+2=0
+4 lockcand ladderSSS=0 lateAtN+2=0
+1 lockcand ladderSSS=1 lateAtN+2=0
+45 lockcand ladderSSS=1 lateAtN+2=1
+4 test ladderSSS=1 lateAtN+2=1
+
+== per kind: sameArc & q=L: run class (L=2 test/lockcand, 3 l3, 1 entry23/bandexit) ==
+1351 bandexit both
+2615 bandexit lower
+1055 bandexit upper
+27 entry23 both
+10769 entry23 lower
+8508 entry23 upper
+3186 l3 lower
+1 l3 neither
+61 l3 upper
+1 lockcand both
+278 lockcand lower
+49 lockcand neither
+280 lockcand upper
+7 test both
+12010 test lower
+4 test neither
+6927 test upper
+
+== per kind: earlierArc: (arcAtC-arcN, q) ==
+816 bandexit dist=1 q=2
+188 bandexit dist=2 q=3
+102 bandexit dist=2 q=4
+3 bandexit dist=2 q=5
+10 bandexit dist=3 q=6
+1 entry23 dist=1 q=1
+2601 entry23 dist=1 q=2
+356 entry23 dist=2 q=4
+1 entry23 dist=3 q=7
+96 l3 dist=1 q=5
+11 l3 dist=1 q=6
+1 lockcand dist=1 q=4
+2 test dist=1 q=3
+777 test dist=1 q=4
+4 test dist=1 q=5
+7 test dist=2 q=6
+
+== test values, earlierArc: n/c min/max per q ==
+q=3 count=2 n/c in [0.9999, 1.0000]
+q=4 count=777 n/c in [0.4441, 0.6181]
+q=5 count=4 n/c in [0.3432, 0.3734]
+q=6 count=7 n/c in [0.3419, 0.4241]
+
+== l3 values sameArc q=4 (C-prime exceptions): residue/n and run flags ==
+c=925982 n=590322 n/c=0.637509 r/n=0.9978 upper=1 lower=0 split=discovery
+c=1020800 n=637102 n/c=0.624120 r/n=0.8477 upper=1 lower=0 split=discovery
+c=1021266 n=636492 n/c=0.623238 r/n=0.8518 upper=1 lower=0 split=discovery
+c=9782006 n=6235652 n/c=0.637461 r/n=0.8485 upper=1 lower=0 split=discovery
+c=30788980 n=19506434 n/c=0.633552 r/n=0.8800 upper=1 lower=0 split=discovery
+c=30930994 n=19569292 n/c=0.632676 r/n=0.8735 upper=1 lower=0 split=discovery
+c=51941165 n=33659693 n/c=0.648035 r/n=0.9059 upper=0 lower=1 split=discovery
+c=54082121 n=34708521 n/c=0.641774 r/n=0.8477 upper=1 lower=0 split=discovery
+c=56782147 n=36130267 n/c=0.636296 r/n=0.7709 upper=0 lower=1 split=discovery
+c=97169456 n=61271362 n/c=0.630562 r/n=0.8876 upper=1 lower=0 split=discovery
+c=292543292 n=184353794 n/c=0.630176 r/n=0.8773 upper=0 lower=1 split=discovery
+c=495125809 n=304521641 n/c=0.615039 r/n=0.9890 upper=0 lower=1 split=discovery
+c=495139493 n=304516941 n/c=0.615012 r/n=0.9891 upper=0 lower=1 split=discovery
+c=495155951 n=304476859 n/c=0.614911 r/n=0.9898 upper=0 lower=1 split=discovery
+c=495213761 n=304523121 n/c=0.614933 r/n=0.9890 upper=0 lower=1 split=discovery
+c=495228441 n=304488949 n/c=0.614845 r/n=0.9896 upper=0 lower=1 split=discovery
+c=496335427 n=304847399 n/c=0.614196 r/n=0.9870 upper=0 lower=1 split=discovery
+c=506458397 n=308175561 n/c=0.608491 r/n=0.9647 upper=1 lower=0 split=discovery
+c=509768977 n=309167217 n/c=0.606485 r/n=0.9583 upper=1 lower=0 split=discovery
+c=796465380 n=513433488 n/c=0.644640 r/n=0.9925 upper=1 lower=0 split=discovery
+c=796939734 n=513720852 n/c=0.644617 r/n=0.9913 upper=1 lower=0 split=discovery
+c=832500932 n=534692654 n/c=0.642273 r/n=0.9119 upper=1 lower=0 split=discovery
+c=832891130 n=534836972 n/c=0.642145 r/n=0.9111 upper=1 lower=0 split=discovery
+c=1529294957 n=983193899 n/c=0.642907 r/n=0.8347 upper=0 lower=1 split=holdout
+c=1529339255 n=983204775 n/c=0.642895 r/n=0.8347 upper=0 lower=1 split=holdout
+c=1539732009 n=986705105 n/c=0.640829 r/n=0.8283 upper=0 lower=1 split=holdout
+c=1571710313 n=998583755 n/c=0.635348 r/n=0.8055 upper=1 lower=0 split=holdout
+c=1576447415 n=1000108963 n/c=0.634407 r/n=0.8026 upper=1 lower=0 split=holdout
+c=1576585985 n=1000182749 n/c=0.634398 r/n=0.8024 upper=1 lower=0 split=holdout
+c=1577983313 n=1000601969 n/c=0.634102 r/n=0.8014 upper=1 lower=0 split=holdout
+c=1580927859 n=1001268359 n/c=0.633342 r/n=0.8002 upper=1 lower=0 split=holdout
+c=1598497703 n=1006198179 n/c=0.629465 r/n=0.7913 upper=1 lower=0 split=holdout
+c=2598690204 n=1651586886 n/c=0.635546 r/n=0.9490 upper=1 lower=0 split=holdout
+c=2662222754 n=1677432028 n/c=0.630087 r/n=0.9175 upper=1 lower=0 split=holdout
+c=2670626084 n=1680082570 n/c=0.629097 r/n=0.9144 upper=1 lower=0 split=holdout
+c=2680800630 n=1683369770 n/c=0.627935 r/n=0.9106 upper=1 lower=0 split=holdout
+c=2707363520 n=1691703398 n/c=0.624853 r/n=0.9010 upper=1 lower=0 split=holdout
+c=2720354420 n=1695991602 n/c=0.623445 r/n=0.8959 upper=1 lower=0 split=holdout
+c=2725157032 n=1697636628 n/c=0.622950 r/n=0.8940 upper=1 lower=0 split=holdout
+c=2725388322 n=1697635756 n/c=0.622897 r/n=0.8940 upper=1 lower=0 split=holdout
+c=2735752258 n=1700885996 n/c=0.621725 r/n=0.8903 upper=1 lower=0 split=holdout
+c=2737271222 n=1701578292 n/c=0.621633 r/n=0.8892 upper=1 lower=0 split=holdout
+c=2737294188 n=1701607170 n/c=0.621638 r/n=0.8891 upper=1 lower=0 split=holdout
+c=2737927302 n=1701957420 n/c=0.621623 r/n=0.8885 upper=1 lower=0 split=holdout
+c=2738057446 n=1702072876 n/c=0.621635 r/n=0.8882 upper=0 lower=1 split=holdout
+c=2738537690 n=1702311210 n/c=0.621613 r/n=0.8878 upper=1 lower=0 split=holdout
+c=2738796082 n=1702403270 n/c=0.621588 r/n=0.8876 upper=1 lower=0 split=holdout
+c=2738899568 n=1702478384 n/c=0.621592 r/n=0.8875 upper=0 lower=1 split=holdout
+c=2739988442 n=1702843480 n/c=0.621478 r/n=0.8870 upper=1 lower=0 split=holdout
+c=2740033996 n=1702958926 n/c=0.621510 r/n=0.8867 upper=1 lower=0 split=holdout
+c=2741757222 n=1703641920 n/c=0.621369 r/n=0.8856 upper=1 lower=0 split=holdout
+c=2741832536 n=1703780038 n/c=0.621402 r/n=0.8853 upper=1 lower=0 split=holdout
+c=2741924970 n=1703670204 n/c=0.621341 r/n=0.8856 upper=1 lower=0 split=holdout
+c=2742208714 n=1703855078 n/c=0.621344 r/n=0.8852 upper=1 lower=0 split=holdout
+c=2742944452 n=1704125682 n/c=0.621276 r/n=0.8847 upper=1 lower=0 split=holdout
+c=2742965614 n=1704135916 n/c=0.621275 r/n=0.8847 upper=1 lower=0 split=holdout
+c=2744052958 n=1704583172 n/c=0.621192 r/n=0.8841 upper=1 lower=0 split=holdout
+c=2764147760 n=1710959450 n/c=0.618983 r/n=0.8767 upper=1 lower=0 split=holdout
+c=2764579086 n=1711103824 n/c=0.618938 r/n=0.8765 upper=1 lower=0 split=holdout
+c=2764592224 n=1711103998 n/c=0.618935 r/n=0.8765 upper=1 lower=0 split=holdout
+c=2764618610 n=1711173672 n/c=0.618955 r/n=0.8763 upper=1 lower=0 split=holdout
+c=2785659584 n=1718170006 n/c=0.616791 r/n=0.8681 upper=1 lower=0 split=holdout
+c=2786994300 n=1718816972 n/c=0.616728 r/n=0.8670 upper=1 lower=0 split=holdout
+c=2787761878 n=1719084200 n/c=0.616654 r/n=0.8666 upper=1 lower=0 split=holdout
+c=2788019876 n=1719202802 n/c=0.616639 r/n=0.8664 upper=1 lower=0 split=holdout
+c=4369974827 n=2820284909 n/c=0.645378 r/n=0.9776 upper=1 lower=0 split=holdout
+c=4370620461 n=2820557057 n/c=0.645345 r/n=0.9773 upper=1 lower=0 split=holdout
+c=4370702475 n=2820510387 n/c=0.645322 r/n=0.9774 upper=1 lower=0 split=holdout
+c=4370755845 n=2820554725 n/c=0.645324 r/n=0.9773 upper=1 lower=0 split=holdout
+c=4385753481 n=2829532153 n/c=0.645164 r/n=0.9706 upper=1 lower=0 split=holdout
+c=4385818423 n=2829701665 n/c=0.645194 r/n=0.9703 upper=1 lower=0 split=holdout
+c=4658079819 n=2975859797 n/c=0.638860 r/n=0.8714 upper=1 lower=0 split=holdout
+c=4660862515 n=2976724871 n/c=0.638664 r/n=0.8709 upper=1 lower=0 split=holdout
+c=4661181187 n=2976868895 n/c=0.638651 r/n=0.8707 upper=1 lower=0 split=holdout
+c=4661196985 n=2976901185 n/c=0.638656 r/n=0.8707 upper=1 lower=0 split=holdout
+c=4684904473 n=2984540939 n/c=0.637055 r/n=0.8659 upper=1 lower=0 split=holdout
+c=4701540117 n=2989911117 n/c=0.635943 r/n=0.8625 upper=1 lower=0 split=holdout
+c=4723688587 n=2997359985 n/c=0.634538 r/n=0.8577 upper=1 lower=0 split=holdout
+c=4746056935 n=3003967555 n/c=0.632940 r/n=0.8535 upper=1 lower=0 split=holdout
+c=4766943591 n=3010624383 n/c=0.631563 r/n=0.8494 upper=1 lower=0 split=holdout
+c=4766966237 n=3010624637 n/c=0.631560 r/n=0.8494 upper=1 lower=0 split=holdout
+c=4806963953 n=3023087939 n/c=0.628898 r/n=0.8417 upper=1 lower=0 split=holdout
+c=4812119141 n=3024812133 n/c=0.628582 r/n=0.8406 upper=1 lower=0 split=holdout
+c=4827849767 n=3029529679 n/c=0.627511 r/n=0.8377 upper=1 lower=0 split=holdout
+c=4828026085 n=3029625769 n/c=0.627508 r/n=0.8377 upper=1 lower=0 split=holdout
+c=4832562083 n=3031165647 n/c=0.627238 r/n=0.8366 upper=1 lower=0 split=holdout
+c=4883413871 n=3047167123 n/c=0.623983 r/n=0.8268 upper=1 lower=0 split=holdout
+c=4883499367 n=3047056847 n/c=0.623949 r/n=0.8270 upper=1 lower=0 split=holdout
+c=4884601697 n=3047674441 n/c=0.623935 r/n=0.8264 upper=0 lower=1 split=holdout
+c=4884930633 n=3047848565 n/c=0.623929 r/n=0.8262 upper=1 lower=0 split=holdout
+c=4885223057 n=3047991865 n/c=0.623921 r/n=0.8260 upper=1 lower=0 split=holdout
+c=4885281629 n=3047982213 n/c=0.623911 r/n=0.8261 upper=1 lower=0 split=holdout
+c=4901491895 n=3053019575 n/c=0.622876 r/n=0.8230 upper=1 lower=0 split=holdout
+c=4901596709 n=3053143797 n/c=0.622888 r/n=0.8228 upper=1 lower=0 split=holdout
+c=4901908435 n=3052996559 n/c=0.622818 r/n=0.8230 upper=1 lower=0 split=holdout
+c=4901961189 n=3053053329 n/c=0.622823 r/n=0.8229 upper=1 lower=0 split=holdout
+c=4903117625 n=3053482857 n/c=0.622764 r/n=0.8226 upper=1 lower=0 split=holdout
+c=4903148785 n=3053479265 n/c=0.622759 r/n=0.8226 upper=1 lower=0 split=holdout
+c=4903704003 n=3053848607 n/c=0.622764 r/n=0.8222 upper=1 lower=0 split=holdout
+c=7930776808 n=4995165446 n/c=0.629846 r/n=0.9647 upper=1 lower=0 split=holdout
+c=7932836876 n=4996090554 n/c=0.629799 r/n=0.9642 upper=1 lower=0 split=holdout
+c=7971739894 n=5008694726 n/c=0.628306 r/n=0.9590 upper=0 lower=1 split=holdout
+c=7980834282 n=5011154820 n/c=0.627899 r/n=0.9580 upper=1 lower=0 split=holdout
+c=7980861108 n=5011164394 n/c=0.627898 r/n=0.9580 upper=1 lower=0 split=holdout
+c=7989233076 n=5014060798 n/c=0.627602 r/n=0.9568 upper=1 lower=0 split=holdout
+c=8008749244 n=5020807442 n/c=0.626915 r/n=0.9539 upper=1 lower=0 split=holdout
+c=8009806962 n=5021440048 n/c=0.626911 r/n=0.9536 upper=1 lower=0 split=holdout
+c=8061626692 n=5038648368 n/c=0.625016 r/n=0.9468 upper=1 lower=0 split=holdout
+c=8093128546 n=5047862020 n/c=0.623722 r/n=0.9432 upper=1 lower=0 split=holdout
+c=8093523564 n=5047960170 n/c=0.623704 r/n=0.9431 upper=1 lower=0 split=holdout
+c=8093777104 n=5047849826 n/c=0.623670 r/n=0.9432 upper=1 lower=0 split=holdout
+c=8096461292 n=5049719102 n/c=0.623695 r/n=0.9421 upper=1 lower=0 split=holdout
+c=8112057222 n=5055620618 n/c=0.623223 r/n=0.9398 upper=1 lower=0 split=holdout
+c=8132438414 n=5059658306 n/c=0.622158 r/n=0.9381 upper=1 lower=0 split=holdout
+c=8132468542 n=5059619656 n/c=0.622151 r/n=0.9381 upper=1 lower=0 split=holdout
+c=8132564140 n=5059722424 n/c=0.622156 r/n=0.9380 upper=1 lower=0 split=holdout
+c=8155049222 n=5066909690 n/c=0.621322 r/n=0.9352 upper=1 lower=0 split=holdout
+c=8208388238 n=5083807856 n/c=0.619343 r/n=0.9287 upper=1 lower=0 split=holdout
+c=8208673254 n=5083715172 n/c=0.619310 r/n=0.9288 upper=1 lower=0 split=holdout
+c=8208922404 n=5084190334 n/c=0.619349 r/n=0.9284 upper=1 lower=0 split=holdout
+c=8293118724 n=5111390214 n/c=0.616341 r/n=0.9179 upper=1 lower=0 split=holdout
+c=8302577914 n=5114579198 n/c=0.616023 r/n=0.9166 upper=1 lower=0 split=holdout
+c=8354488176 n=5131704730 n/c=0.614245 r/n=0.9101 upper=1 lower=0 split=holdout

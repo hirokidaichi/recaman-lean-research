@@ -1,0 +1,14 @@
+pass1 horizon=10000000000 elapsed=224.716s intervals=105347 mex=1355 finalValue=16705983634
+checkpoint(first 19 landings) PASS
+first landings: 1=1 2=3 4=2 10=11 16=8 31=14 64=26 131=4 222=47 403=92 770=111 1409=181 2652=150 4825=371 9078=361 16773=781 30768=828 56827=366 99734=19
+completed arcs=39 openArcOrdinal=40
+comb ends total=44422 blocked(all)=19738 inOpenArc=1514 blockedInOpenArc=352
+teeth T: T=1:5149 T=2:1998 T>=3:37275 maxT=12385428; log2 histogram (floor(log2 T):count): 0:5149 1:2042 2:191 3:134 4:225 5:385 6:636 7:976 8:1495 9:2113 10:3064 11:3749 12:4505 13:4600 14:4444 15:3792 16:2879 17:1885 18:1110 19:609 20:266 21:125 22:39 23:9
+lock outcomes (all blocked comb ends): break=16252 wrap=8 l3blocked=3478 interrupted=0 none(active at horizon)=0
+verification: a(c+3)=3c+v+6 checked=44422 mismatches=0; step c+4 is addition <=> blocked checked=44422 mismatches=0; fresh: step c+5 is addition <=> c+v-3 visited at c+4 checked=24684 mismatches=0
+lock checks: step c+4 not addition=0 pairIndexMismatch=0 level3ValueMismatch=0 level3LevelMismatch=0 level4LevelMismatch=0
+lockcand mask check (bit i_gen of the candidate mask at time c set): ok=0 notSet=0 candEqualsC+v+1=0 iGen>=64(unchecked)=609
+breaks: i_obs > i_gen=609 i_obs == i_gen=13055 i_obs < i_gen=2588
+queries: test=19738 lockcand=609 l3=3478 entry23=22263
+band exits (2 <= h <= 10000000): total=6140 kept=6140 samplingFactor=1 (every k-th exit, ordinals 0, k, 2k, ...); level-1 clocks followed by two additions with h > cap=42161 with h < 2=2
+band exits kept with >= 1 completed pair before n=647
