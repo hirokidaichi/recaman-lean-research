@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース252モジュール（68,625行、認証済み深部traceを含む）
+- Leanソース253モジュール（68894行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -123,6 +123,8 @@ Lean 4形式化プロジェクトです。
   固定される（`PopupLock`でLean化）。固定は通常`i_gen=(T−1)+⌊(J_eff+2)/3⌋`で破れ、固定のまま剰余が尽きるのは
   `v<13+7·i`のときだけ（break 15,926 / wrap 8 / k=5へ3,452）。landing floorは「剰余の残量と帯のrunで費用が
   決まるhole-hoppingの降下が852656に届かない」命題（[arc trace](docs/ARC_TRACE_2026-09-02.md)）
+- 剰余則と固定の予算をLean化（`LockResidue`）：`a n=q·n+r`で両ステップとも`(q,r)→(q±1,r−q)`、`r<q`なら剰余が
+  跳ね上がって弧が終わる。固定は1対で剰余−7、`v<13+7K`なら対Kで弧終了、着地前runがJ対なら`⌊(J+2)/3⌋`対以上続く
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

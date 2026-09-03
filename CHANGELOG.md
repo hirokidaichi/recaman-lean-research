@@ -1,5 +1,11 @@
 # Changelog
 
+## Residue law and the lock budget (Lean) — 2026-09-03
+
+- `LockResidue`：剰余則（両ステップで `(q,r)→(q±1,r−q)`、`r<q` で剰余が跳ね上がり弧が終わる）、固定の 1 対で
+  剰余 −7、予算 `v<13+7K` で対 K の内部に剰余増加、着地前 run が J 対なら固定は `⌊(J+2)/3⌋` 対以上続く
+  （registry `E-038`、253 モジュール）
+
 ## Arc death rule: locks break, residue decides — 2026-09-02
 
 - `experiments/arc_potential_probe.cpp`（registry `E-036`）：「k=3/4 固定 ⟺ Φ の落差 ≥ 3」は偽

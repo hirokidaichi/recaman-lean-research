@@ -148,6 +148,10 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   （7/1/0/15,926）。36 弧の底は全て comb 末端で、弧の終わりは wrap 8・break 後に穴なし 11・fresh 後に
   穴なし 15・`k=5` 後 2。landing floor は「剰余の残量と帯の run で費用が決まる hole-hopping の降下が
   852656 に届かない」命題に更新（カード受入条件 3）。
+- `E-038`（`PROVED-LEAN`, `LockResidue`）: 剰余則 `(q,r)→(q±1,r−q)`（`q≤r`）と剰余の跳ね上がり（`r<q`、ステップ種に
+  よらず弧が終わる）、固定の 1 対で剰余が 7 減ること、予算 `t<m+7`（comb 末端座標で `v<13+7K`）で対の内部に
+  剰余増加が起きること、着地前 run が J 対なら固定が `⌊(J+2)/3⌋` 対以上続くことを Lean 化。`E-037` の wrap 条件と
+  T=1 の break 下界（10^10 で 2,658/2,658）の局所部分が定理になった。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -184,7 +188,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 252 modules、68,625 lines。
-- `./scripts/check.sh`: 254 jobs、1,165 audited declarations。
+- Lean source 253 modules、68894 lines。
+- `./scripts/check.sh`: 255 jobs、1,178 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

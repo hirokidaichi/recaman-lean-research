@@ -3209,3 +3209,18 @@ comb 末端で、弧の終わりは wrap 8・break 後に帯を掃いても穴�
 `v/h_prev ≥ 0.95` が continued 42,627/42,863。深い弧 6 本のうち wrap は 35・36・37 の 3 本、30・38・39 は
 `i = i_gen` で破れた後に穴なしで死んだ。landing floor は「剰余の残量と帯の run で費用が決まる
 hole-hopping の降下が 852656 に届かない」命題に更新し、カードの受入条件 3 を書き換えた。
+
+### 第百三十八ラウンド：剰余則と固定の予算の Lean 化（LockResidue、E-038）
+
+`LockResidue`（direct import `PopupLock`）：`a n = q·n + r`（`r<n`）の座標で、両ステップとも `q ≤ r` なら
+`(q, r) → (q±1, r−q)`（`residue_add`/`residue_sub`）、`r < q ≤ n` なら次の剰余は `r+(n+1)−q > r`
+（`residue_wrap`、ステップ種によらない）。これが Chaffin の弧（剰余非増加区間）の終端事象である。
+固定の 1 対（`a m = 3m+t`）は予算 `m+7 ≤ t` のとき剰余 `t−m → t−m−4 → t−m−7`（`level34_pair_residues`）、
+`t < m+7` なら対の内部で剰余が増える（`level34_pair_wrap`、下側時刻の後のステップが加算でも減算でも）。
+comb 末端座標（`m=i+5`、`t=i+v−1`）では予算が `13+7k ≤ v` になり（`popup_lock_residues`）、
+`6+7K ≤ v < 13+7K` なら対 K で弧が終わる（`popup_lock_wrap`）。これは `E-037` の wrap 条件そのものである。
+着地前の k=1/2 run が J 対なら `3k+1 ≤ J` の k=2 候補は `prelanding_upper_values` により軌道自身の値で
+塞がれ、固定は `⌊(J+2)/3⌋` 対以上続く（`popup_lock_persists`）。これは T=1 の break 下界 `i_obs ≥ i_pred`
+（10^10 の T=1 break 2,658 件は全て下界を満たす）。初回 `lake env lean` は `valuesThrough_mono` が import 外で
+1 エラー、局所補題 `valuesThrough_mono_of_le` を足して通過した。残る局所部分は T≥2 の先行する歯の test 値
+（経験的に 13,193/13,268 で既訪問だが定理ではない）と、固定が破れた後の降下が穴へ届く条件である。

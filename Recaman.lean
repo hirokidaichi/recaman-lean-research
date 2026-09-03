@@ -241,6 +241,7 @@ import Recaman.DescendingChain
 import Recaman.HoleHopping
 import Recaman.PopupLock
 import Recaman.LevelTwoThree
+import Recaman.LockResidue
 import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle

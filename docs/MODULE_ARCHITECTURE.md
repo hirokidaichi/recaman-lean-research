@@ -50,6 +50,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `HoleHopping` | `DescendingChain` | chain補題だけから導くhole-hopping規則とcomb sweep |
 | `PopupLock` | `HoleHopping` | pop-up後のk=3/4固定：入口、1対、反復、clock以上の値のみ、自身のk=2値との同一視 |
 | `LevelTwoThree` | `PopupLock` | pop-up後にk=2へ戻る場合、k=2→1の復帰、k=2/3 ping-pongの反復と出口の位置エネルギー |
+| `LockResidue` | `PopupLock` | 剰余則（両ステップで(q,r)→(q±1,r−q)、r<qで剰余増加＝弧の終端）、固定の1対で剰余−7、予算t<m+7（comb末端座標でv<13+7K）での弧終了、着地前runによる候補閉塞と固定の持続⌊(J+2)/3⌋対 |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。
