@@ -95,6 +95,10 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/run_length_recaman_simulator.cpp -o /tmp/rlsim
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/arc_trace_probe.cpp -o /tmp/arctrace
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/arc_potential_probe.cpp -o /tmp/arcpot
+c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+  experiments/arc_death_rule_probe.cpp -o /tmp/deathrule
 ```
 
 Example runs:

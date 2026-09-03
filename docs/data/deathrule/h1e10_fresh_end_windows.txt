@@ -1,0 +1,266 @@
+# steps after fresh comb ends (c, v) whose arc ends without a later late landing; up to 20 steps, the wrap clock (first clock of the next arc) is marked *
+fresh comb end, arc ends: arc=3 c=4 v=2 T=1 J=0 hPrev=1 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=3
+  pattern(k,step): 1A 2A *2A
+  5 c+1 a=7 k=1 r=2 A cand=none
+  6 c+2 a=13 k=2 r=1 A cand=1 blocked
+* 7 c+3 a=20 k=2 r=6 A cand=6 blocked
+fresh comb end, arc ends: arc=5 c=16 v=8 T=3 J=1 hPrev=4 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=6
+  pattern(k,step): 1A 2A 3A 2S 3A *1S
+  17 c+1 a=25 k=1 r=8 A cand=none
+  18 c+2 a=43 k=2 r=7 A cand=7 blocked
+  19 c+3 a=62 k=3 r=5 A cand=24 blocked
+  20 c+4 a=42 k=2 r=2 S cand=42 fresh
+  21 c+5 a=63 k=3 r=0 A cand=21 blocked
+* 22 c+6 a=41 k=1 r=19 S cand=41 fresh
+fresh comb end, arc ends: arc=6 c=31 v=14 T=5 J=0 hPrev=19 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=9
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 1S 2A *0S
+  32 c+1 a=46 k=1 r=14 A cand=none
+  33 c+2 a=79 k=2 r=13 A cand=13 blocked
+  34 c+3 a=113 k=3 r=11 A cand=45 blocked
+  35 c+4 a=78 k=2 r=8 S cand=78 fresh
+  36 c+5 a=114 k=3 r=6 A cand=42 blocked
+  37 c+6 a=77 k=2 r=3 S cand=77 fresh
+  38 c+7 a=39 k=1 r=1 S cand=39 fresh
+  39 c+8 a=78 k=2 r=0 A cand=none
+* 40 c+9 a=38 k=0 r=38 S cand=38 fresh late
+fresh comb end, arc ends: arc=7 c=64 v=26 T=13 J=0 hPrev=1 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=13
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S *0S
+  65 c+1 a=91 k=1 r=26 A cand=none
+  66 c+2 a=157 k=2 r=25 A cand=25 blocked
+  67 c+3 a=224 k=3 r=23 A cand=90 blocked
+  68 c+4 a=156 k=2 r=20 S cand=156 fresh
+  69 c+5 a=225 k=3 r=18 A cand=87 blocked
+  70 c+6 a=155 k=2 r=15 S cand=155 fresh
+  71 c+7 a=226 k=3 r=13 A cand=84 blocked
+  72 c+8 a=154 k=2 r=10 S cand=154 fresh
+  73 c+9 a=227 k=3 r=8 A cand=81 blocked
+  74 c+10 a=153 k=2 r=5 S cand=153 fresh
+  75 c+11 a=228 k=3 r=3 A cand=78 blocked
+  76 c+12 a=152 k=2 r=0 S cand=152 fresh
+* 77 c+13 a=75 k=0 r=75 S cand=75 fresh late
+fresh comb end, arc ends: arc=8 c=131 v=4 T=2 J=4 hPrev=18 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=4
+  pattern(k,step): 1A 2A 3A *1S
+  132 c+1 a=136 k=1 r=4 A cand=none
+  133 c+2 a=269 k=2 r=3 A cand=3 blocked
+  134 c+3 a=403 k=3 r=1 A cand=135 blocked
+* 135 c+4 a=268 k=1 r=133 S cand=268 fresh
+fresh comb end, arc ends: arc=9 c=222 v=47 T=14 J=1 hPrev=64 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=27
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A
+  223 c+1 a=270 k=1 r=47 A cand=none
+  224 c+2 a=494 k=2 r=46 A cand=46 blocked
+  225 c+3 a=719 k=3 r=44 A cand=269 blocked
+  226 c+4 a=493 k=2 r=41 S cand=493 fresh
+  227 c+5 a=720 k=3 r=39 A cand=266 blocked
+  228 c+6 a=492 k=2 r=36 S cand=492 fresh
+  229 c+7 a=721 k=3 r=34 A cand=263 blocked
+  230 c+8 a=491 k=2 r=31 S cand=491 fresh
+  231 c+9 a=722 k=3 r=29 A cand=260 blocked
+  232 c+10 a=490 k=2 r=26 S cand=490 fresh
+  233 c+11 a=723 k=3 r=24 A cand=257 blocked
+  234 c+12 a=489 k=2 r=21 S cand=489 fresh
+  235 c+13 a=254 k=1 r=19 S cand=254 fresh
+  236 c+14 a=490 k=2 r=18 A cand=18 blocked
+  237 c+15 a=253 k=1 r=16 S cand=253 fresh
+  238 c+16 a=491 k=2 r=15 A cand=15 blocked
+  239 c+17 a=252 k=1 r=13 S cand=252 fresh
+  240 c+18 a=492 k=2 r=12 A cand=12 blocked
+  241 c+19 a=251 k=1 r=10 S cand=251 fresh
+  242 c+20 a=493 k=2 r=9 A cand=9 blocked
+fresh comb end, arc ends: arc=10 c=403 v=92 T=19 J=7 hPrev=132 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=51
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 1S 2A 1S 2A
+  404 c+1 a=496 k=1 r=92 A cand=none
+  405 c+2 a=901 k=2 r=91 A cand=91 blocked
+  406 c+3 a=1307 k=3 r=89 A cand=495 blocked
+  407 c+4 a=900 k=2 r=86 S cand=900 fresh
+  408 c+5 a=1308 k=3 r=84 A cand=492 blocked
+  409 c+6 a=899 k=2 r=81 S cand=899 fresh
+  410 c+7 a=1309 k=3 r=79 A cand=489 blocked
+  411 c+8 a=898 k=2 r=76 S cand=898 fresh
+  412 c+9 a=1310 k=3 r=74 A cand=486 blocked
+  413 c+10 a=897 k=2 r=71 S cand=897 fresh
+  414 c+11 a=1311 k=3 r=69 A cand=483 blocked
+  415 c+12 a=896 k=2 r=66 S cand=896 fresh
+  416 c+13 a=1312 k=3 r=64 A cand=480 blocked
+  417 c+14 a=895 k=2 r=61 S cand=895 fresh
+  418 c+15 a=1313 k=3 r=59 A cand=477 blocked
+  419 c+16 a=894 k=2 r=56 S cand=894 fresh
+  420 c+17 a=474 k=1 r=54 S cand=474 fresh
+  421 c+18 a=895 k=2 r=53 A cand=53 blocked
+  422 c+19 a=473 k=1 r=51 S cand=473 fresh
+  423 c+20 a=896 k=2 r=50 A cand=50 blocked
+fresh comb end, arc ends: arc=11 c=770 v=111 T=2 J=1 hPrev=116 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=75
+  pattern(k,step): 1A 2A 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  771 c+1 a=882 k=1 r=111 A cand=none
+  772 c+2 a=1654 k=2 r=110 A cand=110 blocked
+  773 c+3 a=2427 k=3 r=108 A cand=881 blocked
+  774 c+4 a=1653 k=2 r=105 S cand=1653 fresh
+  775 c+5 a=878 k=1 r=103 S cand=878 fresh
+  776 c+6 a=1654 k=2 r=102 A cand=102 blocked
+  777 c+7 a=877 k=1 r=100 S cand=877 fresh
+  778 c+8 a=1655 k=2 r=99 A cand=99 blocked
+  779 c+9 a=876 k=1 r=97 S cand=876 fresh
+  780 c+10 a=1656 k=2 r=96 A cand=96 blocked
+  781 c+11 a=875 k=1 r=94 S cand=875 fresh
+  782 c+12 a=1657 k=2 r=93 A cand=93 blocked
+  783 c+13 a=874 k=1 r=91 S cand=874 fresh
+  784 c+14 a=1658 k=2 r=90 A cand=90 blocked
+  785 c+15 a=873 k=1 r=88 S cand=873 fresh
+  786 c+16 a=1659 k=2 r=87 A cand=87 blocked
+  787 c+17 a=872 k=1 r=85 S cand=872 fresh
+  788 c+18 a=1660 k=2 r=84 A cand=84 blocked
+  789 c+19 a=871 k=1 r=82 S cand=871 fresh
+  790 c+20 a=1661 k=2 r=81 A cand=81 blocked
+fresh comb end, arc ends: arc=12 c=1409 v=181 T=24 J=0 hPrev=205 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=112
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 3A 2S 1S 2A
+  1410 c+1 a=1591 k=1 r=181 A cand=none
+  1411 c+2 a=3002 k=2 r=180 A cand=180 blocked
+  1412 c+3 a=4414 k=3 r=178 A cand=1590 blocked
+  1413 c+4 a=3001 k=2 r=175 S cand=3001 fresh
+  1414 c+5 a=4415 k=3 r=173 A cand=1587 blocked
+  1415 c+6 a=3000 k=2 r=170 S cand=3000 fresh
+  1416 c+7 a=4416 k=3 r=168 A cand=1584 blocked
+  1417 c+8 a=2999 k=2 r=165 S cand=2999 fresh
+  1418 c+9 a=4417 k=3 r=163 A cand=1581 blocked
+  1419 c+10 a=2998 k=2 r=160 S cand=2998 fresh
+  1420 c+11 a=4418 k=3 r=158 A cand=1578 blocked
+  1421 c+12 a=2997 k=2 r=155 S cand=2997 fresh
+  1422 c+13 a=4419 k=3 r=153 A cand=1575 blocked
+  1423 c+14 a=2996 k=2 r=150 S cand=2996 fresh
+  1424 c+15 a=4420 k=3 r=148 A cand=1572 blocked
+  1425 c+16 a=2995 k=2 r=145 S cand=2995 fresh
+  1426 c+17 a=4421 k=3 r=143 A cand=1569 blocked
+  1427 c+18 a=2994 k=2 r=140 S cand=2994 fresh
+  1428 c+19 a=1566 k=1 r=138 S cand=1566 fresh
+  1429 c+20 a=2995 k=2 r=137 A cand=137 blocked
+fresh comb end, arc ends: arc=13 c=2652 v=150 T=1 J=7 hPrev=172 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=101
+  pattern(k,step): 1A 2A 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  2653 c+1 a=2803 k=1 r=150 A cand=none
+  2654 c+2 a=5457 k=2 r=149 A cand=149 blocked
+  2655 c+3 a=8112 k=3 r=147 A cand=2802 blocked
+  2656 c+4 a=5456 k=2 r=144 S cand=5456 fresh
+  2657 c+5 a=2799 k=1 r=142 S cand=2799 fresh
+  2658 c+6 a=5457 k=2 r=141 A cand=141 blocked
+  2659 c+7 a=2798 k=1 r=139 S cand=2798 fresh
+  2660 c+8 a=5458 k=2 r=138 A cand=138 blocked
+  2661 c+9 a=2797 k=1 r=136 S cand=2797 fresh
+  2662 c+10 a=5459 k=2 r=135 A cand=135 blocked
+  2663 c+11 a=2796 k=1 r=133 S cand=2796 fresh
+  2664 c+12 a=5460 k=2 r=132 A cand=132 blocked
+  2665 c+13 a=2795 k=1 r=130 S cand=2795 fresh
+  2666 c+14 a=5461 k=2 r=129 A cand=129 blocked
+  2667 c+15 a=2794 k=1 r=127 S cand=2794 fresh
+  2668 c+16 a=5462 k=2 r=126 A cand=126 blocked
+  2669 c+17 a=2793 k=1 r=124 S cand=2793 fresh
+  2670 c+18 a=5463 k=2 r=123 A cand=123 blocked
+  2671 c+19 a=2792 k=1 r=121 S cand=2792 fresh
+  2672 c+20 a=5464 k=2 r=120 A cand=120 blocked
+fresh comb end, arc ends: arc=14 c=4825 v=371 T=6 J=2 hPrev=383 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=221
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  4826 c+1 a=5197 k=1 r=371 A cand=none
+  4827 c+2 a=10024 k=2 r=370 A cand=370 blocked
+  4828 c+3 a=14852 k=3 r=368 A cand=5196 blocked
+  4829 c+4 a=10023 k=2 r=365 S cand=10023 fresh
+  4830 c+5 a=14853 k=3 r=363 A cand=5193 blocked
+  4831 c+6 a=10022 k=2 r=360 S cand=10022 fresh
+  4832 c+7 a=5190 k=1 r=358 S cand=5190 fresh
+  4833 c+8 a=10023 k=2 r=357 A cand=357 blocked
+  4834 c+9 a=5189 k=1 r=355 S cand=5189 fresh
+  4835 c+10 a=10024 k=2 r=354 A cand=354 blocked
+  4836 c+11 a=5188 k=1 r=352 S cand=5188 fresh
+  4837 c+12 a=10025 k=2 r=351 A cand=351 blocked
+  4838 c+13 a=5187 k=1 r=349 S cand=5187 fresh
+  4839 c+14 a=10026 k=2 r=348 A cand=348 blocked
+  4840 c+15 a=5186 k=1 r=346 S cand=5186 fresh
+  4841 c+16 a=10027 k=2 r=345 A cand=345 blocked
+  4842 c+17 a=5185 k=1 r=343 S cand=5185 fresh
+  4843 c+18 a=10028 k=2 r=342 A cand=342 blocked
+  4844 c+19 a=5184 k=1 r=340 S cand=5184 fresh
+  4845 c+20 a=10029 k=2 r=339 A cand=339 blocked
+fresh comb end, arc ends: arc=15 c=9078 v=361 T=5 J=25 hPrev=441 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=240
+  pattern(k,step): 1A 2A 3A 2S 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  9079 c+1 a=9440 k=1 r=361 A cand=none
+  9080 c+2 a=18520 k=2 r=360 A cand=360 blocked
+  9081 c+3 a=27601 k=3 r=358 A cand=9439 blocked
+  9082 c+4 a=18519 k=2 r=355 S cand=18519 fresh
+  9083 c+5 a=27602 k=3 r=353 A cand=9436 blocked
+  9084 c+6 a=18518 k=2 r=350 S cand=18518 fresh
+  9085 c+7 a=9433 k=1 r=348 S cand=9433 fresh
+  9086 c+8 a=18519 k=2 r=347 A cand=347 blocked
+  9087 c+9 a=9432 k=1 r=345 S cand=9432 fresh
+  9088 c+10 a=18520 k=2 r=344 A cand=344 blocked
+  9089 c+11 a=9431 k=1 r=342 S cand=9431 fresh
+  9090 c+12 a=18521 k=2 r=341 A cand=341 blocked
+  9091 c+13 a=9430 k=1 r=339 S cand=9430 fresh
+  9092 c+14 a=18522 k=2 r=338 A cand=338 blocked
+  9093 c+15 a=9429 k=1 r=336 S cand=9429 fresh
+  9094 c+16 a=18523 k=2 r=335 A cand=335 blocked
+  9095 c+17 a=9428 k=1 r=333 S cand=9428 fresh
+  9096 c+18 a=18524 k=2 r=332 A cand=332 blocked
+  9097 c+19 a=9427 k=1 r=330 S cand=9427 fresh
+  9098 c+20 a=18525 k=2 r=329 A cand=329 blocked
+fresh comb end, arc ends: arc=18 c=56827 v=366 T=1 J=153 hPrev=826 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=245
+  pattern(k,step): 1A 2A 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  56828 c+1 a=57194 k=1 r=366 A cand=none
+  56829 c+2 a=114023 k=2 r=365 A cand=365 blocked
+  56830 c+3 a=170853 k=3 r=363 A cand=57193 blocked
+  56831 c+4 a=114022 k=2 r=360 S cand=114022 fresh
+  56832 c+5 a=57190 k=1 r=358 S cand=57190 fresh
+  56833 c+6 a=114023 k=2 r=357 A cand=357 blocked
+  56834 c+7 a=57189 k=1 r=355 S cand=57189 fresh
+  56835 c+8 a=114024 k=2 r=354 A cand=354 blocked
+  56836 c+9 a=57188 k=1 r=352 S cand=57188 fresh
+  56837 c+10 a=114025 k=2 r=351 A cand=351 blocked
+  56838 c+11 a=57187 k=1 r=349 S cand=57187 fresh
+  56839 c+12 a=114026 k=2 r=348 A cand=348 blocked
+  56840 c+13 a=57186 k=1 r=346 S cand=57186 fresh
+  56841 c+14 a=114027 k=2 r=345 A cand=345 blocked
+  56842 c+15 a=57185 k=1 r=343 S cand=57185 fresh
+  56843 c+16 a=114028 k=2 r=342 A cand=342 blocked
+  56844 c+17 a=57184 k=1 r=340 S cand=57184 fresh
+  56845 c+18 a=114029 k=2 r=339 A cand=339 blocked
+  56846 c+19 a=57183 k=1 r=337 S cand=57183 fresh
+  56847 c+20 a=114030 k=2 r=336 A cand=336 blocked
+fresh comb end, arc ends: arc=20 c=181653 v=61 T=1 J=2 hPrev=68 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=41
+  pattern(k,step): 1A 2A 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  181654 c+1 a=181715 k=1 r=61 A cand=none
+  181655 c+2 a=363370 k=2 r=60 A cand=60 blocked
+  181656 c+3 a=545026 k=3 r=58 A cand=181714 blocked
+  181657 c+4 a=363369 k=2 r=55 S cand=363369 fresh
+  181658 c+5 a=181711 k=1 r=53 S cand=181711 fresh
+  181659 c+6 a=363370 k=2 r=52 A cand=52 blocked
+  181660 c+7 a=181710 k=1 r=50 S cand=181710 fresh
+  181661 c+8 a=363371 k=2 r=49 A cand=49 blocked
+  181662 c+9 a=181709 k=1 r=47 S cand=181709 fresh
+  181663 c+10 a=363372 k=2 r=46 A cand=46 blocked
+  181664 c+11 a=181708 k=1 r=44 S cand=181708 fresh
+  181665 c+12 a=363373 k=2 r=43 A cand=43 blocked
+  181666 c+13 a=181707 k=1 r=41 S cand=181707 fresh
+  181667 c+14 a=363374 k=2 r=40 A cand=40 blocked
+  181668 c+15 a=181706 k=1 r=38 S cand=181706 fresh
+  181669 c+16 a=363375 k=2 r=37 A cand=37 blocked
+  181670 c+17 a=181705 k=1 r=35 S cand=181705 fresh
+  181671 c+18 a=363376 k=2 r=34 A cand=34 blocked
+  181672 c+19 a=181704 k=1 r=32 S cand=181704 fresh
+  181673 c+20 a=363377 k=2 r=31 A cand=31 blocked
+fresh comb end, arc ends: arc=26 c=5771203 v=32102 T=1 J=1 hPrev=32106 blocked=0 outcome=none iObs=0 continued=0 gap(wrap or next late)=13383
+  pattern(k,step): 1A 2A 3A 2S 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A 1S 2A
+  5771204 c+1 a=5803306 k=1 r=32102 A cand=none
+  5771205 c+2 a=11574511 k=2 r=32101 A cand=32101 blocked
+  5771206 c+3 a=17345717 k=3 r=32099 A cand=5803305 blocked
+  5771207 c+4 a=11574510 k=2 r=32096 S cand=11574510 fresh
+  5771208 c+5 a=5803302 k=1 r=32094 S cand=5803302 fresh
+  5771209 c+6 a=11574511 k=2 r=32093 A cand=32093 blocked
+  5771210 c+7 a=5803301 k=1 r=32091 S cand=5803301 fresh
+  5771211 c+8 a=11574512 k=2 r=32090 A cand=32090 blocked
+  5771212 c+9 a=5803300 k=1 r=32088 S cand=5803300 fresh
+  5771213 c+10 a=11574513 k=2 r=32087 A cand=32087 blocked
+  5771214 c+11 a=5803299 k=1 r=32085 S cand=5803299 fresh
+  5771215 c+12 a=11574514 k=2 r=32084 A cand=32084 blocked
+  5771216 c+13 a=5803298 k=1 r=32082 S cand=5803298 fresh
+  5771217 c+14 a=11574515 k=2 r=32081 A cand=32081 blocked
+  5771218 c+15 a=5803297 k=1 r=32079 S cand=5803297 fresh
+  5771219 c+16 a=11574516 k=2 r=32078 A cand=32078 blocked
+  5771220 c+17 a=5803296 k=1 r=32076 S cand=5803296 fresh
+  5771221 c+18 a=11574517 k=2 r=32075 A cand=32075 blocked
+  5771222 c+19 a=5803295 k=1 r=32073 S cand=5803295 fresh
+  5771223 c+20 a=11574518 k=2 r=32072 A cand=32072 blocked

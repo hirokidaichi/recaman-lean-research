@@ -119,10 +119,10 @@ Lean 4形式化プロジェクトです。
   第3.25×10^11項。見立ては非全射側（[analysis](docs/CHAFFIN_LANDING_ANALYSIS_2026-09-02.md)）
 - hole-hopping規則をLean化（`HoleHopping`）：chainは自クラス（mod 3）の最初の穴に着地し、着地後は連続する穴を
   掃く。帯の生存を無制限とした閉包はChaffinの穴をほぼ全て埋めるので、852655の保護はarcの深さに依る
-- 深い弧のステップtrace（10^10）で弧の終端機構が確定：底はcomb末端で、`2c+v+2`（同じ弧の過去の`k=2`値）が
-  既訪問だと`k=3/4`に固定され剰余が尽きるまで遅延着地は起きない。固定の局所部分は`PopupLock`でLean化。
-  landing floorは「`Φ=2·時刻+高さ`の走行最大値からの落差が3に達する高さ」の法則に帰着
-  （[arc trace](docs/ARC_TRACE_2026-09-02.md)）
+- 深い弧のステップtrace（10^10）：底はcomb末端で、`2c+v+2`（同じ弧の過去の`k=2`値）が既訪問だと`k=3/4`に
+  固定される（`PopupLock`でLean化）。固定は通常`i_gen=(T−1)+⌊(J_eff+2)/3⌋`で破れ、固定のまま剰余が尽きるのは
+  `v<13+7·i`のときだけ（break 15,926 / wrap 8 / k=5へ3,452）。landing floorは「剰余の残量と帯のrunで費用が
+  決まるhole-hoppingの降下が852656に届かない」命題（[arc trace](docs/ARC_TRACE_2026-09-02.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

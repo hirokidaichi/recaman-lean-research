@@ -1,5 +1,15 @@
 # Changelog
 
+## Arc death rule: locks break, residue decides — 2026-09-02
+
+- `experiments/arc_potential_probe.cpp`（registry `E-036`）：「k=3/4 固定 ⟺ Φ の落差 ≥ 3」は偽
+  （blocked かつ落差 < 3 が 318、fresh かつ落差 ≥ 3 が 2,745、底 = 最初の落差 ≥ 3 は 0/39）
+- `experiments/arc_death_rule_probe.cpp`（registry `E-037`）：固定は通常破れる（break 15,926 / wrap 8 /
+  k=5 へ 3,452）。break 添字 `i_gen=(T−1)+⌊(J_eff+2)/3⌋`、wrap 条件 `v<13+7·i_pred`（7/1/0/15,926）。
+  弧の終わりは wrap 8・break 後に穴なし 11・fresh 後に穴なし 15・k=5 後 2
+- `ARC_TRACE` §3〜§6、landing floor カードの Exact mechanism と受入条件 3 を訂正：landing floor は
+  「剰余の残量と帯の run で費用が決まる hole-hopping の降下が 852656 に届かない」命題
+
 ## Arc trace: the exact termination mechanism — 2026-09-02
 
 - `experiments/arc_trace_probe.cpp`：弧の底は最後の遅延着地。深い弧6本の終端はすべて「comb末端で
