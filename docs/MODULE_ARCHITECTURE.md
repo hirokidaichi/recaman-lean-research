@@ -52,6 +52,7 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 | `LevelTwoThree` | `PopupLock` | pop-up後にk=2へ戻る場合、k=2→1の復帰、k=2/3 ping-pongの反復と出口の位置エネルギー |
 | `LockResidue` | `PopupLock` | 剰余則（両ステップで(q,r)→(q±1,r−q)、r<qで剰余増加＝弧の終端）、固定の1対で剰余−7、予算t<m+7（comb末端座標でv<13+7K）での弧終了、着地前runによる候補閉塞と固定の持続⌊(J+2)/3⌋対 |
 | `PingPongRuns` | `LockResidue` | 任意level p+2/p+1のping-pong：1対で剰余−(2p+3)、K対のrunの上側値a m+k・下側値a m−(m+k+1)（候補の既訪問/未訪問だけで記述、level仮定なし）、既訪問候補は加算を強制・未訪問候補は減算を強制 |
+| `CombExit` | `LevelTwoThree`, `LockResidue` | T本の歯のcombの加算値i+v+2−s（連続run）がk=2/3段の出口候補i+v−2−3k（3k+5≤T）を塞ぎ、test値が未訪問のcomb末端の後の段は⌊(T−2)/3⌋対以上続く（popup_lock_persistsのfresh側対応物） |
 
 `nextSubtractionCandidate n = a n - (n + 1)`は23 moduleで使われるため、target固有の
 `TargetCandidateTransitions`からkernelの`Basic`へownershipを移した。完全修飾名は変わらない。

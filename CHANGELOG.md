@@ -1,5 +1,10 @@
 # Changelog
 
+## The comb blocks the level-2/3 exits (Lean) — 2026-09-03
+
+- `CombExit`：comb の加算値 `i+v+2−s` が k=2/3 段の出口候補を塞ぎ、段は `⌊(T−2)/3⌋` 対以上続く
+  （registry `E-040`、255 モジュール）。provenance census の gap=7 署名の exact な説明
+
 ## Ping-pong runs at every level (Lean) — 2026-09-03
 
 - `PingPongRuns`：任意 level `p+2/p+1` の ping-pong の 1 対（剰余 −(2p+3)）と K 対の run（上側 `a m+k`、下側

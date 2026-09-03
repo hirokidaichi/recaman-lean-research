@@ -243,6 +243,7 @@ import Recaman.PopupLock
 import Recaman.LevelTwoThree
 import Recaman.LockResidue
 import Recaman.PingPongRuns
+import Recaman.CombExit
 import Recaman.SharpResidualKernel
 import Recaman.Examples
 import Recaman.Oracle

@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース254モジュール（69,031行、認証済み深部traceを含む）
+- Leanソース255モジュール（69,106行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -127,6 +127,8 @@ Lean 4形式化プロジェクトです。
   跳ね上がって弧が終わる。固定は1対で剰余−7、`v<13+7K`なら対Kで弧終了、着地前runがJ対なら`⌊(J+2)/3⌋`対以上続く
 - 任意levelのping-pong runをLean化（`PingPongRuns`）：1対で剰余−(2p+3)、K対のrunの上側値は`a m+k`、下側値は
   `a m−(m+k+1)`の連続run。chain・k=2/3段・固定の共通形
+- combがk=2/3段の出口を塞ぐことをLean化（`CombExit`）：歯sの後の加算値`i+v+2−s`が出口候補`i+v−2−3k`（`3k+5≤T`）を
+  塞ぎ、test値未訪問のcomb末端の後の段は`⌊(T−2)/3⌋`対以上続く
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

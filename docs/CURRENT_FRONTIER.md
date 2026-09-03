@@ -156,6 +156,10 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   上側値は `a m + k`、下側値は `a m − (m+k+1)` の連続 run（候補の既訪問/未訪問だけで記述）。既訪問候補は加算を、
   未訪問候補は減算を強制する。chain(p=0)・k=2/3 段(p=1)・固定(p=2) の共通形で、blocker provenance
   （`H-20260903-01`、[card](HYPOTHESIS_CARD_2026-09-03_BLOCKER_PROVENANCE.md)）の仮説 (B) の裏付け。
+- `E-040`（`PROVED-LEAN`, `CombExit`）: T 本の歯の comb の加算値 `i+v+2−s` が、test 値未訪問後の k=2/3 段の出口候補
+  `i+v−2−3k`（`3k+5 ≤ T`）を塞ぐ。段は `⌊(T−2)/3⌋` 対以上続く（`popup_lock_persists` の fresh 側対応物）。
+  provenance census（10^9）で entry23 blocker の 85% が同じ弧の level-1 値、その主成分が gap=7 の comb 加算値
+  だったことの exact な説明。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -192,7 +196,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 254 modules、69,031 lines。
-- `./scripts/check.sh`: 256 jobs、1,183 audited declarations。
+- Lean source 255 modules、69,106 lines。
+- `./scripts/check.sh`: 257 jobs、1,186 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

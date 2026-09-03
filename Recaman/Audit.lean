@@ -1179,6 +1179,9 @@ import Recaman
 #print axioms Recaman.pingpong_pair
 #print axioms Recaman.pingpong_pair_residues
 #print axioms Recaman.pingpong_run
+#print axioms Recaman.comb_addition_values
+#print axioms Recaman.level23_candidate_blocked_by_comb
+#print axioms Recaman.level23_phase_of_comb
 #print axioms Recaman.forcedAddition_candidate_historical
 #print axioms Recaman.exists_forcedAddition_of_ray
 #print axioms Recaman.corridor_forcedAddition_clock_and_seen

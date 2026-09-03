@@ -3237,3 +3237,13 @@ comb 末端座標（`m=i+5`、`t=i+v−1`）では予算が `13+7k ≤ v` にな
 同時に blocker provenance のカード `H-20260903-01`（test 値・固定候補・k=3 値・k=2→1 候補の初訪問の
 level・弧・run 所属を 10^10 で全数調査：(A) level ≥ 2、(B) ping-pong run に属する、(C) 同じ弧なら q=2、
 前の弧なら q ≥ 3）を起こし、2 パス probe をサブエージェントに依頼した。
+
+### 第百四十ラウンド：comb が k=2/3 段の出口を塞ぐ（CombExit、E-040）
+
+blocker provenance probe の 10^9 discovery で、fresh な comb 末端の k=2→1 候補 `c+v−3` の blocker は
+85% が同じ弧の level-1 値で、gap `c−n = 7` が最頻だった。これは comb 自身の歯 `s=4`（着地 `v+4` at `c−8`）の
+後の強制加算値 `c+v−3` である。一般に歯 `s` の後の加算値は `i+v+2−s`（`comb_addition_values`）で、k=2/3 段の
+出口候補 `i+v−2−3k` は歯 `3k+4` の加算値なので `3k+5 ≤ T` なら既訪問（`level23_candidate_blocked_by_comb`）。
+従って test 値未訪問の comb 末端の後の k=2/3 段は `⌊(T−2)/3⌋` 対以上続く（`level23_phase_of_comb`、
+`popup_lock_persists` の fresh 側対応物）。`CombExit`（direct import `LevelTwoThree`・`LockResidue`）。
+初回コンパイルは歯の値の上界 `v+2T ≤ i+1` が弱く omega が反例を出したので `v+3T ≤ i+1` に直して通過。
