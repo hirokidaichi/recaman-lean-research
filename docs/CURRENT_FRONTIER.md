@@ -188,7 +188,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 253 modules、68894 lines。
+- Lean source 253 modules、68,894 lines。
 - `./scripts/check.sh`: 255 jobs、1,178 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。
