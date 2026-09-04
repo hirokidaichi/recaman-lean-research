@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース255モジュール（69,106行、認証済み深部traceを含む）
+- Leanソース255モジュール（69,136行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、

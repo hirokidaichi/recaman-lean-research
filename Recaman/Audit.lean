@@ -1171,6 +1171,9 @@ import Recaman
 #print axioms Recaman.level34_pair_wrap
 #print axioms Recaman.popup_lock_residues
 #print axioms Recaman.popup_lock_wrap
+#print axioms Recaman.popup_lock_candidate_margin
+#print axioms Recaman.popup_lock_candidate_gt_twice_earlier
+#print axioms Recaman.popup_lock_candidate_level_ge_two
 #print axioms Recaman.valuesThrough_mono_of_le
 #print axioms Recaman.popup_lock_candidate_blocked_by_run
 #print axioms Recaman.popup_lock_persists

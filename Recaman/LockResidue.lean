@@ -206,6 +206,33 @@ theorem popup_lock_wrap {i v K : Nat} (hentry : a (i + 5) = 4 * i + v + 14) (hle
   exact level34_pair_wrap hup (by omega) (by omega) (by omega) (hfresh K (Nat.le_refl K))
     (by omega)
 
+/-- The sharp arithmetic margin for a level-two candidate presented before the residue
+budget of the pop-up lock is exhausted.  Equality is possible in the assumptions when
+`n = i` and `v = 13 + 7 * k`. -/
+theorem popup_lock_candidate_margin {i v k n : Nat} (hbefore : n < i + 1)
+    (hbudget : 13 + 7 * k ≤ v) :
+    2 * n + 14 + 4 * k ≤ 2 * (i + 1) + v - 1 - 3 * k := by
+  omega
+
+/-- A level-two candidate presented before the residue budget of the pop-up lock is
+exhausted is larger than twice every clock before the comb-end landing.  Thus the
+empirical lower bound `q ≥ 2` for a `lockcand` first visit uses no provenance of that
+visit beyond its time order. -/
+theorem popup_lock_candidate_gt_twice_earlier {i v k n : Nat} (hbefore : n < i + 1)
+    (hbudget : 13 + 7 * k ≤ v) :
+    2 * n < 2 * (i + 1) + v - 1 - 3 * k := by
+  have hmargin := popup_lock_candidate_margin hbefore hbudget
+  omega
+
+/-- Quotient form of `popup_lock_candidate_gt_twice_earlier`: at every positive earlier
+clock the candidate has level at least two. -/
+theorem popup_lock_candidate_level_ge_two {i v k n : Nat} (hn : 0 < n)
+    (hbefore : n < i + 1) (hbudget : 13 + 7 * k ≤ v) :
+    2 ≤ (2 * (i + 1) + v - 1 - 3 * k) / n := by
+  rw [Nat.le_div_iff_mul_le hn]
+  have hgt := popup_lock_candidate_gt_twice_earlier hbefore hbudget
+  omega
+
 /-- Membership in the history persists to every later clock. -/
 theorem valuesThrough_mono_of_le {x n t : Nat} (h : x ∈ valuesThrough n) (hnt : n ≤ t) :
     x ∈ valuesThrough t := by

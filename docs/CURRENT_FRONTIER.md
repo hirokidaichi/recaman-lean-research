@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-02
+最終更新: 2026-09-05
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -166,6 +166,11 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   同じ弧の level-1 値が 87%（comb の歯 4 の加算値 = gap 7、`CombExit`）、前の弧の k=2 値（`n ≈ c/2`）が 12%。
   99.78% が ping-pong run に属し、例外は梯子・スパイク・谷のみ。**帯の履歴は「同じ弧の直近の run」と「前の弧の
   時刻 ≈ c/2 の run」で決まる**（スケール半減の自己相似）。[epoch report](BLOCKER_PROVENANCE_EPOCH_2026-09-03.md)。
+- `E-042`（`PROVED-LEAN`, `H-20260905-01`）: no-wrap 予算 `13+7k≤v` と comb 末端より早い clock
+  `n<c=i+1` だけで、lock candidate `w=2c+v−1−3k` は sharp な `2n+14+4k≤w` を満たす。
+  positive `n` では `2≤w/n`。従って `E-041` 後続候補 (A') の `lockcand` level 下界も
+  provenance を使わない算術的帰結であり、この枝は landing floor の causal input として `STOPPED`。
+  再開には初訪問を同じ弧の具体的 run へ帰属する exact statement が必要。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
@@ -202,7 +207,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 255 modules、69,106 lines。
-- `./scripts/check.sh`: 257 jobs、1,186 audited declarations。
+- Lean source 255 modules、69,136 lines。
+- `./scripts/check.sh`: 257 jobs、1,189 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

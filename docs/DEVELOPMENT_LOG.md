@@ -3261,3 +3261,20 @@ blocker provenance probe の 10^9 discovery で、fresh な comb 末端の k=2�
 全て梯子（4→3→2→1→0、79 件、70 件は遅延着地で終わる）・スパイク（31）・谷（5）。カードは `REFUTED`、
 後続命題 (A')(B')(C'') を epoch report §2.4 に書いた。結論：帯の履歴は「同じ弧の直近の run」と「前の弧の
 時刻 ≈ c/2 の run」の 2 成分で決まる（スケール半減の自己相似）。`docs/data/provenance/` に原本を格納。
+
+### 第百四十二ラウンド：lockcand level 下界の意味監査（H-20260905-01、E-042）
+
+結論：`E-041` 後続候補 (A') のうち非自明と考えていた `lockcand` の level≥2 も、actual-orbit
+provenance を使わない算術的帰結だった。`c=i+1` より前の clock `n` と、固定 pair `k` まで
+wrap しない residue 予算 `13+7k≤v` だけから、候補 `w=2c+v−1−3k` に sharp な
+`2n+14+4k≤w` が成り立つ（`popup_lock_candidate_margin`）。positive `n` なら
+`2≤w/n`（`popup_lock_candidate_level_ge_two`）。従って level 下界を landing floor の causal
+input として追う枝は `STOPPED`。再開条件は、初訪問を同じ弧の具体的 ping-pong run へ帰属する exact
+statement である。
+
+falsifier として revision `d47bc31` の `blocker_provenance_probe` を10^10まで再実行
+（432.86秒、checkpoint PASS、52,197 distinct query valuesを全解決、unresolved 0）。凍結済み
+discovery `c<10^9` の `lockcand` 237件と holdout 372件について、no-wrap budget、`n<c`、
+候補式、sharp margin、level≥2の違反は全て0。最小margin slackは89,148／72,228だった。
+`docs/data/provenance/post.sh` に再現用集計を追加し、結果を `h1e10_post.txt` へ保存した。
+`./scripts/check.sh` は257 jobs、1,189 declarationsの公理監査、禁止語走査まで通過した。

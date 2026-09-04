@@ -960,3 +960,12 @@ A枝は経験的に全targetで偽であり、残る非全射機構はdescending
 `chain_small_candidate_mod_three`、`late_landing_iff`（`1 ≤ t ≤ n`で`a (n+1) = t ⟺ a n = n+(t+1) ∧ t ∉ valuesThrough n`）。
 これはChaffinの「ping-pong区間」（10^612項計算の加速機構）と同一の対象であり、B枝のcombを
 target非依存に一般化したものである。
+
+**Round 142（lockcand level 下界の意味監査、E-042）** —
+`popup_lock_candidate_margin` は、comb 末端の着地 `c=i+1` より前の clock `n` と、
+pair `k` まで residue wrap を起こさない予算 `13+7k≤v` だけから、lock candidate
+`w=2c+v−1−3k` に sharp な `2n+14+4k≤w` を与える。positive `n` では
+`popup_lock_candidate_level_ge_two` により `2≤w/n`。従って blocker provenance census 後の
+候補 (A') の `lockcand` 部分は actual-orbit ancestry を使わない算術的帰結であり、
+landing floor の新しい causal input にはならない。次に意味があるのは level 下界ではなく、
+初訪問を同じ弧の具体的 run へ帰属する statement である。

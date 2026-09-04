@@ -72,9 +72,16 @@ blocker 52,228 件のうち ping-pong run に属さないものは 115 件（0.2
 (C'') 同じ弧 ⇒ q = L または (l3 かつ q = 4)、前の弧 ⇒ q > L。                     [違反 1（c=4）]
 ```
 
-注意（サブエージェントの指摘）：(A') は `test`（`w = 2c+v+2 > 2n`）と `l3`（`w > 3n`）では初訪問 `n < c` の
-時刻順序だけから自明である。非自明なのは `lockcand` の 609 件（q=2 が 608、q=4 が 1）だけで、これは
-「run を越えて固定を続かせる k=2 候補は、弧自身の後の時刻の k=2 値（`n/c ≥ 0.942`）」という主張になる。
+注意（2026-09-05 bounded audit）：(A') は `test`（`w = 2c+v+2 > 2n`）と `l3`（`w > 3n`）では
+初訪問 `n < c` の時刻順序だけから自明である。当初は `lockcand` の 609 件（q=2 が 608、q=4 が 1）を
+非自明と見たが、これも provenance を使わない。pair `k` まで同じ弧にいる no-wrap 予算
+`13+7k ≤ v` と `n<c=i+1` から、候補 `w=2c+v−1−3k` には sharp な
+`2n+14+4k ≤ w` が成り立ち、positive `n` なら `2≤w/n` である
+（`popup_lock_candidate_margin`、`popup_lock_candidate_level_ge_two`、
+[card](HYPOTHESIS_CARD_2026-09-05_LOCKCAND_LEVEL.md)）。従って (A') の level 下界は landing floor を進める
+causal input ではない。残る非自明な主張は、初訪問を同じ弧のどの run に帰属できるかである。
+同じ10^10 probeを再計算して `post.sh` のbridge監査を通すと、discovery 237件・holdout 372件で
+budget/time/formula/margin/level違反は全て0、実データ上の最小margin slackはそれぞれ89,148・72,228だった。
 
 ### 2.5 補足（`docs/data/provenance/REPORT.md` §7）
 

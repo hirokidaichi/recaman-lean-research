@@ -26,3 +26,24 @@ awk '$1=="test" && $24==0 { q=$14; r=$26+0; if (!(q in mn) || r<mn[q]) mn[q]=r; 
 echo
 echo "== l3 values sameArc q=4 (C-prime exceptions): residue/n and run flags =="
 awk '$1=="l3" && $24==1 && $14==4 { n=$12; printf "c=%s n=%s n/c=%s r/n=%.4f upper=%s lower=%s split=%s\n", $3, n, $26, $15/n, $22, $23, ($3<1000000000)?"discovery":"holdout" }' "$R"
+echo
+echo "== lockcand: no-wrap budget and sharp earlier-clock margin =="
+awk '$1=="lockcand" {
+  bucket=($3<1000000000)?"discovery":"holdout";
+  k=$8; n=$12; candidate=2*$3+$4-1-3*k; lower=2*n+14+4*k;
+  count[bucket]++;
+  if (13+7*k>$4) budgetBad[bucket]++;
+  if (n>=$3) timeBad[bucket]++;
+  if ($2!=candidate) formulaBad[bucket]++;
+  if ($2<lower) marginBad[bucket]++;
+  if ($14<2) levelBad[bucket]++;
+  slack=$2-lower;
+  if (!(bucket in minSlack) || slack<minSlack[bucket]) minSlack[bucket]=slack;
+}
+END {
+  order[1]="discovery"; order[2]="holdout";
+  for (j=1;j<=2;j++) {
+    s=order[j];
+    printf "%s count=%d budgetBad=%d timeBad=%d formulaBad=%d marginBad=%d levelBad=%d minMarginSlack=%.0f\n", s, count[s], budgetBad[s]+0, timeBad[s]+0, formulaBad[s]+0, marginBad[s]+0, levelBad[s]+0, minSlack[s];
+  }
+}' "$R"
