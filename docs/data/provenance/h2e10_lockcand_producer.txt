@@ -1,0 +1,46 @@
+lockcand producer audit
+source revision for experiments/blocker_provenance_probe.cpp: d808ec2
+horizon: 20000000000
+discovery cutoff c < 10000000000
+frozen holdout: 10000000000 <= c < 20000000000
+pass1 checkpoint: PASS
+pass1 queries: 66325 (bandExits kept=6224 of 6224, factor=1)
+pass2 checkpoint: PASS
+pass2 resolved: 66289 of 66289
+unresolved: 0
+total elapsed: 887.93s
+
+[discovery] total=609
+  same-upper=280
+  same-lower=278
+  same-both=1
+  same-ladder=45
+  same-valley=4
+  prev-ladder=1
+  patterns: ASAA=6 ASAS=214 ASSA=1 SASA=134 SASS=146 SSAA=4 SSAS=58 SSSS=46
+[holdout] total=274
+  same-upper=72
+  same-lower=158
+  same-both=0
+  same-ladder=40
+  same-valley=4
+  prev-ladder=0
+  patterns: AAAS=2 ASAA=1 ASAS=120 SASA=35 SASS=37 SSAA=4 SSAS=35 SSSS=40
+violations:
+  total=0
+charge diagnostics:
+  distinct (w,n) producers=874
+  maximum queries per (w,n) producer=2
+  discovery maximum lockcand queries per event arc=129
+  holdout maximum lockcand queries per event arc=196
+
+Reproduction commands:
+
+  c++ -O3 -std=c++20 experiments/blocker_provenance_probe.cpp -o blocker_provenance_probe
+  blocker_provenance_probe 20000000000 OUTDIR
+  sh docs/data/provenance/lockcand_producer_audit.sh OUTDIR/records.txt 10000000000
+
+The audit independently checks n>=2, n<c, the no-wrap budget, the lock-candidate
+formula, both stored run flags, the same-arc flag, and both q=2 gap-cost inequalities.
+The six producer classes were frozen before this run.  The permitted ASSS repair was
+not used.

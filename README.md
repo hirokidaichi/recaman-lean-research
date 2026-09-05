@@ -32,7 +32,7 @@ Lean 4形式化プロジェクトです。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース255モジュール（69,136行、認証済み深部traceを含む）
+- Leanソース255モジュール（69,165行、認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
@@ -132,6 +132,10 @@ Lean 4形式化プロジェクトです。
 - blocker provenance（10^10、52,228件）：降下を塞ぐ値の96%（lock側）／87%（fresh側）は同じ弧自身のrun、残りは前の弧の
   時刻≈c/2のrun（k=4固定run、k=2値）。99.78%がping-pong runに属する。帯の履歴は「同じ弧の直近＋前の弧のc/2」
   （[epoch report](docs/BLOCKER_PROVENANCE_EPOCH_2026-09-03.md)）
+- lockcand producerを200億clockまで監査：初訪問883件はsame-arc `q=2`のupper/lower rail・ladder・valleyと
+  直前arc `q=4` ladderの6型に無修復で分類。ただし`q=2`のgap costをLean化した一方、local tupleは任意個の
+  後続event式と両立するcountermodelもLean化し、local分類からbounded chargeを出す枝は停止
+  （[epoch report](docs/LOCKCAND_PRODUCER_EPOCH_2026-09-05.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

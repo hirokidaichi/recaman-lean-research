@@ -3278,3 +3278,21 @@ discovery `c<10^9` の `lockcand` 237件と holdout 372件について、no-wrap
 候補式、sharp margin、level≥2の違反は全て0。最小margin slackは89,148／72,228だった。
 `docs/data/provenance/post.sh` に再現用集計を追加し、結果を `h1e10_post.txt` へ保存した。
 `./scripts/check.sh` は257 jobs、1,189 declarationsの公理監査、禁止語走査まで通過した。
+
+### 第百四十三ラウンド：lockcand producer完全分類とlocal charge no-go（H-20260905-02、E-043/E-044）
+
+結論：`lockcand`の初訪問は200億clockまで6 producer型へ無修復で完全分類できたが、local分類を
+landing floorのbounded chargeへ変換する枝は`STOPPED`。凍結した型はsame-arc `q=2`のupper/lower/both
+ping-pong rail、run外`SSSS` ladder / `SSAA` valley、直前arc `q=4`の`SSSS` ladder。source revision
+`d808ec2`の`blocker_provenance_probe 20000000000`は887.93秒、checkpoint両pass PASS、66,289 distinct
+query valuesを全解決、unresolved 0。discovery `c<10^10`の609件と未使用holdout 274件で分類・time・budget・
+formula・flag・gap-cost違反は全て0、許可した`ASSS` repairは未使用だった（`E-043`, `COMPUTED`）。
+
+same-arcの`q=2`分解`w=2n+r`から`2(c−n)+12+4k≤r`と`2(c−n)+13+4k≤n`を
+`popup_lock_candidate_qtwo_gap_cost`としてLean化。一方、一つのlocal `(n,r,w)`が任意個の異なる後続event式と
+no-wrap budgetに両立する弱化history countermodelを`lock_candidate_local_data_allows_many_events`として
+Lean化した（`E-044`, `PROVED-LEAN`）。実データのevent arc当たりquery最大数も129から196へ増加。
+従って再開にはlocal step wordの延長でなく、actual arc survivalを使うstrict landing-bottom descentまたは
+uniform finite-to-one chargeが必要。exact outputは`docs/data/provenance/h2e10_lockcand_producer.txt`、
+handoffは`docs/LOCKCAND_PRODUCER_EPOCH_2026-09-05.md`。
+`./scripts/check.sh`は257 jobs、1,191 declarationsの公理監査、禁止語走査まで通過した。

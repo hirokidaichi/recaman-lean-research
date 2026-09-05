@@ -1174,6 +1174,8 @@ import Recaman
 #print axioms Recaman.popup_lock_candidate_margin
 #print axioms Recaman.popup_lock_candidate_gt_twice_earlier
 #print axioms Recaman.popup_lock_candidate_level_ge_two
+#print axioms Recaman.popup_lock_candidate_qtwo_gap_cost
+#print axioms Recaman.lock_candidate_local_data_allows_many_events
 #print axioms Recaman.valuesThrough_mono_of_le
 #print axioms Recaman.popup_lock_candidate_blocked_by_run
 #print axioms Recaman.popup_lock_persists

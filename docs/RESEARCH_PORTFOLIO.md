@@ -107,6 +107,11 @@ forced addition の原因となる既出候補を blocker とし、時刻から 
 - 重みを変えても高再利用 blocker が無制限に収支を破る
 - 評価に「その値が後で再訪する」という全域性同値の仮定が混入する
 
+2026-09-05更新：`lockcand`のlocal first-visit producerは200億clockまで6型へ完全分類できたが、
+一つのlocal `(n,r,w)`が任意多数の後続event式と両立する弱化history countermodelをLean化した。
+従ってこのlocal provenance枝は継続ゲートを満たさず`STOPPED`。再開にはactual arc survivalを使う
+strict landing-bottom descentまたはuniform finite-to-one chargeが必要（`E-043/E-044`）。
+
 ### C. 有界反例モデルと有限延長問題
 
 証明だけでなく、missing target と整合する長い仮想 tail を構成できるかを調べる。正確な履歴制約を持つ有限延長問題と、制約を弱めた抽象モデルを分離する。

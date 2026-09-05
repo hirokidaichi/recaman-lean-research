@@ -936,6 +936,22 @@ birthを真に抑える independently testable global invariant である。
 に固定した。二分定理D（`E-025`）のLean化を最初の作業とし、chainの侵入率判定（run-length
 simulator）で証明の方向を決める。以降の優先順位はこの文書のT1〜T5に従う。
 
+## 2026-09-05の判断：lockcand local provenance枝の閉鎖
+
+`H-20260905-02`は、`lockcand`初訪問を具体的ping-pong railまたは短いladder/valleyへ割り当てる
+6型分類を凍結し、未使用holdout `[10^10,2·10^10)` 274件を含む全883件で無修復PASSした
+（`E-043`, `COMPUTED`）。same-arc `q=2`からevent/producer間のgap costもLean化した。
+
+しかし一つのlocal producer tupleは任意多数の後続event式とno-wrap budgetに両立し得る
+（`E-044`, `PROVED-LEAN`）。従ってlocal step wordやlevel分類を延長してもbounded chargeは出ない。
+この枝は`STOPPED`とし、次の判断を固定する。
+
+1. 6型分類は200億までの有限evidenceとして保存し、一般定理とは呼ばない。
+2. local producer wordの窓を延長する修理は行わない。
+3. 再開はactual arc survival/historyからlanding bottomへのstrict descent、またはuniform finite-to-one
+   chargeを先に定式化できた場合だけとする。
+4. 研究優先順位は`E-028`のarc survival/depthへ戻す。
+
 ## 並行して行う保守
 
 - 一つの数学概念を一つの下位モジュールへ置く。

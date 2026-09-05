@@ -969,3 +969,14 @@ pair `k` まで residue wrap を起こさない予算 `13+7k≤v` だけから�
 候補 (A') の `lockcand` 部分は actual-orbit ancestry を使わない算術的帰結であり、
 landing floor の新しい causal input にはならない。次に意味があるのは level 下界ではなく、
 初訪問を同じ弧の具体的 run へ帰属する statement である。
+
+**Round 143（lockcand producer完全分類とlocal charge no-go、E-043/E-044）** —
+`lockcand` 初訪問を、same-arc `q=2` のupper/lower/both rail、run外の`SSSS` ladder / `SSAA`
+valley、直前arc `q=4` の`SSSS` ladderへ凍結分類した。`c<10^10`の609件と、カード作成後の
+holdout `10^10≤c<2·10^10` 274件は無修復で全件この6型に入り、time/budget/formula/flag/gap-cost
+違反0（`COMPUTED`）。same-arcの`w=2n+r`からは`popup_lock_candidate_qtwo_gap_cost`により
+`2(c−n)+12+4k≤r`、`2(c−n)+13+4k≤n`を得た。一方
+`lock_candidate_local_data_allows_many_events`は、任意Mに対し同じlocal `(n,r,w)` がM個の後続event式と
+両立する弱化history countermodelを与える（`PROVED-LEAN`）。従ってproducer分類だけではuniform chargeは
+出ず、この枝は`STOPPED`。次の必要入力はactual arc survivalからlanding bottomへのstrict descentまたは
+finite-to-one chargeである。

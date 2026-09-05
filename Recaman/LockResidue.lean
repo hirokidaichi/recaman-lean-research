@@ -233,6 +233,33 @@ theorem popup_lock_candidate_level_ge_two {i v k n : Nat} (hn : 0 < n)
   have hgt := popup_lock_candidate_gt_twice_earlier hbefore hbudget
   omega
 
+/-- The quantitative cost of assigning a lock candidate to a level-two first visit.
+If the candidate decomposes as `2 * n + r`, then its residue pays twice the clock
+gap back to the comb-end landing, as well as the remaining no-wrap budget.  Since
+`r < n`, the producer clock itself pays the same cost plus one. -/
+theorem popup_lock_candidate_qtwo_gap_cost {i v k n r : Nat}
+    (hbefore : n < i + 1) (hbudget : 13 + 7 * k ≤ v)
+    (hdecomp : 2 * (i + 1) + v - 1 - 3 * k = 2 * n + r) (hrem : r < n) :
+    2 * ((i + 1) - n) + 12 + 4 * k ≤ r ∧
+      2 * ((i + 1) - n) + 13 + 4 * k ≤ n := by
+  have hmargin := popup_lock_candidate_margin hbefore hbudget
+  constructor <;> omega
+
+/-- The local level-two producer data do not by themselves give a uniform charge bound.
+For every `M`, one fixed tuple `(n,r,w)` is arithmetically compatible with each of the
+`M` distinct later event clocks `n+g` (`1 ≤ g ≤ M`), using pair zero and a suitable
+no-wrap budget `v`.  This is deliberately a weakened-history countermodel: it shows that
+actual-orbit/arc survival information is necessary to turn the gap cost into a bound on
+the number of later lock events charged to one producer. -/
+theorem lock_candidate_local_data_allows_many_events (M : Nat) :
+    ∃ n r w, r < n ∧ w = 2 * n + r ∧
+      ∀ g, 0 < g → g ≤ M →
+        n < n + g ∧ 13 ≤ 2 * M + 13 - 2 * g ∧
+          w = 2 * (n + g) + (2 * M + 13 - 2 * g) - 1 := by
+  refine ⟨2 * M + 13, 2 * M + 12, 6 * M + 38, by omega, by omega, ?_⟩
+  intro g hg hle
+  omega
+
 /-- Membership in the history persists to every later clock. -/
 theorem valuesThrough_mono_of_le {x n t : Nat} (h : x ∈ valuesThrough n) (hnt : n ≤ t) :
     x ∈ valuesThrough t := by

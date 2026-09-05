@@ -170,7 +170,17 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   `n<c=i+1` だけで、lock candidate `w=2c+v−1−3k` は sharp な `2n+14+4k≤w` を満たす。
   positive `n` では `2≤w/n`。従って `E-041` 後続候補 (A') の `lockcand` level 下界も
   provenance を使わない算術的帰結であり、この枝は landing floor の causal input として `STOPPED`。
-  再開には初訪問を同じ弧の具体的 run へ帰属する exact statement が必要。
+  再開条件だった具体的run帰属は `E-043` で調べ、`E-044` のno-goまで進んだ。
+- `E-043`（`COMPUTED`, `H-20260905-02`）: `lockcand` 初訪問を same-arc `q=2` の upper/lower/both
+  ping-pong rail、run外の `SSSS` ladder / `SSAA` valley、または直前arc `q=4` の `SSSS` ladderの
+  6型へ凍結分類した。`c<10^10` の609件と未使用holdout `10^10≤c<2·10^10` の274件は無修復で
+  全て分類され、time/budget/formula/flag/gap-cost違反も0。一般定理ではなく200億までの有限証拠。
+- `E-044`（`PROVED-LEAN`, `LockResidue`）: same-arc型の `q=2` 分解 `w=2n+r` は
+  `2(c−n)+12+4k≤r` と `2(c−n)+13+4k≤n` を課す。一方、任意の `M` に対して一つのlocal
+  `(n,r,w)` が `M` 個の異なる後続event式・no-wrap予算と両立する弱化history countermodelもLean化。
+  実測でもevent arc当たりのquery最大数は129から196へ増えた。local producer分類だけからuniform
+  bounded charge / landing-bottom descentは出ないため枝は `STOPPED`。再開にはactual arc survivalを使う
+  strict descentまたはfinite-to-one chargeが必要。[epoch report](LOCKCAND_PRODUCER_EPOCH_2026-09-05.md)。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。
