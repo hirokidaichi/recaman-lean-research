@@ -1,0 +1,68 @@
+blocked-comb-survival-ratio audit
+date: 2026-09-05
+source revision: 904ab5693303530a0576a1e2f76358c93b6305d7
+command: /tmp/recaman_arc_death_rule_probe 20000000000 OUTDIR
+runtime: 424.765 s
+summary sha256: 2cdfe73b93c4900ca2728d5b2da4a787162ea18716232fea201984145f65f351
+comb_ends sha256: 0e9e816468082c22bc8a357809ed8b1a40826a0f242f398c5b5e8e8d95598896
+
+checkpoint(first 19 landings): PASS
+completed arcs: 40
+arc 40: start=8416580355 end=13808215355 landingIndex=13808214835 landingValue=1814
+exact recurrence checks: mismatches=0
+completed-arc comb ends: 52261
+
+predicate:
+  arcCompleted && hasRun && blocked && continued
+claim:
+  7*hPrev <= 16*v
+identity:
+  hPrev = v + T + 3*J
+
+range                         eligible  violations  identity_bad  min_slack
+frozen discovery (arcs 1..39)    19365           0             0        353
+delayed boundary (arc 40,c<1e10)   352           0             0 60371666202
+frozen holdout (1e10<=c<2e10)     6391           0             0     475297
+
+holdout outcomes:
+  break=5025
+  l3blocked=1366
+  wrap=0
+
+minimum holdout survivor slack record:
+  arc=40 c=13808169717 v=91751 T=2 J=16688 hPrev=141817
+  outcome=break slack=16*v-7*hPrev=475297
+
+controls:
+  frozen discovery fresh-and-continued records with 16*v<7*hPrev: 2
+  frozen holdout fresh-and-continued records with 16*v<7*hPrev: 0
+  frozen discovery blocked terminal records with 16*v<7*hPrev: 8
+  frozen holdout blocked terminal records with 16*v<7*hPrev: 1
+
+new holdout terminal below the threshold:
+  arc=40 c=13808214835 v=1814 T=1 J=16991 hPrev=52788
+  outcome=wrap iObs=258 continued=0 slack=16*v-7*hPrev=-340490
+
+All nine completed-arc blocked terminal records below the threshold through 2e10 are:
+  one l3blocked record (c=99734,v=19,T=1),
+  seven T=1 wrap records, and one T=2 wrap record.
+
+follow-up history audits on the same frozen output:
+  completed-arc T>=2 records whose every earlier-tooth test candidate is visited at c:
+    21563 of 45889
+  unique threshold-below T=2 terminal:
+    c=32144188 v=16114 T=2 J=10644 K=2301
+    16v=257824 < 7(v+T+3J)=336336
+    6+7K=16113 <= v < 16120=13+7K
+    required shifted-run index 3(K-(T-1))+1=6901 <= J
+    earlier-tooth candidate k=0 visited at c: yes
+  completed-arc l3blocked records: 4844 continued=4842 terminal=2
+    threshold-below: 1 continued=0 terminal=1
+  threshold-below l3blocked terminal c=99734:
+    popup l3blocked enters level five with residue r=9
+    observed steps from the entry: 5A 4S 5A 3S, hence one 5/4 pair spends 9 and wraps
+
+The full comb_ends.txt is reproducible but is not archived (56581 lines).  Field order is
+printed in its header by experiments/arc_death_rule_probe.cpp.  The holdout audit filters
+columns c=$2, v=$3, T=$4, hasRun=$7, J=$8, hPrev=$9, blocked=$12,
+outcome=$13, continued=$18, arcCompleted=$21.

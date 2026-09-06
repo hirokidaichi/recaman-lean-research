@@ -34,6 +34,7 @@ python3 experiments/chaffin_landing_analysis.py rec-landings-1e612.txt rec-holes
 /tmp/rlsim 10000000000000 accel                    # run-length orbit to 1e13 in about 8 minutes
 /tmp/rlsim 10000000000 plain                        # step-by-step cross-check, 4 minutes
 /tmp/arctrace 10000000000 /tmp/arctrace_out         # arc detector and deep-arc traces, 213 s
+/tmp/deathrule 589933 /tmp/deathrule_out 588588 589933  # optional exact clock-range trace
 python3 experiments/hole_hopping_closure.py docs/data/chaffin_rec-holes-2_32.txt  # residue-class game closure
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/balanced_trace_source_generator.cpp \
@@ -99,6 +100,7 @@ c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/arc_potential_probe.cpp -o /tmp/arcpot
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/arc_death_rule_probe.cpp -o /tmp/deathrule
+python3 experiments/phase_capacity_countermodels.py
 c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
   experiments/blocker_provenance_probe.cpp -o /tmp/provenance
 ```
@@ -139,7 +141,23 @@ Example runs:
 /tmp/supply_ancestry_probe 10000001 0 10000000
 /tmp/supply_ancestry_probe 20000001 10000001 20000000
 /tmp/fixed_seed_supply_falsifier 2000000 4096
+/tmp/deathrule 2000000 OUTDIR 1 2000000
+python3 experiments/l3blocked_resource_multiplicity.py \
+  OUTDIR/comb_ends.txt OUTDIR/trace.txt \
+  --discovery-end 600000 --holdout-end 2000000
 ```
+
+`phase_capacity_countermodels.py` checks finite samples from the two exact
+seeded families used by the affine phase-capacity no-go.  The paper argument,
+not these samples, eliminates all coefficients.  The seed obeys history-density,
+triangular-range, and clock-parity constraints, but is not claimed to be a
+canonical initial-0 prefix.
+
+`l3blocked_resource_multiplicity.py` independently replays membership from a
+clock-1 trace, locates completed-arc `l3blocked` events from `comb_ends.txt`, and
+counts reuse of each positive blocked candidate until the first residue wrap or
+late landing.  Its finite output is evidence for a possible finite-to-one charge,
+not a theorem or a survival-ratio proof.
 
 `use_gap_counterexample.cpp` is the frozen falsifier for the local reading
 of the burst-stream use-gap claim.  For every checked `q`, it follows the

@@ -307,4 +307,90 @@ theorem popup_lock_persists {i v J : Nat} (hentry : a (i + 5) = 4 * i + v + 14)
   exact level34_lock hval ((J + 2) / 3) hoff hfresh
     (fun k hk => popup_lock_candidate_blocked_by_run hJ hchain hrun k (by omega))
 
+/-- A long pre-landing level-1/2 run forces the pop-up lock to survive until a residue
+budget failure.  For a one-tooth comb the run-entry height is `v + 1 + 3 J`; the empirical
+survival threshold `16 v < 7 (v + 1 + 3 J)` implies that every lock candidate before the
+first failing pair `K` is one of the run's own upper values.  If the intervening level-three
+values are fresh, the residue therefore increases inside pair `K`.
+
+This is the exact local mechanism behind the `T = 1`, wrap-outcome portion of the blocked
+comb survival-ratio census.  It does not cover a multi-tooth comb or a previously visited
+level-three value. -/
+theorem popup_lock_wrap_of_long_prelanding_run {i v J K : Nat}
+    (hentry : a (i + 5) = 4 * i + v + 14) (hle : v ≤ i)
+    (hstart : 6 + 7 * K ≤ v) (hbudget : v < 13 + 7 * K)
+    (hJ : 2 * J + 1 ≤ i)
+    (hchain : ∀ j, j ≤ J → a (i - 2 * j) = (i - 2 * j) + (v + 1 + 3 * j))
+    (hrun : ∀ j, j ≤ J → v + 3 * j ∈ valuesThrough (i - 2 * j))
+    (hlong : 16 * v < 7 * (v + 1 + 3 * J))
+    (hfresh : ∀ k, k ≤ K →
+      2 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 1 ∉ valuesThrough (i + 5 + 2 * k)) :
+    a (i + 5 + 2 * K) % (i + 5 + 2 * K) < a (i + 5 + 2 * K + 1) % (i + 5 + 2 * K + 1) ∨
+      a (i + 5 + 2 * K + 1) % (i + 5 + 2 * K + 1) <
+        a (i + 5 + 2 * K + 2) % (i + 5 + 2 * K + 2) := by
+  have hrunLong : 3 * K + 1 ≤ J := by omega
+  exact popup_lock_wrap hentry hle hstart hbudget hfresh
+    (fun k hk => popup_lock_candidate_blocked_by_run hJ hchain hrun k (by omega))
+
+/-- Multi-tooth extension of `popup_lock_wrap_of_long_prelanding_run` with the missing
+actual-history edge made explicit.  The first `T - 1` lock candidates are the test values
+associated with the earlier teeth; unlike the one-tooth case, the comb equations alone do
+not make those values historical, so `hteeth` records their membership by the final landing.
+After those candidates, the pre-landing run before the first tooth supplies the remaining
+blockers.  The survival-ratio inequality is exactly strong enough to make that run reach
+the first residue-budget failure pair.
+
+This theorem does not assert that every canonical multi-tooth comb satisfies `hteeth`.
+That actual-orbit implication is the remaining survival-history obligation. -/
+theorem popup_lock_wrap_of_multitooth_history {i v T J K : Nat}
+    (hT : 1 ≤ T) (hi : 2 * (T - 1) ≤ i)
+    (hentry : a (i + 5) = 4 * i + v + 14) (hle : v ≤ i)
+    (hstart : 6 + 7 * K ≤ v) (hbudget : v < 13 + 7 * K)
+    (hJ : 2 * J + 1 ≤ i - 2 * (T - 1))
+    (hchain : ∀ j, j ≤ J →
+      a ((i - 2 * (T - 1)) - 2 * j) =
+        ((i - 2 * (T - 1)) - 2 * j) + (v + T + 3 * j))
+    (hrun : ∀ j, j ≤ J →
+      v + T - 1 + 3 * j ∈ valuesThrough ((i - 2 * (T - 1)) - 2 * j))
+    (hteeth : ∀ s, 1 ≤ s → s < T →
+      2 * (i + 1 - 2 * s) + (v + s) + 2 ∈ valuesThrough (i + 1))
+    (hlong : 16 * v < 7 * (v + T + 3 * J))
+    (hfresh : ∀ k, k ≤ K →
+      2 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 1 ∉
+        valuesThrough (i + 5 + 2 * k)) :
+    a (i + 5 + 2 * K) % (i + 5 + 2 * K) <
+        a (i + 5 + 2 * K + 1) % (i + 5 + 2 * K + 1) ∨
+      a (i + 5 + 2 * K + 1) % (i + 5 + 2 * K + 1) <
+        a (i + 5 + 2 * K + 2) % (i + 5 + 2 * K + 2) := by
+  apply popup_lock_wrap hentry hle hstart hbudget hfresh
+  intro k hk
+  by_cases hkt : k < T - 1
+  · have ht := hteeth (k + 1) (by omega) (by omega)
+    have hcand :
+        (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 3 =
+          2 * (i + 1 - 2 * (k + 1)) + (v + (k + 1)) + 2 := by
+      omega
+    rw [hcand]
+    exact valuesThrough_mono_of_le ht (by omega)
+  · let q := k - (T - 1)
+    have hkq : k = T - 1 + q := by
+      dsimp [q]
+      omega
+    have hqJ : 3 * q + 1 ≤ J := by
+      dsimp [q]
+      omega
+    have hb := popup_lock_candidate_blocked_by_run
+      (i := i - 2 * (T - 1)) (v := v + T - 1) hJ
+      (fun j hj => by
+        have h := hchain j hj
+        omega)
+      hrun q hqJ
+    have hcand :
+        ((i - 2 * (T - 1)) + 5 + 2 * q) +
+            ((i - 2 * (T - 1)) + (v + T - 1) - 1 - 5 * q) - 3 =
+          (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 3 := by
+      omega
+    rw [hcand] at hb
+    exact valuesThrough_mono_of_le hb (by omega)
+
 end Recaman

@@ -129,4 +129,98 @@ theorem pingpong_run {m K : Nat} (hlegal : m + K < a m)
       have hland := landing_of_fresh hlt hf
       omega
 
+/-- A ping-pong pair whose residue budget is below its full cost `2 p + 3` must wrap
+on one of its two steps.  If `r < p + 2`, the upper-to-lower step wraps immediately;
+otherwise that subtraction is regular and leaves residue below the lower level `p + 1`,
+so the return step wraps. -/
+theorem pingpong_pair_wrap {m p r : Nat} (hval : a m = (p + 2) * m + r)
+    (hr : r < m) (hq : p + 2 ≤ m) (hlegal : m + 1 < a m)
+    (hfresh : a m - (m + 1) ∉ valuesThrough m) (hbudget : r < 2 * p + 3) :
+    a m % m < a (m + 1) % (m + 1) ∨
+      a (m + 1) % (m + 1) < a (m + 2) % (m + 2) := by
+  by_cases hlow : r < p + 2
+  · left
+    exact (residue_wrap hval hr hlow hq).2
+  · right
+    have hland := landing_of_fresh hlegal hfresh
+    have hsub := residue_sub (q := p + 1) hval hr (by omega) hland
+    have hwrap := (residue_wrap hsub.1 (by omega) (by omega) (by omega)).2
+    rw [show m + 1 + 1 = m + 2 by omega] at hwrap
+    exact hwrap
+
+/-- A level-5/4 run spends nine residue units per completed pair.  If `K` pairs consume
+all but fewer than nine units, the next pair forces a residue increase.  This is the
+conditional local end mechanism after a pop-up lock exits through a blocked level-three
+candidate; it does not assert that the required level-5/4 candidate history persists. -/
+theorem level45_run_wrap {m r K : Nat} (hval : a m = 5 * m + r) (hr : r < m)
+    (hm : 5 ≤ m) (hspent : 9 * K ≤ r) (hbudget : r < 9 * (K + 1))
+    (hfresh : ∀ k, k ≤ K → a m - (m + k + 1) ∉ valuesThrough (m + 2 * k))
+    (hblocked : ∀ k, k < K →
+      a m - (2 * m + 3 * k + 3) ∈ valuesThrough (m + 2 * k + 1)) :
+    a (m + 2 * K) % (m + 2 * K) <
+        a (m + 2 * K + 1) % (m + 2 * K + 1) ∨
+      a (m + 2 * K + 1) % (m + 2 * K + 1) <
+        a (m + 2 * K + 2) % (m + 2 * K + 2) := by
+  have hrun := pingpong_run (m := m) (K := K) (by omega)
+    (fun k hk => hfresh k (Nat.le_of_lt hk)) hblocked K (Nat.le_refl K)
+  have hup := hrun.1
+  have hvalK : a (m + 2 * K) = 5 * (m + 2 * K) + (r - 9 * K) := by
+    omega
+  have hfreshK : a (m + 2 * K) - (m + 2 * K + 1) ∉ valuesThrough (m + 2 * K) := by
+    have hf := hfresh K (Nat.le_refl K)
+    have hcand : a (m + 2 * K) - (m + 2 * K + 1) = a m - (m + K + 1) := by
+      omega
+    rw [hcand]
+    exact hf
+  exact pingpong_pair_wrap (p := 3) hvalK (by omega) (by omega) (by omega) hfreshK (by omega)
+
+/-- A blocked level-three candidate exits the level-3/4 pop-up lock upward, entering
+level five with residue `v - 10 - 7 k`.  This is the exact bridge from the `l3blocked`
+outcome coordinates to a level-5/4 ping-pong run. -/
+theorem popup_l3blocked_level45_entry {i v k : Nat}
+    (hupper : a (i + 5 + 2 * k) =
+      3 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k))
+    (hres : 10 + 7 * k ≤ v)
+    (hblocked :
+      2 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 1 ∈
+        valuesThrough (i + 5 + 2 * k)) :
+    a (i + 5 + 2 * k + 1) =
+      5 * (i + 5 + 2 * k + 1) + (v - 10 - 7 * k) := by
+  have hcand :
+      a (i + 5 + 2 * k) - (i + 5 + 2 * k + 1) =
+        2 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 1 := by
+    omega
+  rw [← hcand] at hblocked
+  have hadd := forced_addition_of_mem hblocked
+  omega
+
+/-- If the level-5/4 candidate history after an `l3blocked` exit persists until its
+nine-unit residue budget is exhausted, the Chaffin residue increases in the first
+failing pair.  All survival assumptions remain explicit. -/
+theorem popup_l3blocked_level45_wrap {i v k K : Nat}
+    (hupper : a (i + 5 + 2 * k) =
+      3 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k))
+    (hle : v ≤ i) (hres : 10 + 7 * k ≤ v)
+    (hl3blocked :
+      2 * (i + 5 + 2 * k) + (i + v - 1 - 5 * k) - 1 ∈
+        valuesThrough (i + 5 + 2 * k))
+    (hspent : 9 * K ≤ v - 10 - 7 * k)
+    (hbudget : v - 10 - 7 * k < 9 * (K + 1))
+    (hfresh : ∀ j, j ≤ K →
+      a (i + 5 + 2 * k + 1) - (i + 5 + 2 * k + 1 + j + 1) ∉
+        valuesThrough (i + 5 + 2 * k + 1 + 2 * j))
+    (hblocked : ∀ j, j < K →
+      a (i + 5 + 2 * k + 1) -
+          (2 * (i + 5 + 2 * k + 1) + 3 * j + 3) ∈
+        valuesThrough (i + 5 + 2 * k + 1 + 2 * j + 1)) :
+    a (i + 5 + 2 * k + 1 + 2 * K) % (i + 5 + 2 * k + 1 + 2 * K) <
+        a (i + 5 + 2 * k + 1 + 2 * K + 1) %
+          (i + 5 + 2 * k + 1 + 2 * K + 1) ∨
+      a (i + 5 + 2 * k + 1 + 2 * K + 1) %
+          (i + 5 + 2 * k + 1 + 2 * K + 1) <
+        a (i + 5 + 2 * k + 1 + 2 * K + 2) %
+          (i + 5 + 2 * k + 1 + 2 * K + 2) := by
+  have hentry := popup_l3blocked_level45_entry hupper hres hl3blocked
+  exact level45_run_wrap hentry (by omega) (by omega) hspent hbudget hfresh hblocked
+
 end Recaman

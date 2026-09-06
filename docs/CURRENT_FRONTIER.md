@@ -181,6 +181,45 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   実測でもevent arc当たりのquery最大数は129から196へ増えた。local producer分類だけからuniform
   bounded charge / landing-bottom descentは出ないため枝は `STOPPED`。再開にはactual arc survivalを使う
   strict descentまたはfinite-to-one chargeが必要。[epoch report](LOCKCAND_PRODUCER_EPOCH_2026-09-05.md)。
+- `E-045`（`COMPUTED`, `H-20260905-03`）: actual arc survivalへ戻り、同じcompleted arcに後続late
+  landingを持つblocked comb endの必要条件候補 `7·hPrev≤16·v`（run identityにより
+  `7T+21J≤9v`）を凍結した。既存discovery 19,365件、10^10時点でopenだった第40弧のpre-cutoff
+  352件、未使用holdout `10^10≤c<2·10^10` 6,391件で違反0・identity違反0。第40弧は
+  `a(13808214835)=1814`を底として完了し、この新terminal recordもthreshold未満に入った。
+- `E-046`（`PROVED-LEAN`, `LockResidue`）: `T=1`ではthresholdの逆向き
+  `16v<7(v+1+3J)`がpre-landing runを最初のresidue-budget failure pairまで持続させる。
+  level-3側freshnessの下で`popup_lock_wrap_of_long_prelanding_run`がpair内residue increaseを強制し、
+  threshold未満terminal 9件中T=1 wrap 7件の機構を説明する。
+- `E-047`（`PROVED-LEAN`, `H-20260905-04`, `LockResidue`）: multi-toothではfinal lockの
+  `k<T-1`候補がearlier-tooth test値そのものであることを使い、その値がfinal landing時までに既訪問という
+  actual-history仮定とshiftしたpre-landing runを合成する
+  `popup_lock_wrap_of_multitooth_history`を証明。唯一のthreshold未満`T=2` terminalはこの条件と数値的に
+  整合する。一方、同membershipは全`T≥2` recordの21,563/45,889件にしかなくcomb形だけでは導けない。
+  一般survival比は`CONJECTURED`のままで、残余はmembershipをarc survivalから強制するedgeと
+  `l3blocked` survival。
+- `E-048`（`PROVED-LEAN`, `H-20260905-05`, `PingPongRuns`）: 一般levelの
+  `pingpong_pair_wrap`はresidueがpair費用`2p+3`未満なら二歩内のincreaseを返す。`p=3`を反復runへ
+  適用した`level45_run_wrap`は`9K≤r<9(K+1)`でpair `K`のwrapを強制し、threshold未満terminal
+  `c=99734,v=19`の`5A 4S 5A 3S`（初期residue 9）を説明する。
+  `popup_l3blocked_level45_entry/wrap`がpopup座標からこのkernelへのbridgeも与える。通常の
+  `l3blocked`後に必要なfresh/blocked historyが何pair続くかは未証明。
+- `E-049`（`REFUTED`, `H-20260905-06`）: completed-arc l3blocked 4,844件のinitial level-5/4 runを
+  exact追跡。discovery 3,478件はwrap 1 / upperBlocked 628 / lowerFresh 2,849、holdout 1,366件は
+  0 / 223 / 1,143で、wrap index違反0。しかしterminal `c=588583`はbudget 532 pairに対し43 pairで
+  `lowerFresh`へ離脱し、offset 1350で後からwrapするため「terminal iff initial budget wrap」は反証。
+  個別traceでは後続がupper residue `4393-7j`のlevel-4/3 phase 628点であることをexact確認した。
+  first-exit classifier枝は`STOPPED`。再開にはlevel下降を跨ぐphase間のglobal descentが必要。
+- `E-050`（`PROVED-PAPER`, `H-20260906-01`）: phase capacity
+  `B(q,r)=floor(r/(2q-1))`と`alpha·n+beta·x+psi(q)`の和は、exact seeded lowerFresh族と
+  upperBlocked族により全係数が排除され、連続positive-length phase間のstrict descentもnonincreaseも
+  与えない。seedはhistory cardinality、triangular range、canonical parityを満たすが、全seed memberの
+  initial-0 first-birth provenanceは要求しない。従ってこの限定classは`STOPPED`であり、全canonical
+  invariantのno-goとは扱わない。
+- `E-051`（`COMPUTED`, `H-20260906-02`）: completed canonical arcの`l3blocked` event後、最初のwrap
+  またはlate landingまでの同一positive blocker多重度`<=2`を凍結検査。discovery `s<=600000`は
+  17 excursion・6,305 use・最大2、holdout `600000<s<=2000000`は22 excursion・12,802 use・最大1、
+  違反0。一回使用は`c=97896,w=395922`の二回使用で偽。all-scale boundは`CONJECTURED`で、
+  survival ratioへ接続するweight inequalityなしにはLean化しない。
 - `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
   これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
   指数裾、半減期18.7 decade）がその機構の手掛かりである。

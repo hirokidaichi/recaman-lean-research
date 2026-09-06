@@ -1171,6 +1171,8 @@ import Recaman
 #print axioms Recaman.level34_pair_wrap
 #print axioms Recaman.popup_lock_residues
 #print axioms Recaman.popup_lock_wrap
+#print axioms Recaman.popup_lock_wrap_of_long_prelanding_run
+#print axioms Recaman.popup_lock_wrap_of_multitooth_history
 #print axioms Recaman.popup_lock_candidate_margin
 #print axioms Recaman.popup_lock_candidate_gt_twice_earlier
 #print axioms Recaman.popup_lock_candidate_level_ge_two
@@ -1184,6 +1186,10 @@ import Recaman
 #print axioms Recaman.pingpong_pair
 #print axioms Recaman.pingpong_pair_residues
 #print axioms Recaman.pingpong_run
+#print axioms Recaman.pingpong_pair_wrap
+#print axioms Recaman.level45_run_wrap
+#print axioms Recaman.popup_l3blocked_level45_entry
+#print axioms Recaman.popup_l3blocked_level45_wrap
 #print axioms Recaman.comb_addition_values
 #print axioms Recaman.level23_candidate_blocked_by_comb
 #print axioms Recaman.level23_phase_of_comb

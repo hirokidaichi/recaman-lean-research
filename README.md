@@ -136,6 +136,13 @@ Lean 4形式化プロジェクトです。
   直前arc `q=4` ladderの6型に無修復で分類。ただし`q=2`のgap costをLean化した一方、local tupleは任意個の
   後続event式と両立するcountermodelもLean化し、local分類からbounded chargeを出す枝は停止
   （[epoch report](docs/LOCKCAND_PRODUCER_EPOCH_2026-09-05.md)）
+- actual arc survivalへ戻り、後続late landingを持つblocked comb endは200億clockまで
+  `7·hPrev≤16·v`（=`7T+21J≤9v`）を満たす（凍結holdout 6,391件、違反0）。`T=1`の逆向きthresholdは
+  long pre-landing runからresidue wrapを強制することをLean化。multi-toothでもearlier-tooth test値の
+  actual-history membershipを明示すれば同じwrap定理が成立する。`l3blocked`後のlevel-5/4 runも
+  1 pairあたりresidue 9を払い尽くすとwrapすることをLean化。一般則は`CONJECTURED`で、残余は
+  これらのhistory survival長の強制。initial 5/4 runだけによるterminal分類は反例で停止
+  （[survival-ratio epoch](docs/BLOCKED_COMB_SURVIVAL_RATIO_EPOCH_2026-09-05.md)）
 - 敵対的監査で無料ルート2件を検出・修理: forced additionの候補既訪問性とforced addition再発は
   ともに無条件（`UnconditionalStepRecurrence`）。両ステップ種の無条件無限再発が揃い、
   回廊の真の寄与は時計条件・value law・fresh着地・供給窓に限定と確定

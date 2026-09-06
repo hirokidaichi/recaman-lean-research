@@ -3296,3 +3296,88 @@ Lean化した（`E-044`, `PROVED-LEAN`）。実データのevent arc当たりque
 uniform finite-to-one chargeが必要。exact outputは`docs/data/provenance/h2e10_lockcand_producer.txt`、
 handoffは`docs/LOCKCAND_PRODUCER_EPOCH_2026-09-05.md`。
 `./scripts/check.sh`は257 jobs、1,191 declarationsの公理監査、禁止語走査まで通過した。
+
+### 第百四十四ラウンド：blocked comb survival比（H-20260905-03、E-045/E-046）
+
+結論：actual arc survivalへ戻り、同じcompleted arcに後続late landingを持つblocked comb endの
+必要条件候補`7·hPrev≤16·v`（run identityから`7T+21J≤9v`）を凍結した。source revision
+`904ab56`の`arc_death_rule_probe 20000000000`は424.765秒、checkpoint PASS、exact recurrence/residue
+check違反0。既存discovery arcs 1–39の19,365件、10^10時点ではopenだったarc 40のpre-cutoff 352件、
+未使用holdout `10^10≤c<2·10^10`の6,391件でratio違反0・identity違反0だった（`E-045`, `COMPUTED`）。
+arc 40は`a(13808214835)=1814`を底として完了し、このterminal wrapもthreshold未満だった。
+
+`T=1`では`hPrev=v+1+3J`。逆向き`16v<7hPrev`と最初のbudget failure pairの範囲
+`6+7K≤v<13+7K`から`3K+1≤J`が従うため、`popup_lock_candidate_blocked_by_run`が全`k<K`を塞ぐ。
+level-3側freshnessの下で`popup_lock_wrap`へ接続し、pair内のresidue increaseを
+`popup_lock_wrap_of_long_prelanding_run`としてLean化した（`E-046`, `PROVED-LEAN`）。これはthreshold未満
+terminal 9件中T=1 wrap 7件の機構である。残る`T=2` wrapと`l3blocked`は一般化せず、一般survival比は
+`CONJECTURED`に保った。次のunitは`T≥2` candidate historyか`l3blocked` survivalの一方だけに限定する。
+
+### 第百四十五ラウンド：multi-tooth lock-wrap分解（H-20260905-04、E-047）
+
+結論：`T≥2`の無条件candidate blockageは偽だが、欠けていたactual-history edgeを明示すれば
+survival-ratioの係数7によるwrap機構を全`T≥1`へ拡張できた。2×10^10 censusでは全earlier-tooth
+test値がfinal landing時に既訪問なのは21,563/45,889件だけなので、comb式だけからの無条件版は棄却。
+
+`popup_lock_wrap_of_multitooth_history`はfinal lockの`k<T-1`候補をearlier-tooth test値へ算術同定し、
+履歴単調性でpresentation時へ運ぶ。`k≥T-1`は最初の歯の前へshiftしたpre-landing runが負担し、
+`16v<7(v+T+3J)`がbudget failure pairまでの必要run長を支払う。唯一のthreshold未満`T=2` terminal
+`(c,v,T,J,K)=(32144188,16114,2,10644,2301)`は`6+7K=16113≤v<16120=13+7K`、必要run長
+6901≤10644、`k=0` candidate既訪問で条件に整合する。定理は`PROVED-LEAN`だが、一般arc survivalから
+earlier-tooth membershipを強制してはいないため、一般survival比は`CONJECTURED`のまま。
+
+### 第百四十六ラウンド：l3blocked後のlevel-5/4 residue予算（H-20260905-05、E-048）
+
+結論：`l3blocked`後の終了算術は一般ping-pong residue lawで閉じる。`pingpong_pair_wrap`はlevel
+`p+2/p+1`のupper residueがpair費用`2p+3`未満なら二歩内で必ずincreaseすることを証明。
+`level45_run_wrap`は`p=3` runを反復し、`9K≤r<9(K+1)`ならpair `K`でwrapを返す（`PROVED-LEAN`）。
+popup lock upper stateのlevel-three candidateが既訪問ならlevel-five residue `v-10-7k`へ入ることも
+`popup_l3blocked_level45_entry`で証明し、`popup_l3blocked_level45_wrap`として直接合成した。
+
+threshold未満terminal `(c,v)=(99734,19)`はl3blocked直後のlevel-5 residue 9から一つの5/4 pairで
+0へ下がり、次のsubtractionでwrapするためこのkernelに一致する。ただし2×10^10の通常のl3blockedは
+ほぼすべて後続landingまで継続し、必要なfresh/blocked historyが何pair続くかは未証明。従って一般
+survival比の残余はresidue算術でなく、actual arc historyからrun survival長を強制するedgeに絞られた。
+
+### 第百四十七ラウンド：level-5/4 survival census（H-20260905-06、E-049）
+
+結論：「`l3blocked` recordがterminal iff initial level-5/4 runがresidue budgetまで生存」は
+`REFUTED`。canonical simulatorへ非介入の追跡stateを追加し、2×10^10を一度だけ再計算した。
+checkpoint、40 completed arcs、56,580件のrecurrence/lock検査は全て一致。discovery `c<10^10`の
+3,478件はwrap 1 / upperBlocked 628 / lowerFresh 2,849、凍結holdout 1,366件は0 / 223 / 1,143、
+late/otherとwrap index違反は0（`COMPUTED`）。
+
+反例`c=588583,v=4802`はterminalだが、entry residue 4,792のbudget index 532よりはるか前の43 pair、
+offset 93で`lowerFresh`へ離脱し、別phaseを経てoffset 1,350でwrapした。従って`E-048`の局所kernelは
+soundだがinitial-run survivalだけではlanding floorへ届かない。このclassifier枝は`STOPPED`とし、
+再開にはlowerFresh後を含むphase-to-phase descentを要求する。exact dataは
+`docs/data/deathrule/h2e10_level45_survival.txt`。
+
+個別trace監査では、この「別phase」はlevel-4/3 ping-pongだった。lowerFresh直後のlevel-3 residueは
+4,396、次のlevel-4 upper residueは4,393で、`4393-7j`を`0≤j≤627`の628点すべてで確認（違反0）。
+最後のpairでresidue 0へ達し次stepでwrapした。これは一般化せず、次の再開gateを「level下降を跨ぐ
+phase survivalの輸送」へ具体化する反例解析として保存する。
+
+### 第百四十八ラウンド：phase capacity affine no-go（H-20260906-01、E-050）
+
+結論：`B(q,r)=floor(r/(2q-1))`へ`alpha·n+beta·x+psi(q)`を加えるpotential classは`STOPPED`。
+lowerFresh exact seeded familyは連続phase間で`(Delta n,Delta x,Delta B)=(3,-n,4M-1)`、
+upperBlocked familyは`(4,2n+4,-4)`を与える。`beta<0`、`beta>0`、`beta=0`を順に排除し、strict
+descentだけでなくnonincreaseも不可能と紙上証明した（`PROVED-PAPER`）。
+
+`python3 experiments/phase_capacity_countermodels.py`はlowerFresh `M=1,2,10,100`とupperBlocked sampleを
+exact replayし、seed bounds、phase座標、wrap clock、capacity差を全て確認した。これはfinite regressionで、
+紙上族の代替証明ではない。seedはfull initial-0 provenanceを持たないので、全canonical invariantのno-goとは
+扱わない。raw residue repairは`E-038`のtelescopingへ退化し停止。Lean変更なし。
+
+### 第百四十九ラウンド：l3blocked blocker多重度holdout（H-20260906-02、E-051）
+
+completed canonical arcの`l3blocked` event clock `s`から、最初のwrapまたはlate landing `e`までの
+positive blocked candidateを`(w,firstBirth(w))`へ課金し、同一`w`の多重度`<=2`を凍結。discovery
+`s<=600000`を独立replayして17 excursion・6,305 use・最大2を一致再現した。一回使用は
+`c=97896,s=97983,e=98664,w=395922`のuses `97984,98140`で`REFUTED`。
+
+未使用holdout `600000<s<=2000000`は22 excursion・12,802 use・最大1、`>2`違反0（`COMPUTED`）。
+2,000,000 clockのcanonical recurrence再検査、first-19 landing checkpoint、comb/lock guardsも違反0。
+有限39 excursionだけなのでall-scale boundは`CONJECTURED`のまま、Lean wrapperは追加しない。再開には
+resource pool上界とuse weightをsurvival ratioへ接続するcutoff-independent inequalityを要求する。

@@ -219,6 +219,32 @@ enum class Outcome : unsigned char {
   kInterrupted
 };
 
+enum class L45Outcome : unsigned char {
+  kNone = 0,
+  kWrap,
+  kUpperBlocked,
+  kLowerFresh,
+  kLate,
+  kOther
+};
+
+const char* L45OutcomeName(L45Outcome o) {
+  switch (o) {
+    case L45Outcome::kWrap:
+      return "wrap";
+    case L45Outcome::kUpperBlocked:
+      return "upperBlocked";
+    case L45Outcome::kLowerFresh:
+      return "lowerFresh";
+    case L45Outcome::kLate:
+      return "late";
+    case L45Outcome::kOther:
+      return "other";
+    default:
+      return "none";
+  }
+}
+
 const char* OutcomeName(Outcome o) {
   switch (o) {
     case Outcome::kBreak:
@@ -246,6 +272,8 @@ struct CombRec {
   Nat gap = 0U;
   Outcome outcome = Outcome::kNone;
   Nat i_obs = 0U, r_break = 0U, k_break = 0U, end_offset = 0U;
+  L45Outcome l45_outcome = L45Outcome::kNone;
+  Nat l45_pairs = 0U, l45_rstart = 0U, l45_end_offset = 0U;
   Nat cand_mask = 0U;  // bit i: 2c+v-1-3i visited at time c
   bool cand_cv1 = false;  // some candidate i < 64 equals c+v+1 (visited at c+1)
 };
@@ -289,6 +317,12 @@ struct LockState {
   std::size_t idx = 0U;
 };
 
+struct L45State {
+  bool active = false;
+  Nat start_clock = 0U, pairs = 0U;
+  std::size_t idx = 0U;
+};
+
 struct CombState {
   Nat first_clock = 0U, first_value = 0U, teeth = 0U;
   Nat j = 0U, h = 0U, run_start = 0U;
@@ -321,8 +355,10 @@ std::string PatternString(const std::vector<Rec>& window, Nat mark_clock) {
 
 class Probe {
  public:
-  Probe(Nat horizon, std::string outdir)
+  Probe(Nat horizon, std::string outdir, Nat trace_begin = 0U,
+        Nat trace_end = 0U)
       : horizon_(horizon), outdir_(std::move(outdir)),
+        trace_begin_(trace_begin), trace_end_(trace_end),
         start_(std::chrono::steady_clock::now()) {
     arcs_.open(outdir_ + "/arcs.txt");
     fresh_windows_.open(outdir_ + "/fresh_end_windows.txt");
@@ -330,6 +366,11 @@ class Probe {
     other_windows_.open(outdir_ + "/other_lock_windows.txt");
     if (!arcs_ || !fresh_windows_ || !break_windows_ || !other_windows_)
       throw std::runtime_error("cannot open output files");
+    if (trace_begin_ != 0U) {
+      trace_.open(outdir_ + "/trace.txt");
+      if (!trace_) throw std::runtime_error("cannot open trace output file");
+      trace_ << "# clock value quotient residue step\n";
+    }
     arcs_ << "# ordinal startClock endClock startValue landingIndex"
              " landingValue lateTotal combEnds blockedEnds\n";
     fresh_windows_ << "# steps after fresh comb ends (c, v) whose arc ends"
@@ -372,6 +413,10 @@ class Probe {
     const Nat r = value_ - k * clock;
     const bool late = value_ < clock;
 
+    if (trace_ && trace_begin_ <= clock && clock <= trace_end_)
+      trace_ << clock << ' ' << value_ << ' ' << k << ' ' << r << ' '
+             << (subtract ? 'S' : 'A') << '\n';
+
     if (verify_.active) {
       if (clock == verify_.clock + 3U) {
         ++verify3_checked_;
@@ -390,6 +435,7 @@ class Probe {
       window_.push_back(MakeRec(clock, value_, prev, flags));
 
     const bool wrapped = in_arc_ && r > prev_residue_;
+    if (l45_.active) OnL45Step(clock, subtract, k, r, wrapped, late);
     if (wrapped) {
       FinishArc(clock);
       StartArc(clock);
@@ -533,7 +579,11 @@ class Probe {
       const Nat i = (off - 5U) / 2U;
       if (i != lock_.i) ++lock_index_mismatch_;
       if (!subtract) {
+        const std::size_t idx = lock_.idx;
         ResolveLock(Outcome::kL3Blocked, i, r, k, off);
+        CombRec& rec = records_[idx];
+        rec.l45_rstart = r;
+        l45_ = L45State{true, clock, 0U, idx};
         return;
       }
       if (value_ != 3U * lock_.c + lock_.v + 5U - i) ++lock_value_mismatch_;
@@ -547,6 +597,42 @@ class Probe {
       }
       ResolveLock(Outcome::kBreak, i, r, k, off);
     }
+  }
+
+  void ResolveL45(L45Outcome outcome, Nat clock) {
+    CombRec& rec = records_[l45_.idx];
+    rec.l45_outcome = outcome;
+    rec.l45_pairs = l45_.pairs;
+    rec.l45_end_offset = clock - rec.c;
+    l45_.active = false;
+  }
+
+  void OnL45Step(Nat clock, bool subtract, Nat k, Nat /*r*/, bool wrapped,
+                 bool late) {
+    if (wrapped) {
+      ResolveL45(L45Outcome::kWrap, clock);
+      return;
+    }
+    if (late) {
+      ResolveL45(L45Outcome::kLate, clock);
+      return;
+    }
+    const Nat off = clock - l45_.start_clock;
+    if (off == 0U) return;
+    if (off % 2U == 1U) {
+      if (!subtract || k != 4U)
+        ResolveL45(!subtract && k == 6U ? L45Outcome::kUpperBlocked
+                                        : L45Outcome::kOther,
+                   clock);
+      return;
+    }
+    if (!subtract && k == 5U) {
+      ++l45_.pairs;
+      return;
+    }
+    ResolveL45(subtract && k == 3U ? L45Outcome::kLowerFresh
+                                   : L45Outcome::kOther,
+               clock);
   }
 
   void ResolveLock(Outcome o, Nat i, Nat r, Nat k, Nat end_offset) {
@@ -626,7 +712,8 @@ class Probe {
     out << "# arc c v T c0 v0 hasRun J hPrev runStart sweepOk blocked"
            " outcome iObs rBreak kBreak endOffset continued gap endedEarly"
            " arcCompleted iPred iWrap candMask(first 24 bits, 1=visited)"
-           " candEqCV1 runStartSub sweepNext teethCands jEff iGen\n";
+           " candEqCV1 runStartSub sweepNext teethCands jEff iGen"
+           " l45Outcome l45Pairs l45RStart l45EndOffset\n";
     for (const CombRec& r : records_) {
       out << r.arc << ' ' << r.c << ' ' << r.v << ' ' << r.teeth << ' '
           << r.c0 << ' ' << r.v0 << ' ' << r.has_run << ' ' << r.j_obs << ' '
@@ -637,7 +724,9 @@ class Probe {
           << r.arc_completed << ' ' << IPred(r.j_obs) << ' ' << IWrap(r.v)
           << ' ' << MaskString(r.cand_mask, 24U) << ' ' << r.cand_cv1 << ' '
           << r.run_start_sub << ' ' << r.sweep_next << ' ' << r.teeth_cands
-          << ' ' << JEff(r) << ' ' << IGen(r) << '\n';
+          << ' ' << JEff(r) << ' ' << IGen(r) << ' '
+          << L45OutcomeName(r.l45_outcome) << ' ' << r.l45_pairs << ' '
+          << r.l45_rstart << ' ' << r.l45_end_offset << '\n';
     }
   }
 
@@ -656,7 +745,10 @@ class Probe {
                                               IGen(r)}) + 3U, 8U))
         << " candEqCV1=" << r.cand_cv1 << " runStartSub=" << r.run_start_sub
         << " sweepNext=" << r.sweep_next << " teethCands=" << r.teeth_cands
-        << " jEff=" << JEff(r) << " iGen=" << IGen(r) << '\n';
+        << " jEff=" << JEff(r) << " iGen=" << IGen(r)
+        << " l45Outcome=" << L45OutcomeName(r.l45_outcome)
+        << " l45Pairs=" << r.l45_pairs << " l45RStart=" << r.l45_rstart
+        << " l45EndOffset=" << r.l45_end_offset << '\n';
   }
 
   void WriteSummary() {
@@ -1036,6 +1128,45 @@ class Probe {
     out << "  identity hPrev == v0 + 1 + 3*J_obs (v0 = v + T - 1): " << id_ok
         << " of " << id_all << '\n';
 
+    out << "\nlevel-5/4 survival after l3blocked (completed arcs)\n";
+    Nat l45_all[2] = {}, l45_terminal[2] = {}, l45_budget_wrap[2] = {},
+        l45_iff_bad[2] = {}, l45_wrap_index_bad[2] = {};
+    Nat l45_outcomes[2][6] = {};
+    std::vector<const CombRec*> l45_exc;
+    for (const CombRec* r : recs) {
+      if (!r->blocked || r->outcome != Outcome::kL3Blocked) continue;
+      const std::size_t split = r->c < 10000000000ULL ? 0U : 1U;
+      ++l45_all[split];
+      ++l45_outcomes[split][static_cast<std::size_t>(r->l45_outcome)];
+      const bool terminal = !r->continued;
+      const bool budget_wrap = r->l45_outcome == L45Outcome::kWrap &&
+                               r->l45_pairs == r->l45_rstart / 9U;
+      if (terminal) ++l45_terminal[split];
+      if (budget_wrap) ++l45_budget_wrap[split];
+      if (terminal != budget_wrap) {
+        ++l45_iff_bad[split];
+        if (l45_exc.size() < kListCap) l45_exc.push_back(r);
+      }
+      if (r->l45_outcome == L45Outcome::kWrap &&
+          r->l45_pairs != r->l45_rstart / 9U)
+        ++l45_wrap_index_bad[split];
+    }
+    for (std::size_t split = 0U; split < 2U; ++split) {
+      out << (split == 0U ? "  discovery c<1e10" : "  holdout 1e10<=c<2e10")
+          << ": all=" << l45_all[split] << " terminal=" << l45_terminal[split]
+          << " budgetWrap=" << l45_budget_wrap[split]
+          << " iffBad=" << l45_iff_bad[split]
+          << " wrapIndexBad=" << l45_wrap_index_bad[split] << " outcomes"
+          << " none=" << l45_outcomes[split][0]
+          << " wrap=" << l45_outcomes[split][1]
+          << " upperBlocked=" << l45_outcomes[split][2]
+          << " lowerFresh=" << l45_outcomes[split][3]
+          << " late=" << l45_outcomes[split][4]
+          << " other=" << l45_outcomes[split][5] << '\n';
+    }
+    out << "  first terminal iff budgetWrap disagreements:\n";
+    for (const CombRec* r : l45_exc) PrintRecLine(out, *r);
+
     out << "\nopen arc at horizon: ordinal=" << arc_.ordinal << " start="
         << arc_.start_clock << " minValue=" << arc_.min_value << " minClock="
         << arc_.min_clock << " lateTotal=" << arc_.late_total << " combEnds="
@@ -1051,8 +1182,9 @@ class Probe {
 
   const Nat horizon_;
   const std::string outdir_;
+  const Nat trace_begin_, trace_end_;
   const std::chrono::steady_clock::time_point start_;
-  std::ofstream arcs_, fresh_windows_, break_windows_, other_windows_;
+  std::ofstream arcs_, fresh_windows_, break_windows_, other_windows_, trace_;
   IntervalSet seen_;
   Nat clock_ = 1U;
   Nat value_ = 0U;
@@ -1071,6 +1203,7 @@ class Probe {
   Nat last_late_clock_ = 0U, last_late_value_ = 0U;
   CombState comb_;
   LockState lock_;
+  L45State l45_;
   std::vector<CombRec> records_;
   std::size_t pending_index_ = 0U;
   bool pending_active_ = false;
@@ -1086,10 +1219,18 @@ class Probe {
 
 int main(int argc, char** argv) {
   try {
-    if (argc < 3) throw std::invalid_argument("usage: HORIZON OUTDIR");
+    if (argc != 3 && argc != 5)
+      throw std::invalid_argument(
+          "usage: HORIZON OUTDIR [TRACE_BEGIN TRACE_END]");
     const Nat horizon = std::stoull(argv[1]);
     if (horizon < 10U) throw std::invalid_argument("horizon must be >= 10");
-    Probe probe(horizon, argv[2]);
+    const Nat trace_begin = argc == 5 ? std::stoull(argv[3]) : 0U;
+    const Nat trace_end = argc == 5 ? std::stoull(argv[4]) : 0U;
+    if (argc == 5 &&
+        (trace_begin == 0U || trace_begin > trace_end || trace_end > horizon))
+      throw std::invalid_argument(
+          "trace range must satisfy 1 <= TRACE_BEGIN <= TRACE_END <= HORIZON");
+    Probe probe(horizon, argv[2], trace_begin, trace_end);
     probe.Run();
     probe.WriteOutputs();
   } catch (const std::exception& error) {

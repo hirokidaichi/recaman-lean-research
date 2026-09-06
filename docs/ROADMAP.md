@@ -952,6 +952,56 @@ simulator）で証明の方向を決める。以降の優先順位はこの文�
    chargeを先に定式化できた場合だけとする。
 4. 研究優先順位は`E-028`のarc survival/depthへ戻す。
 
+## 2026-09-05の判断：blocked comb survival比
+
+`H-20260905-03`は、actual arc survivalの最小定量候補として
+`blocked ∧ continued -> 7·hPrev≤16·v`（同値に`7T+21J≤9v`）を凍結した。未使用holdout
+`10^10≤c<2·10^10`の6,391件は違反0で、第40弧の新しい底1814は逆向きthresholdを満たす
+terminal wrapだった（`E-045`, `COMPUTED`）。
+
+`T=1`では逆向きthresholdがpre-landing runを最初のbudget failure pairまで延ばすことを算術で示せる。
+level-3側freshnessを加えると`popup_lock_wrap_of_long_prelanding_run`が弧の終了事象であるresidue increaseを
+返す（`E-046`, `PROVED-LEAN`）。一般survival比はまだ`CONJECTURED`であり、次の判断を固定する。
+
+1. horizon延長だけで一般定理へ昇格しない。
+2. 完全な`iff`は偽、fresh combへの一般化も反例があるため行わない。
+3. 次のbounded unitは`T≥2`のearlier-tooth candidate historyか`l3blocked`後のsurvivalの一方だけ。
+4. `E-028`への寄与は「長い前史runが将来のwrapを強制する」片方向のcausal criterionであり、
+   landing floor全体を証明したとは扱わない。
+
+後続`H-20260905-04`では`T≥2`を無条件化しなかった。earlier-tooth test値がfinal landing時に既訪問という
+actual-history仮定の下だけで、tooth側の最初の`T-1`候補とshiftしたpre-landing runを合成し、
+`popup_lock_wrap_of_multitooth_history`を得た（`E-047`, `PROVED-LEAN`）。2×10^10ではこのmembershipが
+全`T≥2` recordの21,563/45,889件にしか成立しないため、comb形からの導出は反証済み。再開ゲートは
+arc survivalがこのmembershipを強制する独立不変量、または`l3blocked` survivalの定式化である。
+
+`H-20260905-05`は後者をさらに「survival長」と「終了budget」へ分けた。一般levelの
+`pingpong_pair_wrap`とlevel-5/4用`level45_run_wrap`により、`K` pair後のresidue条件
+`9K≤r<9(K+1)`はactual residue increaseを強制する（`E-048`, `PROVED-LEAN`）。従って未知なのは
+residue算術ではなく、`l3blocked`後のfresh/blocked candidate historyが必要な`K` pair続くこと。
+
+`H-20260905-06`でinitial runを全4,844 completed `l3blocked` recordへ拡張計測した結果、terminal
+`c=588583`がbudget 532 pairより前の43 pairで`lowerFresh`へ離脱し、その後同じarc内でwrapする反例に
+なった（`E-049`, `REFUTED`）。従ってinitial level-5/4 runだけをsurvival classifierにする枝は`STOPPED`。
+個別traceではlowerFresh後がlevel-4/3 phaseへ移り、upper residue `4393-7j`を628点保ってwrapした。
+次の再開ゲートは、このlevel下降を含むphase-to-phase descentまたはfinite-to-one chargeである。
+
+## 2026-09-06の判断：phase capacity potentialを停止
+
+phaseごとの算術capacity `B(q,r)=floor(r/(2q-1))`をclock/value/level補正した
+`B+alpha·n+beta·x+psi(q)`は、二つのexact seeded familyにより全係数が排除された（`E-050`,
+`PROVED-PAPER`）。lowerFresh族はunboundedなcapacity gain、upperBlocked族はunboundedなvalue gainを作る。
+seedはcardinality・triangular range・parityを満たすがfull initial-0 provenanceを仮定しないため、これは
+全canonical invariantのno-goではない。raw residueへの一回のrepairも`E-038`のtelescopingだった。
+
+従ってこのcapacity classは`STOPPED`とし、別のlevel正規化やLean wrapperを追加しない。再開には、
+full initial-0 historyから供給され、phase survivalと`7·hPrev<=16·v`を定量的に結ぶ新しい入力を先に要求する。
+
+独立gateとして、completed arcの`l3blocked`後excursionで同一positive blockerを使う回数`<=2`を凍結した。
+discovery 17件とholdout 22件に違反はなかった（`E-051`, `COMPUTED`）が、一回使用は偽で、全scale boundも
+まだ`CONJECTURED`。次へ進む条件は、単なる多重度だけでなく、利用可能な過去resource poolの上界と各useの
+weightを組み合わせたcutoff-independent inequalityを紙上で得ること。
+
 ## 並行して行う保守
 
 - 一つの数学概念を一つの下位モジュールへ置く。

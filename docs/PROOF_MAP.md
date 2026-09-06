@@ -980,3 +980,56 @@ holdout `10^10≤c<2·10^10` 274件は無修復で全件この6型に入り、ti
 両立する弱化history countermodelを与える（`PROVED-LEAN`）。従ってproducer分類だけではuniform chargeは
 出ず、この枝は`STOPPED`。次の必要入力はactual arc survivalからlanding bottomへのstrict descentまたは
 finite-to-one chargeである。
+
+**Round 144（blocked comb survival比、E-045/E-046）** — `H-20260905-03`は、completed canonical arcの
+blocked comb endが同じ弧の後続late landingまで生存するための必要条件候補
+`7·hPrev≤16·v`を凍結した。run identity `hPrev=v+T+3J`により`7T+21J≤9v`と同値。
+既存discovery 19,365件、遅延boundary 352件、未使用holdout `[10^10,2·10^10)` 6,391件で違反0
+（`E-045`, `COMPUTED`）。第40弧の底`a(13808214835)=1814`もthreshold未満のterminal wrapだった。
+
+`popup_lock_wrap_of_long_prelanding_run`は`T=1`でこの係数のcausal部分をLean化する：
+`16v<7(v+1+3J)`と最初のbudget failure pair `K`から`3K+1≤J`を得て、
+`popup_lock_candidate_blocked_by_run`で全`k<K`の候補を塞ぎ、level-3側freshnessと
+`popup_lock_wrap`からpair内residue increaseを得る（`E-046`, `PROVED-LEAN`）。一般命題の残余は
+multi-tooth candidate historyとl3blocked survivalであり、arc自体はまだLean定義されていない。
+
+**Round 145（multi-tooth lock-wrap分解、E-047）** — `H-20260905-04`は、final comb endより前の
+`T-1`本の歯に対応するtest値がlock candidate `k<T-1`と一致し、それらがfinal landing時までに既訪問なら
+presentation時にも既訪問であることを使う。残る`k≥T-1`は、最初の歯の前へ`2(T-1)` clock shiftした
+pre-landing runが供給する。`16v<7(v+T+3J)`とbudget failure pair `K`から必要な
+`3(k-(T-1))+1≤J`を得て、`popup_lock_wrap_of_multitooth_history`がpair内residue increaseを返す
+（`PROVED-LEAN`）。無条件版は、全earlier-tooth値が既訪問なのが2×10^10で21,563/45,889件だけなので棄却。
+唯一のthreshold未満`T=2` terminalは`k=0` membership、budget、run長を満たすが、一般survivalから
+membershipを強制するedgeは未証明である。
+
+**Round 146（l3blocked後のlevel-5/4 residue予算、E-048）** — 一般ping-pong pairのupper residue
+`r`が全pair費用`2p+3`未満なら、一歩目（`r<p+2`）または正規subtraction後の二歩目で必ずwrapする
+`pingpong_pair_wrap`を証明。`p=3`のrunを`K` pair反復し、`9K≤r<9(K+1)`ならpair `K`でincreaseする
+`level45_run_wrap`へ接続した。これは`l3blocked` terminal `c=99734,v=19`のlevel-5 residue
+`9→0→wrap`を説明する条件付きkernelである。`popup_l3blocked_level45_entry`はpopup upper stateで
+level-three candidateが既訪問ならlevel-five residueが`v-10-7k`になることを示し、
+`popup_l3blocked_level45_wrap`がkernelへ接続する。一般arc survivalから必要な5/4 run長を強制する
+定理ではない。
+
+**Round 147（level-5/4 survival census、E-049）** — `arc_death_rule_probe`へ非介入の追跡stateを加え、
+全completed `l3blocked` 4,844件のinitial 5/4 runを計測。直接wrapした唯一の`c=99734`は
+`L45=floor(r5/9)=1`で`E-048`と一致し、wrap index違反0。一方もう一つのterminal `c=588583`は
+`r5=4792`のbudget index 532に対し43 pairで`lowerFresh`へ離脱し、offset 1350で後からarc終了。
+個別traceでは次のlevel-4/3 phaseがupper residue `4393-7j`を628点保ってwrapしたため、residue算術は
+`pingpong_pair_wrap`の`p=2` instanceで説明できるが、phase間のsurvival輸送は未証明。よって
+「terminal iff initial budget wrap」は`REFUTED`、first-exit classifierは`STOPPED`。
+
+**Round 148（phase capacity affine no-go、E-050）** — phase capacity
+`B(q,r)=floor(r/(2q-1))`に`alpha·n+beta·x+psi(q)`を加えるclassを敵対的監査した。exact seeded
+lowerFresh族はphase間で`Delta n=3, Delta x=-n, Delta B=4M-1`、upperBlocked族は
+`Delta n=4, Delta x=2n+4, Delta B=-4`を与える。前者が`beta<0`と`beta=0`、後者が`beta>0`を
+排除するため、全係数でpositiveな差が生じる（`PROVED-PAPER`）。seedはcardinality・triangular range・
+canonical parityを満たすがinitial-0 orbitによる全seed provenanceは持たない。全canonical invariantの
+no-goへ拡張せず、このpotential classだけを`STOPPED`とする。raw residue repairは`E-038`のtelescopingへ退化した。
+
+**Round 149（l3blocked excursion blocker multiplicity、E-051）** — `E-050`のrepairではなく独立の
+finite-to-one gateとして、`l3blocked` event後の最初のwrap/late landingまで、同一positive blocked
+candidateのuseが高々2回というprefix-testable命題を凍結した。discovery `s<=600000`は17 excursion・
+6,305 use・最大2を独立再現し、一回使用は`c=97896,w=395922`で反証。未使用holdout
+`600000<s<=2000000`は22 excursion・12,802 use・最大1、`>2`違反0（`COMPUTED`）。all-scale命題は
+`CONJECTURED`で、resource poolの大きさとweightを与える不等式がないためLean化しない。
