@@ -3466,3 +3466,5 @@ Lean sourceは変更せず、紙上証明をPROVED-LEANとは扱わない。全�
 今回最も具体化した④も固定block帰納の可否を判定する構造研究である。
 `./scripts/check.sh`は268 jobs、1,220宣言の公理監査、証拠台帳70件でPASS。
 11実験scriptの構文と13出力のsource hashを照合し、再現bundleへ保存した。
+次の[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成し、
+P2の証明・反証条件、Hall条件からの候補経路、60分の初回pass上限と停止条件を固定した。

@@ -135,7 +135,7 @@ canonicalの負の対照でも、128まで未出の `{4,5,19}` は99734までに
 
 ## 次の判断
 
-④の全period組合せ命題を次のbounded issueへ登録する。他の案は、表に記した独立入力が
+④の全period組合せ命題を次のbounded [issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)へ登録した。他の案は、表に記した独立入力が
 具体化するまで追加の列挙・係数調整・wrapper実装をしない。否定側で今後も必要なのは、
 同じ検証済みcutoff以後の到達排除、または特別な有限穴集合の厳密な容量不足である。
 周期性を排除できても、その接続は別途必要である。

@@ -13,7 +13,7 @@
 #70・#71・#61、および5パターンの並列調査は判定を完了した。
 
 最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
-**周期符号語の供給不足**へ絞った。有限履歴のeventually periodicな実更新は、各加算phaseに
+**周期符号語の供給不足**へ絞り、[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成した。有限履歴のeventually periodicな実更新は、各加算phaseに
 有限lagの供給恒等式P2を要求する（`E-065`, `PROVED-PAPER`、独立監査済み）。
 それを全加算phaseで同時に満たす正符号和の語は存在しない、という命題は`CONJECTURED`（`E-067`）。
 period≤18の229,045語と別の90,640評価では反例0だが、一般証明ではない（`E-066`, `COMPUTED`）。
