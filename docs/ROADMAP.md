@@ -1,5 +1,9 @@
 # 証明ロードマップ
 
+> 2026-09-07追記：[#61の既存証明統合](HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)を完了。
+> 371の初出4825によるno-low制約と認証済み19@99734から、完全なreplayのclock112を排除した。
+> clock≥113、target≥115がPROVED-LEAN（E-060）。clock777への列挙や大域枝の再開には進めない。
+
 > 2026-09-07の最新判断は[戦略地図](STRATEGY_MAP_2026-09-07.md)。
 > #70は任意finite-prefix反例族の全payloadをPROVED-LEANへ昇格して完了。
 > #71は31,058値の共同birthを二つの隣接producer railへ分類して完了した。

@@ -1,0 +1,15 @@
+Module graph audit: Recaman root reaches 265 of 265 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 24 frontier modules match their direct-import boundary.
+Research registry audit: 60 entries, 24 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Build completed successfully (268 jobs).
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_ne_onehundredtwelve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredthirteen_le_crossingTime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredfifteen_le_target' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Axiom audit: 1220 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.

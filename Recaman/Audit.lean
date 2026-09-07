@@ -1218,3 +1218,6 @@ import Recaman
 #print axioms Recaman.SurvivalFamily.Geometry.blocker_one_use
 #print axioms Recaman.SeededReplay.exists_later_wrap
 #print axioms Recaman.SurvivalFamily.finite_prefix_survival_countermodel
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.crossingTime_ne_onehundredtwelve
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.onehundredthirteen_le_crossingTime
+#print axioms Recaman.TerminalExactDischargeReplayCertificate.onehundredfifteen_le_target

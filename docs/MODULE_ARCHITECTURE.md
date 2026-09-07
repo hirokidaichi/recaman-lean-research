@@ -91,3 +91,13 @@ ownership変更時にownerだけを`lake env lean Owner.lean`で検査しても�
 `Resources`はpositive blocker分類をReplayだけから証明する。
 `FinitePrefixSurvivalCountermodel`がSeed、Resources、SeededReplayWrapを結合する。
 全8モジュールのdirect importをmanifestに固定し、rootから到達可能にした。
+
+## 2026-09-07 clock112 closure
+
+`PermanentAboveClock112Exclusion`は`PermanentAboveClock112FirstOccurrence`のno-low補題と
+`DeepNineteenTraceCertificate`のkernel認証済み19@99734を直接importして結合する。
+target=223のpinning moduleは不要であり、既存のtarget≥114で矛盾が出る。
+2 direct importを個別に削除するとcompileが失敗することを確認し、manifestに固定した。
+rootへ追加したconsumerの3主要定理をAuditへ登録した。
+
+削除試験の[再現手順と結果](data/issues_2026-09-07/issue61/README.md)を保存した。

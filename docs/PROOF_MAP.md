@@ -13,6 +13,7 @@
 | prelanding J → 全phaseのweighted drop `7J≤3(v-u)` | `REFUTED` E-057 | canonical 20Bのholdoutに5反例。最初の反例のphase/birth分類はE-058で完了 |
 | 固定例のW → actual producer railの完全分類 | `COMPUTED` E-058、`JOINT_BIRTH_AUDIT_2026-09-07` | arc40のq3 Sが25,031値、arc39のq5 Aが6,027値。全birthを独立照合 |
 | producer分類 → canonical survival比 | `STOPPED` E-059 | 独立した大域不等式は未発見。費用恒等式・one-useからの接続を描かない |
+| clock112のno-low制約＋認証済み19@99734 → clock112排除 | `PROVED-LEAN` E-060、`PermanentAboveClock112Exclusion` | 完全なreplayに対してclock≥113、target≥115。局所crossing112そのものは存在する。#61の有限残余を解消 |
 
 survival比から固定H以後のfloorへの大域接続は未証明である。旧floor命題の自由cutoffを
 固定prefixに接続する推論は撤回し、履歴付きの定量入力として独立に扱う。

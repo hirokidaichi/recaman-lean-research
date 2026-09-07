@@ -9,9 +9,13 @@
 ## 結論
 
 標準Recamán数列の全射性は未証明であり、証拠レベルは`CONJECTURED`である。
-現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。#70・#71の有界作業は判定を完了した。
+現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。#70・#71・#61の有界作業は判定を完了した。
 
-最新の[戦略地図](STRATEGY_MAP_2026-09-07.md)は、#70のLean証明と#71の分類・停止判断を統合する。
+最新の[戦略地図](STRATEGY_MAP_2026-09-07.md)は、#70のLean証明と#71の分類・停止判断、#61の既存証明統合を記録する。
+#61では認証済みの19@99734をno-low補題へ接続し、完全なpermanent-tail replayのclock112を
+追加仮定なしに排除した。clock下界113・target下界115は`PROVED-LEAN`（`E-060`）。
+これは既存の有限残余の解消であり、大域機構の発見や停止済みfloor列挙の再開とは扱わない。
+詳細は[#61仮説カード](HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)。
 前回の自由cutoffと固定prefixの監査も維持する。
 `∀ B, ∃ N, ∀ n≥N, B<a(n)` は無条件に `PROVED-LEAN`（`E-052`）。
 従って自由なeventual landing floorだけでは永久欠損は出ず、canonicalの4の遅い出現が
@@ -23,7 +27,7 @@ local survival比も追加前史なしには閉じない。density・parity・on
 含めても破れる反例族を得た（`E-056`, `PROVED-LEAN`）。一方、preload-freeな20,001軌道の
 2,677,448適用recordではT=1 survival比に違反0（`E-055`, `COMPUTED`）。
 canonicalやpreload-freeでのsurvival比の一般命題は未証明。新候補 `7J≤3(v-u)` はcanonical
-200億項のholdoutで5件破れた（`E-057`, `REFUTED`）。係数修正は停止し、次は反例のphase/birth
+200億項のholdoutで5件破れた（`E-057`, `REFUTED`）。係数修正は停止し、反例のphase/birth
 分類を完了した（`E-058`, `COMPUTED`）。31,058値を二つの隣接producer railへ分類したが、
 独立した大域不等式は得られず正のsurvival攻略は`STOPPED`（`E-059`）。
 一般seeded countermodel族は#70で全payloadのLean認証を完了した。
@@ -273,7 +277,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 266 files（root・auditを含む）、71,588 lines。
-- `./scripts/check.sh`: 267 jobs、1,217 audited declarations。証拠台帳59件。
+- Lean source 267 files（root・auditを含む）、71,647 lines。
+- `./scripts/check.sh`: 268 jobs、1,220 audited declarations。証拠台帳60件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

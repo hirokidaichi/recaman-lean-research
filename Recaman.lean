@@ -161,6 +161,7 @@ import Recaman.BalancedTraceCertificate
 import Recaman.PermanentAboveClock112TargetPin
 import Recaman.PermanentAboveClock112TargetPinBalanced
 import Recaman.PermanentAboveClock112FirstOccurrence
+import Recaman.PermanentAboveClock112Exclusion
 import Recaman.ReplayWitnessDescent
 import Recaman.SemanticOracleRecursion
 import Recaman.LandingRevisitTransport

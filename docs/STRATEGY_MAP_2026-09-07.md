@@ -11,6 +11,15 @@
 | #70：任意の有限Fを含むsurvival反例族を形式化できるか | `PROVED-LEAN` E-056。任意F・実step・seed bounds/parity・次着地とwrap・一回使用を同時に証明 | 完了。fixed prefix inclusionによる修理は再開しない |
 | #71：高level blocker全体はどのように共同生成されたか | `COMPUTED` E-058。31,058値を二つのproducer runに完全分類。全first birthをscalar/acceleratedで一致確認 | 診断完了。新しい資源不等式は0件、正の証明枝は`STOPPED` E-059 |
 | #72：二つの結果から次の戦略地図を更新する | この地図とfrontier / proof mapを更新 | bounded tracker完了。大域予想の解決を意味しない |
+| #61：認証済みdeep traceで既存のclock112残余を閉じられるか | `PROVED-LEAN` E-060。完全なreplayのclock112を排除し、clock≥113・target≥115 | 既存証明の統合を完了。floor列挙や大域枝は再開しない |
+
+## #61の有限残余の解消
+
+clock112の完全なreplayは、371の初出時刻4825以後にtarget以下の値が現れることを禁じる。
+既存のkernel認証`a 99734 = 19`とtarget≥114を結合すれば、その禁制に矛盾する。
+新しいhistory仮定やtrace生成を必要とせず、clock≥113・target≥115までLeanで確認した。
+これは全clockのreplay排除やcanonical survivalを解く一様機構ではない。
+[#61仮説カード](HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)に意味監査と再現手順を保存した。
 
 ## 証明済みの範囲と残る接続
 
@@ -49,7 +58,7 @@ N=31058、K=40566に対するJ+2=5N+3Kやv−u=9N+7K+16は既知のphase費用�
 
 ## 次の証明候補の受入gate
 
-現時点では、次に形式化すべき新しい正の補題を特定していない。
+現時点では、大域戦略を再開させる新しい正の補題を特定していない。
 「共同生成を調べる」をそのまま再度issue化せず、再開候補には次の四点を要求する。
 
 1. 全量化子と対象となるactual producer群を明示した、反証可能な不等式である。

@@ -3436,3 +3436,16 @@ E-058はCOMPUTED。独立した大域不等式は得られず、正のsurvival�
 E-056はPROVED-LEAN、E-058はCOMPUTED、独立した大域資源不等式を得られない正の証明枝はE-059 STOPPED。
 frontier / proof map / roadmap / portfolio / READMEを同期した。
 全射・非全射やcanonical survivalを解決済みとは扱わず、新規の正の形式化unitは未特定と明示した。
+
+## 2026-09-07 #61 clock112 replay closure
+
+既存の371初出によるno-low補題へ、kernel認証済みの19@99734を結合してclock112を排除した。
+target=223のpinningは不要で、既存の114≤targetが十分だった。完全なreplay証明書に対して
+clock≥113・target≥115を証明し、3主要宣言をAuditへ登録した（E-060、PROVED-LEAN）。
+正準列の局所crossing112は実在するため、これ自体の排除と混同しない。
+
+形式化前に固定端点・境界・漸化式を破る弱historyモデルを検査し、追加仮定なしで結合できる
+場合だけ完了するgateを満たした。265 library modules、24 import契約、268 build jobs、
+1,220宣言の公理監査がPASS。詳細は[#61カード](HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)。
+#61の第一完了条件を満たしたが、clock777への一括coverage排除や新しい大域機構は得ていない。
+停止済みのfloor列挙、大域A/B枝、正のsurvival枝の再開には進まない。

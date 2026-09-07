@@ -1,0 +1,9 @@
+protocol=H-20260907-03 fixed endpoints; no new discovery/holdout claim
+source_revision=ad3367af4d508cdb1ddcbf84492fbb3c4fdf1672
+source_sha256=5164f6bcb8e2fd9743f115c96afa67836857633819e4f3955a57de031abfbe7a
+canonical_108_113=[(108, 370), (109, 261), (110, 151), (111, 40), (112, 152), (113, 265)]
+local_crossing_at_112=present; full permanent-tail replay is the exclusion domain
+first_371=4825 value_99734=19 PASS
+witness_boundaries: 4825@371 not_low_for_223; 99734@19 low_for_19_and_114; not_low_for_18 PASS
+weakened_model: canonical through4825, constant371 later; no_future_low_for_223; recurrence_break_at4826 actual=5197 fake=371
+finite regression PASS; no computation is assumed by the Lean proof

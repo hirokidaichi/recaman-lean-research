@@ -36,10 +36,13 @@ Leanで証明し、#71の31,058個のblockerの共同birthを完全分類した�
 [形式化カード](docs/HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)と
 [共同birth監査](docs/JOINT_BIRTH_AUDIT_2026-09-07.md)に証拠と再開条件をまとめた。
 
+続いて[#61の既存証明統合](docs/HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)を完了した。
+認証済みの`a 99734 = 19`を結合して、完全なpermanent-tail replay証明書のclock112を排除し、
+clock下界113・target下界115をLeanで証明した。大域戦略の停止判断は変わらない。
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース266ファイル（71,588行、root・audit・認証済み深部traceを含む）
+- Leanソース267ファイル（71,647行、root・audit・認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
