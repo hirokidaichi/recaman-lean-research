@@ -11,7 +11,8 @@
 標準Recamán数列の全射性は未証明であり、証拠レベルは`CONJECTURED`である。
 現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。#70・#71の有界作業は判定を完了した。
 
-最新の[戦略地図](STRATEGY_MAP_2026-09-06.md)は、自由cutoffと固定prefixの混同を修正する。
+最新の[戦略地図](STRATEGY_MAP_2026-09-07.md)は、#70のLean証明と#71の分類・停止判断を統合する。
+前回の自由cutoffと固定prefixの監査も維持する。
 `∀ B, ∃ N, ∀ n≥N, B<a(n)` は無条件に `PROVED-LEAN`（`E-052`）。
 従って自由なeventual landing floorだけでは永久欠損は出ず、canonicalの4の遅い出現が
 cutoffを取り違える推論の反例になる（`E-053`）。旧 `E-028` のrouteは `STOPPED`。
@@ -272,7 +273,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 258 files（root・auditを含む）、69,821 lines。
-- `./scripts/check.sh`: 259 jobs、1,206 audited declarations。
+- Lean source 266 files（root・auditを含む）、71,588 lines。
+- `./scripts/check.sh`: 267 jobs、1,217 audited declarations。証拠台帳59件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

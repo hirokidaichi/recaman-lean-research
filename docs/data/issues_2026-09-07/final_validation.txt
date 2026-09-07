@@ -1,0 +1,9 @@
+command=./scripts/check.sh
+base=3f3c513 plus strategy-map documentation
+Module graph audit: Recaman root reaches 264 of 264 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 23 frontier modules match their direct-import boundary.
+Research registry audit: 59 entries, 23 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Build completed successfully (267 jobs).
+Axiom audit: 1217 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+git diff --check: PASS

@@ -30,9 +30,11 @@ Lean 4形式化プロジェクトです。
 
 ## 現在地
 
-2026-09-06の[戦略地図](docs/STRATEGY_MAP_2026-09-06.md)では、自由cutoffのfloorを
-非全射性の十分条件から外し、survival比のseeded反例とcanonical weighted-drop反例から
-次の二つの作業を選んだ。論証と検証は[戦略監査](docs/STRATEGY_AUDIT_2026-09-06.md)を参照。
+2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を
+Leanで証明し、#71の31,058個のblockerの共同birthを完全分類した。
+独立した大域不等式は得られず、正のsurvival証明へ進む枝は停止した。
+[形式化カード](docs/HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)と
+[共同birth監査](docs/JOINT_BIRTH_AUDIT_2026-09-07.md)に証拠と再開条件をまとめた。
 
 
 - Lean 4.33.1で固定

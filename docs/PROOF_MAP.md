@@ -1,8 +1,8 @@
 # 証明地図
 
-## 2026-09-06: cutoff監査とsurvivalの必要history
+## 2026-09-07: cutoff監査・一般反例族・共同birthの判定
 
-研究優先順位は[戦略地図](STRATEGY_MAP_2026-09-06.md)を参照。
+研究優先順位は[戦略地図](STRATEGY_MAP_2026-09-07.md)を参照。
 
 | 接続 | 状態 | 入力と限界 |
 |---|---|---|
@@ -10,7 +10,9 @@
 | 同じHのprefix hole＋future floor → permanent hole | `PROVED-LEAN` E-053、`EventualEscape` | 自由Nとの合成は4のcanonical反例で失敗。接続仕様であって新invariantではない |
 | exact seeded history＋one-use → survival比 | E-054の`PROVED-LEAN`反例、`SeededSurvivalCounterexample` | 比は944<945で破れる。canonical命題は残る |
 | 任意finite F inclusion＋seed bounds → survival比 | E-056の`PROVED-LEAN`反例族、`FinitePrefixSurvivalCountermodel` | #70完了。任意F・actual step・全payload。全seed要素の共同birthを与えてはいない |
-| prelanding J → 全phaseのweighted drop `7J≤3(v-u)` | `REFUTED` E-057 | canonical 20Bのholdoutに5反例。次は最初の反例のphase/birth分類 |
+| prelanding J → 全phaseのweighted drop `7J≤3(v-u)` | `REFUTED` E-057 | canonical 20Bのholdoutに5反例。最初の反例のphase/birth分類はE-058で完了 |
+| 固定例のW → actual producer railの完全分類 | `COMPUTED` E-058、`JOINT_BIRTH_AUDIT_2026-09-07` | arc40のq3 Sが25,031値、arc39のq5 Aが6,027値。全birthを独立照合 |
+| producer分類 → canonical survival比 | `STOPPED` E-059 | 独立した大域不等式は未発見。費用恒等式・one-useからの接続を描かない |
 
 survival比から固定H以後のfloorへの大域接続は未証明である。旧floor命題の自由cutoffを
 固定prefixに接続する推論は撤回し、履歴付きの定量入力として独立に扱う。

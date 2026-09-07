@@ -3429,3 +3429,10 @@ W全31,058値のfirst birth/signがscalarとacceleratedで一致。25,031値はa
 小例3,789 birth、加速開始点変更、境界7値、元scalarとのtrace/arc表も一致。
 E-058はCOMPUTED。独立した大域不等式は得られず、正のsurvival攻略をE-059 STOPPEDと判定。
 [共同birth監査](JOINT_BIRTH_AUDIT_2026-09-07.md)とH-20260907-02に再開gateを記録。
+
+## 2026-09-07 #72 strategy tracker completion
+
+#70→#71の順に完了・公開し、[戦略地図](STRATEGY_MAP_2026-09-07.md)を更新。
+E-056はPROVED-LEAN、E-058はCOMPUTED、独立した大域資源不等式を得られない正の証明枝はE-059 STOPPED。
+frontier / proof map / roadmap / portfolio / READMEを同期した。
+全射・非全射やcanonical survivalを解決済みとは扱わず、新規の正の形式化unitは未特定と明示した。

@@ -1,6 +1,10 @@
 # Recamán 全域性研究ポートフォリオ
 
-2026-09-06追補：[戦略地図](STRATEGY_MAP_2026-09-06.md)と[監査](STRATEGY_AUDIT_2026-09-06.md)で、
+2026-09-07追補：[最新戦略地図](STRATEGY_MAP_2026-09-07.md)で#70・#71の有界作業を判定した。
+E-056の任意F族はPROVED-LEAN。E-058の共同birth分類はCOMPUTEDで完了したが、
+独立した大域不等式は得られず、正のsurvival攻略はE-059 STOPPED。再開には具体的な新不等式が必要。
+
+2026-09-06時点の追補：[戦略地図](STRATEGY_MAP_2026-09-06.md)と[監査](STRATEGY_AUDIT_2026-09-06.md)で、
 自由cutoffのfloorを非全射性へ合成するroute、一回使用や任意finite-prefix membershipだけの
 survival route、canonical weighted-drop候補 `7J≤3(v-u)` を停止した。
 前二者にはLean証明・反例、任意F版には紙上族、最後にはcanonical 20Bのholdout反例がある。

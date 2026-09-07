@@ -1,10 +1,10 @@
 # 証明ロードマップ
 
-> 2026-09-06の最新判断は[戦略地図](STRATEGY_MAP_2026-09-06.md)。自由cutoffのeventual floorは
-> 無条件にLeanで証明できるため、非全射性への新入力としての攻略を停止した。
-> canonical survival比は未証明だが、density・parity・one-use・固定finite prefix inclusionだけでは
-> seeded反例族を除けない。新候補 `7J≤3(v-u)` もcanonical holdoutで反証された。
-> 次は任意Fを含むcountermodel族のLean化と、最初のcanonical反例のphase/birth分類の二作業に絞る。
+> 2026-09-07の最新判断は[戦略地図](STRATEGY_MAP_2026-09-07.md)。
+> #70は任意finite-prefix反例族の全payloadをPROVED-LEANへ昇格して完了。
+> #71は31,058値の共同birthを二つの隣接producer railへ分類して完了した。
+> ただし独立した大域不等式は得られず、正のsurvival攻略はSTOPPED。
+> 再開にはE-056を分離し、survival比への未知入力を一つ減らす具体的不等式が必要である。
 > 以下の歴史的目標から現在の十分条件や優先順位を復元しない。
 
 > [!NOTE]

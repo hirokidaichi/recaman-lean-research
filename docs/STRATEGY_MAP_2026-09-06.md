@@ -1,5 +1,7 @@
 # 証明を進めるための戦略地図 — 2026-09-06
 
+> この地図は作成時点の記録。#70・#71は完了し、現在の判断は[2026-09-07地図](STRATEGY_MAP_2026-09-07.md)に更新した。
+
 **次は「任意の有限prefixを含む反例族のLean化」と「canonical反例におけるphase離脱の原因分類」に絞る。**
 全射・非全射のどちらにも、現時点で最後まで通る証明戦略はない。今回、非全射性への十分条件の
 量化子を修正し、局所survivalの証明に不足する履歴条件を具体的な反例で切り分けた。
@@ -98,4 +100,4 @@ flowchart TD
 | [#70 任意F反例族のLean化](https://github.com/hirokidaichi/recaman-lean-research/issues/70) | 紙上証明を形式化する |
 | [#71 高level blocker群の共同生成](https://github.com/hirokidaichi/recaman-lean-research/issues/71) | 次の正の補題の見立てを作る |
 
-issueはGitHubへ作成済み。新規Lean・資料・実験コードはローカルの作業ツリーに保存し、未commit・未push。
+作成時点ではissueはGitHubへ作成済み、成果物は未commit・未pushだった。2026-09-07にmainへ反映し、後続作業を完了した。
