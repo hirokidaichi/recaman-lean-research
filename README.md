@@ -30,9 +30,14 @@ Lean 4形式化プロジェクトです。
 
 ## 現在地
 
+2026-09-06の[戦略地図](docs/STRATEGY_MAP_2026-09-06.md)では、自由cutoffのfloorを
+非全射性の十分条件から外し、survival比のseeded反例とcanonical weighted-drop反例から
+次の二つの作業を選んだ。論証と検証は[戦略監査](docs/STRATEGY_AUDIT_2026-09-06.md)を参照。
+
+
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース255モジュール（69,165行、認証済み深部traceを含む）
+- Leanソース266ファイル（71,588行、root・audit・認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、

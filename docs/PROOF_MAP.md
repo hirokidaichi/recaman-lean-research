@@ -1,5 +1,20 @@
 # 証明地図
 
+## 2026-09-06: cutoff監査とsurvivalの必要history
+
+研究優先順位は[戦略地図](STRATEGY_MAP_2026-09-06.md)を参照。
+
+| 接続 | 状態 | 入力と限界 |
+|---|---|---|
+| 再訪clock≤値 → 各値のeventual avoidance → 全Bのeventual escape | `PROVED-LEAN` E-052、`EventualEscape` | missing仮定なし。cutoffは非定量的 |
+| 同じHのprefix hole＋future floor → permanent hole | `PROVED-LEAN` E-053、`EventualEscape` | 自由Nとの合成は4のcanonical反例で失敗。接続仕様であって新invariantではない |
+| exact seeded history＋one-use → survival比 | E-054の`PROVED-LEAN`反例、`SeededSurvivalCounterexample` | 比は944<945で破れる。canonical命題は残る |
+| 任意finite F inclusion＋seed bounds → survival比 | E-056の`PROVED-LEAN`反例族、`FinitePrefixSurvivalCountermodel` | #70完了。任意F・actual step・全payload。全seed要素の共同birthを与えてはいない |
+| prelanding J → 全phaseのweighted drop `7J≤3(v-u)` | `REFUTED` E-057 | canonical 20Bのholdoutに5反例。次は最初の反例のphase/birth分類 |
+
+survival比から固定H以後のfloorへの大域接続は未証明である。旧floor命題の自由cutoffを
+固定prefixに接続する推論は撤回し、履歴付きの定量入力として独立に扱う。
+
 > [!NOTE]
 > 本書は定理依存と到達経路のatlasである。初期sectionには各時点の未証明義務を現在形で
 > 保存しているため、現在の研究優先順位には使わない。current frontierは

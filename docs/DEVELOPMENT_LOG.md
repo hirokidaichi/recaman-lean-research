@@ -3381,3 +3381,43 @@ positive blocked candidateを`(w,firstBirth(w))`へ課金し、同一`w`の多�
 2,000,000 clockのcanonical recurrence再検査、first-19 landing checkpoint、comb/lock guardsも違反0。
 有限39 excursionだけなのでall-scale boundは`CONJECTURED`のまま、Lean wrapperは追加しない。再開には
 resource pool上界とuse weightをsurvival ratioへ接続するcutoff-independent inequalityを要求する。
+
+
+### 第百五十ラウンド：cutoff意味監査とsurvival戦略の絞り直し（E-052–E-057）
+
+結論：自由cutoffのeventual floorを非全射性の新入力としていたrouteをSTOPPEDへ修正。
+`EventualEscape`で `∀B, ∃N, ∀n≥N, B<a n` を無条件に証明した。4はclock4まで未訪問だが131で
+現れるため、検証済みprefixとは独立なcutoffを合成できない。正しい同じHの接続も認証した。
+
+`SeededSurvivalCounterexample`ではdensity・range・parityを満たすseedから59→1のsame-arc
+continuationを認証し、比944<945とpositive blockers三件の一回使用を確認した（PROVED-LEAN）。
+seedがcanonicalの既知値1を欠く弱さを監査し、prefix128を含む143値seedの76→5反例を得た。
+さらに任意有限Fの最大より高いwへ降りる `SS(AS)^J S A^D S^D` 反例族を紙上で構成し、
+prefix horizons 0,4,128,1000 / holdout 10000,200000で独立replayした（PROVED-PAPER / COMPUTED）。
+
+対照群としてpreloadなしの単一初期値z=0..20000を各2M clock生成した。discovery102615・
+holdout2574833適用recordにsurvival比の違反0。canonical59行は既存probeと一致した。
+これは一般定理ではなく、共同生成への定量入力を調べる動機に留める。
+
+一方、新候補 `7J≤3(v-u)` はcanonical 20BでREFUTED。discovery c<1e9の1221行は違反0だが、
+holdout3228行に5反例。最初のc=11685598221はslack=-248402。全5件は同一arc40内にあり、
+独立な5軌道とは数えない。係数修正はしない。元のsurvival比の反証ではない。
+
+新しい[戦略地図](STRATEGY_MAP_2026-09-06.md)では、任意F反例族のLean化と、最初のcanonical反例の
+phase/birth分類を次の二作業にした。詳細な証拠、失敗例、再現手順、停止条件は
+[戦略監査](STRATEGY_AUDIT_2026-09-06.md)と各仮説カードへ保存した。
+
+追記：最初の反例の697,233行traceを再生成してphase費用563,500を一致確認した。runのlevel2 railの
+下端より2小さい値で戻り、7境界candidateのbirthには直前runと古い履歴が混在していた。
+次は集合W全体の共同生成へ絞る。GitHubに #70（族のLean化）、#71（joint birth）、#72（tracker）を
+作成し、公開本文を照合した。全Lean build・57行のregistry・1,206宣言のaxiom auditはPASS。
+新規成果物は未commit・未push。
+
+## 2026-09-07 #70 arbitrary finite-prefix formalization
+
+E-056の全payloadを8モジュールで形式化。`finite_prefix_survival_countermodel`は任意Fを量化し、
+実stepからのfreshnessと符号語、seed bounds/parity、最初の後続着地とwrap、一回使用を含む。
+最弱の新規補題は全下降値の全historyに対するfreshnessで、初回gate内に証明した。
+境界D²−8D=wの負の対照ではSS中間値への衝突を確認。
+11主要宣言をAuditへ追加し、`./scripts/check.sh`は1,217宣言・264 library modulesでPASS。
+詳細と再現は[形式化カード](HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)。次は#71。

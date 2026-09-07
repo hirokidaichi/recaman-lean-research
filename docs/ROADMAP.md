@@ -1,5 +1,12 @@
 # 証明ロードマップ
 
+> 2026-09-06の最新判断は[戦略地図](STRATEGY_MAP_2026-09-06.md)。自由cutoffのeventual floorは
+> 無条件にLeanで証明できるため、非全射性への新入力としての攻略を停止した。
+> canonical survival比は未証明だが、density・parity・one-use・固定finite prefix inclusionだけでは
+> seeded反例族を除けない。新候補 `7J≤3(v-u)` もcanonical holdoutで反証された。
+> 次は任意Fを含むcountermodel族のLean化と、最初のcanonical反例のphase/birth分類の二作業に絞る。
+> 以下の歴史的目標から現在の十分条件や優先順位を復元しない。
+
 > [!NOTE]
 > 本書は判断と研究gateの時系列を保存する。現在のactive/stopped判定は
 > [`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、証拠labelは

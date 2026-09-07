@@ -1,0 +1,9 @@
+source_revision=8a4314d7f65c728d5c6fe6584e1469de4e08332d
+source_sha256=325c4d4db874f1b03e9d2bf600e7d0c0d626c47cba63ff5714ec81f3d43a1be8
+discovery=0..1000 holdout=1001..200000
+discovery: repeat_events=176 Q1_violations=0
+holdout: repeat_events=53679 Q1_violations=0
+first_repeat_examples_(value,earlier,later)=[(42, 20, 24), (43, 18, 26), (78, 35, 39)]
+Q3: m=4 H=4 prefix=[0, 1, 2, 3, 6] first_occurrence=131 PASS
+Q2: no finite computation is used as evidence of an infinite tail
+without_freshness: Q1 REFUTED value=1 earlier=1 later=6

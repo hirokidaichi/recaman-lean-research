@@ -1,5 +1,11 @@
 # Recamán 全域性研究ポートフォリオ
 
+2026-09-06追補：[戦略地図](STRATEGY_MAP_2026-09-06.md)と[監査](STRATEGY_AUDIT_2026-09-06.md)で、
+自由cutoffのfloorを非全射性へ合成するroute、一回使用や任意finite-prefix membershipだけの
+survival route、canonical weighted-drop候補 `7J≤3(v-u)` を停止した。
+前二者にはLean証明・反例、任意F版には紙上族、最後にはcanonical 20Bのholdout反例がある。
+同じ定義・定数調整による再開を避け、phase離脱と共同birth生成の独立した定量入力を要求する。
+
 > [!NOTE]
 > 本書は2026-08-30時点のbranch scoreと停止理由を保存するhistorical portfolioである。
 > 現在のactive/stopped判定は[`CURRENT_FRONTIER.md`](CURRENT_FRONTIER.md)、
@@ -276,3 +282,10 @@ flowchart TD
 全域性の直接攻略を再開する条件は、linear height、positive subtraction density、permanent-above性を
 同時に矛盾させる新しい外部入力、またはold blocker/nonpositive resetを一様に排除する独立定理が先に
 得られることである。
+
+## 2026-09-07: #70 completed
+
+E-056をPROVED-LEANへ昇格。任意finite F、seed density/range/parity、actual word、
+first late landing/no-wrap/future wrap、positive blocker一回使用を同時に満たす一般反例族を認証した。
+固定prefix inclusionだけでsurvivalを救う枝の停止理由がLeanで確定した。
+[形式化カード](HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)を参照。

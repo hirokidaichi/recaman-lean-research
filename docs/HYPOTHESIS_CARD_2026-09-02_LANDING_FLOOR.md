@@ -3,10 +3,24 @@
 - ID: `H-20260902-05`
 - Owner: AI research epoch 2026-09-02（真偽を問わない計画、T4）
 - Created: 2026-09-02
-- Status: `CONJECTURED`
+- Status: `STOPPED`（2026-09-06、自由cutoffの研究routeを停止）
 - Research branch: 非全射方向。chain の生存長と帯の未訪問 run
 
-## Exact statement
+## 2026-09-06の意味監査による訂正
+
+下の凍結statementにある `∃ N₀` のfloor自体は、より強い無条件定理
+`∀ B, ∃ N, ∀ n≥N, B<a(n)` の帰結だった（`E-052`, `EventualEscape`）。
+未訪問を確認したprefix Hと、存在証明が返すN₀を同一視する推論は無効であり、
+`4∉valuesThrough(4)` と `a(131)=4` がcanonical反例になる（`E-053`）。
+同じN₀までの未訪問を証明するという接続自体は正しいが、`N₀=10^612`を自由に選べるとは言えない。
+
+rising floorから欠損の存在・無限性が出るという旧記述も撤回する。全射な`b(n)=n`にも
+`f(n)=floor(n/2)→∞`というfloorがある。floorの下に未訪問値を残す証拠が別に必要。
+固定した検証済みH以降のforward exclusionは未解決のまま。
+下記本文は凍結時の仮説と判断を保存する歴史記録であり、現在の受入条件ではない。
+詳細は[戦略監査](STRATEGY_AUDIT_2026-09-06.md)、次の判断は[戦略地図](STRATEGY_MAP_2026-09-06.md)。
+
+## Exact statement（凍結時。上の意味監査により研究上の十分性を撤回）
 
 弧の底（landing）を Chaffin と同じく「`a n mod n` が増加する時刻の間での `a n` の最小値」と
 定義する（A393814/A393815）。`late_landing_iff` により、値 `t` が第 `n+1` 項で着地するのは

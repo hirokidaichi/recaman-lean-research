@@ -1,0 +1,25 @@
+command=./scripts/check.sh
+Module graph audit: Recaman root reaches 256 of 256 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 15 frontier modules match their direct-import boundary.
+Research registry audit: 57 entries, 22 PROVED-LEAN rows linked to Recaman/Audit.lean.
+✔ [257/259] Built Recaman.SeededSurvivalCounterexample (889ms)
+Build completed successfully (259 jobs).
+'Recaman.eventually_oneBorrow_of_negative_halfRemainder' depends on axioms: [propext, Quot.sound]
+'Recaman.eventually_oneBorrow_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.repeat_clock_le_value' depends on axioms: [propext, Quot.sound]
+'Recaman.eventually_ne_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eventually_above_every_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eventually_above_on_selected_times' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.missing_of_prefix_and_same_cutoff_floor' depends on axioms: [propext, Quot.sound]
+'Recaman.free_cutoff_does_not_certify_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.rising_floor_compatible_with_surjectivity' depends on axioms: [propext, Quot.sound]
+'Recaman.seededSurvival_ratio_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.seededSurvival_one_use_resources' depends on axioms: [propext, Quot.sound]
+Axiom audit: 1206 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+command=git diff --check
+exit=0
+new Python syntax via ast.parse: PASS
+changed/new Markdown relative links: PASS
+source_hashes.txt: all hashes MATCH
+GitHub issue #70/#71/#72: OPEN, published bodies MATCH local body files

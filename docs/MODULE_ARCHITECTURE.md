@@ -63,6 +63,10 @@ Lean buildが偶然通るだけでは、rootから到達不能なsourceや重複
 
 ## Change protocol
 
+2026-09-06追加: `EventualEscape` は `History` のみをimportし、無条件のvalue escapeと
+cutoff接続の意味監査を扱う。`SeededSurvivalCounterexample` は `Basic` のみをimportし、
+任意seed上のexact更新によるsurvival比の反例を認証する。canonical orbitの反例ではない。
+
 1. sourceを追加・移動したらroot closureを更新する。
 2. downstreamの便利なumbrellaではなく、使用する宣言のownership moduleをimportする。
 3. frontier contractを変更する場合はmanifestとこの説明を同じchange setで更新する。
@@ -79,3 +83,11 @@ lake env lean Recaman/ChangedConsumer.lean
 ownership変更時にownerだけを`lake env lean Owner.lean`で検査しても、consumerが読む`Owner.olean`は
 更新されない。consumerの未知識別子を本当の依存欠落と誤認しないため、最初に`lake build`で
 依存順に再構築する。
+
+## 2026-09-07 arbitrary-prefix countermodel
+
+`SeededReplay`はBasic.stepの任意stateからの実更新、`SeededReplayWrap`は一般の後続wrapを扱う。
+`SurvivalCountermodelArithmetic`→`Replay`→`Residue`→`Seed`で幾何・全history・剰余・seed制約を証明し、
+`Resources`はpositive blocker分類をReplayだけから証明する。
+`FinitePrefixSurvivalCountermodel`がSeed、Resources、SeededReplayWrapを結合する。
+全8モジュールのdirect importをmanifestに固定し、rootから到達可能にした。

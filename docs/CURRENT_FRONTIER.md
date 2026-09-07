@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-05
+最終更新: 2026-09-07
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -9,7 +9,21 @@
 ## 結論
 
 標準Recamán数列の全射性は未証明であり、証拠レベルは`CONJECTURED`である。
-現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。
+現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitは#71の共同birth分類1件である。
+
+最新の[戦略地図](STRATEGY_MAP_2026-09-06.md)は、自由cutoffと固定prefixの混同を修正する。
+`∀ B, ∃ N, ∀ n≥N, B<a(n)` は無条件に `PROVED-LEAN`（`E-052`）。
+従って自由なeventual landing floorだけでは永久欠損は出ず、canonicalの4の遅い出現が
+cutoffを取り違える推論の反例になる（`E-053`）。旧 `E-028` のrouteは `STOPPED`。
+同じ検証済みcutoffから先を排除する定量入力は未解決である。
+
+local survival比も追加前史なしには閉じない。density・parity・one-useを全て満たすexact seedに
+比を破る59→1のno-wrap continuationがあり（`E-054`, `PROVED-LEAN`）、任意の固定finite prefixを
+含めても破れる反例族を得た（`E-056`, `PROVED-LEAN`）。一方、preload-freeな20,001軌道の
+2,677,448適用recordではT=1 survival比に違反0（`E-055`, `COMPUTED`）。
+canonicalやpreload-freeでのsurvival比の一般命題は未証明。新候補 `7J≤3(v-u)` はcanonical
+200億項のholdoutで5件破れた（`E-057`, `REFUTED`）。係数修正は停止し、次は反例のphase/birth
+分類を実施する。一般seeded countermodel族は#70で全payloadのLean認証を完了した。
 
 形式化済みのresidual kernelは、仮想missing tailをeventual-high corridor（A枝）または
 fixed-root target-low stream（B枝）へ送る。A枝は「欠損値非有界」またはrigid burst streamまで
@@ -220,13 +234,13 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
   17 excursion・6,305 use・最大2、holdout `600000<s<=2000000`は22 excursion・12,802 use・最大1、
   違反0。一回使用は`c=97896,w=395922`の二回使用で偽。all-scale boundは`CONJECTURED`で、
   survival ratioへ接続するweight inequalityなしにはLean化しない。
-- `E-028`（`CONJECTURED`, `H-20260902-05`）: landing floor「ある時刻以降の弧の底は852655を超える」。
-  これが全射性の否定の唯一の証明義務であり、深さ`D = log n − log v`の定常性（中央値7.4 decade、
-  指数裾、半減期18.7 decade）がその機構の手掛かりである。
+- `E-028`（`STOPPED`, `H-20260902-05`）: 自由cutoffのlanding floorから非全射を導くrouteを停止。
+  floor自体は`E-052`の無条件な帰結で、prefixと同じcutoffを供給しない。rising floorだけによる
+  欠損無限個の推論も`E-053`で撤回。固定した検証済みHから先の排除には新しい定量入力が必要。
 - 両方向の証明はchainの侵入率・生存の定量定理（T4）に帰着する。Chaffinのデータで「侵入（弧）の
   発生率は`c/n`で減衰しないが、弧の深さが固定値へ届かなくなる」と判明したため、T4は非全射方向
   （chainの生存長が帯の未訪問run長で決まる自己相似構造）の証明を目標にする。
-- 上の分岐表と再開条件は歴史的記録として残し、優先順位はロードマップのT1〜T5に従う。
+- 上の分岐表と再開条件は歴史的記録として残し、優先順位は2026-09-06の戦略地図に従う。
 
 ## 文書の役割
 
@@ -256,7 +270,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 255 modules、69,136 lines。
-- `./scripts/check.sh`: 257 jobs、1,189 audited declarations。
+- Lean source 258 files（root・auditを含む）、69,821 lines。
+- `./scripts/check.sh`: 259 jobs、1,206 audited declarations。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。
