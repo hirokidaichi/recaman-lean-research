@@ -234,6 +234,7 @@ import Recaman.DivergentCandidateMissing
 import Recaman.RecurringCandidateBurst
 import Recaman.RecurringCandidateDemandBirth
 import Recaman.PeriodicCandidateNoGo
+import Recaman.ShortPeriodicSupply
 import Recaman.SeededUseGapCounterexample
 import Recaman.SupplyAncestryCounterexample
 import Recaman.DemandProvenanceCounterexample

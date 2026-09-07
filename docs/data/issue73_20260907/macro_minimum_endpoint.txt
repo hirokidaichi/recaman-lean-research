@@ -1,0 +1,6 @@
+protocol=issue73 minimum-P2 endpoint falsifier
+source_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+script_sha256=e5b3877599596755f4b35b2434950d47acc66da3e5ba5f3fed0c9d004e3b6f47
+d=3 no_positive_ending_minimum cumulative_candidates=0
+d=7 no_positive_ending_minimum cumulative_candidates=1
+REFUTED d=11 negatives=(1, 5, 8, 9, 10) newest_first=SAAASAASSSA earlier_hits=[] candidates_checked=2

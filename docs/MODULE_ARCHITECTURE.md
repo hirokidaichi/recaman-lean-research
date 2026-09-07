@@ -101,3 +101,10 @@ target=223のpinning moduleは不要であり、既存のtarget≥114で矛盾�
 rootへ追加したconsumerの3主要定理をAuditへ登録した。
 
 削除試験の[再現手順と結果](data/issues_2026-09-07/issue61/README.md)を保存した。
+
+## 2026-09-07 short periodic supply
+
+`ShortPeriodicSupply`はimportなしの有限Bool/Int/list kernel。128状態の局所potentialを検証し、
+Int上の実周期符号列から7bit窓を構成して全periodへtelescopingする。`supplied_window_iff`が
+本来のP2と一致を保証し、opaqueな状態閉包を仮定しない。lag11陰性対照を含む5主要宣言をAuditへ登録。
+全lagの供給不足・Recamán実軌道の周期性排除はこのmoduleの結論ではない。

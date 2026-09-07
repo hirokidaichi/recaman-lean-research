@@ -30,10 +30,9 @@ Lean 4形式化プロジェクトです。
 
 ## 現在地
 
-全射性の証明・反証の両方を目標に、[5パターンを並列調査](docs/PARALLEL_APPROACH_TRIAGE_2026-09-07.md)した。
-次の具体的な候補は、固定周期の符号語が要求する供給条件の組合せ命題である。
-必要条件への紙上縮約は得たが、全periodの命題と非全射性への接続は未証明。
-他の限定案では反例を記録し、広い方式全体の不可能性とは区別している。
+[5パターンの並列調査](docs/PARALLEL_APPROACH_TRIAGE_2026-09-07.md)で1位とした周期符号語の供給問題を進め、
+[任意周期でlag≤7の供給加算数が減算数以下となること](docs/ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)をLeanで証明した。
+周期長に上限はないが、全lagの供給不足と全射性・非全射性の決着は未証明。#73本体はOPENである。
 
 2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を
 Leanで証明し、#71の31,058個のblockerの共同birthを完全分類した。
@@ -47,7 +46,7 @@ clock下界113・target下界115をLeanで証明した。大域戦略の停止�
 
 - Lean 4.33.1で固定
 - Lean標準ライブラリのみを使用
-- Leanソース267ファイル（71,647行、root・audit・認証済み深部traceを含む）
+- Leanソース268ファイル（71,906行、root・audit・認証済み深部traceを含む）
 - 主要定理の公理監査を同梱
 - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
 - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、

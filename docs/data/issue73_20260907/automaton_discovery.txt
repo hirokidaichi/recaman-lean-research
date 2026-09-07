@@ -1,0 +1,10 @@
+protocol=H-20260907-09 finite automaton capacity falsifier
+source_base_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+current_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+source_sha256=cbe418b47128ec1955dcc317b335b218125dd74108b0fdb23cdbdf767a64cd9d
+dependency_sha256=6753426aaadfefd58a0588d040c9873bebb72f493cf1fb2191503213c03551ce
+NO_POSITIVE_CYCLE={"horizon": 3, "states": 8, "edges": 16, "supplied_states": 1, "relaxations": 1, "potential_counts": {"0": 7, "1": 1}, "potential_sha256": "7eb52fc5f5133d5e8f9323aca391a6c97ab6dd008e428afa7156a12edd1c1fe9"}
+NO_POSITIVE_CYCLE={"horizon": 7, "states": 128, "edges": 256, "supplied_states": 18, "relaxations": 32, "potential_counts": {"0": 102, "1": 20, "2": 6}, "potential_sha256": "ed4ec5c04fad29915eda1a0b4a69a6ba604bec30ca09bb1d0ca0bcfb0df228bf"}
+NO_POSITIVE_CYCLE={"horizon": 11, "states": 2048, "edges": 4096, "supplied_states": 305, "relaxations": 601, "potential_counts": {"0": 1587, "1": 326, "2": 113, "3": 22}, "potential_sha256": "5a07988b3ca50c5c853c798b15384ac7067199237f3846956563efff2efef982"}
+NO_POSITIVE_CYCLE={"horizon": 15, "states": 32768, "edges": 65536, "supplied_states": 5035, "relaxations": 9938, "potential_counts": {"0": 25280, "1": 5220, "2": 1751, "3": 436, "4": 81}, "potential_sha256": "e3d9af58627ec93b27c8e43ef2e98779eb83844869e66d04085ebc549572e99f"}
+COMPLETE: no positive cycle at frozen horizons; not an all-horizon proof

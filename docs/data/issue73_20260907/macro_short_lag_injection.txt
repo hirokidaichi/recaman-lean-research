@@ -1,0 +1,19 @@
+protocol=issue73 explicit short-lag injection regression
+source_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+script_sha256=56a9ed00034f429e03d987764c2ecbd58a400d1fe4e36678e7fc04ec703eeb17
+period=1 all_words=2 cumulative_supplied_A=0 PASS
+period=2 all_words=4 cumulative_supplied_A=0 PASS
+period=3 all_words=8 cumulative_supplied_A=0 PASS
+period=4 all_words=16 cumulative_supplied_A=4 PASS
+period=5 all_words=32 cumulative_supplied_A=14 PASS
+period=6 all_words=64 cumulative_supplied_A=38 PASS
+period=7 all_words=128 cumulative_supplied_A=94 PASS
+period=8 all_words=256 cumulative_supplied_A=238 PASS
+period=9 all_words=512 cumulative_supplied_A=562 PASS
+period=10 all_words=1024 cumulative_supplied_A=1282 PASS
+period=11 all_words=2048 cumulative_supplied_A=2866 PASS
+period=12 all_words=4096 cumulative_supplied_A=6322 PASS
+period=13 all_words=8192 cumulative_supplied_A=13810 PASS
+period=14 all_words=16384 cumulative_supplied_A=29938 PASS
+exhaustive_words=32766 supplied_events=29938 PASS
+random_seed=7307 period_range=[15,80] words=6600 supplied_events=21795 PASS

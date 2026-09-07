@@ -1,0 +1,19 @@
+source_base_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+initial_registry_check=failed because range notation did not explicitly reference E-073 etc; corrected to individual IDs
+command=./scripts/check.sh
+exit_code=0
+Module graph audit: Recaman root reaches 266 of 266 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 25 frontier modules match their direct-import boundary.
+Research registry audit: 78 entries, 25 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Build completed successfully (269 jobs).
+Axiom audit: 1225 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+python_syntax=PASS scripts=11
+exact_source_hash_match=PASS output_logs=14 dependency_hashes=5
+potential_lossless_compression_and_hashes=PASS horizons=3,7,11,15,19
+lean_independent_audit_hash_match=PASS sha256=d6f89f0fedbe89057157dc56ad8dce2409a2a12abae085846871e24f1966763e
+local_markdown_links=PASS checked=31
+command=git diff --check
+whitespace_check=PASS
+previous_bundle_changes=0
+user_visualizer_changes=0

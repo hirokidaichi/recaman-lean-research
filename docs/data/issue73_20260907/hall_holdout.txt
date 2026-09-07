@@ -1,0 +1,18 @@
+protocol=H-20260907-09 minimum-P2-lag S-domain Hall condition
+source_base_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+current_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+source_sha256=1c59d7155aa1ffd3c3ca72a1725ca8de49367e7d6e032e286be4638ea2a3dee8
+dependency_sha256=6753426aaadfefd58a0588d040c9873bebb72f493cf1fb2191503213c03551ce
+control={"word": "A", "domains": {}, "matching": []}
+control={"word": "AA", "domains": {}, "matching": []}
+control={"word": "SAAA", "domains": {"3": [0]}, "matching": [[3, 0]]}
+control={"word": "SSSSAAAASAAA", "domains": {"6": [3], "7": [0, 1, 2, 3, 8], "9": [2, 3, 8], "11": [8]}, "matching": [[6, 3], [7, 0], [9, 2], [11, 8]]}
+independent_lag_and_all_subset_checks=PASS positive_words=206
+moment_removed_AA_negative_control=PASS
+period=13 positive_words=4096 Hall_failures=0
+period=14 positive_words=6476 Hall_failures=0
+period=15 positive_words=16384 Hall_failures=0
+period=16 positive_words=26333 Hall_failures=0
+period=17 positive_words=65536 Hall_failures=0
+period=18 positive_words=106762 Hall_failures=0
+COMPLETE mode=holdout positive_words=225587 Hall_failures=0; finite evidence only

@@ -1221,3 +1221,8 @@ import Recaman
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.crossingTime_ne_onehundredtwelve
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.onehundredthirteen_le_crossingTime
 #print axioms Recaman.TerminalExactDischargeReplayCertificate.onehundredfifteen_le_target
+#print axioms Recaman.ShortPeriodicSupply.potential_step
+#print axioms Recaman.ShortPeriodicSupply.supplied_window_iff
+#print axioms Recaman.ShortPeriodicSupply.periodic_capacity
+#print axioms Recaman.ShortPeriodicSupply.exists_phase_without_short_supply
+#print axioms Recaman.ShortPeriodicSupply.lag_eleven_survives_short_exclusion

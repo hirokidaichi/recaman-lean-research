@@ -3468,3 +3468,20 @@ Lean sourceは変更せず、紙上証明をPROVED-LEANとは扱わない。全�
 11実験scriptの構文と13出力のsource hashを照合し、再現bundleへ保存した。
 次の[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成し、
 P2の証明・反証条件、Hall条件からの候補経路、60分の初回pass上限と停止条件を固定した。
+
+## 2026-09-07 issue #73: all-period short supplier capacity
+
+1位の④を進め、任意周期でlag≤7のP2供給を持つ加算phase数が減算phase数以下となることを
+`ShortPeriodicSupply.periodic_capacity`でLean証明した。正符号和なら短い供給のない加算が存在する。
+実過去7符号からの窓、P2の両方向の一致、128状態のpotentialとtelescopingを含み、周期長の上限はない。
+lag11供給が残る固定例もkernel認証し、全lagへの誤った一般化を防いだ。紙上の三分類単射は別途独立監査済み。
+
+全lagのHallは229,045語で反例0、U7写像固定のlag11拡張は26,586行で成功したが、いずれもCOMPUTED。
+lag上限19までのfinite shift graphは全1,118,480辺を独立検査しpotentialが成立したが、Lean昇格は上限7のみ。
+最古端S、second-moment符号、all-A future debt、escape-phase selectorを明示反例で停止した。
+escape selectorには唯一のescape phaseがlag119で供給されるperiod25例と全rの紙上族がある。
+
+H-20260907-09、E-071〜E-078と[handoff](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)へ保存。
+`./scripts/check.sh`は269 jobs、1,225公理監査、証拠台帳78件、25 import契約でPASS。
+最初の台帳検査でrange表記のID参照不足を検出し、明示IDへ修正後に全体checkを実行した。
+#73本体はOPEN。次は長い供給区間を共通の仕組みへ結合できるかを判定し、有限上限の延長だけを成果にしない。

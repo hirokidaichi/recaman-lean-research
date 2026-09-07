@@ -1,5 +1,8 @@
 # 証明戦略地図 — 2026-09-07
 
+#73の第1passで、[全periodに対するlag≤7の供給容量](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)をLean化した。
+短い供給だけでは全加算を支えられない。全lagの供給不足と非全射性への接続は依然未証明である。
+
 最新の優先順位は[5パターンの並列調査](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)で更新した。
 ④固定blockの候補は、各加算phaseが要求する有限lag恒等式の全period不可能性へ縮約できた
 （E-065はPROVED-PAPER、E-067/E-070はCONJECTURED）。ここを次の一問にする。

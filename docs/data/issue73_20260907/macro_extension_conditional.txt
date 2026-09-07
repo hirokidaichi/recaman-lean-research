@@ -1,0 +1,11 @@
+protocol=issue73 H_extend immutable short-map extension to U11
+source_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+script_sha256=ddfdef33e05c8d7aacf0b686c7b5cf280a8fca466dc39e2b21ca92de711a9a0d
+period_range=(13, 18); new property on previously used word ranges
+period=13 words=4096 cumulative_lag11_rows=442 PASS
+period=14 words=6476 cumulative_lag11_rows=1156 PASS
+period=15 words=16384 cumulative_lag11_rows=2941 PASS
+period=16 words=26333 cumulative_lag11_rows=5933 PASS
+period=17 words=65536 cumulative_lag11_rows=13447 PASS
+period=18 words=106762 cumulative_lag11_rows=26299 PASS
+NO_EXTENSION_FAILURE total_words=225587 lag11_rows=26299; no all-period claim

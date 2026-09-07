@@ -1,0 +1,10 @@
+protocol=H09 independent every-edge audit; frozen L only; no search extension
+source_base_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+current_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+source_sha256=2b7433b9dd2a06c6d41fe4ef990bc1ae5b4843ba3683045b1f6fc87759f9165c
+{"L":3,"edges_checked":16,"minimum_A_slack":0,"minimum_S_slack":0,"positive_and_negative_controls":"PASS","potential_sha256":"7eb52fc5f5133d5e8f9323aca391a6c97ab6dd008e428afa7156a12edd1c1fe9","states":8,"supplied_states_direct_sums":1}
+{"L":7,"edges_checked":256,"minimum_A_slack":0,"minimum_S_slack":0,"positive_and_negative_controls":"PASS","potential_sha256":"ed4ec5c04fad29915eda1a0b4a69a6ba604bec30ca09bb1d0ca0bcfb0df228bf","states":128,"supplied_states_direct_sums":18}
+{"L":11,"edges_checked":4096,"minimum_A_slack":0,"minimum_S_slack":0,"positive_and_negative_controls":"PASS","potential_sha256":"5a07988b3ca50c5c853c798b15384ac7067199237f3846956563efff2efef982","states":2048,"supplied_states_direct_sums":305}
+{"L":15,"edges_checked":65536,"minimum_A_slack":0,"minimum_S_slack":0,"positive_and_negative_controls":"PASS","potential_sha256":"e3d9af58627ec93b27c8e43ef2e98779eb83844869e66d04085ebc549572e99f","states":32768,"supplied_states_direct_sums":5035}
+{"L":19,"edges_checked":1048576,"minimum_A_slack":0,"minimum_S_slack":0,"positive_and_negative_controls":"PASS","potential_sha256":"7ede5dfedfc1d9de73a2e09536862912b06a44eb54c1df0406ed6459229a864d","states":524288,"supplied_states_direct_sums":82196}
+PASS: independently verified 1118480 edge inequalities; no all-L claim

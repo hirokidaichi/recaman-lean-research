@@ -12,6 +12,13 @@
 全射性の命題の証拠レベルは`CONJECTURED`。現在、決着へ直結するactive direct branchは0本である。
 #70・#71・#61、および5パターンの並列調査は判定を完了した。
 
+続く[#73第1pass](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)で、全periodの符号語に対する
+**lag≤7の供給容量U7≤Dと、正符号和なら短い供給を持たない加算が存在すること**をLeanで証明した
+（E-071）。実過去窓とP2の両方向の一致、lag11の供給と両立する陰性対照もAuditへ登録した。
+全lagのE-067/E-070は未解決で、#73はOPEN。E-072・E-073・E-074・E-075のselector・rank・単純予算を停止し、
+E-076・E-077・E-078の有限証拠は一般証明と分ける。次は長い供給区間を共通の仕組みへ結び付ける問題が残る。
+
+
 最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
 **周期符号語の供給不足**へ絞り、[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成した。有限履歴のeventually periodicな実更新は、各加算phaseに
 有限lagの供給恒等式P2を要求する（`E-065`, `PROVED-PAPER`、独立監査済み）。
@@ -292,7 +299,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 267 files（root・auditを含む）、71,647 lines。
-- `./scripts/check.sh`: 268 jobs、1,220 audited declarations。証拠台帳70件。
+- Lean source 268 files（root・auditを含む）、71,906 lines。
+- `./scripts/check.sh`: 269 jobs、1,225 audited declarations。証拠台帳78件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

@@ -1,5 +1,16 @@
 # 証明地図
 
+## 2026-09-07: issue #73 の短い供給容量
+
+| 接続 | 証拠 | 残る制限 |
+|---|---|---|
+| 実過去7符号のP2判定 → 全periodで供給加算数≤減算数 | `PROVED-LEAN` E-071、`ShortPeriodicSupply.periodic_capacity` | lag≤7だけに量化。周期長は無制限 |
+| 正符号和 → lag≤7では供給不能な加算phaseが存在 | `PROVED-LEAN` E-071 | lag11の供給と両立する陰性対照もLean認証 |
+| U7の具体的単射 → U7の全部分集合Hall | `PROVED-PAPER`、独立監査済み | この写像自体をLean化したとは扱わない |
+| 全lagのHall/容量 → 全加算同時供給の排除 | `CONJECTURED` E-067/E-070 | E-076〜078は有限証拠のみ |
+
+[証明・反例・次の判断](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)。#73本体はOPEN。
+
 ## 2026-09-07: 5パターンの並列調査
 
 | 接続 | 証拠 | 限界 |

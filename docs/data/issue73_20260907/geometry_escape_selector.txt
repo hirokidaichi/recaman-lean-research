@@ -1,0 +1,18 @@
+protocol=issue73 geometry G1/G2 selectors; finite discovery only; no holdout
+source_base_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+current_revision=b4b5afaaac126acaa0c4fc0042bdaa4fafd289a1
+source_sha256=97e0d0ff45c7b09adcfd371b59dd89139363e39612f41ac4e9a0ab16c4e9d7bd
+period=1 words=1 G2_counterexamples=0
+period=2 words=1 G2_counterexamples=0
+period=3 words=4 G2_counterexamples=0
+period=4 words=5 G2_counterexamples=0
+G1_COUNTEREXAMPLE={"S": 3, "escape_phases": [1, 2, 3], "p": 5, "supplier_lags": {"1": null, "2": null, "3": 3}, "word": "SAAAA"}
+period=5 words=16 G2_counterexamples=0
+period=6 words=22 G2_counterexamples=0
+period=7 words=64 G2_counterexamples=0
+period=8 words=93 G2_counterexamples=0
+period=9 words=256 G2_counterexamples=0
+period=10 words=386 G2_counterexamples=0
+period=11 words=1024 G2_counterexamples=0
+period=12 words=1586 G2_counterexamples=0
+END: finite selector scan only; no all-period theorem
