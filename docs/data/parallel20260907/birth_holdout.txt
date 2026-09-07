@@ -1,0 +1,8 @@
+protocol=H-20260907-06; claim C frozen before experiments; old prefixes reused only as input
+source_base_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+current_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+source_sha256=366686ed8aaf18ff018f347e21d40fbf7aa23e9b926e028a8f080edbb1a8c600
+{"B":321776,"D":66,"J":4022,"augmented_max_gap":321776,"augmented_size":4975,"bridge_count":63,"bridges_sha256":"3585010f581eb16ba39e5569b7e168e80c429a203691be1160bcdd59086b493f","c":329823,"fresh_count":4091,"h":20111,"horizon":1000,"max_seed":21118795,"mode":"holdout","original_max_gap":647582,"ratio_slack":-12073,"seed_size":4912,"v":8044,"w":3688,"x":985444}
+{"B":3117936,"D":200,"J":38974,"augmented_max_gap":3117936,"augmented_size":47111,"bridge_count":197,"bridges_sha256":"62e7c223efa01ad560e42920645b4c13a1da28fadcc7b1f58875f51803f947ea","c":3195887,"fresh_count":39177,"h":194871,"horizon":10000,"max_seed":632883274,"mode":"holdout","original_max_gap":6274854,"ratio_slack":-116929,"seed_size":46914,"v":77948,"w":37948,"x":9548684}
+{"B":107997214,"D":1164,"J":1349965,"augmented_max_gap":107997214,"augmented_size":1498435,"bridge_count":1161,"bridges_sha256":"83f051c557df2d3da7fb72219f76807889f332dfa749da54590b1546eb2196bf","c":110697147,"fresh_count":1351132,"h":6749826,"horizon":200000,"max_seed":128633460446,"mode":"holdout","original_max_gap":217344401,"ratio_slack":-4049902,"seed_size":1497274,"v":2699930,"w":1345034,"x":330741473}
+PASS: all enriched seeds retain exact word, no-wrap landing, ratio violation, one-use, bounds, parity, and max gap <= B

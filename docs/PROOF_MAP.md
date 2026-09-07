@@ -1,5 +1,19 @@
 # 証明地図
 
+## 2026-09-07: 5パターンの並列調査
+
+| 接続 | 証拠 | 限界 |
+|---|---|---|
+| finite-history exact orbit＋eventual正符号周期 → 各加算phaseの有限lag供給恒等式P2 | `PROVED-PAPER` E-065 | 独立監査済み。Lean化は未実施 |
+| 全periodでP2を全加算phaseへ供給する語はない → eventual固定符号周期を排除 | 前件は`CONJECTURED` E-067、有限検査E-066 | 非全射性・可変長macroは結論しない |
+| 供給phase数≤減算phase数 → 供給不足 | 前件は`CONJECTURED` E-070 | 最古Sへの単射案はE-069で`REFUTED` |
+| 同じ集計値 → 同じ2step target到達 | `PROVED-PAPER`の反例族 E-061 | sound非決定的抽象・canonical-only invariantは未排除 |
+| late first-hit → 開始前old rail＋SS/加算入口分類 | `PROVED-PAPER` E-062 | SS blockerのbirth≤valueという追加案はE-063で偽 |
+| support gap≤clock → survival反例の排除 | `PROVED-PAPER`のenrichment反例族 E-064 | 時刻順の共同birthは保持しない |
+| hole-only抽象 → 非空保存 | `PROVED-PAPER`の全有限集合emptying E-068 | actual entry/band survivalを要求しない抽象のno-go |
+
+詳細な順位・再現手順・停止範囲は[並列調査](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)。
+
 ## 2026-09-07: cutoff監査・一般反例族・共同birthの判定
 
 研究優先順位は[戦略地図](STRATEGY_MAP_2026-09-07.md)を参照。

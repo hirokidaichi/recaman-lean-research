@@ -1,0 +1,21 @@
+protocol=H-20260907-07 minimum-lag oldest-S injection falsifier
+source_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+script_sha256=63d6871c1c1f3c6095d2916a5f6e7df4c628a2622a9a10a9fbbf18119a5af883
+period=1 no_collision_so_far cumulative_words=1
+period=2 no_collision_so_far cumulative_words=2
+period=3 no_collision_so_far cumulative_words=6
+period=4 no_collision_so_far cumulative_words=11
+period=5 no_collision_so_far cumulative_words=27
+period=6 no_collision_so_far cumulative_words=49
+period=7 no_collision_so_far cumulative_words=113
+period=8 no_collision_so_far cumulative_words=206
+period=9 no_collision_so_far cumulative_words=462
+period=10 no_collision_so_far cumulative_words=848
+period=11 no_collision_so_far cumulative_words=1872
+first_collision period=12 word=SSSSAAAASAAA sum=2 checked=1877
+tuple_fields=(addition_phase0,minimum_lag,oldest_S_offset,image_phase0)
+collision=((7, 11, 11, 8), (11, 3, 3, 8))
+phase=7 backward_signs=[1, 1, 1, -1, -1, -1, -1, 1, 1, 1, -1] sign_sum=1 moment=0
+phase=11 backward_signs=[1, 1, -1] sign_sum=1 moment=0
+full_minimum_lag_S_domains={6: [3], 7: [0, 1, 2, 3, 8], 9: [2, 3, 8], 11: [8]}
+matching_on_this_counterexample=True witness_A_to_S=[(6, 3), (7, 0), (9, 2), (11, 8)]

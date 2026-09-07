@@ -1,0 +1,14 @@
+source_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+script_sha256=c51d91ad65c352d0b3e79cf4ccc81460b642e03887ce7f55fc1ee235fff65995
+command=python3 experiments/parallel20260907/entry_source_birth.py
+protocol=H-20260907-05 second pass C; canonical [0,1000000]; already-used regression, not holdout
+SS_chains=330 blocked_candidates=62919
+claim_C_bad_chains=215
+counterexample={"T": 129, "failed_blockers": [[8, 16], [14, 31], [17, 25]], "failed_count": 3, "k": 4, "m": 5, "p": 120, "root_values": [377, 258, 138], "word": "SSASASASASS"}
+counterexample={"T": 367, "failed_blockers": [[116, 168], [119, 162], [122, 156], [125, 150], [128, 144], [131, 138]], "failed_count": 6, "k": 7, "m": 110, "p": 352, "root_values": [1187, 836, 484], "word": "SSASASASASASASASS"}
+counterexample={"T": 768, "failed_blockers": [[115, 170]], "failed_count": 1, "k": 1, "m": 112, "p": 765, "root_values": [2410, 1646, 881], "word": "SSASS"}
+counterexample={"T": 1345, "failed_blockers": [[288, 672], [291, 666]], "failed_count": 2, "k": 12, "m": 255, "p": 1320, "root_values": [4251, 2932, 1612], "word": "SSASASASASASASASASASASASASS"}
+counterexample={"T": 2188, "failed_blockers": [[724, 983], [727, 977], [730, 971], [733, 965], [736, 959], [739, 953]], "failed_count": 11, "k": 12, "m": 718, "p": 2163, "root_values": [7243, 5081, 2918], "word": "SSASASASASASASASASASASASASS"}
+addition_sources=[{"T": 23, "bound": 31, "k": 2, "m": 18, "p": 18, "previous_two": [8, 25], "value": 43}, {"T": 77, "bound": 103, "k": 5, "m": 75, "p": 66, "previous_two": [26, 91], "value": 157}, {"T": 136, "bound": 140, "k": 1, "m": 132, "p": 133, "previous_two": [4, 136], "value": 269}]
+first_counterexample_birth_trace=[23, 9, 24, 8, 25, 43, 62]
+PASS: exact classification complete

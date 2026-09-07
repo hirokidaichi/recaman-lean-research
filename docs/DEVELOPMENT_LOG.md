@@ -3449,3 +3449,20 @@ clock≥113・target≥115を証明し、3主要宣言をAuditへ登録した（
 1,220宣言の公理監査がPASS。詳細は[#61カード](HYPOTHESIS_CARD_2026-09-07_CLOCK112_CLOSURE.md)。
 #61の第一完了条件を満たしたが、clock777への一括coverage排除や新しい大域機構は得ていない。
 停止済みのfloor列挙、大域A/B枝、正のsurvival枝の再開には進まない。
+
+## 2026-09-07 five-pattern parallel research and ranked follow-up
+
+ユーザーの明示依頼で5方式を3 worker＋rootへ分けて調査した。集計要約のtwo-step no-go、
+初出のold rail輸送とSS birth時刻候補の反例、連結supportへ補強したE-056反例族、hole-only
+抽象の全有限集合emptyingを紙上証明またはexact計算で記録した。限定classだけを停止する。
+
+④では有限履歴のeventual正符号周期を、各加算phaseの有限lag供給恒等式P2へ縮約した。
+二次式によるlag有界性と係数比較は独立監査済み（PROVED-PAPER）。period≤18の229,045語で
+全加算供給word0、別protocolのperiod19..64の90,640評価でも0だが、全period命題は未証明。
+最小lag中の最古Sへの単射案を追加で反証し、全periodの供給不足/容量不等式を次の一問に残した。
+
+結果はH-20260907-04〜08、E-061〜E-070と[並列調査](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)へ保存。
+Lean sourceは変更せず、紙上証明をPROVED-LEANとは扱わない。全射性の真偽は未決で、
+今回最も具体化した④も固定block帰納の可否を判定する構造研究である。
+`./scripts/check.sh`は268 jobs、1,220宣言の公理監査、証拠台帳70件でPASS。
+11実験scriptの構文と13出力のsource hashを照合し、再現bundleへ保存した。

@@ -8,8 +8,23 @@
 
 ## 結論
 
-標準Recamán数列の全射性は未証明であり、証拠レベルは`CONJECTURED`である。
-現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。#70・#71・#61の有界作業は判定を完了した。
+研究の目標は標準Recamán数列の全射性の真偽を決着させること。全射性・非全射性はともに未証明である。
+全射性の命題の証拠レベルは`CONJECTURED`。現在、決着へ直結するactive direct branchは0本である。
+#70・#71・#61、および5パターンの並列調査は判定を完了した。
+
+最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
+**周期符号語の供給不足**へ絞った。有限履歴のeventually periodicな実更新は、各加算phaseに
+有限lagの供給恒等式P2を要求する（`E-065`, `PROVED-PAPER`、独立監査済み）。
+それを全加算phaseで同時に満たす正符号和の語は存在しない、という命題は`CONJECTURED`（`E-067`）。
+period≤18の229,045語と別の90,640評価では反例0だが、一般証明ではない（`E-066`, `COMPUTED`）。
+強化した供給phase数の容量不等式も未証明（`E-070`）で、最古Sへの単射案は反証済み（`E-069`）。
+これは固定blockによる帰納の可否を判断する構造研究であり、永久欠損へはまだ接続しない。
+
+他の限定候補は停止：同じ集計値から異なる2step到達が生じる履歴対（`E-061`）、SS入口でも
+blockerの早い初出を要求できないcanonical反例（`E-063`）、連結supportへ補修できるsurvival反例族
+（`E-064`）、全有限穴集合が空になり得るhole-only抽象（`E-068`）。
+初出を逆算したold rail輸送と入口分類は`PROVED-PAPER`の部分結果（`E-062`）だが、
+canonical生成を分離する新しい不等式ではない。5方式全体の不可能性を示したとは扱わない。
 
 最新の[戦略地図](STRATEGY_MAP_2026-09-07.md)は、#70のLean証明と#71の分類・停止判断、#61の既存証明統合を記録する。
 #61では認証済みの19@99734をno-low補題へ接続し、完全なpermanent-tail replayのclock112を
@@ -278,6 +293,6 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 
 - Lean 4.33.1、標準ライブラリのみ。
 - Lean source 267 files（root・auditを含む）、71,647 lines。
-- `./scripts/check.sh`: 268 jobs、1,220 audited declarations。証拠台帳60件。
+- `./scripts/check.sh`: 268 jobs、1,220 audited declarations。証拠台帳70件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

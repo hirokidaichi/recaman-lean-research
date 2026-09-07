@@ -1,0 +1,14 @@
+protocol=H-20260907-08 frozen subsets 1..12; paper-proof regression, no holdout claim
+source_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+source_sha256=e213f1a090852f2fabbce05231d1f1e28eb847e0ced71e01aafbbed2048708b5
+exhaustive_subsets=4096 greedy_max_arcs=5 violations=0
+fixed_schedule_trials=24576 max_attempts=12 violations=0
+single_residue_size=0 required_nonempty_arcs=0
+single_residue_size=1 required_nonempty_arcs=1
+single_residue_size=2 required_nonempty_arcs=2
+single_residue_size=12 required_nonempty_arcs=12
+single_residue_size=100 required_nonempty_arcs=100
+single_residue_size=1000 required_nonempty_arcs=1000
+canonical_control: M={4,5,19} absent_through=128 all_appear_by=99734
+canonical_first_hits=[(4, 131), (5, 129), (19, 99734)]
+PASS: finite checks support the abstraction proof only; no canonical non-surjectivity conclusion

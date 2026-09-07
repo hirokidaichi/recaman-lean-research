@@ -1,0 +1,8 @@
+protocol=H-20260907-06; claim C frozen before experiments; old prefixes reused only as input
+source_base_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+current_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+source_sha256=366686ed8aaf18ff018f347e21d40fbf7aa23e9b926e028a8f080edbb1a8c600
+{"B":4094,"D":10,"J":51,"augmented_max_gap":4094,"augmented_size":68,"bridge_count":7,"bridges":[4300,8394,16798,21001,25205,29410,33616],"bridges_sha256":"54921c18bb3e114e8d38ab39bfa4d7e80e5ba9ab85cb8d49568569b1d958892f","c":4199,"fresh_count":64,"h":256,"horizon":0,"max_seed":33729,"mode":"discovery","original_max_gap":8247,"original_seed":[0,101,105,108,111,114,117,120,123,126,129,132,135,138,141,144,147,150,153,156,159,162,165,168,171,174,177,180,183,186,189,192,195,198,201,204,207,210,213,216,219,222,225,228,231,234,237,240,243,246,249,252,255,8502,12543,12704,16907,21111,25316,29522,33729],"ratio_slack":-160,"seed_size":61,"v":102,"w":2,"x":12543}
+{"B":4336,"D":10,"J":54,"augmented_max_gap":4336,"augmented_size":75,"bridge_count":7,"bridges_sha256":"f564f80adc46d33ddff5d499d61ed089e6e870856862923e1e56e9df8e8e4bdf","c":4447,"fresh_count":67,"h":271,"horizon":4,"max_seed":35719,"mode":"discovery","original_max_gap":8734,"ratio_slack":-169,"seed_size":68,"v":108,"w":8,"x":13284}
+{"B":51216,"D":28,"J":640,"augmented_max_gap":51216,"augmented_size":808,"bridge_count":25,"bridges_sha256":"2910f3d23cf292a01397bcfec868f0d6f99b00e5ad4a4c664b89e3565d2d1a7b","c":52499,"fresh_count":671,"h":3201,"horizon":128,"max_seed":1366604,"mode":"discovery","original_max_gap":103080,"ratio_slack":-1927,"seed_size":783,"v":1280,"w":496,"x":156854}
+PASS: all enriched seeds retain exact word, no-wrap landing, ratio violation, one-use, bounds, parity, and max gap <= B

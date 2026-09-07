@@ -1,0 +1,6 @@
+source_revision=612fcfaf74bfb49f3ae05a268057c82f70dcca26
+script_sha256=f7c1c6c6920dd1269843841fe6eab8050382cf14259d8deb81ac8adb3676d5be
+command=python3 experiments/parallel20260907/entry_canonical_swap.py
+protocol=fixed canonical 19 first-hit counterfactual; post-discovery exact verification, not holdout
+{"add": [99753, 99951], "cardinality": 74019, "clock": 99732, "common_canonical_prefix_through": 37424, "equal_mod_histogram": true, "low_window": 99752, "maximum": 592216, "modulus": 66, "paths": [[199486, 99753, 19], [199486, 299219, 398953]], "remove": [99819, 99885], "remove_first_times": [37557, 37425], "sum": 6531531584, "value": 199486}
+PASS; H0 is canonical, H1 is a weakened-history counterfactual; no claim of H1 canonical reachability
