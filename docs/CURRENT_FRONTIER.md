@@ -9,7 +9,7 @@
 ## 結論
 
 標準Recamán数列の全射性は未証明であり、証拠レベルは`CONJECTURED`である。
-現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitは#71の共同birth分類1件である。
+現在、全射性へ向かうactive direct branchは0本、実行中のbounded research unitも0件である。#70・#71の有界作業は判定を完了した。
 
 最新の[戦略地図](STRATEGY_MAP_2026-09-06.md)は、自由cutoffと固定prefixの混同を修正する。
 `∀ B, ∃ N, ∀ n≥N, B<a(n)` は無条件に `PROVED-LEAN`（`E-052`）。
@@ -23,7 +23,9 @@ local survival比も追加前史なしには閉じない。density・parity・on
 2,677,448適用recordではT=1 survival比に違反0（`E-055`, `COMPUTED`）。
 canonicalやpreload-freeでのsurvival比の一般命題は未証明。新候補 `7J≤3(v-u)` はcanonical
 200億項のholdoutで5件破れた（`E-057`, `REFUTED`）。係数修正は停止し、次は反例のphase/birth
-分類を実施する。一般seeded countermodel族は#70で全payloadのLean認証を完了した。
+分類を完了した（`E-058`, `COMPUTED`）。31,058値を二つの隣接producer railへ分類したが、
+独立した大域不等式は得られず正のsurvival攻略は`STOPPED`（`E-059`）。
+一般seeded countermodel族は#70で全payloadのLean認証を完了した。
 
 形式化済みのresidual kernelは、仮想missing tailをeventual-high corridor（A枝）または
 fixed-root target-low stream（B枝）へ送る。A枝は「欠損値非有界」またはrigid burst streamまで

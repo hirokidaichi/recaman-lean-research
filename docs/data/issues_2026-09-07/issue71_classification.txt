@@ -1,0 +1,12 @@
+W=31058 scalar/accelerated first_birth_and_sign_matches=31058 PASS
+shared_birth_clocks=0 shared_producer_runs=2
+producer={"arc": 39, "birth_intercept": 7575197653, "birth_max": 7575047467, "birth_min": 7575011311, "birth_slope": -6, "count": 6027, "i_hi": 31057, "i_lo": 25031, "level": 5, "not_in_W": 12055, "rail_hi": 39375659992, "rail_lo": 39375641911, "section_end": 7575047471, "section_pairs": 18082, "section_start": 7575011308, "section_value": 39375641910, "side": "U", "sign": "A"}
+producer={"arc": 40, "birth_intercept": 11684552030, "birth_max": 11684702210, "birth_min": 11684552030, "birth_slope": 6, "count": 25031, "i_hi": 25030, "i_lo": 0, "level": 3, "not_in_W": 413611, "rail_hi": 39376098634, "rail_lo": 39375659993, "section_end": 11684702211, "section_pairs": 438642, "section_start": 11683824928, "section_value": 51059923562, "side": "L", "sign": "S"}
+producer_rail_union=[39375641911,39376098634] size=456724 not_used_by_this_W=425666; no claim about other consumers
+W_consumer_clocks=[11685598226,11685660340] step=2 PASS
+phase_exit_clock=11685660342 fresh_value=39375641909 below_joint_rail=2
+post_popup_q3_additions=40567 candidates_in_prelanding_q2_rail=40566 outside=1
+phase_identity N=31058 K=40566 J+2=5N+3K drop=9N+7K+16 PASS
+addition_cost=563500 original_survival_slack=38864647022 weighted_candidate_slack=-248402
+scope=fixed-example classification; no global inequality is claimed by this computation
+input_hashes={"/tmp/issue71-scalar-birth/arcs.txt": "6fd1faa960c3637a5046a28b3be9d6c624d2fdc4949a4036d4e14f004d539559", "/tmp/issue71-scalar-birth/stdout.txt": "e5c03b98b75e84fd6b994d96954318497cb6dfd396cec5d0063498ca70c6eb8a", "/tmp/issue71-scalar-birth/trace.txt": "3908a9358accf069ae3a94238b8faf29f086d5f26d44305c5a92f7fccc6fba4f", "docs/data/issues_2026-09-07/issue71_births.tsv": "e16f6e4fe289db2eddb8c76ba938dfcc646cd1b5ab2075f631b73fa6443a21cf"}

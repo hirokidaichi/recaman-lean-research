@@ -3421,3 +3421,11 @@ E-056の全payloadを8モジュールで形式化。`finite_prefix_survival_coun
 境界D²−8D=wの負の対照ではSS中間値への衝突を確認。
 11主要宣言をAuditへ追加し、`./scripts/check.sh`は1,217宣言・264 library modulesでPASS。
 詳細と再現は[形式化カード](HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)。次は#71。
+
+## 2026-09-07 #71 joint-birth diagnostic
+
+W全31,058値のfirst birth/signがscalarとacceleratedで一致。25,031値はarc40 q3 S、
+6,027値はarc39 q5 Aの二つの隣接railで生まれた。離脱candidateは結合rail下端より2小さい。
+小例3,789 birth、加速開始点変更、境界7値、元scalarとのtrace/arc表も一致。
+E-058はCOMPUTED。独立した大域不等式は得られず、正のsurvival攻略をE-059 STOPPEDと判定。
+[共同birth監査](JOINT_BIRTH_AUDIT_2026-09-07.md)とH-20260907-02に再開gateを記録。
