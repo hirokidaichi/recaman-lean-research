@@ -1,0 +1,10 @@
+protocol=H-20260908-01 HARD vs U7 local incompatibility
+source_revision=8b07f93fbbb17352c091cabaa333fc366a66c04f
+script_sha256=da97083296d9fa72a9b7fb17dcf7de952fad5e8a7c3e9eca55ab71f378f6832a
+S_OFFSET={"offset": 1, "possible": ["lag3"], "n_conflicts": {"lag3": 0, "lag7h1": 1, "lag7h2": 1}}
+S_OFFSET={"offset": 4, "possible": [], "n_conflicts": {"lag3": 1, "lag7h1": 2, "lag7h2": 1}}
+S_OFFSET={"offset": 7, "possible": [], "n_conflicts": {"lag3": 1, "lag7h1": 2, "lag7h2": 1}}
+S_OFFSET={"offset": 10, "possible": [], "n_conflicts": {"lag3": 1, "lag7h1": 2, "lag7h2": 1}}
+S_OFFSET={"offset": 11, "possible": [], "n_conflicts": {"lag3": 1, "lag7h1": 3, "lag7h2": 3}}
+SAFE_S_OFFSETS=[4, 7, 10, 11]
+CONCLUSION=HARD has S offsets that no U7 rule can occupy using only the forced past

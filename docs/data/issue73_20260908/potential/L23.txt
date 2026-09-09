@@ -1,0 +1,17 @@
+protocol=H-20260908-02 bounded-lag automaton
+source_revision=8b07f93fbbb17352c091cabaa333fc366a66c04f
+script_sha256=9a2b1d004cb9b3082689203b9141ea545ad6bfeee6dce8257535fac948d17e72
+{"phase": "building_supplied", "horizon": 23, "states": 8388608}
+{"phase": "relax", "supplied_states": 1333692}
+{"phase": "progress", "relaxations": 1048576, "q": 5074856, "max_potential": 3}
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/experiments/issue73_20260908/automaton_Ln.py", line 189, in <module>
+    main()
+    ~~~~^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/experiments/issue73_20260908/automaton_Ln.py", line 182, in main
+    if search(args.horizon, args.output_dir):
+       ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/experiments/issue73_20260908/automaton_Ln.py", line 142, in search
+    assert potential[((u << 1) | 1) & bound] >= potential[u] + supported[u]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

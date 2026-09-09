@@ -1,0 +1,7 @@
+protocol=H-20260908-01 pairwise charge collision of lag-11 types
+source_revision=8b07f93fbbb17352c091cabaa333fc366a66c04f
+script_sha256=723c84c7ea2d0ac6703224b0be2137f39665debc7cf115a0695a62102c1fb204
+CHOSEN=[{"type": [1, 2, 9, 10, 11], "offset": 10}, {"type": [1, 3, 8, 10, 11], "offset": 3}, {"type": [1, 4, 7, 10, 11], "offset": 4}, {"type": [1, 4, 8, 9, 11], "offset": 11}, {"type": [1, 5, 6, 10, 11], "offset": 6}, {"type": [1, 5, 7, 9, 11], "offset": 7}, {"type": [1, 5, 8, 9, 10], "offset": 8}, {"type": [2, 3, 7, 10, 11], "offset": 10}, {"type": [2, 3, 8, 9, 11], "offset": 11}, {"type": [2, 4, 6, 10, 11], "offset": 4}, {"type": [2, 4, 7, 9, 11], "offset": 4}, {"type": [2, 4, 8, 9, 10], "offset": 4}, {"type": [2, 5, 6, 9, 11], "offset": 11}, {"type": [2, 6, 7, 8, 10], "offset": 10}, {"type": [4, 5, 6, 7, 11], "offset": 6}, {"type": [4, 5, 6, 8, 10], "offset": 8}, {"type": [4, 5, 7, 8, 9], "offset": 7}]
+blocked_inconsistent_pairs=272
+N_COLLISION_SKELETONS=0
+CONCLUSION=no two chosen charges can share an S; pairwise window obstruction gives injectivity of this assignment

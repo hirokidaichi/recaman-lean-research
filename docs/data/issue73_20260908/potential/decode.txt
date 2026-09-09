@@ -1,0 +1,25 @@
+protocol=H-20260908-02 potential decode
+source_revision=8b07f93fbbb17352c091cabaa333fc366a66c04f
+script_sha256=a78c3a4e346b06cb38a6849534b04171a217f2777929155bf30721d351720990
+POTENTIAL_SUMMARY={"L": 3, "P_vs_p2count_supplied": {"(0, 0, 0)": 6, "(0, 1, 1)": 1, "(1, 0, 0)": 1}, "counts": {"0": 7, "1": 1}, "max": 1, "supplied_states": 1}
+POTENTIAL_SUMMARY={"L": 7, "P_vs_p2count_supplied": {"(0, 0, 0)": 87, "(0, 1, 1)": 13, "(0, 2, 1)": 2, "(1, 0, 0)": 17, "(1, 1, 1)": 3, "(2, 0, 0)": 6}, "counts": {"0": 102, "1": 20, "2": 6}, "max": 2, "supplied_states": 18}
+{"L7_vs_lean_l1": 0, "L7_vs_lean_shifted_l1": 0, "shift": 0}
+L7_MAX_STATES=["AAASAAS", "AAAAAAS", "AAAAASA", "AAAASAA", "AAASAAA", "AAAAAAA"]
+POTENTIAL_SUMMARY={"L": 11, "P_vs_p2count_supplied": {"(0, 0, 0)": 1342, "(0, 1, 1)": 205, "(0, 2, 1)": 36, "(0, 3, 1)": 4, "(1, 0, 0)": 277, "(1, 1, 1)": 49, "(2, 0, 0)": 102, "(2, 1, 1)": 11, "(3, 0, 0)": 22}, "counts": {"0": 1587, "1": 326, "2": 113, "3": 22}, "max": 3, "supplied_states": 305}
+POTENTIAL_SUMMARY={"L": 15, "P_vs_p2count_supplied": {"(0, 0, 0)": 21287, "(0, 1, 1)": 3324, "(0, 2, 1)": 581, "(0, 3, 1)": 80, "(0, 4, 1)": 8, "(1, 0, 0)": 4383, "(1, 1, 1)": 790, "(1, 2, 1)": 47, "(2, 0, 0)": 1579, "(2, 1, 1)": 172, "(3, 0, 0)": 403, "(3, 1, 1)": 33, "(4, 0, 0)": 81}, "counts": {"0": 25280, "1": 5220, "2": 1751, "3": 436, "4": 81}, "max": 4, "supplied_states": 5035}
+POTENTIAL_SUMMARY={"L": 19, "P_vs_p2count_supplied": {"(0, 0, 0)": 348421, "(0, 1, 1)": 55682, "(0, 2, 1)": 9879, "(0, 3, 1)": 1430, "(0, 4, 1)": 176, "(0, 5, 1)": 16, "(1, 0, 0)": 68154, "(1, 1, 1)": 12405, "(1, 2, 1)": 673, "(1, 3, 1)": 38, "(2, 0, 0)": 21566, "(2, 1, 1)": 1763, "(3, 0, 0)": 3628, "(3, 1, 1)": 134, "(4, 0, 0)": 323}, "counts": {"0": 415604, "1": 81270, "2": 23329, "3": 3762, "4": 323}, "max": 4, "supplied_states": 82196}
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/experiments/issue73_20260908/potential_decode.py", line 146, in <module>
+    main()
+    ~~~~^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/experiments/issue73_20260908/potential_decode.py", line 139, in main
+    "L7_P_vs_p2hits=" + json.dumps(Counter(zip(P7, hits7))),
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not tuple

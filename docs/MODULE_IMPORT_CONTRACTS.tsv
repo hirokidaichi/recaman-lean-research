@@ -2,6 +2,8 @@ module	direct_imports	purpose
 Recaman.RecurringCandidateDemandBirth	Recaman.EventualHighCorridorBirth;Recaman.RecurringCandidateBurst	birth分類とrecurring burstの最小composition境界
 Recaman.PeriodicCandidateNoGo	-	Recamán軌道から独立したPrelude-only有限算術核
 Recaman.ShortPeriodicSupply	-	実際の周期符号から7bit履歴を構成し、全periodでlag≤7の供給容量を証明
+Recaman.LagElevenSupply	-	min-lag-11の17型、U7非両立charge、型対の同時刻衝突と11bit完全分類
+Recaman.LagElevenPeriodic	Recaman.ShortPeriodicSupply;Recaman.LagElevenSupply	周期符号から17型への接着。phi7とphi11は単射で像は交わらずDへ。|U7∪U11min|≤|D|
 Recaman.SeededUseGapCounterexample	Recaman.Basic	任意seed上のexact Basic.step反例
 Recaman.SupplyAncestryCounterexample	Recaman.History	canonical prefixのfirst-occurrence APIだけを使う反例
 Recaman.DemandProvenanceCounterexample	Recaman.History	canonical prefixのsupplied-demand birth反例。first-occurrence APIだけを使う

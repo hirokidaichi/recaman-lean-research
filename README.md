@@ -13,6 +13,8 @@ Lean 4形式化プロジェクトです。
 > [module architecture](docs/MODULE_ARCHITECTURE.md) に分離しています。
 > 以下の日付付きレポートは、
 > 判断の由来を残すhistorical handoffであり、現在状態の正本ではありません。
+> 2026-09-08〜09の#73第2passは
+> [lag-11容量とlag-by-lag停止](docs/ISSUE73_LAG11_CAPACITY_2026-09-09.md) にまとめています。
 > 2026-09-01の2時間監査は [2時間並列研究レポート](docs/TWO_HOUR_RESEARCH_REPORT_2026-09-01.md)、
 > その説明的snapshotは [現況レポート](docs/STATUS_REPORT_2026-08-30.md) にまとめています。
 > finite-root残余の再分解と最新の並列監査は
@@ -31,8 +33,10 @@ Lean 4形式化プロジェクトです。
 ## 現在地
 
 [5パターンの並列調査](docs/PARALLEL_APPROACH_TRIAGE_2026-09-07.md)で1位とした周期符号語の供給問題を進め、
-[任意周期でlag≤7の供給加算数が減算数以下となること](docs/ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)をLeanで証明した。
-周期長に上限はないが、全lagの供給不足と全射性・非全射性の決着は未証明。#73本体はOPENである。
+[任意周期でlag≤7の供給加算数が減算数以下となること](docs/ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)に続き、
+[lag≤7と最小lag=11の和も減算数以下となること](docs/ISSUE73_LAG11_CAPACITY_2026-09-09.md)をLeanで証明した。
+周期長に上限はない。lag-15までの和は紙上、型ごとのlag延長は停止。全lagの供給不足と
+全射性・非全射性の決着は未証明。#73本体はOPENである。
 
 2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を
 Leanで証明し、#71の31,058個のblockerの共同birthを完全分類した。

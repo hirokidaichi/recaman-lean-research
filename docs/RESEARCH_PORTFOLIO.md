@@ -1,5 +1,9 @@
 # Recamán 全域性研究ポートフォリオ
 
+2026-09-09 #73追補：[lag-11容量](ISSUE73_LAG11_CAPACITY_2026-09-09.md)をE-080 PROVED-LEANへ昇格。
+任意周期で|U7∪U11min|≤|D|。lag-15和はE-086 PROVED-PAPER。型ごとのlag延長はE-088 STOPPED。
+全lagのE-067/E-070は未解決。
+
 2026-09-07 #73追補：[短い供給の容量](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)をE-071 PROVED-LEANへ昇格。
 全periodでU7≤Dだが、全lagのE-067/E-070は未解決。escape selector、最古端S、second-moment符号、
 all-A future debtの一単位支払はE-072〜075で停止。Hall・固定短写像のlag11拡張・有限automatonの

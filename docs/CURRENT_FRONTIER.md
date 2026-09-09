@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-07
+最終更新: 2026-09-09
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -14,9 +14,21 @@
 
 続く[#73第1pass](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)で、全periodの符号語に対する
 **lag≤7の供給容量U7≤Dと、正符号和なら短い供給を持たない加算が存在すること**をLeanで証明した
-（E-071）。実過去窓とP2の両方向の一致、lag11の供給と両立する陰性対照もAuditへ登録した。
-全lagのE-067/E-070は未解決で、#73はOPEN。E-072・E-073・E-074・E-075のselector・rank・単純予算を停止し、
-E-076・E-077・E-078の有限証拠は一般証明と分ける。次は長い供給区間を共通の仕組みへ結び付ける問題が残る。
+（E-071）。2026-09-08にmin-lag-11の17型へU7と像が交わらないchargeを与え、型対の距離`j−i`
+での符号衝突をLeanで決めた（E-079）。同じchargeの周期接着により
+`|U7 ∪ U11min| ≤ |D|`は全周期でLean（E-080）。min-lag-15の155型へ同じ非両立CSP chargeを延長し、
+`|U7 ∪ U11min ∪ U15min| ≤ |D|`も紙上で成り立つ（E-086）。正符号和のE-070反例は最小lag≥19
+を使う。任意周期の `|U11min| ≤ |D|` は Lean（E-087）。E-067はperiod19..22の正符号和3,487,066語でも
+U=Aが0（E-081, `COMPUTED`）。全lagのE-067/E-070は未解決で、#73はOPEN。E-072・E-073・E-074・
+E-075のselector・rank・単純予算を停止し、E-076・E-077・E-078の有限証拠は一般証明と分ける。
+lag-19型表は完了にしない。lag-by-lag型課金クラスは停止した（E-088）：宣言した
+d非依存セレクタはlag-15でZ開対を持ち、φ7を一様規則として再現しない。E-080/E-086は残る。
+次は新しい型表ではなく、d非依存の局所障害または閉形式potentialだけを再開条件とする。
+供給Aのtwo-child κ降下をSへ単射課金する案とそのleast-P2窓への修理は反例で停止した
+（E-082, E-083）。どちらもU=Aではない。L=7 potentialの新しい7bit埋め込みもL=11で偽（E-084）。
+C++のL=23は正サイクルなし・max P=5で、L=19のmax=4は天井ではない。
+U7のfollowing-gap類へのlag-11一様課金は`ASSSASSAAAASSA`で偽（E-085）。lag-by-lagの
+型offset延長はE-088で停止。
 
 
 最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
@@ -299,7 +311,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 268 files（root・auditを含む）、71,906 lines。
-- `./scripts/check.sh`: 269 jobs、1,225 audited declarations。証拠台帳78件。
+- Lean source 269 files（root・auditを含む）。
+- `./scripts/check.sh`: 270 jobs、1,230 audited declarations。証拠台帳81件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

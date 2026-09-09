@@ -1,5 +1,12 @@
 # Changelog
 
+## Issue 73: lag-11 capacity (Lean) and lag-by-lag stop — 2026-09-09
+
+- `|U7 ∪ U11min| ≤ |D|` を任意周期でLean証明（`LagElevenPeriodic`、registry `E-080`）。
+  有限核17型は `LagElevenSupply`（`E-079`）、U11min単独の容量は `E-087`
+- lag-15の155型CSP chargeは紙上（`E-086`）。d非依存セレクタはlag-15で開対、型課金クラスを停止（`E-088`）
+- [handoff](docs/ISSUE73_LAG11_CAPACITY_2026-09-09.md)。#73本体はOPEN
+
 ## Blocker provenance epoch — 2026-09-03
 
 - `experiments/blocker_provenance_probe.cpp`（registry `E-041`、カード `H-20260903-01` は `REFUTED`）：降下を塞ぐ値

@@ -1,0 +1,17 @@
+protocol=H-20260908-01 pairwise charge collision of lag-11 types
+source_revision=8b07f93fbbb17352c091cabaa333fc366a66c04f
+script_sha256=74737af636e2cc1807dfdd38e4b1f482cad795926433c6a013c5c6bb35919de0
+CHOSEN=[{"type": [1, 2, 9, 10, 11], "offset": 10}, {"type": [1, 3, 8, 10, 11], "offset": 3}, {"type": [1, 4, 7, 10, 11], "offset": 4}, {"type": [1, 4, 8, 9, 11], "offset": 11}, {"type": [1, 5, 6, 10, 11], "offset": 6}, {"type": [1, 5, 7, 9, 11], "offset": 7}, {"type": [1, 5, 8, 9, 10], "offset": 8}, {"type": [2, 3, 7, 10, 11], "offset": 10}, {"type": [2, 3, 8, 9, 11], "offset": 11}, {"type": [2, 4, 6, 10, 11], "offset": 4}, {"type": [2, 4, 7, 9, 11], "offset": 4}, {"type": [2, 4, 8, 9, 10], "offset": 4}, {"type": [2, 5, 6, 9, 11], "offset": 11}, {"type": [2, 6, 7, 8, 10], "offset": 10}, {"type": [4, 5, 6, 7, 11], "offset": 6}, {"type": [4, 5, 6, 8, 10], "offset": 8}, {"type": [4, 5, 7, 8, 9], "offset": 7}]
+blocked_inconsistent_pairs=262
+N_COLLISION_SKELETONS=10
+COLLISION={"type_a": [1, 3, 8, 10, 11], "ia": 3, "type_b": [2, 5, 6, 9, 11], "ib": 11, "delta": 8}
+COLLISION={"type_a": [2, 3, 8, 9, 11], "ia": 11, "type_b": [4, 5, 7, 8, 9], "ib": 7, "delta": -4}
+COLLISION={"type_a": [2, 4, 6, 10, 11], "ia": 4, "type_b": [2, 5, 6, 9, 11], "ib": 11, "delta": 7}
+COLLISION={"type_a": [2, 4, 7, 9, 11], "ia": 4, "type_b": [2, 5, 6, 9, 11], "ib": 11, "delta": 7}
+COLLISION={"type_a": [2, 4, 8, 9, 10], "ia": 4, "type_b": [2, 5, 6, 9, 11], "ib": 11, "delta": 7}
+COLLISION={"type_a": [2, 5, 6, 9, 11], "ia": 11, "type_b": [1, 3, 8, 10, 11], "ib": 3, "delta": -8}
+COLLISION={"type_a": [2, 5, 6, 9, 11], "ia": 11, "type_b": [2, 4, 6, 10, 11], "ib": 4, "delta": -7}
+COLLISION={"type_a": [2, 5, 6, 9, 11], "ia": 11, "type_b": [2, 4, 7, 9, 11], "ib": 4, "delta": -7}
+COLLISION={"type_a": [2, 5, 6, 9, 11], "ia": 11, "type_b": [2, 4, 8, 9, 10], "ib": 4, "delta": -7}
+COLLISION={"type_a": [4, 5, 7, 8, 9], "ia": 7, "type_b": [2, 3, 8, 9, 11], "ib": 11, "delta": 4}
+CONCLUSION=chosen offsets admit overlapping min-lag-11 windows sharing an S; assignment not injective

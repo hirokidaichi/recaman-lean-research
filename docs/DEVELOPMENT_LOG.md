@@ -3485,3 +3485,20 @@ H-20260907-09、E-071〜E-078と[handoff](ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)
 `./scripts/check.sh`は269 jobs、1,225公理監査、証拠台帳78件、25 import契約でPASS。
 最初の台帳検査でrange表記のID参照不足を検出し、明示IDへ修正後に全体checkを実行した。
 #73本体はOPEN。次は長い供給区間を共通の仕組みへ結合できるかを判定し、有限上限の延長だけを成果にしない。
+
+## 2026-09-08〜09 issue #73: lag-11 capacity and lag-by-lag stop
+
+約17時間の研究ループで、min-lag-11の17型とU7非両立chargeの有限核をLean化し
+（E-079）、実際の周期11窓へ接着して `|U7 ∪ U11min| ≤ |D|` を全周期で証明した
+（E-080、`suppliedCount_add_u11Count_le_subtractionCount`）。U11min単独の
+`u11Count_le_subtractionCount` はE-087。周期長の上限はない。
+
+following-gap一様課金はHARD型と`ASSSASSAAAASSA`で棄却（E-085）。
+lag-15は155型CSPで紙上の和 `|U7 ∪ U11min ∪ U15min| ≤ |D|`（E-086）。
+period19..22の正符号和3,487,066語でU=Aは0（E-081、COMPUTED）。
+two-child κ inventory、L=7埋め込みpotential、宣言したd非依存セレクタを停止
+（E-082〜E-084、E-088）。lag-by-lag型表の延長は停止。
+
+H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
+#73本体はOPEN。再開は155型に新しい型表なしで単射な局所障害が書けるか、
+`SSAAAAAASSS`で上がり`AAASAASSSSS`のSで高々1下がる閉形式Fが出たときに限る。
