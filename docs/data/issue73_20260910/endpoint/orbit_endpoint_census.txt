@@ -1,0 +1,19 @@
+protocol=H-20260910-28 canonical regression, range already used in prior discovery
+source_revision=2ed8606dc5948bb05ac7547acc6065b36a10bfb7
+source_sha256=89eb072662f92106ff81c41e48631d8de7b178c87438c27cbc8b8caeb246581c
+command=c++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/issue73_20260910/endpoint/orbit_endpoint_census.cpp -o /tmp/recaman-hour-20260910/orbit_endpoint_census
+command=/tmp/recaman-hour-20260910/orbit_endpoint_census
+SHORT_OUTSIDE_NEW={"step":115,"sign_time":114,"lag":11,"SS":2,"endpoint":103,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+SHORT_OUTSIDE_NEW={"step":24381,"sign_time":24380,"lag":11,"SS":2,"endpoint":24369,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+SHORT_OUTSIDE_NEW={"step":30268,"sign_time":30267,"lag":11,"SS":2,"endpoint":30256,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+SHORT_OUTSIDE_NEW={"step":96266,"sign_time":96265,"lag":11,"SS":2,"endpoint":96254,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+RANGE={"from":1,"through":100000,"A":50010,"S":49990,"finite_P2_A":12675,"clean":9414,"one_SS":594,"low_SS_joint":10008,"new_beyond_old_U11_clean":577,"old_short_outside_new":4,"max_low_SS_minimum_lag":7003,"endpoint_violations":0}
+CHECKPOINT={"step":100000,"value":199508,"P":20,"W":199488,"prefix_keys":74343,"maximum_value":592216,"first_19":99734}
+RANGE={"from":100001,"through":1000000,"A":450002,"S":449998,"finite_P2_A":119632,"clean":83630,"one_SS":4330,"low_SS_joint":87960,"new_beyond_old_U11_clean":4293,"old_short_outside_new":0,"max_low_SS_minimum_lag":42523,"endpoint_violations":0}
+CHECKPOINT={"step":1000000,"value":2057164,"P":24,"W":2057140,"prefix_keys":740799,"maximum_value":5946126,"first_19":99734}
+SHORT_OUTSIDE_NEW={"step":1466185,"sign_time":1466184,"lag":11,"SS":2,"endpoint":1466173,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+SHORT_OUTSIDE_NEW={"step":5026073,"sign_time":5026072,"lag":11,"SS":2,"endpoint":5026061,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+SHORT_OUTSIDE_NEW={"step":9796940,"sign_time":9796939,"lag":11,"SS":2,"endpoint":9796928,"endpoint_is_A":true,"backward_word":"AAASSSASASA"}
+RANGE={"from":1000001,"through":10000000,"A":4500002,"S":4499998,"finite_P2_A":1183589,"clean":828765,"one_SS":65451,"low_SS_joint":894216,"new_beyond_old_U11_clean":65338,"old_short_outside_new":3,"max_low_SS_minimum_lag":237147,"endpoint_violations":0}
+CHECKPOINT={"step":10000000,"value":20438710,"P":28,"W":20438682,"prefix_keys":7064114,"maximum_value":61998984,"first_19":99734}
+PASS: all low-SS minimum suppliers use distinct actual S endpoints through 10000000 steps

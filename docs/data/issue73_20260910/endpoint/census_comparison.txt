@@ -1,0 +1,9 @@
+source_revision=2ed8606dc5948bb05ac7547acc6065b36a10bfb7
+source_sha256=4f9927c81770972a4cb632e557eda5826bf14715e46c6f062a65775b8e6c4e29
+command=python3 experiments/issue73_20260910/endpoint/census_comparison.py
+docs/data/issue73_20260910/orbit_ss_census.txt_sha256=ff11f26e3052512da80ac1e745926a5c98d1ae6bd9ce6294104e57aa4edd0a59
+docs/data/issue73_20260910/endpoint/orbit_endpoint_census.txt_sha256=9480affccc63d111eb60a6fc20f8eafa5fde882a838a28b937c1a6ebc953f4a6
+docs/data/issue73_20260910/endpoint/periodic_falsifier.txt_sha256=2be08865d811e847da86109e5ecdd9910f6a652f184c8ab269d119caf540b781
+COMPARISON={"steps": 10000000, "finite_P2_A": 1315896, "low_SS_joint": 992184, "ratio_percent": 75.3998796257455, "new_beyond_old": 70208, "old_short_outside_new": 7, "capacity_union_with_old_short_proved": false}
+PERIODIC_TOTALS={"periods": 22, "words": 8388606, "S_ended_witnesses": 13594274, "violations": 0}
+PASS: independent replay checkpoints and prior SS census agree exactly

@@ -58,3 +58,7 @@ Recaman.OneSSGapAlgebra	Recaman.NonpositivePeriodDrift	Exact gap encoding and al
 Recaman.OneSSMultiplicity	Recaman.OneSSGapAlgebra	Unbounded one-SS demand in one finite NoSAAS history with minimum P2 and current-A certificates
 Recaman.OneSSSeededB	Recaman.FiniteSeedPeriodicSupply;Recaman.OneSSMultiplicity	Exact finite-state family B counterexample with minimal P2, NoSAAS and SS1
 Recaman.SSGapBudget	Recaman.OneSSMultiplicity	All-SS gap budget on actual words with exact SS count and NoSAAS bridge
+Recaman.LowSSEndpoint	Recaman.OneSSMultiplicity	Suffix mass and moment bounds, S-ended prefix normalization, and all-lag common-endpoint rigidity
+Recaman.LowSSPeriodicSupply	Recaman.LowSSEndpoint;Recaman.SharpPeriodicSupply	One joint capacity theorem for every low-SS P2 witness, without NoSAAS or minimum-lag premises
+Recaman.CanonicalLowSSBoundary	Recaman.LowSSEndpoint;Recaman.FiniteP2Semantics	Canonical step115 refutes S-ended prefix normalization at two SS
+Recaman.EndpointRepetitionBudget	Recaman.LowSSEndpoint	Two SS per shared-endpoint repetition and an all-parameter sharp common-history family

@@ -1,0 +1,9 @@
+protocol=H-20260910-28 stopped-branch and canonical controls
+source_revision=2ed8606dc5948bb05ac7547acc6065b36a10bfb7
+source_sha256=8bee222bed310edeb75ba2a49a7558495c2083e8f64478cb1d5793c721f6c3db
+finite_verifier_sha256=7e5059a8c4e83c7f405f53fafcd5edca7152736546cadfc63ef855138f4fd10e
+command=python3 experiments/issue73_20260910/endpoint/regression_controls.py
+E069={"period": 12, "word": "SSSSAAAASAAA", "sources": [{"phase": 7, "lag": 11, "SS": 3, "endpoint": 8}, {"phase": 11, "lag": 3, "SS": 0, "endpoint": 8}], "first_excluded_by_low_SS": true}
+E073={"word": "SAAASAASSSA", "SS": 2, "minimum_lag": 11, "endpoint": "A", "NoSAAS": false}
+CANONICAL={"step": 115, "sign_time": 114, "backward_word": "AAASSSASASA", "minimum_lag": 11, "SS": 2, "endpoint_time": 103, "endpoint_sign": "A", "current_sign": "A", "a103": 264, "a114": 379, "a115": 494, "NoSAAS": true}
+PASS: stopped controls remain outside the theorem; canonical step115 independently agrees

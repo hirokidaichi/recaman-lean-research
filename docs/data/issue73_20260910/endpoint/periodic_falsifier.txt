@@ -1,0 +1,29 @@
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=ca9c90d63aa31f97dbd7edf3cb61c673239927b68edfb940e4f01bde8631927a
+command=c++ -std=c++17 -O3 -Wall -Wextra -Werror experiments/issue73_20260910/endpoint/periodic_falsifier.cpp -o /tmp/recaman-hour-20260910/periodic_falsifier
+command=/tmp/recaman-hour-20260910/periodic_falsifier 1 22
+protocol=H-20260910-28 all-word S-ended low-SS endpoint map
+scan=4p; discovery=1..13; holdout=14..22; all period masses; SAAS allowed
+DISCOVERY={"period":1,"words":2,"sources":0,"witnesses":0,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":2,"NoSAAS_joint_sources":0,"max_S_ended_lag":0,"violations":0}
+DISCOVERY={"period":2,"words":4,"sources":0,"witnesses":0,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":4,"NoSAAS_joint_sources":0,"max_S_ended_lag":0,"violations":0}
+DISCOVERY={"period":3,"words":8,"sources":0,"witnesses":0,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":5,"NoSAAS_joint_sources":0,"max_S_ended_lag":0,"violations":0}
+DISCOVERY={"period":4,"words":16,"sources":4,"witnesses":4,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":12,"NoSAAS_joint_sources":4,"max_S_ended_lag":3,"violations":0}
+DISCOVERY={"period":5,"words":32,"sources":10,"witnesses":10,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":22,"NoSAAS_joint_sources":10,"max_S_ended_lag":3,"violations":0}
+DISCOVERY={"period":6,"words":64,"sources":24,"witnesses":24,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":0,"NoSAAS_words":43,"NoSAAS_joint_sources":24,"max_S_ended_lag":3,"violations":0}
+DISCOVERY={"period":7,"words":128,"sources":56,"witnesses":56,"nonminimum_S_witnesses":0,"A_ended_P2_witnesses":7,"NoSAAS_words":79,"NoSAAS_joint_sources":49,"max_S_ended_lag":3,"violations":0}
+DISCOVERY={"period":8,"words":256,"sources":144,"witnesses":152,"nonminimum_S_witnesses":8,"A_ended_P2_witnesses":8,"NoSAAS_words":148,"NoSAAS_joint_sources":112,"max_S_ended_lag":7,"violations":0}
+DISCOVERY={"period":9,"words":512,"sources":324,"witnesses":351,"nonminimum_S_witnesses":27,"A_ended_P2_witnesses":18,"NoSAAS_words":275,"NoSAAS_joint_sources":225,"max_S_ended_lag":11,"violations":0}
+DISCOVERY={"period":10,"words":1024,"sources":740,"witnesses":780,"nonminimum_S_witnesses":40,"A_ended_P2_witnesses":40,"NoSAAS_words":514,"NoSAAS_joint_sources":490,"max_S_ended_lag":11,"violations":0}
+DISCOVERY={"period":11,"words":2048,"sources":1595,"witnesses":1683,"nonminimum_S_witnesses":88,"A_ended_P2_witnesses":110,"NoSAAS_words":959,"NoSAAS_joint_sources":979,"max_S_ended_lag":15,"violations":0}
+DISCOVERY={"period":12,"words":4096,"sources":3564,"witnesses":3792,"nonminimum_S_witnesses":228,"A_ended_P2_witnesses":216,"NoSAAS_words":1791,"NoSAAS_joint_sources":2040,"max_S_ended_lag":15,"violations":0}
+DISCOVERY={"period":13,"words":8192,"sources":7683,"witnesses":8203,"nonminimum_S_witnesses":520,"A_ended_P2_witnesses":468,"NoSAAS_words":3343,"NoSAAS_joint_sources":4082,"max_S_ended_lag":19,"violations":0}
+HOLDOUT={"period":14,"words":16384,"sources":16674,"witnesses":17752,"nonminimum_S_witnesses":1078,"A_ended_P2_witnesses":1008,"NoSAAS_words":6241,"NoSAAS_joint_sources":8274,"max_S_ended_lag":19,"violations":0}
+HOLDOUT={"period":15,"words":32768,"sources":35430,"witnesses":37725,"nonminimum_S_witnesses":2295,"A_ended_P2_witnesses":2220,"NoSAAS_words":11650,"NoSAAS_joint_sources":16470,"max_S_ended_lag":23,"violations":0}
+HOLDOUT={"period":16,"words":65536,"sources":75984,"witnesses":80960,"nonminimum_S_witnesses":4976,"A_ended_P2_witnesses":4672,"NoSAAS_words":21748,"NoSAAS_joint_sources":32880,"max_S_ended_lag":19,"violations":0}
+HOLDOUT={"period":17,"words":131072,"sources":161279,"witnesses":171904,"nonminimum_S_witnesses":10625,"A_ended_P2_witnesses":9945,"NoSAAS_words":40598,"NoSAAS_joint_sources":65127,"max_S_ended_lag":27,"violations":0}
+HOLDOUT={"period":18,"words":262144,"sources":341964,"witnesses":364410,"nonminimum_S_witnesses":22446,"A_ended_P2_witnesses":21024,"NoSAAS_words":75787,"NoSAAS_joint_sources":128862,"max_S_ended_lag":23,"violations":0}
+HOLDOUT={"period":19,"words":524288,"sources":720860,"witnesses":768189,"nonminimum_S_witnesses":47329,"A_ended_P2_witnesses":44498,"NoSAAS_words":141476,"NoSAAS_joint_sources":253745,"max_S_ended_lag":31,"violations":0}
+HOLDOUT={"period":20,"words":1048576,"sources":1518880,"witnesses":1618660,"nonminimum_S_witnesses":99780,"A_ended_P2_witnesses":93560,"NoSAAS_words":264102,"NoSAAS_joint_sources":498760,"max_S_ended_lag":27,"violations":0}
+HOLDOUT={"period":21,"words":2097152,"sources":3188577,"witnesses":3398241,"nonminimum_S_witnesses":209664,"A_ended_P2_witnesses":196518,"NoSAAS_words":493015,"NoSAAS_joint_sources":977466,"max_S_ended_lag":35,"violations":0}
+HOLDOUT={"period":22,"words":4194304,"sources":6682192,"witnesses":7121378,"nonminimum_S_witnesses":439186,"A_ended_P2_witnesses":411664,"NoSAAS_words":920341,"NoSAAS_joint_sources":1911844,"max_S_ended_lag":31,"violations":0}
+PASS: all tested endpoints are S and distinct across different current A phases; joint capacity holds

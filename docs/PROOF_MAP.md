@@ -1257,3 +1257,36 @@ the other. Therefore at most one source per A run, and periodic one-SS
 capacity follows by mapping each run to its preceding S. This is
 PROVED-PAPER, not a consequence of only the Lean family constructors.
 The clean/short maps may use those S phases too; union capacity is open.
+
+## 2026-09-10: common endpoints close the joint low-SS capacity (E-128–E-130)
+
+`LowSSEndpoint.mass_ending_A` → `moment_ending_A` proves the strict margin
+`moment(w)+length(w)≥2` for every A-ended word with at most one SS.
+The final-pair induction `zero_SS_nonpositive_prefix` →
+`lowSS_A_nonpositive_prefix` → `lowSS_S_prefix` derives an S-ended P2
+prefix for every low-SS P2 word; `stream_S_witness` and
+`minimum_endpoint_S` retain the actual history and clocks.
+`no_shared_endpoint` → `endpoint_injective` uses the same strict margin
+against equal old endpoints of two current A sources.
+`LowSSPeriodicSupply.endpoint_mod_injective` → `periodic_lowSS_capacity`
+provides the joint all-period, all-lag bound. The clean/SS1 corollary has
+no NoSAAS or minimum-lag premise. E-121/E-127's paper classification is
+not a mathematical dependency. E-127's clean-union obstacle is closed;
+the union with the old short class is still open.
+
+`CanonicalLowSSBoundary` kernel-checks sign time114/step115, minimum lag11,
+word AAASSSASASA, two SS, NoSAAS, current A and old A endpoint103. There
+is no S-ended P2 prefix. This strengthens the old abstract E-073 control
+to an actual canonical obstruction to the same normalization at two SS.
+The low-SS capacity audit checks 1,617 declarations. Period1..22 and
+10^7-step diagnostics are separate `COMPUTED` evidence (E-129).
+
+## 2026-09-10: sharp endpoint-repetition cost (E-131)
+
+`LowSSEndpoint.moment_ending_A` → `EndpointRepetitionBudget.intervening_cost`
+→ `stream_SS_increment` → `repeated_endpoint_budget`: every additional
+current-A P2 source at the same endpoint costs two SS in a disjoint segment.
+The all-K family Wk=(AASASASASSSA)^k AAS attains2k; its NoSAAS, source
+signs, distinct positions, suffix embedding, and identical endpoint are
+Lean-checked. `family_nonminimum` guards against claiming a counterexample
+for minimum windows. No new global allocation is inferred. Audit:1,635.

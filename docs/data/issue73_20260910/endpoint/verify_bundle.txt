@@ -1,0 +1,10 @@
+protocol=endpoint research source and artifact audit
+tree=current working tree
+MANIFEST_ENTRIES=35
+SOURCE_OK=experiments/issue73_20260910/endpoint/periodic_falsifier.cpp
+SOURCE_OK=experiments/issue73_20260910/endpoint/orbit_endpoint_census.cpp
+SOURCE_OK=experiments/issue73_20260910/endpoint/finite_verifier.py
+SOURCE_OK=experiments/issue73_20260910/endpoint/census_comparison.py
+SOURCE_OK=experiments/issue73_20260910/endpoint/repetition_falsifier.py
+SOURCE_OK=experiments/issue73_20260910/endpoint/regression_controls.py
+PASS: all manifest artifacts, recorded source hashes, and comparison inputs match

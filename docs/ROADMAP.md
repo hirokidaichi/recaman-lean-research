@@ -1,5 +1,9 @@
 # 証明ロードマップ
 
+> 2026-09-10追補：[low-SS共同容量](LOW_SS_ENDPOINT_CAPACITY_2026-09-10.md)を全周期・全lagでLean証明（E-128）。
+> clean/SS1の共同配分を解決し、NoSAAS・最小lagも不要。SS≥2への同じ正規化は標準step115で反証（E-130）。
+> 全容量E-070、E-067、旧shortとの和集合は未解決。次はこのcanonical境界例を通る共同履歴不等式。
+
 > 2026-09-09 #73第2pass：`|U7 ∪ U11min| ≤ |D|`をLean化（E-080）。min-lag-15の155型CSP chargeで
 > `|U7 ∪ U11min ∪ U15min| ≤ |D|`（E-086, `PROVED-PAPER`）。lag-by-lag型課金はE-088で停止。
 > E-067はperiod22まで全数でU=A=0（E-081）だが証明ではない。次の再開はd非依存の局所障害か閉形式potentialだけ。
