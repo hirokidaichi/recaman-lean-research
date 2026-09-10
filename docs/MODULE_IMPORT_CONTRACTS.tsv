@@ -57,8 +57,12 @@ Recaman.FiniteSeedPeriodicSupply	Recaman.NonpositivePeriodDrift;Recaman.SeededRe
 Recaman.OneSSGapAlgebra	Recaman.NonpositivePeriodDrift	Exact gap encoding and all-parameter one-SS P2 family algebra; exhaustion/minimality paper-only
 Recaman.OneSSMultiplicity	Recaman.OneSSGapAlgebra	Unbounded one-SS demand in one finite NoSAAS history with minimum P2 and current-A certificates
 Recaman.OneSSSeededB	Recaman.FiniteSeedPeriodicSupply;Recaman.OneSSMultiplicity	Exact finite-state family B counterexample with minimal P2, NoSAAS and SS1
-Recaman.SSGapBudget	Recaman.OneSSMultiplicity	All-SS gap budget on actual words with exact SS count and NoSAAS bridge
+Recaman.SSGapBudget	Recaman.OneSSMultiplicity	All-SS gap budget; P2 leading A-run is ≤ssCount+1 when SS≥1
 Recaman.LowSSEndpoint	Recaman.OneSSMultiplicity	Suffix mass and moment bounds, S-ended prefix normalization, and all-lag common-endpoint rigidity
 Recaman.LowSSPeriodicSupply	Recaman.LowSSEndpoint;Recaman.SharpPeriodicSupply	One joint capacity theorem for every low-SS P2 witness, without NoSAAS or minimum-lag premises
 Recaman.CanonicalLowSSBoundary	Recaman.LowSSEndpoint;Recaman.FiniteP2Semantics	Canonical step115 refutes S-ended prefix normalization at two SS
 Recaman.EndpointRepetitionBudget	Recaman.LowSSEndpoint	Two SS per shared-endpoint repetition and an all-parameter sharp common-history family
+Recaman.TwoSSLeadingSibling	Recaman.CanonicalLowSSBoundary	Minimum windows cannot start AAS; leading A-run ≥3 forces a clean lag-3 sibling. Canonical 114 is an instance
+Recaman.OnePerRun	Recaman.TwoSSLeadingSibling;Recaman.SSFreeSupply	Nested k=1 one-per-run; SS-gap 2 is SSSS; NoSAAS gap 4 has ssCount≥3; gap 6 is SSAAAASS
+Recaman.NoSSMassOne	Recaman.OnePerRun	NoSS mass-1 bound and classification; SA-prefixed minWord family; reverse-nested extra mass/moment without SS hypothesis
+Recaman.OnePerRunCounterexample	Recaman.NoSSMassOne	Equality-family glue of minWord to mass-0 moment-(-1) SS=2 tails; smallest pair is two min P2 SS=2 windows at consecutive A times. Refutes unrestricted one-per-run on free histories

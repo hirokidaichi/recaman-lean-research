@@ -42,6 +42,15 @@ clean と SS1 を一緒に扱い、NoSAAS・最小 lag を仮定しない。標�
 有限 P2 供給加算の 992,184 件・約75.40% がこの範囲に入る。
 旧「lag≤11 と clean」の容量は別の定理で、今回対象外の短い7件があるため両者の和集合は未証明。
 SS≤2 への同じ方法の拡張は、標準 step115 の最小窓が A で終わることを Lean で反証した。
+続く [SS=2 先頭 run](docs/HYPOTHESIS_CARD_2026-09-10_TWO_SS_OLDEST_S.md) で、先頭 A が3以上なら
+同じ run に clean lag-3 兄弟があることを Lean 証明し（E-132）、名前付き4課金を反証した（E-133）。
+標準 10^7 の SS=2 は 52,357 件で、99.7% が直前 S の孤立窓である（E-134）。
+孤立 a=0 の直前 S 課金は周期と軌道で反証し（E-136）、双対の AAS 兄弟を Lean 証明した（E-135）。
+連続 A の入れ子 one-per-run は Lean（E-137）。NoSS mass1 の moment 下界で短い case5 残りを排除した（E-140）。
+無制限の連続 one-per-run は抽象履歴で反証し、最小対を Lean 認証した（E-142）。標準 10^7 の SS=2 違反は 0。
+NoSS mass1 語は [A] / minWord / AS・SA 前置に分類され、slack は 3+8k+4a（E-145）。
+SS=3 の軌道 extra は (SA)^k ++ minWord（E-143, E-146）。
+SS=2 の P2 は NoSAAS なしで先頭 A run が 0,1,3 に限る（E-166、E-132）。ssCount≥1 なら先頭は ssCount+1 以下（E-169）。
 **全 lag の容量 E-070、全加算同時供給の排除 E-067、全射性・非全射性は未証明**。#73 本体は OPEN。
 
 2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を

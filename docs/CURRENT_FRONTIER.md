@@ -8,11 +8,45 @@
 
 ## 結論
 
+続く [SS=2 先頭 run](HYPOTHESIS_CARD_2026-09-10_TWO_SS_OLDEST_S.md) で、境界例を通る共通履歴を Lean 証明した（E-132）。
+最小 P2 で lag>3 なら先頭 AAS は禁止。先頭 A run が a≥3 なら、同じ run の時刻 `t-(a-2)` が
+clean な lag-3 窓 AAS を持つ。標準 sign 114 の `AAASSSASASA` は a=3 で、sign 113 がこの兄弟である。
+これは newest-S が E-128 の lag-3 端点と衝突する理由であり、SS=2 の新しい S 単射ではない。
+
+名前付き4課金は停止した（E-133）。oldest-S は周期16で衝突、first-SS は周期13から衝突、
+newest-S は標準 114/113 自身で E-128 と衝突する。S-ended prefix の SS≤2 拡張（E-130）に続く
+定数修理はしない。
+
+標準 10^7 の SS=2 最小供給は 52,357 件（E-134、`COMPUTED`）。one-per-run 違反 0。
+companion（a≥3）148 件は兄弟 AAS が 148/148。孤立 a=0 が 52,198 件、a=1 が 11 件、a=2 は 0。
+周期 1..18 も one-per-run 違反 0。有限診断であり、one-per-run の一般証明ではない。
+
+孤立 a=0 の直前 S 課金は周期13と標準軌道 3950 件で E-128 と衝突し、`REFUTED`（E-136）。
+原因は E-132 の双対で Lean 証明した（E-135）：長さ ≥3 の A run の先頭 t では t+2 が AAS を持ち、
+端点が t-1。singleton A への1回修理は holdout 周期17で停止。
+標準10^7の孤立 a=0 非singleton 5件はすべてこの E-135 の長さ3 run であり、長さ≥4の先頭は0（E-148）。
+
+連続 A の one-per-run は、後窓が前窓を尾に含む入れ子なら `PROVED-LEAN`（E-137）。
+距離2なら run はさらに前の A へ伸びる。前窓が後尾より長い場合は長さ23まで組0（E-138、`COMPUTED`）。
+
+連続源（k=1）の one-per-run は、後尾が前窓を含む入れ子と、前窓が長く残りが短い場合まで
+Lean（E-137, E-140）。無制限の連続 one-per-run は抽象履歴で `REFUTED`（E-142）：
+`minWord (|v|-1)` を mass 0・moment −1・SS=2 の尾へ接着すると、連続する最小 P2 SS=2 が
+二つできる。最小例は new=`ASSAAASAASS`、old 長さ31。標準10^7の SS=2 違反は 0 のまま。
+SS=3 の軌道違反6件は同じ逆入れ子だが extra は SA 始まりで minWord ではない（E-143）。
+直前 S 課金の再修理と offset 表は再開しない。
+
+SS=2 の P2 は NoSAAS なしで先頭 A run が 4 未満（E-166）。E-132 の最小性で a=2 も消え、残るのは 0,1,3。軌道 10^7 と一致（E-158）。
+ssCount≥1 の任意 P2 は先頭 A run が ssCount+1 以下（E-169）。等号 a=SS+2 の extraAs=0 族は 2·moment≤-6。SS=0 の AAS だけが質量等号で P2 になり得る。
+孤立 singleton の SS 間隔のうち gap 2 は E-155、gap 4 は E-170。gap 3 と 7 は自由語として存在する（E-171）ので E-154 を語定理へ昇格しない。
+SS 始まり15件は SSS+(NoSS尾) が8件（E-174）と SS(SA)* gap≥17 が7件（E-173）。
+次の焦点は孤立 singleton の S 配分（課金再開なし）、または E-067/E-070。
+
+E-067、全 lag の E-070、全射性・非全射性は未解決。active direct branch は 0 本のまま。
+
 2026-09-10の[3時間研究](THREE_HOUR_RESEARCH_2026-09-10.md)で、**有限履歴から周期供給問題への縮約 E-065 を元の任意有限 State・任意開始 clock の範囲で Lean 証明した**。
 周期性を仮定した実 greedy 更新から正の周期符号和と各 A 位相の P2 供給を導く。
 供給の存在を仮定に置き換えていない。必要 lag は `0<d<p(p+1)`。
-一方、全 A の同時供給を禁じる E-067、全 lag の容量 E-070、全射性・非全射性は未解決。
-決着へ直結する active direct branch は 0 本のままである。
 
 新しい [共通端点の研究](LOW_SS_ENDPOINT_CAPACITY_2026-09-10.md) で、**SS が高々1個の P2 窓を持つ全 A 位相の共同容量**を全周期で Lean 証明した（E-128）。
 clean と SS1 を同じ S 予算で扱い、NoSAAS・最小 lag・周期符号和・lag 上限を仮定しない。
@@ -25,13 +59,10 @@ E-129 の独立全数検査は周期1..22の 8,388,606 語で違反0。
 新しい対象は旧範囲の外へ70,208件を加える一方、旧短距離の7件を含まない。**両定理の和集合容量は未証明**。
 有限診断の割合を全 A や無限軌道の割合と解釈しない。
 
-次の焦点は **SS が2個以上の窓との共同配分**である。
 S-ended prefix を SS≤2 へ直接拡張する案は、標準 sign time114 / step115 の
 最小窓 `AAASSSASASA`（lag11、SS2、NoSAAS、最古端103はA）で反証し Lean 認証した（E-130）。
 従って実軌道条件や NoSAAS を足すだけの修理は停止する。E-070 自体の反例ではない。
 SS ごとの定数予算の反例 E-122、型 B の実到達 E-125 も引き続き保持する。
-次の unit はこの canonical 境界例を通る新しい共通履歴の不等式を先に明記すること。
-新しい不等式がなければ、型表や charge offset の追加を続けない。
 
 E-131 では、同じ端点を共有する m+1 個の現在 A 供給窓には **最大窓に SS≥2m** が必要と Lean 証明した。
 全 m の等号共通履歴も Lean。ただしその族は lag3 の短い供給を持つので、最小窓の反例ではない。
@@ -65,6 +96,49 @@ E-131 では、同じ端点を共有する m+1 個の現在 A 供給窓には **
 | E-129 | 周期1..22全語と標準10^7を独立検査、low-SS対象992,184件・75.39988%、`COMPUTED` |
 | E-130 | SS≤2へのprefix正規化拡張は標準step115で`REFUTED`、最小性・NoSAAS・A端点をLean認証 |
 | E-131 | 共通端点をm回追加使用するとSS≥2m、全mで等号の共通NoSAAS履歴、`PROVED-LEAN`。族は非最小窓 |
+| E-132 | 最小P2の先頭AAS禁止と a≥3 の clean lag-3 兄弟、標準114が実例、`PROVED-LEAN` |
+| E-133 | SS=2のoldest-S・newest-S共同・first-SS課金、`REFUTED`。同じ課金の修理停止 |
+| E-134 | 標準10^7のSS=2は52,357件、one-per-run 0、companion 148、孤立a=0が52,198、`COMPUTED` |
+| E-135 | 孤立a=0が長さ≥3のA run先頭ならt+2がAAS、`PROVED-LEAN`。E-132の双対 |
+| E-136 | 孤立a=0の直前S共同課金、周期13と軌道3950件で`REFUTED`。singleton修理もholdoutで停止 |
+| E-137 | A始まりSS=2の尾にSS=2のP2 prefixは無い、連続入れ子は不可能、`PROVED-LEAN` |
+| E-138 | 前窓が長いcase5は長さ23まで0、`COMPUTED` |
+| E-139 | 標準10^7の孤立a=0は全件NoSAAS、52,193/52,198がsingleton、`COMPUTED` |
+| E-140 | NoSS mass1の 2M+n≥3、等号 AA(SA)^rS。短いcase5残りは不可能、`PROVED-LEAN` |
+| E-141 | 標準10^7のSS=3は21,727件、one-per-run違反6、lead2=0、`COMPUTED` |
+| E-142 | 無制限連続one-per-runは抽象履歴で`REFUTED`。minWord接着の最小対をLean認証 |
+| E-143 | SS=3の6違反はすべてE-140 momentのNoSS mass1 extra、先頭SA、後窓lead≥4、`COMPUTED` |
+| E-144 | 標準10^7のSS=2にminWord extraは0/17443、`COMPUTED` |
+| E-145 | NoSS mass1の完全分類 [A] / minWord / AS・SA前置。slack 3+8k+4a、`PROVED-LEAN` |
+| E-146 | (SA)^k++minWord の moment 3k−r、slack 3+8k。SS=3 extra 6件がこの族、`PROVED-LEAN` |
+| E-147 | 標準10^7のSS=2に prefix+(SA)^k minWord glue は0、`COMPUTED` |
+| E-148 | 孤立a=0の非singleton 5件はE-135の長さ3 run、長さ≥4は0、`COMPUTED` |
+| E-149 | 標準10^7のSS=4は16,455件、one-per-run 0、lead2=0、`COMPUTED` |
+| E-150 | 最小P2のSSヒストグラム。同じSSのrun違反はSS0が41、SS3が6、SS≥64が20。ほか0。lead2はSS0のみ、`COMPUTED` |
+| E-151 | 孤立先頭の長さ≥3 runはt+2がclean。41件のclean二重はこの形、`PROVED-LEAN` |
+| E-152 | SS≥64の同一run 20組。18件はgap1でextra mass1 moment=1-|v|、extraはNoSSでない、`COMPUTED` |
+| E-153 | minWord周期は lag≤4p でU=0。equality族はE-070反例にならない、`COMPUTED` |
+| E-154 | 孤立singletonのSS間隔はgap1/5/≥8のみ。gap5は10件、`COMPUTED` |
+| E-155 | SS間隔2はssCount≥3。ssCount=2ではgap2不可能、`PROVED-LEAN` |
+| E-156 | 連続逆入れ子の extra は SS 非依存で mass1・moment=1-|v|、`PROVED-LEAN` |
+| E-157 | 孤立singletonの99.97%がSA始まり、SS始まりは15件、`COMPUTED` |
+| E-158 | SS=2最小の先頭runは0,1,3のみ。a≥4は軌道0、長さ31まで抽象0、`COMPUTED` |
+| E-159 | NoSAAS SS=2 P2の先頭Aは5未満。残るa=4、`PROVED-LEAN` |
+| E-160 | a=4 の E-126 等号族は moment≤-8 で P2 でない、`PROVED-LEAN` |
+| E-161 | NoSAAS SS=2 P2の先頭A runは4未満。残るのは0,1,3、`PROVED-LEAN` |
+| E-162 | SS=3の先頭runは0,1,3,4。a=4が54件、a≥5は0、`COMPUTED` |
+| E-163 | SS=4の先頭runは0,1,3,4。a=4が3件、a≥5は0、`COMPUTED` |
+| E-164 | a=5 の E-126 等号族は moment≤-15 で P2 でない、`PROVED-LEAN` |
+| E-165 | NoSAAS SS=3 P2の先頭A runは5未満。残る0,1,3,4、`PROVED-LEAN` |
+| E-166 | SS=2 P2の先頭A runは4未満。NoSAAS不要。残る0,1,3、`PROVED-LEAN` |
+| E-167 | SS=3 P2の先頭A runは5未満。NoSAAS不要。残る0,1,3,4、`PROVED-LEAN` |
+| E-168 | 任意P2の先頭A runはssCount+2以下。NoSAAS不要、`PROVED-LEAN` |
+| E-169 | ssCount≥1のP2先頭A runはssCount+1以下。等号族はmoment≤-3、`PROVED-LEAN` |
+| E-170 | NoSAASのSS間隔4はssCount≥3、`PROVED-LEAN` |
+| E-171 | 最小NoSAAS SS=2 a=0はgap 3と7を持つ。E-154の欠落は軌道、`COMPUTED` |
+| E-172 | NoSAAS ssCount=2のSS間隔6は内部AAAA（SSAAAASS）、`PROVED-LEAN` |
+| E-173 | 孤立SS始まり15件はSSS(SA)*が8、SS(SA)* gap≥17が7、`COMPUTED` |
+| E-174 | ssCount=2のSSS始まりは尾がNoSS、`PROVED-LEAN` |
 
 ## 2026-09-09 以前の判断と継承した証拠
 

@@ -17,7 +17,13 @@ phase energy は既存 κ の定数倍と監査で分かり、新たな機構と
 
 標準10^7で新対象は75.39988%だが、旧短距離7件は対象外（E-129）。
 SS≤2への同じprefix正規化はcanonical step115で反証・Lean認証（E-130）。
-次の独立 unit は、SS≥2の窓を共通予算へ入れる不等式を先に明記し、この境界例を試すこと。
+続く SS=2 unit で先頭 run 兄弟（E-132）と孤立先頭の双対（E-135）を Lean 証明した。
+名前付き課金と直前 S は反証（E-133, E-136）。入れ子 one-per-run は k=1 と k≥2 で Lean（E-137）。
+NoSS mass1 の moment 下界（E-140）が短い前窓の残りを制限する。無制限 case5 は minWord 接着で反証（E-142）。
+NoSS mass1 の分類と slack 3+8k+4a は Lean（E-145）。SS=3 extra は (SA)^k minWord（E-146）。
+SS=2/3 の先頭 run 上限から NoSAAS を外した（E-166, E-167）。
+次は孤立 singleton の S 配分（課金再開なし）、一般 SS の等号族 moment、または E-067/E-070。
+同じ課金の修理はしない。
 同じ正規化の直接拡張、型分類、有限通過、標準軌道の頻度だけを一般容量の代用にしない。
 以下の日付付き記録は当時の判断を残す履歴であり、現在の gate は [frontier](CURRENT_FRONTIER.md) を参照する。
 

@@ -1,0 +1,8 @@
+protocol=H-20260910-32 k=1 one-per-run word search
+source_revision=dfbd8444ccc3d0398159917dad3feb5992d1d0b8
+source_sha256=e6d0b2f35e8598d9067e2d289317a63607c28b925dd35fe34b57769622171eba
+command=python3 experiments/issue73_20260910/two_ss/one_per_run_k1.py
+LENGTH={"holdout": false, "min_ss2": 7, "n": 11, "start_A": 5, "start_S": 2, "tail_min_ss_0": 1, "tail_no_P2": 4}
+LENGTH={"holdout": false, "min_ss2": 46, "n": 15, "start_A": 21, "start_S": 25, "tail_min_ss_0": 1, "tail_no_P2": 20}
+LENGTH={"holdout": false, "min_ss2": 216, "n": 19, "start_A": 74, "start_S": 142, "tail_min_ss_0": 2, "tail_no_P2": 72}
+LENGTH={"holdout": true, "min_ss2": 647, "n": 23, "start_A": 189, "start_S": 458, "tail_min_ss_0": 2, "tail_no_P2": 187}

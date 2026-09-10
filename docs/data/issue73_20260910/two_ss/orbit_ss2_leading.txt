@@ -1,0 +1,11 @@
+protocol=H-20260910-30 SS=2 leading-run orbit census
+source_revision=dfbd8444ccc3d0398159917dad3feb5992d1d0b8
+source_sha256=afd948369f8f8fcf01c77867d79bd9325f192b47cf7da946bc80489238a1530d
+compile=/usr/bin/clang++ -O3 -std=c++20 -Wall -Wextra -pedantic experiments/issue73_20260910/two_ss/orbit_ss2_leading.cpp -o /tmp/recaman-ss2-leading
+command=/tmp/recaman-ss2-leading
+limit=10000000
+RANGE={"from":1,"through":100000,"A":50010,"S":49990,"finite_P2_A":12675,"ss2":550,"companion_a_ge_3":17,"isolated_a0":532,"isolated_a1":1,"other_lead":0,"run_violations":0,"sibling_ok":17,"sibling_fail":0,"max_ss2_lag":2343}
+RANGE={"from":100001,"through":1000000,"A":450002,"S":449998,"finite_P2_A":119632,"ss2":3517,"companion_a_ge_3":31,"isolated_a0":3482,"isolated_a1":4,"other_lead":0,"run_violations":0,"sibling_ok":31,"sibling_fail":0,"max_ss2_lag":7911}
+RANGE={"from":1000001,"through":10000000,"A":4500002,"S":4499998,"finite_P2_A":1183589,"ss2":48290,"companion_a_ge_3":100,"isolated_a0":48184,"isolated_a1":6,"other_lead":0,"run_violations":0,"sibling_ok":100,"sibling_fail":0,"max_ss2_lag":247287}
+PASS: SS=2 one-per-run and leading-run siblings through 10000000 steps
+totals={"ss2":52357,"companion_a_ge_3":148,"isolated_a0":52198,"isolated_a1":11,"other_lead":0,"run_violations":0,"sibling_ok":148,"sibling_fail":0}
