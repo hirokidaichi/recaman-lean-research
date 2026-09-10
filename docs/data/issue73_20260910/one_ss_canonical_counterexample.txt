@@ -1,0 +1,6 @@
+protocol=H-20260910-13-canonical-transfer
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+one_ss_canonical_counterexample.py_sha256=15572a6a4e00c417a98b17827930ef9be5a77b939f88479906547171f9c44b95
+short_reservoir_specialization.py_sha256=1c91ad04485053afb48e57195cae296a2adc5c39f3ea19275567464be0753171
+CANONICAL_REFUTED={"current": {"t": 1352, "next_step": 1353, "value": 4294, "lag": 15, "category": "new_one_SS", "offset": 9, "target": 1343, "all_P2_lags": [15, 51, 59], "newest_first": "SASAAAASSASASAS", "adjacent_SS": 1}, "previous": {"t": 1350, "next_step": 1351, "value": 4295, "lag": 7, "category": "old_short", "offset": 7, "target": 1343, "all_P2_lags": [7, 63], "newest_first": "SAAAASS", "adjacent_SS": 1}, "target_sign": -1, "target_step": 1344, "target_value_before": 2944, "target_value_after": 1600}
+STOP: the same unmodified centered map fails on the actual standard orbit

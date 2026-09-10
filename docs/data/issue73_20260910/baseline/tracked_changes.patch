@@ -1,0 +1,220 @@
+diff --git a/README.md b/README.md
+index b3f78c8..1edf7bc 100644
+--- a/README.md
++++ b/README.md
+@@ -32,6 +32,11 @@ Lean 4形式化プロジェクトです。
+ 
+ ## 現在地
+ 
++2026-09-09の[1時間研究](docs/ONE_HOUR_RESEARCH_2026-09-09.md)では、先頭にm≥3回の加算を持つ
++供給窓の長さがd≥4m−1となること、等号例、入れ子窓の間隔制約をLeanで証明した。
++任意に長い等号窓の一群を追加する一般容量定理もLeanで証明した（既存写像への具体的適用は紙上）。
++供給窓が加算ごとに長くなるという一般化には反例があり、23→15の短縮をLeanで認証した。
++
+ [5パターンの並列調査](docs/PARALLEL_APPROACH_TRIAGE_2026-09-07.md)で1位とした周期符号語の供給問題を進め、
+ [任意周期でlag≤7の供給加算数が減算数以下となること](docs/ISSUE73_PERIODIC_SUPPLY_2026-09-07.md)に続き、
+ [lag≤7と最小lag=11の和も減算数以下となること](docs/ISSUE73_LAG11_CAPACITY_2026-09-09.md)をLeanで証明した。
+@@ -50,7 +55,7 @@ clock下界113・target下界115をLeanで証明した。大域戦略の停止
+ 
+ - Lean 4.33.1で固定
+ - Lean標準ライブラリのみを使用
+-- Leanソース268ファイル（71,906行、root・audit・認証済み深部traceを含む）
++- Leanソース272ファイル（74,408行、root・audit・認証済み深部traceを含む）
+ - 主要定理の公理監査を同梱
+ - `sorry`、`admit`、ユーザー定義公理、`native_decide`は不使用
+ - least missing targetの最小tail minimumを`q≤1`, `G≥-1`とledger corridorへ置き、
+diff --git a/Recaman.lean b/Recaman.lean
+index cca24ae..fdca030 100644
+--- a/Recaman.lean
++++ b/Recaman.lean
+@@ -235,8 +235,10 @@ import Recaman.RecurringCandidateBurst
+ import Recaman.RecurringCandidateDemandBirth
+ import Recaman.PeriodicCandidateNoGo
+ import Recaman.ShortPeriodicSupply
++import Recaman.LeadingRunSupply
+ import Recaman.LagElevenSupply
+ import Recaman.LagElevenPeriodic
++import Recaman.SharpPeriodicSupply
+ import Recaman.SeededUseGapCounterexample
+ import Recaman.SupplyAncestryCounterexample
+ import Recaman.DemandProvenanceCounterexample
+diff --git a/Recaman/Audit.lean b/Recaman/Audit.lean
+index 27754ea..af1089b 100644
+--- a/Recaman/Audit.lean
++++ b/Recaman/Audit.lean
+@@ -1226,6 +1226,21 @@ import Recaman
+ #print axioms Recaman.ShortPeriodicSupply.periodic_capacity
+ #print axioms Recaman.ShortPeriodicSupply.exists_phase_without_short_supply
+ #print axioms Recaman.ShortPeriodicSupply.lag_eleven_survives_short_exclusion
++#print axioms Recaman.LeadingRunSupply.past_p2_iff
++#print axioms Recaman.LeadingRunSupply.leading_run_bound
++#print axioms Recaman.LeadingRunSupply.stream_leading_run_bound
++#print axioms Recaman.LeadingRunSupply.sharpFamily_certificate
++#print axioms Recaman.LeadingRunSupply.nested_supply_gap
++#print axioms Recaman.LeadingRunSupply.stream_nested_supply_strict_gap
++#print axioms Recaman.LeadingRunSupply.sharp_supply_no_second
++#print axioms Recaman.LeadingRunSupply.sharp_middle_S_block
++#print axioms Recaman.LeadingRunSupply.stream_sharp_S_block
++#print axioms Recaman.LeadingRunSupply.p2_two_runs
++#print axioms Recaman.LeadingRunSupply.protected_S_contact
++#print axioms Recaman.LeadingRunSupply.sharp_protected_contact
++#print axioms Recaman.LeadingRunSupply.sharp_protected_charge
++#print axioms Recaman.LeadingRunSupply.sharp_charge_injective
++#print axioms Recaman.LeadingRunSupply.nonnested_lag_drop_certificate
+ #print axioms Recaman.LagElevenSupply.seventeen_types
+ #print axioms Recaman.LagElevenSupply.types_are_minLag11
+ #print axioms Recaman.LagElevenSupply.charge_is_S
+@@ -1246,3 +1261,8 @@ import Recaman
+ #print axioms Recaman.LagElevenPeriodic.phi7Phase_inj
+ #print axioms Recaman.LagElevenPeriodic.phi7_phi11_image_ne
+ #print axioms Recaman.LagElevenPeriodic.suppliedCount_add_u11Count_le_subtractionCount
++#print axioms Recaman.SharpPeriodicSupply.p2_shift
++#print axioms Recaman.SharpPeriodicSupply.sharp_charge_mod_injective
++#print axioms Recaman.SharpPeriodicSupply.sharp_charge_is_S
++#print axioms Recaman.SharpPeriodicSupply.sharp_short_mod_disjoint
++#print axioms Recaman.SharpPeriodicSupply.periodic_capacity_extension
+diff --git a/docs/CURRENT_FRONTIER.md b/docs/CURRENT_FRONTIER.md
+index d38c6c0..cf0d9d5 100644
+--- a/docs/CURRENT_FRONTIER.md
++++ b/docs/CURRENT_FRONTIER.md
+@@ -30,6 +30,29 @@ C++のL=23は正サイクルなし・max P=5で、L=19のmax=4は天井ではな
+ U7のfollowing-gap類へのlag-11一様課金は`ASSSASSAAAASSA`で偽（E-085）。lag-by-lagの
+ 型offset延長はE-088で停止。
+ 
++2026-09-09の[一回・二回の減算先読み](HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md)は
++両候補をL=11で反証した（E-089, `REFUTED`）。未来の減算をk回まで許した最大純供給数R_kは、
++S一歩でk=1では1→3、k=2では0→2と増え、F_k=−R_kの支払不等式が破れる。
++上界を含む値は独立全列挙で確認。kを増やす今回の探索は`STOPPED`とし、任意の固定kの不可能性や
++E-067/E-070の反証とは扱わない。再開には減算による供給の繰り返し再活性化を扱う構造が必要。
++
++同日の[1時間研究](ONE_HOUR_RESEARCH_2026-09-09.md)で、型表に依存しない局所障害を得た。
++先頭にm≥3個のAを持つP2窓は **d≥4m−1**、この下界を達成する全mの族もLean（E-090）。
++等号窓はmの整数分割と一対一（E-091, `PROVED-PAPER`）で、直後のm−1個のSはLeanで強制される。
++同じA区間の入れ子供給には **Δ(Δ−4k)≥4k(d−1)** が必要で、等号窓のchargeは単射、
++長い等号窓の直前から二つ目のSは短い供給のchargeと衝突しない（E-092, `PROVED-LEAN`）。
++この局所機構と周期上の接着から **|U≤15|+|Q(m≥16,d=4m−1)|≤|D|** を紙上で得た
++（E-093）。追加するlagは63以上で上限なし。周期接着・像の非衝突・一般の個数拡張も
++Leanで証明した（E-095）。既存φ7/φ11/φ15への具体的適用は紙上であり、
++すべての長い窓を扱うE-070とは区別する。
++
++一方、最小供給lagがA区間で単調に増える案は反証した（E-094）。具体例の23→15はLean、
++先頭A数r²−1でlagが4r²+4r−1→4r²−1となる任意r≥2の族は紙上。
++従って「長いA区間なら窓は入れ子」としてE-092を拡張してはいけない。
++次の研究対象は**等号でない窓と、入れ子でない窓への切り替わりを同時に扱う局所制約**。
++lag別型表、先読み回数の増加、run長だけでの単調lag修理は再開しない。
++E-067/E-070および全射性・非全射性の未解決状態とactive direct branch 0は変わらない。
++
+ 
+ 最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
+ **周期符号語の供給不足**へ絞り、[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成した。有限履歴のeventually periodicな実更新は、各加算phaseに
+diff --git a/docs/EVIDENCE_REGISTRY.tsv b/docs/EVIDENCE_REGISTRY.tsv
+index 275c212..aac08d6 100644
+--- a/docs/EVIDENCE_REGISTRY.tsv
++++ b/docs/EVIDENCE_REGISTRY.tsv
+@@ -87,3 +87,10 @@ E-084	STOPPED	lean7-window-embedding-potential	L=7 potentialを新しい7bitへ
+ E-085	REFUTED	lag11-following-gap-class	U7のfollowing-gap類（=1,=3,≥4）と交わらないgap類へのlag-11一様課金は偽。HARDは交わりのないexact gapを持たず、gap=2はASSSASSAAAASSAで同一Sへ衝突	docs/data/issue73_20260908/lag11/paper_attempt.md	-	following-gap分割は停止。再開は新しい不変量。型ごとのoffset表（E-080）は別命題
+ E-086	PROVED-PAPER	lag15-injection	任意周期でφ7,φ11と像が交わらないmin-lag-15の155型CSP chargeは単射。従って|U7∪U11min∪U15min|≤|D|。正符号和のE-070反例語は最小lag≥19を使う	docs/data/issue73_20260908/lag11/lag15_injection_proof.md	-	lag-by-lag延長はE-088で停止。155行decideもlag-19型表もしない
+ E-088	STOPPED	lag-by-lag-type-offset	宣言したd非依存セレクタ（raw Sのmin/max/median/min≥3/closest-d/2、blocked集合のmin/max/median/closest-d/2）はφ7を再現しないかlag-15でZ開対を持つ。lag-by-lag型課金クラスを停止。E-070の反証ではない	docs/data/issue73_20260908/lag11/uniform_selector.txt	-	155型に対し新しい型表なしで単射な局所障害が書けるか、SSAAAAAASSSで上がりAAASAASSSSSのSで高々1下がる閉形式Fが出るまで再開しない
++E-089	REFUTED	bounded-catalytic-lookahead	未来のSをk回まで許す最大純供給R_kに対するpotential F_k=−R_kはk=1,2とも偽。L=11のS辺でR_1は1→3、R_2は0→2。上界・証人を独立全列挙で確認	docs/HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md	-	今回の先読み回数延長はSTOPPED。任意kの不可能性やE-070反証ではない。繰り返す供給再活性化を扱う構造が出るまで再開しない
++E-090	PROVED-LEAN	leading-A-sharp-bound	任意P2窓の先頭m≥3個がAならd≥4m−1。全mの等号最小P2族と、等号窓で続くm−1個のSを実streamのP2へ接着して証明	Recaman/LeadingRunSupply.lean	Recaman.LeadingRunSupply.past_p2_iff;Recaman.LeadingRunSupply.stream_leading_run_bound;Recaman.LeadingRunSupply.sharpFamily_certificate;Recaman.LeadingRunSupply.stream_sharp_S_block	run長だけの下界強化は不可。非等号窓の共同制約が必要
++E-091	PROVED-PAPER	sharp-window-partitions	d=4m−1で先頭m個がAの全P2窓はmの整数分割と一対一。A位置は1..mと3m+i−lambda_i。m≥3なら最小P2窓	docs/HYPOTHESIS_CARD_2026-09-09_SHARP_PARTITIONS.md	-	全単射は未Lean化。有限partition数の追加を進捗としない
++E-092	PROVED-LEAN	nested-gap-protected-S	k個のAを挟む入れ子P2窓はDelta(Delta−4k)≥4k(d−1)。等号窓のpenultimate-S chargeは単射でm≥L+1ならlag3をoffset3へ送る半径Lの短いchargeと非衝突	Recaman/LeadingRunSupply.lean	Recaman.LeadingRunSupply.nested_supply_gap;Recaman.LeadingRunSupply.stream_nested_supply_strict_gap;Recaman.LeadingRunSupply.sharp_supply_no_second;Recaman.LeadingRunSupply.sharp_protected_charge;Recaman.LeadingRunSupply.sharp_charge_injective	一般周期拡張はE-095、既存写像への適用はE-093。入れ子を落とす一般化はE-094で偽
++E-093	PROVED-PAPER	sharp-infinite-subclass-capacity	E-080/E-086の既存短写像を一般拡張E-095へ適用し、任意周期で|U≤11|+|Q(m≥12)|≤|D|と|U≤15|+|Q(m≥16)|≤|D|。Qはlag4m−1の等号供給Aで追加lagに上限なし	docs/HYPOTHESIS_CARD_2026-09-09_SHARP_CAPACITY_EXTENSION.md	-	一般拡張はLeanだが既存写像の具体的適用は紙上。全lag E-070には非等号窓・非入れ子切替の制約が必要
++E-094	REFUTED	minimal-lag-monotonicity	長いA区間でも最小P2 lagは減る。23→15はLean認証。任意r≥2で先頭A数r²−1、最小lag4r²+4r−1から一歩後4r²−1への反例族は紙上	docs/HYPOTHESIS_CARD_2026-09-09_NONNESTED_LAG_DROP.md	Recaman.LeadingRunSupply.nonnested_lag_drop_certificate	run長の閾値変更による単調lag修理は停止。入れ子条件を保つか非入れ子切替を明示して扱う
++E-095	PROVED-LEAN	periodic-sharp-capacity-extension	任意周期でsharp窓chargeはSへの単射で短chargeと非衝突。半径Lでlag3をoffset3へ送る既存単射を仮定し、m≥max(3,L+1)のsharp phaseを追加した一般有限容量不等式を証明	Recaman/SharpPeriodicSupply.lean	Recaman.SharpPeriodicSupply.sharp_charge_mod_injective;Recaman.SharpPeriodicSupply.sharp_charge_is_S;Recaman.SharpPeriodicSupply.sharp_short_mod_disjoint;Recaman.SharpPeriodicSupply.periodic_capacity_extension	既存phi7/phi11/phi15への具体的適用はE-093。非等号窓は未解決
+diff --git a/docs/GLOSSARY.md b/docs/GLOSSARY.md
+index 159dbfa..392775d 100644
+--- a/docs/GLOSSARY.md
++++ b/docs/GLOSSARY.md
+@@ -545,7 +545,25 @@ low railに現clockを足した値になる。値集合はrail二本と事前履
+ ある定理がどの公理に依存するかを表示する。`Audit.lean`では主要定理を監査し、`sorryAx`、
+ ユーザー定義公理、`native_decide`由来の公理に依存していないことを検査する。
+ 
+-## 読む順序
++## 2026-09-09の供給窓解析
++
++### 等号供給窓（sharp window）— 整理用
++
++周期供給研究で、過去符号を新しい順に並べ、先頭m≥3個がAでP2を満たす窓は
++長さd≥4m−1となる。この下界を達成するd=4m−1の窓を「等号窓」と呼ぶ。
++最短lagであることだけでは等号窓とは限らない。P2の定義は変更しない。
++下界・全mの等号族・実streamとの同値は`LeadingRunSupply.lean`、分類は
++[分割分類カード](HYPOTHESIS_CARD_2026-09-09_SHARP_PARTITIONS.md)を参照。
++
++### 入れ子供給と保護S — 整理用
++
++k回のAの後の供給窓が、前の供給窓を全て含むとき「入れ子」と呼ぶ。
++長さをd,d₂とすると条件はd+k≤d₂。最小lagが後退する例があるので、この条件は
++自動ではない。「保護S」は、等号窓の先頭A区間の直前から二つ目のSであり、
++m≥L+1のとき半径Lの既存短chargeが使えないことを指す整理用の名称。
++標準のRecamán数列の用語や新しい実軌道仮定ではない。
++
++## 読む順序（初学者向け）
+ 
+ 初めて読む場合は、次の順序を推奨する。
+ 
+diff --git a/docs/MODULE_IMPORT_CONTRACTS.tsv b/docs/MODULE_IMPORT_CONTRACTS.tsv
+index e17e70d..f86ab59 100644
+--- a/docs/MODULE_IMPORT_CONTRACTS.tsv
++++ b/docs/MODULE_IMPORT_CONTRACTS.tsv
+@@ -1,4 +1,6 @@
+ module	direct_imports	purpose
++Recaman.SharpPeriodicSupply	Recaman.LeadingRunSupply;Recaman.LagElevenPeriodic	sharp窓chargeの周期接着と既存短距離単射に対する一般容量拡張
++Recaman.LeadingRunSupply	Recaman.ShortPeriodicSupply	全lagの先頭A連続長下界、sharp窓、入れ子間隔、保護Sと非入れ子反例を実P2へ接着
+ Recaman.RecurringCandidateDemandBirth	Recaman.EventualHighCorridorBirth;Recaman.RecurringCandidateBurst	birth分類とrecurring burstの最小composition境界
+ Recaman.PeriodicCandidateNoGo	-	Recamán軌道から独立したPrelude-only有限算術核
+ Recaman.ShortPeriodicSupply	-	実際の周期符号から7bit履歴を構成し、全periodでlag≤7の供給容量を証明
+diff --git a/docs/PROOF_MAP.md b/docs/PROOF_MAP.md
+index deb555b..639f41f 100644
+--- a/docs/PROOF_MAP.md
++++ b/docs/PROOF_MAP.md
+@@ -1,5 +1,27 @@
+ # 証明地図
+ 
++## 2026-09-09: 連続A・等号窓・入れ子間隔
++
++| 接続 | 証拠 | 残る制限 |
++|---|---|---|
++| 先頭m≥3個のAとP2 → d≥4m−1、全mの等号族 | `PROVED-LEAN` E-090 | run長だけから下界を強化できない |
++| d=4m−1の全窓 ↔ mの整数分割 | `PROVED-PAPER` E-091 | 全単射は紙上。強制S blockはLean |
++| k個のAを挟む入れ子P2 → Δ(Δ−4k)≥4k(d−1) | `PROVED-LEAN` E-092 | 入れ子条件は不可欠 |
++| 等号窓の直前から二つ目のSへの単射＋短いchargeとの非衝突 | `PROVED-LEAN` E-092 | 非衝突はm≥L+1、短い規則はlag3をoffset3へ送る |
++| 既存の半径Lの局所単射＋等号窓 → 任意周期の一般容量拡張 | `PROVED-LEAN` E-095 | 既存短写像の具体的な適用は次行 |
++| E-080/E-086＋一般拡張 → U≤11/15と無限個の長い等号lagの和≤D | `PROVED-PAPER` E-093 | φ7/φ11/φ15の具体的適用は紙上。非等号窓は残る |
++| 長いA区間＋最小供給 → lagが単調増加 | `REFUTED` E-094 | 23→15をLean認証。任意に長いA区間の反例族は紙上 |
++
++[1時間研究の引継ぎ](ONE_HOUR_RESEARCH_2026-09-09.md)。全lag容量E-070は未証明。
++
++## 2026-09-09: bounded catalytic lookahead
++
++| 接続 | 証拠 | 残る制限 |
++|---|---|---|
++| 未来の減算をk回まで許した最大純供給R_k → 全lag potential F_k=−R_k | `REFUTED` E-089（k=1,2） | L=11のS辺でR_1:1→3、R_2:0→2。任意kの不可能性・E-070反証ではない |
++
++再現と停止判断は[仮説カード](HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md)。
++
+ ## 2026-09-08: issue #73 の lag-11/15 課金
+ 
+ | 接続 | 証拠 | 残る制限 |
+diff --git a/docs/RESEARCH_PORTFOLIO.md b/docs/RESEARCH_PORTFOLIO.md
+index f982e12..5851498 100644
+--- a/docs/RESEARCH_PORTFOLIO.md
++++ b/docs/RESEARCH_PORTFOLIO.md
+@@ -1,5 +1,17 @@
+ # Recamán 全域性研究ポートフォリオ
+ 
++2026-09-09 [1時間研究](ONE_HOUR_RESEARCH_2026-09-09.md)：先頭A数からのsharpな全lag下界
++d≥4m−1（E-090）、等号窓の分割分類（E-091）、入れ子間隔と保護S（E-092）を得た。
++一般の周期接着・容量拡張もLean（E-095）で、既存のU≤15容量へm≥16の等号窓を
++一括追加できる（E-093、既存写像の具体的適用は紙上）。
++型表の延長ではなく、任意の長さを同じ式で扱う局所機構として保管する。
++最小供給lagの単調増加は任意に長いA区間でも偽（E-094）。run長の閾値変更による修理は停止。
++次は非等号窓と入れ子でない切り替わりを扱う独立した局所制約が必要。全lag容量は未解決。
++
++2026-09-09追補：[減算の一回・二回先読み](HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md)で
++F_1/F_2をL=11のS辺から反証（E-089）。先読み回数の追加は停止。任意kや他のpotentialは未排除で、
++再開には繰り返す供給再活性化を扱う構造を要求する。
++
+ 2026-09-09 #73追補：[lag-11容量](ISSUE73_LAG11_CAPACITY_2026-09-09.md)をE-080 PROVED-LEANへ昇格。
+ 任意周期で|U7∪U11min|≤|D|。lag-15和はE-086 PROVED-PAPER。型ごとのlag延長はE-088 STOPPED。
+ 全lagのE-067/E-070は未解決。

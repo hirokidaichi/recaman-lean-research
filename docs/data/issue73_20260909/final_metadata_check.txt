@@ -1,0 +1,6 @@
+$ bash scripts/check_research_registry.sh
+Research registry audit: 95 entries, 31 PROVED-LEAN rows linked to Recaman/Audit.lean.
+
+$ bash scripts/check_module_architecture.sh
+Module graph audit: Recaman root reaches 270 of 270 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 29 frontier modules match their direct-import boundary.

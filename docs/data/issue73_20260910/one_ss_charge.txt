@@ -1,0 +1,15 @@
+protocol=H-20260910-13
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+one_ss_charge.py_sha256=31d0ff89f4149d9c677376b2ee23d862574c45c4cecb8980195e115f7e4f8f2b
+short_reservoir_specialization.py_sha256=1c91ad04485053afb48e57195cae296a2adc5c39f3ea19275567464be0753171
+DISCOVERY={"period": 3, "eligible_words": 5, "old_phases": 0, "one_SS_phases": 0}
+DISCOVERY={"period": 4, "eligible_words": 12, "old_phases": 4, "one_SS_phases": 0}
+DISCOVERY={"period": 5, "eligible_words": 22, "old_phases": 10, "one_SS_phases": 0}
+DISCOVERY={"period": 6, "eligible_words": 43, "old_phases": 24, "one_SS_phases": 0}
+DISCOVERY={"period": 7, "eligible_words": 79, "old_phases": 49, "one_SS_phases": 0}
+DISCOVERY={"period": 8, "eligible_words": 148, "old_phases": 112, "one_SS_phases": 0}
+DISCOVERY={"period": 9, "eligible_words": 275, "old_phases": 225, "one_SS_phases": 0}
+DISCOVERY={"period": 10, "eligible_words": 514, "old_phases": 500, "one_SS_phases": 0}
+DISCOVERY={"period": 11, "eligible_words": 959, "old_phases": 1001, "one_SS_phases": 0}
+REFUTED={"failure": ["old_collision", 9, 7, 0], "word": "SSAAAASASASA", "period": 12, "old_map": {"4": 1, "7": 0}, "new_map": {"9": 0}, "minimum_lags": {"4": 3, "7": 7, "9": 15}, "one_SS_windows": {"9": {"lag": 15, "offset": 9, "newest_first": "SASAAAASSASASAS"}}}
+STOP: centered one-SS map failed; no offset repair

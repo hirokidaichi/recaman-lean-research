@@ -1226,6 +1226,28 @@ import Recaman
 #print axioms Recaman.ShortPeriodicSupply.periodic_capacity
 #print axioms Recaman.ShortPeriodicSupply.exists_phase_without_short_supply
 #print axioms Recaman.ShortPeriodicSupply.lag_eleven_survives_short_exclusion
+#print axioms Recaman.LeadingRunSupply.past_p2_iff
+#print axioms Recaman.LeadingRunSupply.leading_run_bound
+#print axioms Recaman.LeadingRunSupply.stream_leading_run_bound
+#print axioms Recaman.LeadingRunSupply.sharpFamily_certificate
+#print axioms Recaman.LeadingRunSupply.nested_supply_gap
+#print axioms Recaman.LeadingRunSupply.stream_nested_supply_strict_gap
+#print axioms Recaman.LeadingRunSupply.sharp_supply_no_second
+#print axioms Recaman.LeadingRunSupply.sharp_middle_S_block
+#print axioms Recaman.LeadingRunSupply.stream_sharp_S_block
+#print axioms Recaman.LeadingRunSupply.p2_two_runs
+#print axioms Recaman.LeadingRunSupply.protected_S_contact
+#print axioms Recaman.LeadingRunSupply.sharp_protected_contact
+#print axioms Recaman.LeadingRunSupply.sharp_protected_charge
+#print axioms Recaman.LeadingRunSupply.sharp_charge_injective
+#print axioms Recaman.LeadingRunSupply.nonnested_lag_drop_certificate
+#print axioms Recaman.SignedSupplyGap.positions_lower
+#print axioms Recaman.SignedSupplyGap.moment_lower_of_mass
+#print axioms Recaman.SignedSupplyGap.removed_tail_gap
+#print axioms Recaman.SignedSupplyGap.stream_signed_supply_gap
+#print axioms Recaman.SignedSupplyGap.stream_supply_square_gap
+#print axioms Recaman.SignedSupplyGap.stream_lag_dichotomy
+#print axioms Recaman.SignedSupplyGap.square_gap_equality_certificate
 #print axioms Recaman.LagElevenSupply.seventeen_types
 #print axioms Recaman.LagElevenSupply.types_are_minLag11
 #print axioms Recaman.LagElevenSupply.charge_is_S
@@ -1246,3 +1268,359 @@ import Recaman
 #print axioms Recaman.LagElevenPeriodic.phi7Phase_inj
 #print axioms Recaman.LagElevenPeriodic.phi7_phi11_image_ne
 #print axioms Recaman.LagElevenPeriodic.suppliedCount_add_u11Count_le_subtractionCount
+#print axioms Recaman.SharpPeriodicSupply.p2_shift
+#print axioms Recaman.SharpPeriodicSupply.sharp_charge_mod_injective
+#print axioms Recaman.SharpPeriodicSupply.sharp_charge_is_S
+#print axioms Recaman.SharpPeriodicSupply.sharp_short_mod_disjoint
+#print axioms Recaman.SharpPeriodicSupply.periodic_capacity_extension
+
+-- Bounded-excess multiplicity, with an all-parameter optimality family.
+#print axioms Recaman.BoundedExcessSupply.band_arithmetic
+#print axioms Recaman.BoundedExcessSupply.stream_bounded_excess_multiplicity
+#print axioms Recaman.BoundedExcessSupply.boundaryTail_data
+#print axioms Recaman.BoundedExcessSupply.boundaryNew_data
+#print axioms Recaman.BoundedExcessSupply.boundaryNew_take_leading
+#print axioms Recaman.BoundedExcessSupply.boundaryNew_minimal
+#print axioms Recaman.BoundedExcessSupply.bounded_excess_optimality_certificate
+
+-- Bounded-excess middle S reservoir and its fixed-position counterexample.
+#print axioms Recaman.BoundedExcessReservoir.split_position_deficit
+#print axioms Recaman.BoundedExcessReservoir.reservoir_arithmetic
+#print axioms Recaman.BoundedExcessReservoir.middle_block_bound
+#print axioms Recaman.BoundedExcessReservoir.bounded_excess_middle_As
+#print axioms Recaman.BoundedExcessReservoir.stream_middle_As
+#print axioms Recaman.BoundedExcessReservoir.fixed_charge_failure
+#print axioms Recaman.BoundedExcessReservoir.middle_As_bound_attained_certificate
+
+-- Periodic capacity from disjoint bounded-excess reservoirs.
+#print axioms Recaman.SupplyReservoirGeometry.run_value
+#print axioms Recaman.SupplyReservoirGeometry.same_run_start
+#print axioms Recaman.SupplyReservoirGeometry.subwindow_ones_le
+#print axioms Recaman.SupplyReservoirGeometry.run_word_ones
+#print axioms Recaman.SupplyReservoirGeometry.reservoir_contains_run_count
+#print axioms Recaman.SupplyReservoirGeometry.ordered_reservoirs_disjoint
+#print axioms Recaman.SupplyReservoirGeometry.reservoirs_common_point_eq
+#print axioms Recaman.BoundedPeriodicSupply.equal_mod_of_close
+#print axioms Recaman.BoundedPeriodicSupply.exact_run_lt_period
+#print axioms Recaman.BoundedPeriodicSupply.reservoir_length
+#print axioms Recaman.BoundedPeriodicSupply.reservoir_nodup
+#print axioms Recaman.BoundedPeriodicSupply.phase_value
+#print axioms Recaman.BoundedPeriodicSupply.reservoirs_common_phase_eq_mod
+#print axioms Recaman.BoundedPeriodicSupply.ones_map_eq_filter_length
+#print axioms Recaman.BoundedPeriodicSupply.filter_partition_length
+#print axioms Recaman.BoundedPeriodicSupply.reservoir_A_count
+#print axioms Recaman.BoundedPeriodicSupply.short_source_in_candidates
+#print axioms Recaman.BoundedPeriodicSupply.exists_unused_target
+#print axioms Recaman.BoundedPeriodicSupply.reservoir_has_unused_S
+#print axioms Recaman.BoundedPeriodicSupply.periodic_capacity_extension
+
+-- Rank-based capacity for nested same-run reservoirs.
+#print axioms Recaman.NestedReservoirCapacity.used_targets_length_le
+#print axioms Recaman.NestedReservoirCapacity.free_reservoir_count
+#print axioms Recaman.NestedReservoirCapacity.reservoir_word_ones
+#print axioms Recaman.NestedReservoirCapacity.common_point_same_start
+#print axioms Recaman.NestedReservoirCapacity.common_phase_same_start_mod
+#print axioms Recaman.NestedReservoirCapacity.phase_sub_of_equal_mod
+#print axioms Recaman.NestedReservoirCapacity.reservoir_prefix
+#print axioms Recaman.NestedReservoirCapacity.free_reservoir_prefix
+#print axioms Recaman.NestedReservoirCapacity.rank_charge_member
+#print axioms Recaman.NestedReservoirCapacity.rank_charge_same_start_injective
+#print axioms Recaman.NestedReservoirCapacity.density_periodic_capacity_extension
+#print axioms Recaman.NestedReservoirCapacity.bounded_excess_periodic_capacity_extension
+
+-- Concrete U<=11 plus bounded-excess capacity, with minimum-lag71 witness.
+#print axioms Recaman.ShortReservoirCapacity.small_P2_lags
+#print axioms Recaman.ShortReservoirCapacity.mem_shortPhases
+#print axioms Recaman.ShortReservoirCapacity.shortPhases_nodup
+#print axioms Recaman.ShortReservoirCapacity.shortOff_bounds
+#print axioms Recaman.ShortReservoirCapacity.short_phase_eq_phi7
+#print axioms Recaman.ShortReservoirCapacity.short_phase_eq_phi11
+#print axioms Recaman.ShortReservoirCapacity.short_image_is_S
+#print axioms Recaman.ShortReservoirCapacity.short_phase_injective
+#print axioms Recaman.ShortReservoirCapacity.short_plus_bounded_excess_capacity
+#print axioms Recaman.ShortReservoirCapacity.nonsharp_extension_word_certificate
+
+-- Full all-lag capacity under the explicit fixed-A parity premise.
+#print axioms Recaman.ParitySupply.pairs_length
+#print axioms Recaman.ParitySupply.positions_nonneg
+#print axioms Recaman.ParitySupply.pairs_mass
+#print axioms Recaman.ParitySupply.pairs_moment
+#print axioms Recaman.ParitySupply.fixed_first_not_P2
+#print axioms Recaman.ParitySupply.variable_first_P2_data
+#print axioms Recaman.ParitySupply.ones_zero_get
+#print axioms Recaman.ParitySupply.ones_one_position
+#print axioms Recaman.ParitySupply.past_succ
+#print axioms Recaman.ParitySupply.past_even
+#print axioms Recaman.ParitySupply.past_odd
+#print axioms Recaman.ParitySupply.P2_length_odd
+#print axioms Recaman.ParitySupply.even_phase_not_P2
+#print axioms Recaman.ParitySupply.odd_P2_necessary
+#print axioms Recaman.ParitySupply.zero_data_of_get
+#print axioms Recaman.ParitySupply.one_data_of_get
+#print axioms Recaman.ParitySupply.odd_P2_sufficient
+#print axioms Recaman.ParitySupply.odd_P2_iff
+#print axioms Recaman.ParitySupply.witness_unique
+#print axioms Recaman.ParitySupply.P2_lag_unique
+#print axioms Recaman.ParitySupply.witness_charge_is_S
+#print axioms Recaman.ParitySupply.witness_charge_injective
+#print axioms Recaman.ParitySupply.supplied_phase_is_odd
+#print axioms Recaman.ParityPeriodicSupply.charge_formula
+#print axioms Recaman.ParityPeriodicSupply.charge_is_S
+#print axioms Recaman.ParityPeriodicSupply.charge_mod_injective
+#print axioms Recaman.ParityPeriodicSupply.periodic_all_lag_capacity
+#print axioms Recaman.ParityPeriodicSupply.parity_premise_counterexample
+
+-- Window-local parity capacity and compatibility with the complete short map.
+#print axioms Recaman.LocalParitySupply.extension_odd
+#print axioms Recaman.LocalParitySupply.extension_even
+#print axioms Recaman.LocalParitySupply.extension_agrees
+#print axioms Recaman.LocalParitySupply.extension_past
+#print axioms Recaman.LocalParitySupply.extension_subwindow
+#print axioms Recaman.LocalParitySupply.local_P2_necessary
+#print axioms Recaman.LocalParitySupply.local_P2_sufficient
+#print axioms Recaman.LocalParitySupply.local_P2_iff
+#print axioms Recaman.LocalParitySupply.clean_is_minimum
+#print axioms Recaman.LocalParitySupply.clean_lag_unique
+#print axioms Recaman.LocalParitySupply.local_charge_S
+#print axioms Recaman.LocalParitySupply.local_charge_injective
+#print axioms Recaman.LocalParityPeriodic.charge_formula
+#print axioms Recaman.LocalParityPeriodic.clean_shift
+#print axioms Recaman.LocalParityPeriodic.charge_is_S
+#print axioms Recaman.LocalParityPeriodic.charge_mod_injective
+#print axioms Recaman.LocalParityPeriodic.periodic_clean_capacity
+#print axioms Recaman.ShortLocalParityCapacity.offsetAt_nat
+#print axioms Recaman.ShortLocalParityCapacity.maskAux_congr
+#print axioms Recaman.ShortLocalParityCapacity.offsetAt_congr
+#print axioms Recaman.ShortLocalParityCapacity.offsetAt_shift
+#print axioms Recaman.ShortLocalParityCapacity.shortOff_bounds_three
+#print axioms Recaman.ShortLocalParityCapacity.global_evenBackA
+#print axioms Recaman.ShortLocalParityCapacity.global_short_offset
+#print axioms Recaman.ShortLocalParityCapacity.global_line_charge_injective
+#print axioms Recaman.ShortLocalParityCapacity.line_images_ne
+#print axioms Recaman.ShortLocalParityCapacity.short_clean_images_ne
+#print axioms Recaman.ShortLocalParityCapacity.short_plus_clean_capacity
+
+-- SS-free supply language and the actual canonical no-SAAS bridge.
+#print axioms Recaman.SSFreeSupply.noSS_tail
+#print axioms Recaman.SSFreeSupply.noSAAS_tail
+#print axioms Recaman.SSFreeSupply.noSS_mass_lower
+#print axioms Recaman.SSFreeSupply.alt_mass
+#print axioms Recaman.SSFreeSupply.alt_S_moment
+#print axioms Recaman.SSFreeSupply.mass_zero_alternates
+#print axioms Recaman.SSFreeSupply.evenSlots_pre_alt_A
+#print axioms Recaman.SSFreeSupply.mass_one_even_or_positive
+#print axioms Recaman.SSFreeSupply.p2_noSS_noSAAS_even
+#print axioms Recaman.SSFreeSupply.evenSlots_get
+#print axioms Recaman.SSFreeSupply.evenSlots_of_get
+#print axioms Recaman.SSFreeSupply.evenSlots_past_iff
+#print axioms Recaman.SSFreeSupply.not_evenSlots_withSS
+#print axioms Recaman.SSFreeSupply.evenSlots_noSS
+#print axioms Recaman.SSFreeSupply.p2_noSS_iff_even
+#print axioms Recaman.SSFreeSupply.stream_noSS_clean
+#print axioms Recaman.SSFreeSupply.noSS_cons_iff
+#print axioms Recaman.SSFreeSupply.noSS_singleton
+#print axioms Recaman.SSFreeSupply.noSAAS_premise_counterexample
+#print axioms Recaman.CanonicalSSFreeSupply.canonicalSign_nat
+#print axioms Recaman.CanonicalSSFreeSupply.past_get
+#print axioms Recaman.CanonicalSSFreeSupply.canonical_noSAAS
+#print axioms Recaman.CanonicalSSFreeSupply.canonical_noSS_clean
+#print axioms Recaman.CanonicalSSFreeSupply.canonical_noSS_iff_clean
+#print axioms Recaman.SSFreePeriodicSupply.periodic_SSFree_capacity
+#print axioms Recaman.SSFreePeriodicSupply.short_plus_SSFree_capacity
+
+-- Exact finite-history meaning of the prefix-key census.
+#print axioms Recaman.FiniteP2Semantics.window_prefix_identities
+#print axioms Recaman.FiniteP2Semantics.P2_iff_prefix_key
+#print axioms Recaman.FiniteP2Semantics.canonical_value_prefix
+#print axioms Recaman.FiniteP2Semantics.canonical_P2_iff_height_one_blocker
+#print axioms Recaman.FiniteP2Semantics.finite_P2_forces_A
+#print axioms Recaman.FiniteP2Semantics.blocker_without_finite_P2_certificate
+#print axioms Recaman.FiniteP2Semantics.finite_P2_positive_certificate
+
+-- Centered one-SS refutation, canonical transfer, and sharp clean period bounds.
+#print axioms Recaman.OneSSChargeCounterexample.witness_periodic
+#print axioms Recaman.OneSSChargeCounterexample.witness_shift_mod
+#print axioms Recaman.OneSSChargeCounterexample.witness_noSAAS
+#print axioms Recaman.OneSSChargeCounterexample.minimum_lags_certificate
+#print axioms Recaman.OneSSChargeCounterexample.window_certificate
+#print axioms Recaman.OneSSChargeCounterexample.centered_charge_collision
+#print axioms Recaman.OneSSChargeCounterexample.alternative_injection_certificate
+#print axioms Recaman.CanonicalOneSSWindow.canonical_window_certificate
+#print axioms Recaman.CanonicalOneSSCounterexample.canonical_window_signs
+#print axioms Recaman.CanonicalOneSSCounterexample.P2_congr
+#print axioms Recaman.CanonicalOneSSCounterexample.canonical_old_signs
+#print axioms Recaman.CanonicalOneSSCounterexample.canonical_minimum_lags
+#print axioms Recaman.CanonicalOneSSCounterexample.canonical_centered_collision
+#print axioms Recaman.CleanPeriodBound.clean_oldest_S
+#print axioms Recaman.CleanPeriodBound.even_period_bound
+#print axioms Recaman.CleanPeriodBound.odd_period_bound
+#print axioms Recaman.CleanPeriodBound.clean_lag_lt_twice_period
+#print axioms Recaman.CleanPeriodBound.odd_current_A_bound
+#print axioms Recaman.CleanPeriodBound.sharp_current_A_bound
+#print axioms Recaman.CleanPeriodBound.sharpFamily_periodic
+#print axioms Recaman.CleanPeriodBound.sharpFamily_odd
+#print axioms Recaman.CleanPeriodBound.sharpFamily_even
+#print axioms Recaman.CleanPeriodBound.bounded_multiple_zero
+#print axioms Recaman.CleanPeriodBound.sharpFamily_clean
+#print axioms Recaman.CleanPeriodBound.sharpFamily_P2
+#print axioms Recaman.CleanPeriodBound.sharpFamily_certificate
+#print axioms Recaman.CleanPeriodBound.currentSCounter_periodic
+#print axioms Recaman.CleanPeriodBound.current_A_premise_counterexample
+
+-- Sharp clock-dependent rigidity of actual historical blockers.
+#print axioms Recaman.ShortBlockerRigidity.moment_upper_of_mass
+#print axioms Recaman.ShortBlockerRigidity.nonunit_collision_bound
+#print axioms Recaman.ShortBlockerRigidity.canonical_collision_moment
+#print axioms Recaman.ShortBlockerRigidity.canonical_nonP2_blocker_bound
+#print axioms Recaman.ShortBlockerRigidity.canonical_short_blocker_P2
+#print axioms Recaman.ShortBlockerRigidity.equalityFamily_certificate
+#print axioms Recaman.ShortBlockerRigidity.strictness_canonical_certificate
+
+-- Positive periodic drift bounds all historical collision lags.
+#print axioms Recaman.PositivePeriodLag.blocks_length
+#print axioms Recaman.PositivePeriodLag.blocks_mass
+#print axioms Recaman.PositivePeriodLag.blocks_moment
+#print axioms Recaman.PositivePeriodLag.mass_bounds
+#print axioms Recaman.PositivePeriodLag.moment_upper
+#print axioms Recaman.PositivePeriodLag.collision_blocks_arithmetic
+#print axioms Recaman.PositivePeriodLag.repeated_word_collision_bound
+#print axioms Recaman.PositivePeriodLag.periodic_past_blocks
+#print axioms Recaman.PositivePeriodLag.periodic_collision_lag_bound
+#print axioms Recaman.PositivePeriodLag.late_periodic_collision_P2
+#print axioms Recaman.PositivePeriodLag.zero_drift_counterfamily
+
+-- Actual canonical positive-drift eventual-periodic bridge.
+#print axioms Recaman.EventualPeriodicSupply.blocks_growth_arithmetic
+#print axioms Recaman.EventualPeriodicSupply.repeated_word_candidate_growth
+#print axioms Recaman.EventualPeriodicSupply.period_mass_succ
+#print axioms Recaman.EventualPeriodicSupply.period_mass_constant
+#print axioms Recaman.EventualPeriodicSupply.past_agrees
+#print axioms Recaman.EventualPeriodicSupply.canonical_whole_prefix_value
+#print axioms Recaman.EventualPeriodicSupply.canonical_prefix_blocks
+#print axioms Recaman.EventualPeriodicSupply.canonical_candidate_growth
+#print axioms Recaman.EventualPeriodicSupply.late_A_has_P2
+#print axioms Recaman.EventualPeriodicSupply.every_A_phase_has_P2
+
+-- Exact natural-tail representation and complete positive-mass P2 cutoff.
+#print axioms Recaman.PeriodicTailRepresentation.extension_periodic
+#print axioms Recaman.PeriodicTailRepresentation.natural_period_iterate
+#print axioms Recaman.PeriodicTailRepresentation.extension_agrees
+#print axioms Recaman.PeriodicTailRepresentation.positive_period_P2_cutoff
+#print axioms Recaman.PeriodicTailRepresentation.canonical_natural_eventual_supply
+#print axioms Recaman.PeriodicTailRepresentation.balancedCounter_periodic
+#print axioms Recaman.PeriodicTailRepresentation.balanced_unbounded_P2
+
+-- Nonpositive period mass contradicts value nonnegativity.
+#print axioms Recaman.NonpositivePeriodDrift.value_window
+#print axioms Recaman.NonpositivePeriodDrift.repeated_value_polynomial
+#print axioms Recaman.NonpositivePeriodDrift.nonnegative_quadratic_mass
+#print axioms Recaman.NonpositivePeriodDrift.period_mass_nonnegative
+#print axioms Recaman.NonpositivePeriodDrift.balanced_moment_nonpositive
+#print axioms Recaman.NonpositivePeriodDrift.sum_map_add
+#print axioms Recaman.NonpositivePeriodDrift.sum_map_mul
+#print axioms Recaman.NonpositivePeriodDrift.sum_map_zero
+#print axioms Recaman.NonpositivePeriodDrift.sum_swap
+#print axioms Recaman.NonpositivePeriodDrift.signSum_map
+#print axioms Recaman.NonpositivePeriodDrift.shifted_period_sign_sum
+#print axioms Recaman.NonpositivePeriodDrift.balanced_phase_moment_sum
+#print axioms Recaman.NonpositivePeriodDrift.sum_nonpositive
+#print axioms Recaman.NonpositivePeriodDrift.member_zero_of_nonpositive_sum
+#print axioms Recaman.NonpositivePeriodDrift.period_moment_succ
+#print axioms Recaman.NonpositivePeriodDrift.period_mass_positive
+#print axioms Recaman.NonpositivePeriodDrift.canonical_signed_step
+#print axioms Recaman.NonpositivePeriodDrift.canonical_eventual_mass_positive
+#print axioms Recaman.NonpositivePeriodDrift.canonical_eventual_supply
+
+-- Full finite-state exact eventual-periodic reduction.
+#print axioms Recaman.FiniteSeedPeriodicSupply.past_agrees_general
+#print axioms Recaman.FiniteSeedPeriodicSupply.general_prefix_blocks
+#print axioms Recaman.FiniteSeedPeriodicSupply.general_candidate_growth
+#print axioms Recaman.FiniteSeedPeriodicSupply.nat_member_le_sum
+#print axioms Recaman.FiniteSeedPeriodicSupply.seed_le_bound
+#print axioms Recaman.FiniteSeedPeriodicSupply.prefix_le_bound
+#print axioms Recaman.FiniteSeedPeriodicSupply.general_late_A_P2
+#print axioms Recaman.FiniteSeedPeriodicSupply.exists_large_phase
+#print axioms Recaman.FiniteSeedPeriodicSupply.general_finite_history_supply
+#print axioms Recaman.FiniteSeedPeriodicSupply.absoluteSign_nat
+#print axioms Recaman.FiniteSeedPeriodicSupply.absolute_run_succ
+#print axioms Recaman.FiniteSeedPeriodicSupply.seeded_signed_step
+#print axioms Recaman.FiniteSeedPeriodicSupply.seeded_history_cases
+#print axioms Recaman.FiniteSeedPeriodicSupply.seeded_addition_obstruction
+#print axioms Recaman.FiniteSeedPeriodicSupply.seeded_eventual_supply
+#print axioms Recaman.FiniteSeedPeriodicSupply.canonical_seed_run
+#print axioms Recaman.FiniteSeedPeriodicSupply.canonical_seed_sign
+
+-- Exact one-SS gap algebra and all-parameter P2 families.
+#print axioms Recaman.OneSSGapAlgebra.gapWord_length
+#print axioms Recaman.OneSSGapAlgebra.gapWord_mass
+#print axioms Recaman.OneSSGapAlgebra.gapWord_moment
+#print axioms Recaman.OneSSGapAlgebra.one_SS_gap_P2_iff
+#print axioms Recaman.OneSSGapAlgebra.one_SS_parameter_classification
+#print axioms Recaman.OneSSGapAlgebra.bad_gap3_has_clean_room
+#print axioms Recaman.OneSSGapAlgebra.gapWeight_set
+#print axioms Recaman.OneSSGapAlgebra.sum_set_cast
+#print axioms Recaman.OneSSGapAlgebra.replicate_one_data
+#print axioms Recaman.OneSSGapAlgebra.familyGaps_data
+#print axioms Recaman.OneSSGapAlgebra.family_P2
+#print axioms Recaman.OneSSGapAlgebra.family_A_P2
+#print axioms Recaman.OneSSGapAlgebra.family_B_P2
+#print axioms Recaman.OneSSGapAlgebra.centered_counterexample_family_A
+
+-- Unbounded minimal P2 demand across one SS pair in a common NoSAAS history.
+#print axioms Recaman.OneSSMultiplicity.alt_length
+#print axioms Recaman.OneSSMultiplicity.alt_append
+#print axioms Recaman.OneSSMultiplicity.alt_A_moment
+#print axioms Recaman.OneSSMultiplicity.window_length
+#print axioms Recaman.OneSSMultiplicity.window_P2
+#print axioms Recaman.OneSSMultiplicity.ssCount_pre_SA
+#print axioms Recaman.OneSSMultiplicity.ssCount_append_AS
+#print axioms Recaman.OneSSMultiplicity.ssCount_pre_alt
+#print axioms Recaman.OneSSMultiplicity.ssCount_post_alt
+#print axioms Recaman.OneSSMultiplicity.window_single_SS
+#print axioms Recaman.OneSSMultiplicity.window_embedding
+#print axioms Recaman.OneSSMultiplicity.current_prefix_A
+#print axioms Recaman.OneSSMultiplicity.source_A
+#print axioms Recaman.OneSSMultiplicity.sources_distinct
+#print axioms Recaman.OneSSMultiplicity.shared_SS_location
+#print axioms Recaman.OneSSMultiplicity.finite_history_certificate
+#print axioms Recaman.OneSSMultiplicity.alt_S_prefix_nonpositive
+#print axioms Recaman.OneSSMultiplicity.alt_A_zero_prefix_moment
+#print axioms Recaman.OneSSMultiplicity.window_minimum
+#print axioms Recaman.OneSSMultiplicity.saasCount_pre_SAS
+#print axioms Recaman.OneSSMultiplicity.saasCount_append_SAS
+#print axioms Recaman.OneSSMultiplicity.saasCount_pre_alt
+#print axioms Recaman.OneSSMultiplicity.saasCount_post_alt
+#print axioms Recaman.OneSSMultiplicity.window_saasCount_zero
+#print axioms Recaman.OneSSMultiplicity.saas_occurrence_positive
+#print axioms Recaman.OneSSMultiplicity.window_noSAAS
+#print axioms Recaman.OneSSMultiplicity.history_noSAAS
+#print axioms Recaman.OneSSMultiplicity.sourcePositions_data
+#print axioms Recaman.OneSSMultiplicity.unbounded_SS_demand
+#print axioms Recaman.OneSSMultiplicity.window_S_budget
+
+-- Family B is compatible with the exact finite-state greedy recurrence.
+#print axioms Recaman.OneSSSeededB.exact_values
+#print axioms Recaman.OneSSSeededB.exact_signs
+#print axioms Recaman.OneSSSeededB.family_B_window
+#print axioms Recaman.OneSSSeededB.current_A_and_minimum
+#print axioms Recaman.OneSSSeededB.family_B_noSAAS
+#print axioms Recaman.OneSSSeededB.family_B_single_SS
+
+-- All-SS structural gap budgets on actual finite words.
+#print axioms Recaman.SSGapBudget.gap_balance
+#print axioms Recaman.SSGapBudget.large_cost
+#print axioms Recaman.SSGapBudget.enlarged_cost
+#print axioms Recaman.SSGapBudget.ssCount_pre_A
+#print axioms Recaman.SSGapBudget.ssCount_S_As
+#print axioms Recaman.SSGapBudget.gapWord_head
+#print axioms Recaman.SSGapBudget.ssCount_gapWord
+#print axioms Recaman.SSGapBudget.noSAAS_suffix
+#print axioms Recaman.SSGapBudget.noSAAS_internal_gaps
+#print axioms Recaman.SSGapBudget.exact_word_budget
+#print axioms Recaman.SSGapBudget.large_gap_budget
+#print axioms Recaman.SSGapBudget.enlarged_gap_budget
+#print axioms Recaman.SSGapBudget.word_gap_representation
+#print axioms Recaman.SSGapBudget.nonempty_last
+#print axioms Recaman.SSGapBudget.every_word_budget
+#print axioms Recaman.SSGapBudget.every_P2_budget
+#print axioms Recaman.SSGapBudget.noSAAS_premise_control

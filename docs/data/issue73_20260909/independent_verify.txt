@@ -1,0 +1,6 @@
+protocol=H-20260909-02 independent witness verification
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+script_sha256=8d7c07a75703384e0c9cfca7c3bbcd27f3ca53ad4e18283d1e19a7e089fc917e
+VERIFIED={"L": 11, "after": {"enumerated": 156, "maximum": 3, "score_histogram": {"-1": 9, "0": 33, "1": 32, "2": 73, "3": 9}, "witness": "AAAASAAA"}, "before": {"enumerated": 156, "maximum": 1, "score_histogram": {"-1": 8, "0": 41, "1": 107}, "witness": "AAA"}, "extra_catalyst_future": "SAAAASAAA", "extra_catalyst_score": 2, "from": "SASSSAASSSS", "k": 1, "to": "SSASSSAASSS"}
+VERIFIED={"L": 11, "after": {"enumerated": 1884, "maximum": 2, "score_histogram": {"-2": 23, "-1": 210, "0": 740, "1": 902, "2": 9}, "witness": "SAAAASAAA"}, "before": {"enumerated": 1884, "maximum": 0, "score_histogram": {"-2": 107, "-1": 676, "0": 1101}, "witness": ""}, "extra_catalyst_future": "SSAAAASAAA", "extra_catalyst_score": 1, "from": "AAASAASSSSS", "k": 2, "to": "SAAASAASSSS"}
+PASS: both upper bounds and counterexample continuations independently verified

@@ -1,0 +1,6 @@
+protocol=H-20260909-07-scope-control-r2-only
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+script_sha256=61a7061c5afcd427546e406112f581e818033834e650640bb235551927299f9b
+dependency_sha256=6753426aaadfefd58a0588d040c9873bebb72f493cf1fb2191503213c03551ce
+{"A": 14, "D": 11, "all_lag_signatures": {"3": [], "5": [], "6": [], "7": [3], "8": [], "9": [], "10": [], "11": [], "16": [27], "20": [], "21": [], "22": [3], "23": [23], "24": [15]}, "chronological_word": "SSSASAAAAAAASSSSASSSAAAAA", "direct_replay_agrees": true, "period": 25, "signed_sum": 3, "supplied_A": 5}
+PASS: this concrete lag-drop counterexample is not an E-067/E-070 counterword

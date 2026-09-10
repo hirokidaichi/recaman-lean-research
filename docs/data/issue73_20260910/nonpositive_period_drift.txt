@@ -1,0 +1,16 @@
+protocol=H-20260910-20
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=33d1ca136bf9b0cfca820ac8dca150192550760035dc66ae519fcb1695a4b276
+DISCOVERY={"p": 1, "words": 1, "balanced": 0, "polynomial_crosschecks": 5}
+DISCOVERY={"p": 2, "words": 3, "balanced": 2, "polynomial_crosschecks": 30}
+DISCOVERY={"p": 3, "words": 4, "balanced": 0, "polynomial_crosschecks": 60}
+DISCOVERY={"p": 4, "words": 11, "balanced": 6, "polynomial_crosschecks": 220}
+DISCOVERY={"p": 5, "words": 16, "balanced": 0, "polynomial_crosschecks": 400}
+DISCOVERY={"p": 6, "words": 42, "balanced": 20, "polynomial_crosschecks": 1260}
+DISCOVERY={"p": 7, "words": 64, "balanced": 0, "polynomial_crosschecks": 2240}
+DISCOVERY={"p": 8, "words": 163, "balanced": 70, "polynomial_crosschecks": 6520}
+HOLDOUT={"p": 9, "words": 256, "balanced": 0, "polynomial_crosschecks": 11520}
+HOLDOUT={"p": 10, "words": 638, "balanced": 252, "polynomial_crosschecks": 31900}
+HOLDOUT={"p": 11, "words": 1024, "balanced": 0, "polynomial_crosschecks": 56320}
+HOLDOUT={"p": 12, "words": 2510, "balanced": 924, "polynomial_crosschecks": 150600}
+PASS: exact value-drift identities and nonpositive-drift controls

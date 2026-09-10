@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""H17 candidate-growth core and actual recurrence semantics falsifier."""
+import itertools,json,hashlib,pathlib,subprocess
+
+def stats(w):return sum(w),sum((i+1)*s for i,s in enumerate(w))
+def main():
+ print('protocol=H-20260910-17',flush=True)
+ print('source_revision='+subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),flush=True)
+ print('source_sha256='+hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),flush=True)
+ for p in range(1,6):
+  count=0;slack=None
+  for b in itertools.product((-1,1),repeat=p):
+   if sum(b)<1:continue
+   for r in range(8):
+    for v in itertools.product((-1,1),repeat=r):
+     R=max(p,r)
+     for q in range(4*R+4,4*R+7):
+      w=b*q+v;m,M=stats(w)
+      for delta in (1,18):
+       n=len(w)+delta;x=n*(m-1)-M
+       assert x>=q,(b,v,q,n,x)
+       count+=1;slack=x-q if slack is None else min(slack,x-q)
+  print('WORD_CHECK='+json.dumps(dict(p=p,tests=count,min_slack=slack)),flush=True)
+ b=(1,1,1,-1,-1,-1);q=100;m,M=stats(b*q);n=9*q
+ assert n*(m-1)-M<q
+ print('ZERO_MASS_CONTROL='+json.dumps(dict(q=q,candidate=n*(m-1)-M)),flush=True)
+ a=[0];seen={0};e=[];P=W=0;acount=blocked=low=0
+ for t in range(2001):
+  assert a[t]==P+W
+  c=a[t]-(t+1);A=c<=0 or c in seen
+  if A:
+   acount+=1
+   if c<=0:low+=1
+   else:assert c in a;blocked+=1
+  if t==2000:break
+  s=1 if A else -1;e.append(s);P+=s;W+=t*s
+  a.append(a[t]+(t+1)*s);seen.add(a[-1])
+  m,M=stats(tuple(reversed(e)))
+  assert a[-1]==(t+2)*m-M
+ print('CANONICAL='+json.dumps(dict(through=2000,addition_checks=acount,positive_blockers=blocked,nonpositive=low)),flush=True)
+ print('PASS: arbitrary finite-prefix growth core and actual history identities',flush=True)
+if __name__=='__main__':main()

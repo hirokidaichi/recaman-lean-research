@@ -1,0 +1,18 @@
+protocol=H-20260910-07-lookup
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+script_sha256=4ad925ba3102a90a6682957aa76be8f145ad2d2da71e0b3625e87fe01d625531
+DISCOVERY={"length": 1, "words": 2, "mismatches": 0}
+DISCOVERY={"length": 2, "words": 4, "mismatches": 0}
+DISCOVERY={"length": 3, "words": 8, "mismatches": 0}
+DISCOVERY={"length": 4, "words": 16, "mismatches": 0}
+DISCOVERY={"length": 5, "words": 32, "mismatches": 0}
+DISCOVERY={"length": 6, "words": 64, "mismatches": 0}
+DISCOVERY={"length": 7, "words": 128, "mismatches": 0}
+DISCOVERY={"length": 8, "words": 256, "mismatches": 0}
+HOLDOUT={"length": 9, "words": 512, "mismatches": 0}
+HOLDOUT={"length": 10, "words": 1024, "mismatches": 0}
+HOLDOUT={"length": 11, "words": 2048, "mismatches": 0}
+HOLDOUT={"length": 12, "words": 4096, "mismatches": 0}
+HOLDOUT={"length": 13, "words": 8192, "mismatches": 0}
+STANDARD_PREFIX={"steps": 5000, "last_value": 5106, "lookup_mismatches": 0}
+PASS: exact all-available-history minimum P2 lookup agrees with direct sums

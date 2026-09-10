@@ -1,5 +1,60 @@
 # 証明地図
 
+## 2026-09-10 の到達点
+
+```text
+exact finite State + eventual sign periodicity
+  ├─ nonnegative weighted walk → positive period mass (E-119)
+  └─ finite initial history + real A blocker + lag rigidity
+       → every A phase has P2 with 0<d<p(p+1) (E-120, closes E-065)
+            → simultaneous supply impossible: E-067 OPEN
+                 → eventual periodic exact orbit impossible: conditional only
+
+U≤11 injection + local clean injection → combined capacity (E-106)
+NoSAAS + P2 → SS-free iff clean (E-109)
+remaining SS1 windows → two gap families (E-121, PAPER)
+  ├─ all-parameter family P2: Lean
+  ├─ one shared SS has unbounded minimum demand (E-122, Lean)
+  ├─ canonical shared-SS demand up to 2,796 (E-123, COMPUTED)
+  └─ family B occurs in a finite seed (E-124, Lean)
+       and at canonical step 96,911,838 (E-125, COMPUTED)
+```
+
+E-065 の形式化は元の任意有限履歴の量化を保つ。供給義務を前提にしていない。
+E-121 の任意語の完全分類は紙上であり、Lean の族構成だけで全分類を証明済みとしない。
+E-122 は SS ごとの定数予算を反証するが、すべての S を使う E-070 は未解決。
+以下は各段階の依存記録。途中時点の未完了義務は後続節で閉じたものを明記する。
+
+
+## 2026-09-10: 入れ子でない供給も扱う間隔
+
+`E-096` (`PROVED-LEAN`): k個の連続Aと二つの実P2窓から、入れ子仮定なしに
+`(d₂−d)²≥4k(d₂−1)`。等号例7→19、k=2も最小lagとして認証した。
+短縮と増大の両方を扱い、E-094の短縮反例を排除しない。
+[仮説カード](HYPOTHESIS_CARD_2026-09-10_SIGNED_SUPPLY_GAP.md)。
+
+## 2026-09-09: 連続A・等号窓・入れ子間隔
+
+| 接続 | 証拠 | 残る制限 |
+|---|---|---|
+| 先頭m≥3個のAとP2 → d≥4m−1、全mの等号族 | `PROVED-LEAN` E-090 | run長だけから下界を強化できない |
+| d=4m−1の全窓 ↔ mの整数分割 | `PROVED-PAPER` E-091 | 全単射は紙上。強制S blockはLean |
+| k個のAを挟む入れ子P2 → Δ(Δ−4k)≥4k(d−1) | `PROVED-LEAN` E-092 | 入れ子条件は不可欠 |
+| 等号窓の直前から二つ目のSへの単射＋短いchargeとの非衝突 | `PROVED-LEAN` E-092 | 非衝突はm≥L+1、短い規則はlag3をoffset3へ送る |
+| 既存の半径Lの局所単射＋等号窓 → 任意周期の一般容量拡張 | `PROVED-LEAN` E-095 | 既存短写像の具体的な適用は次行 |
+| E-080/E-086＋一般拡張 → U≤11/15と無限個の長い等号lagの和≤D | `PROVED-PAPER` E-093 | φ7/φ11/φ15の具体的適用は紙上。非等号窓は残る |
+| 長いA区間＋最小供給 → lagが単調増加 | `REFUTED` E-094 | 23→15をLean認証。任意に長いA区間の反例族は紙上 |
+
+[1時間研究の引継ぎ](ONE_HOUR_RESEARCH_2026-09-09.md)。全lag容量E-070は未証明。
+
+## 2026-09-09: bounded catalytic lookahead
+
+| 接続 | 証拠 | 残る制限 |
+|---|---|---|
+| 未来の減算をk回まで許した最大純供給R_k → 全lag potential F_k=−R_k | `REFUTED` E-089（k=1,2） | L=11のS辺でR_1:1→3、R_2:0→2。任意kの不可能性・E-070反証ではない |
+
+再現と停止判断は[仮説カード](HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md)。
+
 ## 2026-09-08: issue #73 の lag-11/15 課金
 
 | 接続 | 証拠 | 残る制限 |
@@ -1085,3 +1140,120 @@ candidateのuseが高々2回というprefix-testable命題を凍結した。disc
 6,305 use・最大2を独立再現し、一回使用は`c=97896,w=395922`で反証。未使用holdout
 `600000<s<=2000000`は22 excursion・12,802 use・最大1、`>2`違反0（`COMPUTED`）。all-scale命題は
 `CONJECTURED`で、resource poolの大きさとweightを与える不等式がないためLean化しない。
+
+2026-09-10 E-097: `SignedSupplyGap` → `BoundedExcessSupply`。幅4R帯の供給多重度の二次閾値と、その最適性を全RでLean確認。全lag容量の証明ではない。
+
+2026-09-10 E-098/E-099: `LeadingRunSupply` → `BoundedExcessReservoir`。2R密度上界はLean、旧固定chargeの任意m反例もLean。S位置の選択は別の容量問題。
+
+2026-09-10 E-100: `BoundedExcessSupply` + `BoundedExcessReservoir` → `SupplyReservoirGeometry` → `BoundedPeriodicSupply.periodic_capacity_extension`。全周期でQ chargeを構成し、既存短距離単射を拡張。Qはbounded-excess long-runの部分族。
+
+2026-09-10 E-101: `NestedReservoirCapacity` のrank構成で同run多重度制限を除去。抽象密度版→E-098でP2版、閾値は線形4R+L+2。E-096/E-097を数学的前提としない。
+
+2026-09-10 E-102: `ShortReservoirCapacity` はE-080のphi7/phi11をE-101に代入し、旧単射の仮定を解消。全lag≤11と非sharp Qの具体的容量、Q例m17/minlag71。
+
+2026-09-10 E-104: `LeadingRunSupply` のmass/moment → `ParitySupply.odd_P2_iff` → `ParityPeriodicSupply.periodic_all_lag_capacity`。全odd Aという明示的制約付きの全lag解決。SSSAAAAの反例で無制約への誤拡張を防止。
+
+## 2026-09-10: local parity and the complete short map (E-105..E-107)
+
+`ParitySupply` → `LocalParitySupply` (window extension, exact local pattern,
+minimum witness) → `LocalParityPeriodic.periodic_clean_capacity`.
+`ShortReservoirCapacity` + `LocalParityPeriodic` →
+`ShortLocalParityCapacity.short_plus_clean_capacity`: all U≤11 and all selected
+long-clean phases share one S capacity. The short map is discharged explicitly.
+No global parity premise remains; dirty long windows are still outside the theorem.
+The10^7-step coverage census (E-107) is `COMPUTED`, separate from this proof chain.
+Audit: 1,384 declarations, `check09_local_parity_capacity.txt`.
+
+## 2026-09-10: SS-free language and canonical bridge (E-109)
+
+`SSFreeSupply`: noSS mass≥−1 → mass0 noSS/noSAAS words alternate →
+mass1 words are even-slot clean or have positive moment → P2 noSS iff clean.
+The lag7 ASAASAS negative control makes the noSAAS premise essential.
+`NoDoubleAdditionRun` + `SSFreeSupply` → `CanonicalSSFreeSupply`:
+actual canonical windows d≤t avoid SAAS, so all SS-free P2 windows are clean.
+`SSFreePeriodicSupply` consumes this language implication in the all-lag
+capacity theorem; periodic words retain their noSAAS hypothesis.
+Audit:1,410 declarations, `check11_ss_free_supply.txt`.
+
+## 2026-09-10: finite diagnostic semantics (E-111)
+
+`FiniteP2Semantics.window_prefix_identities` → `P2_iff_prefix_key`.
+Actual recurrence → `canonical_value_prefix` →
+`canonical_P2_iff_height_one_blocker` → `finite_P2_forces_A`.
+The t5 counterexample excludes the converse from arbitrary historical
+blockers. This is a meaning audit of the finite census, not E-070.
+Audit:1,417 declarations, `check12_finite_p2_semantics.txt`.
+
+## 2026-09-10: canonical map refutation and sharp period cutoff (E-112/E-113)
+
+`OneSSChargeCounterexample` → `CanonicalOneSSWindow` + `FiniteP2Semantics`
+→ `CanonicalOneSSCounterexample`: the centered map fails on the actual
+standard orbit at sign times1350/1352, with minimum lags7/15. The actual
+window is kernel-evaluated; symbolic consequences do not re-evaluate it.
+`LocalParitySupply` → `CleanPeriodBound`: all clean lags<2p, sharp current-A
+bound3d+7≤4p, all-k equality family. The current-S p3,d3 control retains the
+necessary qualification. Audit1,445, `check14_counterexample_period_bound.txt`.
+
+## 2026-09-10: short historical blockers are rigid (E-114)
+
+`ShortBlockerRigidity` proves `4n≤d(d+4)` for every non-P2 word collision, with an all-r sharp word family. Via E-111, an actual historical blocker satisfying the strict reverse inequality is P2. The canonical AA boundary is checked; arbitrary long blockers are not covered. Full audit:1,452 declarations.
+
+## 2026-09-10: positive-period collisions have bounded lag (E-115)
+
+`PositivePeriodLag` expands arbitrary repeated positive-mass blocks with an independent old residual word, proves the clock-uniform bound d<(4p+4)p for periodic collisions, and combines it with E-114. The balanced AAASSS family has d6q,n9q and refutes omission of positive drift. Audit:1,463 declarations. The then-remaining finite initial-history and late-A bridge is closed below by E-116/E-120.
+
+## 2026-09-10: canonical eventual-periodic supply bridge (E-116)
+
+`EventualPeriodicSupply.every_A_phase_has_P2` closes the canonical positive-drift part of E-065. It derives candidate growth, discards all preperiod values, derives a real historical blocker from the exact greedy rule, then invokes E-115/E-114 and transports P2 to the phase. No supplier assumption is an input. The full finite-seed and nonpositive-drift E-065 statement is subsequently closed by E-119/E-120.
+
+## 2026-09-10: canonical natural-tail reduction and exact cutoff (E-117)
+
+`PeriodicTailRepresentation.canonical_natural_eventual_supply` takes only natural eventual periodicity and positive mass of the first complete actual period. It constructs the integer representative and returns 0<d<p(p+1) for every A phase. Balanced AASS supplies arbitrary lag4q+3, proving the positivity premise cannot be omitted from the cutoff.
+
+## 2026-09-10: nonpositive value drift excluded (E-119)
+
+`NonpositivePeriodDrift.period_mass_positive` proves positive period mass for every eventually periodic nonnegative weighted walk. It uses value drift, not candidate drift. `canonical_eventual_supply` closes all sign-sum cases of the canonical E-065 reduction; the finite-seed positive bridge is separate.
+
+## 2026-09-10: full finite-state E-065 reduction (E-120)
+
+`FiniteSeedPeriodicSupply.seeded_eventual_supply` proves E-065 for the existing exact `SeededReplay.run` with arbitrary finite State and base clock. Finite list-sum history bounds, positivity, actual A blockers, relative/absolute clock conversion, and the complete P2 cutoff are derived. Canonical embedding is checked. E-065 is now PROVED-LEAN; E-067/E-070 and both surjectivity alternatives remain open.
+
+## 2026-09-10: one-SS classification and obstruction (E-121–E-125)
+
+`OneSSGapAlgebra` proves gap mass/moment formulas, the arithmetic case split,
+and family A/B P2 for every legal n,j,z. Arbitrary-word exhaustion and the
+full two-family minimality classification remain paper-only in
+`ONE_SS_CLASSIFICATION_2026-09-10.md` (E-121).
+`OneSSMultiplicity` directly proves every proper prefix fails P2 for W_k,
+NoSAAS, exactly one SS, common-history embedding, distinct A sources, and
+unbounded demand on the same SS (E-122). These properties of this subfamily
+are all Lean, independently of the paper exhaustion theorem.
+`OneSSSeededB` verifies twelve exact greedy steps from an explicit finite
+State and a family B minimum window (E-124). Its seed is not asserted to be
+canonical. Independent C++/Python replay certifies the canonical finite
+example computationally (E-125), not with a Lean trace of 96 million steps.
+E-123 retains all 2,796 source positions for the maximum 10^7 shared-SS case.
+Full Lean audit through E-124: 1,566 declarations.
+
+## 2026-09-10: all-SS structural budget (E-126)
+
+`SSGapBudget.word_gap_representation` covers every Bool word;
+`ssCount_gapWord` connects zero internal gaps to the actual overlapping SS
+count, and `noSAAS_internal_gaps` derives exclusion of gap 2 from the actual
+forbidden substring. Mass 1 gives exact endpoint-plus-excess budget SS+2.
+Every enlarged internal gap consumes at least two units under NoSAAS.
+`every_P2_budget` derives the statement for arbitrary P2 words, with no
+fixed defect count and no supplier or reachability assumption. Counting
+only gaps of length at least 3 does not require NoSAAS; ASAAS certifies why
+counting all enlarged gaps does. Inter-window allocation remains open.
+
+## 2026-09-10: one-SS run capacity (E-127, paper)
+
+E-121's complete classification → only first/second A in a run can have
+a one-SS minimum window → compare the family-A word and the family-B
+word with its first A removed as S-ended prefixes of the same past.
+Their unique enlarged internal gaps have lengths4/3, so neither can extend
+the other. Therefore at most one source per A run, and periodic one-SS
+capacity follows by mapping each run to its preceding S. This is
+PROVED-PAPER, not a consequence of only the Lean family constructors.
+The clean/short maps may use those S phases too; union capacity is open.

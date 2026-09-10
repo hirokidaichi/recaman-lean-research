@@ -1,0 +1,7 @@
+protocol=H-20260910-25
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=7ced21e9c377ee82fdf9925ad52d5eb500df428053f0eac71e702876e71cfc5a
+command=clang++ -O3 -std=c++20 experiments/issue73_20260910/canonical_family_b_search.cpp -o /tmp/recaman_family_b_search && /tmp/recaman_family_b_search
+CHECKPOINT={"through":10000000,"value":20438710,"A":5000014,"S":4999986,"completed_A3":1655,"candidate_checks":1653,"elapsed_seconds":0.0574023,"seen_bytes":7749880}
+FOUND={"step":96911838,"sign_time":96911837,"lag":11,"old_time":96911826,"n":5,"j":3,"z":4,"SS":[96911826,96911827],"A3_end_S":96911831,"value":299100441,"word":"ASASASAAASS"}
+REFUTED: canonical family-B absence; direct full prefix scan passed

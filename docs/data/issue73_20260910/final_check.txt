@@ -1,0 +1,2790 @@
+Module graph audit: Recaman root reaches 300 of 300 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 59 frontier modules match their direct-import boundary.
+Research registry audit: 127 entries, 52 PROVED-LEAN rows linked to Recaman/Audit.lean.
+⚠ [7/303] Replayed Recaman.LagElevenPeriodic
+warning: Recaman/LagElevenPeriodic.lean:106:55: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:117:55: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:192:55: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:608:31: This simp argument is unused:
+  range_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [u11Count, u11Phases]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:629:35: This simp argument is unused:
+  range_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [suppliedCount, u7Phases]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:647:39: This simp argument is unused:
+  range_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [subtractionCount, subPhases]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:659:34: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:753:41: This simp argument is unused:
+  isH2Win
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [phi7Off, isLag3Win, isH1Win, h2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:985:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:988:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:991:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:994:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:997:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1000:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1003:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1024:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1027:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1030:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1033:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1036:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1039:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:22: This simp argument is unused:
+  int_nat1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:32: This simp argument is unused:
+  int_nat2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat3, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:42: This simp argument is unused:
+  int_nat3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat4, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:52: This simp argument is unused:
+  int_nat4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat5, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:62: This simp argument is unused:
+  int_nat5
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat6, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:72: This simp argument is unused:
+  int_nat6
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat7]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/LagElevenPeriodic.lean:1042:82: This simp argument is unused:
+  int_nat7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sign, this, int_nat1, int_nat2, int_nat3, int_nat4, int_nat5, int_nat6]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8/303] Replayed Recaman.SharpPeriodicSupply
+warning: Recaman/SharpPeriodicSupply.lean:59:22: This simp argument is unused:
+  Int.mul_emod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Int.add_emod]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/SharpPeriodicSupply.lean:121:5: Variable name `hUrange` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hUrange
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (303 jobs).
+'Recaman.recurrence' depends on axioms: [propext, Quot.sound]
+'Recaman.current_mem_valuesThrough' depends on axioms: [propext, Quot.sound]
+'Recaman.mem_valuesThrough_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_firstAt_bounded' depends on axioms: [propext, Quot.sound]
+'Recaman.exactGate_sufficient' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockerCertificate.value_decreases' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockerCertificate.first_time_decreases' does not depend on any axioms
+'Recaman.earlierSmaller_wellFounded' does not depend on any axioms
+'Recaman.localEscape_trace' depends on axioms: [propext, Quot.sound]
+'Recaman.localEscape_coordinate_jump' depends on axioms: [propext, Quot.sound]
+'Recaman.DescentRun.equation_at' depends on axioms: [propext, Quot.sound]
+'Recaman.ActualBlocker.forces_addition' depends on axioms: [propext, Quot.sound]
+'Recaman.ActualBlocker.exists_certificate' depends on axioms: [propext, Quot.sound]
+'Recaman.ActualBlocker.doubleDescent' depends on axioms: [propext, Quot.sound]
+'Recaman.targetDescent_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.targetBlocker_bounds' depends on axioms: [propext, Quot.sound]
+'Recaman.targetDescent_lands_or_doubleDescent' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_firstAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.coverageOracle_reaches_from' depends on axioms: [propext, Quot.sound]
+'Recaman.targetResolvable_implies_coverageOracle' depends on axioms: [propext, Quot.sound]
+'Recaman.all_coverageOracles_imply_surjective' depends on axioms: [propext, Quot.sound]
+'Recaman.not_targetResolvable_one' depends on axioms: [propext, Quot.sound]
+'Recaman.exactGate_at_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.localEscape_at_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetEquation_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_regular' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_borrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_borrow' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_borrowData' depends on axioms: [propext, Quot.sound]
+'Recaman.BorrowData.unique' depends on axioms: [propext, Quot.sound]
+'Recaman.BorrowData.two_le_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.potential_borrow_branch_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_add_total' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_total' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_add_multi' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_multi' depends on axioms: [propext, Quot.sound]
+'Recaman.smallestCounterexample_coordinateTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetEquation_of_quotRem_potential' depends on axioms: [propext, Quot.sound]
+'Recaman.targetSurface_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.exactGate_targetSurface' depends on axioms: [propext, Quot.sound]
+'Recaman.exactGate_targetEquation' depends on axioms: [propext, Quot.sound]
+'Recaman.localEscape_postAddition_targetEquation' depends on axioms: [propext, Quot.sound]
+'Recaman.regularAddition_enters_targetSurface' depends on axioms: [propext, Quot.sound]
+'Recaman.potential_eq_iff_borrowTargetPreimage' depends on axioms: [propext, Quot.sound]
+'Recaman.add_borrowTarget_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_borrowTarget_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.zeroBorrow_targetPreimage_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_exactGate_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_localEscape_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_exactGate_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_localEscape_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_borrowTarget_gives_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_borrowTarget_gives_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetSurface_two_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.targetSurface_three_value' depends on axioms: [propext, Quot.sound]
+'Recaman.add_multi_potential_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.actual_multi_time_ge_four' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_multi_potential_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_multi_ne_targetSurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_sub_multi_ne_targetSurface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_zeroBorrow_preserves_negative' depends on axioms: [propext, Quot.sound]
+'Recaman.sub_zeroBorrow_preserves_negative' depends on axioms: [propext, Quot.sound]
+'Recaman.add_crosses_nonnegative_only_oneBorrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_crosses_nonnegative_only_oneBorrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_crossing_oneBorrow_chamber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_crossing_oneBorrow_chamber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.add_negative_to_target_only_oneBorrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_negative_to_target_only_oneBorrow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ofNat_le_potential_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.a_le_upperTri' depends on axioms: [propext, Quot.sound]
+'Recaman.CoordinatesAt.twice_quotient_le' depends on axioms: [propext, Quot.sound]
+'Recaman.BorrowData.le_one_of_coordinatesAt' depends on axioms: [propext, Quot.sound]
+'Recaman.BorrowData.eq_zero_or_one_of_coordinatesAt' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_succ_of_canSubtract' depends on axioms: [propext, Quot.sound]
+'Recaman.CoverageStep.mono_parent' depends on axioms: [propext, Quot.sound]
+'Recaman.CoverageStep.lower_target' depends on axioms: [propext, Quot.sound]
+'Recaman.subtraction_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.targetSurface_zero_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.targetSurface_one_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.targetSurface_lowQuotient_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.sub_borrowTarget_prestate_targetEquation' depends on axioms: [propext, Quot.sound]
+'Recaman.add_borrowTarget_prestate_blocker' depends on axioms: [propext, Quot.sound]
+'Recaman.add_borrowTarget_prestate_gives_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_target_prestate_gives_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_sub_target_prestate_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.two_le_quotient_of_negative_zeroBorrow' depends on axioms: [propext, Quot.sound]
+'Recaman.zeroBorrow_remainder_drop' depends on axioms: [propext, Quot.sound]
+'Recaman.eventually_oneBorrow_of_negative_halfRemainder' depends on axioms: [propext, Quot.sound]
+'Recaman.BorrowData.one_defect_spec' depends on axioms: [propext, Quot.sound]
+'Recaman.oneBorrow_prePotential' depends on axioms: [propext, Quot.sound]
+'Recaman.oneBorrow_destination_nonnegative_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.oneBorrow_destination_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_oneBorrow_potential_lt' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_oneBorrow_potential_lt' depends on axioms: [propext, Quot.sound]
+'Recaman.add_oneBorrow_negative_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sub_oneBorrow_negative_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.oneBorrow_target_time_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_add_oneBorrow_lowQuotient_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_sub_oneBorrow_lowQuotient_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_oneBorrow_negative_blocker_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_oneBorrow_negative_gives_coverageStep_below_doubleTime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.eventually_oneBorrow_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_zeroBorrow_negative_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_sub_potential_aboveTarget_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.coordinates_add_oneBorrow_potential_aboveTarget_gives_coverageStep' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.negative_epoch_undershoot_or_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_add_regular_gives_coverageStep_below_nextTime' depends on axioms: [propext, Quot.sound]
+'Recaman.nonnegative_epoch_lowQuotient_or_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coordinates_zeroQuotient_next' depends on axioms: [propext, Quot.sound]
+'Recaman.lowQuotient_nonnegative_potential_drop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.lowQuotient_level_seen_next' depends on axioms: [propext, Quot.sound]
+'Recaman.nonnegative_epoch_records_level_or_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.nonnegative_epoch_potential_drop_or_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.undershoot_epoch_trichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.undershoot_eventually_negative_or_localCoverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.negative_undershoot_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.negative_undershoot_cycle_coverage_or_parentGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetSurface_two_fresh_target_but_blocked' depends on axioms: [propext, Quot.sound]
+'Recaman.a_add_then_sub_eq_pred' depends on axioms: [propext, Quot.sound]
+'Recaman.a_sub_then_add_eq_succ' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_coordinatesAt' depends on axioms: [propext, Quot.sound]
+'Recaman.missingBelowCount_strict_of_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.historyBudgetProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.historySearchProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.historySearchOracle_implies_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.negative_epoch_undershoot_or_coverage_with_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.zeroQuotient_firstAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.later_zeroQuotient_historyBudgetProgress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.qOne_historyBudgetProgress_or_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.nonnegative_epoch_historyFrontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.qOne_historySearchOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.nonnegative_epoch_historySearchOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.forcedAddition_followup_historySearchProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.negative_epoch_historySearchOutcome_or_qOneDebt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.qOneDebt_target_or_diagonalSuccessor' depends on axioms: [propext, Quot.sound]
+'Recaman.negative_epoch_historySearchOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonal_last_step' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonal_successor_occurs_or_longDescent' depends on axioms: [propext, Quot.sound]
+'Recaman.DescentRun.prepend' depends on axioms: [propext, Quot.sound]
+'Recaman.DescentRun.maximal_backward_extension' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonal_longDescent_has_maximalTail' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonal_longDescent_exposes_blocker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonal_longDescent_gives_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonal_successor_occurs_or_coverageStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonal_successor_occurs_or_earlierBlocker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.longDiagonalDescentResolvable_implies_diagonalSuccessor' depends on axioms: [propext, Quot.sound]
+'Recaman.phaseSearchProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.phaseSearch_enterDebt' depends on axioms: [propext, Quot.sound]
+'Recaman.phaseSearch_debtTimeDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.phaseSearch_exitDebt_of_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonal_successor_or_entersPhaseDebt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.phaseSearchOracle_reaches_from' depends on axioms: [propext, Quot.sound]
+'Recaman.phaseSearchOracle_implies_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.not_canSubtract_iff_nonpositive_or_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_forcedAddition_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.forcedAddition_target_bound_not_automatic' depends on axioms: [propext, Quot.sound]
+'Recaman.legalSubtraction_firstAt_predecessor' depends on axioms: [propext, Quot.sound]
+'Recaman.legalSubtraction_firstAt_gives_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.legalSubtraction_firstAt_gives_debtProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_final_transition' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_legalSubtraction_earlierPredecessor' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_forcedAddition_predecessor' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_forcedAddition_exitProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonal_successor_or_validDebt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_targetReady_state' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_targetReady_state_of_pos' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_not_targetEquation' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_not_targetSurface' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_budget_unchanged' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_forcedAddition_crossing_outcome' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_four_local_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_earlier_firstAt_mem_horizon' depends on axioms: [propext, Quot.sound]
+'Recaman.debt_earlier_horizon_cannot_drop_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.debtStep_classify' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.legalSubtraction_firstAt_maximalBackward' depends on axioms: [propext, Quot.sound]
+'Recaman.maximalBackward_long_exposes_blocker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.legalSubtraction_maximalBackward_trichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.legalSubtraction_anchor_boundary_example' depends on axioms: [propext, Quot.sound]
+'Recaman.debtInvariant_exitNormal_at_value' depends on axioms: [propext, Quot.sound]
+'Recaman.HistorySearchProgress.toNormalPhaseSearchProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.qOneDebt_target_or_phaseSearchProgress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.negative_epoch_phaseSearchOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.anchorBoundary_exact_local_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.anchorBoundary_target_or_exitNormal' depends on axioms: [propext, Quot.sound]
+'Recaman.anchorBoundary_forced_reason' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_post_potential_lt_target' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_epoch_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.debtCrossing_enters_recovery' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonalDebt_crossing_not_in_epoch_range' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_targetStartCertificate' depends on axioms: [propext, Quot.sound]
+'Recaman.restrictedPhaseSearchOracle_reaches_from' depends on axioms: [propext, Quot.sound]
+'Recaman.targetStart_reaches_of_restrictedOracle' depends on axioms: [propext, Quot.sound]
+'Recaman.natQuadLex_trans' does not depend on any axioms
+'Recaman.PhaseSearchProgress.trans' depends on axioms: [propext, Quot.sound]
+'Recaman.positiveQuotient_potential_aboveTarget_gives_coverageStep' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.crossingCatchup_epoch_frontier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.debtCrossing_finite_catchup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonalDebt_strictCrossing_finite_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossingGap_does_not_imply_absolute_epoch_range' depends on axioms: [propext, Quot.sound]
+'Recaman.negativeNormal_classify' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.negativeNormal_restrictedStep_or_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetStartInvariant_normal' depends on axioms: [propext, Quot.sound]
+'Recaman.debtInvariant_selfExit_phaseSemantic' depends on axioms: [propext, Quot.sound]
+'Recaman.anchorBoundary_phaseSemantic_closure' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_enters_phaseSemantic' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_phaseSemantic_start' depends on axioms: [propext, Quot.sound]
+'Recaman.semanticPhaseSearchOracle_implies_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.exitDebt_to_normal_iff_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCoverageStep_target_or_phaseProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.debtCrossing_finite_catchup_phaseOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossingGrowthObstruction_actual_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.normalParentDrop_phaseSemantic' depends on axioms: [propext, Quot.sound]
+'Recaman.normalEpochExit_phaseSemantic_or_sharp' depends on axioms: [propext, Quot.sound]
+'Recaman.negativeNormal_phaseSemanticStep_or_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.diagonalCrossingCatchup_budget_eq_horizon' depends on axioms: [propext, Quot.sound]
+'Recaman.normalPhase_qOneDebt_already_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.normalParentDropEvidence_not_sufficient' depends on axioms: [propext, Quot.sound]
+'Recaman.normalEpochExitEvidence_not_sufficient' depends on axioms: [propext, Quot.sound]
+'Recaman.orbit_downcrossing_occurs_or_budgetDrop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NormalEpochSharpObstruction.target_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.negativeNormal_phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exitDebt_advancingHorizon_iff_budgetDrop_or_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.diagonalCrossingCatchup_exitDebt_iff_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.exitDebt_at_laterEpoch_of_newFirstBelowTarget' depends on axioms: [propext, Quot.sound]
+'Recaman.CrossingGrowthObstructionAt.refine_epoch_frontier' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingGrowth_negativeContinuation_actual_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossingCatchup_potential_trichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossingGrowthObstructionAt_frontier_phaseOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.frontierFirstAt_phaseSemantic' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingGrowthObstructionAt_phaseSemanticStep' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingGrowthObstruction_phaseSemanticStep' depends on axioms: [propext, Quot.sound]
+'Recaman.normalSearchInvariant_allows_horizon_value_mismatch' depends on axioms: [propext, Quot.sound]
+'Recaman.normalSearchInvariant_does_not_imply_time_ready' depends on axioms: [propext, Quot.sound]
+'Recaman.OrbitReadyNormalCertificate.negative_phaseSemanticStep' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.nonnegative_epoch_phaseSemanticOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.nonnegative_epoch_phaseSemanticStep_or_lowLevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetStartInvariant_phaseSemanticStep_or_lowLevel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalSuccessorResidual.target_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.canonicalLowLevel_levelOne_phaseSemantic_or_forcedQOne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CanonicalLevelTwoForcedResidual.growth_negative' depends on axioms: [propext, Quot.sound]
+'Recaman.targetStartInvariant_phaseSemanticStep_or_forced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalForcedGrowthChamber.nextState' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalForcedGrowthChamber.twoStep_phaseSemantic' depends on axioms: [propext, Quot.sound]
+'Recaman.canonicalForcedGrowth_five_immediate_not_progress' depends on axioms: [propext, Quot.sound]
+'Recaman.targetStartInvariant_phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TargetStartInvariant.toOrbitReadyNormalInvariant' depends on axioms: [propext, Quot.sound]
+'Recaman.DebtInvariant.selfExit_provenancedNormal' depends on axioms: [propext, Quot.sound]
+'Recaman.NormalParentDropEvidence.toProvenancedNormal' depends on axioms: [propext, Quot.sound]
+'Recaman.horizonMismatch_provenance_is_historical' depends on axioms: [propext, Quot.sound]
+'Recaman.zeroQuotient_potential_aboveTarget_phaseSemanticStep' depends on axioms: [propext, Quot.sound]
+'Recaman.quotientOne_forcedAddition_phaseSemanticStep' depends on axioms: [propext, Quot.sound]
+'Recaman.OrbitReadyLowLevelResidual.phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OrbitReadyNormalInvariant.phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ExtendedHistoryNormalCertificate.transportProgress_of_budgetStable' depends on axioms: [propext, Quot.sound]
+'Recaman.ExtendedHistoryNormalCertificate.phaseSemanticStep_or_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.extendedHistory_horizonReady_not_representativeReady' depends on axioms: [propext, Quot.sound]
+'Recaman.extendedHistory_representativeReady_with_budgetGap' depends on axioms: [propext, Quot.sound]
+'Recaman.TypedHistoricalNormalCertificate.toExtendedHistory' depends on axioms: [propext, Quot.sound]
+'Recaman.parentDropNormalProvenance_of_evidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coverageAnchorNormalProvenance_of_blocker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.downcrossRestartNormalProvenance_of_budgetDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.debtExitNormalProvenance_of_invariant' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingFrontierNormalProvenance_of_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.TypedHistoricalNormalProvenance.phaseSemanticStep_or_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CurrentNormalChildEvidence.time_ready_of_orbitReady' depends on axioms: [propext, Quot.sound]
+'Recaman.normalEpochExit_above_orbitReadyAdapter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.canonicalHistoryFrontier_above_orbitReadyAdapter' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalForcedGrowthChamber.nextState_orbitReady' depends on axioms: [propext, Quot.sound]
+'Recaman.coverageStep_currentOrDebt' depends on axioms: [propext, Quot.sound]
+'Recaman.CoverageCurrentDebtOutcome.toCurrentOrDebtStep' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_weakUpcrossingStep_from_below' depends on axioms: [propext, Quot.sound]
+'Recaman.DowncrossRestartNormalProvenance.phaseSemanticStep' depends on axioms: [propext, Quot.sound]
+'Recaman.EarlyRepresentativeCertificate.phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_newBelow_of_missingBelowCount_strict' depends on axioms: [propext, Quot.sound]
+'Recaman.ExtendedHistoryNormalCertificate.phaseSemanticStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TypedHistoricalNormalProvenance.phaseSemanticStep_of_horizonReady' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.normalParentDrop_currentOrDebt' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingFrontierFirstAt_currentOrDebt_or_middle' depends on axioms: [propext, Quot.sound]
+'Recaman.debtStep_classify_without_normalExit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ReadyDebtInvariant.step_or_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coverageStep_readyCurrentOrDebt' depends on axioms: [propext, Quot.sound]
+'Recaman.OrbitReadyNormalInvariant.refinedStep_or_horizonResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.OrbitReadyNormalInvariant.refinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ReadyDebtInvariant.refinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ReadyDebtInvariant.crossingFrontierFirstAt_refinedStep' depends on axioms: [propext, Quot.sound]
+'Recaman.ExtendedHistoryNormalInvariant.refinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OrbitReadyRefinedInvariant.refinedStep_or_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossingRefinedStepHypothesis_implies_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.crossing_to_nonCrossing_progress_forces_budgetDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.crossing_refinedChild_budgetDrop_or_crossing' depends on axioms: [propext, Quot.sound]
+'Recaman.crossing_sameHorizon_refinedChild_is_crossing' depends on axioms: [propext, Quot.sound]
+'Recaman.FutureDowncrossStep.strict_budget_drop' depends on axioms: [propext, Quot.sound]
+'Recaman.ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross_withBudgetDrop' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.ReadyCrossingSearchInvariant.refinedStep_of_futureDowncross' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingNumeric_progress_iff_budgetDrop_or_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.ReadyCrossingSearchInvariant.refinedStep_or_continuationGrowth_of_horizonBelow' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.crossingContinuationGrowth_actual_example' depends on axioms: [propext, Quot.sound]
+'Recaman.no_futureDowncross_iff_tail_atOrAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.eventually_strictlyAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.all_targetTailReturn_iff_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ReadyCrossingSearchInvariant.refinedStep_of_tailDowncross' depends on axioms: [propext, Quot.sound]
+'Recaman.forcedAddition_above_twoStep_coverage' depends on axioms: [propext, Quot.sound]
+'Recaman.strictAboveTail_coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.readyCurrentOrDebtStep_at' depends on axioms: [propext, Quot.sound]
+'Recaman.missingBelowCount_eq_zero_of_belowCovered' depends on axioms: [propext, Quot.sound]
+'Recaman.crossing_zeroBudget_no_nonCrossing_progress' depends on axioms: [propext, Quot.sound]
+'Recaman.crossing_zeroBudget_progress_forces_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.crossing_refinedChild_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_crossingCertificate' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_tailMinimumAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_minimumCertificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailMinimumCertificate.doubleForced' depends on axioms: [propext, Quot.sound]
+'Recaman.doubleForced_potential_has_both_directions' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_combinedCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_permanentTailCombinedCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailMinimumCertificate.historicalPredecessorOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingStrictAboveTail.exists_historicalDowncrossCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_positiveBudget_historicalDowncross' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.refinedStep_or_historicalCycleGrowth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_stationaryHistoricalCycleResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.exists_firstWeakUpcrossingStep_from_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FirstWeakUpcrossingStep.unique' depends on axioms: [propext, Quot.sound]
+'Recaman.seenBelowCount_strict_of_missingBelowCount_strict' depends on axioms: [propext, Quot.sound]
+'Recaman.tailHistoryProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoricalPredecessorOutcome.tailHistoryProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.entersTailHistory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_firstHistoricalUpcrossing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.firstHistoricalUpcrossing_reselection_stationary' depends on axioms: [propext, Quot.sound]
+'Recaman.tailCycleProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.tailCycle_exitCrossing_iff_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoricalPredecessorOutcome.tailCycleProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.entersTailCycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.tailCycle_no_stationary_crossingExit' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoricalCycleGrowthResidual.tailCycleExitObstruction' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.exists_dischargeReturnCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.cursorProgress_or_residual' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.cursorProgress_or_growth_or_stationary' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.stationary_of_oldCanonical' depends on axioms: [propext, Quot.sound]
+'Recaman.tailCrossingCursorProgress_wellFounded' does not depend on any axioms
+'Recaman.tailCursorCycleProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.tailCursorCycle_exit_iff_cursorProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.cycleExit_or_residual' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.cycleExit_or_kernelResidual' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.kernelStationary_of_oldCanonical' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.tailCursorCycle_no_stationary_exit' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.exists_canonicalReturnRebase' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.exists_rebasedStationaryKernel' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.exists_rebase_with_noCycleExit' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.FirstWeakUpcrossingStep.value_below_of_between' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.firstStepOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.delayed_budgetDrop_or_clockBound' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.internalSubtraction_budgetDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.internalForced_clockBelowTarget' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.internalStep_budgetDrop_or_clockBound' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.AllForcedAdditionCorridor.returnTime_lt_target' depends on axioms: [propext, Quot.sound]
+'Recaman.AllForcedAdditionCorridor.value_eq_add_forcedClockSum' depends on axioms: [propext, Quot.sound]
+'Recaman.AllForcedAdditionCorridor.value_strictMono' depends on axioms: [propext, Quot.sound]
+'Recaman.corridorClockProgress_wellFounded' does not depend on any axioms
+'Recaman.CanonicalBelowCorridorCertificate.delayedOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalReturnRebaseCertificate.corridorOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FirstWeakUpcrossingStep.suffix' depends on axioms: [propext, Quot.sound]
+'Recaman.corridorSuffixProgress_wellFounded' does not depend on any axioms
+'Recaman.CanonicalBelowCorridorSuffix.child_of_internalSubtraction' depends on axioms: [propext, Quot.sound]
+'Recaman.AllForcedAdditionSuffix.returnTime_lt_target' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorSuffix.outcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalReturnRebaseCertificate.suffixOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.legalSubtraction_forcedAddition_crossing_hits_target' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorSuffix.internalSubtraction_ne_return' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorSuffix.internalSubtraction_before_return' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalBelowCorridorSuffix.child_of_internalSubtraction_missing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CanonicalReturnRebaseCertificate.legalSuffixChild_missingBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.AllForcedAdditionSuffix.value_eq_add_forcedClockSum' depends on axioms: [propext, Quot.sound]
+'Recaman.AllForcedAdditionSuffix.final_value_eq_add_forcedClockSum' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalAllForcedSuffixCertificate.crossingWindow' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalReturnRebaseCertificate.terminalWindow_of_legal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CanonicalBelowCorridorSuffix.exists_terminalAllForced' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CanonicalBelowCorridorCertificate.immediateHistoricalValley' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalShape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.WeakUpcrossingStep.strictTerminalCrossingBalance' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeTerminalShape.normalizedCrossingData' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.strictTerminalCrossingBalance' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.normalizedTerminalCrossingData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.StrictTerminalCrossingBalance.forcedReason' depends on axioms: [propext, Quot.sound]
+'Recaman.NormalizedTerminalCrossingData.forcedReason' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalForcedReason' depends on axioms: [propext, Quot.sound]
+'Recaman.NormalizedTerminalCrossingData.blockerOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.firstTime_lt_immediateEndpoint' does not depend on any axioms
+'Recaman.PermanentTailDischargeReturnCertificate.terminalBlockerOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalBudgetProgress_or_outerResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.mem_terminalReturnCandidates_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteClockBandCertificate.mem_terminalReturnCandidates' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalReturnCandidates_length_le' depends on axioms: [propext]
+'Recaman.terminalReturnCandidateProgress_wellFounded' does not depend on any axioms
+'Recaman.PermanentTailTerminalOuterResidual.finiteCandidate_or_nonClockResidual' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.backtrackCertificate' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBacktrackCertificate.tailCycleProgress_of_selected' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailTerminalNonClockResidual.rankOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.generation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.not_normalPhaseInvariantAt' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.not_debtInvariant' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalHistoricalBlockerCertificate.semanticBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.semanticBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.exists_predecessorCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalBlockerPredecessorCertificate.toBelowTargetHistorical' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.predecessorSemanticOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.exists_crossingCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalBelowPredecessorCrossingCertificate.refined' depends on axioms: [propext, Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.crossingRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.predecessorRefinedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.combinedRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalBelowPredecessorCrossingCertificate.cursorCycleProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.eligibleRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.tailRestartCycleProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.tailRestartCycle_exit_of_cursorProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.tailRestartCycle_exit_of_restartSeenDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.restartRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.terminalCrossingAnchorProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalBelowPredecessorCrossingCertificate.anchorGrowthCertificate' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalCrossingAnchorGrowthCertificate.progress_of_selected' depends on axioms: [propext, Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.finiteRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalBelowPredecessorCrossingCertificate.install' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalSelectedCrossingInstallCertificate.exists_nextDischarge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalSelectedCrossingDischargeCertificate.chronology' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalCrossingAnchorGrowthCertificate.installedProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalChronologyHistoryProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalSelectedCrossingDischargeCertificate.chronologyProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalSelectedCrossingDischargeCertificate.iterationProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.tailInstalledCycleProgress_wellFounded' depends on axioms: [propext, Quot.sound]
+'Recaman.BelowTargetHistoricalPredecessorCertificate.masterRankOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalSelectedCrossingChronologyProgressCertificate.masterProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.installedStepOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalBelowPredecessorMasterRankOutcome.exists_install' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalInstalledStepOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalOuterHistoricalBlockerCertificate.completeStepOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalCompleteInstalledOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ImmediateHistoricalValleyCertificate.coverageStep' depends on axioms: [propext, Quot.sound]
+'Recaman.ImmediateHistoricalValleyCertificate.semanticOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalSemanticallyClosedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.terminalReturnSelectionProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalReturnSelectionState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalReturnFreshSelectionCertificate.laterProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalReturnSelectedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.mem_terminalReturnWindowKeys_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.key_mem' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalReturnWindowSelectionProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalReturnWindowSelectionState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalWindowSelectedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.windowSnapshot_crossing_below_horizon' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.terminalInstalledWindowSnapshotComparison_total' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalReturnWindowSnapshotState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.mem_terminalReturnInstalledWindowKeys_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.installedWindowKey_mem' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalReturnInstalledWindowSelectionProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalReturnInstalledWindowSelectionState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.parent_node_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.parent_eq_of_horizon_anchor' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.down_endpoint_before_horizon' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.historical_first_before_horizon' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.historical_minimum_value_le_upperTri_horizon' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.terminalExactWindowDownEndpointComparison_total' depends on axioms: [propext, Quot.sound]
+'Recaman.mem_terminalExactInstalledHistoryKeys_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.exactHistoryKey_mem' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalExactInstalledHistorySelectionProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalExactInstalledHistorySelectionState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_firstAtOrAfter_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FirstAtOrAfter.unique' does not depend on any axioms
+'Recaman.PermanentTailDischargeReturnCertificate.exists_canonicalHistoricalMinimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CanonicalHistoricalMinimumOccurrence.time_eq_of_same_tail_value' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.start_before_parent_horizon' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.tail_start_before_parent_horizon' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.mem_terminalCanonicalTailHistoryKeys_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.canonicalTailHistoryKey_mem' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalCanonicalTailHistorySelectionProgress_wellFounded' does not depend on any axioms
+'Recaman.TerminalCanonicalTailHistorySelectionState.select' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalCanonicalTailHistoryFreshSelectionCertificate.toProgress' depends on axioms: [propext]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalCanonicalStateStepOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalCanonicalTailHistoryFreshProgress.strict' depends on axioms: [propext]
+'Recaman.TerminalCanonicalTailHistorySelectionState.not_mem_removeAll' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.exactReplayResidual_after_removeAll' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.exactReplayTerminalOutcome_after_removeAll' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalReplayResolvedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.forcedClockSum_firstClock_le' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.endpoint_return_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.target_eq_four_or_five' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.target_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalFiniteReturnWindowCertificate.false' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalExactCanonicalReplayResolver' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalFiniteClosedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalProgressOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalSuccessorOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalSelectedCrossingDischargeCertificate.parent_is_installed' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalDischargeIterationProgress_of_anchorGrowth' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalDischargeIterationProgress_of_earlierCrossing' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalIterationOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.terminalReplayReducedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalReplayReducedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.canonicalReturn_is_oldCrossing' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.installed_node_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.exists_nextOnParent' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.all_below_up_to_crossing' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.cursor_band' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.five_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_le_upperTri' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.six_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.eight_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalMissingOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_unique' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_new_below_of_missingDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalChronologyHistoryProgress.exists_freshLanding' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalAnchoredOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalHorizonAnchoredOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.landingReadyCrossing' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalMountedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.installReadyCrossing' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.terminalMountedOutcome_of_landing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.mountedIterationOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.fixedPointCore' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.unifiedOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TailFixedPointCore.six_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.target_le_upperTri' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime_or_target_eq_nineteen' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.parent_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.exists_value_recurrence' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstWeakUpcrossingStep.all_below' depends on axioms: [propext, Quot.sound]
+'Recaman.landing_cycle_corridor_below' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.eighteen_le_crossingTime_or_target_eq_nineteen' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.nineteen_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailUnifiedOutcome.semantic_or_flooredCore' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.semantic_or_flooredCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.semanticProgress_or_nineteen_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.leastMissingTarget_nineteen_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.semantic_or_twenty_le_of_nineteen_occurs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CombRun.low_rail' depends on axioms: [propext, Quot.sound]
+'Recaman.CombRun.high_rail' depends on axioms: [propext, Quot.sound]
+'Recaman.combStep_of_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.CombRun.low_rail_fresh' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime_or_exceptional' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_split' depends on axioms: [propext, Quot.sound]
+'Recaman.CombRun.mem_valuesThrough_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.CombRun.fresh_below_transport' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_eq_six_or_eight_of_nineteen' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.six_replay_pins' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.eight_replay_pins' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_eq_eight_of_nineteen' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_replay_unique' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_minimum_pins' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_tailStart_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_horizon_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.nineteen_forces_twentyone_revisit' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.a_succ_ne_of_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_ne_nineteen' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.eighteen_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.twenty_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_ne_sixtyone' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.thirtytwo_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.thirtyfour_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.no_subAdd_minimum_predecessor' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_value_above_clock' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossing_below_downcross' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_not_record' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredtwelve_le_crossingTime' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredfourteen_le_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailStart_after_lowWitness' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.replay_impossible_of_prefixSuccessorCoverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_ge_of_prefixSuccessorCoverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.historicalMinimumValue_eq_of_prefixSuccessorCoverageExcept' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.prefixSuccessorCoverageExcept_onehundredtwelve' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.historicalMinimumValue_eq_371_of_crossingTime_eq_112' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.historicalFirstTime_eq_108_of_crossingTime_eq_112' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.clock112_historical_downcross_pins' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.BlockedFirstOccurrence.defect_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockedFirstOccurrence.exists_defect_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockedFirstOccurrence.earlierSmaller' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockedFirstOccurrence.gap_drop' depends on axioms: [propext, Quot.sound]
+'Recaman.BlockedFirstOccurrence.predecessor_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.no_earlierSmaller_descent' does not depend on any axioms
+'Recaman.blockedFirstOccurrence_impossible_of_regeneration' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_blocked' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_blocked_descent' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_blocked_second_step' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_gap_of_blocked' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_canSubtract_of_regeneration' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.exists_phaseSearchProgress_parent' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_semanticPhaseProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.semantic_or_flooredCore_of_pos' depends on axioms: [propext, Quot.sound]
+'Recaman.PhaseSemanticInvariant.toOrbitReadyRefinedInvariant' depends on axioms: [propext, Quot.sound]
+'Recaman.not_forall_phaseSemantic_horizonReady' depends on axioms: [propext, Quot.sound]
+'Recaman.orbitReadyRefined_occurs_or_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.phaseSemanticChild_reaches_of_crossingRefinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.occurs_of_refinedSemanticProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.ReadyRefinedInvariant.step_or_readyCrossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.readyCrossingRefinedStepHypothesis_of_targetTailReturn' depends on axioms: [propext, Quot.sound]
+'Recaman.occurs_or_unreadyCrossing_of_readyCrossingStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.semanticBranchClosure_iff_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.not_crossingRefinedStepHypothesis' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.unreadyCrossing_of_readyCrossingStep' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.clock112_minimum_predecessor_double_subtraction' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.clock112_firstOccurrenceObstruction' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.clock112_historicalMinimumTime_unique' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.checkedTraceChunk_represents' depends on axioms: [propext, Quot.sound]
+'Recaman.checkedTraceChunks_represents' depends on axioms: [propext, Quot.sound]
+'Recaman.firstFifteenTrace_value' depends on axioms: [propext, Quot.sound]
+'Recaman.firstFifteenChunks_value' depends on axioms: [propext, Quot.sound]
+'Recaman.initialBitTraceMachine_represents' depends on axioms: [propext, Quot.sound]
+'Recaman.BalancedTrace.runBits_represents' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.trace1024Bits_checked' depends on axioms: [propext]
+'Recaman.balanced_a_1024' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.trace4825Bits_checked' depends on axioms: [propext]
+'Recaman.balanced_a_4825' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.clock112TargetOccurrenceWitnessTimes_match_lookup' does not depend on any axioms
+'Recaman.TerminalExactDischargeReplayCertificate.target_eq_223_of_crossingTime_eq_112' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.BitTraceMachine.Represents.occurs_of_seenBit' depends on axioms: [propext, Quot.sound]
+'Recaman.trace4825Clock112TargetBand_checked' depends on axioms: [propext]
+'Recaman.TerminalExactDischargeReplayCertificate.target_eq_223_of_crossingTime_eq_112_balanced' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.firstAt_371_4825' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.historicalMinimumTime_eq_4825_of_crossingTime_eq_112' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.no_low_witness_at_or_after_4825_of_crossingTime_eq_112' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.all_targetResolvable_implies_surjective' depends on axioms: [propext, Quot.sound]
+'Recaman.coverageOracle_implies_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.refinedPhaseSearchOracle_of_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.all_targetTailReturn_implies_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.historicalMinimumTime_after_lowWitness' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.FirstWeakUpcrossingStep.window_below' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.crossingTime_not_record_of_prefixAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.lowWitness_lt_start' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.minimum_revisit_absurd' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.impossible_of_prefixSuccessorCoverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.crossingTime_ge_of_prefixSuccessorCoverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.thirtytwo_le_crossingTime_of_prefixBound' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.exists_parentCrossing' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.aboveTarget_before_crossing_or_pinnedParent' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.landing_predecessorFirstTime_outside_window' depends on axioms: [propext, Quot.sound]
+'Recaman.landing_crossingTime_not_record_or_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.landing_thirtytwo_le_crossingTime_or_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_landingGap' depends on axioms: [propext, Quot.sound]
+'Recaman.DoubleSubtractStep.exact_drop' depends on axioms: [propext, Quot.sound]
+'Recaman.DoubleSubtractStep.first_fresh' depends on axioms: [propext, Quot.sound]
+'Recaman.DoubleSubtractStep.second_fresh' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_clock_below_target' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_value_above_clock_sharp' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_above_clock' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_doubleSubtract' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.doubleSubtract_before_tailStart' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.doubleSubtract_exact_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.doubleSubtract_values_below_predecessorGap' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_gap_of_attainment' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.minimum_predecessor_followUp_refined' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.OrbitReadyRefinedInvariant.debt_or_anchor_eq_local' depends on axioms: [propext, Quot.sound]
+'Recaman.OrbitReadyRefinedInvariant.crossing_of_anchor_lt_target' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.refinedNormal_anchorBump_not_orbitReadyRefined' depends on axioms: [propext, Quot.sound]
+'Recaman.no_phaseSearchProgress_into_zeroRank' depends on axioms: [propext, Quot.sound]
+'Recaman.not_forall_exists_phaseSearchProgress_child' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingChild_anchorDrop_forces_crossingRecovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.immediateValley_extended' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.refinedSuccessorOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.RefinedDomainEdge.occurs_or_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.RefinedDomainEdge.reaches_of_crossingRefinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.exists_refinedSuccessorOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.historyEdge_or_refinedEdge_or_installedEdge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.stuckCrossing_of_refinedEdge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coveredBelowCount_add_missingBelowCount' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_le_time' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_eq_of_covered' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.belowTarget_covered_preTail' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_lt_tailStart' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_gap_or_pinned' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_transition_subtracts' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_local_witnesses_miss_gap' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.occurs_or_refinedDomainEdge_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.refinedDomainEdge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.refinedTerminalIterationOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.refinedTerminalReplayReducedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.refinedTerminalReplayReducedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.prefixCursor_successor_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.thirtytwo_le_crossingTime_of_prefixBelow' depends on axioms: [propext, Quot.sound]
+'Recaman.TailFixedPointCore.thirtytwo_or_straggler_or_prefixAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.historicalMinimum_revisit_absurd' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.thirtytwo_le_crossingTime_of_downcrossBefore' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.downcross_cursor' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailDischargeReturnCertificate.oldCrossing_cursor' depends on axioms: [propext, Quot.sound]
+'Recaman.RefinedLandingCycle.crossingTime_not_record' depends on axioms: [propext, Quot.sound]
+'Recaman.RefinedLandingCycle.thirtytwo_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo_of_refinedLanding' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.semantic_or_thirtytwo_of_refinedLanding' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo_or_residue' depends on axioms: [propext, Quot.sound]
+'Recaman.crossingSearchInvariant_twelve_unready' depends on axioms: [propext, Quot.sound]
+'Recaman.not_forall_crossing_horizonReady' depends on axioms: [propext, Quot.sound]
+'Recaman.horizon_lt_of_budgetDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.readyRefinedInvariant_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.unreadyRefinedChild_shape' depends on axioms: [propext, Quot.sound]
+'Recaman.readyRefinedPhaseSearchOracle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.occurs_of_readyCrossingReadyStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.readyCrossingReadyStepHypothesis_of_targetTailReturn' depends on axioms: [propext, Quot.sound]
+'Recaman.occurs_of_targetTailReturn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.readyCrossingReadyStep_iff_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.not_readyStep_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.probe_refinedDomainEdge_of_pos' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_summit_disjunction_of_pos' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_stuckCrossing_without_refinedEdge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.probe_unifiedOutcome_conclusion_of_pos' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_debtAnchorBump_stays_orbitReadyRefined' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_concrete_debtBump' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_blockedFirstOccurrence_thirteen' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_not_blockedFirstOccurrence_regeneration' depends on axioms: [propext, Quot.sound]
+'Recaman.orbitReadyNormalNonCrossingStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.closedReadyRefinedPhaseSearchOracle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.readyCrossingReadyStepHypothesis_implies_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.readyCrossingReadyStepHypothesis_iff_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetTailReturn_implies_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.targetTailReturn_iff_occurs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.surjective_of_targetTailReturn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.one_no_late_occurrence' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.target_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.clock_window' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.elim_of_predecessor_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.five_le_minimumTime' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_transition' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_firstAt_or_blockedWitness' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_tailMinimum_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_forward_orbit' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_gap_or_pinnedConfiguration' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_gap_or_missing_predecessor' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.landing_thirtytwo_le_crossingTime' depends on axioms: [propext, Quot.sound]
+'Recaman.landing_crossingTime_not_record' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailUnifiedOutcome.semantic_or_thirtytwo' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.semantic_or_thirtytwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.refinedTerminalMissingOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.refinedTerminalAnchoredOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailMinimum_firstAt_or_tailStartAddition' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_forward_step_four' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_forward_attains' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_forward_candidate_above_tailMinimum' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_landing_below_tail_above' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.refinedUnifiedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.RefinedPermanentTailUnifiedOutcome.refinedSemantic_or_thirtytwo' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.refinedSemanticEdge_or_flooredCore' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.RefinedSemanticEdge.target_missing' depends on axioms: [propext, Quot.sound]
+'Recaman.not_forall_pos_exists_refinedSemanticEdge' depends on axioms: [propext, Quot.sound]
+'Recaman.not_forall_pos_refinedSummitLeft' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.refinedSemanticEdge_or_flooredCore_nontrivial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.probe_fixedPointCore_thirtytwo_inhabited' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_not_pinned_62_21' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_not_pinned_113_36' depends on axioms: [propext, Quot.sound]
+'Recaman.probe_targetTailReturn_iff_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.probe_nonCrossing_implies_refinedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.missingBelowCount_zero_covered' depends on axioms: [propext, Quot.sound]
+'Recaman.covered_forces_above' depends on axioms: [propext, Quot.sound]
+'Recaman.missingStrictAboveTail_of_budgetZero' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingStrictAboveTail.mono' depends on axioms: [propext, Quot.sound]
+'Recaman.missingStrictAboveTail_no_upper_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.no_future_downcross_mono' depends on axioms: [propext, Quot.sound]
+'Recaman.horizon_strictly_above_of_budgetZero' depends on axioms: [propext, Quot.sound]
+'Recaman.terminalHistoryCursor_lower_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.tailStart_le_of_minimal' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailStart_pinned_of_minimal' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.tailStart_replaceable' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.backward_two_steps' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.not_add_then_subtract' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.backward_trichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.backward_value_ne_target' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.middle_row_forbids_late_minimum' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.middle_row_pins_minimum_time' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_least_of_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_least_missingStrictAboveTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.target_le_tailStart' depends on axioms: [propext, Quot.sound]
+'Recaman.least_predecessor_below_target' depends on axioms: [propext, Quot.sound]
+'Recaman.least_tailStart_twoSided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.least_tailStart_twoSided_of_late' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.least_tailStart_minimumCertificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.least_tailStart_sandwich' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.least_tailStart_capped_by_horizon' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.not_alwaysHorizonInternalAnchorDrop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.RefinedSemanticEdge.of_horizonInternalAnchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.mountedEdge_or_anchorNondecreasing' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.ownFirstUpcrossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.ownFirstUpcrossing_anchor_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.RefinedSemanticEdge.missingPermanentAboveTail' depends on axioms: [propext, Quot.sound]
+'Recaman.RefinedSemanticEdge.not_targetTailReturn' depends on axioms: [propext, Quot.sound]
+'Recaman.RefinedSemanticEdge.stuckCrossing_and_obstructions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coveredBelowCount_le_shift' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_two_above' depends on axioms: [propext, Quot.sound]
+'Recaman.target_add_three_le_tailStart' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.three_le_clock' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.target_add_two_lt_tailStart_of_two_above' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.middle_row_absurd_of_pinned' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_backward_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_predecessor_covered' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.firstRow_target_add_three_le_tailStart' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_values_below_target' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_forced_addition' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_blocked_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.pinned_backward_dichotomy_with_bound' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.firstRow_forbids_late_repeat' depends on axioms: [propext, Quot.sound]
+'Recaman.CoversBelow.mono' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_least_coversBelow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.coversBelow_pigeonhole' depends on axioms: [propext, Quot.sound]
+'Recaman.least_coversBelow_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.least_coversBelow_lt_tailStart' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_step_of_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.revisit_at_twentyfour' depends on axioms: [propext, Quot.sound]
+'Recaman.target_le_coversBelow' depends on axioms: [propext, Quot.sound]
+'Recaman.least_tailStart_eq_coverage_succ_of_large' depends on axioms: [propext, Quot.sound]
+'Recaman.least_tailStart_le_of_coverage_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.exists_coverageTime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.least_tailStart_eq_coverage_succ_final' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.returnFrequency_iff_coverage' depends on axioms: [propext, Quot.sound]
+'Recaman.uncovered_at_tail_never_occurs' depends on axioms: [propext, Quot.sound]
+'Recaman.returnFrequency_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.coversBelow_before_tail_of_all_occur' depends on axioms: [propext, Quot.sound]
+'Recaman.coverage_le_of_tailStart_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.drop_le_upperTri_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.return_time_lower_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.forced_addition_run_defects' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.returnFrequency_is_coverage' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.returnFrequency_failure_mode_empty' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.six_le_clock' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_values' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_witness_early' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_target_upper_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_window_narrowed' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_second_forced_addition' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_second_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_add_highCount_le' depends on axioms: [propext, Quot.sound]
+'Recaman.highCount_le_of_covered' depends on axioms: [propext, Quot.sound]
+'Recaman.three_high_forces_length' depends on axioms: [propext, Quot.sound]
+'Recaman.coveredBelowCount_two_above_by_density' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.preTail_highCount_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.firstRow_separation_by_density' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_density_gives_only_one' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.ledger_identity' depends on axioms: [propext, Quot.sound]
+'Recaman.parity_invariant' depends on axioms: [propext, Quot.sound]
+'Recaman.occurrence_parity' depends on axioms: [propext, Quot.sound]
+'Recaman.even_value_time_mod_four' depends on axioms: [propext, Quot.sound]
+'Recaman.odd_value_time_mod_four' depends on axioms: [propext, Quot.sound]
+'Recaman.backward_propagation' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_of_subtraction_step' depends on axioms: [propext, Quot.sound]
+'Recaman.subSum_le_mul_subCount' depends on axioms: [propext, Quot.sound]
+'Recaman.upperTri_subCount_le_subSum' depends on axioms: [propext, Quot.sound]
+'Recaman.adjacent_occurrence_opposite_parity' depends on axioms: [propext, Quot.sound]
+'Recaman.PinnedTailMinimumConfiguration.clock_mod_four_of_target_even' depends on axioms: [propext, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_witness_beyond_adjacent' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.lastRow_target_upper_bound_sharpened' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.GeneratedBalancedTrace99734.traceBits_checked' depends on axioms: [propext]
+'Recaman.GeneratedBalancedTrace99734.generated_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.traceBits_checked' depends on axioms: [propext]
+'Recaman.GeneratedBalancedTrace181653.generated_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BalancedTrace.runBits_rightmostCheckpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.runCheckedBitTraceBlock_append_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.runCheckedBitTraceBlock_eq_replay' depends on axioms: [propext]
+'Recaman.GeneratedBalancedTrace181653.lastTen_input_value' depends on axioms: [propext, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.generated_value_seventysix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BalancedTrace.verifiesBitsMex_witness' depends on axioms: [propext, Quot.sound]
+'Recaman.BalancedTrace.verified_bits_mex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.traceBits_mex879_checked' depends on axioms: [propext]
+'Recaman.GeneratedBalancedTrace181653.generated_mex879' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.rightmostSplitCheckpoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.generated_value_181651' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.generated_value_181652' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.GeneratedBalancedTrace181653.generated_previous_subtraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.nineteen_le_of_target_missing' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_four_131' depends on axioms: [propext, Quot.sound]
+'Recaman.coversBelow_nineteen_131' depends on axioms: [propext, Quot.sound]
+'Recaman.target_le_coversBelow_of_nineteen' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailMinimumCertificate.lowQuotient_bounded_or_earlierBlocker' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingTarget.exists_leastTailLedgerMinimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ledger_interval_balance' depends on axioms: [propext, Quot.sound]
+'Recaman.positiveEarlierOccurrence_sharpC3' depends on axioms: [propext, Quot.sound]
+'Recaman.CoordinatesAt.qOne_earlierBlocker_ledgerPayment' depends on axioms: [propext, Quot.sound]
+'Recaman.PermanentTailMinimumCertificate.lowQuotient_bounded_or_provenance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailMinimumCertificate.lowQuotient_bounded_or_leastTailDowncross' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_leastTailLedgerMinimum_lowCoordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.exists_leastTailDischargeReturnCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.tailStart_eq_coverage_succ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.boundaryCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.incoming_subtraction' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.valley_equation' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.budget_before_coverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.second_forced_addition' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.third_forced_addition' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.terminalHistoryCursor' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.chronologyHistoryProgress' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.refinedMountedOutcome' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.refinedMountedRankOutcome' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.exactReplay_boundaryProgressOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.closedOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PermanentTailCombinedCertificate.historyProgress_or_leastTailRefinedSemanticEdge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.historyProgress_or_leastTailRefinedSemanticEdge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_coverageValleyCertificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.terminalHistoryCursor' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.chronologyHistoryProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.no_historyBudgetDrop_from_coverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.no_chronologyHistoryProgress_from_coverage' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.first_upcrossing' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.anchoredOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.refinedAnchoredOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.toLeastMissingTarget' depends on axioms: [propext, Quot.sound]
+'Recaman.leastMissingTarget_iff_nonempty_coverageValleyCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_coverageValleyHistoryProgress' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_terminalChronologyHistoryProgress' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.canonicalCoverageAnchoredOutcome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingTarget.canonicalCoverageRefinedAnchoredOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_leastTailBoundaryRefinedMountedOutcome' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.fortyseven_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sixtyone_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sixtytwo_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.sixtyTwoThroughSeventyFive_seen_99' depends on axioms: [propext, Quot.sound]
+'Recaman.seventysix_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.seventyseven_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eightHundredSeventyNine_le_of_target_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.coverage_ne_131' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.predecessor_sixtyone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.low_sixtyone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.low_sixtyone_at_181653_or_seventysix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.low_sixtyone_at_181653_or_eightHundredSeventyNine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.target_eq_879_of_sixtyone_exception' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.exceptionalSixtyoneHighCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.ExceptionalSixtyoneHighCertificate.backwardRoom_eq' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.ExceptionalSixtyoneHighCertificate.depthZeroHigh' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.ExceptionalSixtyoneHighCertificate.maximalStructural_high' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.exceptionalSixtyoneHigh_or_low_seventysix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.exceptionalSixtyoneHigh_or_low_eightHundredSeventyNine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.exceptionalSixtyoneHigh_iff_target_eq_879' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.exceptionalSixtyoneHigh_or_eightHundredEightyTargetLow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.low_seventysix_of_879_occurs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.low_eightHundredSeventyNine_of_879_occurs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.eightHundredEighty_le_of_target_missing_of_879_occurs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_sixtyoneBoundaryValleyCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_seventysixBoundaryValleyCertificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.narrowGap_exactCases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.backwardOutcome' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastTailDischargeReturnCertificate.BoundaryCertificate.backwardNormalForm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_leastTailBoundaryNormalForm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.backwardOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.backwardNormalForm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_coverageValleyBackwardNormalForm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_sixtyoneBoundaryBackwardNormalForm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.initialBackwardValleyStage' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.BackwardValleyStage.outcome' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.BackwardValleyStage.historyBudgetDrop_to_boundary' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.backwardValleyChainOutcome' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.BackwardValleyChainOutcome.expanded' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.BackwardValleyChainOutcome.floorAlternative' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.BackwardValleyChainOutcome.historyAlternative' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.expandedBackwardValleyChainOutcome' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.target_add_backwardRoom' depends on axioms: [propext, Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.two_mul_backwardRoom_le_coverage_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.maximalBackwardValleyChainOutcome' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.maximalBackwardValleyNumericAlternative' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.maximalBackwardSharpAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.maximalBackwardStructuralAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingCoverageValleyCertificate.maximalBackwardFloorAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_sixtyoneStepBackwardValleyChain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_sixtyoneStepBackwardAlternatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_maximalBackwardSharpAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_maximalBackwardStructuralAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_deepSuffixBackwardStructuralAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_deepSuffixPinnedBackwardAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_mexPinnedBackwardAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredSeventyNineStepBackwardChain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredSeventyNineStepAlternatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredSeventyNineStepFloorAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredSeventyNineHistoryAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredSeventyNineFloorAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.LeastMissingTarget.exists_eightHundredEightyBoundaryAlternative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.cutClip_monotone_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.pathSignedFlux_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.path_cut_balance' depends on axioms: [propext, Quot.sound]
+'Recaman.path_cut_positive_negative_balance' depends on axioms: [propext, Quot.sound]
+'Recaman.path_cut_le_positive_crossing' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_forcesAddition' depends on axioms: [propext, Quot.sound]
+'Recaman.entry_lt_clock_add_target_of_candidateBelow' depends on axioms: [propext, Quot.sound]
+'Recaman.candidate_eq_freshTarget_occurs_next' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidate_ne_target' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_or_strictAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidate_strictAbove_of_not_below' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.eventually_candidate_strictAbove_of_no_lows' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.forcedAddition_candidate_strictAbove' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_forces_highNext' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.not_two_consecutive_candidateBelow' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_entry_first' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_comb_or_historyBlocker' depends on axioms: [propext, Quot.sound]
+'Recaman.FreshCombEpisode.low_rail_first' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.exists_maximal_freshCombEpisode' depends on axioms: [propext, Quot.sound]
+'Recaman.FreshCombEpisode.final_first' depends on axioms: [propext, Quot.sound]
+'Recaman.FreshCombEpisode.low_rail_ne_of_before' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.entry_eq_blocker_add_length' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.twice_entry_gap_eq_duration_add_two' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.blocker_occurs_before_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.FreshCombEpisode.historyTerminated_of_next_not_step' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_exists_historyTerminatedComb' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.unbounded_historyTerminatedFinal_of_unbounded_candidateBelow' depends on axioms: [propext,
+ Quot.sound]
+'Recaman.HistoryTerminatedComb.blocker_has_firstAt_before_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.subtraction_origin_predecessor_above_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.repayment_forced' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.same_blocker_finalTime_eq' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.next_entry_below_or_blocker_lt' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.fresh_intervals_ordered' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.two_interval_mass_le_hull' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.upward_reset_previous_entry_le_blocker' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.upward_reset_failure_has_right_left_right' depends on axioms: [propext, Quot.sound]
+'Recaman.ungated_upward_reset_not_global_right_record' depends on axioms: [propext, Quot.sound]
+'Recaman.counterexample_old_entry_not_targetLow' depends on axioms: [propext, Quot.sound]
+'Recaman.targetCandidateExcess_succ_of_not_canSubtract' depends on axioms: [propext, Quot.sound]
+'Recaman.targetCandidateExcess_succ_of_canSubtract' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetHighCandidateExcursion.exit_canSubtract' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetHighCandidateExcursion.exit_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TargetHighCandidateExcursion.prefix_ledger_strict' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetHighCandidateExcursion.exit_ledger_strict' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.birthTime_le_start_or_predecessor_above' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.positive_blocker_origin' depends on axioms: [propext, Quot.sound]
+'Recaman.PositiveTerminalBlockerOrigin.earlierSmaller_or_lift' depends on axioms: [propext, Quot.sound]
+'Recaman.PositiveTerminalBlockerOrigin.preTail_or_targetEarlierSmaller_or_lift' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.upward_reset_origin' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.preTail_or_aboveTarget_parent' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.exists_preTail_aboveTarget_ancestor' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.preTail_anchorObstruction_or_normalProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.value_le_upperTri_of_time_le' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.ceilingObstruction_or_normalProgress' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.normalProgress_of_preTailCeiling_lt_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.HistoryTerminatedComb.exists_blocker_gt_of_many' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.target_lt_candidate_iff_interval_ledger_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eventuallyHighCandidate_iff_forall_interval_ledger_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.forcedAddition_positive_candidate_has_earlier_firstAt' depends on axioms: [propext, Quot.sound]
+'Recaman.nextCandidate_after_positive_forcedAddition' depends on axioms: [propext, Quot.sound]
+'Recaman.forcedAddition_same_candidate_outputs_strict' depends on axioms: [propext, Quot.sound]
+'Recaman.highCandidate_forcedReuse_and_nonfreshOutput_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.highCandidate_distinctCandidates_sameOutput_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.same_positive_candidate_reuse_subtraction_balance' depends on axioms: [propext, Quot.sound]
+'Recaman.same_positive_forcedCandidate_reuse_bundle' depends on axioms: [propext, Quot.sound]
+'Recaman.five_high_candidate_reuse_intervals_overlap_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.high_candidate_reuse_intervals_cross_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.horizon_ready_of_start_le' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.blockerNormal_not_orbitReady' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.blockerNormal_not_currentOrDebt' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.tail_blocker_semanticMount' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.tail_blocker_refinedDebtStep' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.tail_blocker_refinedStepFromEntry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingPermanentAboveTail.budget_zero_of_start_le' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.laterNormal_progress_of_anchorDrop' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.laterDebt_progress_from_normal' depends on axioms: [propext, Quot.sound]
+'Recaman.FirstAt.extendedHistoryNormal_of_tail' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.entry_below_or_anchor_le_blocker' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.next_blockerNormalProgress_or_upwardReset' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.next_extendedProgress_of_ceiling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.HistoryTerminatedComb.blockerNormalProgress_from_historicalAnchor' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.blockerNormalProgress_or_anchor_le_blocker' depends on axioms: [propext, Quot.sound]
+'Recaman.finiteBasin_rightLadder_countermodel' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.candidateBelow_entry_legal' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.two_forced_launch' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.singleton_unitLadder_gap_four' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.singleton_unitLadder_gap_five' depends on axioms: [propext, Quot.sound]
+'Recaman.upperTri_add_six' depends on axioms: [propext, Quot.sound]
+'Recaman.singleton_unitLadder_clock_constraints_have_infinite_model' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.later_blocker_on_freshInterval_eq_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.HistoryTerminatedComb.later_blocker_eq_freshEntry_forces_short' depends on axioms: [propext, Quot.sound]
+'Recaman.freshLowEntry_later_terminalBlocker_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.first_entry_legal' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.no_intermediate_targetTerminal' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.second_start_gap' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.high_excursion' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.entry_ne_or_returnResidual' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroEntryReturnResidual.highReuse_or_avoidsHigh' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TargetMacroEntryReturnResidual.parity_compatible' depends on axioms: [propext, Quot.sound]
+'Recaman.TargetMacroSuccessor.entry_ne_of_parity_incompatible' depends on axioms: [propext, Quot.sound]
+'Recaman.seededHighCandidate_mem_baseSeen' depends on axioms: [propext, Quot.sound]
+'Recaman.one_lt_seededHighCandidate' depends on axioms: [propext, Quot.sound]
+'Recaman.one_not_mem_seededHighBaseSeen' depends on axioms: [propext, Quot.sound]
+'Recaman.seededHighInvariant' depends on axioms: [propext, Quot.sound]
+'Recaman.arbitrarilyLong_seededHigh_forcedAdditionCorridor' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.coverageOracle_of_preTail' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.not_preTailCoverageOracle' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteRootTerminalEscape.toPreTailCoverageOracle' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.not_finiteRootTerminalEscape' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.exists_finiteRootTerminalNoEscape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingPermanentAboveTail.eventualHigh_or_unboundedRightTerminal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.UnboundedRightTerminalStream.exists_targetMacroSuccessor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.UnboundedRightTerminalStream.exists_upwardReset_after' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.UnboundedRightTerminalStream.exists_upwardReset_entry_le_after' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.MissingPermanentAboveTail.eventualHigh_or_infinitelyManyUpwardResets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.UnboundedRightTerminalStream.blocker_floor' depends on axioms: [propext, Quot.sound]
+'Recaman.UnboundedRightTerminalStream.exists_blocker_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.UnboundedRightTerminalStream.exists_entry_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.UnboundedRightTerminalStream.blockers_escape_every_ceiling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.corridor_subtraction_lands_above_clock' depends on axioms: [propext, Quot.sound]
+'Recaman.no_perpetual_forcedAddition_ray' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_canSubtract_of_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualHighCandidateTail.infinitely_many_high_fresh_landings' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.corridor_forcedAddition_candidate_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.double_forcedAddition_candidate_returns' depends on axioms: [propext, Quot.sound]
+'Recaman.double_forcedAddition_extends' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_value_law' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_infinitely_many_forcedAdditions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.corridor_forcedAddition_supplier' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualHighCandidateTail.late_forcedAdditions_are_self_fueled' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_supplier_clock_lower_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.MissingPermanentAboveTail.sharpResidualKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SharpResetStream.exists_blocker_in_band' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_forcedAddition_birth' depends on axioms: [propext, Quot.sound]
+'Recaman.firstAt_succ_birth_dichotomy' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_forcedAddition_birth_classified' depends on axioms: [propext, Quot.sound]
+'Recaman.valuesThrough_length' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualHighCandidateTail.exists_second_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualHighCandidateTail.missing_not_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.corridor_recurringCandidate_forcedAddition' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_recurringCandidate_entry_subtraction' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_recurringCandidate_successor_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_recurringCandidate_event' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_candidate_bounded_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_least_recurring_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.exists_uniform_bound_of_no_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualHighCandidateTail.candidate_diverges_or_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.EventualHighCandidateTail.diverges_or_rigidEventStream' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.candidateFloor_forces_missing_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.divergent_candidates_missing_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualHighCandidateTail.missingUnbounded_or_rigidEventStream' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.recurringCandidate_second_forcedAddition' depends on axioms: [propext, Quot.sound]
+'Recaman.recurringCandidate_addition_burst' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualHighCandidateTail.missingUnbounded_or_burstStream' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.corridor_recurringCandidate_demand_birth_classified' depends on axioms: [propext, Quot.sound]
+'Recaman.corridor_recurringCandidate_late_demand_birth' depends on axioms: [propext, Quot.sound]
+'Recaman.balanced_periodRotations_drift_sum' depends on axioms: [propext, Quot.sound]
+'Recaman.balanced_periodRotations_has_negative' depends on axioms: [propext, Quot.sound]
+'Recaman.seededUseGap_local_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.subtractionBorn_42_forcedReuse_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.subtractionBorn_sharedParent_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.truncatedBirth_suppliedDemand_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.nearDiagonalBirth_suppliedDemand_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.missing_window_of_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.missing_density_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualHighCandidateTail.missing_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.not_eventualHigh_of_recurrent_low' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_forced_addition' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_landing' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_exit_up' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_late_landing' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_descends' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_band_fresh_at_start' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_small_candidate_mod_three' depends on axioms: [propext, Quot.sound]
+'Recaman.late_landing_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_lands_first_fresh' depends on axioms: [propext, Quot.sound]
+'Recaman.comb_after_landing' depends on axioms: [propext, Quot.sound]
+'Recaman.comb_sweep' depends on axioms: [propext, Quot.sound]
+'Recaman.chain_never_presents_other_class' depends on axioms: [propext, Quot.sound]
+'Recaman.late_landing_popup' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_pair' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_lock' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_lock_above_clock' depends on axioms: [propext, Quot.sound]
+'Recaman.prelanding_upper_values' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_return_level_two' depends on axioms: [propext, Quot.sound]
+'Recaman.level2_to_level1' depends on axioms: [propext, Quot.sound]
+'Recaman.level23_pair' depends on axioms: [propext, Quot.sound]
+'Recaman.level23_phase' depends on axioms: [propext, Quot.sound]
+'Recaman.level23_exit' depends on axioms: [propext, Quot.sound]
+'Recaman.div_eq_of_decomp' depends on axioms: [propext, Quot.sound]
+'Recaman.mod_eq_of_decomp' depends on axioms: [propext]
+'Recaman.residue_add' depends on axioms: [propext, Quot.sound]
+'Recaman.residue_sub' depends on axioms: [propext, Quot.sound]
+'Recaman.residue_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_lower' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_pair_residues' depends on axioms: [propext, Quot.sound]
+'Recaman.level34_pair_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_residues' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_wrap_of_long_prelanding_run' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_wrap_of_multitooth_history' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_candidate_margin' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_candidate_gt_twice_earlier' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_candidate_level_ge_two' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_candidate_qtwo_gap_cost' depends on axioms: [propext, Quot.sound]
+'Recaman.lock_candidate_local_data_allows_many_events' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.valuesThrough_mono_of_le' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_candidate_blocked_by_run' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_lock_persists' depends on axioms: [propext, Quot.sound]
+'Recaman.forced_addition_of_mem' depends on axioms: [propext, Quot.sound]
+'Recaman.landing_of_fresh' depends on axioms: [propext, Quot.sound]
+'Recaman.pingpong_pair' depends on axioms: [propext, Quot.sound]
+'Recaman.pingpong_pair_residues' depends on axioms: [propext, Quot.sound]
+'Recaman.pingpong_run' depends on axioms: [propext, Quot.sound]
+'Recaman.pingpong_pair_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.level45_run_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_l3blocked_level45_entry' depends on axioms: [propext, Quot.sound]
+'Recaman.popup_l3blocked_level45_wrap' depends on axioms: [propext, Quot.sound]
+'Recaman.comb_addition_values' depends on axioms: [propext, Quot.sound]
+'Recaman.level23_candidate_blocked_by_comb' depends on axioms: [propext, Quot.sound]
+'Recaman.level23_phase_of_comb' depends on axioms: [propext, Quot.sound]
+'Recaman.forcedAddition_candidate_historical' depends on axioms: [propext, Quot.sound]
+'Recaman.exists_forcedAddition_of_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.corridor_forcedAddition_clock_and_seen' depends on axioms: [propext, Quot.sound]
+'Recaman.double_descent_loop_candidate_returns' depends on axioms: [propext, Quot.sound]
+'Recaman.double_descent_loop_extends' depends on axioms: [propext, Quot.sound]
+'Recaman.repeat_clock_le_value' depends on axioms: [propext, Quot.sound]
+'Recaman.eventually_ne_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eventually_above_every_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.eventually_above_on_selected_times' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.missing_of_prefix_and_same_cutoff_floor' depends on axioms: [propext, Quot.sound]
+'Recaman.free_cutoff_does_not_certify_missing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.rising_floor_compatible_with_surjectivity' depends on axioms: [propext, Quot.sound]
+'Recaman.seededSurvival_ratio_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.seededSurvival_one_use_resources' depends on axioms: [propext, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.descent_fresh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.actual_word' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.no_wrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.first_late_landing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.seed_payload' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.parameters_parity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.parameters_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.candidate_seen_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.Geometry.blocker_one_use' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SeededReplay.exists_later_wrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SurvivalFamily.finite_prefix_survival_countermodel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.crossingTime_ne_onehundredtwelve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredthirteen_le_crossingTime' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.TerminalExactDischargeReplayCertificate.onehundredfifteen_le_target' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortPeriodicSupply.potential_step' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortPeriodicSupply.supplied_window_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortPeriodicSupply.periodic_capacity' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortPeriodicSupply.exists_phase_without_short_supply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortPeriodicSupply.lag_eleven_survives_short_exclusion' depends on axioms: [propext, Quot.sound]
+'Recaman.LeadingRunSupply.past_p2_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.leading_run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.stream_leading_run_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharpFamily_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.nested_supply_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.stream_nested_supply_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharp_supply_no_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharp_middle_S_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.stream_sharp_S_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.p2_two_runs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.protected_S_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharp_protected_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharp_protected_charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.sharp_charge_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LeadingRunSupply.nonnested_lag_drop_certificate' does not depend on any axioms
+'Recaman.SignedSupplyGap.positions_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.moment_lower_of_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.removed_tail_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.stream_signed_supply_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.stream_supply_square_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.stream_lag_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SignedSupplyGap.square_gap_equality_certificate' does not depend on any axioms
+'Recaman.LagElevenSupply.seventeen_types' does not depend on any axioms
+'Recaman.LagElevenSupply.types_are_minLag11' depends on axioms: [propext]
+'Recaman.LagElevenSupply.charge_is_S' depends on axioms: [propext]
+'Recaman.LagElevenSupply.charge_u7_blocked' depends on axioms: [propext]
+'Recaman.LagElevenSupply.pairwise_clash' depends on axioms: [propext]
+'Recaman.LagElevenSupply.pairwise_timeClash' depends on axioms: [propext]
+'Recaman.LagElevenSupply.types_complete' depends on axioms: [propext]
+'Recaman.LagElevenPeriodic.maskAt_testBit' depends on axioms: [propext, Quot.sound]
+'Recaman.LagElevenPeriodic.typeOf_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.phi11_is_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.timeClash_same_time' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.u7_not_u11' depends on axioms: [propext, Quot.sound]
+'Recaman.LagElevenPeriodic.phi11Phase_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.phi11Phase_is_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.u11Count_le_subtractionCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.phi7Phase_is_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.u7_pairwise_timeClash7' does not depend on any axioms
+'Recaman.LagElevenPeriodic.phi7Phase_inj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.phi7_phi11_image_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LagElevenPeriodic.suppliedCount_add_u11Count_le_subtractionCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.SharpPeriodicSupply.p2_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SharpPeriodicSupply.sharp_charge_mod_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SharpPeriodicSupply.sharp_charge_is_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SharpPeriodicSupply.sharp_short_mod_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SharpPeriodicSupply.periodic_capacity_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessSupply.band_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessSupply.stream_bounded_excess_multiplicity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BoundedExcessSupply.boundaryTail_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessSupply.boundaryNew_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessSupply.boundaryNew_take_leading' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedExcessSupply.boundaryNew_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessSupply.bounded_excess_optimality_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BoundedExcessReservoir.split_position_deficit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.reservoir_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.middle_block_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.bounded_excess_middle_As' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.stream_middle_As' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.fixed_charge_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedExcessReservoir.middle_As_bound_attained_certificate' does not depend on any axioms
+'Recaman.SupplyReservoirGeometry.run_value' depends on axioms: [propext, Quot.sound]
+'Recaman.SupplyReservoirGeometry.same_run_start' depends on axioms: [propext, Quot.sound]
+'Recaman.SupplyReservoirGeometry.subwindow_ones_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SupplyReservoirGeometry.run_word_ones' depends on axioms: [propext, Quot.sound]
+'Recaman.SupplyReservoirGeometry.reservoir_contains_run_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.SupplyReservoirGeometry.ordered_reservoirs_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SupplyReservoirGeometry.reservoirs_common_point_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedPeriodicSupply.equal_mod_of_close' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.exact_run_lt_period' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.reservoir_length' depends on axioms: [propext]
+'Recaman.BoundedPeriodicSupply.reservoir_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedPeriodicSupply.phase_value' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.reservoirs_common_phase_eq_mod' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.BoundedPeriodicSupply.ones_map_eq_filter_length' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.filter_partition_length' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.reservoir_A_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedPeriodicSupply.short_source_in_candidates' depends on axioms: [propext, Quot.sound]
+'Recaman.BoundedPeriodicSupply.exists_unused_target' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedPeriodicSupply.reservoir_has_unused_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.BoundedPeriodicSupply.periodic_capacity_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NestedReservoirCapacity.used_targets_length_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NestedReservoirCapacity.free_reservoir_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NestedReservoirCapacity.reservoir_word_ones' depends on axioms: [propext, Quot.sound]
+'Recaman.NestedReservoirCapacity.common_point_same_start' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NestedReservoirCapacity.common_phase_same_start_mod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NestedReservoirCapacity.phase_sub_of_equal_mod' depends on axioms: [propext, Quot.sound]
+'Recaman.NestedReservoirCapacity.reservoir_prefix' depends on axioms: [propext, Quot.sound]
+'Recaman.NestedReservoirCapacity.free_reservoir_prefix' depends on axioms: [propext, Quot.sound]
+'Recaman.NestedReservoirCapacity.rank_charge_member' depends on axioms: [propext, Quot.sound]
+'Recaman.NestedReservoirCapacity.rank_charge_same_start_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.NestedReservoirCapacity.density_periodic_capacity_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.NestedReservoirCapacity.bounded_excess_periodic_capacity_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortReservoirCapacity.small_P2_lags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.mem_shortPhases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.shortPhases_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.shortOff_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.short_phase_eq_phi7' depends on axioms: [propext]
+'Recaman.ShortReservoirCapacity.short_phase_eq_phi11' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortReservoirCapacity.short_image_is_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.short_phase_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortReservoirCapacity.short_plus_bounded_excess_capacity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortReservoirCapacity.nonsharp_extension_word_certificate' depends on axioms: [propext]
+'Recaman.ParitySupply.pairs_length' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.positions_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.pairs_mass' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.pairs_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.fixed_first_not_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.variable_first_P2_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.ones_zero_get' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.ones_one_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.past_succ' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.past_even' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.past_odd' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.P2_length_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.even_phase_not_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.odd_P2_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.zero_data_of_get' depends on axioms: [propext]
+'Recaman.ParitySupply.one_data_of_get' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.odd_P2_sufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.odd_P2_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.witness_unique' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.P2_lag_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParitySupply.witness_charge_is_S' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.witness_charge_injective' depends on axioms: [propext, Quot.sound]
+'Recaman.ParitySupply.supplied_phase_is_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParityPeriodicSupply.charge_formula' depends on axioms: [propext, Quot.sound]
+'Recaman.ParityPeriodicSupply.charge_is_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParityPeriodicSupply.charge_mod_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParityPeriodicSupply.periodic_all_lag_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ParityPeriodicSupply.parity_premise_counterexample' does not depend on any axioms
+'Recaman.LocalParitySupply.extension_odd' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.extension_even' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.extension_agrees' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.extension_past' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.extension_subwindow' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.local_P2_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParitySupply.local_P2_sufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParitySupply.local_P2_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParitySupply.clean_is_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParitySupply.clean_lag_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParitySupply.local_charge_S' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParitySupply.local_charge_injective' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParityPeriodic.charge_formula' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParityPeriodic.clean_shift' depends on axioms: [propext, Quot.sound]
+'Recaman.LocalParityPeriodic.charge_is_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParityPeriodic.charge_mod_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.LocalParityPeriodic.periodic_clean_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortLocalParityCapacity.offsetAt_nat' depends on axioms: [propext]
+'Recaman.ShortLocalParityCapacity.maskAux_congr' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortLocalParityCapacity.offsetAt_congr' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortLocalParityCapacity.offsetAt_shift' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortLocalParityCapacity.shortOff_bounds_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortLocalParityCapacity.global_evenBackA' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortLocalParityCapacity.global_short_offset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortLocalParityCapacity.global_line_charge_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortLocalParityCapacity.line_images_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortLocalParityCapacity.short_clean_images_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortLocalParityCapacity.short_plus_clean_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.noSS_tail' depends on axioms: [propext]
+'Recaman.SSFreeSupply.noSAAS_tail' depends on axioms: [propext]
+'Recaman.SSFreeSupply.noSS_mass_lower' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.alt_mass' depends on axioms: [propext]
+'Recaman.SSFreeSupply.alt_S_moment' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.mass_zero_alternates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.evenSlots_pre_alt_A' does not depend on any axioms
+'Recaman.SSFreeSupply.mass_one_even_or_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.p2_noSS_noSAAS_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.evenSlots_get' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.evenSlots_of_get' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.evenSlots_past_iff' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.not_evenSlots_withSS' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.evenSlots_noSS' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.p2_noSS_iff_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.stream_noSS_clean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreeSupply.noSS_cons_iff' depends on axioms: [propext]
+'Recaman.SSFreeSupply.noSS_singleton' depends on axioms: [propext, Quot.sound]
+'Recaman.SSFreeSupply.noSAAS_premise_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalSSFreeSupply.canonicalSign_nat' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalSSFreeSupply.past_get' depends on axioms: [propext]
+'Recaman.CanonicalSSFreeSupply.canonical_noSAAS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalSSFreeSupply.canonical_noSS_clean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalSSFreeSupply.canonical_noSS_iff_clean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreePeriodicSupply.periodic_SSFree_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SSFreePeriodicSupply.short_plus_SSFree_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteP2Semantics.window_prefix_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteP2Semantics.P2_iff_prefix_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteP2Semantics.canonical_value_prefix' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteP2Semantics.canonical_P2_iff_height_one_blocker' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.FiniteP2Semantics.finite_P2_forces_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteP2Semantics.blocker_without_finite_P2_certificate' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteP2Semantics.finite_P2_positive_certificate' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSChargeCounterexample.witness_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSChargeCounterexample.witness_shift_mod' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSChargeCounterexample.witness_noSAAS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSChargeCounterexample.minimum_lags_certificate' does not depend on any axioms
+'Recaman.OneSSChargeCounterexample.window_certificate' does not depend on any axioms
+'Recaman.OneSSChargeCounterexample.centered_charge_collision' depends on axioms: [propext]
+'Recaman.OneSSChargeCounterexample.alternative_injection_certificate' depends on axioms: [propext]
+'Recaman.CanonicalOneSSWindow.canonical_window_certificate' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalOneSSCounterexample.canonical_window_signs' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalOneSSCounterexample.P2_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalOneSSCounterexample.canonical_old_signs' depends on axioms: [propext, Quot.sound]
+'Recaman.CanonicalOneSSCounterexample.canonical_minimum_lags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CanonicalOneSSCounterexample.canonical_centered_collision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.CleanPeriodBound.clean_oldest_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.even_period_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.odd_period_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.clean_lag_lt_twice_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.odd_current_A_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.sharp_current_A_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_periodic' depends on axioms: [propext, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_odd' depends on axioms: [propext, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_even' depends on axioms: [propext, Quot.sound]
+'Recaman.CleanPeriodBound.bounded_multiple_zero' depends on axioms: [propext, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_clean' depends on axioms: [propext, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.sharpFamily_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.CleanPeriodBound.currentSCounter_periodic' depends on axioms: [propext]
+'Recaman.CleanPeriodBound.current_A_premise_counterexample' depends on axioms: [propext, Quot.sound]
+'Recaman.ShortBlockerRigidity.moment_upper_of_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.nonunit_collision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.canonical_collision_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.canonical_nonP2_blocker_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.canonical_short_blocker_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.equalityFamily_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortBlockerRigidity.strictness_canonical_certificate' depends on axioms: [propext, Quot.sound]
+'Recaman.PositivePeriodLag.blocks_length' depends on axioms: [propext]
+'Recaman.PositivePeriodLag.blocks_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.blocks_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.mass_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.moment_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.collision_blocks_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.repeated_word_collision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.periodic_past_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.periodic_collision_lag_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.late_periodic_collision_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PositivePeriodLag.zero_drift_counterfamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.blocks_growth_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.repeated_word_candidate_growth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.EventualPeriodicSupply.period_mass_succ' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualPeriodicSupply.period_mass_constant' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualPeriodicSupply.past_agrees' depends on axioms: [propext, Quot.sound]
+'Recaman.EventualPeriodicSupply.canonical_whole_prefix_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.canonical_prefix_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.canonical_candidate_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.late_A_has_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.EventualPeriodicSupply.every_A_phase_has_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PeriodicTailRepresentation.extension_periodic' depends on axioms: [propext, Quot.sound]
+'Recaman.PeriodicTailRepresentation.natural_period_iterate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PeriodicTailRepresentation.extension_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.PeriodicTailRepresentation.positive_period_P2_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PeriodicTailRepresentation.canonical_natural_eventual_supply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.PeriodicTailRepresentation.balancedCounter_periodic' depends on axioms: [propext]
+'Recaman.PeriodicTailRepresentation.balanced_unbounded_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.value_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.repeated_value_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.nonnegative_quadratic_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.period_mass_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.balanced_moment_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.sum_map_add' depends on axioms: [propext, Quot.sound]
+'Recaman.NonpositivePeriodDrift.sum_map_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.sum_map_zero' depends on axioms: [propext]
+'Recaman.NonpositivePeriodDrift.sum_swap' depends on axioms: [propext, Quot.sound]
+'Recaman.NonpositivePeriodDrift.signSum_map' depends on axioms: [propext]
+'Recaman.NonpositivePeriodDrift.shifted_period_sign_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.balanced_phase_moment_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.sum_nonpositive' depends on axioms: [propext, Quot.sound]
+'Recaman.NonpositivePeriodDrift.member_zero_of_nonpositive_sum' depends on axioms: [propext, Quot.sound]
+'Recaman.NonpositivePeriodDrift.period_moment_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.period_mass_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.canonical_signed_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.NonpositivePeriodDrift.canonical_eventual_mass_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.NonpositivePeriodDrift.canonical_eventual_supply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.past_agrees_general' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.general_prefix_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.general_candidate_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.nat_member_le_sum' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.seed_le_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.prefix_le_bound' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.general_late_A_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.exists_large_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.general_finite_history_supply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.absoluteSign_nat' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.absolute_run_succ' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.seeded_signed_step' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.seeded_history_cases' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.seeded_addition_obstruction' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.seeded_eventual_supply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.canonical_seed_run' depends on axioms: [propext, Quot.sound]
+'Recaman.FiniteSeedPeriodicSupply.canonical_seed_sign' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSGapAlgebra.gapWord_length' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSGapAlgebra.gapWord_mass' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSGapAlgebra.gapWord_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.one_SS_gap_P2_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.one_SS_parameter_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.bad_gap3_has_clean_room' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.gapWeight_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.sum_set_cast' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSGapAlgebra.replicate_one_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.familyGaps_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.family_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.family_A_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.family_B_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSGapAlgebra.centered_counterexample_family_A' does not depend on any axioms
+'Recaman.OneSSMultiplicity.alt_length' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.alt_append' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.alt_A_moment' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.window_length' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.window_P2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSMultiplicity.ssCount_pre_SA' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.ssCount_append_AS' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.ssCount_pre_alt' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.ssCount_post_alt' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.window_single_SS' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.window_embedding' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.current_prefix_A' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.source_A' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.sources_distinct' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.shared_SS_location' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.finite_history_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSMultiplicity.alt_S_prefix_nonpositive' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.alt_A_zero_prefix_moment' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.window_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSMultiplicity.saasCount_pre_SAS' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.saasCount_append_SAS' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.saasCount_pre_alt' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.saasCount_post_alt' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.window_saasCount_zero' depends on axioms: [propext]
+'Recaman.OneSSMultiplicity.saas_occurrence_positive' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.window_noSAAS' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.history_noSAAS' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSMultiplicity.sourcePositions_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSMultiplicity.unbounded_SS_demand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSMultiplicity.window_S_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.OneSSSeededB.exact_values' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSSeededB.exact_signs' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSSeededB.family_B_window' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSSeededB.current_A_and_minimum' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSSeededB.family_B_noSAAS' depends on axioms: [propext, Quot.sound]
+'Recaman.OneSSSeededB.family_B_single_SS' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.gap_balance' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.large_cost' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.enlarged_cost' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.ssCount_pre_A' depends on axioms: [propext]
+'Recaman.SSGapBudget.ssCount_S_As' depends on axioms: [propext]
+'Recaman.SSGapBudget.gapWord_head' depends on axioms: [propext]
+'Recaman.SSGapBudget.ssCount_gapWord' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.noSAAS_suffix' depends on axioms: [propext]
+'Recaman.SSGapBudget.noSAAS_internal_gaps' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.exact_word_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.large_gap_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.enlarged_gap_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.word_gap_representation' depends on axioms: [propext]
+'Recaman.SSGapBudget.nonempty_last' depends on axioms: [propext]
+'Recaman.SSGapBudget.every_word_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.every_P2_budget' depends on axioms: [propext, Quot.sound]
+'Recaman.SSGapBudget.noSAAS_premise_control' does not depend on any axioms
+Axiom audit: 1583 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.

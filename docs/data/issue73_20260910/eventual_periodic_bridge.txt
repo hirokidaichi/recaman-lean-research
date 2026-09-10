@@ -1,0 +1,11 @@
+protocol=H-20260910-17
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=db0f127715aa3f515d5ae57968d87ff6cdd946c38b3c5ae4c19c43a6309337e9
+WORD_CHECK={"p": 1, "tests": 1530, "min_slack": 19}
+WORD_CHECK={"p": 2, "tests": 1530, "min_slack": 263}
+WORD_CHECK={"p": 3, "tests": 6120, "min_slack": 295}
+WORD_CHECK={"p": 4, "tests": 7650, "min_slack": 1459}
+WORD_CHECK={"p": 5, "tests": 24480, "min_slack": 1163}
+ZERO_MASS_CONTROL={"q": 100, "candidate": 0}
+CANONICAL={"through": 2000, "addition_checks": 1008, "positive_blockers": 408, "nonpositive": 600}
+PASS: arbitrary finite-prefix growth core and actual history identities

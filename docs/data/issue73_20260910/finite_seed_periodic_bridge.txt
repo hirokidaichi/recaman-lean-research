@@ -1,0 +1,8 @@
+protocol=H-20260910-21
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=7d147427675cb1484cb5fbc3ff174a1d042971a150246bec7f7e98db110d141c
+DISCOVERY={"base": 0, "transitions": 4096, "windows": 67712, "seed_blockers": 30, "generated_blockers": 876, "nonpositive": 1179}
+DISCOVERY={"base": 1, "transitions": 4096, "windows": 67712, "seed_blockers": 25, "generated_blockers": 910, "nonpositive": 1143}
+HOLDOUT={"base": 5, "transitions": 4096, "windows": 67712, "seed_blockers": 19, "generated_blockers": 784, "nonpositive": 1276}
+HOLDOUT={"base": 100, "transitions": 4096, "windows": 67712, "seed_blockers": 7, "generated_blockers": 425, "nonpositive": 1642}
+PASS: exact seeded history and absolute-clock window semantics

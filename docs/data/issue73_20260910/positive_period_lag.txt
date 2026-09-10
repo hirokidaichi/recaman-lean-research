@@ -1,0 +1,17 @@
+protocol=H-20260910-16
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=36091f7255f70e595c287258327275e4341580459b40434b684706f991fc5aba
+DISCOVERY={"p": 1, "tests": 10, "collision_clocks": 1, "all_clock_P2": 0, "expanded_crosschecks": 10}
+DISCOVERY={"p": 2, "tests": 42, "collision_clocks": 1, "all_clock_P2": 1, "expanded_crosschecks": 42}
+DISCOVERY={"p": 3, "tests": 504, "collision_clocks": 13, "all_clock_P2": 3, "expanded_crosschecks": 504}
+DISCOVERY={"p": 4, "tests": 1650, "collision_clocks": 14, "all_clock_P2": 8, "expanded_crosschecks": 1650}
+DISCOVERY={"p": 5, "tests": 12896, "collision_clocks": 205, "all_clock_P2": 24, "expanded_crosschecks": 12896}
+DISCOVERY={"p": 6, "tests": 41580, "collision_clocks": 223, "all_clock_P2": 46, "expanded_crosschecks": 0}
+DISCOVERY={"p": 7, "tests": 276352, "collision_clocks": 3446, "all_clock_P2": 150, "expanded_crosschecks": 0}
+HOLDOUT={"p": 8, "tests": 901170, "collision_clocks": 5189, "all_clock_P2": 665, "expanded_crosschecks": 0}
+HOLDOUT={"p": 9, "tests": 5494272, "collision_clocks": 54550, "all_clock_P2": 1850, "expanded_crosschecks": 0}
+HOLDOUT={"p": 10, "tests": 18164388, "collision_clocks": 73031, "all_clock_P2": 3886, "expanded_crosschecks": 0}
+ZERO_DRIFT_CONTROL={"q": 1, "length": 6, "clock": 9, "mass": 0, "moment": -9}
+ZERO_DRIFT_CONTROL={"q": 10, "length": 60, "clock": 90, "mass": 0, "moment": -90}
+ZERO_DRIFT_CONTROL={"q": 100, "length": 600, "clock": 900, "mass": 0, "moment": -900}
+PASS: positive-period lag bound; zero-drift premise control

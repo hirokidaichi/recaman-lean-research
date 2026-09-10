@@ -1,0 +1,7 @@
+protocol=H-20260910-12
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=01aa124bbf9eb6713232dabca83d84ba79e91960b6db899ef07efc024a4e50e5
+NEGATIVE={"t": 5, "value": 7, "candidate": 1, "old_time": 1, "P2_lags": []}
+DISCOVERY={"through_sign_time": 500, "window_pairs": 125751, "P2_witnesses": 96, "positive_historical_blockers_without_P2": 46}
+HOLDOUT_CUMULATIVE={"through_sign_time": 2000, "window_pairs": 2003001, "P2_witnesses": 391, "positive_historical_blockers_without_P2": 151}
+PASS: finite P2 iff height-one actual blocker; every P2 forces A

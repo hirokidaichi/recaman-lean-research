@@ -1,0 +1,18 @@
+protocol=H-20260910-18
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=031b45843f1dd772da60a43b93026d35df2d03db73e31120f8b83deede9d87e4
+DISCOVERY={"p": 1, "windows": 3, "P2": 0}
+DISCOVERY={"p": 2, "windows": 16, "P2": 0}
+DISCOVERY={"p": 3, "windows": 180, "P2": 3}
+DISCOVERY={"p": 4, "windows": 480, "P2": 4}
+DISCOVERY={"p": 5, "windows": 2800, "P2": 25}
+DISCOVERY={"p": 6, "windows": 6336, "P2": 30}
+DISCOVERY={"p": 7, "windows": 28224, "P2": 140}
+DISCOVERY={"p": 8, "windows": 59520, "P2": 168}
+HOLDOUT={"p": 9, "windows": 228096, "P2": 684}
+HOLDOUT={"p": 10, "windows": 463200, "P2": 920}
+HOLDOUT={"p": 11, "windows": 1610752, "P2": 3267}
+HOLDOUT={"p": 12, "windows": 3197376, "P2": 4464}
+BALANCED_CONTROL={"q_range": [0, 64], "lags": [3, 259], "period": 4}
+EXTENSION={"checks": 164892}
+PASS: cutoff and exact natural/integer periodic-tail representation

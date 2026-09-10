@@ -1,0 +1,49 @@
+Recaman.LeadingRunSupply.stream_leading_run_bound (e : Int → Bool) (t : Int) (d m : Nat) (hm : 3 ≤ m) (hmd : m ≤ d)
+  (ha : ∀ (i : Nat), i < m → e (t - ↑(i + 1)) = true) (h : Recaman.ShortPeriodicSupply.P2 e t d) : 4 * m ≤ d + 1
+Recaman.LeadingRunSupply.sharpFamily_certificate (m : Nat) (hm : 3 ≤ m) :
+  (Recaman.LeadingRunSupply.sharpFamily m).length = 4 * m - 1 ∧
+    List.take m (Recaman.LeadingRunSupply.sharpFamily m) = List.replicate m true ∧
+      Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.sharpFamily m) ∧
+        ∀ (d : Nat),
+          d < (Recaman.LeadingRunSupply.sharpFamily m).length →
+            ¬Recaman.LeadingRunSupply.P2 (List.take d (Recaman.LeadingRunSupply.sharpFamily m))
+Recaman.LeadingRunSupply.nested_supply_gap (w v : List Bool) (k : Nat) (hw : Recaman.LeadingRunSupply.P2 w)
+  (hnew : Recaman.LeadingRunSupply.P2 (List.replicate k true ++ w ++ v)) :
+  4 * ↑k * (↑w.length - 1) ≤ (↑k + ↑v.length) * (↑v.length - 3 * ↑k)
+Recaman.LeadingRunSupply.stream_nested_supply_strict_gap (e : Int → Bool) (t : Int) (d d₂ k : Nat) (hk : 1 ≤ k)
+  (hcontain : d + k ≤ d₂) (ha : ∀ (i : Nat), i < k → e (t + ↑i) = true) (hw : Recaman.ShortPeriodicSupply.P2 e t d)
+  (hnew : Recaman.ShortPeriodicSupply.P2 e (t + ↑k) d₂) : d + 4 * k < d₂
+Recaman.LeadingRunSupply.sharp_protected_charge (e : Int → Bool) (t u : Int) (m L d j : Nat) (hm : 3 ≤ m)
+  (hL : L + 1 ≤ m) (ha : ∀ (i : Nat), i < m → e (t - ↑(i + 1)) = true)
+  (hp : Recaman.ShortPeriodicSupply.P2 e t (4 * m - 1)) (hj : 1 ≤ j) (hjL : j ≤ L) (hd : d ≤ L) (hcur : e u = true)
+  (hshort : Recaman.ShortPeriodicSupply.P2 e u d) (hlag3 : Recaman.ShortPeriodicSupply.P2 e u 3 → j = 3) :
+  u - ↑j ≠ t - ↑m - 2
+Recaman.LeadingRunSupply.nonnested_lag_drop_certificate :
+  Recaman.LeadingRunSupply.nonnestedExample.length = 23 ∧
+    List.take 3 Recaman.LeadingRunSupply.nonnestedExample = List.replicate 3 true ∧
+      Recaman.LeadingRunSupply.P2 Recaman.LeadingRunSupply.nonnestedExample ∧
+        (∀ (d : Fin 23), ¬Recaman.LeadingRunSupply.P2 (List.take (↑d) Recaman.LeadingRunSupply.nonnestedExample)) ∧
+          Recaman.LeadingRunSupply.P2 (List.take 15 (true :: Recaman.LeadingRunSupply.nonnestedExample)) ∧
+            ∀ (d : Fin 15),
+              ¬Recaman.LeadingRunSupply.P2 (List.take (↑d) (true :: Recaman.LeadingRunSupply.nonnestedExample))
+Recaman.SharpPeriodicSupply.periodic_capacity_extension (e : Int → Bool) (p L : Nat)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (hp : 0 < p) (U Q : List Nat) (run off : Nat → Nat) (hUnodup : U.Nodup)
+  (hQnodup : Q.Nodup) (hUrange : ∀ (u : Nat), u ∈ U → u < p) (hQrange : ∀ (t : Nat), t ∈ Q → t < p)
+  (hUA : ∀ (u : Nat), u ∈ U → e ↑u = true)
+  (hUsupply : ∀ (u : Nat), u ∈ U → ∃ d, d ≤ L ∧ Recaman.ShortPeriodicSupply.P2 e (↑u) d)
+  (hOff : ∀ (u : Nat), u ∈ U → 1 ≤ off u ∧ off u ≤ L ∧ (Recaman.ShortPeriodicSupply.P2 e (↑u) 3 → off u = 3))
+  (hUS : ∀ (u : Nat), u ∈ U → e ↑(Recaman.SharpPeriodicSupply.phase p (↑u - ↑(off u))) = false)
+  (hUinj :
+    ∀ (u v : Nat),
+      u ∈ U →
+        v ∈ U →
+          Recaman.SharpPeriodicSupply.phase p (↑u - ↑(off u)) = Recaman.SharpPeriodicSupply.phase p (↑v - ↑(off v)) →
+            u = v)
+  (hRun :
+    ∀ (t : Nat),
+      t ∈ Q →
+        3 ≤ run t ∧
+          L + 1 ≤ run t ∧
+            (∀ (i : Nat), i < run t → e (↑t - ↑(i + 1)) = true) ∧
+              Recaman.ShortPeriodicSupply.P2 e (↑t) (4 * run t - 1)) :
+  U.length + Q.length ≤ (Recaman.LagElevenPeriodic.subPhases e 0 p).length

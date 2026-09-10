@@ -1,0 +1,20 @@
+protocol=H-20260909-05
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+script_sha256=ec7995b59f18c0354d22545bf6be96979f52ace1876b0f1975e466cdc692977d
+CONTROLS=both moment assumptions independently necessary
+DISCOVERY={"d": 3, "k": 1, "max_tail": 15, "tails_tested": 8788, "nested_P2": 275, "smallest_tail": 7, "min_slack": 24, "witness_tail": "SASSSAA", "violations": 0}
+DISCOVERY={"d": 3, "k": 2, "max_tail": 15, "tails_tested": 4081, "nested_P2": 76, "smallest_tail": 10, "min_slack": 32, "witness_tail": "SSASSSSAAA", "violations": 0}
+DISCOVERY={"d": 3, "k": 3, "max_tail": 15, "tails_tested": 6733, "nested_P2": 7, "smallest_tail": 13, "min_slack": 40, "witness_tail": "SSSASSSSSAAAA", "violations": 0}
+DISCOVERY={"d": 7, "k": 1, "max_tail": 15, "tails_tested": 8788, "nested_P2": 234, "smallest_tail": 7, "min_slack": 8, "witness_tail": "SSSASAA", "violations": 0}
+DISCOVERY={"d": 7, "k": 2, "max_tail": 15, "tails_tested": 4081, "nested_P2": 34, "smallest_tail": 10, "min_slack": 0, "witness_tail": "SSSSSSAAAA", "violations": 0}
+DISCOVERY={"d": 7, "k": 3, "max_tail": 15, "tails_tested": 6733, "nested_P2": 0, "smallest_tail": null, "min_slack": null, "witness_tail": null, "violations": 0}
+DISCOVERY={"d": 11, "k": 1, "max_tail": 15, "tails_tested": 8788, "nested_P2": 188, "smallest_tail": 11, "min_slack": 56, "witness_tail": "ASSSSSASAAA", "violations": 0}
+DISCOVERY={"d": 11, "k": 2, "max_tail": 15, "tails_tested": 4081, "nested_P2": 11, "smallest_tail": 14, "min_slack": 48, "witness_tail": "SSASSSSSSAAAAA", "violations": 0}
+DISCOVERY={"d": 11, "k": 3, "max_tail": 15, "tails_tested": 6733, "nested_P2": 0, "smallest_tail": null, "min_slack": null, "witness_tail": null, "violations": 0}
+HOLDOUT={"d": 15, "k": 1, "max_tail": 19, "tails_tested": 125476, "nested_P2": 2031, "smallest_tail": 11, "min_slack": 40, "witness_tail": "SASSSSSAAAA", "violations": 0}
+HOLDOUT={"d": 15, "k": 2, "max_tail": 19, "tails_tested": 59279, "nested_P2": 169, "smallest_tail": 14, "min_slack": 16, "witness_tail": "SSSSSSASSAAAAA", "violations": 0}
+HOLDOUT={"d": 15, "k": 3, "max_tail": 19, "tails_tested": 101763, "nested_P2": 0, "smallest_tail": null, "min_slack": null, "witness_tail": null, "violations": 0}
+HOLDOUT={"d": 19, "k": 1, "max_tail": 19, "tails_tested": 125476, "nested_P2": 1707, "smallest_tail": 11, "min_slack": 24, "witness_tail": "SSSASSSAAAA", "violations": 0}
+HOLDOUT={"d": 19, "k": 2, "max_tail": 19, "tails_tested": 59279, "nested_P2": 68, "smallest_tail": 18, "min_slack": 96, "witness_tail": "ASSSSSSSSASSAAAAAA", "violations": 0}
+HOLDOUT={"d": 19, "k": 3, "max_tail": 19, "tails_tested": 101763, "nested_P2": 0, "smallest_tail": null, "min_slack": null, "witness_tail": null, "violations": 0}
+PASS: exact finite nested-window checks; not the all-length proof

@@ -1,0 +1,20 @@
+protocol=H-20260910-08
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+script_sha256=69cab1ce1f82ee366874486fce2c8b1b27e19bef5edcab44e839b11fef3b7a22
+solver_sha256=6753426aaadfefd58a0588d040c9873bebb72f493cf1fb2191503213c03551ce
+DISCOVERY={"compressed_period": 1, "words": 2, "supplied_phases": 0, "lags_longer_than_original_period": 0, "maximum_lag": 0, "equality_words": 1, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 2, "words": 4, "supplied_phases": 2, "lags_longer_than_original_period": 0, "maximum_lag": 3, "equality_words": 3, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 3, "words": 8, "supplied_phases": 6, "lags_longer_than_original_period": 0, "maximum_lag": 3, "equality_words": 4, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 4, "words": 16, "supplied_phases": 16, "lags_longer_than_original_period": 0, "maximum_lag": 3, "equality_words": 7, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 5, "words": 32, "supplied_phases": 45, "lags_longer_than_original_period": 5, "maximum_lag": 11, "equality_words": 11, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 6, "words": 64, "supplied_phases": 102, "lags_longer_than_original_period": 0, "maximum_lag": 11, "equality_words": 18, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 7, "words": 128, "supplied_phases": 238, "lags_longer_than_original_period": 0, "maximum_lag": 11, "equality_words": 29, "minimum_slack": 0, "first_lag_above_11": null, "violations": 0}
+DISCOVERY={"compressed_period": 8, "words": 256, "supplied_phases": 552, "lags_longer_than_original_period": 8, "maximum_lag": 19, "equality_words": 47, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSA", "phase": 3, "lag": 19, "charge": 8}, "violations": 0}
+DISCOVERY={"compressed_period": 9, "words": 512, "supplied_phases": 1233, "lags_longer_than_original_period": 9, "maximum_lag": 19, "equality_words": 76, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSA", "phase": 3, "lag": 19, "charge": 10}, "violations": 0}
+DISCOVERY={"compressed_period": 10, "words": 1024, "supplied_phases": 2730, "lags_longer_than_original_period": 0, "maximum_lag": 19, "equality_words": 123, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSSA", "phase": 3, "lag": 19, "charge": 12}, "violations": 0}
+HOLDOUT={"compressed_period": 11, "words": 2048, "supplied_phases": 6017, "lags_longer_than_original_period": 11, "maximum_lag": 27, "equality_words": 199, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSSSA", "phase": 3, "lag": 19, "charge": 14}, "violations": 0}
+HOLDOUT={"compressed_period": 12, "words": 4096, "supplied_phases": 13116, "lags_longer_than_original_period": 12, "maximum_lag": 27, "equality_words": 322, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSSSSA", "phase": 3, "lag": 19, "charge": 16}, "violations": 0}
+HOLDOUT={"compressed_period": 13, "words": 8192, "supplied_phases": 28405, "lags_longer_than_original_period": 13, "maximum_lag": 27, "equality_words": 521, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSSSSSA", "phase": 3, "lag": 19, "charge": 18}, "violations": 0}
+HOLDOUT={"compressed_period": 14, "words": 16384, "supplied_phases": 61180, "lags_longer_than_original_period": 14, "maximum_lag": 35, "equality_words": 843, "minimum_slack": 0, "first_lag_above_11": {"even_signs": "SSSSSSSSSSSSSA", "phase": 3, "lag": 19, "charge": 20}, "violations": 0}
+DROP_PARITY_CONTROL={"word": "SSSAAAA", "phase": 5, "lag": 11, "putative_charge": 5, "putative_charge_sign": "A"}
+PASS: all-lag classification and injective S charge survived; parity premise is essential

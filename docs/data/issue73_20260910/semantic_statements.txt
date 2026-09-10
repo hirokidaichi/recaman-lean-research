@@ -1,0 +1,114 @@
+Recaman.ShortLocalParityCapacity.short_plus_clean_capacity : ∀ (e : Int → Bool) (p : Nat),
+  0 < p →
+    (∀ (x : Int), e (x + ↑p) = e x) →
+      ∀ (Q : List Nat),
+        Q.Nodup →
+          (∀ (t : Nat), t ∈ Q → t < p) →
+            (∀ (t : Nat),
+                t ∈ Q →
+                  e ↑t = true ∧
+                    ∃ d,
+                      19 ≤ d ∧ Recaman.ShortPeriodicSupply.P2 e (↑t) d ∧ Recaman.LocalParitySupply.EvenBackA e (↑t) d) →
+              Recaman.ShortPeriodicSupply.suppliedCount e 0 p + Recaman.LagElevenPeriodic.u11Count e 0 p + Q.length ≤
+                Recaman.ShortPeriodicSupply.subtractionCount e 0 p
+Recaman.CanonicalSSFreeSupply.canonical_noSAAS : ∀ (t d : Nat),
+  d ≤ t → Recaman.SSFreeSupply.NoSAAS (Recaman.LeadingRunSupply.past Recaman.CanonicalSSFreeSupply.canonicalSign (↑t) d)
+Recaman.FiniteP2Semantics.canonical_P2_iff_height_one_blocker : ∀ (u d : Nat),
+  Recaman.ShortPeriodicSupply.P2 Recaman.CanonicalSSFreeSupply.canonicalSign (↑(u + d)) d ↔
+    Recaman.ShortPeriodicSupply.signSum Recaman.CanonicalSSFreeSupply.canonicalSign 0 (u + d) -
+          Recaman.ShortPeriodicSupply.signSum Recaman.CanonicalSSFreeSupply.canonicalSign 0 u =
+        1 ∧
+      Recaman.a (u + d) = Recaman.a u + (u + d) + 1
+Recaman.CleanPeriodBound.sharp_current_A_bound : ∀ (e : Int → Bool) (p : Nat),
+  0 < p →
+    (∀ (x : Int), e (x + ↑p) = e x) →
+      ∀ (t : Int) (d : Nat),
+        e t = true →
+          Recaman.LocalParitySupply.EvenBackA e t d → Recaman.ShortPeriodicSupply.P2 e t d → 3 * d + 7 ≤ 4 * p
+Recaman.ShortBlockerRigidity.canonical_short_blocker_P2 : ∀ (u d : Nat),
+  Recaman.a (u + d) = Recaman.a u + (u + d) + 1 →
+    ↑d * (↑d + 4) < 4 * ↑(u + d + 1) →
+      Recaman.ShortPeriodicSupply.P2 Recaman.CanonicalSSFreeSupply.canonicalSign (↑(u + d)) d
+Recaman.PositivePeriodLag.periodic_collision_lag_bound : ∀ (e : Int → Bool) (p : Nat),
+  0 < p →
+    (∀ (x : Int), e (x + ↑p) = e x) →
+      ∀ (t : Int) (d : Nat) (n : Int),
+        1 ≤ Recaman.LeadingRunSupply.mass (Recaman.LeadingRunSupply.past e t p) →
+          ↑d < n →
+            Recaman.LeadingRunSupply.moment (Recaman.LeadingRunSupply.past e t d) =
+                n * (Recaman.LeadingRunSupply.mass (Recaman.LeadingRunSupply.past e t d) - 1) →
+              d < (4 * p + 4) * p
+Recaman.PeriodicTailRepresentation.positive_period_P2_cutoff : ∀ (e : Int → Bool) (p : Nat),
+  0 < p →
+    (∀ (t : Int), e (t + ↑p) = e t) →
+      1 ≤ Recaman.LeadingRunSupply.mass (Recaman.LeadingRunSupply.past e 0 p) →
+        ∀ (t : Int) (d : Nat), Recaman.ShortPeriodicSupply.P2 e t d → 0 < d ∧ d < p * (p + 1)
+Recaman.NonpositivePeriodDrift.period_mass_positive : ∀ (x : Nat → Nat) (e : Int → Bool) (N p : Nat),
+  0 < p →
+    (∀ (n : Nat), N ≤ n → ↑(x (n + 1)) = ↑(x n) + ↑(n + 1) * Recaman.ShortPeriodicSupply.sign (e ↑n)) →
+      (∀ (t : Int), e (t + ↑p) = e t) → 1 ≤ Recaman.LeadingRunSupply.mass (Recaman.LeadingRunSupply.past e 0 p)
+Recaman.FiniteSeedPeriodicSupply.seeded_eventual_supply : ∀ (b : Nat) (s : Recaman.State) (N p : Nat),
+  b ≤ N →
+    0 < p →
+      (∀ (n : Nat),
+          N ≤ n →
+            Recaman.FiniteSeedPeriodicSupply.absoluteSign b s ↑(n + p) =
+              Recaman.FiniteSeedPeriodicSupply.absoluteSign b s ↑n) →
+        have e :=
+          Recaman.PeriodicTailRepresentation.extension (fun n => Recaman.FiniteSeedPeriodicSupply.absoluteSign b s ↑n) N
+            p;
+        1 ≤ Recaman.LeadingRunSupply.mass (Recaman.LeadingRunSupply.past e 0 p) ∧
+          ∀ (t : Int), e t = true → ∃ d, 0 < d ∧ d < p * (p + 1) ∧ Recaman.ShortPeriodicSupply.P2 e t d
+Recaman.OneSSGapAlgebra.family_A_P2 : ∀ (n j z : Nat),
+  2 ≤ n →
+    1 ≤ j →
+      j < n →
+        1 ≤ z →
+          z < n →
+            j ≠ z →
+              ↑n = 6 * ↑j - 2 * ↑z + 1 →
+                (Recaman.OneSSGapAlgebra.gapWord 0 (Recaman.OneSSGapAlgebra.familyGaps n j z 3)).length = 2 * n + 1 ∧
+                  Recaman.LeadingRunSupply.P2
+                    (Recaman.OneSSGapAlgebra.gapWord 0 (Recaman.OneSSGapAlgebra.familyGaps n j z 3))
+Recaman.OneSSGapAlgebra.family_B_P2 : ∀ (n j z : Nat),
+  2 ≤ n →
+    1 ≤ j →
+      j < n →
+        1 ≤ z →
+          z < n →
+            j ≠ z →
+              ↑n = 4 * ↑j - 2 * ↑z + 1 →
+                (Recaman.OneSSGapAlgebra.gapWord 1 (Recaman.OneSSGapAlgebra.familyGaps n j z 2)).length = 2 * n + 1 ∧
+                  Recaman.LeadingRunSupply.P2
+                    (Recaman.OneSSGapAlgebra.gapWord 1 (Recaman.OneSSGapAlgebra.familyGaps n j z 2))
+Recaman.OneSSMultiplicity.window_minimum : ∀ (k d : Nat),
+  d ≤ (Recaman.OneSSMultiplicity.window k).length →
+    Recaman.LeadingRunSupply.P2 (List.take d (Recaman.OneSSMultiplicity.window k)) →
+      d = (Recaman.OneSSMultiplicity.window k).length
+Recaman.OneSSMultiplicity.finite_history_certificate : ∀ (K : Nat),
+  Recaman.OneSSMultiplicity.ssCount (true :: Recaman.OneSSMultiplicity.window K) = 1 ∧
+    ∀ (k : Nat),
+      k ≤ K →
+        Recaman.LeadingRunSupply.P2 (Recaman.OneSSMultiplicity.window k) ∧
+          (true :: Recaman.OneSSMultiplicity.window K)[2 * (K - k)]? = some true ∧
+            Recaman.OneSSMultiplicity.window K =
+              Recaman.SSFreeSupply.alt false (K - k) ++ Recaman.OneSSMultiplicity.window k ++
+                Recaman.SSFreeSupply.alt true (3 * (K - k))
+Recaman.OneSSMultiplicity.unbounded_SS_demand : ∀ (C : Nat),
+  C * Recaman.OneSSMultiplicity.ssCount (true :: Recaman.OneSSMultiplicity.window C) <
+      (Recaman.OneSSMultiplicity.sourcePositions C).length ∧
+    (Recaman.OneSSMultiplicity.sourcePositions C).Nodup ∧
+      Recaman.SSFreeSupply.NoSAAS (true :: Recaman.OneSSMultiplicity.window C)
+Recaman.OneSSSeededB.current_A_and_minimum : Recaman.FiniteSeedPeriodicSupply.absoluteSign 10 Recaman.OneSSSeededB.seed
+      21 =
+    true ∧
+  Recaman.ShortPeriodicSupply.P2 (Recaman.FiniteSeedPeriodicSupply.absoluteSign 10 Recaman.OneSSSeededB.seed) 21 11 ∧
+    ∀ (d : Fin 11),
+      ¬Recaman.ShortPeriodicSupply.P2 (Recaman.FiniteSeedPeriodicSupply.absoluteSign 10 Recaman.OneSSSeededB.seed) 21 ↑d
+Recaman.SSGapBudget.every_P2_budget : ∀ (w : List Bool),
+  Recaman.LeadingRunSupply.P2 w →
+    Recaman.SSFreeSupply.NoSAAS w →
+      ∃ a v gs,
+        w = Recaman.OneSSGapAlgebra.gapWord a (gs ++ [v]) ∧
+          a + v + Recaman.SSGapBudget.extraAs gs = Recaman.OneSSMultiplicity.ssCount w + 2 ∧
+            a + v + 2 * Recaman.SSGapBudget.enlargedGaps gs ≤ Recaman.OneSSMultiplicity.ssCount w + 2

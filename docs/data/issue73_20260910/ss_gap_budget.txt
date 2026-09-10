@@ -1,0 +1,24 @@
+protocol=H-20260910-26
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=44f82112436d50928cef0d091a0b1c4fa4a77fc0ec73abac0dde98585849f6b5
+DISCOVERY={"length": 1, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 2, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 3, "mass_one": 3, "noSAAS": 3, "overlappingSS": 0}
+DISCOVERY={"length": 4, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 5, "mass_one": 10, "noSAAS": 8, "overlappingSS": 0}
+DISCOVERY={"length": 6, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 7, "mass_one": 35, "noSAAS": 24, "overlappingSS": 5}
+DISCOVERY={"length": 8, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 9, "mass_one": 126, "noSAAS": 75, "overlappingSS": 36}
+DISCOVERY={"length": 10, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 11, "mass_one": 462, "noSAAS": 238, "overlappingSS": 196}
+DISCOVERY={"length": 12, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+DISCOVERY={"length": 13, "mass_one": 1716, "noSAAS": 766, "overlappingSS": 932}
+HOLDOUT={"length": 14, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+HOLDOUT={"length": 15, "mass_one": 6435, "noSAAS": 2496, "overlappingSS": 4131}
+HOLDOUT={"length": 16, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+HOLDOUT={"length": 17, "mass_one": 24310, "noSAAS": 8203, "overlappingSS": 17545}
+HOLDOUT={"length": 18, "mass_one": 0, "noSAAS": 0, "overlappingSS": 0}
+HOLDOUT={"length": 19, "mass_one": 92378, "noSAAS": 27120, "overlappingSS": 72523}
+NEGATIVE_CONTROL={"word": "ASAAS", "gaps": [1, 2, 0], "SS": 0, "enlarged": 1, "lhs": 3, "rhs": 2}
+PASS: exact budget without NoSAAS; all enlarged gaps cost two under NoSAAS

@@ -1,12 +1,64 @@
 # Current research frontier
 
-最終更新: 2026-09-09
+最終更新: 2026-09-10
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
 [`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
 
 ## 結論
+
+2026-09-10の[3時間研究](THREE_HOUR_RESEARCH_2026-09-10.md)で、**有限履歴から周期供給問題への縮約 E-065 を元の任意有限 State・任意開始 clock の範囲で Lean 証明した**。
+周期性を仮定した実 greedy 更新から正の周期符号和と各 A 位相の P2 供給を導く。
+供給の存在を仮定に置き換えていない。必要 lag は `0<d<p(p+1)`。
+一方、全 A の同時供給を禁じる E-067、全 lag の容量 E-070、全射性・非全射性は未解決。
+決着へ直結する active direct branch は 0 本のままである。
+
+容量側は **全 lag≤11 と、偶数 backward offset がすべて A の clean 窓の和集合**まで、
+全周期の A→S 単射を Lean で証明した。追加する clean lag に固定上限はない。
+SAAS を含まない P2 窓では「SS がない」と clean が同値で、標準実更新は SAAS を含まない。
+標準 10^7 ステップの有限 P2 供給 A では、この和集合が
+921,983 / 1,315,896 = 70.065% を占めた。これは有限診断であり、全 A や無限軌道の割合ではない。
+
+次の焦点は **SS を跨ぐ供給と周囲の S の共同配分**である。SS が 1 個の最小窓は二族へ紙上で完全分類した。
+ただし同じ SS に集まる需要は任意に大きくなることを Lean で証明したため、SS ごとの定数予算は停止。
+標準軌道でも一つの SS に 2,796 件が集まる。10^7 では見えなかった型 B は
+step 96,911,838 で見つかり、独立した全 prefix 再計算で確認した。A/B の双方を残す。
+E-127 ではこの二族から「一つの A run に SS1 最小供給は高々一つ」を紙上で証明し、
+SS1 クラス単独の容量を全周期・全符号和で得た。ただし clean/short の写像と像が競合するため、
+別々の容量を足してはいけない。型 B では直後の clean AAS 供給と charge が必ず衝突し、
+period13 `SSAAASASASAAA` が具体例になる。次の unit は、二族の窓に含まれる通常の S の
+重なりを数える明示的不等式を凍結し、共通履歴・周期接着の反例探索から始める。
+新しい不等式がなければ、型表や charge offset の追加を続けない。
+
+| 証拠 | 安定した成果・停止判断 |
+|---|---|
+| E-096 | 入れ子を仮定しない `(d₂−d)²≥4k(d₂−1)` と最適等号例、`PROVED-LEAN` |
+| E-097 | 余剰≤4R の同 run 多重度閾値 `m≤R(R+1)` と全 R≥2 境界族、`PROVED-LEAN` |
+| E-098 / E-099 | 中央 reservoir の A≤2R は `PROVED-LEAN`、固定 offset 延長は全 m≥3 で `REFUTED` |
+| E-100 / E-101 | bounded-excess 容量を全周期で証明。同 run の rank により閾値を線形化、`PROVED-LEAN` |
+| E-102 / E-103 | U≤11 との具体的容量は `PROVED-LEAN`。標準 10^7 で長 run 拡張の対象 0 件、追加最適化停止 |
+| E-104 | 全 odd 時刻 A という明示的制約下の全 lag 容量、`PROVED-LEAN` |
+| E-105 / E-106 / E-107 | clean を窓ごとへ局所化し U≤11 と合成、`PROVED-LEAN`。70.065% は `COMPUTED` |
+| E-108 | 固定小偶奇欠陥数の拡張は `STOPPED`。有限 Hall 通過を一般証明としない |
+| E-109 / E-110 | NoSAAS 下で SS-free iff clean、標準更新との接続は `PROVED-LEAN`。残余 SS 数は `COMPUTED` |
+| E-111 | 有限 P2 iff 符号差 1 の実 historical blocker、`PROVED-LEAN`。一般 blocker の必要条件ではない |
+| E-112 | 中央 charge は周期 12 と標準 sign time 1350/1352 で `REFUTED`、両方 Lean 認証 |
+| E-113 | clean lag は d<2p、現在 A なら最適 `3d+7≤4p`、`PROVED-LEAN` |
+| E-114 / E-115 | 短い blocker の P2 剛性と正周期での clock 非依存 lag bound、`PROVED-LEAN` |
+| E-116 / E-117 | 標準正ドリフト尾から P2、自然周期の整数拡張と `d<p(p+1)`、`PROVED-LEAN` |
+| E-118 | phase energy は旧 κ の定数倍だったため `STOPPED`。有限通過は新機構ではない |
+| E-119 / E-120 | 非正の value drift 排除と任意有限 State への接続、`PROVED-LEAN`。E-065 全体を昇格 |
+| E-121 | SS1 最小窓の二族完全分類は `PROVED-PAPER`。全パラメータ族の P2 式は `PROVED-LEAN` |
+| E-122 | 同じ唯一の SS を跨ぐ最小供給需要は非有界、`PROVED-LEAN`。総 S 容量への反例ではない |
+| E-123 | 標準 10^7 の SS1 最小供給 70,375 件、同じ SS の最大需要 2,796、`COMPUTED` |
+| E-124 / E-125 | 型 B 排除は有限 seed で `REFUTED`（Lean）、標準 step 96,911,838 でも `COMPUTED` |
+| E-126 | 任意 SS 数で内部の加算 run を制限する `a+v+2B≤SS+2` と正確な gap 余剰保存、`PROVED-LEAN` |
+| E-127 | SS1 最小供給は A run ごとに高々一つ、従って全周期で SS1 単独の容量、`PROVED-PAPER` |
+
+## 2026-09-09 以前の判断と継承した証拠
+
+以下は今回の出発点となった履歴である。「次」の指定は上の結論で更新する。
 
 研究の目標は標準Recamán数列の全射性の真偽を決着させること。全射性・非全射性はともに未証明である。
 全射性の命題の証拠レベルは`CONJECTURED`。現在、決着へ直結するactive direct branchは0本である。
@@ -30,10 +82,33 @@ C++のL=23は正サイクルなし・max P=5で、L=19のmax=4は天井ではな
 U7のfollowing-gap類へのlag-11一様課金は`ASSSASSAAAASSA`で偽（E-085）。lag-by-lagの
 型offset延長はE-088で停止。
 
+2026-09-09の[一回・二回の減算先読み](HYPOTHESIS_CARD_2026-09-09_CATALYTIC_LOOKAHEAD.md)は
+両候補をL=11で反証した（E-089, `REFUTED`）。未来の減算をk回まで許した最大純供給数R_kは、
+S一歩でk=1では1→3、k=2では0→2と増え、F_k=−R_kの支払不等式が破れる。
+上界を含む値は独立全列挙で確認。kを増やす今回の探索は`STOPPED`とし、任意の固定kの不可能性や
+E-067/E-070の反証とは扱わない。再開には減算による供給の繰り返し再活性化を扱う構造が必要。
+
+同日の[1時間研究](ONE_HOUR_RESEARCH_2026-09-09.md)で、型表に依存しない局所障害を得た。
+先頭にm≥3個のAを持つP2窓は **d≥4m−1**、この下界を達成する全mの族もLean（E-090）。
+等号窓はmの整数分割と一対一（E-091, `PROVED-PAPER`）で、直後のm−1個のSはLeanで強制される。
+同じA区間の入れ子供給には **Δ(Δ−4k)≥4k(d−1)** が必要で、等号窓のchargeは単射、
+長い等号窓の直前から二つ目のSは短い供給のchargeと衝突しない（E-092, `PROVED-LEAN`）。
+この局所機構と周期上の接着から **|U≤15|+|Q(m≥16,d=4m−1)|≤|D|** を紙上で得た
+（E-093）。追加するlagは63以上で上限なし。周期接着・像の非衝突・一般の個数拡張も
+Leanで証明した（E-095）。既存φ7/φ11/φ15への具体的適用は紙上であり、
+すべての長い窓を扱うE-070とは区別する。
+
+一方、最小供給lagがA区間で単調に増える案は反証した（E-094）。具体例の23→15はLean、
+先頭A数r²−1でlagが4r²+4r−1→4r²−1となる任意r≥2の族は紙上。
+従って「長いA区間なら窓は入れ子」としてE-092を拡張してはいけない。
+次の研究対象は**等号でない窓と、入れ子でない窓への切り替わりを同時に扱う局所制約**。
+lag別型表、先読み回数の増加、run長だけでの単調lag修理は再開しない。
+E-067/E-070および全射性・非全射性の未解決状態とactive direct branch 0は変わらない。
+
 
 最新の[並列調査と順位](PARALLEL_APPROACH_TRIAGE_2026-09-07.md)では、次に掘る候補を
 **周期符号語の供給不足**へ絞り、[issue #73](https://github.com/hirokidaichi/recaman-lean-research/issues/73)を作成した。有限履歴のeventually periodicな実更新は、各加算phaseに
-有限lagの供給恒等式P2を要求する（`E-065`, `PROVED-PAPER`、独立監査済み）。
+有限lagの供給恒等式P2を要求する（`E-065`, `PROVED-LEAN`、2026-09-10に全有限State版を監査済み）。
 それを全加算phaseで同時に満たす正符号和の語は存在しない、という命題は`CONJECTURED`（`E-067`）。
 period≤18の229,045語と別の90,640評価では反例0だが、一般証明ではない（`E-066`, `COMPUTED`）。
 強化した供給phase数の容量不等式も未証明（`E-070`）で、最古Sへの単射案は反証済み（`E-069`）。

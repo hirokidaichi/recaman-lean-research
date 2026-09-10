@@ -1,4 +1,7 @@
 module	direct_imports	purpose
+Recaman.SignedSupplyGap	Recaman.LeadingRunSupply	入れ子を仮定しないP2 lagの符号付き二次間隔と最適係数の証人
+Recaman.SharpPeriodicSupply	Recaman.LeadingRunSupply;Recaman.LagElevenPeriodic	sharp窓chargeの周期接着と既存短距離単射に対する一般容量拡張
+Recaman.LeadingRunSupply	Recaman.ShortPeriodicSupply	全lagの先頭A連続長下界、sharp窓、入れ子間隔、保護Sと非入れ子反例を実P2へ接着
 Recaman.RecurringCandidateDemandBirth	Recaman.EventualHighCorridorBirth;Recaman.RecurringCandidateBurst	birth分類とrecurring burstの最小composition境界
 Recaman.PeriodicCandidateNoGo	-	Recamán軌道から独立したPrelude-only有限算術核
 Recaman.ShortPeriodicSupply	-	実際の周期符号から7bit履歴を構成し、全periodでlag≤7の供給容量を証明
@@ -26,3 +29,32 @@ Recaman.SurvivalCountermodelSeed	Recaman.SurvivalCountermodelResidue	任意finit
 Recaman.SurvivalCountermodelResources	Recaman.SurvivalCountermodelReplay	任意finite-prefix survival反例族の独立した証明層
 Recaman.FinitePrefixSurvivalCountermodel	Recaman.SurvivalCountermodelSeed;Recaman.SurvivalCountermodelResources;Recaman.SeededReplayWrap	任意finite-prefix survival反例族の独立した証明層
 Recaman.PermanentAboveClock112Exclusion	Recaman.PermanentAboveClock112FirstOccurrence;Recaman.DeepNineteenTraceCertificate	clock112のno-low補題とkernel認証19@99734を結合してreplay clock112を排除
+Recaman.BoundedExcessSupply	Recaman.SignedSupplyGap	Bounded-excess multiplicity and sharp boundary witnesses
+Recaman.BoundedExcessReservoir	Recaman.LeadingRunSupply	Bounded-excess middle-block density and fixed-charge failure
+Recaman.SupplyReservoirGeometry	Recaman.BoundedExcessSupply;Recaman.BoundedExcessReservoir	Integer-line reservoir disjointness from exact runs and P2 bands
+Recaman.BoundedPeriodicSupply	Recaman.SupplyReservoirGeometry;Recaman.SharpPeriodicSupply	Periodic capacity extension using disjoint free-S reservoirs
+Recaman.NestedReservoirCapacity	Recaman.BoundedPeriodicSupply	Explicit rank charges remove the quadratic multiplicity threshold
+Recaman.ShortReservoirCapacity	Recaman.NestedReservoirCapacity	Concrete complete lag-at-most-eleven union and nonsharp capacity specialization
+Recaman.ParitySupply	Recaman.LeadingRunSupply	Exact all-lag P2 classification with one fixed-A parity
+Recaman.ParityPeriodicSupply	Recaman.ParitySupply;Recaman.SharpPeriodicSupply	All-lag periodic capacity with the explicit parity restriction
+Recaman.LocalParitySupply	Recaman.ParitySupply	Local parity supply classification and periodic short-map compatibility
+Recaman.LocalParityPeriodic	Recaman.LocalParitySupply;Recaman.ParityPeriodicSupply	Local parity supply classification and periodic short-map compatibility
+Recaman.ShortLocalParityCapacity	Recaman.LocalParityPeriodic;Recaman.ShortReservoirCapacity	Local parity supply classification and periodic short-map compatibility
+Recaman.SSFreeSupply	Recaman.LocalParitySupply	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.CanonicalSSFreeSupply	Recaman.SSFreeSupply;Recaman.NoDoubleAdditionRun	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.SSFreePeriodicSupply	Recaman.SSFreeSupply;Recaman.ShortLocalParityCapacity	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.FiniteP2Semantics	Recaman.CanonicalSSFreeSupply	Exact prefix-key equivalence and actual height-one blocker semantics
+Recaman.OneSSChargeCounterexample	Recaman.ShortLocalParityCapacity	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CanonicalOneSSWindow	Recaman.CanonicalSSFreeSupply	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CanonicalOneSSCounterexample	Recaman.OneSSChargeCounterexample;Recaman.FiniteP2Semantics;Recaman.CanonicalOneSSWindow	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CleanPeriodBound	Recaman.LocalParityPeriodic	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.ShortBlockerRigidity	Recaman.FiniteP2Semantics;Recaman.SignedSupplyGap	Sharp clock-dependent non-P2 blocker bound
+Recaman.PositivePeriodLag	Recaman.ShortBlockerRigidity;Recaman.SharpPeriodicSupply	Positive-period collision lag bound without fixed-lag assumptions
+Recaman.EventualPeriodicSupply	Recaman.PositivePeriodLag;Recaman.OrbitBounds	Canonical eventual-periodic positive-drift supply bridge with finite history discharged
+Recaman.PeriodicTailRepresentation	Recaman.EventualPeriodicSupply	Natural eventual-periodicity representation and complete P2 cutoff
+Recaman.NonpositivePeriodDrift	Recaman.PeriodicTailRepresentation	All nonpositive drift cases ruled out for arbitrary nonnegative weighted walks
+Recaman.FiniteSeedPeriodicSupply	Recaman.NonpositivePeriodDrift;Recaman.SeededReplay	Full finite-state eventual-periodic supply reduction at arbitrary absolute clock
+Recaman.OneSSGapAlgebra	Recaman.NonpositivePeriodDrift	Exact gap encoding and all-parameter one-SS P2 family algebra; exhaustion/minimality paper-only
+Recaman.OneSSMultiplicity	Recaman.OneSSGapAlgebra	Unbounded one-SS demand in one finite NoSAAS history with minimum P2 and current-A certificates
+Recaman.OneSSSeededB	Recaman.FiniteSeedPeriodicSupply;Recaman.OneSSMultiplicity	Exact finite-state family B counterexample with minimal P2, NoSAAS and SS1
+Recaman.SSGapBudget	Recaman.OneSSMultiplicity	All-SS gap budget on actual words with exact SS count and NoSAAS bridge

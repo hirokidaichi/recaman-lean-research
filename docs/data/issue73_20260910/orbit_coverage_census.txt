@@ -1,0 +1,15 @@
+protocol=H-20260910-07
+source_revision=8dfbfb8f15eb2ff3d84629385cde99cd9f2bc9aa
+source_sha256=dd2fa03d4518ecc6d802be6f5bdf231b2e9c6fc3fc587db806fe5637119d666e
+compile=/usr/bin/clang++ -O3 -std=c++20 -Wall -Wextra -pedantic experiments/issue73_20260910/orbit_coverage_census.cpp -o /tmp/recaman-orbit-coverage-20260910
+Apple clang version 17.0.0 (clang-1700.6.3.2)
+Target: arm64-apple-darwin25.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+RANGE={"from":1,"through":100000,"A":50010,"S":49990,"finite_history_P2_A":12675,"U11":402,"no_finite_history_P2_A":37335,"old_sharp_m_ge_12":0,"diagnostic_union_over_R":0,"nonsharp_in_diagnostic_union":0,"max_preceding_A_run":4,"max_minimum_P2_lag":69971,"fixed_R_0_1_2_3_4_8_16":[0,0,0,0,0,0,0],"A_by_preceding_run":{"0":49496,"1":230,"2":230,"3":47,"4":7},"supplied_A_by_run":{"0":12313,"1":79,"2":229,"3":47,"4":7},"supplied_outside_U11_and_oldsharp_and_diagnostic_union_by_run":{"0":12144,"1":79,"3":43,"4":7},"minimum_lag_bin_upper_bounds":{"3":229,"7":13,"11":160,"100":1626,"1000":6007,"10000":4232,"100000":408}}
+CHECKPOINT={"n":100000,"value":199508,"P":20,"W":199488,"prefix_keys":74343,"maximum_value":592216,"first_19":99734}
+RANGE={"from":100001,"through":1000000,"A":450002,"S":449998,"finite_history_P2_A":119632,"U11":893,"no_finite_history_P2_A":330370,"old_sharp_m_ge_12":0,"diagnostic_union_over_R":0,"nonsharp_in_diagnostic_union":0,"max_preceding_A_run":4,"max_minimum_P2_lag":910767,"fixed_R_0_1_2_3_4_8_16":[0,0,0,0,0,0,0],"A_by_preceding_run":{"0":448792,"1":529,"2":529,"3":140,"4":12},"supplied_A_by_run":{"0":118791,"1":168,"2":529,"3":132,"4":12},"supplied_outside_U11_and_oldsharp_and_diagnostic_union_by_run":{"0":118427,"1":168,"3":132,"4":12},"minimum_lag_bin_upper_bounds":{"3":529,"7":23,"11":341,"100":3883,"1000":24760,"10000":55079,"100000":29756,"10000000":5261}}
+CHECKPOINT={"n":1000000,"value":2057164,"P":24,"W":2057140,"prefix_keys":740799,"maximum_value":5946126,"first_19":99734}
+RANGE={"from":1000001,"through":10000000,"A":4500002,"S":4499998,"finite_history_P2_A":1183589,"U11":2603,"no_finite_history_P2_A":3316413,"old_sharp_m_ge_12":0,"diagnostic_union_over_R":0,"nonsharp_in_diagnostic_union":0,"max_preceding_A_run":5,"max_minimum_P2_lag":9317727,"fixed_R_0_1_2_3_4_8_16":[0,0,0,0,0,0,0],"A_by_preceding_run":{"0":4496293,"1":1579,"2":1579,"3":496,"4":54,"5":1},"supplied_A_by_run":{"0":1181043,"1":444,"2":1579,"3":470,"4":52,"5":1},"supplied_outside_U11_and_oldsharp_and_diagnostic_union_by_run":{"0":1180022,"1":444,"3":467,"4":52,"5":1},"minimum_lag_bin_upper_bounds":{"3":1579,"7":83,"11":941,"100":11038,"1000":99149,"10000":417995,"100000":510504,"10000000":142300}}
+CHECKPOINT={"n":10000000,"value":20438710,"P":28,"W":20438682,"prefix_keys":7064114,"maximum_value":61998984,"first_19":99734}
+PASS: exact standard finite-history census through 10000000 steps

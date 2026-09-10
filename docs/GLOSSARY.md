@@ -545,7 +545,25 @@ low railに現clockを足した値になる。値集合はrail二本と事前履
 ある定理がどの公理に依存するかを表示する。`Audit.lean`では主要定理を監査し、`sorryAx`、
 ユーザー定義公理、`native_decide`由来の公理に依存していないことを検査する。
 
-## 読む順序
+## 2026-09-09の供給窓解析
+
+### 等号供給窓（sharp window）— 整理用
+
+周期供給研究で、過去符号を新しい順に並べ、先頭m≥3個がAでP2を満たす窓は
+長さd≥4m−1となる。この下界を達成するd=4m−1の窓を「等号窓」と呼ぶ。
+最短lagであることだけでは等号窓とは限らない。P2の定義は変更しない。
+下界・全mの等号族・実streamとの同値は`LeadingRunSupply.lean`、分類は
+[分割分類カード](HYPOTHESIS_CARD_2026-09-09_SHARP_PARTITIONS.md)を参照。
+
+### 入れ子供給と保護S — 整理用
+
+k回のAの後の供給窓が、前の供給窓を全て含むとき「入れ子」と呼ぶ。
+長さをd,d₂とすると条件はd+k≤d₂。最小lagが後退する例があるので、この条件は
+自動ではない。「保護S」は、等号窓の先頭A区間の直前から二つ目のSであり、
+m≥L+1のとき半径Lの既存短chargeが使えないことを指す整理用の名称。
+標準のRecamán数列の用語や新しい実軌道仮定ではない。
+
+## 読む順序（初学者向け）
 
 初めて読む場合は、次の順序を推奨する。
 
@@ -555,3 +573,48 @@ low railに現clockを足した値になる。値集合はrail二本と事前履
 4. `Coverage.lean`: 全射性へつなぐ証明インターフェース
 5. `PROOF_MAP.md`: 各局所定理が大域探索のどこに位置するか
 6. `PhaseSearch.lean`: 現在の最終的な整礎探索骨格
+
+## 2026-09-10: 周期供給と SS 残余
+
+### sign time、step、backward word — 問題由来＋整理用
+
+sign time t は `a(t)→a(t+1)` の更新を指し、その step と更新幅は t+1。
+A=+1、S=−1。`past e t d` は時刻 t−1,t−2,…,t−d の符号を新しい順に並べる。
+したがって語の prefix が短い供給窓になる。計算結果には step と sign time の両方を記録する。
+
+### 有限 P2 と周期 P2 — 研究固有
+
+長さ d の backward word について `mass=Σ sign=1`、`moment=Σ(i+1)sign=0` が P2。
+標準軌道の d≤t では `P(t)−P(t−d)=1` と `a(t)=a(t−d)+t+1` に同値で、
+実在する historical blocker を与える（E-111）。一般 blocker は符号差 1 とは限らない。
+周期 P2 は整数全体へ拡張した符号語に同じ二式を要求する。
+E-065/E-120 は任意有限 State の eventual 周期性から周期 P2 を導き、
+周期 p に対して必要 lag を `0<d<p(p+1)` に制限する。
+
+### clean、SS-free、NoSAAS — 研究固有＋整理用
+
+clean は窓の正の偶数 backward offset がすべて A であること（`EvenBackA`）。
+P2 clean 窓は d=8k+3、一つの奇数 offset 2k+1 が A、その他の奇数 offset は S に分類される。
+SAAS を含まない窓では P2 の SS-free と clean が同値（E-109）。
+SAAS 禁止は標準実更新から証明済みだが、任意周期符号語では明示的な前提として残す。
+
+### SS-gap family A / B — 研究固有
+
+SS がちょうど 1 個で SAAS がなく、proper prefix に P2 がない窓を
+`A^g0 S A^g1 … S A^gn` と表す。n は S 数、長さは 2n+1。
+A 族は両 endpoint gap が 0、内部 gap z が 0、gap j が 4、残りが 1、`n=6j−2z+1`。
+B 族は g0=1、gn=0、gap z が 0、gap j が 3、残りが 1、`n=4j−2z+1`。
+完全分類は E-121 `PROVED-PAPER`。全パラメータ族の P2 は Lean、任意語の分類全体はまだ Lean ではない。
+
+### shared-SS demand — 整理用
+
+同じ隣接 SS を跨ぐ、異なる現在 A 位相の最小 P2 窓の数。
+`W_k=(SA)^k SAAAASS (AS)^(3k)` により一つの SS への需要は任意に大きくなる（E-122）。
+各窓には周囲の S も存在するため、これは総 S 容量 E-070 の反例ではない。
+SS の数だけに定数を掛けた予算では不足することを意味する。
+
+### one-SS run capacity — 整理用
+
+NoSAAS 下で、SS1 の最小 P2 供給を持つ現在 A は、一つの A run に高々一つ（E-127、`PROVED-PAPER`）。
+従ってこのクラス単独の供給数は全周期で S 数以下。ただし型 B と直後の clean AAS 供給は、
+別々に構成した写像で同じ S へ送られる。各クラスの容量を単純に加算してはいけない。
