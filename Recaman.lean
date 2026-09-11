@@ -1,3 +1,4 @@
+import Recaman.CapacitySlackCompensation
 import Recaman.PeriodicHallReduction
 import Recaman.HallRobustnessTheorem
 import Recaman.HighSSWrappingTheorem

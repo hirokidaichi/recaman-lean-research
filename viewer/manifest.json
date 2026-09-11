@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2267,
+   "lines": 2279,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -1625,6 +1625,70 @@
    ],
    "theorems": 5,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CapacitySlackCompensation",
+   "lines": 222,
+   "imports": [
+    "TwoSSAvoidTight",
+    "PeriodicHallReduction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "high_ss_containing_subsets_survive_deletion_p11",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "non_clean_containing_subsets_survive_deletion_p7",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_containing_subsets_survive_deletion_p15",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_containing_subsets_survive_deletion_p19",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "deletability_reduced_to_avoiding_p11",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "deletability_reduced_to_avoiding_p7",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "deletability_reduced_to_avoiding_p15",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "deletability_reduced_to_avoiding_p19",
+     "line": 165
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_high_ss_deletion_criterion_p11",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_slack_compensation_synthesis",
+     "line": 207
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -46300,6 +46364,6 @@
    "hasReport": false
   }
  ],
- "total": 351,
+ "total": 352,
  "withReport": 167
 }
