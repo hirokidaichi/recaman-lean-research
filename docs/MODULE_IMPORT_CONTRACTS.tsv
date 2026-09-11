@@ -1,4 +1,7 @@
 module	direct_imports	purpose
+Recaman.TwoSSPeriodicSupply	Recaman.TwoSSEndpoint;Recaman.LowSSPeriodicSupply	Periodic modular endpoint injectivity and joint capacity for SS=2 windows
+Recaman.TwoSSEndpoint	Recaman.EndpointRepetitionBudget;Recaman.LowSSEndpoint	Rigidity and clean-only earlier shared endpoints for SS=2 P2 windows
+Recaman.WrapSSBound	Recaman.PeriodicSupplyBound;Recaman.EndpointRepetitionBudget	Wrap-vs-SS periodic lag bound
 Recaman.SignedSupplyGap	Recaman.LeadingRunSupply	入れ子を仮定しないP2 lagの符号付き二次間隔と最適係数の証人
 Recaman.SharpPeriodicSupply	Recaman.LeadingRunSupply;Recaman.LagElevenPeriodic	sharp窓chargeの周期接着と既存短距離単射に対する一般容量拡張
 Recaman.LeadingRunSupply	Recaman.ShortPeriodicSupply	全lagの先頭A連続長下界、sharp窓、入れ子間隔、保護Sと非入れ子反例を実P2へ接着

@@ -256,12 +256,21 @@ def add_module(args: argparse.Namespace) -> None:
     lean_file = RECAMAN_DIR / f"{name}.lean"
     full_module_name = f"Recaman.{name}"
 
-    imports = [i.strip() for i in (args.imports or "").split(";") if i.strip()]
-    if not imports:
+    if args.imports:
+        imports = [i.strip() for i in args.imports.split(";") if i.strip()]
+    elif lean_file.exists():
+        actual = []
+        for line in lean_file.read_text(encoding="utf-8").splitlines():
+            parts = line.strip().split()
+            if parts and parts[0] == "import":
+                actual.extend(parts[1:])
+        imports = actual if actual else ["Recaman.Basic"]
+    else:
         imports = ["Recaman.Basic"]
     imports_str = ";".join(imports)
 
-    purpose = (args.purpose or f"Formalization for {name}").strip()
+    purpose_val = getattr(args, "purpose_opt", None) or getattr(args, "purpose", None) or f"Formalization for {name}"
+    purpose = purpose_val.strip()
 
     if not lean_file.exists():
         import_lines = "\n".join(f"import {imp}" for imp in imports)
@@ -379,8 +388,9 @@ def main() -> None:
     # add-module
     p_mod = subparsers.add_parser("add-module", help="Add and register a new Lean frontier module")
     p_mod.add_argument("name", help="Module name under Recaman (e.g. T6LocalDonation)")
-    p_mod.add_argument("--imports", "-i", default="Recaman.Basic", help="Semi-colon separated direct imports")
-    p_mod.add_argument("--purpose", "-p", default="", help="Purpose of module for contracts TSV")
+    p_mod.add_argument("purpose", nargs="?", default="", help="Purpose of module for contracts TSV")
+    p_mod.add_argument("--imports", "-i", default=None, help="Semi-colon separated direct imports")
+    p_mod.add_argument("--purpose", "-p", dest="purpose_opt", default="", help="Purpose of module for contracts TSV")
     p_mod.set_defaults(func=add_module)
 
     # register-evidence

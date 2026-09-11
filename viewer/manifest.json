@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1792,
+   "lines": 1837,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43115,6 +43115,170 @@
    "hasReport": false
   },
   {
+   "name": "TwoSSEndpoint",
+   "lines": 283,
+   "imports": [
+    "EndpointRepetitionBudget",
+    "LowSSEndpoint"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ssCount_two_shared_endpoint_clean",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "intervening_word_data",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_ssCount_two_shared_endpoint_clean",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_ssCount_two_later_ge_four",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_earlier_ss_pos_obstruction",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_no_two_SS_shared_endpoint",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "two_SS_endpoint_injective",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_one_two_no_shared_endpoint",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_zero_length_even",
+     "line": 171
+    },
+    {
+     "kind": "def",
+     "name": "bitWords",
+     "line": 178
+    },
+    {
+     "kind": "def",
+     "name": "isInterveningWitness",
+     "line": 183
+    },
+    {
+     "kind": "def",
+     "name": "hasP2Prefix",
+     "line": 190
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_witness_two",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_witness_four",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_witness_six",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_witness_eight",
+     "line": 204
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_witness_ten",
+     "line": 207
+    },
+    {
+     "kind": "theorem",
+     "name": "intervening_witness_twelve",
+     "line": 211
+    },
+    {
+     "kind": "theorem",
+     "name": "intervening_twelve_has_p2_prefix",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_bitWords",
+     "line": 220
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_odd",
+     "line": 229
+    },
+    {
+     "kind": "def",
+     "name": "isSS2P2",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_one",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_three",
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_five",
+     "line": 240
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_seven",
+     "line": 241
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_nine",
+     "line": 242
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_length_ge_eleven",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_ss2_lag_ge_eleven",
+     "line": 266
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_subtractions_ge_five",
+     "line": 275
+    }
+   ],
+   "theorems": 26,
+   "defs": 4,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSLeadingSibling",
    "lines": 198,
    "imports": [
@@ -43208,6 +43372,65 @@
     }
    ],
    "theorems": 17,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSSPeriodicSupply",
+   "lines": 249,
+   "imports": [
+    "TwoSSEndpoint",
+    "LowSSPeriodicSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_SS_endpoint_mod_injective",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_one_two_endpoint_mod_disjoint",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "two_SS_clean_endpoint_mod_order",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_twoSS_Sended_capacity",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_one_two_SS_Sended_joint_capacity",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "window_covers_all_phases",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "emod_eq_shift",
+     "line": 221
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_window_covers_subtraction",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_window_covers_all_subtractions_of_p_le_eleven",
+     "line": 240
+    }
+   ],
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -43452,8 +43675,72 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "WrapSSBound",
+   "lines": 169,
+   "imports": [
+    "PeriodicSupplyBound",
+    "EndpointRepetitionBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_lower_ssCount",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "ssCount_append_right_le",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "wrap_ss_remainder_bound",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "wrap_ss_bound",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "wrap_ss_accounting",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "wrap_ss_bound_of_decomp",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "wrap_ss_bound_of_lag",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "quot_le_of_positive_periodMass",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_le_of_positive_periodMass",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_lt_of_positive_periodMass",
+     "line": 158
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   }
  ],
- "total": 310,
+ "total": 313,
  "withReport": 167
 }
