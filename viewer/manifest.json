@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2167,
+   "lines": 2187,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27195,6 +27195,110 @@
    "hasReport": false
   },
   {
+   "name": "FiveSSWeightCapacity",
+   "lines": 155,
+   "imports": [
+    "FiveSSClassification",
+    "FourTierCapacityReduction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "five_tier_weight_inequality",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_slack_bound",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_extremal_forces_zero",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_deficit_one_forces_zero",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_deficit_two_forces_zero",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_deficit_three_forces_zero",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_ss4_single_slack",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_ss5_single_slack",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_two_ss5_slack",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_grand_reduction",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_strict_grand_reduction",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_total_le",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_slack_ge_weights",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_extremal_count_zero",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_deficit_one_excludes_high",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_deficit_two_excludes_ss4_ss5",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_deficit_three_excludes_ss5",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "five_tier_list_grand_reduction",
+     "line": 149
+    }
+   ],
+   "theorems": 18,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ForcedCandidateReuseBalance",
    "lines": 112,
    "imports": [
@@ -45761,6 +45865,6 @@
    "hasReport": false
   }
  ],
- "total": 344,
+ "total": 345,
  "withReport": 167
 }

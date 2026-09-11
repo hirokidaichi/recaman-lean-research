@@ -1,3 +1,4 @@
+import Recaman.FiveSSWeightCapacity
 import Recaman.FiveSSClassification
 import Recaman.SSSixLagBound
 import Recaman.FourTierCapacityReduction

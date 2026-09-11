@@ -2162,6 +2162,26 @@ import Recaman
 #print axioms Recaman.FiveSSClassification.minimal_ss5_subtraction_surplus
 #print axioms Recaman.FiveSSClassification.minimal_ss5_classification_lt_nineteen
 
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_weight_inequality
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_slack_bound
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_extremal_forces_zero
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_deficit_one_forces_zero
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_deficit_two_forces_zero
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_deficit_three_forces_zero
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_ss4_single_slack
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_ss5_single_slack
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_two_ss5_slack
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_grand_reduction
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_strict_grand_reduction
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_total_le
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_slack_ge_weights
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_extremal_count_zero
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_deficit_one_excludes_high
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_deficit_two_excludes_ss4_ss5
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_deficit_three_excludes_ss5
+#print axioms Recaman.FiveSSWeightCapacity.five_tier_list_grand_reduction
+
+
 
 
 
