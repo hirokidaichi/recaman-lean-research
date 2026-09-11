@@ -1,3 +1,4 @@
+import Recaman.TightCapacityHierarchy
 import Recaman.SS2LagElevenForcing
 import Recaman.SS2MinimalLagBound
 import Recaman.HighSSEliminationGrandTheorem

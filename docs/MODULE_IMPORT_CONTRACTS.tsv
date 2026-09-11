@@ -1,4 +1,5 @@
 module	direct_imports	purpose
+Recaman.TightCapacityHierarchy	Recaman.SS2LagElevenForcing;Recaman.TightSSZeroRigidity	General tight capacity lower bound k <= |A|; exclusion of windows with >= k subtractions from tight subsets of size < k; supply deficit bounds on avoiding sublists for |U| <= 5; exclusion of windows with >= 5 subtractions from tight avoiding subsets
 Recaman.SS2LagElevenForcing	Recaman.SS2MinimalLagBound	Exhaustive elimination of length 13 P2 words; exact forcing of minimal SS=2 donor lag to 11; unique donation phase endpointPhase p u 11; exact 6 additions and 5 subtractions
 Recaman.SS2MinimalLagBound	Recaman.HighSSEliminationGrandTheorem	Exhaustive elimination of length 9 P2 words; odd length law; minimal length 7 P2 words have ssCount <= 1; all minimal SS=2 windows have lag >= 11
 Recaman.HighSSEliminationGrandTheorem	Recaman.TwoSSWeightCapacity	Grand reduction theorem of capacity to low-SS and resolution of gate T6

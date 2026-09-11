@@ -2059,3 +2059,18 @@ import Recaman
 #print axioms Recaman.SS2LagElevenForcing.p2_length_eleven_zeros
 #print axioms Recaman.SS2LagElevenForcing.minimal_ss2_zeros_eq_five
 #print axioms Recaman.SS2LagElevenForcing.minimal_ss2_subtraction_surplus
+
+#print axioms Recaman.TightCapacityHierarchy.tight_size_ge_k
+#print axioms Recaman.TightCapacityHierarchy.no_ge_k_in_tight_lt_k
+#print axioms Recaman.TightCapacityHierarchy.no_ge_four_in_tight_le_three
+#print axioms Recaman.TightCapacityHierarchy.no_ge_five_in_tight_le_four
+#print axioms Recaman.TightCapacityHierarchy.no_ge_six_in_tight_le_five
+#print axioms Recaman.TightCapacityHierarchy.avoiding_sublist_length_le_sub_one
+#print axioms Recaman.TightCapacityHierarchy.avoiding_length_le_four_of_U_le_five
+#print axioms Recaman.TightCapacityHierarchy.avoiding_length_le_three_of_U_le_four
+#print axioms Recaman.TightCapacityHierarchy.avoiding_length_le_two_of_U_le_three
+#print axioms Recaman.TightCapacityHierarchy.avoiding_length_le_one_of_U_le_two
+#print axioms Recaman.TightCapacityHierarchy.tight_avoiding_excludes_ge_five
+#print axioms Recaman.TightCapacityHierarchy.tight_avoiding_excludes_ge_four
+#print axioms Recaman.TightCapacityHierarchy.tight_avoiding_excludes_ge_three
+#print axioms Recaman.TightCapacityHierarchy.tight_avoiding_excludes_ge_two
