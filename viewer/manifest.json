@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2239,
+   "lines": 2253,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27533,6 +27533,79 @@
    "hasReport": false
   },
   {
+   "name": "HallRobustnessTheorem",
+   "lines": 206,
+   "imports": [
+    "HighSSWrappingTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "high_ss_subset_hall_satisfied_p11",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_subset_hall_strict_slack_p11",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_excludes_high_ss_p11",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_purely_low_ss_p11",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "non_clean_subset_hall_satisfied_p7",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_purely_clean_p7",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_subset_hall_satisfied_p15",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_excludes_ss_ge_four_p15",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_ss_le_three_p15",
+     "line": 149
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_subset_hall_satisfied_p19",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_excludes_ss_ge_six_p19",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_ss_le_five_p19",
+     "line": 192
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HighCandidateCausalReuse",
    "lines": 115,
    "imports": [
@@ -46154,6 +46227,6 @@
    "hasReport": false
   }
  ],
- "total": 349,
+ "total": 350,
  "withReport": 167
 }

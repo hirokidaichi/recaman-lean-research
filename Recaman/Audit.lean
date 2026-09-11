@@ -2232,6 +2232,20 @@ import Recaman
 #print axioms Recaman.HighSSWrappingTheorem.ss_ge_four_neighborhood_eq_D_p15
 #print axioms Recaman.HighSSWrappingTheorem.ss_ge_six_neighborhood_eq_D_p19
 
+#print axioms Recaman.HallRobustnessTheorem.high_ss_subset_hall_satisfied_p11
+#print axioms Recaman.HallRobustnessTheorem.high_ss_subset_hall_strict_slack_p11
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_excludes_high_ss_p11
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_purely_low_ss_p11
+#print axioms Recaman.HallRobustnessTheorem.non_clean_subset_hall_satisfied_p7
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_purely_clean_p7
+#print axioms Recaman.HallRobustnessTheorem.ss_ge_four_subset_hall_satisfied_p15
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_excludes_ss_ge_four_p15
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_ss_le_three_p15
+#print axioms Recaman.HallRobustnessTheorem.ss_ge_six_subset_hall_satisfied_p19
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_excludes_ss_ge_six_p19
+#print axioms Recaman.HallRobustnessTheorem.hall_failure_ss_le_five_p19
+
+
 
 
 
