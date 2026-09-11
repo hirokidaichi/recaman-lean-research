@@ -1894,3 +1894,10 @@ import Recaman
 #print axioms Recaman.WrapObstruction.deletable_of_avoids_wrap
 #print axioms Recaman.WrapObstruction.tight_lags_for_p_le_seven
 #print axioms Recaman.WrapObstruction.tight_lags_for_p_le_eleven
+
+#print axioms Recaman.TightBottleneckBound.subtraction_residue_injective_of_lt_p
+#print axioms Recaman.TightBottleneckBound.phase_inj_of_lt
+#print axioms Recaman.TightBottleneckBound.tight_size_lower_bound
+#print axioms Recaman.TightBottleneckBound.no_tight_size_one_of_ge_two
+#print axioms Recaman.TightBottleneckBound.no_tight_size_le_two_of_ge_three
+#print axioms Recaman.TightBottleneckBound.lag_three_neighborhood_length_le_one
