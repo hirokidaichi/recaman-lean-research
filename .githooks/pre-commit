@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Running pre-commit checks..."
+bash ./scripts/check_module_architecture.sh
+bash ./scripts/check_research_registry.sh
+
+if command -v python3 >/dev/null 2>&1 && [[ -f viewer/gen_manifest.py ]]; then
+  python3 viewer/gen_manifest.py --check
+fi
+
+if rg -n --glob '*.lean' '\b(sorry|admit|native_decide|axiom)\b' .; then
+  echo "error: prohibited proof escape or declaration found" >&2
+  exit 1
+fi
+
+echo "Pre-commit checks passed."

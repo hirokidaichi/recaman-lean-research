@@ -3,7 +3,17 @@
 These programs are exploratory companions to the Lean development. Their output is
 evidence for choosing conjectures; it is not imported into any Lean proof.
 
-Build with a C++20 compiler:
+## Quick Start with Makefile
+
+Run regression tests or build all probes into `experiments/bin/`:
+
+```bash
+make -C experiments test    # Build and run regression tests (or `make test-probes` from repo root)
+make -C experiments probes  # Build all core empirical probes to experiments/bin/
+make -C experiments clean   # Clean built binaries
+```
+
+## Manual compilation with a C++20 compiler:
 
 ```bash
 c++ -O3 -std=c++20 experiments/recaman_empirical.cpp -o /tmp/recaman_empirical

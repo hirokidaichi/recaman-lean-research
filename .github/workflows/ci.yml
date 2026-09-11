@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    name: Lean Audit & Empirical Regression Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Install Lean toolchain
+        run: |
+          TOOLCHAIN=$(cat lean-toolchain | tr -d '[:space:]')
+          elan toolchain install "$TOOLCHAIN"
+          elan default "$TOOLCHAIN"
+
+      - name: Verify build tools
+        run: |
+          lake --version
+          lean --version
+          python3 --version
+          c++ --version
+          make --version
+
+      - name: Run complete test and verification suite
+        run: |
+          make test

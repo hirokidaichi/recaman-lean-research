@@ -48,6 +48,7 @@ def scan_module(path: Path) -> dict:
 
 
 def main() -> None:
+    check_mode = "--check" in sys.argv[1:]
     modules = sorted(
         (scan_module(p) for p in LEAN_DIR.glob("*.lean")),
         key=lambda m: m["name"],
@@ -57,8 +58,15 @@ def main() -> None:
         "total": len(modules),
         "withReport": sum(1 for m in modules if m["hasReport"]),
     }
-    OUT.write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"manifest.json: {manifest['total']} modules, {manifest['withReport']} reports", file=sys.stderr)
+    content = json.dumps(manifest, ensure_ascii=False, indent=1) + "\n"
+    if check_mode:
+        if not OUT.exists() or OUT.read_text(encoding="utf-8") != content:
+            print("error: viewer/manifest.json is out of date. Run 'python3 viewer/gen_manifest.py' to update.", file=sys.stderr)
+            sys.exit(1)
+        print(f"manifest.json is up to date: {manifest['total']} modules, {manifest['withReport']} reports", file=sys.stderr)
+    else:
+        OUT.write_text(content, encoding="utf-8")
+        print(f"manifest.json: {manifest['total']} modules, {manifest['withReport']} reports", file=sys.stderr)
 
 
 if __name__ == "__main__":
