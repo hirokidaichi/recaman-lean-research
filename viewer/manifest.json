@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2226,
+   "lines": 2239,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27615,6 +27615,79 @@
    "hasReport": false
   },
   {
+   "name": "HighSSWrappingTheorem",
+   "lines": 168,
+   "imports": [
+    "TightSubsetSSExclusion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p2_ss_ge_two_lag_ge_eleven",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_ss_ge_four_lag_ge_fifteen",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_is_wrapping_p11",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_is_wrapping_p15",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_is_wrapping_p19",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_covers_all_p11",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_neighborhood_eq_D_p11",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_subset_length_eq_D_p11",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_slack_ge_global_slack_p11",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_avoids_all_tight_p11",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_neighborhood_eq_D_p15",
+     "line": 147
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_neighborhood_eq_D_p19",
+     "line": 158
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HighValueDensity",
    "lines": 252,
    "imports": [
@@ -46081,6 +46154,6 @@
    "hasReport": false
   }
  ],
- "total": 348,
+ "total": 349,
  "withReport": 167
 }

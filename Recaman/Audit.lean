@@ -2219,6 +2219,19 @@ import Recaman
 #print axioms Recaman.TightSubsetSSExclusion.ss_ge_six_not_in_tight_p_le_nineteen
 #print axioms Recaman.TightSubsetSSExclusion.tight_subsets_ss_le_five_p_le_nineteen
 
+#print axioms Recaman.HighSSWrappingTheorem.p2_ss_ge_two_lag_ge_eleven
+#print axioms Recaman.HighSSWrappingTheorem.p2_ss_ge_four_lag_ge_fifteen
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_is_wrapping_p11
+#print axioms Recaman.HighSSWrappingTheorem.ss_ge_four_is_wrapping_p15
+#print axioms Recaman.HighSSWrappingTheorem.ss_ge_six_is_wrapping_p19
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_covers_all_p11
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_neighborhood_eq_D_p11
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_subset_length_eq_D_p11
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_slack_ge_global_slack_p11
+#print axioms Recaman.HighSSWrappingTheorem.high_ss_avoids_all_tight_p11
+#print axioms Recaman.HighSSWrappingTheorem.ss_ge_four_neighborhood_eq_D_p15
+#print axioms Recaman.HighSSWrappingTheorem.ss_ge_six_neighborhood_eq_D_p19
+
 
 
 

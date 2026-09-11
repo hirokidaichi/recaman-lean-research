@@ -1,3 +1,4 @@
+import Recaman.HighSSWrappingTheorem
 import Recaman.TightSubsetSSExclusion
 import Recaman.TightPeriodStratification
 import Recaman.GrandStratificationSynthesis
