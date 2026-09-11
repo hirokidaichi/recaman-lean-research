@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1965,
+   "lines": 1972,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28352,6 +28352,49 @@
    "hasReport": false
   },
   {
+   "name": "LagSevenTightObstruction",
+   "lines": 82,
+   "imports": [
+    "ElevenSSDonationClosure"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_seven_p2",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_seven_cases",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_seven_subtractions",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_three_in_tight_le_two",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_lag_three",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_is_aas",
+     "line": 75
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LandingFloorThirtytwo",
    "lines": 129,
    "imports": [
@@ -44511,6 +44554,6 @@
    "hasReport": false
   }
  ],
- "total": 325,
+ "total": 326,
  "withReport": 167
 }

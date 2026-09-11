@@ -1,3 +1,4 @@
+import Recaman.LagSevenTightObstruction
 import Recaman.ElevenSSDonationClosure
 import Recaman.SS2AASCollisionObstruction
 import Recaman.TwoSSTightAvoidanceTheorem

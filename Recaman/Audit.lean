@@ -1963,3 +1963,10 @@ import Recaman
 #print axioms Recaman.ElevenSSDonationClosure.p11_ss2_donor_deletable_of_lag_lt_fifteen
 #print axioms Recaman.ElevenSSDonationClosure.p11_ss2_donor_hall_preserved_of_lag_lt_fifteen
 #print axioms Recaman.ElevenSSDonationClosure.p11_ss2_minimal_donor_hall_preserved
+
+#print axioms Recaman.LagSevenTightObstruction.bitWords_seven_p2
+#print axioms Recaman.LagSevenTightObstruction.p2_length_seven_cases
+#print axioms Recaman.LagSevenTightObstruction.p2_length_seven_subtractions
+#print axioms Recaman.LagSevenTightObstruction.no_ge_three_in_tight_le_two
+#print axioms Recaman.LagSevenTightObstruction.tight_avoiding_le_two_lag_three
+#print axioms Recaman.LagSevenTightObstruction.tight_avoiding_le_two_is_aas
