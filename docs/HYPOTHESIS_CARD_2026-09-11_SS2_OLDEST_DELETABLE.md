@@ -96,6 +96,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalTwoSSDonationTheorem` (E-199) | Grand unified synthesis: avoiding sublists |A| ≤ 3, size ≤ 2 rigidity, automatic AAS disjointness, universal Hall preservation and deletability for all p ≤ 11 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2StrictSlackTheorem` (E-200) | Deletability forces strict deficit |U| ≤ |D| - 1, saturated supplies (|U| = |D|) cannot admit deletable subtractions, Hall bound on full U |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.LowSSTwoSSJointCapacity` (E-201) | Three-tier joint capacity: |U_{≤1}| + |U₂| ≤ |D|, clean AAS / SS=1 / SS=2 pairwise disjointness, SS=2 strictly reduces low-SS budget |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightSSZeroRigidity` (E-202) | Clean Rigidity: tight bottleneck avoiding subsets consist exclusively of ssCount = 0 windows; ssCount ≥ 1 strictly excluded |
 
 ## Semantic audit
 

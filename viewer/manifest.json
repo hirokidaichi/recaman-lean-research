@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1990,
+   "lines": 2000,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43374,6 +43374,59 @@
    "hasReport": false
   },
   {
+   "name": "TightSSZeroRigidity",
+   "lines": 100,
+   "imports": [
+    "LowSSTwoSSJointCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "aas_ssCount_zero",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "past_three_aas_ssCount_zero",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_member_ssCount_zero_of_D_le_four",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_member_ssCount_zero_of_size_le_two",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss_ge_one_in_tight_D_le_four",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss_ge_one_in_tight_size_le_two",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_in_tight_D_le_four",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_in_tight_size_le_two",
+     "line": 91
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -44668,6 +44721,6 @@
    "hasReport": false
   }
  ],
- "total": 329,
+ "total": 330,
  "withReport": 167
 }

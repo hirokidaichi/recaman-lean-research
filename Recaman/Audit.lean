@@ -1988,3 +1988,13 @@ import Recaman
 #print axioms Recaman.LowSSTwoSSJointCapacity.ss_le1_two_endpoint_mod_disjoint
 #print axioms Recaman.LowSSTwoSSJointCapacity.low_SS_two_SS_joint_capacity
 #print axioms Recaman.LowSSTwoSSJointCapacity.ss2_strict_capacity_deficit
+
+#print axioms Recaman.TightSSZeroRigidity.aas_ssCount_zero
+#print axioms Recaman.TightSSZeroRigidity.past_three_aas_ssCount_zero
+#print axioms Recaman.TightSSZeroRigidity.tight_avoiding_member_ssCount_zero_of_D_le_four
+#print axioms Recaman.TightSSZeroRigidity.tight_avoiding_member_ssCount_zero_of_size_le_two
+#print axioms Recaman.TightSSZeroRigidity.no_ss_ge_one_in_tight_D_le_four
+#print axioms Recaman.TightSSZeroRigidity.no_ss_ge_one_in_tight_size_le_two
+#print axioms Recaman.TightSSZeroRigidity.no_ss2_in_tight_D_le_four
+#print axioms Recaman.TightSSZeroRigidity.no_ss2_in_tight_size_le_two
+
