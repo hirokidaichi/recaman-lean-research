@@ -1901,3 +1901,8 @@ import Recaman
 #print axioms Recaman.TightBottleneckBound.no_tight_size_one_of_ge_two
 #print axioms Recaman.TightBottleneckBound.no_tight_size_le_two_of_ge_three
 #print axioms Recaman.TightBottleneckBound.lag_three_neighborhood_length_le_one
+
+#print axioms Recaman.TwoSSSmallCapacityClosure.tight_subset_le_two_no_ge_three
+#print axioms Recaman.TwoSSSmallCapacityClosure.tight_avoids_of_all_lag_three
+#print axioms Recaman.TwoSSSmallCapacityClosure.small_word_ss2_deletable
+#print axioms Recaman.TwoSSSmallCapacityClosure.small_word_hall_preserved_after_donation

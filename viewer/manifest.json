@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1863,
+   "lines": 1908,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43000,6 +43000,49 @@
    "hasReport": false
   },
   {
+   "name": "TightBottleneckBound",
+   "lines": 118,
+   "imports": [
+    "WrapObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "subtraction_residue_injective_of_lt_p",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_inj_of_lt",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_lower_bound",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "no_tight_size_one_of_ge_two",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "no_tight_size_le_two_of_ge_three",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_three_neighborhood_length_le_one",
+     "line": 96
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -43110,6 +43153,79 @@
     }
    ],
    "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSSAvoidTight",
+   "lines": 182,
+   "imports": [
+    "TwoSSLocalDonation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "neighborhood_nodup",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_neighborhood_iff",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "not_mem_neighborhood_of_not_covered",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "deletedNeighborhood_eq_of_not_mem",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "deleted_hall_of_slack",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "deleted_hall_of_not_mem",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_preserved_of_slack_or_avoid",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "deletable_of_tight_avoidance",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_three_covers_iff",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_three_subset_covers_iff",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "not_mem_neighborhood_of_lag_three",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_preserves_hall_on_lag_three_tight",
+     "line": 170
+    }
+   ],
+   "theorems": 12,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -43437,6 +43553,67 @@
    "hasReport": false
   },
   {
+   "name": "TwoSSLocalDonation",
+   "lines": 142,
+   "imports": [
+    "TwoSSTightDisjoint",
+    "TwoSSPeriodicSupply",
+    "TwoSSEndpoint",
+    "LowSSPeriodicSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "oldestSubtractionPhase",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_is_subtraction",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_covered_by_window",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_covered_by_subset",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_preserves_hall",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_injective",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_disjoint_from_one_SS",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_list_nodup",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_donation_disjoint_one_SS_list",
+     "line": 126
+    }
+   ],
+   "theorems": 8,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSPeriodicSupply",
    "lines": 249,
    "imports": [
@@ -43491,6 +43668,39 @@
     }
    ],
    "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSSSmallCapacityClosure",
+   "lines": 101,
+   "imports": [
+    "TightBottleneckBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_subset_le_two_no_ge_three",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoids_of_all_lag_three",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "small_word_ss2_deletable",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "small_word_hall_preserved_after_donation",
+     "line": 84
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -43841,6 +44051,69 @@
    "hasReport": true
   },
   {
+   "name": "WrapObstruction",
+   "lines": 153,
+   "imports": [
+    "TwoSSAvoidTight"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "window_wrap_covers_all_subtractions",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_eq_subPhases_of_has_wrap",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_length_of_has_wrap",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "strict_expansion_of_has_wrap",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "no_tight_subset_contains_wrap",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subset_all_lags_lt_p",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "deleted_neighborhood_hall_of_has_wrap",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "deletable_of_avoids_wrap",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lags_for_p_le_seven",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lags_for_p_le_eleven",
+     "line": 148
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "WrapSSBound",
    "lines": 169,
    "imports": [
@@ -43905,6 +44178,6 @@
    "hasReport": false
   }
  ],
- "total": 314,
+ "total": 319,
  "withReport": 167
 }
