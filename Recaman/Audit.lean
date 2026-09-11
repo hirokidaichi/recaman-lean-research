@@ -2269,6 +2269,19 @@ import Recaman
 #print axioms Recaman.CapacitySlackCompensation.universal_high_ss_deletion_criterion_p11
 #print axioms Recaman.CapacitySlackCompensation.grand_slack_compensation_synthesis
 
+#print axioms Recaman.UniversalGateT6Closure.p11_gate_t6_donor_containing_sublists_survive
+#print axioms Recaman.UniversalGateT6Closure.p11_gate_t6_slack_sublists_survive
+#print axioms Recaman.UniversalGateT6Closure.p11_tight_avoiding_ss_le_one
+#print axioms Recaman.UniversalGateT6Closure.p7_tight_avoiding_all_lag_three_aas
+#print axioms Recaman.UniversalGateT6Closure.p7_ss2_donation_disjoint_from_tight
+#print axioms Recaman.UniversalGateT6Closure.p7_ss2_donation_avoids_tight
+#print axioms Recaman.UniversalGateT6Closure.p7_universal_gate_t6_hall_preservation
+#print axioms Recaman.UniversalGateT6Closure.p7_universal_gate_t6_deletability
+#print axioms Recaman.UniversalGateT6Closure.p10_universal_gate_t6_deletability_of_lag_le_five
+#print axioms Recaman.UniversalGateT6Closure.p11_gate_t6_tight_reduction
+#print axioms Recaman.UniversalGateT6Closure.grand_gate_t6_resolution
+
+
 
 
 
