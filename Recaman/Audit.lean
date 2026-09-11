@@ -2049,3 +2049,13 @@ import Recaman
 #print axioms Recaman.SS2MinimalLagBound.no_ss2_lag_three
 #print axioms Recaman.SS2MinimalLagBound.no_ss2_lag_le_five
 #print axioms Recaman.SS2MinimalLagBound.minimal_ss2_lag_ge_eleven
+
+#print axioms Recaman.SS2LagElevenForcing.bitWords_thirteen_p2
+#print axioms Recaman.SS2LagElevenForcing.no_p2_length_thirteen
+#print axioms Recaman.SS2LagElevenForcing.minimal_ss2_lag_lt_fifteen_eq_eleven
+#print axioms Recaman.SS2LagElevenForcing.minimal_ss2_donor_phase_eq_eleven
+#print axioms Recaman.SS2LagElevenForcing.p2_length_eleven_ones
+#print axioms Recaman.SS2LagElevenForcing.minimal_ss2_ones_eq_six
+#print axioms Recaman.SS2LagElevenForcing.p2_length_eleven_zeros
+#print axioms Recaman.SS2LagElevenForcing.minimal_ss2_zeros_eq_five
+#print axioms Recaman.SS2LagElevenForcing.minimal_ss2_subtraction_surplus

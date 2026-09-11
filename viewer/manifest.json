@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2051,
+   "lines": 2061,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39869,6 +39869,64 @@
    "hasReport": false
   },
   {
+   "name": "SS2LagElevenForcing",
+   "lines": 115,
+   "imports": [
+    "SS2MinimalLagBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_thirteen_p2",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_thirteen",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_lag_lt_fifteen_eq_eleven",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_donor_phase_eq_eleven",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_eleven_ones",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_ones_eq_six",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_eleven_zeros",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_zeros_eq_five",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_subtraction_surplus",
+     "line": 107
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SS2MinimalLagBound",
    "lines": 128,
    "imports": [
@@ -45026,6 +45084,6 @@
    "hasReport": false
   }
  ],
- "total": 335,
+ "total": 336,
  "withReport": 167
 }
