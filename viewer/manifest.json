@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2130,
+   "lines": 2149,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27159,6 +27159,105 @@
    "hasReport": false
   },
   {
+   "name": "FourTierCapacityReduction",
+   "lines": 145,
+   "imports": [
+    "ThreeSSWeightCapacity",
+    "P2ModFourRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_tier_total_le",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_high_ss_forces_deficit_one",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_ss3_forces_deficit_two",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_two_ss2_forces_deficit_two",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_joint_high_forces_deficit_three",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_extremal_is_pure_low_ss",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_deficit_one_structure",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_deficit_two_ss3_excludes_ss2",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_grand_reduction",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_strict_grand_reduction",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_total_le",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_high_ss_forces_strict",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_ss3_forces_deficit_two",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_extremal_pure_low_ss",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_deficit_one_structure",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_deficit_two_structure",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "four_tier_list_grand_reduction",
+     "line": 139
+    }
+   ],
+   "theorems": 17,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Gate",
    "lines": 42,
    "imports": [
@@ -45538,6 +45637,6 @@
    "hasReport": false
   }
  ],
- "total": 341,
+ "total": 342,
  "withReport": 167
 }
