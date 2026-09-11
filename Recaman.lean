@@ -1,3 +1,4 @@
+import Recaman.TightPeriodStratification
 import Recaman.GrandStratificationSynthesis
 import Recaman.FiveSSWeightCapacity
 import Recaman.FiveSSClassification

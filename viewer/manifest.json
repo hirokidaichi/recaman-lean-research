@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2200,
+   "lines": 2213,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -44465,6 +44465,80 @@
    "hasReport": false
   },
   {
+   "name": "TightPeriodStratification",
+   "lines": 141,
+   "imports": [
+    "WrapObstruction",
+    "GrandStratificationSynthesis"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_lags_p_le_fifteen",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lags_p_le_nineteen",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lags_p_le_twenty_three",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_ss_zero_of_p_le_seven",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_ss_le_one_of_p_le_eleven",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_ss_le_three_of_p_le_fifteen",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_ss_le_five_of_p_le_nineteen",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_excludes_high_ss_for_p_le_eleven",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_excludes_ss_ge_four_for_p_le_fifteen",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_excludes_ss_ge_six_for_p_le_nineteen",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_excludes_wrapping_window",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_excludes_wrapping_window_ne",
+     "line": 131
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightSSZeroRigidity",
    "lines": 100,
    "imports": [
@@ -45934,6 +46008,6 @@
    "hasReport": false
   }
  ],
- "total": 346,
+ "total": 347,
  "withReport": 167
 }

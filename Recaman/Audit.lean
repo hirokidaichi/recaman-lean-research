@@ -2193,6 +2193,19 @@ import Recaman
 #print axioms Recaman.GrandStratificationSynthesis.grand_list_high_ss_forces_strict_deficit
 #print axioms Recaman.GrandStratificationSynthesis.grand_list_capacity_reduction
 
+#print axioms Recaman.TightPeriodStratification.tight_lags_p_le_fifteen
+#print axioms Recaman.TightPeriodStratification.tight_lags_p_le_nineteen
+#print axioms Recaman.TightPeriodStratification.tight_lags_p_le_twenty_three
+#print axioms Recaman.TightPeriodStratification.tight_ss_zero_of_p_le_seven
+#print axioms Recaman.TightPeriodStratification.tight_ss_le_one_of_p_le_eleven
+#print axioms Recaman.TightPeriodStratification.tight_ss_le_three_of_p_le_fifteen
+#print axioms Recaman.TightPeriodStratification.tight_ss_le_five_of_p_le_nineteen
+#print axioms Recaman.TightPeriodStratification.tight_excludes_high_ss_for_p_le_eleven
+#print axioms Recaman.TightPeriodStratification.tight_excludes_ss_ge_four_for_p_le_fifteen
+#print axioms Recaman.TightPeriodStratification.tight_excludes_ss_ge_six_for_p_le_nineteen
+#print axioms Recaman.TightPeriodStratification.tight_excludes_wrapping_window
+#print axioms Recaman.TightPeriodStratification.tight_excludes_wrapping_window_ne
+
 
 
 
