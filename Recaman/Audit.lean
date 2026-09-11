@@ -1835,6 +1835,9 @@ import Recaman
 #print axioms Recaman.TwoSSEndpoint.intervening_length_ge_four
 #print axioms Recaman.TwoSSEndpoint.stream_shared_endpoint_time_mod_four
 #print axioms Recaman.TwoSSEndpoint.stream_shared_endpoint_time_ge_four
+#print axioms Recaman.TwoSSEndpoint.poly_id3
+#print axioms Recaman.TwoSSEndpoint.p2_length_mod_four_eq_three
+#print axioms Recaman.TwoSSEndpoint.stream_p2_lag_mod_four_eq_three
 
 #print axioms Recaman.TwoSSPeriodicSupply.two_SS_endpoint_mod_injective
 #print axioms Recaman.TwoSSPeriodicSupply.ss_one_two_endpoint_mod_disjoint

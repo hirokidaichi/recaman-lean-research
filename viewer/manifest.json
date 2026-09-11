@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1860,
+   "lines": 1863,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43116,7 +43116,7 @@
   },
   {
    "name": "TwoSSEndpoint",
-   "lines": 401,
+   "lines": 446,
    "imports": [
     "EndpointRepetitionBudget",
     "LowSSEndpoint"
@@ -43273,52 +43273,67 @@
      "line": 347
     },
     {
-     "kind": "def",
-     "name": "isSS2P2",
-     "line": 353
+     "kind": "theorem",
+     "name": "poly_id3",
+     "line": 352
     },
     {
      "kind": "theorem",
-     "name": "no_ss2_p2_one",
+     "name": "p2_length_mod_four_eq_three",
      "line": 356
     },
     {
      "kind": "theorem",
+     "name": "stream_p2_lag_mod_four_eq_three",
+     "line": 388
+    },
+    {
+     "kind": "def",
+     "name": "isSS2P2",
+     "line": 398
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_p2_one",
+     "line": 401
+    },
+    {
+     "kind": "theorem",
      "name": "no_ss2_p2_three",
-     "line": 357
+     "line": 402
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_five",
-     "line": 358
+     "line": 403
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_seven",
-     "line": 359
+     "line": 404
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_nine",
-     "line": 360
+     "line": 405
     },
     {
      "kind": "theorem",
      "name": "ss2_length_ge_eleven",
-     "line": 363
+     "line": 408
     },
     {
      "kind": "theorem",
      "name": "stream_ss2_lag_ge_eleven",
-     "line": 384
+     "line": 429
     },
     {
      "kind": "theorem",
      "name": "ss2_subtractions_ge_five",
-     "line": 393
+     "line": 438
     }
    ],
-   "theorems": 35,
+   "theorems": 38,
    "defs": 4,
    "hasEnglishDocstring": true,
    "hasReport": false

@@ -349,6 +349,51 @@ theorem p2_length_odd (w : List Bool) (hP : P2 w) : w.length % 2 = 1 := by
   have hm := hP.1
   omega
 
+theorem poly_id3 (q : Int) : (4 * q + 1) * (4 * q + 2) = 4 * (4 * q * q + 3 * q) + 2 := by grind
+
+/-- Every P2 word must have length congruent to 3 modulo 4.
+Lengths congruent to 0, 1, or 2 modulo 4 are algebraically impossible. -/
+theorem p2_length_mod_four_eq_three (w : List Bool) (hP : P2 w) :
+    w.length % 4 = 3 := by
+  have hm := hP.1
+  have hM := hP.2
+  have h2 := twice_moment w
+  let L : Int := (w.length : Int)
+  have h4 : 4 * positions w = L * (L + 1) := by
+    change 2 * moment w = 4 * positions w - L * (L + 1) at h2
+    rw [hM] at h2
+    omega
+  have hmass : (w.length : Int) = 2 * ones w - 1 := by
+    have h := mass_eq w
+    rw [hm] at h
+    omega
+  have hodd : w.length % 2 = 1 := by omega
+  have hcases : w.length % 4 = 1 ∨ w.length % 4 = 3 := by omega
+  rcases hcases with h1 | h3
+  · exfalso
+    have hd : L = 4 * ((w.length / 4 : Nat) : Int) + 1 := by
+      change (w.length : Int) = 4 * ((w.length / 4 : Nat) : Int) + 1
+      have : w.length = 4 * (w.length / 4) + 1 := by omega
+      exact_mod_cast this
+    have heq : L * (L + 1) = 4 * (4 * ((w.length / 4 : Nat) : Int) * ((w.length / 4 : Nat) : Int) + 3 * ((w.length / 4 : Nat) : Int)) + 2 := by
+      rw [hd]
+      have : 4 * ((w.length / 4 : Nat) : Int) + 1 + 1 = 4 * ((w.length / 4 : Nat) : Int) + 2 := by omega
+      rw [this]
+      exact poly_id3 ((w.length / 4 : Nat) : Int)
+    rw [heq] at h4
+    omega
+  · exact h3
+
+/-- In any stream, every P2 supplier has lag congruent to 3 modulo 4. -/
+theorem stream_p2_lag_mod_four_eq_three (e : Int → Bool) (t : Int) (d : Nat)
+    (hP : ShortPeriodicSupply.P2 e t d) :
+    d % 4 = 3 := by
+  have hp2 := (past_p2_iff e t d).mpr hP
+  have hmod := p2_length_mod_four_eq_three (past e t d) hp2
+  have hlen : (past e t d).length = d := by simp [past]
+  rw [hlen] at hmod
+  exact hmod
+
 /-- Decidable check for SS=2 P2 word. -/
 def isSS2P2 (w : List Bool) : Bool :=
   mass w == 1 && moment w == 0 && ssCount w == 2
