@@ -1861,3 +1861,12 @@ import Recaman
 #print axioms Recaman.TwoSSTightDisjoint.deleted_neighborhood_hall_of_has_ss2
 #print axioms Recaman.TwoSSTightDisjoint.slack_of_has_ss2
 #print axioms Recaman.TwoSSTightDisjoint.deletable_of_avoids_ss2
+
+#print axioms Recaman.TwoSSLocalDonation.oldest_is_subtraction
+#print axioms Recaman.TwoSSLocalDonation.oldest_covered_by_window
+#print axioms Recaman.TwoSSLocalDonation.oldest_covered_by_subset
+#print axioms Recaman.TwoSSLocalDonation.oldest_donation_preserves_hall
+#print axioms Recaman.TwoSSLocalDonation.oldest_donation_injective
+#print axioms Recaman.TwoSSLocalDonation.oldest_donation_disjoint_from_one_SS
+#print axioms Recaman.TwoSSLocalDonation.oldest_donation_list_nodup
+#print axioms Recaman.TwoSSLocalDonation.oldest_donation_disjoint_one_SS_list

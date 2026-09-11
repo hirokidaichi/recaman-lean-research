@@ -3,8 +3,8 @@
 - ID: `H-20260911-02`
 - Owner: Antigravity
 - Created: 2026-09-11 12:05 JST
-- Status: `COMPUTED` (E-183 candidate). The gate T6 (E-179) instantiated at `ssCount = 2`.
-- Research branch: issue #73, gate T6 after E-179 and E-181
+- Status: `PROVED-LEAN` for p ≤ 11 (E-186, E-187); `COMPUTED` for p ≤ 21. Gate T6 established at `ssCount = 2`.
+- Research branch: issue #73, gate T6 after E-179, E-181, E-184, E-185, E-186, E-187
 
 ## Exact statement
 
@@ -80,7 +80,8 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `COMPUTED` | python minimal L search up to len 28 | 0 minimal words with moment L + L.length = 0 and ssCount ≤ 2 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSEndpoint` (E-184) | Rigidity: clean-only earlier shared endpoints, no SS=2 collisions |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSPeriodicSupply` (E-185) | Periodic modular injectivity, disjointness from SS=1, joint capacity |
-
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSTightDisjoint` (E-186) | No tight subset contains SS=2; Hall condition universally preserved on SS=2 components under subtraction deletion |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSLocalDonation` (E-187) | Local donation s*(u) ∈ D; mutual injectivity; disjointness from SS=1; Hall preservation |
 
 ## Semantic audit
 
@@ -96,11 +97,11 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 
 ## Decision
 
-- Continue / formalize / refute / stop: `COMPUTED` verified up to p=21 with 8,673 witnesses.
-  Formalize the endpoint rigidity lemmas (`ss2_shared_endpoint_clean` and
-  `stream_ss2_earlier_clean`) in Lean, connecting to `EndpointRepetitionBudget`.
-- Reason: The mechanism behind T6 at `ssCount = 2` is now completely transparent:
-  tight bottleneck sets are confined to `U_low`, and `s*(t)` never intersects `N(A)` for
-  any tight set.
+- Continue / formalize / refute / stop: `PROVED-LEAN` for p ≤ 11 (E-186, E-187), `COMPUTED` up to p=21 with 8,673 witnesses.
+  T6 gate at `ssCount = 2` is discharged for p ≤ 11.
+- Reason: The mechanism behind T6 at `ssCount = 2` is now completely formalized:
+  tight bottleneck sets cannot contain SS=2 windows, deleting `s*(u)` preserves Hall's
+  condition on all components containing `u`, and distinct SS=2 windows donate distinct subtractions
+  disjoint from SS=1.
 - Reopen only if: a counterexample is found at `p ≥ 22` or a tight component is found
   containing an SS=2 window.
