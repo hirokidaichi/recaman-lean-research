@@ -87,6 +87,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightBottleneckBound` (E-190) | Non-wrapping subtraction positions strictly injective; universal size-lag bound lag(u) ≤ 2|A| + 1; tight subsets of size ≤ 2 must have lag 3 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSSmallCapacityClosure` (E-191) | Tight subsets of size ≤ 2 cannot contain windows with neighborhood size ≥ 3; complete deletability and Hall preservation on lag-3-dominated words |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightComponentSlackBound` (E-192) | Period-dependent slack bounds: 2|D| < p; for p ≤ 10, |D| ≤ 4 and |A| ≤ 2 avoiding u0; no lag ≥ 7 in tight avoiding sets; complete deletability and Hall preservation for all p ≤ 10 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalTightLagBound` (E-193) | Universal tight bottleneck lag stratification: |A| ≤ |D| - 2; lag 4m - 1 requires |D| ≥ 2m + 1 and lag ≤ 2|D| - 3; lag ≥ 7 excluded for |D| ≤ 4, lag ≥ 11 excluded for |D| ≤ 6 |
 
 ## Semantic audit
 
