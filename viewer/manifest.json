@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2213,
+   "lines": 2226,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -44592,6 +44592,79 @@
    "hasReport": false
   },
   {
+   "name": "TightSubsetSSExclusion",
+   "lines": 235,
+   "imports": [
+    "TightPeriodStratification"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "non_clean_subset_strictly_expands_p_le_seven",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "non_clean_not_in_tight_p_le_seven",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subsets_ss_zero_p_le_seven",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_subset_strictly_expands_p_le_eleven",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_not_in_tight_p_le_eleven",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subsets_purely_low_ss_p_le_eleven",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_subset_strictly_expands_p_le_fifteen",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_four_not_in_tight_p_le_fifteen",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subsets_ss_le_three_p_le_fifteen",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_subset_strictly_expands_p_le_nineteen",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "ss_ge_six_not_in_tight_p_le_nineteen",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subsets_ss_le_five_p_le_nineteen",
+     "line": 220
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -46008,6 +46081,6 @@
    "hasReport": false
   }
  ],
- "total": 347,
+ "total": 348,
  "withReport": 167
 }
