@@ -2293,6 +2293,19 @@ import Recaman
 #print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_gate_t6_complete_reduction_p11
 #print axioms Recaman.GrandPeriodicBottleneckTheorem.grand_periodic_bottleneck_synthesis
 
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_supply_slack_zero
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_five_tier_high_ss_zero
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_four_tier_high_ss_zero
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_two_tier_ss2_zero
+#print axioms Recaman.ExtremalSupplyRigidity.p11_tight_bottleneck_is_pure_low_ss
+#print axioms Recaman.ExtremalSupplyRigidity.p7_tight_bottleneck_is_pure_aas
+#print axioms Recaman.ExtremalSupplyRigidity.p15_tight_bottleneck_ss_le_three
+#print axioms Recaman.ExtremalSupplyRigidity.p19_tight_bottleneck_ss_le_five
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_hall_governed_by_low_ss_p11
+#print axioms Recaman.ExtremalSupplyRigidity.extremal_hall_governed_by_clean_p7
+#print axioms Recaman.ExtremalSupplyRigidity.grand_extremal_supply_rigidity
+
+
 
 
 

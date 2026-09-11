@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2305,
+   "lines": 2318,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26993,6 +26993,75 @@
    "hasReport": false
   },
   {
+   "name": "ExtremalSupplyRigidity",
+   "lines": 155,
+   "imports": [
+    "GrandPeriodicBottleneckTheorem",
+    "FiveSSWeightCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "extremal_supply_slack_zero",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_five_tier_high_ss_zero",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_four_tier_high_ss_zero",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_two_tier_ss2_zero",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_tight_bottleneck_is_pure_low_ss",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "p7_tight_bottleneck_is_pure_aas",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "p15_tight_bottleneck_ss_le_three",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "p19_tight_bottleneck_ss_le_five",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_hall_governed_by_low_ss_p11",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_hall_governed_by_clean_p7",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_extremal_supply_rigidity",
+     "line": 147
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FiniteP2Semantics",
    "lines": 108,
    "imports": [
@@ -46501,6 +46570,6 @@
    "hasReport": false
   }
  ],
- "total": 354,
+ "total": 355,
  "withReport": 167
 }
