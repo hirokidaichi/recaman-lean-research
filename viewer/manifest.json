@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2342,
+   "lines": 2357,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -44588,6 +44588,95 @@
    "hasReport": false
   },
   {
+   "name": "TenGateT6Resolution",
+   "lines": 341,
+   "imports": [
+    "UniversalGateT6Closure",
+    "QuantumP2Arithmetic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "past_seven",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_lag_seven_three_subtractions",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "subPhaseOfIndex",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhaseOfIndex_eq",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhaseOfIndex_lt",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhaseOfIndex_inj",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhaseOfIndex_mem_neighborhood",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_seven_neighborhood_ge_three",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "no_lag_seven_in_tight_avoiding_p10",
+     "line": 190
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_lags_le_five_p10",
+     "line": 215
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_all_lag_three_p10",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_all_aas_p10",
+     "line": 260
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_universal_gate_t6_deletability_unconditional",
+     "line": 278
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_universal_gate_t6_hall_preservation_unconditional",
+     "line": 301
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_ten_gate_t6_closure",
+     "line": 320
+    }
+   ],
+   "theorems": 14,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -46703,6 +46792,6 @@
    "hasReport": false
   }
  ],
- "total": 357,
+ "total": 358,
  "withReport": 167
 }

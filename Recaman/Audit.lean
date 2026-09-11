@@ -2328,6 +2328,21 @@ import Recaman
 #print axioms Recaman.QuantumP2Arithmetic.tight_size_le_two_forces_level_zero
 #print axioms Recaman.QuantumP2Arithmetic.grand_quantum_p2_arithmetic_synthesis
 
+#print axioms Recaman.TenGateT6Resolution.past_seven
+#print axioms Recaman.TenGateT6Resolution.p2_lag_seven_three_subtractions
+#print axioms Recaman.TenGateT6Resolution.subPhaseOfIndex_eq
+#print axioms Recaman.TenGateT6Resolution.subPhaseOfIndex_lt
+#print axioms Recaman.TenGateT6Resolution.subPhaseOfIndex_inj
+#print axioms Recaman.TenGateT6Resolution.subPhaseOfIndex_mem_neighborhood
+#print axioms Recaman.TenGateT6Resolution.lag_seven_neighborhood_ge_three
+#print axioms Recaman.TenGateT6Resolution.no_lag_seven_in_tight_avoiding_p10
+#print axioms Recaman.TenGateT6Resolution.tight_avoiding_lags_le_five_p10
+#print axioms Recaman.TenGateT6Resolution.tight_avoiding_all_lag_three_p10
+#print axioms Recaman.TenGateT6Resolution.tight_avoiding_all_aas_p10
+#print axioms Recaman.TenGateT6Resolution.p10_universal_gate_t6_deletability_unconditional
+#print axioms Recaman.TenGateT6Resolution.p10_universal_gate_t6_hall_preservation_unconditional
+#print axioms Recaman.TenGateT6Resolution.grand_ten_gate_t6_closure
+
 
 
 
