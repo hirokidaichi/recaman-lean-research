@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2035,
+   "lines": 2043,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27221,6 +27221,49 @@
    "hasReport": false
   },
   {
+   "name": "HighSSEliminationGrandTheorem",
+   "lines": 120,
+   "imports": [
+    "TwoSSWeightCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "grand_capacity_reduction",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "strict_deficit_of_deletable_ss2",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "saturated_excludes_ss2_donor",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_one_excludes_two_ss2_donors",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "gate_t6_strict_slack_p11",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_supply_pure_low_ss_p11",
+     "line": 97
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HighValueDensity",
    "lines": 252,
    "imports": [
@@ -44915,6 +44958,6 @@
    "hasReport": false
   }
  ],
- "total": 333,
+ "total": 334,
  "withReport": 167
 }

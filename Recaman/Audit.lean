@@ -2031,5 +2031,13 @@ import Recaman
 #print axioms Recaman.TwoSSWeightCapacity.single_ss2_donor_slack
 #print axioms Recaman.TwoSSWeightCapacity.two_ss2_donors_slack
 
+#print axioms Recaman.HighSSEliminationGrandTheorem.grand_capacity_reduction
+#print axioms Recaman.HighSSEliminationGrandTheorem.strict_deficit_of_deletable_ss2
+#print axioms Recaman.HighSSEliminationGrandTheorem.saturated_excludes_ss2_donor
+#print axioms Recaman.HighSSEliminationGrandTheorem.deficit_one_excludes_two_ss2_donors
+#print axioms Recaman.HighSSEliminationGrandTheorem.gate_t6_strict_slack_p11
+#print axioms Recaman.HighSSEliminationGrandTheorem.extremal_supply_pure_low_ss_p11
+
+
 
 

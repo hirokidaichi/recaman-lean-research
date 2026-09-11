@@ -100,6 +100,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2MultiDonorDeficit` (E-203) | Multi-Donor Deficit: simultaneous deletion of two SS=2 donations forces |U| ≤ |D| - 2; two SS=2 donors excluded from deficit-1 supply |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ExtremalSSExclusion` (E-204) | Extremal SS Exclusion: saturated supplies |U| = |D| strictly exclude SS=2 donors; all windows in extremal supply satisfy ssCount ≤ 1 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSWeightCapacity` (E-205) | Two-Weight SS=2 Capacity: |U_{≤1}| + 2|U₂| ≤ |D|, deficit hierarchy |U₂| ≤ slack, saturated supplies have |U₂| = 0 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.HighSSEliminationGrandTheorem` (E-206) | Grand Reduction: global capacity reduced to low-SS words; SS=2 donors force |U| ≤ |D| - 1 for p ≤ 11; Gate T6 completely resolved |
 
 ## Semantic audit
 
