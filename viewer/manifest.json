@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2292,
+   "lines": 2305,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27528,6 +27528,74 @@
    "hasReport": true
   },
   {
+   "name": "GrandPeriodicBottleneckTheorem",
+   "lines": 163,
+   "imports": [
+    "UniversalGateT6Closure"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "apex_tight_lag_quantization_p19",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_ss_bound_p19",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_ss_bound_p15",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_ss_bound_p11",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_ss_zero_p7",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_hall_reduction_hierarchy_p11",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_hall_reduction_hierarchy_p7",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_slack_compensation_hierarchy_p11",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_unconditional_p7",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_complete_reduction_p11",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_periodic_bottleneck_synthesis",
+     "line": 146
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandStratificationSynthesis",
    "lines": 106,
    "imports": [
@@ -46433,6 +46501,6 @@
    "hasReport": false
   }
  ],
- "total": 353,
+ "total": 354,
  "withReport": 167
 }

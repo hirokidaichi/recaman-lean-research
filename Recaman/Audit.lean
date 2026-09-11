@@ -2281,6 +2281,19 @@ import Recaman
 #print axioms Recaman.UniversalGateT6Closure.p11_gate_t6_tight_reduction
 #print axioms Recaman.UniversalGateT6Closure.grand_gate_t6_resolution
 
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_tight_lag_quantization_p19
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_tight_ss_bound_p19
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_tight_ss_bound_p15
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_tight_ss_bound_p11
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_tight_ss_zero_p7
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_hall_reduction_hierarchy_p11
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_hall_reduction_hierarchy_p7
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_slack_compensation_hierarchy_p11
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_gate_t6_unconditional_p7
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.apex_gate_t6_complete_reduction_p11
+#print axioms Recaman.GrandPeriodicBottleneckTheorem.grand_periodic_bottleneck_synthesis
+
+
 
 
 
