@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1959,
+   "lines": 1965,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26080,6 +26080,44 @@
    "hasReport": true
   },
   {
+   "name": "ElevenSSDonationClosure",
+   "lines": 125,
+   "imports": [
+    "SS2AASCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p11_tight_avoiding_size_le_three",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_donation_disjoint_of_lag_lt_fifteen",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_ss2_donor_deletable_of_lag_lt_fifteen",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_ss2_donor_hall_preserved_of_lag_lt_fifteen",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_ss2_minimal_donor_hall_preserved",
+     "line": 104
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "EndpointRepetitionBudget",
    "lines": 182,
    "imports": [
@@ -44473,6 +44511,6 @@
    "hasReport": false
   }
  ],
- "total": 324,
+ "total": 325,
  "withReport": 167
 }
