@@ -2,6 +2,8 @@ import Recaman.OnePerRun
 
 namespace Recaman.NoSSMassOne
 
+set_option linter.unusedSimpArgs false
+
 open LeadingRunSupply SSFreeSupply OnePerRun OneSSMultiplicity TwoSSLeadingSibling
 
 /-! SS-free mass-1 words have odd length. The word `AA (SA)^r S` has

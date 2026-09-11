@@ -56,7 +56,7 @@ theorem sharp_charge_mod_injective (e : Int → Bool) (p : Nat)
   have htime := sharp_charge_injective e t (u+k*p) m n hm hn hat hau' ht hu'
     (by omega)
   rw [htime]
-  simp [Int.add_emod, Int.mul_emod]
+  simp [Int.add_emod]
 
 /-- Every sharp charge is an S phase, including periods shorter than its lag. -/
 theorem sharp_charge_is_S (e : Int → Bool) (p : Nat)
@@ -118,7 +118,7 @@ theorem periodic_capacity_extension (e : Int → Bool) (p L : Nat)
     (hper : ∀ x : Int, e (x+p) = e x) (hp : 0 < p)
     (U Q : List Nat) (run off : Nat → Nat)
     (hUnodup : U.Nodup) (hQnodup : Q.Nodup)
-    (hUrange : ∀ u, u ∈ U → u < p) (hQrange : ∀ t, t ∈ Q → t < p)
+    (_hUrange : ∀ u, u ∈ U → u < p) (hQrange : ∀ t, t ∈ Q → t < p)
     (hUA : ∀ u, u ∈ U → e u = true)
     (hUsupply : ∀ u, u ∈ U → ∃ d : Nat, d ≤ L ∧ ShortPeriodicSupply.P2 e u d)
     (hOff : ∀ u, u ∈ U → 1 ≤ off u ∧ off u ≤ L ∧

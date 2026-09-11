@@ -3,6 +3,8 @@ import Recaman.SSFreeSupply
 
 namespace Recaman.OnePerRun
 
+set_option linter.unusedSimpArgs false
+
 open LeadingRunSupply OneSSMultiplicity SSFreeSupply
 open LowSSEndpoint TwoSSLeadingSibling
 

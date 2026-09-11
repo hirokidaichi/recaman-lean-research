@@ -3,6 +3,8 @@ import Recaman.LagElevenSupply
 
 namespace Recaman.LagElevenPeriodic
 
+set_option linter.unusedSimpArgs false
+
 /-! # Periodic glue of the lag-11 injection
 
 The E-079 kernel classifies min-lag-11 windows. This module recovers those

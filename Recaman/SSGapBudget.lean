@@ -2,6 +2,8 @@ import Recaman.OneSSMultiplicity
 
 namespace Recaman.SSGapBudget
 
+set_option linter.unusedSimpArgs false
+
 open LeadingRunSupply OneSSGapAlgebra OneSSMultiplicity SSFreeSupply
 
 /-! An all-SS structural budget on actual words. This does not allocate S

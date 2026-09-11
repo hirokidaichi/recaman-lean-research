@@ -27670,7 +27670,7 @@
   },
   {
    "name": "LagElevenPeriodic",
-   "lines": 1505,
+   "lines": 1507,
    "imports": [
     "ShortPeriodicSupply",
     "LagElevenSupply"
@@ -27679,492 +27679,492 @@
     {
      "kind": "def",
      "name": "maskAux",
-     "line": 16
+     "line": 18
     },
     {
      "kind": "def",
      "name": "maskAt",
-     "line": 22
-    },
-    {
-     "kind": "theorem",
-     "name": "maskAux_testBit_ge",
      "line": 24
     },
     {
      "kind": "theorem",
+     "name": "maskAux_testBit_ge",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
      "name": "maskAux_testBit",
-     "line": 43
+     "line": 45
     },
     {
      "kind": "theorem",
      "name": "maskAt_testBit",
-     "line": 76
+     "line": 78
     },
     {
      "kind": "theorem",
      "name": "maskAt_lt",
-     "line": 80
+     "line": 82
     },
     {
      "kind": "theorem",
      "name": "isS_maskAt",
-     "line": 86
+     "line": 88
     },
     {
      "kind": "theorem",
      "name": "p2At_iff_P2",
-     "line": 94
+     "line": 96
     },
     {
      "kind": "def",
      "name": "minLag11At",
-     "line": 126
+     "line": 128
     },
     {
      "kind": "theorem",
      "name": "minLag11_eq_true_iff",
-     "line": 129
+     "line": 131
     },
     {
      "kind": "theorem",
      "name": "minLag11At_iff",
-     "line": 134
+     "line": 136
     },
     {
      "kind": "theorem",
      "name": "typeOf_spec",
-     "line": 148
+     "line": 150
     },
     {
      "kind": "theorem",
      "name": "contains_iff_isS",
-     "line": 168
+     "line": 170
     },
     {
      "kind": "theorem",
      "name": "signOff_typeAt",
-     "line": 175
+     "line": 177
     },
     {
      "kind": "def",
      "name": "phi11",
-     "line": 194
+     "line": 196
     },
     {
      "kind": "theorem",
      "name": "phi11_is_sub",
-     "line": 197
+     "line": 199
     },
     {
      "kind": "theorem",
      "name": "timeClash_same_time",
-     "line": 224
+     "line": 226
     },
     {
      "kind": "def",
      "name": "u11Count",
-     "line": 272
+     "line": 274
     },
     {
      "kind": "def",
      "name": "phi11Phase",
-     "line": 278
+     "line": 280
     },
     {
      "kind": "theorem",
      "name": "e_shift_nat",
-     "line": 281
+     "line": 283
     },
     {
      "kind": "theorem",
      "name": "e_shift",
-     "line": 297
+     "line": 299
     },
     {
      "kind": "theorem",
      "name": "maskAt_shift",
-     "line": 311
+     "line": 313
     },
     {
      "kind": "theorem",
      "name": "supplied_is_lag3_or_h1_or_h2",
-     "line": 328
+     "line": 330
     },
     {
      "kind": "theorem",
      "name": "range3",
-     "line": 340
-    },
-    {
-     "kind": "theorem",
-     "name": "range7",
      "line": 342
     },
     {
      "kind": "theorem",
-     "name": "u7_not_u11",
+     "name": "range7",
      "line": 344
+    },
+    {
+     "kind": "theorem",
+     "name": "u7_not_u11",
+     "line": 346
     },
     {
      "kind": "def",
      "name": "u11Phases",
-     "line": 400
+     "line": 402
     },
     {
      "kind": "def",
      "name": "subPhases",
-     "line": 403
+     "line": 405
     },
     {
      "kind": "theorem",
      "name": "phi11Phase_lt",
-     "line": 406
+     "line": 408
     },
     {
      "kind": "theorem",
      "name": "emod_toNat_inj",
-     "line": 424
+     "line": 426
     },
     {
      "kind": "theorem",
      "name": "phi11Phase_emod",
-     "line": 432
+     "line": 434
     },
     {
      "kind": "theorem",
      "name": "minLag11At_shift",
-     "line": 439
+     "line": 441
     },
     {
      "kind": "theorem",
      "name": "phi11Phase_is_sub",
-     "line": 453
+     "line": 455
     },
     {
      "kind": "theorem",
      "name": "charge_eq_of_typeOf_eq",
-     "line": 487
+     "line": 489
     },
     {
      "kind": "theorem",
      "name": "phi11Phase_inj",
-     "line": 492
+     "line": 494
     },
     {
      "kind": "theorem",
      "name": "filter_length_succ",
-     "line": 590
+     "line": 592
     },
     {
      "kind": "theorem",
      "name": "range_zero",
-     "line": 600
+     "line": 602
     },
     {
      "kind": "theorem",
      "name": "u11Count_eq_filter",
-     "line": 603
+     "line": 605
     },
     {
      "kind": "def",
      "name": "u7Phases",
-     "line": 621
+     "line": 623
     },
     {
      "kind": "theorem",
      "name": "suppliedCount_eq_filter",
-     "line": 624
+     "line": 626
     },
     {
      "kind": "theorem",
      "name": "subtractionCount_eq_filter",
-     "line": 642
+     "line": 644
     },
     {
      "kind": "theorem",
      "name": "mem_u11Phases",
-     "line": 661
+     "line": 663
     },
     {
      "kind": "theorem",
      "name": "mem_u7Phases",
-     "line": 666
+     "line": 668
     },
     {
      "kind": "theorem",
      "name": "mem_subPhases",
-     "line": 671
+     "line": 673
     },
     {
      "kind": "theorem",
      "name": "nodup_map_of_inj",
-     "line": 675
+     "line": 677
     },
     {
      "kind": "def",
      "name": "isLag3Win",
-     "line": 691
+     "line": 693
     },
     {
      "kind": "def",
      "name": "isH1Win",
-     "line": 694
+     "line": 696
     },
     {
      "kind": "def",
      "name": "isH2Win",
-     "line": 698
+     "line": 700
     },
     {
      "kind": "def",
      "name": "phi7Off",
-     "line": 702
+     "line": 704
     },
     {
      "kind": "def",
      "name": "phi7Phase",
-     "line": 705
+     "line": 707
     },
     {
      "kind": "def",
      "name": "followingGap",
-     "line": 708
+     "line": 710
     },
     {
      "kind": "theorem",
      "name": "u11_images_subset_sub",
-     "line": 712
+     "line": 714
     },
     {
      "kind": "theorem",
      "name": "u11_images_nodup",
-     "line": 722
+     "line": 724
     },
     {
      "kind": "theorem",
      "name": "u11Count_le_subtractionCount",
-     "line": 731
+     "line": 733
     },
     {
      "kind": "theorem",
      "name": "phi7Off_of_supplied",
-     "line": 739
+     "line": 741
     },
     {
      "kind": "theorem",
      "name": "phi7Off_is_S",
-     "line": 755
+     "line": 757
     },
     {
      "kind": "theorem",
      "name": "phi7Phase_emod",
-     "line": 802
+     "line": 804
     },
     {
      "kind": "theorem",
      "name": "phi7Phase_lt",
-     "line": 809
+     "line": 811
     },
     {
      "kind": "theorem",
      "name": "phi7Phase_is_sub",
-     "line": 827
+     "line": 829
     },
     {
      "kind": "def",
      "name": "signOff7",
-     "line": 857
+     "line": 859
     },
     {
      "kind": "def",
      "name": "timeClash7",
-     "line": 862
+     "line": 864
     },
     {
      "kind": "def",
      "name": "u7lag3",
-     "line": 868
+     "line": 870
     },
     {
      "kind": "def",
      "name": "u7h1",
-     "line": 869
+     "line": 871
     },
     {
      "kind": "def",
      "name": "u7h2",
-     "line": 870
+     "line": 872
     },
     {
      "kind": "theorem",
      "name": "u7_pairwise_timeClash7",
-     "line": 873
+     "line": 875
     },
     {
      "kind": "theorem",
      "name": "window_shift",
-     "line": 882
+     "line": 884
     },
     {
      "kind": "theorem",
      "name": "phi7Off_bounds",
-     "line": 897
+     "line": 899
     },
     {
      "kind": "theorem",
      "name": "isLag3Win_bits",
-     "line": 905
+     "line": 907
     },
     {
      "kind": "theorem",
      "name": "isH1Win_bits",
-     "line": 913
+     "line": 915
     },
     {
      "kind": "theorem",
      "name": "isH2Win_bits",
-     "line": 925
+     "line": 927
     },
     {
      "kind": "theorem",
      "name": "window_e1",
-     "line": 936
+     "line": 938
     },
     {
      "kind": "theorem",
      "name": "window_e2",
-     "line": 939
+     "line": 941
     },
     {
      "kind": "theorem",
      "name": "window_e3",
-     "line": 942
+     "line": 944
     },
     {
      "kind": "theorem",
      "name": "window_e4",
-     "line": 945
+     "line": 947
     },
     {
      "kind": "theorem",
      "name": "window_e5",
-     "line": 948
+     "line": 950
     },
     {
      "kind": "theorem",
      "name": "window_e6",
-     "line": 951
+     "line": 953
     },
     {
      "kind": "theorem",
      "name": "window_e7",
-     "line": 954
+     "line": 956
     },
     {
      "kind": "theorem",
      "name": "int_nat1",
-     "line": 958
-    },
-    {
-     "kind": "theorem",
-     "name": "int_nat2",
-     "line": 959
-    },
-    {
-     "kind": "theorem",
-     "name": "int_nat3",
      "line": 960
     },
     {
      "kind": "theorem",
-     "name": "int_nat4",
+     "name": "int_nat2",
      "line": 961
     },
     {
      "kind": "theorem",
-     "name": "int_nat5",
+     "name": "int_nat3",
      "line": 962
     },
     {
      "kind": "theorem",
-     "name": "int_nat6",
+     "name": "int_nat4",
      "line": 963
     },
     {
      "kind": "theorem",
-     "name": "int_nat7",
+     "name": "int_nat5",
      "line": 964
     },
     {
      "kind": "theorem",
-     "name": "isH1Win_sign",
+     "name": "int_nat6",
+     "line": 965
+    },
+    {
+     "kind": "theorem",
+     "name": "int_nat7",
      "line": 966
     },
     {
      "kind": "theorem",
+     "name": "isH1Win_sign",
+     "line": 968
+    },
+    {
+     "kind": "theorem",
      "name": "isH2Win_sign",
-     "line": 1005
+     "line": 1007
     },
     {
      "kind": "theorem",
      "name": "phi7_timeClash",
-     "line": 1046
+     "line": 1048
     },
     {
      "kind": "theorem",
      "name": "phi7Phase_inj",
-     "line": 1118
+     "line": 1120
     },
     {
      "kind": "theorem",
      "name": "u7_images_subset_sub",
-     "line": 1211
+     "line": 1213
     },
     {
      "kind": "theorem",
      "name": "u7_images_nodup",
-     "line": 1221
+     "line": 1223
     },
     {
      "kind": "theorem",
      "name": "u7Blocked_parts",
-     "line": 1230
+     "line": 1232
     },
     {
      "kind": "theorem",
      "name": "contradicts_true",
-     "line": 1239
+     "line": 1241
     },
     {
      "kind": "theorem",
      "name": "contradicts_false_of_eq",
-     "line": 1244
+     "line": 1246
     },
     {
      "kind": "theorem",
      "name": "u7_blocked_by_window",
-     "line": 1257
+     "line": 1259
     },
     {
      "kind": "theorem",
      "name": "phi7_phi11_image_ne",
-     "line": 1395
+     "line": 1397
     },
     {
      "kind": "theorem",
      "name": "nodup_append",
-     "line": 1450
+     "line": 1452
     },
     {
      "kind": "theorem",
      "name": "phi7_phi11_images_disjoint",
-     "line": 1466
+     "line": 1468
     },
     {
      "kind": "theorem",
      "name": "suppliedCount_add_u11Count_le_subtractionCount",
-     "line": 1480
+     "line": 1482
     }
    ],
    "theorems": 78,
@@ -30762,7 +30762,7 @@
   },
   {
    "name": "NoSSMassOne",
-   "lines": 411,
+   "lines": 413,
    "imports": [
     "OnePerRun"
    ],
@@ -30770,147 +30770,147 @@
     {
      "kind": "theorem",
      "name": "p2_length_mod_four",
-     "line": 11
+     "line": 13
     },
     {
      "kind": "theorem",
      "name": "alt_false_length",
-     "line": 19
+     "line": 21
     },
     {
      "kind": "theorem",
      "name": "alt_false_ssCount",
-     "line": 24
+     "line": 26
     },
     {
      "kind": "def",
      "name": "minWord",
-     "line": 30
+     "line": 32
     },
     {
      "kind": "theorem",
      "name": "minWord_length",
-     "line": 33
+     "line": 35
     },
     {
      "kind": "theorem",
      "name": "minWord_mass",
-     "line": 36
+     "line": 38
     },
     {
      "kind": "theorem",
      "name": "alt_false_last",
-     "line": 39
+     "line": 41
     },
     {
      "kind": "theorem",
      "name": "minWord_ssCount",
-     "line": 50
+     "line": 52
     },
     {
      "kind": "theorem",
      "name": "minWord_NoSS",
-     "line": 58
+     "line": 60
     },
     {
      "kind": "theorem",
      "name": "minWord_moment",
-     "line": 61
+     "line": 63
     },
     {
      "kind": "theorem",
      "name": "mass_one_length_odd",
-     "line": 70
+     "line": 72
     },
     {
      "kind": "theorem",
      "name": "noss_mass_one_moment_bound",
-     "line": 79
+     "line": 81
     },
     {
      "kind": "theorem",
      "name": "minWord_sharp",
-     "line": 114
+     "line": 116
     },
     {
      "kind": "theorem",
      "name": "case5_remainder_too_negative",
-     "line": 122
+     "line": 124
     },
     {
      "kind": "theorem",
      "name": "nested_reverse_short_impossible",
-     "line": 135
+     "line": 137
     },
     {
      "kind": "inductive",
      "name": "MassOneNoSS",
-     "line": 168
+     "line": 170
     },
     {
      "kind": "theorem",
      "name": "massOneNoSS_mass",
-     "line": 176
+     "line": 178
     },
     {
      "kind": "theorem",
      "name": "massOneNoSS_ssCount",
-     "line": 185
+     "line": 187
     },
     {
      "kind": "theorem",
      "name": "massOneNoSS_NoSS",
-     "line": 209
+     "line": 211
     },
     {
      "kind": "theorem",
      "name": "prefixAS_moment",
-     "line": 212
+     "line": 214
     },
     {
      "kind": "theorem",
      "name": "prefixSA_moment",
-     "line": 217
+     "line": 219
     },
     {
      "kind": "theorem",
      "name": "massOneNoSS_slack",
-     "line": 224
+     "line": 226
     },
     {
      "kind": "theorem",
      "name": "noss_mass_one_classify",
-     "line": 247
+     "line": 249
     },
     {
      "kind": "theorem",
      "name": "sa_prefixed_minWord",
-     "line": 287
+     "line": 289
     },
     {
      "kind": "theorem",
      "name": "sa_prefixed_minWord_moment",
-     "line": 294
+     "line": 296
     },
     {
      "kind": "theorem",
      "name": "sa_prefixed_minWord_ssCount",
-     "line": 299
+     "line": 301
     },
     {
      "kind": "theorem",
      "name": "sa_prefixed_minWord_slack",
-     "line": 303
+     "line": 305
     },
     {
      "kind": "theorem",
      "name": "consecutive_reverse_extra_mass_moment",
-     "line": 312
+     "line": 314
     },
     {
      "kind": "theorem",
      "name": "consecutive_reverse_short_impossible",
-     "line": 364
+     "line": 366
     }
    ],
    "theorems": 27,
@@ -31395,7 +31395,7 @@
   },
   {
    "name": "OnePerRun",
-   "lines": 366,
+   "lines": 368,
    "imports": [
     "TwoSSLeadingSibling",
     "SSFreeSupply"
@@ -31404,107 +31404,107 @@
     {
      "kind": "theorem",
      "name": "ssCount_cons_A",
-     "line": 13
+     "line": 15
     },
     {
      "kind": "theorem",
      "name": "ssCount_append",
-     "line": 16
+     "line": 18
     },
     {
      "kind": "theorem",
      "name": "ssCount_has_SS",
-     "line": 32
+     "line": 34
     },
     {
      "kind": "theorem",
      "name": "ssCount_prefix_SSSS",
-     "line": 39
+     "line": 41
     },
     {
      "kind": "theorem",
      "name": "ss_gap_two_has_three",
-     "line": 54
+     "line": 56
     },
     {
      "kind": "theorem",
      "name": "noSAAS_drop",
-     "line": 74
+     "line": 76
     },
     {
      "kind": "theorem",
      "name": "ssCount_prefix_gap_four",
-     "line": 83
+     "line": 85
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss_gap_four",
-     "line": 103
+     "line": 105
     },
     {
      "kind": "theorem",
      "name": "ssCount_prefix_gap_six",
-     "line": 124
+     "line": 126
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss_gap_six_form",
-     "line": 154
+     "line": 156
     },
     {
      "kind": "theorem",
      "name": "ss2_SSS_tail",
-     "line": 185
+     "line": 187
     },
     {
      "kind": "theorem",
      "name": "NoSS_of_ssCount_zero",
-     "line": 204
+     "line": 206
     },
     {
      "kind": "theorem",
      "name": "mass_neg_one_form",
-     "line": 209
+     "line": 211
     },
     {
      "kind": "theorem",
      "name": "mass_SA_S",
-     "line": 229
+     "line": 231
     },
     {
      "kind": "theorem",
      "name": "moment_SA_S",
-     "line": 235
+     "line": 237
     },
     {
      "kind": "theorem",
      "name": "no_ss2_P2_in_A_started_tail",
-     "line": 243
+     "line": 245
     },
     {
      "kind": "theorem",
      "name": "no_ss2_P2_in_A_started_tail'",
-     "line": 276
+     "line": 278
     },
     {
      "kind": "theorem",
      "name": "ssCount_pre_A",
-     "line": 282
+     "line": 284
     },
     {
      "kind": "theorem",
      "name": "no_ss2_P2_in_long_A_tail",
-     "line": 292
+     "line": 294
     },
     {
      "kind": "theorem",
      "name": "consecutive_not_both_ss2_nested",
-     "line": 319
+     "line": 321
     },
     {
      "kind": "theorem",
      "name": "gap_two_requires_earlier_A",
-     "line": 354
+     "line": 356
     }
    ],
    "theorems": 21,
@@ -39789,7 +39789,7 @@
   },
   {
    "name": "SSGapBudget",
-   "lines": 986,
+   "lines": 988,
    "imports": [
     "OneSSMultiplicity"
    ],
@@ -39797,422 +39797,422 @@
     {
      "kind": "def",
      "name": "zeroGaps",
-     "line": 10
-    },
-    {
-     "kind": "def",
-     "name": "extraAs",
-     "line": 11
-    },
-    {
-     "kind": "def",
-     "name": "enlargedGaps",
      "line": 12
     },
     {
      "kind": "def",
-     "name": "largeGaps",
+     "name": "extraAs",
      "line": 13
     },
     {
-     "kind": "theorem",
-     "name": "gap_balance",
+     "kind": "def",
+     "name": "enlargedGaps",
+     "line": 14
+    },
+    {
+     "kind": "def",
+     "name": "largeGaps",
      "line": 15
     },
     {
      "kind": "theorem",
+     "name": "gap_balance",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
      "name": "large_cost",
-     "line": 24
+     "line": 26
     },
     {
      "kind": "theorem",
      "name": "enlarged_cost",
-     "line": 31
+     "line": 33
     },
     {
      "kind": "theorem",
      "name": "ssCount_pre_A",
-     "line": 41
+     "line": 43
     },
     {
      "kind": "theorem",
      "name": "ssCount_S_As",
-     "line": 47
+     "line": 49
     },
     {
      "kind": "theorem",
      "name": "gapWord_head",
-     "line": 54
+     "line": 56
     },
     {
      "kind": "theorem",
      "name": "ssCount_gapWord",
-     "line": 58
+     "line": 60
     },
     {
      "kind": "theorem",
      "name": "noSAAS_suffix",
-     "line": 73
+     "line": 75
     },
     {
      "kind": "theorem",
      "name": "noSAAS_internal_gaps",
-     "line": 78
+     "line": 80
     },
     {
      "kind": "theorem",
      "name": "exact_word_budget",
-     "line": 97
+     "line": 99
     },
     {
      "kind": "theorem",
      "name": "large_gap_budget",
-     "line": 109
+     "line": 111
     },
     {
      "kind": "theorem",
      "name": "enlarged_gap_budget",
-     "line": 118
+     "line": 120
     },
     {
      "kind": "theorem",
      "name": "word_gap_representation",
-     "line": 126
+     "line": 128
     },
     {
      "kind": "theorem",
      "name": "nonempty_last",
-     "line": 137
+     "line": 139
     },
     {
      "kind": "theorem",
      "name": "every_word_budget",
-     "line": 148
+     "line": 150
     },
     {
      "kind": "theorem",
      "name": "every_P2_budget",
-     "line": 164
+     "line": 166
     },
     {
      "kind": "theorem",
      "name": "gapWord_first_S",
-     "line": 180
+     "line": 182
     },
     {
      "kind": "theorem",
      "name": "leading_run_eq_gap_a",
-     "line": 184
+     "line": 186
     },
     {
      "kind": "theorem",
      "name": "aaaa_sss_not_P2",
-     "line": 233
+     "line": 235
     },
     {
      "kind": "def",
      "name": "a4Gaps",
-     "line": 238
+     "line": 240
     },
     {
      "kind": "theorem",
      "name": "gapWeight_cons_one",
-     "line": 242
+     "line": 244
     },
     {
      "kind": "theorem",
      "name": "two_gapWeight_replicate_one",
-     "line": 246
+     "line": 248
     },
     {
      "kind": "theorem",
      "name": "gapWeight_zero_cons",
-     "line": 261
+     "line": 263
     },
     {
      "kind": "theorem",
      "name": "two_gapWeight_a4",
-     "line": 265
+     "line": 267
     },
     {
      "kind": "theorem",
      "name": "a4Gaps_list_length",
-     "line": 281
+     "line": 283
     },
     {
      "kind": "theorem",
      "name": "a4Gaps_sum",
-     "line": 285
+     "line": 287
     },
     {
      "kind": "theorem",
      "name": "a4_family_length",
-     "line": 289
+     "line": 291
     },
     {
      "kind": "theorem",
      "name": "twice_moment_a4_family",
-     "line": 294
+     "line": 296
     },
     {
      "kind": "theorem",
      "name": "a4_family_not_P2",
-     "line": 304
+     "line": 306
     },
     {
      "kind": "def",
      "name": "a5Gaps",
-     "line": 311
+     "line": 313
     },
     {
      "kind": "theorem",
      "name": "two_gapWeight_a5",
-     "line": 316
+     "line": 318
     },
     {
      "kind": "theorem",
      "name": "a5Gaps_list_length",
-     "line": 336
+     "line": 338
     },
     {
      "kind": "theorem",
      "name": "a5Gaps_sum",
-     "line": 340
+     "line": 342
     },
     {
      "kind": "theorem",
      "name": "a5_family_length",
-     "line": 344
+     "line": 346
     },
     {
      "kind": "theorem",
      "name": "twice_moment_a5_family",
-     "line": 349
+     "line": 351
     },
     {
      "kind": "theorem",
      "name": "a5_family_not_P2",
-     "line": 359
+     "line": 361
     },
     {
      "kind": "theorem",
      "name": "extraAs_cons",
-     "line": 366
+     "line": 368
     },
     {
      "kind": "theorem",
      "name": "extraAs_zero_le_one",
-     "line": 370
+     "line": 372
     },
     {
      "kind": "theorem",
      "name": "zeroGaps_cons",
-     "line": 382
+     "line": 384
     },
     {
      "kind": "theorem",
      "name": "zeroGaps_zero_replicate_one",
-     "line": 387
+     "line": 389
     },
     {
      "kind": "theorem",
      "name": "replicate_ones_split",
-     "line": 409
+     "line": 411
     },
     {
      "kind": "theorem",
      "name": "zeroGaps_append_ones",
-     "line": 424
+     "line": 426
     },
     {
      "kind": "theorem",
      "name": "two_zero_gaps_form",
-     "line": 431
+     "line": 433
     },
     {
      "kind": "theorem",
      "name": "three_zero_gaps_form",
-     "line": 493
+     "line": 495
     },
     {
      "kind": "theorem",
      "name": "a5Gaps_of_three_zeros",
-     "line": 525
+     "line": 527
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss3_not_lead_five",
-     "line": 532
+     "line": 534
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss3_leading_run_lt_five",
-     "line": 555
+     "line": 557
     },
     {
      "kind": "theorem",
      "name": "a4Gaps_of_two_zeros",
-     "line": 568
+     "line": 570
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss2_not_lead_four",
-     "line": 574
+     "line": 576
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss2_leading_lt_five",
-     "line": 597
+     "line": 599
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss2_leading_run_lt_four",
-     "line": 607
+     "line": 609
     },
     {
      "kind": "theorem",
      "name": "noSAAS_p2_leading_le_ssCount",
-     "line": 618
+     "line": 620
     },
     {
      "kind": "theorem",
      "name": "drop_cons_of_get",
-     "line": 628
+     "line": 630
     },
     {
      "kind": "theorem",
      "name": "noSAAS_ss2_prefix_A_run",
-     "line": 644
+     "line": 646
     },
     {
      "kind": "theorem",
      "name": "noSAAS_premise_control",
-     "line": 657
+     "line": 659
     },
     {
      "kind": "theorem",
      "name": "every_P2_exact",
-     "line": 667
+     "line": 669
     },
     {
      "kind": "theorem",
      "name": "p2_leading_le_ssCount",
-     "line": 682
+     "line": 684
     },
     {
      "kind": "theorem",
      "name": "ss2_not_lead_four",
-     "line": 691
+     "line": 693
     },
     {
      "kind": "theorem",
      "name": "ss2_leading_lt_five",
-     "line": 713
+     "line": 715
     },
     {
      "kind": "theorem",
      "name": "ss2_leading_run_lt_four",
-     "line": 721
+     "line": 723
     },
     {
      "kind": "theorem",
      "name": "ss2_prefix_A_run",
-     "line": 730
+     "line": 732
     },
     {
      "kind": "theorem",
      "name": "ss3_not_lead_five",
-     "line": 743
+     "line": 745
     },
     {
      "kind": "theorem",
      "name": "ss3_leading_run_lt_five",
-     "line": 765
+     "line": 767
     },
     {
      "kind": "def",
      "name": "eqGaps",
-     "line": 779
+     "line": 781
     },
     {
      "kind": "def",
      "name": "eqOddSum",
-     "line": 784
+     "line": 786
     },
     {
      "kind": "theorem",
      "name": "eqGaps_ne_nil",
-     "line": 788
+     "line": 790
     },
     {
      "kind": "theorem",
      "name": "eqGaps_length",
-     "line": 796
+     "line": 798
     },
     {
      "kind": "theorem",
      "name": "eqGaps_sum",
-     "line": 805
+     "line": 807
     },
     {
      "kind": "theorem",
      "name": "eqGaps_a4",
-     "line": 813
+     "line": 815
     },
     {
      "kind": "theorem",
      "name": "eqGaps_a5",
-     "line": 816
+     "line": 818
     },
     {
      "kind": "theorem",
      "name": "eqOddSum_nonneg",
-     "line": 819
+     "line": 821
     },
     {
      "kind": "theorem",
      "name": "int_add_sq",
-     "line": 830
+     "line": 832
     },
     {
      "kind": "theorem",
      "name": "int_sub_one_mul",
-     "line": 835
+     "line": 837
     },
     {
      "kind": "theorem",
      "name": "eq_family_core",
-     "line": 840
+     "line": 842
     },
     {
      "kind": "theorem",
      "name": "two_gapWeight_eqGaps",
-     "line": 846
+     "line": 848
     },
     {
      "kind": "theorem",
      "name": "twice_moment_eqGaps",
-     "line": 867
+     "line": 869
     },
     {
      "kind": "theorem",
      "name": "eqGaps_not_P2",
-     "line": 879
+     "line": 881
     },
     {
      "kind": "theorem",
      "name": "extraAs_zero_to_eqGaps",
-     "line": 892
+     "line": 894
     },
     {
      "kind": "theorem",
      "name": "ss_eq_family_not_P2",
-     "line": 949
+     "line": 951
     },
     {
      "kind": "theorem",
      "name": "p2_leading_le_ssCount_succ",
-     "line": 975
+     "line": 977
     }
    ],
    "theorems": 76,
