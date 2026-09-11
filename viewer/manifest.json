@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1979,
+   "lines": 1986,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39750,6 +39750,49 @@
    "hasReport": false
   },
   {
+   "name": "SS2StrictSlackTheorem",
+   "lines": 86,
+   "imports": [
+    "UniversalTwoSSDonationTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "deletedNeighborhood_sublist_subPhases",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "not_mem_deletedNeighborhood",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "deleted_neighborhood_le_subPhases_sub_one",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "deletable_forces_strict_slack",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "no_deletable_of_equal_capacity",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_donation_hall_bound",
+     "line": 76
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SSFreePeriodicSupply",
    "lines": 33,
    "imports": [
@@ -44597,6 +44640,6 @@
    "hasReport": false
   }
  ],
- "total": 327,
+ "total": 328,
  "withReport": 167
 }

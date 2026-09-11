@@ -1,3 +1,4 @@
+import Recaman.SS2StrictSlackTheorem
 import Recaman.UniversalTwoSSDonationTheorem
 import Recaman.LagSevenTightObstruction
 import Recaman.ElevenSSDonationClosure

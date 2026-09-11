@@ -1977,3 +1977,10 @@ import Recaman
 #print axioms Recaman.UniversalTwoSSDonationTheorem.universal_ss2_hall_preservation_p11
 #print axioms Recaman.UniversalTwoSSDonationTheorem.universal_ss2_deletability_p11
 #print axioms Recaman.UniversalTwoSSDonationTheorem.universal_ss2_minimal_donor_closure
+
+#print axioms Recaman.SS2StrictSlackTheorem.deletedNeighborhood_sublist_subPhases
+#print axioms Recaman.SS2StrictSlackTheorem.not_mem_deletedNeighborhood
+#print axioms Recaman.SS2StrictSlackTheorem.deleted_neighborhood_le_subPhases_sub_one
+#print axioms Recaman.SS2StrictSlackTheorem.deletable_forces_strict_slack
+#print axioms Recaman.SS2StrictSlackTheorem.no_deletable_of_equal_capacity
+#print axioms Recaman.SS2StrictSlackTheorem.ss2_donation_hall_bound
