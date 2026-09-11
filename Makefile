@@ -1,6 +1,9 @@
-.PHONY: all check test test-probes probes manifest check-manifest clean help
+.PHONY: all check test test-probes probes manifest check-manifest brief clean help
 
 all: check
+
+brief:
+	@python3 scripts/dev_tool.py brief
 
 test: check test-probes check-manifest
 	@echo "All Lean, empirical, and viewer checks passed."
@@ -26,6 +29,7 @@ clean:
 
 help:
 	@echo "Recamán Lean Research - make targets:"
+	@echo "  make brief          - Show ultra-compact active research frontier summary"
 	@echo "  make check          - Run Lean builds, architecture check, and axiom audit"
 	@echo "  make test           - Run all checks: Lean audit, empirical tests, manifest check"
 	@echo "  make test-probes    - Build and run empirical regression tests (experiments/)"

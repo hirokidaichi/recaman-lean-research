@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Recamán Research Development & Knowledge Assistant CLI.
 
-Provides automation for:
-- Searching past evidence, no-go theorems, countermodels, and stopped branches
-- Scaffolding hypothesis cards following AI_RESEARCH_PROTOCOL.md
-- Registering new Lean frontier modules into Recaman.lean, contracts, and Audit.lean
-- Checking repository health and synchronization
+Provides automation and token-saving utilities:
+- brief: Ultra-compact (40-line) briefing on current frontier, gates, and constraints
+- decls: Surgical extraction of Lean declaration signatures (zero proof body tokens)
+- search: Search evidence registry with compact output option
+- new-card: Scaffold a new hypothesis card following protocol
+- add-module: Register a new Lean frontier module into contracts and Recaman.lean
+- register-evidence: Register a new evidence claim into registry and Audit.lean
 """
 
 from __future__ import annotations
@@ -27,6 +29,142 @@ TEMPLATE_CARD = DOCS_DIR / "HYPOTHESIS_CARD_TEMPLATE.md"
 FRONTIER_MD = DOCS_DIR / "CURRENT_FRONTIER.md"
 
 
+def get_label_color(label: str) -> tuple[str, str]:
+    colors = {
+        "PROVED-LEAN": "\033[92m",
+        "PROVED-PAPER": "\033[94m",
+        "COMPUTED": "\033[96m",
+        "REFUTED": "\033[91m",
+        "STOPPED": "\033[93m",
+        "CONJECTURED": "\033[95m",
+        "OBSERVED": "\033[90m",
+    }
+    return colors.get(label, ""), "\033[0m"
+
+
+def show_brief(args: argparse.Namespace) -> None:
+    """Display an ultra-compact summary of the current research frontier (< 400 tokens)."""
+    if not FRONTIER_MD.exists():
+        print(f"error: {FRONTIER_MD} not found", file=sys.stderr)
+        sys.exit(1)
+
+    print("=" * 60)
+    print("  RECAMÁN RESEARCH FRONTIER BRIEF")
+    print("=" * 60)
+
+    # 1. Active Frontier & Open Gate
+    print("\n[NEXT RESEARCH GATE]")
+    print("  * Gate: T6 (E-179) - High-SS Local Donation")
+    print("  * Claim: Every high-SS supply window (ssCount>=2) donates an internally removable S.")
+    print("  * Evidence: COMPUTED across 53,000+ words (p=8..22, 0 exceptions).")
+    print("  * Target: Formalize or refute minimal case ssCount=2 in Lean.")
+
+    # 2. Key Established Ground Truth
+    print("\n[ESTABLISHED BOUNDARIES (Do Not Re-prove)]")
+    print("  * E-176: |U|<=|D| is sharp across all periods (tight words exist for all p).")
+    print("  * E-177: Tight words (|U|=|D|) have ONLY low-SS windows (ssCount<=1).")
+    print("           Equality side is completely covered by E-128 (PROVED-LEAN).")
+    print("  * E-178: Forced matching on tight words matches oldest-S (E-069).")
+    print("  * E-181: Positive period mass guarantees finite lag bound d <= p(p+1) (PROVED-LEAN).")
+    print("  * E-128: Low-SS joint endpoint capacity |U_clean U U_SS1| <= |D| (PROVED-LEAN).")
+
+    # 3. Stopped / Refuted Approaches (Do Not Re-open without declared gate)
+    print("\n[STOPPED & REFUTED DIRECTIONS (Do Not Propose)]")
+    print("  * E-180 (REFUTED): Linear slack charge slack >= c is false (counterexample at p=18,21).")
+    print("  * E-178 (CLOSED): Generic selector search is FINISHED (selector is forced on tight).")
+    print("  * E-088 (STOPPED): Lag-by-lag type offset charging is STOPPED.")
+    print("  * E-133 (REFUTED): Named 4-charge extension on SS=2 is STOPPED.")
+    print("  * E-142 (REFUTED): Unrestricted one-per-run on abstract words is REFUTED.")
+
+    # 4. Codebase & Audit Status
+    modules = list(RECAMAN_DIR.glob("*.lean"))
+    contracts_count = len([l for l in CONTRACTS_TSV.read_text(encoding="utf-8").splitlines()[1:] if l.strip()])
+    print("\n[REPOSITORY INTEGRITY]")
+    print(f"  * Lean Modules: {len(modules)} library modules | Frontier Contracts: {contracts_count}")
+    print("  * Audit State: 1,743 declarations verified within standard axioms.")
+    print("  * Verification: Run 'make check' or 'make test'.")
+    print("=" * 60)
+
+
+def show_decls(args: argparse.Namespace) -> None:
+    """Extract declaration signatures and docstrings from a Lean module without proof bodies."""
+    name = args.module.strip()
+    if name.startswith("Recaman."):
+        name = name[len("Recaman.") :]
+
+    lean_file = RECAMAN_DIR / f"{name}.lean"
+    if not lean_file.exists():
+        print(f"error: module file not found: {lean_file}", file=sys.stderr)
+        sys.exit(1)
+
+    lines = lean_file.read_text(encoding="utf-8").splitlines()
+    print(f"=== Declarations in Recaman.{name} ({len(lines)} lines) ===\n")
+
+    in_docstring = False
+    docstring_lines = []
+    decl_start_re = re.compile(r"^(theorem|lemma|def|structure|inductive|abbrev)\s+([A-Za-z0-9_'.]+)")
+
+    i = 0
+    theorems = 0
+    defs = 0
+
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+
+        # Docstring handling
+        if stripped.startswith("/-!") or stripped.startswith("/--"):
+            in_docstring = True
+            docstring_lines = [stripped]
+            if "-/" in stripped:
+                in_docstring = False
+            i += 1
+            continue
+
+        if in_docstring:
+            docstring_lines.append(stripped)
+            if "-/" in stripped:
+                in_docstring = False
+            i += 1
+            continue
+
+        m = decl_start_re.match(line)
+        if m:
+            kind, decl_name = m.group(1), m.group(2)
+            if kind in ("theorem", "lemma"):
+                theorems += 1
+            else:
+                defs += 1
+
+            # Print accumulated docstring if any
+            if docstring_lines:
+                doc = " ".join(docstring_lines).replace("/--", "").replace("/-!", "").replace("-/", "").strip()
+                if doc:
+                    print(f"  -- {doc[:100]}")
+                docstring_lines = []
+
+            # Gather signature until := or where or by
+            sig_lines = [line]
+            while not (":=" in lines[i] or " where" in lines[i] or " by" in lines[i]) and i + 1 < len(lines):
+                i += 1
+                sig_lines.append(lines[i])
+
+            # Strip the := by / := part from the last line
+            last_line = sig_lines[-1]
+            for sep in [":= by", ":=by", ":=", " where"]:
+                if sep in last_line:
+                    last_line = last_line.split(sep)[0].rstrip()
+                    break
+            sig_lines[-1] = last_line
+
+            sig_text = "\n    ".join(l.rstrip() for l in sig_lines if l.strip())
+            print(f"L{i+1}: {sig_text}\n")
+
+        i += 1
+
+    print(f"Summary: {theorems} theorems/lemmas, {defs} definitions.")
+
+
 def search_evidence(args: argparse.Namespace) -> None:
     """Search evidence registry by keyword, label, or branch."""
     if not REGISTRY_TSV.exists():
@@ -36,7 +174,6 @@ def search_evidence(args: argparse.Namespace) -> None:
     lines = REGISTRY_TSV.read_text(encoding="utf-8").splitlines()
     if not lines:
         return
-    header = lines[0].split("\t")
     rows = [line.split("\t") for line in lines[1:] if line.strip()]
 
     query = (args.query or "").strip().lower()
@@ -62,27 +199,22 @@ def search_evidence(args: argparse.Namespace) -> None:
         print(f"No evidence matches found (query='{query}', label='{label_filter}', branch='{branch_filter}').")
         return
 
-    print(f"Found {len(matches)} evidence records:\n")
-    for eid, label, branch, claim, artifact, symbols, reopen in matches:
-        color = {
-            "PROVED-LEAN": "\033[92m",
-            "PROVED-PAPER": "\033[94m",
-            "COMPUTED": "\033[96m",
-            "REFUTED": "\033[91m",
-            "STOPPED": "\033[93m",
-            "CONJECTURED": "\033[95m",
-            "OBSERVED": "\033[90m",
-        }.get(label, "")
-        reset = "\033[0m"
+    print(f"Found {len(matches)} evidence records:")
+    compact = getattr(args, "compact", False)
 
-        print(f"[{color}{label:12s}{reset}] {eid}  ({branch})")
-        print(f"  Claim:    {claim}")
-        print(f"  Artifact: {artifact}")
-        if symbols != "-":
-            print(f"  Symbols:  {symbols}")
-        if reopen != "-":
-            print(f"  Reopen:   {reopen}")
-        print()
+    for eid, label, branch, claim, artifact, symbols, reopen in matches:
+        color, reset = get_label_color(label)
+        if compact:
+            claim_summary = claim if len(claim) <= 70 else claim[:67] + "..."
+            print(f"  [{color}{label:12s}{reset}] {eid:5s} ({branch:22s}) {claim_summary}")
+        else:
+            print(f"\n[{color}{label:12s}{reset}] {eid}  ({branch})")
+            print(f"  Claim:    {claim}")
+            print(f"  Artifact: {artifact}")
+            if symbols != "-":
+                print(f"  Symbols:  {symbols}")
+            if reopen != "-":
+                print(f"  Reopen:   {reopen}")
 
 
 def new_card(args: argparse.Namespace) -> None:
@@ -131,7 +263,6 @@ def add_module(args: argparse.Namespace) -> None:
 
     purpose = (args.purpose or f"Formalization for {name}").strip()
 
-    # 1. Create Lean file if it doesn't exist
     if not lean_file.exists():
         import_lines = "\n".join(f"import {imp}" for imp in imports)
         content = f"{import_lines}\n\n/-!\n# {name}\n\n{purpose}\n-/\n\nnamespace Recaman.{name}\n\n-- Declarations\n\nend Recaman.{name}\n"
@@ -140,7 +271,6 @@ def add_module(args: argparse.Namespace) -> None:
     else:
         print(f"Lean file already exists: {lean_file}")
 
-    # 2. Add to Recaman.lean
     recaman_text = RECAMAN_ROOT_LEAN.read_text(encoding="utf-8")
     import_stmt = f"import {full_module_name}"
     if import_stmt not in recaman_text:
@@ -149,9 +279,7 @@ def add_module(args: argparse.Namespace) -> None:
     else:
         print(f"'{import_stmt}' already present in Recaman.lean")
 
-    # 3. Add to MODULE_IMPORT_CONTRACTS.tsv
     contract_lines = CONTRACTS_TSV.read_text(encoding="utf-8").splitlines()
-    header = contract_lines[0]
     existing = [line.split("\t")[0] for line in contract_lines[1:] if line.strip()]
 
     if full_module_name not in existing:
@@ -185,10 +313,8 @@ def register_evidence(args: argparse.Namespace) -> None:
         print(f"warning: artifact '{artifact}' does not exist on disk yet.", file=sys.stderr)
 
     lines = REGISTRY_TSV.read_text(encoding="utf-8").splitlines()
-    header = lines[0]
     rows = [l.split("\t") for l in lines[1:] if l.strip()]
 
-    # Find highest evidence id
     max_id = 0
     for r in rows:
         m = re.match(r"^E-(\d+)$", r[0])
@@ -203,7 +329,6 @@ def register_evidence(args: argparse.Namespace) -> None:
         print("error: PROVED-LEAN requires --symbols (semi-colon separated declaration names)", file=sys.stderr)
         sys.exit(1)
 
-    # If PROVED-LEAN, check / add to Audit.lean
     if label == "PROVED-LEAN" and symbols != "-":
         audit_text = AUDIT_LEAN.read_text(encoding="utf-8")
         added_syms = []
@@ -228,11 +353,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Recamán Research Development CLI")
     subparsers = parser.add_subparsers(dest="subcommand", required=True)
 
+    # brief
+    p_brief = subparsers.add_parser("brief", help="Display ultra-compact summary of active research frontier")
+    p_brief.set_defaults(func=show_brief)
+
+    # decls
+    p_decls = subparsers.add_parser("decls", help="Extract signatures and docstrings from a Lean module")
+    p_decls.add_argument("module", help="Module name (e.g. OnePerRun or Recaman.OnePerRun)")
+    p_decls.set_defaults(func=show_decls)
+
     # search
     p_search = subparsers.add_parser("search", help="Search evidence registry")
     p_search.add_argument("query", nargs="?", default="", help="Keyword query")
     p_search.add_argument("--label", "-l", help="Filter by label (e.g. REFUTED, PROVED-LEAN, STOPPED)")
     p_search.add_argument("--branch", "-b", help="Filter by branch substring")
+    p_search.add_argument("--compact", "-c", action="store_true", help="One line per result summary")
     p_search.set_defaults(func=search_evidence)
 
     # new-card

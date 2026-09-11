@@ -27,7 +27,19 @@ bash ./scripts/check_research_registry.sh
 
 RECAMAN_AUDIT_LOG="$(mktemp)"
 trap 'rm -f "$RECAMAN_AUDIT_LOG"' EXIT
-"${RECAMAN_LAKE[@]}" env lean Recaman/Audit.lean | tee "$RECAMAN_AUDIT_LOG"
+
+RECAMAN_VERBOSE=0
+for arg in "$@"; do
+  if [[ "$arg" == "--verbose" || "$arg" == "-v" ]]; then
+    RECAMAN_VERBOSE=1
+  fi
+done
+
+if [[ "$RECAMAN_VERBOSE" -eq 1 ]]; then
+  "${RECAMAN_LAKE[@]}" env lean Recaman/Audit.lean | tee "$RECAMAN_AUDIT_LOG"
+else
+  "${RECAMAN_LAKE[@]}" env lean Recaman/Audit.lean > "$RECAMAN_AUDIT_LOG"
+fi
 
 # The audit output is advisory unless the permitted axiom set is enforced.
 # Each report starts with a quoted declaration name and may wrap onto
