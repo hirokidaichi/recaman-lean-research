@@ -104,6 +104,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2MinimalLagBound` (E-207) | Minimal SS=2 Lag Bound: P2 words have odd length; length 9 has 0 P2 words; minimal length 7 P2 words have ssCount ≤ 1; all minimal SS=2 windows have lag ≥ 11 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2LagElevenForcing` (E-208) | Exact Lag 11 Forcing: length 13 has 0 P2 words; minimal SS=2 windows with lag < 15 uniquely forced to lag = 11; donation phase endpointPhase p u 11; 6 additions, 5 subtractions, surplus ≥ 4 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightCapacityHierarchy` (E-209) | Universal Tight Capacity Hierarchy: tight sets containing windows with ≥ k subtractions require |A| ≥ k; avoiding sublists with |U| ≤ 5 have size ≤ 4 and exclude windows with ≥ 5 subtractions |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalSSStratification` (E-210) | Universal SS Stratification: lag ≥ 3 (clean), lag ≥ 7 (ssCount ≥ 1), lag ≥ 11 (ssCount ≥ 2), lag ≥ 15 (ssCount ≥ 4); length 11 has ssCount ≤ 3; lag < 15 has ssCount ≤ 3 |
 
 ## Semantic audit
 

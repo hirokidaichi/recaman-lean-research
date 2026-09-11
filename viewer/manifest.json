@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2076,
+   "lines": 2085,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -44930,6 +44930,60 @@
    "hasReport": true
   },
   {
+   "name": "UniversalSSStratification",
+   "lines": 135,
+   "imports": [
+    "SS2LagElevenForcing",
+    "TightCapacityHierarchy"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_eleven_ssCount_le_three",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_eleven_ssCount_le_three",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_lag_le_five_ssCount_zero",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss_ge_one_lag_ge_seven",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss_ge_two_lag_ge_eleven",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_lag_lt_fifteen_ssCount_le_three",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss_ge_four_lag_ge_fifteen",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss_ge_four_lag_lt_fifteen",
+     "line": 128
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalTightLagBound",
    "lines": 133,
    "imports": [
@@ -45168,6 +45222,6 @@
    "hasReport": false
   }
  ],
- "total": 337,
+ "total": 338,
  "withReport": 167
 }
