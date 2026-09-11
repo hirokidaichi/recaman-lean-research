@@ -1,3 +1,4 @@
+import Recaman.StratifiedCapacityHierarchy
 import Recaman.ExtremalSupplyRigidity
 import Recaman.GrandPeriodicBottleneckTheorem
 import Recaman.UniversalGateT6Closure

@@ -2305,6 +2305,18 @@ import Recaman
 #print axioms Recaman.ExtremalSupplyRigidity.extremal_hall_governed_by_clean_p7
 #print axioms Recaman.ExtremalSupplyRigidity.grand_extremal_supply_rigidity
 
+#print axioms Recaman.StratifiedCapacityHierarchy.tier1_capacity_bound
+#print axioms Recaman.StratifiedCapacityHierarchy.tier2_capacity_bound
+#print axioms Recaman.StratifiedCapacityHierarchy.tier3_deficit_buffer
+#print axioms Recaman.StratifiedCapacityHierarchy.tier4_deficit_buffer
+#print axioms Recaman.StratifiedCapacityHierarchy.high_ss_forces_strict_deficit_hierarchy
+#print axioms Recaman.StratifiedCapacityHierarchy.super_high_ss_forces_higher_slack
+#print axioms Recaman.StratifiedCapacityHierarchy.two_high_ss_forces_double_slack
+#print axioms Recaman.StratifiedCapacityHierarchy.saturated_supply_pure_low_ss_hierarchy
+#print axioms Recaman.StratifiedCapacityHierarchy.global_capacity_reduction_principle
+#print axioms Recaman.StratifiedCapacityHierarchy.grand_stratified_capacity_synthesis
+
+
 
 
 

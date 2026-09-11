@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2318,
+   "lines": 2330,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -42609,6 +42609,70 @@
    "hasReport": false
   },
   {
+   "name": "StratifiedCapacityHierarchy",
+   "lines": 114,
+   "imports": [
+    "ExtremalSupplyRigidity",
+    "LagElevenPeriodic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tier1_capacity_bound",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "tier2_capacity_bound",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "tier3_deficit_buffer",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "tier4_deficit_buffer",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "high_ss_forces_strict_deficit_hierarchy",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "super_high_ss_forces_higher_slack",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "two_high_ss_forces_double_slack",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "saturated_supply_pure_low_ss_hierarchy",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "global_capacity_reduction_principle",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_stratified_capacity_synthesis",
+     "line": 102
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SubtractionLedger",
    "lines": 445,
    "imports": [
@@ -46570,6 +46634,6 @@
    "hasReport": false
   }
  ],
- "total": 355,
+ "total": 356,
  "withReport": 167
 }
