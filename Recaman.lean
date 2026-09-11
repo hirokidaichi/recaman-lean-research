@@ -1,3 +1,4 @@
+import Recaman.TwoSSAvoidTight
 import Recaman.TwoSSLocalDonation
 import Recaman.TwoSSTightDisjoint
 import Recaman.TwoSSPeriodicSupply

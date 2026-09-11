@@ -1870,3 +1870,16 @@ import Recaman
 #print axioms Recaman.TwoSSLocalDonation.oldest_donation_disjoint_from_one_SS
 #print axioms Recaman.TwoSSLocalDonation.oldest_donation_list_nodup
 #print axioms Recaman.TwoSSLocalDonation.oldest_donation_disjoint_one_SS_list
+
+#print axioms Recaman.TwoSSAvoidTight.neighborhood_nodup
+#print axioms Recaman.TwoSSAvoidTight.mem_neighborhood_iff
+#print axioms Recaman.TwoSSAvoidTight.not_mem_neighborhood_of_not_covered
+#print axioms Recaman.TwoSSAvoidTight.deletedNeighborhood_eq_of_not_mem
+#print axioms Recaman.TwoSSAvoidTight.deleted_hall_of_slack
+#print axioms Recaman.TwoSSAvoidTight.deleted_hall_of_not_mem
+#print axioms Recaman.TwoSSAvoidTight.hall_preserved_of_slack_or_avoid
+#print axioms Recaman.TwoSSAvoidTight.deletable_of_tight_avoidance
+#print axioms Recaman.TwoSSAvoidTight.lag_three_covers_iff
+#print axioms Recaman.TwoSSAvoidTight.lag_three_subset_covers_iff
+#print axioms Recaman.TwoSSAvoidTight.not_mem_neighborhood_of_lag_three
+#print axioms Recaman.TwoSSAvoidTight.oldest_donation_preserves_hall_on_lag_three_tight
