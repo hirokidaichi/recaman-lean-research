@@ -2011,3 +2011,12 @@ import Recaman
 #print axioms Recaman.SS2MultiDonorDeficit.ss2_two_donors_force_double_slack
 #print axioms Recaman.SS2MultiDonorDeficit.no_two_ss2_in_deficit_one_supply
 
+#print axioms Recaman.ExtremalSSExclusion.extremal_excludes_deletable
+#print axioms Recaman.ExtremalSSExclusion.deletable_forces_positive_slack
+#print axioms Recaman.ExtremalSSExclusion.two_deletable_forces_slack_ge_two
+#print axioms Recaman.ExtremalSSExclusion.extremal_no_deletable_donor
+#print axioms Recaman.ExtremalSSExclusion.extremal_no_ss2_deletable_donor
+#print axioms Recaman.ExtremalSSExclusion.deficit_one_excludes_two_deletable
+#print axioms Recaman.ExtremalSSExclusion.extremal_windows_ss_ne_two_of_deletable
+
+

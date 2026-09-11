@@ -98,6 +98,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.LowSSTwoSSJointCapacity` (E-201) | Three-tier joint capacity: |U_{≤1}| + |U₂| ≤ |D|, clean AAS / SS=1 / SS=2 pairwise disjointness, SS=2 strictly reduces low-SS budget |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightSSZeroRigidity` (E-202) | Clean Rigidity: tight bottleneck avoiding subsets consist exclusively of ssCount = 0 windows; ssCount ≥ 1 strictly excluded |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2MultiDonorDeficit` (E-203) | Multi-Donor Deficit: simultaneous deletion of two SS=2 donations forces |U| ≤ |D| - 2; two SS=2 donors excluded from deficit-1 supply |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ExtremalSSExclusion` (E-204) | Extremal SS Exclusion: saturated supplies |U| = |D| strictly exclude SS=2 donors; all windows in extremal supply satisfy ssCount ≤ 1 |
 
 ## Semantic audit
 

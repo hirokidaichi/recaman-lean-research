@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2013,
+   "lines": 2022,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26881,6 +26881,54 @@
    "hasReport": true
   },
   {
+   "name": "ExtremalSSExclusion",
+   "lines": 105,
+   "imports": [
+    "SS2MultiDonorDeficit"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "extremal_excludes_deletable",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "deletable_forces_positive_slack",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "two_deletable_forces_slack_ge_two",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_no_deletable_donor",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_no_ss2_deletable_donor",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_one_excludes_two_deletable",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_windows_ss_ne_two_of_deletable",
+     "line": 93
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FiniteP2Semantics",
    "lines": 108,
    "imports": [
@@ -44799,6 +44847,6 @@
    "hasReport": false
   }
  ],
- "total": 331,
+ "total": 332,
  "withReport": 167
 }
