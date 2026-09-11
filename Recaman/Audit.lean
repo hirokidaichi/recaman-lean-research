@@ -1984,3 +1984,7 @@ import Recaman
 #print axioms Recaman.SS2StrictSlackTheorem.deletable_forces_strict_slack
 #print axioms Recaman.SS2StrictSlackTheorem.no_deletable_of_equal_capacity
 #print axioms Recaman.SS2StrictSlackTheorem.ss2_donation_hall_bound
+
+#print axioms Recaman.LowSSTwoSSJointCapacity.ss_le1_two_endpoint_mod_disjoint
+#print axioms Recaman.LowSSTwoSSJointCapacity.low_SS_two_SS_joint_capacity
+#print axioms Recaman.LowSSTwoSSJointCapacity.ss2_strict_capacity_deficit

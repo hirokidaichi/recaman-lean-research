@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1986,
+   "lines": 1990,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -30346,6 +30346,34 @@
    "hasReport": false
   },
   {
+   "name": "LowSSTwoSSJointCapacity",
+   "lines": 131,
+   "imports": [
+    "SS2StrictSlackTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss_le1_two_endpoint_mod_disjoint",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "low_SS_two_SS_joint_capacity",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_strict_capacity_deficit",
+     "line": 117
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Mechanisms",
    "lines": 196,
    "imports": [
@@ -44640,6 +44668,6 @@
    "hasReport": false
   }
  ],
- "total": 328,
+ "total": 329,
  "withReport": 167
 }
