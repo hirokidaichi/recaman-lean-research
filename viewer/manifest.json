@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1933,
+   "lines": 1946,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43116,6 +43116,79 @@
    "hasReport": false
   },
   {
+   "name": "TightP2ParityRigidity",
+   "lines": 141,
+   "imports": [
+    "UniversalTightLagBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_one_p2",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_one",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "bitWords_three_p2",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_three_eq_aas",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "bitWords_five_p2",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_five",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "past_three",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_of_past_three_eq",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_lag_le_five_forces_three",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_lag_le_five_forces_aas",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_member_lag_three_of_D_le_four",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_member_is_aas_of_D_le_four",
+     "line": 133
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -44319,6 +44392,6 @@
    "hasReport": false
   }
  ],
- "total": 321,
+ "total": 322,
  "withReport": 167
 }

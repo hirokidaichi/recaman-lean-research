@@ -1,3 +1,4 @@
+import Recaman.TightP2ParityRigidity
 import Recaman.UniversalTightLagBound
 import Recaman.TightComponentSlackBound
 import Recaman.TwoSSSmallCapacityClosure

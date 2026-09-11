@@ -1931,3 +1931,16 @@ import Recaman
 #print axioms Recaman.UniversalTightLagBound.no_k_ge_seven_of_subPhases_le_eight
 #print axioms Recaman.UniversalTightLagBound.arithmetic_deficit_lag_bound
 #print axioms Recaman.UniversalTightLagBound.arithmetic_lag_le_of_m
+
+#print axioms Recaman.TightP2ParityRigidity.bitWords_one_p2
+#print axioms Recaman.TightP2ParityRigidity.no_p2_length_one
+#print axioms Recaman.TightP2ParityRigidity.bitWords_three_p2
+#print axioms Recaman.TightP2ParityRigidity.p2_length_three_eq_aas
+#print axioms Recaman.TightP2ParityRigidity.bitWords_five_p2
+#print axioms Recaman.TightP2ParityRigidity.no_p2_length_five
+#print axioms Recaman.TightP2ParityRigidity.past_three
+#print axioms Recaman.TightP2ParityRigidity.aas_of_past_three_eq
+#print axioms Recaman.TightP2ParityRigidity.p2_lag_le_five_forces_three
+#print axioms Recaman.TightP2ParityRigidity.p2_lag_le_five_forces_aas
+#print axioms Recaman.TightP2ParityRigidity.tight_avoiding_member_lag_three_of_D_le_four
+#print axioms Recaman.TightP2ParityRigidity.tight_avoiding_member_is_aas_of_D_le_four
