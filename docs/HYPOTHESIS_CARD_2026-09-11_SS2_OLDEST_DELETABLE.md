@@ -93,6 +93,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2AASCollisionObstruction` (E-196) | SS2-AAS collision obstruction: separation k ≥ 12, no shared endpoint for lag < 15, donated phase s*(u0) disjoint from all AAS endpoints |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ElevenSSDonationClosure` (E-197) | Complete capacity closure for p ≤ 11: avoiding sublists |A| ≤ 3, automatic AAS disjointness for lag < 15, universal Hall preservation and deletability |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.LagSevenTightObstruction` (E-198) | Length 7 P2 classification (4 words), 3 subtractions, tight size ≤ 2 excludes lag 7, tight size ≤ 2 forced to lag 3 AAS for p ≤ 11 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalTwoSSDonationTheorem` (E-199) | Grand unified synthesis: avoiding sublists |A| ≤ 3, size ≤ 2 rigidity, automatic AAS disjointness, universal Hall preservation and deletability for all p ≤ 11 |
 
 ## Semantic audit
 
