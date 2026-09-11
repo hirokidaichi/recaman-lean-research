@@ -51,7 +51,7 @@ invariant.
 | `U = A` (E-067 violation) | all positive-sum words, `p ≤ 31` | none |
 | `\|U\| = \|D\|` attained | every `p` in range | yes |
 | tight word with a high-SS window | `p ≤ 31` | none |
-| local Hall matching saturates `U` | `p ≤ 30` | always |
+| local Hall matching saturates `U` | `p ≤ 31` | always |
 | perfect matchings on a tight word | `p ≤ 22` | exactly 1, always |
 | forced matching equals oldest-S | 1,110 forced edges | 1,110 |
 | oldest position of a tight word's window is an S | 1,110 forced edges | 1,110 |
