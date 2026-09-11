@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1954,
+   "lines": 1959,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39636,6 +39636,39 @@
    "hasReport": false
   },
   {
+   "name": "SS2AASCollisionObstruction",
+   "lines": 155,
+   "imports": [
+    "TwoSSTightAvoidanceTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss2_intervening_word_ge_twelve",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_ss2_aas_no_shared_endpoint_of_lag_lt_fifteen",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_ss2_aas_no_shared_endpoint_of_lag_lt_fifteen",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_lag_lt_fifteen_disjoint_from_aas",
+     "line": 137
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SSFreePeriodicSupply",
    "lines": 33,
    "imports": [
@@ -44440,6 +44473,6 @@
    "hasReport": false
   }
  ],
- "total": 323,
+ "total": 324,
  "withReport": 167
 }

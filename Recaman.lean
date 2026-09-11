@@ -1,3 +1,4 @@
+import Recaman.SS2AASCollisionObstruction
 import Recaman.TwoSSTightAvoidanceTheorem
 import Recaman.TightP2ParityRigidity
 import Recaman.UniversalTightLagBound

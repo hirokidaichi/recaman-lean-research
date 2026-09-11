@@ -90,6 +90,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalTightLagBound` (E-193) | Universal tight bottleneck lag stratification: |A| ≤ |D| - 2; lag 4m - 1 requires |D| ≥ 2m + 1 and lag ≤ 2|D| - 3; lag ≥ 7 excluded for |D| ≤ 4, lag ≥ 11 excluded for |D| ≤ 6 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightP2ParityRigidity` (E-194) | P2 parity rigidity: no length 1 or 5; length 3 uniquely AAS; lag ≤ 5 forces lag 3 AAS; all tight avoiding members for |D| ≤ 4 forced to lag 3 AAS |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSTightAvoidanceTheorem` (E-195) | Universal tight avoidance and SS=2 donation synthesis: pure AAS neighborhood identity, endpoint avoidance implies deleted Hall preservation |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SS2AASCollisionObstruction` (E-196) | SS2-AAS collision obstruction: separation k ≥ 12, no shared endpoint for lag < 15, donated phase s*(u0) disjoint from all AAS endpoints |
 
 ## Semantic audit
 
