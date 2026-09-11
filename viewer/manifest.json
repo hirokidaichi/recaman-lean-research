@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2330,
+   "lines": 2342,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39208,6 +39208,75 @@
    "hasReport": true
   },
   {
+   "name": "QuantumP2Arithmetic",
+   "lines": 121,
+   "imports": [
+    "StratifiedCapacityHierarchy",
+    "P2ModFourRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p2_ones_eq_two_m_plus_two",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_subtractions_eq_two_m_plus_one",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_subtraction_surplus_eq_two_m",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_level_zero_values",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_level_one_values",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_level_two_values",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_level_three_values",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_level_four_values",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_forces_quantum_level_bound",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_le_two_forces_level_zero",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_quantum_p2_arithmetic_synthesis",
+     "line": 113
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ReadyCurrentDebt",
    "lines": 136,
    "imports": [
@@ -46634,6 +46703,6 @@
    "hasReport": false
   }
  ],
- "total": 356,
+ "total": 357,
  "withReport": 167
 }

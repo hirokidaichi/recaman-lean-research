@@ -2316,6 +2316,18 @@ import Recaman
 #print axioms Recaman.StratifiedCapacityHierarchy.global_capacity_reduction_principle
 #print axioms Recaman.StratifiedCapacityHierarchy.grand_stratified_capacity_synthesis
 
+#print axioms Recaman.QuantumP2Arithmetic.p2_ones_eq_two_m_plus_two
+#print axioms Recaman.QuantumP2Arithmetic.p2_subtractions_eq_two_m_plus_one
+#print axioms Recaman.QuantumP2Arithmetic.p2_subtraction_surplus_eq_two_m
+#print axioms Recaman.QuantumP2Arithmetic.quantum_level_zero_values
+#print axioms Recaman.QuantumP2Arithmetic.quantum_level_one_values
+#print axioms Recaman.QuantumP2Arithmetic.quantum_level_two_values
+#print axioms Recaman.QuantumP2Arithmetic.quantum_level_three_values
+#print axioms Recaman.QuantumP2Arithmetic.quantum_level_four_values
+#print axioms Recaman.QuantumP2Arithmetic.tight_size_forces_quantum_level_bound
+#print axioms Recaman.QuantumP2Arithmetic.tight_size_le_two_forces_level_zero
+#print axioms Recaman.QuantumP2Arithmetic.grand_quantum_p2_arithmetic_synthesis
+
 
 
 
