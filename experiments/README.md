@@ -427,3 +427,18 @@ fresh entries as later terminal blockers. `target_right_record_probe` and the
 seeded search separate standard-prefix evidence from claims that fail once an
 arbitrary reachable-looking history is allowed. All outputs are empirical;
 the corresponding exact finite examples are separately certified in Lean.
+
+`issue73_20260911/capacity_extremal` measures the capacity inequality at its
+boundary rather than extending its proved class. `capacity_extremal` enumerates
+necklace representatives of positive-sum periodic words, reports `|U|` against
+`|D|`, the tight family, the slack broken down by the number of high-SS windows,
+and the local Hall matching; it aborts unless it reproduces E-081's count of
+positive-sum words of period 19..22. `tight_density` shows tightness is not an
+artefact of S-sparse words. `forced_matching` counts perfect matchings on the
+tight family and compares the forced charge with the oldest-S rule.
+`collision_slack` tests the linear strengthening `slack >= collision excess`,
+and `verify_counterword.py` re-derives its counterwords by direct summation with
+no shared code. `local_surplus` tests whether a high-SS window donates a
+deletable subtraction from inside itself. `seam_pumping` glues tight blocks
+looking for net surplus beyond the exhaustive range. The scan-termination rule
+all of these rely on is proved in `Recaman/PeriodicSupplyBound.lean`.

@@ -1,5 +1,19 @@
 # Changelog
 
+## Issue 73: the extremal boundary of the capacity inequality — 2026-09-11
+
+- `|U|≤|D|` は全周期で sharp（`E-176`）。等号語の最小供給窓はすべて SS≤1（`E-177`）なので、
+  E-070 の等号側は `E-128` の既証明クラスの内側にある。残るのは狭義不等式だけ
+- 等号語の局所完全マッチングは一意で、強制辺 1,110 本はすべて `E-069` の oldest-S 先（`E-178`）。
+  一般には反証されている selector が等号側では唯一解であり、selector 探索を終了する
+- 線形強化 `slack ≥ 衝突数` は周期18 `AAAASSAAAASAAASSSS` と周期21で `REFUTED`（`E-180`）。
+  代わりの局所目標 T6「高SS窓は内部から削除可能な S を供出」は周期22まで例外0（`E-179`）
+- 網羅を周期31へ拡張、`|U|≤|D|`・`U≠A` の違反0（`E-175`）。tight ブロック接着の net 余剰も0（`E-182`）
+- `PeriodicSupplyBound`：正の周期質量だけで後退走査の drift 停止則と `d≤p(p+1)` を Lean 化（`E-181`）。
+  「どの lag でも供給されない」が kernel 検査可能になった
+- [epoch report](docs/EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)、
+  [card](docs/HYPOTHESIS_CARD_2026-09-11_EXTREMAL_CAPACITY.md)。#73本体はOPEN
+
 ## Issue 73: lag-11 capacity (Lean) and lag-by-lag stop — 2026-09-09
 
 - `|U7 ∪ U11min| ≤ |D|` を任意周期でLean証明（`LagElevenPeriodic`、registry `E-080`）。

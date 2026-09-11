@@ -1,0 +1,49 @@
+protocol=H-20260911-01..06 periodic capacity extremal boundary
+p= 2 necklaces=1 e070viol=0 e067viol=0 hallFail=0 tight=0 tightWithHighSS=0 tightMaxSS=-1 witness=
+   SLACK p=2 high=0:(slack>=0,lowSlack>=0)
+p= 3 necklaces=2 e070viol=0 e067viol=0 hallFail=0 tight=0 tightWithHighSS=0 tightMaxSS=-1 witness=
+   SLACK p=3 high=0:(slack>=0,lowSlack>=0)
+p= 4 necklaces=2 e070viol=0 e067viol=0 hallFail=0 tight=1 tightWithHighSS=0 tightMaxSS=0 witness=AAAS
+   SLACK p=4 high=0:(slack>=0,lowSlack>=0)
+p= 5 necklaces=4 e070viol=0 e067viol=0 hallFail=0 tight=1 tightWithHighSS=0 tightMaxSS=0 witness=AAAAS
+   SLACK p=5 high=0:(slack>=0,lowSlack>=0)
+p= 6 necklaces=5 e070viol=0 e067viol=0 hallFail=0 tight=1 tightWithHighSS=0 tightMaxSS=0 witness=AAAAAS
+   SLACK p=6 high=0:(slack>=0,lowSlack>=0)
+p= 7 necklaces=10 e070viol=0 e067viol=0 hallFail=0 tight=1 tightWithHighSS=0 tightMaxSS=0 witness=AAAAAAS
+   SLACK p=7 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2)
+p= 8 necklaces=13 e070viol=0 e067viol=0 hallFail=0 tight=2 tightWithHighSS=0 tightMaxSS=0 witness=AAASAAAS
+   SLACK p=8 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2)
+p= 9 necklaces=30 e070viol=0 e067viol=0 hallFail=0 tight=2 tightWithHighSS=0 tightMaxSS=0 witness=AAAASAAAS
+   SLACK p=9 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=2,lowSlack>=3)
+p=10 necklaces=41 e070viol=0 e067viol=0 hallFail=0 tight=4 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAASS
+   SLACK p=10 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=2,lowSlack>=3)
+p=11 necklaces=94 e070viol=0 e067viol=0 hallFail=0 tight=4 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAASS
+   SLACK p=11 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2)
+p=12 necklaces=136 e070viol=0 e067viol=0 hallFail=0 tight=6 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAASS
+   SLACK p=12 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3)
+p=13 necklaces=316 e070viol=0 e067viol=0 hallFail=0 tight=6 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAAASS
+   SLACK p=13 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=2,lowSlack>=3) high=2:(slack>=2,lowSlack>=4)
+p=14 necklaces=468 e070viol=0 e067viol=0 hallFail=0 tight=9 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAASAAASS
+   SLACK p=14 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3)
+p=15 necklaces=1096 e070viol=0 e067viol=0 hallFail=0 tight=12 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAASAAASS
+   SLACK p=15 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3) high=3:(slack>=2,lowSlack>=5)
+p=16 necklaces=1653 e070viol=0 e067viol=0 hallFail=0 tight=16 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAASAAASS
+   SLACK p=16 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=2,lowSlack>=4) high=3:(slack>=2,lowSlack>=5)
+p=17 necklaces=3856 e070viol=0 e067viol=0 hallFail=0 tight=19 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAAASAAASS
+   SLACK p=17 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=2,lowSlack>=4) high=3:(slack>=2,lowSlack>=5)
+p=18 necklaces=5949 e070viol=0 e067viol=0 hallFail=0 tight=27 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAASAAASAAASS
+   SLACK p=18 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3) high=3:(slack>=2,lowSlack>=5)
+p=19 necklaces=13798 e070viol=0 e067viol=0 hallFail=0 tight=34 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAASAAASAAASS
+   SLACK p=19 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=2,lowSlack>=4) high=3:(slack>=3,lowSlack>=6) high=4:(slack>=4,lowSlack>=8)
+p=20 necklaces=21618 e070viol=0 e067viol=0 hallFail=0 tight=49 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAASAAASAAASS
+   SLACK p=20 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3) high=3:(slack>=2,lowSlack>=5) high=4:(slack>=3,lowSlack>=7)
+p=21 necklaces=49940 e070viol=0 e067viol=0 hallFail=0 tight=62 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAAASAAASAAASS
+   SLACK p=21 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3) high=3:(slack>=3,lowSlack>=6) high=4:(slack>=1,lowSlack>=5) high=5:(slack>=3,lowSlack>=8)
+p=22 necklaces=79340 e070viol=0 e067viol=0 hallFail=0 tight=84 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAASAAASAAASAAASS
+   SLACK p=22 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=2,lowSlack>=4) high=3:(slack>=2,lowSlack>=5) high=4:(slack>=3,lowSlack>=7) high=5:(slack>=3,lowSlack>=8)
+p=23 necklaces=182362 e070viol=0 e067viol=0 hallFail=0 tight=110 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAASAAASAAASAAASS
+   SLACK p=23 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=2,lowSlack>=4) high=3:(slack>=2,lowSlack>=5) high=4:(slack>=2,lowSlack>=6) high=5:(slack>=3,lowSlack>=8) high=6:(slack>=3,lowSlack>=9)
+p=24 necklaces=293266 e070viol=0 e067viol=0 hallFail=0 tight=153 tightWithHighSS=0 tightMaxSS=1 witness=AAAASAAAAASAAASAAASAAASS
+   SLACK p=24 high=0:(slack>=0,lowSlack>=0) high=1:(slack>=1,lowSlack>=2) high=2:(slack>=1,lowSlack>=3) high=3:(slack>=2,lowSlack>=5) high=4:(slack>=2,lowSlack>=6) high=5:(slack>=3,lowSlack>=8)
+CHECK positive-sum words p=19..22: 3487066 (E-081 recorded 3487066)
+OK

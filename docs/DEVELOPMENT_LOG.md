@@ -3502,3 +3502,22 @@ two-child κ inventory、L=7埋め込みpotential、宣言したd非依存セレ
 H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 #73本体はOPEN。再開は155型に新しい型表なしで単射な局所障害が書けるか、
 `SSAAAAAASSS`で上がり`AAASAASSSSS`のSで高々1下がる閉形式Fが出たときに限る。
+
+## 2026-09-11 等号境界エポック
+
+- 09:00 前エポック（2026-09-10 夜、E-132..E-174）を1コミットとして着地。check.sh 1,734宣言で緑。
+- 09:10 E-070 を等号側から測る方針に切替。necklace 代表で網羅、周期31まで違反0（E-175）。
+  probe 内で周期19..22の語数 3,487,066 を E-081 と自動照合させ、実装の独立検証とした。
+- 09:20 `|U|=|D|` は全周期で達成（E-176）。等号を達成する最大 `|D|` は周期20で6。
+- 09:30 等号語の最小供給窓はすべて ssCount≤1（E-177）。周期8..31で例外0。
+  E-070 の等号側は E-128 の内側にあり、残るのは狭義不等式のみ。
+- 09:40 等号語の完全マッチングは一意、強制辺 1,110 本すべてが oldest-S（E-178）。selector 探索終了。
+- 09:45 線形強化 `slack ≥ c` を周期18 `AAAASSAAAASAAASSSS` と周期21で反証（E-180）。
+  両反例を独立な Python 実装で直和により再検証した。
+- 09:50 局所形 T6「高SS窓は内部から削除可能な S を供出」を周期22まで確認、例外0（E-179）。
+  高SS窓を持つ語では、その語の全ての高SS窓が供出する。
+- 09:55 tight ブロック接着の net 余剰探索。対627,264件・三つ組6,751,269件、周期40まで0（E-182）。
+- 10:05 `PeriodicSupplyBound` を Lean 化（E-181）。drift 停止則と `d≤p(p+1)`。
+  `Int.induction_on` はこのtoolchainに無いため Nat 二方向帰納と `ofNat/negSucc` 分岐で代替した。
+  `EventualPeriodicSupply` に同等の `period_mass_constant` があるが、依存錐を軽く保つため
+  `LeadingRunSupply`+`ParitySupply` から再証明している（import contract に明記）。

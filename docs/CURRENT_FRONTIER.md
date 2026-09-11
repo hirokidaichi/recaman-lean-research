@@ -1,12 +1,45 @@
 # Current research frontier
 
-最終更新: 2026-09-10
+最終更新: 2026-09-11
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
 [`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
 
 ## 結論
+
+2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
+広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
+
+第一に、`|U|≤|D|` は**全周期で sharp**（E-176）。各周期に等号を達成する正符号和語が存在し、
+等号を達成する最大 `|D|` は周期20で6まで増える。S希薄語だけの現象ではない。
+
+第二に、**等号語の最小供給窓はすべて ssCount≤1**（E-177）。周期8..31で、tightかつ高SS窓を持つ語は0。
+つまり **E-070の等号側は E-128 の既証明クラスの内側にある**。E-070に残っているのは狭義不等式だけになった。
+
+第三に、**等号語では課金が強制される**（E-178）。各供給Aを自分の最小窓内のSへ送る二部グラフの完全マッチングは、
+周期8..22の tight語 336件すべてで**一意**であり、強制辺1,110本はすべて E-069 の oldest-S 先と一致する。
+oldest-S は一般には `REFUTED` だが、**等号が立つところでは唯一可能な課金**である。
+これで名前付きchargeが全滅してきた理由が確定した：selectorは効く場所では既に決まっており、
+外れる場所（slackのある語）では外れても損がない。**selector探索は終了**とする。
+
+その強化案は反証した。`slack ≥ c`（c = |U| − oldest-S像の大きさ）は周期18の `AAAASSAAAASAAASSSS`
+（|U|=6, |D|=7, c=2, slack=1）と周期21で偽（E-180）。衝突を1件1Sで支払う会計は使えない。
+
+代わりの目標は局所的で検査可能である：**高SS窓は自分の内部から削除可能なSを必ず供出する**（T6、E-179）。
+高SS窓を持つ全語で、その語の全ての高SS窓が供出する（周期8..22、53,000語超、例外0）。
+これが次のgateであり、Lean証明が消費すべき形である。
+
+網羅範囲も広げた：周期31までの全正符号和語で `|U|≤|D|` 違反0、`U=A` 違反0、局所Hallマッチング飽和（E-175）。
+従来はE-066がp≤16、E-081がp≤22、Hall gate H-20260907-09がp≤18だった。周期19..22の語数は
+E-081の3,487,066と一致する（probe内で自動照合）。horizon延長だけではlabelを上げない規則は維持する。
+tightブロック同士の接着による net 余剰も、全回転を含む対627,264件・三つ組6,751,269件（周期40まで）で0（E-182）。
+
+Lean側では、この分枝の全探索が黙って依存していた停止則を定理にした（E-181、`PeriodicSupplyBound`）。
+正の周期質量だけから後退部分和の drift 則 `g(l)=g(l-p)+σ` を導き、任意lagの供給探索を `d≤p(p+1)` の
+有限検査へ落とす。「このphaseはどのlagでも供給されない」がkernel検査可能になった。
+
+E-067・E-070・全射性／非全射性は未解決のまま。active direct branch は0本。
 
 続く [SS=2 先頭 run](HYPOTHESIS_CARD_2026-09-10_TWO_SS_OLDEST_S.md) で、境界例を通る共通履歴を Lean 証明した（E-132）。
 最小 P2 で lag>3 なら先頭 AAS は禁止。先頭 A run が a≥3 なら、同じ run の時刻 `t-(a-2)` が
@@ -138,6 +171,14 @@ E-131 では、同じ端点を共有する m+1 個の現在 A 供給窓には **
 | E-171 | 最小NoSAAS SS=2 a=0はgap 3と7を持つ。E-154の欠落は軌道、`COMPUTED` |
 | E-172 | NoSAAS ssCount=2のSS間隔6は内部AAAA（SSAAAASS）、`PROVED-LEAN` |
 | E-173 | 孤立SS始まり15件はSSS(SA)*が8、SS(SA)* gap≥17が7、`COMPUTED` |
+| E-175 | 周期31まで全正符号和語で`\|U\|≤\|D\|`違反0・`U=A`違反0・局所Hall飽和。E-081の語数と一致、`COMPUTED` |
+| E-176 | `\|U\|≤\|D\|`は全周期でsharp。等号を達成する最大`\|D\|`は周期20で6、`COMPUTED` |
+| E-177 | 等号語の最小供給窓はすべてssCount≤1。E-070の等号側はE-128の内側、`COMPUTED` |
+| E-178 | 等号語の完全マッチングは一意で、強制辺1,110本すべてがoldest-S。selector探索終了、`COMPUTED` |
+| E-179 | 高SS窓があればslack≥1。局所形T6「高SS窓は内部からSを供出」は周期22まで例外0、`COMPUTED` |
+| E-180 | `slack ≥ c`は周期18 `AAAASSAAAASAAASSSS`と周期21で`REFUTED`。線形な衝突会計は停止 |
+| E-181 | 正の周期質量だけで後退走査のdrift停止則と`d≤p(p+1)`、`PROVED-LEAN` |
+| E-182 | tightブロックの接着でnet余剰は生じない。対627,264・三つ組6,751,269件、`COMPUTED` |
 | E-174 | ssCount=2のSSS始まりは尾がNoSS、`PROVED-LEAN` |
 
 ## 2026-09-09 以前の判断と継承した証拠
@@ -470,7 +511,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 269 files（root・auditを含む）。
-- `./scripts/check.sh`: 270 jobs、1,230 audited declarations。証拠台帳81件。
+- Lean source 311 files（`Recaman/` 310 に root の `Recaman.lean` を加えた数。`Audit.lean` は前者に含む）。
+- `./scripts/check.sh`: 1,743 audited declarations。証拠台帳182件、うち `PROVED-LEAN` 76件。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

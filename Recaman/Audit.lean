@@ -1781,3 +1781,12 @@ import Recaman
 #print axioms Recaman.OnePerRunCounterexample.eqFamily_old_past
 #print axioms Recaman.OnePerRunCounterexample.eqFamily_new_past
 #print axioms Recaman.OnePerRunCounterexample.unrestricted_one_per_run_false
+#print axioms Recaman.PeriodicSupplyBound.period_mass_const
+#print axioms Recaman.PeriodicSupplyBound.mass_past_mul_period
+#print axioms Recaman.PeriodicSupplyBound.mass_past_lower
+#print axioms Recaman.PeriodicSupplyBound.no_return_of_large
+#print axioms Recaman.PeriodicSupplyBound.mass_past_large
+#print axioms Recaman.PeriodicSupplyBound.supply_lag_bound
+#print axioms Recaman.PeriodicSupplyBound.unsupplied_of_bounded_check
+#print axioms Recaman.PeriodicSupplyBound.longLagControl_periodMass
+#print axioms Recaman.PeriodicSupplyBound.longLagControl_supply_in_window

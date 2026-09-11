@@ -66,3 +66,4 @@ Recaman.TwoSSLeadingSibling	Recaman.CanonicalLowSSBoundary	Minimum windows canno
 Recaman.OnePerRun	Recaman.TwoSSLeadingSibling;Recaman.SSFreeSupply	Nested k=1 one-per-run; SS-gap 2 is SSSS; NoSAAS gap 4 has ssCount≥3; gap 6 is SSAAAASS
 Recaman.NoSSMassOne	Recaman.OnePerRun	NoSS mass-1 bound and classification; SA-prefixed minWord family; reverse-nested extra mass/moment without SS hypothesis
 Recaman.OnePerRunCounterexample	Recaman.NoSSMassOne	Equality-family glue of minWord to mass-0 moment-(-1) SS=2 tails; smallest pair is two min P2 SS=2 windows at consecutive A times. Refutes unrestricted one-per-run on free histories
+Recaman.PeriodicSupplyBound	Recaman.LeadingRunSupply;Recaman.ParitySupply	正符号和の周期語に対する後退走査のdrift停止則。任意lagの供給探索をd<=p(p+1)の有限検査へ落とす。周期12のlongLagControlで仮説集合の非空性を確認

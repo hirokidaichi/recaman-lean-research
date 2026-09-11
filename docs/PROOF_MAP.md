@@ -1290,3 +1290,19 @@ The all-K family Wk=(AASASASASSSA)^k AAS attains2k; its NoSAAS, source
 signs, distinct positions, suffix embedding, and identical endpoint are
 Lean-checked. `family_nonminimum` guards against claiming a counterexample
 for minimum windows. No new global allocation is inferred. Audit:1,635.
+
+## 2026-09-11: the backward scan bound (E-181)
+
+`PeriodicSupplyBound.window_mass_shift` → `period_mass_const` →
+`mass_past_mul_period` → `mass_past_lower` → `no_return_of_large` →
+`supply_lag_bound` / `unsupplied_of_bounded_check`. For a periodic word with
+positive period mass the backward partial sums obey `g(l) = g(l-p) + sigma`, so
+the minimum over all lengths is attained below one period; once the running sum
+passes `p+1` no longer lag returns it to 1. Every supplier search in this branch
+terminates by this criterion, which until now lived only in the C++ and Python
+probes. The lag bound `d <= p*(p+1)` now follows from the positive period mass
+alone, independently of E-116/E-117, and "this phase has no supplier at any lag"
+becomes a finite kernel-checkable statement. `longLagControl` (period 12, period
+mass 2, phase 7 supplied at lag 11) is carried as a semantic guard so the
+hypothesis set has a witness and the window strictly contains lags the
+short-lag rule misses. The capacity inequality itself is untouched.
