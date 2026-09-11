@@ -1,4 +1,5 @@
 module	direct_imports	purpose
+Recaman.ThreeSSClassification	Recaman.UniversalSSStratification	Exhaustive classification of minimal length 11 SS=3 words into 3 canonical words; exact lag 11 forcing for minimal SS=3 windows below lag 15; exact 6 additions, 5 subtractions, and surplus >= 4
 Recaman.UniversalSSStratification	Recaman.SS2LagElevenForcing;Recaman.TightCapacityHierarchy	Universal four-tier lag hierarchy by ssCount: lag >= 3 for clean, lag >= 7 for ssCount >= 1, lag >= 11 for ssCount >= 2, lag >= 15 for ssCount >= 4; length 11 has ssCount <= 3; lag < 15 has ssCount <= 3
 Recaman.TightCapacityHierarchy	Recaman.SS2LagElevenForcing;Recaman.TightSSZeroRigidity	General tight capacity lower bound k <= |A|; exclusion of windows with >= k subtractions from tight subsets of size < k; supply deficit bounds on avoiding sublists for |U| <= 5; exclusion of windows with >= 5 subtractions from tight avoiding subsets
 Recaman.SS2LagElevenForcing	Recaman.SS2MinimalLagBound	Exhaustive elimination of length 13 P2 words; exact forcing of minimal SS=2 donor lag to 11; unique donation phase endpointPhase p u 11; exact 6 additions and 5 subtractions

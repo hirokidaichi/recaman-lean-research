@@ -2083,3 +2083,13 @@ import Recaman
 #print axioms Recaman.UniversalSSStratification.minimal_lag_lt_fifteen_ssCount_le_three
 #print axioms Recaman.UniversalSSStratification.minimal_ss_ge_four_lag_ge_fifteen
 #print axioms Recaman.UniversalSSStratification.no_ss_ge_four_lag_lt_fifteen
+
+#print axioms Recaman.ThreeSSClassification.isMinimalP2_iff
+#print axioms Recaman.ThreeSSClassification.bitWords_eleven_ss3_filter
+#print axioms Recaman.ThreeSSClassification.minimal_p2_length_eleven_ss3_cases
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_lag_ge_eleven
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_lag_lt_fifteen_eq_eleven
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_ones_eq_six
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_zeros_eq_five
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_subtraction_surplus
+#print axioms Recaman.ThreeSSClassification.minimal_ss3_classification_lt_fifteen

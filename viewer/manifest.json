@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2085,
+   "lines": 2095,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43480,6 +43480,84 @@
    "hasReport": false
   },
   {
+   "name": "ThreeSSClassification",
+   "lines": 164,
+   "imports": [
+    "UniversalSSStratification"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "isMinimalP2",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "isMinimalP2_iff",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "w1",
+     "line": 68
+    },
+    {
+     "kind": "def",
+     "name": "w2",
+     "line": 71
+    },
+    {
+     "kind": "def",
+     "name": "w3",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "bitWords_eleven_ss3_filter",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_length_eleven_ss3_cases",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_lag_ge_eleven",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_lag_lt_fifteen_eq_eleven",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_ones_eq_six",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_zeros_eq_five",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_subtraction_surplus",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss3_classification_lt_fifteen",
+     "line": 152
+    }
+   ],
+   "theorems": 9,
+   "defs": 4,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightBottleneckBound",
    "lines": 118,
    "imports": [
@@ -45222,6 +45300,6 @@
    "hasReport": false
   }
  ],
- "total": 338,
+ "total": 339,
  "withReport": 167
 }
