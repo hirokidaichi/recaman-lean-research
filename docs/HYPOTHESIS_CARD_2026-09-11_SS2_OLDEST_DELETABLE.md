@@ -106,6 +106,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightCapacityHierarchy` (E-209) | Universal Tight Capacity Hierarchy: tight sets containing windows with ≥ k subtractions require |A| ≥ k; avoiding sublists with |U| ≤ 5 have size ≤ 4 and exclude windows with ≥ 5 subtractions |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.UniversalSSStratification` (E-210) | Universal SS Stratification: lag ≥ 3 (clean), lag ≥ 7 (ssCount ≥ 1), lag ≥ 11 (ssCount ≥ 2), lag ≥ 15 (ssCount ≥ 4); length 11 has ssCount ≤ 3; lag < 15 has ssCount ≤ 3 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ThreeSSClassification` (E-211) | Three-SS Classification: minimal length 11 SS=3 words classified into 3 words; lag < 15 forced to lag = 11; 6 additions, 5 subtractions, surplus ≥ 4 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ThreeSSWeightCapacity` (E-212) | Three-Weight SS=3 Capacity: |U_{≤1}| + 2|U₂| + 3|U₃| ≤ |D|, 2|U₃| ≤ slack; saturated supplies have |U₂| = 0 and |U₃| = 0; deficit-1 supplies have |U₃| = 0; deficit-2 supplies have |U₃| ≤ 1 |
 
 ## Semantic audit
 

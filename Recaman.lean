@@ -1,3 +1,4 @@
+import Recaman.ThreeSSWeightCapacity
 import Recaman.ThreeSSClassification
 import Recaman.UniversalSSStratification
 import Recaman.TightCapacityHierarchy

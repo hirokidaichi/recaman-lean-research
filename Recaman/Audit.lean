@@ -2093,3 +2093,17 @@ import Recaman
 #print axioms Recaman.ThreeSSClassification.minimal_ss3_zeros_eq_five
 #print axioms Recaman.ThreeSSClassification.minimal_ss3_subtraction_surplus
 #print axioms Recaman.ThreeSSClassification.minimal_ss3_classification_lt_fifteen
+
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_weight_inequality
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_slack_bound
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_extremal_forces_zero
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_deficit_one_forces_zero
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_deficit_two_forces_le_one
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_deficit_k_forces_bound
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_single_donor_slack
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_two_donors_slack
+#print axioms Recaman.ThreeSSWeightCapacity.ss3_joint_ss2_slack
+#print axioms Recaman.ThreeSSWeightCapacity.three_ss_slack_ge_weights
+#print axioms Recaman.ThreeSSWeightCapacity.three_ss_extremal_count_zero
+#print axioms Recaman.ThreeSSWeightCapacity.three_ss_deficit_one_excludes_ss3
+#print axioms Recaman.ThreeSSWeightCapacity.three_ss_deficit_two_count_le_one

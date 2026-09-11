@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2095,
+   "lines": 2109,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43558,6 +43558,85 @@
    "hasReport": false
   },
   {
+   "name": "ThreeSSWeightCapacity",
+   "lines": 130,
+   "imports": [
+    "ThreeSSClassification",
+    "TwoSSWeightCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss3_weight_inequality",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_slack_bound",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_extremal_forces_zero",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_deficit_one_forces_zero",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_deficit_two_forces_le_one",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_deficit_k_forces_bound",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_single_donor_slack",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_two_donors_slack",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "ss3_joint_ss2_slack",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "three_ss_slack_ge_weights",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "three_ss_extremal_count_zero",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "three_ss_deficit_one_excludes_ss3",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "three_ss_deficit_two_count_le_one",
+     "line": 124
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightBottleneckBound",
    "lines": 118,
    "imports": [
@@ -45300,6 +45379,6 @@
    "hasReport": false
   }
  ],
- "total": 339,
+ "total": 340,
  "withReport": 167
 }
