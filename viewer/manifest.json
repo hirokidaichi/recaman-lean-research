@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2187,
+   "lines": 2200,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27464,6 +27464,75 @@
    "hasReport": true
   },
   {
+   "name": "GrandStratificationSynthesis",
+   "lines": 106,
+   "imports": [
+    "FiveSSWeightCapacity",
+    "SSSixLagBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "grand_quantum_lag_cases",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_ss_count_bound",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_ss_ge_four_forces_fifteen",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_no_ss_ge_six",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_high_ss_forces_strict",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_saturated_forces_low_ss",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_capacity_reduction",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_slack_ge_excess",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_list_extremal_pure_low_ss",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_list_high_ss_forces_strict_deficit",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_list_capacity_reduction",
+     "line": 100
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HighCandidateCausalReuse",
    "lines": 115,
    "imports": [
@@ -45865,6 +45934,6 @@
    "hasReport": false
   }
  ],
- "total": 345,
+ "total": 346,
  "withReport": 167
 }

@@ -112,6 +112,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SSSixLagBound` (E-215) | Universal SS Stratification Tier 5: length 15 P2 words have ssCount ≤ 5; lag < 19 windows have ssCount ≤ 5; ssCount ≥ 6 forces lag ≥ 19 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.FiveSSClassification` (E-216) | Five-SS Classification: minimal length 15 SS=5 words classified into 5 words; lag < 19 forced to lag = 15; 8 additions, 7 subtractions, surplus ≥ 6 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.FiveSSWeightCapacity` (E-217) | Five-Tier Capacity Inequality: |U_{≤1}| + 2|U₂| + 3|U₃| + 4|U₄| + 5|U₅| ≤ |D|; saturated supplies purely low-SS; deficit-1 excludes SS≥3; deficit-2 excludes SS≥4; deficit-3 excludes SS=5 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.GrandStratificationSynthesis` (E-218) | Master Synthesis for lag < 19: quantum lag {3, 7, 11, 15}; ssCount ≤ 5; ssCount ≥ 4 forces lag = 15; saturated supplies purely low-SS; global capacity reduces to low-SS |
 
 ## Semantic audit
 

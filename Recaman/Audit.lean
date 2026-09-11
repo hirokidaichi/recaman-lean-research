@@ -2181,6 +2181,19 @@ import Recaman
 #print axioms Recaman.FiveSSWeightCapacity.five_tier_list_deficit_three_excludes_ss5
 #print axioms Recaman.FiveSSWeightCapacity.five_tier_list_grand_reduction
 
+#print axioms Recaman.GrandStratificationSynthesis.grand_quantum_lag_cases
+#print axioms Recaman.GrandStratificationSynthesis.grand_ss_count_bound
+#print axioms Recaman.GrandStratificationSynthesis.grand_ss_ge_four_forces_fifteen
+#print axioms Recaman.GrandStratificationSynthesis.grand_no_ss_ge_six
+#print axioms Recaman.GrandStratificationSynthesis.grand_high_ss_forces_strict
+#print axioms Recaman.GrandStratificationSynthesis.grand_saturated_forces_low_ss
+#print axioms Recaman.GrandStratificationSynthesis.grand_capacity_reduction
+#print axioms Recaman.GrandStratificationSynthesis.grand_slack_ge_excess
+#print axioms Recaman.GrandStratificationSynthesis.grand_list_extremal_pure_low_ss
+#print axioms Recaman.GrandStratificationSynthesis.grand_list_high_ss_forces_strict_deficit
+#print axioms Recaman.GrandStratificationSynthesis.grand_list_capacity_reduction
+
+
 
 
 

@@ -1,4 +1,5 @@
 module	direct_imports	purpose
+Recaman.GrandStratificationSynthesis	Recaman.FiveSSWeightCapacity;Recaman.SSSixLagBound	Master synthesis of SS-stratification and capacity reduction for lag < 19; quantum lag {3, 7, 11, 15}; ssCount <= 5; ssCount >= 4 forces lag = 15; saturated supplies purely low-SS; global capacity reduces to low-SS
 Recaman.FiveSSWeightCapacity	Recaman.FiveSSClassification;Recaman.FourTierCapacityReduction	Five-tier capacity inequality |U_{<=1}| + 2|U2| + 3|U3| + 4|U4| + 5|U5| <= |D|; multi-tier deficit hierarchy; saturated supplies purely low-SS; deficit-1 excludes SS>=3; deficit-2 excludes SS>=4; deficit-3 excludes SS=5
 Recaman.FiveSSClassification	Recaman.SSSixLagBound;Recaman.ThreeSSClassification	Exhaustive classification of minimal length 15 SS=5 words into 5 canonical words; exact lag 15 forcing for minimal SS=5 windows below lag 19; exact 8 additions, 7 subtractions, surplus >= 6
 Recaman.SSSixLagBound	Recaman.LagSevenTightObstruction;Recaman.UniversalSSStratification;Recaman.P2ModFourRigidity	Fifth tier of universal SS stratification; length 15 P2 words have ssCount <= 5; lag < 19 windows have ssCount <= 5; ssCount >= 6 forces lag >= 19
