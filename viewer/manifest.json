@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2157,
+   "lines": 2167,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27116,6 +27116,85 @@
    "hasReport": false
   },
   {
+   "name": "FiveSSClassification",
+   "lines": 114,
+   "imports": [
+    "SSSixLagBound",
+    "ThreeSSClassification"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "w15_1",
+     "line": 28
+    },
+    {
+     "kind": "def",
+     "name": "w15_2",
+     "line": 29
+    },
+    {
+     "kind": "def",
+     "name": "w15_3",
+     "line": 30
+    },
+    {
+     "kind": "def",
+     "name": "w15_4",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "w15_5",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "bitWords_fifteen_ss5_filter",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_length_fifteen_ss5_cases",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_lag_ge_fifteen",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_lag_lt_nineteen_eq_fifteen",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_ones_eq_eight",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_zeros_eq_seven",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_subtraction_surplus",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss5_classification_lt_nineteen",
+     "line": 106
+    }
+   ],
+   "theorems": 8,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ForcedCandidateReuseBalance",
    "lines": 112,
    "imports": [
@@ -45682,6 +45761,6 @@
    "hasReport": false
   }
  ],
- "total": 343,
+ "total": 344,
  "withReport": 167
 }

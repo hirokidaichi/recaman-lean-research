@@ -1,3 +1,4 @@
+import Recaman.FiveSSClassification
 import Recaman.SSSixLagBound
 import Recaman.FourTierCapacityReduction
 import Recaman.P2ModFourRigidity

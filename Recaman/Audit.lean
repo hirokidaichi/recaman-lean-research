@@ -2153,5 +2153,15 @@ import Recaman
 #print axioms Recaman.SSSixLagBound.p2_ss_ge_six_lag_ge_nineteen
 #print axioms Recaman.SSSixLagBound.no_ss_ge_six_lag_lt_nineteen
 
+#print axioms Recaman.FiveSSClassification.bitWords_fifteen_ss5_filter
+#print axioms Recaman.FiveSSClassification.minimal_p2_length_fifteen_ss5_cases
+#print axioms Recaman.FiveSSClassification.minimal_ss5_lag_ge_fifteen
+#print axioms Recaman.FiveSSClassification.minimal_ss5_lag_lt_nineteen_eq_fifteen
+#print axioms Recaman.FiveSSClassification.minimal_ss5_ones_eq_eight
+#print axioms Recaman.FiveSSClassification.minimal_ss5_zeros_eq_seven
+#print axioms Recaman.FiveSSClassification.minimal_ss5_subtraction_surplus
+#print axioms Recaman.FiveSSClassification.minimal_ss5_classification_lt_nineteen
+
+
 
 
