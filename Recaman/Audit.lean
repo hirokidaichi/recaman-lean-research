@@ -1944,3 +1944,11 @@ import Recaman
 #print axioms Recaman.TightP2ParityRigidity.p2_lag_le_five_forces_aas
 #print axioms Recaman.TightP2ParityRigidity.tight_avoiding_member_lag_three_of_D_le_four
 #print axioms Recaman.TightP2ParityRigidity.tight_avoiding_member_is_aas_of_D_le_four
+
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_avoiding_all_lag_three
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_avoiding_all_aas
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_neighborhood_covers_iff
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_avoiding_s_not_mem
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_deleted_neighborhood_eq
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.tight_deleted_hall_preserved
+#print axioms Recaman.TwoSSTightAvoidanceTheorem.universal_hall_preserved_after_ss2_donation

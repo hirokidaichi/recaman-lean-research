@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1946,
+   "lines": 1954,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43852,6 +43852,54 @@
    "hasReport": false
   },
   {
+   "name": "TwoSSTightAvoidanceTheorem",
+   "lines": 114,
+   "imports": [
+    "TightP2ParityRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_all_lag_three",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_all_aas",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_neighborhood_covers_iff",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_s_not_mem",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_deleted_neighborhood_eq",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_deleted_hall_preserved",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_hall_preserved_after_ss2_donation",
+     "line": 98
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSTightDisjoint",
    "lines": 225,
    "imports": [
@@ -44392,6 +44440,6 @@
    "hasReport": false
   }
  ],
- "total": 322,
+ "total": 323,
  "withReport": 167
 }
