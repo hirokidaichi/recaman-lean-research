@@ -2019,4 +2019,17 @@ import Recaman
 #print axioms Recaman.ExtremalSSExclusion.deficit_one_excludes_two_deletable
 #print axioms Recaman.ExtremalSSExclusion.extremal_windows_ss_ne_two_of_deletable
 
+#print axioms Recaman.TwoSSWeightCapacity.ss2_weight_inequality
+#print axioms Recaman.TwoSSWeightCapacity.extremal_forces_ss2_zero
+#print axioms Recaman.TwoSSWeightCapacity.deficit_one_forces_ss2_le_one
+#print axioms Recaman.TwoSSWeightCapacity.deficit_two_forces_ss2_le_two
+#print axioms Recaman.TwoSSWeightCapacity.deficit_k_forces_ss2_le_k
+#print axioms Recaman.TwoSSWeightCapacity.two_ss_slack_ge_count
+#print axioms Recaman.TwoSSWeightCapacity.two_ss_extremal_count_zero
+#print axioms Recaman.TwoSSWeightCapacity.two_ss_deficit_one_count_le_one
+#print axioms Recaman.TwoSSWeightCapacity.two_ss_deficit_two_count_le_two
+#print axioms Recaman.TwoSSWeightCapacity.single_ss2_donor_slack
+#print axioms Recaman.TwoSSWeightCapacity.two_ss2_donors_slack
+
+
 

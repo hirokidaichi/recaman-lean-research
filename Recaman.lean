@@ -1,3 +1,4 @@
+import Recaman.TwoSSWeightCapacity
 import Recaman.ExtremalSSExclusion
 import Recaman.SS2MultiDonorDeficit
 import Recaman.TightSSZeroRigidity

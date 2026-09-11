@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2022,
+   "lines": 2035,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -44368,6 +44368,74 @@
    "hasReport": false
   },
   {
+   "name": "TwoSSWeightCapacity",
+   "lines": 107,
+   "imports": [
+    "ExtremalSSExclusion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss2_weight_inequality",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "extremal_forces_ss2_zero",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_one_forces_ss2_le_one",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_two_forces_ss2_le_two",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_k_forces_ss2_le_k",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_slack_ge_count",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_extremal_count_zero",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_deficit_one_count_le_one",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_deficit_two_count_le_two",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "single_ss2_donor_slack",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss2_donors_slack",
+     "line": 99
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TypedNormalProvenance",
    "lines": 673,
    "imports": [
@@ -44847,6 +44915,6 @@
    "hasReport": false
   }
  ],
- "total": 332,
+ "total": 333,
  "withReport": 167
 }
