@@ -1998,3 +1998,16 @@ import Recaman
 #print axioms Recaman.TightSSZeroRigidity.no_ss2_in_tight_D_le_four
 #print axioms Recaman.TightSSZeroRigidity.no_ss2_in_tight_size_le_two
 
+#print axioms Recaman.SS2MultiDonorDeficit.length_ge_two_of_distinct_mem
+#print axioms Recaman.SS2MultiDonorDeficit.filter_two_ne_sublist_length_le_sub_two
+#print axioms Recaman.SS2MultiDonorDeficit.double_deleted_neighborhood_sublist
+#print axioms Recaman.SS2MultiDonorDeficit.double_deleted_neighborhood_le_sub_two
+#print axioms Recaman.SS2MultiDonorDeficit.double_deleted_neighborhood_eq
+#print axioms Recaman.SS2MultiDonorDeficit.two_ss_donors_distinct
+#print axioms Recaman.SS2MultiDonorDeficit.two_ss_donors_avoid_tight
+#print axioms Recaman.SS2MultiDonorDeficit.two_ss_double_deleted_tight_eq
+#print axioms Recaman.SS2MultiDonorDeficit.double_deletable_forces_double_slack
+#print axioms Recaman.SS2MultiDonorDeficit.ss2_double_donation_hall_bound
+#print axioms Recaman.SS2MultiDonorDeficit.ss2_two_donors_force_double_slack
+#print axioms Recaman.SS2MultiDonorDeficit.no_two_ss2_in_deficit_one_supply
+

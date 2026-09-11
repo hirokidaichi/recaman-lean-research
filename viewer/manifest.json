@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2000,
+   "lines": 2013,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39778,6 +39778,84 @@
    "hasReport": false
   },
   {
+   "name": "SS2MultiDonorDeficit",
+   "lines": 228,
+   "imports": [
+    "TightSSZeroRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "length_ge_two_of_distinct_mem",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "filter_two_ne_sublist_length_le_sub_two",
+     "line": 50
+    },
+    {
+     "kind": "def",
+     "name": "doubleDeletedNeighborhood",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "double_deleted_neighborhood_sublist",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "double_deleted_neighborhood_le_sub_two",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "double_deleted_neighborhood_eq",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_donors_distinct",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_donors_avoid_tight",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "two_ss_double_deleted_tight_eq",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "double_deletable_forces_double_slack",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_double_donation_hall_bound",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_two_donors_force_double_slack",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "no_two_ss2_in_deficit_one_supply",
+     "line": 217
+    }
+   ],
+   "theorems": 12,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SS2StrictSlackTheorem",
    "lines": 86,
    "imports": [
@@ -44721,6 +44799,6 @@
    "hasReport": false
   }
  ],
- "total": 330,
+ "total": 331,
  "withReport": 167
 }
