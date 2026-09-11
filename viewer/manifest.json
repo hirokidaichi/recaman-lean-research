@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2253,
+   "lines": 2267,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -33693,6 +33693,79 @@
    "hasReport": false
   },
   {
+   "name": "PeriodicHallReduction",
+   "lines": 227,
+   "imports": [
+    "HallRobustnessTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "hall_reduction_to_clean_aas_p7",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_reduction_to_low_ss_p11",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_reduction_to_ss_le_three_p15",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_reduction_to_ss_le_five_p19",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_witness_is_low_ss_p11",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_witness_is_clean_p7",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_witness_is_ss_le_three_p15",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_failure_witness_is_ss_le_five_p19",
+     "line": 147
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_iff_low_ss_p11",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_iff_clean_p7",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_iff_ss_le_three_p15",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_iff_ss_le_five_p19",
+     "line": 211
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PeriodicSupplyBound",
    "lines": 253,
    "imports": [
@@ -46227,6 +46300,6 @@
    "hasReport": false
   }
  ],
- "total": 350,
+ "total": 351,
  "withReport": 167
 }

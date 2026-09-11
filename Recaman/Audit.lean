@@ -2245,6 +2245,20 @@ import Recaman
 #print axioms Recaman.HallRobustnessTheorem.hall_failure_excludes_ss_ge_six_p19
 #print axioms Recaman.HallRobustnessTheorem.hall_failure_ss_le_five_p19
 
+#print axioms Recaman.PeriodicHallReduction.hall_reduction_to_clean_aas_p7
+#print axioms Recaman.PeriodicHallReduction.hall_reduction_to_low_ss_p11
+#print axioms Recaman.PeriodicHallReduction.hall_reduction_to_ss_le_three_p15
+#print axioms Recaman.PeriodicHallReduction.hall_reduction_to_ss_le_five_p19
+#print axioms Recaman.PeriodicHallReduction.hall_failure_witness_is_low_ss_p11
+#print axioms Recaman.PeriodicHallReduction.hall_failure_witness_is_clean_p7
+#print axioms Recaman.PeriodicHallReduction.hall_failure_witness_is_ss_le_three_p15
+#print axioms Recaman.PeriodicHallReduction.hall_failure_witness_is_ss_le_five_p19
+#print axioms Recaman.PeriodicHallReduction.hall_iff_low_ss_p11
+#print axioms Recaman.PeriodicHallReduction.hall_iff_clean_p7
+#print axioms Recaman.PeriodicHallReduction.hall_iff_ss_le_three_p15
+#print axioms Recaman.PeriodicHallReduction.hall_iff_ss_le_five_p19
+
+
 
 
 
