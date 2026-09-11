@@ -109,6 +109,7 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.ThreeSSWeightCapacity` (E-212) | Three-Weight SS=3 Capacity: |U_{≤1}| + 2|U₂| + 3|U₃| ≤ |D|, 2|U₃| ≤ slack; saturated supplies have |U₂| = 0 and |U₃| = 0; deficit-1 supplies have |U₃| = 0; deficit-2 supplies have |U₃| ≤ 1 |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.P2ModFourRigidity` (E-213) | Universal Mod-4 Parity Law: w.length % 4 = 3 for all P2 words; non-existence for length % 4 ≠ 3 (1, 5, 9, 13, 17, 21, even lengths); discrete quantum length hierarchy (3, 7, 11, 15, 19); universal gap theorem |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.FourTierCapacityReduction` (E-214) | Four-Tier Capacity Reduction for lag < 15: n_tot ≤ nD - (n2 + 2*n3); high-SS forces strict deficit; saturated supplies purely low-SS (n2 = 0, n3 = 0); deficit-1 excludes SS=3; global capacity reduces to low-SS |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.SSSixLagBound` (E-215) | Universal SS Stratification Tier 5: length 15 P2 words have ssCount ≤ 5; lag < 19 windows have ssCount ≤ 5; ssCount ≥ 6 forces lag ≥ 19 |
 
 ## Semantic audit
 

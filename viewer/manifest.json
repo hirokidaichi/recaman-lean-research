@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2149,
+   "lines": 2157,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40959,6 +40959,51 @@
    "hasReport": false
   },
   {
+   "name": "SSSixLagBound",
+   "lines": 88,
+   "imports": [
+    "LagSevenTightObstruction",
+    "UniversalSSStratification",
+    "P2ModFourRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_fifteen_ss_ge_six",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_fifteen_ssCount_le_five",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_seven_ssCount_le_one",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_lag_lt_nineteen_ssCount_le_five",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_ss_ge_six_lag_ge_nineteen",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss_ge_six_lag_lt_nineteen",
+     "line": 81
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SeededHighCorridorNoGo",
    "lines": 158,
    "imports": [
@@ -45637,6 +45682,6 @@
    "hasReport": false
   }
  ],
- "total": 342,
+ "total": 343,
  "withReport": 167
 }

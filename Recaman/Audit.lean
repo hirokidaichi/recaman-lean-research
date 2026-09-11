@@ -2146,4 +2146,12 @@ import Recaman
 #print axioms Recaman.FourTierCapacityReduction.four_tier_list_deficit_two_structure
 #print axioms Recaman.FourTierCapacityReduction.four_tier_list_grand_reduction
 
+#print axioms Recaman.SSSixLagBound.bitWords_fifteen_ss_ge_six
+#print axioms Recaman.SSSixLagBound.p2_length_fifteen_ssCount_le_five
+#print axioms Recaman.SSSixLagBound.p2_length_seven_ssCount_le_one
+#print axioms Recaman.SSSixLagBound.p2_lag_lt_nineteen_ssCount_le_five
+#print axioms Recaman.SSSixLagBound.p2_ss_ge_six_lag_ge_nineteen
+#print axioms Recaman.SSSixLagBound.no_ss_ge_six_lag_lt_nineteen
+
+
 

@@ -1,3 +1,4 @@
+import Recaman.SSSixLagBound
 import Recaman.FourTierCapacityReduction
 import Recaman.P2ModFourRigidity
 import Recaman.ThreeSSWeightCapacity
