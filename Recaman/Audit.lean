@@ -2107,3 +2107,24 @@ import Recaman
 #print axioms Recaman.ThreeSSWeightCapacity.three_ss_extremal_count_zero
 #print axioms Recaman.ThreeSSWeightCapacity.three_ss_deficit_one_excludes_ss3
 #print axioms Recaman.ThreeSSWeightCapacity.three_ss_deficit_two_count_le_one
+
+#print axioms Recaman.P2ModFourRigidity.p2_length_ne_three_mod4
+#print axioms Recaman.P2ModFourRigidity.no_p2_mod4_zero
+#print axioms Recaman.P2ModFourRigidity.no_p2_mod4_one
+#print axioms Recaman.P2ModFourRigidity.no_p2_mod4_two
+#print axioms Recaman.P2ModFourRigidity.p2_length_is_odd
+#print axioms Recaman.P2ModFourRigidity.no_p2_even_length
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_1
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_5
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_9
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_13
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_17
+#print axioms Recaman.P2ModFourRigidity.no_p2_length_21
+#print axioms Recaman.P2ModFourRigidity.p2_length_ge_three
+#print axioms Recaman.P2ModFourRigidity.p2_length_lt_seven_eq_three
+#print axioms Recaman.P2ModFourRigidity.p2_length_lt_eleven_cases
+#print axioms Recaman.P2ModFourRigidity.p2_length_lt_fifteen_cases
+#print axioms Recaman.P2ModFourRigidity.p2_length_lt_nineteen_cases
+#print axioms Recaman.P2ModFourRigidity.p2_length_lt_twenty_three_cases
+#print axioms Recaman.P2ModFourRigidity.p2_length_discrete_gap
+

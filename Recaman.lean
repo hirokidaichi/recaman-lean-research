@@ -1,3 +1,4 @@
+import Recaman.P2ModFourRigidity
 import Recaman.ThreeSSWeightCapacity
 import Recaman.ThreeSSClassification
 import Recaman.UniversalSSStratification

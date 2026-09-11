@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2109,
+   "lines": 2130,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32734,6 +32734,165 @@
    "hasReport": true
   },
   {
+   "name": "P2ModFourRigidity",
+   "lines": 161,
+   "imports": [
+    "NoSSMassOne",
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p2_length_ne_three_mod4",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_mod4_zero",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_mod4_one",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_mod4_two",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_is_odd",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_even_length",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_1",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_2",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_4",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_5",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_6",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_8",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_9",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_10",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_12",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_13",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_14",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_16",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_17",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_18",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_20",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_21",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_ge_three",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_lt_seven_eq_three",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_lt_eleven_cases",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_lt_fifteen_cases",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_lt_nineteen_cases",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_lt_twenty_three_cases",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_discrete_gap",
+     "line": 156
+    }
+   ],
+   "theorems": 29,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ParityPeriodicSupply",
    "lines": 109,
    "imports": [
@@ -45379,6 +45538,6 @@
    "hasReport": false
   }
  ],
- "total": 340,
+ "total": 341,
  "withReport": 167
 }

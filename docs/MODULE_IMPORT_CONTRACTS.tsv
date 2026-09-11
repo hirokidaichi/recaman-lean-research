@@ -1,4 +1,5 @@
 module	direct_imports	purpose
+Recaman.P2ModFourRigidity	Recaman.NoSSMassOne;Recaman.LeadingRunSupply	Universal modulo 4 rigidity w.length % 4 = 3 for all P2 words; non-existence of P2 words for lengths % 4 != 3 (lengths 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 16, 17, 18, 20, 21); discrete quantum length hierarchy (3, 7, 11, 15, 19)
 Recaman.ThreeSSWeightCapacity	Recaman.ThreeSSClassification;Recaman.TwoSSWeightCapacity	Three-weight capacity |U_{<=1}| + 2|U2| + 3|U3| <= |D|; deficit hierarchy 2|U3| <= slack; saturated supplies have |U3| = 0; deficit-1 supplies have |U3| = 0
 Recaman.ThreeSSClassification	Recaman.UniversalSSStratification	Exhaustive classification of minimal length 11 SS=3 words into 3 canonical words; exact lag 11 forcing for minimal SS=3 windows below lag 15; exact 6 additions, 5 subtractions, and surplus >= 4
 Recaman.UniversalSSStratification	Recaman.SS2LagElevenForcing;Recaman.TightCapacityHierarchy	Universal four-tier lag hierarchy by ssCount: lag >= 3 for clean, lag >= 7 for ssCount >= 1, lag >= 11 for ssCount >= 2, lag >= 15 for ssCount >= 4; length 11 has ssCount <= 3; lag < 15 has ssCount <= 3
