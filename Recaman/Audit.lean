@@ -1826,6 +1826,16 @@ import Recaman
 #print axioms Recaman.TwoSSEndpoint.stream_ss2_lag_ge_eleven
 #print axioms Recaman.TwoSSEndpoint.ss2_subtractions_ge_five
 
+#print axioms Recaman.TwoSSEndpoint.poly_id1
+#print axioms Recaman.TwoSSEndpoint.poly_id2
+#print axioms Recaman.TwoSSEndpoint.mul_id
+#print axioms Recaman.TwoSSEndpoint.moment_plus_length_zero_mod_four
+#print axioms Recaman.TwoSSEndpoint.intervening_length_mod_four
+#print axioms Recaman.TwoSSEndpoint.no_intervening_of_mod_four_two
+#print axioms Recaman.TwoSSEndpoint.intervening_length_ge_four
+#print axioms Recaman.TwoSSEndpoint.stream_shared_endpoint_time_mod_four
+#print axioms Recaman.TwoSSEndpoint.stream_shared_endpoint_time_ge_four
+
 #print axioms Recaman.TwoSSPeriodicSupply.two_SS_endpoint_mod_injective
 #print axioms Recaman.TwoSSPeriodicSupply.ss_one_two_endpoint_mod_disjoint
 #print axioms Recaman.TwoSSPeriodicSupply.two_SS_clean_endpoint_mod_order
@@ -1835,3 +1845,16 @@ import Recaman
 #print axioms Recaman.TwoSSPeriodicSupply.emod_eq_shift
 #print axioms Recaman.TwoSSPeriodicSupply.periodic_window_covers_subtraction
 #print axioms Recaman.TwoSSPeriodicSupply.ss2_window_covers_all_subtractions_of_p_le_eleven
+
+#print axioms Recaman.TwoSSTightDisjoint.isCoveredByWindow_iff
+#print axioms Recaman.TwoSSTightDisjoint.isCoveredBySubset_iff
+#print axioms Recaman.TwoSSTightDisjoint.filter_all_true
+#print axioms Recaman.TwoSSTightDisjoint.filter_ne_nodup
+#print axioms Recaman.TwoSSTightDisjoint.subPhases_nodup
+#print axioms Recaman.TwoSSTightDisjoint.neighborhood_eq_subPhases_of_has_ss2
+#print axioms Recaman.TwoSSTightDisjoint.neighborhood_length_of_has_ss2
+#print axioms Recaman.TwoSSTightDisjoint.strict_expansion_of_has_ss2
+#print axioms Recaman.TwoSSTightDisjoint.no_tight_subset_contains_ss2
+#print axioms Recaman.TwoSSTightDisjoint.deleted_neighborhood_hall_of_has_ss2
+#print axioms Recaman.TwoSSTightDisjoint.slack_of_has_ss2
+#print axioms Recaman.TwoSSTightDisjoint.deletable_of_avoids_ss2

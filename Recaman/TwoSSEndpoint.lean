@@ -174,6 +174,124 @@ theorem mass_zero_length_even (w : List Bool) (hm : mass w = 0) :
   have ho := ones_bounds w
   omega
 
+theorem poly_id1 (q : Int) : (4 * q + 2) * (4 * q + 1) = 4 * (4 * q * q + 3 * q) + 2 := by grind
+theorem poly_id2 (q : Int) : (4 * q + 3) * (4 * q + 2) = 4 * (4 * q * q + 5 * q + 1) + 2 := by grind
+theorem mul_id (L : Int) : L * (L + 1) = L * (L - 1) + 2 * L := by grind
+
+/-- Any word satisfying `moment w + |w| = 0` must have length congruent to 0 or 1 modulo 4.
+Lengths congruent to 2 or 3 modulo 4 are algebraically impossible. -/
+theorem moment_plus_length_zero_mod_four (w : List Bool)
+    (hM : moment w + (w.length : Int) = 0) :
+    w.length % 4 = 0 ∨ w.length % 4 = 1 := by
+  have h2 := twice_moment w
+  let L : Int := (w.length : Int)
+  have hid : L * (L + 1) = L * (L - 1) + 2 * L := mul_id L
+  have h4 : 4 * positions w = L * (L - 1) := by
+    change 2 * moment w = 4 * positions w - L * (L + 1) at h2
+    rw [hid] at h2
+    change moment w + L = 0 at hM
+    omega
+  have hcases : w.length % 4 = 0 ∨ w.length % 4 = 1 ∨ w.length % 4 = 2 ∨ w.length % 4 = 3 := by omega
+  rcases hcases with h0 | h1 | h2_rem | h3_rem
+  · left; exact h0
+  · right; exact h1
+  · exfalso
+    have hd : L = 4 * ((w.length / 4 : Nat) : Int) + 2 := by
+      change (w.length : Int) = 4 * ((w.length / 4 : Nat) : Int) + 2
+      have : w.length = 4 * (w.length / 4) + 2 := by omega
+      exact_mod_cast this
+    have heq : L * (L - 1) = 4 * (4 * ((w.length / 4 : Nat) : Int) * ((w.length / 4 : Nat) : Int) + 3 * ((w.length / 4 : Nat) : Int)) + 2 := by
+      rw [hd]
+      have : 4 * ((w.length / 4 : Nat) : Int) + 2 - 1 = 4 * ((w.length / 4 : Nat) : Int) + 1 := by omega
+      rw [this]
+      exact poly_id1 ((w.length / 4 : Nat) : Int)
+    rw [heq] at h4
+    omega
+  · exfalso
+    have hd : L = 4 * ((w.length / 4 : Nat) : Int) + 3 := by
+      change (w.length : Int) = 4 * ((w.length / 4 : Nat) : Int) + 3
+      have : w.length = 4 * (w.length / 4) + 3 := by omega
+      exact_mod_cast this
+    have heq : L * (L - 1) = 4 * (4 * ((w.length / 4 : Nat) : Int) * ((w.length / 4 : Nat) : Int) + 5 * ((w.length / 4 : Nat) : Int) + 1) + 2 := by
+      rw [hd]
+      have : 4 * ((w.length / 4 : Nat) : Int) + 3 - 1 = 4 * ((w.length / 4 : Nat) : Int) + 2 := by omega
+      rw [this]
+      exact poly_id2 ((w.length / 4 : Nat) : Int)
+    rw [heq] at h4
+    omega
+
+/-- Intervening words between shared endpoints (which must have `mass = 0` and `moment + length = 0`)
+must have length divisible by 4. -/
+theorem intervening_length_mod_four (w : List Bool)
+    (hmass : mass w = 0) (hM : moment w + (w.length : Int) = 0) :
+    w.length % 4 = 0 := by
+  have hmod := moment_plus_length_zero_mod_four w hM
+  have heven : w.length % 2 = 0 := by
+    have h := mass_eq w
+    omega
+  rcases hmod with h0 | h1
+  · exact h0
+  · omega
+
+/-- No intervening word can have length congruent to 2 modulo 4 (such as lengths 2, 6, 10, 14, 18, 22, ...). -/
+theorem no_intervening_of_mod_four_two (w : List Bool)
+    (hmass : mass w = 0) (hM : moment w + (w.length : Int) = 0)
+    (hmod : w.length % 4 = 2) : False := by
+  have h4 := intervening_length_mod_four w hmass hM
+  omega
+
+/-- Any non-empty intervening word between shared endpoints must have length at least 4. -/
+theorem intervening_length_ge_four (w : List Bool)
+    (hmass : mass w = 0) (hM : moment w + (w.length : Int) = 0)
+    (hne : w ≠ []) : 4 ≤ w.length := by
+  have h4 := intervening_length_mod_four w hmass hM
+  have hpos : 0 < w.length := by
+    cases w with
+    | nil => contradiction
+    | cons b w' => simp
+  omega
+
+/-- In any stream, the time separation k between two shared-endpoint P2 windows
+separated by current-A must be a multiple of 4. -/
+theorem stream_shared_endpoint_time_mod_four (e : Int → Bool) (t : Int) (k d : Nat)
+    (hk : 0 < k) (hA : e t = true)
+    (hnew : ShortPeriodicSupply.P2 e (t + k) (k + d))
+    (hold : ShortPeriodicSupply.P2 e t d) :
+    k % 4 = 0 := by
+  have hklen : k = (k - 1) + 1 := by omega
+  have hlast : past e (t + k - (k - 1 : Nat)) 1 = [true] := by
+    have htime : t + (k : Int) - ((k - 1 : Nat) : Int) - 1 = t := by omega
+    simpa [past, htime] using congrArg (fun b => [b]) hA
+  have hfirst : past e (t + k) k = past e (t + k) (k - 1) ++ [true] := by
+    calc
+      past e (t + k) k = past e (t + k) ((k - 1) + 1) := congrArg (past e (t + k)) hklen
+      _ = past e (t + k) (k - 1) ++ past e (t + k - (k - 1 : Nat)) 1 := past_append _ _ _ _
+      _ = past e (t + k) (k - 1) ++ [true] := by rw [hlast]
+  have htime : t + (k : Int) - k = t := by omega
+  have hn := (past_p2_iff e (t + k) (k + d)).mpr hnew
+  rw [past_append, hfirst, htime] at hn
+  have hdata := intervening_word_data (past e (t + k) (k - 1)) (past e t d) hn ((past_p2_iff e t d).mpr hold)
+  have hlen : (past e (t + k) (k - 1) ++ [true]).length = k := by
+    simp [past]
+    omega
+  have hM : moment (past e (t + k) (k - 1) ++ [true]) + ((past e (t + k) (k - 1) ++ [true]).length : Int) = 0 := hdata.2
+  rw [hlen] at hM
+  have h4 := intervening_length_mod_four (past e (t + k) (k - 1) ++ [true]) hdata.1 (by
+    rw [hlen]
+    exact hM)
+  rw [hlen] at h4
+  exact h4
+
+/-- In any stream, the time separation k between two distinct shared-endpoint P2 windows
+separated by current-A must be at least 4. -/
+theorem stream_shared_endpoint_time_ge_four (e : Int → Bool) (t : Int) (k d : Nat)
+    (hk : 0 < k) (hA : e t = true)
+    (hnew : ShortPeriodicSupply.P2 e (t + k) (k + d))
+    (hold : ShortPeriodicSupply.P2 e t d) :
+    4 ≤ k := by
+  have hmod := stream_shared_endpoint_time_mod_four e t k d hk hA hnew hold
+  omega
+
 /-- All binary words of length n. -/
 def bitWords : Nat → List (List Bool)
   | 0 => [[]]

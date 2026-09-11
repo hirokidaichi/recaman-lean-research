@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1837,
+   "lines": 1860,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43116,7 +43116,7 @@
   },
   {
    "name": "TwoSSEndpoint",
-   "lines": 283,
+   "lines": 401,
    "imports": [
     "EndpointRepetitionBudget",
     "LowSSEndpoint"
@@ -43168,112 +43168,157 @@
      "line": 171
     },
     {
+     "kind": "theorem",
+     "name": "poly_id1",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "poly_id2",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "mul_id",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_plus_length_zero_mod_four",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "intervening_length_mod_four",
+     "line": 225
+    },
+    {
+     "kind": "theorem",
+     "name": "no_intervening_of_mod_four_two",
+     "line": 237
+    },
+    {
+     "kind": "theorem",
+     "name": "intervening_length_ge_four",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_shared_endpoint_time_mod_four",
+     "line": 256
+    },
+    {
+     "kind": "theorem",
+     "name": "stream_shared_endpoint_time_ge_four",
+     "line": 287
+    },
+    {
      "kind": "def",
      "name": "bitWords",
-     "line": 178
+     "line": 296
     },
     {
      "kind": "def",
      "name": "isInterveningWitness",
-     "line": 183
+     "line": 301
     },
     {
      "kind": "def",
      "name": "hasP2Prefix",
-     "line": 190
+     "line": 308
     },
     {
      "kind": "theorem",
      "name": "no_intervening_witness_two",
-     "line": 195
+     "line": 313
     },
     {
      "kind": "theorem",
      "name": "no_intervening_witness_four",
-     "line": 198
+     "line": 316
     },
     {
      "kind": "theorem",
      "name": "no_intervening_witness_six",
-     "line": 201
+     "line": 319
     },
     {
      "kind": "theorem",
      "name": "no_intervening_witness_eight",
-     "line": 204
+     "line": 322
     },
     {
      "kind": "theorem",
      "name": "no_intervening_witness_ten",
-     "line": 207
+     "line": 325
     },
     {
      "kind": "theorem",
      "name": "intervening_witness_twelve",
-     "line": 211
+     "line": 329
     },
     {
      "kind": "theorem",
      "name": "intervening_twelve_has_p2_prefix",
-     "line": 216
+     "line": 334
     },
     {
      "kind": "theorem",
      "name": "mem_bitWords",
-     "line": 220
+     "line": 338
     },
     {
      "kind": "theorem",
      "name": "p2_length_odd",
-     "line": 229
+     "line": 347
     },
     {
      "kind": "def",
      "name": "isSS2P2",
-     "line": 235
+     "line": 353
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_one",
-     "line": 238
+     "line": 356
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_three",
-     "line": 239
+     "line": 357
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_five",
-     "line": 240
+     "line": 358
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_seven",
-     "line": 241
+     "line": 359
     },
     {
      "kind": "theorem",
      "name": "no_ss2_p2_nine",
-     "line": 242
+     "line": 360
     },
     {
      "kind": "theorem",
      "name": "ss2_length_ge_eleven",
-     "line": 245
+     "line": 363
     },
     {
      "kind": "theorem",
      "name": "stream_ss2_lag_ge_eleven",
-     "line": 266
+     "line": 384
     },
     {
      "kind": "theorem",
      "name": "ss2_subtractions_ge_five",
-     "line": 275
+     "line": 393
     }
    ],
-   "theorems": 26,
+   "theorems": 35,
    "defs": 4,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -43432,6 +43477,110 @@
    ],
    "theorems": 9,
    "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSSTightDisjoint",
+   "lines": 225,
+   "imports": [
+    "TwoSSPeriodicSupply",
+    "TwoSSEndpoint"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "WindowCoversSubtraction",
+     "line": 15
+    },
+    {
+     "kind": "def",
+     "name": "isCoveredByWindow",
+     "line": 19
+    },
+    {
+     "kind": "def",
+     "name": "isCoveredBySubset",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "isCoveredByWindow_iff",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "isCoveredBySubset_iff",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "neighborhood",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "deletedNeighborhood",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "filter_all_true",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "filter_ne_nodup",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhases_nodup",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_eq_subPhases_of_has_ss2",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_length_of_has_ss2",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "strict_expansion_of_has_ss2",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "no_tight_subset_contains_ss2",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "deleted_neighborhood_hall_of_has_ss2",
+     "line": 175
+    },
+    {
+     "kind": "theorem",
+     "name": "slack_of_has_ss2",
+     "line": 191
+    },
+    {
+     "kind": "def",
+     "name": "IsDeletableSubtraction",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "deletable_of_avoids_ss2",
+     "line": 208
+    }
+   ],
+   "theorems": 12,
+   "defs": 6,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -43741,6 +43890,6 @@
    "hasReport": false
   }
  ],
- "total": 313,
+ "total": 314,
  "withReport": 167
 }
