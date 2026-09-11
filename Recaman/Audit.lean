@@ -1883,3 +1883,14 @@ import Recaman
 #print axioms Recaman.TwoSSAvoidTight.lag_three_subset_covers_iff
 #print axioms Recaman.TwoSSAvoidTight.not_mem_neighborhood_of_lag_three
 #print axioms Recaman.TwoSSAvoidTight.oldest_donation_preserves_hall_on_lag_three_tight
+
+#print axioms Recaman.WrapObstruction.window_wrap_covers_all_subtractions
+#print axioms Recaman.WrapObstruction.neighborhood_eq_subPhases_of_has_wrap
+#print axioms Recaman.WrapObstruction.neighborhood_length_of_has_wrap
+#print axioms Recaman.WrapObstruction.strict_expansion_of_has_wrap
+#print axioms Recaman.WrapObstruction.no_tight_subset_contains_wrap
+#print axioms Recaman.WrapObstruction.tight_subset_all_lags_lt_p
+#print axioms Recaman.WrapObstruction.deleted_neighborhood_hall_of_has_wrap
+#print axioms Recaman.WrapObstruction.deletable_of_avoids_wrap
+#print axioms Recaman.WrapObstruction.tight_lags_for_p_le_seven
+#print axioms Recaman.WrapObstruction.tight_lags_for_p_le_eleven
