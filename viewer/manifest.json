@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 1908,
+   "lines": 1921,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43043,6 +43043,79 @@
    "hasReport": false
   },
   {
+   "name": "TightComponentSlackBound",
+   "lines": 187,
+   "imports": [
+    "TwoSSSmallCapacityClosure"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "additionCount_add_subtractionCount",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "signSum_eq_subtraction_bound",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhases_bound_of_pos_signSum",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhases_length_le_three_of_le_eight",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhases_length_le_four_of_le_ten",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "subPhases_length_le_five_of_le_eleven",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "sublist_length_le_sub_one_of_mem_not_mem",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_size_le_two_of_p10",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_size_le_one_of_p8",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_three_in_tight_avoiding_p10",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_ss2_donor_deletable",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_ss2_donor_hall_preserved",
+     "line": 169
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -44178,6 +44251,6 @@
    "hasReport": false
   }
  ],
- "total": 319,
+ "total": 320,
  "withReport": 167
 }

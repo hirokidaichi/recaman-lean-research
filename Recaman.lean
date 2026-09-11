@@ -1,3 +1,4 @@
+import Recaman.TightComponentSlackBound
 import Recaman.TwoSSSmallCapacityClosure
 import Recaman.TightBottleneckBound
 import Recaman.WrapObstruction

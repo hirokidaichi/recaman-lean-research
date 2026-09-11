@@ -82,6 +82,11 @@ T6_ENDPOINT_RIGIDITY       if w_t is a minimal P2 window with ssCount w_t = 2, i
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSPeriodicSupply` (E-185) | Periodic modular injectivity, disjointness from SS=1, joint capacity |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSTightDisjoint` (E-186) | No tight subset contains SS=2; Hall condition universally preserved on SS=2 components under subtraction deletion |
 | 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSLocalDonation` (E-187) | Local donation s*(u) ∈ D; mutual injectivity; disjointness from SS=1; Hall preservation |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSAvoidTight` (E-188) | Tight subset avoidance reduction; lag 3 AAS exclusively covers its endpoint phase |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.WrapObstruction` (E-189) | Universal wrap obstruction for all p ≥ 1: wrapping windows cannot belong to tight subsets; tight bottleneck localization to lag < p |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightBottleneckBound` (E-190) | Non-wrapping subtraction positions strictly injective; universal size-lag bound lag(u) ≤ 2|A| + 1; tight subsets of size ≤ 2 must have lag 3 |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TwoSSSmallCapacityClosure` (E-191) | Tight subsets of size ≤ 2 cannot contain windows with neighborhood size ≥ 3; complete deletability and Hall preservation on lag-3-dominated words |
+| 2026-09-11 | `PROVED-LEAN` | `lake build Recaman.TightComponentSlackBound` (E-192) | Period-dependent slack bounds: 2|D| < p; for p ≤ 10, |D| ≤ 4 and |A| ≤ 2 avoiding u0; no lag ≥ 7 in tight avoiding sets; complete deletability and Hall preservation for all p ≤ 10 |
 
 ## Semantic audit
 
