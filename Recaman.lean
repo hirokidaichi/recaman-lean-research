@@ -1,3 +1,4 @@
+import Recaman.SS2MinimalLagBound
 import Recaman.HighSSEliminationGrandTheorem
 import Recaman.TwoSSWeightCapacity
 import Recaman.ExtremalSSExclusion

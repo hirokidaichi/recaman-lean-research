@@ -2038,6 +2038,14 @@ import Recaman
 #print axioms Recaman.HighSSEliminationGrandTheorem.gate_t6_strict_slack_p11
 #print axioms Recaman.HighSSEliminationGrandTheorem.extremal_supply_pure_low_ss_p11
 
-
-
-
+#print axioms Recaman.SS2MinimalLagBound.bitWords_nine_p2
+#print axioms Recaman.SS2MinimalLagBound.no_p2_length_nine
+#print axioms Recaman.SS2MinimalLagBound.p2_odd_length
+#print axioms Recaman.SS2MinimalLagBound.minimal_p2_length_seven_cases
+#print axioms Recaman.SS2MinimalLagBound.w1_ssCount
+#print axioms Recaman.SS2MinimalLagBound.w2_ssCount
+#print axioms Recaman.SS2MinimalLagBound.minimal_lag_seven_ssCount_le_one
+#print axioms Recaman.SS2MinimalLagBound.minimal_lag_seven_not_ss2
+#print axioms Recaman.SS2MinimalLagBound.no_ss2_lag_three
+#print axioms Recaman.SS2MinimalLagBound.no_ss2_lag_le_five
+#print axioms Recaman.SS2MinimalLagBound.minimal_ss2_lag_ge_eleven

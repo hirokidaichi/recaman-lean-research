@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2043,
+   "lines": 2051,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -39869,6 +39869,74 @@
    "hasReport": false
   },
   {
+   "name": "SS2MinimalLagBound",
+   "lines": 128,
+   "imports": [
+    "HighSSEliminationGrandTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "bitWords_nine_p2",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_length_nine",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_odd_length",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_length_seven_cases",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_ssCount",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "w2_ssCount",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_lag_seven_ssCount_le_one",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_lag_seven_not_ss2",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_lag_three",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ss2_lag_le_five",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_lag_ge_eleven",
+     "line": 110
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SS2MultiDonorDeficit",
    "lines": 228,
    "imports": [
@@ -44958,6 +45026,6 @@
    "hasReport": false
   }
  ],
- "total": 334,
+ "total": 335,
  "withReport": 167
 }
