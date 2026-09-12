@@ -1,3 +1,4 @@
+import Recaman.UniversalDistanceGateT6Resolution
 import Recaman.UniversalNonAASReduction
 import Recaman.UniversalCollisionDistance
 import Recaman.LagSevenCollisionDistance

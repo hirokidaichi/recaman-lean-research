@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2784,
+   "lines": 2791,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48872,6 +48872,44 @@
    "hasReport": false
   },
   {
+   "name": "UniversalDistanceGateT6Resolution",
+   "lines": 193,
+   "imports": [
+    "UniversalNonAASReduction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_distance_intermediate_tight_avoidance",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_distance_intermediate_tight_survives",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_distance_avoiding_sublists_survive",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_distance_gate_t6_conditional",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_distance_gate_t6_synthesis",
+     "line": 151
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalGateT6Closure",
    "lines": 311,
    "imports": [
@@ -49432,6 +49470,6 @@
    "hasReport": false
   }
  ],
- "total": 400,
+ "total": 401,
  "withReport": 167
 }
