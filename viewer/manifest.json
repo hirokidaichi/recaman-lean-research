@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2550,
+   "lines": 2561,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46654,6 +46654,69 @@
    "hasReport": false
   },
   {
+   "name": "TwentyGateT6Unconditional",
+   "lines": 365,
+   "imports": [
+    "TwentyGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p20_tight_all_aas_avoids_s_star",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_tight_all_aas_survives",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_gate_t6_of_all_aas_tight",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_gate_t6_of_D_le_seven_and_triples_quads_quints",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_gate_t6_of_U_le_six_and_triples_quads_quints",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_capacity_tier_one",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_capacity_tier_two",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_capacity_tier_three",
+     "line": 252
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_capacity_tier_four",
+     "line": 275
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_gate_t6_unconditional_synthesis",
+     "line": 298
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyLagRigidity",
    "lines": 135,
    "imports": [
@@ -48088,6 +48151,6 @@
    "hasReport": false
   }
  ],
- "total": 379,
+ "total": 380,
  "withReport": 167
 }
