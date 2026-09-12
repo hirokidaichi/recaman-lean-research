@@ -147,8 +147,62 @@
    "hasReport": true
   },
   {
+   "name": "ApexPeriodicRigidityTheorem",
+   "lines": 192,
+   "imports": [
+    "TightTripleRigidity",
+    "TwelveGateT6Resolution",
+    "FourteenLagRigidity",
+    "ElevenGateT6Synthesis",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "TenGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "apex_capacity_stratification_p14",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_lag_exclusion_p14",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_unconditional_p10",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_unconditional_U_le_three",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_unconditional_D_le_four",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_size_three_structural_decomposition",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_apex_periodic_rigidity_synthesis",
+     "line": 165
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Audit",
-   "lines": 2389,
+   "lines": 2398,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -47086,6 +47140,6 @@
    "hasReport": false
   }
  ],
- "total": 364,
+ "total": 365,
  "withReport": 167
 }
