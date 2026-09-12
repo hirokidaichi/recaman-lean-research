@@ -2364,3 +2364,13 @@ import Recaman
 #print axioms Recaman.ElevenGateT6Synthesis.p11_gate_t6_of_all_aas_tight
 #print axioms Recaman.ElevenGateT6Synthesis.p11_tight_avoiding_size_three_aas_survives
 #print axioms Recaman.ElevenGateT6Synthesis.grand_eleven_gate_t6_synthesis
+
+#print axioms Recaman.FourteenLagRigidity.p14_subtractions_bound
+#print axioms Recaman.FourteenLagRigidity.p12_subtractions_bound
+#print axioms Recaman.FourteenLagRigidity.p14_avoiding_size_le_four
+#print axioms Recaman.FourteenLagRigidity.p12_avoiding_size_le_three
+#print axioms Recaman.FourteenLagRigidity.p14_no_k_ge_five_in_tight
+#print axioms Recaman.FourteenLagRigidity.p14_tight_quantum_level_le_one
+#print axioms Recaman.FourteenLagRigidity.p12_gate_t6_of_U_le_three
+#print axioms Recaman.FourteenLagRigidity.p12_gate_t6_of_tight_all_aas
+#print axioms Recaman.FourteenLagRigidity.grand_fourteen_lag_rigidity_synthesis

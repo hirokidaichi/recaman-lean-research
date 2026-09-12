@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2366,
+   "lines": 2376,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27679,6 +27679,68 @@
    "hasReport": false
   },
   {
+   "name": "FourteenLagRigidity",
+   "lines": 164,
+   "imports": [
+    "ElevenGateT6Synthesis",
+    "QuantumP2Arithmetic",
+    "UniversalTightLagBound",
+    "TightComponentSlackBound",
+    "P2ModFourRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p14_subtractions_bound",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_subtractions_bound",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_size_le_four",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_avoiding_size_le_three",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_no_k_ge_five_in_tight",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_tight_quantum_level_le_one",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_gate_t6_of_U_le_three",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_gate_t6_of_tight_all_aas",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_fourteen_lag_rigidity_synthesis",
+     "line": 142
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Gate",
    "lines": 42,
    "imports": [
@@ -46936,6 +46998,6 @@
    "hasReport": false
   }
  ],
- "total": 361,
+ "total": 362,
  "withReport": 167
 }
