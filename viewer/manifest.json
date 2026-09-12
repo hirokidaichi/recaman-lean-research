@@ -201,8 +201,172 @@
    "hasReport": false
   },
   {
+   "name": "ArbitraryPeriodGateT6Resolution",
+   "lines": 222,
+   "imports": [
+    "ArbitraryPeriodLagRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_tight_size_two_survives",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_tight_survives_of_not_mem",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_all_aas_avoids_s_star",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_all_aas_survives",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_avoiding_sublist_survives_of_tight_avoidance",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_avoiding_sublists_survive_unconditional_of_U_le_three",
+     "line": 149
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_avoiding_sublists_survive_unconditional_of_D_le_four",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_arbitrary_period_gate_t6_resolution_synthesis",
+     "line": 184
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ArbitraryPeriodGateT6Unconditional",
+   "lines": 344,
+   "imports": [
+    "ArbitraryPeriodGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_gate_t6_of_all_aas_tight",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_gate_t6_of_D_le_six_and_triples_quads",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_gate_t6_of_D_le_seven_and_triples_quads_quints",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_gate_t6_of_D_le_eight_and_triples_to_sexts",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_capacity_tier_one",
+     "line": 196
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_capacity_tier_two",
+     "line": 213
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_capacity_tier_three",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_capacity_tier_four",
+     "line": 254
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_arbitrary_period_gate_t6_unconditional_synthesis",
+     "line": 277
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ArbitraryPeriodLagRigidity",
+   "lines": 141,
+   "imports": [
+    "GrandApexPeriodTwentyFourTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_subtractions_bound",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_avoiding_size_bound",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_tight_quantum_bound",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_tight_quantum_level_bound",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_no_large_window_in_tight",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_quantum_exclusion",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_period_capacity_specialization",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_arbitrary_period_lag_rigidity_synthesis",
+     "line": 121
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Audit",
-   "lines": 2658,
+   "lines": 2697,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48348,6 +48512,72 @@
    "hasReport": true
   },
   {
+   "name": "UniversalApexPeriodicTheorem",
+   "lines": 279,
+   "imports": [
+    "GrandApexPeriodTwentyFourTheorem",
+    "ArbitraryPeriodLagRigidity",
+    "ArbitraryPeriodGateT6Resolution",
+    "ArbitraryPeriodGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_apex_parametric_capacity",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_quantum_lag_hierarchy",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_tight_size_two_survival",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_all_aas_survival",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_gate_t6_closed_form_reduction",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_gate_t6_unconditional_tier_one",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_gate_t6_unconditional_tier_two",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_gate_t6_reduction_tier_three",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_apex_gate_t6_reduction_tier_four",
+     "line": 189
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_apex_periodic_synthesis",
+     "line": 212
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalGateT6Closure",
    "lines": 311,
    "imports": [
@@ -48709,6 +48939,6 @@
    "hasReport": false
   }
  ],
- "total": 388,
+ "total": 392,
  "withReport": 167
 }
