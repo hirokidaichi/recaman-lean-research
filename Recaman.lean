@@ -1,3 +1,4 @@
+import Recaman.TightQuadCollisionObstruction
 import Recaman.TightTripleCollisionObstruction
 import Recaman.ParametricGateT6Synthesis
 import Recaman.UniversalCapacityThresholds

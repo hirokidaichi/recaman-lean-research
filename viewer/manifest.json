@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2825,
+   "lines": 2833,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46536,6 +46536,49 @@
    "hasReport": false
   },
   {
+   "name": "TightQuadCollisionObstruction",
+   "lines": 155,
+   "imports": [
+    "TightTripleCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_quad_lag7_complement_bound",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_aas_covered_forces_proximity",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_pairwise_distant_cannot_cover_pair",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_single_non_aas_survives_of_distance",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_non_aas_survives_of_distance",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quad_collision_obstruction_synthesis",
+     "line": 145
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightQuadDecomposition",
    "lines": 287,
    "imports": [
@@ -49649,6 +49692,6 @@
    "hasReport": false
   }
  ],
- "total": 404,
+ "total": 405,
  "withReport": 167
 }
