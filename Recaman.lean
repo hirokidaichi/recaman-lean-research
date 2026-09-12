@@ -1,3 +1,4 @@
+import Recaman.LagSevenNeighborhoodRigidity
 import Recaman.ApexPeriodicRigidityTheorem
 import Recaman.TightTripleRigidity
 import Recaman.TwelveGateT6Resolution

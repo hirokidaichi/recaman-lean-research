@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2398,
+   "lines": 2409,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -29401,6 +29401,88 @@
    "hasReport": false
   },
   {
+   "name": "LagSevenNeighborhoodRigidity",
+   "lines": 192,
+   "imports": [
+    "TwelveGateT6Resolution",
+    "FourteenLagRigidity",
+    "TightTripleRigidity",
+    "LagSevenTightObstruction",
+    "TwoSSEndpoint"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "subOffsets",
+     "line": 44
+    },
+    {
+     "kind": "def",
+     "name": "subOffsetSum",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_p2_offset_sum_fourteen",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "subOffsetSum_eq_fourteen_of_p2",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_past_offset_sum_fourteen",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "coprime_three_injective_p11",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "coprime_three_injective_p13",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "coprime_three_injective_p14",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_at_most_one_lag_seven_of_no_both_three",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "list_len_three_cases",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_lag_three_count_ge_two",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_retains_two_phases",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_lag_seven_neighborhood_rigidity_synthesis",
+     "line": 171
+    }
+   ],
+   "theorems": 11,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LagSevenTightObstruction",
    "lines": 82,
    "imports": [
@@ -47140,6 +47222,6 @@
    "hasReport": false
   }
  ],
- "total": 365,
+ "total": 366,
  "withReport": 167
 }
