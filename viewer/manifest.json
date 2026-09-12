@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2840,
+   "lines": 2850,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48955,6 +48955,64 @@
    "hasReport": true
   },
   {
+   "name": "UniversalAASLagSeparation",
+   "lines": 148,
+   "imports": [
+    "MasterGeometricGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_tight_single_lag7_complement_bound",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_distant_aas_impossible",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_two_aas_covered_forces_proximity",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_distant_aas_cannot_be_covered",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_complement_bound",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_distant_aas_impossible",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sextuple_complement_bound",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sextuple_distant_aas_impossible",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_aas_lag_separation_synthesis",
+     "line": 139
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalApexPeriodicTheorem",
    "lines": 279,
    "imports": [
@@ -49735,6 +49793,6 @@
    "hasReport": false
   }
  ],
- "total": 406,
+ "total": 407,
  "withReport": 167
 }
