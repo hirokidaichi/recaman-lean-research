@@ -2524,3 +2524,14 @@ import Recaman
 #print axioms Recaman.GrandApexPeriodEighteenTheorem.apex18_gate_t6_reduction_tier_four
 #print axioms Recaman.GrandApexPeriodEighteenTheorem.apex18_gate_t6_reduction_tier_five
 #print axioms Recaman.GrandApexPeriodEighteenTheorem.grand_apex_period_eighteen_synthesis
+
+#print axioms Recaman.TwentyLagRigidity.p20_subtractions_bound
+#print axioms Recaman.TwentyLagRigidity.p20_avoiding_size_le_seven
+#print axioms Recaman.TwentyLagRigidity.p20_avoiding_size_cases
+#print axioms Recaman.TwentyLagRigidity.p20_no_k_ge_eight_in_tight_le_seven
+#print axioms Recaman.TwentyLagRigidity.p20_tight_quantum_level_le_three
+#print axioms Recaman.TwentyLagRigidity.p20_tight_quantum_level_le_two_of_size_six
+#print axioms Recaman.TwentyLagRigidity.p20_tight_quantum_level_le_one_of_size_four
+#print axioms Recaman.TwentyLagRigidity.p20_avoiding_size_le_six_of_D_le_eight
+#print axioms Recaman.TwentyLagRigidity.p20_avoiding_size_le_five_of_D_le_seven
+#print axioms Recaman.TwentyLagRigidity.grand_twenty_lag_rigidity_synthesis

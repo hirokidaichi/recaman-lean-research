@@ -1,3 +1,4 @@
+import Recaman.TwentyLagRigidity
 import Recaman.GrandApexPeriodEighteenTheorem
 import Recaman.EighteenGateT6Unconditional
 import Recaman.EighteenGateT6Resolution

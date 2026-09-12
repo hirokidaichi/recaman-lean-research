@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2526,
+   "lines": 2537,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46581,6 +46581,70 @@
    "hasReport": false
   },
   {
+   "name": "TwentyLagRigidity",
+   "lines": 135,
+   "imports": [
+    "EighteenGateT6Unconditional",
+    "GrandApexPeriodEighteenTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p20_subtractions_bound",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_avoiding_size_le_seven",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_avoiding_size_cases",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_no_k_ge_eight_in_tight_le_seven",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_tight_quantum_level_le_three",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_tight_quantum_level_le_two_of_size_six",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_tight_quantum_level_le_one_of_size_four",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_avoiding_size_le_six_of_D_le_eight",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_avoiding_size_le_five_of_D_le_seven",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_lag_rigidity_synthesis",
+     "line": 120
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -47951,6 +48015,6 @@
    "hasReport": false
   }
  ],
- "total": 377,
+ "total": 378,
  "withReport": 167
 }
