@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2764,
+   "lines": 2772,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48829,6 +48829,49 @@
    "hasReport": false
   },
   {
+   "name": "UniversalCollisionDistance",
+   "lines": 165,
+   "imports": [
+    "LagSevenCollisionDistance"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_collision_residue_cases",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_avoids_of_not_in_residues",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_not_mem_neighborhood_of_distance",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_subset_not_mem_of_distance",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_subset_survives_of_distance",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_collision_distance_synthesis",
+     "line": 145
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalGateT6Closure",
    "lines": 311,
    "imports": [
@@ -49326,6 +49369,6 @@
    "hasReport": false
   }
  ],
- "total": 398,
+ "total": 399,
  "withReport": 167
 }
