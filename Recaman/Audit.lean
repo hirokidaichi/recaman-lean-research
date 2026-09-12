@@ -2559,3 +2559,14 @@ import Recaman
 #print axioms Recaman.TwentyGateT6Unconditional.p20_capacity_tier_three
 #print axioms Recaman.TwentyGateT6Unconditional.p20_capacity_tier_four
 #print axioms Recaman.TwentyGateT6Unconditional.grand_twenty_gate_t6_unconditional_synthesis
+
+#print axioms Recaman.TwentyTwoLagRigidity.p22_subtractions_bound
+#print axioms Recaman.TwentyTwoLagRigidity.p22_avoiding_size_le_eight
+#print axioms Recaman.TwentyTwoLagRigidity.p22_avoiding_size_cases
+#print axioms Recaman.TwentyTwoLagRigidity.p22_no_k_ge_nine_in_tight_le_eight
+#print axioms Recaman.TwentyTwoLagRigidity.p22_tight_quantum_level_le_three
+#print axioms Recaman.TwentyTwoLagRigidity.p22_tight_quantum_level_le_two_of_size_six
+#print axioms Recaman.TwentyTwoLagRigidity.p22_tight_quantum_level_le_one_of_size_four
+#print axioms Recaman.TwentyTwoLagRigidity.p22_avoiding_size_le_seven_of_D_le_nine
+#print axioms Recaman.TwentyTwoLagRigidity.p22_avoiding_size_le_six_of_D_le_eight
+#print axioms Recaman.TwentyTwoLagRigidity.grand_twenty_two_lag_rigidity_synthesis

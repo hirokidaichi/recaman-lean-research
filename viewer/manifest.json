@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2561,
+   "lines": 2572,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46781,6 +46781,69 @@
    "hasReport": false
   },
   {
+   "name": "TwentyTwoLagRigidity",
+   "lines": 135,
+   "imports": [
+    "TwentyGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p22_subtractions_bound",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_size_le_eight",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_size_cases",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_no_k_ge_nine_in_tight_le_eight",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_quantum_level_le_three",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_quantum_level_le_two_of_size_six",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_quantum_level_le_one_of_size_four",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_size_le_seven_of_D_le_nine",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_size_le_six_of_D_le_eight",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_two_lag_rigidity_synthesis",
+     "line": 120
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -48151,6 +48214,6 @@
    "hasReport": false
   }
  ],
- "total": 380,
+ "total": 381,
  "withReport": 167
 }
