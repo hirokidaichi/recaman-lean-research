@@ -2381,3 +2381,9 @@ import Recaman
 #print axioms Recaman.TwelveGateT6Resolution.p12_gate_t6_of_U_le_three
 #print axioms Recaman.TwelveGateT6Resolution.p12_gate_t6_of_D_le_four
 #print axioms Recaman.TwelveGateT6Resolution.grand_twelve_gate_t6_resolution
+
+#print axioms Recaman.TightTripleRigidity.tight_triple_two_lag_seven_identical_neighborhoods
+#print axioms Recaman.TightTripleRigidity.aas_endpoint_mem_neighborhood
+#print axioms Recaman.TightTripleRigidity.ss2_donor_disjoint_from_aas_endpoint
+#print axioms Recaman.TightTripleRigidity.tight_triple_survives_of_s_not_mem
+#print axioms Recaman.TightTripleRigidity.grand_tight_triple_rigidity_synthesis

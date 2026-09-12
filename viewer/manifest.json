@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2383,
+   "lines": 2389,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45513,6 +45513,48 @@
    "hasReport": false
   },
   {
+   "name": "TightTripleRigidity",
+   "lines": 149,
+   "imports": [
+    "TwelveGateT6Resolution",
+    "FourteenLagRigidity",
+    "ElevenGateT6Synthesis",
+    "SS2AASCollisionObstruction",
+    "TenGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_triple_two_lag_seven_identical_neighborhoods",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_endpoint_mem_neighborhood",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_donor_disjoint_from_aas_endpoint",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_survives_of_s_not_mem",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_triple_rigidity_synthesis",
+     "line": 120
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TrivialityProbe",
    "lines": 224,
    "imports": [
@@ -47044,6 +47086,6 @@
    "hasReport": false
   }
  ],
- "total": 363,
+ "total": 364,
  "withReport": 167
 }
