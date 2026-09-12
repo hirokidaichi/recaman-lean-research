@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2460,
+   "lines": 2471,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43150,6 +43150,69 @@
    "hasReport": false
   },
   {
+   "name": "SixteenLagRigidity",
+   "lines": 148,
+   "imports": [
+    "FourteenGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p16_subtractions_bound",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_le_five",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_cases",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_no_k_ge_seven_in_tight",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_tight_quantum_level_le_two",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_tight_quantum_level_le_one_of_size_four",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_le_four_of_D_le_six",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_le_three_of_D_le_five",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_le_two_of_D_le_four",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_sixteen_lag_rigidity_synthesis",
+     "line": 117
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "StratifiedCapacityHierarchy",
    "lines": 114,
    "imports": [
@@ -47562,6 +47625,6 @@
    "hasReport": false
   }
  ],
- "total": 371,
+ "total": 372,
  "withReport": 167
 }

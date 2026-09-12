@@ -2458,3 +2458,14 @@ import Recaman
 #print axioms Recaman.FourteenGateT6Unconditional.p14_avoiding_size_hierarchy
 #print axioms Recaman.FourteenGateT6Unconditional.grand_fourteen_gate_t6_unconditional_synthesis
 
+#print axioms Recaman.SixteenLagRigidity.p16_subtractions_bound
+#print axioms Recaman.SixteenLagRigidity.p16_avoiding_size_le_five
+#print axioms Recaman.SixteenLagRigidity.p16_avoiding_size_cases
+#print axioms Recaman.SixteenLagRigidity.p16_no_k_ge_seven_in_tight
+#print axioms Recaman.SixteenLagRigidity.p16_tight_quantum_level_le_two
+#print axioms Recaman.SixteenLagRigidity.p16_tight_quantum_level_le_one_of_size_four
+#print axioms Recaman.SixteenLagRigidity.p16_avoiding_size_le_four_of_D_le_six
+#print axioms Recaman.SixteenLagRigidity.p16_avoiding_size_le_three_of_D_le_five
+#print axioms Recaman.SixteenLagRigidity.p16_avoiding_size_le_two_of_D_le_four
+#print axioms Recaman.SixteenLagRigidity.grand_sixteen_lag_rigidity_synthesis
+
