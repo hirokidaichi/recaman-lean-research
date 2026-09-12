@@ -1,3 +1,4 @@
+import Recaman.UniversalQuantumWindowCapacity
 import Recaman.UniversalApexPeriodicTheorem
 import Recaman.ArbitraryPeriodGateT6Unconditional
 import Recaman.ArbitraryPeriodGateT6Resolution

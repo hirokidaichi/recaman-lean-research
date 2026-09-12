@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2697,
+   "lines": 2710,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48647,6 +48647,79 @@
    "hasReport": false
   },
   {
+   "name": "UniversalQuantumWindowCapacity",
+   "lines": 164,
+   "imports": [
+    "UniversalApexPeriodicTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "singleton_neighborhood_subset",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "singleton_neighborhood_le_collective",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_subset_bounds_individual_neighborhood",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_quantum_level_bound_of_tight_size",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_quantum_level_bound_of_deficit",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_quantum_exclusion_of_tight_size",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_two_forces_level_zero",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_four_forces_level_le_one",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_six_forces_level_le_two",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_eight_forces_level_le_three",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_size_ten_forces_level_le_four",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_quantum_window_capacity_synthesis",
+     "line": 138
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalSSStratification",
    "lines": 135,
    "imports": [
@@ -48939,6 +49012,6 @@
    "hasReport": false
   }
  ],
- "total": 392,
+ "total": 393,
  "withReport": 167
 }
