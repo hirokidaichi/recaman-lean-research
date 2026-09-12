@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2376,
+   "lines": 2383,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45628,6 +45628,52 @@
    "hasReport": false
   },
   {
+   "name": "TwelveGateT6Resolution",
+   "lines": 167,
+   "imports": [
+    "FourteenLagRigidity",
+    "ElevenGateT6Synthesis",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p12_tight_avoiding_size_le_three",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_avoiding_size_cases",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_of_size_three_survives",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_gate_t6_of_U_le_three",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_gate_t6_of_D_le_four",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twelve_gate_t6_resolution",
+     "line": 126
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -46998,6 +47044,6 @@
    "hasReport": false
   }
  ],
- "total": 362,
+ "total": 363,
  "withReport": 167
 }

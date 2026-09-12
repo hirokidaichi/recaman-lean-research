@@ -2374,3 +2374,10 @@ import Recaman
 #print axioms Recaman.FourteenLagRigidity.p12_gate_t6_of_U_le_three
 #print axioms Recaman.FourteenLagRigidity.p12_gate_t6_of_tight_all_aas
 #print axioms Recaman.FourteenLagRigidity.grand_fourteen_lag_rigidity_synthesis
+
+#print axioms Recaman.TwelveGateT6Resolution.p12_tight_avoiding_size_le_three
+#print axioms Recaman.TwelveGateT6Resolution.p12_avoiding_size_cases
+#print axioms Recaman.TwelveGateT6Resolution.p11_gate_t6_of_size_three_survives
+#print axioms Recaman.TwelveGateT6Resolution.p12_gate_t6_of_U_le_three
+#print axioms Recaman.TwelveGateT6Resolution.p12_gate_t6_of_D_le_four
+#print axioms Recaman.TwelveGateT6Resolution.grand_twelve_gate_t6_resolution

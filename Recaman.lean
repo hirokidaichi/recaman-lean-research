@@ -1,3 +1,4 @@
+import Recaman.TwelveGateT6Resolution
 import Recaman.FourteenLagRigidity
 import Recaman.ElevenGateT6Synthesis
 import Recaman.ElevenCapacityRigidity
