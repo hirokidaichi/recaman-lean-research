@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2449,
+   "lines": 2460,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27800,6 +27800,69 @@
    "hasReport": false
   },
   {
+   "name": "FourteenGateT6Unconditional",
+   "lines": 302,
+   "imports": [
+    "TightQuadRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss2_donor_nonwrapping_p12_to_p14",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_all_aas_tight_triple_avoids",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_all_aas_tight_triple_survives",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_of_triples_and_quads_aas",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_of_triples_aas_when_U_le_four",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_of_triples_aas_when_D_le_five",
+     "line": 159
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_capacity_reduction_tier_one",
+     "line": 191
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_capacity_reduction_tier_two",
+     "line": 208
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_size_hierarchy",
+     "line": 227
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_fourteen_gate_t6_unconditional_synthesis",
+     "line": 239
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FourteenLagRigidity",
    "lines": 164,
    "imports": [
@@ -47499,6 +47562,6 @@
    "hasReport": false
   }
  ],
- "total": 370,
+ "total": 371,
  "withReport": 167
 }
