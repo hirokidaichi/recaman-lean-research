@@ -2436,3 +2436,14 @@ import Recaman
 #print axioms Recaman.FourteenGateT6Resolution.p14_avoiding_sublists_survive_unconditional_of_U_le_three
 #print axioms Recaman.FourteenGateT6Resolution.grand_fourteen_gate_t6_resolution_synthesis
 
+#print axioms Recaman.TightQuadRigidity.tight_quad_all_aas_avoids_s_star
+#print axioms Recaman.TightQuadRigidity.tight_quad_all_aas_survives
+#print axioms Recaman.TightQuadRigidity.tight_quad_survives_of_not_mem
+#print axioms Recaman.TightQuadRigidity.avoiding_size_le_three_of_U_le_four
+#print axioms Recaman.TightQuadRigidity.avoiding_size_le_three_of_D_le_five
+#print axioms Recaman.TightQuadRigidity.p14_gate_t6_of_U_le_four_and_triples
+#print axioms Recaman.TightQuadRigidity.p14_gate_t6_of_D_le_five_and_triples
+#print axioms Recaman.TightQuadRigidity.tight_quad_lag7_neighborhood_ge_three
+#print axioms Recaman.TightQuadRigidity.p14_gate_t6_complete_quad_reduction
+#print axioms Recaman.TightQuadRigidity.grand_tight_quad_rigidity_synthesis
+

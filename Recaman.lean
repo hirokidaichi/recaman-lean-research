@@ -1,3 +1,4 @@
+import Recaman.TightQuadRigidity
 import Recaman.FourteenGateT6Resolution
 import Recaman.TightAvoidingLagCertificate
 import Recaman.TwelveGateT6Unconditional

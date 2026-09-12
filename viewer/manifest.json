@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2438,
+   "lines": 2449,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45674,6 +45674,70 @@
    "hasReport": false
   },
   {
+   "name": "TightQuadRigidity",
+   "lines": 287,
+   "imports": [
+    "FourteenGateT6Resolution",
+    "LagSevenNeighborhoodRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_quad_all_aas_avoids_s_star",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_all_aas_survives",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_survives_of_not_mem",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "avoiding_size_le_three_of_U_le_four",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "avoiding_size_le_three_of_D_le_five",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_of_U_le_four_and_triples",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_of_D_le_five_and_triples",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_lag7_neighborhood_ge_three",
+     "line": 184
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_complete_quad_reduction",
+     "line": 206
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quad_rigidity_synthesis",
+     "line": 228
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightSSZeroRigidity",
    "lines": 100,
    "imports": [
@@ -47435,6 +47499,6 @@
    "hasReport": false
   }
  ],
- "total": 369,
+ "total": 370,
  "withReport": 167
 }
