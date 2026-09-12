@@ -1,3 +1,4 @@
+import Recaman.UniversalNonAASReduction
 import Recaman.UniversalCollisionDistance
 import Recaman.LagSevenCollisionDistance
 import Recaman.UniversalTightDecomposition

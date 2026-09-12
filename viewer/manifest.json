@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2772,
+   "lines": 2784,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48941,6 +48941,69 @@
    "hasReport": false
   },
   {
+   "name": "UniversalNonAASReduction",
+   "lines": 272,
+   "imports": [
+    "UniversalCollisionDistance"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_non_aas_sublist_collision_iff",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_non_aas_sublist_not_mem",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_non_aas_sublist_survives",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_three_non_aas_collision_iff",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_three_non_aas_survives",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_quintuple_member_bound",
+     "line": 190
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_quintuple_no_ge_six",
+     "line": 200
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_quintuple_all_aas_survives",
+     "line": 210
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_non_aas_sublist_distance_survives",
+     "line": 229
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_non_aas_reduction_synthesis",
+     "line": 251
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalQuantumWindowCapacity",
    "lines": 164,
    "imports": [
@@ -49369,6 +49432,6 @@
    "hasReport": false
   }
  ],
- "total": 399,
+ "total": 400,
  "withReport": 167
 }
