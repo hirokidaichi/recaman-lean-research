@@ -2343,6 +2343,12 @@ import Recaman
 #print axioms Recaman.TenGateT6Resolution.p10_universal_gate_t6_hall_preservation_unconditional
 #print axioms Recaman.TenGateT6Resolution.grand_ten_gate_t6_closure
 
+#print axioms Recaman.GrandPeriodicDeletabilityTheorem.apex_gate_t6_unconditional_p10
+#print axioms Recaman.GrandPeriodicDeletabilityTheorem.apex_tight_avoiding_all_aas_p10
+#print axioms Recaman.GrandPeriodicDeletabilityTheorem.apex_no_lag_seven_in_tight_p10
+#print axioms Recaman.GrandPeriodicDeletabilityTheorem.apex_gate_t6_hall_preservation_p10
+#print axioms Recaman.GrandPeriodicDeletabilityTheorem.grand_periodic_deletability_synthesis
+
 
 
 

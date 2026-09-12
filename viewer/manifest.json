@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2357,
+   "lines": 2363,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27665,6 +27665,45 @@
    "hasReport": false
   },
   {
+   "name": "GrandPeriodicDeletabilityTheorem",
+   "lines": 117,
+   "imports": [
+    "TenGateT6Resolution",
+    "GrandPeriodicBottleneckTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_unconditional_p10",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_tight_avoiding_all_aas_p10",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_no_lag_seven_in_tight_p10",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "apex_gate_t6_hall_preservation_p10",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_periodic_deletability_synthesis",
+     "line": 98
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandStratificationSynthesis",
    "lines": 106,
    "imports": [
@@ -46792,6 +46831,6 @@
    "hasReport": false
   }
  ],
- "total": 358,
+ "total": 359,
  "withReport": 167
 }
