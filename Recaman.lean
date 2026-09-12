@@ -1,3 +1,4 @@
+import Recaman.ParametricGateT6Synthesis
 import Recaman.UniversalCapacityThresholds
 import Recaman.UniversalDistanceGateT6Resolution
 import Recaman.UniversalNonAASReduction

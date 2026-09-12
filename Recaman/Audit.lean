@@ -2800,6 +2800,16 @@ import Recaman
 #print axioms Recaman.UniversalCapacityThresholds.intermediate_sizes_le_nine_of_p_le_twenty_four
 #print axioms Recaman.UniversalCapacityThresholds.grand_universal_capacity_thresholds_synthesis
 
+#print axioms Recaman.ParametricGateT6Synthesis.p12_gate_t6_triple_reduction
+#print axioms Recaman.ParametricGateT6Synthesis.p14_gate_t6_triple_quad_reduction
+#print axioms Recaman.ParametricGateT6Synthesis.p16_gate_t6_tri_quad_quint_reduction
+#print axioms Recaman.ParametricGateT6Synthesis.p18_gate_t6_reduction_tier
+#print axioms Recaman.ParametricGateT6Synthesis.p20_gate_t6_reduction_tier
+#print axioms Recaman.ParametricGateT6Synthesis.p22_gate_t6_reduction_tier
+#print axioms Recaman.ParametricGateT6Synthesis.p24_gate_t6_reduction_tier
+#print axioms Recaman.ParametricGateT6Synthesis.grand_parametric_gate_t6_synthesis
+
+
 
 
 

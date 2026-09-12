@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2805,
+   "lines": 2815,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34683,6 +34683,59 @@
    "hasReport": false
   },
   {
+   "name": "ParametricGateT6Synthesis",
+   "lines": 264,
+   "imports": [
+    "UniversalCapacityThresholds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p12_gate_t6_triple_reduction",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_gate_t6_triple_quad_reduction",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_gate_t6_tri_quad_quint_reduction",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_gate_t6_reduction_tier",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_gate_t6_reduction_tier",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_reduction_tier",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_reduction_tier",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_parametric_gate_t6_synthesis",
+     "line": 228
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ParityPeriodicSupply",
    "lines": 109,
    "imports": [
@@ -49543,6 +49596,6 @@
    "hasReport": false
   }
  ],
- "total": 402,
+ "total": 403,
  "withReport": 167
 }
