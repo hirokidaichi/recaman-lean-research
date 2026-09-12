@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2515,
+   "lines": 2526,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28143,6 +28143,74 @@
    "hasReport": true
   },
   {
+   "name": "GrandApexPeriodEighteenTheorem",
+   "lines": 280,
+   "imports": [
+    "ApexPeriodicRigidityTheorem",
+    "FourteenGateT6Unconditional",
+    "SixteenGateT6Resolution",
+    "EighteenLagRigidity",
+    "EighteenGateT6Resolution",
+    "EighteenGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "apex18_capacity_stratification",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_quantum_lag_hierarchy",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_universal_size_two_survival",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_all_aas_survival_up_to_six",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_gate_t6_unconditional_tier_one",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_gate_t6_unconditional_tier_two",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_gate_t6_reduction_tier_three",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_gate_t6_reduction_tier_four",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "apex18_gate_t6_reduction_tier_five",
+     "line": 206
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_apex_period_eighteen_synthesis",
+     "line": 235
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandPeriodicBottleneckTheorem",
    "lines": 163,
    "imports": [
@@ -47883,6 +47951,6 @@
    "hasReport": false
   }
  ],
- "total": 376,
+ "total": 377,
  "withReport": 167
 }
