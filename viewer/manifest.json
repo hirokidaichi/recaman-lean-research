@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2482,
+   "lines": 2493,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26198,6 +26198,69 @@
    "hasReport": true
   },
   {
+   "name": "EighteenLagRigidity",
+   "lines": 152,
+   "imports": [
+    "SixteenGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p18_subtractions_bound",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_avoiding_size_le_six",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_avoiding_size_cases",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_no_k_ge_seven_in_tight_le_six",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_tight_quantum_level_le_two",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_tight_quantum_level_le_one_of_size_four",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_avoiding_size_le_five_of_D_le_seven",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_avoiding_size_le_four_of_D_le_six",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_avoiding_size_le_three_of_D_le_five",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_eighteen_lag_rigidity_synthesis",
+     "line": 118
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ElevenCapacityRigidity",
    "lines": 218,
    "imports": [
@@ -47688,6 +47751,6 @@
    "hasReport": false
   }
  ],
- "total": 373,
+ "total": 374,
  "withReport": 167
 }

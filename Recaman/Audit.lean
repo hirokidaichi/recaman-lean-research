@@ -2480,3 +2480,14 @@ import Recaman
 #print axioms Recaman.SixteenGateT6Resolution.p16_gate_t6_of_D_le_five_and_triples
 #print axioms Recaman.SixteenGateT6Resolution.grand_sixteen_gate_t6_resolution_synthesis
 
+#print axioms Recaman.EighteenLagRigidity.p18_subtractions_bound
+#print axioms Recaman.EighteenLagRigidity.p18_avoiding_size_le_six
+#print axioms Recaman.EighteenLagRigidity.p18_avoiding_size_cases
+#print axioms Recaman.EighteenLagRigidity.p18_no_k_ge_seven_in_tight_le_six
+#print axioms Recaman.EighteenLagRigidity.p18_tight_quantum_level_le_two
+#print axioms Recaman.EighteenLagRigidity.p18_tight_quantum_level_le_one_of_size_four
+#print axioms Recaman.EighteenLagRigidity.p18_avoiding_size_le_five_of_D_le_seven
+#print axioms Recaman.EighteenLagRigidity.p18_avoiding_size_le_four_of_D_le_six
+#print axioms Recaman.EighteenLagRigidity.p18_avoiding_size_le_three_of_D_le_five
+#print axioms Recaman.EighteenLagRigidity.grand_eighteen_lag_rigidity_synthesis
+
