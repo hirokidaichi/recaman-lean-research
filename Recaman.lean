@@ -1,3 +1,4 @@
+import Recaman.UniversalCapacityThresholds
 import Recaman.UniversalDistanceGateT6Resolution
 import Recaman.UniversalNonAASReduction
 import Recaman.UniversalCollisionDistance

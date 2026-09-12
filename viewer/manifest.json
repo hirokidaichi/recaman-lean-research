@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2791,
+   "lines": 2805,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48829,6 +48829,79 @@
    "hasReport": false
   },
   {
+   "name": "UniversalCapacityThresholds",
+   "lines": 163,
+   "imports": [
+    "UniversalDistanceGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "intermediate_empty_of_D_le_four",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_empty_of_p_le_ten",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "vacuous_distance_condition_of_p_le_ten",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "gate_t6_unconditional_of_p_le_ten",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_triple_only_of_p_le_twelve",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_triple_and_quad_only_of_p_le_fourteen",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_sizes_le_five_of_p_le_sixteen",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_sizes_le_six_of_p_le_eighteen",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_sizes_le_seven_of_p_le_twenty",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_sizes_le_eight_of_p_le_twenty_two",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "intermediate_sizes_le_nine_of_p_le_twenty_four",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_capacity_thresholds_synthesis",
+     "line": 136
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalCollisionDistance",
    "lines": 165,
    "imports": [
@@ -49470,6 +49543,6 @@
    "hasReport": false
   }
  ],
- "total": 401,
+ "total": 402,
  "withReport": 167
 }
