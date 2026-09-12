@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2608,
+   "lines": 2658,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28211,6 +28211,72 @@
    "hasReport": false
   },
   {
+   "name": "GrandApexPeriodTwentyFourTheorem",
+   "lines": 322,
+   "imports": [
+    "GrandApexPeriodTwentyTwoTheorem",
+    "TwentyFourLagRigidity",
+    "TwentyFourGateT6Resolution",
+    "TwentyFourGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "apex24_capacity_stratification",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_quantum_lag_hierarchy",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_universal_size_two_survival",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_all_aas_survival_up_to_nine",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_gate_t6_unconditional_tier_one",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_gate_t6_unconditional_tier_two",
+     "line": 162
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_gate_t6_reduction_tier_three",
+     "line": 180
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_gate_t6_reduction_tier_four",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "apex24_gate_t6_reduction_tier_six",
+     "line": 226
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_apex_period_twenty_four_synthesis",
+     "line": 255
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandApexPeriodTwentyTwoTheorem",
    "lines": 295,
    "imports": [
@@ -46650,6 +46716,225 @@
    "hasReport": false
   },
   {
+   "name": "TwentyFourGateT6Resolution",
+   "lines": 354,
+   "imports": [
+    "TwentyFourLagRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p24_tight_size_two_survives",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_triple_survives_of_not_mem",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quad_survives_of_not_mem",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quint_survives_of_not_mem",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_sext_survives_of_not_mem",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_sept_survives_of_not_mem",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_oct_survives_of_not_mem",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_non_survives_of_not_mem",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_sublist_survives_of_tight_avoidance",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_sublists_survive_unconditional_of_U_le_three",
+     "line": 221
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_sublists_survive_unconditional_of_D_le_four",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_of_U_le_four_and_triples",
+     "line": 256
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_of_D_le_five_and_triples",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_four_gate_t6_resolution_synthesis",
+     "line": 302
+    }
+   ],
+   "theorems": 14,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwentyFourGateT6Unconditional",
+   "lines": 386,
+   "imports": [
+    "TwentyFourGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p24_tight_all_aas_avoids_s_star",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_all_aas_survives",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_of_all_aas_tight",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_of_D_le_eight_and_triples_quads_quints_sexts",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_gate_t6_of_U_le_seven_and_triples_quads_quints_sexts",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_capacity_tier_one",
+     "line": 237
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_capacity_tier_two",
+     "line": 254
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_capacity_tier_three",
+     "line": 272
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_capacity_tier_four",
+     "line": 295
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_four_gate_t6_unconditional_synthesis",
+     "line": 318
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwentyFourLagRigidity",
+   "lines": 158,
+   "imports": [
+    "TwentyTwoGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p24_subtractions_bound",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_size_le_nine",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_size_cases",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_no_k_ge_ten_in_tight_le_nine",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quantum_level_le_four",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quantum_level_le_three_of_size_eight",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quantum_level_le_two_of_size_six",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_tight_quantum_level_le_one_of_size_four",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_size_le_eight_of_D_le_ten",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_size_le_seven_of_D_le_nine",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_avoiding_size_le_six_of_D_le_eight",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_four_lag_rigidity_synthesis",
+     "line": 141
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyGateT6Resolution",
    "lines": 314,
    "imports": [
@@ -48424,6 +48709,6 @@
    "hasReport": false
   }
  ],
- "total": 384,
+ "total": 388,
  "withReport": 167
 }
