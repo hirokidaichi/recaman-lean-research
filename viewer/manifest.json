@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2586,
+   "lines": 2597,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46859,6 +46859,69 @@
    "hasReport": false
   },
   {
+   "name": "TwentyTwoGateT6Unconditional",
+   "lines": 380,
+   "imports": [
+    "TwentyTwoGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p22_tight_all_aas_avoids_s_star",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_all_aas_survives",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_of_all_aas_tight",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_of_D_le_eight_and_triples_quads_quints_sexts",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_of_U_le_seven_and_triples_quads_quints_sexts",
+     "line": 172
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_capacity_tier_one",
+     "line": 232
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_capacity_tier_two",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_capacity_tier_three",
+     "line": 267
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_capacity_tier_four",
+     "line": 290
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_two_gate_t6_unconditional_synthesis",
+     "line": 313
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyTwoLagRigidity",
    "lines": 135,
    "imports": [
@@ -48292,6 +48355,6 @@
    "hasReport": false
   }
  ],
- "total": 382,
+ "total": 383,
  "withReport": 167
 }
