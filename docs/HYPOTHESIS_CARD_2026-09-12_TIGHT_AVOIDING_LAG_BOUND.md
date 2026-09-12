@@ -3,8 +3,9 @@
 - ID: `H-20260912-01`
 - Owner: 広木さん / parallel session (autonomous loop was concurrently proving E-232 for `p ≤ 11`)
 - Created: 2026-09-12
-- Status: 成分ごとに `REFUTED` / `COMPUTED`（下記 Decision 参照）
+- Status: (T1) `REFUTED`（Lean 証人あり） / (T2) `COMPUTED` / (T3) `COMPUTED`
 - Research branch: issue #73, gate T6
+- Registry: (T1) は `E-240` として `PROVED-LEAN` 登録済み（証人モジュール `TightAvoidingLagCertificate`）。(T2)(T3) は未登録
 
 ## Exact statement
 
@@ -68,26 +69,36 @@ donor `u₀` は `ssCount = 2` かつ `lag u₀ < 15` の窓を持つ加算位�
 
 | Date | Label | Revision / command | Result |
 |---|---|---|---|
-| 2026-09-12 | `REFUTED` (T1) | `tight_avoiding_growth 4 22` | `lag 3 強制`は `p ≤ 14` で真、**`p = 15` で偽**。証人 `AAAASAAASASASSS`、A位相 `{2,5,7}`、`|A| = 3`、`lag = 7`、`ssCount = 1` |
-| 2026-09-12 | `COMPUTED` (T2) | `gate_t6_core 4 22` | `p ≤ 22` で例外 0。現れる窓は `(lag 3, ss 0)` と `(lag 7, ss 1)` の**2 種類のみ**。`lag ≥ 11` は 0 件。頻度は `p = 22` で 41,620 : 196（lag 7 は 0.47%） |
-| 2026-09-12 | `COMPUTED` (T3) | `gate_t6_core 4 22` | `p ≤ 22` で**例外 0**。tight avoiding 部分集合が `s*(u₀)` を覆う例は donorCases 7,663 件（`p=22`）を含め 1 件もない |
-| 2026-09-12 | `COMPUTED` holdout延長 | `gate_t6_core 23 24`, `tight_avoiding_growth 23 24` | `p = 23, 24` でも (T2)(T3) ともに例外 0、`lag ≥ 11` は 0 件、(T1) は偽のまま。donorCases は `p=24` で 30,134 件 |
-| 2026-09-12 | 整合性 | 両 probe | `p = 19..22` 正符号和語数 `3,487,066` が E-081 と一致。走査は `p(p+3)` 安全上界を一度も超えず、実測 `max |A|` は数え上げ上界 `|D|-2` を一度も超えない |
+| 2026-09-12 | `REFUTED` (T1) | `tight_avoiding_growth 4 24` | `lag 3 強制`は **`p ≤ 17` で真、`p = 18` で偽**。証人 `AAAASSAAAASAAASASS`、`A = {2,8,11,13}`、`lag = [3,3,7,3]`、`N(A) = {4,5,10,17}`、donor `u₀ = 7`（S-ended, `ssCount = 2`, lag 11）、`|U| = 5 < |D| = 6`。tight 割当はこの1通りのみ |
+| 2026-09-12 | `PROVED-LEAN` (T1) = **E-240** | `Recaman/TightAvoidingLagCertificate.lean` | 上の証人を `decide` で kernel 認証。公理は `{propext, Classical.choice, Quot.sound}` のみ、`sorry` 0 |
+| 2026-09-12 | `COMPUTED` (T2) | `gate_t6_core 4 24` | `p ≤ 24` で例外 0。現れる窓は `(lag 3, ss 0)` と `(lag 7, ss 1)` の**2 種類のみ**、`lag ≥ 11` は 0 件。頻度は `p = 24` で 98,355 : 454 |
+| 2026-09-12 | `COMPUTED` (T3) | `gate_t6_core 4 24` | `p ≤ 24` で**例外 0**。tight avoiding 部分集合が `s*(u₀)` を覆う例は donorCases 12,557 件（`p = 24`）を通じて 1 件もない |
+| 2026-09-12 | 整合性 | 両 probe | `p = 19..22` 正符号和語数 `3,487,066` が E-081 と一致。走査は `p(p+3)` 安全上界を超えず、実測 `max |A|` は数え上げ上界 `|D|-2` を超えない |
+| 2026-09-12 | 訂正 | 同上 | donor の **S-ended 条件を課す前**は (T1) の破れが `p = 15` と出ていた。S-ended を課すと donorCases が約半分に減り、境界は `p = 18` へ動く。`avoiding`（`u₀ ∉ A`）を課す前は `p = 13` と出ていた。**この2つの仕様はいずれも Lean の定理文に含まれており、省くと破れを早く報告する** |
 
-数え上げ上界と実測のギャップ（`countingCap` / 実測 `max |A|`）：
-`p=11` 3/1、`p=12` 3/2、`p=13` 4/2、`p=14` 4/3、`p=15` 5/3、`p=18` 6/4、`p=20` 7/4、`p=22` 8/5、`p=24` 9/6。
-**上界は実測のおよそ 1.6 倍で、数え上げは `p ≥ 11` では既に緩い。**
+数え上げ上界と実測のギャップ（`countingCap = max(|D|-2)` / 実測 `max |A|`、S-ended donor 版）：
+
+| p | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| cap | 3 | 4 | 4 | 5 | 5 | 6 | 6 | 7 | 7 | 8 | 8 | 9 | 9 |
+| 実測 | 2 | 2 | 3 | 3 | 3 | 3 | **4** | 4 | 4 | 4 | 5 | 5 | 6 |
+| max lag | 3 | 3 | 3 | 3 | 3 | 3 | **7** | 7 | 7 | 7 | 7 | 7 | 7 |
+
+**実測サイズが 4 に達する周期（`p = 18`）が、lag 7 が現れる周期と一致する。** lag 7 窓は減算を 3 個
+覆うので、tight な同居には `|A| ≥ 4` が要る（他に最低 1 個の lag 3 窓が要る）。数え上げ上界 `|D|-2` は
+`p = 13` で既に 4 に達しているが、実測が 4 に届くのは 5 周期あとである。
 
 ## Semantic audit
 
 - Informal statement implies formal statement: (T1)(T2)(T3) はいずれも Lean の定理文と
-  同じ量化（`∀ U, ∀ lag, ∀ A`）で測っている。probe は `U` を最小の `A ∪ {u₀}` に取り、
+  同じ量化（`∀ U, ∀ lag, ∀ A`）で測っている。donor の S-ended 条件と avoiding 条件は
+  定理文に含まれるので probe 側にも課している（省いた場合の差は Evidence log の訂正行）。probe は `U` を最小の `A ∪ {u₀}` に取り、
   slack・P2・加算性・削除前 Hall を全て検査した上でのみ反例として数える。
 - Formal statement implies intended consequence: (T3) は削除可能性そのものの必要十分形
   （Hall は `|A| = |N(A)|` かつ `s* ∈ N(A)` のときにのみ破れる）なので、
   (T3) が真であることは gate T6 の結論が真であることと同値。
 - Counterfactual examples that should make the statement false: (T1) には実際に反例があり
-  `p = 15` で記録した。(T2)(T3) には `p ≤ 22` で反例がない。
+  `p = 18` で記録し Lean 認証した。(T2)(T3) には `p ≤ 24` で反例がない。
 - Could the theorem be proved from weaker or vacuous assumptions?: **(T1) の `p ≤ 10` 版は
   実質的に空虚に近い**。`p ≤ 10 ∧ σ > 0` は `|D| ≤ 4` を強制し、`|A| ≤ 2` が自動的に従うので、
   lag 7 の排除は語の構造ではなく周期の小ささだけから出ている。
@@ -98,12 +109,15 @@ donor `u₀` は `ssCount = 2` かつ `lag u₀ < 15` の窓を持つ加算位�
 ## Decision
 
 - Continue / formalize / refute / stop:
-  - (T1) は `REFUTED`。`lag 3 強制`を一般 `p` の目標として掲げることを**停止**する。
-    `p = 11..14` への延長のみ許す（`p = 14` が現行ルートの寿命の上限）。
+  - (T1) は `REFUTED`、証人は `Recaman/TightAvoidingLagCertificate.lean` で kernel 認証済み。
+    `lag 3 強制`を一般 `p` の目標として掲げることを**停止**する。
+    延長は `p ≤ 17` まで（`p = 17` が現行ルートの寿命の上限、`p = 18` で結論が偽）。
   - (T2) を新しい gate 候補として `COMPUTED` で登録し、Lean 化の対象とする。
   - (T3) は gate T6 の結論そのもので `COMPUTED`、`p ≤ 22` で例外 0。
-- Reason: 現行の証明ルートが死ぬ周期（`p = 15`）と、結論が生きている範囲（`p ≤ 22` で例外 0）が
-  分離して測れた。**証明の寿命と命題の真偽は別物**であり、刻み戦略は `p ≤ 14` で尽きる。
+- Reason: 現行の証明ルートが死ぬ周期（`p = 18`）と、gate T6 の結論が生きている範囲
+  （`p ≤ 24` で例外 0）が分離して測れた。**証明の寿命と命題の真偽は別物**である。
+  なお自律ループは同日 E-237 で独立に `lags in {3, 7}` と 4 層 `p ≤ 7, 10, 12, 14` に到達しており、
+  本カードの (T2) と寿命の測定はそれと整合する。
   lag と ssCount が完全連動し双方とも `ssCount ≤ 1` に収まることは、
   残りが E-128 の既証明クラスの内側にあることを示唆する。
 - Reopen only if: (T2) に `p ≥ 25` で反例が出た場合、または `lag ≥ 11` の窓が

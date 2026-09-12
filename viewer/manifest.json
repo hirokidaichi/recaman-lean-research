@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2427,
+   "lines": 2438,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27733,6 +27733,73 @@
    "hasReport": false
   },
   {
+   "name": "FourteenGateT6Resolution",
+   "lines": 259,
+   "imports": [
+    "TwelveGateT6Unconditional",
+    "LagSevenNeighborhoodRigidity",
+    "FourteenLagRigidity",
+    "TightTripleRigidity",
+    "SS2LagElevenForcing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_size_cases",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_tight_size_two_survives",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_tight_triple_survives_of_not_mem",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_tight_quad_survives_of_not_mem",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_sublist_survives_of_tight_avoidance",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_size_le_three_of_D_le_five",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_size_le_two_of_D_le_four",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_sublists_survive_unconditional_of_D_le_four",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_avoiding_sublists_survive_unconditional_of_U_le_three",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_fourteen_gate_t6_resolution_synthesis",
+     "line": 202
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FourteenLagRigidity",
    "lines": 164,
    "imports": [
@@ -47368,6 +47435,6 @@
    "hasReport": false
   }
  ],
- "total": 368,
+ "total": 369,
  "withReport": 167
 }

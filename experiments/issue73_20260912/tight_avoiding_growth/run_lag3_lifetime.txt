@@ -1,0 +1,33 @@
+protocol=H-20260912-01 lifetime of the Gate T6 counting argument
+# columns: p, necklaces with a Gate T6 donor, counting cap max(|D|-2),
+#   measured max |A| over tight avoiding subsets, max lag inside one, verdict
+p= 4 necklaces=2 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p= 5 necklaces=4 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p= 6 necklaces=5 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p= 7 necklaces=10 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p= 8 necklaces=13 withDonor=1 countingCap=1 maxTightAvoidSize=1 maxLagInTight=3  lag3-forced
+p= 9 necklaces=30 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p=10 necklaces=41 withDonor=1 countingCap=2 maxTightAvoidSize=1 maxLagInTight=3  lag3-forced
+p=11 necklaces=94 withDonor=0 countingCap=0 maxTightAvoidSize=0 maxLagInTight=0  lag3-forced
+p=12 necklaces=136 withDonor=5 countingCap=3 maxTightAvoidSize=2 maxLagInTight=3  lag3-forced
+p=13 necklaces=316 withDonor=10 countingCap=4 maxTightAvoidSize=2 maxLagInTight=3  lag3-forced
+p=14 necklaces=468 withDonor=15 countingCap=4 maxTightAvoidSize=3 maxLagInTight=3  lag3-forced
+p=15 necklaces=1096 withDonor=35 countingCap=5 maxTightAvoidSize=3 maxLagInTight=3  lag3-forced
+p=16 necklaces=1653 withDonor=55 countingCap=5 maxTightAvoidSize=3 maxLagInTight=3  lag3-forced
+p=17 necklaces=3856 withDonor=129 countingCap=6 maxTightAvoidSize=3 maxLagInTight=3  lag3-forced
+p=18 necklaces=5949 withDonor=209 countingCap=6 maxTightAvoidSize=4 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=18 word=AAAASSAAAASAAASASS |A|=4 lag=7 ssCount=1 A-phases={2,8,11,13}
+p=19 necklaces=13798 withDonor=493 countingCap=7 maxTightAvoidSize=4 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=19 word=AASAAASSAAAASAAASSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+p=20 necklaces=21618 withDonor=809 countingCap=7 maxTightAvoidSize=4 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=20 word=AASAAASSAAAASAAASSSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+p=21 necklaces=49940 withDonor=1894 countingCap=8 maxTightAvoidSize=4 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=21 word=AASAAASSAAAASAAASSSSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+p=22 necklaces=79340 withDonor=3153 countingCap=8 maxTightAvoidSize=5 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=22 word=AASAAASSAAAASAAASSSSSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+p=23 necklaces=182362 withDonor=7355 countingCap=9 maxTightAvoidSize=5 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=23 word=AASAAASSAAAASAAASSSSSSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+p=24 necklaces=293266 withDonor=12403 countingCap=9 maxTightAvoidSize=6 maxLagInTight=7  LAG3 FORCING BREAKS
+   WITNESS p=24 word=AASAAASSAAAASAAAASSSSSSS |A|=4 lag=7 ssCount=1 A-phases={5,10,13,15}
+CHECK positive-sum words p=19..22: 3487066 (E-081 recorded 3487066)
+OK
