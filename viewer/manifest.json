@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2471,
+   "lines": 2482,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43150,6 +43150,69 @@
    "hasReport": false
   },
   {
+   "name": "SixteenGateT6Resolution",
+   "lines": 279,
+   "imports": [
+    "SixteenLagRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p16_tight_size_two_survives",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_tight_triple_survives_of_not_mem",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_tight_quad_survives_of_not_mem",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_tight_quint_survives_of_not_mem",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_sublist_survives_of_tight_avoidance",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_sublists_survive_unconditional_of_U_le_three",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_sublists_survive_unconditional_of_D_le_four",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_gate_t6_of_U_le_four_and_triples",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_gate_t6_of_D_le_five_and_triples",
+     "line": 199
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_sixteen_gate_t6_resolution_synthesis",
+     "line": 222
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SixteenLagRigidity",
    "lines": 148,
    "imports": [
@@ -47625,6 +47688,6 @@
    "hasReport": false
   }
  ],
- "total": 372,
+ "total": 373,
  "withReport": 167
 }

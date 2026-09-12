@@ -1,3 +1,4 @@
+import Recaman.SixteenGateT6Resolution
 import Recaman.SixteenLagRigidity
 import Recaman.FourteenGateT6Unconditional
 import Recaman.TightQuadRigidity
