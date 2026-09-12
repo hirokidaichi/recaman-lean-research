@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2732,
+   "lines": 2743,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46425,6 +46425,70 @@
    "hasReport": false
   },
   {
+   "name": "TightQuadDecomposition",
+   "lines": 287,
+   "imports": [
+    "TightSubsetDecomposition",
+    "TightQuadRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_quad_member_neighborhood_le_four",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_no_ge_five",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_single_non_aas_collision_iff",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_single_non_aas_survives_of_not_covers",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_non_aas_collision_iff",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_non_aas_survives_of_neither_covers",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_lag7_disjoint_impossible",
+     "line": 208
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_lag7_not_disjoint",
+     "line": 222
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_all_aas_survives_unconditional",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quad_decomposition_synthesis",
+     "line": 252
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightQuadRigidity",
    "lines": 287,
    "imports": [
@@ -49141,6 +49205,6 @@
    "hasReport": false
   }
  ],
- "total": 395,
+ "total": 396,
  "withReport": 167
 }
