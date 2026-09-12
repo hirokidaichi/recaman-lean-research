@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2720,
+   "lines": 2732,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46542,6 +46542,77 @@
    "hasReport": false
   },
   {
+   "name": "TightSubsetDecomposition",
+   "lines": 282,
+   "imports": [
+    "TightSubsetLagStructure",
+    "LagSevenNeighborhoodRigidity",
+    "TightTripleRigidity",
+    "ArbitraryPeriodGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mem_of_subset_nodup_length_eq",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_neighborhood_iff_exists_singleton",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_window_avoids_s_star",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_collision_forces_non_aas",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "all_aas_subset_avoids_s_star",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_lag7_spans_neighborhood",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_lag7_covers_aas_endpoints",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_collision_iff_lag7_covers",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_collision_forces_triple_endpoint_coverage",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_survives_of_lag7_not_covers",
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_subset_decomposition_synthesis",
+     "line": 256
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightSubsetLagStructure",
    "lines": 192,
    "imports": [
@@ -49070,6 +49141,6 @@
    "hasReport": false
   }
  ],
- "total": 394,
+ "total": 395,
  "withReport": 167
 }

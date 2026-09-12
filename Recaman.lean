@@ -1,3 +1,4 @@
+import Recaman.TightSubsetDecomposition
 import Recaman.TightSubsetLagStructure
 import Recaman.UniversalQuantumWindowCapacity
 import Recaman.UniversalApexPeriodicTheorem
