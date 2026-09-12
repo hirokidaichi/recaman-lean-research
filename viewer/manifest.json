@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2358,
+   "lines": 2366,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26196,6 +26196,59 @@
    "hasReport": false
   },
   {
+   "name": "ElevenGateT6Synthesis",
+   "lines": 196,
+   "imports": [
+    "ElevenCapacityRigidity",
+    "SS2AASCollisionObstruction",
+    "TwoSSTightAvoidanceTheorem",
+    "CapacitySlackCompensation",
+    "TenGateT6Resolution",
+    "GrandPeriodicDeletabilityTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "all_aas_tight_avoids_ss2_donation",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "all_aas_tight_survives_ss2_donation",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "slack_avoiding_survives_deletion",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "donor_containing_survives_deletion",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_of_all_aas_tight",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_tight_avoiding_size_three_aas_survives",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_eleven_gate_t6_synthesis",
+     "line": 157
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ElevenSSDonationClosure",
    "lines": 125,
    "imports": [
@@ -46883,6 +46936,6 @@
    "hasReport": false
   }
  ],
- "total": 360,
+ "total": 361,
  "withReport": 167
 }

@@ -1,3 +1,4 @@
+import Recaman.ElevenGateT6Synthesis
 import Recaman.ElevenCapacityRigidity
 import Recaman.GrandPeriodicDeletabilityTheorem
 import Recaman.TenGateT6Resolution

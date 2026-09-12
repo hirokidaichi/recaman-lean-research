@@ -2356,3 +2356,11 @@ import Recaman
 #print axioms Recaman.ElevenCapacityRigidity.p11_gate_t6_of_D_le_four
 #print axioms Recaman.ElevenCapacityRigidity.p11_gate_t6_of_capacity_le_three
 #print axioms Recaman.ElevenCapacityRigidity.grand_eleven_capacity_rigidity_synthesis
+
+#print axioms Recaman.ElevenGateT6Synthesis.all_aas_tight_avoids_ss2_donation
+#print axioms Recaman.ElevenGateT6Synthesis.all_aas_tight_survives_ss2_donation
+#print axioms Recaman.ElevenGateT6Synthesis.slack_avoiding_survives_deletion
+#print axioms Recaman.ElevenGateT6Synthesis.donor_containing_survives_deletion
+#print axioms Recaman.ElevenGateT6Synthesis.p11_gate_t6_of_all_aas_tight
+#print axioms Recaman.ElevenGateT6Synthesis.p11_tight_avoiding_size_three_aas_survives
+#print axioms Recaman.ElevenGateT6Synthesis.grand_eleven_gate_t6_synthesis
