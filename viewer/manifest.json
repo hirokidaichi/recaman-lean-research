@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2572,
+   "lines": 2586,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46781,6 +46781,84 @@
    "hasReport": false
   },
   {
+   "name": "TwentyTwoGateT6Resolution",
+   "lines": 334,
+   "imports": [
+    "TwentyTwoLagRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p22_tight_size_two_survives",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_triple_survives_of_not_mem",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_quad_survives_of_not_mem",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_quint_survives_of_not_mem",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_sext_survives_of_not_mem",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_sept_survives_of_not_mem",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_tight_oct_survives_of_not_mem",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_sublist_survives_of_tight_avoidance",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_sublists_survive_unconditional_of_U_le_three",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_avoiding_sublists_survive_unconditional_of_D_le_four",
+     "line": 218
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_of_U_le_four_and_triples",
+     "line": 236
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_gate_t6_of_D_le_five_and_triples",
+     "line": 259
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_two_gate_t6_resolution_synthesis",
+     "line": 282
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyTwoLagRigidity",
    "lines": 135,
    "imports": [
@@ -48214,6 +48292,6 @@
    "hasReport": false
   }
  ],
- "total": 381,
+ "total": 382,
  "withReport": 167
 }

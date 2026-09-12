@@ -1,3 +1,4 @@
+import Recaman.TwentyTwoGateT6Resolution
 import Recaman.TwentyTwoLagRigidity
 import Recaman.TwentyGateT6Unconditional
 import Recaman.TwentyGateT6Resolution
