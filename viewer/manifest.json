@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2710,
+   "lines": 2720,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46542,6 +46542,64 @@
    "hasReport": false
   },
   {
+   "name": "TightSubsetLagStructure",
+   "lines": 192,
+   "imports": [
+    "UniversalQuantumWindowCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_subset_member_neighborhood_le",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_three_in_tight_le_two",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_five_in_tight_le_four",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_seven_in_tight_le_six",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_nine_in_tight_le_eight",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "no_ge_two_k_plus_one_in_tight_le_two_k",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "two_disjoint_ge_two_exceeds_tight_three",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "two_disjoint_ge_three_exceeds_tight_five",
+     "line": 143
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_subset_lag_structure_synthesis",
+     "line": 173
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightSubsetSSExclusion",
    "lines": 235,
    "imports": [
@@ -49012,6 +49070,6 @@
    "hasReport": false
   }
  ],
- "total": 393,
+ "total": 394,
  "withReport": 167
 }

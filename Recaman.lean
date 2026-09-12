@@ -1,3 +1,4 @@
+import Recaman.TightSubsetLagStructure
 import Recaman.UniversalQuantumWindowCapacity
 import Recaman.UniversalApexPeriodicTheorem
 import Recaman.ArbitraryPeriodGateT6Unconditional
