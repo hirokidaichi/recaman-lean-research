@@ -1,3 +1,4 @@
+import Recaman.UniversalTightDecomposition
 import Recaman.TightQuadDecomposition
 import Recaman.TightSubsetDecomposition
 import Recaman.TightSubsetLagStructure

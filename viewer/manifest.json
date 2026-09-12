@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2743,
+   "lines": 2754,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48967,6 +48967,69 @@
    "hasReport": false
   },
   {
+   "name": "UniversalTightDecomposition",
+   "lines": 265,
+   "imports": [
+    "TightQuadDecomposition"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_mem_neighborhood_iff",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_non_aas_witness",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_all_aas_avoids",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_all_aas_survives",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_single_non_aas_collision_iff",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_single_non_aas_survives",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_two_non_aas_collision_iff",
+     "line": 167
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_two_non_aas_survives",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_hall_preservation_of_slack_or_not_mem",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_tight_decomposition_synthesis",
+     "line": 239
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalTightLagBound",
    "lines": 133,
    "imports": [
@@ -49205,6 +49268,6 @@
    "hasReport": false
   }
  ],
- "total": 396,
+ "total": 397,
  "withReport": 167
 }
