@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2363,
+   "lines": 2358,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26144,6 +26144,58 @@
    "hasReport": true
   },
   {
+   "name": "ElevenCapacityRigidity",
+   "lines": 218,
+   "imports": [
+    "TenGateT6Resolution",
+    "GrandPeriodicDeletabilityTheorem",
+    "ShortPeriodicSupply",
+    "LagElevenPeriodic",
+    "LowSSPeriodicSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p11_tight_avoiding_le_two_all_lag_three",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_tight_avoiding_le_two_all_aas",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_tight_avoiding_le_two_survives",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_of_U_le_three",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_of_D_le_four",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_of_capacity_le_three",
+     "line": 173
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_eleven_capacity_rigidity_synthesis",
+     "line": 194
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ElevenSSDonationClosure",
    "lines": 125,
    "imports": [
@@ -46831,6 +46883,6 @@
    "hasReport": false
   }
  ],
- "total": 359,
+ "total": 360,
  "withReport": 167
 }

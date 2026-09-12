@@ -2349,15 +2349,10 @@ import Recaman
 #print axioms Recaman.GrandPeriodicDeletabilityTheorem.apex_gate_t6_hall_preservation_p10
 #print axioms Recaman.GrandPeriodicDeletabilityTheorem.grand_periodic_deletability_synthesis
 
-
-
-
-
-
-
-
-
-
-
-
-
+#print axioms Recaman.ElevenCapacityRigidity.p11_tight_avoiding_le_two_all_lag_three
+#print axioms Recaman.ElevenCapacityRigidity.p11_tight_avoiding_le_two_all_aas
+#print axioms Recaman.ElevenCapacityRigidity.p11_tight_avoiding_le_two_survives
+#print axioms Recaman.ElevenCapacityRigidity.p11_gate_t6_of_U_le_three
+#print axioms Recaman.ElevenCapacityRigidity.p11_gate_t6_of_D_le_four
+#print axioms Recaman.ElevenCapacityRigidity.p11_gate_t6_of_capacity_le_three
+#print axioms Recaman.ElevenCapacityRigidity.grand_eleven_capacity_rigidity_synthesis
