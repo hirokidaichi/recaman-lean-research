@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2850,
+   "lines": 2863,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -43929,6 +43929,79 @@
    "hasReport": false
   },
   {
+   "name": "SixteenGateT6Unconditional",
+   "lines": 265,
+   "imports": [
+    "SixteenGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ss2_donor_nonwrapping_p12_to_p16",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_triple_avoids",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_triple_survives",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_quad_avoids",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_quad_survives",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_quint_avoids",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_all_aas_tight_quint_survives",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_gate_t6_of_triples_quads_quints_aas",
+     "line": 173
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_capacity_reduction_tier_one",
+     "line": 204
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_capacity_reduction_tier_two",
+     "line": 223
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_avoiding_size_hierarchy",
+     "line": 242
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_sixteen_gate_t6_unconditional_synthesis",
+     "line": 256
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SixteenLagRigidity",
    "lines": 148,
    "imports": [
@@ -49793,6 +49866,6 @@
    "hasReport": false
   }
  ],
- "total": 407,
+ "total": 408,
  "withReport": 167
 }
