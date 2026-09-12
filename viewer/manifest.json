@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2754,
+   "lines": 2764,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -30093,6 +30093,64 @@
    "hasReport": false
   },
   {
+   "name": "LagSevenCollisionDistance",
+   "lines": 179,
+   "imports": [
+    "UniversalTightDecomposition"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mod_eq_of_sub_mod_zero",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "collision_implies_offset_congruence",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "collision_mod_residue_eq",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_collision_residue_cases",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_avoids_of_not_in_residues",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_not_mem_neighborhood_of_distance",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_triple_survives_of_distance",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_single_survives_of_distance",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_lag_seven_collision_distance_synthesis",
+     "line": 167
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LagSevenNeighborhoodRigidity",
    "lines": 192,
    "imports": [
@@ -49268,6 +49326,6 @@
    "hasReport": false
   }
  ],
- "total": 397,
+ "total": 398,
  "withReport": 167
 }

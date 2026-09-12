@@ -1,3 +1,4 @@
+import Recaman.LagSevenCollisionDistance
 import Recaman.UniversalTightDecomposition
 import Recaman.TightQuadDecomposition
 import Recaman.TightSubsetDecomposition
