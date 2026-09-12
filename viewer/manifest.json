@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2833,
+   "lines": 2840,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32255,6 +32255,49 @@
    "hasReport": false
   },
   {
+   "name": "MasterGeometricGateT6Resolution",
+   "lines": 154,
+   "imports": [
+    "TightQuadCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_quad_distant_aas_impossible",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_unconditional_geometric_gate_t6",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_geometric_gate_t6",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "p14_geometric_gate_t6",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_hierarchy",
+     "line": 139
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_master_geometric_gate_t6_synthesis",
+     "line": 146
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Mechanisms",
    "lines": 196,
    "imports": [
@@ -49692,6 +49735,6 @@
    "hasReport": false
   }
  ],
- "total": 405,
+ "total": 406,
  "withReport": 167
 }

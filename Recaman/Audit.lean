@@ -2825,6 +2825,13 @@ import Recaman
 #print axioms Recaman.TightQuadCollisionObstruction.tight_quad_two_non_aas_survives_of_distance
 #print axioms Recaman.TightQuadCollisionObstruction.grand_tight_quad_collision_obstruction_synthesis
 
+#print axioms Recaman.MasterGeometricGateT6Resolution.tight_quad_distant_aas_impossible
+#print axioms Recaman.MasterGeometricGateT6Resolution.p10_unconditional_geometric_gate_t6
+#print axioms Recaman.MasterGeometricGateT6Resolution.p12_geometric_gate_t6
+#print axioms Recaman.MasterGeometricGateT6Resolution.p14_geometric_gate_t6
+#print axioms Recaman.MasterGeometricGateT6Resolution.master_geometric_gate_t6_hierarchy
+#print axioms Recaman.MasterGeometricGateT6Resolution.grand_master_geometric_gate_t6_synthesis
+
 
 
 
