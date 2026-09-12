@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2505,
+   "lines": 2515,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26266,6 +26266,70 @@
    "hasReport": false
   },
   {
+   "name": "EighteenGateT6Unconditional",
+   "lines": 351,
+   "imports": [
+    "EighteenGateT6Resolution",
+    "TightAvoidingLagCertificate"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p18_tight_all_aas_avoids_s_star",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_tight_all_aas_survives",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_gate_t6_of_all_aas_tight",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_gate_t6_of_D_le_six_and_triples_quads",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_gate_t6_of_U_le_five_and_triples_quads",
+     "line": 157
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_capacity_tier_one",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_capacity_tier_two",
+     "line": 220
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_capacity_tier_three",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_capacity_tier_four",
+     "line": 261
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_eighteen_gate_t6_unconditional_synthesis",
+     "line": 284
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "EighteenLagRigidity",
    "lines": 152,
    "imports": [
@@ -47819,6 +47883,6 @@
    "hasReport": false
   }
  ],
- "total": 375,
+ "total": 376,
  "withReport": 167
 }
