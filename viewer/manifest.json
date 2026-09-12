@@ -202,7 +202,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2409,
+   "lines": 2427,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45176,6 +45176,90 @@
    "hasReport": false
   },
   {
+   "name": "TightAvoidingLagCertificate",
+   "lines": 121,
+   "imports": [
+    "TwoSSTightDisjoint",
+    "TwoSSLocalDonation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "has",
+     "line": 24
+    },
+    {
+     "kind": "def",
+     "name": "w18",
+     "line": 37
+    },
+    {
+     "kind": "def",
+     "name": "e18",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "lag18",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "A18",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "U18",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "e18_periodic",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "A18_windows",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "A18_tight",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "donor_valid",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "avoiding_and_slack",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "donated_subtraction_uncovered",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_not_forced_to_three",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_three_forcing_fails_at_period_18",
+     "line": 102
+    }
+   ],
+   "theorems": 9,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightBottleneckBound",
    "lines": 118,
    "imports": [
@@ -45847,6 +45931,68 @@
     }
    ],
    "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwelveGateT6Unconditional",
+   "lines": 250,
+   "imports": [
+    "LagSevenNeighborhoodRigidity",
+    "TwelveGateT6Resolution",
+    "TightTripleRigidity",
+    "SS2LagElevenForcing",
+    "OneSSMultiplicity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_nonwrapping_ss2_donor_p11",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_all_lag_three_general",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_all_aas_general",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_survives_general",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_tight_triple_all_aas_survives",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_tight_triple_survives_of_lag7_disjoint",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "p12_avoiding_sublist_survives_of_tight_triples",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p11_gate_t6_complete_tripartite_resolution",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twelve_gate_t6_unconditional_synthesis",
+     "line": 216
+    }
+   ],
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -47222,6 +47368,6 @@
    "hasReport": false
   }
  ],
- "total": 366,
+ "total": 368,
  "withReport": 167
 }

@@ -1,3 +1,5 @@
+import Recaman.TightAvoidingLagCertificate
+import Recaman.TwelveGateT6Unconditional
 import Recaman.LagSevenNeighborhoodRigidity
 import Recaman.ApexPeriodicRigidityTheorem
 import Recaman.TightTripleRigidity
