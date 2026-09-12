@@ -2809,6 +2809,16 @@ import Recaman
 #print axioms Recaman.ParametricGateT6Synthesis.p24_gate_t6_reduction_tier
 #print axioms Recaman.ParametricGateT6Synthesis.grand_parametric_gate_t6_synthesis
 
+#print axioms Recaman.TightTripleCollisionObstruction.modular_diff_congruence
+#print axioms Recaman.TightTripleCollisionObstruction.aas_covers_offset_congruence
+#print axioms Recaman.TightTripleCollisionObstruction.two_aas_separation_forcing
+#print axioms Recaman.TightTripleCollisionObstruction.two_aas_separation_bound
+#print axioms Recaman.TightTripleCollisionObstruction.donor_aas_separation_forcing
+#print axioms Recaman.TightTripleCollisionObstruction.lag7_covers_two_aas_forces_proximity
+#print axioms Recaman.TightTripleCollisionObstruction.lag7_cannot_cover_distant_aas
+#print axioms Recaman.TightTripleCollisionObstruction.grand_tight_triple_collision_obstruction_synthesis
+
+
 
 
 

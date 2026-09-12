@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2815,
+   "lines": 2825,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46919,6 +46919,59 @@
    "hasReport": false
   },
   {
+   "name": "TightTripleCollisionObstruction",
+   "lines": 145,
+   "imports": [
+    "ParametricGateT6Synthesis"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "modular_diff_congruence",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_covers_offset_congruence",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "two_aas_separation_forcing",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "two_aas_separation_bound",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "donor_aas_separation_forcing",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_covers_two_aas_forces_proximity",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cannot_cover_distant_aas",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_triple_collision_obstruction_synthesis",
+     "line": 133
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightTripleRigidity",
    "lines": 149,
    "imports": [
@@ -49596,6 +49649,6 @@
    "hasReport": false
   }
  ],
- "total": 403,
+ "total": 404,
  "withReport": 167
 }
