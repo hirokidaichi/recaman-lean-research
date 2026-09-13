@@ -2877,6 +2877,14 @@ import Recaman
 #print axioms Recaman.GrandApexPeriodTwentyTheorem.apex20_gate_t6_reduction_tier_six
 #print axioms Recaman.GrandApexPeriodTwentyTheorem.grand_apex_period_twenty_synthesis
 
+#print axioms Recaman.UniversalMultiLagSeparation.universal_tight_two_lag7_union_bound
+#print axioms Recaman.UniversalMultiLagSeparation.universal_tight_two_lag7_distant_aas_impossible
+#print axioms Recaman.UniversalMultiLagSeparation.universal_tight_two_lag7_identical_bound
+#print axioms Recaman.UniversalMultiLagSeparation.tight_quad_two_lag7_complement_zero
+#print axioms Recaman.UniversalMultiLagSeparation.tight_quint_two_lag7_complement_le_one
+#print axioms Recaman.UniversalMultiLagSeparation.tight_sext_two_lag7_complement_le_two
+#print axioms Recaman.UniversalMultiLagSeparation.grand_universal_multi_lag_separation_synthesis
+
 
 
 

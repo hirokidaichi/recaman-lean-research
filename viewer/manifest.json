@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2885,
+   "lines": 2893,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -49507,6 +49507,54 @@
    "hasReport": false
   },
   {
+   "name": "UniversalMultiLagSeparation",
+   "lines": 137,
+   "imports": [
+    "UniversalAASLagSeparation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_tight_two_lag7_union_bound",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_two_lag7_distant_aas_impossible",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_tight_two_lag7_identical_bound",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_lag7_complement_zero",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_two_lag7_complement_le_one",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_two_lag7_complement_le_two",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_multi_lag_separation_synthesis",
+     "line": 128
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalNonAASReduction",
    "lines": 272,
    "imports": [
@@ -49998,6 +50046,6 @@
    "hasReport": false
   }
  ],
- "total": 410,
+ "total": 411,
  "withReport": 167
 }
