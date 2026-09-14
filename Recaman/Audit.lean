@@ -3187,11 +3187,15 @@ import Recaman
 #print axioms Recaman.GrandUniversalCapacityResolution.grand_e067_p2_supply_obstruction
 #print axioms Recaman.GrandUniversalCapacityResolution.grand_universal_capacity_resolution
 
-
-
-
-
-
+#print axioms Recaman.ExactOrbitNonperiodicity.mass_past_add_eq_signSum
+#print axioms Recaman.ExactOrbitNonperiodicity.signSum_eq_period_mass
+#print axioms Recaman.ExactOrbitNonperiodicity.pos_signSum_of_pos_period_mass
+#print axioms Recaman.ExactOrbitNonperiodicity.low_ss_periodic_obstruction
+#print axioms Recaman.ExactOrbitNonperiodicity.grand_capacity_supply_obstruction
+#print axioms Recaman.ExactOrbitNonperiodicity.seeded_orbit_not_eventual_low_ss_periodic
+#print axioms Recaman.ExactOrbitNonperiodicity.seeded_orbit_not_eventual_periodic_of_capacity_induction
+#print axioms Recaman.ExactOrbitNonperiodicity.canonical_orbit_not_eventual_low_ss_periodic
+#print axioms Recaman.ExactOrbitNonperiodicity.canonical_orbit_not_eventual_periodic_of_capacity_induction
 
 
 

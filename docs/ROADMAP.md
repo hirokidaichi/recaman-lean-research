@@ -1063,6 +1063,15 @@ slackを持つ部分集合（$|N(B)| \ge |B| + 1$）は1要素の削除後も $|
 E-067 と有限履歴縮約 E-065 の合成により、exact orbit における eventual 固定周期符号語の出現は完全に排除された。
 次の研究 frontier は、可変長ブロック・非周期語を含む実軌道の大域挙動および全射性／非全射性の解明に移る。
 
+## 2026-09-14: 厳密軌道の非周期性合成定理の Lean 完結（E-320、テーマ1完了）
+
+Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と E-067（全周期語P2供給障害定理、E-319）の正式な統合を形式化した（E-320、`Recaman.ExactOrbitNonperiodicity`）。
+1. 後退周期質量 `mass (past e 0 p)` と前進符号和 `signSum e 0 p` の厳密一致を、シフト補題 `mass_past_add_eq_signSum` と周期不変性 `period_mass_constant` を経由して証明（`signSum_eq_period_mass`）。
+2. 正の周期質量から狭義正の前進符号和 `0 < signSum e 0 p` を導出（`pos_signSum_of_pos_period_mass`）。
+3. 任意の有限初期状態 $s$ と基底クロック $b$ からのシード軌道、および標準Recamán軌道（$a_0 = 0$）が、最終周期的な低SS符号パターンまたはGate T6帰納を満たす周期符号パターンに入り得ないことを機械証明（`seeded_orbit_not_eventual_low_ss_periodic`, `canonical_orbit_not_eventual_low_ss_periodic`, `canonical_orbit_not_eventual_periodic_of_capacity_induction`）。
+これにより、ポストIssue #73 の研究テーマ1（E-065 と E-067 の合成による厳密軌道の非周期性定式化）が `PROVED-LEAN` として完結した。
+
+
 ## 主なリスク
 
 | リスク | 意味 | 対応 |

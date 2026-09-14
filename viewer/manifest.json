@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3214,
+   "lines": 3218,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27282,6 +27282,74 @@
    "hasReport": false
   },
   {
+   "name": "ExactOrbitNonperiodicity",
+   "lines": 191,
+   "imports": [
+    "LeadingRunSupply",
+    "ParitySupply",
+    "ShortPeriodicSupply",
+    "EventualPeriodicSupply",
+    "GrandUniversalCapacityResolution",
+    "FiniteSeedPeriodicSupply",
+    "OneSSMultiplicity",
+    "LowSSPeriodicSupply",
+    "LagElevenPeriodic",
+    "PeriodicTailRepresentation",
+    "CanonicalSSFreeSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_past_add_eq_signSum",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "signSum_eq_period_mass",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "pos_signSum_of_pos_period_mass",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "low_ss_periodic_obstruction",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_capacity_supply_obstruction",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_orbit_not_eventual_low_ss_periodic",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_orbit_not_eventual_periodic_of_capacity_induction",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_not_eventual_low_ss_periodic",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_not_eventual_periodic_of_capacity_induction",
+     "line": 172
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Examples",
    "lines": 162,
    "imports": [
@@ -51904,6 +51972,6 @@
    "hasReport": false
   }
  ],
- "total": 447,
+ "total": 448,
  "withReport": 167
 }
