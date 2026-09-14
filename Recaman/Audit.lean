@@ -3180,6 +3180,14 @@ import Recaman
 #print axioms Recaman.GateT6CapacityInduction.finite_capacity_preservation
 #print axioms Recaman.GateT6CapacityInduction.grand_gate_t6_capacity_induction_synthesis
 
+#print axioms Recaman.GrandUniversalCapacityResolution.low_ss_base_capacity
+#print axioms Recaman.GrandUniversalCapacityResolution.inductive_donor_reduction
+#print axioms Recaman.GrandUniversalCapacityResolution.grand_capacity_inequality
+#print axioms Recaman.GrandUniversalCapacityResolution.positive_sum_subtraction_lt_addition
+#print axioms Recaman.GrandUniversalCapacityResolution.grand_e067_p2_supply_obstruction
+#print axioms Recaman.GrandUniversalCapacityResolution.grand_universal_capacity_resolution
+
+
 
 
 

@@ -1,3 +1,4 @@
+import Recaman.GrandUniversalCapacityResolution
 import Recaman.GateT6CapacityInduction
 import Recaman.GrandUniversalGateT6Resolution
 import Recaman.UniversalQuantumTightObstruction

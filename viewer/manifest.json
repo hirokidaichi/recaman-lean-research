@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3206,
+   "lines": 3214,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -29020,6 +29020,60 @@
    "hasReport": false
   },
   {
+   "name": "GrandUniversalCapacityResolution",
+   "lines": 146,
+   "imports": [
+    "GateT6CapacityInduction",
+    "GrandUniversalGateT6Resolution",
+    "LowSSPeriodicSupply",
+    "OneSSMultiplicity",
+    "LeadingRunSupply",
+    "ShortPeriodicSupply",
+    "LagElevenPeriodic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_ss_base_capacity",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "inductive_donor_reduction",
+     "line": 69
+    },
+    {
+     "kind": "inductive",
+     "name": "Gate",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_capacity_inequality",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_sum_subtraction_lt_addition",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_e067_p2_supply_obstruction",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_capacity_resolution",
+     "line": 109
+    }
+   ],
+   "theorems": 6,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandUniversalGateT6Resolution",
    "lines": 96,
    "imports": [
@@ -51850,6 +51904,6 @@
    "hasReport": false
   }
  ],
- "total": 446,
+ "total": 447,
  "withReport": 167
 }
