@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3239,
+   "lines": 3253,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28758,6 +28758,87 @@
    "hasReport": false
   },
   {
+   "name": "GlobalUnboundednessSupply",
+   "lines": 214,
+   "imports": [
+    "SharpResidualKernel",
+    "OrbitBounds",
+    "EventualEscape",
+    "DriftResetAccumulation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "upperTri_le_upperTri",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "upperTri_lt_upperTri",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "lt_of_upperTri_lt_upperTri",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_values_unbounded_after",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "reset_stream_values_unbounded_after",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "missing_permanent_tail_values_unbounded_after",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "missing_permanent_tail_values_unbounded",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_unbounded",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_unbounded_after",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "signSum_of_all_additions",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "consecutive_additions_unsupplied_deficit",
+     "line": 169
+    },
+    {
+     "kind": "theorem",
+     "name": "three_consecutive_additions_unsupplied",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "no_three_consecutive_additions_if_all_supplied",
+     "line": 207
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandApexPeriodEighteenTheorem",
    "lines": 280,
    "imports": [
@@ -52216,6 +52297,6 @@
    "hasReport": false
   }
  ],
- "total": 451,
+ "total": 452,
  "withReport": 167
 }

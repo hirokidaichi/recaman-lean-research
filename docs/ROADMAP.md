@@ -1104,6 +1104,18 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 7. これらを標準Recamán列 $\text{canonicalSign}$ および回廊へ適用（`canonical_unsuppliedCount_mono`, `canonical_unsuppliedCount_ge_drift`, `corridor_unsupplied_two_drift_blocks`）。
 これにより、ポストIssue #73 の研究テーマ4（ドリフトリセットと未供給加算の蓄積解析）が `PROVED-LEAN` として完結した。
 
+## 2026-09-14: 大域非有界性と供給障害の統合 Lean 完結（E-324）
+
+大域非有界性と供給障害の統合定理を形式化した（E-324、`Recaman.GlobalUnboundednessSupply`）。
+1. 三角数の狭義単調性（`upperTri_le_upperTri`, `upperTri_lt_upperTri`）と逆向きの添字反映（`lt_of_upperTri_lt_upperTri`）を証明。
+2. 鋭敏残余核（`SharpResidualKernel`）の Corridor 枝において、値の法則 $a_n > n + \text{target} + 1$ から任意カットオフ以降に任意の上限 $B$ を脱出すること（`corridor_values_unbounded_after`）を構成的に証明。
+3. ResetStream 枝において、ブロッカーの三角数閾値脱出 $\text{upperTri}(c) < \text{blocker} < a(\text{start})$ から comb 入口値が任意カットオフ以降に任意上限を脱出すること（`reset_stream_values_unbounded_after`）を証明。
+4. 任意の未到達数仮定 tail において値 $a_n$ が大域的に非有界であること（`missing_permanent_tail_values_unbounded_after`, `missing_permanent_tail_values_unbounded`）、および標準軌道の非有界性（`canonical_orbit_unbounded`, `canonical_orbit_unbounded_after`）を証明。
+5. 長さ $K \ge 3$ の連続加算区間が符号和 $K$ を持ち、少なくとも $K - 2$ 個の未供給加算を不可避に生み出すこと（`consecutive_additions_unsupplied_deficit`, `three_consecutive_additions_unsupplied`）を証明。
+6. 全加算が短供給される場合、3連続加算 `AAA` が局所的に発生し得ないという構造的パターン排除定理（`no_three_consecutive_additions_if_all_supplied`）を証明。
+これにより、大域非有界性と未供給加算蓄積の統合命題（E-324）が `PROVED-LEAN` として完結した。
+
+
 
 
 

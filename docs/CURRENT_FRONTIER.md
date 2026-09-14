@@ -21,6 +21,8 @@
 
 さらに、非周期的ストリームにおけるドリフトリセットと未供給加算の蓄積解析（**E-323、`Recaman.DriftResetAccumulation`**）が形式化された。未供給加算数 $\text{unsuppliedCount}(e, t, n) = \text{additionCount}(e, t, n) - \text{suppliedCount}(e, t, n)$ の厳密な非負性、隣接区間における完全加法性（`unsuppliedCount_add`）、および時間経過に対する単調非減少性（`unsuppliedCount_mono`）を証明した。これにより、区間間に負のドリフト（下降リセット）が介在しても過去に発生した未供給加算は一切消滅・返済されず、加法的に蓄積し続けることが保証される（`unsuppliedCount_two_blocks`）。さらに、ドリフト欠損下界 $\text{signSum} - 2 \le \text{unsuppliedCount}$ から、「全区間で未供給加算数が有界ならば正のドリフトも一様に有界（$\text{signSum} \le K + 2$）である」というドリフト有界性定理、および「任意に大きな正ドリフト excursion が存在するならば未供給加算数は非有界に発散する」という対偶的二分法を確立した。これらを標準Recamán列 $\text{canonicalSign}$ および回廊へ適用し、非周期的ストリームにおける大域的供給障害を確立した（`PROVED-LEAN`）。
 
+続いて、大域非有界性と供給障害の統合定理（**E-324、`Recaman.GlobalUnboundednessSupply`**）が形式化された。三角数の狭義単調性（`upperTri_lt_upperTri`, `lt_of_upperTri_lt_upperTri`）と鋭敏残余核（`SharpResidualKernel`）の2分枝（Corridor 枝の線形成長則 $a_n > n + \text{target} + 1$、および ResetStream 枝のブロッカー増大 $\text{blocker} \to \infty$ と comb 入口値の脱出）を合成し、任意の未到達数仮定 tail において値 $a_n$ が任意のカットオフ以降に任意の上限 $B$ を厳密に脱出すること（`missing_permanent_tail_values_unbounded_after`）、したがって $\limsup a_n = \infty$ であることを証明した。さらに、Theme 4 の未供給加算理論と結合し、長さ $K \ge 3$ の任意の連続加算区間が少なくとも $K - 2$ 個の未供給加算を不可避に生み出すこと（`consecutive_additions_unsupplied_deficit`）、および「全加算が供給されるならば3連続加算 `AAA` は局所的に一切発生し得ない」という構造的パターン排除定理（`no_three_consecutive_additions_if_all_supplied`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
 
