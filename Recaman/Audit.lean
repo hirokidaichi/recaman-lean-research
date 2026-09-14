@@ -2932,6 +2932,13 @@ import Recaman
 #print axioms Recaman.TightSextCollisionObstruction.tight_sext_all_aas_survives
 #print axioms Recaman.TightSextCollisionObstruction.grand_tight_sext_collision_obstruction_synthesis
 
+#print axioms Recaman.EighteenGeometricGateT6Resolution.p18_geometric_gate_t6
+#print axioms Recaman.EighteenGeometricGateT6Resolution.p18_size_three_to_six_decomposition
+#print axioms Recaman.EighteenGeometricGateT6Resolution.p18_intermediate_lag7_must_cover_two
+#print axioms Recaman.EighteenGeometricGateT6Resolution.master_geometric_gate_t6_eighteen_hierarchy
+#print axioms Recaman.EighteenGeometricGateT6Resolution.grand_eighteen_geometric_gate_t6_synthesis
+
+
 
 
 
