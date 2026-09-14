@@ -1,3 +1,4 @@
+import Recaman.TwentyGeometricGateT6Resolution
 import Recaman.TightSeptCollisionObstruction
 import Recaman.EighteenGeometricGateT6Resolution
 import Recaman.TightSextCollisionObstruction
