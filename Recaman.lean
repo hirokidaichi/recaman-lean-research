@@ -1,3 +1,4 @@
+import Recaman.CorridorDensityObstruction
 import Recaman.FiniteBlockCapacity
 import Recaman.ExactOrbitNonperiodicity
 import Recaman.GrandUniversalCapacityResolution

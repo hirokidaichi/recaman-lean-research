@@ -1082,6 +1082,17 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 6. これらを任意シード軌道および標準Recamán軌道（$a_0 = 0$）へ適用（`seeded_orbit_finite_block_capacity`, `canonical_orbit_finite_block_capacity`, `canonical_orbit_unsupplied_of_drift`）。
 これにより、ポストIssue #73 の研究テーマ2（有限ブロック容量不等式と境界効果の定式化）が `PROVED-LEAN` として完結した。
 
+## 2026-09-14: 回廊密度限界と供給障害の Lean 完結（E-322、テーマ3完了）
+
+最小未到達数（least missing target $m$）の永久上方レジャー回廊（$a_t < t + m$, $q \le 1$, $2 \cdot \text{subSum}(t) + (m + 2) \le \text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$）における密度限界と供給障害を形式化した（E-322、`Recaman.CorridorDensityObstruction`）。
+1. レジャー上界 $\text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$ と総和評価 $\text{subSum}(t) \le t \cdot \text{subCount}(t)$ から、減算数の線形下界 $t \le 4 \cdot \text{subCount}(t) + 2$（漸近減算密度 $\ge 1/4$）を証明（`subCount_lower_bound_of_ledger_corridor`）。回廊内で減算が希薄化し得ないことを確立。
+2. レジャー下界 $2 \cdot \text{subSum}(t) < \text{upperTri}(t)$ と三角数評価 $\text{upperTri}(\text{subCount}(t)) \le \text{subSum}(t)$ から、減算数の二次上界 $2 \cdot (\text{subCount}(t)(\text{subCount}(t) + 1)) < t(t + 1)$（漸近減算密度 $\le 1/\sqrt{2} \approx 0.707$、加算密度 $\ge 0.293$）を証明（`subCount_upper_bound_of_ledger_corridor`）。回廊内で加算も消滅し得ないことを確立。
+3. 任意の最小未到達数 $m$ に対し、その標準末尾最小値において線形下界と二次上界が同時に成立することを証明（`tail_minimum_subCount_bounds`）。
+4. テーマ1の非周期性定理を回廊へ射影し、回廊内軌道が最終低SS周期的またはGate T6帰納を満たす周期的符号パターンに入り得ないことを証明（`corridor_tail_not_eventual_low_ss_periodic`, `corridor_tail_not_eventual_periodic_of_capacity_induction`）。
+5. テーマ2の有限ブロック容量不等式を回廊へ射影し、回廊内の任意有限区間で供給加算数が減算数プラス2以下（$\text{suppliedCount} \le \text{subtractionCount} + 2$）に制限されること、および正ドリフト $\text{signSum} \ge 3$ を持つ区間は必ず未供給加算を含むことを証明（`corridor_finite_block_capacity`, `corridor_unsupplied_of_drift`）。
+これにより、ポストIssue #73 の研究テーマ3（最小未到達数回廊の密度限界と供給障害）が `PROVED-LEAN` として完結した。
+
+
 
 ## 主なリスク
 

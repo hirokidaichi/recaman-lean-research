@@ -17,6 +17,8 @@
 
 さらに、周期性を仮定しない任意有限区間（ブロック）に対する**無条件有限ブロック容量不等式（E-321、`Recaman.FiniteBlockCapacity`）** が形式化された。7ビットポテンシャルの変動上界（$0 \le \Phi \le 2$）により、任意の符号列において供給加算数は減算数プラス2以下（$|U| \le |D| + 2$）に抑えられ、この境界欠損 $C=2$ は厳密（sharp）であること、連結界面での欠損相殺により $k$ 個の連続ブロックでも大域欠損が $\le 2$ に保たれること、および正のドリフト $\text{signSum} \ge 3$ を持つ任意の有限区間は必ず未供給加算を含むことが Lean で厳密に証明された（`PROVED-LEAN`）。
 
+続いて、仮定された最小未到達数（least missing target $m$）の永久上方レジャー回廊（$a_t < t + m$, $q \le 1$, $2 \cdot \text{subSum}(t) + (m + 2) \le \text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$）における**回廊密度限界と供給障害（E-322、`Recaman.CorridorDensityObstruction`）** が形式化された。回廊内のレジャー制約から、減算数に対する線形下界 $t \le 4 \cdot \text{subCount}(t) + 2$（漸近減算密度 $\ge 1/4$）および二次上界 $2 \cdot \text{subCount}(t)(\text{subCount}(t) + 1) < t(t + 1)$（漸近減算密度 $\le 1/\sqrt{2} \approx 0.707$、加算密度 $\ge 0.293$）を厳密に導出し、回廊内の両符号の非退化性を確立した。さらに、Theme 1の非周期性定理（E-320）およびTheme 2の有限ブロック容量不等式（E-321）をこの回廊に直接射影し、回廊内軌道が最終低SS周期的またはGate T6帰納を満たす周期的符号パターンに入り得ないこと、回廊内の任意区間での供給加算数が減算数プラス2以下（$\text{suppliedCount} \le \text{subtractionCount} + 2$）に制限されること、および正ドリフト $\text{signSum} \ge 3$ を持つ回廊内区間が必ず未供給加算を含むことが Lean で厳密に証明された（`PROVED-LEAN`）。
+
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
 

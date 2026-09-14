@@ -3211,16 +3211,12 @@ import Recaman
 #print axioms Recaman.FiniteBlockCapacity.canonical_orbit_finite_block_capacity
 #print axioms Recaman.FiniteBlockCapacity.canonical_orbit_unsupplied_of_drift
 
-
-
-
-
-
-
-
-
-
-
-
+#print axioms Recaman.CorridorDensityObstruction.subCount_lower_bound_of_ledger_corridor
+#print axioms Recaman.CorridorDensityObstruction.subCount_upper_bound_of_ledger_corridor
+#print axioms Recaman.CorridorDensityObstruction.tail_minimum_subCount_bounds
+#print axioms Recaman.CorridorDensityObstruction.corridor_tail_not_eventual_low_ss_periodic
+#print axioms Recaman.CorridorDensityObstruction.corridor_tail_not_eventual_periodic_of_capacity_induction
+#print axioms Recaman.CorridorDensityObstruction.corridor_finite_block_capacity
+#print axioms Recaman.CorridorDensityObstruction.corridor_unsupplied_of_drift
 
 

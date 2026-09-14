@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3226,
+   "lines": 3222,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -2466,6 +2466,59 @@
    "defs": 4,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "CorridorDensityObstruction",
+   "lines": 150,
+   "imports": [
+    "LeastTailLedgerMinimum",
+    "OrbitBounds",
+    "SubtractionLedger",
+    "ExactOrbitNonperiodicity",
+    "FiniteBlockCapacity",
+    "LagElevenPeriodic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "subCount_lower_bound_of_ledger_corridor",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_upper_bound_of_ledger_corridor",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_subCount_bounds",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_tail_not_eventual_low_ss_periodic",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_tail_not_eventual_periodic_of_capacity_induction",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_finite_block_capacity",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_unsupplied_of_drift",
+     "line": 144
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "Coverage",
@@ -52052,6 +52105,6 @@
    "hasReport": false
   }
  ],
- "total": 449,
+ "total": 450,
  "withReport": 167
 }
