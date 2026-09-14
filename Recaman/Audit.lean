@@ -3175,6 +3175,12 @@ import Recaman
 #print axioms Recaman.GrandUniversalGateT6Resolution.sublist_hall_dichotomy
 #print axioms Recaman.GrandUniversalGateT6Resolution.grand_universal_gate_t6_resolution
 
+#print axioms Recaman.GateT6CapacityInduction.donation_deficit_zero
+#print axioms Recaman.GateT6CapacityInduction.inductive_step_hall_preservation
+#print axioms Recaman.GateT6CapacityInduction.finite_capacity_preservation
+#print axioms Recaman.GateT6CapacityInduction.grand_gate_t6_capacity_induction_synthesis
+
+
 
 
 

@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3200,
+   "lines": 3206,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28413,6 +28413,39 @@
    "hasReport": true
   },
   {
+   "name": "GateT6CapacityInduction",
+   "lines": 83,
+   "imports": [
+    "GrandUniversalGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "donation_deficit_zero",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "inductive_step_hall_preservation",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "finite_capacity_preservation",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_gate_t6_capacity_induction_synthesis",
+     "line": 62
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandApexPeriodEighteenTheorem",
    "lines": 280,
    "imports": [
@@ -51817,6 +51850,6 @@
    "hasReport": false
   }
  ],
- "total": 445,
+ "total": 446,
  "withReport": 167
 }
