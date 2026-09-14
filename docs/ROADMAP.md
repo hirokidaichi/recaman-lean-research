@@ -1071,6 +1071,17 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 3. 任意の有限初期状態 $s$ と基底クロック $b$ からのシード軌道、および標準Recamán軌道（$a_0 = 0$）が、最終周期的な低SS符号パターンまたはGate T6帰納を満たす周期符号パターンに入り得ないことを機械証明（`seeded_orbit_not_eventual_low_ss_periodic`, `canonical_orbit_not_eventual_low_ss_periodic`, `canonical_orbit_not_eventual_periodic_of_capacity_induction`）。
 これにより、ポストIssue #73 の研究テーマ1（E-065 と E-067 の合成による厳密軌道の非周期性定式化）が `PROVED-LEAN` として完結した。
 
+## 2026-09-14: 無条件有限ブロック容量不等式と境界欠損の Lean 完結（E-321、テーマ2完了）
+
+周期性前提を除去し、任意有限区間（ブロック）における容量不等式と境界効果を形式化した（E-321、`Recaman.FiniteBlockCapacity`）。
+1. 7ビット窓ポテンシャルの絶対評価 $0 \le \Phi \le 2$ から、任意区間での電荷変動が $\le 2$ であることを証明（`chargeSum_le_two`）。
+2. 周期性を一切仮定しない無条件有限ブロック容量不等式 `suppliedCount e t n ≤ subtractionCount e t n + 2` を証明（`finite_block_capacity`）。
+3. 境界欠損 $C = 2$ の厳密性（sharpness）を確認（窓45からの2歩軌道 `[True, True]`）。
+4. 連続する $k$ 個のブロックの連結において、境界欠損が内部界面でテレスコーピングに相殺し、合成区間全体でも欠損が $\le 2$ のまま蓄積しないことを証明（`chargeSum_add`, `multiblock_composite_capacity`）。
+5. 正のドリフト $\text{signSum} \ge 3$ を持つ任意の有限区間は必ず未供給加算を含まなければならないという定量的障害を証明（`finite_block_unsupplied_of_signSum_ge_three`, `finite_block_unsupplied_deficit`）。
+6. これらを任意シード軌道および標準Recamán軌道（$a_0 = 0$）へ適用（`seeded_orbit_finite_block_capacity`, `canonical_orbit_finite_block_capacity`, `canonical_orbit_unsupplied_of_drift`）。
+これにより、ポストIssue #73 の研究テーマ2（有限ブロック容量不等式と境界効果の定式化）が `PROVED-LEAN` として完結した。
+
 
 ## 主なリスク
 

@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3218,
+   "lines": 3226,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27754,6 +27754,86 @@
    "hasReport": false
   },
   {
+   "name": "FiniteBlockCapacity",
+   "lines": 140,
+   "imports": [
+    "ShortPeriodicSupply",
+    "CanonicalSSFreeSupply",
+    "FiniteSeedPeriodicSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "potential_nonneg",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "potential_le_two",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "potential_diff_le_two",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "chargeSum_le_two",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "finite_block_capacity",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "finite_block_unsupplied_of_signSum_ge_three",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "finite_block_unsupplied_deficit",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "chargeSum_add",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "multiblock_composite_capacity",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_orbit_finite_block_capacity",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_orbit_unsupplied_of_drift",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_finite_block_capacity",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_unsupplied_of_drift",
+     "line": 135
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FiniteP2Semantics",
    "lines": 108,
    "imports": [
@@ -51972,6 +52052,6 @@
    "hasReport": false
   }
  ],
- "total": 448,
+ "total": 449,
  "withReport": 167
 }

@@ -3197,11 +3197,19 @@ import Recaman
 #print axioms Recaman.ExactOrbitNonperiodicity.canonical_orbit_not_eventual_low_ss_periodic
 #print axioms Recaman.ExactOrbitNonperiodicity.canonical_orbit_not_eventual_periodic_of_capacity_induction
 
-
-
-
-
-
+#print axioms Recaman.FiniteBlockCapacity.potential_nonneg
+#print axioms Recaman.FiniteBlockCapacity.potential_le_two
+#print axioms Recaman.FiniteBlockCapacity.potential_diff_le_two
+#print axioms Recaman.FiniteBlockCapacity.chargeSum_le_two
+#print axioms Recaman.FiniteBlockCapacity.finite_block_capacity
+#print axioms Recaman.FiniteBlockCapacity.finite_block_unsupplied_of_signSum_ge_three
+#print axioms Recaman.FiniteBlockCapacity.finite_block_unsupplied_deficit
+#print axioms Recaman.FiniteBlockCapacity.chargeSum_add
+#print axioms Recaman.FiniteBlockCapacity.multiblock_composite_capacity
+#print axioms Recaman.FiniteBlockCapacity.seeded_orbit_finite_block_capacity
+#print axioms Recaman.FiniteBlockCapacity.seeded_orbit_unsupplied_of_drift
+#print axioms Recaman.FiniteBlockCapacity.canonical_orbit_finite_block_capacity
+#print axioms Recaman.FiniteBlockCapacity.canonical_orbit_unsupplied_of_drift
 
 
 

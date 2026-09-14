@@ -1,3 +1,4 @@
+import Recaman.FiniteBlockCapacity
 import Recaman.ExactOrbitNonperiodicity
 import Recaman.GrandUniversalCapacityResolution
 import Recaman.GateT6CapacityInduction
