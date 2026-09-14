@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3002,
+   "lines": 3008,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -48133,6 +48133,44 @@
    "hasReport": false
   },
   {
+   "name": "TwentyFourGeometricGateT6Resolution",
+   "lines": 141,
+   "imports": [
+    "TightNonCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p24_geometric_gate_t6",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_size_three_to_nine_decomposition",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "p24_intermediate_lag7_must_cover_two",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_twenty_four_hierarchy",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_four_geometric_gate_t6_synthesis",
+     "line": 121
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyFourLagRigidity",
    "lines": 158,
    "imports": [
@@ -50639,6 +50677,6 @@
    "hasReport": false
   }
  ],
- "total": 422,
+ "total": 423,
  "withReport": 167
 }

@@ -2985,6 +2985,12 @@ import Recaman
 #print axioms Recaman.TightNonCollisionObstruction.tight_non_all_aas_survives
 #print axioms Recaman.TightNonCollisionObstruction.grand_tight_non_collision_obstruction_synthesis
 
+#print axioms Recaman.TwentyFourGeometricGateT6Resolution.p24_geometric_gate_t6
+#print axioms Recaman.TwentyFourGeometricGateT6Resolution.p24_size_three_to_nine_decomposition
+#print axioms Recaman.TwentyFourGeometricGateT6Resolution.p24_intermediate_lag7_must_cover_two
+#print axioms Recaman.TwentyFourGeometricGateT6Resolution.master_geometric_gate_t6_twenty_four_hierarchy
+#print axioms Recaman.TwentyFourGeometricGateT6Resolution.grand_twenty_four_geometric_gate_t6_synthesis
+
 
 
 
