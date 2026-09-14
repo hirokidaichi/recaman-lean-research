@@ -1,3 +1,6 @@
+import Recaman.TightAvoidingStructuralClassification
+import Recaman.QuantumLagSizeRigidity
+import Recaman.TwoLagSevenOverlapGeometry
 import Recaman.MasterGateT6GeometricResolution
 import Recaman.UniversalLagSevenCapacityBound
 import Recaman.UniversalLagThreeSevenTightDichotomy

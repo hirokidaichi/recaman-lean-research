@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3054,
+   "lines": 3082,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40740,6 +40740,79 @@
    "hasReport": true
   },
   {
+   "name": "QuantumLagSizeRigidity",
+   "lines": 164,
+   "imports": [
+    "TwoLagSevenOverlapGeometry"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "quantum_lag_capacity_containment",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_lag_level_bound",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_lag_j_upper_bound",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_lag_oversized_impossible",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k3",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k4",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k5",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k6",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k7",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k8",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "quantum_spectrum_k9",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_quantum_lag_size_rigidity_synthesis",
+     "line": 120
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "QuantumP2Arithmetic",
    "lines": 121,
    "imports": [
@@ -46687,6 +46760,45 @@
    "hasReport": false
   },
   {
+   "name": "TightAvoidingStructuralClassification",
+   "lines": 150,
+   "imports": [
+    "TwoLagSevenOverlapGeometry",
+    "QuantumLagSizeRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_trichotomy",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_case1_pure_aas",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_case2_impossible",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_case3_multi_lag7_rigidity",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_avoiding_structural_classification_synthesis",
+     "line": 112
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightBottleneckBound",
    "lines": 118,
    "imports": [
@@ -48835,6 +48947,59 @@
    "hasReport": false
   },
   {
+   "name": "TwoLagSevenOverlapGeometry",
+   "lines": 184,
+   "imports": [
+    "UniversalLagSevenCapacityBound"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "inclusion_exclusion",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_capacity_dichotomy",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_intersection_lower_bound",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_exact_overlap_four",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_exact_overlap_three",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_disjoint_obstruction",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_single_overlap_obstruction",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_two_lag7_overlap_synthesis",
+     "line": 143
+    }
+   ],
+   "theorems": 7,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -50922,6 +51087,6 @@
    "hasReport": false
   }
  ],
- "total": 428,
+ "total": 431,
  "withReport": 167
 }
