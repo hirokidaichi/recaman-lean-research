@@ -2885,6 +2885,16 @@ import Recaman
 #print axioms Recaman.UniversalMultiLagSeparation.tight_sext_two_lag7_complement_le_two
 #print axioms Recaman.UniversalMultiLagSeparation.grand_universal_multi_lag_separation_synthesis
 
+#print axioms Recaman.UniversalAASCoverageBound.universal_aas_coverage_lower_bound
+#print axioms Recaman.UniversalAASCoverageBound.universal_aas_coverage_ge_two
+#print axioms Recaman.UniversalAASCoverageBound.universal_aas_coverage_ge_three
+#print axioms Recaman.UniversalAASCoverageBound.universal_distant_aas_impossible
+#print axioms Recaman.UniversalAASCoverageBound.single_non_aas_coverage_forcing
+#print axioms Recaman.UniversalAASCoverageBound.two_non_aas_coverage_forcing
+#print axioms Recaman.UniversalAASCoverageBound.three_non_aas_coverage_forcing
+#print axioms Recaman.UniversalAASCoverageBound.four_non_aas_coverage_forcing
+#print axioms Recaman.UniversalAASCoverageBound.grand_universal_aas_coverage_bound_synthesis
+
 
 
 
