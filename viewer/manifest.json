@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3253,
+   "lines": 3274,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32854,6 +32854,124 @@
    "hasReport": false
   },
   {
+   "name": "LeastTailMinimumDynamics",
+   "lines": 318,
+   "imports": [
+    "LeastTailLedgerMinimum",
+    "CanonicalSSFreeSupply",
+    "DriftResetAccumulation",
+    "GlobalUnboundednessSupply",
+    "NoDoubleAdditionRun",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_first_canonicalSign",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_first_value",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_first_subSum",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_first_subCount",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_canonicalSign",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_value",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_subSum",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_subCount",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_first_ledger_identity",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_ledger_identity",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_gt_twice_time",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_quotient_ge_two",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_step3_cases",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_step3_gt_minimum",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_step3_subtraction_forces_step4_addition",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_step_before_addition_or_step3_addition",
+     "line": 207
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_forces_three_consecutive_additions",
+     "line": 232
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_forces_unsupplied_addition",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_incompatible_with_all_supplied",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_tail_ledger_unsupplied_deficit",
+     "line": 294
+    }
+   ],
+   "theorems": 20,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LevelTwoThree",
    "lines": 138,
    "imports": [
@@ -52297,6 +52415,6 @@
    "hasReport": false
   }
  ],
- "total": 452,
+ "total": 453,
  "withReport": 167
 }

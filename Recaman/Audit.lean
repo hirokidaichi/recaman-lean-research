@@ -3251,3 +3251,24 @@ import Recaman
 #print axioms Recaman.GlobalUnboundednessSupply.consecutive_additions_unsupplied_deficit
 #print axioms Recaman.GlobalUnboundednessSupply.three_consecutive_additions_unsupplied
 #print axioms Recaman.GlobalUnboundednessSupply.no_three_consecutive_additions_if_all_supplied
+
+#print axioms Recaman.tail_minimum_first_canonicalSign
+#print axioms Recaman.tail_minimum_first_value
+#print axioms Recaman.tail_minimum_first_subSum
+#print axioms Recaman.tail_minimum_first_subCount
+#print axioms Recaman.tail_minimum_followup_canonicalSign
+#print axioms Recaman.tail_minimum_followup_value
+#print axioms Recaman.tail_minimum_followup_subSum
+#print axioms Recaman.tail_minimum_followup_subCount
+#print axioms Recaman.tail_minimum_first_ledger_identity
+#print axioms Recaman.tail_minimum_followup_ledger_identity
+#print axioms Recaman.tail_minimum_followup_gt_twice_time
+#print axioms Recaman.tail_minimum_followup_quotient_ge_two
+#print axioms Recaman.tail_minimum_step3_cases
+#print axioms Recaman.tail_minimum_step3_gt_minimum
+#print axioms Recaman.tail_minimum_step3_subtraction_forces_step4_addition
+#print axioms Recaman.tail_minimum_step_before_addition_or_step3_addition
+#print axioms Recaman.tail_minimum_forces_three_consecutive_additions
+#print axioms Recaman.tail_minimum_forces_unsupplied_addition
+#print axioms Recaman.tail_minimum_incompatible_with_all_supplied
+#print axioms Recaman.least_missing_tail_ledger_unsupplied_deficit
