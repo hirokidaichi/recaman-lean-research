@@ -1,3 +1,4 @@
+import Recaman.UniversalLagSevenCapacityBound
 import Recaman.UniversalLagThreeSevenTightDichotomy
 import Recaman.UniversalGeometricGateT6Synthesis
 import Recaman.ArbitraryTightCollisionObstruction

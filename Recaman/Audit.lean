@@ -3018,6 +3018,14 @@ import Recaman
 #print axioms Recaman.UniversalLagThreeSevenTightDichotomy.tight_lag37_two_lag7_high_capacity_obstruction
 #print axioms Recaman.UniversalLagThreeSevenTightDichotomy.grand_universal_lag37_tight_dichotomy_synthesis
 
+#print axioms Recaman.UniversalLagSevenCapacityBound.lag7_collective_capacity_bound
+#print axioms Recaman.UniversalLagSevenCapacityBound.lag7_single_window_strict_impossibility
+#print axioms Recaman.UniversalLagSevenCapacityBound.lag7_two_windows_exact_capacity
+#print axioms Recaman.UniversalLagSevenCapacityBound.lag7_high_capacity_collective_obstruction
+#print axioms Recaman.UniversalLagSevenCapacityBound.lag7_mandatory_overlap_bound
+#print axioms Recaman.UniversalLagSevenCapacityBound.grand_universal_lag7_capacity_bound_synthesis
+
+
 
 
 

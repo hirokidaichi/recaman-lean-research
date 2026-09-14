@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3038,
+   "lines": 3046,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -50249,6 +50249,49 @@
    "hasReport": false
   },
   {
+   "name": "UniversalLagSevenCapacityBound",
+   "lines": 151,
+   "imports": [
+    "UniversalLagThreeSevenTightDichotomy"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lag7_collective_capacity_bound",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_single_window_strict_impossibility",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_two_windows_exact_capacity",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_high_capacity_collective_obstruction",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_mandatory_overlap_bound",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_lag7_capacity_bound_synthesis",
+     "line": 122
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalLagThreeSevenTightDichotomy",
    "lines": 173,
    "imports": [
@@ -50836,6 +50879,6 @@
    "hasReport": false
   }
  ],
- "total": 426,
+ "total": 427,
  "withReport": 167
 }
