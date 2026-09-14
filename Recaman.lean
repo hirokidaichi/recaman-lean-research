@@ -1,3 +1,6 @@
+import Recaman.MasterGateT6PureAASHierarchy
+import Recaman.ThreeLagSevenCapacityObstruction
+import Recaman.TightQuintuplePureAAS
 import Recaman.MasterGateT6TightAllAASClosure
 import Recaman.TwoLagSevenPhaseConflict
 import Recaman.LagSevenPrefixRigidity

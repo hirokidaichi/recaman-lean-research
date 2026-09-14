@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3113,
+   "lines": 3134,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32715,6 +32715,54 @@
    "hasReport": false
   },
   {
+   "name": "MasterGateT6PureAASHierarchy",
+   "lines": 152,
+   "imports": [
+    "ThreeLagSevenCapacityObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "hierarchy_size_three_pure_aas",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "hierarchy_size_four_pure_aas",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "hierarchy_size_five_pure_aas",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "hierarchy_pure_aas_zero_loss",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_intermediate_size_bound",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_intermediate_size_trichotomy",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_master_gate_t6_pure_aas_hierarchy_synthesis",
+     "line": 112
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "MasterGateT6TightAllAASClosure",
    "lines": 147,
    "imports": [
@@ -46678,6 +46726,44 @@
    "hasReport": false
   },
   {
+   "name": "ThreeLagSevenCapacityObstruction",
+   "lines": 124,
+   "imports": [
+    "TightQuintuplePureAAS"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_lag7_capacity_upper_bound",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "three_lag7_high_capacity_impossible",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "three_lag7_disjoint_impossible",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "three_lag7_mandatory_overlap",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_three_lag7_capacity_obstruction_synthesis",
+     "line": 97
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -47668,6 +47754,49 @@
     }
    ],
    "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TightQuintuplePureAAS",
+   "lines": 132,
+   "imports": [
+    "MasterGateT6TightAllAASClosure"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_lag7_pairwise_intersection_le_one",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_capacity_bound",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_three_lag7_impossible",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_pure_aas_inevitable",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quintuple_zero_loss_survival",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quintuple_pure_aas_synthesis",
+     "line": 103
+    }
+   ],
+   "theorems": 6,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -51299,6 +51428,6 @@
    "hasReport": false
   }
  ],
- "total": 435,
+ "total": 438,
  "withReport": 167
 }
