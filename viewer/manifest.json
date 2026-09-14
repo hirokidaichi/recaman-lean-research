@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3021,
+   "lines": 3029,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -50206,6 +50206,49 @@
    "hasReport": false
   },
   {
+   "name": "UniversalGeometricGateT6Synthesis",
+   "lines": 155,
+   "imports": [
+    "ArbitraryTightCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_geometric_gate_t6_survives",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_intermediate_size_upper_bound",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_intermediate_lag7_forcing",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_intermediate_single_lag7_impossible",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_universal_period_hierarchy",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_geometric_gate_t6_synthesis",
+     "line": 129
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalMultiLagSeparation",
    "lines": 137,
    "imports": [
@@ -50745,6 +50788,6 @@
    "hasReport": false
   }
  ],
- "total": 424,
+ "total": 425,
  "withReport": 167
 }

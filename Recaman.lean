@@ -1,3 +1,4 @@
+import Recaman.UniversalGeometricGateT6Synthesis
 import Recaman.ArbitraryTightCollisionObstruction
 import Recaman.TwentyFourGeometricGateT6Resolution
 import Recaman.TightNonCollisionObstruction
