@@ -1,3 +1,4 @@
+import Recaman.TightQuintCollisionObstruction
 import Recaman.GrandGeometricExclusionSynthesis
 import Recaman.UniversalAASCoverageBound
 import Recaman.UniversalMultiLagSeparation
