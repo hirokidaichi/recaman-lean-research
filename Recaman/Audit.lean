@@ -3025,6 +3025,14 @@ import Recaman
 #print axioms Recaman.UniversalLagSevenCapacityBound.lag7_mandatory_overlap_bound
 #print axioms Recaman.UniversalLagSevenCapacityBound.grand_universal_lag7_capacity_bound_synthesis
 
+#print axioms Recaman.MasterGateT6GeometricResolution.master_all_aas_survival
+#print axioms Recaman.MasterGateT6GeometricResolution.master_single_lag7_impossibility
+#print axioms Recaman.MasterGateT6GeometricResolution.master_collective_lag7_bound
+#print axioms Recaman.MasterGateT6GeometricResolution.master_disjoint_lag7_impossibility
+#print axioms Recaman.MasterGateT6GeometricResolution.master_period_hierarchy_classification
+#print axioms Recaman.MasterGateT6GeometricResolution.grand_master_gate_t6_geometric_resolution
+
+
 
 
 

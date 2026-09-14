@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3046,
+   "lines": 3054,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32556,6 +32556,49 @@
    "hasReport": false
   },
   {
+   "name": "MasterGateT6GeometricResolution",
+   "lines": 164,
+   "imports": [
+    "UniversalLagSevenCapacityBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "master_all_aas_survival",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "master_single_lag7_impossibility",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "master_collective_lag7_bound",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "master_disjoint_lag7_impossibility",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "master_period_hierarchy_classification",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_master_gate_t6_geometric_resolution",
+     "line": 134
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "MasterGeometricGateT6Resolution",
    "lines": 154,
    "imports": [
@@ -50879,6 +50922,6 @@
    "hasReport": false
   }
  ],
- "total": 427,
+ "total": 428,
  "withReport": 167
 }
