@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3082,
+   "lines": 3113,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -30452,6 +30452,54 @@
    "hasReport": false
   },
   {
+   "name": "LagSevenDistanceRigidity",
+   "lines": 134,
+   "imports": [
+    "TightAvoidingStructuralClassification"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lag7_offset_diff_bounds",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "cyclic_distance_ge_seven",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_distant_no_shared_phase",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_distant_pair_disjoint",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_distant_pair_union_ge_six",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_distant_pair_impossible",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_lag7_distance_rigidity_synthesis",
+     "line": 109
+    }
+   ],
+   "theorems": 6,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LagSevenNeighborhoodRigidity",
    "lines": 192,
    "imports": [
@@ -30530,6 +30578,74 @@
    ],
    "theorems": 11,
    "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "LagSevenPrefixRigidity",
+   "lines": 131,
+   "imports": [
+    "LagSevenDistanceRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "w1",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "w2",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "w3",
+     "line": 61
+    },
+    {
+     "kind": "def",
+     "name": "w4",
+     "line": 62
+    },
+    {
+     "kind": "def",
+     "name": "isP2Word",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_p2_words_classification",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_w3_w4_have_p2_prefix",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_w1_w2_no_p2_prefix",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_minimal_words_classification",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_minimal_lag7_must_be_w1_or_w2",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_lag7_prefix_rigidity_synthesis",
+     "line": 105
+    }
+   ],
+   "theorems": 6,
+   "defs": 5,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -32591,6 +32707,49 @@
      "kind": "theorem",
      "name": "grand_master_gate_t6_geometric_resolution",
      "line": 134
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "MasterGateT6TightAllAASClosure",
+   "lines": 147,
+   "imports": [
+    "TwoLagSevenPhaseConflict"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_lag7_zero_survives",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag7_one_impossible",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag7_two_impossible",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag7_zero_or_ge_three",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_small_pure_aas",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_master_gate_t6_tight_all_aas_closure",
+     "line": 116
     }
    ],
    "theorems": 6,
@@ -49000,6 +49159,59 @@
    "hasReport": false
   },
   {
+   "name": "TwoLagSevenPhaseConflict",
+   "lines": 166,
+   "imports": [
+    "LagSevenPrefixRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "w1_distinct_differences",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "w2_distinct_differences",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "same_word_intersection_le_one",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "same_word_union_ge_five",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "past_w1_w2_conflict",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "past_w2_w1_conflict",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_tight_subset_impossible",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_two_lag7_phase_conflict_synthesis",
+     "line": 135
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -51087,6 +51299,6 @@
    "hasReport": false
   }
  ],
- "total": 431,
+ "total": 435,
  "withReport": 167
 }

@@ -1,3 +1,7 @@
+import Recaman.MasterGateT6TightAllAASClosure
+import Recaman.TwoLagSevenPhaseConflict
+import Recaman.LagSevenPrefixRigidity
+import Recaman.LagSevenDistanceRigidity
 import Recaman.TightAvoidingStructuralClassification
 import Recaman.QuantumLagSizeRigidity
 import Recaman.TwoLagSevenOverlapGeometry
