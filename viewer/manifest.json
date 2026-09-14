@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3274,
+   "lines": 3293,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46482,6 +46482,112 @@
    "hasReport": false
   },
   {
+   "name": "TailDowncrossingLedger",
+   "lines": 310,
+   "imports": [
+    "LeastTailMinimumDynamics",
+    "LeastTailLedgerMinimum",
+    "LeastTailLedgerProvenance",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "subCount_mono",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_descent_barrier",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_lower_bound",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_result_ge_minimum",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_result_gt_minimum",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_prior_bound_sharp",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "addition_step_cannot_cross_below_twice",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_step_must_be_subtraction",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_prior_height_bounds",
+     "line": 169
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_subSum_increase",
+     "line": 180
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_subCount_increase",
+     "line": 189
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_value_bounds",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_ledger_corridor_reentry",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "quotient_zero_ephemeral_in_tail",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "no_double_subtraction_from_tail_escape",
+     "line": 248
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_subSum_ge_time",
+     "line": 259
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_subCount_gt_time",
+     "line": 273
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_tail_downcrossing_ledger_obstruction",
+     "line": 289
+    }
+   ],
+   "theorems": 18,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TailStartHorizonBound",
    "lines": 240,
    "imports": [
@@ -52415,6 +52521,6 @@
    "hasReport": false
   }
  ],
- "total": 453,
+ "total": 454,
  "withReport": 167
 }

@@ -3272,3 +3272,22 @@ import Recaman
 #print axioms Recaman.tail_minimum_forces_unsupplied_addition
 #print axioms Recaman.tail_minimum_incompatible_with_all_supplied
 #print axioms Recaman.least_missing_tail_ledger_unsupplied_deficit
+
+#print axioms Recaman.subCount_mono
+#print axioms Recaman.tail_descent_barrier
+#print axioms Recaman.tail_subtraction_lower_bound
+#print axioms Recaman.tail_subtraction_result_ge_minimum
+#print axioms Recaman.tail_subtraction_result_gt_minimum
+#print axioms Recaman.tail_subtraction_prior_bound_sharp
+#print axioms Recaman.addition_step_cannot_cross_below_twice
+#print axioms Recaman.downcrossing_step_must_be_subtraction
+#print axioms Recaman.downcrossing_prior_height_bounds
+#print axioms Recaman.downcrossing_subSum_increase
+#print axioms Recaman.downcrossing_subCount_increase
+#print axioms Recaman.tail_downcrossing_value_bounds
+#print axioms Recaman.tail_downcrossing_ledger_corridor_reentry
+#print axioms Recaman.quotient_zero_ephemeral_in_tail
+#print axioms Recaman.no_double_subtraction_from_tail_escape
+#print axioms Recaman.tail_downcrossing_subSum_ge_time
+#print axioms Recaman.tail_downcrossing_subCount_gt_time
+#print axioms Recaman.least_missing_tail_downcrossing_ledger_obstruction
