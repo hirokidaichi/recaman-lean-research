@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3029,
+   "lines": 3038,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -50249,6 +50249,54 @@
    "hasReport": false
   },
   {
+   "name": "UniversalLagThreeSevenTightDichotomy",
+   "lines": 173,
+   "imports": [
+    "UniversalGeometricGateT6Synthesis"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_all_aas_or_has_lag7",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_all_aas_avoids_s_star",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_all_aas_survives",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_single_lag7_must_cover_two",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_single_lag7_distance_obstruction",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag37_two_lag7_high_capacity_obstruction",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_lag37_tight_dichotomy_synthesis",
+     "line": 145
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalMultiLagSeparation",
    "lines": 137,
    "imports": [
@@ -50788,6 +50836,6 @@
    "hasReport": false
   }
  ],
- "total": 425,
+ "total": 426,
  "withReport": 167
 }
