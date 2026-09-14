@@ -19,6 +19,8 @@
 
 続いて、仮定された最小未到達数（least missing target $m$）の永久上方レジャー回廊（$a_t < t + m$, $q \le 1$, $2 \cdot \text{subSum}(t) + (m + 2) \le \text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$）における**回廊密度限界と供給障害（E-322、`Recaman.CorridorDensityObstruction`）** が形式化された。回廊内のレジャー制約から、減算数に対する線形下界 $t \le 4 \cdot \text{subCount}(t) + 2$（漸近減算密度 $\ge 1/4$）および二次上界 $2 \cdot \text{subCount}(t)(\text{subCount}(t) + 1) < t(t + 1)$（漸近減算密度 $\le 1/\sqrt{2} \approx 0.707$、加算密度 $\ge 0.293$）を厳密に導出し、回廊内の両符号の非退化性を確立した。さらに、Theme 1の非周期性定理（E-320）およびTheme 2の有限ブロック容量不等式（E-321）をこの回廊に直接射影し、回廊内軌道が最終低SS周期的またはGate T6帰納を満たす周期的符号パターンに入り得ないこと、回廊内の任意区間での供給加算数が減算数プラス2以下（$\text{suppliedCount} \le \text{subtractionCount} + 2$）に制限されること、および正ドリフト $\text{signSum} \ge 3$ を持つ回廊内区間が必ず未供給加算を含むことが Lean で厳密に証明された（`PROVED-LEAN`）。
 
+さらに、非周期的ストリームにおけるドリフトリセットと未供給加算の蓄積解析（**E-323、`Recaman.DriftResetAccumulation`**）が形式化された。未供給加算数 $\text{unsuppliedCount}(e, t, n) = \text{additionCount}(e, t, n) - \text{suppliedCount}(e, t, n)$ の厳密な非負性、隣接区間における完全加法性（`unsuppliedCount_add`）、および時間経過に対する単調非減少性（`unsuppliedCount_mono`）を証明した。これにより、区間間に負のドリフト（下降リセット）が介在しても過去に発生した未供給加算は一切消滅・返済されず、加法的に蓄積し続けることが保証される（`unsuppliedCount_two_blocks`）。さらに、ドリフト欠損下界 $\text{signSum} - 2 \le \text{unsuppliedCount}$ から、「全区間で未供給加算数が有界ならば正のドリフトも一様に有界（$\text{signSum} \le K + 2$）である」というドリフト有界性定理、および「任意に大きな正ドリフト excursion が存在するならば未供給加算数は非有界に発散する」という対偶的二分法を確立した。これらを標準Recamán列 $\text{canonicalSign}$ および回廊へ適用し、非周期的ストリームにおける大域的供給障害を確立した（`PROVED-LEAN`）。
+
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
 

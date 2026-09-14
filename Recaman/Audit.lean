@@ -3219,4 +3219,21 @@ import Recaman
 #print axioms Recaman.CorridorDensityObstruction.corridor_finite_block_capacity
 #print axioms Recaman.CorridorDensityObstruction.corridor_unsupplied_of_drift
 
-
+#print axioms Recaman.DriftResetAccumulation.suppliedCount_le_additionCount
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_eq
+#print axioms Recaman.DriftResetAccumulation.additionCount_add
+#print axioms Recaman.DriftResetAccumulation.subtractionCount_add
+#print axioms Recaman.DriftResetAccumulation.suppliedCount_add
+#print axioms Recaman.DriftResetAccumulation.signSum_add
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_add
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_mono
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_ge_signSum_sub_two
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_pos_of_signSum_ge_three
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_ge_of_signSum
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_two_blocks
+#print axioms Recaman.DriftResetAccumulation.unsuppliedCount_ge_two_of_two_drift_blocks
+#print axioms Recaman.DriftResetAccumulation.drift_le_of_unsupplied_le
+#print axioms Recaman.DriftResetAccumulation.exists_unsupplied_ge_of_exists_signSum_ge
+#print axioms Recaman.DriftResetAccumulation.canonical_unsuppliedCount_mono
+#print axioms Recaman.DriftResetAccumulation.canonical_unsuppliedCount_ge_drift
+#print axioms Recaman.DriftResetAccumulation.corridor_unsupplied_two_drift_blocks

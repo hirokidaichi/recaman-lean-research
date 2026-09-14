@@ -1092,6 +1092,19 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 5. テーマ2の有限ブロック容量不等式を回廊へ射影し、回廊内の任意有限区間で供給加算数が減算数プラス2以下（$\text{suppliedCount} \le \text{subtractionCount} + 2$）に制限されること、および正ドリフト $\text{signSum} \ge 3$ を持つ区間は必ず未供給加算を含むことを証明（`corridor_finite_block_capacity`, `corridor_unsupplied_of_drift`）。
 これにより、ポストIssue #73 の研究テーマ3（最小未到達数回廊の密度限界と供給障害）が `PROVED-LEAN` として完結した。
 
+## 2026-09-14: ドリフトリセットと未供給加算の蓄積解析の Lean 完結（E-323、テーマ4完了）
+
+非周期的ストリームにおけるドリフトリセットと未供給加算の蓄積解析を形式化した（E-323、`Recaman.DriftResetAccumulation`）。
+1. 供給加算数が全加算数を上回り得ないこと（`suppliedCount ≤ additionCount`）を証明し、未供給加算数 $\text{unsuppliedCount} = \text{additionCount} - \text{suppliedCount}$ を厳密に定義。
+2. 任意符号列に対する各計量（`additionCount`, `subtractionCount`, `suppliedCount`, `signSum`, `unsuppliedCount`）の隣接区間加法性（`_add` 補題群）を証明。
+3. 未供給加算数が時間に関して単調非減少（`unsuppliedCount_mono`）であることを証明。過去に発生した未供給加算は将来のいかなる事象（下降リセット等）によっても消滅しない。
+4. 任意の有限区間において $\text{signSum} - 2 \le \text{unsuppliedCount}$ となるドリフト欠損下界を証明（`unsuppliedCount_ge_signSum_sub_two`）。正ドリフト $\text{signSum} \ge 3$ は少なくとも $\text{signSum} - 2 \ge 1$ 個の未供給加算を不可避に生み出す。
+5. 任意の負ドリフト（下降リセット）区間を挟む2つの正ドリフト区間において、全体の未供給加算数が各区間の和以上に蓄積することを証明（`unsuppliedCount_two_blocks`, `unsuppliedCount_ge_two_of_two_drift_blocks`）。下降リセットが未供給負債を返済できないことを確立。
+6. 全区間で未供給加算数が $K$ 以下に抑えられているならば、正ドリフトも一様に $K + 2$ 以下に制限されるというドリフト有界性定理（`drift_le_of_unsupplied_le`）、および任意に大きなドリフト excursion の存在が未供給加算数の非有界発散を強制すること（`exists_unsupplied_ge_of_exists_signSum_ge`）を証明。
+7. これらを標準Recamán列 $\text{canonicalSign}$ および回廊へ適用（`canonical_unsuppliedCount_mono`, `canonical_unsuppliedCount_ge_drift`, `corridor_unsupplied_two_drift_blocks`）。
+これにより、ポストIssue #73 の研究テーマ4（ドリフトリセットと未供給加算の蓄積解析）が `PROVED-LEAN` として完結した。
+
+
 
 
 ## 主なリスク

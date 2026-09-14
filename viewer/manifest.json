@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3222,
+   "lines": 3239,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26297,6 +26297,117 @@
    "hasReport": true
   },
   {
+   "name": "DriftResetAccumulation",
+   "lines": 225,
+   "imports": [
+    "ShortPeriodicSupply",
+    "CanonicalSSFreeSupply",
+    "FiniteBlockCapacity",
+    "CorridorDensityObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "suppliedCount_le_additionCount",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "unsuppliedCount",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_eq",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "additionCount_add",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "subtractionCount_add",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "suppliedCount_add",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "signSum_add",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_add",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_mono",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_ge_signSum_sub_two",
+     "line": 139
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_pos_of_signSum_ge_three",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_ge_of_signSum",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_two_blocks",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "unsuppliedCount_ge_two_of_two_drift_blocks",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "drift_le_of_unsupplied_le",
+     "line": 189
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_unsupplied_ge_of_exists_signSum_ge",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_unsuppliedCount_mono",
+     "line": 207
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_unsuppliedCount_ge_drift",
+     "line": 212
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_unsupplied_two_drift_blocks",
+     "line": 219
+    }
+   ],
+   "theorems": 18,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "EarlyForcedCandidateClosure",
    "lines": 234,
    "imports": [
@@ -52105,6 +52216,6 @@
    "hasReport": false
   }
  ],
- "total": 450,
+ "total": 451,
  "withReport": 167
 }
