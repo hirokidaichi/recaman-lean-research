@@ -365,8 +365,76 @@
    "hasReport": false
   },
   {
+   "name": "ArbitraryTightCollisionObstruction",
+   "lines": 226,
+   "imports": [
+    "TwentyFourGeometricGateT6Resolution"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_complement_bound",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_single_window_coverage_lower_bound",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_lag7_coverage_bound",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_lag11_coverage_bound",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_lag15_coverage_bound",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_lag19_coverage_bound",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_lag4j_coverage_bound",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_single_lag7_impossible",
+     "line": 147
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_two_lag7_high_capacity_impossible",
+     "line": 161
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_tight_disjoint_lag7_impossible",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_arbitrary_tight_collision_obstruction_synthesis",
+     "line": 187
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Audit",
-   "lines": 3008,
+   "lines": 3021,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -50677,6 +50745,6 @@
    "hasReport": false
   }
  ],
- "total": 423,
+ "total": 424,
  "withReport": 167
 }
