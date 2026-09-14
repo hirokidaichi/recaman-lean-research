@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2988,
+   "lines": 3002,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46776,6 +46776,80 @@
    "hasReport": false
   },
   {
+   "name": "TightNonCollisionObstruction",
+   "lines": 255,
+   "imports": [
+    "TwentyTwoGeometricGateT6Resolution",
+    "GrandApexPeriodTwentyFourTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag7_complement_bound",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag11_complement_bound",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag15_complement_bound",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag19_complement_bound",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag7_must_cover_two_aas",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag11_must_cover_four_aas",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag15_must_cover_six_aas",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_lag19_must_cover_eight_aas",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_single_lag7_impossible_of_distance",
+     "line": 156
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_two_lag7_high_capacity_impossible",
+     "line": 168
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_non_all_aas_survives",
+     "line": 180
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_non_collision_obstruction_synthesis",
+     "line": 207
+    }
+   ],
+   "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightOctCollisionObstruction",
    "lines": 209,
    "imports": [
@@ -50565,6 +50639,6 @@
    "hasReport": false
   }
  ],
- "total": 421,
+ "total": 422,
  "withReport": 167
 }
