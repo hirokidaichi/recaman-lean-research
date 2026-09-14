@@ -1,3 +1,4 @@
+import Recaman.SixteenGeometricGateT6Resolution
 import Recaman.TightQuintCollisionObstruction
 import Recaman.GrandGeometricExclusionSynthesis
 import Recaman.UniversalAASCoverageBound
