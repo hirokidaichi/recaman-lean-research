@@ -3168,6 +3168,14 @@ import Recaman
 #print axioms Recaman.UniversalQuantumTightObstruction.two_quantum_universal_impossible
 #print axioms Recaman.UniversalQuantumTightObstruction.grand_universal_quantum_tight_obstruction_synthesis
 
+#print axioms Recaman.GrandUniversalGateT6Resolution.tight_subset_pure_aas_inevitable
+#print axioms Recaman.GrandUniversalGateT6Resolution.pure_aas_avoids_donated_subtraction
+#print axioms Recaman.GrandUniversalGateT6Resolution.pure_aas_zero_loss_survival
+#print axioms Recaman.GrandUniversalGateT6Resolution.slack_subset_hall_survival
+#print axioms Recaman.GrandUniversalGateT6Resolution.sublist_hall_dichotomy
+#print axioms Recaman.GrandUniversalGateT6Resolution.grand_universal_gate_t6_resolution
+
+
 
 
 

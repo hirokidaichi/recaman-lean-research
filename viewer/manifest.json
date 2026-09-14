@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3192,
+   "lines": 3200,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28987,6 +28987,49 @@
    "hasReport": false
   },
   {
+   "name": "GrandUniversalGateT6Resolution",
+   "lines": 96,
+   "imports": [
+    "UniversalQuantumTightObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_subset_pure_aas_inevitable",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "pure_aas_avoids_donated_subtraction",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "pure_aas_zero_loss_survival",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "slack_subset_hall_survival",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "sublist_hall_dichotomy",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_gate_t6_resolution",
+     "line": 69
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HallRobustnessTheorem",
    "lines": 206,
    "imports": [
@@ -51774,6 +51817,6 @@
    "hasReport": false
   }
  ],
- "total": 444,
+ "total": 445,
  "withReport": 167
 }
