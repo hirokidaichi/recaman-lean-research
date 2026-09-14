@@ -3162,6 +3162,13 @@ import Recaman
 #print axioms Recaman.UniversalGateT6PureAASChain.universal_period_hierarchy_pure_aas
 #print axioms Recaman.UniversalGateT6PureAASChain.grand_universal_gate_t6_pure_aas_chain_synthesis
 
+#print axioms Recaman.UniversalQuantumTightObstruction.single_quantum_coverage_bound
+#print axioms Recaman.UniversalQuantumTightObstruction.single_quantum_universal_impossible
+#print axioms Recaman.UniversalQuantumTightObstruction.two_quantum_high_lag_impossible
+#print axioms Recaman.UniversalQuantumTightObstruction.two_quantum_universal_impossible
+#print axioms Recaman.UniversalQuantumTightObstruction.grand_universal_quantum_tight_obstruction_synthesis
+
+
 
 
 

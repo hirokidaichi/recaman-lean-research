@@ -1,3 +1,4 @@
+import Recaman.UniversalQuantumTightObstruction
 import Recaman.UniversalGateT6PureAASChain
 import Recaman.TightSeptuplePureAAS
 import Recaman.TightSextuplePureAAS

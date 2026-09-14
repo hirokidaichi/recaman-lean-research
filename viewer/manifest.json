@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3185,
+   "lines": 3192,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -51307,6 +51307,45 @@
    "hasReport": false
   },
   {
+   "name": "UniversalQuantumTightObstruction",
+   "lines": 126,
+   "imports": [
+    "UniversalGateT6PureAASChain",
+    "ArbitraryTightCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "single_quantum_coverage_bound",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "single_quantum_universal_impossible",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "two_quantum_high_lag_impossible",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "two_quantum_universal_impossible",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_quantum_tight_obstruction_synthesis",
+     "line": 97
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalQuantumWindowCapacity",
    "lines": 164,
    "imports": [
@@ -51735,6 +51774,6 @@
    "hasReport": false
   }
  ],
- "total": 443,
+ "total": 444,
  "withReport": 167
 }
