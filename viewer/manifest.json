@@ -366,7 +366,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2893,
+   "lines": 2988,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -26494,6 +26494,44 @@
    "hasReport": false
   },
   {
+   "name": "EighteenGeometricGateT6Resolution",
+   "lines": 130,
+   "imports": [
+    "TightSextCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p18_geometric_gate_t6",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_size_three_to_six_decomposition",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "p18_intermediate_lag7_must_cover_two",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_eighteen_hierarchy",
+     "line": 106
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_eighteen_geometric_gate_t6_synthesis",
+     "line": 113
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "EighteenLagRigidity",
    "lines": 152,
    "imports": [
@@ -28634,6 +28672,69 @@
      "kind": "theorem",
      "name": "grand_apex_period_twenty_two_synthesis",
      "line": 250
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "GrandGeometricExclusionSynthesis",
+   "lines": 203,
+   "imports": [
+    "UniversalAASCoverageBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lag7_distinct_endpoints_impossible",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "single_lag7_tight_subset_impossible",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "multi_window_capacity_contradiction",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_high_capacity_impossible",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "three_lag7_high_capacity_impossible",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "disjoint_lag7_windows_impossible",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_overlap_four_exact_coverage",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_overlap_four_uncovered_exact",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "two_lag7_uncovered_donor_survival",
+     "line": 167
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_geometric_exclusion_synthesis",
+     "line": 174
     }
    ],
    "theorems": 10,
@@ -44134,6 +44235,44 @@
    "hasReport": false
   },
   {
+   "name": "SixteenGeometricGateT6Resolution",
+   "lines": 127,
+   "imports": [
+    "TightQuintCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p16_geometric_gate_t6",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_size_three_to_five_decomposition",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "p16_intermediate_lag7_must_cover_two",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_sixteen_hierarchy",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_sixteen_geometric_gate_t6_synthesis",
+     "line": 110
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SixteenLagRigidity",
    "lines": 148,
    "imports": [
@@ -46637,6 +46776,70 @@
    "hasReport": false
   },
   {
+   "name": "TightOctCollisionObstruction",
+   "lines": 209,
+   "imports": [
+    "TwentyGeometricGateT6Resolution",
+    "GrandApexPeriodTwentyTwoTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag7_complement_bound",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag11_complement_bound",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag15_complement_bound",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag7_must_cover_two_aas",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag11_must_cover_four_aas",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_lag15_must_cover_six_aas",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_single_lag7_impossible_of_distance",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_two_lag7_high_capacity_impossible",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_oct_all_aas_survives",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_oct_collision_obstruction_synthesis",
+     "line": 180
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightP2ParityRigidity",
    "lines": 141,
    "imports": [
@@ -46955,6 +47158,65 @@
    "hasReport": false
   },
   {
+   "name": "TightQuintCollisionObstruction",
+   "lines": 205,
+   "imports": [
+    "GrandGeometricExclusionSynthesis",
+    "SixteenGateT6Unconditional"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_quint_lag7_complement_bound",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_lag11_complement_bound",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_lag7_must_cover_two_aas",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_lag11_covers_all_four_aas",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_pairwise_distant_cannot_cover_pair",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_single_lag7_impossible_of_distance",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_two_lag7_high_capacity_impossible",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quint_all_aas_survives",
+     "line": 156
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quint_collision_obstruction_synthesis",
+     "line": 182
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightSSZeroRigidity",
    "lines": 100,
    "imports": [
@@ -47003,6 +47265,129 @@
     }
    ],
    "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TightSeptCollisionObstruction",
+   "lines": 207,
+   "imports": [
+    "EighteenGeometricGateT6Resolution",
+    "GrandApexPeriodTwentyTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag7_complement_bound",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag11_complement_bound",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag15_complement_bound",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag7_must_cover_two_aas",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag11_must_cover_four_aas",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_lag15_must_cover_six_aas",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_single_lag7_impossible_of_distance",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_two_lag7_high_capacity_impossible",
+     "line": 139
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sept_all_aas_survives",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_sept_collision_obstruction_synthesis",
+     "line": 178
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TightSextCollisionObstruction",
+   "lines": 225,
+   "imports": [
+    "SixteenGeometricGateT6Resolution",
+    "GrandApexPeriodEighteenTheorem"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_sext_lag7_complement_bound",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_lag11_complement_bound",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_lag7_must_cover_two_aas",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_lag11_must_cover_four_aas",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_pairwise_distant_cannot_cover_pair",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_single_lag7_impossible_of_distance",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_two_lag7_high_capacity_impossible",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_sext_all_aas_survives",
+     "line": 175
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_sext_collision_obstruction_synthesis",
+     "line": 202
+    }
+   ],
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -47883,6 +48268,44 @@
    "hasReport": false
   },
   {
+   "name": "TwentyGeometricGateT6Resolution",
+   "lines": 133,
+   "imports": [
+    "TightSeptCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p20_geometric_gate_t6",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_size_three_to_seven_decomposition",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "p20_intermediate_lag7_must_cover_two",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_twenty_hierarchy",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_geometric_gate_t6_synthesis",
+     "line": 116
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwentyLagRigidity",
    "lines": 135,
    "imports": [
@@ -48083,6 +48506,44 @@
     }
    ],
    "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TwentyTwoGeometricGateT6Resolution",
+   "lines": 138,
+   "imports": [
+    "TightOctCollisionObstruction"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "p22_geometric_gate_t6",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_size_three_to_eight_decomposition",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "p22_intermediate_lag7_must_cover_two",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "master_geometric_gate_t6_twenty_two_hierarchy",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_twenty_two_geometric_gate_t6_synthesis",
+     "line": 118
+    }
+   ],
+   "theorems": 5,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -49160,6 +49621,64 @@
    "hasReport": true
   },
   {
+   "name": "UniversalAASCoverageBound",
+   "lines": 163,
+   "imports": [
+    "UniversalMultiLagSeparation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "universal_aas_coverage_lower_bound",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_aas_coverage_ge_two",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_aas_coverage_ge_three",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "universal_distant_aas_impossible",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "single_non_aas_coverage_forcing",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "two_non_aas_coverage_forcing",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "three_non_aas_coverage_forcing",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "four_non_aas_coverage_forcing",
+     "line": 143
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_universal_aas_coverage_bound_synthesis",
+     "line": 153
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UniversalAASLagSeparation",
    "lines": 148,
    "imports": [
@@ -50046,6 +50565,6 @@
    "hasReport": false
   }
  ],
- "total": 411,
+ "total": 421,
  "withReport": 167
 }
