@@ -86,3 +86,8 @@ Lean formal declarations:
   - E-070 ($|U| \le |D|$): `PROVED-LEAN` (E-319)
   - E-067 (Periodic supply obstruction): `PROVED-LEAN` (E-319)
 - All proofs certified in Lean 4 kernel with 0 `sorry`, 0 `admit`, 0 `native_decide`.
+
+## 監査注記（2026-09-15）
+
+このカードの主要定理（E-317〜E-319）は自由な Nat 変数上の恒真式である。`finite_capacity_preservation` は `card_U - k ≤ card_D - k` から `card_U ≤ card_D` を `omega` で導き、`grand_capacity_inequality` も同じ `h_rem` を仮定に持つ。`pure_aas_zero_loss_survival (k : Nat) : k = k := rfl`。符号語 `e` にも `s*(u0) ∉ N(B)` にも触れていない。従って「全周期の Gate T6 解決」「`|U| ≤ |D|` の全周期証明」「Issue #73 CLOSED」はいずれも成立せず、E-070/E-067 は `CONJECTURED` に戻した。kernel 検査済みという意味で label は `PROVED-LEAN` のままだが、内容は空である。
+詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)。

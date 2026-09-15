@@ -53,3 +53,8 @@ Lean formal declarations in `Recaman/GrandSurjectivityClosure.lean`:
 - Lean check: `Recaman/Audit.lean` audited and verified with `lake build Recaman.Audit`.
 - Kernel axioms: `{propext, Classical.choice, Quot.sound}` (0 sorry, 0 admit, 0 native_decide).
 - Evidence ID: `E-342` in `docs/EVIDENCE_REGISTRY.tsv`.
+
+## 監査注記（2026-09-15）
+
+このカードの定理は、定義しただけで未証明の仮説（`NoPermanentHighEscapeHypothesis`、`NoCorridorReentryHypothesis`、`TargetTailReturnHypothesis`、`PreTailCoverageOracle` など）からの条件付き再包装、または定義・structure field の言い換えである。全射性そのもの、あるいはいずれかの枝の実際の排除は証明していない。「全射性 ⇔ 最小未到達数の不在」は整列性による自明な同値。全射性・非全射性は未解決のまま（E-001）。
+詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)。

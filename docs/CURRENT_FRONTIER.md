@@ -8,10 +8,35 @@
 
 ## 結論
 
+### 監査による訂正（2026-09-15）
+
+2026-09-14〜15 に登録された E-317〜E-319（Gate T6 全周期解決・`|U| ≤ |D|`）と E-338〜E-342（全射性閉包）を
+Lean ソースで監査した結果、以下を訂正する（[監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+
+- **E-317/E-318/E-319 の主要定理は自由な Nat 変数上の恒真式**である。例：E-318 `finite_capacity_preservation` は
+  `card_U - k ≤ card_D - k`（＝結論）から `card_U ≤ card_D` を `omega` で導く。E-317 は
+  `pure_aas_zero_loss_survival (k : Nat) : k = k := rfl`、`tight_subset_pure_aas_inevitable (m) (h : 1 ≤ m → False) : m = 0`。
+  符号語 `e : Int → Bool` にも Gate T6 の対象（`s*(u0) ∉ N(B)`）にも触れていない。
+  従って **E-070・E-067 は `CONJECTURED` に戻し、Issue #73 は OPEN のまま**（GitHub 上でも閉じられていない）。
+  Gate T6 の無条件 Lean 証明は p ≤ 10（E-230/E-231）まで。
+- **E-338〜E-342 は条件付き足場**である。全射性は、定義しただけで未証明の `NoPermanentHighEscapeHypothesis` と
+  `NoCorridorReentryHypothesis` からしか導かれていない。「全射性 ⇔ 最小未到達数の不在」は整列性による自明な同値で、
+  「枝の排除」は定義の言い換え（下向横断があれば `PermanentHighEscape` が偽、structure field の射影）に過ぎない。
+  しかも `NoCorridorReentryHypothesis` は最小未到達数の尾部に下向横断が一つもないことを要求するため、
+  非全射なら偽であり、この reduction は全射性そのものと同値である。**全射性・非全射性は未解決のまま**（E-001、`CONJECTURED`）。
+- E-320 のうち `*_of_capacity_induction` 系は容量不等式を仮定に持つ条件付き。無条件なのは low-SS 版
+  （E-128 と E-065 の合成）のみ。E-321 の `suppliedCount` は lag ≤ 7 の短い供給（E-071 の有限ブロック版）であり、
+  全 lag の P2 供給ではない。
+- E-232〜E-337 の各モジュールの実質は監査報告の表を参照。新規実内容を持つのは E-232（p ≤ 11, |U| ≤ 3）、E-240（周期 18 の lag-3 強制反証）、
+  E-267（近傍の singleton 分解）、E-276（lag 7 窓の AAS 端点被覆は距離 ≤ 6）、E-311（lag 7 窓の stream 距離 ≥ 5）、E-321、E-330/E-331 の局所補題程度で、
+  永久高値 regime `∀ n ≥ N, 2n ≤ a n` は一度も否定されていない。監査自体は E-343（`STOPPED`）として登録した。
+
+以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
+
 2026-09-14に、Issue #73 の中核であった **Gate T6（高SS窓からの局所減算供出）が無条件に完全解決（PROVED-LEAN）** された（E-308〜E-318）。
 緊密回避部分集合において量子窓（lag ≥ 7）の存在が鎖型包除原理と容量上界の矛盾（$|W| \ge 2m + 1 > 2m$）により完全に排除され、全緊密部分集合が純AAS（$m = 0$）に強制されることが証明された。
 純AAS部分集合はSS=2窓の内部供出減算相 $s^*(u_0)$ を厳密に回避（$s^*(u_0) \notin N(B)$）するためゼロ欠損（$\Delta = 0$）で生存し、slack部分集合（$|N(B)| \ge |B| + 1$）も1要素削除に耐える。
-さらにGate T6減算供出の帰納法（E-318）と低SS基底容量（E-128）の統合（E-319、`GrandUniversalCapacityResolution`）により、**大域容量不等式 `|U| ≤ |D|`（E-070）** および **正符号和周期語のP2供給障害 `|U| < |A|`（E-067）** が全周期・全lagで無条件に Lean 証明（`PROVED-LEAN`）され、**Issue #73 は正式に CLOSED** となった。
+さらにGate T6減算供出の帰納法（E-318）と低SS基底容量（E-128）の統合（E-319、`GrandUniversalCapacityResolution`）により、**大域容量不等式 `|U| ≤ |D|`（E-070）** および **正符号和周期語のP2供給障害 `|U| < |A|`（E-067）** が全周期・全lagで無条件に Lean 証明された、と登録された。**2026-09-15 の監査で E-317〜E-319 は恒真式と判明し、E-070/E-067 は `CONJECTURED` へ戻し、Issue #73 は OPEN のまま**（上の訂正を参照）。
 
 続いて、E-065（有限初期状態からの正周期質量供給）とE-067（正符号和周期語の容量障害）を架橋し、**厳密軌道の非周期性合成定理（E-320、`Recaman.ExactOrbitNonperiodicity`）** が形式化された。後退周期質量と前進符号和の同値性（`signSum e 0 p = mass (past e 0 p)`）を確立し、任意の有限シード軌道および標準Recamán軌道（$a_0 = 0$）が最終周期的な低SS符号パターンまたはGate T6帰納を満たす周期符号パターンに入り得ないことが Lean で厳密に証明された（`PROVED-LEAN`）。
 
@@ -236,7 +261,7 @@ kernel上は通るがE-067/E-070/T4のいずれも動かさない。**独立し�
 実際に開いているunitとしてT6（E-179）を名指しした**。従って次のgateはT6のまま据え置き、
 合成lemmaを先に積まない。却下15件の衝突理由はtriageに記録した（再提案防止）。
 
-Gate T6、E-067、E-070はPROVED-LEANとして完全解決され、Issue #73は正式にCLOSED。全射性／非全射性は未解決のまま。active direct branch は0本。
+Gate T6 の無条件 Lean 証明は p≤10（E-230/E-231）まで。E-067・E-070 は `CONJECTURED`（2026-09-15 の監査で E-319 の恒真式性が判明し差し戻し、[監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。Issue #73 は OPEN。全射性／非全射性は未解決のまま。active direct branch は0本。
 
 続く [SS=2 先頭 run](HYPOTHESIS_CARD_2026-09-10_TWO_SS_OLDEST_S.md) で、境界例を通る共通履歴を Lean 証明した（E-132）。
 最小 P2 で lag>3 なら先頭 AAS は禁止。先頭 A run が a≥3 なら、同じ run の時刻 `t-(a-2)` が

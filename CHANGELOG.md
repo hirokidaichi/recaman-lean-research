@@ -1,5 +1,16 @@
 # Changelog
 
+## Audit: the "grand synthesis" rows E-317..E-319 and E-338..E-342 — 2026-09-15
+
+- E-317/E-318/E-319（Gate T6 全周期解決・`|U|≤|D|`・Issue #73 CLOSED）の主要定理は自由な Nat 変数上の恒真式
+  （`card_U - k ≤ card_D - k` ⇒ `card_U ≤ card_D`、`k = k := rfl`）で符号語に触れない。E-070/E-067 を `CONJECTURED` に戻し、
+  #73 は OPEN のまま。Gate T6 の無条件 Lean 証明は p≤10（E-230/E-231）まで
+- E-338..E-342（全射性閉包）は未証明の定義済み仮説 `NoPermanentHighEscapeHypothesis`・`NoCorridorReentryHypothesis`
+  からの条件付き再包装。全射性・非全射性は未解決のまま
+- E-320 の `*_of_capacity_induction` 系は条件付き、E-321 の供給は lag≤7 の短い供給（E-071 の有限ブロック版）
+- 該当 registry 行の claim に監査注記を付け、E-343（`STOPPED`）として監査自体を登録。
+  [監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)
+
 ## Issue 73: the extremal boundary of the capacity inequality — 2026-09-11
 
 - `|U|≤|D|` は全周期で sharp（`E-176`）。等号語の最小供給窓はすべて SS≤1（`E-177`）なので、

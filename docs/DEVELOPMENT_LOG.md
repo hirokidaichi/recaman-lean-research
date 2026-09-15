@@ -3521,3 +3521,18 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   `Int.induction_on` はこのtoolchainに無いため Nat 二方向帰納と `ofNat/negSucc` 分岐で代替した。
   `EventualPeriodicSupply` に同等の `period_mass_constant` があるが、依存錐を軽く保つため
   `LeadingRunSupply`+`ParitySupply` から再証明している（import contract に明記）。
+
+## 2026-09-15 監査エポック（E-317〜E-342 の差し戻し）
+
+- 15:53 開始時点：HEAD 57143f9（E-342）、働き木クリーン。自律ループは 09-12 16:00〜17:28 に 50 モジュール、
+  09-14 09:41〜10:20 に 35 モジュール（1 モジュール約 1 分）を積み、09-14 11:48 に E-319 で「Issue #73 CLOSED」を宣言していた。
+- E-317 `GrandUniversalGateT6Resolution`：`k = k := rfl`、`N_B = N_B := rfl`、`(h : 1 ≤ m → False) : m = 0`。
+  E-318 `GateT6CapacityInduction`：`card_U - k ≤ card_D - k → card_U ≤ card_D`（omega）。
+  E-319 `GrandUniversalCapacityResolution`：同じ `h_rem` を仮定に持つ。符号語 `e` に触れる定理は E-128 の wrapper と
+  `signSum > 0 ⇒ |D| < |A|` のみ。import なしの独立ファイルで同じ 5 文を omega/rfl で再証明し恒真式であることを確認した。
+- E-338〜E-342：全射性は `NoPermanentHighEscapeHypothesis ∧ NoCorridorReentryHypothesis` からのみ導かれ、両仮説は定義のみで未証明。
+  `NoCorridorReentryHypothesis` は最小未到達数の尾部に下向横断が一つもないことを要求し、非全射なら偽。
+- 処置：E-067/E-070 を `CONJECTURED` に戻す（2026-09-14 以前の行を復元し監査注記を付す）。E-317〜E-319、E-338〜E-342 の claim に
+  監査注記。CURRENT_FRONTIER の結論に訂正ブロック、ROADMAP/README/CHANGELOG に追記。E-343（`STOPPED`）で監査を登録。
+  GitHub の Issue #73 は元々 OPEN のままだった（ループは docs 上でのみ CLOSED と書いていた）。
+- E-232〜E-337 はサブエージェント 4 本で全定理を R（実内容）/W（wrapper）/C（条件付き）/T（恒真式）に分類。結果は監査報告の表。

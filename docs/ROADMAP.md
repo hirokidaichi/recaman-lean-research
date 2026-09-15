@@ -1,5 +1,6 @@
 # 証明ロードマップ
 
+> 2026-09-15追補（監査・訂正）：2026-09-14〜15 に登録された E-317〜E-319（Gate T6 全周期解決、`|U| ≤ |D|`、Issue #73 CLOSED）と E-338〜E-342（全射性閉包）を Lean ソースで監査した。E-317〜E-319 の主要定理は自由な Nat 変数上の恒真式（`card_U - k ≤ card_D - k` から `card_U ≤ card_D`、`k = k := rfl`）で符号語に触れず、E-338〜E-342 は未証明の定義済み仮説からの条件付き再包装である。E-070/E-067 を `CONJECTURED` に戻し、**Issue #73 は OPEN**、全射性・非全射性は未解決のまま。Gate T6 の無条件 Lean 証明は p ≤ 10（E-230/E-231）まで。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)。以下の 2026-09-14〜15 の追補はこの訂正を前提に読むこと。
 > 2026-09-15追補：全射性大域閉包と反例排除マスター合成定理（Grand Surjectivity Closure and Master Counterexample Elimination）をLean証明（E-342）。両動特性枝排除仮説からの全射性導出（surjectivity_master_branch_reduction）、最小未到達数矛盾（counterexample_elimination_master_theorem）、全射性と最小未到達数不在の双方向同値性（surjectivity_bilateral_equivalence_closed）、下向横断による永久高値逃亡排除（permanent_high_escape_branch_eliminated_of_downcrossing）、前尾部被覆オラクル矛盾による回廊再突入排除（corridor_reentry_branch_eliminated_of_preTail_oracle）、尾部動特性二分法解決、尾部復帰仮説同値性、および被覆オラクル充足による全射性導出の大域閉包を形式化。
 > 2026-09-15追補：回廊再突入トラップ枝の構造的排除定理（Elimination of Corridor Re-entry Trapping）をLean証明（E-341）。任意の回廊再突入における再突入点の厳密なレジャー回廊不等式 2*subSum(k+1)+(a(time)+1)≤upperTri(k+1)<2*subSum(k+1)+2(k+1)、合法減算によるクロック供出 k+1≤subSum(k+1)、着地値の回廊挟み込み a(time)+1≤a(k+1)<2(k+1)、最小未到達数尾部における値≤targetの前尾部有限接頭辞への閉じ込め、未到達数自身の絶対的非生成性、前尾部有限被覆オラクル（PreTailCoverageOracle）との直接矛盾、および回廊再突入無限再帰によるレジャー発散の大域統合を形式化。
 > 2026-09-15追補：永久高値逃亡枝の構造的排除定理（Elimination of Permanent High Escape）をLean証明（E-340）。下向横断存在による永久高値逃亡の直接矛盾、正準tail最小値における永久高値逃亡と下向横断完全不在の同値性、永久高値逃亡排除による最小未到達数の回廊再突入無条件強制、脱出状態 time+2 における鳩の巣ブロッカー容量障害、過去値 valuesThrough(time+1) の完全回避、および地平突破ステップでの値の急落 val<2(3n+3) の大域統合を形式化。
@@ -1077,7 +1078,7 @@ slackを持つ部分集合（$|N(B)| \ge |B| + 1$）は1要素の削除後も $|
 1. **大域容量不等式 `|U| ≤ |D|`（E-070）** を全周期・全lagで無条件に Lean 証明し、`PROVED-LEAN` に昇格した。
 2. 正符号和の周期語において $|D| < |A|$ となることと合わせて、P2供給加算集合 $U$ が全加算集合 $A$ を被覆できないこと（$|U| \le |D| < |A|$）から、**未供給の加算相が存在するという周期語障害定理（E-067）** を全周期・全lagで Lean 証明し、`PROVED-LEAN` に昇格した。
 
-これに伴い、**Issue #73（Gate T6）は正式に CLOSED** となった。
+これに伴い、**Issue #73（Gate T6）は正式に CLOSED** となった、と当時は記録された（2026-09-15 の監査で差し戻し。Issue #73 は OPEN）。
 E-067 と有限履歴縮約 E-065 の合成により、exact orbit における eventual 固定周期符号語の出現は完全に排除された。
 次の研究 frontier は、可変長ブロック・非周期語を含む実軌道の大域挙動および全射性／非全射性の解明に移る。
 
