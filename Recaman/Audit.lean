@@ -3370,3 +3370,13 @@ import Recaman
 #print axioms Recaman.toothcomb_no_historical_blocker_under_ceiling
 #print axioms Recaman.toothcomb_candidate_avoids_all_past_history
 #print axioms Recaman.grand_permanent_high_history_exhaustion_synthesis
+
+#print axioms Recaman.toothcomb_candidate_gt_two_n
+#print axioms Recaman.toothcomb_blocker_ne_zero
+#print axioms Recaman.toothcomb_blocker_ne_one
+#print axioms Recaman.toothcomb_candidates_nodup
+#print axioms Recaman.toothcomb_not_all_blocked_by_history
+#print axioms Recaman.toothcomb_exists_unblocked_candidate
+#print axioms Recaman.toothcomb_unblocked_candidate_avoids_valuesThrough
+#print axioms Recaman.grand_permanent_high_blocker_capacity_synthesis
+

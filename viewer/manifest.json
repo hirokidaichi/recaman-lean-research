@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3372,
+   "lines": 3382,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40740,6 +40740,121 @@
    "hasReport": true
   },
   {
+   "name": "PermanentHighBlockerCapacity",
+   "lines": 243,
+   "imports": [
+    "PermanentHighToothcombBound",
+    "PermanentHighHistoryExhaustion",
+    "LagElevenPeriodic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_gt_two_n",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_pos",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "a_zero_eq_zero",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_ne_a_zero",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_ne_zero",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "a_one_eq_one",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_ne_a_one",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_ne_one",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidates_length",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidates_nodup",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_toothcomb_candidates_iff",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "historical_nonzero_values_length",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_not_all_blocked_by_history",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_exists_unblocked_candidate",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_unblocked_candidate_avoids_valuesThrough",
+     "line": 172
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_gt_base",
+     "line": 182
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_ne_base",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_unblocked_candidate_avoids_prior_subtractions",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_unblocked_candidate_avoids_additions",
+     "line": 200
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_blocker_capacity_synthesis",
+     "line": 214
+    }
+   ],
+   "theorems": 20,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighCollision",
    "lines": 235,
    "imports": [
@@ -53000,6 +53115,6 @@
    "hasReport": false
   }
  ],
- "total": 461,
+ "total": 462,
  "withReport": 167
 }

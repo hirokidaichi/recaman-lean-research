@@ -1,3 +1,4 @@
+import Recaman.PermanentHighBlockerCapacity
 import Recaman.PermanentHighHistoryExhaustion
 import Recaman.PermanentHighToothcombBound
 import Recaman.PermanentHighToothcombDescent
