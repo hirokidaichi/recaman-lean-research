@@ -3446,3 +3446,17 @@ import Recaman
 #print axioms Recaman.surjectivity_target_tail_return_equivalence
 #print axioms Recaman.surjective_of_all_coverageOracles
 #print axioms Recaman.grand_surjectivity_closure_synthesis
+
+#print axioms Recaman.candidate_subtraction_lower_bound
+#print axioms Recaman.candidate_subtraction_gt_upperTri
+#print axioms Recaman.pre_horizon_value_le_upperTri
+#print axioms Recaman.pre_horizon_blocker_impossible
+#print axioms Recaman.pre_horizon_valuesThrough_avoidance
+#print axioms Recaman.not_canSubtract_forces_tail_blocker
+#print axioms Recaman.tail_blocker_not_current
+#print axioms Recaman.tail_blocker_not_previous
+#print axioms Recaman.tail_blocker_not_two_back
+#print axioms Recaman.tail_blocker_strictly_prior_to_two_back
+#print axioms Recaman.internal_blocker_forces_height_elevation
+#print axioms Recaman.tail_blocker_summit_existence
+#print axioms Recaman.grand_permanent_high_internal_blocker_synthesis

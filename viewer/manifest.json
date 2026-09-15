@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3448,
+   "lines": 3462,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -41255,6 +41255,93 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighInternalBlocker",
+   "lines": 283,
+   "imports": [
+    "OrbitBounds",
+    "Basic",
+    "History",
+    "DebtInvariant",
+    "ActualDescent"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "le_upperTri",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_subtraction_lower_bound",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_subtraction_gt_upperTri",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "pre_horizon_value_le_upperTri",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "pre_horizon_blocker_impossible",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "pre_horizon_valuesThrough_avoidance",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "not_canSubtract_forces_tail_blocker",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_current",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_previous",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_two_back",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_strictly_prior_to_two_back",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_blocker_forces_height_elevation",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_summit_existence",
+     "line": 214
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_internal_blocker_synthesis",
+     "line": 244
+    }
+   ],
+   "theorems": 14,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighRigidity",
    "lines": 317,
    "imports": [
@@ -53575,6 +53662,6 @@
    "hasReport": false
   }
  ],
- "total": 470,
+ "total": 471,
  "withReport": 167
 }

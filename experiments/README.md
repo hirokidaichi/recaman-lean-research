@@ -452,3 +452,12 @@ no shared code. `local_surplus` tests whether a high-SS window donates a
 deletable subtraction from inside itself. `seam_pumping` glues tight blocks
 looking for net surplus beyond the exhaustive range. The scan-termination rule
 all of these rely on is proved in `Recaman/PeriodicSupplyBound.lean`.
+
+`issue73_20260915/tight_nonaas_census` (after the 2026-09-15 audit, E-343) enumerates,
+for every high-SS donor of every positive-sum word with `8 <= p <= 22`, all tight
+avoiding subsets `B` (`|N(B)| = |B|`, donor excluded), and reports how many contain a
+non-AAS (lag != 3) member, which lags occur, and whether the donor's oldest subtraction
+`s*` is covered by some tight `B` (equivalently, whether deleting `s*` breaks Hall; both
+computations are done and must agree). It aborts unless `wordsWithHighSS` reproduces
+E-179 (`local_surplus.txt`). `verify_witnesses.py` re-derives the p=12 failure witness and
+the E-240 word by direct summation with no shared code. Registry `E-345`.

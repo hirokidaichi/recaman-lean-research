@@ -1,3 +1,4 @@
+import Recaman.PermanentHighInternalBlocker
 import Recaman.GrandSurjectivityClosure
 import Recaman.NoCorridorReentry
 import Recaman.NoPermanentHighEscape

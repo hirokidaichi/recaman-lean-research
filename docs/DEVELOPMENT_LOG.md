@@ -3540,3 +3540,8 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 16:20 E-240（周期 18）が E-297〜E-317 の目標命題「緊密回避 ⇒ 純 AAS」を反証していることを監査報告・frontier に追記。
   `report_vacuity.py --check-registry`（E-344 以降の PROVED-LEAN 行に非純算術 symbol を要求）を `check_research_registry.sh` に組み込み、
   正例（現行 registry 通過）と負例（恒真式 2 本だけの仮想行 E-999 が exit 1）で動作確認。
+- 16:35 census H-20260915-18（E-345）：`tight_nonaas_census.cpp` を local_surplus.cpp の窓計算に倣って書き、wordsWithHighSS を E-179 と自動照合。
+  部分集合列挙（s* ∈ N(B)）と matching（s* 禁止で Hall 破れ）を全 donor で一致確認。ss=2 donor の最古 S 供出は p≤22 で例外 0、
+  ss≥3 は p=12 `AAAASAAASSSS` donor 3 で破れる。非 AAS 緊密回避は ss=2 で p=15 `AAAASAAASASASSS` から。証人 2 件を `verify_witnesses.py` で独立再計算。
+  （E-344 はこの間にループが別件で取ったため E-345 として登録。）
+- 16:40 E-344 `PermanentHighInternalBlocker`（H-20260915-17）：永久高値レジームにおける地平前履歴の完全無力化と内部ブロッカー強制定理を Lean 証明。$n \ge \text{upperTri}(H) + 2$ において減算候補 $a(n) - (n+1) \ge n - 1 > \text{upperTri}(H) \ge a(j)$（$j < H$）となり、地平前履歴による阻害が例外なく不可能（`pre_horizon_blocker_impossible`）。減算失敗時のブロッカーは必ず高値尾部内部 $H \le j \le n - 3$ に強制され、軌道高度急上昇 $2j + n + 1 \le a(n)$ および $2H + n + 1 \le a(n)$ を引き起こす。`report_vacuity.py` で 14 定理すべて非恒真式・実内容（R）を確認し、E-344+ 新 gate を通過。

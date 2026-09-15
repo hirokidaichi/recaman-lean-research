@@ -34,6 +34,11 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   A18 = [2, 8, 11, 13] は緊密・回避で phase 11 が lag 7。それでも `s*(7) = 14 ∉ N(A18)`。Gate T6 の一般 p での理由は純 AAS 性ではなく、
   geometric/pure-AAS 路線は STOPPED。E-344 以降の `PROVED-LEAN` 行には、純算術でない audit symbol を 1 つ以上要求する gate を
   `scripts/check_research_registry.sh` に入れた（`scripts/report_vacuity.py --check-registry`）。
+- **監査後の最初の実測（E-345、`COMPUTED`、[card](HYPOTHESIS_CARD_2026-09-15_TIGHT_NONAAS_CENSUS.md)）**：p ≤ 22 の全 high-SS donor について
+  緊密回避部分集合を全列挙した。ssCount = 2 donor の最古 S（Lean の `oldestSubtractionPhase`）は全周期・全 lag で一度も緊密回避部分集合に
+  被覆されない（Gate T6 一般形の正しい候補）。ssCount ≥ 3 donor では最古 S の供出は p = 12 から破れる（E-179 の「何らかの S」のみ残る）。
+  非 AAS 緊密回避部分集合は ss=2 donor で p = 15 から現れ p = 22 で 1.5%、非 AAS メンバーの lag は全件 7。
+  **次の Lean gate は G1「緊密回避部分集合の lag は {3, 7}」と G2「ss=2 donor の最古 S は lag ∈ {3,7} の緊密回避 B に被覆されない」**（p 上限なし）。
 
 以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
 
@@ -87,6 +92,9 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
 さらに、回廊再突入トラップ枝の構造的排除定理（**E-341、`Recaman.NoCorridorReentry`**）が形式化された。任意の回廊再突入（`CorridorReentry time`）において再突入点が厳密なレジャー回廊不等式 $2 \cdot \text{subSum}(k + 1) + (a(\text{time}) + 1) \le \text{upperTri}(k + 1) < 2 \cdot \text{subSum}(k + 1) + 2(k + 1)$ を満たすこと（`corridor_reentry_ledger_bounds`）、合法減算によりクロック $k + 1$ が $\text{subSum}$ へ供出されること（`corridor_reentry_clock_deposit`）、着地値が $a(\text{time}) + 1 \le a(k + 1) < 2(k + 1)$ に挟み込まれること（`corridor_reentry_value_in_corridor`）を証明した。さらに、仮定された最小未到達数（`MissingPermanentAboveTail target start`）において値 $\le \text{target}$ が尾部以前の有限接頭辞 $j < \text{start}$ に厳密に閉じ込められること（`missing_permanent_tail_values_le_target_before_start`）、いかなるステップも未到達数自身を生成し得ないこと（`missing_permanent_tail_pre_tail_capacity_bound`）、回廊軌道が前尾部有限被覆オラクル（`PreTailCoverageOracle target start`）を充足することが厳密に排除されること（`corridor_reentry_contradicts_preTail_oracle`）、および回廊再突入が無限再帰するならばレジャー質量が任意の上限を超えて発散すること（`recurrent_corridor_reentry_subSum_divergence`）を統合した大域排除合成定理（`grand_no_corridor_reentry_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
 
 さらに、全射性大域閉包と反例排除マスター合成定理（**E-342、`Recaman.GrandSurjectivityClosure`**）が形式化された。両動特性枝（永久高値逃亡枝 E-340、および回廊再突入トラップ枝 E-341）の排除仮説から Recamán 数列の全射性 `∀ target, ∃ time, a time = target` を導出するマスター枝縮約定理（`surjectivity_master_branch_reduction`）、任意の最小未到達数の存在が矛盾すること（`counterexample_elimination_master_theorem`）、全射性と最小未到達数不在の双方向同値性（`surjectivity_bilateral_equivalence_closed`）、正準 tail 最小値以降の下向横断存在による永久高値逃亡の厳密排除（`permanent_high_escape_branch_eliminated_of_downcrossing`）、前尾部有限被覆オラクルとの矛盾による回廊再突入トラップの厳密排除（`corridor_reentry_branch_eliminated_of_preTail_oracle`）、最小未到達数の動特性二分法解決（`least_missing_target_dichotomy_resolved`）、尾部復帰仮説と全射性の同値性（`surjectivity_target_tail_return_equivalence`）、および被覆オラクル充足による全射性導出（`surjective_of_all_coverageOracles`）を統合した大域閉包合成定理（`grand_surjectivity_closure_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
+さらに、永久高値レジームにおける地平前履歴の完全無力化と内部ブロッカー強制定理（**E-344、`Recaman.PermanentHighInternalBlocker`**）が形式化された。永久高値レジーム（$2n \le a(n)$ for all $n \ge H$）において、地平 $H$ 以前の過去値は三角数上界 $a(j) \le \text{upperTri}(H)$（$j < H$）に留まるため、カットオフ $n \ge \text{upperTri}(H) + 2$ 以降の減算候補 $a(n) - (n + 1) \ge n - 1 > \text{upperTri}(H)$ が地平前履歴によって阻害されることが例外なく数学的に不可能であること（`pre_horizon_blocker_impossible`）、および過去値リストを完全回避すること（`pre_horizon_valuesThrough_avoidance`）を証明した。これにより、この領域で減算が失敗（$\neg \text{CanSubtract}(n + 1)$）する場合、ブロッカーは必然的に高値尾部内部 $H \le j \le n$ から生じなければならないこと（`not_canSubtract_forces_tail_blocker`）、かつ直近の3状態（$j = n, n-1, n-2$）はブロッカーになり得ず $j \le n - 3$ に限られること（`tail_blocker_strictly_prior_to_two_back`）、そして内部ブロッカー自身が高値条件 $a(j) \ge 2j \ge 2H$ を満たすことから軌道高度の急上昇 $2j + n + 1 \le a(n)$ および $2H + n + 1 \le a(n)$ が不可避に強制されること（`internal_blocker_forces_height_elevation`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
 
 
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を

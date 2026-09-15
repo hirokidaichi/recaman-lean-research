@@ -1,5 +1,11 @@
 # Changelog
 
+## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
+
+- 永久高値レジーム（$2n \le a(n)$ for all $n \ge H$）において、地平 $H$ 以前の過去値が三角数上界 $a(j) \le \text{upperTri}(H)$（$j < H$）に留まることから、カットオフ $n \ge \text{upperTri}(H) + 2$ 以降の減算候補 $a(n) - (n + 1) \ge n - 1 > \text{upperTri}(H)$ が地平前履歴によって阻害されることが例外なく数学的に不可能（`pre_horizon_blocker_impossible`）であることを Lean 証明（`PROVED-LEAN`、E-344）
+- 減算失敗（$\neg \text{CanSubtract}(n + 1)$）時の内部ブロッカー強制（$H \le j \le n$）、直近3状態の排除（$j \le n - 3$）、および内部ブロッカーによる軌道高度急上昇 $2j + n + 1 \le a(n)$ と $2H + n + 1 \le a(n)$ を形式化
+- `report_vacuity.py` で 14 定理すべてが非恒真式・実内容（R）であることを確認し、E-344+ 新 gate を通過
+
 ## Audit: the "grand synthesis" rows E-317..E-319 and E-338..E-342 — 2026-09-15
 
 - E-317/E-318/E-319（Gate T6 全周期解決・`|U|≤|D|`・Issue #73 CLOSED）の主要定理は自由な Nat 変数上の恒真式
@@ -12,6 +18,9 @@
 - E-297..E-317 が目指した「緊密回避部分集合は純 AAS（m = 0）」は E-240（周期 18 証明書）が反証済み。geometric/pure-AAS 路線は STOPPED
 - `scripts/report_vacuity.py --check-registry` を `check_research_registry.sh` に組み込み、E-344 以降の `PROVED-LEAN` 行に
   純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
+- census E-345（`experiments/issue73_20260915/tight_nonaas_census.cpp`、E-179 と語数一致）：ssCount=2 donor の最古 S は p≤22 で
+  緊密回避部分集合に一度も被覆されない。ssCount≥3 では p=12 から破れる。非 AAS 緊密回避部分集合は ss=2 donor で p=15 から出現し
+  メンバーの lag は全件 7。次の Lean gate を G1（緊密回避の lag は {3,7}）・G2（ss=2 の最古 S は被覆されない）に絞った
   [監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)
 
 ## Issue 73: the extremal boundary of the capacity inequality — 2026-09-11
