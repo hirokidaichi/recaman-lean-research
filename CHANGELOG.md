@@ -9,6 +9,9 @@
   からの条件付き再包装。全射性・非全射性は未解決のまま
 - E-320 の `*_of_capacity_induction` 系は条件付き、E-321 の供給は lag≤7 の短い供給（E-071 の有限ブロック版）
 - 該当 registry 行の claim に監査注記を付け、E-343（`STOPPED`）として監査自体を登録。
+- E-297..E-317 が目指した「緊密回避部分集合は純 AAS（m = 0）」は E-240（周期 18 証明書）が反証済み。geometric/pure-AAS 路線は STOPPED
+- `scripts/report_vacuity.py --check-registry` を `check_research_registry.sh` に組み込み、E-344 以降の `PROVED-LEAN` 行に
+  純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
   [監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)
 
 ## Issue 73: the extremal boundary of the capacity inequality — 2026-09-11

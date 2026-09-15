@@ -119,3 +119,6 @@ if [[ "$RECAMAN_ROW_COUNT" -eq 0 || "$RECAMAN_PROVED_LEAN_COUNT" -eq 0 ]]; then
 fi
 
 echo "Research registry audit: $RECAMAN_ROW_COUNT entries, $RECAMAN_PROVED_LEAN_COUNT PROVED-LEAN rows linked to Recaman/Audit.lean."
+
+# Vacuity gate (2026-09-15 audit): new PROVED-LEAN rows must cite a theorem with actual content.
+python3 scripts/report_vacuity.py --check-registry

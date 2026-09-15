@@ -28,6 +28,13 @@ E-267（`s ∈ N(A) ↔ ∃ u ∈ A, s ∈ N([u])`、緊密三つ組の近傍一
 E-311（lag 7 窓の stream 距離 ≥ 5）、E-321（lag ≤ 7 供給の有限ブロック容量）、E-330/E-331（局所 blocker 補題）。
 軽微なもの（E-236, 238, 239, 265, 266, 268, 269, 270, 272, 305, 306）を足しても 20 行に満たない。残り約 90 行は W/C/T。
 
+**E-297〜E-317 が目指した命題そのものが偽である**: これらの「量子窓 m ≥ 1 は容量矛盾、緊密回避部分集合は全て純 AAS（lag 3）」という筋は、
+同じリポジトリの E-240（`TightAvoidingLagCertificate`、周期 18、`decide`）が反証している。語 `AAAASSAAAASAAASASS` で
+A18 = [2, 8, 11, 13] は緊密（|N(A18)| = 4）かつ donor u0 = 7（lag 11、ssCount 2）を避け、phase 11 が **lag 7** の窓を持つ。
+つまり p = 18 では緊密回避部分集合に非 AAS 窓が実在する。にもかかわらず `s*(7) = 14 ∉ N(A18)` は成立しており、
+Gate T6 が成り立つ理由は「純 AAS 性」ではない。E-297〜E-317 の条件付き定理は `h_dist_*`・`m = i → False` を仮定しているので
+形式的には矛盾しないが、その仮定を一般 p で discharge する道は E-240 により閉じている。**geometric/pure-AAS 路線は STOPPED。**
+
 **Gate T6 の無条件 Lean 証明が実際に届いている周期**: p ≤ 10（E-230/E-231、2026-09-11〜12）。
 E-232 は p ≤ 11 かつ |U| ≤ 3 の場合を追加するが、SS=2 donor（lag 11）が周期全体を wrap する退化 regime であることに注意（§3 の A-2）。
 
@@ -195,7 +202,12 @@ E-320〜E-337 の無条件の実数学: (1) E-321：任意有限ブロックで 
 3. `scripts/report_vacuity.py` を追加（報告用）。
 4. Lean ソースは削除・変更しない（kernel 検査は通っており、削除は別判断）。
 
-## 8. 再発防止（ループへの要請）
+## 8. 再発防止（ループへの要請と機械的 gate）
+
+`scripts/check_research_registry.sh` から `python3 scripts/report_vacuity.py --check-registry` を呼び、
+**E-344 以降の `PROVED-LEAN` 行は、audit symbol の少なくとも 1 つが純算術文でない定理を指すこと**を要求する
+（純算術＝自由な Nat/Int 変数だけの文、結論が仮定そのもの、`x = x`）。E-317/E-318 はこの gate に該当する既存行だが、
+kernel 検査済みのため遡及適用はせず、claim 欄の監査注記で扱う。
 
 - 「grand」「master」「universal」「synthesis」を名に持つモジュールが 1〜2 分間隔で積まれるときは、まず `report_vacuity.py` を走らせる。
 - 定理の統計量（binder に符号語 `e` があるか、結論が仮定に含まれないか）を registry 登録の前提にする。

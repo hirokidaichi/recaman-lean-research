@@ -30,6 +30,10 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
 - E-232〜E-337 の各モジュールの実質は監査報告の表を参照。新規実内容を持つのは E-232（p ≤ 11, |U| ≤ 3）、E-240（周期 18 の lag-3 強制反証）、
   E-267（近傍の singleton 分解）、E-276（lag 7 窓の AAS 端点被覆は距離 ≤ 6）、E-311（lag 7 窓の stream 距離 ≥ 5）、E-321、E-330/E-331 の局所補題程度で、
   永久高値 regime `∀ n ≥ N, 2n ≤ a n` は一度も否定されていない。監査自体は E-343（`STOPPED`）として登録した。
+- **E-297〜E-317 が目指した「緊密回避部分集合は全て純 AAS（m = 0）」は E-240（周期 18、`decide`）が反証している**：
+  A18 = [2, 8, 11, 13] は緊密・回避で phase 11 が lag 7。それでも `s*(7) = 14 ∉ N(A18)`。Gate T6 の一般 p での理由は純 AAS 性ではなく、
+  geometric/pure-AAS 路線は STOPPED。E-344 以降の `PROVED-LEAN` 行には、純算術でない audit symbol を 1 つ以上要求する gate を
+  `scripts/check_research_registry.sh` に入れた（`scripts/report_vacuity.py --check-registry`）。
 
 以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
 

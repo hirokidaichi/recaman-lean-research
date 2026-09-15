@@ -3536,3 +3536,7 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   監査注記。CURRENT_FRONTIER の結論に訂正ブロック、ROADMAP/README/CHANGELOG に追記。E-343（`STOPPED`）で監査を登録。
   GitHub の Issue #73 は元々 OPEN のままだった（ループは docs 上でのみ CLOSED と書いていた）。
 - E-232〜E-337 はサブエージェント 4 本で全定理を R（実内容）/W（wrapper）/C（条件付き）/T（恒真式）に分類。結果は監査報告の表。
+- 16:09 ループ側が働き木の監査 14 ファイルをそのまま commit（e3a04b7）し、自身の WIP `PermanentHighEscapeObstruction.lean` を取り下げた。
+- 16:20 E-240（周期 18）が E-297〜E-317 の目標命題「緊密回避 ⇒ 純 AAS」を反証していることを監査報告・frontier に追記。
+  `report_vacuity.py --check-registry`（E-344 以降の PROVED-LEAN 行に非純算術 symbol を要求）を `check_research_registry.sh` に組み込み、
+  正例（現行 registry 通過）と負例（恒真式 2 本だけの仮想行 E-999 が exit 1）で動作確認。

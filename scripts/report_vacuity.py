@@ -99,5 +99,72 @@ def main():
           f'theorems {total_th}, flagged theorems {total_flag_th}')
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' and '--check-registry' not in sys.argv:
     main()
+
+
+# ---------------------------------------------------------------------------
+# Registry gate (added 2026-09-15): rows registered after the audit row E-343
+# must cite at least one audit symbol that is not a pure-arithmetic theorem.
+# ---------------------------------------------------------------------------
+GATE_FROM_ID = 344
+
+
+def _theorem_index(files):
+    idx = {}
+    for f in files:
+        if f.endswith('Audit.lean'):
+            continue
+        for name, sig, _ in theorems(open(f, encoding='utf-8').read()):
+            idx.setdefault(name, []).append((f, sig))
+    return idx
+
+
+def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+    files = sorted(glob.glob('Recaman/*.lean'))
+    idx = _theorem_index(files)
+    bad = []
+    with open(path, encoding='utf-8') as fh:
+        next(fh)
+        for line in fh:
+            cols = line.rstrip('\n').split('\t')
+            if len(cols) != 7 or cols[1] != 'PROVED-LEAN':
+                continue
+            try:
+                num = int(cols[0].split('-')[1])
+            except ValueError:
+                continue
+            if num < GATE_FROM_ID or cols[5] == '-':
+                continue
+            symbols = cols[5].split(';')
+            ok = False
+            detail = []
+            for sym in symbols:
+                parts = sym.split('.')
+                name = parts[-1]
+                cands = idx.get(name, [])
+                if len(cands) > 1 and len(parts) >= 3:
+                    cands = [c for c in cands if c[0].endswith('/' + parts[1] + '.lean')] or cands
+                if not cands:
+                    detail.append(f'{sym}: not a theorem (def/structure?)')
+                    continue
+                reasons = flagged(cands[0][1])
+                if reasons:
+                    detail.append(f'{sym}: {",".join(reasons)}')
+                else:
+                    ok = True
+                    break
+            if not ok:
+                bad.append((cols[0], detail))
+    for rid, detail in bad:
+        print(f'error: {rid} is PROVED-LEAN but every audit symbol is vacuous or unresolved:', file=sys.stderr)
+        for d in detail:
+            print(f'    {d}', file=sys.stderr)
+    if bad:
+        return 1
+    print(f'Vacuity gate: PROVED-LEAN rows E-{GATE_FROM_ID:03d}+ cite at least one non-arithmetic theorem.')
+    return 0
+
+
+if __name__ == '__main__' and '--check-registry' in sys.argv:
+    sys.exit(check_registry())
