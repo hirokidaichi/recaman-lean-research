@@ -34,6 +34,9 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   A18 = [2, 8, 11, 13] は緊密・回避で phase 11 が lag 7。それでも `s*(7) = 14 ∉ N(A18)`。Gate T6 の一般 p での理由は純 AAS 性ではなく、
   geometric/pure-AAS 路線は STOPPED。E-344 以降の `PROVED-LEAN` 行には、純算術でない audit symbol を 1 つ以上要求する gate を
   `scripts/check_research_registry.sh` に入れた（`scripts/report_vacuity.py --check-registry`）。
+- **ハーネス（INC-20260915-01）**：以後の `PROVED-LEAN` 行は `scripts/harness_gate.py` の G1〜G5（実在・非恒真・実内容・命名・
+  `docs/statement_audits/E-NNN.md` での定理文逐語引用）を通り、中心命題の label は `docs/PROTECTED_CLAIMS.tsv` に pin され人間承認なしに変わらない。
+  新規モジュールは 1 本／commit・30 分間隔。詳細は [インシデント報告書](INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md) §4。
 - **2026-09-15 夕方、監査で W/C/T と判定した 92 モジュールを削除した**（[監査報告 §9](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
   残したのは実内容を持つ 20 本と、削除側から拾った補題をまとめた `Recaman/AuditSalvage.lean`（E-346）。
   削除行の registry label は `STOPPED`、artifact は監査報告。E-232〜E-342 の frontier 段落は歴史記録として残すが、モジュールは存在しない。

@@ -3548,3 +3548,6 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 16:40〜 広木さんの指示で削除作業。削除候補 93 本のうち E-344（`PermanentHighInternalBlocker`）は一読で実軌道の局所補題と判断し残す。
   残す 19 本のうち削除側を import する 11 本を機械的に検出（宣言を実際に使うのは 4 本）。サブエージェント 2 本で import 付け替えと
   `AuditSalvage.lean` 作成、親は registry（92 行 STOPPED）・Recaman.lean・Audit.lean（795 行除去）・カード 21 枚を処理。
+- 17:10〜 広木さんの指示「根本原因をハーネスとして確立」。生成ループの書いた報告書は §4 の分類は妥当だが、動機の推測・未反映の削除・
+  無効 label `CONDITIONAL`・`report_vacuity` の誤用・未導入の対策2 を含んでいたため書き直した。根本原因 R1〜R6 を証拠ベースで確定し、
+  G1〜G5・P・速度制限を `harness_gate.py` と pre-commit に実装、`test_harness_gates.sh` の負例 8 件で拒否を確認。

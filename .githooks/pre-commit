@@ -14,4 +14,33 @@ if rg -n --glob '*.lean' '\b(sorry|admit|native_decide|axiom)\b' .; then
   exit 1
 fi
 
+# Harness (INC-20260915-01): human-only files and a throughput limiter for new Lean modules.
+# - docs/PROTECTED_CLAIMS.tsv may only change with RECAMAN_HUMAN_APPROVED=1 (the human monitor
+#   sets it when approving a label change of a central claim).
+if git diff --cached --name-only | grep -qx 'docs/PROTECTED_CLAIMS.tsv'; then
+  if [[ "${RECAMAN_HUMAN_APPROVED:-0}" != "1" ]]; then
+    echo "error: docs/PROTECTED_CLAIMS.tsv is staged; central-claim labels change only with RECAMAN_HUMAN_APPROVED=1" >&2
+    exit 1
+  fi
+fi
+# - At most one new Recaman module per commit, and at least 30 minutes after the previous commit
+#   that added one, unless RECAMAN_ALLOW_BURST=1. One module a minute was the incident's signature:
+#   no falsifier step can run at that pace.
+RECAMAN_NEW_MODULES="$(git diff --cached --name-only --diff-filter=A -- 'Recaman/*.lean' | grep -v '^Recaman/Audit.lean$' || true)"
+if [[ -n "$RECAMAN_NEW_MODULES" && "${RECAMAN_ALLOW_BURST:-0}" != "1" ]]; then
+  RECAMAN_NEW_COUNT="$(printf '%s\n' "$RECAMAN_NEW_MODULES" | grep -c . || true)"
+  if [[ "$RECAMAN_NEW_COUNT" -gt 1 ]]; then
+    echo "error: $RECAMAN_NEW_COUNT new Lean modules in one commit; one module per research unit (RECAMAN_ALLOW_BURST=1 to override)" >&2
+    exit 1
+  fi
+  RECAMAN_LAST_ADD="$(git log -1 --diff-filter=A --format=%ct -- 'Recaman/*.lean' 2>/dev/null || true)"
+  if [[ -n "$RECAMAN_LAST_ADD" ]]; then
+    RECAMAN_AGE=$(( $(date +%s) - RECAMAN_LAST_ADD ))
+    if [[ "$RECAMAN_AGE" -lt 1800 ]]; then
+      echo "error: previous module-adding commit is ${RECAMAN_AGE}s old (< 1800s); run the falsifier first (RECAMAN_ALLOW_BURST=1 to override)" >&2
+      exit 1
+    fi
+  fi
+fi
+
 echo "Pre-commit checks passed."

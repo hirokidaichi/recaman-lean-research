@@ -66,6 +66,7 @@ SS=2 の P2 は NoSAAS なしで先頭 A run が 0,1,3 に限る（E-166、E-132
 **全 lag の容量 E-070、全加算同時供給の排除 E-067、全射性・非全射性は未証明**。#73 本体は OPEN。
 2026-09-14〜15 に自律ループが登録した E-317〜E-319（`|U|≤|D|` の全周期証明・#73 CLOSED）と E-338〜E-342（全射性閉包）は、
 2026-09-15 の監査で恒真式・条件付き足場と判明し差し戻した（[監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+以後の登録は [ハーネス](docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md)（`scripts/harness_gate.py`、`docs/PROTECTED_CLAIMS.tsv`、pre-commit の速度制限）を通る。
 監査後の census（E-345）で、Gate T6 の一般形は「ssCount=2 donor の最古 S」に限れば p≤22 で例外 0、ssCount≥3 では p=12 から破れることが分かった。
 
 2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を

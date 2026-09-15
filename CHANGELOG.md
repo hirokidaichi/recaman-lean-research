@@ -8,6 +8,10 @@
 
 ## Audit: the "grand synthesis" rows E-317..E-319 and E-338..E-342 — 2026-09-15
 
+- **ハーネス確立（INC-20260915-01）**：`scripts/harness_gate.py`（G1〜G5：実在・非恒真・実内容・命名・定理文逐語引用）、
+  `docs/PROTECTED_CLAIMS.tsv`（中心命題 E-001/E-067/E-070/E-179 の label pin、変更は `RECAMAN_HUMAN_APPROVED=1`）、
+  pre-commit の速度制限（新規モジュール 1 本／commit、30 分間隔、`RECAMAN_ALLOW_BURST=1`）、`docs/statement_audits/`、
+  負例テスト `scripts/test_harness_gates.sh`。インシデント報告書を証拠ベースに書き直し、AGENTS.md と AI_RESEARCH_PROTOCOL §4.1 を更新
 - **92 モジュールを削除**（監査で wrapper／条件付き／恒真式と判定したもの、[§9](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
   実内容を持つ 20 本は残し、11 本の import を付け替え、削除側の使える補題は `Recaman/AuditSalvage.lean`（E-346）へ退避。
   registry の削除行は `STOPPED`、Audit.lean から `#print axioms` 795 行を除去

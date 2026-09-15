@@ -120,5 +120,7 @@ fi
 
 echo "Research registry audit: $RECAMAN_ROW_COUNT entries, $RECAMAN_PROVED_LEAN_COUNT PROVED-LEAN rows linked to Recaman/Audit.lean."
 
-# Vacuity gate (2026-09-15 audit): new PROVED-LEAN rows must cite a theorem with actual content.
-python3 scripts/report_vacuity.py --check-registry
+# Research-harness gates (INC-20260915-01): vacuity/substance/name/statement-audit gates on new
+# PROVED-LEAN rows, and pinned labels for the central claims. See scripts/harness_gate.py.
+python3 scripts/harness_gate.py --check-registry
+python3 scripts/harness_gate.py --check-protected
