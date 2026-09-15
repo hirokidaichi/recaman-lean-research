@@ -49,6 +49,8 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   bit-level で 3 配置のみ（全て w1、s* が窓の newest bit、donor は d1/d2/d4）。周期語では s* の被覆者の大半が lag ≥ 11 の長い窓なので
   **G2 は窓ごとには証明できず G1 が本質**。7 語中 4 語で窓の最古位置が A のため、Lean の `oldestSubtractionPhase`（offset d の phase）は
   実際の最古 S と一致しない。一般 p の Gate T6 を述べる前に「最古 S」を語ごとに定義し直す。
+  **帰結**：p ≤ 10/11 の Gate T6 定理（E-225/E-230/E-231/E-232）は、offset 11 が A の donor（d1,d2,d3,d6 型）では削除対象が減算でないため
+  `deletedNeighborhood = neighborhood` となり内容が Hall 仮定に退化する。実質は d4/d5/d7 型 donor の主張であり、registry の該当行に注記した。
 
 以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
 

@@ -3554,3 +3554,5 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 17:20 H-20260915-19（E-347）：lag-7 窓が ss=2 lag-11 donor の最古 S を被覆できる配置を bit-level で全列挙（3 配置、全て w1・u=s*+1・donor d1/d2/d4）。
   census 拡張で被覆者の lag 分布を取り、lag ≥ 11 が大半と判明（G1 が本質）。副産物：7 語中 4 語で窓の最古位置が A で、
   Lean の `oldestSubtractionPhase` が実際の最古 S とずれる。Lean 化（E-348、`LagSevenDonorCoverage`）をサブエージェントに依頼。
+- 17:25 E-347 の副産物を精査：`deletedNeighborhood` は phase を filter するだけなので、offset 11 が A の donor では削除が no-op。
+  p ≤ 10/11 の Gate T6 定理（E-225/E-230/E-231/E-232）は 7 語中 4 語で Hall 仮定に退化する。registry と frontier に注記。
