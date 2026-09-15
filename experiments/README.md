@@ -466,3 +466,8 @@ the E-240 word by direct summation with no shared code. Registry `E-345`.
 that can cover the oldest subtraction of a minimal SS=2 lag-11 donor (3 configurations), and
 `oldest_s_coverers.cpp` extends the census with the lag distribution of all coverers and a
 private-phase diagnostic for lag-7 coverers. Registry `E-347`.
+
+`issue73_20260915/tight_structure.cpp` scans every subset of `U` (not only donor-avoiding ones) in
+Hall-OK positive-sum words for `8 <= p <= 26` and records, for each tight subset, the lags present,
+whether the members' oldest subtractions are pairwise distinct and exhaust `N(B)` (the OS
+characterization), and the ownership of the phases of lag-7 members. Registry `E-349`.

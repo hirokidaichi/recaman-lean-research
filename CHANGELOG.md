@@ -27,6 +27,8 @@
   純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
 - 治療の仕上げ：frontier の撤回段落を id 一覧付き撤回記録に置換、ROADMAP に撤回印、残存 18 行に実内容注記、
   E-345 を p ≤ 26 へ拡張（ss=2 の最古 S・緊密回避 lag {3,7} とも例外 0）。研究計画 `docs/RESEARCH_PLAN_2026-09-15.md` を新設
+- E-349（`COMPUTED`）：緊密部分集合の OS 特徴付け（最古 S が相異なり N(B) を尽くす）が p ≤ 26 の 512 万個で例外 0。lag ≥ 11・w2 は
+  緊密集合に現れない。G1 を OS として再定式化（P2 の骨）
 - E-348（`PROVED-LEAN`、`LagSevenDonorCoverage`）：E-347 Q1 の Lean 化。7 語の decide 分類と lag-7 被覆の 3 配置。ハーネス（G1〜G5、statement audit）通過
 - E-347（`COMPUTED`）：ss=2 lag-11 donor の最古 S を被覆する lag-7 窓は 3 配置のみ（w1、u=s*+1、donor d1/d2/d4）。周期語では
   被覆者の大半が lag ≥ 11 なので G1 が本質。Lean の `oldestSubtractionPhase` は 7 語中 4 語で実際の最古 S とずれる
