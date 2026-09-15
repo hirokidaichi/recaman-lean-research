@@ -3436,3 +3436,13 @@ import Recaman
 #print axioms Recaman.corridor_reentry_contradicts_preTail_oracle
 #print axioms Recaman.recurrent_corridor_reentry_subSum_divergence
 #print axioms Recaman.grand_no_corridor_reentry_synthesis
+
+#print axioms Recaman.surjectivity_master_branch_reduction
+#print axioms Recaman.counterexample_elimination_master_theorem
+#print axioms Recaman.surjectivity_bilateral_equivalence_closed
+#print axioms Recaman.permanent_high_escape_branch_eliminated_of_downcrossing
+#print axioms Recaman.corridor_reentry_branch_eliminated_of_preTail_oracle
+#print axioms Recaman.least_missing_target_dichotomy_resolved
+#print axioms Recaman.surjectivity_target_tail_return_equivalence
+#print axioms Recaman.surjective_of_all_coverageOracles
+#print axioms Recaman.grand_surjectivity_closure_synthesis

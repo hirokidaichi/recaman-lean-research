@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3438,
+   "lines": 3448,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -29413,6 +29413,70 @@
    "hasReport": false
   },
   {
+   "name": "GrandSurjectivityClosure",
+   "lines": 162,
+   "imports": [
+    "Surjectivity",
+    "NoPermanentHighEscape",
+    "NoCorridorReentry",
+    "LeastMissingTargetContradiction",
+    "RecurrentDowncrossingSubSum",
+    "TailDowncrossingInevitability",
+    "Coverage"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "surjectivity_master_branch_reduction",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "counterexample_elimination_master_theorem",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "surjectivity_bilateral_equivalence_closed",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_escape_branch_eliminated_of_downcrossing",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_branch_eliminated_of_preTail_oracle",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_target_dichotomy_resolved",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "surjectivity_target_tail_return_equivalence",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "surjective_of_all_coverageOracles",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_surjectivity_closure_synthesis",
+     "line": 124
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "GrandUniversalCapacityResolution",
    "lines": 146,
    "imports": [
@@ -53511,6 +53575,6 @@
    "hasReport": false
   }
  ],
- "total": 469,
+ "total": 470,
  "withReport": 167
 }
