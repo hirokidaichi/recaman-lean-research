@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3307,
+   "lines": 3323,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40740,6 +40740,98 @@
    "hasReport": true
   },
   {
+   "name": "PermanentHighRigidity",
+   "lines": 317,
+   "imports": [
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger",
+    "LeastTailMinimumDynamics",
+    "EventualHighCorridorStructure",
+    "DebtInvariant"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "permanent_high_two_subtractions_requires_four_times",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_three_subtractions_requires_five_times",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_not_two_subtractions_of_lt_four",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_not_three_subtractions_of_lt_five",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_two_additions_reach_three",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_candidate_after_two_additions",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_candidate_between",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_must_be_blocked",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_blocker_prior",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_prior_summit",
+     "line": 197
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_no_three_consecutive_additions_under_summit_bound",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_forced_subtraction_landing_value",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_forced_subtraction_landing_fresh",
+     "line": 254
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_infinitely_many_subtractions",
+     "line": 271
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_bilateral_rigidity",
+     "line": 285
+    }
+   ],
+   "theorems": 15,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PhaseEpoch",
    "lines": 117,
    "imports": [
@@ -52602,6 +52694,6 @@
    "hasReport": false
   }
  ],
- "total": 455,
+ "total": 456,
  "withReport": 167
 }

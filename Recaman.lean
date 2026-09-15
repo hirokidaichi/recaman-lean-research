@@ -1,3 +1,4 @@
+import Recaman.PermanentHighRigidity
 import Recaman.TailDowncrossingDichotomy
 import Recaman.TailDowncrossingLedger
 import Recaman.LeastTailMinimumDynamics
