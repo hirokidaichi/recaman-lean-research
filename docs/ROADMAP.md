@@ -1,5 +1,6 @@
 # 証明ロードマップ
 
+> 2026-09-15追補：レカマン数列の全射性と反例排除の大域アーキテクチャ定理（Grand Surjectivity Architecture）をLean証明（E-339）。仮定された最小未到達数の動特性が「永久高値逃亡（PermanentHighEscape）」または「回廊再突入（CorridorReentry）」のいずれかに必ず分岐する動特性二分法（least_missing_target_tail_dichotomy）、両動特性枝の排除仮説からの最小未到達数矛盾導出、自然数の整列性（強帰納法）による最小未到達数不在からの全射性導出（surjective_of_not_least_missing_target）、両動特性枝排除からの全射性直接導出、および全射性と最小未到達数不在の双方向同値性の大域統合を形式化。
 > 2026-09-15追補：最小未到達数の構造的矛盾合成定理（Least Missing Target Contradiction Synthesis）をLean証明（E-338）。正準tail最小値からの脱出状態 time+2 における高度上界 a(time+2)<6(time+2)+1、永久高値大域二分法の第1枝の厳密排除と回廊への下向横断強制（permanent_high_escape_dichotomy_resolution）、最小未到達数と尾部復帰仮説の直接矛盾、前尾部有限被覆オラクルとの直接矛盾、および再帰的下向横断レジャー発散と有界レジャーの直接矛盾の大域統合を形式化。
 > 2026-09-15追補：再帰的下向横断による減算レジャー質量・回数の発散と無条件非有界性合成定理（Recurrent Downcrossing SubSum Divergence）をLean証明（E-337）。合法減算の強再帰性（exists_canSubtract_of_ray）によるsubSum・subCountの任意のカットオフ以降の無条件発散、下向横断ステップのクロック供出による直接下界（B<k+1≤subSum(k+1)）、正準tail最小値以降の下向横断におけるsubSum(time)からの累積増加と回廊再突入拘束、および無限再帰下向横断による回廊内発散大域合成を統合。
 > 2026-09-15追補：尾部下向横断の不可避性と回廊再突入大域合成定理（Tail Downcrossing Inevitability）をLean証明（E-336）。高値から低値への離散的中間値性による下向横断存在補題（exists_downcrossing_of_high_to_low）、歯櫛下降の地平突破による下向横断強制、下向横断ステップの合法減算性・クロック供出・値の新規性、および正準tail最小値以降の下向横断における回廊レジャー拘束再突入を統合。

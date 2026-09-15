@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3414,
+   "lines": 3419,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46516,6 +46516,77 @@
    "hasReport": false
   },
   {
+   "name": "Surjectivity",
+   "lines": 194,
+   "imports": [
+    "LeastMissingTargetContradiction",
+    "TailDowncrossingDichotomy",
+    "CrossingTailRefined",
+    "Coverage"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "PermanentHighEscape",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "CorridorReentry",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_target_tail_dichotomy",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "NoPermanentHighEscapeHypothesis",
+     "line": 91
+    },
+    {
+     "kind": "def",
+     "name": "NoCorridorReentryHypothesis",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "not_least_missing_target_of_branch_obstructions",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "surjective_of_not_least_missing_target",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "surjective_of_branch_obstructions",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "not_least_missing_target_of_surjective",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "recaman_surjective_iff_not_least_missing_target",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_surjectivity_architecture_synthesis",
+     "line": 169
+    }
+   ],
+   "theorems": 7,
+   "defs": 4,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SurvivalCountermodelArithmetic",
    "lines": 391,
    "imports": [
@@ -53312,6 +53383,6 @@
    "hasReport": false
   }
  ],
- "total": 466,
+ "total": 467,
  "withReport": 167
 }

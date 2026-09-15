@@ -3410,5 +3410,10 @@ import Recaman
 #print axioms Recaman.recurrent_downcrossings_contradicts_bounded_ledger
 #print axioms Recaman.grand_least_missing_target_contradiction_synthesis
 
-
-
+#print axioms Recaman.least_missing_target_tail_dichotomy
+#print axioms Recaman.not_least_missing_target_of_branch_obstructions
+#print axioms Recaman.surjective_of_not_least_missing_target
+#print axioms Recaman.surjective_of_branch_obstructions
+#print axioms Recaman.not_least_missing_target_of_surjective
+#print axioms Recaman.recaman_surjective_iff_not_least_missing_target
+#print axioms Recaman.grand_surjectivity_architecture_synthesis
