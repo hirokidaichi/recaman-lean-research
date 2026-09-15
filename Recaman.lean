@@ -1,3 +1,4 @@
+import Recaman.PermanentHighCollision
 import Recaman.PermanentHighRigidity
 import Recaman.TailDowncrossingDichotomy
 import Recaman.TailDowncrossingLedger

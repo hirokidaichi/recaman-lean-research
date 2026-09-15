@@ -3321,3 +3321,13 @@ import Recaman
 #print axioms Recaman.permanent_high_forced_subtraction_landing_fresh
 #print axioms Recaman.permanent_high_infinitely_many_subtractions
 #print axioms Recaman.permanent_high_bilateral_rigidity
+
+#print axioms Recaman.aasaas_subtraction_candidate_collision
+#print axioms Recaman.aasaas_candidate_in_valuesThrough
+#print axioms Recaman.no_aasaas_pattern
+#print axioms Recaman.aasaa_forces_third_addition
+#print axioms Recaman.aasaaa_value_ge_six_times
+#print axioms Recaman.aasaaa_satisfies_prior_summit
+#print axioms Recaman.aasaaa_subtraction_candidate
+#print axioms Recaman.aasaaa_subtraction_candidate_strictly_between
+#print axioms Recaman.grand_permanent_high_collision_resolution
