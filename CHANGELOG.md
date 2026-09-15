@@ -25,6 +25,7 @@
 - E-297..E-317 が目指した「緊密回避部分集合は純 AAS（m = 0）」は E-240（周期 18 証明書）が反証済み。geometric/pure-AAS 路線は STOPPED
 - `scripts/report_vacuity.py --check-registry` を `check_research_registry.sh` に組み込み、E-344 以降の `PROVED-LEAN` 行に
   純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
+- E-348（`PROVED-LEAN`、`LagSevenDonorCoverage`）：E-347 Q1 の Lean 化。7 語の decide 分類と lag-7 被覆の 3 配置。ハーネス（G1〜G5、statement audit）通過
 - E-347（`COMPUTED`）：ss=2 lag-11 donor の最古 S を被覆する lag-7 窓は 3 配置のみ（w1、u=s*+1、donor d1/d2/d4）。周期語では
   被覆者の大半が lag ≥ 11 なので G1 が本質。Lean の `oldestSubtractionPhase` は 7 語中 4 語で実際の最古 S とずれる
 - E-225/E-230/E-231/E-232（Gate T6 p≤10/11）に注記：供出 phase は offset 11 で、7 語中 4 語では A なので削除が no-op になり

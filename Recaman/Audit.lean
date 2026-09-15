@@ -2595,3 +2595,16 @@ import Recaman
 #print axioms Recaman.permanent_high_third_addition_must_be_blocked
 #print axioms Recaman.permanent_high_third_addition_blocker_prior
 #print axioms Recaman.permanent_high_third_addition_prior_summit
+
+-- Lag-7 coverers of the oldest subtraction of an SS=2 lag-11 donor (E-348).
+#print axioms Recaman.LagSevenDonorCoverage.minimal_ss2_eleven_words
+#print axioms Recaman.LagSevenDonorCoverage.minimal_ss2_eleven_mem_donors
+#print axioms Recaman.LagSevenDonorCoverage.minimal_ss2_lt_fifteen_mem_donors
+#print axioms Recaman.LagSevenDonorCoverage.oldestOffset_donors
+#print axioms Recaman.LagSevenDonorCoverage.oldestOffset_is_oldest_S
+#print axioms Recaman.LagSevenDonorCoverage.coverOK_of_stream
+#print axioms Recaman.LagSevenDonorCoverage.coverOK_classification
+#print axioms Recaman.LagSevenDonorCoverage.lag7_cover_classification
+#print axioms Recaman.LagSevenDonorCoverage.lag7_cover_classification_explicit
+#print axioms Recaman.LagSevenDonorCoverage.lag7_cover_impossible_d3_d5_d6_d7
+#print axioms Recaman.LagSevenDonorCoverage.lag7_cover_classification_of_minimal

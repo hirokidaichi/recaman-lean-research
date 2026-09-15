@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2597,
+   "lines": 2610,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -29793,6 +29793,150 @@
    "hasReport": false
   },
   {
+   "name": "LagSevenDonorCoverage",
+   "lines": 270,
+   "imports": [
+    "LagSevenPrefixRigidity",
+    "SS2LagElevenForcing"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "d1",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "d2",
+     "line": 56
+    },
+    {
+     "kind": "def",
+     "name": "d3",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "d4",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "d5",
+     "line": 62
+    },
+    {
+     "kind": "def",
+     "name": "d6",
+     "line": 64
+    },
+    {
+     "kind": "def",
+     "name": "d7",
+     "line": 66
+    },
+    {
+     "kind": "def",
+     "name": "donors",
+     "line": 69
+    },
+    {
+     "kind": "def",
+     "name": "lag7Words",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_donors_iff",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "oldestOffset",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "oldestOffset_donors",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "oldestOffset_is_oldest_S",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "past_eleven",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "past_getD",
+     "line": 103
+    },
+    {
+     "kind": "def",
+     "name": "coverOK",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "coverOK_of_stream",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "coverOK_classification",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification_explicit",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_impossible_d3_d5_d6_d7",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_eleven_words",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "hasP2Prefix_eq_false_iff",
+     "line": 211
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_eleven_mem_donors",
+     "line": 225
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_lt_fifteen_mem_donors",
+     "line": 246
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification_of_minimal",
+     "line": 255
+    }
+   ],
+   "theorems": 15,
+   "defs": 11,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LagSevenPrefixRigidity",
    "lines": 130,
    "imports": [
@@ -48503,6 +48647,6 @@
    "hasReport": false
   }
  ],
- "total": 380,
+ "total": 381,
  "withReport": 167
 }

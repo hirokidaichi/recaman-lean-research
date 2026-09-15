@@ -51,6 +51,10 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   実際の最古 S と一致しない。一般 p の Gate T6 を述べる前に「最古 S」を語ごとに定義し直す。
   **帰結**：p ≤ 10/11 の Gate T6 定理（E-225/E-230/E-231/E-232）は、offset 11 が A の donor（d1,d2,d3,d6 型）では削除対象が減算でないため
   `deletedNeighborhood = neighborhood` となり内容が Hall 仮定に退化する。実質は d4/d5/d7 型 donor の主張であり、registry の該当行に注記した。
+  周期語ではこの no-op 型が p=11 で donor 4 件中 4 件、p=22 で 4,470 件中 2,556 件（57%）を占める。
+- **E-348（`PROVED-LEAN`、`Recaman.LagSevenDonorCoverage`、[statement audit](statement_audits/E-348.md)）**：E-347 Q1 の Lean 化。
+  長さ 11 の最小 ss=2 P2 語は 7 個（`decide`）、最古 S の offset は 10 または 11、実際の符号語上で lag-7 窓が donor の最古 S を
+  被覆するなら窓は w1・最古 S は窓の newest bit・donor は d1/d2/d4（`lag7_cover_classification`）。ハーネス導入後の最初の PROVED-LEAN 行。
 
 以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
 

@@ -35,6 +35,9 @@ Q3 (Lean 側)    既存 Lean の Gate T6 文は s* を `oldestSubtractionPhase p
   d1 型では**減算ではない phase** を「供出」していることになる。`oldest_is_subtraction` は `hS : e (u − d) = false` を仮定に持つので矛盾はしないが、
   一般 p の Gate T6 を Lean で述べるときは「最古 S」を語ごとに正しく定義し直す必要がある（次の Lean unit の前提）。
 
+- **Q3 追記（周期語での頻度）**: ss=2 lag-11 donor のうち offset 11 が A（Lean の供出が no-op）のものは p=11 で 4/4、p=16 で 44/78、
+  p=22 で 2,556/4,470（57%）。p ≤ 11 の Lean Gate T6 定理は、実在する donor の全部（p=11）または過半で内容を持たない。
+
 ## Decision
 
 - G2 は「窓ごと」には証明できない：lag ≥ 11 の窓が s* を被覆する周期語は多数ある。**G1（緊密回避 B の lag は {3,7}）が本質**で、
