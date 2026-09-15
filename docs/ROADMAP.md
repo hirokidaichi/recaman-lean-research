@@ -1,5 +1,6 @@
 # 証明ロードマップ
 
+> 2026-09-15追補：回廊再突入トラップ枝の構造的排除定理（Elimination of Corridor Re-entry Trapping）をLean証明（E-341）。任意の回廊再突入における再突入点の厳密なレジャー回廊不等式 2*subSum(k+1)+(a(time)+1)≤upperTri(k+1)<2*subSum(k+1)+2(k+1)、合法減算によるクロック供出 k+1≤subSum(k+1)、着地値の回廊挟み込み a(time)+1≤a(k+1)<2(k+1)、最小未到達数尾部における値≤targetの前尾部有限接頭辞への閉じ込め、未到達数自身の絶対的非生成性、前尾部有限被覆オラクル（PreTailCoverageOracle）との直接矛盾、および回廊再突入無限再帰によるレジャー発散の大域統合を形式化。
 > 2026-09-15追補：永久高値逃亡枝の構造的排除定理（Elimination of Permanent High Escape）をLean証明（E-340）。下向横断存在による永久高値逃亡の直接矛盾、正準tail最小値における永久高値逃亡と下向横断完全不在の同値性、永久高値逃亡排除による最小未到達数の回廊再突入無条件強制、脱出状態 time+2 における鳩の巣ブロッカー容量障害、過去値 valuesThrough(time+1) の完全回避、および地平突破ステップでの値の急落 val<2(3n+3) の大域統合を形式化。
 > 2026-09-15追補：レカマン数列の全射性と反例排除の大域アーキテクチャ定理（Grand Surjectivity Architecture）をLean証明（E-339）。仮定された最小未到達数の動特性が「永久高値逃亡（PermanentHighEscape）」または「回廊再突入（CorridorReentry）」のいずれかに必ず分岐する動特性二分法（least_missing_target_tail_dichotomy）、両動特性枝の排除仮説からの最小未到達数矛盾導出、自然数の整列性（強帰納法）による最小未到達数不在からの全射性導出（surjective_of_not_least_missing_target）、両動特性枝排除からの全射性直接導出、および全射性と最小未到達数不在の双方向同値性の大域統合を形式化。
 > 2026-09-15追補：最小未到達数の構造的矛盾合成定理（Least Missing Target Contradiction Synthesis）をLean証明（E-338）。正準tail最小値からの脱出状態 time+2 における高度上界 a(time+2)<6(time+2)+1、永久高値大域二分法の第1枝の厳密排除と回廊への下向横断強制（permanent_high_escape_dichotomy_resolution）、最小未到達数と尾部復帰仮説の直接矛盾、前尾部有限被覆オラクルとの直接矛盾、および再帰的下向横断レジャー発散と有界レジャーの直接矛盾の大域統合を形式化。

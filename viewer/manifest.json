@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3429,
+   "lines": 3438,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34173,6 +34173,69 @@
    "hasReport": false
   },
   {
+   "name": "NoCorridorReentry",
+   "lines": 160,
+   "imports": [
+    "Surjectivity",
+    "NoPermanentHighEscape",
+    "LeastMissingTargetContradiction",
+    "RecurrentDowncrossingSubSum",
+    "TailDowncrossingInevitability",
+    "TailDowncrossingLedger",
+    "TargetTailResidualKernel",
+    "CorridorDensityObstruction",
+    "FiniteBlockCapacity",
+    "DriftResetAccumulation",
+    "GlobalUnboundednessSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_ledger_bounds",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_clock_deposit",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_value_in_corridor",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "missing_permanent_tail_values_le_target_before_start",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "missing_permanent_tail_pre_tail_capacity_bound",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_contradicts_preTail_oracle",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "recurrent_corridor_reentry_subSum_divergence",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_no_corridor_reentry_synthesis",
+     "line": 129
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "NoDoubleAdditionRun",
    "lines": 54,
    "imports": [
@@ -53448,6 +53511,6 @@
    "hasReport": false
   }
  ],
- "total": 468,
+ "total": 469,
  "withReport": 167
 }

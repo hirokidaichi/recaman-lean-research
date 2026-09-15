@@ -3427,3 +3427,12 @@ import Recaman
 #print axioms Recaman.permanent_high_subSum_capped_of_escape
 #print axioms Recaman.permanent_high_subCount_capped_of_escape
 #print axioms Recaman.grand_no_permanent_high_escape_synthesis
+
+#print axioms Recaman.corridor_reentry_ledger_bounds
+#print axioms Recaman.corridor_reentry_clock_deposit
+#print axioms Recaman.corridor_reentry_value_in_corridor
+#print axioms Recaman.missing_permanent_tail_values_le_target_before_start
+#print axioms Recaman.missing_permanent_tail_pre_tail_capacity_bound
+#print axioms Recaman.corridor_reentry_contradicts_preTail_oracle
+#print axioms Recaman.recurrent_corridor_reentry_subSum_divergence
+#print axioms Recaman.grand_no_corridor_reentry_synthesis

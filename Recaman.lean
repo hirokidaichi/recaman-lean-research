@@ -1,3 +1,4 @@
+import Recaman.NoCorridorReentry
 import Recaman.NoPermanentHighEscape
 import Recaman.Surjectivity
 import Recaman.LeastMissingTargetContradiction
