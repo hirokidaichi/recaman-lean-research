@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3389,
+   "lines": 3396,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -47116,6 +47116,46 @@
    "hasReport": false
   },
   {
+   "name": "TailDowncrossingInevitability",
+   "lines": 174,
+   "imports": [
+    "PermanentHighGlobalSynthesis",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "exists_downcrossing_of_high_to_low",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_forced_downcrossing_step",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_step_properties",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_corridor_reentry_synthesis",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tail_downcrossing_inevitability_synthesis",
+     "line": 153
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TailDowncrossingLedger",
    "lines": 310,
    "imports": [
@@ -53155,6 +53195,6 @@
    "hasReport": false
   }
  ],
- "total": 463,
+ "total": 464,
  "withReport": 167
 }

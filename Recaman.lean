@@ -1,3 +1,4 @@
+import Recaman.TailDowncrossingInevitability
 import Recaman.PermanentHighGlobalSynthesis
 import Recaman.PermanentHighBlockerCapacity
 import Recaman.PermanentHighHistoryExhaustion

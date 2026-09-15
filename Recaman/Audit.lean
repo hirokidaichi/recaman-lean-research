@@ -3386,4 +3386,11 @@ import Recaman
 #print axioms Recaman.permanent_high_universal_dichotomy
 #print axioms Recaman.grand_permanent_high_global_synthesis
 
+#print axioms Recaman.exists_downcrossing_of_high_to_low
+#print axioms Recaman.toothcomb_forced_downcrossing_step
+#print axioms Recaman.downcrossing_step_properties
+#print axioms Recaman.tail_downcrossing_corridor_reentry_synthesis
+#print axioms Recaman.grand_tail_downcrossing_inevitability_synthesis
+
+
 
