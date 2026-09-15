@@ -2632,3 +2632,14 @@ import Recaman
 #print axioms Recaman.TightHallAugmentation.w1_sibling_forced
 #print axioms Recaman.TightHallAugmentation.aas_after_w1_neighborhood_subset
 #print axioms Recaman.TightHallAugmentation.aas_after_w1_forced
+
+-- Private phases of members of tight subsets are at most one (E-355, P2 lemma B).
+#print axioms Recaman.TightPrivatePhase.erase_sublist_of_sublist
+#print axioms Recaman.TightPrivatePhase.neighborhood_erase_subset
+#print axioms Recaman.TightPrivatePhase.tight_erase_length
+#print axioms Recaman.TightPrivatePhase.mem_privatePhases_iff
+#print axioms Recaman.TightPrivatePhase.private_phases_le_one
+#print axioms Recaman.TightPrivatePhase.private_phase_unique
+#print axioms Recaman.TightPrivatePhase.endpointPhase_mem_neighborhood
+#print axioms Recaman.TightPrivatePhase.endpointPhase_ne_of_lt
+#print axioms Recaman.TightPrivatePhase.lag7_w1_two_phases_covered_by_others

@@ -3571,3 +3571,7 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   paired older S の bit-level 分類。G1-strong は全正符号和語 p ≤ 24 でも例外 0。private-S 論法は lag-11 の 3 割で無力、minSlack = 1 の族を記録。
   E-349（OS）を読んだ後にカードを補完として位置づけ直し、P1 用に書いた `OldestSubtractionOffset`（16 定理）は E-350 の `trueOldestPhase` と重複するため退避（未 commit）。
   `PairedSubtractionCoverage`（E-353 予定、lint 6/8 実内容）は 30 分規則に従い E-351 の後に登録する。
+- 19:40 E-353 `PairedSubtractionCoverage`（並行セッション）：paired older S の被覆者補題を stream 上で Lean 化（`pairedAt` decide＋`past_getD` lift、`lake env lean` 0.35 秒、lint 6/8 実内容、statement audit 作成）。同 commit で E-354：G1-strong を p ≤ 31 へ holdout 延長（例外 0、4.5 分）、OS を仮定した閉包探索 `os_closure_search.py` で lag-max 11/15 の緊密 B を bit-level で全排除（OS ⇒ T、lag ≤ 15）。peer（i46zswdv）と claude-peers で id・commit 順を調整し、30 分規則に従って登録。
+- 19:33 E-351 を commit（4a69939）。`TightPrivatePhase`（P2 補題 B：private phase ≤ 1、w1 の 2 phase 被覆）を登録準備。
+  生成ループは E-352（probe）を commit し、E-353（`PairedSubtractionCoverage`）と E-354（probe）を働き木で登録していたので、本モジュールは E-355 とした。
+- 19:40 E-353 `PairedSubtractionCoverage`（並行セッション）：paired older S の被覆者補題を stream 上で Lean 化（`pairedAt` decide＋`past_getD` lift、`lake env lean` 0.35 秒、lint 6/8 実内容、statement audit 作成）。同 commit で E-354：G1-strong を p ≤ 31 へ holdout 延長（例外 0、4.5 分）、OS を仮定した閉包探索 `os_closure_search.py` で lag-max 11/15 の緊密 B を bit-level で全排除（OS ⇒ T、lag ≤ 15）。peer（i46zswdv）と claude-peers で id・commit 順を調整し、30 分規則に従って登録。

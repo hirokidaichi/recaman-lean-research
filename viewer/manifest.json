@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2634,
+   "lines": 2645,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46477,6 +46477,84 @@
    "hasReport": false
   },
   {
+   "name": "TightPrivatePhase",
+   "lines": 242,
+   "imports": [
+    "TightHallAugmentation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "erase_sublist_of_sublist",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_erase_subset",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_erase_length",
+     "line": 65
+    },
+    {
+     "kind": "def",
+     "name": "privatePhases",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_privatePhases_iff",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "length_filter_mem_add_filter_not_mem",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "length_add_filter_not_mem_le",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "private_phases_le_one",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "two_le_length_of_mem_ne",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "private_phase_unique",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "endpointPhase_mem_neighborhood",
+     "line": 161
+    },
+    {
+     "kind": "theorem",
+     "name": "endpointPhase_ne_of_lt",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_w1_two_phases_covered_by_others",
+     "line": 190
+    }
+   ],
+   "theorems": 12,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightQuadDecomposition",
    "lines": 311,
    "imports": [
@@ -48783,6 +48861,6 @@
    "hasReport": false
   }
  ],
- "total": 383,
+ "total": 384,
  "withReport": 167
 }

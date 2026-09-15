@@ -79,9 +79,26 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   しかし priv = 0 が lag-11 の 3 割、minSlack = 1 の族（d7 型 donor＋AAS 3 個、対の古い方の S 2 個が未所有）が実在するので、T の証明は private-S 論法では閉じず OS の所有論法が要る。
   bit-level 補題：**隣接 SS 対の古い方の S は AAS に入らず、最小 lag-7 窓では w1 の最古 bit（offset 7）のみ**。OS の下では paired older S の所有者は「…SS」で終わる窓に限られ、
   T の導出は 7 語 × offset の有限検査に落ちる。Lean 化は E-353（`PairedSubtractionCoverage`）。
+- **E-353（`PROVED-LEAN`、`Recaman.PairedSubtractionCoverage`、[statement audit](statement_audits/E-353.md)）**：E-352 の bit-level 補題の Lean 化。
+  `PairedOlderS e s`（e s = e (s+1) = S）について、AAS 窓 `past e u 3 = [A,A,S]` は paired older S を含まず、最小 lag-7 窓（w1 か w2）が含むなら窓は w1 で s = u − 7、
+  w2 は含まない（Bool 判定 `pairedAt` の decide＋`past_getD` による stream lift、lint 6/8 実内容）。緊密部分集合・Hall・周期性・lag ≥ 11 の窓については何も言わない。
+- **E-354（`COMPUTED`、[card addendum](HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md)）**：G1-strong（E-349 の T）を high-SS 語 p ≤ 31・全正符号和語 p ≤ 26 へ holdout 延長、例外 0。
+  さらに **OS を仮定した bit-level 閉包探索**：緊密 B の lag 最大メンバー v を置き、各 S に「lag ≤ lag(v) の最小 P2 語をその最古 S が乗るように置く」所有者を要求して閉包を取ると、
+  lag 11 の 17 語・lag 15 の 155 語の全てで全分岐が bit 矛盾で終わる（cap 到達 0）。**OS ⇒ T（lag ≤ 15）** が有限検査に落ちた（lag 19 も完了、データ参照）。
+  OS は未証明なので T の無条件証明ではない。次の紙上課題は一般 lag への帰納（E-090 型の run 制約）。
+- **E-353（`PROVED-LEAN`、`Recaman.PairedSubtractionCoverage`、[statement audit](statement_audits/E-353.md)）**：E-352 の bit-level 補題の Lean 化。
+  `PairedOlderS e s`（e s = e (s+1) = S）について、AAS 窓 `past e u 3 = [A,A,S]` は paired older S を含まず、最小 lag-7 窓（w1 か w2）が含むなら窓は w1 で s = u − 7、
+  w2 は含まない（Bool 判定 `pairedAt` の decide＋`past_getD` による stream lift、lint 6/8 実内容）。緊密部分集合・Hall・周期性・lag ≥ 11 の窓については何も言わない。
+- **E-354（`COMPUTED`、[card addendum](HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md)）**：G1-strong（E-349 の T）を high-SS 語 p ≤ 31・全正符号和語 p ≤ 26 へ holdout 延長、例外 0。
+  さらに **OS を仮定した bit-level 閉包探索**：緊密 B の lag 最大メンバー v を置き、各 S に「lag ≤ lag(v) の最小 P2 語をその最古 S が乗るように置く」所有者を要求して閉包を取ると、
+  lag 11 の 17 語・lag 15 の 155 語の全てで全分岐が bit 矛盾で終わる（cap 到達 0）。**OS ⇒ T（lag ≤ 15）** が有限検査に落ちた（lag 19 も完了、データ参照）。
+  OS は未証明なので T の無条件証明ではない。次の紙上課題は一般 lag への帰納（E-090 型の run 制約）。
 - **E-351（`PROVED-LEAN`、`Recaman.TightHallAugmentation`、P2 補題 A、[statement audit](statement_audits/E-351.md)）**：Hall が U 上で成り立ち
   B が緊密なら、N([x]) ⊆ N(B) を満たす x ∈ U は B に入る。系として w1 メンバーの lag-3 兄弟 u−3 と（e(u)=e(u+1)=A のとき）AAS at u+2 は B に入る。
   E-349 の SIB を説明する。次は補題 B（private phase ≤ 1）と w2／lag ≥ 11 排除の有限場合分け。
+- **E-355（`PROVED-LEAN`、`Recaman.TightPrivatePhase`、P2 補題 B、[statement audit](statement_audits/E-355.md)）**：緊密 B の各メンバー v について
+  |N(B)| ≤ |N(B∖{v})| + 1、すなわち v だけが被覆する phase は高々 1 個。系：w1 メンバーの 3 phase のうち 2 つは他メンバーが被覆する（E-349 の cov<2:0）。
+  補題 A（E-351）と合わせて、w2 の phase u−5 が lag ≥ 11 の窓にしか被覆されないことの Lean 化が次。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 
