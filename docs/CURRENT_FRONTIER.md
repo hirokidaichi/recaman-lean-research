@@ -69,7 +69,11 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
 - **E-349（`COMPUTED`、[card](HYPOTHESIS_CARD_2026-09-15_TIGHT_OLDEST_S_CHARACTERIZATION.md)、P2 の骨）**：Hall が成り立つ正符号和語で
   U の全部分集合を走査し、緊密部分集合（p=26 で 512 万個）の全てが **OS「各メンバーの最古 S は相異なり、その集合が N(B) に一致」** を満たす。
   帰結として lag ≥ 11 のメンバーを持つ緊密部分集合は 0、lag-7 メンバーは全件 w1、その兄弟 u−3 は常に B に入り、u−1 は常に lag-3 メンバーの最古 S。
-  **G1 は OS として定式化し直す。** Lean の第一歩は Hall 増分補題（N([x]) ⊆ N(B) なる x ∈ U は B に入る）。
+  さらに **MD（モチーフ分解）**：全緊密部分集合は「孤立 AAS」と「w1 三つ組 {u−3, u, u+2}」の互いに素な和（p ≤ 26 例外 0）。
+  **G1 の最終形は MD。** Lean の第一歩は Hall 増分補題（N([x]) ⊆ N(B) なる x ∈ U は B に入る）。
+- **E-350（`PROVED-LEAN`、`Recaman.TrueOldestGateT6`、P1、[statement audit](statement_audits/E-350.md)）**：真の最古 S
+  `trueOldestPhase`（窓内で最大 offset の S）を定義し、E-230 と同じ仮定の下で p ≤ 10 の Gate T6 を真の最古 S の削除で証明した。
+  新しい分離補題は「AAS 窓の端点は真の最古 S と一致しない」（7 語の bit 衝突を decide）。これで p ≤ 10 は 7 語全てで実質を持つ。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 

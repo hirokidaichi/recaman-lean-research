@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2610,
+   "lines": 2623,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46985,6 +46985,84 @@
    "hasReport": false
   },
   {
+   "name": "TrueOldestGateT6",
+   "lines": 271,
+   "imports": [
+    "LagSevenDonorCoverage"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "trueOldestPhase",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "donor_oldestOffset",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "trueOldestPhase_eq_of_offset_eleven",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "trueOldestPhase_eq_of_offset_ten",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "offset_eleven_is_A_of_offset_ten",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "trueOldest_bit_is_S",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "trueOldest_is_subtraction",
+     "line": 121
+    },
+    {
+     "kind": "def",
+     "name": "aasClash",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "aasClash_donors",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_endpoint_ne_trueOldest",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest_lag",
+     "line": 219
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest_of_minimal",
+     "line": 243
+    }
+   ],
+   "theorems": 11,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TwoLagSevenPhaseConflict",
    "lines": 179,
    "imports": [
@@ -48647,6 +48725,6 @@
    "hasReport": false
   }
  ],
- "total": 381,
+ "total": 382,
  "withReport": 167
 }

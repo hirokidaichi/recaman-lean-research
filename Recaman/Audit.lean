@@ -2608,3 +2608,16 @@ import Recaman
 #print axioms Recaman.LagSevenDonorCoverage.lag7_cover_classification_explicit
 #print axioms Recaman.LagSevenDonorCoverage.lag7_cover_impossible_d3_d5_d6_d7
 #print axioms Recaman.LagSevenDonorCoverage.lag7_cover_classification_of_minimal
+
+-- Gate T6 for p <= 10 with the true oldest subtraction of the SS=2 lag-11 donor (E-350, P1).
+#print axioms Recaman.TrueOldestGateT6.donor_oldestOffset
+#print axioms Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_eleven
+#print axioms Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_ten
+#print axioms Recaman.TrueOldestGateT6.offset_eleven_is_A_of_offset_ten
+#print axioms Recaman.TrueOldestGateT6.trueOldest_bit_is_S
+#print axioms Recaman.TrueOldestGateT6.trueOldest_is_subtraction
+#print axioms Recaman.TrueOldestGateT6.aasClash_donors
+#print axioms Recaman.TrueOldestGateT6.aas_endpoint_ne_trueOldest
+#print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest
+#print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_lag
+#print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_of_minimal

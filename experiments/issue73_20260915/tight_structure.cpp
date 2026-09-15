@@ -3,6 +3,7 @@
 // present, the oldest subtraction of every member, whether the oldest subtractions are pairwise distinct
 // and exhaust N(B) (the "OS characterization"), and for lag-7 members which phase is private to them and
 // who owns their newest subtraction. Registry E-349.
+// 2026-09-15 19:05: added the motif-decomposition test (isolated AAS windows + w1 triples {u-3, u, u+2}).
 // G1 structure probe: over ALL tight subsets B of U (not only donor-avoiding), what lags occur,
 // and for lag-7 members, are their phases covered by lag-3 siblings inside B?
 #include <cstdint>
@@ -31,7 +32,7 @@ int main(int argc, char **argv) {
     uint64_t full = (1ULL << p) - 1;
     I words = 0, tightSets = 0, withLag7 = 0, withLagGe11 = 0, lag7_w1 = 0, lag7_w2 = 0, w1_sibling_in_B = 0, w2_sibling_in_B = 0;
     I lag7_phase_uncovered_by_others = 0, lag7_all3_covered = 0; I sizeHist[16]; memset(sizeHist, 0, sizeof(sizeHist));
-    I maxU = 0; std::string firstGe11, firstLag7NoSib; I osDistinct = 0, osEqualsN = 0, priv_u1 = 0, priv_u7 = 0, priv_u6 = 0; std::string firstOSfail; I hasLag3 = 0, w1_u1_isOldestOfMember = 0, w1_u1_owner_lag3 = 0;
+    I maxU = 0; std::string firstGe11, firstLag7NoSib; I osDistinct = 0, osEqualsN = 0, priv_u1 = 0, priv_u7 = 0, priv_u6 = 0; std::string firstOSfail; I hasLag3 = 0, w1_u1_isOldestOfMember = 0, w1_u1_owner_lag3 = 0; I motifOK = 0, lag3_shared_not_motif = 0, maxW1 = 0; std::string firstMotifFail;
     for (uint64_t w = 0; w <= full; ++w) {
       int pc = __builtin_popcountll(w); int sigma = 2 * pc - p;
       if (sigma <= 0 || !isMinRotation(w)) continue;
@@ -58,6 +59,17 @@ int main(int argc, char **argv) {
         { uint64_t osSet = 0; bool distinct = true; for (int b = 0; b < nU; ++b) if ((m >> b) & 1) { uint64_t bit = 1ULL << oldS[b]; if (osSet & bit) distinct = false; osSet |= bit; }
           if (distinct) ++osDistinct; if (osSet == N) ++osEqualsN;
           { bool l3 = false; for (int b = 0; b < nU; ++b) if (((m >> b) & 1) && lag[b] == 3) l3 = true; if (l3) ++hasLag3; }
+          { bool ok = true; I nw1 = 0;
+            for (int b = 0; b < nU; ++b) if ((m >> b) & 1) {
+              if (lag[b] == 7) { if (w1flag[b] != 1) ok = false; else { ++nw1; int u = phase[b]; bool sibA = false, sibB = false;
+                  for (int c = 0; c < nU; ++c) if (((m >> c) & 1) && lag[c] == 3) { if (phase[c] == ((u - 3) % p + p) % p) sibA = true; if (phase[c] == (u + 2) % p) sibB = true; }
+                  if (!(sibA && sibB)) ok = false; } }
+              else if (lag[b] == 3) { int v = phase[b]; uint64_t sbit = 1ULL << (((v - 3) % p + p) % p); bool shared = false; bool motif = false;
+                for (int c = 0; c < nU; ++c) if (((m >> c) & 1) && c != b && (nb[c] & sbit)) { shared = true; if (lag[c] == 7 && w1flag[c] == 1 && (phase[c] == (v + 3) % p || phase[c] == ((v - 2) % p + p) % p)) motif = true; }
+                if (shared && !motif) { ok = false; ++lag3_shared_not_motif; } }
+              else ok = false; }
+            if (ok) ++motifOK; else if (firstMotifFail.empty()) { std::string t(p, 'S'); for (int i = 0; i < p; ++i) if ((w >> i) & 1) t[i] = 'A'; firstMotifFail = t + " B="; for (int b = 0; b < nU; ++b) if ((m >> b) & 1) { char x[32]; snprintf(x, sizeof x, "%d(l%d)", phase[b], lag[b]); firstMotifFail += x; firstMotifFail += ","; } }
+            if (nw1 > maxW1) maxW1 = nw1; }
           for (int b = 0; b < nU; ++b) if (((m >> b) & 1) && w1flag[b] == 1) { int u1 = ((phase[b] - 1) % p + p) % p; for (int c = 0; c < nU; ++c) if (((m >> c) & 1) && c != b && oldS[c] == u1) { ++w1_u1_isOldestOfMember; if (lag[c] == 3) ++w1_u1_owner_lag3; } }
           if (!(distinct && osSet == N) && firstOSfail.empty()) { std::string t(p, 'S'); for (int i = 0; i < p; ++i) if ((w >> i) & 1) t[i] = 'A'; char buf[128]; snprintf(buf, sizeof buf, " B="); firstOSfail = t + buf; for (int b = 0; b < nU; ++b) if ((m >> b) & 1) { char x[32]; snprintf(x, sizeof x, "%d(l%d,os%d)", phase[b], lag[b], oldS[b]); firstOSfail += x; firstOSfail += ","; } } }
         if (mx >= 11) { ++withLagGe11; if (firstGe11.empty()) { std::string t(p, 'S'); for (int i = 0; i < p; ++i) if ((w >> i) & 1) t[i] = 'A'; firstGe11 = t; } }
@@ -84,6 +96,7 @@ int main(int argc, char **argv) {
            firstGe11.empty() ? "" : ("FIRST_GE11 " + firstGe11 + " ").c_str(), firstLag7NoSib.empty() ? "" : ("FIRST_NOSIB " + firstLag7NoSib).c_str());
     printf("   OS-characterization: oldestS distinct=%lld  N(B)==oldestS set=%lld  (of %lld tight sets) %s\n   w1 private phase within B: u-1:%lld u-7:%lld u-6:%lld\n", (long long)osDistinct, (long long)osEqualsN, (long long)tightSets, firstOSfail.empty() ? "" : ("FIRST_FAIL " + firstOSfail).c_str(), (long long)priv_u1, (long long)priv_u7, (long long)priv_u6);
     printf("   every tight set has a lag-3 member: %lld/%lld ; w1 phase u-1 is the oldest S of another member: %lld (owner lag 3: %lld)\n", (long long)hasLag3, (long long)tightSets, (long long)w1_u1_isOldestOfMember, (long long)w1_u1_owner_lag3);
+    printf("   motif decomposition (isolated AAS + w1 triples {u-3,u,u+2}): %lld/%lld tight sets; lag-3 members sharing their S outside a motif: %lld; max w1 triples per set: %lld %s\n", (long long)motifOK, (long long)tightSets, (long long)lag3_shared_not_motif, (long long)maxW1, firstMotifFail.empty() ? "" : ("FIRST_FAIL " + firstMotifFail).c_str());
     printf("   tight size histogram:"); for (int k = 1; k < 16; ++k) if (sizeHist[k]) printf(" %d:%lld", k, (long long)sizeHist[k]); printf("\n");
     fflush(stdout);
   }
