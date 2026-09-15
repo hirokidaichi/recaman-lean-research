@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3344,
+   "lines": 3355,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40893,6 +40893,73 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighToothcombDescent",
+   "lines": 324,
+   "imports": [
+    "PermanentHighCollision",
+    "PermanentHighRigidity",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger",
+    "DebtInvariant"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "toothcomb_unit_decrement_candidate",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_subtraction_landing_value",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "aasa_subtraction_candidate",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "aasa_candidate_not_in_current_episode",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "aasa_fifth_addition_requires_prior_summit",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "aasa_forced_subtraction_under_summit_bound",
+     "line": 184
+    },
+    {
+     "kind": "theorem",
+     "name": "aasa_forced_subtraction_landing_value",
+     "line": 199
+    },
+    {
+     "kind": "theorem",
+     "name": "aasas_step7_subtraction_candidate",
+     "line": 223
+    },
+    {
+     "kind": "theorem",
+     "name": "aasas_step7_candidate_not_in_current_episode",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_toothcomb_branching_synthesis",
+     "line": 298
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighUnsuppliedDeficit",
    "lines": 284,
    "imports": [
@@ -52825,6 +52892,6 @@
    "hasReport": false
   }
  ],
- "total": 458,
+ "total": 459,
  "withReport": 167
 }

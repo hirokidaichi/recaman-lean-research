@@ -3342,3 +3342,14 @@ import Recaman
 #print axioms Recaman.aasaaa_forced_subtraction_under_super_summit_bound
 #print axioms Recaman.aasaaa_forced_subtraction_landing_value
 #print axioms Recaman.grand_permanent_high_unsupplied_deficit_synthesis
+
+#print axioms Recaman.toothcomb_unit_decrement_candidate
+#print axioms Recaman.toothcomb_subtraction_landing_value
+#print axioms Recaman.aasa_subtraction_candidate
+#print axioms Recaman.aasa_candidate_not_in_current_episode
+#print axioms Recaman.aasa_fifth_addition_requires_prior_summit
+#print axioms Recaman.aasa_forced_subtraction_under_summit_bound
+#print axioms Recaman.aasa_forced_subtraction_landing_value
+#print axioms Recaman.aasas_step7_subtraction_candidate
+#print axioms Recaman.aasas_step7_candidate_not_in_current_episode
+#print axioms Recaman.grand_permanent_high_toothcomb_branching_synthesis

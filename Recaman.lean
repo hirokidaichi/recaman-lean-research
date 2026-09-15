@@ -1,3 +1,4 @@
+import Recaman.PermanentHighToothcombDescent
 import Recaman.PermanentHighUnsuppliedDeficit
 import Recaman.PermanentHighCollision
 import Recaman.PermanentHighRigidity
