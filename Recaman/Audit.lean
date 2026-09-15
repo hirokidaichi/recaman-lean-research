@@ -2621,3 +2621,14 @@ import Recaman
 #print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest
 #print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_lag
 #print axioms Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_of_minimal
+
+-- Hall augmentation for tight subsets and the forced w1 siblings (E-351, P2).
+#print axioms Recaman.TightHallAugmentation.filter_mem_of_sublist_nodup
+#print axioms Recaman.TightHallAugmentation.filter_mem_or_eq_length
+#print axioms Recaman.TightHallAugmentation.hall_forces_membership
+#print axioms Recaman.TightHallAugmentation.tight_member_of_neighborhood_subset
+#print axioms Recaman.TightHallAugmentation.w1_bits
+#print axioms Recaman.TightHallAugmentation.w1_sibling_neighborhood_subset
+#print axioms Recaman.TightHallAugmentation.w1_sibling_forced
+#print axioms Recaman.TightHallAugmentation.aas_after_w1_neighborhood_subset
+#print axioms Recaman.TightHallAugmentation.aas_after_w1_forced

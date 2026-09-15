@@ -27,6 +27,7 @@
   純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
 - 治療の仕上げ：frontier の撤回段落を id 一覧付き撤回記録に置換、ROADMAP に撤回印、残存 18 行に実内容注記、
   E-345 を p ≤ 26 へ拡張（ss=2 の最古 S・緊密回避 lag {3,7} とも例外 0）。研究計画 `docs/RESEARCH_PLAN_2026-09-15.md` を新設
+- E-351（`PROVED-LEAN`、`TightHallAugmentation`、P2 補題 A）：緊密 B と Hall から、近傍が N(B) に収まる x ∈ U は B に入る。w1 の兄弟の強制
 - E-352（`COMPUTED`）：lag ≥ 11 メンバーの private-S/minSlack 分布（G1-strong は全正符号和語 p ≤ 24 で例外 0、private-S 論法は 3 割で無力）と、
   隣接 SS 対の古い方の S の被覆者分類（AAS 不可、lag-7 は w1 の offset 7 のみ）。E-349 の補完
 - E-350（`PROVED-LEAN`、`TrueOldestGateT6`、P1）：真の最古 S の削除で p ≤ 10 の Gate T6 を 7 語全てで証明。E-230 の no-op 問題を解消

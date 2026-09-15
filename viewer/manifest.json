@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2623,
+   "lines": 2634,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46272,6 +46272,64 @@
    "hasReport": false
   },
   {
+   "name": "TightHallAugmentation",
+   "lines": 265,
+   "imports": [
+    "LagSevenPrefixRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "filter_mem_of_sublist_nodup",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "filter_mem_or_eq_length",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_forces_membership",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_member_of_neighborhood_subset",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_bits",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_sibling_neighborhood_subset",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_sibling_forced",
+     "line": 196
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_after_w1_neighborhood_subset",
+     "line": 212
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_after_w1_forced",
+     "line": 250
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TightP2ParityRigidity",
    "lines": 141,
    "imports": [
@@ -48725,6 +48783,6 @@
    "hasReport": false
   }
  ],
- "total": 382,
+ "total": 383,
  "withReport": 167
 }

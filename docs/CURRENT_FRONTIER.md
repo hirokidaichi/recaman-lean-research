@@ -79,6 +79,9 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   しかし priv = 0 が lag-11 の 3 割、minSlack = 1 の族（d7 型 donor＋AAS 3 個、対の古い方の S 2 個が未所有）が実在するので、T の証明は private-S 論法では閉じず OS の所有論法が要る。
   bit-level 補題：**隣接 SS 対の古い方の S は AAS に入らず、最小 lag-7 窓では w1 の最古 bit（offset 7）のみ**。OS の下では paired older S の所有者は「…SS」で終わる窓に限られ、
   T の導出は 7 語 × offset の有限検査に落ちる。Lean 化は E-353（`PairedSubtractionCoverage`）。
+- **E-351（`PROVED-LEAN`、`Recaman.TightHallAugmentation`、P2 補題 A、[statement audit](statement_audits/E-351.md)）**：Hall が U 上で成り立ち
+  B が緊密なら、N([x]) ⊆ N(B) を満たす x ∈ U は B に入る。系として w1 メンバーの lag-3 兄弟 u−3 と（e(u)=e(u+1)=A のとき）AAS at u+2 は B に入る。
+  E-349 の SIB を説明する。次は補題 B（private phase ≤ 1）と w2／lag ≥ 11 排除の有限場合分け。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 
