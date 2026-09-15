@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3355,
+   "lines": 3364,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40893,6 +40893,62 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighToothcombBound",
+   "lines": 125,
+   "imports": [
+    "PermanentHighToothcombDescent",
+    "PermanentHighRigidity",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "toothcomb_high_regime_inequality",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_exceeds_high_bound_forces_downcrossing",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_subtraction_values_strictly_decreasing",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_subtraction_values_distinct",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_additions_strictly_above_subtractions",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_avoids_prior_subtractions",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_avoids_additions",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_toothcomb_horizon_synthesis",
+     "line": 105
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighToothcombDescent",
    "lines": 324,
    "imports": [
@@ -52892,6 +52948,6 @@
    "hasReport": false
   }
  ],
- "total": 459,
+ "total": 460,
  "withReport": 167
 }

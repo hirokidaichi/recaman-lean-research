@@ -3353,3 +3353,12 @@ import Recaman
 #print axioms Recaman.aasas_step7_subtraction_candidate
 #print axioms Recaman.aasas_step7_candidate_not_in_current_episode
 #print axioms Recaman.grand_permanent_high_toothcomb_branching_synthesis
+
+#print axioms Recaman.toothcomb_high_regime_inequality
+#print axioms Recaman.toothcomb_exceeds_high_bound_forces_downcrossing
+#print axioms Recaman.toothcomb_subtraction_values_strictly_decreasing
+#print axioms Recaman.toothcomb_subtraction_values_distinct
+#print axioms Recaman.toothcomb_additions_strictly_above_subtractions
+#print axioms Recaman.toothcomb_candidate_avoids_prior_subtractions
+#print axioms Recaman.toothcomb_candidate_avoids_additions
+#print axioms Recaman.grand_toothcomb_horizon_synthesis

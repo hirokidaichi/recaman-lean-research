@@ -37,6 +37,8 @@
 
 さらに、Recamán 数列の歯櫛（toothcomb）下降動特性と `AASA` パターンの分岐二分法（**E-331、`Recaman.PermanentHighToothcombDescent`**）が形式化された。ステップ $k + 1$ が加算であるとき直後のステップ $k + 2$ の減算候補値が厳密に $a(k) - 1$ となる普遍的単一減衰恒等式（`toothcomb_unit_decrement_candidate`）を確立し、減算成功時に値が1ずつ減少して着地すること（`toothcomb_subtraction_landing_value`）を証明した。これを永久高値領域の `AASA` 列に適用し、ステップ $n + 5$ の減算候補値 $a(n) + n - 1 = a(n + 3) - 1$ が $n \ge 2$ においてエピソード内の全5値 $\{a(n), \dots, a(n + 4)\}$ を厳密に回避すること（`aasa_candidate_not_in_current_episode`）を証明した。これにより、ステップ $n + 5$ が加算となって `AASAA` が形成されるためには過去の時刻 $j \le n - 1$ にサミット $a(j) = a(n) + n - 1 \ge 3n - 1$ が存在しなければならないこと、および過去サミットを欠く領域ではステップ $n + 5$ の減算が例外なく強制されて `AASAS` への遷移が不可避となり `AASAA` の形成が完全に排除されること（`aasa_forced_subtraction_under_summit_bound`）、さらに `AASAS` 後のステップ $n + 7$ 候補値 $a(n + 5) - 1 = a(n) + n - 2$ が $n \ge 3$ で全7値を回避して歯櫛下降を継続することを Lean で厳密に証明した（`PROVED-LEAN`）。
 
+さらに、歯櫛下降における永久高値滞在限界と下向横断強制定理（**E-332、`Recaman.PermanentHighToothcombBound`**）が形式化された。歯櫛ステップ $m$ において軌道値が $a(n + 3 + 2m) = a(n) + n - m$ と減少する一方、クロック $T = n + 3 + 2m$ は増加するため、高値領域 $a(T) \ge 2T$ を維持するための線形必要十分条件が $5m + n + 6 \le a(n)$ であること（`toothcomb_high_regime_inequality`）、および限界を超えて $m > (a(n) - n - 6)/5$ ステップ進行した歯櫛は例外なく $a(T) < 2T$ へ突入して永久高値領域からの下向横断を厳密に強制すること（`toothcomb_exceeds_high_bound_forces_downcrossing`）を証明した。さらに、歯櫛内部の全減算値が狭義単調減少かつ互いに相異なり、全加算値よりも厳密に下方に位置することから、歯櫛自身が自己衝突によって中断することはあり得ず、歯櫛が下向横断前に途切れる原因は過去の有限個の歴史値 $a(j)$（$j \le n - 1$）との衝突に限定されるという大域的地平合成定理（`grand_toothcomb_horizon_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
 
