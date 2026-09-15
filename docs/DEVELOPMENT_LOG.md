@@ -3558,3 +3558,5 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   p ≤ 10/11 の Gate T6 定理（E-225/E-230/E-231/E-232）は 7 語中 4 語で Hall 仮定に退化する。registry と frontier に注記。
 - 17:40 E-348 `LagSevenDonorCoverage`：サブエージェントが 98 配置の `injection` 証明ではなく `coverOK` Bool 判定＋`decide` で一括証明
   （`lake env lean` 2.6 秒）。`--lint-module` 13/15 実内容、statement audit を作成、G1〜G5 通過。
+- 17:50 治療の仕上げ：frontier の 09-12〜15 の撤回段落（約 110 行）を明示的な id 一覧付きの撤回記録に置換（776→664 行）、ROADMAP の
+  追補 16 本と 09-14 節に撤回印、残した 18 行に実内容注記、E-345 を p ≤ 26 へ holdout 拡張（例外 0）。研究計画 `RESEARCH_PLAN_2026-09-15.md` を新設。

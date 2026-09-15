@@ -57,6 +57,17 @@ p ≤ 22 の緊密回避部分集合に一度も現れない）。非 AAS 緊密
 - p=15 `AAAASAAASASASSS`、donor 3（lag 11、ssCount 2）、s*=8：ss=2 donor で初めて非 AAS 緊密回避部分集合が現れる。
 - p=18 `AAAASSAAAASAAASASS`（E-240）、donor 7、s*=14、B={2,8,11(lag7),13}、N(B)={4,5,10,17}、s* ∉ N(B)。
 
+## Holdout extension（2026-09-15 夕、p = 23..26、`tight_nonaas_census_p23_26.txt`、6.9 秒）
+
+| p | high-SS donors | ss=2 donors | 最古S削除不可（ss=2） | 最古S削除不可（ss≥3） | 非AAS緊密回避（ss=2） | 緊密内の最大 lag |
+|---|---|---|---|---|---|---|
+| 23 | 92,170 | 16,700 | 0 | 3,977 | 253 | 7 |
+| 24 | 118,672 | 28,533 | 0 | 6,159 | 509 | 7 |
+| 25 | 362,074 | 65,460 | 0 | 22,772 | 1,117 | 7 |
+| 26 | 471,423 | 110,979 | 0 | 28,107 | 2,305 | 7 |
+
+Q3（ss=2 の最古 S は被覆されない）と Q4（緊密回避の lag は {3,7}）は p ≤ 26 まで例外 0。ss≥3 の破綻率は約 6%。
+
 ## Answers and decision
 
 - **Q1**: 全 donor では p=12（ssCount 3 donor）。**ss=2 donor では p=15**。従って「緊密回避 ⇒ 純 AAS」は ss=2 donor に限れば

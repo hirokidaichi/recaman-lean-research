@@ -2,24 +2,24 @@
 
 > 2026-09-15追補（監査・訂正）：2026-09-14〜15 に登録された E-317〜E-319（Gate T6 全周期解決、`|U| ≤ |D|`、Issue #73 CLOSED）と E-338〜E-342（全射性閉包）を Lean ソースで監査した。E-317〜E-319 の主要定理は自由な Nat 変数上の恒真式（`card_U - k ≤ card_D - k` から `card_U ≤ card_D`、`k = k := rfl`）で符号語に触れず、E-338〜E-342 は未証明の定義済み仮説からの条件付き再包装である。E-070/E-067 を `CONJECTURED` に戻し、**Issue #73 は OPEN**、全射性・非全射性は未解決のまま。Gate T6 の無条件 Lean 証明は p ≤ 10（E-230/E-231）まで。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)。以下の 2026-09-14〜15 の追補はこの訂正を前提に読むこと。
 > 2026-09-15追補：永久高値レジームにおける地平前履歴の完全無力化と内部ブロッカー強制定理（Permanent High Internal Blocker and Pre-Horizon Immunity）をLean証明（E-344）。地平 H 以前の過去値が a(j)≤upperTri(H) に留まることから、n≥upperTri(H)+2 における減算候補 a(n)-(n+1) の地平前履歴完全回避（pre_horizon_blocker_impossible）、減算失敗時（¬CanSubtract）の内部ブロッカー強制（H≤j≤n）、直近3状態の排除（j≤n-3）、および内部ブロッカーによる軌道高度急上昇 2j+n+1≤a(n) と 2H+n+1≤a(n) の大域統合を形式化。
-> 2026-09-15追補：全射性大域閉包と反例排除マスター合成定理（Grand Surjectivity Closure and Master Counterexample Elimination）をLean証明（E-342）。両動特性枝排除仮説からの全射性導出（surjectivity_master_branch_reduction）、最小未到達数矛盾（counterexample_elimination_master_theorem）、全射性と最小未到達数不在の双方向同値性（surjectivity_bilateral_equivalence_closed）、下向横断による永久高値逃亡排除（permanent_high_escape_branch_eliminated_of_downcrossing）、前尾部被覆オラクル矛盾による回廊再突入排除（corridor_reentry_branch_eliminated_of_preTail_oracle）、尾部動特性二分法解決、尾部復帰仮説同値性、および被覆オラクル充足による全射性導出の大域閉包を形式化。
-> 2026-09-15追補：回廊再突入トラップ枝の構造的排除定理（Elimination of Corridor Re-entry Trapping）をLean証明（E-341）。任意の回廊再突入における再突入点の厳密なレジャー回廊不等式 2*subSum(k+1)+(a(time)+1)≤upperTri(k+1)<2*subSum(k+1)+2(k+1)、合法減算によるクロック供出 k+1≤subSum(k+1)、着地値の回廊挟み込み a(time)+1≤a(k+1)<2(k+1)、最小未到達数尾部における値≤targetの前尾部有限接頭辞への閉じ込め、未到達数自身の絶対的非生成性、前尾部有限被覆オラクル（PreTailCoverageOracle）との直接矛盾、および回廊再突入無限再帰によるレジャー発散の大域統合を形式化。
-> 2026-09-15追補：永久高値逃亡枝の構造的排除定理（Elimination of Permanent High Escape）をLean証明（E-340）。下向横断存在による永久高値逃亡の直接矛盾、正準tail最小値における永久高値逃亡と下向横断完全不在の同値性、永久高値逃亡排除による最小未到達数の回廊再突入無条件強制、脱出状態 time+2 における鳩の巣ブロッカー容量障害、過去値 valuesThrough(time+1) の完全回避、および地平突破ステップでの値の急落 val<2(3n+3) の大域統合を形式化。
-> 2026-09-15追補：レカマン数列の全射性と反例排除の大域アーキテクチャ定理（Grand Surjectivity Architecture）をLean証明（E-339）。仮定された最小未到達数の動特性が「永久高値逃亡（PermanentHighEscape）」または「回廊再突入（CorridorReentry）」のいずれかに必ず分岐する動特性二分法（least_missing_target_tail_dichotomy）、両動特性枝の排除仮説からの最小未到達数矛盾導出、自然数の整列性（強帰納法）による最小未到達数不在からの全射性導出（surjective_of_not_least_missing_target）、両動特性枝排除からの全射性直接導出、および全射性と最小未到達数不在の双方向同値性の大域統合を形式化。
-> 2026-09-15追補：最小未到達数の構造的矛盾合成定理（Least Missing Target Contradiction Synthesis）をLean証明（E-338）。正準tail最小値からの脱出状態 time+2 における高度上界 a(time+2)<6(time+2)+1、永久高値大域二分法の第1枝の厳密排除と回廊への下向横断強制（permanent_high_escape_dichotomy_resolution）、最小未到達数と尾部復帰仮説の直接矛盾、前尾部有限被覆オラクルとの直接矛盾、および再帰的下向横断レジャー発散と有界レジャーの直接矛盾の大域統合を形式化。
-> 2026-09-15追補：再帰的下向横断による減算レジャー質量・回数の発散と無条件非有界性合成定理（Recurrent Downcrossing SubSum Divergence）をLean証明（E-337）。合法減算の強再帰性（exists_canSubtract_of_ray）によるsubSum・subCountの任意のカットオフ以降の無条件発散、下向横断ステップのクロック供出による直接下界（B<k+1≤subSum(k+1)）、正準tail最小値以降の下向横断におけるsubSum(time)からの累積増加と回廊再突入拘束、および無限再帰下向横断による回廊内発散大域合成を統合。
-> 2026-09-15追補：尾部下向横断の不可避性と回廊再突入大域合成定理（Tail Downcrossing Inevitability）をLean証明（E-336）。高値から低値への離散的中間値性による下向横断存在補題（exists_downcrossing_of_high_to_low）、歯櫛下降の地平突破による下向横断強制、下向横断ステップの合法減算性・クロック供出・値の新規性、および正準tail最小値以降の下向横断における回廊レジャー拘束再突入を統合。
-> 2026-09-15追補：永久高値大域統合と下向横断不可避性二分法（Permanent High Global Synthesis）をLean証明（E-335）。a(n)≥6n+1 における高値地平充足（5m+n+6≤a(n) for m<n）と鳩の巣未阻害候補の高値地平内厳密存在、a(n)<6n+1 におけるステップnでの地平突破と高値脱出下向横断強制（val<2(3n+3)）、および全高値領域に対する普遍的高値二分法を統合。
-> 2026-09-15追補：永久高値有限歴史ブロッカーの容量障害と鳩の巣原理による未阻害候補存在定理（Permanent High Blocker Capacity）をLean証明（E-334）。高値領域 2n≤a(n) の候補値 c(m)=a(n)+n-m（m<n）に対する 2n<c(m) 下界、小インデックス（j=0, 1）のブロッカー完全不適格性、重複のないn要素の候補リストと高々n-1要素の非ゼロ過去値リストによる鳩の巣容量矛盾（n≤n-1）、および過去履歴 valuesThrough(n-1) を完全回避する未阻害歯櫛ステップの厳密存在を統合。
-> 2026-09-15追補：有限歴史ブロッカーの容量枯渇と下向横断の不可避性定理（Historical Blocker Exhaustion and Downcrossing Inevitability）をLean証明（E-333）。相異なる歯櫛ステップのブロッカー履歴単射性（toothcomb_blocker_injective）、地平内ブロッカーの極限的サミット要求（14n+6≤5a(j), a(j)≥2.8n+1.2>2.8j+4）、過去上限 5a(j)<14n+6 下での地平内ブロッカー完全不在と過去値完全回避、および地平突破による下向横断不可避性を統合。
-> 2026-09-15追補：歯櫛下降の永久高値滞在限界と下向横断強制定理（Toothcomb Horizon Bound）をLean証明（E-332）。歯櫛下降ステップmにおいて高値領域 a(T)≥2T を維持する線形必要十分条件 5m+n+6≤a(n) を確立。限界超過（m>(a(n)-n-6)/5）による下向横断の無条件強制、歯櫛内部減算値の狭義単調減少・相異性、加算値との厳密分離、および下向横断前の歯櫛中断が過去有限個の歴史値 a(j)（j≤n-1）との衝突に限定される大域地平定理を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-342】2026-09-15追補：全射性大域閉包と反例排除マスター合成定理（Grand Surjectivity Closure and Master Counterexample Elimination）をLean証明（E-342）。両動特性枝排除仮説からの全射性導出（surjectivity_master_branch_reduction）、最小未到達数矛盾（counterexample_elimination_master_theorem）、全射性と最小未到達数不在の双方向同値性（surjectivity_bilateral_equivalence_closed）、下向横断による永久高値逃亡排除（permanent_high_escape_branch_eliminated_of_downcrossing）、前尾部被覆オラクル矛盾による回廊再突入排除（corridor_reentry_branch_eliminated_of_preTail_oracle）、尾部動特性二分法解決、尾部復帰仮説同値性、および被覆オラクル充足による全射性導出の大域閉包を形式化。
+> 【撤回 2026-09-15：モジュール削除済み、E-341】2026-09-15追補：回廊再突入トラップ枝の構造的排除定理（Elimination of Corridor Re-entry Trapping）をLean証明（E-341）。任意の回廊再突入における再突入点の厳密なレジャー回廊不等式 2*subSum(k+1)+(a(time)+1)≤upperTri(k+1)<2*subSum(k+1)+2(k+1)、合法減算によるクロック供出 k+1≤subSum(k+1)、着地値の回廊挟み込み a(time)+1≤a(k+1)<2(k+1)、最小未到達数尾部における値≤targetの前尾部有限接頭辞への閉じ込め、未到達数自身の絶対的非生成性、前尾部有限被覆オラクル（PreTailCoverageOracle）との直接矛盾、および回廊再突入無限再帰によるレジャー発散の大域統合を形式化。
+> 【撤回 2026-09-15：モジュール削除済み、E-340】2026-09-15追補：永久高値逃亡枝の構造的排除定理（Elimination of Permanent High Escape）をLean証明（E-340）。下向横断存在による永久高値逃亡の直接矛盾、正準tail最小値における永久高値逃亡と下向横断完全不在の同値性、永久高値逃亡排除による最小未到達数の回廊再突入無条件強制、脱出状態 time+2 における鳩の巣ブロッカー容量障害、過去値 valuesThrough(time+1) の完全回避、および地平突破ステップでの値の急落 val<2(3n+3) の大域統合を形式化。
+> 【撤回 2026-09-15：モジュール削除済み、E-339】2026-09-15追補：レカマン数列の全射性と反例排除の大域アーキテクチャ定理（Grand Surjectivity Architecture）をLean証明（E-339）。仮定された最小未到達数の動特性が「永久高値逃亡（PermanentHighEscape）」または「回廊再突入（CorridorReentry）」のいずれかに必ず分岐する動特性二分法（least_missing_target_tail_dichotomy）、両動特性枝の排除仮説からの最小未到達数矛盾導出、自然数の整列性（強帰納法）による最小未到達数不在からの全射性導出（surjective_of_not_least_missing_target）、両動特性枝排除からの全射性直接導出、および全射性と最小未到達数不在の双方向同値性の大域統合を形式化。
+> 【撤回 2026-09-15：モジュール削除済み、E-338】2026-09-15追補：最小未到達数の構造的矛盾合成定理（Least Missing Target Contradiction Synthesis）をLean証明（E-338）。正準tail最小値からの脱出状態 time+2 における高度上界 a(time+2)<6(time+2)+1、永久高値大域二分法の第1枝の厳密排除と回廊への下向横断強制（permanent_high_escape_dichotomy_resolution）、最小未到達数と尾部復帰仮説の直接矛盾、前尾部有限被覆オラクルとの直接矛盾、および再帰的下向横断レジャー発散と有界レジャーの直接矛盾の大域統合を形式化。
+> 【撤回 2026-09-15：モジュール削除済み、E-337】2026-09-15追補：再帰的下向横断による減算レジャー質量・回数の発散と無条件非有界性合成定理（Recurrent Downcrossing SubSum Divergence）をLean証明（E-337）。合法減算の強再帰性（exists_canSubtract_of_ray）によるsubSum・subCountの任意のカットオフ以降の無条件発散、下向横断ステップのクロック供出による直接下界（B<k+1≤subSum(k+1)）、正準tail最小値以降の下向横断におけるsubSum(time)からの累積増加と回廊再突入拘束、および無限再帰下向横断による回廊内発散大域合成を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-336】2026-09-15追補：尾部下向横断の不可避性と回廊再突入大域合成定理（Tail Downcrossing Inevitability）をLean証明（E-336）。高値から低値への離散的中間値性による下向横断存在補題（exists_downcrossing_of_high_to_low）、歯櫛下降の地平突破による下向横断強制、下向横断ステップの合法減算性・クロック供出・値の新規性、および正準tail最小値以降の下向横断における回廊レジャー拘束再突入を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-335】2026-09-15追補：永久高値大域統合と下向横断不可避性二分法（Permanent High Global Synthesis）をLean証明（E-335）。a(n)≥6n+1 における高値地平充足（5m+n+6≤a(n) for m<n）と鳩の巣未阻害候補の高値地平内厳密存在、a(n)<6n+1 におけるステップnでの地平突破と高値脱出下向横断強制（val<2(3n+3)）、および全高値領域に対する普遍的高値二分法を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-334】2026-09-15追補：永久高値有限歴史ブロッカーの容量障害と鳩の巣原理による未阻害候補存在定理（Permanent High Blocker Capacity）をLean証明（E-334）。高値領域 2n≤a(n) の候補値 c(m)=a(n)+n-m（m<n）に対する 2n<c(m) 下界、小インデックス（j=0, 1）のブロッカー完全不適格性、重複のないn要素の候補リストと高々n-1要素の非ゼロ過去値リストによる鳩の巣容量矛盾（n≤n-1）、および過去履歴 valuesThrough(n-1) を完全回避する未阻害歯櫛ステップの厳密存在を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-333】2026-09-15追補：有限歴史ブロッカーの容量枯渇と下向横断の不可避性定理（Historical Blocker Exhaustion and Downcrossing Inevitability）をLean証明（E-333）。相異なる歯櫛ステップのブロッカー履歴単射性（toothcomb_blocker_injective）、地平内ブロッカーの極限的サミット要求（14n+6≤5a(j), a(j)≥2.8n+1.2>2.8j+4）、過去上限 5a(j)<14n+6 下での地平内ブロッカー完全不在と過去値完全回避、および地平突破による下向横断不可避性を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-332】2026-09-15追補：歯櫛下降の永久高値滞在限界と下向横断強制定理（Toothcomb Horizon Bound）をLean証明（E-332）。歯櫛下降ステップmにおいて高値領域 a(T)≥2T を維持する線形必要十分条件 5m+n+6≤a(n) を確立。限界超過（m>(a(n)-n-6)/5）による下向横断の無条件強制、歯櫛内部減算値の狭義単調減少・相異性、加算値との厳密分離、および下向横断前の歯櫛中断が過去有限個の歴史値 a(j)（j≤n-1）との衝突に限定される大域地平定理を統合。
 > 2026-09-15追補：永久高値歯櫛下降動特性とAASA分岐二分法（Permanent High Toothcomb Descent）をLean証明（E-331）。加算後の減算候補が直前値から1減衰する普遍的恒等式 cand(k+2)=a(k)-1 を確立。AASAステップn+5の候補 a(n)+n-1=a(n+3)-1 のエピソード完全回避（n≥2）、AASAA形成のための過去サミット要求（a(j)≥3n-1, j≤n-1）、サミット上限下での減算強制（AASAS遷移とAASAAの完全排除）、着地値 a(n+5)=a(n+3)-1 による歯櫛下降開始、およびステップn+7候補 a(n)+n-2 の回避則を統合。
 > 2026-09-15追補：永久高値未供給欠損とサミット急上昇定理（Permanent High Unsupplied Deficit）をLean証明（E-330）。AASAA強制3加算遷移（AASAAA）からcanonicalSignの3連続加算を導き、すべてのAASAAエピソードが少なくとも1つの未供給加算（unsuppliedCount≥1）を不可避に生み出すことを証明。ステップn+7の候補a(n)+3n+8のエピソード完全回避、4連続加算時の未供給欠損増大（≥2）と過去スーパーサミット要求（a(j)≥5n+8, j≤n-1）、およびサミット上限下での減算強制（着地値a(n+7)=a(n)+3n+8≥5n+8）を統合。
-> 2026-09-15追補：永久高値自己衝突恒等式と強制サミット増大則（Permanent High Collision）をLean証明（E-329）。5ステップAASAA直後の減算候補が直前のピーク値と代数的に厳密一致する恒等式 a(n+5)-(n+6)=a(n+2) を発見・証明し、3周期擬似サイクル AASAAS を完全排除。AASAAからAASAAAへの強制加算遷移、値の急上昇 a(n+6)≥6n+15（q≥4）、および自己完結的な先行サミット正当化を確立。
-> 2026-09-15追補：永久高値領域の両側構造的剛性と振動障害（Permanent High Rigidity）をLean証明（E-328）。減算の急速な高度要求（3(k+1), 4k+7, 5k+12）、加算2回による高度急上昇（3(n+3)≤a(n+2)）、3連続加算の過去サミット要求（a(j)≥3n, j≤n-1）、サミット不在時の減算強制と新規着地値（a(n+3)=a(n)+n）、および全加算無限光線の排除を統合。
-> 2026-09-15追補：尾部下向横断二分法（Tail Downcrossing Dichotomy）をLean証明（E-327）。永久高値領域における減算排除・強制加算・レジャー質量および回数の三角容量上界と、下向横断によるクロック供出・値の新規性・相異性を統合した大域二分法を確立。
-> 2026-09-14追補：商バンドq≥2から回廊q≤1への尾部下向横断が必ず減算であること、尾部下降障壁、および減算レジャー累積増加をLean証明（E-326）。
-> 2026-09-14追補：最小未到達数の正準 tail 最小値における強制加算・商バンドq≥2脱出・AAA強制および未供給加算ドリフトをLean証明（E-325）。全加算供給レジームをtail最小値で排除。
+> 【撤回 2026-09-15：モジュール削除済み、E-329】2026-09-15追補：永久高値自己衝突恒等式と強制サミット増大則（Permanent High Collision）をLean証明（E-329）。5ステップAASAA直後の減算候補が直前のピーク値と代数的に厳密一致する恒等式 a(n+5)-(n+6)=a(n+2) を発見・証明し、3周期擬似サイクル AASAAS を完全排除。AASAAからAASAAAへの強制加算遷移、値の急上昇 a(n+6)≥6n+15（q≥4）、および自己完結的な先行サミット正当化を確立。
+> 【撤回 2026-09-15：モジュール削除済み、E-328】2026-09-15追補：永久高値領域の両側構造的剛性と振動障害（Permanent High Rigidity）をLean証明（E-328）。減算の急速な高度要求（3(k+1), 4k+7, 5k+12）、加算2回による高度急上昇（3(n+3)≤a(n+2)）、3連続加算の過去サミット要求（a(j)≥3n, j≤n-1）、サミット不在時の減算強制と新規着地値（a(n+3)=a(n)+n）、および全加算無限光線の排除を統合。
+> 【撤回 2026-09-15：モジュール削除済み、E-327】2026-09-15追補：尾部下向横断二分法（Tail Downcrossing Dichotomy）をLean証明（E-327）。永久高値領域における減算排除・強制加算・レジャー質量および回数の三角容量上界と、下向横断によるクロック供出・値の新規性・相異性を統合した大域二分法を確立。
+> 【撤回 2026-09-15：モジュール削除済み、E-326】2026-09-14追補：商バンドq≥2から回廊q≤1への尾部下向横断が必ず減算であること、尾部下降障壁、および減算レジャー累積増加をLean証明（E-326）。
+> 【撤回 2026-09-15：モジュール削除済み、E-325】2026-09-14追補：最小未到達数の正準 tail 最小値における強制加算・商バンドq≥2脱出・AAA強制および未供給加算ドリフトをLean証明（E-325）。全加算供給レジームをtail最小値で排除。
 > 2026-09-10追補：[low-SS共同容量](LOW_SS_ENDPOINT_CAPACITY_2026-09-10.md)を全周期・全lagでLean証明（E-128）。
 > clean/SS1の共同配分を解決し、NoSAAS・最小lagも不要。SS≥2への同じ正規化は標準step115で反証（E-130）。
 > 全容量E-070、E-067、旧shortとの和集合は未解決。次はこのcanonical境界例を通る共同履歴不等式。
@@ -1069,6 +1069,8 @@ horizon 延長は作業単位にしない。E-067・E-070・全射性／非全�
 
 ## 2026-09-14: Gate T6 の無条件完全解決と大域容量不等式 |U| ≤ |D| の Lean 閉鎖（Issue #73 CLOSE）
 
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
+
 Issue #73 の中核であった **Gate T6（高SS局所減算供出、E-179）を、全周期・全lagの周期符号語に対して無条件に完全解決（PROVED-LEAN）** した（E-308〜E-318）。
 緊密回避部分集合 $B$（$|N(B)| = |B|$）においては、任意の非零量子窓数 $m \ge 1$ がストリーム鎖下界 $|W| \ge 2m + 1$ と容量上界 $|W| \le 2m$ の矛盾により完全に排除され、全緊密部分集合が純AAS（$m = 0$）に強制される（E-315, E-316, E-317）。
 純AAS部分集合の端点相はすべて $\{u - 2\}$ であり、SS=2供出窓の内部減算相 $s^*(u_0)$ と厳密に非交差（$s^*(u_0) \notin N(B)$）となるため、削除による損失はゼロ（$\Delta = 0$）である。
@@ -1085,6 +1087,8 @@ E-067 と有限履歴縮約 E-065 の合成により、exact orbit における 
 
 ## 2026-09-14: 厳密軌道の非周期性合成定理の Lean 完結（E-320、テーマ1完了）
 
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
+
 Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と E-067（全周期語P2供給障害定理、E-319）の正式な統合を形式化した（E-320、`Recaman.ExactOrbitNonperiodicity`）。
 1. 後退周期質量 `mass (past e 0 p)` と前進符号和 `signSum e 0 p` の厳密一致を、シフト補題 `mass_past_add_eq_signSum` と周期不変性 `period_mass_constant` を経由して証明（`signSum_eq_period_mass`）。
 2. 正の周期質量から狭義正の前進符号和 `0 < signSum e 0 p` を導出（`pos_signSum_of_pos_period_mass`）。
@@ -1092,6 +1096,8 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 これにより、ポストIssue #73 の研究テーマ1（E-065 と E-067 の合成による厳密軌道の非周期性定式化）が `PROVED-LEAN` として完結した。
 
 ## 2026-09-14: 無条件有限ブロック容量不等式と境界欠損の Lean 完結（E-321、テーマ2完了）
+
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
 
 周期性前提を除去し、任意有限区間（ブロック）における容量不等式と境界効果を形式化した（E-321、`Recaman.FiniteBlockCapacity`）。
 1. 7ビット窓ポテンシャルの絶対評価 $0 \le \Phi \le 2$ から、任意区間での電荷変動が $\le 2$ であることを証明（`chargeSum_le_two`）。
@@ -1104,6 +1110,8 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 
 ## 2026-09-14: 回廊密度限界と供給障害の Lean 完結（E-322、テーマ3完了）
 
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
+
 最小未到達数（least missing target $m$）の永久上方レジャー回廊（$a_t < t + m$, $q \le 1$, $2 \cdot \text{subSum}(t) + (m + 2) \le \text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$）における密度限界と供給障害を形式化した（E-322、`Recaman.CorridorDensityObstruction`）。
 1. レジャー上界 $\text{upperTri}(t) < 2 \cdot \text{subSum}(t) + 2t$ と総和評価 $\text{subSum}(t) \le t \cdot \text{subCount}(t)$ から、減算数の線形下界 $t \le 4 \cdot \text{subCount}(t) + 2$（漸近減算密度 $\ge 1/4$）を証明（`subCount_lower_bound_of_ledger_corridor`）。回廊内で減算が希薄化し得ないことを確立。
 2. レジャー下界 $2 \cdot \text{subSum}(t) < \text{upperTri}(t)$ と三角数評価 $\text{upperTri}(\text{subCount}(t)) \le \text{subSum}(t)$ から、減算数の二次上界 $2 \cdot (\text{subCount}(t)(\text{subCount}(t) + 1)) < t(t + 1)$（漸近減算密度 $\le 1/\sqrt{2} \approx 0.707$、加算密度 $\ge 0.293$）を証明（`subCount_upper_bound_of_ledger_corridor`）。回廊内で加算も消滅し得ないことを確立。
@@ -1113,6 +1121,8 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 これにより、ポストIssue #73 の研究テーマ3（最小未到達数回廊の密度限界と供給障害）が `PROVED-LEAN` として完結した。
 
 ## 2026-09-14: ドリフトリセットと未供給加算の蓄積解析の Lean 完結（E-323、テーマ4完了）
+
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
 
 非周期的ストリームにおけるドリフトリセットと未供給加算の蓄積解析を形式化した（E-323、`Recaman.DriftResetAccumulation`）。
 1. 供給加算数が全加算数を上回り得ないこと（`suppliedCount ≤ additionCount`）を証明し、未供給加算数 $\text{unsuppliedCount} = \text{additionCount} - \text{suppliedCount}$ を厳密に定義。
@@ -1125,6 +1135,8 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 これにより、ポストIssue #73 の研究テーマ4（ドリフトリセットと未供給加算の蓄積解析）が `PROVED-LEAN` として完結した。
 
 ## 2026-09-14: 大域非有界性と供給障害の統合 Lean 完結（E-324）
+
+> 【撤回 2026-09-15】この節が述べる Lean 定理の大半は監査 E-343 で wrapper／条件付き／恒真式と判定され、モジュールは削除した（残存分は E-320/E-321/E-323 の実内容のみ）。詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) と [研究計画](RESEARCH_PLAN_2026-09-15.md)。
 
 大域非有界性と供給障害の統合定理を形式化した（E-324、`Recaman.GlobalUnboundednessSupply`）。
 1. 三角数の狭義単調性（`upperTri_le_upperTri`, `upperTri_lt_upperTri`）と逆向きの添字反映（`lt_of_upperTri_lt_upperTri`）を証明。

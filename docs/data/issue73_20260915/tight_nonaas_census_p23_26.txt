@@ -1,0 +1,26 @@
+protocol=H-20260915-18 tight avoiding subsets with a non-AAS member, per donor
+p=23 wordsWithHighSS=70412 hallOK=70412 donors=92170 donorsWithTightAvoiding=89570 donorsWithNonAASTightAvoiding=2071 wordsWithNonAASTightAvoiding=1741 tightSets=270052 nonAASSets=3306 maxLagInTight=7 maxSizeNonAAS=6 t6failures=11859
+   nonAAS member lag histogram: lag7:3309
+   FIRST nonAAS tight avoiding: AAAASAAASAAAAASSSSSSSSS donor=9 lag=47 s*=8 B=2(l3),5(l7),7(l3),
+   class[ss=2,lag=11] donors=10402 oldestS_notDeletable=0 (hall=0) someS_deletable=10402 donorsWithNonAASTightAvoiding=228 FIRST_NONAAS AASAAASSAAAASAAASSSSSSS donor=9 lag=11 ss=2 s*=21
+   class[ss=2,anyLag] donors=16700 oldestS_notDeletable=0 (hall=0) someS_deletable=16700 donorsWithNonAASTightAvoiding=253 FIRST_NONAAS AASAAASSAAAASAAASSSSSSS donor=9 lag=11 ss=2 s*=21
+   class[ss>=2,anyLag] donors=92170 oldestS_notDeletable=3977 (hall=3977) someS_deletable=92170 donorsWithNonAASTightAvoiding=2071 FIRST_FAIL AAAAAAASAAAASASSSSSSSSS donor=6 lag=23 ss=8 s*=7 FIRST_NONAAS AAAASAAASAAAAASSSSSSSSS donor=9 lag=47 ss=16 s*=8
+p=24 wordsWithHighSS=92341 hallOK=92341 donors=118672 donorsWithTightAvoiding=117049 donorsWithNonAASTightAvoiding=3469 wordsWithNonAASTightAvoiding=2887 tightSets=432021 nonAASSets=6240 maxLagInTight=7 maxSizeNonAAS=6 t6failures=20571
+   nonAAS member lag histogram: lag7:6248
+   FIRST nonAAS tight avoiding: AAAASAAASAAAAASASSSSSSSS donor=6 lag=35 s*=19 B=2(l3),5(l7),7(l3),
+   class[ss=2,lag=11] donors=17579 oldestS_notDeletable=0 (hall=0) someS_deletable=17579 donorsWithNonAASTightAvoiding=461 FIRST_NONAAS AASAAASSAAAASAAAASSSSSSS donor=9 lag=11 ss=2 s*=22
+   class[ss=2,anyLag] donors=28533 oldestS_notDeletable=0 (hall=0) someS_deletable=28533 donorsWithNonAASTightAvoiding=509 FIRST_NONAAS AASAAASSAAAASAAAASSSSSSS donor=9 lag=11 ss=2 s*=22
+   class[ss>=2,anyLag] donors=118672 oldestS_notDeletable=6159 (hall=6159) someS_deletable=118672 donorsWithNonAASTightAvoiding=3469 FIRST_FAIL AAAAAAASAAAAAASSSSSSSSSS donor=6 lag=23 ss=9 s*=7 FIRST_NONAAS AAAASAAASAAAAASASSSSSSSS donor=6 lag=35 ss=11 s*=19
+p=25 wordsWithHighSS=270780 hallOK=270780 donors=362074 donorsWithTightAvoiding=354516 donorsWithNonAASTightAvoiding=8947 wordsWithNonAASTightAvoiding=7314 tightSets=1250565 nonAASSets=16121 maxLagInTight=7 maxSizeNonAAS=6 t6failures=70594
+   nonAAS member lag histogram: lag7:16139
+   FIRST nonAAS tight avoiding: AAAASAAAAAASAASASSSSSSSSS donor=6 lag=119 s*=14 B=2(l3),5(l7),7(l3),
+   class[ss=2,lag=11] donors=40684 oldestS_notDeletable=0 (hall=0) someS_deletable=40684 donorsWithNonAASTightAvoiding=1007 FIRST_NONAAS AASAAASSAAAASAAAASSSSSSSS donor=9 lag=11 ss=2 s*=23
+   class[ss=2,anyLag] donors=65460 oldestS_notDeletable=0 (hall=0) someS_deletable=65460 donorsWithNonAASTightAvoiding=1117 FIRST_NONAAS AASAAASSAAAASAAAASSSSSSSS donor=9 lag=11 ss=2 s*=23
+   class[ss>=2,anyLag] donors=362074 oldestS_notDeletable=22772 (hall=22772) someS_deletable=362074 donorsWithNonAASTightAvoiding=8947 FIRST_FAIL AAAAAAASAAAAASASSSSSSSSSS donor=8 lag=51 ss=18 s*=7 FIRST_NONAAS AAAASAAAAAASAASASSSSSSSSS donor=6 lag=119 ss=40 s*=14
+p=26 wordsWithHighSS=367308 hallOK=367308 donors=471423 donorsWithTightAvoiding=466663 donorsWithNonAASTightAvoiding=14852 wordsWithNonAASTightAvoiding=12141 tightSets=2002384 nonAASSets=30369 maxLagInTight=7 maxSizeNonAAS=7 t6failures=103721
+   nonAAS member lag histogram: lag7:30418
+   FIRST nonAAS tight avoiding: AAAASAAAASAAAAAASSSSSSSSSS donor=10 lag=27 s*=9 B=2(l3),5(l7),7(l3),
+   class[ss=2,lag=11] donors=69370 oldestS_notDeletable=0 (hall=0) someS_deletable=69370 donorsWithNonAASTightAvoiding=2023 FIRST_NONAAS AASAAASSAAAASAAAAASSSSSSSS donor=9 lag=11 ss=2 s*=24
+   class[ss=2,anyLag] donors=110979 oldestS_notDeletable=0 (hall=0) someS_deletable=110979 donorsWithNonAASTightAvoiding=2305 FIRST_NONAAS AASAAASSAAAASAAAAASSSSSSSS donor=9 lag=11 ss=2 s*=24
+   class[ss>=2,anyLag] donors=471423 oldestS_notDeletable=28107 (hall=28107) someS_deletable=471423 donorsWithNonAASTightAvoiding=14852 FIRST_FAIL AAAAAAAASSAAAAAASSSSSSSSSS donor=6 lag=23 ss=9 s*=9 FIRST_NONAAS AAAASAAAASAAAAAASSSSSSSSSS donor=10 lag=27 ss=9 s*=9
+$S/census 23 26  6.47s user 0.02s system 94% cpu 6.886 total
