@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3382,
+   "lines": 3389,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40916,6 +40916,46 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighGlobalSynthesis",
+   "lines": 132,
+   "imports": [
+    "PermanentHighBlockerCapacity",
+    "PermanentHighHistoryExhaustion",
+    "PermanentHighToothcombBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "high_regime_horizon_satisfaction_of_ge_six",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_unblocked_horizon_candidate",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_forced_downcrossing_at_step_n",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_universal_dichotomy",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_global_synthesis",
+     "line": 112
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighHistoryExhaustion",
    "lines": 140,
    "imports": [
@@ -53115,6 +53155,6 @@
    "hasReport": false
   }
  ],
- "total": 462,
+ "total": 463,
  "withReport": 167
 }

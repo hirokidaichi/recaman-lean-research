@@ -3380,3 +3380,10 @@ import Recaman
 #print axioms Recaman.toothcomb_unblocked_candidate_avoids_valuesThrough
 #print axioms Recaman.grand_permanent_high_blocker_capacity_synthesis
 
+#print axioms Recaman.high_regime_horizon_satisfaction_of_ge_six
+#print axioms Recaman.exists_unblocked_horizon_candidate
+#print axioms Recaman.toothcomb_forced_downcrossing_at_step_n
+#print axioms Recaman.permanent_high_universal_dichotomy
+#print axioms Recaman.grand_permanent_high_global_synthesis
+
+
