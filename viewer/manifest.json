@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3419,
+   "lines": 3429,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34198,6 +34198,71 @@
    "hasReport": true
   },
   {
+   "name": "NoPermanentHighEscape",
+   "lines": 208,
+   "imports": [
+    "Surjectivity",
+    "LeastMissingTargetContradiction",
+    "TailDowncrossingInevitability",
+    "PermanentHighGlobalSynthesis",
+    "PermanentHighBlockerCapacity",
+    "PermanentHighToothcombBound",
+    "PermanentHighToothcombDescent",
+    "PermanentHighRigidity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "downcrossing_contradicts_permanent_high",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_escape_iff_no_downcrossing",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "corridor_reentry_of_not_permanent_high",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "escape_state_pigeonhole_capacity",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "escape_state_unblocked_candidate_avoids_history",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "escape_state_descent_strictly_below_twice_clock",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_subSum_capped_of_escape",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_subCount_capped_of_escape",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_no_permanent_high_escape_synthesis",
+     "line": 172
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "NoSSMassOne",
    "lines": 413,
    "imports": [
@@ -53383,6 +53448,6 @@
    "hasReport": false
   }
  ],
- "total": 467,
+ "total": 468,
  "withReport": 167
 }

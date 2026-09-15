@@ -1,3 +1,4 @@
+import Recaman.NoPermanentHighEscape
 import Recaman.Surjectivity
 import Recaman.LeastMissingTargetContradiction
 import Recaman.RecurrentDowncrossingSubSum

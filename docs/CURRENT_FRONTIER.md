@@ -53,6 +53,8 @@
 
 さらに、レカマン数列の全射性と反例排除の大域アーキテクチャ定理（**E-339、`Recaman.Surjectivity`**）が形式化された。仮定された最小未到達数（`LeastMissingTarget target`）の動特性が「永久高値逃亡（`PermanentHighEscape time`）」または「回廊再突入（`CorridorReentry time`）」のいずれか一方に必ず分岐する動特性二分法（`least_missing_target_tail_dichotomy`）を確立した。両動特性枝の排除仮説（`NoPermanentHighEscapeHypothesis` および `NoCorridorReentryHypothesis`）から最小未到達数の存在が厳密に矛盾すること（`not_least_missing_target_of_branch_obstructions`）、自然数の整列性（強帰納法）により最小未到達数の不在が全射性 `∀ target, ∃ time, a time = target` を厳密に含意すること（`surjective_of_not_least_missing_target`）、両動特性枝の排除から全射性が直接導出されること（`surjective_of_branch_obstructions`）、および全射性と最小未到達数矛盾の双方向同値性（`recaman_surjective_iff_not_least_missing_target`）を証明した。これらを尾部復帰仮説および被覆オラクル系と結合した大域全射性アーキテクチャ合成定理（`grand_surjectivity_architecture_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
 
+さらに、永久高値逃亡枝の構造的排除定理（**E-340、`Recaman.NoPermanentHighEscape`**）が形式化された。下向横断ステップ $k \ge \text{time} + 2$（$a(k+1) < 2(k+1)$）の存在が永久高値逃亡定義（`PermanentHighEscape time`）と直接矛盾すること（`downcrossing_contradicts_permanent_high`）、および正準 tail 最小値において永久高値逃亡が下向横断の完全不在と同値であること（`permanent_high_escape_iff_no_downcrossing`）を証明した。これにより、永久高値逃亡の排除が最小未到達数に対して回廊再突入（`CorridorReentry time`）を無条件に強制すること（`corridor_reentry_of_not_permanent_high`）を確立した。さらに、脱出状態 $n = \text{time} + 2$ において鳩の巣ブロッカー容量障害から $2n$ を超える未阻害候補の存在（`escape_state_pigeonhole_capacity`）、過去値 $\text{valuesThrough}(n-1)$ の完全回避（`escape_state_unblocked_candidate_avoids_history`）、および地平突破ステップ $m = n$ での値の急落 $val < 2(3n+3)$（`escape_state_descent_strictly_below_twice_clock`）を証明し、永久高値軌道におけるレジャー・カウンター容量上界と統合した大域排除合成定理（`grand_no_permanent_high_escape_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
 
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。

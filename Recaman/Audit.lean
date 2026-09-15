@@ -3417,3 +3417,13 @@ import Recaman
 #print axioms Recaman.not_least_missing_target_of_surjective
 #print axioms Recaman.recaman_surjective_iff_not_least_missing_target
 #print axioms Recaman.grand_surjectivity_architecture_synthesis
+
+#print axioms Recaman.downcrossing_contradicts_permanent_high
+#print axioms Recaman.permanent_high_escape_iff_no_downcrossing
+#print axioms Recaman.corridor_reentry_of_not_permanent_high
+#print axioms Recaman.escape_state_pigeonhole_capacity
+#print axioms Recaman.escape_state_unblocked_candidate_avoids_history
+#print axioms Recaman.escape_state_descent_strictly_below_twice_clock
+#print axioms Recaman.permanent_high_subSum_capped_of_escape
+#print axioms Recaman.permanent_high_subCount_capped_of_escape
+#print axioms Recaman.grand_no_permanent_high_escape_synthesis
