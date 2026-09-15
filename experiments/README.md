@@ -471,3 +471,12 @@ private-phase diagnostic for lag-7 coverers. Registry `E-347`.
 Hall-OK positive-sum words for `8 <= p <= 26` and records, for each tight subset, the lags present,
 whether the members' oldest subtractions are pairwise distinct and exhaust `N(B)` (the OS
 characterization), and the ownership of the phases of lag-7 members. Registry `E-349`.
+
+`issue73_20260915/g1_lag_structure.cpp` (H-20260915-21) measures, for every supplied phase `v` of
+lag >= 11, the number of subtractions of its window covered by no other member of `U` (`priv`) and
+`minSlack(v) = min |N(B)| - |B|` over subsets `B` containing `v`, plus an offset-by-offset
+classification of who else covers each subtraction of a lag-11 window; `--all` includes positive-sum
+words without a high-SS window. It aborts unless `wordsWithHighSS` reproduces E-179.
+`docs/data/issue73_20260915/paired_older_s_coverers.txt` lists, for the minimal P2 words of lag
+3/7/11/15, the offsets holding the older subtraction of an adjacent SS pair (the generating script is
+in the file header). Registry `E-352`.

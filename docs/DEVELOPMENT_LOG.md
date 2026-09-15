@@ -3565,3 +3565,7 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   Lean は P1（真の最古 S での p ≤ 10）と Hall 増分補題をサブエージェント 2 本に依頼。
 - 19:15 P1 完了（E-350 `TrueOldestGateT6`、lint 10/11、G1〜G5 通過）。真の最古 S の削除で p ≤ 10 の Gate T6 を 7 語全てで立て直した。
   同時に Hall 増分補題モジュール（`TightHallAugmentation`）も完成、30 分規則に従い次の commit で登録する。
+- 19:10 並行セッション（P2 補完）H-20260915-21（E-352）：`g1_lag_structure.cpp` で lag ≥ 11 メンバーの priv/minSlack 分布・offset 別被覆者・
+  paired older S の bit-level 分類。G1-strong は全正符号和語 p ≤ 24 でも例外 0。private-S 論法は lag-11 の 3 割で無力、minSlack = 1 の族を記録。
+  E-349（OS）を読んだ後にカードを補完として位置づけ直し、P1 用に書いた `OldestSubtractionOffset`（16 定理）は E-350 の `trueOldestPhase` と重複するため退避（未 commit）。
+  `PairedSubtractionCoverage`（E-353 予定、lint 6/8 実内容）は 30 分規則に従い E-351 の後に登録する。

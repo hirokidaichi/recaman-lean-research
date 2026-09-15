@@ -74,6 +74,11 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
 - **E-350（`PROVED-LEAN`、`Recaman.TrueOldestGateT6`、P1、[statement audit](statement_audits/E-350.md)）**：真の最古 S
   `trueOldestPhase`（窓内で最大 offset の S）を定義し、E-230 と同じ仮定の下で p ≤ 10 の Gate T6 を真の最古 S の削除で証明した。
   新しい分離補題は「AAS 窓の端点は真の最古 S と一致しない」（7 語の bit 衝突を decide）。これで p ≤ 10 は 7 語全てで実質を持つ。
+- **E-352（`COMPUTED`、[card](HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md)、E-349 の補完）**：lag ≥ 11 の各供給 phase について private S 数と minSlack を測定。
+  G1-strong（lag ≥ 11 の v を含む任意の B ⊆ U は |N(B)| ≥ |B|+1）は high-SS 語 p ≤ 26・全正符号和語 p ≤ 24 で例外 0（Hall も全語で成立。等号語には lag ≥ 11 の供給 phase がない）。
+  しかし priv = 0 が lag-11 の 3 割、minSlack = 1 の族（d7 型 donor＋AAS 3 個、対の古い方の S 2 個が未所有）が実在するので、T の証明は private-S 論法では閉じず OS の所有論法が要る。
+  bit-level 補題：**隣接 SS 対の古い方の S は AAS に入らず、最小 lag-7 窓では w1 の最古 bit（offset 7）のみ**。OS の下では paired older S の所有者は「…SS」で終わる窓に限られ、
+  T の導出は 7 語 × offset の有限検査に落ちる。Lean 化は E-353（`PairedSubtractionCoverage`）。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 
