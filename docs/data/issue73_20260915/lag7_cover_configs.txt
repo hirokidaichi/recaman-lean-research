@@ -1,0 +1,10 @@
+minimal lag-11 ss=2 donor words: ['AAASSSASASA', 'ASAAASSSASA', 'ASASAAASSSA', 'ASSAAAASSAS', 'ASSAAASAASS', 'SAAASAASSSA', 'SAAASSAAASS']
+minimal lag-7 words: ['ASAASAS', 'SAAAASS']
+AAASSSASASA s*offset=10 covering lag-7 windows (word, u-u0, offset of s* in window): [('SAAAASS', -9, 1)]
+ASAAASSSASA s*offset=10 covering lag-7 windows (word, u-u0, offset of s* in window): [('SAAAASS', -9, 1)]
+ASASAAASSSA s*offset=10 covering lag-7 windows (word, u-u0, offset of s* in window): []
+ASSAAAASSAS s*offset=11 covering lag-7 windows (word, u-u0, offset of s* in window): [('SAAAASS', -10, 1)]
+ASSAAASAASS s*offset=11 covering lag-7 windows (word, u-u0, offset of s* in window): []
+SAAASAASSSA s*offset=10 covering lag-7 windows (word, u-u0, offset of s* in window): []
+SAAASSAAASS s*offset=11 covering lag-7 windows (word, u-u0, offset of s* in window): []
+total compatible configurations: 3

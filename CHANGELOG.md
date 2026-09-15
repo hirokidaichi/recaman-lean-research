@@ -25,6 +25,8 @@
 - E-297..E-317 が目指した「緊密回避部分集合は純 AAS（m = 0）」は E-240（周期 18 証明書）が反証済み。geometric/pure-AAS 路線は STOPPED
 - `scripts/report_vacuity.py --check-registry` を `check_research_registry.sh` に組み込み、E-344 以降の `PROVED-LEAN` 行に
   純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
+- E-347（`COMPUTED`）：ss=2 lag-11 donor の最古 S を被覆する lag-7 窓は 3 配置のみ（w1、u=s*+1、donor d1/d2/d4）。周期語では
+  被覆者の大半が lag ≥ 11 なので G1 が本質。Lean の `oldestSubtractionPhase` は 7 語中 4 語で実際の最古 S とずれる
 - census E-345（`experiments/issue73_20260915/tight_nonaas_census.cpp`、E-179 と語数一致）：ssCount=2 donor の最古 S は p≤22 で
   緊密回避部分集合に一度も被覆されない。ssCount≥3 では p=12 から破れる。非 AAS 緊密回避部分集合は ss=2 donor で p=15 から出現し
   メンバーの lag は全件 7。次の Lean gate を G1（緊密回避の lag は {3,7}）・G2（ss=2 の最古 S は被覆されない）に絞った

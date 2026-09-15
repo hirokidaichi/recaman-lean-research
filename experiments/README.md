@@ -461,3 +461,8 @@ non-AAS (lag != 3) member, which lags occur, and whether the donor's oldest subt
 computations are done and must agree). It aborts unless `wordsWithHighSS` reproduces
 E-179 (`local_surplus.txt`). `verify_witnesses.py` re-derives the p=12 failure witness and
 the E-240 word by direct summation with no shared code. Registry `E-345`.
+
+`issue73_20260915/lag7_cover_configs.py` enumerates, without periodicity, the minimal lag-7 windows
+that can cover the oldest subtraction of a minimal SS=2 lag-11 donor (3 configurations), and
+`oldest_s_coverers.cpp` extends the census with the lag distribution of all coverers and a
+private-phase diagnostic for lag-7 coverers. Registry `E-347`.

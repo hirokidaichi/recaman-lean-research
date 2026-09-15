@@ -45,6 +45,10 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   被覆されない（Gate T6 一般形の正しい候補）。ssCount ≥ 3 donor では最古 S の供出は p = 12 から破れる（E-179 の「何らかの S」のみ残る）。
   非 AAS 緊密回避部分集合は ss=2 donor で p = 15 から現れ p = 22 で 1.5%、非 AAS メンバーの lag は全件 7。
   **次の Lean gate は G1「緊密回避部分集合の lag は {3, 7}」と G2「ss=2 donor の最古 S は lag ∈ {3,7} の緊密回避 B に被覆されない」**（p 上限なし）。
+- **E-347（`COMPUTED`、[card](HYPOTHESIS_CARD_2026-09-15_OLDEST_S_COVERERS.md)）**：ss=2 lag-11 donor の最古 S を被覆できる最小 lag-7 窓は
+  bit-level で 3 配置のみ（全て w1、s* が窓の newest bit、donor は d1/d2/d4）。周期語では s* の被覆者の大半が lag ≥ 11 の長い窓なので
+  **G2 は窓ごとには証明できず G1 が本質**。7 語中 4 語で窓の最古位置が A のため、Lean の `oldestSubtractionPhase`（offset d の phase）は
+  実際の最古 S と一致しない。一般 p の Gate T6 を述べる前に「最古 S」を語ごとに定義し直す。
 
 以下の「結論」節の 2026-09-14〜15 の段落は、この訂正を前提に読むこと。
 

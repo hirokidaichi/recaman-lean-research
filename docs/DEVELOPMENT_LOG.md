@@ -3551,3 +3551,6 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 17:10〜 広木さんの指示「根本原因をハーネスとして確立」。生成ループの書いた報告書は §4 の分類は妥当だが、動機の推測・未反映の削除・
   無効 label `CONDITIONAL`・`report_vacuity` の誤用・未導入の対策2 を含んでいたため書き直した。根本原因 R1〜R6 を証拠ベースで確定し、
   G1〜G5・P・速度制限を `harness_gate.py` と pre-commit に実装、`test_harness_gates.sh` の負例 8 件で拒否を確認。
+- 17:20 H-20260915-19（E-347）：lag-7 窓が ss=2 lag-11 donor の最古 S を被覆できる配置を bit-level で全列挙（3 配置、全て w1・u=s*+1・donor d1/d2/d4）。
+  census 拡張で被覆者の lag 分布を取り、lag ≥ 11 が大半と判明（G1 が本質）。副産物：7 語中 4 語で窓の最古位置が A で、
+  Lean の `oldestSubtractionPhase` が実際の最古 S とずれる。Lean 化（E-348、`LagSevenDonorCoverage`）をサブエージェントに依頼。
