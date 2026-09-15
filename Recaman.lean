@@ -1,3 +1,4 @@
+import Recaman.PermanentHighUnsuppliedDeficit
 import Recaman.PermanentHighCollision
 import Recaman.PermanentHighRigidity
 import Recaman.TailDowncrossingDichotomy

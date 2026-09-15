@@ -3331,3 +3331,14 @@ import Recaman
 #print axioms Recaman.aasaaa_subtraction_candidate
 #print axioms Recaman.aasaaa_subtraction_candidate_strictly_between
 #print axioms Recaman.grand_permanent_high_collision_resolution
+
+#print axioms Recaman.canonicalSign_of_not_canSubtract
+#print axioms Recaman.aasaa_three_consecutive_canonicalSigns
+#print axioms Recaman.aasaa_forces_unsupplied_addition
+#print axioms Recaman.aasaaa_four_consecutive_canonicalSigns
+#print axioms Recaman.aasaaa_four_additions_unsupplied_deficit
+#print axioms Recaman.aasaaa_candidate_not_in_current_episode
+#print axioms Recaman.aasaaa_fourth_addition_requires_super_summit
+#print axioms Recaman.aasaaa_forced_subtraction_under_super_summit_bound
+#print axioms Recaman.aasaaa_forced_subtraction_landing_value
+#print axioms Recaman.grand_permanent_high_unsupplied_deficit_synthesis

@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3333,
+   "lines": 3344,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40893,6 +40893,76 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighUnsuppliedDeficit",
+   "lines": 284,
+   "imports": [
+    "PermanentHighCollision",
+    "PermanentHighRigidity",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger",
+    "GlobalUnboundednessSupply",
+    "DriftResetAccumulation",
+    "CanonicalSSFreeSupply",
+    "DebtInvariant"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "canonicalSign_of_not_canSubtract",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaa_three_consecutive_canonicalSigns",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaa_forces_unsupplied_addition",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_four_consecutive_canonicalSigns",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_four_additions_unsupplied_deficit",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_candidate_not_in_current_episode",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_fourth_addition_requires_super_summit",
+     "line": 184
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_forced_subtraction_under_super_summit_bound",
+     "line": 215
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_forced_subtraction_landing_value",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_unsupplied_deficit_synthesis",
+     "line": 259
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PhaseEpoch",
    "lines": 117,
    "imports": [
@@ -52755,6 +52825,6 @@
    "hasReport": false
   }
  ],
- "total": 457,
+ "total": 458,
  "withReport": 167
 }
