@@ -1,3 +1,4 @@
+import Recaman.RecurrentDowncrossingSubSum
 import Recaman.TailDowncrossingInevitability
 import Recaman.PermanentHighGlobalSynthesis
 import Recaman.PermanentHighBlockerCapacity

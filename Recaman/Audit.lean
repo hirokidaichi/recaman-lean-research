@@ -3392,5 +3392,15 @@ import Recaman
 #print axioms Recaman.tail_downcrossing_corridor_reentry_synthesis
 #print axioms Recaman.grand_tail_downcrossing_inevitability_synthesis
 
+#print axioms Recaman.subSum_ge_of_canSubtract
+#print axioms Recaman.subSum_unbounded_after
+#print axioms Recaman.subSum_unbounded
+#print axioms Recaman.subCount_unbounded_after
+#print axioms Recaman.subCount_unbounded
+#print axioms Recaman.downcrossing_deposit_exceeds_bound
+#print axioms Recaman.tail_downcrossing_reentry_ledger_divergence
+#print axioms Recaman.recurrent_downcrossings_force_arbitrary_ledger_growth
+#print axioms Recaman.grand_recurrent_downcrossing_subSum_synthesis
+
 
 

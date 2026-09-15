@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3396,
+   "lines": 3406,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -42970,6 +42970,68 @@
    "hasReport": true
   },
   {
+   "name": "RecurrentDowncrossingSubSum",
+   "lines": 189,
+   "imports": [
+    "TailDowncrossingInevitability",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger",
+    "EventualHighCorridorStructure",
+    "GlobalUnboundednessSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "subSum_ge_of_canSubtract",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "subSum_unbounded_after",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "subSum_unbounded",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_unbounded_after",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_unbounded",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_deposit_exceeds_bound",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_downcrossing_reentry_ledger_divergence",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "recurrent_downcrossings_force_arbitrary_ledger_growth",
+     "line": 131
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_recurrent_downcrossing_subSum_synthesis",
+     "line": 161
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "RecurringCandidateBurst",
    "lines": 111,
    "imports": [
@@ -53195,6 +53257,6 @@
    "hasReport": false
   }
  ],
- "total": 464,
+ "total": 465,
  "withReport": 167
 }
