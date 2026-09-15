@@ -480,3 +480,10 @@ words without a high-SS window. It aborts unless `wordsWithHighSS` reproduces E-
 `docs/data/issue73_20260915/paired_older_s_coverers.txt` lists, for the minimal P2 words of lag
 3/7/11/15, the offsets holding the older subtraction of an adjacent SS pair (the generating script is
 in the file header). Registry `E-352`.
+
+`issue73_20260915/os_closure_search.py` (H-20260915-21 addendum, registry `E-354`) assumes the OS
+characterization of E-349 and, for every minimal P2 word `v` of lag `Lv` placed as the lag-maximal member of
+a tight subset, searches for a bit-consistent closed set of owners (minimal P2 words of lag <= `Lv`, each
+placed with its oldest subtraction on the subtraction it owns); no periodicity is assumed, so exclusion on
+the line excludes every periodic word. `--trace` prints every rejected placement with the conflicting
+clock. `g1_lag_structure_p27_31.txt` and `g1_lag_structure_all_p25_26.txt` extend E-352's Q1 holdout.

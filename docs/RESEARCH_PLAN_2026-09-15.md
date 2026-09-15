@@ -59,6 +59,8 @@
 - **E-352（同夜、補完）**：T（lag ≥ 11 なし）は private-S 論法（補題 B 型）では閉じない（priv = 0 が lag-11 の 3 割、minSlack = 1 の族あり）。
   paired older S（隣接 SS 対の古い方）は AAS に入らず lag-7 では w1 の offset 7 のみ（E-353 で Lean 化）。OS の下では paired older S の所有者は
   「…SS」で終わる窓に限られ、T の導出は 7 語 × offset の有限検査に落ちる（カード H-20260915-21 §鎖 1〜3）。
+- **E-353/E-354（同夜）**：paired older S 補題を Lean 化（`PairedSubtractionCoverage`）。OS を仮定した bit-level 閉包探索で lag-max 11/15 の緊密 B を全排除
+  （OS ⇒ T、lag ≤ 15、`os_closure_search.py`）。G1-strong は p ≤ 31 で例外 0。**P2 の残りは OS（補題 C/D）の証明と、閉包探索の一般 lag への帰納。**
 - 命題：Hall が U 全体で成り立つ正符号和周期語で、ss=2 donor u0 を避ける緊密部分集合 B のメンバーは全て lag ∈ {3,7}。
 - 手掛かり：lag ≥ 11 の最小窓は ≥ 5 個の S を持ち、緊密性は他メンバーが ≥ 4 個を共有することを要求する。lag-3 の S は各メンバーで
   互いに異なる（端点が異なる）ので、共有は lag-7 窓（S が 3 個）か長い窓同士でしか起きない。E-266（互いに素な近傍のサイズ下界）と

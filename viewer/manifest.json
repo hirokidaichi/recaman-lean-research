@@ -34471,6 +34471,69 @@
    "hasReport": false
   },
   {
+   "name": "PairedSubtractionCoverage",
+   "lines": 139,
+   "imports": [
+    "LagSevenDonorCoverage"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "PairedOlderS",
+     "line": 52
+    },
+    {
+     "kind": "def",
+     "name": "pairedAt",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "pairedAt_aas",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "pairedAt_lag7",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "pairedAt_of_stream",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_window_no_paired_older",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_window_paired_older",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "w2_window_no_paired_older",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_lag7_window_paired_older",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_window_no_paired_older_of_p2",
+     "line": 133
+    }
+   ],
+   "theorems": 8,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ParityPeriodicSupply",
    "lines": 109,
    "imports": [
@@ -48861,6 +48924,6 @@
    "hasReport": false
   }
  ],
- "total": 384,
+ "total": 385,
  "withReport": 167
 }

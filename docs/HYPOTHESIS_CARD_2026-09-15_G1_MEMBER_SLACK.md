@@ -89,10 +89,11 @@ offset 3 の S は 17 語中 `ASSAAAASSAS`/`ASSAAASAASS` だけにあり、常�
 - 新しいのは Q2〜Q5：T の証明が private-S 論法では閉じないこと（priv = 0 が 3 割）、minSlack = 1 の族の構造、offset 別の被覆者の分類、
   paired older S の被覆者の分類。**E-349 の「T の導出」の有限検査は、次の鎖で書ける見込み**：
   1. OS（E-349、未証明）の下で、緊密 B の各 s ∈ N(B) はあるメンバー w の最古 S。
-  2. s が paired older S なら、w の窓は s で終わり（最古 S）、offset lag(w)−1 が S、すなわち **w の窓は「…SS」で終わる**。
-     lag 3 は不可、lag 7 なら w1（本カードの補題）、lag 11 なら 17 語中 SS で終わる 6 語（ASASASAAASS, ASSAAASAASS, SAAASSAAASS, SAASAASAASS, SASAAAASASS, SSAAAAAASSS）。
-  3. lag ≥ 11 の v の窓の S の半分以上は対に属す（lag-11 の 17 語中 15 語が paired older S を持つ）。各 paired older S の所有者 w は「…SS」型で、
-     w の窓は s の直後の A-run と衝突する（v の窓で s の新しい隣は S）——ここが 7 語 × offset の有限検査。
+  2. s が paired older S なら、w の最古 S が s で、その一つ新しい offset も S、すなわち **w の窓は「…S S A^j」（j ≥ 0、最古 S の後ろは A のみ）で終わる**。
+     lag 3 は不可、lag 7 なら w1（本カードの補題、j = 0）、lag 11 なら 17 語中 9 語（j = 0：ASASASAAASS, ASSAAASAASS, SAAASSAAASS, SAASAASAASS, SASAAAASASS, SSAAAAAASSS；
+     j = 1：ASASAAASSSA (d3), SAAASAASSSA (d6)；j = 2：AAASSASSSAA）。d1/d2/d4/d5/d7 の最古 S は対の古い方ではない。
+  3. lag ≥ 11 の v の窓の S の半分以上は対に属す（lag-11 の 17 語中 15 語が paired older S を持つ）。各 paired older S の所有者 w は「…S S A^j」型で、
+     w の窓の s より新しい部分（offset 1 から lag(w)−2 まで）が v の窓の bit と整合しなければならない——ここが 17 語 × offset の有限検査。
 - 本カードは T・OS のどちらも証明しない。paired older S 補題は「所有者は …SS 型」を言うだけで、所有者が存在すること（OS）は仮定である。
 
 ## Decision
@@ -106,3 +107,69 @@ offset 3 の S は 17 語中 `ASSAAAASSAS`/`ASSAAASAASS` だけにあり、常�
 
 - Q1 が p ≤ 31 で破れたら G1/T は「lag ≤ 11」に弱める（E-349 と同じ）。
 - 鎖 1〜3 の有限検査が 1 unit で書けなければ、T は OS からの帰結として `CONJECTURED` に留め、P3（G2 の lag-7 側）へ進む。
+
+## Addendum（2026-09-15 19:20、E-354）：Q1 の holdout 延長と、OS を仮定した閉包探索
+
+### Q1 holdout（`g1_lag_structure_p27_31.txt`、`g1_lag_structure_all_p25_26.txt`）
+
+| 範囲 | 語数 | lag ≥ 11 メンバー数 | Q1 違反 | 備考 |
+|---|---|---|---|---|
+| high-SS 語、p = 27..31 | 27,948,247 | 41,675,198 | 0 | 4.5 分。Hall は全語で成立。p = 31 で lag-11 メンバー 4.6M、priv = 0 が 40% |
+| 全正符号和語、p = 25..26 | 1,761,794 | 969,573 | 0 | 5.2 秒 |
+
+停止条件の horizon p ≤ 31 まで G1-strong（＝E-349 の T）に例外なし。
+
+### OS-closure 探索（`experiments/issue73_20260915/os_closure_search.py`、bit-level、周期性なし）
+
+E-349 の OS（緊密 B の各 S phase はちょうど 1 人のメンバーの最古 S）を **仮定** し、B の lag 最大メンバー v（lag Lv の最小 P2 語）を clock 0 に置く。
+v の窓の各 S（v 自身の最古 S を除く）に「lag ≤ Lv の最小 P2 語 w を、その最古 S がその S に乗るように置く」所有者を要求し、置いた w の S にも所有者を要求する
+（閉包）。所有者の窓の bit と既に置いた bit（v 自身は A）が矛盾すれば却下。所有者の候補は lag ≤ Lv の全最小 P2 語（lag 3/7/11/15/19 で 1/2/17/155/1636 語）。
+周期性は制約を増やすだけなので、この line model で閉包が存在しなければ周期語でも存在しない（所有者の窓は周期 p だけ平行移動して S に揃えてよい）。
+
+| Lv | v の語数 | 所有者候補 | 全分岐が矛盾で終わる v | 一貫した閉包が見つかる v | cap 到達 | 最大ノード数 | 時間 |
+|---|---|---|---|---|---|---|---|
+| 11 | 17 | 20 | **17** | 0 | 0 | 25 | 0.02 秒 |
+| 15 | 155 | 175 | **155** | 0 | 0 | 168 | 1.3 秒 |
+| 19 | 1,636 | 1,811 | **1,636** | 0 | 0 | 2,456 | 8 shard 並列で約 4 分（`os_closure_lagmax19.txt`） |
+
+**モデルの健全性**（`os_closure_lagmax7_sanity.txt`）：同じ探索を lag-max 7 に掛けると w1 = SAAAASS は **{u−3: AAS, u: w1, u+2: AAS} の一貫した閉包**
+（E-349 の w1 三つ組そのもの）を返し、w2 = ASAASAS は排除される（E-349 の W2）。lag-max 3 は AAS 単独で閉包。つまりこの探索は実在する緊密モチーフを正しく通し、
+lag ≥ 11 だけを落としている。
+
+**lag-max 仮定は不要か**（`os_closure_lag11_owners19.txt`、`os_closure_lag15_owners19.txt`）：所有者候補を lag ≤ 19（1,811 語）まで広げても、lag 11 の 17 語
+（最大 873 ノード、74 秒）と lag 15 の 155 語（156 秒）は全て排除される。つまり lag 11／15 のメンバーの排除は「B の他のメンバーがそれより長くない」
+という仮定に依らず、v の窓の近傍で局所的に決まる（所有者の lag が 23 以上の場合だけ未検査）。
+
+**帰結**：OS の下では、緊密 B の lag 最大メンバーは lag 11・15・19 のいずれでもあり得ない。すなわち **OS ⇒ T（lag ≤ 19 の範囲で）** が bit-level の有限探索で確認された。
+探索木は小さく（lag 11 で ≤ 25 ノード）、`os_closure_lagmax11_trace.txt` に全分岐の却下理由（どの clock で bit が矛盾したか）を残した。
+典型的な却下：v の newest 側の A-run（offset 1..3 が A、clock 0 が A）が、paired older S の所有者（…S S A^j 型）の newer 部分の S と衝突する。
+lag 11 の 17 語では、最初の 2 個の S の所有者（AAS と w1）を置いた時点で 3 個目の S の所有者が全て矛盾する。
+
+**Lean 化の見通し**：lag 11 の場合は「17 語 × 所有者 20 語 × 配置」の decide で書ける（E-348 の `coverOK` と同型）。ただし前提 OS が未証明なので、
+Lean 化しても「OS ∧ lag-max = 11 ⇒ False」という条件付き命題になる。OS 自体（E-349 補題 C/D）が P2 の本体であることは変わらない。
+
+
+### 一般 lag への帰納のための所有者配置補題（紙上、未 Lean、2026-09-15 19:25）
+
+v（lag L、最古 S を除く S の offset k）の S を x（lag Lx、最古 S の offset kx）が所有するとき、x の加算は clock −k + kx にあり：
+
+1. x の最古 S より古い bit（offset kx+1..Lx）は全て A で、clock −k−1 … −k−(Lx−kx) に乗るので、**v の offset k+1..k+(Lx−kx) は全て A**（v の窓の外に出る分は自由）。
+2. x の newer 部分（offset 1..kx−1）は clock −k+1 … −k+kx−1 に乗る。kx ≥ k なら x の offset kx−1..kx−k+1 は v の offset k−1..1 と一致し、
+   x の offset kx−k は clock 0（v 自身）なので A、それより新しい offset は v の未来で自由。kx < k なら x の newer 部分全体が v の窓内
+   （v の offset k−1..k−kx+1）と一致し、x の加算 clock −k+kx は v の offset k−kx で A でなければならない。
+3. x の S は v の S（既に所有者を要求済み）か、v の未来（clock ≥ 1）の新しい S。未来の S の所有者はさらに未来へ延びる窓を要求し、
+   その窓の「最古 S より古い A-run」（1.）が v・既置の窓と衝突して連鎖が止まる——探索木が小さい理由。
+
+探索の深さ（`ownedS(v) max` = ある分岐で v の S のうち同時に所有者が置けた最大数、v 自身の最古 S を含む）：
+lag 11（S 5 個）：2 個 7 語・3 個 6 語・4 個 3 語・**5 個（全部）1 語**（矛盾は所有者が持ち込む未来の S の連鎖で出る）。
+lag 15（S 7 個）：2:40・3:66・4:37・5:9・6:3、7 個は 0。lag 19（S 9 個）：2:174・3:763・4:479・5:166・6:42・7:12、8 個以上は 0。
+つまり lag ≥ 15 では v の S 全部に同時に所有者を置くことすらできず、矛盾は v の窓内で閉じる。lag 11 の 1 語（d7 = SAAASSAAASS）だけが未来へ延びる。
+
+帰納の形：lag-max L の v について「v の newest 側から順に S の所有者を置くと、有限段で 1.〜3. が矛盾する」を、v の先頭 A-run の長さ
+（E-090：run m0 ≥ 3 ⇒ L ≥ 4m0−1）と所有者の kx の場合分けで書く。探索の `ownedS(v) max` 列（何個の S に同時に所有者が置けたか）が帰納の深さの目安。
+
+### 誠実な注意
+
+- OS は E-349 の COMPUTED 事実であり、証明されていない。本探索は「OS が証明されれば T は lag ≤ 19 で有限検査に落ちる」ことを示すだけで、T の無条件証明ではない。
+- lag 23 以上は Python の探索では非現実的（最小語 ≈ 1.7 万、所有者 ≈ 1.9 万）。一般 lag は帰納で扱う。
+- 一般 lag への帰納は未着手。lag 4m+3 の v の窓の先頭 A-run（E-090：run m ≥ 3 ⇒ lag ≥ 4m−1）と所有者の newer 部分の衝突を一般に書くのが次の紙上課題。

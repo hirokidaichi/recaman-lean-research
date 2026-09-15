@@ -2643,3 +2643,13 @@ import Recaman
 #print axioms Recaman.TightPrivatePhase.endpointPhase_mem_neighborhood
 #print axioms Recaman.TightPrivatePhase.endpointPhase_ne_of_lt
 #print axioms Recaman.TightPrivatePhase.lag7_w1_two_phases_covered_by_others
+
+-- Paired older subtraction (older member of an adjacent SS pair): never inside an AAS window, inside a minimal lag-7 window only as the oldest bit of w1 (E-353, P2).
+#print axioms Recaman.PairedSubtractionCoverage.pairedAt_aas
+#print axioms Recaman.PairedSubtractionCoverage.pairedAt_lag7
+#print axioms Recaman.PairedSubtractionCoverage.pairedAt_of_stream
+#print axioms Recaman.PairedSubtractionCoverage.aas_window_no_paired_older
+#print axioms Recaman.PairedSubtractionCoverage.lag7_window_paired_older
+#print axioms Recaman.PairedSubtractionCoverage.w2_window_no_paired_older
+#print axioms Recaman.PairedSubtractionCoverage.minimal_lag7_window_paired_older
+#print axioms Recaman.PairedSubtractionCoverage.aas_window_no_paired_older_of_p2
