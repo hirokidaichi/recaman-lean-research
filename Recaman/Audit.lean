@@ -3362,3 +3362,11 @@ import Recaman
 #print axioms Recaman.toothcomb_candidate_avoids_prior_subtractions
 #print axioms Recaman.toothcomb_candidate_avoids_additions
 #print axioms Recaman.grand_toothcomb_horizon_synthesis
+
+#print axioms Recaman.toothcomb_blocker_injective
+#print axioms Recaman.toothcomb_blocker_index_unique
+#print axioms Recaman.toothcomb_blocker_height_escalation
+#print axioms Recaman.toothcomb_blocker_relative_height
+#print axioms Recaman.toothcomb_no_historical_blocker_under_ceiling
+#print axioms Recaman.toothcomb_candidate_avoids_all_past_history
+#print axioms Recaman.grand_permanent_high_history_exhaustion_synthesis

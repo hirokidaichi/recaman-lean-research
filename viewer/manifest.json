@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3364,
+   "lines": 3372,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -40801,6 +40801,58 @@
    "hasReport": false
   },
   {
+   "name": "PermanentHighHistoryExhaustion",
+   "lines": 140,
+   "imports": [
+    "PermanentHighToothcombBound",
+    "PermanentHighToothcombDescent",
+    "PermanentHighCollision",
+    "PermanentHighRigidity",
+    "TailDowncrossingDichotomy"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_injective",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_index_unique",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_height_escalation",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_relative_height",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_no_historical_blocker_under_ceiling",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_avoids_all_past_history",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_history_exhaustion_synthesis",
+     "line": 120
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PermanentHighRigidity",
    "lines": 317,
    "imports": [
@@ -52948,6 +53000,6 @@
    "hasReport": false
   }
  ],
- "total": 460,
+ "total": 461,
  "withReport": 167
 }

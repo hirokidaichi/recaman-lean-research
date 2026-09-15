@@ -39,6 +39,9 @@
 
 さらに、歯櫛下降における永久高値滞在限界と下向横断強制定理（**E-332、`Recaman.PermanentHighToothcombBound`**）が形式化された。歯櫛ステップ $m$ において軌道値が $a(n + 3 + 2m) = a(n) + n - m$ と減少する一方、クロック $T = n + 3 + 2m$ は増加するため、高値領域 $a(T) \ge 2T$ を維持するための線形必要十分条件が $5m + n + 6 \le a(n)$ であること（`toothcomb_high_regime_inequality`）、および限界を超えて $m > (a(n) - n - 6)/5$ ステップ進行した歯櫛は例外なく $a(T) < 2T$ へ突入して永久高値領域からの下向横断を厳密に強制すること（`toothcomb_exceeds_high_bound_forces_downcrossing`）を証明した。さらに、歯櫛内部の全減算値が狭義単調減少かつ互いに相異なり、全加算値よりも厳密に下方に位置することから、歯櫛自身が自己衝突によって中断することはあり得ず、歯櫛が下向横断前に途切れる原因は過去の有限個の歴史値 $a(j)$（$j \le n - 1$）との衝突に限定されるという大域的地平合成定理（`grand_toothcomb_horizon_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
 
+さらに、過去の有限個の歴史値によるブロッカーの容量枯渇と下向横断の不可避性定理（**E-333、`Recaman.PermanentHighHistoryExhaustion`**）が形式化された。歯櫛下降の減算候補値 $c(m) = a(n) + n - m$ が相異なる $m$ に対して互いに相異なるため、減算を阻む過去ブロッカーの対応 $m \mapsto j$ が単射（`toothcomb_blocker_injective`）となり、各阻害ステップが互いに異なる過去時刻 $j \le n - 1$ のピークを消費することを証明した。さらに、高値領域地平内（$5m + n + 6 \le a(n)$）の任意のブロッカー $a(j)$ は鋭敏な線形下界 $14n + 6 \le 5 \cdot a(j)$（すなわち $a(j) \ge 2.8n + 1.2 > 2.8j + 4$）を満たす極限的サミットでなければならず、過去値の上限が $5 \cdot a(j) < 14n + 6$ を満たす領域では高値地平内のいかなる歯櫛ステップに対しても過去ブロッカーが存在し得ないこと（`toothcomb_no_historical_blocker_under_ceiling`）、したがって候補値が過去履歴を完全に回避（`toothcomb_candidate_avoids_all_past_history`）して歯櫛下降が過去履歴によって妨害されず、地平を超えて $a(T) < 2T$ への下向横断が必然的・不可避に遂行されるという大域的歴史枯渇合成定理（`grand_permanent_high_history_exhaustion_synthesis`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
+
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
 
