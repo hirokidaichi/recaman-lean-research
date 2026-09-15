@@ -1,5 +1,6 @@
 # 証明ロードマップ
 
+> 2026-09-15追補：最小未到達数の構造的矛盾合成定理（Least Missing Target Contradiction Synthesis）をLean証明（E-338）。正準tail最小値からの脱出状態 time+2 における高度上界 a(time+2)<6(time+2)+1、永久高値大域二分法の第1枝の厳密排除と回廊への下向横断強制（permanent_high_escape_dichotomy_resolution）、最小未到達数と尾部復帰仮説の直接矛盾、前尾部有限被覆オラクルとの直接矛盾、および再帰的下向横断レジャー発散と有界レジャーの直接矛盾の大域統合を形式化。
 > 2026-09-15追補：再帰的下向横断による減算レジャー質量・回数の発散と無条件非有界性合成定理（Recurrent Downcrossing SubSum Divergence）をLean証明（E-337）。合法減算の強再帰性（exists_canSubtract_of_ray）によるsubSum・subCountの任意のカットオフ以降の無条件発散、下向横断ステップのクロック供出による直接下界（B<k+1≤subSum(k+1)）、正準tail最小値以降の下向横断におけるsubSum(time)からの累積増加と回廊再突入拘束、および無限再帰下向横断による回廊内発散大域合成を統合。
 > 2026-09-15追補：尾部下向横断の不可避性と回廊再突入大域合成定理（Tail Downcrossing Inevitability）をLean証明（E-336）。高値から低値への離散的中間値性による下向横断存在補題（exists_downcrossing_of_high_to_low）、歯櫛下降の地平突破による下向横断強制、下向横断ステップの合法減算性・クロック供出・値の新規性、および正準tail最小値以降の下向横断における回廊レジャー拘束再突入を統合。
 > 2026-09-15追補：永久高値大域統合と下向横断不可避性二分法（Permanent High Global Synthesis）をLean証明（E-335）。a(n)≥6n+1 における高値地平充足（5m+n+6≤a(n) for m<n）と鳩の巣未阻害候補の高値地平内厳密存在、a(n)<6n+1 におけるステップnでの地平突破と高値脱出下向横断強制（val<2(3n+3)）、および全高値領域に対する普遍的高値二分法を統合。

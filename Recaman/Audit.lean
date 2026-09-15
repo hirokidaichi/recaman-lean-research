@@ -3402,5 +3402,13 @@ import Recaman
 #print axioms Recaman.recurrent_downcrossings_force_arbitrary_ledger_growth
 #print axioms Recaman.grand_recurrent_downcrossing_subSum_synthesis
 
+#print axioms Recaman.tail_escape_strictly_lt_six_times
+#print axioms Recaman.least_missing_target_escape_strictly_lt_six_times
+#print axioms Recaman.permanent_high_escape_dichotomy_resolution
+#print axioms Recaman.contradiction_of_least_missing_and_tail_return
+#print axioms Recaman.contradiction_of_least_missing_and_preTail_oracle
+#print axioms Recaman.recurrent_downcrossings_contradicts_bounded_ledger
+#print axioms Recaman.grand_least_missing_target_contradiction_synthesis
+
 
 

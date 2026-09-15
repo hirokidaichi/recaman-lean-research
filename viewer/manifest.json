@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3406,
+   "lines": 3414,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -31887,6 +31887,61 @@
    "hasReport": false
   },
   {
+   "name": "LeastMissingTargetContradiction",
+   "lines": 150,
+   "imports": [
+    "RecurrentDowncrossingSubSum",
+    "TailDowncrossingInevitability",
+    "TailDowncrossingDichotomy",
+    "TailDowncrossingLedger",
+    "PermanentHighGlobalSynthesis",
+    "LeastTailLedgerMinimum",
+    "TargetTailResidualKernel",
+    "CrossingTailRefined"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tail_escape_strictly_lt_six_times",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_target_escape_strictly_lt_six_times",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_escape_dichotomy_resolution",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "contradiction_of_least_missing_and_tail_return",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "contradiction_of_least_missing_and_preTail_oracle",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "recurrent_downcrossings_contradicts_bounded_ledger",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_least_missing_target_contradiction_synthesis",
+     "line": 127
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LeastTailBackwardChain",
    "lines": 530,
    "imports": [
@@ -53257,6 +53312,6 @@
    "hasReport": false
   }
  ],
- "total": 465,
+ "total": 466,
  "withReport": 167
 }
