@@ -1,8 +1,13 @@
-import Recaman.TwelveGateT6Resolution
-import Recaman.FourteenLagRigidity
-import Recaman.ElevenGateT6Synthesis
 import Recaman.SS2AASCollisionObstruction
 import Recaman.TenGateT6Resolution
+import Recaman.CapacitySlackCompensation
+import Recaman.ElevenCapacityRigidity
+import Recaman.GrandPeriodicDeletabilityTheorem
+import Recaman.P2ModFourRigidity
+import Recaman.QuantumP2Arithmetic
+import Recaman.TightComponentSlackBound
+import Recaman.TwoSSTightAvoidanceTheorem
+import Recaman.UniversalTightLagBound
 
 /-!
 # TightTripleRigidity: Structural Decomposition of Tight Avoiding Subsets of Size 3
@@ -29,8 +34,7 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution
+open ElevenCapacityRigidity CapacitySlackCompensation
 
 /-- In any tight subset A of size 3, any two elements with lag 7 must share identical neighborhoods. -/
 theorem tight_triple_two_lag_seven_identical_neighborhoods (e : Int → Bool) (p : Nat) (hp : 0 < p)

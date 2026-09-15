@@ -1,4 +1,4 @@
-import Recaman.UniversalCollisionDistance
+import Recaman.LagSevenCollisionDistance
 
 /-!
 # UniversalNonAASReduction: Universal Non-AAS Window Filter and Multi-Window Reduction
@@ -27,6 +27,58 @@ This module establishes the general structural reduction of Gate T6 to non-AAS c
     sublists, 3-window disjunction, tight quintuple bounds, and distance obstruction.
 -/
 
+namespace Recaman.UniversalCollisionDistance
+
+open TwoSSTightDisjoint TwoSSLocalDonation TwoSSAvoidTight LowSSPeriodicSupply
+open SharpPeriodicSupply LagSevenCollisionDistance
+
+/-! The three lemmas below were originally stated in `UniversalCollisionDistance`; they are
+restated here verbatim under their original full names. -/
+
+/-- Any window w covering s*(u₀) at subtraction offset 1 + i forces (u₀ - w) % p = (d₀ - 1 - i) % p. -/
+theorem universal_collision_residue_cases (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (u0 w : Nat) (d0 d : Nat)
+    (hcov : WindowCoversSubtraction e p (w : Int) d (oldestSubtractionPhase p u0 d0)) :
+    ∃ i : Nat, i < d ∧ e ((w : Int) - 1 - (i : Int)) = false ∧
+      ((u0 : Int) - (w : Int)) % (p : Int) = ((d0 : Int) - 1 - (i : Int)) % (p : Int) := by
+  obtain ⟨i, hi, he, hmod⟩ := hcov
+  unfold oldestSubtractionPhase endpointPhase at hmod
+  have hcast := phase_cast p hp ((u0 : Int) - (d0 : Int))
+  rw [hcast] at hmod
+  refine ⟨i, hi, he, ?_⟩
+  exact collision_mod_residue_eq p (u0 : Int) (w : Int) d0 i hmod
+
+/-- If (u₀ - w) % p does not equal (d₀ - 1 - i) % p for any subtraction offset i of w,
+then w strictly avoids s*(u₀). -/
+theorem universal_avoids_of_not_in_residues (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (u0 w : Nat) (d0 d : Nat)
+    (hnot : ∀ i : Nat, i < d → e ((w : Int) - 1 - (i : Int)) = false →
+      ((u0 : Int) - (w : Int)) % (p : Int) ≠ ((d0 : Int) - 1 - (i : Int)) % (p : Int)) :
+    ¬ WindowCoversSubtraction e p (w : Int) d (oldestSubtractionPhase p u0 d0) := by
+  intro hcov
+  obtain ⟨i, hi, he, heq⟩ := universal_collision_residue_cases e p hp u0 w d0 d hcov
+  exact hnot i hi he heq
+
+/-- Under the distance non-congruence condition, s*(u₀) ∉ N([w]) for arbitrary windows w. -/
+theorem universal_not_mem_neighborhood_of_distance (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (u0 w : Nat) (d0 : Nat) (lag : Nat → Nat)
+    (hnot : ∀ i : Nat, i < lag w → e ((w : Int) - 1 - (i : Int)) = false →
+      ((u0 : Int) - (w : Int)) % (p : Int) ≠ ((d0 : Int) - 1 - (i : Int)) % (p : Int)) :
+    oldestSubtractionPhase p u0 d0 ∉ neighborhood e p [w] lag := by
+  intro hmem
+  rw [mem_neighborhood_iff] at hmem
+  obtain ⟨_, hcov⟩ := hmem
+  rw [isCoveredBySubset_iff] at hcov
+  obtain ⟨x, hx, i, hi, he, hmod⟩ := hcov
+  simp only [List.mem_singleton] at hx
+  subst x
+  have hwin : WindowCoversSubtraction e p (w : Int) (lag w) (oldestSubtractionPhase p u0 d0) := by
+    unfold WindowCoversSubtraction
+    exact ⟨i, hi, he, hmod⟩
+  exact universal_avoids_of_not_in_residues e p hp u0 w d0 (lag w) hnot hwin
+
+end Recaman.UniversalCollisionDistance
+
 namespace Recaman.UniversalNonAASReduction
 
 open LeadingRunSupply LowSSEndpoint TwoSSEndpoint P2ModFourRigidity
@@ -36,19 +88,10 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open TwentyTwoLagRigidity TwentyTwoGateT6Resolution TwentyTwoGateT6Unconditional
-open GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem UniversalQuantumWindowCapacity TightSubsetLagStructure
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
+open UniversalQuantumWindowCapacity TightSubsetLagStructure
 open TightSubsetDecomposition TightQuadDecomposition UniversalTightDecomposition
 open SharpPeriodicSupply LagSevenCollisionDistance UniversalCollisionDistance
 
@@ -118,7 +161,7 @@ theorem universal_non_aas_sublist_survives
     (hnot_cov : ∀ w ∈ W, oldestSubtractionPhase p u0 (lag u0) ∉ neighborhood e p [w] lag) :
     A.length ≤ (deletedNeighborhood e p A lag (oldestSubtractionPhase p u0 (lag u0))).length := by
   have hnot := universal_non_aas_sublist_not_mem e p hp hper A lag W hW_sub u0 hd_lt hu0A hP0 hss0 haas hnot_cov
-  exact arbitrary_period_tight_survives_of_not_mem e p A lag htight u0 hnot
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight hnot
 
 /-- Equivalence for 3 non-AAS windows: s*(u₀) ∈ N(A) ↔ (s*(u₀) ∈ N([w₁]) ∨ s*(u₀) ∈ N([w₂]) ∨ s*(u₀) ∈ N([w₃])). -/
 theorem universal_three_non_aas_collision_iff
@@ -184,7 +227,7 @@ theorem universal_three_non_aas_survives
     · exact hnot1 h
     · exact hnot2 h
     · exact hnot3 h
-  exact arbitrary_period_tight_survives_of_not_mem e p A lag htight u0 hnot_A
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight hnot_A
 
 /-- In any tight quintuple (|A| = 5), every member u ∈ A satisfies |N([u])| ≤ 5. -/
 theorem universal_tight_quintuple_member_bound (e : Int → Bool) (p : Nat)

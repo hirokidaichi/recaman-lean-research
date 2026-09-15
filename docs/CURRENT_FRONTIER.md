@@ -34,6 +34,9 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   A18 = [2, 8, 11, 13] は緊密・回避で phase 11 が lag 7。それでも `s*(7) = 14 ∉ N(A18)`。Gate T6 の一般 p での理由は純 AAS 性ではなく、
   geometric/pure-AAS 路線は STOPPED。E-344 以降の `PROVED-LEAN` 行には、純算術でない audit symbol を 1 つ以上要求する gate を
   `scripts/check_research_registry.sh` に入れた（`scripts/report_vacuity.py --check-registry`）。
+- **2026-09-15 夕方、監査で W/C/T と判定した 92 モジュールを削除した**（[監査報告 §9](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+  残したのは実内容を持つ 20 本と、削除側から拾った補題をまとめた `Recaman/AuditSalvage.lean`（E-346）。
+  削除行の registry label は `STOPPED`、artifact は監査報告。E-232〜E-342 の frontier 段落は歴史記録として残すが、モジュールは存在しない。
 - **監査後の最初の実測（E-345、`COMPUTED`、[card](HYPOTHESIS_CARD_2026-09-15_TIGHT_NONAAS_CENSUS.md)）**：p ≤ 22 の全 high-SS donor について
   緊密回避部分集合を全列挙した。ssCount = 2 donor の最古 S（Lean の `oldestSubtractionPhase`）は全周期・全 lag で一度も緊密回避部分集合に
   被覆されない（Gate T6 一般形の正しい候補）。ssCount ≥ 3 donor では最古 S の供出は p = 12 から破れる（E-179 の「何らかの S」のみ残る）。
@@ -753,7 +756,7 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 ## 現在の検証基準
 
 - Lean 4.33.1、標準ライブラリのみ。
-- Lean source 311 files（`Recaman/` 310 に root の `Recaman.lean` を加えた数。`Audit.lean` は前者に含む）。
-- `./scripts/check.sh`: 1,743 audited declarations。証拠台帳182件、うち `PROVED-LEAN` 76件。
+- Lean source 381 files（`Recaman/` 380 に root の `Recaman.lean` を加えた数。`Audit.lean` は前者に含む。2026-09-15 の削除後）。
+- `./scripts/check.sh`: 2,476 audited declarations（382 jobs）。証拠台帳346件、うち `PROVED-LEAN` 146件（2026-09-15 の削除後）。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。

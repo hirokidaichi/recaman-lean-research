@@ -3545,3 +3545,6 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   ss≥3 は p=12 `AAAASAAASSSS` donor 3 で破れる。非 AAS 緊密回避は ss=2 で p=15 `AAAASAAASASASSS` から。証人 2 件を `verify_witnesses.py` で独立再計算。
   （E-344 はこの間にループが別件で取ったため E-345 として登録。）
 - 16:40 E-344 `PermanentHighInternalBlocker`（H-20260915-17）：永久高値レジームにおける地平前履歴の完全無力化と内部ブロッカー強制定理を Lean 証明。$n \ge \text{upperTri}(H) + 2$ において減算候補 $a(n) - (n+1) \ge n - 1 > \text{upperTri}(H) \ge a(j)$（$j < H$）となり、地平前履歴による阻害が例外なく不可能（`pre_horizon_blocker_impossible`）。減算失敗時のブロッカーは必ず高値尾部内部 $H \le j \le n - 3$ に強制され、軌道高度急上昇 $2j + n + 1 \le a(n)$ および $2H + n + 1 \le a(n)$ を引き起こす。`report_vacuity.py` で 14 定理すべて非恒真式・実内容（R）を確認し、E-344+ 新 gate を通過。
+- 16:40〜 広木さんの指示で削除作業。削除候補 93 本のうち E-344（`PermanentHighInternalBlocker`）は一読で実軌道の局所補題と判断し残す。
+  残す 19 本のうち削除側を import する 11 本を機械的に検出（宣言を実際に使うのは 4 本）。サブエージェント 2 本で import 付け替えと
+  `AuditSalvage.lean` 作成、親は registry（92 行 STOPPED）・Recaman.lean・Audit.lean（795 行除去）・カード 21 枚を処理。

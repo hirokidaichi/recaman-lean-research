@@ -8,6 +8,9 @@
 
 ## Audit: the "grand synthesis" rows E-317..E-319 and E-338..E-342 — 2026-09-15
 
+- **92 モジュールを削除**（監査で wrapper／条件付き／恒真式と判定したもの、[§9](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+  実内容を持つ 20 本は残し、11 本の import を付け替え、削除側の使える補題は `Recaman/AuditSalvage.lean`（E-346）へ退避。
+  registry の削除行は `STOPPED`、Audit.lean から `#print axioms` 795 行を除去
 - E-317/E-318/E-319（Gate T6 全周期解決・`|U|≤|D|`・Issue #73 CLOSED）の主要定理は自由な Nat 変数上の恒真式
   （`card_U - k ≤ card_D - k` ⇒ `card_U ≤ card_D`、`k = k := rfl`）で符号語に触れない。E-070/E-067 を `CONJECTURED` に戻し、
   #73 は OPEN のまま。Gate T6 の無条件 Lean 証明は p≤10（E-230/E-231）まで

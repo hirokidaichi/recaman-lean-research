@@ -58,3 +58,7 @@ Lean formal declarations in `Recaman/GrandSurjectivityClosure.lean`:
 
 このカードの定理は、定義しただけで未証明の仮説（`NoPermanentHighEscapeHypothesis`、`NoCorridorReentryHypothesis`、`TargetTailReturnHypothesis`、`PreTailCoverageOracle` など）からの条件付き再包装、または定義・structure field の言い換えである。全射性そのもの、あるいはいずれかの枝の実際の排除は証明していない。「全射性 ⇔ 最小未到達数の不在」は整列性による自明な同値。全射性・非全射性は未解決のまま（E-001）。
 詳細は [監査報告](AUDIT_GRAND_SYNTHESIS_2026-09-15.md)。
+
+## 削除注記（2026-09-15）
+
+このカードが参照する Lean モジュールは監査 E-343 で wrapper／条件付き足場／恒真式と判定され、2026-09-15 に削除した（[AUDIT_GRAND_SYNTHESIS_2026-09-15.md](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) §9）。使える補題は `Recaman/AuditSalvage.lean` に退避した。registry の該当行は `STOPPED`。

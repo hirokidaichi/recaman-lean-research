@@ -1,7 +1,20 @@
 import Recaman.TightSubsetLagStructure
-import Recaman.LagSevenNeighborhoodRigidity
 import Recaman.TightTripleRigidity
-import Recaman.ArbitraryPeriodGateT6Unconditional
+import Recaman.CapacitySlackCompensation
+import Recaman.ElevenCapacityRigidity
+import Recaman.GrandPeriodicDeletabilityTheorem
+import Recaman.LagSevenTightObstruction
+import Recaman.OneSSMultiplicity
+import Recaman.P2ModFourRigidity
+import Recaman.QuantumP2Arithmetic
+import Recaman.SS2AASCollisionObstruction
+import Recaman.SS2LagElevenForcing
+import Recaman.TenGateT6Resolution
+import Recaman.TightAvoidingLagCertificate
+import Recaman.TightComponentSlackBound
+import Recaman.TwoSSEndpoint
+import Recaman.TwoSSTightAvoidanceTheorem
+import Recaman.UniversalTightLagBound
 
 /-!
 # TightSubsetDecomposition: AAS and Non-AAS Collision Decomposition in Tight Subsets
@@ -39,19 +52,10 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open TwentyTwoLagRigidity TwentyTwoGateT6Resolution TwentyTwoGateT6Unconditional
-open GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem UniversalQuantumWindowCapacity TightSubsetLagStructure
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
+open UniversalQuantumWindowCapacity TightSubsetLagStructure
 
 /-- General list lemma: if `l1 ⊆ l2`, `l1.Nodup`, and `l1.length = l2.length`, then `l2 ⊆ l1`. -/
 theorem mem_of_subset_nodup_length_eq {α : Type} {l1 l2 : List α}

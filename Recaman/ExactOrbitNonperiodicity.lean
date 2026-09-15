@@ -2,7 +2,6 @@ import Recaman.LeadingRunSupply
 import Recaman.ParitySupply
 import Recaman.ShortPeriodicSupply
 import Recaman.EventualPeriodicSupply
-import Recaman.GrandUniversalCapacityResolution
 import Recaman.FiniteSeedPeriodicSupply
 import Recaman.OneSSMultiplicity
 import Recaman.LowSSPeriodicSupply
@@ -13,27 +12,28 @@ import Recaman.CanonicalSSFreeSupply
 /-!
 # Exact Orbit Non-Periodicity
 
-This module formalizes the synthesis of the finite seed supply theorem (E-065 / E-120)
-and the universal capacity obstruction (E-067 / E-319), establishing that no exact Recamán orbit
-can enter an eventually periodic sign pattern.
+This module combines the finite seed supply theorem (E-065 / E-120) with the low-SS
+periodic capacity bound (E-128, `periodic_lowSS_capacity`), establishing that no exact
+Recamán orbit can enter an eventually periodic sign pattern in which every addition
+phase is low-SS supplied (has a P2 donor window with `ssCount ≤ 1`).
+
+The unconditional statement (no low-SS hypothesis, E-067) is NOT proved here.
 
 In particular:
 1. `mass_past_add_eq_signSum`: Connects backward period mass to forward `signSum`.
 2. `signSum_eq_period_mass`: Proves `signSum e 0 p = mass (past e 0 p)` for any periodic word `e`.
 3. `pos_signSum_of_pos_period_mass`: Positive period mass implies strictly positive `signSum`.
-4. `low_ss_periodic_obstruction`: Low-SS periodic supply obstruction.
-5. `grand_capacity_supply_obstruction`: Capacity induction obstruction for periodic words with positive `signSum`.
+4. `positive_sum_subtraction_lt_addition`: Positive `signSum` forces strictly fewer subtraction
+   phases than addition phases: `|D| < |A|`.
+5. `low_ss_periodic_obstruction`: Low-SS periodic supply obstruction.
 6. `seeded_orbit_not_eventual_low_ss_periodic`: An arbitrary seeded orbit cannot enter an eventual low-SS periodic sign pattern.
-7. `seeded_orbit_not_eventual_periodic_of_capacity_induction`: An arbitrary seeded orbit cannot enter an eventual periodic sign pattern under capacity induction.
-8. `canonical_orbit_not_eventual_low_ss_periodic`: The canonical Recamán orbit (a0 = 0) cannot enter an eventual low-SS periodic sign pattern.
-9. `canonical_orbit_not_eventual_periodic_of_capacity_induction`: The canonical Recamán orbit cannot enter an eventual periodic sign pattern under capacity induction.
+7. `canonical_orbit_not_eventual_low_ss_periodic`: The canonical Recamán orbit (a0 = 0) cannot enter an eventual low-SS periodic sign pattern.
 -/
 
 open Recaman.LeadingRunSupply
 open Recaman.ParitySupply
 open Recaman.ShortPeriodicSupply
 open Recaman.EventualPeriodicSupply
-open Recaman.GrandUniversalCapacityResolution
 open Recaman.FiniteSeedPeriodicSupply
 open Recaman.OneSSMultiplicity
 open Recaman.LowSSPeriodicSupply
@@ -77,6 +77,16 @@ theorem pos_signSum_of_pos_period_mass (e : Int → Bool) (p : Nat) (hp : 0 < p)
   rw [signSum_eq_period_mass e p hp hper]
   omega
 
+/-- Positive sign sum forces strictly fewer subtractions than additions:
+`signSum > 0` implies `|D| < |A|`. -/
+theorem positive_sum_subtraction_lt_addition (e : Int → Bool) (p : Nat)
+    (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) :
+    (subPhases e 0 p).length < ShortPeriodicSupply.additionCount e 0 p := by
+  have hm := ShortPeriodicSupply.signSum_eq_counts e 0 p
+  have hS := LagElevenPeriodic.subtractionCount_eq_filter e 0 p
+  rw [hS] at hm
+  omega
+
 /-- Low-SS periodic supply obstruction: In any periodic word `e` with `signSum > 0`,
 if every addition phase has a P2 donor window with `ssCount ≤ 1`, then Hall capacity fails. -/
 theorem low_ss_periodic_obstruction (e : Int → Bool) (p : Nat) (hp : 0 < p)
@@ -97,22 +107,8 @@ theorem low_ss_periodic_obstruction (e : Int → Bool) (p : Nat) (hp : 0 < p)
       ShortPeriodicSupply.P2 e (u : Int) d ∧ ssCount (past e (u : Int) d) ≤ 1 := by
     intro u hu
     refine ⟨hU_mem u hu, hSupply u (hUrange u hu) (hU_mem u hu)⟩
-  have hcap := low_ss_base_capacity e p hp hper U hUnodup hUrange hU_supply
+  have hcap := periodic_lowSS_capacity e p hp hper U hUnodup hUrange hU_supply
   have hlen : U.length = ShortPeriodicSupply.additionCount e 0 p := addition_count_filter e p
-  have hlt := positive_sum_subtraction_lt_addition e p hpos
-  omega
-
-/-- Gate T6 capacity induction obstruction: For any periodic word `e` with `signSum > 0`,
-capacity induction on donor-slack reduction implies `False`. -/
-theorem grand_capacity_supply_obstruction (e : Int → Bool) (p : Nat)
-    (hpos : 0 < ShortPeriodicSupply.signSum e 0 p)
-    (card_U card_D k : Nat)
-    (hU_eq_A : card_U = ShortPeriodicSupply.additionCount e 0 p)
-    (hD_eq : card_D = (subPhases e 0 p).length)
-    (hkU : k ≤ card_U) (hkD : k ≤ card_D)
-    (h_rem : card_U - k ≤ card_D - k) :
-    False := by
-  have hcap := inductive_donor_reduction card_U card_D k hkU hkD h_rem
   have hlt := positive_sum_subtraction_lt_addition e p hpos
   omega
 
@@ -130,23 +126,6 @@ theorem seeded_orbit_not_eventual_low_ss_periodic (b : Nat) (s : State) (N p : N
   have hper_e := extension_periodic (fun n => absoluteSign b s n) N p
   have hpos := pos_signSum_of_pos_period_mass e p hp hper_e hsup.1
   exact low_ss_periodic_obstruction e p hp hper_e hpos hlow
-
-/-- Grand Synthesis: An exact Recamán orbit cannot enter an eventual periodic sign pattern
-under Gate T6 capacity induction. -/
-theorem seeded_orbit_not_eventual_periodic_of_capacity_induction
-    (b : Nat) (s : State) (N p : Nat) (hb : b ≤ N) (hp : 0 < p)
-    (hper : ∀ n : Nat, N ≤ n → absoluteSign b s ((n + p : Nat) : Int) = absoluteSign b s n)
-    (k : Nat)
-    (hkU : k ≤ ShortPeriodicSupply.additionCount (extension (fun n => absoluteSign b s n) N p) 0 p)
-    (hkD : k ≤ (subPhases (extension (fun n => absoluteSign b s n) N p) 0 p).length)
-    (h_rem : ShortPeriodicSupply.additionCount (extension (fun n => absoluteSign b s n) N p) 0 p - k ≤
-      (subPhases (extension (fun n => absoluteSign b s n) N p) 0 p).length - k) :
-    False := by
-  let e := extension (fun n => absoluteSign b s n) N p
-  have hsup := seeded_eventual_supply b s N p hb hp hper
-  have hper_e := extension_periodic (fun n => absoluteSign b s n) N p
-  have hpos := pos_signSum_of_pos_period_mass e p hp hper_e hsup.1
-  exact grand_capacity_supply_obstruction e p hpos _ _ k rfl rfl hkU hkD h_rem
 
 /-- Canonical standard Recamán orbit (starting from a0 = 0) cannot enter an eventual
 low-SS periodic sign pattern. -/
@@ -166,26 +145,5 @@ theorem canonical_orbit_not_eventual_low_ss_periodic (N p : Nat) (hp : 0 < p)
     exact hper n hn
   rw [hsign] at hlow
   exact seeded_orbit_not_eventual_low_ss_periodic 0 initial N p (by omega) hp hper_abs hlow
-
-/-- Canonical standard Recamán orbit cannot enter an eventual periodic sign pattern
-under Gate T6 capacity induction. -/
-theorem canonical_orbit_not_eventual_periodic_of_capacity_induction
-    (N p : Nat) (hp : 0 < p)
-    (hper : ∀ n : Nat, N ≤ n → canonicalSign ((n + p : Nat) : Int) = canonicalSign (n : Int))
-    (k : Nat)
-    (hkU : k ≤ ShortPeriodicSupply.additionCount (extension (fun n => canonicalSign (n : Int)) N p) 0 p)
-    (hkD : k ≤ (subPhases (extension (fun n => canonicalSign (n : Int)) N p) 0 p).length)
-    (h_rem : ShortPeriodicSupply.additionCount (extension (fun n => canonicalSign (n : Int)) N p) 0 p - k ≤
-      (subPhases (extension (fun n => canonicalSign (n : Int)) N p) 0 p).length - k) :
-    False := by
-  have hsign : (fun n : Nat => canonicalSign (n : Int)) = (fun n : Nat => absoluteSign 0 initial (n : Int)) := by
-    funext n
-    rw [canonical_seed_sign]
-  have hper_abs : ∀ n : Nat, N ≤ n → absoluteSign 0 initial ((n + p : Nat) : Int) = absoluteSign 0 initial (n : Int) := by
-    intro n hn
-    rw [canonical_seed_sign, canonical_seed_sign]
-    exact hper n hn
-  rw [hsign] at hkU hkD h_rem
-  exact seeded_orbit_not_eventual_periodic_of_capacity_induction 0 initial N p (by omega) hp hper_abs k hkU hkD h_rem
 
 end Recaman.ExactOrbitNonperiodicity

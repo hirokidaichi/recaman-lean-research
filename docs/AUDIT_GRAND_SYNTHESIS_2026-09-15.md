@@ -202,6 +202,48 @@ E-320〜E-337 の無条件の実数学: (1) E-321：任意有限ブロックで 
 3. `scripts/report_vacuity.py` を追加（報告用）。
 4. Lean ソースは削除・変更しない（kernel 検査は通っており、削除は別判断）。
 
+## 9. 削除の記録（2026-09-15、広木さんの指示）
+
+監査で W/C/T と判定した **92 モジュールを削除**した。残したのは実内容（R）を持つ次の 20 本：
+
+- ElevenCapacityRigidity (E-232)
+- TightTripleRigidity (E-236)
+- TightAvoidingLagCertificate (E-240)
+- UniversalQuantumWindowCapacity (E-265)
+- TightSubsetLagStructure (E-266)
+- TightSubsetDecomposition (E-267)
+- TightQuadDecomposition (E-268)
+- UniversalTightDecomposition (E-269)
+- LagSevenCollisionDistance (E-270)
+- UniversalNonAASReduction (E-272)
+- TightTripleCollisionObstruction (E-276)
+- LagSevenPrefixRigidity (E-305)
+- TwoLagSevenPhaseConflict (E-306)
+- LagSevenDistanceSeparationRigidity (E-311)
+- ExactOrbitNonperiodicity (E-320、条件付き3定理を除去)
+- FiniteBlockCapacity (E-321)
+- DriftResetAccumulation (E-323)
+- PermanentHighUnsuppliedDeficit (E-330、依存補題を内製化)
+- PermanentHighToothcombDescent (E-331)
+- PermanentHighInternalBlocker (E-344、4エージェント監査の範囲外。親セッションの一読では実軌道の局所補題14本で純算術0、条件は各時刻の 2n ≤ a n。permanent-high 路線の一部だが内容は空でないので残す)
+
+削除した 92 本（registry 行は `STOPPED` に変更し artifact を本書に付け替え。Audit.lean の `#print axioms` 795 行と Recaman.lean の import 92 行を除去）：
+
+ApexPeriodicRigidityTheorem、ArbitraryPeriodGateT6Resolution、ArbitraryPeriodGateT6Unconditional、ArbitraryPeriodLagRigidity、ArbitraryTightCollisionObstruction、CorridorDensityObstruction、EighteenGateT6Resolution、EighteenGateT6Unconditional、EighteenGeometricGateT6Resolution、EighteenLagRigidity、ElevenGateT6Synthesis、FourteenGateT6Resolution、FourteenGateT6Unconditional、FourteenLagRigidity、GateT6CapacityInduction、GlobalUnboundednessSupply、GrandApexPeriodEighteenTheorem、GrandApexPeriodSixteenTheorem、GrandApexPeriodTwentyFourTheorem、GrandApexPeriodTwentyTheorem、GrandApexPeriodTwentyTwoTheorem、GrandGeometricExclusionSynthesis、GrandSurjectivityClosure、GrandUniversalCapacityResolution、GrandUniversalGateT6Resolution、LagSevenChainDisjointness、LagSevenDistanceRigidity、LagSevenNeighborhoodRigidity、LeastMissingTargetContradiction、LeastTailMinimumDynamics、MasterGateT6GeometricResolution、MasterGateT6PureAASHierarchy、MasterGateT6TightAllAASClosure、MasterGeometricGateT6Resolution、NoCorridorReentry、NoPermanentHighEscape、ParametricGateT6Synthesis、PermanentHighBlockerCapacity、PermanentHighCollision、PermanentHighGlobalSynthesis、PermanentHighHistoryExhaustion、PermanentHighRigidity、PermanentHighToothcombBound、QuantumLagSizeRigidity、RecurrentDowncrossingSubSum、SixteenGateT6Resolution、SixteenGateT6Unconditional、SixteenGeometricGateT6Resolution、SixteenLagRigidity、Surjectivity、TailDowncrossingDichotomy、TailDowncrossingInevitability、TailDowncrossingLedger、ThreeLagSevenCapacityObstruction、TightAvoidingStructuralClassification、TightNonCollisionObstruction、TightOctCollisionObstruction、TightQuadCollisionObstruction、TightQuadRigidity、TightQuintCollisionObstruction、TightQuintuplePureAAS、TightSeptCollisionObstruction、TightSeptuplePureAAS、TightSextCollisionObstruction、TightSextuplePureAAS、TwelveGateT6Resolution、TwelveGateT6Unconditional、TwentyFourGateT6Resolution、TwentyFourGateT6Unconditional、TwentyFourGeometricGateT6Resolution、TwentyFourLagRigidity、TwentyGateT6Resolution、TwentyGateT6Unconditional、TwentyGeometricGateT6Resolution、TwentyLagRigidity、TwentyTwoGateT6Resolution、TwentyTwoGateT6Unconditional、TwentyTwoGeometricGateT6Resolution、TwentyTwoLagRigidity、TwoLagSevenOverlapGeometry、UniversalAASCoverageBound、UniversalAASLagSeparation、UniversalApexPeriodicTheorem、UniversalCapacityThresholds、UniversalCollisionDistance、UniversalDistanceGateT6Resolution、UniversalGateT6PureAASChain、UniversalGeometricGateT6Synthesis、UniversalLagSevenCapacityBound、UniversalLagThreeSevenTightDichotomy、UniversalMultiLagSeparation、UniversalQuantumTightObstruction
+
+残す側で削除モジュールを import していた 11 本は import を付け替えた。削除側の宣言を実際に使っていた 4 本は次のように処理した：
+ExactOrbitNonperiodicity は `low_ss_base_capacity` を E-128 の `periodic_lowSS_capacity` 直接呼びに変え、
+`positive_sum_subtraction_lt_addition` を内製し、容量不等式を仮定に持つ 3 定理（`grand_capacity_supply_obstruction`、
+`*_of_capacity_induction`）を除去。PermanentHighUnsuppliedDeficit は GlobalUnboundednessSupply / PermanentHighCollision から
+使っていた補題を内製化。TightQuadDecomposition は `tight_quad_survives_of_not_mem` を、UniversalNonAASReduction は
+`universal_not_mem_neighborhood_of_distance` を取り込み。
+
+削除側から拾った補題は `Recaman/AuditSalvage.lean`（registry E-346）に集約した：E-239 の
+`tight_avoiding_le_two_all_lag_three_general`、E-325 の `tail_minimum_step3_subtraction_forces_step4_addition`、
+E-326 の `downcrossing_step_must_be_subtraction`・`tail_descent_barrier`・`tail_subtraction_result_gt_minimum`、
+E-322 の `subCount_lower/upper_bound_of_ledger_corridor`、E-334 の `toothcomb_not_all_blocked_by_history`（鳩の巣）、
+E-328 の `permanent_high_third_addition_prior_summit`。いずれも実軌道の局所事実で、regime・枝の排除・容量不等式は主張しない。
+
 ## 8. 再発防止（ループへの要請と機械的 gate）
 
 `scripts/check_research_registry.sh` から `python3 scripts/report_vacuity.py --check-registry` を呼び、
