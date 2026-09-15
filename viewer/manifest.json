@@ -434,7 +434,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3293,
+   "lines": 3307,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46482,6 +46482,87 @@
    "hasReport": false
   },
   {
+   "name": "TailDowncrossingDichotomy",
+   "lines": 248,
+   "imports": [
+    "TailDowncrossingLedger",
+    "LeastTailMinimumDynamics",
+    "LeastTailLedgerMinimum",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "permanent_high_subtraction_requires_three_times",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_not_canSubtract_of_lt_three",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_forced_addition_value",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_subSum_upper_bound",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_subCount_upper_bound",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_of_no_downcrossing",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_subSum_ge_clock",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_value_fresh",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_values_distinct",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "recurrent_downcrossing_subSum_unbounded",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_permanent_high_or_downcrossing",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_escape_downcrossing_dichotomy",
+     "line": 204
+    },
+    {
+     "kind": "theorem",
+     "name": "least_missing_tail_grand_dichotomy",
+     "line": 218
+    }
+   ],
+   "theorems": 13,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "TailDowncrossingLedger",
    "lines": 310,
    "imports": [
@@ -52521,6 +52602,6 @@
    "hasReport": false
   }
  ],
- "total": 454,
+ "total": 455,
  "withReport": 167
 }

@@ -3291,3 +3291,17 @@ import Recaman
 #print axioms Recaman.tail_downcrossing_subSum_ge_time
 #print axioms Recaman.tail_downcrossing_subCount_gt_time
 #print axioms Recaman.least_missing_tail_downcrossing_ledger_obstruction
+
+#print axioms Recaman.permanent_high_subtraction_requires_three_times
+#print axioms Recaman.permanent_high_not_canSubtract_of_lt_three
+#print axioms Recaman.permanent_high_forced_addition_value
+#print axioms Recaman.permanent_high_subSum_upper_bound
+#print axioms Recaman.permanent_high_subCount_upper_bound
+#print axioms Recaman.permanent_high_of_no_downcrossing
+#print axioms Recaman.downcrossing_subSum_ge_clock
+#print axioms Recaman.downcrossing_value_fresh
+#print axioms Recaman.downcrossing_values_distinct
+#print axioms Recaman.recurrent_downcrossing_subSum_unbounded
+#print axioms Recaman.exists_permanent_high_or_downcrossing
+#print axioms Recaman.tail_escape_downcrossing_dichotomy
+#print axioms Recaman.least_missing_tail_grand_dichotomy

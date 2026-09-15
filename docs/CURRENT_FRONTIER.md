@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-14
+最終更新: 2026-09-15
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -26,6 +26,8 @@
 さらに、最小未到達数の正準 tail 最小値における強制加算と未供給加算ドリフトの動特性定理（**E-325、`Recaman.LeastTailMinimumDynamics`**）が形式化された。`PermanentTailMinimumCertificate` の最小性から、直後のステップ $\text{time} + 1$ が強制加算（$\text{canonicalSign}(\text{time}) = \text{true}$）となり減算レジャー質量 $\text{subSum}$ および減算回数 $\text{subCount}$ が不変に保たれること、続くステップ $\text{time} + 2$ も強制加算（$\text{canonicalSign}(\text{time} + 1) = \text{true}$）となり $a(\text{time} + 2) = a(\text{time}) + 2 \cdot \text{time} + 3 > 2(\text{time} + 2)$ を満たして商バンド $q \ge 2$ への脱出が不可避であること、および非加算延長定理（`double_forcedAddition_extends`）によりステップ $\text{time}$ または $\text{time} + 3$ のいずれかが必ず加算となり、正準 tail 最小値の近傍に3連続加算 `AAA` が無条件に現れることを証明した。これにより、Theme 4・E-324の局所パターン排除定理と結合し、tail 最小値において少なくとも1つの未供給加算が必ず発生すること（$\text{unsuppliedCount} \ge 1$）、および全加算が供給される正則領域（$\text{unsuppliedCount} = 0$）が tail 最小値において厳密に排除されることが Lean で証明された（`PROVED-LEAN`）。
 
 続いて、商バンド $q \ge 2$ から回廊 $q \le 1$ への再突入動特性とレジャー障害（**E-326、`Recaman.TailDowncrossingLedger`**）が形式化された。尾部最小値 $a(\text{time})$ より下への着地を禁じる「尾部下降障壁（`tail_descent_barrier`）」を発見・証明し、尾部内の任意ステップ $k$ で $a(k) < k + 1 + a(\text{time})$ ならば減算が不可能であること、および任意の合法減算は $a(\text{time})$ が既出であるため厳密に最小値を超えて着地（$a(\text{time}) + 1 \le a(k + 1)$）しなければならず、直前値の下界が $k + 2 + a(\text{time}) \le a(k)$ に鋭敏化されることを証明した。さらに、加算ステップは境界 $2k$ を下回る遷移を行い得ないため（`addition_step_cannot_cross_below_twice`）、$2k \le a(k)$ から $a(k + 1) < 2(k + 1)$ への任意の下向横断（downcrossing）が例外なく減算ステップでなければならず、直前の状態が商バンド $q = 2$（$2k \le a(k) < 3k + 3$）に属することを確立した。この下向横断によって減算レジャー質量および回数が厳密に累積増加（$\text{subSum}(k + 1) = \text{subSum}(k) + k + 1 \ge \text{subSum}(\text{time}) + k + 1$）し、再突入値が両側レジャー回廊に拘束されること、商バンド0が尾部において高々1ステップしか滞在できないこと（`quotient_zero_ephemeral_in_tail`）、および脱出直後からの2連続減算が排除されること（`no_double_subtraction_from_tail_escape`）を Lean で厳密に証明した（`PROVED-LEAN`）。
+
+さらに、商バンド $q \ge 2$ からの永久高値領域と再突入下向横断のダイナミクスを統合する**尾部下向横断二分法とレジャー制約定理（E-327、`Recaman.TailDowncrossingDichotomy`）** が形式化された。軌道が $H$ 以降 $2n \le a(n)$ を恒久的に維持する永久高値領域（Permanent High Regime）においては、任意の減算が直前値 $a(k) \ge 3(k + 1)$ を要求するため商バンド $q = 2$（$2k \le a(k) < 3(k + 1)$）からの減算が完全に不可能となり加算が厳密に強制されること、減算レジャー質量が一様に上限 $2 \cdot \text{subSum}(n) \le \text{upperTri}(n) - 2n$ で拘束され、減算回数も三角容量不等式 $2 \cdot \text{upperTri}(\text{subCount } n) + 2n \le \text{upperTri}(n)$ により $\text{subCount}(n) < n/\sqrt{2}$ に恒久的に制限（加算密度 $\ge 0.293$）されることを証明した。対偶的に下向横断が発生する領域においては、各下向横断が減算レジャーへクロック $k + 1$ を供出し、過去に出現していない新規な値に着地して相異なる下向横断が互いに相異なる値を生成し、下向横断の無限再帰が $\text{subSum} \to \infty$ を引き起こすことを証明した。これらを統合し、任意の境界 $H$（とりわけ最小未到達数の正準脱出状態 $\text{time} + 2$）において軌道が「恒久的高値領域に留まりレジャー質量が上限拘束される」か「回廊へ再突入する下向横断を遂行する」かの大域的二分法（`least_missing_tail_grand_dichotomy`）を Lean で厳密に証明した（`PROVED-LEAN`）。
 
 2026-09-11の[等号境界エポック](EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|`（E-070）を
 広げるのではなく**等号が立つ場所を測った**。判明したことは三つある。
