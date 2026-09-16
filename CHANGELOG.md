@@ -1,5 +1,13 @@
 # Changelog
 
+## Matching-closure search: T for lag-max ≤ 15 without the OS assumption (E-356) — 2026-09-16
+
+- **E-356（`COMPUTED`、[card](docs/HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md)）**：OS の補題 D（最古 S の単射性）は bit-level では偽
+  （lag ≤ 15 で最古 S を共有できる 2 窓が 10 組）で、補題 A により OS は T と独立に証明できない。代わりに緊密 B ＋ Hall から Hall の定理で得る
+  全単射 own : B → N(B) の片側（各メンバーが自分の窓内の S を 1 つ所有／全 S が所有される、単射性不使用）だけを line model で閉包する探索
+  `matching_closure_search.py` を書き、lag-max 11 の 17 語（所有者 ≤ 11／≤ 15）・lag-max 15 の 155 語・w2 を全排除（cap 0）。
+  lag-max 7 では w1 が最古 S を所有する三つ組だけが残る。T（lag ≤ 15）が OS なしで有限検査に落ちた。lag 19 は実行中
+
 ## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
 
 - 永久高値レジーム（$2n \le a(n)$ for all $n \ge H$）において、地平 $H$ 以前の過去値が三角数上界 $a(j) \le \text{upperTri}(H)$（$j < H$）に留まることから、カットオフ $n \ge \text{upperTri}(H) + 2$ 以降の減算候補 $a(n) - (n + 1) \ge n - 1 > \text{upperTri}(H)$ が地平前履歴によって阻害されることが例外なく数学的に不可能（`pre_horizon_blocker_impossible`）であることを Lean 証明（`PROVED-LEAN`、E-344）

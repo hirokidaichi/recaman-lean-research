@@ -86,19 +86,19 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   さらに **OS を仮定した bit-level 閉包探索**：緊密 B の lag 最大メンバー v を置き、各 S に「lag ≤ lag(v) の最小 P2 語をその最古 S が乗るように置く」所有者を要求して閉包を取ると、
   lag 11 の 17 語・lag 15 の 155 語の全てで全分岐が bit 矛盾で終わる（cap 到達 0）。**OS ⇒ T（lag ≤ 15）** が有限検査に落ちた（lag 19 も完了、データ参照）。
   OS は未証明なので T の無条件証明ではない。次の紙上課題は一般 lag への帰納（E-090 型の run 制約）。
-- **E-353（`PROVED-LEAN`、`Recaman.PairedSubtractionCoverage`、[statement audit](statement_audits/E-353.md)）**：E-352 の bit-level 補題の Lean 化。
-  `PairedOlderS e s`（e s = e (s+1) = S）について、AAS 窓 `past e u 3 = [A,A,S]` は paired older S を含まず、最小 lag-7 窓（w1 か w2）が含むなら窓は w1 で s = u − 7、
-  w2 は含まない（Bool 判定 `pairedAt` の decide＋`past_getD` による stream lift、lint 6/8 実内容）。緊密部分集合・Hall・周期性・lag ≥ 11 の窓については何も言わない。
-- **E-354（`COMPUTED`、[card addendum](HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md)）**：G1-strong（E-349 の T）を high-SS 語 p ≤ 31・全正符号和語 p ≤ 26 へ holdout 延長、例外 0。
-  さらに **OS を仮定した bit-level 閉包探索**：緊密 B の lag 最大メンバー v を置き、各 S に「lag ≤ lag(v) の最小 P2 語をその最古 S が乗るように置く」所有者を要求して閉包を取ると、
-  lag 11 の 17 語・lag 15 の 155 語の全てで全分岐が bit 矛盾で終わる（cap 到達 0）。**OS ⇒ T（lag ≤ 15）** が有限検査に落ちた（lag 19 も完了、データ参照）。
-  OS は未証明なので T の無条件証明ではない。次の紙上課題は一般 lag への帰納（E-090 型の run 制約）。
 - **E-351（`PROVED-LEAN`、`Recaman.TightHallAugmentation`、P2 補題 A、[statement audit](statement_audits/E-351.md)）**：Hall が U 上で成り立ち
   B が緊密なら、N([x]) ⊆ N(B) を満たす x ∈ U は B に入る。系として w1 メンバーの lag-3 兄弟 u−3 と（e(u)=e(u+1)=A のとき）AAS at u+2 は B に入る。
   E-349 の SIB を説明する。次は補題 B（private phase ≤ 1）と w2／lag ≥ 11 排除の有限場合分け。
 - **E-355（`PROVED-LEAN`、`Recaman.TightPrivatePhase`、P2 補題 B、[statement audit](statement_audits/E-355.md)）**：緊密 B の各メンバー v について
   |N(B)| ≤ |N(B∖{v})| + 1、すなわち v だけが被覆する phase は高々 1 個。系：w1 メンバーの 3 phase のうち 2 つは他メンバーが被覆する（E-349 の cov<2:0）。
   補題 A（E-351）と合わせて、w2 の phase u−5 が lag ≥ 11 の窓にしか被覆されないことの Lean 化が次。
+- **E-356（`COMPUTED`、2026-09-16、[card](HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md)）**：**OS を使わない閉包探索**。
+  まず OS の補題 D（最古 S の単射性）は bit-level では偽（lag ≤ 15 で最古 S を共有できる 2 窓が 10 組、全て長い語が `…A·W` で終わる形）で、
+  補題 A により OS は T と独立に証明できないと判明。代わりに「緊密 B ＋ Hall ⇒ Hall の定理の全単射 own : B → N(B)」の**片側だけ**
+  （M1：各メンバーは自分の窓内の S を 1 つ所有、offset 任意。M2：全メンバーの窓内の全 S が所有される。単射性は不使用）を line model で閉包する。
+  lag-max 7 では w1 が最古 S を所有する三つ組だけが残り w2 は排除（OS/MD が lag ≤ 7 で帰結として出る）。**lag-max 11 の 17 語は所有者 ≤ 11 でも ≤ 15 でも全排除、
+  lag-max 15 の 155 語も全排除、v = w2 も排除**（cap 0、MRV 順で木は最大 2,147 ノード）。つまり T（lag ≤ 15）は OS なしで
+  「緊密＋Hall＋Hall の定理」から有限検査に落ちた。lag 19 は実行中。Lean 化は E-357（lag-max 11 の探索木を証明書として検査）。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 

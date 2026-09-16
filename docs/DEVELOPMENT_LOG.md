@@ -3575,3 +3575,20 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 19:33 E-351 を commit（4a69939）。`TightPrivatePhase`（P2 補題 B：private phase ≤ 1、w1 の 2 phase 被覆）を登録準備。
   生成ループは E-352（probe）を commit し、E-353（`PairedSubtractionCoverage`）と E-354（probe）を働き木で登録していたので、本モジュールは E-355 とした。
 - 19:40 E-353 `PairedSubtractionCoverage`（並行セッション）：paired older S の被覆者補題を stream 上で Lean 化（`pairedAt` decide＋`past_getD` lift、`lake env lean` 0.35 秒、lint 6/8 実内容、statement audit 作成）。同 commit で E-354：G1-strong を p ≤ 31 へ holdout 延長（例外 0、4.5 分）、OS を仮定した閉包探索 `os_closure_search.py` で lag-max 11/15 の緊密 B を bit-level で全排除（OS ⇒ T、lag ≤ 15）。peer（i46zswdv）と claude-peers で id・commit 順を調整し、30 分規則に従って登録。
+
+## 2026-09-16 P2：OS を使わない閉包探索（E-356/E-357）
+
+- 15:00 開始：HEAD 8f1ae9e（E-353/E-354）、働き木クリーン、並行セッションなし（claude-peers repo scope で 0）。
+  計画の次項は「OS の紙上証明（補題 C/D）」だったので、補題 D（最古 S の単射性）を bit-level で確かめる probe を先に書いた。
+- 15:10 `shared_oldest_s.py`：lag ≤ 15 の最小 P2 語の全対（9,639 組）で最古 S を共有できる配置が **10 組**（`AAASSSSAAAS`＋AAS、lag-15 の 9 語＋AAS/w1/w2）。
+  全て長い語が `…A·W` で終わる形。補題 A で短い方は B に入るので、OS は T と独立には証明できない。補題 C/D 路線を止める。
+- 15:15 定式化を変更：緊密 B ＋ Hall ⇒（Hall の定理）全単射 own : B → N(B)。E-354 の閉包探索の「所有者は最古 S を乗せる」を「任意の S offset を乗せる」に緩めれば
+  OS が不要になる。単射性も不要（各メンバーが 1 つ所有＋全 S が所有される、の 2 条件だけ）。周期語から直線への持ち上げで両条件が保たれることを確認。
+- 15:20 `matching_closure_search.py`：lag-max 11 の 17 語を所有者 ≤ 11 で全排除（0.1 秒）。健全性：lag-max 7 で w1 三つ組が閉包として残り（w1 が offset 7 を所有する
+  分岐のみ）、w2 は排除。lag-max 15 は FIFO・上限 16 で 1 語が cap、上限 40 で排除（144 万ノード）。
+- 15:30 need の順序を MRV（整合配置が最少の S から）にすると lag 11 の木は最大 59 ノード（FIFO 1,140）。所有者 ≤ 15 の lag 11（25 秒）と lag-max 15（39 秒）も
+  MRV で全排除、cap 0。lag-max 19 を 4 shard で開始（1 語 21 秒）。
+- 15:35 Lean 化の設計：探索木を証明書（`Cert`）として Python が出力し、Lean の検査器 `check`（fuel 付き構造再帰、座標を +64 シフトした Nat）が
+  全 92 配置（20 語 × S offset）を bit 整合で検査、健全性を `OwnerFamily`（M1＋M2＋窓語 ∈ 20 語）の下で証明する方式。骨格（定義・証明書・decide 18 本・
+  `ownerWords_eq` の bitWords 走査）は `lake env lean` 15 秒。健全性証明はサブエージェントに委譲。
+- 15:50 E-356 の文書一式（カード H-20260916-01、registry、frontier（重複していた E-353/E-354 段落を除去）、CHANGELOG、experiments/README、研究計画）。
