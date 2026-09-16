@@ -10,6 +10,8 @@
 - **E-357（`PROVED-LEAN`、`OwnerFamilyLagEleven`）**：E-356 の探索木を証明書として Lean で検査。検査器 `check` の健全性を owner family の公理
   （各メンバーが窓内の S を 1 つ所有／全 S が所有される／窓は 20 語のいずれか）の下で証明し、lag-max 11 の 17 語と w2 の証明書を `decide` で検査。
   主定理：lag ≤ 11 の owner family に lag 11 のメンバーはなく、w2 のメンバーもない。Hall の定理からの導出と周期語からの持ち上げは次
+- **E-358（`PROVED-LEAN`、`HallMatching`）**：有限 list の Hall の結婚定理（Halmos–Vaughan）と緊密部分集合の全射形。`tight_owner_map`：U 上の Hall と緊密 B から
+  own : B → N(B)（窓内・単射・全射）。E-357 の owner family の前提を周期語で与える
 
 ## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
 

@@ -80,3 +80,11 @@ u 自身の最古 S 以外の 2m ≥ 4 個は他メンバー w_i の最古 S で
 
 - OS/T/W2/SIB のいずれかが p ≤ 31 で破れたら、G1′ を弱め（例：「lag ≤ 11」）て再設定する。
 - 補題 C/D の a_v ∈ {0,1} 場合分けが 2 unit で閉じなければ、OS を `CONJECTURED` の gate として置き、G2 を「OS を仮定した条件付き」で先に Lean 化する（claim に仮定を明記）。
+
+## 追記（2026-09-16、E-356〜E-358）
+
+補題 C/D（OS の所有と単射性）の路線は **STOPPED**。補題 D は bit-level で偽（最古 S を共有する 2 窓が lag ≤ 15 で 10 組、
+[H-20260916-01](HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md)）で、補題 A により OS は T と独立に証明できない。OS の代わりに Hall の定理のマッチング
+（`HallMatching.tight_owner_map`、E-358）の片側だけで閉包探索を回すと lag-max 11／15・w2 が全排除され（E-356）、lag 11 は証明書として Lean 化した
+（`OwnerFamilyLagEleven`、E-357）。OS・MD 自体は lag ≤ 7 では探索の帰結として出る（w1 が最古 S を所有する三つ組だけが残る）。本カードの OS/T/W2/SIB/MD の
+census 事実はそのまま有効で、証明の入口だけが「最古 S」から「マッチング」に変わった。

@@ -104,6 +104,10 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   単射性は仮定しない）の下で、Python の探索木を証明書として検査する `check` の健全性を証明し（`check_sound`）、17 語＋w2 の証明書を `decide` で検査して
   **`no_lag_eleven_member`：owner family に lag 11 のメンバーはない、`no_w2_member`：窓が w2 のメンバーはない**（semantic 版 `no_lag_eleven_member_of_minimal`、
   lint 31/31 実内容、`lake build` 20 秒）。仮定に周期性・緊密性・Hall は現れない：緊密 B から owner family を作る段（Hall の定理、E-358）と周期語からの持ち上げが次。
+- **E-358（`PROVED-LEAN`、`Recaman.HallMatching`、[statement audit](statement_audits/E-358.md)）**：有限 list の Hall の結婚定理（Halmos–Vaughan の帰納、core Lean のみ、
+  `lake build` 0.7 秒）とその全射形。具体形 `tight_owner_map`：U 上の Hall と緊密 B ⊆ U から own : B → N(B)（own b ∈ N([b])、単射、N(B) の上へ全射）が存在する。
+  E-357 の `OwnerFamily` の own_mem／onto を周期語で与える前提がこれで揃った。次（E-359）：周期語の緊密 B を Int 上の owner family へ持ち上げ、E-357 と合成して
+  「周期語の緊密 B（メンバーの窓が lag ∈ {3,7,11} の最小 P2）に lag 11 のメンバーはない」を e・p の binder 付き・p 上限なしで述べる。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 

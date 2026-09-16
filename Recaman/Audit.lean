@@ -2667,3 +2667,12 @@ import Recaman
 #print axioms Recaman.OwnerFamilyLagEleven.no_lag_eleven_member
 #print axioms Recaman.OwnerFamilyLagEleven.no_w2_member
 #print axioms Recaman.OwnerFamilyLagEleven.no_lag_eleven_member_of_minimal
+
+-- Hall's marriage theorem for finite lists (Halmos-Vaughan induction) and the owner map of a tight subset: under Hall on U, a tight B has own : B -> N(B), own b in N([b]), injective and onto (E-358, P2).
+#print axioms Recaman.HallMatching.cover_congr
+#print axioms Recaman.HallMatching.cover_append_length
+#print axioms Recaman.HallMatching.hall_of_subset
+#print axioms Recaman.HallMatching.hall_matching_aux
+#print axioms Recaman.HallMatching.hall_matching
+#print axioms Recaman.HallMatching.hall_matching_onto
+#print axioms Recaman.HallMatching.tight_owner_map

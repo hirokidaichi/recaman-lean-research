@@ -1,6 +1,6 @@
 # 研究計画と見通し（2026-09-15、監査・削除・ハーネス導入後）
 
-最終更新: 2026-09-15 夕。状態の正本は [CURRENT_FRONTIER.md](CURRENT_FRONTIER.md) と [EVIDENCE_REGISTRY.tsv](EVIDENCE_REGISTRY.tsv)。
+最終更新: 2026-09-16 午後（P2 の E-356〜E-358 を反映）。状態の正本は [CURRENT_FRONTIER.md](CURRENT_FRONTIER.md) と [EVIDENCE_REGISTRY.tsv](EVIDENCE_REGISTRY.tsv)。
 本書は「何が本当に証明されていて、何が開いていて、次に何をどの順で、どこで止めるか」を一枚にまとめる。
 
 ## 0. 今日の傷とその治療（完了）
@@ -65,6 +65,9 @@
   代わりに Hall の定理のマッチングの片側（各メンバーが窓内の S を 1 つ所有／全 S が所有される）だけで閉包探索を回すと、lag-max 11（所有者 ≤ 15 でも）・lag-max 15・w2 が全排除。
   **T（lag ≤ 15）は OS なしで「緊密＋Hall＋Hall の定理」から有限検査に落ちた。** P2 の残りは (a) Hall の定理の Lean 化と周期語からの持ち上げ、(b) lag 11 の証明書の Lean 化（E-357）、
   (c) lag 15/19、(d) 一般 lag への帰納。補題 C/D は STOPPED。
+- **E-357/E-358（同日午後）**：(b) 完了——`OwnerFamilyLagEleven`（証明書検査器の健全性＋17 語・w2 の decide、lint 31/31）で「lag ≤ 11 の owner family に lag 11 のメンバーはない」。
+  (a) の Hall の定理は `HallMatching`（Halmos–Vaughan、`tight_owner_map`）で完了。残るは周期語の緊密 B を Int 上の owner family へ持ち上げる E-359
+  （`PeriodicOwnerFamilyLagEleven`、B の要素 < p を仮定）。これで **T（lag-max 11）が周期語の定理**になる。lag 15 は証明書 10,026 ノードで検査器の高速化が要る。
 - 命題：Hall が U 全体で成り立つ正符号和周期語で、ss=2 donor u0 を避ける緊密部分集合 B のメンバーは全て lag ∈ {3,7}。
 - 手掛かり：lag ≥ 11 の最小窓は ≥ 5 個の S を持ち、緊密性は他メンバーが ≥ 4 個を共有することを要求する。lag-3 の S は各メンバーで
   互いに異なる（端点が異なる）ので、共有は lag-7 窓（S が 3 個）か長い窓同士でしか起きない。E-266（互いに素な近傍のサイズ下界）と

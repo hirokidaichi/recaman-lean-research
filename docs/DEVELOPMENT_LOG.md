@@ -3596,3 +3596,6 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   主定理 3 本を完成（警告なし、`lake env lean` 20 秒）。lint 31/31 実内容。モジュール名 `MatchingClosureLagEleven` は G4 の禁止語 closure を含むので
   `OwnerFamilyLagEleven` に改名。Audit.lean に 12 本、registry E-357、statement audit を作成。lag-15 の証明書は 10,026 ノード（同じ検査器では重い）。
   Hall の定理（有限 list 版、E-358）は別サブエージェントが並行して作成中。
+- 16:15 E-357 を commit（1e0e5c3）。サブエージェントの Hall の定理モジュール `HallMatching`（450 行、Halmos–Vaughan、`lake env lean` 0.5 秒、lint 13/17 実内容）を
+  検証・配置し E-358 として登録準備（30 分規則待ち）。周期語の緊密 B を Int 上の owner family へ持ち上げる E-359（`PeriodicOwnerFamilyLagEleven`）を
+  3 本目のサブエージェントに依頼：own は `tight_owner_map`、mem t := phase p t ∈ B、own' t := t − 1 − idx(phase p t)、B の要素 < p を仮定。

@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2669,
+   "lines": 2678,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28215,6 +28215,109 @@
    "hasReport": false
   },
   {
+   "name": "HallMatching",
+   "lines": 446,
+   "imports": [
+    "TightPrivatePhase"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "cover",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_eq_cover",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_cover_iff",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_sublist",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_nodup",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_congr",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_mono",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_filter_ground",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_filter_subset",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "length_filter_or",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "decide_not_mem_cover_eq",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_append_length",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_of_subset",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "nodup_map_of_inj_on",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching_aux",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching",
+     "line": 367
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching_onto",
+     "line": 377
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_owner_map",
+     "line": 416
+    }
+   ],
+   "theorems": 17,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "HallRobustnessTheorem",
    "lines": 206,
    "imports": [
@@ -49372,6 +49475,6 @@
    "hasReport": false
   }
  ],
- "total": 386,
+ "total": 387,
  "withReport": 167
 }
