@@ -3599,3 +3599,6 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 16:15 E-357 を commit（1e0e5c3）。サブエージェントの Hall の定理モジュール `HallMatching`（450 行、Halmos–Vaughan、`lake env lean` 0.5 秒、lint 13/17 実内容）を
   検証・配置し E-358 として登録準備（30 分規則待ち）。周期語の緊密 B を Int 上の owner family へ持ち上げる E-359（`PeriodicOwnerFamilyLagEleven`）を
   3 本目のサブエージェントに依頼：own は `tight_owner_map`、mem t := phase p t ∈ B、own' t := t − 1 − idx(phase p t)、B の要素 < p を仮定。
+- 16:19 E-358 を commit（1fbf6e1、時刻待ちの自動 commit）。E-359 `PeriodicOwnerFamilyLagEleven`（サブエージェント、232 行、`lake env lean` 1.5 秒、
+  既存の `e_shift`／`past_shift`／`lift_equal_mod` を再利用、lint 4/9 実内容で主定理は実内容）を配置・登録。これで T（lag-max 11）が周期語の定理。
+  lag 15 の検査器はビットマスク版（設計はカード追記）、lag 19 は 4 shard 実行中。

@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2678,
+   "lines": 2686,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -35461,6 +35461,65 @@
    "hasReport": false
   },
   {
+   "name": "PeriodicOwnerFamilyLagEleven",
+   "lines": 233,
+   "imports": [
+    "OwnerFamilyLagEleven",
+    "HallMatching"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "emod_congr",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "e_of_emod_eq",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "past_of_emod_eq",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_congr",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_of_lt",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_eq_of_emod",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "e_phase",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_no_lag_eleven",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag_three_or_seven",
+     "line": 215
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PeriodicSupplyBound",
    "lines": 253,
    "imports": [
@@ -49475,6 +49534,6 @@
    "hasReport": false
   }
  ],
- "total": 387,
+ "total": 388,
  "withReport": 167
 }

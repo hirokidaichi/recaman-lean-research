@@ -2676,3 +2676,11 @@ import Recaman
 #print axioms Recaman.HallMatching.hall_matching
 #print axioms Recaman.HallMatching.hall_matching_onto
 #print axioms Recaman.HallMatching.tight_owner_map
+
+-- Periodic lift: a tight subset of a periodic Hall-OK word whose members are addition phases below p with minimal windows of lag 3/7/11 has no lag-11 member (E-359, P2; T for lag-max 11).
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.e_of_emod_eq
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.past_of_emod_eq
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.phase_of_lt
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.phase_eq_of_emod
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_no_lag_eleven
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_lag_three_or_seven

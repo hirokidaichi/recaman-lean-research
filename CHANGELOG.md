@@ -12,6 +12,8 @@
   主定理：lag ≤ 11 の owner family に lag 11 のメンバーはなく、w2 のメンバーもない。Hall の定理からの導出と周期語からの持ち上げは次
 - **E-358（`PROVED-LEAN`、`HallMatching`）**：有限 list の Hall の結婚定理（Halmos–Vaughan）と緊密部分集合の全射形。`tight_owner_map`：U 上の Hall と緊密 B から
   own : B → N(B)（窓内・単射・全射）。E-357 の owner family の前提を周期語で与える
+- **E-359（`PROVED-LEAN`、`PeriodicOwnerFamilyLagEleven`）**：周期語の緊密 B（要素 < p、窓が lag ∈ {3,7,11} の最小 P2）を owner family へ持ち上げ、
+  E-357 と合成して「B に lag 11 のメンバーはない」を p 上限なしで証明。T（lag-max 11）の周期語版、今日の到達点
 
 ## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
 

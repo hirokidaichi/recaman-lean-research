@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-15
+最終更新: 2026-09-16
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -108,6 +108,11 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   `lake build` 0.7 秒）とその全射形。具体形 `tight_owner_map`：U 上の Hall と緊密 B ⊆ U から own : B → N(B)（own b ∈ N([b])、単射、N(B) の上へ全射）が存在する。
   E-357 の `OwnerFamily` の own_mem／onto を周期語で与える前提がこれで揃った。次（E-359）：周期語の緊密 B を Int 上の owner family へ持ち上げ、E-357 と合成して
   「周期語の緊密 B（メンバーの窓が lag ∈ {3,7,11} の最小 P2）に lag 11 のメンバーはない」を e・p の binder 付き・p 上限なしで述べる。
+- **E-359（`PROVED-LEAN`、`Recaman.PeriodicOwnerFamilyLagEleven`、[statement audit](statement_audits/E-359.md)）**：E-357 と E-358 の合成。
+  周期語で Hall が U 上で成り立ち、B ⊆ U が緊密、B の要素が p 未満の加算 phase で窓が lag ∈ {3,7,11} の最小 P2 語なら、**B に lag 11 のメンバーはない**
+  （`tight_no_lag_eleven`、全メンバーの lag は 3 か 7：`tight_lag_three_or_seven`）。周期語の緊密 B を Int 上の owner family へ持ち上げる
+  （mem t := phase p t ∈ B、own' t := t − 1 − idx(phase p t)、onto は N(B) の全射性から構成）。**T（lag-max 11）が e・p の binder 付き・p 上限なしの定理になった最初の行。**
+  lag ≥ 15 のメンバーを含む B・緊密回避（donor）・Gate T6 については何も言わない。次は lag 15 の証明書（ビットマスク検査器）と一般 lag の帰納。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 

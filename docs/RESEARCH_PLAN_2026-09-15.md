@@ -67,7 +67,10 @@
   (c) lag 15/19、(d) 一般 lag への帰納。補題 C/D は STOPPED。
 - **E-357/E-358（同日午後）**：(b) 完了——`OwnerFamilyLagEleven`（証明書検査器の健全性＋17 語・w2 の decide、lint 31/31）で「lag ≤ 11 の owner family に lag 11 のメンバーはない」。
   (a) の Hall の定理は `HallMatching`（Halmos–Vaughan、`tight_owner_map`）で完了。残るは周期語の緊密 B を Int 上の owner family へ持ち上げる E-359
-  （`PeriodicOwnerFamilyLagEleven`、B の要素 < p を仮定）。これで **T（lag-max 11）が周期語の定理**になる。lag 15 は証明書 10,026 ノードで検査器の高速化が要る。
+  （`PeriodicOwnerFamilyLagEleven`、B の要素 < p を仮定）。**E-359 で完了：T（lag-max 11）は周期語の定理**（`tight_no_lag_eleven`、p 上限なし）。lag 15 は証明書 10,026 ノードで検査器の高速化（ビットマスク）が要る。
+  **16:40 の実測**：ビットマスク検査器でも 1 配置 0.3 ms（kernel ステップのオーバーヘッド）で lag 15 は約 1 時間、局所パターン表でも 2.5 倍しか縮まない。
+  lag 15 の力任せ Lean 化は見送り（COMPUTED のまま）。**P2 の次は一般 lag の紙上帰納**：lag-max L の v の S の所有者（任意 offset）が v の newer 側 A-run と
+  衝突することを lag によらず述べる補題（E-354 の所有者配置補題 1〜3 の任意 offset 版）を書き、閉包の深さを有限に抑える。
 - 命題：Hall が U 全体で成り立つ正符号和周期語で、ss=2 donor u0 を避ける緊密部分集合 B のメンバーは全て lag ∈ {3,7}。
 - 手掛かり：lag ≥ 11 の最小窓は ≥ 5 個の S を持ち、緊密性は他メンバーが ≥ 4 個を共有することを要求する。lag-3 の S は各メンバーで
   互いに異なる（端点が異なる）ので、共有は lag-7 窓（S が 3 個）か長い窓同士でしか起きない。E-266（互いに素な近傍のサイズ下界）と
