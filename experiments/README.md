@@ -497,7 +497,7 @@ branches on which subtraction `v` owns and closes under "every unowned subtracti
 (or `--owners=L`) placed with one of its S offsets on it", rejecting bit conflicts and double ownership. `--mrv`
 expands the subtraction with the fewest consistent placements first (smallest trees), `--noaas` disables the
 Hall-augmentation pruning, `--all` lists every closed configuration, `--emit-cert` writes the search trees as Lean
-certificates for `Recaman/MatchingClosureLagEleven.lean` (E-357). Outputs in `docs/data/issue73_20260916/`:
+certificates for `Recaman/OwnerFamilyLagEleven.lean` (E-357). Outputs in `docs/data/issue73_20260916/`:
 lag-max 11 (17/17 excluded, owners <= 11 and <= 15), lag-max 15 (155/155), `w2` (excluded), lag-max 7 (only the
 `w1` triple with `w1` owning its oldest subtraction survives), lag-max 19 (4 shards). `shared_oldest_s.py` lists the
 placements of two minimal P2 windows sharing their oldest subtraction (10 for lag <= 15), the reason E-349's

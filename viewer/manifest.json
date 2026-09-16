@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2655,
+   "lines": 2669,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34312,6 +34312,454 @@
    "hasReport": true
   },
   {
+   "name": "OwnerFamilyLagEleven",
+   "lines": 573,
+   "imports": [
+    "LagSevenDonorCoverage"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "aas",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "l01",
+     "line": 56
+    },
+    {
+     "kind": "def",
+     "name": "l02",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "l03",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "l04",
+     "line": 62
+    },
+    {
+     "kind": "def",
+     "name": "l05",
+     "line": 64
+    },
+    {
+     "kind": "def",
+     "name": "l06",
+     "line": 66
+    },
+    {
+     "kind": "def",
+     "name": "l07",
+     "line": 68
+    },
+    {
+     "kind": "def",
+     "name": "l08",
+     "line": 70
+    },
+    {
+     "kind": "def",
+     "name": "l09",
+     "line": 72
+    },
+    {
+     "kind": "def",
+     "name": "l10",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "l11",
+     "line": 76
+    },
+    {
+     "kind": "def",
+     "name": "l12",
+     "line": 78
+    },
+    {
+     "kind": "def",
+     "name": "l13",
+     "line": 80
+    },
+    {
+     "kind": "def",
+     "name": "l14",
+     "line": 82
+    },
+    {
+     "kind": "def",
+     "name": "l15",
+     "line": 84
+    },
+    {
+     "kind": "def",
+     "name": "l16",
+     "line": 86
+    },
+    {
+     "kind": "def",
+     "name": "l17",
+     "line": 88
+    },
+    {
+     "kind": "def",
+     "name": "ownerWords",
+     "line": 91
+    },
+    {
+     "kind": "def",
+     "name": "lagElevenWords",
+     "line": 94
+    },
+    {
+     "kind": "def",
+     "name": "isMinimalP2",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "ownerWords_eq",
+     "line": 102
+    },
+    {
+     "kind": "def",
+     "name": "sOffsets",
+     "line": 108
+    },
+    {
+     "kind": "structure",
+     "name": "Config",
+     "line": 112
+    },
+    {
+     "kind": "def",
+     "name": "bitAt",
+     "line": 118
+    },
+    {
+     "kind": "def",
+     "name": "agrees",
+     "line": 124
+    },
+    {
+     "kind": "def",
+     "name": "isMember",
+     "line": 129
+    },
+    {
+     "kind": "def",
+     "name": "isOwned",
+     "line": 130
+    },
+    {
+     "kind": "def",
+     "name": "consistent",
+     "line": 135
+    },
+    {
+     "kind": "def",
+     "name": "extend",
+     "line": 140
+    },
+    {
+     "kind": "def",
+     "name": "needs",
+     "line": 147
+    },
+    {
+     "kind": "inductive",
+     "name": "Cert",
+     "line": 153
+    },
+    {
+     "kind": "def",
+     "name": "findKid",
+     "line": 156
+    },
+    {
+     "kind": "def",
+     "name": "check",
+     "line": 165
+    },
+    {
+     "kind": "def",
+     "name": "rootConfig",
+     "line": 179
+    },
+    {
+     "kind": "def",
+     "name": "checkRoot",
+     "line": 185
+    },
+    {
+     "kind": "def",
+     "name": "cert_l01",
+     "line": 192
+    },
+    {
+     "kind": "def",
+     "name": "cert_l02",
+     "line": 194
+    },
+    {
+     "kind": "def",
+     "name": "cert_l03",
+     "line": 196
+    },
+    {
+     "kind": "def",
+     "name": "cert_l04",
+     "line": 198
+    },
+    {
+     "kind": "def",
+     "name": "cert_l05",
+     "line": 200
+    },
+    {
+     "kind": "def",
+     "name": "cert_l06",
+     "line": 202
+    },
+    {
+     "kind": "def",
+     "name": "cert_l07",
+     "line": 204
+    },
+    {
+     "kind": "def",
+     "name": "cert_l08",
+     "line": 206
+    },
+    {
+     "kind": "def",
+     "name": "cert_l09",
+     "line": 208
+    },
+    {
+     "kind": "def",
+     "name": "cert_l10",
+     "line": 210
+    },
+    {
+     "kind": "def",
+     "name": "cert_l11",
+     "line": 212
+    },
+    {
+     "kind": "def",
+     "name": "cert_l12",
+     "line": 214
+    },
+    {
+     "kind": "def",
+     "name": "cert_l13",
+     "line": 216
+    },
+    {
+     "kind": "def",
+     "name": "cert_l14",
+     "line": 218
+    },
+    {
+     "kind": "def",
+     "name": "cert_l15",
+     "line": 220
+    },
+    {
+     "kind": "def",
+     "name": "cert_l16",
+     "line": 222
+    },
+    {
+     "kind": "def",
+     "name": "cert_l17",
+     "line": 224
+    },
+    {
+     "kind": "def",
+     "name": "cert_w2",
+     "line": 226
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l01",
+     "line": 229
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l02",
+     "line": 230
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l03",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l04",
+     "line": 232
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l05",
+     "line": 233
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l06",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l07",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l08",
+     "line": 236
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l09",
+     "line": 237
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l10",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l11",
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l12",
+     "line": 240
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l13",
+     "line": 241
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l14",
+     "line": 242
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l15",
+     "line": 243
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l16",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l17",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_w2",
+     "line": 246
+    },
+    {
+     "kind": "def",
+     "name": "clock",
+     "line": 251
+    },
+    {
+     "kind": "structure",
+     "name": "OwnerFamily",
+     "line": 256
+    },
+    {
+     "kind": "structure",
+     "name": "Realizes",
+     "line": 267
+    },
+    {
+     "kind": "theorem",
+     "name": "sOffsets_mem",
+     "line": 276
+    },
+    {
+     "kind": "theorem",
+     "name": "needs_spec",
+     "line": 289
+    },
+    {
+     "kind": "theorem",
+     "name": "bitAt_some",
+     "line": 297
+    },
+    {
+     "kind": "theorem",
+     "name": "isOwned_of_mem",
+     "line": 311
+    },
+    {
+     "kind": "theorem",
+     "name": "agrees_of_bits",
+     "line": 319
+    },
+    {
+     "kind": "theorem",
+     "name": "check_sound",
+     "line": 331
+    },
+    {
+     "kind": "theorem",
+     "name": "rootConfig_realizes",
+     "line": 442
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_sound",
+     "line": 483
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_eleven_window_mem",
+     "line": 499
+    },
+    {
+     "kind": "theorem",
+     "name": "no_lag_eleven_member",
+     "line": 506
+    },
+    {
+     "kind": "theorem",
+     "name": "no_w2_member",
+     "line": 533
+    },
+    {
+     "kind": "theorem",
+     "name": "no_lag_eleven_member_of_minimal",
+     "line": 541
+    }
+   ],
+   "theorems": 31,
+   "defs": 56,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "P2ModFourRigidity",
    "lines": 161,
    "imports": [
@@ -48924,6 +49372,6 @@
    "hasReport": false
   }
  ],
- "total": 385,
+ "total": 386,
  "withReport": 167
 }

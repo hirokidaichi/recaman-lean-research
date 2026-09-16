@@ -99,6 +99,11 @@ Lean ソースで監査した結果、以下を訂正する（[監査報告](AUD
   lag-max 7 では w1 が最古 S を所有する三つ組だけが残り w2 は排除（OS/MD が lag ≤ 7 で帰結として出る）。**lag-max 11 の 17 語は所有者 ≤ 11 でも ≤ 15 でも全排除、
   lag-max 15 の 155 語も全排除、v = w2 も排除**（cap 0、MRV 順で木は最大 2,147 ノード）。つまり T（lag ≤ 15）は OS なしで
   「緊密＋Hall＋Hall の定理」から有限検査に落ちた。lag 19 は実行中。Lean 化は E-357（lag-max 11 の探索木を証明書として検査）。
+- **E-357（`PROVED-LEAN`、`Recaman.OwnerFamilyLagEleven`、[statement audit](statement_audits/E-357.md)）**：E-356 の Lean 化。
+  `OwnerFamily e mem own lag`（メンバーの窓は lag 3/7/11 の最小 P2 語 20 個のいずれか、各メンバーは自分の窓内の S を 1 つ所有、全メンバーの窓内の全 S が所有される。
+  単射性は仮定しない）の下で、Python の探索木を証明書として検査する `check` の健全性を証明し（`check_sound`）、17 語＋w2 の証明書を `decide` で検査して
+  **`no_lag_eleven_member`：owner family に lag 11 のメンバーはない、`no_w2_member`：窓が w2 のメンバーはない**（semantic 版 `no_lag_eleven_member_of_minimal`、
+  lint 31/31 実内容、`lake build` 20 秒）。仮定に周期性・緊密性・Hall は現れない：緊密 B から owner family を作る段（Hall の定理、E-358）と周期語からの持ち上げが次。
 - 研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](RESEARCH_PLAN_2026-09-15.md) にまとめた。
 
 

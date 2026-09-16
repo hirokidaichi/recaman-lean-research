@@ -2653,3 +2653,17 @@ import Recaman
 #print axioms Recaman.PairedSubtractionCoverage.w2_window_no_paired_older
 #print axioms Recaman.PairedSubtractionCoverage.minimal_lag7_window_paired_older
 #print axioms Recaman.PairedSubtractionCoverage.aas_window_no_paired_older_of_p2
+
+-- Matching-closure certificate checker: an owner family (each member owns one subtraction of its window, every subtraction of every member's window is owned, windows among the minimal P2 words of lag 3/7/11) has no lag-11 member and no w2 member (E-357, P2).
+#print axioms Recaman.OwnerFamilyLagEleven.ownerWords_eq
+#print axioms Recaman.OwnerFamilyLagEleven.checkRoot_l01
+#print axioms Recaman.OwnerFamilyLagEleven.checkRoot_w2
+#print axioms Recaman.OwnerFamilyLagEleven.sOffsets_mem
+#print axioms Recaman.OwnerFamilyLagEleven.needs_spec
+#print axioms Recaman.OwnerFamilyLagEleven.check_sound
+#print axioms Recaman.OwnerFamilyLagEleven.rootConfig_realizes
+#print axioms Recaman.OwnerFamilyLagEleven.checkRoot_sound
+#print axioms Recaman.OwnerFamilyLagEleven.lag_eleven_window_mem
+#print axioms Recaman.OwnerFamilyLagEleven.no_lag_eleven_member
+#print axioms Recaman.OwnerFamilyLagEleven.no_w2_member
+#print axioms Recaman.OwnerFamilyLagEleven.no_lag_eleven_member_of_minimal

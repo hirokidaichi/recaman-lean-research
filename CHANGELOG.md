@@ -7,6 +7,9 @@
   全単射 own : B → N(B) の片側（各メンバーが自分の窓内の S を 1 つ所有／全 S が所有される、単射性不使用）だけを line model で閉包する探索
   `matching_closure_search.py` を書き、lag-max 11 の 17 語（所有者 ≤ 11／≤ 15）・lag-max 15 の 155 語・w2 を全排除（cap 0）。
   lag-max 7 では w1 が最古 S を所有する三つ組だけが残る。T（lag ≤ 15）が OS なしで有限検査に落ちた。lag 19 は実行中
+- **E-357（`PROVED-LEAN`、`OwnerFamilyLagEleven`）**：E-356 の探索木を証明書として Lean で検査。検査器 `check` の健全性を owner family の公理
+  （各メンバーが窓内の S を 1 つ所有／全 S が所有される／窓は 20 語のいずれか）の下で証明し、lag-max 11 の 17 語と w2 の証明書を `decide` で検査。
+  主定理：lag ≤ 11 の owner family に lag 11 のメンバーはなく、w2 のメンバーもない。Hall の定理からの導出と周期語からの持ち上げは次
 
 ## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
 

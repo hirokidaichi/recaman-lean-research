@@ -3592,3 +3592,7 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   全 92 配置（20 語 × S offset）を bit 整合で検査、健全性を `OwnerFamily`（M1＋M2＋窓語 ∈ 20 語）の下で証明する方式。骨格（定義・証明書・decide 18 本・
   `ownerWords_eq` の bitWords 走査）は `lake env lean` 15 秒。健全性証明はサブエージェントに委譲。
 - 15:50 E-356 の文書一式（カード H-20260916-01、registry、frontier（重複していた E-353/E-354 段落を除去）、CHANGELOG、experiments/README、研究計画）。
+- 16:00 サブエージェントが `check_sound`（fuel 帰納、`needs_spec`→onto→window/own_mem→`List.mem_iff_getElem` で語の index→`consistent`→`extend` の Realizes→IH）と
+  主定理 3 本を完成（警告なし、`lake env lean` 20 秒）。lint 31/31 実内容。モジュール名 `MatchingClosureLagEleven` は G4 の禁止語 closure を含むので
+  `OwnerFamilyLagEleven` に改名。Audit.lean に 12 本、registry E-357、statement audit を作成。lag-15 の証明書は 10,026 ノード（同じ検査器では重い）。
+  Hall の定理（有限 list 版、E-358）は別サブエージェントが並行して作成中。

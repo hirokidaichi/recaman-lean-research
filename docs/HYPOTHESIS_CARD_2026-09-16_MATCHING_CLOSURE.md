@@ -2,7 +2,7 @@
 
 - ID: `H-20260916-01`
 - Created: 2026-09-16 15:05 JST
-- Status: `COMPUTED`（E-356）。Lean 化は E-357（`Recaman/MatchingClosureLagEleven.lean`、lag-max 11 と w2）
+- Status: `COMPUTED`（E-356）。Lean 化は E-357（`Recaman/OwnerFamilyLagEleven.lean`、lag-max 11 と w2）
 - Research branch: issue #73、研究計画 P2（G1）。[E-349 のカード](HYPOTHESIS_CARD_2026-09-15_TIGHT_OLDEST_S_CHARACTERIZATION.md)の OS／T／W2／MD と
   [E-354 の閉包探索](HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md)（OS を仮定）の続き
 - Probes: `experiments/issue73_20260916/matching_closure_search.py`（bit-level、周期性なし）、`experiments/issue73_20260916/shared_oldest_s.py`
