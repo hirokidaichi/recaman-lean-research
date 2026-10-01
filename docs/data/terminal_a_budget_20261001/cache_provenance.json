@@ -1,0 +1,96 @@
+{
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "module": "Recaman.DeepSixtyoneTraceCertificate",
+  "source_and_transitive_dependency_check": "byte-identical source files; byte-identical dependency oleans",
+  "checked_modules": [
+    {
+      "module": "Recaman.BalancedTraceCertificate",
+      "source_sha256": "176a3447824c22a2a9f338238e364dbda379320619a105e32077df0e44206226",
+      "matching_olean_sha256": "1642b7651b69562765a0babd498050e7895ea81e6da8293eb1213dcf8f130965"
+    },
+    {
+      "module": "Recaman.Basic",
+      "source_sha256": "1e09f1f3a7e3b3ac6054f730dd5a37d87d9ddf2d2e24dc4e1cf68d8c930763d2",
+      "matching_olean_sha256": "a96aa03847eb9c83b9485f858bc41dee5b06c8fb49de59f3ddfd3699c3f18ee5"
+    },
+    {
+      "module": "Recaman.Blocker",
+      "source_sha256": "d42335c64f5183c39d06264bfce5edc2e58c88f2467c568190f40b7577a0d363",
+      "matching_olean_sha256": "a0ec21303c747a0066875a277cf27716a2e2f12c76c384440fdf0b64eb9a550e"
+    },
+    {
+      "module": "Recaman.ChunkedTraceCertificate",
+      "source_sha256": "5241f28d71b41fe69933a30cc03ec5c952f8b002dc6a1245d4b1f6dc24ac5713",
+      "matching_olean_sha256": "569f09232e3b3cdef995003a5d3f0b1fd3ffb2b596e1dd7355ae62f35f5d8344"
+    },
+    {
+      "module": "Recaman.Coordinates",
+      "source_sha256": "175ac147f789b62f11783aac42727a398da31210f7291aa337dfb1740f3db59c",
+      "matching_olean_sha256": "8ca536c101a9616946ba50db63a4d41d1df294654b0c52b11605059a2f30366c"
+    },
+    {
+      "module": "Recaman.DeepSixtyoneTraceCertificate",
+      "source_sha256": "a8793c83d7816ebec77dfd71160278ebf8a3c5bb72c82b796eb48cdd6e2f82fb",
+      "cached_olean_sha256": "4c5073c4914883a71d40ce5fa922b3ec5c1db0f76c348d79b444427357a26685"
+    },
+    {
+      "module": "Recaman.History",
+      "source_sha256": "6d93ff0afffb22d9c6130be77c28c066e84aadd4481ef94ce8a66760e1fd3c1f",
+      "matching_olean_sha256": "7661003cdc21c667aa7b0e50d1c038b2b13ba472f447e6dca2d501ca3753bc1c"
+    }
+  ],
+  "cache_origin": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+  "cold_run": "Explicitly interrupted only the active DeepSixtyoneTraceCertificate compiler (SIGINT); first check exited 1. Raw log preserved as check_cold_interrupted.log.",
+  "cache_transfer": "Copied existing outputs and Lake trace verbatim after input/dependency verification; no hashes or validation scripts were edited.",
+  "additional_reuse": {
+    "module": "Recaman.DeepSixtyoneMexCertificate",
+    "checked_modules": [
+      {
+        "module": "Recaman.BalancedTraceCertificate",
+        "source_sha256": "176a3447824c22a2a9f338238e364dbda379320619a105e32077df0e44206226",
+        "matching_olean_sha256": "1642b7651b69562765a0babd498050e7895ea81e6da8293eb1213dcf8f130965"
+      },
+      {
+        "module": "Recaman.BalancedTraceSuffix",
+        "source_sha256": "bbd5fc83c174693220a653e0830326521648d3cb5b401bb4c513a28d4151deab",
+        "matching_olean_sha256": "934efcb5fdab5b3a545829ea39c85c8578cf713aa6a61530a12510d2ae7caaf3"
+      },
+      {
+        "module": "Recaman.Basic",
+        "source_sha256": "1e09f1f3a7e3b3ac6054f730dd5a37d87d9ddf2d2e24dc4e1cf68d8c930763d2",
+        "matching_olean_sha256": "a96aa03847eb9c83b9485f858bc41dee5b06c8fb49de59f3ddfd3699c3f18ee5"
+      },
+      {
+        "module": "Recaman.Blocker",
+        "source_sha256": "d42335c64f5183c39d06264bfce5edc2e58c88f2467c568190f40b7577a0d363",
+        "matching_olean_sha256": "a0ec21303c747a0066875a277cf27716a2e2f12c76c384440fdf0b64eb9a550e"
+      },
+      {
+        "module": "Recaman.ChunkedTraceCertificate",
+        "source_sha256": "5241f28d71b41fe69933a30cc03ec5c952f8b002dc6a1245d4b1f6dc24ac5713",
+        "matching_olean_sha256": "569f09232e3b3cdef995003a5d3f0b1fd3ffb2b596e1dd7355ae62f35f5d8344"
+      },
+      {
+        "module": "Recaman.Coordinates",
+        "source_sha256": "175ac147f789b62f11783aac42727a398da31210f7291aa337dfb1740f3db59c",
+        "matching_olean_sha256": "8ca536c101a9616946ba50db63a4d41d1df294654b0c52b11605059a2f30366c"
+      },
+      {
+        "module": "Recaman.DeepSixtyoneMexCertificate",
+        "source_sha256": "126b6417cc817692caae70dc71d233bae9828d6c62dcab9bab3938183cdfe2e4",
+        "cached_olean_sha256": "4c708e57ed93f1fb12427ae60a5da3396c90540a61bad72721be0a9a857a029f"
+      },
+      {
+        "module": "Recaman.DeepSixtyoneTraceCertificate",
+        "source_sha256": "a8793c83d7816ebec77dfd71160278ebf8a3c5bb72c82b796eb48cdd6e2f82fb",
+        "matching_olean_sha256": "4c5073c4914883a71d40ce5fa922b3ec5c1db0f76c348d79b444427357a26685"
+      },
+      {
+        "module": "Recaman.History",
+        "source_sha256": "6d93ff0afffb22d9c6130be77c28c066e84aadd4481ef94ce8a66760e1fd3c1f",
+        "matching_olean_sha256": "7661003cdc21c667aa7b0e50d1c038b2b13ba472f447e6dca2d501ca3753bc1c"
+      }
+    ],
+    "reason": "The companion mex certificate reevaluates the same full trace. Its cold compiler is also explicitly interrupted; matching existing artifacts are reused verbatim."
+  }
+}

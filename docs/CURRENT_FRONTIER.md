@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-09-16
+最終更新: 2026-10-01
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -708,3 +708,20 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - `./scripts/check.sh`: 2,476 audited declarations（382 jobs）。証拠台帳346件、うち `PROVED-LEAN` 146件（2026-09-15 の削除後）。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。
+
+
+## 2026-10-01: 最小P2窓の古いA末尾に対する鋭いSS予算（E-361）
+
+`E-361`（`PROVED-PAPER`、[証明](TERMINAL_A_BUDGET_2026-10-01.md)、
+[カード](HYPOTHESIS_CARD_2026-10-01_TERMINAL_A_BUDGET.md)）：任意長の最小P2語で、
+真の最古Sより古い末尾Aの個数をt、重なり込みのSS数をqとすると、
+`t>0 ⇒ t<q`、従って `t≤max(q-1,0)`。全qで等号を達成する最小P2語を明示した。
+証明の新しい中核は「全prefixのmassが2以下なら、最初のP2 prefixはSで終わる」。
+最小性なしの `t≤q` も成立するが、狭義版は `AASASSA`（q=t=1）で破れる。
+SS=2の最小donorは全lagでt=0/1に限られる。計算はdiscovery 3,021 P2語と
+claim-specific holdoutの長さ23の30,554 P2語で違反0、証明とは分離する。
+
+本結果はLean未形式化で、独立者の監査も未実施。owner座標の `t=L-r` を制限するが
+`delta=r-kx`、M1/M2、一般lagの緊密集合やGate T6を解決しない。E-070/E-067/E-001は
+変更しない。次は同じ量化子の局所補題の形式化、またはdeltaを含む別の反証可能な制約を
+新カードで扱う。探索上限の追加やlag-15証明書ルートは本結果だけでは再開しない。

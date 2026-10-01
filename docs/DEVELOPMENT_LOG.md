@@ -3602,3 +3602,25 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - 16:19 E-358 を commit（1fbf6e1、時刻待ちの自動 commit）。E-359 `PeriodicOwnerFamilyLagEleven`（サブエージェント、232 行、`lake env lean` 1.5 秒、
   既存の `e_shift`／`past_shift`／`lift_equal_mod` を再利用、lint 4/9 実内容で主定理は実内容）を配置・登録。これで T（lag-max 11）が周期語の定理。
   lag 15 の検査器はビットマスク版（設計はカード追記）、lag 19 は 4 shard 実行中。
+
+
+## 2026-10-01: H-20261001-01 terminal A budget
+
+- Existing uncommitted work was left in the original checkout. This unit uses
+  an isolated worktree based on 08c0856 and branch codex/p2-terminal-tail-bound.
+- Froze one all-length local question and falsifier before execution. Discovery
+  and holdout have no violations; raw outputs and pre-run hashes are saved.
+- Proved on paper t>0 => t<ssCount for minimal P2 words, with sharp witnesses
+  for every SS count. The new proof edge is the mass-ceiling-2 first-P2 lemma.
+- E-361 is PROVED-PAPER only. E-360 is reserved for existing uncommitted work
+  and is deliberately not reused. No prior uncommitted result was promoted.
+- Negative controls establish the need for minimality and the two P2 equations.
+  No mathematical repair or failed falsifier execution occurred. No Lean source changed.
+- The first cold full check was explicitly interrupted during the existing
+  DeepSixtyone certificate build, and the second during its companion mex
+  certificate. Reused their unchanged original caches after
+  matching source, toolchain, and every transitive dependency artifact; kept
+  the interrupted logs and cache provenance, then reran the normal full check.
+- Final check passed: 390 jobs, 2,549 permitted-axiom declarations, registry
+  360 rows / 154 PROVED-LEAN, G1-G5 and all four protected claims unchanged.
+- Stop after this bounded unit; next decision and validation are in the handoff.

@@ -1306,3 +1306,15 @@ becomes a finite kernel-checkable statement. `longLagControl` (period 12, period
 mass 2, phase 7 supplied at lag 11) is carried as a semantic guard so the
 hypothesis set has a witness and the window strictly contains lags the
 short-lag rule misses. The capacity inequality itself is untouched.
+
+
+## 2026-10-01: terminal A / SS budget (E-361, PROVED-PAPER)
+
+Suffix S-run counting -> every prefix has mass <=2 if t>0 and t>=q,
+including q=0.
+Consecutive mass-one visits: upper AS changes moment by -1; lower excursions
+strictly increase it -> first P2 under ceiling 2 ends S -> minimal A-ended
+P2 has t<q. Explicit minimal words attain t=max(q-1,0) at every q.
+
+[Complete paper proof](TERMINAL_A_BUDGET_2026-10-01.md). No new Lean declaration,
+owner-family constraint, Hall statement, or orbit realization is asserted.
