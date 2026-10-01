@@ -10,6 +10,7 @@ jobs:
   verify:
     name: Lean Audit & Empirical Regression Suite
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -39,6 +40,20 @@ jobs:
           c++ --version
           make --version
 
+      # These large kernel-checked trace certificates otherwise compile at once.
+      # Warm them sequentially; make test still verifies the entire project.
+      - name: Build deep trace certificates sequentially
+        run: |
+          /usr/bin/time -v lake build Recaman.DeepNineteenTraceCertificate
+          /usr/bin/time -v lake build Recaman.DeepSixtyoneTraceCertificate
+
       - name: Run complete test and verification suite
         run: |
           make test
+
+      - name: Report runner resources on failure
+        if: failure()
+        run: |
+          free -h
+          df -h
+          ps -eo pid,ppid,stat,rss,etime,comm --sort=-rss | sed -n '1,25p'
