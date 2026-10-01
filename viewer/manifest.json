@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2743,
+   "lines": 2770,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -34454,7 +34454,7 @@
   },
   {
    "name": "OwnerFamilyLagEleven",
-   "lines": 573,
+   "lines": 584,
    "imports": [
     "LagSevenDonorCoverage"
    ],
@@ -34891,11 +34891,16 @@
     },
     {
      "kind": "theorem",
+     "name": "ownerFamily_of_minimal",
+     "line": 539
+    },
+    {
+     "kind": "theorem",
      "name": "no_lag_eleven_member_of_minimal",
-     "line": 541
+     "line": 572
     }
    ],
-   "theorems": 31,
+   "theorems": 32,
    "defs": 56,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -35500,7 +35505,7 @@
   },
   {
    "name": "PeriodicOwnerFamilyLagEleven",
-   "lines": 233,
+   "lines": 246,
    "imports": [
     "OwnerFamilyLagEleven",
     "HallMatching"
@@ -35543,16 +35548,21 @@
     },
     {
      "kind": "theorem",
+     "name": "tight_owner_family",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
      "name": "tight_no_lag_eleven",
-     "line": 96
+     "line": 206
     },
     {
      "kind": "theorem",
      "name": "tight_lag_three_or_seven",
-     "line": 215
+     "line": 228
     }
    ],
-   "theorems": 9,
+   "theorems": 10,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -42937,6 +42947,137 @@
    "hasReport": false
   },
   {
+   "name": "SS2ShortTight",
+   "lines": 580,
+   "imports": [
+    "PeriodicOwnerFamilyLagEleven",
+    "PairedSubtractionCoverage",
+    "ShortReservoirCapacity",
+    "TerminalASSBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "shortOff_le_window",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "short_window_hall",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "member_window_aas_or_w1",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_owns_oldest",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_future_aas_member",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_next_addition",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_ending_A_budget",
+     "line": 204
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_mass_ending_A",
+     "line": 221
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_intervening_prefix",
+     "line": 240
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_replicate_A_nonneg",
+     "line": 276
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_append_A_tail_data",
+     "line": 282
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_aas_oldest_has_prefix",
+     "line": 297
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_no_w1_oldest",
+     "line": 341
+    },
+    {
+     "kind": "theorem",
+     "name": "oldestOffset_le_length",
+     "line": 363
+    },
+    {
+     "kind": "theorem",
+     "name": "oldestOffset_split",
+     "line": 373
+    },
+    {
+     "kind": "theorem",
+     "name": "ssCount_append_replicate_A",
+     "line": 385
+    },
+    {
+     "kind": "theorem",
+     "name": "past_oldest_split",
+     "line": 394
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_cover_clock_lt",
+     "line": 404
+    },
+    {
+     "kind": "theorem",
+     "name": "past_oldest_cover_decomposition",
+     "line": 423
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_not_aas_endpoint",
+     "line": 447
+    },
+    {
+     "kind": "theorem",
+     "name": "oldest_not_w1_endpoint",
+     "line": 469
+    },
+    {
+     "kind": "theorem",
+     "name": "owner_member_avoids_oldest",
+     "line": 482
+    },
+    {
+     "kind": "theorem",
+     "name": "short_tight_avoids_donor",
+     "line": 535
+    }
+   ],
+   "theorems": 23,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SS2StrictSlackTheorem",
    "lines": 86,
    "imports": [
@@ -49849,6 +49990,6 @@
    "hasReport": false
   }
  ],
- "total": 391,
+ "total": 392,
  "withReport": 167
 }

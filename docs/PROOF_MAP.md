@@ -1332,8 +1332,7 @@ This formalizes section 3 of E-361 for all finite words and preserves the
 issue #74 quantifiers. The lemma consumes a prefix ceiling; it does not
 derive that ceiling from SS or a terminal A run. That derivation and the
 terminal budget are issue #75. The all-q witnesses are issue #76. Independent
-semantic review is [PASS](statement_audits/E-362-independent.md); #74 remains
-OPEN awaiting PR #77 incorporation.
+semantic review is [PASS](statement_audits/E-362-independent.md); PR #77 is merged and #74 is CLOSED on GitHub (2026-10-01).
 
 ## 2026-10-01: terminal-A SS bounds (E-363, PROVED-LEAN)
 
@@ -1349,8 +1348,7 @@ Suffix masses >= -1 + total mass 1 -> derived prefix ceiling two
 checks that the represented A suffix is maximal. The all-word corollary
 `minimal_p2_terminal_bound` combines these with the same proper-prefix
 minimality. No cutoff or ceiling hypothesis is inserted. Separate-session
-review is [PASS](statement_audits/E-363-independent.md); #75 remains OPEN
-awaiting PR #78 incorporation. E-364 construction and owner delta remain
+review is [PASS](statement_audits/E-363-independent.md); PR #78 is merged and #75 is CLOSED on GitHub (2026-10-01). E-364 construction and owner delta remain
 separate. See [same-session audit](statement_audits/E-363.md).
 
 ## 2026-10-01: explicit terminal-A sharp words (E-364, PROVED-LEAN)
@@ -1368,10 +1366,37 @@ Together with E-363 this attains the all-word bound q-1 for every q,
 including saturated q=0. Every paper component is separately formalized
 as E-362/E-363/E-364; E-361 retains the original paper artifact.
 Independent review is [PASS](statement_audits/E-364-independent.md);
-#76 remains OPEN awaiting PR #80 incorporation. All three component reviews
+PR #80 is merged and #76 is CLOSED on GitHub (2026-10-01). All three component reviews
 are PASS; independent full check passes 393 jobs / 2600 axiom reports.
 No orbit realization, owner delta, Hall or general #73 result follows.
 See [statement audit](statement_audits/E-364.md).
+
+
+## 2026-10-01: arbitrary donor length with short tight B (E-366, PROVED-LEAN)
+
+`ShortReservoirCapacity.short_phase_injective`
++ `SS2ShortTight.shortOff_le_window` -> `short_window_hall` on every sublist B.
+E-358 matching + E-359 `tight_owner_family` -> actual integer owner family.
+E-357 exclusions -> members AAS/w1 -> `w1_owns_oldest`
+-> `w1_future_aas_member` (not an assumed next-A bit).
+
+SS suffix mass -> derived ceiling two -> E-362 defect positivity/first P2
+-> `ss2_intervening_prefix` -> all-length AAS/w1 oldest endpoint exclusions.
+`oldestOffset_split` and exact stream chronology connect this word argument
+to the true oldest S, including terminal A tails. w1 offsets 1,6,7
+-> `owner_member_avoids_oldest` -> periodic phase lift
+-> `short_tight_avoids_donor`, the exact issue #81 statement.
+
+The proof handles terminal tails algebraically and does not need the planned
+t<=1 split from E-363. Donor d and period p are unbounded; B members remain
+minimal current-A windows of length 3/7/11. No ambient Hall/OS/NoSAAS/drift
+or distance premise; the defined OwnerFamily in the intermediate lemma
+is constructed at the final theorem boundary. The H-20260920-05 draft
+direction is completed with separately audited selected fragments.
+See [statement audit](statement_audits/E-366.md),
+[independent audit](statement_audits/E-366-independent.md) and
+[reproduction](data/ss2_short_tight_20261001/README.md).
+General all-lag B, Gate T6 and actual-orbit claims are unaffected.
 
 ## 2026-10-01: SS=2 word offset span (E-365, PROVED-PAPER)
 

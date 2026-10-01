@@ -89,11 +89,8 @@ theorem e_phase (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e
   apply e_of_emod_eq e p hper
   rw [phase_cast p hp, Int.emod_emod]
 
-/-- **No lag-11 member in a tight subset of short minimal windows.** In a periodic sign word
-(`e (x + p) = e x`) with Hall's condition on `U`, a tight sublist `B ⊆ U` (|N(B)| = |B|) whose
-members are addition phases `b < p` with minimal P2 windows of lag 3, 7 or 11 has no member of
-lag 11. -/
-theorem tight_no_lag_eleven (e : Int → Bool) (p : Nat) (hp : 0 < p)
+/-- Lift a periodic tight subset to an actual owner family on the integer line. -/
+theorem tight_owner_family (e : Int → Bool) (p : Nat) (hp : 0 < p)
     (hper : ∀ x : Int, e (x + p) = e x)
     (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup)
     (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length)
@@ -104,7 +101,8 @@ theorem tight_no_lag_eleven (e : Int → Bool) (p : Nat) (hp : 0 < p)
     (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
     (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
     (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
-    (b0 : Nat) (hb0 : b0 ∈ B) (hlag11 : lag b0 = 11) : False := by
+    : ∃ own : Int → Int, Recaman.OwnerFamilyLagEleven.OwnerFamily e
+      (fun t => phase p t ∈ B) own (fun t => lag (phase p t)) := by
   obtain ⟨own, hown_mem, _, hown_onto⟩ := tight_owner_map e p U B lag hU hhall hB htight
   -- Each member owns a subtraction of its own window: record the offset of that subtraction.
   have hspec : ∀ b, ∃ i : Nat, b ∈ B → (i < lag b ∧ e ((b : Int) - 1 - (i : Int)) = false ∧
@@ -198,16 +196,31 @@ theorem tight_no_lag_eleven (e : Int → Bool) (p : Nat) (hp : 0 < p)
       exact hb'
     · rw [hph]
       omega
-  have hb0p : phase p (b0 : Int) = b0 := phase_of_lt p hp b0 (hBp b0 hb0)
-  have hmem0 : phase p (b0 : Int) ∈ B := by
-    rw [hb0p]
-    exact hb0
-  have h11' : lag (phase p (b0 : Int)) = 11 := by
-    rw [hb0p]
-    exact hlag11
-  exact no_lag_eleven_member_of_minimal e (fun t => phase p t ∈ B)
-    (fun t => t - 1 - (idx (phase p t) : Int)) (fun t => lag (phase p t))
-    hlag' hP' hmin' haddA' hown' honto' (b0 : Int) hmem0 h11'
+  exact ⟨_, Recaman.OwnerFamilyLagEleven.ownerFamily_of_minimal e _ _ _
+    hlag' hP' hmin' haddA' hown' honto'⟩
+
+/-- **No lag-11 member in a tight subset of short minimal windows.** In a periodic sign word
+(`e (x + p) = e x`) with Hall's condition on `U`, a tight sublist `B ⊆ U` (|N(B)| = |B|) whose
+members are addition phases `b < p` with minimal P2 windows of lag 3, 7 or 11 has no member of
+lag 11. -/
+theorem tight_no_lag_eleven (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (hper : ∀ x : Int, e (x + p) = e x)
+    (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup)
+    (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length)
+    (hB : List.Sublist B U)
+    (htight : (neighborhood e p B lag).length = B.length)
+    (hBp : ∀ b ∈ B, b < p)
+    (hB_A : ∀ b ∈ B, e (b : Int) = true)
+    (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+    (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+    (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+    (b0 : Nat) (hb0 : b0 ∈ B) (hlag11 : lag b0 = 11) : False := by
+  obtain ⟨own, hF⟩ := tight_owner_family e p hp hper U B lag hU hhall hB htight
+    hBp hB_A hB_lag hB_P2 hB_min
+  have hph := phase_of_lt p hp b0 (hBp b0 hb0)
+  apply Recaman.OwnerFamilyLagEleven.no_lag_eleven_member e _ own _ hF (b0 : Int)
+  · simpa only [hph] using hb0
+  · simpa only [hph] using hlag11
 
 /-- **Every member of a tight subset of short minimal windows has lag 3 or 7.** Under the
 hypotheses of `tight_no_lag_eleven`, the lag-11 alternative of `hB_lag` is excluded for every
