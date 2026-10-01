@@ -3624,3 +3624,37 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
 - Final check passed: 390 jobs, 2,549 permitted-axiom declarations, registry
   360 rows / 154 PROVED-LEAN, G1-G5 and all four protected claims unchanged.
 - Stop after this bounded unit; next decision and validation are in the handoff.
+
+
+## 2026-10-01: issue #81 arbitrary-length SS2 donors (E-366)
+
+The exact short-tight avoidance statement is PROVED-LEAN. B retains minimal
+current-A lag 3/7/11 members; donor length and period are unrestricted.
+The new all-length stream exclusion combines an actual oldest-S/window
+decomposition, derived E-362 prefix ceiling/defect argument, and all three
+w1 S positions. Short Hall is proved through the in-window short injection,
+then the prior owner-family lift is extracted and applied. No ambient Hall,
+OS, drift or distance assumption is introduced. The planned E-363 t<=1
+case split was unnecessary because the moment inequalities handle every
+terminal tail. This completes the prior H-20260920-05 draft direction.
+
+Separate proposer/falsifier/formalizer/auditor passes: frozen discovery and
+reused length23 holdout give 3664 compatible-placement checks with no
+violation; independent entry and final source audits PASS. Nonempty d19
+and w1 examples apply the final theorem; removing minimality, SS=2 or
+tightness gives independent kernel-checked counterexamples. Full project
+check passes 394 jobs and 2625 declarations with permitted axioms. See the
+card, G5 audit, independent report and exact logs in
+`docs/data/ss2_short_tight_20261001/`. Lint heuristics are not counted as
+independent mathematical results. No target repair was needed.
+
+Changed one new Recaman module and exposed two existing helper proofs;
+registered the exact theorem, root/Audit imports, source provenance,
+controls and handoff. Primary-checkout uncommitted files remain untouched.
+Stop this bounded unit after integration. Long-member B, general T6,
+deletion Hall and orbit realization need separate falsifiable work.
+
+In parallel, existing audited PRs #77/#78/#80 and baseline #83 were merged.
+GitHub failed before Lean because Ubuntu CI lacked `rg`; PR #84 explicitly
+installs ripgrep without removing or relaxing any test. The failure was
+an environment prerequisite, not a rejected mathematical proof.

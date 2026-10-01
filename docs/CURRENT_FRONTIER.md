@@ -776,3 +776,31 @@ are PASS in [E-362](statement_audits/E-362-independent.md),
 #74/#75/#76 remain OPEN awaiting PRs #77/#78/#80 incorporation.
 Independent full check passes 393 jobs / 2600 permitted-axiom reports.
 The general #73 owner delta and matching frontier is unchanged.
+
+## 2026-10-01: arbitrary-length SS=2 donors avoid short tight subsets (E-366)
+
+`E-366` (`PROVED-LEAN`, `Recaman/SS2ShortTight.lean`) proves the exact
+bounded question in #81: a tight nodup phase list B of current-A minimal
+P2 windows of lag 3/7/11 avoids the true oldest S phase of every current-A
+minimal P2 donor with exactly two overlapping SS pairs. Donor length d
+and period p are arbitrary. Short Hall is derived from the established
+injection into each member's actual window; no ambient Hall, NoSAAS,
+positive drift, OS, next-A or owner-distance premise is added.
+
+The substantive edge is the all-length stream exclusion of AAS and every
+S position of the completed w1 family. The proof derives the intervening
+prefix ceiling and applies E-362; it handles terminal A tails algebraically
+without needing the planned t<=1 case split. The existing periodic owner
+construction is extracted with unchanged assumptions. This completes the
+previously unfinished H-20260920-05 direction, with fresh entry/final audit.
+
+[Card](HYPOTHESIS_CARD_2026-10-01_SS2_SHORT_TIGHT.md),
+[statement audit](statement_audits/E-366.md), and
+[reproduction records](data/ss2_short_tight_20261001/README.md).
+Independent final semantic review is [PASS](statement_audits/E-366-independent.md);
+full check passes 394 jobs / 2625 permitted-axiom declarations.
+#81 remains OPEN while the audited change is being integrated. All-lag B,
+general Gate T6, deletion Hall and orbit realization remain open; protected
+E-001/E-067/E-070/E-179 labels are unchanged. The next decision needs a
+separate falsifiable condition on long members of B, not another finite-lag
+census extension.

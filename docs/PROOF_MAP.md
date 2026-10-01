@@ -1372,3 +1372,30 @@ Independent review is [PASS](statement_audits/E-364-independent.md);
 are PASS; independent full check passes 393 jobs / 2600 axiom reports.
 No orbit realization, owner delta, Hall or general #73 result follows.
 See [statement audit](statement_audits/E-364.md).
+
+
+## 2026-10-01: arbitrary donor length with short tight B (E-366, PROVED-LEAN)
+
+`ShortReservoirCapacity.short_phase_injective`
++ `SS2ShortTight.shortOff_le_window` -> `short_window_hall` on every sublist B.
+E-358 matching + E-359 `tight_owner_family` -> actual integer owner family.
+E-357 exclusions -> members AAS/w1 -> `w1_owns_oldest`
+-> `w1_future_aas_member` (not an assumed next-A bit).
+
+SS suffix mass -> derived ceiling two -> E-362 defect positivity/first P2
+-> `ss2_intervening_prefix` -> all-length AAS/w1 oldest endpoint exclusions.
+`oldestOffset_split` and exact stream chronology connect this word argument
+to the true oldest S, including terminal A tails. w1 offsets 1,6,7
+-> `owner_member_avoids_oldest` -> periodic phase lift
+-> `short_tight_avoids_donor`, the exact issue #81 statement.
+
+The proof handles terminal tails algebraically and does not need the planned
+t<=1 split from E-363. Donor d and period p are unbounded; B members remain
+minimal current-A windows of length 3/7/11. No ambient Hall/OS/NoSAAS/drift
+or distance premise; the defined OwnerFamily in the intermediate lemma
+is constructed at the final theorem boundary. The H-20260920-05 draft
+direction is completed with separately audited selected fragments.
+See [statement audit](statement_audits/E-366.md),
+[independent audit](statement_audits/E-366-independent.md) and
+[reproduction](data/ss2_short_tight_20261001/README.md).
+General all-lag B, Gate T6 and actual-orbit claims are unaffected.

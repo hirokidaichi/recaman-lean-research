@@ -1,0 +1,72 @@
+{
+  "cwd": "/Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research",
+  "reviewed_source_sha256": {
+    "Recaman/SS2ShortTight.lean": "9d6d7cb61be6496d5738b0136f96bf099da97aa7f182ca36563b9f6593ac4c8d",
+    "Recaman/OwnerFamilyLagEleven.lean": "0bc2293b5d67f7ef5865f7a3f67b2fbf10aeb76bfa92eac9a086cc893c5846f4",
+    "Recaman/PeriodicOwnerFamilyLagEleven.lean": "a90c8f2ac7e6b98dfda4a260434d2e44d3e35781c3212f6a04b7952e9ef6b4c0"
+  },
+  "checks": [
+    {
+      "name": "vacuity",
+      "command": [
+        "python3",
+        "scripts/report_vacuity.py",
+        "--all",
+        "Recaman/SS2ShortTight.lean",
+        "Recaman/OwnerFamilyLagEleven.lean",
+        "Recaman/PeriodicOwnerFamilyLagEleven.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue81Vacuity.log",
+      "log_sha256": "7f9b57fccaf241c29785dd93dd8830120a3b4db8256eae833d3a7b7cc735dd6c"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "python3",
+        "scripts/harness_gate.py",
+        "--lint-module",
+        "Recaman/SS2ShortTight.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue81Lint.log",
+      "log_sha256": "ae9465588cf55cd9e5c3435f02a985640bd281df7f756bb9eefb0c633c412f08"
+    },
+    {
+      "name": "source",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Recaman/SS2ShortTight.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue81SourceCheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "controls",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/Issue81Independent.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue81Independent.log",
+      "log_sha256": "7972e49dbb9c40a06603bd1180a9a2802f9182536fe9a20688802b9709308480"
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/Issue81Axioms.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue81Axioms.log",
+      "log_sha256": "5cc571a9e2c65c51d5dc42695b352f4e0749eb563f5a72ba7f87c76e1fdcf6b4"
+    }
+  ]
+}

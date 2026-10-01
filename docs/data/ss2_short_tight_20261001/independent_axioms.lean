@@ -1,0 +1,24 @@
+import Recaman.SS2ShortTight
+#print axioms Recaman.SS2ShortTight.shortOff_le_window
+#print axioms Recaman.SS2ShortTight.short_window_hall
+#print axioms Recaman.SS2ShortTight.member_window_aas_or_w1
+#print axioms Recaman.SS2ShortTight.w1_owns_oldest
+#print axioms Recaman.SS2ShortTight.w1_future_aas_member
+#print axioms Recaman.SS2ShortTight.w1_next_addition
+#print axioms Recaman.SS2ShortTight.moment_ending_A_budget
+#print axioms Recaman.SS2ShortTight.suffix_mass_ending_A
+#print axioms Recaman.SS2ShortTight.ss2_intervening_prefix
+#print axioms Recaman.SS2ShortTight.moment_replicate_A_nonneg
+#print axioms Recaman.SS2ShortTight.p2_append_A_tail_data
+#print axioms Recaman.SS2ShortTight.ss2_aas_oldest_has_prefix
+#print axioms Recaman.SS2ShortTight.ss2_no_w1_oldest
+#print axioms Recaman.SS2ShortTight.oldestOffset_le_length
+#print axioms Recaman.SS2ShortTight.oldestOffset_split
+#print axioms Recaman.SS2ShortTight.ssCount_append_replicate_A
+#print axioms Recaman.SS2ShortTight.past_oldest_split
+#print axioms Recaman.SS2ShortTight.oldest_cover_clock_lt
+#print axioms Recaman.SS2ShortTight.past_oldest_cover_decomposition
+#print axioms Recaman.SS2ShortTight.oldest_not_aas_endpoint
+#print axioms Recaman.SS2ShortTight.oldest_not_w1_endpoint
+#print axioms Recaman.SS2ShortTight.owner_member_avoids_oldest
+#print axioms Recaman.SS2ShortTight.short_tight_avoids_donor

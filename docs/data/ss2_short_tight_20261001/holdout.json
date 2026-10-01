@@ -1,0 +1,53 @@
+{
+  "base_revision": "8186f0004b01e1e5ce3cbd9b0061433fa1e25295",
+  "script_sha256": "3c36a0d6f072b93068003ce48f72d3daad824aaa5edbb3e42bba833468648647",
+  "command": "python3 experiments/ss2_short_tight.py holdout",
+  "mode": "holdout",
+  "range_status": "reused repository lengths, disjoint for this probe",
+  "ranges": [
+    {
+      "length": 23,
+      "P2": 30554,
+      "minimal_SS2": 647,
+      "tail0": 572,
+      "tail1": 75,
+      "completed_placements_checked": 2588
+    }
+  ],
+  "violations": [],
+  "isolated_w1_control": {
+    "data": {
+      "word": "AAASASSASSASASASASASASA",
+      "mass": 1,
+      "moment": 0,
+      "ss": 2,
+      "p2_prefixes": [
+        23
+      ],
+      "minimal": true,
+      "oldest": 22,
+      "tail": 1
+    },
+    "placements": [
+      "w1_offset_1"
+    ]
+  },
+  "relaxed_ss_control": {
+    "data": {
+      "word": "AAAAAASSSSSSSSASSAAASAA",
+      "mass": 1,
+      "moment": 0,
+      "ss": 8,
+      "p2_prefixes": [
+        23
+      ],
+      "minimal": true,
+      "oldest": 21,
+      "tail": 2
+    },
+    "placements": [
+      "AAA",
+      "w1_offset_1"
+    ]
+  }
+}

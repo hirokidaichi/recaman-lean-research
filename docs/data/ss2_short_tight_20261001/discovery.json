@@ -1,0 +1,333 @@
+{
+  "base_revision": "8186f0004b01e1e5ce3cbd9b0061433fa1e25295",
+  "script_sha256": "3c36a0d6f072b93068003ce48f72d3daad824aaa5edbb3e42bba833468648647",
+  "command": "python3 experiments/ss2_short_tight.py discovery",
+  "mode": "discovery",
+  "range_status": "reused repository lengths, disjoint for this probe",
+  "ranges": [
+    {
+      "length": 3,
+      "P2": 1,
+      "minimal_SS2": 0,
+      "tail0": 0,
+      "tail1": 0,
+      "completed_placements_checked": 0
+    },
+    {
+      "length": 7,
+      "P2": 4,
+      "minimal_SS2": 0,
+      "tail0": 0,
+      "tail1": 0,
+      "completed_placements_checked": 0
+    },
+    {
+      "length": 11,
+      "P2": 29,
+      "minimal_SS2": 7,
+      "tail0": 3,
+      "tail1": 4,
+      "completed_placements_checked": 28
+    },
+    {
+      "length": 15,
+      "P2": 263,
+      "minimal_SS2": 46,
+      "tail0": 33,
+      "tail1": 13,
+      "completed_placements_checked": 184
+    },
+    {
+      "length": 19,
+      "P2": 2724,
+      "minimal_SS2": 216,
+      "tail0": 180,
+      "tail1": 36,
+      "completed_placements_checked": 864
+    }
+  ],
+  "violations": [],
+  "isolated_w1_control": {
+    "data": {
+      "word": "AAASSSASASA",
+      "mass": 1,
+      "moment": 0,
+      "ss": 2,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true,
+      "oldest": 10,
+      "tail": 1
+    },
+    "placements": [
+      "w1_offset_1"
+    ]
+  },
+  "relaxed_ss_control": {
+    "data": {
+      "word": "AAS",
+      "mass": 1,
+      "moment": 0,
+      "ss": 0,
+      "p2_prefixes": [
+        3
+      ],
+      "minimal": true,
+      "oldest": 3,
+      "tail": 0
+    },
+    "placements": [
+      "AAA",
+      "w1_offset_1",
+      "w1_offset_6"
+    ]
+  },
+  "independent_binary": {
+    "words": 4095,
+    "P2": 34,
+    "exact_set_match": true
+  },
+  "periodic_controls": [
+    {
+      "period": 16,
+      "stream": "SAAASSSASASASAAA",
+      "u0": 15,
+      "d": 15,
+      "B": [
+        3
+      ],
+      "lags": {
+        "3": 3
+      },
+      "donor": {
+        "word": "AASASASASSSAAAS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 2,
+        "p2_prefixes": [
+          3,
+          15
+        ],
+        "minimal": false,
+        "oldest": 15,
+        "tail": 0
+      },
+      "member_windows": [
+        {
+          "word": "AAS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 0,
+          "p2_prefixes": [
+            3
+          ],
+          "minimal": true,
+          "oldest": 3,
+          "tail": 0
+        }
+      ],
+      "N": [
+        0
+      ],
+      "true_oldest_phase": 0,
+      "premises": {
+        "positive_period": true,
+        "nodup": true,
+        "in_range": true,
+        "member_current_A": true,
+        "short": true,
+        "member_minimal": true,
+        "tight": true,
+        "donor_A": true,
+        "donor_P2": true,
+        "donor_SS2": true,
+        "donor_minimal": false
+      },
+      "avoided": false
+    },
+    {
+      "period": 18,
+      "stream": "AAAASSAAAASAAASASS",
+      "u0": 7,
+      "d": 11,
+      "B": [
+        2,
+        8,
+        11,
+        13
+      ],
+      "lags": {
+        "2": 3,
+        "8": 3,
+        "11": 7,
+        "13": 3
+      },
+      "donor": {
+        "word": "ASSAAAASSAS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 2,
+        "p2_prefixes": [
+          11
+        ],
+        "minimal": true,
+        "oldest": 11,
+        "tail": 0
+      },
+      "member_windows": [
+        {
+          "word": "AAS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 0,
+          "p2_prefixes": [
+            3
+          ],
+          "minimal": true,
+          "oldest": 3,
+          "tail": 0
+        },
+        {
+          "word": "AAS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 0,
+          "p2_prefixes": [
+            3
+          ],
+          "minimal": true,
+          "oldest": 3,
+          "tail": 0
+        },
+        {
+          "word": "SAAAASS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 1,
+          "p2_prefixes": [
+            7
+          ],
+          "minimal": true,
+          "oldest": 7,
+          "tail": 0
+        },
+        {
+          "word": "AAS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 0,
+          "p2_prefixes": [
+            3
+          ],
+          "minimal": true,
+          "oldest": 3,
+          "tail": 0
+        }
+      ],
+      "N": [
+        4,
+        5,
+        10,
+        17
+      ],
+      "true_oldest_phase": 14,
+      "premises": {
+        "positive_period": true,
+        "nodup": true,
+        "in_range": true,
+        "member_current_A": true,
+        "short": true,
+        "member_minimal": true,
+        "tight": true,
+        "donor_A": true,
+        "donor_P2": true,
+        "donor_SS2": true,
+        "donor_minimal": true
+      },
+      "avoided": true
+    },
+    {
+      "period": 26,
+      "stream": "SASASASSAAASSAAASASAASAAAA",
+      "u0": 19,
+      "d": 19,
+      "B": [
+        24
+      ],
+      "lags": {
+        "24": 3
+      },
+      "donor": {
+        "word": "SASAAASSAAASSASASAS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 2,
+        "p2_prefixes": [
+          19
+        ],
+        "minimal": true,
+        "oldest": 19,
+        "tail": 0
+      },
+      "member_windows": [
+        {
+          "word": "AAS",
+          "mass": 1,
+          "moment": 0,
+          "ss": 0,
+          "p2_prefixes": [
+            3
+          ],
+          "minimal": true,
+          "oldest": 3,
+          "tail": 0
+        }
+      ],
+      "N": [
+        21
+      ],
+      "true_oldest_phase": 0,
+      "premises": {
+        "positive_period": true,
+        "nodup": true,
+        "in_range": true,
+        "member_current_A": true,
+        "short": true,
+        "member_minimal": true,
+        "tight": true,
+        "donor_A": true,
+        "donor_P2": true,
+        "donor_SS2": true,
+        "donor_minimal": true
+      },
+      "avoided": true
+    }
+  ],
+  "terminal_controls": [
+    {
+      "word": "AAASSSASASA",
+      "mass": 1,
+      "moment": 0,
+      "ss": 2,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true,
+      "oldest": 10,
+      "tail": 1
+    },
+    {
+      "word": "SAAASSAAASS",
+      "mass": 1,
+      "moment": 0,
+      "ss": 2,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true,
+      "oldest": 11,
+      "tail": 0
+    }
+  ]
+}

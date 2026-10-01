@@ -535,6 +535,37 @@ theorem no_w2_member (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
     (hv : past e t0 (lag t0) = w2) : False :=
   checkRoot_sound e mem own lag hF w2 cert_w2 checkRoot_w2 t0 hmem hv (by decide)
 
+/-- Build the existing owner family from semantic minimal-P2 assumptions. -/
+theorem ownerFamily_of_minimal (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+    (lag : Int → Nat) (hlag : ∀ b, mem b → lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+    (hP : ∀ b, mem b → P2 (past e b (lag b)))
+    (hmin : ∀ b, mem b → ∀ d, d < lag b → 0 < d → ¬ P2 ((past e b (lag b)).take d))
+    (haddA : ∀ b, mem b → e b = true)
+    (hown : ∀ b, mem b → ∃ k ∈ sOffsets (past e b (lag b)), own b = b - (k : Int))
+    (honto : ∀ b, mem b → ∀ k ∈ sOffsets (past e b (lag b)),
+      ∃ b', mem b' ∧ own b' = b - (k : Int))
+    : OwnerFamily e mem own lag := by
+  refine ⟨?_, haddA, hown, honto⟩
+  intro b hb
+  obtain ⟨w, hw⟩ : ∃ w, past e b (lag b) = w := ⟨_, rfl⟩
+  have hwlen : w.length = lag b := by rw [← hw, past_length]
+  have hP' : P2 w := by rw [← hw]; exact hP b hb
+  have hmin' : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d) := by
+    intro d hd
+    have := hmin b hb d (by omega)
+    rwa [hw] at this
+  have hmm : isMinimalP2 w = true := by
+    unfold isMinimalP2 isP2Word
+    rw [(hasP2Prefix_eq_false_iff w).mpr hmin']
+    simp [hP'.1, hP'.2]
+  have hbw := mem_bitWords w
+  rw [hwlen] at hbw
+  rw [hw, ownerWords_eq, List.mem_append, List.mem_append]
+  rcases hlag b hb with h | h | h <;> rw [h] at hbw
+  · exact Or.inl (Or.inl (List.mem_filter.mpr ⟨hbw, hmm⟩))
+  · exact Or.inl (Or.inr (List.mem_filter.mpr ⟨hbw, hmm⟩))
+  · exact Or.inr (List.mem_filter.mpr ⟨hbw, hmm⟩)
+
 /-- Semantic form of the main theorem: members are additions of lag 3, 7 or 11 whose windows
 are P2 with no proper P2 prefix, each owning a subtraction of its window, with every
 subtraction inside a member's window owned by some member; then no member has lag 11. -/
@@ -547,27 +578,7 @@ theorem no_lag_eleven_member_of_minimal (e : Int → Bool) (mem : Int → Prop) 
     (honto : ∀ b, mem b → ∀ k ∈ sOffsets (past e b (lag b)),
       ∃ b', mem b' ∧ own b' = b - (k : Int))
     (t0 : Int) (hmem : mem t0) (h11 : lag t0 = 11) : False := by
-  have hF : OwnerFamily e mem own lag := by
-    refine ⟨?_, haddA, hown, honto⟩
-    intro b hb
-    obtain ⟨w, hw⟩ : ∃ w, past e b (lag b) = w := ⟨_, rfl⟩
-    have hwlen : w.length = lag b := by rw [← hw, past_length]
-    have hP' : P2 w := by rw [← hw]; exact hP b hb
-    have hmin' : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d) := by
-      intro d hd
-      have := hmin b hb d (by omega)
-      rwa [hw] at this
-    have hmm : isMinimalP2 w = true := by
-      unfold isMinimalP2 isP2Word
-      rw [(hasP2Prefix_eq_false_iff w).mpr hmin']
-      simp [hP'.1, hP'.2]
-    have hbw := mem_bitWords w
-    rw [hwlen] at hbw
-    rw [hw, ownerWords_eq, List.mem_append, List.mem_append]
-    rcases hlag b hb with h | h | h <;> rw [h] at hbw
-    · exact Or.inl (Or.inl (List.mem_filter.mpr ⟨hbw, hmm⟩))
-    · exact Or.inl (Or.inr (List.mem_filter.mpr ⟨hbw, hmm⟩))
-    · exact Or.inr (List.mem_filter.mpr ⟨hbw, hmm⟩)
-  exact no_lag_eleven_member e mem own lag hF t0 hmem h11
+  exact no_lag_eleven_member e mem own lag
+    (ownerFamily_of_minimal e mem own lag hlag hP hmin haddA hown honto) t0 hmem h11
 
 end Recaman.OwnerFamilyLagEleven
