@@ -721,9 +721,11 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 SS=2の最小donorは全lagでt=0/1に限られる。計算はdiscovery 3,021 P2語と
 claim-specific holdoutの長さ23の30,554 P2語で違反0、証明とは分離する。
 
-本結果の全体はLean未形式化で、独立者の監査も未実施。下記E-362はsection 3のみを形式化した。owner座標の `t=L-r` を制限するが
+初稿時点ではpaper-onlyだった。現在は各部分をE-362/E-363/E-364で形式化し、
+独立意味監査も全てPASS。E-361は元のpaper artifact/labelを維持する。
+owner座標の `t=L-r` を制限するが
 `delta=r-kx`、M1/M2、一般lagの緊密集合やGate T6を解決しない。E-070/E-067/E-001は
-変更しない。次は残るSS予算の形式化、またはdeltaを含む別の反証可能な制約を
+変更しない。SS予算の形式化は完了した。次はdeltaを含む別の反証可能な制約を
 新カードで扱う。探索上限の追加やlag-15証明書ルートは本結果だけでは再開しない。
 
 ## 2026-10-01: prefix mass ceiling 2 で最初のP2はS終端（E-362）
@@ -740,9 +742,9 @@ minimalityを除く `AASASSA` とceilingを3に緩める `AAASSSASASA` は反例
 [カード](HYPOTHESIS_CARD_2026-10-01_FIRST_P2_ENDING_S.md)と
 [再現ログ](data/first_p2_ending_s_20261001/README.md)を参照。
 
-#74の数学的statementとLean監査への登録を実装した。同一セッションの意味監査を済ませたが、
-issueで要求された別セッションの意味監査は未実施であり、issueはOPENのまま。
-次は#75でsuffix下界からこのprefix ceilingを導出すること。E-361全体、#76の全q構成、
+#74の数学的statementとLean監査への登録を実装した。別セッションの意味監査も
+[PASS](statement_audits/E-362-independent.md)。#74はPR #77取り込み待ちでOPEN。
+#75のsuffix下界と#76の全q構成は下記の別行で形式化した。
 一般Gate T6、E-070/E-067、全射性についての証拠ラベルは変わらない。
 
 ## 2026-10-01 follow-up: terminal-A SS bounds (E-363)
@@ -752,9 +754,28 @@ P2 gives t<=q; minimal P2 gives t<=q-1 (saturated Nat subtraction), so
 SS=2 gives t<=1. The proof derives the prefix ceiling from suffix masses
 and then uses E-362; it does not add a ceiling assumption.
 Every P2 word admits the terminal-S/A decomposition and the maximum-run
-identity is verified. Separate-session semantic review is pending, so #75
-remains OPEN. The remaining E-361 all-q construction is still paper-only.
+identity is verified. Independent semantic review is
+[PASS](statement_audits/E-363-independent.md); #75 remains OPEN awaiting
+PR #78 incorporation. E-364 supplies the separate all-q construction.
 The bound controls t=L-r, not owner delta or general #73.
+
+## 2026-10-01 follow-up: all-q sharp words (E-364)
+
+The fixed words of #76 are now `PROVED-LEAN` for every Nat q: P2,
+minimality against every positive proper prefix, exactly q overlapping SS
+pairs, maximum terminal A length q-1. Both directions of the proper
+mass-one prefix classification and their exact nonzero moments are proved.
+The construction imports neither E-362 nor E-363. With E-363 the bound
+is attained for every q; abstract minimal P2 words have arbitrarily long
+A tails. This is not a canonical or seeded orbit realization claim.
+All three E-361 components have separate Lean rows E-362/E-363/E-364.
+E-361 retains its original paper artifact/label. Independent semantic reviews
+are PASS in [E-362](statement_audits/E-362-independent.md),
+[E-363](statement_audits/E-363-independent.md) and
+[E-364](statement_audits/E-364-independent.md), on unchanged source hashes.
+#74/#75/#76 remain OPEN awaiting PRs #77/#78/#80 incorporation.
+Independent full check passes 393 jobs / 2600 permitted-axiom reports.
+The general #73 owner delta and matching frontier is unchanged.
 
 ## 2026-10-01: SS=2 word-only offset span (E-365, PROVED-PAPER)
 

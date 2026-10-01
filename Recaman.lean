@@ -376,3 +376,4 @@ import Recaman.HallMatching
 import Recaman.PeriodicOwnerFamilyLagEleven
 import Recaman.FirstP2EndingS
 import Recaman.TerminalASSBound
+import Recaman.TerminalASharpWords

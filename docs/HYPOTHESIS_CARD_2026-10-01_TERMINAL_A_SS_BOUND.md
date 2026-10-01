@@ -3,7 +3,7 @@
 - ID: `H-20261001-03`
 - Owner: Codex, separate proposer / falsifier / formalizer / auditor passes
 - Created: 2026-10-01
-- Status: `PROVED-LEAN` (E-363); separate-session semantic review pending.
+- Status: `PROVED-LEAN` (E-363); independent semantic review PASS. See [E-363-independent](statement_audits/E-363-independent.md). Issue #75 remains OPEN awaiting PR incorporation.
 - Base: `07d75dfdb733dfa5196f608e63bd23dd754940bf`, isolated worktree.
 - Research question: issue #75, sections 2 and 4 of E-361.
 
@@ -73,7 +73,7 @@ all-q witnesses and general #73 are separate research units.
 
 | Date | Label | Command / revision | Result |
 |---|---|---|---|
-| 2026-10-01 | `PROVED-LEAN` | E-362, base revision | Exact ceiling-two first-P2 lemma is available; independent-session semantic review remains pending. |
+| 2026-10-01 | `PROVED-LEAN` | E-362, base revision | Exact ceiling-two first-P2 lemma is available; independent review was pending at that base revision and is now PASS. |
 
 - Frozen before reruns: `docs/data/terminal_a_ss_bound_20261001/protocol.frozen.md`
   and `PRE_RUN_SHA256SUMS`.
@@ -102,6 +102,8 @@ all-q witnesses and general #73 are separate research units.
 ## Decision
 
 The exact issue statement is formalized; no added ceiling, cutoff, or
-defined hypothesis. Same-session audit complete; independent review pending.
-End this unit at the SS bound. Proceed to #76 as a separate construction
-unit without using this upper bound to establish minimality.
+defined hypothesis. Independent review is PASS in E-363-independent on the
+unchanged source hash. Its R/W/C/T=9/7/0/0 counts terminal_run_length as a
+run induction; the earlier conservative same-session count was 8/8/0/0.
+End this unit at the SS bound. E-364 separately proves the sharp construction
+without this upper bound. Issue #75 remains OPEN awaiting PR #78 incorporation.

@@ -1331,8 +1331,9 @@ constraint, Hall statement, or orbit realization is asserted.
 This formalizes section 3 of E-361 for all finite words and preserves the
 issue #74 quantifiers. The lemma consumes a prefix ceiling; it does not
 derive that ceiling from SS or a terminal A run. That derivation and the
-terminal budget are issue #75. The all-q witnesses are issue #76. Separate
-session semantic review remains pending; no issue closure is asserted.
+terminal budget are issue #75. The all-q witnesses are issue #76. Independent
+semantic review is [PASS](statement_audits/E-362-independent.md); #74 remains
+OPEN awaiting PR #77 incorporation.
 
 ## 2026-10-01: terminal-A SS bounds (E-363, PROVED-LEAN)
 
@@ -1348,8 +1349,29 @@ Suffix masses >= -1 + total mass 1 -> derived prefix ceiling two
 checks that the represented A suffix is maximal. The all-word corollary
 `minimal_p2_terminal_bound` combines these with the same proper-prefix
 minimality. No cutoff or ceiling hypothesis is inserted. Separate-session
-review is pending; #75 remains OPEN. #76 construction and owner delta
-remain separate. See [statement audit](statement_audits/E-363.md).
+review is [PASS](statement_audits/E-363-independent.md); #75 remains OPEN
+awaiting PR #78 incorporation. E-364 construction and owner delta remain
+separate. See [same-session audit](statement_audits/E-363.md).
+
+## 2026-10-01: explicit terminal-A sharp words (E-364, PROVED-LEAN)
+
+Imports OneSSMultiplicity only; construction does not depend on E-362/E-363.
+Four-region take split + alt_S_negative_prefix -> proper_mass_one_prefix
+(exact nonzero moments) -> body_minimal. alt_S_prefix_at_pair supplies the
+reverse direction -> proper_mass_one_positions_iff.
+Append mass/moment and quadratic Nat subtraction equation -> body_P2.
+SS junction calculation + reverse/takeWhile -> exact count and maximum tail.
+Small q=0/1/2 kernel controls + general family -> word_properties for all q
+-> all-q existence and any-terminal-length corollaries.
+
+Together with E-363 this attains the all-word bound q-1 for every q,
+including saturated q=0. Every paper component is separately formalized
+as E-362/E-363/E-364; E-361 retains the original paper artifact.
+Independent review is [PASS](statement_audits/E-364-independent.md);
+#76 remains OPEN awaiting PR #80 incorporation. All three component reviews
+are PASS; independent full check passes 393 jobs / 2600 axiom reports.
+No orbit realization, owner delta, Hall or general #73 result follows.
+See [statement audit](statement_audits/E-364.md).
 
 ## 2026-10-01: SS=2 word offset span (E-365, PROVED-PAPER)
 
