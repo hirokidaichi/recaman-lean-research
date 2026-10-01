@@ -743,7 +743,7 @@ minimalityを除く `AASASSA` とceilingを3に緩める `AAASSSASASA` は反例
 [再現ログ](data/first_p2_ending_s_20261001/README.md)を参照。
 
 #74の数学的statementとLean監査への登録を実装した。別セッションの意味監査も
-[PASS](statement_audits/E-362-independent.md)。#74はPR #77取り込み待ちでOPEN。
+[PASS](statement_audits/E-362-independent.md)。PR #77はmainへmerge済みで、#74は2026-10-01にGitHubでCLOSED。
 #75のsuffix下界と#76の全q構成は下記の別行で形式化した。
 一般Gate T6、E-070/E-067、全射性についての証拠ラベルは変わらない。
 
@@ -755,8 +755,7 @@ SS=2 gives t<=1. The proof derives the prefix ceiling from suffix masses
 and then uses E-362; it does not add a ceiling assumption.
 Every P2 word admits the terminal-S/A decomposition and the maximum-run
 identity is verified. Independent semantic review is
-[PASS](statement_audits/E-363-independent.md); #75 remains OPEN awaiting
-PR #78 incorporation. E-364 supplies the separate all-q construction.
+[PASS](statement_audits/E-363-independent.md); PR #78 is merged and #75 is CLOSED on GitHub (2026-10-01). E-364 supplies the separate all-q construction.
 The bound controls t=L-r, not owner delta or general #73.
 
 ## 2026-10-01 follow-up: all-q sharp words (E-364)
@@ -773,7 +772,7 @@ E-361 retains its original paper artifact/label. Independent semantic reviews
 are PASS in [E-362](statement_audits/E-362-independent.md),
 [E-363](statement_audits/E-363-independent.md) and
 [E-364](statement_audits/E-364-independent.md), on unchanged source hashes.
-#74/#75/#76 remain OPEN awaiting PRs #77/#78/#80 incorporation.
+PRs #77/#78/#80 are merged; #74/#75/#76 are CLOSED on GitHub (2026-10-01).
 Independent full check passes 393 jobs / 2600 permitted-axiom reports.
 The general #73 owner delta and matching frontier is unchanged.
 
@@ -799,7 +798,7 @@ previously unfinished H-20260920-05 direction, with fresh entry/final audit.
 [reproduction records](data/ss2_short_tight_20261001/README.md).
 Independent final semantic review is [PASS](statement_audits/E-366-independent.md);
 full check passes 394 jobs / 2625 permitted-axiom declarations.
-#81 remains OPEN while the audited change is being integrated. All-lag B,
+This result addresses #81; PR #85 tracks integration and GitHub issue closure. All-lag B,
 general Gate T6, deletion Hall and orbit realization remain open; protected
 E-001/E-067/E-070/E-179 labels are unchanged. The next decision needs a
 separate falsifiable condition on long members of B, not another finite-lag
