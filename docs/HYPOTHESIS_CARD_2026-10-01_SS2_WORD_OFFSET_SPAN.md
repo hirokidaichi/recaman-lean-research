@@ -3,7 +3,9 @@
 - ID: `H-20261001-05`
 - Owner: Codex, proposer/falsifier/paper writer/auditor passes
 - Created: 2026-10-01
-- Status: `PROVED-PAPER` (E-365); independent review pending.
+- Status: `PROVED-PAPER` (E-365, historical paper unit). The all-k Lean proof
+  and independent review are complete in E-367; see
+  [follow-up card](HYPOTHESIS_CARD_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md).
 - Base: `cbe51b7`, separate docs/experiment unit, not part of #76's Lean module.
 - Bounded question for #73: do word-level minimality, NoSAAS and SS=2,
   even with terminal A length zero, bound the distance between a marked

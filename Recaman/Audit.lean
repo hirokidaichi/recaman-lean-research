@@ -2768,3 +2768,28 @@ import Recaman
 #print axioms Recaman.SS2ShortTight.short_tight_avoids_donor
 #print axioms Recaman.OwnerFamilyLagEleven.ownerFamily_of_minimal
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_owner_family
+
+-- Issue #82: all-k fixed-SS2 word span; marked S is not an owner.
+#print axioms Recaman.SS2WordOffsetSpan.core_mass
+#print axioms Recaman.SS2WordOffsetSpan.core_moment
+#print axioms Recaman.SS2WordOffsetSpan.core_length
+#print axioms Recaman.SS2WordOffsetSpan.word_length
+#print axioms Recaman.SS2WordOffsetSpan.word_P2
+#print axioms Recaman.SS2WordOffsetSpan.alt_A_zero_prefix
+#print axioms Recaman.SS2WordOffsetSpan.alt_take_pairs
+#print axioms Recaman.SS2WordOffsetSpan.core_mass_one_prefix
+#print axioms Recaman.SS2WordOffsetSpan.proper_mass_one_prefix
+#print axioms Recaman.SS2WordOffsetSpan.proper_mass_one_positions_iff
+#print axioms Recaman.SS2WordOffsetSpan.word_minimum
+#print axioms Recaman.SS2WordOffsetSpan.word_ssCount
+#print axioms Recaman.SS2WordOffsetSpan.word_saasCount_zero
+#print axioms Recaman.SS2WordOffsetSpan.word_noSAAS
+#print axioms Recaman.SS2WordOffsetSpan.history_noSAAS
+#print axioms Recaman.SS2WordOffsetSpan.word_newest_S
+#print axioms Recaman.SS2WordOffsetSpan.word_ends_S
+#print axioms Recaman.SS2WordOffsetSpan.oldestOffset_append_S
+#print axioms Recaman.SS2WordOffsetSpan.word_oldestOffset
+#print axioms Recaman.SS2WordOffsetSpan.word_true_oldest_S
+#print axioms Recaman.SS2WordOffsetSpan.word_terminal_length
+#print axioms Recaman.SS2WordOffsetSpan.word_span
+#print axioms Recaman.SS2WordOffsetSpan.exists_unbounded_span

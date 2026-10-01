@@ -1,0 +1,66 @@
+{
+  "cwd": "/Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research",
+  "source_sha256": "96c943898e01037fab88dc9df6a65c3966b46e30555995ae2060972bdbc773c2",
+  "checks": [
+    {
+      "name": "source",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Recaman/SS2WordOffsetSpan.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue82SourceCheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "controls",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/Issue82Independent.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue82Independent.log",
+      "log_sha256": "7465e9b4277668968631bf8f723aa856fe37a2a351cf336c8c87d9785abf6ddb"
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/Issue82Axioms.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue82Axioms.log",
+      "log_sha256": "b1829856f12898f27f59482d0b2036736394b7a6f21b6e5fe03eea630cbdb4b4"
+    },
+    {
+      "name": "vacuity",
+      "command": [
+        "python3",
+        "scripts/report_vacuity.py",
+        "--all",
+        "Recaman/SS2WordOffsetSpan.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue82Vacuity.log",
+      "log_sha256": "30e17235041f19c8774732b74cbf6e214634e06c96b990548e956b90fb67879d"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "python3",
+        "scripts/harness_gate.py",
+        "--lint-module",
+        "Recaman/SS2WordOffsetSpan.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/Issue82Lint.log",
+      "log_sha256": "a02675cb5290b669c10ea618c275a6acb29da497dc42c92fa9e9dbd9952e198d"
+    }
+  ]
+}
