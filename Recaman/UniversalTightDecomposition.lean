@@ -36,19 +36,10 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open TwentyTwoLagRigidity TwentyTwoGateT6Resolution TwentyTwoGateT6Unconditional
-open GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem UniversalQuantumWindowCapacity TightSubsetLagStructure
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
+open UniversalQuantumWindowCapacity TightSubsetLagStructure
 open TightSubsetDecomposition TightQuadDecomposition
 
 /-- A subtraction phase belongs to N(A) iff it belongs to N([u]) for some u ∈ A, for arbitrary subsets A. -/
@@ -104,7 +95,7 @@ theorem universal_all_aas_survives (e : Int → Bool) (p : Nat) (hp : 0 < p)
     (hA_A : ∀ u ∈ A, e (u : Int) = true) :
     A.length ≤ (deletedNeighborhood e p A lag (oldestSubtractionPhase p u0 (lag u0))).length := by
   have hnot := universal_all_aas_avoids e p hp hper A lag u0 hd_lt hu0A hP0 hss0 hlag3 haas hP_A hA_A
-  exact arbitrary_period_tight_survives_of_not_mem e p A lag htight u0 hnot
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight hnot
 
 /-- For any subset A where all elements except a single element w are lag 3 AAS,
 s*(u₀) ∈ N(A) ↔ s*(u₀) ∈ N([w]). -/
@@ -160,7 +151,7 @@ theorem universal_single_non_aas_survives (e : Int → Bool) (p : Nat) (hp : 0 <
     intro hmem
     have hw_cov := (universal_single_non_aas_collision_iff e p hp hper A lag w hw u0 hd_lt hu0A hP0 hss0 hlag3 haas hP_A hA_A).mp hmem
     exact hnot hw_cov
-  exact arbitrary_period_tight_survives_of_not_mem e p A lag htight u0 hnot_A
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight hnot_A
 
 /-- For any subset A where all elements except w₁, w₂ are lag 3 AAS,
 s*(u₀) ∈ N(A) ↔ (s*(u₀) ∈ N([w₁]) ∨ s*(u₀) ∈ N([w₂])). -/
@@ -224,7 +215,7 @@ theorem universal_two_non_aas_survives (e : Int → Bool) (p : Nat) (hp : 0 < p)
     rcases h_or with h1 | h2
     · exact hnot1 h1
     · exact hnot2 h2
-  exact arbitrary_period_tight_survives_of_not_mem e p A lag htight u0 hnot_A
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight hnot_A
 
 /-- General Hall preservation principle: any subset with slack |A| < |N(A)| or avoiding s
 strictly preserves Hall's condition. -/

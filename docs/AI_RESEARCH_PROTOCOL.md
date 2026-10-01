@@ -1,6 +1,6 @@
 # AI と進める数学研究プロトコル
 
-最終更新: 2026-09-01
+最終更新: 2026-09-15
 
 ## 結論
 
@@ -166,7 +166,7 @@ Output:
 悪い指示は「新しい不変量を考えて証明して」である。良い指示は、候補の形、既知no-go、合格判定、
 反証順序、終了条件までを固定し、探索経路そのものには不要な拘束を加えない。
 
-## 4. このリポジトリに固有の注意
+## 4. このリポジトリに固有の注意と空虚化防止策
 
 - `Lean accepts`と`Recamán実軌道から生成される`を同一視しない。
 - existentialなparent/child interfaceは、任意のrank下降を捏造できないか敵対的に検査する。
@@ -175,6 +175,27 @@ Output:
 - 同じ値の再利用可能性があるため、単純なinjective chargingを仮定しない。
 - 新しい型、certificate、adapterは、それ自体を数学的進捗として数えない。
 - READMEの数値的現況は変化が速い。研究packetでは定理名とsource revisionを優先する。
+
+### 4.1 ハーネス（INC-20260915-01 の教訓）
+
+2026-09-15 の空虚定理量産インシデント（[報告書](INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md)）の根本原因は、
+規則の不在ではなく規則が機械的に効いていなかったことである。以下は `scripts/harness_gate.py` と `.githooks/pre-commit` が強制する。
+
+1. **G1〜G3（内容の下限）**：新規 `PROVED-LEAN` 行の audit symbol は実在する定理で、結論（またはその連言成分）が仮定そのものや `x = x` であってはならず、
+   少なくとも 1 本は純算術でも wrapper でも omega/rfl 一発でもない定理を含む。`python3 scripts/harness_gate.py --lint-module <file>` で事前確認する。
+   算術補助補題は許されるが、それだけのモジュールは研究成果ではない。
+2. **G5（定理文の逐語引用）**：E-347 以降の `PROVED-LEAN` 行は `docs/statement_audits/E-NNN.md`（`--audit-template E-NNN` で生成）を必須とし、
+   各定理の binder と結論を逐語で引用して 3 項目（実対象の binder／未証明 Prop や結論そのものの仮定／wrapper か）に答える。引用は source と照合される。
+3. **定義した仮説は排除ではない**：`def FooHypothesis : Prop` から結論を導く定理は、その仮説名を claim に明記した上でのみ `PROVED-LEAN` とし、
+   無条件命題は `CONJECTURED` のまま。`H → ¬P` の定義的否定を「枝 P の排除」と呼ばない。label は既存の 7 種のみを使う（`CONDITIONAL` は無い）。
+4. **P（中心命題の pin）**：`docs/PROTECTED_CLAIMS.tsv` の label は registry と一致しなければならない。変更は広木さんの判断で、`RECAMAN_HUMAN_APPROVED=1` の commit でのみ行う。
+   GitHub で閉じていない issue を文書で CLOSED と書かない。
+5. **G4（命名）**：grand/master/universal/closure/synthesis/resolution/apex を含む定理名・モジュール名は新規行で拒否される。
+6. **速度制限**：1 commit に新規モジュール 1 本、前回のモジュール追加から 30 分。`RECAMAN_ALLOW_BURST=1` は人間用。空いた時間で反証（既存の `REFUTED` 行と証明書の検索）を行う。
+7. **Git**：`git add -A` 禁止。`git commit -- <paths>`。他セッションのファイルを含めない。
+8. **セマンティック監査**：`lake build` 通過は推論の正しさであって問題の解決ではない。監査は別セッションで `report_vacuity.py` → binder 読み → R/W/C/T 表の順に行う。
+
+gate は heuristic で、`have` を含む連言合成や regime を仮定した算術は G3 を通る。それらは G5 の記入と P で止める。負例テストは `bash scripts/test_harness_gates.sh`。
 
 ## 5. 参考文献と本プロトコルへの対応
 

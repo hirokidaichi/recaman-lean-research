@@ -147,300 +147,152 @@
    "hasReport": true
   },
   {
-   "name": "ApexPeriodicRigidityTheorem",
-   "lines": 192,
-   "imports": [
-    "TightTripleRigidity",
-    "TwelveGateT6Resolution",
-    "FourteenLagRigidity",
-    "ElevenGateT6Synthesis",
-    "ElevenCapacityRigidity",
-    "GrandPeriodicDeletabilityTheorem",
-    "TenGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex_capacity_stratification_p14",
-     "line": 48
-    },
-    {
-     "kind": "theorem",
-     "name": "apex_tight_lag_exclusion_p14",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "apex_gate_t6_unconditional_p10",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "apex_gate_t6_unconditional_U_le_three",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "apex_gate_t6_unconditional_D_le_four",
-     "line": 123
-    },
-    {
-     "kind": "theorem",
-     "name": "apex_size_three_structural_decomposition",
-     "line": 142
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_periodic_rigidity_synthesis",
-     "line": 165
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "ArbitraryPeriodGateT6Resolution",
-   "lines": 222,
-   "imports": [
-    "ArbitraryPeriodLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_tight_size_two_survives",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_tight_survives_of_not_mem",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_all_aas_avoids_s_star",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_all_aas_survives",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 118
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 149
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 166
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_arbitrary_period_gate_t6_resolution_synthesis",
-     "line": 184
-    }
-   ],
-   "theorems": 8,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "ArbitraryPeriodGateT6Unconditional",
-   "lines": 344,
-   "imports": [
-    "ArbitraryPeriodGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_gate_t6_of_all_aas_tight",
-     "line": 50
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_gate_t6_of_D_le_six_and_triples_quads",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_gate_t6_of_D_le_seven_and_triples_quads_quints",
-     "line": 126
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_gate_t6_of_D_le_eight_and_triples_to_sexts",
-     "line": 174
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_capacity_tier_one",
-     "line": 196
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_capacity_tier_two",
-     "line": 213
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_capacity_tier_three",
-     "line": 231
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_capacity_tier_four",
-     "line": 254
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_arbitrary_period_gate_t6_unconditional_synthesis",
-     "line": 277
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "ArbitraryPeriodLagRigidity",
-   "lines": 141,
-   "imports": [
-    "GrandApexPeriodTwentyFourTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_subtractions_bound",
-     "line": 49
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_avoiding_size_bound",
-     "line": 57
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_tight_quantum_bound",
-     "line": 70
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_tight_quantum_level_bound",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_no_large_window_in_tight",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_quantum_exclusion",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_period_capacity_specialization",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_arbitrary_period_lag_rigidity_synthesis",
-     "line": 121
-    }
-   ],
-   "theorems": 8,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "ArbitraryTightCollisionObstruction",
-   "lines": 226,
-   "imports": [
-    "TwentyFourGeometricGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_complement_bound",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_single_window_coverage_lower_bound",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_lag7_coverage_bound",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_lag11_coverage_bound",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_lag15_coverage_bound",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_lag19_coverage_bound",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_lag4j_coverage_bound",
-     "line": 134
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_single_lag7_impossible",
-     "line": 147
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_two_lag7_high_capacity_impossible",
-     "line": 161
-    },
-    {
-     "kind": "theorem",
-     "name": "arbitrary_tight_disjoint_lag7_impossible",
-     "line": 174
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_arbitrary_tight_collision_obstruction_synthesis",
-     "line": 187
-    }
-   ],
-   "theorems": 11,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "Audit",
-   "lines": 3448,
+   "lines": 2686,
    "imports": [],
    "decls": [],
    "theorems": 0,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "AuditSalvage",
+   "lines": 452,
+   "imports": [
+    "TwoSSTightDisjoint",
+    "TwoSSAvoidTight",
+    "TenGateT6Resolution",
+    "PermanentAboveTail",
+    "ActualDescent",
+    "CoordinateDynamics",
+    "History",
+    "OrbitBounds",
+    "SubtractionLedger",
+    "LagElevenPeriodic",
+    "DebtInvariant"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_avoiding_le_two_all_lag_three_general",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_followup_value",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_minimum_step3_subtraction_forces_step4_addition",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_descent_barrier",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_result_ge_minimum",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_subtraction_result_gt_minimum",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "addition_step_cannot_cross_below_twice",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "downcrossing_step_must_be_subtraction",
+     "line": 193
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_lower_bound_of_ledger_corridor",
+     "line": 219
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_upper_bound_of_ledger_corridor",
+     "line": 250
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidate_pos",
+     "line": 274
+    },
+    {
+     "kind": "theorem",
+     "name": "a_zero_eq_zero",
+     "line": 280
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_blocker_ne_zero",
+     "line": 283
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidates_length",
+     "line": 293
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_candidates_nodup",
+     "line": 298
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_toothcomb_candidates_iff",
+     "line": 306
+    },
+    {
+     "kind": "theorem",
+     "name": "historical_nonzero_values_length",
+     "line": 317
+    },
+    {
+     "kind": "theorem",
+     "name": "toothcomb_not_all_blocked_by_history",
+     "line": 324
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_two_additions_reach_three",
+     "line": 357
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_candidate_after_two_additions",
+     "line": 373
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_must_be_blocked",
+     "line": 384
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_blocker_prior",
+     "line": 408
+    },
+    {
+     "kind": "theorem",
+     "name": "permanent_high_third_addition_prior_summit",
+     "line": 435
+    }
+   ],
+   "theorems": 23,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "BalancedTraceCertificate",
@@ -2466,59 +2318,6 @@
    "defs": 4,
    "hasEnglishDocstring": false,
    "hasReport": true
-  },
-  {
-   "name": "CorridorDensityObstruction",
-   "lines": 150,
-   "imports": [
-    "LeastTailLedgerMinimum",
-    "OrbitBounds",
-    "SubtractionLedger",
-    "ExactOrbitNonperiodicity",
-    "FiniteBlockCapacity",
-    "LagElevenPeriodic"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "subCount_lower_bound_of_ledger_corridor",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "subCount_upper_bound_of_ledger_corridor",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_subCount_bounds",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_tail_not_eventual_low_ss_periodic",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_tail_not_eventual_periodic_of_capacity_induction",
-     "line": 125
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_finite_block_capacity",
-     "line": 138
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_unsupplied_of_drift",
-     "line": 144
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
   },
   {
    "name": "Coverage",
@@ -26298,108 +26097,112 @@
   },
   {
    "name": "DriftResetAccumulation",
-   "lines": 225,
+   "lines": 229,
    "imports": [
     "ShortPeriodicSupply",
     "CanonicalSSFreeSupply",
     "FiniteBlockCapacity",
-    "CorridorDensityObstruction"
+    "ExactOrbitNonperiodicity",
+    "LagElevenPeriodic",
+    "LeastTailLedgerMinimum",
+    "OrbitBounds",
+    "SubtractionLedger"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "suppliedCount_le_additionCount",
-     "line": 42
+     "line": 46
     },
     {
      "kind": "def",
      "name": "unsuppliedCount",
-     "line": 53
-    },
-    {
-     "kind": "theorem",
-     "name": "unsuppliedCount_eq",
      "line": 57
     },
     {
      "kind": "theorem",
+     "name": "unsuppliedCount_eq",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
      "name": "additionCount_add",
-     "line": 64
+     "line": 68
     },
     {
      "kind": "theorem",
      "name": "subtractionCount_add",
-     "line": 78
+     "line": 82
     },
     {
      "kind": "theorem",
      "name": "suppliedCount_add",
-     "line": 92
+     "line": 96
     },
     {
      "kind": "theorem",
      "name": "signSum_add",
-     "line": 106
+     "line": 110
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_add",
-     "line": 121
+     "line": 125
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_mono",
-     "line": 132
+     "line": 136
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_ge_signSum_sub_two",
-     "line": 139
+     "line": 143
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_pos_of_signSum_ge_three",
-     "line": 146
+     "line": 150
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_ge_of_signSum",
-     "line": 153
+     "line": 157
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_two_blocks",
-     "line": 164
+     "line": 168
     },
     {
      "kind": "theorem",
      "name": "unsuppliedCount_ge_two_of_two_drift_blocks",
-     "line": 177
+     "line": 181
     },
     {
      "kind": "theorem",
      "name": "drift_le_of_unsupplied_le",
-     "line": 189
+     "line": 193
     },
     {
      "kind": "theorem",
      "name": "exists_unsupplied_ge_of_exists_signSum_ge",
-     "line": 198
+     "line": 202
     },
     {
      "kind": "theorem",
      "name": "canonical_unsuppliedCount_mono",
-     "line": 207
+     "line": 211
     },
     {
      "kind": "theorem",
      "name": "canonical_unsuppliedCount_ge_drift",
-     "line": 212
+     "line": 216
     },
     {
      "kind": "theorem",
      "name": "corridor_unsupplied_two_drift_blocks",
-     "line": 219
+     "line": 223
     }
    ],
    "theorems": 18,
@@ -26594,239 +26397,6 @@
    "hasReport": true
   },
   {
-   "name": "EighteenGateT6Resolution",
-   "lines": 298,
-   "imports": [
-    "EighteenLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p18_tight_size_two_survives",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_triple_survives_of_not_mem",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_quad_survives_of_not_mem",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_quint_survives_of_not_mem",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_sext_survives_of_not_mem",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 160
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 177
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_gate_t6_of_U_le_four_and_triples",
-     "line": 195
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_gate_t6_of_D_le_five_and_triples",
-     "line": 218
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_eighteen_gate_t6_resolution_synthesis",
-     "line": 241
-    }
-   ],
-   "theorems": 11,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "EighteenGateT6Unconditional",
-   "lines": 351,
-   "imports": [
-    "EighteenGateT6Resolution",
-    "TightAvoidingLagCertificate"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p18_tight_all_aas_avoids_s_star",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_all_aas_survives",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_gate_t6_of_all_aas_tight",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_gate_t6_of_D_le_six_and_triples_quads",
-     "line": 113
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_gate_t6_of_U_le_five_and_triples_quads",
-     "line": 157
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_capacity_tier_one",
-     "line": 203
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_capacity_tier_two",
-     "line": 220
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_capacity_tier_three",
-     "line": 238
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_capacity_tier_four",
-     "line": 261
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_eighteen_gate_t6_unconditional_synthesis",
-     "line": 284
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "EighteenGeometricGateT6Resolution",
-   "lines": 130,
-   "imports": [
-    "TightSextCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p18_geometric_gate_t6",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_size_three_to_six_decomposition",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_intermediate_lag7_must_cover_two",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_eighteen_hierarchy",
-     "line": 106
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_eighteen_geometric_gate_t6_synthesis",
-     "line": 113
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "EighteenLagRigidity",
-   "lines": 152,
-   "imports": [
-    "SixteenGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p18_subtractions_bound",
-     "line": 44
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_size_le_six",
-     "line": 52
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_size_cases",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_no_k_ge_seven_in_tight_le_six",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_quantum_level_le_two",
-     "line": 78
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_tight_quantum_level_le_one_of_size_four",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_size_le_five_of_D_le_seven",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_size_le_four_of_D_le_six",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_avoiding_size_le_three_of_D_le_five",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_eighteen_lag_rigidity_synthesis",
-     "line": 118
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "ElevenCapacityRigidity",
    "lines": 218,
    "imports": [
@@ -26871,59 +26441,6 @@
      "kind": "theorem",
      "name": "grand_eleven_capacity_rigidity_synthesis",
      "line": 194
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "ElevenGateT6Synthesis",
-   "lines": 196,
-   "imports": [
-    "ElevenCapacityRigidity",
-    "SS2AASCollisionObstruction",
-    "TwoSSTightAvoidanceTheorem",
-    "CapacitySlackCompensation",
-    "TenGateT6Resolution",
-    "GrandPeriodicDeletabilityTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "all_aas_tight_avoids_ss2_donation",
-     "line": 40
-    },
-    {
-     "kind": "theorem",
-     "name": "all_aas_tight_survives_ss2_donation",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "slack_avoiding_survives_deletion",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "donor_containing_survives_deletion",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "p11_gate_t6_of_all_aas_tight",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "p11_tight_avoiding_size_three_aas_survives",
-     "line": 135
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_eleven_gate_t6_synthesis",
-     "line": 157
     }
    ],
    "theorems": 7,
@@ -27447,13 +26964,12 @@
   },
   {
    "name": "ExactOrbitNonperiodicity",
-   "lines": 191,
+   "lines": 149,
    "imports": [
     "LeadingRunSupply",
     "ParitySupply",
     "ShortPeriodicSupply",
     "EventualPeriodicSupply",
-    "GrandUniversalCapacityResolution",
     "FiniteSeedPeriodicSupply",
     "OneSSMultiplicity",
     "LowSSPeriodicSupply",
@@ -27479,36 +26995,26 @@
     },
     {
      "kind": "theorem",
-     "name": "low_ss_periodic_obstruction",
+     "name": "positive_sum_subtraction_lt_addition",
      "line": 82
     },
     {
      "kind": "theorem",
-     "name": "grand_capacity_supply_obstruction",
-     "line": 107
+     "name": "low_ss_periodic_obstruction",
+     "line": 92
     },
     {
      "kind": "theorem",
      "name": "seeded_orbit_not_eventual_low_ss_periodic",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "seeded_orbit_not_eventual_periodic_of_capacity_induction",
-     "line": 136
+     "line": 117
     },
     {
      "kind": "theorem",
      "name": "canonical_orbit_not_eventual_low_ss_periodic",
-     "line": 153
-    },
-    {
-     "kind": "theorem",
-     "name": "canonical_orbit_not_eventual_periodic_of_capacity_induction",
-     "line": 172
+     "line": 132
     }
    ],
-   "theorems": 9,
+   "theorems": 7,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -28510,198 +28016,6 @@
    "hasReport": false
   },
   {
-   "name": "FourteenGateT6Resolution",
-   "lines": 259,
-   "imports": [
-    "TwelveGateT6Unconditional",
-    "LagSevenNeighborhoodRigidity",
-    "FourteenLagRigidity",
-    "TightTripleRigidity",
-    "SS2LagElevenForcing"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_size_cases",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_tight_size_two_survives",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_tight_triple_survives_of_not_mem",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_tight_quad_survives_of_not_mem",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 95
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_size_le_three_of_D_le_five",
-     "line": 137
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_size_le_two_of_D_le_four",
-     "line": 146
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 155
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 178
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_fourteen_gate_t6_resolution_synthesis",
-     "line": 202
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "FourteenGateT6Unconditional",
-   "lines": 302,
-   "imports": [
-    "TightQuadRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "ss2_donor_nonwrapping_p12_to_p14",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_all_aas_tight_triple_avoids",
-     "line": 57
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_all_aas_tight_triple_survives",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_of_triples_and_quads_aas",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_of_triples_aas_when_U_le_four",
-     "line": 126
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_of_triples_aas_when_D_le_five",
-     "line": 159
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_capacity_reduction_tier_one",
-     "line": 191
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_capacity_reduction_tier_two",
-     "line": 208
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_size_hierarchy",
-     "line": 227
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_fourteen_gate_t6_unconditional_synthesis",
-     "line": 239
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "FourteenLagRigidity",
-   "lines": 164,
-   "imports": [
-    "ElevenGateT6Synthesis",
-    "QuantumP2Arithmetic",
-    "UniversalTightLagBound",
-    "TightComponentSlackBound",
-    "P2ModFourRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p14_subtractions_bound",
-     "line": 44
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_subtractions_bound",
-     "line": 51
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_avoiding_size_le_four",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_avoiding_size_le_three",
-     "line": 67
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_no_k_ge_five_in_tight",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_tight_quantum_level_le_one",
-     "line": 88
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_gate_t6_of_U_le_three",
-     "line": 102
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_gate_t6_of_tight_all_aas",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_fourteen_lag_rigidity_synthesis",
-     "line": 142
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "Gate",
    "lines": 42,
    "imports": [
@@ -28723,518 +28037,6 @@
    "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": true
-  },
-  {
-   "name": "GateT6CapacityInduction",
-   "lines": 83,
-   "imports": [
-    "GrandUniversalGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "donation_deficit_zero",
-     "line": 38
-    },
-    {
-     "kind": "theorem",
-     "name": "inductive_step_hall_preservation",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "finite_capacity_preservation",
-     "line": 54
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_gate_t6_capacity_induction_synthesis",
-     "line": 62
-    }
-   ],
-   "theorems": 4,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GlobalUnboundednessSupply",
-   "lines": 214,
-   "imports": [
-    "SharpResidualKernel",
-    "OrbitBounds",
-    "EventualEscape",
-    "DriftResetAccumulation"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "upperTri_le_upperTri",
-     "line": 43
-    },
-    {
-     "kind": "theorem",
-     "name": "upperTri_lt_upperTri",
-     "line": 61
-    },
-    {
-     "kind": "theorem",
-     "name": "lt_of_upperTri_lt_upperTri",
-     "line": 70
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_values_unbounded_after",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "reset_stream_values_unbounded_after",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "missing_permanent_tail_values_unbounded_after",
-     "line": 119
-    },
-    {
-     "kind": "theorem",
-     "name": "missing_permanent_tail_values_unbounded",
-     "line": 129
-    },
-    {
-     "kind": "theorem",
-     "name": "canonical_orbit_unbounded",
-     "line": 138
-    },
-    {
-     "kind": "theorem",
-     "name": "canonical_orbit_unbounded_after",
-     "line": 144
-    },
-    {
-     "kind": "theorem",
-     "name": "signSum_of_all_additions",
-     "line": 153
-    },
-    {
-     "kind": "theorem",
-     "name": "consecutive_additions_unsupplied_deficit",
-     "line": 169
-    },
-    {
-     "kind": "theorem",
-     "name": "three_consecutive_additions_unsupplied",
-     "line": 179
-    },
-    {
-     "kind": "theorem",
-     "name": "no_three_consecutive_additions_if_all_supplied",
-     "line": 207
-    }
-   ],
-   "theorems": 13,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandApexPeriodEighteenTheorem",
-   "lines": 280,
-   "imports": [
-    "ApexPeriodicRigidityTheorem",
-    "FourteenGateT6Unconditional",
-    "SixteenGateT6Resolution",
-    "EighteenLagRigidity",
-    "EighteenGateT6Resolution",
-    "EighteenGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex18_capacity_stratification",
-     "line": 57
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_quantum_lag_hierarchy",
-     "line": 80
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_universal_size_two_survival",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_all_aas_survival_up_to_six",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_gate_t6_unconditional_tier_one",
-     "line": 125
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_gate_t6_unconditional_tier_two",
-     "line": 142
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_gate_t6_reduction_tier_three",
-     "line": 160
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_gate_t6_reduction_tier_four",
-     "line": 183
-    },
-    {
-     "kind": "theorem",
-     "name": "apex18_gate_t6_reduction_tier_five",
-     "line": 206
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_period_eighteen_synthesis",
-     "line": 235
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandApexPeriodSixteenTheorem",
-   "lines": 244,
-   "imports": [
-    "ApexPeriodicRigidityTheorem",
-    "FourteenGateT6Unconditional",
-    "SixteenGateT6Resolution",
-    "SixteenGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex16_capacity_stratification",
-     "line": 54
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_quantum_lag_hierarchy",
-     "line": 75
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_universal_size_two_survival",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_all_aas_survival_up_to_five",
-     "line": 102
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_gate_t6_unconditional_tier_one",
-     "line": 125
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_gate_t6_unconditional_tier_two",
-     "line": 144
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_gate_t6_reduction_tier_three",
-     "line": 163
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_gate_t6_reduction_tier_four",
-     "line": 186
-    },
-    {
-     "kind": "theorem",
-     "name": "apex16_gate_t6_reduction_tier_five",
-     "line": 209
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_period_sixteen_synthesis",
-     "line": 238
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandApexPeriodTwentyFourTheorem",
-   "lines": 322,
-   "imports": [
-    "GrandApexPeriodTwentyTwoTheorem",
-    "TwentyFourLagRigidity",
-    "TwentyFourGateT6Resolution",
-    "TwentyFourGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex24_capacity_stratification",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_quantum_lag_hierarchy",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_universal_size_two_survival",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_all_aas_survival_up_to_nine",
-     "line": 128
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_gate_t6_unconditional_tier_one",
-     "line": 145
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_gate_t6_unconditional_tier_two",
-     "line": 162
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_gate_t6_reduction_tier_three",
-     "line": 180
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_gate_t6_reduction_tier_four",
-     "line": 203
-    },
-    {
-     "kind": "theorem",
-     "name": "apex24_gate_t6_reduction_tier_six",
-     "line": 226
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_period_twenty_four_synthesis",
-     "line": 255
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandApexPeriodTwentyTheorem",
-   "lines": 243,
-   "imports": [
-    "GrandApexPeriodEighteenTheorem",
-    "TwentyLagRigidity",
-    "TwentyGateT6Resolution",
-    "TwentyGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex20_capacity_stratification",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_quantum_lag_hierarchy",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_universal_size_two_survival",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_all_aas_survival_up_to_seven",
-     "line": 115
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_gate_t6_unconditional_tier_one",
-     "line": 132
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_gate_t6_unconditional_tier_two",
-     "line": 149
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_gate_t6_reduction_tier_three",
-     "line": 167
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_gate_t6_reduction_tier_four",
-     "line": 190
-    },
-    {
-     "kind": "theorem",
-     "name": "apex20_gate_t6_reduction_tier_six",
-     "line": 213
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_period_twenty_synthesis",
-     "line": 236
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandApexPeriodTwentyTwoTheorem",
-   "lines": 295,
-   "imports": [
-    "GrandApexPeriodEighteenTheorem",
-    "TwentyLagRigidity",
-    "TwentyGateT6Resolution",
-    "TwentyGateT6Unconditional",
-    "TwentyTwoLagRigidity",
-    "TwentyTwoGateT6Resolution",
-    "TwentyTwoGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "apex22_capacity_stratification",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_quantum_lag_hierarchy",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_universal_size_two_survival",
-     "line": 105
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_all_aas_survival_up_to_eight",
-     "line": 123
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_gate_t6_unconditional_tier_one",
-     "line": 140
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_gate_t6_unconditional_tier_two",
-     "line": 157
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_gate_t6_reduction_tier_three",
-     "line": 175
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_gate_t6_reduction_tier_four",
-     "line": 198
-    },
-    {
-     "kind": "theorem",
-     "name": "apex22_gate_t6_reduction_tier_six",
-     "line": 221
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_apex_period_twenty_two_synthesis",
-     "line": 250
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandGeometricExclusionSynthesis",
-   "lines": 203,
-   "imports": [
-    "UniversalAASCoverageBound"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "lag7_distinct_endpoints_impossible",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "single_lag7_tight_subset_impossible",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "multi_window_capacity_contradiction",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "two_lag7_high_capacity_impossible",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_high_capacity_impossible",
-     "line": 122
-    },
-    {
-     "kind": "theorem",
-     "name": "disjoint_lag7_windows_impossible",
-     "line": 133
-    },
-    {
-     "kind": "theorem",
-     "name": "two_lag7_overlap_four_exact_coverage",
-     "line": 146
-    },
-    {
-     "kind": "theorem",
-     "name": "two_lag7_overlap_four_uncovered_exact",
-     "line": 158
-    },
-    {
-     "kind": "theorem",
-     "name": "two_lag7_uncovered_donor_survival",
-     "line": 167
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_geometric_exclusion_synthesis",
-     "line": 174
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
   },
   {
    "name": "GrandPeriodicBottleneckTheorem",
@@ -29413,163 +28215,105 @@
    "hasReport": false
   },
   {
-   "name": "GrandSurjectivityClosure",
-   "lines": 162,
+   "name": "HallMatching",
+   "lines": 446,
    "imports": [
-    "Surjectivity",
-    "NoPermanentHighEscape",
-    "NoCorridorReentry",
-    "LeastMissingTargetContradiction",
-    "RecurrentDowncrossingSubSum",
-    "TailDowncrossingInevitability",
-    "Coverage"
+    "TightPrivatePhase"
    ],
    "decls": [
     {
-     "kind": "theorem",
-     "name": "surjectivity_master_branch_reduction",
-     "line": 49
+     "kind": "def",
+     "name": "cover",
+     "line": 46
     },
     {
      "kind": "theorem",
-     "name": "counterexample_elimination_master_theorem",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "surjectivity_bilateral_equivalence_closed",
-     "line": 66
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_escape_branch_eliminated_of_downcrossing",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_branch_eliminated_of_preTail_oracle",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_target_dichotomy_resolved",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "surjectivity_target_tail_return_equivalence",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "surjective_of_all_coverageOracles",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_surjectivity_closure_synthesis",
-     "line": 124
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandUniversalCapacityResolution",
-   "lines": 146,
-   "imports": [
-    "GateT6CapacityInduction",
-    "GrandUniversalGateT6Resolution",
-    "LowSSPeriodicSupply",
-    "OneSSMultiplicity",
-    "LeadingRunSupply",
-    "ShortPeriodicSupply",
-    "LagElevenPeriodic"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "low_ss_base_capacity",
-     "line": 59
-    },
-    {
-     "kind": "theorem",
-     "name": "inductive_donor_reduction",
-     "line": 69
-    },
-    {
-     "kind": "inductive",
-     "name": "Gate",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_capacity_inequality",
-     "line": 78
-    },
-    {
-     "kind": "theorem",
-     "name": "positive_sum_subtraction_lt_addition",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_e067_p2_supply_obstruction",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_capacity_resolution",
-     "line": 109
-    }
-   ],
-   "theorems": 6,
-   "defs": 1,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "GrandUniversalGateT6Resolution",
-   "lines": 96,
-   "imports": [
-    "UniversalQuantumTightObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_subset_pure_aas_inevitable",
-     "line": 39
-    },
-    {
-     "kind": "theorem",
-     "name": "pure_aas_avoids_donated_subtraction",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "pure_aas_zero_loss_survival",
+     "name": "neighborhood_eq_cover",
      "line": 50
     },
     {
      "kind": "theorem",
-     "name": "slack_subset_hall_survival",
-     "line": 56
+     "name": "mem_cover_iff",
+     "line": 57
     },
     {
      "kind": "theorem",
-     "name": "sublist_hall_dichotomy",
+     "name": "cover_sublist",
      "line": 63
     },
     {
      "kind": "theorem",
-     "name": "grand_universal_gate_t6_resolution",
-     "line": 69
+     "name": "cover_nodup",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_congr",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_mono",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_filter_ground",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_filter_subset",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "length_filter_or",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "decide_not_mem_cover_eq",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "cover_append_length",
+     "line": 137
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_of_subset",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "nodup_map_of_inj_on",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching_aux",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching",
+     "line": 367
+    },
+    {
+     "kind": "theorem",
+     "name": "hall_matching_onto",
+     "line": 377
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_owner_map",
+     "line": 416
     }
    ],
-   "theorems": 6,
-   "defs": 0,
+   "theorems": 17,
+   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -30981,52 +29725,8 @@
    "hasReport": false
   },
   {
-   "name": "LagSevenChainDisjointness",
-   "lines": 98,
-   "imports": [
-    "LagSevenDistanceSeparationRigidity",
-    "ThreeLagSevenCapacityObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "lag7_distance_ge_seven_disjoint",
-     "line": 29
-    },
-    {
-     "kind": "theorem",
-     "name": "non_consecutive_window_disjoint",
-     "line": 34
-    },
-    {
-     "kind": "def",
-     "name": "inclusion_exclusion_3",
-     "line": 41
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_union_ge_seven",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_tight_subset_impossible",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_lag7_chain_disjointness_synthesis",
-     "line": 69
-    }
-   ],
-   "theorems": 5,
-   "defs": 1,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "LagSevenCollisionDistance",
-   "lines": 179,
+   "lines": 170,
    "imports": [
     "UniversalTightDecomposition"
    ],
@@ -31034,99 +29734,51 @@
     {
      "kind": "theorem",
      "name": "mod_eq_of_sub_mod_zero",
-     "line": 52
+     "line": 43
     },
     {
      "kind": "theorem",
      "name": "collision_implies_offset_congruence",
-     "line": 60
+     "line": 51
     },
     {
      "kind": "theorem",
      "name": "collision_mod_residue_eq",
-     "line": 70
+     "line": 61
     },
     {
      "kind": "theorem",
      "name": "lag7_collision_residue_cases",
-     "line": 79
+     "line": 70
     },
     {
      "kind": "theorem",
      "name": "lag7_avoids_of_not_in_residues",
-     "line": 91
+     "line": 82
     },
     {
      "kind": "theorem",
      "name": "lag7_not_mem_neighborhood_of_distance",
-     "line": 100
+     "line": 91
     },
     {
      "kind": "theorem",
      "name": "tight_triple_survives_of_distance",
-     "line": 120
+     "line": 111
     },
     {
      "kind": "theorem",
      "name": "tight_quad_single_survives_of_distance",
-     "line": 140
+     "line": 131
     },
     {
      "kind": "theorem",
      "name": "grand_lag_seven_collision_distance_synthesis",
-     "line": 167
+     "line": 158
     }
    ],
    "theorems": 9,
    "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "LagSevenDistanceRigidity",
-   "lines": 134,
-   "imports": [
-    "TightAvoidingStructuralClassification"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "lag7_offset_diff_bounds",
-     "line": 60
-    },
-    {
-     "kind": "def",
-     "name": "cyclic_distance_ge_seven",
-     "line": 66
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_distant_no_shared_phase",
-     "line": 71
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_distant_pair_disjoint",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_distant_pair_union_ge_six",
-     "line": 87
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_distant_pair_impossible",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_lag7_distance_rigidity_synthesis",
-     "line": 109
-    }
-   ],
-   "theorems": 6,
-   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -31244,148 +29896,226 @@
    "hasReport": false
   },
   {
-   "name": "LagSevenNeighborhoodRigidity",
-   "lines": 192,
+   "name": "LagSevenDonorCoverage",
+   "lines": 270,
    "imports": [
-    "TwelveGateT6Resolution",
-    "FourteenLagRigidity",
-    "TightTripleRigidity",
-    "LagSevenTightObstruction",
-    "TwoSSEndpoint"
+    "LagSevenPrefixRigidity",
+    "SS2LagElevenForcing"
    ],
    "decls": [
     {
      "kind": "def",
-     "name": "subOffsets",
-     "line": 44
+     "name": "d1",
+     "line": 54
     },
     {
      "kind": "def",
-     "name": "subOffsetSum",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_p2_offset_sum_fourteen",
-     "line": 51
-    },
-    {
-     "kind": "theorem",
-     "name": "subOffsetSum_eq_fourteen_of_p2",
+     "name": "d2",
      "line": 56
     },
     {
-     "kind": "theorem",
-     "name": "lag7_past_offset_sum_fourteen",
-     "line": 68
+     "kind": "def",
+     "name": "d3",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "d4",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "d5",
+     "line": 62
+    },
+    {
+     "kind": "def",
+     "name": "d6",
+     "line": 64
+    },
+    {
+     "kind": "def",
+     "name": "d7",
+     "line": 66
+    },
+    {
+     "kind": "def",
+     "name": "donors",
+     "line": 69
+    },
+    {
+     "kind": "def",
+     "name": "lag7Words",
+     "line": 72
     },
     {
      "kind": "theorem",
-     "name": "coprime_three_injective_p11",
+     "name": "mem_donors_iff",
      "line": 74
     },
     {
-     "kind": "theorem",
-     "name": "coprime_three_injective_p13",
-     "line": 80
+     "kind": "def",
+     "name": "oldestOffset",
+     "line": 79
     },
     {
      "kind": "theorem",
-     "name": "coprime_three_injective_p14",
-     "line": 86
+     "name": "oldestOffset_donors",
+     "line": 84
     },
     {
      "kind": "theorem",
-     "name": "tight_triple_at_most_one_lag_seven_of_no_both_three",
-     "line": 93
+     "name": "oldestOffset_is_oldest_S",
+     "line": 90
     },
     {
      "kind": "theorem",
-     "name": "list_len_three_cases",
-     "line": 109
+     "name": "past_eleven",
+     "line": 96
     },
     {
      "kind": "theorem",
-     "name": "tight_triple_lag_three_count_ge_two",
-     "line": 115
+     "name": "past_getD",
+     "line": 103
+    },
+    {
+     "kind": "def",
+     "name": "coverOK",
+     "line": 116
     },
     {
      "kind": "theorem",
-     "name": "tight_triple_retains_two_phases",
-     "line": 146
+     "name": "coverOK_of_stream",
+     "line": 122
     },
     {
      "kind": "theorem",
-     "name": "grand_lag_seven_neighborhood_rigidity_synthesis",
-     "line": 171
+     "name": "coverOK_classification",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification_explicit",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_impossible_d3_d5_d6_d7",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_eleven_words",
+     "line": 205
+    },
+    {
+     "kind": "theorem",
+     "name": "hasP2Prefix_eq_false_iff",
+     "line": 211
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_eleven_mem_donors",
+     "line": 225
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_ss2_lt_fifteen_mem_donors",
+     "line": 246
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_cover_classification_of_minimal",
+     "line": 255
     }
    ],
-   "theorems": 11,
-   "defs": 2,
+   "theorems": 15,
+   "defs": 11,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
    "name": "LagSevenPrefixRigidity",
-   "lines": 131,
+   "lines": 130,
    "imports": [
-    "LagSevenDistanceRigidity"
+    "CapacitySlackCompensation",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "LagSevenTightObstruction",
+    "OneSSMultiplicity",
+    "P2ModFourRigidity",
+    "QuantumP2Arithmetic",
+    "SS2AASCollisionObstruction",
+    "SS2LagElevenForcing",
+    "TenGateT6Resolution",
+    "TightAvoidingLagCertificate",
+    "TightComponentSlackBound",
+    "TightTripleCollisionObstruction",
+    "TightTripleRigidity",
+    "TwoSSEndpoint",
+    "TwoSSTightAvoidanceTheorem",
+    "UniversalTightLagBound"
    ],
    "decls": [
     {
      "kind": "def",
      "name": "w1",
-     "line": 59
+     "line": 58
     },
     {
      "kind": "def",
      "name": "w2",
-     "line": 60
+     "line": 59
     },
     {
      "kind": "def",
      "name": "w3",
-     "line": 61
+     "line": 60
     },
     {
      "kind": "def",
      "name": "w4",
-     "line": 62
+     "line": 61
     },
     {
      "kind": "def",
      "name": "isP2Word",
-     "line": 65
+     "line": 64
     },
     {
      "kind": "theorem",
      "name": "lag7_p2_words_classification",
-     "line": 69
+     "line": 68
     },
     {
      "kind": "theorem",
      "name": "lag7_w3_w4_have_p2_prefix",
-     "line": 74
+     "line": 73
     },
     {
      "kind": "theorem",
      "name": "lag7_w1_w2_no_p2_prefix",
-     "line": 79
+     "line": 78
     },
     {
      "kind": "theorem",
      "name": "lag7_minimal_words_classification",
-     "line": 84
+     "line": 83
     },
     {
      "kind": "theorem",
      "name": "lag7_minimal_lag7_must_be_w1_or_w2",
-     "line": 89
+     "line": 88
     },
     {
      "kind": "theorem",
      "name": "grand_lag7_prefix_rigidity_synthesis",
-     "line": 105
+     "line": 104
     }
    ],
    "theorems": 6,
@@ -31947,61 +30677,6 @@
    ],
    "theorems": 45,
    "defs": 8,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "LeastMissingTargetContradiction",
-   "lines": 150,
-   "imports": [
-    "RecurrentDowncrossingSubSum",
-    "TailDowncrossingInevitability",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "PermanentHighGlobalSynthesis",
-    "LeastTailLedgerMinimum",
-    "TargetTailResidualKernel",
-    "CrossingTailRefined"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tail_escape_strictly_lt_six_times",
-     "line": 52
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_target_escape_strictly_lt_six_times",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_escape_dichotomy_resolution",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "contradiction_of_least_missing_and_tail_return",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "contradiction_of_least_missing_and_preTail_oracle",
-     "line": 98
-    },
-    {
-     "kind": "theorem",
-     "name": "recurrent_downcrossings_contradicts_bounded_ledger",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_least_missing_target_contradiction_synthesis",
-     "line": 127
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -32973,124 +31648,6 @@
    "hasReport": false
   },
   {
-   "name": "LeastTailMinimumDynamics",
-   "lines": 318,
-   "imports": [
-    "LeastTailLedgerMinimum",
-    "CanonicalSSFreeSupply",
-    "DriftResetAccumulation",
-    "GlobalUnboundednessSupply",
-    "NoDoubleAdditionRun",
-    "SubtractionLedger"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_first_canonicalSign",
-     "line": 31
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_first_value",
-     "line": 39
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_first_subSum",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_first_subCount",
-     "line": 54
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_canonicalSign",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_value",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_subSum",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_subCount",
-     "line": 98
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_first_ledger_identity",
-     "line": 110
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_ledger_identity",
-     "line": 120
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_gt_twice_time",
-     "line": 130
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_followup_quotient_ge_two",
-     "line": 140
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_step3_cases",
-     "line": 154
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_step3_gt_minimum",
-     "line": 174
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_step3_subtraction_forces_step4_addition",
-     "line": 183
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_step_before_addition_or_step3_addition",
-     "line": 207
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_forces_three_consecutive_additions",
-     "line": 232
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_forces_unsupplied_addition",
-     "line": 265
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_minimum_incompatible_with_all_supplied",
-     "line": 279
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_tail_ledger_unsupplied_deficit",
-     "line": 294
-    }
-   ],
-   "theorems": 20,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "LevelTwoThree",
    "lines": 138,
    "imports": [
@@ -33589,183 +32146,6 @@
    "hasReport": false
   },
   {
-   "name": "MasterGateT6GeometricResolution",
-   "lines": 164,
-   "imports": [
-    "UniversalLagSevenCapacityBound"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "master_all_aas_survival",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "master_single_lag7_impossibility",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "master_collective_lag7_bound",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "master_disjoint_lag7_impossibility",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "master_period_hierarchy_classification",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_master_gate_t6_geometric_resolution",
-     "line": 134
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "MasterGateT6PureAASHierarchy",
-   "lines": 152,
-   "imports": [
-    "ThreeLagSevenCapacityObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "hierarchy_size_three_pure_aas",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "hierarchy_size_four_pure_aas",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "hierarchy_size_five_pure_aas",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "hierarchy_pure_aas_zero_loss",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_intermediate_size_bound",
-     "line": 98
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_intermediate_size_trichotomy",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_master_gate_t6_pure_aas_hierarchy_synthesis",
-     "line": 112
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "MasterGateT6TightAllAASClosure",
-   "lines": 147,
-   "imports": [
-    "TwoLagSevenPhaseConflict"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_lag7_zero_survives",
-     "line": 61
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag7_one_impossible",
-     "line": 66
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag7_two_impossible",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag7_zero_or_ge_three",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_small_pure_aas",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_master_gate_t6_tight_all_aas_closure",
-     "line": 116
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "MasterGeometricGateT6Resolution",
-   "lines": 154,
-   "imports": [
-    "TightQuadCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_quad_distant_aas_impossible",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "p10_unconditional_geometric_gate_t6",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_geometric_gate_t6",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_geometric_gate_t6",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_hierarchy",
-     "line": 139
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_master_geometric_gate_t6_synthesis",
-     "line": 146
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "Mechanisms",
    "lines": 196,
    "imports": [
@@ -34237,69 +32617,6 @@
    "hasReport": false
   },
   {
-   "name": "NoCorridorReentry",
-   "lines": 160,
-   "imports": [
-    "Surjectivity",
-    "NoPermanentHighEscape",
-    "LeastMissingTargetContradiction",
-    "RecurrentDowncrossingSubSum",
-    "TailDowncrossingInevitability",
-    "TailDowncrossingLedger",
-    "TargetTailResidualKernel",
-    "CorridorDensityObstruction",
-    "FiniteBlockCapacity",
-    "DriftResetAccumulation",
-    "GlobalUnboundednessSupply"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_ledger_bounds",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_clock_deposit",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_value_in_corridor",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "missing_permanent_tail_values_le_target_before_start",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "missing_permanent_tail_pre_tail_capacity_bound",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_contradicts_preTail_oracle",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "recurrent_corridor_reentry_subSum_divergence",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_no_corridor_reentry_synthesis",
-     "line": 129
-    }
-   ],
-   "theorems": 8,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "NoDoubleAdditionRun",
    "lines": 54,
    "imports": [
@@ -34323,71 +32640,6 @@
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": true
-  },
-  {
-   "name": "NoPermanentHighEscape",
-   "lines": 208,
-   "imports": [
-    "Surjectivity",
-    "LeastMissingTargetContradiction",
-    "TailDowncrossingInevitability",
-    "PermanentHighGlobalSynthesis",
-    "PermanentHighBlockerCapacity",
-    "PermanentHighToothcombBound",
-    "PermanentHighToothcombDescent",
-    "PermanentHighRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "downcrossing_contradicts_permanent_high",
-     "line": 53
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_escape_iff_no_downcrossing",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "corridor_reentry_of_not_permanent_high",
-     "line": 79
-    },
-    {
-     "kind": "theorem",
-     "name": "escape_state_pigeonhole_capacity",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "escape_state_unblocked_candidate_avoids_history",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "escape_state_descent_strictly_below_twice_clock",
-     "line": 131
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_subSum_capped_of_escape",
-     "line": 145
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_subCount_capped_of_escape",
-     "line": 154
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_no_permanent_high_escape_synthesis",
-     "line": 172
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
   },
   {
    "name": "NoSSMassOne",
@@ -36163,6 +34415,454 @@
    "hasReport": true
   },
   {
+   "name": "OwnerFamilyLagEleven",
+   "lines": 573,
+   "imports": [
+    "LagSevenDonorCoverage"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "aas",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "l01",
+     "line": 56
+    },
+    {
+     "kind": "def",
+     "name": "l02",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "l03",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "l04",
+     "line": 62
+    },
+    {
+     "kind": "def",
+     "name": "l05",
+     "line": 64
+    },
+    {
+     "kind": "def",
+     "name": "l06",
+     "line": 66
+    },
+    {
+     "kind": "def",
+     "name": "l07",
+     "line": 68
+    },
+    {
+     "kind": "def",
+     "name": "l08",
+     "line": 70
+    },
+    {
+     "kind": "def",
+     "name": "l09",
+     "line": 72
+    },
+    {
+     "kind": "def",
+     "name": "l10",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "l11",
+     "line": 76
+    },
+    {
+     "kind": "def",
+     "name": "l12",
+     "line": 78
+    },
+    {
+     "kind": "def",
+     "name": "l13",
+     "line": 80
+    },
+    {
+     "kind": "def",
+     "name": "l14",
+     "line": 82
+    },
+    {
+     "kind": "def",
+     "name": "l15",
+     "line": 84
+    },
+    {
+     "kind": "def",
+     "name": "l16",
+     "line": 86
+    },
+    {
+     "kind": "def",
+     "name": "l17",
+     "line": 88
+    },
+    {
+     "kind": "def",
+     "name": "ownerWords",
+     "line": 91
+    },
+    {
+     "kind": "def",
+     "name": "lagElevenWords",
+     "line": 94
+    },
+    {
+     "kind": "def",
+     "name": "isMinimalP2",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "ownerWords_eq",
+     "line": 102
+    },
+    {
+     "kind": "def",
+     "name": "sOffsets",
+     "line": 108
+    },
+    {
+     "kind": "structure",
+     "name": "Config",
+     "line": 112
+    },
+    {
+     "kind": "def",
+     "name": "bitAt",
+     "line": 118
+    },
+    {
+     "kind": "def",
+     "name": "agrees",
+     "line": 124
+    },
+    {
+     "kind": "def",
+     "name": "isMember",
+     "line": 129
+    },
+    {
+     "kind": "def",
+     "name": "isOwned",
+     "line": 130
+    },
+    {
+     "kind": "def",
+     "name": "consistent",
+     "line": 135
+    },
+    {
+     "kind": "def",
+     "name": "extend",
+     "line": 140
+    },
+    {
+     "kind": "def",
+     "name": "needs",
+     "line": 147
+    },
+    {
+     "kind": "inductive",
+     "name": "Cert",
+     "line": 153
+    },
+    {
+     "kind": "def",
+     "name": "findKid",
+     "line": 156
+    },
+    {
+     "kind": "def",
+     "name": "check",
+     "line": 165
+    },
+    {
+     "kind": "def",
+     "name": "rootConfig",
+     "line": 179
+    },
+    {
+     "kind": "def",
+     "name": "checkRoot",
+     "line": 185
+    },
+    {
+     "kind": "def",
+     "name": "cert_l01",
+     "line": 192
+    },
+    {
+     "kind": "def",
+     "name": "cert_l02",
+     "line": 194
+    },
+    {
+     "kind": "def",
+     "name": "cert_l03",
+     "line": 196
+    },
+    {
+     "kind": "def",
+     "name": "cert_l04",
+     "line": 198
+    },
+    {
+     "kind": "def",
+     "name": "cert_l05",
+     "line": 200
+    },
+    {
+     "kind": "def",
+     "name": "cert_l06",
+     "line": 202
+    },
+    {
+     "kind": "def",
+     "name": "cert_l07",
+     "line": 204
+    },
+    {
+     "kind": "def",
+     "name": "cert_l08",
+     "line": 206
+    },
+    {
+     "kind": "def",
+     "name": "cert_l09",
+     "line": 208
+    },
+    {
+     "kind": "def",
+     "name": "cert_l10",
+     "line": 210
+    },
+    {
+     "kind": "def",
+     "name": "cert_l11",
+     "line": 212
+    },
+    {
+     "kind": "def",
+     "name": "cert_l12",
+     "line": 214
+    },
+    {
+     "kind": "def",
+     "name": "cert_l13",
+     "line": 216
+    },
+    {
+     "kind": "def",
+     "name": "cert_l14",
+     "line": 218
+    },
+    {
+     "kind": "def",
+     "name": "cert_l15",
+     "line": 220
+    },
+    {
+     "kind": "def",
+     "name": "cert_l16",
+     "line": 222
+    },
+    {
+     "kind": "def",
+     "name": "cert_l17",
+     "line": 224
+    },
+    {
+     "kind": "def",
+     "name": "cert_w2",
+     "line": 226
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l01",
+     "line": 229
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l02",
+     "line": 230
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l03",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l04",
+     "line": 232
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l05",
+     "line": 233
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l06",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l07",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l08",
+     "line": 236
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l09",
+     "line": 237
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l10",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l11",
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l12",
+     "line": 240
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l13",
+     "line": 241
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l14",
+     "line": 242
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l15",
+     "line": 243
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l16",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_l17",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_w2",
+     "line": 246
+    },
+    {
+     "kind": "def",
+     "name": "clock",
+     "line": 251
+    },
+    {
+     "kind": "structure",
+     "name": "OwnerFamily",
+     "line": 256
+    },
+    {
+     "kind": "structure",
+     "name": "Realizes",
+     "line": 267
+    },
+    {
+     "kind": "theorem",
+     "name": "sOffsets_mem",
+     "line": 276
+    },
+    {
+     "kind": "theorem",
+     "name": "needs_spec",
+     "line": 289
+    },
+    {
+     "kind": "theorem",
+     "name": "bitAt_some",
+     "line": 297
+    },
+    {
+     "kind": "theorem",
+     "name": "isOwned_of_mem",
+     "line": 311
+    },
+    {
+     "kind": "theorem",
+     "name": "agrees_of_bits",
+     "line": 319
+    },
+    {
+     "kind": "theorem",
+     "name": "check_sound",
+     "line": 331
+    },
+    {
+     "kind": "theorem",
+     "name": "rootConfig_realizes",
+     "line": 442
+    },
+    {
+     "kind": "theorem",
+     "name": "checkRoot_sound",
+     "line": 483
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_eleven_window_mem",
+     "line": 499
+    },
+    {
+     "kind": "theorem",
+     "name": "no_lag_eleven_member",
+     "line": 506
+    },
+    {
+     "kind": "theorem",
+     "name": "no_w2_member",
+     "line": 533
+    },
+    {
+     "kind": "theorem",
+     "name": "no_lag_eleven_member_of_minimal",
+     "line": 541
+    }
+   ],
+   "theorems": 31,
+   "defs": 56,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "P2ModFourRigidity",
    "lines": 161,
    "imports": [
@@ -36322,55 +35022,65 @@
    "hasReport": false
   },
   {
-   "name": "ParametricGateT6Synthesis",
-   "lines": 264,
+   "name": "PairedSubtractionCoverage",
+   "lines": 139,
    "imports": [
-    "UniversalCapacityThresholds"
+    "LagSevenDonorCoverage"
    ],
    "decls": [
     {
-     "kind": "theorem",
-     "name": "p12_gate_t6_triple_reduction",
-     "line": 50
+     "kind": "def",
+     "name": "PairedOlderS",
+     "line": 52
+    },
+    {
+     "kind": "def",
+     "name": "pairedAt",
+     "line": 56
     },
     {
      "kind": "theorem",
-     "name": "p14_gate_t6_triple_quad_reduction",
-     "line": 78
+     "name": "pairedAt_aas",
+     "line": 60
     },
     {
      "kind": "theorem",
-     "name": "p16_gate_t6_tri_quad_quint_reduction",
-     "line": 103
+     "name": "pairedAt_lag7",
+     "line": 65
     },
     {
      "kind": "theorem",
-     "name": "p18_gate_t6_reduction_tier",
-     "line": 128
+     "name": "pairedAt_of_stream",
+     "line": 70
     },
     {
      "kind": "theorem",
-     "name": "p20_gate_t6_reduction_tier",
-     "line": 153
+     "name": "aas_window_no_paired_older",
+     "line": 91
     },
     {
      "kind": "theorem",
-     "name": "p22_gate_t6_reduction_tier",
-     "line": 178
+     "name": "lag7_window_paired_older",
+     "line": 102
     },
     {
      "kind": "theorem",
-     "name": "p24_gate_t6_reduction_tier",
-     "line": 203
+     "name": "w2_window_no_paired_older",
+     "line": 116
     },
     {
      "kind": "theorem",
-     "name": "grand_parametric_gate_t6_synthesis",
-     "line": 228
+     "name": "minimal_lag7_window_paired_older",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_window_no_paired_older_of_p2",
+     "line": 133
     }
    ],
    "theorems": 8,
-   "defs": 0,
+   "defs": 2,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -36746,6 +35456,65 @@
     }
    ],
    "theorems": 12,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PeriodicOwnerFamilyLagEleven",
+   "lines": 233,
+   "imports": [
+    "OwnerFamilyLagEleven",
+    "HallMatching"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "emod_congr",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "e_of_emod_eq",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "past_of_emod_eq",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_congr",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_of_lt",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "phase_eq_of_emod",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "e_phase",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_no_lag_eleven",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_lag_three_or_seven",
+     "line": 215
+    }
+   ],
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -40987,481 +39756,158 @@
    "hasReport": true
   },
   {
-   "name": "PermanentHighBlockerCapacity",
-   "lines": 243,
+   "name": "PermanentHighInternalBlocker",
+   "lines": 283,
    "imports": [
-    "PermanentHighToothcombBound",
-    "PermanentHighHistoryExhaustion",
-    "LagElevenPeriodic"
+    "OrbitBounds",
+    "Basic",
+    "History",
+    "DebtInvariant",
+    "ActualDescent"
    ],
    "decls": [
     {
      "kind": "theorem",
-     "name": "toothcomb_candidate_gt_two_n",
-     "line": 41
+     "name": "le_upperTri",
+     "line": 57
     },
     {
      "kind": "theorem",
-     "name": "toothcomb_candidate_pos",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "a_zero_eq_zero",
-     "line": 53
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_ne_a_zero",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_blocker_ne_zero",
+     "name": "candidate_subtraction_lower_bound",
      "line": 63
     },
     {
      "kind": "theorem",
-     "name": "a_one_eq_one",
-     "line": 73
+     "name": "candidate_subtraction_gt_upperTri",
+     "line": 69
     },
     {
      "kind": "theorem",
-     "name": "toothcomb_candidate_ne_a_one",
+     "name": "pre_horizon_value_le_upperTri",
      "line": 76
     },
     {
      "kind": "theorem",
-     "name": "toothcomb_blocker_ne_one",
-     "line": 84
+     "name": "pre_horizon_blocker_impossible",
+     "line": 87
     },
     {
      "kind": "theorem",
-     "name": "toothcomb_candidates_length",
-     "line": 95
+     "name": "pre_horizon_valuesThrough_avoidance",
+     "line": 98
     },
     {
      "kind": "theorem",
-     "name": "toothcomb_candidates_nodup",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "mem_toothcomb_candidates_iff",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "historical_nonzero_values_length",
-     "line": 119
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_not_all_blocked_by_history",
-     "line": 126
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_exists_unblocked_candidate",
-     "line": 154
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_unblocked_candidate_avoids_valuesThrough",
-     "line": 172
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_gt_base",
-     "line": 182
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_ne_base",
-     "line": 188
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_unblocked_candidate_avoids_prior_subtractions",
-     "line": 194
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_unblocked_candidate_avoids_additions",
-     "line": 200
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_permanent_high_blocker_capacity_synthesis",
-     "line": 214
-    }
-   ],
-   "theorems": 20,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "PermanentHighCollision",
-   "lines": 235,
-   "imports": [
-    "PermanentHighRigidity",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "DebtInvariant"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "aasaas_subtraction_candidate_collision",
-     "line": 43
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaas_candidate_in_valuesThrough",
-     "line": 71
-    },
-    {
-     "kind": "theorem",
-     "name": "no_aasaas_pattern",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaa_forces_third_addition",
-     "line": 106
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaaa_value_ge_six_times",
-     "line": 141
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaaa_satisfies_prior_summit",
-     "line": 154
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaaa_subtraction_candidate",
-     "line": 168
-    },
-    {
-     "kind": "theorem",
-     "name": "aasaaa_subtraction_candidate_strictly_between",
-     "line": 180
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_permanent_high_collision_resolution",
-     "line": 216
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "PermanentHighGlobalSynthesis",
-   "lines": 132,
-   "imports": [
-    "PermanentHighBlockerCapacity",
-    "PermanentHighHistoryExhaustion",
-    "PermanentHighToothcombBound"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "high_regime_horizon_satisfaction_of_ge_six",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "exists_unblocked_horizon_candidate",
-     "line": 52
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_forced_downcrossing_at_step_n",
-     "line": 70
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_universal_dichotomy",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_permanent_high_global_synthesis",
+     "name": "not_canSubtract_forces_tail_blocker",
      "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_current",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_previous",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_not_two_back",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_strictly_prior_to_two_back",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_blocker_forces_height_elevation",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_blocker_summit_existence",
+     "line": 214
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_permanent_high_internal_blocker_synthesis",
+     "line": 244
     }
    ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "PermanentHighHistoryExhaustion",
-   "lines": 140,
-   "imports": [
-    "PermanentHighToothcombBound",
-    "PermanentHighToothcombDescent",
-    "PermanentHighCollision",
-    "PermanentHighRigidity",
-    "TailDowncrossingDichotomy"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "toothcomb_blocker_injective",
-     "line": 41
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_blocker_index_unique",
-     "line": 54
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_blocker_height_escalation",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_blocker_relative_height",
-     "line": 75
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_no_historical_blocker_under_ceiling",
-     "line": 88
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_avoids_all_past_history",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_permanent_high_history_exhaustion_synthesis",
-     "line": 120
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "PermanentHighRigidity",
-   "lines": 317,
-   "imports": [
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "LeastTailMinimumDynamics",
-    "EventualHighCorridorStructure",
-    "DebtInvariant"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "permanent_high_two_subtractions_requires_four_times",
-     "line": 49
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_three_subtractions_requires_five_times",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_not_two_subtractions_of_lt_four",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_not_three_subtractions_of_lt_five",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_two_additions_reach_three",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_candidate_after_two_additions",
-     "line": 127
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_candidate_between",
-     "line": 137
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_third_addition_must_be_blocked",
-     "line": 146
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_third_addition_blocker_prior",
-     "line": 170
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_third_addition_prior_summit",
-     "line": 197
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_no_three_consecutive_additions_under_summit_bound",
-     "line": 216
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_forced_subtraction_landing_value",
-     "line": 234
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_forced_subtraction_landing_fresh",
-     "line": 254
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_infinitely_many_subtractions",
-     "line": 271
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_bilateral_rigidity",
-     "line": 285
-    }
-   ],
-   "theorems": 15,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "PermanentHighToothcombBound",
-   "lines": 125,
-   "imports": [
-    "PermanentHighToothcombDescent",
-    "PermanentHighRigidity",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "toothcomb_high_regime_inequality",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_exceeds_high_bound_forces_downcrossing",
-     "line": 54
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_subtraction_values_strictly_decreasing",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_subtraction_values_distinct",
-     "line": 71
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_additions_strictly_above_subtractions",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_avoids_prior_subtractions",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_candidate_avoids_additions",
-     "line": 91
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_toothcomb_horizon_synthesis",
-     "line": 105
-    }
-   ],
-   "theorems": 8,
+   "theorems": 14,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
    "name": "PermanentHighToothcombDescent",
-   "lines": 324,
+   "lines": 330,
    "imports": [
-    "PermanentHighCollision",
-    "PermanentHighRigidity",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "DebtInvariant"
+    "DebtInvariant",
+    "CanonicalSSFreeSupply",
+    "DriftResetAccumulation",
+    "EventualEscape",
+    "EventualHighCorridorStructure",
+    "LeastTailLedgerMinimum",
+    "LeastTailLedgerProvenance",
+    "NoDoubleAdditionRun",
+    "OrbitBounds",
+    "SharpResidualKernel",
+    "SubtractionLedger"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "toothcomb_unit_decrement_candidate",
-     "line": 52
+     "line": 58
     },
     {
      "kind": "theorem",
      "name": "toothcomb_subtraction_landing_value",
-     "line": 61
+     "line": 67
     },
     {
      "kind": "theorem",
      "name": "aasa_subtraction_candidate",
-     "line": 79
+     "line": 85
     },
     {
      "kind": "theorem",
      "name": "aasa_candidate_not_in_current_episode",
-     "line": 107
+     "line": 113
     },
     {
      "kind": "theorem",
      "name": "aasa_fifth_addition_requires_prior_summit",
-     "line": 142
+     "line": 148
     },
     {
      "kind": "theorem",
      "name": "aasa_forced_subtraction_under_summit_bound",
-     "line": 184
+     "line": 190
     },
     {
      "kind": "theorem",
      "name": "aasa_forced_subtraction_landing_value",
-     "line": 199
+     "line": 205
     },
     {
      "kind": "theorem",
      "name": "aasas_step7_subtraction_candidate",
-     "line": 223
+     "line": 229
     },
     {
      "kind": "theorem",
      "name": "aasas_step7_candidate_not_in_current_episode",
-     "line": 245
+     "line": 251
     },
     {
      "kind": "theorem",
      "name": "grand_permanent_high_toothcomb_branching_synthesis",
-     "line": 298
+     "line": 304
     }
    ],
    "theorems": 10,
@@ -41471,70 +39917,114 @@
   },
   {
    "name": "PermanentHighUnsuppliedDeficit",
-   "lines": 284,
+   "lines": 463,
    "imports": [
-    "PermanentHighCollision",
-    "PermanentHighRigidity",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "GlobalUnboundednessSupply",
     "DriftResetAccumulation",
     "CanonicalSSFreeSupply",
-    "DebtInvariant"
+    "DebtInvariant",
+    "EventualEscape",
+    "EventualHighCorridorStructure",
+    "LeastTailLedgerMinimum",
+    "LeastTailLedgerProvenance",
+    "NoDoubleAdditionRun",
+    "OrbitBounds",
+    "SharpResidualKernel",
+    "SubtractionLedger",
+    "FiniteBlockCapacity"
    ],
    "decls": [
     {
      "kind": "theorem",
-     "name": "canonicalSign_of_not_canSubtract",
-     "line": 54
+     "name": "signSum_of_all_additions",
+     "line": 66
     },
     {
      "kind": "theorem",
-     "name": "aasaa_three_consecutive_canonicalSigns",
-     "line": 62
+     "name": "consecutive_additions_unsupplied_deficit",
+     "line": 82
     },
     {
      "kind": "theorem",
-     "name": "aasaa_forces_unsupplied_addition",
-     "line": 86
+     "name": "three_consecutive_additions_unsupplied",
+     "line": 92
     },
     {
      "kind": "theorem",
-     "name": "aasaaa_four_consecutive_canonicalSigns",
-     "line": 100
+     "name": "aasaas_subtraction_candidate_collision",
+     "line": 123
     },
     {
      "kind": "theorem",
-     "name": "aasaaa_four_additions_unsupplied_deficit",
-     "line": 128
+     "name": "aasaas_candidate_in_valuesThrough",
+     "line": 151
     },
     {
      "kind": "theorem",
-     "name": "aasaaa_candidate_not_in_current_episode",
-     "line": 145
+     "name": "no_aasaas_pattern",
+     "line": 166
     },
     {
      "kind": "theorem",
-     "name": "aasaaa_fourth_addition_requires_super_summit",
+     "name": "aasaa_forces_third_addition",
      "line": 184
     },
     {
      "kind": "theorem",
+     "name": "aasaaa_subtraction_candidate",
+     "line": 219
+    },
+    {
+     "kind": "theorem",
+     "name": "canonicalSign_of_not_canSubtract",
+     "line": 233
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaa_three_consecutive_canonicalSigns",
+     "line": 241
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaa_forces_unsupplied_addition",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_four_consecutive_canonicalSigns",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_four_additions_unsupplied_deficit",
+     "line": 307
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_candidate_not_in_current_episode",
+     "line": 324
+    },
+    {
+     "kind": "theorem",
+     "name": "aasaaa_fourth_addition_requires_super_summit",
+     "line": 363
+    },
+    {
+     "kind": "theorem",
      "name": "aasaaa_forced_subtraction_under_super_summit_bound",
-     "line": 215
+     "line": 394
     },
     {
      "kind": "theorem",
      "name": "aasaaa_forced_subtraction_landing_value",
-     "line": 231
+     "line": 410
     },
     {
      "kind": "theorem",
      "name": "grand_permanent_high_unsupplied_deficit_synthesis",
-     "line": 259
+     "line": 438
     }
    ],
-   "theorems": 10,
+   "theorems": 18,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -42545,79 +41035,6 @@
    "hasReport": true
   },
   {
-   "name": "QuantumLagSizeRigidity",
-   "lines": 164,
-   "imports": [
-    "TwoLagSevenOverlapGeometry"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "quantum_lag_capacity_containment",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_lag_level_bound",
-     "line": 69
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_lag_j_upper_bound",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_lag_oversized_impossible",
-     "line": 80
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k3",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k4",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k5",
-     "line": 95
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k6",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k7",
-     "line": 105
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k8",
-     "line": 110
-    },
-    {
-     "kind": "theorem",
-     "name": "quantum_spectrum_k9",
-     "line": 115
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_quantum_lag_size_rigidity_synthesis",
-     "line": 120
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "QuantumP2Arithmetic",
    "lines": 121,
    "imports": [
@@ -43215,68 +41632,6 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
-  },
-  {
-   "name": "RecurrentDowncrossingSubSum",
-   "lines": 189,
-   "imports": [
-    "TailDowncrossingInevitability",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger",
-    "EventualHighCorridorStructure",
-    "GlobalUnboundednessSupply"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "subSum_ge_of_canSubtract",
-     "line": 50
-    },
-    {
-     "kind": "theorem",
-     "name": "subSum_unbounded_after",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "subSum_unbounded",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "subCount_unbounded_after",
-     "line": 79
-    },
-    {
-     "kind": "theorem",
-     "name": "subCount_unbounded",
-     "line": 95
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_deposit_exceeds_bound",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_reentry_ledger_divergence",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "recurrent_downcrossings_force_arbitrary_ledger_growth",
-     "line": 131
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_recurrent_downcrossing_subSum_synthesis",
-     "line": 161
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
   },
   {
    "name": "RecurringCandidateBurst",
@@ -46150,243 +44505,6 @@
    "hasReport": false
   },
   {
-   "name": "SixteenGateT6Resolution",
-   "lines": 279,
-   "imports": [
-    "SixteenLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p16_tight_size_two_survives",
-     "line": 43
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_tight_triple_survives_of_not_mem",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_tight_quad_survives_of_not_mem",
-     "line": 70
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_tight_quint_survives_of_not_mem",
-     "line": 80
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 141
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 158
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_gate_t6_of_U_le_four_and_triples",
-     "line": 176
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_gate_t6_of_D_le_five_and_triples",
-     "line": 199
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_sixteen_gate_t6_resolution_synthesis",
-     "line": 222
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "SixteenGateT6Unconditional",
-   "lines": 265,
-   "imports": [
-    "SixteenGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "ss2_donor_nonwrapping_p12_to_p16",
-     "line": 51
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_triple_avoids",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_triple_survives",
-     "line": 79
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_quad_avoids",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_quad_survives",
-     "line": 116
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_quint_avoids",
-     "line": 136
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_all_aas_tight_quint_survives",
-     "line": 153
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_gate_t6_of_triples_quads_quints_aas",
-     "line": 173
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_capacity_reduction_tier_one",
-     "line": 204
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_capacity_reduction_tier_two",
-     "line": 223
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_hierarchy",
-     "line": 242
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_sixteen_gate_t6_unconditional_synthesis",
-     "line": 256
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "SixteenGeometricGateT6Resolution",
-   "lines": 127,
-   "imports": [
-    "TightQuintCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p16_geometric_gate_t6",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_size_three_to_five_decomposition",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_intermediate_lag7_must_cover_two",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_sixteen_hierarchy",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_sixteen_geometric_gate_t6_synthesis",
-     "line": 110
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "SixteenLagRigidity",
-   "lines": 148,
-   "imports": [
-    "FourteenGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p16_subtractions_bound",
-     "line": 43
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_le_five",
-     "line": 51
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_cases",
-     "line": 62
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_no_k_ge_seven_in_tight",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_tight_quantum_level_le_two",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_tight_quantum_level_le_one_of_size_four",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_le_four_of_D_le_six",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_le_three_of_D_le_five",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "p16_avoiding_size_le_two_of_D_le_four",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_sixteen_lag_rigidity_synthesis",
-     "line": 117
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "StratifiedCapacityHierarchy",
    "lines": 114,
    "imports": [
@@ -46704,77 +44822,6 @@
    ],
    "theorems": 7,
    "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "Surjectivity",
-   "lines": 194,
-   "imports": [
-    "LeastMissingTargetContradiction",
-    "TailDowncrossingDichotomy",
-    "CrossingTailRefined",
-    "Coverage"
-   ],
-   "decls": [
-    {
-     "kind": "def",
-     "name": "PermanentHighEscape",
-     "line": 58
-    },
-    {
-     "kind": "def",
-     "name": "CorridorReentry",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_target_tail_dichotomy",
-     "line": 74
-    },
-    {
-     "kind": "def",
-     "name": "NoPermanentHighEscapeHypothesis",
-     "line": 91
-    },
-    {
-     "kind": "def",
-     "name": "NoCorridorReentryHypothesis",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "not_least_missing_target_of_branch_obstructions",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "surjective_of_not_least_missing_target",
-     "line": 118
-    },
-    {
-     "kind": "theorem",
-     "name": "surjective_of_branch_obstructions",
-     "line": 135
-    },
-    {
-     "kind": "theorem",
-     "name": "not_least_missing_target_of_surjective",
-     "line": 144
-    },
-    {
-     "kind": "theorem",
-     "name": "recaman_surjective_iff_not_least_missing_target",
-     "line": 152
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_surjectivity_architecture_synthesis",
-     "line": 169
-    }
-   ],
-   "theorems": 7,
-   "defs": 4,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -47412,233 +45459,6 @@
    "theorems": 6,
    "defs": 3,
    "hasEnglishDocstring": false,
-   "hasReport": false
-  },
-  {
-   "name": "TailDowncrossingDichotomy",
-   "lines": 248,
-   "imports": [
-    "TailDowncrossingLedger",
-    "LeastTailMinimumDynamics",
-    "LeastTailLedgerMinimum",
-    "SubtractionLedger"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "permanent_high_subtraction_requires_three_times",
-     "line": 44
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_not_canSubtract_of_lt_three",
-     "line": 57
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_forced_addition_value",
-     "line": 69
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_subSum_upper_bound",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_subCount_upper_bound",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "permanent_high_of_no_downcrossing",
-     "line": 105
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_subSum_ge_clock",
-     "line": 130
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_value_fresh",
-     "line": 140
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_values_distinct",
-     "line": 158
-    },
-    {
-     "kind": "theorem",
-     "name": "recurrent_downcrossing_subSum_unbounded",
-     "line": 174
-    },
-    {
-     "kind": "theorem",
-     "name": "exists_permanent_high_or_downcrossing",
-     "line": 186
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_escape_downcrossing_dichotomy",
-     "line": 204
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_tail_grand_dichotomy",
-     "line": 218
-    }
-   ],
-   "theorems": 13,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TailDowncrossingInevitability",
-   "lines": 174,
-   "imports": [
-    "PermanentHighGlobalSynthesis",
-    "TailDowncrossingDichotomy",
-    "TailDowncrossingLedger"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "exists_downcrossing_of_high_to_low",
-     "line": 45
-    },
-    {
-     "kind": "theorem",
-     "name": "toothcomb_forced_downcrossing_step",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_step_properties",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_corridor_reentry_synthesis",
-     "line": 130
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tail_downcrossing_inevitability_synthesis",
-     "line": 153
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TailDowncrossingLedger",
-   "lines": 310,
-   "imports": [
-    "LeastTailMinimumDynamics",
-    "LeastTailLedgerMinimum",
-    "LeastTailLedgerProvenance",
-    "SubtractionLedger"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "subCount_mono",
-     "line": 50
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_descent_barrier",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_subtraction_lower_bound",
-     "line": 88
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_subtraction_result_ge_minimum",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_subtraction_result_gt_minimum",
-     "line": 112
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_subtraction_prior_bound_sharp",
-     "line": 136
-    },
-    {
-     "kind": "theorem",
-     "name": "addition_step_cannot_cross_below_twice",
-     "line": 148
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_step_must_be_subtraction",
-     "line": 158
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_prior_height_bounds",
-     "line": 169
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_subSum_increase",
-     "line": 180
-    },
-    {
-     "kind": "theorem",
-     "name": "downcrossing_subCount_increase",
-     "line": 189
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_value_bounds",
-     "line": 198
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_ledger_corridor_reentry",
-     "line": 217
-    },
-    {
-     "kind": "theorem",
-     "name": "quotient_zero_ephemeral_in_tail",
-     "line": 234
-    },
-    {
-     "kind": "theorem",
-     "name": "no_double_subtraction_from_tail_escape",
-     "line": 248
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_subSum_ge_time",
-     "line": 259
-    },
-    {
-     "kind": "theorem",
-     "name": "tail_downcrossing_subCount_gt_time",
-     "line": 273
-    },
-    {
-     "kind": "theorem",
-     "name": "least_missing_tail_downcrossing_ledger_obstruction",
-     "line": 289
-    }
-   ],
-   "theorems": 18,
-   "defs": 0,
-   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -48684,44 +46504,6 @@
    "hasReport": false
   },
   {
-   "name": "ThreeLagSevenCapacityObstruction",
-   "lines": 124,
-   "imports": [
-    "TightQuintuplePureAAS"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "three_lag7_capacity_upper_bound",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_high_capacity_impossible",
-     "line": 68
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_disjoint_impossible",
-     "line": 79
-    },
-    {
-     "kind": "theorem",
-     "name": "three_lag7_mandatory_overlap",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_three_lag7_capacity_obstruction_synthesis",
-     "line": 97
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -48963,45 +46745,6 @@
    "hasReport": false
   },
   {
-   "name": "TightAvoidingStructuralClassification",
-   "lines": 150,
-   "imports": [
-    "TwoLagSevenOverlapGeometry",
-    "QuantumLagSizeRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_trichotomy",
-     "line": 68
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_case1_pure_aas",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_case2_impossible",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_case3_multi_lag7_rigidity",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_avoiding_structural_classification_synthesis",
-     "line": 112
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "TightBottleneckBound",
    "lines": 118,
    "imports": [
@@ -49202,139 +46945,59 @@
    "hasReport": false
   },
   {
-   "name": "TightNonCollisionObstruction",
-   "lines": 255,
+   "name": "TightHallAugmentation",
+   "lines": 265,
    "imports": [
-    "TwentyTwoGeometricGateT6Resolution",
-    "GrandApexPeriodTwentyFourTheorem"
+    "LagSevenPrefixRigidity"
    ],
    "decls": [
     {
      "kind": "theorem",
-     "name": "tight_non_lag7_complement_bound",
+     "name": "filter_mem_of_sublist_nodup",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "filter_mem_or_eq_length",
      "line": 69
     },
     {
      "kind": "theorem",
-     "name": "tight_non_lag11_complement_bound",
-     "line": 79
+     "name": "hall_forces_membership",
+     "line": 114
     },
     {
      "kind": "theorem",
-     "name": "tight_non_lag15_complement_bound",
-     "line": 89
+     "name": "tight_member_of_neighborhood_subset",
+     "line": 142
     },
     {
      "kind": "theorem",
-     "name": "tight_non_lag19_complement_bound",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_lag7_must_cover_two_aas",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_lag11_must_cover_four_aas",
-     "line": 120
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_lag15_must_cover_six_aas",
-     "line": 132
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_lag19_must_cover_eight_aas",
-     "line": 144
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_single_lag7_impossible_of_distance",
-     "line": 156
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_two_lag7_high_capacity_impossible",
-     "line": 168
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_non_all_aas_survives",
-     "line": 180
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_non_collision_obstruction_synthesis",
-     "line": 207
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightOctCollisionObstruction",
-   "lines": 209,
-   "imports": [
-    "TwentyGeometricGateT6Resolution",
-    "GrandApexPeriodTwentyTwoTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag7_complement_bound",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag11_complement_bound",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag15_complement_bound",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag7_must_cover_two_aas",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag11_must_cover_four_aas",
-     "line": 105
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_lag15_must_cover_six_aas",
-     "line": 117
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_single_lag7_impossible_of_distance",
-     "line": 129
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_two_lag7_high_capacity_impossible",
-     "line": 141
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_oct_all_aas_survives",
+     "name": "w1_bits",
      "line": 153
     },
     {
      "kind": "theorem",
-     "name": "grand_tight_oct_collision_obstruction_synthesis",
-     "line": 180
+     "name": "w1_sibling_neighborhood_subset",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_sibling_forced",
+     "line": 196
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_after_w1_neighborhood_subset",
+     "line": 212
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_after_w1_forced",
+     "line": 250
     }
    ],
-   "theorems": 10,
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -49487,274 +47150,162 @@
    "hasReport": false
   },
   {
-   "name": "TightQuadCollisionObstruction",
-   "lines": 155,
+   "name": "TightPrivatePhase",
+   "lines": 242,
    "imports": [
-    "TightTripleCollisionObstruction"
+    "TightHallAugmentation"
    ],
    "decls": [
     {
      "kind": "theorem",
-     "name": "tight_quad_lag7_complement_bound",
-     "line": 55
+     "name": "erase_sublist_of_sublist",
+     "line": 49
     },
     {
      "kind": "theorem",
-     "name": "tight_quad_two_aas_covered_forces_proximity",
-     "line": 66
+     "name": "neighborhood_erase_subset",
+     "line": 54
     },
     {
      "kind": "theorem",
-     "name": "tight_quad_pairwise_distant_cannot_cover_pair",
-     "line": 74
+     "name": "tight_erase_length",
+     "line": 65
+    },
+    {
+     "kind": "def",
+     "name": "privatePhases",
+     "line": 77
     },
     {
      "kind": "theorem",
-     "name": "tight_quad_single_non_aas_survives_of_distance",
+     "name": "mem_privatePhases_iff",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "length_filter_mem_add_filter_not_mem",
      "line": 91
     },
     {
      "kind": "theorem",
-     "name": "tight_quad_two_non_aas_survives_of_distance",
-     "line": 118
+     "name": "length_add_filter_not_mem_le",
+     "line": 107
     },
     {
      "kind": "theorem",
-     "name": "grand_tight_quad_collision_obstruction_synthesis",
+     "name": "private_phases_le_one",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "two_le_length_of_mem_ne",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "private_phase_unique",
      "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "endpointPhase_mem_neighborhood",
+     "line": 161
+    },
+    {
+     "kind": "theorem",
+     "name": "endpointPhase_ne_of_lt",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "lag7_w1_two_phases_covered_by_others",
+     "line": 190
     }
    ],
-   "theorems": 6,
-   "defs": 0,
+   "theorems": 12,
+   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
    "name": "TightQuadDecomposition",
-   "lines": 287,
+   "lines": 311,
    "imports": [
     "TightSubsetDecomposition",
-    "TightQuadRigidity"
+    "CapacitySlackCompensation",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "LagSevenTightObstruction",
+    "OneSSMultiplicity",
+    "P2ModFourRigidity",
+    "QuantumP2Arithmetic",
+    "SS2AASCollisionObstruction",
+    "SS2LagElevenForcing",
+    "TenGateT6Resolution",
+    "TightComponentSlackBound",
+    "TightTripleRigidity",
+    "TwoSSEndpoint",
+    "TwoSSTightAvoidanceTheorem",
+    "UniversalTightLagBound"
    ],
    "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_quad_member_neighborhood_le_four",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_no_ge_five",
-     "line": 66
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_single_non_aas_collision_iff",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_single_non_aas_survives_of_not_covers",
-     "line": 112
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_two_non_aas_collision_iff",
-     "line": 142
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_two_non_aas_survives_of_neither_covers",
-     "line": 177
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_two_lag7_disjoint_impossible",
-     "line": 208
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_two_lag7_not_disjoint",
-     "line": 222
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_all_aas_survives_unconditional",
-     "line": 234
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_quad_decomposition_synthesis",
-     "line": 252
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightQuadRigidity",
-   "lines": 287,
-   "imports": [
-    "FourteenGateT6Resolution",
-    "LagSevenNeighborhoodRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_quad_all_aas_avoids_s_star",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_all_aas_survives",
-     "line": 64
-    },
     {
      "kind": "theorem",
      "name": "tight_quad_survives_of_not_mem",
-     "line": 83
+     "line": 51
     },
     {
      "kind": "theorem",
-     "name": "avoiding_size_le_three_of_U_le_four",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "avoiding_size_le_three_of_D_le_five",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_of_U_le_four_and_triples",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_of_D_le_five_and_triples",
-     "line": 146
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_lag7_neighborhood_ge_three",
-     "line": 184
-    },
-    {
-     "kind": "theorem",
-     "name": "p14_gate_t6_complete_quad_reduction",
-     "line": 206
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_quad_rigidity_synthesis",
-     "line": 228
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightQuintCollisionObstruction",
-   "lines": 205,
-   "imports": [
-    "GrandGeometricExclusionSynthesis",
-    "SixteenGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_quint_lag7_complement_bound",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quint_lag11_complement_bound",
-     "line": 70
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quint_lag7_must_cover_two_aas",
+     "name": "tight_quad_member_neighborhood_le_four",
      "line": 80
     },
     {
      "kind": "theorem",
-     "name": "tight_quint_lag11_covers_all_four_aas",
+     "name": "tight_quad_no_ge_five",
      "line": 90
     },
     {
      "kind": "theorem",
-     "name": "tight_quint_pairwise_distant_cannot_cover_pair",
-     "line": 102
+     "name": "tight_quad_single_non_aas_collision_iff",
+     "line": 100
     },
     {
      "kind": "theorem",
-     "name": "tight_quint_single_lag7_impossible_of_distance",
-     "line": 133
+     "name": "tight_quad_single_non_aas_survives_of_not_covers",
+     "line": 136
     },
     {
      "kind": "theorem",
-     "name": "tight_quint_two_lag7_high_capacity_impossible",
-     "line": 145
+     "name": "tight_quad_two_non_aas_collision_iff",
+     "line": 166
     },
     {
      "kind": "theorem",
-     "name": "tight_quint_all_aas_survives",
-     "line": 156
+     "name": "tight_quad_two_non_aas_survives_of_neither_covers",
+     "line": 201
     },
     {
      "kind": "theorem",
-     "name": "grand_tight_quint_collision_obstruction_synthesis",
-     "line": 182
+     "name": "tight_quad_two_lag7_disjoint_impossible",
+     "line": 232
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_two_lag7_not_disjoint",
+     "line": 246
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_quad_all_aas_survives_unconditional",
+     "line": 258
+    },
+    {
+     "kind": "theorem",
+     "name": "grand_tight_quad_decomposition_synthesis",
+     "line": 276
     }
    ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightQuintuplePureAAS",
-   "lines": 132,
-   "imports": [
-    "MasterGateT6TightAllAASClosure"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "three_lag7_pairwise_intersection_le_one",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_capacity_bound",
-     "line": 69
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_three_lag7_impossible",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_pure_aas_inevitable",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_zero_loss_survival",
-     "line": 98
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_quintuple_pure_aas_synthesis",
-     "line": 103
-    }
-   ],
-   "theorems": 6,
+   "theorems": 11,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -49813,299 +47364,82 @@
    "hasReport": false
   },
   {
-   "name": "TightSeptCollisionObstruction",
-   "lines": 207,
-   "imports": [
-    "EighteenGeometricGateT6Resolution",
-    "GrandApexPeriodTwentyTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag7_complement_bound",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag11_complement_bound",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag15_complement_bound",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag7_must_cover_two_aas",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag11_must_cover_four_aas",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_lag15_must_cover_six_aas",
-     "line": 115
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_single_lag7_impossible_of_distance",
-     "line": 127
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_two_lag7_high_capacity_impossible",
-     "line": 139
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sept_all_aas_survives",
-     "line": 151
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_sept_collision_obstruction_synthesis",
-     "line": 178
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightSeptuplePureAAS",
-   "lines": 138,
-   "imports": [
-    "TightSextuplePureAAS"
-   ],
-   "decls": [
-    {
-     "kind": "def",
-     "name": "chain_inclusion_exclusion_5",
-     "line": 31
-    },
-    {
-     "kind": "theorem",
-     "name": "five_lag7_union_ge_eleven",
-     "line": 36
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_septuple_five_lag7_impossible",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_septuple_pure_aas_inevitable",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_septuple_zero_loss_survival",
-     "line": 80
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_intermediate_size_bound",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_intermediate_size_cases",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_septuple_pure_aas_synthesis",
-     "line": 101
-    }
-   ],
-   "theorems": 7,
-   "defs": 1,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightSextCollisionObstruction",
-   "lines": 225,
-   "imports": [
-    "SixteenGeometricGateT6Resolution",
-    "GrandApexPeriodEighteenTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_sext_lag7_complement_bound",
-     "line": 61
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_lag11_complement_bound",
-     "line": 71
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_lag7_must_cover_two_aas",
-     "line": 81
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_lag11_must_cover_four_aas",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_pairwise_distant_cannot_cover_pair",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_single_lag7_impossible_of_distance",
-     "line": 151
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_two_lag7_high_capacity_impossible",
-     "line": 163
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_all_aas_survives",
-     "line": 175
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_sext_collision_obstruction_synthesis",
-     "line": 202
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TightSextuplePureAAS",
-   "lines": 135,
-   "imports": [
-    "LagSevenChainDisjointness",
-    "MasterGateT6PureAASHierarchy"
-   ],
-   "decls": [
-    {
-     "kind": "def",
-     "name": "chain_inclusion_exclusion_4",
-     "line": 31
-    },
-    {
-     "kind": "theorem",
-     "name": "four_lag7_union_ge_nine",
-     "line": 36
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sextuple_four_lag7_impossible",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sextuple_pure_aas_inevitable",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sextuple_zero_loss_survival",
-     "line": 78
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_intermediate_size_bound",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "p18_intermediate_size_cases",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_tight_sextuple_pure_aas_synthesis",
-     "line": 99
-    }
-   ],
-   "theorems": 7,
-   "defs": 1,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "TightSubsetDecomposition",
-   "lines": 282,
+   "lines": 286,
    "imports": [
     "TightSubsetLagStructure",
-    "LagSevenNeighborhoodRigidity",
     "TightTripleRigidity",
-    "ArbitraryPeriodGateT6Unconditional"
+    "CapacitySlackCompensation",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "LagSevenTightObstruction",
+    "OneSSMultiplicity",
+    "P2ModFourRigidity",
+    "QuantumP2Arithmetic",
+    "SS2AASCollisionObstruction",
+    "SS2LagElevenForcing",
+    "TenGateT6Resolution",
+    "TightAvoidingLagCertificate",
+    "TightComponentSlackBound",
+    "TwoSSEndpoint",
+    "TwoSSTightAvoidanceTheorem",
+    "UniversalTightLagBound"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "mem_of_subset_nodup_length_eq",
-     "line": 57
+     "line": 61
     },
     {
      "kind": "theorem",
      "name": "mem_neighborhood_iff_exists_singleton",
-     "line": 77
+     "line": 81
     },
     {
      "kind": "theorem",
      "name": "aas_window_avoids_s_star",
-     "line": 96
+     "line": 100
     },
     {
      "kind": "theorem",
      "name": "neighborhood_collision_forces_non_aas",
-     "line": 124
+     "line": 128
     },
     {
      "kind": "theorem",
      "name": "all_aas_subset_avoids_s_star",
-     "line": 142
+     "line": 146
     },
     {
      "kind": "theorem",
      "name": "tight_triple_lag7_spans_neighborhood",
-     "line": 166
+     "line": 170
     },
     {
      "kind": "theorem",
      "name": "tight_triple_lag7_covers_aas_endpoints",
-     "line": 186
+     "line": 190
     },
     {
      "kind": "theorem",
      "name": "tight_triple_collision_iff_lag7_covers",
-     "line": 205
+     "line": 209
     },
     {
      "kind": "theorem",
      "name": "tight_triple_collision_forces_triple_endpoint_coverage",
-     "line": 217
+     "line": 221
     },
     {
      "kind": "theorem",
      "name": "tight_triple_survives_of_lag7_not_covers",
-     "line": 239
+     "line": 243
     },
     {
      "kind": "theorem",
      "name": "grand_tight_subset_decomposition_synthesis",
-     "line": 256
+     "line": 260
     }
    ],
    "theorems": 11,
@@ -50115,7 +47449,7 @@
   },
   {
    "name": "TightSubsetLagStructure",
-   "lines": 192,
+   "lines": 183,
    "imports": [
     "UniversalQuantumWindowCapacity"
    ],
@@ -50123,47 +47457,47 @@
     {
      "kind": "theorem",
      "name": "tight_subset_member_neighborhood_le",
-     "line": 52
+     "line": 43
     },
     {
      "kind": "theorem",
      "name": "no_ge_three_in_tight_le_two",
-     "line": 60
+     "line": 51
     },
     {
      "kind": "theorem",
      "name": "no_ge_five_in_tight_le_four",
-     "line": 70
+     "line": 61
     },
     {
      "kind": "theorem",
      "name": "no_ge_seven_in_tight_le_six",
-     "line": 80
+     "line": 71
     },
     {
      "kind": "theorem",
      "name": "no_ge_nine_in_tight_le_eight",
-     "line": 90
+     "line": 81
     },
     {
      "kind": "theorem",
      "name": "no_ge_two_k_plus_one_in_tight_le_two_k",
-     "line": 101
+     "line": 92
     },
     {
      "kind": "theorem",
      "name": "two_disjoint_ge_two_exceeds_tight_three",
-     "line": 112
+     "line": 103
     },
     {
      "kind": "theorem",
      "name": "two_disjoint_ge_three_exceeds_tight_five",
-     "line": 143
+     "line": 134
     },
     {
      "kind": "theorem",
      "name": "grand_tight_subset_lag_structure_synthesis",
-     "line": 173
+     "line": 164
     }
    ],
    "theorems": 9,
@@ -50246,50 +47580,50 @@
   },
   {
    "name": "TightTripleCollisionObstruction",
-   "lines": 145,
+   "lines": 135,
    "imports": [
-    "ParametricGateT6Synthesis"
+    "UniversalNonAASReduction"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "modular_diff_congruence",
-     "line": 55
+     "line": 45
     },
     {
      "kind": "theorem",
      "name": "aas_covers_offset_congruence",
-     "line": 62
+     "line": 52
     },
     {
      "kind": "theorem",
      "name": "two_aas_separation_forcing",
-     "line": 71
+     "line": 61
     },
     {
      "kind": "theorem",
      "name": "two_aas_separation_bound",
-     "line": 84
+     "line": 74
     },
     {
      "kind": "theorem",
      "name": "donor_aas_separation_forcing",
-     "line": 94
+     "line": 84
     },
     {
      "kind": "theorem",
      "name": "lag7_covers_two_aas_forces_proximity",
-     "line": 108
+     "line": 98
     },
     {
      "kind": "theorem",
      "name": "lag7_cannot_cover_distant_aas",
-     "line": 123
+     "line": 113
     },
     {
      "kind": "theorem",
      "name": "grand_tight_triple_collision_obstruction_synthesis",
-     "line": 133
+     "line": 123
     }
    ],
    "theorems": 8,
@@ -50299,39 +47633,44 @@
   },
   {
    "name": "TightTripleRigidity",
-   "lines": 149,
+   "lines": 153,
    "imports": [
-    "TwelveGateT6Resolution",
-    "FourteenLagRigidity",
-    "ElevenGateT6Synthesis",
     "SS2AASCollisionObstruction",
-    "TenGateT6Resolution"
+    "TenGateT6Resolution",
+    "CapacitySlackCompensation",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "P2ModFourRigidity",
+    "QuantumP2Arithmetic",
+    "TightComponentSlackBound",
+    "TwoSSTightAvoidanceTheorem",
+    "UniversalTightLagBound"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "tight_triple_two_lag_seven_identical_neighborhoods",
-     "line": 36
+     "line": 40
     },
     {
      "kind": "theorem",
      "name": "aas_endpoint_mem_neighborhood",
-     "line": 75
+     "line": 79
     },
     {
      "kind": "theorem",
      "name": "ss2_donor_disjoint_from_aas_endpoint",
-     "line": 96
+     "line": 100
     },
     {
      "kind": "theorem",
      "name": "tight_triple_survives_of_s_not_mem",
-     "line": 111
+     "line": 115
     },
     {
      "kind": "theorem",
      "name": "grand_tight_triple_rigidity_synthesis",
-     "line": 120
+     "line": 124
     }
    ],
    "theorems": 5,
@@ -50455,953 +47794,143 @@
    "hasReport": false
   },
   {
-   "name": "TwelveGateT6Resolution",
-   "lines": 167,
+   "name": "TrueOldestGateT6",
+   "lines": 271,
    "imports": [
-    "FourteenLagRigidity",
-    "ElevenGateT6Synthesis",
-    "ElevenCapacityRigidity",
-    "GrandPeriodicDeletabilityTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p12_tight_avoiding_size_le_three",
-     "line": 35
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_avoiding_size_cases",
-     "line": 43
-    },
-    {
-     "kind": "theorem",
-     "name": "p11_gate_t6_of_size_three_survives",
-     "line": 53
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_gate_t6_of_U_le_three",
-     "line": 88
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_gate_t6_of_D_le_four",
-     "line": 107
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twelve_gate_t6_resolution",
-     "line": 126
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwelveGateT6Unconditional",
-   "lines": 250,
-   "imports": [
-    "LagSevenNeighborhoodRigidity",
-    "TwelveGateT6Resolution",
-    "TightTripleRigidity",
-    "SS2LagElevenForcing",
-    "OneSSMultiplicity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "no_nonwrapping_ss2_donor_p11",
-     "line": 44
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_le_two_all_lag_three_general",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_le_two_all_aas_general",
-     "line": 87
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_avoiding_le_two_survives_general",
-     "line": 100
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_tight_triple_all_aas_survives",
-     "line": 119
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_tight_triple_survives_of_lag7_disjoint",
-     "line": 137
-    },
-    {
-     "kind": "theorem",
-     "name": "p12_avoiding_sublist_survives_of_tight_triples",
-     "line": 153
-    },
-    {
-     "kind": "theorem",
-     "name": "p11_gate_t6_complete_tripartite_resolution",
-     "line": 186
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twelve_gate_t6_unconditional_synthesis",
-     "line": 216
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyFourGateT6Resolution",
-   "lines": 354,
-   "imports": [
-    "TwentyFourLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p24_tight_size_two_survives",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_triple_survives_of_not_mem",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quad_survives_of_not_mem",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quint_survives_of_not_mem",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_sext_survives_of_not_mem",
-     "line": 102
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_sept_survives_of_not_mem",
-     "line": 112
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_oct_survives_of_not_mem",
-     "line": 122
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_non_survives_of_not_mem",
-     "line": 132
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 144
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 221
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 238
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_gate_t6_of_U_le_four_and_triples",
-     "line": 256
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_gate_t6_of_D_le_five_and_triples",
-     "line": 279
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_four_gate_t6_resolution_synthesis",
-     "line": 302
-    }
-   ],
-   "theorems": 14,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyFourGateT6Unconditional",
-   "lines": 386,
-   "imports": [
-    "TwentyFourGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p24_tight_all_aas_avoids_s_star",
-     "line": 48
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_all_aas_survives",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_gate_t6_of_all_aas_tight",
-     "line": 84
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_gate_t6_of_D_le_eight_and_triples_quads_quints_sexts",
-     "line": 120
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_gate_t6_of_U_le_seven_and_triples_quads_quints_sexts",
-     "line": 177
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_capacity_tier_one",
-     "line": 237
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_capacity_tier_two",
-     "line": 254
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_capacity_tier_three",
-     "line": 272
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_capacity_tier_four",
-     "line": 295
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_four_gate_t6_unconditional_synthesis",
-     "line": 318
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyFourGeometricGateT6Resolution",
-   "lines": 141,
-   "imports": [
-    "TightNonCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p24_geometric_gate_t6",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_size_three_to_nine_decomposition",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_intermediate_lag7_must_cover_two",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_twenty_four_hierarchy",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_four_geometric_gate_t6_synthesis",
-     "line": 121
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyFourLagRigidity",
-   "lines": 158,
-   "imports": [
-    "TwentyTwoGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p24_subtractions_bound",
-     "line": 52
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_size_le_nine",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_size_cases",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_no_k_ge_ten_in_tight_le_nine",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quantum_level_le_four",
-     "line": 87
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quantum_level_le_three_of_size_eight",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quantum_level_le_two_of_size_six",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_tight_quantum_level_le_one_of_size_four",
-     "line": 108
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_size_le_eight_of_D_le_ten",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_size_le_seven_of_D_le_nine",
-     "line": 123
-    },
-    {
-     "kind": "theorem",
-     "name": "p24_avoiding_size_le_six_of_D_le_eight",
-     "line": 132
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_four_lag_rigidity_synthesis",
-     "line": 141
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyGateT6Resolution",
-   "lines": 314,
-   "imports": [
-    "TwentyLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p20_tight_size_two_survives",
-     "line": 49
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_triple_survives_of_not_mem",
-     "line": 66
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_quad_survives_of_not_mem",
-     "line": 76
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_quint_survives_of_not_mem",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_sext_survives_of_not_mem",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_sept_survives_of_not_mem",
-     "line": 106
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 118
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 181
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 198
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_gate_t6_of_U_le_four_and_triples",
-     "line": 216
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_gate_t6_of_D_le_five_and_triples",
-     "line": 239
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_gate_t6_resolution_synthesis",
-     "line": 262
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyGateT6Unconditional",
-   "lines": 365,
-   "imports": [
-    "TwentyGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p20_tight_all_aas_avoids_s_star",
-     "line": 46
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_all_aas_survives",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_gate_t6_of_all_aas_tight",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_gate_t6_of_D_le_seven_and_triples_quads_quints",
-     "line": 113
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_gate_t6_of_U_le_six_and_triples_quads_quints",
-     "line": 164
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_capacity_tier_one",
-     "line": 217
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_capacity_tier_two",
-     "line": 234
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_capacity_tier_three",
-     "line": 252
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_capacity_tier_four",
-     "line": 275
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_gate_t6_unconditional_synthesis",
-     "line": 298
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyGeometricGateT6Resolution",
-   "lines": 133,
-   "imports": [
-    "TightSeptCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p20_geometric_gate_t6",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_size_three_to_seven_decomposition",
-     "line": 87
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_intermediate_lag7_must_cover_two",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_twenty_hierarchy",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_geometric_gate_t6_synthesis",
-     "line": 116
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyLagRigidity",
-   "lines": 135,
-   "imports": [
-    "EighteenGateT6Unconditional",
-    "GrandApexPeriodEighteenTheorem"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p20_subtractions_bound",
-     "line": 48
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_size_le_seven",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_size_cases",
-     "line": 67
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_no_k_ge_eight_in_tight_le_seven",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_quantum_level_le_three",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_quantum_level_le_two_of_size_six",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_tight_quantum_level_le_one_of_size_four",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_size_le_six_of_D_le_eight",
-     "line": 102
-    },
-    {
-     "kind": "theorem",
-     "name": "p20_avoiding_size_le_five_of_D_le_seven",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_lag_rigidity_synthesis",
-     "line": 120
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyTwoGateT6Resolution",
-   "lines": 334,
-   "imports": [
-    "TwentyTwoLagRigidity"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p22_tight_size_two_survives",
-     "line": 52
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_triple_survives_of_not_mem",
-     "line": 69
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_quad_survives_of_not_mem",
-     "line": 79
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_quint_survives_of_not_mem",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_sext_survives_of_not_mem",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_sept_survives_of_not_mem",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_oct_survives_of_not_mem",
-     "line": 119
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_sublist_survives_of_tight_avoidance",
-     "line": 131
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_sublists_survive_unconditional_of_U_le_three",
-     "line": 201
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_sublists_survive_unconditional_of_D_le_four",
-     "line": 218
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_gate_t6_of_U_le_four_and_triples",
-     "line": 236
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_gate_t6_of_D_le_five_and_triples",
-     "line": 259
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_two_gate_t6_resolution_synthesis",
-     "line": 282
-    }
-   ],
-   "theorems": 13,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyTwoGateT6Unconditional",
-   "lines": 380,
-   "imports": [
-    "TwentyTwoGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p22_tight_all_aas_avoids_s_star",
-     "line": 47
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_all_aas_survives",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_gate_t6_of_all_aas_tight",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_gate_t6_of_D_le_eight_and_triples_quads_quints_sexts",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_gate_t6_of_U_le_seven_and_triples_quads_quints_sexts",
-     "line": 172
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_capacity_tier_one",
-     "line": 232
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_capacity_tier_two",
-     "line": 249
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_capacity_tier_three",
-     "line": 267
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_capacity_tier_four",
-     "line": 290
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_two_gate_t6_unconditional_synthesis",
-     "line": 313
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyTwoGeometricGateT6Resolution",
-   "lines": 138,
-   "imports": [
-    "TightOctCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p22_geometric_gate_t6",
-     "line": 61
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_size_three_to_eight_decomposition",
-     "line": 88
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_intermediate_lag7_must_cover_two",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_twenty_two_hierarchy",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_two_geometric_gate_t6_synthesis",
-     "line": 118
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwentyTwoLagRigidity",
-   "lines": 135,
-   "imports": [
-    "TwentyGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "p22_subtractions_bound",
-     "line": 48
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_size_le_eight",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_size_cases",
-     "line": 67
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_no_k_ge_nine_in_tight_le_eight",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_quantum_level_le_three",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_quantum_level_le_two_of_size_six",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_tight_quantum_level_le_one_of_size_four",
-     "line": 96
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_size_le_seven_of_D_le_nine",
-     "line": 102
-    },
-    {
-     "kind": "theorem",
-     "name": "p22_avoiding_size_le_six_of_D_le_eight",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_twenty_two_lag_rigidity_synthesis",
-     "line": 120
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "TwoLagSevenOverlapGeometry",
-   "lines": 184,
-   "imports": [
-    "UniversalLagSevenCapacityBound"
+    "LagSevenDonorCoverage"
    ],
    "decls": [
     {
      "kind": "def",
-     "name": "inclusion_exclusion",
-     "line": 64
+     "name": "trueOldestPhase",
+     "line": 65
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_capacity_dichotomy",
+     "name": "donor_oldestOffset",
      "line": 69
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_intersection_lower_bound",
-     "line": 82
+     "name": "trueOldestPhase_eq_of_offset_eleven",
+     "line": 78
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_exact_overlap_four",
-     "line": 94
+     "name": "trueOldestPhase_eq_of_offset_ten",
+     "line": 87
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_exact_overlap_three",
-     "line": 106
+     "name": "offset_eleven_is_A_of_offset_ten",
+     "line": 98
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_disjoint_obstruction",
-     "line": 118
+     "name": "trueOldest_bit_is_S",
+     "line": 109
     },
     {
      "kind": "theorem",
-     "name": "two_lag7_single_overlap_obstruction",
+     "name": "trueOldest_is_subtraction",
+     "line": 121
+    },
+    {
+     "kind": "def",
+     "name": "aasClash",
      "line": 131
     },
     {
      "kind": "theorem",
-     "name": "grand_two_lag7_overlap_synthesis",
-     "line": 143
+     "name": "aasClash_donors",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "aas_endpoint_ne_trueOldest",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest_lag",
+     "line": 219
+    },
+    {
+     "kind": "theorem",
+     "name": "p10_gate_t6_true_oldest_of_minimal",
+     "line": 243
     }
    ],
-   "theorems": 7,
-   "defs": 1,
+   "theorems": 11,
+   "defs": 2,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
    "name": "TwoLagSevenPhaseConflict",
-   "lines": 166,
+   "lines": 179,
    "imports": [
     "LagSevenPrefixRigidity"
    ],
    "decls": [
     {
      "kind": "theorem",
+     "name": "lag7_collective_capacity_bound",
+     "line": 34
+    },
+    {
+     "kind": "def",
+     "name": "inclusion_exclusion",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
      "name": "w1_distinct_differences",
-     "line": 64
+     "line": 77
     },
     {
      "kind": "theorem",
      "name": "w2_distinct_differences",
-     "line": 69
+     "line": 82
     },
     {
      "kind": "theorem",
      "name": "same_word_intersection_le_one",
-     "line": 75
+     "line": 88
     },
     {
      "kind": "theorem",
      "name": "same_word_union_ge_five",
-     "line": 80
+     "line": 93
     },
     {
      "kind": "theorem",
      "name": "past_w1_w2_conflict",
-     "line": 90
+     "line": 103
     },
     {
      "kind": "theorem",
      "name": "past_w2_w1_conflict",
-     "line": 114
+     "line": 127
     },
     {
      "kind": "theorem",
      "name": "two_lag7_tight_subset_impossible",
-     "line": 123
+     "line": 136
     },
     {
      "kind": "theorem",
      "name": "grand_two_lag7_phase_conflict_synthesis",
-     "line": 135
+     "line": 148
     }
    ],
-   "theorems": 8,
-   "defs": 0,
+   "theorems": 9,
+   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -52415,342 +48944,6 @@
    "hasReport": true
   },
   {
-   "name": "UniversalAASCoverageBound",
-   "lines": 163,
-   "imports": [
-    "UniversalMultiLagSeparation"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_aas_coverage_lower_bound",
-     "line": 64
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_aas_coverage_ge_two",
-     "line": 74
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_aas_coverage_ge_three",
-     "line": 86
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_distant_aas_impossible",
-     "line": 97
-    },
-    {
-     "kind": "theorem",
-     "name": "single_non_aas_coverage_forcing",
-     "line": 110
-    },
-    {
-     "kind": "theorem",
-     "name": "two_non_aas_coverage_forcing",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "three_non_aas_coverage_forcing",
-     "line": 132
-    },
-    {
-     "kind": "theorem",
-     "name": "four_non_aas_coverage_forcing",
-     "line": 143
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_aas_coverage_bound_synthesis",
-     "line": 153
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalAASLagSeparation",
-   "lines": 148,
-   "imports": [
-    "MasterGeometricGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_tight_single_lag7_complement_bound",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_tight_distant_aas_impossible",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_two_aas_covered_forces_proximity",
-     "line": 87
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_distant_aas_cannot_be_covered",
-     "line": 95
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_complement_bound",
-     "line": 103
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quintuple_distant_aas_impossible",
-     "line": 112
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sextuple_complement_bound",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sextuple_distant_aas_impossible",
-     "line": 130
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_aas_lag_separation_synthesis",
-     "line": 139
-    }
-   ],
-   "theorems": 9,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalApexPeriodicTheorem",
-   "lines": 279,
-   "imports": [
-    "GrandApexPeriodTwentyFourTheorem",
-    "ArbitraryPeriodLagRigidity",
-    "ArbitraryPeriodGateT6Resolution",
-    "ArbitraryPeriodGateT6Unconditional"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_apex_parametric_capacity",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_quantum_lag_hierarchy",
-     "line": 67
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_tight_size_two_survival",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_all_aas_survival",
-     "line": 94
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_gate_t6_closed_form_reduction",
-     "line": 110
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_gate_t6_unconditional_tier_one",
-     "line": 131
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_gate_t6_unconditional_tier_two",
-     "line": 148
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_gate_t6_reduction_tier_three",
-     "line": 166
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_apex_gate_t6_reduction_tier_four",
-     "line": 189
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_apex_periodic_synthesis",
-     "line": 212
-    }
-   ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalCapacityThresholds",
-   "lines": 163,
-   "imports": [
-    "UniversalDistanceGateT6Resolution"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "intermediate_empty_of_D_le_four",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_empty_of_p_le_ten",
-     "line": 60
-    },
-    {
-     "kind": "theorem",
-     "name": "vacuous_distance_condition_of_p_le_ten",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "gate_t6_unconditional_of_p_le_ten",
-     "line": 82
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_triple_only_of_p_le_twelve",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_triple_and_quad_only_of_p_le_fourteen",
-     "line": 106
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_sizes_le_five_of_p_le_sixteen",
-     "line": 111
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_sizes_le_six_of_p_le_eighteen",
-     "line": 116
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_sizes_le_seven_of_p_le_twenty",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_sizes_le_eight_of_p_le_twenty_two",
-     "line": 126
-    },
-    {
-     "kind": "theorem",
-     "name": "intermediate_sizes_le_nine_of_p_le_twenty_four",
-     "line": 131
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_capacity_thresholds_synthesis",
-     "line": 136
-    }
-   ],
-   "theorems": 12,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalCollisionDistance",
-   "lines": 165,
-   "imports": [
-    "LagSevenCollisionDistance"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_collision_residue_cases",
-     "line": 49
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_avoids_of_not_in_residues",
-     "line": 63
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_not_mem_neighborhood_of_distance",
-     "line": 73
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_tight_subset_not_mem_of_distance",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_tight_subset_survives_of_distance",
-     "line": 127
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_collision_distance_synthesis",
-     "line": 145
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalDistanceGateT6Resolution",
-   "lines": 193,
-   "imports": [
-    "UniversalNonAASReduction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_distance_intermediate_tight_avoidance",
-     "line": 55
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_distance_intermediate_tight_survives",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_distance_avoiding_sublists_survive",
-     "line": 90
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_distance_gate_t6_conditional",
-     "line": 118
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_distance_gate_t6_synthesis",
-     "line": 151
-    }
-   ],
-   "theorems": 5,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
    "name": "UniversalGateT6Closure",
    "lines": 311,
    "imports": [
@@ -52820,398 +49013,164 @@
    "hasReport": false
   },
   {
-   "name": "UniversalGateT6PureAASChain",
-   "lines": 104,
+   "name": "UniversalNonAASReduction",
+   "lines": 315,
    "imports": [
-    "TightSeptuplePureAAS"
+    "LagSevenCollisionDistance"
    ],
    "decls": [
     {
      "kind": "theorem",
-     "name": "chain_union_lower_bound",
-     "line": 33
+     "name": "universal_collision_residue_cases",
+     "line": 39
     },
     {
      "kind": "theorem",
-     "name": "universal_capacity_contradiction",
-     "line": 43
+     "name": "universal_avoids_of_not_in_residues",
+     "line": 53
     },
     {
      "kind": "theorem",
-     "name": "universal_tight_pure_aas_forced",
-     "line": 51
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_gate_t6_zero_loss",
-     "line": 59
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_period_hierarchy_pure_aas",
-     "line": 65
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_gate_t6_pure_aas_chain_synthesis",
-     "line": 73
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalGeometricGateT6Synthesis",
-   "lines": 155,
-   "imports": [
-    "ArbitraryTightCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_geometric_gate_t6_survives",
-     "line": 58
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_intermediate_size_upper_bound",
-     "line": 83
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_intermediate_lag7_forcing",
-     "line": 92
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_intermediate_single_lag7_impossible",
-     "line": 104
-    },
-    {
-     "kind": "theorem",
-     "name": "master_geometric_gate_t6_universal_period_hierarchy",
-     "line": 116
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_geometric_gate_t6_synthesis",
-     "line": 129
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalLagSevenCapacityBound",
-   "lines": 151,
-   "imports": [
-    "UniversalLagThreeSevenTightDichotomy"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "lag7_collective_capacity_bound",
-     "line": 61
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_single_window_strict_impossibility",
-     "line": 72
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_two_windows_exact_capacity",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_high_capacity_collective_obstruction",
-     "line": 101
-    },
-    {
-     "kind": "theorem",
-     "name": "lag7_mandatory_overlap_bound",
-     "line": 114
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_lag7_capacity_bound_synthesis",
-     "line": 122
-    }
-   ],
-   "theorems": 6,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalLagThreeSevenTightDichotomy",
-   "lines": 173,
-   "imports": [
-    "UniversalGeometricGateT6Synthesis"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "tight_lag37_all_aas_or_has_lag7",
+     "name": "universal_not_mem_neighborhood_of_distance",
      "line": 63
     },
     {
      "kind": "theorem",
-     "name": "tight_lag37_all_aas_avoids_s_star",
-     "line": 77
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag37_all_aas_survives",
-     "line": 93
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag37_single_lag7_must_cover_two",
-     "line": 110
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag37_single_lag7_distance_obstruction",
-     "line": 121
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_lag37_two_lag7_high_capacity_obstruction",
-     "line": 133
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_lag37_tight_dichotomy_synthesis",
-     "line": 145
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalMultiLagSeparation",
-   "lines": 137,
-   "imports": [
-    "UniversalAASLagSeparation"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "universal_tight_two_lag7_union_bound",
-     "line": 67
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_tight_two_lag7_distant_aas_impossible",
-     "line": 78
-    },
-    {
-     "kind": "theorem",
-     "name": "universal_tight_two_lag7_identical_bound",
-     "line": 89
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quad_two_lag7_complement_zero",
-     "line": 99
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_quint_two_lag7_complement_le_one",
-     "line": 109
-    },
-    {
-     "kind": "theorem",
-     "name": "tight_sext_two_lag7_complement_le_two",
-     "line": 119
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_multi_lag_separation_synthesis",
-     "line": 128
-    }
-   ],
-   "theorems": 7,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalNonAASReduction",
-   "lines": 272,
-   "imports": [
-    "UniversalCollisionDistance"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
      "name": "universal_non_aas_sublist_collision_iff",
-     "line": 57
+     "line": 100
     },
     {
      "kind": "theorem",
      "name": "universal_non_aas_sublist_not_mem",
-     "line": 85
+     "line": 128
     },
     {
      "kind": "theorem",
      "name": "universal_non_aas_sublist_survives",
-     "line": 105
+     "line": 148
     },
     {
      "kind": "theorem",
      "name": "universal_three_non_aas_collision_iff",
-     "line": 124
+     "line": 167
     },
     {
      "kind": "theorem",
      "name": "universal_three_non_aas_survives",
-     "line": 163
+     "line": 206
     },
     {
      "kind": "theorem",
      "name": "universal_tight_quintuple_member_bound",
-     "line": 190
+     "line": 233
     },
     {
      "kind": "theorem",
      "name": "universal_tight_quintuple_no_ge_six",
-     "line": 200
+     "line": 243
     },
     {
      "kind": "theorem",
      "name": "universal_tight_quintuple_all_aas_survives",
-     "line": 210
+     "line": 253
     },
     {
      "kind": "theorem",
      "name": "universal_non_aas_sublist_distance_survives",
-     "line": 229
+     "line": 272
     },
     {
      "kind": "theorem",
      "name": "grand_universal_non_aas_reduction_synthesis",
-     "line": 251
+     "line": 294
     }
    ],
-   "theorems": 10,
-   "defs": 0,
-   "hasEnglishDocstring": true,
-   "hasReport": false
-  },
-  {
-   "name": "UniversalQuantumTightObstruction",
-   "lines": 126,
-   "imports": [
-    "UniversalGateT6PureAASChain",
-    "ArbitraryTightCollisionObstruction"
-   ],
-   "decls": [
-    {
-     "kind": "theorem",
-     "name": "single_quantum_coverage_bound",
-     "line": 42
-    },
-    {
-     "kind": "theorem",
-     "name": "single_quantum_universal_impossible",
-     "line": 56
-    },
-    {
-     "kind": "theorem",
-     "name": "two_quantum_high_lag_impossible",
-     "line": 71
-    },
-    {
-     "kind": "theorem",
-     "name": "two_quantum_universal_impossible",
-     "line": 85
-    },
-    {
-     "kind": "theorem",
-     "name": "grand_universal_quantum_tight_obstruction_synthesis",
-     "line": 97
-    }
-   ],
-   "theorems": 5,
+   "theorems": 13,
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
    "name": "UniversalQuantumWindowCapacity",
-   "lines": 164,
+   "lines": 169,
    "imports": [
-    "UniversalApexPeriodicTheorem"
+    "CapacitySlackCompensation",
+    "ElevenCapacityRigidity",
+    "GrandPeriodicDeletabilityTheorem",
+    "LagSevenTightObstruction",
+    "OneSSMultiplicity",
+    "P2ModFourRigidity",
+    "QuantumP2Arithmetic",
+    "SS2AASCollisionObstruction",
+    "SS2LagElevenForcing",
+    "TenGateT6Resolution",
+    "TightAvoidingLagCertificate",
+    "TightComponentSlackBound",
+    "TightTripleRigidity",
+    "TwoSSEndpoint",
+    "TwoSSTightAvoidanceTheorem",
+    "UniversalTightLagBound"
    ],
    "decls": [
     {
      "kind": "theorem",
      "name": "singleton_neighborhood_subset",
-     "line": 55
+     "line": 60
     },
     {
      "kind": "theorem",
      "name": "singleton_neighborhood_le_collective",
-     "line": 69
+     "line": 74
     },
     {
      "kind": "theorem",
      "name": "tight_subset_bounds_individual_neighborhood",
-     "line": 76
+     "line": 81
     },
     {
      "kind": "theorem",
      "name": "universal_quantum_level_bound_of_tight_size",
-     "line": 85
+     "line": 90
     },
     {
      "kind": "theorem",
      "name": "universal_quantum_level_bound_of_deficit",
-     "line": 92
+     "line": 97
     },
     {
      "kind": "theorem",
      "name": "universal_quantum_exclusion_of_tight_size",
-     "line": 102
+     "line": 107
     },
     {
      "kind": "theorem",
      "name": "tight_size_two_forces_level_zero",
-     "line": 108
+     "line": 113
     },
     {
      "kind": "theorem",
      "name": "tight_size_four_forces_level_le_one",
-     "line": 114
+     "line": 119
     },
     {
      "kind": "theorem",
      "name": "tight_size_six_forces_level_le_two",
-     "line": 120
+     "line": 125
     },
     {
      "kind": "theorem",
      "name": "tight_size_eight_forces_level_le_three",
-     "line": 126
+     "line": 131
     },
     {
      "kind": "theorem",
      "name": "tight_size_ten_forces_level_le_four",
-     "line": 132
+     "line": 137
     },
     {
      "kind": "theorem",
      "name": "grand_universal_quantum_window_capacity_synthesis",
-     "line": 138
+     "line": 143
     }
    ],
    "theorems": 12,
@@ -53275,7 +49234,7 @@
   },
   {
    "name": "UniversalTightDecomposition",
-   "lines": 265,
+   "lines": 256,
    "imports": [
     "TightQuadDecomposition"
    ],
@@ -53283,52 +49242,52 @@
     {
      "kind": "theorem",
      "name": "universal_mem_neighborhood_iff",
-     "line": 55
+     "line": 46
     },
     {
      "kind": "theorem",
      "name": "universal_non_aas_witness",
-     "line": 61
+     "line": 52
     },
     {
      "kind": "theorem",
      "name": "universal_all_aas_avoids",
-     "line": 78
+     "line": 69
     },
     {
      "kind": "theorem",
      "name": "universal_all_aas_survives",
-     "line": 93
+     "line": 84
     },
     {
      "kind": "theorem",
      "name": "universal_single_non_aas_collision_iff",
-     "line": 111
+     "line": 102
     },
     {
      "kind": "theorem",
      "name": "universal_single_non_aas_survives",
-     "line": 144
+     "line": 135
     },
     {
      "kind": "theorem",
      "name": "universal_two_non_aas_collision_iff",
-     "line": 167
+     "line": 158
     },
     {
      "kind": "theorem",
      "name": "universal_two_non_aas_survives",
-     "line": 205
+     "line": 196
     },
     {
      "kind": "theorem",
      "name": "universal_hall_preservation_of_slack_or_not_mem",
-     "line": 231
+     "line": 222
     },
     {
      "kind": "theorem",
      "name": "grand_universal_tight_decomposition_synthesis",
-     "line": 239
+     "line": 230
     }
    ],
    "theorems": 10,
@@ -53575,6 +49534,6 @@
    "hasReport": false
   }
  ],
- "total": 470,
+ "total": 388,
  "withReport": 167
 }

@@ -81,3 +81,7 @@ Lean formal declarations:
 
 - Status: `PROVED-LEAN`
 - Milestone: Registered as **E-324**.
+
+## 削除注記（2026-09-15）
+
+このカードが参照する Lean モジュールは監査 E-343 で wrapper／条件付き足場／恒真式と判定され、2026-09-15 に削除した（[AUDIT_GRAND_SYNTHESIS_2026-09-15.md](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) §9）。使える補題は `Recaman/AuditSalvage.lean` に退避した。registry の該当行は `STOPPED`。

@@ -3521,3 +3521,106 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   `Int.induction_on` はこのtoolchainに無いため Nat 二方向帰納と `ofNat/negSucc` 分岐で代替した。
   `EventualPeriodicSupply` に同等の `period_mass_constant` があるが、依存錐を軽く保つため
   `LeadingRunSupply`+`ParitySupply` から再証明している（import contract に明記）。
+
+## 2026-09-15 監査エポック（E-317〜E-342 の差し戻し）
+
+- 15:53 開始時点：HEAD 57143f9（E-342）、働き木クリーン。自律ループは 09-12 16:00〜17:28 に 50 モジュール、
+  09-14 09:41〜10:20 に 35 モジュール（1 モジュール約 1 分）を積み、09-14 11:48 に E-319 で「Issue #73 CLOSED」を宣言していた。
+- E-317 `GrandUniversalGateT6Resolution`：`k = k := rfl`、`N_B = N_B := rfl`、`(h : 1 ≤ m → False) : m = 0`。
+  E-318 `GateT6CapacityInduction`：`card_U - k ≤ card_D - k → card_U ≤ card_D`（omega）。
+  E-319 `GrandUniversalCapacityResolution`：同じ `h_rem` を仮定に持つ。符号語 `e` に触れる定理は E-128 の wrapper と
+  `signSum > 0 ⇒ |D| < |A|` のみ。import なしの独立ファイルで同じ 5 文を omega/rfl で再証明し恒真式であることを確認した。
+- E-338〜E-342：全射性は `NoPermanentHighEscapeHypothesis ∧ NoCorridorReentryHypothesis` からのみ導かれ、両仮説は定義のみで未証明。
+  `NoCorridorReentryHypothesis` は最小未到達数の尾部に下向横断が一つもないことを要求し、非全射なら偽。
+- 処置：E-067/E-070 を `CONJECTURED` に戻す（2026-09-14 以前の行を復元し監査注記を付す）。E-317〜E-319、E-338〜E-342 の claim に
+  監査注記。CURRENT_FRONTIER の結論に訂正ブロック、ROADMAP/README/CHANGELOG に追記。E-343（`STOPPED`）で監査を登録。
+  GitHub の Issue #73 は元々 OPEN のままだった（ループは docs 上でのみ CLOSED と書いていた）。
+- E-232〜E-337 はサブエージェント 4 本で全定理を R（実内容）/W（wrapper）/C（条件付き）/T（恒真式）に分類。結果は監査報告の表。
+- 16:09 ループ側が働き木の監査 14 ファイルをそのまま commit（e3a04b7）し、自身の WIP `PermanentHighEscapeObstruction.lean` を取り下げた。
+- 16:20 E-240（周期 18）が E-297〜E-317 の目標命題「緊密回避 ⇒ 純 AAS」を反証していることを監査報告・frontier に追記。
+  `report_vacuity.py --check-registry`（E-344 以降の PROVED-LEAN 行に非純算術 symbol を要求）を `check_research_registry.sh` に組み込み、
+  正例（現行 registry 通過）と負例（恒真式 2 本だけの仮想行 E-999 が exit 1）で動作確認。
+- 16:35 census H-20260915-18（E-345）：`tight_nonaas_census.cpp` を local_surplus.cpp の窓計算に倣って書き、wordsWithHighSS を E-179 と自動照合。
+  部分集合列挙（s* ∈ N(B)）と matching（s* 禁止で Hall 破れ）を全 donor で一致確認。ss=2 donor の最古 S 供出は p≤22 で例外 0、
+  ss≥3 は p=12 `AAAASAAASSSS` donor 3 で破れる。非 AAS 緊密回避は ss=2 で p=15 `AAAASAAASASASSS` から。証人 2 件を `verify_witnesses.py` で独立再計算。
+  （E-344 はこの間にループが別件で取ったため E-345 として登録。）
+- 16:40 E-344 `PermanentHighInternalBlocker`（H-20260915-17）：永久高値レジームにおける地平前履歴の完全無力化と内部ブロッカー強制定理を Lean 証明。$n \ge \text{upperTri}(H) + 2$ において減算候補 $a(n) - (n+1) \ge n - 1 > \text{upperTri}(H) \ge a(j)$（$j < H$）となり、地平前履歴による阻害が例外なく不可能（`pre_horizon_blocker_impossible`）。減算失敗時のブロッカーは必ず高値尾部内部 $H \le j \le n - 3$ に強制され、軌道高度急上昇 $2j + n + 1 \le a(n)$ および $2H + n + 1 \le a(n)$ を引き起こす。`report_vacuity.py` で 14 定理すべて非恒真式・実内容（R）を確認し、E-344+ 新 gate を通過。
+- 16:40〜 広木さんの指示で削除作業。削除候補 93 本のうち E-344（`PermanentHighInternalBlocker`）は一読で実軌道の局所補題と判断し残す。
+  残す 19 本のうち削除側を import する 11 本を機械的に検出（宣言を実際に使うのは 4 本）。サブエージェント 2 本で import 付け替えと
+  `AuditSalvage.lean` 作成、親は registry（92 行 STOPPED）・Recaman.lean・Audit.lean（795 行除去）・カード 21 枚を処理。
+- 17:10〜 広木さんの指示「根本原因をハーネスとして確立」。生成ループの書いた報告書は §4 の分類は妥当だが、動機の推測・未反映の削除・
+  無効 label `CONDITIONAL`・`report_vacuity` の誤用・未導入の対策2 を含んでいたため書き直した。根本原因 R1〜R6 を証拠ベースで確定し、
+  G1〜G5・P・速度制限を `harness_gate.py` と pre-commit に実装、`test_harness_gates.sh` の負例 8 件で拒否を確認。
+- 17:20 H-20260915-19（E-347）：lag-7 窓が ss=2 lag-11 donor の最古 S を被覆できる配置を bit-level で全列挙（3 配置、全て w1・u=s*+1・donor d1/d2/d4）。
+  census 拡張で被覆者の lag 分布を取り、lag ≥ 11 が大半と判明（G1 が本質）。副産物：7 語中 4 語で窓の最古位置が A で、
+  Lean の `oldestSubtractionPhase` が実際の最古 S とずれる。Lean 化（E-348、`LagSevenDonorCoverage`）をサブエージェントに依頼。
+- 17:25 E-347 の副産物を精査：`deletedNeighborhood` は phase を filter するだけなので、offset 11 が A の donor では削除が no-op。
+  p ≤ 10/11 の Gate T6 定理（E-225/E-230/E-231/E-232）は 7 語中 4 語で Hall 仮定に退化する。registry と frontier に注記。
+- 17:40 E-348 `LagSevenDonorCoverage`：サブエージェントが 98 配置の `injection` 証明ではなく `coverOK` Bool 判定＋`decide` で一括証明
+  （`lake env lean` 2.6 秒）。`--lint-module` 13/15 実内容、statement audit を作成、G1〜G5 通過。
+- 17:50 治療の仕上げ：frontier の 09-12〜15 の撤回段落（約 110 行）を明示的な id 一覧付きの撤回記録に置換（776→664 行）、ROADMAP の
+  追補 16 本と 09-14 節に撤回印、残した 18 行に実内容注記、E-345 を p ≤ 26 へ holdout 拡張（例外 0）。研究計画 `RESEARCH_PLAN_2026-09-15.md` を新設。
+- 18:50 P2：U の全部分集合を走査する probe で緊密部分集合の構造を測定（E-349）。OS 特徴付け（最古 S が相異なり N(B) に一致）が
+  p ≤ 26 の 512 万個で例外 0。lag ≥ 11・w2 は緊密集合に現れず、w1 の兄弟は常に B に入る。紙上証明の骨組み（Hall 増分補題）をカードに記録。
+  Lean は P1（真の最古 S での p ≤ 10）と Hall 増分補題をサブエージェント 2 本に依頼。
+- 19:15 P1 完了（E-350 `TrueOldestGateT6`、lint 10/11、G1〜G5 通過）。真の最古 S の削除で p ≤ 10 の Gate T6 を 7 語全てで立て直した。
+  同時に Hall 増分補題モジュール（`TightHallAugmentation`）も完成、30 分規則に従い次の commit で登録する。
+- 19:20 E-351 `TightHallAugmentation`（P2 補題 A：Hall 増分、w1 兄弟の強制）を登録準備。生成ループも P2 を並行して進めており
+  （`OldestSubtractionOffset`、`PairedSubtractionCoverage`、カード H-20260915-21、id E-352/E-353 を予約）、commit は 30 分規則で順番待ち。
+- 19:10 並行セッション（P2 補完）H-20260915-21（E-352）：`g1_lag_structure.cpp` で lag ≥ 11 メンバーの priv/minSlack 分布・offset 別被覆者・
+  paired older S の bit-level 分類。G1-strong は全正符号和語 p ≤ 24 でも例外 0。private-S 論法は lag-11 の 3 割で無力、minSlack = 1 の族を記録。
+  E-349（OS）を読んだ後にカードを補完として位置づけ直し、P1 用に書いた `OldestSubtractionOffset`（16 定理）は E-350 の `trueOldestPhase` と重複するため退避（未 commit）。
+  `PairedSubtractionCoverage`（E-353 予定、lint 6/8 実内容）は 30 分規則に従い E-351 の後に登録する。
+- 19:40 E-353 `PairedSubtractionCoverage`（並行セッション）：paired older S の被覆者補題を stream 上で Lean 化（`pairedAt` decide＋`past_getD` lift、`lake env lean` 0.35 秒、lint 6/8 実内容、statement audit 作成）。同 commit で E-354：G1-strong を p ≤ 31 へ holdout 延長（例外 0、4.5 分）、OS を仮定した閉包探索 `os_closure_search.py` で lag-max 11/15 の緊密 B を bit-level で全排除（OS ⇒ T、lag ≤ 15）。peer（i46zswdv）と claude-peers で id・commit 順を調整し、30 分規則に従って登録。
+- 19:33 E-351 を commit（4a69939）。`TightPrivatePhase`（P2 補題 B：private phase ≤ 1、w1 の 2 phase 被覆）を登録準備。
+  生成ループは E-352（probe）を commit し、E-353（`PairedSubtractionCoverage`）と E-354（probe）を働き木で登録していたので、本モジュールは E-355 とした。
+- 19:40 E-353 `PairedSubtractionCoverage`（並行セッション）：paired older S の被覆者補題を stream 上で Lean 化（`pairedAt` decide＋`past_getD` lift、`lake env lean` 0.35 秒、lint 6/8 実内容、statement audit 作成）。同 commit で E-354：G1-strong を p ≤ 31 へ holdout 延長（例外 0、4.5 分）、OS を仮定した閉包探索 `os_closure_search.py` で lag-max 11/15 の緊密 B を bit-level で全排除（OS ⇒ T、lag ≤ 15）。peer（i46zswdv）と claude-peers で id・commit 順を調整し、30 分規則に従って登録。
+
+## 2026-09-16 P2：OS を使わない閉包探索（E-356/E-357）
+
+- 15:00 開始：HEAD 8f1ae9e（E-353/E-354）、働き木クリーン、並行セッションなし（claude-peers repo scope で 0）。
+  計画の次項は「OS の紙上証明（補題 C/D）」だったので、補題 D（最古 S の単射性）を bit-level で確かめる probe を先に書いた。
+- 15:10 `shared_oldest_s.py`：lag ≤ 15 の最小 P2 語の全対（9,639 組）で最古 S を共有できる配置が **10 組**（`AAASSSSAAAS`＋AAS、lag-15 の 9 語＋AAS/w1/w2）。
+  全て長い語が `…A·W` で終わる形。補題 A で短い方は B に入るので、OS は T と独立には証明できない。補題 C/D 路線を止める。
+- 15:15 定式化を変更：緊密 B ＋ Hall ⇒（Hall の定理）全単射 own : B → N(B)。E-354 の閉包探索の「所有者は最古 S を乗せる」を「任意の S offset を乗せる」に緩めれば
+  OS が不要になる。単射性も不要（各メンバーが 1 つ所有＋全 S が所有される、の 2 条件だけ）。周期語から直線への持ち上げで両条件が保たれることを確認。
+- 15:20 `matching_closure_search.py`：lag-max 11 の 17 語を所有者 ≤ 11 で全排除（0.1 秒）。健全性：lag-max 7 で w1 三つ組が閉包として残り（w1 が offset 7 を所有する
+  分岐のみ）、w2 は排除。lag-max 15 は FIFO・上限 16 で 1 語が cap、上限 40 で排除（144 万ノード）。
+- 15:30 need の順序を MRV（整合配置が最少の S から）にすると lag 11 の木は最大 59 ノード（FIFO 1,140）。所有者 ≤ 15 の lag 11（25 秒）と lag-max 15（39 秒）も
+  MRV で全排除、cap 0。lag-max 19 を 4 shard で開始（1 語 21 秒）。
+- 15:35 Lean 化の設計：探索木を証明書（`Cert`）として Python が出力し、Lean の検査器 `check`（fuel 付き構造再帰、座標を +64 シフトした Nat）が
+  全 92 配置（20 語 × S offset）を bit 整合で検査、健全性を `OwnerFamily`（M1＋M2＋窓語 ∈ 20 語）の下で証明する方式。骨格（定義・証明書・decide 18 本・
+  `ownerWords_eq` の bitWords 走査）は `lake env lean` 15 秒。健全性証明はサブエージェントに委譲。
+- 15:50 E-356 の文書一式（カード H-20260916-01、registry、frontier（重複していた E-353/E-354 段落を除去）、CHANGELOG、experiments/README、研究計画）。
+- 16:00 サブエージェントが `check_sound`（fuel 帰納、`needs_spec`→onto→window/own_mem→`List.mem_iff_getElem` で語の index→`consistent`→`extend` の Realizes→IH）と
+  主定理 3 本を完成（警告なし、`lake env lean` 20 秒）。lint 31/31 実内容。モジュール名 `MatchingClosureLagEleven` は G4 の禁止語 closure を含むので
+  `OwnerFamilyLagEleven` に改名。Audit.lean に 12 本、registry E-357、statement audit を作成。lag-15 の証明書は 10,026 ノード（同じ検査器では重い）。
+  Hall の定理（有限 list 版、E-358）は別サブエージェントが並行して作成中。
+- 16:15 E-357 を commit（1e0e5c3）。サブエージェントの Hall の定理モジュール `HallMatching`（450 行、Halmos–Vaughan、`lake env lean` 0.5 秒、lint 13/17 実内容）を
+  検証・配置し E-358 として登録準備（30 分規則待ち）。周期語の緊密 B を Int 上の owner family へ持ち上げる E-359（`PeriodicOwnerFamilyLagEleven`）を
+  3 本目のサブエージェントに依頼：own は `tight_owner_map`、mem t := phase p t ∈ B、own' t := t − 1 − idx(phase p t)、B の要素 < p を仮定。
+- 16:19 E-358 を commit（1fbf6e1、時刻待ちの自動 commit）。E-359 `PeriodicOwnerFamilyLagEleven`（サブエージェント、232 行、`lake env lean` 1.5 秒、
+  既存の `e_shift`／`past_shift`／`lift_equal_mod` を再利用、lint 4/9 実内容で主定理は実内容）を配置・登録。これで T（lag-max 11）が周期語の定理。
+  lag 15 の検査器はビットマスク版（設計はカード追記）、lag 19 は 4 shard 実行中。
+
+
+## 2026-10-01: H-20261001-01 terminal A budget
+
+- Existing uncommitted work was left in the original checkout. This unit uses
+  an isolated worktree based on 08c0856 and branch codex/p2-terminal-tail-bound.
+- Froze one all-length local question and falsifier before execution. Discovery
+  and holdout have no violations; raw outputs and pre-run hashes are saved.
+- Proved on paper t>0 => t<ssCount for minimal P2 words, with sharp witnesses
+  for every SS count. The new proof edge is the mass-ceiling-2 first-P2 lemma.
+- E-361 is PROVED-PAPER only. E-360 is reserved for existing uncommitted work
+  and is deliberately not reused. No prior uncommitted result was promoted.
+- Negative controls establish the need for minimality and the two P2 equations.
+  No mathematical repair or failed falsifier execution occurred. No Lean source changed.
+- The first cold full check was explicitly interrupted during the existing
+  DeepSixtyone certificate build, and the second during its companion mex
+  certificate. Reused their unchanged original caches after
+  matching source, toolchain, and every transitive dependency artifact; kept
+  the interrupted logs and cache provenance, then reran the normal full check.
+- Final check passed: 390 jobs, 2,549 permitted-axiom declarations, registry
+  360 rows / 154 PROVED-LEAN, G1-G5 and all four protected claims unchanged.
+- Stop after this bounded unit; next decision and validation are in the handoff.

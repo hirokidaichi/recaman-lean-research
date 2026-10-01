@@ -1,4 +1,19 @@
-import Recaman.UniversalApexPeriodicTheorem
+import Recaman.CapacitySlackCompensation
+import Recaman.ElevenCapacityRigidity
+import Recaman.GrandPeriodicDeletabilityTheorem
+import Recaman.LagSevenTightObstruction
+import Recaman.OneSSMultiplicity
+import Recaman.P2ModFourRigidity
+import Recaman.QuantumP2Arithmetic
+import Recaman.SS2AASCollisionObstruction
+import Recaman.SS2LagElevenForcing
+import Recaman.TenGateT6Resolution
+import Recaman.TightAvoidingLagCertificate
+import Recaman.TightComponentSlackBound
+import Recaman.TightTripleRigidity
+import Recaman.TwoSSEndpoint
+import Recaman.TwoSSTightAvoidanceTheorem
+import Recaman.UniversalTightLagBound
 
 /-!
 # UniversalQuantumWindowCapacity: Universal Window-Neighborhood Subsetting and Quantum Capacity Bounds
@@ -37,19 +52,9 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open TwentyTwoLagRigidity TwentyTwoGateT6Resolution TwentyTwoGateT6Unconditional
-open GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
 
 /-- For any element u ∈ A, the individual neighborhood of [u] is a subset of the neighborhood of A. -/
 theorem singleton_neighborhood_subset (e : Int → Bool) (p : Nat)

@@ -1,0 +1,20 @@
+lag-max 11: 17 words v, 175 owner words (lag <= 15), 1177 placements, memberCap=40, nodeCap=20000000, LA-AAS=off, order=MRV
+  SSAAAAAASSS: excluded (total 213 nodes, span -34..0)
+  SASAAAASASS: excluded (total 522 nodes, span -40..0)
+  SAASAASAASS: excluded (total 48 nodes, span -23..10)
+  ASSAAASAASS: excluded (total 1786 nodes, span -41..30)
+  SAAASSAAASS: excluded (total 498 nodes, span -41..21)
+  ASASASAAASS: excluded (total 159 nodes, span -29..16)
+  SAASAAASSAS: excluded (total 66 nodes, span -33..10)
+  ASSAAAASSAS: excluded (total 1157 nodes, span -47..23)
+  SAAASASASAS: excluded (total 79 nodes, span -25..10)
+  ASASAASASAS: excluded (total 83 nodes, span -28..16)
+  ASAASSAASAS: excluded (total 361 nodes, span -25..27)
+  AAASSSSAAAS: excluded (total 37 nodes, span -11..9)
+  SAAASAASSSA: excluded (total 51 nodes, span -22..10)
+  ASASAAASSSA: excluded (total 132 nodes, span -33..16)
+  ASAAASSSASA: excluded (total 102 nodes, span -11..18)
+  AAASSSASASA: excluded (total 1827 nodes, span -46..30)
+  AAASSASSSAA: excluded (total 26 nodes, span -21..8)
+=> excluded 17/17, consistent closure 0, cap hit 0
+python3 $S 11 40 20000000 --owners=15 --mrv --noaas  24.44s user 0.15s system 99% cpu 24.719 total

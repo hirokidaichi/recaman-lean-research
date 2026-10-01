@@ -1,0 +1,10 @@
+lag-max 7: 2 words v, 3 owner words (lag <= 7), 7 placements, memberCap=14, nodeCap=2000000, LA-AAS=off, order=MRV
+  SAAAASS: CONSISTENT (total 6 nodes, span -7..6)
+     own offset 1: excluded (1 nodes)
+     own offset 6: excluded (1 nodes)
+     own offset 7: CONSISTENT (3 members, 4 nodes): -3:AAS 0:SAAAASS 2:AAS
+  ASAASAS: excluded (total 5 nodes, span -13..1)
+     own offset 2: excluded (1 nodes)
+     own offset 5: excluded (3 nodes)
+     own offset 7: excluded (1 nodes)
+=> excluded 1/2, consistent closure 1, cap hit 0

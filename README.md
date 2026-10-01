@@ -32,6 +32,13 @@ Lean 4形式化プロジェクトです。
 
 ## 現在地
 
+2026-09-16 の P2（G1）では、緊密部分集合の「最古 S 特徴付け（OS）」路線を捨てた。最古 S を共有する 2 窓は bit-level で実在し（E-356）、
+OS は T と独立には証明できない。代わりに Hall の定理が緊密 B に与えるマッチング own : B → N(B) の片側（各メンバーが自分の窓内の S を 1 つ所有し、
+全メンバーの窓内の全 S が所有される）だけで閉包探索を回すと、lag-max 11 の 17 語・lag-max 15 の 155 語・w2 が全排除された。lag 11 の探索木は証明書として
+Lean で検査し（E-357 `OwnerFamilyLagEleven`）、Hall の結婚定理の list 版（E-358 `HallMatching`）と周期語からの持ち上げ（E-359 `PeriodicOwnerFamilyLagEleven`）
+を合成して、**周期語で Hall が成り立つ緊密部分集合の全メンバーの窓が lag ∈ {3,7,11} の最小 P2 語なら lag 11 のメンバーはない**ことを、周期 p の上限なしで証明した。
+lag ≥ 15 のメンバーを含む場合と donor 回避条件（Gate T6）は未着手で、lag 15 の証明書（10,026 ノード）には検査器の高速化が要る。
+
 2026-09-11の[等号境界エポック](docs/EXTREMAL_CAPACITY_EPOCH_2026-09-11.md)では、容量不等式 `|U|≤|D|` を
 広げるのではなく等号が立つ場所を測った。この不等式は全周期で sharp であり（E-176）、**等号を達成する語の
 最小供給窓はすべて SS≤1**（E-177）——つまり E-070 の等号側は E-128 の既証明クラスの内側にある。
@@ -64,6 +71,10 @@ NoSS mass1 語は [A] / minWord / AS・SA 前置に分類され、slack は 3+8k
 SS=3 の軌道 extra は (SA)^k ++ minWord（E-143, E-146）。
 SS=2 の P2 は NoSAAS なしで先頭 A run が 0,1,3 に限る（E-166、E-132）。ssCount≥1 なら先頭は ssCount+1 以下（E-169）。
 **全 lag の容量 E-070、全加算同時供給の排除 E-067、全射性・非全射性は未証明**。#73 本体は OPEN。
+2026-09-14〜15 に自律ループが登録した E-317〜E-319（`|U|≤|D|` の全周期証明・#73 CLOSED）と E-338〜E-342（全射性閉包）は、
+2026-09-15 の監査で恒真式・条件付き足場と判明し差し戻した（[監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+研究計画と見通しは [RESEARCH_PLAN_2026-09-15.md](docs/RESEARCH_PLAN_2026-09-15.md)。以後の登録は [ハーネス](docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md)（`scripts/harness_gate.py`、`docs/PROTECTED_CLAIMS.tsv`、pre-commit の速度制限）を通る。
+監査後の census（E-345）で、Gate T6 の一般形は「ssCount=2 donor の最古 S」に限れば p≤22 で例外 0、ssCount≥3 では p=12 から破れることが分かった。
 
 2026-09-07の[戦略地図](docs/STRATEGY_MAP_2026-09-07.md)で、#70の任意finite-prefix反例族を
 Leanで証明し、#71の31,058個のblockerの共同birthを完全分類した。

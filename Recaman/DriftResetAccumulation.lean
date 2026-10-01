@@ -1,7 +1,11 @@
 import Recaman.ShortPeriodicSupply
 import Recaman.CanonicalSSFreeSupply
 import Recaman.FiniteBlockCapacity
-import Recaman.CorridorDensityObstruction
+import Recaman.ExactOrbitNonperiodicity
+import Recaman.LagElevenPeriodic
+import Recaman.LeastTailLedgerMinimum
+import Recaman.OrbitBounds
+import Recaman.SubtractionLedger
 
 /-!
 # Drift Resets and Accumulation of Unsupplied Additions

@@ -25,6 +25,34 @@ This module establishes the ultimate geometric exclusion of pairs of lag 7 windo
    stream conflict, and strict two-window impossibility.
 -/
 
+namespace Recaman.UniversalLagSevenCapacityBound
+
+/-! Restated verbatim from `UniversalLagSevenCapacityBound` under its original full name. -/
+
+/-- Collective Capacity Upper Bound: Under pairwise separation (c ≤ m), the collective
+neighborhood of m lag 7 windows in a tight subset of size N + m satisfies |W| ≤ 2m. -/
+theorem lag7_collective_capacity_bound
+    (N_A_len W_len N m c : Nat)
+    (_hc : c ≤ N)
+    (htight : N_A_len = N + m)
+    (hcov : W_len + (N - c) ≤ N_A_len)
+    (h_cap : c ≤ m) :
+    W_len ≤ 2 * m := by
+  omega
+
+end Recaman.UniversalLagSevenCapacityBound
+
+namespace Recaman.TwoLagSevenOverlapGeometry
+
+/-! Restated verbatim from `TwoLagSevenOverlapGeometry` under its original full name. -/
+
+/-- Inclusion-exclusion relation for subtraction phase neighborhoods of two windows:
+|W₁ ∪ W₂| = |W₁| + |W₂| - |W₁ ∩ W₂|. -/
+def inclusion_exclusion (W1 W2 W_union W_inter : Nat) : Prop :=
+  W_union + W_inter = W1 + W2
+
+end Recaman.TwoLagSevenOverlapGeometry
+
 namespace Recaman.TwoLagSevenPhaseConflict
 
 open LeadingRunSupply LowSSEndpoint TwoSSEndpoint P2ModFourRigidity
@@ -34,31 +62,16 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open GrandApexPeriodTwentyTheorem GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem UniversalQuantumWindowCapacity TightSubsetLagStructure
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
+open UniversalQuantumWindowCapacity TightSubsetLagStructure
 open TightSubsetDecomposition TightQuadDecomposition UniversalTightDecomposition
-open SharpPeriodicSupply LagSevenCollisionDistance UniversalCollisionDistance
-open UniversalNonAASReduction UniversalDistanceGateT6Resolution UniversalCapacityThresholds
-open ParametricGateT6Synthesis TightTripleCollisionObstruction TightQuadCollisionObstruction
-open MasterGeometricGateT6Resolution UniversalAASLagSeparation UniversalMultiLagSeparation
-open UniversalAASCoverageBound GrandGeometricExclusionSynthesis TightQuintCollisionObstruction
-open SixteenGeometricGateT6Resolution TightSextCollisionObstruction EighteenGeometricGateT6Resolution
-open TightSeptCollisionObstruction TwentyGeometricGateT6Resolution TightOctCollisionObstruction
-open TwentyTwoGeometricGateT6Resolution TightNonCollisionObstruction
-open TwentyFourGeometricGateT6Resolution ArbitraryTightCollisionObstruction
-open UniversalGeometricGateT6Synthesis UniversalLagThreeSevenTightDichotomy
-open UniversalLagSevenCapacityBound TwoLagSevenOverlapGeometry QuantumLagSizeRigidity
-open TightAvoidingStructuralClassification LagSevenDistanceRigidity LagSevenPrefixRigidity
+open SharpPeriodicSupply LagSevenCollisionDistance
+open UniversalNonAASReduction
+open TightTripleCollisionObstruction
+open LagSevenPrefixRigidity
+open UniversalLagSevenCapacityBound TwoLagSevenOverlapGeometry
 
 /-- Golomb ruler property of w₁ offsets {1, 6, 7}: the positive differences are 1, 5, 6, all distinct. -/
 theorem w1_distinct_differences :

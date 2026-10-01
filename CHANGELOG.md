@@ -1,5 +1,68 @@
 # Changelog
 
+## Matching-closure search: T for lag-max ≤ 15 without the OS assumption (E-356) — 2026-09-16
+
+- **E-356（`COMPUTED`、[card](docs/HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md)）**：OS の補題 D（最古 S の単射性）は bit-level では偽
+  （lag ≤ 15 で最古 S を共有できる 2 窓が 10 組）で、補題 A により OS は T と独立に証明できない。代わりに緊密 B ＋ Hall から Hall の定理で得る
+  全単射 own : B → N(B) の片側（各メンバーが自分の窓内の S を 1 つ所有／全 S が所有される、単射性不使用）だけを line model で閉包する探索
+  `matching_closure_search.py` を書き、lag-max 11 の 17 語（所有者 ≤ 11／≤ 15）・lag-max 15 の 155 語・w2 を全排除（cap 0）。
+  lag-max 7 では w1 が最古 S を所有する三つ組だけが残る。T（lag ≤ 15）が OS なしで有限検査に落ちた。lag 19 は実行中
+- **E-357（`PROVED-LEAN`、`OwnerFamilyLagEleven`）**：E-356 の探索木を証明書として Lean で検査。検査器 `check` の健全性を owner family の公理
+  （各メンバーが窓内の S を 1 つ所有／全 S が所有される／窓は 20 語のいずれか）の下で証明し、lag-max 11 の 17 語と w2 の証明書を `decide` で検査。
+  主定理：lag ≤ 11 の owner family に lag 11 のメンバーはなく、w2 のメンバーもない。Hall の定理からの導出と周期語からの持ち上げは次
+- **E-358（`PROVED-LEAN`、`HallMatching`）**：有限 list の Hall の結婚定理（Halmos–Vaughan）と緊密部分集合の全射形。`tight_owner_map`：U 上の Hall と緊密 B から
+  own : B → N(B)（窓内・単射・全射）。E-357 の owner family の前提を周期語で与える
+- **E-359（`PROVED-LEAN`、`PeriodicOwnerFamilyLagEleven`）**：周期語の緊密 B（要素 < p、窓が lag ∈ {3,7,11} の最小 P2）を owner family へ持ち上げ、
+  E-357 と合成して「B に lag 11 のメンバーはない」を p 上限なしで証明。T（lag-max 11）の周期語版、今日の到達点
+
+## Permanent High Internal Blocker and Pre-Horizon Immunity (E-344) — 2026-09-15
+
+- 永久高値レジーム（$2n \le a(n)$ for all $n \ge H$）において、地平 $H$ 以前の過去値が三角数上界 $a(j) \le \text{upperTri}(H)$（$j < H$）に留まることから、カットオフ $n \ge \text{upperTri}(H) + 2$ 以降の減算候補 $a(n) - (n + 1) \ge n - 1 > \text{upperTri}(H)$ が地平前履歴によって阻害されることが例外なく数学的に不可能（`pre_horizon_blocker_impossible`）であることを Lean 証明（`PROVED-LEAN`、E-344）
+- 減算失敗（$\neg \text{CanSubtract}(n + 1)$）時の内部ブロッカー強制（$H \le j \le n$）、直近3状態の排除（$j \le n - 3$）、および内部ブロッカーによる軌道高度急上昇 $2j + n + 1 \le a(n)$ と $2H + n + 1 \le a(n)$ を形式化
+- `report_vacuity.py` で 14 定理すべてが非恒真式・実内容（R）であることを確認し、E-344+ 新 gate を通過
+
+## Audit: the "grand synthesis" rows E-317..E-319 and E-338..E-342 — 2026-09-15
+
+- **ハーネス確立（INC-20260915-01）**：`scripts/harness_gate.py`（G1〜G5：実在・非恒真・実内容・命名・定理文逐語引用）、
+  `docs/PROTECTED_CLAIMS.tsv`（中心命題 E-001/E-067/E-070/E-179 の label pin、変更は `RECAMAN_HUMAN_APPROVED=1`）、
+  pre-commit の速度制限（新規モジュール 1 本／commit、30 分間隔、`RECAMAN_ALLOW_BURST=1`）、`docs/statement_audits/`、
+  負例テスト `scripts/test_harness_gates.sh`。インシデント報告書を証拠ベースに書き直し、AGENTS.md と AI_RESEARCH_PROTOCOL §4.1 を更新
+- **92 モジュールを削除**（監査で wrapper／条件付き／恒真式と判定したもの、[§9](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)）。
+  実内容を持つ 20 本は残し、11 本の import を付け替え、削除側の使える補題は `Recaman/AuditSalvage.lean`（E-346）へ退避。
+  registry の削除行は `STOPPED`、Audit.lean から `#print axioms` 795 行を除去
+- E-317/E-318/E-319（Gate T6 全周期解決・`|U|≤|D|`・Issue #73 CLOSED）の主要定理は自由な Nat 変数上の恒真式
+  （`card_U - k ≤ card_D - k` ⇒ `card_U ≤ card_D`、`k = k := rfl`）で符号語に触れない。E-070/E-067 を `CONJECTURED` に戻し、
+  #73 は OPEN のまま。Gate T6 の無条件 Lean 証明は p≤10（E-230/E-231）まで
+- E-338..E-342（全射性閉包）は未証明の定義済み仮説 `NoPermanentHighEscapeHypothesis`・`NoCorridorReentryHypothesis`
+  からの条件付き再包装。全射性・非全射性は未解決のまま
+- E-320 の `*_of_capacity_induction` 系は条件付き、E-321 の供給は lag≤7 の短い供給（E-071 の有限ブロック版）
+- 該当 registry 行の claim に監査注記を付け、E-343（`STOPPED`）として監査自体を登録。
+- E-297..E-317 が目指した「緊密回避部分集合は純 AAS（m = 0）」は E-240（周期 18 証明書）が反証済み。geometric/pure-AAS 路線は STOPPED
+- `scripts/report_vacuity.py --check-registry` を `check_research_registry.sh` に組み込み、E-344 以降の `PROVED-LEAN` 行に
+  純算術でない audit symbol を 1 つ以上要求する gate を追加（既存行には遡及しない）
+- 治療の仕上げ：frontier の撤回段落を id 一覧付き撤回記録に置換、ROADMAP に撤回印、残存 18 行に実内容注記、
+  E-345 を p ≤ 26 へ拡張（ss=2 の最古 S・緊密回避 lag {3,7} とも例外 0）。研究計画 `docs/RESEARCH_PLAN_2026-09-15.md` を新設
+- E-355（`PROVED-LEAN`、`TightPrivatePhase`、P2 補題 B）：緊密 B の各メンバーの private phase は高々 1、w1 メンバーの 3 phase のうち 2 つは他メンバーが被覆
+- E-351（`PROVED-LEAN`、`TightHallAugmentation`、P2 補題 A）：緊密 B と Hall から、近傍が N(B) に収まる x ∈ U は B に入る。w1 の兄弟の強制
+- E-354（`COMPUTED`）：G1-strong を p ≤ 31 へ holdout 延長（例外 0）。OS を仮定した bit-level 閉包探索で、緊密 B の lag 最大メンバーが lag 11／15 の場合を全排除（OS ⇒ T、lag ≤ 15）
+- E-353（`PROVED-LEAN`、`PairedSubtractionCoverage`）：隣接 SS 対の古い方の S は AAS 窓に入らず、最小 lag-7 窓では w1 の最古 bit（s = u−7）のみ。E-352 の補題の Lean 化
+- E-354（`COMPUTED`）：G1-strong を p ≤ 31 へ holdout 延長（例外 0）。OS を仮定した bit-level 閉包探索で、緊密 B の lag 最大メンバーが lag 11／15 の場合を全排除（OS ⇒ T、lag ≤ 15）
+- E-353（`PROVED-LEAN`、`PairedSubtractionCoverage`）：隣接 SS 対の古い方の S は AAS 窓に入らず、最小 lag-7 窓では w1 の最古 bit（s = u−7）のみ。E-352 の補題の Lean 化
+- E-352（`COMPUTED`）：lag ≥ 11 メンバーの private-S/minSlack 分布（G1-strong は全正符号和語 p ≤ 24 で例外 0、private-S 論法は 3 割で無力）と、
+  隣接 SS 対の古い方の S の被覆者分類（AAS 不可、lag-7 は w1 の offset 7 のみ）。E-349 の補完
+- E-350（`PROVED-LEAN`、`TrueOldestGateT6`、P1）：真の最古 S の削除で p ≤ 10 の Gate T6 を 7 語全てで証明。E-230 の no-op 問題を解消
+- E-349（`COMPUTED`）：緊密部分集合の OS 特徴付け（最古 S が相異なり N(B) を尽くす）が p ≤ 26 の 512 万個で例外 0。lag ≥ 11・w2 は
+  緊密集合に現れない。G1 を OS として再定式化（P2 の骨）
+- E-348（`PROVED-LEAN`、`LagSevenDonorCoverage`）：E-347 Q1 の Lean 化。7 語の decide 分類と lag-7 被覆の 3 配置。ハーネス（G1〜G5、statement audit）通過
+- E-347（`COMPUTED`）：ss=2 lag-11 donor の最古 S を被覆する lag-7 窓は 3 配置のみ（w1、u=s*+1、donor d1/d2/d4）。周期語では
+  被覆者の大半が lag ≥ 11 なので G1 が本質。Lean の `oldestSubtractionPhase` は 7 語中 4 語で実際の最古 S とずれる
+- E-225/E-230/E-231/E-232（Gate T6 p≤10/11）に注記：供出 phase は offset 11 で、7 語中 4 語では A なので削除が no-op になり
+  定理が Hall 仮定に退化する。実質は d4/d5/d7 型 donor の主張
+- census E-345（`experiments/issue73_20260915/tight_nonaas_census.cpp`、E-179 と語数一致）：ssCount=2 donor の最古 S は p≤22 で
+  緊密回避部分集合に一度も被覆されない。ssCount≥3 では p=12 から破れる。非 AAS 緊密回避部分集合は ss=2 donor で p=15 から出現し
+  メンバーの lag は全件 7。次の Lean gate を G1（緊密回避の lag は {3,7}）・G2（ss=2 の最古 S は被覆されない）に絞った
+  [監査報告](docs/AUDIT_GRAND_SYNTHESIS_2026-09-15.md)
+
 ## Issue 73: the extremal boundary of the capacity inequality — 2026-09-11
 
 - `|U|≤|D|` は全周期で sharp（`E-176`）。等号語の最小供給窓はすべて SS≤1（`E-177`）なので、

@@ -1,5 +1,19 @@
 import Recaman.TightSubsetDecomposition
-import Recaman.TightQuadRigidity
+import Recaman.CapacitySlackCompensation
+import Recaman.ElevenCapacityRigidity
+import Recaman.GrandPeriodicDeletabilityTheorem
+import Recaman.LagSevenTightObstruction
+import Recaman.OneSSMultiplicity
+import Recaman.P2ModFourRigidity
+import Recaman.QuantumP2Arithmetic
+import Recaman.SS2AASCollisionObstruction
+import Recaman.SS2LagElevenForcing
+import Recaman.TenGateT6Resolution
+import Recaman.TightComponentSlackBound
+import Recaman.TightTripleRigidity
+import Recaman.TwoSSEndpoint
+import Recaman.TwoSSTightAvoidanceTheorem
+import Recaman.UniversalTightLagBound
 
 /-!
 # TightQuadDecomposition: AAS and Non-AAS Collision Decomposition in Tight Quadruples
@@ -28,6 +42,24 @@ into AAS and non-AAS window components:
 10. `grand_tight_quad_decomposition_synthesis`: Master synthesis theorem for tight quadruple decomposition.
 -/
 
+namespace Recaman.TightQuadRigidity
+
+open TwoSSTightDisjoint TwoSSLocalDonation TightTripleRigidity
+
+/-- Any tight avoiding quadruple of size 4 strictly survives deletion of s*(u₀) whenever s*(u₀) ∉ N(A).
+(Restated from `TightQuadRigidity`; the proof inlines `p14_tight_quad_survives_of_not_mem`.) -/
+theorem tight_quad_survives_of_not_mem (e : Int → Bool) (p : Nat)
+    (A : List Nat) (lag : Nat → Nat)
+    (hA4 : A.length = 4)
+    (htight : (neighborhood e p A lag).length = 4)
+    (u0 : Nat)
+    (hnot : oldestSubtractionPhase p u0 (lag u0) ∉ neighborhood e p A lag) :
+    A.length ≤ (deletedNeighborhood e p A lag (oldestSubtractionPhase p u0 (lag u0))).length := by
+  have htight' : (neighborhood e p A lag).length = A.length := by omega
+  exact tight_triple_survives_of_s_not_mem e p A lag u0 htight' hnot
+
+end Recaman.TightQuadRigidity
+
 namespace Recaman.TightQuadDecomposition
 
 open LeadingRunSupply LowSSEndpoint TwoSSEndpoint P2ModFourRigidity
@@ -37,19 +69,11 @@ open UniversalTightLagBound TightP2ParityRigidity TwoSSTightAvoidanceTheorem
 open SS2AASCollisionObstruction ElevenSSDonationClosure LagSevenTightObstruction
 open UniversalGateT6Closure QuantumP2Arithmetic OneSSMultiplicity TightPeriodStratification
 open TenGateT6Resolution GrandPeriodicDeletabilityTheorem LowSSPeriodicSupply
-open ElevenCapacityRigidity CapacitySlackCompensation ElevenGateT6Synthesis
-open FourteenLagRigidity TwelveGateT6Resolution TightTripleRigidity
-open LagSevenNeighborhoodRigidity SS2LagElevenForcing TwelveGateT6Unconditional
-open FourteenGateT6Resolution TightQuadRigidity FourteenGateT6Unconditional
-open SixteenLagRigidity SixteenGateT6Resolution EighteenLagRigidity EighteenGateT6Resolution
-open EighteenGateT6Unconditional ApexPeriodicRigidityTheorem GrandApexPeriodEighteenTheorem
-open TwentyLagRigidity TwentyGateT6Resolution TwentyGateT6Unconditional
-open TwentyTwoLagRigidity TwentyTwoGateT6Resolution TwentyTwoGateT6Unconditional
-open GrandApexPeriodTwentyTwoTheorem
-open TwentyFourLagRigidity TwentyFourGateT6Resolution TwentyFourGateT6Unconditional
-open GrandApexPeriodTwentyFourTheorem
-open ArbitraryPeriodLagRigidity ArbitraryPeriodGateT6Resolution ArbitraryPeriodGateT6Unconditional
-open UniversalApexPeriodicTheorem UniversalQuantumWindowCapacity TightSubsetLagStructure
+open ElevenCapacityRigidity CapacitySlackCompensation
+open TightTripleRigidity
+open SS2LagElevenForcing
+open TightQuadRigidity
+open UniversalQuantumWindowCapacity TightSubsetLagStructure
 open TightSubsetDecomposition
 
 /-- In any tight quadruple A (|A| = 4), every member u ∈ A satisfies |N([u])| ≤ 4. -/

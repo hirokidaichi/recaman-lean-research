@@ -1,0 +1,1775 @@
+lag-max 11: 1 words v, 20 owner words (lag <= 11), 92 placements, memberCap=14, nodeCap=2000000, LA-AAS=off, order=MRV
+  need owner for S at clock -10 (owned: [-1])
+    AAS@-7 (offset 3): conflict at -9
+    SAAAASS@-9 (offset 1): u is S
+    SAAAASS@-4 (offset 6): conflict at -5
+    SAAAASS@-3 (offset 7): conflict at -4
+    ASAASAS@-8 (offset 2): conflict at -9
+    ASAASAS@-5 (offset 5): conflict at -7
+    ASAASAS@-3 (offset 7): conflict at -5
+    SSAAAAAASSS@-9 (offset 1): u is S
+    SSAAAAAASSS@-8 (offset 2): conflict at -11
+    SSAAAAAASSS@-1 (offset 9): u is S
+    SSAAAAAASSS@0 (offset 10): member
+    SSAAAAAASSS@1 (offset 11): conflict at 0
+    SASAAAASASS@-9 (offset 1): u is S
+    SASAAAASASS@-7 (offset 3): conflict at -8
+    SASAAAASASS@-2 (offset 8): u is S
+    SASAAAASASS@0 (offset 10): member
+    SASAAAASASS@1 (offset 11): conflict at 0
+    SAASAASAASS@-9 (offset 1): u is S
+    SAASAASAASS@-6 (offset 4): conflict at -7
+    SAASAASAASS@-3 (offset 7): conflict at -4
+    SAASAASAASS@0 (offset 10): member
+    SAASAASAASS@1 (offset 11): conflict at 0
+    ASSAAASAASS@-8 (offset 2): conflict at -9
+    ASSAAASAASS@-7 (offset 3): conflict at -11
+    ASSAAASAASS@-3 (offset 7): conflict at -5
+    ASSAAASAASS@0 (offset 10): member
+    ASSAAASAASS@1 (offset 11): conflict at -6
+    SAAASSAAASS@-9 (offset 1): u is S
+    SAAASSAAASS@-5 (offset 5): conflict at -6
+    SAAASSAAASS@-4 (offset 6): conflict at -5
+    SAAASSAAASS@0 (offset 10): member
+    SAAASSAAASS@1 (offset 11): conflict at 0
+    ASASASAAASS@-8 (offset 2): conflict at -9
+    ASASASAAASS@-6 (offset 4): conflict at -8
+    ASASASAAASS@-4 (offset 6): conflict at -6
+    ASASASAAASS@0 (offset 10): member
+    ASASASAAASS@1 (offset 11): conflict at -2
+    SAASAAASSAS@-9 (offset 1): u is S
+    SAASAAASSAS@-6 (offset 4): conflict at -7
+    SAASAAASSAS@-2 (offset 8): u is S
+    SAASAAASSAS@-1 (offset 9): u is S
+    SAASAAASSAS@1 (offset 11): conflict at 0
+    ASSAAAASSAS@-8 (offset 2): conflict at -9
+    ASSAAAASSAS@-7 (offset 3): conflict at -11
+    ASSAAAASSAS@-2 (offset 8): u is S
+    ASSAAAASSAS@-1 (offset 9): u is S
+    ASSAAAASSAS@1 (offset 11): conflict at -7
+    SAAASASASAS@-9 (offset 1): u is S
+    SAAASASASAS@-5 (offset 5): conflict at -6
+    SAAASASASAS@-3 (offset 7): conflict at -4
+    SAAASASASAS@-1 (offset 9): u is S
+    SAAASASASAS@1 (offset 11): conflict at 0
+    ASASAASASAS@-8 (offset 2): conflict at -9
+    ASASAASASAS@-6 (offset 4): conflict at -8
+    ASASAASASAS@-3 (offset 7): conflict at -5
+    ASASAASASAS@-1 (offset 9): u is S
+    ASASAASASAS@1 (offset 11): conflict at -2
+    ASAASSAASAS@-8 (offset 2): conflict at -9
+    ASAASSAASAS@-5 (offset 5): conflict at -7
+    ASAASSAASAS@-4 (offset 6): conflict at -6
+    ASAASSAASAS@-1 (offset 9): u is S
+    ASAASSAASAS@1 (offset 11): conflict at -2
+    AAASSSSAAAS@-6 (offset 4): conflict at -9
+    AAASSSSAAAS@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -1])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSSAAAS@-4 (offset 6): conflict at -8
+    AAASSSSAAAS@-3 (offset 7): conflict at -7
+    AAASSSSAAAS@1 (offset 11): conflict at -1
+    SAAASAASSSA@-9 (offset 1): u is S
+    SAAASAASSSA@-5 (offset 5): conflict at -6
+    SAAASAASSSA@-2 (offset 8): u is S
+    SAAASAASSSA@-1 (offset 9): u is S
+    SAAASAASSSA@0 (offset 10): member
+    ASASAAASSSA@-8 (offset 2): conflict at -9
+    ASASAAASSSA@-6 (offset 4): conflict at -8
+    ASASAAASSSA@-2 (offset 8): u is S
+    ASASAAASSSA@-1 (offset 9): u is S
+    ASASAAASSSA@0 (offset 10): member
+    ASAAASSSASA@-8 (offset 2): conflict at -9
+    ASAAASSSASA@-4 (offset 6): conflict at -6
+    ASAAASSSASA@-3 (offset 7): conflict at -5
+    ASAAASSSASA@-2 (offset 8): u is S
+    ASAAASSSASA@0 (offset 10): member
+    AAASSSASASA@-6 (offset 4): conflict at -9
+    AAASSSASASA@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -1])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSASASA@-4 (offset 6): conflict at -8
+    AAASSSASASA@-2 (offset 8): u is S
+    AAASSSASASA@0 (offset 10): member
+    AAASSASSSAA@-6 (offset 4): conflict at -9
+    AAASSASSSAA@-5 (offset 5): conflict at -11
+    AAASSASSSAA@-3 (offset 7): conflict at -7
+    AAASSASSSAA@-2 (offset 8): u is S
+    AAASSASSSAA@-1 (offset 9): u is S
+  need owner for S at clock -10 (owned: [-2])
+    AAS@-7 (offset 3): conflict at -9
+    SAAAASS@-9 (offset 1): u is S
+    SAAAASS@-4 (offset 6): conflict at -5
+    SAAAASS@-3 (offset 7): conflict at -4
+    ASAASAS@-8 (offset 2): conflict at -9
+    ASAASAS@-5 (offset 5): conflict at -7
+    ASAASAS@-3 (offset 7): conflict at -5
+    SSAAAAAASSS@-9 (offset 1): u is S
+    SSAAAAAASSS@-8 (offset 2): conflict at -11
+    SSAAAAAASSS@-1 (offset 9): u is S
+    SSAAAAAASSS@0 (offset 10): member
+    SSAAAAAASSS@1 (offset 11): conflict at 0
+    SASAAAASASS@-9 (offset 1): u is S
+    SASAAAASASS@-7 (offset 3): conflict at -8
+    SASAAAASASS@-2 (offset 8): u is S
+    SASAAAASASS@0 (offset 10): member
+    SASAAAASASS@1 (offset 11): conflict at 0
+    SAASAASAASS@-9 (offset 1): u is S
+    SAASAASAASS@-6 (offset 4): conflict at -7
+    SAASAASAASS@-3 (offset 7): conflict at -4
+    SAASAASAASS@0 (offset 10): member
+    SAASAASAASS@1 (offset 11): conflict at 0
+    ASSAAASAASS@-8 (offset 2): conflict at -9
+    ASSAAASAASS@-7 (offset 3): conflict at -11
+    ASSAAASAASS@-3 (offset 7): conflict at -5
+    ASSAAASAASS@0 (offset 10): member
+    ASSAAASAASS@1 (offset 11): conflict at -6
+    SAAASSAAASS@-9 (offset 1): u is S
+    SAAASSAAASS@-5 (offset 5): conflict at -6
+    SAAASSAAASS@-4 (offset 6): conflict at -5
+    SAAASSAAASS@0 (offset 10): member
+    SAAASSAAASS@1 (offset 11): conflict at 0
+    ASASASAAASS@-8 (offset 2): conflict at -9
+    ASASASAAASS@-6 (offset 4): conflict at -8
+    ASASASAAASS@-4 (offset 6): conflict at -6
+    ASASASAAASS@0 (offset 10): member
+    ASASASAAASS@1 (offset 11): conflict at -2
+    SAASAAASSAS@-9 (offset 1): u is S
+    SAASAAASSAS@-6 (offset 4): conflict at -7
+    SAASAAASSAS@-2 (offset 8): u is S
+    SAASAAASSAS@-1 (offset 9): u is S
+    SAASAAASSAS@1 (offset 11): conflict at 0
+    ASSAAAASSAS@-8 (offset 2): conflict at -9
+    ASSAAAASSAS@-7 (offset 3): conflict at -11
+    ASSAAAASSAS@-2 (offset 8): u is S
+    ASSAAAASSAS@-1 (offset 9): u is S
+    ASSAAAASSAS@1 (offset 11): conflict at -7
+    SAAASASASAS@-9 (offset 1): u is S
+    SAAASASASAS@-5 (offset 5): conflict at -6
+    SAAASASASAS@-3 (offset 7): conflict at -4
+    SAAASASASAS@-1 (offset 9): u is S
+    SAAASASASAS@1 (offset 11): conflict at 0
+    ASASAASASAS@-8 (offset 2): conflict at -9
+    ASASAASASAS@-6 (offset 4): conflict at -8
+    ASASAASASAS@-3 (offset 7): conflict at -5
+    ASASAASASAS@-1 (offset 9): u is S
+    ASASAASASAS@1 (offset 11): conflict at -2
+    ASAASSAASAS@-8 (offset 2): conflict at -9
+    ASAASSAASAS@-5 (offset 5): conflict at -7
+    ASAASSAASAS@-4 (offset 6): conflict at -6
+    ASAASSAASAS@-1 (offset 9): u is S
+    ASAASSAASAS@1 (offset 11): conflict at -2
+    AAASSSSAAAS@-6 (offset 4): conflict at -9
+    AAASSSSAAAS@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -2])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSSAAAS@-4 (offset 6): conflict at -8
+    AAASSSSAAAS@-3 (offset 7): conflict at -7
+    AAASSSSAAAS@1 (offset 11): conflict at -1
+    SAAASAASSSA@-9 (offset 1): u is S
+    SAAASAASSSA@-5 (offset 5): conflict at -6
+    SAAASAASSSA@-2 (offset 8): u is S
+    SAAASAASSSA@-1 (offset 9): u is S
+    SAAASAASSSA@0 (offset 10): member
+    ASASAAASSSA@-8 (offset 2): conflict at -9
+    ASASAAASSSA@-6 (offset 4): conflict at -8
+    ASASAAASSSA@-2 (offset 8): u is S
+    ASASAAASSSA@-1 (offset 9): u is S
+    ASASAAASSSA@0 (offset 10): member
+    ASAAASSSASA@-8 (offset 2): conflict at -9
+    ASAAASSSASA@-4 (offset 6): conflict at -6
+    ASAAASSSASA@-3 (offset 7): conflict at -5
+    ASAAASSSASA@-2 (offset 8): u is S
+    ASAAASSSASA@0 (offset 10): member
+    AAASSSASASA@-6 (offset 4): conflict at -9
+    AAASSSASASA@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -2])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSASASA@-4 (offset 6): conflict at -8
+    AAASSSASASA@-2 (offset 8): u is S
+    AAASSSASASA@0 (offset 10): member
+    AAASSASSSAA@-6 (offset 4): conflict at -9
+    AAASSASSSAA@-5 (offset 5): conflict at -11
+    AAASSASSSAA@-3 (offset 7): conflict at -7
+    AAASSASSSAA@-2 (offset 8): u is S
+    AAASSASSSAA@-1 (offset 9): u is S
+  need owner for S at clock -10 (owned: [-9])
+    AAS@-7 (offset 3): conflict at -9
+    SAAAASS@-9 (offset 1): u is S
+    SAAAASS@-4 (offset 6): conflict at -5
+    SAAAASS@-3 (offset 7): conflict at -4
+    ASAASAS@-8 (offset 2): conflict at -9
+    ASAASAS@-5 (offset 5): conflict at -7
+    ASAASAS@-3 (offset 7): conflict at -5
+    SSAAAAAASSS@-9 (offset 1): u is S
+    SSAAAAAASSS@-8 (offset 2): conflict at -11
+    SSAAAAAASSS@-1 (offset 9): u is S
+    SSAAAAAASSS@0 (offset 10): member
+    SSAAAAAASSS@1 (offset 11): conflict at 0
+    SASAAAASASS@-9 (offset 1): u is S
+    SASAAAASASS@-7 (offset 3): conflict at -8
+    SASAAAASASS@-2 (offset 8): u is S
+    SASAAAASASS@0 (offset 10): member
+    SASAAAASASS@1 (offset 11): conflict at 0
+    SAASAASAASS@-9 (offset 1): u is S
+    SAASAASAASS@-6 (offset 4): conflict at -7
+    SAASAASAASS@-3 (offset 7): conflict at -4
+    SAASAASAASS@0 (offset 10): member
+    SAASAASAASS@1 (offset 11): conflict at 0
+    ASSAAASAASS@-8 (offset 2): conflict at -9
+    ASSAAASAASS@-7 (offset 3): conflict at -11
+    ASSAAASAASS@-3 (offset 7): conflict at -5
+    ASSAAASAASS@0 (offset 10): member
+    ASSAAASAASS@1 (offset 11): conflict at -6
+    SAAASSAAASS@-9 (offset 1): u is S
+    SAAASSAAASS@-5 (offset 5): conflict at -6
+    SAAASSAAASS@-4 (offset 6): conflict at -5
+    SAAASSAAASS@0 (offset 10): member
+    SAAASSAAASS@1 (offset 11): conflict at 0
+    ASASASAAASS@-8 (offset 2): conflict at -9
+    ASASASAAASS@-6 (offset 4): conflict at -8
+    ASASASAAASS@-4 (offset 6): conflict at -6
+    ASASASAAASS@0 (offset 10): member
+    ASASASAAASS@1 (offset 11): conflict at -2
+    SAASAAASSAS@-9 (offset 1): u is S
+    SAASAAASSAS@-6 (offset 4): conflict at -7
+    SAASAAASSAS@-2 (offset 8): u is S
+    SAASAAASSAS@-1 (offset 9): u is S
+    SAASAAASSAS@1 (offset 11): conflict at 0
+    ASSAAAASSAS@-8 (offset 2): conflict at -9
+    ASSAAAASSAS@-7 (offset 3): conflict at -11
+    ASSAAAASSAS@-2 (offset 8): u is S
+    ASSAAAASSAS@-1 (offset 9): u is S
+    ASSAAAASSAS@1 (offset 11): conflict at -7
+    SAAASASASAS@-9 (offset 1): u is S
+    SAAASASASAS@-5 (offset 5): conflict at -6
+    SAAASASASAS@-3 (offset 7): conflict at -4
+    SAAASASASAS@-1 (offset 9): u is S
+    SAAASASASAS@1 (offset 11): conflict at 0
+    ASASAASASAS@-8 (offset 2): conflict at -9
+    ASASAASASAS@-6 (offset 4): conflict at -8
+    ASASAASASAS@-3 (offset 7): conflict at -5
+    ASASAASASAS@-1 (offset 9): u is S
+    ASASAASASAS@1 (offset 11): conflict at -2
+    ASAASSAASAS@-8 (offset 2): conflict at -9
+    ASAASSAASAS@-5 (offset 5): conflict at -7
+    ASAASSAASAS@-4 (offset 6): conflict at -6
+    ASAASSAASAS@-1 (offset 9): u is S
+    ASAASSAASAS@1 (offset 11): conflict at -2
+    AAASSSSAAAS@-6 (offset 4): conflict at -9
+    AAASSSSAAAS@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -9])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSSAAAS@-4 (offset 6): conflict at -8
+    AAASSSSAAAS@-3 (offset 7): conflict at -7
+    AAASSSSAAAS@1 (offset 11): conflict at -1
+    SAAASAASSSA@-9 (offset 1): u is S
+    SAAASAASSSA@-5 (offset 5): conflict at -6
+    SAAASAASSSA@-2 (offset 8): u is S
+    SAAASAASSSA@-1 (offset 9): u is S
+    SAAASAASSSA@0 (offset 10): member
+    ASASAAASSSA@-8 (offset 2): conflict at -9
+    ASASAAASSSA@-6 (offset 4): conflict at -8
+    ASASAAASSSA@-2 (offset 8): u is S
+    ASASAAASSSA@-1 (offset 9): u is S
+    ASASAAASSSA@0 (offset 10): member
+    ASAAASSSASA@-8 (offset 2): conflict at -9
+    ASAAASSSASA@-4 (offset 6): conflict at -6
+    ASAAASSSASA@-3 (offset 7): conflict at -5
+    ASAAASSSASA@-2 (offset 8): u is S
+    ASAAASSSASA@0 (offset 10): member
+    AAASSSASASA@-6 (offset 4): conflict at -9
+    AAASSSASASA@-5 (offset 5): placed
+    need owner for S at clock -11 (owned: [-10, -9])
+      AAS@-8 (offset 3): conflict at -9
+      SAAAASS@-10 (offset 1): u is S
+      SAAAASS@-5 (offset 6): member
+      SAAAASS@-4 (offset 7): conflict at -5
+      ASAASAS@-9 (offset 2): u is S
+      ASAASAS@-6 (offset 5): conflict at -8
+      ASAASAS@-4 (offset 7): conflict at -6
+      SSAAAAAASSS@-10 (offset 1): u is S
+      SSAAAAAASSS@-9 (offset 2): u is S
+      SSAAAAAASSS@-2 (offset 9): u is S
+      SSAAAAAASSS@-1 (offset 10): u is S
+      SSAAAAAASSS@0 (offset 11): member
+      SASAAAASASS@-10 (offset 1): u is S
+      SASAAAASASS@-8 (offset 3): conflict at -10
+      SASAAAASASS@-3 (offset 8): conflict at -4
+      SASAAAASASS@-1 (offset 10): u is S
+      SASAAAASASS@0 (offset 11): member
+      SAASAASAASS@-10 (offset 1): u is S
+      SAASAASAASS@-7 (offset 4): conflict at -8
+      SAASAASAASS@-4 (offset 7): conflict at -5
+      SAASAASAASS@-1 (offset 10): u is S
+      SAASAASAASS@0 (offset 11): member
+      ASSAAASAASS@-9 (offset 2): u is S
+      ASSAAASAASS@-8 (offset 3): conflict at -9
+      ASSAAASAASS@-4 (offset 7): conflict at -6
+      ASSAAASAASS@-1 (offset 10): u is S
+      ASSAAASAASS@0 (offset 11): member
+      SAAASSAAASS@-10 (offset 1): u is S
+      SAAASSAAASS@-6 (offset 5): conflict at -7
+      SAAASSAAASS@-5 (offset 6): member
+      SAAASSAAASS@-1 (offset 10): u is S
+      SAAASSAAASS@0 (offset 11): member
+      ASASASAAASS@-9 (offset 2): u is S
+      ASASASAAASS@-7 (offset 4): conflict at -10
+      ASASASAAASS@-5 (offset 6): member
+      ASASASAAASS@-1 (offset 10): u is S
+      ASASASAAASS@0 (offset 11): member
+      SAASAAASSAS@-10 (offset 1): u is S
+      SAASAAASSAS@-7 (offset 4): conflict at -8
+      SAASAAASSAS@-3 (offset 8): conflict at -4
+      SAASAAASSAS@-2 (offset 9): u is S
+      SAASAAASSAS@0 (offset 11): member
+      ASSAAAASSAS@-9 (offset 2): u is S
+      ASSAAAASSAS@-8 (offset 3): conflict at -9
+      ASSAAAASSAS@-3 (offset 8): conflict at -5
+      ASSAAAASSAS@-2 (offset 9): u is S
+      ASSAAAASSAS@0 (offset 11): member
+      SAAASASASAS@-10 (offset 1): u is S
+      SAAASASASAS@-6 (offset 5): conflict at -7
+      SAAASASASAS@-4 (offset 7): conflict at -5
+      SAAASASASAS@-2 (offset 9): u is S
+      SAAASASASAS@0 (offset 11): member
+      ASASAASASAS@-9 (offset 2): u is S
+      ASASAASASAS@-7 (offset 4): conflict at -10
+      ASASAASASAS@-4 (offset 7): conflict at -6
+      ASASAASASAS@-2 (offset 9): u is S
+      ASASAASASAS@0 (offset 11): member
+      ASAASSAASAS@-9 (offset 2): u is S
+      ASAASSAASAS@-6 (offset 5): conflict at -8
+      ASAASSAASAS@-5 (offset 6): member
+      ASAASSAASAS@-2 (offset 9): u is S
+      ASAASSAASAS@0 (offset 11): member
+      AAASSSSAAAS@-7 (offset 4): conflict at -9
+      AAASSSSAAAS@-6 (offset 5): conflict at -9
+      AAASSSSAAAS@-5 (offset 6): member
+      AAASSSSAAAS@-4 (offset 7): conflict at -8
+      AAASSSSAAAS@0 (offset 11): member
+      SAAASAASSSA@-10 (offset 1): u is S
+      SAAASAASSSA@-6 (offset 5): conflict at -7
+      SAAASAASSSA@-3 (offset 8): conflict at -4
+      SAAASAASSSA@-2 (offset 9): u is S
+      SAAASAASSSA@-1 (offset 10): u is S
+      ASASAAASSSA@-9 (offset 2): u is S
+      ASASAAASSSA@-7 (offset 4): conflict at -10
+      ASASAAASSSA@-3 (offset 8): conflict at -5
+      ASASAAASSSA@-2 (offset 9): u is S
+      ASASAAASSSA@-1 (offset 10): u is S
+      ASAAASSSASA@-9 (offset 2): u is S
+      ASAAASSSASA@-5 (offset 6): member
+      ASAAASSSASA@-4 (offset 7): conflict at -6
+      ASAAASSSASA@-3 (offset 8): conflict at -5
+      ASAAASSSASA@-1 (offset 10): u is S
+      AAASSSASASA@-7 (offset 4): conflict at -9
+      AAASSSASASA@-6 (offset 5): conflict at -9
+      AAASSSASASA@-5 (offset 6): member
+      AAASSSASASA@-3 (offset 8): conflict at -7
+      AAASSSASASA@-1 (offset 10): u is S
+      AAASSASSSAA@-7 (offset 4): conflict at -9
+      AAASSASSSAA@-6 (offset 5): conflict at -9
+      AAASSASSSAA@-4 (offset 7): conflict at -8
+      AAASSASSSAA@-3 (offset 8): conflict at -7
+      AAASSASSSAA@-2 (offset 9): u is S
+    AAASSSASASA@-4 (offset 6): conflict at -8
+    AAASSSASASA@-2 (offset 8): u is S
+    AAASSSASASA@0 (offset 10): member
+    AAASSASSSAA@-6 (offset 4): conflict at -9
+    AAASSASSSAA@-5 (offset 5): conflict at -11
+    AAASSASSSAA@-3 (offset 7): conflict at -7
+    AAASSASSSAA@-2 (offset 8): u is S
+    AAASSASSSAA@-1 (offset 9): u is S
+  need owner for S at clock -11 (owned: [-10])
+    AAS@-8 (offset 3): conflict at -9
+    SAAAASS@-10 (offset 1): u is S
+    SAAAASS@-5 (offset 6): conflict at -6
+    SAAAASS@-4 (offset 7): conflict at -5
+    ASAASAS@-9 (offset 2): u is S
+    ASAASAS@-6 (offset 5): conflict at -8
+    ASAASAS@-4 (offset 7): conflict at -6
+    SSAAAAAASSS@-10 (offset 1): u is S
+    SSAAAAAASSS@-9 (offset 2): u is S
+    SSAAAAAASSS@-2 (offset 9): u is S
+    SSAAAAAASSS@-1 (offset 10): u is S
+    SSAAAAAASSS@0 (offset 11): member
+    SASAAAASASS@-10 (offset 1): u is S
+    SASAAAASASS@-8 (offset 3): conflict at -10
+    SASAAAASASS@-3 (offset 8): conflict at -4
+    SASAAAASASS@-1 (offset 10): u is S
+    SASAAAASASS@0 (offset 11): member
+    SAASAASAASS@-10 (offset 1): u is S
+    SAASAASAASS@-7 (offset 4): conflict at -8
+    SAASAASAASS@-4 (offset 7): conflict at -5
+    SAASAASAASS@-1 (offset 10): u is S
+    SAASAASAASS@0 (offset 11): member
+    ASSAAASAASS@-9 (offset 2): u is S
+    ASSAAASAASS@-8 (offset 3): conflict at -9
+    ASSAAASAASS@-4 (offset 7): conflict at -6
+    ASSAAASAASS@-1 (offset 10): u is S
+    ASSAAASAASS@0 (offset 11): member
+    SAAASSAAASS@-10 (offset 1): u is S
+    SAAASSAAASS@-6 (offset 5): conflict at -7
+    SAAASSAAASS@-5 (offset 6): conflict at -6
+    SAAASSAAASS@-1 (offset 10): u is S
+    SAAASSAAASS@0 (offset 11): member
+    ASASASAAASS@-9 (offset 2): u is S
+    ASASASAAASS@-7 (offset 4): conflict at -10
+    ASASASAAASS@-5 (offset 6): conflict at -7
+    ASASASAAASS@-1 (offset 10): u is S
+    ASASASAAASS@0 (offset 11): member
+    SAASAAASSAS@-10 (offset 1): u is S
+    SAASAAASSAS@-7 (offset 4): conflict at -8
+    SAASAAASSAS@-3 (offset 8): conflict at -4
+    SAASAAASSAS@-2 (offset 9): u is S
+    SAASAAASSAS@0 (offset 11): member
+    ASSAAAASSAS@-9 (offset 2): u is S
+    ASSAAAASSAS@-8 (offset 3): conflict at -9
+    ASSAAAASSAS@-3 (offset 8): conflict at -5
+    ASSAAAASSAS@-2 (offset 9): u is S
+    ASSAAAASSAS@0 (offset 11): member
+    SAAASASASAS@-10 (offset 1): u is S
+    SAAASASASAS@-6 (offset 5): conflict at -7
+    SAAASASASAS@-4 (offset 7): conflict at -5
+    SAAASASASAS@-2 (offset 9): u is S
+    SAAASASASAS@0 (offset 11): member
+    ASASAASASAS@-9 (offset 2): u is S
+    ASASAASASAS@-7 (offset 4): conflict at -10
+    ASASAASASAS@-4 (offset 7): conflict at -6
+    ASASAASASAS@-2 (offset 9): u is S
+    ASASAASASAS@0 (offset 11): member
+    ASAASSAASAS@-9 (offset 2): u is S
+    ASAASSAASAS@-6 (offset 5): conflict at -8
+    ASAASSAASAS@-5 (offset 6): conflict at -7
+    ASAASSAASAS@-2 (offset 9): u is S
+    ASAASSAASAS@0 (offset 11): member
+    AAASSSSAAAS@-7 (offset 4): conflict at -9
+    AAASSSSAAAS@-6 (offset 5): conflict at -9
+    AAASSSSAAAS@-5 (offset 6): placed
+    need owner for S at clock -12 (owned: [-11, -10])
+      AAS@-9 (offset 3): u is S
+      SAAAASS@-11 (offset 1): u is S
+      SAAAASS@-6 (offset 6): conflict at -7
+      SAAAASS@-5 (offset 7): member
+      ASAASAS@-10 (offset 2): u is S
+      ASAASAS@-7 (offset 5): conflict at -10
+      ASAASAS@-5 (offset 7): member
+      SSAAAAAASSS@-11 (offset 1): u is S
+      SSAAAAAASSS@-10 (offset 2): u is S
+      SSAAAAAASSS@-3 (offset 9): conflict at -4
+      SSAAAAAASSS@-2 (offset 10): u is S
+      SSAAAAAASSS@-1 (offset 11): u is S
+      SASAAAASASS@-11 (offset 1): u is S
+      SASAAAASASS@-9 (offset 3): u is S
+      SASAAAASASS@-4 (offset 8): conflict at -5
+      SASAAAASASS@-2 (offset 10): u is S
+      SASAAAASASS@-1 (offset 11): u is S
+      SAASAASAASS@-11 (offset 1): u is S
+      SAASAASAASS@-8 (offset 4): conflict at -10
+      SAASAASAASS@-5 (offset 7): member
+      SAASAASAASS@-2 (offset 10): u is S
+      SAASAASAASS@-1 (offset 11): u is S
+      ASSAAASAASS@-10 (offset 2): u is S
+      ASSAAASAASS@-9 (offset 3): u is S
+      ASSAAASAASS@-5 (offset 7): member
+      ASSAAASAASS@-2 (offset 10): u is S
+      ASSAAASAASS@-1 (offset 11): u is S
+      SAAASSAAASS@-11 (offset 1): u is S
+      SAAASSAAASS@-7 (offset 5): conflict at -8
+      SAAASSAAASS@-6 (offset 6): conflict at -7
+      SAAASSAAASS@-2 (offset 10): u is S
+      SAAASSAAASS@-1 (offset 11): u is S
+      ASASASAAASS@-10 (offset 2): u is S
+      ASASASAAASS@-8 (offset 4): conflict at -9
+      ASASASAAASS@-6 (offset 6): conflict at -8
+      ASASASAAASS@-2 (offset 10): u is S
+      ASASASAAASS@-1 (offset 11): u is S
+      SAASAAASSAS@-11 (offset 1): u is S
+      SAASAAASSAS@-8 (offset 4): conflict at -10
+      SAASAAASSAS@-4 (offset 8): conflict at -5
+      SAASAAASSAS@-3 (offset 9): conflict at -4
+      SAASAAASSAS@-1 (offset 11): u is S
+      ASSAAAASSAS@-10 (offset 2): u is S
+      ASSAAAASSAS@-9 (offset 3): u is S
+      ASSAAAASSAS@-4 (offset 8): conflict at -6
+      ASSAAAASSAS@-3 (offset 9): conflict at -5
+      ASSAAAASSAS@-1 (offset 11): u is S
+      SAAASASASAS@-11 (offset 1): u is S
+      SAAASASASAS@-7 (offset 5): conflict at -8
+      SAAASASASAS@-5 (offset 7): member
+      SAAASASASAS@-3 (offset 9): conflict at -4
+      SAAASASASAS@-1 (offset 11): u is S
+      ASASAASASAS@-10 (offset 2): u is S
+      ASASAASASAS@-8 (offset 4): conflict at -9
+      ASASAASASAS@-5 (offset 7): member
+      ASASAASASAS@-3 (offset 9): conflict at -5
+      ASASAASASAS@-1 (offset 11): u is S
+      ASAASSAASAS@-10 (offset 2): u is S
+      ASAASSAASAS@-7 (offset 5): conflict at -10
+      ASAASSAASAS@-6 (offset 6): conflict at -8
+      ASAASSAASAS@-3 (offset 9): conflict at -5
+      ASAASSAASAS@-1 (offset 11): u is S
+      AAASSSSAAAS@-8 (offset 4): conflict at -9
+      AAASSSSAAAS@-7 (offset 5): conflict at -9
+      AAASSSSAAAS@-6 (offset 6): conflict at -9
+      AAASSSSAAAS@-5 (offset 7): member
+      AAASSSSAAAS@-1 (offset 11): u is S
+      SAAASAASSSA@-11 (offset 1): u is S
+      SAAASAASSSA@-7 (offset 5): conflict at -8
+      SAAASAASSSA@-4 (offset 8): conflict at -5
+      SAAASAASSSA@-3 (offset 9): conflict at -4
+      SAAASAASSSA@-2 (offset 10): u is S
+      ASASAAASSSA@-10 (offset 2): u is S
+      ASASAAASSSA@-8 (offset 4): conflict at -9
+      ASASAAASSSA@-4 (offset 8): conflict at -6
+      ASASAAASSSA@-3 (offset 9): conflict at -5
+      ASASAAASSSA@-2 (offset 10): u is S
+      ASAAASSSASA@-10 (offset 2): u is S
+      ASAAASSSASA@-6 (offset 6): conflict at -8
+      ASAAASSSASA@-5 (offset 7): member
+      ASAAASSSASA@-4 (offset 8): conflict at -6
+      ASAAASSSASA@-2 (offset 10): u is S
+      AAASSSASASA@-8 (offset 4): conflict at -9
+      AAASSSASASA@-7 (offset 5): conflict at -9
+      AAASSSASASA@-6 (offset 6): conflict at -9
+      AAASSSASASA@-4 (offset 8): conflict at -8
+      AAASSSASASA@-2 (offset 10): u is S
+      AAASSASSSAA@-8 (offset 4): conflict at -9
+      AAASSASSSAA@-7 (offset 5): conflict at -9
+      AAASSASSSAA@-5 (offset 7): member
+      AAASSASSSAA@-4 (offset 8): conflict at -8
+      AAASSASSSAA@-3 (offset 9): conflict at -7
+    AAASSSSAAAS@-4 (offset 7): conflict at -8
+    AAASSSSAAAS@0 (offset 11): member
+    SAAASAASSSA@-10 (offset 1): u is S
+    SAAASAASSSA@-6 (offset 5): conflict at -7
+    SAAASAASSSA@-3 (offset 8): conflict at -4
+    SAAASAASSSA@-2 (offset 9): u is S
+    SAAASAASSSA@-1 (offset 10): u is S
+    ASASAAASSSA@-9 (offset 2): u is S
+    ASASAAASSSA@-7 (offset 4): conflict at -10
+    ASASAAASSSA@-3 (offset 8): conflict at -5
+    ASASAAASSSA@-2 (offset 9): u is S
+    ASASAAASSSA@-1 (offset 10): u is S
+    ASAAASSSASA@-9 (offset 2): u is S
+    ASAAASSSASA@-5 (offset 6): conflict at -7
+    ASAAASSSASA@-4 (offset 7): conflict at -6
+    ASAAASSSASA@-3 (offset 8): conflict at -5
+    ASAAASSSASA@-1 (offset 10): u is S
+    AAASSSASASA@-7 (offset 4): conflict at -9
+    AAASSSASASA@-6 (offset 5): conflict at -9
+    AAASSSASASA@-5 (offset 6): placed
+    need owner for S at clock -9 (owned: [-11, -10])
+      AAS@-6 (offset 3): placed
+      need owner for S at clock -13 (owned: [-11, -10, -9])
+        AAS@-10 (offset 3): u is S
+        SAAAASS@-12 (offset 1): conflict at -15
+        SAAAASS@-7 (offset 6): conflict at -8
+        SAAAASS@-6 (offset 7): member
+        ASAASAS@-11 (offset 2): u is S
+        ASAASAS@-8 (offset 5): conflict at -9
+        ASAASAS@-6 (offset 7): member
+        SSAAAAAASSS@-12 (offset 1): conflict at -14
+        SSAAAAAASSS@-11 (offset 2): u is S
+        SSAAAAAASSS@-4 (offset 9): conflict at -5
+        SSAAAAAASSS@-3 (offset 10): conflict at -4
+        SSAAAAAASSS@-2 (offset 11): u is S
+        SASAAAASASS@-12 (offset 1): placed
+        need owner for S at clock -15 (owned: [-13, -11, -10, -9])
+          AAS@-12 (offset 3): member
+          SAAAASS@-14 (offset 1): conflict at -21
+          SAAAASS@-9 (offset 6): u is S
+          SAAAASS@-8 (offset 7): conflict at -10
+          ASAASAS@-13 (offset 2): u is S
+          ASAASAS@-10 (offset 5): u is S
+          ASAASAS@-8 (offset 7): conflict at -9
+          SSAAAAAASSS@-14 (offset 1): conflict at -16
+          SSAAAAAASSS@-13 (offset 2): u is S
+          SSAAAAAASSS@-6 (offset 9): member
+          SSAAAAAASSS@-5 (offset 10): member
+          SSAAAAAASSS@-4 (offset 11): conflict at -5
+          SASAAAASASS@-14 (offset 1): conflict at -17
+          SASAAAASASS@-12 (offset 3): member
+          SASAAAASASS@-7 (offset 8): conflict at -8
+          SASAAAASASS@-5 (offset 10): member
+          SASAAAASASS@-4 (offset 11): conflict at -5
+          SAASAASAASS@-14 (offset 1): conflict at -18
+          SAASAASAASS@-11 (offset 4): u is S
+          SAASAASAASS@-8 (offset 7): conflict at -10
+          SAASAASAASS@-5 (offset 10): member
+          SAASAASAASS@-4 (offset 11): conflict at -5
+          ASSAAASAASS@-13 (offset 2): u is S
+          ASSAAASAASS@-12 (offset 3): member
+          ASSAAASAASS@-8 (offset 7): conflict at -9
+          ASSAAASAASS@-5 (offset 10): member
+          ASSAAASAASS@-4 (offset 11): conflict at -6
+          SAAASSAAASS@-14 (offset 1): conflict at -19
+          SAAASSAAASS@-10 (offset 5): u is S
+          SAAASSAAASS@-9 (offset 6): u is S
+          SAAASSAAASS@-5 (offset 10): member
+          SAAASSAAASS@-4 (offset 11): conflict at -5
+          ASASASAAASS@-13 (offset 2): u is S
+          ASASASAAASS@-11 (offset 4): u is S
+          ASASASAAASS@-9 (offset 6): u is S
+          ASASASAAASS@-5 (offset 10): member
+          ASASASAAASS@-4 (offset 11): conflict at -6
+          SAASAAASSAS@-14 (offset 1): conflict at -18
+          SAASAAASSAS@-11 (offset 4): u is S
+          SAASAAASSAS@-7 (offset 8): conflict at -8
+          SAASAAASSAS@-6 (offset 9): member
+          SAASAAASSAS@-4 (offset 11): conflict at -5
+          ASSAAAASSAS@-13 (offset 2): u is S
+          ASSAAAASSAS@-12 (offset 3): member
+          ASSAAAASSAS@-7 (offset 8): conflict at -11
+          ASSAAAASSAS@-6 (offset 9): member
+          ASSAAAASSAS@-4 (offset 11): conflict at -6
+          SAAASASASAS@-14 (offset 1): conflict at -19
+          SAAASASASAS@-10 (offset 5): u is S
+          SAAASASASAS@-8 (offset 7): conflict at -10
+          SAAASASASAS@-6 (offset 9): member
+          SAAASASASAS@-4 (offset 11): conflict at -5
+          ASASAASASAS@-13 (offset 2): u is S
+          ASASAASASAS@-11 (offset 4): u is S
+          ASASAASASAS@-8 (offset 7): conflict at -9
+          ASASAASASAS@-6 (offset 9): member
+          ASASAASASAS@-4 (offset 11): conflict at -6
+          ASAASSAASAS@-13 (offset 2): u is S
+          ASAASSAASAS@-10 (offset 5): u is S
+          ASAASSAASAS@-9 (offset 6): u is S
+          ASAASSAASAS@-6 (offset 9): member
+          ASAASSAASAS@-4 (offset 11): conflict at -6
+          AAASSSSAAAS@-11 (offset 4): u is S
+          AAASSSSAAAS@-10 (offset 5): u is S
+          AAASSSSAAAS@-9 (offset 6): u is S
+          AAASSSSAAAS@-8 (offset 7): conflict at -9
+          AAASSSSAAAS@-4 (offset 11): conflict at -8
+          SAAASAASSSA@-14 (offset 1): conflict at -19
+          SAAASAASSSA@-10 (offset 5): u is S
+          SAAASAASSSA@-7 (offset 8): conflict at -8
+          SAAASAASSSA@-6 (offset 9): member
+          SAAASAASSSA@-5 (offset 10): member
+          ASASAAASSSA@-13 (offset 2): u is S
+          ASASAAASSSA@-11 (offset 4): u is S
+          ASASAAASSSA@-7 (offset 8): conflict at -10
+          ASASAAASSSA@-6 (offset 9): member
+          ASASAAASSSA@-5 (offset 10): member
+          ASAAASSSASA@-13 (offset 2): u is S
+          ASAAASSSASA@-9 (offset 6): u is S
+          ASAAASSSASA@-8 (offset 7): conflict at -9
+          ASAAASSSASA@-7 (offset 8): conflict at -10
+          ASAAASSSASA@-5 (offset 10): member
+          AAASSSASASA@-11 (offset 4): u is S
+          AAASSSASASA@-10 (offset 5): u is S
+          AAASSSASASA@-9 (offset 6): u is S
+          AAASSSASASA@-7 (offset 8): conflict at -9
+          AAASSSASASA@-5 (offset 10): member
+          AAASSASSSAA@-11 (offset 4): u is S
+          AAASSASSSAA@-10 (offset 5): u is S
+          AAASSASSSAA@-8 (offset 7): conflict at -9
+          AAASSASSSAA@-7 (offset 8): conflict at -9
+          AAASSASSSAA@-6 (offset 9): member
+        SASAAAASASS@-10 (offset 3): u is S
+        SASAAAASASS@-5 (offset 8): member
+        SASAAAASASS@-3 (offset 10): conflict at -4
+        SASAAAASASS@-2 (offset 11): u is S
+        SAASAASAASS@-12 (offset 1): conflict at -15
+        SAASAASAASS@-9 (offset 4): u is S
+        SAASAASAASS@-6 (offset 7): member
+        SAASAASAASS@-3 (offset 10): conflict at -4
+        SAASAASAASS@-2 (offset 11): u is S
+        ASSAAASAASS@-11 (offset 2): u is S
+        ASSAAASAASS@-10 (offset 3): u is S
+        ASSAAASAASS@-6 (offset 7): member
+        ASSAAASAASS@-3 (offset 10): conflict at -5
+        ASSAAASAASS@-2 (offset 11): u is S
+        SAAASSAAASS@-12 (offset 1): conflict at -15
+        SAAASSAAASS@-8 (offset 5): conflict at -10
+        SAAASSAAASS@-7 (offset 6): conflict at -8
+        SAAASSAAASS@-3 (offset 10): conflict at -4
+        SAAASSAAASS@-2 (offset 11): u is S
+        ASASASAAASS@-11 (offset 2): u is S
+        ASASASAAASS@-9 (offset 4): u is S
+        ASASASAAASS@-7 (offset 6): conflict at -10
+        ASASASAAASS@-3 (offset 10): conflict at -5
+        ASASASAAASS@-2 (offset 11): u is S
+        SAASAAASSAS@-12 (offset 1): conflict at -15
+        SAASAAASSAS@-9 (offset 4): u is S
+        SAASAAASSAS@-5 (offset 8): member
+        SAASAAASSAS@-4 (offset 9): conflict at -5
+        SAASAAASSAS@-2 (offset 11): u is S
+        ASSAAAASSAS@-11 (offset 2): u is S
+        ASSAAAASSAS@-10 (offset 3): u is S
+        ASSAAAASSAS@-5 (offset 8): member
+        ASSAAAASSAS@-4 (offset 9): conflict at -6
+        ASSAAAASSAS@-2 (offset 11): u is S
+        SAAASASASAS@-12 (offset 1): conflict at -15
+        SAAASASASAS@-8 (offset 5): conflict at -10
+        SAAASASASAS@-6 (offset 7): member
+        SAAASASASAS@-4 (offset 9): conflict at -5
+        SAAASASASAS@-2 (offset 11): u is S
+        ASASAASASAS@-11 (offset 2): u is S
+        ASASAASASAS@-9 (offset 4): u is S
+        ASASAASASAS@-6 (offset 7): member
+        ASASAASASAS@-4 (offset 9): conflict at -6
+        ASASAASASAS@-2 (offset 11): u is S
+        ASAASSAASAS@-11 (offset 2): u is S
+        ASAASSAASAS@-8 (offset 5): conflict at -9
+        ASAASSAASAS@-7 (offset 6): conflict at -10
+        ASAASSAASAS@-4 (offset 9): conflict at -6
+        ASAASSAASAS@-2 (offset 11): u is S
+        AAASSSSAAAS@-9 (offset 4): u is S
+        AAASSSSAAAS@-8 (offset 5): conflict at -9
+        AAASSSSAAAS@-7 (offset 6): conflict at -9
+        AAASSSSAAAS@-6 (offset 7): member
+        AAASSSSAAAS@-2 (offset 11): u is S
+        SAAASAASSSA@-12 (offset 1): conflict at -15
+        SAAASAASSSA@-8 (offset 5): conflict at -10
+        SAAASAASSSA@-5 (offset 8): member
+        SAAASAASSSA@-4 (offset 9): conflict at -5
+        SAAASAASSSA@-3 (offset 10): conflict at -4
+        ASASAAASSSA@-11 (offset 2): u is S
+        ASASAAASSSA@-9 (offset 4): u is S
+        ASASAAASSSA@-5 (offset 8): member
+        ASASAAASSSA@-4 (offset 9): conflict at -6
+        ASASAAASSSA@-3 (offset 10): conflict at -5
+        ASAAASSSASA@-11 (offset 2): u is S
+        ASAAASSSASA@-7 (offset 6): conflict at -10
+        ASAAASSSASA@-6 (offset 7): member
+        ASAAASSSASA@-5 (offset 8): member
+        ASAAASSSASA@-3 (offset 10): conflict at -5
+        AAASSSASASA@-9 (offset 4): u is S
+        AAASSSASASA@-8 (offset 5): conflict at -9
+        AAASSSASASA@-7 (offset 6): conflict at -9
+        AAASSSASASA@-5 (offset 8): member
+        AAASSSASASA@-3 (offset 10): conflict at -7
+        AAASSASSSAA@-9 (offset 4): u is S
+        AAASSASSSAA@-8 (offset 5): conflict at -9
+        AAASSASSSAA@-6 (offset 7): member
+        AAASSASSSAA@-5 (offset 8): member
+        AAASSASSSAA@-4 (offset 9): conflict at -8
+      SAAAASS@-8 (offset 1): conflict at -10
+      SAAAASS@-3 (offset 6): conflict at -4
+      SAAAASS@-2 (offset 7): u is S
+      ASAASAS@-7 (offset 2): conflict at -10
+      ASAASAS@-4 (offset 5): conflict at -6
+      ASAASAS@-2 (offset 7): u is S
+      SSAAAAAASSS@-8 (offset 1): conflict at -11
+      SSAAAAAASSS@-7 (offset 2): conflict at -8
+      SSAAAAAASSS@0 (offset 9): member
+      SSAAAAAASSS@1 (offset 10): conflict at 0
+      SSAAAAAASSS@2 (offset 11): conflict at 0
+      SASAAAASASS@-8 (offset 1): conflict at -10
+      SASAAAASASS@-6 (offset 3): conflict at -7
+      SASAAAASASS@-1 (offset 8): u is S
+      SASAAAASASS@1 (offset 10): conflict at 0
+      SASAAAASASS@2 (offset 11): conflict at -2
+      SAASAASAASS@-8 (offset 1): conflict at -10
+      SAASAASAASS@-5 (offset 4): member
+      SAASAASAASS@-2 (offset 7): u is S
+      SAASAASAASS@1 (offset 10): conflict at 0
+      SAASAASAASS@2 (offset 11): conflict at -1
+      ASSAAASAASS@-7 (offset 2): conflict at -11
+      ASSAAASAASS@-6 (offset 3): conflict at -8
+      ASSAAASAASS@-2 (offset 7): u is S
+      ASSAAASAASS@1 (offset 10): conflict at -6
+      ASSAAASAASS@2 (offset 11): conflict at 0
+      SAAASSAAASS@-8 (offset 1): conflict at -10
+      SAAASSAAASS@-4 (offset 5): conflict at -5
+      SAAASSAAASS@-3 (offset 6): conflict at -4
+      SAAASSAAASS@1 (offset 10): conflict at 0
+      SAAASSAAASS@2 (offset 11): conflict at -1
+      ASASASAAASS@-7 (offset 2): conflict at -10
+      ASASASAAASS@-5 (offset 4): member
+      ASASASAAASS@-3 (offset 6): conflict at -5
+      ASASASAAASS@1 (offset 10): conflict at -2
+      ASASASAAASS@2 (offset 11): conflict at 0
+      SAASAAASSAS@-8 (offset 1): conflict at -10
+      SAASAAASSAS@-5 (offset 4): member
+      SAASAAASSAS@-1 (offset 8): u is S
+      SAASAAASSAS@0 (offset 9): member
+      SAASAAASSAS@2 (offset 11): conflict at -1
+      ASSAAAASSAS@-7 (offset 2): conflict at -11
+      ASSAAAASSAS@-6 (offset 3): conflict at -8
+      ASSAAAASSAS@-1 (offset 8): u is S
+      ASSAAAASSAS@0 (offset 9): member
+      ASSAAAASSAS@2 (offset 11): conflict at 0
+      SAAASASASAS@-8 (offset 1): conflict at -10
+      SAAASASASAS@-4 (offset 5): conflict at -5
+      SAAASASASAS@-2 (offset 7): u is S
+      SAAASASASAS@0 (offset 9): member
+      SAAASASASAS@2 (offset 11): conflict at -1
+      ASASAASASAS@-7 (offset 2): conflict at -10
+      ASASAASASAS@-5 (offset 4): member
+      ASASAASASAS@-2 (offset 7): u is S
+      ASASAASASAS@0 (offset 9): member
+      ASASAASASAS@2 (offset 11): conflict at 0
+      ASAASSAASAS@-7 (offset 2): conflict at -10
+      ASAASSAASAS@-4 (offset 5): conflict at -6
+      ASAASSAASAS@-3 (offset 6): conflict at -5
+      ASAASSAASAS@0 (offset 9): member
+      ASAASSAASAS@2 (offset 11): conflict at 0
+      AAASSSSAAAS@-5 (offset 4): member
+      AAASSSSAAAS@-4 (offset 5): conflict at -8
+      AAASSSSAAAS@-3 (offset 6): conflict at -7
+      AAASSSSAAAS@-2 (offset 7): u is S
+      AAASSSSAAAS@2 (offset 11): conflict at -1
+      SAAASAASSSA@-8 (offset 1): conflict at -10
+      SAAASAASSSA@-4 (offset 5): conflict at -5
+      SAAASAASSSA@-1 (offset 8): u is S
+      SAAASAASSSA@0 (offset 9): member
+      SAAASAASSSA@1 (offset 10): conflict at 0
+      ASASAAASSSA@-7 (offset 2): conflict at -10
+      ASASAAASSSA@-5 (offset 4): member
+      ASASAAASSSA@-1 (offset 8): u is S
+      ASASAAASSSA@0 (offset 9): member
+      ASASAAASSSA@1 (offset 10): conflict at -2
+      ASAAASSSASA@-7 (offset 2): conflict at -10
+      ASAAASSSASA@-3 (offset 6): conflict at -5
+      ASAAASSSASA@-2 (offset 7): u is S
+      ASAAASSSASA@-1 (offset 8): u is S
+      ASAAASSSASA@1 (offset 10): conflict at -2
+      AAASSSASASA@-5 (offset 4): member
+      AAASSSASASA@-4 (offset 5): conflict at -8
+      AAASSSASASA@-3 (offset 6): conflict at -7
+      AAASSSASASA@-1 (offset 8): u is S
+      AAASSSASASA@1 (offset 10): conflict at -1
+      AAASSASSSAA@-5 (offset 4): member
+      AAASSASSSAA@-4 (offset 5): conflict at -8
+      AAASSASSSAA@-2 (offset 7): u is S
+      AAASSASSSAA@-1 (offset 8): u is S
+      AAASSASSSAA@0 (offset 9): member
+    AAASSSASASA@-3 (offset 8): conflict at -7
+    AAASSSASASA@-1 (offset 10): u is S
+    AAASSASSSAA@-7 (offset 4): conflict at -9
+    AAASSASSSAA@-6 (offset 5): conflict at -9
+    AAASSASSSAA@-4 (offset 7): conflict at -8
+    AAASSASSSAA@-3 (offset 8): conflict at -7
+    AAASSASSSAA@-2 (offset 9): u is S
+  need owner for S at clock -10 (owned: [-11])
+    AAS@-7 (offset 3): conflict at -9
+    SAAAASS@-9 (offset 1): u is S
+    SAAAASS@-4 (offset 6): conflict at -5
+    SAAAASS@-3 (offset 7): conflict at -4
+    ASAASAS@-8 (offset 2): conflict at -9
+    ASAASAS@-5 (offset 5): conflict at -7
+    ASAASAS@-3 (offset 7): conflict at -5
+    SSAAAAAASSS@-9 (offset 1): u is S
+    SSAAAAAASSS@-8 (offset 2): conflict at -11
+    SSAAAAAASSS@-1 (offset 9): u is S
+    SSAAAAAASSS@0 (offset 10): member
+    SSAAAAAASSS@1 (offset 11): conflict at 0
+    SASAAAASASS@-9 (offset 1): u is S
+    SASAAAASASS@-7 (offset 3): conflict at -8
+    SASAAAASASS@-2 (offset 8): u is S
+    SASAAAASASS@0 (offset 10): member
+    SASAAAASASS@1 (offset 11): conflict at 0
+    SAASAASAASS@-9 (offset 1): u is S
+    SAASAASAASS@-6 (offset 4): conflict at -7
+    SAASAASAASS@-3 (offset 7): conflict at -4
+    SAASAASAASS@0 (offset 10): member
+    SAASAASAASS@1 (offset 11): conflict at 0
+    ASSAAASAASS@-8 (offset 2): conflict at -9
+    ASSAAASAASS@-7 (offset 3): conflict at -11
+    ASSAAASAASS@-3 (offset 7): conflict at -5
+    ASSAAASAASS@0 (offset 10): member
+    ASSAAASAASS@1 (offset 11): conflict at -6
+    SAAASSAAASS@-9 (offset 1): u is S
+    SAAASSAAASS@-5 (offset 5): conflict at -6
+    SAAASSAAASS@-4 (offset 6): conflict at -5
+    SAAASSAAASS@0 (offset 10): member
+    SAAASSAAASS@1 (offset 11): conflict at 0
+    ASASASAAASS@-8 (offset 2): conflict at -9
+    ASASASAAASS@-6 (offset 4): conflict at -8
+    ASASASAAASS@-4 (offset 6): conflict at -6
+    ASASASAAASS@0 (offset 10): member
+    ASASASAAASS@1 (offset 11): conflict at -2
+    SAASAAASSAS@-9 (offset 1): u is S
+    SAASAAASSAS@-6 (offset 4): conflict at -7
+    SAASAAASSAS@-2 (offset 8): u is S
+    SAASAAASSAS@-1 (offset 9): u is S
+    SAASAAASSAS@1 (offset 11): conflict at 0
+    ASSAAAASSAS@-8 (offset 2): conflict at -9
+    ASSAAAASSAS@-7 (offset 3): conflict at -11
+    ASSAAAASSAS@-2 (offset 8): u is S
+    ASSAAAASSAS@-1 (offset 9): u is S
+    ASSAAAASSAS@1 (offset 11): conflict at -7
+    SAAASASASAS@-9 (offset 1): u is S
+    SAAASASASAS@-5 (offset 5): conflict at -6
+    SAAASASASAS@-3 (offset 7): conflict at -4
+    SAAASASASAS@-1 (offset 9): u is S
+    SAAASASASAS@1 (offset 11): conflict at 0
+    ASASAASASAS@-8 (offset 2): conflict at -9
+    ASASAASASAS@-6 (offset 4): conflict at -8
+    ASASAASASAS@-3 (offset 7): conflict at -5
+    ASASAASASAS@-1 (offset 9): u is S
+    ASASAASASAS@1 (offset 11): conflict at -2
+    ASAASSAASAS@-8 (offset 2): conflict at -9
+    ASAASSAASAS@-5 (offset 5): conflict at -7
+    ASAASSAASAS@-4 (offset 6): conflict at -6
+    ASAASSAASAS@-1 (offset 9): u is S
+    ASAASSAASAS@1 (offset 11): conflict at -2
+    AAASSSSAAAS@-6 (offset 4): conflict at -9
+    AAASSSSAAAS@-5 (offset 5): placed
+    need owner for S at clock -12 (owned: [-11, -10])
+      AAS@-9 (offset 3): u is S
+      SAAAASS@-11 (offset 1): u is S
+      SAAAASS@-6 (offset 6): conflict at -7
+      SAAAASS@-5 (offset 7): member
+      ASAASAS@-10 (offset 2): u is S
+      ASAASAS@-7 (offset 5): conflict at -10
+      ASAASAS@-5 (offset 7): member
+      SSAAAAAASSS@-11 (offset 1): u is S
+      SSAAAAAASSS@-10 (offset 2): u is S
+      SSAAAAAASSS@-3 (offset 9): conflict at -4
+      SSAAAAAASSS@-2 (offset 10): u is S
+      SSAAAAAASSS@-1 (offset 11): u is S
+      SASAAAASASS@-11 (offset 1): u is S
+      SASAAAASASS@-9 (offset 3): u is S
+      SASAAAASASS@-4 (offset 8): conflict at -5
+      SASAAAASASS@-2 (offset 10): u is S
+      SASAAAASASS@-1 (offset 11): u is S
+      SAASAASAASS@-11 (offset 1): u is S
+      SAASAASAASS@-8 (offset 4): conflict at -10
+      SAASAASAASS@-5 (offset 7): member
+      SAASAASAASS@-2 (offset 10): u is S
+      SAASAASAASS@-1 (offset 11): u is S
+      ASSAAASAASS@-10 (offset 2): u is S
+      ASSAAASAASS@-9 (offset 3): u is S
+      ASSAAASAASS@-5 (offset 7): member
+      ASSAAASAASS@-2 (offset 10): u is S
+      ASSAAASAASS@-1 (offset 11): u is S
+      SAAASSAAASS@-11 (offset 1): u is S
+      SAAASSAAASS@-7 (offset 5): conflict at -8
+      SAAASSAAASS@-6 (offset 6): conflict at -7
+      SAAASSAAASS@-2 (offset 10): u is S
+      SAAASSAAASS@-1 (offset 11): u is S
+      ASASASAAASS@-10 (offset 2): u is S
+      ASASASAAASS@-8 (offset 4): conflict at -9
+      ASASASAAASS@-6 (offset 6): conflict at -8
+      ASASASAAASS@-2 (offset 10): u is S
+      ASASASAAASS@-1 (offset 11): u is S
+      SAASAAASSAS@-11 (offset 1): u is S
+      SAASAAASSAS@-8 (offset 4): conflict at -10
+      SAASAAASSAS@-4 (offset 8): conflict at -5
+      SAASAAASSAS@-3 (offset 9): conflict at -4
+      SAASAAASSAS@-1 (offset 11): u is S
+      ASSAAAASSAS@-10 (offset 2): u is S
+      ASSAAAASSAS@-9 (offset 3): u is S
+      ASSAAAASSAS@-4 (offset 8): conflict at -6
+      ASSAAAASSAS@-3 (offset 9): conflict at -5
+      ASSAAAASSAS@-1 (offset 11): u is S
+      SAAASASASAS@-11 (offset 1): u is S
+      SAAASASASAS@-7 (offset 5): conflict at -8
+      SAAASASASAS@-5 (offset 7): member
+      SAAASASASAS@-3 (offset 9): conflict at -4
+      SAAASASASAS@-1 (offset 11): u is S
+      ASASAASASAS@-10 (offset 2): u is S
+      ASASAASASAS@-8 (offset 4): conflict at -9
+      ASASAASASAS@-5 (offset 7): member
+      ASASAASASAS@-3 (offset 9): conflict at -5
+      ASASAASASAS@-1 (offset 11): u is S
+      ASAASSAASAS@-10 (offset 2): u is S
+      ASAASSAASAS@-7 (offset 5): conflict at -10
+      ASAASSAASAS@-6 (offset 6): conflict at -8
+      ASAASSAASAS@-3 (offset 9): conflict at -5
+      ASAASSAASAS@-1 (offset 11): u is S
+      AAASSSSAAAS@-8 (offset 4): conflict at -9
+      AAASSSSAAAS@-7 (offset 5): conflict at -9
+      AAASSSSAAAS@-6 (offset 6): conflict at -9
+      AAASSSSAAAS@-5 (offset 7): member
+      AAASSSSAAAS@-1 (offset 11): u is S
+      SAAASAASSSA@-11 (offset 1): u is S
+      SAAASAASSSA@-7 (offset 5): conflict at -8
+      SAAASAASSSA@-4 (offset 8): conflict at -5
+      SAAASAASSSA@-3 (offset 9): conflict at -4
+      SAAASAASSSA@-2 (offset 10): u is S
+      ASASAAASSSA@-10 (offset 2): u is S
+      ASASAAASSSA@-8 (offset 4): conflict at -9
+      ASASAAASSSA@-4 (offset 8): conflict at -6
+      ASASAAASSSA@-3 (offset 9): conflict at -5
+      ASASAAASSSA@-2 (offset 10): u is S
+      ASAAASSSASA@-10 (offset 2): u is S
+      ASAAASSSASA@-6 (offset 6): conflict at -8
+      ASAAASSSASA@-5 (offset 7): member
+      ASAAASSSASA@-4 (offset 8): conflict at -6
+      ASAAASSSASA@-2 (offset 10): u is S
+      AAASSSASASA@-8 (offset 4): conflict at -9
+      AAASSSASASA@-7 (offset 5): conflict at -9
+      AAASSSASASA@-6 (offset 6): conflict at -9
+      AAASSSASASA@-4 (offset 8): conflict at -8
+      AAASSSASASA@-2 (offset 10): u is S
+      AAASSASSSAA@-8 (offset 4): conflict at -9
+      AAASSASSSAA@-7 (offset 5): conflict at -9
+      AAASSASSSAA@-5 (offset 7): member
+      AAASSASSSAA@-4 (offset 8): conflict at -8
+      AAASSASSSAA@-3 (offset 9): conflict at -7
+    AAASSSSAAAS@-4 (offset 6): conflict at -8
+    AAASSSSAAAS@-3 (offset 7): conflict at -7
+    AAASSSSAAAS@1 (offset 11): conflict at -1
+    SAAASAASSSA@-9 (offset 1): u is S
+    SAAASAASSSA@-5 (offset 5): conflict at -6
+    SAAASAASSSA@-2 (offset 8): u is S
+    SAAASAASSSA@-1 (offset 9): u is S
+    SAAASAASSSA@0 (offset 10): member
+    ASASAAASSSA@-8 (offset 2): conflict at -9
+    ASASAAASSSA@-6 (offset 4): conflict at -8
+    ASASAAASSSA@-2 (offset 8): u is S
+    ASASAAASSSA@-1 (offset 9): u is S
+    ASASAAASSSA@0 (offset 10): member
+    ASAAASSSASA@-8 (offset 2): conflict at -9
+    ASAAASSSASA@-4 (offset 6): conflict at -6
+    ASAAASSSASA@-3 (offset 7): conflict at -5
+    ASAAASSSASA@-2 (offset 8): u is S
+    ASAAASSSASA@0 (offset 10): member
+    AAASSSASASA@-6 (offset 4): conflict at -9
+    AAASSSASASA@-5 (offset 5): placed
+    need owner for S at clock -9 (owned: [-11, -10])
+      AAS@-6 (offset 3): placed
+      need owner for S at clock -13 (owned: [-11, -10, -9])
+        AAS@-10 (offset 3): u is S
+        SAAAASS@-12 (offset 1): conflict at -15
+        SAAAASS@-7 (offset 6): conflict at -8
+        SAAAASS@-6 (offset 7): member
+        ASAASAS@-11 (offset 2): u is S
+        ASAASAS@-8 (offset 5): conflict at -9
+        ASAASAS@-6 (offset 7): member
+        SSAAAAAASSS@-12 (offset 1): conflict at -14
+        SSAAAAAASSS@-11 (offset 2): u is S
+        SSAAAAAASSS@-4 (offset 9): conflict at -5
+        SSAAAAAASSS@-3 (offset 10): conflict at -4
+        SSAAAAAASSS@-2 (offset 11): u is S
+        SASAAAASASS@-12 (offset 1): placed
+        need owner for S at clock -15 (owned: [-13, -11, -10, -9])
+          AAS@-12 (offset 3): member
+          SAAAASS@-14 (offset 1): conflict at -21
+          SAAAASS@-9 (offset 6): u is S
+          SAAAASS@-8 (offset 7): conflict at -10
+          ASAASAS@-13 (offset 2): u is S
+          ASAASAS@-10 (offset 5): u is S
+          ASAASAS@-8 (offset 7): conflict at -9
+          SSAAAAAASSS@-14 (offset 1): conflict at -16
+          SSAAAAAASSS@-13 (offset 2): u is S
+          SSAAAAAASSS@-6 (offset 9): member
+          SSAAAAAASSS@-5 (offset 10): member
+          SSAAAAAASSS@-4 (offset 11): conflict at -5
+          SASAAAASASS@-14 (offset 1): conflict at -17
+          SASAAAASASS@-12 (offset 3): member
+          SASAAAASASS@-7 (offset 8): conflict at -8
+          SASAAAASASS@-5 (offset 10): member
+          SASAAAASASS@-4 (offset 11): conflict at -5
+          SAASAASAASS@-14 (offset 1): conflict at -18
+          SAASAASAASS@-11 (offset 4): u is S
+          SAASAASAASS@-8 (offset 7): conflict at -10
+          SAASAASAASS@-5 (offset 10): member
+          SAASAASAASS@-4 (offset 11): conflict at -5
+          ASSAAASAASS@-13 (offset 2): u is S
+          ASSAAASAASS@-12 (offset 3): member
+          ASSAAASAASS@-8 (offset 7): conflict at -9
+          ASSAAASAASS@-5 (offset 10): member
+          ASSAAASAASS@-4 (offset 11): conflict at -6
+          SAAASSAAASS@-14 (offset 1): conflict at -19
+          SAAASSAAASS@-10 (offset 5): u is S
+          SAAASSAAASS@-9 (offset 6): u is S
+          SAAASSAAASS@-5 (offset 10): member
+          SAAASSAAASS@-4 (offset 11): conflict at -5
+          ASASASAAASS@-13 (offset 2): u is S
+          ASASASAAASS@-11 (offset 4): u is S
+          ASASASAAASS@-9 (offset 6): u is S
+          ASASASAAASS@-5 (offset 10): member
+          ASASASAAASS@-4 (offset 11): conflict at -6
+          SAASAAASSAS@-14 (offset 1): conflict at -18
+          SAASAAASSAS@-11 (offset 4): u is S
+          SAASAAASSAS@-7 (offset 8): conflict at -8
+          SAASAAASSAS@-6 (offset 9): member
+          SAASAAASSAS@-4 (offset 11): conflict at -5
+          ASSAAAASSAS@-13 (offset 2): u is S
+          ASSAAAASSAS@-12 (offset 3): member
+          ASSAAAASSAS@-7 (offset 8): conflict at -11
+          ASSAAAASSAS@-6 (offset 9): member
+          ASSAAAASSAS@-4 (offset 11): conflict at -6
+          SAAASASASAS@-14 (offset 1): conflict at -19
+          SAAASASASAS@-10 (offset 5): u is S
+          SAAASASASAS@-8 (offset 7): conflict at -10
+          SAAASASASAS@-6 (offset 9): member
+          SAAASASASAS@-4 (offset 11): conflict at -5
+          ASASAASASAS@-13 (offset 2): u is S
+          ASASAASASAS@-11 (offset 4): u is S
+          ASASAASASAS@-8 (offset 7): conflict at -9
+          ASASAASASAS@-6 (offset 9): member
+          ASASAASASAS@-4 (offset 11): conflict at -6
+          ASAASSAASAS@-13 (offset 2): u is S
+          ASAASSAASAS@-10 (offset 5): u is S
+          ASAASSAASAS@-9 (offset 6): u is S
+          ASAASSAASAS@-6 (offset 9): member
+          ASAASSAASAS@-4 (offset 11): conflict at -6
+          AAASSSSAAAS@-11 (offset 4): u is S
+          AAASSSSAAAS@-10 (offset 5): u is S
+          AAASSSSAAAS@-9 (offset 6): u is S
+          AAASSSSAAAS@-8 (offset 7): conflict at -9
+          AAASSSSAAAS@-4 (offset 11): conflict at -8
+          SAAASAASSSA@-14 (offset 1): conflict at -19
+          SAAASAASSSA@-10 (offset 5): u is S
+          SAAASAASSSA@-7 (offset 8): conflict at -8
+          SAAASAASSSA@-6 (offset 9): member
+          SAAASAASSSA@-5 (offset 10): member
+          ASASAAASSSA@-13 (offset 2): u is S
+          ASASAAASSSA@-11 (offset 4): u is S
+          ASASAAASSSA@-7 (offset 8): conflict at -10
+          ASASAAASSSA@-6 (offset 9): member
+          ASASAAASSSA@-5 (offset 10): member
+          ASAAASSSASA@-13 (offset 2): u is S
+          ASAAASSSASA@-9 (offset 6): u is S
+          ASAAASSSASA@-8 (offset 7): conflict at -9
+          ASAAASSSASA@-7 (offset 8): conflict at -10
+          ASAAASSSASA@-5 (offset 10): member
+          AAASSSASASA@-11 (offset 4): u is S
+          AAASSSASASA@-10 (offset 5): u is S
+          AAASSSASASA@-9 (offset 6): u is S
+          AAASSSASASA@-7 (offset 8): conflict at -9
+          AAASSSASASA@-5 (offset 10): member
+          AAASSASSSAA@-11 (offset 4): u is S
+          AAASSASSSAA@-10 (offset 5): u is S
+          AAASSASSSAA@-8 (offset 7): conflict at -9
+          AAASSASSSAA@-7 (offset 8): conflict at -9
+          AAASSASSSAA@-6 (offset 9): member
+        SASAAAASASS@-10 (offset 3): u is S
+        SASAAAASASS@-5 (offset 8): member
+        SASAAAASASS@-3 (offset 10): conflict at -4
+        SASAAAASASS@-2 (offset 11): u is S
+        SAASAASAASS@-12 (offset 1): conflict at -15
+        SAASAASAASS@-9 (offset 4): u is S
+        SAASAASAASS@-6 (offset 7): member
+        SAASAASAASS@-3 (offset 10): conflict at -4
+        SAASAASAASS@-2 (offset 11): u is S
+        ASSAAASAASS@-11 (offset 2): u is S
+        ASSAAASAASS@-10 (offset 3): u is S
+        ASSAAASAASS@-6 (offset 7): member
+        ASSAAASAASS@-3 (offset 10): conflict at -5
+        ASSAAASAASS@-2 (offset 11): u is S
+        SAAASSAAASS@-12 (offset 1): conflict at -15
+        SAAASSAAASS@-8 (offset 5): conflict at -10
+        SAAASSAAASS@-7 (offset 6): conflict at -8
+        SAAASSAAASS@-3 (offset 10): conflict at -4
+        SAAASSAAASS@-2 (offset 11): u is S
+        ASASASAAASS@-11 (offset 2): u is S
+        ASASASAAASS@-9 (offset 4): u is S
+        ASASASAAASS@-7 (offset 6): conflict at -10
+        ASASASAAASS@-3 (offset 10): conflict at -5
+        ASASASAAASS@-2 (offset 11): u is S
+        SAASAAASSAS@-12 (offset 1): conflict at -15
+        SAASAAASSAS@-9 (offset 4): u is S
+        SAASAAASSAS@-5 (offset 8): member
+        SAASAAASSAS@-4 (offset 9): conflict at -5
+        SAASAAASSAS@-2 (offset 11): u is S
+        ASSAAAASSAS@-11 (offset 2): u is S
+        ASSAAAASSAS@-10 (offset 3): u is S
+        ASSAAAASSAS@-5 (offset 8): member
+        ASSAAAASSAS@-4 (offset 9): conflict at -6
+        ASSAAAASSAS@-2 (offset 11): u is S
+        SAAASASASAS@-12 (offset 1): conflict at -15
+        SAAASASASAS@-8 (offset 5): conflict at -10
+        SAAASASASAS@-6 (offset 7): member
+        SAAASASASAS@-4 (offset 9): conflict at -5
+        SAAASASASAS@-2 (offset 11): u is S
+        ASASAASASAS@-11 (offset 2): u is S
+        ASASAASASAS@-9 (offset 4): u is S
+        ASASAASASAS@-6 (offset 7): member
+        ASASAASASAS@-4 (offset 9): conflict at -6
+        ASASAASASAS@-2 (offset 11): u is S
+        ASAASSAASAS@-11 (offset 2): u is S
+        ASAASSAASAS@-8 (offset 5): conflict at -9
+        ASAASSAASAS@-7 (offset 6): conflict at -10
+        ASAASSAASAS@-4 (offset 9): conflict at -6
+        ASAASSAASAS@-2 (offset 11): u is S
+        AAASSSSAAAS@-9 (offset 4): u is S
+        AAASSSSAAAS@-8 (offset 5): conflict at -9
+        AAASSSSAAAS@-7 (offset 6): conflict at -9
+        AAASSSSAAAS@-6 (offset 7): member
+        AAASSSSAAAS@-2 (offset 11): u is S
+        SAAASAASSSA@-12 (offset 1): conflict at -15
+        SAAASAASSSA@-8 (offset 5): conflict at -10
+        SAAASAASSSA@-5 (offset 8): member
+        SAAASAASSSA@-4 (offset 9): conflict at -5
+        SAAASAASSSA@-3 (offset 10): conflict at -4
+        ASASAAASSSA@-11 (offset 2): u is S
+        ASASAAASSSA@-9 (offset 4): u is S
+        ASASAAASSSA@-5 (offset 8): member
+        ASASAAASSSA@-4 (offset 9): conflict at -6
+        ASASAAASSSA@-3 (offset 10): conflict at -5
+        ASAAASSSASA@-11 (offset 2): u is S
+        ASAAASSSASA@-7 (offset 6): conflict at -10
+        ASAAASSSASA@-6 (offset 7): member
+        ASAAASSSASA@-5 (offset 8): member
+        ASAAASSSASA@-3 (offset 10): conflict at -5
+        AAASSSASASA@-9 (offset 4): u is S
+        AAASSSASASA@-8 (offset 5): conflict at -9
+        AAASSSASASA@-7 (offset 6): conflict at -9
+        AAASSSASASA@-5 (offset 8): member
+        AAASSSASASA@-3 (offset 10): conflict at -7
+        AAASSASSSAA@-9 (offset 4): u is S
+        AAASSASSSAA@-8 (offset 5): conflict at -9
+        AAASSASSSAA@-6 (offset 7): member
+        AAASSASSSAA@-5 (offset 8): member
+        AAASSASSSAA@-4 (offset 9): conflict at -8
+      SAAAASS@-8 (offset 1): conflict at -10
+      SAAAASS@-3 (offset 6): conflict at -4
+      SAAAASS@-2 (offset 7): u is S
+      ASAASAS@-7 (offset 2): conflict at -10
+      ASAASAS@-4 (offset 5): conflict at -6
+      ASAASAS@-2 (offset 7): u is S
+      SSAAAAAASSS@-8 (offset 1): conflict at -11
+      SSAAAAAASSS@-7 (offset 2): conflict at -8
+      SSAAAAAASSS@0 (offset 9): member
+      SSAAAAAASSS@1 (offset 10): conflict at 0
+      SSAAAAAASSS@2 (offset 11): conflict at 0
+      SASAAAASASS@-8 (offset 1): conflict at -10
+      SASAAAASASS@-6 (offset 3): conflict at -7
+      SASAAAASASS@-1 (offset 8): u is S
+      SASAAAASASS@1 (offset 10): conflict at 0
+      SASAAAASASS@2 (offset 11): conflict at -2
+      SAASAASAASS@-8 (offset 1): conflict at -10
+      SAASAASAASS@-5 (offset 4): member
+      SAASAASAASS@-2 (offset 7): u is S
+      SAASAASAASS@1 (offset 10): conflict at 0
+      SAASAASAASS@2 (offset 11): conflict at -1
+      ASSAAASAASS@-7 (offset 2): conflict at -11
+      ASSAAASAASS@-6 (offset 3): conflict at -8
+      ASSAAASAASS@-2 (offset 7): u is S
+      ASSAAASAASS@1 (offset 10): conflict at -6
+      ASSAAASAASS@2 (offset 11): conflict at 0
+      SAAASSAAASS@-8 (offset 1): conflict at -10
+      SAAASSAAASS@-4 (offset 5): conflict at -5
+      SAAASSAAASS@-3 (offset 6): conflict at -4
+      SAAASSAAASS@1 (offset 10): conflict at 0
+      SAAASSAAASS@2 (offset 11): conflict at -1
+      ASASASAAASS@-7 (offset 2): conflict at -10
+      ASASASAAASS@-5 (offset 4): member
+      ASASASAAASS@-3 (offset 6): conflict at -5
+      ASASASAAASS@1 (offset 10): conflict at -2
+      ASASASAAASS@2 (offset 11): conflict at 0
+      SAASAAASSAS@-8 (offset 1): conflict at -10
+      SAASAAASSAS@-5 (offset 4): member
+      SAASAAASSAS@-1 (offset 8): u is S
+      SAASAAASSAS@0 (offset 9): member
+      SAASAAASSAS@2 (offset 11): conflict at -1
+      ASSAAAASSAS@-7 (offset 2): conflict at -11
+      ASSAAAASSAS@-6 (offset 3): conflict at -8
+      ASSAAAASSAS@-1 (offset 8): u is S
+      ASSAAAASSAS@0 (offset 9): member
+      ASSAAAASSAS@2 (offset 11): conflict at 0
+      SAAASASASAS@-8 (offset 1): conflict at -10
+      SAAASASASAS@-4 (offset 5): conflict at -5
+      SAAASASASAS@-2 (offset 7): u is S
+      SAAASASASAS@0 (offset 9): member
+      SAAASASASAS@2 (offset 11): conflict at -1
+      ASASAASASAS@-7 (offset 2): conflict at -10
+      ASASAASASAS@-5 (offset 4): member
+      ASASAASASAS@-2 (offset 7): u is S
+      ASASAASASAS@0 (offset 9): member
+      ASASAASASAS@2 (offset 11): conflict at 0
+      ASAASSAASAS@-7 (offset 2): conflict at -10
+      ASAASSAASAS@-4 (offset 5): conflict at -6
+      ASAASSAASAS@-3 (offset 6): conflict at -5
+      ASAASSAASAS@0 (offset 9): member
+      ASAASSAASAS@2 (offset 11): conflict at 0
+      AAASSSSAAAS@-5 (offset 4): member
+      AAASSSSAAAS@-4 (offset 5): conflict at -8
+      AAASSSSAAAS@-3 (offset 6): conflict at -7
+      AAASSSSAAAS@-2 (offset 7): u is S
+      AAASSSSAAAS@2 (offset 11): conflict at -1
+      SAAASAASSSA@-8 (offset 1): conflict at -10
+      SAAASAASSSA@-4 (offset 5): conflict at -5
+      SAAASAASSSA@-1 (offset 8): u is S
+      SAAASAASSSA@0 (offset 9): member
+      SAAASAASSSA@1 (offset 10): conflict at 0
+      ASASAAASSSA@-7 (offset 2): conflict at -10
+      ASASAAASSSA@-5 (offset 4): member
+      ASASAAASSSA@-1 (offset 8): u is S
+      ASASAAASSSA@0 (offset 9): member
+      ASASAAASSSA@1 (offset 10): conflict at -2
+      ASAAASSSASA@-7 (offset 2): conflict at -10
+      ASAAASSSASA@-3 (offset 6): conflict at -5
+      ASAAASSSASA@-2 (offset 7): u is S
+      ASAAASSSASA@-1 (offset 8): u is S
+      ASAAASSSASA@1 (offset 10): conflict at -2
+      AAASSSASASA@-5 (offset 4): member
+      AAASSSASASA@-4 (offset 5): conflict at -8
+      AAASSSASASA@-3 (offset 6): conflict at -7
+      AAASSSASASA@-1 (offset 8): u is S
+      AAASSSASASA@1 (offset 10): conflict at -1
+      AAASSASSSAA@-5 (offset 4): member
+      AAASSASSSAA@-4 (offset 5): conflict at -8
+      AAASSASSSAA@-2 (offset 7): u is S
+      AAASSASSSAA@-1 (offset 8): u is S
+      AAASSASSSAA@0 (offset 9): member
+    AAASSSASASA@-4 (offset 6): conflict at -8
+    AAASSSASASA@-2 (offset 8): u is S
+    AAASSSASASA@0 (offset 10): member
+    AAASSASSSAA@-6 (offset 4): conflict at -9
+    AAASSASSSAA@-5 (offset 5): conflict at -11
+    AAASSASSSAA@-3 (offset 7): conflict at -7
+    AAASSASSSAA@-2 (offset 8): u is S
+    AAASSASSSAA@-1 (offset 9): u is S
+  SSAAAAAASSS: excluded (total 19 nodes, span -23..0)
+     own offset 1: excluded (3 nodes)
+     own offset 2: excluded (3 nodes)
+     own offset 9: excluded (3 nodes)
+     own offset 10: excluded (5 nodes)
+     own offset 11: excluded (5 nodes)
+=> excluded 1/1, consistent closure 0, cap hit 0

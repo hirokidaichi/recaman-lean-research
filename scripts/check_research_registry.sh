@@ -119,3 +119,8 @@ if [[ "$RECAMAN_ROW_COUNT" -eq 0 || "$RECAMAN_PROVED_LEAN_COUNT" -eq 0 ]]; then
 fi
 
 echo "Research registry audit: $RECAMAN_ROW_COUNT entries, $RECAMAN_PROVED_LEAN_COUNT PROVED-LEAN rows linked to Recaman/Audit.lean."
+
+# Research-harness gates (INC-20260915-01): vacuity/substance/name/statement-audit gates on new
+# PROVED-LEAN rows, and pinned labels for the central claims. See scripts/harness_gate.py.
+python3 scripts/harness_gate.py --check-registry
+python3 scripts/harness_gate.py --check-protected

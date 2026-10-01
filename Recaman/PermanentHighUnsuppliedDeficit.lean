@@ -1,17 +1,20 @@
-import Recaman.PermanentHighCollision
-import Recaman.PermanentHighRigidity
-import Recaman.TailDowncrossingDichotomy
-import Recaman.TailDowncrossingLedger
-import Recaman.GlobalUnboundednessSupply
 import Recaman.DriftResetAccumulation
 import Recaman.CanonicalSSFreeSupply
 import Recaman.DebtInvariant
+import Recaman.EventualEscape
+import Recaman.EventualHighCorridorStructure
+import Recaman.LeastTailLedgerMinimum
+import Recaman.LeastTailLedgerProvenance
+import Recaman.NoDoubleAdditionRun
+import Recaman.OrbitBounds
+import Recaman.SharpResidualKernel
+import Recaman.SubtractionLedger
+import Recaman.FiniteBlockCapacity
 
 namespace Recaman
 
 open Recaman.CanonicalSSFreeSupply
 open Recaman.DriftResetAccumulation
-open Recaman.GlobalUnboundednessSupply
 
 /-! # Permanent High Unsupplied Deficit and Super-Summit Escalation
 
@@ -47,6 +50,182 @@ collision identity to the **unsupplied addition theory** (Theme 4 / E-324):
    - It deposits `n + 7` into `subSum`, bringing the cumulative two-step
      subtraction deposit to `(n + 3) + (n + 7) = 2n + 10`.
 -/
+
+/-! ### Part 0: Local supply-deficit and collision lemmas
+
+The lemmas in this part were originally stated in `GlobalUnboundednessSupply`
+(namespace `Recaman.GlobalUnboundednessSupply`) and `PermanentHighCollision`
+(namespace `Recaman`). They are restated here verbatim, under their original full
+names, so that this module depends only on the core supply modules. -/
+
+namespace GlobalUnboundednessSupply
+
+open Recaman.ShortPeriodicSupply
+
+/-- Any run of K consecutive additions has net signSum equal to K. -/
+theorem signSum_of_all_additions (e : Int → Bool) (t : Int) (K : Nat)
+    (hall : ∀ i : Nat, i < K → e (t + (i : Int)) = true) :
+    signSum e t K = (K : Int) := by
+  induction K with
+  | zero => simp [signSum]
+  | succ K ih =>
+    have hprev : ∀ i : Nat, i < K → e (t + (i : Int)) = true := fun i hi =>
+      hall i (by omega)
+    have ih_val := ih hprev
+    have hlast := hall K (Nat.lt_succ_self K)
+    simp only [signSum]
+    rw [ih_val]
+    simp [sign, hlast]
+
+/-- Quantitative unsupplied deficit in any addition run:
+any run of K ≥ 3 consecutive additions forces at least K - 2 unsupplied additions. -/
+theorem consecutive_additions_unsupplied_deficit (e : Int → Bool) (t : Int) (K : Nat)
+    (_hK : 3 ≤ K)
+    (hall : ∀ i : Nat, i < K → e (t + (i : Int)) = true) :
+    (K - 2 : Int) ≤ (unsuppliedCount e t K : Int) := by
+  have hdrift := signSum_of_all_additions e t K hall
+  have hd := unsuppliedCount_ge_signSum_sub_two e t K
+  rw [hdrift] at hd
+  exact hd
+
+/-- A run of 3 consecutive additions must contain at least one unsupplied addition. -/
+theorem three_consecutive_additions_unsupplied (e : Int → Bool) (t : Int)
+    (h0 : e t = true)
+    (h1 : e (t + 1) = true)
+    (h2 : e (t + 2) = true) :
+    1 ≤ unsuppliedCount e t 3 := by
+  have hall : ∀ i : Nat, i < 3 → e (t + (i : Int)) = true := by
+    intro i hi
+    cases i with
+    | zero =>
+      have : t + ((0 : Nat) : Int) = t := by omega
+      rw [this]; exact h0
+    | succ i =>
+      cases i with
+      | zero =>
+        have : t + ((1 : Nat) : Int) = t + 1 := by omega
+        rw [this]; exact h1
+      | succ i =>
+        cases i with
+        | zero =>
+          have : t + ((2 : Nat) : Int) = t + 2 := by omega
+          rw [this]; exact h2
+        | succ i => omega
+  have hd := consecutive_additions_unsupplied_deficit e t 3 (by omega) hall
+  omega
+
+end GlobalUnboundednessSupply
+
+open Recaman.GlobalUnboundednessSupply
+
+/-- Under any `A A S A A` sequence starting at `n`, the candidate for subtraction
+at step `n + 6` equals `a (n + 2)`. -/
+theorem aasaas_subtraction_candidate_collision
+    {n : Nat}
+    (hnot1 : ¬ CanSubtract (n + 1) (stateAt n))
+    (hnot2 : ¬ CanSubtract (n + 2) (stateAt (n + 1)))
+    (hcan3 : CanSubtract (n + 3) (stateAt (n + 2)))
+    (hnot4 : ¬ CanSubtract (n + 4) (stateAt (n + 3)))
+    (hnot5 : ¬ CanSubtract (n + 5) (stateAt (n + 4))) :
+    a (n + 5) - (n + 6) = a (n + 2) := by
+  have hstep1 := a_succ_of_not_canSubtract hnot1
+  have hstep2 := a_succ_of_not_canSubtract hnot2
+  have heq2 : n + 1 + 1 = n + 2 := by omega
+  rw [heq2] at hstep2
+  have heq3 : (n + 2) + 1 = n + 3 := by omega
+  have hcan3' : CanSubtract ((n + 2) + 1) (stateAt (n + 2)) := by
+    rw [heq3]
+    exact hcan3
+  have hstep3 := a_succ_of_canSubtract hcan3'
+  rw [heq3] at hstep3
+  have hstep4 := a_succ_of_not_canSubtract hnot4
+  have heq4 : n + 3 + 1 = n + 4 := by omega
+  rw [heq4] at hstep4
+  have hstep5 := a_succ_of_not_canSubtract hnot5
+  have heq5 : n + 4 + 1 = n + 5 := by omega
+  rw [heq5] at hstep5
+  have hlt : n + 3 < a (n + 2) := hcan3.1
+  omega
+
+/-- The candidate at step `n + 6` already belongs to `valuesThrough (n + 5)`. -/
+theorem aasaas_candidate_in_valuesThrough
+    {n : Nat}
+    (hnot1 : ¬ CanSubtract (n + 1) (stateAt n))
+    (hnot2 : ¬ CanSubtract (n + 2) (stateAt (n + 1)))
+    (hcan3 : CanSubtract (n + 3) (stateAt (n + 2)))
+    (hnot4 : ¬ CanSubtract (n + 4) (stateAt (n + 3)))
+    (hnot5 : ¬ CanSubtract (n + 5) (stateAt (n + 4))) :
+    a (n + 5) - (n + 6) ∈ valuesThrough (n + 5) := by
+  have heq := aasaas_subtraction_candidate_collision hnot1 hnot2 hcan3 hnot4 hnot5
+  rw [heq]
+  have hle : n + 2 ≤ n + 5 := by omega
+  exact mem_valuesThrough_iff.mpr ⟨n + 2, hle, rfl⟩
+
+/-- The pattern `A A S A A S` is strictly impossible in the Recamán sequence:
+step `n + 6` cannot subtract because its candidate is the historical peak `a (n + 2)`. -/
+theorem no_aasaas_pattern
+    {n : Nat}
+    (hnot1 : ¬ CanSubtract (n + 1) (stateAt n))
+    (hnot2 : ¬ CanSubtract (n + 2) (stateAt (n + 1)))
+    (hcan3 : CanSubtract (n + 3) (stateAt (n + 2)))
+    (hnot4 : ¬ CanSubtract (n + 4) (stateAt (n + 3)))
+    (hnot5 : ¬ CanSubtract (n + 5) (stateAt (n + 4))) :
+    ¬ CanSubtract (n + 6) (stateAt (n + 5)) := by
+  intro hcan6
+  have hseen := aasaas_candidate_in_valuesThrough hnot1 hnot2 hcan3 hnot4 hnot5
+  have heq6 : (n + 5) + 1 = n + 6 := by omega
+  have hcan6' : CanSubtract ((n + 5) + 1) (stateAt (n + 5)) := by
+    rw [heq6]
+    exact hcan6
+  exact hcan6'.2 hseen
+
+/-- Any `A A S A A` sequence is strictly forced to execute a third addition at
+step `n + 6`, reaching `a (n + 6) = a n + 4n + 15`. -/
+theorem aasaa_forces_third_addition
+    {n : Nat}
+    (hnot1 : ¬ CanSubtract (n + 1) (stateAt n))
+    (hnot2 : ¬ CanSubtract (n + 2) (stateAt (n + 1)))
+    (hcan3 : CanSubtract (n + 3) (stateAt (n + 2)))
+    (hnot4 : ¬ CanSubtract (n + 4) (stateAt (n + 3)))
+    (hnot5 : ¬ CanSubtract (n + 5) (stateAt (n + 4))) :
+    a (n + 6) = a n + 4 * n + 15 := by
+  have hnot6 := no_aasaas_pattern hnot1 hnot2 hcan3 hnot4 hnot5
+  have heq6 : (n + 5) + 1 = n + 6 := by omega
+  have hnot6' : ¬ CanSubtract ((n + 5) + 1) (stateAt (n + 5)) := by
+    rw [heq6]
+    exact hnot6
+  have hstep6 := a_succ_of_not_canSubtract hnot6'
+  rw [heq6] at hstep6
+  have hstep1 := a_succ_of_not_canSubtract hnot1
+  have hstep2 := a_succ_of_not_canSubtract hnot2
+  have heq2 : n + 1 + 1 = n + 2 := by omega
+  rw [heq2] at hstep2
+  have heq3 : (n + 2) + 1 = n + 3 := by omega
+  have hcan3' : CanSubtract ((n + 2) + 1) (stateAt (n + 2)) := by
+    rw [heq3]
+    exact hcan3
+  have hstep3 := a_succ_of_canSubtract hcan3'
+  rw [heq3] at hstep3
+  have hstep4 := a_succ_of_not_canSubtract hnot4
+  have heq4 : n + 3 + 1 = n + 4 := by omega
+  rw [heq4] at hstep4
+  have hstep5 := a_succ_of_not_canSubtract hnot5
+  have heq5 : n + 4 + 1 = n + 5 := by omega
+  rw [heq5] at hstep5
+  have hlt : n + 3 < a (n + 2) := hcan3.1
+  omega
+
+/-- The subtraction candidate at step `n + 7` equals `a n + 3n + 8`. -/
+theorem aasaaa_subtraction_candidate
+    {n : Nat}
+    (hnot1 : ¬ CanSubtract (n + 1) (stateAt n))
+    (hnot2 : ¬ CanSubtract (n + 2) (stateAt (n + 1)))
+    (hcan3 : CanSubtract (n + 3) (stateAt (n + 2)))
+    (hnot4 : ¬ CanSubtract (n + 4) (stateAt (n + 3)))
+    (hnot5 : ¬ CanSubtract (n + 5) (stateAt (n + 4))) :
+    a (n + 6) - (n + 7) = a n + 3 * n + 8 := by
+  have hval := aasaa_forces_third_addition hnot1 hnot2 hcan3 hnot4 hnot5
+  omega
 
 /-! ### Part 1: Canonical Sign Connection -/
 

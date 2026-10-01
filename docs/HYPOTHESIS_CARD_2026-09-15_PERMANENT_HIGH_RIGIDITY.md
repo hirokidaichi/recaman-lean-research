@@ -82,3 +82,7 @@ Lean formal declarations in `Recaman/PermanentHighRigidity.lean`:
 - Tail downcrossing ledger: `Recaman.TailDowncrossingLedger` (`PROVED-LEAN`).
 - Eventual high corridor structure: `Recaman.EventualHighCorridorStructure` (`PROVED-LEAN`).
 - Debt invariant: `Recaman.DebtInvariant` (`PROVED-LEAN`).
+
+## 削除注記（2026-09-15）
+
+このカードが参照する Lean モジュールは監査 E-343 で wrapper／条件付き足場／恒真式と判定され、2026-09-15 に削除した（[AUDIT_GRAND_SYNTHESIS_2026-09-15.md](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) §9）。使える補題は `Recaman/AuditSalvage.lean` に退避した。registry の該当行は `STOPPED`。

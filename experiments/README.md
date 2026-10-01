@@ -452,3 +452,53 @@ no shared code. `local_surplus` tests whether a high-SS window donates a
 deletable subtraction from inside itself. `seam_pumping` glues tight blocks
 looking for net surplus beyond the exhaustive range. The scan-termination rule
 all of these rely on is proved in `Recaman/PeriodicSupplyBound.lean`.
+
+`issue73_20260915/tight_nonaas_census` (after the 2026-09-15 audit, E-343) enumerates,
+for every high-SS donor of every positive-sum word with `8 <= p <= 22`, all tight
+avoiding subsets `B` (`|N(B)| = |B|`, donor excluded), and reports how many contain a
+non-AAS (lag != 3) member, which lags occur, and whether the donor's oldest subtraction
+`s*` is covered by some tight `B` (equivalently, whether deleting `s*` breaks Hall; both
+computations are done and must agree). It aborts unless `wordsWithHighSS` reproduces
+E-179 (`local_surplus.txt`). `verify_witnesses.py` re-derives the p=12 failure witness and
+the E-240 word by direct summation with no shared code. Registry `E-345`.
+
+`issue73_20260915/lag7_cover_configs.py` enumerates, without periodicity, the minimal lag-7 windows
+that can cover the oldest subtraction of a minimal SS=2 lag-11 donor (3 configurations), and
+`oldest_s_coverers.cpp` extends the census with the lag distribution of all coverers and a
+private-phase diagnostic for lag-7 coverers. Registry `E-347`.
+
+`issue73_20260915/tight_structure.cpp` scans every subset of `U` (not only donor-avoiding ones) in
+Hall-OK positive-sum words for `8 <= p <= 26` and records, for each tight subset, the lags present,
+whether the members' oldest subtractions are pairwise distinct and exhaust `N(B)` (the OS
+characterization), and the ownership of the phases of lag-7 members. Registry `E-349`.
+
+`issue73_20260915/g1_lag_structure.cpp` (H-20260915-21) measures, for every supplied phase `v` of
+lag >= 11, the number of subtractions of its window covered by no other member of `U` (`priv`) and
+`minSlack(v) = min |N(B)| - |B|` over subsets `B` containing `v`, plus an offset-by-offset
+classification of who else covers each subtraction of a lag-11 window; `--all` includes positive-sum
+words without a high-SS window. It aborts unless `wordsWithHighSS` reproduces E-179.
+`docs/data/issue73_20260915/paired_older_s_coverers.txt` lists, for the minimal P2 words of lag
+3/7/11/15, the offsets holding the older subtraction of an adjacent SS pair (the generating script is
+in the file header). Registry `E-352`.
+
+`issue73_20260915/os_closure_search.py` (H-20260915-21 addendum, registry `E-354`) assumes the OS
+characterization of E-349 and, for every minimal P2 word `v` of lag `Lv` placed as the lag-maximal member of
+a tight subset, searches for a bit-consistent closed set of owners (minimal P2 words of lag <= `Lv`, each
+placed with its oldest subtraction on the subtraction it owns); no periodicity is assumed, so exclusion on
+the line excludes every periodic word. `--trace` prints every rejected placement with the conflicting
+clock. `g1_lag_structure_p27_31.txt` and `g1_lag_structure_all_p25_26.txt` extend E-352's Q1 holdout.
+
+`issue73_20260916/matching_closure_search.py` (H-20260916-01, registry `E-356`) drops the OS assumption of
+`os_closure_search.py`: a tight subset with Hall's condition has, by Hall's theorem, a bijection `own : B -> N(B)`
+with `own(b)` inside `b`'s window, and the search uses only its two one-sided halves (every member owns exactly one
+subtraction of its own window at ANY offset; every subtraction inside any member's window is owned by some member;
+injectivity unused). `v` (a minimal P2 word of lag `Lv`, the lag-maximal member) is placed at clock 0, the search
+branches on which subtraction `v` owns and closes under "every unowned subtraction needs an owner word of lag <= `Lv`
+(or `--owners=L`) placed with one of its S offsets on it", rejecting bit conflicts and double ownership. `--mrv`
+expands the subtraction with the fewest consistent placements first (smallest trees), `--noaas` disables the
+Hall-augmentation pruning, `--all` lists every closed configuration, `--emit-cert` writes the search trees as Lean
+certificates for `Recaman/OwnerFamilyLagEleven.lean` (E-357). Outputs in `docs/data/issue73_20260916/`:
+lag-max 11 (17/17 excluded, owners <= 11 and <= 15), lag-max 15 (155/155), `w2` (excluded), lag-max 7 (only the
+`w1` triple with `w1` owning its oldest subtraction survives), lag-max 19 (4 shards). `shared_oldest_s.py` lists the
+placements of two minimal P2 windows sharing their oldest subtraction (10 for lag <= 15), the reason E-349's
+lemma D cannot be proved bit-level.

@@ -51,3 +51,7 @@ Lean formal declarations in `Recaman/PermanentHighGlobalSynthesis.lean`:
 - Lean check: `Recaman/Audit.lean` audited and verified with `lake build Recaman.Audit`.
 - Kernel axioms: `{propext, Classical.choice, Quot.sound}` (0 sorry, 0 admit, 0 native_decide).
 - Evidence ID: `E-335` in `docs/EVIDENCE_REGISTRY.tsv`.
+
+## 削除注記（2026-09-15）
+
+このカードが参照する Lean モジュールは監査 E-343 で wrapper／条件付き足場／恒真式と判定され、2026-09-15 に削除した（[AUDIT_GRAND_SYNTHESIS_2026-09-15.md](AUDIT_GRAND_SYNTHESIS_2026-09-15.md) §9）。使える補題は `Recaman/AuditSalvage.lean` に退避した。registry の該当行は `STOPPED`。
