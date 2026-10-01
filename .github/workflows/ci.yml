@@ -49,12 +49,12 @@ jobs:
         run: |
           SWAP_PATH="$RUNNER_TEMP/recaman-kernel.swap"
           AVAILABLE_KIB=$(df --output=avail "$RUNNER_TEMP" | tail -n 1)
-          if [ "$AVAILABLE_KIB" -lt 10485760 ]; then
-            echo "Need 10 GiB free to reserve 8 GiB swap and retain build space"
+          if [ "$AVAILABLE_KIB" -lt 37748736 ]; then
+            echo "Need 36 GiB free to reserve 32 GiB swap and retain build space"
             df -h
             exit 1
           fi
-          sudo fallocate -l 8G "$SWAP_PATH"
+          sudo fallocate -l 32G "$SWAP_PATH"
           sudo chmod 600 "$SWAP_PATH"
           sudo mkswap "$SWAP_PATH"
           sudo swapon "$SWAP_PATH"
