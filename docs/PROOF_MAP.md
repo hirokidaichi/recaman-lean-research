@@ -1350,3 +1350,16 @@ checks that the represented A suffix is maximal. The all-word corollary
 minimality. No cutoff or ceiling hypothesis is inserted. Separate-session
 review is pending; #75 remains OPEN. #76 construction and owner delta
 remain separate. See [statement audit](statement_audits/E-363.md).
+
+## 2026-10-01: SS=2 word offset span (E-365, PROVED-PAPER)
+
+E-122's SA/core/AS padding pattern + fixed core SAAASSAAASS ->
+mass1/moment0 and a complete three-region prefix classification.
+All proper mass-one moments are positive -> minimal P2, all k.
+The two SS pairs remain in the core; current-A NoSAAS and S endpoints
+give t=0, length=8k+11 and marked-to-oldest span=8k+10.
+
+This is a paper counterfamily to word-only constant-offset routes,
+independent of the terminal-A upper bound. Fixed core controls are
+kernel checked; the all-k theorem is not. Owner-family conditions and
+general #73 remain unproved, not refuted by this weaker-history model.
