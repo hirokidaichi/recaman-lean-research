@@ -1350,3 +1350,21 @@ checks that the represented A suffix is maximal. The all-word corollary
 minimality. No cutoff or ceiling hypothesis is inserted. Separate-session
 review is pending; #75 remains OPEN. #76 construction and owner delta
 remain separate. See [statement audit](statement_audits/E-363.md).
+
+## 2026-10-01: explicit terminal-A sharp words (E-364, PROVED-LEAN)
+
+Imports OneSSMultiplicity only; construction does not depend on E-362/E-363.
+Four-region take split + alt_S_negative_prefix -> proper_mass_one_prefix
+(exact nonzero moments) -> body_minimal. alt_S_prefix_at_pair supplies the
+reverse direction -> proper_mass_one_positions_iff.
+Append mass/moment and quadratic Nat subtraction equation -> body_P2.
+SS junction calculation + reverse/takeWhile -> exact count and maximum tail.
+Small q=0/1/2 kernel controls + general family -> word_properties for all q
+-> all-q existence and any-terminal-length corollaries.
+
+Together with E-363 this attains the all-word bound q-1 for every q,
+including saturated q=0. Every paper component is separately formalized
+as E-362/E-363/E-364; E-361 retains the original paper artifact.
+Independent-session reviews remain pending; #76 remains OPEN.
+No orbit realization, owner delta, Hall or general #73 result follows.
+See [statement audit](statement_audits/E-364.md).

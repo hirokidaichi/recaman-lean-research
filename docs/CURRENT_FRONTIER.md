@@ -755,3 +755,17 @@ Every P2 word admits the terminal-S/A decomposition and the maximum-run
 identity is verified. Separate-session semantic review is pending, so #75
 remains OPEN. The remaining E-361 all-q construction is still paper-only.
 The bound controls t=L-r, not owner delta or general #73.
+
+## 2026-10-01 follow-up: all-q sharp words (E-364)
+
+The fixed words of #76 are now `PROVED-LEAN` for every Nat q: P2,
+minimality against every positive proper prefix, exactly q overlapping SS
+pairs, maximum terminal A length q-1. Both directions of the proper
+mass-one prefix classification and their exact nonzero moments are proved.
+The construction imports neither E-362 nor E-363. With E-363 the bound
+is attained for every q; abstract minimal P2 words have arbitrarily long
+A tails. This is not a canonical or seeded orbit realization claim.
+All three E-361 components have separate Lean rows E-362/E-363/E-364.
+E-361 retains its original paper artifact/label; separate-session semantic
+reviews are pending and #74/#75/#76 remain OPEN. The general #73 owner
+delta and matching frontier is unchanged.

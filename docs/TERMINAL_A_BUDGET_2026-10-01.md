@@ -7,7 +7,10 @@ Follow-up 2026-10-01: section 3 alone is formalized in
 `Recaman/FirstP2EndingS.lean` as E-362, including the least-index corollary.
 Sections 2 and 4 (all-length terminal-A SS bounds) are now formalized in
 `Recaman/TerminalASSBound.lean` as E-363, including maximum-run semantics.
-The all-q witnesses below remain `PROVED-PAPER`.
+Section 5 (the explicit all-q witnesses and full proper-prefix classification)
+is now formalized independently in `Recaman/TerminalASharpWords.lean` as
+E-364. E-361 retains its paper artifact/label; its components have separate
+Lean evidence rows E-362/E-363/E-364.
 Independent-session semantic review of the new Lean result is pending.
 Historical pre-formalization statements below describe the original E-361 pass.
 
