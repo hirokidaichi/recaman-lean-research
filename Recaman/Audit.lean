@@ -2708,3 +2708,36 @@ import Recaman
 #print axioms Recaman.TerminalASSBound.minimal_p2_terminal_A_le_ss_sub_one
 #print axioms Recaman.TerminalASSBound.minimal_p2_ss_two_terminal_A_le_one
 #print axioms Recaman.TerminalASSBound.minimal_p2_terminal_bound
+
+-- Explicit minimal P2 words attaining the terminal-A bound for every q (E-364).
+#print axioms Recaman.TerminalASharpWords.mass_replicate_S
+#print axioms Recaman.TerminalASharpWords.twice_moment_replicate_S
+#print axioms Recaman.TerminalASharpWords.alt_S_negative_prefix
+#print axioms Recaman.TerminalASharpWords.head_mass
+#print axioms Recaman.TerminalASharpWords.head_moment
+#print axioms Recaman.TerminalASharpWords.core_mass
+#print axioms Recaman.TerminalASharpWords.core_moment
+#print axioms Recaman.TerminalASharpWords.body_length
+#print axioms Recaman.TerminalASharpWords.body_mass
+#print axioms Recaman.TerminalASharpWords.body_twice_moment
+#print axioms Recaman.TerminalASharpWords.take_body_alt
+#print axioms Recaman.TerminalASharpWords.take_body_S
+#print axioms Recaman.TerminalASharpWords.take_body_A
+#print axioms Recaman.TerminalASharpWords.proper_mass_one_prefix
+#print axioms Recaman.TerminalASharpWords.body_minimal
+#print axioms Recaman.TerminalASharpWords.alt_S_prefix_at_pair
+#print axioms Recaman.TerminalASharpWords.proper_mass_one_positions_iff
+#print axioms Recaman.TerminalASharpWords.square_ge_twice_add_three
+#print axioms Recaman.TerminalASharpWords.pairCount_equation
+#print axioms Recaman.TerminalASharpWords.pairCount_int
+#print axioms Recaman.TerminalASharpWords.body_P2
+#print axioms Recaman.TerminalASharpWords.body_sharp_length
+#print axioms Recaman.TerminalASharpWords.ssCount_replicate_A
+#print axioms Recaman.TerminalASharpWords.ssCount_S_then_A
+#print axioms Recaman.TerminalASharpWords.body_ssCount
+#print axioms Recaman.TerminalASharpWords.terminal_S_A_length
+#print axioms Recaman.TerminalASharpWords.body_terminal_length
+#print axioms Recaman.TerminalASharpWords.small_word_properties
+#print axioms Recaman.TerminalASharpWords.word_properties
+#print axioms Recaman.TerminalASharpWords.exists_minimal_p2_with_terminal_length
+#print axioms Recaman.TerminalASharpWords.exists_minimal_p2_terminal_run

@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2710,
+   "lines": 2743,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46636,6 +46636,189 @@
    "hasReport": false
   },
   {
+   "name": "TerminalASharpWords",
+   "lines": 328,
+   "imports": [
+    "OneSSMultiplicity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "body",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "pairCount",
+     "line": 15
+    },
+    {
+     "kind": "def",
+     "name": "word",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_replicate_S",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "twice_moment_replicate_S",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "alt_S_negative_prefix",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "head_mass",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "head_moment",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "core_mass",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "core_moment",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "body_length",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "body_mass",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "body_twice_moment",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "take_body_alt",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "take_body_S",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "take_body_A",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "proper_mass_one_prefix",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "body_minimal",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "alt_S_prefix_at_pair",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "proper_mass_one_positions_iff",
+     "line": 185
+    },
+    {
+     "kind": "theorem",
+     "name": "square_ge_twice_add_three",
+     "line": 210
+    },
+    {
+     "kind": "theorem",
+     "name": "pairCount_equation",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "pairCount_int",
+     "line": 222
+    },
+    {
+     "kind": "theorem",
+     "name": "body_P2",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "body_sharp_length",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "ssCount_replicate_A",
+     "line": 240
+    },
+    {
+     "kind": "theorem",
+     "name": "ssCount_S_then_A",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "body_ssCount",
+     "line": 260
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_S_A_length",
+     "line": 270
+    },
+    {
+     "kind": "theorem",
+     "name": "body_terminal_length",
+     "line": 277
+    },
+    {
+     "kind": "theorem",
+     "name": "small_word_properties",
+     "line": 284
+    },
+    {
+     "kind": "theorem",
+     "name": "word_properties",
+     "line": 302
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_minimal_p2_with_terminal_length",
+     "line": 313
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_minimal_p2_terminal_run",
+     "line": 321
+    }
+   ],
+   "theorems": 31,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -49666,6 +49849,6 @@
    "hasReport": false
   }
  ],
- "total": 390,
+ "total": 391,
  "withReport": 167
 }

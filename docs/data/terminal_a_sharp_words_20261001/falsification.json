@@ -1,0 +1,881 @@
+{
+  "base": "cbe51b7b1216f9700f432eb14803277113c02af4",
+  "protocol": "H-20261001-04",
+  "source_sha256": "10aa848df2b8d301f5d55e5e8e4c13b49d841eff69fb47d5306f309e6a1b0074",
+  "construction_source_sha256": "dcdec96faf84e3ce7159099f33eb585b21eae1884ae26dfeb4e02263debf49f6",
+  "reused_discovery": [
+    {
+      "q": 0,
+      "length": 3,
+      "mass": 1,
+      "moment": 0,
+      "ss": 0,
+      "tail": 0,
+      "max_height": 2,
+      "p2_prefixes": [
+        3
+      ],
+      "minimal": true
+    },
+    {
+      "q": 1,
+      "length": 7,
+      "mass": 1,
+      "moment": 0,
+      "ss": 1,
+      "tail": 0,
+      "max_height": 3,
+      "p2_prefixes": [
+        7
+      ],
+      "minimal": true
+    },
+    {
+      "q": 2,
+      "length": 11,
+      "mass": 1,
+      "moment": 0,
+      "ss": 2,
+      "tail": 1,
+      "max_height": 3,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true
+    },
+    {
+      "q": 3,
+      "length": 11,
+      "mass": 1,
+      "moment": 0,
+      "ss": 3,
+      "tail": 2,
+      "max_height": 3,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true
+    },
+    {
+      "q": 4,
+      "length": 23,
+      "mass": 1,
+      "moment": 0,
+      "ss": 4,
+      "tail": 3,
+      "max_height": 3,
+      "p2_prefixes": [
+        23
+      ],
+      "minimal": true
+    },
+    {
+      "q": 5,
+      "length": 39,
+      "mass": 1,
+      "moment": 0,
+      "ss": 5,
+      "tail": 4,
+      "max_height": 3,
+      "p2_prefixes": [
+        39
+      ],
+      "minimal": true
+    },
+    {
+      "q": 6,
+      "length": 59,
+      "mass": 1,
+      "moment": 0,
+      "ss": 6,
+      "tail": 5,
+      "max_height": 3,
+      "p2_prefixes": [
+        59
+      ],
+      "minimal": true
+    },
+    {
+      "q": 7,
+      "length": 83,
+      "mass": 1,
+      "moment": 0,
+      "ss": 7,
+      "tail": 6,
+      "max_height": 3,
+      "p2_prefixes": [
+        83
+      ],
+      "minimal": true
+    },
+    {
+      "q": 8,
+      "length": 111,
+      "mass": 1,
+      "moment": 0,
+      "ss": 8,
+      "tail": 7,
+      "max_height": 3,
+      "p2_prefixes": [
+        111
+      ],
+      "minimal": true
+    },
+    {
+      "q": 9,
+      "length": 143,
+      "mass": 1,
+      "moment": 0,
+      "ss": 9,
+      "tail": 8,
+      "max_height": 3,
+      "p2_prefixes": [
+        143
+      ],
+      "minimal": true
+    },
+    {
+      "q": 10,
+      "length": 179,
+      "mass": 1,
+      "moment": 0,
+      "ss": 10,
+      "tail": 9,
+      "max_height": 3,
+      "p2_prefixes": [
+        179
+      ],
+      "minimal": true
+    }
+  ],
+  "reused_holdout": [
+    {
+      "q": 11,
+      "length": 219,
+      "mass": 1,
+      "moment": 0,
+      "ss": 11,
+      "tail": 10,
+      "max_height": 3,
+      "p2_prefixes": [
+        219
+      ],
+      "minimal": true
+    },
+    {
+      "q": 12,
+      "length": 263,
+      "mass": 1,
+      "moment": 0,
+      "ss": 12,
+      "tail": 11,
+      "max_height": 3,
+      "p2_prefixes": [
+        263
+      ],
+      "minimal": true
+    },
+    {
+      "q": 13,
+      "length": 311,
+      "mass": 1,
+      "moment": 0,
+      "ss": 13,
+      "tail": 12,
+      "max_height": 3,
+      "p2_prefixes": [
+        311
+      ],
+      "minimal": true
+    },
+    {
+      "q": 14,
+      "length": 363,
+      "mass": 1,
+      "moment": 0,
+      "ss": 14,
+      "tail": 13,
+      "max_height": 3,
+      "p2_prefixes": [
+        363
+      ],
+      "minimal": true
+    },
+    {
+      "q": 15,
+      "length": 419,
+      "mass": 1,
+      "moment": 0,
+      "ss": 15,
+      "tail": 14,
+      "max_height": 3,
+      "p2_prefixes": [
+        419
+      ],
+      "minimal": true
+    },
+    {
+      "q": 16,
+      "length": 479,
+      "mass": 1,
+      "moment": 0,
+      "ss": 16,
+      "tail": 15,
+      "max_height": 3,
+      "p2_prefixes": [
+        479
+      ],
+      "minimal": true
+    },
+    {
+      "q": 17,
+      "length": 543,
+      "mass": 1,
+      "moment": 0,
+      "ss": 17,
+      "tail": 16,
+      "max_height": 3,
+      "p2_prefixes": [
+        543
+      ],
+      "minimal": true
+    },
+    {
+      "q": 18,
+      "length": 611,
+      "mass": 1,
+      "moment": 0,
+      "ss": 18,
+      "tail": 17,
+      "max_height": 3,
+      "p2_prefixes": [
+        611
+      ],
+      "minimal": true
+    },
+    {
+      "q": 19,
+      "length": 683,
+      "mass": 1,
+      "moment": 0,
+      "ss": 19,
+      "tail": 18,
+      "max_height": 3,
+      "p2_prefixes": [
+        683
+      ],
+      "minimal": true
+    },
+    {
+      "q": 20,
+      "length": 759,
+      "mass": 1,
+      "moment": 0,
+      "ss": 20,
+      "tail": 19,
+      "max_height": 3,
+      "p2_prefixes": [
+        759
+      ],
+      "minimal": true
+    },
+    {
+      "q": 21,
+      "length": 839,
+      "mass": 1,
+      "moment": 0,
+      "ss": 21,
+      "tail": 20,
+      "max_height": 3,
+      "p2_prefixes": [
+        839
+      ],
+      "minimal": true
+    },
+    {
+      "q": 22,
+      "length": 923,
+      "mass": 1,
+      "moment": 0,
+      "ss": 22,
+      "tail": 21,
+      "max_height": 3,
+      "p2_prefixes": [
+        923
+      ],
+      "minimal": true
+    },
+    {
+      "q": 23,
+      "length": 1011,
+      "mass": 1,
+      "moment": 0,
+      "ss": 23,
+      "tail": 22,
+      "max_height": 3,
+      "p2_prefixes": [
+        1011
+      ],
+      "minimal": true
+    },
+    {
+      "q": 24,
+      "length": 1103,
+      "mass": 1,
+      "moment": 0,
+      "ss": 24,
+      "tail": 23,
+      "max_height": 3,
+      "p2_prefixes": [
+        1103
+      ],
+      "minimal": true
+    },
+    {
+      "q": 25,
+      "length": 1199,
+      "mass": 1,
+      "moment": 0,
+      "ss": 25,
+      "tail": 24,
+      "max_height": 3,
+      "p2_prefixes": [
+        1199
+      ],
+      "minimal": true
+    },
+    {
+      "q": 26,
+      "length": 1299,
+      "mass": 1,
+      "moment": 0,
+      "ss": 26,
+      "tail": 25,
+      "max_height": 3,
+      "p2_prefixes": [
+        1299
+      ],
+      "minimal": true
+    },
+    {
+      "q": 27,
+      "length": 1403,
+      "mass": 1,
+      "moment": 0,
+      "ss": 27,
+      "tail": 26,
+      "max_height": 3,
+      "p2_prefixes": [
+        1403
+      ],
+      "minimal": true
+    },
+    {
+      "q": 28,
+      "length": 1511,
+      "mass": 1,
+      "moment": 0,
+      "ss": 28,
+      "tail": 27,
+      "max_height": 3,
+      "p2_prefixes": [
+        1511
+      ],
+      "minimal": true
+    },
+    {
+      "q": 29,
+      "length": 1623,
+      "mass": 1,
+      "moment": 0,
+      "ss": 29,
+      "tail": 28,
+      "max_height": 3,
+      "p2_prefixes": [
+        1623
+      ],
+      "minimal": true
+    },
+    {
+      "q": 30,
+      "length": 1739,
+      "mass": 1,
+      "moment": 0,
+      "ss": 30,
+      "tail": 29,
+      "max_height": 3,
+      "p2_prefixes": [
+        1739
+      ],
+      "minimal": true
+    },
+    {
+      "q": 31,
+      "length": 1859,
+      "mass": 1,
+      "moment": 0,
+      "ss": 31,
+      "tail": 30,
+      "max_height": 3,
+      "p2_prefixes": [
+        1859
+      ],
+      "minimal": true
+    },
+    {
+      "q": 32,
+      "length": 1983,
+      "mass": 1,
+      "moment": 0,
+      "ss": 32,
+      "tail": 31,
+      "max_height": 3,
+      "p2_prefixes": [
+        1983
+      ],
+      "minimal": true
+    },
+    {
+      "q": 33,
+      "length": 2111,
+      "mass": 1,
+      "moment": 0,
+      "ss": 33,
+      "tail": 32,
+      "max_height": 3,
+      "p2_prefixes": [
+        2111
+      ],
+      "minimal": true
+    },
+    {
+      "q": 34,
+      "length": 2243,
+      "mass": 1,
+      "moment": 0,
+      "ss": 34,
+      "tail": 33,
+      "max_height": 3,
+      "p2_prefixes": [
+        2243
+      ],
+      "minimal": true
+    },
+    {
+      "q": 35,
+      "length": 2379,
+      "mass": 1,
+      "moment": 0,
+      "ss": 35,
+      "tail": 34,
+      "max_height": 3,
+      "p2_prefixes": [
+        2379
+      ],
+      "minimal": true
+    },
+    {
+      "q": 36,
+      "length": 2519,
+      "mass": 1,
+      "moment": 0,
+      "ss": 36,
+      "tail": 35,
+      "max_height": 3,
+      "p2_prefixes": [
+        2519
+      ],
+      "minimal": true
+    },
+    {
+      "q": 37,
+      "length": 2663,
+      "mass": 1,
+      "moment": 0,
+      "ss": 37,
+      "tail": 36,
+      "max_height": 3,
+      "p2_prefixes": [
+        2663
+      ],
+      "minimal": true
+    },
+    {
+      "q": 38,
+      "length": 2811,
+      "mass": 1,
+      "moment": 0,
+      "ss": 38,
+      "tail": 37,
+      "max_height": 3,
+      "p2_prefixes": [
+        2811
+      ],
+      "minimal": true
+    },
+    {
+      "q": 39,
+      "length": 2963,
+      "mass": 1,
+      "moment": 0,
+      "ss": 39,
+      "tail": 38,
+      "max_height": 3,
+      "p2_prefixes": [
+        2963
+      ],
+      "minimal": true
+    },
+    {
+      "q": 40,
+      "length": 3119,
+      "mass": 1,
+      "moment": 0,
+      "ss": 40,
+      "tail": 39,
+      "max_height": 3,
+      "p2_prefixes": [
+        3119
+      ],
+      "minimal": true
+    }
+  ],
+  "prefix_classification": [
+    {
+      "q": 3,
+      "n": 1,
+      "proper_mass_one_prefix_count": 3,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "514379e38c3bcd0c5bd99165aab9e452e231e25567c49667af228d6e4ef1cca9"
+    },
+    {
+      "q": 4,
+      "n": 6,
+      "proper_mass_one_prefix_count": 8,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "badcc423549d302f1684f1fc9557b50fc88ff1fa492d25ad32c9b4dd988de68b"
+    },
+    {
+      "q": 5,
+      "n": 13,
+      "proper_mass_one_prefix_count": 15,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "116cda32ed42bd3bdf4da8ce940f7b0cf82ddc95d06c2d8075b3375a920bfa33"
+    },
+    {
+      "q": 6,
+      "n": 22,
+      "proper_mass_one_prefix_count": 24,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "eac02d204c5c8d3709a257fe3e31e541421411722fb87400210a56369fb612b0"
+    },
+    {
+      "q": 7,
+      "n": 33,
+      "proper_mass_one_prefix_count": 35,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "85e29ab5b695618bc47e13ecb54180bebd5cb20bd681270cee05008e506b803c"
+    },
+    {
+      "q": 8,
+      "n": 46,
+      "proper_mass_one_prefix_count": 48,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "51063477687ec38fec6571c0bcf906fc7fd32fc6162c063151f477f520d8513b"
+    },
+    {
+      "q": 9,
+      "n": 61,
+      "proper_mass_one_prefix_count": 63,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "f47eb21a3c1c79ffe836bc0ceaf232544e3145ae5b984bc2c9cbebb179e227fc"
+    },
+    {
+      "q": 10,
+      "n": 78,
+      "proper_mass_one_prefix_count": 80,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "1396b956f59ee2d15c7d261eff0ef986e356b5ffb05121cca2e4e25a8a7276f7"
+    },
+    {
+      "q": 11,
+      "n": 97,
+      "proper_mass_one_prefix_count": 99,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "fa2035a2e24951cd47519393ed8b94cacdbf08b3b97cb048976427aa11e1e72b"
+    },
+    {
+      "q": 12,
+      "n": 118,
+      "proper_mass_one_prefix_count": 120,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "5b708aa2cca8aa8767c2962c8df5f7162591654f582e9f154127fca01372ed75"
+    },
+    {
+      "q": 13,
+      "n": 141,
+      "proper_mass_one_prefix_count": 143,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "b6c26b55de46bcd1699a3c1fc46c1fbe6229865cd00d9099edb4019541a7d689"
+    },
+    {
+      "q": 14,
+      "n": 166,
+      "proper_mass_one_prefix_count": 168,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "187fc11e1c7fcfe8667c6eef99cb8aea0b6a6288ff80f64725ff9ff8423d08f2"
+    },
+    {
+      "q": 15,
+      "n": 193,
+      "proper_mass_one_prefix_count": 195,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "9956890392f9e3580c71f394444f6a47a7b4c258ca2cbac027e486ffca95af0c"
+    },
+    {
+      "q": 16,
+      "n": 222,
+      "proper_mass_one_prefix_count": 224,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "cd8cef79865fd5f98fb801ba309fb22dfc4bb81acdc2edda2838daeb66b9cb12"
+    },
+    {
+      "q": 17,
+      "n": 253,
+      "proper_mass_one_prefix_count": 255,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "61e9aa1ceb74a7353d47b887e0f15dc51f76285aca137cc86b133ad988b915ed"
+    },
+    {
+      "q": 18,
+      "n": 286,
+      "proper_mass_one_prefix_count": 288,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "113b76d44424b6d83cf20b6f1ad66b7e01669515cc3e291246e728a5dcbc571a"
+    },
+    {
+      "q": 19,
+      "n": 321,
+      "proper_mass_one_prefix_count": 323,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "30e5963df9428eb6b773b264519991b567336eed04541abd49fd5b6f29054e35"
+    },
+    {
+      "q": 20,
+      "n": 358,
+      "proper_mass_one_prefix_count": 360,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "6714ab49896585b56a2010b830d36ee2bc5bfaaf9c6616787187a48492913042"
+    },
+    {
+      "q": 21,
+      "n": 397,
+      "proper_mass_one_prefix_count": 399,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "a67d556b43dacdf2d3aeee7d177cdd845f7e732463de84c98f7a443d5a919123"
+    },
+    {
+      "q": 22,
+      "n": 438,
+      "proper_mass_one_prefix_count": 440,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "7bb9fb8bcbcac7f69c2306e5b90af6f0b6a87b23c89dc6c46bb01853fdb58138"
+    },
+    {
+      "q": 23,
+      "n": 481,
+      "proper_mass_one_prefix_count": 483,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "cda7ad3b3d57096725102531fed3f40bff049a02678aa5798e9e758cfdbd35e8"
+    },
+    {
+      "q": 24,
+      "n": 526,
+      "proper_mass_one_prefix_count": 528,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "942b01ee59cd95e1a707eb59d70513ec31ebb07915425b236e9311827f0af049"
+    },
+    {
+      "q": 25,
+      "n": 573,
+      "proper_mass_one_prefix_count": 575,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "1cf625197f66217c21cff9427593e42d163c78aeaefda98d9a108e73727773e7"
+    },
+    {
+      "q": 26,
+      "n": 622,
+      "proper_mass_one_prefix_count": 624,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "ac0cf619cbaa96e5d7e50a445bd19a1925be50d30a1aa79b32b643684d95e9f0"
+    },
+    {
+      "q": 27,
+      "n": 673,
+      "proper_mass_one_prefix_count": 675,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "4f83fca4b442eb523d963ca57644c683192bade971cf7756ab8b91f0c7471fc1"
+    },
+    {
+      "q": 28,
+      "n": 726,
+      "proper_mass_one_prefix_count": 728,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "b4a9022b7d12f0bda14e2d900e64bede4158de118cf54d97fadead1440110bf7"
+    },
+    {
+      "q": 29,
+      "n": 781,
+      "proper_mass_one_prefix_count": 783,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "af96184343d599fc21a3202fb24b1420106c9a080e803c79a59274809e4f04bc"
+    },
+    {
+      "q": 30,
+      "n": 838,
+      "proper_mass_one_prefix_count": 840,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "fee7b21f557ef2686101f6db5bc8dabb1e704e8ad8b7534c82822a8dd9225a6d"
+    },
+    {
+      "q": 31,
+      "n": 897,
+      "proper_mass_one_prefix_count": 899,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "5542e600c1ddfb68451babcb9bbc297959004ffa77df52e14e57bf919b385a14"
+    },
+    {
+      "q": 32,
+      "n": 958,
+      "proper_mass_one_prefix_count": 960,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "96a46a5525c9b6799f65aa59f772f23e22b9d4d8bd869da2d956a4300eeb25d2"
+    },
+    {
+      "q": 33,
+      "n": 1021,
+      "proper_mass_one_prefix_count": 1023,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "210e9334c80f131ccb58f93e427f68d0fec514a9f1f04c91da5f0487d7acb43b"
+    },
+    {
+      "q": 34,
+      "n": 1086,
+      "proper_mass_one_prefix_count": 1088,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "2c59a2cc0f2bcf404961053fe1f47fb4a061fa0a7eda3f969f50d1dee6e41e27"
+    },
+    {
+      "q": 35,
+      "n": 1153,
+      "proper_mass_one_prefix_count": 1155,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "7effcc9506000a522b9df86e187a42e64a16913d6b64f0964b59b21c802de336"
+    },
+    {
+      "q": 36,
+      "n": 1222,
+      "proper_mass_one_prefix_count": 1224,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "467bdef815e58545156a2a4d3f6d3ee57903776ab5b8cdec5800af010f67ac46"
+    },
+    {
+      "q": 37,
+      "n": 1293,
+      "proper_mass_one_prefix_count": 1295,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "aaf1db68114c4aaf1206a3085282035977ea653cca7c59ea04bc044b954b0bd6"
+    },
+    {
+      "q": 38,
+      "n": 1366,
+      "proper_mass_one_prefix_count": 1368,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "f089bcb20837eb4743a4fa1c5c2ec4500a4dfed52be3949192df759f843c7693"
+    },
+    {
+      "q": 39,
+      "n": 1441,
+      "proper_mass_one_prefix_count": 1443,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "6d502277ce104508a9a9393e9c69696fbb08dbba1f65529af5d0deb906648d9e"
+    },
+    {
+      "q": 40,
+      "n": 1518,
+      "proper_mass_one_prefix_count": 1520,
+      "actual_equals_complete_expected": true,
+      "actual_sha256": "b11b947ab2a478ebce2b8866505475ad635b32d1db306346ae12c52a10fbf04a"
+    }
+  ],
+  "boundary_controls": [
+    {
+      "q": 0,
+      "n": 0,
+      "word": "AAAS",
+      "length": 4,
+      "mass": 2,
+      "moment": 2,
+      "ss": 0,
+      "tail": 0,
+      "max_height": 3,
+      "p2_prefixes": [],
+      "minimal": false
+    },
+    {
+      "q": 1,
+      "n": 0,
+      "word": "AAASS",
+      "length": 5,
+      "mass": 1,
+      "moment": -3,
+      "ss": 1,
+      "tail": 0,
+      "max_height": 3,
+      "p2_prefixes": [],
+      "minimal": false
+    },
+    {
+      "q": 2,
+      "n": 0,
+      "word": "AAASSSA",
+      "length": 7,
+      "mass": 1,
+      "moment": -2,
+      "ss": 2,
+      "tail": 1,
+      "max_height": 3,
+      "p2_prefixes": [],
+      "minimal": false
+    },
+    {
+      "q": 3,
+      "n": 1,
+      "word": "AAASSASSSAA",
+      "length": 11,
+      "mass": 1,
+      "moment": 0,
+      "ss": 3,
+      "tail": 2,
+      "max_height": 3,
+      "p2_prefixes": [
+        11
+      ],
+      "minimal": true
+    }
+  ],
+  "q3_exact_prefixes": [
+    [
+      1,
+      1
+    ],
+    [
+      5,
+      -3
+    ],
+    [
+      7,
+      -4
+    ]
+  ]
+}

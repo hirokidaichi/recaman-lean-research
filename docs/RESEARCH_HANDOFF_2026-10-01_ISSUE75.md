@@ -5,9 +5,11 @@ as E-363. P2 gives t<=q; minimal P2 with t>0 gives t<q and hence
 t<=q-1 with saturated Nat subtraction. SS=2 therefore gives t<=1.
 Every P2 word has the terminal-S/A decomposition, whose t is proved to
 be the maximal final A run. No prefix ceiling or cutoff was assumed.
-Issue #75 remains OPEN: separate-session semantic review is pending.
+Separate-session semantic review is **PASS** in
+[E-363-independent](statement_audits/E-363-independent.md). Issue #75 remains
+OPEN awaiting incorporation of [PR #78](https://github.com/hirokidaichi/recaman-lean-research/pull/78).
 
-Hypothesis card: H-20261001-03, `PROVED-LEAN`, review pending.
+Hypothesis card: H-20261001-03, `PROVED-LEAN`, independent review PASS.
 Base: `07d75dfdb733dfa5196f608e63bd23dd754940bf` (#74, draft PR #77).
 Work was isolated from all pre-existing primary-checkout changes.
 
@@ -71,9 +73,15 @@ These controls were preserved in exact JSON and checked with Lean.
 
 ## Remaining uncertainty and next decision
 
-Same-session proposer/falsifier/formalizer/auditor passes are complete;
-independent-session review for #74/#75 remains pending. The all-q witnesses
-of #76 remain `PROVED-PAPER` until their separate construction/minimality
-proof is checked. Proceed to that bounded unit, independently of this upper
-bound. Stop owner delta, M1/M2, general Gate T6 or surjectivity inferences
-from this result. All protected central labels stay unchanged.
+Independent semantic review is PASS in E-363-independent: a fresh 31-job
+dependency build, 19 permitted-axiom probes, seven axiom-free concrete
+controls and three all-word consumers. The source hash matches the committed
+module; no semantic discrepancy or mathematical repair was found.
+Independent R/W/C/T=9/7/0/0 versus same-session 8/8/0/0 is a helper-classification
+difference: the independent reviewer counts terminal_run_length as a run induction.
+
+The #74 review and the independent E-364 all-q construction review are also
+PASS. E-364 does not import this upper bound. Stop this completed #75 unit and
+await PR #78 incorporation; the issue remains OPEN. Owner delta, M1/M2,
+Hall, general T6/#73 and orbit realization remain outside these results.
+All protected central labels stay unchanged.
