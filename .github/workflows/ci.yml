@@ -11,6 +11,9 @@ jobs:
     name: Lean Audit & Empirical Regression Suite
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    env:
+      # Limit the normal Lean/Lake thread pool on the hosted runner.
+      LEAN_NUM_THREADS: "1"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -44,12 +47,12 @@ jobs:
       # Warm them sequentially; make test still verifies the entire project.
       - name: Build deep trace certificates sequentially
         run: |
-          /usr/bin/time -v lake build Recaman.DeepNineteenTraceCertificate
-          /usr/bin/time -v lake build Recaman.DeepSixtyoneTraceCertificate
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepNineteenTraceCertificate
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepSixtyoneTraceCertificate
 
       - name: Run complete test and verification suite
         run: |
-          make test
+          python3 scripts/ci_with_resources.py make test
 
       - name: Report runner resources on failure
         if: failure()
