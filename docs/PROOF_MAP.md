@@ -1333,3 +1333,20 @@ issue #74 quantifiers. The lemma consumes a prefix ceiling; it does not
 derive that ceiling from SS or a terminal A run. That derivation and the
 terminal budget are issue #75. The all-q witnesses are issue #76. Separate
 session semantic review remains pending; no issue closure is asserted.
+
+## 2026-10-01: terminal-A SS bounds (E-363, PROVED-LEAN)
+
+`LowSSEndpoint.mass_ending_A` -> `mass_ge_neg_ss_sub_one`
+-> `terminal_suffix_mass_lower` for all dropped suffixes.
+Nonnegative suffix masses -> `mass_le_moment_of_suffix_mass`
+-> `p2_terminal_A_le_ss`.
+Suffix masses >= -1 + total mass 1 -> derived prefix ceiling two
+-> E-362 `minimal_p2_ends_S` -> `minimal_p2_terminal_A_lt_ss`
+-> saturated `t<=q-1` and SS=2 `t<=1`.
+
+`p2_terminal_decomposition` covers every P2 word; `terminal_run_length`
+checks that the represented A suffix is maximal. The all-word corollary
+`minimal_p2_terminal_bound` combines these with the same proper-prefix
+minimality. No cutoff or ceiling hypothesis is inserted. Separate-session
+review is pending; #75 remains OPEN. #76 construction and owner delta
+remain separate. See [statement audit](statement_audits/E-363.md).

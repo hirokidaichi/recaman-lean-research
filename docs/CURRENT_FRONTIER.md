@@ -744,3 +744,14 @@ minimalityを除く `AASASSA` とceilingを3に緩める `AAASSSASASA` は反例
 issueで要求された別セッションの意味監査は未実施であり、issueはOPENのまま。
 次は#75でsuffix下界からこのprefix ceilingを導出すること。E-361全体、#76の全q構成、
 一般Gate T6、E-070/E-067、全射性についての証拠ラベルは変わらない。
+
+## 2026-10-01 follow-up: terminal-A SS bounds (E-363)
+
+The complete all-word inequalities in #75 are `PROVED-LEAN`:
+P2 gives t<=q; minimal P2 gives t<=q-1 (saturated Nat subtraction), so
+SS=2 gives t<=1. The proof derives the prefix ceiling from suffix masses
+and then uses E-362; it does not add a ceiling assumption.
+Every P2 word admits the terminal-S/A decomposition and the maximum-run
+identity is verified. Separate-session semantic review is pending, so #75
+remains OPEN. The remaining E-361 all-q construction is still paper-only.
+The bound controls t=L-r, not owner delta or general #73.
