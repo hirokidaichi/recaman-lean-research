@@ -2690,3 +2690,21 @@ import Recaman
 #print axioms Recaman.FirstP2EndingS.defect_pos_before_p2
 #print axioms Recaman.FirstP2EndingS.minimal_p2_ends_S
 #print axioms Recaman.FirstP2EndingS.first_p2_prefix_ends_S
+
+-- All-length terminal-A SS bounds and maximum-run semantics (E-363).
+#print axioms Recaman.TerminalASSBound.all_A_of_no_S
+#print axioms Recaman.TerminalASSBound.exists_terminal_decomposition_of_S
+#print axioms Recaman.TerminalASSBound.p2_terminal_decomposition
+#print axioms Recaman.TerminalASSBound.terminal_run_length
+#print axioms Recaman.TerminalASSBound.terminal_length_unique
+#print axioms Recaman.TerminalASSBound.ssCount_post_As
+#print axioms Recaman.TerminalASSBound.mass_ge_neg_ss_sub_one
+#print axioms Recaman.TerminalASSBound.terminal_suffix_mass_lower
+#print axioms Recaman.TerminalASSBound.moment_nonneg_of_suffix_mass
+#print axioms Recaman.TerminalASSBound.mass_le_moment_of_suffix_mass
+#print axioms Recaman.TerminalASSBound.p2_terminal_A_le_ss
+#print axioms Recaman.TerminalASSBound.prefix_ceiling_of_ss_le_terminal_A
+#print axioms Recaman.TerminalASSBound.minimal_p2_terminal_A_lt_ss
+#print axioms Recaman.TerminalASSBound.minimal_p2_terminal_A_le_ss_sub_one
+#print axioms Recaman.TerminalASSBound.minimal_p2_ss_two_terminal_A_le_one
+#print axioms Recaman.TerminalASSBound.minimal_p2_terminal_bound

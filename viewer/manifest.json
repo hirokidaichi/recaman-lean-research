@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2692,
+   "lines": 2710,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -46542,6 +46542,100 @@
    "hasReport": false
   },
   {
+   "name": "TerminalASSBound",
+   "lines": 212,
+   "imports": [
+    "LowSSEndpoint",
+    "FirstP2EndingS"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "all_A_of_no_S",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_terminal_decomposition_of_S",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_terminal_decomposition",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_run_length",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_length_unique",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "ssCount_post_As",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_ge_neg_ss_sub_one",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_suffix_mass_lower",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_nonneg_of_suffix_mass",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_le_moment_of_suffix_mass",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_terminal_A_le_ss",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "prefix_ceiling_of_ss_le_terminal_A",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_terminal_A_lt_ss",
+     "line": 168
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_terminal_A_le_ss_sub_one",
+     "line": 184
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_ss_two_terminal_A_le_one",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_terminal_bound",
+     "line": 203
+    }
+   ],
+   "theorems": 16,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -49572,6 +49666,6 @@
    "hasReport": false
   }
  ],
- "total": 389,
+ "total": 390,
  "withReport": 167
 }
