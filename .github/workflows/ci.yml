@@ -10,14 +10,23 @@ jobs:
   verify:
     name: Lean Audit & Empirical Regression Suite
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      # Limit the normal Lean/Lake thread pool on the hosted runner.
+      LEAN_NUM_THREADS: "1"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install required system tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ripgrep
+
       - name: Install Elan
         run: |
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Install Lean toolchain
         run: |
@@ -27,12 +36,46 @@ jobs:
 
       - name: Verify build tools
         run: |
+          rg --version
           lake --version
           lean --version
           python3 --version
           c++ --version
           make --version
 
+      # The larger kernel-checked certificate peaks above 16 GiB locally.
+      # Keep the full proof check and provide room beyond hosted-runner RAM.
+      - name: Reserve swap for kernel verification
+        run: |
+          SWAP_PATH="$RUNNER_TEMP/recaman-kernel.swap"
+          AVAILABLE_KIB=$(df --output=avail "$RUNNER_TEMP" | tail -n 1)
+          if [ "$AVAILABLE_KIB" -lt 37748736 ]; then
+            echo "Need 36 GiB free to reserve 32 GiB swap and retain build space"
+            df -h
+            exit 1
+          fi
+          sudo fallocate -l 32G "$SWAP_PATH"
+          sudo chmod 600 "$SWAP_PATH"
+          sudo mkswap "$SWAP_PATH"
+          sudo swapon "$SWAP_PATH"
+          free -h
+          df -h "$RUNNER_TEMP"
+
+      # These large kernel-checked trace certificates otherwise compile at once.
+      # Warm them sequentially; make test still verifies the entire project.
+      - name: Build deep trace certificates sequentially
+        run: |
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepNineteenTraceCertificate
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepSixtyoneTraceCertificate
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepSixtyoneMexCertificate
+
       - name: Run complete test and verification suite
         run: |
-          make test
+          python3 scripts/ci_with_resources.py make test
+
+      - name: Report runner resources on failure
+        if: failure()
+        run: |
+          free -h
+          df -h
+          ps -eo pid,ppid,stat,rss,etime,comm --sort=-rss | sed -n '1,25p'

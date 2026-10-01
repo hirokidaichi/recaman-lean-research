@@ -21,7 +21,7 @@ set_option maxHeartbeats 20000000 in
 theorem traceBits_mex879_checked :
     traceTree.verifiesBitsMex traceCapacity 0
       initialBitTraceMachine 879 = true := by
-  decide
+  decide +kernel
 
 /-- At clock 181653 the actual history contains every value below 879 and
 does not contain 879 itself. -/
