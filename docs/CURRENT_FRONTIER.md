@@ -804,3 +804,18 @@ general Gate T6, deletion Hall and orbit realization remain open; protected
 E-001/E-067/E-070/E-179 labels are unchanged. The next decision needs a
 separate falsifiable condition on long members of B, not another finite-lag
 census extension.
+
+## 2026-10-01: SS=2 word-only offset span (E-365, PROVED-PAPER)
+
+The fixed family V_k=(SA)^k SAAASSAAASS (AS)^(3k) is minimal P2,
+SS=2, current-A compatible and NoSAAS, with t=0 and newest-to-oldest
+S span 8k+10. The complete paper prefix classification proves all k;
+frozen discovery k=0..10 and holdout k=11..80 pass (COMPUTED).
+Only the fixed core is kernel checked, not the all-k theorem.
+This is a fixed-SS2 analogue of the existing E-122 padding method.
+
+Stop constant-span bounds from those word properties alone. The marked
+newest S is not an owner supplied by a tight Hall family, so this does
+not refute an actual owner-delta bound or #73. The next bounded owner
+question must supply a concrete additional family condition.
+See [paper and controls](SS2_WORD_OFFSET_SPAN_2026-10-01.md).
