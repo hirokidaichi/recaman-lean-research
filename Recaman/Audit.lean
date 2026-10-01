@@ -2684,3 +2684,9 @@ import Recaman
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.phase_eq_of_emod
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_no_lag_eleven
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_lag_three_or_seven
+
+-- All-length prefix mass ceiling two: minimal P2 and the first P2 prefix end S (E-362).
+#print axioms Recaman.FirstP2EndingS.defect_append_sign
+#print axioms Recaman.FirstP2EndingS.defect_pos_before_p2
+#print axioms Recaman.FirstP2EndingS.minimal_p2_ends_S
+#print axioms Recaman.FirstP2EndingS.first_p2_prefix_ends_S
