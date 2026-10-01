@@ -26,7 +26,7 @@ jobs:
       - name: Install Elan
         run: |
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Install Lean toolchain
         run: |
@@ -43,12 +43,31 @@ jobs:
           c++ --version
           make --version
 
+      # The larger kernel-checked certificate peaks above 16 GiB locally.
+      # Keep the full proof check and provide room beyond hosted-runner RAM.
+      - name: Reserve swap for kernel verification
+        run: |
+          SWAP_PATH="$RUNNER_TEMP/recaman-kernel.swap"
+          AVAILABLE_KIB=$(df --output=avail "$RUNNER_TEMP" | tail -n 1)
+          if [ "$AVAILABLE_KIB" -lt 10485760 ]; then
+            echo "Need 10 GiB free to reserve 8 GiB swap and retain build space"
+            df -h
+            exit 1
+          fi
+          sudo fallocate -l 8G "$SWAP_PATH"
+          sudo chmod 600 "$SWAP_PATH"
+          sudo mkswap "$SWAP_PATH"
+          sudo swapon "$SWAP_PATH"
+          free -h
+          df -h "$RUNNER_TEMP"
+
       # These large kernel-checked trace certificates otherwise compile at once.
       # Warm them sequentially; make test still verifies the entire project.
       - name: Build deep trace certificates sequentially
         run: |
           python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepNineteenTraceCertificate
           python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepSixtyoneTraceCertificate
+          python3 scripts/ci_with_resources.py /usr/bin/time -v lake build Recaman.DeepSixtyoneMexCertificate
 
       - name: Run complete test and verification suite
         run: |

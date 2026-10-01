@@ -8540,14 +8540,14 @@ def traceTree : BalancedTrace :=
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 20000000 in
 theorem traceTree_length : traceTree.length = traceSteps := by
-  decide
+  decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 20000000 in
 theorem traceBits_checked :
     traceTree.verifiesBitsValue traceCapacity 0
       initialBitTraceMachine traceExpectedValue = true := by
-  decide
+  decide +kernel
 
 theorem generated_value : a 181653 = 61 := by
   have hvalue := BalancedTrace.verified_bits_value

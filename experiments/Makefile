@@ -37,6 +37,8 @@ $(BINDIR):
 $(BINDIR)/%: %.cpp | $(BINDIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
+$(BINDIR)/balanced_trace_source_generator $(BINDIR)/balanced_trace_source_test: balanced_trace_source.hpp
+
 generators: $(GENERATORS)
 
 probes: $(CORE_PROBES)

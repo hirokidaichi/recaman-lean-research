@@ -316,15 +316,20 @@ seconds.
 that balanced certificate. It emits compact branch codes, fixed-size leaves,
 and a deterministic midpoint-balanced tree, together with empirical metrics
 on standard error. The 4825-step source has 76 leaves and a fixed FNV-1a
-fingerprint `600675d8573dbe4a`. The checker now emits an explicit high
+fingerprint `1151df105fda4b02`. The checker now emits an explicit high
 recursion-depth scope around the balanced tree, so the same source path also
 supports authenticated deep endpoints. `DeepNineteenTraceCertificate`
-kernel-checks 99,734 steps (`a 99734 = 19`, 1,559 leaves, 486,570 bytes,
-FNV-1a `d122a1781c70f149`), and
+kernel-checks 99,734 steps (`a 99734 = 19`, 1,559 leaves, 486,586 bytes,
+FNV-1a `19028c37d4f6fe71`), and
 `DeepSixtyoneTraceCertificate` kernel-checks 181,653 steps
-(`a 181653 = 61`, 2,839 leaves, 894,439 bytes,
-FNV-1a `f7c9baff6b448cdd`). These modules are intentionally expensive to
-rebuild, but they are imported proofs rather than measurement-only evidence.
+(`a 181653 = 61`, 2,839 leaves, 894,455 bytes,
+FNV-1a `313b77c51ca718dd`). The generator uses `decide +kernel` for the
+length and trace checks: the trusted kernel checks the same propositions
+directly, without the elaborator first reducing the large decision procedure.
+CI builds the deep certificates sequentially with additional swap space.
+These modules remain imported proofs rather than measurement-only evidence.
+Earlier logged fingerprints describe the historical ordinary-`decide` source;
+the current source differs only by these two tactic flags.
 
 `BalancedTraceSuffix` reuses a successful deep run instead of checking an
 almost-identical prefix again. `DeepSeventysixFromSixtyone` extracts the
@@ -340,8 +345,8 @@ later occurrence `a 328002 = 879`.
 
 The next proposed endpoint has a reproducible generator regression but is
 not yet a Lean theorem: 328,002 steps, 5,126 leaves, final leaf length 2,
-expected value 879, 1,634,667 source bytes, and FNV-1a
-`538690d9af3ec36d`. At that empirical endpoint the next mex is 1,355.
+expected value 879, 1,634,683 source bytes, and FNV-1a
+`0c85c29a25b030d5`. At that empirical endpoint the next mex is 1,355.
 
 An exact-history run through one billion steps found four positive diagonal
 states, at times `1`, `1520`, `9317`, and `31221`.  The three nontrivial states
