@@ -3,7 +3,7 @@
 - ID: `H-20261001-04`
 - Owner: Codex, separate proposer / falsifier / formalizer / auditor passes
 - Created: 2026-10-01
-- Status: `PROVED-LEAN` (E-364), independent-session review pending.
+- Status: `PROVED-LEAN` (E-364); independent semantic review PASS. See [E-364-independent](statement_audits/E-364-independent.md). Issue #76 remains OPEN awaiting PR incorporation.
 - Base: `cbe51b7`, isolated worktree; E-364 checked free against primary dirty registry.
 - Bounded question: issue #76, E-361 section 5's fixed construction, all q.
 
@@ -72,7 +72,8 @@ E-361 is PROVED-PAPER for this component. The prior upper bound E-363 is
 available but is intentionally not a dependency. Same-session review must
 check both directions of the explicit word and maximum-tail meaning, and
 exclude every proper P2 prefix, not just selected positions. Separate-session
-semantic review remains a distinct pending condition for issue closure.
+semantic review is now PASS in E-364-independent; issue #76 remains OPEN
+awaiting PR incorporation.
 The exact construction is formalized without a quantifier repair.
 Formalization began by 08:50:30 UTC. The complete classification and its
 reverse direction compiled by 08:53:30 UTC, within the 90-minute gate.
@@ -92,5 +93,8 @@ Audit: exact signatures in statement_audits/E-364.md, no defined Prop or
 minimality hypothesis. Independent construction imports only
 OneSSMultiplicity. Same-session R/W/C/T=11/20/0/0. Lint 25/31 substantive;
 vacuity flags the two acknowledged arithmetic helpers, neither registered.
-Stop this construction unit here; independent semantic review is next.
+Independent review is PASS on the unchanged source hash, including trust-0
+controls and full check (393 jobs / 2600 axiom reports). The auditor corrected
+an n=0 count guess: merged S runs keep SS=q, while wrong n fails P2 by moment.
+Stop this construction unit here; await PR #80 incorporation.
 No owner-family or orbit consequence is inferred.

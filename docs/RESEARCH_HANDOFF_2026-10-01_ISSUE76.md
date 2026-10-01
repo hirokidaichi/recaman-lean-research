@@ -5,9 +5,11 @@ is minimal P2, has exactly q overlapping SS pairs, and maximum terminal
 A-run q-1 (saturated Nat subtraction). Both directions of the all-proper
 mass-one prefix classification are proved. The construction imports only
 OneSSMultiplicity and does not depend on the upper bound E-363.
-Issue #76 remains OPEN pending separate-session semantic review.
+Separate-session semantic review is **PASS** in
+[E-364-independent](statement_audits/E-364-independent.md). Issue #76 remains
+OPEN awaiting incorporation of [PR #80](https://github.com/hirokidaichi/recaman-lean-research/pull/80).
 
-Hypothesis card: H-20261001-04, `PROVED-LEAN`, independent review pending.
+Hypothesis card: H-20261001-04, `PROVED-LEAN`, independent review PASS.
 Base: `cbe51b7b1216f9700f432eb14803277113c02af4` (#75, draft PR #78).
 Primary checkout's other-session files were never changed or consumed.
 
@@ -76,14 +78,20 @@ holdout and not the all-q proof.
 
 ## Remaining uncertainty and next decision
 
-Same-session proposer/falsifier/formalizer/auditor passes are complete.
-Separate-session semantic review for #74/#75/#76 remains distinct and
-pending. Together E-363/E-364 prove the sharp bound for every abstract
-word and attain it at every q; none asserts that the words occur in an
-actual Recaman orbit. Owner delta, matching/Hall, general #73 and all
-protected central claims remain unchanged.
+Independent semantic review is PASS in E-364-independent, on the unchanged
+source hash: trust-0 source/control checks, permitted axioms, import-closure
+inspection and an independent full check (393 jobs / 2600 axiom reports).
+Independent finite q=0..100 and body controls are supporting COMPUTED evidence,
+not the all-q proof. R/W/C/T=11/20/0/0 agrees across reviews. No semantic
+mismatch or mathematical repair was found.
 
-Stop this construction unit at the proved all-q result. Review its exact
-statements and controls independently, then decide a separate falsifiable
-owner-offset unit. Do not reopen stopped finite-lag certificate extensions
-or infer general Gate T6 from the terminal-A bound.
+The auditor corrected its own n=0 SS-count guess: merging the adjacent S runs
+keeps SS=q; a wrong n fails P2 through its moment. This did not change the
+production proof. Reviews of E-362 and E-363 are also PASS. Together E-363/E-364
+prove and attain the sharp bound for every abstract word/count, without any
+actual Recaman orbit occurrence claim.
+
+Stop this completed construction unit and await PR #80 incorporation; #76
+remains OPEN. Owner delta, matching/Hall, general #73 and protected central
+claims remain unchanged. A subsequent owner-offset unit must be separately
+falsifiable; stopped finite-lag certificate routes are not reopened.

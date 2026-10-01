@@ -3,10 +3,11 @@
 Conclusion: the exact all-length minimal-P2-ending-S theorem and the
 least-positive-P2-prefix corollary are `PROVED-LEAN` as E-362. Every prefix
 has mass ≤2; no earlier moment sign, length cutoff, SS, periodicity, orbit,
-or history hypothesis was added. Issue #74 remains OPEN because its
-separate-session semantic review has not yet occurred.
+or history hypothesis was added. Separate-session semantic review is **PASS**
+in [E-362-independent](statement_audits/E-362-independent.md). Issue #74 remains
+OPEN awaiting incorporation of [PR #77](https://github.com/hirokidaichi/recaman-lean-research/pull/77).
 
-Hypothesis card: H-20261001-02, status `PROVED-LEAN`, review pending.
+Hypothesis card: H-20261001-02, status `PROVED-LEAN`, independent review PASS.
 Base: `65f457efdd36a2ec8f47283a9ddc36e173333d56`, the pushed paper branch
 `codex/p2-terminal-tail-bound`, which was not merged into local main.
 All work is isolated from the primary checkout's pre-existing dirty files.
@@ -77,12 +78,14 @@ Both weakened-statement controls are checked by Lean and literal computation.
 
 ## Remaining uncertainty and next decision
 
-The same-session proposer, falsifier, formalizer, and auditor passes are
-complete. An independent-session semantic review remains required by #74;
-this handoff does not claim human or independent-agent review.
+Independent semantic review is PASS in E-362-independent: fresh trust-0
+source elaboration, targeted build, four permitted-axiom probes, independent
+kernel controls and exhaustive reproduction. The source hash matches the
+committed module. No semantic discrepancy or mathematical repair was found.
+Same-session R/W/C/T=3/1/0/0 agrees with the independent assessment.
 
-Review E-362's signatures and negative controls, then use the accepted
-lemma in #75 to derive the prefix ceiling from suffix SS bounds. Stop this
-unit here. Do not extend it to #76, owner delta, M1/M2, general Gate T6,
-E-070/E-067, or surjectivity. E-361 remains `PROVED-PAPER`; all pinned
-central labels remain unchanged.
+E-363 derives the ceiling from suffix SS bounds; E-364 independently supplies
+the sharp construction. Both are separately proved and reviewed PASS. Stop
+this completed #74 unit and await PR #77 incorporation. The issue remains
+OPEN. No owner delta, M1/M2, Hall, general T6/#73 or orbit realization follows.
+E-361 retains its paper artifact and all protected labels remain unchanged.

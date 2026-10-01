@@ -11,7 +11,11 @@ Section 5 (the explicit all-q witnesses and full proper-prefix classification)
 is now formalized independently in `Recaman/TerminalASharpWords.lean` as
 E-364. E-361 retains its paper artifact/label; its components have separate
 Lean evidence rows E-362/E-363/E-364.
-Independent-session semantic review of the new Lean result is pending.
+Independent semantic reviews of all three Lean components are **PASS**:
+[E-362](statement_audits/E-362-independent.md),
+[E-363](statement_audits/E-363-independent.md),
+[E-364](statement_audits/E-364-independent.md).
+Issues #74/#75/#76 remain OPEN awaiting PR incorporation.
 Historical pre-formalization statements below describe the original E-361 pass.
 
 For every minimal P2 word, the number t of A signs beyond its true oldest S

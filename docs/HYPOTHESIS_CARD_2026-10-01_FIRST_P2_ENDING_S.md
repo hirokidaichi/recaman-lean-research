@@ -3,7 +3,7 @@
 - ID: `H-20261001-02`
 - Owner: Codex, separate proposer / falsifier / formalizer / auditor passes
 - Created: 2026-10-01
-- Status: `PROVED-LEAN` (E-362); issue #74 separate-session review remains pending.
+- Status: `PROVED-LEAN` (E-362); independent semantic review PASS. See [E-362-independent](statement_audits/E-362-independent.md). Issue #74 remains OPEN awaiting PR incorporation.
 - Research branch: isolated worktree `first-p2-ending-s`, based on
   `65f457efdd36a2ec8f47283a9ddc36e173333d56`; issue #74.
 
@@ -94,8 +94,8 @@ there, separately from this updated decision record.
   AAASSSASASA is minimal and ends A but has ceiling three.
 - D positivity is derived from word transitions; no defined unproved Prop
   or occurrence hypothesis will stand in for the mathematical claim.
-- Independent-session semantic review is a separate remaining acceptance
-  condition from the same-session auditor pass; do not imply it occurred.
+- Independent semantic review is PASS in E-362-independent, on the unchanged
+  source hash. This separate review does not reuse the same-session verdict.
 - The formal conclusion matches both directions of the paper's section 3.
   The first-P2 corollary returns leastness for its actual index, not an
   arbitrary P2 witness. Same-session checks are in `statement_audits/E-362.md`.
@@ -110,7 +110,6 @@ there, separately from this updated decision record.
 - Complete the bounded kernel-proof unit at `PROVED-LEAN`; submit for review.
 - Reason: exact all-length statements, counterfactual controls, G5 audit,
   root integration and full repository check pass.
-- Issue #74 remains OPEN until its separate-session meaning review. Do not
-  mark E-361's bounds or witnesses `PROVED-LEAN` based on this component.
-- Next decision: separate-session audit of E-362, then #75's suffix bound
-  deriving the ceiling; do not expand this unit to #73 or #76.
+- Independent review is PASS; issue #74 remains OPEN awaiting PR #77 incorporation.
+- E-363 derives the ceiling and E-364 supplies the sharp witnesses in separate
+  proof units. Stop this unit; no owner/Hall or general #73 consequence follows.
