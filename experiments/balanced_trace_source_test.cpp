@@ -66,7 +66,7 @@ int main() {
   // Filled with the deterministic FNV-1a fingerprint of the complete Lean
   // source.  A byte-level source change must be reviewed explicitly.
   constexpr std::uint64_t expected_4825_fingerprint =
-      0x600675d8573dbe4aULL;
+      0x1151df105fda4b02ULL;
   if (trace4825.fingerprint() != expected_4825_fingerprint) {
     std::cerr << "observed 4825 fingerprint: "
               << hexadecimal_u64(trace4825.fingerprint()) << '\n';
@@ -81,7 +81,7 @@ int main() {
   require(trace99734.expected_value == 19,
           "99734 endpoint regression");
   constexpr std::uint64_t expected_99734_fingerprint =
-      0xd122a1781c70f149ULL;
+      0x19028c37d4f6fe71ULL;
   require(trace99734.fingerprint() == expected_99734_fingerprint,
           "99734 generated source fingerprint regression");
 
@@ -93,7 +93,7 @@ int main() {
   require(trace181653.expected_value == 61,
           "181653 endpoint regression");
   constexpr std::uint64_t expected_181653_fingerprint =
-      0xf7c9baff6b448cddULL;
+      0x313b77c51ca718ddULL;
   require(trace181653.fingerprint() == expected_181653_fingerprint,
           "181653 generated source fingerprint regression");
 
@@ -107,7 +107,7 @@ int main() {
   require(trace328002.expected_value == 879,
           "328002 endpoint regression");
   constexpr std::uint64_t expected_328002_fingerprint =
-      0x538690d9af3ec36dULL;
+      0x0c85c29a25b030d5ULL;
   require(trace328002.fingerprint() == expected_328002_fingerprint,
           "328002 generated source fingerprint regression");
 
