@@ -1316,5 +1316,20 @@ Consecutive mass-one visits: upper AS changes moment by -1; lower excursions
 strictly increase it -> first P2 under ceiling 2 ends S -> minimal A-ended
 P2 has t<q. Explicit minimal words attain t=max(q-1,0) at every q.
 
-[Complete paper proof](TERMINAL_A_BUDGET_2026-10-01.md). No new Lean declaration,
-owner-family constraint, Hall statement, or orbit realization is asserted.
+[Complete paper proof](TERMINAL_A_BUDGET_2026-10-01.md). E-361 was a paper-only
+result; section 3 is separately formalized below as E-362. No owner-family
+constraint, Hall statement, or orbit realization is asserted.
+
+## 2026-10-01: first P2 under mass ceiling two (E-362, PROVED-LEAN)
+
+`LeadingRunSupply.mass_append` / `moment_append`
+-> `FirstP2EndingS.defect_append_sign` (D changes by 1-mass)
+-> `defect_pos_before_p2` (word induction, ceiling two, no nonempty P2 prefix)
+-> `minimal_p2_ends_S` (an A final sign would keep D strictly positive)
+-> `first_p2_prefix_ends_S` (least positive index selected by strong induction).
+
+This formalizes section 3 of E-361 for all finite words and preserves the
+issue #74 quantifiers. The lemma consumes a prefix ceiling; it does not
+derive that ceiling from SS or a terminal A run. That derivation and the
+terminal budget are issue #75. The all-q witnesses are issue #76. Separate
+session semantic review remains pending; no issue closure is asserted.

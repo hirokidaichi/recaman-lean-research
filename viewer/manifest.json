@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2686,
+   "lines": 2692,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -27691,6 +27691,44 @@
    "hasReport": false
   },
   {
+   "name": "FirstP2EndingS",
+   "lines": 148,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "defect",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "defect_append_sign",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "defect_pos_before_p2",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "minimal_p2_ends_S",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "first_p2_prefix_ends_S",
+     "line": 113
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FiveSSClassification",
    "lines": 114,
    "imports": [
@@ -49534,6 +49572,6 @@
    "hasReport": false
   }
  ],
- "total": 388,
+ "total": 389,
  "withReport": 167
 }

@@ -3,6 +3,12 @@
 2026-10-01. Evidence `E-361`: **PROVED-PAPER**, not checked in Lean.
 Hypothesis card: [H-20261001-01](HYPOTHESIS_CARD_2026-10-01_TERMINAL_A_BUDGET.md).
 
+Follow-up 2026-10-01: section 3 alone is formalized in
+`Recaman/FirstP2EndingS.lean` as E-362, including the least-index corollary.
+The SS bounds and all-q witnesses below remain `PROVED-PAPER`.
+Independent-session semantic review of the new Lean result is pending.
+Historical pre-formalization statements below describe the original E-361 pass.
+
 For every minimal P2 word, the number t of A signs beyond its true oldest S
 is at most `max(q-1,0)`, where q counts adjacent SS pairs with overlap.
 The bound is attained for every q, including arbitrarily large q. Thus an

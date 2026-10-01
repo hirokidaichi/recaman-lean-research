@@ -721,7 +721,26 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 SS=2の最小donorは全lagでt=0/1に限られる。計算はdiscovery 3,021 P2語と
 claim-specific holdoutの長さ23の30,554 P2語で違反0、証明とは分離する。
 
-本結果はLean未形式化で、独立者の監査も未実施。owner座標の `t=L-r` を制限するが
+本結果の全体はLean未形式化で、独立者の監査も未実施。下記E-362はsection 3のみを形式化した。owner座標の `t=L-r` を制限するが
 `delta=r-kx`、M1/M2、一般lagの緊密集合やGate T6を解決しない。E-070/E-067/E-001は
-変更しない。次は同じ量化子の局所補題の形式化、またはdeltaを含む別の反証可能な制約を
+変更しない。次は残るSS予算の形式化、またはdeltaを含む別の反証可能な制約を
 新カードで扱う。探索上限の追加やlag-15証明書ルートは本結果だけでは再開しない。
+
+## 2026-10-01: prefix mass ceiling 2 で最初のP2はS終端（E-362）
+
+`E-362`（`PROVED-LEAN`、`Recaman/FirstP2EndingS.lean`）：任意長の抽象Bool語で、
+全prefixのmassが2以下ならminimal P2語はSで終わる。非空P2 prefixが存在する場合は、
+最小の正のP2 index、そのminimality、S終端を同時に返す系も証明した。
+`D=moment-length*(mass-1)`の更新則 `D'=D+1-mass` を使い、P2前のDの正値性を
+導出する。「過去のmomentが正」は仮定していない。長さ制限、SS、NoSAAS、周期性、
+実軌道の条件もない。
+
+反証passのliteral discovery 4,095語とdisjoint holdout 126,976語では違反0（`COMPUTED`）。
+minimalityを除く `AASASSA` とceilingを3に緩める `AAASSSASASA` は反例として保存した。
+[カード](HYPOTHESIS_CARD_2026-10-01_FIRST_P2_ENDING_S.md)と
+[再現ログ](data/first_p2_ending_s_20261001/README.md)を参照。
+
+#74の数学的statementとLean監査への登録を実装した。同一セッションの意味監査を済ませたが、
+issueで要求された別セッションの意味監査は未実施であり、issueはOPENのまま。
+次は#75でsuffix下界からこのprefix ceilingを導出すること。E-361全体、#76の全q構成、
+一般Gate T6、E-070/E-067、全射性についての証拠ラベルは変わらない。
