@@ -1,7 +1,9 @@
 # Fixed SS=2 does not bound word offset span
 
-Evidence E-365: `PROVED-PAPER`, not a general Lean theorem. Independent
-review pending. Card H-20261001-05; this is a separate unit from E-364.
+Evidence E-365 retains its historical `PROVED-PAPER` label. The complete
+all-k Lean proof and independent audit are now E-367; see
+[Lean handoff](RESEARCH_HANDOFF_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md).
+Card H-20261001-05 records the original paper unit, separate from E-364.
 
 Even under minimal P2, SS=2, NoSAAS, a current A and terminal A length zero,
 the distance from a marked S to the true oldest S can be arbitrarily large.

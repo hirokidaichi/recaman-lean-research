@@ -3658,3 +3658,24 @@ In parallel, existing audited PRs #77/#78/#80 and baseline #83 were merged.
 GitHub failed before Lean because Ubuntu CI lacked `rg`; PR #84 explicitly
 installs ripgrep without removing or relaxing any test. The failure was
 an environment prerequisite, not a rejected mathematical proof.
+
+
+## 2026-10-01 — Issue #82, all-k fixed-SS2 word span (E-367)
+
+Formalized E-365's fixed family with the existing E-122 padding lemmas.
+The substantive new edge is the exhaustive/converse proper mass-one
+prefix classification, including even-pair classification in the final AS
+block. Derived minimal P2, exact SS=2, current-A NoSAAS, actual newest and
+oldest S bits, terminal A length zero and full-conjunction unbounded span.
+One new module, SS2WordOffsetSpan.lean; no owner map, orbit or capacity claim.
+
+Frozen falsifier replays reused k=0..10 / 11..80; both predeclared wrong-core
+and extra-AS controls fail as expected. Independent entry/final audit PASS,
+R/W/C/T=5/18/0/0. Full check passes 395 jobs / 2648 permitted declarations.
+All-k source passed at 12:23 UTC, within the 90-minute route gate. No target
+repair or source revision after the final auditor's hash was needed.
+See H-20261001-07, E-367 statement/independent audits and reproduction data.
+
+Stop this word-only constant-span route after integration. Actual owner
+bounds and long-member tight avoidance require a new concrete family
+condition; no finite-lag census extension or protected-label change.

@@ -378,3 +378,4 @@ import Recaman.FirstP2EndingS
 import Recaman.TerminalASSBound
 import Recaman.TerminalASharpWords
 import Recaman.SS2ShortTight
+import Recaman.SS2WordOffsetSpan

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "reused k=0..80 only; no fresh census",
+  "words": 81,
+  "proper_prefix_lengths_checked": 26811,
+  "mass_one_visits": 9963,
+  "first": {
+    "k": 0,
+    "length": 11,
+    "proper_mass_one_visits": 3,
+    "span": 10
+  },
+  "last": {
+    "k": 80,
+    "length": 651,
+    "proper_mass_one_visits": 243,
+    "span": 650
+  },
+  "left_join_fourgrams": [
+    "ASAA",
+    "ASAS",
+    "SASA"
+  ],
+  "right_join_fourgrams": [
+    "ASSA",
+    "SASA",
+    "SSAS"
+  ],
+  "frozen_hashes_match": true,
+  "recorded_tables_match": true
+}

@@ -810,7 +810,7 @@ The fixed family V_k=(SA)^k SAAASSAAASS (AS)^(3k) is minimal P2,
 SS=2, current-A compatible and NoSAAS, with t=0 and newest-to-oldest
 S span 8k+10. The complete paper prefix classification proves all k;
 frozen discovery k=0..10 and holdout k=11..80 pass (COMPUTED).
-Only the fixed core is kernel checked, not the all-k theorem.
+The original unit checked only the fixed core; E-367 below now proves all k in Lean.
 This is a fixed-SS2 analogue of the existing E-122 padding method.
 
 Stop constant-span bounds from those word properties alone. The marked
@@ -818,3 +818,21 @@ newest S is not an owner supplied by a tight Hall family, so this does
 not refute an actual owner-delta bound or #73. The next bounded owner
 question must supply a concrete additional family condition.
 See [paper and controls](SS2_WORD_OFFSET_SPAN_2026-10-01.md).
+
+## 2026-10-01: all-k fixed-SS2 word span in Lean (E-367)
+
+E-367 formalizes the complete E-365 family for every natural k in
+`Recaman/SS2WordOffsetSpan.lean`: P2, exclusion of all proper P2 prefixes,
+SS=2, NoSAAS of the current-A history, length 8k+11, actual first/oldest
+S offsets 1 and 8k+11, maximal terminal A run zero, and unbounded span
+with every word property retained. Both directions of the proper mass-one
+prefix classification are proved, with exact moments. E-365 retains its
+historical paper artifact and label; its all-k Lean obligation is now E-367.
+
+Independent entry and final source/semantic audits are PASS; full check
+passes 395 jobs / 2648 permitted-axiom declarations. See [independent audit](statement_audits/E-367-independent.md),
+[card](HYPOTHESIS_CARD_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md)
+and [reproduction records](data/ss2_word_offset_span_lean_20261001/README.md).
+The marked newest S is not an owner. Stop word-only constant-span bounds;
+any owner bound needs an additional concrete owner-family condition.
+General #73, Gate T6, orbit realization and protected labels are unchanged.

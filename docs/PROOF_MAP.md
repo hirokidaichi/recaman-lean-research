@@ -1408,5 +1408,27 @@ give t=0, length=8k+11 and marked-to-oldest span=8k+10.
 
 This is a paper counterfamily to word-only constant-offset routes,
 independent of the terminal-A upper bound. Fixed core controls are
-kernel checked; the all-k theorem is not. Owner-family conditions and
+kernel checked; the all-k Lean proof is now E-367 below. Owner-family conditions and
 general #73 remain unproved, not refuted by this weaker-history model.
+
+## 2026-10-01: all-k SS2 word span (E-367, PROVED-LEAN)
+
+E-122 alternating-list identities + fixed core table ->
+`alt_A_zero_prefix` (zero mass forces complete pairs) ->
+`proper_mass_one_prefix` (all regions and exact moments) +
+`proper_mass_one_positions_iff` (converse via actual take/append) ->
+`word_minimum`. Append moments independently give `word_P2`.
+SS/SAAS padding identities plus the fixed core prove exact SS=2 and
+`history_noSAAS`, including both joins and the current A.
+
+`word_ends_S` -> recursive `oldestOffset_append_S` -> `word_oldestOffset`
+and `word_true_oldest_S`; reverse.takeWhile gives `word_terminal_length`.
+These concrete word facts -> `exists_unbounded_span`, choosing k=C0 and
+retaining every property. There is no owner-family or orbit edge.
+
+Independent semantic [audit](statement_audits/E-367-independent.md) PASS;
+see [card](HYPOTHESIS_CARD_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md) and
+[reproduction](data/ss2_word_offset_span_lean_20261001/README.md).
+E-365's paper proof is formalized, with its historical label preserved.
+Stop word-only constant-span bounds; general owner/periodic/orbit claims
+require additional inputs and remain unchanged.
