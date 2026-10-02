@@ -1,0 +1,128 @@
+{
+  "protocol": "H-20261002-01",
+  "phase": "discovery",
+  "reused_ranges": true,
+  "base": "8ee8588f1015955c2474674ba1656cb296f8157c",
+  "source_sha256": "71581978eba474858a40b4ccbad78ef5589d7401f7506222cde46adedb6ae4b6",
+  "lengths": [
+    3,
+    7,
+    11,
+    15,
+    19
+  ],
+  "rows": [
+    {
+      "length": 3,
+      "p2": 1,
+      "minimal_ss2": 0,
+      "current_A_suffix_candidates": 0,
+      "terminal_A_lengths": {},
+      "violations": 0
+    },
+    {
+      "length": 7,
+      "p2": 4,
+      "minimal_ss2": 0,
+      "current_A_suffix_candidates": 0,
+      "terminal_A_lengths": {},
+      "violations": 0
+    },
+    {
+      "length": 11,
+      "p2": 29,
+      "minimal_ss2": 7,
+      "current_A_suffix_candidates": 38,
+      "terminal_A_lengths": {
+        "1": 4,
+        "0": 3
+      },
+      "violations": 0
+    },
+    {
+      "length": 15,
+      "p2": 263,
+      "minimal_ss2": 46,
+      "current_A_suffix_candidates": 355,
+      "terminal_A_lengths": {
+        "1": 13,
+        "0": 33
+      },
+      "violations": 0
+    },
+    {
+      "length": 19,
+      "p2": 2724,
+      "minimal_ss2": 216,
+      "current_A_suffix_candidates": 2124,
+      "terminal_A_lengths": {
+        "1": 36,
+        "0": 180
+      },
+      "violations": 0
+    }
+  ],
+  "negative_controls": {
+    "without_SS2": {
+      "donor": {
+        "word": "AAASSSSAAAS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 3,
+        "p2_prefixes": [
+          11
+        ],
+        "minimal": true,
+        "oldest": 11,
+        "tail": 0
+      },
+      "covers": [
+        {
+          "current_offset": 8,
+          "window": "AAS",
+          "ss": 0,
+          "endpoint": 11
+        }
+      ]
+    },
+    "without_minimality": {
+      "donor": {
+        "word": "AASASASASSSAAAS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 2,
+        "p2_prefixes": [
+          3,
+          15
+        ],
+        "minimal": false,
+        "oldest": 15,
+        "tail": 0
+      },
+      "covers": [
+        {
+          "current_offset": 12,
+          "window": "AAS",
+          "ss": 0,
+          "endpoint": 15
+        }
+      ]
+    },
+    "without_cover_lowSS": {
+      "donor": {
+        "word": "SAAASSAAASS",
+        "mass": 1,
+        "moment": 0,
+        "ss": 2,
+        "p2_prefixes": [
+          11
+        ],
+        "minimal": true,
+        "oldest": 11,
+        "tail": 0
+      },
+      "cover_current_offset": 0,
+      "same_window": true
+    }
+  }
+}

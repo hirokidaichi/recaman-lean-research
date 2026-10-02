@@ -1,0 +1,66 @@
+{
+  "cwd": "/Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research",
+  "source_sha256": "8e0bcf9497e11fafd93fb5f625f43a8b6f788ebe8d1de4f6c471e979ddc63a73",
+  "checks": [
+    {
+      "name": "source",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Recaman/SS2LowSSTight.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/LowSSTightSourceCheck.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "controls",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/LowSSTightIndependent.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/LowSSTightIndependent.log",
+      "log_sha256": "f3681e3341c007a3ba085c193e41a2de6dfcc8f9f3e32e96c30ad0332f1c33eb"
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/LowSSTightAxioms.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/LowSSTightAxioms.log",
+      "log_sha256": "d997f0bbda99bf15b6ac84563fd99e2d0d42eb7ecc7e09d579ac3a04e192e435"
+    },
+    {
+      "name": "vacuity",
+      "command": [
+        "python3",
+        "scripts/report_vacuity.py",
+        "--all",
+        "Recaman/SS2LowSSTight.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/LowSSTightVacuity.log",
+      "log_sha256": "84e2e8c12c83c50969351ddfe9af8d2edbaffb814db4feca52407e4301a17c84"
+    },
+    {
+      "name": "lint",
+      "command": [
+        "python3",
+        "scripts/harness_gate.py",
+        "--lint-module",
+        "Recaman/SS2LowSSTight.lean"
+      ],
+      "exit_code": 0,
+      "log": "/tmp/LowSSTightLint.log",
+      "log_sha256": "f961ad0097a9c3594df5b296d220a3f0eb1a0092628a7be731224c3c2c21cd15"
+    }
+  ]
+}

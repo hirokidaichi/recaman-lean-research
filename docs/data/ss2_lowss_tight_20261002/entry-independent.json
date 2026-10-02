@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scope": "same frozen reused lengths; independent integer prefix-sum checker",
+  "frozen_hashes_match": true,
+  "rows": [
+    {
+      "length": 3,
+      "p2": 1,
+      "minimal_ss2": 0,
+      "current_A_candidates": 0,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 0,
+      "current_S_lowSS_covers": 0,
+      "tails": {}
+    },
+    {
+      "length": 7,
+      "p2": 4,
+      "minimal_ss2": 0,
+      "current_A_candidates": 0,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 0,
+      "current_S_lowSS_covers": 0,
+      "tails": {}
+    },
+    {
+      "length": 11,
+      "p2": 29,
+      "minimal_ss2": 7,
+      "current_A_candidates": 38,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 28,
+      "current_S_lowSS_covers": 0,
+      "tails": {
+        "1": 4,
+        "0": 3
+      }
+    },
+    {
+      "length": 15,
+      "p2": 263,
+      "minimal_ss2": 46,
+      "current_A_candidates": 355,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 276,
+      "current_S_lowSS_covers": 0,
+      "tails": {
+        "1": 13,
+        "0": 33
+      }
+    },
+    {
+      "length": 19,
+      "p2": 2724,
+      "minimal_ss2": 216,
+      "current_A_candidates": 2124,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 1728,
+      "current_S_lowSS_covers": 0,
+      "tails": {
+        "1": 36,
+        "0": 180
+      }
+    },
+    {
+      "length": 23,
+      "p2": 30554,
+      "minimal_ss2": 647,
+      "current_A_candidates": 7689,
+      "lowSS_violations": 0,
+      "anySS_earlier_cover_violations": 0,
+      "current_S_candidates": 6470,
+      "current_S_lowSS_covers": 0,
+      "tails": {
+        "1": 75,
+        "0": 572
+      }
+    }
+  ]
+}

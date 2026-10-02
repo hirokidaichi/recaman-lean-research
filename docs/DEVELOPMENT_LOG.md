@@ -3679,3 +3679,32 @@ See H-20261001-07, E-367 statement/independent audits and reproduction data.
 Stop this word-only constant-span route after integration. Actual owner
 bounds and long-member tight avoidance require a new concrete family
 condition; no finite-lag census extension or protected-label change.
+
+## 2026-10-02 — All-length low-SS tight avoidance (E-368)
+
+H-20261002-01 is PROVED-LEAN. The new structural edge extends E-366's AAS
+suffix contradiction to any P2 suffix, then derives integer/modular
+exclusion against a minimal SS2 donor. E-128 supplies an actual in-window
+normalized endpoint injection for arbitrary-length low-SS members;
+tightness derives the required onto property. The exact target needs
+neither member minimality/S-endedness nor donor current A.
+
+The same module proves one extra subtraction phase, |U|+1<=|D|, without
+tightness; it does not add one unit per donor. A recursive oldestOffset
+lemma verifies the selected phase is an actual S. Source compiled by
+09:53 UTC within the 09:47–10:47 route gate, with no mathematical repair.
+Frozen reused discovery/holdout yielded 916 minimal donors and 10,206
+candidates with zero violations; these computations are not the proof.
+
+Separate entry and final semantic audits PASS. Tests exercise nonempty
+tight sets, lag15 low-SS suppliers, lag19 donors, A-ended/nonminimal
+normalization, and a donor with current S. Negative controls distinguish
+endpoint exclusion from whole-neighborhood avoidance. Full check passes
+396 jobs / 2657 permitted-axiom declarations. One new module only; no
+protected labels, gates, or other-session files changed.
+
+Stop the completed low-SS unit. High-SS members in B and general T6,
+capacity and actual-orbit realization remain open under parent #73.
+Next choose a concrete high-SS interaction with a new falsifiable
+statement; do not revive a word-only constant-span bound or expand a
+finite-lag census. See the card, E-368 audits and reproduction handoff.
