@@ -1432,3 +1432,27 @@ see [card](HYPOTHESIS_CARD_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md) and
 E-365's paper proof is formalized, with its historical label preserved.
 Stop word-only constant-span bounds; general owner/periodic/orbit claims
 require additional inputs and remain unchanged.
+
+## 2026-10-02: all-length low-SS tight sets and one extra S (E-368)
+
+`SS2ShortTight.p2_append_A_tail_data` + A-ended SS2 moment budget +
+`ss2_intervening_prefix` -> `SS2LowSSTight.ss2_P2_suffix_has_prefix`
+for an arbitrary P2 suffix. SS2/lowSS chronology and same-history splitting
+-> integer endpoint exclusion against a minimal SS2 donor. Periodic lifting
+-> modular exclusion, without a period/lag bound.
+
+E-128 `stream_S_witness` + `endpoint_mod_injective` ->
+`lowSS_endpoint_image`: a nodup S-prefix image inside each original member
+window and hence inside N(B). Equal cardinality under tightness ->
+`lowSS_tight_avoids_donor`. Neither member minimality nor S-endedness is a
+premise; no Hall or owner family is assumed. Donor current A is unnecessary.
+
+Word recursion -> positive `oldestOffset` selects actual S -> an extra
+phase outside the endpoint image -> `lowSS_strict_capacity`, `|U|+1<=|D|`.
+This is one extra S total, not an injection of all SS2 donors. It does not
+handle high-SS members of a tight B, general T6 or the actual Recaman orbit.
+The advance over E-366 is arbitrary low-SS member length; over E-128 it is
+true-oldest exclusion and strict one-donor slack. See E-368 statement audit
+and H-20261002-01 for exact signatures, controls and the remaining boundary.
+
+Independent entry/final review PASS: [E-368 independent audit](statement_audits/E-368-independent.md). Full check: 396 jobs / 2657 permitted-axiom declarations.

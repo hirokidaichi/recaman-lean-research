@@ -836,3 +836,29 @@ and [reproduction records](data/ss2_word_offset_span_lean_20261001/README.md).
 The marked newest S is not an owner. Stop word-only constant-span bounds;
 any owner bound needs an additional concrete owner-family condition.
 General #73, Gate T6, orbit realization and protected labels are unchanged.
+
+## 2026-10-02: arbitrary-length low-SS tight avoidance (E-368)
+
+E-368 (`PROVED-LEAN`, `Recaman/SS2LowSSTight.lean`) removes the member-lag
+cutoff of E-366 for the SS<=1 supplier class. Every nodup tight set B of
+current-A P2 windows with SS<=1 avoids the true oldest S phase of every
+minimal P2 donor with SS=2, for all positive periods and all window lengths.
+Member minimality, member S-endedness and donor current A are not needed.
+The generic P2-suffix contradiction extends E-366's AAS argument; E-128's
+S-prefix normalization and endpoint injection lie inside the original N(B),
+and tightness derives endpoint surjectivity there. No Hall/OS/owner-distance
+premise is assumed.
+
+The same module proves `|U|+1 <= |D|` for any nodup low-SS supplier list U
+in the presence of one minimal SS2 donor. It proves that the recursive
+oldestOffset selects an actual S before adding this extra phase. The slack
+is one total, not one per donor. High-SS members of B, general capacity,
+Gate T6 and orbit realization remain open; protected labels are unchanged.
+Parent #73 remains open. Stop constant-span repairs and lag-census extensions;
+the next unit must isolate a concrete high-SS member configuration.
+
+See [card](HYPOTHESIS_CARD_2026-10-02_SS2_LOWSS_TIGHT.md),
+[statement audit](statement_audits/E-368.md), and
+[reproduction and handoff](data/ss2_lowss_tight_20261002/README.md).
+
+Independent entry/final review PASS: [E-368 independent audit](statement_audits/E-368-independent.md). Full check: 396 jobs / 2657 permitted-axiom declarations.

@@ -2793,3 +2793,14 @@ import Recaman
 #print axioms Recaman.SS2WordOffsetSpan.word_terminal_length
 #print axioms Recaman.SS2WordOffsetSpan.word_span
 #print axioms Recaman.SS2WordOffsetSpan.exists_unbounded_span
+
+-- E-368: arbitrary-length low-SS tight avoidance and one extra S phase.
+#print axioms Recaman.SS2LowSSTight.ss2_P2_suffix_has_prefix
+#print axioms Recaman.SS2LowSSTight.oldest_ne_lowSS_endpoint
+#print axioms Recaman.SS2LowSSTight.oldest_phase_ne_lowSS_endpoint
+#print axioms Recaman.SS2LowSSTight.lowSS_endpoint_image
+#print axioms Recaman.SS2LowSSTight.lowSS_tight_avoids_donor
+#print axioms Recaman.SS2LowSSTight.oldestOffset_getD
+#print axioms Recaman.SS2LowSSTight.oldestOffset_pos_of_ss_pos
+#print axioms Recaman.SS2LowSSTight.donor_oldest_is_S
+#print axioms Recaman.SS2LowSSTight.lowSS_strict_capacity

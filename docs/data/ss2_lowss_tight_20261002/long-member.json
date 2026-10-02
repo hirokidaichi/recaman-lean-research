@@ -1,0 +1,48 @@
+{
+  "period": 36,
+  "stream": "SASASASSAAAASASASASASASSAAASSAAASASA",
+  "low_current": 15,
+  "low_lag": 15,
+  "donor_current": 35,
+  "donor_lag": 19,
+  "low": {
+    "word": "SASAAAASSASASAS",
+    "mass": 1,
+    "moment": 0,
+    "ss": 1,
+    "p2_prefixes": [
+      15
+    ],
+    "oldest": 15
+  },
+  "donor": {
+    "word": "SASAAASSAAASSASASAS",
+    "mass": 1,
+    "moment": 0,
+    "ss": 2,
+    "p2_prefixes": [
+      19
+    ],
+    "oldest": 19
+  },
+  "subtraction_count": 16,
+  "U": [
+    15
+  ],
+  "normalized_low_endpoint": 0,
+  "donor_true_oldest_phase": 16,
+  "low_full_neighborhood": [
+    14,
+    12,
+    7,
+    6,
+    4,
+    2,
+    0
+  ],
+  "singleton_is_tight": false,
+  "strict_slack_inequality": [
+    2,
+    16
+  ]
+}
