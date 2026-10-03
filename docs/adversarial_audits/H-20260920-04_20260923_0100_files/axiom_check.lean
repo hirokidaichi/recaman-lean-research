@@ -1,0 +1,4 @@
+import Recaman.ShortTightDonorAvoidance
+
+#check Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample
+#print axioms Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample

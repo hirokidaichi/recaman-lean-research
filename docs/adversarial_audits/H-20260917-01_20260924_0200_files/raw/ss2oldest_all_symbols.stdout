@@ -1,0 +1,13 @@
+19:theorem moment_ending_A_budget (w : List Bool) (q : Nat)
+36:theorem moment_ending_AA_ss2 (w : List Bool)
+59:theorem ss2_intervening_prefix (w : List Bool)
+139:theorem moment_replicate_A_nonneg (n : Nat) : 0 ≤ moment (List.replicate n true) := by
+145:theorem p2_append_A_tail_data (x v : List Bool) (n : Nat)
+160:theorem ss2_aas_oldest_has_prefix (x : List Bool) (n : Nat)
+204:theorem ss2_no_w1_oldest (x : List Bool) (n : Nat)
+228:theorem oldestOffset_le_length (w : List Bool) : oldestOffset w ≤ w.length := by
+238:theorem oldestOffset_split (w : List Bool) :
+250:theorem ssCount_append_replicate_A (w : List Bool) (n : Nat) :
+259:theorem past_oldest_split (e : Int → Bool) (u : Int) (d : Nat) :
+269:theorem oldest_cover_clock_lt (e : Int → Bool) (u t : Int) (d l : Nat)
+288:theorem past_oldest_cover_decomposition (e : Int → Bool) (u t : Int) (d l : Nat)

@@ -1,0 +1,28 @@
+PROTOCOL periods=1..11 words=all positive-sign-sum bit words lag_range=1..p(p+1)_inclusive full_U=yes Hall=all_subsets B=all_subsets holdout=no
+DONOR_ORIENTATION name true_oldest_offset offset11_bit naive_offset11
+d1 10 A REJECT
+d2 10 A REJECT
+d3 10 A REJECT
+d4 11 S ACCEPT
+d5 11 S ACCEPT
+d6 10 A REJECT
+d7 11 S ACCEPT
+E240 {'word': 'AAAASSAAAASAAASASS', 'U': [2, 7, 8, 11, 13], 'hall': True, 'donor': 7, 'lag': 11, 'donor_word': 'ASSAAAASSAS', 'ss': 2, 'true_oldest': 14, 'oldest_offset': 11, 'B': [2, 8, 11, 13], 'B_lags': [3, 3, 7, 3], 'B_words': ['AAS', 'AAS', 'SAAAASS', 'AAS'], 'N': [4, 5, 10, 17], 'tight': True, 'non_AAS': True, 'true_oldest_covered': False, 'w_next': [(11, 'A')]}
+P15_OFFSET_CONTROL {'word': 'AAAASAAASASASSS', 'U': [2, 3, 5, 7], 'hall': True, 'donor': 3, 'lag': 11, 'donor_word': 'AAASSSASASA', 'true_oldest': 8, 'oldest_offset': 10, 'fixed_offset11_phase': 7, 'fixed_offset11_bit': 'A', 'q_nonempty': 4, 'q_violations': 0}
+Q_P8_CONTROL {'word': 'SSAASAAA', 'hall': True, 'U': [(3, 11, 'ASSAAASAASS', [0, 1, 4], 0, 11), (7, 3, 'AAS', [4], 4, 3)], 'aggregate': {'hall': True, 'q_donors': 1, 'q_tight': 2, 'q_nonempty': 1, 'q_violations': 0, 'w_tight': 1, 'w_occurrences': 0, 'w_violations': 0}}
+W_P10_CONTROL {'word': 'SSAAAASAAA', 'hall': True, 'U': [(4, 3, 'AAS', [1], 1, 3), (7, 7, 'SAAAASS', [0, 1, 6], 0, 7), (9, 3, 'AAS', [6], 6, 3)], 'aggregate': {'hall': True, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 4, 'w_occurrences': 1, 'w_violations': 0}}
+PERIOD 1 {'words': 1, 'hall_words': 1, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 0, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 2 {'words': 1, 'hall_words': 1, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 0, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 3 {'words': 4, 'hall_words': 4, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 0, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 4 {'words': 5, 'hall_words': 5, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 4, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 5 {'words': 16, 'hall_words': 16, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 10, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 6 {'words': 22, 'hall_words': 22, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 18, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 7 {'words': 64, 'hall_words': 64, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 49, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 8 {'words': 93, 'hall_words': 93, 'q_donors': 8, 'q_tight': 16, 'q_nonempty': 8, 'q_violations': 0, 'w_tight': 92, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 9 {'words': 256, 'hall_words': 256, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 252, 'w_occurrences': 0, 'w_violations': 0}
+PERIOD 10 {'words': 386, 'hall_words': 386, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 490, 'w_occurrences': 10, 'w_violations': 0}
+PERIOD 11 {'words': 1024, 'hall_words': 1024, 'q_donors': 44, 'q_tight': 88, 'q_nonempty': 44, 'q_violations': 0, 'w_tight': 1287, 'w_occurrences': 22, 'w_violations': 0}
+TOTAL {'words': 1872, 'hall_words': 1872, 'q_donors': 52, 'q_tight': 104, 'q_nonempty': 52, 'q_violations': 0, 'w_tight': 2202, 'w_occurrences': 32, 'w_violations': 0}
+FIRST_Q_NONEMPTY (8, 'SSAASAAA', {'hall': True, 'q_donors': 1, 'q_tight': 2, 'q_nonempty': 1, 'q_violations': 0, 'w_tight': 1, 'w_occurrences': 0, 'w_violations': 0})
+FIRST_W_APPLICABLE (10, 'SSAAAASAAA', {'hall': True, 'q_donors': 0, 'q_tight': 0, 'q_nonempty': 0, 'q_violations': 0, 'w_tight': 4, 'w_occurrences': 1, 'w_violations': 0})
+EXIT_CODE=0

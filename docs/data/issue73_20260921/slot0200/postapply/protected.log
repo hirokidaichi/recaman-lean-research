@@ -1,0 +1,7 @@
+command:
+timeout 150 python3 scripts/harness_gate.py --check-protected docs/EVIDENCE_REGISTRY.tsv docs/PROTECTED_CLAIMS.tsv
+timeout_seconds: 150
+exit_code: 0
+output:
+Protected claims: 4 central rows keep their pinned labels.
+

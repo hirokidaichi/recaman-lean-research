@@ -1,0 +1,126 @@
+===== docs/adversarial_audits/H-20260920-02_20260923_0130.md:1-32 =====
+# H-20260920-02: 2026-09-23 01:30 JST 敵対的監査
+
+## 判定
+
+総合手続き上の判定は **未完了**。現行 `short_tight_avoids_ss2_window` について
+独立Solは限定された意味監査を通過と判断したが、昼の形式化前に必要だった独立入口検査が欠けている。
+後日の意味監査では、この時系列上の欠落を実施済みにできない。
+カードは `CONJECTURED` を維持し、H-02の新規登録、`PROVED-LEAN` への昇格、
+後続証明の確立済み根拠としての利用を認めない。研究上の反証・STOPPED判断とは区別する。
+
+これは任意周期・長さ11 donorの既存候補を検証する枠であり、新しい定理を作る枠ではない。
+数学的意味の限定判定と、必須手続き全体の合否を混同しない。
+
+## 担当と版
+
+- 親 `/root` は実時計 `2026-09-23 01:31:11 JST` と前回引き継ぎを確認して開始。
+- 執筆 `/root/sol_20260923_nonminimal0130`、独立監査 `/root/sol_20260923_nonminimal_audit0130`。
+- 両者とも `gpt-5.6-sol` / `xhigh` / `fork_turns=none`。既存実行中workerの重複起動なし。
+- 担当期限01:55、親期限02:00。監査担当はrepo読取専用、実験は `/tmp/recaman-audit-20260923-0130-sol/`。
+- HEAD `08c08565c743f39350c9b959e1df7d30aa1cae5d`。既存dirty変更を保持し、stage/commitなし。
+
+| 対象 | SHA-256 |
+|---|---|
+| `Recaman/ShortTightDonorAvoidance.lean` | `bb12f35acc8e48c584cead52d675e36b034afda22f0f28ecfd245031f70fee85` |
+| 原H-02カード | `cf7cd47ff31d451d8d242e80373fb15a95666308ed30149b33b46b45722dce02` |
+| `Recaman/OwnerFamilyLagEleven.lean` | `0bc2293b5d67f7ef5865f7a3f67b2fbf10aeb76bfa92eac9a086cc893c5846f4` |
+| `Recaman/PeriodicOwnerFamilyLagEleven.lean` | `a90c8f2ac7e6b98dfda4a260434d2e44d3e35781c3212f6a04b7952e9ef6b4c0` |
+| `Recaman/Audit.lean` | `b30d0c8baa0fde0e41aa2282c9fc6e96be23418d4da1207f0733fb798279cca0` |
+| `Recaman.lean` | `119a3d2a02a4d486f63077f37112f2ae81a7122d20d7633596c77d45b3c0d2be` |
+| registry | `012c7e42974931c115efc2e64d9a254deaeb58ff78ac440af713cdb1a497a076` |
+| protected claims | `24565611e6fd9ca601c9d4919167fa49546f4c3aae812edbeb3a761c09731fc7` |
+| 執筆packet | `65006a2c79bab6c08932426dbc7ac7a13ac420b18335bbdedee5873fb89b1bc2` |
+
+===== docs/adversarial_audits/H-20260920-03_20260923_0200.md:1-32 =====
+# H-20260920-03: 2026-09-23 02:00 JST 敵対的監査
+
+## 判定
+
+総合手続き上の判定は **未完了**。元カードからLeanの等式定理への意味対応と証明の依存は
+独立Solが限定的に確認した。しかし、元カードの全仮定を満たす厳密短縮 `m<lag` の緊密例は
+事前指定の有限範囲で0件であり、この追加適用領域の非空性は未確認である。
+昼の形式化前の独立入口検査も欠落したまま。H-03は `CONJECTURED` を維持し、
+新規登録・昇格・確立済みの後続根拠への採用を行わない。
+
+有限で0件という事実は、全周期での不存在の証明でも等式への反例でもない。
+元命題全体は非空のBで実現し、すべてが空虚な命題だと判定したわけでもない。
+
+## 担当と版
+
+- 親 `/root` は実時計 `2026-09-23 02:00:40 JST`、日程、前枠引き継ぎ、既存子担当completedを確認。
+- 執筆 `/root/sol_20260923_prefix0200`、独立監査 `/root/sol_20260923_prefix_audit0200`。
+- 両者 `gpt-5.6-sol` / `xhigh` / `fork_turns=none`。担当期限02:25、親期限02:30。
+- 監査担当はrepo読取専用、実験は `/tmp/recaman-audit-20260923-0200-sol/` に隔離。
+- HEAD `08c08565c743f39350c9b959e1df7d30aa1cae5d`。既存dirty変更を保持し、stage/commitなし。
+
+| 対象 | SHA-256 |
+|---|---|
+| `Recaman/ShortTightDonorAvoidance.lean` | `bb12f35acc8e48c584cead52d675e36b034afda22f0f28ecfd245031f70fee85` |
+| 原H-03カード | `3ad887aff9cf89b84471de4a8f85b62cb8abe5d411455e3c085e8e0cb1771b16` |
+| 元 `short_prefix_reduction.py` | `95eb3fb1f49c20087fea345ec1404461ddebc8f0bf0751d9e2c1f41e44830a61` |
+| 執筆packet | `2b9ea53dadc6f65a701e532e7c5486959683ba46c1ed0ca640ef9fe72c4635d6` |
+| 逐語statement audit | `c2876d3af82802610d837b901a0b79e62eb67e386d97cb00af4f1caf1d5984cd` |
+| 最終カード案 | `8064b182c7f6e39a9571b06d0b43bc682d4c7cafae263722c4c8531aff8bd5ec` |
+| 執筆25件manifest | `69c756ee6da3492821e3533498b3fd305d3ee1428c1239961a3cb72aaad5b0a1` |
+
+## 正確な対象
+
+===== docs/adversarial_audits/H-20260920-04_20260923_0100_files/audit_report_corrected.md:1-26 =====
+# H-20260920-04 independent adversarial audit, 2026-09-23 01:00 JST
+
+## Conclusion and scope
+
+**Procedural verdict: 合格, limited to one frozen period-16 literal and the decision to stop the nonminimal length-15 donor replacement.** The literal `SAAASSSASASASAAA` meets every premise of that replacement and negates true-oldest avoidance and deletion Hall for `B=[3]`. The universal replacement is `REFUTED`; continuing that exact route is `STOPPED`. This does not certify the entire H-04 card. Its old 32768/85/46 census, second w1 example, and any minimum-period or minimum-lag assertion remain unreviewed. The lag-11 results, a minimal length-15 donor question, general Gate T6, E-070/E-067, and actual Recaman orbits remain outside scope.
+
+The card already displayed `REFUTED` from a same-session pass. That historical label was not independent approval. The daytime pre-formalization independent entry check was missing. This later review does not retroactively provide it. No new registry row or proof-map promotion is authorized by this report alone; the parent must compare this record with the frozen packet. Any later source, definition, card-claim, or dependency change needs a new audit.
+
+Reviewer: independent Sol `/root/sol_20260923_boundary_audit0100`, separate from writer `/root/sol_20260923_boundary0100`. Repository research files were read only. All new checker code, raw output, and this record are under `/tmp/recaman-audit-20260923-0100-sol/`.
+
+## Frozen target and exact claim
+
+Repository HEAD: `08c08565c743f39350c9b959e1df7d30aa1cae5d`. Target source `Recaman/ShortTightDonorAvoidance.lean` SHA-256 `bb12f35acc8e48c584cead52d675e36b034afda22f0f28ecfd245031f70fee85`, copied in full as `target_source.lean`. Current H-04 card SHA-256 `682e3f62b5c172dac60bbc3c8085cd67b4b33215048112e70756d04956a7c4d4`, copied as `target_card_current.md`; the pre-append card SHA-256 `21a41d3f06948dd97cfabbcb1df880e0a86679694c79cf3aa2cb1dd85840668e` is `target_card.md`. Frozen writer packet `candidate_packet.md` SHA-256 `d8b4f8292d7430d9ac7afd71720fcc545e25d3a835646a03d510b61d58284d11`; its 28-file manifest SHA-256 `5f296363d547d3c94ec14f3e6178465326beed47b65e834246bdfbc85e811a0d`, checked with `shasum -a 256 -c` (exit 0, all OK). The card appendix draft is separately frozen as `card_append_DRAFT_frozen.md`.
+
+Exact proposed universal claim: for any `e : Int -> Bool`, `p>0`, periodic `e`, nodup in-range current-A list `B`, each member with a P2 window of length at most 11 (no member minimality needed), and `|N(B)|=|B|`, every length-15 P2 donor with overlapping `ssCount=2`, without donor minimality, has its true oldest S phase outside `N(B)`. The associated deletion claim says `|B| <= |N(B) \\ {trueOldestPhase}|`. The donor need not be current A and positive period mass/full U/Hall are not premises. The period-16 witness satisfies those three extra conditions anyway. H-04 changes the donor length in H-03's intended donor-avoidance consequence from 11 to 15; it does not challenge H-03's separate minimal-prefix neighborhood equality. The informal dependency chain would need a new length-15 donor-cover restriction; the AAS singleton collision below refutes that edge.
+
+Verbatim target Lean signature, from source lines 651-661 (the certificate is a concrete conjunction, not a proof of the false universal statement):
+
+```lean
+theorem nonminimal_donor_length15_counterexample :
+    (∀ t : Int, donorLength15Stream (t + 16) = donorLength15Stream t) ∧
+    Recaman.ShortPeriodicSupply.signSum donorLength15Stream 0 16 = 2 ∧
+    donorLength15Stream 15 = true ∧ P2 (past donorLength15Stream 15 15) ∧
+    Recaman.OneSSMultiplicity.ssCount (past donorLength15Stream 15 15) = 2 ∧
+    P2 (past donorLength15Stream 15 3) ∧
+    donorLength15Stream 3 = true ∧ past donorLength15Stream 3 3 = aas ∧
+
+===== docs/adversarial_audits/H-20260920-05_20260923_0230_files/AUDIT_REPORT_CORRECTED.md:1-28 =====
+# Corrected final audit record
+
+This is the final record for `/root/sol_20260923_intervening_audit0230`.
+It preserves the original `AUDIT_REPORT.md` and original `SHA256SUMS` byte for
+byte, and corrects the original report's abbreviated `Exact commands` section
+by incorporating `COMMANDS.md` as normative execution provenance.
+
+## Final verdict
+
+- The three-declaration mathematical/semantic claim is **合格**, limited to
+  `moment_ending_A_budget`, `moment_ending_AA_ss2`, and
+  `ss2_intervening_prefix` at target SHA
+  `a9540f5f891198ec91eefd73f62f9e35d4e59f645936dc3a349504e529b325de`.
+- H-20260920-05 overall procedure is **未完了**. The card remains
+  `CONJECTURED`; no evidence-label promotion, registry/frontier/proof-map/Audit
+  addition, or downstream acceptance follows.
+- All mathematical evidence, countercontrols, unresolved obligations, and the
+  stop recommendation are unchanged from `AUDIT_REPORT.md`.
+- `COMMANDS.md` gives the non-abbreviated actual cwd, argv, source identity,
+  timeout, exit, raw file, counts, cutoffs, and seed status. Where a hash was
+  measured only after execution, it explicitly says so. It does not claim that
+  a reconstructed command record was a new execution.
+
+## Preserved originals
+
+- Original report:
+  `AUDIT_REPORT.md`, SHA-256
+  `c9a1096d6f1f6a26c6ecb4883e49421938df99f2d4068533bb91f26c65843a94`.
+

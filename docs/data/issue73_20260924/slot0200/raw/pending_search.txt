@@ -1,0 +1,117 @@
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:32:計画時に未追跡の `docs/data/issue73_20260916/matching_closure_lagmax19_shard{0,1,2,3}.txt` を読み、
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:34:これはログの読取という `OBSERVED` に留める。実行 revision・分割の完全性・重複・生成条件は未監査。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:63:未着手や時間不足は証明失敗・反証と区別し、未完了の理由をそのまま残す。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:84:- 敵対的検証の時間を各枠に確保する。02:30の枠は未監査の候補の検証を優先する。時間不足や監査担当の起動失敗は免除理由にならず、次回へ未検証として引き継ぐ。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:93:草稿や原ログは保存してよいが、以下が未完了なら成果台帳への新規登録・証拠水準の昇格・後続証明の確立済み根拠としての採用をしない。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:114:   凍結 holdout と既知データを区別する。高価な検査が期限内に再現できなければ未完了とし、ログを読んだだけで独立再現済みとしない。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:119:   手続き上の判定は「合格 / 差戻し / 未完了」とし、証拠ラベルとは区別する。無条件の合格文だけの報告は受け付けない。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:159:敵対的検証の記録パス、対象版、判定、未解決の指摘を必ず含め、未監査の候補を成果と混ぜない。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:166:- 同レビューで任意 offset と最古 S の混同を検出し、9/21の必須反証項目を追加。holdout が時間内に終わらない場合は未完了とし、範囲を縮めて合格にはしない。
+docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md:168:- 2026-09-17: 利用者の指示により、全成果への独立した敵対的検証、形式化前の空虚性検査、未監査候補の登録禁止を必須化。これは運用条件の更新であり、Q/W の検証完了を意味しない。
+docs/HYPOTHESIS_CARD_2026-09-06_PRELOAD_FREE_SURVIVAL.md:39:- Small/boundary: `z=0` を既存probeとrecord単位で照合。`T=1`, `J=0`, equality、未完了arcを分離。
+docs/HYPOTHESIS_CARD_2026-09-06_PRELOAD_FREE_SURVIVAL.md:43:  clock 0からreplay。全range完了または15分で終了し、未完了orbitをPASSに含めない。
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md:54:Discovery: all32768 length15 words,85 P2/SS2 donors,46 minimal. One AAS overlap
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md:98:The old 32768/85/46 census, second w1 example, minimum-period or minimum-lag
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md:116:旧32768/85/46 census、第二w1例、pまたはlagの最小性は独立監査範囲外であり、週間の確立済み根拠に
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:92:  実行時間の上限は一晩30分。完走できなければ到達件数・中断条件を記録し、凍結 holdout は未完了とする。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:105:| 2026-09-20 | `OBSERVED` | 同じ HEAD、`python3 -u experiments/issue73_20260920/baseline_q_w.py 11`、[V2 manifest](data/issue73_20260920/SHA256SUMS)、[独立監査](adversarial_audits/H-20260917-01_20260920_0100.md) | p=1..11 の正符号和語1,872件、Q 非空52件、W 適用32件、違反0。p8/p10 の非空例・E-240・偽 offset 11 を独立再現。一般 Q/W は未証明、Lean 入口は差戻し。初回 p=1..15 は未完了で、回復実験により成功扱いにはしない |
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:107:| 2026-09-20 02:00 | `CONJECTURED` | 同じ HEAD、[実行版 manifest](data/issue73_20260920/slot0200/SHA256SUMS)、[独立監査](adversarial_audits/H-20260917-01_20260920_0200.md) | 元Q/Wの状態を維持。U完全性だけを外したproper-Uモデルはp1..11のw1前件0件で手続判定は未完了。exit0やEXHAUSTED_ZEROを成果とせず、初回誤計数・v1ソース未保存・修正版の非空受入不足を記録。第2修理・範囲拡大・Leanなし |
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:122:- Audit status: 01:00のV2有限回帰は限定合格。01:30のゲート実装は差戻し・停止。02:00は完全性だけを外す弱化検査の入口を独立監査したが、実行結果は前件0で未完了。[最新監査](adversarial_audits/H-20260917-01_20260920_0200.md)に対象版・原出力・欠落を記録した。一般Q/W、全弱化モデル項目、一般の位相移送は未完了、Lean入口は差戻し。検査器の欠陥や対象0をQ/Wの反証・支持にしない。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:124:- 現在: 命題 `CONJECTURED`、既知有限結果のみ `OBSERVED`。今回の弱化モデルは未判定、手続き上は未完了。ゲート実装枝と本枠の実験は停止したが数学ルート全体の停止ではない。holdout・紙上証明・Leanは未実施。新しい証拠台帳行・Lean定理は登録しない。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:125:- 9/20夜の終了確認: [02:30独立監査](adversarial_audits/H-20260917-01_20260920_0230.md)は記録整合性と本夜閉鎖判断だけ合格。停止範囲の文言を既存の具体枝へ限定し、原版を保存した。数学的な状態・量化子は不変。次回は当日引継ぎの再開条件に従い、未完了や差戻しを確立前提へ流さない。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:132:元の p32/33 各2000語、seed `2026091801` の holdout も実行済みとなった。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:142:ただし **総合手続判定は差戻し**。全体 `./scripts/check.sh` は未監査の
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:148:p32/33 holdout の全体認証、`short_supply_donor_deletion` 以降の拡張、長さ15反例、
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:149:`SS2OldestPattern` は未完了・今回の対象外。限定 Q から一般 Gate T6 や実軌道へ進めない。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:157:正式な新規登録・昇格を **未完了** と判定した。Status は `CONJECTURED` のまま。
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:190:Recamán sequence remain unproved. The used p32/33 holdout remains finite evidence, not the proof.
+docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md:217:使用済みp32/33標本は有限証拠で、全体の独立認証は未完了のまま。昼の形式化前独立入口検査欠落と
+docs/HYPOTHESIS_CARD_2026-09-15_G1_MEMBER_SLACK.md:133:| 19 | 1,636 | 1,811 | **1,636** | 0 | 0 | 2,456 | 8 shard 並列で約 4 分（`os_closure_lagmax19.txt`） |
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:4:後半H-02/H-03/H-05の限定意味監査と総合未完了、H-04の限定反例・停止範囲を整理した。
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:5:これで既存確立済み範囲と後半候補・反例・未監査義務の記載案は揃ったが、週間全体の
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:6:最終停止・再開判断はまだ未完了である。対象版と判定は
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:31:`short_supply_donor_deletion` も任意の正周期pを扱うが、全 `U` メンバーが範囲内current-Aで、
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:40:使用済みp32/33標本は有限証拠にすぎず、全体の独立認証も未完了で、Lean証明の代用にしない。
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:58:欠け、後日の意味監査で遡及的に埋められない。カードは `CONJECTURED`、総合判定は**未完了**であり、
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:79:`AAASSSSA`。一方、後半Lean、紙§3-5、AAS/w1各配置、true-oldest分解との結合、周期lift、
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:80:任意長donor回避・削除は未監査で、H-05全体の最終定理もない。
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:92:有限周期語を実軌道へ、限定意味合格を総合合格へ読み替えない。p32/33や旧censusは既に使用済みまたは
+docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md:97:までである。H-02/H-03/H-05は総合未完了のため `CONJECTURED` を維持する。新しい独立入力なしに
+docs/HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md:60:| 予備 | lag-max 19（1,636 語、所有者 ≤ 19：1,811 語・15,901 配置） | 4 shard で実行中（最初の語は 234 ノード・21 秒で排除） | `matching_closure_lagmax19_shard*.txt` |
+docs/HYPOTHESIS_CARD_2026-09-16_MATCHING_CLOSURE.md:100:- lag 19（1,636 語、所有者 1,811 語）は Python の探索が 4 shard で進行中（結果は `matching_closure_lagmax19_shard*.txt`）。
+docs/HYPOTHESIS_CARD_2026-09-10_ONE_SS_MULTIPLICITY.md:48:- `COMPUTED` canonical addendum: through10^7,70,375 one-SS minimal P2 windows, all family A in that range, across546 SS pairs. The maximum is2,796 supplied A times using pair9,337,064/9,337,065; sources9,342,711..9,348,301 with lags5,647..28,007. Exact lists and histogram: `orbit_one_ss_census.txt`.
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md:57:  Do not use old p32/33 samples as fresh holdout.
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md:119:Same-session shortcut audit: the existing fixed shortOff assignment does NOT
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md:121:in `daytime/short_charge_donor_exploratory.jsonl` (OBSERVED, exploratory script
+docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md:182:保存欠落がある。したがって総合手続きは**未完了**、状態は `CONJECTURED` のまま、新規登録・昇格・
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:20:反例が満たさない前提があれば未完了とし、最小性追加等で今回の命題を修理しない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:35:- [H-04カード](HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md)に限定合格・未監査部分・履歴不足を明記。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:67:旧census32768/85/46、第二w1例、最小周期/lagの最適性は未監査。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:69:未監査H-02/03/05・SS2OldestPattern、一般lag所有者配置、一般Gate T6は確立済み前提にしない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:82:## 01:30枠: H-02は限定意味監査通過、総合未完了
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:85:ただし形式化前の独立入口検査が欠落しており、総合手続き判定は未完了。**
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:113:- [H-02カード](HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md)に限定意味監査と総合未完了を明記。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:122:これらの受理は、総合未完了を合格へ変更する理由にしない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:137:旧固定charge衝突3件はselector自体の独立再計算が未完了で、OBSERVEDから昇格しない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:139:次枠は既存の未監査候補・手続き記録の検証を優先する。本H-02を後続の証明済み前提にしない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:149:## 02:00枠: H-03の厳密短縮領域は未確認、総合未完了
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:152:独立SolはLean等式への意味対応を限定合格としたが、総合手続き判定は未完了。**
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:173:後続のdonor回避と削除の緊密枝は総合未完了のH-02を使い、今回は依存一覧として記録しただけである。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:176:p1..12は8,190周期語、非最小1,141件、tight_nonminimal=0。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:220:H-02の総合未完了、正式E-row用statement auditである。元仮定のままの実例、または
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:222:本枠ではREFUTED/STOPPEDへ変更せず、未完了のまま保持する。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:223:次の02:30枠は既存未監査候補と記録の検証を優先し、H-03の上限延長・新規Leanは開始しない。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:239:H-20260920-05全体は **未完了**、カードは **CONJECTURED** を維持する。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:310:H-05昼形式化の独立事前入口欠落、紙§3-5、後半Lean、w1各配置、owner集合への結合、
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:311:周期/実軌道への移送、一般lag donor回避・削除、公式statement audit/登録は未完了。
+docs/RESEARCH_HANDOFF_2026-09-23_SOL.md:312:H-02/H-03の手続未完了、古いdonor censusの未監査も本枠で解消しない。
+docs/HYPOTHESIS_CARD_2026-09-21_SHORT_SUPPLY_DONOR_DELETION.md:18:theorem short_supply_donor_deletion (e : Int -> Bool) (p : Nat) (hp : 0 < p)
+docs/HYPOTHESIS_CARD_2026-09-21_SHORT_SUPPLY_DONOR_DELETION.md:87:- Frozen holdout range: none. The p32/33 seed-2026091801 data are already used and are excluded.
+docs/HYPOTHESIS_CARD_2026-09-21_SHORT_SUPPLY_DONOR_DELETION.md:153:`short_supply_donor_deletion` はp上限なしの任意の正周期符号語を扱うが、全 `u in U` に
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:6:**限定修復は独立監査で合格。正式な新規登録・証拠ラベル昇格は未完了。**
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:59:p32/33、seed `2026091801`、各2000語の元 holdout も使用済みとなった。
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:67:## 未監査の候補
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:70:`short_supply_donor_deletion`、donor最小性除去、prefix reduction、length15反例、
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:84:全体 check を成功させるために未監査の定理を確立済みにしない。変更した依存先は再監査する。
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:114:判定は限定修復 **合格**、新core登録 **未完了**。
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:136:主張と既存証拠を照合して、未監査候補を混ぜず登録可否を決められるか。
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:139:後半定理・SS2OldestPattern・使用済p32/33 holdout・一般lag/T6/実軌道は別の未監査対象のまま。
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:194:E-360の範囲外には登録権限を与えていない。使用済p32/33の再認証、後半定理、SS2OldestPattern、
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:197:次の02:30枠では、新探索ではなく未監査候補を優先する。一問の候補は、
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:198:`short_supply_donor_deletion` の既存候補が「全Uの窓が短い」という制限を保った正確な削除命題かを、
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:209:**既存の `short_supply_donor_deletion` は限定された系として独立監査に合格した。新しい数学的入力ではない。**
+docs/RESEARCH_HANDOFF_2026-09-21_SOL.md:253:既存の非最小donor/prefix/length15/SS2OldestPattern等の未監査拡張を確立済み前提に使わない。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:18:- 停止条件: 反例・空の適用対象・循環・時間上限。Lean と p32/33 holdout は本枠では禁止。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:34:- 一つずつ前提を弱めた検査、周期の同余から整数位置への移送、未来位相の周期境界処理が未完了。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:47:Lean 変更がないため Lean build / lint は未実行。他セッションの lagmax19 shard 4件は触れていない。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:108:その独立な再開根拠が得られなければ、未完了の理由を記録してその枠を閉じる。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:109:一般 Q/W、位相の移送、全弱化項目、holdout は未完了であり、形式化を始める根拠はない。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:113:**手続判定は未完了。U完全性だけを外したWの検査は対象0件で、成果として採用しない。**
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:168:02:30枠は未監査箇所と本日の記録の確認を優先し、新しい探索を始めない。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:173:一般Q/Wと形式化の入口条件は引き続き未完了であり、曜日や予定だけで後半へ進めない。
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:196:翌回は上記02:00枠の再開条件を維持する。未監査を昇格可能な成果として残したものはないが、
+docs/RESEARCH_HANDOFF_2026-09-20_SOL.md:197:監査が未完了と判定した対象と原source欠落は解消していない。検査対象0や正常終了を合格にせず、
+docs/EVIDENCE_REGISTRY.tsv:361:E-360	PROVED-LEAN	short-tight-donor-avoidance	周期 p>0 の任意の周期符号語について、nodup で緊密な B の全 phase が p 未満の current A で、その窓が lag 3/7/11 の最小 P2 なら、最小 lag-11 P2 かつ SS=2 の donor の真の最古 S phase は neighborhood e p B lag に入らない（short_tight_avoids_ss2_donor）。ambient U、仮定 Hall、positive drift は不要で、短窓 selector の局所性から B の全 sublist の Hall を証明して使う。局所入力 W は、4フィールド（window/addA/own_mem/onto）の OwnerFamily の w1 member t が own t = t - 7（w1_owns_oldest）かつ e(t+1)=true（w1_next_addition）という条件付き定理である。p>0、周期性、nodup U、U 上の Hall、B⊆U の緊密性、phase 範囲・current A・lag 3/7/11 の最小 P2 という既存 E-358/E-359 の具体仮定の下では tight_owner_family がこの family を実現する。ownerFamily_of_minimal と tight_owner_family は既存 E-357/E-359 の抽出構成で新規性には数えない。一般 lag、一般 Gate T6、全供給容量、E-070/E-067、実軌道、Recamán列の全射性は主張しない	Recaman/ShortTightDonorAvoidance.lean	Recaman.ShortTightDonorAvoidance.w1_owns_oldest;Recaman.ShortTightDonorAvoidance.w1_next_addition;Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor	lag 15 以上を含む緊密集合と一般 Gate T6 は未解決。後半定理、SS2OldestPattern、使用済 p32/33 holdout の独立認証は別監査とする
+docs/RESEARCH_HANDOFF_2026-09-20_DAYTIME.md:76:既存カードのp32/33 holdoutはここで使用済みになった。同じ標本を新しいholdoutと呼ばない。
+docs/RESEARCH_HANDOFF_2026-09-20_DAYTIME.md:106:3. 未許可・未完了なら、Lean検証済み候補として残す。独立監査合格とは書かない。
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md:62:Holdout p15:32768 cycles,62545 assignments,8115 nonminimal assignments,
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md:94:39,340 tight assignments, with `tight_nonminimal=0`. `PASS` checks only that
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md:119:unverified. The overall procedural verdict is **未完了**. This is neither a
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md:143:総合手続きは**未完了**、状態は `CONJECTURED` のまま、strict reductionを行使済み新入力としない。
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md:63:- Holdout: the previous card's p32/33 sample is not touched during local discovery.
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md:154:length 3/7/11, tightness, and a minimal lag-11 SS=2 donor. `short_supply_donor_deletion`
+docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md:161:each period: p32 donor-bearing words 147, Q_nonempty 1347, W 326; p33 donor-bearing words
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:37:有限再計算を任意p/lagの証明や新holdoutと呼ばず、p32/33全体は未再認証。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:69:次の01:30枠は、後半H-02/H-03/H-05の限定合格と総合未完了、H-04等の反例/停止範囲、
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:70:未監査計算と残る依存義務を週報に区別して記載するための独立監査へ進む。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:72:週間全体の最終停止/再開判断はまだ未完了。次枠も一問を固定し、未監査の停止判断を確定しない。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:88:本枠の手続き判定は合格（上記の限定範囲）、週間監査全体は未完了。新規登録・昇格なし。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:92:結論: H-02/H-03/H-05の限定意味監査合格と総合未完了、H-04の反例・停止範囲を
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:96:週間全体の最終停止/再開判断はまだ未完了である。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:102:固定対照、原ログ・版との一致を合格条件とし、未監査の昇格・新探索を停止条件とした。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:114:紙上3-5節、後続Lean、配置・OwnerFamily・周期への接続は未監査のまま。
+docs/RESEARCH_HANDOFF_2026-09-24_SOL.md:162:次の02:00枠の一問候補は、未監査項目・手続き欠落・依存義務を漏れなく分類した上で、
+docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md:65:Holdout23,27,31 contains647,1673,3605 minimal SS2/P2 words, respectively; no
+docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md:148:while the overall H-05 procedural judgment remains **未完了**.
+docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md:167:紙§3-5、AAS/w1各配置、true-oldest分解との結合、周期lift、任意長donor回避・削除は未監査で、
+docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md:169:従ってH-05総合手続きは**未完了**、状態は `CONJECTURED` のまま。詳細は

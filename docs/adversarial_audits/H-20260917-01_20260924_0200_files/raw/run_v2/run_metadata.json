@@ -1,0 +1,63 @@
+[
+  {
+    "name": "inventory_check",
+    "argv": [
+      "python3",
+      "source/inventory_check.py"
+    ],
+    "cwd": "/tmp/recaman-weekly-audit-20260924-0200-sol",
+    "timeout_seconds": 30,
+    "start_unix": 1790183306.227118,
+    "elapsed_seconds": 0.026890039443969727,
+    "exit": 0,
+    "timed_out": false
+  },
+  {
+    "name": "repo_targets_verify",
+    "argv": [
+      "shasum",
+      "-a",
+      "256",
+      "-c",
+      "/tmp/recaman-weekly-audit-20260924-0200-sol/prehash/REPO_TARGETS.sha256"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 30,
+    "start_unix": 1790183306.254009,
+    "elapsed_seconds": 0.012268781661987305,
+    "exit": 0,
+    "timed_out": false
+  },
+  {
+    "name": "prior_0100_manifest",
+    "argv": [
+      "shasum",
+      "-a",
+      "256",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/adversarial_audits/H-20260917-01_20260924_0100_files",
+    "timeout_seconds": 30,
+    "start_unix": 1790183306.266279,
+    "elapsed_seconds": 0.011061906814575195,
+    "exit": 0,
+    "timed_out": false
+  },
+  {
+    "name": "prior_0130_manifest",
+    "argv": [
+      "shasum",
+      "-a",
+      "256",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/adversarial_audits/H-20260920-02_20260924_0130_files",
+    "timeout_seconds": 30,
+    "start_unix": 1790183306.2773418,
+    "elapsed_seconds": 0.011666297912597656,
+    "exit": 0,
+    "timed_out": false
+  }
+]

@@ -2684,3 +2684,29 @@ import Recaman
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.phase_eq_of_emod
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_no_lag_eleven
 #print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_lag_three_or_seven
+
+-- Short tight donor avoidance. The final short-subset corollaries discharge Hall;
+-- the minimal lag-3/7/11 bound remains. No all-lag or orbit conclusion is claimed.
+#print axioms Recaman.OwnerFamilyLagEleven.ownerFamily_of_minimal
+#print axioms Recaman.PeriodicOwnerFamilyLagEleven.tight_owner_family
+#print axioms Recaman.ShortTightDonorAvoidance.member_window_aas_or_w1
+#print axioms Recaman.ShortTightDonorAvoidance.w1_owns_oldest
+#print axioms Recaman.ShortTightDonorAvoidance.w1_next_addition
+#print axioms Recaman.ShortTightDonorAvoidance.tight_w1_next_addition
+#print axioms Recaman.ShortTightDonorAvoidance.donor_cover_next_subtraction
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_trueOldest
+#print axioms Recaman.ShortTightDonorAvoidance.shortOff_le_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_window_hall
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor
+#print axioms Recaman.ShortTightDonorAvoidance.short_supply_donor_deletion
+#print axioms Recaman.ShortTightDonorAvoidance.w1_future_aas_member
+#print axioms Recaman.ShortTightDonorAvoidance.mem_ss2Windows
+#print axioms Recaman.ShortTightDonorAvoidance.ss2_oldest_cover_table
+#print axioms Recaman.ShortTightDonorAvoidance.owner_member_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.exists_minimal_p2_prefix
+#print axioms Recaman.ShortTightDonorAvoidance.neighborhood_prefix_sublist
+#print axioms Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix
+#print axioms Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion
+#print axioms Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample

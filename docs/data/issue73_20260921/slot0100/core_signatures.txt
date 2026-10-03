@@ -1,0 +1,95 @@
+Recaman/ShortTightDonorAvoidance.lean:31:theorem shortOff_le_window (e : Int → Bool) (p u d : Nat) (hu : u < p)
+Recaman/ShortTightDonorAvoidance.lean:32:    (hA : e (u : Int) = true) (hd : d ≤ 11) (hP : P2 (past e (u : Int) d)) :
+Recaman/ShortTightDonorAvoidance.lean:33:    1 ≤ Recaman.ShortReservoirCapacity.shortOff e u ∧
+Recaman/ShortTightDonorAvoidance.lean:34:      Recaman.ShortReservoirCapacity.shortOff e u ≤ d := by
+Recaman/ShortTightDonorAvoidance.lean:62:theorem short_window_hall (e : Int → Bool) (p : Nat) (hp : 0 < p)
+Recaman/ShortTightDonorAvoidance.lean:63:    (hper : ∀ x : Int, e (x + p) = e x) (A : List Nat) (lag : Nat → Nat)
+Recaman/ShortTightDonorAvoidance.lean:64:    (hAn : A.Nodup) (hAp : ∀ u ∈ A, u < p) (hA : ∀ u ∈ A, e (u : Int) = true)
+Recaman/ShortTightDonorAvoidance.lean:65:    (hlag : ∀ u ∈ A, lag u ≤ 11) (hP : ∀ u ∈ A, P2 (past e (u : Int) (lag u))) :
+Recaman/ShortTightDonorAvoidance.lean:66:    A.length ≤ (neighborhood e p A lag).length := by
+Recaman/ShortTightDonorAvoidance.lean:100:theorem member_window_aas_or_w1 (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+Recaman/ShortTightDonorAvoidance.lean:101:    (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t) :
+Recaman/ShortTightDonorAvoidance.lean:102:    past e t (lag t) = aas ∨ past e t (lag t) = w1 := by
+Recaman/ShortTightDonorAvoidance.lean:115:theorem w1_owns_oldest (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+Recaman/ShortTightDonorAvoidance.lean:116:    (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+Recaman/ShortTightDonorAvoidance.lean:117:    (hw : past e t (lag t) = w1) : own t = t - 7 := by
+Recaman/ShortTightDonorAvoidance.lean:152:theorem w1_future_aas_member (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+Recaman/ShortTightDonorAvoidance.lean:153:    (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+Recaman/ShortTightDonorAvoidance.lean:154:    (hw : past e t (lag t) = w1) :
+Recaman/ShortTightDonorAvoidance.lean:155:    mem (t + 2) ∧ lag (t + 2) = 3 ∧ past e (t + 2) 3 = aas ∧ own (t + 2) = t - 1 := by
+Recaman/ShortTightDonorAvoidance.lean:202:theorem w1_next_addition (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+Recaman/ShortTightDonorAvoidance.lean:203:    (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+Recaman/ShortTightDonorAvoidance.lean:204:    (hw : past e t (lag t) = w1) : e (t + 1) = true := by
+Recaman/ShortTightDonorAvoidance.lean:211:theorem tight_w1_next_addition (e : Int → Bool) (p : Nat) (hp : 0 < p)
+Recaman/ShortTightDonorAvoidance.lean:212:    (hper : ∀ x : Int, e (x + p) = e x)
+Recaman/ShortTightDonorAvoidance.lean:213:    (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup)
+Recaman/ShortTightDonorAvoidance.lean:214:    (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length)
+Recaman/ShortTightDonorAvoidance.lean:215:    (hB : List.Sublist B U)
+Recaman/ShortTightDonorAvoidance.lean:216:    (htight : (neighborhood e p B lag).length = B.length)
+Recaman/ShortTightDonorAvoidance.lean:217:    (hBp : ∀ b ∈ B, b < p)
+Recaman/ShortTightDonorAvoidance.lean:218:    (hB_A : ∀ b ∈ B, e (b : Int) = true)
+Recaman/ShortTightDonorAvoidance.lean:219:    (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+Recaman/ShortTightDonorAvoidance.lean:220:    (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+Recaman/ShortTightDonorAvoidance.lean:221:    (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+Recaman/ShortTightDonorAvoidance.lean:222:    (t : Int) (ht : phase p t ∈ B)
+Recaman/ShortTightDonorAvoidance.lean:223:    (hw : past e t (lag (phase p t)) = w1) : e (t + 1) = true := by
+Recaman/ShortTightDonorAvoidance.lean:229:theorem donor_cover_next_subtraction (e : Int → Bool) (u0 t : Int)
+Recaman/ShortTightDonorAvoidance.lean:230:    (hdon : past e u0 11 ∈ donors) (htA : e t = true)
+Recaman/ShortTightDonorAvoidance.lean:231:    (hw : past e t 7 = w1)
+Recaman/ShortTightDonorAvoidance.lean:232:    (hcov : ∃ k : Nat, k < 7 ∧ e (t - 1 - (k : Int)) = false ∧
+Recaman/ShortTightDonorAvoidance.lean:233:      t - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) :
+Recaman/ShortTightDonorAvoidance.lean:234:    e (t + 1) = false := by
+Recaman/ShortTightDonorAvoidance.lean:252:theorem short_tight_avoids_trueOldest (e : Int → Bool) (p : Nat) (hp : 0 < p)
+Recaman/ShortTightDonorAvoidance.lean:253:    (hper : ∀ x : Int, e (x + p) = e x)
+Recaman/ShortTightDonorAvoidance.lean:254:    (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup)
+Recaman/ShortTightDonorAvoidance.lean:255:    (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length)
+Recaman/ShortTightDonorAvoidance.lean:256:    (hB : List.Sublist B U)
+Recaman/ShortTightDonorAvoidance.lean:257:    (htight : (neighborhood e p B lag).length = B.length)
+Recaman/ShortTightDonorAvoidance.lean:258:    (hBp : ∀ b ∈ B, b < p)
+Recaman/ShortTightDonorAvoidance.lean:259:    (hB_A : ∀ b ∈ B, e (b : Int) = true)
+Recaman/ShortTightDonorAvoidance.lean:260:    (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+Recaman/ShortTightDonorAvoidance.lean:261:    (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+Recaman/ShortTightDonorAvoidance.lean:262:    (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+Recaman/ShortTightDonorAvoidance.lean:263:    (u0 : Nat) (hdon : past e (u0 : Int) 11 ∈ donors) :
+Recaman/ShortTightDonorAvoidance.lean:264:    Recaman.TrueOldestGateT6.trueOldestPhase e p u0 11 ∉ neighborhood e p B lag := by
+Recaman/ShortTightDonorAvoidance.lean:333:theorem short_tight_avoids_ss2_donor (e : Int → Bool) (p : Nat) (hp : 0 < p)
+Recaman/ShortTightDonorAvoidance.lean:334:    (hper : ∀ x : Int, e (x + p) = e x)
+Recaman/ShortTightDonorAvoidance.lean:335:    (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+Recaman/ShortTightDonorAvoidance.lean:336:    (htight : (neighborhood e p B lag).length = B.length)
+Recaman/ShortTightDonorAvoidance.lean:337:    (hBp : ∀ b ∈ B, b < p)
+Recaman/ShortTightDonorAvoidance.lean:338:    (hB_A : ∀ b ∈ B, e (b : Int) = true)
+Recaman/ShortTightDonorAvoidance.lean:339:    (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+Recaman/ShortTightDonorAvoidance.lean:340:    (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+Recaman/ShortTightDonorAvoidance.lean:341:    (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+Recaman/ShortTightDonorAvoidance.lean:342:    (u0 : Nat) (hPdon : P2 (past e (u0 : Int) 11))
+Recaman/ShortTightDonorAvoidance.lean:343:    (hmindon : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e (u0 : Int) 11).take d))
+Recaman/ShortTightDonorAvoidance.lean:344:    (hss : Recaman.OneSSMultiplicity.ssCount (past e (u0 : Int) 11) = 2) :
+Recaman/ShortTightDonorAvoidance.lean:345:    Recaman.TrueOldestGateT6.trueOldestPhase e p u0 11 ∉ neighborhood e p B lag := by
+Recaman/OwnerFamilyLagEleven.lean:256:structure OwnerFamily (e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat) :
+Recaman/OwnerFamilyLagEleven.lean:257:    Prop where
+Recaman/OwnerFamilyLagEleven.lean:258:  window : ∀ b, mem b → past e b (lag b) ∈ ownerWords
+Recaman/OwnerFamilyLagEleven.lean:259:  addA : ∀ b, mem b → e b = true
+Recaman/OwnerFamilyLagEleven.lean:260:  own_mem : ∀ b, mem b → ∃ k ∈ sOffsets (past e b (lag b)), own b = b - (k : Int)
+Recaman/OwnerFamilyLagEleven.lean:261:  onto : ∀ b, mem b → ∀ k ∈ sOffsets (past e b (lag b)), ∃ b', mem b' ∧ own b' = b - (k : Int)
+Recaman/OwnerFamilyLagEleven.lean:539:theorem ownerFamily_of_minimal (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+Recaman/OwnerFamilyLagEleven.lean:540:    (lag : Int → Nat) (hlag : ∀ b, mem b → lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+Recaman/OwnerFamilyLagEleven.lean:541:    (hP : ∀ b, mem b → P2 (past e b (lag b)))
+Recaman/OwnerFamilyLagEleven.lean:542:    (hmin : ∀ b, mem b → ∀ d, d < lag b → 0 < d → ¬ P2 ((past e b (lag b)).take d))
+Recaman/OwnerFamilyLagEleven.lean:543:    (haddA : ∀ b, mem b → e b = true)
+Recaman/OwnerFamilyLagEleven.lean:544:    (hown : ∀ b, mem b → ∃ k ∈ sOffsets (past e b (lag b)), own b = b - (k : Int))
+Recaman/OwnerFamilyLagEleven.lean:545:    (honto : ∀ b, mem b → ∀ k ∈ sOffsets (past e b (lag b)),
+Recaman/OwnerFamilyLagEleven.lean:546:      ∃ b', mem b' ∧ own b' = b - (k : Int))
+Recaman/OwnerFamilyLagEleven.lean:547:    : OwnerFamily e mem own lag := by
+Recaman/PeriodicOwnerFamilyLagEleven.lean:93:theorem tight_owner_family (e : Int → Bool) (p : Nat) (hp : 0 < p)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:94:    (hper : ∀ x : Int, e (x + p) = e x)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:95:    (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:96:    (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:97:    (hB : List.Sublist B U)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:98:    (htight : (neighborhood e p B lag).length = B.length)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:99:    (hBp : ∀ b ∈ B, b < p)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:100:    (hB_A : ∀ b ∈ B, e (b : Int) = true)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:101:    (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+Recaman/PeriodicOwnerFamilyLagEleven.lean:102:    (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+Recaman/PeriodicOwnerFamilyLagEleven.lean:103:    (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+Recaman/PeriodicOwnerFamilyLagEleven.lean:104:    : ∃ own : Int → Int, Recaman.OwnerFamilyLagEleven.OwnerFamily e
+Recaman/PeriodicOwnerFamilyLagEleven.lean:105:      (fun t => phase p t ∈ B) own (fun t => lag (phase p t)) := by

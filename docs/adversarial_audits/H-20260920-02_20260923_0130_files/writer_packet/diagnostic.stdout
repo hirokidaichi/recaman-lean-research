@@ -1,0 +1,50 @@
+Recaman.OwnerFamilyLagEleven.OwnerFamily (e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat) : Prop
+Recaman.ShortTightDonorAvoidance.w1_future_aas_member (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+  (lag : Int → Nat) (hF : Recaman.OwnerFamilyLagEleven.OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+  (hw : Recaman.LeadingRunSupply.past e t (lag t) = Recaman.LagSevenPrefixRigidity.w1) :
+  mem (t + 2) ∧
+    lag (t + 2) = 3 ∧ Recaman.LeadingRunSupply.past e (t + 2) 3 = Recaman.OwnerFamilyLagEleven.aas ∧ own (t + 2) = t - 1
+Recaman.ShortTightDonorAvoidance.mem_ss2Windows (w : List Bool) (hlen : w.length = 11)
+  (hP : Recaman.LeadingRunSupply.P2 w) (hss : Recaman.OneSSMultiplicity.ssCount w = 2) :
+  w ∈ Recaman.ShortTightDonorAvoidance.ss2Windows
+Recaman.ShortTightDonorAvoidance.ss2_oldest_cover_table (w : List Bool) :
+  w ∈ Recaman.ShortTightDonorAvoidance.ss2Windows →
+    (10 ≤ Recaman.LagSevenDonorCoverage.oldestOffset w ∧ Recaman.LagSevenDonorCoverage.oldestOffset w ≤ 11) ∧
+      (w.getD (Recaman.LagSevenDonorCoverage.oldestOffset w - 4) true &&
+              w.getD (Recaman.LagSevenDonorCoverage.oldestOffset w - 3) true &&
+            w.getD (Recaman.LagSevenDonorCoverage.oldestOffset w - 2) true) =
+          false ∧
+        ∀ (k : Nat),
+          k ∈ List.range 7 →
+            Recaman.LagSevenDonorCoverage.coverOK w Recaman.LagSevenPrefixRigidity.w1
+                  (Recaman.LagSevenDonorCoverage.oldestOffset w) k =
+                true →
+              k = 0 ∧
+                (w.getD (Recaman.LagSevenDonorCoverage.oldestOffset w - 3) true = false ∨
+                  w.getD (Recaman.LagSevenDonorCoverage.oldestOffset w - 4) true = false)
+Recaman.ShortTightDonorAvoidance.owner_member_avoids_ss2_window (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+  (lag : Int → Nat) (hF : Recaman.OwnerFamilyLagEleven.OwnerFamily e mem own lag) (u0 : Int)
+  (hP : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e u0 11))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e u0 11) = 2) (t : Int) (ht : mem t) (k : Nat)
+  (hk : k < lag t) (hS : e (t - 1 - ↑k) = false) :
+  t - 1 - ↑k ≠ u0 - ↑(Recaman.LagSevenDonorCoverage.oldestOffset (Recaman.LeadingRunSupply.past e u0 11))
+Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) (hBp : ∀ (b : Nat), b ∈ B → b < p)
+  (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hlag : ∀ (b : Nat), b ∈ B → lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (lag b)))
+  (hmin :
+    ∀ (b : Nat),
+      b ∈ B →
+        ∀ (d : Nat),
+          d < lag b → 0 < d → ¬Recaman.LeadingRunSupply.P2 (List.take d (Recaman.LeadingRunSupply.past e (↑b) (lag b))))
+  (u0 : Int) (hPdon : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e u0 11))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e u0 11) = 2) :
+  ¬Recaman.SharpPeriodicSupply.phase p
+        (u0 - ↑(Recaman.LagSevenDonorCoverage.oldestOffset (Recaman.LeadingRunSupply.past e u0 11))) ∈
+      Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+'Recaman.ShortTightDonorAvoidance.w1_future_aas_member' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortTightDonorAvoidance.ss2_oldest_cover_table' depends on axioms: [propext]
+'Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

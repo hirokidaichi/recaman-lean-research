@@ -1,0 +1,13 @@
+HAND-EDITED SUMMARY; NOT RAW COMMAND OUTPUT
+REVISION: 08c08565c743f39350c9b959e1df7d30aa1cae5d
+BASELINE_SHA256: 50b0e26f6a878e0c7ae229303026469a4f13c4fc0a21ee5b1ac591164145aea7
+SEED: none
+CUTOFF: fixed named words only; no discovery range; no holdout
+
+- p8 tight avoidance: U=B=[7], donor u0=3, true-oldest 0 is absent from N={4}.
+- p8 actual removal: U=[3,7], B=[3] or [3,7], N={0,1,4} becomes {1,4}.
+- p18 E-240: all full-U members are short; the exact theorem holds without the refuted pure-AAS route.
+- p12 SS3 weakening: removing hss=2 admits a tight failure, 3 members versus 2 deleted neighbors.
+- p11 slack: deleting a present true-oldest leaves 2 neighbors for 1 member.
+- empty B succeeds; duplicate U violates hUn.
+- p20 proper-U fixed word contains no qualifying minimal lag-11 SS2 donor and is nonapplicable.

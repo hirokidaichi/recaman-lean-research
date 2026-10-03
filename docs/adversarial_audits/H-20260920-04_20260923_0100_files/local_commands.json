@@ -1,0 +1,51 @@
+[
+  {
+    "name": "independent_literal_check",
+    "argv": [
+      "python3",
+      "-u",
+      "/tmp/recaman-audit-20260923-0100-sol/independent_literal_check.py"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 30,
+    "started_unix": 1790093447.4321861,
+    "elapsed_seconds": 0.03588104248046875,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "f068b2ee3df694f735528487e12cce639cfc1ed4240fac579af3e41d82ea2011",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "known_controls",
+    "argv": [
+      "python3",
+      "-u",
+      "/tmp/recaman-audit-20260923-0100-sol/known_controls.py"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 30,
+    "started_unix": 1790093447.4681249,
+    "elapsed_seconds": 0.01876521110534668,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "40c7552d2036337404c0886deaab4bfc4169915baa83644f023b1d725badc7f6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "axiom_check",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "/tmp/recaman-audit-20260923-0100-sol/axiom_check.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 60,
+    "started_unix": 1790093447.486933,
+    "elapsed_seconds": 0.30522894859313965,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "70c1acc7f16e03173b96378f0df00f703e09d3852f02099676ba972a1662dca4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

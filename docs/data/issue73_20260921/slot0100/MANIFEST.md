@@ -1,0 +1,43 @@
+# Slot 01:00 frozen candidate manifest
+
+- Frozen at: 2026-09-21 01:09:38 JST
+- Git HEAD: `08c08565c743f39350c9b959e1df7d30aa1cae5d`
+- Worktree: dirty; all candidate sources below are uncommitted working-tree content.
+- This manifest identifies a reproduction target. It is not an independent-audit decision.
+
+## Core source and cards
+
+```text
+bb12f35acc8e48c584cead52d675e36b034afda22f0f28ecfd245031f70fee85  Recaman/ShortTightDonorAvoidance.lean
+0bc2293b5d67f7ef5865f7a3f67b2fbf10aeb76bfa92eac9a086cc893c5846f4  Recaman/OwnerFamilyLagEleven.lean
+a90c8f2ac7e6b98dfda4a260434d2e44d3e35781c3212f6a04b7952e9ef6b4c0  Recaman/PeriodicOwnerFamilyLagEleven.lean
+cc99291a9a79c6a2fc3649e0b4ed14b4a242880d814f8b3f34ccd9e44ced25dc  docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md
+cc99291a9a79c6a2fc3649e0b4ed14b4a242880d814f8b3f34ccd9e44ced25dc  docs/data/issue73_20260921/slot0100/original_card_at_freeze.md
+39e2968d51508751aeb0e0730ac362512cb3ad60bcdf87f649a27b93971d7e95  docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md
+e0dbdd43370d7031b0522b39b0775ae782c885f57295b75a95ff9fad755ddf46  docs/data/issue73_20260920/daytime/statement_audit_draft.md
+3fef8faecaafa8accc15edb96d775b456652f76b087ad91540d3733da208d307  docs/data/issue73_20260921/slot0100/core_signatures.txt
+```
+
+## Reproduction programs and frozen finite evidence
+
+```text
+50b0e26f6a878e0c7ae229303026469a4f13c4fc0a21ee5b1ac591164145aea7  experiments/issue73_20260920/baseline_q_w.py
+9144ef8424b2abe45d0f6f67ddc5ca55764bdb973f4c7822833d54a5f5aeca39  experiments/issue73_20260920/short_owner_future.py
+71de0791c575cebe9670bbbecbd7872b76adb4fbb2e804b5a5563805bc00e2e3  experiments/issue73_20260920/short_owner_holdout.py
+817c486fc2fd979ec0fa6f8a1f2374e6d35dc59a5f85c28e76da6b865a3c9365  experiments/issue73_20260920/verify_short_owner_holdout.py
+d8e2db121826c30990cd193b391ab7a084d8cfb96af855e51aed372705700e34  docs/data/issue73_20260920/daytime/holdout.jsonl
+b8c4f3781d05189922c0e0a312a97cffb799a5758ea5918536ad3b74471a6887  docs/data/issue73_20260920/daytime/holdout_independent_algorithm.jsonl
+```
+
+The p=32/33 holdout is already used evidence. Its second implementation is a same-author
+algorithmic cross-check, not an independent-agent audit.
+
+## Explicitly non-core working-tree candidates
+
+```text
+21a41d3f06948dd97cfabbcb1df880e0a86679694c79cf3aa2cb1dd85840668e  docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md
+cf7cd47ff31d451d8d242e80373fb15a95666308ed30149b33b46b45722dce02  docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md
+a85e406c648131011c20a689cf79d52b77424867e485f974ea2c48b2422e9fd6  docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md
+3ad887aff9cf89b84471de4a8f85b62cb8abe5d411455e3c085e8e0cb1771b16  docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md
+a9540f5f891198ec91eefd73f62f9e35d4e59f645936dc3a349504e529b325de  Recaman/SS2OldestPattern.lean
+```

@@ -1,0 +1,65 @@
+Parent preservation check, 2026-09-20 02:30 slot. No mathematical recomputation.
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+command: shasum -a 256 -c docs/data/issue73_20260920/SHA256SUMS
+experiments/issue73_20260920/baseline_q_w.py: OK
+docs/data/issue73_20260920/baseline_q_w.txt: OK
+docs/data/issue73_20260920/baseline_q_w_p1_11.txt: OK
+docs/data/issue73_20260920/baseline_q_w_p1_15_timeout.txt: OK
+docs/data/issue73_20260920/existing_verify_witnesses.txt: OK
+docs/data/issue73_20260920/slot0100_worker.md: OK
+docs/data/issue73_20260920/V1_INVALIDATED.md: OK
+exit: 0
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+command: shasum -a 256 -c docs/data/issue73_20260920/slot0130/SHA256SUMS
+experiments/issue73_20260920/baseline_q_w.py: OK
+experiments/issue73_20260920/falsification_gate.py: OK
+experiments/issue73_20260920/test_falsification_gate.py: OK
+docs/data/issue73_20260920/slot0130/report.md: OK
+docs/data/issue73_20260920/slot0130/falsification_gate.log: OK
+docs/data/issue73_20260920/slot0130/reject_drop-ss2.log: OK
+docs/data/issue73_20260920/slot0130/reject_drop-tightness.log: OK
+docs/data/issue73_20260920/slot0130/reject_empty-target.log: OK
+docs/data/issue73_20260920/slot0130/reject_incomplete-output.log: OK
+docs/data/issue73_20260920/slot0130/reject_inject-violation.log: OK
+docs/data/issue73_20260920/slot0130/reject_timeout.log: OK
+docs/data/issue73_20260920/slot0130/reject_wrong-oldest-offset.log: OK
+docs/data/issue73_20260920/slot0130/test_falsification_gate.log: OK
+exit: 0
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+command: shasum -a 256 -c docs/data/issue73_20260920/slot0200/SHA256SUMS
+docs/data/issue73_20260920/slot0200/entry_proposal.md: OK
+docs/data/issue73_20260920/slot0200/worker_raw_v1.jsonl: OK
+docs/data/issue73_20260920/slot0200/worker_raw_v2.jsonl: OK
+docs/data/issue73_20260920/slot0200/repair_note.md: OK
+docs/data/issue73_20260920/slot0200/worker_report.md: OK
+experiments/issue73_20260920/w_partial_u_probe.py: OK
+exit: 0
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+command: shasum -a 256 -c docs/adversarial_audits/H-20260917-01_20260920_0100_files/SHA256SUMS
+docs/adversarial_audits/H-20260917-01_20260920_0100_files/check_qw.py: OK
+docs/adversarial_audits/H-20260917-01_20260920_0100_files/validate_v2_controls.py: OK
+docs/adversarial_audits/H-20260917-01_20260920_0100_files/validate_v2_controls.txt: OK
+docs/adversarial_audits/H-20260917-01_20260920_0100_files/weak_w_tightness_only.py: OK
+docs/adversarial_audits/H-20260917-01_20260920_0100_files/weak_w_tightness_only.txt: OK
+docs/adversarial_audits/H-20260917-01_20260920_0100_output.txt: OK
+exit: 0
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+command: shasum -a 256 -c docs/adversarial_audits/H-20260917-01_20260920_0130_files/SHA256SUMS
+docs/adversarial_audits/H-20260917-01_20260920_0130_files/audit_report.md: OK
+docs/adversarial_audits/H-20260917-01_20260920_0130_files/audit_attack.py: OK
+docs/adversarial_audits/H-20260917-01_20260920_0130_files/audit_attack_output.txt: OK
+exit: 0
+
+workdir: /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/adversarial_audits/H-20260917-01_20260920_0200_files
+command: shasum -a 256 -c SHA256SUMS
+audit_report.md: OK
+verify_witness.py: OK
+independent_output.txt: OK
+producer_rerun.jsonl: OK
+producer_rerun.stderr: OK
+exit: 0

@@ -1,0 +1,43 @@
+Recaman.ShortTightDonorAvoidance.exists_minimal_p2_prefix (e : Int → Bool) (t : Int) (d : Nat)
+  (hP : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e t d)) :
+  ∃ m,
+    m ≤ d ∧
+      Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e t m) ∧
+        ∀ (k : Nat), k < m → 0 < k → ¬Recaman.LeadingRunSupply.P2 (List.take k (Recaman.LeadingRunSupply.past e t m))
+Recaman.ShortTightDonorAvoidance.neighborhood_prefix_sublist (e : Int → Bool) (p : Nat) (B : List Nat)
+  (m lag : Nat → Nat) (hle : ∀ (b : Nat), b ∈ B → m b ≤ lag b) :
+  (Recaman.TwoSSTightDisjoint.neighborhood e p B m).Sublist (Recaman.TwoSSTightDisjoint.neighborhood e p B lag)
+Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (m lag : Nat → Nat) (hBn : B.Nodup)
+  (hBp : ∀ (b : Nat), b ∈ B → b < p) (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hle : ∀ (b : Nat), b ∈ B → m b ≤ lag b)
+  (hbound : ∀ (b : Nat), b ∈ B → lag b ≤ 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (m b)))
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) :
+  Recaman.TwoSSTightDisjoint.neighborhood e p B m = Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) (hBp : ∀ (b : Nat), b ∈ B → b < p)
+  (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hbound : ∀ (b : Nat), b ∈ B → lag b ≤ 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (lag b))) (u0 : Int)
+  (hPdon : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e u0 11))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e u0 11) = 2) :
+  ¬Recaman.SharpPeriodicSupply.phase p
+        (u0 - ↑(Recaman.LagSevenDonorCoverage.oldestOffset (Recaman.LeadingRunSupply.past e u0 11))) ∈
+      Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+  (hBp : ∀ (b : Nat), b ∈ B → b < p) (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hbound : ∀ (b : Nat), b ∈ B → lag b ≤ 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (lag b))) (u0 : Int)
+  (hPdon : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e u0 11))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e u0 11) = 2) :
+  B.length ≤
+    (Recaman.TwoSSTightDisjoint.deletedNeighborhood e p B lag
+        (Recaman.SharpPeriodicSupply.phase p
+          (u0 - ↑(Recaman.LagSevenDonorCoverage.oldestOffset (Recaman.LeadingRunSupply.past e u0 11))))).length
+'Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/tmp/recaman-audit-20260921-0130-sol/work/independent_controls.py", line 175, in <module>
+    "q_positive": case("SSAASAAA", [2]),
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "/tmp/recaman-audit-20260921-0130-sol/work/independent_controls.py", line 132, in case
+    "N": neighborhood(supply, subset),
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/tmp/recaman-audit-20260921-0130-sol/work/independent_controls.py", line 77, in neighborhood
+    covered.update(supply[phase]["covered"])
+                   ~~~~~~^^^^^^^
+KeyError: 2
+
+EXIT_CODE=1

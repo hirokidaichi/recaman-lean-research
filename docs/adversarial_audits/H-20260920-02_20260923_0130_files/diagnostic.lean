@@ -1,0 +1,9 @@
+import Recaman.ShortTightDonorAvoidance
+
+#check Recaman.ShortTightDonorAvoidance.ss2_oldest_cover_table
+#check Recaman.ShortTightDonorAvoidance.w1_future_aas_member
+#check Recaman.ShortTightDonorAvoidance.owner_member_avoids_ss2_window
+#check Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.ss2_oldest_cover_table
+#print axioms Recaman.ShortTightDonorAvoidance.owner_member_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window

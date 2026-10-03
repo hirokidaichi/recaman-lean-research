@@ -1,0 +1,16 @@
+ℹ [95/110] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+✖ [110/110] Building Recaman.ShortTightDonorAvoidance (20s)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/ShortTightDonorAvoidance.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ShortTightDonorAvoidance.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ShortTightDonorAvoidance.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ShortTightDonorAvoidance.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ShortTightDonorAvoidance.setup.json --json
+error: Recaman/ShortTightDonorAvoidance.lean:334:11: Unknown identifier `Recaman.SSGapBudget.ssCount`
+error: Recaman/ShortTightDonorAvoidance.lean:363:11: Unknown identifier `Recaman.SSGapBudget.ssCount`
+error: Recaman/ShortTightDonorAvoidance.lean:365:16: Unknown identifier `Recaman.TwoSSLocalDonation.deletedNeighborhood`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.ShortTightDonorAvoidance
+error: build failed

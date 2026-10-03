@@ -1,0 +1,44 @@
+ℹ [95/111] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+✖ [111/111] Building Recaman.SS2OldestPattern (398ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/SS2OldestPattern.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.setup.json --json
+error: Recaman/SS2OldestPattern.lean:197:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (↑(x ++ [true]).length + 3) * ↑(n + 1)
+in the target expression
+  moment (x ++ [true]) + ↑(x ++ [true]).length + (↑(x ++ [true]).length + ↑(0 + 1 + 1 + 1)) * ↑(n + 1) +
+      moment (List.replicate (n + 1) true) =
+    0
+
+case succ
+x : List Bool
+ha : P2 OwnerFamilyLagEleven.aas
+hsx : ssCount (x ++ [true]) ≤ 2
+n : Nat
+hP : P2 (x ++ [true] ++ OwnerFamilyLagEleven.aas ++ List.replicate (n + 1) true)
+hss : ssCount (x ++ [true] ++ OwnerFamilyLagEleven.aas ++ List.replicate (n + 1) true) ≤ 2
+hdata :
+  mass (x ++ [true]) = -↑(n + 1) ∧
+    moment (x ++ [true]) + ↑(x ++ [true]).length +
+          (↑(x ++ [true]).length + ↑OwnerFamilyLagEleven.aas.length) * ↑(n + 1) +
+        moment (List.replicate (n + 1) true) =
+      0
+hbound : ↑2 + 1 ≤ moment (x ++ [true]) + ↑2 * ↑(x ++ [true]).length
+hM :
+  moment (x ++ [true]) + ↑(x ++ [true]).length + (↑(x ++ [true]).length + ↑(0 + 1 + 1 + 1)) * ↑(n + 1) +
+      moment (List.replicate (n + 1) true) =
+    0
+hn : 0 ≤ moment (List.replicate (n + 1) true)
+hprod : 0 ≤ (↑(x ++ [true]).length + 3) * ↑n
+heq : (↑(x ++ [true]).length + 3) * ↑(n + 1) = (↑(x ++ [true]).length + 3) * ↑n + ↑(x ++ [true]).length + 3
+⊢ ∃ u v,
+    x ++ [true] ++ OwnerFamilyLagEleven.aas ++ List.replicate (n + 1) true = u ++ [false] ++ v ∧
+      P2 (u ++ [false]) ∧ v ≠ []
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.SS2OldestPattern
+error: build failed

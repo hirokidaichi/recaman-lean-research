@@ -1,0 +1,6 @@
+status=INCOMPLETE
+command=python3 experiments/issue73_20260920/baseline_q_w.py | tee docs/data/issue73_20260920/baseline_q_w.txt
+declared_range=p=1..15, all positive-sign-sum words, original probe used least P2 lag 1<=d<p(p+1), full U, all-subset Hall, all tight B
+stop=manual SIGINT after 60 seconds (two 30-second waits), exit 130
+stdout=empty because the original run was pipe-buffered before the later flush fix
+interpretation=not a pass, not a counterexample, not holdout evidence; exclusive-bound bug fixed before completed recovery run

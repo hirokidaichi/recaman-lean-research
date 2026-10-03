@@ -1,0 +1,8 @@
+import Recaman.SS2OldestPattern
+
+#check Recaman.SS2OldestPattern.moment_ending_A_budget
+#check Recaman.SS2OldestPattern.moment_ending_AA_ss2
+#check Recaman.SS2OldestPattern.ss2_intervening_prefix
+#print axioms Recaman.SS2OldestPattern.moment_ending_A_budget
+#print axioms Recaman.SS2OldestPattern.moment_ending_AA_ss2
+#print axioms Recaman.SS2OldestPattern.ss2_intervening_prefix

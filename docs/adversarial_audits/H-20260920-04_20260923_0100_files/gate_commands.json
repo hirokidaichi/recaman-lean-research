@@ -1,0 +1,66 @@
+[
+  {
+    "name": "vacuity",
+    "argv": [
+      "python3",
+      "scripts/report_vacuity.py",
+      "--all",
+      "Recaman/ShortTightDonorAvoidance.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 45,
+    "started_unix": 1790093070.851577,
+    "elapsed_seconds": 0.020663022994995117,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "4819f18ffb3d214ab282d12aa331dd219304e24f238cb95049e6c4861a5877aa",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "lint",
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/ShortTightDonorAvoidance.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 45,
+    "started_unix": 1790093070.8722959,
+    "elapsed_seconds": 0.022481203079223633,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "866eed174d0505be7c3f717057af2a3c20b8209db9a63c211a477cafccca4350",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "statement_audit_registry",
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--check-registry"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 45,
+    "started_unix": 1790093070.8948119,
+    "elapsed_seconds": 0.17884206771850586,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "edb4e8ea985eba979350e418818171b3838f3a361567436ea30254db204aaf56",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "full_check",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "timeout_seconds": 480,
+    "started_unix": 1790093071.073698,
+    "elapsed_seconds": 6.590667009353638,
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "731831344cdaed789feafee51247eef376b2ea956c108df3dd751b7a6aa2b519",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

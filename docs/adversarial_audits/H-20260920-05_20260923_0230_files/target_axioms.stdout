@@ -1,0 +1,13 @@
+Recaman.SS2OldestPattern.moment_ending_A_budget (w : List Bool) (q : Nat)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true]) ≤ q) :
+  ↑q + 1 ≤ Recaman.LeadingRunSupply.moment (w ++ [true]) + ↑q * ↑(w ++ [true]).length
+Recaman.SS2OldestPattern.moment_ending_AA_ss2 (w : List Bool)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true, true]) ≤ 2) :
+  5 ≤ Recaman.LeadingRunSupply.moment (w ++ [true, true]) + ↑(w ++ [true, true]).length
+Recaman.SS2OldestPattern.ss2_intervening_prefix (w : List Bool) (hm : Recaman.LeadingRunSupply.mass (w ++ [true]) = 0)
+  (hM : Recaman.LeadingRunSupply.moment (w ++ [true]) + ↑(w ++ [true]).length ≤ 0)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true]) ≤ 2) :
+  ∃ u v, w ++ [true] = u ++ [false] ++ v ∧ Recaman.LeadingRunSupply.P2 (u ++ [false]) ∧ v ≠ []
+'Recaman.SS2OldestPattern.moment_ending_A_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.SS2OldestPattern.moment_ending_AA_ss2' depends on axioms: [propext, Quot.sound]
+'Recaman.SS2OldestPattern.ss2_intervening_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]

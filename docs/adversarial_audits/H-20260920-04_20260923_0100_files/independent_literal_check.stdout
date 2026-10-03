@@ -1,0 +1,372 @@
+{
+  "B": [
+    3
+  ],
+  "B_current": [
+    "A"
+  ],
+  "B_local_hall": true,
+  "B_minimal": [
+    true
+  ],
+  "B_p2": [
+    true
+  ],
+  "B_words": [
+    "AAS"
+  ],
+  "N": [
+    0
+  ],
+  "current_A_count": 9,
+  "current_A_phases": [
+    1,
+    2,
+    3,
+    7,
+    9,
+    11,
+    13,
+    14,
+    15
+  ],
+  "deleted_N": [],
+  "deletion_hall": false,
+  "donor": 15,
+  "donor_current": "A",
+  "donor_mass": 1,
+  "donor_moment": 0,
+  "donor_p2": true,
+  "donor_past15": "AASASASASSSAAAS",
+  "donor_ss2": 2,
+  "fixed_offset11_avoidance": true,
+  "fixed_offset11_deleted_N": [
+    0
+  ],
+  "fixed_offset11_deletion_hall": true,
+  "fixed_offset11_phase": 4,
+  "full_U": [
+    1,
+    3,
+    11,
+    15
+  ],
+  "full_U_bound": 272,
+  "hall_all": true,
+  "hall_rows": [
+    {
+      "holds": true,
+      "members": [],
+      "neighborhood": []
+    },
+    {
+      "holds": true,
+      "members": [
+        1
+      ],
+      "neighborhood": [
+        0,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        3
+      ],
+      "neighborhood": [
+        0
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        11
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        15
+      ],
+      "neighborhood": [
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        3
+      ],
+      "neighborhood": [
+        0,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        11
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        15
+      ],
+      "neighborhood": [
+        0,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        3,
+        11
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        3,
+        15
+      ],
+      "neighborhood": [
+        0,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        11,
+        15
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        3,
+        11
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        3,
+        15
+      ],
+      "neighborhood": [
+        0,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        11,
+        15
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        3,
+        11,
+        15
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "holds": true,
+      "members": [
+        1,
+        3,
+        11,
+        15
+      ],
+      "neighborhood": [
+        0,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12
+      ]
+    }
+  ],
+  "hall_subsets": 16,
+  "least_lags": {
+    "1": 11,
+    "3": 3,
+    "11": 39,
+    "15": 3
+  },
+  "literal": "SAAASSSASASASAAA",
+  "oldest_in_N": true,
+  "oldest_offset": 15,
+  "oldest_phase": 0,
+  "period": 16,
+  "period_mass": 2,
+  "period_mass_backward": 2,
+  "periodic_sample": true,
+  "proper_p2_prefixes": [
+    3
+  ],
+  "proper_prefix_data": [
+    {
+      "d": 1,
+      "mass": 1,
+      "moment": 1
+    },
+    {
+      "d": 2,
+      "mass": 2,
+      "moment": 3
+    },
+    {
+      "d": 3,
+      "mass": 1,
+      "moment": 0
+    },
+    {
+      "d": 4,
+      "mass": 2,
+      "moment": 4
+    },
+    {
+      "d": 5,
+      "mass": 1,
+      "moment": -1
+    },
+    {
+      "d": 6,
+      "mass": 2,
+      "moment": 5
+    },
+    {
+      "d": 7,
+      "mass": 1,
+      "moment": -2
+    },
+    {
+      "d": 8,
+      "mass": 2,
+      "moment": 6
+    },
+    {
+      "d": 9,
+      "mass": 1,
+      "moment": -3
+    },
+    {
+      "d": 10,
+      "mass": 0,
+      "moment": -13
+    },
+    {
+      "d": 11,
+      "mass": -1,
+      "moment": -24
+    },
+    {
+      "d": 12,
+      "mass": 0,
+      "moment": -12
+    },
+    {
+      "d": 13,
+      "mass": 1,
+      "moment": 1
+    },
+    {
+      "d": 14,
+      "mass": 2,
+      "moment": 15
+    }
+  ],
+  "supplied_phase_count": 4,
+  "tight": true
+}

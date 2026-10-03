@@ -1,0 +1,15 @@
+HAND-EDITED SUMMARY; NOT RAW COMMAND OUTPUT
+COMMAND: ./scripts/check.sh
+TIMEOUT: 180 seconds maximum (completed before timeout)
+EXIT: 0
+Module graph audit: Recaman root reaches 389 of 389 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 360 entries, 155 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 11 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+Build completed successfully (392 jobs).
+Axiom audit: 2572 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+
+This was originally mislabeled `full_check.log`; it omitted the middle axiom replay. It is preserved
+as a rejected raw artifact and relabeled as a summary before final handoff.
