@@ -734,6 +734,12 @@ the Recamán sequence.
 - **E-362（`PROVED-LEAN`、`Recaman.P2SubtractionLevelSum`）**：任意の P2 窓（最小性・lag 上限なし）で、S の高さ（窓の始点からの符号和＝
   メンバー水準 h_b = F(b) − 1 から測った下り段の上端）の和は (L − 3)/4。系として、全 S が水準以下にある P2 窓は AAS だけで、lag ≥ 7 の P2 窓は
   水準より真に上の S を必ず持つ（`past_exists_high_subtraction`）。窓 1 本の恒等式で、閉包・Hall・周期性には触れない。
+- **E-363（`PROVED-LEAN`、`Recaman.P2WindowLengthBounds`）**：長さ L ≥ 11 の P2 窓の内側の加算 clock b − j（j ≥ 1）の P2 窓が外側の窓に収まるなら、
+  その長さ d は d + 8 ≤ L（`past_nested_gap`、最小性不要）。ギャップ 4 は mass/moment の一次方程式の有限表（decide）で排除される。L = 7 では
+  w1 の中の AAS がギャップ 4 なので仮定 L ≥ 11 は必要。入れ子の窓の連鎖は 1 段ごとに lag が 8 以上縮む。
+  同じモジュールに E-090 の鏡像 `leading_S_run_bound`（先頭 m 文字が S の P2 語は長さ ≥ 4m + 3、最小性不要）と周期語版を置いた。
+  さらに「ずれた窓」：ずれ ≤ 3 で重なる二つの P2 窓は（新しい方が長さ ≥ 11 で境界が A なら）共存しない（`shifted_p2`）。周期語の形
+  `past_older_crossing`（b − j、j ≤ 3 の加算の窓は b の窓の始点に lag ≤ L で届かない）と `past_newer_shift`（b + u、u ≤ 3 は同じ長さの P2 窓を持たない）。
 - **E-368（`COMPUTED`）**：開いた窓の左右オートマトン（任意の P2 窓、M1・単射・M2 を正確に強制）で、窓長 ≤ 11 なら同時に開く窓の制限なしに、
   有限閉包は常に保留窓 E ≡ 0 で孤立 AAS と w1 三つ組だけ（10,970,335 状態のうち終端に戻れるのは 11 状態）。窓長 ≤ 15 は同時 ≤ 8 の範囲で同じ（4,286 万状態）。
   Claim P の候補 Lemma OS（E(s₀+1) = 0）の計算証拠。

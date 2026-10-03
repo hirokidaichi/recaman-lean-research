@@ -2726,3 +2726,19 @@ import Recaman
 #print axioms Recaman.P2SubtractionLevelSum.past_exists_high_subtraction
 #print axioms Recaman.P2SubtractionLevelSum.past_sLevelSum
 #print axioms Recaman.P2SubtractionLevelSum.past_eq_aas_of_low_subtractions
+
+-- Nested P2 windows (every lag): a P2 sub-window starting right after an addition inside a P2 window
+-- of length >= 11 leaves a gap >= 8 (gap 4 is impossible; it occurs only at length 7).
+#print axioms Recaman.P2WindowLengthBounds.gapFour_table
+#print axioms Recaman.P2WindowLengthBounds.gap_four_eq
+#print axioms Recaman.P2WindowLengthBounds.nested_gap
+#print axioms Recaman.P2WindowLengthBounds.past_add
+#print axioms Recaman.P2WindowLengthBounds.past_nested_gap
+#print axioms Recaman.P2WindowLengthBounds.positions_lower
+#print axioms Recaman.P2WindowLengthBounds.leading_S_run_bound
+#print axioms Recaman.P2WindowLengthBounds.past_leading_S_run_bound
+#print axioms Recaman.P2WindowLengthBounds.shift_table
+#print axioms Recaman.P2WindowLengthBounds.shift_eq
+#print axioms Recaman.P2WindowLengthBounds.shifted_p2
+#print axioms Recaman.P2WindowLengthBounds.past_older_crossing
+#print axioms Recaman.P2WindowLengthBounds.past_newer_shift

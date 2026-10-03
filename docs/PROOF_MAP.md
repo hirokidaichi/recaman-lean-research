@@ -1344,3 +1344,31 @@ at the newest member, the newest window is AAS (`past_eq_aas_of_low_subtractions
 property (TOP), the UP-FREE matching property and G1 itself remain unproved; no closure, Hall,
 Gate T6, capacity, actual-orbit or surjectivity edge is added.
 
+## P2 window length bounds: nested gap 8 and leading S runs (E-363)
+
+```text
+v = p ++ w ++ s, P2 v, P2 w, last letter of p is A, |v| >= 11
+  mass/moment of an append -> mass p + mass s = 0,  moment p + moment s + |p| + (|w|+|p|) mass s = 0   (gap_four_eq)
+  |v|, |w| = 3 mod 4 -> |p| + |s| in {4, 8, ...};  |p| + |s| = 4 excluded by a decided finite table   (gapFour_table)
+  -> |p| + |s| >= 8                                                                                    (nested_gap)
+stream form: P2 (past e b L), L >= 11, e (b - j) = A, j + d <= L, P2 (past e (b - j) d) -> d + 8 <= L   (past_nested_gap)
+```
+
+A window of an inner addition that stays inside a long window is at least 8 shorter. Gap 4 occurs at
+length 7 (AAS inside w1), so the bound needs `L >= 11`.
+
+```text
+positions_lower : ones (ones + 1) <= 2 positions          (additions placed first)
+P2 (S^m ++ tail) -> 4m + 3 <= length                       (leading_S_run_bound; mirror of E-090)
+stream form: m newest clocks before b are S, P2 (past e b L) -> 4m + 3 <= L   (past_leading_S_run_bound)
+```
+
+```text
+P2 (p ++ c), P2 (c ++ r) -> mass p = mass r,  moment p - moment r + |p| = (|p|+|c|) mass r      (shift_eq)
+last letter of p = A, 1 <= |p| <= 3, |r| <= |p|, |p ++ c| >= 11 -> False   (shift_table decided; shifted_p2)
+stream forms: past_older_crossing (b - j, j <= 3, window reaching b's window start with lag <= L)
+              past_newer_shift    (b + u, u <= 3, window of the same length L)
+```
+
+No closure, Hall or G1 statement is added.
+

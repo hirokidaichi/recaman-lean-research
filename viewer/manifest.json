@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2728,
+   "lines": 2744,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -35160,6 +35160,104 @@
    "hasReport": false
   },
   {
+   "name": "P2WindowLengthBounds",
+   "lines": 334,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "gapFourOk",
+     "line": 25
+    },
+    {
+     "kind": "def",
+     "name": "wordsUpTo",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_wordsUpTo",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "gapFour_table",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_four_eq",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "nested_gap",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "past_add",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "past_nested_gap",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "positions_lower",
+     "line": 168
+    },
+    {
+     "kind": "theorem",
+     "name": "leading_S_run_bound",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "past_leading_S_run_bound",
+     "line": 210
+    },
+    {
+     "kind": "def",
+     "name": "shiftOk",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "shift_table",
+     "line": 243
+    },
+    {
+     "kind": "theorem",
+     "name": "shift_eq",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "shifted_p2",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "past_older_crossing",
+     "line": 285
+    },
+    {
+     "kind": "theorem",
+     "name": "past_newer_shift",
+     "line": 311
+    }
+   ],
+   "theorems": 14,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PairedSubtractionCoverage",
    "lines": 139,
    "imports": [
@@ -49808,6 +49906,6 @@
    "hasReport": false
   }
  ],
- "total": 390,
+ "total": 391,
  "withReport": 167
 }
