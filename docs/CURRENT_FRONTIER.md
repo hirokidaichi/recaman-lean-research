@@ -751,6 +751,11 @@ the Recamán sequence.
   Back 閉包 `pred_closed_closed`（前任者について閉じた部分列は閉包）、分割補題 `suffix_split_closed`（保留窓 E(z) = 0 ⇒ 始点 ≥ z の
   メンバーは閉包）・`prefix_split_closed`（交差弧 D(z) = 0 ⇒ z 以前のメンバーは閉包）。
   **分類の強帰納で未証明なのは「最新メンバーの所有 S が古いメンバーの窓に入る」場合（Case 2）だけ。**
+- **E-367（`PROVED-LEAN`、`Recaman.PrivateMemberMotifCount`）**：定理 R′（一般位置版）。所有者が v より新しくてもよい場合、数え上げで L ≤ 15、
+  長さ 7/11/15 の有限検査（decide）で、w1 型所有者の最新文字が S なら v の窓は AAS か三つ組の w1（`private_motif_count`）。この条件なしでは
+  L = 11 の構成が実際にある（`eleven_occurs`）。所有 S が私有の任意のメンバーについて帰納の一段が回るので、**分類（と周期語の G1）は
+  Claim P（空でない閉包に被覆数 1 の S がある）に帰着する**（カード 12.〜14.）。この帰着自体も Lean 化した：`motifFull_step`（任意のメンバーでの帰納の一段）と
+  `motifFull_of_private`（**Claim P を仮定 hP として**、全ての閉包が MotifFull＝孤立 AAS と w1 三つ組の局所形）。hP は未証明で、無条件の分類ではない。
 - **E-368（`COMPUTED`）**：開いた窓の左右オートマトン（任意の P2 窓、M1・単射・M2 を正確に強制）で、窓長 ≤ 11 なら同時に開く窓の制限なしに、
   有限閉包は常に保留窓 E ≡ 0 で孤立 AAS と w1 三つ組だけ（10,970,335 状態のうち終端に戻れるのは 11 状態）。窓長 ≤ 15 は同時 ≤ 8 の範囲で同じ（4,286 万状態）。
   Claim P の候補 Lemma OS（E(s₀+1) = 0）の計算証拠。

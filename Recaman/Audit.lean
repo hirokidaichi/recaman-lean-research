@@ -2758,5 +2758,19 @@ import Recaman
 #print axioms Recaman.NewestMemberMotifCount.erase_closed
 #print axioms Recaman.NewestMemberMotifCount.motif_of_erase_newest
 #print axioms Recaman.NewestMemberMotifCount.pred_closed_closed
+
+-- R' (H-20261003-01): a member with a private owned subtraction whose other window subtractions are owned by
+-- motif-shaped members (possibly newer) has window AAS or the w1 word owning its oldest letter; the counting
+-- bound L <= 15 plus finite checks of lengths 7, 11, 15.
+#print axioms Recaman.PrivateMemberMotifCount.adm_length_le
+#print axioms Recaman.PrivateMemberMotifCount.check15
+#print axioms Recaman.PrivateMemberMotifCount.adm_of_config
+#print axioms Recaman.PrivateMemberMotifCount.private_motif_count_le
+#print axioms Recaman.PrivateMemberMotifCount.private_motif_window
+#print axioms Recaman.PrivateMemberMotifCount.private_motif_count
+#print axioms Recaman.PrivateMemberMotifCount.eleven_occurs
+#print axioms Recaman.PrivateMemberMotifCount.not_three_or_seven
+#print axioms Recaman.PrivateMemberMotifCount.motifFull_step
+#print axioms Recaman.PrivateMemberMotifCount.motifFull_of_private
 #print axioms Recaman.NewestMemberMotifCount.suffix_split_closed
 #print axioms Recaman.NewestMemberMotifCount.prefix_split_closed

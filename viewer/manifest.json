@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2762,
+   "lines": 2776,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -41345,6 +41345,269 @@
    "hasReport": true
   },
   {
+   "name": "PrivateMemberMotifCount",
+   "lines": 851,
+   "imports": [
+    "NewestMemberMotifCount"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "getA",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "aasB",
+     "line": 35
+    },
+    {
+     "kind": "def",
+     "name": "w1Base",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "w1Extra",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "w1B",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "admB",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "getA_spec",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "aasB_spec",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "w1B_spec",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "length_le_one_of_eq",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "length_le_filter_succ",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "eq_map_getD",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "adm_length_le",
+     "line": 117
+    },
+    {
+     "kind": "def",
+     "name": "allWords",
+     "line": 366
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_allWords",
+     "line": 370
+    },
+    {
+     "kind": "def",
+     "name": "p2B",
+     "line": 377
+    },
+    {
+     "kind": "theorem",
+     "name": "p2B_of_P2",
+     "line": 379
+    },
+    {
+     "kind": "def",
+     "name": "checkL",
+     "line": 383
+    },
+    {
+     "kind": "theorem",
+     "name": "checkL_sound",
+     "line": 386
+    },
+    {
+     "kind": "def",
+     "name": "W7",
+     "line": 402
+    },
+    {
+     "kind": "def",
+     "name": "W11",
+     "line": 404
+    },
+    {
+     "kind": "theorem",
+     "name": "check7",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "check11",
+     "line": 410
+    },
+    {
+     "kind": "def",
+     "name": "cntA",
+     "line": 413
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_eq_cntA",
+     "line": 417
+    },
+    {
+     "kind": "def",
+     "name": "wordsWith",
+     "line": 423
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_wordsWith",
+     "line": 429
+    },
+    {
+     "kind": "def",
+     "name": "checkK",
+     "line": 440
+    },
+    {
+     "kind": "theorem",
+     "name": "checkK_sound",
+     "line": 443
+    },
+    {
+     "kind": "theorem",
+     "name": "check15",
+     "line": 460
+    },
+    {
+     "kind": "theorem",
+     "name": "admB_false_of",
+     "line": 462
+    },
+    {
+     "kind": "theorem",
+     "name": "w11_not_full",
+     "line": 474
+    },
+    {
+     "kind": "theorem",
+     "name": "getD_past",
+     "line": 478
+    },
+    {
+     "kind": "theorem",
+     "name": "adm_of_config",
+     "line": 482
+    },
+    {
+     "kind": "theorem",
+     "name": "past_length",
+     "line": 588
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_count_le",
+     "line": 592
+    },
+    {
+     "kind": "theorem",
+     "name": "seven_owners",
+     "line": 605
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_window",
+     "line": 637
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_count",
+     "line": 677
+    },
+    {
+     "kind": "def",
+     "name": "cexE",
+     "line": 699
+    },
+    {
+     "kind": "def",
+     "name": "cexM",
+     "line": 700
+    },
+    {
+     "kind": "def",
+     "name": "cexLag",
+     "line": 701
+    },
+    {
+     "kind": "def",
+     "name": "cexOwn",
+     "line": 703
+    },
+    {
+     "kind": "theorem",
+     "name": "eleven_occurs",
+     "line": 708
+    },
+    {
+     "kind": "theorem",
+     "name": "not_three_or_seven",
+     "line": 732
+    },
+    {
+     "kind": "def",
+     "name": "MotifOwnerFull",
+     "line": 756
+    },
+    {
+     "kind": "def",
+     "name": "MotifFull",
+     "line": 759
+    },
+    {
+     "kind": "def",
+     "name": "HasPrivate",
+     "line": 763
+    },
+    {
+     "kind": "theorem",
+     "name": "motifFull_step",
+     "line": 767
+    },
+    {
+     "kind": "theorem",
+     "name": "motifFull_of_private",
+     "line": 830
+    }
+   ],
+   "theorems": 29,
+   "defs": 21,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "QuantumP2Arithmetic",
    "lines": 121,
    "imports": [
@@ -50038,6 +50301,6 @@
    "hasReport": false
   }
  ],
- "total": 393,
+ "total": 394,
  "withReport": 167
 }

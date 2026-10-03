@@ -379,3 +379,4 @@ import Recaman.P2SubtractionLevelSum
 import Recaman.P2WindowLengthBounds
 import Recaman.SuffixHallOwnerMap
 import Recaman.NewestMemberMotifCount
+import Recaman.PrivateMemberMotifCount

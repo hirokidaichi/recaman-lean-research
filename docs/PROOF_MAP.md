@@ -1408,3 +1408,23 @@ Inductive step of the classification "finite closed configurations are unions of
 triples" when the newest member's owned S lies in no other window. The other case (Case 2) and the
 classification itself are not proved.
 
+## R': a member with a private owned S, general position (E-367)
+
+```text
+hypotheses of newest_motif_count without "v newest" (owners may be newer than v)
+-> abstract window test admB (adm_of_config)
+-> counting with boundary loss <= 4: L <= 15                                       (private_motif_count_le)
+-> finite checks of lengths 7, 11 (decide) and 15 (decide +kernel, 6435 words)     (private_motif_window)
+   : L = 3, or L = 7 with the triple owners, or L = 11 with SSAAAAAASSS (occurs: eleven_occurs)
++ w1-type owners have their newest letter S (hw1) -> L = 3 or the triple's w1       (private_motif_count)
+```
+
+```text
+MotifOwnerFull = MotifOwner + newest letter S of a w1-type member; MotifFull = every member MotifOwnerFull
+ClosedConfig M + MotifFull (M.erase w) -> MotifFull M           (motifFull_step, any member w)
+hP : every nonempty closed configuration has a private member  ->  every closed configuration is MotifFull
+                                                                 (motifFull_of_private; erase_closed + induction on |M|)
+```
+
+`motifFull_of_private` is a reduction: its hypothesis hP (Claim P) is not proved. The classification
+and G1 are therefore not proved unconditionally.
