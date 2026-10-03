@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2712,
+   "lines": 2728,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -35027,6 +35027,139 @@
    "hasReport": false
   },
   {
+   "name": "P2SubtractionLevelSum",
+   "lines": 265,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "sLevelSum",
+     "line": 26
+    },
+    {
+     "kind": "def",
+     "name": "aLevelSum",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "sCount",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "level_sum_add",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "level_sum_sub",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_sLevelSum",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_aLevelSum",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "sCount_eq",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_sCount",
+     "line": 82
+    },
+    {
+     "kind": "def",
+     "name": "sLevels",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "sLevels_sum",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "sLevels_length",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_sLevels",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "sum_le_of_forall_le",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "le_sum_of_forall_le",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_exists_low_subtraction",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_three_of_low_subtractions",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_three",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_eq_aas_of_low_subtractions",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_exists_high_subtraction",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "past_drop",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "past_exists_high_subtraction",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "past_sLevelSum",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "past_eq_aas_of_low_subtractions",
+     "line": 254
+    }
+   ],
+   "theorems": 20,
+   "defs": 4,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PairedSubtractionCoverage",
    "lines": 139,
    "imports": [
@@ -49675,6 +49808,6 @@
    "hasReport": false
   }
  ],
- "total": 389,
+ "total": 390,
  "withReport": 167
 }

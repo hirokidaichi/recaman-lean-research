@@ -2710,3 +2710,19 @@ import Recaman
 #print axioms Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window
 #print axioms Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion
 #print axioms Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample
+
+-- Subtraction levels in a P2 window (every lag): heights of the S letters above the window start
+-- sum to (L-3)/4; a P2 word with every S at or below the member level is AAS.
+#print axioms Recaman.P2SubtractionLevelSum.level_sum_add
+#print axioms Recaman.P2SubtractionLevelSum.level_sum_sub
+#print axioms Recaman.P2SubtractionLevelSum.p2_sLevelSum
+#print axioms Recaman.P2SubtractionLevelSum.p2_aLevelSum
+#print axioms Recaman.P2SubtractionLevelSum.p2_sCount
+#print axioms Recaman.P2SubtractionLevelSum.mem_sLevels
+#print axioms Recaman.P2SubtractionLevelSum.p2_exists_low_subtraction
+#print axioms Recaman.P2SubtractionLevelSum.p2_eq_aas_of_low_subtractions
+#print axioms Recaman.P2SubtractionLevelSum.p2_exists_high_subtraction
+#print axioms Recaman.P2SubtractionLevelSum.past_drop
+#print axioms Recaman.P2SubtractionLevelSum.past_exists_high_subtraction
+#print axioms Recaman.P2SubtractionLevelSum.past_sLevelSum
+#print axioms Recaman.P2SubtractionLevelSum.past_eq_aas_of_low_subtractions

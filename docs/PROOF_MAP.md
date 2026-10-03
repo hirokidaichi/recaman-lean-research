@@ -1324,3 +1324,23 @@ windows. Existing `ownerFamily_of_minimal` / `tight_owner_family` are dependency
 results. No arbitrary-lag Gate T6, all-supply capacity, actual-orbit, or Recamán-sequence
 surjectivity edge is added.
 
+## Subtraction levels in a P2 window (E-362)
+
+```text
+newest-first word w, height of letter i = mass (w.drop (i+1))  (= F(clock) - F(window start))
+level_sum_add : Σ heights of A + Σ heights of S = moment - mass
+level_sum_sub : 2 (Σ heights of A - Σ heights of S) = mass^2 - length
+P2 (mass 1, moment 0) -> Σ heights of S = (L-3)/4, Σ heights of A = -(L+1)/4      (p2_sLevelSum, p2_aLevelSum)
+  -> some S at height <= 0                                                      (p2_exists_low_subtraction)
+  -> all S at height <= 0 only for AAS; every other P2 window has an S above the member level
+                                                                                 (p2_eq_aas_of_low_subtractions, p2_exists_high_subtraction)
+stream form on past e b L                                                        (past_sLevelSum, past_exists_high_subtraction,
+                                                                                  past_eq_aas_of_low_subtractions)
+```
+
+The statements concern one window and need neither minimality nor a lag bound. They are tools for the
+general-lag G1 route of H-20261003-01: in a finite closed component whose walk maximum is attained only
+at the newest member, the newest window is AAS (`past_eq_aas_of_low_subtractions`). That walk-maximum
+property (TOP), the UP-FREE matching property and G1 itself remain unproved; no closure, Hall,
+Gate T6, capacity, actual-orbit or surjectivity edge is added.
+
