@@ -1385,3 +1385,26 @@ With E-362 (`past_eq_aas_of_low_subtractions`), the newest window of a finite cl
 as soon as the walk maximum is attained only at the newest member; E-364 shows the maximum exceeds
 that value by at most one. The remaining one-level case, P2, Hall, Gate T6 and G1 are untouched.
 
+## Theorem R: the newest member above a motif configuration (E-366)
+
+```text
+OwnerMap + members are additions + v newest + P2 (past e v L) + own v in the window
++ every other S of v's window owned by a member b != v that is
+    AAS-type (own b = b - 3, A at b-1, b-2)  or  triple-w1-type (own b = b - 7, A at b-5..b-2, S at b-6, AAS sibling b-3 owning b-6)
+-> the S offsets split into AAS-owned (additions s+1, s+2, s+3) and w1-owned (addition s+5, and s+1 AAS-owned)
+-> distinct additions of the window: 3 #AAS + #w1 <= (L+1)/2, #AAS + #w1 = (L-3)/2, #w1 <= #AAS
+-> L <= 7, and L = 7 impossible (a w1 owner needs its S at or before v - 8)  ->  L = 3      (newest_motif_count)
+```
+
+```text
+ClosedConfig (OwnerMap, additions, P2 windows, M2) + own v in no other window -> ClosedConfig (M.erase v)   (erase_closed)
+ClosedConfig + v newest + Motif (M.erase v) -> Motif M  (v is an AAS owning v - 3)                         (motif_of_erase_newest)
+C sublist of M closed under predecessors (own r in W_m, m in C -> r in C) -> ClosedConfig C                 (pred_closed_closed)
+E(z) = 0 (no window started before z owns an S at or after z) -> members with t_b >= z closed            (suffix_split_closed)
+D(z) = 0 (no ownership arc crosses z) -> members at or before z closed                                   (prefix_split_closed)
+```
+
+Inductive step of the classification "finite closed configurations are unions of isolated AAS and w1
+triples" when the newest member's owned S lies in no other window. The other case (Case 2) and the
+classification itself are not proved.
+

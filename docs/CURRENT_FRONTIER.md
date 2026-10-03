@@ -744,6 +744,13 @@ the Recamán sequence.
   S の数 ≤ z より後のメンバーの数（`suffix_hall`）。系として有限閉包の成分の任意の接尾区間の符号和は −1 以上、すなわち F(z) ≤ F(y+1) + 1
   （`suffix_mass_ge`）：成分の歩みの最大値は最新メンバーの値を高々 1 しか超えない。最大値が最新メンバーでだけ達成される（TOP）なら E-362 で
   最新窓は AAS（Claim N）になるので、**Claim N の全 lag 版に残る障害は TOP の 1 段の破れ（上向き所有辺）だけ**。
+- **E-366（`PROVED-LEAN`、`Recaman.NewestMemberMotifCount`）**：定理 R の Lean 化。最新メンバー v の窓が P2 で、窓の own v 以外の S が全て v 以外の
+  メンバーに所有され、v 以外のメンバーが AAS 型か w1 三つ組の w1 型なら、v の窓は AAS（`newest_motif_count`、A の数え上げ）。
+  有限閉包の分類をメンバー数の強帰納で示すとき、最新メンバーの所有 S が他の窓に入らない場合の帰納の一段がこれで Lean 上にある：
+  `erase_closed`（所有 S が私有なら M ∖ {v} も閉包）と `motif_of_erase_newest`（M ∖ {v} が Motif なら M も Motif）、
+  Back 閉包 `pred_closed_closed`（前任者について閉じた部分列は閉包）、分割補題 `suffix_split_closed`（保留窓 E(z) = 0 ⇒ 始点 ≥ z の
+  メンバーは閉包）・`prefix_split_closed`（交差弧 D(z) = 0 ⇒ z 以前のメンバーは閉包）。
+  **分類の強帰納で未証明なのは「最新メンバーの所有 S が古いメンバーの窓に入る」場合（Case 2）だけ。**
 - **E-368（`COMPUTED`）**：開いた窓の左右オートマトン（任意の P2 窓、M1・単射・M2 を正確に強制）で、窓長 ≤ 11 なら同時に開く窓の制限なしに、
   有限閉包は常に保留窓 E ≡ 0 で孤立 AAS と w1 三つ組だけ（10,970,335 状態のうち終端に戻れるのは 11 状態）。窓長 ≤ 15 は同時 ≤ 8 の範囲で同じ（4,286 万状態）。
   Claim P の候補 Lemma OS（E(s₀+1) = 0）の計算証拠。

@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2751,
+   "lines": 2762,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32617,6 +32617,75 @@
    "hasReport": false
   },
   {
+   "name": "NewestMemberMotifCount",
+   "lines": 420,
+   "imports": [
+    "SuffixHallOwnerMap",
+    "P2SubtractionLevelSum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "length_filter_partition",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_eq_filter",
+     "line": 36
+    },
+    {
+     "kind": "def",
+     "name": "MotifOwner",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "newest_motif_count",
+     "line": 52
+    },
+    {
+     "kind": "structure",
+     "name": "ClosedConfig",
+     "line": 292
+    },
+    {
+     "kind": "def",
+     "name": "Motif",
+     "line": 299
+    },
+    {
+     "kind": "theorem",
+     "name": "erase_closed",
+     "line": 304
+    },
+    {
+     "kind": "theorem",
+     "name": "motif_of_erase_newest",
+     "line": 325
+    },
+    {
+     "kind": "theorem",
+     "name": "pred_closed_closed",
+     "line": 370
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_split_closed",
+     "line": 388
+    },
+    {
+     "kind": "theorem",
+     "name": "prefix_split_closed",
+     "line": 405
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "NoDoubleAdditionRun",
    "lines": 54,
    "imports": [
@@ -49969,6 +50038,6 @@
    "hasReport": false
   }
  ],
- "total": 392,
+ "total": 393,
  "withReport": 167
 }

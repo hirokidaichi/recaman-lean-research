@@ -2749,3 +2749,14 @@ import Recaman
 #print axioms Recaman.P2WindowLengthBounds.shifted_p2
 #print axioms Recaman.P2WindowLengthBounds.past_older_crossing
 #print axioms Recaman.P2WindowLengthBounds.past_newer_shift
+
+-- Theorem R (H-20261003-01): below a newest member whose other window subtractions are owned by AAS members
+-- or by the w1 of w1 triples, the window of the newest member is AAS (counting the additions of its window).
+#print axioms Recaman.NewestMemberMotifCount.length_filter_partition
+#print axioms Recaman.NewestMemberMotifCount.ones_eq_filter
+#print axioms Recaman.NewestMemberMotifCount.newest_motif_count
+#print axioms Recaman.NewestMemberMotifCount.erase_closed
+#print axioms Recaman.NewestMemberMotifCount.motif_of_erase_newest
+#print axioms Recaman.NewestMemberMotifCount.pred_closed_closed
+#print axioms Recaman.NewestMemberMotifCount.suffix_split_closed
+#print axioms Recaman.NewestMemberMotifCount.prefix_split_closed
