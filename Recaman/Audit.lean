@@ -2737,6 +2737,13 @@ import Recaman
 #print axioms Recaman.P2WindowLengthBounds.positions_lower
 #print axioms Recaman.P2WindowLengthBounds.leading_S_run_bound
 #print axioms Recaman.P2WindowLengthBounds.past_leading_S_run_bound
+
+-- Suffix Hall for owner maps on the line (every lag): owned subtractions of a suffix are at most the
+-- members after its start; in a finite closed component every suffix has sign sum >= -1.
+#print axioms Recaman.SuffixHallOwnerMap.mem_clocks
+#print axioms Recaman.SuffixHallOwnerMap.suffix_hall
+#print axioms Recaman.SuffixHallOwnerMap.sign_sum_eq
+#print axioms Recaman.SuffixHallOwnerMap.suffix_mass_ge
 #print axioms Recaman.P2WindowLengthBounds.shift_table
 #print axioms Recaman.P2WindowLengthBounds.shift_eq
 #print axioms Recaman.P2WindowLengthBounds.shifted_p2

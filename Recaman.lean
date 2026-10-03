@@ -377,3 +377,4 @@ import Recaman.PeriodicOwnerFamilyLagEleven
 import Recaman.ShortTightDonorAvoidance
 import Recaman.P2SubtractionLevelSum
 import Recaman.P2WindowLengthBounds
+import Recaman.SuffixHallOwnerMap

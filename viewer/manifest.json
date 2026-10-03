@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2744,
+   "lines": 2751,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45126,6 +45126,69 @@
    "hasReport": false
   },
   {
+   "name": "SuffixHallOwnerMap",
+   "lines": 151,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "clocks",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_clocks",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "nodup_map_of_inj",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_nodup",
+     "line": 49
+    },
+    {
+     "kind": "structure",
+     "name": "OwnerMap",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_hall",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_sum_eq",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_succ_left",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_succ_right",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_mass_ge",
+     "line": 122
+    }
+   ],
+   "theorems": 8,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SupplyAncestryCounterexample",
    "lines": 89,
    "imports": [
@@ -49906,6 +49969,6 @@
    "hasReport": false
   }
  ],
- "total": 391,
+ "total": 392,
  "withReport": 167
 }

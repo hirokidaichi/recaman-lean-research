@@ -1372,3 +1372,16 @@ stream forms: past_older_crossing (b - j, j <= 3, window reaching b's window sta
 
 No closure, Hall or G1 statement is added.
 
+## Suffix Hall for owner maps (E-364)
+
+```text
+OwnerMap: members M (nodup), own b in [b - lag b, b - 1], e (own b) = S, own injective on M
+every S of [z, z+n-1] owned  ->  #S[z, z+n-1] <= #{b in M : z < b}                      (suffix_hall)
++ members are additions at or before z + n  ->  sign sum of [z, z+n-1] >= -1             (suffix_mass_ge)
+finite closed component J = [x, y], newest member y+1  ->  F z <= F (y+1) + 1 on [x, y]
+```
+
+With E-362 (`past_eq_aas_of_low_subtractions`), the newest window of a finite closed component is AAS
+as soon as the walk maximum is attained only at the newest member; E-364 shows the maximum exceeds
+that value by at most one. The remaining one-level case, P2, Hall, Gate T6 and G1 are untouched.
+
