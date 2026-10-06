@@ -1,0 +1,12 @@
+All listed validation commands exited 0. Review/read commands are omitted.
+CWD for repository-relative commands:
+/Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research
+
+clang++ -O2 -std=c++17 /tmp/ss2_collision_independent_20261006.cpp -o /tmp/ss2_collision_independent_20261006
+/tmp/ss2_collision_independent_20261006 > /tmp/ss2_collision_independent_20261006.out
+python3 experiments/verify_ss2_collision_pair.py docs/data/ss2_collision_pair_20261006/discovery.jsonl docs/data/ss2_collision_pair_20261006/holdout.jsonl > /tmp/ss2_collision_independent_certificates_20261006.json
+python3 /tmp/recaman-ss2-collision-sol61-20261006/boundary.py > /tmp/ss2_collision_independent_boundary_20261006.out
+cmp /tmp/ss2_collision_independent_boundary_20261006.out /tmp/recaman-ss2-collision-sol61-20261006/boundary.out
+python3 /tmp/ss2-collision-pair-audit-20261006/compare.py /Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research /tmp/ss2-collision-pair-audit-20261006/independent.out > /tmp/ss2-collision-pair-audit-20261006/compare.log
+
+Final artifacts in this directory are copies of the above audit script/output and certificate/boundary replay results. The executable is reproducible from independent.cpp; no binary needs archiving.

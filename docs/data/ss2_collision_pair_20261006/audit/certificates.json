@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "file": "docs/data/ss2_collision_pair_20261006/discovery.jsonl",
+      "sha256": "e2d9c27a731cb15040cd7a72fdc312798e4591caaa8dbba5cb5ff9f6fcdae40b",
+      "summaries": 18,
+      "exact_records_checked": 6
+    },
+    {
+      "file": "docs/data/ss2_collision_pair_20261006/holdout.jsonl",
+      "sha256": "3e2b1df919d4010d920aed4c70c74ca086e0cc53006d2f6ff0701bcea8e94367",
+      "summaries": 4,
+      "exact_records_checked": 10
+    }
+  ],
+  "E133_control": [
+    {
+      "phase": 3,
+      "lag": 11,
+      "ss": 2,
+      "oldest": 9,
+      "tail_A": 1,
+      "neighbors_mask": 59904,
+      "word": "AAASSSASASA"
+    },
+    {
+      "phase": 12,
+      "lag": 19,
+      "ss": 2,
+      "oldest": 9,
+      "tail_A": 0,
+      "neighbors_mask": 60048,
+      "word": "SASASAASAAAASSSASAS"
+    }
+  ],
+  "verifier_sha256": "d016fff233909a2cea0e678c95ccd73d5da9e15ed990227cea2edbe50e427263"
+}
