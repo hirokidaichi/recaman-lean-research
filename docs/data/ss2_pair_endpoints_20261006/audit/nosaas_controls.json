@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "name": "p22",
+      "p": 22,
+      "period": "ASAAAAASASASASASASASSS",
+      "mass": 2,
+      "cyclic_NoSAAS": true,
+      "donors": [
+        {
+          "phase": 5,
+          "lag": 19,
+          "word": "AAASASSSASASASASASA",
+          "P2_prefixes": [
+            19
+          ],
+          "ss": 2,
+          "sigma": 9,
+          "tail": 1
+        },
+        {
+          "phase": 18,
+          "lag": 31,
+          "word": "SASASASASASAAAAASASSSASASASASAS",
+          "P2_prefixes": [
+            31
+          ],
+          "ss": 2,
+          "sigma": 9,
+          "tail": 0
+        }
+      ],
+      "X": "SASASASASASAA",
+      "clean_source": 4
+    },
+    {
+      "name": "p33",
+      "p": 33,
+      "period": "SASASSSAAAASASASASASASASASASASAAA",
+      "mass": 3,
+      "cyclic_NoSAAS": true,
+      "donors": [
+        {
+          "phase": 10,
+          "lag": 11,
+          "word": "AAASSSASASA",
+          "P2_prefixes": [
+            11
+          ],
+          "ss": 2,
+          "sigma": 0,
+          "tail": 1
+        },
+        {
+          "phase": 31,
+          "lag": 31,
+          "word": "ASASASASASASASASASASAAAASSSASAS",
+          "P2_prefixes": [
+            31
+          ],
+          "ss": 2,
+          "sigma": 0,
+          "tail": 0
+        }
+      ],
+      "X": "ASASASASASASASASASASA",
+      "clean_source": 32
+    }
+  ]
+}

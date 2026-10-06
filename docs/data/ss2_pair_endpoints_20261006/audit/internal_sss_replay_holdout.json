@@ -1,0 +1,338 @@
+{
+  "protocol": "H-20261006-03",
+  "phase": "holdout",
+  "status": "PASS",
+  "source_sha256": "3dfcc73a5fd1928ef4afa3aa01f4e9b72ac12c2d24cec0632bc51302f41db56a",
+  "models": [
+    {
+      "name": "remaining_family_r1",
+      "p": 72,
+      "period": "SSSASASASASAAASASASASASASASASASASASASASASAAASASASASASASASASASASASASASASA",
+      "mass": 2,
+      "NoSAAS": true,
+      "donors": [
+        {
+          "phase": 42,
+          "lag": 43,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 1,
+          "neighbors_mask": 1466015499607,
+          "word": "ASASASASASASASASASASASASASASAAASASASASASSSA"
+        },
+        {
+          "phase": 71,
+          "lag": 71,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 0,
+          "neighbors_mask": 1574122156558501889367,
+          "word": "SASASASASASASASASASASASASASAAASASASASASASASASASASASASASASAAASASASASASSS"
+        }
+      ],
+      "C": "ASASASASASASASASASASASASASASAAASASASASASSS",
+      "X": "SASASASASASASASASASASASASASAA",
+      "s": 0,
+      "q": 0,
+      "oldest_phase": 0,
+      "SSS_first_phase": 0,
+      "lowSS_endpoint_phases": [
+        4,
+        10,
+        16,
+        22,
+        28,
+        34,
+        40
+      ],
+      "uncovered_phases": [
+        0,
+        1,
+        2,
+        6,
+        8,
+        14,
+        18,
+        20,
+        24,
+        26,
+        30,
+        32,
+        36,
+        38,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 13,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 10,
+          "tail_A": 0,
+          "neighbors_mask": 1024,
+          "word": "AAS"
+        },
+        {
+          "phase": 15,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 4,
+          "tail_A": 0,
+          "neighbors_mask": 17744,
+          "word": "SAAASASASAS"
+        },
+        {
+          "phase": 43,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 40,
+          "tail_A": 0,
+          "neighbors_mask": 1099511627776,
+          "word": "AAS"
+        },
+        {
+          "phase": 45,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 34,
+          "tail_A": 0,
+          "neighbors_mask": 19052474925056,
+          "word": "SAAASASASAS"
+        },
+        {
+          "phase": 47,
+          "lag": 19,
+          "ss": 0,
+          "oldest": 28,
+          "tail_A": 0,
+          "neighbors_mask": 89426856247296,
+          "word": "SASAAASASASASASASAS"
+        },
+        {
+          "phase": 49,
+          "lag": 27,
+          "ss": 0,
+          "oldest": 22,
+          "tail_A": 0,
+          "neighbors_mask": 370901921038336,
+          "word": "SASASAAASASASASASASASASASAS"
+        },
+        {
+          "phase": 51,
+          "lag": 35,
+          "ss": 0,
+          "oldest": 16,
+          "tail_A": 0,
+          "neighbors_mask": 1496801829257216,
+          "word": "SASASASAAASASASASASASASASASASASASAS"
+        }
+      ]
+    },
+    {
+      "name": "remaining_family_r2",
+      "p": 112,
+      "period": "SSSASASASASASASASAAASASASASASASASASASASASASASASASASASASASASASASASAAASASASASASASASASASASASASASASASASASASASASASASA",
+      "mass": 2,
+      "NoSAAS": true,
+      "donors": [
+        {
+          "phase": 66,
+          "lag": 67,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 1,
+          "neighbors_mask": 24595658764945806679,
+          "word": "ASASASASASASASASASASASASASASASASASASASASASASASAAASASASASASASASASSSA"
+        },
+        {
+          "phase": 111,
+          "lag": 111,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 0,
+          "neighbors_mask": 1730765619511535422533870604604759,
+          "word": "SASASASASASASASASASASASASASASASASASASASASASAAASASASASASASASASASASASASASASASASASASASASASASASAAASASASASASASASASSS"
+        }
+      ],
+      "C": "ASASASASASASASASASASASASASASASASASASASASASASASAAASASASASASASASASSS",
+      "X": "SASASASASASASASASASASASASASASASASASASASASASAA",
+      "s": 0,
+      "q": 0,
+      "oldest_phase": 0,
+      "SSS_first_phase": 0,
+      "lowSS_endpoint_phases": [
+        4,
+        10,
+        16,
+        22,
+        28,
+        34,
+        40,
+        46,
+        52,
+        58,
+        64
+      ],
+      "uncovered_phases": [
+        0,
+        1,
+        2,
+        6,
+        8,
+        12,
+        14,
+        20,
+        24,
+        26,
+        30,
+        32,
+        36,
+        38,
+        42,
+        44,
+        48,
+        50,
+        54,
+        56,
+        60,
+        62,
+        68,
+        70,
+        72,
+        74,
+        76,
+        78,
+        80,
+        82,
+        84,
+        86,
+        88,
+        90,
+        92,
+        94,
+        96,
+        98,
+        100,
+        102,
+        104,
+        106,
+        108,
+        110
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 19,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 16,
+          "tail_A": 0,
+          "neighbors_mask": 65536,
+          "word": "AAS"
+        },
+        {
+          "phase": 21,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 10,
+          "tail_A": 0,
+          "neighbors_mask": 1135616,
+          "word": "SAAASASASAS"
+        },
+        {
+          "phase": 23,
+          "lag": 19,
+          "ss": 0,
+          "oldest": 4,
+          "tail_A": 0,
+          "neighbors_mask": 5330256,
+          "word": "SASAAASASASASASASAS"
+        },
+        {
+          "phase": 67,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 64,
+          "tail_A": 0,
+          "neighbors_mask": 18446744073709551616,
+          "word": "AAS"
+        },
+        {
+          "phase": 69,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 58,
+          "tail_A": 0,
+          "neighbors_mask": 319647487152248324096,
+          "word": "SAAASASASAS"
+        },
+        {
+          "phase": 71,
+          "lag": 19,
+          "ss": 0,
+          "oldest": 52,
+          "tail_A": 0,
+          "neighbors_mask": 1500333683461834407936,
+          "word": "SASAAASASASASASASAS"
+        },
+        {
+          "phase": 73,
+          "lag": 27,
+          "ss": 0,
+          "oldest": 46,
+          "tail_A": 0,
+          "neighbors_mask": 6222701644075107352576,
+          "word": "SASASAAASASASASASASASASASAS"
+        },
+        {
+          "phase": 75,
+          "lag": 35,
+          "ss": 0,
+          "oldest": 40,
+          "tail_A": 0,
+          "neighbors_mask": 25112167598643432390656,
+          "word": "SASASASAAASASASASASASASASASASASASAS"
+        },
+        {
+          "phase": 77,
+          "lag": 43,
+          "ss": 0,
+          "oldest": 34,
+          "tail_A": 0,
+          "neighbors_mask": 100670031324918533062656,
+          "word": "SASASASASAAASASASASASASASASASASASASASASASAS"
+        },
+        {
+          "phase": 79,
+          "lag": 51,
+          "ss": 0,
+          "oldest": 28,
+          "tail_A": 0,
+          "neighbors_mask": 402901486228581463883776,
+          "word": "SASASASASASAAASASASASASASASASASASASASASASASASASASAS"
+        },
+        {
+          "phase": 81,
+          "lag": 59,
+          "ss": 0,
+          "oldest": 22,
+          "tail_A": 0,
+          "neighbors_mask": 1611827305843210726670336,
+          "word": "SASASASASASASAAASASASASASASASASASASASASASASASASASASASASASAS"
+        }
+      ]
+    }
+  ]
+}

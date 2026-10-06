@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "period_summaries": 22,
+  "all_pair_endpoint_sets": 24,
+  "minimum_uncovered": 5,
+  "NoSAAS_pairs_p1_22": 1,
+  "p33": {
+    "period": "SASASSSAAAASASASASASASASASASASAAA",
+    "mass": 3,
+    "cyclic_NoSAAS": true,
+    "donors": [
+      {
+        "phase": 10,
+        "lag": 11,
+        "word": "AAASSSASASA",
+        "P2_prefixes": [
+          11
+        ],
+        "SS": 2,
+        "oldest_offset": 10
+      },
+      {
+        "phase": 31,
+        "lag": 31,
+        "word": "ASASASASASASASASASASAAAASSSASAS",
+        "P2_prefixes": [
+          31
+        ],
+        "SS": 2,
+        "oldest_offset": 31
+      }
+    ],
+    "distinct_clean_source": 32
+  }
+}

@@ -15,6 +15,14 @@ E-368 後の次の候補は、最古 S が衝突する二つの SS=2 最小窓�
 [カード](HYPOTHESIS_CARD_2026-10-06_SS2_COLLISION_PAIR.md)と
 [再現記録](data/ss2_collision_pair_20261006/README.md)に証拠・再開条件を保存した。
 
+同日後半、具体的な第二 S の端点排除を得て部分場合を再開した。
+**NoSAAS の下で、SS2 の二辺が一つの SSS run にある衝突対の局所容量は
+PROVED-PAPER（E-370、独立監査 PASS）**。正の周期質量・lag 上限・Hall 仮定は不要。
+この NoSAAS 二窓問題で残るのは離れた二つの SS run の場合。Lean 化、複数衝突対、
+SS≥3、無制約版と全域性は未完了である。
+NoSAAS だけで衝突を全除去する案は、全 p≥33 の反例族により REFUTED（E-369）。
+[最新の方針と完全な範囲](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md)を参照。
+
 ## 結論
 
 ### 監査による訂正（2026-09-15）

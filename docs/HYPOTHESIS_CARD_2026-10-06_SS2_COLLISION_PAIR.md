@@ -141,3 +141,8 @@ lowSS windows whose endpoints lie at internal S positions of C/X, sufficient
 to force additional neighborhood phases. A larger period census, a fixed-F
 donor-only condition, or an unproved Hall/owner hypothesis is insufficient.
 Multiple collision groups, SS≥3, E-070, E-067 and E-001 remain unresolved.
+
+Later 2026-10-06 follow-up: an actual endpoint/core interaction reopened
+the explicitly NoSAAS/single-SSS subcase and proved its local Hall bound
+on paper (E-370). The unrestricted target of this card remains CONJECTURED.
+See [the revised frontier and next question](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md).

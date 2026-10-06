@@ -1,0 +1,318 @@
+{
+  "protocol": "H-20261006-03",
+  "phase": "discovery",
+  "status": "PASS",
+  "source_sha256": "3dfcc73a5fd1928ef4afa3aa01f4e9b72ac12c2d24cec0632bc51302f41db56a",
+  "models": [
+    {
+      "name": "pure_alternating_positive_p33",
+      "p": 33,
+      "period": "SASASSSAAAASASASASASASASASASASAAA",
+      "mass": 3,
+      "NoSAAS": true,
+      "donors": [
+        {
+          "phase": 10,
+          "lag": 11,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 1,
+          "neighbors_mask": 117,
+          "word": "AAASSSASASA"
+        },
+        {
+          "phase": 31,
+          "lag": 31,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 0,
+          "neighbors_mask": 715827317,
+          "word": "ASASASASASASASASASASAAAASSSASAS"
+        }
+      ],
+      "C": "AAASSSASAS",
+      "X": "ASASASASASASASASASASA",
+      "s": 0,
+      "q": 4,
+      "oldest_phase": 0,
+      "SSS_first_phase": 4,
+      "lowSS_endpoint_phases": [
+        5,
+        6,
+        17,
+        23,
+        29
+      ],
+      "uncovered_phases": [
+        0,
+        2,
+        4,
+        11,
+        13,
+        15,
+        19,
+        21,
+        25,
+        27
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 1,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 23,
+          "tail_A": 0,
+          "neighbors_mask": 713031681,
+          "word": "SAAASASASAS"
+        },
+        {
+          "phase": 3,
+          "lag": 19,
+          "ss": 0,
+          "oldest": 17,
+          "tail_A": 0,
+          "neighbors_mask": 715784197,
+          "word": "SASAAASASASASASASAS"
+        },
+        {
+          "phase": 9,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 6,
+          "tail_A": 0,
+          "neighbors_mask": 64,
+          "word": "AAS"
+        },
+        {
+          "phase": 12,
+          "lag": 7,
+          "ss": 1,
+          "oldest": 5,
+          "tail_A": 0,
+          "neighbors_mask": 2144,
+          "word": "SAAAASS"
+        },
+        {
+          "phase": 32,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 29,
+          "tail_A": 0,
+          "neighbors_mask": 536870912,
+          "word": "AAS"
+        }
+      ]
+    },
+    {
+      "name": "drop_NoSAAS_q_equals_s",
+      "p": 33,
+      "period": "SSSAAASASAASASASASASASASASASASAAA",
+      "mass": 3,
+      "NoSAAS": false,
+      "donors": [
+        {
+          "phase": 10,
+          "lag": 11,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 1,
+          "neighbors_mask": 327,
+          "word": "ASASAAASSSA"
+        },
+        {
+          "phase": 31,
+          "lag": 31,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 0,
+          "neighbors_mask": 715827527,
+          "word": "ASASASASASASASASASASAASASAAASSS"
+        }
+      ],
+      "C": "ASASAAASSS",
+      "X": "ASASASASASASASASASASA",
+      "s": 0,
+      "q": 0,
+      "oldest_phase": 0,
+      "SSS_first_phase": 0,
+      "lowSS_endpoint_phases": [
+        2,
+        29
+      ],
+      "uncovered_phases": [
+        0,
+        1,
+        6,
+        8,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 5,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 2,
+          "tail_A": 0,
+          "neighbors_mask": 4,
+          "word": "AAS"
+        },
+        {
+          "phase": 32,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 29,
+          "tail_A": 0,
+          "neighbors_mask": 536870912,
+          "word": "AAS"
+        }
+      ]
+    },
+    {
+      "name": "reused_NoSAAS_p22",
+      "p": 22,
+      "period": "ASAAAAASASASASASASASSS",
+      "mass": 2,
+      "NoSAAS": true,
+      "donors": [
+        {
+          "phase": 5,
+          "lag": 19,
+          "ss": 2,
+          "oldest": 9,
+          "tail_A": 1,
+          "neighbors_mask": 3844610,
+          "word": "AAASASSSASASASASASA"
+        },
+        {
+          "phase": 18,
+          "lag": 31,
+          "ss": 2,
+          "oldest": 9,
+          "tail_A": 0,
+          "neighbors_mask": 3844738,
+          "word": "SASASASASASAAAAASASSSASASASASAS"
+        }
+      ],
+      "C": "AAASASSSASASASASAS",
+      "X": "SASASASASASAA",
+      "s": -13,
+      "q": -3,
+      "oldest_phase": 9,
+      "SSS_first_phase": 19,
+      "lowSS_endpoint_phases": [
+        1
+      ],
+      "uncovered_phases": [
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 4,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 1,
+          "tail_A": 0,
+          "neighbors_mask": 2,
+          "word": "AAS"
+        }
+      ]
+    },
+    {
+      "name": "remaining_family_r0",
+      "p": 32,
+      "period": "SSSASAAASASASASASAAASASASASASASA",
+      "mass": 2,
+      "NoSAAS": true,
+      "donors": [
+        {
+          "phase": 18,
+          "lag": 19,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 1,
+          "neighbors_mask": 87319,
+          "word": "ASASASASASAAASASSSA"
+        },
+        {
+          "phase": 31,
+          "lag": 31,
+          "ss": 2,
+          "oldest": 0,
+          "tail_A": 0,
+          "neighbors_mask": 1431393559,
+          "word": "SASASASASASAAASASASASASAAASASSS"
+        }
+      ],
+      "C": "ASASASASASAAASASSS",
+      "X": "SASASASASASAA",
+      "s": 0,
+      "q": 0,
+      "oldest_phase": 0,
+      "SSS_first_phase": 0,
+      "lowSS_endpoint_phases": [
+        4,
+        10,
+        16
+      ],
+      "uncovered_phases": [
+        0,
+        1,
+        2,
+        8,
+        12,
+        14,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30
+      ],
+      "all_lowSS_Sended_witnesses": [
+        {
+          "phase": 7,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 4,
+          "tail_A": 0,
+          "neighbors_mask": 16,
+          "word": "AAS"
+        },
+        {
+          "phase": 19,
+          "lag": 3,
+          "ss": 0,
+          "oldest": 16,
+          "tail_A": 0,
+          "neighbors_mask": 65536,
+          "word": "AAS"
+        },
+        {
+          "phase": 21,
+          "lag": 11,
+          "ss": 0,
+          "oldest": 10,
+          "tail_A": 0,
+          "neighbors_mask": 1135616,
+          "word": "SAAASASASAS"
+        }
+      ]
+    }
+  ]
+}
