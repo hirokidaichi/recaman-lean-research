@@ -1,0 +1,8 @@
+All following validation commands exited 0. Read-only inspection commands omitted.
+Repository cwd: /Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research
+
+clang++ -O2 -std=c++17 /tmp/ss2-pair-next-audit-20261006/independent.cpp -o /tmp/ss2-pair-next-audit-20261006/independent
+/tmp/ss2-pair-next-audit-20261006/independent > /tmp/ss2-pair-next-audit-20261006/independent.out
+python3 /tmp/ss2-pair-next-audit-20261006/verify.py /Users/hirokidaichi/.codex/worktrees/p2-terminal-tail-bound/recaman-lean-research > /tmp/ss2-pair-next-audit-20261006/verification.json
+python3 experiments/verify_ss2_pair_endpoints.py docs/data/ss2_pair_endpoints_20261006/discovery.jsonl docs/data/ss2_pair_endpoints_20261006/holdout.jsonl > /tmp/ss2-pair-next-audit-20261006/parent-verifier.json
+python3 /tmp/ss2-pair-next-audit-20261006/nosaas_controls.py > /tmp/ss2-pair-next-audit-20261006/nosaas_controls.json

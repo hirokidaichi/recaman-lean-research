@@ -1,10 +1,27 @@
 # Current research frontier
 
-最終更新: 2026-10-01
+最終更新: 2026-10-06
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
 [`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
+
+現在の研究方針は [2026-10-03 の判断記録](RESEARCH_PLAN_2026-10-03.md)を参照。
+E-368 後の次の候補は、最古 S が衝突する二つの SS=2 最小窓と low-SS 集合の
+局所容量である。10月6日に GPT-6.1-Sol の紙上研究と親の反証探索を並行実施した。
+周期1〜22・全lagの有限検査は24衝突対／86部分集合で違反0（COMPUTED）。
+二窓の順序・共通部分の補助構造は得たが、第二の S を確保する独立入力はなく、
+容量の証明経路は STOPPED、命題自体は CONJECTURED のまま。
+[カード](HYPOTHESIS_CARD_2026-10-06_SS2_COLLISION_PAIR.md)と
+[再現記録](data/ss2_collision_pair_20261006/README.md)に証拠・再開条件を保存した。
+
+同日後半、具体的な第二 S の端点排除を得て部分場合を再開した。
+**NoSAAS の下で、SS2 の二辺が一つの SSS run にある衝突対の局所容量は
+PROVED-PAPER（E-370、独立監査 PASS）**。正の周期質量・lag 上限・Hall 仮定は不要。
+この NoSAAS 二窓問題で残るのは離れた二つの SS run の場合。Lean 化、複数衝突対、
+SS≥3、無制約版と全域性は未完了である。
+NoSAAS だけで衝突を全除去する案は、全 p≥33 の反例族により REFUTED（E-369）。
+[最新の方針と完全な範囲](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md)を参照。
 
 ## 結論
 

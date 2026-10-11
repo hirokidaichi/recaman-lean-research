@@ -1456,3 +1456,34 @@ true-oldest exclusion and strict one-donor slack. See E-368 statement audit
 and H-20261002-01 for exact signatures, controls and the remaining boundary.
 
 Independent entry/final review PASS: [E-368 independent audit](statement_audits/E-368-independent.md). Full check: 396 jobs / 2657 permitted-axiom declarations.
+
+## 2026-10-06: NoSAAS SS2 collisions with one SSS run (E-369/E-370)
+
+E-368's endpoint image and oldest-S exclusion + the audited terminal-tail/
+full-endpoint collision geometry reduce a same-oldest pair to W_A=C A,
+W_S=X C. Global NoSAAS leaves pure alternating X or X=(SA)^j A.
+
+An SSS run's chronological first S q cannot be any current-A lowSS window
+endpoint. If q is strictly later than the donor oldest s, a modular
+collision would create three distinct SS edges, so phases(s),phase(q)
+give two excluded actual S phases. This internal-SSS lemma needs no
+NoSAAS or positive period mass.
+
+If q=s, A-run counting classifies C=T SSS. The pure-X branch contradicts
+NoSAAS; the start-S branch has exact core
+C=(AS)^a AAA(SA)^b SSS with a=3b+2.
+For endpoint s+1, the only early mass-one/current-A candidate has
+moment -1. Through X the mass is2/3; any further lowSS extension is
+A-started SS-free, so adds nonnegative mass. Thus s+1 is excluded at
+every future clock, and has a different phase from s.
+
+These two actual S phases extend E-368's image within the original
+neighborhood: local Hall for the explicitly NoSAAS/single-SSS collision
+class, E-370 PROVED-PAPER. No positive-mass, lag, Hall or owner premise.
+Separate SS runs and multiple collision groups are not resolved.
+The NoSAAS-only injectivity shortcut is REFUTED by E-369's all-p>=33
+padding family; a collision can still have sufficient capacity.
+
+See [current strategy](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md),
+[complete independent proof](data/ss2_pair_endpoints_20261006/audit/oldest-sss-endpoint-addendum.md).
+New statements are paper-only; no Lean/Audit symbols were added.

@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "models": 6,
+  "frozen_source_hashes": {
+    "experiments/ss2_internal_sss_controls.py": "3dfcc73a5fd1928ef4afa3aa01f4e9b72ac12c2d24cec0632bc51302f41db56a",
+    "experiments/verify_ss2_pair_endpoints.py": "d1352240d59816a7f2d42e419f4600736a79866ab5d29d1e9ff5306c2b0528c7",
+    "experiments/verify_ss2_collision_pair.py": "d016fff233909a2cea0e678c95ccd73d5da9e15ed990227cea2edbe50e427263"
+  },
+  "source_sha256": "0a7b55c68965d25665a8b5ed13f9bcf8136c68215fe785a529bd8eadacb363dd",
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "experiments/ss2_internal_sss_controls.py",
+        "discovery"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "experiments/ss2_internal_sss_controls.py",
+        "holdout"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "results": [
+    {
+      "split": "discovery",
+      "name": "pure_alternating_positive_p33",
+      "p": 33,
+      "mass": 3,
+      "NoSAAS": true,
+      "s": 0,
+      "q": 4,
+      "all_endpoint_witnesses": 5,
+      "endpoint_phases": [
+        5,
+        6,
+        17,
+        23,
+        29
+      ],
+      "uncovered_count": 10,
+      "residual_phase_one_excluded": false
+    },
+    {
+      "split": "discovery",
+      "name": "drop_NoSAAS_q_equals_s",
+      "p": 33,
+      "mass": 3,
+      "NoSAAS": false,
+      "s": 0,
+      "q": 0,
+      "all_endpoint_witnesses": 2,
+      "endpoint_phases": [
+        2,
+        29
+      ],
+      "uncovered_count": 13,
+      "residual_phase_one_excluded": false
+    },
+    {
+      "split": "discovery",
+      "name": "reused_NoSAAS_p22",
+      "p": 22,
+      "mass": 2,
+      "NoSAAS": true,
+      "s": -13,
+      "q": -3,
+      "all_endpoint_witnesses": 1,
+      "endpoint_phases": [
+        1
+      ],
+      "uncovered_count": 9,
+      "residual_phase_one_excluded": false
+    },
+    {
+      "split": "discovery",
+      "name": "remaining_family_r0",
+      "p": 32,
+      "mass": 2,
+      "NoSAAS": true,
+      "s": 0,
+      "q": 0,
+      "all_endpoint_witnesses": 3,
+      "endpoint_phases": [
+        4,
+        10,
+        16
+      ],
+      "uncovered_count": 12,
+      "residual_phase_one_excluded": true
+    },
+    {
+      "split": "holdout",
+      "name": "remaining_family_r1",
+      "p": 72,
+      "mass": 2,
+      "NoSAAS": true,
+      "s": 0,
+      "q": 0,
+      "all_endpoint_witnesses": 7,
+      "endpoint_phases": [
+        4,
+        10,
+        16,
+        22,
+        28,
+        34,
+        40
+      ],
+      "uncovered_count": 28,
+      "residual_phase_one_excluded": true
+    },
+    {
+      "split": "holdout",
+      "name": "remaining_family_r2",
+      "p": 112,
+      "mass": 2,
+      "NoSAAS": true,
+      "s": 0,
+      "q": 0,
+      "all_endpoint_witnesses": 11,
+      "endpoint_phases": [
+        4,
+        10,
+        16,
+        22,
+        28,
+        34,
+        40,
+        46,
+        52,
+        58,
+        64
+      ],
+      "uncovered_count": 44,
+      "residual_phase_one_excluded": true
+    }
+  ],
+  "scope": "Fixed six models only; independent direct mass/moment and all-lag positive-mass bound; no new holdout for phase-one conjecture."
+}
