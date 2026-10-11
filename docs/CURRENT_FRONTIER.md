@@ -30,6 +30,16 @@ NoSAAS・正の周期質量・current-A・最小 P2 の全前提を満たす周�
 この例は局所容量を破らず、分離 SS の一般容量はなお CONJECTURED。
 [カードと再現手順](HYPOTHESIS_CARD_2026-10-11_SS2_SEPARATED.md)を参照。
 
+同日、**内部 SSS（q>s）の二位相排除を PROVED-LEAN（E-372）**として登録した。
+SS≤2 の同じ窓の中で、SSS の開始点 q とそれより古い S の位相は異なる。
+位相が同じなら周期移動により古い S の次も S となり、窓内に第三の SS 辺ができる。
+E-368 の最古 S 排除と合わせ、最小 SS2 donor の最古 S と内部 SSS の先頭は、
+任意長の current-A low-SS P2 窓の端点から排除される二つの異なる S 位相になる。
+周期質量・NoSAAS・lag 上限・Hall 仮定は不要。独立意味監査 PASS。
+E-370 全体は PROVED-PAPER のままで、q=s の衝突分類と元の近傍での個数評価は未形式化。
+[カード](HYPOTHESIS_CARD_2026-10-11_INTERNAL_SSS_PHASE.md)と
+[逐語 statement audit](statement_audits/E-372.md)を参照。
+
 ## 結論
 
 ### 監査による訂正（2026-09-15）

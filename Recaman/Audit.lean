@@ -2804,3 +2804,12 @@ import Recaman
 #print axioms Recaman.SS2LowSSTight.oldestOffset_pos_of_ss_pos
 #print axioms Recaman.SS2LowSSTight.donor_oldest_is_S
 #print axioms Recaman.SS2LowSSTight.lowSS_strict_capacity
+
+-- Internal SSS first-clock exclusion, narrower than E-370.
+#print axioms Recaman.SS2InternalSSS.ssCount_append_SSS
+#print axioms Recaman.SS2InternalSSS.internal_sss_ne_lowSS_endpoint
+#print axioms Recaman.SS2InternalSSS.internal_sss_phase_ne_lowSS_endpoint
+#print axioms Recaman.SS2InternalSSS.ssCount_pos_of_pair
+#print axioms Recaman.SS2InternalSSS.ss2_triple_no_later_pair
+#print axioms Recaman.SS2InternalSSS.internal_sss_phase_ne_earlier_S
+#print axioms Recaman.SS2InternalSSS.donor_internal_sss_two_excluded_phases

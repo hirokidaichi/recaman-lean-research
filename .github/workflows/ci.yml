@@ -18,6 +18,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check generated viewer manifest
+        run: python3 viewer/gen_manifest.py --check
+
       - name: Install required system tools
         run: |
           sudo apt-get update
