@@ -2809,3 +2809,7 @@ import Recaman
 #print axioms Recaman.SS2InternalSSS.ssCount_append_SSS
 #print axioms Recaman.SS2InternalSSS.internal_sss_ne_lowSS_endpoint
 #print axioms Recaman.SS2InternalSSS.internal_sss_phase_ne_lowSS_endpoint
+#print axioms Recaman.SS2InternalSSS.ssCount_pos_of_pair
+#print axioms Recaman.SS2InternalSSS.ss2_triple_no_later_pair
+#print axioms Recaman.SS2InternalSSS.internal_sss_phase_ne_earlier_S
+#print axioms Recaman.SS2InternalSSS.donor_internal_sss_two_excluded_phases

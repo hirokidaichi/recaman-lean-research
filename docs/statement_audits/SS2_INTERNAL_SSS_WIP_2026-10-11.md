@@ -1,5 +1,9 @@
 # Provisional statement and meaning audit: internal SSS endpoint lemma
 
+Historical draft, superseded by [E-372](E-372.md) and its independent audit.
+The R/W/C/T role names in this draft are nonstandard; use the standard
+real-content/wrapper/conditional/tautology classification in the final audit.
+
 2026-10-11. Formalizer self-audit of `Recaman/SS2InternalSSS.lean` on draft PR #90. **Compiler, full check, and independent review pending.** This document does not register a `PROVED-LEAN` claim or promote E-370. If the module passes Lean, a separate independent audit and the standard `E-NNN.md` G5 statement audit are still required before a new evidence row.
 
 ## Exact signatures (verbatim from the proposed source)

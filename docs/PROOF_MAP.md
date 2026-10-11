@@ -1487,3 +1487,29 @@ padding family; a collision can still have sufficient capacity.
 See [current strategy](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md),
 [complete independent proof](data/ss2_pair_endpoints_20261006/audit/oldest-sss-endpoint-addendum.md).
 New statements are paper-only; no Lean/Audit symbols were added.
+
+## 2026-10-11: internal SSS phase separation (E-372)
+
+`SS2InternalSSS.internal_sss_ne_lowSS_endpoint` uses the minimum P2 lag
+and the actual oldest SSS suffix to rule out a low-SS endpoint there.
+Period shifting yields `internal_sss_phase_ne_lowSS_endpoint` for every
+positive period and every lag, even without current A.
+
+The new `ss2_triple_no_later_pair` counts a third distinct edge in an SS≤2
+word, including the shared-vertex boundary. Applied to the same stream's
+window, periodic phase equality of an earlier S and the internal SSS start
+creates that third edge (`internal_sss_phase_ne_earlier_S`). No P2,
+minimality, NoSAAS or period-mass premise is needed for this separation.
+
+Combine with E-368 oldest-S exclusion to obtain
+`donor_internal_sss_two_excluded_phases`: in a minimal SS2 donor with q>s,
+the oldest and the internal SSS start have distinct phases and both avoid
+every current-A low-SS P2 endpoint. The donor's actual oldest offset and
+explicit bounds place both S clocks in its original window.
+
+This completes that local input only. E-370's q=s collision geometry and
+the concrete-neighborhood count remain unformalized. General Hall/T6,
+separated SS capacity and actual-orbit consequences do not follow.
+See [H-20261011-03](HYPOTHESIS_CARD_2026-10-11_INTERNAL_SSS_PHASE.md),
+[statement audit](statement_audits/E-372.md) and
+[independent review](statement_audits/E-372-independent.md).

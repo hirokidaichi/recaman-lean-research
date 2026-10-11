@@ -1,6 +1,13 @@
 # E-370 Lean formalization work packet (2026-10-11)
 
-Status: **PROVED-PAPER only; Lean source, compilation, statement audit, and CI are outstanding.** This packet is an implementation boundary, not a new evidence-registry row. Base: `167d07df424b85217010935934bd583d8995af23`.
+Status: **Full E-370 remains PROVED-PAPER.** The narrower internal-SSS endpoint
+exclusion, phase separation, and two-excluded-phase conclusion for a minimal
+SS2 donor with `q>s` are now implemented in `Recaman/SS2InternalSSS.lean`;
+see [H-20261011-03](HYPOTHESIS_CARD_2026-10-11_INTERNAL_SSS_PHASE.md) and
+[E-372 statement audit](statement_audits/E-372.md) for final verification.
+The `q=s` collision classification and concrete-neighborhood counting below
+remain outstanding. This packet is an implementation boundary.
+Base: `167d07df424b85217010935934bd583d8995af23`.
 
 ## Bounded question
 
