@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-10-06
+最終更新: 2026-10-11
 
 この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
 [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
@@ -22,6 +22,13 @@ PROVED-PAPER（E-370、独立監査 PASS）**。正の周期質量・lag 上限�
 SS≥3、無制約版と全域性は未完了である。
 NoSAAS だけで衝突を全除去する案は、全 p≥33 の反例族により REFUTED（E-369）。
 [最新の方針と完全な範囲](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md)を参照。
+
+10月11日、残っていた「離れた二つの SS run を持つ衝突対は存在するか」は、
+NoSAAS・正の周期質量・current-A・最小 P2 の全前提を満たす周期45の例で
+**REFUTED（空集合ではない、E-371）**。同じ構成を A の末尾を延ばして
+全ての周期パラメータ p≥45 に拡張できる（PROVED-PAPER）。
+この例は局所容量を破らず、分離 SS の一般容量はなお CONJECTURED。
+[カードと再現手順](HYPOTHESIS_CARD_2026-10-11_SS2_SEPARATED.md)を参照。
 
 ## 結論
 
