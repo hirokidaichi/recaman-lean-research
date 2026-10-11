@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2806,
+   "lines": 2811,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -42743,6 +42743,35 @@
    "hasReport": false
   },
   {
+   "name": "SS2InternalSSS",
+   "lines": 106,
+   "imports": [
+    "SS2LowSSTight",
+    "OnePerRun"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ssCount_append_SSS",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_sss_ne_lowSS_endpoint",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_sss_phase_ne_lowSS_endpoint",
+     "line": 62
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SS2LagElevenForcing",
    "lines": 115,
    "imports": [
@@ -50187,6 +50216,6 @@
    "hasReport": false
   }
  ],
- "total": 394,
+ "total": 395,
  "withReport": 167
 }
