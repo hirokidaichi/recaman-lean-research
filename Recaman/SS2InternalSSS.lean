@@ -24,7 +24,7 @@ theorem ssCount_append_SSS (w : List Bool) :
   rw [OnePerRun.ssCount_append, htwo]
   omega
 
-/-- A current-A P2 window with at most one SS edge cannot have its oldest
+/-- A P2 window with at most one SS edge cannot have its oldest
 endpoint at the first clock of an SSS run. The P2 hypothesis supplies the
 minimum lag three; the two SS edges then occur inside the actual window. -/
 theorem internal_sss_ne_lowSS_endpoint
@@ -83,5 +83,24 @@ theorem internal_sss_phase_ne_lowSS_endpoint
     exact htss
   exact internal_sss_ne_lowSS_endpoint e q (t + k * p) l
     hq0 hq1 hq2 hP' hss' (by omega)
+
+/-! ## Concrete semantic controls
+
+The antecedents are simultaneously inhabited: the periodic word AAASSS has a
+first SSS clock at 3 while clock 2 has a P2/SS=0 AAS window ending at phase 5.
+The endpoint exclusion is therefore not relying on the absence of P2 windows.
+-/
+private def sixStream (x : Int) : Bool := decide (x % 6 < 3)
+
+example : sixStream 3 = false ∧ sixStream 4 = false ∧ sixStream 5 = false ∧
+    sixStream 2 = true ∧ P2 (past sixStream 2 3) ∧
+    ssCount (past sixStream 2 3) = 0 ∧
+    endpointPhase 6 2 3 ≠ phase 6 3 := by decide
+
+/-- Dropping the low-SS bound admits a P2 word with an oldest SSS triple. -/
+example : P2 ([false, false, true, true, true, true, true, true,
+    false, false, false] : List Bool) ∧
+    ssCount ([false, false, true, true, true, true, true, true,
+      false, false, false] : List Bool) = 3 := by decide
 
 end Recaman.SS2InternalSSS
