@@ -10,7 +10,7 @@ Acceptance: one substantive `Recaman/*.lean` module states the complete restrict
 
 ## Exact first lemma and source interfaces
 
-Use `import Recaman.SS2LowSSTight` and, for counting, `Recaman.OnePerRun.ssCount_append` (available transitively or import explicitly). Existing APIs are `LeadingRunSupply.past`, `LeadingRunSupply.P2`, `OneSSMultiplicity.ssCount`, `LagSevenDonorCoverage.oldestOffset`, `SharpPeriodicSupply.phase/phase_eq_mod/lift_equal_mod`, `SS2LowSSTight.oldest_phase_ne_lowSS_endpoint`, `SS2LowSSTight.lowSS_endpoint_image`, `SS2LowSSTight.donor_oldest_is_S`, and `TwoSSTightDisjoint.neighborhood`.
+Use `import Recaman.SS2LowSSTight` and, for counting, `Recaman.OnePerRun.ssCount_append` (available transitively or import explicitly). Existing APIs are `LeadingRunSupply.past`, `LeadingRunSupply.P2`, `LowSSPeriodicSupply.endpointPhase`, `OneSSMultiplicity.ssCount`, `LagSevenDonorCoverage.oldestOffset`, `SharpPeriodicSupply.phase/phase_eq_mod/lift_equal_mod`, `SS2LowSSTight.oldest_phase_ne_lowSS_endpoint`, `SS2LowSSTight.lowSS_endpoint_image`, `SS2LowSSTight.donor_oldest_is_S`, and `TwoSSTightDisjoint.neighborhood`.
 
 Proposed direct endpoint signature (adjust namespace openings, not quantifiers):
 
@@ -24,7 +24,7 @@ theorem internal_sss_ne_lowSS_endpoint
     (t : Int) (l : Nat) (htA : e t = true)
     (htP : LeadingRunSupply.P2 (LeadingRunSupply.past e t l))
     (htss : OneSSMultiplicity.ssCount (LeadingRunSupply.past e t l) ≤ 1) :
-    LowSSEndpoint.endpointPhase p t l ≠ SharpPeriodicSupply.phase p q
+    LowSSPeriodicSupply.endpointPhase p t l ≠ SharpPeriodicSupply.phase p q
 ```
 
 Here `htP` ensures a positive lag, not the local SS contradiction itself. From phase equality, `phase_eq_mod` and `lift_equal_mod` translate `t-l` to `q`; apply `LagElevenPeriodic.e_shift` and `LeadingRunSupply.past_shift` to move the candidate current and window to endpoint clock `q`. For `l=1` and `l=2`, the current is respectively `q+1` and `q+2`, contradicting `htA`. For `l≥3`, use `past_append e t (l-3) 3` to expose chronological `q,q+1,q+2` as the trailing newest-first list `[false,false,false]`. Its two overlapping SS edges imply count≥2 through `OnePerRun.ssCount_append`. Do not assume a terminal S or a fixed lag in this statement.
