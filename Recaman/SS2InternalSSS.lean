@@ -22,7 +22,7 @@ theorem ssCount_append_SSS (w : List Bool) :
     2 ≤ ssCount (w ++ [false, false, false]) := by
   have htwo : ssCount [false, false, false] = 2 := by decide
   rw [OnePerRun.ssCount_append, htwo]
-  split_ifs <;> omega
+  omega
 
 /-- A current-A P2 window with at most one SS edge cannot have its oldest
 endpoint at the first clock of an SSS run. The P2 hypothesis supplies the
@@ -46,8 +46,12 @@ theorem internal_sss_ne_lowSS_endpoint
   have hsplit : past e t l =
       past e t (l - 3) ++ [false, false, false] := by
     have heq : l = (l - 3) + 3 := by omega
-    conv_lhs => rw [heq]
-    rw [past_append, show t - ((l - 3 : Nat) : Int) = q + 3 by omega, hthree]
+    calc
+      past e t l = past e t ((l - 3) + 3) := congrArg (past e t) heq
+      _ = past e t (l - 3) ++ past e (t - ((l - 3 : Nat) : Int)) 3 :=
+        past_append e t (l - 3) 3
+      _ = past e t (l - 3) ++ [false, false, false] := by
+        rw [show t - ((l - 3 : Nat) : Int) = q + 3 by omega, hthree]
   rw [hsplit] at htss
   have htwo := ssCount_append_SSS (past e t (l - 3))
   omega
