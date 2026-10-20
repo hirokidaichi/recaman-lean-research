@@ -789,4 +789,8 @@ the Recamán sequence.
   真に負）なら始点は S、同じ始点を持つ 2 本の P2 窓の新しい方は clean でない。従って b ↦ 始点は clean な窓の上で単射で、**endable が全て clean な
   区間では H が成り立つ**（`clean_capacity`）。ssCount ≤ 1 と深さ 1 の窓は clean（紙上）なので E-128 の拡張。残るのは unclean な窓
   （深さ ≥ 2 の下向き遠足で始点の面積値を飛び越える）だけで、H+「e + #unclean ≤ s」は長さ ≤ 32 では成り立つが長さ 34 で偽（SAAASSSSAAAASASSSAAASAAASSAAAASAAA、H 自体は成立）。
+- **E-372（`COMPUTED`）**：**窓長 ≤ 31 に制限した H は全ての符号語で成り立つ**（有限状態グラフの最大累積 = 0、親とサブエージェントの独立実装が一致、
+  緩和した moment では違反を検出）。周期語に持ち上げると lag ≤ 31 の供給を数えた E-070 が全周期で従う（計算機援用、Lean は lag ≤ 11 まで）。
+  H+（unclean を 2 個分と数える）は長さ 34 で偽。U1 型の「水準で切った H」（clean は基底 ≥ g、unclean は基底 ≥ g − 1、高さ ≥ g の S と比較）は長さ ≤ 32 で成立し、
+  上の水準からの帰納の候補。
 
