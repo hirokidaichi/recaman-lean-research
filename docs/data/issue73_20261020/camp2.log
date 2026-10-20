@@ -1,0 +1,25 @@
+N=40 LMAX=27 MODE=P status=INFEASIBLE time=69.5s
+N=34 LMAX=31 MODE=P status=INFEASIBLE time=8.3s
+N=40 LMAX=23 MODE=long status=INFEASIBLE time=14.0s
+N=40 LMAX=23 MODE=SC status=INFEASIBLE time=18.7s
+N=40 LMAX=23 MODE=defect1P status=INFEASIBLE time=160.9s
+N=40 LMAX=23 MODE=defect1SC status=OPTIMAL time=0.7s
+sigma (clock 0..N-1, oldest->newest): SAAASSSSAAAASAAAAAAASASAASAAAASSAAAASAAA
+  member b=3 L=3 window=[0,2] word(old->new)=SAA own=0
+  member b=10 L=3 window=[7,9] word(old->new)=SAA own=7
+  member b=11 L=11 window=[0,10] word(old->new)=SAAASSSSAAA own=5
+  member b=13 L=7 window=[6,12] word(old->new)=SSAAAAS own=6
+  member b=15 L=3 window=[12,14] word(old->new)=SAA own=12
+  unowned covered S: [4]
+N=40 LMAX=23 MODE=defect1 status=OPTIMAL time=50.8s
+sigma (clock 0..N-1, oldest->newest): SASSSAAAASAAASSAAAASAAAAASAAASASASSSASAA
+  member b=7 L=3 window=[4,6] word(old->new)=SAA own=4
+  member b=10 L=7 window=[3,9] word(old->new)=SSAAAAS own=3
+  member b=12 L=3 window=[9,11] word(old->new)=SAA own=9
+  member b=15 L=15 window=[0,14] word(old->new)=SASSSAAAASAAASS own=2
+  member b=17 L=3 window=[14,16] word(old->new)=SAA own=14
+  member b=20 L=7 window=[13,19] word(old->new)=SSAAAAS own=13
+  member b=22 L=3 window=[19,21] word(old->new)=SAA own=19
+  unowned covered S: [0]
+N=40 LMAX=23 MODE=defect1 status=UNKNOWN time=200.1s
+N=40 LMAX=23 MODE=defect1 status=UNKNOWN time=200.0s
