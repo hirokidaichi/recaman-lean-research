@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2804,
+   "lines": 2808,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -1020,6 +1020,130 @@
    "defs": 9,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "BlockSuffixPositivity",
+   "lines": 248,
+   "imports": [
+    "SingleWindowEquality",
+    "CapacityEqualityInduction"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "areaW",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "areaW_append",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "areaW_single",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_rep_false",
+     "line": 35
+    },
+    {
+     "kind": "def",
+     "name": "SufPos",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_nil",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_of_drops",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_free",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_aas",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_triple",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_append",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_block",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_positive",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_areaW",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_false",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_split",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_positive_walk",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "fw_false_run",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "area_after_false",
+     "line": 146
+    },
+    {
+     "kind": "theorem",
+     "name": "no_window_after_S_run",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_after_S_run",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "ts_one",
+     "line": 206
+    }
+   ],
+   "theorems": 20,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "Blocker",
@@ -51123,6 +51247,6 @@
    "hasReport": false
   }
  ],
- "total": 400,
+ "total": 401,
  "withReport": 167
 }

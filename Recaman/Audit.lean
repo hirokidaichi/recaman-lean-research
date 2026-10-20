@@ -2802,3 +2802,7 @@ import Recaman
 #print axioms Recaman.SingleWindowEquality.step1
 #print axioms Recaman.SingleWindowEquality.case_big
 #print axioms Recaman.SingleWindowEquality.single_window_equality
+#print axioms Recaman.BlockSuffixPositivity.areaW_append
+#print axioms Recaman.BlockSuffixPositivity.block_suffix_positive
+#print axioms Recaman.BlockSuffixPositivity.no_endable_after_S_run
+#print axioms Recaman.BlockSuffixPositivity.ts_one

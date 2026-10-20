@@ -807,4 +807,7 @@ the Recamán sequence.
 - **E-377（`PROVED-LEAN`、`Recaman.SingleWindowEquality`）**：EqClassW の帰納段の場合 (B)（区間全体が最後の clock の P2 窓）は、短い区間の H と EqClassW
   の下で SAAA しかない（定理 B）。**H（⇒ E-070）の残りの穴は場合 (A)、すなわちはみ出し補題 SL（a_y + d(q0) ≤ 2 なら X ≤ d(q0)）だけ**。
   SL は長さ ≤ 28 の全語で成立（はみ出しが余分にあると a_y ≥ 4 という余裕）。
+- **E-378（`PROVED-LEAN`、`Recaman.BlockSuffixPositivity`）**：ブロック語＋A^a の空でない接尾辞は mass ≥ 1・面積 ≥ 1、その直後の S の連の次の A は
+  区間内の窓を持たない、TS₁（S だけを挟んで endable な A の前では不足 ≥ 1）。はみ出し補題 SL（d = 0 で j ≤ 3 は紙上で証明済み）と補題 TS
+  （不足 ≥ 3、長さ ≤ 30 で成立、TS ⇒ SL の d = 2）の部品。
 
