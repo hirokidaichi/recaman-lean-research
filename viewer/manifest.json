@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2800,
+   "lines": 2804,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -45614,6 +45614,364 @@
    "hasReport": false
   },
   {
+   "name": "SingleWindowEquality",
+   "lines": 1072,
+   "imports": [
+    "CapacityEqualityInduction"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "Fw",
+     "line": 19
+    },
+    {
+     "kind": "def",
+     "name": "Ar",
+     "line": 23
+    },
+    {
+     "kind": "def",
+     "name": "Win",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "EndN",
+     "line": 30
+    },
+    {
+     "kind": "def",
+     "name": "seg",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "Fw_succ",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "fw_cases",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "Fw_bound",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_succ",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar2",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar3",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar4",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "past_cons",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "past_bridge",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_pos",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_neg",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_le",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_add",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_congr",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_mono",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_zero_of",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "not_of_cN_zero",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_split",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_walk",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "first_mark",
+     "line": 209
+    },
+    {
+     "kind": "theorem",
+     "name": "last_markN",
+     "line": 226
+    },
+    {
+     "kind": "theorem",
+     "name": "first_hit",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "ivt",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_lemma",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_induct",
+     "line": 288
+    },
+    {
+     "kind": "theorem",
+     "name": "area_ge",
+     "line": 317
+    },
+    {
+     "kind": "theorem",
+     "name": "dip",
+     "line": 330
+    },
+    {
+     "kind": "theorem",
+     "name": "area_lower1",
+     "line": 342
+    },
+    {
+     "kind": "theorem",
+     "name": "area_upper2",
+     "line": 353
+    },
+    {
+     "kind": "theorem",
+     "name": "win_ge3",
+     "line": 364
+    },
+    {
+     "kind": "theorem",
+     "name": "win3",
+     "line": 376
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_succ",
+     "line": 395
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_length",
+     "line": 398
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_add",
+     "line": 401
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_get",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_mass",
+     "line": 410
+    },
+    {
+     "kind": "def",
+     "name": "aasW",
+     "line": 419
+    },
+    {
+     "kind": "def",
+     "name": "tripW",
+     "line": 420
+    },
+    {
+     "kind": "theorem",
+     "name": "block_first",
+     "line": 422
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass",
+     "line": 448
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass2",
+     "line": 464
+    },
+    {
+     "kind": "theorem",
+     "name": "block_SS",
+     "line": 482
+    },
+    {
+     "kind": "theorem",
+     "name": "block_SSS",
+     "line": 490
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_sub",
+     "line": 495
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_sub0",
+     "line": 501
+    },
+    {
+     "kind": "theorem",
+     "name": "step1",
+     "line": 509
+    },
+    {
+     "kind": "theorem",
+     "name": "levels_prefix",
+     "line": 571
+    },
+    {
+     "kind": "theorem",
+     "name": "levels_top",
+     "line": 579
+    },
+    {
+     "kind": "theorem",
+     "name": "count_end",
+     "line": 590
+    },
+    {
+     "kind": "theorem",
+     "name": "step2",
+     "line": 627
+    },
+    {
+     "kind": "theorem",
+     "name": "step3",
+     "line": 649
+    },
+    {
+     "kind": "theorem",
+     "name": "end_level",
+     "line": 692
+    },
+    {
+     "kind": "theorem",
+     "name": "step4",
+     "line": 698
+    },
+    {
+     "kind": "theorem",
+     "name": "step5a",
+     "line": 716
+    },
+    {
+     "kind": "theorem",
+     "name": "step5b",
+     "line": 735
+    },
+    {
+     "kind": "theorem",
+     "name": "end_mono",
+     "line": 765
+    },
+    {
+     "kind": "theorem",
+     "name": "case_big",
+     "line": 769
+    },
+    {
+     "kind": "theorem",
+     "name": "pure_main",
+     "line": 870
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_cN",
+     "line": 953
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_iff",
+     "line": 965
+    },
+    {
+     "kind": "theorem",
+     "name": "endableCount_cN",
+     "line": 984
+    },
+    {
+     "kind": "theorem",
+     "name": "subtractionCount_cN",
+     "line": 990
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_seg",
+     "line": 995
+    },
+    {
+     "kind": "theorem",
+     "name": "single_window_equality",
+     "line": 1010
+    }
+   ],
+   "theorems": 62,
+   "defs": 7,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "StratifiedCapacityHierarchy",
    "lines": 114,
    "imports": [
@@ -50765,6 +51123,6 @@
    "hasReport": false
   }
  ],
- "total": 399,
+ "total": 400,
  "withReport": 167
 }

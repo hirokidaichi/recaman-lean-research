@@ -804,4 +804,7 @@ the Recamán sequence.
 - **E-376（`PROVED-LEAN`、`Recaman.CapacityEqualityInduction`）**：密度補題（ブロック語の接尾辞は 10·#S ≤ 3·長さ、従って P2 窓でない）と
   **H の帰納段**：同じ始点で、短い区間の H と EqClassW から次の長さの H が従う（`hcap_step`）。系として **H（⇒ E-070）は EqClassW だけに帰着**
   （`hcap_of_eqclassW`、EqClassW は仮定）。研究の核は EqClassW の帰納段（最小反例の形はカードの定理 2・3）。
+- **E-377（`PROVED-LEAN`、`Recaman.SingleWindowEquality`）**：EqClassW の帰納段の場合 (B)（区間全体が最後の clock の P2 窓）は、短い区間の H と EqClassW
+  の下で SAAA しかない（定理 B）。**H（⇒ E-070）の残りの穴は場合 (A)、すなわちはみ出し補題 SL（a_y + d(q0) ≤ 2 なら X ≤ d(q0)）だけ**。
+  SL は長さ ≤ 28 の全語で成立（はみ出しが余分にあると a_y ≥ 4 という余裕）。
 

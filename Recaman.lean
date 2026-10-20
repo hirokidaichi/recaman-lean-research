@@ -385,3 +385,4 @@ import Recaman.CleanWindowCapacity
 import Recaman.LowSSCleanWindow
 import Recaman.UncleanWindowStructure
 import Recaman.CapacityEqualityInduction
+import Recaman.SingleWindowEquality

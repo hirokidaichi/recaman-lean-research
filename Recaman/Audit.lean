@@ -2798,3 +2798,7 @@ import Recaman
 #print axioms Recaman.CapacityEqualityInduction.no_p2_suffix
 #print axioms Recaman.CapacityEqualityInduction.hcap_step
 #print axioms Recaman.CapacityEqualityInduction.hcap_of_eqclassW
+#print axioms Recaman.SingleWindowEquality.dip
+#print axioms Recaman.SingleWindowEquality.step1
+#print axioms Recaman.SingleWindowEquality.case_big
+#print axioms Recaman.SingleWindowEquality.single_window_equality
