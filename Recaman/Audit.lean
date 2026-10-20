@@ -2780,3 +2780,7 @@ import Recaman
 #print axioms Recaman.LineCapacityPeriodic.lag_bound
 #print axioms Recaman.LineCapacityPeriodic.periodic_capacity_of_line
 #print axioms Recaman.LineCapacityPeriodic.supplied_shift
+#print axioms Recaman.CleanWindowCapacity.walk_bad_return
+#print axioms Recaman.CleanWindowCapacity.clean_start_S
+#print axioms Recaman.CleanWindowCapacity.clean_not_shared
+#print axioms Recaman.CleanWindowCapacity.clean_capacity

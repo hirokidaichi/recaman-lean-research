@@ -381,3 +381,4 @@ import Recaman.SuffixHallOwnerMap
 import Recaman.NewestMemberMotifCount
 import Recaman.PrivateMemberMotifCount
 import Recaman.LineCapacityPeriodic
+import Recaman.CleanWindowCapacity

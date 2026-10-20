@@ -785,4 +785,8 @@ the Recamán sequence.
 - 研究の形：G1（全 lag）⟸ 分類 ⟸ Claim P ⟸（H の下で）EqClass。一方で H 自体が E-070 を含意するので、**H の証明は中心予想の証明そのもの**。
   2D の言い換え：点 P(z) = (F(z), Σ_{c<z} σ(c)c) は ±(1, z) で動き、終点可能な A ⇔「そこで引いていれば区間内で訪れた点に戻る」A。
   Recamán の規則（既訪問値への減算は禁止）を符号和の座標付きで述べたものになっている。
+- **E-371（`PROVED-LEAN`、`Recaman.CleanWindowCapacity`）**：Clean Window 定理。窓が clean（窓の内側で基底水準に戻るたびに面積ポテンシャルが
+  真に負）なら始点は S、同じ始点を持つ 2 本の P2 窓の新しい方は clean でない。従って b ↦ 始点は clean な窓の上で単射で、**endable が全て clean な
+  区間では H が成り立つ**（`clean_capacity`）。ssCount ≤ 1 と深さ 1 の窓は clean（紙上）なので E-128 の拡張。残るのは unclean な窓
+  （深さ ≥ 2 の下向き遠足で始点の面積値を飛び越える）だけで、H+「e + #unclean ≤ s」は長さ ≤ 32 では成り立つが長さ 34 で偽（SAAASSSSAAAASASSSAAASAAASSAAAASAAA、H 自体は成立）。
 

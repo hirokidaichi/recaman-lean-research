@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2782,
+   "lines": 2786,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -2103,6 +2103,85 @@
    ],
    "theorems": 15,
    "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CleanWindowCapacity",
+   "lines": 223,
+   "imports": [
+    "LeadingRunSupply",
+    "SuffixHallOwnerMap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "Clean",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_return",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_bad_return",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "past_succ",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_cases",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "window_step",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "window_area",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "window_mass_A",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "past_rebase",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_pos",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_start_S",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_not_shared",
+     "line": 157
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_capacity",
+     "line": 196
+    }
+   ],
+   "theorems": 12,
+   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -50394,6 +50473,6 @@
    "hasReport": false
   }
  ],
- "total": 395,
+ "total": 396,
  "withReport": 167
 }

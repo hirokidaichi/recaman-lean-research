@@ -48,7 +48,7 @@ Lean 上の述語（E-370）：`LineCapacity e := ∀ q n, endableCount e q n �
 | H（独立実装） | `eqcheck.c`（親、`./eqcheck 24`） | 長さ ≤ 24 で違反 0 |
 | EqClass（分解） | `eqparse_any.c`（任意の始点、`./eqparse_any 30`） | 13,373 例、分解失敗 0 |
 | EqClass（窓の一意性） | `eqwin_any.c 32` | 26,443 例、2 本目の窓 0、長さ > 7 の窓 0（`eqwin32.out`） |
-| EqClass（独立実装） | `eqcheck.c 24` | 1,728 例、失敗 0 |
+| EqClass・H（独立実装） | `eqcheck.c 31`（親、20:19 完了） | 長さ ≤ 31 で H 違反 0、等号の場合 18,806 例で分解失敗 0 |
 | 水準ごとの H | `hl.c` | **偽**：SSSSSSSSSAAASSSSAAAASA（水準 −8 で終点 3、S 2） |
 | 1 次元版（Σσc の条件のみ） | `h1d.c 22 0` | **偽**：長さ 17 で e − s = 4（mass 条件が本質） |
 | 窓内の正準単射 | levels の inj*.c | 最古 S（S^11 AAA SSSS AAAA）、最新 S（S^14 ASAASAAA）、基底水準の最新 S（S^12 AASAAASSAA）などすべて衝突 |
@@ -69,6 +69,22 @@ Lean 上の述語（E-370）：`LineCapacity e := ∀ q n, endableCount e q n �
 4. **否定的結果**：窓ごとに足し合わせる単調量（Φ = Σ f(窓の型) + g(E)）は存在しない（LP 非実行可能、lag 一様の証明書：x で 2 窓が始まり
    x と x+1 を所有する状態は w1 接頭辞 2 個の和に見えるが死んでいる）。「最古の保留窓は閉じない」は偽（ASSASAA の lag-7 窓が閉じる）。
    moment を自由にした一般化閉包での「破れ ≤ ½Σ|moment|」は幅 18 で偽（ASSASAAAASASAASAAA）。
+
+## Clean Window 定理（サブエージェント hinduct の紙上証明、親が検算）
+
+endable b の最小窓 [t, b−1]（最も遅い始点）、h = F(t)、P_h(u) = Σ_{w≤u} F(w) − h·u（P_h(u') − P_h(u) = Σ_{w=u+1}^{u'} (F(w) − h)）。
+(t, b) が P2 ⇔ F(t) = h、F(b) = h + 1、σ(b) = A、P_h(t) = P_h(b) =: v。**b が clean** ⇔ 窓の内側で基底水準に戻る全ての u（t < u < b、F(u) = h）で P_h(u) < v。
+
+- (A) clean ⇒ σ(t) = S（σ(t) = A なら最初の戻り u で P_h(u) > v、戻りがなければ P_h(b) > v）。
+- (B) (t, b) が P2 で b < b' が同じ始点 t の P2 窓を持てば b' は clean でない（b の後の最初の h 訪問 ρ で P_h(ρ) > v、なければ P_h(b') > v）。
+- **定理**：b ↦ t*_b は clean な endable 上で単射で、像は区間内の S。従って **endable が全て clean な区間では H が成り立つ**。
+  clean は ssCount ≤ 1 の窓（E-128 の拡張）と深さ 1（窓内で h − 1 より下に行かない）の窓を全て含む。
+- unclean な窓は深さ ≥ 2 の下向き遠足で v を飛び越える（その前に上向きの飛び越えか A 始まり）。
+- **H+**：e_p(k) + u_p(k) ≤ s_p(k)（u は unclean な endable の数）。長さ ≤ 32 で例外 0（hinduct の p8.c）だが、**親の `hplus.c` の長さ 35 走査で
+  長さ 34 の反例**：SAAASSSSAAAASASSSAAASAAASSAAAASAAA（e = 11、u = 3（b = 11, 22, 26）、s = 13、H 自体は成立）。unclean を一律に 2 個分と数える課金は不可能。
+- **否定的結果**：clean → t* を固定した単射は unclean に延長できない（長さ 28：SAAASSSSAAAASASAASASAAAASSSA、unclean b = 11 の窓 [0,10] の S 0,4,5,6,7 が
+  clean な 3、27、20、13、10 の t* で埋まる。b = 27 を 24〜26 へ移せば解消）。unclean b の行き先を窓内の局所規則（飛び越え遠足の始点・最新 S・
+  最後の上向き遠足など）で決める案は全て衝突。
 
 ## Decision
 
