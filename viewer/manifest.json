@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2791,
+   "lines": 2796,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -49840,6 +49840,65 @@
    "hasReport": true
   },
   {
+   "name": "UncleanWindowStructure",
+   "lines": 234,
+   "imports": [
+    "CleanWindowCapacity",
+    "LowSSCleanWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_last_down",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_double_down",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_last",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_deep_start",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "down_step_S",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "last_nonneg_return_is_S",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "unclean_double_S",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "unclean_has_double_S",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "deep_start",
+     "line": 215
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UnconditionalStepRecurrence",
    "lines": 88,
    "imports": [
@@ -50537,6 +50596,6 @@
    "hasReport": false
   }
  ],
- "total": 397,
+ "total": 398,
  "withReport": 167
 }

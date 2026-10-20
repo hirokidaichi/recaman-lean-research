@@ -2789,3 +2789,8 @@ import Recaman
 #print axioms Recaman.LowSSCleanWindow.clean_of_depth_one
 #print axioms Recaman.LowSSCleanWindow.clean_of_low_ss
 #print axioms Recaman.LowSSCleanWindow.lowSS_capacity
+#print axioms Recaman.UncleanWindowStructure.walk_double_down
+#print axioms Recaman.UncleanWindowStructure.last_nonneg_return_is_S
+#print axioms Recaman.UncleanWindowStructure.unclean_double_S
+#print axioms Recaman.UncleanWindowStructure.unclean_has_double_S
+#print axioms Recaman.UncleanWindowStructure.deep_start

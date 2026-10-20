@@ -383,3 +383,4 @@ import Recaman.PrivateMemberMotifCount
 import Recaman.LineCapacityPeriodic
 import Recaman.CleanWindowCapacity
 import Recaman.LowSSCleanWindow
+import Recaman.UncleanWindowStructure
