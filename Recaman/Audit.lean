@@ -2794,3 +2794,7 @@ import Recaman
 #print axioms Recaman.UncleanWindowStructure.unclean_double_S
 #print axioms Recaman.UncleanWindowStructure.unclean_has_double_S
 #print axioms Recaman.UncleanWindowStructure.deep_start
+#print axioms Recaman.CapacityEqualityInduction.dense_of_block
+#print axioms Recaman.CapacityEqualityInduction.no_p2_suffix
+#print axioms Recaman.CapacityEqualityInduction.hcap_step
+#print axioms Recaman.CapacityEqualityInduction.hcap_of_eqclassW

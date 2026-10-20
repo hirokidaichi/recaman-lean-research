@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2796,
+   "lines": 2800,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -1763,6 +1763,175 @@
    ],
    "theorems": 5,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CapacityEqualityInduction",
+   "lines": 279,
+   "imports": [
+    "LineCapacityPeriodic",
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "segment",
+     "line": 18
+    },
+    {
+     "kind": "inductive",
+     "name": "BlockWord",
+     "line": 21
+    },
+    {
+     "kind": "def",
+     "name": "HCap",
+     "line": 28
+    },
+    {
+     "kind": "def",
+     "name": "EqClassW",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "cntF",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_append",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_reverse",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_cntF",
+     "line": 51
+    },
+    {
+     "kind": "def",
+     "name": "Dense",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_nil",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_append",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_of_drops",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_free",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_aas",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_triple",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_of_block",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_pad",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_succ",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_add",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_one",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "past_succ",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "past_reverse",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_true",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_eq_zero_of",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "not_of_countP_eq_zero",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_succ_le",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_le_succ",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "last_mark",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_suffix",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "hcap_step",
+     "line": 215
+    },
+    {
+     "kind": "theorem",
+     "name": "hcap_of_eqclassW",
+     "line": 273
+    }
+   ],
+   "theorems": 25,
+   "defs": 6,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -50596,6 +50765,6 @@
    "hasReport": false
   }
  ],
- "total": 398,
+ "total": 399,
  "withReport": 167
 }

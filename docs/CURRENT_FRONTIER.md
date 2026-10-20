@@ -797,8 +797,11 @@ the Recamán sequence.
   ssCount ≤ 1 か深さ 1 の区間では H が成り立つ（`lowSS_capacity`、E-128 の区間版の拡張、lag 上限なし）。
 - **E-374（`COMPUTED`）**：**全メンバーの窓長が 31 以下の有限閉包は、幅によらず孤立 AAS と w1 三つ組の和**（Claim P もこの範囲で成立）。
   H_L のポテンシャルに沿ったタイトな道が等号語をちょうど表すことを使い、等号の場合の分類 EqClass_L を正規言語の包含として全幅で検査した
-  （L ≤ 31、陰性対照あり、独立監査と独立実装が一致）。周期版（タイトな閉路）も L ≤ 27 で検査し、**メンバーの lag が 27 以下の緊密回避集合 B の lag は
-  {3, 7}**（G1 の lag ≤ 27 版、全周期、計算機援用）。Lean の G1 は lag-max 11（E-359）まで。SAT 探索は Claim P の反例なしを幅 120・窓長 23 まで確認。
+  （L ≤ 31、陰性対照あり、独立監査と独立実装が一致）。周期版（タイトな閉路）も L ≤ 31 で検査し、**メンバーの lag が 31 以下の緊密回避集合 B の lag は
+  {3, 7}**（G1 の lag ≤ 31 版、全周期、計算機援用）。Lean の G1 は lag-max 11（E-359）まで。SAT 探索は Claim P の反例なしを幅 120・窓長 23 まで確認。
 - **E-375（`PROVED-LEAN`、`Recaman.UncleanWindowStructure`）**：unclean な最小 P2 窓には面積が正の最後の基底水準への戻り r があり、
   t + r・t + r + 1 は共に減算（窓は必ず SS を含む）。その前に高さ h+1 からの最後の減算 q がある。unclean な窓の課金の部品。
+- **E-376（`PROVED-LEAN`、`Recaman.CapacityEqualityInduction`）**：密度補題（ブロック語の接尾辞は 10·#S ≤ 3·長さ、従って P2 窓でない）と
+  **H の帰納段**：同じ始点で、短い区間の H と EqClassW から次の長さの H が従う（`hcap_step`）。系として **H（⇒ E-070）は EqClassW だけに帰着**
+  （`hcap_of_eqclassW`、EqClassW は仮定）。研究の核は EqClassW の帰納段（最小反例の形はカードの定理 2・3）。
 
