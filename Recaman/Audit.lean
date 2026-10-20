@@ -2784,3 +2784,8 @@ import Recaman
 #print axioms Recaman.CleanWindowCapacity.clean_start_S
 #print axioms Recaman.CleanWindowCapacity.clean_not_shared
 #print axioms Recaman.CleanWindowCapacity.clean_capacity
+#print axioms Recaman.LowSSCleanWindow.walk_depth_one
+#print axioms Recaman.LowSSCleanWindow.walk_low_ss
+#print axioms Recaman.LowSSCleanWindow.clean_of_depth_one
+#print axioms Recaman.LowSSCleanWindow.clean_of_low_ss
+#print axioms Recaman.LowSSCleanWindow.lowSS_capacity

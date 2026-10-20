@@ -382,3 +382,4 @@ import Recaman.NewestMemberMotifCount
 import Recaman.PrivateMemberMotifCount
 import Recaman.LineCapacityPeriodic
 import Recaman.CleanWindowCapacity
+import Recaman.LowSSCleanWindow

@@ -793,4 +793,6 @@ the Recamán sequence.
   緩和した moment では違反を検出）。周期語に持ち上げると lag ≤ 31 の供給を数えた E-070 が全周期で従う（計算機援用、Lean は lag ≤ 11 まで）。
   H+（unclean を 2 個分と数える）は長さ 34 で偽。U1 型の「水準で切った H」（clean は基底 ≥ g、unclean は基底 ≥ g − 1、高さ ≥ g の S と比較）は長さ ≤ 32 で成立し、
   上の水準からの帰納の候補。
+- **E-373（`PROVED-LEAN`、`Recaman.LowSSCleanWindow`）**：最小な P2 窓は、深さ 1 か ssCount ≤ 1 なら clean。系として、終点の最小窓が全て
+  ssCount ≤ 1 か深さ 1 の区間では H が成り立つ（`lowSS_capacity`、E-128 の区間版の拡張、lag 上限なし）。
 

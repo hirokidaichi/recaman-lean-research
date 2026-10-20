@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2786,
+   "lines": 2791,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -32118,6 +32118,70 @@
    "hasReport": true
   },
   {
+   "name": "LowSSCleanWindow",
+   "lines": 309,
+   "imports": [
+    "CleanWindowCapacity",
+    "OneSSMultiplicity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_depth_one",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_prefix",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_low_ss",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_neg_false",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "window_ss_mono",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "window_ss_step",
+     "line": 209
+    },
+    {
+     "kind": "theorem",
+     "name": "return_area_ne",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_of_depth_one",
+     "line": 253
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_of_low_ss",
+     "line": 269
+    },
+    {
+     "kind": "theorem",
+     "name": "lowSS_capacity",
+     "line": 294
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LowSSEndpoint",
    "lines": 333,
    "imports": [
@@ -50473,6 +50537,6 @@
    "hasReport": false
   }
  ],
- "total": 396,
+ "total": 397,
  "withReport": 167
 }
