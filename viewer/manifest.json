@@ -148,7 +148,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2776,
+   "lines": 2782,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -31686,6 +31686,99 @@
    "hasReport": false
   },
   {
+   "name": "LineCapacityPeriodic",
+   "lines": 254,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "countP",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "Endable",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "subtractionCount",
+     "line": 38
+    },
+    {
+     "kind": "def",
+     "name": "LineCapacity",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "Supplied",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "subtractionPhases",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_add",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_le_of_range",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_shift",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_mul",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_eq_filter",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "e_shift",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "past_shift",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_shift",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_bound",
+     "line": 149
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_capacity_of_line",
+     "line": 176
+    }
+   ],
+   "theorems": 10,
+   "defs": 6,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LocalParityPeriodic",
    "lines": 98,
    "imports": [
@@ -50301,6 +50394,6 @@
    "hasReport": false
   }
  ],
- "total": 394,
+ "total": 395,
  "withReport": 167
 }

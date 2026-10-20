@@ -2774,3 +2774,9 @@ import Recaman
 #print axioms Recaman.PrivateMemberMotifCount.motifFull_of_private
 #print axioms Recaman.NewestMemberMotifCount.suffix_split_closed
 #print axioms Recaman.NewestMemberMotifCount.prefix_split_closed
+#print axioms Recaman.LineCapacityPeriodic.countP_add
+#print axioms Recaman.LineCapacityPeriodic.countP_mul
+#print axioms Recaman.LineCapacityPeriodic.past_shift
+#print axioms Recaman.LineCapacityPeriodic.lag_bound
+#print axioms Recaman.LineCapacityPeriodic.periodic_capacity_of_line
+#print axioms Recaman.LineCapacityPeriodic.supplied_shift

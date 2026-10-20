@@ -380,3 +380,4 @@ import Recaman.P2WindowLengthBounds
 import Recaman.SuffixHallOwnerMap
 import Recaman.NewestMemberMotifCount
 import Recaman.PrivateMemberMotifCount
+import Recaman.LineCapacityPeriodic
