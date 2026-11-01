@@ -1,0 +1,140 @@
+{
+  "negative_Q_drop_ss2": {
+    "B": [
+      7
+    ],
+    "B_P2": true,
+    "B_additions": true,
+    "B_lag_3_7_11": true,
+    "B_lags": [
+      3
+    ],
+    "B_lt_p": true,
+    "B_minimal": true,
+    "B_nodup": true,
+    "N": [
+      4
+    ],
+    "conclusion_avoids": false,
+    "donor": "AAASSSSAAAS",
+    "donor_P2": true,
+    "donor_minimal": true,
+    "donor_ss_count": 3,
+    "hall_B": true,
+    "name": "drop_ss2",
+    "oldest_offset": 11,
+    "period": 12,
+    "tight": true,
+    "true_oldest_phase": 4,
+    "word": "AAAASAAASSSS"
+  },
+  "negative_Q_drop_tight": {
+    "B": [
+      5
+    ],
+    "B_P2": true,
+    "B_additions": true,
+    "B_lag_3_7_11": true,
+    "B_lags": [
+      7
+    ],
+    "B_lt_p": true,
+    "B_minimal": true,
+    "B_nodup": true,
+    "N": [
+      4,
+      9,
+      10
+    ],
+    "conclusion_avoids": false,
+    "donor": "AAASSSASASA",
+    "donor_P2": true,
+    "donor_minimal": true,
+    "donor_ss_count": 2,
+    "hall_B": true,
+    "name": "drop_tight",
+    "oldest_offset": 10,
+    "period": 11,
+    "tight": false,
+    "true_oldest_phase": 4,
+    "word": "AAAASASASSS"
+  },
+  "negative_W_drop_tight_onto": {
+    "B": [
+      7
+    ],
+    "N": [
+      0,
+      1,
+      6
+    ],
+    "next": "S",
+    "own_single": 0,
+    "period": 8,
+    "window": "SAAAASS",
+    "window_S_clocks": [
+      6,
+      1,
+      0
+    ]
+  },
+  "negative_W_multivalued_owner": [
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      6
+    ]
+  ],
+  "positive_Q": {
+    "B": [
+      7
+    ],
+    "B_P2": true,
+    "B_additions": true,
+    "B_lag_3_7_11": true,
+    "B_lags": [
+      3
+    ],
+    "B_lt_p": true,
+    "B_minimal": true,
+    "B_nodup": true,
+    "N": [
+      4
+    ],
+    "conclusion_avoids": true,
+    "donor": "ASSAAASAASS",
+    "donor_P2": true,
+    "donor_minimal": true,
+    "donor_ss_count": 2,
+    "hall_B": true,
+    "name": "Qp8",
+    "oldest_offset": 11,
+    "period": 8,
+    "tight": true,
+    "true_oldest_phase": 0,
+    "word": "SSAASAAA"
+  },
+  "positive_W": {
+    "B": [
+      4,
+      7,
+      9
+    ],
+    "N": [
+      0,
+      1,
+      6
+    ],
+    "next": "A",
+    "period": 10
+  }
+}
+PASS: premise matrix and negated-conclusion controls
+EXIT_CODE=0

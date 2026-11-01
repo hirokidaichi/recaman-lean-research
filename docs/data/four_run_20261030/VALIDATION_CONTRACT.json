@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-30T06:05:30.327815+09:00",
+  "source": "docs/data/old_tail_20261029/run_short_lean.py",
+  "sha256": "93cf53a0086de8ee8df5b5cfe9c635805f189ded9e8c0db210bdd716d8897564",
+  "scope": "Lean validation only, inherited per-process CPU10/wall20 and -M512; not math exploration, generic tree CPU or OS AS cap",
+  "mechanism": "RLIMIT_CPU per process, start_new_session, wall/deadline killpg, terminal wait4 usage and frozen target bytes",
+  "prior_optional_cold_and_extractor": "remain STOPPED; no retries or cap increases"
+}

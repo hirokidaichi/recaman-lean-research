@@ -1,0 +1,1 @@
+OpenAI Docsスキルで検索・fetch: [公式Cookbook Step9](https://developers.openai.com/cookbook/examples/agents_sdk/agent_improvement_loop#step-9-close-the-loop)。共有handoffをheartbeatで監視して次passを起動する例を参照。日次120分継続や配信時刻保証を公式仕様から断定せず、実journalだけで確認する。

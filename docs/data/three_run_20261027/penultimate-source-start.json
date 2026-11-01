@@ -1,0 +1,17 @@
+{
+  "tag": "penultimate-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/PenultimateRunWindow.lean"
+  ],
+  "started_jst": "2026-10-27T07:19:49.388208+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PenultimateRunWindow.lean": "a3398c49064ec8246a44daafea76aa5fcf7be3149e0931770a913926fdbb0641"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

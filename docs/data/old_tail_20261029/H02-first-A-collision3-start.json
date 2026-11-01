@@ -1,0 +1,18 @@
+{
+  "tag": "H02-first-A-collision3",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetClockCollision.lean"
+  ],
+  "started_jst": "2026-10-29T06:16:50.100326+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetClockCollision.lean": "725c806dfb4aaaf5efa0692fc2bb4cd9cd23ff823e128586a1c8a8708b49da9e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

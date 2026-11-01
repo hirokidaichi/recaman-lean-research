@@ -1,0 +1,18 @@
+{
+  "tag": "H01-tail-clock2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetLocalTail.lean"
+  ],
+  "started_jst": "2026-10-29T06:07:31.332826+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetLocalTail.lean": "23ed1de1911a79cf69d86b80539e13cfdee3ce44cd209d633649ad5744b63744"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

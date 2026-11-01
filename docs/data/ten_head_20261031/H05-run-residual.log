@@ -1,0 +1,186 @@
+Recaman/MomentRunResidual.lean:66:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a_1 ≥ 0
+  y ≥ 0
+  2*y - a_1 ≥ -1
+  0 ≤ x ≤ 3
+  u ≥ 0
+  r ≥ 0
+  p ≥ 0
+  p - x ≥ 0
+  2*p - u ≤ -4
+  2*p - a_1 ≤ -4
+  o ≥ 0
+  o ≥ 3
+  o - p ≤ 2
+  l ≥ 1
+  l ≥ 1
+  k - 6*r ≤ 4
+  k - 4*r ≥ 6
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - r ≤ -1
+  c ≥ 1
+  c + e - r ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := B
+ l := ↑v
+ o := ↑T
+ p := ↑j
+ r := ↑(cntF z)
+ u := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ x := ↑(cN P n (H + v + T))
+ y := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (H + v + T))
+ a_1 := ↑(cN (fun x => f x = true) n (H + v + T))
+Recaman/MomentRunResidual.lean:95:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f x
+in the target expression
+  EndN f 0 x
+
+f : Nat → Bool
+n t h M m L s U v T j q i : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+B : Int
+haz : areaW (seg f n (h + M + m + L + s + U)) = -B
+hlo : 4 * ↑(h + m + s) + 6 ≤ B
+hhi : B ≤ 6 * ↑(h + m + s) + 4
+hv : 1 ≤ v
+hq : 1 ≤ q
+hqv : q ≤ v
+hi : i < T
+hband : T ≤ i + j
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hlocal : Win f (n + h + M + m + L + s + U + v - q) (q + i)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hcounter : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+H : Nat := h + M + m + L + s + U
+S : Nat := h + m + s
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hword :
+  seg f n (h + M + m + L + s + U + v + T) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false ++
+      List.replicate T true
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = S
+hsrc : q = 1 ∧ i = 2 ∧ 2 * (j + 1) + 2 ≤ cN (fun x => f x = true) n (h + M + m + L + s + U + v + T)
+hF4 : 4 ≤ cN P n (H + v + T)
+hR : 5 ≤ j + 1
+hmass :
+  mass (List.drop t w) ≤ 2 ∧
+    v ≤ 3 ∧
+      T ≤ j + 2 ∧
+        (List.drop t w = [true] ∨ List.drop t w = [true, true] ∨ List.drop t w = [false, true, true, true]) ∧
+          (↑j + 1) ^ 2 ≤ 4 * ↑(cntF z) + 4 ∧ mass (List.drop t w) - ↑v + ↑T - ↑j = 1
+hno : ∀ (k : Nat), k < T → ∀ (s : Nat), s < n → ¬Win f s (n + H + v + k - s)
+heq : cN (EndN f 0) (n + H + v) T = rayCount (z ++ List.replicate v false) T
+hlocal6 :
+  rayCount
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+      T ≤
+    6
+hElast : cN (EndN f 0) (n + H + v) T ≤ 6
+hEhead : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 10
+x : Nat
+hx : n + H ≤ x
+hxv : x < n + H + v
+he : EndN f 0 x
+hf : f x = false
+⊢ False
+Recaman/MomentRunResidual.lean:125:76: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e_1 ≥ 8
+  d_1 ≥ 0
+  c_1 ≥ 0
+  0 ≤ b_1 ≤ 16
+  b_1 - c_1 ≥ 0
+  b_1 - d_1 ≤ -4
+  0 ≤ a_1 ≤ 10
+  0 ≤ y ≤ 6
+  0 ≤ x ≤ 6
+  r ≤ 2
+  p ≥ 0
+  0 ≤ o ≤ 16
+  o - d_1 ≤ -3
+  4*o - u ≥ -4
+  4 ≤ l ≤ 7
+  l + b_1 - d_1 ≥ 0
+  -4 ≤ l + o - r - d_1 ≤ -2
+  l + o - d_1 ≥ -2
+  2*l - p ≤ -4
+  k - 6*o ≤ 4
+  k - 4*o ≥ 6
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - o ≤ -1
+  c ≥ 1
+  c + e - o ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := B
+ l := ↑j
+ o := ↑(cntF z)
+ p := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ r := mass (List.drop t w)
+ u := (↑j + 1) ^ 2
+ x := ↑(rayCount (z ++ List.replicate v false) T)
+ y := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ a_1 := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ b_1 := ↑(cN (EndN f 0) n (H + v + T))
+ c_1 := ↑(cN (EndN f 0) (n + (H + v)) T)
+ d_1 := ↑(cN (fun x => f x = true) n (H + v + T))
+ e_1 := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))

@@ -3603,6 +3603,24 @@ H-20260908-01〜06と[handoff](ISSUE73_LAG11_CAPACITY_2026-09-09.md)へ保存。
   既存の `e_shift`／`past_shift`／`lift_equal_mod` を再利用、lint 4/9 実内容で主定理は実内容）を配置・登録。これで T（lag-max 11）が周期語の定理。
   lag 15 の検査器はビットマスク版（設計はカード追記）、lag 19 は 4 shard 実行中。
 
+## 2026-10-30 — actual source-conditioned四run研究
+
+固定head S5A3S4A4SA3 + 任意Sv ATの四run族だけはE464 PROVED-LEANでcharge3/最終S-source元p free-gapを供給。一般H01/C1はCONJECTURED。E457/E458/E461/E462でS-source反例必要域4..12/A29/j12、E463 Nat幅core、E465一般zero-mass moment oldclock4を登録。E459/E466の補助反例は親C1反例ではない。E467 target二caseは未Lean・人間レビュー未のPROVED-PAPER。
+
+全check467jobs/3059decl PASS、new Lean lint/G5/Audit、source manifest/実時計journalを同日DAILYへ。memory失敗layoutは隔離しSTOPPED、cap追加/legacy表再開/commitなし。次回10/31カードは同じtarget二caseのactual接着とlocal free1/2。時間の最終値はDAILY/journalだけを正本とする。
+
+## 2026-10-31: 四runのzero-mass moment/source枝（全長）
+
+E482 PROVED-LEAN: 元Intp/padded/zero-fullpositive、正三A-run head A=S、area=-B、4S+4<=B<=6S+4、同じold target/最終S local bandから元full-tail free>=j+1。全S/run長/old履歴を量化し、E467〜478のmass1/2 source重複と実countを接着。lower4ではold<=1を捨てずheadfree6/local5で払う。一般四run/任意r/C1/全射性は未解決。r3 kernel count依存、未検証r4表/E384不使用、人間レビュー未。
+
+E481 lower5の新境界はcounter域で空と意味監査し、新coverage進展に数えない。E480はold-erasureだけの実履歴反例。E483の帯外mass3/old4五area対はPROVED-PAPER（未Lean・人間レビュー未）でactualfree未接続。
+
+次は[H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)。[当日研究note](RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md)に全chainと失敗を保存。H19のfreshholdoutは未完了、H21 layoutは512MB STOPPEDで資源追加再開しない。
+
+
+## 2026-11-01 統合: main側の追加記録（公開済みIDを維持）
+
+
 
 ## 2026-10-01: H-20261001-01 terminal A budget
 

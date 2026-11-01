@@ -1,0 +1,15 @@
+Recaman/BlockSuffixPositivity.lean:2531:4: warning: This simp argument is unused:
+  List.length_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [evenFollowWord, areaW_append, mass_append, mass_rep_false, mass_replicate_A,
+    List.length_replicate] at hm ha
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockSuffixPositivity.lean:2556:4: warning: This simp argument is unused:
+  List.length_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaW_append, mass_append, mass_rep_false, mass_replicate_A, List.length_replicate] at hm ha
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

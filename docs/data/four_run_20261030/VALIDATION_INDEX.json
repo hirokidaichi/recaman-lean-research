@@ -1,0 +1,1687 @@
+[
+  {
+    "file": "docs/data/four_run_20261030/H01-actual-source-area-result.json",
+    "tag": "H01-actual-source-area",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:08:11.360573+09:00",
+    "finished_jst": "2026-10-30T06:08:12.705375+09:00",
+    "cpu_seconds": 1.2517010000000002,
+    "wall_seconds": 1.3448675000108778,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunTargetArea.lean": "c7272b9ff13e0d857ea56d9b605633921e18fe1c0422f87179b3850dba992aee"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H01-four-target-area-repair-result.json",
+    "tag": "H01-four-target-area-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunTargetArea.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:07:05.342060+09:00",
+    "finished_jst": "2026-10-30T06:07:06.292410+09:00",
+    "cpu_seconds": 0.88046,
+    "wall_seconds": 0.9504114170558751,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunTargetArea.lean": "c873cf921ff825517906aa3393ecdd025ece306fa47ea4ec21f7c241a4c1cb75"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H01-four-target-area-result.json",
+    "tag": "H01-four-target-area",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:06:12.725529+09:00",
+    "finished_jst": "2026-10-30T06:06:15.284559+09:00",
+    "cpu_seconds": 1.086303,
+    "wall_seconds": 2.5590935410000384,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunTargetArea.lean": "a73ace878450d62bc61d87a8c300e8c1a93234f0952cc9ebc3c793b78663fbc3"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H02-actual-smaller-band-result.json",
+    "tag": "H02-actual-smaller-band",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:13:22.127524+09:00",
+    "finished_jst": "2026-10-30T06:13:23.195420+09:00",
+    "cpu_seconds": 0.9796989999999999,
+    "wall_seconds": 1.0679536659736186,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunTargetArea.lean": "e6d5ee7e229f27192e4e8fbb022065f470fcdeb65cda95ede9273ab3f90b80e3"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H02-actual-source-area-repair-result.json",
+    "tag": "H02-actual-source-area-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunTargetArea.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:09:54.485311+09:00",
+    "finished_jst": "2026-10-30T06:09:55.887095+09:00",
+    "cpu_seconds": 1.293083,
+    "wall_seconds": 1.4018454591277987,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunTargetArea.lean": "c50bc649d887d1a365ee3050b53dedc9f07a0929cf43a003285b2388513da25c"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H03-adjacent-A-pruning-result.json",
+    "tag": "H03-adjacent-A-pruning",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/AdjacentRunSupply.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:18:56.632636+09:00",
+    "finished_jst": "2026-10-30T06:18:57.083321+09:00",
+    "cpu_seconds": 0.343282,
+    "wall_seconds": 0.4507415830157697,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/AdjacentRunSupply.lean": "7adae3f29bf1c497fe31133a7f016be6cd685acdd9f44401c0b319d27fd5a1da"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H03-build-adjacent-helper-result.json",
+    "tag": "H03-build-adjacent-helper",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "-o",
+      ".lake/build/lib/lean/Recaman/AdjacentRunSupply.olean",
+      "Recaman/AdjacentRunSupply.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:20:21.717174+09:00",
+    "finished_jst": "2026-10-30T06:20:22.105945+09:00",
+    "cpu_seconds": 0.319879,
+    "wall_seconds": 0.38882879191078246,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/AdjacentRunSupply.lean": "7adae3f29bf1c497fe31133a7f016be6cd685acdd9f44401c0b319d27fd5a1da"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H04-actual-band-thirteen-result.json",
+    "tag": "H04-actual-band-thirteen",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSupplySeventeen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:21:10.547953+09:00",
+    "finished_jst": "2026-10-30T06:21:11.162860+09:00",
+    "cpu_seconds": 0.5386259999999999,
+    "wall_seconds": 0.6149672500323504,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunSupplySeventeen.lean": "ff2abc84f082a14c62188ffb52478cea053c906c7ee443f8e05175c6b298daf5"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H04-build-seventeen-result.json",
+    "tag": "H04-build-seventeen",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "-o",
+      ".lake/build/lib/lean/Recaman/FourRunSupplySeventeen.olean",
+      "Recaman/FourRunSupplySeventeen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:27:01.592470+09:00",
+    "finished_jst": "2026-10-30T06:27:02.274537+09:00",
+    "cpu_seconds": 0.564542,
+    "wall_seconds": 0.6821284999605268,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunSupplySeventeen.lean": "ff2abc84f082a14c62188ffb52478cea053c906c7ee443f8e05175c6b298daf5"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H04-four-actual-seventeen-result.json",
+    "tag": "H04-four-actual-seventeen",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSupplySeventeen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:20:22.160133+09:00",
+    "finished_jst": "2026-10-30T06:20:22.608424+09:00",
+    "cpu_seconds": 0.37296999999999997,
+    "wall_seconds": 0.44838825007900596,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunSupplySeventeen.lean": "5079c3da2e450f9e652bec7807e8243f54f4d5f81aa3ad079e9bb5785930c2af"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H04-original-p-source-band-result.json",
+    "tag": "H04-original-p-source-band",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSourceBase.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:27:02.330793+09:00",
+    "finished_jst": "2026-10-30T06:27:02.897143+09:00",
+    "cpu_seconds": 0.47103799999999996,
+    "wall_seconds": 0.5664046250749379,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FourRunSourceBase.lean": "9af6b19035b1dda9da1cad1359dcb0c94c1f3cab24fa8240b8b4e5e934218ba4"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-discovery-result.json",
+    "tag": "H06-discovery",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "2",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/head_free_probe.py",
+      "discovery"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:35:39.735795+09:00",
+    "finished_jst": "2026-10-30T06:35:39.800672+09:00",
+    "cpu_seconds": 0.049643,
+    "wall_seconds": 0.06496208277530968,
+    "reason": "completed",
+    "source_sha256": "6d0cda209dc6f88c3599811d4c6d011110b930b9f784bae6cac81e3957c96eb3"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-final-S-head-counterexample-result.json",
+    "tag": "H06-final-S-head-counterexample",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSHeadCounterexample.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:36:26.926939+09:00",
+    "finished_jst": "2026-10-30T06:36:28.049238+09:00",
+    "cpu_seconds": 1.0247089999999999,
+    "wall_seconds": 1.1223534580785781,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSHeadCounterexample.lean": "5f3413d24578c3468c42124a7e9985846040ae09ec588eb1100128110794f48b"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-guard-cpu-result.json",
+    "tag": "H06-guard-cpu",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/guard_fixture.py",
+      "cpu"
+    ],
+    "exit_code": -24,
+    "started_jst": "2026-10-30T06:34:58.267226+09:00",
+    "finished_jst": "2026-10-30T06:34:59.293443+09:00",
+    "cpu_seconds": 1.004867,
+    "wall_seconds": 1.0263175000436604,
+    "reason": "signal 24 (see CPU cap and output)",
+    "source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-guard-exec-result.json",
+    "tag": "H06-guard-exec",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/guard_fixture.py",
+      "exec"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:34:58.188781+09:00",
+    "finished_jst": "2026-10-30T06:34:58.225807+09:00",
+    "cpu_seconds": 0.030439,
+    "wall_seconds": 0.0371244999114424,
+    "reason": "completed",
+    "source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-guard-fork-result.json",
+    "tag": "H06-guard-fork",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/guard_fixture.py",
+      "fork"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:34:58.076728+09:00",
+    "finished_jst": "2026-10-30T06:34:58.143494+09:00",
+    "cpu_seconds": 0.030948999999999997,
+    "wall_seconds": 0.06684700003825128,
+    "reason": "completed",
+    "source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-guard-normal-result.json",
+    "tag": "H06-guard-normal",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/guard_fixture.py",
+      "normal"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:34:58.001331+09:00",
+    "finished_jst": "2026-10-30T06:34:58.034889+09:00",
+    "cpu_seconds": 0.029502999999999998,
+    "wall_seconds": 0.033645167015492916,
+    "reason": "completed",
+    "source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-guard-wall-result.json",
+    "tag": "H06-guard-wall",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/guard_fixture.py",
+      "wall"
+    ],
+    "exit_code": -9,
+    "started_jst": "2026-10-30T06:34:59.337877+09:00",
+    "finished_jst": "2026-10-30T06:34:59.572167+09:00",
+    "cpu_seconds": 0.026528,
+    "wall_seconds": 0.23439895897172391,
+    "reason": "wall/deadline cap",
+    "source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-holdout-result.json",
+    "tag": "H06-holdout",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "2",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/head_free_probe.py",
+      "holdout"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:35:39.846428+09:00",
+    "finished_jst": "2026-10-30T06:35:40.287829+09:00",
+    "cpu_seconds": 0.432664,
+    "wall_seconds": 0.44148562499321997,
+    "reason": "completed",
+    "source_sha256": "6d0cda209dc6f88c3599811d4c6d011110b930b9f784bae6cac81e3957c96eb3"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H06-independent-replay-result.json",
+    "tag": "H06-independent-replay",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/head_free_replay.py"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:37:20.758817+09:00",
+    "finished_jst": "2026-10-30T06:37:20.796330+09:00",
+    "cpu_seconds": 0.031451,
+    "wall_seconds": 0.03760212496854365,
+    "reason": "completed",
+    "source_sha256": "e950683dfb12be8f6aced6ef9e81373c069a65168fa4779128c9cdf4e58d80a3"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H07-source-cross-actual-repair-result.json",
+    "tag": "H07-source-cross-actual-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SourceCrossSurplus.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:40:42.318153+09:00",
+    "finished_jst": "2026-10-30T06:40:43.394602+09:00",
+    "cpu_seconds": 1.0324119999999999,
+    "wall_seconds": 1.0765080421697348,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SourceCrossSurplus.lean": "a5886ce330a6bc5887aa932b23562a13feac6e094957efdaeca3eed291a37ee8"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H07-source-cross-actual-result.json",
+    "tag": "H07-source-cross-actual",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SourceCrossSurplus.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:40:06.152898+09:00",
+    "finished_jst": "2026-10-30T06:40:07.237189+09:00",
+    "cpu_seconds": 1.021131,
+    "wall_seconds": 1.0843420000746846,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SourceCrossSurplus.lean": "84a0ac90d5f3e619ab661d3d6755081fb57497332eb4328a925214b93949e22d"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H07-source-cross-result.json",
+    "tag": "H07-source-cross",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SourceCrossSurplus.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:39:41.062733+09:00",
+    "finished_jst": "2026-10-30T06:39:41.859047+09:00",
+    "cpu_seconds": 0.7284390000000001,
+    "wall_seconds": 0.7963732499629259,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SourceCrossSurplus.lean": "e965c939ccd57a0a7e3f05ced41ba299aa8cb708530f40030478027f954b92a7"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H08-build-clock-result.json",
+    "tag": "H08-build-clock",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.FinalBandSupplyClock"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:43:50.014472+09:00",
+    "finished_jst": "2026-10-30T06:43:50.578888+09:00",
+    "cpu_seconds": 0.627503,
+    "wall_seconds": 0.5644752501975745,
+    "reason": "completed",
+    "source_sha256": {}
+  },
+  {
+    "file": "docs/data/four_run_20261030/H08-final-band-clock-result.json",
+    "tag": "H08-final-band-clock",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalBandSupplyClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:42:10.513275+09:00",
+    "finished_jst": "2026-10-30T06:42:11.007627+09:00",
+    "cpu_seconds": 0.41793199999999997,
+    "wall_seconds": 0.49441091693006456,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalBandSupplyClock.lean": "9670d9fab52804fc4b0f6a3a6bcd89876b6fc48b73c699a6e92ad18d56a03051"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H08-last-ray-three-result.json",
+    "tag": "H08-last-ray-three",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalBandSupplyClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:43:00.632319+09:00",
+    "finished_jst": "2026-10-30T06:43:01.238193+09:00",
+    "cpu_seconds": 0.541535,
+    "wall_seconds": 0.6059377079363912,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalBandSupplyClock.lean": "59e0154a08a6891698a1c7ea9d4d19ed2c6796399a1bdfe049dd35f39fadf4b9"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-nine-result.json",
+    "tag": "H09-small-prefix-nine",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:44:44.634725+09:00",
+    "finished_jst": "2026-10-30T06:44:45.364350+09:00",
+    "cpu_seconds": 0.640823,
+    "wall_seconds": 0.7296842499636114,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "4e5a62bf83f91dbd89183dac037dc6ad06f9a93b1eaefbd1be3abbedfb209e9b"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-original-p-result.json",
+    "tag": "H09-small-prefix-original-p",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:45:20.035543+09:00",
+    "finished_jst": "2026-10-30T06:45:20.922466+09:00",
+    "cpu_seconds": 0.835059,
+    "wall_seconds": 0.88698362512514,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "fbbbcdd7fcc1bea66b7386d5c71f6e60d971cba064879b10a1a8b1eba8e7d38a"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-thirteen-after-build-result.json",
+    "tag": "H09-small-prefix-thirteen-after-build",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:43:50.615718+09:00",
+    "finished_jst": "2026-10-30T06:43:51.051681+09:00",
+    "cpu_seconds": 0.364824,
+    "wall_seconds": 0.4360247910954058,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "aabaf0eb1dd6ad1fc0cb7b1804adc17b91919a0a0b558f7de5e1ab3a05a67c51"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-thirteen-normalized-result.json",
+    "tag": "H09-small-prefix-thirteen-normalized",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:44:02.288426+09:00",
+    "finished_jst": "2026-10-30T06:44:02.835420+09:00",
+    "cpu_seconds": 0.454777,
+    "wall_seconds": 0.5470524579286575,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "6930214bb160e1996aac7048ae85ef098601f563ed390b162496dbaf45c83fcf"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-thirteen-repair-result.json",
+    "tag": "H09-small-prefix-thirteen-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:43:57.309165+09:00",
+    "finished_jst": "2026-10-30T06:43:57.822195+09:00",
+    "cpu_seconds": 0.43409699999999996,
+    "wall_seconds": 0.5130941669922322,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "660673731718b1ddcfb55dcac0e6e91c06612eb3e5ff7b78fbc1383132cbbca2"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H09-small-prefix-thirteen-result.json",
+    "tag": "H09-small-prefix-thirteen",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SmallPrefixSupplyThirteen.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:43:46.479491+09:00",
+    "finished_jst": "2026-10-30T06:43:46.697284+09:00",
+    "cpu_seconds": 0.11655399999999999,
+    "wall_seconds": 0.21784883388318121,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/SmallPrefixSupplyThirteen.lean": "aabaf0eb1dd6ad1fc0cb7b1804adc17b91919a0a0b558f7de5e1ab3a05a67c51"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-first-two-actual-result.json",
+    "tag": "H10-large-first-two-actual",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:55:03.603039+09:00",
+    "finished_jst": "2026-10-30T06:55:04.452332+09:00",
+    "cpu_seconds": 0.801271,
+    "wall_seconds": 0.8493537909816951,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "72e66ee0cea09b572b67e846c4d0a308b0a36faeb3660f927007b2d820973960"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-first-two-arithmetic-result.json",
+    "tag": "H10-large-first-two-arithmetic",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:54:13.009709+09:00",
+    "finished_jst": "2026-10-30T06:54:13.679841+09:00",
+    "cpu_seconds": 0.7083889999999999,
+    "wall_seconds": 0.6701952090952545,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "4b865d2d35a971c2688cc619cb6d041ce5f3600aa95bf0b66c7f1b9c34fe5aef"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-first-two-result.json",
+    "tag": "H10-large-first-two",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:53:37.789439+09:00",
+    "finished_jst": "2026-10-30T06:53:42.353742+09:00",
+    "cpu_seconds": 4.600095,
+    "wall_seconds": 4.564389125211164,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "4f90febb033dc61ccf28bbe8036e7ad52ec414a09382571091b0effd7561653a"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-first-two-square-split-result.json",
+    "tag": "H10-large-first-two-square-split",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:54:44.335062+09:00",
+    "finished_jst": "2026-10-30T06:54:44.962958+09:00",
+    "cpu_seconds": 0.5693649999999999,
+    "wall_seconds": 0.6279778331518173,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "22bb924a3666c382d5d808cab21e3d8146eb1212dc96c832502608fa1be8255c"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-raw-boundary-count-result.json",
+    "tag": "H10-large-raw-boundary-count",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:55:54.239422+09:00",
+    "finished_jst": "2026-10-30T06:55:55.252252+09:00",
+    "cpu_seconds": 0.9195800000000001,
+    "wall_seconds": 1.0128917500842363,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "8a959cac9b9ea4c8070c467b7ac57888d1dc45abcf81494060360950a6ec5313"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H10-large-raw-boundary-result.json",
+    "tag": "H10-large-raw-boundary",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LargePrefixTargetArea.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:55:30.311320+09:00",
+    "finished_jst": "2026-10-30T06:55:31.317434+09:00",
+    "cpu_seconds": 0.9096569999999999,
+    "wall_seconds": 1.0061712921597064,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/LargePrefixTargetArea.lean": "638236dafe43201f4dbc1f2a2eaece63b90a36b84ffa924b14763fc3fa0ac807"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H11-whole-source-S-twelve-result.json",
+    "tag": "H11-whole-source-S-twelve",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSSourceResidual.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:57:35.162541+09:00",
+    "finished_jst": "2026-10-30T06:57:35.826900+09:00",
+    "cpu_seconds": 0.560904,
+    "wall_seconds": 0.6644094169605523,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSSourceResidual.lean": "fb8bb5e13106a3f9a546b3449cf6cbcf71aca27ebc8a7bd44a7c61139e8fc106"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-build-circle-result.json",
+    "tag": "H12-build-circle",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.OldTargetMassCircle"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:01:58.317709+09:00",
+    "finished_jst": "2026-10-30T07:01:59.506246+09:00",
+    "cpu_seconds": 1.7666419999999998,
+    "wall_seconds": 1.1885917079634964,
+    "reason": "completed",
+    "source_sha256": {}
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-old-target-circle-actual-repair-result.json",
+    "tag": "H12-old-target-circle-actual-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMassCircle.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:01:21.624074+09:00",
+    "finished_jst": "2026-10-30T07:01:23.219317+09:00",
+    "cpu_seconds": 1.500721,
+    "wall_seconds": 1.5953138340264559,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/OldTargetMassCircle.lean": "4025f1206cd0781db3ecc611a2bf97115bab2cac5089ff30d9cc5d006b8bacbe"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-old-target-circle-actual-result.json",
+    "tag": "H12-old-target-circle-actual",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMassCircle.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:00:35.861087+09:00",
+    "finished_jst": "2026-10-30T07:00:37.454135+09:00",
+    "cpu_seconds": 1.5256560000000001,
+    "wall_seconds": 1.5931093750987202,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/OldTargetMassCircle.lean": "3d103eee322c573d23686459039e73ff44fd2272e5b12d4cef0403962a1805bd"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-old-target-circle-actual-unfold-result.json",
+    "tag": "H12-old-target-circle-actual-unfold",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMassCircle.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:01:45.379442+09:00",
+    "finished_jst": "2026-10-30T07:01:46.979545+09:00",
+    "cpu_seconds": 1.5055749999999999,
+    "wall_seconds": 1.6001611661631614,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/OldTargetMassCircle.lean": "0aa35ffe50464d71ba2a3c5cb962c29f7ad05e772d31e0673600dbbaf087cebf"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-old-target-circle-repair-result.json",
+    "tag": "H12-old-target-circle-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMassCircle.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:00:00.796422+09:00",
+    "finished_jst": "2026-10-30T07:00:01.936245+09:00",
+    "cpu_seconds": 1.0418779999999999,
+    "wall_seconds": 1.1398827501107007,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/OldTargetMassCircle.lean": "7e5a7058bc101f7b2a41bf6c5351e5095d774f25d90b155db409269266f78972"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H12-old-target-circle-result.json",
+    "tag": "H12-old-target-circle",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMassCircle.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:59:24.290146+09:00",
+    "finished_jst": "2026-10-30T06:59:25.378785+09:00",
+    "cpu_seconds": 1.0055669999999999,
+    "wall_seconds": 1.0886985829565674,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/OldTargetMassCircle.lean": "2538d7276832a7175abb30943cc3d173ab8f42d322bbd3524801b7701d7586a5"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H13-actual-target-width-assoc-result.json",
+    "tag": "H13-actual-target-width-assoc",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSTargetWidth.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:02:54.924742+09:00",
+    "finished_jst": "2026-10-30T07:02:56.174550+09:00",
+    "cpu_seconds": 1.1977630000000001,
+    "wall_seconds": 1.2498739170841873,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSTargetWidth.lean": "6d22a1470a3e6ef133a40704a522038d3876a867bf96ad3170399942590067ac"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H13-actual-target-width-result.json",
+    "tag": "H13-actual-target-width",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSTargetWidth.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:02:42.672426+09:00",
+    "finished_jst": "2026-10-30T07:02:43.883135+09:00",
+    "cpu_seconds": 1.14585,
+    "wall_seconds": 1.2107780000660568,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSTargetWidth.lean": "a9f1a97304ffa4b803cc0513ec7a8be73db3d689242ca257ffffa8ed42091fd6"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H13-target-width-original-p-result.json",
+    "tag": "H13-target-width-original-p",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSTargetWidth.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:03:24.786110+09:00",
+    "finished_jst": "2026-10-30T07:03:26.100166+09:00",
+    "cpu_seconds": 1.2052,
+    "wall_seconds": 1.3141210831236094,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSTargetWidth.lean": "9860ae9d22069dbab0110c87f8189480276ea86f56ab55313a7cd16f0bc62340"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H13-width-scalar-result.json",
+    "tag": "H13-width-scalar",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FinalSTargetWidth.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:01:59.548157+09:00",
+    "finished_jst": "2026-10-30T07:01:59.941041+09:00",
+    "cpu_seconds": 0.32342899999999997,
+    "wall_seconds": 0.39295316697098315,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/FinalSTargetWidth.lean": "e1d00635de6286681ca45c597d849951bff7534f9cbb5af87658bd3c3c3e321e"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H14-discovery-result.json",
+    "tag": "H14-discovery",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/full_tail_probe.py",
+      "discovery"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:08:09.571448+09:00",
+    "finished_jst": "2026-10-30T07:08:10.409537+09:00",
+    "cpu_seconds": 0.8324469999999999,
+    "wall_seconds": 0.8381751249544322,
+    "reason": "completed",
+    "source_sha256": "49b9b1fe59f7e11d9cd8d5519f1c8d6d70b5ef9a5959c62675795bd470eac6ef"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H14-holdout-result.json",
+    "tag": "H14-holdout",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/full_tail_probe.py",
+      "holdout"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:08:10.453751+09:00",
+    "finished_jst": "2026-10-30T07:08:11.295986+09:00",
+    "cpu_seconds": 0.835327,
+    "wall_seconds": 0.8423408749513328,
+    "reason": "completed",
+    "source_sha256": "49b9b1fe59f7e11d9cd8d5519f1c8d6d70b5ef9a5959c62675795bd470eac6ef"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H15-charge-result.json",
+    "tag": "H15-charge",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/four_charge_probe.py"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:11:14.182374+09:00",
+    "finished_jst": "2026-10-30T07:11:14.923347+09:00",
+    "cpu_seconds": 0.7319019999999999,
+    "wall_seconds": 0.7410709999967366,
+    "reason": "completed",
+    "source_sha256": "c9137e546998e085e8e8818b6582f963242018733881d0a590c6430890217ae7"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H16-charge-seed-result.json",
+    "tag": "H16-charge-seed",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/charge_seed_probe.py"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:12:44.223373+09:00",
+    "finished_jst": "2026-10-30T07:12:44.290002+09:00",
+    "cpu_seconds": 0.048728,
+    "wall_seconds": 0.06671287515200675,
+    "reason": "completed",
+    "source_sha256": "b94b7de9e4a44b2ce8f4ad0773a86e0abec1c63370736d01a907f4bae900a1fa"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H17-terminal-profile-result.json",
+    "tag": "H17-terminal-profile",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/terminal_profile.py"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:18:00.081493+09:00",
+    "finished_jst": "2026-10-30T07:18:00.144312+09:00",
+    "cpu_seconds": 0.04600699999999999,
+    "wall_seconds": 0.06289866613224149,
+    "reason": "completed",
+    "source_sha256": "35a51673ffe3433dfcee5137aa8c1375e2a5b3c5d2457bc175655c973d398692"
+  },
+  {
+    "file": "docs/data/four_run_20261030/H18-build-local-profile-result.json",
+    "tag": "H18-build-local-profile",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.TerminalLocalProfile"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:22:41.570031+09:00",
+    "finished_jst": "2026-10-30T07:22:42.525669+09:00",
+    "cpu_seconds": 1.2131839999999998,
+    "wall_seconds": 0.9556968749966472,
+    "reason": "completed",
+    "source_sha256": {}
+  },
+  {
+    "file": "docs/data/four_run_20261030/H18-terminal-local-classifier-repair-result.json",
+    "tag": "H18-terminal-local-classifier-repair",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalLocalProfile.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:22:25.238487+09:00",
+    "finished_jst": "2026-10-30T07:22:26.420396+09:00",
+    "cpu_seconds": 1.09947,
+    "wall_seconds": 1.181966541102156,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalLocalProfile.lean": "552c044fac6c6c2629954978c0bbe36e96cd79f96965546daef24a21c61d3ca2"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H18-terminal-local-classifier-result.json",
+    "tag": "H18-terminal-local-classifier",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalLocalProfile.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:21:32.101393+09:00",
+    "finished_jst": "2026-10-30T07:21:33.295655+09:00",
+    "cpu_seconds": 1.104307,
+    "wall_seconds": 1.194321250077337,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalLocalProfile.lean": "105f4abd2a4ebda5ecc5ffbe97606c42a3072c0c99d1a90f80bb7a2163ba333b"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H18-terminal-source-roots-result.json",
+    "tag": "H18-terminal-source-roots",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalLocalProfile.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:20:06.395277+09:00",
+    "finished_jst": "2026-10-30T07:20:07.391637+09:00",
+    "cpu_seconds": 0.94082,
+    "wall_seconds": 0.9964420420583338,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalLocalProfile.lean": "c4bd7e485f0c21e68c1e640f2c35ca115ad36b39349861b54882eb7dc5f8c301"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H19-build-old-clock-result.json",
+    "tag": "H19-build-old-clock",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.TerminalOldClock"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:24:45.382429+09:00",
+    "finished_jst": "2026-10-30T07:24:45.892947+09:00",
+    "cpu_seconds": 0.571129,
+    "wall_seconds": 0.5105782500468194,
+    "reason": "completed",
+    "source_sha256": {}
+  },
+  {
+    "file": "docs/data/four_run_20261030/H19-terminal-old-clock-result.json",
+    "tag": "H19-terminal-old-clock",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalOldClock.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:22:42.565690+09:00",
+    "finished_jst": "2026-10-30T07:22:43.058834+09:00",
+    "cpu_seconds": 0.460198,
+    "wall_seconds": 0.4932114169932902,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalOldClock.lean": "d413465d15bdc4a93e6069932e17d8e384eba25bb0922d21e02bfb7a2bbc9102"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H19-terminal-old-clock-ring-split-result.json",
+    "tag": "H19-terminal-old-clock-ring-split",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalOldClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:24:17.679347+09:00",
+    "finished_jst": "2026-10-30T07:24:18.292625+09:00",
+    "cpu_seconds": 0.527392,
+    "wall_seconds": 0.6133392909541726,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalOldClock.lean": "413307211c5cc11204fcd0b090daf810105cd5bee0bc9506228c41d70b554870"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H19-terminal-old-clock-scalar-result.json",
+    "tag": "H19-terminal-old-clock-scalar",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalOldClock.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:23:43.455607+09:00",
+    "finished_jst": "2026-10-30T07:23:44.034337+09:00",
+    "cpu_seconds": 0.492704,
+    "wall_seconds": 0.5787884159944952,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalOldClock.lean": "fbad77cdda08c26a368d939482e6885f1f922cd1bac08192eb1694eadb30588d"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H20-build-fourth-charge-result.json",
+    "tag": "H20-build-fourth-charge",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.TerminalFourthCharge"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:27:17.263558+09:00",
+    "finished_jst": "2026-10-30T07:27:17.714389+09:00",
+    "cpu_seconds": 0.487099,
+    "wall_seconds": 0.4508919999934733,
+    "reason": "completed",
+    "source_sha256": {}
+  },
+  {
+    "file": "docs/data/four_run_20261030/H20-terminal-four-run-charge-final-result.json",
+    "tag": "H20-terminal-four-run-charge-final",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalFourthCharge.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:25:05.117917+09:00",
+    "finished_jst": "2026-10-30T07:25:05.501156+09:00",
+    "cpu_seconds": 0.321334,
+    "wall_seconds": 0.3833020841702819,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalFourthCharge.lean": "f534a2354c3a610189fe57c36c22cd369f1aeb2f741aa5a855da4785d716b96d"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H20-terminal-four-run-charge-result.json",
+    "tag": "H20-terminal-four-run-charge",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalFourthCharge.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:24:45.930947+09:00",
+    "finished_jst": "2026-10-30T07:24:46.319387+09:00",
+    "cpu_seconds": 0.31551,
+    "wall_seconds": 0.3885149590205401,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalFourthCharge.lean": "eac145384e9e817398e498958edf1d33d1d67532b13ef60188aabe257e149edb"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H20-terminal-four-run-charge-unfold-result.json",
+    "tag": "H20-terminal-four-run-charge-unfold",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalFourthCharge.lean"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T07:24:55.604588+09:00",
+    "finished_jst": "2026-10-30T07:24:55.981806+09:00",
+    "cpu_seconds": 0.325379,
+    "wall_seconds": 0.37727462500333786,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalFourthCharge.lean": "368872f78018f1bb4d507b6a5d79527bdedc1bad3b2213491c5d47cc75fe9822"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H21-terminal-four-run-free-gap-result.json",
+    "tag": "H21-terminal-four-run-free-gap",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalFourthCharge.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:26:09.699169+09:00",
+    "finished_jst": "2026-10-30T07:26:10.204843+09:00",
+    "cpu_seconds": 0.423299,
+    "wall_seconds": 0.5057190419174731,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalFourthCharge.lean": "2579c1a165d65d36c2a37ede9d9a2071d094e5217c3ca742fb3b7dfca1dd7cd5"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H21-terminal-source-original-p-result.json",
+    "tag": "H21-terminal-source-original-p",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/TerminalFourthBase.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:27:17.753734+09:00",
+    "finished_jst": "2026-10-30T07:27:18.149241+09:00",
+    "cpu_seconds": 0.328581,
+    "wall_seconds": 0.39557766588404775,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/TerminalFourthBase.lean": "7d8a993628022c8c28f08e48e73166bf14759ff27ce8e58899470fc3c4332140"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H22-moment-band-actual-result.json",
+    "tag": "H22-moment-band-actual",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/MomentBandOldClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:32:16.844366+09:00",
+    "finished_jst": "2026-10-30T07:32:17.629922+09:00",
+    "cpu_seconds": 0.737127,
+    "wall_seconds": 0.785624000011012,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/MomentBandOldClock.lean": "0b4bdaf52d57dc832829216a2543f39ff14e01243d555dc7b20cad0a2c99aae0"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H22-moment-band-old-clock-result.json",
+    "tag": "H22-moment-band-old-clock",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/MomentBandOldClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:31:38.323817+09:00",
+    "finished_jst": "2026-10-30T07:31:39.013824+09:00",
+    "cpu_seconds": 0.586097,
+    "wall_seconds": 0.6900803330354393,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/MomentBandOldClock.lean": "68864de3056c53f70685c6dc98c972007e9403982bf5159a2db4a8164267bef9"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H23-moment-local-half-counter-result.json",
+    "tag": "H23-moment-local-half-counter",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/MomentBandOldClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:34:47.480453+09:00",
+    "finished_jst": "2026-10-30T07:34:48.343611+09:00",
+    "cpu_seconds": 0.796853,
+    "wall_seconds": 0.8632335420697927,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/MomentBandOldClock.lean": "e6c733cf6a5796f68da4fe36ea057ada2f09f6efd3b1af421dcb357a9a95eb9a"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/H23-ten-sign-local-half-counter-result.json",
+    "tag": "H23-ten-sign-local-half-counter",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/MomentBandOldClock.lean"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:38:19.230466+09:00",
+    "finished_jst": "2026-10-30T07:38:20.121350+09:00",
+    "cpu_seconds": 0.823028,
+    "wall_seconds": 0.8909501249436289,
+    "reason": "completed",
+    "source_sha256": {
+      "Recaman/MomentBandOldClock.lean": "046e337145411e7a5c6227913c0f1cdbf9fcd6782d34319f936634428c1489d2"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E457-20261030-result.json",
+    "tag": "check-E457-20261030",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:15:01.857889+09:00",
+    "finished_jst": "2026-10-30T06:15:06.741095+09:00",
+    "cpu_seconds": 4.655278,
+    "wall_seconds": 4.8832705828826874,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E457-audit-fixed-result.json",
+    "tag": "check-E457-audit-fixed",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:16:19.988307+09:00",
+    "finished_jst": "2026-10-30T06:16:28.219257+09:00",
+    "cpu_seconds": 8.348571,
+    "wall_seconds": 8.231023707892746,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E458-result.json",
+    "tag": "check-E458",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:30:55.202540+09:00",
+    "finished_jst": "2026-10-30T06:31:02.235427+09:00",
+    "cpu_seconds": 8.069213,
+    "wall_seconds": 7.032960457960144,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E460-result.json",
+    "tag": "check-E460",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:41:50.597873+09:00",
+    "finished_jst": "2026-10-30T06:41:55.218313+09:00",
+    "cpu_seconds": 4.381353,
+    "wall_seconds": 4.620503708021715,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E460-synced-result.json",
+    "tag": "check-E460-synced",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:43:15.178189+09:00",
+    "finished_jst": "2026-10-30T06:43:16.268652+09:00",
+    "cpu_seconds": 0.838181,
+    "wall_seconds": 1.0905208331532776,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E461-audit-complete-result.json",
+    "tag": "check-E461-audit-complete",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:52:27.622587+09:00",
+    "finished_jst": "2026-10-30T06:52:34.578608+09:00",
+    "cpu_seconds": 9.066463,
+    "wall_seconds": 6.956095332978293,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E461-registry-fixed-result.json",
+    "tag": "check-E461-registry-fixed",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:52:11.478626+09:00",
+    "finished_jst": "2026-10-30T06:52:16.148269+09:00",
+    "cpu_seconds": 4.453125,
+    "wall_seconds": 4.669707875000313,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E461-result.json",
+    "tag": "check-E461",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 1,
+    "started_jst": "2026-10-30T06:45:53.002347+09:00",
+    "finished_jst": "2026-10-30T06:45:57.612761+09:00",
+    "cpu_seconds": 4.4081019999999995,
+    "wall_seconds": 4.610458249924704,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E462-result.json",
+    "tag": "check-E462",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:56:51.230662+09:00",
+    "finished_jst": "2026-10-30T06:56:57.853397+09:00",
+    "cpu_seconds": 7.77985,
+    "wall_seconds": 6.622801041929051,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E462-union-result.json",
+    "tag": "check-E462-union",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T06:57:59.543523+09:00",
+    "finished_jst": "2026-10-30T06:58:06.005203+09:00",
+    "cpu_seconds": 7.2953790000000005,
+    "wall_seconds": 6.4617604170925915,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E463-result.json",
+    "tag": "check-E463",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:04:54.798610+09:00",
+    "finished_jst": "2026-10-30T07:05:01.750553+09:00",
+    "cpu_seconds": 8.210014000000001,
+    "wall_seconds": 6.952021165983751,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E464-result.json",
+    "tag": "check-E464",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:30:55.958089+09:00",
+    "finished_jst": "2026-10-30T07:31:02.248375+09:00",
+    "cpu_seconds": 7.147471,
+    "wall_seconds": 6.290402957936749,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-E467-result.json",
+    "tag": "check-E467",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:39:48.767547+09:00",
+    "finished_jst": "2026-10-30T07:39:55.693114+09:00",
+    "cpu_seconds": 8.014649,
+    "wall_seconds": 6.9257129998877645,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  },
+  {
+    "file": "docs/data/four_run_20261030/check-final-20261030-result.json",
+    "tag": "check-final-20261030",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "started_jst": "2026-10-30T07:47:02.066216+09:00",
+    "finished_jst": "2026-10-30T07:47:08.797583+09:00",
+    "cpu_seconds": 6.935103,
+    "wall_seconds": 6.731507582822815,
+    "reason": "completed",
+    "source_sha256": {
+      "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+Recaman/FourNonsuppliedData.lean:50:20: error(lean.unknownIdentifier): Unknown constant `List.reverseRecOn`
+Recaman/FourNonsuppliedData.lean:59:40: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a ≥ 0
+where
+ a := ↑(w.length + j - 19)
+ b := ↑w.length
+Recaman/FourNonsuppliedData.lean:56:64: error: unsolved goals
+w : List Bool
+j : Nat
+hj : 19 ≤ j
+⊢ List.drop (w.length + j - 19) w ++ List.replicate j false = List.replicate 19 false

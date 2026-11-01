@@ -1,0 +1,9 @@
+import Recaman.ShortTightDonorAvoidance
+
+#check Recaman.ShortTightDonorAvoidance.w1_owns_oldest
+#check Recaman.ShortTightDonorAvoidance.w1_next_addition
+#check Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor
+
+#print axioms Recaman.ShortTightDonorAvoidance.w1_owns_oldest
+#print axioms Recaman.ShortTightDonorAvoidance.w1_next_addition
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor

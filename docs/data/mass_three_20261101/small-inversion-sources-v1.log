@@ -1,0 +1,220 @@
+Recaman/SmallInversionSources.lean:40:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  d ≥ 1
+  c + d ≤ 14
+  0 ≤ b ≤ 1
+  a ≥ 1
+  a ≤ 1
+where
+ a := s
+ b := i
+ c := M * (m + s)
+ d := L * s
+ f := (L - 1) * s
+ g := L * (s - 1)
+ h := (M - e) * (m + s)
+Recaman/SmallInversionSources.lean:42:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 0
+  h ≥ 0
+  g ≥ 0
+  f ≥ 1
+  d ≥ 0
+  c ≥ 2
+  c + d ≤ 3
+  b ≥ 1
+  b ≤ 2
+  a ≥ 1
+  a - c ≥ 0
+  3*a + f ≤ 14
+where
+ a := M
+ b := s
+ c := e
+ d := i
+ f := L * s
+ g := (L - 1) * s
+ h := L * (s - 1)
+ j := (M - e) * (m + s)
+Recaman/SmallInversionSources.lean:43:48: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  d ≥ 2
+  0 ≤ c ≤ 2
+  b ≥ 1
+  b ≤ 2
+  a ≥ 1
+  a ≥ 1
+  3*a + d ≤ 14
+where
+ a := M
+ b := s
+ c := i
+ d := L * s
+ f := (L - 1) * s
+ g := L * (s - 1)
+ h := (M - e) * (m + s)
+Recaman/SmallInversionSources.lean:49:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  f ≥ 0
+  d ≥ 1
+  c + d ≤ 14
+  0 ≤ b ≤ 1
+  a ≥ 1
+  a ≤ 3
+where
+ a := s
+ b := i
+ c := M * (m + s)
+ d := L * s
+ f := (L - 1) * s
+ g := L * (s - 1)
+ h := (M - e) * (m + s)
+Recaman/SmallInversionSources.lean:57:32: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  0 ≤ c ≤ 3
+  1 ≤ b ≤ 4
+  a ≥ 2
+  a ≤ 2
+where
+ a := M
+ b := s
+ c := i
+ d := (L - 1) * s
+ e := L * (s - 1)
+ f := (M - 2) * (m + s)
+Recaman/SmallInversionSources.lean:87:22: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 0
+  g ≥ 0
+  f ≥ 0
+  e ≤ 2
+  1 ≤ d ≤ 12
+  c + d ≤ 14
+  b ≥ 1
+  b ≥ 1
+  a ≥ 1
+where
+ a := M
+ b := m
+ c := M * (m + s)
+ d := L * s
+ e := i
+ f := (M - 1) * (m + s)
+ g := (L - 1) * s
+ j := L * (s - 1)
+Recaman/SmallInversionSources.lean:89:22: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  g ≥ 0
+  f ≤ 4
+  1 ≤ e ≤ 12
+  d + e ≤ 14
+  1 ≤ c ≤ 3
+  b ≥ 1
+  b - c ≥ 0
+  a ≥ 1
+where
+ a := M
+ b := m
+ c := q
+ d := M * (m + s)
+ e := L * s
+ f := i
+ g := (M - 1) * (m + s)
+ j := (L - 1) * s
+ k := L * (s - 1)
+Recaman/SmallInversionSources.lean:91:33: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  g ≥ 0
+  f ≤ 5
+  1 ≤ e ≤ 11
+  d + e ≤ 14
+  1 ≤ c ≤ 4
+  b ≥ 1
+  b - c ≥ 0
+  a ≥ 1
+where
+ a := M
+ b := m
+ c := q
+ d := M * (m + s)
+ e := L * s
+ f := i
+ g := (M - 1) * (m + s)
+ j := (L - 1) * s
+ k := L * (s - 1)
+Recaman/SmallInversionSources.lean:96:46: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 0
+  h ≥ 0
+  g ≥ 0
+  f ≤ 3
+  1 ≤ e ≤ 3
+  d + e ≤ 14
+  1 ≤ c ≤ 2
+  b ≥ 1
+  b - c ≥ 0
+  a ≥ 1
+where
+ a := M
+ b := m
+ c := q
+ d := M * (m + s)
+ e := L * s
+ f := i
+ g := (M - 1) * (m + s)
+ h := (L - 1) * s
+ j := L * (s - 1)
+Recaman/SmallInversionSources.lean:130:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+in the target expression
+  runKey (List.replicate e true ++ (List.replicate m false ++ List.replicate L true ++ List.replicate s false)) = -2
+
+M m L s i : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hI : ↑M * (↑m + ↑s) + ↑L * ↑s ≤ 14
+e : Nat
+he : 1 ≤ e
+heM : e ≤ M
+hbal :
+  mass (List.replicate e true ++ (List.replicate m false ++ List.replicate L true ++ List.replicate s false)) + ↑i = 1
+hkey :
+  runKey (List.replicate e true ++ (List.replicate m false ++ List.replicate L true ++ List.replicate s false)) = -2
+hk :
+  runKey (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) =
+    4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2
+⊢ i = 2 ∨ M = 2 ∧ m = 3 ∧ L = 1 ∧ s = 2 ∧ i = 3
+Recaman/SmallInversionSources.lean:146:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey (List.replicate ?q false ++ List.replicate ?M true ++ List.replicate ?m false)
+in the target expression
+  runKey (List.replicate q false ++ (List.replicate L true ++ List.replicate s false)) = -2
+
+M m L s i : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hI : ↑M * (↑m + ↑s) + ↑L * ↑s ≤ 14
+q : Nat
+hq : 1 ≤ q
+hqm : q ≤ m
+hbal : mass (List.replicate q false ++ (List.replicate L true ++ List.replicate s false)) + ↑i = 1
+hkey : runKey (List.replicate q false ++ (List.replicate L true ++ List.replicate s false)) = -2
+⊢ i = 2 ∨ L = 4 ∧ s = 1 ∧ 2 ≤ m ∧ i = 0

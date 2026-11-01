@@ -1,0 +1,18 @@
+{
+  "tag": "H18-terminal-local-classifier-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TerminalLocalProfile.lean"
+  ],
+  "started_jst": "2026-10-30T07:22:25.238487+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TerminalLocalProfile.lean": "552c044fac6c6c2629954978c0bbe36e96cd79f96965546daef24a21c61d3ca2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

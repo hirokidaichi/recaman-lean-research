@@ -1,0 +1,123 @@
+{
+  "scope": "Observed saved validation commands from the closed 2026-10-28 research run, plus separate current engineering stage measurement; not added to research journal. Cold clean build not measured.",
+  "historical_full_success_count": 10,
+  "historical_full_wall_min": 8.763218541862443,
+  "historical_full_wall_median": 10.451246000011452,
+  "historical_full_wall_max": 12.976275791879743,
+  "historical_full_wall_sum": 103.61816300079226,
+  "historical_single_success_count": 33,
+  "historical_single_wall_median": 0.863908999832347,
+  "historical_single_wall_min": 0.4510370420757681,
+  "historical_single_wall_max": 3.160469542024657,
+  "historical_recorded_validation_command_count": 66,
+  "historical_recorded_validation_wall_sum": 182.2216936708428,
+  "historical_recorded_validation_cpu_sum": 171.771299,
+  "current_stage_measurement": [
+    {
+      "name": "architecture",
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "wall_seconds": 1.833885416155681,
+      "cpu_seconds": 1.61002,
+      "maxrss_native": 8110080,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "registry",
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "wall_seconds": 7.357875917106867,
+      "cpu_seconds": 6.230198,
+      "maxrss_native": 31408128,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "lake_build_cached",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "wall_seconds": 0.5061592080164701,
+      "cpu_seconds": 0.30452,
+      "maxrss_native": 74858496,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "axiom_audit",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "Recaman/Audit.lean"
+      ],
+      "wall_seconds": 3.4226414998993278,
+      "cpu_seconds": 1.119454,
+      "maxrss_native": 870957056,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "forbidden_scan",
+      "argv": [
+        "rg",
+        "-n",
+        "--glob",
+        "*.lean",
+        "\\b(sorry|admit|native_decide|axiom)\\b",
+        "."
+      ],
+      "wall_seconds": 0.04019129206426442,
+      "cpu_seconds": 0.113231,
+      "maxrss_native": 9650176,
+      "exit_code": 1,
+      "expected_exit": [
+        1
+      ],
+      "reason": "completed"
+    }
+  ],
+  "registry_rg_process_launches": 1864,
+  "tuning_candidates": [
+    {
+      "priority": 1,
+      "candidate": "Batch registry/frontier/Audit membership reads, retain all G1-G5/protected checks and failure cases",
+      "measurement_basis": "registry7.358s, 1864 rg processes; actual Python G1-G5 gate0.261s, protected0.028s",
+      "status": "proposal, no speedup benchmark or gate change yet"
+    },
+    {
+      "priority": 2,
+      "candidate": "Read imports for all module files in one process rather than per-file awk",
+      "measurement_basis": "architecture1.834s",
+      "status": "proposal, contract semantics/cycle/unreachable/module checks must be preserved"
+    },
+    {
+      "priority": 3,
+      "candidate": "Profile slow proof declarations and factor/prune only with the same intended claim",
+      "measurement_basis": "Memory-cap failures in source-count/actual-count/initial-S finite certificate; same-source -j1 successful1.588s in saved log",
+      "status": "not an authorization to resume STOPPED jobs or increase resources"
+    }
+  ],
+  "official_sources": [
+    "https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Lake/",
+    "https://lean-lang.org/doc/api/Lean/Util/Profile.html"
+  ]
+}

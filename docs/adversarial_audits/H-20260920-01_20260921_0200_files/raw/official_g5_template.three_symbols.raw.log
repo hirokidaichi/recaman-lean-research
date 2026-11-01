@@ -1,0 +1,38 @@
+# Statement audit: E-360
+
+- artifact: `Recaman/ShortTightDonorAvoidance.lean`
+- reviewer: (name, date)
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.ShortTightDonorAvoidance.w1_owns_oldest
+
+```lean
+(e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t) (hw : past e t (lag t) = w1) : own t = t - 7
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.ShortTightDonorAvoidance.w1_next_addition
+
+```lean
+(e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat) (hF : OwnerFamily e mem own lag) (t : Int) (ht : mem t) (hw : past e t (lag t) = w1) : e (t + 1) = true
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor
+
+```lean
+(e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup) (htight : (neighborhood e p B lag).length = B.length) (hBp : ∀ b ∈ B, b < p) (hB_A : ∀ b ∈ B, e (b : Int) = true) (hB_lag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11) (hB_P2 : ∀ b ∈ B, P2 (past e (b : Int) (lag b))) (hB_min : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d)) (u0 : Nat) (hPdon : P2 (past e (u0 : Int) 11)) (hmindon : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e (u0 : Int) 11).take d)) (hss : Recaman.OneSSMultiplicity.ssCount (past e (u0 : Int) 11) = 2) : Recaman.TrueOldestGateT6.trueOldestPhase e p u0 11 ∉ neighborhood e p B lag
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+EXIT_CODE=0

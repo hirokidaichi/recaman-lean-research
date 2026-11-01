@@ -1,0 +1,61 @@
+{
+  "sources": [
+    {
+      "source": "docs/data/c1_four_20261024/macro_graph.py",
+      "frozen_hash_match": true
+    },
+    {
+      "source": "docs/data/c1_four_20261024/macro_independent.py",
+      "frozen_hash_match": true
+    },
+    {
+      "source": "docs/data/c1_four_20261024/last_free_chain.py",
+      "frozen_hash_match": true
+    },
+    {
+      "source": "docs/data/c1_four_20261024/last_free_independent.py",
+      "frozen_hash_match": true
+    },
+    {
+      "source": "docs/data/c1_four_20261024/motif_gaps.py",
+      "frozen_hash_match": true
+    }
+  ],
+  "q4_reused_input_hashes_match": true,
+  "graph_and_counter_inputs_match": true,
+  "timed_exploration_jobs": [
+    {
+      "real": 4.97,
+      "user": 4.92,
+      "sys": 0.02,
+      "run": "macro-discovery"
+    },
+    {
+      "real": 1.6,
+      "user": 1.57,
+      "sys": 0.02,
+      "run": "macro-independent"
+    },
+    {
+      "real": 0.09,
+      "user": 0.08,
+      "sys": 0.0,
+      "run": "last-free"
+    },
+    {
+      "real": 0.05,
+      "user": 0.04,
+      "sys": 0.0,
+      "run": "last-free-independent"
+    },
+    {
+      "real": 0.02,
+      "user": 0.01,
+      "sys": 0.0,
+      "run": "motif-gaps"
+    }
+  ],
+  "sum_rounded_user_plus_sys": 6.659999999999999,
+  "sum_rounded_wall": 6.7299999999999995,
+  "note": "Only the five timed exploration jobs are summed. Lean/kernel/engineering/recording CPU is separate and not fully measured; total CPU unknown."
+}

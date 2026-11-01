@@ -1,0 +1,25 @@
+{
+  "tag": "H10-order2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldSourceKeyOrder.lean"
+  ],
+  "started_jst": "2026-10-28T07:32:01.576392+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSourceKeyOrder.lean": "144a055e679a500529be53eefabf06ccdae49b537fea919fdbf00aa398e35c45"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "a19c9a37848942d1da3283a369d91fb4660474efcfd44383f22423a05756f563",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4750355831347406,
+  "cpu_seconds": 0.388439,
+  "finished_jst": "2026-10-28T07:32:02.051395+09:00"
+}

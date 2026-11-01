@@ -1,0 +1,6 @@
+command: timeout 120 python3 scripts/harness_gate.py --check-registry docs/EVIDENCE_REGISTRY.tsv
+timeout_seconds: 120
+exit_code: 0
+output:
+Harness gates G1-G5: 11 PROVED-LEAN rows >= E-344 pass.
+

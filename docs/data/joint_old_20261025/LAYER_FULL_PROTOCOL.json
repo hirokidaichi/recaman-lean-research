@@ -1,0 +1,59 @@
+{
+  "card": "H-20261025-10",
+  "frozen_utc": "2026-10-24T22:30:35.441388+00:00",
+  "sources": {
+    "Recaman/FourEventLayer0.lean": "c3524a3dbb4f54916e8b12666477e0bef6bb3a0cdd98a0e630a2aa04f42cafde",
+    "Recaman/FourEventLayer1.lean": "9f133bbdc844d4ea14a46906f3a54b2b0f10c1403a3d46b7970b3a06cb15c612",
+    "Recaman/FourEventLayer6.lean": "7b816ac487a0a0de593a1b79b94d9900ba23687141b6670d7ef09ca2d78ff1c8",
+    "Recaman/FourEventLayer7.lean": "2bbd2183a5323d7804d00bcee14a0b80c8bd30538b64700ffd0b77097b72a50e",
+    "Recaman/FourEventLayer10.lean": "e68a32d179fb2d4577789807e079b23a0931058eae62729992f5517ae938fbed",
+    "Recaman/FourEventLayer4.lean": "35fb756227f9c1fd6725bf2f9b14e0654ef9d2f0a4b0562bd1073be461617167",
+    "Recaman/FourEventLayer8.lean": "816f0b43833ab0b8916d91dd5160d2c08818fe4511fe02c9d3b4930ec09227f2",
+    "Recaman/FourEventLayer9.lean": "b22edaf541b34f6bb35c001864360b42e0bc0bdf9f7722d725cfa632400a7fd2",
+    "Recaman/FourEventLayer5.lean": "4a774f31e677d4a1d4e9024df8edd418c9826f165fbf7fa7dc6d206396f7c707",
+    "Recaman/FourEventPruned.lean": "33d9f1d397480eb3f80a7fee3cb0e34537904e3a20351a471eb553948ffabad6",
+    "Recaman/FourEventLayer2.lean": "cc7e08d11ec963d1ae5c1b14cdf1589482eba02ec5b6ffb23a03920f46e49a5d",
+    "Recaman/FourEventLayer3.lean": "4c6b96f38738f321efe49a2151a31fb85811fbe9e26abe11cd1eccb2d0014bd9",
+    "Recaman/FourEventData.lean": "018511d17c40806cbbb6984783f0703fdee47caa05546e9eab287f03add03603",
+    "Recaman/FourEventProof.lean": "cf444862e8de0def4a7fa466dc3de442f375978a17359328628a1ed773f368cf",
+    "Recaman/FourEventFast.lean": "c41ba13c7a72f720fea9762ec8275b07f18e36c0c208d6823c7b4ae7d19b5f32",
+    "Recaman/PrefixMassBarrier.lean": "4cda54ad1b18dca5f7095f1695777348de47c33465742b60a7074e38912f7e7a",
+    "docs/data/joint_old_20261025/generate_layers.py": "1e8268ff03142883c9c1695812ed089371ec8ef5f3488dd5766fb3a7123e974a",
+    "docs/data/joint_old_20261025/run_guard.py": "d814479a1f4aef1e2439ff3ba7c7235f39c74a651a85ed6a16e46125ee469cc2"
+  },
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "3a53a83f75b298467b1e13c65f30b8303a2e1df0786b20f389de3cebab99a697",
+  "representation": "strict A+1 dependency layers, same12837nodes/same40successors/sameChecked/sameactualfooter; public names only for imports. Initial proof remains an actual checked constructor, never assumed in final theorem.",
+  "benchmark": {
+    "tag": "dag-layer-bench",
+    "started_jst": "2026-10-25T07:29:07.418022+09:00",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.FourEventLayer8"
+    ],
+    "wall_cap_seconds": 90,
+    "cpu_cap_seconds": 90,
+    "rss_cap_kib": 4194304,
+    "source_sha256": {},
+    "pid": 17777,
+    "finished_jst": "2026-10-25T07:29:12.287821+09:00",
+    "exit_code": 0,
+    "reason": "completed",
+    "peak_sampled_process_group_rss_kib": 521072,
+    "wall_seconds": 4.869996624998748
+  },
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "cpu_cap_seconds": 900,
+  "wall_cap_seconds": 900,
+  "process_group_rss_cap_kib": 4194304,
+  "absolute_stop_jst": "2026-10-25T07:45:00+09:00",
+  "reopen_reason": "Observed single-file retained environment hit4GiB.64node cross-module bench completed at521072KiB; each compilation layer is bounded (largest6959), reusing compiled opaque child proofs instead of retaining all source elaboration states. No budget increase.",
+  "acceptance": "alllayers, initial Checked, all actual theorem footer, then mainAudit/G5/check.sh. No claim promotion before complete.",
+  "stop": "if resource/deadline fails, no further full-proof retry today, archive unverified layers and keep E404 CONJECTURED/methodSTOPPED; finish other claims/handoff by8",
+  "accounting": "bench/full total<=990CPU/wall; CPU not added to journal, all prior canceled/failed outputs preserved"
+}

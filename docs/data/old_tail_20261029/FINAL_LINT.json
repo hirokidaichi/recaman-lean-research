@@ -1,0 +1,145 @@
+[
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "initial_S_tail_exclusion: concrete / proof=work / SUBSTANTIVE\ninitial_S_clock_exclusion: concrete / proof=work / SUBSTANTIVE\nold_target_tail_clock_sound: concrete / proof=work / SUBSTANTIVE\ntailClock_count_le_three: concrete / proof=work / SUBSTANTIVE\nfull_old_target_tail_clock: concrete / proof=work / SUBSTANTIVE\ncN_length_bound: concrete / proof=work / SUBSTANTIVE\nfull_old_target_ray_count: concrete / proof=work / SUBSTANTIVE\nactual_old_target_ray_free: concrete / proof=work / SUBSTANTIVE\nzero_gap_initial_source_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldTargetLocalTail.lean: 9/9 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "cntF_A: concrete / proof=work / SUBSTANTIVE\nfirst_A_tail_A_budget: concrete / proof=work / SUBSTANTIVE\nfirst_A_tail_clock_two: concrete / proof=work / SUBSTANTIVE\nold_target_two_clock_sound: concrete / proof=work / SUBSTANTIVE\ntwoClock_count_le_two: concrete / proof=work / SUBSTANTIVE\nfull_old_target_two_clock: concrete / proof=work / SUBSTANTIVE\ncN_length_bound: concrete / proof=work / SUBSTANTIVE\nfull_old_target_ray_count_two: concrete / proof=work / SUBSTANTIVE\nactual_old_target_ray_free_two: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldTargetClockCollision.lean: 9/9 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "middle_S_tail_first_run: concrete / proof=work / SUBSTANTIVE\nmiddle_clock_first_run: concrete / proof=work / SUBSTANTIVE\nfull_small_first_tail_clock: concrete / proof=work / SUBSTANTIVE\ncN_length_bound: concrete / proof=work / SUBSTANTIVE\nray_count_band_bound: concrete / proof=work / SUBSTANTIVE\nmiddle_early_large_L: concrete / proof=work / SUBSTANTIVE\ntwoClock_short_small_L: concrete / proof=work / SUBSTANTIVE\nmiddle_count_le_one: concrete / proof=work / SUBSTANTIVE\nold_target_count_charge: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldTargetMiddleCharge.lean: 9/9 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/ThreeRunOldTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "three_run_old_target_free_gap: concrete / proof=work / SUBSTANTIVE\nthree_run_old_target_free_gap_from_zero: concrete / proof=work / SUBSTANTIVE\nthree_run_old_target_free_gap_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/ThreeRunOldTargetGap.lean: 3/3 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/InitialSTargetOldPair.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "first_third_old_clock_order: concrete / proof=work / SUBSTANTIVE\nthird_old_excludes_first_old: concrete / proof=work / SUBSTANTIVE\nfirst_ray_le_one_of_third_old: concrete / proof=work / SUBSTANTIVE\nactual_old_root: concrete / proof=work / SUBSTANTIVE\nactual_first_supply_le_one: concrete / proof=work / SUBSTANTIVE\n# Recaman/InitialSTargetOldPair.lean: 5/5 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/InitialSTargetTail.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "first_A_tail_budget: concrete / proof=work / SUBSTANTIVE\nsmall_S_first_A_clock: concrete / proof=work / SUBSTANTIVE\nlocal_tail_two_clock: concrete / proof=work / SUBSTANTIVE\nlocal_tail_small_first: concrete / proof=work / SUBSTANTIVE\ncntF_A: concrete / proof=work / SUBSTANTIVE\nray_band_with_old: concrete / proof=work / SUBSTANTIVE\ninitial_S_ray_bounds: concrete / proof=work / SUBSTANTIVE\n# Recaman/InitialSTargetTail.lean: 7/7 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/InitialSTargetTwoShapes.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "large_first_two_shapes: concrete / proof=work / SUBSTANTIVE\ntwo_shape_clock: concrete / proof=work / SUBSTANTIVE\ntwo_shape_local_count: concrete / proof=work / SUBSTANTIVE\n# Recaman/InitialSTargetTwoShapes.lean: 3/3 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/InitialSTargetCountCharge.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "cntF_A: concrete / proof=work / SUBSTANTIVE\ninitial_S_target_count_charge: concrete / proof=work / SUBSTANTIVE\n# Recaman/InitialSTargetCountCharge.lean: 2/2 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/ThreeRunInitialSTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "three_run_initial_S_target_free_gap: concrete / proof=work / SUBSTANTIVE\nthree_run_initial_S_target_free_gap_from_zero: concrete / proof=work / SUBSTANTIVE\nthree_run_initial_S_target_free_gap_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/ThreeRunInitialSTargetGap.lean: 3/3 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/ThreeRunFreeGap.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "three_run_free_gap: concrete / proof=work / SUBSTANTIVE\nthree_run_free_gap_from_zero: concrete / proof=work / SUBSTANTIVE\nthree_run_free_gap_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/ThreeRunFreeGap.lean: 3/3 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/LocalSourcePrefixBudget.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "block_continuation_key_lower: concrete / proof=work / SUBSTANTIVE\nlocal_source_prefix_A: concrete / proof=work / SUBSTANTIVE\nactual_local_source_prefix_A: concrete / proof=work / SUBSTANTIVE\n# Recaman/LocalSourcePrefixBudget.lean: 3/3 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/FreePrefixCounterexample.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "supplied_iff: concrete / proof=work / SUBSTANTIVE\ncount_bool: concrete / proof=work / SUBSTANTIVE\ncount_supplied: concrete / proof=work / SUBSTANTIVE\ncount_S: concrete / proof=work / SUBSTANTIVE\nliteral_counts: concrete / proof=work / SUBSTANTIVE\npositive_certificate: concrete / proof=work / SUBSTANTIVE\nfree_before_source_counterexample: concrete / proof=work / SUBSTANTIVE\nliteral_interval: concrete / proof=work / SUBSTANTIVE\nthree_run_bound_replay: concrete / proof=work / SUBSTANTIVE\n# Recaman/FreePrefixCounterexample.lean: 9/9 substantive theorems\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/PrefixKeySourceBudget.lean"
+    ],
+    "exit_code": 0,
+    "stdout": "continuation_key_lower: concrete / proof=work / SUBSTANTIVE\nlocal_source_prefix_A_of_key: concrete / proof=work / SUBSTANTIVE\nactual_local_source_prefix_A_of_key: concrete / proof=work / SUBSTANTIVE\nmass_only_source_cut_counterexample: concrete / proof=work / SUBSTANTIVE\nnegative_mass_source_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/PrefixKeySourceBudget.lean: 5/5 substantive theorems\n",
+    "stderr": ""
+  }
+]

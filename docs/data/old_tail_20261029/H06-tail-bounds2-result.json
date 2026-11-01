@@ -1,0 +1,25 @@
+{
+  "tag": "H06-tail-bounds2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetTail.lean"
+  ],
+  "started_jst": "2026-10-29T06:42:24.966620+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetTail.lean": "53386dc35b92a5afa25e37297a83a89e5e1125ab24229241e0191bc9edd5619a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "0bd981c867e07ff4eb05eaceaef7bf36b3f73b2acccea66a633d5d270257c9eb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.1000032080337405,
+  "cpu_seconds": 1.002193,
+  "finished_jst": "2026-10-29T06:42:26.066556+09:00"
+}

@@ -1,0 +1,69 @@
+Recaman/TwoRunSupply.lean:102:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f - g - i ≥ 1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  b ≥ 0
+  b - c + d - e ≥ 2
+  a ≥ 0
+  a - b + c - d + e ≥ -1
+where
+ a := ↑h
+ b := ↑M
+ c := ↑m
+ d := ↑r
+ e := ↑j
+ f := (↑q + ↑m) ^ 2
+ g := (↑j + 1) ^ 2
+ i := 2 * ↑m * ↑M
+Recaman/TwoRunSupply.lean:104:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  2*f - g ≥ 1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  b ≥ 0
+  b + c - d - e ≥ 2
+  a ≥ 0
+  a - b - c + d + e ≥ -1
+where
+ a := ↑h
+ b := ↑M
+ c := ↑r
+ d := ↑j
+ e := ↑m
+ f := 2 * ↑m * ↑M
+ g := 4 * ↑m * ↑M
+Recaman/TwoRunSupply.lean:113:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f - g ≤ -1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d + e ≥ 0
+  b ≥ 0
+  b - c + d - e ≥ 1
+where
+ b := ↑M
+ c := ↑m
+ d := ↑r
+ e := ↑j
+ f := (↑j + 1) ^ 2
+ g := ↑m * (↑m - 2 * ↑a)
+Recaman/TwoRunSupply.lean:117:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  2*f - g ≥ 1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≤ 0
+  b ≥ 0
+  b + c - d - e ≥ 1
+where
+ b := ↑M
+ c := ↑r
+ d := ↑j
+ e := ↑m
+ f := 2 * ↑m * ↑a
+ g := 4 * ↑m * ↑a

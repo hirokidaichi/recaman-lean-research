@@ -1,0 +1,12 @@
+import Recaman.BlockSameMassSpan
+#check Int.mul_ediv_cancel_left
+#check Int.mul_ediv_cancel_right
+#check Int.mul_ediv_cancel
+#check Int.mul_emod_right
+#check Int.mul_emod
+#check Int.ediv_mul_cancel
+#check Int.emod_eq_zero_of_dvd
+#check Int.emod_eq_zero_iff_dvd
+#check Int.add_emod
+#check Int.mul_emod_left
+#check Int.natCast_toNat

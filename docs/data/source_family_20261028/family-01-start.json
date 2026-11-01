@@ -1,0 +1,17 @@
+{
+  "tag": "family-01",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/SourceFamilyFreeCount.lean"
+  ],
+  "started_jst": "2026-10-28T06:03:23.423290+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SourceFamilyFreeCount.lean": "e91c3da3fbdaab6fc90dea881c72e8dd65d37573e5563b2a3ecbaa9c1da4036b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

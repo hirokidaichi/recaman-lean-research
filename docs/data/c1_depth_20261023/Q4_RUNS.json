@@ -1,0 +1,24 @@
+{
+  "registered_jst": "2026-10-23T07:17:02.020915+09:00",
+  "roots_source_sha256": "c3c254d2a2445eac8ac4a1ed0c2bb407188a072ce596e67d768fd3a6f77c340f",
+  "runs": [
+    {
+      "argv": [
+        "python3",
+        "docs/data/c1_depth_20261023/q4_graph.py"
+      ],
+      "source_sha256": "21019f533b617108a2fb7043d866a42646e9d716a6188c2b61b723cbd3bfcd4d",
+      "cpu_cap_seconds": 30,
+      "wall_guard_seconds": 28
+    },
+    {
+      "argv": [
+        "python3",
+        "docs/data/c1_depth_20261023/q4_independent.py"
+      ],
+      "source_sha256": "3f456fd8f19d0303c456ca0f2c0e1fef3d2fffa47a7268e0ad3ae0f27bc68069",
+      "cpu_cap_seconds": 30,
+      "wall_guard_seconds": 28
+    }
+  ]
+}

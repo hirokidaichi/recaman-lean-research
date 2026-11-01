@@ -1,0 +1,31 @@
+theorem short_supply_donor_deletion (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (hper : ∀ x : Int, e (x + p) = e x)
+    (U : List Nat) (lag : Nat → Nat) (hUn : U.Nodup)
+    (hUp : ∀ u ∈ U, u < p)
+    (hU_A : ∀ u ∈ U, e (u : Int) = true)
+    (hU_lag : ∀ u ∈ U, lag u = 3 ∨ lag u = 7 ∨ lag u = 11)
+    (hU_P2 : ∀ u ∈ U, P2 (past e (u : Int) (lag u)))
+    (hU_min : ∀ u ∈ U, ∀ d, d < lag u → 0 < d → ¬ P2 ((past e (u : Int) (lag u)).take d))
+    (u0 : Nat) (hPdon : P2 (past e (u0 : Int) 11))
+    (hmindon : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e (u0 : Int) 11).take d))
+    (hss : Recaman.OneSSMultiplicity.ssCount (past e (u0 : Int) 11) = 2)
+    (B : List Nat) (hBU : List.Sublist B U) :
+    B.length ≤ (Recaman.TwoSSTightDisjoint.deletedNeighborhood e p B lag
+      (Recaman.TrueOldestGateT6.trueOldestPhase e p u0 11)).length := by
+  have hBp := fun b hb => hUp b (hBU.subset hb)
+  have hBA := fun b hb => hU_A b (hBU.subset hb)
+  have hBlag := fun b hb => hU_lag b (hBU.subset hb)
+  have hBP := fun b hb => hU_P2 b (hBU.subset hb)
+  have hBmin := fun b hb => hU_min b (hBU.subset hb)
+  have hBn := hUn.sublist hBU
+  have hbound : ∀ b ∈ B, lag b ≤ 11 := by
+    intro b hb
+    rcases hBlag b hb with h | h | h <;> omega
+  have hhall := short_window_hall e p hp hper B lag hBn hBp hBA hbound hBP
+  by_cases htight : (neighborhood e p B lag).length = B.length
+  · apply Recaman.TwoSSAvoidTight.deleted_hall_of_not_mem e p B lag _ _ hhall
+    exact short_tight_avoids_ss2_donor e p hp hper B lag hBn htight hBp hBA hBlag hBP hBmin
+      u0 hPdon hmindon hss
+  · exact Recaman.TwoSSAvoidTight.deleted_hall_of_slack e p B lag _ (by omega)
+
+EXIT=0

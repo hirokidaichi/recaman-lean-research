@@ -1,0 +1,9 @@
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 10000000 in
+theorem rows_verified : verified rows=true := by decide
+
+theorem initial_member : Member rows ⟨[],0,0,0⟩ := by
+  exact ⟨0, by decide, by decide⟩
+
+end Recaman.ThreeNonsuppliedData

@@ -1,0 +1,118 @@
+{
+  "known_cpu_seconds": 302.83,
+  "complete": false,
+  "rows": [
+    {
+      "file": "barrier-falsify.time",
+      "wall_seconds": 0.04,
+      "user_seconds": 0.03,
+      "sys_seconds": 0.0,
+      "cpu_seconds": 0.03
+    },
+    {
+      "file": "barrier-one.time",
+      "wall_seconds": 0.12,
+      "user_seconds": 0.11,
+      "sys_seconds": 0.0,
+      "cpu_seconds": 0.11
+    },
+    {
+      "file": "context-discovery.time",
+      "wall_seconds": 0.37,
+      "user_seconds": 0.36,
+      "sys_seconds": 0.0,
+      "cpu_seconds": 0.36
+    },
+    {
+      "file": "context-independent.time",
+      "wall_seconds": 2.46,
+      "user_seconds": 2.43,
+      "sys_seconds": 0.03,
+      "cpu_seconds": 2.46
+    },
+    {
+      "file": "dag-bench-checked.time",
+      "wall_seconds": 72.15,
+      "user_seconds": 71.72,
+      "sys_seconds": 0.39,
+      "cpu_seconds": 72.11
+    },
+    {
+      "file": "dag-bench-single.time",
+      "wall_seconds": 72.61,
+      "user_seconds": 72.28,
+      "sys_seconds": 0.32,
+      "cpu_seconds": 72.6
+    },
+    {
+      "file": "dag-bench.time",
+      "wall_seconds": 14.32,
+      "user_seconds": 88.75,
+      "sys_seconds": 1.49,
+      "cpu_seconds": 90.24
+    },
+    {
+      "file": "dag-fast-bench.time",
+      "wall_seconds": 31.21,
+      "user_seconds": 30.98,
+      "sys_seconds": 0.22,
+      "cpu_seconds": 31.2
+    },
+    {
+      "file": "dag-fast-full.time",
+      "cpu_seconds": null,
+      "reason": "no completed time output"
+    },
+    {
+      "file": "dag-full.time",
+      "cpu_seconds": null,
+      "reason": "no completed time output"
+    },
+    {
+      "file": "dag-layer-bench.time",
+      "wall_seconds": 4.46,
+      "user_seconds": 4.14,
+      "sys_seconds": 0.31,
+      "cpu_seconds": 4.45
+    },
+    {
+      "file": "dag-layer-full.time",
+      "cpu_seconds": null,
+      "reason": "no completed time output"
+    },
+    {
+      "file": "dag-pruned-bench-checked.time",
+      "wall_seconds": 14.73,
+      "user_seconds": 14.54,
+      "sys_seconds": 0.19,
+      "cpu_seconds": 14.73
+    },
+    {
+      "file": "dag-pruned-bench.time",
+      "wall_seconds": 0.06,
+      "user_seconds": 0.04,
+      "sys_seconds": 0.01,
+      "cpu_seconds": 0.05
+    },
+    {
+      "file": "dag-pruned-full.time",
+      "cpu_seconds": null,
+      "reason": "no completed time output"
+    },
+    {
+      "file": "discovery.time",
+      "wall_seconds": 3.36,
+      "user_seconds": 3.32,
+      "sys_seconds": 0.02,
+      "cpu_seconds": 3.34
+    },
+    {
+      "file": "independent.time",
+      "wall_seconds": 11.17,
+      "user_seconds": 11.0,
+      "sys_seconds": 0.15,
+      "cpu_seconds": 11.15
+    }
+  ],
+  "note": "Incomplete total. Group-terminated/full-check/individual Lean CPU not all measured; never add CPU to journal. CPU RLIMIT is per process, not accumulated group enforcement."
+}

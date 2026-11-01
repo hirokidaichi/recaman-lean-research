@@ -1,0 +1,45 @@
+Recaman/RunSupplyBudget.lean:14:62: warning: This simp argument is unused:
+  List.length_replicate
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runKey, areaW_append, mass_append, mass_replicate_A]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/RunSupplyBudget.lean:22:60: warning: This simp argument is unused:
+  List.length_replicate
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runKey, areaW_append, mass_append, mass_rep_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/RunSupplyBudget.lean:40:68: error(lean.unknownIdentifier): Unknown constant `OfNat.ofNat_ne_zero`
+Recaman/RunSupplyBudget.lean:40:49: warning: This simp argument is unused:
+  Int.zero_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.natCast_zero, Int.mul_zero, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true] at hkeyk hb
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/RunSupplyBudget.lean:40:62: warning: This simp argument is unused:
+  ne_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.natCast_zero, Int.mul_zero, Int.zero_pow, OfNat.ofNat_ne_zero, not_false_eq_true] at hkeyk hb
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/RunSupplyBudget.lean:40:88: warning: This simp argument is unused:
+  not_false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.natCast_zero, Int.mul_zero, Int.zero_pow, ne_eq, OfNat.ofNat_ne_zero] at hkeyk hb
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/RunSupplyBudget.lean:61:6: error: unsolved goals
+case pos
+P : Nat → Prop
+K : Nat
+ih : (∀ (i : Nat), i < K → ∀ (j : Nat), j < K → P i → P j → i = j) → cN P 0 K ≤ 1
+hu : ∀ (i : Nat), i < K + 1 → ∀ (j : Nat), j < K + 1 → P i → P j → i = j
+hp : P K
+hz : cN P 0 K = 0
+⊢ 0 + 1 ≤ 1

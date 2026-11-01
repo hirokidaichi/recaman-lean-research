@@ -1,0 +1,18 @@
+{
+  "tag": "H04-actual-moment",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentActualTarget.lean"
+  ],
+  "started_jst": "2026-10-31T06:25:26.703921+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentActualTarget.lean": "9d1ee4b52ab4ac5e56f3bdfd9978623caa8c81b710e886caca1119a430ececdf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

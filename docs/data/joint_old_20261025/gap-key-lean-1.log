@@ -1,0 +1,125 @@
+Recaman/PrefixMassBarrier.lean:649:4: error: `grind` failed
+case grind.1.1.2.2.2.2
+w : List Bool
+hm : 0 < mass w
+hk : 2 * areaW w + mass w * (mass w - 1) = 0
+hb : 0 ≤ ones w ∧ ones w ≤ ↑w.length
+he : mass w = 2 * ones w - ↑w.length
+hl :
+  ones w * (ones w + 1) - (↑w.length - ones w) * (↑w.length - ones w + 1) - 2 * ones w * (↑w.length - ones w) ≤
+    2 * areaW w
+hp : 0 < ones w
+h : ones w * (ones w - 2 * mass w) + 1 ≤ 0
+h_1 : ones w = ↑w.length
+h_2 : mass w - 1 = ones w - 2 * mass w
+h_3 : ¬mass w - 1 = ↑w.length - ones w
+h_4 : ¬ones w = ↑w.length - ones w + 1
+h_5 : ¬↑w.length - ones w + 1 = ones w - 2 * mass w
+h_6 : ¬↑w.length = ones w - 2 * mass w
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * mass w + 1 ≤ 0
+    [prop] 2 * areaW w + mass w * (mass w - 1) = 0
+    [prop] -1 * ones w ≤ 0 ∧ ones w + -1 * ↑w.length ≤ 0
+    [prop] mass w + -2 * ones w + ↑w.length = 0
+    [prop] -2 * areaW w + ones w * (ones w + 1) + -1 * (2 * ones w * (↑w.length - ones w)) +
+            -1 * ((↑w.length - ones w) * (↑w.length - ones w + 1)) ≤
+          0
+    [prop] -1 * ones w + 1 ≤ 0
+    [prop] ones w * (ones w - 2 * mass w) + 1 ≤ 0
+    [prop] ones w = ↑w.length
+    [prop] mass w - 1 = ones w - 2 * mass w
+    [prop] ¬mass w - 1 = ↑w.length - ones w
+    [prop] ¬ones w = ↑w.length - ones w + 1
+    [prop] ¬↑w.length - ones w + 1 = ones w - 2 * mass w
+    [prop] ¬↑w.length = ones w - 2 * mass w
+  [eqc] True propositions
+    [prop] -1 * ones w ≤ 0 ∧ ones w + -1 * ↑w.length ≤ 0
+    [prop] mass w = ones w
+    [prop] mass w = ↑w.length
+    [prop] ones w = ↑w.length
+    [prop] mass w - 1 = ones w - 2 * mass w
+    [prop] ones w + -1 * ↑w.length ≤ 0
+    [prop] -2 * areaW w + ones w * (ones w + 1) + -1 * (2 * ones w * (↑w.length - ones w)) +
+            -1 * ((↑w.length - ones w) * (↑w.length - ones w + 1)) ≤
+          0
+    [prop] ones w * (ones w - 2 * mass w) + 1 ≤ 0
+    [prop] -1 * mass w + 1 ≤ 0
+    [prop] -1 * ones w + 1 ≤ 0
+    [prop] -1 * ones w ≤ 0
+  [eqc] False propositions
+    [prop] ones w = ↑w.length - ones w + 1
+    [prop] ↑w.length = ones w - 2 * mass w
+    [prop] ↑w.length - ones w + 1 = ones w - 2 * mass w
+    [prop] mass w - 1 = ↑w.length - ones w
+    [prop] ones w - 2 * mass w = ↑w.length - ones w
+  [eqc] Equivalence classes
+    [eqc] {mass w, ones w}
+      [eqc] {↑w.length}
+    [eqc] {0,
+        mass w + -2 * ones w + ↑w.length,
+        mass w ^ 2 + -1 * mass w + 2 * areaW w,
+        2 * areaW w + mass w * (mass w - 1),
+        ↑w.length - ones w}
+      [eqc] {↑0}
+    [eqc] {-1 * mass w + 1, -1 * ones w + 1}
+    [eqc] {mass w ^ 2 + -1 * ↑w.length ^ 2, ones w ^ 2 + -1 * ↑w.length ^ 2}
+    [eqc] {mass w * (mass w - 1), ones w * (ones w - 2 * mass w)}
+    [eqc] {-1 * mass w, -1 * ones w}
+      [eqc] {-1 * ↑w.length}
+    [eqc] {2 * mass w, 2 * ones w}
+    [eqc] {mass w ^ 2, ones w ^ 2}
+      [eqc] {↑w.length ^ 2}
+    [eqc] {mass w - 1, ones w - 2 * mass w}
+    [eqc] others
+      [eqc] {-1 * ones w ^ 2, -1 * ↑w.length ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: ones w = ↑w.length
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑w.length ^ 2
+          and
+            ones w ^ 2
+    [cases] [1/2]: mass w - 1 = ones w - 2 * mass w
+      [cases] source: Model-based theory combination at argument #5 of
+            ones w * (ones w - 2 * mass w)
+          and
+            mass w * (mass w - 1)
+    [cases] [2/2]: mass w - 1 = ↑w.length - ones w
+      [cases] source: Model-based theory combination at argument #5 of
+            2 * ones w * (↑w.length - ones w)
+          and
+            mass w * (mass w - 1)
+    [cases] [2/2]: ones w = ↑w.length - ones w + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            mass w * ones w
+          and
+            (↑w.length - ones w) * (↑w.length - ones w + 1)
+    [cases] [2/2]: ↑w.length - ones w + 1 = ones w - 2 * mass w
+      [cases] source: Model-based theory combination at argument #5 of
+            ones w * (ones w - 2 * mass w)
+          and
+            (↑w.length - ones w) * (↑w.length - ones w + 1)
+    [cases] [2/2]: ↑w.length = ones w - 2 * mass w
+      [cases] source: Model-based theory combination at argument #5 of
+            mass w * ones w
+          and
+            ones w * (ones w - 2 * mass w)
+  [ematch] E-matching patterns
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] List.eq_nil_of_length_eq_zero: [@List.length #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] areaW w := 2
+    [assign] mass w := 4
+    [assign] ones w := 4
+    [assign] w.length := 4
+    [assign] 「mass w ^ 2」 := 0
+    [assign] 「ones w ^ 2」 := 0
+    [assign] 「↑w.length ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] mass w + -2 * ones w + ↑w.length = 0
+      [_] 8 * areaW w + -1 = 0
+      [_] ones w + -1 * ↑w.length = 0
+      [_] 2 * ↑w.length + -1 = 0

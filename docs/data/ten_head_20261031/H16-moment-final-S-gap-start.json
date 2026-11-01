@@ -1,0 +1,18 @@
+{
+  "tag": "H16-moment-final-S-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentFinalSGap.lean"
+  ],
+  "started_jst": "2026-10-31T07:12:53.529125+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentFinalSGap.lean": "b12116d00966b2ad64d9aec48c0e8fe8dda899068cbd8df359331941372aa09d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

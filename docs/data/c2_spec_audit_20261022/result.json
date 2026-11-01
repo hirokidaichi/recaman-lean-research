@@ -1,0 +1,280 @@
+{
+  "label": "COMPUTED",
+  "scope": "three previously known fixtures only",
+  "command": "python3 docs/data/c2_spec_audit_20261022/audit.py",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty": true,
+  "timestamp_utc": "2026-10-21T22:32:37.250175+00:00",
+  "source_sha256_at_execution": {
+    "Recaman/LeadingRunSupply.lean": "0aff15293c82c92897c1715a6331ddc3624241f53227983eecd8409d9910ad4c",
+    "Recaman/LineCapacityPeriodic.lean": "e7f32e793433df4f25dff76b3f84889ef3c6ada444f6a94ee6ed618140b8f269",
+    "experiments/issue73_20261020/c2proof/c2.c": "cdca04201ce4d9b9173b36899e3dbaf5dbacd19c22570f4d9f8462dce6d9b283",
+    "experiments/issue73_20261020/c2proof/c3.c": "99c5f69b45f28d063d4f8d15d5c58b6fe1465069e60d06fe49513c75fb5ee169",
+    "docs/HYPOTHESIS_CARD_2026-10-21_C2_WINDOW_POSITION.md": "48af9195d083acfaf568c3b2a4fd0dbf5fec8fde8b79c22b4bad678c94b8e521",
+    "docs/RESEARCH_ALLOCATION_2026-10-21.md": "26779213a1b760826e8f8763dab57c920255d47d606c149bd82a3e870e9dd603",
+    "docs/data/c2_spec_audit_20261022/PROTOCOL.md": "5d898e7ce952d59d6fa5b9d6a27a5ee61f65c07a2709c292cd853e7b813f097e",
+    "docs/data/c2_spec_audit_20261022/audit.py": "5e96a9dc361dd46c0d780f2c75ca16d9ccc69a746d33eeb84f08ea59fa5366f0"
+  },
+  "results": [
+    {
+      "encoded": "SAAA",
+      "word": "SAAA",
+      "q0": 1,
+      "k1": 0,
+      "F": [
+        0,
+        -1,
+        0,
+        1,
+        2
+      ],
+      "G": [
+        0,
+        -1,
+        -1,
+        0,
+        2
+      ],
+      "d": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "a_p_prefix": [
+        0,
+        0,
+        1,
+        2,
+        2
+      ],
+      "endable_clocks": [
+        3
+      ],
+      "mid_events": []
+    },
+    {
+      "encoded": "SSAAAASA|AA",
+      "word": "SSAAAASAAA",
+      "q0": 8,
+      "k1": 0,
+      "F": [
+        0,
+        -1,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        3,
+        4
+      ],
+      "G": [
+        0,
+        -1,
+        -3,
+        -4,
+        -4,
+        -3,
+        -1,
+        0,
+        2,
+        5,
+        9
+      ],
+      "d": [
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0
+      ],
+      "a_p_prefix": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "endable_clocks": [
+        4,
+        7,
+        9
+      ],
+      "mid_events": [
+        {
+          "b": 9,
+          "starts": [
+            6
+          ],
+          "lengths": [
+            3
+          ],
+          "words": [
+            "SAA"
+          ],
+          "local_starts": [],
+          "d_b_plus_1": 0,
+          "a_y": 1,
+          "v1_assumptions": {
+            "prefix_nonnegative": true,
+            "d_q0_eq_1": true,
+            "positive_through_b_plus_1": false,
+            "a_y_le_1": true,
+            "endable_A": true
+          },
+          "v1_domain": false,
+          "ay2_domain": false
+        }
+      ]
+    },
+    {
+      "encoded": "SSSAAAASAAA|SSSSAAAA",
+      "word": "SSSAAAASAAASSSSAAAA",
+      "q0": 11,
+      "k1": 0,
+      "F": [
+        0,
+        -1,
+        -2,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        2,
+        1,
+        0,
+        -1,
+        0,
+        1,
+        2,
+        3
+      ],
+      "G": [
+        0,
+        -1,
+        -3,
+        -6,
+        -8,
+        -9,
+        -9,
+        -8,
+        -8,
+        -7,
+        -5,
+        -2,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        3,
+        6
+      ],
+      "d": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        5,
+        4,
+        3
+      ],
+      "a_p_prefix": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        6,
+        6
+      ],
+      "endable_clocks": [
+        5,
+        8,
+        10,
+        17,
+        18
+      ],
+      "mid_events": [
+        {
+          "b": 18,
+          "starts": [
+            7
+          ],
+          "lengths": [
+            11
+          ],
+          "words": [
+            "SAAASSSSAAA"
+          ],
+          "local_starts": [],
+          "d_b_plus_1": 3,
+          "a_y": 2,
+          "v1_assumptions": {
+            "prefix_nonnegative": true,
+            "d_q0_eq_1": true,
+            "positive_through_b_plus_1": true,
+            "a_y_le_1": false,
+            "endable_A": true
+          },
+          "v1_domain": false,
+          "ay2_domain": true
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "direct_equals_area_and_stride": true,
+    "known_ay2_counterexample_reproduced": true,
+    "known_terminal_slack_zero_reproduced": true
+  },
+  "elapsed_seconds": 0.05895270896144211
+}

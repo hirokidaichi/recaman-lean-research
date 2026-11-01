@@ -1,0 +1,17 @@
+{
+  "card": "H-20261026-05 generalized version, not a repaired counterexample",
+  "frozen_jst": "2026-10-26T07:02:38.487506+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/old_tail_discovery.py": "8a560cf4540318c2b9877c53283bbeec71a29a10f80bd50d933fea19f3ecad2c",
+    "docs/data/free_gap_20261026/old_tail_holdout.py": "6fec3daf4a0d09b3f7b502e88718f4d30a649a46a6de08a0de0c691433bd00e6",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "worker_cpu_total_cap_seconds": 20,
+  "per_worker_cpu_seconds": 10,
+  "per_worker_wall_seconds": 15,
+  "controller_cpu_reserve_seconds": 2,
+  "discovery": "whole finite grammar<=3 atom/pad0..1 x tails3..8 withS>=3; count distinct old A-clock candidates",
+  "holdout": "96 fresh5..13 atom/pad0..4 and tails11/13/17; independent reverse whole window",
+  "stop": "any two different old clocks stops generalized claim; same-clock starts remain valid; no horizon extension"
+}

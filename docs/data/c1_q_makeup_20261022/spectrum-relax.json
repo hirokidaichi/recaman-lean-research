@@ -1,0 +1,19 @@
+{
+  "status": "INFEASIBLE",
+  "n": 32,
+  "max_old_mass": 17,
+  "population": "independent old-prefix spectra relaxation",
+  "actual_history_counterexample": false,
+  "started_utc": "2026-10-22T00:43:21.945213+00:00",
+  "finished_utc": "2026-10-22T00:43:25.852972+00:00",
+  "elapsed_seconds": 3.907774250023067,
+  "workers": 1,
+  "seed": 20261022,
+  "ortools": "9.15.6755",
+  "source_sha256": "c7bb3193d0c579a168bd3158e52ec67257d95e09879fa429b177735107d24b3e",
+  "model_sha256": "0fd50a82199c7d17acb430a5eedbed0f54e0c4f8c50bc12b40e05fbff58a40e5",
+  "response_stats": "CpSolverResponse summary:\nstatus: INFEASIBLE\nobjective: NA\nbest_bound: NA\nintegers: 212\nbooleans: 3040\nconflicts: 18178\nbranches: 66157\npropagations: 10664461\ninteger_propagations: 4547077\nrestarts: 74\nlp_iterations: 46895\nwalltime: 3.90468\nusertime: 3.90468\ndeterministic_time: 6.64831\ngap_integral: 0\n",
+  "user_seconds": 4.108508,
+  "system_seconds": 0.08617799999999999,
+  "maxrss_native": 150093824
+}

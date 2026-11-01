@@ -1,0 +1,13 @@
+This slot directly read the current four cards, both target Lean sources, the four 2026-09-23
+parent audits, their independent archive reports and selected raw outputs, the weekly plan,
+the current weekly report, and the 2026-09-23/24 handoffs.
+
+No finite search, randomized run, discovery run, holdout run, Lean compilation,
+report_vacuity.py, harness_gate.py, or scripts/check.sh was executed by the writer.
+There is therefore no writer-side seed or cutoff for a new computation and no writer-side gate output.
+The independent joint auditor's current-slot fixed controls and gate reruns are separate and are recorded
+by the parent audit, not represented as writer-side reproduction here.
+
+Previously saved computations and gate outputs are reused only as historical evidence at
+the exact target hashes in SOURCE_SHA256SUMS. They are not described as current-slot reproduction.
+The old p32/33 data and old census are not fresh holdout and are not independently recertified here.

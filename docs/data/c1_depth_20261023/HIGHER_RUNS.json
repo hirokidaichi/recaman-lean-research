@@ -1,0 +1,37 @@
+{
+  "registered_jst": "2026-10-23T07:04:51.179537+09:00",
+  "head": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_patch_sha256": "2deaafba4b8732813c175d289a0cc23fea512349ce8dc92681f826326621054a",
+  "source_sha256": "4800fe2347103553ce440bba635bea8a912de5e147403bcefa88e02f05e39fa2",
+  "binary_sha256": "a358b89152b439c956ad5c74ff136bed6917d0575b9253548694678b61ded9be",
+  "runs": [
+    {
+      "id": "higher-discovery",
+      "argv": [
+        "/tmp/recaman-sixteenth-a-20261023",
+        "0",
+        "4",
+        "28"
+      ],
+      "cpu_cap_seconds": 30
+    },
+    {
+      "id": "higher-holdout",
+      "argv": [
+        "/tmp/recaman-sixteenth-a-20261023",
+        "5",
+        "14",
+        "28"
+      ],
+      "cpu_cap_seconds": 30
+    }
+  ],
+  "literal_control": {
+    "argv": [
+      "python3",
+      "docs/data/c1_depth_20261023/ledger_checks.py"
+    ],
+    "source_sha256": "db57a1dc08d791d9f072ff6368ceabf9c69eaee9950f4b6f8b549777b83b63a6",
+    "cpu_cap_seconds": 5
+  }
+}

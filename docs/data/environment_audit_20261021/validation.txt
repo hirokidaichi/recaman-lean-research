@@ -1,0 +1,41 @@
+Source revision: 5606b64d27290a9959e1dbf19d5e7c58840a0a85
+Date: 2026-10-21 JST
+Scope: existing working tree, including pre-existing uncommitted files.
+Initial git status -s:
+ M Recaman.lean
+ M viewer/manifest.json
+?? Recaman/SS2OldestPattern.lean
+
+Commands executed in this audit and exact concluding output (not full logs):
+
+$ ./scripts/check.sh
+Module graph audit: Recaman root reaches 401 of 401 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 378 entries, 167 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 23 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+Build completed successfully (404 jobs).
+Axiom audit: 2652 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+exit: 0
+
+$ bash scripts/test_harness_gates.sh
+harness gate tests: all passed
+exit: 0
+
+$ make test-probes check-manifest
+Running empirical regression tests...
+prefix-successor certificate regressions: PASS
+Lean trace witness generator regressions: PASS
+balanced trace source generator regressions: PASS
+All empirical regression tests passed.
+manifest.json is up to date: 402 modules, 167 reports
+exit: 0
+
+Tool versions:
+Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+Python 3.14.3
+
+Reproduce isolated G5 and G2 acceptance fixtures and brief output:
+python3 docs/data/environment_audit_20261021/reproduce.py
+The frozen output is reproduction.json. Tests use temporary fixtures, never real registry entries.

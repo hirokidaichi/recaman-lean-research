@@ -1,0 +1,115 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-u",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/issue73_20260923/slot0100/check_literal.py"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.03335309028625488,
+    "exit_code": 0,
+    "name": "literal",
+    "start_unix": 1790093158.620547,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "3416feb0e32b64bfdc6c669661f69636b7eafcb6f24193ca2b45b8a9dcfda585",
+    "timed_out": false,
+    "timeout_seconds": 15
+  },
+  {
+    "argv": [
+      "python3",
+      "-u",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/issue73_20260923/slot0100/audit_signatures.py"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.01953291893005371,
+    "exit_code": 0,
+    "name": "statement_audit",
+    "start_unix": 1790093158.653953,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "9c6d8e349c6953a2932f78bd0f41431ac4200be549894b8b996c3e7a878d529e",
+    "timed_out": false,
+    "timeout_seconds": 15
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/report_vacuity.py",
+      "--all",
+      "Recaman/ShortTightDonorAvoidance.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.023498058319091797,
+    "exit_code": 0,
+    "name": "vacuity",
+    "start_unix": 1790093158.673524,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4819f18ffb3d214ab282d12aa331dd219304e24f238cb95049e6c4861a5877aa",
+    "timed_out": false,
+    "timeout_seconds": 60
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/ShortTightDonorAvoidance.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.031041860580444336,
+    "exit_code": 0,
+    "name": "lint",
+    "start_unix": 1790093158.6971111,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "866eed174d0505be7c3f717057af2a3c20b8209db9a63c211a477cafccca4350",
+    "timed_out": false,
+    "timeout_seconds": 60
+  },
+  {
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.ShortTightDonorAvoidance"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.15077519416809082,
+    "exit_code": 0,
+    "name": "target_build",
+    "start_unix": 1790093158.728236,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "9570c3d99dc46c3983cd480fe749a52e27bf67ee2c7cd1c8fbb49066f5e0c5b5",
+    "timed_out": false,
+    "timeout_seconds": 180
+  },
+  {
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "docs/data/issue73_20260923/slot0100/symbol_check.lean"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 0.3538820743560791,
+    "exit_code": 0,
+    "name": "symbol",
+    "start_unix": 1790093158.879115,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "a44a3591ab13d2f928cc552b0a2af0dbbddd68f94b0f87624cd2649ce372008e",
+    "timed_out": false,
+    "timeout_seconds": 60
+  },
+  {
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "cwd": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research",
+    "elapsed_seconds": 6.678133964538574,
+    "exit_code": 0,
+    "name": "full_check",
+    "start_unix": 1790093159.233085,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "731831344cdaed789feafee51247eef376b2ea956c108df3dd751b7a6aa2b519",
+    "timed_out": false,
+    "timeout_seconds": 300
+  }
+]

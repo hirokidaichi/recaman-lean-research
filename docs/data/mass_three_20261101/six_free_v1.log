@@ -1,0 +1,165 @@
+Recaman/EarlyOldSixFree.lean:94:6: error: unsolved goals
+case pos
+f : Nat → Bool
+n h M m L s U v T sOld kOld : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hsOld : sOld < n
+hkOld : kOld < T
+hseedWin : Win f sOld (n + h + M + m + L + s + U + v + kOld - sOld)
+hkTwo : kOld ≤ 2
+hD : 5 ≤ mass (List.drop sOld w)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+H : Nat := h + M + m + L + s + U
+S : Nat := h + m + s
+z : List Bool := seg f n H
+I : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = S
+hmeasure : runKey z = 4 * I - 2 * ↑(cntF z) ^ 2
+hprof :
+  mass (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 1 ∧
+    areaW (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 0
+hu : BlockWord (List.drop sOld w)
+hmseed : mass (List.drop sOld w) - ↑v + ↑kOld = 1
+hkseed : runKey (List.drop sOld w ++ z ++ List.replicate v false) = -2
+hkey : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - (↑kOld - 1) ^ 2 ≤ ↑(cntF z) ^ 2
+hI0 : 0 ≤ I
+hkSq : (↑kOld - 1) ^ 2 ≤ 1
+hkey0 : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - 1 ≤ ↑(cntF z) ^ 2
+hI3 : 3 ≤ I
+hS13 : 13 ≤ S
+hS16 : ¬16 ≤ S
+hS15 : S = 15
+hc : 2 * I ≤ 15 * (15 - 2 * 5) - 5 * 5 + 1
+⊢ cN (EndN f 0) n H + 6 ≤ S
+Recaman/EarlyOldSixFree.lean:93:4: error: unsolved goals
+case neg
+f : Nat → Bool
+n h M m L s U v T sOld kOld : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hsOld : sOld < n
+hkOld : kOld < T
+hseedWin : Win f sOld (n + h + M + m + L + s + U + v + kOld - sOld)
+hkTwo : kOld ≤ 2
+hD : 5 ≤ mass (List.drop sOld w)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+H : Nat := h + M + m + L + s + U
+S : Nat := h + m + s
+z : List Bool := seg f n H
+I : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = S
+hmeasure : runKey z = 4 * I - 2 * ↑(cntF z) ^ 2
+hprof :
+  mass (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 1 ∧
+    areaW (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 0
+hu : BlockWord (List.drop sOld w)
+hmseed : mass (List.drop sOld w) - ↑v + ↑kOld = 1
+hkseed : runKey (List.drop sOld w ++ z ++ List.replicate v false) = -2
+hkey : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - (↑kOld - 1) ^ 2 ≤ ↑(cntF z) ^ 2
+hI0 : 0 ≤ I
+hkSq : (↑kOld - 1) ^ 2 ≤ 1
+hkey0 : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - 1 ≤ ↑(cntF z) ^ 2
+hI3 : 3 ≤ I
+hS13 : 13 ≤ S
+hS16 : ¬16 ≤ S
+hS15 : ¬S = 15
+⊢ cN (EndN f 0) n H + 6 ≤ S
+Recaman/EarlyOldSixFree.lean:31:71: error: unsolved goals
+f : Nat → Bool
+n h M m L s U v T sOld kOld : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hsOld : sOld < n
+hkOld : kOld < T
+hseedWin : Win f sOld (n + h + M + m + L + s + U + v + kOld - sOld)
+hkTwo : kOld ≤ 2
+hD : 5 ≤ mass (List.drop sOld w)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+H : Nat := h + M + m + L + s + U
+S : Nat := h + m + s
+z : List Bool := seg f n H
+I : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = S
+hmeasure : runKey z = 4 * I - 2 * ↑(cntF z) ^ 2
+hprof :
+  mass (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 1 ∧
+    areaW (List.drop sOld w ++ z ++ List.replicate v false ++ List.replicate kOld true ++ List.replicate 0 false) = 0
+hu : BlockWord (List.drop sOld w)
+hmseed : mass (List.drop sOld w) - ↑v + ↑kOld = 1
+hkseed : runKey (List.drop sOld w ++ z ++ List.replicate v false) = -2
+hkey : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - (↑kOld - 1) ^ 2 ≤ ↑(cntF z) ^ 2
+hI0 : 0 ≤ I
+hkSq : (↑kOld - 1) ^ 2 ≤ 1
+hkey0 : 2 * I + 2 * mass (List.drop sOld w) * ↑(cntF z) + mass (List.drop sOld w) ^ 2 - 1 ≤ ↑(cntF z) ^ 2
+hI3 : 3 ≤ I
+hS13 : 13 ≤ S
+hEpaid : cN (EndN f 0) n H + 6 ≤ S
+⊢ 13 ≤ h + m + s ∧ 6 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U)
+Recaman/EarlyOldSixFree.lean:96:10: error: unexpected token 'have'; expected command

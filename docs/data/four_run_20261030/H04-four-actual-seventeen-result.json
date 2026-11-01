@@ -1,0 +1,25 @@
+{
+  "tag": "H04-four-actual-seventeen",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FourRunSupplySeventeen.lean"
+  ],
+  "started_jst": "2026-10-30T06:20:22.160133+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourRunSupplySeventeen.lean": "5079c3da2e450f9e652bec7807e8243f54f4d5f81aa3ad079e9bb5785930c2af"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "651c9dff4b0cb7a76e801edf7f73878d94331e8ec3922f9d8b0176afb79d865c",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.44838825007900596,
+  "cpu_seconds": 0.37296999999999997,
+  "finished_jst": "2026-10-30T06:20:22.608424+09:00"
+}

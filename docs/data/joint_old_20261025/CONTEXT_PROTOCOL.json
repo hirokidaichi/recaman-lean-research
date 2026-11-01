@@ -1,0 +1,55 @@
+{
+  "card": "H-20261025-03",
+  "frozen_utc": "2026-10-24T21:22:44.670690+00:00",
+  "sources": {
+    "docs/data/joint_old_20261025/context_graph.py": "2948a9ca74d8f87b1b0c51d7854918b95ec84f577a52635d03440b81d44f0fac",
+    "docs/data/joint_old_20261025/context_independent.py": "fc075cd965c0769ad36a9ba6fde8c8ef99d12b8ee84924974a23fea4c8122a31",
+    "Recaman/PrefixMassBarrier.lean": "c357ad30a1fbd7f68f453f62fe58c5fa26ecb223568ada9a21e23ee092c4048d"
+  },
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "38ef2373714cafbccc00cae3984e64cfcffb0e4b173a1661daca09b830664e00",
+  "commands": [
+    [
+      "python3",
+      "docs/data/joint_old_20261025/context_graph.py"
+    ],
+    [
+      "python3",
+      "docs/data/joint_old_20261025/context_independent.py"
+    ]
+  ],
+  "cpu_cap_total": 70,
+  "wall_cap_total": 70,
+  "per_job_cpu": [
+    30,
+    40
+  ],
+  "per_job_wall": [
+    28,
+    37
+  ],
+  "state_cap": 50000,
+  "product_pair_cap": 100000,
+  "discovery": "full closure <=10 prior A; A11 kept as witness, every j0..19 and both tags",
+  "independent": "reverse local/moment, full old/new product, every endpoint requires complete original word retained",
+  "holdout": {
+    "gaps": [
+      29,
+      43,
+      269,
+      4111
+    ],
+    "selection": "first16 lexicographic states per free count",
+    "future_words": "discovery words/futures length0..3; holdout both length4..5, budgets0..2"
+  },
+  "budget_omission_paper_counterexample": {
+    "u": "S",
+    "v": "S",
+    "x": "AAAAS",
+    "B": 0,
+    "description": "erasing the prefix for the current endpoint alone is unsafe after four future A"
+  },
+  "repair_limit": 1,
+  "stop": "A11, transition mismatch, timeout/state cap, no measured resource reduction; do not simply raise old limits",
+  "allocation": "up to2 research minutes from local exploration for generation/checker, validation CPU separate"
+}

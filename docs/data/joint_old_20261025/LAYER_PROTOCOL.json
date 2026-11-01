@@ -1,0 +1,29 @@
+{
+  "card": "H-20261025-10",
+  "frozen_utc": "2026-10-24T22:29:07.256670+00:00",
+  "generator_sha256": "1e8268ff03142883c9c1695812ed089371ec8ef5f3488dd5766fb3a7123e974a",
+  "representation": "same states/children/good/Checked/actual footer, public child constants imported by strict A+1 layers. No extra mathematical premise. Largest layer6959 instead12837 declarations in one elaboration environment.",
+  "generation": [
+    "python3",
+    "docs/data/joint_old_20261025/generate_layers.py"
+  ],
+  "benchmark_argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventLayer8"
+  ],
+  "bench_cpu_cap": 90,
+  "bench_wall_cap": 90,
+  "rss_cap_kib": 4194304,
+  "full_argv_after_success": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "full_cpu_cap": 900,
+  "full_wall_cap": 900,
+  "absolute_stop_jst": "2026-10-25T07:45:00+09:00",
+  "combined_cpu_wall_cap": 990,
+  "stop": "if module import proof or RSS/deadline fails, no extension/retry of this representation; archive all unverified files and keep E404 unresolved",
+  "previous_failure": "single-file pruned proof stopped RSS4195632KiB at560.921wall; no completed initial certificate"
+}

@@ -1,0 +1,44 @@
+Recaman/OldTargetMassFive.lean:36:5: error: unknown tactic
+Recaman/OldTargetMassFive.lean:35:20: error: unsolved goals
+h M m L s T j : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hbal : 6 = ↑h + ↑m + ↑s + (↑j + 1) - (↑M + ↑L + ↑T)
+R : Int := ↑j + 1
+E : Int := ↑M + ↑L + ↑T - R
+I : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hR : 5 ≤ R
+hE0 : 0 ≤ E
+hE9 : E ≤ 9
+hsmall : M ≤ 3 → E ≤ 8
+hq : 36 + 2 * I ≤ E ^ 2 - R ^ 2 + 1
+hpR : 0 ≤ (R - 5) * (R + 5)
+hpE : 0 ≤ (9 - E) * (9 + E)
+hmp : 0 ≤ ↑M * (↑m + ↑s - 2)
+hls : 0 < ↑L * ↑s
+hi : 2 * ↑M + 1 ≤ I
+⊢ 4 ≤ M
+Recaman/OldTargetMassFive.lean:21:66: error: unsolved goals
+h M m L s T j : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hbal : 6 = ↑h + ↑m + ↑s + (↑j + 1) - (↑M + ↑L + ↑T)
+R : Int := ↑j + 1
+E : Int := ↑M + ↑L + ↑T - R
+I : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hR : 5 ≤ R
+hE0 : 0 ≤ E
+hE9 : E ≤ 9
+hsmall : M ≤ 3 → E ≤ 8
+hq : 36 + 2 * I ≤ E ^ 2 - R ^ 2 + 1
+hpR : 0 ≤ (R - 5) * (R + 5)
+hpE : 0 ≤ (9 - E) * (9 + E)
+hmp : 0 ≤ ↑M * (↑m + ↑s - 2)
+hls : 0 < ↑L * ↑s
+hi : 2 * ↑M + 1 ≤ I
+hM4 : 4 ≤ M
+⊢ h = 13 ∧ M = 4 ∧ m = 1 ∧ s = 1 ∧ j = 4 ∧ (L = 1 ∧ T = 9 ∨ L = 2 ∧ T = 8)

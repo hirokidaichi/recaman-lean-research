@@ -1,0 +1,28 @@
+{
+  "confirmed_by_jst": "2026-09-24T02:45:58+09:00",
+  "method": "collaboration.list_agents",
+  "agents": [
+    {
+      "name": "/root",
+      "status": "running",
+      "scope": "Archive and final operational record only"
+    },
+    {
+      "name": "/root/sol_20260924_final0230",
+      "status": "completed",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh"
+    },
+    {
+      "name": "/root/sol_20260924_final_audit0230",
+      "status": "completed",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "xhigh"
+    },
+    {
+      "name": "/root/sol_20260924_weekly0200",
+      "status": "completed"
+    }
+  ],
+  "active_child_count": 0
+}

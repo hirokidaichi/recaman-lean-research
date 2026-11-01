@@ -1,0 +1,7 @@
+Recaman/BlockSuffixPositivity.lean:988:17: warning: This simp argument is unused:
+  decide_eq_true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [checked_wordArea_eq, ← Ar_areaW, seg_mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

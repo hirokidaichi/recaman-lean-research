@@ -1,0 +1,21 @@
+{
+  "tag": "one-run-lean-1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/BlockOldRay.lean"
+  ],
+  "started_jst": "2026-10-26T07:21:11.013158+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/BlockOldRay.lean": "a345ae06df371fa2bb7ac76d73812b787d35e40ff761f48d38cd6c8a5fab562a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.7560118751134723,
+  "cpu_seconds": 1.438265,
+  "finished_jst": "2026-10-26T07:21:11.769089+09:00"
+}

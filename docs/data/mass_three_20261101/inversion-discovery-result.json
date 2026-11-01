@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-01T06:26:49.965645+09:00",
+  "tag": "inversion-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/inversion_audit.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "e534ea361ef9231ba531fe766a0ca34aabc511bf04459fcf4ac59ebd91b3b65b",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 35770,
+  "process_group": 35770,
+  "finished_jst": "2026-11-01T06:26:50.072601+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.10703737498261034,
+  "worker_user_seconds": 0.07725499999999999,
+  "worker_sys_seconds": 0.0059759999999999995,
+  "worker_cpu_seconds": 0.08323099999999999,
+  "worker_maxrss_native": 22822912,
+  "controller_cpu_seconds": 0.001511999999999996,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

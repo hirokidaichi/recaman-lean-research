@@ -1,0 +1,18 @@
+{
+  "tag": "H01-actual-free2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetLocalTail.lean"
+  ],
+  "started_jst": "2026-10-29T06:10:02.889349+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetLocalTail.lean": "8afac8499b3c009493805eae61685b14e5b28b9557fee5cb0e91fd3754a0bf6c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

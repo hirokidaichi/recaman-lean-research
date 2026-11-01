@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-10-22T09:25:11.558584+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "source_sha256": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+  "argv": [
+    "/tmp/recaman-c1-solver-20261022/bin/python",
+    "docs/data/c1_q_makeup_20261022/c1_constraints_v2.py",
+    "--mode",
+    "deep-three",
+    "--n",
+    "80",
+    "--q0",
+    "80",
+    "--b",
+    "80",
+    "--seconds",
+    "900",
+    "--out",
+    "docs/data/c1_q_makeup_20261022/deep-three.json"
+  ],
+  "limits": {
+    "wall_solve_seconds": 900,
+    "cpu_process_seconds": 910,
+    "solver_workers": 1,
+    "memory_parameter_mib": 768
+  },
+  "discovery": true,
+  "full_D_checked": false
+}

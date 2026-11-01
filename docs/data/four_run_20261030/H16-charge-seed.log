@@ -1,0 +1,69 @@
+{
+  "outputs": [
+    {
+      "mode": "discovery",
+      "counts": {
+        "tuples": 96,
+        "valid": 96,
+        "counter": 0
+      },
+      "completed_domain": true,
+      "best": {
+        "old": "ASAAA",
+        "word": "ASAAASSSSSAAASSSSAAAASAAASSSSAAAA",
+        "v": 4,
+        "T": 4,
+        "n": 5,
+        "EndN": [
+          4,
+          12,
+          19,
+          20,
+          22,
+          23,
+          24,
+          31,
+          32
+        ],
+        "actual_free": 6,
+        "A": 14,
+        "charge": 2,
+        "min_positive": 1
+      },
+      "witness": null
+    },
+    {
+      "mode": "holdout",
+      "counts": {
+        "tuples": 384,
+        "valid": 384,
+        "counter": 0
+      },
+      "completed_domain": true,
+      "best": {
+        "old": "SSAAAASAAA",
+        "word": "SSAAAASAAASSSSSAAASSSSAAAASAAASSSSSSSSSA",
+        "v": 9,
+        "T": 1,
+        "n": 10,
+        "EndN": [
+          4,
+          7,
+          9,
+          17,
+          24,
+          25,
+          27,
+          28,
+          29
+        ],
+        "actual_free": 5,
+        "A": 11,
+        "charge": 1,
+        "min_positive": 1
+      },
+      "witness": null
+    }
+  ],
+  "algorithm_cpu_seconds": 0.018091999999999997
+}

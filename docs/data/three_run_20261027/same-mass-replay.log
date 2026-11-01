@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/run_single.py", line 18, in <module>
+    worker(sys.argv[2:]);raise SystemExit(0)
+    ~~~~~~^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/run_single.py", line 15, in worker
+    runpy.run_path(script,run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/same_mass_replay.py", line 6, in <module>
+    ns={};exec(compile(src,'frozen-step-only','exec'),ns);step=ns['step']
+          ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "frozen-step-only", line 4, in <module>
+NameError: name '__file__' is not defined. Did you mean: '__name__'?

@@ -1,0 +1,25 @@
+⚠ [16/42] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [23/42] Replayed Recaman.BlockSuffixSpectrum
+warning: Recaman/BlockSuffixSpectrum.lean:130:33: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [41/42] Replayed Recaman.InitialSTargetOldPair
+warning: Recaman/InitialSTargetOldPair.lean:114:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [42/42] Built Recaman.InitialSTargetTail (653ms)
+Build completed successfully (42 jobs).

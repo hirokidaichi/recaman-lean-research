@@ -1,0 +1,18 @@
+{
+  "tag": "H01-actual-cases-fixed",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TenHeadActualCases.lean"
+  ],
+  "started_jst": "2026-10-31T06:06:36.172332+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TenHeadActualCases.lean": "905f6994e70046b95e457996acc761b927f0132a1cb26126cc02ae19281cce9b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

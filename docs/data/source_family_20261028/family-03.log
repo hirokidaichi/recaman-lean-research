@@ -1,0 +1,39 @@
+Recaman/SourceFamilyFreeCount.lean:68:55: warning: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SourceFamilyFreeCount.lean:245:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  r ≥ 0
+  q ≥ 0
+  q - r ≥ 0
+  p ≥ 0
+  p - q + r ≤ 0
+  o ≥ 0
+  o + p - q + r ≤ 0
+  m ≥ 0
+  m + o + p - q + r ≤ 0
+  0 ≤ l ≤ 2
+  1 ≤ l - o + r ≤ 3
+  l + r ≥ 6
+  l + r ≥ 2
+  2*l - q + 2*r ≥ 5
+  k ≥ 0
+  k + m + o + p - q + r ≤ 0
+  j ≥ 0
+  j + k + m + o + p - q + r ≤ 0
+  i ≥ 0
+  1 ≤ g ≤ 3
+where
+ g := ↑M
+ i := ↑(cN P (n + h) 0)
+ j := ↑(cN P (n + h) 1)
+ k := ↑(cN P n h)
+ l := ↑(cN (EndN f 0) (n + (h + (M + (R + (1 + (R + 1)))))) (R + 1))
+ m := ↑(cN P (n + (h + M)) (R + 1))
+ o := ↑(cN P (n + (h + (M + (R + 1)))) R)
+ p := ↑(cN P (n + (h + (M + (R + (1 + R))))) 1)
+ q := ↑(cN P n (h + (M + (R + (1 + (R + (1 + (R + 1))))))))
+ r := ↑(cN P (n + (h + (M + (R + (1 + (R + 1)))))) (R + 1))

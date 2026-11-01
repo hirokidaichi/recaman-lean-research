@@ -1,0 +1,621 @@
+import Recaman.RunSupplyBudget
+
+namespace Recaman.BlockOldRay
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.PrefixMassBarrier
+open Recaman.RunSupplyKeys Recaman.TwoRunSupply Recaman.RunSupplyBudget
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private def atomWords : List (List Bool) :=
+  [[true],[false,true,true,true],[false,false,true,true,true,true,false,true,true,true]]
+
+private def atomFacts (v : List Bool) : Prop :=
+  -8≤runKey v ∧ 0≤runKey v+4*(cntF v : Int) ∧ -2≤mass v ∧
+  (mass v<0 → runKey v≤0) ∧ (mass v=-2 → runKey v=-8 ∧ cntF v=2)
+
+private instance (v : List Bool) : Decidable (atomFacts v) := by
+  unfold atomFacts
+  infer_instance
+
+private theorem atom_prefix_facts (B : List Bool) (hB : B∈atomWords) (k : Nat) :
+    atomFacts (B.take k) := by
+  have hchecked : atomWords.all (fun B => (List.range (B.length+1)).all
+      (fun k => decide (atomFacts (B.take k))))=true := by decide
+  have get (q : Nat) (hq : q≤B.length) : atomFacts (B.take q) := by
+    have h := List.all_eq_true.mp (List.all_eq_true.mp hchecked B hB) q (List.mem_range.mpr (by omega))
+    exact of_decide_eq_true h
+  by_cases hk : k≤B.length
+  · exact get k hk
+  · have h := get B.length (Nat.le_refl _)
+    rw [List.take_of_length_le (Nat.le_refl _)] at h
+    rw [List.take_of_length_le (by omega)]
+    exact h
+
+theorem runKey_append (u v : List Bool) :
+    runKey (u++v)=runKey u+runKey v+4*mass u*(cntF v : Int) := by
+  have hc := cntF_int v
+  have hm := mass_eq v
+  simp only [runKey,areaW_append,mass_append]
+  grind
+
+private theorem prefix_append_bounds (w B : List Bool) (hw : BlockWord w)
+    (hB : B∈atomWords)
+    (ih : ∀ k, -8≤runKey (w.take k) ∧ (mass (w.take k)<0 → runKey (w.take k)≤0)) :
+    ∀ k, -8≤runKey ((w++B).take k) ∧
+      (mass ((w++B).take k)<0 → runKey ((w++B).take k)≤0) := by
+  intro k
+  by_cases hk : k≤w.length
+  · rw [List.take_append_of_le_length hk]
+    exact ih k
+  · rw [List.take_append,List.take_of_length_le (by omega)]
+    let v := B.take (k-w.length)
+    change -8≤runKey (w++v) ∧ (mass (w++v)<0 → runKey (w++v)≤0)
+    obtain ⟨hlo,hplus,hmv,hneg,hmin⟩ := atom_prefix_facts B hB (k-w.length)
+    change -8≤runKey v at hlo
+    change 0≤runKey v+4*(cntF v : Int) at hplus
+    change -2≤mass v at hmv
+    change mass v<0 → runKey v≤0 at hneg
+    change mass v=-2 → runKey v=-8 ∧ cntF v=2 at hmin
+    by_cases hw0 : w=[]
+    · subst w
+      simpa only [List.nil_append] using And.intro hlo hneg
+    · have hm := (sufPos_block hw [] w rfl hw0).1
+      have hlow := block_area_quadratic_lower hw
+      have hP : -2≤runKey w := by unfold runKey; omega
+      have hp := Int.mul_nonneg (show 0≤mass w-1 by omega) (show 0≤(cntF v : Int) by omega)
+      have hid : (mass w-1)*(cntF v : Int)=mass w*(cntF v : Int)-(cntF v : Int) := by grind
+      rw [hid] at hp
+      have hbig : 4*(cntF v : Int)≤4*mass w*(cntF v : Int) := by
+        have he : 4*mass w*(cntF v : Int)=4*(mass w*(cntF v : Int)) := by grind
+        rw [he]
+        omega
+      constructor
+      · rw [runKey_append]
+        omega
+      · intro hnegative
+        rw [mass_append] at hnegative
+        have hm1 : mass w=1 := by omega
+        have hmv2 : mass v=-2 := by omega
+        obtain ⟨hPv,hSv⟩ := hmin hmv2
+        have hPw : runKey w=0 := by rw [block_mass_one hw hm1]; decide
+        rw [runKey_append,hPw,hm1,hPv,hSv]
+        decide
+
+/-- Uniform prefix-area controls for the actual BlockWord language. -/
+theorem block_prefix_key_bounds {w : List Bool} (hw : BlockWord w) :
+    ∀ k, -8≤runKey (w.take k) ∧ (mass (w.take k)<0 → runKey (w.take k)≤0) := by
+  induction hw with
+  | nil => intro k; simp [runKey,areaW,mass]
+  | free hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+  | aas hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+  | triple hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+
+/-- A fixed separator followed by A signs preserves this suffix key. -/
+def oldKey (v : List Bool) (h : Nat) : Int := runKey v+4*(h : Int)*mass v-2*(h : Int)^2
+
+private theorem separated_key_mass (u v : List Bool) (h : Nat) (hh : 3≤h)
+    (hlo : -8≤runKey u) (hneg : mass u<0 → runKey u≤0)
+    (h1 : oldKey (u++v) h=oldKey v h) : mass (u++v)=mass v := by
+  have he : runKey u+4*(mass u*((cntF v : Int)+(h : Int)))=0 := by
+    unfold oldKey at h1
+    rw [runKey_append,mass_append] at h1
+    grind
+  by_cases hm0 : mass u=0
+  · rw [mass_append,hm0]
+    omega
+  · by_cases hmpos : 0<mass u
+    · have hp := Int.mul_nonneg (show 0≤mass u-1 by omega)
+        (show 0≤(cntF v : Int)+(h : Int) by omega)
+      have hid : (mass u-1)*((cntF v : Int)+(h : Int))=
+          mass u*((cntF v : Int)+(h : Int))-((cntF v : Int)+(h : Int)) := by grind
+      rw [hid] at hp
+      omega
+    · have hn : mass u<0 := by omega
+      have hp := Int.mul_neg_of_neg_of_pos hn
+        (show 0<(cntF v : Int)+(h : Int) by omega)
+      have hu := hneg hn
+      omega
+
+private theorem small_separator_false {v : List Bool} (hv : BlockWord v) (hne : v≠[])
+    (h i : Nat) (hh : h≤2) (hmass : mass v+(i : Int)=(h : Int)+1)
+    (hkey : oldKey v h=-2) : False := by
+  have hm := (sufPos_block hv [] v rfl hne).1
+  have hb := block_area_quadratic_lower hv
+  have hP : -2≤runKey v := by unfold runKey; omega
+  unfold oldKey at hkey
+  by_cases h0 : h=0
+  · subst h
+    have hmass1 : mass v=1 := by omega
+    rw [block_mass_one hv hmass1] at hkey
+    simp [runKey,areaW,mass,Recaman.ShortPeriodicSupply.sign] at hkey
+  · by_cases h1 : h=1
+    · subst h
+      simp at hkey
+      omega
+    · have h2 : h=2 := by omega
+      subst h
+      have hmass1 : mass v=1 := by omega
+      rw [block_mass_one hv hmass1] at hkey
+      simp [runKey,areaW,mass,Recaman.ShortPeriodicSupply.sign] at hkey
+
+def oldRay (w : List Bool) (h i : Nat) : Prop :=
+  ∃ t, t<w.length ∧ mass (w.drop t)+(i : Int)=(h : Int)+1 ∧ oldKey (w.drop t) h=-2
+
+private theorem drop_nonempty (w : List Bool) (t : Nat) (ht : t<w.length) : w.drop t≠[] := by
+  intro he
+  have hl : (w.drop t).length=w.length-t := List.length_drop
+  rw [he] at hl
+  simp only [List.length_nil] at hl
+  omega
+
+private theorem ordered_old_mass {w : List Bool} (hw : BlockWord w) (h t s : Nat)
+    (hh : 3≤h) (hts : t≤s) (heq : oldKey (w.drop t) h=oldKey (w.drop s) h) :
+    mass (w.drop t)=mass (w.drop s) := by
+  have hblock := block_suffix hw (w.take t) (w.drop t) (List.take_append_drop t w)
+  have hb := block_prefix_key_bounds hblock (s-t)
+  have he := List.take_append_drop (s-t) (w.drop t)
+  rw [List.drop_drop,show t+(s-t)=s by omega] at he
+  have hc : oldKey ((w.drop t).take (s-t)++w.drop s) h=oldKey (w.drop s) h := by rw [he]; exact heq
+  have hm := separated_key_mass _ _ h hh hb.1 hb.2 hc
+  rw [he] at hm
+  exact hm
+
+/-- Only the clock is unique. Different old starts with the same mass and
+area are deliberately retained. -/
+theorem oldRay_clock_unique {w : List Bool} (hw : BlockWord w) (h i j : Nat)
+    (hi : oldRay w h i) (hj : oldRay w h j) : i=j := by
+  obtain ⟨t,ht,hmt,hkt⟩ := hi
+  obtain ⟨s,hs,hms,hks⟩ := hj
+  by_cases hh : 3≤h
+  · by_cases hts : t≤s
+    · have hm := ordered_old_mass hw h t s hh hts (hkt.trans hks.symm)
+      omega
+    · have hm := ordered_old_mass hw h s t hh (by omega) (hks.trans hkt.symm)
+      omega
+  · have hv := block_suffix hw (w.take t) (w.drop t) (List.take_append_drop t w)
+    exact False.elim (small_separator_false hv (drop_nonempty w t ht) h i (by omega) hmt hkt)
+
+/-- A tail with three S signs makes this all-mass profile injective in
+mass on nested BlockWord suffixes. Starts themselves need not be unique. -/
+theorem block_old_profile_mass_unique {w : List Bool} (hw : BlockWord w)
+    (h t s : Nat) (hh : 3≤h)
+    (heq : oldKey (w.drop t) h=oldKey (w.drop s) h) : mass (w.drop t)=mass (w.drop s) := by
+  by_cases hts : t≤s
+  · exact ordered_old_mass hw h t s hh hts heq
+  · exact (ordered_old_mass hw h s t hh (by omega) heq.symm).symm
+
+def tailOldRay (w v : List Bool) (i : Nat) : Prop :=
+  ∃ t, t<w.length ∧ mass (w.drop t)+mass v+(i : Int)=1 ∧
+    runKey (w.drop t)+runKey v+4*mass (w.drop t)*(cntF v : Int)=-2
+
+theorem tailOldRay_clock_unique {w : List Bool} (hw : BlockWord w) (v : List Bool)
+    (hS : 3≤cntF v) (i j : Nat) (hi : tailOldRay w v i) (hj : tailOldRay w v j) : i=j := by
+  obtain ⟨t,ht,hmt,hkt⟩ := hi
+  obtain ⟨s,hs,hms,hks⟩ := hj
+  have heq : oldKey (w.drop t) (cntF v)=oldKey (w.drop s) (cntF v) := by
+    unfold oldKey
+    grind
+  have hm := block_old_profile_mass_unique hw (cntF v) t s hS heq
+  omega
+
+theorem ray_supply_append_iff (w v : List Bool) (i : Nat) :
+    Recaman.ThreeNonsuppliedData.localSupply ((w++v)++List.replicate i true)=true ↔
+      tailOldRay w v i ∨ Recaman.ThreeNonsuppliedData.localSupply (v++List.replicate i true)=true := by
+  let P := fun x : List Bool => mass x+(i : Int)=1 ∧ runKey x=-2
+  have h1 : Recaman.ThreeNonsuppliedData.localSupply ((w++v)++List.replicate i true)=true ↔
+      ∃ t, t<(w++v).length ∧ P ((w++v).drop t) := by
+    simpa [P] using localSupply_A_S_iff (w++v) i 0
+  have h2 : Recaman.ThreeNonsuppliedData.localSupply (v++List.replicate i true)=true ↔
+      ∃ t, t<v.length ∧ P (v.drop t) := by
+    simpa [P] using localSupply_A_S_iff v i 0
+  rw [h1,exists_drop_append w v P,←h2]
+  apply or_congr
+  · unfold tailOldRay
+    apply exists_congr
+    intro t
+    simp only [P,mass_append,runKey_append]
+  · rfl
+
+theorem block_rayCount_append {w : List Bool} (hw : BlockWord w) (v : List Bool)
+    (hS : 3≤cntF v) (K : Nat) : rayCount (w++v) K≤1+rayCount v K := by
+  let P := fun i => tailOldRay w v i
+  let Q := fun i => Recaman.ThreeNonsuppliedData.localSupply (v++List.replicate i true)=true
+  have he : rayCount (w++v) K=cN (fun i => P i ∨ Q i) 0 K := by
+    unfold rayCount
+    apply cN_congr
+    intro i _ _
+    exact ray_supply_append_iff w v i
+  have hp : cN P 0 K≤1 := by
+    apply cN_le_one_of_unique
+    intro i _ j _ hi hj
+    exact tailOldRay_clock_unique hw v hS i j hi hj
+  have hu := cN_or_le P Q K
+  change rayCount (w++v) K≤1+cN Q 0 K
+  omega
+
+/-- Old BlockWord complexity costs at most one supply in an A-only future
+once the intervening actual tail has at least three S signs. -/
+theorem block_A_run_free_budget (f : Nat → Bool) (n K : Nat) (w : List Bool)
+    (rs : List (Bool × Nat)) (hw : BlockWord w)
+    (hpre : seg f 0 n=w++runWord rs) (hS : 3≤cntF (runWord rs))
+    (hA : ∀ i, i<K → f (n+i)=true) :
+    K≤cN (fun x => f x=true ∧ ¬EndN f 0 x) n K+1+rs.length := by
+  have he := endable_A_run_count f n K (w++runWord rs) hpre hA
+  have hb := block_rayCount_append hw (runWord rs) hS K
+  have hl := rayCount_runWord rs K
+  have hp := addition_endable_partition f n K
+  have htrue := count_A_run f n K hA
+  rw [htrue,he] at hp
+  omega
+
+open Classical in
+theorem block_A_run_free_budget_int (e : Int → Bool) (p : Int) (n K : Nat)
+    (w : List Bool) (rs : List (Bool × Nat)) (hw : BlockWord w)
+    (hpre : segment e p n=w++runWord rs) (hS : 3≤cntF (runWord rs))
+    (hA : ∀ i, i<K → e (p+(n : Int)+(i : Int))=true) :
+    K≤countP (fun x => e x=true ∧ ¬Endable e p x) (p+(n : Int)) K+1+rs.length := by
+  rw [segment_seg e p p 0 (by simp)] at hpre
+  rw [nonsupplied_count_shift]
+  apply block_A_run_free_budget (fun i => e (p+(i : Int))) n K w rs hw hpre hS
+  intro i hi
+  simpa only [Int.natCast_add,Int.add_assoc] using hA i hi
+
+private theorem actual_old_window_root (f : Nat → Bool) (n b i t : Nat) (w v : List Bool)
+    (hnb : n≤b) (hw : seg f 0 n=w) (hv : seg f n (b-n)=v)
+    (ha : seg f b i=List.replicate i true) (ht : t<n)
+    (hwin : Win f t (b+i-t)) : tailOldRay w v i := by
+  have hn : w.length=n := by rw [←hw,seg_length]
+  have hbase := seg_add f 0 n (b-n)
+  simp only [Nat.zero_add,hw,hv,Nat.add_sub_cancel' hnb] at hbase
+  have hfull := seg_add f 0 b i
+  simp only [Nat.zero_add,hbase,ha] at hfull
+  rw [List.append_assoc] at hfull
+  have hd := seg_drop f 0 (b+i) t (by omega)
+  simp only [Nat.zero_add,Nat.sub_zero] at hd
+  have hsuf : seg f t (b+i-t)=(w.drop t++v)++List.replicate i true := by
+    rw [←hd,hfull,List.drop_append,show t-w.length=0 by omega,List.drop_zero,←List.append_assoc]
+  have hm : mass (seg f t (b+i-t))=1 := by
+    rw [seg_mass,show t+(b+i-t)=b+i by omega]
+    have hl := hwin.2.1
+    rw [show t+(b+i-t)=b+i by omega] at hl
+    omega
+  have harea : areaW (seg f t (b+i-t))=0 := by
+    rw [←Ar_areaW]
+    exact hwin.2.2
+  have hk : runKey (seg f t (b+i-t))=-2 := by
+    unfold runKey
+    rw [hm,harea]
+    decide
+  rw [hsuf,mass_append,mass_append,mass_replicate_A] at hm
+  rw [hsuf,runKey_append_A,runKey_append] at hk
+  exact ⟨t,by omega,hm,hk⟩
+
+/-- All actual old windows during the same A run, including those whose
+clock also has a local window. Their starts are not required to be unique. -/
+theorem old_window_A_run_unique (f : Nat → Bool) (n b K : Nat) (w v : List Bool)
+    (hw : BlockWord w) (hnb : n≤b) (hpre : seg f 0 n=w) (hv : seg f n (b-n)=v)
+    (hS : 3≤cntF v) (hA : ∀ k, k<K → f (b+k)=true) (i j : Nat) (hiK : i<K) (hjK : j<K)
+    (hi : ∃ t, t<n ∧ Win f t (b+i-t)) (hj : ∃ t, t<n ∧ Win f t (b+j-t)) : i=j := by
+  obtain ⟨t,ht,hit⟩ := hi
+  obtain ⟨s,hs,hjs⟩ := hj
+  have hAi : seg f b i=List.replicate i true := by
+    apply seg_A
+    intro x hbx hxi
+    simpa only [Nat.add_sub_cancel' hbx] using hA (x-b) (by omega)
+  have hAj : seg f b j=List.replicate j true := by
+    apply seg_A
+    intro x hbx hxj
+    simpa only [Nat.add_sub_cancel' hbx] using hA (x-b) (by omega)
+  have hri := actual_old_window_root f n b i t w v hnb hpre hv hAi ht hit
+  have hrj := actual_old_window_root f n b j s w v hnb hpre hv hAj hs hjs
+  exact tailOldRay_clock_unique hw v hS i j hri hrj
+
+
+/-- The same old BlockWord contributes at most one clock; the S-only local
+suffix contributes exactly the third A clock when h is positive. -/
+theorem ray_supply_after_S_iff (w : List Bool) (h i : Nat) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      ((w++List.replicate h false)++List.replicate i true)=true ↔
+      oldRay w h i ∨ (i=2 ∧ 1≤h) := by
+  rw [ray_supply_append_iff]
+  apply or_congr
+  · unfold tailOldRay oldRay oldKey
+    apply exists_congr
+    intro t
+    have hk : runKey (List.replicate h false)=-2*(h : Int)^2 := by
+      have h0 := runKey_prepend_S h []
+      simp only [List.append_nil] at h0
+      have hz : runKey ([] : List Bool)=0 := by decide
+      have hc : cntF ([] : List Bool)=0 := by decide
+      rw [hz,hc] at h0
+      simp at h0
+      exact h0.trans (by grind)
+    simp only [mass_rep_false,hk,cntF_replicate_S]
+    constructor <;> rintro ⟨ht,hm,hk⟩ <;> exact ⟨ht,by omega,by grind⟩
+  · simpa using localSupply_three_runs_iff h i 0
+
+theorem block_rayCount_after_S {w : List Bool} (hw : BlockWord w) (h K : Nat) :
+    rayCount (w++List.replicate h false) K≤2 := by
+  let P := fun i => oldRay w h i
+  let Q := fun i : Nat => i=2 ∧ 1≤h
+  have he : rayCount (w++List.replicate h false) K=cN (fun i => P i ∨ Q i) 0 K := by
+    unfold rayCount
+    apply cN_congr
+    intro i _ _
+    exact ray_supply_after_S_iff w h i
+  have hp : cN P 0 K≤1 := by
+    apply cN_le_one_of_unique
+    intro i _ j _ hi hj
+    exact oldRay_clock_unique hw h i j hi hj
+  have hq : cN Q 0 K≤1 := by
+    apply cN_le_one_of_unique
+    intro i _ j _ hi hj
+    exact hi.1.trans hj.1.symm
+  have hu := cN_or_le P Q K
+  omega
+
+/-- A whole actual S run followed by one A run uses at most two supplied A
+clocks, irrespective of the old BlockWord's length or either run length. -/
+theorem single_A_run_free_budget (f : Nat → Bool) (n h M : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hS : ∀ x, n≤x → x<n+h → f x=false)
+    (hA : ∀ i, i<M → f (n+h+i)=true) :
+    M≤cN (fun x => f x=true ∧ ¬EndN f 0 x) (n+h) M+2 := by
+  have hpref : seg f 0 (n+h)=w++List.replicate h false := by
+    rw [seg_add,show 0+n=n by omega,hpre,seg_false f n h hS]
+  have he := endable_A_run_count f (n+h) M _ hpref hA
+  have hb := block_rayCount_after_S hw h M
+  have hp := addition_endable_partition f (n+h) M
+  have ht := count_A_run f (n+h) M hA
+  rw [ht,he] at hp
+  omega
+
+/-- The C1 free-gap inequality for a single S/A tail. It uses actual
+EndN at the original base; no positive-deficit or free-rank input is assumed. -/
+theorem single_A_run_free_gap (f : Nat → Bool) (n h M j : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hS : ∀ x, n≤x → x<n+h → f x=false)
+    (hA : ∀ i, i<M → f (n+h+i)=true)
+    (hgap : ∀ x, n+h+M≤x → x<n+h+M+j → f x=false)
+    (he : EndN f 0 (n+h+M+j)) :
+    j+1≤cN (fun x => f x=true ∧ ¬EndN f 0 x) n (h+M) := by
+  have hseg : seg f 0 n=w++List.replicate 0 true := by simpa using hpre
+  have hM : 1≤M := by
+    by_cases hn : 1≤M
+    · exact hn
+    · exfalso
+      have h0 : M=0 := by omega
+      subst M
+      have hn := no_window_after_S_run f 0 n 0 (h+j) hw hseg (by
+        intro x hnx hx
+        by_cases hx0 : x<n+h
+        · exact hS x (by omega) hx0
+        · exact hgap x (by omega) (by omega))
+      apply hn
+      simpa only [Nat.zero_add,Nat.add_zero,Nat.add_assoc] using he
+  have hfirst : ¬EndN f 0 (n+h) := by
+    simpa only [Nat.zero_add] using no_window_after_S_run f 0 n 0 h hw hseg (by simpa only [Nat.zero_add] using hS)
+  let P := fun x => f x=true ∧ ¬EndN f 0 x
+  have hfree : 1≤cN P (n+h) M := by
+    have h1 := cN_succ_pos P (n+h) 0 (show P (n+h+0) from ⟨hA 0 (by omega),by simpa using hfirst⟩)
+    have hmon := count_prefix_le P (n+h) 1 M hM
+    change cN P (n+h) 1=0+1 at h1
+    omega
+  have hb := single_A_run_free_budget f n h M w hw hpre hS hA
+  have htail : seg f n (h+M)=List.replicate h false++List.replicate M true := by
+    rw [seg_add,seg_false f n h hS]
+    congr 1
+    apply seg_A
+    intro x hx hxM
+    simpa only [Nat.add_sub_cancel' hx] using hA (x-(n+h)) (by omega)
+  have hg := supplied_after_S_gap_half_bound f n 0 (n+h+M) j hw hseg (by omega) hgap he
+  rw [show n+h+M-n=h+M by omega,htail,ones_append,ones_replicate_S,ones_replicate_A] at hg
+  have htotal := cN_add P n h M
+  change j+1≤cN P n (h+M)
+  change M≤cN P (n+h) M+2 at hb
+  by_cases hj : j=0
+  · omega
+  · omega
+
+open Classical in
+theorem single_A_run_free_gap_int (e : Int → Bool) (p : Int) (n h M j : Nat)
+    (w : List Bool) (hw : BlockWord w) (hpre : segment e p n=w)
+    (hS : ∀ i, n≤i → i<n+h → e (p+(i : Int))=false)
+    (hA : ∀ i, i<M → e (p+((n+h+i : Nat) : Int))=true)
+    (hgap : ∀ i, n+h+M≤i → i<n+h+M+j → e (p+(i : Int))=false)
+    (he : Endable e p (p+((n+h+M+j : Nat) : Int))) :
+    j+1≤countP (fun x => e x=true ∧ ¬Endable e p x) (p+(n : Int)) (h+M) := by
+  rw [segment_seg e p p 0 (by simp)] at hpre
+  rw [nonsupplied_count_shift]
+  apply single_A_run_free_gap (fun i => e (p+(i : Int))) n h M j w hw hpre hS hA hgap
+  exact (endable_iff e p p _ 0 (n+h+M+j) (by simp) rfl).mp he
+
+
+private theorem middle_run_root_false (m a : Nat) (ha : 1≤a)
+    (he : (1 : Int)=(m : Int)*((m : Int)-2*(a : Int))) : False := by
+  by_cases hp : 0<(m : Int)-2*(a : Int)
+  · have hm : 0≤(m : Int) := by omega
+    have hz := Int.mul_nonneg hm (show 0≤(m : Int)-2*(a : Int)-1 by omega)
+    have hi : (m : Int)*((m : Int)-2*(a : Int)-1)=
+        (m : Int)*((m : Int)-2*(a : Int))-(m : Int) := by grind
+    rw [hi,←he] at hz
+    omega
+  · have hz := Int.mul_nonpos_of_nonneg_of_nonpos (show 0≤(m : Int) by omega)
+      (show (m : Int)-2*(a : Int)≤0 by omega)
+    omega
+
+/-- Within a three-run local prefix, only its first and last S runs can
+contribute an A-ray supply; their lengths need not be bounded. -/
+theorem rayCount_S_A_S (h M m K : Nat) :
+    rayCount (List.replicate h false++List.replicate M true++List.replicate m false) K≤2 := by
+  let P := fun i : Nat => ∃ q : Nat, 1≤q ∧ q≤h ∧
+    (M : Int)+(i : Int)=1+(q : Int)+(m : Int) ∧
+    (1 : Int)=((q : Int)+(m : Int))^2-2*(m : Int)*(M : Int)
+  let Q := fun i : Nat => i=2 ∧ 1≤m
+  have he : rayCount (List.replicate h false++List.replicate M true++List.replicate m false) K=
+      cN (fun i => P i ∨ Q i) 0 K := by
+    unfold rayCount
+    apply cN_congr
+    intro i _ _
+    have he := localSupply_two_run_iff h M m i 0
+    simp only [List.replicate_zero,List.append_nil,Nat.zero_add,Int.natCast_zero,
+      Int.zero_add,Nat.mul_one,Int.one_pow] at he
+    rw [he]
+    change P i ∨ (∃ a, 1≤a ∧ a≤M ∧ _ ∧ _) ∨ Q i ↔ P i ∨ Q i
+    constructor
+    · rintro (hp|hm|hq)
+      · exact Or.inl hp
+      · obtain ⟨a,ha,_,_,heq⟩ := hm
+        exact False.elim (middle_run_root_false m a ha heq)
+      · exact Or.inr hq
+    · rintro (hp|hq)
+      · exact Or.inl hp
+      · exact Or.inr (Or.inr hq)
+  have hp : cN P 0 K≤1 := by
+    apply cN_le_one_of_unique
+    intro i _ j _ hi hj
+    obtain ⟨q,hq,_,hmi,hki⟩ := hi
+    obtain ⟨v,hv,_,hmj,hkj⟩ := hj
+    have hz : ((q : Int)-(v : Int))*((q : Int)+(v : Int)+2*(m : Int))=0 := by grind
+    have hqv : q=v := by
+      rcases Int.mul_eq_zero.mp hz with h0|h0 <;> omega
+    subst v
+    omega
+  have hq : cN Q 0 K≤1 := by
+    apply cN_le_one_of_unique
+    intro i _ j _ hi hj
+    exact hi.1.trans hj.1.symm
+  have hu := cN_or_le P Q K
+  omega
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 4000000 in
+/-- A new count projection of the previously checked r3 graph. No new
+reachability enumeration or endpoint assumption is used. -/
+private theorem r3_count_projection :
+    (List.range Recaman.ThreeNonsuppliedData.rows.size).all (fun i =>
+      decide ((Recaman.ThreeNonsuppliedData.stateAt Recaman.ThreeNonsuppliedData.rows i).additions≤
+        2*(Recaman.ThreeNonsuppliedData.stateAt Recaman.ThreeNonsuppliedData.rows i).nonsupplied+1))=true := by decide
+
+theorem positive_r3_additions_free_bound (f : Nat → Bool) (n a B : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1≤cN (fun x => f x=false) n k)
+    (hfree : cN (fun x => f x=true ∧ ¬EndN f 0 x) n B≤3) :
+    cN (fun x => f x=true) n B≤2*cN (fun x => f x=true ∧ ¬EndN f 0 x) n B+1 := by
+  have hm := three_nonsupplied_state_member f n a B hw hpre hpos hfree
+  obtain ⟨i,hi,he⟩ := hm
+  have hp := of_decide_eq_true (List.all_eq_true.mp r3_count_projection i (List.mem_range.mpr hi))
+  rw [he] at hp
+  exact hp
+
+theorem positive_r3_free_gap (f : Nat → Bool) (n a B j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hB : 0<B)
+    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1≤cN (fun x => f x=false) n k)
+    (hfree : cN (fun x => f x=true ∧ ¬EndN f 0 x) n B≤3)
+    (hgap : ∀ x, n+B≤x → x<n+B+j → f x=false) (he : EndN f 0 (n+B+j)) :
+    j+1≤cN (fun x => f x=true ∧ ¬EndN f 0 x) n B := by
+  have hb := positive_r3_additions_free_bound f n a B hw hpre hpos hfree
+  have hg := supplied_after_S_gap_half_bound f n a (n+B) j hw hpre (by omega) hgap he
+  rw [show n+B-n=B by omega,ones_seg_eq_count] at hg
+  omega
+
+private theorem endable_S_count_zero (f : Nat → Bool) (s h : Nat)
+    (hS : ∀ x, s≤x → x<s+h → f x=false) : cN (EndN f 0) s h=0 := by
+  apply cN_zero_of
+  intro x hx hxh he
+  have hfalse := hS x hx hxh
+  have htrue := he.1
+  rw [hfalse] at htrue
+  contradiction
+
+/-- At most five supplied A clocks in a two-A-run tail once it has three
+S signs. The old prefix remains fixed and both local/old windows are retained. -/
+theorem two_A_run_supply_budget (f : Nat → Bool) (n h M m L : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hS : ∀ x, n≤x → x<n+h → f x=false)
+    (hA : ∀ i, i<M → f (n+h+i)=true)
+    (hS2 : ∀ x, n+h+M≤x → x<n+h+M+m → f x=false)
+    (hA2 : ∀ i, i<L → f (n+h+M+m+i)=true) (hsum : 3≤h+m) :
+    cN (EndN f 0) n (h+M+m+L)≤5 := by
+  have hp1 : seg f 0 (n+h)=w++List.replicate h false := by
+    rw [seg_add,show 0+n=n by omega,hpre,seg_false f n h hS]
+  have hr1 := endable_A_run_count f (n+h) M _ hp1 hA
+  have hb1 := block_rayCount_after_S hw h M
+  have hp2 : seg f 0 (n+h+M+m)=
+      w++(List.replicate h false++List.replicate M true++List.replicate m false) := by
+    have hsegA : seg f (n+h) M=List.replicate M true := by
+      apply seg_A
+      intro x hx hxM
+      simpa only [Nat.add_sub_cancel' hx] using hA (x-(n+h)) (by omega)
+    rw [show n+h+M+m=(n+h+M)+m by omega,seg_add,
+      show 0+(n+h+M)=n+h+M by omega,seg_false f (n+h+M) m hS2,
+      show n+h+M=(n+h)+M by omega,seg_add,show 0+(n+h)=n+h by omega,hp1,hsegA]
+    simp only [List.append_assoc]
+  have hr2 := endable_A_run_count f (n+h+M+m) L _ hp2 hA2
+  have hcnt : cntF (List.replicate h false++List.replicate M true++List.replicate m false)=h+m := by
+    have ha : cntF (List.replicate M true)=0 := by
+      induction M with
+      | zero => rfl
+      | succ M ih => simp [List.replicate_succ,cntF,ih]
+    simp only [cntF_append,cntF_replicate_S,ha,Nat.add_zero]
+  have hb2 := block_rayCount_append hw
+      (List.replicate h false++List.replicate M true++List.replicate m false) (by omega) L
+  have hl := rayCount_S_A_S h M m L
+  have h0 := endable_S_count_zero f n h hS
+  have h2 := endable_S_count_zero f (n+h+M) m hS2
+  have hc1 := cN_add (EndN f 0) n h M
+  have hc2 := cN_add (EndN f 0) n (h+M) m
+  have hc3 := cN_add (EndN f 0) n (h+M+m) L
+  simp only [Nat.add_assoc] at *
+  omega
+
+/-- C1 free-gap for two A runs under the actual relative positive-deficit
+condition, with no run-length or free-budget bound. -/
+theorem two_A_run_free_gap (f : Nat → Bool) (n h M m L j : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hS : ∀ x, n≤x → x<n+h → f x=false)
+    (hA : ∀ i, i<M → f (n+h+i)=true)
+    (hS2 : ∀ x, n+h+M≤x → x<n+h+M+m → f x=false)
+    (hA2 : ∀ i, i<L → f (n+h+M+m+i)=true)
+    (hB : 0<h+M+m+L)
+    (hpos : ∀ k, 0<k → k≤h+M+m+L →
+      cN (EndN f 0) n k+1≤cN (fun x => f x=false) n k)
+    (hgap : ∀ x, n+h+M+m+L≤x → x<n+h+M+m+L+j → f x=false)
+    (he : EndN f 0 (n+h+M+m+L+j)) :
+    j+1≤cN (fun x => f x=true ∧ ¬EndN f 0 x) n (h+M+m+L) := by
+  have hsA : seg f (n+h) M=List.replicate M true := by
+    apply seg_A
+    intro x hx hxM
+    simpa only [Nat.add_sub_cancel' hx] using hA (x-(n+h)) (by omega)
+  have hsA2 : seg f (n+h+M+m) L=List.replicate L true := by
+    apply seg_A
+    intro x hx hxL
+    simpa only [Nat.add_sub_cancel' hx] using hA2 (x-(n+h+M+m)) (by omega)
+  have htail : seg f n (h+M+m+L)=
+      List.replicate h false++List.replicate M true++List.replicate m false++List.replicate L true := by
+    rw [seg_add,seg_add,seg_add,seg_false f n h hS,hsA,
+      show n+(h+M)=n+h+M by omega,seg_false f (n+h+M) m hS2,
+      show n+(h+M+m)=n+h+M+m by omega,hsA2]
+  have hones := ones_seg_eq_count f n (h+M+m+L)
+  rw [htail,ones_append,ones_append,ones_append,ones_replicate_A,ones_replicate_A,
+    ones_replicate_S,ones_replicate_S] at hones
+  have hs : cN (fun x => f x=false) n (h+M+m+L)=h+m := by
+    have hc := cN_walk f n (h+M+m+L)
+    have hm := seg_mass f n (h+M+m+L)
+    rw [htail,mass_append,mass_append,mass_append,mass_rep_false,mass_rep_false,
+      mass_replicate_A,mass_replicate_A] at hm
+    omega
+  have hpre0 : seg f 0 n=w++List.replicate 0 true := by simpa using hpre
+  have hg := supplied_after_S_gap_half_bound f n 0 (n+h+M+m+L) j hw hpre0 (by omega) hgap he
+  rw [show n+h+M+m+L-n=h+M+m+L by omega,ones_seg_eq_count] at hg
+  have hp := addition_endable_partition f n (h+M+m+L)
+  by_cases hsum : 3≤h+m
+  · have hb := two_A_run_supply_budget f n h M m L w hw hpre hS hA hS2 hA2 hsum
+    by_cases hr : cN (fun x => f x=true ∧ ¬EndN f 0 x) n (h+M+m+L)≤3
+    · exact positive_r3_free_gap f n 0 (h+M+m+L) j hw hpre0 hB hpos hr (by simpa only [Nat.add_assoc] using hgap) (by simpa only [Nat.add_assoc] using he)
+    · omega
+  · have hbal := hpos (h+M+m+L) hB (Nat.le_refl _)
+    omega
+
+end Recaman.BlockOldRay

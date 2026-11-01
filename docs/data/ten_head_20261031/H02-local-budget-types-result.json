@@ -1,0 +1,25 @@
+{
+  "tag": "H02-local-budget-types",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TenHeadLocalBudget.lean"
+  ],
+  "started_jst": "2026-10-31T06:16:35.940212+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TenHeadLocalBudget.lean": "7a787ea9f8100ff29805e16cde737f0d2a8048875c05ea473c0673f1f57e2f26"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "05a1d05b31aae9df163929447420ed4e62ed03afb14f874dd8c609302805853b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4503645000513643,
+  "cpu_seconds": 0.375656,
+  "finished_jst": "2026-10-31T06:16:36.390518+09:00"
+}

@@ -1,0 +1,50 @@
+{
+  "claim": "Reuse existing Lake cache for identical source/toolchain only; Lake still checks traces/dependencies. Not a cold verification.",
+  "records": [
+    {
+      "module": "DeepNineteenTraceCertificate",
+      "source_sha256": "cd2a3575a2abfbb7cfef716cc87df04a9968e688c04d5eac5d2673ea1e42ef2a",
+      "exact_source_and_toolchain_match": true,
+      "existing_incremental_cache_files": [
+        ".lake/build/ir/Recaman/DeepNineteenTraceCertificate.c.hash",
+        ".lake/build/ir/Recaman/DeepNineteenTraceCertificate.setup.json",
+        ".lake/build/ir/Recaman/DeepNineteenTraceCertificate.c",
+        ".lake/build/lib/lean/Recaman/DeepNineteenTraceCertificate.ilean.hash",
+        ".lake/build/lib/lean/Recaman/DeepNineteenTraceCertificate.olean",
+        ".lake/build/lib/lean/Recaman/DeepNineteenTraceCertificate.ilean",
+        ".lake/build/lib/lean/Recaman/DeepNineteenTraceCertificate.trace",
+        ".lake/build/lib/lean/Recaman/DeepNineteenTraceCertificate.olean.hash"
+      ]
+    },
+    {
+      "module": "DeepSixtyoneTraceCertificate",
+      "source_sha256": "69d4c93a5e1da0f2391653198618fab84c44bbaecda5c30c5d4bca72ea97c130",
+      "exact_source_and_toolchain_match": true,
+      "existing_incremental_cache_files": [
+        ".lake/build/ir/Recaman/DeepSixtyoneTraceCertificate.c",
+        ".lake/build/ir/Recaman/DeepSixtyoneTraceCertificate.c.hash",
+        ".lake/build/ir/Recaman/DeepSixtyoneTraceCertificate.setup.json",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneTraceCertificate.trace",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneTraceCertificate.ilean",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneTraceCertificate.olean",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneTraceCertificate.ilean.hash",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneTraceCertificate.olean.hash"
+      ]
+    },
+    {
+      "module": "DeepSixtyoneMexCertificate",
+      "source_sha256": "628190299cf48aaa923b7407589033c172e489e676fd7f9d3167b987f9907843",
+      "exact_source_and_toolchain_match": true,
+      "existing_incremental_cache_files": [
+        ".lake/build/ir/Recaman/DeepSixtyoneMexCertificate.c.hash",
+        ".lake/build/ir/Recaman/DeepSixtyoneMexCertificate.setup.json",
+        ".lake/build/ir/Recaman/DeepSixtyoneMexCertificate.c",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneMexCertificate.olean.hash",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneMexCertificate.trace",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneMexCertificate.ilean",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneMexCertificate.ilean.hash",
+        ".lake/build/lib/lean/Recaman/DeepSixtyoneMexCertificate.olean"
+      ]
+    }
+  ]
+}

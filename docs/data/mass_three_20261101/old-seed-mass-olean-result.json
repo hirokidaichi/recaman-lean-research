@@ -1,0 +1,27 @@
+{
+  "tag": "old-seed-mass-olean",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSeedMassBound.olean",
+    "Recaman/OldSeedMassBound.lean"
+  ],
+  "started_jst": "2026-11-01T06:20:30.913034+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSeedMassBound.lean": "2cc34ca404a0f8aab5a21882988fba331df11deae63add2142a640c4530a0769"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "2376337767b19f9df32ea8bf6d2a13faa6ebbaed722cae910c8587365930fee4",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5767905828543007,
+  "cpu_seconds": 0.513423,
+  "finished_jst": "2026-11-01T06:20:31.489773+09:00"
+}

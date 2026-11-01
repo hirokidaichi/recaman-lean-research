@@ -1,0 +1,20 @@
+Recaman/LowerMomentOldClock.lean:76:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+  b ≥ 0
+  a - 6*b ≤ 4
+  a - 4*b ≥ 5
+  2*a + 2*e - f ≥ 0
+where
+ a := B
+ b := ↑(cntF z)
+ c := ↑w.length
+ d := ↑t
+ e := ↑v ^ 2
+ f := 4 * mass u * (↑(cntF z) + ↑v)
+Recaman/LowerMomentOldClock.lean:83:17: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/LowerMomentOldClock.lean:83:6: error: `simp` made no progress
+Recaman/LowerMomentOldClock.lean:87:17: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/LowerMomentOldClock.lean:87:6: error: `simp` made no progress

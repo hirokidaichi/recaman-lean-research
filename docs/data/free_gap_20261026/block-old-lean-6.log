@@ -1,0 +1,175 @@
+Recaman/BlockOldRay.lean:253:18: error: unsolved goals
+case succ.he
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ cN (EndN f 0) n K = rayCount (w ++ runWord rs) K
+
+case succ.hb
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K
+
+case succ.hl
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ rayCount (runWord rs) K ≤ rs.length
+
+case succ.hp
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K
+
+case succ.hc
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+    cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K
+
+case succ.hm
+f : Nat → Bool
+n : Nat
+w : List Bool
+rs : List (Bool × Nat)
+hw : BlockWord w
+hpre : seg f 0 n = w ++ runWord rs
+hS : 3 ≤ cntF (runWord rs)
+K : Nat
+ih :
+  (∀ (i : Nat), i < K → f (n + i) = true) →
+    cN (EndN f 0) n K = rayCount (w ++ runWord rs) K →
+      rayCount (w ++ runWord rs) K ≤ 1 + rayCount (runWord rs) K →
+        rayCount (runWord rs) K ≤ rs.length →
+          cN (fun u => f u = true) n K = cN (EndN f 0) n K + cN (fun u => f u = true ∧ ¬EndN f 0 u) n K →
+            Fw f (n + K) = Fw f n + ↑(cN (fun i => f i = true) n K) - ↑(cN (fun i => f i = false) n K) ∧
+                cN (fun i => f i = true) n K + cN (fun i => f i = false) n K = K →
+              ones (seg f n K) = ↑(cN (fun u => f u = true) n K) → seg f n K = List.replicate K true
+hA : ∀ (i : Nat), i < K + 1 → f (n + i) = true
+he : cN (EndN f 0) n (K + 1) = rayCount (w ++ runWord rs) (K + 1)
+hb : rayCount (w ++ runWord rs) (K + 1) ≤ 1 + rayCount (runWord rs) (K + 1)
+hl : rayCount (runWord rs) (K + 1) ≤ rs.length
+hp : cN (fun u => f u = true) n (K + 1) = cN (EndN f 0) n (K + 1) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (K + 1)
+hc :
+  Fw f (n + (K + 1)) = Fw f n + ↑(cN (fun i => f i = true) n (K + 1)) - ↑(cN (fun i => f i = false) n (K + 1)) ∧
+    cN (fun i => f i = true) n (K + 1) + cN (fun i => f i = false) n (K + 1) = K + 1
+hm : ones (seg f n (K + 1)) = ↑(cN (fun u => f u = true) n (K + 1))
+⊢ ones (seg f n K) = ↑(cN (fun u => f u = true) n K)

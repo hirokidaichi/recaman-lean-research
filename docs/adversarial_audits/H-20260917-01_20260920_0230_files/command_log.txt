@@ -1,0 +1,82 @@
+H-20260917-01 closeout inventory audit command log
+auditor=/root/sol_20260920_close_audit0230
+repo=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research
+
+1. Start time
+command: date '+%Y-%m-%d %H:%M:%S %Z (%z)'
+output: 2026-09-20 02:33:11 JST (+0900)
+exit: 0
+
+2. Git revision
+command: git rev-parse HEAD
+output: 08c08565c743f39350c9b959e1df7d30aa1cae5d
+exit: 0
+
+3. Final target hash
+command: shasum -a 256 docs/data/issue73_20260920/slot0230/closeout_inventory.md
+output: 2c10fbf84e25f36db9c18ed5bed71227df022e10c87228f8839a93fc0a767cd2  docs/data/issue73_20260920/slot0230/closeout_inventory.md
+exit: 0
+
+4. Superseded target preservation
+command: shasum -a 256 docs/data/issue73_20260920/slot0230/closeout_inventory_v1.md
+output: 17e03d95b0d47357641273d5fe1d93e1dafed5ab82a07a901f559f3ad4aa952a  docs/data/issue73_20260920/slot0230/closeout_inventory_v1.md
+exit: 0
+
+5. Data manifests
+commands:
+  timeout 10 shasum -a 256 -c docs/data/issue73_20260920/SHA256SUMS
+  timeout 10 shasum -a 256 -c docs/data/issue73_20260920/slot0130/SHA256SUMS
+  timeout 10 shasum -a 256 -c docs/data/issue73_20260920/slot0200/SHA256SUMS
+output summary: 7/7 OK; 13/13 OK; 6/6 OK
+exits: 0; 0; 0
+
+6. Independent-audit manifests
+commands:
+  timeout 10 shasum -a 256 -c docs/adversarial_audits/H-20260917-01_20260920_0100_files/SHA256SUMS
+  timeout 10 shasum -a 256 -c docs/adversarial_audits/H-20260917-01_20260920_0130_files/SHA256SUMS
+  (cd docs/adversarial_audits/H-20260917-01_20260920_0200_files && timeout 10 shasum -a 256 -c SHA256SUMS)
+output summary: 6/6 OK; 3/3 OK; 5/5 OK
+exits: 0; 0; 0
+
+7. Manifest object hashes
+output:
+  ad104e12d90e897abeeb5aa3165b573d6cc360b21dd4b896cd081a0fc0099a2a  01:00 audit manifest
+  17d09763da6fca1880d70f2e96f17752c01d1550581b1b827245d2f2b6210143  01:30 audit manifest
+  2c0fd5cb6137426561883d221c391310ab6be8fbad5935fddb72aec3d6823316  02:00 audit manifest
+  b97eb46f555611e51dbf64ef453b0ad42f5527cf563620a3ff724a433ebaea51  daily root manifest
+  308f9e7d5384c520538e7255a1e61e4ad0958370e6ca6178e78a455b8d6dc9cc  slot0130 manifest
+  633f0ba87273b5742eaca3b6252d7fd31eb4cf55e6e4a2517f5e6bd3ff9842c3  slot0200 manifest
+
+8. Direct source/audit hashes
+output:
+  50b0e26f6a878e0c7ae229303026469a4f13c4fc0a21ee5b1ac591164145aea7  baseline_q_w.py
+  0c1e0da0666e6c3a574f12500c1c343fc99a2c36fcbe6f69c8d9d7f069e56b55  falsification_gate.py
+  d3fc203ba3c42f24000b15dce119f83d016fd7a6fb6d4aa65039327433475a94  w_partial_u_probe.py
+  9cd9f05b31d863e27c44ad7828525103e14607b5f1528da76d7ae15b385c5365  01:00 audit record
+  bc6e660503015cc52b5046eb8ab13bd6f66b3d331253c0adbf21f3c3bd3770b6  01:30 audit record
+  431aa22ffc98ae1c7b1df47e8ea18cd1afc37b795a7bb2e680e04a129fd1e66e  02:00 audit record
+
+9. Raw failure/result checks
+observed directly:
+  p1..15 timeout note: exclusive 1<=d<p(p+1), SIGINT, exit 130, stdout empty.
+  01:30 attack output: duplicate_period_1_main_returncode=0;
+    negative_count_cancellation_main_returncode=0; malformed_first_q_witness accepted=true.
+  02:00 worker raw v2: status=EXHAUSTED_ZERO, positive/completed=1872/1872,
+    tight_b=2202, w1_antecedents=0, work=0, elapsed=5.664199.
+  02:00 independent output: full_w1_antecedents=32,
+    full_w1_B_equals_full_U=32, proper_U=3314, proper_U_hall=3314,
+    partial_tight_B=1166, partial_w1_antecedents=0, independent_candidate=null.
+  addendum: v1 source body absent despite hash ead649739e53...; v2 runner wall withdrawn.
+
+10. No live research process
+command: timeout 5 pgrep -af 'python3.*([b]aseline_q_w|[f]alsification_gate|[w]_partial_u_probe|[v]erify_witness|[a]udit_attack)' || true
+output: empty
+
+11. Tracked-tree check
+command: git diff --exit-code
+output: empty
+exit: 0
+
+12. Intentionally not run
+No mathematical recomputation, new probe, Lean, report_vacuity, harness lint,
+statement audit, ./scripts/check.sh, or harness tests were run in this slot.

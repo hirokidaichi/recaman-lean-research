@@ -1,0 +1,144 @@
+===== Recaman/ShortTightDonorAvoidance.lean:470-510 =====
+    have hA1 := w1_next_addition e mem own lag hF t ht hw
+    obtain ⟨hfuture, _, _, _⟩ := w1_future_aas_member e mem own lag hF t ht hw
+    have hA2 := hF.addA (t + 2) hfuture
+    rcases hfalse with hfalse | hfalse
+    · rw [past_getD e u0 11 _ (by omega) true] at hfalse
+      have hx : u0 - 1 - ((oldestOffset (past e u0 11) - 3 : Nat) : Int) = t + 1 := by omega
+      rw [hx, hA1] at hfalse
+      exact Bool.noConfusion hfalse
+    · rw [past_getD e u0 11 _ (by omega) true] at hfalse
+      have hx : u0 - 1 - ((oldestOffset (past e u0 11) - 4 : Nat) : Int) = t + 2 := by omega
+      rw [hx, hA2] at hfalse
+      exact Bool.noConfusion hfalse
+
+/-- Arbitrary-period tight-set avoidance for all length-11 P2 SS=2 windows.
+Only the members of B, not the donor, are required to have minimal windows.
+The donor clock may be any integer and need not itself be an addition. -/
+theorem short_tight_avoids_ss2_window (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (hper : ∀ x : Int, e (x + p) = e x)
+    (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+    (htight : (neighborhood e p B lag).length = B.length)
+    (hBp : ∀ b ∈ B, b < p)
+    (hBA : ∀ b ∈ B, e (b : Int) = true)
+    (hlag : ∀ b ∈ B, lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+    (hP : ∀ b ∈ B, P2 (past e (b : Int) (lag b)))
+    (hmin : ∀ b ∈ B, ∀ d, d < lag b → 0 < d → ¬ P2 ((past e (b : Int) (lag b)).take d))
+    (u0 : Int) (hPdon : P2 (past e u0 11))
+    (hss : Recaman.OneSSMultiplicity.ssCount (past e u0 11) = 2) :
+    phase p (u0 - (oldestOffset (past e u0 11) : Int)) ∉ neighborhood e p B lag := by
+  have hbound : ∀ b ∈ B, lag b ≤ 11 := by
+    intro b hb
+    rcases hlag b hb with h | h | h <;> omega
+  have hhall : ∀ A : List Nat, List.Sublist A B → A.length ≤ (neighborhood e p A lag).length := by
+    intro A hA
+    exact short_window_hall e p hp hper A lag (hBn.sublist hA)
+      (fun u hu => hBp u (hA.subset hu)) (fun u hu => hBA u (hA.subset hu))
+      (fun u hu => hbound u (hA.subset hu)) (fun u hu => hP u (hA.subset hu))
+  obtain ⟨own, hF⟩ := tight_owner_family e p hp hper B B lag hBn hhall
+    (List.Sublist.refl B) htight hBp hBA hlag hP hmin
+  intro hcovered
+  rw [Recaman.TwoSSAvoidTight.mem_neighborhood_iff,
+    Recaman.TwoSSTightDisjoint.isCoveredBySubset_iff] at hcovered
+
+===== Recaman/ShortTightDonorAvoidance.lean:568-587 =====
+      · simpa [List.filter_cons, hm, hl] using ih
+
+/-- In a tight short supply, replacing every window by any P2 prefix preserves
+the whole neighborhood. This does not assume either choice of windows is minimal. -/
+theorem tight_neighborhood_eq_of_p2_prefix (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (hper : ∀ x : Int, e (x + p) = e x)
+    (B : List Nat) (m lag : Nat → Nat) (hBn : B.Nodup)
+    (hBp : ∀ b ∈ B, b < p) (hBA : ∀ b ∈ B, e (b : Int) = true)
+    (hle : ∀ b ∈ B, m b ≤ lag b) (hbound : ∀ b ∈ B, lag b ≤ 11)
+    (hP : ∀ b ∈ B, P2 (past e (b : Int) (m b)))
+    (htight : (neighborhood e p B lag).length = B.length) :
+    neighborhood e p B m = neighborhood e p B lag := by
+  have hhall := short_window_hall e p hp hper B m hBn hBp hBA
+    (fun b hb => Nat.le_trans (hle b hb) (hbound b hb)) hP
+  exact (neighborhood_prefix_sublist e p B m lag hle).eq_of_length_le (by omega)
+
+/-- Short tight-set avoidance without minimality on either the members or the donor.
+The only length restriction on member windows is lag <= 11. -/
+theorem short_p2_tight_avoids_ss2_window (e : Int → Bool) (p : Nat) (hp : 0 < p)
+    (hper : ∀ x : Int, e (x + p) = e x)
+
+===== Recaman/ShortTightDonorAvoidance.lean:647-667 =====
+/-- The new nonminimal-donor theorem cannot replace donor length 11 by 15.
+At period16, donor15 is current A, P2 of length15 and SS=2, but the tight
+AAS singleton B={3} loses its only subtraction when true oldest S0 is deleted.
+The donor also has a length3 P2 prefix, so this does not refute the minimal-donor route. -/
+theorem nonminimal_donor_length15_counterexample :
+    (∀ t : Int, donorLength15Stream (t + 16) = donorLength15Stream t) ∧
+    Recaman.ShortPeriodicSupply.signSum donorLength15Stream 0 16 = 2 ∧
+    donorLength15Stream 15 = true ∧ P2 (past donorLength15Stream 15 15) ∧
+    Recaman.OneSSMultiplicity.ssCount (past donorLength15Stream 15 15) = 2 ∧
+    P2 (past donorLength15Stream 15 3) ∧
+    donorLength15Stream 3 = true ∧ past donorLength15Stream 3 3 = aas ∧
+    neighborhood donorLength15Stream 16 [3] (fun _ => 3) = [0] ∧
+    phase 16 (15 - (oldestOffset (past donorLength15Stream 15 15) : Int)) = 0 ∧
+    Recaman.TwoSSTightDisjoint.deletedNeighborhood donorLength15Stream 16 [3]
+      (fun _ => 3) (phase 16 (15 - (oldestOffset (past donorLength15Stream 15 15) : Int))) = [] := by
+  constructor
+  · intro t
+    unfold donorLength15Stream
+    congr 1
+    omega
+  · decide
+
+===== Recaman/SS2OldestPattern.lean:15-68 =====
+open Recaman.LowSSEndpoint
+
+/-- Every suffix ending A has mass at least minus its SS count. Summing
+those suffix masses gives a strict moment bound at any fixed SS budget. -/
+theorem moment_ending_A_budget (w : List Bool) (q : Nat)
+    (hss : ssCount (w ++ [true]) ≤ q) :
+    (q : Int) + 1 ≤ moment (w ++ [true]) + q * (w ++ [true]).length := by
+  induction w with
+  | nil => simp [moment, mass, Recaman.ShortPeriodicSupply.sign]; omega
+  | cons b w ih =>
+    have hs := ssCount_tail_le b (w ++ [true])
+    have hi := ih (by simpa using Nat.le_trans hs hss)
+    have hm := mass_ending_A (b :: w)
+    have hl : -(q : Int) ≤ mass ((b :: w) ++ [true]) := by omega
+    simp only [List.cons_append, moment, List.length_cons, Int.natCast_add,
+      Int.cast_ofNat_Int] at hi ⊢
+    rw [List.cons_append, mass_cons] at hl
+    grind
+
+/-- With at most two SS, every suffix of a word ending AA has mass at least -1,
+except the last suffix which is A. This forces a positive moment-plus-length. -/
+theorem moment_ending_AA_ss2 (w : List Bool)
+    (hss : ssCount (w ++ [true, true]) ≤ 2) :
+    5 ≤ moment (w ++ [true, true]) + (w ++ [true, true]).length := by
+  induction w with
+  | nil => decide
+  | cons b w ih =>
+    have hs := ssCount_tail_le b (w ++ [true, true])
+    have hi := ih (by simpa using Nat.le_trans hs hss)
+    have hsplit : (b :: w) ++ [true, true] = ((b :: w) ++ [true]) ++ [true] := by simp
+    have hm := mass_ending_A (b :: w)
+    have hss' : ssCount ((b :: w) ++ [true]) ≤ 2 := by
+      simpa only [hsplit, ssCount_post_A] using hss
+    have hl : -1 ≤ mass ((b :: w) ++ [true, true]) := by
+      rw [hsplit, mass_append]
+      simp only [mass_cons, mass_nil, Recaman.ShortPeriodicSupply.sign, ↓reduceIte]
+      omega
+    simp only [List.cons_append, moment, List.length_cons, Int.natCast_add,
+      Int.cast_ofNat_Int] at hi ⊢
+    rw [List.cons_append, mass_cons] at hl
+    omega
+
+/-- An A-ended mass-zero word at moment at most minus its length and with
+at most two SS already contains a strict S-ended P2 prefix. -/
+theorem ss2_intervening_prefix (w : List Bool)
+    (hm : mass (w ++ [true]) = 0)
+    (hM : moment (w ++ [true]) + (w ++ [true]).length ≤ 0)
+    (hss : ssCount (w ++ [true]) ≤ 2) :
+    ∃ u v : List Bool, w ++ [true] = (u ++ [false]) ++ v ∧
+      P2 (u ++ [false]) ∧ v ≠ [] := by
+  rcases List.eq_nil_or_concat w with hw | ⟨x, b, hw⟩
+  · simp [hw, mass_cons, mass_nil, Recaman.ShortPeriodicSupply.sign] at hm
+  · simp only [List.concat_eq_append] at hw
+    cases b with
+

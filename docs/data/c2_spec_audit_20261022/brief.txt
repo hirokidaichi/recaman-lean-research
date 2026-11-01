@@ -1,0 +1,27 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-22（C2/C1/TSの入力監査を同期。中心命題の証拠labelは変更なし）
+
+- 現在の研究単位: C1の面積不等式Qへの入力Pを確認し、次はQ自体の下界を評価する。区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
+- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
+- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-378 は TS₁ と接尾辞の部品であり、TS・SL 全体の証明ではない。
+- 次の判定: [入力監査](RESEARCH_NOTE_2026-10-22_INPUT_AUDIT.md)でC2の包含・既知対照を照合し、C1のP供給を確認。C2の一様証明とC1のQは未解決。TSでは始点数mだけの圧縮案を短い反例で却下し、Q分布を保つ候補を探す。
+- 配分と切替: [日次引き継ぎ](RESEARCH_HANDOFF_2026-10-22_DAILY.md)に未消化時間を含む実績を保存。次cycleは活用60をC1のQ、探索30をTS/C2の別入力、監査10に置く。同じ障害で2 cycle無進展なら別機構へ配分し、有限lag延長だけで一般結果へ昇格しない。
+- 定期研究: [毎日6:00〜8:00 JST](DAILY_RESEARCH_SCHEDULE.md)、初回2026-10-22。100分cycleに開始確認・引き継ぎ20分を加え、前日の判定から継続する。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-370 [PROVED-LEAN] line-capacity-periodic-reduction — Recaman/LineCapacityPeriodic.lean
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-369 [COMPUTED] line-capacity-conjecture-H — docs/data/issue73_20261020/hall34.out
+  E-372 [COMPUTED] bounded-lag-line-capacity — docs/data/issue73_20261020/potL27.out
+  E-374 [COMPUTED] bounded-lag-closure-classification — docs/data/issue73_20261020/eqclassL_tightcyc.out
+  E-378 [PROVED-LEAN] block-suffix-positivity — Recaman/BlockSuffixPositivity.lean
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 402 (including Audit)
+  Import contracts: 110; audit declarations: 2652

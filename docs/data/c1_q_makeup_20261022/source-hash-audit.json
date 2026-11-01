@@ -1,0 +1,162 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-22T00:55:16.126917+00:00",
+  "initial_protocol_recovered": true,
+  "checks": [
+    {
+      "metadata": "budget-classify.meta.json",
+      "source": "budget_classify.cpp",
+      "snapshot": "budget_classify.cpp",
+      "expected": "b1b2357d552c7b62de95a023bc2fa89766fe4dc4f56287320eedbcbfcde4e159",
+      "actual": "b1b2357d552c7b62de95a023bc2fa89766fe4dc4f56287320eedbcbfcde4e159",
+      "match": true
+    },
+    {
+      "metadata": "context-classify.meta.json",
+      "source": "context_classify.cpp",
+      "snapshot": "context_classify.cpp",
+      "expected": "3ba9e1f0c7904eeb2eb91fad7cf6ba79dc99846edd4cfb6f1262aed245cdad00",
+      "actual": "3ba9e1f0c7904eeb2eb91fad7cf6ba79dc99846edd4cfb6f1262aed245cdad00",
+      "match": true
+    },
+    {
+      "metadata": "deep-three.meta.json",
+      "source": "c1_constraints_v2.py",
+      "snapshot": "c1_constraints_v2.py",
+      "expected": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+      "actual": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+      "match": true
+    },
+    {
+      "metadata": "discovery-20-32.meta.json",
+      "source": "area_probe.cpp",
+      "snapshot": "area_probe.cpp",
+      "expected": "8025a1f3a21b8c40834d3fb6f780a12fac5110c8914eab0a12fdd6aec7449dbc",
+      "actual": "8025a1f3a21b8c40834d3fb6f780a12fac5110c8914eab0a12fdd6aec7449dbc",
+      "match": true
+    },
+    {
+      "metadata": "discovery-20-32.meta.json",
+      "source": "check_witness.py",
+      "snapshot": "check_witness.py",
+      "expected": "43ebe69bd1ededc7b6e54f91910df3f23c175464edc14c7097e41330f9ae59ac",
+      "actual": "43ebe69bd1ededc7b6e54f91910df3f23c175464edc14c7097e41330f9ae59ac",
+      "match": true
+    },
+    {
+      "metadata": "discovery-20-32.meta.json",
+      "source": "PROTOCOL.md",
+      "snapshot": "PROTOCOL.initial.md",
+      "expected": "096678aa1b4f7a65bcbd23026dfc37b24ea5dbf7b867184da8d7b20e04ef7b31",
+      "actual": "096678aa1b4f7a65bcbd23026dfc37b24ea5dbf7b867184da8d7b20e04ef7b31",
+      "match": true
+    },
+    {
+      "metadata": "discovery-28-64.meta.json",
+      "source": "area_probe_v2.cpp",
+      "snapshot": "area_probe_v2.cpp",
+      "expected": "4fa779eb0f638892cada01bc3fcf33c8049eb2fbda83db98fee2d41f8539f1d7",
+      "actual": "4fa779eb0f638892cada01bc3fcf33c8049eb2fbda83db98fee2d41f8539f1d7",
+      "match": true
+    },
+    {
+      "metadata": "holdout.meta.json",
+      "source": "holdout.cpp",
+      "snapshot": "holdout.cpp",
+      "expected": "b80e0e6c75014c58bddb678d0994325e2d9f8a81faac3d732cf76afff57ec1e3",
+      "actual": "b80e0e6c75014c58bddb678d0994325e2d9f8a81faac3d732cf76afff57ec1e3",
+      "match": true
+    },
+    {
+      "metadata": "peak-five.meta.json",
+      "source": "c1_constraints.py",
+      "snapshot": "c1_constraints.py",
+      "expected": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "actual": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "match": true
+    },
+    {
+      "metadata": "prefix-mass-32.meta.json",
+      "source": "prefix_mass_search.cpp",
+      "snapshot": "prefix_mass_search.cpp",
+      "expected": "81722c18af494daedb427041e220876313ce88ae19f2e6c500467a4ed23ad562",
+      "actual": "81722c18af494daedb427041e220876313ce88ae19f2e6c500467a4ed23ad562",
+      "match": true
+    },
+    {
+      "metadata": "prefix-mass-independent.meta.json",
+      "source": "prefix_mass_independent.cpp",
+      "snapshot": "prefix_mass_independent.cpp",
+      "expected": "2cb3e4be46a31e092cc32a96de49f5547d7a3fde84d12b20187067f9da1cf348",
+      "actual": "2cb3e4be46a31e092cc32a96de49f5547d7a3fde84d12b20187067f9da1cf348",
+      "match": true
+    },
+    {
+      "metadata": "q-old-min.meta.json",
+      "source": "c1_constraints.py",
+      "snapshot": "c1_constraints.py",
+      "expected": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "actual": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "match": true
+    },
+    {
+      "metadata": "r-negative.meta.json",
+      "source": "c1_constraints.py",
+      "snapshot": "c1_constraints.py",
+      "expected": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "actual": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+      "match": true
+    },
+    {
+      "metadata": "spectrum-relax.meta.json",
+      "source": "old_spectrum_relax.py",
+      "snapshot": "old_spectrum_relax.py",
+      "expected": "c7bb3193d0c579a168bd3158e52ec67257d95e09879fa429b177735107d24b3e",
+      "actual": "c7bb3193d0c579a168bd3158e52ec67257d95e09879fa429b177735107d24b3e",
+      "match": true
+    },
+    {
+      "metadata": "spectrum-relax.meta.json",
+      "source": "c1_constraints.py (import)",
+      "match": true
+    },
+    {
+      "metadata": "y-triangle.meta.json",
+      "source": "c1_constraints_v2.py",
+      "snapshot": "c1_constraints_v2.py",
+      "expected": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+      "actual": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+      "match": true
+    },
+    {
+      "metadata": "deep-three.json",
+      "source": "deep-three.model.pbtxt",
+      "match": true
+    },
+    {
+      "metadata": "peak-five.json",
+      "source": "peak-five.model.pbtxt",
+      "match": true
+    },
+    {
+      "metadata": "q-old-min.json",
+      "source": "q-old-min.model.pbtxt",
+      "match": true
+    },
+    {
+      "metadata": "r-negative.json",
+      "source": "r-negative.model.pbtxt",
+      "match": true
+    },
+    {
+      "metadata": "spectrum-relax.json",
+      "source": "spectrum-relax.model.pbtxt",
+      "match": true
+    },
+    {
+      "metadata": "y-triangle.json",
+      "source": "y-triangle.model.pbtxt",
+      "match": true
+    }
+  ]
+}

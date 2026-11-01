@@ -1,0 +1,33 @@
+{
+  "label": "before",
+  "script_sha256": "bcad63a704feb569322e8450716d88519da4febed84f385a136f177a16ad5d95",
+  "input_sha256": {
+    "docs/EVIDENCE_REGISTRY.tsv": "33a5463b35322aa87714ea54cce5930294aa5c62f250cecbe3049ef92b04f031",
+    "docs/CURRENT_FRONTIER.md": "a979ed275495e4a74b9328a93a431d3c3c31f935dbceb92abbdb122bf2298583",
+    "Recaman/Audit.lean": "3ebd222c571234ffbb5208218002a1ed97e3bc778690fa03ca96502953d4d361",
+    "scripts/harness_gate.py": "2ecbd40ad679540d9ba04a4349907c5b3300f27b40ca55c48fc03cf14e53f24c"
+  },
+  "runs": [
+    {
+      "run": 1,
+      "wall_seconds": 7.126564458012581,
+      "exit_code": 0,
+      "stdout": "Research registry audit: 441 entries, 216 PROVED-LEAN rows linked to Recaman/Audit.lean.\nHarness gates G1-G5: 72 PROVED-LEAN rows >= E-344 pass.\nProtected claims: 4 central rows keep their pinned labels.\n",
+      "stderr": ""
+    },
+    {
+      "run": 2,
+      "wall_seconds": 7.193443834083155,
+      "exit_code": 0,
+      "stdout": "Research registry audit: 441 entries, 216 PROVED-LEAN rows linked to Recaman/Audit.lean.\nHarness gates G1-G5: 72 PROVED-LEAN rows >= E-344 pass.\nProtected claims: 4 central rows keep their pinned labels.\n",
+      "stderr": ""
+    },
+    {
+      "run": 3,
+      "wall_seconds": 6.953893624944612,
+      "exit_code": 0,
+      "stdout": "Research registry audit: 441 entries, 216 PROVED-LEAN rows linked to Recaman/Audit.lean.\nHarness gates G1-G5: 72 PROVED-LEAN rows >= E-344 pass.\nProtected claims: 4 central rows keep their pinned labels.\n",
+      "stderr": ""
+    }
+  ]
+}

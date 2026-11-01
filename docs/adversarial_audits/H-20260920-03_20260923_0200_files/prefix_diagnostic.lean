@@ -1,0 +1,10 @@
+import Recaman.ShortTightDonorAvoidance
+
+#check Recaman.ShortTightDonorAvoidance.exists_minimal_p2_prefix
+#check Recaman.ShortTightDonorAvoidance.neighborhood_prefix_sublist
+#check Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix
+#check Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window
+#check Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion
+#print axioms Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix
+#print axioms Recaman.ShortTightDonorAvoidance.short_p2_tight_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_p2_ss2_deletion

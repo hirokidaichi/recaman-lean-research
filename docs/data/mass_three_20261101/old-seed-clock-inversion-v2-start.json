@@ -1,0 +1,21 @@
+{
+  "tag": "old-seed-clock-inversion-v2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSeedInversionKey.olean",
+    "Recaman/OldSeedInversionKey.lean"
+  ],
+  "started_jst": "2026-11-01T06:45:53.505818+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    ".lake/build/lib/lean/Recaman/OldSeedInversionKey.olean": "a25358f65352db710b50e6848a0b32516b4412d1d205e5f9f273e0c2d4471d0f",
+    "Recaman/OldSeedInversionKey.lean": "d6bdd496294dac606aa19312f2e533c7368b3185952d403ce13d3bfd605e9f86"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

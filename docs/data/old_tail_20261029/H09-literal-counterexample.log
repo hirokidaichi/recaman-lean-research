@@ -1,0 +1,37 @@
+Recaman/FreePrefixCounterexample.lean:23:10: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+case neg
+g : Nat → Bool
+k : Nat
+hg : ¬g k = true
+hf : g k = false
+⊢ False ↔ EndN g 0 k
+Recaman/FreePrefixCounterexample.lean:22:61: warning: This simp argument is unused:
+  iff_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [supplied, hf, Bool.false_and, Bool.false_eq_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FreePrefixCounterexample.lean:39:6: error: Type mismatch
+  congrArg (fun x => x + 1) ih
+has type
+  cN (fun i => g i = true) n K + 1 = (List.filter (fun i => g (n + i)) (List.range K)).length + 1
+but is expected to have type
+  cN (fun i => g i = true) n K = (List.filter (fun i => g (n + i)) (List.range K)).length
+Recaman/FreePrefixCounterexample.lean:55:17: error: Application type mismatch: The argument
+  count_bool (fun i => !g i) n K
+has type
+  cN (fun i => (!g i) = true) n K = boolCount (fun i => !g i) n K
+but is expected to have type
+  cN (fun i => (!decide (g i = true)) = true) n K = boolCount (fun i => !g i) n K
+in the application
+  Eq.trans he (count_bool (fun i => !g i) n K)
+Recaman/FreePrefixCounterexample.lean:96:4: error: failed to synthesize
+  Decidable (Win f 0 27)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Recaman/FreePrefixCounterexample.lean:97:4: error: failed to synthesize
+  Decidable (Win f 12 7)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

@@ -1,0 +1,22 @@
+{
+  "tag": "source-reuse-parity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/ASourceReuse.lean"
+  ],
+  "started_jst": "2026-10-27T07:35:35.685765+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ASourceReuse.lean": "96d2d3695c970d8455f2e79321107478c18ad5dbbfd239ef203bc59d94d7cad7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4732748749665916,
+  "cpu_seconds": 0.771556,
+  "finished_jst": "2026-10-27T07:35:36.158980+09:00"
+}

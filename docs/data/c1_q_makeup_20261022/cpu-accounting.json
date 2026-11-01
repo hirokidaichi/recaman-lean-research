@@ -1,0 +1,104 @@
+{
+  "measured_runs": [
+    {
+      "run": "budget-classify",
+      "real": 590.31,
+      "user": 538.87,
+      "sys": 10.97
+    },
+    {
+      "run": "context-classify",
+      "real": 0.69,
+      "user": 0.0,
+      "sys": 0.0
+    },
+    {
+      "run": "deep-three",
+      "real": 900.39,
+      "user": 894.98,
+      "sys": 3.45
+    },
+    {
+      "run": "discovery-20-32",
+      "real": 0.44,
+      "user": 0.07,
+      "sys": 0.0
+    },
+    {
+      "run": "discovery-28-64",
+      "real": 9.78,
+      "user": 9.27,
+      "sys": 0.11
+    },
+    {
+      "run": "holdout",
+      "real": 17.02,
+      "user": 16.26,
+      "sys": 0.33
+    },
+    {
+      "run": "peak-five",
+      "real": 900.45,
+      "user": 896.57,
+      "sys": 2.15
+    },
+    {
+      "run": "prefix-language-mass-17-audit",
+      "real": 0.18,
+      "user": 0.17,
+      "sys": 0.0
+    },
+    {
+      "run": "prefix-mass-32",
+      "real": 1.46,
+      "user": 1.46,
+      "sys": 0.0
+    },
+    {
+      "run": "prefix-mass-independent-small",
+      "real": 0.33,
+      "user": 0.0,
+      "sys": 0.0
+    },
+    {
+      "run": "prefix-mass-independent",
+      "real": 2.53,
+      "user": 2.53,
+      "sys": 0.0
+    },
+    {
+      "run": "prefix-mass-small",
+      "real": 0.35,
+      "user": 0.0,
+      "sys": 0.0
+    },
+    {
+      "run": "q-old-min",
+      "real": 27.94,
+      "user": 27.08,
+      "sys": 0.67
+    },
+    {
+      "run": "r-negative",
+      "real": 900.63,
+      "user": 885.05,
+      "sys": 11.11
+    },
+    {
+      "run": "spectrum-relax",
+      "real": 4.43,
+      "user": 4.13,
+      "sys": 0.08
+    },
+    {
+      "run": "y-triangle",
+      "real": 120.31,
+      "user": 120.06,
+      "sys": 0.2
+    }
+  ],
+  "measured_user_sys_seconds": 3425.57,
+  "budget_seconds": 3900,
+  "scope": "runs with /usr/bin/time logs only; compiler, Lean, install, small calibration CPU not all separately measured; no overlapping wall-time sum",
+  "wall_time_not_sum_of_cpu": true
+}

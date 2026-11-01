@@ -1,0 +1,16 @@
+{
+  "tag": "run-key-lean-4",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/RunSupplyKeys.lean"
+  ],
+  "started_jst": "2026-10-26T06:18:49.276970+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/RunSupplyKeys.lean": "c2f4e882d9fc993c314f5bc77d28ac9307c9eb4ea01b000e6228a99b96676e68"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

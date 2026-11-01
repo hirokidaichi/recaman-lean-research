@@ -1,0 +1,27 @@
+Recaman/LowerMomentOldClock.lean:140:22: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/LowerMomentOldClock.lean:204:4: error: Type mismatch: After simplification, term
+  hm1
+ has type
+  mass (List.drop s w) + mass z + mass (List.replicate v false) + ↑k = 1
+but is expected to have type
+  mass (List.drop s w) + (mass z + mass (List.replicate v false)) + ↑k = 1
+Recaman/LowerMomentOldClock.lean:207:4: error: Type mismatch: After simplification, term
+  hkey
+ has type
+  runKey (List.drop s w) +
+        (runKey z +
+            (runKey (List.replicate v false) + runKey (List.replicate k true) +
+              4 * mass (List.replicate v false) * ↑(cntF (List.replicate k true))) +
+          4 * mass z * ↑(cntF (List.replicate v false ++ List.replicate k true))) +
+      4 * mass (List.drop s w) * ↑(cntF (z ++ (List.replicate v false ++ List.replicate k true))) =
+    -2
+but is expected to have type
+  runKey (List.drop s w) +
+        (runKey z + runKey (List.replicate v false) + 4 * mass z * ↑(cntF (List.replicate v false))) +
+      4 * mass (List.drop s w) * ↑(cntF (z ++ List.replicate v false)) =
+    -2

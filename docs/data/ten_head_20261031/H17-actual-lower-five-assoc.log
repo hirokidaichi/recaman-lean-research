@@ -1,0 +1,46 @@
+Recaman/LowerMomentOldClock.lean:140:22: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/LowerMomentOldClock.lean:208:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?as ++ (?bs ++ ?cs)
+in the target expression
+  runKey (List.drop s w) + runKey (z ++ List.replicate v false) +
+      4 * mass (List.drop s w) * ↑(cntF (z ++ List.replicate v false)) =
+    -2
+
+f : Nat → Bool
+n H t v T j : Nat
+w z : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hz : seg f n H = z
+hmz : mass z = 0
+B : Int
+haz : areaW z = -B
+hlo : 4 * ↑(cntF z) + 5 ≤ B
+hhi : B ≤ 6 * ↑(cntF z) + 4
+hv : 1 ≤ v
+hshort : T ≤ j + 2
+hj : 2 ≤ j
+hS : ∀ (x : Nat), n + H ≤ x → x < n + H + v → f x = false
+hA : ∀ (k : Nat), k < T → f (n + H + v + k) = true
+hgap : ∀ (x : Nat), n + H + v + T ≤ x → x < n + H + v + T + j → f x = false
+htarget : Win f t (n + H + v + T + j - t)
+hm : mass (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1
+ha : areaW (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+k : Nat
+hk : k < T
+s : Nat
+hs : s < n
+hwin : Win f s (n + H + v + k - s)
+hm1 : mass (List.drop s w ++ z ++ List.replicate v false ++ List.replicate k true) = 1
+ha1 : areaW (List.drop s w ++ z ++ List.replicate v false ++ List.replicate k true) = 0
+hkey : runKey (List.drop s w ++ z ++ List.replicate v false) = -2
+hmass : mass (List.drop s w) + mass (z ++ List.replicate v false) + ↑k = 1
+⊢ runKey (List.drop s w) + runKey (z ++ List.replicate v false) +
+      4 * mass (List.drop s w) * ↑(cntF (z ++ List.replicate v false)) =
+    -2

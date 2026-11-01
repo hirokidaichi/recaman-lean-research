@@ -1,0 +1,21 @@
+{
+  "tag": "r3-projection-check",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "docs/data/free_gap_20261026/r3_projection.lean"
+  ],
+  "started_jst": "2026-10-26T07:25:46.813648+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "docs/data/free_gap_20261026/r3_projection.lean": "ef2c4303591d50a82fcabeb42c1116218d1243b7c7520d85816779b35f607cd2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 16.67330520786345,
+  "cpu_seconds": 17.421937,
+  "finished_jst": "2026-10-26T07:26:03.486687+09:00"
+}

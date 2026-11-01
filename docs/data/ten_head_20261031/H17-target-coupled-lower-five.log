@@ -1,0 +1,11 @@
+Recaman/LowerMomentOldClock.lean:120:43: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+where
+ a := ↑(cntF z) / 2
+Recaman/LowerMomentOldClock.lean:147:4: error: Type mismatch
+  hmt
+has type
+  mass (List.drop t w) + mass (z ++ List.replicate v false) + ↑i = 1
+but is expected to have type
+  mass (List.drop t w) + (mass z + mass (List.replicate v false)) + ↑i = 1

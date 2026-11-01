@@ -1,6 +1,6 @@
 # AI と進める数学研究プロトコル
 
-最終更新: 2026-09-15
+最終更新: 2026-10-21
 
 ## 結論
 
@@ -57,7 +57,7 @@ Daviesらの枠組みは、データから関係を予測するだけで終わ�
 ### 1.4 検索とpremise selectionを局所化する
 
 LeanDojo/ReProverとLean Copilotは、巨大なライブラリから関連premiseを検索することと、proof stateから
-局所的な次手を生成することを分けている。本リポジトリでも全228モジュールを毎回コンテキストへ詰めず、
+局所的な次手を生成することを分けている。本リポジトリでも全モジュールを毎回コンテキストへ詰めず、
 `PROOF_MAP`から対象義務の依存閉包を選び、関連定義・既存定理・既知反例だけをwork packetへ入れる。
 
 ### 1.5 プロンプトは手順列より成果条件を中心にする
@@ -65,6 +65,41 @@ LeanDojo/ReProverとLean Copilotは、巨大なライブラリから関連premis
 OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、目的、制約、必要証拠、成功条件、停止条件、
 許可境界を明示し、同じ指示を重複させないことを勧めている。本プロトコルでは、研究依頼を
 「何を順番に考えるか」ではなく「どのstatementを、何を証拠として、どこで止めるか」で指定する。
+
+### 1.6 探索・活用を、次の判断を変える情報で配分する
+
+研究単位の目的を次の三つに区別する。証明・反例探索・計算は**手段**であり、これとは別の軸である。
+
+- **活用**: 選択済みの機構で、特定の未証明edgeを閉じる。反例探索による最後の適用条件確認も含む。
+- **局所探索**: 同じ経路の候補・仮定・表現を比較し、どの研究単位へ進むかを決める。
+- **大域探索**: 経路そのもの、対象、または証明機構を変える候補を比較する。
+
+同じ有限表の枠数・lag・走査上限を増やすだけでは、独立した機構の探索と数えない。
+同じ未証明仮定に依存する複数候補も、その依存関係を明記する。
+
+HayらのmetareasoningとRusso・Van Royのinformation-directed samplingを参考に、各候補について
+「成功したらどのedgeが閉じるか」「失敗したら何を除外でき、次の選択がどう変わるか」「費用上限」を書く。
+成功確率や情報量を推定できない場合は、根拠を添えた定性的比較でよい。架空の確率や合成点数を作らない。
+両論文のモデルにおける最適性・regret保証を、この数学研究へそのまま移してはならない。
+
+### 1.7 予算と切替は実行前に固定し、判定後に更新する
+
+1. cycleの総予算と各カードの配分を同じ単位で記録する。初期値の例は**活用60・探索30・監査10%**。
+   これは運用仮説であり最適比率ではない。探索は局所・大域の内訳も記す。
+2. 時間、CPU時間、token、金銭は別々に上限を持つ。並行作業なら延べ作業時間と経過時間を区別する。
+   親cycleと子カードで同じ費用を二重計上せず、予定と実績を分け、未実行は未実行と書く。
+3. 各unitに最初の確認点、継続・切替・停止・再開の条件を置く。反例、循環仮定、同値な言い換え、
+   予算到達、同じ障害の再出現を判定材料にする。反例数ゼロだけでは延長理由にならない。
+4. 継続は、供給元を確認した新補題、反例による候補族の排除、非同値な未知edgeの特定などを根拠にする。
+   未証明仮定を増やしたり、監査を省いたりして予算を守らない。監査が超過する分は他の配分から移す。
+5. 再配分は判定時点で、旧配分・新配分・証拠・次の判断を記録する。止まった枝へ余り時間を自動投入しない。
+   同じ障害で2 cycle連続してedgeも候補集合も変わらなければ、次cycleの探索枠の少なくとも半分を
+   別機構の評価へ移す。これは停止済み枝の無条件再開を許可する規則ではない。
+6. 定理数、module数、commit数、調べた上限の増加を報酬にしない。反証・停止も、次の選択を変えるなら成果。
+
+命題の証拠labelと作業状態は分ける。未着手・継続待ち・切替は作業状態で、追加の証拠labelではない。
+強い補助命題が反証されても親命題は自動的に`REFUTED`にならない。方法だけが停止した場合は、命題を
+`CONJECTURED`のまま残し、停止した方法を`STOPPED`として特定する。
 
 ## 2. 標準研究サイクル
 
@@ -75,6 +110,8 @@ OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、�
 - exact statementと全量化子。
 - 実軌道、抽象history、finite prefixのどれを扱うか。
 - 既存のどの残余を除くか。
+- 活用・局所探索・大域探索の別、cycle内の配分、費用上限、最初の確認点。
+- 成功時の前進と、失敗時に得る情報・切り替える行き先。
 - 発見rangeと未使用holdout range。
 - 一度だけ許す修理と停止条件。
 
@@ -91,7 +128,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
 4. `Objects`: 必要な定義とnotation。
 5. `Acceptance`: 合格する成果物と検証command。
 6. `Stop`: 何が起きたら棄却するか。
-7. `Output`: hypothesis card、patch、実験logなどの形。
+7. `Allocation / Decision`: 予算、確認点、継続・切替条件と依存する別カード。
+8. `Output`: hypothesis card、patch、実験logなどの形。
 
 長い作業では、各サイクル終了時にこのpacketを更新する。会話の要約には「結論、証拠、反例、未解決義務、
 次の判断」だけを残し、試行錯誤の全文はdevelopment logまたはカードへ退避する。
@@ -106,9 +144,11 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
 3. 既存countermodelへ適用する。
 4. discovery rangeで候補を絞る。
 5. statementを凍結してholdoutを一回だけ実行する。
-6. 破れたら一回だけ原因に基づく修理を許し、再度破れたら`STOPPED`にする。
+6. 破れたら元の命題と反例を保存する。一回だけ原因に基づく修理版を別versionで許し、再度破れたら方法を`STOPPED`にする。
 
-データを見た後で量化子、定数、rangeを黙って変更してはならない。
+データを見た後で量化子、定数、rangeを黙って変更してはならない。既に見たrangeをholdoutと呼ばない。
+修理に使ったholdoutはdiscoveryへ移し、新しい未使用holdoutを凍結する。紙上専用unitはrange欄を
+「該当なし」とし、既知反例と境界条件による反証passを省略しない。
 
 ### Phase D: 紙上証明から最小Lean statementへ移す
 
@@ -133,6 +173,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
 - `STOPPED`: 再開条件を一文で残す。
 
 「有望そう」「さらに調べる」で閉じない。
+unit終了時に予定・実績・得た情報・次配分をカードへ残す。今回の問いを判定できなければ、停止した
+方法と不足入力を明示する。証拠labelを昇格させて時間切れを成功に見せない。
 
 ## 3. 指示テンプレート
 
@@ -147,6 +189,11 @@ Known (evidence-labelled):
 No-go / do not repeat:
   - [既知反例、空虚なinterface、停止済み戦略]
 
+Allocation / value of information:
+  - [cycle ID、活用/局所探索/大域探索、総予算に対する配分、監査枠]
+  - [成功時に閉じるedge、失敗時に除外する候補と次の選択]
+  - [最初の確認点、各費用上限、実績の記録先]
+
 Acceptance:
   - exactなstatement、または最小反例を返す
   - 既存結果より強い理由を示す
@@ -158,6 +205,8 @@ Falsification first:
 
 Stop:
   - [反例、同値変形への還元、二度目の修理など]
+Continue / switch:
+  - [継続を正当化する新情報、切替先、再開に必要な外部入力]
 
 Output:
   結論、証拠label、変更、command、失敗、未確実性、次の判断。
@@ -192,6 +241,12 @@ Output:
    GitHub で閉じていない issue を文書で CLOSED と書かない。
 5. **G4（命名）**：grand/master/universal/closure/synthesis/resolution/apex を含む定理名・モジュール名は新規行で拒否される。
 6. **速度制限**：1 commit に新規モジュール 1 本、前回のモジュール追加から 30 分。`RECAMAN_ALLOW_BURST=1` は人間用。空いた時間で反証（既存の `REFUTED` 行と証明書の検索）を行う。
+   **2026-11-01の明示承認**：利用者は「今回と日次保存に限り許可」と回答した。
+   今回および今後の日次の検証済み研究snapshotを保存するcommitに限り、単一commandの
+   `RECAMAN_ALLOW_BURST=1`で本数・間隔の制限を免除できる。環境へ常設せず、G1〜G5・
+   保護claim・逐語audit・禁止事項・pre-commit内容監査は維持する。反証を省く許可ではない。
+   日次commit/pushの再確認は不要。同日の追加指示で研究branchをmainへ統合するため、以降の保存先は`origin/main`。
+   remote更新を取り込み、通常のfast-forward pushとref/SHA照合を行う。force pushは禁止。
 7. **Git**：`git add -A` 禁止。`git commit -- <paths>`。他セッションのファイルを含めない。
 8. **セマンティック監査**：`lake build` 通過は推論の正しさであって問題の解決ではない。監査は別セッションで `report_vacuity.py` → binder 読み → R/W/C/T 表の順に行う。
 
@@ -205,6 +260,8 @@ gate は heuristic で、`have` を含む連言合成や regime を仮定した�
 - K. Yang et al., [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626), NeurIPS 2023. proof stateと関連premiseの局所retrievalを採用。
 - S. Song et al., [Towards Large Language Models as Copilots for Theorem Proving in Lean](https://arxiv.org/abs/2404.12534) (2024). tactic suggestion、proof search、premise selectionの分離を採用。
 - T. Tao, [Machine Assisted Proof](https://terrytao.wordpress.com/wp-content/uploads/2024/03/machine-assisted-proof-notices.pdf), Notices of the AMS (2024). 形式化による細粒度分業と検証可能な協働を採用。
+- N. Hay et al., [Selecting Computations: Theory and Applications](https://arxiv.org/abs/1408.2048), UAI 2012（arXiv掲載2014）. 次の判断を改善する計算と費用を比較する考え方を採用。
+- D. Russo and B. Van Roy, [Learning to Optimize via Information-Directed Sampling](https://arxiv.org/abs/1403.5556), 2014–2017. 選択に関係する情報と活用の利益をともに考慮する設計を参考にする。
 - OpenAI, [Model guidance: prompting best practices](https://developers.openai.com/api/docs/guides/latest-model) (参照日 2026-09-01). outcome、証拠、成功条件、停止条件、権限境界を明示するlean prompt設計を採用。
 
 これらの論文はRecamán全域性の新しい数学的証拠ではない。本書が導入するのは、候補生成を増やしつつ、

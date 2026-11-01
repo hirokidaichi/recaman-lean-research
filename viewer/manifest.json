@@ -1,6 +1,69 @@
 {
  "modules": [
   {
+   "name": "ASourceReuse",
+   "lines": 204,
+   "imports": [
+    "ThreeRunTargetSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "source_key_before_gap",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "A_source_reuse_equation",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "A_source_reuse_order",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "A_source_reuse_divides",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "first_numeric_source_not_reused",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_A_source_reuse",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "odd_gap_no_A_reuse",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "S_source_reuse_equation",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "S_source_reuse_order",
+     "line": 180
+    },
+    {
+     "kind": "theorem",
+     "name": "S_source_odd_gap_control",
+     "line": 198
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ActualDescent",
    "lines": 239,
    "imports": [
@@ -104,6 +167,49 @@
    "hasReport": true
   },
   {
+   "name": "AdjacentRunSupply",
+   "lines": 85,
+   "imports": [
+    "FourRunTargetArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "preceding_A_key_exclusion",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "local_A_S_clock_iff",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_A_S_le_one",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "run_prefix_ray_budget",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_ray_local_le_six",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_separator_control",
+     "line": 81
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "AnchorBoundary",
    "lines": 209,
    "imports": [
@@ -148,7 +254,7 @@
   },
   {
    "name": "Audit",
-   "lines": 2806,
+   "lines": 3420,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -1022,6 +1128,1183 @@
    "hasReport": true
   },
   {
+   "name": "BlockOldRay",
+   "lines": 676,
+   "imports": [
+    "RunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "runKey_append",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_key_bounds",
+     "line": 85
+    },
+    {
+     "kind": "def",
+     "name": "oldKey",
+     "line": 94
+    },
+    {
+     "kind": "def",
+     "name": "oldRay",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "oldRay_clock_unique",
+     "line": 165
+    },
+    {
+     "kind": "theorem",
+     "name": "block_old_profile_mass_unique",
+     "line": 180
+    },
+    {
+     "kind": "def",
+     "name": "tailOldRay",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "tailOldRay_clock_unique",
+     "line": 191
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_supply_append_iff",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "block_rayCount_append",
+     "line": 219
+    },
+    {
+     "kind": "theorem",
+     "name": "block_A_run_free_budget",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "block_A_run_free_budget_int",
+     "line": 252
+    },
+    {
+     "kind": "theorem",
+     "name": "old_window_A_run_unique",
+     "line": 295
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_supply_after_S_iff",
+     "line": 316
+    },
+    {
+     "kind": "theorem",
+     "name": "block_rayCount_after_S",
+     "line": 337
+    },
+    {
+     "kind": "theorem",
+     "name": "single_A_run_free_budget",
+     "line": 359
+    },
+    {
+     "kind": "theorem",
+     "name": "single_A_run_free_gap",
+     "line": 375
+    },
+    {
+     "kind": "theorem",
+     "name": "single_A_run_free_gap_int",
+     "line": 421
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_S_A_S",
+     "line": 449
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_r3_additions_free_bound",
+     "line": 500
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_r3_free_gap",
+     "line": 511
+    },
+    {
+     "kind": "theorem",
+     "name": "two_A_run_supply_budget",
+     "line": 534
+    },
+    {
+     "kind": "theorem",
+     "name": "two_A_run_free_gap",
+     "line": 577
+    },
+    {
+     "kind": "theorem",
+     "name": "two_A_run_free_gap_from_zero",
+     "line": 626
+    },
+    {
+     "kind": "theorem",
+     "name": "two_A_run_free_gap_int",
+     "line": 647
+    },
+    {
+     "kind": "theorem",
+     "name": "third_A_ray_four_local_clocks",
+     "line": 670
+    }
+   ],
+   "theorems": 23,
+   "defs": 3,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "BlockSameMassSpan",
+   "lines": 161,
+   "imports": [
+    "BlockSuffixSpectrum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "block_zero_mass_prefix",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "block_same_mass_suffixes",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "trip_area_spread_boundary",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "six_clock_span_boundary",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "same_level_old_window_areas",
+     "line": 125
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "BlockSuffixPositivity",
+   "lines": 3347,
+   "imports": [
+    "SingleWindowEquality",
+    "CapacityEqualityInduction",
+    "ThreeNonsuppliedData",
+    "ThreeNonsuppliedQData",
+    "FourNonsuppliedData",
+    "SixteenRootAreaData"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "areaW",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "areaW_append",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "areaW_single",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_rep_false",
+     "line": 39
+    },
+    {
+     "kind": "def",
+     "name": "SufPos",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_nil",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_of_drops",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_free",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_aas",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_triple",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_append",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "sufPos_block",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_positive",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_areaW",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_false",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_split",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_positive_walk",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "fw_false_run",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "area_after_false",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "no_window_after_S_run",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_after_S_run",
+     "line": 192
+    },
+    {
+     "kind": "theorem",
+     "name": "ts_one",
+     "line": 210
+    },
+    {
+     "kind": "theorem",
+     "name": "area_nondecreasing_tail",
+     "line": 258
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_low_clock_not_endable",
+     "line": 273
+    },
+    {
+     "kind": "theorem",
+     "name": "two_marks_le_count",
+     "line": 301
+    },
+    {
+     "kind": "theorem",
+     "name": "two_nonsupplied_additions_of_recovery",
+     "line": 324
+    },
+    {
+     "kind": "theorem",
+     "name": "shifted_area_nonneg",
+     "line": 341
+    },
+    {
+     "kind": "theorem",
+     "name": "area_nonneg_of_fresh_low_visit",
+     "line": 358
+    },
+    {
+     "kind": "theorem",
+     "name": "area_nonneg_of_fresh_low_visit_int",
+     "line": 382
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_suffix_length_bound",
+     "line": 412
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_iff_trimmed_block_prefix",
+     "line": 430
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_suffix_length_le_eleven",
+     "line": 450
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_iff_last_eleven_of_depth_four",
+     "line": 461
+    },
+    {
+     "kind": "theorem",
+     "name": "block_append",
+     "line": 478
+    },
+    {
+     "kind": "theorem",
+     "name": "block_replicate_A",
+     "line": 486
+    },
+    {
+     "kind": "theorem",
+     "name": "block_drop_free",
+     "line": 492
+    },
+    {
+     "kind": "theorem",
+     "name": "block_drop_aas",
+     "line": 497
+    },
+    {
+     "kind": "theorem",
+     "name": "block_drop_triple",
+     "line": 507
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_append",
+     "line": 524
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix",
+     "line": 538
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_representative",
+     "line": 551
+    },
+    {
+     "kind": "theorem",
+     "name": "block_area_quadratic_lower",
+     "line": 562
+    },
+    {
+     "kind": "theorem",
+     "name": "block_area_quadratic_sharp",
+     "line": 587
+    },
+    {
+     "kind": "theorem",
+     "name": "triple_area_quadratic_sharp",
+     "line": 602
+    },
+    {
+     "kind": "theorem",
+     "name": "block_area_quadratic_equality",
+     "line": 618
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_area_quadratic_lower",
+     "line": 662
+    },
+    {
+     "kind": "theorem",
+     "name": "area_split_at",
+     "line": 675
+    },
+    {
+     "kind": "theorem",
+     "name": "old_window_area_upper",
+     "line": 687
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_tail_mass_representative",
+     "line": 704
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_nonnegative",
+     "line": 758
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_one",
+     "line": 763
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_two",
+     "line": 782
+    },
+    {
+     "kind": "theorem",
+     "name": "block_area_quadratic_upper",
+     "line": 803
+    },
+    {
+     "kind": "theorem",
+     "name": "block_area_upper_sharp",
+     "line": 835
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_area_quadratic_upper",
+     "line": 840
+    },
+    {
+     "kind": "theorem",
+     "name": "areaW_count_lower",
+     "line": 861
+    },
+    {
+     "kind": "theorem",
+     "name": "old_window_count_barrier",
+     "line": 873
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_wordArea_eq",
+     "line": 911
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_drop_le",
+     "line": 917
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_iff",
+     "line": 924
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_trim",
+     "line": 930
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_drop",
+     "line": 957
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_seg_iff",
+     "line": 966
+    },
+    {
+     "kind": "theorem",
+     "name": "old_window_signature",
+     "line": 993
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_seg_eq_count",
+     "line": 1032
+    },
+    {
+     "kind": "theorem",
+     "name": "supply_clock_smallA",
+     "line": 1042
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_append_letter",
+     "line": 1064
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSmallState_zero",
+     "line": 1086
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSmallState_S",
+     "line": 1090
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSmallState_local",
+     "line": 1113
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSmallState_admitted",
+     "line": 1124
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSmallState_A",
+     "line": 1155
+    },
+    {
+     "kind": "theorem",
+     "name": "count_prefix_le",
+     "line": 1204
+    },
+    {
+     "kind": "theorem",
+     "name": "addition_endable_partition",
+     "line": 1210
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_state_member",
+     "line": 1224
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_additions_le_seven",
+     "line": 1272
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_take",
+     "line": 1284
+    },
+    {
+     "kind": "theorem",
+     "name": "endpoint_words_depth_checked",
+     "line": 1293
+    },
+    {
+     "kind": "theorem",
+     "name": "endpoint_word_prefix_depth",
+     "line": 1297
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_excursion_word",
+     "line": 1305
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_excursion_depth_offset",
+     "line": 1327
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_excursion_depth",
+     "line": 1341
+    },
+    {
+     "kind": "theorem",
+     "name": "wordSupply_admitted",
+     "line": 1400
+    },
+    {
+     "kind": "theorem",
+     "name": "actualQState_zero",
+     "line": 1427
+    },
+    {
+     "kind": "theorem",
+     "name": "actualQState_deficit",
+     "line": 1431
+    },
+    {
+     "kind": "theorem",
+     "name": "actualQState_S",
+     "line": 1445
+    },
+    {
+     "kind": "theorem",
+     "name": "actualQState_A",
+     "line": 1460
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_Q_state_member",
+     "line": 1503
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_area_of_depth_four",
+     "line": 1551
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_minimum_visit",
+     "line": 1577
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_area_nonnegative",
+     "line": 1604
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_area_from_zero",
+     "line": 1638
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_no_old_window",
+     "line": 1668
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_after_S_gap_bound",
+     "line": 1699
+    },
+    {
+     "kind": "def",
+     "name": "tail_S5A3S4A4SA3",
+     "line": 1740
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_S5A3S4A4SA3_no_supply_check",
+     "line": 1744
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_after_S5A3S4A4SA3",
+     "line": 1752
+    },
+    {
+     "kind": "theorem",
+     "name": "nonsupplied_count_shift",
+     "line": 1800
+    },
+    {
+     "kind": "theorem",
+     "name": "endableCount_shift",
+     "line": 1810
+    },
+    {
+     "kind": "theorem",
+     "name": "subtractionCount_shift",
+     "line": 1820
+    },
+    {
+     "kind": "theorem",
+     "name": "three_nonsupplied_area_int",
+     "line": 1825
+    },
+    {
+     "kind": "theorem",
+     "name": "four_localSupply_trim",
+     "line": 1846
+    },
+    {
+     "kind": "theorem",
+     "name": "four_supply_clock",
+     "line": 1874
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_zero",
+     "line": 1905
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_S",
+     "line": 1909
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_local",
+     "line": 1932
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_admitted",
+     "line": 1943
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_A",
+     "line": 1974
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_gap_zero",
+     "line": 2023
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_gap",
+     "line": 2033
+    },
+    {
+     "kind": "theorem",
+     "name": "actualFourState_macro",
+     "line": 2053
+    },
+    {
+     "kind": "theorem",
+     "name": "four_endpoint_words_depth_checked",
+     "line": 2074
+    },
+    {
+     "kind": "theorem",
+     "name": "four_endpoint_word_prefix_depth",
+     "line": 2078
+    },
+    {
+     "kind": "def",
+     "name": "terminalSupplyCheck",
+     "line": 2086
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_eq_count_true",
+     "line": 2091
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_of_terminalSupplyCheck",
+     "line": 2098
+    },
+    {
+     "kind": "theorem",
+     "name": "twice_area_replicate_A",
+     "line": 2156
+    },
+    {
+     "kind": "theorem",
+     "name": "twice_area_replicate_S",
+     "line": 2162
+    },
+    {
+     "kind": "theorem",
+     "name": "three_runs_window_middle",
+     "line": 2168
+    },
+    {
+     "kind": "theorem",
+     "name": "no_mass_area_A_then_S",
+     "line": 2186
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_odd_middle",
+     "line": 2194
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_after_manyS_oddA",
+     "line": 2222
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_after_manyS_oddA",
+     "line": 2243
+    },
+    {
+     "kind": "theorem",
+     "name": "oneS_A_run_block",
+     "line": 2278
+    },
+    {
+     "kind": "theorem",
+     "name": "old_count_barrier_sharp_family",
+     "line": 2291
+    },
+    {
+     "kind": "theorem",
+     "name": "three_runs_window_iff",
+     "line": 2313
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_three_runs_iff",
+     "line": 2344
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_after_manyS_A_iff",
+     "line": 2383
+    },
+    {
+     "kind": "def",
+     "name": "zeroFreeMotifWords",
+     "line": 2415
+    },
+    {
+     "kind": "def",
+     "name": "zeroFreeMotifWord",
+     "line": 2422
+    },
+    {
+     "kind": "def",
+     "name": "zeroFreeMotifGap",
+     "line": 2423
+    },
+    {
+     "kind": "theorem",
+     "name": "zeroFreeMotif_checked",
+     "line": 2425
+    },
+    {
+     "kind": "theorem",
+     "name": "zeroFreeMotif_supply_step",
+     "line": 2435
+    },
+    {
+     "kind": "theorem",
+     "name": "zeroFreeMotif_additions_bound",
+     "line": 2462
+    },
+    {
+     "kind": "def",
+     "name": "evenFollowWord",
+     "line": 2516
+    },
+    {
+     "kind": "theorem",
+     "name": "even_followup_left_no_window",
+     "line": 2520
+    },
+    {
+     "kind": "theorem",
+     "name": "even_followup_inside_no_window",
+     "line": 2544
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_even_followup",
+     "line": 2566
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_even_followup",
+     "line": 2610
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_even_followup",
+     "line": 2631
+    },
+    {
+     "kind": "theorem",
+     "name": "one_addition_after_manyS_evenA",
+     "line": 2668
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_three",
+     "line": 2733
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_three_area_five",
+     "line": 2753
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_three_area_seven",
+     "line": 2757
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_mass_three_extremes",
+     "line": 2761
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_mass_three_area_exclusion",
+     "line": 2777
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_mass_three_area_pair",
+     "line": 2795
+    },
+    {
+     "kind": "def",
+     "name": "massFourWords",
+     "line": 2836
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass_four",
+     "line": 2841
+    },
+    {
+     "kind": "def",
+     "name": "massFourAreasCompatible",
+     "line": 2859
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_suffix_pairs_checked",
+     "line": 2863
+    },
+    {
+     "kind": "theorem",
+     "name": "block_suffix_mass_four_area_pair",
+     "line": 2867
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_mass_four_area_pair",
+     "line": 2878
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_extremes_coexist",
+     "line": 2895
+    },
+    {
+     "kind": "def",
+     "name": "jointOldWords",
+     "line": 2919
+    },
+    {
+     "kind": "def",
+     "name": "jointOldRoots",
+     "line": 2922
+    },
+    {
+     "kind": "theorem",
+     "name": "finite_suffix_representative",
+     "line": 2924
+    },
+    {
+     "kind": "theorem",
+     "name": "block_low_mass_suffix_representative",
+     "line": 2953
+    },
+    {
+     "kind": "theorem",
+     "name": "block_prefix_low_mass_representative",
+     "line": 2971
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_old_roots_checked",
+     "line": 2982
+    },
+    {
+     "kind": "theorem",
+     "name": "low_mass_old_window_iff",
+     "line": 2988
+    },
+    {
+     "kind": "theorem",
+     "name": "low_mass_endable_iff",
+     "line": 3050
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSixteenState_zero",
+     "line": 3083
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSixteenState_deficit",
+     "line": 3087
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSixteenState_S",
+     "line": 3101
+    },
+    {
+     "kind": "theorem",
+     "name": "actualSixteenState_A",
+     "line": 3116
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_state_member",
+     "line": 3160
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_area_of_depth_four",
+     "line": 3206
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_depth",
+     "line": 3233
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_area_nonnegative",
+     "line": 3241
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_area_from_zero",
+     "line": 3270
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_no_old_window",
+     "line": 3299
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_root_area_int",
+     "line": 3324
+    }
+   ],
+   "theorems": 161,
+   "defs": 12,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "BlockSuffixSpectrum",
+   "lines": 352,
+   "imports": [
+    "ThreeRunFiniteContext"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "spectrum",
+     "line": 10
+    },
+    {
+     "kind": "def",
+     "name": "advance",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_spectrum",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "spectrum_append",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "advance_membership_congr",
+     "line": 79
+    },
+    {
+     "kind": "def",
+     "name": "samePairs",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "samePairs_sound",
+     "line": 90
+    },
+    {
+     "kind": "abbrev",
+     "name": "Row",
+     "line": 99
+    },
+    {
+     "kind": "structure",
+     "name": "Table",
+     "line": 100
+    },
+    {
+     "kind": "def",
+     "name": "checkChild",
+     "line": 104
+    },
+    {
+     "kind": "def",
+     "name": "checkOne",
+     "line": 107
+    },
+    {
+     "kind": "def",
+     "name": "verifiedRange",
+     "line": 112
+    },
+    {
+     "kind": "def",
+     "name": "verified",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "verifiedRange_at",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "block_spectrum_table",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "old_suffix_mass_bound",
+     "line": 175
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_budget_spectrum_iff",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_same_spectrum",
+     "line": 266
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_same_spectrum",
+     "line": 277
+    },
+    {
+     "kind": "theorem",
+     "name": "spectrum_future_counts",
+     "line": 305
+    }
+   ],
+   "theorems": 11,
+   "defs": 9,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "Blocker",
    "lines": 92,
    "imports": [
@@ -1767,6 +3050,175 @@
    "hasReport": false
   },
   {
+   "name": "CapacityEqualityInduction",
+   "lines": 279,
+   "imports": [
+    "LineCapacityPeriodic",
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "segment",
+     "line": 18
+    },
+    {
+     "kind": "inductive",
+     "name": "BlockWord",
+     "line": 21
+    },
+    {
+     "kind": "def",
+     "name": "HCap",
+     "line": 28
+    },
+    {
+     "kind": "def",
+     "name": "EqClassW",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "cntF",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_append",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_reverse",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_cntF",
+     "line": 51
+    },
+    {
+     "kind": "def",
+     "name": "Dense",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_nil",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_append",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_of_drops",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_free",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_aas",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_triple",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_of_block",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "dense_pad",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_succ",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_add",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_one",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "past_succ",
+     "line": 120
+    },
+    {
+     "kind": "theorem",
+     "name": "past_reverse",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_true",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_eq_zero_of",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "not_of_countP_eq_zero",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_succ_le",
+     "line": 164
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_le_succ",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "last_mark",
+     "line": 177
+    },
+    {
+     "kind": "theorem",
+     "name": "no_p2_suffix",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "hcap_step",
+     "line": 215
+    },
+    {
+     "kind": "theorem",
+     "name": "hcap_of_eqclassW",
+     "line": 273
+    }
+   ],
+   "theorems": 25,
+   "defs": 6,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "CapacitySlackCompensation",
    "lines": 222,
    "imports": [
@@ -2103,6 +3555,85 @@
    ],
    "theorems": 15,
    "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CleanWindowCapacity",
+   "lines": 223,
+   "imports": [
+    "LeadingRunSupply",
+    "SuffixHallOwnerMap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "Clean",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_return",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_bad_return",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "past_succ",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_cases",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "window_step",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "window_area",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "window_mass_A",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "past_rebase",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_pos",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_start_S",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_not_shared",
+     "line": 157
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_capacity",
+     "line": 196
+    }
+   ],
+   "theorems": 12,
+   "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -26260,6 +27791,200 @@
    "hasReport": true
   },
   {
+   "name": "EarlyOldFourBase",
+   "lines": 77,
+   "imports": [
+    "EarlyOldFourResidual",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_four_from_zero",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_four_residual_int",
+     "line": 41
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldFourFree",
+   "lines": 58,
+   "imports": [
+    "EarlyOldFourResidual",
+    "EarlyOldSixFree",
+    "OldFourThirteenActual",
+    "ThirteenSixSources",
+    "SmallInversionActual",
+    "InversionNineActual"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_four_free",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldFourFreeBase",
+   "lines": 77,
+   "imports": [
+    "EarlyOldFourFree",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_four_free_from_zero",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_four_free_int",
+     "line": 41
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldFourResidual",
+   "lines": 133,
+   "imports": [
+    "EarlyOldHeadFree",
+    "SmallInversionActual",
+    "InversionNineActual"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_four_residual",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldHeadBase",
+   "lines": 144,
+   "imports": [
+    "EarlyOldHeadFree",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_head_from_zero",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_head_free_int",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_five_from_zero",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_five_free_int",
+     "line": 108
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldHeadFree",
+   "lines": 204,
+   "imports": [
+    "OldSeedInversionKey",
+    "MomentTargetProfile",
+    "MomentSmallHeadPruning",
+    "SmallInversionBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_head_free_five",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_five_head_free",
+     "line": 104
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldSixBase",
+   "lines": 77,
+   "imports": [
+    "EarlyOldSixFree",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_six_from_zero",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "early_old_six_free_int",
+     "line": 41
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EarlyOldSixFree",
+   "lines": 122,
+   "imports": [
+    "EarlyOldHeadFree",
+    "SmallInversionActual"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_mass_five_six_free",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "EarlyRepresentative",
    "lines": 336,
    "imports": [
@@ -27424,6 +29149,83 @@
    "hasReport": false
   },
   {
+   "name": "FinalBandSupplyClock",
+   "lines": 120,
+   "imports": [
+    "FourRunSupplySeventeen",
+    "LocalSourcePrefixBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "final_band_clock_two",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "final_band_count_le_one",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "last_ray_count_le_three",
+     "line": 87
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FinalSSourceResidual",
+   "lines": 128,
+   "imports": [
+    "LargePrefixTargetArea",
+    "SmallPrefixSupplyThirteen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "final_S_counterexample_band_twelve",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_band_from_zero_twelve",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_band_int_twelve",
+     "line": 92
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FinalSTargetWidth",
+   "lines": 133,
+   "imports": [
+    "OldTargetMassCircle",
+    "FinalSSourceResidual"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "final_S_target_mass_width",
+     "line": 46
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FiniteBlockCapacity",
    "lines": 140,
    "imports": [
@@ -27691,6 +29493,25 @@
    "hasReport": false
   },
   {
+   "name": "FirstATargetSquare",
+   "lines": 54,
+   "imports": [
+    "FourthSourceFamilies",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_source_zero",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FirstP2EndingS",
    "lines": 148,
    "imports": [
@@ -27955,6 +29776,545 @@
    "hasReport": false
   },
   {
+   "name": "FourEventFast",
+   "lines": 91,
+   "imports": [
+    "FourEventProof"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "localSupply_cons",
+     "line": 10
+    },
+    {
+     "kind": "structure",
+     "name": "Scan",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "scan",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "scan_values",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "oldFrom",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "oldFrom_scan",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "fastStepA",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "fastStepA_eq",
+     "line": 73
+    },
+    {
+     "kind": "def",
+     "name": "fastMacroA",
+     "line": 77
+    },
+    {
+     "kind": "def",
+     "name": "fastSuccessors",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "successors_eq_fast",
+     "line": 82
+    }
+   ],
+   "theorems": 5,
+   "defs": 6,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourEventProof",
+   "lines": 237,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "endpointGood",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "goodState",
+     "line": 15
+    },
+    {
+     "kind": "def",
+     "name": "successors",
+     "line": 19
+    },
+    {
+     "kind": "inductive",
+     "name": "Checked",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_of_children",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_good",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_additions_le_ten",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_gap_zero",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_macro",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "Covered",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "checked_covered",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_additions_le_ten",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_S",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_A",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_endpoint",
+     "line": 82
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_covered_of_initial",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "excursion_word_of_initial",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "excursion_word_from_zero_of_initial",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "area_from_zero_of_initial",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_window_of_initial",
+     "line": 190
+    },
+    {
+     "kind": "theorem",
+     "name": "depth_from_zero_of_initial",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "area_int_of_initial",
+     "line": 219
+    }
+   ],
+   "theorems": 17,
+   "defs": 5,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourEventPruned",
+   "lines": 95,
+   "imports": [
+    "FourEventFast",
+    "PrefixMassBarrier"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "stepA_true_admitted",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "macro_true_gap_half_bound",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "macro_true_none_of_large_gap",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "budgetStepA",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "budgetStepA_eq",
+     "line": 68
+    },
+    {
+     "kind": "def",
+     "name": "prunedMacroA",
+     "line": 73
+    },
+    {
+     "kind": "theorem",
+     "name": "prunedMacroA_eq",
+     "line": 76
+    },
+    {
+     "kind": "def",
+     "name": "prunedSuccessors",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "successors_eq_pruned",
+     "line": 88
+    }
+   ],
+   "theorems": 6,
+   "defs": 3,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourNonsuppliedData",
+   "lines": 118,
+   "imports": [
+    "ThreeNonsuppliedData"
+   ],
+   "decls": [
+    {
+     "kind": "abbrev",
+     "name": "State",
+     "line": 10
+    },
+    {
+     "kind": "def",
+     "name": "trim",
+     "line": 12
+    },
+    {
+     "kind": "def",
+     "name": "gap",
+     "line": 14
+    },
+    {
+     "kind": "def",
+     "name": "stepS",
+     "line": 20
+    },
+    {
+     "kind": "def",
+     "name": "stepA",
+     "line": 22
+    },
+    {
+     "kind": "def",
+     "name": "macroA",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_append_letter",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_idempotent",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_append_congr",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_append",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "trim_S_gap",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_large",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_clamp",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_add",
+     "line": 86
+    },
+    {
+     "kind": "def",
+     "name": "endpointWords",
+     "line": 106
+    }
+   ],
+   "theorems": 8,
+   "defs": 7,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourRunSourceBase",
+   "lines": 95,
+   "imports": [
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "P2_shifted_window",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_band_from_zero",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_band_int",
+     "line": 59
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourRunSupplyBudget",
+   "lines": 178,
+   "imports": [
+    "ThreeRunFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_run_supply_budget",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "four_run_free_gap_residual",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "four_run_bounds_from_zero",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "four_run_bounds_int",
+     "line": 148
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourRunSupplySeventeen",
+   "lines": 140,
+   "imports": [
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_run_supply_le_seventeen",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "four_run_word",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_counterexample_band_thirteen",
+     "line": 107
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourRunTargetArea",
+   "lines": 219,
+   "imports": [
+    "FourRunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "runKey_seven_runs",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_area_identity",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_short_last_A_budget",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "final_S_source_clock",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "short_last_raw_boundary",
+     "line": 114
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_short_last_A_budget",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_final_S_source_A_budget",
+     "line": 178
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourSAnyOldBase",
+   "lines": 92,
+   "imports": [
+    "FourSAnyOldGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_S_any_old_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "four_S_any_old_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourSAnyOldGap",
+   "lines": 97,
+   "imports": [
+    "OldZeroTargetGap",
+    "MassThreeOldOneGap",
+    "MomentTargetProfile",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_S_any_old_gap",
+     "line": 18
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourSFirstATarget",
+   "lines": 54,
+   "imports": [
+    "FourthSourceFamilies",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_source_at_most_one",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourTierCapacityReduction",
    "lines": 145,
    "imports": [
@@ -28051,6 +30411,135 @@
    "theorems": 17,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "FourthClockClassifier",
+   "lines": 153,
+   "imports": [
+    "OneGapInteriorA"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "fourthClock",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "fourthClock_sound",
+     "line": 44
+    },
+    {
+     "kind": "def",
+     "name": "fourthFastCount",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_ray_fast_bound",
+     "line": 136
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_clock_controls",
+     "line": 148
+    }
+   ],
+   "theorems": 3,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourthSourceFamilies",
+   "lines": 134,
+   "imports": [
+    "ShortGapSourceClocks"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "sourceAt",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "sourceAt_count_le_one",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "local_fourth_sources",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_family_small_clock",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_family_small_band",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_two_count",
+     "line": 128
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FreePrefixCounterexample",
+   "lines": 130,
+   "imports": [
+    "ThreeRunFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "word",
+     "line": 9
+    },
+    {
+     "kind": "def",
+     "name": "f",
+     "line": 12
+    },
+    {
+     "kind": "def",
+     "name": "supplied",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_iff",
+     "line": 17
+    },
+    {
+     "kind": "def",
+     "name": "boolCount",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "free_before_source_counterexample",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_bound_replay",
+     "line": 112
+    }
+   ],
+   "theorems": 3,
+   "defs": 4,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -28581,6 +31070,51 @@
    "theorems": 12,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "HighTargetBase",
+   "lines": 92,
+   "imports": [
+    "HighTargetCharge",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_seed_four_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "old_seed_four_gap_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HighTargetCharge",
+   "lines": 150,
+   "imports": [
+    "EarlyOldSixFree",
+    "OldZeroInitialSource",
+    "MomentTargetProfile",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_seed_target_four_gap",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -29116,6 +31650,311 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "InitialSTargetBounds",
+   "lines": 236,
+   "imports": [
+    "MiddleSTargetFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "localSupply_S_prefix_domination",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_S_prefix_domination",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_target_equations",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "S_prefix_domination_boundary",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_target_even_A",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_critical_pairs",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_count_of_manyS",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_source_word",
+     "line": 172
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_counterexample_pairs",
+     "line": 197
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSTargetCountCharge",
+   "lines": 88,
+   "imports": [
+    "InitialSTargetTwoShapes"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_target_count_charge",
+     "line": 20
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSTargetOldPair",
+   "lines": 179,
+   "imports": [
+    "ThreeRunOldTargetGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_third_old_clock_order",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "third_old_excludes_first_old",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "first_ray_le_one_of_third_old",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_first_supply_le_one",
+     "line": 133
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSTargetTail",
+   "lines": 224,
+   "imports": [
+    "InitialSTargetOldPair"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_tail_budget",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "local_tail_two_clock",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "local_tail_small_first",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_band_with_old",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_ray_bounds",
+     "line": 168
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSTargetTwoShapes",
+   "lines": 109,
+   "imports": [
+    "InitialSTargetTail"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_first_two_shapes",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "two_shape_clock",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "two_shape_local_count",
+     "line": 90
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSeparatorTrim",
+   "lines": 240,
+   "imports": [
+    "SeparatorTailFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "trimSSequence",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "trimS_tail_sign",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "trimS_prefix",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_local_trim",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_endable_trim",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_prefix_endable_trim",
+     "line": 96
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_future_free_count",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_full_free_count",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_counterexample_transfer",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_endable_trim_int",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_full_free_count_int",
+     "line": 228
+    }
+   ],
+   "theorems": 10,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InversionActualBudget",
+   "lines": 128,
+   "imports": [
+    "InversionNine",
+    "SmallInversionActual",
+    "SmallInversionBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_min_joint_budget",
+     "line": 70
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InversionNine",
+   "lines": 68,
+   "imports": [
+    "SmallInversionJoint"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_local_one",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "second_local_one",
+     "line": 54
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InversionNineActual",
+   "lines": 34,
+   "imports": [
+    "InversionActualBudget",
+    "SmallInversionBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "inversion_nine_actual_six",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "LagElevenPeriodic",
@@ -30441,6 +33280,34 @@
    "hasReport": true
   },
   {
+   "name": "LargePrefixTargetArea",
+   "lines": 158,
+   "imports": [
+    "FourRunTargetArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_first_two_A_budget",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_large_first_two_A_budget",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "large_first_two_raw_boundary",
+     "line": 117
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "LeadingRunSupply",
    "lines": 616,
    "imports": [
@@ -31724,6 +34591,99 @@
    "hasReport": false
   },
   {
+   "name": "LineCapacityPeriodic",
+   "lines": 254,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "countP",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "Endable",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "subtractionCount",
+     "line": 38
+    },
+    {
+     "kind": "def",
+     "name": "LineCapacity",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "Supplied",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "subtractionPhases",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_add",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_le_of_range",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_shift",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_mul",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_eq_filter",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "e_shift",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "past_shift",
+     "line": 127
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_shift",
+     "line": 138
+    },
+    {
+     "kind": "theorem",
+     "name": "lag_bound",
+     "line": 149
+    },
+    {
+     "kind": "theorem",
+     "name": "periodic_capacity_of_line",
+     "line": 176
+    }
+   ],
+   "theorems": 10,
+   "defs": 6,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "LocalParityPeriodic",
    "lines": 98,
    "imports": [
@@ -31843,6 +34803,34 @@
    "theorems": 12,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "LocalSourcePrefixBudget",
+   "lines": 120,
+   "imports": [
+    "ThreeRunFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "block_continuation_key_lower",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "local_source_prefix_A",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_local_source_prefix_A",
+     "line": 73
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -31982,6 +34970,70 @@
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "LowSSCleanWindow",
+   "lines": 309,
+   "imports": [
+    "CleanWindowCapacity",
+    "OneSSMultiplicity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_depth_one",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_prefix",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_low_ss",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_neg_false",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "window_ss_mono",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "window_ss_step",
+     "line": 209
+    },
+    {
+     "kind": "theorem",
+     "name": "return_area_ne",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_of_depth_one",
+     "line": 253
+    },
+    {
+     "kind": "theorem",
+     "name": "clean_of_low_ss",
+     "line": 269
+    },
+    {
+     "kind": "theorem",
+     "name": "lowSS_capacity",
+     "line": 294
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "LowSSEndpoint",
@@ -32184,6 +35236,252 @@
    "hasReport": false
   },
   {
+   "name": "LowerFourBase",
+   "lines": 84,
+   "imports": [
+    "LowerFourFreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lower_four_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_four_gap_int",
+     "line": 47
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowerFourFreeGap",
+   "lines": 142,
+   "imports": [
+    "LowerMomentFreeGap",
+    "LowerMomentBoundary"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lower_four_final_S_free_gap",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowerMomentBase",
+   "lines": 84,
+   "imports": [
+    "LowerMomentFreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lower_moment_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_moment_gap_int",
+     "line": 47
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowerMomentBoundary",
+   "lines": 303,
+   "imports": [
+    "LowerMomentOldClock",
+    "ShortGapLocalBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lower_boundary_target",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_short_gap_local_budget",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_five_counter_target_absent",
+     "line": 222
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_four_target",
+     "line": 250
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowerMomentFreeGap",
+   "lines": 131,
+   "imports": [
+    "MomentFinalSGap",
+    "LowerMomentBoundary"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "lower_moment_final_S_free_gap",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowerMomentOldClock",
+   "lines": 225,
+   "imports": [
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "early_old_lower_boundary",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_mass_area_parity",
+     "line": 112
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_five_circle_excluded",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_band_target_no_old",
+     "line": 147
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_lower_band_no_old",
+     "line": 193
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeOldOneBase",
+   "lines": 85,
+   "imports": [
+    "MassThreeOldOneGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_one_target_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_three_old_one_gap_int",
+     "line": 46
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeOldOneGap",
+   "lines": 157,
+   "imports": [
+    "OldOneLastSix",
+    "EarlyOldFourFree",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_old_one_gap",
+     "line": 40
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeOldZeroBase",
+   "lines": 85,
+   "imports": [
+    "MassThreeOldZeroGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_zero_target_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_three_old_zero_gap_int",
+     "line": 46
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeOldZeroGap",
+   "lines": 157,
+   "imports": [
+    "OldZeroLastFive",
+    "EarlyOldFourFree",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_old_zero_gap",
+     "line": 40
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "Mechanisms",
    "lines": 196,
    "imports": [
@@ -32270,6 +35568,59 @@
    "hasReport": true
   },
   {
+   "name": "MiddleSTargetFreeGap",
+   "lines": 354,
+   "imports": [
+    "ThreeRunSourceShape"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "later_A_count_charge",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_S_target_later_A",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_four_source_bound",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_S_target_free_bounded",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_middle_S_free_gap",
+     "line": 218
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_middle_S_free_gap_from_zero",
+     "line": 250
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_middle_S_free_gap_int",
+     "line": 278
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_source_before_first_A",
+     "line": 315
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MissingDensityDichotomy",
    "lines": 215,
    "imports": [
@@ -32340,6 +35691,399 @@
    "theorems": 11,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "MomentActualTarget",
+   "lines": 88,
+   "imports": [
+    "MomentTargetMass",
+    "OldSourceKeyOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_moment_target_low_mass",
+     "line": 22
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentBandOldClock",
+   "lines": 184,
+   "imports": [
+    "TerminalOldClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_band_old_clock",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "upper_band_raw_control",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "lower_band_raw_control",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_moment_band_old_clock",
+     "line": 101
+    },
+    {
+     "kind": "def",
+     "name": "localCounterHead",
+     "line": 139
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_band_local_half_counterexample",
+     "line": 146
+    },
+    {
+     "kind": "def",
+     "name": "tenSignCounterHead",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "ten_sign_local_half_counterexample",
+     "line": 168
+    }
+   ],
+   "theorems": 6,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentFinalSBase",
+   "lines": 84,
+   "imports": [
+    "MomentFinalSGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_final_S_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_final_S_gap_int",
+     "line": 47
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentFinalSGap",
+   "lines": 132,
+   "imports": [
+    "MomentMassTwoParameters",
+    "MomentMassTwoLocal",
+    "MomentMassTwoThreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_final_S_free_gap",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentFirstASource",
+   "lines": 90,
+   "imports": [
+    "MomentSmallHeadPruning"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_clock_equation",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_one_gap_low_clock",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_two_gap_low_clock",
+     "line": 58
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassOneBase",
+   "lines": 112,
+   "imports": [
+    "MomentMassOneSmall",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_mass_one_gap",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_mass_one_gap_from_zero",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_mass_one_gap_int",
+     "line": 75
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassOneGap",
+   "lines": 133,
+   "imports": [
+    "MomentRunResidual",
+    "ShortGapLocalBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_short_gap_charge",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_mass_one_large_head_gap",
+     "line": 41
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassOneSmall",
+   "lines": 153,
+   "imports": [
+    "MomentMassOneGap",
+    "MomentSmallHeadPruning",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_mass_one_small_head_gap",
+     "line": 40
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassTwoLocal",
+   "lines": 108,
+   "imports": [
+    "MomentFirstASource",
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_two_short_local_budget",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassTwoParameters",
+   "lines": 143,
+   "imports": [
+    "MomentMassOneBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_two_parameter_numbers",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "moment_counter_mass_two_parameters",
+     "line": 38
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentMassTwoThreeGap",
+   "lines": 93,
+   "imports": [
+    "ThreeGapInteriorA"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_two_three_local_budget",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentNoOld",
+   "lines": 80,
+   "imports": [
+    "MomentActualTarget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_moment_no_old",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "last_count_eq_local",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentRunResidual",
+   "lines": 131,
+   "imports": [
+    "MomentNoOld",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_run_counter_residual",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentSmallHeadPruning",
+   "lines": 76,
+   "imports": [
+    "ShortGapLocalBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_head_moment",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "small_mass_one_numbers",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "seven_head_initial_height",
+     "line": 64
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentTargetMass",
+   "lines": 85,
+   "imports": [
+    "TenHeadTargetCases"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "moment_target_low_mass",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_two_separator_three_control",
+     "line": 72
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MomentTargetProfile",
+   "lines": 67,
+   "imports": [
+    "MomentActualTarget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_target_word_profile",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_zero_mass_target_key",
+     "line": 52
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -32651,6 +36395,75 @@
    ],
    "theorems": 12,
    "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "NewestMemberMotifCount",
+   "lines": 420,
+   "imports": [
+    "SuffixHallOwnerMap",
+    "P2SubtractionLevelSum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "length_filter_partition",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_eq_filter",
+     "line": 36
+    },
+    {
+     "kind": "def",
+     "name": "MotifOwner",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "newest_motif_count",
+     "line": 52
+    },
+    {
+     "kind": "structure",
+     "name": "ClosedConfig",
+     "line": 292
+    },
+    {
+     "kind": "def",
+     "name": "Motif",
+     "line": 299
+    },
+    {
+     "kind": "theorem",
+     "name": "erase_closed",
+     "line": 304
+    },
+    {
+     "kind": "theorem",
+     "name": "motif_of_erase_newest",
+     "line": 325
+    },
+    {
+     "kind": "theorem",
+     "name": "pred_closed_closed",
+     "line": 370
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_split_closed",
+     "line": 388
+    },
+    {
+     "kind": "theorem",
+     "name": "prefix_split_closed",
+     "line": 405
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -33290,6 +37103,725 @@
    "hasReport": true
   },
   {
+   "name": "OldContextBudget",
+   "lines": 173,
+   "imports": [
+    "InitialSeparatorTrim"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_window_budget_radius",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_budget_old_prefix_trim",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_budget_prefix_trim",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "old_prefix_budget_counts",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "budget_context_rebase",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "budget_context_positive_transfer",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_budget_old_prefix_trim_int",
+     "line": 161
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourThirteenActual",
+   "lines": 66,
+   "imports": [
+    "OldFourThirteenKey",
+    "EarlyOldHeadFree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_old_four_thirteen",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourThirteenBase",
+   "lines": 46,
+   "imports": [
+    "OldFourThirteenActual",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_thirteen_int",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourThirteenKey",
+   "lines": 30,
+   "imports": [
+    "OldSeedInversionKey"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "block_four_key_bounds",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "same_old_four_thirteen",
+     "line": 16
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldMassFiveBase",
+   "lines": 92,
+   "imports": [
+    "OldMassFiveGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_five_gap_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldMassFiveGap",
+   "lines": 149,
+   "imports": [
+    "EarlyOldSixFree",
+    "OldZeroInitialSource",
+    "MomentTargetProfile",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_supplier_gap",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldOneInitialSource",
+   "lines": 65,
+   "imports": [
+    "OldFourThirteenKey",
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_one_initial_source_exclusion",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldOneLastSix",
+   "lines": 94,
+   "imports": [
+    "FourSFirstATarget",
+    "OldOneInitialSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_one_target_last_six",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSeedActualGap",
+   "lines": 121,
+   "imports": [
+    "OldSeedMassBound",
+    "MomentTargetProfile",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "high_mass_old_seed_free_gap",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSeedBase",
+   "lines": 92,
+   "imports": [
+    "OldSeedActualGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "high_mass_old_seed_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "high_mass_old_seed_gap_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSeedInversionKey",
+   "lines": 60,
+   "imports": [
+    "OldSourceKeyOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_seed_clock_inversion",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "old_seed_inversion_inequality",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "inversion_cap",
+     "line": 50
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSeedMassBound",
+   "lines": 76,
+   "imports": [
+    "OldSourceKeyOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_seed_high_target_impossible",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSourceKeyOrder",
+   "lines": 191,
+   "imports": [
+    "OldTargetMassFive",
+    "BlockSameMassSpan"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_key_mass_order",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_prior_clock",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_old_target_prior_clock",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_tail_no_old",
+     "line": 129
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_tail_local_iff",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_old_target_tail_base",
+     "line": 157
+    },
+    {
+     "kind": "theorem",
+     "name": "eight_key_equal_mass_control",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_gap_same_old_control",
+     "line": 187
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetAreaBudget",
+   "lines": 304,
+   "imports": [
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_target_word_budget",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_strict_bound_sharp",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_old_target_budget",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_counterexample_band",
+     "line": 159
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_smaller_band",
+     "line": 230
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_smaller_band_int",
+     "line": 270
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetClockCollision",
+   "lines": 277,
+   "imports": [
+    "OldTargetLocalTail"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_tail_A_budget",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_tail_clock_two",
+     "line": 76
+    },
+    {
+     "kind": "def",
+     "name": "twoClock",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_two_clock_sound",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "twoClock_count_le_two",
+     "line": 155
+    },
+    {
+     "kind": "theorem",
+     "name": "full_old_target_two_clock",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "full_old_target_ray_count_two",
+     "line": 203
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_old_target_ray_free_two",
+     "line": 230
+    }
+   ],
+   "theorems": 7,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetFirstRun",
+   "lines": 270,
+   "imports": [
+    "OldTargetAreaBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_run_supply_le_one",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "two_run_small_first_count_of_manyS",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "two_run_small_first_positive",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_count_small_first",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_mass_six",
+     "line": 151
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_mass_six_int",
+     "line": 227
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetLocalTail",
+   "lines": 255,
+   "imports": [
+    "OldSourceKeyOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_tail_exclusion",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_clock_exclusion",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "tailClock",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_tail_clock_sound",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "tailClock_count_le_three",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "full_old_target_tail_clock",
+     "line": 144
+    },
+    {
+     "kind": "theorem",
+     "name": "full_old_target_ray_count",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_old_target_ray_free",
+     "line": 199
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_gap_initial_source_control",
+     "line": 247
+    }
+   ],
+   "theorems": 8,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetMassCircle",
+   "lines": 183,
+   "imports": [
+    "LargePrefixTargetArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_mass_circle",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "large_prefix_mass_circle",
+     "line": 47
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_target_mass_circle",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_large_prefix_mass_circle",
+     "line": 132
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetMassFive",
+   "lines": 222,
+   "imports": [
+    "OldTargetFirstRun",
+    "RunClockClassifier"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_target_mass_five",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_mass_five_int",
+     "line": 179
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetMiddleCharge",
+   "lines": 251,
+   "imports": [
+    "OldTargetClockCollision"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "middle_S_tail_first_run",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_clock_first_run",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "full_small_first_tail_clock",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "ray_count_band_bound",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "twoClock_short_small_L",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_count_charge",
+     "line": 177
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldZeroInitialSource",
+   "lines": 163,
+   "imports": [
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_zero_initial_source_exclusion",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "old_zero_fourth_ray_count_six",
+     "line": 71
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldZeroLastFive",
+   "lines": 89,
+   "imports": [
+    "FirstATargetSquare",
+    "OldZeroInitialSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_zero_target_last_five",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldZeroTargetBase",
+   "lines": 87,
+   "imports": [
+    "OldZeroTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_zero_target_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "old_zero_target_gap_int",
+     "line": 47
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldZeroTargetGap",
+   "lines": 121,
+   "imports": [
+    "OldZeroInitialSource",
+    "EarlyOldHeadFree",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_zero_short_target_free_gap",
+     "line": 39
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "OneBorrowFrontier",
    "lines": 61,
    "imports": [
@@ -33311,6 +37843,29 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "OneGapInteriorA",
+   "lines": 54,
+   "imports": [
+    "TenHeadFirstASource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "interior_A_one_gap_clock",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_A_boundary_control",
+     "line": 50
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "OnePerRun",
@@ -35065,6 +39620,237 @@
    "hasReport": false
   },
   {
+   "name": "P2SubtractionLevelSum",
+   "lines": 265,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "sLevelSum",
+     "line": 26
+    },
+    {
+     "kind": "def",
+     "name": "aLevelSum",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "sCount",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "level_sum_add",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "level_sum_sub",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_sLevelSum",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_aLevelSum",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "sCount_eq",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_sCount",
+     "line": 82
+    },
+    {
+     "kind": "def",
+     "name": "sLevels",
+     "line": 88
+    },
+    {
+     "kind": "theorem",
+     "name": "sLevels_sum",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "sLevels_length",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_sLevels",
+     "line": 103
+    },
+    {
+     "kind": "theorem",
+     "name": "sum_le_of_forall_le",
+     "line": 132
+    },
+    {
+     "kind": "theorem",
+     "name": "le_sum_of_forall_le",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_exists_low_subtraction",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_three_of_low_subtractions",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_length_three",
+     "line": 186
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_eq_aas_of_low_subtractions",
+     "line": 194
+    },
+    {
+     "kind": "theorem",
+     "name": "p2_exists_high_subtraction",
+     "line": 201
+    },
+    {
+     "kind": "theorem",
+     "name": "past_drop",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "past_exists_high_subtraction",
+     "line": 228
+    },
+    {
+     "kind": "theorem",
+     "name": "past_sLevelSum",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "past_eq_aas_of_low_subtractions",
+     "line": 254
+    }
+   ],
+   "theorems": 20,
+   "defs": 4,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "P2WindowLengthBounds",
+   "lines": 334,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "gapFourOk",
+     "line": 25
+    },
+    {
+     "kind": "def",
+     "name": "wordsUpTo",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_wordsUpTo",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "gapFour_table",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_four_eq",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "nested_gap",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "past_add",
+     "line": 123
+    },
+    {
+     "kind": "theorem",
+     "name": "past_nested_gap",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "positions_lower",
+     "line": 168
+    },
+    {
+     "kind": "theorem",
+     "name": "leading_S_run_bound",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "past_leading_S_run_bound",
+     "line": 210
+    },
+    {
+     "kind": "def",
+     "name": "shiftOk",
+     "line": 235
+    },
+    {
+     "kind": "theorem",
+     "name": "shift_table",
+     "line": 243
+    },
+    {
+     "kind": "theorem",
+     "name": "shift_eq",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "shifted_p2",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "past_older_crossing",
+     "line": 285
+    },
+    {
+     "kind": "theorem",
+     "name": "past_newer_shift",
+     "line": 311
+    }
+   ],
+   "theorems": 14,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PairedSubtractionCoverage",
    "lines": 139,
    "imports": [
@@ -35312,6 +40098,44 @@
    "theorems": 23,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PenultimateRunWindow",
+   "lines": 184,
+   "imports": [
+    "BlockSameMassSpan"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ASAS_window_square",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "ASAS_no_small_window",
+     "line": 98
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_ASAS_no_small_window",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "outside_assumption_controls",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_not_second_A",
+     "line": 138
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -41010,6 +45834,232 @@
    "hasReport": true
   },
   {
+   "name": "PrefixKeySourceBudget",
+   "lines": 139,
+   "imports": [
+    "LocalSourcePrefixBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "continuation_key_lower",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "local_source_prefix_A_of_key",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_local_source_prefix_A_of_key",
+     "line": 70
+    },
+    {
+     "kind": "def",
+     "name": "saw8",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_only_source_cut_counterexample",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "negative_mass_source_control",
+     "line": 132
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "PrefixMassBarrier",
+   "lines": 787,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "localSupply_erase_prefix",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_after_prefix_manyS_A_iff",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_prefix_even_followup",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_prefix_even_followup",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "one_addition_after_prefix_manyS_evenA",
+     "line": 159
+    },
+    {
+     "kind": "def",
+     "name": "suffixCeiling",
+     "line": 230
+    },
+    {
+     "kind": "theorem",
+     "name": "suffixCeiling_nonnegative",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_drop_le_suffixCeiling",
+     "line": 239
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_erase_prefix_ceiling",
+     "line": 251
+    },
+    {
+     "kind": "theorem",
+     "name": "bounded_future_context_erasure",
+     "line": 282
+    },
+    {
+     "kind": "def",
+     "name": "contextTrimAux",
+     "line": 292
+    },
+    {
+     "kind": "def",
+     "name": "contextTrim",
+     "line": 297
+    },
+    {
+     "kind": "theorem",
+     "name": "contextTrimAux_future",
+     "line": 299
+    },
+    {
+     "kind": "theorem",
+     "name": "contextTrim_future",
+     "line": 314
+    },
+    {
+     "kind": "theorem",
+     "name": "context_buffer_counterfamily",
+     "line": 321
+    },
+    {
+     "kind": "theorem",
+     "name": "no_unbounded_future_context_threshold",
+     "line": 340
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_barrier_counterexample",
+     "line": 352
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_after_separated_run_iff",
+     "line": 361
+    },
+    {
+     "kind": "theorem",
+     "name": "no_endable_separated_even_followup",
+     "line": 402
+    },
+    {
+     "kind": "theorem",
+     "name": "no_additions_separated_even_followup",
+     "line": 431
+    },
+    {
+     "kind": "theorem",
+     "name": "one_addition_after_separated_evenA",
+     "line": 472
+    },
+    {
+     "kind": "theorem",
+     "name": "suffixCeiling_prepend_S",
+     "line": 546
+    },
+    {
+     "kind": "theorem",
+     "name": "suffixCeiling_S_prefix",
+     "line": 553
+    },
+    {
+     "kind": "theorem",
+     "name": "suffixCeiling_A_run",
+     "line": 560
+    },
+    {
+     "kind": "theorem",
+     "name": "one_addition_after_two_A_runs",
+     "line": 572
+    },
+    {
+     "kind": "def",
+     "name": "supplyGapKey",
+     "line": 594
+    },
+    {
+     "kind": "theorem",
+     "name": "supplyGapKey_append_S",
+     "line": 596
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_gap_key_iff",
+     "line": 602
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_zero_gap_key_count",
+     "line": 641
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_gap_half_bound",
+     "line": 661
+    },
+    {
+     "kind": "theorem",
+     "name": "oldSignature_gap_half_bound",
+     "line": 669
+    },
+    {
+     "kind": "theorem",
+     "name": "wordSupply_gap_half_bound",
+     "line": 751
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_after_S_gap_half_bound",
+     "line": 762
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_half_gap_family",
+     "line": 777
+    }
+   ],
+   "theorems": 30,
+   "defs": 4,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "PrestateCoverage",
    "lines": 315,
    "imports": [
@@ -41081,6 +46131,269 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "PrivateMemberMotifCount",
+   "lines": 851,
+   "imports": [
+    "NewestMemberMotifCount"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "getA",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "aasB",
+     "line": 35
+    },
+    {
+     "kind": "def",
+     "name": "w1Base",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "w1Extra",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "w1B",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "admB",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "getA_spec",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "aasB_spec",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "w1B_spec",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "length_le_one_of_eq",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "length_le_filter_succ",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "eq_map_getD",
+     "line": 111
+    },
+    {
+     "kind": "theorem",
+     "name": "adm_length_le",
+     "line": 117
+    },
+    {
+     "kind": "def",
+     "name": "allWords",
+     "line": 366
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_allWords",
+     "line": 370
+    },
+    {
+     "kind": "def",
+     "name": "p2B",
+     "line": 377
+    },
+    {
+     "kind": "theorem",
+     "name": "p2B_of_P2",
+     "line": 379
+    },
+    {
+     "kind": "def",
+     "name": "checkL",
+     "line": 383
+    },
+    {
+     "kind": "theorem",
+     "name": "checkL_sound",
+     "line": 386
+    },
+    {
+     "kind": "def",
+     "name": "W7",
+     "line": 402
+    },
+    {
+     "kind": "def",
+     "name": "W11",
+     "line": 404
+    },
+    {
+     "kind": "theorem",
+     "name": "check7",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "check11",
+     "line": 410
+    },
+    {
+     "kind": "def",
+     "name": "cntA",
+     "line": 413
+    },
+    {
+     "kind": "theorem",
+     "name": "ones_eq_cntA",
+     "line": 417
+    },
+    {
+     "kind": "def",
+     "name": "wordsWith",
+     "line": 423
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_wordsWith",
+     "line": 429
+    },
+    {
+     "kind": "def",
+     "name": "checkK",
+     "line": 440
+    },
+    {
+     "kind": "theorem",
+     "name": "checkK_sound",
+     "line": 443
+    },
+    {
+     "kind": "theorem",
+     "name": "check15",
+     "line": 460
+    },
+    {
+     "kind": "theorem",
+     "name": "admB_false_of",
+     "line": 462
+    },
+    {
+     "kind": "theorem",
+     "name": "w11_not_full",
+     "line": 474
+    },
+    {
+     "kind": "theorem",
+     "name": "getD_past",
+     "line": 478
+    },
+    {
+     "kind": "theorem",
+     "name": "adm_of_config",
+     "line": 482
+    },
+    {
+     "kind": "theorem",
+     "name": "past_length",
+     "line": 588
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_count_le",
+     "line": 592
+    },
+    {
+     "kind": "theorem",
+     "name": "seven_owners",
+     "line": 605
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_window",
+     "line": 637
+    },
+    {
+     "kind": "theorem",
+     "name": "private_motif_count",
+     "line": 677
+    },
+    {
+     "kind": "def",
+     "name": "cexE",
+     "line": 699
+    },
+    {
+     "kind": "def",
+     "name": "cexM",
+     "line": 700
+    },
+    {
+     "kind": "def",
+     "name": "cexLag",
+     "line": 701
+    },
+    {
+     "kind": "def",
+     "name": "cexOwn",
+     "line": 703
+    },
+    {
+     "kind": "theorem",
+     "name": "eleven_occurs",
+     "line": 708
+    },
+    {
+     "kind": "theorem",
+     "name": "not_three_or_seven",
+     "line": 732
+    },
+    {
+     "kind": "def",
+     "name": "MotifOwnerFull",
+     "line": 756
+    },
+    {
+     "kind": "def",
+     "name": "MotifFull",
+     "line": 759
+    },
+    {
+     "kind": "def",
+     "name": "HasPrivate",
+     "line": 763
+    },
+    {
+     "kind": "theorem",
+     "name": "motifFull_step",
+     "line": 767
+    },
+    {
+     "kind": "theorem",
+     "name": "motifFull_of_private",
+     "line": 830
+    }
+   ],
+   "theorems": 29,
+   "defs": 21,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "QuantumP2Arithmetic",
@@ -42710,6 +48023,265 @@
    "hasReport": false
   },
   {
+   "name": "RunClockClassifier",
+   "lines": 195,
+   "imports": [
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "rayBoolCount",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_bool_filter",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_eq_boolCount",
+     "line": 24
+    },
+    {
+     "kind": "def",
+     "name": "secondBoolCount",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "thirdBoolCount",
+     "line": 30
+    },
+    {
+     "kind": "def",
+     "name": "secondClock",
+     "line": 34
+    },
+    {
+     "kind": "def",
+     "name": "thirdClock",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "secondClock_sound",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "thirdClock_sound",
+     "line": 97
+    },
+    {
+     "kind": "def",
+     "name": "secondFastCount",
+     "line": 167
+    },
+    {
+     "kind": "def",
+     "name": "thirdFastCount",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "second_ray_fast_bound",
+     "line": 173
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_fast_bound",
+     "line": 181
+    },
+    {
+     "kind": "theorem",
+     "name": "clock_classifier_controls",
+     "line": 191
+    }
+   ],
+   "theorems": 7,
+   "defs": 7,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RunSupplyBudget",
+   "lines": 208,
+   "imports": [
+    "TwoRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "runKey_prepend_A",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_prepend_S",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "constant_run_root_unique",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_or_le",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_le_one_of_unique",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_const_append",
+     "line": 100
+    },
+    {
+     "kind": "def",
+     "name": "runWord",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_nil",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "rayCount_runWord",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_A",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_A_run_count",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "count_A_run",
+     "line": 178
+    },
+    {
+     "kind": "theorem",
+     "name": "A_run_free_budget",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "A_run_free_budget_int",
+     "line": 198
+    }
+   ],
+   "theorems": 13,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RunSupplyKeys",
+   "lines": 171,
+   "imports": [
+    "PrefixMassBarrier"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "runKey",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_append_A",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "gapKey_runKey",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "gapKey_after_A",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_A_S_iff",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_int",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_drop_le",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_count_lower",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_square_key_bound",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_run_bounds",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_seg",
+     "line": 107
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_after_A_S_iff",
+     "line": 118
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_run_bounds",
+     "line": 134
+    },
+    {
+     "kind": "theorem",
+     "name": "cntF_replicate_S",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "run_bounds_sharp",
+     "line": 153
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_run_bounds_int",
+     "line": 161
+    }
+   ],
+   "theorems": 15,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SS2AASCollisionObstruction",
    "lines": 155,
    "imports": [
@@ -44327,6 +49899,137 @@
    "hasReport": true
   },
   {
+   "name": "SeparatorSupplyReset",
+   "lines": 324,
+   "imports": [
+    "ThreeRunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "endable_budget_separator_iff",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_budget_separator_int",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_budget_separator_prefix",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "separator_future_count_eq",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "separator_threshold_control",
+     "line": 119
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_run_gap_iff",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_A_supply_count",
+     "line": 179
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_free_gap",
+     "line": 220
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_word",
+     "line": 253
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_last_S_bound",
+     "line": 271
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_free_gap_int",
+     "line": 308
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SeparatorTailFreeGap",
+   "lines": 310,
+   "imports": [
+    "SeparatorSupplyReset"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "endN_nat_shift",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "count_nat_shift",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_nat_shift",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "free_count_nat_shift",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_after_manyS",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "free_count_reset_shift",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_two_run_free_gap",
+     "line": 161
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_middle_S_bound",
+     "line": 238
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_internal_S_bounds",
+     "line": 277
+    },
+    {
+     "kind": "theorem",
+     "name": "long_separator_two_run_free_gap_int",
+     "line": 295
+    }
+   ],
+   "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SharpPeriodicSupply",
    "lines": 176,
    "imports": [
@@ -44487,6 +50190,57 @@
    "theorems": 7,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ShortGapLocalBudget",
+   "lines": 162,
+   "imports": [
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_gap_local_budget",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "two_gap_tall_initial_local_four",
+     "line": 101
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortGapSourceClocks",
+   "lines": 90,
+   "imports": [
+    "OneGapInteriorA"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_small_gap_clock",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "nonnegative_square_gap",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "tail_S_small_gap_clock",
+     "line": 61
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -44818,6 +50572,137 @@
    "hasReport": false
   },
   {
+   "name": "ShortTightDonorAvoidance",
+   "lines": 669,
+   "imports": [
+    "PeriodicOwnerFamilyLagEleven",
+    "PairedSubtractionCoverage",
+    "TrueOldestGateT6",
+    "ShortReservoirCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "shortOff_le_window",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "short_window_hall",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "member_window_aas_or_w1",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_owns_oldest",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_future_aas_member",
+     "line": 152
+    },
+    {
+     "kind": "theorem",
+     "name": "w1_next_addition",
+     "line": 202
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_w1_next_addition",
+     "line": 211
+    },
+    {
+     "kind": "theorem",
+     "name": "donor_cover_next_subtraction",
+     "line": 229
+    },
+    {
+     "kind": "theorem",
+     "name": "short_tight_avoids_trueOldest",
+     "line": 252
+    },
+    {
+     "kind": "theorem",
+     "name": "short_tight_avoids_ss2_donor",
+     "line": 333
+    },
+    {
+     "kind": "theorem",
+     "name": "short_supply_donor_deletion",
+     "line": 363
+    },
+    {
+     "kind": "def",
+     "name": "ss2Windows",
+     "line": 394
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_ss2Windows",
+     "line": 399
+    },
+    {
+     "kind": "theorem",
+     "name": "ss2_oldest_cover_table",
+     "line": 410
+    },
+    {
+     "kind": "theorem",
+     "name": "owner_member_avoids_ss2_window",
+     "line": 425
+    },
+    {
+     "kind": "theorem",
+     "name": "short_tight_avoids_ss2_window",
+     "line": 486
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_minimal_p2_prefix",
+     "line": 531
+    },
+    {
+     "kind": "theorem",
+     "name": "neighborhood_prefix_sublist",
+     "line": 548
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_neighborhood_eq_of_p2_prefix",
+     "line": 572
+    },
+    {
+     "kind": "theorem",
+     "name": "short_p2_tight_avoids_ss2_window",
+     "line": 586
+    },
+    {
+     "kind": "theorem",
+     "name": "short_p2_ss2_deletion",
+     "line": 624
+    },
+    {
+     "kind": "def",
+     "name": "donorLength15Stream",
+     "line": 643
+    },
+    {
+     "kind": "theorem",
+     "name": "nonminimal_donor_length15_counterexample",
+     "line": 651
+    }
+   ],
+   "theorems": 21,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SignedSupplyGap",
    "lines": 163,
    "imports": [
@@ -44878,6 +50763,915 @@
    "theorems": 8,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "SingleWindowEquality",
+   "lines": 1072,
+   "imports": [
+    "CapacityEqualityInduction"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "Fw",
+     "line": 19
+    },
+    {
+     "kind": "def",
+     "name": "Ar",
+     "line": 23
+    },
+    {
+     "kind": "def",
+     "name": "Win",
+     "line": 27
+    },
+    {
+     "kind": "def",
+     "name": "EndN",
+     "line": 30
+    },
+    {
+     "kind": "def",
+     "name": "seg",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "Fw_succ",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "fw_cases",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "Fw_bound",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_succ",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar2",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar3",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar4",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "past_cons",
+     "line": 77
+    },
+    {
+     "kind": "theorem",
+     "name": "past_bridge",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_pos",
+     "line": 109
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_neg",
+     "line": 113
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_succ_le",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_add",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_congr",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_mono",
+     "line": 142
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_zero_of",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "not_of_cN_zero",
+     "line": 160
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_split",
+     "line": 171
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_walk",
+     "line": 187
+    },
+    {
+     "kind": "theorem",
+     "name": "first_mark",
+     "line": 209
+    },
+    {
+     "kind": "theorem",
+     "name": "last_markN",
+     "line": 226
+    },
+    {
+     "kind": "theorem",
+     "name": "first_hit",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "ivt",
+     "line": 265
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_lemma",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_induct",
+     "line": 288
+    },
+    {
+     "kind": "theorem",
+     "name": "area_ge",
+     "line": 317
+    },
+    {
+     "kind": "theorem",
+     "name": "dip",
+     "line": 330
+    },
+    {
+     "kind": "theorem",
+     "name": "area_lower1",
+     "line": 342
+    },
+    {
+     "kind": "theorem",
+     "name": "area_upper2",
+     "line": 353
+    },
+    {
+     "kind": "theorem",
+     "name": "win_ge3",
+     "line": 364
+    },
+    {
+     "kind": "theorem",
+     "name": "win3",
+     "line": 376
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_succ",
+     "line": 395
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_length",
+     "line": 398
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_add",
+     "line": 401
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_get",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "seg_mass",
+     "line": 410
+    },
+    {
+     "kind": "def",
+     "name": "aasW",
+     "line": 419
+    },
+    {
+     "kind": "def",
+     "name": "tripW",
+     "line": 420
+    },
+    {
+     "kind": "theorem",
+     "name": "block_first",
+     "line": 422
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass",
+     "line": 448
+    },
+    {
+     "kind": "theorem",
+     "name": "block_mass2",
+     "line": 464
+    },
+    {
+     "kind": "theorem",
+     "name": "block_SS",
+     "line": 482
+    },
+    {
+     "kind": "theorem",
+     "name": "block_SSS",
+     "line": 490
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_sub",
+     "line": 495
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_sub0",
+     "line": 501
+    },
+    {
+     "kind": "theorem",
+     "name": "step1",
+     "line": 509
+    },
+    {
+     "kind": "theorem",
+     "name": "levels_prefix",
+     "line": 571
+    },
+    {
+     "kind": "theorem",
+     "name": "levels_top",
+     "line": 579
+    },
+    {
+     "kind": "theorem",
+     "name": "count_end",
+     "line": 590
+    },
+    {
+     "kind": "theorem",
+     "name": "step2",
+     "line": 627
+    },
+    {
+     "kind": "theorem",
+     "name": "step3",
+     "line": 649
+    },
+    {
+     "kind": "theorem",
+     "name": "end_level",
+     "line": 692
+    },
+    {
+     "kind": "theorem",
+     "name": "step4",
+     "line": 698
+    },
+    {
+     "kind": "theorem",
+     "name": "step5a",
+     "line": 716
+    },
+    {
+     "kind": "theorem",
+     "name": "step5b",
+     "line": 735
+    },
+    {
+     "kind": "theorem",
+     "name": "end_mono",
+     "line": 765
+    },
+    {
+     "kind": "theorem",
+     "name": "case_big",
+     "line": 769
+    },
+    {
+     "kind": "theorem",
+     "name": "pure_main",
+     "line": 870
+    },
+    {
+     "kind": "theorem",
+     "name": "countP_cN",
+     "line": 953
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_iff",
+     "line": 965
+    },
+    {
+     "kind": "theorem",
+     "name": "endableCount_cN",
+     "line": 984
+    },
+    {
+     "kind": "theorem",
+     "name": "subtractionCount_cN",
+     "line": 990
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_seg",
+     "line": 995
+    },
+    {
+     "kind": "theorem",
+     "name": "single_window_equality",
+     "line": 1010
+    }
+   ],
+   "theorems": 62,
+   "defs": 7,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "SixteenRootAreaData",
+   "lines": 2409,
+   "imports": [
+    "FourNonsuppliedData"
+   ],
+   "decls": [
+    {
+     "kind": "structure",
+     "name": "State",
+     "line": 12
+    },
+    {
+     "kind": "def",
+     "name": "goodState",
+     "line": 18
+    },
+    {
+     "kind": "def",
+     "name": "stepS",
+     "line": 23
+    },
+    {
+     "kind": "def",
+     "name": "stepA",
+     "line": 26
+    },
+    {
+     "kind": "abbrev",
+     "name": "Row",
+     "line": 33
+    },
+    {
+     "kind": "structure",
+     "name": "Table",
+     "line": 35
+    },
+    {
+     "kind": "def",
+     "name": "unpack",
+     "line": 39
+    },
+    {
+     "kind": "def",
+     "name": "stateAt",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "checkOption",
+     "line": 44
+    },
+    {
+     "kind": "def",
+     "name": "checkOne",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "verified",
+     "line": 56
+    },
+    {
+     "kind": "def",
+     "name": "verifiedRange",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "Member",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "verifiedRange_at",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "row_checked",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "member_area",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepS",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepA",
+     "line": 95
+    },
+    {
+     "kind": "def",
+     "name": "rowAt",
+     "line": 111
+    },
+    {
+     "kind": "def",
+     "name": "rows",
+     "line": 2268
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_0",
+     "line": 2271
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_32",
+     "line": 2274
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_64",
+     "line": 2277
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_96",
+     "line": 2280
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_128",
+     "line": 2283
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_160",
+     "line": 2286
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_192",
+     "line": 2289
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_224",
+     "line": 2292
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_256",
+     "line": 2295
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_288",
+     "line": 2298
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_320",
+     "line": 2301
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_352",
+     "line": 2304
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_384",
+     "line": 2307
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_416",
+     "line": 2310
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_448",
+     "line": 2313
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_480",
+     "line": 2316
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_512",
+     "line": 2319
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_544",
+     "line": 2322
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_576",
+     "line": 2325
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_608",
+     "line": 2328
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_640",
+     "line": 2331
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_672",
+     "line": 2334
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_704",
+     "line": 2337
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_verified",
+     "line": 2339
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_member",
+     "line": 2389
+    }
+   ],
+   "theorems": 30,
+   "defs": 15,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SmallInversionActual",
+   "lines": 117,
+   "imports": [
+    "SmallInversionJoint",
+    "SmallInversionBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_inversion_three_run_count_seven",
+     "line": 59
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SmallInversionBudget",
+   "lines": 91,
+   "imports": [
+    "SmallInversionSources",
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_count_from_local",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_three_run_count_eight",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_three_run_count_nine",
+     "line": 73
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SmallInversionJoint",
+   "lines": 112,
+   "imports": [
+    "SmallInversionSources",
+    "RunClockClassifier"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_local_clock",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "exceptional_third_one",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_joint_count",
+     "line": 89
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SmallInversionSources",
+   "lines": 412,
+   "imports": [
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_inversion_first_A",
+     "line": 122
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_second_S",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_initial_not_exception",
+     "line": 159
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_initial_with_second_zero",
+     "line": 172
+    },
+    {
+     "kind": "theorem",
+     "name": "local_third_sources",
+     "line": 188
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_third_local_two",
+     "line": 227
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_initial_first_A",
+     "line": 331
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_third_local_three",
+     "line": 358
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SmallPrefixSupplyThirteen",
+   "lines": 198,
+   "imports": [
+    "FinalBandSupplyClock",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_run_small_prefix_supply_le_thirteen",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "small_prefix_counterexample_band_nine",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "small_prefix_band_from_zero",
+     "line": 124
+    },
+    {
+     "kind": "theorem",
+     "name": "small_prefix_band_int",
+     "line": 162
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceCrossSurplus",
+   "lines": 162,
+   "imports": [
+    "LocalSourcePrefixBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "cross_append",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_of_AS",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "two_source_cross_identity",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "source_prefix_A_strict",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_source_prefix_A_strict",
+     "line": 102
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceFamilyFirstBlock",
+   "lines": 278,
+   "imports": [
+    "SourceFamilyFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_third_ray_key",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_local_clocks",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_local_count_all",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_local_count_M4",
+     "line": 145
+    },
+    {
+     "kind": "theorem",
+     "name": "R5_M5_local_clock0",
+     "line": 154
+    },
+    {
+     "kind": "theorem",
+     "name": "family_later_supply_bounds_all",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "family_free_lower_all",
+     "line": 224
+    },
+    {
+     "kind": "theorem",
+     "name": "family_free_lower_all_int",
+     "line": 262
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceFamilyFreeCount",
+   "lines": 283,
+   "imports": [
+    "ThreeRunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "runKey_five_runs",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_local_clock",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "second_ray_local_clock",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "second_ray_local_count",
+     "line": 139
+    },
+    {
+     "kind": "theorem",
+     "name": "third_ray_local_count",
+     "line": 147
+    },
+    {
+     "kind": "theorem",
+     "name": "family_later_supply_bounds",
+     "line": 163
+    },
+    {
+     "kind": "theorem",
+     "name": "family_free_lower",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "family_free_lower_int",
+     "line": 257
+    },
+    {
+     "kind": "theorem",
+     "name": "source_family_boundary_controls",
+     "line": 275
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -45125,6 +51919,69 @@
     }
    ],
    "theorems": 32,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "SuffixHallOwnerMap",
+   "lines": 151,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "clocks",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "mem_clocks",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "nodup_map_of_inj",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_nodup",
+     "line": 49
+    },
+    {
+     "kind": "structure",
+     "name": "OwnerMap",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_hall",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "sign_sum_eq",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_succ_left",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "clocks_succ_right",
+     "line": 116
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_mass_ge",
+     "line": 122
+    }
+   ],
+   "theorems": 8,
    "defs": 2,
    "hasEnglishDocstring": true,
    "hasReport": false
@@ -46880,6 +53737,170 @@
    "hasReport": false
   },
   {
+   "name": "TenHeadActualCases",
+   "lines": 136,
+   "imports": [
+    "TenHeadTargetCases",
+    "OldSourceKeyOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ten_head_free_four",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_ten_head_target_cases",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_two_cases_no_old",
+     "line": 112
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadFirstASource",
+   "lines": 78,
+   "imports": [
+    "TenHeadSourcePruning"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_source_odd_separator",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "second_A_odd_source_excluded",
+     "line": 69
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadFreeBase",
+   "lines": 72,
+   "imports": [
+    "TenHeadFreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ten_head_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "ten_head_gap_int",
+     "line": 42
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadFreeGap",
+   "lines": 133,
+   "imports": [
+    "TenHeadActualCases",
+    "TenHeadLocalBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "last_count_eq_local",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "ten_head_final_S_free_gap",
+     "line": 59
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadLocalBudget",
+   "lines": 98,
+   "imports": [
+    "TenHeadFirstASource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_case_local_four",
+     "line": 33
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadSourcePruning",
+   "lines": 119,
+   "imports": [
+    "TenHeadTargetCases"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_source_excluded",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_ray_erasure",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "ten_head_local_le_five",
+     "line": 93
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TenHeadTargetCases",
+   "lines": 103,
+   "imports": [
+    "MomentBandOldClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ten_head_target_cases",
+     "line": 49
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TerminalASSBound",
    "lines": 212,
    "imports": [
@@ -47154,6 +54175,1304 @@
    "theorems": 31,
    "defs": 3,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TerminalFourthBase",
+   "lines": 62,
+   "imports": [
+    "TerminalFourthCharge",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "terminal_final_S_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_final_S_gap_int",
+     "line": 36
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TerminalFourthCharge",
+   "lines": 144,
+   "imports": [
+    "TerminalOldClock",
+    "ThreeRunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "terminal_ray_count_charge",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_last_run_charge",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_four_run_charge",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_final_S_free_gap",
+     "line": 100
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TerminalLocalProfile",
+   "lines": 237,
+   "imports": [
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "seed",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "seed_source_roots",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_local_clock_iff",
+     "line": 170
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_local_count_le_two",
+     "line": 198
+    },
+    {
+     "kind": "theorem",
+     "name": "terminal_local_count_half",
+     "line": 216
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TerminalOldClock",
+   "lines": 78,
+   "imports": [
+    "TerminalLocalProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "terminal_old_clock_ge_four",
+     "line": 38
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirteenRunFactors",
+   "lines": 61,
+   "imports": [
+    "RunSupplyKeys"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_double_six",
+     "line": 5
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirteenSixSources",
+   "lines": 150,
+   "imports": [
+    "ThirteenRunFactors",
+    "SmallInversionJoint"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "sixShapes",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "six_shape_third_one",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "second_non_two_shape",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "thirteen_joint_four",
+     "line": 100
+    }
+   ],
+   "theorems": 3,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeGapInteriorA",
+   "lines": 71,
+   "imports": [
+    "MomentSmallHeadPruning",
+    "FourthSourceFamilies"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "special_second_A_clock_zero",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeNonsuppliedData",
+   "lines": 10652,
+   "imports": [
+    "LeadingRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordArea",
+     "line": 13
+    },
+    {
+     "kind": "def",
+     "name": "localSupply",
+     "line": 17
+    },
+    {
+     "kind": "def",
+     "name": "oldSignature",
+     "line": 20
+    },
+    {
+     "kind": "structure",
+     "name": "State",
+     "line": 26
+    },
+    {
+     "kind": "def",
+     "name": "endpointWords",
+     "line": 33
+    },
+    {
+     "kind": "def",
+     "name": "goodState",
+     "line": 39
+    },
+    {
+     "kind": "def",
+     "name": "trim",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "stepS",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "stepA",
+     "line": 50
+    },
+    {
+     "kind": "def",
+     "name": "decodeWord",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "unpack",
+     "line": 65
+    },
+    {
+     "kind": "abbrev",
+     "name": "Row",
+     "line": 68
+    },
+    {
+     "kind": "structure",
+     "name": "Table",
+     "line": 70
+    },
+    {
+     "kind": "def",
+     "name": "stateAt",
+     "line": 74
+    },
+    {
+     "kind": "def",
+     "name": "checkChild",
+     "line": 76
+    },
+    {
+     "kind": "def",
+     "name": "checkOption",
+     "line": 79
+    },
+    {
+     "kind": "def",
+     "name": "checkOne",
+     "line": 84
+    },
+    {
+     "kind": "def",
+     "name": "verified",
+     "line": 91
+    },
+    {
+     "kind": "def",
+     "name": "verifiedRange",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "verifiedRange_at",
+     "line": 96
+    },
+    {
+     "kind": "def",
+     "name": "Member",
+     "line": 101
+    },
+    {
+     "kind": "theorem",
+     "name": "row_checked",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "member_additions_lt_eight",
+     "line": 108
+    },
+    {
+     "kind": "theorem",
+     "name": "member_endpoint_word",
+     "line": 115
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepS",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepA",
+     "line": 135
+    },
+    {
+     "kind": "def",
+     "name": "rowAt",
+     "line": 151
+    },
+    {
+     "kind": "def",
+     "name": "rows",
+     "line": 10123
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_0",
+     "line": 10126
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_32",
+     "line": 10129
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_64",
+     "line": 10132
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_96",
+     "line": 10135
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_128",
+     "line": 10138
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_160",
+     "line": 10141
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_192",
+     "line": 10144
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_224",
+     "line": 10147
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_256",
+     "line": 10150
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_288",
+     "line": 10153
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_320",
+     "line": 10156
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_352",
+     "line": 10159
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_384",
+     "line": 10162
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_416",
+     "line": 10165
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_448",
+     "line": 10168
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_480",
+     "line": 10171
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_512",
+     "line": 10174
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_544",
+     "line": 10177
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_576",
+     "line": 10180
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_608",
+     "line": 10183
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_640",
+     "line": 10186
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_672",
+     "line": 10189
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_704",
+     "line": 10192
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_736",
+     "line": 10195
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_768",
+     "line": 10198
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_800",
+     "line": 10201
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_832",
+     "line": 10204
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_864",
+     "line": 10207
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_896",
+     "line": 10210
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_928",
+     "line": 10213
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_960",
+     "line": 10216
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_992",
+     "line": 10219
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1024",
+     "line": 10222
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1056",
+     "line": 10225
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1088",
+     "line": 10228
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1120",
+     "line": 10231
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1152",
+     "line": 10234
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1184",
+     "line": 10237
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1216",
+     "line": 10240
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1248",
+     "line": 10243
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1280",
+     "line": 10246
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1312",
+     "line": 10249
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1344",
+     "line": 10252
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1376",
+     "line": 10255
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1408",
+     "line": 10258
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1440",
+     "line": 10261
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1472",
+     "line": 10264
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1504",
+     "line": 10267
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1536",
+     "line": 10270
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1568",
+     "line": 10273
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1600",
+     "line": 10276
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1632",
+     "line": 10279
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1664",
+     "line": 10282
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1696",
+     "line": 10285
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1728",
+     "line": 10288
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1760",
+     "line": 10291
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1792",
+     "line": 10294
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1824",
+     "line": 10297
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1856",
+     "line": 10300
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1888",
+     "line": 10303
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1920",
+     "line": 10306
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1952",
+     "line": 10309
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_1984",
+     "line": 10312
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2016",
+     "line": 10315
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2048",
+     "line": 10318
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2080",
+     "line": 10321
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2112",
+     "line": 10324
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2144",
+     "line": 10327
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2176",
+     "line": 10330
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2208",
+     "line": 10333
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2240",
+     "line": 10336
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2272",
+     "line": 10339
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2304",
+     "line": 10342
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2336",
+     "line": 10345
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2368",
+     "line": 10348
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2400",
+     "line": 10351
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2432",
+     "line": 10354
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2464",
+     "line": 10357
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2496",
+     "line": 10360
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2528",
+     "line": 10363
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2560",
+     "line": 10366
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2592",
+     "line": 10369
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2624",
+     "line": 10372
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2656",
+     "line": 10375
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2688",
+     "line": 10378
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2720",
+     "line": 10381
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2752",
+     "line": 10384
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2784",
+     "line": 10387
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2816",
+     "line": 10390
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2848",
+     "line": 10393
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2880",
+     "line": 10396
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2912",
+     "line": 10399
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2944",
+     "line": 10402
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_2976",
+     "line": 10405
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3008",
+     "line": 10408
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3040",
+     "line": 10411
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3072",
+     "line": 10414
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3104",
+     "line": 10417
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3136",
+     "line": 10420
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3168",
+     "line": 10423
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3200",
+     "line": 10426
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3232",
+     "line": 10429
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3264",
+     "line": 10432
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_3296",
+     "line": 10435
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_verified",
+     "line": 10437
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_member",
+     "line": 10649
+    }
+   ],
+   "theorems": 112,
+   "defs": 22,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeNonsuppliedQData",
+   "lines": 1114,
+   "imports": [
+    "ThreeNonsuppliedData"
+   ],
+   "decls": [
+    {
+     "kind": "structure",
+     "name": "State",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "goodState",
+     "line": 17
+    },
+    {
+     "kind": "def",
+     "name": "stepS",
+     "line": 22
+    },
+    {
+     "kind": "def",
+     "name": "stepA",
+     "line": 25
+    },
+    {
+     "kind": "abbrev",
+     "name": "Row",
+     "line": 32
+    },
+    {
+     "kind": "structure",
+     "name": "Table",
+     "line": 34
+    },
+    {
+     "kind": "def",
+     "name": "unpack",
+     "line": 38
+    },
+    {
+     "kind": "def",
+     "name": "stateAt",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "checkOption",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "checkOne",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "verified",
+     "line": 55
+    },
+    {
+     "kind": "def",
+     "name": "verifiedRange",
+     "line": 57
+    },
+    {
+     "kind": "def",
+     "name": "Member",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "verifiedRange_at",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "row_checked",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "member_area",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepS",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "member_stepA",
+     "line": 94
+    },
+    {
+     "kind": "def",
+     "name": "rowAt",
+     "line": 110
+    },
+    {
+     "kind": "def",
+     "name": "rows",
+     "line": 1046
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_0",
+     "line": 1049
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_32",
+     "line": 1052
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_64",
+     "line": 1055
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_96",
+     "line": 1058
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_128",
+     "line": 1061
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_160",
+     "line": 1064
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_192",
+     "line": 1067
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_224",
+     "line": 1070
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_256",
+     "line": 1073
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_checked_288",
+     "line": 1076
+    },
+    {
+     "kind": "theorem",
+     "name": "rows_verified",
+     "line": 1078
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_member",
+     "line": 1102
+    }
+   ],
+   "theorems": 17,
+   "defs": 15,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunFiniteContext",
+   "lines": 129,
+   "imports": [
+    "OldContextBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_counterexample_context",
+     "line": 19
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunFreeGap",
+   "lines": 99,
+   "imports": [
+    "ThreeRunInitialSTargetGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_free_gap",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_free_gap_from_zero",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_free_gap_int",
+     "line": 77
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunInitialSTargetGap",
+   "lines": 165,
+   "imports": [
+    "InitialSTargetCountCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_initial_S_target_free_gap",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_initial_S_target_free_gap_from_zero",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_initial_S_target_free_gap_int",
+     "line": 133
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunOldTargetGap",
+   "lines": 182,
+   "imports": [
+    "OldTargetMiddleCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_old_target_free_gap",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_old_target_free_gap_from_zero",
+     "line": 121
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_old_target_free_gap_int",
+     "line": 150
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunSourceShape",
+   "lines": 438,
+   "imports": [
+    "ASourceReuse",
+    "SourceFamilyFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_A_target_equations",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_target_residual",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_first_A_target_residual",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_S_target_equations",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_target_later_A",
+     "line": 87
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_target_excludes_ray_key",
+     "line": 126
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_target_third_ray_count",
+     "line": 189
+    },
+    {
+     "kind": "theorem",
+     "name": "first_A_target_free_bounded",
+     "line": 218
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_first_A_free_gap",
+     "line": 340
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_first_A_free_gap_from_zero",
+     "line": 376
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_first_A_free_gap_int",
+     "line": 404
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunSupplyBudget",
+   "lines": 353,
+   "imports": [
+    "BlockOldRay"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_run_supply_of_positive",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_supply_budget",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_free_gap_residual",
+     "line": 140
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_bounds_from_zero",
+     "line": 174
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_interval_shift",
+     "line": 207
+    },
+    {
+     "kind": "theorem",
+     "name": "three_run_bounds_int",
+     "line": 216
+    },
+    {
+     "kind": "theorem",
+     "name": "first_two_A_not_supplied",
+     "line": 245
+    },
+    {
+     "kind": "theorem",
+     "name": "first_run_additions_free_bound",
+     "line": 272
+    },
+    {
+     "kind": "theorem",
+     "name": "two_run_additions_free_bound",
+     "line": 302
+    },
+    {
+     "kind": "theorem",
+     "name": "first_run_additions_free_bound_int",
+     "line": 321
+    },
+    {
+     "kind": "theorem",
+     "name": "two_run_additions_free_bound_int",
+     "line": 332
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeRunTargetSource",
+   "lines": 94,
+   "imports": [
+    "PenultimateRunWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_target_source_before_second_A",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -48588,6 +56907,74 @@
    "hasReport": false
   },
   {
+   "name": "TwoRunSupply",
+   "lines": 242,
+   "imports": [
+    "RunSupplyKeys"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "exists_drop_append",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_append_S",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_S",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_A_S",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "runKey_S_A_S",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_two_run_iff",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "localSupply_second_run_bound",
+     "line": 183
+    },
+    {
+     "kind": "theorem",
+     "name": "crossing_run_sharp",
+     "line": 196
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_two_run_bound",
+     "line": 211
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_two_run_bound_int",
+     "line": 221
+    },
+    {
+     "kind": "theorem",
+     "name": "first_run_cannot_be_ignored",
+     "line": 234
+    }
+   ],
+   "theorems": 11,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -49490,6 +57877,65 @@
    "hasReport": true
   },
   {
+   "name": "UncleanWindowStructure",
+   "lines": 234,
+   "imports": [
+    "CleanWindowCapacity",
+    "LowSSCleanWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_last_down",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_double_down",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "exists_last",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_deep_start",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "down_step_S",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "last_nonneg_return_is_S",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "unclean_double_S",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "unclean_has_double_S",
+     "line": 176
+    },
+    {
+     "kind": "theorem",
+     "name": "deep_start",
+     "line": 215
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "UnconditionalStepRecurrence",
    "lines": 88,
    "imports": [
@@ -50187,6 +58633,6 @@
    "hasReport": false
   }
  ],
- "total": 394,
+ "total": 546,
  "withReport": 167
 }

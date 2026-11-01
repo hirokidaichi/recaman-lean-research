@@ -1,0 +1,24 @@
+Recaman/OldOneLastSix.lean:36:6: error: Type mismatch: After simplification, term
+  hmt
+ has type
+  @Eq Int
+    (mass (List.drop t w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate 4 false)))))) +
+      ↑1)
+    1
+but is expected to have type
+  @Eq Int
+    (mass (List.drop t w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate 4 false)))))) +
+      1)
+    1

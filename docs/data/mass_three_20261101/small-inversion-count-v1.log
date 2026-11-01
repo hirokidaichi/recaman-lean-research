@@ -1,0 +1,26 @@
+Recaman/SmallInversionSources.lean:171:24: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  M
+in the target expression
+  (↑q + ↑m + ↑s) ^ 2 = 2 * 12 + 1
+
+h M m L s i : Nat
+hM : M = 2
+hm : m = 3
+hL : L = 1
+hs : s = 2
+q : Nat
+hq : 1 ≤ q
+hqh : q ≤ h
+hbal :
+  mass
+        (List.replicate q false ++
+          (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)) +
+      ↑i =
+    1
+hkey :
+  runKey
+      (List.replicate q false ++
+        (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)) =
+    -2
+hkey0 : 4 * ↑2 * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑q + ↑m + ↑s) ^ 2 = -2
+⊢ (↑q + ↑m + ↑s) ^ 2 = 2 * 12 + 1

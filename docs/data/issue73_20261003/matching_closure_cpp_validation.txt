@@ -1,0 +1,69 @@
+C++ port of the E-356 matching-closure search: validation log (2026-10-03, H-20261003-01)
+source: experiments/issue73_20261003/matching_closure_search.cpp   (clang++ -O2 -std=c++17)
+usage:  mcs Lv memberCap nodeCap shard nshard [--brutecheck]   (always --mrv --noaas semantics; shard = word index % nshard)
+
+byte-identical stdout vs the Python reference (experiments/issue73_20260916/matching_closure_search.py, b8b970c):
+  lag-max 11  `mcs 11 14 2000000 0 1`   vs docs/data/issue73_20260916/matching_closure_lagmax11_mrv_noaas.txt   17/17 lines identical
+  lag-max 15  `mcs 15 40 20000000 0 1`  vs docs/data/issue73_20260916/matching_closure_lagmax15_mrv_noaas.txt   155/155 identical (reference's trailing `time` line ignored)
+  lag-max 19  `mcs 19 40 5000000 i 4`   vs docs/data/issue73_20260916/matching_closure_lagmax19_shard{0..3}.txt  all 1,636 words identical
+  lag-max 3/7 CONSISTENT path: same AAS closure and w1 triple {-3:AAS, 0:SAAAASS, 2:AAS} (own map -7->0, -6->-3, -1->2) as Python
+  CAP paths (Python reruns `15 5 50`, `15 7 30`, `11 4 1000000`, `15 6 1000000`): identical including cap-config lines
+  --brutecheck (every node: MRV counts and consistent-placement lists vs a direct port of Python `consistent`):
+      no mismatch on all of lag 11 and 15, 41 lag-19 words, 3 lag-23 words
+  (validation run by a subagent; lag 11/15/7 re-run by the parent session from the repository copy, identical)
+
+speed-up (semantics preserving): fixed bits always form one contiguous interval [lo,hi]; an owner window [u-L,u]
+has at most Lv+1 clocks, so its known part is the whole window, a prefix or a suffix; consistent placements of each
+(lag, S-offset) group are a range in a sorted array (binary search).
+
+word enumeration: DFS on the backward walk, ordered like Python `bit_words`; brute force over all 2^L words gave the same
+list and order for every L <= 23 (counts 1, 2, 17, 155, 1636, 18556).
+
+lag-max 23 (Q1 holdout of H-20261003-01): `mcs 23 40 5000000 i 8`, i = 0..7, nice, 8 processes, 08:29:06-08:31:28 JST
+  20,367 owner words (lag <= 23), 220,017 placements
+  => excluded 18556/18556, consistent closure 0, cap hit 0
+  nodes: total 28,920,584, median 393, max 312,951 (SASSSAAASAAASAAAASSASSS); span at most -68..48; 567 CPU s
+  parent check: the 8 shard files list exactly the 18,556 minimal lag-23 words (independent walk enumerator), each once, all `excluded`
+growth of the search (total nodes / largest tree): lag 11: 303/59, 15: 10,026/2,147, 19: 470,371/48,986, 23: 28,920,584/312,951
+
+lag-max 27 uniform 2% sample (H-20261003-01 Q1 extension): `mcs 27 40 5000000 i 100`, i = 0, 1 (word index % 100 in {0,1}), nice
+  241,908 owner words (lag <= 27), 3,100,050 placements; 2,216 + 2,216 = 4,432 of the 221,541 minimal lag-27 words (count from an independent walk enumerator)
+  => excluded 2216/2216 and 2216/2216, consistent closure 0, cap hit 0
+  nodes: total 48,128,456, max 1,734,056 (SASSAASAASASAAASSSAAAASASSS, below the 5,000,000 cap); 1,592 CPU s
+  files: matching_closure_lagmax27_sample_shard{0,1}of100.txt
+
+constrained variants (H-20261003-01 Q2): experiments/issue73_20261003/matching_closure_search_variants.cpp
+  = the port above plus three flags restricting ownership edges (owner placements and v's own branch):
+  --upfree : owned S has height <= 0 above the owner's window start (F(own b) <= h_b, "UP-FREE")
+  --level  : height == 0 (level matching F(own b) = h_b)
+  --newest : no owner newer than v (u > 0 forbidden; v is the newest member of a finite component, "Claim N")
+  owners are still all minimal words of lag <= Lv (so --newest tests "v newest AND of maximal lag").
+  cross-check: total / max nodes per v equal a subagent's independent Python implementation (lsearch.py) for
+    upfree 11: 58/6, 15: 758/27, 19: 12,678/85;  level 11: 45/6, 15: 415/12, 19: 5,583/61;  newest 11: 85/5, 15: 1,089/8, 19: 14,766/10
+    --upfree --brutecheck at lag 15: no mismatch; lag 7 keeps the w1 triple under --upfree/--level and excludes it under --newest
+    (the triple's newest member is the AAS at +2); lag 3 --newest keeps the isolated AAS.
+  lag-max 23 (all 18,556 words, `mcs_var 23 40 5000000 i 2 --FLAG`, i = 0, 1):
+    upfree : excluded 18556/18556, consistent 0, cap 0, total 266,028 nodes, max 401
+    level  : excluded 18556/18556, consistent 0, cap 0, total 85,894 nodes, max 172
+    newest : excluded 18556/18556, consistent 0, cap 0, total 205,231 nodes, max 32
+  (unconstrained lag 23: total 28,920,584, max 312,951)
+  files: matching_closure_variant_lagmax19_{upfree,level,newest}.txt, matching_closure_variant_lagmax23_{upfree,level,newest}.txt.gz
+  --oldest : no owner window starts before v's window start -Lv (v has the oldest window start of a finite component, "Claim O";
+             owners lag <= Lv, so this tests "v oldest-start AND of maximal lag").  lag 3 keeps AAS, lag 7 keeps the w1 triple
+             (w1 is its oldest-start member) and excludes w2.
+    lag 11: total 89 / max 7; 15: 1,130 / 32; 19: 15,231 / 48; 23 (all 18,556 words): excluded 18556/18556, consistent 0, cap 0, total 211,791, max 316
+  --newer-shorter (owners newer than v have lag < Lv; v = newest member of maximal lag; scratchpad-only flag, not in the saved source):
+    lag 11: total 271 / max 84; 15: 6,545 / 2,268 -- no reduction of the unconstrained trees (11: 303/59, 15: 10,026/2,147)
+  Claim N at the root: lag 19: 1,594/1,636 and lag 23: 17,880/18,556 words are excluded in every own-branch at the root
+    (>= 2 S's of v have no older consistent owner); the rest need <= 21 more nodes.
+  files: matching_closure_variant_lagmax19_oldest.txt, matching_closure_variant_lagmax23_oldest.txt.gz
+
+--owners=K (owners of lag up to K > Lv; owner windows sticking out on both sides of the known interval are checked by a
+linear scan of their (lag, offset) group).  The new source reproduces the earlier variant outputs byte-for-byte at lag 15
+(--upfree/--level/--newest/--oldest).  Claim N WITHOUT the maximal-lag assumption on v (v newest, older members of any lag <= K):
+  cross-check with a subagent's Python (lsearch.py --newest --owners=19): v lag 7: total 5,934 / max 4,855; 11: 817 / 157; 15: 1,305 / 20 (identical)
+  owners <= 23: v lag 7: excluded 2/2 (total 99,714, max 84,549); 11: 17/17 (13,104 / 2,339); 15: 155/155 (4,984 / 194); 19: 1636/1636 (16,316 / 24)
+  owners <= 27: v lag 7: excluded 2/2 (1,656,924 / 1,436,420); 11: 17/17 (209,418 / 37,353)
+  (a subagent's independent C++ nsearch.cpp, case a = 0 only, gives 1,436,418 for v = w1 with owners <= 27)
+  files: claimN_newest_v{7,11,15,19}_owners23.txt, claimN_newest_v{7,11}_owners27.txt
+  For a short newest v the tree grows about x17 per owner-lag step: Claim N is not local in the owner lag.

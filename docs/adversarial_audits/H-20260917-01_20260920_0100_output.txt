@@ -1,0 +1,38 @@
+DONOR d1 word=AAASSSASASA oldest=10 offset11=A compatible_p_lt12=[10, 11]
+DONOR d2 word=ASAAASSSASA oldest=10 offset11=A compatible_p_lt12=[8, 10, 11]
+DONOR d3 word=ASASAAASSSA oldest=10 offset11=A compatible_p_lt12=[10, 11]
+DONOR d4 word=ASSAAAASSAS oldest=11 offset11=S compatible_p_lt12=[9, 11]
+DONOR d5 word=ASSAAASAASS oldest=11 offset11=S compatible_p_lt12=[8, 11]
+DONOR d6 word=SAAASAASSSA oldest=10 offset11=A compatible_p_lt12=[9, 11]
+DONOR d7 word=SAAASSAAASS oldest=11 offset11=S compatible_p_lt12=[5, 10, 11]
+CONTROL ss3-control p=12 word=AAAASAAASSSS U=(2, 3, 5, 7) lags={2: 3, 3: 11, 5: 7, 7: 3} Hall=True
+ u0=3 donor=AAASSSSAAAS ss=3 oldest=11 true_phase=4 offset11_phase=4 offset11_bit=S
+ B=(2, 5, 7) tight=True N=(4, 10, 11) true_covered=True offset11_covered=True
+CONTROL false-offset11-control p=15 word=AAAASAAASASASSS U=(2, 3, 5, 7) lags={2: 3, 3: 11, 5: 7, 7: 3} Hall=True
+ u0=3 donor=AAASSSASASA ss=2 oldest=10 true_phase=8 offset11_phase=7 offset11_bit=A
+ B=(2, 5, 7) tight=True N=(4, 13, 14) true_covered=False offset11_covered=False
+MODEL E240-text p=18 word=AAAASSAAAASAAASASS
+ signSum=6 U=(2, 7, 8, 11, 13) lags=2:3,7:11,8:3,11:7,13:3 D=(4, 5, 10, 14, 16, 17) Hall=True
+ donors=[(7, 'ASSAAAASSAS', 11, 14)]
+ Q_targets=10 Q_violations=[] Q_nonempty_examples=[(7, (2,), 14), (7, (8,), 14), (7, (13,), 14)]
+ W_targets=2 W_violations=[] W_examples=[((8, 11, 13), 11, 'A'), ((2, 8, 11, 13), 11, 'A')]
+MODEL p15-card p=15 word=AAAASAAASASASSS
+ signSum=3 U=(2, 3, 5, 7) lags=2:3,3:11,5:7,7:3 D=(4, 8, 10, 12, 13, 14) Hall=True
+ donors=[(3, 'AAASSSASASA', 10, 8)]
+ Q_targets=5 Q_violations=[] Q_nonempty_examples=[(3, (2,), 8), (3, (7,), 8), (3, (2, 7), 8)]
+ W_targets=1 W_violations=[] W_examples=[((2, 5, 7), 5, 'A')]
+SMALL 1 words=2 positive=1 hall=1 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 2 words=4 positive=1 hall=1 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 3 words=8 positive=4 hall=4 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 4 words=16 positive=5 hall=5 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 5 words=32 positive=16 hall=16 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 6 words=64 positive=22 hall=22 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 7 words=128 positive=64 hall=64 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 8 words=256 positive=93 hall=93 qtargets=16 qviol=0 wtargets=0 wviol=0
+SMALL 9 words=512 positive=256 hall=256 qtargets=0 qviol=0 wtargets=0 wviol=0
+SMALL 10 words=1024 positive=386 hall=386 qtargets=0 qviol=0 wtargets=10 wviol=0
+SMALL 11 words=2048 positive=1024 hall=1024 qtargets=88 qviol=0 wtargets=22 wviol=0
+SMALL_TOTAL words=4094 positive=1872 hall=1872 qtargets=104 qviol=0 wtargets=32 wviol=0
+FIRST_SMALL_NONEMPTY_Q (8, 'SSAASAAA', (3, 7), {3: 11, 7: 3}, 3, (7,), ('ASSAAASAASS', 11, 0))
+FIRST_SMALL_W (10, 'SSAAAASAAA', (4, 7, 9), {4: 3, 7: 7, 9: 3}, (4, 7, 9), 7, True)
+FIRST_W_WITHOUT_TIGHT (8, 'SSAAAASA', (4, 7), {4: 3, 7: 7}, 7, 3)

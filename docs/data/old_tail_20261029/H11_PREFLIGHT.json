@@ -1,0 +1,20 @@
+{
+  "worker_sha256": "62d0794b67b35bf93b631bfc2d45f039e02eb8831a94e3ab74373a51f558aad0",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "b316fe61975060275f10f7e7845482e322d4ae1dd6915d5daae5f46ffbac6ced",
+  "cpu_cap": 1,
+  "wall_cap": 5,
+  "type": "fixed validation only",
+  "cases": "two predeclared literal cases from paper nonvacuity audit",
+  "argv": [
+    "python3",
+    "docs/data/old_tail_20261029/run_single.py",
+    "--tag",
+    "H11-domains",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/old_tail_20261029/domain_controls.py"
+  ]
+}

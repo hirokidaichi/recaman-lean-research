@@ -1,12 +1,17 @@
-.PHONY: all check test test-probes probes manifest check-manifest brief clean help
+.PHONY: all check test test-tools test-probes probes manifest check-manifest brief clean help
 
 all: check
 
 brief:
 	@python3 scripts/dev_tool.py brief
 
-test: check test-probes check-manifest
-	@echo "All Lean, empirical, and viewer checks passed."
+test: test-tools check test-probes check-manifest
+	@echo "All research-tool, Lean, empirical, and viewer checks passed."
+
+test-tools:
+	@python3 scripts/test_dev_tool.py
+	@python3 scripts/test_research_session.py
+	@bash scripts/test_harness_gates.sh
 
 check:
 	@./scripts/check.sh
@@ -31,7 +36,8 @@ help:
 	@echo "Recamán Lean Research - make targets:"
 	@echo "  make brief          - Show ultra-compact active research frontier summary"
 	@echo "  make check          - Run Lean builds, architecture check, and axiom audit"
-	@echo "  make test           - Run all checks: Lean audit, empirical tests, manifest check"
+	@echo "  make test           - Run all checks: research tools, Lean audit, empirical tests, viewer"
+	@echo "  make test-tools     - Run brief, research-time accounting and isolated harness tests"
 	@echo "  make test-probes    - Build and run empirical regression tests (experiments/)"
 	@echo "  make probes         - Build all core empirical probe binaries (experiments/bin/)"
 	@echo "  make manifest       - Regenerate viewer/manifest.json"

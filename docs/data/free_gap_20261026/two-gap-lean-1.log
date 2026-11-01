@@ -1,0 +1,49 @@
+Recaman/BlockOldRay.lean:274:26: warning: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockOldRay.lean:492:59: error: unexpected token 'set_option'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_cbv_simproc', 'builtin_cbv_simproc_decl', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'cbv_simproc', 'cbv_simproc_decl', 'class', 'coinductive', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'register_try?_tactic', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'
+Recaman/BlockOldRay.lean:557:39: error(lean.unknownIdentifier): Unknown identifier `cntF_replicate_A`
+Recaman/BlockOldRay.lean:556:98: error: unsolved goals
+f : Nat → Bool
+n h M m L : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hsum : 3 ≤ h + m
+hp1 : seg f 0 (n + h) = w ++ List.replicate h false
+hr1 : cN (EndN f 0) (n + h) M = rayCount (w ++ List.replicate h false) M
+hb1 : rayCount (w ++ List.replicate h false) M ≤ 2
+hp2 : seg f 0 (n + h + M + m) = w ++ (List.replicate h false ++ List.replicate M true ++ List.replicate m false)
+hr2 :
+  cN (EndN f 0) (n + h + M + m) L =
+    rayCount (w ++ (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) L
+⊢ cntF (List.replicate M true) = 0
+Recaman/BlockOldRay.lean:566:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  g ≥ 6
+  g - i ≥ 0
+  e ≥ 0
+  -2 ≤ e - g + i ≤ 0
+  0 ≤ d ≤ 2
+  c ≥ 3
+  b ≥ 0
+  b - d ≤ 1
+  a ≥ 0
+  a - c ≤ 0
+where
+ a := ↑m
+ b := ↑(rayCount (w ++ (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) L)
+ c := ↑(cntF (List.replicate h false ++ List.replicate M true ++ List.replicate m false))
+ d := ↑(rayCount (List.replicate h false ++ List.replicate M true ++ List.replicate m false) L)
+ e := ↑(cN (EndN f 0) (n + (h + M)) m)
+ g := ↑(cN (EndN f 0) n (h + M + m + L))
+ i := ↑(cN (EndN f 0) (n + (h + M + m)) L)

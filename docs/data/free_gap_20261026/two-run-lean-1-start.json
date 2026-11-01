@@ -1,0 +1,16 @@
+{
+  "tag": "two-run-lean-1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/TwoRunSupply.lean"
+  ],
+  "started_jst": "2026-10-26T06:28:43.320686+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/TwoRunSupply.lean": "b2e01698867443ce7034063e36d16167b767c4d4dbbcd0d6220c9b60d32ef87b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

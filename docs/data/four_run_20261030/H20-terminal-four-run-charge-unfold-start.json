@@ -1,0 +1,18 @@
+{
+  "tag": "H20-terminal-four-run-charge-unfold",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TerminalFourthCharge.lean"
+  ],
+  "started_jst": "2026-10-30T07:24:55.604588+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TerminalFourthCharge.lean": "368872f78018f1bb4d507b6a5d79527bdedc1bad3b2213491c5d47cc75fe9822"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

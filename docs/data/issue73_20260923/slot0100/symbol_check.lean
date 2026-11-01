@@ -1,0 +1,6 @@
+import Recaman.ShortTightDonorAvoidance
+
+#check Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor
+#check Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample
+#check Recaman.TrueOldestGateT6.trueOldestPhase
+#print axioms Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample

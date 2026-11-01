@@ -1,0 +1,13 @@
+Recaman/MassThreeOldPair.lean:52:29: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c - 2*d ≤ 1
+where
+ c := S
+ d := S / 2
+Recaman/MassThreeOldPair.lean:50:37: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaPairs, List.mem_cons, Prod.mk.injEq] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

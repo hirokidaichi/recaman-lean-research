@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-10-28T06:42:48.266050+09:00",
+  "tag": "initial-S-local-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/source_family_20261028/run_single.py",
+    "--worker",
+    "8",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/source_family_20261028/initial_S_local_holdout.py"
+  ],
+  "worker_cpu_cap_seconds": 8,
+  "wall_cap_seconds": 15.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "0b6522f27e818da7a2c63f4b0b7f722d2ca8e5396e82ebc2cc2130747b41aa4d",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 55556,
+  "process_group": 55556
+}

@@ -1161,3 +1161,13 @@ Issue #73 の閉鎖を受け、E-065（有限シード供給定理、E-120）と
 | 床上げの無限反復 | 1ラウンドごとに成功するが漸近的に定理へ近づかない | 一般機構の検証と割り切り上限を設ける |
 | 予想が偽である可能性 | 矛盾導出は原理的に不可能になる | 構造定理・床として残る形で定理を設計する |
 | 定理型の肥大化 | 座標・履歴・初出証明が同時に必要 | 安定後に結果構造体へリファクタリングする |
+
+## 2026-10-27 C1供給edgeの更新
+
+二A-run free-gapから、三A-runの全長反例残余（E416 PROVED-LEAN）、実有限context（E423）、target源が第二A-runより前（E429）へ進んだ。E431は同一source再使用のexact式。残るold/初期S/第一A/第二S源の可用性を実freeへ接着する必要があり、一般run数/rank/C1は未証明。次のbounded unitはH-20261028-01/E432の特定三run族free下限の全長Lean化。r4同表方式は新制約でも削減0/0でSTOPPEDのまま。
+
+## 2026-10-28 current decision
+
+第一A/中央S target源の三run free-gapはE-434/E-435でPROVED-LEAN、残りold/初期S。oldのtarget suffixはE-440でC5/長12、E-441で最後min(T,j)個Aのold供給を排除した。次の15分gateは[H-20261029-01](HYPOTHESIS_CARD_2026-10-29_OLD_TARGET_TAIL.md)のlocal tail/source-conditioned actual free。完了した源分類やE432族を再実行しない。
+
+初期S四対不在は未証明。H06 certificate/旧r4表はSTOPPED、独立した数学的pruning/小完全証明書と測定改善なしに資源追加で再開しない。C1/rank/r4/H/SLは未解決。正本はCURRENT_FRONTIERと10/28 DAILY。

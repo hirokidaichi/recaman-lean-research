@@ -1,0 +1,9 @@
+# H04 semantic pass
+
+Exact target source in the middleS run q1..m, original zero/positive and same actual f/e. hM/hL>=1, internal s>=1; real nonempty three-run conditions explicit. Target gap j and target endpoint A retained. No input A20 or finite source table. Under contradiction, E416/r3 supplies j>=4 only; a helper's name free_bounded refers to this gap lower bound, not any finite length upper bound. Source word is derived by shifted actual six-run signs, not assumed via a defined hypothesis.
+
+The same literal source gives K=q+s>R and K²-R²=2Ls. K=R+1 forces odd2R+1=even2Ls, excluded. Thus laterA>=2R+2. Third local source count<=4 is a private counting component that retains E415 fourclock boundary; no unconditional guess<=3 is repaired or claimed. Same old prefix<=1 at S>=3 gives actualthirdsup<=5, second<=3 or low-S actualpositive case, first actualA free. Original count additivity then proves actualfree>=2R-5>=R. No old tag/disjointness/source existence/free conclusion supplied as an input. Target excluded from half-open free interval; source can lie at left boundaryq=m, q1 accepted. Empty initialh is excluded if positive requires it, not silently assumed.
+
+Int originalp with padded w++A^a and real P2(past e originalTarget len) is connected using past_bridge; no Endable rebase. The combination location t<n+h is a corollary of E429 + E434 + this result, not an additional independent discovery. It leaves oldprefix and initialS starts.
+
+Compilation: monolithic firstA+middleS proof exceeded512MB; accepted E434 frozen exactly and independent H04 factored into a module importing its checked object. Same512/-j1/10CPU/20wall, no resource increment, no stopped table resumed. One parity elaboration correction split an explicit polynomial identity; mathematical statement unchanged. CPU discovery0 in H04.

@@ -1,0 +1,20 @@
+{
+  "tag": "H12-build-target-profile",
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.MomentTargetProfile"
+  ],
+  "started_jst": "2026-10-31T06:54:57.430160+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "33187ec0fa3d44b33932263ac76945572a6d8a02cef9f35adb0465e568566feb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.45761479204520583,
+  "cpu_seconds": 0.45679699999999995,
+  "finished_jst": "2026-10-31T06:54:57.887723+09:00"
+}

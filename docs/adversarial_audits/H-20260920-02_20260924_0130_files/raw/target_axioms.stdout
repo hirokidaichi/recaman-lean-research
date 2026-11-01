@@ -1,0 +1,75 @@
+Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) (hBp : ∀ (b : Nat), b ∈ B → b < p)
+  (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hlag : ∀ (b : Nat), b ∈ B → lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (lag b)))
+  (hmin :
+    ∀ (b : Nat),
+      b ∈ B →
+        ∀ (d : Nat),
+          d < lag b → 0 < d → ¬Recaman.LeadingRunSupply.P2 (List.take d (Recaman.LeadingRunSupply.past e (↑b) (lag b))))
+  (u0 : Int) (hPdon : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e u0 11))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e u0 11) = 2) :
+  ¬Recaman.SharpPeriodicSupply.phase p
+        (u0 - ↑(Recaman.LagSevenDonorCoverage.oldestOffset (Recaman.LeadingRunSupply.past e u0 11))) ∈
+      Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+'Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (m lag : Nat → Nat) (hBn : B.Nodup)
+  (hBp : ∀ (b : Nat), b ∈ B → b < p) (hBA : ∀ (b : Nat), b ∈ B → e ↑b = true) (hle : ∀ (b : Nat), b ∈ B → m b ≤ lag b)
+  (hbound : ∀ (b : Nat), b ∈ B → lag b ≤ 11)
+  (hP : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (m b)))
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) :
+  Recaman.TwoSSTightDisjoint.neighborhood e p B m = Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+'Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample :
+  (∀ (t : Int),
+      Recaman.ShortTightDonorAvoidance.donorLength15Stream (t + 16) =
+        Recaman.ShortTightDonorAvoidance.donorLength15Stream t) ∧
+    Recaman.ShortPeriodicSupply.signSum Recaman.ShortTightDonorAvoidance.donorLength15Stream 0 16 = 2 ∧
+      Recaman.ShortTightDonorAvoidance.donorLength15Stream 15 = true ∧
+        Recaman.LeadingRunSupply.P2
+            (Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 15 15) ∧
+          Recaman.OneSSMultiplicity.ssCount
+                (Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 15 15) =
+              2 ∧
+            Recaman.LeadingRunSupply.P2
+                (Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 15 3) ∧
+              Recaman.ShortTightDonorAvoidance.donorLength15Stream 3 = true ∧
+                Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 3 3 =
+                    Recaman.OwnerFamilyLagEleven.aas ∧
+                  (Recaman.TwoSSTightDisjoint.neighborhood Recaman.ShortTightDonorAvoidance.donorLength15Stream 16 [3]
+                        fun x => 3) =
+                      [0] ∧
+                    Recaman.SharpPeriodicSupply.phase 16
+                          (15 -
+                            ↑(Recaman.LagSevenDonorCoverage.oldestOffset
+                                (Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 15
+                                  15))) =
+                        0 ∧
+                      Recaman.TwoSSTightDisjoint.deletedNeighborhood
+                          Recaman.ShortTightDonorAvoidance.donorLength15Stream 16 [3] (fun x => 3)
+                          (Recaman.SharpPeriodicSupply.phase 16
+                            (15 -
+                              ↑(Recaman.LagSevenDonorCoverage.oldestOffset
+                                  (Recaman.LeadingRunSupply.past Recaman.ShortTightDonorAvoidance.donorLength15Stream 15
+                                    15)))) =
+                        []
+'Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample' depends on axioms: [propext, Quot.sound]
+Recaman.SS2OldestPattern.moment_ending_A_budget (w : List Bool) (q : Nat)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true]) ≤ q) :
+  ↑q + 1 ≤ Recaman.LeadingRunSupply.moment (w ++ [true]) + ↑q * ↑(w ++ [true]).length
+'Recaman.SS2OldestPattern.moment_ending_A_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Recaman.SS2OldestPattern.moment_ending_AA_ss2 (w : List Bool)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true, true]) ≤ 2) :
+  5 ≤ Recaman.LeadingRunSupply.moment (w ++ [true, true]) + ↑(w ++ [true, true]).length
+'Recaman.SS2OldestPattern.moment_ending_AA_ss2' depends on axioms: [propext, Quot.sound]
+Recaman.SS2OldestPattern.ss2_intervening_prefix (w : List Bool) (hm : Recaman.LeadingRunSupply.mass (w ++ [true]) = 0)
+  (hM : Recaman.LeadingRunSupply.moment (w ++ [true]) + ↑(w ++ [true]).length ≤ 0)
+  (hss : Recaman.OneSSMultiplicity.ssCount (w ++ [true]) ≤ 2) :
+  ∃ u v, w ++ [true] = u ++ [false] ++ v ∧ Recaman.LeadingRunSupply.P2 (u ++ [false]) ∧ v ≠ []
+'Recaman.SS2OldestPattern.ss2_intervening_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]

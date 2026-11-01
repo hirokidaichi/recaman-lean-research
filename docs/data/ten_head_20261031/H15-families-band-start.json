@@ -1,0 +1,18 @@
+{
+  "tag": "H15-families-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FourthSourceFamilies.lean"
+  ],
+  "started_jst": "2026-10-31T07:11:26.277611+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthSourceFamilies.lean": "a75dd1f777856da3bcb3706cc5c22df1f1c979e0bba201ffc75ea9deb75ea529"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

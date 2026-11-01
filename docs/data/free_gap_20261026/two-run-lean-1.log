@@ -1,0 +1,67 @@
+Recaman/TwoRunSupply.lean:20:62: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  d - e ≥ 1
+  c ≥ 0
+  b ≥ 0
+  b - c ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑(u ++ v).length
+ b := ↑t
+ c := ↑u.length
+ d := ↑(List.length ?m.106)
+ e := ↑?m.107
+Recaman/TwoRunSupply.lean:20:6: error: Type mismatch: After simplification, term
+  hp
+ has type
+  P (List.drop t u ++ List.drop (t - u.length) v)
+but is expected to have type
+  P (List.drop (t - u.length) v)
+Recaman/TwoRunSupply.lean:25:62: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑v.length
+ b := ↑t
+ c := ↑(List.length ?m.193)
+ d := ↑?m.194
+Recaman/TwoRunSupply.lean:25:6: error: Type mismatch: After simplification, term
+  hp
+ has type
+  P (List.drop t v)
+but is expected to have type
+  P (List.drop (u.length + t) u ++ List.drop t v)
+Recaman/TwoRunSupply.lean:55:4: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq Int (2 * areaW (List.replicate a true) - mass (List.replicate a true) * (mass (List.replicate a true) + 1))
+    (2 * 0 - 0 * (0 + 1))
+but is expected to have type
+  @Eq Int (2 * areaW (List.replicate a true) - mass (List.replicate a true) * (mass (List.replicate a true) + 1)) 0
+Recaman/TwoRunSupply.lean:83:26: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∃ t, t < (?u ++ ?v).length ∧ ?P (List.drop t (?u ++ ?v))
+in the target expression
+  (∃ t,
+      t < (List.replicate h false ++ List.replicate M true ++ List.replicate m false).length ∧
+        mass (List.drop t (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) + ↑r = ↑j + 1 ∧
+          runKey (List.drop t (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) =
+            -2 * (↑j + 1) ^ 2) ↔
+    (∃ q, 1 ≤ q ∧ q ≤ h ∧ ↑M + ↑r = ↑j + 1 + ↑q + ↑m ∧ (↑j + 1) ^ 2 = (↑q + ↑m) ^ 2 - 2 * ↑m * ↑M) ∨
+      (∃ a, 1 ≤ a ∧ a ≤ M ∧ ↑r + ↑a = ↑j + 1 + ↑m ∧ (↑j + 1) ^ 2 = ↑m * (↑m - 2 * ↑a)) ∨ r = 2 * (j + 1) ∧ j + 1 ≤ m
+
+h M m r j : Nat
+⊢ (∃ t,
+      t < (List.replicate h false ++ List.replicate M true ++ List.replicate m false).length ∧
+        mass (List.drop t (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) + ↑r = ↑j + 1 ∧
+          runKey (List.drop t (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) =
+            -2 * (↑j + 1) ^ 2) ↔
+    (∃ q, 1 ≤ q ∧ q ≤ h ∧ ↑M + ↑r = ↑j + 1 + ↑q + ↑m ∧ (↑j + 1) ^ 2 = (↑q + ↑m) ^ 2 - 2 * ↑m * ↑M) ∨
+      (∃ a, 1 ≤ a ∧ a ≤ M ∧ ↑r + ↑a = ↑j + 1 + ↑m ∧ (↑j + 1) ^ 2 = ↑m * (↑m - 2 * ↑a)) ∨ r = 2 * (j + 1) ∧ j + 1 ≤ m

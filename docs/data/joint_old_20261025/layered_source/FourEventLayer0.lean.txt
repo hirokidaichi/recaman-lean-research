@@ -1,0 +1,40 @@
+/- Same numeric input SHA256 716ea518a9592ae1ef2dbc8930d6f51fb8e2be1503c5ff0f641c5aff4977ba6d; A layer 0. -/
+import Recaman.FourEventLayer1
+set_option maxRecDepth 100000
+set_option maxHeartbeats 3000000
+set_option Elab.async false
+namespace Recaman.FourEventData
+open Recaman.FourNonsuppliedData Recaman.FourEventProof
+open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+def s_0 : State := ⟨[],0,0,0⟩
+theorem initial_checked : Checked ⟨[],0,0,0⟩ := by
+  apply checked_of_children s_0 [s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_8,s_9,s_10,s_11,s_12,s_13,s_14,s_15,s_16,s_17,s_18,s_19]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_0 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1
+    · exact c_2
+    · exact c_3
+    · exact c_4
+    · exact c_5
+    · exact c_6
+    · exact c_7
+    · exact c_8
+    · exact c_9
+    · exact c_10
+    · exact c_11
+    · exact c_12
+    · exact c_13
+    · exact c_14
+    · exact c_15
+    · exact c_16
+    · exact c_17
+    · exact c_18
+    · exact c_19
+
+end Recaman.FourEventData

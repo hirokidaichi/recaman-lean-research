@@ -1,0 +1,242 @@
+import Recaman.RunSupplyKeys
+
+namespace Recaman.TwoRunSupply
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier Recaman.RunSupplyKeys
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+theorem exists_drop_append (u v : List Bool) (P : List Bool → Prop) :
+    (∃ t, t<(u++v).length ∧ P ((u++v).drop t)) ↔
+      (∃ t, t<u.length ∧ P (u.drop t++v)) ∨ (∃ t, t<v.length ∧ P (v.drop t)) := by
+  constructor
+  · rintro ⟨t,ht,hp⟩
+    by_cases h : t<u.length
+    · left
+      refine ⟨t,h,?_⟩
+      simpa only [List.drop_append,show t-u.length=0 by omega,List.drop_zero] using hp
+    · right
+      refine ⟨t-u.length,by simp only [List.length_append] at ht; omega,?_⟩
+      have hn : u.drop t=[] := List.drop_eq_nil_of_le (by omega)
+      simpa only [List.drop_append,hn,List.nil_append] using hp
+  · rintro (⟨t,ht,hp⟩|⟨t,ht,hp⟩)
+    · refine ⟨t,by simp only [List.length_append]; omega,?_⟩
+      simpa only [List.drop_append,show t-u.length=0 by omega,List.drop_zero] using hp
+    · refine ⟨u.length+t,by simp only [List.length_append]; omega,?_⟩
+      have hn : u.drop (u.length+t)=[] := List.drop_eq_nil_of_le (by omega)
+      simpa only [List.drop_append,hn,List.nil_append,
+        show u.length+t-u.length=t by omega] using hp
+
+private theorem exists_drop_replicate (n : Nat) (b : Bool) (P : List Bool → Prop) :
+    (∃ t, t<(List.replicate n b).length ∧ P ((List.replicate n b).drop t)) ↔
+      ∃ k, 1≤k ∧ k≤n ∧ P (List.replicate k b) := by
+  simp only [List.length_replicate,List.drop_replicate]
+  constructor
+  · rintro ⟨t,ht,hp⟩
+    exact ⟨n-t,by omega,by omega,hp⟩
+  · rintro ⟨k,hk,hkn,hp⟩
+    exact ⟨n-k,by omega,by simpa only [show n-(n-k)=k by omega] using hp⟩
+
+theorem runKey_append_S (w : List Bool) (m : Nat) :
+    runKey (w++List.replicate m false)=runKey w+4*(m : Int)*mass w-2*(m : Int)^2 := by
+  have ha := twice_area_replicate_S m
+  simp only [runKey,areaW_append,mass_append,mass_rep_false,List.length_replicate]
+  grind
+
+theorem runKey_S (h : Nat) : runKey (List.replicate h false)=-2*(h : Int)^2 := by
+  have ha := twice_area_replicate_S h
+  simp only [runKey,mass_rep_false]
+  grind
+
+theorem runKey_A_S (a m : Nat) :
+    runKey (List.replicate a true++List.replicate m false)=
+      4*(m : Int)*(a : Int)-2*(m : Int)^2 := by
+  rw [runKey_append_S,mass_replicate_A]
+  have hz : runKey (List.replicate a true)=0 := by
+    have h := runKey_append_A [] a
+    simpa [List.nil_append,runKey,areaW] using h
+  rw [hz]
+  omega
+
+theorem runKey_S_A_S (q M m : Nat) :
+    runKey (List.replicate q false++List.replicate M true++List.replicate m false)=
+      4*(m : Int)*(M : Int)-2*((q : Int)+(m : Int))^2 := by
+  rw [runKey_append_S,runKey_append_A,runKey_S,mass_append,mass_rep_false,mass_replicate_A]
+  grind
+
+private theorem positive_square_eq (a b : Int) (ha : 0<a) (hb : 0<b)
+    (h : a^2=b^2) : a=b := by
+  have hz : (a-b)*(a+b)=0 := by grind
+  rcases Int.mul_eq_zero.mp hz with h0|h0 <;> omega
+
+/-- Every suffix begins in one of the three runs preceding the final A run.
+The same suffix supplies both its mass and its negative-square key. -/
+theorem localSupply_two_run_iff (h M m r j : Nat) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate h false++List.replicate M true++List.replicate m false++
+        List.replicate r true++List.replicate j false)=true ↔
+    (∃ q, 1≤q ∧ q≤h ∧
+      (M : Int)+(r : Int)=(j : Int)+1+(q : Int)+(m : Int) ∧
+      ((j : Int)+1)^2=((q : Int)+(m : Int))^2-2*(m : Int)*(M : Int)) ∨
+    (∃ a, 1≤a ∧ a≤M ∧
+      (r : Int)+(a : Int)=(j : Int)+1+(m : Int) ∧
+      ((j : Int)+1)^2=(m : Int)*((m : Int)-2*(a : Int))) ∨
+    (r=2*(j+1) ∧ j+1≤m) := by
+  rw [localSupply_A_S_iff]
+  let P := fun v : List Bool => mass v+(r : Int)=(j : Int)+1 ∧
+    runKey v=-2*((j : Int)+1)^2
+  change (∃ t, t<(List.replicate h false++List.replicate M true++List.replicate m false).length ∧
+    P ((List.replicate h false++List.replicate M true++List.replicate m false).drop t)) ↔ _
+  rw [exists_drop_append _ _ P]
+  rw [exists_drop_append _ _ (fun v => P (v++List.replicate m false))]
+  rw [exists_drop_replicate _ _ (fun v => P (v++List.replicate M true++List.replicate m false))]
+  rw [exists_drop_replicate _ _ (fun v => P (v++List.replicate m false))]
+  rw [exists_drop_replicate _ _ P,or_assoc]
+  dsimp only [P]
+  apply or_congr
+  · apply exists_congr
+    intro q
+    simp only [mass_append,mass_rep_false,mass_replicate_A,runKey_S_A_S]
+    constructor <;> rintro ⟨hq,hqh,hmass,hkey⟩
+    · refine ⟨hq,hqh,by omega,?_⟩
+      grind
+    · refine ⟨hq,hqh,by omega,?_⟩
+      grind
+  · apply or_congr
+    · apply exists_congr
+      intro a
+      simp only [mass_append,mass_replicate_A,mass_rep_false,runKey_A_S]
+      constructor <;> rintro ⟨ha,haM,hmass,hkey⟩
+      · refine ⟨ha,haM,by omega,?_⟩
+        have hid : (m : Int)*((m : Int)-2*(a : Int))=(m : Int)^2-2*(m : Int)*(a : Int) := by grind
+        rw [hid]
+        grind
+      · refine ⟨ha,haM,by omega,?_⟩
+        have hid : (m : Int)*((m : Int)-2*(a : Int))=(m : Int)^2-2*(m : Int)*(a : Int) := by grind
+        rw [hid] at hkey
+        grind
+    · simp only [mass_rep_false,runKey_S]
+      constructor
+      · rintro ⟨s,hs,hsm,hmass,hkey⟩
+        have heq : (s : Int)=(j : Int)+1 := positive_square_eq _ _ (by omega) (by omega) (by omega)
+        constructor <;> omega
+      · rintro ⟨hr,hjm⟩
+        refine ⟨j+1,by omega,hjm,by omega,?_⟩
+        simp only [Int.natCast_add,Int.natCast_one]
+
+private theorem first_S_run_bound (q M m r j : Nat) (hM : 1≤M) (hm : 1≤m)
+    (hbal : (M : Int)+(r : Int)=(j : Int)+1+(q : Int)+(m : Int))
+    (hkey : ((j : Int)+1)^2=((q : Int)+(m : Int))^2-2*(m : Int)*(M : Int)) :
+    r≤M*(m-1) := by
+  let E : Int := (M : Int)+(r : Int)
+  let D : Int := (q : Int)+(m : Int)-((j : Int)+1)
+  have hE : 0<E := by dsimp [E]; omega
+  have hN : 0<2*(m : Int)*(M : Int) :=
+    Int.mul_pos (by omega) (by omega)
+  have hprod : E*D=2*(m : Int)*(M : Int) := by dsimp [E,D]; grind
+  have hD : 1≤D := by
+    by_cases hd : 0<D
+    · omega
+    · have hz : E*D≤0 := Int.mul_nonpos_of_nonneg_of_nonpos (by omega) (by omega)
+      rw [hprod] at hz
+      omega
+  have hD2 : 2≤D := by
+    by_cases hd : D=1
+    · have hprod1 := hprod
+      rw [hd,Int.mul_one] at hprod1
+      have hEeq : E=2*(j : Int)+3 := by
+        dsimp [D] at hd
+        dsimp [E]
+        omega
+      have hassoc : 2*(m : Int)*(M : Int)=2*((m : Int)*(M : Int)) := by grind
+      rw [hEeq,hassoc] at hprod1
+      omega
+    · omega
+  have hp := Int.mul_nonneg (show 0≤E by omega) (show 0≤D-2 by omega)
+  have hid : E*(D-2)=2*((m : Int)*(M : Int)-E) := by grind
+  rw [hid] at hp
+  have hc : ((M*(m-1) : Nat) : Int)=(m : Int)*(M : Int)-(M : Int) := by
+    rw [Int.natCast_mul,show ((m-1 : Nat) : Int)=(m : Int)-1 by omega]
+    grind
+  dsimp [E] at hp
+  omega
+
+private theorem A_run_bound (a m r j : Nat) (ha : 1≤a)
+    (hbal : (r : Int)+(a : Int)=(j : Int)+1+(m : Int))
+    (hkey : ((j : Int)+1)^2=(m : Int)*((m : Int)-2*(a : Int))) : r≤2*m := by
+  have hk : runKey (List.replicate a true++List.replicate m false)=-2*((j : Int)+1)^2 := by
+    rw [runKey_A_S]
+    grind
+  have hb := positive_square_key_bound _ ((j : Int)+1) (by omega) hk
+  have hc : cntF (List.replicate a true++List.replicate m false)=m := by
+    rw [cntF_append,cntF_replicate_S]
+    have hz : cntF (List.replicate a true)=0 := by
+      have hh := cntF_int (List.replicate a true)
+      rw [List.length_replicate,ones_replicate_A] at hh
+      omega
+    omega
+  rw [hc] at hb
+  omega
+
+/-- The second A-run cannot exceed this bound, independently of the first
+S-run's length h. Both nonempty middle runs are essential. -/
+theorem localSupply_second_run_bound (h M m r j : Nat) (hM : 1≤M) (hm : 1≤m)
+    (hs : Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate h false++List.replicate M true++List.replicate m false++
+        List.replicate r true++List.replicate j false)=true) :
+    r≤max (2*m) (M*(m-1)) := by
+  rcases (localSupply_two_run_iff h M m r j).mp hs with ⟨q,hq,hqh,hbal,hkey⟩|⟨a,ha,haM,hbal,hkey⟩|⟨hr,hjm⟩
+  · have hb := first_S_run_bound q M m r j hM hm hbal hkey
+    exact Nat.le_trans hb (Nat.le_max_right _ _)
+  · have hb := A_run_bound a m r j ha hbal hkey
+    exact Nat.le_trans hb (Nat.le_max_left _ _)
+  · have hb : r≤2*m := by omega
+    exact Nat.le_trans hb (Nat.le_max_left _ _)
+
+theorem crossing_run_sharp (h m : Nat) (hm : 2≤m) (hh : m+1≤h) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate h false++List.replicate 4 true++List.replicate m false++
+        List.replicate (4*(m-1)) true++List.replicate (2*m-2) false)=true ∧
+      max (2*m) (4*(m-1))=4*(m-1) := by
+  constructor
+  · apply (localSupply_two_run_iff h 4 m (4*(m-1)) (2*m-2)).mpr
+    left
+    refine ⟨m+1,by omega,hh,by omega,?_⟩
+    have hc : ((2*m-2 : Nat) : Int)=2*(m : Int)-2 := by omega
+    rw [hc,Int.natCast_add,Int.natCast_one]
+    grind
+  · omega
+
+/-- Shape is the entire history from0, not a tail with hidden old starts. -/
+theorem endable_two_run_bound (f : Nat → Bool) (h M m r j : Nat)
+    (hM : 1≤M) (hm : 1≤m)
+    (hw : seg f 0 (h+M+m+r+j)=
+      List.replicate h false++List.replicate M true++List.replicate m false++
+        List.replicate r true++List.replicate j false)
+    (he : EndN f 0 (h+M+m+r+j)) : r≤max (2*m) (M*(m-1)) := by
+  have hl := (localSupply_seg_iff f 0 (h+M+m+r+j) (Nat.zero_le _) he.1).mpr he
+  simp only [Nat.sub_zero,hw] at hl
+  exact localSupply_second_run_bound h M m r j hM hm hl
+
+theorem endable_two_run_bound_int (e : Int → Bool) (p : Int) (h M m r j : Nat)
+    (hM : 1≤M) (hm : 1≤m)
+    (hw : segment e p (h+M+m+r+j)=
+      List.replicate h false++List.replicate M true++List.replicate m false++
+        List.replicate r true++List.replicate j false)
+    (he : Endable e p (p+((h+M+m+r+j : Nat) : Int))) :
+    r≤max (2*m) (M*(m-1)) := by
+  have he' := (endable_iff e p p (p+((h+M+m+r+j : Nat) : Int)) 0
+    (h+M+m+r+j) (by simp) rfl).mp he
+  rw [segment_seg e p p 0 (by simp)] at hw
+  exact endable_two_run_bound (fun i => e (p+(i : Int))) h M m r j hM hm hw he'
+
+/-- The bound2m alone fails for an unbounded family, not for the parent C1. -/
+theorem first_run_cannot_be_ignored (m : Nat) (hm : 3≤m) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate (m+1) false++List.replicate 4 true++List.replicate m false++
+        List.replicate (4*(m-1)) true++List.replicate (2*m-2) false)=true ∧
+      2*m<4*(m-1) := by
+  have hs := crossing_run_sharp (m+1) m (by omega) (Nat.le_refl _)
+  exact ⟨hs.1,by omega⟩
+
+end Recaman.TwoRunSupply

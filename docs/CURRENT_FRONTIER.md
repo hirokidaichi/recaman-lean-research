@@ -1,34 +1,94 @@
 # Current research frontier
 
-最終更新: 2026-10-11
+最終更新: 2026-11-01（朝の終了実績を保持し、夜にmain統合）。E-451で三A-runの元p実free-gapを全長で証明。四run全体/任意r rank/C1/Q/H/SL/全射性は未証明。
 
-この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
-[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
-[`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
+この文書を研究状態と次のgateの唯一の正本とする。主張と証拠水準は[EVIDENCE_REGISTRY.tsv](EVIDENCE_REGISTRY.tsv)、公理依存は[Audit](../Recaman/Audit.lean)を参照する。
 
-現在の研究方針は [2026-10-03 の判断記録](RESEARCH_PLAN_2026-10-03.md)を参照。
-E-368 後の次の候補は、最古 S が衝突する二つの SS=2 最小窓と low-SS 集合の
-局所容量である。10月6日に GPT-6.1-Sol の紙上研究と親の反証探索を並行実施した。
-周期1〜22・全lagの有限検査は24衝突対／86部分集合で違反0（COMPUTED）。
-二窓の順序・共通部分の補助構造は得たが、第二の S を確保する独立入力はなく、
-容量の証明経路は STOPPED、命題自体は CONJECTURED のまま。
-[カード](HYPOTHESIS_CARD_2026-10-06_SS2_COLLISION_PAIR.md)と
-[再現記録](data/ss2_collision_pair_20261006/README.md)に証拠・再開条件を保存した。
+## Research brief
 
-同日後半、具体的な第二 S の端点排除を得て部分場合を再開した。
-**NoSAAS の下で、SS2 の二辺が一つの SSS run にある衝突対の局所容量は
-PROVED-PAPER（E-370、独立監査 PASS）**。正の周期質量・lag 上限・Hall 仮定は不要。
-この NoSAAS 二窓問題で残るのは離れた二つの SS run の場合。Lean 化、複数衝突対、
-SS≥3、無制約版と全域性は未完了である。
-NoSAAS だけで衝突を全除去する案は、全 p≥33 の反例族により REFUTED（E-369）。
-[最新の方針と完全な範囲](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md)を参照。
+main統合: 両履歴を保持し、証拠ID衝突11件を[対応表](EVIDENCE_ID_RECONCILIATION_2026-11-01.md)で整理。511 registry行/273 PROVED-LEAN、548 jobs/3269宣言の統合検証PASS。これは朝の研究時間や新しい数学的進展へ加算しない。次回H-20261102-01は維持。
 
-10月11日、残っていた「離れた二つの SS run を持つ衝突対は存在するか」は、
-NoSAAS・正の周期質量・current-A・最小 P2 の全前提を満たす周期45の例で
-**REFUTED（空集合ではない、E-371）**。同じ構成を A の末尾を延ばして
-全ての周期パラメータ p≥45 に拡張できる（PROVED-PAPER）。
-この例は局所容量を破らず、分離 SS の一般容量はなお CONJECTURED。
-[カードと再現手順](HYPOTHESIS_CARD_2026-10-11_SS2_SEPARATED.md)を参照。
+2026-11-01最終検証・journal終了済み。親R-20261101-01、実開始06:01:59.745032 JST。[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)と[journal](data/daily_research/2026-11-01.json)が実績正本。実終了2026-11-01T07:59:32.029177+09:00、confirmed 117分32.284秒、不足2分27.716秒。待機/中断/gapの計上0、open0。予定120分を実績にしない。
+
+- **E-484 PROVED-LEAN**: area無制限の正三A-run zerohead/同old targetmass3/最終S3/oldclock0で、元Intp/padded/zero-fullpositiveの全長full-tail free-gap。最終S local band存在も不要。今朝のPAPERを独立same-target平方比較/E497 headfree5でkernelへ接着した。
+- **E-485 PROVED-LEAN**: 同じzerohead/targetmass3/最終S4/final-band local/最後rayの任意実old supplierを持つ枝の元fullgap。counterからold0/1を内部供給。E-500 explicitold1はlocal band不要、old0はE-490で供給。
+- **E-492 PROVED-LEAN**: targetmass/areaを制限せず、同old target/最終S local band/実old supplier mass>=5を持つ枝の元fullgap。targetmass>=4の全old-seed枝も含む。E-486のmass>=6とE-488の紙上D6をより強い別証明で覆うが旧失敗layoutはSTOPPED。
+- **機構 E-487/E-489/E-491/E-493/E-494/E-496/E-497**: 同inversionのlocal重複を数え、早期old D>=5でheadfree6、D>=4でheadfree5を全長で内部供給。S13を同source I23..25/actual priorA12の六形へ削減する。headfreeだけを全gapと呼ばない。
+- **E-490/E-498/E-499**: old0/old1と初期S源の非共存、同targetの平方差によるfirstA clock0又は0/1への合流。全massの他old sourceを切断しない。raw budget/keyはactual主定理で内部供給する。
+- **検証**: 個別-M512、G5/Audit、07:47最終全check543jobs/3163宣言PASS、許容三公理のみ。純算術helper ThirteenRunFactorsは単独lint G3警告で単独研究結果として登録しない。採用word/actual coreと全registry gatesは通過。完全cold/OS RSS/tree累積cap検証ではない。
+- **PAPER/停止**: E-483五area対/E-495一般I25 joint4は未Lean・人間レビュー未。E-495のD4 headfreeという帰結だけはE-497が独立actualS13 pruningで供給。旧scalar、LargeOldSeedGap、一般I25 monolith、旧H06/133core/r4二回0/0/R19等は資源追加で再開しない。E-388 COMPUTED/E-404 CONJECTURED/E-384未Leanを保持。
+- **残余**: last old供給無し、非zerohead、他target/local位置、任意run数/任意r rank、一般四run/C1/Q/H/SL/全射性。完了した三run E451/r3 E385〜387も一般C1とは別。
+- **次の一問**: [H-20261102-01](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。mass3/S3のno-old last-rayで初期S sourceを同target key/実counterから排除できるか。E497 headfree5のold-source仮定を勝手に落とさない。全体無変化0は新edge更新で、r4表2回STOPPEDを日付resetしない。
+
+## 2026-10-31終了時のスナップショット（以下は履歴）
+
+- **現在**: R-20261031-01、06:03:36〜07:59:49 JST、confirmed 116分12.964秒（不足3分47.036秒）。最初15分gateはactual二case/全last old排除という新edgeで通過。実績正本は[当日journal](data/daily_research/2026-10-31.json)、[DAILY](RESEARCH_HANDOFF_2026-10-31_DAILY.md)。open区間/予定120分を先取りしない。
+- **最も強い成果 E-482 PROVED-LEAN**: 任意元Intp/padded BlockWord履歴/zero-fullpositive、全正三A-run head A=S/area=-B/`4S+4<=B<=6S+4`、同じold targetと最終S local bandなら第四ray後の`j+1<=actual full-tail free`。全S/run長/old履歴/未来長を量化。lower4境界ではold<=1を残してlocal<=5/headfree>=6で支払う。一般四run/C1/rank/全射性ではない。07:31全check501jobs/3111宣言PASS、許容三公理のみ。
+- **依存成果**: E-467/E-468/E-469はS10二case/actual供給/local4/5。E-470/E-471は同target低mass/任意S反例残余。E-472/E-473はsource clockと全包含classifier。E-474/E-475は源重複と全S mass1 free-gap。E-476/E-477/E-478はactual mass2九群とlocal3/4/5/元帯の全S。r3 kernel count依存を明示し、未検証table/E384存在方向には依存しない。
+- **意味監査 E-479/E-481 PROVED-LEAN**: same targetとword偶奇でlower5のold排除を証明。ただし新境界B4S+5はR>=5 counter target自体が不可能。形式的な帯拡張を新履歴coverageの進展に数えない。E482 lower4は実在するpositive適用例を含む。
+- **反証 E-480 REFUTED**: lower4までのold-erasure強化は元0zero/fullpositiveのliteral履歴で破れる。clock1 oldとtarget/localが併存しfullfreeは十分、COMPUTEDの補助反例でありC1/標準軌道の反例ではない。
+- **帯外 E-483 PROVED-PAPER（未Lean・人間レビュー未）**: mass3 target/v3/oldmass4-clock0を同prefixで結合し10area対から5対へ。actual count/freeとv4mass5は未供給。18pair/mod4 monolithic layoutは一回修理後512MB STOPPED、sourceはpacketへ隔離し輸入しない。
+- **次の一問**: [H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)のarea無制限・zero-mass head/targetmass3/最終S3/実oldmass4-clock0枝で、元full-tail actual free-gapを供給できるか。最初15分はactual source-conditioned inequality/strict候補削減を要求。E483を仮定したadapterだけは進捗に数えない。
+- **停止保持**: H02の61head表、H12の五形/30cell、H19 freshS30 CPU上限、H21の18pair layoutは資源追加/compiled移動だけで再開しない。H12で上限を継承しなかった通常build結果は不採用/隔離、採用proofは独立したheight pruningを同512MBで再検証。旧H06/133core/r4 E412/E427二回0/0/R19/R7R11/cold512/combined19/literal43/width adapterの停止も保持。
+- **残る範囲**: moment帯外、nonzero-mass head、他target/local源位置、任意run数/任意r rankとC1/Q/H/SL/全射性は未解決。全体連続無変化0（E482新edge）、r4同表枝のSTOPPEDを日付でresetしない。CPU探索と実時計は別計上、人間レビュー未。
+
+## 10/30途中記録（当時の数値・入口。現在は上記briefを優先）
+
+
+- **次回の入口**: [H-20261030-01 四run old-target](HYPOTHESIS_CARD_2026-10-30_FOUR_RUN_OLD_TARGET.md) と [10/29 DAILY](RESEARCH_HANDOFF_2026-10-29_DAILY.md)。最初15分は最終separator local源の同じmass/areaと実free課金。完了した三run/既存A-count cutは再実行しない。
+- **E-451 PROVED-LEAN**: 元p/padded BlockWord prefix/zero-positive/三非空A-runで、次の供給前S-gap jにj+1<=元実free。全run長/全h/old履歴無制限。target源を入力せず、実Endableから得た窓の全源を覆う。二run E-414からの拡張。任意run数/C1/Q/H/SL/全射性は未解決。
+- **同じ証明chain**: E-442局所初期S排除 -> E-443第一A clock衝突 -> E-444中央S第一run課金 -> E-445 old target free-gap。E-447初期S全h band -> E-448二形への数学的pruning -> E-449条件付きcount -> E-450実元p初期Sfree-gap -> E-451全source合成。未検証のH06/133core・r4表や未LeanのE-384存在方向に依存しない。既存のkernel検証済みr3 simulation/count射影は証明依存に含む。
+- **E-452 PROVED-LEAN**: 任意混合語/任意run数のold targetとfinal band local源で、local源開始前にAがj+1個以上必要。元0の実Win/実A数へ接続済み。Aをfreeへ置き換える、源を単射課金する、rankが減るという結論はまだない。
+- **E-453 REFUTED**: A-before-sourceをactual free-before-sourceへ直接置換する強化はR5の元0/zero-positive符号historyでA5/free4に破れる。全tail free10なのでC1反例ではない。
+- **E-454 PROVED-LEAN / E-455 REFUTED**: source cutは原始key(u)>=-2のみで成立し、負massも許す。key下界を落として非負massだけにする弱化は(SA)^8のliteral窓で反証。必要なscalar供給とactualfreeへの接着は別義務。
+- **E-446 PROVED-LEAN**: 初期S target q<j+1と同じprefixのold第一/第三供給の併存は第一clock k>=q+2。M<=q+2なら第三old band供給条件下で第一実供給<=1。任意mixed futureの無条件joint capacityではない。
+- **停止保持**: 旧H06 133core monolith/旧r4 E-412/E-427 12837/40024（2回0/0）/E-424 R19等はSTOPPEDのまま。今回の二形proofは独立した全tuple数学的pruningであり、同jobへ時間/メモリを足していない。E-415/E-405/E-430の補助反例は親C1反例ではない。
+- **次の領域の派生評価 E-456 PROVED-LEAN**: 四A区間の元p実供給<=19、free-gap反例候補はfree4..17/A36/j17へ。S長とold historyは無限で反例不在は未検査。[一般kの予算](RESEARCH_NOTE_2026-10-29_RUN_COUNT_BOUND.md)の実供給<=k(k+1)-1だけはPROVED-PAPER（未Lean・人間レビュー未）。既存予算の和であり新しい源rankではない。
+- **未解決**: 四run以上/任意r rank/r4 E-388 COMPUTED・E-404 CONJECTURED、一般C1/Q/H/SL/全射性。E-385/E-386/E-387のr3全長/Qは既存入力。E-001/E-067/E-070 CONJECTURED、E-179 COMPUTEDのpinを保持。
+- **運用**: 当日journalは [2026-10-29](data/daily_research/2026-10-29.json)。06:03:24.618650実開始、未計上の遅延は補填しない。07:45新数学停止/07:59:40目安stop/08時期限。予定120分を実績にしない。CPU workerは子禁止cooperative一process、Lean capはper-processでありtree累積/OS ASではない。
+
+- **10/30 E-457 PROVED-LEAN（実行中）**: 四run old targetと最終S local源のsame key/areaは、先行全A>=2j+4を強制。元0の実old/local Winに接続し、既存A>=j+1 cutより強い必要条件。free-gap/C1は未解決。19予算を使うfree4..15/A34/j15は紙上のみ、combined count source512MBはSTOPPED、時間/メモリ追加なし。
+
+- **10/30 E-458 PROVED-LEAN（途中）**: 直前A-sourceの除外から第四ray local<=6、前3run10+第四7で元実供給17。E457の最終S源の枝は元p/zero-positive/実二P2のまま反例free4..13/A30/j13へ（不在は未検査）。E456の19/17残余をstrictに縮めた。
+
+- 2026-10-30 途中 E-459 REFUTED: 最終S源でもhead-only free課金は失敗（head8<R9/full17）。独立finite replay、Lean literal43は512MB STOPPED。親fulltail/C1反例ではない。
+- 2026-10-30 途中 E-460 PROVED-LEAN: 任意mixed sourceのAS交差量から遅延Kを保持したstrict A-before-source cut（free/rankではない）。個別検証済み、全check同期中。
+
+
+- **10/30 E-461 PROVED-LEAN（途中）**: M+L<j+1の最終S源部分枝ではfinal-band供給clock2のみ、全実供給13、元pの反例必要域free4..9/A22/j9。補集合M+L>=j+1/小gapの不在は未証明。
+
+- **10/30 E-462 PROVED-LEAN（途中）**: M+L>=j+1の補集合はsame old area/short-lastから全A>=2j+5。raw+3 sharp族は全長確認したがfree-gap反例ではない。両ML枝を同じ実countで合成し、最終S源全域の反例必要条件は元pでfree4..12/A29/j12（不在未検査）。
+
+- **10/30 E-463 PROVED-LEAN（途中）**: Nat元0/relative-positiveの同じS源反例候補でtarget old mass<=13/そのold suffix<=32/future長<=64/同じWin長<=96。他old supplierは切らない。幅命題のIntp adapter combinedは512MB STOP、p版だけは紙上corollary（未Lean）。
+
+- **10/30 E-464 PROVED-LEAN（途中）**: 固定head S5A3S4A4SA3 + 任意Sv ATの四run族で全A<=2実free+3。最終S源band/old targetのfull-tail free-gapを元Intp/padded/zero-positiveで証明。local clock2/例外(4,3)/(8,5)、old4以降というsource分類を経由。全四run/H01全域/C1は未解決。
+
+- **10/30時点の履歴 E-465 PROVED-LEAN / E-466 REFUTED / E-467 PROVED-PAPER（E467は10/31にE469と共にLean完了、現在状態は上のbrief）**: 任意zero-mass headのmoment帯でold>=4を全長供給。local halfは三run/S10/B64でもclock0反例。同じold targetをcoupleするとS10域で二case(v,T,j,B)=(1,5,4,46)/(2,7,5,56)だけという紙上縮約（未Lean・人間レビュー未）。local残余/不在は未証明。
+
+## 10/29 06:50以前の途中スナップショット（以下は履歴）
+
+この節の未解決/次の入口は当時の判断。現在状態は上のResearch briefを正本とする。
+
+- **10/29 E-447/E-448/E-449/E-450/E-451 PROVED-LEAN**: 初期Sの全h tail源制約と二形への数学的pruningから実free-gapを完了。E-445 old枝/既存全source分類と合成し、三非空A-runの元p zero-positive free-gap j+1<=actual freeを全run長で証明。COMPUTED表に依存しない。任意run数/C1は未解決。
+
+- **10/29 E-446 PROVED-LEAN**: 初期S targetでq<j+1、最終band old第三run供給があるとold第一run clockはk>=q+2。同じprefixのjoint制約からM<=q+2なら第一run実供給<=1。q>=j+1/off-bandは未排除で、初期S不在を証明したものではない。
+
+- **10/29途中 E-443/E-444/E-445 PROVED-LEAN**: 最終bandの第一A local源はclock2へ衝突、中央S源はM>=j+1を強制。元0/pの実countに全仮定を内部供給し、old target源の全長free-gapを完了。初期S四対/任意run数/C1は残る。E-442は基礎となる初期S local源排除。
+
+- **10/29途中 E-442 PROVED-LEAN**: 同じold targetがある最終bandでは初期S local源も排除。E-441と合わせ3型clockのみ、元実third-ray free+3>=min(T,j)。全old/三run/C1排除は未。H-20261029-01の初回gateは新source edgeで継続（詳細は当日DAILY）。
+
+- **10/29開始時の入口（現在は完了）**: [H-20261029-01](HYPOTHESIS_CARD_2026-10-29_OLD_TARGET_TAIL.md)。E-441の「old target時、最後j個のAではold供給不能」を実free下限へ。最初15分はK=min(T,j)のlocal clockと同じtarget mass/areaを結合する。完了したsource分類/順序を再証明しない。
+- **10/28の主な進展 PROVED-LEAN**: E-434は第一A target源、E-435は中央S target源を全長/元0/pの実free-gapへ接続。E-428/E-429と合わせ、真の三run反例のtarget源はold prefixか初期Sだけ。三run全体の不在は未証明。
+- **E-441 PROVED-LEAN**: 同じBlockWord prefixの二old源に同じ内部語を足したkey差>=9でstrict mass順序。差8/同massの境界は保持。old targetがj>=2のS後にP2なら先行old供給clock i+j<T、最後j個のAはlocalのみ。実f/二Winの元0と区間nのEndN同値はこの限定区間だけ。任意mixed futureのrankや全prefix消去ではない。
+- **E-438/E-439/E-440 PROVED-LEAN**: 同じold suffixのmass/areaと実first-run countから、三run反例全体はfree4..7/A<=17/j4..7。old targetはC<=5/全S<=14/target suffix長<=12へ。C6の二つの強制run形を実countで排除。source以前のoldprefixやmass>5の他供給源は残す。raw A>=2R+1のsharp P2族はC1反例ではない。
+- **E-436/E-437 PROVED-LEAN、初期S不在はCONJECTURED**: 実初期S target反例は(j,A)=(4,12),(4,14),(5,14),(6,16)。全hのlocal支配と第二/第三ray全source clock上界を供給。H06の133core証明書は10CPU/512MBでSTOPPED、全tuple包含/実count接着は未検査。同jobの時間/メモリ追加なし。有限必要modelはCOMPUTED、posthoc133core診断はOBSERVED。
+- **E-432/E-433 PROVED-LEAN**: 全h/R>=5/全M>=1の族 Sh AM S^(R+1) A^R S A^(R+1) の元実free>=2R-2。E432は紙上から更新、同じclaimを二重計上しない。zero/positive/targetを仮定しないが、一般三runではない。
+- **安定入力**: E-416 PROVED-LEAN（全三run供給<=11/旧残余A20）。E-418/E-419/E-420/E-421/E-422/E-423は実EndN/free/relative positive/targetを保つ有限代表で、有限域の不在未検査。E-417/E-425/E-426は第一freeと共同old spectrum/同mass area幅4、E-431は同一A/S source再使用式。これらを再実行しない。
+- **停止と反例**: E-412/E-427のr4表は12837states/40024edgesで2回削減0/0、kernel<=3000不通過、STOPPED。E-424 R19は3001gate STOPPED、R7/R11 kernelはOS AS1GiB拒否で未起動。E-415小local<=2/<=3、E-405無予算消去、E-430 count-only排除の反例は親C1反例ではない。資源追加や定数だけの修理なし。
+- **既存全長入力**: E-407全A gap、E-408/E-409全run平方式、E-410 local予算、E-411共通old一時計、E-413/E-414単一/二A-run free-gap。E-385/E-386/E-387のr<=3全長深さ4/8語/任意future Qは完了。r4はE-388 COMPUTED/E-404 CONJECTURED、E-392は16root仮定付き。E-400/E-403大表/商、部分layerをr4の証明と呼ばない。
+- **継承した範囲**: E-379/E-380/E-381は条件付きQ/context/面積、E-382/E-383の有限N32を延長しない。E-384存在方向は未Lean・人間レビュー未。E-389/E-390/E-391/E-393/E-394/E-395/E-396/E-397/E-398/E-399/E-401/E-402/E-406の各条件を保持する。
+- **C1全体との距離**: old/初期Sの三run排除、任意run数/任意rのrank、一般C1/Q/H/SLは未解決。HにはE-376/E-377とSL、SL d1にはC1/C2、d2にはTS。E-001/E-067/E-070 CONJECTURED、E-179 COMPUTEDのpinを保持。
+- **運用**: [10/28 DAILY](RESEARCH_HANDOFF_2026-10-28_DAILY.md)、[ノート](RESEARCH_NOTE_2026-10-28_C1_SOURCE_BUDGET.md)、[journal](data/daily_research/2026-10-28.json)。06–08時JST、07:45新数学停止、stop後に実績と残課題を毎日報告。全体連続無変化0は新edge由来、r4枝2の停止を日付でresetしない。CPU探索当初0、正確契約はcooperative single-Python/no-childのみ。Lean per-process capをtree累積cap/OS AS capと呼ばない。未計測child CPUは0扱いしない。
 
 ## 結論
 
@@ -723,6 +783,8 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 3. computationのhorizon延長だけではlabelを上げない。
 4. exact命題が`CONJECTURED`でも、証明ルートが尽きれば別rowで`STOPPED`にする。
 5. current branchの変更は、この文書とregistryを同じchange setで更新する。
+   `Research brief` 節を現在の研究単位・未証明義務・有限証拠の範囲に同期する。
+   `make brief` はこの節と台帳を直接読み、ラベルや件数をコードに固定しない。
 6. `bash scripts/check_research_registry.sh`と`./scripts/check.sh`を通してからhandoffする。
 
 ## 現在の検証基準
@@ -733,156 +795,123 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 - 許可された公理依存は`{propext, Classical.choice, Quot.sound}`。
 - `sorry`, `admit`, `native_decide`, user-defined `axiom`は禁止。
 
+## 2026-09-21: short tight donor avoidance (E-360)
 
-## 2026-10-01: 最小P2窓の古いA末尾に対する鋭いSS予算（E-361）
+E-360 proves the following restricted periodic-sign-word result. For every positive period, if a
+nodup tight list B consists of in-range current-A phases whose windows are minimal P2 with lag in
+`{3,7,11}`, then the true oldest S phase of a minimal lag-11 SS=2 donor is outside `N(B)`. The local
+input is conditional on the existing four-field `OwnerFamily`: a w1 member owns its offset-7 oldest
+S and its next sign is A. Under the existing concrete assumptions p>0, periodicity, nodup U, Hall
+on U, tight B sublisted from U, phase bounds, current-A members, and minimal P2 lag 3/7/11 windows,
+the E-358/E-359 construction realizes that family; those extracted constructors are not new E-360 results. The final Q needs neither an
+ambient U, an assumed Hall condition, nor positive drift because Hall for short sublists is proved
+from the existing short selector. This is not arbitrary-lag or general Gate T6, does not cover B
+with lag at least 15, and says nothing about E-070/E-067, actual Recamán orbits, or surjectivity of
+the Recamán sequence.
 
-`E-361`（`PROVED-PAPER`、[証明](TERMINAL_A_BUDGET_2026-10-01.md)、
-[カード](HYPOTHESIS_CARD_2026-10-01_TERMINAL_A_BUDGET.md)）：任意長の最小P2語で、
-真の最古Sより古い末尾Aの個数をt、重なり込みのSS数をqとすると、
-`t>0 ⇒ t<q`、従って `t≤max(q-1,0)`。全qで等号を達成する最小P2語を明示した。
-証明の新しい中核は「全prefixのmassが2以下なら、最初のP2 prefixはSで終わる」。
-最小性なしの `t≤q` も成立するが、狭義版は `AASASSA`（q=t=1）で破れる。
-SS=2の最小donorは全lagでt=0/1に限られる。計算はdiscovery 3,021 P2語と
-claim-specific holdoutの長さ23の30,554 P2語で違反0、証明とは分離する。
+## 2026-10-03: 一般 lag の G1 — lag 23 holdout、lag 一様な窓の補題、有限閉包への帰着、分類の帰納の一段、Claim P への帰着（E-501〜E-508）
 
-初稿時点ではpaper-onlyだった。現在は各部分をE-362/E-363/E-364で形式化し、
-独立意味監査も全てPASS。E-361は元のpaper artifact/labelを維持する。
-owner座標の `t=L-r` を制限するが
-`delta=r-kx`、M1/M2、一般lagの緊密集合やGate T6を解決しない。E-070/E-067/E-001は
-変更しない。SS予算の形式化は完了した。次はdeltaを含む別の反証可能な制約を
-新カードで扱う。探索上限の追加やlag-15証明書ルートは本結果だけでは再開しない。
+[H-20261003-01](HYPOTHESIS_CARD_2026-10-03_GENERAL_LAG_CLOSURE.md)。9/17 週間計画の後半（任意 lag の所有者配置）が未着手だったので再開した。
 
-## 2026-10-01: prefix mass ceiling 2 で最初のP2はS終端（E-362）
+- **E-501（`COMPUTED`）**：E-356 の line model 閉包探索を C++ に移植し（lag-max 11/15/19 の Python 出力と全語 byte 一致）、実行前に凍結した
+  holdout Q1 として lag 23 の最小 P2 語 18,556 語を全数検査した。全語 excluded、閉包 0、cap 0。lag 27（221,541 語）の一様 2% 抽出 4,432 語も全 excluded。
+  同日、lag-max 19 の 4 shard ログ（E-356）を監査し、1,636 語を各 1 回・全 excluded と確認した。line model の一般 lag 版に反例は見つからないが、
+  探索木は lag ごとに 30〜60 倍に増えるので、有限検査の延長は一般 lag の証明にならない。
+- **E-502（`PROVED-LEAN`、`Recaman.P2SubtractionLevelSum`）**：任意の P2 窓（最小性・lag 上限なし）で、S の高さ（窓の始点からの符号和＝
+  メンバー水準 h_b = F(b) − 1 から測った下り段の上端）の和は (L − 3)/4。系として、全 S が水準以下にある P2 窓は AAS だけで、lag ≥ 7 の P2 窓は
+  水準より真に上の S を必ず持つ（`past_exists_high_subtraction`）。窓 1 本の恒等式で、閉包・Hall・周期性には触れない。
+- **E-503（`PROVED-LEAN`、`Recaman.P2WindowLengthBounds`）**：長さ L ≥ 11 の P2 窓の内側の加算 clock b − j（j ≥ 1）の P2 窓が外側の窓に収まるなら、
+  その長さ d は d + 8 ≤ L（`past_nested_gap`、最小性不要）。ギャップ 4 は mass/moment の一次方程式の有限表（decide）で排除される。L = 7 では
+  w1 の中の AAS がギャップ 4 なので仮定 L ≥ 11 は必要。入れ子の窓の連鎖は 1 段ごとに lag が 8 以上縮む。
+  同じモジュールに E-090 の鏡像 `leading_S_run_bound`（先頭 m 文字が S の P2 語は長さ ≥ 4m + 3、最小性不要）と周期語版を置いた。
+  さらに「ずれた窓」：ずれ ≤ 3 で重なる二つの P2 窓は（新しい方が長さ ≥ 11 で境界が A なら）共存しない（`shifted_p2`）。周期語の形
+  `past_older_crossing`（b − j、j ≤ 3 の加算の窓は b の窓の始点に lag ≤ L で届かない）と `past_newer_shift`（b + u、u ≤ 3 は同じ長さの P2 窓を持たない）。
+- **E-504（`PROVED-LEAN`、`Recaman.SuffixHallOwnerMap`）**：閉包の所有写像（M1・単射）について、区間 [z, y] の S が全て所有されていれば
+  S の数 ≤ z より後のメンバーの数（`suffix_hall`）。系として有限閉包の成分の任意の接尾区間の符号和は −1 以上、すなわち F(z) ≤ F(y+1) + 1
+  （`suffix_mass_ge`）：成分の歩みの最大値は最新メンバーの値を高々 1 しか超えない。最大値が最新メンバーでだけ達成される（TOP）なら E-502 で
+  最新窓は AAS（Claim N）になるので、**Claim N の全 lag 版に残る障害は TOP の 1 段の破れ（上向き所有辺）だけ**。
+- **E-506（`PROVED-LEAN`、`Recaman.NewestMemberMotifCount`）**：定理 R の Lean 化。最新メンバー v の窓が P2 で、窓の own v 以外の S が全て v 以外の
+  メンバーに所有され、v 以外のメンバーが AAS 型か w1 三つ組の w1 型なら、v の窓は AAS（`newest_motif_count`、A の数え上げ）。
+  有限閉包の分類をメンバー数の強帰納で示すとき、最新メンバーの所有 S が他の窓に入らない場合の帰納の一段がこれで Lean 上にある：
+  `erase_closed`（所有 S が私有なら M ∖ {v} も閉包）と `motif_of_erase_newest`（M ∖ {v} が Motif なら M も Motif）、
+  Back 閉包 `pred_closed_closed`（前任者について閉じた部分列は閉包）、分割補題 `suffix_split_closed`（保留窓 E(z) = 0 ⇒ 始点 ≥ z の
+  メンバーは閉包）・`prefix_split_closed`（交差弧 D(z) = 0 ⇒ z 以前のメンバーは閉包）。
+  **分類の強帰納で未証明なのは「最新メンバーの所有 S が古いメンバーの窓に入る」場合（Case 2）だけ。**
+- **E-507（`PROVED-LEAN`、`Recaman.PrivateMemberMotifCount`）**：定理 R′（一般位置版）。所有者が v より新しくてもよい場合、数え上げで L ≤ 15、
+  長さ 7/11/15 の有限検査（decide）で、w1 型所有者の最新文字が S なら v の窓は AAS か三つ組の w1（`private_motif_count`）。この条件なしでは
+  L = 11 の構成が実際にある（`eleven_occurs`）。所有 S が私有の任意のメンバーについて帰納の一段が回るので、**分類（と周期語の G1）は
+  Claim P（空でない閉包に被覆数 1 の S がある）に帰着する**（カード 12.〜14.）。この帰着自体も Lean 化した：`motifFull_step`（任意のメンバーでの帰納の一段）と
+  `motifFull_of_private`（**Claim P を仮定 hP として**、全ての閉包が MotifFull＝孤立 AAS と w1 三つ組の局所形）。hP は未証明で、無条件の分類ではない。
+- **E-508（`COMPUTED`）**：開いた窓の左右オートマトン（任意の P2 窓、M1・単射・M2 を正確に強制）で、窓長 ≤ 11 なら同時に開く窓の制限なしに、
+  有限閉包は常に保留窓 E ≡ 0 で孤立 AAS と w1 三つ組だけ（10,970,335 状態のうち終端に戻れるのは 11 状態）。窓長 ≤ 15 は同時 ≤ 8 の範囲で同じ（4,286 万状態）。
+  Claim P の候補 Lemma OS（E(s₀+1) = 0）の計算証拠。
+- **E-505（`COMPUTED`）**：緊密 B の窓の和集合が全 phase を覆う（持ち上げが ℤ 全体になる＝等号の場合）例は p = 6..26 の全緊密集合
+  約 1,030 万個で 0。p ≤ 26 では G1 は有限閉包の問題に帰着する。
+- 紙上の整理（未 Lean・未登録、カード Q2）：(a) 周期語の緊密 B の窓の和集合は周期的なので、成分が全て有限か ℤ 全体のどちらか。ℤ 全体なら
+  N(B) = D、Hall から U = B かつ |U| = |D|（E-070 の等号の場合）。有限成分はそれぞれ line model の有限閉包になる。従って G1 は
+  「有限閉包の G1」と「等号の場合の G1」に分かれる。(b) 有限閉包では最新メンバー y+1 と最大水準 K という極値が使える。UP-FREE
+  （各メンバーは自分の水準以下の S を所有する）を仮定すると、上端は孤立 AAS か w1 三つ組で終わることが全 lag で示せる（サブエージェントの紙上証明、
+  親が検算済み）。UP-FREE を課した探索は lag 15 で最大 27 ノード、lag 19 で最大 85 ノードに縮む。UP-FREE 自体と、その下の「階段」の処理が未解決。
+  (c) **定理 R**：最新メンバー v の所有 S が他のどの窓にも入らず、残り M ∖ {v}（これは閉包になる）が孤立 AAS と w1 三つ組に分解するなら、
+  v は AAS（W_v の A の数え上げ 2m + 2 ≥ 4m、親が検算）。従って「有限閉包は孤立 AAS と w1 三つ組の和」をメンバー数の強帰納で示すとき、
+  残る場合は「v の所有 S が古いメンバーの窓に入る」（三つ組の上端が典型）だけ。**これが次の一問**（カード 10.、引き継ぎ文書）。
 
-`E-362`（`PROVED-LEAN`、`Recaman/FirstP2EndingS.lean`）：任意長の抽象Bool語で、
-全prefixのmassが2以下ならminimal P2語はSで終わる。非空P2 prefixが存在する場合は、
-最小の正のP2 index、そのminimality、S終端を同時に返す系も証明した。
-`D=moment-length*(mass-1)`の更新則 `D'=D+1-mass` を使い、P2前のDの正値性を
-導出する。「過去のmomentが正」は仮定していない。長さ制限、SS、NoSAAS、周期性、
-実軌道の条件もない。
+## 2026-10-20: 区間容量予想 H — Claim P は E-070 の line 版の等号の場合だった（E-509〜）
 
-反証passのliteral discovery 4,095語とdisjoint holdout 126,976語では違反0（`COMPUTED`）。
-minimalityを除く `AASASSA` とceilingを3に緩める `AAASSSASASA` は反例として保存した。
-[カード](HYPOTHESIS_CARD_2026-10-01_FIRST_P2_ENDING_S.md)と
-[再現ログ](data/first_p2_ending_s_20261001/README.md)を参照。
+[H-20261020-01](HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md)。Claim P を 4 方向（オートマトンの単調量・水準・最古 S・SAT 反証）から攻めた結果、
+問題の形が変わった。
 
-#74の数学的statementとLean監査への登録を実装した。別セッションの意味監査も
-[PASS](statement_audits/E-362-independent.md)。PR #77はmainへmerge済みで、#74は2026-10-01にGitHubでCLOSED。
-#75のsuffix下界と#76の全q構成は下記の別行で形式化した。
-一般Gate T6、E-070/E-067、全射性についての証拠ラベルは変わらない。
+- **E-509（`COMPUTED`）**：**区間容量予想 H**「任意の ±1 語の任意の区間で、区間内に収まる P2 窓の終点になれる A の数 ≤ 区間内の S の数」を、
+  長さ ≤ 34 の全 2^34 語で確認（例外 0）。H の下では P2 窓の任意の族に Hall 条件が自動的に成り立ち、**閉包とは H の等号の場合**（成分内の
+  終点可能な A は全てメンバー）。等号の場合は (SAAA | SSAAAASAAA | A)* だけ（**EqClass**、長さ ≤ 30 で例外 0）。帰結として、
+  **成分の幅 ≤ 30 の有限閉包は孤立 AAS と w1 三つ組の和**（窓長・同時に開く窓の数に制限なし、E-508 を真に拡大）。
+  符号和の座標を落とした 1 次元版、水準ごとの版、窓内の正準写像による単射はいずれも偽（反例はカード）。
+- **E-510（`PROVED-LEAN`、`Recaman.LineCapacityPeriodic`）**：H（述語 `LineCapacity`、**仮定**）⇒ 周期 p の任意の符号語で
+  任意 lag の供給 phase 数 ≤ 減算 phase 数（`periodic_capacity_of_line`）。**H は E-070 の有限・非周期な強化**であり、本行は E-070 を解決しない。
+- 研究の形：G1（全 lag）⟸ 分類 ⟸ Claim P ⟸（H の下で）EqClass。一方で H 自体が E-070 を含意するので、**H の証明は中心予想の証明そのもの**。
+  2D の言い換え：点 P(z) = (F(z), Σ_{c<z} σ(c)c) は ±(1, z) で動き、終点可能な A ⇔「そこで引いていれば区間内で訪れた点に戻る」A。
+  Recamán の規則（既訪問値への減算は禁止）を符号和の座標付きで述べたものになっている。
+- **E-511（`PROVED-LEAN`、`Recaman.CleanWindowCapacity`）**：Clean Window 定理。窓が clean（窓の内側で基底水準に戻るたびに面積ポテンシャルが
+  真に負）なら始点は S、同じ始点を持つ 2 本の P2 窓の新しい方は clean でない。従って b ↦ 始点は clean な窓の上で単射で、**endable が全て clean な
+  区間では H が成り立つ**（`clean_capacity`）。ssCount ≤ 1 と深さ 1 の窓は clean（紙上）なので E-128 の拡張。残るのは unclean な窓
+  （深さ ≥ 2 の下向き遠足で始点の面積値を飛び越える）だけで、H+「e + #unclean ≤ s」は長さ ≤ 32 では成り立つが長さ 34 で偽（SAAASSSSAAAASASSSAAASAAASSAAAASAAA、H 自体は成立）。
+- **E-372（`COMPUTED`）**：**窓長 ≤ 31 に制限した H は全ての符号語で成り立つ**（有限状態グラフの最大累積 = 0、親とサブエージェントの独立実装が一致、
+  緩和した moment では違反を検出）。周期語に持ち上げると lag ≤ 31 の供給を数えた E-070 が全周期で従う（計算機援用、Lean は lag ≤ 11 まで）。
+  H+（unclean を 2 個分と数える）は長さ 34 で偽。U1 型の「水準で切った H」（clean は基底 ≥ g、unclean は基底 ≥ g − 1、高さ ≥ g の S と比較）は長さ ≤ 32 で成立し、
+  上の水準からの帰納の候補。
+- **E-373（`PROVED-LEAN`、`Recaman.LowSSCleanWindow`）**：最小な P2 窓は、深さ 1 か ssCount ≤ 1 なら clean。系として、終点の最小窓が全て
+  ssCount ≤ 1 か深さ 1 の区間では H が成り立つ（`lowSS_capacity`、E-128 の区間版の拡張、lag 上限なし）。
+- **E-374（`COMPUTED`）**：**全メンバーの窓長が 31 以下の有限閉包は、幅によらず孤立 AAS と w1 三つ組の和**（Claim P もこの範囲で成立）。
+  H_L のポテンシャルに沿ったタイトな道が等号語をちょうど表すことを使い、等号の場合の分類 EqClass_L を正規言語の包含として全幅で検査した
+  （L ≤ 31、陰性対照あり、独立監査と独立実装が一致）。周期版（タイトな閉路）も L ≤ 31 で検査し、**メンバーの lag が 31 以下の緊密回避集合 B の lag は
+  {3, 7}**（G1 の lag ≤ 31 版、全周期、計算機援用）。Lean の G1 は lag-max 11（E-359）まで。SAT 探索は Claim P の反例なしを幅 120・窓長 23 まで確認。
+- **E-375（`PROVED-LEAN`、`Recaman.UncleanWindowStructure`）**：unclean な最小 P2 窓には面積が正の最後の基底水準への戻り r があり、
+  t + r・t + r + 1 は共に減算（窓は必ず SS を含む）。その前に高さ h+1 からの最後の減算 q がある。unclean な窓の課金の部品。
+- **E-376（`PROVED-LEAN`、`Recaman.CapacityEqualityInduction`）**：密度補題（ブロック語の接尾辞は 10·#S ≤ 3·長さ、従って P2 窓でない）と
+  **H の帰納段**：同じ始点で、短い区間の H と EqClassW から次の長さの H が従う（`hcap_step`）。系として **H（⇒ E-070）は EqClassW だけに帰着**
+  （`hcap_of_eqclassW`、EqClassW は仮定）。研究の核は EqClassW の帰納段（最小反例の形はカードの定理 2・3）。
+- **E-377（`PROVED-LEAN`、`Recaman.SingleWindowEquality`）**：EqClassW の帰納段の場合 (B)（区間全体が最後の clock の P2 窓）は、短い区間の H と EqClassW
+  の下で SAAA しかない（定理 B）。**H（⇒ E-070）の残りの穴は場合 (A)、すなわちはみ出し補題 SL（a_y + d(q0) ≤ 2 なら X ≤ d(q0)）だけ**。
+  SL は長さ ≤ 28 の全語で成立（はみ出しが余分にあると a_y ≥ 4 という余裕）。
+- **E-378（`PROVED-LEAN`、`Recaman.BlockSuffixPositivity`）**：ブロック語＋A^a の空でない接尾辞は mass ≥ 1・面積 ≥ 1、その直後の S の連の次の A は
+  区間内の窓を持たない、TS₁（S だけを挟んで endable な A の前では不足 ≥ 1）。はみ出し補題 SL（d = 0 で j ≤ 3 は紙上で証明済み）と補題 TS
+  （不足 ≥ 3、長さ ≤ 30 で成立、TS ⇒ SL の d = 2）の部品。
+- **2026-10-20 終了時点**：H（⇒ E-070）⟸ EqClassW の帰納段 ⟸（場合 (B) は E-377 で排除）はみ出し補題 SL。SL は d = 0 が紙上で証明済み、
+  d = 2 は補題 TS（長さ ≤ 34 で成立）に、d = 1 は a_z ≠ 2 での S1（データのみ）に帰着。詳細と要再検算の項目はカード H-20261020-01 と引き継ぎ文書。
 
-## 2026-10-01 follow-up: terminal-A SS bounds (E-363)
 
-The complete all-word inequalities in #75 are `PROVED-LEAN`:
-P2 gives t<=q; minimal P2 gives t<=q-1 (saturated Nat subtraction), so
-SS=2 gives t<=1. The proof derives the prefix ceiling from suffix masses
-and then uses E-362; it does not add a ceiling assumption.
-Every P2 word admits the terminal-S/A decomposition and the maximum-run
-identity is verified. Independent semantic review is
-[PASS](statement_audits/E-363-independent.md); PR #78 is merged and #75 is CLOSED on GitHub (2026-10-01). E-364 supplies the separate all-q construction.
-The bound controls t=L-r, not owner delta or general #73.
+## 2026-11-01 main統合と証拠ID対応
 
-## 2026-10-01 follow-up: all-q sharp words (E-364)
+研究ブランチ旧E-361〜371はE-501〜511へ移した。mainで公開済みのE-361〜371は維持する。過去の凍結ログと日次実績は改変せず、[統合対応表](EVIDENCE_ID_RECONCILIATION_2026-11-01.md)で元revisionとともに読む。
 
-The fixed words of #76 are now `PROVED-LEAN` for every Nat q: P2,
-minimality against every positive proper prefix, exactly q overlapping SS
-pairs, maximum terminal A length q-1. Both directions of the proper
-mass-one prefix classification and their exact nonzero moments are proved.
-The construction imports neither E-362 nor E-363. With E-363 the bound
-is attained for every q; abstract minimal P2 words have arbitrarily long
-A tails. This is not a canonical or seeded orbit realization claim.
-All three E-361 components have separate Lean rows E-362/E-363/E-364.
-E-361 retains its original paper artifact/label. Independent semantic reviews
-are PASS in [E-362](statement_audits/E-362-independent.md),
-[E-363](statement_audits/E-363-independent.md) and
-[E-364](statement_audits/E-364-independent.md), on unchanged source hashes.
-PRs #77/#78/#80 are merged; #74/#75/#76 are CLOSED on GitHub (2026-10-01).
-Independent full check passes 393 jobs / 2600 permitted-axiom reports.
-The general #73 owner delta and matching frontier is unchanged.
-
-## 2026-10-01: arbitrary-length SS=2 donors avoid short tight subsets (E-366)
-
-`E-366` (`PROVED-LEAN`, `Recaman/SS2ShortTight.lean`) proves the exact
-bounded question in #81: a tight nodup phase list B of current-A minimal
-P2 windows of lag 3/7/11 avoids the true oldest S phase of every current-A
-minimal P2 donor with exactly two overlapping SS pairs. Donor length d
-and period p are arbitrary. Short Hall is derived from the established
-injection into each member's actual window; no ambient Hall, NoSAAS,
-positive drift, OS, next-A or owner-distance premise is added.
-
-The substantive edge is the all-length stream exclusion of AAS and every
-S position of the completed w1 family. The proof derives the intervening
-prefix ceiling and applies E-362; it handles terminal A tails algebraically
-without needing the planned t<=1 case split. The existing periodic owner
-construction is extracted with unchanged assumptions. This completes the
-previously unfinished H-20260920-05 direction, with fresh entry/final audit.
-
-[Card](HYPOTHESIS_CARD_2026-10-01_SS2_SHORT_TIGHT.md),
-[statement audit](statement_audits/E-366.md), and
-[reproduction records](data/ss2_short_tight_20261001/README.md).
-Independent final semantic review is [PASS](statement_audits/E-366-independent.md);
-full check passes 394 jobs / 2625 permitted-axiom declarations.
-This result addresses #81; PR #85 tracks integration and GitHub issue closure. All-lag B,
-general Gate T6, deletion Hall and orbit realization remain open; protected
-E-001/E-067/E-070/E-179 labels are unchanged. The next decision needs a
-separate falsifiable condition on long members of B, not another finite-lag
-census extension.
-
-## 2026-10-01: SS=2 word-only offset span (E-365, PROVED-PAPER)
-
-The fixed family V_k=(SA)^k SAAASSAAASS (AS)^(3k) is minimal P2,
-SS=2, current-A compatible and NoSAAS, with t=0 and newest-to-oldest
-S span 8k+10. The complete paper prefix classification proves all k;
-frozen discovery k=0..10 and holdout k=11..80 pass (COMPUTED).
-The original unit checked only the fixed core; E-367 below now proves all k in Lean.
-This is a fixed-SS2 analogue of the existing E-122 padding method.
-
-Stop constant-span bounds from those word properties alone. The marked
-newest S is not an owner supplied by a tight Hall family, so this does
-not refute an actual owner-delta bound or #73. The next bounded owner
-question must supply a concrete additional family condition.
-See [paper and controls](SS2_WORD_OFFSET_SPAN_2026-10-01.md).
-
-## 2026-10-01: all-k fixed-SS2 word span in Lean (E-367)
-
-E-367 formalizes the complete E-365 family for every natural k in
-`Recaman/SS2WordOffsetSpan.lean`: P2, exclusion of all proper P2 prefixes,
-SS=2, NoSAAS of the current-A history, length 8k+11, actual first/oldest
-S offsets 1 and 8k+11, maximal terminal A run zero, and unbounded span
-with every word property retained. Both directions of the proper mass-one
-prefix classification are proved, with exact moments. E-365 retains its
-historical paper artifact and label; its all-k Lean obligation is now E-367.
-
-Independent entry and final source/semantic audits are PASS; full check
-passes 395 jobs / 2648 permitted-axiom declarations. See [independent audit](statement_audits/E-367-independent.md),
-[card](HYPOTHESIS_CARD_2026-10-01_SS2_WORD_OFFSET_SPAN_LEAN.md)
-and [reproduction records](data/ss2_word_offset_span_lean_20261001/README.md).
-The marked newest S is not an owner. Stop word-only constant-span bounds;
-any owner bound needs an additional concrete owner-family condition.
-General #73, Gate T6, orbit realization and protected labels are unchanged.
-
-## 2026-10-02: arbitrary-length low-SS tight avoidance (E-368)
-
-E-368 (`PROVED-LEAN`, `Recaman/SS2LowSSTight.lean`) removes the member-lag
-cutoff of E-366 for the SS<=1 supplier class. Every nodup tight set B of
-current-A P2 windows with SS<=1 avoids the true oldest S phase of every
-minimal P2 donor with SS=2, for all positive periods and all window lengths.
-Member minimality, member S-endedness and donor current A are not needed.
-The generic P2-suffix contradiction extends E-366's AAS argument; E-128's
-S-prefix normalization and endpoint injection lie inside the original N(B),
-and tightness derives endpoint surjectivity there. No Hall/OS/owner-distance
-premise is assumed.
-
-The same module proves `|U|+1 <= |D|` for any nodup low-SS supplier list U
-in the presence of one minimal SS2 donor. It proves that the recursive
-oldestOffset selects an actual S before adding this extra phase. The slack
-is one total, not one per donor. High-SS members of B, general capacity,
-Gate T6 and orbit realization remain open; protected labels are unchanged.
-Parent #73 remains open. Stop constant-span repairs and lag-census extensions;
-the next unit must isolate a concrete high-SS member configuration.
-
-See [card](HYPOTHESIS_CARD_2026-10-02_SS2_LOWSS_TIGHT.md),
-[statement audit](statement_audits/E-368.md), and
-[reproduction and handoff](data/ss2_lowss_tight_20261002/README.md).
-
-Independent entry/final review PASS: [E-368 independent audit](statement_audits/E-368-independent.md). Full check: 396 jobs / 2657 permitted-axiom declarations.
+- E-361 PROVED-PAPER — minimal-p2-terminal-a-budget。docs/TERMINAL_A_BUDGET_2026-10-01.md
+- E-362 PROVED-LEAN — first-p2-ending-s。Recaman/FirstP2EndingS.lean
+- E-363 PROVED-LEAN — terminal-a-ss-bound。Recaman/TerminalASSBound.lean
+- E-364 PROVED-LEAN — terminal-a-sharp-words。Recaman/TerminalASharpWords.lean
+- E-365 PROVED-PAPER — ss2-word-offset-span。docs/SS2_WORD_OFFSET_SPAN_2026-10-01.md
+- E-366 PROVED-LEAN — ss2-short-tight-any-donor。Recaman/SS2ShortTight.lean
+- E-367 PROVED-LEAN — ss2-word-offset-span-all-k。Recaman/SS2WordOffsetSpan.lean
+- E-368 PROVED-LEAN — ss2-lowss-tight-all-lengths。Recaman/SS2LowSSTight.lean
+- E-369 REFUTED — nosaas-ss2-oldest-injectivity。docs/RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md
+- E-370 PROVED-PAPER — nosaas-ss2-single-sss-local-capacity。docs/RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md
+- E-371 REFUTED — nosaas-ss2-separated-collision-emptiness。docs/HYPOTHESIS_CARD_2026-10-11_SS2_SEPARATED.md

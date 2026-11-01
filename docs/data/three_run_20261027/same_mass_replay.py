@@ -1,0 +1,46 @@
+from pathlib import Path
+import runpy,json
+P=Path(__file__).parent
+# Read the frozen source definitions without invoking discovery/graph code.
+src=(P/'same_mass_pruning.py').read_text().split('\nbase=json.loads')[0]
+ns={'__file__':str(P/'same_mass_pruning.py')};exec(compile(src,'frozen-step-only','exec'),ns);step=ns['step']
+AT=('A','SAAA','SSAAAASAAA');rng=2026102713;checked=eligible=0;bad=[];maxspread=0
+
+def profile(w):
+ # Independent backward weighted formula for prefix area.
+ return sum(1 if c=='A' else -1 for c in w),sum(k*(1 if c=='A' else -1) for k,c in enumerate(reversed(w),1))
+for index in range(500):
+ pre=[]
+ for k in range(5+index%8):
+  rng=(1103515245*rng+12345)%(2**31);pre.append(AT[(rng>>7)%3])
+ pre[0]=AT[2];beta=''.join(pre)
+ args=[]
+ for k in range(6):rng=(1103515245*rng+12345)%(2**31);args.append((1,2,3,5,8)[(rng>>5)%5])
+ tail=''.join(('S' if i%2==0 else 'A')*q for i,q in enumerate(args));whole=beta+tail
+ credit={};state=('',0,0,0,False,());gap=0;can_replay=True
+ for q,c in enumerate(tail):
+  if c=='S':gap+=1;continue
+  b=len(beta)+q;roots=[t for t in range(b) if profile(whole[t:b])==(1,0)];e=bool(roots)
+  local=any(t>=len(beta) for t in roots)
+  if e and not local:
+   r,a=profile(tail[:q]);rho=1-r;C=-a-q*rho;oldareas=[profile(whole[t:len(beta)])[1] for t in roots]
+   assert all(t<len(beta) for t in roots) and all(x==C for x in oldareas)
+   credit.setdefault(rho,[]).append(C);spread=max(credit[rho])-min(credit[rho]);maxspread=max(maxspread,spread)
+   if spread>4:bad.append({'prefix':beta,'args':args,'clock':q,'rho':rho,'areas':credit[rho]})
+  if can_replay:
+   nxt=step(state,gap,int(e))
+   if nxt is None:can_replay=False
+   else:state=nxt
+  gap=0;checked+=1
+ if can_replay:eligible+=1
+ if bad:break
+known=[]
+for beta in ('ASAAA','AASAAA','SAAASAAA','SSAAAASAAA'):
+ tail='S'*5+'A'*3+'S'*4+'A'*4+'S'+'A'*3;whole=beta+tail;state=('',0,0,0,False,());gap=0
+ for q,c in enumerate(tail):
+  if c=='S':gap+=1;continue
+  b=len(beta)+q;e=any(profile(whole[t:b])==(1,0) for t in range(b));state=step(state,gap,int(e));assert state is not None;gap=0
+ known.append({'prefix':beta,'free':state[3],'final_A':state[1]})
+assert step(('',10,19,3,True,()),20,0)[1]==11
+out={'protocol':'SAME_MASS_PRUNING_PROTOCOL.json','fresh_actual_words':index+1,'actual_A_clocks':checked,'r4_model_eligible_whole_tails':eligible,'max_same_mass_old_area_spread':maxspread,'violations':bad,'known_controls_not_holdout':known,'A11_unreachable_control_preserved':True,'scope':'independent backward actual-window replay; existing graph is discovery, not fresh holdout; no completeness/simulation proof'}
+(P/'same-mass-replay.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out));assert not bad

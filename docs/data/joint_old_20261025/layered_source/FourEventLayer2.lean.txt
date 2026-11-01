@@ -1,0 +1,5710 @@
+/- Same numeric input SHA256 716ea518a9592ae1ef2dbc8930d6f51fb8e2be1503c5ff0f641c5aff4977ba6d; A layer 2. -/
+import Recaman.FourEventLayer3
+set_option maxRecDepth 100000
+set_option maxHeartbeats 3000000
+set_option Elab.async false
+namespace Recaman.FourEventData
+open Recaman.FourNonsuppliedData Recaman.FourEventProof
+open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+def s_20 : State := ⟨[false,true,true],2,1,2⟩
+theorem c_20 : Checked s_20 := by
+  apply checked_of_children s_20 [s_210,s_211,s_212,s_213,s_214,s_215,s_216,s_217,s_218,s_219,s_220,s_221,s_222,s_223,s_224,s_225,s_226,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_20 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_210
+    · exact c_211
+    · exact c_212
+    · exact c_213
+    · exact c_214
+    · exact c_215
+    · exact c_216
+    · exact c_217
+    · exact c_218
+    · exact c_219
+    · exact c_220
+    · exact c_221
+    · exact c_222
+    · exact c_223
+    · exact c_224
+    · exact c_225
+    · exact c_226
+    · exact c_227
+    · exact c_227
+
+def s_21 : State := ⟨[false,true,false,true],2,2,2⟩
+theorem c_21 : Checked s_21 := by
+  apply checked_of_children s_21 [s_228,s_229,s_230,s_231,s_232,s_233,s_234,s_235,s_236,s_237,s_238,s_239,s_240,s_241,s_242,s_243,s_244,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_21 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_228
+    · exact c_229
+    · exact c_230
+    · exact c_231
+    · exact c_232
+    · exact c_233
+    · exact c_234
+    · exact c_235
+    · exact c_236
+    · exact c_237
+    · exact c_238
+    · exact c_239
+    · exact c_240
+    · exact c_241
+    · exact c_242
+    · exact c_243
+    · exact c_244
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_22 : State := ⟨[false,true,false,false,true],2,3,2⟩
+theorem c_22 : Checked s_22 := by
+  apply checked_of_children s_22 [s_246,s_247,s_248,s_249,s_250,s_251,s_252,s_253,s_254,s_255,s_256,s_257,s_258,s_259,s_260,s_261,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_22 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_246
+    · exact c_247
+    · exact c_248
+    · exact c_249
+    · exact c_250
+    · exact c_251
+    · exact c_252
+    · exact c_253
+    · exact c_254
+    · exact c_255
+    · exact c_256
+    · exact c_257
+    · exact c_258
+    · exact c_259
+    · exact c_260
+    · exact c_261
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_23 : State := ⟨[false,true,false,false,false,true],2,4,2⟩
+theorem c_23 : Checked s_23 := by
+  apply checked_of_children s_23 [s_263,s_264,s_265,s_266,s_267,s_268,s_269,s_270,s_271,s_272,s_273,s_274,s_275,s_276,s_277,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_23 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_263
+    · exact c_264
+    · exact c_265
+    · exact c_266
+    · exact c_267
+    · exact c_268
+    · exact c_269
+    · exact c_270
+    · exact c_271
+    · exact c_272
+    · exact c_273
+    · exact c_274
+    · exact c_275
+    · exact c_276
+    · exact c_277
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_24 : State := ⟨[false,true,false,false,false,false,true],2,5,2⟩
+theorem c_24 : Checked s_24 := by
+  apply checked_of_children s_24 [s_279,s_280,s_281,s_282,s_283,s_284,s_285,s_286,s_287,s_288,s_289,s_290,s_291,s_292,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_24 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_279
+    · exact c_280
+    · exact c_281
+    · exact c_282
+    · exact c_283
+    · exact c_284
+    · exact c_285
+    · exact c_286
+    · exact c_287
+    · exact c_288
+    · exact c_289
+    · exact c_290
+    · exact c_291
+    · exact c_292
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_25 : State := ⟨[false,true,false,false,false,false,false,true],2,6,2⟩
+theorem c_25 : Checked s_25 := by
+  apply checked_of_children s_25 [s_294,s_295,s_296,s_297,s_298,s_299,s_300,s_301,s_302,s_303,s_304,s_305,s_306,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_25 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_294
+    · exact c_295
+    · exact c_296
+    · exact c_297
+    · exact c_298
+    · exact c_299
+    · exact c_300
+    · exact c_301
+    · exact c_302
+    · exact c_303
+    · exact c_304
+    · exact c_305
+    · exact c_306
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_26 : State := ⟨[false,true,false,false,false,false,false,false,true],2,7,2⟩
+theorem c_26 : Checked s_26 := by
+  apply checked_of_children s_26 [s_308,s_309,s_310,s_311,s_312,s_313,s_314,s_315,s_316,s_317,s_318,s_319,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_26 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_308
+    · exact c_309
+    · exact c_310
+    · exact c_311
+    · exact c_312
+    · exact c_313
+    · exact c_314
+    · exact c_315
+    · exact c_316
+    · exact c_317
+    · exact c_318
+    · exact c_319
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_27 : State := ⟨[false,true,false,false,false,false,false,false,false,true],2,8,2⟩
+theorem c_27 : Checked s_27 := by
+  apply checked_of_children s_27 [s_321,s_322,s_323,s_324,s_325,s_326,s_327,s_328,s_329,s_330,s_331,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_27 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_321
+    · exact c_322
+    · exact c_323
+    · exact c_324
+    · exact c_325
+    · exact c_326
+    · exact c_327
+    · exact c_328
+    · exact c_329
+    · exact c_330
+    · exact c_331
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_28 : State := ⟨[false,true,false,false,false,false,false,false,false,false,true],2,9,2⟩
+theorem c_28 : Checked s_28 := by
+  apply checked_of_children s_28 [s_333,s_334,s_335,s_336,s_337,s_338,s_339,s_340,s_341,s_342,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_28 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_333
+    · exact c_334
+    · exact c_335
+    · exact c_336
+    · exact c_337
+    · exact c_338
+    · exact c_339
+    · exact c_340
+    · exact c_341
+    · exact c_342
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_29 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,true],2,10,2⟩
+theorem c_29 : Checked s_29 := by
+  apply checked_of_children s_29 [s_344,s_345,s_346,s_347,s_348,s_349,s_350,s_351,s_352,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_29 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_344
+    · exact c_345
+    · exact c_346
+    · exact c_347
+    · exact c_348
+    · exact c_349
+    · exact c_350
+    · exact c_351
+    · exact c_352
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_30 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,true],2,11,2⟩
+theorem c_30 : Checked s_30 := by
+  apply checked_of_children s_30 [s_354,s_355,s_356,s_357,s_358,s_359,s_360,s_361,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_30 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_354
+    · exact c_355
+    · exact c_356
+    · exact c_357
+    · exact c_358
+    · exact c_359
+    · exact c_360
+    · exact c_361
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_31 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_31 : Checked s_31 := by
+  apply checked_of_children s_31 [s_363,s_364,s_365,s_366,s_367,s_368,s_369,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_31 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_363
+    · exact c_364
+    · exact c_365
+    · exact c_366
+    · exact c_367
+    · exact c_368
+    · exact c_369
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_32 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_32 : Checked s_32 := by
+  apply checked_of_children s_32 [s_371,s_372,s_373,s_374,s_375,s_376,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_32 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_371
+    · exact c_372
+    · exact c_373
+    · exact c_374
+    · exact c_375
+    · exact c_376
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_33 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_33 : Checked s_33 := by
+  apply checked_of_children s_33 [s_378,s_379,s_380,s_381,s_382,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_33 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_378
+    · exact c_379
+    · exact c_380
+    · exact c_381
+    · exact c_382
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_34 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_34 : Checked s_34 := by
+  apply checked_of_children s_34 [s_384,s_385,s_386,s_387,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_34 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_384
+    · exact c_385
+    · exact c_386
+    · exact c_387
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_35 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_35 : Checked s_35 := by
+  apply checked_of_children s_35 [s_389,s_390,s_391,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_35 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_389
+    · exact c_390
+    · exact c_391
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_36 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_36 : Checked s_36 := by
+  apply checked_of_children s_36 [s_393,s_394,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_36 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_393
+    · exact c_394
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_37 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_37 : Checked s_37 := by
+  apply checked_of_children s_37 [s_396,s_397,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_37 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_396
+    · exact c_397
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_38 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_38 : Checked s_38 := by
+  apply checked_of_children s_38 [s_398,s_397,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_38 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_398
+    · exact c_397
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_39 : State := ⟨[false,false,true,true],2,2,2⟩
+theorem c_39 : Checked s_39 := by
+  apply checked_of_children s_39 [s_399,s_400,s_401,s_402,s_403,s_404,s_405,s_406,s_407,s_408,s_409,s_410,s_411,s_412,s_413,s_414,s_415,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_39 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_399
+    · exact c_400
+    · exact c_401
+    · exact c_402
+    · exact c_403
+    · exact c_404
+    · exact c_405
+    · exact c_406
+    · exact c_407
+    · exact c_408
+    · exact c_409
+    · exact c_410
+    · exact c_411
+    · exact c_412
+    · exact c_413
+    · exact c_414
+    · exact c_415
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_40 : State := ⟨[false,false,true,false,true],2,3,2⟩
+theorem c_40 : Checked s_40 := by
+  apply checked_of_children s_40 [s_416,s_417,s_418,s_419,s_420,s_421,s_422,s_423,s_424,s_425,s_426,s_427,s_428,s_429,s_430,s_431,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_40 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_416
+    · exact c_417
+    · exact c_418
+    · exact c_419
+    · exact c_420
+    · exact c_421
+    · exact c_422
+    · exact c_423
+    · exact c_424
+    · exact c_425
+    · exact c_426
+    · exact c_427
+    · exact c_428
+    · exact c_429
+    · exact c_430
+    · exact c_431
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_41 : State := ⟨[false,false,true,false,false,true],2,4,2⟩
+theorem c_41 : Checked s_41 := by
+  apply checked_of_children s_41 [s_432,s_433,s_434,s_435,s_436,s_437,s_438,s_439,s_440,s_441,s_442,s_443,s_444,s_445,s_446,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_41 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_432
+    · exact c_433
+    · exact c_434
+    · exact c_435
+    · exact c_436
+    · exact c_437
+    · exact c_438
+    · exact c_439
+    · exact c_440
+    · exact c_441
+    · exact c_442
+    · exact c_443
+    · exact c_444
+    · exact c_445
+    · exact c_446
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_42 : State := ⟨[false,false,true,false,false,false,true],2,5,2⟩
+theorem c_42 : Checked s_42 := by
+  apply checked_of_children s_42 [s_447,s_448,s_449,s_450,s_451,s_452,s_453,s_454,s_455,s_456,s_457,s_458,s_459,s_460,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_42 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_447
+    · exact c_448
+    · exact c_449
+    · exact c_450
+    · exact c_451
+    · exact c_452
+    · exact c_453
+    · exact c_454
+    · exact c_455
+    · exact c_456
+    · exact c_457
+    · exact c_458
+    · exact c_459
+    · exact c_460
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_43 : State := ⟨[false,false,true,false,false,false,false,true],2,6,2⟩
+theorem c_43 : Checked s_43 := by
+  apply checked_of_children s_43 [s_461,s_462,s_463,s_464,s_465,s_466,s_467,s_468,s_469,s_470,s_471,s_472,s_473,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_43 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_461
+    · exact c_462
+    · exact c_463
+    · exact c_464
+    · exact c_465
+    · exact c_466
+    · exact c_467
+    · exact c_468
+    · exact c_469
+    · exact c_470
+    · exact c_471
+    · exact c_472
+    · exact c_473
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_44 : State := ⟨[false,false,true,false,false,false,false,false,true],2,7,2⟩
+theorem c_44 : Checked s_44 := by
+  apply checked_of_children s_44 [s_474,s_475,s_476,s_477,s_478,s_479,s_480,s_481,s_482,s_483,s_484,s_485,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_44 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_474
+    · exact c_475
+    · exact c_476
+    · exact c_477
+    · exact c_478
+    · exact c_479
+    · exact c_480
+    · exact c_481
+    · exact c_482
+    · exact c_483
+    · exact c_484
+    · exact c_485
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_45 : State := ⟨[false,false,true,false,false,false,false,false,false,true],2,8,2⟩
+theorem c_45 : Checked s_45 := by
+  apply checked_of_children s_45 [s_486,s_487,s_488,s_489,s_490,s_491,s_492,s_493,s_494,s_495,s_496,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_45 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_486
+    · exact c_487
+    · exact c_488
+    · exact c_489
+    · exact c_490
+    · exact c_491
+    · exact c_492
+    · exact c_493
+    · exact c_494
+    · exact c_495
+    · exact c_496
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_46 : State := ⟨[false,false,true,false,false,false,false,false,false,false,true],2,9,2⟩
+theorem c_46 : Checked s_46 := by
+  apply checked_of_children s_46 [s_497,s_498,s_499,s_500,s_501,s_502,s_503,s_504,s_505,s_506,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_46 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_497
+    · exact c_498
+    · exact c_499
+    · exact c_500
+    · exact c_501
+    · exact c_502
+    · exact c_503
+    · exact c_504
+    · exact c_505
+    · exact c_506
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_47 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,true],2,10,2⟩
+theorem c_47 : Checked s_47 := by
+  apply checked_of_children s_47 [s_507,s_508,s_509,s_510,s_511,s_512,s_513,s_514,s_515,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_47 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_507
+    · exact c_508
+    · exact c_509
+    · exact c_510
+    · exact c_511
+    · exact c_512
+    · exact c_513
+    · exact c_514
+    · exact c_515
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_48 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,true],2,11,2⟩
+theorem c_48 : Checked s_48 := by
+  apply checked_of_children s_48 [s_516,s_517,s_518,s_519,s_520,s_521,s_522,s_523,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_48 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_516
+    · exact c_517
+    · exact c_518
+    · exact c_519
+    · exact c_520
+    · exact c_521
+    · exact c_522
+    · exact c_523
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_49 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_49 : Checked s_49 := by
+  apply checked_of_children s_49 [s_524,s_525,s_526,s_527,s_528,s_529,s_530,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_49 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_524
+    · exact c_525
+    · exact c_526
+    · exact c_527
+    · exact c_528
+    · exact c_529
+    · exact c_530
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_50 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_50 : Checked s_50 := by
+  apply checked_of_children s_50 [s_531,s_532,s_533,s_534,s_535,s_536,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_50 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_531
+    · exact c_532
+    · exact c_533
+    · exact c_534
+    · exact c_535
+    · exact c_536
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_51 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_51 : Checked s_51 := by
+  apply checked_of_children s_51 [s_537,s_538,s_539,s_540,s_541,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_51 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_537
+    · exact c_538
+    · exact c_539
+    · exact c_540
+    · exact c_541
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_52 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_52 : Checked s_52 := by
+  apply checked_of_children s_52 [s_542,s_543,s_544,s_545,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_52 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_542
+    · exact c_543
+    · exact c_544
+    · exact c_545
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_53 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_53 : Checked s_53 := by
+  apply checked_of_children s_53 [s_546,s_547,s_548,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_53 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_546
+    · exact c_547
+    · exact c_548
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_54 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_54 : Checked s_54 := by
+  apply checked_of_children s_54 [s_549,s_550,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_54 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_549
+    · exact c_550
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_55 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_55 : Checked s_55 := by
+  apply checked_of_children s_55 [s_551,s_397,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_55 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_551
+    · exact c_397
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_56 : State := ⟨[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_56 : Checked s_56 := by
+  apply checked_of_children s_56 [s_398,s_397,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_56 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_398
+    · exact c_397
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_57 : State := ⟨[false,false,false,true,true],2,3,2⟩
+theorem c_57 : Checked s_57 := by
+  apply checked_of_children s_57 [s_552,s_553,s_554,s_555,s_556,s_557,s_558,s_559,s_560,s_561,s_562,s_563,s_564,s_565,s_566,s_567,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_57 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_552
+    · exact c_553
+    · exact c_554
+    · exact c_555
+    · exact c_556
+    · exact c_557
+    · exact c_558
+    · exact c_559
+    · exact c_560
+    · exact c_561
+    · exact c_562
+    · exact c_563
+    · exact c_564
+    · exact c_565
+    · exact c_566
+    · exact c_567
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_58 : State := ⟨[false,false,false,true,false,true],2,4,2⟩
+theorem c_58 : Checked s_58 := by
+  apply checked_of_children s_58 [s_569,s_570,s_571,s_572,s_573,s_574,s_575,s_576,s_577,s_578,s_579,s_580,s_581,s_582,s_583,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_58 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_569
+    · exact c_570
+    · exact c_571
+    · exact c_572
+    · exact c_573
+    · exact c_574
+    · exact c_575
+    · exact c_576
+    · exact c_577
+    · exact c_578
+    · exact c_579
+    · exact c_580
+    · exact c_581
+    · exact c_582
+    · exact c_583
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_59 : State := ⟨[false,false,false,true,false,false,true],2,5,2⟩
+theorem c_59 : Checked s_59 := by
+  apply checked_of_children s_59 [s_585,s_586,s_587,s_588,s_589,s_590,s_591,s_592,s_593,s_594,s_595,s_596,s_597,s_598,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_59 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_585
+    · exact c_586
+    · exact c_587
+    · exact c_588
+    · exact c_589
+    · exact c_590
+    · exact c_591
+    · exact c_592
+    · exact c_593
+    · exact c_594
+    · exact c_595
+    · exact c_596
+    · exact c_597
+    · exact c_598
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_60 : State := ⟨[false,false,false,true,false,false,false,true],2,6,2⟩
+theorem c_60 : Checked s_60 := by
+  apply checked_of_children s_60 [s_600,s_601,s_602,s_603,s_604,s_605,s_606,s_607,s_608,s_609,s_610,s_611,s_612,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_60 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_600
+    · exact c_601
+    · exact c_602
+    · exact c_603
+    · exact c_604
+    · exact c_605
+    · exact c_606
+    · exact c_607
+    · exact c_608
+    · exact c_609
+    · exact c_610
+    · exact c_611
+    · exact c_612
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_61 : State := ⟨[false,false,false,true,false,false,false,false,true],2,7,2⟩
+theorem c_61 : Checked s_61 := by
+  apply checked_of_children s_61 [s_614,s_615,s_616,s_617,s_618,s_619,s_620,s_621,s_622,s_623,s_624,s_625,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_61 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_614
+    · exact c_615
+    · exact c_616
+    · exact c_617
+    · exact c_618
+    · exact c_619
+    · exact c_620
+    · exact c_621
+    · exact c_622
+    · exact c_623
+    · exact c_624
+    · exact c_625
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_62 : State := ⟨[false,false,false,true,false,false,false,false,false,true],2,8,2⟩
+theorem c_62 : Checked s_62 := by
+  apply checked_of_children s_62 [s_627,s_628,s_629,s_630,s_631,s_632,s_633,s_634,s_635,s_636,s_637,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_62 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_627
+    · exact c_628
+    · exact c_629
+    · exact c_630
+    · exact c_631
+    · exact c_632
+    · exact c_633
+    · exact c_634
+    · exact c_635
+    · exact c_636
+    · exact c_637
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_63 : State := ⟨[false,false,false,true,false,false,false,false,false,false,true],2,9,2⟩
+theorem c_63 : Checked s_63 := by
+  apply checked_of_children s_63 [s_639,s_640,s_641,s_642,s_643,s_644,s_645,s_646,s_647,s_648,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_63 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_639
+    · exact c_640
+    · exact c_641
+    · exact c_642
+    · exact c_643
+    · exact c_644
+    · exact c_645
+    · exact c_646
+    · exact c_647
+    · exact c_648
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_64 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,true],2,10,2⟩
+theorem c_64 : Checked s_64 := by
+  apply checked_of_children s_64 [s_650,s_651,s_652,s_653,s_654,s_655,s_656,s_657,s_658,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_64 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_650
+    · exact c_651
+    · exact c_652
+    · exact c_653
+    · exact c_654
+    · exact c_655
+    · exact c_656
+    · exact c_657
+    · exact c_658
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_65 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,true],2,11,2⟩
+theorem c_65 : Checked s_65 := by
+  apply checked_of_children s_65 [s_660,s_661,s_662,s_663,s_664,s_665,s_666,s_667,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_65 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_660
+    · exact c_661
+    · exact c_662
+    · exact c_663
+    · exact c_664
+    · exact c_665
+    · exact c_666
+    · exact c_667
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_66 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_66 : Checked s_66 := by
+  apply checked_of_children s_66 [s_669,s_670,s_671,s_672,s_673,s_674,s_675,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_66 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_669
+    · exact c_670
+    · exact c_671
+    · exact c_672
+    · exact c_673
+    · exact c_674
+    · exact c_675
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_67 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_67 : Checked s_67 := by
+  apply checked_of_children s_67 [s_677,s_678,s_679,s_680,s_681,s_682,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_67 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_677
+    · exact c_678
+    · exact c_679
+    · exact c_680
+    · exact c_681
+    · exact c_682
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_68 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_68 : Checked s_68 := by
+  apply checked_of_children s_68 [s_684,s_685,s_686,s_687,s_688,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_68 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_684
+    · exact c_685
+    · exact c_686
+    · exact c_687
+    · exact c_688
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_69 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_69 : Checked s_69 := by
+  apply checked_of_children s_69 [s_690,s_691,s_692,s_693,s_694,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_69 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_690
+    · exact c_691
+    · exact c_692
+    · exact c_693
+    · exact c_694
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_70 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_70 : Checked s_70 := by
+  apply checked_of_children s_70 [s_695,s_696,s_697,s_698,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_70 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_695
+    · exact c_696
+    · exact c_697
+    · exact c_698
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_71 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_71 : Checked s_71 := by
+  apply checked_of_children s_71 [s_699,s_700,s_701,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_71 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_699
+    · exact c_700
+    · exact c_701
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_72 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_72 : Checked s_72 := by
+  apply checked_of_children s_72 [s_702,s_703,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_72 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_702
+    · exact c_703
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_73 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_73 : Checked s_73 := by
+  apply checked_of_children s_73 [s_704,s_397,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_73 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_704
+    · exact c_397
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_74 : State := ⟨[false,false,false,false,true,true],2,4,2⟩
+theorem c_74 : Checked s_74 := by
+  apply checked_of_children s_74 [s_705,s_706,s_707,s_708,s_709,s_710,s_711,s_712,s_713,s_714,s_715,s_716,s_717,s_718,s_719,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_74 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_705
+    · exact c_706
+    · exact c_707
+    · exact c_708
+    · exact c_709
+    · exact c_710
+    · exact c_711
+    · exact c_712
+    · exact c_713
+    · exact c_714
+    · exact c_715
+    · exact c_716
+    · exact c_717
+    · exact c_718
+    · exact c_719
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_75 : State := ⟨[false,false,false,false,true,false,true],2,5,2⟩
+theorem c_75 : Checked s_75 := by
+  apply checked_of_children s_75 [s_721,s_722,s_723,s_724,s_725,s_726,s_727,s_728,s_729,s_730,s_731,s_732,s_733,s_734,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_75 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_721
+    · exact c_722
+    · exact c_723
+    · exact c_724
+    · exact c_725
+    · exact c_726
+    · exact c_727
+    · exact c_728
+    · exact c_729
+    · exact c_730
+    · exact c_731
+    · exact c_732
+    · exact c_733
+    · exact c_734
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_76 : State := ⟨[false,false,false,false,true,false,false,true],2,6,2⟩
+theorem c_76 : Checked s_76 := by
+  apply checked_of_children s_76 [s_736,s_737,s_738,s_739,s_740,s_741,s_742,s_743,s_744,s_745,s_746,s_747,s_748,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_76 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_736
+    · exact c_737
+    · exact c_738
+    · exact c_739
+    · exact c_740
+    · exact c_741
+    · exact c_742
+    · exact c_743
+    · exact c_744
+    · exact c_745
+    · exact c_746
+    · exact c_747
+    · exact c_748
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_77 : State := ⟨[false,false,false,false,true,false,false,false,true],2,7,2⟩
+theorem c_77 : Checked s_77 := by
+  apply checked_of_children s_77 [s_750,s_751,s_752,s_753,s_754,s_755,s_756,s_757,s_758,s_759,s_760,s_761,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_77 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_750
+    · exact c_751
+    · exact c_752
+    · exact c_753
+    · exact c_754
+    · exact c_755
+    · exact c_756
+    · exact c_757
+    · exact c_758
+    · exact c_759
+    · exact c_760
+    · exact c_761
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_78 : State := ⟨[false,false,false,false,true,false,false,false,false,true],2,8,2⟩
+theorem c_78 : Checked s_78 := by
+  apply checked_of_children s_78 [s_763,s_764,s_765,s_766,s_767,s_768,s_769,s_770,s_771,s_772,s_773,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_78 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_763
+    · exact c_764
+    · exact c_765
+    · exact c_766
+    · exact c_767
+    · exact c_768
+    · exact c_769
+    · exact c_770
+    · exact c_771
+    · exact c_772
+    · exact c_773
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_79 : State := ⟨[false,false,false,false,true,false,false,false,false,false,true],2,9,2⟩
+theorem c_79 : Checked s_79 := by
+  apply checked_of_children s_79 [s_775,s_776,s_777,s_778,s_779,s_780,s_781,s_782,s_783,s_784,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_79 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_775
+    · exact c_776
+    · exact c_777
+    · exact c_778
+    · exact c_779
+    · exact c_780
+    · exact c_781
+    · exact c_782
+    · exact c_783
+    · exact c_784
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_80 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,true],2,10,2⟩
+theorem c_80 : Checked s_80 := by
+  apply checked_of_children s_80 [s_786,s_787,s_788,s_789,s_790,s_791,s_792,s_793,s_794,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_80 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_786
+    · exact c_787
+    · exact c_788
+    · exact c_789
+    · exact c_790
+    · exact c_791
+    · exact c_792
+    · exact c_793
+    · exact c_794
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_81 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,true],2,11,2⟩
+theorem c_81 : Checked s_81 := by
+  apply checked_of_children s_81 [s_796,s_797,s_798,s_799,s_800,s_801,s_802,s_803,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_81 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_796
+    · exact c_797
+    · exact c_798
+    · exact c_799
+    · exact c_800
+    · exact c_801
+    · exact c_802
+    · exact c_803
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_82 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_82 : Checked s_82 := by
+  apply checked_of_children s_82 [s_805,s_806,s_807,s_808,s_809,s_810,s_811,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_82 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_805
+    · exact c_806
+    · exact c_807
+    · exact c_808
+    · exact c_809
+    · exact c_810
+    · exact c_811
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_83 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_83 : Checked s_83 := by
+  apply checked_of_children s_83 [s_813,s_814,s_815,s_816,s_817,s_818,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_83 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_813
+    · exact c_814
+    · exact c_815
+    · exact c_816
+    · exact c_817
+    · exact c_818
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_84 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_84 : Checked s_84 := by
+  apply checked_of_children s_84 [s_820,s_821,s_822,s_823,s_824,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_84 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_820
+    · exact c_821
+    · exact c_822
+    · exact c_823
+    · exact c_824
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_85 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_85 : Checked s_85 := by
+  apply checked_of_children s_85 [s_826,s_827,s_828,s_829,s_830,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_85 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_826
+    · exact c_827
+    · exact c_828
+    · exact c_829
+    · exact c_830
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_86 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_86 : Checked s_86 := by
+  apply checked_of_children s_86 [s_831,s_832,s_833,s_834,s_694,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_86 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_831
+    · exact c_832
+    · exact c_833
+    · exact c_834
+    · exact c_694
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_87 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_87 : Checked s_87 := by
+  apply checked_of_children s_87 [s_835,s_836,s_837,s_698,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_87 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_835
+    · exact c_836
+    · exact c_837
+    · exact c_698
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_88 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_88 : Checked s_88 := by
+  apply checked_of_children s_88 [s_838,s_839,s_701,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_88 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_838
+    · exact c_839
+    · exact c_701
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_89 : State := ⟨[false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_89 : Checked s_89 := by
+  apply checked_of_children s_89 [s_840,s_703,s_395,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_89 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_840
+    · exact c_703
+    · exact c_395
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_90 : State := ⟨[false,false,false,false,false,true,true],2,5,2⟩
+theorem c_90 : Checked s_90 := by
+  apply checked_of_children s_90 [s_841,s_842,s_843,s_844,s_845,s_846,s_847,s_848,s_849,s_850,s_851,s_852,s_853,s_854,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_90 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_841
+    · exact c_842
+    · exact c_843
+    · exact c_844
+    · exact c_845
+    · exact c_846
+    · exact c_847
+    · exact c_848
+    · exact c_849
+    · exact c_850
+    · exact c_851
+    · exact c_852
+    · exact c_853
+    · exact c_854
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_91 : State := ⟨[false,false,false,false,false,true,false,true],2,6,2⟩
+theorem c_91 : Checked s_91 := by
+  apply checked_of_children s_91 [s_856,s_857,s_858,s_859,s_860,s_861,s_862,s_863,s_864,s_865,s_866,s_867,s_868,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_91 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_856
+    · exact c_857
+    · exact c_858
+    · exact c_859
+    · exact c_860
+    · exact c_861
+    · exact c_862
+    · exact c_863
+    · exact c_864
+    · exact c_865
+    · exact c_866
+    · exact c_867
+    · exact c_868
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_92 : State := ⟨[false,false,false,false,false,true,false,false,true],2,7,2⟩
+theorem c_92 : Checked s_92 := by
+  apply checked_of_children s_92 [s_870,s_871,s_872,s_873,s_874,s_875,s_876,s_877,s_878,s_879,s_880,s_881,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_92 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_870
+    · exact c_871
+    · exact c_872
+    · exact c_873
+    · exact c_874
+    · exact c_875
+    · exact c_876
+    · exact c_877
+    · exact c_878
+    · exact c_879
+    · exact c_880
+    · exact c_881
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_93 : State := ⟨[false,false,false,false,false,true,false,false,false,true],2,8,2⟩
+theorem c_93 : Checked s_93 := by
+  apply checked_of_children s_93 [s_883,s_884,s_885,s_886,s_887,s_888,s_889,s_890,s_891,s_892,s_893,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_93 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_883
+    · exact c_884
+    · exact c_885
+    · exact c_886
+    · exact c_887
+    · exact c_888
+    · exact c_889
+    · exact c_890
+    · exact c_891
+    · exact c_892
+    · exact c_893
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_94 : State := ⟨[false,false,false,false,false,true,false,false,false,false,true],2,9,2⟩
+theorem c_94 : Checked s_94 := by
+  apply checked_of_children s_94 [s_895,s_896,s_897,s_898,s_899,s_900,s_901,s_902,s_903,s_904,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_94 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_895
+    · exact c_896
+    · exact c_897
+    · exact c_898
+    · exact c_899
+    · exact c_900
+    · exact c_901
+    · exact c_902
+    · exact c_903
+    · exact c_904
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_95 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,true],2,10,2⟩
+theorem c_95 : Checked s_95 := by
+  apply checked_of_children s_95 [s_906,s_907,s_908,s_909,s_910,s_911,s_912,s_913,s_914,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_95 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_906
+    · exact c_907
+    · exact c_908
+    · exact c_909
+    · exact c_910
+    · exact c_911
+    · exact c_912
+    · exact c_913
+    · exact c_914
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_96 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,true],2,11,2⟩
+theorem c_96 : Checked s_96 := by
+  apply checked_of_children s_96 [s_916,s_917,s_918,s_919,s_920,s_921,s_922,s_923,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_96 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_916
+    · exact c_917
+    · exact c_918
+    · exact c_919
+    · exact c_920
+    · exact c_921
+    · exact c_922
+    · exact c_923
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_97 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_97 : Checked s_97 := by
+  apply checked_of_children s_97 [s_925,s_926,s_927,s_928,s_929,s_930,s_931,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_97 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_925
+    · exact c_926
+    · exact c_927
+    · exact c_928
+    · exact c_929
+    · exact c_930
+    · exact c_931
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_98 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_98 : Checked s_98 := by
+  apply checked_of_children s_98 [s_933,s_934,s_935,s_936,s_937,s_938,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_98 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_933
+    · exact c_934
+    · exact c_935
+    · exact c_936
+    · exact c_937
+    · exact c_938
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_99 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_99 : Checked s_99 := by
+  apply checked_of_children s_99 [s_940,s_941,s_942,s_943,s_944,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_99 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_940
+    · exact c_941
+    · exact c_942
+    · exact c_943
+    · exact c_944
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_100 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_100 : Checked s_100 := by
+  apply checked_of_children s_100 [s_946,s_947,s_948,s_949,s_950,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_100 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_946
+    · exact c_947
+    · exact c_948
+    · exact c_949
+    · exact c_950
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_101 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_101 : Checked s_101 := by
+  apply checked_of_children s_101 [s_951,s_952,s_953,s_954,s_830,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_101 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_951
+    · exact c_952
+    · exact c_953
+    · exact c_954
+    · exact c_830
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_102 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_102 : Checked s_102 := by
+  apply checked_of_children s_102 [s_955,s_956,s_957,s_834,s_694,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_102 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_955
+    · exact c_956
+    · exact c_957
+    · exact c_834
+    · exact c_694
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_103 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_103 : Checked s_103 := by
+  apply checked_of_children s_103 [s_958,s_959,s_837,s_698,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_103 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_958
+    · exact c_959
+    · exact c_837
+    · exact c_698
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_104 : State := ⟨[false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_104 : Checked s_104 := by
+  apply checked_of_children s_104 [s_960,s_839,s_701,s_392,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_104 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_960
+    · exact c_839
+    · exact c_701
+    · exact c_392
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_105 : State := ⟨[false,false,false,false,false,false,true,true],2,6,2⟩
+theorem c_105 : Checked s_105 := by
+  apply checked_of_children s_105 [s_961,s_962,s_963,s_964,s_965,s_966,s_967,s_968,s_969,s_970,s_971,s_972,s_973,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_105 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_961
+    · exact c_962
+    · exact c_963
+    · exact c_964
+    · exact c_965
+    · exact c_966
+    · exact c_967
+    · exact c_968
+    · exact c_969
+    · exact c_970
+    · exact c_971
+    · exact c_972
+    · exact c_973
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_106 : State := ⟨[false,false,false,false,false,false,true,false,true],2,7,2⟩
+theorem c_106 : Checked s_106 := by
+  apply checked_of_children s_106 [s_975,s_976,s_977,s_978,s_979,s_980,s_981,s_982,s_983,s_984,s_985,s_986,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_106 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_975
+    · exact c_976
+    · exact c_977
+    · exact c_978
+    · exact c_979
+    · exact c_980
+    · exact c_981
+    · exact c_982
+    · exact c_983
+    · exact c_984
+    · exact c_985
+    · exact c_986
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_107 : State := ⟨[false,false,false,false,false,false,true,false,false,true],2,8,2⟩
+theorem c_107 : Checked s_107 := by
+  apply checked_of_children s_107 [s_988,s_989,s_990,s_991,s_992,s_993,s_994,s_995,s_996,s_997,s_998,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_107 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_988
+    · exact c_989
+    · exact c_990
+    · exact c_991
+    · exact c_992
+    · exact c_993
+    · exact c_994
+    · exact c_995
+    · exact c_996
+    · exact c_997
+    · exact c_998
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_108 : State := ⟨[false,false,false,false,false,false,true,false,false,false,true],2,9,2⟩
+theorem c_108 : Checked s_108 := by
+  apply checked_of_children s_108 [s_1000,s_1001,s_1002,s_1003,s_1004,s_1005,s_1006,s_1007,s_1008,s_1009,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_108 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1000
+    · exact c_1001
+    · exact c_1002
+    · exact c_1003
+    · exact c_1004
+    · exact c_1005
+    · exact c_1006
+    · exact c_1007
+    · exact c_1008
+    · exact c_1009
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_109 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,true],2,10,2⟩
+theorem c_109 : Checked s_109 := by
+  apply checked_of_children s_109 [s_1011,s_1012,s_1013,s_1014,s_1015,s_1016,s_1017,s_1018,s_1019,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_109 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1011
+    · exact c_1012
+    · exact c_1013
+    · exact c_1014
+    · exact c_1015
+    · exact c_1016
+    · exact c_1017
+    · exact c_1018
+    · exact c_1019
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_110 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,true],2,11,2⟩
+theorem c_110 : Checked s_110 := by
+  apply checked_of_children s_110 [s_1021,s_1022,s_1023,s_1024,s_1025,s_1026,s_1027,s_1028,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_110 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1021
+    · exact c_1022
+    · exact c_1023
+    · exact c_1024
+    · exact c_1025
+    · exact c_1026
+    · exact c_1027
+    · exact c_1028
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_111 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,12,2⟩
+theorem c_111 : Checked s_111 := by
+  apply checked_of_children s_111 [s_1030,s_1031,s_1032,s_1033,s_1034,s_1035,s_1036,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_111 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1030
+    · exact c_1031
+    · exact c_1032
+    · exact c_1033
+    · exact c_1034
+    · exact c_1035
+    · exact c_1036
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_112 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_112 : Checked s_112 := by
+  apply checked_of_children s_112 [s_1038,s_1039,s_1040,s_1041,s_1042,s_1043,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_112 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1038
+    · exact c_1039
+    · exact c_1040
+    · exact c_1041
+    · exact c_1042
+    · exact c_1043
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_113 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_113 : Checked s_113 := by
+  apply checked_of_children s_113 [s_1045,s_1046,s_1047,s_1048,s_1049,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_113 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1045
+    · exact c_1046
+    · exact c_1047
+    · exact c_1048
+    · exact c_1049
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_114 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_114 : Checked s_114 := by
+  apply checked_of_children s_114 [s_1051,s_1052,s_1053,s_1054,s_1055,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_114 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1051
+    · exact c_1052
+    · exact c_1053
+    · exact c_1054
+    · exact c_1055
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_115 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_115 : Checked s_115 := by
+  apply checked_of_children s_115 [s_1056,s_1057,s_1058,s_1059,s_950,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_115 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1056
+    · exact c_1057
+    · exact c_1058
+    · exact c_1059
+    · exact c_950
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_116 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_116 : Checked s_116 := by
+  apply checked_of_children s_116 [s_1060,s_1061,s_1062,s_954,s_830,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_116 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1060
+    · exact c_1061
+    · exact c_1062
+    · exact c_954
+    · exact c_830
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_117 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_117 : Checked s_117 := by
+  apply checked_of_children s_117 [s_1063,s_1064,s_957,s_834,s_694,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_117 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1063
+    · exact c_1064
+    · exact c_957
+    · exact c_834
+    · exact c_694
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_118 : State := ⟨[false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_118 : Checked s_118 := by
+  apply checked_of_children s_118 [s_1065,s_959,s_837,s_698,s_388,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_118 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1065
+    · exact c_959
+    · exact c_837
+    · exact c_698
+    · exact c_388
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_119 : State := ⟨[false,false,false,false,false,false,false,true,true],2,7,2⟩
+theorem c_119 : Checked s_119 := by
+  apply checked_of_children s_119 [s_1066,s_1067,s_1068,s_1069,s_1070,s_1071,s_1072,s_1073,s_1074,s_1075,s_1076,s_1077,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_119 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1066
+    · exact c_1067
+    · exact c_1068
+    · exact c_1069
+    · exact c_1070
+    · exact c_1071
+    · exact c_1072
+    · exact c_1073
+    · exact c_1074
+    · exact c_1075
+    · exact c_1076
+    · exact c_1077
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_120 : State := ⟨[false,false,false,false,false,false,false,true,false,true],2,8,2⟩
+theorem c_120 : Checked s_120 := by
+  apply checked_of_children s_120 [s_1079,s_1080,s_1081,s_1082,s_1083,s_1084,s_1085,s_1086,s_1087,s_1088,s_1089,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_120 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1079
+    · exact c_1080
+    · exact c_1081
+    · exact c_1082
+    · exact c_1083
+    · exact c_1084
+    · exact c_1085
+    · exact c_1086
+    · exact c_1087
+    · exact c_1088
+    · exact c_1089
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_121 : State := ⟨[false,false,false,false,false,false,false,true,false,false,true],2,9,2⟩
+theorem c_121 : Checked s_121 := by
+  apply checked_of_children s_121 [s_1091,s_1092,s_1093,s_1094,s_1095,s_1096,s_1097,s_1098,s_1099,s_1100,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_121 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1091
+    · exact c_1092
+    · exact c_1093
+    · exact c_1094
+    · exact c_1095
+    · exact c_1096
+    · exact c_1097
+    · exact c_1098
+    · exact c_1099
+    · exact c_1100
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_122 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,true],2,10,2⟩
+theorem c_122 : Checked s_122 := by
+  apply checked_of_children s_122 [s_1102,s_1103,s_1104,s_1105,s_1106,s_1107,s_1108,s_1109,s_1110,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_122 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1102
+    · exact c_1103
+    · exact c_1104
+    · exact c_1105
+    · exact c_1106
+    · exact c_1107
+    · exact c_1108
+    · exact c_1109
+    · exact c_1110
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_123 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,true],2,11,2⟩
+theorem c_123 : Checked s_123 := by
+  apply checked_of_children s_123 [s_1112,s_1113,s_1114,s_1115,s_1116,s_1117,s_1118,s_1119,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_123 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1112
+    · exact c_1113
+    · exact c_1114
+    · exact c_1115
+    · exact c_1116
+    · exact c_1117
+    · exact c_1118
+    · exact c_1119
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_124 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,12,2⟩
+theorem c_124 : Checked s_124 := by
+  apply checked_of_children s_124 [s_1121,s_1122,s_1123,s_1124,s_1125,s_1126,s_1127,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_124 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1121
+    · exact c_1122
+    · exact c_1123
+    · exact c_1124
+    · exact c_1125
+    · exact c_1126
+    · exact c_1127
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_125 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,13,2⟩
+theorem c_125 : Checked s_125 := by
+  apply checked_of_children s_125 [s_1129,s_1130,s_1131,s_1132,s_1133,s_1134,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_125 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1129
+    · exact c_1130
+    · exact c_1131
+    · exact c_1132
+    · exact c_1133
+    · exact c_1134
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_126 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_126 : Checked s_126 := by
+  apply checked_of_children s_126 [s_1136,s_1137,s_1138,s_1139,s_1140,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_126 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1136
+    · exact c_1137
+    · exact c_1138
+    · exact c_1139
+    · exact c_1140
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_127 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_127 : Checked s_127 := by
+  apply checked_of_children s_127 [s_1142,s_1143,s_1144,s_1145,s_1146,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_127 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1142
+    · exact c_1143
+    · exact c_1144
+    · exact c_1145
+    · exact c_1146
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_128 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_128 : Checked s_128 := by
+  apply checked_of_children s_128 [s_1147,s_1148,s_1149,s_1150,s_1055,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_128 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1147
+    · exact c_1148
+    · exact c_1149
+    · exact c_1150
+    · exact c_1055
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_129 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_129 : Checked s_129 := by
+  apply checked_of_children s_129 [s_1151,s_1152,s_1153,s_1059,s_950,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_129 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1151
+    · exact c_1152
+    · exact c_1153
+    · exact c_1059
+    · exact c_950
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_130 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_130 : Checked s_130 := by
+  apply checked_of_children s_130 [s_1154,s_1155,s_1062,s_954,s_830,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_130 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1154
+    · exact c_1155
+    · exact c_1062
+    · exact c_954
+    · exact c_830
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_131 : State := ⟨[false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_131 : Checked s_131 := by
+  apply checked_of_children s_131 [s_1156,s_1064,s_957,s_834,s_694,s_383,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_131 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1156
+    · exact c_1064
+    · exact c_957
+    · exact c_834
+    · exact c_694
+    · exact c_383
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_132 : State := ⟨[false,false,false,false,false,false,false,false,true,true],2,8,2⟩
+theorem c_132 : Checked s_132 := by
+  apply checked_of_children s_132 [s_1157,s_1158,s_1159,s_1160,s_1161,s_1162,s_1163,s_1164,s_1165,s_1166,s_1167,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_132 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1157
+    · exact c_1158
+    · exact c_1159
+    · exact c_1160
+    · exact c_1161
+    · exact c_1162
+    · exact c_1163
+    · exact c_1164
+    · exact c_1165
+    · exact c_1166
+    · exact c_1167
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_133 : State := ⟨[false,false,false,false,false,false,false,false,true,false,true],2,9,2⟩
+theorem c_133 : Checked s_133 := by
+  apply checked_of_children s_133 [s_1169,s_1170,s_1171,s_1172,s_1173,s_1174,s_1175,s_1176,s_1177,s_1178,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_133 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1169
+    · exact c_1170
+    · exact c_1171
+    · exact c_1172
+    · exact c_1173
+    · exact c_1174
+    · exact c_1175
+    · exact c_1176
+    · exact c_1177
+    · exact c_1178
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_134 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,true],2,10,2⟩
+theorem c_134 : Checked s_134 := by
+  apply checked_of_children s_134 [s_1180,s_1181,s_1182,s_1183,s_1184,s_1185,s_1186,s_1187,s_1188,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_134 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1180
+    · exact c_1181
+    · exact c_1182
+    · exact c_1183
+    · exact c_1184
+    · exact c_1185
+    · exact c_1186
+    · exact c_1187
+    · exact c_1188
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_135 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,true],2,11,2⟩
+theorem c_135 : Checked s_135 := by
+  apply checked_of_children s_135 [s_1190,s_1191,s_1192,s_1193,s_1194,s_1195,s_1196,s_1197,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_135 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1190
+    · exact c_1191
+    · exact c_1192
+    · exact c_1193
+    · exact c_1194
+    · exact c_1195
+    · exact c_1196
+    · exact c_1197
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_136 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,12,2⟩
+theorem c_136 : Checked s_136 := by
+  apply checked_of_children s_136 [s_1199,s_1200,s_1201,s_1202,s_1203,s_1204,s_1205,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_136 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1199
+    · exact c_1200
+    · exact c_1201
+    · exact c_1202
+    · exact c_1203
+    · exact c_1204
+    · exact c_1205
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_137 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,13,2⟩
+theorem c_137 : Checked s_137 := by
+  apply checked_of_children s_137 [s_1207,s_1208,s_1209,s_1210,s_1211,s_1212,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_137 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1207
+    · exact c_1208
+    · exact c_1209
+    · exact c_1210
+    · exact c_1211
+    · exact c_1212
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_138 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,14,2⟩
+theorem c_138 : Checked s_138 := by
+  apply checked_of_children s_138 [s_1214,s_1215,s_1216,s_1217,s_1218,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_138 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1214
+    · exact c_1215
+    · exact c_1216
+    · exact c_1217
+    · exact c_1218
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_139 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_139 : Checked s_139 := by
+  apply checked_of_children s_139 [s_1220,s_1221,s_1222,s_1223,s_1224,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_139 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1220
+    · exact c_1221
+    · exact c_1222
+    · exact c_1223
+    · exact c_1224
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_140 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_140 : Checked s_140 := by
+  apply checked_of_children s_140 [s_1225,s_1226,s_1227,s_1228,s_1146,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_140 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1225
+    · exact c_1226
+    · exact c_1227
+    · exact c_1228
+    · exact c_1146
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_141 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_141 : Checked s_141 := by
+  apply checked_of_children s_141 [s_1229,s_1230,s_1231,s_1150,s_1055,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_141 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1229
+    · exact c_1230
+    · exact c_1231
+    · exact c_1150
+    · exact c_1055
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_142 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_142 : Checked s_142 := by
+  apply checked_of_children s_142 [s_1232,s_1233,s_1153,s_1059,s_950,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_142 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1232
+    · exact c_1233
+    · exact c_1153
+    · exact c_1059
+    · exact c_950
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_143 : State := ⟨[false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_143 : Checked s_143 := by
+  apply checked_of_children s_143 [s_1234,s_1155,s_1062,s_954,s_830,s_689,s_377,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_143 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1234
+    · exact c_1155
+    · exact c_1062
+    · exact c_954
+    · exact c_830
+    · exact c_689
+    · exact c_377
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_144 : State := ⟨[false,false,false,false,false,false,false,false,false,true,true],2,9,2⟩
+theorem c_144 : Checked s_144 := by
+  apply checked_of_children s_144 [s_1235,s_1236,s_1237,s_1238,s_1239,s_1240,s_1241,s_1242,s_1243,s_1244,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_144 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1235
+    · exact c_1236
+    · exact c_1237
+    · exact c_1238
+    · exact c_1239
+    · exact c_1240
+    · exact c_1241
+    · exact c_1242
+    · exact c_1243
+    · exact c_1244
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_145 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,true],2,10,2⟩
+theorem c_145 : Checked s_145 := by
+  apply checked_of_children s_145 [s_1246,s_1247,s_1248,s_1249,s_1250,s_1251,s_1252,s_1253,s_1254,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_145 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1246
+    · exact c_1247
+    · exact c_1248
+    · exact c_1249
+    · exact c_1250
+    · exact c_1251
+    · exact c_1252
+    · exact c_1253
+    · exact c_1254
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_146 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,true],2,11,2⟩
+theorem c_146 : Checked s_146 := by
+  apply checked_of_children s_146 [s_1256,s_1257,s_1258,s_1259,s_1260,s_1261,s_1262,s_1263,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_146 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1256
+    · exact c_1257
+    · exact c_1258
+    · exact c_1259
+    · exact c_1260
+    · exact c_1261
+    · exact c_1262
+    · exact c_1263
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_147 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,12,2⟩
+theorem c_147 : Checked s_147 := by
+  apply checked_of_children s_147 [s_1265,s_1266,s_1267,s_1268,s_1269,s_1270,s_1271,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_147 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1265
+    · exact c_1266
+    · exact c_1267
+    · exact c_1268
+    · exact c_1269
+    · exact c_1270
+    · exact c_1271
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_148 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,13,2⟩
+theorem c_148 : Checked s_148 := by
+  apply checked_of_children s_148 [s_1273,s_1274,s_1275,s_1276,s_1277,s_1278,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_148 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1273
+    · exact c_1274
+    · exact c_1275
+    · exact c_1276
+    · exact c_1277
+    · exact c_1278
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_149 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,14,2⟩
+theorem c_149 : Checked s_149 := by
+  apply checked_of_children s_149 [s_1280,s_1281,s_1282,s_1283,s_1284,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_149 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1280
+    · exact c_1281
+    · exact c_1282
+    · exact c_1283
+    · exact c_1284
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_150 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,15,2⟩
+theorem c_150 : Checked s_150 := by
+  apply checked_of_children s_150 [s_1286,s_1287,s_1288,s_1289,s_1290,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_150 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1286
+    · exact c_1287
+    · exact c_1288
+    · exact c_1289
+    · exact c_1290
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_151 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_151 : Checked s_151 := by
+  apply checked_of_children s_151 [s_1291,s_1292,s_1293,s_1294,s_1224,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_151 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1291
+    · exact c_1292
+    · exact c_1293
+    · exact c_1294
+    · exact c_1224
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_152 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_152 : Checked s_152 := by
+  apply checked_of_children s_152 [s_1295,s_1296,s_1297,s_1228,s_1146,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_152 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1295
+    · exact c_1296
+    · exact c_1297
+    · exact c_1228
+    · exact c_1146
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_153 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_153 : Checked s_153 := by
+  apply checked_of_children s_153 [s_1298,s_1299,s_1231,s_1150,s_1055,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_153 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1298
+    · exact c_1299
+    · exact c_1231
+    · exact c_1150
+    · exact c_1055
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_154 : State := ⟨[false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_154 : Checked s_154 := by
+  apply checked_of_children s_154 [s_1300,s_1233,s_1153,s_1059,s_950,s_825,s_683,s_370,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_154 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1300
+    · exact c_1233
+    · exact c_1153
+    · exact c_1059
+    · exact c_950
+    · exact c_825
+    · exact c_683
+    · exact c_370
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_155 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,true],2,10,2⟩
+theorem c_155 : Checked s_155 := by
+  apply checked_of_children s_155 [s_1301,s_1302,s_1303,s_1304,s_1305,s_1306,s_1307,s_1308,s_1309,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_155 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1301
+    · exact c_1302
+    · exact c_1303
+    · exact c_1304
+    · exact c_1305
+    · exact c_1306
+    · exact c_1307
+    · exact c_1308
+    · exact c_1309
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_156 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,true],2,11,2⟩
+theorem c_156 : Checked s_156 := by
+  apply checked_of_children s_156 [s_1311,s_1312,s_1313,s_1314,s_1315,s_1316,s_1317,s_1318,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_156 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1311
+    · exact c_1312
+    · exact c_1313
+    · exact c_1314
+    · exact c_1315
+    · exact c_1316
+    · exact c_1317
+    · exact c_1318
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_157 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,12,2⟩
+theorem c_157 : Checked s_157 := by
+  apply checked_of_children s_157 [s_1320,s_1321,s_1322,s_1323,s_1324,s_1325,s_1326,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_157 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1320
+    · exact c_1321
+    · exact c_1322
+    · exact c_1323
+    · exact c_1324
+    · exact c_1325
+    · exact c_1326
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_158 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,13,2⟩
+theorem c_158 : Checked s_158 := by
+  apply checked_of_children s_158 [s_1328,s_1329,s_1330,s_1331,s_1332,s_1333,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_158 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1328
+    · exact c_1329
+    · exact c_1330
+    · exact c_1331
+    · exact c_1332
+    · exact c_1333
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_159 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,14,2⟩
+theorem c_159 : Checked s_159 := by
+  apply checked_of_children s_159 [s_1335,s_1336,s_1337,s_1338,s_1339,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_159 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1335
+    · exact c_1336
+    · exact c_1337
+    · exact c_1338
+    · exact c_1339
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_160 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,15,2⟩
+theorem c_160 : Checked s_160 := by
+  apply checked_of_children s_160 [s_1341,s_1342,s_1343,s_1344,s_1345,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_160 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1341
+    · exact c_1342
+    · exact c_1343
+    · exact c_1344
+    · exact c_1345
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_161 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,16,2⟩
+theorem c_161 : Checked s_161 := by
+  apply checked_of_children s_161 [s_1346,s_1347,s_1348,s_1349,s_1290,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_161 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1346
+    · exact c_1347
+    · exact c_1348
+    · exact c_1349
+    · exact c_1290
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_162 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_162 : Checked s_162 := by
+  apply checked_of_children s_162 [s_1350,s_1351,s_1352,s_1294,s_1224,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_162 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1350
+    · exact c_1351
+    · exact c_1352
+    · exact c_1294
+    · exact c_1224
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_163 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_163 : Checked s_163 := by
+  apply checked_of_children s_163 [s_1353,s_1354,s_1297,s_1228,s_1146,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_163 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1353
+    · exact c_1354
+    · exact c_1297
+    · exact c_1228
+    · exact c_1146
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_164 : State := ⟨[false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_164 : Checked s_164 := by
+  apply checked_of_children s_164 [s_1355,s_1299,s_1231,s_1150,s_1055,s_945,s_819,s_676,s_362,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_164 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1355
+    · exact c_1299
+    · exact c_1231
+    · exact c_1150
+    · exact c_1055
+    · exact c_945
+    · exact c_819
+    · exact c_676
+    · exact c_362
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_165 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,true],2,11,2⟩
+theorem c_165 : Checked s_165 := by
+  apply checked_of_children s_165 [s_1356,s_1357,s_1358,s_1359,s_1360,s_1361,s_1362,s_1363,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_165 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1356
+    · exact c_1357
+    · exact c_1358
+    · exact c_1359
+    · exact c_1360
+    · exact c_1361
+    · exact c_1362
+    · exact c_1363
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_166 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,12,2⟩
+theorem c_166 : Checked s_166 := by
+  apply checked_of_children s_166 [s_1365,s_1366,s_1367,s_1368,s_1369,s_1370,s_1371,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_166 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1365
+    · exact c_1366
+    · exact c_1367
+    · exact c_1368
+    · exact c_1369
+    · exact c_1370
+    · exact c_1371
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_167 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,13,2⟩
+theorem c_167 : Checked s_167 := by
+  apply checked_of_children s_167 [s_1373,s_1374,s_1375,s_1376,s_1377,s_1378,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_167 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1373
+    · exact c_1374
+    · exact c_1375
+    · exact c_1376
+    · exact c_1377
+    · exact c_1378
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_168 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,14,2⟩
+theorem c_168 : Checked s_168 := by
+  apply checked_of_children s_168 [s_1380,s_1381,s_1382,s_1383,s_1384,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_168 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1380
+    · exact c_1381
+    · exact c_1382
+    · exact c_1383
+    · exact c_1384
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_169 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,15,2⟩
+theorem c_169 : Checked s_169 := by
+  apply checked_of_children s_169 [s_1386,s_1387,s_1388,s_1389,s_1390,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_169 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1386
+    · exact c_1387
+    · exact c_1388
+    · exact c_1389
+    · exact c_1390
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_170 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,16,2⟩
+theorem c_170 : Checked s_170 := by
+  apply checked_of_children s_170 [s_1391,s_1392,s_1393,s_1394,s_1345,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_170 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1391
+    · exact c_1392
+    · exact c_1393
+    · exact c_1394
+    · exact c_1345
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_171 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,17,2⟩
+theorem c_171 : Checked s_171 := by
+  apply checked_of_children s_171 [s_1395,s_1396,s_1397,s_1349,s_1290,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_171 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1395
+    · exact c_1396
+    · exact c_1397
+    · exact c_1349
+    · exact c_1290
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_172 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_172 : Checked s_172 := by
+  apply checked_of_children s_172 [s_1398,s_1399,s_1352,s_1294,s_1224,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_172 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1398
+    · exact c_1399
+    · exact c_1352
+    · exact c_1294
+    · exact c_1224
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_173 : State := ⟨[false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_173 : Checked s_173 := by
+  apply checked_of_children s_173 [s_1400,s_1354,s_1297,s_1228,s_1146,s_1050,s_939,s_812,s_668,s_353,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_173 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1400
+    · exact c_1354
+    · exact c_1297
+    · exact c_1228
+    · exact c_1146
+    · exact c_1050
+    · exact c_939
+    · exact c_812
+    · exact c_668
+    · exact c_353
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_174 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,12,2⟩
+theorem c_174 : Checked s_174 := by
+  apply checked_of_children s_174 [s_1401,s_1402,s_1403,s_1404,s_1405,s_1406,s_1407,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_174 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1401
+    · exact c_1402
+    · exact c_1403
+    · exact c_1404
+    · exact c_1405
+    · exact c_1406
+    · exact c_1407
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_175 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,13,2⟩
+theorem c_175 : Checked s_175 := by
+  apply checked_of_children s_175 [s_1409,s_1410,s_1411,s_1412,s_1413,s_1414,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_175 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1409
+    · exact c_1410
+    · exact c_1411
+    · exact c_1412
+    · exact c_1413
+    · exact c_1414
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_176 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,14,2⟩
+theorem c_176 : Checked s_176 := by
+  apply checked_of_children s_176 [s_1416,s_1417,s_1418,s_1419,s_1420,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_176 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1416
+    · exact c_1417
+    · exact c_1418
+    · exact c_1419
+    · exact c_1420
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_177 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,15,2⟩
+theorem c_177 : Checked s_177 := by
+  apply checked_of_children s_177 [s_1422,s_1423,s_1424,s_1425,s_1426,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_177 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1422
+    · exact c_1423
+    · exact c_1424
+    · exact c_1425
+    · exact c_1426
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_178 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,16,2⟩
+theorem c_178 : Checked s_178 := by
+  apply checked_of_children s_178 [s_1427,s_1428,s_1429,s_1430,s_1390,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_178 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1427
+    · exact c_1428
+    · exact c_1429
+    · exact c_1430
+    · exact c_1390
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_179 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,17,2⟩
+theorem c_179 : Checked s_179 := by
+  apply checked_of_children s_179 [s_1431,s_1432,s_1433,s_1394,s_1345,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_179 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1431
+    · exact c_1432
+    · exact c_1433
+    · exact c_1394
+    · exact c_1345
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_180 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,18,2⟩
+theorem c_180 : Checked s_180 := by
+  apply checked_of_children s_180 [s_1434,s_1435,s_1397,s_1349,s_1290,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_180 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1434
+    · exact c_1435
+    · exact c_1397
+    · exact c_1349
+    · exact c_1290
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_181 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_181 : Checked s_181 := by
+  apply checked_of_children s_181 [s_1436,s_1399,s_1352,s_1294,s_1224,s_1141,s_1044,s_932,s_804,s_659,s_343,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_181 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1436
+    · exact c_1399
+    · exact c_1352
+    · exact c_1294
+    · exact c_1224
+    · exact c_1141
+    · exact c_1044
+    · exact c_932
+    · exact c_804
+    · exact c_659
+    · exact c_343
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_182 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,13,2⟩
+theorem c_182 : Checked s_182 := by
+  apply checked_of_children s_182 [s_1437,s_1438,s_1439,s_1440,s_1441,s_1442,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_182 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1437
+    · exact c_1438
+    · exact c_1439
+    · exact c_1440
+    · exact c_1441
+    · exact c_1442
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_183 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,14,2⟩
+theorem c_183 : Checked s_183 := by
+  apply checked_of_children s_183 [s_1444,s_1445,s_1446,s_1447,s_1448,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_183 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1444
+    · exact c_1445
+    · exact c_1446
+    · exact c_1447
+    · exact c_1448
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_184 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,15,2⟩
+theorem c_184 : Checked s_184 := by
+  apply checked_of_children s_184 [s_1450,s_1451,s_1452,s_1453,s_1454,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_184 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1450
+    · exact c_1451
+    · exact c_1452
+    · exact c_1453
+    · exact c_1454
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_185 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,16,2⟩
+theorem c_185 : Checked s_185 := by
+  apply checked_of_children s_185 [s_1455,s_1456,s_1457,s_1458,s_1426,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_185 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1455
+    · exact c_1456
+    · exact c_1457
+    · exact c_1458
+    · exact c_1426
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_186 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,17,2⟩
+theorem c_186 : Checked s_186 := by
+  apply checked_of_children s_186 [s_1459,s_1460,s_1461,s_1430,s_1390,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_186 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1459
+    · exact c_1460
+    · exact c_1461
+    · exact c_1430
+    · exact c_1390
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_187 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,18,2⟩
+theorem c_187 : Checked s_187 := by
+  apply checked_of_children s_187 [s_1462,s_1463,s_1433,s_1394,s_1345,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_187 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1462
+    · exact c_1463
+    · exact c_1433
+    · exact c_1394
+    · exact c_1345
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_188 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,true],2,19,2⟩
+theorem c_188 : Checked s_188 := by
+  apply checked_of_children s_188 [s_1464,s_1435,s_1397,s_1349,s_1290,s_1219,s_1135,s_1037,s_924,s_795,s_649,s_332,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_188 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1464
+    · exact c_1435
+    · exact c_1397
+    · exact c_1349
+    · exact c_1290
+    · exact c_1219
+    · exact c_1135
+    · exact c_1037
+    · exact c_924
+    · exact c_795
+    · exact c_649
+    · exact c_332
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_189 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,14,2⟩
+theorem c_189 : Checked s_189 := by
+  apply checked_of_children s_189 [s_1465,s_1466,s_1467,s_1468,s_1469,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_189 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1465
+    · exact c_1466
+    · exact c_1467
+    · exact c_1468
+    · exact c_1469
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_190 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,15,2⟩
+theorem c_190 : Checked s_190 := by
+  apply checked_of_children s_190 [s_1471,s_1472,s_1473,s_1474,s_1475,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_190 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1471
+    · exact c_1472
+    · exact c_1473
+    · exact c_1474
+    · exact c_1475
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_191 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,16,2⟩
+theorem c_191 : Checked s_191 := by
+  apply checked_of_children s_191 [s_1476,s_1477,s_1478,s_1479,s_1454,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_191 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1476
+    · exact c_1477
+    · exact c_1478
+    · exact c_1479
+    · exact c_1454
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_192 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,17,2⟩
+theorem c_192 : Checked s_192 := by
+  apply checked_of_children s_192 [s_1480,s_1481,s_1482,s_1458,s_1426,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_192 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1480
+    · exact c_1481
+    · exact c_1482
+    · exact c_1458
+    · exact c_1426
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_193 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,18,2⟩
+theorem c_193 : Checked s_193 := by
+  apply checked_of_children s_193 [s_1483,s_1484,s_1461,s_1430,s_1390,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_193 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1483
+    · exact c_1484
+    · exact c_1461
+    · exact c_1430
+    · exact c_1390
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_194 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,true],2,19,2⟩
+theorem c_194 : Checked s_194 := by
+  apply checked_of_children s_194 [s_1485,s_1463,s_1433,s_1394,s_1345,s_1285,s_1213,s_1128,s_1029,s_915,s_785,s_638,s_320,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_194 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1485
+    · exact c_1463
+    · exact c_1433
+    · exact c_1394
+    · exact c_1345
+    · exact c_1285
+    · exact c_1213
+    · exact c_1128
+    · exact c_1029
+    · exact c_915
+    · exact c_785
+    · exact c_638
+    · exact c_320
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_195 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,15,2⟩
+theorem c_195 : Checked s_195 := by
+  apply checked_of_children s_195 [s_1486,s_1487,s_1488,s_1489,s_1490,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_195 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1486
+    · exact c_1487
+    · exact c_1488
+    · exact c_1489
+    · exact c_1490
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_196 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,16,2⟩
+theorem c_196 : Checked s_196 := by
+  apply checked_of_children s_196 [s_1491,s_1492,s_1493,s_1494,s_1475,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_196 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1491
+    · exact c_1492
+    · exact c_1493
+    · exact c_1494
+    · exact c_1475
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_197 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,17,2⟩
+theorem c_197 : Checked s_197 := by
+  apply checked_of_children s_197 [s_1495,s_1496,s_1497,s_1479,s_1454,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_197 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1495
+    · exact c_1496
+    · exact c_1497
+    · exact c_1479
+    · exact c_1454
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_198 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,18,2⟩
+theorem c_198 : Checked s_198 := by
+  apply checked_of_children s_198 [s_1498,s_1499,s_1482,s_1458,s_1426,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_198 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1498
+    · exact c_1499
+    · exact c_1482
+    · exact c_1458
+    · exact c_1426
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_199 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,true],2,19,2⟩
+theorem c_199 : Checked s_199 := by
+  apply checked_of_children s_199 [s_1500,s_1484,s_1461,s_1430,s_1390,s_1340,s_1279,s_1206,s_1120,s_1020,s_905,s_774,s_626,s_307,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_199 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1500
+    · exact c_1484
+    · exact c_1461
+    · exact c_1430
+    · exact c_1390
+    · exact c_1340
+    · exact c_1279
+    · exact c_1206
+    · exact c_1120
+    · exact c_1020
+    · exact c_905
+    · exact c_774
+    · exact c_626
+    · exact c_307
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_200 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,16,2⟩
+theorem c_200 : Checked s_200 := by
+  apply checked_of_children s_200 [s_1501,s_1502,s_1503,s_1504,s_1490,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_200 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1501
+    · exact c_1502
+    · exact c_1503
+    · exact c_1504
+    · exact c_1490
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_201 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,17,2⟩
+theorem c_201 : Checked s_201 := by
+  apply checked_of_children s_201 [s_1505,s_1506,s_1507,s_1494,s_1475,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_201 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1505
+    · exact c_1506
+    · exact c_1507
+    · exact c_1494
+    · exact c_1475
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_202 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,18,2⟩
+theorem c_202 : Checked s_202 := by
+  apply checked_of_children s_202 [s_1508,s_1509,s_1497,s_1479,s_1454,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_202 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1508
+    · exact c_1509
+    · exact c_1497
+    · exact c_1479
+    · exact c_1454
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_203 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,true],2,19,2⟩
+theorem c_203 : Checked s_203 := by
+  apply checked_of_children s_203 [s_1510,s_1499,s_1482,s_1458,s_1426,s_1385,s_1334,s_1272,s_1198,s_1111,s_1010,s_894,s_762,s_613,s_293,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_203 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1510
+    · exact c_1499
+    · exact c_1482
+    · exact c_1458
+    · exact c_1426
+    · exact c_1385
+    · exact c_1334
+    · exact c_1272
+    · exact c_1198
+    · exact c_1111
+    · exact c_1010
+    · exact c_894
+    · exact c_762
+    · exact c_613
+    · exact c_293
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_204 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,17,2⟩
+theorem c_204 : Checked s_204 := by
+  apply checked_of_children s_204 [s_1511,s_1512,s_1513,s_1504,s_1490,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_204 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1511
+    · exact c_1512
+    · exact c_1513
+    · exact c_1504
+    · exact c_1490
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_205 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,18,2⟩
+theorem c_205 : Checked s_205 := by
+  apply checked_of_children s_205 [s_1514,s_1515,s_1507,s_1494,s_1475,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_205 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1514
+    · exact c_1515
+    · exact c_1507
+    · exact c_1494
+    · exact c_1475
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_206 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,true],2,19,2⟩
+theorem c_206 : Checked s_206 := by
+  apply checked_of_children s_206 [s_1516,s_1509,s_1497,s_1479,s_1454,s_1421,s_1379,s_1327,s_1264,s_1189,s_1101,s_999,s_882,s_749,s_599,s_278,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_206 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1516
+    · exact c_1509
+    · exact c_1497
+    · exact c_1479
+    · exact c_1454
+    · exact c_1421
+    · exact c_1379
+    · exact c_1327
+    · exact c_1264
+    · exact c_1189
+    · exact c_1101
+    · exact c_999
+    · exact c_882
+    · exact c_749
+    · exact c_599
+    · exact c_278
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_207 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,18,2⟩
+theorem c_207 : Checked s_207 := by
+  apply checked_of_children s_207 [s_1517,s_1518,s_1513,s_1504,s_1490,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_207 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1517
+    · exact c_1518
+    · exact c_1513
+    · exact c_1504
+    · exact c_1490
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_208 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,true],2,19,2⟩
+theorem c_208 : Checked s_208 := by
+  apply checked_of_children s_208 [s_1519,s_1515,s_1507,s_1494,s_1475,s_1449,s_1415,s_1372,s_1319,s_1255,s_1179,s_1090,s_987,s_869,s_735,s_584,s_262,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_208 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1519
+    · exact c_1515
+    · exact c_1507
+    · exact c_1494
+    · exact c_1475
+    · exact c_1449
+    · exact c_1415
+    · exact c_1372
+    · exact c_1319
+    · exact c_1255
+    · exact c_1179
+    · exact c_1090
+    · exact c_987
+    · exact c_869
+    · exact c_735
+    · exact c_584
+    · exact c_262
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+def s_209 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true],2,19,2⟩
+theorem c_209 : Checked s_209 := by
+  apply checked_of_children s_209 [s_1520,s_1518,s_1513,s_1504,s_1490,s_1470,s_1443,s_1408,s_1364,s_1310,s_1245,s_1168,s_1078,s_974,s_855,s_720,s_568,s_245,s_227,s_227]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_209 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
+    · exact c_1520
+    · exact c_1518
+    · exact c_1513
+    · exact c_1504
+    · exact c_1490
+    · exact c_1470
+    · exact c_1443
+    · exact c_1408
+    · exact c_1364
+    · exact c_1310
+    · exact c_1245
+    · exact c_1168
+    · exact c_1078
+    · exact c_974
+    · exact c_855
+    · exact c_720
+    · exact c_568
+    · exact c_245
+    · exact c_227
+    · exact c_227
+
+end Recaman.FourEventData

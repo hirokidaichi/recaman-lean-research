@@ -1,0 +1,23 @@
+{
+  "started_jst": "2026-10-31T07:27:03.574975+09:00",
+  "tag": "H19-charge-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/lower_charge_probe.py",
+    "holdout",
+    "22",
+    "7",
+    "92",
+    "2"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "57e13de31ebdd2d7cb86026817947bd5a43e9c9d16bd9856cca8819bac696388",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 93239,
+  "process_group": 93239
+}

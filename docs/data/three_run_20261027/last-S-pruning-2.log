@@ -1,0 +1,12 @@
+Recaman/SeparatorSupplyReset.lean:296:4: error: Type mismatch: After simplification, term
+  hshape
+ has type
+  seg f n (h + M + m + L + s + T) =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true))))
+but is expected to have type
+  seg f n (h + (M + (m + L)) + s + T) =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true))))

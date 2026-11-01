@@ -1,0 +1,4 @@
+# Provenance scope clarification (2026-11-01)
+Earlier runner dirty_source_hash is the hash of tracked git diff --binary, not an all-untracked-source hash. Each direct validation additionally froze its target Lean bytes/hash; START.json stores all500 baseline Lean hashes and CPU probe preflights store current Lean hashes. Final source ownership/hash audit is required for adopted files. Do not relabel old logs as capturing a full source-tree hash.
+From the revised runner forward, every validation/fullcheck captures canonical all-Lean source_tree_sha256 + manifest, revision and tracked diff separately. Old -o argv output paths could appear in source_sha256 before compilation; that is an old output hash, not an input premise. Revised runner excludes -o output paths from the input map. Existing logs remain unchanged.
+This changes packet provenance only, not research gates or CPU contracts. Per-process Lean limits remain distinct from cumulative tree limits and OS RSS.

@@ -1,0 +1,14 @@
+run	command	source	started
+budget-classify	/tmp/recaman-c1-budget-classify 32 128 3 590	budget_classify.cpp	2026-10-22T08:40:15.827798+09:00
+context-classify	/tmp/recaman-c1-context-classify 120 docs/data/c1_q_makeup_20261022/contexts.json	context_classify.cpp	2026-10-22T09:08:42.963542+09:00
+deep-three	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/c1_constraints_v2.py --mode deep-three --n 80 --q0 80 --b 80 --seconds 900 --out docs/data/c1_q_makeup_20261022/deep-three.json	c1_constraints_v2.py	2026-10-22T09:25:11.558584+09:00
+discovery-20-32	/tmp/recaman-c1-area-probe 20 32 60	multiple	2026-10-22T08:33:07.321844+09:00
+discovery-28-64	/tmp/recaman-c1-area-probe-v2 28 64 300	area_probe_v2.cpp	2026-10-22T08:33:39.402971+09:00
+holdout	/tmp/recaman-c1-holdout 2000000 910 900	holdout.cpp	2026-10-22T08:36:32.293693+09:00
+peak-five	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/c1_constraints.py --mode peak-five --n 80 --q0 80 --b 80 --seconds 900 --out docs/data/c1_q_makeup_20261022/peak-five.json	c1_constraints.py	2026-10-22T09:09:33.901451+09:00
+prefix-mass-32	/tmp/recaman-c1-prefix-mass-search 32 17 240	prefix_mass_search.cpp	2026-10-22T09:40:53.080468+09:00
+prefix-mass-independent	/tmp/recaman-c1-prefix-mass-independent 32 17 300	prefix_mass_independent.cpp	2026-10-22T00:50:48.563629+00:00
+q-old-min	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/c1_constraints.py --mode Q-old-min --n 65 --q0 32 --b 64 --seconds 900 --out docs/data/c1_q_makeup_20261022/q-old-min.json	c1_constraints.py	2026-10-22T08:52:53.308916+09:00
+r-negative	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/c1_constraints.py --mode R-negative --n 80 --q0 80 --b 80 --seconds 900 --out docs/data/c1_q_makeup_20261022/r-negative.json	c1_constraints.py	2026-10-22T08:53:34.915882+09:00
+spectrum-relax	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/old_spectrum_relax.py --mode run --n 32 --seconds 60 --out docs/data/c1_q_makeup_20261022/spectrum-relax.json	old_spectrum_relax.py	2026-10-22T09:43:21.432614+09:00
+y-triangle	/tmp/recaman-c1-solver-20261022/bin/python docs/data/c1_q_makeup_20261022/c1_constraints_v2.py --mode Y-triangle --n 65 --q0 32 --b 64 --seconds 120 --out docs/data/c1_q_makeup_20261022/y-triangle.json	c1_constraints_v2.py	2026-10-22T09:46:06.707419+09:00

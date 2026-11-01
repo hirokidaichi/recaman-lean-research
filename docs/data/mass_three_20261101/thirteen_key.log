@@ -1,0 +1,73 @@
+Recaman/OldFourThirteenKey.lean:26:4: error: `grind` failed
+case grind
+u z : List Bool
+hu : BlockWord u
+hm : mass u = 4
+hmz : mass z = 0
+hS : cntF z = 13
+v i : Nat
+hi : i ≤ 2
+I : Int
+hmeasure : runKey z = 4 * I - 2 * ↑(cntF z) ^ 2
+hmass : mass u - ↑v + ↑i = 1
+hkey : runKey u + (4 * I - 2 * ↑13 ^ 2) + 4 * 4 * ↑13 + 4 * (↑i + 3) * (4 + 0) - 2 * (↑i + 3) ^ 2 = -2
+hb : -2 ≤ runKey u ∧ runKey u ≤ 6
+hv : ↑v = ↑i + 3
+h : ¬2 * I + runKey u + -1 * (↑i + -1) ^ 2 + -48 = 0
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] mass u = 4
+    [prop] mass z = 0
+    [prop] cntF z = 13
+    [prop] i ≤ 2
+    [prop] -4 * I + runKey z + 2 * ↑(cntF z) ^ 2 = 0
+    [prop] mass u + -1 * ↑v + ↑i + -1 = 0
+    [prop] 4 * I + runKey u + 16 * ↑i + -2 * (↑i + 3) ^ 2 + -80 = 0
+    [prop] -1 * runKey u + -2 ≤ 0 ∧ runKey u + -6 ≤ 0
+    [prop] ↑v + -1 * ↑i + -3 = 0
+    [prop] ¬2 * I + runKey u + -1 * (↑i + -1) ^ 2 + -48 = 0
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] -1 * runKey u + -2 ≤ 0 ∧ runKey u + -6 ≤ 0
+    [prop] runKey u + -6 ≤ 0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] i ≤ 2
+  [eqc] False propositions
+    [prop] 2 * I + runKey u + -1 * (↑i + -1) ^ 2 + -48 = 0
+  [eqc] Equivalence classes
+    [eqc] {cntF z, 13}
+    [eqc] {mass u, 4}
+    [eqc] {mass z,
+        0,
+        mass u + -1 * ↑v + ↑i + -1,
+        4 * I + runKey u + 16 * ↑i + -2 * (↑i + 3) ^ 2 + -80,
+        -4 * I + runKey z + 2 * ↑(cntF z) ^ 2,
+        2 * ↑(cntF z) ^ 2 + -4 * I + runKey z}
+      [eqc] {↑v + -1 * ↑i + -3}
+    [eqc] others
+      [eqc] {↑(cntF z), ↑13}
+  [cutsat] Assignment satisfying linear constraints
+    [assign] v := 3
+    [assign] i := 0
+    [assign] I := 23
+    [assign] cntF z := 13
+    [assign] mass u := 4
+    [assign] mass z := 0
+    [assign] runKey u := 6
+    [assign] runKey z := -246
+    [assign] 「↑i ^ 2」 := 0
+    [assign] 「↑(cntF z) ^ 2」 := 169
+    [assign] 「(↑i + -1) ^ 2」 := 0
+    [assign] 「(↑i + 3) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 2 * ↑v ^ 2 + -1 * runKey z + -16 * ↑v + -1 * runKey u + -210 = 0
+      [_] ↑i + -1 * ↑v + 3 = 0
+      [_] 4 * I + -1 * runKey z + -338 = 0
+      [_] ↑(cntF z) + -13 = 0
+      [_] mass u + -4 = 0
+    [diseqs] Disequalities
+      [_] ¬runKey u = 0
+Recaman/OldFourThirteenKey.lean:28:34: error: `simp` made no progress

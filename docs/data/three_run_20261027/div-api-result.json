@@ -1,0 +1,21 @@
+{
+  "tag": "div-api",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "docs/data/three_run_20261027/check_div_api.lean"
+  ],
+  "started_jst": "2026-10-27T07:20:42.835437+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "docs/data/three_run_20261027/check_div_api.lean": "9a671e68b9bfcc0504ed971b5444289637f91665451959317a813a64b68e4eb7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.22675412497483194,
+  "cpu_seconds": 0.18884099999999998,
+  "finished_jst": "2026-10-27T07:20:43.062136+09:00"
+}

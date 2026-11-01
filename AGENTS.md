@@ -69,6 +69,20 @@ what they check so you can work with them rather than around them.
 - **Git hygiene.** Never `git add -A` or `git add .`; commit with `git commit -- <paths>` and
   inspect `git status -s` first. Do not stage or commit another session's files.
 
+### Validated publication snapshots (user approval, 2026-11-01)
+
+The user explicitly approved `RECAMAN_ALLOW_BURST=1` with "今回と日次保存に限り許可" for the
+current validated research snapshot and future validated daily publication snapshots. For these
+snapshots only, use the flag on the individual commit command to exempt module count and the
+30-minute interval. Do not set it globally. Keep pre-commit, G1-G5, statement audits, protected
+claims, and all proof restrictions enabled. This is a publication exception, not permission to
+skip falsification or to treat module count as research progress.
+
+Daily commit/push is authorized without asking again. Include only owned, validated research and
+its evidence/handoff records, preserve other sessions' work, and verify the pushed SHA. The user subsequently requested merging this branch into main and a clean checkout. The
+publication destination is now `origin/main`; use normal fast-forward pushes and preserve
+remote updates. The validated daily snapshot exception remains authorized.
+
 ## Evidence labels
 
 Use these exact labels in research notes:

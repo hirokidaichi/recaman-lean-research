@@ -1,0 +1,31 @@
+Recaman/TenHeadLocalBudget.lean:53:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ j ≤ 9
+  i ≥ 1
+  g ≥ 1
+  f ≥ 1
+  f + i ≤ 9
+  e ≥ 1
+  e + g ≤ 9
+where
+ e := ↑m
+ f := ↑L
+ g := ↑s
+ i := ↑U
+ j := ↑(cntF (List.replicate h false ++ x))
+Recaman/TenHeadLocalBudget.lean:65:60: error: Application type mismatch: The argument
+  i
+has type
+  Int
+but is expected to have type
+  Nat
+in the application
+  first_A_source_odd_separator h M m L s U e i
+Recaman/TenHeadLocalBudget.lean:83:21: error: Application type mismatch: The argument
+  hi
+has type
+  i < 5
+but is expected to have type
+  ↑i < 5
+in the application
+  And.intro hi

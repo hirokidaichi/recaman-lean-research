@@ -1,0 +1,37 @@
+# Statement audit: E-398
+
+- artifact: `Recaman/BlockSuffixPositivity.lean`
+- reviewer: Codex, 2026-10-24 JST（形式化後の別pass。人間レビュー未）
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.BlockSuffixPositivity.block_mass_four
+
+```lean
+{w : List Bool} (hw : BlockWord w) (hm : mass w=4) : w ∈ massFourWords
+```
+
+1. no — 任意BlockWordの具体word分類を述べる補助結果。
+2. no — 文法とmass4だけ。6語所属を仮定しない。
+3. no — BlockWordの先頭atomの分解、残mass3/2/0を全分類する。
+
+## Recaman.BlockSuffixPositivity.block_prefix_mass_four_area_pair
+
+```lean
+(f : Nat → Bool) (n a t u : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (htn : t≤n) (hun : u≤n) (hmt : Fw f n-Fw f t=4) (hmu : Fw f n-Fw f u=4) : massFourAreasCompatible (Ar f t (n-t)) (Ar f u (n-u))
+```
+
+1. yes — 任意実f、同じprefixの二始点と実Fw/Ar。
+2. no — 実prefix文法と両mass4を明記。area pairの結論や未知Qを仮定しない。
+3. no — 任意prefixのsuffix分類と比較可能性を有限36pairのkernel検査へ接続。同値面積以外の4pairだけを許す。
+
+## Recaman.BlockSuffixPositivity.mass_four_extremes_coexist
+
+```lean
+: BlockWord tripW ∧ mass tripW=4 ∧ areaW tripW=9 ∧ (tripW.drop 4).IsSuffix tripW ∧ mass (tripW.drop 4)=4 ∧ areaW (tripW.drop 4)=13
+```
+
+1. no — 具体trip語の文法と2suffixのmass/areaを述べる対照。
+2. no — 仮定なし。両極値が同時に実現する明示語。
+3. no — BlockWord構成と具体kernel算術。単独の軌道進捗に計上せず、両極値排除の一般化を防ぐ対照。
+

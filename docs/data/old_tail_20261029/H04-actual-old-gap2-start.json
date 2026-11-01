@@ -1,0 +1,18 @@
+{
+  "tag": "H04-actual-old-gap2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ThreeRunOldTargetGap.lean"
+  ],
+  "started_jst": "2026-10-29T06:26:42.998780+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunOldTargetGap.lean": "2c47c9f37be9ca83c0dcad8861c16497e328bbf3bdf26c908dcb6ad7028de94b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

@@ -1,0 +1,38 @@
+Recaman/SmallPrefixSupplyThirteen.lean:85:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  x ≥ 0
+  u ≥ 14
+  0 ≤ u - x ≤ 10
+  0 ≤ r ≤ 3
+  0 ≤ q ≤ 3
+  p ≥ 0
+  o ≥ 1
+  l ≥ 1
+  k ≥ 1
+  i ≥ 1
+  g ≥ 0
+  e ≥ 1
+  d ≥ 0
+  c ≥ 2
+  c - d ≥ -2
+  c - e - g ≥ 0
+  c - p ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑j
+ d := ↑T
+ e := ↑M
+ g := ↑L
+ i := ↑m
+ k := ↑s
+ l := ↑v
+ o := ↑h
+ p := ↑(cN (fun x => f x = true) n B0)
+ q := ↑(cN (EndN f 0) (n + B0 + U + v) T)
+ r := ↑(cN (EndN f 0) (n + D) T)
+ u := ↑(cN (EndN f 0) n (B + v + T))
+ x := ↑(cN (EndN f 0) (n + (B + v)) T)

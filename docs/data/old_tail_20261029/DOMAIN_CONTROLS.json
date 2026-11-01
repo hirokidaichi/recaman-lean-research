@@ -1,0 +1,71 @@
+{
+  "label": "COMPUTED",
+  "scope": "fixed actual-sign/EndN nonvacuity controls, not standard Recaman orbit and not new theorem",
+  "rows": [
+    {
+      "name": "initialS_q_less_than_h",
+      "old": [],
+      "n": 0,
+      "h": 39,
+      "q": 5,
+      "M": 5,
+      "m": 1,
+      "L": 2,
+      "s": 1,
+      "T": 5,
+      "j": 4,
+      "word": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSAAAAASAASAAAAASSSSA",
+      "target": 57,
+      "target_source": 34,
+      "old_zero": true,
+      "all_positive": true,
+      "target_window": true,
+      "EndN_clocks": [
+        41,
+        50,
+        57
+      ],
+      "first_supplied": 1
+    },
+    {
+      "name": "joint_old_third_activates_first_bound",
+      "old": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "n": 7,
+      "h": 9,
+      "q": 4,
+      "M": 5,
+      "m": 2,
+      "L": 1,
+      "s": 3,
+      "T": 8,
+      "j": 4,
+      "old_start": 0,
+      "old_third_clock": 4,
+      "word": "SAAAAAASSSSSSSSSAAAAASSASSSAAAAAAAASSSSA",
+      "target": 39,
+      "target_source": 12,
+      "old_zero": true,
+      "all_positive": true,
+      "target_window": true,
+      "EndN_clocks": [
+        3,
+        18,
+        29,
+        31,
+        39
+      ],
+      "first_supplied": 1,
+      "old_third_endpoint": 31,
+      "old_third_window": true,
+      "joint_antecedent": true
+    }
+  ]
+}

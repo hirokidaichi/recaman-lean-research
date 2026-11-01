@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-10-31T06:31:50.646820+09:00",
+  "tag": "H06-moment-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/moment_local_probe.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "612fa2a530ce72892decf02d587e4b189672818c9883a8a7594b7eec5bd50680",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 79125,
+  "process_group": 79125,
+  "finished_jst": "2026-10-31T06:31:50.708153+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.06141916592605412,
+  "worker_user_seconds": 0.036767999999999995,
+  "worker_sys_seconds": 0.006218,
+  "worker_cpu_seconds": 0.042985999999999996,
+  "worker_maxrss_native": 22970368,
+  "controller_cpu_seconds": 0.0017339999999999994,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

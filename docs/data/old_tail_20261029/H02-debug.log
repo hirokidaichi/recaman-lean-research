@@ -1,0 +1,204 @@
+Recaman/OldTargetClockCollision.lean:102:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  k ≥ 1
+  0 ≤ g ≤ 1
+  f ≥ 0
+  d ≥ 0
+  c ≥ 1
+  b ≥ 1
+  a ≥ 4
+  a - b - d - f ≥ -10
+  a - d - g ≥ -1
+  2*a - b - d - f ≤ -4
+where
+ a := ↑j
+ b := ↑L
+ c := ↑e
+ d := ↑T
+ f := ↑M
+ g := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ k := ↑L * ↑s
+ l := (↑e - 1) * (↑m + ↑s)
+Recaman/OldTargetClockCollision.lean:107:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 0
+  l ≥ 1
+  k ≤ 1
+  g ≥ 0
+  f ≥ 0
+  d ≥ 2
+  1 ≤ c ≤ 2
+  b ≥ 1
+  a ≥ 4
+  a - b - f - g ≥ -10
+  a - f - k ≥ -1
+  2*a - b - f - g ≤ -5
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑e
+ f := ↑T
+ g := ↑M
+ k := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ l := ↑L * ↑s
+ n := (↑e - 1) * (↑m + ↑s)
+Recaman/OldTargetClockCollision.lean:108:53: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≤ 1
+  f ≥ 2
+  e ≥ 0
+  d ≥ 0
+  1 ≤ c ≤ 2
+  b ≥ 1
+  a ≥ 4
+  a - b - d - e ≥ -10
+  a - d - g ≥ -1
+  2*a - b - d - e ≤ -5
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑T
+ e := ↑M
+ f := ↑L * ↑s
+ g := mass (List.replicate 1 true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+Recaman/OldTargetClockCollision.lean:119:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 0
+  l ≥ 1
+  0 ≤ k ≤ 1
+  g ≥ 0
+  f ≥ 0
+  d ≥ 1
+  1 ≤ c ≤ 3
+  b ≥ 1
+  a ≥ 4
+  a - b - f - g ≥ -10
+  a - f - k ≥ -1
+  2*a - b - f - g ≤ -6
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑e
+ f := ↑T
+ g := ↑M
+ k := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ l := ↑L * ↑s
+ n := (↑e - 1) * (↑m + ↑s)
+case inl
+u : List Bool
+hu : BlockWord u
+hne : u ≠ []
+h M m L s i T j e : Nat
+hj : 4 ≤ j
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+he : 1 ≤ e
+hband : T ≤ i + j
+hbudget : M + L + T ≤ j + 10
+hm1 : mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) + ↑i = 1
+hk1 : 4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2 = -2
+hm2 :
+  mass
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+hb : 2 * (j + 1) + (m + s) ≤ M + L + T
+hkey :
+  runKey (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) =
+    4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2
+hLs : 0 < ↑L * ↑s
+heK : 0 ≤ (↑e - 1) * (↑m + ↑s)
+heq : 2 * ↑e * 2 + 2 * ↑L * ↑s = 3
+hK : m + s = 2
+hc : ↑m + ↑s = 2
+⊢ i = 2
+case inr.inl
+u : List Bool
+hu : BlockWord u
+hne : u ≠ []
+h M m L s i T j e : Nat
+hj : 4 ≤ j
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+he : 1 ≤ e
+hband : T ≤ i + j
+hbudget : M + L + T ≤ j + 10
+hm1 : mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) + ↑i = 1
+hk1 : 4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2 = -2
+hm2 :
+  mass
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+hb : 2 * (j + 1) + (m + s) ≤ M + L + T
+hkey :
+  runKey (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) =
+    4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2
+hLs : 0 < ↑L * ↑s
+heK : 0 ≤ (↑e - 1) * (↑m + ↑s)
+heq : 2 * ↑e * 3 + 2 * ↑L * ↑s = 8
+hK : m + s = 3
+hc : ↑m + ↑s = 3
+⊢ i = 2
+case inr.inr
+u : List Bool
+hu : BlockWord u
+hne : u ≠ []
+h M m L s i T j e : Nat
+hj : 4 ≤ j
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+he : 1 ≤ e
+hband : T ≤ i + j
+hbudget : M + L + T ≤ j + 10
+hm1 : mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) + ↑i = 1
+hk1 : 4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2 = -2
+hm2 :
+  mass
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+hb : 2 * (j + 1) + (m + s) ≤ M + L + T
+hkey :
+  runKey (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false) =
+    4 * ↑e * (↑m + ↑s) + 4 * ↑L * ↑s - 2 * (↑0 + ↑m + ↑s) ^ 2
+hLs : 0 < ↑L * ↑s
+heK : 0 ≤ (↑e - 1) * (↑m + ↑s)
+heq : 2 * ↑e * 4 + 2 * ↑L * ↑s = 15
+hK : m + s = 4
+hc : ↑m + ↑s = 4
+⊢ i = 2

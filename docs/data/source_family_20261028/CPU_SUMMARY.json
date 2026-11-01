@@ -1,0 +1,699 @@
+{
+  "measured_cpu_seconds_by_category": {
+    "lean_validation": 171.771299,
+    "mathematical_worker": 1.9032749999999998,
+    "guard_worker": 1.12774
+  },
+  "measured_worker_validation_total": 174.802314,
+  "measured_single_worker_controller_cpu_seconds": 0.017501999999999976,
+  "unknown_cpu_events": [
+    "H09 initial wrong argv: failed Popen child CPU unmeasured, not zero"
+  ],
+  "scope": "exact completed wait4 worker/compiler CPU; cooperative controllers separately measured; shell/read/aggregation/other validation controllers unmeasured. Not total machine or generic process-tree CPU; never added to journal seconds.",
+  "records": [
+    {
+      "file": "docs/data/source_family_20261028/H09-int-result.json",
+      "category": "lean_validation",
+      "tag": "H09-int",
+      "cpu_seconds": 1.863317,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H09-main-result.json",
+      "category": "lean_validation",
+      "tag": "H09-main",
+      "cpu_seconds": 1.629781,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H09-parameters-result.json",
+      "category": "lean_validation",
+      "tag": "H09-parameters",
+      "cpu_seconds": 0.7093849999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H09-parameters2-result.json",
+      "category": "lean_validation",
+      "tag": "H09-parameters2",
+      "cpu_seconds": 0.852888,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-actual-result.json",
+      "category": "lean_validation",
+      "tag": "H10-actual",
+      "cpu_seconds": 0.597571,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-actual2-result.json",
+      "category": "lean_validation",
+      "tag": "H10-actual2",
+      "cpu_seconds": 0.611799,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-base-result.json",
+      "category": "lean_validation",
+      "tag": "H10-base",
+      "cpu_seconds": 0.701664,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-controls-result.json",
+      "category": "lean_validation",
+      "tag": "H10-controls",
+      "cpu_seconds": 0.742468,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-order-result.json",
+      "category": "lean_validation",
+      "tag": "H10-order",
+      "cpu_seconds": 0.40540599999999993,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-order2-result.json",
+      "category": "lean_validation",
+      "tag": "H10-order2",
+      "cpu_seconds": 0.388439,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/H10-tail-result.json",
+      "category": "lean_validation",
+      "tag": "H10-tail",
+      "cpu_seconds": 0.651816,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/actual-count-01-result.json",
+      "category": "lean_validation",
+      "tag": "actual-count-01",
+      "cpu_seconds": 1.411442,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/actual-count-single-thread-result.json",
+      "category": "lean_validation",
+      "tag": "actual-count-single-thread",
+      "cpu_seconds": 1.4952020000000001,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/build-H04-shared-helpers-result.json",
+      "category": "lean_validation",
+      "tag": "build-H04-shared-helpers",
+      "cpu_seconds": 1.5952169999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H01-result.json",
+      "category": "lean_validation",
+      "tag": "check-H01",
+      "cpu_seconds": 8.994977,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H02-references-result.json",
+      "category": "lean_validation",
+      "tag": "check-H02-references",
+      "cpu_seconds": 8.995524999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H02-result.json",
+      "category": "lean_validation",
+      "tag": "check-H02",
+      "cpu_seconds": 5.817245,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H03-result.json",
+      "category": "lean_validation",
+      "tag": "check-H03",
+      "cpu_seconds": 10.132442999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H04-result.json",
+      "category": "lean_validation",
+      "tag": "check-H04",
+      "cpu_seconds": 9.190707999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H05-result.json",
+      "category": "lean_validation",
+      "tag": "check-H05",
+      "cpu_seconds": 9.322158,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H06-result.json",
+      "category": "lean_validation",
+      "tag": "check-H06",
+      "cpu_seconds": 8.458288,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H07-result.json",
+      "category": "lean_validation",
+      "tag": "check-H07",
+      "cpu_seconds": 9.907556,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H08-result.json",
+      "category": "lean_validation",
+      "tag": "check-H08",
+      "cpu_seconds": 10.229652999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H09-result.json",
+      "category": "lean_validation",
+      "tag": "check-H09",
+      "cpu_seconds": 11.802086,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/check-H10-result.json",
+      "category": "lean_validation",
+      "tag": "check-H10",
+      "cpu_seconds": 10.044811,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/family-01-result.json",
+      "category": "lean_validation",
+      "tag": "family-01",
+      "cpu_seconds": 1.07761,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/family-02-result.json",
+      "category": "lean_validation",
+      "tag": "family-02",
+      "cpu_seconds": 1.051137,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/family-03-result.json",
+      "category": "lean_validation",
+      "tag": "family-03",
+      "cpu_seconds": 1.095372,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/family-04-result.json",
+      "category": "lean_validation",
+      "tag": "family-04",
+      "cpu_seconds": 1.193347,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/family-int-01-result.json",
+      "category": "lean_validation",
+      "tag": "family-int-01",
+      "cpu_seconds": 1.224106,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-A-local-discovery-result.json",
+      "category": "mathematical_worker",
+      "tag": "first-A-local-discovery",
+      "cpu_seconds": 0.20809899999999998,
+      "controller_cpu_seconds": 0.001956000000000003,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-A-local-holdout-result.json",
+      "category": "mathematical_worker",
+      "tag": "first-A-local-holdout",
+      "cpu_seconds": 0.121655,
+      "controller_cpu_seconds": 0.0015189999999999926,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-A-source-gap-result.json",
+      "category": "lean_validation",
+      "tag": "first-A-source-gap",
+      "cpu_seconds": 1.812713,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-A-source-int-result.json",
+      "category": "lean_validation",
+      "tag": "first-A-source-int",
+      "cpu_seconds": 1.963028,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-block-01-result.json",
+      "category": "lean_validation",
+      "tag": "first-block-01",
+      "cpu_seconds": 1.211026,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-block-02-result.json",
+      "category": "lean_validation",
+      "tag": "first-block-02",
+      "cpu_seconds": 0.818206,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-block-all-01-result.json",
+      "category": "lean_validation",
+      "tag": "first-block-all-01",
+      "cpu_seconds": 1.1533200000000001,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/first-block-budget-01-result.json",
+      "category": "lean_validation",
+      "tag": "first-block-budget-01",
+      "cpu_seconds": 0.931611,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/guard-cpu-result.json",
+      "category": "guard_worker",
+      "tag": "guard-cpu",
+      "cpu_seconds": 1.003005,
+      "controller_cpu_seconds": 0.002085000000000007,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)"
+    },
+    {
+      "file": "docs/data/source_family_20261028/guard-exec-result.json",
+      "category": "guard_worker",
+      "tag": "guard-exec",
+      "cpu_seconds": 0.032352,
+      "controller_cpu_seconds": 0.001641,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/guard-fork-result.json",
+      "category": "guard_worker",
+      "tag": "guard-fork",
+      "cpu_seconds": 0.033462,
+      "controller_cpu_seconds": 0.0017369999999999972,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/guard-normal-result.json",
+      "category": "guard_worker",
+      "tag": "guard-normal",
+      "cpu_seconds": 0.031781,
+      "controller_cpu_seconds": 0.0016169999999999986,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/guard-wall-result.json",
+      "category": "guard_worker",
+      "tag": "guard-wall",
+      "cpu_seconds": 0.02714,
+      "controller_cpu_seconds": 0.0015489999999999914,
+      "exit_code": -9,
+      "reason": "wall/deadline cap"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-actual-pairs-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-actual-pairs",
+      "cpu_seconds": 1.28549,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-bounds-01-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-bounds-01",
+      "cpu_seconds": 0.63949,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-bounds-02-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-bounds-02",
+      "cpu_seconds": 0.6412220000000001,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-critical-checker-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-critical-checker",
+      "cpu_seconds": 10.107338,
+      "controller_cpu_seconds": null,
+      "exit_code": 152,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-critical-pairs-02-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-critical-pairs-02",
+      "cpu_seconds": 0.901801,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-critical-pairs-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-critical-pairs",
+      "cpu_seconds": 0.906252,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-fast-source-check-result.json",
+      "category": "lean_validation",
+      "tag": "initial-S-fast-source-check",
+      "cpu_seconds": 2.3388859999999996,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-local-discovery-result.json",
+      "category": "mathematical_worker",
+      "tag": "initial-S-local-discovery",
+      "cpu_seconds": 0.391034,
+      "controller_cpu_seconds": 0.0019309999999999918,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-S-local-holdout-result.json",
+      "category": "mathematical_worker",
+      "tag": "initial-S-local-holdout",
+      "cpu_seconds": 1.09564,
+      "controller_cpu_seconds": 0.001807999999999992,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/initial-simple-bound-result.json",
+      "category": "mathematical_worker",
+      "tag": "initial-simple-bound",
+      "cpu_seconds": 0.086847,
+      "controller_cpu_seconds": 0.0016590000000000016,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/later-count-charge-result.json",
+      "category": "lean_validation",
+      "tag": "later-count-charge",
+      "cpu_seconds": 1.336604,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/middle-S-factored-result.json",
+      "category": "lean_validation",
+      "tag": "middle-S-factored",
+      "cpu_seconds": 1.030883,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/middle-S-original-p-result.json",
+      "category": "lean_validation",
+      "tag": "middle-S-original-p",
+      "cpu_seconds": 1.1069339999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/middle-S-parity-correct-result.json",
+      "category": "lean_validation",
+      "tag": "middle-S-parity-correct",
+      "cpu_seconds": 0.941452,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/middle-S-source-gap-result.json",
+      "category": "lean_validation",
+      "tag": "middle-S-source-gap",
+      "cpu_seconds": 1.456388,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-small-first-count-02-result.json",
+      "category": "lean_validation",
+      "tag": "old-small-first-count-02",
+      "cpu_seconds": 0.496979,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-small-first-count-result.json",
+      "category": "lean_validation",
+      "tag": "old-small-first-count",
+      "cpu_seconds": 0.473344,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-actual-band-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-actual-band",
+      "cpu_seconds": 1.422036,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-joint-band-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-joint-band",
+      "cpu_seconds": 1.9880609999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-mass-six-int-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-mass-six-int",
+      "cpu_seconds": 1.661943,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-mass-six-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-mass-six",
+      "cpu_seconds": 1.466061,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-word-budget-02-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-word-budget-02",
+      "cpu_seconds": 0.776354,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/old-target-word-budget-result.json",
+      "category": "lean_validation",
+      "tag": "old-target-word-budget",
+      "cpu_seconds": 1.001593,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/run-clock-soundness-only-result.json",
+      "category": "lean_validation",
+      "tag": "run-clock-soundness-only",
+      "cpu_seconds": 0.6752609999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/source-before-first-A-result.json",
+      "category": "lean_validation",
+      "tag": "source-before-first-A",
+      "cpu_seconds": 1.387594,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/source-count-01-result.json",
+      "category": "lean_validation",
+      "tag": "source-count-01",
+      "cpu_seconds": 1.539771,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/source-count-pruned-result.json",
+      "category": "lean_validation",
+      "tag": "source-count-pruned",
+      "cpu_seconds": 1.259619,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/source-shape-01-result.json",
+      "category": "lean_validation",
+      "tag": "source-shape-01",
+      "cpu_seconds": 0.535172,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/source-shape-02-result.json",
+      "category": "lean_validation",
+      "tag": "source-shape-02",
+      "cpu_seconds": 0.507941,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/third-01-result.json",
+      "category": "lean_validation",
+      "tag": "third-01",
+      "cpu_seconds": 0.828593,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/third-02-result.json",
+      "category": "lean_validation",
+      "tag": "third-02",
+      "cpu_seconds": 0.5929949999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 1,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/third-03-result.json",
+      "category": "lean_validation",
+      "tag": "third-03",
+      "cpu_seconds": 0.611684,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "file": "docs/data/source_family_20261028/three-run-smaller-band-result.json",
+      "category": "lean_validation",
+      "tag": "three-run-smaller-band",
+      "cpu_seconds": 1.770237,
+      "controller_cpu_seconds": null,
+      "exit_code": 0,
+      "reason": "completed"
+    }
+  ]
+}

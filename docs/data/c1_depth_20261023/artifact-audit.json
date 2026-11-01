@@ -1,0 +1,164 @@
+{
+  "source_checks": {
+    "eighth_a.cpp": true,
+    "independent_eighth_a.cpp": true,
+    "signature_graph.py": true,
+    "graph_certificate.py": true,
+    "q_graph.py": true,
+    "q_independent.py": true,
+    "sixteenth_a.cpp": true,
+    "relaxed_higher.py": true,
+    "higher_independent.py": true,
+    "terminal_support.py": true,
+    "q4_graph.py": true,
+    "q4_independent.py": true,
+    "q4_root_input": true,
+    "terminal_dependency": true
+  },
+  "all_source_hashes_match": true,
+  "classes": [
+    {
+      "r": 0,
+      "candidates": 1,
+      "max_A": 0,
+      "max_length": 1,
+      "max_depth": 1
+    },
+    {
+      "r": 1,
+      "candidates": 1,
+      "max_A": 1,
+      "max_length": 2,
+      "max_depth": 1
+    },
+    {
+      "r": 2,
+      "candidates": 2,
+      "max_A": 3,
+      "max_length": 5,
+      "max_depth": 2
+    },
+    {
+      "r": 3,
+      "candidates": 4,
+      "max_A": 7,
+      "max_length": 12,
+      "max_depth": 4
+    },
+    {
+      "r": 4,
+      "candidates": 8,
+      "max_A": 8,
+      "max_length": 13,
+      "max_depth": 4
+    }
+  ],
+  "cpu": {
+    "measured_runs": [
+      {
+        "run": "discovery",
+        "real": 0.36,
+        "user": 0.03,
+        "sys": 0.0,
+        "cpu_seconds": 0.03
+      },
+      {
+        "run": "holdout",
+        "real": 0.35,
+        "user": 0.34,
+        "sys": 0.0,
+        "cpu_seconds": 0.34
+      },
+      {
+        "run": "independent",
+        "real": 1.07,
+        "user": 0.74,
+        "sys": 0.0,
+        "cpu_seconds": 0.74
+      },
+      {
+        "run": "signature-graph",
+        "real": 0.03,
+        "user": 0.02,
+        "sys": 0.0,
+        "cpu_seconds": 0.02
+      },
+      {
+        "run": "certificate",
+        "real": 0.06,
+        "user": 0.05,
+        "sys": 0.0,
+        "cpu_seconds": 0.05
+      },
+      {
+        "run": "q",
+        "real": 0.02,
+        "user": 0.01,
+        "sys": 0.0,
+        "cpu_seconds": 0.01
+      },
+      {
+        "run": "q-independent",
+        "real": 0.02,
+        "user": 0.01,
+        "sys": 0.0,
+        "cpu_seconds": 0.01
+      },
+      {
+        "run": "higher-discovery",
+        "real": 0.78,
+        "user": 0.43,
+        "sys": 0.0,
+        "cpu_seconds": 0.43
+      },
+      {
+        "run": "higher-holdout",
+        "real": 28.34,
+        "user": 27.84,
+        "sys": 0.08,
+        "cpu_seconds": 27.919999999999998
+      },
+      {
+        "run": "relaxed-higher",
+        "real": 1.39,
+        "user": 1.37,
+        "sys": 0.01,
+        "cpu_seconds": 1.3800000000000001
+      },
+      {
+        "run": "higher-independent",
+        "real": 1.89,
+        "user": 1.87,
+        "sys": 0.01,
+        "cpu_seconds": 1.8800000000000001
+      },
+      {
+        "run": "q4",
+        "real": 0.03,
+        "user": 0.02,
+        "sys": 0.0,
+        "cpu_seconds": 0.02
+      },
+      {
+        "run": "q4-independent",
+        "real": 0.02,
+        "user": 0.02,
+        "sys": 0.0,
+        "cpu_seconds": 0.02
+      },
+      {
+        "run": "terminal-support",
+        "real": 0.02,
+        "user": 0.02,
+        "sys": 0.0,
+        "cpu_seconds": 0.02
+      }
+    ],
+    "rounded_measured_cpu_seconds": 32.87,
+    "budget_seconds": 240,
+    "rounding_bound_seconds": 0.28,
+    "unmeasured_literal_control_cpu_cap_seconds": 5,
+    "compilation_and_Lean_validation": "separate; early validation CPU not fully measured",
+    "journal_work_seconds_are_not_cpu_seconds": true
+  }
+}

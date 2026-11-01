@@ -1,0 +1,319 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.PrefixMassBarrier
+
+open Recaman.LeadingRunSupply
+open Recaman.BlockSuffixPositivity
+open Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality
+open Recaman.LineCapacityPeriodic
+
+/-- A sufficiently negative tail mass excludes every local window that
+starts in the discarded prefix. No restriction on either word's length. -/
+theorem localSupply_erase_prefix (u v : List Bool)
+    (hbarrier : mass v + ones u ≤ 0) :
+    Recaman.ThreeNonsuppliedData.localSupply (u++v) =
+      Recaman.ThreeNonsuppliedData.localSupply v := by
+  apply Bool.eq_iff_iff.mpr
+  rw [localSupply_iff,localSupply_iff]
+  constructor
+  · rintro ⟨t,ht,hm,ha⟩
+    by_cases htu : t<u.length
+    · have hd : (u++v).drop t=u.drop t++v := by
+        rw [List.drop_append,show t-u.length=0 by omega,List.drop_zero]
+      rw [hd,mass_append] at hm
+      have hones := ones_drop_le u t
+      have hb := ones_bounds (u.drop t)
+      have he := mass_eq (u.drop t)
+      omega
+    · have hd : (u++v).drop t=v.drop (t-u.length) := by
+        rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append]
+      refine ⟨t-u.length,?_,?_,?_⟩
+      · simp only [List.length_append] at ht
+        omega
+      · simpa only [hd] using hm
+      · simpa only [hd] using ha
+  · rintro ⟨t,ht,hm,ha⟩
+    have hd : (u++v).drop (u.length+t)=v.drop t := by
+      rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append,
+        show u.length+t-u.length=t by omega]
+    refine ⟨u.length+t,by simpa only [List.length_append] using Nat.add_lt_add_left ht u.length,?_,?_⟩
+    · simpa only [hd] using hm
+    · simpa only [hd] using ha
+
+/-- A long S separator makes the next actual A's supply independent of an
+arbitrary earlier tail u. The original block prefix and endpoint A remain. -/
+theorem endable_after_prefix_manyS_A_iff (f : Nat → Bool)
+    (n a m r j : Nat) (u : List Bool)
+    {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true) (hr : 1≤r)
+    (hm : 2*ones u+2*(r : Int)-1≤(m : Int))
+    (hw : seg f n (u.length+m+r+j)=
+      u++(List.replicate m false++List.replicate r true++List.replicate j false))
+    (hA : f (n+(u.length+m+r+j))=true) :
+    EndN f 0 (n+(u.length+m+r+j)) ↔ r=2*(j+1) := by
+  let v := List.replicate m false++List.replicate r true++List.replicate j false
+  have hu := ones_bounds u
+  have hbarrier : mass v+ones u≤0 := by
+    simp only [v,mass_append,mass_rep_false,mass_replicate_A]
+    omega
+  have herase := localSupply_erase_prefix u v hbarrier
+  have hl : Recaman.ThreeNonsuppliedData.localSupply (u++v)=true ↔ r=2*(j+1) := by
+    rw [herase,localSupply_three_runs_iff]
+    constructor
+    · exact And.left
+    · intro he
+      exact ⟨he,by omega⟩
+  constructor
+  · intro he
+    obtain ⟨_,t,l,ht0,htl,hwin⟩ := he
+    by_cases htn : n≤t
+    · apply hl.mp
+      have hlocal := (localSupply_seg_iff f n (n+(u.length+m+r+j)) (by omega) hA).mpr
+        ⟨hA,t,l,htn,htl,hwin⟩
+      simpa only [Nat.add_sub_cancel_left,hw,v] using hlocal
+    · have hwin' : Win f t (n+(u.length+m+r+j)-t) := by
+        have heq : n+(u.length+m+r+j)-t=l := by omega
+        simpa only [heq] using hwin
+      have hc := old_window_count_barrier f n a t (n+(u.length+m+r+j)) hβ hseg
+        (by omega) (by omega) hwin'
+      rw [Nat.add_sub_cancel_left,hw] at hc
+      simp only [ones_append,ones_replicate_S,ones_replicate_A] at hc
+      omega
+  · intro he
+    apply end_mono f 0 n _ (Nat.zero_le _)
+    apply (localSupply_seg_iff f n (n+(u.length+m+r+j)) (by omega) hA).mp
+    rw [Nat.add_sub_cancel_left,hw]
+    exact hl.mpr he
+
+theorem no_endable_prefix_even_followup (f : Nat → Bool)
+    (n a m k j : Nat) (u : List Bool)
+    {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true) (hk : 1≤k)
+    (hm : 2*ones u+4*(k : Int)+1≤(m : Int))
+    (hw : seg f n (u.length+(m+2*k+(k-1)+1+j))=
+      u++evenFollowWord m k j) :
+    ¬EndN f 0 (n+(u.length+(m+2*k+(k-1)+1+j))) := by
+  have hu := ones_bounds u
+  have hbarrier : mass (evenFollowWord m k j)+ones u≤0 := by
+    simp only [evenFollowWord,mass_append,mass_rep_false,mass_replicate_A]
+    omega
+  have herase := localSupply_erase_prefix u (evenFollowWord m k j) hbarrier
+  rw [localSupply_even_followup m k j hk] at herase
+  intro he
+  obtain ⟨hA,t,l,ht0,htl,hwin⟩ := he
+  by_cases htn : n≤t
+  · have hlocal := (localSupply_seg_iff f n _ (by omega) hA).mpr ⟨hA,t,l,htn,htl,hwin⟩
+    rw [Nat.add_sub_cancel_left,hw,herase] at hlocal
+    contradiction
+  · have hwin' : Win f t (n+(u.length+(m+2*k+(k-1)+1+j))-t) := by
+      have heq : n+(u.length+(m+2*k+(k-1)+1+j))-t=l := by omega
+      simpa only [heq] using hwin
+    have hc := old_window_count_barrier f n a t _ hβ hseg (by omega) (by omega) hwin'
+    rw [Nat.add_sub_cancel_left,hw] at hc
+    simp only [evenFollowWord,ones_append,ones_replicate_S,ones_replicate_A] at hc
+    omega
+
+theorem no_additions_prefix_even_followup (f : Nat → Bool)
+    (n a m k K : Nat) (u : List Bool)
+    {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true) (hk : 1≤k)
+    (hm : 2*ones u+4*(k : Int)+1≤(m : Int))
+    (hw : seg f n (u.length+(m+2*k+(k-1)+1))=u++evenFollowWord m k 0)
+    (hfree : cN (fun x => f x=true ∧ ¬EndN f 0 x)
+      (n+(u.length+(m+2*k+(k-1)+1))) K=0) :
+    cN (fun x => f x=true) (n+(u.length+(m+2*k+(k-1)+1))) K=0 := by
+  let b := n+(u.length+(m+2*k+(k-1)+1))
+  have hall : ∀ j, j<K → f (b+j)=false := by
+    intro j
+    induction j using Nat.strongRecOn with
+    | ind j ih =>
+      intro hjK
+      cases hA : f (b+j)
+      · rfl
+      · have hnot := not_of_cN_zero (fun x => f x=true ∧ ¬EndN f 0 x) b K hfree
+          (b+j) (by omega) (by omega)
+        have he : EndN f 0 (b+j) := by
+          apply Classical.byContradiction
+          intro hn
+          exact hnot ⟨hA,hn⟩
+        have hgap : ∀ x, b≤x → x<b+j → f x=false := by
+          intro x hbx hxj
+          have h := ih (x-b) (by omega) (by omega)
+          simpa only [Nat.add_sub_cancel' hbx] using h
+        have hwj : seg f n (u.length+(m+2*k+(k-1)+1+j))=u++evenFollowWord m k j := by
+          rw [show u.length+(m+2*k+(k-1)+1+j)=(u.length+(m+2*k+(k-1)+1))+j by omega,
+            seg_add,hw,seg_false f b j hgap]
+          simp only [evenFollowWord,List.replicate_zero,List.append_nil,List.append_assoc]
+        have hn := no_endable_prefix_even_followup f n a m k j u hβ hseg hk hm hwj
+        exact False.elim (hn (by simpa only [b,Nat.add_assoc] using he))
+  apply cN_zero_of
+  intro x hbx hxend
+  have hf := hall (x-b) (by omega)
+  rw [Nat.add_sub_cancel' hbx] at hf
+  simp [hf]
+
+/-- Arbitrary earlier tails are allowed. A sufficiently long separating S
+run followed by an even A run permits at most one further A if no new
+nonsupplied A is available, for every future length K. -/
+theorem one_addition_after_prefix_manyS_evenA (f : Nat → Bool)
+    (n a m k K : Nat) (u : List Bool)
+    {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true) (hk : 1≤k)
+    (hm : 2*ones u+4*(k : Int)+1≤(m : Int))
+    (hw : seg f n (u.length+m+2*k)=
+      u++(List.replicate m false++List.replicate (2*k) true))
+    (hfree : cN (fun x => f x=true ∧ ¬EndN f 0 x) (n+(u.length+m+2*k)) K=0) :
+    cN (fun x => f x=true) (n+(u.length+m+2*k)) K≤1 := by
+  let b := n+(u.length+m+2*k)
+  change cN (fun x => f x=true ∧ ¬EndN f 0 x) b K=0 at hfree
+  change cN (fun x => f x=true) b K≤1
+  by_cases hex : ∃ j, j<K ∧ f (b+j)=true
+  · obtain ⟨j,hjK,⟨hj,hA⟩,hfirst⟩ := first_mark
+      (fun x => x<K ∧ f (b+x)=true) K
+      (by obtain ⟨j,hj,ha⟩ := hex; exact ⟨j,by omega,hj,ha⟩)
+    have hS : ∀ x, b≤x → x<b+j → f x=false := by
+      intro x hbx hxj
+      have hn := hfirst (x-b) (by omega)
+      have hnot : f x≠true := by
+        intro htrue
+        apply hn
+        exact ⟨by omega,by simpa only [Nat.add_sub_cancel' hbx] using htrue⟩
+      cases hf : f x
+      · rfl
+      · exact False.elim (hnot hf)
+    have hnot := not_of_cN_zero (fun x => f x=true ∧ ¬EndN f 0 x) b K hfree
+      (b+j) (by omega) (by omega)
+    have he : EndN f 0 (b+j) := by
+      apply Classical.byContradiction
+      intro hn
+      exact hnot ⟨hA,hn⟩
+    have hwj : seg f n (u.length+m+2*k+j)=
+        u++(List.replicate m false++List.replicate (2*k) true++List.replicate j false) := by
+      rw [seg_add,hw,seg_false f b j hS]
+      simp only [List.append_assoc]
+    have hu := ones_bounds u
+    have heq := (endable_after_prefix_manyS_A_iff f n a m (2*k) j u hβ hseg
+      (by omega) (by omega) hwj (by simpa only [b,Nat.add_assoc] using hA)).mp
+      (by simpa only [b,Nat.add_assoc] using he)
+    have hjk : j=k-1 := by omega
+    have hbase : seg f n (u.length+(m+2*k+(k-1)+1))=u++evenFollowWord m k 0 := by
+      rw [show u.length+(m+2*k+(k-1)+1)=(u.length+m+2*k+j)+1 by omega,
+        seg_succ,hwj]
+      have hA' : f (n+(u.length+m+2*k+j))=true := by simpa only [b,Nat.add_assoc] using hA
+      rw [hA',hjk]
+      simp only [evenFollowWord,List.replicate_zero,List.append_nil,List.replicate_one,List.append_assoc]
+    have hA0 : cN (fun x => f x=true) b j=0 := by
+      apply cN_zero_of
+      intro x hbx hxj
+      simp [hS x hbx hxj]
+    have hA1 := cN_succ_pos (fun x => f x=true) b j hA
+    have hsplit := cN_add (fun x => f x=true) b (j+1) (K-(j+1))
+    have hfreeSplit := cN_add (fun x => f x=true ∧ ¬EndN f 0 x) b (j+1) (K-(j+1))
+    have htime : b+(j+1)=n+(u.length+(m+2*k+(k-1)+1)) := by dsimp [b]; omega
+    have hfreeTail : cN (fun x => f x=true ∧ ¬EndN f 0 x)
+        (n+(u.length+(m+2*k+(k-1)+1))) (K-(j+1))=0 := by
+      rw [Nat.add_sub_cancel' (by omega),htime] at hfreeSplit
+      omega
+    have hzero := no_additions_prefix_even_followup f n a m k (K-(j+1)) u hβ hseg hk hm hbase hfreeTail
+    rw [Nat.add_sub_cancel' (by omega),htime] at hsplit
+    omega
+  · have hzero : cN (fun x => f x=true) b K=0 := by
+      apply cN_zero_of
+      intro x hbx hxK ha
+      apply hex
+      refine ⟨x-b,by omega,?_⟩
+      simpa only [Nat.add_sub_cancel' hbx] using ha
+    omega
+
+/-- Maximum mass among all suffixes, including the empty suffix. -/
+def suffixCeiling : List Bool → Int
+  | [] => 0
+  | c::w => max (mass (c::w)) (suffixCeiling w)
+
+theorem suffixCeiling_nonnegative (w : List Bool) : 0≤suffixCeiling w := by
+  induction w with
+  | nil => decide
+  | cons c w ih => simp only [suffixCeiling]; omega
+
+theorem mass_drop_le_suffixCeiling (w : List Bool) (t : Nat) :
+    mass (w.drop t)≤suffixCeiling w := by
+  induction w generalizing t with
+  | nil => simp [suffixCeiling]
+  | cons c w ih =>
+    cases t with
+    | zero => simp only [List.drop_zero,suffixCeiling]; omega
+    | succ t =>
+      have h := ih t
+      simp only [List.drop_succ_cons,suffixCeiling]
+      omega
+
+theorem localSupply_erase_prefix_ceiling (u v : List Bool)
+    (hbarrier : mass v+suffixCeiling u≤0) :
+    Recaman.ThreeNonsuppliedData.localSupply (u++v)=
+      Recaman.ThreeNonsuppliedData.localSupply v := by
+  apply Bool.eq_iff_iff.mpr
+  rw [localSupply_iff,localSupply_iff]
+  constructor
+  · rintro ⟨t,ht,hm,ha⟩
+    by_cases htu : t<u.length
+    · have hd : (u++v).drop t=u.drop t++v := by
+        rw [List.drop_append,show t-u.length=0 by omega,List.drop_zero]
+      rw [hd,mass_append] at hm
+      have hb := mass_drop_le_suffixCeiling u t
+      omega
+    · have hd : (u++v).drop t=v.drop (t-u.length) := by
+        rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append]
+      refine ⟨t-u.length,?_,?_,?_⟩
+      · simp only [List.length_append] at ht
+        omega
+      · simpa only [hd] using hm
+      · simpa only [hd] using ha
+  · rintro ⟨t,ht,hm,ha⟩
+    have hd : (u++v).drop (u.length+t)=v.drop t := by
+      rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append,
+        show u.length+t-u.length=t by omega]
+    refine ⟨u.length+t,by simpa only [List.length_append] using Nat.add_lt_add_left ht u.length,?_,?_⟩
+    · simpa only [hd] using hm
+    · simpa only [hd] using ha
+
+/-- The same discarded prefix is safe for every future word within the
+remaining A budget, rather than just for the current endpoint. -/
+theorem bounded_future_context_erasure (u v x : List Bool) (B : Nat)
+    (hbarrier : mass v+suffixCeiling u+(B : Int)≤0)
+    (hx : ones x≤(B : Int)) :
+    Recaman.ThreeNonsuppliedData.localSupply ((u++v)++x)=
+      Recaman.ThreeNonsuppliedData.localSupply (v++x) := by
+  have hm := mass_eq x
+  have hb := ones_bounds x
+  have hmass : mass (v++x)+suffixCeiling u≤0 := by rw [mass_append]; omega
+  simpa only [List.append_assoc] using localSupply_erase_prefix_ceiling u (v++x) hmass
+
+def contextTrimAux (B : Nat) (w : List Bool) : Nat → List Bool
+  | 0 => w
+  | t+1 => if mass (w.drop (t+1))+suffixCeiling (w.take (t+1))+(B : Int)≤0
+      then w.drop (t+1) else contextTrimAux B w t
+
+def contextTrim (B : Nat) (w : List Bool) : List Bool := contextTrimAux B w w.length
+
+theorem contextTrimAux_future (B : Nat) (w x : List Bool) (fuel : Nat)
+    (hx : ones x≤(B : Int)) :
+    Recaman.ThreeNonsuppliedData.localSupply (contextTrimAux B w fuel++x)=
+      Recaman.ThreeNonsuppliedData.localSupply (w++x) := by
+  induction fuel with
+  | zero => rfl
+  | succ t ih =>
+    simp only [contextTrimAux]
+    split
+    · rename_i hb
+      have h := bounded_future_context_erasure (w.take (t+1)) (w.drop (t+1)) x B hb hx
+      rw [List.take_append_drop] at h
+      exact h.symm
+    · exact ih
+
+theorem contextTrim_future (B : Nat) (w x : List Bool) (hx : ones x≤(B : Int)) :
+    Recaman.ThreeNonsuppliedData.localSupply (contextTrim B w++x)=
+      Recaman.ThreeNonsuppliedData.localSupply (w++x) := by
+  exact contextTrimAux_future B w x w.length hx
+
+end Recaman.PrefixMassBarrier

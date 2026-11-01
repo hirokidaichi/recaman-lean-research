@@ -1,0 +1,39 @@
+Recaman/SourceFamilyFreeCount.lean:68:55: warning: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SourceFamilyFreeCount.lean:95:46: error: Application type mismatch: The argument
+  ht
+has type
+  t <
+    (List.replicate h false ++ List.replicate M true ++ List.replicate (R + 1) false ++ List.replicate R true ++
+        List.replicate 1 false).length
+but is expected to have type
+  t <
+    (List.replicate h false ++
+        (List.replicate M true ++
+          (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false)))).length
+in the application
+  And.intro ht
+Recaman/SourceFamilyFreeCount.lean:95:49: error: Application type mismatch: The argument
+  hm
+has type
+  mass
+        (List.drop t
+          (List.replicate h false ++ List.replicate M true ++ List.replicate (R + 1) false ++ List.replicate R true ++
+            List.replicate 1 false)) +
+      ↑i =
+    ↑0 + 1
+but is expected to have type
+  mass
+        (List.drop t
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false))))) +
+      ↑i =
+    1
+in the application
+  And.intro hm
+Recaman/SourceFamilyFreeCount.lean:111:4: error: `dsimp` made no progress

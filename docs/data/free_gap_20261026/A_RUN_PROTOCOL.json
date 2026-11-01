@@ -1,0 +1,21 @@
+{
+  "frozen_jst": "2026-10-26T06:14:59.697157+09:00",
+  "card": "H-20261026-02",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/a_run_discovery.py": "c19f3b5d80cae6ed8a1cda725c365962a94e97db160d946056b99c6da777afb3",
+    "docs/data/free_gap_20261026/a_run_holdout.py": "20a5bd0b4542d90f95a6598bbd927bf6e3aa202c99f194572d14919d8862e60b",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "budget": {
+    "new_worker_cpu_seconds": 20,
+    "per_worker_cpu_seconds": 10,
+    "per_worker_wall_seconds": 15,
+    "controller_cpu_reserve_seconds": 2
+  },
+  "single_worker_contract": "guard-validation.json; not a generic tree runner",
+  "discovery": "all Bool words length0..7, r/j0..6; forward F/area",
+  "independent_holdout": "length9/11/15 LCG seed53k+11,k0..39,r0/1/3/8,j0/2/5/9; S increment key and reversed moments; sharp h1/2/5/11/23",
+  "acceptance": "both directions and sharp inequalities; finite controls only; no hypotheses repaired after holdout; then full general Lean",
+  "stop": "any violation or timeout, at most one mathematical repair; no length/range increase; after25min without general lemma switch multi-run"
+}

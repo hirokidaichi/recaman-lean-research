@@ -1,0 +1,72 @@
+Recaman/FourEventPruned.lean:66:4: error: Tactic `rfl` failed: The left-hand side
+  have an := s.nonsupplied + 0;
+  if (decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) = true then
+    fastStepA s e
+  else none
+is not definitionally equal to the right-hand side
+  fastStepA s e
+
+case isTrue
+s : State
+e : Bool
+h✝ : e = true
+⊢ (have an := s.nonsupplied + 0;
+    if (decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) = true then
+      fastStepA s e
+    else none) =
+    fastStepA s e
+Recaman/FourEventPruned.lean:71:6: error: `simp` made no progress
+Recaman/FourEventPruned.lean:73:6: error: Tactic `rfl` failed: The left-hand side
+  have an := s.nonsupplied + 1;
+  if (decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) = true then
+    have q := scan s.word;
+    have an := s.nonsupplied + 1;
+    have admitted := !q.found;
+    if
+        (admitted && decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) =
+          true then
+      some
+        { word := if s.subtractions = 19 then trim (s.word ++ [true]) else s.word ++ [true],
+          additions := s.additions + 1, subtractions := s.subtractions, nonsupplied := an }
+    else none
+  else none
+is not definitionally equal to the right-hand side
+  have q := scan s.word;
+  have an := s.nonsupplied + 1;
+  have admitted := !q.found;
+  if
+      (admitted && decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) =
+        true then
+    some
+      { word := if s.subtractions = 19 then trim (s.word ++ [true]) else s.word ++ [true], additions := s.additions + 1,
+        subtractions := s.subtractions, nonsupplied := an }
+  else none
+
+case isFalse.isFalse
+s : State
+e : Bool
+hg h✝ : ¬e = true
+⊢ (have an := s.nonsupplied + 1;
+    if (decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) = true then
+      have q := scan s.word;
+      have an := s.nonsupplied + 1;
+      have admitted := !q.found;
+      if
+          (admitted && decide (an ≤ 4) &&
+              decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) =
+            true then
+        some
+          { word := if s.subtractions = 19 then trim (s.word ++ [true]) else s.word ++ [true],
+            additions := s.additions + 1, subtractions := s.subtractions, nonsupplied := an }
+      else none
+    else none) =
+    have q := scan s.word;
+    have an := s.nonsupplied + 1;
+    have admitted := !q.found;
+    if
+        (admitted && decide (an ≤ 4) && decide (s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + ↑an)) =
+          true then
+      some
+        { word := if s.subtractions = 19 then trim (s.word ++ [true]) else s.word ++ [true],
+          additions := s.additions + 1, subtractions := s.subtractions, nonsupplied := an }
+    else none

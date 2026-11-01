@@ -1,0 +1,11 @@
+Int.mul_ediv_cancel_left {a : Int} (b : Int) (H : a ≠ 0) : a * b / a = b
+docs/data/three_run_20261027/check_div_api.lean:3:7: error(lean.unknownIdentifier): Unknown constant `Int.mul_ediv_cancel_right`
+Int.mul_ediv_cancel (a : Int) {b : Int} (H : b ≠ 0) : a * b / b = a
+Int.mul_emod_right (a b : Int) : a * b % a = 0
+Int.mul_emod (a b n : Int) : a * b % n = a % n * (b % n) % n
+Int.ediv_mul_cancel {a b : Int} (H : b ∣ a) : a / b * b = a
+Int.emod_eq_zero_of_dvd {a b : Int} : a ∣ b → b % a = 0
+docs/data/three_run_20261027/check_div_api.lean:9:7: error(lean.unknownIdentifier): Unknown constant `Int.emod_eq_zero_iff_dvd`
+Int.add_emod (a b n : Int) : (a + b) % n = (a % n + b % n) % n
+Int.mul_emod_left (a b : Int) : a * b % b = 0
+docs/data/three_run_20261027/check_div_api.lean:12:7: error(lean.unknownIdentifier): Unknown constant `Int.natCast_toNat`

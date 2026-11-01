@@ -1,0 +1,1151 @@
+[
+  {
+    "result": "H01-S-exclusion-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H01-S-exclusion.log",
+    "started_jst": "2026-10-29T06:06:38.829769+09:00",
+    "finished_jst": "2026-10-29T06:06:40.810603+09:00"
+  },
+  {
+    "result": "H01-actual-free-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 1,
+    "log": "H01-actual-free.log",
+    "started_jst": "2026-10-29T06:09:34.097740+09:00",
+    "finished_jst": "2026-10-29T06:09:35.296636+09:00"
+  },
+  {
+    "result": "H01-actual-free2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 1,
+    "log": "H01-actual-free2.log",
+    "started_jst": "2026-10-29T06:10:02.889349+09:00",
+    "finished_jst": "2026-10-29T06:10:05.389888+09:00"
+  },
+  {
+    "result": "H01-actual-free3-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H01-actual-free3.log",
+    "started_jst": "2026-10-29T06:10:27.388584+09:00",
+    "finished_jst": "2026-10-29T06:10:28.482986+09:00"
+  },
+  {
+    "result": "H01-tail-clock-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 1,
+    "log": "H01-tail-clock.log",
+    "started_jst": "2026-10-29T06:07:21.601685+09:00",
+    "finished_jst": "2026-10-29T06:07:22.120669+09:00"
+  },
+  {
+    "result": "H01-tail-clock2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H01-tail-clock2.log",
+    "started_jst": "2026-10-29T06:07:31.332826+09:00",
+    "finished_jst": "2026-10-29T06:07:31.888672+09:00"
+  },
+  {
+    "result": "H01-tail-three-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetLocalTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H01-tail-three.log",
+    "started_jst": "2026-10-29T06:08:29.908917+09:00",
+    "finished_jst": "2026-10-29T06:08:30.643966+09:00"
+  },
+  {
+    "result": "H02-actual-free-two-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-actual-free-two.log",
+    "started_jst": "2026-10-29T06:19:00.650345+09:00",
+    "finished_jst": "2026-10-29T06:19:02.143014+09:00"
+  },
+  {
+    "result": "H02-actual-free-two2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-actual-free-two2.log",
+    "started_jst": "2026-10-29T06:19:12.193189+09:00",
+    "finished_jst": "2026-10-29T06:19:13.710081+09:00"
+  },
+  {
+    "result": "H02-actual-free-two3-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 0,
+    "log": "H02-actual-free-two3.log",
+    "started_jst": "2026-10-29T06:20:17.834204+09:00",
+    "finished_jst": "2026-10-29T06:20:19.367519+09:00"
+  },
+  {
+    "result": "H02-debug-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-debug.log",
+    "started_jst": "2026-10-29T06:16:38.779317+09:00",
+    "finished_jst": "2026-10-29T06:16:39.568577+09:00"
+  },
+  {
+    "result": "H02-discovery-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "2",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/old_count_model.py",
+      "discovery"
+    ],
+    "exit_code": 0,
+    "log": "H02-discovery.log",
+    "started_jst": "2026-10-29T06:13:49.124627+09:00",
+    "finished_jst": "2026-10-29T06:13:49.330548+09:00"
+  },
+  {
+    "result": "H02-first-A-collision-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-first-A-collision.log",
+    "started_jst": "2026-10-29T06:16:21.515853+09:00",
+    "finished_jst": "2026-10-29T06:16:22.291660+09:00"
+  },
+  {
+    "result": "H02-first-A-collision2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-first-A-collision2.log",
+    "started_jst": "2026-10-29T06:16:33.132368+09:00",
+    "finished_jst": "2026-10-29T06:16:33.935429+09:00"
+  },
+  {
+    "result": "H02-first-A-collision3-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 0,
+    "log": "H02-first-A-collision3.log",
+    "started_jst": "2026-10-29T06:16:50.100326+09:00",
+    "finished_jst": "2026-10-29T06:16:50.964983+09:00"
+  },
+  {
+    "result": "H02-holdout-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "2",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/old_count_model.py",
+      "holdout"
+    ],
+    "exit_code": 0,
+    "log": "H02-holdout.log",
+    "started_jst": "2026-10-29T06:13:54.366633+09:00",
+    "finished_jst": "2026-10-29T06:13:54.690887+09:00"
+  },
+  {
+    "result": "H02-posthoc-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/analyze_model.py"
+    ],
+    "exit_code": 0,
+    "log": "H02-posthoc.log",
+    "started_jst": "2026-10-29T06:14:26.271446+09:00",
+    "finished_jst": "2026-10-29T06:14:26.325397+09:00"
+  },
+  {
+    "result": "H02-two-clock-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetClockCollision.lean"
+    ],
+    "exit_code": 1,
+    "log": "H02-two-clock.log",
+    "started_jst": "2026-10-29T06:18:51.179269+09:00",
+    "finished_jst": "2026-10-29T06:18:52.490174+09:00"
+  },
+  {
+    "result": "H03-clock-charge-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 1,
+    "log": "H03-clock-charge.log",
+    "started_jst": "2026-10-29T06:23:26.081430+09:00",
+    "finished_jst": "2026-10-29T06:23:27.126945+09:00"
+  },
+  {
+    "result": "H03-clock-charge2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 0,
+    "log": "H03-clock-charge2.log",
+    "started_jst": "2026-10-29T06:23:41.661000+09:00",
+    "finished_jst": "2026-10-29T06:23:42.700040+09:00"
+  },
+  {
+    "result": "H03-count-charge-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 1,
+    "log": "H03-count-charge.log",
+    "started_jst": "2026-10-29T06:24:39.084216+09:00",
+    "finished_jst": "2026-10-29T06:24:41.781254+09:00"
+  },
+  {
+    "result": "H03-count-charge2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 0,
+    "log": "H03-count-charge2.log",
+    "started_jst": "2026-10-29T06:25:15.437065+09:00",
+    "finished_jst": "2026-10-29T06:25:16.860512+09:00"
+  },
+  {
+    "result": "H03-middle-charge-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 1,
+    "log": "H03-middle-charge.log",
+    "started_jst": "2026-10-29T06:21:38.989057+09:00",
+    "finished_jst": "2026-10-29T06:21:39.698866+09:00"
+  },
+  {
+    "result": "H03-middle-charge2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 0,
+    "log": "H03-middle-charge2.log",
+    "started_jst": "2026-10-29T06:21:46.562787+09:00",
+    "finished_jst": "2026-10-29T06:21:47.301280+09:00"
+  },
+  {
+    "result": "H04-actual-old-gap-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/OldTargetMiddleCharge.lean"
+    ],
+    "exit_code": 1,
+    "log": "H04-actual-old-gap.log",
+    "started_jst": "2026-10-29T06:26:09.475226+09:00",
+    "finished_jst": "2026-10-29T06:26:10.892244+09:00"
+  },
+  {
+    "result": "H04-actual-old-gap2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunOldTargetGap.lean"
+    ],
+    "exit_code": 1,
+    "log": "H04-actual-old-gap2.log",
+    "started_jst": "2026-10-29T06:26:42.998780+09:00",
+    "finished_jst": "2026-10-29T06:26:43.992122+09:00"
+  },
+  {
+    "result": "H04-actual-old-gap3-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunOldTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H04-actual-old-gap3.log",
+    "started_jst": "2026-10-29T06:26:52.248833+09:00",
+    "finished_jst": "2026-10-29T06:26:53.214695+09:00"
+  },
+  {
+    "result": "H04-original-p-old-gap-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunOldTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H04-original-p-old-gap.log",
+    "started_jst": "2026-10-29T06:27:17.355930+09:00",
+    "finished_jst": "2026-10-29T06:27:18.523783+09:00"
+  },
+  {
+    "result": "H05-actual-old-pair-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetOldPair.lean"
+    ],
+    "exit_code": 0,
+    "log": "H05-actual-old-pair.log",
+    "started_jst": "2026-10-29T06:35:01.715481+09:00",
+    "finished_jst": "2026-10-29T06:35:02.393912+09:00"
+  },
+  {
+    "result": "H05-old-pair-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetOldPair.lean"
+    ],
+    "exit_code": 0,
+    "log": "H05-old-pair.log",
+    "started_jst": "2026-10-29T06:34:21.902715+09:00",
+    "finished_jst": "2026-10-29T06:34:22.408313+09:00"
+  },
+  {
+    "result": "H06-initial-first-A-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H06-initial-first-A.log",
+    "started_jst": "2026-10-29T06:40:10.287080+09:00",
+    "finished_jst": "2026-10-29T06:40:10.984380+09:00"
+  },
+  {
+    "result": "H06-tail-bounds-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetTail.lean"
+    ],
+    "exit_code": 1,
+    "log": "H06-tail-bounds.log",
+    "started_jst": "2026-10-29T06:41:16.728627+09:00",
+    "finished_jst": "2026-10-29T06:41:17.802971+09:00"
+  },
+  {
+    "result": "H06-tail-bounds2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetTail.lean"
+    ],
+    "exit_code": 0,
+    "log": "H06-tail-bounds2.log",
+    "started_jst": "2026-10-29T06:42:24.966620+09:00",
+    "finished_jst": "2026-10-29T06:42:26.066556+09:00"
+  },
+  {
+    "result": "H06-two-shapes-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetTwoShapes.lean"
+    ],
+    "exit_code": 1,
+    "log": "H06-two-shapes.log",
+    "started_jst": "2026-10-29T06:43:25.784506+09:00",
+    "finished_jst": "2026-10-29T06:43:26.680670+09:00"
+  },
+  {
+    "result": "H06-two-shapes2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetTwoShapes.lean"
+    ],
+    "exit_code": 0,
+    "log": "H06-two-shapes2.log",
+    "started_jst": "2026-10-29T06:43:41.273671+09:00",
+    "finished_jst": "2026-10-29T06:43:42.232360+09:00"
+  },
+  {
+    "result": "H07-actual-initial-gap-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunInitialSTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H07-actual-initial-gap.log",
+    "started_jst": "2026-10-29T06:45:22.109629+09:00",
+    "finished_jst": "2026-10-29T06:45:22.740632+09:00"
+  },
+  {
+    "result": "H07-all-three-run-gap-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunFreeGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H07-all-three-run-gap.log",
+    "started_jst": "2026-10-29T06:47:59.026513+09:00",
+    "finished_jst": "2026-10-29T06:47:59.488416+09:00"
+  },
+  {
+    "result": "H07-initial-count-charge-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/InitialSTargetCountCharge.lean"
+    ],
+    "exit_code": 0,
+    "log": "H07-initial-count-charge.log",
+    "started_jst": "2026-10-29T06:44:38.517935+09:00",
+    "finished_jst": "2026-10-29T06:44:39.666938+09:00"
+  },
+  {
+    "result": "H07-original-p-all-three-run-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunFreeGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H07-original-p-all-three-run.log",
+    "started_jst": "2026-10-29T06:48:29.152341+09:00",
+    "finished_jst": "2026-10-29T06:48:29.697990+09:00"
+  },
+  {
+    "result": "H07-original-p-initial-gap-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/ThreeRunInitialSTargetGap.lean"
+    ],
+    "exit_code": 0,
+    "log": "H07-original-p-initial-gap.log",
+    "started_jst": "2026-10-29T06:47:19.962604+09:00",
+    "finished_jst": "2026-10-29T06:47:20.804756+09:00"
+  },
+  {
+    "result": "H08-actual-source-cut-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LocalSourcePrefixBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H08-actual-source-cut.log",
+    "started_jst": "2026-10-29T06:54:44.254449+09:00",
+    "finished_jst": "2026-10-29T06:54:46.274600+09:00"
+  },
+  {
+    "result": "H08-mixed-source-cut-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/LocalSourcePrefixBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H08-mixed-source-cut.log",
+    "started_jst": "2026-10-29T06:52:19.030005+09:00",
+    "finished_jst": "2026-10-29T06:52:19.534133+09:00"
+  },
+  {
+    "result": "H09-discovery-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/free_prefix_countermodel.py",
+      "discovery"
+    ],
+    "exit_code": 0,
+    "log": "H09-discovery.log",
+    "started_jst": "2026-10-29T06:56:11.737207+09:00",
+    "finished_jst": "2026-10-29T06:56:11.774269+09:00"
+  },
+  {
+    "result": "H09-holdout-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/free_prefix_countermodel.py",
+      "holdout"
+    ],
+    "exit_code": 0,
+    "log": "H09-holdout.log",
+    "started_jst": "2026-10-29T06:56:11.820659+09:00",
+    "finished_jst": "2026-10-29T06:56:11.893238+09:00"
+  },
+  {
+    "result": "H09-literal-counterexample-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FreePrefixCounterexample.lean"
+    ],
+    "exit_code": 1,
+    "log": "H09-literal-counterexample.log",
+    "started_jst": "2026-10-29T06:58:06.004739+09:00",
+    "finished_jst": "2026-10-29T06:58:07.369598+09:00"
+  },
+  {
+    "result": "H09-literal-counterexample2-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FreePrefixCounterexample.lean"
+    ],
+    "exit_code": 0,
+    "log": "H09-literal-counterexample2.log",
+    "started_jst": "2026-10-29T06:59:31.338848+09:00",
+    "finished_jst": "2026-10-29T06:59:32.069309+09:00"
+  },
+  {
+    "result": "H10-key-necessity-controls-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/PrefixKeySourceBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H10-key-necessity-controls.log",
+    "started_jst": "2026-10-29T07:04:39.056152+09:00",
+    "finished_jst": "2026-10-29T07:04:39.913831+09:00"
+  },
+  {
+    "result": "H10-key-only-source-cut-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/PrefixKeySourceBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H10-key-only-source-cut.log",
+    "started_jst": "2026-10-29T07:03:36.235194+09:00",
+    "finished_jst": "2026-10-29T07:03:37.026700+09:00"
+  },
+  {
+    "result": "H11-domains-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/domain_controls.py"
+    ],
+    "exit_code": 0,
+    "log": "H11-domains.log",
+    "started_jst": "2026-10-29T07:13:56.234074+09:00",
+    "finished_jst": "2026-10-29T07:13:56.298003+09:00"
+  },
+  {
+    "result": "H11-nonvacuity-replay-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FreePrefixCounterexample.lean"
+    ],
+    "exit_code": 0,
+    "log": "H11-nonvacuity-replay.log",
+    "started_jst": "2026-10-29T07:09:51.199958+09:00",
+    "finished_jst": "2026-10-29T07:09:52.048682+09:00"
+  },
+  {
+    "result": "H13-statement-contracts-local-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "docs/data/old_tail_20261029/statement_contracts.lean"
+    ],
+    "exit_code": 0,
+    "log": "H13-statement-contracts-local.log",
+    "started_jst": "2026-10-29T07:19:19.547587+09:00",
+    "finished_jst": "2026-10-29T07:19:19.998048+09:00"
+  },
+  {
+    "result": "H13-statement-contracts-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "docs/data/old_tail_20261029/statement_contracts.lean"
+    ],
+    "exit_code": 1,
+    "log": "H13-statement-contracts.log",
+    "started_jst": "2026-10-29T07:15:50.122616+09:00",
+    "finished_jst": "2026-10-29T07:15:52.232142+09:00"
+  },
+  {
+    "result": "H19-dependency-audit-repair-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "docs/data/old_tail_20261029/dependency_audit.lean"
+    ],
+    "exit_code": 1,
+    "log": "H19-dependency-audit-repair.log",
+    "started_jst": "2026-10-29T07:29:59.434205+09:00",
+    "finished_jst": "2026-10-29T07:30:00.587817+09:00"
+  },
+  {
+    "result": "H19-dependency-audit-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "docs/data/old_tail_20261029/dependency_audit.lean"
+    ],
+    "exit_code": 1,
+    "log": "H19-dependency-audit.log",
+    "started_jst": "2026-10-29T07:29:52.397783+09:00",
+    "finished_jst": "2026-10-29T07:29:52.790922+09:00"
+  },
+  {
+    "result": "H21-four-run-base-bridge-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSupplyBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H21-four-run-base-bridge.log",
+    "started_jst": "2026-10-29T07:35:04.681126+09:00",
+    "finished_jst": "2026-10-29T07:35:05.362046+09:00"
+  },
+  {
+    "result": "H21-four-run-repair-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSupplyBudget.lean"
+    ],
+    "exit_code": 0,
+    "log": "H21-four-run-repair.log",
+    "started_jst": "2026-10-29T07:34:08.383929+09:00",
+    "finished_jst": "2026-10-29T07:34:08.928348+09:00"
+  },
+  {
+    "result": "H21-four-run-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/FourRunSupplyBudget.lean"
+    ],
+    "exit_code": 1,
+    "log": "H21-four-run.log",
+    "started_jst": "2026-10-29T07:33:50.381942+09:00",
+    "finished_jst": "2026-10-29T07:33:50.995491+09:00"
+  },
+  {
+    "result": "H22-four-run-control-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/four_run_control.py"
+    ],
+    "exit_code": 0,
+    "log": "H22-four-run-control.log",
+    "started_jst": "2026-10-29T07:37:53.835897+09:00",
+    "finished_jst": "2026-10-29T07:37:53.872865+09:00"
+  },
+  {
+    "result": "H23-four-run-statement-contract-result.json",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "docs/data/old_tail_20261029/four_run_statement_contract.lean"
+    ],
+    "exit_code": 0,
+    "log": "H23-four-run-statement-contract.log",
+    "started_jst": "2026-10-29T07:41:21.575412+09:00",
+    "finished_jst": "2026-10-29T07:41:23.358150+09:00"
+  },
+  {
+    "result": "build-clock-collision-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.OldTargetClockCollision"
+    ],
+    "exit_code": 0,
+    "log": "build-clock-collision.log",
+    "started_jst": "2026-10-29T06:21:02.436914+09:00",
+    "finished_jst": "2026-10-29T06:21:03.540227+09:00"
+  },
+  {
+    "result": "build-initial-actual-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.ThreeRunInitialSTargetGap"
+    ],
+    "exit_code": 0,
+    "log": "build-initial-actual.log",
+    "started_jst": "2026-10-29T06:47:58.287617+09:00",
+    "finished_jst": "2026-10-29T06:47:58.963867+09:00"
+  },
+  {
+    "result": "build-initial-count-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.InitialSTargetCountCharge"
+    ],
+    "exit_code": 0,
+    "log": "build-initial-count.log",
+    "started_jst": "2026-10-29T06:45:21.086844+09:00",
+    "finished_jst": "2026-10-29T06:45:22.042014+09:00"
+  },
+  {
+    "result": "build-initial-tail-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.InitialSTargetTail"
+    ],
+    "exit_code": 1,
+    "log": "build-initial-tail.log",
+    "started_jst": "2026-10-29T06:42:10.018567+09:00",
+    "finished_jst": "2026-10-29T06:42:10.772677+09:00"
+  },
+  {
+    "result": "build-initial-tail2-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.InitialSTargetTail"
+    ],
+    "exit_code": 0,
+    "log": "build-initial-tail2.log",
+    "started_jst": "2026-10-29T06:43:03.678775+09:00",
+    "finished_jst": "2026-10-29T06:43:04.522406+09:00"
+  },
+  {
+    "result": "build-initial-two-shapes-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.InitialSTargetTwoShapes"
+    ],
+    "exit_code": 0,
+    "log": "build-initial-two-shapes.log",
+    "started_jst": "2026-10-29T06:44:20.538155+09:00",
+    "finished_jst": "2026-10-29T06:44:21.288718+09:00"
+  },
+  {
+    "result": "build-local-prefix-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.LocalSourcePrefixBudget"
+    ],
+    "exit_code": 0,
+    "log": "build-local-prefix.log",
+    "started_jst": "2026-10-29T07:03:35.546559+09:00",
+    "finished_jst": "2026-10-29T07:03:36.179599+09:00"
+  },
+  {
+    "result": "build-middle-charge-result.json",
+    "argv": [
+      "lake",
+      "build",
+      "Recaman.OldTargetMiddleCharge"
+    ],
+    "exit_code": 0,
+    "log": "build-middle-charge.log",
+    "started_jst": "2026-10-29T06:26:34.317943+09:00",
+    "finished_jst": "2026-10-29T06:26:35.402088+09:00"
+  },
+  {
+    "result": "check-E442-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E442.log",
+    "started_jst": "2026-10-29T06:11:58.684218+09:00",
+    "finished_jst": "2026-10-29T06:12:06.557691+09:00"
+  },
+  {
+    "result": "check-E445-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E445.log",
+    "started_jst": "2026-10-29T06:30:12.522238+09:00",
+    "finished_jst": "2026-10-29T06:30:20.249473+09:00"
+  },
+  {
+    "result": "check-E446-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E446.log",
+    "started_jst": "2026-10-29T06:36:27.816911+09:00",
+    "finished_jst": "2026-10-29T06:36:34.459953+09:00"
+  },
+  {
+    "result": "check-E451-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E451.log",
+    "started_jst": "2026-10-29T06:50:03.881687+09:00",
+    "finished_jst": "2026-10-29T06:50:10.441256+09:00"
+  },
+  {
+    "result": "check-E455-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E455.log",
+    "started_jst": "2026-10-29T07:08:08.438052+09:00",
+    "finished_jst": "2026-10-29T07:08:16.273246+09:00"
+  },
+  {
+    "result": "check-E456-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-E456.log",
+    "started_jst": "2026-10-29T07:36:54.473066+09:00",
+    "finished_jst": "2026-10-29T07:37:01.241529+09:00"
+  },
+  {
+    "result": "check-final-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-final.log",
+    "started_jst": "2026-10-29T07:28:32.824761+09:00",
+    "finished_jst": "2026-10-29T07:28:39.222841+09:00"
+  },
+  {
+    "result": "check-final-source-result.json",
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "log": "check-final-source.log",
+    "started_jst": "2026-10-29T07:43:19.991246+09:00",
+    "finished_jst": "2026-10-29T07:43:27.812859+09:00"
+  },
+  {
+    "result": "cold-all-new-claims-result.json",
+    "argv": [
+      "lake",
+      "--no-cache",
+      "-d",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/cold_project",
+      "build",
+      "Recaman.PrefixKeySourceBudget",
+      "Recaman.FreePrefixCounterexample"
+    ],
+    "exit_code": 1,
+    "log": "cold-all-new-claims.log",
+    "started_jst": "2026-10-29T07:11:17.988281+09:00",
+    "finished_jst": "2026-10-29T07:11:21.383129+09:00"
+  },
+  {
+    "result": "guard-cpu-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/guard_fixture.py",
+      "cpu"
+    ],
+    "exit_code": -24,
+    "log": "guard-cpu.log",
+    "started_jst": "2026-10-29T06:12:36.670701+09:00",
+    "finished_jst": "2026-10-29T06:12:37.694108+09:00"
+  },
+  {
+    "result": "guard-exec-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/guard_fixture.py",
+      "exec"
+    ],
+    "exit_code": 0,
+    "log": "guard-exec.log",
+    "started_jst": "2026-10-29T06:12:36.568735+09:00",
+    "finished_jst": "2026-10-29T06:12:36.625827+09:00"
+  },
+  {
+    "result": "guard-fork-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/guard_fixture.py",
+      "fork"
+    ],
+    "exit_code": 0,
+    "log": "guard-fork.log",
+    "started_jst": "2026-10-29T06:12:36.487189+09:00",
+    "finished_jst": "2026-10-29T06:12:36.524431+09:00"
+  },
+  {
+    "result": "guard-normal-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/guard_fixture.py",
+      "normal"
+    ],
+    "exit_code": 0,
+    "log": "guard-normal.log",
+    "started_jst": "2026-10-29T06:12:36.404447+09:00",
+    "finished_jst": "2026-10-29T06:12:36.441541+09:00"
+  },
+  {
+    "result": "guard-wall-result.json",
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/guard_fixture.py",
+      "wall"
+    ],
+    "exit_code": -9,
+    "log": "guard-wall.log",
+    "started_jst": "2026-10-29T06:12:37.741024+09:00",
+    "finished_jst": "2026-10-29T06:12:37.950252+09:00"
+  }
+]

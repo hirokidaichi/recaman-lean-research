@@ -1,0 +1,21 @@
+{
+  "card": "H-20261026-06",
+  "frozen_jst": "2026-10-26T07:12:18.538468+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/old_budget_graph.py": "6ee75a2c030b4e7eeafd8dbae3d9007ac3d8d871d99bf3694dc48d80f4b95c5a",
+    "docs/data/free_gap_20261026/old_budget_independent.py": "c79fb9e8568ebdbe1d28edfdf0d0d84ee81e47bff4a7e2e107a59646c1a7bc97",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "Recaman/BlockOldRay.lean": "0a7defb191ecbc3b5dfd9cd59c2894211f3e91634bf7e27b0123674a0a6c03f3"
+  },
+  "worker_cpu_total_cap_seconds": 30,
+  "per_worker_cpu_seconds": 15,
+  "per_worker_wall_seconds": 20,
+  "controller_cpu_reserve_seconds": 2,
+  "state_guard": 100000,
+  "kernel_stage_gate_states": 3000,
+  "discovery": "full old-only budget graph, both tags/all40 macro candidates/A11/no trimmed mass inference",
+  "independent_holdout": "reverse DFS all states/edges; fresh long gaps37/53/307/5003; four known E395 actual histories (not fresh holdout)",
+  "acceptance": "projection is subset of old graph, concrete exclusions, actual controls survive; no r4 proof before simulation/initial kernel/Audit",
+  "stop": "size>3000 => certificate methodSTOPPED no larger time/memory retry; timeout/A11/actual transition lost => preservefailure"
+}

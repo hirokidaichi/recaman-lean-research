@@ -627,3 +627,94 @@ NoSAAS 下で、SS1 の最小 P2 供給を持つ現在 A は、一つの A run �
 Lean 証明した（E-128）。NoSAAS・最小 lag・lag 上限は不要。
 旧 one-SS run 写像と clean 写像の衝突は、この新写像で解消した。
 SS2 への同じ prefix 正規化は標準step115で偽（E-130）。旧shortとの和集合もまだ未証明。
+
+## C1供給連鎖の語彙（2026-10-24）
+
+### 非供給A・free A・nonsupplied A — 整理用
+
+元の基点pからEndableでないA。Nat clock版では `f u=true ∧ ¬EndN f 0 u` を数える。
+AN/a_z/a_yは文脈に応じた区間のこの個数で、全A個数とは違う。
+「r4モデル」はこの予算≤4のモデルを指し、全Aが4個という意味ではない。
+基点を途中のclockへ取り直すと同じ個数とは限らない。元のhistoryを保持する。
+
+### EndNとlocalSupply — 研究固有
+
+`EndN f s b`は、実際の符号 `f b=A` と、始点t≥s・正の長さを持つ実窓Winがbまであること。
+Winは実height差1・面積0を表す。`localSupply(w)`は語wのsuffixの窓条件を判定し、
+次の符号が実際にAであることは別に必要。窓条件だけから次のAの存在を主張しない。
+oldは対象tailの開始nより古いt<n、localはt≥n。どちらも元の基点のEndableへ接続する。
+
+### 16終端語と10旧prefix代表 — 整理用
+
+| 呼称 | 対象の位置 | 保存・利用する情報 | 証拠の境界 |
+| --- | --- | --- | --- |
+| 明示16root/終端語 | tail z=[n,q) | この具体語から先のfuture Q | E-392は語の所属を仮定。a_z≤4からの全包含は未証明 |
+| 低massの10代表 | 古いprefix [0,n) のsuffix | 全mass3/4 suffixを同じ代表で同時保存 | E-399は全長で供給。全Endable historyやmass≥5の保存ではない |
+
+両者は区間も役割も違う。10代表の同じ一つを全future clockへ使う。
+必要mass3/4の実old窓・実endpoint A付きEndNはその代表で双方向に判定できるが、
+S飽和後のtrim語のmassを、実tail全体のmassとして代入してはいけない。
+
+### zero-free continuation・terminal ray — 整理用
+
+追加の非供給A予算0の継続。ここでも供給されるAは置ける。
+terminal checkが真ならE-391が全futureのA個数0を供給する。具体motifのE-396は追加A≤5、
+長いS/偶数runのE-397は追加A≤1であり、zero-freeだけから追加全A個数0とは言えない。
+一般rankやC1全体の解決と混同しない。
+
+### S-gapの半数上界・future local context — 整理用（2026-10-25）
+
+E-407のAはgap以前の**全A**。実供給A直前にj個のSがあれば2j+2≤A。
+先行する非Endable Aだけを数えるrとの関係は別の未知edgeである。
+`suffixCeiling(u)`は空語を含む全suffixの最大mass。E-402のlocal文脈消去には
+`mass(v)+suffixCeiling(u)+B≤0` と残りfuture A予算Bが必要で、oldの総mass/areaは別保持する。
+E-405により、負bufferをいくら深くしても予算なしの全future保存は成立しない。
+run条件付きterminal結果と、任意tailの一般rankを区別する。
+
+### A-rayのrun供給予算 — 整理用（2026-10-26）
+
+A-rayは同じ実historyにAだけを付け足す一つのrun。P=2area−mass(mass+1)はA付加で不変、P=-2のsuffixは一つのclockだけを供給する（E-408/E-410）。源runの再利用はSを挟むと別問題で、混合未来の大域rankではない。
+共通BlockWord prefixのold供給はtail S>=3の後の同じA-rayで高々1（E-411）。複数startが同clockを供給する場合は残す。
+free-gapは実target供給前のS-gap jに対するj+1<=元基点の先行非Endable A数r。E-413は単一、E-414はzero/全positive不足の二A-runで全長証明。三run以上は未解決。
+E-415の四clock反例は小さいlocal予算の反例で、free-gapやC1/Qの反例ではない。E-416の残余r4〜9は紙上reduction、有限history分類ではない。
+
+## 三runの実有限代表とsource再使用（2026-10-27）
+
+実有限代表（E423）は、長い符号historyから実EndN/free/relative不足/targetを保存して作る別の符号history。old prefix<=47/初期S<=39/内部S各<=38/全A<=20/gap<=9のtarget clock<=191を持つ。元のRecamán orbit prefixそのものがこの長さになるとは言わず、有限領域の反例不在も未検査。絶対zeroを新基点へ仮定し直さない。
+共同spectrum（E425）は、同一BlockWord prefixの全suffixのmass/areaの集合を一つのstateで同時保存する表現。別prefixの各massの代表を混ぜない。有限R11表647状態はCOMPUTEDのまま。
+source再使用（E431）は同じ内部語uを挟み、同じ定符号runから前のA-only窓と後のS-gap付き窓が供給される場合の関係。A源2S(e-d)=j(j+2)、S源(d-e)(d+e+2S)=j(j+2)。前後でuが変わる任意混合futureのrank/単射を供給したわけではない。
+E416は10/26紙上reductionから10/27全長Leanへ強度更新済み。E432は新しい特定三run族の紙上下限で未Lean・人間レビュー未。
+
+## 2026-10-28: target old suffixとtail old排除
+
+**target old suffix**はtargetの実P2 sourceからtail開始nまでの同じ古い語。E-440のmass<=5/長さ<=12はこの一語の上界で、全old prefixや別の供給源の上界ではない。E-441では先行A供給源のmassがtarget源より大きいので、mass>5を捨ててはいけない。
+
+**限定tail切断**（E-441）は、同じBlockWord prefix/内部語を保ち、old targetのS-gap j>=2が実P2なら、先行A-ray供給clock iはi+j<Tとなること。最後min(T,j)個Aではold供給不能でlocalのみ、actual EndN0/EndNn同値はこの区間だけ。全futureの基点変更・history消去・rankではない。key差9でstrict mass順序、差8/同mass境界も保持する。
+
+E-434/E-435は第一A/中央S target源のfree-gapを全長証明したが、old/初期S源と三run全体は残る。E-416は10/27にPROVED-LEAN更新済み。H06の133core有限証明書はSTOPPED、E-436四対/E-437 classifierから初期S不在を推定しない。
+
+## 2026-10-29: 三A-run free-gapとsource以前A budget
+
+E451は元pのzero-positive条件と三非空A-runに対する全長free-gap j+1<=actual free。旧二run E414を三runへ拡張したが、任意run数/C1の証明ではない。E452のsource以前A budgetは任意混合語でlocal源開始までにA>=j+1を要求する。これはactual free数の下限ではなく、供給済みAを含む。source cutをfree課金/rankへ置換するedgeは別に必要。
+
+### 10/29現在: A-run数 k と非供給A数 r
+
+kはtail内の連続A区間の個数、rは同じ元基点から実EndableでないAの個数で、別の量。E451の「三A-run」はk=3/全r・全長の結果であり、既存E385〜387の「r<=3/全run」と混同しない。r4分類は依然未完了。
+E456のk4実供給<=19/反例free4..17/A36/j17は数値候補領域の縮約。S長とold historyの無限性や、反例不在は残る。一般kの二次供給予算は紙上のみ。E453はA-before-sourceをfree-before-sourceへ置換する補助案の反例で、C1の反例ではない。
+
+## 2026-10-30のsource/charge用語（局所的な記法）
+
+- 本日の`charge`は各実区間の「全A数−2×元基点の非Endable A数」。既存の中央SS chargeなどと同一の量と仮定しない。E464は固定headの全四run区間でcharge<=3を証明したが、一般run数のrankではない。
+- A-ray clock `i` は最後のA-runの最初を0とする。最終S源のP2はq1/i2（第三のAの直前窓）になる。old clock>=4とは第五のAより前のold供給を除くことで、local供給を除いた意味ではない。
+- `w` は全old BlockWord履歴、`u` は同じtargetが使うold suffix。`C=mass(u)=1`は数値条件で、予想C1の証明という意味ではない。u=Aからw全体=Aへの切断は不可。
+- zero-mass headのmoment帯は`mass(z)=0`、`S=cntF(z)`、`areaW(z)=-B`、`4S+6<=B<=6S+4`。E465はこの実測可能な符号条件からold clock>=4を供給する。E466によりlocal halfを足すことはできず、E467の同じtargetとのcouplingは未Leanの別入力。
+
+## 2026-10-31: zero-mass headのmoment帯とactual課金
+
+ここでSは三A-run headのS総数でA総数とも等しく、area=-B。E482のmoment帯は4S+4<=B<=6S+4。これは全headが属するという主張ではない。`actual free`は元0/pの真のEndN/Endableで供給されないAを全headと最後rayの非重複和で数える。lower4ではold supplyが実在し、切り捨てずold<=1/local<=5/headfree>=6で払う。source式の局所clockやCOMPUTED tagをactualfreeと同一視しない。
+
+翌日入口の「target mass3」はold suffixの符号和C=3であり、既に完了したfree予算r<=3/a_z<=3とは異なる。E483の五area対は必要条件の射影で、実Endable履歴の五同値類ではない。同じ(9,6)に別のsupplier word SAAAAA/tripが残るため、actual接着では元wordとprefixを保存する。
+
+### 同targetによる平方比較（2026-11-01）
+
+zero-mass三run headの面積Bと、同じold targetのprimitive keyをfirstA local源のmass/key式へ同時代入する方法。明示A予算M<=R+1の下で、S3ではsourceclock0、S4では0/1だけへ絞る。A予算はactual主定理でcounter/第一run供給2から内部供給し、無条件source不存在ではない（E498/E499）。早期old sourceによるheadfree5（E497）と別の義務であり、old無し枝では勝手に適用しない。

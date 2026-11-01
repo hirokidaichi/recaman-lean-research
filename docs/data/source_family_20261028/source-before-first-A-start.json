@@ -1,0 +1,18 @@
+{
+  "tag": "source-before-first-A",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MiddleSTargetFreeGap.lean"
+  ],
+  "started_jst": "2026-10-28T06:37:51.696313+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MiddleSTargetFreeGap.lean": "3c7be41e44b48dbfec2bec0dcae8a6841475e52c51ad7b496d97ee89136130ac"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

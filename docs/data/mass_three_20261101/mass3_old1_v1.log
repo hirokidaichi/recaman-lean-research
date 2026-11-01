@@ -1,0 +1,60 @@
+Recaman/MassThreeOldOneGap.lean:109:32: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  seg f (n + H) 3
+in the target expression
+  w ++ (z ++ seg f (n + H) 4) = w ++ (z ++ List.replicate 4 false)
+
+f : Nat → Bool
+n t h M m L s U T j sOld : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + 4 → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + 4 + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + 4 + T ≤ x → x < n + h + M + m + L + s + U + 4 + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + 4 + T + j - t)
+hsOld : sOld < n
+hseedWin : Win f sOld (n + h + M + m + L + s + U + 4 + 1 - sOld)
+hC : mass (List.drop t w) = 3
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + 4 + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 4 + T)
+hcounter : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 4 + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate 4 false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate 4 false ++ List.replicate T true ++ List.replicate j false) = 0
+hTj : T = j + 2
+hprofOld :
+  mass (List.drop sOld w ++ z ++ List.replicate 4 false ++ List.replicate 1 true ++ List.replicate 0 false) = 1 ∧
+    areaW (List.drop sOld w ++ z ++ List.replicate 4 false ++ List.replicate 1 true ++ List.replicate 0 false) = 0
+hD : 4 ≤ mass (List.drop sOld w)
+hfree : 11 ≤ h + m + s ∧ 5 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U)
+hseed : tailOldRay w (z ++ List.replicate 4 false) 1
+⊢ w ++ (z ++ seg f (n + H) 4) = w ++ (z ++ List.replicate 4 false)
+Recaman/MassThreeOldOneGap.lean:109:56: error: Type mismatch: After simplification, term
+  hS4
+ has type
+  ∀ (x : Nat), n + (h + (M + (m + (L + (s + U))))) ≤ x → x < n + (h + (M + (m + (L + (s + (U + 4)))))) → f x = false
+but is expected to have type
+  ∀ (i : Nat), n + (h + (M + (m + (L + (s + U))))) ≤ i → i < n + (h + (M + (m + (L + (s + (U + 3)))))) → f i = false

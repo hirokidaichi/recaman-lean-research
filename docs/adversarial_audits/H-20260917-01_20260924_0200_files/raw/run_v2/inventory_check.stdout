@@ -1,0 +1,20 @@
+weekly_h01_proved: PASS | docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md | E-360 の最終Q
+weekly_h02_incomplete: PASS | docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md | H-20260920-02、H-20260920-03、H-20260920-05
+weekly_h04_scope: PASS | docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md | 非最小lag15 donorへの延長だけ
+weekly_h05_unreviewed: PASS | docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md | 紙§3-5
+weekly_no_general_lag: PASS | docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md | 一般lagルートを延長しない
+h02_status: PASS | docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md | Status: `CONJECTURED`
+h03_status: PASS | docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md | Status: `CONJECTURED`
+h04_status: PASS | docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md | Status: `REFUTED`
+h05_status: PASS | docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md | Status: `CONJECTURED`
+e360_registry: PASS | docs/EVIDENCE_REGISTRY.tsv | E-360	PROVED-LEAN	short-tight-donor-avoidance
+e240_certificate: PASS | docs/EVIDENCE_REGISTRY.tsv | E-240	PROVED-LEAN
+e345_computed: PASS | docs/EVIDENCE_REGISTRY.tsv | E-345	COMPUTED
+e351_proved: PASS | docs/EVIDENCE_REGISTRY.tsv | E-351	PROVED-LEAN
+h05_local_1: PASS | Recaman/SS2OldestPattern.lean | theorem moment_ending_A_budget
+h05_local_2: PASS | Recaman/SS2OldestPattern.lean | theorem moment_ending_AA_ss2
+h05_local_3: PASS | Recaman/SS2OldestPattern.lean | theorem ss2_intervening_prefix
+h05_downstream: PASS | Recaman/SS2OldestPattern.lean | theorem past_oldest_cover_decomposition
+h03_downstream_avoid: PASS | Recaman/ShortTightDonorAvoidance.lean | theorem short_p2_tight_avoids_ss2_window
+h03_downstream_delete: PASS | Recaman/ShortTightDonorAvoidance.lean | theorem short_p2_ss2_deletion
+checked=19 failed=0

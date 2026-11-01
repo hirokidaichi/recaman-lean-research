@@ -1,0 +1,144 @@
+{
+  "H02": {
+    "B": [
+      7
+    ],
+    "B_word": "AAS",
+    "N": [
+      4
+    ],
+    "avoids": true,
+    "cycle": "AASSSAAAASSSS",
+    "donor": "SAAAASSSAAS",
+    "donor_current": "S",
+    "donor_mass": 1,
+    "donor_moment": 0,
+    "donor_ss": 2,
+    "proper_p2_prefixes": [
+      7
+    ],
+    "tight": true,
+    "true_oldest_offset": 11,
+    "true_oldest_phase": 12,
+    "u0": 10
+  },
+  "H03": {
+    "p4": {
+      "B": [
+        2
+      ],
+      "N_lag": [
+        3
+      ],
+      "N_m": [
+        3
+      ],
+      "P2_lag": false,
+      "P2_m": true,
+      "cycle": "AAAS",
+      "lag": 4,
+      "m": 3,
+      "past_lag": "AASA",
+      "past_m": "AAS",
+      "tight": true
+    },
+    "p9": {
+      "B": [
+        4
+      ],
+      "N_lag": [
+        1,
+        7,
+        8
+      ],
+      "N_m": [
+        1
+      ],
+      "P2_lag": true,
+      "P2_m": true,
+      "cycle": "ASAAASASS",
+      "equality": false,
+      "lag": 7,
+      "m": 3,
+      "past_lag": "AASASSA",
+      "past_m": "AAS",
+      "tight": false
+    }
+  },
+  "H04": {
+    "B": [
+      3
+    ],
+    "N": [
+      0
+    ],
+    "cycle": "SAAASSSASASASAAA",
+    "deleted_N": [],
+    "deletion_hall": false,
+    "donor": "AASASASASSSAAAS",
+    "donor_current": "A",
+    "donor_mass": 1,
+    "donor_moment": 0,
+    "donor_ss": 2,
+    "fixed_offset11_in_N": false,
+    "fixed_offset11_phase": 4,
+    "oldest_in_N": true,
+    "period_mass": 2,
+    "proper_p2_prefixes": [
+      3
+    ],
+    "tight": true,
+    "true_oldest_offset": 15,
+    "true_oldest_phase": 0,
+    "u0": 15
+  },
+  "H05": {
+    "drop_ending_A": {
+      "ending_A": false,
+      "mass": 0,
+      "moment": -9,
+      "moment_plus_length": -3,
+      "ss": 2,
+      "strict_s_ended_p2_prefix_lengths": [],
+      "word": "AAASSS"
+    },
+    "drop_mass_zero": {
+      "ending_A": true,
+      "mass": -2,
+      "moment": -8,
+      "moment_plus_length": 0,
+      "ss": 2,
+      "strict_s_ended_p2_prefix_lengths": [],
+      "word": "SASASSSA"
+    },
+    "drop_moment_bound": {
+      "ending_A": true,
+      "mass": 0,
+      "moment": 1,
+      "moment_plus_length": 3,
+      "ss": 0,
+      "strict_s_ended_p2_prefix_lengths": [],
+      "word": "SA"
+    },
+    "drop_ss_bound": {
+      "ending_A": true,
+      "mass": 0,
+      "moment": -8,
+      "moment_plus_length": 0,
+      "ss": 3,
+      "strict_s_ended_p2_prefix_lengths": [],
+      "word": "AAASSSSA"
+    },
+    "positive": {
+      "ending_A": true,
+      "mass": 0,
+      "moment": -12,
+      "moment_plus_length": 0,
+      "ss": 2,
+      "strict_s_ended_p2_prefix_lengths": [
+        3
+      ],
+      "word": "AASASASASSSA"
+    }
+  }
+}

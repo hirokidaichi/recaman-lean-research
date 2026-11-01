@@ -1,0 +1,16 @@
+{
+  "card": "H-20261025-04",
+  "frozen_utc": "2026-10-24T21:31:24.846613+00:00",
+  "repair": 1,
+  "old_result": "default thread count consumed88.75 user+1.49sys CPU in14.32wall and exited152 (SIGXCPU) at unchanged90CPU cap; peakRSS~1.1GiB. No full certificate yet.",
+  "change": "single Lean worker -j1, same source and same90CPU/90wall/4GiB caps; no time or memory increase",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "docs/data/joint_old_20261025/dag_bench.lean"
+  ],
+  "source_sha256": "8abdf7660a1cc216dfed1b61f61271d7fb8e1f27b8b011f1d29f2b2894c5b617",
+  "stop": "if still fails, do not extend same benchmark time; preserve conditional interface only and switch"
+}

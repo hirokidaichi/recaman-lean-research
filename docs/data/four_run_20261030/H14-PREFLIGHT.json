@@ -1,0 +1,38 @@
+{
+  "frozen_at": "2026-10-30T07:08:09.492993+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_dirty_sha256": "58d49f2481fd09d8645ecebd86b839bf3389e690149adeed2a818bcaffe21310",
+  "hashes": {
+    "full_tail_probe.py": "49b9b1fe59f7e11d9cd8d5519f1c8d6d70b5ef9a5959c62675795bd470eac6ef",
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "argv": [
+    [
+      "python3",
+      "docs/data/four_run_20261030/run_single.py",
+      "--tag",
+      "H14-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "3",
+      "docs/data/four_run_20261030/full_tail_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/four_run_20261030/run_single.py",
+      "--tag",
+      "H14-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "3",
+      "docs/data/four_run_20261030/full_tail_probe.py",
+      "holdout"
+    ]
+  ],
+  "old_math_cpu_spent": 0.513758,
+  "aggregate_actual_math_cpu_cap": 4,
+  "contract": "same today-verified cooperative no-child single worker; CPU/thread cap and wall kill; not generic process tree"
+}

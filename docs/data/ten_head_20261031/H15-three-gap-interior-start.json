@@ -1,0 +1,18 @@
+{
+  "tag": "H15-three-gap-interior",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ThreeGapInteriorA.lean"
+  ],
+  "started_jst": "2026-10-31T07:10:09.216767+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeGapInteriorA.lean": "2a1a8cf76d3b1e47b4d675dc28e18fea14e0e807e16af1106eff45677cdee736"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

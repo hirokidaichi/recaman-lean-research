@@ -1,0 +1,143 @@
+import Recaman.ThreeRunSupplyBudget
+
+namespace Recaman.SeparatorSupplyReset
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.PrefixMassBarrier
+open Recaman.RunSupplyKeys Recaman.RunSupplyBudget Recaman.BlockOldRay Recaman.ThreeRunSupplyBudget
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+/-- An explicit total A budget makes a sufficiently long S separator erase
+both the local earlier tail and every old BlockWord start. The endpoint sign
+is part of EndN on both sides, never inferred from a possible window. -/
+theorem endable_budget_separator_iff (f : Nat → Bool) (n a m B : Nat) (u x : List Bool)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hword : seg f n (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    EndN f 0 (n+(u.length+m+x.length)) ↔
+      EndN f (n+u.length) (n+(u.length+m+x.length)) := by
+  have hu := ones_bounds u
+  have hx := ones_bounds x
+  have hmx := mass_eq x
+  have hpos : 0<u.length+m+x.length := by omega
+  have hbarrier : mass (List.replicate m false++x)+ones u≤0 := by
+    rw [mass_append,mass_rep_false]
+    omega
+  have herase := localSupply_erase_prefix u (List.replicate m false++x) hbarrier
+  have hsuffix : seg f (n+u.length) (m+x.length)=List.replicate m false++x := by
+    have hd := seg_drop f n (u.length+m+x.length) u.length (by omega)
+    rw [hword,List.drop_append,List.drop_length,Nat.sub_self,List.drop_zero,List.nil_append] at hd
+    simpa only [show u.length+m+x.length-u.length=m+x.length by omega] using hd.symm
+  constructor
+  · intro he
+    obtain ⟨hA,t,l,ht0,htl,hwin⟩ := he
+    by_cases htn : t<n
+    · have hwin' : Win f t (n+(u.length+m+x.length)-t) := by
+        have heq : n+(u.length+m+x.length)-t=l := by omega
+        simpa only [heq] using hwin
+      have hc := old_window_count_barrier f n a t (n+(u.length+m+x.length)) hw hpre htn (by omega) hwin'
+      rw [Nat.add_sub_cancel_left,hword] at hc
+      simp only [ones_append,ones_replicate_S,Int.natCast_add,Int.zero_add] at hc
+      omega
+    · have heLocal : EndN f n (n+(u.length+m+x.length)) :=
+        ⟨hA,t,l,by omega,htl,hwin⟩
+      have hl := (localSupply_seg_iff f n (n+(u.length+m+x.length)) (by omega) hA).mpr heLocal
+      rw [Nat.add_sub_cancel_left,hword,herase] at hl
+      apply (localSupply_seg_iff f (n+u.length) (n+(u.length+m+x.length)) (by omega) hA).mp
+      rw [show n+(u.length+m+x.length)-(n+u.length)=m+x.length by omega,hsuffix]
+      exact hl
+  · intro he
+    exact end_mono f 0 (n+u.length) _ (Nat.zero_le _) he
+
+open Classical in
+theorem endable_budget_separator_int (e : Int → Bool) (p : Int) (n a m B : Nat)
+    (u x : List Bool) {w : List Bool} (hw : BlockWord w)
+    (hpre : segment e p n=w++List.replicate a true)
+    (hword : segment e (p+(n : Int)) (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    Endable e p (p+((n+(u.length+m+x.length) : Nat) : Int)) ↔
+      Endable e (p+((n+u.length : Nat) : Int)) (p+((n+(u.length+m+x.length) : Nat) : Int)) := by
+  rw [segment_seg e p p 0 (by simp)] at hpre
+  rw [segment_seg e p (p+(n : Int)) n rfl] at hword
+  rw [endable_iff e p p _ 0 (n+(u.length+m+x.length)) (by simp) rfl,
+    endable_iff e p (p+((n+u.length : Nat) : Int)) _ (n+u.length)
+      (n+(u.length+m+x.length)) rfl rfl]
+  exact endable_budget_separator_iff (fun i => e (p+(i : Int))) n a m B u x hw hpre hword hB hbudget hm
+
+
+private theorem ones_take_bound (x : List Bool) (k : Nat) : ones (x.take k)≤ones x := by
+  have he := ones_append (x.take k) (x.drop k)
+  rw [List.take_append_drop] at he
+  have hd := ones_bounds (x.drop k)
+  omega
+
+/-- The same reset holds at every prefix of a future word under the fixed
+budget, so actual supply/free counts can be transported, not just one tag. -/
+theorem endable_budget_separator_prefix (f : Nat → Bool) (n a m B : Nat) (u x : List Bool)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hword : seg f n (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int))
+    (k : Nat) (hk : k≤x.length) :
+    EndN f 0 (n+(u.length+m+k)) ↔ EndN f (n+u.length) (n+(u.length+m+k)) := by
+  have hprefix : seg f n (u.length+m+k)=u++(List.replicate m false++x.take k) := by
+    have hs := seg_take f n (u.length+m+x.length) (u.length+m+k) (by omega)
+    rw [hword,←List.append_assoc,List.take_append,
+      List.take_of_length_le (by simp only [List.length_append,List.length_replicate]; omega),
+      show u.length+m+k-(u++List.replicate m false).length=k by
+        simp only [List.length_append,List.length_replicate]; omega] at hs
+    simpa only [List.append_assoc] using hs.symm
+  have he := endable_budget_separator_iff f n a m B u (x.take k) hw hpre (by simpa only [List.length_take,Nat.min_eq_left hk] using hprefix) hB
+    (by have h := ones_take_bound x k; omega) hm
+  simpa only [List.length_take,Nat.min_eq_left hk] using he
+
+/-- Both supply and free-A counts over the entire future agree with the
+new base only after the reset equivalence has been proved pointwise. -/
+theorem separator_future_count_eq (f : Nat → Bool) (n a m B : Nat) (u x : List Bool)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hword : seg f n (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    cN (EndN f 0) (n+u.length+m) x.length=
+      cN (EndN f (n+u.length)) (n+u.length+m) x.length ∧
+    cN (fun i => f i=true ∧ ¬EndN f 0 i) (n+u.length+m) x.length=
+      cN (fun i => f i=true ∧ ¬EndN f (n+u.length) i) (n+u.length+m) x.length := by
+  have heq : ∀ i, n+u.length+m≤i → i<n+u.length+m+x.length →
+      (EndN f 0 i ↔ EndN f (n+u.length) i) := by
+    intro i hi hil
+    have h := endable_budget_separator_prefix f n a m B u x hw hpre hword hB hbudget hm
+      (i-(n+u.length+m)) (by omega)
+    simpa only [show n+(u.length+m+(i-(n+u.length+m)))=i by omega] using h
+  constructor
+  · apply cN_congr
+    exact heq
+  · apply cN_congr
+    intro i hi hil
+    exact and_congr_right (fun _ => not_congr (heq i hi hil))
+
+
+/-- The old count barrier already supplies a nontrivial counterfamily one
+below the separator threshold. This is an existing family used as a sharp
+boundary control, not a new counterexample to C1. -/
+theorem separator_threshold_control (B : Nat) (hB : 3≤B) :
+    BlockWord (List.replicate 1 false++List.replicate B true) ∧
+    Recaman.ThreeNonsuppliedData.localSupply
+      ((List.replicate 1 false++List.replicate B true)++
+        List.replicate (2*B-2) false++List.replicate B true)=true ∧
+    Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate (2*B-2) false++List.replicate B true)=false := by
+  obtain ⟨hw,hm,ha⟩ := old_count_barrier_sharp_family B hB
+  refine ⟨hw,?_,?_⟩
+  · apply (localSupply_iff _).mpr
+    refine ⟨0,?_,?_,?_⟩
+    · simp only [List.length_append,List.length_replicate]
+      omega
+    · simpa only [List.drop_zero] using hm
+    · rw [List.drop_zero,checked_wordArea_eq]
+      exact ha
+  · have hiff := localSupply_three_runs_iff (2*B-2) B 0
+    simp only [List.replicate_zero,List.append_nil,Nat.zero_add,Nat.mul_one] at hiff
+    cases he : Recaman.ThreeNonsuppliedData.localSupply
+        (List.replicate (2*B-2) false++List.replicate B true)
+    · rfl
+    · have hh := hiff.mp he
+      omega
+
+end Recaman.SeparatorSupplyReset

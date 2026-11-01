@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/issue73_20260920/daytime/short_owner_future_v1.py", line 155, in <module>
+    local()
+    ~~~~~^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/issue73_20260920/daytime/short_owner_future_v1.py", line 72, in local
+    assert new == [("AAS", 2, 3), ("SAAAASS", 0, 1)], new
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [('AAS', 2, 3), ('SAAAASS', 0, 1), ('ASAASAS', 6, 7)]

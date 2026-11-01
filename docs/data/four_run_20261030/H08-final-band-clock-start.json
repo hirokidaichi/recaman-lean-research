@@ -1,0 +1,18 @@
+{
+  "tag": "H08-final-band-clock",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FinalBandSupplyClock.lean"
+  ],
+  "started_jst": "2026-10-30T06:42:10.513275+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FinalBandSupplyClock.lean": "9670d9fab52804fc4b0f6a3a6bcd89876b6fc48b73c699a6e92ad18d56a03051"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

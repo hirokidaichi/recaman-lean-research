@@ -1,0 +1,25 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-20（E-360 は 2026-09-21 の Sol 週間研究、E-361〜E-368 は 2026-10-03、E-369〜は 2026-10-20）
+
+- 現在の研究単位: 区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
+- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
+- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-378 は TS₁ と接尾辞の部品であり、TS・SL 全体の証明ではない。
+- 次の判定: [最新カード](HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md) と [引き継ぎ](RESEARCH_HANDOFF_2026-10-20.md) の仮定を固定し、C1/C2/TS の一つを反証または紙上で検算する。有限lag延長・局所課金の修理だけで一般結果へ昇格しない。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-370 [PROVED-LEAN] line-capacity-periodic-reduction — Recaman/LineCapacityPeriodic.lean
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-369 [COMPUTED] line-capacity-conjecture-H — docs/data/issue73_20261020/hall34.out
+  E-372 [COMPUTED] bounded-lag-line-capacity — docs/data/issue73_20261020/potL27.out
+  E-374 [COMPUTED] bounded-lag-closure-classification — docs/data/issue73_20261020/eqclassL_tightcyc.out
+  E-378 [PROVED-LEAN] block-suffix-positivity — Recaman/BlockSuffixPositivity.lean
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 402 (including Audit)
+  Import contracts: 110; audit declarations: 2652

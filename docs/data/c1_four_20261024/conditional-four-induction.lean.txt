@@ -1,0 +1,68 @@
+/-- The finite-table assumptions are discharged by the explicit certificate,
+not carried into the final four-budget theorem. -/
+theorem four_nonsupplied_state_covered_of_check
+    (rs : Recaman.FourNonsuppliedData.Table)
+    (hc : Recaman.FourNonsuppliedData.verified rs=true)
+    (hi : Recaman.FourNonsuppliedData.Member rs ⟨[],0,0,0⟩)
+    (f : Nat → Bool) (n a B : Nat) {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true)
+    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1≤cN (fun u => f u=false) n k)
+    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤4) :
+    Recaman.FourNonsuppliedData.Covered rs (actualFourState f n B) := by
+  have hcovered : ∀ k, k≤B → Recaman.FourNonsuppliedData.Covered rs (actualFourState f n k) := by
+    intro k
+    induction k with
+    | zero =>
+      intro _
+      rw [actualFourState_zero]
+      exact Recaman.FourNonsuppliedData.member_covered rs hc _ hi
+    | succ k ih =>
+      intro hk
+      have hprev := ih (by omega)
+      have hcount : cN (fun u => f u=true) n k≤10 :=
+        Recaman.FourNonsuppliedData.covered_additions_le_ten rs hc _ hprev
+      by_cases hS : f (n+k)=false
+      · rw [←actualFourState_S f n k hS]
+        exact Recaman.FourNonsuppliedData.covered_stepS rs _ hprev
+      · have hA : f (n+k)=true := by cases h : f (n+k) <;> simp_all
+        have hb : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1)≤4 := by
+          have h := count_prefix_le (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) B hk
+          omega
+        have hp := hpos (k+1) (by omega) hk
+        have hpar := addition_endable_partition f n (k+1)
+        have ha := cN_succ_pos (fun u => f u=true) n k hA
+        have hs := cN_succ_neg (fun u => f u=false) n k (by simp [hA])
+        have hbal : 1≤(cN (fun u => f u=false) n k : Int)-
+            (cN (fun u => f u=true) n k+1 : Nat)+
+            (cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) : Int) := by omega
+        by_cases he : EndN f 0 (n+k)
+        · exact Recaman.FourNonsuppliedData.covered_stepA rs hc _ _ hprev true
+            (actualFourState_A f n a k hβ hseg hA hcount true he hb hbal)
+        · exact Recaman.FourNonsuppliedData.covered_stepA rs hc _ _ hprev false
+            (actualFourState_A f n a k hβ hseg hA hcount false he hb hbal)
+  exact hcovered B (Nat.le_refl _)
+
+theorem four_nonsupplied_word_of_check
+    (rs : Recaman.FourNonsuppliedData.Table)
+    (hc : Recaman.FourNonsuppliedData.verified rs=true)
+    (hi : Recaman.FourNonsuppliedData.Member rs ⟨[],0,0,0⟩)
+    (f : Nat → Bool) (n a B : Nat) {β : List Bool} (hβ : BlockWord β)
+    (hseg : seg f 0 n=β++List.replicate a true)
+    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1≤cN (fun u => f u=false) n k)
+    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤4)
+    (hend : cN (EndN f 0) n B+1=cN (fun u => f u=false) n B) :
+    seg f n B ∈ Recaman.FourNonsuppliedData.endpointWords := by
+  have hm := four_nonsupplied_state_covered_of_check rs hc hi f n a B hβ hseg hpos hbudget
+  have ha : cN (fun u => f u=true) n B≤10 :=
+    Recaman.FourNonsuppliedData.covered_additions_le_ten rs hc _ hm
+  have hp := addition_endable_partition f n B
+  have hs : cN (fun u => f u=false) n B<19 := by omega
+  have hn : ¬19≤cN (fun u => f u=false) n B := by omega
+  have hmin : min 19 (cN (fun u => f u=false) n B)=cN (fun u => f u=false) n B := by omega
+  have hd : ((actualFourState f n B).subtractions : Int)-
+      ((actualFourState f n B).additions : Int)+((actualFourState f n B).nonsupplied : Int)=1 := by
+    simp only [actualFourState,hmin]
+    omega
+  have hw := Recaman.FourNonsuppliedData.covered_endpoint_word rs hc _ hm hd
+  simpa only [actualFourState,if_neg hn] using hw
+

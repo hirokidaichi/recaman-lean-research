@@ -1,0 +1,27 @@
+# Statement audit: E-396
+
+- artifact: `Recaman/BlockSuffixPositivity.lean`
+- reviewer: Codex, 2026-10-24 JST（形式化後の別pass。人間レビュー未）
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.BlockSuffixPositivity.zeroFreeMotif_supply_step
+
+```lean
+(f : Nat → Bool) (n a b i j : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hnb : n<b) (hi : i<6) (hw : seg f n (b-n)=zeroFreeMotifWord i) (hS : ∀ u, b≤u → u<b+j → f u=false) (he : EndN f 0 (b+j)) : i<5 ∧ j=zeroFreeMotifGap i ∧ seg f n (b+j+1-n)=zeroFreeMotifWord (i+1)
+```
+
+1. yes — 実f/同一prefix/実S-gap/元0 EndN。
+2. no — 6具体語の所属と実Endableを仮定する1step。未知rankや次node所属は仮定しない。
+3. no — 無制限gapをE-389から有限化し、全local/old必要signatureのkernel照合で次nodeを供給。
+
+## Recaman.BlockSuffixPositivity.zeroFreeMotif_additions_bound
+
+```lean
+(f : Nat → Bool) (n a : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) : ∀ K b i : Nat, n<b → i<6 → seg f n (b-n)=zeroFreeMotifWord i → cN (fun u => f u=true ∧ ¬EndN f 0 u) b K=0 → cN (fun u => f u=true) b K≤5-i
+```
+
+1. yes — 同じf/padded prefix/具体実tail、任意future長K。
+2. no — hfree=0は非Endable A予算で、全A≤5−iを仮定しない。6語は明示定義の有限集合、一般AN4ではない。
+3. no — future Kに強帰納、最初のA以前を実S-gapとし、自由予算0から実Endableを供給してnode rankを減らす。
+

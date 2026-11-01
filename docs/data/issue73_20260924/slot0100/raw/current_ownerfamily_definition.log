@@ -1,0 +1,9 @@
+/-- An owner family: members are additions whose windows are among `ownerWords`, each member owns
+one subtraction of its own window, and every subtraction inside any member's window is owned by
+some member (the "onto" half of the perfect matching that Hall's theorem gives a tight subset). -/
+structure OwnerFamily (e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat) :
+    Prop where
+  window : ∀ b, mem b → past e b (lag b) ∈ ownerWords
+  addA : ∀ b, mem b → e b = true
+  own_mem : ∀ b, mem b → ∃ k ∈ sOffsets (past e b (lag b)), own b = b - (k : Int)
+  onto : ∀ b, mem b → ∀ k ∈ sOffsets (past e b (lag b)), ∃ b', mem b' ∧ own b' = b - (k : Int)

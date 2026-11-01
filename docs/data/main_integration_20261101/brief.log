@@ -1,0 +1,48 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-01（朝の終了実績を保持し、夜にmain統合）。E-451で三A-runの元p実free-gapを全長で証明。四run全体/任意r rank/C1/Q/H/SL/全射性は未証明。
+
+main統合: 両履歴を保持し、証拠ID衝突11件を[対応表](EVIDENCE_ID_RECONCILIATION_2026-11-01.md)で整理。511 registry行/273 PROVED-LEAN、548 jobs/3269宣言の統合検証PASS。これは朝の研究時間や新しい数学的進展へ加算しない。次回H-20261102-01は維持。
+
+2026-11-01最終検証・journal終了済み。親R-20261101-01、実開始06:01:59.745032 JST。[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)と[journal](data/daily_research/2026-11-01.json)が実績正本。実終了2026-11-01T07:59:32.029177+09:00、confirmed 117分32.284秒、不足2分27.716秒。待機/中断/gapの計上0、open0。予定120分を実績にしない。
+
+- **E-484 PROVED-LEAN**: area無制限の正三A-run zerohead/同old targetmass3/最終S3/oldclock0で、元Intp/padded/zero-fullpositiveの全長full-tail free-gap。最終S local band存在も不要。今朝のPAPERを独立same-target平方比較/E497 headfree5でkernelへ接着した。
+- **E-485 PROVED-LEAN**: 同じzerohead/targetmass3/最終S4/final-band local/最後rayの任意実old supplierを持つ枝の元fullgap。counterからold0/1を内部供給。E-500 explicitold1はlocal band不要、old0はE-490で供給。
+- **E-492 PROVED-LEAN**: targetmass/areaを制限せず、同old target/最終S local band/実old supplier mass>=5を持つ枝の元fullgap。targetmass>=4の全old-seed枝も含む。E-486のmass>=6とE-488の紙上D6をより強い別証明で覆うが旧失敗layoutはSTOPPED。
+- **機構 E-487/E-489/E-491/E-493/E-494/E-496/E-497**: 同inversionのlocal重複を数え、早期old D>=5でheadfree6、D>=4でheadfree5を全長で内部供給。S13を同source I23..25/actual priorA12の六形へ削減する。headfreeだけを全gapと呼ばない。
+- **E-490/E-498/E-499**: old0/old1と初期S源の非共存、同targetの平方差によるfirstA clock0又は0/1への合流。全massの他old sourceを切断しない。raw budget/keyはactual主定理で内部供給する。
+- **検証**: 個別-M512、G5/Audit、07:47最終全check543jobs/3163宣言PASS、許容三公理のみ。純算術helper ThirteenRunFactorsは単独lint G3警告で単独研究結果として登録しない。採用word/actual coreと全registry gatesは通過。完全cold/OS RSS/tree累積cap検証ではない。
+- **PAPER/停止**: E-483五area対/E-495一般I25 joint4は未Lean・人間レビュー未。E-495のD4 headfreeという帰結だけはE-497が独立actualS13 pruningで供給。旧scalar、LargeOldSeedGap、一般I25 monolith、旧H06/133core/r4二回0/0/R19等は資源追加で再開しない。E-388 COMPUTED/E-404 CONJECTURED/E-384未Leanを保持。
+- **残余**: last old供給無し、非zerohead、他target/local位置、任意run数/任意r rank、一般四run/C1/Q/H/SL/全射性。完了した三run E451/r3 E385〜387も一般C1とは別。
+- **次の一問**: [H-20261102-01](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。mass3/S3のno-old last-rayで初期S sourceを同target key/実counterから排除できるか。E497 headfree5のold-source仮定を勝手に落とさない。全体無変化0は新edge更新で、r4表2回STOPPEDを日付resetしない。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-484 [PROVED-LEAN] mass-three-old-four-actual-full-free-gap — Recaman/MassThreeOldZeroGap.lean
+  E-485 [PROVED-LEAN] mass-three-four-S-old-seed-actual-free-gap — Recaman/FourSAnyOldGap.lean
+  E-500 [PROVED-LEAN] mass-three-four-S-explicit-old-one-free-gap — Recaman/MassThreeOldOneGap.lean
+  E-490 [PROVED-LEAN] old-zero-initial-source-exclusion-and-full-free-gap — Recaman/OldZeroTargetGap.lean
+  E-492 [PROVED-LEAN] large-old-supplier-full-tail-free-charge — Recaman/OldMassFiveGap.lean
+  E-486 [PROVED-LEAN] zero-mass-high-target-old-seed-actual-free-gap — Recaman/OldSeedActualGap.lean
+  E-488 [PROVED-PAPER] large-old-source-actual-full-free-gap — docs/RESEARCH_NOTE_2026-11-01_C1_INVERSION.md
+  E-487 [PROVED-LEAN] measured-small-inversion-local-and-actual-supply — Recaman/SmallInversionSources.lean
+  E-489 [PROVED-LEAN] early-old-source-measured-head-free — Recaman/EarlyOldHeadFree.lean
+  E-491 [PROVED-LEAN] same-inversion-joint-local-and-six-free-head — Recaman/SmallInversionJoint.lean
+  E-493 [PROVED-LEAN] inversion-nine-local-and-actual-six — Recaman/InversionNine.lean
+  E-494 [PROVED-LEAN] early-old-four-head-single-exception — Recaman/EarlyOldFourResidual.lean
+  E-496 [PROVED-LEAN] actual-old-four-thirteen-inversion-band — Recaman/OldFourThirteenActual.lean
+  E-497 [PROVED-LEAN] actual-thirteen-six-shapes-and-old-four-head-free — Recaman/EarlyOldFourFree.lean
+  E-498 [PROVED-LEAN] first-A-target-square-gap-and-old-zero-last-five — Recaman/FirstATargetSquare.lean
+  E-499 [PROVED-LEAN] four-S-old-one-source-merge — Recaman/OldOneLastSix.lean
+  E-483 [PROVED-PAPER] mass-three-target-old-four-joint-area-pairs — docs/RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md
+  E-495 [PROVED-PAPER] inversion-twenty-five-joint-and-four-free-source — docs/RESEARCH_NOTE_2026-11-01_C1_FOUR_RESIDUAL.md
+  E-388 [COMPUTED] four-nonsupplied-C1-area — docs/RESEARCH_NOTE_2026-10-23_C1_FOUR.md
+  E-404 [CONJECTURED] four-free-A-excursion-classification — docs/data/joint_old_20261025/layered_source/FourEventData.lean.txt
+  E-384 [PROVED-PAPER] block-prefix-area-spectrum — docs/RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 546 (including Audit)
+  Import contracts: 110; audit declarations: 3269

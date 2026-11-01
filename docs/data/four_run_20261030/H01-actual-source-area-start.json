@@ -1,0 +1,18 @@
+{
+  "tag": "H01-actual-source-area",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FourRunTargetArea.lean"
+  ],
+  "started_jst": "2026-10-30T06:08:11.360573+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourRunTargetArea.lean": "c7272b9ff13e0d857ea56d9b605633921e18fe1c0422f87179b3850dba992aee"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

@@ -1,0 +1,18 @@
+Recaman/SeparatorTailFreeGap.lean:109:4: error: Type mismatch
+  suffix_segment f n u (List.replicate m false ++ x)
+    (Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrArg (seg f n)
+              (congrArg (HAdd.hAdd u.length)
+                (Eq.trans List.length_append (congrFun' (congrArg HAdd.hAdd List.length_replicate) x.length)))))
+          (u ++ (List.replicate m false ++ x))))
+      (Eq.mp
+        (congrFun' (congrArg Eq (congrArg (seg f n) (Nat.add_assoc u.length m x.length)))
+          (u ++ (List.replicate m false ++ x)))
+        hword))
+has type
+  seg f (n + u.length) (List.replicate m false ++ x).length = List.replicate m false ++ x
+but is expected to have type
+  seg f q (m + x.length) = List.replicate m false ++ x

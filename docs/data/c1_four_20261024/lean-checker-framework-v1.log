@@ -1,0 +1,44 @@
+Recaman/FourNonsuppliedData.lean:170:94: error: Invalid projection: Projections extract constructor fields for one-constructor inductive types. The expression
+  hr
+has type `checkOne rs i = true` which has no fields.
+Recaman/FourNonsuppliedData.lean:175:32: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/FourNonsuppliedData.lean:173:22: error: unsolved goals
+rs : Table
+h : verified rs = true
+s : State
+hs : Member rs s
+hg : goodState s = true
+⊢ s.additions ≤ 10
+Recaman/FourNonsuppliedData.lean:181:32: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/FourNonsuppliedData.lean:179:20: error: unsolved goals
+rs : Table
+h : verified rs = true
+s : State
+hs : Member rs s
+hg : goodState s = true
+⊢ Covered rs s
+Recaman/FourNonsuppliedData.lean:193:19: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/FourNonsuppliedData.lean:194:19: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/FourNonsuppliedData.lean:222:34: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/FourNonsuppliedData.lean:222:95: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d ≤ 19
+  c ≥ 0
+  c - d ≤ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ -1
+where
+ a := ↑(gap t j).additions
+ b := ↑(gap t j).nonsupplied
+ c := ↑?m.62
+ d := ↑j
+Recaman/FourNonsuppliedData.lean:219:106: error: unsolved goals
+rs : Table
+h : verified rs = true
+t : State
+j : Nat
+hm : Member rs t
+hd : ↑(gap t j).subtractions - ↑(gap t j).additions + ↑(gap t j).nonsupplied = 1
+hg : goodState t = true
+⊢ (gap t j).word ∈ endpointWords

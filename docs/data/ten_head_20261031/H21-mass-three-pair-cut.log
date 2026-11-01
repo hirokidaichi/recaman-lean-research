@@ -1,0 +1,88 @@
+Recaman/MassThreeOldPair.lean:77:56: error: `grind` failed
+case grind
+w z : List Bool
+hw : BlockWord w
+s t T j : Nat
+h4 : mass (List.drop s w) = 4
+h3 : mass (List.drop t w) = 3
+hmz : mass z = 0
+B : Int
+haz : areaW z = -B
+hsource : runKey (List.drop s w ++ z ++ List.replicate 3 false) = -2
+hm : mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 1
+ha : areaW (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 0
+hpair : (areaW (List.drop s w), areaW (List.drop t w)) ∈ areaPairs
+hkz : runKey z = -2 * B
+hks : runKey (List.drop s w) = 2 * areaW (List.drop s w) - 20
+hkt : runKey (List.drop t w) = 2 * areaW (List.drop t w) - 12
+hs : 2 * areaW (List.drop s w) - 20 + -2 * B + 4 * 4 * ↑(cntF z) + 4 * ↑3 * (4 + 0) - 2 * ↑3 ^ 2 = -2
+ht : 2 * areaW (List.drop t w) - 12 + -2 * B + 4 * 3 * ↑(cntF z) + 4 * ↑3 * (3 + 0) - 2 * ↑3 ^ 2 = -2 * (↑j + 1) ^ 2
+h : ¬B + -1 * areaW (List.drop s w) + -8 * ↑(cntF z) + -5 = 0
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord w
+    [prop] mass (List.drop s w) = 4
+    [prop] mass (List.drop t w) = 3
+    [prop] mass z = 0
+    [prop] B + areaW z = 0
+    [prop] runKey (List.drop s w ++ z ++ List.replicate 3 false) = -2
+    [prop] mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 1
+    [prop] areaW (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 0
+    [prop] (areaW (List.drop s w), areaW (List.drop t w)) ∈ areaPairs
+    [prop] 2 * B + runKey z = 0
+    [prop] -2 * areaW (List.drop s w) + runKey (List.drop s w) + 20 = 0
+    [prop] -2 * areaW (List.drop t w) + runKey (List.drop t w) + 12 = 0
+    [prop] -1 * B + areaW (List.drop s w) + 8 * ↑(cntF z) + 6 = 0
+    [prop] -1 * B + areaW (List.drop t w) + 6 * ↑(cntF z) + (↑j + 1) ^ 2 + 3 = 0
+    [prop] ¬B + -1 * areaW (List.drop s w) + -8 * ↑(cntF z) + -5 = 0
+  [eqc] True propositions
+    [prop] BlockWord w
+    [prop] (areaW (List.drop s w), areaW (List.drop t w)) ∈ areaPairs
+  [eqc] False propositions
+    [prop] B + -1 * areaW (List.drop s w) + -8 * ↑(cntF z) + -5 = 0
+  [eqc] Equivalence classes
+    [eqc] {areaW (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false),
+        mass z,
+        0,
+        B + areaW z,
+        -1 * B + areaW (List.drop t w) + 6 * ↑(cntF z) + (↑j + 1) ^ 2 + 3,
+        -1 * B + areaW (List.drop s w) + 8 * ↑(cntF z) + 6,
+        -2 * areaW (List.drop s w) + runKey (List.drop s w) + 20,
+        -2 * areaW (List.drop t w) + runKey (List.drop t w) + 12,
+        2 * B + runKey z}
+    [eqc] {mass (List.drop s w), 4}
+    [eqc] {mass (List.drop t w), 3}
+      [eqc] {↑3}
+    [eqc] {mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false), 1}
+    [eqc] {runKey (List.drop s w ++ z ++ List.replicate 3 false), -2}
+  [cutsat] Assignment satisfying linear constraints
+    [assign] s := 5
+    [assign] t := 7
+    [assign] T := 9
+    [assign] j := 0
+    [assign] B := 0
+    [assign] areaW z := 0
+    [assign] areaW (List.drop s w) := -6
+    [assign] areaW (List.drop t w) := -4
+    [assign] areaW
+          (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) := 0
+    [assign] cntF z := 0
+    [assign] mass z := 0
+    [assign] mass (List.drop s w) := 4
+    [assign] mass (List.drop t w) := 3
+    [assign] mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) := 1
+    [assign] runKey z := 0
+    [assign] runKey (List.drop s w) := -32
+    [assign] runKey (List.drop t w) := -20
+    [assign] runKey (List.drop s w ++ z ++ List.replicate 3 false) := -2
+    [assign] 「↑j ^ 2」 := 0
+    [assign] 「(↑j + 1) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 2 * ↑j ^ 2 + -1 * runKey (List.drop s w) + runKey (List.drop t w) + -4 * ↑(cntF z) + 4 * ↑j + -12 = 0
+      [_] B + areaW z = 0
+      [_] 2 * areaW z + -1 * runKey z = 0
+      [_] runKey z + runKey (List.drop s w) + 16 * ↑(cntF z) + 32 = 0
+      [_] 2 * areaW (List.drop s w) + -1 * runKey (List.drop s w) + -20 = 0
+      [_] 2 * areaW (List.drop t w) + -1 * runKey (List.drop t w) + -12 = 0

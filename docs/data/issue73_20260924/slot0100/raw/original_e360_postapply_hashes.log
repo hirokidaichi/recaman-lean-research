@@ -1,0 +1,19 @@
+command:
+date '+%Y-%m-%d %H:%M:%S %Z (%z)'
+shasum -a 256 docs/EVIDENCE_REGISTRY.tsv docs/statement_audits/E-360.md docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md docs/CURRENT_FRONTIER.md docs/PROOF_MAP.md docs/RESEARCH_HANDOFF_2026-09-21_SOL.md Recaman/ShortTightDonorAvoidance.lean Recaman/OwnerFamilyLagEleven.lean Recaman/PeriodicOwnerFamilyLagEleven.lean docs/PROTECTED_CLAIMS.tsv
+timeout_seconds: 150
+exit_code: 0
+output:
+2026-09-21 02:21:32 JST (+0900)
+012c7e42974931c115efc2e64d9a254deaeb58ff78ac440af713cdb1a497a076  docs/EVIDENCE_REGISTRY.tsv
+a95cb573b86e99368daa68e2080091e5772b11f0081c1cc45df3fe4c60d63565  docs/statement_audits/E-360.md
+2e9c54c289925a0c6072a519495369f2345a72ddf7361b8fbebdd425eadac8d3  docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md
+ab7259ef648dc9c1607658a102b7120f4cdcd6e4083b36b3ae8798d09fbca2f0  docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md
+d5b8f93bb943c5ccc24b3dc43a02e058acc086f0bceae18b52de98f7196decbf  docs/CURRENT_FRONTIER.md
+53496ad0b5d7705d4784e01505e11755db69cae2372ce6bc62f189fa553845b3  docs/PROOF_MAP.md
+a202f5228b9af75aaf58304564dfc112ea56c07ecd87c695ddaaa43346ab8883  docs/RESEARCH_HANDOFF_2026-09-21_SOL.md
+bb12f35acc8e48c584cead52d675e36b034afda22f0f28ecfd245031f70fee85  Recaman/ShortTightDonorAvoidance.lean
+0bc2293b5d67f7ef5865f7a3f67b2fbf10aeb76bfa92eac9a086cc893c5846f4  Recaman/OwnerFamilyLagEleven.lean
+a90c8f2ac7e6b98dfda4a260434d2e44d3e35781c3212f6a04b7952e9ef6b4c0  Recaman/PeriodicOwnerFamilyLagEleven.lean
+24565611e6fd9ca601c9d4919167fa49546f4c3aae812edbeb3a761c09731fc7  docs/PROTECTED_CLAIMS.tsv
+

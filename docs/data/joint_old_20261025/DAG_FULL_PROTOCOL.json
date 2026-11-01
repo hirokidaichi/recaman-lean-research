@@ -1,0 +1,48 @@
+{
+  "card": "H-20261025-04",
+  "frozen_utc": "2026-10-24T21:38:07.228852+00:00",
+  "bench": {
+    "tag": "dag-bench-checked",
+    "started_jst": "2026-10-25T06:33:34.336390+09:00",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "docs/data/joint_old_20261025/dag_bench.lean"
+    ],
+    "wall_cap_seconds": 90,
+    "cpu_cap_seconds": 90,
+    "rss_cap_kib": 4194304,
+    "source_sha256": {
+      "docs/data/joint_old_20261025/dag_bench.lean": "23b52723c2367eae22bf51342fc3f6c5b6febfb7dc87657961a082bd3d5a22f1"
+    },
+    "finished_jst": "2026-10-25T06:34:46.853772+09:00",
+    "pid": 6488,
+    "exit_code": 0,
+    "reason": "completed",
+    "peak_sampled_process_group_rss_kib": 627072,
+    "wall_seconds": 72.52162424987182
+  },
+  "reason_for_reopen": "Measured new DAG checker validates256 closed concrete nodes at~585MB RSS instead of global13k-state table lookup. Direct shared proof constants, synchronous elaboration, no packed payload/global get. This is a changed checker, not more time for any stopped representation.",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "Recaman/FourEventProof.lean": "cf444862e8de0def4a7fa466dc3de442f375978a17359328628a1ed773f368cf",
+    "Recaman/FourEventData.lean": "29938001798269476f7d44d9b77d6113d09437912cfb6257b5b1c76c509a2604",
+    "docs/data/joint_old_20261025/generate_dag.py": "d21576f1b16918acc2c9579eb4a77c2bcb53dd6a8b73cc75bb37fa420f3bd257",
+    "docs/data/joint_old_20261025/run_guard.py": "265645a6f1cffe9c7458ac8a4ab4223d86ba70f2e9f71f8ac616249f1b86b213"
+  },
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "cpu_cap_seconds": 3600,
+  "wall_cap_seconds": 3600,
+  "process_group_rss_cap_kib": 4194304,
+  "absolute_deadline_jst": "2026-10-25T07:45:00+09:00",
+  "estimate": "256nodes72s ->12837nodes roughly60min, reserved from remaining C1/verification; work continues on independent symbolic inputs while monitoring, CPU never added to journal",
+  "failure_rule": "Guard/resource failure preserves classifications as COMPUTED. Do not increase caps. Initial Checked plus all actual adapters required before any promotion.",
+  "negative_controls": "good A11 and omitted initial successors both rejected by kernel (dag-negative.log)",
+  "data_status": "Old numeric closure reused; not a fresh holdout. Every successor equality and initial certificate rechecked by kernel."
+}

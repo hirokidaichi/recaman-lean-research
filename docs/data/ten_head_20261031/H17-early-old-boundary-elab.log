@@ -1,0 +1,16 @@
+Recaman/LowerMomentOldClock.lean:77:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+  b ≥ 0
+  a - 6*b ≤ 4
+  a - 4*b ≥ 5
+  2*a + 2*e - f ≥ 0
+where
+ a := B
+ b := ↑(cntF z)
+ c := ↑w.length
+ d := ↑t
+ e := ↑v ^ 2
+ f := 4 * mass u * (↑(cntF z) + ↑v)

@@ -1,0 +1,18 @@
+{
+  "tag": "H10-controls",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldSourceKeyOrder.lean"
+  ],
+  "started_jst": "2026-10-28T07:34:58.227091+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSourceKeyOrder.lean": "0b0b69bfe1d4ff256b3b193e4c9fcd112459be07669be4a9c43acc580b7d2ea3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

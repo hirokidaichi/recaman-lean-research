@@ -1,0 +1,18 @@
+{
+  "tag": "H03-middle-charge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetMiddleCharge.lean"
+  ],
+  "started_jst": "2026-10-29T06:21:38.989057+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetMiddleCharge.lean": "040f284d78880ed7eafd406ea61864426f1439ecc103c427fabc9dacfdf0c790"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

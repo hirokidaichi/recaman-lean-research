@@ -1,0 +1,27 @@
+Recaman.ShortTightDonorAvoidance.w1_owns_oldest (e : Int → Bool) (mem : Int → Prop) (own : Int → Int) (lag : Int → Nat)
+  (hF : Recaman.OwnerFamilyLagEleven.OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+  (hw : Recaman.LeadingRunSupply.past e t (lag t) = Recaman.LagSevenPrefixRigidity.w1) : own t = t - 7
+Recaman.ShortTightDonorAvoidance.w1_next_addition (e : Int → Bool) (mem : Int → Prop) (own : Int → Int)
+  (lag : Int → Nat) (hF : Recaman.OwnerFamilyLagEleven.OwnerFamily e mem own lag) (t : Int) (ht : mem t)
+  (hw : Recaman.LeadingRunSupply.past e t (lag t) = Recaman.LagSevenPrefixRigidity.w1) : e (t + 1) = true
+Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor (e : Int → Bool) (p : Nat) (hp : 0 < p)
+  (hper : ∀ (x : Int), e (x + ↑p) = e x) (B : List Nat) (lag : Nat → Nat) (hBn : B.Nodup)
+  (htight : (Recaman.TwoSSTightDisjoint.neighborhood e p B lag).length = B.length) (hBp : ∀ (b : Nat), b ∈ B → b < p)
+  (hB_A : ∀ (b : Nat), b ∈ B → e ↑b = true) (hB_lag : ∀ (b : Nat), b ∈ B → lag b = 3 ∨ lag b = 7 ∨ lag b = 11)
+  (hB_P2 : ∀ (b : Nat), b ∈ B → Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑b) (lag b)))
+  (hB_min :
+    ∀ (b : Nat),
+      b ∈ B →
+        ∀ (d : Nat),
+          d < lag b → 0 < d → ¬Recaman.LeadingRunSupply.P2 (List.take d (Recaman.LeadingRunSupply.past e (↑b) (lag b))))
+  (u0 : Nat) (hPdon : Recaman.LeadingRunSupply.P2 (Recaman.LeadingRunSupply.past e (↑u0) 11))
+  (hmindon :
+    ∀ (d : Nat), d < 11 → 0 < d → ¬Recaman.LeadingRunSupply.P2 (List.take d (Recaman.LeadingRunSupply.past e (↑u0) 11)))
+  (hss : Recaman.OneSSMultiplicity.ssCount (Recaman.LeadingRunSupply.past e (↑u0) 11) = 2) :
+  ¬Recaman.TrueOldestGateT6.trueOldestPhase e p u0 11 ∈ Recaman.TwoSSTightDisjoint.neighborhood e p B lag
+'Recaman.ShortTightDonorAvoidance.w1_owns_oldest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortTightDonorAvoidance.w1_next_addition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_donor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+EXIT_CODE=0

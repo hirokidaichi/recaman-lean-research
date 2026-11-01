@@ -1,0 +1,32 @@
+{
+  "card": "H-20261025-04",
+  "frozen_utc": "2026-10-24T21:29:59.117993+00:00",
+  "source_sha256": {
+    "docs/data/joint_old_20261025/generate_dag.py": "f8b0a809bb93d1575863ec309b862047d153763c5d926a877df0a2232e19c1b0",
+    "docs/data/joint_old_20261025/run_guard.py": "265645a6f1cffe9c7458ac8a4ab4223d86ba70f2e9f71f8ac616249f1b86b213",
+    "Recaman/FourEventProof.lean": "dc030f4771690b2f219436227d337462a6c8b518fd348cc303da85d182a17620"
+  },
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "38ef2373714cafbccc00cae3984e64cfcffb0e4b173a1661daca09b830664e00",
+  "generation": [
+    "python3",
+    "docs/data/joint_old_20261025/generate_dag.py",
+    "--bench"
+  ],
+  "bench_argv": [
+    "lake",
+    "env",
+    "lean",
+    "docs/data/joint_old_20261025/dag_bench.lean"
+  ],
+  "bench_cap": {
+    "wall_seconds": 90,
+    "cpu_seconds": 90,
+    "process_group_rss_kib": 4194304
+  },
+  "bench_selection": "first256 highest-A states plus first16 nonterminal A8 and A9 states with complete descendant closure",
+  "acceptance": "kernel checks this closed DAG without Table.get and measures lower RSS; full DAG requires separate frozen cap after success",
+  "negative_controls": "A11 not certifiable; intentionally wrong successor list rejected",
+  "repair_limit": 1,
+  "classification_status": "CONJECTURED until full initial certificate and real-word adapter checks"
+}

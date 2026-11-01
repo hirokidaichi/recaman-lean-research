@@ -1,0 +1,27 @@
+Recaman/RunSupplyKeys.lean:162:10: error: Function expected at
+  Endable
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  e
+
+Hint: The identifier `Endable` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/RunSupplyKeys.lean:163:8: error: Function expected at
+  subtractionCount
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  e
+
+Hint: The identifier `subtractionCount` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/RunSupplyKeys.lean:163:37: error: Function expected at
+  subtractionCount
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  e
+
+Hint: The identifier `subtractionCount` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.

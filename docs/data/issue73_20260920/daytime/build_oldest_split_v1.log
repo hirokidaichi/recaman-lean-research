@@ -1,0 +1,73 @@
+ℹ [95/111] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+✖ [111/111] Building Recaman.SS2OldestPattern (473ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/SS2OldestPattern.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.setup.json --json
+error: Recaman/SS2OldestPattern.lean:297:69: unsolved goals
+e : Int → Bool
+u t : Int
+d l : Nat
+htu : t < u
+htA : e t = true
+hend : t - ↑l = u - ↑(oldestOffset (past e u d))
+off : Nat := oldestOffset (past e u d)
+hbound : l < off
+hlen : off - l - 1 + 1 + l = off
+htime : u - ↑(off - l - 1) - ↑1 = t
+⊢ e (u - ↑(off - l - 1) - 1) = true
+error: Recaman/SS2OldestPattern.lean:299:79: unsolved goals
+e : Int → Bool
+u t : Int
+d l : Nat
+htu : t < u
+htA : e t = true
+hend : t - ↑l = u - ↑(oldestOffset (past e u d))
+off : Nat := oldestOffset (past e u d)
+hbound : l < off
+hlen : off - l - 1 + 1 + l = off
+htime : u - ↑(off - l - 1) - ↑1 = t
+hone : past e (u - ↑(off - l - 1)) 1 = [true]
+htime' : u - ↑(off - l - 1 + 1) = t
+⊢ past e u (off - l - 1) ++ [true] ++ past e t l = past e u (off - l - 1 + 1 + l - l - 1) ++ [true] ++ past e t l
+error: Recaman/SS2OldestPattern.lean:292:61: unsolved goals
+e : Int → Bool
+u t : Int
+d l : Nat
+htu : t < u
+htA : e t = true
+hend : t - ↑l = u - ↑(oldestOffset (past e u d))
+off : Nat := oldestOffset (past e u d)
+hbound : l < off
+hlen : off - l - 1 + 1 + l = off
+htime : u - ↑(off - l - 1) - ↑1 = t
+hone : past e (u - ↑(off - l - 1)) 1 = [true]
+hx : past e u off = past e u (off - l - 1) ++ [true] ++ past e t l
+⊢ past e u (off - l - 1) ++ [true] ++ past e t l ++ List.replicate (d - oldestOffset (past e u d)) true =
+    past e u (off - l - 1) ++ [true] ++ past e t l ++
+      List.replicate
+        (d -
+          oldestOffset
+            (past e u (off - l - 1) ++ [true] ++ past e t l ++ List.replicate (d - oldestOffset (past e u d)) true))
+        true
+warning: Recaman/SS2OldestPattern.lean:298:16: This simp argument is unused:
+  htime
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [past, htA]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/SS2OldestPattern.lean:298:23: This simp argument is unused:
+  htA
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [past, htime]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.SS2OldestPattern
+error: build failed

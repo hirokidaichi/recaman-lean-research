@@ -1,0 +1,32 @@
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:152:50: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/OldTargetMiddleCharge.lean:152:81: error(lean.unknownIdentifier): Unknown constant `Int.one_add`
+Recaman/OldTargetMiddleCharge.lean:153:21: warning: This simp argument is unused:
+  Int.zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.natCast_zero, Int.natCast_one, Int.natCast_ofNat, Int.zero_add, Int.one_add, Int.add_zero,
+    Int.one_mul] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/OldTargetMiddleCharge.lean:153:34: warning: This simp argument is unused:
+  Int.one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.natCast_zero, Int.natCast_one, Int.natCast_ofNat, Int.zero_add, Int.one_add, Int.add_zero,
+    Int.zero_mul] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

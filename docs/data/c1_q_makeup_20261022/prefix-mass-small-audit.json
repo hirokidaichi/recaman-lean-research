@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "max_mass": 7,
+  "counts": [
+    1,
+    1,
+    2,
+    3,
+    6,
+    10,
+    18,
+    31
+  ],
+  "words": 72,
+  "max_length": 15,
+  "full_prefix_deficit_zero_and_nonnegative": true,
+  "elapsed_seconds": 0.00026179105043411255,
+  "tail_audit": {
+    "status": "passed",
+    "tail_limit": 12,
+    "counts": {
+      "nodes": 18464,
+      "S_cuts": 504,
+      "A_cuts": 6336,
+      "zero_cuts": 144,
+      "return_cuts": 5716
+    },
+    "classes": [
+      {
+        "az": 0,
+        "count": 72,
+        "maxS": 1,
+        "maxDepth": 1,
+        "maxLength": 1,
+        "minAz": 0,
+        "minR_or_Q0": 1,
+        "zwords": [
+          "S"
+        ]
+      },
+      {
+        "az": 1,
+        "count": 72,
+        "maxS": 1,
+        "maxDepth": 1,
+        "maxLength": 2,
+        "minAz": 1,
+        "minR_or_Q0": 1,
+        "zwords": [
+          "SA"
+        ]
+      },
+      {
+        "az": 2,
+        "count": 144,
+        "maxS": 2,
+        "maxDepth": 2,
+        "maxLength": 5,
+        "minAz": 2,
+        "minR_or_Q0": 3,
+        "zwords": [
+          "SAA",
+          "SSAAA"
+        ]
+      },
+      {
+        "az": 3,
+        "count": 246,
+        "maxS": 5,
+        "maxDepth": 4,
+        "maxLength": 12,
+        "minAz": -2,
+        "minR_or_Q0": 1,
+        "zwords": [
+          "SASAAA",
+          "SSAAAA",
+          "SSAAAASA",
+          "SSSSAAAASAAA"
+        ]
+      }
+    ],
+    "elapsed_seconds": 0.025663083884865046,
+    "window_test": "backwards mass/moment all starts",
+    "area_test": "direct sum",
+    "mod4_filter": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "recorded_at_jst": "2026-09-24T02:45:58+09:00",
+  "description": "Parent operational final checks. No research experiment.",
+  "results": [
+    {
+      "command": "ps -Ao pid,ppid,etime,command | rg '([ /](lake|lean)( |$)|baseline_q_w\\.py|audit_checks\\.py|run_checks\\.sh|verify_donor_length_boundary\\.py|harness_gate\\.py|report_vacuity\\.py|scripts/check\\.sh|matching_closure)' | rg -v '(rg |codex|mcp)'",
+      "chunk_id": "9ee7a2",
+      "wall_time_seconds": 0.000007208,
+      "exit_code": 1,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "git diff --check",
+      "chunk_id": "8ff1ec",
+      "wall_time_seconds": 0.000006083,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "git status --short",
+      "chunk_id": "24edc2",
+      "wall_time_seconds": 0.000007,
+      "exit_code": 0,
+      "original_token_count": 410,
+      "output": " M Recaman.lean\n M Recaman/Audit.lean\n M Recaman/OwnerFamilyLagEleven.lean\n M Recaman/PeriodicOwnerFamilyLagEleven.lean\n M docs/CURRENT_FRONTIER.md\n M docs/EVIDENCE_REGISTRY.tsv\n M docs/PROOF_MAP.md\n M docs/statement_audits/E-359.md\n?? Recaman/SS2OldestPattern.lean\n?? Recaman/ShortTightDonorAvoidance.lean\n?? docs/HYPOTHESIS_CARD_2026-09-17_SHORT_TIGHT_DONOR_AVOIDANCE.md\n?? docs/HYPOTHESIS_CARD_2026-09-20_DONOR_LENGTH_BOUNDARY.md\n?? docs/HYPOTHESIS_CARD_2026-09-20_DONOR_WITHOUT_MINIMALITY.md\n?? docs/HYPOTHESIS_CARD_2026-09-20_MINIMAL_DONOR_PATTERNS.md\n?? docs/HYPOTHESIS_CARD_2026-09-20_SHORT_OWNER_FUTURE.md\n?? docs/HYPOTHESIS_CARD_2026-09-20_SHORT_PREFIX_REDUCTION.md\n?? docs/HYPOTHESIS_CARD_2026-09-21_SHORT_SUPPLY_DONOR_DELETION.md\n?? docs/RESEARCH_HANDOFF_2026-09-20_DAYTIME.md\n?? docs/RESEARCH_HANDOFF_2026-09-20_SOL.md\n?? docs/RESEARCH_HANDOFF_2026-09-21_SOL.md\n?? docs/RESEARCH_HANDOFF_2026-09-22_SOL.md\n?? docs/RESEARCH_HANDOFF_2026-09-23_SOL.md\n?? docs/RESEARCH_HANDOFF_2026-09-24_SOL.md\n?? docs/RESEARCH_PLAN_2026-09-17_ONE_WEEK.md\n?? docs/RESEARCH_WEEKLY_REPORT_2026-09-24.md\n?? docs/SS2_MINIMAL_DONOR_PATTERN_ARGUMENT_2026-09-20.md\n?? docs/adversarial_audits/\n?? docs/data/issue73_20260916/matching_closure_lagmax19_shard0.txt\n?? docs/data/issue73_20260916/matching_closure_lagmax19_shard1.txt\n?? docs/data/issue73_20260916/matching_closure_lagmax19_shard2.txt\n?? docs/data/issue73_20260916/matching_closure_lagmax19_shard3.txt\n?? docs/data/issue73_20260920/\n?? docs/data/issue73_20260921/\n?? docs/data/issue73_20260923/\n?? docs/data/issue73_20260924/\n?? docs/statement_audits/E-360.md\n?? experiments/issue73_20260920/\n"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "chunk_id": "ce977c",
+      "wall_time_seconds": 0.000007208,
+      "exit_code": 0,
+      "original_token_count": 11,
+      "output": "08c08565c743f39350c9b959e1df7d30aa1cae5d\n"
+    },
+    {
+      "command": "shasum -a 256 /Users/hirokidaichi/.codex/automations/recam-n-1-3/automation.toml",
+      "chunk_id": "7c2ceb",
+      "wall_time_seconds": 0.000007917,
+      "exit_code": 0,
+      "original_token_count": 34,
+      "output": "6b250426bb380d51bc1a78a4e1b0271c63833ff495886a8f815fbda44081670a  /Users/hirokidaichi/.codex/automations/recam-n-1-3/automation.toml\n"
+    },
+    {
+      "command": "rg '^status = ' /Users/hirokidaichi/.codex/automations/recam-n-1-3/automation.toml",
+      "chunk_id": "cfd0c1",
+      "wall_time_seconds": 0.000007292,
+      "exit_code": 0,
+      "original_token_count": 5,
+      "output": "status = \"PAUSED\"\n"
+    }
+  ]
+}

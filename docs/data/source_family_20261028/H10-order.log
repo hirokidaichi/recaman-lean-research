@@ -1,0 +1,22 @@
+Recaman/OldSourceKeyOrder.lean:18:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  a ≥ -8
+  a + d ≤ -9
+where
+ a := runKey (List.take k w)
+ b := mass (List.take k w)
+ c := mass (List.take k w) * ↑(cntF v)
+ d := 4 * mass (List.take k w) * ↑(cntF v)
+Recaman/OldSourceKeyOrder.lean:27:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≤ 0
+  b ≤ -1
+  -8 ≤ a ≤ 0
+  a + d ≥ 9
+where
+ a := runKey (List.take k w)
+ b := mass (List.take k w)
+ c := mass (List.take k w) * ↑(cntF v)
+ d := 4 * mass (List.take k w) * ↑(cntF v)

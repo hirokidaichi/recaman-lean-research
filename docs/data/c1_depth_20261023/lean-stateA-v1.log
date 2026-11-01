@@ -1,0 +1,75 @@
+Recaman/BlockSuffixPositivity.lean:988:17: warning: This simp argument is unused:
+  decide_eq_true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [checked_wordArea_eq, ← Ar_areaW, seg_mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockSuffixPositivity.lean:1170:68: error: unsolved goals
+f : Nat → Bool
+n a k : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+hA : f (n + k) = true
+hcount : cN (fun u => f u = true) n k ≤ 7
+hbudget : cN (fun u => f u = true ∧ ¬EndN f 0 u) n (k + 1) ≤ 3
+hbalance :
+  1 ≤
+    ↑(cN (fun u => f u = false) n k) - ↑(cN (fun u => f u = true) n k + 1) +
+      ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (k + 1))
+ha : cN (fun u => f u = true) n (k + 1) = cN (fun u => f u = true) n k + 1
+hs : cN (fun u => f u = false) n (k + 1) = cN (fun u => f u = false) n k
+he : if true = true then EndN f 0 (n + k) else ¬EndN f 0 (n + k)
+⊢ f (n + k) = true → EndN f 0 (n + k)
+Recaman/BlockSuffixPositivity.lean:1190:70: error: unsolved goals
+f : Nat → Bool
+n a k : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+hA : f (n + k) = true
+hcount : cN (fun u => f u = true) n k ≤ 7
+e : Bool
+he : if e = true then EndN f 0 (n + k) else ¬EndN f 0 (n + k)
+hbudget : cN (fun u => f u = true ∧ ¬EndN f 0 u) n (k + 1) ≤ 3
+hbalance :
+  1 ≤
+    ↑(cN (fun u => f u = false) n k) - ↑(cN (fun u => f u = true) n k + 1) +
+      ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (k + 1))
+ha : cN (fun u => f u = true) n (k + 1) = cN (fun u => f u = true) n k + 1
+hs : cN (fun u => f u = false) n (k + 1) = cN (fun u => f u = false) n k
+han :
+  cN (fun u => f u = true ∧ ¬EndN f 0 u) n (k + 1) =
+    cN (fun u => f u = true ∧ ¬EndN f 0 u) n k + if e = true then 0 else 1
+hadmit :
+  (if e = true then
+      ThreeNonsuppliedData.localSupply (actualSmallState f n k).word ||
+        decide ((actualSmallState f n k).subtractions < 13) &&
+          ThreeNonsuppliedData.oldSignature (actualSmallState f n k).word
+    else !ThreeNonsuppliedData.localSupply (actualSmallState f n k).word) =
+    true
+hb : ((actualSmallState f n k).nonsupplied + if e = true then 0 else 1) ≤ 3
+hd :
+  (actualSmallState f n k).subtractions = 13 ∨
+    1 ≤
+      ↑(actualSmallState f n k).subtractions - ↑((actualSmallState f n k).additions + 1) +
+        ↑((actualSmallState f n k).nonsupplied + if e = true then 0 else 1)
+⊢ ¬(actualSmallState f n k).subtractions = 13 →
+    1 ≤
+      ↑(actualSmallState f n k).subtractions - (↑(actualSmallState f n k).additions + 1) +
+        (↑(actualSmallState f n k).nonsupplied + ↑(if e = true then 0 else 1))
+Recaman/BlockSuffixPositivity.lean:1170:77: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockSuffixPositivity.lean:1191:58: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Recaman.ThreeNonsuppliedData.stepA, hadmit, hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

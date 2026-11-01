@@ -1,0 +1,39 @@
+Recaman/InitialSeparatorTrim.lean:80:37: error: invalid 'by' tactic, expected type has not been provided
+Recaman/InitialSeparatorTrim.lean:117:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (fun i => f i = true ∧ ¬EndN f 0 i) (n + h + 0) x.length
+in the target expression
+  cN (fun i => f i = true ∧ ¬EndN f 0 i) (n + h) x.length =
+    cN (fun i => trimSSequence f (n + h) C i = true ∧ ¬EndN (trimSSequence f (n + h) C) 0 i) C x.length
+
+f : Nat → Bool
+n a h B C : Nat
+x w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hword : seg f n (h + x.length) = List.replicate h false ++ x
+hB : 1 ≤ B
+hx : ones x ≤ ↑B
+hC : C ≤ h
+hBC : 2 * ↑B - 1 ≤ ↑C
+⊢ cN (fun i => f i = true ∧ ¬EndN f 0 i) (n + h) x.length =
+    cN (fun i => trimSSequence f (n + h) C i = true ∧ ¬EndN (trimSSequence f (n + h) C) 0 i) C x.length
+Recaman/InitialSeparatorTrim.lean:146:90: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  List.take (List.length ?m.106) (?m.106 ++ ?m.107)
+in the target expression
+  List.take (List.replicate h false).length (List.replicate (List.replicate h false).length false ++ x) =
+    seg f n (List.replicate h false).length
+
+f : Nat → Bool
+n a h B C : Nat
+x w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hword : seg f n (h + x.length) = List.replicate h false ++ x
+hB : 1 ≤ B
+hx : ones x ≤ ↑B
+hC : C ≤ h
+hBC : 2 * ↑B - 1 ≤ ↑C
+hh :
+  List.take (List.replicate h false).length (List.replicate (List.replicate h false).length false ++ x) =
+    seg f n (List.replicate h false).length
+⊢ seg f n h = List.replicate h false

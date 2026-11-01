@@ -348,3 +348,153 @@ E-056をPROVED-LEANへ昇格。任意finite F、seed density/range/parity、actu
 first late landing/no-wrap/future wrap、positive blocker一回使用を同時に満たす一般反例族を認証した。
 固定prefix inclusionだけでsurvivalを救う枝の停止理由がLeanで確定した。
 [形式化カード](HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)を参照。
+
+## 2026-10-22: C1 Qの独立な前半面積下界はSTOPPED
+
+- 具体的候補Az>=0はREFUTED: `SAAA|SSSSAAAASAAA`, k1=4,q0=16でAz=-2。
+  q0自身はF(q0)>gなので、これをQ/C1の反例とは呼ばない。Az>=1はz=Sでも偽。
+- 再開条件: 修理した独立下界の追加仮定が完成Dから別に供給できる場合のみ。
+  根拠なく定数を下げたり同じ上限探索を延長したりしない。
+- N（走行最小値とその+1のAは非Endable）と個数制約だけでもQは出ない。
+  自由tagモデルS^m A^(m+1)SS（m>=4）はZ=2m+3-m^2<0。
+  実際のmomentを照合すると偽のEndableがあり、実語のQを反証していない。
+- 進める入力はE-379のfresh-low部分場合とE-380のexact prefix context。
+  残余は最低水準がq0前にしかない場合。局所面積候補R_C1は未証明で、E-506のTheorem Rとは別。
+- 詳細・反例・再現・停止判断: [C1 Q note](RESEARCH_NOTE_2026-10-22_C1_Q.md)。
+
+## 2026-10-22 C1 Q追加cycle: 停止方法と再開条件
+
+[H-20261022-01](HYPOTHESIS_CARD_2026-10-22_C1_Q_MAKEUP.md)、[handoff](RESEARCH_HANDOFF_2026-10-22_MAKEUP.md)。
+Q/C1自体はCONJECTURED。E-379〜E-384の新入力・部分領域を得たため、無変化cycleとは数えない。
+
+### 2026-10-23の更新
+
+E-385/E-386/E-387でa_z≤3の一様深さ4・全長Q・old P2排除をPROVED-LEANへ移した。
+一般Q/C1はCONJECTURED。a_z≤4のE-388はCOMPUTEDで、kernel未検査。一般a_z≥5とrankは未解決。
+E-389のS-gap/terminal wordが次のcertificate圧縮入力。最新は[DAILY](RESEARCH_HANDOFF_2026-10-23_DAILY.md)。
+
+- 全prefix A≤2^r−1はSAAA|SSSSAAAASAのr2/A5/d2でREFUTED。終端d1の親命題は未反証。
+- 修理P=A−2(d−1)≤2^r−1はr≤4で違反なしだが、任意rのstrict progressを供給できず一般rank方法はSTOPPED。
+  再開は供給A前にslack≥3を与える独立な入力がある場合。有限rを増やすだけで再開しない。
+- 実prefix r4 holdoutは28秒guardで782/3708context完了・1中断、同設定時間追加をSTOPPED。
+  prefix-free modelの完了結果とは区別する。
+- 新edgeと候補集合が変わったので連続無変化cycleは0（進捗による更新で、日付resetではない）。
+  次は[r4 A-event macro simulation](HYPOTHESIS_CARD_2026-10-24_C1_FOUR_KERNEL.md)から。
+
+- Azの独立非負はREFUTED、これを単独入力にする方法はSTOPPED。SAAA|SSSSAAAASAAAのAz=−2を保存。
+  再開には元のDから独立に供給できる追加仮定が必要で、定数だけを下げて再走しない。
+- Nと個数条件だけを残す自由Endable tag法はSTOPPED。S^m A^(m+1)の一様な弱化モデルで不足が出る。
+  真のP2 momentを再び強制する別機構なしに再開しない。これはQの反例ではない。
+- 固定A予算のS上限拡大はSTOPPED。590秒の旧探索は未完了で、E-380のprefix削減へ切替済み。
+- prefix=SAAA、q0=80のR-negative/peak-five/deep-threeは各900秒でUNKNOWN、Y-triangleは120秒でUNKNOWN。
+  **同じ設定への時間追加はSTOPPED**。新しい独立な制約入力で問いが変わるまで自動再実行しない。
+  R/Y/深さの数学的候補をREFUTEDやPROVEDへ昇格させない。
+- old spectrum緩和N=32はINFEASIBLE。共通prefixへの持上げはSAT時の義務であり今回は実行していない。
+  これを無制限の深さ供給や、持上げ不能の証拠と呼ばない。
+
+次はa_z≤3の一様な深さ4入力。E-383の32を単に増やすことを次unitにしない。
+
+### 2026-10-24: r4 kernel method stopped; run families and joint prefix progressed
+
+- E-390 proves actual arbitrary-gap macro soundness, including long-gap nonsupplied A and A11 controls.
+  The12837-state kernel methods (whole table/function blocks/Nat blocks/split columns) hit resource guards.
+  The method is STOPPED; E-388/r4 classification remains COMPUTED. Reopen only for a justified smaller
+  quotient or measured checker improvement, never only a larger time/memory limit.
+- E-392 proves arbitrary-future Q from16 explicit roots. Membership fromaz<=4 remains the missing edge.
+- E-391/E-393/E-396/E-397 give finite first-supply checking, unbounded odd/even run constraints and one
+  six-node supply motif. Their concrete shape/free-budget hypotheses remain visible; no general rank is supplied.
+- E-395 refutes the internal claim of at most2 supplies after the fourth free A. Existing ASAAA|S5 A3 S4 A4 S A3
+  has5; terminal deficit4 makes this a stronger-prefix counterexample, not a C1/Q counterexample.
+  Model candidates26/actual pairs88, unpopulated planned holdout0. Do not repair2→5 without a new argument.
+- E-394/E-398 restrict jointmass3/4 areas of the same prefix. The trip block realizes mass4 extremes9/13,
+  so a blanket extreme-exclusion mechanism is rejected. E-399 gives one of10 representatives preserving all
+  low-mass suffixes together. Do not choose a different representative for each window or discardmass>=5.
+- New actual-word edges and candidate exclusions keep consecutive no-change cycles at0, not a date reset.
+  Next: [fixed-root r4 candidate reduction](HYPOTHESIS_CARD_2026-10-25_JOINT_OLD_SUPPLY.md), first15min gate.
+  Full C1/Q and az>=5 remain CONJECTURED. See [2026-10-24 DAILY](RESEARCH_HANDOFF_2026-10-24_DAILY.md).
+
+- 07:44のE-399拡張: 同じrを全bへ保持し、必要mass3/4の実old窓/実endpoint A付きEndNを双方向に供給。
+  次はこの接続の再証明ではなく固定代表r4モデルの候補削減評価。S飽和後のtrim massから低massを判定しない。
+
+### 2026-10-25: general supply gap and context barriers
+
+- E-400 COMPUTED: fixed ten low-mass roots remove only one projected state/edge; root totals grow to128149.
+  The same ten-root large-table method is STOPPED; reopen only with measured mathematical sharing/quotient/pruning.
+- E-401/E-406 PROVED-LEAN: arbitrary earlier tails behind explicit S separators, including an unbounded two-run family,
+  have at most one later A when the actual original-base nonsupplied-A budget is zero. The shape/inequalities are assumptions.
+- E-402 PROVED-LEAN: bounded-future local context erasure; E-403 COMPUTED:10106-state quotient with full independent product checks.
+  Old-window mass/area are retained separately; quotient kernel simulation remains unproved.
+- E-405 REFUTED: any fixed negative-buffer threshold without a future A budget. Uniform counterfamily is kernel checked.
+  This is a refuted auxiliary erasure claim, not a C1/Q/orbit counterexample.
+- E-407 PROVED-LEAN: every actual supplied A after j S steps obeys2j+2≤all previous A, with an all-j sharp family.
+  This does not replace all A by nonsupplied A. The next gate is the independent true-history free-count question in
+  [H-20261026-01](HYPOTHESIS_CARD_2026-10-26_FREE_GAP.md).
+- Slow and linear single-file DAGs were voluntarily superseded after measured checker improvements; the pruned single-file
+  DAG hit the fixed4GiB RSS guard. No time/memory extension of the same method. Same-state A-count layers are a separate,
+  measured environment representation; the final result is recorded in E-404 and [DAILY](RESEARCH_HANDOFF_2026-10-25_DAILY.md).
+- General az>=5/rank/C1/Q/H/SL remain unresolved. New edges reset the unchanged-cycle count to0 by progress, not by date.
+
+### 2026-10-26: run-count入力と明確な停止
+
+- E-408〜E-411/E-413/E-414はPROVED-LEAN。二A-runのzero/全positive不足では全長free-gapを供給。一般多runとC1/Q/H/SLは未解決。
+- E-412の共通old-only予算付きr4は12837状態/40024辺から削減0/0。kernel<=3000 gate失敗で同大表方法STOPPED。独立した候補削減/小商なしに時間・メモリだけで再開しない。
+- E-415の第三A-ray local<=2と一回の修理<=3はREFUTED。S10 A24 S21 A3 S4のclock2/3/9/11を保持。空BlockWord/元0/全positive不足のhistoryでも実現（literal COMPUTED）、local判定はLean済み。定数だけの追加修理はしない。親free-gap/C1は未反証。
+- E-416 PROVED-PAPER（未Lean・人間レビュー未）はgeneric5run+old1予算から三run反例をfree4〜9/全A<=20/gap<=9へ縮約。S長は無制限。次は実count接着と次供給条件によるsource再利用制約を独立に供給する。
+- 全prefix A<=2r+1は既知A10/r4 terminalで偽。次供給条件付き候補はCONJECTURED、三run16384 discovery/192holdout違反なしは一般証明でない。
+
+## 2026-10-27: 停止と継続の更新（R-20261027-01）
+
+- 完了: E416全長reductionのkernel接着、E418〜423実有限context、E428/E429 target source領域、E431 source再使用式。一般C1/r4未証明。
+- H02 charge有限probe: 203125/252で新しいcharge2境界を供給せず方法STOPPED、命題CONJECTURED。上限追加なし。
+- H10 exact共同old spectrum: R11まで647閉状態COMPUTED、R19は3001事前gateでSTOPPED。R7/R11 kernelはmacOS AS1GiB拒否で未起動、cap除去で再開しない。
+- E426同mass幅4を用いたH13/r4はE427で削減0/0、12837/40024不変、kernel<=3000失敗。E412と合わせ同表枝の不変2回を維持する。全体cycleの新edgeは存在するため全体停滞と混同しない。
+- H14の4410tuple checkerはLean512MBでSTOPPED。新しい因子divisor/parityへの数学的pruningを一回導入し、同512MB/10CPU/20wallでE428成功。資源追加による再開ではない。
+- E430は第一A源を既存count+平方式だけで除く方法のREFUTED。数値free4/5は実EndNではなく、empty-old/head39の実free10〜12。自由tag履歴枝を再開しない。
+- 次はE432の実三run族free>=2R-2のPROVED-PAPERをLeanへ（H-20261028-01）。失敗時は第二S起点targetの平方条件と実freeの新couplingへ切替。紙上/有限計算/条件付きsource制約をC1全体の証明にしない。
+
+## 2026-10-28 allocation and stop decision
+
+- Exploitation: E432族kernelと全M拡張を完了。第一A/中央S target源をE434/E435で排除し、old/初期Sへ集中。old same-source area/count E438–440とjoint-prefix tail edge E441が新情報、全体無変化counter0は日付resetではない。
+- Local exploration: 初期S四対E436と全source上界E437を得たが、必要modelの有限0違反は全長証明ではない。posthoc133coreはOBSERVED。
+- **STOPPED H-20261028-06**: literal133core check10CPU、単一修理fast monolith512MB。全tuple包含/actual count bridge未検証、sourceはpacket .lean.txt隔離。時間/メモリ追加、同jobをcompiled importへ移すだけでは再開しない。独立した数学的pruningか真に小さい完全certificateと測定改善が必要。親初期S不在はCONJECTURED。
+- E441のkey差8/同massとj0再使用controlを保持。supplier mass>target massなのでmass>5の供給源切断は禁止。新しいsource順序は任意future injection/rankではない。
+- E412/E427 r4同表は2連続0/0 STOPPEDを保持。E415/E405の反例を定数追加で修理しない。次はH-20261029-01、15分不変なら初期S全tuple数学的pruning25分/共通prefix-local衝突20分へ。監査超過は数学から引き、同親cycleのunit/CPUを二重加算しない。
+
+## 2026-10-29: 三runを全長で完了、次は任意mixed source cut
+
+E445 old/E450 initialSを全実countへ接着してE451三A-run free-gapを完了。旧H06 133core certificate方法はSTOPPEDを保持し、E448は独立した全tuple数式pruningに基づく二形証明。旧r4/停止probeへの資源追加なし。E446共同old-source制約とE452任意mixed-word A-before-source cutを次の入力とし、A->free/単射/rankを仮定しない。任意run数/C1/全射性は未解決。
+
+### 10/29終盤の判断
+
+- E456 PROVED-LEANは四run実供給19/反例free4..17/A36/j17の派生予算。全S/historyは無制限で不在未検査。一般k二次予算はPROVED-PAPER。数値上界を新しい大表や旧jobの再開理由にしない。
+- 任意runのA-before-source cut E452/E454は通過したが、freeへの直置換はE453でREFUTED。定数の修理ではなく、源以降を含む重複のない課金へ切り替える。親四run/C1はCONJECTURED。
+- 追加のcold512MB buildは既存ShortPeriodicSupply memoryでSTOPPED。任意のproof-constant extractorも一回のimport修理後512MBでSTOPPED。通常の全Lean build/G5/Auditは成功。失敗を成功やCPU0へ置換しない。
+- 次の一問はH-20261030-01。全体の無変化連続回数0はE451/E454等の新edgeによる更新。旧r4同表枝2回0/0のSTOPPEDは維持し、日付によるresetはしない。
+
+## 2026-10-30: source-conditioned四runとmoment帯
+
+固定seed四run族だけはE464 PROVED-LEAN、一般H01/C1/four-run charge3はCONJECTURED。H01最終S-source候補をE457/E458/E461/E462で4..12/A29/j12へ縮約したが不在は未検査。E463 Nat幅coreと未Lean p幅adapterを区別。
+
+- E459 REFUTED: S-source head-only free課金。fulltail17なのでC1反例ではない。
+- E466 REFUTED: moment帯⇒local half。S10/B64/三runでもclock0、同じold targetが付かない。定数修理せずtarget/sourceをcoupleする。
+- H14/H15無作為sample方法は予算終了でSTOPPED。全four-run charge3へ昇格しない。H16有限480seed tupleのpassは無制限の証明ではない。H17以後の全source二次式とold mass低分類が新しい数学的入力であり、同sampleへ時間を足していない。
+- H02 combined19 projection、H06 literal43、H13 width adaptersの512MB失敗layoutはSTOPPED。幅のp版未Lean、同jobの資源/compiled移動だけの再開なし。旧H06/133core、旧r4 E412/E427二回0/0、R19/R7R11/cold512の停止も保持。
+- E465 moment oldclockは一般mixed headに有効、local側は別。E467紙上二caseを実元0/pへ供給しlastfree1/2を調べる10/31 bounded unitを選ぶ。全体連続無変化0はE464/E465の新edgeによる更新で日付resetではない。親cycleR30の子unit/CPU/時間は二重加算しない。
+
+## 2026-10-31: 四runのzero-mass moment/source枝（全長）
+
+E482 PROVED-LEAN: 元Intp/padded/zero-fullpositive、正三A-run head A=S、area=-B、4S+4<=B<=6S+4、同じold target/最終S local bandから元full-tail free>=j+1。全S/run長/old履歴を量化し、E467〜478のmass1/2 source重複と実countを接着。lower4ではold<=1を捨てずheadfree6/local5で払う。一般四run/任意r/C1/全射性は未解決。r3 kernel count依存、未検証r4表/E384不使用、人間レビュー未。
+
+E481 lower5の新境界はcounter域で空と意味監査し、新coverage進展に数えない。E480はold-erasureだけの実履歴反例。E483の帯外mass3/old4五area対はPROVED-PAPER（未Lean・人間レビュー未）でactualfree未接続。
+
+次は[H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)。[当日研究note](RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md)に全chainと失敗を保存。H19のfreshholdoutは未完了、H21 layoutは512MB STOPPEDで資源追加再開しない。
+
+## 2026-11-01: 帯外old-seed枝と同target平方課金
+
+E484/E485はPROVED-LEANへ更新。正三run zerohead/同old targetmass3で、S3/old0はlocal band不要、S4/任意old seedはfinal-band local付きの元Intp/padded/zero-fullpositive全長free-gap。E500 explicitold1はlocal band不要。E492は実old supplier mass>=5の枝とtargetmass>=4のold-seed枝をarea無制限で供給する。四run全体/C1/任意rankではない。
+
+E487/491/493の同inversion joint/local予算→E496の実S13/I23..25/priorA12→六形E497で、早期oldD>=4のheadfree5（D>=5なら6）。E498/E499は同target primitive keyとfirstA源を平方比較してclock0又は0/1へ合流し、old0/1と初期S源の非共存を使ってlast5/6へ。actual counterから第一A予算を内部供給し、頭と最後の実countを同じ元pへ接着した。raw budget条件だけを解決としない。
+
+旧scalar/firstA、LargeOldSeedGap、一般I25 monolithの512MB STOPPEDは保持。六形Orの巨大omega proofは同命題のexplicit constructorを同512MBで検査して採用、資源追加/compiled移動なし。E495一般I25 joint4は未Lean、D4 headfreeの帰結だけE497で別証明。E483五area対は未Lean、E388 COMPUTED/E404 CONJECTURED/E384未Leanを保持。全体無変化0は新edgeによる更新で、r4 E412/E427二回0/0 STOPPEDは日付resetしない。
+
+次: [H-20261102-01 no-old last-ray](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。old供給無しではheadfree5を使えない。非zerohead/他source位置/任意run数/rank/C1/Q/H/SL/全射性も未解決。詳細は[同target平方note](RESEARCH_NOTE_2026-11-01_C1_TARGET_SQUARE.md)と[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)。

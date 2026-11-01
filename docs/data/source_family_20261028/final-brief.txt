@@ -1,0 +1,91 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-28。第一A/中央Sのtarget源を排除し、三runの残りはold/初期S。old target時のtail供給制約を得たが、一般三run/C1/r4/rankは未証明。
+
+- **次の入口**: [H-20261029-01](HYPOTHESIS_CARD_2026-10-29_OLD_TARGET_TAIL.md)。E-441の「old target時、最後j個のAではold供給不能」を実free下限へ。最初15分はK=min(T,j)のlocal clockと同じtarget mass/areaを結合する。完了したsource分類/順序を再証明しない。
+- **10/28の主な進展 PROVED-LEAN**: E-434は第一A target源、E-435は中央S target源を全長/元0/pの実free-gapへ接続。E-428/E-429と合わせ、真の三run反例のtarget源はold prefixか初期Sだけ。三run全体の不在は未証明。
+- **E-441 PROVED-LEAN**: 同じBlockWord prefixの二old源に同じ内部語を足したkey差>=9でstrict mass順序。差8/同massの境界は保持。old targetがj>=2のS後にP2なら先行old供給clock i+j<T、最後j個のAはlocalのみ。実f/二Winの元0と区間nのEndN同値はこの限定区間だけ。任意mixed futureのrankや全prefix消去ではない。
+- **E-438/E-439/E-440 PROVED-LEAN**: 同じold suffixのmass/areaと実first-run countから、三run反例全体はfree4..7/A<=17/j4..7。old targetはC<=5/全S<=14/target suffix長<=12へ。C6の二つの強制run形を実countで排除。source以前のoldprefixやmass>5の他供給源は残す。raw A>=2R+1のsharp P2族はC1反例ではない。
+- **E-436/E-437 PROVED-LEAN、初期S不在はCONJECTURED**: 実初期S target反例は(j,A)=(4,12),(4,14),(5,14),(6,16)。全hのlocal支配と第二/第三ray全source clock上界を供給。H06の133core証明書は10CPU/512MBでSTOPPED、全tuple包含/実count接着は未検査。同jobの時間/メモリ追加なし。有限必要modelはCOMPUTED、posthoc133core診断はOBSERVED。
+- **E-432/E-433 PROVED-LEAN**: 全h/R>=5/全M>=1の族 Sh AM S^(R+1) A^R S A^(R+1) の元実free>=2R-2。E432は紙上から更新、同じclaimを二重計上しない。zero/positive/targetを仮定しないが、一般三runではない。
+- **安定入力**: E-416 PROVED-LEAN（全三run供給<=11/旧残余A20）。E-418/E-419/E-420/E-421/E-422/E-423は実EndN/free/relative positive/targetを保つ有限代表で、有限域の不在未検査。E-417/E-425/E-426は第一freeと共同old spectrum/同mass area幅4、E-431は同一A/S source再使用式。これらを再実行しない。
+- **停止と反例**: E-412/E-427のr4表は12837states/40024edgesで2回削減0/0、kernel<=3000不通過、STOPPED。E-424 R19は3001gate STOPPED、R7/R11 kernelはOS AS1GiB拒否で未起動。E-415小local<=2/<=3、E-405無予算消去、E-430 count-only排除の反例は親C1反例ではない。資源追加や定数だけの修理なし。
+- **既存全長入力**: E-407全A gap、E-408/E-409全run平方式、E-410 local予算、E-411共通old一時計、E-413/E-414単一/二A-run free-gap。E-385/E-386/E-387のr<=3全長深さ4/8語/任意future Qは完了。r4はE-388 COMPUTED/E-404 CONJECTURED、E-392は16root仮定付き。E-400/E-403大表/商、部分layerをr4の証明と呼ばない。
+- **継承した範囲**: E-379/E-380/E-381は条件付きQ/context/面積、E-382/E-383の有限N32を延長しない。E-384存在方向は未Lean・人間レビュー未。E-389/E-390/E-391/E-393/E-394/E-395/E-396/E-397/E-398/E-399/E-401/E-402/E-406の各条件を保持する。
+- **C1全体との距離**: old/初期Sの三run排除、任意run数/任意rのrank、一般C1/Q/H/SLは未解決。HにはE-376/E-377とSL、SL d1にはC1/C2、d2にはTS。E-001/E-067/E-070 CONJECTURED、E-179 COMPUTEDのpinを保持。
+- **運用**: [10/28 DAILY](RESEARCH_HANDOFF_2026-10-28_DAILY.md)、[ノート](RESEARCH_NOTE_2026-10-28_C1_SOURCE_BUDGET.md)、[journal](data/daily_research/2026-10-28.json)。06–08時JST、07:45新数学停止、stop後に実績と残課題を毎日報告。全体連続無変化0は新edge由来、r4枝2の停止を日付でresetしない。CPU探索当初0、正確契約はcooperative single-Python/no-childのみ。Lean per-process capをtree累積cap/OS AS capと呼ばない。未計測child CPUは0扱いしない。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-441 [PROVED-LEAN] common-old-prefix-target-tail-exclusion — Recaman/OldSourceKeyOrder.lean
+  E-434 [PROVED-LEAN] three-run-first-A-target-source-free-gap — Recaman/ThreeRunSourceShape.lean
+  E-435 [PROVED-LEAN] three-run-middle-S-target-source-free-gap — Recaman/MiddleSTargetFreeGap.lean
+  E-428 [PROVED-LEAN] three-run-target-not-second-A-source — Recaman/PenultimateRunWindow.lean
+  E-429 [PROVED-LEAN] three-run-target-source-before-second-A — Recaman/ThreeRunTargetSource.lean
+  E-438 [PROVED-LEAN] old-target-mass-area-and-three-run-residual — Recaman/OldTargetAreaBudget.lean
+  E-439 [PROVED-LEAN] old-target-first-run-free-charge — Recaman/OldTargetFirstRun.lean
+  E-440 [PROVED-LEAN] old-target-mass-six-two-shapes — Recaman/OldTargetMassFive.lean
+  E-436 [PROVED-LEAN] initial-S-local-dominance-and-critical-pairs — Recaman/InitialSTargetBounds.lean
+  E-437 [PROVED-LEAN] source-complete-run-clock-upper-classifier — Recaman/RunClockClassifier.lean
+  E-432 [PROVED-LEAN] three-run-small-first-block-source-family — Recaman/SourceFamilyFreeCount.lean
+  E-433 [PROVED-LEAN] three-run-all-first-block-free-count — Recaman/SourceFamilyFirstBlock.lean
+  E-416 [PROVED-LEAN] three-A-run-residual-free-budget — Recaman/ThreeRunSupplyBudget.lean
+  E-418 [PROVED-LEAN] bounded-A-actual-separator-reset — Recaman/SeparatorSupplyReset.lean
+  E-419 [PROVED-LEAN] long-final-separator-free-gap — Recaman/SeparatorSupplyReset.lean
+  E-420 [PROVED-LEAN] long-middle-separator-free-gap — Recaman/SeparatorTailFreeGap.lean
+  E-421 [PROVED-LEAN] initial-S-budget-canonical-history — Recaman/InitialSeparatorTrim.lean
+  E-422 [PROVED-LEAN] A-budget-old-context-radius — Recaman/OldContextBudget.lean
+  E-423 [PROVED-LEAN] three-run-actual-finite-context — Recaman/ThreeRunFiniteContext.lean
+  E-417 [PROVED-LEAN] actual-first-and-two-run-charge — Recaman/ThreeRunSupplyBudget.lean
+  E-425 [PROVED-LEAN] same-prefix-bounded-mass-spectrum-transfer — Recaman/BlockSuffixSpectrum.lean
+  E-426 [PROVED-LEAN] same-mass-old-source-six-clock-four-area — Recaman/BlockSameMassSpan.lean
+  E-431 [PROVED-LEAN] source-run-reuse-offset-gap-equations — Recaman/ASourceReuse.lean
+  E-412 [COMPUTED] old-only-budget-r4-no-reduction — docs/data/free_gap_20261026/old-budget-independent.json
+  E-427 [COMPUTED] same-mass-area-pruning-no-reduction — docs/data/three_run_20261027/same-mass-pruning.json
+  E-424 [COMPUTED] joint-old-spectrum-closed-state-gate — docs/data/three_run_20261027/signature-discovery.json
+  E-415 [REFUTED] third-A-ray-small-local-count — Recaman/BlockOldRay.lean
+  E-405 [REFUTED] unbudgeted-future-context-erasure — Recaman/PrefixMassBarrier.lean
+  E-430 [REFUTED] count-bounds-only-first-A-elimination — docs/data/three_run_20261027/first-A-count-replay.json
+  E-407 [PROVED-LEAN] sharp-half-count-S-gap — Recaman/PrefixMassBarrier.lean
+  E-408 [PROVED-LEAN] A-run-negative-square-supply — Recaman/RunSupplyKeys.lean
+  E-409 [PROVED-LEAN] two-A-run-factor-bound — Recaman/TwoRunSupply.lean
+  E-410 [PROVED-LEAN] A-ray-run-supply-budget — Recaman/RunSupplyBudget.lean
+  E-411 [PROVED-LEAN] same-prefix-old-A-ray-clock — Recaman/BlockOldRay.lean
+  E-413 [PROVED-LEAN] single-A-run-free-gap — Recaman/BlockOldRay.lean
+  E-414 [PROVED-LEAN] two-A-run-free-gap — Recaman/BlockOldRay.lean
+  E-385 [PROVED-LEAN] old-window-tail-count-barrier — Recaman/BlockSuffixPositivity.lean
+  E-386 [PROVED-LEAN] three-nonsupplied-excursion-depth — Recaman/BlockSuffixPositivity.lean
+  E-387 [PROVED-LEAN] three-nonsupplied-C1-area — Recaman/BlockSuffixPositivity.lean
+  E-388 [COMPUTED] four-nonsupplied-C1-area — docs/RESEARCH_NOTE_2026-10-23_C1_FOUR.md
+  E-404 [CONJECTURED] four-free-A-excursion-classification — docs/data/joint_old_20261025/layered_source/FourEventData.lean.txt
+  E-392 [PROVED-LEAN] sixteen-root-future-area — Recaman/BlockSuffixPositivity.lean
+  E-400 [COMPUTED] fixed-joint-root-r4-reduction — docs/data/joint_old_20261025/fixed-summary.json
+  E-403 [COMPUTED] future-context-r4-quotient — docs/data/joint_old_20261025/context-independent.json
+  E-379 [PROVED-LEAN] fresh-low-visit-area — Recaman/BlockSuffixPositivity.lean
+  E-380 [PROVED-LEAN] block-prefix-context-radius — Recaman/BlockSuffixPositivity.lean
+  E-381 [PROVED-LEAN] block-prefix-quadratic-area — Recaman/BlockSuffixPositivity.lean
+  E-382 [COMPUTED] depth-four-three-nonsupplied-area — docs/data/c1_q_makeup_20261022/context-classify.json
+  E-383 [COMPUTED] short-tail-prefix-mass-classification — docs/data/c1_q_makeup_20261022/prefix-mass-32.json
+  E-384 [PROVED-PAPER] block-prefix-area-spectrum — docs/RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md
+  E-389 [PROVED-LEAN] supplied-S-gap-and-terminal-tail — Recaman/BlockSuffixPositivity.lean
+  E-390 [PROVED-LEAN] actual-S-gap-macro — Recaman/BlockSuffixPositivity.lean
+  E-391 [PROVED-LEAN] finite-first-supply-terminal-test — Recaman/BlockSuffixPositivity.lean
+  E-393 [PROVED-LEAN] long-S-A-run-supply — Recaman/BlockSuffixPositivity.lean
+  E-394 [PROVED-LEAN] shared-prefix-mass-three-areas — Recaman/BlockSuffixPositivity.lean
+  E-395 [REFUTED] two-supplies-after-fourth-free — docs/data/c1_four_20261024/last-free-independent.json
+  E-396 [PROVED-LEAN] zero-free-five-supply-motif — Recaman/BlockSuffixPositivity.lean
+  E-397 [PROVED-LEAN] long-S-even-run-one-addition — Recaman/BlockSuffixPositivity.lean
+  E-398 [PROVED-LEAN] shared-prefix-mass-four-area-pairs — Recaman/BlockSuffixPositivity.lean
+  E-399 [PROVED-LEAN] joint-low-mass-prefix-representative — Recaman/BlockSuffixPositivity.lean
+  E-401 [PROVED-LEAN] arbitrary-prefix-mass-barrier — Recaman/PrefixMassBarrier.lean
+  E-402 [PROVED-LEAN] bounded-future-local-context-erasure — Recaman/PrefixMassBarrier.lean
+  E-406 [PROVED-LEAN] separated-run-count-and-height-barriers — Recaman/PrefixMassBarrier.lean
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 435 (including Audit)
+  Import contracts: 110; audit declarations: 2978

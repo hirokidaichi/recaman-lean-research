@@ -1,0 +1,236 @@
+{
+  "protocol": "THREE_RUN_PROTOCOL.json",
+  "prefixes": [
+    "",
+    "AAA",
+    "SAAA",
+    "ASAAA"
+  ],
+  "domain": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "counts": {
+    "tuples": 16384,
+    "positive": 14208,
+    "target_supplies": 7384,
+    "free_gap_violations": 0,
+    "conditional_count_violations": 0
+  },
+  "free_gap_counterexamples": [],
+  "conditional_count_counterexamples": [],
+  "max_A_minus_2free_when_target": 1,
+  "extreme": {
+    "prefix": "SAAA",
+    "parameters": [
+      4,
+      4,
+      1,
+      1,
+      4,
+      4
+    ],
+    "tail": "SSSSAAAASASSSSAAAA",
+    "gap": 1,
+    "A": 9,
+    "free": 4,
+    "start": 16,
+    "ledger": [
+      {
+        "i": 0,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 1,
+        "free": 0
+      },
+      {
+        "i": 1,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 1,
+        "free": 0
+      },
+      {
+        "i": 2,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 1,
+        "free": 0
+      },
+      {
+        "i": 3,
+        "c": "A",
+        "end": true,
+        "t": 0,
+        "d": 0,
+        "free": 0
+      },
+      {
+        "i": 4,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 1,
+        "free": 0
+      },
+      {
+        "i": 5,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 2,
+        "free": 0
+      },
+      {
+        "i": 6,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 3,
+        "free": 0
+      },
+      {
+        "i": 7,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 4,
+        "free": 0
+      },
+      {
+        "i": 8,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 4,
+        "free": 1
+      },
+      {
+        "i": 9,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 4,
+        "free": 2
+      },
+      {
+        "i": 10,
+        "c": "A",
+        "end": true,
+        "t": 7,
+        "d": 3,
+        "free": 2
+      },
+      {
+        "i": 11,
+        "c": "A",
+        "end": true,
+        "t": 0,
+        "d": 2,
+        "free": 2
+      },
+      {
+        "i": 12,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 3,
+        "free": 2
+      },
+      {
+        "i": 13,
+        "c": "A",
+        "end": true,
+        "t": 6,
+        "d": 2,
+        "free": 2
+      },
+      {
+        "i": 14,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 3,
+        "free": 2
+      },
+      {
+        "i": 15,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 4,
+        "free": 2
+      },
+      {
+        "i": 16,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 5,
+        "free": 2
+      },
+      {
+        "i": 17,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 6,
+        "free": 2
+      },
+      {
+        "i": 18,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 6,
+        "free": 3
+      },
+      {
+        "i": 19,
+        "c": "A",
+        "end": false,
+        "t": null,
+        "d": 6,
+        "free": 4
+      },
+      {
+        "i": 20,
+        "c": "A",
+        "end": true,
+        "t": 17,
+        "d": 5,
+        "free": 4
+      },
+      {
+        "i": 21,
+        "c": "A",
+        "end": true,
+        "t": 6,
+        "d": 4,
+        "free": 4
+      },
+      {
+        "i": 22,
+        "c": "S",
+        "end": false,
+        "t": null,
+        "d": 5,
+        "free": 4
+      },
+      {
+        "i": 23,
+        "c": "A",
+        "end": true,
+        "t": 16,
+        "d": 4,
+        "free": 4
+      }
+    ]
+  },
+  "evidence": "finite exact; discovery only"
+}

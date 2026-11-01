@@ -1,0 +1,104 @@
+import Recaman.ThreeNonsuppliedData
+
+set_option maxRecDepth 100000
+
+namespace Recaman.FourNonsuppliedData
+
+open Recaman.LeadingRunSupply
+open Recaman.ThreeNonsuppliedData (wordArea localSupply oldSignature)
+
+abbrev State := Recaman.ThreeNonsuppliedData.State
+
+def trim (w : List Bool) : List Bool := w.drop (w.length-19)
+
+def gap (s : State) (j : Nat) : State :=
+  let ns := min 19 (s.subtractions+j)
+  ⟨if ns=19 then trim (s.word++List.replicate j false)
+     else s.word++List.replicate j false,
+   s.additions, ns, s.nonsupplied⟩
+
+def stepS (s : State) : State := gap s 1
+
+def stepA (s : State) (e : Bool) : Option State :=
+  let an := s.nonsupplied+(if e then 0 else 1)
+  let admitted := if e then localSupply s.word ||
+    (decide (s.subtractions<19) && oldSignature s.word) else !localSupply s.word
+  if admitted && decide (an≤4) &&
+      decide (s.subtractions=19 ∨ 1≤(s.subtractions : Int)-(s.additions+1 : Nat)+an) then
+    some ⟨if s.subtractions=19 then trim (s.word++[true]) else s.word++[true],
+      s.additions+1,s.subtractions,an⟩ else none
+
+def macroA (s : State) (j : Nat) (e : Bool) : Option State := stepA (gap s j) e
+
+theorem trim_append_letter (w : List Bool) (c : Bool) :
+    trim (trim w++[c])=trim (w++[c]) := by
+  unfold trim
+  by_cases hlen : w.length≤19
+  · simp [show w.length-19=0 by omega]
+  · have hw : 19<w.length := by omega
+    simp only [List.length_append,List.length_drop,List.length_singleton]
+    rw [show w.length-(w.length-19)+1-19=1 by omega,
+      List.drop_append_of_le_length (by simp only [List.length_drop]; omega),List.drop_drop,
+      List.drop_append_of_le_length (by omega)]
+    congr 2
+    omega
+
+theorem trim_idempotent (w : List Bool) : trim (trim w)=trim w := by
+  simp only [trim,List.length_drop,List.drop_drop]
+  congr 1
+  omega
+
+theorem trim_append_congr (v : List Bool) : ∀ u w : List Bool,
+    trim u=trim w → trim (u++v)=trim (w++v) := by
+  induction v with
+  | nil => intro u w h; simpa using h
+  | cons c v ih =>
+    intro u w h
+    have hnext : trim (u++[c])=trim (w++[c]) := by
+      calc
+        trim (u++[c])=trim (trim u++[c]) := (trim_append_letter u c).symm
+        _=trim (trim w++[c]) := by rw [h]
+        _=trim (w++[c]) := trim_append_letter w c
+    simpa only [List.append_assoc,List.singleton_append] using ih (u++[c]) (w++[c]) hnext
+
+theorem trim_append (w v : List Bool) : trim (trim w++v)=trim (w++v) := by
+  exact trim_append_congr v (trim w) w (trim_idempotent w)
+
+theorem trim_S_gap (w : List Bool) (j : Nat) (hj : 19≤j) :
+    trim (w++List.replicate j false)=List.replicate 19 false := by
+  unfold trim
+  rw [List.length_append,List.length_replicate,List.drop_append]
+  rw [List.drop_eq_nil_of_le (by omega)]
+  simp only [List.nil_append,List.drop_replicate]
+  congr 1
+  omega
+
+theorem gap_large (s : State) (j : Nat) (hj : 19≤j) :
+    gap s j=⟨List.replicate 19 false,s.additions,19,s.nonsupplied⟩ := by
+  have hmin : min 19 (s.subtractions+j)=19 := by omega
+  simp [gap,hmin,trim_S_gap _ _ hj]
+
+theorem gap_clamp (s : State) (j : Nat) : gap s j=gap s (min j 19) := by
+  by_cases hj : j≤19
+  · rw [Nat.min_eq_left hj]
+  · rw [gap_large s j (by omega),Nat.min_eq_right (by omega),gap_large s 19 (by omega)]
+
+theorem gap_add (s : State) (j k : Nat) : gap (gap s j) k=gap s (j+k) := by
+  have hmin : min 19 (min 19 (s.subtractions+j)+k)=min 19 (s.subtractions+(j+k)) := by omega
+  by_cases hfirst : min 19 (s.subtractions+j)=19
+  · have hlast : min 19 (s.subtractions+(j+k))=19 := by omega
+    have hsat : min 19 (19+k)=19 := by omega
+    simp only [gap,hfirst,if_true,hlast,hsat]
+    rw [trim_append,List.append_assoc,List.replicate_append_replicate]
+  · by_cases hlast : min 19 (s.subtractions+(j+k))=19
+    · simp only [gap,hfirst,if_false,hmin,hlast,if_true]
+      rw [List.append_assoc,List.replicate_append_replicate]
+    · simp only [gap,hfirst,if_false,hmin,hlast]
+      rw [List.append_assoc,List.replicate_append_replicate]
+
+-- Long S gaps retain a legal nonsupplied A. No A upper bound is encoded in stepA.
+example : (macroA ⟨[],0,0,0⟩ 19 false).map (fun s => s.additions)=some 1 := by decide
+example : (macroA ⟨[],10,0,3⟩ 20 false).map (fun s => s.additions)=some 11 := by decide
+example : macroA ⟨[],0,0,0⟩ 0 false=none := by decide
+
+

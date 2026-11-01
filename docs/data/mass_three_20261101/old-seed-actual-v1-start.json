@@ -1,0 +1,18 @@
+{
+  "tag": "old-seed-actual-v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldSeedActualGap.lean"
+  ],
+  "started_jst": "2026-11-01T06:20:49.896112+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSeedActualGap.lean": "3ca9e9f1ab9d43cc12005ca537c2cd2d7f48e9711228ec6faaaba8647d8120eb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

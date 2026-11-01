@@ -1,0 +1,74 @@
+Recaman/FourRunSupplyBudget.lean:43:40: error: Tactic `rfl` failed: The left-hand side
+  n + B
+is not definitionally equal to the right-hand side
+  n + h + M + m + L + s + U
+
+f : Nat → Bool
+n h M m L s U v T : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+B : Nat := h + M + m + L + s + U
+D : Nat := B + v
+rs : List (Bool × Nat) := [(false, h), (true, M), (false, m), (true, L), (false, s), (true, U), (false, v)]
+h3 : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 11
+hword :
+  seg f n B =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+⊢ n + B = n + h + M + m + L + s + U
+Recaman/FourRunSupplyBudget.lean:54:4: error: Type mismatch
+  hA4 i hi
+has type
+  f (n + h + M + m + L + s + U + v + i) = true
+but is expected to have type
+  f (n + D + i) = true
+Recaman/FourRunSupplyBudget.lean:64:21: error: Application type mismatch: The argument
+  hx
+has type
+  n + B ≤ x
+but is expected to have type
+  n + h + M + m + L + s + U ≤ x
+in the application
+  hS4 x hx
+Recaman/FourRunSupplyBudget.lean:72:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 0
+  i ≥ 20
+  0 ≤ i - j ≤ 8
+  0 ≤ g ≤ 11
+  0 ≤ e ≤ 7
+  e - i + j ≥ -1
+  d ≥ 3
+  c ≥ 1
+  b ≥ 1
+  a ≥ 1
+where
+ a := ↑m
+ b := ↑s
+ c := ↑v
+ d := ↑(cntF (runWord rs))
+ e := ↑(rayCount (runWord rs) T)
+ g := ↑(cN (EndN f 0) n B)
+ i := ↑(cN (EndN f 0) n (D + T))
+ j := ↑(cN (EndN f 0) n D)
+Recaman/FourRunSupplyBudget.lean:50:22: warning: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rs, runWord, cntF_append, cntF_replicate_S, cntF_A, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

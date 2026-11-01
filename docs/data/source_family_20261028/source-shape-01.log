@@ -1,0 +1,6 @@
+Recaman/ThreeRunSourceShape.lean:63:20: error: Type mismatch
+  hwin.right.left
+has type
+  Fw f (t + (d + m + L + s + T + j)) = Fw f t + 1
+but is expected to have type
+  Fw f (t + (d + m + L + s + T + j)) - Fw f t = 1

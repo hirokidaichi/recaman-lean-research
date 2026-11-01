@@ -7,8 +7,21 @@ on:
     branches: [ main ]
 
 jobs:
+  harness:
+    name: Research harness (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Test brief freshness and research-harness gates
+        run: make test-tools
+
   verify:
     name: Lean Audit & Empirical Regression Suite
+    needs: harness
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:

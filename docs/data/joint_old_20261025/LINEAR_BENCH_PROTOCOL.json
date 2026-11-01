@@ -1,0 +1,25 @@
+{
+  "card": "H-20261025-07",
+  "frozen_utc": "2026-10-24T21:52:13.008277+00:00",
+  "sources": {
+    "docs/data/joint_old_20261025/dag_fast_bench.lean": "ca712890dd7343ff80b177b83594955b0c6c09d0df5cc7cf3af93a2bf14eab9b",
+    "Recaman/FourEventFast.lean": "c41ba13c7a72f720fea9762ec8275b07f18e36c0c208d6823c7b4ae7d19b5f32"
+  },
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "docs/data/joint_old_20261025/dag_fast_bench.lean"
+  ],
+  "cap": {
+    "cpu_seconds": 90,
+    "wall_seconds": 90,
+    "process_group_rss_kib": 4194304
+  },
+  "selection": "same256 closed nodes as H04 successful bench; same40macro successor lists, only general proved equality rewrites checker",
+  "baseline": "72.15wall,71.72user+0.39sys,585302016bytes RSS, kernel success",
+  "acceptance": "kernel passes same concrete claims and lowerCPU; only then cancel old slow job and freeze fast whole-source cap",
+  "repair_limit": 1,
+  "old_job": "continues unchanged while new bench is evaluated; never double count elapsed work"
+}

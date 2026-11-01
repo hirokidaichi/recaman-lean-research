@@ -1,0 +1,80 @@
+ℹ [95/104] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+✖ [104/104] Building Recaman.ShortTightDonorAvoidance (407ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/ShortTightDonorAvoidance.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ShortTightDonorAvoidance.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ShortTightDonorAvoidance.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ShortTightDonorAvoidance.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ShortTightDonorAvoidance.setup.json --json
+error: Recaman/ShortTightDonorAvoidance.lean:117:63: Unknown constant `Int.natCast_ofNat`
+error: Recaman/ShortTightDonorAvoidance.lean:118:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  v - 1 - 6
+in the target expression
+  false = e (v - 1 - ↑6)
+
+case inr.inr.inl
+e : Int → Bool
+mem : Int → Prop
+own : Int → Int
+lag : Int → Nat
+hF : OwnerFamily e mem own lag
+t : Int
+ht : mem t
+hw : past e t (lag t) = w1
+ho : own t = t - 7
+hlen : lag t = 7
+hw7 : past e t 7 = w1
+hk : 1 ∈ sOffsets (past e t (lag t))
+v : Int
+hv : mem v
+hvown : own v = t - ↑1
+k : Nat
+hkv : k ∈ sOffsets w1
+hown : own v = v - ↑k
+h1 : past e v (lag v) = w1
+hoff : sOffsets w1 = [1, 6, 7]
+hvlen : lag v = 7
+hv7 : past e v 7 = w1
+hk6 : k = 6
+hx : v - 1 - 6 = t - 1 - 1
+hs : false = e (v - 1 - ↑6)
+ha : true = e (t - 1 - ↑1)
+⊢ e (t + 1) = true
+error: Recaman/ShortTightDonorAvoidance.lean:123:63: Unknown constant `Int.natCast_ofNat`
+error: Recaman/ShortTightDonorAvoidance.lean:124:10: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  v - 1 - 5
+in the target expression
+  false = e (v - 1 - ↑5)
+
+case inr.inr.inr
+e : Int → Bool
+mem : Int → Prop
+own : Int → Int
+lag : Int → Nat
+hF : OwnerFamily e mem own lag
+t : Int
+ht : mem t
+hw : past e t (lag t) = w1
+ho : own t = t - 7
+hlen : lag t = 7
+hw7 : past e t 7 = w1
+hk : 1 ∈ sOffsets (past e t (lag t))
+v : Int
+hv : mem v
+hvown : own v = t - ↑1
+k : Nat
+hkv : k ∈ sOffsets w1
+hown : own v = v - ↑k
+h1 : past e v (lag v) = w1
+hoff : sOffsets w1 = [1, 6, 7]
+hvlen : lag v = 7
+hv7 : past e v 7 = w1
+hk7 : k = 7
+hx : v - 1 - 5 = t
+hs : false = e (v - 1 - ↑5)
+⊢ e (t + 1) = true
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.ShortTightDonorAvoidance
+error: build failed

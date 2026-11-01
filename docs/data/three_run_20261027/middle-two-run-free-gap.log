@@ -1,0 +1,33 @@
+Recaman/SeparatorTailFreeGap.lean:209:84: error: Type mismatch
+  hbudget
+has type
+  ones u + ↑L + ↑T ≤ ↑B
+but is expected to have type
+  ones u + (↑L + ↑T) ≤ ↑B
+Recaman/SeparatorTailFreeGap.lean:211:11: error: invalid 'by' tactic, expected type has not been provided
+Recaman/SeparatorTailFreeGap.lean:212:4: error: No goals to be solved
+Recaman/SeparatorTailFreeGap.lean:222:102: error: Type mismatch: After simplification, term
+  h
+ has type
+  g (m + L + (i - (m + L))) = false
+but is expected to have type
+  g i = false
+Recaman/SeparatorTailFreeGap.lean:224:19: error: Type mismatch: After simplification, term
+  hpos
+ has type
+  ∀ (k : Nat), 0 < k → k ≤ m + (L + s + T) → cN (EndN g 0) 0 k + 1 ≤ cN (fun i => g i = false) 0 k
+but is expected to have type
+  ∀ (k : Nat), 0 < k → k ≤ m + L + s + T → cN (EndN g 0) 0 k + 1 ≤ cN (fun x => g x = false) 0 k
+Recaman/SeparatorTailFreeGap.lean:227:18: error: Type mismatch
+  hbudget
+has type
+  ones u + ↑L + ↑T ≤ ↑B
+but is expected to have type
+  ones u + (↑L + ↑T) ≤ ↑B
+Recaman/SeparatorTailFreeGap.lean:228:2: error: Type mismatch: After simplification, term
+  hbound
+ has type
+  j + 1 ≤
+    cN (fun x => f (n + (u.length + x)) = true ∧ ¬EndN (fun i => f (n + (u.length + i))) 0 x) 0 (m + (L + (s + T)))
+but is expected to have type
+  j + 1 ≤ cN (fun i => f i = true ∧ ¬EndN f 0 i) (n + u.length) (m + (L + (s + T)))

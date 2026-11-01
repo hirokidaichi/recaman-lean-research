@@ -1,0 +1,44 @@
+{
+  "scope": "identity audit of frozen existing rows only; no new exploration or proof of all histories",
+  "files": {
+    "first-A-local-discovery.json": {
+      "R_range": [
+        5,
+        7
+      ],
+      "rows": 10731,
+      "distinct_history_parameter_tuples": 10731,
+      "sha256": "909b67a10af45b2b4de1b630b2cf407ff873c9a69ba97c5e704d555d013e5509"
+    },
+    "first-A-local-holdout.json": {
+      "R_range": [
+        8,
+        10
+      ],
+      "rows": 968,
+      "distinct_history_parameter_tuples": 968,
+      "sha256": "3c20ebc74f80baad0c7d6553ce685ad7354a50d177a2101a7949db3ddb2851aa"
+    },
+    "initial-S-local-discovery.json": {
+      "R_range": [
+        5,
+        6
+      ],
+      "rows": 22691,
+      "distinct_history_parameter_tuples": 22691,
+      "sha256": "c8e14b2d9f9b3738028891796e1efb89e1ffb7b0261df73403c442404ae95309"
+    },
+    "initial-S-local-holdout.json": {
+      "R_range": [
+        7,
+        10
+      ],
+      "rows": 15031,
+      "distinct_history_parameter_tuples": 15031,
+      "sha256": "88cfd7bd86b3ef5d2e6dddb1fda0293c612e49700c758477eb1b137303e20ecf"
+    }
+  },
+  "overlap_firstA_discovery_holdout": 0,
+  "overlap_initialS_discovery_holdout": 0,
+  "overlap_cross_claim_holdouts": 0
+}

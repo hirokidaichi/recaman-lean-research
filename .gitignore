@@ -17,6 +17,9 @@ __pycache__/
 .venv/
 venv/
 
+# Runtime locks; daily research JSON journals remain versioned.
+docs/data/daily_research/*.lock
+
 # C / C++ build outputs
 *.o
 *.dSYM/

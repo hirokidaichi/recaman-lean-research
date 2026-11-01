@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/recaman-audit-20260923-0200-sol/independent_prefix_check.py", line 97, in <module>
+    print(json.dumps(run_period(period), sort_keys=True), flush=True)
+  File "/tmp/recaman-audit-20260923-0200-sol/independent_prefix_check.py", line 40, in run_period
+    valid = tuple(length for length in (3, 7, 11)
+  File "/tmp/recaman-audit-20260923-0200-sol/independent_prefix_check.py", line 40, in <genexpr>
+    valid = tuple(length for length in (3, 7, 11)
+KeyboardInterrupt

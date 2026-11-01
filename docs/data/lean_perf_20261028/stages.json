@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-28",
+  "kind": "validation performance audit, separate from closed daily research journal",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_tracked_hash": "e566f49abcb1ad9ccfaa2b7e267dd15ab9d941136b33bd850cae4bceca5df037",
+  "source_sha256": {
+    "scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536",
+    "scripts/check_module_architecture.sh": "b62796745ecc4004ecb260857d4f1777aee5261d9654e9ef3ae0180019edeb73",
+    "scripts/check_research_registry.sh": "bcad63a704feb569322e8450716d88519da4febed84f385a136f177a16ad5d95",
+    "scripts/harness_gate.py": "2ecbd40ad679540d9ba04a4349907c5b3300f27b40ca55c48fc03cf14e53f24c",
+    "Recaman/Audit.lean": "3ebd222c571234ffbb5208218002a1ed97e3bc778690fa03ca96502953d4d361"
+  },
+  "resource_scope": "per-process20CPU/group25wall; not generic tree cumulative cap",
+  "stages": [
+    {
+      "name": "architecture",
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "wall_seconds": 1.833885416155681,
+      "cpu_seconds": 1.61002,
+      "maxrss_native": 8110080,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "registry",
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "wall_seconds": 7.357875917106867,
+      "cpu_seconds": 6.230198,
+      "maxrss_native": 31408128,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "lake_build_cached",
+      "argv": [
+        "lake",
+        "build"
+      ],
+      "wall_seconds": 0.5061592080164701,
+      "cpu_seconds": 0.30452,
+      "maxrss_native": 74858496,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "axiom_audit",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "Recaman/Audit.lean"
+      ],
+      "wall_seconds": 3.4226414998993278,
+      "cpu_seconds": 1.119454,
+      "maxrss_native": 870957056,
+      "exit_code": 0,
+      "expected_exit": [
+        0
+      ],
+      "reason": "completed"
+    },
+    {
+      "name": "forbidden_scan",
+      "argv": [
+        "rg",
+        "-n",
+        "--glob",
+        "*.lean",
+        "\\b(sorry|admit|native_decide|axiom)\\b",
+        "."
+      ],
+      "wall_seconds": 0.04019129206426442,
+      "cpu_seconds": 0.113231,
+      "maxrss_native": 9650176,
+      "exit_code": 1,
+      "expected_exit": [
+        1
+      ],
+      "reason": "completed"
+    }
+  ],
+  "stage_wall_sum": 13.16075333324261,
+  "scan_pattern_validation": {
+    "original_and_rechecked_pattern_equal": true,
+    "prefix_charcodes": [
+      92,
+      98
+    ],
+    "recheck": {
+      "name": "forbidden_scan",
+      "argv": [
+        "rg",
+        "-n",
+        "--glob",
+        "*.lean",
+        "\\b(sorry|admit|native_decide|axiom)\\b",
+        "."
+      ],
+      "wall_seconds": 0.04591575008817017,
+      "cpu_seconds": 0.41297199999999995,
+      "exit_code": 1,
+      "expected_exit": [
+        1
+      ],
+      "reason": "completed"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+actual_lean_domain {'period': 4, 'cycle': 'SAAA', 'B': [3], 'm': 3, 'lag': 4, 'past_m': 'AAS', 'past_lag': 'AASA', 'P2_m': True, 'P2_lag': False, 'N_m': [0], 'N_lag': [0], 'tight': True}
+remove_P2_m {'period': 4, 'cycle': 'SAAA', 'B': [3], 'm': 0, 'lag': 4, 'N_m': [], 'N_lag': [0], 'tight': True, 'equality': False}
+remove_tightness {'period': 15, 'cycle': 'AASSAAASSSSSSSS', 'B': [6], 'm': 3, 'lag': 7, 'P2_m': True, 'P2_lag': True, 'N_m': [3], 'N_lag': [2, 3, 14], 'tight': False, 'equality': False}

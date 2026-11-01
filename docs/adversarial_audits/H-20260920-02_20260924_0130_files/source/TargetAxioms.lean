@@ -1,0 +1,14 @@
+import Recaman.SS2OldestPattern
+
+#check Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window
+#print axioms Recaman.ShortTightDonorAvoidance.short_tight_avoids_ss2_window
+#check Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix
+#print axioms Recaman.ShortTightDonorAvoidance.tight_neighborhood_eq_of_p2_prefix
+#check Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample
+#print axioms Recaman.ShortTightDonorAvoidance.nonminimal_donor_length15_counterexample
+#check Recaman.SS2OldestPattern.moment_ending_A_budget
+#print axioms Recaman.SS2OldestPattern.moment_ending_A_budget
+#check Recaman.SS2OldestPattern.moment_ending_AA_ss2
+#print axioms Recaman.SS2OldestPattern.moment_ending_AA_ss2
+#check Recaman.SS2OldestPattern.ss2_intervening_prefix
+#print axioms Recaman.SS2OldestPattern.ss2_intervening_prefix

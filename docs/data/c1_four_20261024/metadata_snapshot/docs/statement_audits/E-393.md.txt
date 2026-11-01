@@ -1,0 +1,67 @@
+# Statement audit: E-393
+
+- artifact: `Recaman/BlockSuffixPositivity.lean`
+- reviewer: Codex, 2026-10-24 JST（形式化後の別pass。人間レビュー未）
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.BlockSuffixPositivity.no_endable_after_manyS_oddA
+
+```lean
+(f : Nat → Bool) (n a m r j : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hodd : r%2=1) (hmr : 2*r-1≤m) (hw : seg f n (m+r+j)=List.replicate m false++List.replicate r true++List.replicate j false) : ¬EndN f 0 (n+(m+r+j))
+```
+
+1. yes — 同じfの実tailと元0の全EndN、padded prefixを量化。
+2. no — r奇数とm≥2r−1を明記。Endableの否定を仮定せず、r/m/j上限なし。
+3. no — 全suffixのrun分解と面積計算、old個数障壁を合成して窓を排除。
+
+## Recaman.BlockSuffixPositivity.no_additions_after_manyS_oddA
+
+```lean
+(f : Nat → Bool) (n a m r K : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hodd : r%2=1) (hmr : 2*r-1≤m) (hw : seg f n (m+r)=List.replicate m false++List.replicate r true) (hfree : cN (fun u => f u=true ∧ ¬EndN f 0 u) (n+(m+r)) K=0) : cN (fun u => f u=true) (n+(m+r)) K=0
+```
+
+1. yes — 任意f/実tail/元0基点、任意future長K。
+2. no — 非Endable A数0は全A数0そのものではない。具体run形・奇数性・長いS条件を残す。
+3. no — first-A/強帰納で全長の実S-gapを扱い、実Endable排除に矛盾させる。
+
+## Recaman.BlockSuffixPositivity.old_count_barrier_sharp_family
+
+```lean
+(r : Nat) (hr : 3≤r) : BlockWord (List.replicate 1 false++List.replicate r true) ∧ mass (List.replicate 1 false++List.replicate r true++ List.replicate (2*r-2) false++List.replicate r true)=1 ∧ areaW (List.replicate 1 false++List.replicate r true++ List.replicate (2*r-2) false++List.replicate r true)=0
+```
+
+1. no — Nat rと明示語の文法/mass/areaを述べる補助結果。
+2. no — r≥3のみ。結論の窓面積や文法を仮定しない。
+3. no — 明示S A^rのBlockWord構成と二次areaの恒等式。同じrowの実f定理と区別し、単独の軌道解決と呼ばない。
+
+## Recaman.BlockSuffixPositivity.three_runs_window_iff
+
+```lean
+(s r j : Nat) : (mass (List.replicate s false++List.replicate r true++List.replicate j false)=1 ∧ areaW (List.replicate s false++List.replicate r true++List.replicate j false)=0) ↔ r=2*(j+1) ∧ s=j+1
+```
+
+1. no — 自由Natと明示List Bool上の窓signatureを分類する補助結果。
+2. no — 窓mass1/area0とrun係数条件の両方向を証明し、どちらも仮定として固定しない。
+3. no — massと非線形areaの正確な展開。actual orbitへの接続は下の実f定理。
+
+## Recaman.BlockSuffixPositivity.localSupply_three_runs_iff
+
+```lean
+(m r j : Nat) : Recaman.ThreeNonsuppliedData.localSupply (List.replicate m false++List.replicate r true++List.replicate j false)=true ↔ r=2*(j+1) ∧ j+1≤m
+```
+
+1. no — 明示run語の全suffix P2を分類する補助結果。
+2. no — 窓の存在条件を結論へ仮定しない。m/r/j上限なし。
+3. no — 全suffix始点を先頭S内部とA以後に分解し、逆向きは具体suffixを供給。
+
+## Recaman.BlockSuffixPositivity.endable_after_manyS_A_iff
+
+```lean
+(f : Nat → Bool) (n a m r j : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hr : 1≤r) (hmr : 2*r-1≤m) (hw : seg f n (m+r+j)=List.replicate m false++List.replicate r true++List.replicate j false) (hA : f (n+(m+r+j))=true) : EndN f 0 (n+(m+r+j)) ↔ r=2*(j+1)
+```
+
+1. yes — 同じfの実run、元0の全EndN、実endpoint Aを量化。
+2. no — padded prefix、r≥1、m≥2r−1、endpoint Aを明示。未知のQ/分類を仮定しない。
+3. no — old/new始点を分け、old障壁と全local suffix分類を両方向へ接続。
+

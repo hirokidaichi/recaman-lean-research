@@ -1,0 +1,12 @@
+Frozen live-card comparisons: five cmp commands, all exit 0.
+Card full composition comparisons: four cmp commands, all exit 0.
+SOURCE_SHA256SUMS verification: 16/16 OK, exit 0.
+git diff --check restricted to slot0130: exit 0.
+Validation clock: 2026-09-24 01:39 JST.
+
+No writer-side mathematical computation or Lean/gate command was run.
+Independent joint-audit runs are separate and will be recorded by the parent.
+
+Late path-control note: `shasum -a 256 -c SOURCE_SHA256SUMS` was accidentally
+invoked from the repository root and exited 2 because the file was not in cwd.
+The corrected path-qualified command exited 0 with 16/16 source entries OK.

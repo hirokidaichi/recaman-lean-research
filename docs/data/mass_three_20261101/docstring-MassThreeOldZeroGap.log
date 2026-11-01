@@ -1,0 +1,14 @@
+Recaman/MassThreeOldZeroGap.lean:92:42: warning: This simp argument is unused:
+  mass_replicate_A
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, hmz, List.replicate_zero, List.append_nil] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/MassThreeOldZeroGap.lean:103:65: warning: This simp argument is unused:
+  mass_replicate_A
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.replicate_zero, List.append_nil, mass_append] at hm ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

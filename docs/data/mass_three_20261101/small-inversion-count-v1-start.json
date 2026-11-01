@@ -1,0 +1,18 @@
+{
+  "tag": "small-inversion-count-v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/SmallInversionSources.lean"
+  ],
+  "started_jst": "2026-11-01T06:30:45.115805+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallInversionSources.lean": "ae0828b8c2efb019398b6f4de0d45b1c5edccd9d024dca9015aaf4d2d5e14a98"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

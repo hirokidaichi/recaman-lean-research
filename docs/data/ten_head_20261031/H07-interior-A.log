@@ -1,0 +1,8 @@
+Recaman/OneGapInteriorA.lean:22:37: warning: This simp argument is unused:
+  Int.natCast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_replicate_A, mass_rep_false, mass_cons, mass_nil,
+    Recaman.ShortPeriodicSupply.sign] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

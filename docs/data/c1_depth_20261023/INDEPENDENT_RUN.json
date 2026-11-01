@@ -1,0 +1,24 @@
+{
+  "registered_jst": "2026-10-23T06:15:11.115240+09:00",
+  "source_sha256": "8561c8d99918afa15037fb43aa69aae403a1e4835ebefea8a016069372d2611e",
+  "binary_sha256": "d4cb27b9224f0aae365147a9c1f65a2afcb4c88a3bb800e177d060bba1d8afb2",
+  "argv": [
+    "/tmp/recaman-independent-eighth-a-20261023"
+  ],
+  "cpu_cap_seconds": 120,
+  "wall_guard_seconds": 115,
+  "population": "all prefix mass 0..13, all S/A transitions before first eighth A; reverse traversal, age-key; all-start F/area query",
+  "holdout_extra_S": [
+    13,
+    26,
+    257,
+    4097
+  ],
+  "holdout_context_limit": 128,
+  "expected_primary": [
+    "no eighth A",
+    "max endpoint depth 4",
+    "all 2120 prefixes completed"
+  ],
+  "no_expected_node_counts": "state traversal ordering differs"
+}

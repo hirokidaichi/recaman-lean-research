@@ -1,0 +1,18 @@
+{
+  "tag": "H14-short-clocks-export",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ShortGapSourceClocks.lean"
+  ],
+  "started_jst": "2026-10-31T07:07:50.244074+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortGapSourceClocks.lean": "d7a47d5dd31a4188b3889caacafde7774f0df2768618d373f6f86967dde1f062"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

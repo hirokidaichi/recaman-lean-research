@@ -1,0 +1,29 @@
+{
+  "source_sha256": "a9540f5f891198ec91eefd73f62f9e35d4e59f645936dc3a349504e529b325de",
+  "source_bytes": 14761,
+  "lint": {
+    "argv": [
+      "python3",
+      "scripts/harness_gate.py",
+      "--lint-module",
+      "Recaman/SS2OldestPattern.lean"
+    ],
+    "exit_code": 0,
+    "substantive_theorems": 13
+  },
+  "individual_validation": {
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "Recaman/SS2OldestPattern.lean"
+    ],
+    "exit_code": 1,
+    "error_class": "(kernel) excessive memory consumption detected",
+    "log_scope": "Observed tool output; not a saved full stdout transcript"
+  },
+  "adopted_as_library": false,
+  "reason": "Preserved uncommitted source without relaxing the declared memory cap or claiming verification."
+}

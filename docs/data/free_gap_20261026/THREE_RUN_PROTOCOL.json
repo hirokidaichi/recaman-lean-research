@@ -1,0 +1,19 @@
+{
+  "card": "H-20261026-09",
+  "frozen_jst": "2026-10-26T07:31:17.334694+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/three_run_discovery.py": "22f31477ecdf51dad06bc3db4dd5c28d4ef37b324593e4865841113b5b91e9ae",
+    "docs/data/free_gap_20261026/three_run_holdout.py": "f5304f900d8f95055c680e89e3849191e201bc510157c80021f2e3f7968d8886",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "Recaman/BlockOldRay.lean": "732b191a4a040ef77578855ed930630c892cd29bdc02dec95643629ee76256ff"
+  },
+  "worker_cpu_total_cap_seconds": 20,
+  "per_worker_cpu_seconds": 10,
+  "wall_seconds": 15,
+  "controller_cpu_reserve_seconds": 2,
+  "discovery": "four prefixes x[1,2,3,4]^6, full-history dual height/area key",
+  "independent_holdout": "three prefixes x[5,7]^6, independent direct mass/area all intervals; known terminal is separate",
+  "acceptance": "actual zero/positive deficit and exact target EndN; distinguish parent gap and stronger conditional count",
+  "stop": "timeout/counterexample => stop or one mathematical repair; finite no counter not theorem; no range extension"
+}

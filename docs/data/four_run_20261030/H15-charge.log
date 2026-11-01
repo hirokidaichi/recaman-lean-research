@@ -1,0 +1,96 @@
+{
+  "outputs": [
+    {
+      "mode": "discovery",
+      "seed": 20261230,
+      "reason": "cooperative CPU stop; incomplete sample",
+      "counts": {
+        "sampled": 7474,
+        "zero": 7474,
+        "positive": 6929,
+        "counter": 0
+      },
+      "max_charge_example": {
+        "old": "SSAAAASAAAASAAA",
+        "whole_mass": 7,
+        "n": 15,
+        "h": 3,
+        "M": 1,
+        "m": 3,
+        "L": 3,
+        "s": 4,
+        "U": 5,
+        "v": 4,
+        "T": 4,
+        "word": "SSAAAASAAAASAAASSSASSSAAASSSSAAAAASSSSAAAA",
+        "EndN": [
+          4,
+          7,
+          9,
+          14,
+          24,
+          31,
+          32,
+          33,
+          40,
+          41
+        ],
+        "A": 13,
+        "actual_free": 7,
+        "charge": -1,
+        "min_positive": 1
+      },
+      "witness": null,
+      "phase_cpu_seconds": 0.350016
+    },
+    {
+      "mode": "holdout",
+      "seed": 20261231,
+      "reason": "cooperative CPU stop; incomplete sample",
+      "counts": {
+        "sampled": 3172,
+        "zero": 3172,
+        "positive": 2937,
+        "counter": 0
+      },
+      "max_charge_example": {
+        "old": "SAAAASSAAAASAAAASSAAAASAAASAAAA",
+        "whole_mass": 15,
+        "n": 31,
+        "h": 5,
+        "M": 5,
+        "m": 2,
+        "L": 6,
+        "s": 8,
+        "U": 3,
+        "v": 4,
+        "T": 9,
+        "word": "SAAAASSAAAASAAAASSAAAASAAASAAAASSSSSAAAAASSAAAAAASSSSSSSSAAASSSSAAAAAAAAA",
+        "EndN": [
+          3,
+          9,
+          12,
+          14,
+          20,
+          23,
+          25,
+          29,
+          38,
+          44,
+          45,
+          59,
+          66,
+          67,
+          69
+        ],
+        "A": 23,
+        "actual_free": 16,
+        "charge": -9,
+        "min_positive": 1
+      },
+      "witness": null,
+      "phase_cpu_seconds": 0.35009700000000005
+    }
+  ],
+  "algorithm_cpu_seconds": 0.700152
+}

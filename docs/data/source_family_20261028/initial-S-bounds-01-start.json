@@ -1,0 +1,18 @@
+{
+  "tag": "initial-S-bounds-01",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetBounds.lean"
+  ],
+  "started_jst": "2026-10-28T06:48:56.261465+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetBounds.lean": "8d057d8672232b7b16e31acdfc0d7f9b89142a61011d29ba9a5a8954a09a0014"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

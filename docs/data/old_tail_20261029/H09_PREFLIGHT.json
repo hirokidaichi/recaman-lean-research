@@ -1,0 +1,52 @@
+{
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_sha256": "3bf8dfb3a3ca4497b9156322cfd1e588531f9194a204afb3c220c899d45e7d56",
+  "worker_sha256": "8fc4d7921f5dda893b3f59453d82e03ed9efdafcd7ff52c5120b9b83c7462dc9",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "discovery_R": [
+    3,
+    5
+  ],
+  "holdout_R": [
+    8,
+    12
+  ],
+  "implementations": "discovery literal suffix; holdout independent forward walk/cumulative area",
+  "previous_math_CPU_measured": 0.531027,
+  "new_caps_CPU": [
+    1,
+    1
+  ],
+  "new_wall_caps": [
+    5,
+    5
+  ],
+  "cumulative_math_ceiling": 4,
+  "claim_scope": "auxiliary replacement of ones before source by actualfree; no C1 counterexample",
+  "argv": [
+    [
+      "python3",
+      "docs/data/old_tail_20261029/run_single.py",
+      "--tag",
+      "H09-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "5",
+      "docs/data/old_tail_20261029/free_prefix_countermodel.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/old_tail_20261029/run_single.py",
+      "--tag",
+      "H09-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "5",
+      "docs/data/old_tail_20261029/free_prefix_countermodel.py",
+      "holdout"
+    ]
+  ]
+}

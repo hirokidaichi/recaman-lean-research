@@ -1,0 +1,18 @@
+{
+  "tag": "H13-actual-target-width",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FinalSTargetWidth.lean"
+  ],
+  "started_jst": "2026-10-30T07:02:42.672426+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FinalSTargetWidth.lean": "a9f1a97304ffa4b803cc0513ec7a8be73db3d689242ca257ffffa8ed42091fd6"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

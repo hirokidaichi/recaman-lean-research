@@ -1,0 +1,8 @@
+Recaman/FourEventProof.lean:68:33: error: Application type mismatch: The argument
+  hc
+has type
+  Checked t
+but is expected to have type
+  Checked (gap t j)
+in the application
+  checked_additions_le_ten hc

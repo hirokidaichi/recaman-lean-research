@@ -1,0 +1,111 @@
+module	direct_imports	purpose
+Recaman.CapacitySlackCompensation	Recaman.TwoSSAvoidTight;Recaman.PeriodicHallReduction	Slack compensation and universal deletion survival for high-SS windows; subsets containing threshold high-SS windows survive deletion of any subtraction; deletability reduces unconditionally to subsets avoiding high-SS donors
+Recaman.PeriodicHallReduction	Recaman.HallRobustnessTheorem	Complete reduction of Hall condition verification to stratified low-SS subsets; Hall on U reduces to ssCount<=1 for p<=11, clean AAS for p<=7, ssCount<=3 for p<=15, ssCount<=5 for p<=19; logical equivalence between full Hall and low-SS Hall
+Recaman.HallRobustnessTheorem	Recaman.HighSSWrappingTheorem	Immunity of threshold high-SS subsets to Hall condition failure; subsets with high-SS windows satisfy |A|<=|N(A)| when |U|<=|D|; Hall failure subsets are purely low-SS for p<=11, clean AAS for p<=7, SS<=3 for p<=15, SS<=5 for p<=19
+Recaman.HighSSWrappingTheorem	Recaman.TightSubsetSSExclusion	Universal wrapping and maximal coverage of threshold high-SS windows; SS>=2 is wrapping for p<=11; SS>=4 is wrapping for p<=15; SS>=6 is wrapping for p<=19; N(A)=D and |N(A)|=|D| for containing subsets; local slack ge global slack
+Recaman.TightSubsetSSExclusion	Recaman.TightPeriodStratification	Universal exclusion of high-SS windows from tight bottleneck subsets and strict expansion of high-SS subsets across periods p <= 7, 11, 15, 19; tight subsets are purely low-SS for p <= 11 and clean AAS for p <= 7
+Recaman.TightPeriodStratification	Recaman.WrapObstruction;Recaman.GrandStratificationSynthesis	Universal tight bottleneck window localization and SS exclusion by period; tight lags {3,7,11} for p<=15 and {3,7,11,15} for p<=19; tight SS=0 for p<=7; tight SS<=1 for p<=11; tight SS<=3 for p<=15; tight SS<=5 for p<=19; tight subsets exclude wrapping windows and high-SS
+Recaman.GrandStratificationSynthesis	Recaman.FiveSSWeightCapacity;Recaman.SSSixLagBound	Master synthesis of SS-stratification and capacity reduction for lag < 19; quantum lag {3, 7, 11, 15}; ssCount <= 5; ssCount >= 4 forces lag = 15; saturated supplies purely low-SS; global capacity reduces to low-SS
+Recaman.FiveSSWeightCapacity	Recaman.FiveSSClassification;Recaman.FourTierCapacityReduction	Five-tier capacity inequality |U_{<=1}| + 2|U2| + 3|U3| + 4|U4| + 5|U5| <= |D|; multi-tier deficit hierarchy; saturated supplies purely low-SS; deficit-1 excludes SS>=3; deficit-2 excludes SS>=4; deficit-3 excludes SS=5
+Recaman.FiveSSClassification	Recaman.SSSixLagBound;Recaman.ThreeSSClassification	Exhaustive classification of minimal length 15 SS=5 words into 5 canonical words; exact lag 15 forcing for minimal SS=5 windows below lag 19; exact 8 additions, 7 subtractions, surplus >= 6
+Recaman.SSSixLagBound	Recaman.LagSevenTightObstruction;Recaman.UniversalSSStratification;Recaman.P2ModFourRigidity	Fifth tier of universal SS stratification; length 15 P2 words have ssCount <= 5; lag < 19 windows have ssCount <= 5; ssCount >= 6 forces lag >= 19
+Recaman.FourTierCapacityReduction	Recaman.ThreeSSWeightCapacity;Recaman.P2ModFourRigidity	Four-tier capacity reduction for lag < 15; total bound n_tot <= nD - (n2 + 2*n3); presence of high-SS forces deficit-1; SS=3 forces deficit-2; saturated supplies purely low-SS; global capacity reduces to low-SS
+Recaman.P2ModFourRigidity	Recaman.NoSSMassOne;Recaman.LeadingRunSupply	Universal modulo 4 rigidity w.length % 4 = 3 for all P2 words; non-existence of P2 words for lengths % 4 != 3 (lengths 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 16, 17, 18, 20, 21); discrete quantum length hierarchy (3, 7, 11, 15, 19)
+Recaman.ThreeSSWeightCapacity	Recaman.ThreeSSClassification;Recaman.TwoSSWeightCapacity	Three-weight capacity |U_{<=1}| + 2|U2| + 3|U3| <= |D|; deficit hierarchy 2|U3| <= slack; saturated supplies have |U3| = 0; deficit-1 supplies have |U3| = 0
+Recaman.ThreeSSClassification	Recaman.UniversalSSStratification	Exhaustive classification of minimal length 11 SS=3 words into 3 canonical words; exact lag 11 forcing for minimal SS=3 windows below lag 15; exact 6 additions, 5 subtractions, and surplus >= 4
+Recaman.UniversalSSStratification	Recaman.SS2LagElevenForcing;Recaman.TightCapacityHierarchy	Universal four-tier lag hierarchy by ssCount: lag >= 3 for clean, lag >= 7 for ssCount >= 1, lag >= 11 for ssCount >= 2, lag >= 15 for ssCount >= 4; length 11 has ssCount <= 3; lag < 15 has ssCount <= 3
+Recaman.TightCapacityHierarchy	Recaman.SS2LagElevenForcing;Recaman.TightSSZeroRigidity	General tight capacity lower bound k <= |A|; exclusion of windows with >= k subtractions from tight subsets of size < k; supply deficit bounds on avoiding sublists for |U| <= 5; exclusion of windows with >= 5 subtractions from tight avoiding subsets
+Recaman.SS2LagElevenForcing	Recaman.SS2MinimalLagBound	Exhaustive elimination of length 13 P2 words; exact forcing of minimal SS=2 donor lag to 11; unique donation phase endpointPhase p u 11; exact 6 additions and 5 subtractions
+Recaman.SS2MinimalLagBound	Recaman.HighSSEliminationGrandTheorem	Exhaustive elimination of length 9 P2 words; odd length law; minimal length 7 P2 words have ssCount <= 1; all minimal SS=2 windows have lag >= 11
+Recaman.HighSSEliminationGrandTheorem	Recaman.TwoSSWeightCapacity	Grand reduction theorem of capacity to low-SS and resolution of gate T6
+Recaman.TwoSSWeightCapacity	Recaman.ExtremalSSExclusion	Two-weight SS=2 capacity |U_{<=1}| + 2|U2| <= |D| and deficit hierarchy |U2| <= slack
+Recaman.ExtremalSSExclusion	Recaman.SS2MultiDonorDeficit	Strict exclusion of SS=2 donors from extremal supplies |U| = |D| and deficit-1 supplies
+Recaman.SS2MultiDonorDeficit	Recaman.TightSSZeroRigidity	Simultaneous multi-donor deficit |U| <= |D| - 2 and exclusion of two SS=2 donors from deficit-1 supply
+Recaman.TightSSZeroRigidity	Recaman.LowSSTwoSSJointCapacity	Clean Rigidity Principle: tight bottleneck avoiding subsets consist exclusively of ssCount = 0 windows
+Recaman.LowSSTwoSSJointCapacity	Recaman.SS2StrictSlackTheorem	Unified three-tier joint capacity bound |U_{<=1}| + |U_2| <= |D| for SS=2 lag < 15
+Recaman.SS2StrictSlackTheorem	Recaman.UniversalTwoSSDonationTheorem	Deletability forces strict deficit |U| <= |D| - 1 and saturated SS=2 supply exclusion
+Recaman.UniversalTwoSSDonationTheorem	Recaman.LagSevenTightObstruction	Grand unified synthesis of high-SS local donation and complete Hall preservation for p <= 11
+Recaman.LagSevenTightObstruction	Recaman.ElevenSSDonationClosure	Exhaustive classification of length 7 P2 words and lag 7 exclusion from tight size <= 2
+Recaman.ElevenSSDonationClosure	Recaman.SS2AASCollisionObstruction	Complete capacity closure and unconditional SS=2 local donation for p <= 11
+Recaman.SS2AASCollisionObstruction	Recaman.TwoSSTightAvoidanceTheorem	SS2-AAS collision obstruction: separation at least 12 and modular endpoint disjointness for lag < 15
+Recaman.TwoSSTightAvoidanceTheorem	Recaman.TightP2ParityRigidity	Grand synthesis of high-SS local donation: tight AAS forcing, neighborhood identity, and universal Hall preservation
+Recaman.TightP2ParityRigidity	Recaman.UniversalTightLagBound	P2 odd-subtractions parity rigidity, length 1/5 impossibility, and universal lag-3 AAS forcing for |D| <= 4
+Recaman.UniversalTightLagBound	Recaman.TightComponentSlackBound	Universal stratification of tight bottleneck lags by deficit capacity and excluded lag hierarchy
+Recaman.TightComponentSlackBound	Recaman.TwoSSSmallCapacityClosure	Period-dependent slack bounds on tight component sizes, lag-3 rigidity, and SS=2 donation for p <= 10
+Recaman.TwoSSSmallCapacityClosure	Recaman.TightBottleneckBound	Small-word and lag-3-dominated complete deletability and capacity closure for SS=2
+Recaman.TightBottleneckBound	Recaman.WrapObstruction	Universal size lower bounds on tight bottleneck subsets from member lags
+Recaman.WrapObstruction	Recaman.TwoSSAvoidTight	General wrap obstruction and localization of tight bottleneck subsets
+Recaman.TwoSSAvoidTight	Recaman.TwoSSLocalDonation	Tight subset avoidance and Hall preservation under subtraction deletion
+Recaman.TwoSSLocalDonation	Recaman.TwoSSTightDisjoint;Recaman.TwoSSPeriodicSupply;Recaman.TwoSSEndpoint;Recaman.LowSSPeriodicSupply	High-SS local donation: explicit exhibition of donated subtraction and mutual disjointness
+Recaman.TwoSSTightDisjoint	Recaman.TwoSSPeriodicSupply;Recaman.TwoSSEndpoint	Tight subset obstruction and strict neighborhood expansion for SS=2 windows
+Recaman.TwoSSPeriodicSupply	Recaman.TwoSSEndpoint;Recaman.LowSSPeriodicSupply	Periodic modular endpoint injectivity and joint capacity for SS=2 windows
+Recaman.TwoSSEndpoint	Recaman.EndpointRepetitionBudget;Recaman.LowSSEndpoint	Rigidity and clean-only earlier shared endpoints for SS=2 P2 windows
+Recaman.WrapSSBound	Recaman.PeriodicSupplyBound;Recaman.EndpointRepetitionBudget	Wrap-vs-SS periodic lag bound
+Recaman.SignedSupplyGap	Recaman.LeadingRunSupply	入れ子を仮定しないP2 lagの符号付き二次間隔と最適係数の証人
+Recaman.SharpPeriodicSupply	Recaman.LeadingRunSupply;Recaman.LagElevenPeriodic	sharp窓chargeの周期接着と既存短距離単射に対する一般容量拡張
+Recaman.LeadingRunSupply	Recaman.ShortPeriodicSupply	全lagの先頭A連続長下界、sharp窓、入れ子間隔、保護Sと非入れ子反例を実P2へ接着
+Recaman.RecurringCandidateDemandBirth	Recaman.EventualHighCorridorBirth;Recaman.RecurringCandidateBurst	birth分類とrecurring burstの最小composition境界
+Recaman.PeriodicCandidateNoGo	-	Recamán軌道から独立したPrelude-only有限算術核
+Recaman.ShortPeriodicSupply	-	実際の周期符号から7bit履歴を構成し、全periodでlag≤7の供給容量を証明
+Recaman.LagElevenSupply	-	min-lag-11の17型、U7非両立charge、型対の同時刻衝突と11bit完全分類
+Recaman.LagElevenPeriodic	Recaman.ShortPeriodicSupply;Recaman.LagElevenSupply	周期符号から17型への接着。phi7とphi11は単射で像は交わらずDへ。|U7∪U11min|≤|D|
+Recaman.SeededUseGapCounterexample	Recaman.Basic	任意seed上のexact Basic.step反例
+Recaman.SupplyAncestryCounterexample	Recaman.History	canonical prefixのfirst-occurrence APIだけを使う反例
+Recaman.DemandProvenanceCounterexample	Recaman.History	canonical prefixのsupplied-demand birth反例。first-occurrence APIだけを使う
+Recaman.MissingDensityDichotomy	Recaman.EventualHighCorridorSecondMissing	valuesThrough_lengthとcorridor_value_lawだけを使う二分定理
+Recaman.DescendingChain	Recaman.History	step recurrenceと履歴membershipだけを使うchain補題
+Recaman.HoleHopping	Recaman.DescendingChain	chain補題だけから導くhole-hopping規則とcomb sweep
+Recaman.PopupLock	Recaman.HoleHopping	pop-up後のk=3/4固定とその剰余算術
+Recaman.LevelTwoThree	Recaman.PopupLock	pop-up後にk=2へ戻る場合とk=2/3 ping-pongの算術
+Recaman.LockResidue	Recaman.PopupLock	剰余則（両ステップで(q,r)→(q±1,r−q)、r<qで剰余増加）と固定の予算（wrap条件v<13+7k、runによる候補閉塞）
+Recaman.PingPongRuns	Recaman.LockResidue	任意levelのping-pong対（剰余−(2p+3)）とrun（上側a m+k、下側a m−(m+k+1)）の候補形の補題
+Recaman.CombExit	Recaman.LevelTwoThree;Recaman.LockResidue	combの加算値i+v+2−sがk=2/3段の出口候補を塞ぎ、段が⌊(T−2)/3⌋対以上続くこと
+Recaman.EventualEscape	Recaman.History	無条件のeventual escapeとfree-cutoff floorの意味監査
+Recaman.SeededSurvivalCounterexample	Recaman.Basic	density・parity・one-useを満たすexact seeded survival-ratio反例
+Recaman.SeededReplay	Recaman.Basic	任意finite-prefix survival反例族の独立した証明層
+Recaman.SeededReplayWrap	Recaman.SeededReplay	任意finite-prefix survival反例族の独立した証明層
+Recaman.SurvivalCountermodelArithmetic	Recaman.Basic	任意finite-prefix survival反例族の独立した証明層
+Recaman.SurvivalCountermodelReplay	Recaman.SurvivalCountermodelArithmetic;Recaman.SeededReplay	任意finite-prefix survival反例族の独立した証明層
+Recaman.SurvivalCountermodelResidue	Recaman.SurvivalCountermodelReplay	任意finite-prefix survival反例族の独立した証明層
+Recaman.SurvivalCountermodelSeed	Recaman.SurvivalCountermodelResidue	任意finite-prefix survival反例族の独立した証明層
+Recaman.SurvivalCountermodelResources	Recaman.SurvivalCountermodelReplay	任意finite-prefix survival反例族の独立した証明層
+Recaman.FinitePrefixSurvivalCountermodel	Recaman.SurvivalCountermodelSeed;Recaman.SurvivalCountermodelResources;Recaman.SeededReplayWrap	任意finite-prefix survival反例族の独立した証明層
+Recaman.PermanentAboveClock112Exclusion	Recaman.PermanentAboveClock112FirstOccurrence;Recaman.DeepNineteenTraceCertificate	clock112のno-low補題とkernel認証19@99734を結合してreplay clock112を排除
+Recaman.BoundedExcessSupply	Recaman.SignedSupplyGap	Bounded-excess multiplicity and sharp boundary witnesses
+Recaman.BoundedExcessReservoir	Recaman.LeadingRunSupply	Bounded-excess middle-block density and fixed-charge failure
+Recaman.SupplyReservoirGeometry	Recaman.BoundedExcessSupply;Recaman.BoundedExcessReservoir	Integer-line reservoir disjointness from exact runs and P2 bands
+Recaman.BoundedPeriodicSupply	Recaman.SupplyReservoirGeometry;Recaman.SharpPeriodicSupply	Periodic capacity extension using disjoint free-S reservoirs
+Recaman.NestedReservoirCapacity	Recaman.BoundedPeriodicSupply	Explicit rank charges remove the quadratic multiplicity threshold
+Recaman.ShortReservoirCapacity	Recaman.NestedReservoirCapacity	Concrete complete lag-at-most-eleven union and nonsharp capacity specialization
+Recaman.ParitySupply	Recaman.LeadingRunSupply	Exact all-lag P2 classification with one fixed-A parity
+Recaman.ParityPeriodicSupply	Recaman.ParitySupply;Recaman.SharpPeriodicSupply	All-lag periodic capacity with the explicit parity restriction
+Recaman.LocalParitySupply	Recaman.ParitySupply	Local parity supply classification and periodic short-map compatibility
+Recaman.LocalParityPeriodic	Recaman.LocalParitySupply;Recaman.ParityPeriodicSupply	Local parity supply classification and periodic short-map compatibility
+Recaman.ShortLocalParityCapacity	Recaman.LocalParityPeriodic;Recaman.ShortReservoirCapacity	Local parity supply classification and periodic short-map compatibility
+Recaman.SSFreeSupply	Recaman.LocalParitySupply	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.CanonicalSSFreeSupply	Recaman.SSFreeSupply;Recaman.NoDoubleAdditionRun	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.SSFreePeriodicSupply	Recaman.SSFreeSupply;Recaman.ShortLocalParityCapacity	SS-free supply language, canonical recurrence bridge, and periodic specialization
+Recaman.FiniteP2Semantics	Recaman.CanonicalSSFreeSupply	Exact prefix-key equivalence and actual height-one blocker semantics
+Recaman.OneSSChargeCounterexample	Recaman.ShortLocalParityCapacity	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CanonicalOneSSWindow	Recaman.CanonicalSSFreeSupply	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CanonicalOneSSCounterexample	Recaman.OneSSChargeCounterexample;Recaman.FiniteP2Semantics;Recaman.CanonicalOneSSWindow	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.CleanPeriodBound	Recaman.LocalParityPeriodic	Canonical one-SS counterexample or sharp all-period clean witness bound
+Recaman.ShortBlockerRigidity	Recaman.FiniteP2Semantics;Recaman.SignedSupplyGap	Sharp clock-dependent non-P2 blocker bound
+Recaman.PositivePeriodLag	Recaman.ShortBlockerRigidity;Recaman.SharpPeriodicSupply	Positive-period collision lag bound without fixed-lag assumptions
+Recaman.EventualPeriodicSupply	Recaman.PositivePeriodLag;Recaman.OrbitBounds	Canonical eventual-periodic positive-drift supply bridge with finite history discharged
+Recaman.PeriodicTailRepresentation	Recaman.EventualPeriodicSupply	Natural eventual-periodicity representation and complete P2 cutoff
+Recaman.NonpositivePeriodDrift	Recaman.PeriodicTailRepresentation	All nonpositive drift cases ruled out for arbitrary nonnegative weighted walks
+Recaman.FiniteSeedPeriodicSupply	Recaman.NonpositivePeriodDrift;Recaman.SeededReplay	Full finite-state eventual-periodic supply reduction at arbitrary absolute clock
+Recaman.OneSSGapAlgebra	Recaman.NonpositivePeriodDrift	Exact gap encoding and all-parameter one-SS P2 family algebra; exhaustion/minimality paper-only
+Recaman.OneSSMultiplicity	Recaman.OneSSGapAlgebra	Unbounded one-SS demand in one finite NoSAAS history with minimum P2 and current-A certificates
+Recaman.OneSSSeededB	Recaman.FiniteSeedPeriodicSupply;Recaman.OneSSMultiplicity	Exact finite-state family B counterexample with minimal P2, NoSAAS and SS1
+Recaman.SSGapBudget	Recaman.OneSSMultiplicity	All-SS gap budget; P2 leading A-run is ≤ssCount+1 when SS≥1
+Recaman.LowSSEndpoint	Recaman.OneSSMultiplicity	Suffix mass and moment bounds, S-ended prefix normalization, and all-lag common-endpoint rigidity
+Recaman.LowSSPeriodicSupply	Recaman.LowSSEndpoint;Recaman.SharpPeriodicSupply	One joint capacity theorem for every low-SS P2 witness, without NoSAAS or minimum-lag premises
+Recaman.CanonicalLowSSBoundary	Recaman.LowSSEndpoint;Recaman.FiniteP2Semantics	Canonical step115 refutes S-ended prefix normalization at two SS
+Recaman.EndpointRepetitionBudget	Recaman.LowSSEndpoint	Two SS per shared-endpoint repetition and an all-parameter sharp common-history family
+Recaman.TwoSSLeadingSibling	Recaman.CanonicalLowSSBoundary	Minimum windows cannot start AAS; leading A-run ≥3 forces a clean lag-3 sibling. Canonical 114 is an instance
+Recaman.OnePerRun	Recaman.TwoSSLeadingSibling;Recaman.SSFreeSupply	Nested k=1 one-per-run; SS-gap 2 is SSSS; NoSAAS gap 4 has ssCount≥3; gap 6 is SSAAAASS
+Recaman.NoSSMassOne	Recaman.OnePerRun	NoSS mass-1 bound and classification; SA-prefixed minWord family; reverse-nested extra mass/moment without SS hypothesis
+Recaman.OnePerRunCounterexample	Recaman.NoSSMassOne	Equality-family glue of minWord to mass-0 moment-(-1) SS=2 tails; smallest pair is two min P2 SS=2 windows at consecutive A times. Refutes unrestricted one-per-run on free histories
+Recaman.PeriodicSupplyBound	Recaman.LeadingRunSupply;Recaman.ParitySupply	正符号和の周期語に対する後退走査のdrift停止則。任意lagの供給探索をd<=p(p+1)の有限検査へ落とす。周期12のlongLagControlで仮説集合の非空性を確認

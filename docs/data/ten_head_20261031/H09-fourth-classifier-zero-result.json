@@ -1,0 +1,25 @@
+{
+  "tag": "H09-fourth-classifier-zero",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FourthClockClassifier.lean"
+  ],
+  "started_jst": "2026-10-31T06:40:01.554846+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthClockClassifier.lean": "4d8c3b909421e92a7dea807d9a304d0c9fb301239dda44f25f1474ae7974682f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "07992b1eca301882a68737c123eb8b9930f6e6c9f8291f132666248f5733c12d",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7449682911392301,
+  "cpu_seconds": 0.6857949999999999,
+  "finished_jst": "2026-10-31T06:40:02.299754+09:00"
+}

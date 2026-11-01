@@ -1,0 +1,181 @@
+Module graph audit: Recaman root reaches 463 of 463 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 464 entries, 236 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 92 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+ℹ [278/466] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [279/466] Replayed Recaman.TwoLagSevenPhaseConflict
+info: Recaman/TwoLagSevenPhaseConflict.lean:170:0: 'Recaman.TwoLagSevenPhaseConflict.w1_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:171:0: 'Recaman.TwoLagSevenPhaseConflict.w2_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:172:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_intersection_le_one' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:173:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_union_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:174:0: 'Recaman.TwoLagSevenPhaseConflict.past_w1_w2_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:175:0: 'Recaman.TwoLagSevenPhaseConflict.past_w2_w1_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:176:0: 'Recaman.TwoLagSevenPhaseConflict.two_lag7_tight_subset_impossible' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:177:0: 'Recaman.TwoLagSevenPhaseConflict.grand_two_lag7_phase_conflict_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [280/466] Replayed Recaman.LagSevenDistanceSeparationRigidity
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:402:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:403:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:404:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:405:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:406:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:407:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:408:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:409:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:410:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:411:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:412:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:413:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:414:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:415:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:416:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:417:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:418:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_distance_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:419:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_stream_distance_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:420:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_non_consecutive_distance_ge_ten' depends on axioms: [propext,
+ Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:421:0: 'Recaman.LagSevenDistanceSeparationRigidity.grand_lag7_distance_separation_rigidity_synthesis' depends on axioms: [propext,
+ Quot.sound]
+⚠ [411/466] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [414/466] Replayed Recaman.FourEventPruned
+warning: Recaman/FourEventPruned.lean:69:56: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [budgetStepA, fastStepA, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [421/466] Replayed Recaman.BlockSuffixSpectrum
+warning: Recaman/BlockSuffixSpectrum.lean:130:33: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [440/466] Replayed Recaman.InitialSTargetOldPair
+warning: Recaman/InitialSTargetOldPair.lean:114:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [442/466] Replayed Recaman.InitialSTargetTwoShapes
+warning: Recaman/InitialSTargetTwoShapes.lean:28:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:28:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:43:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:43:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:61:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:61:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [443/466] Replayed Recaman.InitialSTargetCountCharge
+warning: Recaman/InitialSTargetCountCharge.lean:80:19: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetCountCharge.lean:80:47: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [449/466] Replayed Recaman.FourRunSupplyBudget
+warning: Recaman/FourRunSupplyBudget.lean:50:22: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rs, runWord, cntF_append, cntF_replicate_S, cntF_A, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [450/466] Replayed Recaman.FourRunTargetArea
+warning: Recaman/FourRunTargetArea.lean:181:5: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [452/466] Replayed Recaman.FourRunSupplySeventeen
+warning: Recaman/FourRunSupplySeventeen.lean:58:22: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rs, runWord, cntF_append, cntF_replicate_S, cntF_A, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [460/466] Replayed Recaman.FinalSTargetWidth
+warning: Recaman/FinalSTargetWidth.lean:10:49: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/FinalSTargetWidth.lean:27:49: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [462/466] Replayed Recaman.TerminalOldClock
+warning: Recaman/TerminalOldClock.lean:17:55: Variable name `hV` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hV
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [464/466] Built Recaman.TerminalFourthBase (281ms)
+✔ [465/466] Built Recaman (366ms)
+Build completed successfully (466 jobs).
+Axiom audit: 3053 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.

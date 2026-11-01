@@ -1,0 +1,61 @@
+"""Bound only this job's process group; save start/source/output/resource evidence."""
+from pathlib import Path
+from zoneinfo import ZoneInfo
+import argparse, datetime, hashlib, json, os, resource, signal, subprocess, time
+
+ap = argparse.ArgumentParser()
+ap.add_argument('--tag', required=True)
+ap.add_argument('--wall', type=int, required=True)
+ap.add_argument('--cpu', type=int, required=True)
+ap.add_argument('command', nargs=argparse.REMAINDER)
+args = ap.parse_args()
+base = Path(__file__).parent
+cmd = args.command[1:] if args.command[:1] == ['--'] else args.command
+start = time.monotonic()
+now = lambda: datetime.datetime.now(ZoneInfo('Asia/Tokyo')).isoformat()
+meta = {'tag': args.tag, 'started_jst': now(), 'argv': cmd,
+        'wall_cap_seconds': args.wall, 'cpu_cap_seconds': args.cpu,
+        'rss_cap_kib': 4*1024*1024,
+        'source_sha256': {str(Path(c)): hashlib.sha256(Path(c).read_bytes()).hexdigest()
+                          for c in cmd if Path(c).is_file()}}
+(base/(args.tag+'-start.json')).write_text(json.dumps(meta, indent=2)+'\n')
+def limit():
+    resource.setrlimit(resource.RLIMIT_CPU, (args.cpu, args.cpu+1))
+log = (base/(args.tag+'.log')).open('w')
+timed = ['/usr/bin/time', '-lp', '-o', str(base/(args.tag+'.time'))]+cmd
+p = subprocess.Popen(timed, stdout=log, stderr=subprocess.STDOUT,
+                     start_new_session=True, preexec_fn=limit)
+meta['pid'] = p.pid
+(base/(args.tag+'-start.json')).write_text(json.dumps(meta, indent=2)+'\n')
+peak = 0
+reason = 'completed'
+while p.poll() is None:
+    time.sleep(0.5)
+    records = []
+    for line in subprocess.check_output(['ps', '-axo', 'pid=,ppid=,rss='], text=True).splitlines():
+        pid, parent, rss = map(int, line.split())
+        records.append((pid, parent, rss))
+    descendants = {p.pid}
+    for _ in range(8):
+        descendants |= {pid for pid, parent, _ in records if parent in descendants}
+    rss = sum(r for pid, _, r in records if pid in descendants)
+    peak = max(peak, rss)
+    clock = datetime.datetime.now(ZoneInfo('Asia/Tokyo'))
+    if rss > meta['rss_cap_kib'] or time.monotonic()-start > args.wall or (clock.hour, clock.minute) >= (7, 45):
+        reason = 'RSS cap' if rss > meta['rss_cap_kib'] else 'wall/deadline cap'
+        os.killpg(p.pid, signal.SIGTERM)
+        break
+try:
+    p.wait(timeout=3)
+except subprocess.TimeoutExpired:
+    os.killpg(p.pid, signal.SIGKILL)
+    p.wait()
+log.close()
+if reason == 'completed' and p.returncode != 0:
+    reason = 'process exited '+str(p.returncode)
+out = dict(meta, finished_jst=now(), pid=p.pid, exit_code=p.returncode,
+           reason=reason, peak_sampled_process_group_rss_kib=peak,
+           wall_seconds=time.monotonic()-start)
+(base/(args.tag+'-result.json')).write_text(json.dumps(out, indent=2)+'\n')
+print(json.dumps(out))
+raise SystemExit(0 if p.returncode == 0 else 1)

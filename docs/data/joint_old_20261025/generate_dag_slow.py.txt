@@ -1,0 +1,79 @@
+"""Generate a kernel proof DAG using local definitions, no Table.get or packed payload."""
+from pathlib import Path
+import argparse, hashlib, json, re
+
+BASE = Path(__file__).parent
+ap = argparse.ArgumentParser()
+ap.add_argument('--bench', action='store_true')
+args = ap.parse_args()
+path = BASE.parent/'c1_four_20261024/macro-certificate.json'
+data = json.loads(path.read_text())
+ind = json.loads((path.parent/'macro-independent.json').read_text())
+assert data['graph_exhausted'] and data['highest_A'] == 10 and ind['all_states_and_edges_match']
+rs = data['rows']
+order = sorted(range(len(rs)), key=lambda i: (-rs[i]['state'][1], i))
+if args.bench:
+    selected = set(order[:256])
+    for a in (8, 9):
+        selected.update([i for i in order if rs[i]['state'][1] == a and any(t is not None for t in rs[i]['edges'])][:16])
+    todo = list(selected)
+    while todo:
+        for t in rs[todo.pop()]['edges']:
+            if t is not None and t not in selected:
+                selected.add(t)
+                todo.append(t)
+    order = [i for i in order if i in selected]
+
+def word(w):
+    return '['+','.join('true' if c == 'A' else 'false' for c in w)+']'
+
+lines = ['/- Generated proof DAG. Numeric input SHA256 '+hashlib.sha256(path.read_bytes()).hexdigest()+'. -/',
+         'import Recaman.FourEventProof',
+         'set_option maxRecDepth 100000', 'set_option maxHeartbeats 3000000', 'set_option Elab.async false',
+         'namespace Recaman.FourEventData', 'open Recaman.FourNonsuppliedData Recaman.FourEventProof', 'open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction', 'open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic', '']
+done = set()
+for ix, i in enumerate(order):
+    w, a, ss, free = rs[i]['state']
+    children = [t for t in rs[i]['edges'] if t is not None]
+    assert all(t in done and rs[t]['state'][1] == a+1 for t in children)
+    lines += [f'private def s_{i} : State := ⟨{word(w)},{a},{ss},{free}⟩',
+              (f'private theorem c_{i} : Checked s_{i} := by' if i else 'theorem initial_checked : Checked ⟨[],0,0,0⟩ := by'),
+              f'  apply checked_of_children s_{i} ['+','.join('s_'+str(t) for t in children)+']',
+              '  · decide', '  · decide', '  · intro t ht']
+    if not children:
+        lines += ['    exact False.elim (List.not_mem_nil ht)']
+    else:
+        lines += ['    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht',
+                  '    rcases ht with '+' | '.join('rfl' for _ in children)]
+        lines += ['    · exact c_'+str(t) for t in children]
+    if ix % 256 == 0:
+        lines += [f'#check c_{i}']
+    lines += ['']
+    done.add(i)
+if not args.bench:
+    assert 0 in done
+    source = Path('Recaman/FourEventProof.lean').read_text()
+    exports = [('excursion_word_of_initial','four_nonsupplied_excursion_word'),
+               ('excursion_word_from_zero_of_initial','four_nonsupplied_excursion_word_from_zero'),
+               ('depth_from_zero_of_initial','four_nonsupplied_excursion_depth'),
+               ('area_from_zero_of_initial','four_nonsupplied_area_from_zero'),
+               ('no_old_window_of_initial','four_nonsupplied_no_old_window'),
+               ('area_int_of_initial','four_nonsupplied_area_int')]
+    for old, name in exports:
+        block = re.search(r'(?ms)^theorem '+old+r'\b.*?(?=\n(?:theorem|open Classical in|end Recaman)|\Z)', source).group(0)
+        block = block.replace('theorem '+old, 'theorem '+name, 1)
+        block = block.replace('(initial : Checked ⟨[],0,0,0⟩)\n    ', '', 1)
+        block = re.sub(r'\binitial\b', 'initial_checked', block)
+        if old == 'area_int_of_initial':
+            lines += ['open Classical in']
+        lines += [block, '']
+lines += ['end Recaman.FourEventData']
+out = BASE/'dag_bench.lean' if args.bench else Path('Recaman/FourEventData.lean')
+out.write_text('\n'.join(lines)+'\n')
+meta = {'output': str(out), 'nodes': len(order), 'source_bytes': out.stat().st_size,
+        'source_sha256': hashlib.sha256(out.read_bytes()).hexdigest(),
+        'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'old_numeric_input_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+        'closure_verified_by_generator': True, 'kernel_success': False}
+out.with_suffix('.generation.json').write_text(json.dumps(meta, indent=2)+'\n')
+print(json.dumps(meta))

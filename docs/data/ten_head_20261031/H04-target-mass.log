@@ -1,0 +1,72 @@
+Recaman/MomentTargetMass.lean:10:68: warning: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/MomentTargetMass.lean:66:26: error: don't know how to synthesize placeholder
+context:
+z : List Bool
+B : Int
+hmz : mass z = 0
+haz : areaW z = -B
+hlo : 4 * ↑(cntF z) + 6 ≤ B
+hhi : B ≤ 6 * ↑(cntF z) + 4
+v T j q i : Nat
+hv : 1 ≤ v
+hq : 1 ≤ q
+hqv : q ≤ v
+hi : i < T
+hband : T ≤ i + j
+hR : 5 ≤ j + 1
+hlm : mass (List.replicate q false ++ List.replicate i true) = 1
+hla : areaW (List.replicate q false ++ List.replicate i true) = 0
+hq1 : q = 1
+hi2 : i = 2
+hkz : runKey z = -2 * B
+hvv : v = 1 ∨ v = 2 ∨ v = 3
+hu : BlockWord [true]
+hne : [true] ≠ []
+hm : mass ([true] ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1
+ha : areaW ([true] ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hC : 1 ≤ mass [true]
+hm' : mass [true] + 0 + -↑v + ↑T + -↑j = 1
+hk : runKey [true] + -2 * B + 4 * mass [true] * ↑(cntF z) + 4 * ↑v * (mass [true] + 0) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+hkey : runKey [true] = 2 * B - 4 * mass [true] * (↑(cntF z) + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hl : mass [true] * (mass [true] + 1) ≤ 2 * areaW [true] + 2
+hlow : -2 ≤ runKey [true]
+hc : mass [true] ≤ 2 ∧ ↑v ≤ 3
+⊢ Int
+Recaman/MomentTargetMass.lean:66:22: error: don't know how to synthesize placeholder for argument `w`
+context:
+z : List Bool
+B : Int
+hmz : mass z = 0
+haz : areaW z = -B
+hlo : 4 * ↑(cntF z) + 6 ≤ B
+hhi : B ≤ 6 * ↑(cntF z) + 4
+v T j q i : Nat
+hv : 1 ≤ v
+hq : 1 ≤ q
+hqv : q ≤ v
+hi : i < T
+hband : T ≤ i + j
+hR : 5 ≤ j + 1
+hlm : mass (List.replicate q false ++ List.replicate i true) = 1
+hla : areaW (List.replicate q false ++ List.replicate i true) = 0
+hq1 : q = 1
+hi2 : i = 2
+hkz : runKey z = -2 * B
+hvv : v = 1 ∨ v = 2 ∨ v = 3
+hu : BlockWord [true]
+hne : [true] ≠ []
+hm : mass ([true] ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1
+ha : areaW ([true] ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hC : 1 ≤ mass [true]
+hm' : mass [true] + 0 + -↑v + ↑T + -↑j = 1
+hk : runKey [true] + -2 * B + 4 * mass [true] * ↑(cntF z) + 4 * ↑v * (mass [true] + 0) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+hkey : runKey [true] = 2 * B - 4 * mass [true] * (↑(cntF z) + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hl : mass [true] * (mass [true] + 1) ≤ 2 * areaW [true] + 2
+hlow : -2 ≤ runKey [true]
+hc : mass [true] ≤ 2 ∧ ↑v ≤ 3
+⊢ List Bool

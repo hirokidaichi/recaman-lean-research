@@ -1,0 +1,3 @@
+# Postprocessing hypothesis fixed before evaluation
+
+Test the sound coarser originalfree lower bound F1 + max(0,L-1-local2) + max(0,T-1-local3), where F1=M-min(2,M-2), and local sets at h39 dominate all h (proposed word-only S-prefix A-budget dominance, not EndN erasure). Read already frozen initialS discovery/holdout outputs; no model existence asserted. This is a posthoc diagnostic, not new independent holdout. Evaluate critical pairs (R,A)=(5,12),(5,14),(6,14),(7,16), and other pairs for comparison. Worker cap2CPU/4wall, same no-child controller, cumulative math<=20s, exact source/argv frozen. A false simple bound is an auxiliary failure, not C1 refutation; keep stronger original envelope unchanged.

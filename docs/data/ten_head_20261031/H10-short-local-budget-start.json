@@ -1,0 +1,18 @@
+{
+  "tag": "H10-short-local-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ShortGapLocalBudget.lean"
+  ],
+  "started_jst": "2026-10-31T06:51:01.051408+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortGapLocalBudget.lean": "682e90a514747982366830531fbd2ab982d0ebf9530be8a65c5eae64773f1a16"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

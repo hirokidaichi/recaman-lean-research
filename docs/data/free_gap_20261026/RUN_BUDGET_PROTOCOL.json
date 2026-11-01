@@ -1,0 +1,18 @@
+{
+  "card": "H-20261026-04",
+  "frozen_jst": "2026-10-26T06:38:05.592759+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/run_budget_discovery.py": "5931e5c7773ea8174e4267f174aa4796c4f46cf721607c5eb503d687ddc39dd4",
+    "docs/data/free_gap_20261026/run_budget_holdout.py": "a4cf7c0268d10cab2a6457e376401449c7c69608f48eacfd789d09019b4aad28",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "worker_cpu_total_cap_seconds": 20,
+  "per_worker_cpu_seconds": 10,
+  "per_worker_wall_seconds": 15,
+  "controller_cpu_reserve_seconds": 2,
+  "discovery": "all words0..8/K0..12, forward windows and all negative-key suffix roots",
+  "holdout": "128 fixed RLEs with0/1/4/17 length incl duplicate/empty, K0/1/3/17/31 reversed windows; sharp allS9 controls",
+  "scope": "negative-key roots and supplied count <= chosen constant-block partition length; no claim that old runs cannot be reused across later mixed-sign continuations",
+  "stop": "any violation/timeout; at most one mathematical repair, no horizon-only extension"
+}

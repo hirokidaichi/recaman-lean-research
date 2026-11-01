@@ -1,0 +1,66 @@
+import Recaman.ThreeRunSupplyBudget
+
+namespace Recaman.SeparatorSupplyReset
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.PrefixMassBarrier
+open Recaman.RunSupplyKeys Recaman.RunSupplyBudget Recaman.BlockOldRay Recaman.ThreeRunSupplyBudget
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+/-- An explicit total A budget makes a sufficiently long S separator erase
+both the local earlier tail and every old BlockWord start. The endpoint sign
+is part of EndN on both sides, never inferred from a possible window. -/
+theorem endable_budget_separator_iff (f : Nat → Bool) (n a m B : Nat) (u x : List Bool)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hword : seg f n (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    EndN f 0 (n+(u.length+m+x.length)) ↔
+      EndN f (n+u.length) (n+(u.length+m+x.length)) := by
+  have hu := ones_bounds u
+  have hx := ones_bounds x
+  have hmx := mass_eq x
+  have hpos : 0<u.length+m+x.length := by omega
+  have hbarrier : mass (List.replicate m false++x)+ones u≤0 := by
+    rw [mass_append,mass_rep_false]
+    omega
+  have herase := localSupply_erase_prefix u (List.replicate m false++x) hbarrier
+  have hsuffix : seg f (n+u.length) (m+x.length)=List.replicate m false++x := by
+    have hd := seg_drop f n (u.length+m+x.length) u.length (by omega)
+    rw [hword,List.drop_append,List.drop_length,Nat.sub_self,List.drop_zero,List.nil_append] at hd
+    simpa only [show u.length+m+x.length-u.length=m+x.length by omega] using hd.symm
+  constructor
+  · intro he
+    obtain ⟨hA,t,l,ht0,htl,hwin⟩ := he
+    by_cases htn : t<n
+    · have hwin' : Win f t (n+(u.length+m+x.length)-t) := by
+        have heq : n+(u.length+m+x.length)-t=l := by omega
+        simpa only [heq] using hwin
+      have hc := old_window_count_barrier f n a t (n+(u.length+m+x.length)) hw hpre htn (by omega) hwin'
+      rw [Nat.add_sub_cancel_left,hword] at hc
+      simp only [ones_append,ones_replicate_S,Int.natCast_add,Int.zero_add,Int.add_zero] at hc
+      omega
+    · have heLocal : EndN f n (n+(u.length+m+x.length)) :=
+        ⟨hA,t,l,by omega,htl,hwin⟩
+      have hl := (localSupply_seg_iff f n (n+(u.length+m+x.length)) (by omega) hA).mpr heLocal
+      rw [Nat.add_sub_cancel_left,hword,herase] at hl
+      apply (localSupply_seg_iff f (n+u.length) (n+(u.length+m+x.length)) (by omega) hA).mp
+      rw [show n+(u.length+m+x.length)-(n+u.length)=m+x.length by omega,hsuffix]
+      exact hl
+  · intro he
+    exact end_mono f 0 (n+u.length) _ (Nat.zero_le _) he
+
+open Classical in
+theorem endable_budget_separator_int (e : Int → Bool) (p : Int) (n a m B : Nat)
+    (u x : List Bool) {w : List Bool} (hw : BlockWord w)
+    (hpre : segment e p n=w++List.replicate a true)
+    (hword : segment e (p+(n : Int)) (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    Endable e p (p+((n+(u.length+m+x.length) : Nat) : Int)) ↔
+      Endable e (p+((n+u.length : Nat) : Int)) (p+((n+(u.length+m+x.length) : Nat) : Int)) := by
+  rw [segment_seg e p p 0 (by simp)] at hpre
+  rw [segment_seg e p (p+(n : Int)) n rfl] at hword
+  rw [endable_iff e p p _ 0 (n+(u.length+m+x.length)) (by simp) rfl,
+    endable_iff e p (p+((n+u.length : Nat) : Int)) _ (n+u.length)
+      (n+(u.length+m+x.length)) rfl rfl]
+  exact endable_budget_separator_iff (fun i => e (p+(i : Int))) n a m B u x hw hpre hword hB hbudget hm
+
+end Recaman.SeparatorSupplyReset

@@ -1,0 +1,85 @@
+import Recaman.RunSupplyBudget
+
+namespace Recaman.BlockOldRay
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.PrefixMassBarrier
+open Recaman.RunSupplyKeys Recaman.TwoRunSupply Recaman.RunSupplyBudget
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private def atomWords : List (List Bool) :=
+  [[true],[false,true,true,true],[false,false,true,true,true,true,false,true,true,true]]
+
+private def atomFacts (v : List Bool) : Prop :=
+  -8≤runKey v ∧ 0≤runKey v+4*(cntF v : Int) ∧ -2≤mass v ∧
+  (mass v<0 → runKey v≤0) ∧ (mass v=-2 → runKey v=-8 ∧ cntF v=2)
+
+private theorem atom_prefix_facts (B : List Bool) (hB : B∈atomWords) (k : Nat) :
+    atomFacts (B.take k) := by
+  have hchecked : atomWords.all (fun B => (List.range (B.length+1)).all
+      (fun k => decide (atomFacts (B.take k))))=true := by decide
+  have get (q : Nat) (hq : q≤B.length) : atomFacts (B.take q) := by
+    have h := List.all_eq_true.mp (List.all_eq_true.mp hchecked B hB) q (List.mem_range.mpr (by omega))
+    exact of_decide_eq_true h
+  by_cases hk : k≤B.length
+  · exact get k hk
+  · have h := get B.length (Nat.le_refl _)
+    rw [List.take_of_length_le (Nat.le_refl _)] at h
+    rw [List.take_of_length_le (by omega)]
+    exact h
+
+theorem runKey_append (u v : List Bool) :
+    runKey (u++v)=runKey u+runKey v+4*mass u*(cntF v : Int) := by
+  have hc := cntF_int v
+  have hm := mass_eq v
+  simp only [runKey,areaW_append,mass_append]
+  grind
+
+private theorem prefix_append_bounds (w B : List Bool) (hw : BlockWord w)
+    (hB : B∈atomWords)
+    (ih : ∀ k, -8≤runKey (w.take k) ∧ (mass (w.take k)<0 → runKey (w.take k)≤0)) :
+    ∀ k, -8≤runKey ((w++B).take k) ∧
+      (mass ((w++B).take k)<0 → runKey ((w++B).take k)≤0) := by
+  intro k
+  by_cases hk : k≤w.length
+  · rw [List.take_append_of_le_length hk]
+    exact ih k
+  · rw [List.take_append,List.take_of_length_le (by omega)]
+    let v := B.take (k-w.length)
+    change -8≤runKey (w++v) ∧ (mass (w++v)<0 → runKey (w++v)≤0)
+    obtain ⟨hlo,hplus,hmv,hneg,hmin⟩ := atom_prefix_facts B hB (k-w.length)
+    change -8≤runKey v at hlo
+    change 0≤runKey v+4*(cntF v : Int) at hplus
+    change -2≤mass v at hmv
+    change mass v<0 → runKey v≤0 at hneg
+    change mass v=-2 → runKey v=-8 ∧ cntF v=2 at hmin
+    by_cases hw0 : w=[]
+    · subst w
+      simpa only [List.nil_append] using And.intro hlo hneg
+    · have hm := (sufPos_block hw [] w rfl hw0).1
+      have hlow := block_area_quadratic_lower hw
+      have hP : -2≤runKey w := by unfold runKey; omega
+      have hp := Int.mul_nonneg (show 0≤mass w-1 by omega) (show 0≤(cntF v : Int) by omega)
+      have hid : (mass w-1)*(cntF v : Int)=mass w*(cntF v : Int)-(cntF v : Int) := by grind
+      rw [hid] at hp
+      constructor
+      · rw [runKey_append]
+        omega
+      · intro hnegative
+        rw [mass_append] at hnegative
+        have hm1 : mass w=1 := by omega
+        have hmv2 : mass v=-2 := by omega
+        obtain ⟨hPv,hSv⟩ := hmin hmv2
+        have hPw : runKey w=0 := by rw [block_mass_one hw hm1]; decide
+        rw [runKey_append,hPw,hm1,hPv,hSv]
+        decide
+
+/-- Uniform prefix-area controls for the actual BlockWord language. -/
+theorem block_prefix_key_bounds {w : List Bool} (hw : BlockWord w) :
+    ∀ k, -8≤runKey (w.take k) ∧ (mass (w.take k)<0 → runKey (w.take k)≤0) := by
+  induction hw with
+  | nil => intro k; simp [runKey,areaW,mass]
+  | free hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+  | aas hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+  | triple hw ih => exact prefix_append_bounds _ _ hw (by simp [atomWords]) ih
+
+end Recaman.BlockOldRay

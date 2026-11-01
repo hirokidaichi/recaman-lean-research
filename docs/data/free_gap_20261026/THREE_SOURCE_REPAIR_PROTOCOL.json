@@ -1,0 +1,14 @@
+{
+  "repair": 1,
+  "scope": "The <=2 source count was refuted. <=3 is the only allowed repair; discovery already found two four-clock cases, extract exact witness within the same predeclared domain, do not increase range.",
+  "sources": {
+    "docs/data/free_gap_20261026/three_source_discovery.py": "2f360da21d06f92dc30fac30b5e949c0eef12d951bda998d951e3afa495f0208",
+    "docs/data/free_gap_20261026/three_source_replay.py": "d93eefd073104c683dd0c6dc0d3661bdf313368ebeb2f12c63f2449e546481a3"
+  },
+  "worker_cpu_cap_seconds": 3,
+  "wall_seconds": 5,
+  "total_source_unit_cpu_cap_remains": 10,
+  "independent_verifier": "literal windows, not quadratic formulas; exact counterexample replay only",
+  "replay_worker_cpu_cap_seconds": 2,
+  "replay_wall_seconds": 4
+}

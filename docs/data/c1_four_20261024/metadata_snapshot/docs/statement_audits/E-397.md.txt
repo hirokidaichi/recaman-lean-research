@@ -1,0 +1,37 @@
+# Statement audit: E-397
+
+- artifact: `Recaman/BlockSuffixPositivity.lean`
+- reviewer: Codex, 2026-10-24 JST（形式化後の別pass。人間レビュー未）
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.BlockSuffixPositivity.localSupply_even_followup
+
+```lean
+(m k j : Nat) (hk : 1≤k) : Recaman.ThreeNonsuppliedData.localSupply (evenFollowWord m k j)=false
+```
+
+1. no — 明示List Boolの無制限runと全local P2 suffixを扱う補助結果。
+2. no — k≥1だけ。local false/未知rank/有限cutoffを仮定しない。
+3. no — 全suffix始点を4種に分解し、非線形area/massから各窓を排除。
+
+## Recaman.BlockSuffixPositivity.no_endable_even_followup
+
+```lean
+(f : Nat → Bool) (n a m k j : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hk : 1≤k) (hm : 4*k+1≤m) (hw : seg f n (m+2*k+(k-1)+1+j)=evenFollowWord m k j) : ¬EndN f 0 (n+(m+2*k+(k-1)+1+j))
+```
+
+1. yes — 同じfの実tail/元0 EndN/任意padded prefix。
+2. no — k≥1、m≥4k+1と明示run形。EndN否定やQを仮定しない。十分閾値で最良性は未主張。
+3. no — 実old/new始点を分け、local全suffixとold個数障壁を合成。
+
+## Recaman.BlockSuffixPositivity.one_addition_after_manyS_evenA
+
+```lean
+(f : Nat → Bool) (n a m k K : Nat) {β : List Bool} (hβ : BlockWord β) (hseg : seg f 0 n=β++List.replicate a true) (hk : 1≤k) (hm : 4*k+1≤m) (hw : seg f n (m+2*k)=List.replicate m false++List.replicate (2*k) true) (hfree : cN (fun u => f u=true ∧ ¬EndN f 0 u) (n+(m+2*k)) K=0) : cN (fun u => f u=true) (n+(m+2*k)) K≤1
+```
+
+1. yes — 任意fの実runと元0のfree count、任意future長K。
+2. no — future非Endable A予算0は追加全A≤1そのものではない。具体run形と長いSを明記。
+3. no — first-Aの実gapを一意に供給し、その後の全長無供給を帰納で適用。
+

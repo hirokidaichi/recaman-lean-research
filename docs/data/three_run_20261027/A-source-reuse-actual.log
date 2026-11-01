@@ -1,0 +1,19 @@
+Recaman/ASourceReuse.lean:98:49: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  M - e - M
+in the target expression
+  List.replicate (M - (M - e)) true ++
+      List.drop (M - e - (List.replicate M true).length) (u ++ (List.replicate T true ++ List.replicate j false)) =
+    seg f (a + (M - e)) (M + u.length + T + j - (M - e))
+
+f : Nat → Bool
+a M e T j : Nat
+u : List Bool
+heM : e ≤ M
+hd :
+  List.replicate (M - (M - e)) true ++
+      List.drop (M - e - (List.replicate M true).length) (u ++ (List.replicate T true ++ List.replicate j false)) =
+    seg f (a + (M - e)) (M + u.length + T + j - (M - e))
+hword :
+  seg f a (M + u.length + T + j) = List.replicate M true ++ (u ++ (List.replicate T true ++ List.replicate j false))
+⊢ seg f (a + M - e) (e + u.length + T + j) =
+    List.replicate e true ++ u ++ List.replicate T true ++ List.replicate j false

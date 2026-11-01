@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-31T07:45:09.530667+09:00",
+  "unit": "H22-paper-audit",
+  "kind": "verification of frozen paper claim, no search or new conjecture",
+  "math_used_before": 1.818501,
+  "math_budget_total": 3,
+  "additional_cap": 1,
+  "wall_cap": 3,
+  "argv": [
+    "python3",
+    "docs/data/ten_head_20261031/run_single.py",
+    "--tag",
+    "audit-paper-pairs",
+    "--cpu",
+    "1",
+    "--wall",
+    "3",
+    "docs/data/ten_head_20261031/paper_pair_audit.py"
+  ],
+  "source_sha256": "29dd9c93e26f35771fe9916af6f9b7876e9f72dd138a71f6a10b16ff9cbdeb73",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_sha256": "f83e62535acf8535505e7c8132f0c53169d5a708bffd611f2d188e5f7ac5aaae",
+  "discovery_holdout": "finite full18 pair verification; existing word list, no fresh holdout claim"
+}

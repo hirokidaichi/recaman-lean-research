@@ -1,0 +1,66 @@
+⚠ [16/42] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [23/42] Replayed Recaman.BlockSuffixSpectrum
+warning: Recaman/BlockSuffixSpectrum.lean:130:33: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [41/42] Replayed Recaman.InitialSTargetOldPair
+warning: Recaman/InitialSTargetOldPair.lean:114:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✖ [42/42] Building Recaman.InitialSTargetTail (591ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/InitialSTargetTail.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/InitialSTargetTail.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/InitialSTargetTail.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/InitialSTargetTail.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/InitialSTargetTail.setup.json --json
+error: Recaman/InitialSTargetTail.lean:206:4: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 6
+  n ≥ 0
+  0 ≤ l ≤ 4
+  l - n ≥ -1
+  0 ≤ k ≤ 1
+  i ≥ 3
+  g ≥ 0
+  f ≥ 4
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  b ≥ 1
+  b - c + d - e - f + g ≥ 1
+  b - f ≥ 1
+  b + d - 2*f + g ≥ 4
+  b + d - f + g ≤ 10
+  a ≥ 0
+  a - b + c - d + e + f - g ≥ -1
+where
+ a := ↑h
+ b := ↑M
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ f := ↑j
+ g := ↑T
+ i := ↑(cntF v)
+ k := ↑(cN (fun i => i = 2) 0 T)
+ l := ↑(rayCount v T)
+ n := ↑(rayCount (w ++ v) T)
+ o := ↑(rayCount
+    (w ++
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false))
+    T)
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.InitialSTargetTail
+error: build failed

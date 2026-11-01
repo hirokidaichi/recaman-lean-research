@@ -1,0 +1,18 @@
+{
+  "tag": "H12-seven-head-cases",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/SevenHeadMomentCases.lean"
+  ],
+  "started_jst": "2026-10-31T06:54:58.198184+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SevenHeadMomentCases.lean": "6eb8ce8d5d70d140bd7fc11434bb0a9370cd057c3f70d1b0858a64cd38e395fc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

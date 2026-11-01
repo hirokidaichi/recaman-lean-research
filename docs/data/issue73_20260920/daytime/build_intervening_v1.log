@@ -1,0 +1,36 @@
+ℹ [95/111] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+✖ [111/111] Building Recaman.SS2OldestPattern (353ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/SS2OldestPattern.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/SS2OldestPattern.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/SS2OldestPattern.setup.json --json
+error: Recaman/SS2OldestPattern.lean:23:8: unsolved goals
+case nil
+q : Nat
+hss : ssCount ([] ++ [true]) ≤ q
+⊢ ↑q + 1 ≤ 1 + ↑q
+error: Recaman/SS2OldestPattern.lean:99:12: Type mismatch: After simplification, term
+  hmx
+ has type
+  mass y + -1 = 0
+but is expected to have type
+  mass y = 1
+error: Recaman/SS2OldestPattern.lean:108:14: Type mismatch: After simplification, term
+  hss
+ has type
+  ssCount (y ++ [false, false, true]) ≤ 2
+but is expected to have type
+  ssCount (y ++ [false, false]) ≤ 2
+error: Recaman/SS2OldestPattern.lean:122:18: Type mismatch: After simplification, term
+  hss
+ has type
+  ssCount (z ++ [false] ++ [false, false, true]) ≤ 2
+but is expected to have type
+  ssCount (z ++ [false] ++ [false, false]) ≤ 2
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.SS2OldestPattern
+error: build failed

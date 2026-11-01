@@ -1,0 +1,23 @@
+{
+  "tag": "docstring-MassThreeOldOneGap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MassThreeOldOneGap.lean"
+  ],
+  "started_jst": "2026-11-01T07:46:30.881001+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeOldOneGap.lean": "486c0b99f9bab9fd27afbfc84f9efd3d5a0ef48a5fa4b295762bdad5f515d360"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "b07e4819ee4a5f69214d1fff5ee33026b83ceed35fcd446a89b2f049ff7b3f5f",
+  "source_tree_sha256": "dad738c6f74ca03d408fe1ee229092e7c9ad5b32f59a9042062ddc2bc46661d6",
+  "source_tree_manifest": "docstring-MassThreeOldOneGap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

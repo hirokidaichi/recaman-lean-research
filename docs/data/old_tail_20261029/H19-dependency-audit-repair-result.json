@@ -1,0 +1,25 @@
+{
+  "tag": "H19-dependency-audit-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "docs/data/old_tail_20261029/dependency_audit.lean"
+  ],
+  "started_jst": "2026-10-29T07:29:59.434205+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "docs/data/old_tail_20261029/dependency_audit.lean": "75ac50e05a3732a6a09dbbf770532a9b53cb23aaa4e870256f55ddb4a60cbb8b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "d93863a7511c23e37aad1661fa06fb5d9c64443a7e0034f816510315dcca41ab",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.1536719589494169,
+  "cpu_seconds": 0.367693,
+  "finished_jst": "2026-10-29T07:30:00.587817+09:00"
+}

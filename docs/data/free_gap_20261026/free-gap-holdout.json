@@ -1,0 +1,29 @@
+{
+  "protocol": "FREE_GAP_PROTOCOL.json",
+  "domain": [
+    5,
+    7,
+    9
+  ],
+  "prefixes": [
+    "AASAAA",
+    "SAAAAA",
+    "SAAAASAAA",
+    "SSAAAASAAAA",
+    "ASSAAAASAAAA"
+  ],
+  "counts": {
+    "pairs": 405,
+    "zero_prefix": 405,
+    "positive_body": 405,
+    "supplied_gaps": 4,
+    "violations": 0,
+    "discovery_counterexamples_verified": 0
+  },
+  "max_gap_by_free": {
+    "8": 0,
+    "10": 0
+  },
+  "violations": [],
+  "evidence": "independent direct suffix checker; disjoint parameter tuples/prefix-tuple pairs; known prefix words are not globally fresh"
+}

@@ -1,0 +1,37 @@
+{
+  "frozen_at": "2026-10-30T06:35:35.120025+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_dirty_sha256": "ff7adb37a8ad18b2e04a10b461c2be022a8efb7a377d5089d5f42b45d0b934e4",
+  "source_sha256": {
+    "head_free_probe.py": "6d0cda209dc6f88c3599811d4c6d011110b930b9f784bae6cac81e3957c96eb3",
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  "commands": [
+    [
+      "python3",
+      "docs/data/four_run_20261030/run_single.py",
+      "--tag",
+      "H06-discovery",
+      "--cpu",
+      "2",
+      "--wall",
+      "5",
+      "docs/data/four_run_20261030/head_free_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/four_run_20261030/run_single.py",
+      "--tag",
+      "H06-holdout",
+      "--cpu",
+      "2",
+      "--wall",
+      "5",
+      "docs/data/four_run_20261030/head_free_probe.py",
+      "holdout"
+    ]
+  ],
+  "contract_verified": "normal/fork/exec/2-thread CPU SIGXCPU and wall kill today; see H06-guard-*.json/log. CPU scheduling overhead can exceed nominal limit slightly, not an exact hard fractional bound."
+}

@@ -1,0 +1,324 @@
+{
+  "math_workers_cpu_seconds": 4.898632999999999,
+  "math_controllers_cpu_seconds": 0.03682200000000003,
+  "guard_worker_cpu_seconds": 1.121683,
+  "guard_controller_cpu_seconds": 0.008278000000000008,
+  "recorded_Lean_validation_cpu_seconds": 211.04944899999998,
+  "validation_cpu_complete": false,
+  "unwrapped_validation": "initial Lean/list_checks/build-public calls not all measured; do not estimate missing CPU",
+  "expected_guard_signals": [
+    -9,
+    -24
+  ],
+  "math_failed_workers": [],
+  "math_runs": [
+    {
+      "tag": "a-run-discovery",
+      "worker_cpu_seconds": 0.09076699999999999,
+      "controller_cpu_seconds": 0.002162000000000006,
+      "exit_code": 0
+    },
+    {
+      "tag": "a-run-holdout",
+      "worker_cpu_seconds": 0.041943,
+      "controller_cpu_seconds": 0.0015410000000000016,
+      "exit_code": 0
+    },
+    {
+      "tag": "free-gap-discovery",
+      "worker_cpu_seconds": 0.114283,
+      "controller_cpu_seconds": 0.0015980000000000091,
+      "exit_code": 0
+    },
+    {
+      "tag": "free-gap-holdout",
+      "worker_cpu_seconds": 0.22855799999999998,
+      "controller_cpu_seconds": 0.0015700000000000028,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-budget-graph",
+      "worker_cpu_seconds": 0.685781,
+      "controller_cpu_seconds": 0.0026020000000000036,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-budget-independent",
+      "worker_cpu_seconds": 0.8257559999999999,
+      "controller_cpu_seconds": 0.0032569999999999977,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-ray-discovery",
+      "worker_cpu_seconds": 0.059063,
+      "controller_cpu_seconds": 0.0015480000000000025,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-ray-holdout",
+      "worker_cpu_seconds": 0.126831,
+      "controller_cpu_seconds": 0.0015759999999999993,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-tail-discovery",
+      "worker_cpu_seconds": 0.10121799999999999,
+      "controller_cpu_seconds": 0.001453999999999997,
+      "exit_code": 0
+    },
+    {
+      "tag": "old-tail-holdout",
+      "worker_cpu_seconds": 0.06432399999999999,
+      "controller_cpu_seconds": 0.0015759999999999958,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-budget-discovery",
+      "worker_cpu_seconds": 0.11236399999999999,
+      "controller_cpu_seconds": 0.001602000000000001,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-budget-holdout",
+      "worker_cpu_seconds": 0.040943,
+      "controller_cpu_seconds": 0.0014590000000000046,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-run-discovery",
+      "worker_cpu_seconds": 0.31757599999999997,
+      "controller_cpu_seconds": 0.0016639999999999919,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-run-holdout",
+      "worker_cpu_seconds": 0.174138,
+      "controller_cpu_seconds": 0.001624000000000004,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-actual-audit",
+      "worker_cpu_seconds": 0.039695,
+      "controller_cpu_seconds": 0.0016109999999999987,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-discovery",
+      "worker_cpu_seconds": 0.823823,
+      "controller_cpu_seconds": 0.0019030000000000089,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-holdout",
+      "worker_cpu_seconds": 0.051490999999999995,
+      "controller_cpu_seconds": 0.0015590000000000014,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-repair",
+      "worker_cpu_seconds": 0.834077,
+      "controller_cpu_seconds": 0.001754000000000002,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-replay",
+      "worker_cpu_seconds": 0.036114,
+      "controller_cpu_seconds": 0.001477,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-run-discovery",
+      "worker_cpu_seconds": 0.081289,
+      "controller_cpu_seconds": 0.0015300000000000018,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-run-holdout",
+      "worker_cpu_seconds": 0.048598999999999996,
+      "controller_cpu_seconds": 0.0017550000000000014,
+      "exit_code": 0
+    }
+  ],
+  "validation_runs": [
+    {
+      "tag": "block-old-lean-1",
+      "cpu_seconds": 0.360923,
+      "exit_code": 1
+    },
+    {
+      "tag": "block-old-lean-2",
+      "cpu_seconds": 0.444345,
+      "exit_code": 0
+    },
+    {
+      "tag": "block-old-lean-3",
+      "cpu_seconds": 0.720568,
+      "exit_code": 1
+    },
+    {
+      "tag": "block-old-lean-4",
+      "cpu_seconds": 0.7086649999999999,
+      "exit_code": 0
+    },
+    {
+      "tag": "block-old-lean-5",
+      "cpu_seconds": 0.7938099999999999,
+      "exit_code": 0
+    },
+    {
+      "tag": "block-old-lean-6",
+      "cpu_seconds": 1.022859,
+      "exit_code": 1
+    },
+    {
+      "tag": "block-old-lean-7",
+      "cpu_seconds": 0.925975,
+      "exit_code": 0
+    },
+    {
+      "tag": "block-old-lean-8",
+      "cpu_seconds": 1.095027,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-block-old",
+      "cpu_seconds": 9.249989,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-final-math",
+      "cpu_seconds": 27.57848,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-one-run",
+      "cpu_seconds": 9.224056000000001,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-run-budget",
+      "cpu_seconds": 7.776515,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-run-keys",
+      "cpu_seconds": 7.545119,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-two-gap",
+      "cpu_seconds": 26.859944999999996,
+      "exit_code": 0
+    },
+    {
+      "tag": "check-two-run",
+      "cpu_seconds": 8.168934,
+      "exit_code": 0
+    },
+    {
+      "tag": "one-run-lean-1",
+      "cpu_seconds": 1.438265,
+      "exit_code": 1
+    },
+    {
+      "tag": "one-run-lean-2",
+      "cpu_seconds": 1.672091,
+      "exit_code": 1
+    },
+    {
+      "tag": "one-run-lean-3",
+      "cpu_seconds": 1.401508,
+      "exit_code": 0
+    },
+    {
+      "tag": "r3-projection-check",
+      "cpu_seconds": 17.421937,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-budget-lean-1",
+      "cpu_seconds": 0.569973,
+      "exit_code": 1
+    },
+    {
+      "tag": "run-budget-lean-2",
+      "cpu_seconds": 0.5558259999999999,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-budget-lean-3",
+      "cpu_seconds": 0.7201339999999999,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-key-lean-2",
+      "cpu_seconds": 0.564529,
+      "exit_code": 1
+    },
+    {
+      "tag": "run-key-lean-3",
+      "cpu_seconds": 0.548736,
+      "exit_code": 0
+    },
+    {
+      "tag": "run-key-lean-4",
+      "cpu_seconds": 0.590066,
+      "exit_code": 1
+    },
+    {
+      "tag": "run-key-lean-5",
+      "cpu_seconds": 0.569058,
+      "exit_code": 0
+    },
+    {
+      "tag": "three-source-lean",
+      "cpu_seconds": 19.492967,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-gap-lean-1",
+      "cpu_seconds": 19.35108,
+      "exit_code": 1
+    },
+    {
+      "tag": "two-gap-lean-2",
+      "cpu_seconds": 19.388534,
+      "exit_code": 1
+    },
+    {
+      "tag": "two-gap-lean-3",
+      "cpu_seconds": 19.362589,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-run-lean-1",
+      "cpu_seconds": 0.44868199999999997,
+      "exit_code": 1
+    },
+    {
+      "tag": "two-run-lean-2",
+      "cpu_seconds": 0.5600489999999999,
+      "exit_code": 1
+    },
+    {
+      "tag": "two-run-lean-3",
+      "cpu_seconds": 0.635995,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-run-lean-4",
+      "cpu_seconds": 1.068277,
+      "exit_code": 1
+    },
+    {
+      "tag": "two-run-lean-5",
+      "cpu_seconds": 1.064495,
+      "exit_code": 0
+    },
+    {
+      "tag": "two-run-lean-6",
+      "cpu_seconds": 1.149448,
+      "exit_code": 0
+    }
+  ]
+}

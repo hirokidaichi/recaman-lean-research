@@ -1,0 +1,26 @@
+Recaman/BlockSuffixPositivity.lean:2206:8: error: Tactic `rfl` failed: The left-hand side
+  List.replicate (m - t) false ++ (List.replicate r true ++ List.replicate j false)
+is not definitionally equal to the right-hand side
+  List.replicate (m - t) false ++ List.replicate r true ++ List.replicate j false
+
+m r j : Nat
+hodd : r % 2 = 1
+h : ThreeNonsuppliedData.localSupply (List.replicate m false ++ List.replicate r true ++ List.replicate j false) = true
+t : Nat
+ht : t < (List.replicate m false ++ List.replicate r true ++ List.replicate j false).length
+hm : mass (List.drop t (List.replicate m false ++ List.replicate r true ++ List.replicate j false)) = 1
+ha : areaW (List.drop t (List.replicate m false ++ List.replicate r true ++ List.replicate j false)) = 0
+htm : t ≤ m
+⊢ List.replicate (m - t) false ++ (List.replicate r true ++ List.replicate j false) =
+    List.replicate (m - t) false ++ List.replicate r true ++ List.replicate j false
+Recaman/BlockSuffixPositivity.lean:2211:79: error: unsolved goals
+m r j : Nat
+hodd : r % 2 = 1
+h : ThreeNonsuppliedData.localSupply (List.replicate m false ++ List.replicate r true ++ List.replicate j false) = true
+t : Nat
+ht : t < (List.replicate m false ++ List.replicate r true ++ List.replicate j false).length
+hm : mass (List.drop t (List.replicate m false ++ List.replicate r true ++ List.replicate j false)) = 1
+ha : areaW (List.drop t (List.replicate m false ++ List.replicate r true ++ List.replicate j false)) = 0
+htm : ¬t ≤ m
+⊢ List.replicate (r - (t - m)) true ++ List.replicate (j - (t - m - (List.replicate r true).length)) false =
+    List.replicate (r - (t - m)) true ++ List.replicate (j - (t - m - r)) false

@@ -1,0 +1,18 @@
+{
+  "tag": "initial-S-fast-source-check",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetCheck.lean"
+  ],
+  "started_jst": "2026-10-28T06:59:21.850800+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetCheck.lean": "3545671c7903d8959b477a18e4b018794b703c97c1c51a861b08ef9aa259a625"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

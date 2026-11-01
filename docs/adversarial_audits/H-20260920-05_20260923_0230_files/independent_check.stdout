@@ -1,0 +1,191 @@
+{
+  "cutoff": {
+    "all_binary_max_length": 18,
+    "exact_ss2_lengths": [
+      20,
+      24
+    ]
+  },
+  "discovery": [
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 1
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 2
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 3
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 4
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 5
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 6
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 7
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 8
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 9
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 10
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 11
+    },
+    {
+      "checked": 1,
+      "failures": 0,
+      "length": 12
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 13
+    },
+    {
+      "checked": 1,
+      "failures": 0,
+      "length": 14
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 15
+    },
+    {
+      "checked": 3,
+      "failures": 0,
+      "length": 16
+    },
+    {
+      "checked": 0,
+      "failures": 0,
+      "length": 17
+    },
+    {
+      "checked": 3,
+      "failures": 0,
+      "length": 18
+    }
+  ],
+  "discovery_failures": 0,
+  "discovery_total": 8,
+  "e130_canonical_step115": {
+    "mass": 1,
+    "moment": 0,
+    "moment_plus_len": 11,
+    "ss": 2,
+    "strict_p2_prefix_lengths": [],
+    "word": "AAASSSASASA"
+  },
+  "holdout": [
+    {
+      "checked": 8,
+      "failures": 0,
+      "generated": 1620,
+      "length": 20
+    },
+    {
+      "checked": 16,
+      "failures": 0,
+      "generated": 3630,
+      "length": 24
+    }
+  ],
+  "holdout_failures": 0,
+  "holdout_total": 24,
+  "negative_controls": {
+    "ending_A": {
+      "mass": 0,
+      "moment": -9,
+      "moment_plus_len": -3,
+      "ss": 2,
+      "witnesses": [],
+      "word": "AAASSS"
+    },
+    "mass_zero": {
+      "mass": -2,
+      "moment": -8,
+      "moment_plus_len": 0,
+      "ss": 2,
+      "witnesses": [],
+      "word": "SASASSSA"
+    },
+    "moment_bound": {
+      "mass": 0,
+      "moment": 1,
+      "moment_plus_len": 3,
+      "ss": 0,
+      "witnesses": [],
+      "word": "SA"
+    },
+    "ss_bound": {
+      "mass": 0,
+      "moment": -8,
+      "moment_plus_len": 0,
+      "ss": 3,
+      "witnesses": [],
+      "word": "AAASSSSA"
+    }
+  },
+  "nonvacuous_examples": {
+    "equality": {
+      "mass": 0,
+      "moment": -12,
+      "moment_plus_len": 0,
+      "ss": 2,
+      "suffix_nonempty_lengths": [
+        9
+      ],
+      "witness_prefix_lengths": [
+        3
+      ],
+      "word": "AASASASASSSA"
+    },
+    "strict_negative": {
+      "mass": 0,
+      "moment": -15,
+      "moment_plus_len": -1,
+      "ss": 2,
+      "suffix_nonempty_lengths": [
+        11
+      ],
+      "witness_prefix_lengths": [
+        3
+      ],
+      "word": "AASASASASASSSA"
+    }
+  },
+  "seed": null,
+  "statement": "ending A AND mass=0 AND moment+length<=0 AND ss<=2 implies strict S-ended P2 prefix"
+}

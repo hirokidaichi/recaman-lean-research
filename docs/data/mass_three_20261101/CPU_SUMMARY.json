@@ -1,0 +1,658 @@
+{
+  "math_declared_ceiling_seconds": 12,
+  "math_worker_cpu_seconds": 0.715819,
+  "guard_worker_cpu_seconds": 1.066326,
+  "validation_wait4_cpu_seconds": 175.38631,
+  "math_records": [
+    {
+      "record": "literal-discovery-result.json",
+      "tag": "literal-discovery",
+      "cpu_seconds": 0.034164,
+      "exit_code": 0
+    },
+    {
+      "record": "four-s-discovery-result.json",
+      "tag": "four-s-discovery",
+      "cpu_seconds": 0.033762,
+      "exit_code": 0
+    },
+    {
+      "record": "inversion-holdout-result.json",
+      "tag": "inversion-holdout",
+      "cpu_seconds": 0.042422,
+      "exit_code": 0
+    },
+    {
+      "record": "high-mass-discovery-result.json",
+      "tag": "high-mass-discovery",
+      "cpu_seconds": 0.032436,
+      "exit_code": 0
+    },
+    {
+      "record": "high-mass-holdout-result.json",
+      "tag": "high-mass-holdout",
+      "cpu_seconds": 0.032485,
+      "exit_code": 0
+    },
+    {
+      "record": "early-source-clock2-result.json",
+      "tag": "early-source-clock2",
+      "cpu_seconds": 0.032642,
+      "exit_code": 0
+    },
+    {
+      "record": "weak-old-zero-result.json",
+      "tag": "weak-old-zero",
+      "cpu_seconds": 0.030275999999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "old-four-holdout-result.json",
+      "tag": "old-four-holdout",
+      "cpu_seconds": 0.16491799999999998,
+      "exit_code": 0
+    },
+    {
+      "record": "old-four-discovery-result.json",
+      "tag": "old-four-discovery",
+      "cpu_seconds": 0.164683,
+      "exit_code": 0
+    },
+    {
+      "record": "inversion-discovery-result.json",
+      "tag": "inversion-discovery",
+      "cpu_seconds": 0.08323099999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "literal-holdout-result.json",
+      "tag": "literal-holdout",
+      "cpu_seconds": 0.030869999999999998,
+      "exit_code": 0
+    },
+    {
+      "record": "four-s-holdout-result.json",
+      "tag": "four-s-holdout",
+      "cpu_seconds": 0.03393,
+      "exit_code": 0
+    }
+  ],
+  "guard_records": [
+    {
+      "record": "guard-fork-result.json",
+      "tag": "guard-fork",
+      "cpu_seconds": 0.030014,
+      "exit_code": 0
+    },
+    {
+      "record": "guard-wall-result.json",
+      "tag": "guard-wall",
+      "cpu_seconds": 0.02912,
+      "exit_code": -9
+    },
+    {
+      "record": "guard-cpu-result.json",
+      "tag": "guard-cpu",
+      "cpu_seconds": 1.0071919999999999,
+      "exit_code": -24
+    }
+  ],
+  "validation_records": [
+    {
+      "record": "mass_five_base-result.json",
+      "cpu_seconds": 0.519327,
+      "exit_code": 0
+    },
+    {
+      "record": "fourS_firstA-result.json",
+      "cpu_seconds": 0.547374,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-mass-v2-result.json",
+      "cpu_seconds": 0.490923,
+      "exit_code": 0
+    },
+    {
+      "record": "counter-numbers-v1-result.json",
+      "cpu_seconds": 1.430356,
+      "exit_code": 1
+    },
+    {
+      "record": "docstring-MassThreeOldOneBase-result.json",
+      "cpu_seconds": 0.437368,
+      "exit_code": 0
+    },
+    {
+      "record": "old-zero-initial-v1-result.json",
+      "cpu_seconds": 0.50866,
+      "exit_code": 1
+    },
+    {
+      "record": "old-zero-count-v2-result.json",
+      "cpu_seconds": 0.7724629999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "inv9_actual-result.json",
+      "cpu_seconds": 0.23389,
+      "exit_code": 0
+    },
+    {
+      "record": "mass3_old1_v1-result.json",
+      "cpu_seconds": 0.9639239999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "joint_actual_export-result.json",
+      "cpu_seconds": 0.458785,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-count-v2-result.json",
+      "cpu_seconds": 1.4358090000000001,
+      "exit_code": 0
+    },
+    {
+      "record": "counter-numbers-repair-result.json",
+      "cpu_seconds": 1.252177,
+      "exit_code": 1
+    },
+    {
+      "record": "high_four_base_v1-result.json",
+      "cpu_seconds": 0.523743,
+      "exit_code": 0
+    },
+    {
+      "record": "fourS_any_old_v1-result.json",
+      "cpu_seconds": 0.489818,
+      "exit_code": 0
+    },
+    {
+      "record": "large-old-seed-v1-result.json",
+      "cpu_seconds": 1.2851940000000002,
+      "exit_code": 1
+    },
+    {
+      "record": "four_residual-result.json",
+      "cpu_seconds": 1.004985,
+      "exit_code": 0
+    },
+    {
+      "record": "inv_actual_v1-result.json",
+      "cpu_seconds": 0.136783,
+      "exit_code": 1
+    },
+    {
+      "record": "six_base-result.json",
+      "cpu_seconds": 0.05312399999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "small-inversion-olean-result.json",
+      "cpu_seconds": 2.1542239999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0743-result.json",
+      "cpu_seconds": 10.848014,
+      "exit_code": 0
+    },
+    {
+      "record": "thirteen_key-result.json",
+      "cpu_seconds": 0.281435,
+      "exit_code": 1
+    },
+    {
+      "record": "six_base_v2-result.json",
+      "cpu_seconds": 0.35681199999999996,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0714-result.json",
+      "cpu_seconds": 13.115019,
+      "exit_code": 0
+    },
+    {
+      "record": "early-old-head-v1-result.json",
+      "cpu_seconds": 0.5621309999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "six_free_v1-result.json",
+      "cpu_seconds": 0.7055539999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "check-E487-result.json",
+      "cpu_seconds": 10.853733,
+      "exit_code": 0
+    },
+    {
+      "record": "six_free_v2-result.json",
+      "cpu_seconds": 0.878728,
+      "exit_code": 0
+    },
+    {
+      "record": "thirteen_key_v2-result.json",
+      "cpu_seconds": 0.363141,
+      "exit_code": 0
+    },
+    {
+      "record": "fourS_any_old_base-result.json",
+      "cpu_seconds": 0.53537,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-budget-olean-result.json",
+      "cpu_seconds": 0.347346,
+      "exit_code": 0
+    },
+    {
+      "record": "firstA_square_v1-result.json",
+      "cpu_seconds": 0.568702,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0730-result.json",
+      "cpu_seconds": 9.503893,
+      "exit_code": 0
+    },
+    {
+      "record": "mass3_base_v1-result.json",
+      "cpu_seconds": 0.432021,
+      "exit_code": 0
+    },
+    {
+      "record": "old-zero-target-olean-result.json",
+      "cpu_seconds": 0.559943,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-mass-olean-result.json",
+      "cpu_seconds": 0.513423,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-thirty-six-result.json",
+      "cpu_seconds": 2.0807469999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "docstring-FourSAnyOldBase-result.json",
+      "cpu_seconds": 0.518628,
+      "exit_code": 0
+    },
+    {
+      "record": "thirteen_actual-result.json",
+      "cpu_seconds": 0.387324,
+      "exit_code": 0
+    },
+    {
+      "record": "inv_actual_v2-result.json",
+      "cpu_seconds": 0.453435,
+      "exit_code": 1
+    },
+    {
+      "record": "mass3_old1_v2-result.json",
+      "cpu_seconds": 0.976841,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-actual-olean-result.json",
+      "cpu_seconds": 0.7382519999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-count-v1-result.json",
+      "cpu_seconds": 1.439585,
+      "exit_code": 1
+    },
+    {
+      "record": "old-zero-count-v1-result.json",
+      "cpu_seconds": 0.684654,
+      "exit_code": 1
+    },
+    {
+      "record": "old-zero-initial-v2-result.json",
+      "cpu_seconds": 0.5165559999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "check-E489-E490-result.json",
+      "cpu_seconds": 11.297146000000001,
+      "exit_code": 0
+    },
+    {
+      "record": "early-old-head-olean-result.json",
+      "cpu_seconds": 0.6053999999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "six_factors_repair-result.json",
+      "cpu_seconds": 0.633095,
+      "exit_code": 0
+    },
+    {
+      "record": "old-zero-target-base-v1-result.json",
+      "cpu_seconds": 0.452416,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0720-result.json",
+      "cpu_seconds": 4.8615759999999995,
+      "exit_code": 1
+    },
+    {
+      "record": "inv25_v3-result.json",
+      "cpu_seconds": 1.023309,
+      "exit_code": 1
+    },
+    {
+      "record": "old-seed-base-v1-result.json",
+      "cpu_seconds": 0.536745,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-mass-v1-result.json",
+      "cpu_seconds": 0.525309,
+      "exit_code": 1
+    },
+    {
+      "record": "thirteen_base-result.json",
+      "cpu_seconds": 0.31493099999999996,
+      "exit_code": 1
+    },
+    {
+      "record": "old-seed-clock-inversion-v2-result.json",
+      "cpu_seconds": 0.38743,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-budget-v2-result.json",
+      "cpu_seconds": 0.40188999999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "joint_v2-result.json",
+      "cpu_seconds": 0.633311,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-inversion-key-result.json",
+      "cpu_seconds": 0.332731,
+      "exit_code": 0
+    },
+    {
+      "record": "early-old-mass-five-result.json",
+      "cpu_seconds": 1.141008,
+      "exit_code": 0
+    },
+    {
+      "record": "six_sources-result.json",
+      "cpu_seconds": 0.551705,
+      "exit_code": 0
+    },
+    {
+      "record": "docstring-MassThreeOldZeroBase-result.json",
+      "cpu_seconds": 0.433017,
+      "exit_code": 0
+    },
+    {
+      "record": "six_joint_v1-result.json",
+      "cpu_seconds": 3.08604,
+      "exit_code": 1
+    },
+    {
+      "record": "early-old-bases-five-result.json",
+      "cpu_seconds": 0.52021,
+      "exit_code": 0
+    },
+    {
+      "record": "thirteen_base_v2-result.json",
+      "cpu_seconds": 0.31707799999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "small-inversion-sources-v1-result.json",
+      "cpu_seconds": 0.9194779999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "old_zero_last5_v2-result.json",
+      "cpu_seconds": 0.399265,
+      "exit_code": 0
+    },
+    {
+      "record": "old_one_last6_v2-result.json",
+      "cpu_seconds": 0.458205,
+      "exit_code": 0
+    },
+    {
+      "record": "joint_actual_v2-result.json",
+      "cpu_seconds": 0.445083,
+      "exit_code": 0
+    },
+    {
+      "record": "old-zero-target-v2-result.json",
+      "cpu_seconds": 0.549592,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0747-result.json",
+      "cpu_seconds": 10.556446000000001,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0737-result.json",
+      "cpu_seconds": 9.48831,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-actual-v1-result.json",
+      "cpu_seconds": 0.635226,
+      "exit_code": 1
+    },
+    {
+      "record": "four_free_v2-result.json",
+      "cpu_seconds": 0.298929,
+      "exit_code": 0
+    },
+    {
+      "record": "old_one_initial-result.json",
+      "cpu_seconds": 0.485479,
+      "exit_code": 0
+    },
+    {
+      "record": "early-old-mass-five-olean-result.json",
+      "cpu_seconds": 1.18838,
+      "exit_code": 0
+    },
+    {
+      "record": "high_four_v2-result.json",
+      "cpu_seconds": 1.055798,
+      "exit_code": 0
+    },
+    {
+      "record": "inv9_v2-result.json",
+      "cpu_seconds": 0.485554,
+      "exit_code": 0
+    },
+    {
+      "record": "inv25_v1-result.json",
+      "cpu_seconds": 1.5158,
+      "exit_code": 1
+    },
+    {
+      "record": "inv25_v2-result.json",
+      "cpu_seconds": 1.0487039999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "check_0721-result.json",
+      "cpu_seconds": 0.957872,
+      "exit_code": 1
+    },
+    {
+      "record": "early-old-head-base-v1-result.json",
+      "cpu_seconds": 0.35280799999999995,
+      "exit_code": 0
+    },
+    {
+      "record": "inv9_v1-result.json",
+      "cpu_seconds": 0.462885,
+      "exit_code": 1
+    },
+    {
+      "record": "mass3_old1_base_v2-result.json",
+      "cpu_seconds": 0.436084,
+      "exit_code": 0
+    },
+    {
+      "record": "check_0713-result.json",
+      "cpu_seconds": 4.9132229999999995,
+      "exit_code": 1
+    },
+    {
+      "record": "high_four_v1-result.json",
+      "cpu_seconds": 0.978831,
+      "exit_code": 1
+    },
+    {
+      "record": "four_free_v1-result.json",
+      "cpu_seconds": 0.249331,
+      "exit_code": 1
+    },
+    {
+      "record": "four_free_base-result.json",
+      "cpu_seconds": 0.347151,
+      "exit_code": 0
+    },
+    {
+      "record": "mass_five_gap-result.json",
+      "cpu_seconds": 1.033456,
+      "exit_code": 0
+    },
+    {
+      "record": "four_residual_base-result.json",
+      "cpu_seconds": 0.37533299999999997,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-actual-v2-result.json",
+      "cpu_seconds": 0.70422,
+      "exit_code": 0
+    },
+    {
+      "record": "docstring-MassThreeOldZeroGap-result.json",
+      "cpu_seconds": 0.813232,
+      "exit_code": 0
+    },
+    {
+      "record": "known-small-head-memory-diagnostic-result.json",
+      "cpu_seconds": 0.48346199999999995,
+      "exit_code": 0
+    },
+    {
+      "record": "mass3_old1_base-result.json",
+      "cpu_seconds": 0.132074,
+      "exit_code": 1
+    },
+    {
+      "record": "inv_actual_v3-result.json",
+      "cpu_seconds": 0.5054259999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "docstring-FourSAnyOldGap-result.json",
+      "cpu_seconds": 0.478253,
+      "exit_code": 0
+    },
+    {
+      "record": "large-old-seed-repair-result.json",
+      "cpu_seconds": 1.3223719999999999,
+      "exit_code": 1
+    },
+    {
+      "record": "old-zero-target-v1-result.json",
+      "cpu_seconds": 0.524319,
+      "exit_code": 1
+    },
+    {
+      "record": "joint_actual_v1-result.json",
+      "cpu_seconds": 0.391756,
+      "exit_code": 1
+    },
+    {
+      "record": "small-inversion-sources-v2-result.json",
+      "cpu_seconds": 1.211104,
+      "exit_code": 0
+    },
+    {
+      "record": "old_one_last6_v1-result.json",
+      "cpu_seconds": 0.425627,
+      "exit_code": 1
+    },
+    {
+      "record": "six_factors-result.json",
+      "cpu_seconds": 2.5296499999999997,
+      "exit_code": 1
+    },
+    {
+      "record": "old_zero_last5_v1-result.json",
+      "cpu_seconds": 0.393412,
+      "exit_code": 1
+    },
+    {
+      "record": "six_joint_v2-result.json",
+      "cpu_seconds": 0.8631239999999999,
+      "exit_code": 0
+    },
+    {
+      "record": "mass3_gap_v1-result.json",
+      "cpu_seconds": 0.829781,
+      "exit_code": 0
+    },
+    {
+      "record": "old-seed-clock-inversion-result.json",
+      "cpu_seconds": 0.385161,
+      "exit_code": 1
+    },
+    {
+      "record": "check_0724-result.json",
+      "cpu_seconds": 10.93763,
+      "exit_code": 0
+    },
+    {
+      "record": "inv9_actual_export-result.json",
+      "cpu_seconds": 0.26190800000000003,
+      "exit_code": 0
+    },
+    {
+      "record": "check-E486-result.json",
+      "cpu_seconds": 8.388985,
+      "exit_code": 0
+    },
+    {
+      "record": "joint_v1-result.json",
+      "cpu_seconds": 0.597304,
+      "exit_code": 1
+    },
+    {
+      "record": "small-inversion-budget-v1-result.json",
+      "cpu_seconds": 0.32967799999999997,
+      "exit_code": 1
+    },
+    {
+      "record": "small-inversion-sixteen-result.json",
+      "cpu_seconds": 1.449806,
+      "exit_code": 0
+    },
+    {
+      "record": "docstring-MassThreeOldOneGap-result.json",
+      "cpu_seconds": 0.816242,
+      "exit_code": 0
+    }
+  ],
+  "scope": "recorded wait4 only; no CPU credited to wall journal; uninstrumented CPU not assumed zero; Lean per-process CPU is not generic process-tree cap"
+}

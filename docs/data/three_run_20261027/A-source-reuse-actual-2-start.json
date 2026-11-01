@@ -1,0 +1,17 @@
+{
+  "tag": "A-source-reuse-actual-2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/ASourceReuse.lean"
+  ],
+  "started_jst": "2026-10-27T07:33:36.392092+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ASourceReuse.lean": "5769c610cb8c60b58ea686edf3e1621f6ffa6b68b1d5d3b3b5f33ae145fd1f86"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

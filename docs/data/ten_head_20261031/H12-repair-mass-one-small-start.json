@@ -1,0 +1,18 @@
+{
+  "tag": "H12-repair-mass-one-small",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentMassOneSmall.lean"
+  ],
+  "started_jst": "2026-10-31T06:59:59.823535+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentMassOneSmall.lean": "be0163d251d6a2bec61088a19434605749f2f52a3d652d58b58ed468d346d56e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

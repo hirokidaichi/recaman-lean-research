@@ -1,0 +1,54 @@
+{
+  "protocol": "JOINT_SIGNATURE_PROTOCOL.json",
+  "state_scope": "all suffix mass-area pairs in same actual BlockWord, positive mass<=R",
+  "limits": [
+    5,
+    7,
+    11,
+    19
+  ],
+  "gate": 3000,
+  "runs": [
+    {
+      "R": 5,
+      "states_seen": 22,
+      "edges_processed": 66,
+      "closed": true,
+      "unprocessed_queue": 0,
+      "max_pairs_seen": 9,
+      "max_witness_length": 14,
+      "status": "COMPUTED closed"
+    },
+    {
+      "R": 7,
+      "states_seen": 68,
+      "edges_processed": 204,
+      "closed": true,
+      "unprocessed_queue": 0,
+      "max_pairs_seen": 14,
+      "max_witness_length": 20,
+      "status": "COMPUTED closed"
+    },
+    {
+      "R": 11,
+      "states_seen": 647,
+      "edges_processed": 1941,
+      "closed": true,
+      "unprocessed_queue": 0,
+      "max_pairs_seen": 23,
+      "max_witness_length": 30,
+      "status": "COMPUTED closed"
+    },
+    {
+      "R": 19,
+      "states_seen": 3001,
+      "edges_processed": 3251,
+      "closed": false,
+      "unprocessed_queue": 1917,
+      "max_pairs_seen": 41,
+      "max_witness_length": 50,
+      "status": "STOPPED state gate"
+    }
+  ],
+  "complete_all_limits": false
+}

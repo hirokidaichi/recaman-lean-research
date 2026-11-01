@@ -1,0 +1,116 @@
+Recaman/MassThreeCounterNumbers.lean:11:8: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:19:36: error: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)
+  u = tripW ∨ u ∈ []
+
+case inr.inr.inr.inr.inr
+u : List Bool
+hu : BlockWord u
+hm : mass u = 4
+h✝ : u = tripW ∨ u ∈ []
+⊢ areaW u = 9 ∨ areaW u = 10 ∨ areaW u = 11 ∨ areaW u = 12 ∨ areaW u = 13
+Recaman/MassThreeCounterNumbers.lean:18:13: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:18:41: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:15:8: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:18:41: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [massFourWords, List.mem_cons] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/MassThreeCounterNumbers.lean:32:25: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:33:26: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:34:25: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:35:25: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:39:53: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:40:31: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:41:6: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:45:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:46:72: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:47:29: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:48:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:49:25: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:52:37: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:55:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:23:8: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:61:49: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:64:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:57:16: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:78:53: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:81:76: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:83:50: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:83:50: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:83:50: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:83:50: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:84:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:84:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:84:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:84:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:87:76: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:89:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:89:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:89:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:89:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:90:57: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:91:53: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:92:71: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:92:71: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:93:27: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:94:27: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:97:56: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:98:6: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:100:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:100:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:100:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:100:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:101:40: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:101:40: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:101:40: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:101:40: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:103:44: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:38: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:77: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:77: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:77: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:105:77: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:107:77: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:109:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:109:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:109:59: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:111:31: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:113:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:113:52: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterNumbers.lean:113:52: error: maximum number of errors (100; from option `maxErrors`) reached, exiting

@@ -1,0 +1,10 @@
+minimal lag-19 words: 1636
+shard 0: entries 409, expected 409, same order True, tags ['excluded'], unparsed 0, end: => excluded 409/409, consistent closure 0, cap hit 0
+shard 1: entries 409, expected 409, same order True, tags ['excluded'], unparsed 0, end: => excluded 409/409, consistent closure 0, cap hit 0
+shard 2: entries 409, expected 409, same order True, tags ['excluded'], unparsed 0, end: => excluded 409/409, consistent closure 0, cap hit 0
+shard 3: entries 409, expected 409, same order True, tags ['excluded'], unparsed 0, end: => excluded 409/409, consistent closure 0, cap hit 0
+headers:
+  lag-max 19: 409 words v, 1811 owner words (lag <= 19), 15901 placements, memberCap=40, nodeCap=5000000, LA-AAS=off, order=MRV
+distinct 1636, duplicates 0, missing 0, extra 0
+total nodes 470371, max 48986, words excluded at the root of every own-branch (nodes == 9) 175
+AUDIT PASS

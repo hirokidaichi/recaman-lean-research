@@ -1,0 +1,18 @@
+{
+  "tag": "H06-tail-bounds",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetTail.lean"
+  ],
+  "started_jst": "2026-10-29T06:41:16.728627+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetTail.lean": "9e273a882254b0dbd7918e7703f6ad777496a009e7f6dcfabe015b6093b2b105"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}
