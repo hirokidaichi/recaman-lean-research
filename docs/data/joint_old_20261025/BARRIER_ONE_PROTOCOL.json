@@ -1,0 +1,16 @@
+{
+  "card": "H-20261025-05",
+  "frozen_utc": "2026-10-24T21:42:04.681839+00:00",
+  "argv": [
+    "python3",
+    "docs/data/joint_old_20261025/barrier_one.py"
+  ],
+  "source_sha256": "303645ba9c50e543d3cd323ebdc96310f9bf974271054b31e27f68e9ec0ef531",
+  "cpu_cap_seconds": 5,
+  "wall_cap_seconds": 4.5,
+  "discovery": "u=A, all balanced v length10; barrier mass(v)+ceiling(u)=1",
+  "holdout": "all balanced v length14 and18, not inspected in H02 lengths<=7",
+  "acceptance": "explicit local before=true after=false; source prefix area and independent reverse local agree",
+  "allocation": "5 seconds from H05, proofDAG validation CPU is separate",
+  "stop": "timeout or no witness: no label promotion, no limit extension"
+}

@@ -1,0 +1,52 @@
+test_ascii_id_continuations_are_not_partial_evidence_ids (__main__.ResearchBriefTests.test_ascii_id_continuations_are_not_partial_evidence_ids) ... ok
+test_counts_are_dynamic_and_not_claimed_as_verified (__main__.ResearchBriefTests.test_counts_are_dynamic_and_not_claimed_as_verified) ... ok
+test_duplicate_registry_id_fails (__main__.ResearchBriefTests.test_duplicate_registry_id_fails) ... ok
+test_evidence_ids_next_to_japanese_are_included (__main__.ResearchBriefTests.test_evidence_ids_next_to_japanese_are_included) ... ok
+test_frontier_and_registry_updates_are_read_each_time (__main__.ResearchBriefTests.test_frontier_and_registry_updates_are_read_each_time) ... ok
+test_missing_empty_or_duplicate_section_fails_without_stale_fallback (__main__.ResearchBriefTests.test_missing_empty_or_duplicate_section_fails_without_stale_fallback) ... ok
+test_unknown_evidence_id_fails (__main__.ResearchBriefTests.test_unknown_evidence_id_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.454s
+
+OK
+test_0745_switches_to_audit_instead_of_opening_more_research (__main__.DailyResearchTimeTests.test_0745_switches_to_audit_instead_of_opening_more_research) ... ok
+test_after_deadline_work_is_rejected_and_recovery_does_not_invent_two_hours (__main__.DailyResearchTimeTests.test_after_deadline_work_is_rejected_and_recovery_does_not_invent_two_hours) ... ok
+test_atomic_file_survives_rejected_mutation_and_old_days_are_read_only (__main__.DailyResearchTimeTests.test_atomic_file_survives_rejected_mutation_and_old_days_are_read_only) ... ok
+test_blocked_time_and_late_saving_are_separate_from_daily_work (__main__.DailyResearchTimeTests.test_blocked_time_and_late_saving_are_separate_from_daily_work) ... ok
+test_checkpoint_keeps_session_and_assigns_unit_to_correct_interval (__main__.DailyResearchTimeTests.test_checkpoint_keeps_session_and_assigns_unit_to_correct_interval) ... ok
+test_crash_recovery_excludes_gap_and_restarts_at_actual_resume (__main__.DailyResearchTimeTests.test_crash_recovery_excludes_gap_and_restarts_at_actual_resume) ... ok
+test_duplicate_start_cannot_create_another_session_or_double_credit (__main__.DailyResearchTimeTests.test_duplicate_start_cannot_create_another_session_or_double_credit) ... ok
+test_early_delivery_waits_without_credit_or_early_research (__main__.DailyResearchTimeTests.test_early_delivery_waits_without_credit_or_early_research) ... ok
+test_missing_journal_is_not_a_record_of_zero_work_and_cli_has_no_fake_clock (__main__.DailyResearchTimeTests.test_missing_journal_is_not_a_record_of_zero_work_and_cli_has_no_fake_clock) ... ok
+test_summary_merges_overlapping_intervals_instead_of_double_counting (__main__.DailyResearchTimeTests.test_summary_merges_overlapping_intervals_instead_of_double_counting) ... ok
+test_two_hour_work_is_measured_and_open_time_is_not_precredited (__main__.DailyResearchTimeTests.test_two_hour_work_is_measured_and_open_time_is_not_precredited) ... ok
+test_wrong_owner_clock_reversal_and_undocumented_early_exit_fail (__main__.DailyResearchTimeTests.test_wrong_owner_clock_reversal_and_undocumented_early_exit_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.084s
+
+OK
+test_g1_unresolved_symbol (__main__.HarnessGateTests.test_g1_unresolved_symbol) ... ok
+test_g3_arithmetic_only_module (__main__.HarnessGateTests.test_g3_arithmetic_only_module) ... ok
+test_g3_wrapper_only_row (__main__.HarnessGateTests.test_g3_wrapper_only_row) ... ok
+test_g4_inflated_name (__main__.HarnessGateTests.test_g4_inflated_name) ... ok
+test_g5_altered_signature (__main__.HarnessGateTests.test_g5_altered_signature) ... ok
+test_g5_checks_inside_code_do_not_count (__main__.HarnessGateTests.test_g5_checks_inside_code_do_not_count) ... ok
+test_g5_completed_audit (__main__.HarnessGateTests.test_g5_completed_audit) ... ok
+test_g5_conditional_theorem_with_named_hypothesis (__main__.HarnessGateTests.test_g5_conditional_theorem_with_named_hypothesis) ... ok
+test_g5_every_theorem_needs_all_three_answers (__main__.HarnessGateTests.test_g5_every_theorem_needs_all_three_answers) ... ok
+test_g5_incomplete_check_or_reviewer (__main__.HarnessGateTests.test_g5_incomplete_check_or_reviewer) ... ok
+test_g5_missing_audit (__main__.HarnessGateTests.test_g5_missing_audit) ... ok
+test_g5_multiline_reviewer (__main__.HarnessGateTests.test_g5_multiline_reviewer) ... ok
+test_g5_signature_must_be_in_the_correct_section (__main__.HarnessGateTests.test_g5_signature_must_be_in_the_correct_section) ... ok
+test_live_registry_and_protected_claims (__main__.HarnessGateTests.test_live_registry_and_protected_claims) ... ok
+test_p_protected_label_changed (__main__.HarnessGateTests.test_p_protected_label_changed) ... ok
+test_regression_g2_conjunct_hidden_by_substantive_companion (__main__.HarnessGateTests.test_regression_g2_conjunct_hidden_by_substantive_companion) ... ok
+test_regression_g5_signature_only (__main__.HarnessGateTests.test_regression_g5_signature_only) ... ok
+test_regression_g5_unfilled_template (__main__.HarnessGateTests.test_regression_g5_unfilled_template) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 6.136s
+
+OK

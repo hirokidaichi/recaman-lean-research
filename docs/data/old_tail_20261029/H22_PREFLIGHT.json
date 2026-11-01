@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-29T07:37:53.749100+09:00",
+  "role": "fixed genuine-four-run nonvacuity validation, no search/holdout",
+  "worker_sha256": "d7c3b7f4efd9ad577a6da4ff6c2853b12ab4f3de5b3177a40b4f0bd6a618a631",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_dirty_diff_sha256": "0b041966f16b742cf23419a9326722dc12106224dc0823fbed0592305b9facf3",
+  "argv": [
+    "python3",
+    "docs/data/old_tail_20261029/run_single.py",
+    "--tag",
+    "H22-four-run-control",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/old_tail_20261029/four_run_control.py"
+  ],
+  "supported_contract": "previously validated cooperative one Python/no children",
+  "max_new_cpu_seconds": 1,
+  "cumulative_math_cap_seconds": 4,
+  "previous_exact_math_cpu_seconds": 0.630207,
+  "note": "fixed j0 control tests nonvacuity of full domain, not a failed free-gap model; no fresh holdout claim"
+}

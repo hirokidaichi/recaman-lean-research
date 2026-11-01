@@ -1,0 +1,43 @@
+{
+  "base_revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "date": "2026-10-21 JST",
+  "status": "COMPUTED",
+  "tracked_diff_sha256": "98bdfe3649df94fcbaa0889527de0f3f70d387cac00e94f3d72b9f6aabd691d8",
+  "source_sha256": {
+    ".github/workflows/ci.yml": "dc33ded1edfec1ba9300e26ab7f1c7872a267c84d70ac5d9a71b0e256385a37b",
+    "Makefile": "52de74d5b04bd041b3c4533f7d7d577ba17720316a57be24f53da37601d2cf28",
+    "scripts/dev_tool.py": "caafcce593484c13816d83eeefc1e24c1064ac245c28dcc646d4686da7d34ce0",
+    "scripts/harness_gate.py": "2ecbd40ad679540d9ba04a4349907c5b3300f27b40ca55c48fc03cf14e53f24c",
+    "scripts/test_harness_gates.sh": "1d9a330b2f838cd71e01445546016d8c043b312036d25379cad9c476bea828fe",
+    "docs/CURRENT_FRONTIER.md": "1c7a5bc7699ae0f93851d84425261eaefa8c8ed187cac4777cfbdd4da8ca1d5d",
+    "docs/REPRODUCIBILITY.md": "bdecf072dda0453bc81b14352d754cad98ad996d4e83c231ac201ef262fafe8a",
+    "docs/statement_audits/E-348.md": "f1df191baea02090ca1209306a39333523f39fdc0abcff73ecce67d0db563d4e",
+    "docs/statement_audits/E-350.md": "a8ae98958538421bfb47f0f0af4742ef34e805b19da84e752987dbd8701eaabb",
+    "docs/statement_audits/E-351.md": "1faeae4169bbf8d3457de10f96638fd65f05a59a481f3422d23ce85054d122ef",
+    "docs/statement_audits/E-355.md": "1c57e9405ee64154f877eef0a97b6643b4600594966696999f77e613c1a045cd",
+    "scripts/test_dev_tool.py": "cb0902774c23644f7912f81543436fc7ead4dde647cdc6422aa7e759b25173bf",
+    "scripts/test_harness_gates.py": "92e85e19cd9174d1a9c8ffc7c78b7aa9495a5504b7df9116afe360f17dc2c088",
+    "docs/HYPOTHESIS_CARD_2026-10-21_HARNESS_REPAIRS.md": "14960d9d2fd9f26f6eb48324a1ee6923f05f2e7213a35c67b366f2c8ea456475",
+    "docs/data/harness_repairs_20261021/compare_regressions.py": "92bb0e290321746de92bf4aa88b4225c4b9f16922eaf6305988cca79d717f5c6"
+  },
+  "make_test_exit_code": 0,
+  "brief_tests": 5,
+  "harness_tests": 18,
+  "build_jobs": 404,
+  "axiom_audit_declarations": 2652,
+  "parallel_harness_runs": {
+    "exit_codes": [
+      0,
+      0
+    ],
+    "registry_and_audits_hash_unchanged": true
+  },
+  "regression_comparison": "baseline 5606b64d27290a9959e1dbf19d5e7c58840a0a85: 3/3 regression assertions fail (old gate accepts all three)\ncurrent working tree: 3/3 regression assertions pass (G5, G5, G2 reject)\n",
+  "ci_yaml_syntax": "PASS (Ruby YAML.parse_file)",
+  "remote_ci_runs": "not run",
+  "pre_existing_files_unchanged": {
+    "Recaman.lean": "a839a9949db85ebd8cb23983129a4a2e30390a5e9d5075e151ed246f3c84d0cb",
+    "viewer/manifest.json": "64d3ef329de274fccf2c5c84f4f5764ee3616f539e86cd0abe9b1ca9b7a74e77",
+    "Recaman/SS2OldestPattern.lean": "a9540f5f891198ec91eefd73f62f9e35d4e59f645936dc3a349504e529b325de"
+  }
+}

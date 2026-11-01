@@ -1,0 +1,14 @@
+Recaman/InitialSTargetCountCharge.lean:80:19: warning: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetCountCharge.lean:80:47: warning: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

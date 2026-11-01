@@ -1,0 +1,26 @@
+{
+  "reviewed_jst": "2026-10-23T07:56:57.607862+09:00",
+  "reviewer": "Codex, separate final source-reading pass, not human review",
+  "scope": "manual source review supported by structural checks, not an independent mathematical proof",
+  "checks": {
+    "depth_uses_previous_state_A_bound": true,
+    "final_Q_splits_depth_and_fresh_low": true,
+    "terminal_future_K_arbitrary": true,
+    "Int_adapter_preserves_original_p": true,
+    "Endable_includes_actual_A": true
+  },
+  "labels": {
+    "E-385": "PROVED-LEAN",
+    "E-386": "PROVED-LEAN",
+    "E-387": "PROVED-LEAN",
+    "E-388": "COMPUTED",
+    "E-389": "PROVED-LEAN"
+  },
+  "source_sha256": "f602de78ef8d3e7e4ad8297ef135fe9883b17a441a05d57e8a92636a88a3e06c",
+  "remaining": [
+    "r4 kernel simulation/certificate",
+    "general rank slack",
+    "az>=5",
+    "general C1/Q/H/SL"
+  ]
+}

@@ -1,0 +1,10 @@
+import Recaman.ThreeRunFiniteContext
+#check Finset
+#check Finset.mem_image
+#check Finset.mem_filter
+#check Finset.mem_union
+#check List.mem_toFinset
+#check Array.getElem?_eq_getElem
+#check List.take_append_drop
+#check List.drop_append
+#check Finset.ext

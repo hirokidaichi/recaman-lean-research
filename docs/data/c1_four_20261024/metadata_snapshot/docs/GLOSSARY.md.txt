@@ -1,0 +1,663 @@
+# 用語集
+
+本リポジトリでは、Lean・数学の標準用語、レカマン数列の問題設定から自然に出る語、
+本研究で導入した解析用語を併用している。本書では各用語の出自と役割を区別する。
+
+## 分類
+
+| 表記 | 意味 |
+|---|---|
+| 標準 | Lean、論理学、または一般的な数学で確立している用語 |
+| 問題由来 | レカマン数列の定義から直接生じる概念 |
+| 研究固有 | 本研究が導入した定義、証明インターフェース、または比喩 |
+| 整理用 | 単独のLean定義ではなく、定理群や軌道区間をまとめる呼称 |
+
+「研究固有」は未証明の仮定を意味しない。独自に定義した対象について、Lean内で定理を
+証明しているという意味である。
+
+## 基礎となる語
+
+### レカマン数列 `a` — 問題由来
+
+初項を `a 0 = 0` とし、時刻`n+1`では現在値から`n+1`を引いた値が正で未出なら減算し、
+それ以外では加算する数列である。`Basic.lean`では現在値と既出値の履歴を持つ`State`、
+減算可能性`CanSubtract`、一歩の更新`step`から実行可能な形で定義している。
+
+### 履歴 `valuesThrough` — 問題由来
+
+時刻`n`までに出現した`a 0, ..., a n`を保持するリストである。実装上は新しい値から並ぶ。
+レカマン数列では「減算先が未出か」を判定するため、値だけでなく履歴が力学の一部になる。
+
+### 初出 `FirstAt` — 問題由来
+
+`FirstAt seq x t`は、`seq t = x`であり、かつ`t`より前には`x`が出現していないことを表す。
+大域探索では、ある値だけでなくその初出時刻も進行度として利用する。
+
+### 商・剰余座標 `QuotRem`, `CoordinatesAt` — 標準＋研究固有
+
+商と剰余そのものは標準的である。本研究では正の時刻`n`における実軌道の値を
+
+```text
+a n = n * q + r,    r < n
+```
+
+と表し、`q`と`r`を軌道解析の座標として使う。`CoordinatesAt n q r`は、この関係が実際の
+レカマン値について成り立つことを表す。
+
+### 三角数 `lowerTri`, `upperTri` — 標準
+
+```text
+lowerTri q = q(q-1)/2
+upperTri q = q(q+1)/2
+```
+
+に対応する。Leanでは除算に関する余分な証明を避けるため、再帰式で定義している。
+
+### ポテンシャル `potential`、`G` — 研究固有
+
+座標`(q,r)`に対して導入した符号付き整数
+
+```text
+G(q,r) = r - upperTri(q)
+```
+
+である。「ポテンシャル」という発想は数学で一般的だが、この式とレカマン数列への適用は
+本研究固有である。局所遷移で`G`が保存、増加、減少する量を追跡し、有限降下の尺度にする。
+
+## 局所座標力学
+
+### regular chamber / 通常領域 — 研究固有
+
+座標が`q <= r`を満たす領域である。この領域では、時刻を一つ進めたときの商・剰余更新を
+追加の借りなしで記述できる。
+
+### borrow / 借り — 研究固有
+
+時刻の法が`n`から`n+1`へ変わる際、更新後の値を正規化された商・剰余に直すために行う
+算術的な借りを指す。筆算の「借り」を使った比喩であり、`BorrowData`が回数`b`と更新後の
+剰余`s`を証明付きで保持する。
+
+- `zeroBorrow`: 借りが0回の遷移
+- `oneBorrow`: 借りが1回の遷移
+- `multiBorrow`: 一般の複数回の借りを許した算術モデル
+
+一般の算術モデルでは複数回を扱うが、実際のレカマン軌道では`b = 0`または`b = 1`しか
+起こらないことを`OrbitBounds.lean`で証明している。
+
+### regular addition/subtraction、borrow addition/subtraction — 研究固有
+
+加算・減算という分岐はレカマン数列由来である。`regular`と`borrow`は座標更新の型を表す。
+たとえば通常減算では`G`が保存され、通常加算では`G`が`2q+1`だけ低下する。
+
+## 目標到達の機構
+
+### target / 目標 `m` — 一般語
+
+軌道上に出現することを証明したい非負整数である。最終目標はすべての`m`について
+`exists t, a t = m`を示すことである。
+
+### exact gate / 完全ゲート — 研究固有
+
+二回の連続した合法減算で目標`m`へ正確に着地できる局所配置である。時刻`u`の値が
+`2u+m+3`で、中間値と`m`が未出なら、次の二歩で`m`に到達する。
+「ゲート」は必要な局所条件がそろった入口という比喩である。
+
+### target equation / 目標方程式 — 研究固有
+
+下降開始時刻・値・目標・歩数の間に、三角数を含む到達方程式が成り立つことを表す。
+減算が予定どおり続けば目標へ着地し、途中で止まればblockerを取り出すための算術条件である。
+
+### target surface / 目標面 — 研究固有・整理用
+
+座標空間で
+
+```text
+potential q r = Int.ofNat m
+```
+
+を満たす状態の呼称である。コード上では独立した`TargetSurface`構造ではなく、この等式を
+仮定する`targetSurface_*`定理群として現れる。「面」は座標空間内の等位集合という比喩である。
+
+### blocker / 妨害値 — 研究固有
+
+下降中の減算先がすでに履歴にあるため、合法減算を続けられなくする既出値である。
+`BlockerCertificate`は、現在値`v`、妨害値`y`、それぞれの初出時刻、下降長などを保持する。
+証明書から`y < v`と、`y`の初出時刻が`v`の初出時刻より早いことが従う。
+
+### descent run / 下降列 — 研究固有
+
+実軌道上で合法減算が連続する区間を、開始時刻・開始値・長さとともに証明付きで表す。
+途中で下降が止まる場合、その理由をactual blockerへ変換する。
+
+### landing / 着地、escape / 脱出 — 整理用
+
+`landing`は目標または目標面への到達、`escape`は現在の局所配置から強制加算などを経て
+別の解析可能な配置へ移ることを表す。どちらも定理群を読みやすくする説明的な名称である。
+
+## 符号領域と有限区間
+
+### negative region / 負領域 — 研究固有
+
+`potential q r < 0`を満たす座標領域である。負領域に入った実軌道がどのように一段借りの
+境界へ到達するかを`Recovery*.lean`で解析する。
+
+### recovery / 回復 — 整理用
+
+負ポテンシャル状態から、一段借りによる非負着地または被覆証明へ進む有限過程の呼称である。
+単独の`Recovery`データ型ではなく、関連定理とモジュールをまとめる名前として使う。
+
+### epoch / エポック — 整理用
+
+同じ符号条件や局所条件のもとで追跡する有限な軌道区間を指す。
+
+- negative epoch: 負ポテンシャルから始めて回復を追う区間
+- nonnegative epoch: 非負ポテンシャルから始めて低い商またはポテンシャル低下まで追う区間
+
+確率論などの厳密な標準概念を流用したものではなく、本研究における区間整理の名称である。
+
+### undershoot / アンダーシュート — 研究固有
+
+目標`m`に対して
+
+```text
+0 <= G < m
+```
+
+となる非負ポテンシャル帯である。この帯では、有限時間内に被覆、負領域への復帰、または
+同じ帯のより低いポテンシャルへ進む三分岐を証明している。
+
+### frontier / フロンティア — 整理用
+
+高い商、借りの回数、履歴条件など、解析領域の境界で成立する定理群の名称である。
+`RecoveryFrontier`、`OneBorrowFrontier`、`HistoryFrontier`は共通のデータ型を指すのではなく、
+それぞれ異なる境界問題をまとめたモジュール名である。
+
+## 大域探索
+
+### coverage / 被覆 — 一般語＋研究固有
+
+一般には目標値が軌道に含まれることを指す。本研究では、全射性を値に関する整礎帰納へ
+落とすため、次の証明インターフェースを定義している。
+
+### `CoverageStep` — 研究固有
+
+親の値`v`から見て、次のいずれかを与える一段の証明である。
+
+1. 目標`m`が実際に出現する。
+2. `m <= y < v`を満たす、より小さい値`y`とその初出時刻を得る。
+
+第二の場合は親の値が真に小さくなるため、自然数上の強帰納法を適用できる。
+
+### oracle / オラクル — 研究固有の証明インターフェース
+
+このリポジトリでのoracleは、外部プログラム、探索アルゴリズム、計算上の神託ではない。
+「各探索ノードで、目標到達または真に小さい次ノードを構成できる」という命題を抽象化した
+証明義務である。
+
+- `CoverageOracle`: 各初出値から`CoverageStep`を供給する。
+- `HistorySearchOracle`: 三成分の履歴探索ランクを下げる。
+- `PhaseSearchOracle`: 位相を含む四成分ランクを下げる。
+
+oracleを仮定した停止証明は完成しているが、必要なoracleをすべての局所状態について構成する
+部分は未証明である。したがって、oracleから全射性が従う定理は条件付き定理であり、全射性
+そのものを仮定しているわけではない。
+
+### history budget / 履歴予算 — 研究固有
+
+`missingBelowCount m n`、すなわち時刻`n`までに未出である`m`未満の値の個数である。
+履歴が増えるとこの個数は増えず、新しい`m`未満の値が初出すると真に減る。有限な探索ランクの
+第一成分として使うため「予算」と呼ぶ。
+
+### well-founded rank / 整礎ランク — 標準＋研究固有
+
+整礎関係と辞書式順序は標準数学・Leanの概念である。どの量をランクに選ぶかは本研究固有である。
+
+- 履歴予算ランク: 未出値数と親の値
+- 履歴探索ランク: 未出値数、anchor parent、局所軌道値
+- 位相探索ランク: 未出値数、anchor parent、位相、局所量
+
+いずれも各証明ステップで辞書式に真に減るため、無限下降がないことをLeanで証明する。
+
+### diagonal / 対角状態 — 研究固有
+
+時刻と軌道値が一致する形の状態である。主要な対角補題では`a (n+2) = n+2`を仮定し、
+次の値の出現または極大な後方減算鎖と早期blockerを抽出する。
+
+### anchor parent / アンカー親 — 研究固有
+
+局所的な探索中に基準として固定する親の値である。debt状態から通常探索へ戻るときは、
+位相成分が増えても、その前に比較されるanchor parentが真に減ることで全体ランクが低下する。
+
+### phase / 位相、normal / 通常、debt / 負債 — 研究固有
+
+`PhaseSearchNode`が持つ探索モードである。
+
+- `normal`: 通常の値・履歴探索を行う。
+- `debt`: 対角分岐で得た早期blockerを処理し、初出時刻の下降を追う。
+
+`debt`は金銭的意味ではなく、「通常探索へ戻る前に解消すべき局所的な証明義務」の比喩である。
+debtへの進入、debt中の初出時刻低下、anchor低下後のnormalへの復帰は、いずれも四成分ランクを
+真に下げるよう設計されている。
+
+### semantic domain / 意味的domain — 研究固有
+
+数値tupleとして作れる全`PhaseSearchNode`ではなく、実軌道・履歴・座標に関する証明を伴う
+nodeだけを探索対象にするためのproof-carrying domainである。`PhaseSemanticInvariant`は
+canonical、normal、debt、crossing recoveryを統合する。現在のweak normal constructorは
+過去の初出値と後のhorizonを組み合わせられるため、total oracle用にはさらに精密化が必要である。
+
+### orbit-ready normal — 研究固有
+
+normal nodeのlocal valueが実際に`a time`であり、目標時刻条件、目標下界、anchor上界、
+`CoordinatesAt time q r`を同時に持つ状態である。`OrbitReadyNormalCertificate`はこの条件を
+証明付きで保持し、現在horizonからepoch定理を適用できることを明示する。
+
+### provenance / 生成元証明 — 標準的発想＋研究固有の用途
+
+あるnormal childがparent-drop、CoverageStep、frontierなど、どの局所定理から生成されたかを
+保持する証明データである。一般語としてのprovenanceは標準的だが、本研究ではcurrent-stateでない
+historical childを安全に再帰探索へ戻すためのdomain constructorとして用いる。
+`ProvenancedNormalInvariant`はcurrent nodeとrank edge付きhistorical nodeを区別する基礎APIを
+実装している。total oracleには、parent-dropやdowncrossingなど生成機構別の追加データが必要である。
+
+### representative time / history horizon — 研究固有
+
+historical normal nodeで分離する二つの時刻である。`representative time`はanchor値と座標を
+実際に取る軌道時刻、`history horizon`は`missingBelowCount`を評価する後の履歴時刻である。
+両者が一致するのがcurrent nodeであり、前者が小さい場合をextended-history nodeと呼ぶ。
+代表時刻からhorizonまでに履歴予算が下がると、representative stateからのrank下降を単純には
+輸送できないため、この差は単なる実装詳細ではない。
+
+### crossing recovery / crossing回復 — 研究固有
+
+target未満の値から強制加算でtarget以上へ上向き横断した実遷移を保持するnormal状態である。
+pre-crossing値を新anchorにするため、旧anchorがtarget以上ならanchorを厳密に下げられる。
+extended-historyのearly representativeとhistory-budget gapはいずれも、below-target実出現から
+将来のcrossing recoveryを構成することで閉じる。
+
+### horizon-ready debt / 時刻準備済み負債 — 研究固有
+
+strong `DebtInvariant`に`target ≤ node.horizon+1`を追加した状態で、Leanでは
+`ReadyDebtInvariant`として表す。通常のdebt継続はhorizonを固定するためこの条件を保存する。
+一方、旧`CoverageDebtChildCertificate`は親のclock条件を保持していないので、certificate単独から
+horizon readinessは導けない。
+
+### ready crossing / 時刻準備済みcrossing — 研究固有
+
+`CrossingSearchInvariant`に`target ≤ node.horizon+1`を追加した状態で、Leanでは
+`ReadyCrossingSearchInvariant`として表す。horizonの軌道値がtarget未満なら次の強制加算で
+weak upcrossingを作れ、horizon以後にdowncrossがあればfresh below-target値による
+history-budget下降を作れる。
+
+### crossing continuation growth residual — 研究固有
+
+horizon-below ready crossingから次のcrossingへ進んだとき、history budgetが不変で、
+pre-crossing anchorも下がらない残余である。Leanの
+`CrossingContinuationGrowthResidual`は新crossing、budget同値、anchor非減少、および
+`PhaseSearchProgress`不成立を同時に保持する。target 19の実軌道に実例があるため、
+単なinterfaceの弱さではない。
+
+### target tail return / 目標tail復帰 — 研究固有
+
+at-or-above targetの軌道点から、目標がすでに出現するか、将来below-targetの軌道点へ
+戻るという長期命題で、`TargetTailReturnHypothesis`として切り出す。future downcrossが
+存在しないことは、その開始点以降ずっとtarget以上に留まることと同値である。
+これは現在のready crossing局所totalityに残る数学的境界である。ただし、全targetに対する
+tail returnは`all_targetTailReturn_iff_surjective`により元の全射性予想と同値であり、弱い局所補題ではない。
+
+### missing permanent-above tail / 未出目標の恒久上方tail — 研究固有
+
+正のtargetが全軌道で未出、target未満の値があるhorizonまでにすべて既出、かつそのhorizon以後の
+軌道値が常にtargetより大きい状態を`MissingPermanentAboveTail`として表す。仮想的な最小未出targetは
+この証明書を持つ。tailの最小値では二連続forced additionが起き、直下値`a n - 1`の初出がtail開始前にある。
+
+### zero-budget crossing / 履歴予算0のcrossing — 研究固有
+
+`missingBelowCount target horizon = 0`を持つcrossingである。target未満の全値が既出なので、
+noncrossing refined子に必要なstrict budget dropは不可能になる。refined子が存在する場合はcrossingに
+留まり、pre-crossing anchorが厳密に下がる。`PermanentTailCrossingCertificate`は仮想反例から、
+tail内horizon、ready crossing、zero budget、future downcross不在をまとめて抽出する。
+
+### tail minimum historical blocker / tail最小値の履歴blocker — 研究固有
+
+恒久上方tailの最小値`a n`に対する直下値`a n - 1`と、そのtail開始前の初出証明である。
+`PermanentTailMinimumCertificate`は最小性、二連続forced addition、候補式、初出時刻、target下界を保持する。
+zero-budget crossingのanchor下降へこのblockerを接続することが現在の未証明点である。
+
+### historical predecessor outcome / 履歴predecessor分岐 — 研究固有
+
+tail最小値直下の初出時刻以後にdowncrossがあるかを分類する`HistoricalPredecessorOutcome`である。
+downcross枝はfresh below-target endpointとstrict history-budget dropを返す。no-downcross枝は初出時刻から
+新しいstrict-above tailを作り、その最小値を厳密に下げる。後者は自然数下降なので有限回しか続かない。
+
+### historical cycle growth residual / 履歴cycle成長残余 — 研究固有
+
+historical downcross後のupcrossingをzero-budget crossing親と同じhorizonへ載せた際、pre-crossing anchorが
+下がらない残余である。`HistoricalCycleGrowthResidual`はdowncross、upcross、ready crossing子、same horizon、
+anchor非減少、rank進捗不成立を保持する。親をそのupcrossing自身に選ぶとchild=parentの停留例を常に
+構成できるため、単なる型情報不足ではなく、任意crossing選択を許す現行domainの本質的境界である。
+
+### first weak upcrossing / 最初の弱上方crossing — 研究固有
+
+below-target開始点以後で最初に起きる`WeakUpcrossingStep`を`FirstWeakUpcrossingStep`として表す。
+既知witness時刻を上界にした自然数強帰納で存在し、任意の他witness以下なので一意である。
+ただし同じ開始点から再選択すれば同じ時刻へ戻るため、canonical化だけではstationary cycleを除けない。
+
+### seen-below count / 発見済み下側値数 — 研究固有
+
+`seenBelowCount target horizon = target - missingBelowCount target horizon`である。target未満の発見済み値数に
+対応し、missing countとの和はtargetになる。時間の進行では増加し、tail horizonからhistorical時刻へ
+戻るbacktrackingでは減少し得るため、過去向き探索のdual budgetとして使う。
+
+### permanent-tail cycle rank / 恒久tail cycleランク — 研究固有
+
+zero-budget領域で使う`(anchor, phase, seenBelowCount, tailMinimum)`の四成分辞書式rankである。
+phaseは`crossing > backtrack > discharge`の一方向。historical探索内部はすべてstrictに下降する。
+dischargeからcrossingへ戻るにはstrict anchor dropが必要十分であり、同anchor stationary loopを拒否する。
+
+### crossing-time cursor / crossing時刻cursor — 研究固有
+
+permanent-tail cycleの外側比較をanchor単体から`(anchor, crossingTime)`へ精密化した辞書式量である。
+anchorが下がればもちろん進捗し、anchorが等しくてもcanonical returnの時刻が旧crossingより早ければ
+進捗する。phase、seen-below count、tail minimumと合わせた五成分rankもwell-foundedである。
+
+### canonical discharge kernel residual / canonical排出kernel残余 — 研究固有
+
+historical downcrossからcanonical upcrossingで戻ってもcrossing-time cursorが下がらない場合の最小分類である。
+`CanonicalDischargeKernelResidual`は、strict anchor growth、旧crossingがdowncross endpointより前にある
+chronology mismatch、anchorと時刻が同一のliteral stationaryの三constructorだけを持つ。
+
+### canonical return rebase / canonical return再基底化 — 研究固有
+
+historical downcross後の最初のupcrossingを、旧zero-budget horizonの新しいcrossing親として再構成する操作である。
+ready crossing、permanent tail、tail minimumは保存できる。しかし同じdowncross endpointから再びcanonical returnを
+選ぶと親自身へ戻るため、三kernel residualをliteral stationary coreへ正規化するだけで進捗にはならない。
+
+### canonical below corridor / canonical下側回廊 — 研究固有
+
+fresh historical downcross endpointから、その後最初のweak upcrossingの直前までの有限軌道区間である。
+canonicalityにより全値がtarget未満になる。内部の合法減算はfresh below値とhistory-budget下降を作り、
+forced additionはそのstep clockがtarget未満であることを強制する。即時returnはexact valleyになる。
+
+### all-forced addition corridor / 全強制加算回廊 — 研究固有
+
+canonical below corridorの内部transitionがすべてforced additionである場合である。遅延runではreturn時刻が
+target未満になり、値は追加clockの総和に従って厳密増加する。`target - time`がwell-foundedなremaining-clock
+rankを与えるが、これは有限corridor traversal用であり、外側stationary cycleのexitではない。
+
+### canonical corridor suffix / canonical回廊suffix — 研究固有
+
+canonical below corridorのlater fresh endpointから同じfirst return crossingまでを切り出した証明書である。
+内部legal subtractionのendpointへ移るとhistory budgetと`returnTime - endpointTime`が同時に下がる。
+このsuffix cursorは固定return内のlegal endpoint消費を有限化するが、outer crossing自体は変更しない。
+
+### legal return boundary / 合法減算return境界 — 研究固有
+
+below-target corridor内のlegal subtraction endpointがfirst return predecessorと一致する境界である。
+直後のforced additionとの二歩式は元source値`+1`を返し、weak upcross条件と合わせるとexact targetになる。
+従ってmissing-target仮定ではこの境界は不可能で、legal childはreturnより厳密に前に留まる。
+
+### terminal all-forced crossing window / 終端全強制加算crossing窓 — 研究固有
+
+legal endpointを消費した後に残るall-forced suffixの有限算術証明書である。
+`endpoint < return < target`、strict crossing、final stepを含む加算traceを保持し、target gapとovershootは
+いずれも正でreturn clock以下になる。finite corridorとouter stationary cycleを区別した最小terminal residualである。
+
+### immediate historical valley / 即時履歴谷 — 研究固有
+
+historical downcross直後がfirst return predecessorでもある場合のexact valleyである。
+sourceはtargetより上、fresh endpointはtarget未満で、二遷移後にsource値`+1`へ戻る。
+`ImmediateHistoricalValleyCertificate`がmissing-target provenanceと三つの軌道等式を保持する。
+
+### corridor terminal normalization / 回廊終端正規化 — 研究固有
+
+`returnTime - endpointTime`への強帰納で、missing-target corridor内のlegal endpointを有限回消費する操作である。
+delayed枝はterminal all-forced crossing windowへ到達し、全historical dischargeを有限windowまたはimmediate
+historical valleyの二形へ型付きで縮約する。
+
+### strict terminal crossing balance / 厳密終端crossing釣合い — 研究固有
+
+terminal二形に共通するfinal forced upcrossingの算術証明書である。crossing前のtarget gapと直後のovershootは
+ともに正で、その和はaddition clock `returnTime + 1`に等しい。従って各差は`returnTime`以下になる。
+`NormalizedTerminalCrossingData`はこの釣合いに加え、最終fresh below endpointとcanonical returnを保持する。
+
+### terminal forced reason / 終端強制理由 — 研究固有
+
+terminal crossingのfinal subtractionが失敗した理由の型付き二分である。predecessor値がstep clock以下なら
+`target < 2 * (returnTime + 1)`という数値境界を持つ。candidateが正なら既出値であり、そのfirst occurrenceは
+returnより厳密に前、candidate値はpredecessorとtargetより厳密に小さいhistorical blockerになる。
+
+### terminal blocker position / 終端blocker位置 — 研究固有
+
+historical blockerのfirst occurrenceとnormalized final fresh endpointの順序分類である。first timeがfreshより後なら
+新しいbelow-target first occurrenceなので`missingBelowCount`が厳密下降する。fresh以前なら既存outer historyとして残る。
+immediate valleyではfresh=returnかつfirst time<returnなので、必ずfresh以前枝になる。
+
+### master terminal residual / 主終端残余 — 研究固有
+
+terminal shape、strict balance、forced reason、blocker positionを一つに統合したexhaustive outcomeである。
+fresh以後のblockerはstrict budget progressとして分離され、残るouter residualはimmediate二形、有限clock band、
+finite outer blockerの四形だけになる。
+
+### terminal return candidates / 終端return候補 — 研究固有
+
+finite insufficient residualのclock bandを明示列挙する`terminalReturnCandidates target`である。
+`List.range target`を`target < 2*(return+1)`でfilterし、長さはtarget以下である。候補を後のreturnへ移すと
+`target-return` rankが厳密下降するため、候補探索の有限性を直接表す。
+
+### historical blocker backtrack / 履歴blocker後退 — 研究固有
+
+positive blockerのfirst occurrence直前へhistory clockを戻すrank moveである。candidateが正なのでfirst timeは非零で、
+直前からfirst timeへmissing budgetが下がりseen budgetが増える。逆向きの選択は既存tail-cycle backtrack rankを
+厳密に下げる。残る条件は、そのpredecessor clockを意味的探索nodeとして選ぶprovenanceである。
+
+### blocker generation boundary / blocker生成境界 — 研究固有
+
+historical blockerのfirst occurrenceを作ったactual transitionのlegal subtraction／forced addition分類である。
+legal枝はより大きいpredecessorのearlier first occurrence、forced枝はtarget未満のpredecessorとclockを返す。
+landing candidateはtarget未満なのでordinary normal/debt domainには直接入らず、below-target専用adapterが必要になる。
+
+### discharge iteration rank / discharge反復ランク — 研究固有
+
+installed successorへ正確に輸送される三成分（共有horizon budget・installed anchor gap・old crossing cursor）
+の辞書式ランクである。master rankの内側cursorはblocker first timeに依存し連続する二解析間で比較できないが、
+この三成分だけでinstalled successor反復は厳密に下降するか、exact replayで文字通り不動になる。
+
+### exact replay fixed point / 正確replay固定点 — 研究固有
+
+successor dischargeがiteration rankを動かさない停留である。return crossingはold crossingと一致する閉cycleに
+なり、installed nodeはparentそのもの、successorは同parent同cursorへのself-mapである。全cursorはtarget未満の
+below corridor帯に収まる。
+
+### fresh landing / 新規着地 — 研究固有
+
+missing-count strict dropの背後に必ず存在する、window内に初出するbelow-target値の出現である。drop不等式単独
+から逆算でき、反例のbelow coverageと初出最小性によりparent history内へ束縛される。canonical first upcrossing
+がそこから再開し、ready crossing nodeとしてsemantic domainへ搭載（mount）できる。
+
+### mounted node / 搭載node — 研究固有
+
+fresh landingのrestart crossingをold horizonに載せたready crossing node `⟨horizon, a c, .normal, a c⟩`である。
+combined certificateの他fieldは共有horizonにのみ依存するため全てtransportし、terminal解析はmounted nodeから
+再入できる。
+
+### landing fixed point / landing固定点 — 研究固有
+
+mounted反復のequal-anchor停留である。mounted nodeはparentと文字通り一致し、同じ解析の再入は同一状態を再生産
+する。discharge replayと並ぶ第二のnode-level固定点である。
+
+### `TailFixedPointCore` / 固定点共通核 — 研究固有
+
+二つの固定点が共有する数値核である。crossing値がparent anchorに一致し、missing targetをまたぐ明示的forced
+additionで、mounted nodeがparentを再生産する。最終統合定理はsemantic phase childまたはこのcore（provenance
+付き）の二形で終端する。kernel floorによりclockは6以上、targetは19以上（replay側）、上側はupperTri包絡で
+挟まれる。深い遅延初出値（19、61）だけがkernel計算による排除の射程外に残る。
+
+### nineteen cycle / 19固定cycle — 研究固有
+
+例外target 19のdischarge replayが取り得る唯一の形である。時刻7のdowncross`20→12`から時刻8のcrossing
+`a 8 = 12 < 19 ≤ 21 = a 9`で即時returnし、anchorは12、blocker defectは3（初出時刻2）、tail最小値は21である。
+tailは時刻131（`a 131 = 4`）より後にしか始まれず、19-反例は固定された歴史と未知のtailに二分される。
+
+### no late revisit / 遅い再訪不可能性 — 研究固有
+
+既出の値は自分より大きい時刻で再訪できないという力学補題である（`a_succ_ne_of_seen`）。減算着地は
+freshnessを要求して既出値に降りられず、加算着地は自分のclock以上の値になるため小さい既出値に届かない。
+replay固定点が強制するtail最小値の遅い再訪と矛盾させることで、深い初出の kernel 検証なしに例外targetを
+排除する主要武器である。
+
+### record exclusion / record排除 — 研究固有
+
+replay crossingは軌道のrunning maximumを更新できないという排除道具である。dischargeのdowncrossは
+missing target以上の値から始まり、straddleはcrossing値をtarget未満に保つため、crossing値は必ず
+より早い軌道値に支配される。record更新型のforced addition clockは帯検証なしで一括排除できる。
+downcross prefix境界（targetはcrossing以前の軌道最大値以下）・再訪不可能性と並ぶ、床引き上げの
+三種の機械的道具の一つである。
+
+### comb run / 櫛状区間 — 研究固有
+
+forced additionと即時repaying legal subtractionの交互区間である。low railは1周期に1ずつ下降し、high railは
+low railに現clockを足した値になる。値集合はrail二本と事前履歴の直和に分解され、最終low rail未満のfresh値は
+区間を通じてfreshのまま輸送される。圧縮軌道検証の基本単位である。
+
+## Leanと証明監査の語
+
+### `Prop`, `def`, `structure`, `inductive`, `theorem` — Lean標準
+
+- `Prop`: 命題の型
+- `def`: 定義
+- `structure`: 複数のデータや証明を持つ構造
+- `inductive`: 帰納型
+- `theorem`: 証明済み命題
+
+### `Decidable`、`decide` — Lean標準
+
+命題を計算で判定できること、およびその判定手続きを使って小さな具体例を証明する機構である。
+本リポジトリの`Examples.lean`ではLeanカーネルが確認できる`decide`を使用する。
+
+### `WellFounded`、強帰納法、辞書式順序 — 数学・Lean標準
+
+無限下降列が存在しない関係と、それに基づく帰納法である。本研究の大域探索は、複数の自然数を
+辞書式に並べたランクが毎回低下することを示して停止性を得る。
+
+### 公理監査 `#print axioms` — Lean標準の検査機能
+
+ある定理がどの公理に依存するかを表示する。`Audit.lean`では主要定理を監査し、`sorryAx`、
+ユーザー定義公理、`native_decide`由来の公理に依存していないことを検査する。
+
+## 2026-09-09の供給窓解析
+
+### 等号供給窓（sharp window）— 整理用
+
+周期供給研究で、過去符号を新しい順に並べ、先頭m≥3個がAでP2を満たす窓は
+長さd≥4m−1となる。この下界を達成するd=4m−1の窓を「等号窓」と呼ぶ。
+最短lagであることだけでは等号窓とは限らない。P2の定義は変更しない。
+下界・全mの等号族・実streamとの同値は`LeadingRunSupply.lean`、分類は
+[分割分類カード](HYPOTHESIS_CARD_2026-09-09_SHARP_PARTITIONS.md)を参照。
+
+### 入れ子供給と保護S — 整理用
+
+k回のAの後の供給窓が、前の供給窓を全て含むとき「入れ子」と呼ぶ。
+長さをd,d₂とすると条件はd+k≤d₂。最小lagが後退する例があるので、この条件は
+自動ではない。「保護S」は、等号窓の先頭A区間の直前から二つ目のSであり、
+m≥L+1のとき半径Lの既存短chargeが使えないことを指す整理用の名称。
+標準のRecamán数列の用語や新しい実軌道仮定ではない。
+
+## 読む順序（初学者向け）
+
+初めて読む場合は、次の順序を推奨する。
+
+1. `Basic.lean`: 数列と履歴
+2. `Coordinates.lean`: 商・剰余とポテンシャル
+3. `CoordinateDynamics.lean`: 通常遷移と一段借り
+4. `Coverage.lean`: 全射性へつなぐ証明インターフェース
+5. `PROOF_MAP.md`: 各局所定理が大域探索のどこに位置するか
+6. `PhaseSearch.lean`: 現在の最終的な整礎探索骨格
+
+## 2026-09-10: 周期供給と SS 残余
+
+### sign time、step、backward word — 問題由来＋整理用
+
+sign time t は `a(t)→a(t+1)` の更新を指し、その step と更新幅は t+1。
+A=+1、S=−1。`past e t d` は時刻 t−1,t−2,…,t−d の符号を新しい順に並べる。
+したがって語の prefix が短い供給窓になる。計算結果には step と sign time の両方を記録する。
+
+### 有限 P2 と周期 P2 — 研究固有
+
+長さ d の backward word について `mass=Σ sign=1`、`moment=Σ(i+1)sign=0` が P2。
+標準軌道の d≤t では `P(t)−P(t−d)=1` と `a(t)=a(t−d)+t+1` に同値で、
+実在する historical blocker を与える（E-111）。一般 blocker は符号差 1 とは限らない。
+周期 P2 は整数全体へ拡張した符号語に同じ二式を要求する。
+E-065/E-120 は任意有限 State の eventual 周期性から周期 P2 を導き、
+周期 p に対して必要 lag を `0<d<p(p+1)` に制限する。
+
+### clean、SS-free、NoSAAS — 研究固有＋整理用
+
+clean は窓の正の偶数 backward offset がすべて A であること（`EvenBackA`）。
+P2 clean 窓は d=8k+3、一つの奇数 offset 2k+1 が A、その他の奇数 offset は S に分類される。
+SAAS を含まない窓では P2 の SS-free と clean が同値（E-109）。
+SAAS 禁止は標準実更新から証明済みだが、任意周期符号語では明示的な前提として残す。
+
+### SS-gap family A / B — 研究固有
+
+SS がちょうど 1 個で SAAS がなく、proper prefix に P2 がない窓を
+`A^g0 S A^g1 … S A^gn` と表す。n は S 数、長さは 2n+1。
+A 族は両 endpoint gap が 0、内部 gap z が 0、gap j が 4、残りが 1、`n=6j−2z+1`。
+B 族は g0=1、gn=0、gap z が 0、gap j が 3、残りが 1、`n=4j−2z+1`。
+完全分類は E-121 `PROVED-PAPER`。全パラメータ族の P2 は Lean、任意語の分類全体はまだ Lean ではない。
+
+### shared-SS demand — 整理用
+
+同じ隣接 SS を跨ぐ、異なる現在 A 位相の最小 P2 窓の数。
+`W_k=(SA)^k SAAAASS (AS)^(3k)` により一つの SS への需要は任意に大きくなる（E-122）。
+各窓には周囲の S も存在するため、これは総 S 容量 E-070 の反例ではない。
+SS の数だけに定数を掛けた予算では不足することを意味する。
+
+### one-SS run capacity — 整理用
+
+NoSAAS 下で、SS1 の最小 P2 供給を持つ現在 A は、一つの A run に高々一つ（E-127、`PROVED-PAPER`）。
+従ってこのクラス単独の供給数は全周期で S 数以下。ただし型 B と直後の clean AAS 供給は、
+別々に構成した写像で同じ S へ送られる。各クラスの容量を単純に加算してはいけない。
+
+### low-SS endpoint capacity — 整理用
+
+供給窓ごとの `ssCount≤1` を low-SS と呼ぶ。周期全体の SS 個数の制限ではない。
+任意の low-SS P2 窓には S で終わる P2 prefix があり、現在 A の異なる供給源は
+同じ最古端点を共有できない。この一つの写像で clean と SS1 の共同容量を全周期で
+Lean 証明した（E-128）。NoSAAS・最小 lag・lag 上限は不要。
+旧 one-SS run 写像と clean 写像の衝突は、この新写像で解消した。
+SS2 への同じ prefix 正規化は標準step115で偽（E-130）。旧shortとの和集合もまだ未証明。
+
+## C1供給連鎖の語彙（2026-10-24）
+
+### 非供給A・free A・nonsupplied A — 整理用
+
+元の基点pからEndableでないA。Nat clock版では `f u=true ∧ ¬EndN f 0 u` を数える。
+AN/a_z/a_yは文脈に応じた区間のこの個数で、全A個数とは違う。
+「r4モデル」はこの予算≤4のモデルを指し、全Aが4個という意味ではない。
+基点を途中のclockへ取り直すと同じ個数とは限らない。元のhistoryを保持する。
+
+### EndNとlocalSupply — 研究固有
+
+`EndN f s b`は、実際の符号 `f b=A` と、始点t≥s・正の長さを持つ実窓Winがbまであること。
+Winは実height差1・面積0を表す。`localSupply(w)`は語wのsuffixの窓条件を判定し、
+次の符号が実際にAであることは別に必要。窓条件だけから次のAの存在を主張しない。
+oldは対象tailの開始nより古いt<n、localはt≥n。どちらも元の基点のEndableへ接続する。
+
+### 16終端語と10旧prefix代表 — 整理用
+
+| 呼称 | 対象の位置 | 保存・利用する情報 | 証拠の境界 |
+| --- | --- | --- | --- |
+| 明示16root/終端語 | tail z=[n,q) | この具体語から先のfuture Q | E-392は語の所属を仮定。a_z≤4からの全包含は未証明 |
+| 低massの10代表 | 古いprefix [0,n) のsuffix | 全mass3/4 suffixを同じ代表で同時保存 | E-399は全長で供給。全Endable historyやmass≥5の保存ではない |
+
+両者は区間も役割も違う。10代表の同じ一つを全future clockへ使う。
+必要mass3/4の実old窓・実endpoint A付きEndNはその代表で双方向に判定できるが、
+S飽和後のtrim語のmassを、実tail全体のmassとして代入してはいけない。
+
+### zero-free continuation・terminal ray — 整理用
+
+追加の非供給A予算0の継続。ここでも供給されるAは置ける。
+terminal checkが真ならE-391が全futureのA個数0を供給する。具体motifのE-396は追加A≤5、
+長いS/偶数runのE-397は追加A≤1であり、zero-freeだけから追加全A個数0とは言えない。
+一般rankやC1全体の解決と混同しない。

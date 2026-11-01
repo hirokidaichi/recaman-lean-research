@@ -1,0 +1,18 @@
+{
+  "tag": "H10-order",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldSourceKeyOrder.lean"
+  ],
+  "started_jst": "2026-10-28T07:31:56.990689+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSourceKeyOrder.lean": "b3e08c916307556be5d639a40b85485ec228a135e1c18d1c28c7d69a2cfe2ba2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

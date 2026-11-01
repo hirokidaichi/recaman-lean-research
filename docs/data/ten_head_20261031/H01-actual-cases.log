@@ -1,0 +1,13 @@
+Recaman/TenHeadActualCases.lean:15:21: warning: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/TenHeadActualCases.lean:35:4: error: Type mismatch
+  hw.right.left
+has type
+  Fw f (s + l) = Fw f s + 1
+but is expected to have type
+  Fw f (s + l) - Fw f s = 1
+Recaman/TenHeadActualCases.lean:59:24: error: `simp` made no progress

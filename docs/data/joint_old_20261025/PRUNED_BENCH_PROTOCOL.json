@@ -1,0 +1,23 @@
+{
+  "card": "H-20261025-09",
+  "frozen_utc": "2026-10-24T22:13:26.382482+00:00",
+  "sources": {
+    "Recaman/FourEventPruned.lean": "33d9f1d397480eb3f80a7fee3cb0e34537904e3a20351a471eb553948ffabad6",
+    "Recaman/PrefixMassBarrier.lean": "4cda54ad1b18dca5f7095f1695777348de47c33465742b60a7074e38912f7e7a",
+    "docs/data/joint_old_20261025/dag_pruned_bench.lean": "91067e7f0bd550f7d61bec55906f569aee0ff437c2bb59aa11e1844524d53436"
+  },
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "docs/data/joint_old_20261025/dag_pruned_bench.lean"
+  ],
+  "cpu_cap": 90,
+  "wall_cap": 90,
+  "rss_cap_kib": 4194304,
+  "model": "same256closednodes/same40successors. General proved gap inequality and cheap budget/balance guards rewrite computation, both concrete per-state premises kernel checked, A11 retained.",
+  "acceptance": "same kernel proof, resource improvement over31.24s/597520KiB. Only then replace current full job without increasing limits.",
+  "old_job": "linear full remains under original cap, no classification promoted",
+  "prior_launch_error": "An initial missing-file probe followed a failed source-stage assertion in a non-errexit shell. Exit1 and log retained; no benchmark/proof succeeded from that attempt. Commands now stop at first failure."
+}

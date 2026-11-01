@@ -1,0 +1,71 @@
+Recaman/FourRunTargetArea.lean:136:56: error: Application type mismatch: The argument
+  Eq.symm (List.take_append_drop t w)
+has type
+  w = List.take t w ++ List.drop t w
+but is expected to have type
+  List.take t w ++ u = w
+in the application
+  block_suffix hw (List.take t w) u (Eq.symm (List.take_append_drop t w))
+Recaman/FourRunTargetArea.lean:139:17: error: Function expected at
+  List.length_drop
+but this term has type
+  (List.drop ?m.330 ?m.331).length = List.length ?m.331 - ?m.330
+
+Note: Expected a function because this term is being applied to the argument
+  t
+Recaman/FourRunTargetArea.lean:159:4: error: Type mismatch
+  h
+has type
+  Fw f (t + (n + h✝ + M + m + L + s + U + v + T + j - t)) = Fw f t + 1
+but is expected to have type
+  Fw f (n + B + j) - Fw f t = 1
+Recaman/FourRunTargetArea.lean:164:4: error: Type mismatch
+  hwin.right.right
+has type
+  Ar f t (n + h + M + m + L + s + U + v + T + j - t) = 0
+but is expected to have type
+  Ar f t (n + B + j - t) = 0
+Recaman/FourRunTargetArea.lean:170:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  p ≥ 0
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  i ≥ 0
+  i - k ≥ -2
+  2*i - o ≤ -4
+  2*i - p ≥ -3
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c + e + k - o ≤ -1
+  b ≥ 1
+  a ≥ 0
+  a - l ≤ -1
+where
+ a := ↑t
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑U
+ g := ↑v
+ i := ↑j
+ k := ↑T
+ l := ↑w.length
+ o := ↑(cN (fun u => f u = true) n B)
+ p := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+Recaman/FourRunTargetArea.lean:198:6: error: Type mismatch: After simplification, term
+  hA4 (x - D)
+    (Decidable.byContradiction fun a =>
+      actual_final_S_source_A_budget._proof_1_4 n t h M m L s U v T j q i hi x hx hxi a)
+ has type
+  f (n + h + M + m + L + s + U + v + (x - D)) = true
+but is expected to have type
+  f x = true
+Recaman/FourRunTargetArea.lean:204:4: error: Type mismatch
+  hm
+has type
+  Fw f (n + h + M + m + L + s + U + v - q + (q + i)) = Fw f (n + h + M + m + L + s + U + v - q) + 1
+but is expected to have type
+  Fw f (D + i) - Fw f (D - q) = 1

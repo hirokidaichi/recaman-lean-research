@@ -1,0 +1,25 @@
+{
+  "tag": "H10-short-source-clocks",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ShortGapSourceClocks.lean"
+  ],
+  "started_jst": "2026-10-31T06:48:53.719094+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortGapSourceClocks.lean": "35120b77d2dfcb54d5124def33c6a7b64dedc95932754d587212a4f1a7fe86b8"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "33187ec0fa3d44b33932263ac76945572a6d8a02cef9f35adb0465e568566feb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8691452080383897,
+  "cpu_seconds": 0.789727,
+  "finished_jst": "2026-10-31T06:48:54.588165+09:00"
+}

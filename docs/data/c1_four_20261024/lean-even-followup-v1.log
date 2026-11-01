@@ -1,0 +1,42 @@
+Recaman/BlockSuffixPositivity.lean:2532:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(k - 1)
+in the target expression
+  2 * areaW (List.replicate (2 * k) true) = ↑(2 * k) * (↑(2 * k) + 1)
+
+s k j : Nat
+hk : 1 ≤ k
+hs : 2 * areaW (List.replicate s false) = -↑s * (↑s + 1)
+hA : 2 * areaW (List.replicate (2 * k) true) = ↑(2 * k) * (↑(2 * k) + 1)
+hT : 2 * areaW (List.replicate (k - 1) false) = -↑(k - 1) * (↑(k - 1) + 1)
+hJ : 2 * areaW (List.replicate j false) = -↑j * (↑j + 1)
+hOne : areaW (List.replicate 1 true) = 1
+hk' : ↑(k - 1) = ↑k - 1
+h2k : ↑(2 * k) = 2 * ↑k
+hm : -↑s + ↑(2 * k) + -(↑k - 1) + ↑1 + -↑j = 1
+ha :
+  areaW (List.replicate s false) + ↑(2 * k) * -↑s + areaW (List.replicate (2 * k) true) + (↑k - 1) * (-↑s + ↑(2 * k)) +
+              areaW (List.replicate (k - 1) false) +
+            ↑1 * (-↑s + ↑(2 * k) + -(↑k - 1)) +
+          areaW (List.replicate 1 true) +
+        ↑j * (-↑s + ↑(2 * k) + -(↑k - 1) + ↑1) +
+      areaW (List.replicate j false) =
+    0
+⊢ False
+Recaman/BlockSuffixPositivity.lean:2531:4: warning: This simp argument is unused:
+  List.length_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [evenFollowWord, areaW_append, mass_append, mass_rep_false, mass_replicate_A,
+    List.length_replicate] at hm ha
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockSuffixPositivity.lean:2559:46: error(lean.unknownIdentifier): Unknown identifier `mul_self_nonneg`
+Recaman/BlockSuffixPositivity.lean:2560:32: error(lean.unknownIdentifier): Unknown identifier `mul_nonneg`
+Recaman/BlockSuffixPositivity.lean:2561:30: error(lean.unknownIdentifier): Unknown identifier `mul_self_nonneg`
+Recaman/BlockSuffixPositivity.lean:2554:4: warning: This simp argument is unused:
+  List.length_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaW_append, mass_append, mass_rep_false, mass_replicate_A, List.length_replicate] at hm ha
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

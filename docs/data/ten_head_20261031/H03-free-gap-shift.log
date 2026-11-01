@@ -1,0 +1,5 @@
+Recaman/TenHeadFreeGap.lean:14:11: error: unsolved goals
+P : Nat → Prop
+s K : Nat
+ih : cN P s K = cN (fun i => P (s + i)) 0 K
+⊢ (if P (s + K) then 1 else 0) = if P (s + (0 + K)) then 1 else 0

@@ -1,0 +1,60 @@
+Recaman/FinalSTargetWidth.lean:10:49: warning: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/FinalSTargetWidth.lean:27:49: warning: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/FinalSTargetWidth.lean:127:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a_1 ≥ 0
+  z - b_1 ≥ 1
+  y ≥ 0
+  x ≥ 1
+  0 ≤ u - b_1 ≤ 12
+  5*u - 2*x - 5*b_1 ≥ -5
+  0 ≤ r ≤ 17
+  p ≥ 0
+  p - y ≤ 0
+  0 ≤ o ≤ 29
+  4 ≤ l ≤ 12
+  4 ≤ k ≤ 12
+  k - l ≥ 0
+  k - y ≥ -17
+  k + u - b_1 ≤ 18
+  2*k - o ≤ -4
+  g ≥ 0
+  g ≥ 3
+  g - k ≤ 2
+  e ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c + e + k - u - y + z + a_1 ≤ -1
+  b ≥ 1
+  b + d + g - y ≤ -1
+  a ≥ 0
+  a + x ≥ 0
+where
+ a := ↑t
+ b := ↑L
+ c := ↑s
+ d := ↑U
+ e := ↑v
+ g := ↑T
+ k := ↑j
+ l := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ o := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ p := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n B)
+ r := ↑(cN (EndN f 0) n (h + M + m + L + s + U + v + T))
+ u := Fw f n
+ x := ↑(n - t)
+ y := ones (seg f n (B + j))
+ z := Fw f (n + (B + j))
+ a_1 := ↑h
+ b_1 := Fw f (n + B + j)

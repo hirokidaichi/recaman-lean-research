@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-31",
+  "closed": false,
+  "actual_start": "2026-10-31T06:03:36.178178+09:00",
+  "actual_end": null,
+  "confirmed_work_seconds": 6778.908,
+  "shortfall_seconds": 421.092,
+  "excluded": {},
+  "unconfirmed_gaps": [],
+  "open_cursor": {
+    "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+    "at": "2026-10-31T07:56:35.086346+09:00",
+    "phase": "handoff",
+    "unit": "R-20261031-01/final-audit-answers"
+  },
+  "phase_seconds": {
+    "setup": 31.293,
+    "research": 5173.767,
+    "audit": 944.774,
+    "handoff": 629.073
+  },
+  "allocation_seconds": {
+    "setup": 31.293,
+    "exploitation": 3089.441,
+    "audit": 944.774,
+    "exploration": 2084.326,
+    "handoff": 629.073
+  },
+  "unit_seconds": {
+    "R-20261031-01/H-20261031-01/setup": 31.293,
+    "H-20261031-01/paper-audit": 209.265,
+    "H-20261031-01/local-free": 252.54,
+    "H-20261031-02/source-pruning": 221.591,
+    "H-20261031-02/source-coupling": 343.269,
+    "R-20261031-01/first-pass": 168.498,
+    "H-20261031-04/moment-target-mass": 267.513,
+    "H-20261031-05/actual-residual": 386.829,
+    "H-20261031-06/source-budget": 174.338,
+    "R-20261031-01/general-moment-audit": 117.32,
+    "H-20261031-09/fourth-clock": 361.169,
+    "H-20261031-09/family-count": 291.43,
+    "H-20261031-10/short-local-budget": 256.161,
+    "H-20261031-11/small-head": 189.7,
+    "H-20261031-12/source-pruning-repair": 417.78,
+    "R-20261031-01/mass-one-audit": 71.996,
+    "H-20261031-13/mass-two-parameters": 93.315,
+    "H-20261031-14/mass-two-early-A": 298.944,
+    "H-20261031-16/moment-full-gap": 381.251,
+    "H-20261031-16/moment-full-gap-audit": 37.95,
+    "H-20261031-17/lower-moment-boundary": 216.756,
+    "H-20261031-17/lower-boundary-audit": 60.772,
+    "H-20261031-18/lower-five-free-gap": 157.5,
+    "H-20261031-19/lower-four-free-charge": 84.459,
+    "H-20261031-18/lower-five-nonvacuity": 48.333,
+    "H-20261031-20/lower-four-count-proof": 268.124,
+    "H-20261031-21/mass-three-joint-source": 301.832,
+    "H-20261031-22/adopted-byte-and-scope-audit": 439.905,
+    "R-20261031-01/final-preservation": 247.396,
+    "R-20261031-01/report-and-next-unit": 87.663,
+    "R-20261031-01/count-chain-review": 181.06,
+    "R-20261031-01/next-unit-scope-review": 112.955
+  },
+  "planned_seconds": {
+    "setup": 600,
+    "exploitation": 3600,
+    "exploration": 1800,
+    "audit": 600,
+    "handoff": 600
+  },
+  "scope": "Journal confirms declared wall intervals, not pure CPU/thinking. Parent R-20261031-01 counted once. No retrospective startup credit."
+}

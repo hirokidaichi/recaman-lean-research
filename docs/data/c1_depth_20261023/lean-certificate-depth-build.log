@@ -1,0 +1,14 @@
+✖ [4/4] Building Recaman.ThreeNonsuppliedData (72s)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/ThreeNonsuppliedData.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ThreeNonsuppliedData.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ThreeNonsuppliedData.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ThreeNonsuppliedData.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ThreeNonsuppliedData.setup.json --json
+error: Recaman/ThreeNonsuppliedData.lean:122:8: Function expected at
+  hr.left.right
+but this term has type
+  ¬↑(stateAt rs i).subtractions - ↑(stateAt rs i).additions + ↑(stateAt rs i).nonsupplied = 1 ∨
+    (stateAt rs i).word ∈ endpointWords
+
+Note: Expected a function because this term is being applied to the argument
+  hd
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.ThreeNonsuppliedData
+error: build failed

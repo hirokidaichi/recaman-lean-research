@@ -1,0 +1,69 @@
+Recaman/LowerFourFreeGap.lean:62:66: error: `dsimp` made no progress
+Recaman/LowerFourFreeGap.lean:65:8: error(lean.unknownIdentifier): Unknown identifier `hAcount`
+Recaman/LowerFourFreeGap.lean:83:11: error(lean.unknownIdentifier): Unknown identifier `hc`
+Recaman/LowerFourFreeGap.lean:36:66: error: unsolved goals
+case neg
+f : Nat → Bool
+n t h M m L s U v T j q i : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+B : Int
+haz : areaW (seg f n (h + M + m + L + s + U)) = -B
+hlo : 4 * ↑(h + m + s) + 4 ≤ B
+hhi : B ≤ 6 * ↑(h + m + s) + 4
+hv : 1 ≤ v
+hq : 1 ≤ q
+hqv : q ≤ v
+hi : i < T
+hband : T ≤ i + j
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hlocal : Win f (n + h + M + m + L + s + U + v - q) (q + i)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hstrong : ¬4 * ↑(h + m + s) + 5 ≤ B
+hB : B = 4 * ↑(h + m + s) + 4
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T)
+hcounter : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+H : Nat := h + M + m + L + s + U
+S : Nat := h + m + s
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hword :
+  seg f n (h + M + m + L + s + U + v + T) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false ++
+      List.replicate T true
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = S
+hsrc : q = 1 ∧ i = 2 ∧ 2 * (j + 1) + 2 ≤ cN (fun x => f x = true) n (h + M + m + L + s + U + v + T)
+hEhead : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 10
+hF6 : 6 ≤ cN P n H
+hSzero : cN P (n + H) v = 0
+h1 : cN P n (H + v) = cN P n H + cN P (n + H) v
+h2 : cN P n (H + v + T) = cN P n (H + v) + cN P (n + (H + v)) T
+hpart : T = cN (EndN f 0) (n + H + v) T + cN P (n + H + v) T
+⊢ j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T)

@@ -1,0 +1,7 @@
+Recaman/BlockSuffixPositivity.lean:1577:9: error: unsolved goals
+f : Nat → Bool
+n u : Nat
+hu : n ≤ u
+hu' : u ≤ n + 0
+heq : u = n
+⊢ Fw f n ≤ Fw f n

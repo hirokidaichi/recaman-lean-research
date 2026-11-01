@@ -1,0 +1,110 @@
+{
+  "math_cpu_seconds": 1.851747,
+  "math_budget_seconds": 3,
+  "math": [
+    {
+      "tag": "H06-moment-holdout",
+      "worker_cpu_seconds": 0.042985999999999996,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H06-moment-holdout-result.json"
+    },
+    {
+      "tag": "H19-charge-discovery",
+      "worker_cpu_seconds": 0.037406,
+      "exit_code": 1,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H19-charge-discovery-result.json"
+    },
+    {
+      "tag": "H08-local-three-discovery",
+      "worker_cpu_seconds": 0.08749399999999999,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H08-local-three-discovery-result.json"
+    },
+    {
+      "tag": "H03-actual-replay",
+      "worker_cpu_seconds": 0.06929999999999999,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H03-actual-replay-result.json"
+    },
+    {
+      "tag": "H17-boundary-holdout",
+      "worker_cpu_seconds": 0.16464499999999999,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H17-boundary-holdout-result.json"
+    },
+    {
+      "tag": "H06-moment-discovery",
+      "worker_cpu_seconds": 0.053967999999999995,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H06-moment-discovery-result.json"
+    },
+    {
+      "tag": "H19-charge-holdout",
+      "worker_cpu_seconds": 0.049621,
+      "exit_code": 1,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H19-charge-holdout-result.json"
+    },
+    {
+      "tag": "audit-paper-pairs",
+      "worker_cpu_seconds": 0.033246,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/audit-paper-pairs-result.json"
+    },
+    {
+      "tag": "H19-repair-holdout",
+      "worker_cpu_seconds": 1.0097289999999999,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)",
+      "result_file": "docs/data/ten_head_20261031/H19-repair-holdout-result.json"
+    },
+    {
+      "tag": "H17-boundary-discovery",
+      "worker_cpu_seconds": 0.031115,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H17-boundary-discovery-result.json"
+    },
+    {
+      "tag": "H08-local-three-holdout",
+      "worker_cpu_seconds": 0.12989,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H08-local-three-holdout-result.json"
+    },
+    {
+      "tag": "H01-local-holdout",
+      "worker_cpu_seconds": 0.037458,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H01-local-holdout-result.json"
+    },
+    {
+      "tag": "H19-repair-discovery",
+      "worker_cpu_seconds": 0.070931,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H19-repair-discovery-result.json"
+    },
+    {
+      "tag": "H01-local-discovery",
+      "worker_cpu_seconds": 0.033958,
+      "exit_code": 0,
+      "reason": "completed",
+      "result_file": "docs/data/ten_head_20261031/H01-local-discovery-result.json"
+    }
+  ],
+  "guard_cpu_seconds": 1.059957,
+  "lean_validation_cpu_seconds_wait4": 173.239675,
+  "lean_runs": 122,
+  "single_worker_controller_cpu_seconds": 0.027254,
+  "unmetered_cpu_scope": "Direct registry/lint/link checks, ordinary Python recording, tool/network time and model work are not included and are not assigned zero.",
+  "scope": "CPU separate from wall journal. Lean caps are per-process, not cumulative tree caps. Failed runs counted. RLIMIT_CPU granularity exceeded nominal1s slightly on SIGXCPU holdout."
+}

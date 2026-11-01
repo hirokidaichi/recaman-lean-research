@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-01T06:52:27.356058+09:00",
+  "tag": "weak-old-zero",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/weak_old_zero.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "5861964bd2e7910ef425f43ad6cda86f3c108508f6f0edf9329fedddc394db85",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 38741,
+  "process_group": 38741,
+  "finished_jst": "2026-11-01T06:52:27.389454+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.033485749969258904,
+  "worker_user_seconds": 0.024086,
+  "worker_sys_seconds": 0.006189999999999999,
+  "worker_cpu_seconds": 0.030275999999999997,
+  "worker_maxrss_native": 22642688,
+  "controller_cpu_seconds": 0.0014989999999999986,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

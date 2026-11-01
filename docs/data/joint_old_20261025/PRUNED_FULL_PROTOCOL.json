@@ -1,0 +1,52 @@
+{
+  "card": "H-20261025-09",
+  "frozen_utc": "2026-10-24T22:15:47.683183+00:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "Recaman/FourEventProof.lean": "cf444862e8de0def4a7fa466dc3de442f375978a17359328628a1ed773f368cf",
+    "Recaman/FourEventFast.lean": "c41ba13c7a72f720fea9762ec8275b07f18e36c0c208d6823c7b4ae7d19b5f32",
+    "Recaman/PrefixMassBarrier.lean": "4cda54ad1b18dca5f7095f1695777348de47c33465742b60a7074e38912f7e7a",
+    "Recaman/FourEventPruned.lean": "33d9f1d397480eb3f80a7fee3cb0e34537904e3a20351a471eb553948ffabad6",
+    "Recaman/FourEventData.lean": "ed18e9cdd7ac334260240d2339fdf6e9a75bc1b4ae49ba26e97056bc3e76f78f",
+    "docs/data/joint_old_20261025/generate_dag.py": "6edd150d9ae35fd0378462b3bfd7e0dddd11decaa81fec49b428bdc2793ca6ba",
+    "docs/data/joint_old_20261025/run_guard.py": "d814479a1f4aef1e2439ff3ba7c7235f39c74a651a85ed6a16e46125ee469cc2"
+  },
+  "dirty_diff_sha256": "c16fa0e3750a76fd79581e8cf7f8ab69441137fb29d6a358a58e2d0813bd62d3",
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "cpu_cap_seconds": 1200,
+  "wall_cap_seconds": 1200,
+  "process_group_rss_cap_kib": 4194304,
+  "deadline_jst": "2026-10-25T07:45:00+09:00",
+  "benchmark": {
+    "tag": "dag-pruned-bench-checked",
+    "started_jst": "2026-10-25T07:13:26.432130+09:00",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "docs/data/joint_old_20261025/dag_pruned_bench.lean"
+    ],
+    "wall_cap_seconds": 90,
+    "cpu_cap_seconds": 90,
+    "rss_cap_kib": 4194304,
+    "source_sha256": {
+      "docs/data/joint_old_20261025/dag_pruned_bench.lean": "91067e7f0bd550f7d61bec55906f569aee0ff437c2bb59aa11e1844524d53436"
+    },
+    "pid": 13934,
+    "finished_jst": "2026-10-25T07:13:41.507330+09:00",
+    "exit_code": 0,
+    "reason": "completed",
+    "peak_sampled_process_group_rss_kib": 589296,
+    "wall_seconds": 15.076177707873285
+  },
+  "reopen_reason": "New proved2j+2<=A bound removes impossible true-tag computations and cheap budget/balance guards precede scan. Old40macro list equals new list under concrete per-state premises checked by kernel. Same claims/A11, full time cap halved again.",
+  "previous_jobs": "slow966.515wall/linear1208.844wall voluntarily canceled at verified improved benchmark; both source/log/resource and reasons retained. Neither supplied initial certificate.",
+  "acceptance": "initial Checked plus real-word classification/Q/old exclusion and final Audit/G5/check.sh; no promotion before success",
+  "stop": "guard means method STOPPED without cap extension. Do not start another full same representation after failure.",
+  "accounting": "validation CPU distinct from actual journal elapsed; no parallel double counting"
+}

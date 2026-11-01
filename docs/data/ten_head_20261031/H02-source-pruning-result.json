@@ -1,0 +1,25 @@
+{
+  "tag": "H02-source-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TenHeadSourcePruning.lean"
+  ],
+  "started_jst": "2026-10-31T06:13:27.825827+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TenHeadSourcePruning.lean": "23d673b15af5ddbb8bb52cf63da02d9f8ca82da6c4618ba764c6253b25aea673"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "05a1d05b31aae9df163929447420ed4e62ed03afb14f874dd8c609302805853b",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5040535000152886,
+  "cpu_seconds": 0.42416899999999996,
+  "finished_jst": "2026-10-31T06:13:28.329822+09:00"
+}

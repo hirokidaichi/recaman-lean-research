@@ -1,0 +1,18 @@
+{
+  "tag": "H09-parameters2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetMassFive.lean"
+  ],
+  "started_jst": "2026-10-28T07:27:14.468993+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetMassFive.lean": "567c3bee8ebcecf22d6a3fc550b1288fd6302188739a617d7c6bcd3b28f24864"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

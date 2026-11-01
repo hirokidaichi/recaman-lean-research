@@ -1,0 +1,34 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-01（研究中）。E-451で三A-runの元p実free-gapを全長で証明。四run全体/任意r rank/C1/Q/H/SL/全射性は未証明。
+
+- **現在**: R-20261101-01、06:01:59 JST実開始、研究継続中。実績正本は[当日journal](data/daily_research/2026-11-01.json)。open区間/予定120分を実績にしない。08:00期限、07:45新数学終了。
+- **E-486 PROVED-LEAN（個別512MB/lint/全check504jobs・3115宣言成功）**: 元Intp/padded/zero-fullpositive、全正三run zero-mass head、同old targetmass>=6/最終S final-band local/最後Aに任意の実old供給がある枝の全長full-tail free-gap。仮反例のS<=16とsame-source D>=7/oldclock<=1を内部供給し、14S+48<=S²<=16Sで矛盾。area/targetmass/oldprefix/run長に上限を仮定しない。r3 kernel count依存、未検証table/E384不使用、人間レビュー未。
+- **E-484/E-485 PROVED-PAPER（未Lean・人間レビュー未）**: area無制限のtargetmass3/最終S3oldmass4-clock0、および最終S4で任意の実old供給がある枝の元actual free-gap。元counterの実count/momentで四SB又は一SBへ削減し、源重複をactual countへ課金。E-483の未Lean五pairは入力にしない。literal適用例はCOMPUTEDで全長証明とは別。
+- **既存 E-482 PROVED-LEAN**: moment帯4S+4..6S+4の全長source枝。E-451三run全長、E-385/E-386/E-387 r3/Qは再実行しない。E-479/E-481の空の新境界をcoverage進展に数えず、E-480はold-erasure補助反例だけ。
+- **停止**: H01 scalar/firstA layoutは一回修理後512MBで失敗しpacketへ隔離。E-483/H21、H06/133core、旧r4 E-412/E-427二回0/0、R19/R7R11等の停止を保持。E486は独立したkey下界不等式であり、旧表/同jobへの資源追加ではない。
+- **次の一問**: old seedがある低targetmass4/5のinversion予算で、長いA-runの実free課金が残余を消せるか。old供給なし/非zerohead/他source位置/四run全体/任意r rank/C1/Q/H/SL/全射性は未解決。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-486 [PROVED-LEAN] zero-mass-high-target-old-seed-actual-free-gap — Recaman/OldSeedActualGap.lean
+  E-484 [PROVED-PAPER] mass-three-old-four-actual-full-free-gap — docs/RESEARCH_NOTE_2026-11-01_C1_MASS_THREE.md
+  E-485 [PROVED-PAPER] mass-three-four-S-old-seed-actual-free-gap — docs/RESEARCH_NOTE_2026-11-01_C1_OLD_SEED.md
+  E-483 [PROVED-PAPER] mass-three-target-old-four-joint-area-pairs — docs/RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md
+  E-482 [PROVED-LEAN] lower-four-moment-band-actual-free-charge — Recaman/LowerFourFreeGap.lean
+  E-451 [PROVED-LEAN] three-A-run-original-base-actual-free-gap — Recaman/ThreeRunFreeGap.lean
+  E-385 [PROVED-LEAN] old-window-tail-count-barrier — Recaman/BlockSuffixPositivity.lean
+  E-386 [PROVED-LEAN] three-nonsupplied-excursion-depth — Recaman/BlockSuffixPositivity.lean
+  E-387 [PROVED-LEAN] three-nonsupplied-C1-area — Recaman/BlockSuffixPositivity.lean
+  E-479 [PROVED-LEAN] lower-moment-band-same-target-old-exclusion — Recaman/LowerMomentOldClock.lean
+  E-481 [PROVED-LEAN] lower-five-moment-band-actual-full-free-gap — Recaman/LowerMomentFreeGap.lean
+  E-480 [REFUTED] lower-four-moment-actual-old-erasure — docs/data/ten_head_20261031/lower_boundary_probe.py
+  E-412 [COMPUTED] old-only-budget-r4-no-reduction — docs/data/free_gap_20261026/old-budget-independent.json
+  E-427 [COMPUTED] same-mass-area-pruning-no-reduction — docs/data/three_run_20261027/same-mass-pruning.json
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 502 (including Audit)
+  Import contracts: 110; audit declarations: 3115

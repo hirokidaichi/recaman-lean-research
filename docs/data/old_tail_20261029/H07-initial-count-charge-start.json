@@ -1,0 +1,18 @@
+{
+  "tag": "H07-initial-count-charge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetCountCharge.lean"
+  ],
+  "started_jst": "2026-10-29T06:44:38.517935+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetCountCharge.lean": "366ddbde322adb6da2ca4eaae88d1dc32c1161e0e4bcfd2de782c7c00d64c53d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

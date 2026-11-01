@@ -1,0 +1,13 @@
+Recaman/BlockSuffixSpectrum.lean:92:20: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/BlockSuffixSpectrum.lean:92:9: error: Tactic `rcases` failed: `x✝ : ?m.9` is not an inductive datatype
+Recaman/BlockSuffixSpectrum.lean:126:20: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/BlockSuffixSpectrum.lean:126:9: error: Tactic `rcases` failed: `x✝ : ?m.14` is not an inductive datatype
+Recaman/BlockSuffixSpectrum.lean:130:33: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/BlockSuffixSpectrum.lean:158:22: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/BlockSuffixSpectrum.lean:163:22: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/BlockSuffixSpectrum.lean:168:22: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`

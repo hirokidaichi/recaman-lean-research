@@ -1,0 +1,28 @@
+{
+  "started_jst": "2026-10-22T09:46:06.707419+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "source_sha256": "e9598ae27bf69293ea5754b1d40b29d0e33dce4b678e26ade39794a826ba32d0",
+  "argv": [
+    "/tmp/recaman-c1-solver-20261022/bin/python",
+    "docs/data/c1_q_makeup_20261022/c1_constraints_v2.py",
+    "--mode",
+    "Y-triangle",
+    "--n",
+    "65",
+    "--q0",
+    "32",
+    "--b",
+    "64",
+    "--seconds",
+    "120",
+    "--out",
+    "docs/data/c1_q_makeup_20261022/y-triangle.json"
+  ],
+  "measured_CPU_used": 3302.78,
+  "limits": {
+    "solve_seconds": 120,
+    "process_CPU_seconds": 130,
+    "workers": 1
+  },
+  "full_D_checked": false
+}

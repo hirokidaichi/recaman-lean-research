@@ -1428,3 +1428,188 @@ hP : every nonempty closed configuration has a private member  ->  every closed 
 
 `motifFull_of_private` is a reduction: its hypothesis hP (Claim P) is not proved. The classification
 and G1 are therefore not proved unconditionally.
+
+## 2026-10-22: C1 area after a fresh low visit and exact old context (E-379–E-380)
+
+```text
+padded BlockWord prefix
+  -> suffix mass/area positive (E-378)
+  -> A at lower bound m or m+1 is not Endable (E-379, same original left base)
+  -> recovering from m to m+2 after q0 needs two nonsupplied A clocks
+  + a_p(q0,b) <= 1 + a minimum of [k1,b] visited after q0
+  -> every F(u)-F(b)+1 >= 0 -> C1 area Q for this case (E-379)
+```
+
+The minimum occurring only before q0 remains open. `SAAA|SSSSAAAASAAA` has Az=-2,
+so proving the earlier area nonnegative on its own is stopped. This is not a counterexample to Q.
+The prefix is an explicit assumption; supplying it from completed setting D uses shorter EqClassW
+as recorded in [the input audit](RESEARCH_NOTE_2026-10-22_INPUT_AUDIT.md).
+
+```text
+padded BlockWord suffix density 10S <= 3L + mass R=L-2S
+  -> 2L <= 5R
+  + P2 start mass R=F(k1)-F(b)+1 + F(b)>=F(k1)-depth
+  -> all older starts lie within floor(5(depth+1)/2) clocks of k1
+  -> exact Endable equivalence after trimming the older prefix (E-380)
+  + depth=4 + mass parity -> last 11 prefix clocks suffice
+```
+
+All clocks after k1 remain in the history; window lag is unbounded. E-380 does not supply the
+depth bound. Depth-4/fixed-nonsupplied-budget classification is a separate computational unit.
+H, EqClassW, SL, C1 and unrestricted Q remain unproved. See [C1 note](RESEARCH_NOTE_2026-10-22_C1_Q.md)
+and the [additional-session card](HYPOTHESIS_CARD_2026-10-22_C1_Q_MAKEUP.md).
+
+The same block language is suffix-closed (`block_suffix`), so W-clock old contexts
+have BlockWord representatives of length exactly W. The adaptive theorem
+`endable_tail_mass_representative` selects the earliest actual older window start
+over a finite tail: it preserves all Endable clocks with one prefix representative
+of mass at most depth+1. It does not assert preservation of the deleted prefix's deficit.
+
+```text
+BlockWord grammar -> 2*areaW(w)+2 >= mass(w)*(mass(w)+1) (E-381)
+  equality iff w = SAAA A^j or SSAAAASAAA A^j
+  -> quadratic area bound on every older prefix suffix
+  + an actual P2(t,b), r=F(k1)-F(b)+1
+  -> necessary 2*Z(b) <= 2-r*(r+1)
+```
+
+This strengthens the prefix input, not the unknown lower bound on Z.
+E-382 is the independently audited computational classification at depth four and
+a_z<=3; its entire finite reachable tree completed without a word-length cutoff.
+Supplying depth four or verifying that tree in Lean remains a separate obligation.
+
+## 2026-10-22 C1 Q追加研究の最終入力
+
+- E-380（PROVED-LEAN）: 全後半clockのEndableを同時保存する、mass≤D+1のBlockWord prefix代表。削除prefixの不足の保存は別義務。
+- E-381（PROVED-LEAN）: BlockWordの二次面積下界・等号二族に加え、上界4area≤5mass²−11mass+16。
+- E-383（COMPUTED）: 任意長prefixをmass≤17へ帰着したtail長1..32・a_z≤3の分類。深さ≥5は0。全125181373 nodeを独立実装で再検証。一様な深さ供給ではない。
+- E-384（PROVED-PAPER）: [全massの面積spectrum](RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md)。存在方向は未Lean、共通prefixでの同時実現は主張しない。
+
+**Q/C1/H/SLは未解決。** 次はa_z≤3から深さ≤4を導く語長非依存の入力か反例。一様な供給なしにE-382の深さ制限を外さない。
+
+## 2026-10-23: 低free-A領域の全長証明（E-385〜E-389）
+
+```text
+actual old P2 + block area lower + fixed-count word area lower
+  -> old tail S <= 2*all-A-2 (E-385)
+  -> before first eighth A: local lag<=13, S>=13 excludes old windows
+  -> 3,324-state independent-signature certificate + actual-word induction
+  -> all-A<=7; d=1 endpoint eight words; depth<=4 (E-386, PROVED-LEAN)
+  -> 312-state future certificate, Ay<=1, depth>=-4: Z>=1
+  + deeper future minimum supplied after q by E-386 -> fresh-low E-379
+  -> arbitrary-future Q and all old P2 starts excluded for az<=3 (E-387)
+```
+
+The original Int base p is preserved by `three_nonsupplied_area_int`; it does not rebase Endable at n.
+The complete D supplies the padded prefix through the previously audited shorter-interval dependencies.
+The new proof consumes its actual zero/positive/final-one deficits and budgets; it does not assume H or Q.
+General C1/Q, C2/F/TS/SL/H remain open.
+
+E-388 is COMPUTED only: independent-signature AN<=4 model,440943 visits, max all-A10,
+eight additional d=1 words/depth4; Q4 has719 states and minZ1. Its kernel conversion is open.
+E-389 (PROVED-LEAN) bounds an S-only gap before a supplied A by2*existing-A-2 and proves that
+the explicit tail S5 A3 S4 A4 S A3 with zero further nonsupplied budget admits no later A.
+This supports event/terminal-ray compression, not a general rank theorem.
+Next: [r4 A-event macro simulation](HYPOTHESIS_CARD_2026-10-24_C1_FOUR_KERNEL.md).
+
+## 2026-10-24: supply-run and joint-prefix inputs (E-390–E-399)
+
+```text
+actual P2 / E-385,E-389 -> arbitrary S-gap macro (E-390)
+                            -[12837-state kernel still unverified]-> az<=4 classification
+explicit 16 endpoint words -> 719-state future area / fresh-minimum split -> Q (E-392)
+
+finite terminal check + future free A=0 -> future all A=0 (E-391)
+three-run exact local window -> odd-run terminal (E-393)
+                            -> even-run one further A (E-397, m>=4k+1)
+concrete six-node motif + first-A induction -> at most5 further A (E-396)
+
+common BlockWord prefix -> mass3 exclusion (E-394), mass4 pair restriction (E-398)
+  -> one representative among10 preserving all mass3/4 suffixes (E-399)
+  -> exact old-window / endpoint-A EndN equivalence at masses3/4 (E-399)
+  -[next unmeasured input]-> fixed-representative r4 candidate reduction
+```
+
+E-395 refutes the stronger internal two-supplies plan with an existing E-389 word; it is not a C1/Q counterexample.
+E-388 remains COMPUTED: the macro simulation is proven, but the complete r4 classification is not kernel checked.
+E-392 retains explicit-root membership. E-399 preserves low-mass suffixes, not the entire Endable history.
+General C1/Q, az>=5, C2/F/TS, SL/H and surjectivity remain open.
+See [new input note](RESEARCH_NOTE_2026-10-24_C1_INPUTS.md), [daily handoff](RESEARCH_HANDOFF_2026-10-24_DAILY.md),
+and [next bounded unit](HYPOTHESIS_CARD_2026-10-25_JOINT_OLD_SUPPLY.md).
+
+## 2026-10-25: 全rに使える供給gap入力
+
+E-407（PROVED-LEAN）は、任意padded BlockWord実prefix後の実供給A直前のS-gapについて、
+`2j+2≤先行全A` を供給する。語長/深さ/free予算/j上限はない。localとoldの双方を覆い、
+全jの等号族がある。全Aをfree Aで置き換えるedgeは未証明。
+E-401/E-406は長S/偶数runと任意前置語の形・明示不等式から追加free0の任意future全A≤1、
+E-402は明示残りA予算内のlocal文脈消去。これらの形/予算を任意tailで供給したとは扱わない。
+E-405は無予算future消去の強い補助案の反証で、C1の反例ではない。
+E-400固定root削減とE-403の10106状態商はCOMPUTED。r4の最終kernel判定はE-404/当日DAILYを参照。
+[当日ノート](RESEARCH_NOTE_2026-10-25_C1_GAP.md)、[翌日の一問](HYPOTHESIS_CARD_2026-10-26_FREE_GAP.md)。
+
+## 2026-10-26: run供給予算と二A-runのfree-gap
+
+E-408の同じsuffix負平方key → E-410の定符号run当たり一つのA-ray供給 → E-411の共通BlockWord old一つ。
+E-413は単一A-runで全供給<=2と最初A freeから全長free-gap。E-414は二A-runで供給<=5とr3の新count射影をE-407へ接続し、元0/pのzero/positive不足のまま全free数でj+1<=rを供給した。
+E-409は二A-runの全suffix平方因子分類と初期S長に依存しない鋭いrun長上界で、free数の一般rankとは異なる。
+E-412はr4削減0/0で同大表方法STOPPED。E-415は第三A-rayのlocal<=2/修理<=3を四clock実語でREFUTED（親C1反例ではない）。
+E-416は三A-runの反例をfree4〜9/全A<=20/gap<=9へ縮約するPROVED-PAPER（未Lean・人間レビュー未）。S長は無制限で、一般C1/r4分類を解決しない。
+[当日ノート](RESEARCH_NOTE_2026-10-26_C1_RUN_BUDGET.md)、[次のbounded unit](HYPOTHESIS_CARD_2026-10-27_THREE_RUN_REDUCTION.md)。
+
+## 2026-10-27: 三runの有限contextとtarget源
+
+E416は紙上からPROVED-LEANへ（ThreeRunSupplyBudget）。E417のfirst/two-run実countを保持し、E418〜423（SeparatorSupplyReset/SeparatorTailFreeGap/InitialSeparatorTrim/OldContextBudget/ThreeRunFiniteContext）で任意長三run反例を実count/target/relative positiveを持つ有限代表へ移す。target clock<=191は不在証明ではない。E425（BlockSuffixSpectrum）は共同old spectrumの全長exact更新/同一futureの実EndNとcount保存、E426（BlockSameMassSpan）は同mass源の6clock/area幅4。
+E428（PenultimateRunWindow）/E429（ThreeRunTargetSource）は実反例targetの全sourceが第二A-runより前にあることを供給。E431（ASourceReuse）は一つの共通u/最後A-ray/一つのgapに対するsource再使用式で、任意混合future rankではない。E432は小第一block族の実free下限のPROVED-PAPER（未Lean・人間レビュー未）、次回H-20261028-01で形式化する。
+E424/R19小商とE427/r4新制約はgate失敗STOPPED。E430は弱化count-only排除の数値反例で、実C1反例ではない。任意三run/任意run数/r4/C1は未証明。正本はCURRENT_FRONTIER/registry/10-27 DAILY。
+
+## 2026-10-28: target源の分割とold tail供給
+
+E-432/E-433は明示三run族の全長free>=2R-2。一般三run反例のsourceはE-429→E-434（第一A排除）→E-435（中央S排除）でold/初期Sのみへ。E-436初期S四対の不在は未証明、E-437は全source fastclock上界のみでH06 certificate STOPPED。
+
+old側はE-438同じsource mass/area→全反例free4..7/A17/j4..7、E-439第一run actual free→C6、E-440二形排除→C5/H14/target suffix12。全oldprefixは残る。E-441同一prefix key/mass順序→old targetの最後min(T,j)個Aはold供給不能、actual限定区間EndN同値へ。次の未解決edgeは、このlocal source制限とsame target/zero-positiveからactual free>=j+1を支払うこと。
+
+すべてPROVED-LEANの条件付き部分結果。初期S/old三run不在、任意run/rank/r4/C1/Q/H/SLは未解決。[次カード](HYPOTHESIS_CARD_2026-10-29_OLD_TARGET_TAIL.md)、[意味監査](data/source_family_20261028/SEMANTIC_AUDIT.md)。
+
+## 2026-10-29: 二A-runから三A-runのfree-gapへ
+
+E442のfinal-band初期S local除外、E443第一A source-clock衝突、E444中央S sourceが第一runへ払うM>=Rから、E445が元0/p old target枝の全長free-gapを供給。初期SはE447の全h band制約、E448の完全なlarge-M二形分類、E449の明示count補題を実前提供給E450へ。既存E435の全source分類と合わせ、E451で三非空A-run全体のfree-gapを完了した。有限133core/部分表/未証明存在方向を使わない。E446は別のjoint old-first/third constraint。E452は任意mixed-wordでlocal源以前A>=j+1だがfree課金は未知。四run以上/任意r rank/C1/Q/H/SL/r4/全射性は未証明。
+
+### 10/29終盤: 四runへの派生実count（E456）
+
+```text
+first three actual supply <=11 (E416)
++ fourth ray: same old prefix <=1 (E411), seven tail blocks <=7 (E410)
++ actual cN disjoint partition -> four-run actual supply <=19 (E456)
++ E407 all-A gap and existing r<=3 kernel projection
+-> any four-run free-gap counterexample has free4..17 / A<=36 / j<=17
+```
+
+E456には同じ元pのzero/full-positive/padded prefix版がある。全S長/old prefixは無限であり、反例不在や四run free-gapの証明ではない。一般kのk(k+1)-1は[紙上の派生chain](RESEARCH_NOTE_2026-10-29_RUN_COUNT_BOUND.md)のみ。
+E451は三A-run/全rであり、r<=3/全runを扱うE385〜387とは別の方向。一般Qの累積面積評価やC1への完了したedgeはまだない。次は[四run old-targetの最終separator源課金](HYPOTHESIS_CARD_2026-10-30_FOUR_RUN_OLD_TARGET.md)。
+
+## 2026-10-30: 四runの固定族とsource moment（一般C1は未解決）
+
+E457 same-target area+2 → E458 actual supply17 → E461 small first-two prefix finalband<=1 / supply13、E462 complementary area+3 → H01最終S-source反例必要域free4..12/A29/j12（不在未検査）。E463はNat relative-positiveのtarget mass/幅core、Intp width adapterはSTOP。
+
+E464: TerminalLocalProfileの全source根（local2/例外4,3と8,5）+ TerminalOldClockのold>=4 → TerminalFourthChargeのlast charge1 → existing r3 countでseed free4 → 固定S5A3S4A4SA3+任意Sv ATのcharge3 → E457 A>=2R+2 → 元Intp/padded/zero-positiveの固定族fullfree-gap。任意four-runへの一般化ではない。
+
+E465は任意zero-mass headの4S+6<=B<=6S+4にold>=4を拡張。E466はその帯からlocal halfを足す強化を反証。E467の同じold target/S10二caseはPROVED-PAPER（未Lean・人間レビュー未）、actual二case供給とlast free1/2は次の未知edge。全量化子と停止は10/31カードを正本にする。
+
+## 2026-10-31: 四runのzero-mass moment/source枝（全長）
+
+E482 PROVED-LEAN: 元Intp/padded/zero-fullpositive、正三A-run head A=S、area=-B、4S+4<=B<=6S+4、同じold target/最終S local bandから元full-tail free>=j+1。全S/run長/old履歴を量化し、E467〜478のmass1/2 source重複と実countを接着。lower4ではold<=1を捨てずheadfree6/local5で払う。一般四run/任意r/C1/全射性は未解決。r3 kernel count依存、未検証r4表/E384不使用、人間レビュー未。
+
+E481 lower5の新境界はcounter域で空と意味監査し、新coverage進展に数えない。E480はold-erasureだけの実履歴反例。E483の帯外mass3/old4五area対はPROVED-PAPER（未Lean・人間レビュー未）でactualfree未接続。
+
+次は[H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)。[当日研究note](RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md)に全chainと失敗を保存。H19のfreshholdoutは未完了、H21 layoutは512MB STOPPEDで資源追加再開しない。
+
+## 2026-11-01: 帯外old-seed枝と同target平方課金
+
+E484/E485はPROVED-LEANへ更新。正三run zerohead/同old targetmass3で、S3/old0はlocal band不要、S4/任意old seedはfinal-band local付きの元Intp/padded/zero-fullpositive全長free-gap。E500 explicitold1はlocal band不要。E492は実old supplier mass>=5の枝とtargetmass>=4のold-seed枝をarea無制限で供給する。四run全体/C1/任意rankではない。
+
+E487/491/493の同inversion joint/local予算→E496の実S13/I23..25/priorA12→六形E497で、早期oldD>=4のheadfree5（D>=5なら6）。E498/E499は同target primitive keyとfirstA源を平方比較してclock0又は0/1へ合流し、old0/1と初期S源の非共存を使ってlast5/6へ。actual counterから第一A予算を内部供給し、頭と最後の実countを同じ元pへ接着した。raw budget条件だけを解決としない。
+
+旧scalar/firstA、LargeOldSeedGap、一般I25 monolithの512MB STOPPEDは保持。六形Orの巨大omega proofは同命題のexplicit constructorを同512MBで検査して採用、資源追加/compiled移動なし。E495一般I25 joint4は未Lean、D4 headfreeの帰結だけE497で別証明。E483五area対は未Lean、E388 COMPUTED/E404 CONJECTURED/E384未Leanを保持。全体無変化0は新edgeによる更新で、r4 E412/E427二回0/0 STOPPEDは日付resetしない。
+
+次: [H-20261102-01 no-old last-ray](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。old供給無しではheadfree5を使えない。非zerohead/他source位置/任意run数/rank/C1/Q/H/SL/全射性も未解決。詳細は[同target平方note](RESEARCH_NOTE_2026-11-01_C1_TARGET_SQUARE.md)と[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)。

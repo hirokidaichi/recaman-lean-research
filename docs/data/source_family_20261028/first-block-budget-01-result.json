@@ -1,0 +1,24 @@
+{
+  "tag": "first-block-budget-01",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/SourceFamilyFirstBlock.lean"
+  ],
+  "started_jst": "2026-10-28T06:09:56.938101+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SourceFamilyFirstBlock.lean": "f376b6cb73493414a55a6e80079242733a49f0299788aa99b1866a963918d7ed"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "dd32f6265cd62cfc471b52a3af68bfa28415f86489b4985590eb450944f7edf8",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5961008330341429,
+  "cpu_seconds": 0.931611,
+  "finished_jst": "2026-10-28T06:09:57.534140+09:00"
+}

@@ -1,0 +1,18 @@
+{
+  "tag": "H09-small-prefix-thirteen-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/SmallPrefixSupplyThirteen.lean"
+  ],
+  "started_jst": "2026-10-30T06:43:57.309165+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallPrefixSupplyThirteen.lean": "660673731718b1ddcfb55dcac0e6e91c06612eb3e5ff7b78fbc1383132cbbca2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

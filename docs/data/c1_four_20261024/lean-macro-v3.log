@@ -1,0 +1,10 @@
+Recaman/FourNonsuppliedData.lean:89:39: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`
+Recaman/FourNonsuppliedData.lean:92:29: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`
+Recaman/FourNonsuppliedData.lean:94:29: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`
+Recaman/FourNonsuppliedData.lean:88:40: warning: This simp argument is unused:
+  hmin
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [gap, hfirst, if_true, hlast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

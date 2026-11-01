@@ -1,0 +1,30 @@
+Recaman/PenultimateRunWindow.lean:60:16: error(lean.unknownIdentifier): Unknown constant `Int.pow_two`
+Recaman/PenultimateRunWindow.lean:60:4: error: Type mismatch: After simplification, term
+  hh
+ has type
+  0 < ↑d * ↑d
+but is expected to have type
+  0 < ↑d ^ 2
+Recaman/PenultimateRunWindow.lean:82:46: error: No goals to be solved
+Recaman/PenultimateRunWindow.lean:82:5: error: unsolved goals
+d T j : Nat
+hd : 1 ≤ d
+hA : d + T ≤ 20
+hj : 4 ≤ j
+hj9 : j ≤ 9
+heq : ↑d ^ 2 = ↑T * (↑T - 2 * (↑j + 1))
+R : Int := ↑j + 1
+hdpos : 0 < ↑d ^ 2
+hT : 2 * R < ↑T
+x : Int := ↑T - R - ↑d
+y : Int := ↑T - R + ↑d
+hypos : 0 < y
+hprod : x * y = R ^ 2
+hmod : R ^ 2 % y = 0
+hdiv : R ^ 2 / y = x
+hparity : (x + y) % 2 = 0
+Y : Nat := T + d - (j + 1)
+hY : ↑Y = y
+hh : R < y
+⊢ j + 1 < Y
+Recaman/PenultimateRunWindow.lean:84:51: error: No goals to be solved

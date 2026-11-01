@@ -1,0 +1,14 @@
+Recaman/TerminalLocalProfile.lean:182:68: error: No goals to be solved
+Recaman/TerminalLocalProfile.lean:182:26: error: unsolved goals
+v i : Nat
+hv : 1 ≤ v
+hs : ThreeNonsuppliedData.localSupply (List.replicate v false ++ List.replicate i true) = true ↔ i = 2
+t : Nat
+ht : t < seed.length
+hm : mass (List.drop t seed) + mass (List.replicate v false) + ↑i = 1
+hk :
+  runKey (List.drop t seed) + runKey (List.replicate v false) +
+      4 * mass (List.drop t seed) * ↑(cntF (List.replicate v false)) =
+    -2
+hl : seed.length = 20
+⊢ t < 20

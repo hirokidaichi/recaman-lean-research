@@ -1,0 +1,3 @@
+List.getElem?_replicate.{u_1} {n : Nat} {α✝ : Type u_1} {a : α✝} {i : Nat} :
+  (List.replicate n a)[i]? = if i < n then some a else none
+List.take_left.{u_1} {α : Type u_1} {l₁ l₂ : List α} : List.take l₁.length (l₁ ++ l₂) = l₁

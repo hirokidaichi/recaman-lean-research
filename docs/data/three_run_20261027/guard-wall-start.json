@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-10-27T06:09:57.673733+09:00",
+  "tag": "guard-wall",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/guard_fixture.py",
+    "wall"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 0.15,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 69604,
+  "process_group": 69604
+}

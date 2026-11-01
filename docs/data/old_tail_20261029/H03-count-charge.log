@@ -1,0 +1,49 @@
+Recaman/OldTargetMiddleCharge.lean:213:14: error: Tactic `apply` failed: could not unify the conclusion of `cN_zero_of`
+  cN ?P ?s ?m = 0
+with the goal
+  cN (fun x => False) 0 T ≤ 0
+
+Note: The full type of `cN_zero_of` is
+  ∀ (P : Nat → Prop) (s m : Nat), (∀ (i : Nat), s ≤ i → i < s + m → ¬P i) → cN P s m = 0
+
+case hQ
+w : List Bool
+hw : BlockWord w
+t h M m L s T j F F3 : Nat
+ht : t < w.length
+hj : 4 ≤ j
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hM : 1 ≤ M
+hbudget : M + L + T ≤ j + 10
+hlower : 2 * (j + 1) + 1 ≤ M + L + T
+hm2 :
+  mass
+      (List.drop t w ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++
+              List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (List.drop t w ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++
+              List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+hhead : M + L ≤ 2 * F + 1
+hhead5 : M + L ≤ F + 5
+v : List Bool := ⋯
+htwo : rayCount v T ≤ T - j + 2
+hpart : T ≤ F3 + rayCount v T
+hone : M ≤ j → rayCount v T ≤ T - j + 1
+hgood : ¬j + 1 ≤ F + F3
+hT : j ≤ T
+hlarge : ¬j + 1 ≤ M
+hMj : M ≤ j
+hb1 : rayCount v T ≤ T - j + 1
+hML : ¬4 ≤ M + L
+⊢ cN (fun x => False) 0 T ≤ 0

@@ -1,0 +1,105 @@
+import Recaman.PrefixMassBarrier
+
+namespace Recaman.RunSupplyKeys
+
+open Recaman.LeadingRunSupply
+open Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier
+open Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality
+
+/-- The area key preserved by appending any A run. -/
+def runKey (w : List Bool) : Int := 2*areaW w-mass w*(mass w+1)
+
+theorem runKey_append_A (w : List Bool) (r : Nat) :
+    runKey (w++List.replicate r true)=runKey w := by
+  have ha := twice_area_replicate_A r
+  simp only [runKey,areaW_append,mass_append,mass_replicate_A,List.length_replicate]
+  grind
+
+theorem gapKey_runKey (w : List Bool) :
+    supplyGapKey w=runKey w+2*(mass w)^2 := by
+  simp only [supplyGapKey,runKey]
+  grind
+
+theorem gapKey_after_A (w : List Bool) (r : Nat) :
+    supplyGapKey (w++List.replicate r true)=runKey w+2*(mass w+(r : Int))^2 := by
+  rw [gapKey_runKey,runKey_append_A,mass_append,mass_replicate_A]
+
+theorem localSupply_A_S_iff (u : List Bool) (r j : Nat) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      (u++List.replicate r true++List.replicate j false)=true ↔
+    ∃ t, t<u.length ∧ mass (u.drop t)+(r : Int)=(j : Int)+1 ∧
+      runKey (u.drop t)=-2*((j : Int)+1)^2 := by
+  rw [localSupply_gap_key_iff]
+  constructor
+  · rintro ⟨t,ht,hm,hk⟩
+    by_cases htu : t<u.length
+    · have hd : (u++List.replicate r true).drop t=u.drop t++List.replicate r true := by
+        rw [List.drop_append,show t-u.length=0 by omega,List.drop_zero]
+      rw [hd,mass_append,mass_replicate_A] at hm
+      rw [hd,gapKey_after_A,hm] at hk
+      exact ⟨t,htu,hm,by omega⟩
+    · have hd : (u++List.replicate r true).drop t=List.replicate (r-(t-u.length)) true := by
+        rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append,List.drop_replicate]
+      rw [hd] at hm hk
+      have hb := positive_zero_gap_key_count _ (by rw [hm]; omega) hk
+      rw [ones_replicate_A,mass_replicate_A] at hb hm
+      omega
+  · rintro ⟨t,ht,hm,hk⟩
+    have hd : (u++List.replicate r true).drop t=u.drop t++List.replicate r true := by
+      rw [List.drop_append,show t-u.length=0 by omega,List.drop_zero]
+    refine ⟨t,by simp only [List.length_append,List.length_replicate]; omega,?_,?_⟩
+    · simpa only [hd,mass_append,mass_replicate_A] using hm
+    · rw [hd,gapKey_after_A,hm,hk]
+      omega
+
+theorem cntF_int (w : List Bool) :
+    (cntF w : Int)=(w.length : Int)-ones w := by
+  have hm := mass_cntF w
+  have he := mass_eq w
+  omega
+
+theorem cntF_drop_le (w : List Bool) (t : Nat) : cntF (w.drop t)≤cntF w := by
+  have hs := cntF_append (w.take t) (w.drop t)
+  rw [List.take_append_drop] at hs
+  omega
+
+theorem runKey_count_lower (w : List Bool) :
+    -2*(cntF w : Int)^2≤runKey w := by
+  have hl := areaW_count_lower w
+  have hm := mass_eq w
+  have hc := cntF_int w
+  have hid : ones w*(ones w+1)-((w.length : Int)-ones w)*((w.length : Int)-ones w+1)-
+      2*ones w*((w.length : Int)-ones w)-mass w*(mass w+1) =
+      -2*(cntF w : Int)^2 := by grind
+  unfold runKey
+  omega
+
+theorem positive_square_key_bound (w : List Bool) (R : Int) (hR : 0<R)
+    (hk : runKey w=-2*R^2) : R≤(cntF w : Int) := by
+  have hl := runKey_count_lower w
+  rw [hk] at hl
+  by_cases h : R≤(cntF w : Int)
+  · exact h
+  · have hp := Int.mul_pos (show 0<R-(cntF w : Int) by omega)
+      (show 0<R+(cntF w : Int) by omega)
+    have he : (R-(cntF w : Int))*(R+(cntF w : Int))=R^2-(cntF w : Int)^2 := by grind
+    rw [he] at hp
+    omega
+
+/-- Both run clocks are bounded by the S signs already present in u. All
+A and S run lengths are quantified; no block grammar or free-count bound. -/
+theorem localSupply_run_bounds (u : List Bool) (r j : Nat)
+    (h : Recaman.ThreeNonsuppliedData.localSupply
+      (u++List.replicate r true++List.replicate j false)=true) :
+    j+1≤cntF u ∧ r≤2*cntF u := by
+  obtain ⟨t,ht,hm,hk⟩ := (localSupply_A_S_iff u r j).mp h
+  have hR := positive_square_key_bound (u.drop t) ((j : Int)+1) (by omega) hk
+  have hle := cntF_drop_le u t
+  have hmass := mass_cntF (u.drop t)
+  have hon := ones_bounds (u.drop t)
+  have hcount := cntF_int (u.drop t)
+  constructor <;> omega
+
+end Recaman.RunSupplyKeys

@@ -1,0 +1,7 @@
+Recaman/InitialSTargetBounds.lean:43:18: error(lean.unknownIdentifier): Unknown identifier `hd`
+Recaman/InitialSTargetBounds.lean:43:6: error: Type mismatch: After simplification, term
+  ha
+ has type
+  ThreeNonsuppliedData.wordArea (List.drop t v) = 0
+but is expected to have type
+  ThreeNonsuppliedData.wordArea (List.drop (H + t) (List.replicate H false ++ v)) = 0

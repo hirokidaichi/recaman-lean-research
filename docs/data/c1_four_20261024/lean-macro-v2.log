@@ -1,0 +1,7 @@
+Recaman/FourNonsuppliedData.lean:55:48: error: unsolved goals
+c : Bool
+v : List Bool
+ih : ∀ (u w : List Bool), trim u = trim w → trim (u ++ v) = trim (w ++ v)
+u w : List Bool
+h : trim u = trim w
+⊢ trim (trim (trim w) ++ [c]) = trim (w ++ [c])

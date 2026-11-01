@@ -1,0 +1,44 @@
+Recaman/SourceFamilyFreeCount.lean:68:55: warning: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SourceFamilyFreeCount.lean:96:9: error: Type mismatch: After simplification, term
+  hm
+ has type
+  @Eq Int
+    (mass
+        (List.drop t
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false))))) +
+      ↑i)
+    (↑0 + 1)
+but is expected to have type
+  @Eq Int
+    (mass
+        (List.drop t
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false))))) +
+      ↑i)
+    1
+Recaman/SourceFamilyFreeCount.lean:97:9: error: Type mismatch: After simplification, term
+  hk
+ has type
+  @Eq Int
+    (runKey
+      (List.drop t
+        (List.replicate h false ++
+          (List.replicate M true ++
+            (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false))))))
+    (-2 * (↑0 + 1) ^ 2)
+but is expected to have type
+  @Eq Int
+    (runKey
+      (List.drop t
+        (List.replicate h false ++
+          (List.replicate M true ++
+            (List.replicate (R + 1) false ++ (List.replicate R true ++ List.replicate 1 false))))))
+    (-2)

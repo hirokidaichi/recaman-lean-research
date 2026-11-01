@@ -1,0 +1,23 @@
+from pathlib import Path
+from math import isqrt
+import itertools,json
+B=Path(__file__).parent
+hist={};first=None;first_four=None;cases=0
+for M,L,m,s in itertools.product(range(1,33),repeat=4):
+ candidates={2:'lastS'}
+ # A real A-ray clock must be nonnegative. Every root uses the same suffix.
+ D=1+2*m*M+2*s*(M+L);t=isqrt(D);q=t-m-s
+ if t*t==D and q>=1 and 1+t-M-L>=0:candidates[1+t-M-L]='firstS'
+ N=m+s;num=N*N-2*s*L-1
+ if num%(2*N)==0:
+  a=num//(2*N);i=1+N-a-L
+  if 1<=a<=M and i>=0:candidates[i]='firstA'
+ D=1+2*s*L;t=isqrt(D);q2=t-s
+ if t*t==D and 1<=q2<=m and 1+t-L>=0:candidates[1+t-L]='secondS'
+ cases+=1;k=len(candidates);hist[k]=hist.get(k,0)+1
+ if k>=3 and first is None:
+  h=max(1,q);first={'parameters':[h,M,m,L,s],'clocks':sorted(candidates),'sources':candidates}
+ if k>=4 and first_four is None:
+  h=max(1,q);first_four={'parameters':[h,M,m,L,s],'clocks':sorted(candidates),'sources':candidates}
+out={'first_four_clock_countermodel':first_four,'cases':cases,'histogram':hist,'first_three_clock_countermodel':first,'domain':'M,L,m,s1..32; initial h chosen large enough to include firstS candidate; zero lengths not searched','evidence':'finite quadratic discovery, not a theorem'}
+(B/'three-source-discovery.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out))

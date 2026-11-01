@@ -1,0 +1,73 @@
+Recaman/SmallInversionJoint.lean:12:5: warning: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SmallInversionJoint.lean:12:27: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SmallInversionJoint.lean:13:5: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SmallInversionJoint.lean:82:26: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+h M m L s K : Nat
+hM : M = 4
+hm : m = 1
+hL : 3 ≤ L
+hs : 1 ≤ s
+hI : ↑M * (↑m + ↑s) + ↑L * ↑s ≤ 16
+hp :
+  ∀ (i : Nat),
+    ThreeNonsuppliedData.localSupply
+          (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+              List.replicate s false ++
+            List.replicate i true) =
+        true →
+      i = 2
+a : Nat
+b : a < K
+ha : Nat
+hb : ha < K
+haK :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate a true) =
+    true
+hbK :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate ha true) =
+    true
+⊢ a = ha
+Recaman/SmallInversionJoint.lean:101:30: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+h M m L s K : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hI : ↑M * (↑m + ↑s) + ↑L * ↑s ≤ 16
+hex : ¬(M = 4 ∧ m = 1 ∧ 3 ≤ L)
+a : Nat
+b : a < L
+ha : Nat
+hb : ha < L
+haL :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate a true) =
+    true
+hbL :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate ha true) =
+    true
+⊢ a = ha

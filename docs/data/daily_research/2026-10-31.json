@@ -1,0 +1,564 @@
+{
+  "version": 1,
+  "date": "2026-10-31",
+  "timezone": "Asia/Tokyo",
+  "target_seconds": 7200,
+  "events": [
+    {
+      "at": "2026-10-31T06:03:36.178178+09:00",
+      "action": "start",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": ""
+    },
+    {
+      "at": "2026-10-31T06:04:07.471617+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "入口・停止枝を照合。E467二case/実counter供給を15分gateで監査。探索CPU0。"
+    },
+    {
+      "at": "2026-10-31T06:07:36.737054+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "raw二case・actual counter/R供給・全last old排除が個別Lean PASS。15分gate通過、local free1/2へ。"
+    },
+    {
+      "at": "2026-10-31T06:11:49.276744+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "61-row local certificate layoutは512MBで失敗。資源追加せず隔離。初期S平方の非平方性とfirstA因数による解析的pruningへ切替。"
+    },
+    {
+      "at": "2026-10-31T06:15:30.868216+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "初期S源は75/85非平方により全clock排除、局所予算5を個別Lean。firstAが存在すると第二A源が偶奇で消えるjoint制約を形式化中。"
+    },
+    {
+      "at": "2026-10-31T06:21:14.137042+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "H01の必要free1/2と元Intp/padded/zero-positive free-gapまで個別Lean PASS。登録・逐語statement audit・全checkへ。"
+    },
+    {
+      "at": "2026-10-31T06:24:02.634923+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "S10元p free-gapを初回全checkへ。次の局所探索は任意S moment帯のtarget C<=2/v<=3、card固定。CPU追加なし。"
+    },
+    {
+      "at": "2026-10-31T06:28:30.147800+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "06:30途中保存。任意Sのtarget mass<=2/v<=3と全last old排除が個別Lean。actual供給16/反例S16域への接着中。"
+    },
+    {
+      "at": "2026-10-31T06:30:12.298195+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "実時計06:30の途中保存。06:28:30 noteの06:30表記は早記。S10完了、一般moment帯のactual counter必要S<=16/free4..7/A23/j7が個別Lean PASS、未登録/未全check。"
+    },
+    {
+      "at": "2026-10-31T06:34:56.977248+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "proof-derived残余の新finite falsifier: even695/odd526 target casesで補助支払い違反0。全量化証明へ昇格せず、短い最終S長のsource算術classifierを検討。"
+    },
+    {
+      "at": "2026-10-31T06:37:51.314909+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "任意S moment帯のtarget低mass/全old排除/actual反例S16域、単S gapの第二A源clock2が個別Lean PASS。G5と全checkへ。"
+    },
+    {
+      "at": "2026-10-31T06:39:48.635271+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "E470-472追加registry/G5/CURRENT同期。直前audit区間にはH09 classifierの研究下書きも混在、境界を遡って実績分類しない。現在からresearch。"
+    },
+    {
+      "at": "2026-10-31T06:45:49.803804+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "classifier全source包含が個別Lean。全check終了確認後、v1/2/3 source族の重複clock0/2と低targetmass枝の解析的局所予算を検討。"
+    },
+    {
+      "at": "2026-10-31T06:50:41.234272+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "初期S小gap clock規則と第三S clock0/2を全長Lean。全source族分解/重複課金を使いv1/2局所予算4/5を形式化中。"
+    },
+    {
+      "at": "2026-10-31T06:54:57.395444+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "短gap local4/5とtarget mass1/S>=8のactual全長free-gapが個別Lean PASS。残るhead S<=7をS7の五形へ絞る。"
+    },
+    {
+      "at": "2026-10-31T06:58:07.095904+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "H12 combined512MB失敗、後のunbounded lake buildは採用せずsource/cache隔離。五形表を廃止しI5=>h>=M+2=>firstA clock0という独立pruningの一回修理へ。"
+    },
+    {
+      "at": "2026-10-31T06:59:26.310667+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "実時計07:00付近の途中保存。五形tableは不採用、全長tall-initial源clock0でlocal4へ。修理も同じ512MBで検証し、未通過sourceを結果に使わない。"
+    },
+    {
+      "at": "2026-10-31T07:02:09.711188+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "実時計07:00以降の途中保存。H12新source不等式は512MB PASS。S7小headのactual接着を検証中、unbounded buildの不採用結果とは分離。"
+    },
+    {
+      "at": "2026-10-31T07:05:04.876154+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "moment帯target mass1の全S・元Intp free-gapまで個別512MB PASS。H12 failed tableは依存せず、source-height pruningの一回修理で閉鎖。G5/全checkへ。"
+    },
+    {
+      "at": "2026-10-31T07:06:16.872206+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "07:05全check488jobs/3091decl PASS、moment targetmass1全S元p枝完了。未完了mass2の実counter九parameter群へ。"
+    },
+    {
+      "at": "2026-10-31T07:07:50.187118+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "mass2 counterの実パラメータ接着を検証、v1/2でfirstAをclock0/2へ統合する源方程式を準備。"
+    },
+    {
+      "at": "2026-10-31T07:12:49.131126+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "mass2九群とv1/2 local3/4、v3例外第二A clock0が個別Lean。全moment帯zero-mass三run-headのactual free-gapへ全接着を試す。"
+    },
+    {
+      "at": "2026-10-31T07:15:42.902526+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "mass2 v1/2 local3/4、v3 local5の全source課金が個別512MB PASS。元actual全moment帯free-gap本体を検証し、Intp adapterへ。"
+    },
+    {
+      "at": "2026-10-31T07:19:10.382299+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "全S moment帯/free-gapの元Intp adapterまで個別512MB検証PASS。G5/Audit/全checkへ。"
+    },
+    {
+      "at": "2026-10-31T07:19:48.332711+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "E476/E477/E478全check495jobs/3099declarations PASS。限定全S moment帯の元Intp実free-gap完了。下側境界の同じtarget/old-last couplingへ。"
+    },
+    {
+      "at": "2026-10-31T07:23:25.088910+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "下端4S+5の同target old排除は個別512MB PASS。4S+4はdiscovery2/freshholdout74の実positive対照でold clock1、親free-gap反例ではない。"
+    },
+    {
+      "at": "2026-10-31T07:24:25.861156+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "E479の同target old排除とE480境界反例を全check496jobs/3103宣言PASS。4S+5の残るlocal/head実free接着へ。"
+    },
+    {
+      "at": "2026-10-31T07:27:03.360767+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "E481元Intpのlower5 fullfree-gap全check499jobs/3107宣言PASS。lower4でold供給を残したまま実free課金を評価。"
+    },
+    {
+      "at": "2026-10-31T07:28:27.819661+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "H19一回修理discovery74positive/minfree16。fresh S30 holdoutは1CPU SIGXCPUで未完了、延長せずSTOPPED。lower5境界の実語偶奇による不可能性を意味監査。"
+    },
+    {
+      "at": "2026-10-31T07:29:16.152406+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "07:30付近途中保存。lower5新境界はR>=5域で不可能と個別Lean確認し対象履歴拡大と数えない。lower4はprobe延長せず全長head供給10+last供給6で攻撃。"
+    },
+    {
+      "at": "2026-10-31T07:30:27.586119+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "実07:30保存。lower4はalloldを切らずold<=1/local<=5/head実供給<=10を保持し、S>=16/headfree>=6の全長coreが個別512MB PASS。"
+    },
+    {
+      "at": "2026-10-31T07:33:44.276070+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "E482全check501jobs/3111宣言PASS。新境界lower4はold1/local5/head6で実在例を含みfree-gap完了。次の機構としてmoment帯外のtargetmass3と同prefix old4/5のjoint制約を紙上評価。CPU追加0。"
+    },
+    {
+      "at": "2026-10-31T07:38:46.108484+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "H21 table/layoutは一回修理後512MB STOPで隔離。E483は未Lean PAPERのみ、actual free接着を翌日H-20261101-01へ。採用sourceのexact byte/cap/依存/意味監査へ。"
+    },
+    {
+      "at": "2026-10-31T07:40:19.398668+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "採用34新Leanの現byte監査でMomentActualTargetだけdirect512記録不足を発見し再検証PASS。baseline既存はroot/Auditのみ変更、他セッションsource保持。カードの強い未証明/方法STOP/必要結論を分離。"
+    },
+    {
+      "at": "2026-10-31T07:42:14.256518+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "全check501jobs/3111宣言PASS、未検証H21 source隔離。自動実行をH-20261101-01へ更新しsameID/ACTIVE/時刻/thread/毎日finalをreadback。未来の実働完遂は未確認。"
+    },
+    {
+      "at": "2026-10-31T07:46:06.013151+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "07:45以降は新探索なし。既定E483の18pair/偶奇表だけ07:45:09に独立有限監査PASS（未Lean、fresh holdoutとは呼ばない）。保存/引継ぎ/終了報告を準備。"
+    },
+    {
+      "at": "2026-10-31T07:48:50.628080+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "意味監査を保存。E482は全長でもzero-mass/moment/source枝限定、Q累積面積/C1最終接着は未完了。E481空counter域を進展除外、E483有限表監査はkernel/actualproofへ昇格しない。"
+    },
+    {
+      "at": "2026-10-31T07:50:13.408753+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "DAILY/研究note/翌日card/自動実行readbackを照合。旧packet snapshot開始とjournal実setup開始を明示分離。旧時点PAPER見出しに10/31完了参照を付けcurrent stateと区別。"
+    },
+    {
+      "at": "2026-10-31T07:51:41.072189+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "採用済みnine群/local重複/S7 height/lower4 countを別passで紙上照合してCOUNT_CHAIN_REVIEWへ。新しい不等式の探索ではなく既定proofとscopeの監査。"
+    },
+    {
+      "at": "2026-10-31T07:53:08.019953+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "実sourceAtの定符号run根一意性とprepend/append S keyの符号差を原定理に照合。有限表/独立tagによらないsource一族<=1の意味を追記。新探索なし。"
+    },
+    {
+      "at": "2026-10-31T07:54:42.131729+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "次cardのtargetmass3≠完了r3/free予算3を明記。五area対は必要射影で実history同値ではなく、area9の別supplier語と全prefixを残す。Lean-M512とOS/tree memory capも区別。"
+    },
+    {
+      "at": "2026-10-31T07:56:35.086346+09:00",
+      "action": "checkpoint",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "G5の各Base transport/組合せ定理はcheck3=yesと明示し、同rowの実質coreのnoと分離。registry/G1-G5/P再検証PASS、statementとsourceに変更なし。"
+    },
+    {
+      "at": "2026-10-31T07:59:49.141812+09:00",
+      "action": "stop",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "note": "本日の研究・検証・意味監査・handoff完了。07:45以後の新探索なし、計算終了。E482限定全長free-gap/未Lean E483/失敗/次cardを保存し、8時前の余裕を残して終了。"
+    }
+  ],
+  "segments": [
+    {
+      "start": "2026-10-31T06:03:36.178178+09:00",
+      "end": "2026-10-31T06:04:07.471617+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "setup",
+      "unit": "R-20261031-01/H-20261031-01/setup"
+    },
+    {
+      "start": "2026-10-31T06:04:07.471617+09:00",
+      "end": "2026-10-31T06:07:36.737054+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-01/paper-audit"
+    },
+    {
+      "start": "2026-10-31T06:07:36.737054+09:00",
+      "end": "2026-10-31T06:11:49.276744+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-01/local-free"
+    },
+    {
+      "start": "2026-10-31T06:11:49.276744+09:00",
+      "end": "2026-10-31T06:15:30.868216+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-02/source-pruning"
+    },
+    {
+      "start": "2026-10-31T06:15:30.868216+09:00",
+      "end": "2026-10-31T06:21:14.137042+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-02/source-coupling"
+    },
+    {
+      "start": "2026-10-31T06:21:14.137042+09:00",
+      "end": "2026-10-31T06:24:02.634923+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "R-20261031-01/first-pass"
+    },
+    {
+      "start": "2026-10-31T06:24:02.634923+09:00",
+      "end": "2026-10-31T06:28:30.147800+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-04/moment-target-mass"
+    },
+    {
+      "start": "2026-10-31T06:28:30.147800+09:00",
+      "end": "2026-10-31T06:30:12.298195+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-05/actual-residual"
+    },
+    {
+      "start": "2026-10-31T06:30:12.298195+09:00",
+      "end": "2026-10-31T06:34:56.977248+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-05/actual-residual"
+    },
+    {
+      "start": "2026-10-31T06:34:56.977248+09:00",
+      "end": "2026-10-31T06:37:51.314909+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-06/source-budget"
+    },
+    {
+      "start": "2026-10-31T06:37:51.314909+09:00",
+      "end": "2026-10-31T06:39:48.635271+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "R-20261031-01/general-moment-audit"
+    },
+    {
+      "start": "2026-10-31T06:39:48.635271+09:00",
+      "end": "2026-10-31T06:45:49.803804+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-09/fourth-clock"
+    },
+    {
+      "start": "2026-10-31T06:45:49.803804+09:00",
+      "end": "2026-10-31T06:50:41.234272+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-09/family-count"
+    },
+    {
+      "start": "2026-10-31T06:50:41.234272+09:00",
+      "end": "2026-10-31T06:54:57.395444+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-10/short-local-budget"
+    },
+    {
+      "start": "2026-10-31T06:54:57.395444+09:00",
+      "end": "2026-10-31T06:58:07.095904+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-11/small-head"
+    },
+    {
+      "start": "2026-10-31T06:58:07.095904+09:00",
+      "end": "2026-10-31T06:59:26.310667+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-12/source-pruning-repair"
+    },
+    {
+      "start": "2026-10-31T06:59:26.310667+09:00",
+      "end": "2026-10-31T07:02:09.711188+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-12/source-pruning-repair"
+    },
+    {
+      "start": "2026-10-31T07:02:09.711188+09:00",
+      "end": "2026-10-31T07:05:04.876154+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-12/source-pruning-repair"
+    },
+    {
+      "start": "2026-10-31T07:05:04.876154+09:00",
+      "end": "2026-10-31T07:06:16.872206+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "R-20261031-01/mass-one-audit"
+    },
+    {
+      "start": "2026-10-31T07:06:16.872206+09:00",
+      "end": "2026-10-31T07:07:50.187118+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-13/mass-two-parameters"
+    },
+    {
+      "start": "2026-10-31T07:07:50.187118+09:00",
+      "end": "2026-10-31T07:12:49.131126+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-14/mass-two-early-A"
+    },
+    {
+      "start": "2026-10-31T07:12:49.131126+09:00",
+      "end": "2026-10-31T07:15:42.902526+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-16/moment-full-gap"
+    },
+    {
+      "start": "2026-10-31T07:15:42.902526+09:00",
+      "end": "2026-10-31T07:19:10.382299+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-16/moment-full-gap"
+    },
+    {
+      "start": "2026-10-31T07:19:10.382299+09:00",
+      "end": "2026-10-31T07:19:48.332711+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-16/moment-full-gap-audit"
+    },
+    {
+      "start": "2026-10-31T07:19:48.332711+09:00",
+      "end": "2026-10-31T07:23:25.088910+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-17/lower-moment-boundary"
+    },
+    {
+      "start": "2026-10-31T07:23:25.088910+09:00",
+      "end": "2026-10-31T07:24:25.861156+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-17/lower-boundary-audit"
+    },
+    {
+      "start": "2026-10-31T07:24:25.861156+09:00",
+      "end": "2026-10-31T07:27:03.360767+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-18/lower-five-free-gap"
+    },
+    {
+      "start": "2026-10-31T07:27:03.360767+09:00",
+      "end": "2026-10-31T07:28:27.819661+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-19/lower-four-free-charge"
+    },
+    {
+      "start": "2026-10-31T07:28:27.819661+09:00",
+      "end": "2026-10-31T07:29:16.152406+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-18/lower-five-nonvacuity"
+    },
+    {
+      "start": "2026-10-31T07:29:16.152406+09:00",
+      "end": "2026-10-31T07:30:27.586119+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-20/lower-four-count-proof"
+    },
+    {
+      "start": "2026-10-31T07:30:27.586119+09:00",
+      "end": "2026-10-31T07:33:44.276070+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-20/lower-four-count-proof"
+    },
+    {
+      "start": "2026-10-31T07:33:44.276070+09:00",
+      "end": "2026-10-31T07:38:46.108484+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "research",
+      "unit": "H-20261031-21/mass-three-joint-source"
+    },
+    {
+      "start": "2026-10-31T07:38:46.108484+09:00",
+      "end": "2026-10-31T07:40:19.398668+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-22/adopted-byte-and-scope-audit"
+    },
+    {
+      "start": "2026-10-31T07:40:19.398668+09:00",
+      "end": "2026-10-31T07:42:14.256518+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-22/adopted-byte-and-scope-audit"
+    },
+    {
+      "start": "2026-10-31T07:42:14.256518+09:00",
+      "end": "2026-10-31T07:46:06.013151+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "audit",
+      "unit": "H-20261031-22/adopted-byte-and-scope-audit"
+    },
+    {
+      "start": "2026-10-31T07:46:06.013151+09:00",
+      "end": "2026-10-31T07:48:50.628080+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/final-preservation"
+    },
+    {
+      "start": "2026-10-31T07:48:50.628080+09:00",
+      "end": "2026-10-31T07:50:13.408753+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/final-preservation"
+    },
+    {
+      "start": "2026-10-31T07:50:13.408753+09:00",
+      "end": "2026-10-31T07:51:41.072189+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/report-and-next-unit"
+    },
+    {
+      "start": "2026-10-31T07:51:41.072189+09:00",
+      "end": "2026-10-31T07:53:08.019953+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/count-chain-review"
+    },
+    {
+      "start": "2026-10-31T07:53:08.019953+09:00",
+      "end": "2026-10-31T07:54:42.131729+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/count-chain-review"
+    },
+    {
+      "start": "2026-10-31T07:54:42.131729+09:00",
+      "end": "2026-10-31T07:56:35.086346+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/next-unit-scope-review"
+    },
+    {
+      "start": "2026-10-31T07:56:35.086346+09:00",
+      "end": "2026-10-31T07:59:49.141812+09:00",
+      "session": "1ad4e1db-2761-42bd-ae67-89c6179b7ee7",
+      "phase": "handoff",
+      "unit": "R-20261031-01/final-audit-answers"
+    }
+  ],
+  "unconfirmed_gaps": [],
+  "cursor": null
+}

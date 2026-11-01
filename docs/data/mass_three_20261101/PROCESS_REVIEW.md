@@ -1,0 +1,13 @@
+# Process review 2026-11-01
+
+07:26の未検証作業編集で禁止されたproof placeholderを一度書き込んだ。直ちに完全なcount/source proofへ置換し、そのplaceholder版はLean実行・runner source凍結・root/Audit・registryへ投入していない。作業の中間段階でも禁止を守るべきで、未検証だから許されると解釈しない。最終の42採用新Leanで禁止語0、fullcheck543jobs/3163decl/許容三公理だけを確認した。以後、未完了proofを完成sourceとして書くことを避け、案はplain research noteへ記録する。
+
+通常checkの同期エラー: E491/E492のfrontier未記載、E495 artifact未作成、H11新module未root登録の3件を各保存の順序誤りとして記録。検査を弱めず、必要な具体文書/登録を揃えてから全checkに通した。失敗出力を成功扱いしない。
+
+ThirteenRunFactorsは純算術helperで単独lintはG3警告exit1。単独研究成果として登録しない。E497は同word源分類とactual original-base coreを引用するため全registry G1–G5を通過する。警告を消すためのダミーword wrapperは追加しない。
+
+I25一般layoutは一回pruning後512MB STOPPEDを維持。E496/E497はactual S13/同oldmass4の独立lowerI23とpriorA12による六形削減で、一般I25証明として採用しない。六形Orをomegaへ直接渡した大きいproofは512MBで失敗し、同じ命題をexplicit constructorで同512MB検査して採用した。数式/量化子/資源上限は変更しない。
+
+最終別pass監査: actual Winの終点は元p+n+head+separator+clock、oldclock1は+1を保持、source以前prefixを切らない。padded A^aもBlockWordへappendして元Endable基点をshift保存する。sixShapesはraw六tuple条件で、actual coreには同sourceから内部供給する。raw M<=R+1もactual counter/第一実供給2から内部供給し、fullgap結論を仮定に含めない。E485のanyold版だけfinal-band local仮定があり、E484/E500のexplicitold版は不要。一般C1とは別義務。
+
+採用42新Leanのcurrent bytes全部に直接-M512成功記録があり、最終543jobのsource-tree manifestと一致。baseline500Leanのうちroot/Audit以外のhash変更0、削除0、42新Leanで禁止語0。未計測のbookkeeping/lint CPUは0扱いしない。

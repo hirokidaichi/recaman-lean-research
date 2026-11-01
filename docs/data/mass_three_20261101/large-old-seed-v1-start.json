@@ -1,0 +1,18 @@
+{
+  "tag": "large-old-seed-v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/LargeOldSeedGap.lean"
+  ],
+  "started_jst": "2026-11-01T06:38:50.799113+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeOldSeedGap.lean": "16a72532e6474db8d3d083097433f986d45e2165389c471b01439ff958bd37eb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

@@ -1,0 +1,18 @@
+{
+  "tag": "H18-lower-five-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/LowerMomentBase.lean"
+  ],
+  "started_jst": "2026-10-31T07:25:17.417607+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowerMomentBase.lean": "d94aae5194518fe07157e8c4617ca99b98895f7e0791d1454aab5bc1110dc30d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

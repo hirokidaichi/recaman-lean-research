@@ -1,0 +1,42 @@
+Recaman/InversionActualBudget.lean:40:49: error: Function expected at
+  Nat.le_min
+but this term has type
+  ?m.193 ≤ min ?m.194 ?m.195 ↔ ?m.193 ≤ ?m.194 ∧ ?m.193 ≤ ?m.195
+
+Note: Expected a function because this term is being applied to the argument
+  hr1M
+Recaman/InversionActualBudget.lean:125:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  r ≥ 0
+  q ≥ 0
+  1 ≤ p ≤ 2
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  k - l ≥ 0
+  k - l - o - p ≤ 1
+  k - p - q - r ≥ 3
+  j ≥ 0
+  j - l ≥ -1
+  i ≥ 3
+  g ≥ 1
+  e ≥ 1
+  d ≥ 0
+  c ≥ 1
+  c + d + e ≥ 3
+where
+ c := ↑s
+ d := ↑h
+ e := ↑m
+ g := ↑L
+ i := ↑(cntF Y)
+ j := ↑(rayCount Y T)
+ k := ↑(cN (EndN f 0) n (h + (M + (m + (L + (s + T))))))
+ l := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + s))))) T)
+ o := ↑(rayCount X L)
+ p := if ↑M ≤ ↑2 then ↑M else ↑2
+ q := ↑(rayCount (List.replicate h false ++ List.replicate M true ++ List.replicate m false) L)
+ r := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+      List.replicate s false)
+    T)

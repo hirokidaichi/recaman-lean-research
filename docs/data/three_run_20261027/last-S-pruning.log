@@ -1,0 +1,27 @@
+Recaman/SeparatorSupplyReset.lean:296:4: error: Type mismatch: After simplification, term
+  hshape
+ has type
+  seg f n (h + M + m + L + s + T) =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true))))
+but is expected to have type
+  seg f n
+      ((List.replicate h false ++ (List.replicate M true ++ (List.replicate m false ++ List.replicate L true))).length +
+          s +
+        T) =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true))))
+Recaman/SeparatorSupplyReset.lean:301:10: error: Type mismatch: After simplification, term
+  hgap
+ has type
+  ∀ (x : Nat), n + h + M + m + L + s + T ≤ x → x < n + h + M + m + L + s + T + j → f x = false
+but is expected to have type
+  ∀ (x : Nat), n + (h + M + m + L) + s + T ≤ x → x < n + (h + M + m + L) + s + T + j → f x = false
+Recaman/SeparatorSupplyReset.lean:301:43: error: Type mismatch: After simplification, term
+  he
+ has type
+  EndN f 0 (n + h + M + m + L + s + T + j)
+but is expected to have type
+  EndN f 0 (n + (h + M + m + L) + s + T + j)

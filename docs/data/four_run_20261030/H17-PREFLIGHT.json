@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-30T07:17:59.997331+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_dirty_sha256": "58d49f2481fd09d8645ecebd86b839bf3389e690149adeed2a818bcaffe21310",
+  "hashes": {
+    "terminal_profile.py": "35a51673ffe3433dfcee5137aa8c1375e2a5b3c5d2457bc175655c973d398692",
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "argv": [
+    "python3",
+    "docs/data/four_run_20261030/run_single.py",
+    "--tag",
+    "H17-terminal-profile",
+    "--cpu",
+    "1",
+    "--wall",
+    "3",
+    "docs/data/four_run_20261030/terminal_profile.py"
+  ],
+  "prior_math_cpu_seconds": 2.962162,
+  "aggregate_budget": 4,
+  "classification": "finite certificate + independent literal checker; no unbounded computational proof"
+}

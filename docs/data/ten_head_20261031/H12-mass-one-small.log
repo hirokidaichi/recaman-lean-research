@@ -1,0 +1,41 @@
+Recaman/MomentMassOneSmall.lean:138:67: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  y ≥ 4
+  0 ≤ x ≤ 2
+  0 ≤ u ≤ 4
+  0 ≤ r ≤ 4
+  p ≤ 11
+  0 ≤ o ≤ 23
+  l ≥ 0
+  2 ≤ l ≤ 5
+  k ≥ 1
+  k ≤ 2
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g ≤ 6
+  c ≥ 1
+  c + e ≤ 6
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := ↑q
+ l := ↑i
+ o := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ p := ↑v ^ 2
+ r := ↑(rayCount (z ++ List.replicate v false) T)
+ u := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate 2 false)
+    6)
+ x := ↑(cN P n H)
+ y := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)

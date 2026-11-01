@@ -1,0 +1,31 @@
+{
+  "tag": "old_one_last6_v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldOneLastSix.olean",
+    "Recaman/OldOneLastSix.lean"
+  ],
+  "started_jst": "2026-11-01T07:38:49.164354+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldOneLastSix.lean": "73ef43e2c010bd947b63e896483c0f0c9bd38df8e02e96a2426ba01ce03d447b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "8d0025365163fe78df6c52a6d10df43509a3a84a72cd13e32a40de82f5c4feb1",
+  "source_tree_sha256": "57ec1323bc880b7af63a3623f23d9d00b62fe7af93b983a4c025d82570869f43",
+  "source_tree_manifest": "old_one_last6_v1-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "8d0025365163fe78df6c52a6d10df43509a3a84a72cd13e32a40de82f5c4feb1",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.561568042030558,
+  "cpu_seconds": 0.425627,
+  "finished_jst": "2026-11-01T07:38:49.725865+09:00"
+}

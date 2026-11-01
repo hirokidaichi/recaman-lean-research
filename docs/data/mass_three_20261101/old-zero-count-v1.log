@@ -1,0 +1,43 @@
+Recaman/OldZeroInitialSource.lean:90:6: error: Type mismatch: After simplification, term
+  hmt
+ has type
+  @Eq Int
+    (mass (List.drop t w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate v false)))))) +
+      ↑0)
+    1
+but is expected to have type
+  @Eq Int
+    (mass (List.drop t w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate v false)))))) +
+      0)
+    1
+Recaman/OldZeroInitialSource.lean:136:4: error: 'change' tactic failed, pattern
+  1 ≤ cntF z
+is not definitionally equal to target
+  1 ≤
+    cntF
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true)
+Recaman/OldZeroInitialSource.lean:159:2: error: 'change' tactic failed, pattern
+  rayCount (w ++ (z ++ List.replicate v false)) K ≤ 6
+is not definitionally equal to target
+  rayCount
+      (w ++
+        (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+              List.replicate s false ++
+            List.replicate U true ++
+          List.replicate v false))
+      K ≤
+    6

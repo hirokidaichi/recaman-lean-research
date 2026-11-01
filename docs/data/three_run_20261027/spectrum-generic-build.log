@@ -1,0 +1,16 @@
+⚠ [16/23] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [23/23] Built Recaman.BlockSuffixSpectrum (302ms)
+warning: Recaman/BlockSuffixSpectrum.lean:130:33: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (23 jobs).

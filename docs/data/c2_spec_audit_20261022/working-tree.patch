@@ -1,0 +1,1379 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fb29cfd..e6e691d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,8 +7,21 @@ on:
+     branches: [ main ]
+ 
+ jobs:
++  harness:
++    name: Research harness (${{ matrix.os }})
++    runs-on: ${{ matrix.os }}
++    strategy:
++      matrix:
++        os: [ubuntu-latest, macos-latest]
++    steps:
++      - name: Checkout repository
++        uses: actions/checkout@v4
++      - name: Test brief freshness and research-harness gates
++        run: make test-tools
++
+   verify:
+     name: Lean Audit & Empirical Regression Suite
++    needs: harness
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout repository
+diff --git a/Makefile b/Makefile
+index 55fd4fa..6c4fb42 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,12 +1,16 @@
+-.PHONY: all check test test-probes probes manifest check-manifest brief clean help
++.PHONY: all check test test-tools test-probes probes manifest check-manifest brief clean help
+ 
+ all: check
+ 
+ brief:
+ 	@python3 scripts/dev_tool.py brief
+ 
+-test: check test-probes check-manifest
+-	@echo "All Lean, empirical, and viewer checks passed."
++test: test-tools check test-probes check-manifest
++	@echo "All research-tool, Lean, empirical, and viewer checks passed."
++
++test-tools:
++	@python3 scripts/test_dev_tool.py
++	@bash scripts/test_harness_gates.sh
+ 
+ check:
+ 	@./scripts/check.sh
+@@ -31,7 +35,8 @@ help:
+ 	@echo "Recamán Lean Research - make targets:"
+ 	@echo "  make brief          - Show ultra-compact active research frontier summary"
+ 	@echo "  make check          - Run Lean builds, architecture check, and axiom audit"
+-	@echo "  make test           - Run all checks: Lean audit, empirical tests, manifest check"
++	@echo "  make test           - Run all checks: research tools, Lean audit, empirical tests, viewer"
++	@echo "  make test-tools     - Run brief freshness and isolated research-harness tests"
+ 	@echo "  make test-probes    - Build and run empirical regression tests (experiments/)"
+ 	@echo "  make probes         - Build all core empirical probe binaries (experiments/bin/)"
+ 	@echo "  make manifest       - Regenerate viewer/manifest.json"
+diff --git a/Recaman.lean b/Recaman.lean
+index 4dfb6e8..e2f7da7 100644
+--- a/Recaman.lean
++++ b/Recaman.lean
+@@ -375,6 +375,7 @@ import Recaman.OwnerFamilyLagEleven
+ import Recaman.HallMatching
+ import Recaman.PeriodicOwnerFamilyLagEleven
+ import Recaman.ShortTightDonorAvoidance
++import Recaman.SS2OldestPattern
+ import Recaman.P2SubtractionLevelSum
+ import Recaman.P2WindowLengthBounds
+ import Recaman.SuffixHallOwnerMap
+diff --git a/docs/AI_RESEARCH_PROTOCOL.md b/docs/AI_RESEARCH_PROTOCOL.md
+index a99dffe..9e3f769 100644
+--- a/docs/AI_RESEARCH_PROTOCOL.md
++++ b/docs/AI_RESEARCH_PROTOCOL.md
+@@ -1,6 +1,6 @@
+ # AI と進める数学研究プロトコル
+ 
+-最終更新: 2026-09-15
++最終更新: 2026-10-21
+ 
+ ## 結論
+ 
+@@ -57,7 +57,7 @@ Daviesらの枠組みは、データから関係を予測するだけで終わ
+ ### 1.4 検索とpremise selectionを局所化する
+ 
+ LeanDojo/ReProverとLean Copilotは、巨大なライブラリから関連premiseを検索することと、proof stateから
+-局所的な次手を生成することを分けている。本リポジトリでも全228モジュールを毎回コンテキストへ詰めず、
++局所的な次手を生成することを分けている。本リポジトリでも全モジュールを毎回コンテキストへ詰めず、
+ `PROOF_MAP`から対象義務の依存閉包を選び、関連定義・既存定理・既知反例だけをwork packetへ入れる。
+ 
+ ### 1.5 プロンプトは手順列より成果条件を中心にする
+@@ -66,6 +66,41 @@ OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、
+ 許可境界を明示し、同じ指示を重複させないことを勧めている。本プロトコルでは、研究依頼を
+ 「何を順番に考えるか」ではなく「どのstatementを、何を証拠として、どこで止めるか」で指定する。
+ 
++### 1.6 探索・活用を、次の判断を変える情報で配分する
++
++研究単位の目的を次の三つに区別する。証明・反例探索・計算は**手段**であり、これとは別の軸である。
++
++- **活用**: 選択済みの機構で、特定の未証明edgeを閉じる。反例探索による最後の適用条件確認も含む。
++- **局所探索**: 同じ経路の候補・仮定・表現を比較し、どの研究単位へ進むかを決める。
++- **大域探索**: 経路そのもの、対象、または証明機構を変える候補を比較する。
++
++同じ有限表の枠数・lag・走査上限を増やすだけでは、独立した機構の探索と数えない。
++同じ未証明仮定に依存する複数候補も、その依存関係を明記する。
++
++HayらのmetareasoningとRusso・Van Royのinformation-directed samplingを参考に、各候補について
++「成功したらどのedgeが閉じるか」「失敗したら何を除外でき、次の選択がどう変わるか」「費用上限」を書く。
++成功確率や情報量を推定できない場合は、根拠を添えた定性的比較でよい。架空の確率や合成点数を作らない。
++両論文のモデルにおける最適性・regret保証を、この数学研究へそのまま移してはならない。
++
++### 1.7 予算と切替は実行前に固定し、判定後に更新する
++
++1. cycleの総予算と各カードの配分を同じ単位で記録する。初期値の例は**活用60・探索30・監査10%**。
++   これは運用仮説であり最適比率ではない。探索は局所・大域の内訳も記す。
++2. 時間、CPU時間、token、金銭は別々に上限を持つ。並行作業なら延べ作業時間と経過時間を区別する。
++   親cycleと子カードで同じ費用を二重計上せず、予定と実績を分け、未実行は未実行と書く。
++3. 各unitに最初の確認点、継続・切替・停止・再開の条件を置く。反例、循環仮定、同値な言い換え、
++   予算到達、同じ障害の再出現を判定材料にする。反例数ゼロだけでは延長理由にならない。
++4. 継続は、供給元を確認した新補題、反例による候補族の排除、非同値な未知edgeの特定などを根拠にする。
++   未証明仮定を増やしたり、監査を省いたりして予算を守らない。監査が超過する分は他の配分から移す。
++5. 再配分は判定時点で、旧配分・新配分・証拠・次の判断を記録する。止まった枝へ余り時間を自動投入しない。
++   同じ障害で2 cycle連続してedgeも候補集合も変わらなければ、次cycleの探索枠の少なくとも半分を
++   別機構の評価へ移す。これは停止済み枝の無条件再開を許可する規則ではない。
++6. 定理数、module数、commit数、調べた上限の増加を報酬にしない。反証・停止も、次の選択を変えるなら成果。
++
++命題の証拠labelと作業状態は分ける。未着手・継続待ち・切替は作業状態で、追加の証拠labelではない。
++強い補助命題が反証されても親命題は自動的に`REFUTED`にならない。方法だけが停止した場合は、命題を
++`CONJECTURED`のまま残し、停止した方法を`STOPPED`として特定する。
++
+ ## 2. 標準研究サイクル
+ 
+ ### Phase A: 問いを一枚に固定する
+@@ -75,6 +110,8 @@ OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、
+ - exact statementと全量化子。
+ - 実軌道、抽象history、finite prefixのどれを扱うか。
+ - 既存のどの残余を除くか。
++- 活用・局所探索・大域探索の別、cycle内の配分、費用上限、最初の確認点。
++- 成功時の前進と、失敗時に得る情報・切り替える行き先。
+ - 発見rangeと未使用holdout range。
+ - 一度だけ許す修理と停止条件。
+ 
+@@ -91,7 +128,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ 4. `Objects`: 必要な定義とnotation。
+ 5. `Acceptance`: 合格する成果物と検証command。
+ 6. `Stop`: 何が起きたら棄却するか。
+-7. `Output`: hypothesis card、patch、実験logなどの形。
++7. `Allocation / Decision`: 予算、確認点、継続・切替条件と依存する別カード。
++8. `Output`: hypothesis card、patch、実験logなどの形。
+ 
+ 長い作業では、各サイクル終了時にこのpacketを更新する。会話の要約には「結論、証拠、反例、未解決義務、
+ 次の判断」だけを残し、試行錯誤の全文はdevelopment logまたはカードへ退避する。
+@@ -106,9 +144,11 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ 3. 既存countermodelへ適用する。
+ 4. discovery rangeで候補を絞る。
+ 5. statementを凍結してholdoutを一回だけ実行する。
+-6. 破れたら一回だけ原因に基づく修理を許し、再度破れたら`STOPPED`にする。
++6. 破れたら元の命題と反例を保存する。一回だけ原因に基づく修理版を別versionで許し、再度破れたら方法を`STOPPED`にする。
+ 
+-データを見た後で量化子、定数、rangeを黙って変更してはならない。
++データを見た後で量化子、定数、rangeを黙って変更してはならない。既に見たrangeをholdoutと呼ばない。
++修理に使ったholdoutはdiscoveryへ移し、新しい未使用holdoutを凍結する。紙上専用unitはrange欄を
++「該当なし」とし、既知反例と境界条件による反証passを省略しない。
+ 
+ ### Phase D: 紙上証明から最小Lean statementへ移す
+ 
+@@ -133,6 +173,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ - `STOPPED`: 再開条件を一文で残す。
+ 
+ 「有望そう」「さらに調べる」で閉じない。
++unit終了時に予定・実績・得た情報・次配分をカードへ残す。今回の問いを判定できなければ、停止した
++方法と不足入力を明示する。証拠labelを昇格させて時間切れを成功に見せない。
+ 
+ ## 3. 指示テンプレート
+ 
+@@ -147,6 +189,11 @@ Known (evidence-labelled):
+ No-go / do not repeat:
+   - [既知反例、空虚なinterface、停止済み戦略]
+ 
++Allocation / value of information:
++  - [cycle ID、活用/局所探索/大域探索、総予算に対する配分、監査枠]
++  - [成功時に閉じるedge、失敗時に除外する候補と次の選択]
++  - [最初の確認点、各費用上限、実績の記録先]
++
+ Acceptance:
+   - exactなstatement、または最小反例を返す
+   - 既存結果より強い理由を示す
+@@ -158,6 +205,8 @@ Falsification first:
+ 
+ Stop:
+   - [反例、同値変形への還元、二度目の修理など]
++Continue / switch:
++  - [継続を正当化する新情報、切替先、再開に必要な外部入力]
+ 
+ Output:
+   結論、証拠label、変更、command、失敗、未確実性、次の判断。
+@@ -205,6 +254,8 @@ gate は heuristic で、`have` を含む連言合成や regime を仮定した
+ - K. Yang et al., [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626), NeurIPS 2023. proof stateと関連premiseの局所retrievalを採用。
+ - S. Song et al., [Towards Large Language Models as Copilots for Theorem Proving in Lean](https://arxiv.org/abs/2404.12534) (2024). tactic suggestion、proof search、premise selectionの分離を採用。
+ - T. Tao, [Machine Assisted Proof](https://terrytao.wordpress.com/wp-content/uploads/2024/03/machine-assisted-proof-notices.pdf), Notices of the AMS (2024). 形式化による細粒度分業と検証可能な協働を採用。
++- N. Hay et al., [Selecting Computations: Theory and Applications](https://arxiv.org/abs/1408.2048), UAI 2012（arXiv掲載2014）. 次の判断を改善する計算と費用を比較する考え方を採用。
++- D. Russo and B. Van Roy, [Learning to Optimize via Information-Directed Sampling](https://arxiv.org/abs/1403.5556), 2014–2017. 選択に関係する情報と活用の利益をともに考慮する設計を参考にする。
+ - OpenAI, [Model guidance: prompting best practices](https://developers.openai.com/api/docs/guides/latest-model) (参照日 2026-09-01). outcome、証拠、成功条件、停止条件、権限境界を明示するlean prompt設計を採用。
+ 
+ これらの論文はRecamán全域性の新しい数学的証拠ではない。本書が導入するのは、候補生成を増やしつつ、
+diff --git a/docs/CURRENT_FRONTIER.md b/docs/CURRENT_FRONTIER.md
+index e35cf4e..fab9f0a 100644
+--- a/docs/CURRENT_FRONTIER.md
++++ b/docs/CURRENT_FRONTIER.md
+@@ -1,11 +1,20 @@
+ # Current research frontier
+ 
+-最終更新: 2026-10-20（E-360 は 2026-09-21 の Sol 週間研究、E-361〜E-368 は 2026-10-03、E-369〜は 2026-10-20）
++最終更新: 2026-10-21（探索・活用の予定を同期。数学的証拠は2026-10-20から変更なし）
+ 
+ この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
+ [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
+ [`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
+ 
++## Research brief
++
++- 現在の研究単位: C2の窓位置と長さ3の強化の仕様照合（2026-10-22は入力・包含台帳を作成、走査完全性と反証passは未完了）。区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
++- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
++- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-378 は TS₁ と接尾辞の部品であり、TS・SL 全体の証明ではない。
++- 次の判定: [C2カード](HYPOTHESIS_CARD_2026-10-21_C2_WINDOW_POSITION.md) の仕様を15分で照合し、長さ3の強化から完成したC2へ進めるかを判定する。C1は面積Qの入力診断、TSは漏れの鎖を保持する始点数の診断を次候補とする。
++- 配分と切替: [R-20261021-01](RESEARCH_ALLOCATION_2026-10-21.md) は未実行の100分計画（活用60・局所探索30・大域探索0・監査10）。C2の仮定供給・probeとの包含関係を確認できなければ残り45分をC1へ20・TSへ25移す。同じ障害で2 cycle無進展なら別機構の評価へ配分する。有限lag延長だけで一般結果へ昇格しない。
++- 定期研究: [毎日6:00〜8:00 JST](DAILY_RESEARCH_SCHEDULE.md)、初回2026-10-22。100分cycleに開始確認・引き継ぎ20分を加え、前日の判定から継続する。
++
+ ## 結論
+ 
+ ### 監査による訂正（2026-09-15）
+@@ -699,6 +708,8 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
+ 3. computationのhorizon延長だけではlabelを上げない。
+ 4. exact命題が`CONJECTURED`でも、証明ルートが尽きれば別rowで`STOPPED`にする。
+ 5. current branchの変更は、この文書とregistryを同じchange setで更新する。
++   `Research brief` 節を現在の研究単位・未証明義務・有限証拠の範囲に同期する。
++   `make brief` はこの節と台帳を直接読み、ラベルや件数をコードに固定しない。
+ 6. `bash scripts/check_research_registry.sh`と`./scripts/check.sh`を通してからhandoffする。
+ 
+ ## 現在の検証基準
+diff --git a/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md b/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
+index 7603d6d..16bb842 100644
+--- a/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
++++ b/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
+@@ -5,6 +5,7 @@
+ - Created: 2026-10-20 20:15 JST
+ - Status: `CONJECTURED`
+ - Research branch: issue #73、研究計画 P2（G1）。[H-20261003-01](HYPOTHESIS_CARD_2026-10-03_GENERAL_LAG_CLOSURE.md) の Claim P の続き。
++- Work state（2026-10-21追記）: 親予想は未解決。次のbounded unitと配分は [R-20261021-01](RESEARCH_ALLOCATION_2026-10-21.md)。旧実験の実績を新cycleの実績として転記しない。
+ 
+ ## Exact statement
+ 
+@@ -221,7 +222,27 @@ EqClass_L を全幅で検査：L ≤ 31 で違反 0（`eqclassL.c`）。周期
+ - **独立監査（サブエージェント auditPaper、共有コードなしの全数検査 a1.c で長さ ≤ 30）**：短い z の補題（a_z = 2）・capret の定理 2・3（S1 を条件として）・
+   sld1 の補題 T・sl01 の d = 0・j ≥ 4 の証明は**いずれも確認**（偽はなし）。短い z の補題の j = 4 の枝は記述に欠落があるが、全数検査（j4.py：w ≤ 16、z ≤ 20）で補われる。
+ 
+-## Decision
++## Decision（2026-10-20の記録）
+ 
+ - H と EqClass を次の目標とする。H は E-070 を含意するので、ここが問題の核心。
+ - Lean：E-370（H ⇒ 周期版容量）。次は「H ∧ EqClass ⇒ 閉包の分類」の Lean 化、または H の部分クラス（lag ≤ 7 の line 版など）。
++
++## Allocation / Decision（2026-10-21）
++
++Hを直接の作業単位にはせず、次の三カードに分ける。H・C1・C2・TSの無制限の主張は
++`CONJECTURED` のままであり、この追記は新しい数学的証拠を加えない。
++
++| 次のunit | 目的 | 予定agent分 | 継続の根拠 / 切替条件 |
++|---|---|---|---|
++| [C2 / H-20261021-03](HYPOTHESIS_CARD_2026-10-21_C2_WINDOW_POSITION.md) | 活用: 窓位置の仕様照合から一様な紙上chainへ | 60 | 最初の15分で仮定供給とprobeの範囲を確認。確認できなければ残り45分をC1/TSへ |
++| [C1 / H-20261021-04](HYPOTHESIS_CARD_2026-10-21_C1_AREA.md) | 局所探索: Qと接尾辞正値性の入力を分離 | 15 | 未知edgeを一つにする。Qを仮定するwrapperや上限延長なら停止 |
++| [TS / H-20261021-05](HYPOTHESIS_CARD_2026-10-21_TS_COUNTING.md) | 局所探索: 漏れの鎖を保持する始点数の表現 | 15 | 具体的な反証可能な候補が出れば次unitへ。固定枠の表拡張は停止維持 |
++| 共通監査 | 提案・反証・紙上chainとは別pass | 10 | 仮定・帰着・証拠labelを照合。超過は研究枠から移す |
++
++- Cycle: `R-20261021-01`。活用60・局所探索30・大域探索0・監査10、合計100分。全unitの実績は未実行。
++- 期待する前進: C2のedge、またはC1/TSの次に必要な独立入力の固定。失敗時も、強い補助命題と完成した主張の差を保存する。
++- 依存: 三候補は全てH経路内。C1/C2は併せて使うため、一方の証明をSL全体の証明と数えない。
++- 二cycle連続で同じ障害かつedgeも候補集合も変わらなければ、活用40・探索50・監査10へ変更し、
++  探索の少なくとも25分を別機構の評価へ移す。停止済み枝は元の再開条件を満たす場合だけ再開する。
++- 強い補助命題が反証されてもHやSLを自動的に反証済みにしない。方法停止と命題の証拠labelを分ける。
++- 実績・再配分・command・次判断は各子カードとcycleの台帳へ記録し、CURRENT_FRONTIERを同期する。
+diff --git a/docs/HYPOTHESIS_CARD_TEMPLATE.md b/docs/HYPOTHESIS_CARD_TEMPLATE.md
+index a13f789..51661ca 100644
+--- a/docs/HYPOTHESIS_CARD_TEMPLATE.md
++++ b/docs/HYPOTHESIS_CARD_TEMPLATE.md
+@@ -5,6 +5,8 @@
+ - Created:
+ - Status: `CONJECTURED`
+ - Research branch:
++- Work state (separate from evidence label; e.g. unstarted / active / waiting / method stopped):
++- Parent card / allocation cycle:
+ 
+ ## Exact statement
+ 
+@@ -17,6 +19,27 @@ a proposed Lean declaration, include its signature here before implementation.
+ - Stronger than an existing identity or equivalent reformulation because:
+ - Smallest useful consequence:
+ 
++## Allocation and decision value
++
++- Mode: exploitation / local exploration / global exploration (split mixed work into units):
++- Competing units and shared bottlenecks:
++- Why this unit now (evidence, not an invented success probability):
++- If successful, which dependency edge changes?:
++- If unsuccessful, which candidate family is excluded and how does the next choice change?:
++
++| Budget dimension | Cycle total | This unit planned | This unit actual | Cap / accounting rule |
++|---|---|---|---|---|
++| Agent work minutes (elapsed time recorded separately if parallel) | | | unstarted | |
++| Compute / tokens / money, each in its own unit if used | | | unstarted | |
++
++- Cycle allocation: exploitation / local exploration / global exploration / audit:
++- Audit reservation and who performs the separate audit pass:
++- First checkpoint (time or artifact):
++
++Do not add unlike units or count the same work in both parent and child budgets. A starting
++60/30/10 exploitation/exploration/audit split is a revisable policy, not an optimality claim.
++Audit overruns reduce other allocations; never omit required validation to meet a time cap.
++
+ ## Provenance and dependencies
+ 
+ - Definitions used:
+@@ -33,6 +56,9 @@ a proposed Lean declaration, include its signature here before implementation.
+ - Maximum one permitted repair:
+ - Stop condition:
+ 
++Previously inspected ranges belong to discovery. For paper-only units, mark ranges not applicable
++and retain boundary/countermodel checks. Freeze a fresh holdout after any permitted repair.
++
+ ## Evidence log
+ 
+ | Date | Label | Revision / command | Result |
+@@ -50,5 +76,19 @@ a proposed Lean declaration, include its signature here before implementation.
+ ## Decision
+ 
+ - Continue / formalize / refute / stop:
++- Continue only if (new evidence or a smaller non-equivalent obligation):
++- Switch if / destination (including cost cap and repeated obstacle):
++- Stop this method if (distinguish method failure from refuting the exact statement):
+ - Reason:
+ - Reopen only if:
++
++## Allocation update log
++
++| Checkpoint / date | Evidence and decision-changing information | Planned → actual cost | Old → new allocation and destination | Next acceptance / stop test |
++|---|---|---|---|---|
++| Unstarted | No execution evidence yet | — | — | |
++
++Record counterexamples against the exact version they refute; a failed stronger auxiliary does
++not refute the parent claim. Two consecutive cycles with the same obstacle and no new edge or
++candidate elimination trigger the protocol's review of another mechanism. Record a method as
++`STOPPED` without promoting or refuting an unresolved parent merely to close a work session.
+diff --git a/docs/REPRODUCIBILITY.md b/docs/REPRODUCIBILITY.md
+index ed77049..8215d76 100644
+--- a/docs/REPRODUCIBILITY.md
++++ b/docs/REPRODUCIBILITY.md
+@@ -4,6 +4,7 @@
+ 
+ - Lean 4.33.1
+ - Lake
++- Python 3（研究toolと回帰検査）
+ - Cコンパイラ（Work環境用ラッパーを使う場合のみ）
+ - C++20コンパイラ（実験を再現する場合のみ）
+ - `rg`（一括検証スクリプトで使用）
+@@ -27,10 +28,11 @@ lake env lean Recaman/Audit.lean
+ ## 一括検証
+ 
+ ```bash
+-./scripts/check.sh
++make test
+ ```
+ 
+-このスクリプトは次を順に行う。
++`make test` は研究toolの回帰、Lean検証、計算実験の回帰、viewer manifestの整合を検査する。
++Lean検証だけの `./scripts/check.sh` は次を順に行う。
+ 
+ 1. module graphのroot到達性、import解決、acyclic性、frontier direct-import契約を検査
+ 2. `EVIDENCE_REGISTRY.tsv`のlabel、artifact、frontier参照、Audit定理を検査
+@@ -45,6 +47,29 @@ bash scripts/check_module_architecture.sh
+ bash scripts/check_research_registry.sh
+ ```
+ 
++研究toolだけの高速な回帰検査は `make test-tools`。
++`bash scripts/test_harness_gates.sh` は Python 標準ライブラリのテストを起動し、
++G1–G5/P の正常例・負例と、2026-10-21 の受理漏れ3件を検査する。
++全ての変更用fixtureは一時ディレクトリ内に置き、実台帳・監査ファイルへは書き込まない。
++CI は Ubuntu と macOS でこの検査を実行し、通過後に全体検証へ進む。
++
++G5 は各 `## Recaman.…` 節で定理文を `lean` code block に逐語引用し、その節内に
++`1. yes/no`、`2. yes/no`、`3. yes/no` の回答を一つずつ記入することを要求する。
++`yes/no` のままの選択肢・TODO は未回答として拒否する。2 が yes の場合は条件付き仮説を説明する。
++ファイル冒頭の `- reviewer:` には名前と `YYYY-MM-DD` の日付が必要。
++これは記入の完了検査であり、回答の数学的正しさや人間の本人性を保証する検査ではない。
++
++## 現在の研究ブリーフ
++
++```bash
++make brief
++```
++
++`CURRENT_FRONTIER.md` の `Research brief` 節を表示し、引用された evidence と中心命題の
++ラベルは台帳から読む。研究単位が変わったら、この正本の節を更新する。
++定理・ファイル・import契約の件数は実ファイルから数え、監査を実行済みとは表示しない。
++節が欠ける・重複する・未知の evidence ID を参照する場合は、古い固定文へ戻さず失敗する。
++
+ ## Work環境
+ 
+ 同梱の`scripts/lakew`は、本研究で使用したWork環境向けの薄いラッパーである。
+diff --git a/docs/statement_audits/E-348.md b/docs/statement_audits/E-348.md
+index 529f6a6..6df5529 100644
+--- a/docs/statement_audits/E-348.md
++++ b/docs/statement_audits/E-348.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/LagSevenDonorCoverage.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `lag7_cover_*` と `coverOK_of_stream` は `e : Int → Bool` と位置 `u0 u : Int` を binder に持つ。`minimal_ss2_eleven_words`、
+      `oldestOffset_*`、`coverOK_classification` は具体的な有限語（`bitWords 11`、7 語、2 語）上の `decide`。
+@@ -19,9 +20,9 @@
+ : (bitWords 11).filter (fun w => isP2Word w && !hasP2Prefix w && ssCount w == 2) = [d5, d7, d4, d6, d3, d2, d1]
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（自由な軌道・窓 binder はなく、bitWords 11 の有限列挙）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.minimal_ss2_eleven_mem_donors
+ 
+@@ -29,9 +30,9 @@
+ (w : List Bool) (hlen : w.length = 11) (hP : P2 w) (hmin : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d)) (hss : ssCount w = 2) : w ∈ donors
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.minimal_ss2_lt_fifteen_mem_donors
+ 
+@@ -39,9 +40,9 @@
+ (w : List Bool) (hP : P2 w) (hmin : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d)) (hss : ssCount w = 2) (hlt : w.length < 15) : w ∈ donors
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 既存の最小 lag 分類と minimal_ss2_eleven_mem_donors の適用
+ 
+ ## Recaman.LagSevenDonorCoverage.oldestOffset_donors
+ 
+@@ -49,9 +50,9 @@
+ : oldestOffset d1 = 10 ∧ oldestOffset d2 = 10 ∧ oldestOffset d3 = 10 ∧ oldestOffset d4 = 11 ∧ oldestOffset d5 = 11 ∧ oldestOffset d6 = 10 ∧ oldestOffset d7 = 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（7 個の固定された donor 語の計算）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.oldestOffset_is_oldest_S
+ 
+@@ -59,9 +60,9 @@
+ : ∀ w ∈ donors, w.getD (oldestOffset w - 1) true = false ∧ ∀ j ∈ List.range 11, oldestOffset w ≤ j → w.getD j true = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.coverOK_of_stream
+ 
+@@ -69,9 +70,9 @@
+ (e : Int → Bool) (u0 u : Int) (off k : Nat) (huA : e u = true) (hpos : u - 1 - (k : Int) = u0 - (off : Int)) : coverOK (past e u0 11) (past e u 7) off k = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.coverOK_classification
+ 
+@@ -79,9 +80,9 @@
+ : ∀ w ∈ donors, ∀ v ∈ lag7Words, ∀ k ∈ List.range 7, coverOK w v (oldestOffset w) k = true → k = 0 ∧ v = w1 ∧ (w = d1 ∨ w = d2 ∨ w = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification
+ 
+@@ -89,9 +90,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 ∈ donors) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ u = u0 - (oldestOffset (past e u0 11) : Int) + 1 ∧ (past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification_explicit
+ 
+@@ -99,9 +100,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 ∈ donors) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ ((past e u0 11 = d1 ∧ u = u0 - 9) ∨ (past e u0 11 = d2 ∧ u = u0 - 9) ∨ (past e u0 11 = d4 ∧ u = u0 - 10))
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_impossible_d3_d5_d6_d7
+ 
+@@ -109,9 +110,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 = d3 ∨ past e u0 11 = d5 ∨ past e u0 11 = d6 ∨ past e u0 11 = d7) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : False
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification_of_minimal
+ 
+@@ -119,7 +120,7 @@
+ (e : Int → Bool) (u0 u : Int) (hP : Recaman.ShortPeriodicSupply.P2 e u0 11) (hmin : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e u0 11).take d)) (hss : ssCount (past e u0 11) = 2) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ u = u0 - (oldestOffset (past e u0 11) : Int) + 1 ∧ (past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/docs/statement_audits/E-350.md b/docs/statement_audits/E-350.md
+index 376d6ed..95f50a9 100644
+--- a/docs/statement_audits/E-350.md
++++ b/docs/statement_audits/E-350.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TrueOldestGateT6.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — 主定理は `e : Int → Bool`、周期 `p`、供給リスト `U`、`lag`、donor `u0` を binder に持ち、結論は `deletedNeighborhood` の長さ不等式。
+      `donor_oldestOffset`／`aasClash_donors`／`offset_eleven_is_A_of_offset_ten` は 7 語上の `decide`。
+@@ -19,9 +20,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 ∈ donors) : ((past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d3 ∨ past e u0 11 = d6) ∧ oldestOffset (past e u0 11) = 10) ∨ ((past e u0 11 = d4 ∨ past e u0 11 = d5 ∨ past e u0 11 = d7) ∧ oldestOffset (past e u0 11) = 11)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_eleven
+ 
+@@ -29,9 +30,9 @@
+ (e : Int → Bool) (p : Nat) (u0 : Nat) (hdon : past e (u0 : Int) 11 = d4 ∨ past e (u0 : Int) 11 = d5 ∨ past e (u0 : Int) 11 = d7) : trueOldestPhase e p u0 11 = oldestSubtractionPhase p u0 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_ten
+ 
+@@ -39,9 +40,9 @@
+ (e : Int → Bool) (p : Nat) (u0 : Nat) (hdon : past e (u0 : Int) 11 = d1 ∨ past e (u0 : Int) 11 = d2 ∨ past e (u0 : Int) 11 = d3 ∨ past e (u0 : Int) 11 = d6) : trueOldestPhase e p u0 11 = endpointPhase p (u0 : Int) 10
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.offset_eleven_is_A_of_offset_ten
+ 
+@@ -49,9 +50,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d3 ∨ past e u0 11 = d6) : e (u0 - 11) = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldest_bit_is_S
+ 
+@@ -59,9 +60,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 ∈ donors) : e (u0 - (oldestOffset (past e u0 11) : Int)) = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldest_is_subtraction
+ 
+@@ -69,9 +70,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (u0 : Nat) (hdon : past e (u0 : Int) 11 ∈ donors) : trueOldestPhase e p u0 11 ∈ LagElevenPeriodic.subPhases e 0 p
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — oldest_is_subtraction と trueOldest_bit_is_S の合成
+ 
+ ## Recaman.TrueOldestGateT6.aasClash_donors
+ 
+@@ -79,9 +80,9 @@
+ : ∀ w ∈ donors, aasClash w = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.aas_endpoint_ne_trueOldest
+ 
+@@ -89,9 +90,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (u0 u : Nat) (hdon : past e (u0 : Int) 11 ∈ donors) (_huA : e (u : Int) = true) (haas : e ((u : Int) - 1) = true ∧ e ((u : Int) - 2) = true ∧ e ((u : Int) - 3) = false) : endpointPhase p (u : Int) 3 ≠ trueOldestPhase e p u0 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest
+ 
+@@ -99,9 +100,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (_hd_lt : lag u0 < 15) (_hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hdon : past e (u0 : Int) 11 ∈ donors) (_hlag11 : lag u0 = 11) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 11)).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_lag
+ 
+@@ -109,9 +110,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (hd_lt : lag u0 < 15) (hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hdon : past e (u0 : Int) 11 ∈ donors) (hlag11 : lag u0 = 11) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 (lag u0))).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_of_minimal
+ 
+@@ -119,7 +120,7 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (hd_lt : lag u0 < 15) (hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hlag11 : lag u0 = 11) (hmin : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e (u0 : Int) 11).take d)) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 11)).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/docs/statement_audits/E-351.md b/docs/statement_audits/E-351.md
+index 127d695..e5a2a0e 100644
+--- a/docs/statement_audits/E-351.md
++++ b/docs/statement_audits/E-351.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TightHallAugmentation.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `hall_forces_membership` と系は `e : Int → Bool`、`p`、`U B : List Nat`、`lag` を binder に持ち、`neighborhood`（実際の被覆リスト）で述べる。
+      `filter_mem_of_sublist_nodup`／`filter_mem_or_eq_length` はリスト補題（純粋な List 命題、数え上げの本体）。`w1_bits` は `past e t 7 = w1` からの bit 取り出し。
+@@ -17,9 +18,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (hU : U.Nodup) : U.filter (fun y => decide (y ∈ B)) = B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題で、軌道や窓の条件はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.filter_mem_or_eq_length
+ 
+@@ -27,9 +28,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (hU : U.Nodup) (x : Nat) (hxU : x ∈ U) (hxB : x ∉ B) : (U.filter (fun y => decide (y ∈ B ∨ y = x))).length = B.length + 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題で、軌道や窓の条件はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.hall_forces_membership
+ 
+@@ -37,9 +38,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (x : Nat) (hxU : x ∈ U) (hcov : ∀ s, s ∈ neighborhood e p [x] lag → s ∈ neighborhood e p B lag) : x ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.tight_member_of_neighborhood_subset
+ 
+@@ -47,9 +48,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (x : Nat) (hxU : x ∈ U) (hsub : neighborhood e p [x] lag ⊆ neighborhood e p B lag) : x ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — hall_forces_membership の適用
+ 
+ ## Recaman.TightHallAugmentation.w1_bits
+ 
+@@ -57,9 +58,9 @@
+ (e : Int → Bool) (t : Int) (hw1 : past e t 7 = w1) : e (t - 1) = false ∧ e (t - 2) = true ∧ e (t - 3) = true ∧ e (t - 4) = true ∧ e (t - 5) = true ∧ e (t - 6) = false ∧ e (t - 7) = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 既存の w1_* ビット補題をまとめる
+ 
+ ## Recaman.TightHallAugmentation.w1_sibling_neighborhood_subset
+ 
+@@ -67,9 +68,9 @@
+ (e : Int → Bool) (p : Nat) (lag : Nat → Nat) (u v : Nat) (hvu : v + 3 = u) (hlu : lag u = 7) (hlv : lag v = 3) (hw1 : past e (u : Int) 7 = w1) : neighborhood e p [v] lag ⊆ neighborhood e p [u] lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.w1_sibling_forced
+ 
+@@ -77,9 +78,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u v : Nat) (huB : u ∈ B) (hvU : v ∈ U) (hvu : v + 3 = u) (hlu : lag u = 7) (hlv : lag v = 3) (hw1 : past e (u : Int) 7 = w1) : v ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 包含補題と tight_member_of_neighborhood_subset の合成
+ 
+ ## Recaman.TightHallAugmentation.aas_after_w1_neighborhood_subset
+ 
+@@ -87,9 +88,9 @@
+ (e : Int → Bool) (p : Nat) (lag : Nat → Nat) (u w : Nat) (hwu : w = u + 2) (hlu : lag u = 7) (hlw : lag w = 3) (huA : e (u : Int) = true) (hu1 : e ((u : Int) + 1) = true) (hw1 : past e (u : Int) 7 = w1) : neighborhood e p [w] lag ⊆ neighborhood e p [u] lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.aas_after_w1_forced
+ 
+@@ -97,7 +98,7 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u w : Nat) (huB : u ∈ B) (hwU : w ∈ U) (hwu : w = u + 2) (hlu : lag u = 7) (hlw : lag w = 3) (huA : e (u : Int) = true) (hu1 : e ((u : Int) + 1) = true) (hw1 : past e (u : Int) 7 = w1) : w ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 包含補題と tight_member_of_neighborhood_subset の合成
+ 
+diff --git a/docs/statement_audits/E-355.md b/docs/statement_audits/E-355.md
+index bced1b3..5e1197c 100644
+--- a/docs/statement_audits/E-355.md
++++ b/docs/statement_audits/E-355.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TightPrivatePhase.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `tight_erase_length`／`private_phases_le_one`／`private_phase_unique` は `e`、`p`、`U B`、`lag` と `neighborhood` で述べる。
+      `lag7_w1_two_phases_covered_by_others` は `past e u 7 = w1`、周期性 `hper`、`7 ≤ p` を仮定に持つ。`erase_sublist_of_sublist`／`neighborhood_erase_subset` は一般補題。
+@@ -17,9 +18,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (v : Nat) : List.Sublist (B.erase v) U
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — List.erase_sublist と Sublist.trans の適用
+ 
+ ## Recaman.TightPrivatePhase.neighborhood_erase_subset
+ 
+@@ -27,9 +28,9 @@
+ (e : Int → Bool) (p : Nat) (B : List Nat) (lag : Nat → Nat) (v : Nat) : neighborhood e p (B.erase v) lag ⊆ neighborhood e p B lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.tight_erase_length
+ 
+@@ -37,9 +38,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) : (neighborhood e p B lag).length ≤ (neighborhood e p (B.erase v) lag).length + 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.mem_privatePhases_iff
+ 
+@@ -47,9 +48,9 @@
+ (e : Int → Bool) (p : Nat) (B : List Nat) (lag : Nat → Nat) (v s : Nat) : s ∈ privatePhases e p B lag v ↔ s ∈ neighborhood e p B lag ∧ s ∉ neighborhood e p (B.erase v) lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.private_phases_le_one
+ 
+@@ -57,9 +58,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) : (privatePhases e p B lag v).length ≤ 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.private_phase_unique
+ 
+@@ -67,9 +68,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) (s t : Nat) (hs : s ∈ privatePhases e p B lag v) (ht : t ∈ privatePhases e p B lag v) : s = t
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.endpointPhase_mem_neighborhood
+ 
+@@ -77,9 +78,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (B : List Nat) (lag : Nat → Nat) (u : Nat) (huB : u ∈ B) (d : Nat) (hd : 0 < d) (hdl : d ≤ lag u) (hS : e ((u : Int) - (d : Int)) = false) : endpointPhase p (u : Int) d ∈ neighborhood e p B lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.endpointPhase_ne_of_lt
+ 
+@@ -87,9 +88,9 @@
+ (p : Nat) (hp : 0 < p) (t : Int) (d d' : Nat) (hdd' : d < d') (hlt : d' - d < p) : endpointPhase p t d ≠ endpointPhase p t d'
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（位相端点の算術補題で、符号語・軌道の binder はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.lag7_w1_two_phases_covered_by_others
+ 
+@@ -97,7 +98,7 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp7 : 7 ≤ p) (hper : ∀ x : Int, e (x + p) = e x) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u : Nat) (huB : u ∈ B) (hlu : lag u = 7) (hw1 : past e (u : Int) 7 = w1) : (endpointPhase p (u : Int) 1 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 6 ∈ neighborhood e p (B.erase u) lag) ∨ (endpointPhase p (u : Int) 1 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 7 ∈ neighborhood e p (B.erase u) lag) ∨ (endpointPhase p (u : Int) 6 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 7 ∈ neighborhood e p (B.erase u) lag)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/scripts/dev_tool.py b/scripts/dev_tool.py
+index a1a455d..c18e7c2 100755
+--- a/scripts/dev_tool.py
++++ b/scripts/dev_tool.py
+@@ -13,6 +13,7 @@ Provides automation and token-saving utilities:
+ from __future__ import annotations
+ 
+ import argparse
++import csv
+ import datetime
+ import re
+ import sys
+@@ -27,6 +28,7 @@ RECAMAN_ROOT_LEAN = ROOT / "Recaman.lean"
+ AUDIT_LEAN = RECAMAN_DIR / "Audit.lean"
+ TEMPLATE_CARD = DOCS_DIR / "HYPOTHESIS_CARD_TEMPLATE.md"
+ FRONTIER_MD = DOCS_DIR / "CURRENT_FRONTIER.md"
++PROTECTED_TSV = DOCS_DIR / "PROTECTED_CLAIMS.tsv"
+ 
+ 
+ def get_label_color(label: str) -> tuple[str, str]:
+@@ -43,47 +45,51 @@ def get_label_color(label: str) -> tuple[str, str]:
+ 
+ 
+ def show_brief(args: argparse.Namespace) -> None:
+-    """Display an ultra-compact summary of the current research frontier (< 400 tokens)."""
+-    if not FRONTIER_MD.exists():
+-        print(f"error: {FRONTIER_MD} not found", file=sys.stderr)
++    """Read the canonical short frontier; never substitute a historical snapshot."""
++    try:
++        frontier = FRONTIER_MD.read_text(encoding="utf-8")
++        sections = re.findall(
++            r"^## Research brief[^\S\n]*\n(.*?)(?=^## |\Z)", frontier,
++            flags=re.M | re.S,
++        )
++        if len(sections) != 1 or not sections[0].strip():
++            raise ValueError("CURRENT_FRONTIER.md needs one nonempty '## Research brief' section")
++        section = sections[0].strip()
++        with REGISTRY_TSV.open(encoding="utf-8", newline="") as source:
++            rows = list(csv.DictReader(source, delimiter="\t"))
++        evidence = {row["id"]: row for row in rows}
++        if len(evidence) != len(rows):
++            raise ValueError("duplicate evidence IDs in EVIDENCE_REGISTRY.tsv")
++        with PROTECTED_TSV.open(encoding="utf-8", newline="") as source:
++            central = [row["id"] for row in csv.DictReader(source, delimiter="\t")]
++        selected = list(dict.fromkeys(re.findall(r"\bE-\d{3}\b", section) + central))
++        if not selected:
++            raise ValueError("Research brief must reference evidence IDs")
++        missing = [eid for eid in selected if eid not in evidence]
++        if missing:
++            raise ValueError("unknown brief/protected evidence IDs: " + ", ".join(missing))
++        with CONTRACTS_TSV.open(encoding="utf-8", newline="") as source:
++            contracts_count = sum(1 for _ in csv.DictReader(source, delimiter="\t"))
++        audit_count = len(re.findall(
++            r"^#print axioms\s+", AUDIT_LEAN.read_text(encoding="utf-8"), re.M,
++        ))
++    except (OSError, KeyError, ValueError) as error:
++        print(f"error: cannot generate research brief: {error}", file=sys.stderr)
+         sys.exit(1)
+ 
+-    print("=" * 60)
+-    print("  RECAMÁN RESEARCH FRONTIER BRIEF")
+-    print("=" * 60)
+-
+-    # 1. Active Frontier & Open Gate
+-    print("\n[NEXT RESEARCH GATE]")
+-    print("  * Gate: T6 (E-179) - High-SS Local Donation")
+-    print("  * Claim: Every high-SS supply window (ssCount>=2) donates an internally removable S.")
+-    print("  * Evidence: COMPUTED across 53,000+ words (p=8..22, 0 exceptions).")
+-    print("  * Target: Formalize or refute minimal case ssCount=2 in Lean.")
+-
+-    # 2. Key Established Ground Truth
+-    print("\n[ESTABLISHED BOUNDARIES (Do Not Re-prove)]")
+-    print("  * E-176: |U|<=|D| is sharp across all periods (tight words exist for all p).")
+-    print("  * E-177: Tight words (|U|=|D|) have ONLY low-SS windows (ssCount<=1).")
+-    print("           Equality side is completely covered by E-128 (PROVED-LEAN).")
+-    print("  * E-178: Forced matching on tight words matches oldest-S (E-069).")
+-    print("  * E-181: Positive period mass guarantees finite lag bound d <= p(p+1) (PROVED-LEAN).")
+-    print("  * E-128: Low-SS joint endpoint capacity |U_clean U U_SS1| <= |D| (PROVED-LEAN).")
+-
+-    # 3. Stopped / Refuted Approaches (Do Not Re-open without declared gate)
+-    print("\n[STOPPED & REFUTED DIRECTIONS (Do Not Propose)]")
+-    print("  * E-180 (REFUTED): Linear slack charge slack >= c is false (counterexample at p=18,21).")
+-    print("  * E-178 (CLOSED): Generic selector search is FINISHED (selector is forced on tight).")
+-    print("  * E-088 (STOPPED): Lag-by-lag type offset charging is STOPPED.")
+-    print("  * E-133 (REFUTED): Named 4-charge extension on SS=2 is STOPPED.")
+-    print("  * E-142 (REFUTED): Unrestricted one-per-run on abstract words is REFUTED.")
+-
+-    # 4. Codebase & Audit Status
+-    modules = list(RECAMAN_DIR.glob("*.lean"))
+-    contracts_count = len([l for l in CONTRACTS_TSV.read_text(encoding="utf-8").splitlines()[1:] if l.strip()])
+-    print("\n[REPOSITORY INTEGRITY]")
+-    print(f"  * Lean Modules: {len(modules)} library modules | Frontier Contracts: {contracts_count}")
+-    print("  * Audit State: 1,743 declarations verified within standard axioms.")
+-    print("  * Verification: Run 'make check' or 'make test'.")
+-    print("=" * 60)
++    print("RECAMÁN RESEARCH FRONTIER BRIEF")
++    print("Source: docs/CURRENT_FRONTIER.md / Research brief")
++    updated = re.search(r"^最終更新:.*$", frontier, re.M)
++    if updated:
++        print(updated.group(0))
++    print("\n" + section)
++    print("\n[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]")
++    for eid in selected:
++        row = evidence[eid]
++        print(f"  {eid} [{row['label']}] {row['branch']} — {row['artifact']}")
++    print("\n[SOURCE COUNTS — run make check to verify]")
++    print(f"  Lean source files: {len(list(RECAMAN_DIR.glob('*.lean')))} (including Audit)")
++    print(f"  Import contracts: {contracts_count}; audit declarations: {audit_count}")
+ 
+ 
+ def show_decls(args: argparse.Namespace) -> None:
+diff --git a/scripts/harness_gate.py b/scripts/harness_gate.py
+index b413d05..6fbb0cb 100755
+--- a/scripts/harness_gate.py
++++ b/scripts/harness_gate.py
+@@ -5,13 +5,14 @@ Each gate maps to an evidence-based root cause of the incident in
+ docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md:
+ 
+   G1 unresolved symbol      a PROVED-LEAN row must cite theorems that exist
+-  G2 hard vacuity           no cited theorem may have conclusion == hypothesis or `x = x`
++  G2 hard vacuity           no conclusion (or conjunct) may be a hypothesis or `x = x`
+   G3 substantive content    at least one cited theorem is neither pure-arithmetic, nor a
+                             wrapper (only intro/exact/refine/rcases/omega/rfl lines), nor trivial
+   G4 name inflation         no cited theorem/module name contains grand|master|universal|
+                             closure|synthesis|resolution|apex (rows >= NAME_LINT_FROM_ID)
+   G5 statement audit        docs/statement_audits/E-NNN.md exists and quotes every cited
+-                            signature verbatim (rows >= STATEMENT_AUDIT_FROM_ID)
++                            signature verbatim, with a dated reviewer and three completed
++                            checks per theorem (rows >= STATEMENT_AUDIT_FROM_ID)
+   P  protected claims       labels of the central rows in docs/PROTECTED_CLAIMS.tsv must match
+                             the registry; changing them is a human decision
+ 
+@@ -147,6 +148,74 @@ def signature_text(sig):
+     return normalize(strip_comments(sig))
+ 
+ 
++REVIEW_PLACEHOLDER = re.compile(
++    r'\byes\s*/\s*no\b|\bno\s*/\s*yes\b|\bTODO\b|\bTBD\b|'
++    r'\(name\s*,\s*date\)|未記入', re.I,
++)
++
++
++def review_prose(text):
++    """Exclude code blocks so Lean comments cannot supply reviewer answers."""
++    lines = []
++    fence = None
++    for line in text.splitlines():
++        marker = re.match(r'^\s*(`{3,}|~{3,})', line)
++        if marker:
++            token = marker.group(1)
++            if fence is None:
++                fence = token
++            elif token[0] == fence[0] and len(token) >= len(fence):
++                fence = None
++        elif fence is None:
++            lines.append(line)
++    return '\n'.join(lines)
++
++
++def statement_audit_errors(text, symbols, idx):
++    """Check completion, not the truth of the review or reviewer identity.
++
++    A yes on check 2/3 is allowed: named conditional results and wrappers may
++    be cited, subject to G2/G3 and an honest claim. Missing answers are not.
++    """
++    errors = []
++    headings = list(re.finditer(r'^##[ \t]+(.+?)[ \t]*$', text, re.M))
++    preamble = review_prose(text[:headings[0].start()] if headings else text)
++    reviewers = re.findall(r'^- reviewer:[ \t]*(.*(?:\n[ \t]+[^\n]+)*)', preamble, re.M)
++    if (len(reviewers) != 1 or not reviewers[0].strip()
++            or REVIEW_PLACEHOLDER.search(reviewers[0])
++            or not re.search(r'\b\d{4}-\d{2}-\d{2}\b', reviewers[0])
++            or not re.sub(r'\b\d{4}-\d{2}-\d{2}\b', '', reviewers[0]).strip(' \t,;()')):
++        errors.append('needs a completed reviewer field with name and YYYY-MM-DD date')
++    for symbol in symbols:
++        matches = [i for i, heading in enumerate(headings) if heading.group(1) == symbol]
++        if len(matches) != 1:
++            errors.append(f'needs exactly one theorem section for {symbol}')
++            continue
++        i = matches[0]
++        end = headings[i+1].start() if i+1 < len(headings) else len(text)
++        section = text[headings[i].end():end]
++        quotes = re.findall(r'^```lean[^\S\n]*\n(.*?)^```[^\S\n]*$', section, re.M | re.S)
++        hit = idx.get(symbol)
++        if hit and not any(signature_text(hit[1]) in normalize(quote) for quote in quotes):
++            errors.append(f'does not quote the signature of {symbol} verbatim in its section')
++        answers = re.findall(r'^[ \t]*([123])\.[ \t]*(.+)$', review_prose(section), re.M)
++        for number in ('1', '2', '3'):
++            entries = [body for n, body in answers if n == number]
++            if len(entries) != 1:
++                errors.append(f'{symbol}: needs exactly one completed check {number}')
++                continue
++            body = entries[0].replace('**', '').replace('`', '').strip()
++            answer = re.match(r'(yes|no)(?![A-Za-z/])', body, re.I)
++            if answer is None:
++                answer = re.search(r':[ \t]*(yes|no)(?![A-Za-z/])', body, re.I)
++            if answer is None or REVIEW_PLACEHOLDER.search(body):
++                errors.append(f'{symbol}: check {number} needs an explicit yes/no answer, not a placeholder')
++            elif number == '2' and answer.group(1).lower() == 'yes':
++                if not body[answer.end():].strip(' \t—–-:;,（()）.'):
++                    errors.append(f'{symbol}: check 2 must identify the conditional hypothesis')
++    return errors
++
++
+ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+     idx = theorem_index()
+     errors = []
+@@ -170,7 +239,7 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+                 continue
+             f, sig, proof = hit
+             reasons, kind, substantive = classify(sig, proof)
+-            if 'conclusion-is-hypothesis' in reasons or 'x=x' in reasons:
++            if {'conclusion-is-hypothesis', 'conjunct-is-hypothesis', 'x=x'}.intersection(reasons):
+                 errors.append(f'{rid}: G2 {sym} is vacuous ({",".join(reasons)})')
+             if num >= NAME_LINT_FROM_ID:
+                 mod = os.path.basename(f)[:-5]
+@@ -186,11 +255,9 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+             if not os.path.isfile(audit_path):
+                 errors.append(f'{rid}: G5 missing {audit_path} (generate with --audit-template {rid})')
+             else:
+-                text = normalize(open(audit_path, encoding='utf-8').read())
+-                for sym in syms:
+-                    hit = idx.get(sym)
+-                    if hit and signature_text(hit[1]) not in text:
+-                        errors.append(f'{rid}: G5 {audit_path} does not quote the signature of {sym} verbatim')
++                text = open(audit_path, encoding='utf-8').read()
++                for error in statement_audit_errors(text, syms, idx):
++                    errors.append(f'{rid}: G5 {audit_path} {error}')
+     for e in errors:
+         print('error:', e, file=sys.stderr)
+     if errors:
+@@ -246,7 +313,7 @@ def audit_template(rid, reg='docs/EVIDENCE_REGISTRY.tsv'):
+         print(f'error: {rid} not in {reg}', file=sys.stderr)
+         return 1
+     out = [f'# Statement audit: {rid}', '',
+-           f'- artifact: `{row[4]}`', '- reviewer: (name, date)',
++           f'- artifact: `{row[4]}`', '- reviewer: TODO (name, YYYY-MM-DD)',
+            '- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3',
+            '  means the row must not be described as resolving anything unconditional.', '']
+     for sym in row[5].split(';'):
+diff --git a/scripts/test_harness_gates.sh b/scripts/test_harness_gates.sh
+index 96793b7..8b53089 100755
+--- a/scripts/test_harness_gates.sh
++++ b/scripts/test_harness_gates.sh
+@@ -1,64 +1,5 @@
+ #!/usr/bin/env bash
+-# Negative and positive tests for the research-harness gates (INC-20260915-01).
+-# Run from the repository root: bash scripts/test_harness_gates.sh
++# Mutating fixtures are isolated in TemporaryDirectory.
+ set -euo pipefail
+-cd "$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
+-TMP="$(mktemp -d)"; trap 'rm -rf "$TMP" docs/statement_audits/E-99[0-9].md' EXIT
+-REG=docs/EVIDENCE_REGISTRY.tsv
+-fail=0
+-expect_fail() { # name, command...
+-  local name="$1"; shift
+-  if "$@" >/dev/null 2>"$TMP/err"; then echo "FAIL (passed but should fail): $name"; fail=1
+-  else echo "ok   (rejected): $name  -- $(head -1 "$TMP/err")"; fi
+-}
+-expect_pass() {
+-  local name="$1"; shift
+-  if "$@" >/dev/null 2>"$TMP/err"; then echo "ok   (accepted): $name"
+-  else echo "FAIL (rejected but should pass): $name -- $(head -1 "$TMP/err")"; fail=1; fi
+-}
+-row() { printf 'E-%s\tPROVED-LEAN\ttest\tclaim\tRecaman/AuditSalvage.lean\t%s\tgate\n' "$1" "$2"; }
+-SUBST=Recaman.TwelveGateT6Unconditional.tight_avoiding_le_two_all_lag_three_general
+-WRAP=Recaman.a_zero_eq_zero
+-
+-# --- positive: the live registry passes all gates
+-expect_pass "live registry" python3 scripts/harness_gate.py --check-registry "$REG"
+-expect_pass "live protected claims" python3 scripts/harness_gate.py --check-protected "$REG" docs/PROTECTED_CLAIMS.tsv
+-
+-# --- G1 unresolved symbol
+-{ cat "$REG"; row 990 Recaman.no_such_theorem_xyz; } > "$TMP/g1.tsv"
+-expect_fail "G1 unresolved symbol" python3 scripts/harness_gate.py --check-registry "$TMP/g1.tsv"
+-
+-# --- G2/G3 pure-arithmetic tautology (a real tautology compiled into a scratch module)
+-mkdir -p "$TMP/mod"
+-cat > "$TMP/pure.lean" <<'LEAN'
+-namespace Recaman
+-theorem gate_test_taut (card_U card_D k : Nat) (h_rem : card_U - k ≤ card_D - k) (hkU : k ≤ card_U) (hkD : k ≤ card_D) : card_U ≤ card_D := by omega
+-theorem gate_test_xx (k : Nat) : k = k := rfl
+-end Recaman
+-LEAN
+-expect_fail "lint-module: pure-arithmetic module has no substantive theorem" python3 scripts/harness_gate.py --lint-module "$TMP/pure.lean"
+-
+-# --- G3 wrapper-only row
+-{ cat "$REG"; row 991 "$WRAP"; } > "$TMP/g3.tsv"
+-expect_fail "G3 wrapper-only symbols" python3 scripts/harness_gate.py --check-registry "$TMP/g3.tsv"
+-
+-# --- G4 name inflation (rename a substantive theorem's row to an inflated module via a scratch copy is not
+-#     possible without a module; test the regex through a row citing a real theorem in an inflated name)
+-{ cat "$REG"; row 992 Recaman.grand_permanent_high_internal_blocker_synthesis; } > "$TMP/g4.tsv"
+-python3 scripts/harness_gate.py --check-registry "$TMP/g4.tsv" >/dev/null 2>"$TMP/err" && { echo "FAIL: G4 inflated name accepted"; fail=1; } || \
+-  { grep -q 'G4' "$TMP/err" && echo "ok   (rejected): G4 inflated name -- $(grep G4 "$TMP/err" | head -1)" || { echo "FAIL: G4 not the reason"; fail=1; }; }
+-
+-# --- G5 statement audit missing, then present
+-{ cat "$REG"; row 993 "$SUBST"; } > "$TMP/g5.tsv"
+-expect_fail "G5 missing statement audit" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-python3 scripts/harness_gate.py --audit-template E-993 "$TMP/g5.tsv" > docs/statement_audits/E-993.md
+-expect_pass "G5 statement audit present with verbatim signature" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-sed -i '' 's/lag u = 3 ∨ lag u = 7/lag u = 3/' docs/statement_audits/E-993.md
+-expect_fail "G5 statement audit with altered signature" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-rm -f docs/statement_audits/E-993.md
+-
+-# --- P protected label changed silently
+-sed 's/^E-070\tCONJECTURED/E-070\tPROVED-LEAN/' "$REG" > "$TMP/p.tsv"
+-expect_fail "P protected label E-070 promoted without approval file change" python3 scripts/harness_gate.py --check-protected "$TMP/p.tsv" docs/PROTECTED_CLAIMS.tsv
+-
+-if [[ "$fail" -eq 0 ]]; then echo "harness gate tests: all passed"; else echo "harness gate tests: FAILURES" >&2; exit 1; fi
++RECAMAN_TEST_ROOT="$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
++exec python3 "$RECAMAN_TEST_ROOT/scripts/test_harness_gates.py" "$@"
+diff --git a/viewer/manifest.json b/viewer/manifest.json
+index 5df68e6..286ac07 100644
+--- a/viewer/manifest.json
++++ b/viewer/manifest.json
+@@ -44000,6 +44000,84 @@
+    "hasEnglishDocstring": true,
+    "hasReport": false
+   },
++  {
++   "name": "SS2OldestPattern",
++   "lines": 310,
++   "imports": [
++    "ShortTightDonorAvoidance"
++   ],
++   "decls": [
++    {
++     "kind": "theorem",
++     "name": "moment_ending_A_budget",
++     "line": 19
++    },
++    {
++     "kind": "theorem",
++     "name": "moment_ending_AA_ss2",
++     "line": 36
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_intervening_prefix",
++     "line": 59
++    },
++    {
++     "kind": "theorem",
++     "name": "moment_replicate_A_nonneg",
++     "line": 139
++    },
++    {
++     "kind": "theorem",
++     "name": "p2_append_A_tail_data",
++     "line": 145
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_aas_oldest_has_prefix",
++     "line": 160
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_no_w1_oldest",
++     "line": 204
++    },
++    {
++     "kind": "theorem",
++     "name": "oldestOffset_le_length",
++     "line": 228
++    },
++    {
++     "kind": "theorem",
++     "name": "oldestOffset_split",
++     "line": 238
++    },
++    {
++     "kind": "theorem",
++     "name": "ssCount_append_replicate_A",
++     "line": 250
++    },
++    {
++     "kind": "theorem",
++     "name": "past_oldest_split",
++     "line": 259
++    },
++    {
++     "kind": "theorem",
++     "name": "oldest_cover_clock_lt",
++     "line": 269
++    },
++    {
++     "kind": "theorem",
++     "name": "past_oldest_cover_decomposition",
++     "line": 288
++    }
++   ],
++   "theorems": 13,
++   "defs": 0,
++   "hasEnglishDocstring": true,
++   "hasReport": false
++  },
+   {
+    "name": "SS2StrictSlackTheorem",
+    "lines": 86,
+@@ -51247,6 +51325,6 @@
+    "hasReport": false
+   }
+  ],
+- "total": 401,
++ "total": 402,
+  "withReport": 167
+ }

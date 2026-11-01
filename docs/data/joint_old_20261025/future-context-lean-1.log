@@ -1,0 +1,10 @@
+Recaman/PrefixMassBarrier.lean:236:11: error: Tactic `rfl` failed: No `[refl]` lemma registered for relation
+  LE.le
+
+Hint: Add the `[refl]` attribute to reflexivity lemmas for `LE.le` to use this tactic
+
+case nil
+⊢ 0 ≤ 0
+Recaman/PrefixMassBarrier.lean:237:25: error(lean.unknownIdentifier): Unknown identifier `le_trans`
+Recaman/PrefixMassBarrier.lean:245:20: error(lean.unknownIdentifier): Unknown identifier `le_max_left`
+Recaman/PrefixMassBarrier.lean:246:22: error(lean.unknownIdentifier): Unknown identifier `le_trans`

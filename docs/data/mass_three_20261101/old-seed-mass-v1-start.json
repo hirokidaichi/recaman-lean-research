@@ -1,0 +1,18 @@
+{
+  "tag": "old-seed-mass-v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldSeedMassBound.lean"
+  ],
+  "started_jst": "2026-11-01T06:19:33.547824+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSeedMassBound.lean": "28a5a79414b4cfb0e5a1a294f35d319c83cc3c868e2e6b97c0acde3c2c000430"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

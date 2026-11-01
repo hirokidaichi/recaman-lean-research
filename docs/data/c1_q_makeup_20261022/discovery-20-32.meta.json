@@ -1,0 +1,26 @@
+{
+  "timestamp_jst": "2026-10-22T08:33:07.321844+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "area_probe.cpp": "8025a1f3a21b8c40834d3fb6f780a12fac5110c8914eab0a12fdd6aec7449dbc",
+    "check_witness.py": "43ebe69bd1ededc7b6e54f91910df3f23c175464edc14c7097e41330f9ae59ac",
+    "PROTOCOL.md": "096678aa1b4f7a65bcbd23026dfc37b24ea5dbf7b867184da8d7b20e04ef7b31"
+  },
+  "build": [
+    "clang++",
+    "-std=c++17",
+    "-O3",
+    "docs/data/c1_q_makeup_20261022/area_probe.cpp",
+    "-o",
+    "/tmp/recaman-c1-area-probe"
+  ],
+  "argv": [
+    "/tmp/recaman-c1-area-probe",
+    "20",
+    "32",
+    "60"
+  ],
+  "result": "discovery-20-32.json",
+  "timing": "discovery-20-32.time",
+  "purpose": "decomposition-discovery; previously seen length region, not holdout"
+}

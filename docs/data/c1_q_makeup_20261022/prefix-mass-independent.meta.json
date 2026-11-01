@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-22T00:50:48.563629+00:00",
+  "source": "prefix_mass_independent.cpp",
+  "source_sha256": "2cb3e4be46a31e092cc32a96de49f5547d7a3fde84d12b20187067f9da1cf348",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "argv": [
+    "/tmp/recaman-c1-prefix-mass-independent",
+    "32",
+    "17",
+    "300"
+  ],
+  "wall_limit_seconds": 300,
+  "cpu_limit_seconds": 300,
+  "calibration": "N12/R7 all counts/classes exact match",
+  "purpose": "Independent complete verification of the existing N32/R17 domain; no extension",
+  "window_method": "backwards signed mass and weighted moment, all starts",
+  "area_method": "direct sum",
+  "mod4_filter": false
+}

@@ -1,0 +1,18 @@
+{
+  "tag": "H07-original-p-initial-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ThreeRunInitialSTargetGap.lean"
+  ],
+  "started_jst": "2026-10-29T06:47:19.962604+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunInitialSTargetGap.lean": "20b35e3d5f0f06a44ceb40b03d95ba8ee76b9f7951ce0bf87a24cfd49f8936ab"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

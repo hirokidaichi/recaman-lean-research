@@ -1,0 +1,39 @@
+{
+  "theorem": "Recaman.ThirteenRunFactors.second_double_six",
+  "statement_unchanged": true,
+  "before": {
+    "source_sha256": "88068842a9b313829837446a0f54a7c2a5b4719a5dc4f7d9d0388c28ec739c31",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "-o",
+      ".lake/build/lib/lean/Recaman/ThirteenRunFactors.olean",
+      "Recaman/ThirteenRunFactors.lean"
+    ],
+    "exit_code": 1,
+    "cpu_seconds": 2.5296499999999997,
+    "wall_seconds": 2.695163832977414,
+    "log": "six_factors.log"
+  },
+  "after": {
+    "source_sha256": "47b88ef5535344e3e5fdc48f495edaa55d97e172af4635759de7feb07df5d151",
+    "argv": [
+      "lake",
+      "env",
+      "lean",
+      "-j1",
+      "-M512",
+      "-o",
+      ".lake/build/lib/lean/Recaman/ThirteenRunFactors.olean",
+      "Recaman/ThirteenRunFactors.lean"
+    ],
+    "exit_code": 0,
+    "cpu_seconds": 0.633095,
+    "wall_seconds": 0.8028237919788808,
+    "log": "six_factors_repair.log"
+  },
+  "interpretation": "one failed layout versus one successful constructor proof at the same M512 cap; not a speedup benchmark or a resource increase"
+}

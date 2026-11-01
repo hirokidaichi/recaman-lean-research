@@ -1,0 +1,25 @@
+Recaman/ThreeNonsuppliedData.lean:51:29: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HAppend (List Bool) (List Prop) ?m.42
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/ThreeNonsuppliedData.lean:116:4: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/ThreeNonsuppliedData.lean:3445:49: error: Tactic `decide` failed for proposition
+  verified rows = true
+because its `Decidable` instance
+  instDecidableEqBool (verified rows) true
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableAnd`, `instDecidableEqBool`, `instDecidableEqList`, `Bool.decEq`, `Nat.decLe`, `Nat.decLt`, `instDecidableEqState`, and `instDecidableEqState.decEq`, reduction got stuck at the `Decidable` instance
+  match verified rows, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/ThreeNonsuppliedData.lean:3448:15: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/ThreeNonsuppliedData.lean:3448:26: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

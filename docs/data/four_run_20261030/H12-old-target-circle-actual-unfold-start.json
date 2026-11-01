@@ -1,0 +1,18 @@
+{
+  "tag": "H12-old-target-circle-actual-unfold",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetMassCircle.lean"
+  ],
+  "started_jst": "2026-10-30T07:01:45.379442+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetMassCircle.lean": "0aa35ffe50464d71ba2a3c5cb962c29f7ad05e772d31e0673600dbbaf087cebf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

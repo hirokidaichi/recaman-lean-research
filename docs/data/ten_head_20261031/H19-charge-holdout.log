@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py", line 18, in <module>
+    worker(sys.argv[2:]);raise SystemExit(0)
+    ~~~~~~^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py", line 15, in worker
+    runpy.run_path(script,run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/lower_charge_probe.py", line 29, in <module>
+    assert n-1 in src[target] and last-1 in src[last+2]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

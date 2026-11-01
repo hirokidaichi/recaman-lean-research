@@ -1,0 +1,47 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-24（E-390〜E-399の証拠・範囲を監査。日次実時計はclosed journalを正本とする）
+
+- 現在の研究単位: [次カードH-20261025-01](HYPOTHESIS_CARD_2026-10-25_JOINT_OLD_SUPPLY.md)。E-399の同じ低mass代表を全clockで保持するactual old-supply admissionへ接続する。最初15分で新edge/候補削減/反例がなければ、run-family25分と小証明書20分へ切替。C1/Q/H/SL全体は未解決。
+- 証明済み部分領域: E-385/E-386/E-387によりa_z≤3の全長8語分類・深さ4・任意future Qとold P2排除はPROVED-LEAN。完了したr3や旧N32、C2/Pの入力監査を反復しない。
+- r4の残余: E-388はCOMPUTED。E-390は先行全A≤10等の下で任意S-gap j→min(j,19)の実A0/A1を保持する。全長A≤10の供給・全分類kernelは未完了。12837状態の一括decideは資源上限でSTOPPED、時間/メモリ追加のみで再開しない。
+- 後半Q: E-392は明示16root条件付きで任意長/深さfuture Qとold P2排除をPROVED-LEANにした。a_z≤4から16語への全包含が残り、r4全体の証明とは呼ばない。一般a_z≥5と任意rのrankは未解決。
+- 一般terminal入力: E-389は次の供給A前のS-gap≤2×先行全A−2。E-391は任意の具体語の有限terminal checkと追加free予算0から任意長futureの全A0を証明する。全Aと非Endable Aを混同しない。
+- 無制限run入力: E-393はlocalSupply(S^m A^r S^j) iff r=2(j+1),j+1≤m、長いS後の実EndNの両方向を分類。奇数runはfuture free0なら追加全A0。E-397はk≥1,m≥4k+1のS^m A^(2k)後、future free0なら追加全A≤1。run形と十分閾値を明記し一般rankへ昇格しない。
+- 供給連鎖の反証と小証明書: E-395は第4free後の供給A≤2という強い補助案を既知E-389語でREFUTED（実5供給、終端不足4）。親Qの反例ではない。E-396はその具体6nodeの任意長future追加A≤5をPROVED-LEANにした。一般AN4上限5ではない。
+- 共通prefix: E-394はmass3/area5と7の同時実現を排除。E-398はmass4二suffixの異なる面積pairを{9,10}/{10,11}/{9,13}/{12,13}に限定。trip語はmass4両極値9/13を同時に持つので一般massの一律排除は偽。
+- 同じ10代表: E-399は任意長の実padded prefixの全mass3/4 suffixを同時に保存する一つの代表を、明示10候補から供給。全代表長≤10。mass≥5/全Endable historyは保存範囲外。次はこの同じ代表を全future clockで用いる。
+- 面積と文脈の入力: E-380は深さ4条件下のexact context削減、E-381はBlockWord areaの二次上下界、E-384は全mass面積spectrum（存在方向未Lean・人間レビュー未）。これらを別窓の共通prefix十分条件として使わない。
+- 全体の依存: H ⟸ EqClassWの帰納段（E-376）。場合BはE-377、場合AはSL。SLのd1はC1/C2、d2はTSが残る。有限窓長の計算を無制限のH/E-070や全射性へ昇格しない。E-001/E-067/E-070はCONJECTURED、E-179はCOMPUTEDのpinを保持。
+- 配分と停止: [当日DAILY](RESEARCH_HANDOFF_2026-10-24_DAILY.md)と[新入力ノート](RESEARCH_NOTE_2026-10-24_C1_INPUTS.md)。新edge/候補削減があるため連続無変化0を継承。Az独立非負/自由Endable tag/同UNKNOWN時間追加/旧N32延長/未完了実prefix probe時間追加は再開条件なしに再開しない。
+- 定期研究: 毎日6〜8時JST、7:45以降は検証・意味監査・記録。実績は[実時計journal](data/daily_research/2026-10-24.json)の確認区間のみ。予定120分・open区間・CPU・待機を実績へ加えず、最新handoff末尾から再開する。未来の完遂を設定だけで確認済みにしない。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-399 [PROVED-LEAN] joint-low-mass-prefix-representative — Recaman/BlockSuffixPositivity.lean
+  E-385 [PROVED-LEAN] old-window-tail-count-barrier — Recaman/BlockSuffixPositivity.lean
+  E-386 [PROVED-LEAN] three-nonsupplied-excursion-depth — Recaman/BlockSuffixPositivity.lean
+  E-387 [PROVED-LEAN] three-nonsupplied-C1-area — Recaman/BlockSuffixPositivity.lean
+  E-388 [COMPUTED] four-nonsupplied-C1-area — docs/RESEARCH_NOTE_2026-10-23_C1_FOUR.md
+  E-390 [PROVED-LEAN] actual-S-gap-macro — Recaman/BlockSuffixPositivity.lean
+  E-392 [PROVED-LEAN] sixteen-root-future-area — Recaman/BlockSuffixPositivity.lean
+  E-389 [PROVED-LEAN] supplied-S-gap-and-terminal-tail — Recaman/BlockSuffixPositivity.lean
+  E-391 [PROVED-LEAN] finite-first-supply-terminal-test — Recaman/BlockSuffixPositivity.lean
+  E-393 [PROVED-LEAN] long-S-A-run-supply — Recaman/BlockSuffixPositivity.lean
+  E-397 [PROVED-LEAN] long-S-even-run-one-addition — Recaman/BlockSuffixPositivity.lean
+  E-395 [REFUTED] two-supplies-after-fourth-free — docs/data/c1_four_20261024/last-free-independent.json
+  E-396 [PROVED-LEAN] zero-free-five-supply-motif — Recaman/BlockSuffixPositivity.lean
+  E-394 [PROVED-LEAN] shared-prefix-mass-three-areas — Recaman/BlockSuffixPositivity.lean
+  E-398 [PROVED-LEAN] shared-prefix-mass-four-area-pairs — Recaman/BlockSuffixPositivity.lean
+  E-380 [PROVED-LEAN] block-prefix-context-radius — Recaman/BlockSuffixPositivity.lean
+  E-381 [PROVED-LEAN] block-prefix-quadratic-area — Recaman/BlockSuffixPositivity.lean
+  E-384 [PROVED-PAPER] block-prefix-area-spectrum — docs/RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 406 (including Audit)
+  Import contracts: 110; audit declarations: 2780

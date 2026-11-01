@@ -1,0 +1,24 @@
+Recaman/OldTargetLocalTail.lean:242:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  g ≥ 2
+  g - i ≥ 4
+  e ≥ 0
+  -3 ≤ e - g ≤ 0
+  d ≥ 0
+  d ≤ 3
+  c ≥ 0
+  b ≥ 1
+  a ≥ 0
+  a - c ≤ -1
+where
+ a := ↑t
+ b := ↑s
+ c := ↑w.length
+ d := ↑(rayCount
+    (w ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+      List.replicate s false)
+    T)
+ e := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) (n + B) T)
+ g := if ↑T ≤ ↑j then ↑T else ↑j
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + M + m + L + s)) T)

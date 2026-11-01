@@ -1,0 +1,28 @@
+{
+  "started_jst": "2026-10-22T09:43:21.432614+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "source": "old_spectrum_relax.py",
+  "sha256": "c7bb3193d0c579a168bd3158e52ec67257d95e09879fa429b177735107d24b3e",
+  "imported_base_sha256": "06f00aba2ab935187a6c52c920890b00b803ee23aa1dbaf114b5ae50c3eacef2",
+  "argv": [
+    "/tmp/recaman-c1-solver-20261022/bin/python",
+    "docs/data/c1_q_makeup_20261022/old_spectrum_relax.py",
+    "--mode",
+    "run",
+    "--n",
+    "32",
+    "--seconds",
+    "60",
+    "--out",
+    "docs/data/c1_q_makeup_20261022/spectrum-relax.json"
+  ],
+  "measured_CPU_used": 3298.57,
+  "remaining_CPU_budget": 601.43,
+  "limits": {
+    "solve_wall_seconds": 60,
+    "process_CPU_seconds": 270,
+    "workers": 1,
+    "memory_parameter_mib": 768
+  },
+  "actual_history_counterexample": false
+}

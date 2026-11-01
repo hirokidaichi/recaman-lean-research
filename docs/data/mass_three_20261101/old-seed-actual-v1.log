@@ -1,0 +1,15 @@
+Recaman/OldSeedActualGap.lean:110:6: error: Type mismatch: After simplification, term
+  hm
+ has type
+  mass (List.drop sOld w) + mass z + mass (List.replicate v false) + ↑kOld = 1
+but is expected to have type
+  mass (List.drop sOld w) + (mass z + mass (List.replicate v false)) + ↑kOld = 1
+Recaman/OldSeedActualGap.lean:111:15: error(lean.unknownIdentifier): Unknown identifier `source_key_before_gap`
+Recaman/OldSeedActualGap.lean:117:20: error: Application type mismatch: The argument
+  hsrc.right.left
+has type
+  i = 2
+but is expected to have type
+  T ≤ j + 2
+in the application
+  old_seed_high_target_impossible w z hw hmz ?m.1438 t v T j kOld hj hsrc.right.left

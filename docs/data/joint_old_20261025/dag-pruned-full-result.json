@@ -1,0 +1,19 @@
+{
+  "tag": "dag-pruned-full",
+  "started_jst": "2026-10-25T07:15:47.772685+09:00",
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "wall_cap_seconds": 1200,
+  "cpu_cap_seconds": 1200,
+  "rss_cap_kib": 4194304,
+  "source_sha256": {},
+  "pid": 14828,
+  "finished_jst": "2026-10-25T07:25:08.748130+09:00",
+  "exit_code": -15,
+  "reason": "RSS cap",
+  "peak_sampled_process_group_rss_kib": 4195632,
+  "wall_seconds": 560.9207523339428
+}

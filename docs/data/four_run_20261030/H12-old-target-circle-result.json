@@ -1,0 +1,25 @@
+{
+  "tag": "H12-old-target-circle",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetMassCircle.lean"
+  ],
+  "started_jst": "2026-10-30T06:59:24.290146+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetMassCircle.lean": "2538d7276832a7175abb30943cc3d173ab8f42d322bbd3524801b7701d7586a5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "711aedc37f2405aaeb9bdd6943d1ca3de31c3b9f51deaeae1163a18f643df30e",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.0886985829565674,
+  "cpu_seconds": 1.0055669999999999,
+  "finished_jst": "2026-10-30T06:59:25.378785+09:00"
+}

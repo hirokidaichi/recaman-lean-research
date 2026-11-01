@@ -13,6 +13,7 @@ Provides automation and token-saving utilities:
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime
 import re
 import sys
@@ -27,6 +28,7 @@ RECAMAN_ROOT_LEAN = ROOT / "Recaman.lean"
 AUDIT_LEAN = RECAMAN_DIR / "Audit.lean"
 TEMPLATE_CARD = DOCS_DIR / "HYPOTHESIS_CARD_TEMPLATE.md"
 FRONTIER_MD = DOCS_DIR / "CURRENT_FRONTIER.md"
+PROTECTED_TSV = DOCS_DIR / "PROTECTED_CLAIMS.tsv"
 
 
 def get_label_color(label: str) -> tuple[str, str]:
@@ -43,47 +45,55 @@ def get_label_color(label: str) -> tuple[str, str]:
 
 
 def show_brief(args: argparse.Namespace) -> None:
-    """Display an ultra-compact summary of the current research frontier (< 400 tokens)."""
-    if not FRONTIER_MD.exists():
-        print(f"error: {FRONTIER_MD} not found", file=sys.stderr)
+    """Read the canonical short frontier; never substitute a historical snapshot."""
+    try:
+        frontier = FRONTIER_MD.read_text(encoding="utf-8")
+        sections = re.findall(
+            r"^## Research brief[^\S\n]*\n(.*?)(?=^## |\Z)", frontier,
+            flags=re.M | re.S,
+        )
+        if len(sections) != 1 or not sections[0].strip():
+            raise ValueError("CURRENT_FRONTIER.md needs one nonempty '## Research brief' section")
+        section = sections[0].strip()
+        with REGISTRY_TSV.open(encoding="utf-8", newline="") as source:
+            rows = list(csv.DictReader(source, delimiter="\t"))
+        evidence = {row["id"]: row for row in rows}
+        if len(evidence) != len(rows):
+            raise ValueError("duplicate evidence IDs in EVIDENCE_REGISTRY.tsv")
+        with PROTECTED_TSV.open(encoding="utf-8", newline="") as source:
+            central = [row["id"] for row in csv.DictReader(source, delimiter="\t")]
+        # Japanese letters also count as Unicode word characters, so \b drops
+        # ordinary prose such as "E-379で". Guard against ASCII ID continuations.
+        selected = list(dict.fromkeys(re.findall(
+            r"(?<![A-Za-z0-9_])E-\d{3}(?![A-Za-z0-9_])", section,
+        ) + central))
+        if not selected:
+            raise ValueError("Research brief must reference evidence IDs")
+        missing = [eid for eid in selected if eid not in evidence]
+        if missing:
+            raise ValueError("unknown brief/protected evidence IDs: " + ", ".join(missing))
+        with CONTRACTS_TSV.open(encoding="utf-8", newline="") as source:
+            contracts_count = sum(1 for _ in csv.DictReader(source, delimiter="\t"))
+        audit_count = len(re.findall(
+            r"^#print axioms\s+", AUDIT_LEAN.read_text(encoding="utf-8"), re.M,
+        ))
+    except (OSError, KeyError, ValueError) as error:
+        print(f"error: cannot generate research brief: {error}", file=sys.stderr)
         sys.exit(1)
 
-    print("=" * 60)
-    print("  RECAMÁN RESEARCH FRONTIER BRIEF")
-    print("=" * 60)
-
-    # 1. Active Frontier & Open Gate
-    print("\n[NEXT RESEARCH GATE]")
-    print("  * Gate: T6 (E-179) - High-SS Local Donation")
-    print("  * Claim: Every high-SS supply window (ssCount>=2) donates an internally removable S.")
-    print("  * Evidence: COMPUTED across 53,000+ words (p=8..22, 0 exceptions).")
-    print("  * Target: Formalize or refute minimal case ssCount=2 in Lean.")
-
-    # 2. Key Established Ground Truth
-    print("\n[ESTABLISHED BOUNDARIES (Do Not Re-prove)]")
-    print("  * E-176: |U|<=|D| is sharp across all periods (tight words exist for all p).")
-    print("  * E-177: Tight words (|U|=|D|) have ONLY low-SS windows (ssCount<=1).")
-    print("           Equality side is completely covered by E-128 (PROVED-LEAN).")
-    print("  * E-178: Forced matching on tight words matches oldest-S (E-069).")
-    print("  * E-181: Positive period mass guarantees finite lag bound d <= p(p+1) (PROVED-LEAN).")
-    print("  * E-128: Low-SS joint endpoint capacity |U_clean U U_SS1| <= |D| (PROVED-LEAN).")
-
-    # 3. Stopped / Refuted Approaches (Do Not Re-open without declared gate)
-    print("\n[STOPPED & REFUTED DIRECTIONS (Do Not Propose)]")
-    print("  * E-180 (REFUTED): Linear slack charge slack >= c is false (counterexample at p=18,21).")
-    print("  * E-178 (CLOSED): Generic selector search is FINISHED (selector is forced on tight).")
-    print("  * E-088 (STOPPED): Lag-by-lag type offset charging is STOPPED.")
-    print("  * E-133 (REFUTED): Named 4-charge extension on SS=2 is STOPPED.")
-    print("  * E-142 (REFUTED): Unrestricted one-per-run on abstract words is REFUTED.")
-
-    # 4. Codebase & Audit Status
-    modules = list(RECAMAN_DIR.glob("*.lean"))
-    contracts_count = len([l for l in CONTRACTS_TSV.read_text(encoding="utf-8").splitlines()[1:] if l.strip()])
-    print("\n[REPOSITORY INTEGRITY]")
-    print(f"  * Lean Modules: {len(modules)} library modules | Frontier Contracts: {contracts_count}")
-    print("  * Audit State: 1,743 declarations verified within standard axioms.")
-    print("  * Verification: Run 'make check' or 'make test'.")
-    print("=" * 60)
+    print("RECAMÁN RESEARCH FRONTIER BRIEF")
+    print("Source: docs/CURRENT_FRONTIER.md / Research brief")
+    updated = re.search(r"^最終更新:.*$", frontier, re.M)
+    if updated:
+        print(updated.group(0))
+    print("\n" + section)
+    print("\n[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]")
+    for eid in selected:
+        row = evidence[eid]
+        print(f"  {eid} [{row['label']}] {row['branch']} — {row['artifact']}")
+    print("\n[SOURCE COUNTS — run make check to verify]")
+    print(f"  Lean source files: {len(list(RECAMAN_DIR.glob('*.lean')))} (including Audit)")
+    print(f"  Import contracts: {contracts_count}; audit declarations: {audit_count}")
 
 
 def show_decls(args: argparse.Namespace) -> None:

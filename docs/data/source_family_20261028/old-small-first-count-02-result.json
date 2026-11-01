@@ -1,0 +1,25 @@
+{
+  "tag": "old-small-first-count-02",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetFirstRun.lean"
+  ],
+  "started_jst": "2026-10-28T07:19:47.909372+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetFirstRun.lean": "89ee1ede3c05db9a3ba1aeff6150ce0013b17cebcc352a9dbaa6d4c902648ff5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "db04a77c5cf60daeaa68c5fa9a23e8763aee1e28e963a2537578817250dc304c",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5680498748552054,
+  "cpu_seconds": 0.496979,
+  "finished_jst": "2026-10-28T07:19:48.477364+09:00"
+}

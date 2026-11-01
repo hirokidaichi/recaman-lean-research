@@ -1,0 +1,18 @@
+{
+  "tag": "H21-terminal-four-run-free-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TerminalFourthCharge.lean"
+  ],
+  "started_jst": "2026-10-30T07:26:09.699169+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TerminalFourthCharge.lean": "2579c1a165d65d36c2a37ede9d9a2071d094e5217c3ca742fb3b7dfca1dd7cd5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

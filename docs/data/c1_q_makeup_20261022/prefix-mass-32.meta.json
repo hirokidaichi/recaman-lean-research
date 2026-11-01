@@ -1,0 +1,17 @@
+{
+  "started_jst": "2026-10-22T09:40:53.080468+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "source": "prefix_mass_search.cpp",
+  "sha256": "81722c18af494daedb427041e220876313ce88ae19f2e6c500467a4ed23ad562",
+  "argv": [
+    "/tmp/recaman-c1-prefix-mass-search",
+    "32",
+    "17",
+    "240"
+  ],
+  "cpu_limit_seconds": 250,
+  "wall_limit_internal_seconds": 240,
+  "domain": "all tail lengths 1..32; all prefix BlockWords of mass <=17; az<=3; positive deficit; d(q0)=1; seek depth>=5",
+  "calibration": "N12/R7 full independent tail audit; R17 entire prefix language independent audit passed",
+  "full_D_or_IH_checked": false
+}

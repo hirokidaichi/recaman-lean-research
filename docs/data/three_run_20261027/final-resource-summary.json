@@ -1,0 +1,503 @@
+{
+  "math_worker_cpu_seconds": 6.512746,
+  "math_worker_controller_cpu_seconds": 0.018722000000000006,
+  "guard_worker_cpu_seconds": 1.1241929999999998,
+  "guard_controller_cpu_seconds": 0.008579999999999997,
+  "recorded_validation_cpu_seconds": 159.134088,
+  "recorded_validation_runs": 71,
+  "validation_runs": [
+    {
+      "tag": "A-source-reuse-actual-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.616487,
+      "wall_seconds": 0.4083149170037359
+    },
+    {
+      "tag": "A-source-reuse-actual",
+      "exit_code": 1,
+      "cpu_seconds": 0.511481,
+      "wall_seconds": 0.36260816687718034
+    },
+    {
+      "tag": "A-source-reuse",
+      "exit_code": 0,
+      "cpu_seconds": 0.36738899999999997,
+      "wall_seconds": 0.2895013331435621
+    },
+    {
+      "tag": "bool-api",
+      "exit_code": 0,
+      "cpu_seconds": 0.229926,
+      "wall_seconds": 0.28021662519313395
+    },
+    {
+      "tag": "check-E416",
+      "exit_code": 0,
+      "cpu_seconds": 7.963558,
+      "wall_seconds": 9.584999290993437
+    },
+    {
+      "tag": "check-E417",
+      "exit_code": 0,
+      "cpu_seconds": 8.570043,
+      "wall_seconds": 8.617200542008504
+    },
+    {
+      "tag": "check-E418",
+      "exit_code": 0,
+      "cpu_seconds": 8.006381,
+      "wall_seconds": 8.355676459148526
+    },
+    {
+      "tag": "check-E419",
+      "exit_code": 0,
+      "cpu_seconds": 8.39573,
+      "wall_seconds": 8.370148666203022
+    },
+    {
+      "tag": "check-E420",
+      "exit_code": 0,
+      "cpu_seconds": 8.478116,
+      "wall_seconds": 8.619973917026073
+    },
+    {
+      "tag": "check-E421",
+      "exit_code": 0,
+      "cpu_seconds": 7.889444,
+      "wall_seconds": 8.186010041972622
+    },
+    {
+      "tag": "check-E422",
+      "exit_code": 0,
+      "cpu_seconds": 7.845928,
+      "wall_seconds": 8.137521374970675
+    },
+    {
+      "tag": "check-E423-frontier",
+      "exit_code": 0,
+      "cpu_seconds": 8.09063,
+      "wall_seconds": 8.513337207958102
+    },
+    {
+      "tag": "check-E423",
+      "exit_code": 1,
+      "cpu_seconds": 5.75351,
+      "wall_seconds": 6.744545292109251
+    },
+    {
+      "tag": "check-E425",
+      "exit_code": 0,
+      "cpu_seconds": 8.405405,
+      "wall_seconds": 8.60688804090023
+    },
+    {
+      "tag": "check-E426",
+      "exit_code": 0,
+      "cpu_seconds": 8.050136,
+      "wall_seconds": 8.431743083056062
+    },
+    {
+      "tag": "check-E428",
+      "exit_code": 0,
+      "cpu_seconds": 8.362541,
+      "wall_seconds": 8.546617125160992
+    },
+    {
+      "tag": "check-E429",
+      "exit_code": 0,
+      "cpu_seconds": 7.932954,
+      "wall_seconds": 8.406939750071615
+    },
+    {
+      "tag": "check-E431",
+      "exit_code": 0,
+      "cpu_seconds": 8.126175,
+      "wall_seconds": 8.461453000083566
+    },
+    {
+      "tag": "check-final-metadata",
+      "exit_code": 1,
+      "cpu_seconds": 5.209251,
+      "wall_seconds": 6.26801420818083
+    },
+    {
+      "tag": "check-final-references",
+      "exit_code": 0,
+      "cpu_seconds": 7.38236,
+      "wall_seconds": 10.506374875083566
+    },
+    {
+      "tag": "div-api",
+      "exit_code": 1,
+      "cpu_seconds": 0.18884099999999998,
+      "wall_seconds": 0.22675412497483194
+    },
+    {
+      "tag": "early-target-source-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.536143,
+      "wall_seconds": 0.4671097088139504
+    },
+    {
+      "tag": "early-target-source",
+      "exit_code": 1,
+      "cpu_seconds": 0.491039,
+      "wall_seconds": 0.41688891616649926
+    },
+    {
+      "tag": "export-word-shape",
+      "exit_code": 0,
+      "cpu_seconds": 1.173966,
+      "wall_seconds": 0.7050157920457423
+    },
+    {
+      "tag": "finset-api",
+      "exit_code": 1,
+      "cpu_seconds": 0.20741199999999999,
+      "wall_seconds": 0.23588995821774006
+    },
+    {
+      "tag": "first-gluing",
+      "exit_code": 0,
+      "cpu_seconds": 0.847542,
+      "wall_seconds": 1.9509361248929054
+    },
+    {
+      "tag": "initial-S-counter-transfer",
+      "exit_code": 0,
+      "cpu_seconds": 0.5671379999999999,
+      "wall_seconds": 0.3594761248677969
+    },
+    {
+      "tag": "initial-S-trim-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.477174,
+      "wall_seconds": 0.3559568750206381
+    },
+    {
+      "tag": "initial-S-trim",
+      "exit_code": 1,
+      "cpu_seconds": 0.474252,
+      "wall_seconds": 0.35459808306768537
+    },
+    {
+      "tag": "last-S-pruning-2",
+      "exit_code": 1,
+      "cpu_seconds": 1.088258,
+      "wall_seconds": 0.5316892080008984
+    },
+    {
+      "tag": "last-S-pruning-3",
+      "exit_code": 0,
+      "cpu_seconds": 1.1145969999999998,
+      "wall_seconds": 0.5748342501465231
+    },
+    {
+      "tag": "last-S-pruning",
+      "exit_code": 1,
+      "cpu_seconds": 1.156603,
+      "wall_seconds": 0.5940569580998272
+    },
+    {
+      "tag": "list-api",
+      "exit_code": 0,
+      "cpu_seconds": 0.184773,
+      "wall_seconds": 0.22594337491318583
+    },
+    {
+      "tag": "long-final-free-gap",
+      "exit_code": 0,
+      "cpu_seconds": 0.887949,
+      "wall_seconds": 0.5362855419516563
+    },
+    {
+      "tag": "middle-S-pruning",
+      "exit_code": 0,
+      "cpu_seconds": 0.839392,
+      "wall_seconds": 0.4729639159049839
+    },
+    {
+      "tag": "middle-reset-transport-2",
+      "exit_code": 1,
+      "cpu_seconds": 0.399543,
+      "wall_seconds": 0.2944193750154227
+    },
+    {
+      "tag": "middle-reset-transport-3",
+      "exit_code": 0,
+      "cpu_seconds": 0.37854499999999996,
+      "wall_seconds": 0.28013079101219773
+    },
+    {
+      "tag": "middle-reset-transport",
+      "exit_code": 1,
+      "cpu_seconds": 0.383963,
+      "wall_seconds": 0.3009015421848744
+    },
+    {
+      "tag": "middle-two-run-free-gap-2",
+      "exit_code": 1,
+      "cpu_seconds": 0.663108,
+      "wall_seconds": 0.41081454092636704
+    },
+    {
+      "tag": "middle-two-run-free-gap-3",
+      "exit_code": 0,
+      "cpu_seconds": 0.670704,
+      "wall_seconds": 0.4184415000490844
+    },
+    {
+      "tag": "middle-two-run-free-gap",
+      "exit_code": 1,
+      "cpu_seconds": 0.653155,
+      "wall_seconds": 0.41848787502385676
+    },
+    {
+      "tag": "old-context-radius",
+      "exit_code": 0,
+      "cpu_seconds": 0.398163,
+      "wall_seconds": 0.3551849580835551
+    },
+    {
+      "tag": "old-context-rebase-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.566609,
+      "wall_seconds": 0.41971500008367
+    },
+    {
+      "tag": "old-context-rebase",
+      "exit_code": 1,
+      "cpu_seconds": 0.559407,
+      "wall_seconds": 0.4068826660513878
+    },
+    {
+      "tag": "original-base-adapters",
+      "exit_code": 0,
+      "cpu_seconds": 0.787872,
+      "wall_seconds": 0.4769936250522733
+    },
+    {
+      "tag": "penultimate-source-counterexample",
+      "exit_code": 0,
+      "cpu_seconds": 0.932542,
+      "wall_seconds": 0.5770270829088986
+    },
+    {
+      "tag": "penultimate-source-factor-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.639581,
+      "wall_seconds": 0.4076705409679562
+    },
+    {
+      "tag": "penultimate-source-factor",
+      "exit_code": 1,
+      "cpu_seconds": 0.622688,
+      "wall_seconds": 0.4203914999961853
+    },
+    {
+      "tag": "penultimate-source",
+      "exit_code": 1,
+      "cpu_seconds": 0.8587009999999999,
+      "wall_seconds": 0.764440958853811
+    },
+    {
+      "tag": "run-charge-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.976441,
+      "wall_seconds": 0.5934774579945952
+    },
+    {
+      "tag": "run-charge",
+      "exit_code": 1,
+      "cpu_seconds": 1.1771880000000001,
+      "wall_seconds": 0.7105657081119716
+    },
+    {
+      "tag": "same-mass-actual-windows",
+      "exit_code": 0,
+      "cpu_seconds": 0.648731,
+      "wall_seconds": 0.4728709999471903
+    },
+    {
+      "tag": "same-mass-span-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.46913099999999996,
+      "wall_seconds": 0.36265733395703137
+    },
+    {
+      "tag": "same-mass-span",
+      "exit_code": 1,
+      "cpu_seconds": 0.467364,
+      "wall_seconds": 0.3564279170241207
+    },
+    {
+      "tag": "separator-control",
+      "exit_code": 0,
+      "cpu_seconds": 0.6055649999999999,
+      "wall_seconds": 0.4227375420741737
+    },
+    {
+      "tag": "separator-prefix-counts-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.56077,
+      "wall_seconds": 0.41232616687193513
+    },
+    {
+      "tag": "separator-prefix-counts",
+      "exit_code": 1,
+      "cpu_seconds": 0.559467,
+      "wall_seconds": 0.4128978750668466
+    },
+    {
+      "tag": "separator-reset",
+      "exit_code": 0,
+      "cpu_seconds": 0.44469,
+      "wall_seconds": 0.3632118331734091
+    },
+    {
+      "tag": "source-reuse-parity-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.7755719999999999,
+      "wall_seconds": 0.4751921670977026
+    },
+    {
+      "tag": "source-reuse-parity",
+      "exit_code": 1,
+      "cpu_seconds": 0.771556,
+      "wall_seconds": 0.4732748749665916
+    },
+    {
+      "tag": "spectrum-actual-query-2",
+      "exit_code": 1,
+      "cpu_seconds": 0.914368,
+      "wall_seconds": 0.598996875109151
+    },
+    {
+      "tag": "spectrum-actual-query-3",
+      "exit_code": 0,
+      "cpu_seconds": 0.8545,
+      "wall_seconds": 0.5724381250329316
+    },
+    {
+      "tag": "spectrum-actual-query",
+      "exit_code": 1,
+      "cpu_seconds": 0.8405279999999999,
+      "wall_seconds": 0.5892404580954462
+    },
+    {
+      "tag": "spectrum-append-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.3862,
+      "wall_seconds": 0.3281515829730779
+    },
+    {
+      "tag": "spectrum-append",
+      "exit_code": 1,
+      "cpu_seconds": 0.333649,
+      "wall_seconds": 0.3024926669895649
+    },
+    {
+      "tag": "spectrum-checker-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.397214,
+      "wall_seconds": 0.34985850006341934
+    },
+    {
+      "tag": "spectrum-checker",
+      "exit_code": 1,
+      "cpu_seconds": 0.401771,
+      "wall_seconds": 0.34304266702383757
+    },
+    {
+      "tag": "spectrum-future-counts",
+      "exit_code": 0,
+      "cpu_seconds": 0.9551569999999999,
+      "wall_seconds": 0.5866337921470404
+    },
+    {
+      "tag": "spectrum-generic-build",
+      "exit_code": 0,
+      "cpu_seconds": 0.440766,
+      "wall_seconds": 0.4055040830280632
+    },
+    {
+      "tag": "three-run-context-2",
+      "exit_code": 0,
+      "cpu_seconds": 0.584075,
+      "wall_seconds": 0.4705899581313133
+    },
+    {
+      "tag": "three-run-context",
+      "exit_code": 1,
+      "cpu_seconds": 0.63228,
+      "wall_seconds": 0.5407082079909742
+    }
+  ],
+  "math_worker_runs": [
+    {
+      "tag": "charge-discovery",
+      "exit_code": 0,
+      "worker_cpu_seconds": 4.25009,
+      "controller_cpu_seconds": 0.005329999999999998
+    },
+    {
+      "tag": "charge-holdout",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.055909999999999994,
+      "controller_cpu_seconds": 0.0014350000000000022
+    },
+    {
+      "tag": "first-A-count-audit",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.03563,
+      "controller_cpu_seconds": 0.0015670000000000042
+    },
+    {
+      "tag": "first-A-count-replay",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.031608,
+      "controller_cpu_seconds": 0.0014760000000000007
+    },
+    {
+      "tag": "same-mass-pruning",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.582147,
+      "controller_cpu_seconds": 0.0019389999999999998
+    },
+    {
+      "tag": "same-mass-replay-repair",
+      "exit_code": 0,
+      "worker_cpu_seconds": 1.072006,
+      "controller_cpu_seconds": 0.0019559999999999977
+    },
+    {
+      "tag": "same-mass-replay",
+      "exit_code": 1,
+      "worker_cpu_seconds": 0.040415,
+      "controller_cpu_seconds": 0.0015950000000000096
+    },
+    {
+      "tag": "signature-discovery",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.061238999999999995,
+      "controller_cpu_seconds": 0.0016500000000000022
+    },
+    {
+      "tag": "signature-holdout",
+      "exit_code": 0,
+      "worker_cpu_seconds": 0.38370099999999996,
+      "controller_cpu_seconds": 0.0017739999999999926
+    }
+  ],
+  "unmeasured_preexec_child_cpu": true,
+  "unmeasured_reason": "one Popen preexec failed while trying unsupported RLIMIT_AS; no wait4 usage was captured, never infer zero",
+  "missing_result_runs": [
+    {
+      "tag": "spectrum-seven",
+      "start": "spectrum-seven-start.json",
+      "reason": "AS preexec rejected before launch"
+    }
+  ],
+  "contract": "math/guard are cooperative single-Python descendants-forbidden; validation caps are per-process, not hard cumulative tree caps; CPU separate from journal wall work",
+  "cpu_totals_complete_for_entire_session": false
+}

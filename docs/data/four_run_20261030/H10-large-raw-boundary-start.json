@@ -1,0 +1,18 @@
+{
+  "tag": "H10-large-raw-boundary",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/LargePrefixTargetArea.lean"
+  ],
+  "started_jst": "2026-10-30T06:55:30.311320+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargePrefixTargetArea.lean": "638236dafe43201f4dbc1f2a2eaece63b90a36b84ffa924b14763fc3fa0ac807"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

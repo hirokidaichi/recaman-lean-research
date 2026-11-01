@@ -1,0 +1,44 @@
+Recaman/RunSupplyKeys.lean:113:6: error: Tactic `generalize` failed: result is not type correct
+  ∀ (x : Bool),
+    cN (fun x => f x = false) n k + ((if x = true then 0 else 1) + 0) =
+      cN (fun x => f x = false) n k + if x = false then 1 else 0
+
+case succ
+f : Nat → Bool
+n k : Nat
+ih : cntF (seg f n k) = cN (fun x => f x = false) n k
+⊢ cN (fun x => f x = false) n k + ((if f (n + k) = true then 0 else 1) + 0) =
+    cN (fun x => f x = false) n k + if f (n + k) = false then 1 else 0
+Recaman/RunSupplyKeys.lean:127:37: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?as ++ ?bs ++ ?cs
+in the target expression
+  ThreeNonsuppliedData.localSupply (seg f 0 n ++ (List.replicate r true ++ List.replicate j false)) = true ↔
+    EndN f 0 (n + (r + j))
+
+f : Nat → Bool
+n r j : Nat
+hw : seg f n (r + j) = List.replicate r true ++ List.replicate j false
+hA : f (n + r + j) = true
+hs : seg f 0 (n + (r + j)) = seg f 0 n ++ (List.replicate r true ++ List.replicate j false)
+hl :
+  ThreeNonsuppliedData.localSupply (seg f 0 n ++ (List.replicate r true ++ List.replicate j false)) = true ↔
+    EndN f 0 (n + (r + j))
+⊢ EndN f 0 (n + r + j) ↔
+    ∃ t, t < n ∧ mass (List.drop t (seg f 0 n)) + ↑r = ↑j + 1 ∧ runKey (List.drop t (seg f 0 n)) = -2 * (↑j + 1) ^ 2
+Recaman/RunSupplyKeys.lean:140:37: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?as ++ ?bs ++ ?cs
+in the target expression
+  ThreeNonsuppliedData.localSupply (seg f 0 n ++ (List.replicate r true ++ List.replicate j false)) = true
+
+f : Nat → Bool
+n r j : Nat
+hw : seg f n (r + j) = List.replicate r true ++ List.replicate j false
+he : EndN f 0 (n + r + j)
+hs : seg f 0 (n + (r + j)) = seg f 0 n ++ (List.replicate r true ++ List.replicate j false)
+hl : ThreeNonsuppliedData.localSupply (seg f 0 n ++ (List.replicate r true ++ List.replicate j false)) = true
+⊢ j + 1 ≤ cN (fun x => f x = false) 0 n ∧ r ≤ 2 * cN (fun x => f x = false) 0 n
+Recaman/RunSupplyKeys.lean:146:14: error: unsolved goals
+case succ
+h : Nat
+ih : cntF (List.replicate h false) = h
+⊢ 1 + h = h + 1

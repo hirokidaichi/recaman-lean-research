@@ -1,10 +1,92 @@
 # Current research frontier
 
-最終更新: 2026-10-20（E-360 は 2026-09-21 の Sol 週間研究、E-361〜E-368 は 2026-10-03、E-369〜は 2026-10-20）
+最終更新: 2026-11-01（終了・実績確定）。E-451で三A-runの元p実free-gapを全長で証明。四run全体/任意r rank/C1/Q/H/SL/全射性は未証明。
 
-この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
-[`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
-[`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
+この文書を研究状態と次のgateの唯一の正本とする。主張と証拠水準は[EVIDENCE_REGISTRY.tsv](EVIDENCE_REGISTRY.tsv)、公理依存は[Audit](../Recaman/Audit.lean)を参照する。
+
+## Research brief
+
+2026-11-01最終検証・journal終了済み。親R-20261101-01、実開始06:01:59.745032 JST。[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)と[journal](data/daily_research/2026-11-01.json)が実績正本。実終了2026-11-01T07:59:32.029177+09:00、confirmed 117分32.284秒、不足2分27.716秒。待機/中断/gapの計上0、open0。予定120分を実績にしない。
+
+- **E-484 PROVED-LEAN**: area無制限の正三A-run zerohead/同old targetmass3/最終S3/oldclock0で、元Intp/padded/zero-fullpositiveの全長full-tail free-gap。最終S local band存在も不要。今朝のPAPERを独立same-target平方比較/E497 headfree5でkernelへ接着した。
+- **E-485 PROVED-LEAN**: 同じzerohead/targetmass3/最終S4/final-band local/最後rayの任意実old supplierを持つ枝の元fullgap。counterからold0/1を内部供給。E-500 explicitold1はlocal band不要、old0はE-490で供給。
+- **E-492 PROVED-LEAN**: targetmass/areaを制限せず、同old target/最終S local band/実old supplier mass>=5を持つ枝の元fullgap。targetmass>=4の全old-seed枝も含む。E-486のmass>=6とE-488の紙上D6をより強い別証明で覆うが旧失敗layoutはSTOPPED。
+- **機構 E-487/E-489/E-491/E-493/E-494/E-496/E-497**: 同inversionのlocal重複を数え、早期old D>=5でheadfree6、D>=4でheadfree5を全長で内部供給。S13を同source I23..25/actual priorA12の六形へ削減する。headfreeだけを全gapと呼ばない。
+- **E-490/E-498/E-499**: old0/old1と初期S源の非共存、同targetの平方差によるfirstA clock0又は0/1への合流。全massの他old sourceを切断しない。raw budget/keyはactual主定理で内部供給する。
+- **検証**: 個別-M512、G5/Audit、07:47最終全check543jobs/3163宣言PASS、許容三公理のみ。純算術helper ThirteenRunFactorsは単独lint G3警告で単独研究結果として登録しない。採用word/actual coreと全registry gatesは通過。完全cold/OS RSS/tree累積cap検証ではない。
+- **PAPER/停止**: E-483五area対/E-495一般I25 joint4は未Lean・人間レビュー未。E-495のD4 headfreeという帰結だけはE-497が独立actualS13 pruningで供給。旧scalar、LargeOldSeedGap、一般I25 monolith、旧H06/133core/r4二回0/0/R19等は資源追加で再開しない。E-388 COMPUTED/E-404 CONJECTURED/E-384未Leanを保持。
+- **残余**: last old供給無し、非zerohead、他target/local位置、任意run数/任意r rank、一般四run/C1/Q/H/SL/全射性。完了した三run E451/r3 E385〜387も一般C1とは別。
+- **次の一問**: [H-20261102-01](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。mass3/S3のno-old last-rayで初期S sourceを同target key/実counterから排除できるか。E497 headfree5のold-source仮定を勝手に落とさない。全体無変化0は新edge更新で、r4表2回STOPPEDを日付resetしない。
+
+## 2026-10-31終了時のスナップショット（以下は履歴）
+
+- **現在**: R-20261031-01、06:03:36〜07:59:49 JST、confirmed 116分12.964秒（不足3分47.036秒）。最初15分gateはactual二case/全last old排除という新edgeで通過。実績正本は[当日journal](data/daily_research/2026-10-31.json)、[DAILY](RESEARCH_HANDOFF_2026-10-31_DAILY.md)。open区間/予定120分を先取りしない。
+- **最も強い成果 E-482 PROVED-LEAN**: 任意元Intp/padded BlockWord履歴/zero-fullpositive、全正三A-run head A=S/area=-B/`4S+4<=B<=6S+4`、同じold targetと最終S local bandなら第四ray後の`j+1<=actual full-tail free`。全S/run長/old履歴/未来長を量化。lower4境界ではold<=1を残してlocal<=5/headfree>=6で支払う。一般四run/C1/rank/全射性ではない。07:31全check501jobs/3111宣言PASS、許容三公理のみ。
+- **依存成果**: E-467/E-468/E-469はS10二case/actual供給/local4/5。E-470/E-471は同target低mass/任意S反例残余。E-472/E-473はsource clockと全包含classifier。E-474/E-475は源重複と全S mass1 free-gap。E-476/E-477/E-478はactual mass2九群とlocal3/4/5/元帯の全S。r3 kernel count依存を明示し、未検証table/E384存在方向には依存しない。
+- **意味監査 E-479/E-481 PROVED-LEAN**: same targetとword偶奇でlower5のold排除を証明。ただし新境界B4S+5はR>=5 counter target自体が不可能。形式的な帯拡張を新履歴coverageの進展に数えない。E482 lower4は実在するpositive適用例を含む。
+- **反証 E-480 REFUTED**: lower4までのold-erasure強化は元0zero/fullpositiveのliteral履歴で破れる。clock1 oldとtarget/localが併存しfullfreeは十分、COMPUTEDの補助反例でありC1/標準軌道の反例ではない。
+- **帯外 E-483 PROVED-PAPER（未Lean・人間レビュー未）**: mass3 target/v3/oldmass4-clock0を同prefixで結合し10area対から5対へ。actual count/freeとv4mass5は未供給。18pair/mod4 monolithic layoutは一回修理後512MB STOPPED、sourceはpacketへ隔離し輸入しない。
+- **次の一問**: [H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)のarea無制限・zero-mass head/targetmass3/最終S3/実oldmass4-clock0枝で、元full-tail actual free-gapを供給できるか。最初15分はactual source-conditioned inequality/strict候補削減を要求。E483を仮定したadapterだけは進捗に数えない。
+- **停止保持**: H02の61head表、H12の五形/30cell、H19 freshS30 CPU上限、H21の18pair layoutは資源追加/compiled移動だけで再開しない。H12で上限を継承しなかった通常build結果は不採用/隔離、採用proofは独立したheight pruningを同512MBで再検証。旧H06/133core/r4 E412/E427二回0/0/R19/R7R11/cold512/combined19/literal43/width adapterの停止も保持。
+- **残る範囲**: moment帯外、nonzero-mass head、他target/local源位置、任意run数/任意r rankとC1/Q/H/SL/全射性は未解決。全体連続無変化0（E482新edge）、r4同表枝のSTOPPEDを日付でresetしない。CPU探索と実時計は別計上、人間レビュー未。
+
+## 10/30途中記録（当時の数値・入口。現在は上記briefを優先）
+
+
+- **次回の入口**: [H-20261030-01 四run old-target](HYPOTHESIS_CARD_2026-10-30_FOUR_RUN_OLD_TARGET.md) と [10/29 DAILY](RESEARCH_HANDOFF_2026-10-29_DAILY.md)。最初15分は最終separator local源の同じmass/areaと実free課金。完了した三run/既存A-count cutは再実行しない。
+- **E-451 PROVED-LEAN**: 元p/padded BlockWord prefix/zero-positive/三非空A-runで、次の供給前S-gap jにj+1<=元実free。全run長/全h/old履歴無制限。target源を入力せず、実Endableから得た窓の全源を覆う。二run E-414からの拡張。任意run数/C1/Q/H/SL/全射性は未解決。
+- **同じ証明chain**: E-442局所初期S排除 -> E-443第一A clock衝突 -> E-444中央S第一run課金 -> E-445 old target free-gap。E-447初期S全h band -> E-448二形への数学的pruning -> E-449条件付きcount -> E-450実元p初期Sfree-gap -> E-451全source合成。未検証のH06/133core・r4表や未LeanのE-384存在方向に依存しない。既存のkernel検証済みr3 simulation/count射影は証明依存に含む。
+- **E-452 PROVED-LEAN**: 任意混合語/任意run数のold targetとfinal band local源で、local源開始前にAがj+1個以上必要。元0の実Win/実A数へ接続済み。Aをfreeへ置き換える、源を単射課金する、rankが減るという結論はまだない。
+- **E-453 REFUTED**: A-before-sourceをactual free-before-sourceへ直接置換する強化はR5の元0/zero-positive符号historyでA5/free4に破れる。全tail free10なのでC1反例ではない。
+- **E-454 PROVED-LEAN / E-455 REFUTED**: source cutは原始key(u)>=-2のみで成立し、負massも許す。key下界を落として非負massだけにする弱化は(SA)^8のliteral窓で反証。必要なscalar供給とactualfreeへの接着は別義務。
+- **E-446 PROVED-LEAN**: 初期S target q<j+1と同じprefixのold第一/第三供給の併存は第一clock k>=q+2。M<=q+2なら第三old band供給条件下で第一実供給<=1。任意mixed futureの無条件joint capacityではない。
+- **停止保持**: 旧H06 133core monolith/旧r4 E-412/E-427 12837/40024（2回0/0）/E-424 R19等はSTOPPEDのまま。今回の二形proofは独立した全tuple数学的pruningであり、同jobへ時間/メモリを足していない。E-415/E-405/E-430の補助反例は親C1反例ではない。
+- **次の領域の派生評価 E-456 PROVED-LEAN**: 四A区間の元p実供給<=19、free-gap反例候補はfree4..17/A36/j17へ。S長とold historyは無限で反例不在は未検査。[一般kの予算](RESEARCH_NOTE_2026-10-29_RUN_COUNT_BOUND.md)の実供給<=k(k+1)-1だけはPROVED-PAPER（未Lean・人間レビュー未）。既存予算の和であり新しい源rankではない。
+- **未解決**: 四run以上/任意r rank/r4 E-388 COMPUTED・E-404 CONJECTURED、一般C1/Q/H/SL/全射性。E-385/E-386/E-387のr3全長/Qは既存入力。E-001/E-067/E-070 CONJECTURED、E-179 COMPUTEDのpinを保持。
+- **運用**: 当日journalは [2026-10-29](data/daily_research/2026-10-29.json)。06:03:24.618650実開始、未計上の遅延は補填しない。07:45新数学停止/07:59:40目安stop/08時期限。予定120分を実績にしない。CPU workerは子禁止cooperative一process、Lean capはper-processでありtree累積/OS ASではない。
+
+- **10/30 E-457 PROVED-LEAN（実行中）**: 四run old targetと最終S local源のsame key/areaは、先行全A>=2j+4を強制。元0の実old/local Winに接続し、既存A>=j+1 cutより強い必要条件。free-gap/C1は未解決。19予算を使うfree4..15/A34/j15は紙上のみ、combined count source512MBはSTOPPED、時間/メモリ追加なし。
+
+- **10/30 E-458 PROVED-LEAN（途中）**: 直前A-sourceの除外から第四ray local<=6、前3run10+第四7で元実供給17。E457の最終S源の枝は元p/zero-positive/実二P2のまま反例free4..13/A30/j13へ（不在は未検査）。E456の19/17残余をstrictに縮めた。
+
+- 2026-10-30 途中 E-459 REFUTED: 最終S源でもhead-only free課金は失敗（head8<R9/full17）。独立finite replay、Lean literal43は512MB STOPPED。親fulltail/C1反例ではない。
+- 2026-10-30 途中 E-460 PROVED-LEAN: 任意mixed sourceのAS交差量から遅延Kを保持したstrict A-before-source cut（free/rankではない）。個別検証済み、全check同期中。
+
+
+- **10/30 E-461 PROVED-LEAN（途中）**: M+L<j+1の最終S源部分枝ではfinal-band供給clock2のみ、全実供給13、元pの反例必要域free4..9/A22/j9。補集合M+L>=j+1/小gapの不在は未証明。
+
+- **10/30 E-462 PROVED-LEAN（途中）**: M+L>=j+1の補集合はsame old area/short-lastから全A>=2j+5。raw+3 sharp族は全長確認したがfree-gap反例ではない。両ML枝を同じ実countで合成し、最終S源全域の反例必要条件は元pでfree4..12/A29/j12（不在未検査）。
+
+- **10/30 E-463 PROVED-LEAN（途中）**: Nat元0/relative-positiveの同じS源反例候補でtarget old mass<=13/そのold suffix<=32/future長<=64/同じWin長<=96。他old supplierは切らない。幅命題のIntp adapter combinedは512MB STOP、p版だけは紙上corollary（未Lean）。
+
+- **10/30 E-464 PROVED-LEAN（途中）**: 固定head S5A3S4A4SA3 + 任意Sv ATの四run族で全A<=2実free+3。最終S源band/old targetのfull-tail free-gapを元Intp/padded/zero-positiveで証明。local clock2/例外(4,3)/(8,5)、old4以降というsource分類を経由。全四run/H01全域/C1は未解決。
+
+- **10/30時点の履歴 E-465 PROVED-LEAN / E-466 REFUTED / E-467 PROVED-PAPER（E467は10/31にE469と共にLean完了、現在状態は上のbrief）**: 任意zero-mass headのmoment帯でold>=4を全長供給。local halfは三run/S10/B64でもclock0反例。同じold targetをcoupleするとS10域で二case(v,T,j,B)=(1,5,4,46)/(2,7,5,56)だけという紙上縮約（未Lean・人間レビュー未）。local残余/不在は未証明。
+
+## 10/29 06:50以前の途中スナップショット（以下は履歴）
+
+この節の未解決/次の入口は当時の判断。現在状態は上のResearch briefを正本とする。
+
+- **10/29 E-447/E-448/E-449/E-450/E-451 PROVED-LEAN**: 初期Sの全h tail源制約と二形への数学的pruningから実free-gapを完了。E-445 old枝/既存全source分類と合成し、三非空A-runの元p zero-positive free-gap j+1<=actual freeを全run長で証明。COMPUTED表に依存しない。任意run数/C1は未解決。
+
+- **10/29 E-446 PROVED-LEAN**: 初期S targetでq<j+1、最終band old第三run供給があるとold第一run clockはk>=q+2。同じprefixのjoint制約からM<=q+2なら第一run実供給<=1。q>=j+1/off-bandは未排除で、初期S不在を証明したものではない。
+
+- **10/29途中 E-443/E-444/E-445 PROVED-LEAN**: 最終bandの第一A local源はclock2へ衝突、中央S源はM>=j+1を強制。元0/pの実countに全仮定を内部供給し、old target源の全長free-gapを完了。初期S四対/任意run数/C1は残る。E-442は基礎となる初期S local源排除。
+
+- **10/29途中 E-442 PROVED-LEAN**: 同じold targetがある最終bandでは初期S local源も排除。E-441と合わせ3型clockのみ、元実third-ray free+3>=min(T,j)。全old/三run/C1排除は未。H-20261029-01の初回gateは新source edgeで継続（詳細は当日DAILY）。
+
+- **10/29開始時の入口（現在は完了）**: [H-20261029-01](HYPOTHESIS_CARD_2026-10-29_OLD_TARGET_TAIL.md)。E-441の「old target時、最後j個のAではold供給不能」を実free下限へ。最初15分はK=min(T,j)のlocal clockと同じtarget mass/areaを結合する。完了したsource分類/順序を再証明しない。
+- **10/28の主な進展 PROVED-LEAN**: E-434は第一A target源、E-435は中央S target源を全長/元0/pの実free-gapへ接続。E-428/E-429と合わせ、真の三run反例のtarget源はold prefixか初期Sだけ。三run全体の不在は未証明。
+- **E-441 PROVED-LEAN**: 同じBlockWord prefixの二old源に同じ内部語を足したkey差>=9でstrict mass順序。差8/同massの境界は保持。old targetがj>=2のS後にP2なら先行old供給clock i+j<T、最後j個のAはlocalのみ。実f/二Winの元0と区間nのEndN同値はこの限定区間だけ。任意mixed futureのrankや全prefix消去ではない。
+- **E-438/E-439/E-440 PROVED-LEAN**: 同じold suffixのmass/areaと実first-run countから、三run反例全体はfree4..7/A<=17/j4..7。old targetはC<=5/全S<=14/target suffix長<=12へ。C6の二つの強制run形を実countで排除。source以前のoldprefixやmass>5の他供給源は残す。raw A>=2R+1のsharp P2族はC1反例ではない。
+- **E-436/E-437 PROVED-LEAN、初期S不在はCONJECTURED**: 実初期S target反例は(j,A)=(4,12),(4,14),(5,14),(6,16)。全hのlocal支配と第二/第三ray全source clock上界を供給。H06の133core証明書は10CPU/512MBでSTOPPED、全tuple包含/実count接着は未検査。同jobの時間/メモリ追加なし。有限必要modelはCOMPUTED、posthoc133core診断はOBSERVED。
+- **E-432/E-433 PROVED-LEAN**: 全h/R>=5/全M>=1の族 Sh AM S^(R+1) A^R S A^(R+1) の元実free>=2R-2。E432は紙上から更新、同じclaimを二重計上しない。zero/positive/targetを仮定しないが、一般三runではない。
+- **安定入力**: E-416 PROVED-LEAN（全三run供給<=11/旧残余A20）。E-418/E-419/E-420/E-421/E-422/E-423は実EndN/free/relative positive/targetを保つ有限代表で、有限域の不在未検査。E-417/E-425/E-426は第一freeと共同old spectrum/同mass area幅4、E-431は同一A/S source再使用式。これらを再実行しない。
+- **停止と反例**: E-412/E-427のr4表は12837states/40024edgesで2回削減0/0、kernel<=3000不通過、STOPPED。E-424 R19は3001gate STOPPED、R7/R11 kernelはOS AS1GiB拒否で未起動。E-415小local<=2/<=3、E-405無予算消去、E-430 count-only排除の反例は親C1反例ではない。資源追加や定数だけの修理なし。
+- **既存全長入力**: E-407全A gap、E-408/E-409全run平方式、E-410 local予算、E-411共通old一時計、E-413/E-414単一/二A-run free-gap。E-385/E-386/E-387のr<=3全長深さ4/8語/任意future Qは完了。r4はE-388 COMPUTED/E-404 CONJECTURED、E-392は16root仮定付き。E-400/E-403大表/商、部分layerをr4の証明と呼ばない。
+- **継承した範囲**: E-379/E-380/E-381は条件付きQ/context/面積、E-382/E-383の有限N32を延長しない。E-384存在方向は未Lean・人間レビュー未。E-389/E-390/E-391/E-393/E-394/E-395/E-396/E-397/E-398/E-399/E-401/E-402/E-406の各条件を保持する。
+- **C1全体との距離**: old/初期Sの三run排除、任意run数/任意rのrank、一般C1/Q/H/SLは未解決。HにはE-376/E-377とSL、SL d1にはC1/C2、d2にはTS。E-001/E-067/E-070 CONJECTURED、E-179 COMPUTEDのpinを保持。
+- **運用**: [10/28 DAILY](RESEARCH_HANDOFF_2026-10-28_DAILY.md)、[ノート](RESEARCH_NOTE_2026-10-28_C1_SOURCE_BUDGET.md)、[journal](data/daily_research/2026-10-28.json)。06–08時JST、07:45新数学停止、stop後に実績と残課題を毎日報告。全体連続無変化0は新edge由来、r4枝2の停止を日付でresetしない。CPU探索当初0、正確契約はcooperative single-Python/no-childのみ。Lean per-process capをtree累積cap/OS AS capと呼ばない。未計測child CPUは0扱いしない。
 
 ## 結論
 
@@ -699,6 +781,8 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
 3. computationのhorizon延長だけではlabelを上げない。
 4. exact命題が`CONJECTURED`でも、証明ルートが尽きれば別rowで`STOPPED`にする。
 5. current branchの変更は、この文書とregistryを同じchange setで更新する。
+   `Research brief` 節を現在の研究単位・未証明義務・有限証拠の範囲に同期する。
+   `make brief` はこの節と台帳を直接読み、ラベルや件数をコードに固定しない。
 6. `bash scripts/check_research_registry.sh`と`./scripts/check.sh`を通してからhandoffする。
 
 ## 現在の検証基準
@@ -812,4 +896,3 @@ the Recamán sequence.
   （不足 ≥ 3、長さ ≤ 30 で成立、TS ⇒ SL の d = 2）の部品。
 - **2026-10-20 終了時点**：H（⇒ E-070）⟸ EqClassW の帰納段 ⟸（場合 (B) は E-377 で排除）はみ出し補題 SL。SL は d = 0 が紙上で証明済み、
   d = 2 は補題 TS（長さ ≤ 34 で成立）に、d = 1 は a_z ≠ 2 での S1（データのみ）に帰着。詳細と要再検算の項目はカード H-20261020-01 と引き継ぎ文書。
-

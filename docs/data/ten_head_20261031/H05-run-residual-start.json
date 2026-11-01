@@ -1,0 +1,18 @@
+{
+  "tag": "H05-run-residual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentRunResidual.lean"
+  ],
+  "started_jst": "2026-10-31T06:27:44.998310+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentRunResidual.lean": "b1f599a79519348a5f77285dae8b895cacf68cc99655febdfd274c1dde399c04"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

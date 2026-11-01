@@ -1,0 +1,15 @@
+Recaman/ThreeRunSupplyBudget.lean:290:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a + b ≥ 2
+  a + b - 2*c ≥ 1
+  a + b - c ≤ 2
+where
+ a := ↑(cN (EndN f 0) (n + h) M)
+ b := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) (n + h) M)
+ c := ↑(cN P (n + h) M)
+ d := ↑(cN P (n + h) 2)

@@ -1,0 +1,29 @@
+[
+  {
+    "file": "Recaman/InitialSTargetBounds.lean",
+    "name": "square_mod_two",
+    "flags": [
+      "pure-arithmetic"
+    ],
+    "signature": "(x : Int) : x^2%2=x%2",
+    "direct_registry_citations": []
+  },
+  {
+    "file": "Recaman/OldTargetMassFive.lean",
+    "name": "six_parameters",
+    "flags": [
+      "pure-arithmetic"
+    ],
+    "signature": "(h M m L s T j : Nat)\n    (hM : 1≤M) (hm : 1≤m) (hL : 1≤L) (hs : 1≤s)\n    (hR : 5≤(j : Int)+1)\n    (hE0 : 0≤(M : Int)+(L : Int)+(T : Int)-((j : Int)+1))\n    (hE9 : (M : Int)+(L : Int)+(T : Int)-((j : Int)+1)≤9)\n    (hsmall : M≤3 → (M : Int)+(L : Int)+(T : Int)-((j : Int)+1)≤8)\n    (hbal : (6 : Int)=(h : Int)+(m : Int)+(s : Int)+((j : Int)+1)-((M : Int)+(L : Int)+(T : Int)))\n    (hq : (36 : Int)+2*((M : Int)*((m : Int)+(s : Int))+(L : Int)*(s : Int))≤\n      ((M : Int)+(L : Int)+(T : Int)-((j : Int)+1))^2-((j : Int)+1)^2+1) :\n    h=13 ∧ M=4 ∧ m=1 ∧ s=1 ∧ j=4 ∧ ((L=1 ∧ T=9) ∨ (L=2 ∧ T=8))",
+    "direct_registry_citations": []
+  },
+  {
+    "file": "Recaman/ThreeRunSourceShape.lean",
+    "name": "small_reuse_arithmetic",
+    "flags": [
+      "pure-arithmetic"
+    ],
+    "signature": "(R K : Nat) (d e P : Int)\n    (hR1 : 5≤R) (hR2 : R≤10) (hK1 : R<K) (hK2 : K+R≤20)\n    (hkey : 2*d*(K : Int)+2*P=(K : Int)^2-(R : Int)^2)\n    (hreuse : 2*(K : Int)*(e-d)=(R : Int)^2-1) : False",
+    "direct_registry_citations": []
+  }
+]

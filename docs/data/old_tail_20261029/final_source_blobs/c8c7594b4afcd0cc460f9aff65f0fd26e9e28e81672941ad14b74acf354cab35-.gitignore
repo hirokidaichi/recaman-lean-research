@@ -1,0 +1,31 @@
+.lake/
+.build/
+.cache/
+
+*.olean
+*.ilean
+*.c.o
+*.trace
+
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# C / C++ build outputs
+*.o
+*.dSYM/
+experiments/bin/
+
+/verify_recaman.*/
+/*.tar.gz
+/*.zip
+
+# Standalone visualizer app
+recaman-visualizer/
+

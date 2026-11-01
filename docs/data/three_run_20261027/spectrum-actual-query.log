@@ -1,0 +1,298 @@
+Recaman/BlockSuffixSpectrum.lean:130:33: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/BlockSuffixSpectrum.lean:187:28: error: `grind` failed
+case grind.1.1.1.2.2.2.2.2.2.2.2
+u v : List Bool
+hu : BlockWord u
+hne : u ≠ []
+hm_1 : mass u + mass v = 1
+ha : areaW u + ↑v.length * mass u + areaW v = 0
+hr : 1 ≤ mass u
+harea : 1 ≤ areaW u
+hlow : mass u * (mass u + 1) ≤ 2 * areaW u + 2
+hv_1 :
+  ones v * (ones v + 1) - (↑v.length - ones v) * (↑v.length - ones v + 1) - 2 * ones v * (↑v.length - ones v) ≤
+    2 * areaW v
+hmV : mass v = 2 * ones v - ↑v.length
+hA : 0 ≤ ones v ∧ ones v ≤ ↑v.length
+r A V U L : Int
+hm : r + (2 * A - L) = 1
+hz : U + L * r + V = 0
+hl : r * (r + 1) ≤ 2 * U + 2
+hv : A * (A + 1) - (L - A) * (L - A + 1) - 2 * A * (L - A) ≤ 2 * V
+h : -1 * r ^ 2 + (A + -1) ^ 2 + 1 ≤ 0
+h_1 : L - A = ↑v.length - ones v
+h_2 : ones v + 1 = ↑v.length - ones v + 1
+h_3 : A + 1 = ↑v.length - ones v + 1
+h_4 : ¬↑v.length = ↑v.length - ones v
+h_5 : ¬mass u = ↑v.length - ones v + 1
+h_6 : ¬↑v.length = L - A + 1
+h_7 : ¬↑v.length = r + 1
+h_8 : ¬mass u = ↑v.length - ones v
+h_9 : ¬r + 1 = L - A + 1
+h_10 : ¬mass u = A + -1
+h_11 : ¬r + 1 = ↑v.length - ones v
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] ¬u = []
+    [prop] mass u + mass v + -1 = 0
+    [prop] areaW u + areaW v + ↑v.length * mass u = 0
+    [prop] -1 * mass u + 1 ≤ 0
+    [prop] -1 * areaW u + 1 ≤ 0
+    [prop] -2 * areaW u + mass u * (mass u + 1) + -2 ≤ 0
+    [prop] -2 * areaW v + ones v * (ones v + 1) + -1 * (2 * ones v * (↑v.length - ones v)) +
+            -1 * ((↑v.length - ones v) * (↑v.length - ones v + 1)) ≤
+          0
+    [prop] mass v + -2 * ones v + ↑v.length = 0
+    [prop] -1 * ones v ≤ 0 ∧ ones v + -1 * ↑v.length ≤ 0
+    [prop] r + 2 * A + -1 * L + -1 = 0
+    [prop] V + U + L * r = 0
+    [prop] -2 * U + r * (r + 1) + -2 ≤ 0
+    [prop] -2 * V + A * (A + 1) + -1 * (2 * A * (L - A)) + -1 * ((L - A) * (L - A + 1)) ≤ 0
+    [prop] -1 * r ^ 2 + (A + -1) ^ 2 + 1 ≤ 0
+    [prop] L - A = ↑v.length - ones v
+    [prop] ones v + 1 = ↑v.length - ones v + 1
+    [prop] A + 1 = ↑v.length - ones v + 1
+    [prop] ¬↑v.length = ↑v.length - ones v
+    [prop] ¬mass u = ↑v.length - ones v + 1
+    [prop] ¬↑v.length = L - A + 1
+    [prop] ¬↑v.length = r + 1
+    [prop] ¬mass u = ↑v.length - ones v
+    [prop] ¬r + 1 = L - A + 1
+    [prop] ¬mass u = A + -1
+    [prop] ¬r + 1 = ↑v.length - ones v
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] -1 * ones v ≤ 0 ∧ ones v + -1 * ↑v.length ≤ 0
+    [prop] r = mass u
+    [prop] A = ones v
+    [prop] A = L - A
+    [prop] A = ↑v.length - ones v
+    [prop] L = ↑v.length
+    [prop] ones v = L - A
+    [prop] ones v = ↑v.length - ones v
+    [prop] r + 1 = mass u + 1
+    [prop] A + 1 = ones v + 1
+    [prop] A + 1 = L - A + 1
+    [prop] A + 1 = ↑v.length - ones v + 1
+    [prop] ones v + 1 = L - A + 1
+    [prop] ones v + 1 = ↑v.length - ones v + 1
+    [prop] L - A + 1 = ↑v.length - ones v + 1
+    [prop] L - A = ↑v.length - ones v
+    [prop] ones v + -1 * ↑v.length ≤ 0
+    [prop] -2 * V + A * (A + 1) + -1 * (2 * A * (L - A)) + -1 * ((L - A) * (L - A + 1)) ≤ 0
+    [prop] -2 * areaW v + ones v * (ones v + 1) + -1 * (2 * ones v * (↑v.length - ones v)) +
+            -1 * ((↑v.length - ones v) * (↑v.length - ones v + 1)) ≤
+          0
+    [prop] -1 * r ^ 2 + (A + -1) ^ 2 + 1 ≤ 0
+    [prop] -2 * U + r * (r + 1) + -2 ≤ 0
+    [prop] -2 * areaW u + mass u * (mass u + 1) + -2 ≤ 0
+    [prop] -1 * areaW u + 1 ≤ 0
+    [prop] -1 * mass u + 1 ≤ 0
+    [prop] -1 * ones v ≤ 0
+  [eqc] False propositions
+    [prop] r = A + 1
+    [prop] r = ones v + 1
+    [prop] r = L - A + 1
+    [prop] r = ↑v.length - ones v + 1
+    [prop] A = L
+    [prop] A = ↑v.length
+    [prop] L = ones v
+    [prop] L = L - A
+    [prop] L = ↑v.length - ones v
+    [prop] mass u = A + -1
+    [prop] mass u = A + 1
+    [prop] mass u = ones v + 1
+    [prop] mass u = L - A + 1
+    [prop] mass u = ↑v.length - ones v + 1
+    [prop] mass u = ↑v.length - ones v
+    [prop] ones v = ↑v.length
+    [prop] ↑v.length = r + 1
+    [prop] ↑v.length = L - A + 1
+    [prop] ↑v.length = L - A
+    [prop] ↑v.length = ↑v.length - ones v
+    [prop] r + 1 = L - A + 1
+    [prop] r + 1 = ↑v.length - ones v
+    [prop] u = []
+  [eqc] Equivalence classes
+    [eqc] {r, mass u}
+    [eqc] {A, ones v, L - A, ↑v.length - ones v}
+    [eqc] {mass v,
+        0,
+        V + U + L * r,
+        areaW u + areaW v + ↑v.length * mass u,
+        mass u + mass v + -1,
+        mass v + -2 * ones v + ↑v.length,
+        r + 2 * A + -1 * L + -1,
+        r * L + V + U,
+        mass u * ↑v.length + areaW u + areaW v}
+      [eqc] {↑0}
+    [eqc] {r + 1, mass u + 1}
+    [eqc] {A + 1, ones v + 1, L - A + 1, ↑v.length - ones v + 1}
+    [eqc] {mass u + mass v, r + 2 * A + -1 * L}
+    [eqc] {r ^ 2 + r, mass u ^ 2 + mass u}
+    [eqc] {r * L, mass u * ↑v.length}
+    [eqc] {r * (r + 1), mass u * (mass u + 1)}
+    [eqc] {A * (A + 1), ones v * (ones v + 1), (L - A) * (L - A + 1), (↑v.length - ones v) * (↑v.length - ones v + 1)}
+    [eqc] {L * r, ↑v.length * mass u}
+    [eqc] {-1 * (2 * A * (L - A)), -1 * (2 * ones v * (↑v.length - ones v))}
+    [eqc] {-1 * ((L - A) * (L - A + 1)), -1 * ((↑v.length - ones v) * (↑v.length - ones v + 1))}
+    [eqc] {-1 * r ^ 2, -1 * mass u ^ 2}
+    [eqc] {-1 * A ^ 2, -1 * ones v ^ 2}
+    [eqc] {-2 * A, -2 * ones v}
+    [eqc] {2 * A, 2 * ones v}
+    [eqc] {2 * A ^ 2, 2 * ones v ^ 2}
+    [eqc] {2 * A * (L - A), 2 * ones v * (↑v.length - ones v)}
+    [eqc] {r ^ 2, mass u ^ 2}
+    [eqc] {A ^ 2, ones v ^ 2}
+    [eqc] others
+      [eqc] {L, ↑v.length}
+      [eqc] {-1 * L, -1 * ↑v.length}
+      [eqc] {-1 * L ^ 2, -1 * ↑v.length ^ 2}
+      [eqc] {L ^ 2, ↑v.length ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: L - A = ↑v.length - ones v
+      [cases] source: Model-based theory combination at argument #4 of
+            (L - A) * (L - A + 1)
+          and
+            (↑v.length - ones v) * (↑v.length - ones v + 1)
+    [cases] [1/2]: ones v + 1 = ↑v.length - ones v + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑v.length - ones v) * (↑v.length - ones v + 1)
+          and
+            ones v * (ones v + 1)
+    [cases] [1/2]: A + 1 = ↑v.length - ones v + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            A * (A + 1)
+          and
+            (↑v.length - ones v) * (↑v.length - ones v + 1)
+    [cases] [2/2]: ↑v.length = ↑v.length - ones v
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑v.length - ones v) * (↑v.length - ones v + 1)
+          and
+            ↑v.length * mass u
+    [cases] [2/2]: mass u = ↑v.length - ones v + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑v.length - ones v) * (↑v.length - ones v + 1)
+          and
+            ↑v.length * mass u
+    [cases] [2/2]: ↑v.length = L - A + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (L - A) * (L - A + 1)
+          and
+            mass u * ↑v.length
+    [cases] [2/2]: ↑v.length = r + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            mass u * (mass u + 1)
+          and
+            mass u * ↑v.length
+    [cases] [2/2]: mass u = ↑v.length - ones v
+      [cases] source: Model-based theory combination at argument #4 of
+            (L - A) * (L - A + 1)
+          and
+            mass u * ↑v.length
+    [cases] [2/2]: r + 1 = L - A + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (L - A) * (L - A + 1)
+          and
+            mass u * (mass u + 1)
+    [cases] [2/2]: mass u = A + -1
+      [cases] source: Model-based theory combination at argument #4 of
+            (A + -1) ^ 2
+          and
+            mass u ^ 2
+    [cases] [2/2]: r + 1 = ↑v.length - ones v
+      [cases] source: Model-based theory combination at argument #5 of
+            2 * ones v * (↑v.length - ones v)
+          and
+            mass u * (mass u + 1)
+  [ematch] E-matching patterns
+    [thm] List.eq_nil_of_length_eq_zero: [@List.length #2 #1]
+    [thm] List.length_nil: [@List.length #0 (@List.nil _)]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] r := 1
+    [assign] A := 3
+    [assign] V := -6
+    [assign] U := 0
+    [assign] L := 6
+    [assign] areaW u := 1
+    [assign] areaW v := -7
+    [assign] mass u := 1
+    [assign] mass v := 0
+    [assign] ones v := 3
+    [assign] v.length := 6
+    [assign] 「r ^ 2」 := 1
+    [assign] 「A ^ 2」 := 5
+    [assign] 「L ^ 2」 := 24
+    [assign] 「mass u ^ 2」 := 1
+    [assign] 「ones v ^ 2」 := 5
+    [assign] 「↑v.length ^ 2」 := 24
+    [assign] 「(A + -1) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] mass u + mass v + -1 = 0
+      [_] mass v + ↑v.length + -2 * ones v = 0
+      [_] areaW u + areaW v + -2 * A + 2 * L = 0
+      [_] ↑v.length + -1 * ones v + A + -1 * L = 0
+      [_] ones v + A + -1 * L = 0
+      [_] r + 2 * A + -1 * L + -1 = 0
+      [_] 2 * A + -1 * L = 0
+      [_] L + V + U = 0
+    [diseqs] Disequalities
+      [_] ¬-1 * V + -1 * U = 0
+      [_] ¬V + U = 0
+      [_] ¬-1 * V + -1 * U = 0
+      [_] ¬-1 * V + -1 * U = 0
+      [_] ¬-1 * V + -1 * U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬-1 * V + -1 * U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬V + U = 0
+      [_] ¬-1 * V + -1 * U + -2 = 0
+      [_] ¬-1 * V + -1 * U + -2 = 0
+      [_] ¬V + U + 2 = 0
+      [_] ¬V + U + 2 = 0
+      [_] ¬V + U + 4 = 0
+      [_] ¬V + U + 4 = 0
+Recaman/BlockSuffixSpectrum.lean:195:85: error: Type mismatch
+  hv
+has type
+  0 - ↑v.length * (↑v.length + 1) - 2 * 0 * ↑v.length ≤ 2 * areaW v
+but is expected to have type
+  -↑v.length * (↑v.length + 1) ≤ 2 * areaW v
+Recaman/BlockSuffixSpectrum.lean:196:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 0
+  h - i ≥ 0
+  g ≥ 0
+  2*b - d + e + f ≥ 0
+  a + b ≤ -1
+  2*a + 2*b + k ≥ 0
+  2*a + 2*b + c ≤ 2
+where
+ a := ↑v.length * mass u
+ b := areaW v
+ c := mass u * (mass u + 1)
+ d := ones v * (ones v + 1)
+ e := (↑v.length - ones v) * (↑v.length - ones v + 1)
+ f := 2 * ones v * (↑v.length - ones v)
+ g := ↑v.length
+ h := (ones v - 1) ^ 2
+ i := mass u ^ 2
+ j := mass u * (mass u - 1)
+ k := -mass u * (mass u - 1)

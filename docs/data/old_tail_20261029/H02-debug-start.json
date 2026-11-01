@@ -1,0 +1,18 @@
+{
+  "tag": "H02-debug",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetClockCollision.lean"
+  ],
+  "started_jst": "2026-10-29T06:16:38.779317+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetClockCollision.lean": "b5d073100a0bd82d535047578ebbd2de16975e563c5499b3dbff096f3752c0de"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

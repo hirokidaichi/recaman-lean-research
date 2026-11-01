@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-10-30T07:11:14.182374+09:00",
+  "tag": "H15-charge",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/four_run_20261030/four_charge_probe.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "c9137e546998e085e8e8818b6582f963242018733881d0a590c6430890217ae7",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 83365,
+  "process_group": 83365,
+  "finished_jst": "2026-10-30T07:11:14.923347+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7410709999967366,
+  "worker_user_seconds": 0.7216239999999999,
+  "worker_sys_seconds": 0.010277999999999999,
+  "worker_cpu_seconds": 0.7319019999999999,
+  "worker_maxrss_native": 23396352,
+  "controller_cpu_seconds": 0.0018610000000000007,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

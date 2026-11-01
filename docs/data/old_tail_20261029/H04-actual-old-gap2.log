@@ -1,0 +1,85 @@
+Recaman/ThreeRunOldTargetGap.lean:111:42: error: unsolved goals
+f : Nat → Bool
+n t h M m L s T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hT : 1 ≤ T
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + i) = true
+hB : 0 < h + M + m + L + s + T
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + T ≤ x → x < n + h + M + m + L + s + T + j → f x = false
+he : EndN f 0 (n + h + M + m + L + s + T + j)
+hwin : Win f t (n + h + M + m + L + s + T + j - t)
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) < j + 1
+hr :
+  4 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) ∧
+    cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) ≤ 7 ∧
+      M + L + T ≤ 17 ∧ 4 ≤ j ∧ j ≤ 7 ∧ mass (seg f t (n - t)) ≤ 7 ∧ h + m + s ≤ 16 ∧ (seg f t (n - t)).length ≤ 17
+B2 : Nat := h + M + m + L
+B : Nat := B2 + s
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+v : List Bool :=
+  List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+    List.replicate s false
+hv : seg f n B = v
+hshape :
+  seg f n (h + M + m + L + s + T) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate T true
+hword : seg f n (h + M + m + L + s + T + j) = v ++ List.replicate T true ++ List.replicate j false
+ho :
+  BlockWord (seg f t (n - t)) ∧
+    1 ≤ mass (seg f t (n - t)) ∧
+      mass (seg f t (n - t)) = ↑h + ↑m + ↑s + ↑j + 1 - (↑M + ↑L + ↑T) ∧
+        mass (seg f t (n - t)) ^ 2 + 2 * (↑M * (↑m + ↑s) + ↑L * ↑s) ≤
+            (↑M + ↑L + ↑T) * (↑M + ↑L + ↑T - 2 * (↑j + 1)) + 1 ∧
+          2 * (j + 1) + 1 ≤ M + L + T
+hc10 : cN (EndN f 0) n (h + M + m + L + s + T) ≤ 10
+hones : 0 + ↑M + 0 + ↑L + 0 + ↑T = ↑(cN (fun u => f u = true) n (h + M + m + L + s + T))
+hpartall :
+  cN (fun u => f u = true) n (h + M + m + L + s + T) =
+    cN (EndN f 0) n (h + M + m + L + s + T) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (h + M + m + L + s + T)
+hbudget : M + L + T ≤ j + 10
+hlen : w.length = n
+hd : List.drop t w = seg f t (n - t)
+htarget : seg f t (n - t + (B + T + j)) = List.drop t w ++ v ++ List.replicate T true ++ List.replicate j false
+hwin' : Win f t (n + B + T + j - t)
+hmass : mass (List.drop t w ++ v ++ List.replicate T true ++ List.replicate j false) = 1
+harea : areaW (List.drop t w ++ v ++ List.replicate T true ++ List.replicate j false) = 0
+hpre3 : seg f 0 (n + B) = w ++ v
+hA3' : ∀ (i : Nat), i < T → f (n + B + i) = true
+hrun : cN (EndN f 0) (n + B) T = rayCount (w ++ v) T
+hp3 : T = rayCount (w ++ v) T + cN (fun u => f u = true ∧ ¬EndN f 0 u) (n + B) T
+hhead : cN (fun x => f x = true) n (h + M + m + L) ≤ 2 * cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L) + 1
+hsupply : cN (EndN f 0) n (h + M + m + L) ≤ 5
+hheadword :
+  seg f n (h + M + m + L + 0 + 0) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate 0 false ++
+      List.replicate 0 true
+hheadword' :
+  seg f n (h + M + m + L) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true
+hheadones : 0 + ↑M + 0 + ↑L = ↑(cN (fun u => f u = true) n (h + M + m + L))
+hheadpart :
+  cN (fun u => f u = true) n (h + M + m + L) =
+    cN (EndN f 0) n (h + M + m + L) + cN (fun u => f u = true ∧ ¬EndN f 0 u) n (h + M + m + L)
+hhead2 : M + L ≤ 2 * cN P n B2 + 1
+hhead5 : M + L ≤ cN P n B2 + 5
+hz : cN P (n + B2) s = 0
+hsplit1 : cN P n (B2 + s) = cN P n B2 + 0
+hsplit2 : cN P n (B + T) = cN P n B + cN P (n + B) T
+⊢ cN P n B2 + cN P (n + B) T = cN P n B2 + cN P (n + (B2 + s)) T

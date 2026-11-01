@@ -1,0 +1,13 @@
+Recaman/MomentBandOldClock.lean:35:17: warning: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/MomentBandOldClock.lean:124:26: warning: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

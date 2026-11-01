@@ -1,0 +1,11 @@
+Recaman/TenHeadFreeGap.lean:14:11: error: unsolved goals
+P : Nat → Prop
+s K : Nat
+ih : cN P s K = cN (fun i => P (s + i)) 0 K
+⊢ (cN (fun i => P (s + i)) 0 K + if P (s + K) then 1 else 0) =
+    cN (fun i => P (s + i)) 0 K + if P (s + (0 + K)) then 1 else 0
+Recaman/TenHeadFreeGap.lean:49:4: error: No goals to be solved
+Recaman/TenHeadFreeGap.lean:115:4: error: 'change' tactic failed, pattern
+  T = cN P (n + 20 + v) T + cN (EndN f 0) (n + 20 + v) T
+is not definitionally equal to target
+  T = cN (EndN f 0) (n + 20 + v) T + cN (fun u => f u = true ∧ ¬EndN f 0 u) (n + 20 + v) T

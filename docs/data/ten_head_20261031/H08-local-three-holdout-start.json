@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-10-31T06:36:00.078193+09:00",
+  "tag": "H08-local-three-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/moment_three_probe.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "9a34e545a4de278421c31ef91b1392af900389b6f096d9a7cac3184c8de5fcf3",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 79400,
+  "process_group": 79400
+}

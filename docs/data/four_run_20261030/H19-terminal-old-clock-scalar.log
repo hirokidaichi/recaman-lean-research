@@ -1,0 +1,153 @@
+Recaman/TerminalOldClock.lean:27:57: error: `grind` failed
+case grind.1.2.1.2.2.2.2.2
+C V I : Int
+hC : 3 ≤ C
+hV : 1 ≤ V
+hI : 0 ≤ I
+hm : C - V + I = 1
+hk : -2 ≤ 122 + 2 * V * V - 4 * C * (10 + V)
+hi : ¬4 ≤ I
+x : Int := V - I
+hx : 2 ≤ x
+hp : 0 ≤ I * (3 - I)
+hiq : I * I ≤ 3 * I
+hq : 0 ≤ (x - 2) * (x + 2)
+hxq : 4 ≤ x * x
+h : -44 * V + 40 * I + 2 * I * I + -1 * (2 * (V - I) * (V - I)) + 85 ≤ 0
+h_1 : V - I = 3 - I
+h_2 : ¬I = 3 - I
+h_3 : 10 + V = V - I + 2
+h_4 : ¬I = V - I - 2
+h_5 : ¬V - I = V - I - 2
+h_6 : ¬V = V - I + 2
+h_7 : ¬V = V - I - 2
+h_8 : ¬C = V - I - 2
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * C + 3 ≤ 0
+    [prop] -1 * V + 1 ≤ 0
+    [prop] -1 * I ≤ 0
+    [prop] C + -1 * V + I + -1 = 0
+    [prop] -1 * (2 * V * V) + 4 * C * (10 + V) + -124 ≤ 0
+    [prop] I + -3 ≤ 0
+    [prop] -1 * V + I + 2 ≤ 0
+    [prop] -1 * (I * (3 - I)) ≤ 0
+    [prop] -3 * I + I * I ≤ 0
+    [prop] -1 * ((V - I - 2) * (V - I + 2)) ≤ 0
+    [prop] -1 * ((V - I) * (V - I)) + 4 ≤ 0
+    [prop] -44 * V + 40 * I + 2 * I * I + -1 * (2 * (V - I) * (V - I)) + 85 ≤ 0
+    [prop] V - I = 3 - I
+    [prop] ¬I = 3 - I
+    [prop] 10 + V = V - I + 2
+    [prop] ¬I = V - I - 2
+    [prop] ¬V - I = V - I - 2
+    [prop] ¬V = V - I + 2
+    [prop] ¬V = V - I - 2
+    [prop] ¬C = V - I - 2
+  [eqc] True propositions
+    [prop] 10 + V = V - I + 2
+    [prop] V - I = 3 - I
+    [prop] I + -3 ≤ 0
+    [prop] -44 * V + 40 * I + 2 * I * I + -1 * (2 * (V - I) * (V - I)) + 85 ≤ 0
+    [prop] -1 * V + I + 2 ≤ 0
+    [prop] -1 * (2 * V * V) + 4 * C * (10 + V) + -124 ≤ 0
+    [prop] -1 * C + 3 ≤ 0
+    [prop] -1 * V + 1 ≤ 0
+    [prop] -1 * ((V - I) * (V - I)) + 4 ≤ 0
+    [prop] -3 * I + I * I ≤ 0
+    [prop] -1 * I ≤ 0
+    [prop] -1 * (I * (3 - I)) ≤ 0
+    [prop] -1 * ((V - I - 2) * (V - I + 2)) ≤ 0
+  [eqc] False propositions
+    [prop] C = V - I - 2
+    [prop] V = 10 + V
+    [prop] V = V - I + 2
+    [prop] V = V - I - 2
+    [prop] I = V - I
+    [prop] I = 3 - I
+    [prop] I = V - I - 2
+    [prop] V - I = V - I - 2
+  [eqc] Equivalence classes
+    [eqc] {0, C + -1 * V + I + -1}
+    [eqc] {10 + V, V - I + 2}
+    [eqc] {V - I, 3 - I}
+  [cases] Case analyses
+    [cases] [1/2]: V - I = 3 - I
+      [cases] source: Model-based theory combination at argument #5 of
+            (V - I) * (V - I)
+          and
+            I * (3 - I)
+    [cases] [2/2]: I = 3 - I
+      [cases] source: Model-based theory combination at argument #5 of
+            I * I
+          and
+            I * (3 - I)
+    [cases] [1/2]: 10 + V = V - I + 2
+      [cases] source: Model-based theory combination at argument #5 of
+            (V - I - 2) * (V - I + 2)
+          and
+            4 * C * (10 + V)
+    [cases] [2/2]: I = V - I - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            (V - I - 2) * (V - I + 2)
+          and
+            I * (3 - I)
+    [cases] [2/2]: V - I = V - I - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            (V - I) * (V - I)
+          and
+            (V - I - 2) * (V - I + 2)
+    [cases] [2/2]: V = V - I + 2
+      [cases] source: Model-based theory combination at argument #5 of
+            (V - I - 2) * (V - I + 2)
+          and
+            2 * V * V
+    [cases] [2/2]: V = V - I - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            V * I
+          and
+            (V - I - 2) * (V - I + 2)
+    [cases] [2/2]: C = V - I - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            (V - I - 2) * (V - I + 2)
+          and
+            C * V
+  [cutsat] Assignment satisfying linear constraints
+    [assign] C := 3
+    [assign] V := 2
+    [assign] I := 0
+    [assign] x := 23
+    [assign] 「V ^ 2」 := 0
+    [assign] 「I ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] C + -1 * V + I + -1 = 0
+      [_] V + -3 = 0
+      [_] I + 8 = 0
+[grind] Issues
+  [issue] monomial expected, found numeral
+        10
+      internalizing as variable
+Recaman/TerminalOldClock.lean:28:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 4
+  g ≥ 0
+  e ≥ 0
+  c - d ≥ -124
+  0 ≤ b ≤ 3
+  3*b - f ≥ 0
+  a ≥ 1
+  a - b ≥ 2
+  44*a - 40*b - i + j ≤ 84
+where
+ a := V
+ b := I
+ c := 2 * V * V
+ d := 4 * C * (10 + V)
+ e := I * (3 - I)
+ f := I * I
+ g := (x - 2) * (x + 2)
+ h := x * x
+ i := 2 * I * I
+ j := 2 * x * x

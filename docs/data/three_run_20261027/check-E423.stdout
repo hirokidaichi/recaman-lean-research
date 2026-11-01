@@ -1,0 +1,5 @@
+{"tag": "check-E423", "argv": ["./scripts/check.sh"], "started_jst": "2026-10-27T06:56:08.748030+09:00", "wall_cap_seconds": 90, "cpu_limit_per_process_seconds": 60, "source_sha256": {"./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"}, "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants", "exit_code": 1, "reason": "completed", "wall_seconds": 6.744545292109251, "cpu_seconds": 5.75351, "finished_jst": "2026-10-27T06:56:15.492538+09:00"}
+Module graph audit: Recaman root reaches 419 of 419 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+error: E-423 is not referenced by docs/CURRENT_FRONTIER.md
+

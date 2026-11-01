@@ -1,0 +1,142 @@
+Recaman/TerminalOldClock.lean:39:29: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/TerminalOldClock.lean:62:6: error: `grind` failed
+case grind.1.1.2.2.2
+w : List Bool
+hw : BlockWord w
+v i : Nat
+hv : 1 ≤ v
+t : Nat
+ht : t < w.length
+u : List Bool := List.drop t w
+hu : BlockWord u
+hne : u ≠ []
+hC : 1 ≤ mass u
+hl : -2 ≤ runKey u
+hmseed : mass seed = 0
+hkseed : runKey seed = -124
+hcseed : cntF seed = 10
+hm : mass u + (0 + -↑v) + ↑i = 1
+hk : runKey u + (-124 + 4 * ↑v * 0 - 2 * ↑v ^ 2) + 4 * mass u * (↑10 + ↑v) = -2
+hkey : runKey u = 122 + 2 * ↑v ^ 2 - 4 * mass u * (10 + ↑v)
+hC3 : 3 ≤ mass u
+hi : ¬4 ≤ i
+x : Int := ↑v - ↑i
+hx : 2 ≤ x
+hp : 0 ≤ ↑i * (3 - ↑i)
+hq : 0 ≤ (x - 2) * (x + 2)
+h : -22 * ↑v + 20 * ↑i + ↑i ^ 2 + -1 * (↑v + -1 * ↑i) ^ 2 + 43 ≤ 0
+h_1 : ↑v = ↑v + -1 * ↑i
+h_2 : ↑i = ↑v - ↑i - 2
+h_3 : ¬↑i = 3 - ↑i
+h_4 : ¬↑i = 10 + ↑v
+h_5 : ¬10 + ↑v = 3 - ↑i
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord w
+    [prop] 1 ≤ v
+    [prop] t + 1 ≤ w.length
+    [prop] BlockWord (List.drop t w)
+    [prop] ¬List.drop t w = []
+    [prop] -1 * mass (List.drop t w) + 1 ≤ 0
+    [prop] -1 * runKey (List.drop t w) + -2 ≤ 0
+    [prop] mass seed = 0
+    [prop] runKey seed = -124
+    [prop] cntF seed = 10
+    [prop] mass (List.drop t w) + -1 * ↑v + ↑i + -1 = 0
+    [prop] runKey (List.drop t w) + 4 * mass (List.drop t w) * (10 + ↑v) + -2 * ↑v ^ 2 + -122 = 0
+    [prop] runKey (List.drop t w) + 4 * mass (List.drop t w) * (10 + ↑v) + -2 * ↑v ^ 2 + -122 = 0
+    [prop] -1 * mass (List.drop t w) + 3 ≤ 0
+    [prop] i ≤ 3
+    [prop] -1 * ↑v + ↑i + 2 ≤ 0
+    [prop] -1 * (↑i * (3 - ↑i)) ≤ 0
+    [prop] -1 * ((↑v - ↑i - 2) * (↑v - ↑i + 2)) ≤ 0
+    [prop] -22 * ↑v + 20 * ↑i + ↑i ^ 2 + -1 * (↑v + -1 * ↑i) ^ 2 + 43 ≤ 0
+    [prop] ↑v = ↑v + -1 * ↑i
+    [prop] ↑i = ↑v - ↑i - 2
+    [prop] ¬↑i = 3 - ↑i
+    [prop] ¬↑i = 10 + ↑v
+    [prop] ¬10 + ↑v = 3 - ↑i
+  [eqc] True propositions
+    [prop] BlockWord w
+    [prop] BlockWord (List.drop t w)
+    [prop] ↑v = ↑v + -1 * ↑i
+    [prop] ↑i = ↑v - ↑i - 2
+    [prop] -22 * ↑v + 20 * ↑i + ↑i ^ 2 + -1 * (↑v + -1 * ↑i) ^ 2 + 43 ≤ 0
+    [prop] -1 * ↑v + ↑i + 2 ≤ 0
+    [prop] -1 * mass (List.drop t w) + 1 ≤ 0
+    [prop] -1 * mass (List.drop t w) + 3 ≤ 0
+    [prop] -1 * runKey (List.drop t w) + -2 ≤ 0
+    [prop] -1 * (↑i * (3 - ↑i)) ≤ 0
+    [prop] -1 * ((↑v - ↑i - 2) * (↑v - ↑i + 2)) ≤ 0
+    [prop] i ≤ 3
+    [prop] 1 ≤ v
+    [prop] t + 1 ≤ w.length
+  [eqc] False propositions
+    [prop] ↑i = 10 + ↑v
+    [prop] ↑i = 3 - ↑i
+    [prop] 10 + ↑v = 3 - ↑i
+    [prop] List.drop t w = []
+  [eqc] Equivalence classes
+    [eqc] {cntF seed, 10}
+    [eqc] {mass seed,
+        0,
+        mass (List.drop t w) + -1 * ↑v + ↑i + -1,
+        runKey (List.drop t w) + 4 * mass (List.drop t w) * (10 + ↑v) + -2 * ↑v ^ 2 + -122}
+      [eqc] {↑i, ↑v - ↑i - 2}
+    [eqc] {runKey seed, -124}
+    [eqc] others
+      [eqc] {mass (List.drop t w), 3 - ↑i}
+      [eqc] {↑v, ↑v + -1 * ↑i}
+      [eqc] {-1 * ↑v ^ 2, -1 * (↑v + -1 * ↑i) ^ 2}
+      [eqc] {↑v ^ 2, (↑v + -1 * ↑i) ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: ↑v = ↑v + -1 * ↑i
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑v + -1 * ↑i) ^ 2
+          and
+            ↑v ^ 2
+    [cases] [1/2]: ↑i = ↑v - ↑i - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑v - ↑i - 2) * (↑v - ↑i + 2)
+          and
+            ↑i * (3 - ↑i)
+    [cases] [2/2]: ↑i = 3 - ↑i
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑v * ↑i
+          and
+            ↑i * (3 - ↑i)
+    [cases] [2/2]: ↑i = 10 + ↑v
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑v * ↑i
+          and
+            4 * mass (List.drop t w) * (10 + ↑v)
+    [cases] [2/2]: 10 + ↑v = 3 - ↑i
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑i * (3 - ↑i)
+          and
+            4 * mass (List.drop t w) * (10 + ↑v)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] v := 2
+    [assign] i := 0
+    [assign] t := 0
+    [assign] x := 24
+    [assign] cntF seed := 10
+    [assign] mass seed := 0
+    [assign] mass (List.drop t w) := 3
+    [assign] runKey seed := -124
+    [assign] runKey (List.drop t w) := -2
+    [assign] w.length := 1
+    [assign] 「↑v ^ 2」 := 0
+    [assign] 「↑i ^ 2」 := 0
+    [assign] 「(↑v + -1 * ↑i) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑v + -1 * mass (List.drop t w) + -1 * ↑i + 1 = 0
+      [_] mass (List.drop t w) + -3 = 0
+      [_] runKey (List.drop t w) + 14 = 0
+      [_] ↑i = 0
+[grind] Issues
+  [issue] monomial expected, found numeral
+        10
+      internalizing as variable

@@ -1,0 +1,21 @@
+{
+  "started_jst": "2026-10-31T07:28:01.435191+09:00",
+  "tag": "H19-repair-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/ten_head_20261031/lower_charge_repair.py",
+    "holdout",
+    "30",
+    "8"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "b682d0175a374171ce4bac9d70e8e188e5ef1ded0777d9412dfcf7ef7d371311",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 93309,
+  "process_group": 93309
+}

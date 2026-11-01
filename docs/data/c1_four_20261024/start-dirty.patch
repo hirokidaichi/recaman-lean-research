@@ -1,0 +1,3276 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fb29cfd..e6e691d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,8 +7,21 @@ on:
+     branches: [ main ]
+ 
+ jobs:
++  harness:
++    name: Research harness (${{ matrix.os }})
++    runs-on: ${{ matrix.os }}
++    strategy:
++      matrix:
++        os: [ubuntu-latest, macos-latest]
++    steps:
++      - name: Checkout repository
++        uses: actions/checkout@v4
++      - name: Test brief freshness and research-harness gates
++        run: make test-tools
++
+   verify:
+     name: Lean Audit & Empirical Regression Suite
++    needs: harness
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout repository
+diff --git a/Makefile b/Makefile
+index 55fd4fa..689a8e6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,12 +1,17 @@
+-.PHONY: all check test test-probes probes manifest check-manifest brief clean help
++.PHONY: all check test test-tools test-probes probes manifest check-manifest brief clean help
+ 
+ all: check
+ 
+ brief:
+ 	@python3 scripts/dev_tool.py brief
+ 
+-test: check test-probes check-manifest
+-	@echo "All Lean, empirical, and viewer checks passed."
++test: test-tools check test-probes check-manifest
++	@echo "All research-tool, Lean, empirical, and viewer checks passed."
++
++test-tools:
++	@python3 scripts/test_dev_tool.py
++	@python3 scripts/test_research_session.py
++	@bash scripts/test_harness_gates.sh
+ 
+ check:
+ 	@./scripts/check.sh
+@@ -31,7 +36,8 @@ help:
+ 	@echo "Recamán Lean Research - make targets:"
+ 	@echo "  make brief          - Show ultra-compact active research frontier summary"
+ 	@echo "  make check          - Run Lean builds, architecture check, and axiom audit"
+-	@echo "  make test           - Run all checks: Lean audit, empirical tests, manifest check"
++	@echo "  make test           - Run all checks: research tools, Lean audit, empirical tests, viewer"
++	@echo "  make test-tools     - Run brief, research-time accounting and isolated harness tests"
+ 	@echo "  make test-probes    - Build and run empirical regression tests (experiments/)"
+ 	@echo "  make probes         - Build all core empirical probe binaries (experiments/bin/)"
+ 	@echo "  make manifest       - Regenerate viewer/manifest.json"
+diff --git a/Recaman.lean b/Recaman.lean
+index 4dfb6e8..e2f7da7 100644
+--- a/Recaman.lean
++++ b/Recaman.lean
+@@ -375,6 +375,7 @@ import Recaman.OwnerFamilyLagEleven
+ import Recaman.HallMatching
+ import Recaman.PeriodicOwnerFamilyLagEleven
+ import Recaman.ShortTightDonorAvoidance
++import Recaman.SS2OldestPattern
+ import Recaman.P2SubtractionLevelSum
+ import Recaman.P2WindowLengthBounds
+ import Recaman.SuffixHallOwnerMap
+diff --git a/Recaman/Audit.lean b/Recaman/Audit.lean
+index 6927442..6a77eea 100644
+--- a/Recaman/Audit.lean
++++ b/Recaman/Audit.lean
+@@ -2806,3 +2806,100 @@ import Recaman
+ #print axioms Recaman.BlockSuffixPositivity.block_suffix_positive
+ #print axioms Recaman.BlockSuffixPositivity.no_endable_after_S_run
+ #print axioms Recaman.BlockSuffixPositivity.ts_one
++#print axioms Recaman.BlockSuffixPositivity.area_nondecreasing_tail
++#print axioms Recaman.BlockSuffixPositivity.block_prefix_low_clock_not_endable
++#print axioms Recaman.BlockSuffixPositivity.two_marks_le_count
++#print axioms Recaman.BlockSuffixPositivity.two_nonsupplied_additions_of_recovery
++#print axioms Recaman.BlockSuffixPositivity.shifted_area_nonneg
++#print axioms Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit
++#print axioms Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit_int
++#print axioms Recaman.BlockSuffixPositivity.block_prefix_suffix_length_bound
++#print axioms Recaman.BlockSuffixPositivity.endable_iff_trimmed_block_prefix
++#print axioms Recaman.BlockSuffixPositivity.block_prefix_suffix_length_le_eleven
++#print axioms Recaman.BlockSuffixPositivity.endable_iff_last_eleven_of_depth_four
++#print axioms Recaman.BlockSuffixPositivity.block_append
++#print axioms Recaman.BlockSuffixPositivity.block_replicate_A
++#print axioms Recaman.BlockSuffixPositivity.block_drop_free
++#print axioms Recaman.BlockSuffixPositivity.block_drop_aas
++#print axioms Recaman.BlockSuffixPositivity.block_drop_triple
++#print axioms Recaman.BlockSuffixPositivity.block_suffix_append
++#print axioms Recaman.BlockSuffixPositivity.block_suffix
++#print axioms Recaman.BlockSuffixPositivity.block_suffix_representative
++#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_lower
++#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_sharp
++#print axioms Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_lower
++#print axioms Recaman.BlockSuffixPositivity.triple_area_quadratic_sharp
++#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_equality
++#print axioms Recaman.BlockSuffixPositivity.area_split_at
++#print axioms Recaman.BlockSuffixPositivity.old_window_area_upper
++#print axioms Recaman.BlockSuffixPositivity.endable_tail_mass_representative
++#print axioms Recaman.BlockSuffixPositivity.block_mass_nonnegative
++#print axioms Recaman.BlockSuffixPositivity.block_mass_one
++#print axioms Recaman.BlockSuffixPositivity.block_mass_two
++#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_upper
++#print axioms Recaman.BlockSuffixPositivity.block_area_upper_sharp
++#print axioms Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_upper
++
++-- 2026-10-23: one finite certificate and its actual-word simulation.
++#print axioms Recaman.BlockSuffixPositivity.areaW_count_lower
++#print axioms Recaman.BlockSuffixPositivity.old_window_count_barrier
++#print axioms Recaman.BlockSuffixPositivity.checked_wordArea_eq
++#print axioms Recaman.BlockSuffixPositivity.ones_drop_le
++#print axioms Recaman.BlockSuffixPositivity.localSupply_iff
++#print axioms Recaman.BlockSuffixPositivity.localSupply_trim
++#print axioms Recaman.BlockSuffixPositivity.seg_drop
++#print axioms Recaman.BlockSuffixPositivity.localSupply_seg_iff
++#print axioms Recaman.BlockSuffixPositivity.old_window_signature
++#print axioms Recaman.BlockSuffixPositivity.ones_seg_eq_count
++#print axioms Recaman.BlockSuffixPositivity.supply_clock_smallA
++#print axioms Recaman.BlockSuffixPositivity.trim_append_letter
++#print axioms Recaman.BlockSuffixPositivity.actualSmallState_zero
++#print axioms Recaman.BlockSuffixPositivity.actualSmallState_S
++#print axioms Recaman.BlockSuffixPositivity.actualSmallState_local
++#print axioms Recaman.BlockSuffixPositivity.actualSmallState_admitted
++#print axioms Recaman.BlockSuffixPositivity.actualSmallState_A
++#print axioms Recaman.BlockSuffixPositivity.count_prefix_le
++#print axioms Recaman.BlockSuffixPositivity.addition_endable_partition
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_state_member
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_additions_le_seven
++#print axioms Recaman.BlockSuffixPositivity.seg_take
++#print axioms Recaman.BlockSuffixPositivity.endpoint_words_depth_checked
++#print axioms Recaman.BlockSuffixPositivity.endpoint_word_prefix_depth
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_word
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_depth_offset
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_depth
++#print axioms Recaman.ThreeNonsuppliedData.verifiedRange_at
++#print axioms Recaman.ThreeNonsuppliedData.member_additions_lt_eight
++#print axioms Recaman.ThreeNonsuppliedData.member_endpoint_word
++#print axioms Recaman.ThreeNonsuppliedData.member_stepS
++#print axioms Recaman.ThreeNonsuppliedData.member_stepA
++#print axioms Recaman.ThreeNonsuppliedData.rows_verified
++#print axioms Recaman.ThreeNonsuppliedData.initial_member
++
++-- 2026-10-23: a_z<=3 area Q for arbitrary future length/depth.
++#print axioms Recaman.BlockSuffixPositivity.wordSupply_admitted
++#print axioms Recaman.BlockSuffixPositivity.actualQState_zero
++#print axioms Recaman.BlockSuffixPositivity.actualQState_deficit
++#print axioms Recaman.BlockSuffixPositivity.actualQState_S
++#print axioms Recaman.BlockSuffixPositivity.actualQState_A
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_Q_state_member
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_of_depth_four
++#print axioms Recaman.BlockSuffixPositivity.exists_minimum_visit
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_nonnegative
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_from_zero
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_no_old_window
++#print axioms Recaman.ThreeNonsuppliedQData.verifiedRange_at
++#print axioms Recaman.ThreeNonsuppliedQData.member_area
++#print axioms Recaman.ThreeNonsuppliedQData.member_stepS
++#print axioms Recaman.ThreeNonsuppliedQData.member_stepA
++#print axioms Recaman.ThreeNonsuppliedQData.rows_verified
++#print axioms Recaman.ThreeNonsuppliedQData.initial_member
++
++-- S-gap/terminal certificate and original integer-base adapters.
++#print axioms Recaman.BlockSuffixPositivity.supplied_after_S_gap_bound
++#print axioms Recaman.BlockSuffixPositivity.tail_S5A3S4A4SA3_no_supply_check
++#print axioms Recaman.BlockSuffixPositivity.no_additions_after_S5A3S4A4SA3
++#print axioms Recaman.BlockSuffixPositivity.nonsupplied_count_shift
++#print axioms Recaman.BlockSuffixPositivity.endableCount_shift
++#print axioms Recaman.BlockSuffixPositivity.subtractionCount_shift
++#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_int
+diff --git a/Recaman/BlockSuffixPositivity.lean b/Recaman/BlockSuffixPositivity.lean
+index bb11e42..ebcdcba 100644
+--- a/Recaman/BlockSuffixPositivity.lean
++++ b/Recaman/BlockSuffixPositivity.lean
+@@ -1,5 +1,7 @@
+ import Recaman.SingleWindowEquality
+ import Recaman.CapacityEqualityInduction
++import Recaman.ThreeNonsuppliedData
++import Recaman.ThreeNonsuppliedQData
+ 
+ namespace Recaman.BlockSuffixPositivity
+ 
+@@ -245,4 +247,1595 @@ theorem ts_one (e : Int → Bool) (p : Int) (n j : Nat)
+       · exact hE m' hm'le (by omega) (by omega) hmk
+   exact no_endable_after_S_run e p n (n - m') j hBW hseg hS hb
+ 
++/-! ## Low clocks after a padded block prefix
++
++The lower bound `m` need not be attained. This is the running-minimum
++exclusion used in the C1 area argument; it does not prove that argument's
++remaining area inequality. -/
++
++theorem area_nondecreasing_tail (f : Nat → Bool) (t n : Nat) : ∀ j : Nat,
++    (∀ i, n < i → i ≤ n + j → Fw f t ≤ Fw f (t + i)) →
++    Ar f t n ≤ Ar f t (n + j)
++  | 0, _ => by simp
++  | j+1, h => by
++      have ih := area_nondecreasing_tail f t n j (fun i hi hle => h i hi (by omega))
++      have hlast := h (n + j + 1) (by omega) (by omega)
++      rw [show n + (j + 1) = n + j + 1 from rfl, Ar_succ]
++      have heq : t + (n + j) + 1 = t + (n + j + 1) := by omega
++      rw [heq]
++      omega
++
++/-- A supplied clock after a padded block prefix is at least two levels above
++every lower bound on the intervening walk. The prefix and the tail are both
++about the same sign string; no capacity or equality conjecture is assumed. -/
++theorem block_prefix_low_clock_not_endable (f : Nat → Bool) (n a b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hnb : n ≤ b) (m : Int)
++    (hmin : ∀ u, n ≤ u → u ≤ b → m ≤ Fw f u)
++    (hlow : Fw f b ≤ m + 1) : ¬ EndN f 0 b := by
++  rintro ⟨_, t, k, _, htk, hk, hF, hAr⟩
++  rw [htk] at hF
++  have htm : Fw f t ≤ m := by omega
++  by_cases htn : t < n
++  · obtain ⟨_, hpos⟩ := block_suffix_positive_walk f 0 n a hβ hseg t
++      (Nat.zero_le t) (by omega)
++    simp only [Nat.zero_add] at hpos
++    have hnk : n - t ≤ k := by omega
++    have hext := area_nondecreasing_tail f t (n - t) (k - (n - t)) (by
++      intro i hi hle
++      have hlo := hmin (t + i) (by omega) (by omega)
++      omega)
++    rw [show n - t + (k - (n - t)) = k by omega] at hext
++    omega
++  · have hbase := hmin t (by omega) (by omega)
++    have hge := area_ge f t k (by
++      intro i hi hle
++      have hlo := hmin (t + i) (by omega) (by omega)
++      omega)
++    rw [htk] at hge
++    omega
++
++theorem two_marks_le_count (P : Nat → Prop) (s u v : Nat) : ∀ j : Nat,
++    s ≤ u → u < v → v < s + j → P u → P v → 2 ≤ cN P s j
++  | 0, hsu, huv, hv, _, _ => by omega
++  | j+1, hsu, huv, hv, hpu, hpv => by
++      classical
++      by_cases hvj : v < s + j
++      · have ih := two_marks_le_count P s u v j hsu huv hvj hpu hpv
++        by_cases hp : P (s+j)
++        · rw [cN_succ_pos P s j hp]; omega
++        · rw [cN_succ_neg P s j hp]; exact ih
++      · have hveq : v = s + j := by omega
++        have hpos : 1 ≤ cN P s j := by
++          apply Classical.byContradiction
++          intro h
++          have hz : cN P s j = 0 := by omega
++          exact not_of_cN_zero P s j hz u hsu (by omega) hpu
++        have hp : P (s+j) := by simpa [hveq] using hpv
++        rw [cN_succ_pos P s j hp]
++        omega
++
++/-- Recovering two levels from a low visit forces two distinct nonsupplied A
++clocks after that visit. Both are nonsupplied with respect to the original
++left endpoint, rather than a rebased interval. -/
++theorem two_nonsupplied_additions_of_recovery (f : Nat → Bool) (n a r b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hnr : n ≤ r) (hrb : r ≤ b) (m : Int) (hr : Fw f r = m)
++    (hmin : ∀ u, n ≤ u → u ≤ b → m ≤ Fw f u)
++    (hhigh : m + 2 ≤ Fw f b) :
++    ∃ u v, r ≤ u ∧ u < v ∧ v < b ∧
++      Fw f u = m ∧ Fw f v = m + 1 ∧
++      f u = true ∧ ¬ EndN f 0 u ∧ f v = true ∧ ¬ EndN f 0 v := by
++  obtain ⟨v, hrv, hvb, hv, hvA⟩ := ivt f b (m+2) hhigh (b-r) r (by omega) (by omega)
++  obtain ⟨u, hru, huv, hu, huA⟩ := ivt f v (m+1) (by omega) (v-r) r (by omega) (by omega)
++  have hnu := block_prefix_low_clock_not_endable f n a u hβ hseg (by omega) m
++    (fun i hni hiu => hmin i hni (by omega)) (by omega)
++  have hnv := block_prefix_low_clock_not_endable f n a v hβ hseg (by omega) m
++    (fun i hni hiv => hmin i hni (by omega)) (by omega)
++  exact ⟨u, v, hru, huv, hvb, by omega, by omega, huA, hnu, hvA, hnv⟩
++
++theorem shifted_area_nonneg (f : Nat → Bool) (t : Nat) (level : Int) : ∀ k : Nat,
++    (∀ i, 1 ≤ i → i ≤ k → level - 1 ≤ Fw f (t+i)) →
++    0 ≤ Ar f t k + (k : Int) * (Fw f t - level + 1)
++  | 0, _ => by simp [Ar]
++  | k+1, h => by
++      have ih := shifted_area_nonneg f t level k (fun i hi hle => h i hi (by omega))
++      have hlast := h (k+1) (by omega) (by omega)
++      rw [Ar_succ]
++      push_cast
++      have heq : t + k + 1 = t + (k+1) := by omega
++      rw [heq]
++      grind
++
++/-- The C1 area inequality holds if the walk visits a lower bound after q0
++and there is at most one nonsupplied A from q0 to b. In particular this covers
++the case when a minimum of the entire tail is attained after q0. It leaves
++the case of an older minimum open. -/
++theorem area_nonneg_of_fresh_low_visit (f : Nat → Bool) (n a q0 r b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hnq : n ≤ q0) (hqr : q0 ≤ r) (hrb : r ≤ b)
++    (m : Int) (hr : Fw f r = m)
++    (hmin : ∀ u, n ≤ u → u ≤ b → m ≤ Fw f u)
++    (hbudget : cN (fun u => f u = true ∧ ¬ EndN f 0 u) q0 (b-q0) ≤ 1) :
++    0 ≤ Ar f n (b-n) + ((b-n : Nat) : Int) * (Fw f n - Fw f b + 1) := by
++  have htop : Fw f b ≤ m + 1 := by
++    apply Classical.byContradiction
++    intro h
++    obtain ⟨u, v, hru, huv, hvb, _, _, huA, hnu, hvA, hnv⟩ :=
++      two_nonsupplied_additions_of_recovery f n a r b hβ hseg (by omega) hrb m hr hmin (by omega)
++    have htwo := two_marks_le_count (fun u => f u = true ∧ ¬ EndN f 0 u)
++      q0 u v (b-q0) (by omega) huv (by omega) ⟨huA, hnu⟩ ⟨hvA, hnv⟩
++    omega
++  exact shifted_area_nonneg f n (Fw f b) (b-n) (by
++    intro i hi hle
++    have hm := hmin (n+i) (by omega) (by omega)
++    omega)
++
++open Classical in
++/-- Integer-clock form, with nonsupplied A clocks counted from the original
++left endpoint p throughout. The area uses the walk translated to p. -/
++theorem area_nonneg_of_fresh_low_visit_int (e : Int → Bool) (p : Int)
++    (n a q0 r b : Nat) {β : List Bool} (hβ : BlockWord β)
++    (hseg : segment e p n = β ++ List.replicate a true)
++    (hnq : n ≤ q0) (hqr : q0 ≤ r) (hrb : r ≤ b)
++    (m : Int) (hr : Fw (fun i => e (p + (i : Int))) r = m)
++    (hmin : ∀ u, n ≤ u → u ≤ b → m ≤ Fw (fun i => e (p + (i : Int))) u)
++    (hbudget : countP (fun c => e c = true ∧ ¬ Endable e p c)
++      (p + (q0 : Int)) (b-q0) ≤ 1) :
++    0 ≤ Ar (fun i => e (p + (i : Int))) n (b-n) +
++      ((b-n : Nat) : Int) *
++        (Fw (fun i => e (p + (i : Int))) n - Fw (fun i => e (p + (i : Int))) b + 1) := by
++  classical
++  have hp0 : p = p + ((0 : Nat) : Int) := by simp
++  rw [segment_seg e p p 0 hp0] at hseg
++  have hb := countP_cN (fun c => e c = true ∧ ¬ Endable e p c)
++    p (p + (q0 : Int)) q0 rfl (b-q0)
++  rw [hb] at hbudget
++  have hc := cN_congr
++    (fun i => e (p + (i : Int)) = true ∧ ¬ Endable e p (p + (i : Int)))
++    (fun i => e (p + (i : Int)) = true ∧ ¬ EndN (fun j => e (p + (j : Int))) 0 i)
++    q0 (b-q0) (by
++      intro i _ _
++      rw [endable_iff e p p (p + (i : Int)) 0 i hp0 rfl])
++  rw [hc] at hbudget
++  exact area_nonneg_of_fresh_low_visit (fun i => e (p + (i : Int))) n a q0 r b
++    hβ hseg hnq hqr hrb m hr hmin hbudget
++
++/-! ## Exact old-history trimming under a depth bound -/
++
++/-- A padded block suffix of mass r has length at most 5r/2. -/
++theorem block_prefix_suffix_length_bound (f : Nat → Bool) (n a t : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (htn : t ≤ n) :
++    2 * ((n-t : Nat) : Int) ≤ 5 * (Fw f n - Fw f t) := by
++  have hdense := dense_pad hβ a
++  rw [← hseg] at hdense
++  have hsplit := suffix_split f 0 n t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add, Nat.sub_zero] at hsplit
++  have hd := hdense (seg f 0 t) (seg f t (n-t)) hsplit.symm
++  have hm := mass_cntF (seg f t (n-t))
++  rw [seg_mass, show t + (n-t) = n by omega] at hm
++  have hl := seg_length f t (n-t)
++  rw [hl] at hm hd
++  omega
++
++/-- No endpoint whose height is at least g-D needs a start more than
++5(D+1)/2 clocks before the end of a padded block prefix. This equivalence
++preserves every actual supply clock, including windows of arbitrary lag. -/
++theorem endable_iff_trimmed_block_prefix (f : Nat → Bool) (n a s b D : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hsn : s ≤ n) (_hnb : n ≤ b)
++    (hlevel : Fw f n - (D : Int) ≤ Fw f b)
++    (hradius : 5 * ((D : Int) + 1) < 2 * (((n-s : Nat) : Int) + 1)) :
++    EndN f 0 b ↔ EndN f s b := by
++  constructor
++  · rintro ⟨hA, t, k, _, htk, hk, hF, hAr⟩
++    have hst : s ≤ t := by
++      apply Classical.byContradiction
++      intro h
++      have ht : t ≤ n := by omega
++      have hbnd := block_prefix_suffix_length_bound f n a t hβ hseg ht
++      rw [htk] at hF
++      omega
++    exact ⟨hA, t, k, hst, htk, hk, hF, hAr⟩
++  · exact end_mono f 0 s b (Nat.zero_le s)
++
++/-- The density bound and mass parity improve the depth-four radius to 11. -/
++theorem block_prefix_suffix_length_le_eleven (f : Nat → Bool) (n a t : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (htn : t ≤ n)
++    (hmass : Fw f n - Fw f t ≤ 5) : n-t ≤ 11 := by
++  have hbnd := block_prefix_suffix_length_bound f n a t hβ hseg htn
++  have hm := mass_cntF (seg f t (n-t))
++  rw [seg_mass, show t + (n-t) = n by omega, seg_length] at hm
++  omega
++
++/-- Exact history reduction at depth four. Starts before s can be discarded
++when at least the last 11 clocks of the padded block prefix remain. -/
++theorem endable_iff_last_eleven_of_depth_four (f : Nat → Bool) (n a s b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hsn : s ≤ n) (_hnb : n ≤ b) (hwidth : 11 ≤ n-s)
++    (hlevel : Fw f n - 4 ≤ Fw f b) : EndN f 0 b ↔ EndN f s b := by
++  constructor
++  · rintro ⟨hA, t, k, _, htk, hk, hF, hAr⟩
++    have hst : s ≤ t := by
++      apply Classical.byContradiction
++      intro h
++      rw [htk] at hF
++      have hbnd := block_prefix_suffix_length_le_eleven f n a t hβ hseg
++        (by omega) (by omega)
++      omega
++    exact ⟨hA, t, k, hst, htk, hk, hF, hAr⟩
++  · exact end_mono f 0 s b (Nat.zero_le s)
++
++theorem block_append {u v : List Bool} (hu : BlockWord u) (hv : BlockWord v) :
++    BlockWord (u ++ v) := by
++  induction hv with
++  | nil => simpa using hu
++  | free _ ih => simpa [List.append_assoc] using BlockWord.free ih
++  | aas _ ih => simpa [List.append_assoc] using BlockWord.aas ih
++  | triple _ ih => simpa [List.append_assoc] using BlockWord.triple ih
++
++theorem block_replicate_A : ∀ j : Nat, BlockWord (List.replicate j true)
++  | 0 => BlockWord.nil
++  | j+1 => by
++      rw [List.replicate_succ']
++      exact BlockWord.free (block_replicate_A j)
++
++theorem block_drop_free (k : Nat) : BlockWord (([true] : List Bool).drop k) := by
++  cases k with
++  | zero => exact BlockWord.free BlockWord.nil
++  | succ k => simp; exact BlockWord.nil
++
++theorem block_drop_aas (k : Nat) : BlockWord (aasW.drop k) := by
++  have hk : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ 4 ≤ k := by omega
++  rcases hk with rfl | rfl | rfl | rfl | hk
++  · exact BlockWord.aas BlockWord.nil
++  · exact block_replicate_A 3
++  · exact block_replicate_A 2
++  · exact block_replicate_A 1
++  · have hz : aasW.drop k = [] := List.drop_eq_nil_iff.mpr (by simpa [aasW] using hk)
++    rw [hz]; exact BlockWord.nil
++
++theorem block_drop_triple (k : Nat) : BlockWord (tripW.drop k) := by
++  have hk : k = 0 ∨ k = 1 ∨ k = 2 ∨ k = 3 ∨ k = 4 ∨ k = 5 ∨
++      k = 6 ∨ k = 7 ∨ k = 8 ∨ k = 9 ∨ 10 ≤ k := by omega
++  rcases hk with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | hk
++  · exact BlockWord.triple BlockWord.nil
++  · exact BlockWord.aas (BlockWord.free (BlockWord.aas BlockWord.nil))
++  · exact BlockWord.aas (block_replicate_A 4)
++  · exact BlockWord.aas (block_replicate_A 3)
++  · exact BlockWord.aas (block_replicate_A 2)
++  · exact BlockWord.aas (block_replicate_A 1)
++  · exact BlockWord.aas BlockWord.nil
++  · exact block_replicate_A 3
++  · exact block_replicate_A 2
++  · exact block_replicate_A 1
++  · have hz : tripW.drop k = [] := List.drop_eq_nil_iff.mpr (by simpa [tripW] using hk)
++    rw [hz]; exact BlockWord.nil
++
++theorem block_suffix_append (w B : List Bool)
++    (hw : ∀ u v, u ++ v = w → BlockWord v)
++    (hB : ∀ k, BlockWord (B.drop k)) :
++    ∀ u v, u ++ v = w ++ B → BlockWord v := by
++  intro u v h
++  rcases List.append_eq_append_iff.mp h with ⟨a', h1, h2⟩ | ⟨c', _, h2⟩
++  · rw [h2]
++    have hfull : BlockWord B := by simpa using hB 0
++    exact block_append (hw u a' h1.symm) hfull
++  · have hv : v = B.drop c'.length := by rw [h2, List.drop_left]
++    rw [hv]
++    exact hB _
++
++/-- The block-word language is closed under arbitrary suffixes. -/
++theorem block_suffix {w : List Bool} (hw : BlockWord w) :
++    ∀ u v : List Bool, u ++ v = w → BlockWord v := by
++  induction hw with
++  | nil =>
++      intro u v h
++      have hv := (List.append_eq_nil_iff.mp h).2
++      rw [hv]; exact BlockWord.nil
++  | free _ ih => exact block_suffix_append _ _ ih block_drop_free
++  | aas _ ih => exact block_suffix_append _ _ ih block_drop_aas
++  | triple _ ih => exact block_suffix_append _ _ ih block_drop_triple
++
++/-- Every W-clock suffix of a block word is itself a block word, so old
++contexts have representatives of length exactly W. -/
++theorem block_suffix_representative (W : Nat) {w : List Bool}
++    (hw : BlockWord w) (hW : W ≤ w.length) :
++    ∃ u v : List Bool, w = u ++ v ∧ BlockWord v ∧ v.length = W := by
++  let u := w.take (w.length-W)
++  let v := w.drop (w.length-W)
++  have heq : u ++ v = w := List.take_append_drop _ _
++  exact ⟨u, v, heq.symm, block_suffix hw u v heq, by simp [v]; omega⟩
++
++/-! ## Quadratic area retained by the old block prefix -/
++
++/-- A mass-sensitive lower bound, sharper than positive area alone. -/
++theorem block_area_quadratic_lower {w : List Bool} (hw : BlockWord w) :
++    mass w * (mass w + 1) ≤ 2 * areaW w + 2 := by
++  induction hw with
++  | nil => decide
++  | @free w hw ih =>
++      rw [areaW_append, mass_append]
++      change (mass w + 1) * (mass w + 1 + 1) ≤
++        2 * (areaW w + 1 * mass w + 1) + 2
++      grind
++  | @aas w hw ih =>
++      rcases block_mass hw with he | hm
++      · subst w; decide
++      · rw [areaW_append, mass_append]
++        change (mass w + 2) * (mass w + 2 + 1) ≤
++          2 * (areaW w + 4 * mass w + 2) + 2
++        grind
++  | @triple w hw ih =>
++      rcases block_mass hw with he | hm
++      · subst w; decide
++      · rw [areaW_append, mass_append]
++        change (mass w + 4) * (mass w + 4 + 1) ≤
++          2 * (areaW w + 10 * mass w + 9) + 2
++        grind
++
++/-- The additive constant 2 is sharp at every mass at least 2. -/
++theorem block_area_quadratic_sharp (j : Nat) :
++    2 * areaW (aasW ++ List.replicate j true) + 2 =
++      mass (aasW ++ List.replicate j true) * (mass (aasW ++ List.replicate j true) + 1) := by
++  induction j with
++  | zero => decide
++  | succ j ih =>
++      rw [List.replicate_succ', ← List.append_assoc,
++        areaW_append (aasW ++ List.replicate j true) [true],
++        mass_append (aasW ++ List.replicate j true) [true]]
++      change 2 * (areaW (aasW ++ List.replicate j true) +
++          1 * mass (aasW ++ List.replicate j true) + 1) + 2 =
++        (mass (aasW ++ List.replicate j true) + 1) *
++          (mass (aasW ++ List.replicate j true) + 1 + 1)
++      grind
++
++theorem triple_area_quadratic_sharp (j : Nat) :
++    2 * areaW (tripW ++ List.replicate j true) + 2 =
++      mass (tripW ++ List.replicate j true) * (mass (tripW ++ List.replicate j true) + 1) := by
++  induction j with
++  | zero => decide
++  | succ j ih =>
++      rw [List.replicate_succ', ← List.append_assoc,
++        areaW_append (tripW ++ List.replicate j true) [true],
++        mass_append (tripW ++ List.replicate j true) [true]]
++      change 2 * (areaW (tripW ++ List.replicate j true) +
++          1 * mass (tripW ++ List.replicate j true) + 1) + 2 =
++        (mass (tripW ++ List.replicate j true) + 1) *
++          (mass (tripW ++ List.replicate j true) + 1 + 1)
++      grind
++
++/-- The extremal prefix area has exactly two block shapes, followed only by A. -/
++theorem block_area_quadratic_equality {w : List Bool} (hw : BlockWord w) :
++    (2 * areaW w + 2 = mass w * (mass w + 1)) ↔
++      ∃ j : Nat, w = aasW ++ List.replicate j true ∨ w = tripW ++ List.replicate j true := by
++  constructor
++  · induction hw with
++    | nil => intro he; contradiction
++    | @free w hw ih =>
++        intro he
++        have hprev : 2 * areaW w + 2 = mass w * (mass w + 1) := by
++          rw [areaW_append, mass_append] at he
++          change 2 * (areaW w + 1 * mass w + 1) + 2 =
++            (mass w + 1) * (mass w + 1 + 1) at he
++          grind
++        obtain ⟨j, hj | hj⟩ := ih hprev
++        · refine ⟨j+1, Or.inl ?_⟩
++          rw [hj, List.replicate_succ', List.append_assoc]
++        · refine ⟨j+1, Or.inr ?_⟩
++          rw [hj, List.replicate_succ', List.append_assoc]
++    | @aas w hw ih =>
++        intro he
++        rcases block_mass hw with hz | hm
++        · subst w
++          exact ⟨0, Or.inl rfl⟩
++        · have hb := block_area_quadratic_lower hw
++          rw [areaW_append, mass_append] at he
++          change 2 * (areaW w + 4 * mass w + 2) + 2 =
++            (mass w + 2) * (mass w + 2 + 1) at he
++          grind
++    | @triple w hw ih =>
++        intro he
++        rcases block_mass hw with hz | hm
++        · subst w
++          exact ⟨0, Or.inr rfl⟩
++        · have hb := block_area_quadratic_lower hw
++          rw [areaW_append, mass_append] at he
++          change 2 * (areaW w + 10 * mass w + 9) + 2 =
++            (mass w + 4) * (mass w + 4 + 1) at he
++          grind
++  · rintro ⟨j, hj | hj⟩
++    · rw [hj]; exact block_area_quadratic_sharp j
++    · rw [hj]; exact triple_area_quadratic_sharp j
++
++/-- The actual prefix area of any older start has the same quadratic bound.
++It supplies a stronger input to the old-minimum case without assuming Q. -/
++theorem block_prefix_area_quadratic_lower (f : Nat → Bool) (n a t : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (htn : t ≤ n) :
++    (Fw f n - Fw f t) * (Fw f n - Fw f t + 1) ≤ 2 * Ar f t (n-t) + 2 := by
++  have hfull : BlockWord (seg f 0 n) := by
++    rw [hseg]
++    exact block_append hβ (block_replicate_A a)
++  have hsplit := suffix_split f 0 n t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add, Nat.sub_zero] at hsplit
++  have hsuffix := block_suffix hfull (seg f 0 t) (seg f t (n-t)) hsplit.symm
++  have hbound := block_area_quadratic_lower hsuffix
++  simpa only [← Ar_areaW, seg_mass, show t + (n-t) = n by omega] using hbound
++
++theorem area_split_at (f : Nat → Bool) (t n b : Nat) (htn : t ≤ n) (hnb : n ≤ b) :
++    Ar f t (b-t) = Ar f t (n-t) + Ar f n (b-n) +
++      ((b-n : Nat) : Int) * (Fw f n - Fw f t) := by
++  have hsplit := suffix_split f t (b-t) n htn (by omega)
++  rw [show t + (b-t) = b by omega] at hsplit
++  rw [Ar_areaW, hsplit, areaW_append, ← Ar_areaW, ← Ar_areaW, seg_length, seg_mass,
++    show t + (n-t) = n by omega]
++  omega
++
++/-- Any actual P2 window starting in the old block prefix forces a
++mass-dependent negative area after that prefix. This is a necessary
++condition on such a window, not its unconditional exclusion. -/
++theorem old_window_area_upper (f : Nat → Bool) (n a t b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (htn : t ≤ n) (hnb : n ≤ b) (hwin : Win f t (b-t)) :
++    2 * (Ar f n (b-n) + ((b-n : Nat) : Int) * (Fw f n - Fw f b + 1)) ≤
++      2 - (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1) := by
++  have hprefix := block_prefix_area_quadratic_lower f n a t hβ hseg htn
++  have hsplit := area_split_at f t n b htn hnb
++  obtain ⟨_, hF, hzero⟩ := hwin
++  rw [show t + (b-t) = b by omega] at hF
++  have htlevel : Fw f t = Fw f b - 1 := by omega
++  rw [htlevel] at hprefix hsplit
++  grind
++
++/-- Over a finite tail, the earliest older window start gives one common
++block-prefix representative of mass at most D+1. Every tail supply clock is
++preserved. Deficit of the deleted prefix is intentionally not asserted. -/
++theorem endable_tail_mass_representative (f : Nat → Bool) (n a B D : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hmin : ∀ b, n ≤ b → b < B → Fw f n - (D : Int) ≤ Fw f b) :
++    ∃ s : Nat, s ≤ n ∧ BlockWord (seg f s (n-s)) ∧
++      (s = n ∨ (1 ≤ Fw f n - Fw f s ∧ Fw f n - Fw f s ≤ (D : Int)+1)) ∧
++      ∀ b, n ≤ b → b < B → (EndN f 0 b ↔ EndN f s b) := by
++  classical
++  let P : Nat → Prop := fun t => t < n ∧
++    ∃ b, n ≤ b ∧ b < B ∧ f b = true ∧ Win f t (b-t)
++  have hfull : BlockWord (seg f 0 n) := by
++    rw [hseg]
++    exact block_append hβ (block_replicate_A a)
++  by_cases hex : ∃ t, P t
++  · obtain ⟨t, ht⟩ := hex
++    obtain ⟨s, hsn, hsP, hfirst⟩ := first_mark P n ⟨t, by have := ht.1; omega, ht⟩
++    obtain ⟨hslt, b, hnb, hbB, _, hw⟩ := hsP
++    have hsplit := suffix_split f 0 n s (Nat.zero_le _) (by omega)
++    simp only [Nat.zero_add, Nat.sub_zero] at hsplit
++    have hsword := block_suffix hfull (seg f 0 s) (seg f s (n-s)) hsplit.symm
++    have hpos := (block_suffix_positive_walk f 0 n a hβ hseg s (Nat.zero_le _) (by omega)).1
++    simp only [Nat.zero_add] at hpos
++    have hlevel := hw.2.1
++    rw [show s + (b-s) = b by omega] at hlevel
++    have hlo := hmin b hnb hbB
++    refine ⟨s, hsn, hsword, Or.inr ⟨hpos, by omega⟩, ?_⟩
++    intro u hnu huB
++    constructor
++    · rintro ⟨hA, t, k, _, htk, hwin⟩
++      have hst : s ≤ t := by
++        apply Classical.byContradiction
++        intro h
++        have hPt : P t := by
++          refine ⟨by omega, u, hnu, huB, hA, ?_⟩
++          have heq : k = u-t := by omega
++          simpa only [heq] using hwin
++        exact hfirst t (by omega) hPt
++      exact ⟨hA, t, k, hst, htk, hwin⟩
++    · exact end_mono f 0 s u (Nat.zero_le _)
++  · refine ⟨n, Nat.le_refl _, ?_, Or.inl rfl, ?_⟩
++    · simpa [seg] using BlockWord.nil
++    · intro u hnu huB
++      constructor
++      · rintro ⟨hA, t, k, _, htk, hwin⟩
++        have hnt : n ≤ t := by
++          apply Classical.byContradiction
++          intro h
++          apply hex
++          refine ⟨t, by omega, u, hnu, huB, hA, ?_⟩
++          have heq : k = u-t := by omega
++          simpa only [heq] using hwin
++        exact ⟨hA, t, k, hnt, htk, hwin⟩
++      · exact end_mono f 0 n u (Nat.zero_le _)
++
++theorem block_mass_nonnegative {w : List Bool} (hw : BlockWord w) : 0 ≤ mass w := by
++  rcases block_mass hw with rfl | hm
++  · decide
++  · omega
++
++theorem block_mass_one {w : List Bool} (hw : BlockWord w) (hm : mass w = 1) : w = [true] := by
++  rcases block_first hw with he | ⟨v, hv, he | he | he⟩
++  · subst w; simp [mass] at hm
++  · rw [he, mass_append] at hm
++    change 1 + mass v = 1 at hm
++    rcases block_mass hv with hz | hpos
++    · rw [hz] at he; simpa using he
++    · omega
++  · have hv0 := block_mass_nonnegative hv
++    rw [he, mass_append] at hm
++    have hb : mass aasW = 2 := by decide
++    rw [hb] at hm
++    omega
++  · have hv0 := block_mass_nonnegative hv
++    rw [he, mass_append] at hm
++    have hb : mass tripW = 4 := by decide
++    rw [hb] at hm
++    omega
++
++theorem block_mass_two {w : List Bool} (hw : BlockWord w) (hm : mass w = 2) :
++    w = [true, true] ∨ w = aasW := by
++  rcases block_first hw with he | ⟨v, hv, he | he | he⟩
++  · subst w; simp [mass] at hm
++  · rw [he, mass_append] at hm
++    change 1 + mass v = 2 at hm
++    have hv1 := block_mass_one hv (by omega)
++    left; rw [he, hv1]; rfl
++  · rw [he, mass_append] at hm
++    have hb : mass aasW = 2 := by decide
++    rw [hb] at hm
++    rcases block_mass hv with hz | hpos
++    · right; rw [he, hz]; simp
++    · omega
++  · have hv0 := block_mass_nonnegative hv
++    rw [he, mass_append] at hm
++    have hb : mass tripW = 4 := by decide
++    rw [hb] at hm
++    omega
++
++/-- A uniform quadratic upper envelope for every old block-prefix area. -/
++theorem block_area_quadratic_upper {w : List Bool} (hw : BlockWord w) :
++    4 * areaW w ≤ 5 * mass w * mass w - 11 * mass w + 16 := by
++  induction hw with
++  | nil => decide
++  | @free w hw ih =>
++      rcases block_mass hw with hz | hm
++      · subst w; decide
++      · by_cases h1 : mass w = 1
++        · rw [block_mass_one hw h1]; decide
++        · have hm2 : 2 ≤ mass w := by omega
++          rw [areaW_append, mass_append]
++          change 4 * (areaW w + 1 * mass w + 1) ≤
++            5 * (mass w + 1) * (mass w + 1) - 11 * (mass w + 1) + 16
++          grind
++  | @aas w hw ih =>
++      rcases block_mass hw with hz | hm
++      · subst w; decide
++      · by_cases h1 : mass w = 1
++        · rw [block_mass_one hw h1]; decide
++        · by_cases h2 : mass w = 2
++          · rcases block_mass_two hw h2 with he | he <;> rw [he] <;> decide
++          · have hm3 : 3 ≤ mass w := by omega
++            rw [areaW_append, mass_append]
++            change 4 * (areaW w + 4 * mass w + 2) ≤
++              5 * (mass w + 2) * (mass w + 2) - 11 * (mass w + 2) + 16
++            grind
++  | @triple w hw ih =>
++      rw [areaW_append, mass_append]
++      change 4 * (areaW w + 10 * mass w + 9) ≤
++        5 * (mass w + 4) * (mass w + 4) - 11 * (mass w + 4) + 16
++      grind
++
++theorem block_area_upper_sharp :
++    4 * areaW ([true] ++ aasW) =
++      5 * mass ([true] ++ aasW) * mass ([true] ++ aasW) - 11 * mass ([true] ++ aasW) + 16 := by
++  decide
++
++theorem block_prefix_area_quadratic_upper (f : Nat → Bool) (n a t : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (htn : t ≤ n) :
++    4 * Ar f t (n-t) ≤
++      5 * (Fw f n - Fw f t) * (Fw f n - Fw f t) - 11 * (Fw f n - Fw f t) + 16 := by
++  have hfull : BlockWord (seg f 0 n) := by
++    rw [hseg]
++    exact block_append hβ (block_replicate_A a)
++  have hsplit := suffix_split f 0 n t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add, Nat.sub_zero] at hsplit
++  have hsuffix := block_suffix hfull (seg f 0 t) (seg f t (n-t)) hsplit.symm
++  have hbound := block_area_quadratic_upper hsuffix
++  simpa only [← Ar_areaW, seg_mass, show t + (n-t) = n by omega] using hbound
++
++/-! ## Counts before an older P2 window
++
++The additions in this section count every A in the tail, not merely its
++nonsupplied A clocks. No bound on the tail length or subtraction count is assumed. -/
++
++/-- Among words with fixed counts, putting every S before every A minimizes
++the sum of prefix levels. -/
++theorem areaW_count_lower (w : List Bool) :
++    ones w * (ones w+1) - ((w.length : Int)-ones w) * ((w.length : Int)-ones w+1) -
++      2 * ones w * ((w.length : Int)-ones w) ≤ 2*areaW w := by
++  induction w with
++  | nil => decide
++  | cons b w ih =>
++      have hb := ones_bounds w
++      cases b <;> simp [ones, areaW, List.length_cons, sign] at * <;> grind
++
++/-- An actual window starting strictly before the block-prefix boundary can
++only end after a tail whose S count is at most twice its total A count minus
++two. This is an old-window obstruction, not the desired bound on nonsupplied A. -/
++theorem old_window_count_barrier (f : Nat → Bool) (n a t b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (htn : t < n) (hnb : n < b) (hwin : Win f t (b-t)) :
++    ((b-n : Nat) : Int) - ones (seg f n (b-n)) ≤
++      2 * ones (seg f n (b-n)) - 2 := by
++  have hp := block_suffix_positive_walk f 0 n a hβ hseg t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add] at hp
++  have hquad := old_window_area_upper f n a t b hβ hseg (by omega) (by omega) hwin
++  have harea := areaW_count_lower (seg f n (b-n))
++  simp only [seg_length, ← Ar_areaW] at harea
++  have hmass := mass_eq (seg f n (b-n))
++  rw [seg_mass, seg_length, show n + (b-n) = b by omega] at hmass
++  have hlevel := hwin.2.1
++  rw [show t + (b-t) = b by omega] at hlevel
++  have hbnds := ones_bounds (seg f n (b-n))
++  rw [seg_length] at hbnds
++  have hlen : 0 < ((b-n : Nat) : Int) := by exact_mod_cast Nat.sub_pos_of_lt hnb
++  have hs : 0 < ((b-n : Nat) : Int) - ones (seg f n (b-n)) := by omega
++  apply Classical.byContradiction
++  intro hneg
++  have hbad : 2 * ones (seg f n (b-n)) -
++      (((b-n : Nat) : Int) - ones (seg f n (b-n))) - 2 < 0 := by omega
++  have hprod := Int.mul_neg_of_pos_of_neg hs hbad
++  have hrel : Fw f n - Fw f b + 1 =
++      ((b-n : Nat) : Int) - 2 * ones (seg f n (b-n)) + 1 := by omega
++  rw [hrel] at hquad
++  have harith (L A V : Int)
++      (hq : 2 * (V + L * (L-2*A+1)) ≤ 2-(L-2*A+1)*(L-2*A+2))
++      (hl : A*(A+1)-(L-A)*(L-A+1)-2*A*(L-A) ≤ 2*V) :
++      0 ≤ (L-A)*(2*A-(L-A)-2) := by grind
++  have hnonneg := harith ((b-n : Nat) : Int) (ones (seg f n (b-n)))
++      (Ar f n (b-n)) (by simpa [Int.add_assoc] using hquad) harea
++  omega
++
++/-! The finite checker has independent transparent word functions. These
++lemmas connect them to the same walk used by the actual P2 windows. -/
++
++theorem checked_wordArea_eq (w : List Bool) :
++    Recaman.ThreeNonsuppliedData.wordArea w = areaW w := by
++  induction w with
++  | nil => rfl
++  | cons c w ih => simp [Recaman.ThreeNonsuppliedData.wordArea, areaW, ih]
++
++theorem ones_drop_le (w : List Bool) (t : Nat) : ones (w.drop t) ≤ ones w := by
++  have h := ones_bounds (w.take t)
++  have hs : w.take t ++ w.drop t = w := List.take_append_drop t w
++  have hsum := ones_append (w.take t) (w.drop t)
++  rw [hs] at hsum
++  omega
++
++theorem localSupply_iff (w : List Bool) :
++    Recaman.ThreeNonsuppliedData.localSupply w=true ↔
++      ∃ t, t<w.length ∧ mass (w.drop t)=1 ∧
++        Recaman.ThreeNonsuppliedData.wordArea (w.drop t)=0 := by
++  simp [Recaman.ThreeNonsuppliedData.localSupply, List.any_eq_true]
++
++theorem localSupply_trim (w : List Bool) (hA : ones w ≤ 7) :
++    Recaman.ThreeNonsuppliedData.localSupply (Recaman.ThreeNonsuppliedData.trim w) =
++      Recaman.ThreeNonsuppliedData.localSupply w := by
++  apply Bool.eq_iff_iff.mpr
++  rw [localSupply_iff, localSupply_iff]
++  unfold Recaman.ThreeNonsuppliedData.trim
++  constructor
++  · rintro ⟨t, ht, hwin⟩
++    have htlen := ht
++    refine ⟨w.length-13+t, ?_, ?_⟩
++    · simp only [List.length_drop] at htlen
++      omega
++    · simpa only [List.drop_drop, Nat.add_comm] using hwin
++  · rintro ⟨t, ht, hwin⟩
++    have htlen := ht
++    have hw : mass (w.drop t) = 1 ∧
++        Recaman.ThreeNonsuppliedData.wordArea (w.drop t) = 0 := hwin
++    have hm := mass_eq (w.drop t)
++    rw [hw.1, List.length_drop] at hm
++    have hones := ones_drop_le w t
++    have hnear : w.length-13 ≤ t := by omega
++    refine ⟨t-(w.length-13), ?_, ?_⟩
++    · simp only [List.length_drop]
++      omega
++    · rw [List.drop_drop, show w.length-13+(t-(w.length-13)) = t by omega]
++      exact hwin
++
++theorem seg_drop (f : Nat → Bool) (s m j : Nat) (hj : j ≤ m) :
++    (seg f s m).drop j = seg f (s+j) (m-j) := by
++  have h := seg_add f s j (m-j)
++  rw [Nat.add_sub_cancel' hj] at h
++  calc
++    (seg f s m).drop j = (seg f s j ++ seg f (s+j) (m-j)).drop
++        (seg f s j).length := by rw [h, seg_length]
++    _ = _ := List.drop_left
++
++theorem localSupply_seg_iff (f : Nat → Bool) (n b : Nat) (hnb : n ≤ b)
++    (hA : f b = true) :
++    Recaman.ThreeNonsuppliedData.localSupply (seg f n (b-n)) = true ↔ EndN f n b := by
++  rw [localSupply_iff]
++  constructor
++  · rintro ⟨j, hj, hw⟩
++    have hjn := hj
++    rw [seg_length] at hjn
++    have hdrop := seg_drop f n (b-n) j (by omega)
++    have hwp : mass ((seg f n (b-n)).drop j) = 1 ∧
++        Recaman.ThreeNonsuppliedData.wordArea ((seg f n (b-n)).drop j) = 0 :=
++      hw
++    rw [hdrop, checked_wordArea_eq, ← Ar_areaW] at hwp
++    rw [seg_mass] at hwp
++    refine ⟨hA, n+j, b-(n+j), by omega, by omega, by omega, ?_, ?_⟩
++    · rw [show n+j+(b-(n+j))=n+j+(b-n-j) by omega]
++      omega
++    · rw [show b-(n+j)=b-n-j by omega]
++      exact hwp.2
++  · rintro ⟨_, t, k, hnt, htk, hk, hlevel, harea⟩
++    refine ⟨t-n, ?_, ?_⟩
++    · rw [seg_length]; omega
++    · rw [seg_drop f n (b-n) (t-n) (by omega),
++        show n+(t-n)=t by omega, show b-n-(t-n)=k by omega]
++      simp only [checked_wordArea_eq, ← Ar_areaW, seg_mass]
++      exact ⟨by omega, harea⟩
++
++theorem old_window_signature (f : Nat → Bool) (n a t b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (htn : t < n) (hnb : n ≤ b) (hwin : Win f t (b-t)) :
++    Recaman.ThreeNonsuppliedData.oldSignature (seg f n (b-n)) = true := by
++  have hfull : BlockWord (seg f 0 n) := by
++    rw [hseg]; exact block_append hβ (block_replicate_A a)
++  have hsplit := suffix_split f 0 n t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add, Nat.sub_zero] at hsplit
++  have hsuffix := block_suffix hfull (seg f 0 t) (seg f t (n-t)) hsplit.symm
++  have hp := block_suffix_positive_walk f 0 n a hβ hseg t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add] at hp
++  have hlow := block_area_quadratic_lower hsuffix
++  have hupp := block_area_quadratic_upper hsuffix
++  have harea := area_split_at f t n b (by omega) hnb
++  have hlevel := hwin.2.1
++  have hzero := hwin.2.2
++  rw [show t+(b-t)=b by omega] at hlevel
++  have hr : 1-mass (seg f n (b-n)) = mass (seg f t (n-t)) := by
++    rw [seg_mass, seg_mass, show n+(b-n)=b by omega, show t+(n-t)=n by omega]
++    omega
++  have hB : -Recaman.ThreeNonsuppliedData.wordArea (seg f n (b-n)) -
++      ((seg f n (b-n)).length : Int)*(1-mass (seg f n (b-n))) =
++      areaW (seg f t (n-t)) := by
++    rw [checked_wordArea_eq, ← Ar_areaW, ← Ar_areaW, seg_length, hr, seg_mass,
++      show t+(n-t)=n by omega]
++    grind
++  have hmpos : 1 ≤ mass (seg f t (n-t)) := by
++    rw [seg_mass, show t+(n-t)=n by omega]; exact hp.1
++  have hapos : 1 ≤ areaW (seg f t (n-t)) := by
++    rw [← Ar_areaW]; exact hp.2
++  have hone : mass (seg f t (n-t))=1 → areaW (seg f t (n-t))=1 := by
++    intro hm
++    rw [block_mass_one hsuffix hm]
++    decide
++  simp only [Recaman.ThreeNonsuppliedData.oldSignature, decide_eq_true_eq]
++  rw [hB, hr]
++  exact ⟨hmpos, hapos, hlow, hupp, hone⟩
++
++theorem ones_seg_eq_count (f : Nat → Bool) (n k : Nat) :
++    ones (seg f n k) = (cN (fun u => f u=true) n k : Int) := by
++  have hm := mass_eq (seg f n k)
++  rw [seg_mass, seg_length] at hm
++  have hc := cN_walk f n k
++  omega
++
++/-- Every actual supplied clock has either a local P2 suffix or a necessary
++old-prefix signature. The old alternative is impossible once thirteen S
++have occurred while at most seven A have occurred. -/
++theorem supply_clock_smallA (f : Nat → Bool) (n a b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnb : n ≤ b)
++    (hA : ones (seg f n (b-n)) ≤ 7) (he : EndN f 0 b) :
++    Recaman.ThreeNonsuppliedData.localSupply (seg f n (b-n))=true ∨
++      ((((b-n : Nat) : Int)-ones (seg f n (b-n)) < 13) ∧
++        Recaman.ThreeNonsuppliedData.oldSignature (seg f n (b-n))=true) := by
++  obtain ⟨hbA, t, k, ht0, htk, hk, hF, hAr⟩ := he
++  by_cases htn : n ≤ t
++  · left
++    apply (localSupply_seg_iff f n b hnb hbA).mpr
++    exact ⟨hbA, t, k, htn, htk, hk, hF, hAr⟩
++  · have hwin : Win f t (b-t) := by
++      have heq : b-t=k := by omega
++      simpa only [heq] using (show Win f t k from ⟨hk,hF,hAr⟩)
++    have hsig := old_window_signature f n a t b hβ hseg (by omega) hnb hwin
++    right; refine ⟨?_, hsig⟩
++    by_cases hneq : n=b
++    · rw [← hneq]; simp [seg, ones]
++    · have hcount := old_window_count_barrier f n a t b hβ hseg (by omega) (by omega) hwin
++      omega
++
++theorem trim_append_letter (w : List Bool) (c : Bool) :
++    Recaman.ThreeNonsuppliedData.trim (Recaman.ThreeNonsuppliedData.trim w ++ [c]) =
++      Recaman.ThreeNonsuppliedData.trim (w++[c]) := by
++  unfold Recaman.ThreeNonsuppliedData.trim
++  by_cases hlen : w.length ≤ 13
++  · simp [show w.length-13=0 by omega]
++  · have hw : 13 < w.length := by omega
++    simp only [List.length_append, List.length_drop, List.length_singleton]
++    rw [show w.length-(w.length-13)+1-13=1 by omega,
++      List.drop_append_of_le_length (by simp only [List.length_drop]; omega), List.drop_drop,
++      List.drop_append_of_le_length (by omega)]
++    congr 2
++    omega
++
++noncomputable def actualSmallState (f : Nat → Bool) (n k : Nat) :
++    Recaman.ThreeNonsuppliedData.State :=
++  let s := cN (fun u => f u=false) n k
++  let w := seg f n k
++  ⟨if 13≤s then Recaman.ThreeNonsuppliedData.trim w else w,
++    cN (fun u => f u=true) n k, min 13 s,
++    cN (fun u => f u=true ∧ ¬EndN f 0 u) n k⟩
++
++theorem actualSmallState_zero (f : Nat → Bool) (n : Nat) :
++    actualSmallState f n 0 = ⟨[],0,0,0⟩ := by
++  simp [actualSmallState, cN, seg]
++
++theorem actualSmallState_S (f : Nat → Bool) (n k : Nat) (hS : f (n+k)=false) :
++    Recaman.ThreeNonsuppliedData.stepS (actualSmallState f n k) =
++      actualSmallState f n (k+1) := by
++  have ha := cN_succ_neg (fun u => f u=true) n k (by simp [hS])
++  have hs := cN_succ_pos (fun u => f u=false) n k hS
++  have han := cN_succ_neg (fun u => f u=true ∧ ¬EndN f 0 u) n k (by simp [hS])
++  by_cases hbig : 13≤cN (fun u => f u=false) n k
++  · have hm : min 13 (cN (fun u => f u=false) n k)=13 := by omega
++    have hm' : min 13 (cN (fun u => f u=false) n k+1)=13 := by omega
++    have hbig' : 13≤cN (fun u => f u=false) n k+1 := by omega
++    simp [actualSmallState, Recaman.ThreeNonsuppliedData.stepS, ha, hs, han,
++      seg_succ, hS, hbig, hbig', hm, hm', trim_append_letter]
++  · by_cases hbig' : 13≤cN (fun u => f u=false) n k+1
++    · have hm : min 13 (cN (fun u => f u=false) n k)=12 := by omega
++      have hm' : min 13 (cN (fun u => f u=false) n k+1)=13 := by omega
++      simp [actualSmallState, Recaman.ThreeNonsuppliedData.stepS, ha, hs, han,
++        seg_succ, hS, hbig, hbig', hm, hm']
++    · have hm : min 13 (cN (fun u => f u=false) n k)=cN (fun u => f u=false) n k := by omega
++      have hm' : min 13 (cN (fun u => f u=false) n k+1)=cN (fun u => f u=false) n k+1 := by omega
++      have hne : cN (fun u => f u=false) n k+1 ≠13 := by omega
++      simp [actualSmallState, Recaman.ThreeNonsuppliedData.stepS, ha, hs, han,
++        seg_succ, hS, hbig, hbig', hm, hm', hne]
++
++theorem actualSmallState_local (f : Nat → Bool) (n k : Nat)
++    (hA : cN (fun u => f u=true) n k ≤ 7) :
++    Recaman.ThreeNonsuppliedData.localSupply (actualSmallState f n k).word =
++      Recaman.ThreeNonsuppliedData.localSupply (seg f n k) := by
++  have hones : ones (seg f n k) ≤ 7 := by rw [ones_seg_eq_count]; omega
++  unfold actualSmallState
++  dsimp only
++  split
++  · exact localSupply_trim _ hones
++  · rfl
++
++theorem actualSmallState_admitted (f : Nat → Bool) (n a k : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hA : f (n+k)=true) (hcount : cN (fun u => f u=true) n k ≤ 7)
++    (e : Bool) (he : if e then EndN f 0 (n+k) else ¬EndN f 0 (n+k)) :
++    (if e then Recaman.ThreeNonsuppliedData.localSupply (actualSmallState f n k).word ||
++      (decide ((actualSmallState f n k).subtractions<13) &&
++        Recaman.ThreeNonsuppliedData.oldSignature (actualSmallState f n k).word)
++      else !Recaman.ThreeNonsuppliedData.localSupply (actualSmallState f n k).word)=true := by
++  have hlocal := actualSmallState_local f n k hcount
++  cases e
++  · have hfalse : Recaman.ThreeNonsuppliedData.localSupply (seg f n k)=false := by
++      cases h : Recaman.ThreeNonsuppliedData.localSupply (seg f n k)
++      · rfl
++      · have hloc : EndN f n (n+k) := (localSupply_seg_iff f n (n+k) (by omega) hA).mp
++            (by simpa using h)
++        exact absurd (end_mono f 0 n (n+k) (Nat.zero_le _) hloc) he
++    simp [hlocal, hfalse]
++  · have hones : ones (seg f n k) ≤ 7 := by rw [ones_seg_eq_count]; omega
++    have hsup := supply_clock_smallA f n a (n+k) hβ hseg (by omega)
++      (by simpa using hones) he
++    simp only [Nat.add_sub_cancel_left] at hsup
++    rcases hsup with hl | ⟨hs, ho⟩
++    · simp [hlocal, hl]
++    · have hc := cN_walk f n k
++      have hon := ones_seg_eq_count f n k
++      have hslt : cN (fun u => f u=false) n k<13 := by omega
++      have hmin : min 13 (cN (fun u => f u=false) n k) = cN (fun u => f u=false) n k := by omega
++      have hnot : ¬13≤cN (fun u => f u=false) n k := by omega
++      simp [actualSmallState, hnot, hmin, hslt, ho]
++
++theorem actualSmallState_A (f : Nat → Bool) (n a k : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hA : f (n+k)=true) (hcount : cN (fun u => f u=true) n k ≤ 7)
++    (e : Bool) (he : if e then EndN f 0 (n+k) else ¬EndN f 0 (n+k))
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1)≤3)
++    (hbalance : 1 ≤ (cN (fun u => f u=false) n k : Int) -
++      (cN (fun u => f u=true) n k+1 : Nat) +
++      (cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) : Int)) :
++    Recaman.ThreeNonsuppliedData.stepA (actualSmallState f n k) e =
++      some (actualSmallState f n (k+1)) := by
++  have ha := cN_succ_pos (fun u => f u=true) n k hA
++  have hs := cN_succ_neg (fun u => f u=false) n k (by simp [hA])
++  have han : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) =
++      cN (fun u => f u=true ∧ ¬EndN f 0 u) n k + (if e then 0 else 1) := by
++    cases e
++    · exact cN_succ_pos _ n k ⟨hA,he⟩
++    · have he' : EndN f 0 (n+k) := by simpa using he
++      have hn := cN_succ_neg (fun u => f u=true ∧ ¬EndN f 0 u) n k (fun h => h.2 he')
++      simpa using hn
++  have hadmit := actualSmallState_admitted f n a k hβ hseg hA hcount e he
++  have hb : (actualSmallState f n k).nonsupplied+(if e then 0 else 1)≤3 := by
++    change cN (fun u => f u=true ∧ ¬EndN f 0 u) n k + _ ≤ 3
++    rw [← han]; exact hbudget
++  have hd : (actualSmallState f n k).subtractions=13 ∨
++      1≤((actualSmallState f n k).subtractions : Int) -
++        ((actualSmallState f n k).additions+1 : Nat) +
++        ((actualSmallState f n k).nonsupplied+(if e then 0 else 1) : Nat) := by
++    by_cases hbig : 13≤cN (fun u => f u=false) n k
++    · left; simp only [actualSmallState]; omega
++    · right
++      have hm : min 13 (cN (fun u => f u=false) n k)=cN (fun u => f u=false) n k := by omega
++      simpa only [actualSmallState, hm, ← han] using hbalance
++  have heval : Recaman.ThreeNonsuppliedData.stepA (actualSmallState f n k) e =
++      some ⟨if (actualSmallState f n k).subtractions=13 then
++          Recaman.ThreeNonsuppliedData.trim ((actualSmallState f n k).word++[true])
++          else (actualSmallState f n k).word++[true],
++        (actualSmallState f n k).additions+1, (actualSmallState f n k).subtractions,
++        (actualSmallState f n k).nonsupplied+(if e then 0 else 1)⟩ := by
++    push_cast at hd
++    simp [Recaman.ThreeNonsuppliedData.stepA, hadmit, hb, hd]
++  rw [heval]
++  by_cases hbig : 13≤cN (fun u => f u=false) n k
++  · have hm : min 13 (cN (fun u => f u=false) n k)=13 := by omega
++    simp [actualSmallState, ha, hs, han, seg_succ, hA, hbig, hm, trim_append_letter]
++  · have hm : min 13 (cN (fun u => f u=false) n k)=cN (fun u => f u=false) n k := by omega
++    have hne : cN (fun u => f u=false) n k≠13 := by omega
++    simp [actualSmallState, ha, hs, han, seg_succ, hA, hbig, hm, hne]
++
++theorem count_prefix_le (P : Nat → Prop) (n k B : Nat) (hk : k≤B) :
++    cN P n k ≤ cN P n B := by
++  have h := cN_add P n k (B-k)
++  rw [Nat.add_sub_cancel' hk] at h
++  omega
++
++theorem addition_endable_partition (f : Nat → Bool) (n k : Nat) :
++    cN (fun u => f u=true) n k = cN (EndN f 0) n k +
++      cN (fun u => f u=true ∧ ¬EndN f 0 u) n k := by
++  have h := cN_split (fun u => f u=true) (EndN f 0) n k
++  have heq : cN (fun u => f u=true ∧ EndN f 0 u) n k = cN (EndN f 0) n k := by
++    apply cN_congr
++    intro u _ _
++    exact ⟨fun h => h.2, fun h => ⟨h.1,h⟩⟩
++  omega
++
++/-- Every actual prefix of a positive-deficit excursion with at most three
++nonsupplied additions is represented by the kernel-checked finite graph.
++The bound of seven previous additions is supplied by the induction invariant,
++not assumed for the whole input word. -/
++theorem three_nonsupplied_state_member (f : Nat → Bool) (n a B : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1 ≤ cN (fun u => f u=false) n k)
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤3) :
++    Recaman.ThreeNonsuppliedData.Member Recaman.ThreeNonsuppliedData.rows
++      (actualSmallState f n B) := by
++  have hmember : ∀ k, k≤B → Recaman.ThreeNonsuppliedData.Member
++      Recaman.ThreeNonsuppliedData.rows (actualSmallState f n k) := by
++    intro k
++    induction k with
++    | zero =>
++        intro _
++        rw [actualSmallState_zero]
++        exact Recaman.ThreeNonsuppliedData.initial_member
++    | succ k ih =>
++        intro hk
++        have hprev := ih (by omega)
++        have hcount : cN (fun u => f u=true) n k≤7 := by
++          have h := Recaman.ThreeNonsuppliedData.member_additions_lt_eight
++            Recaman.ThreeNonsuppliedData.rows Recaman.ThreeNonsuppliedData.rows_verified
++            (actualSmallState f n k) hprev
++          change cN (fun u => f u=true) n k<8 at h
++          omega
++        by_cases hS : f (n+k)=false
++        · rw [← actualSmallState_S f n k hS]
++          exact Recaman.ThreeNonsuppliedData.member_stepS _
++            Recaman.ThreeNonsuppliedData.rows_verified _ hprev
++        · have hA : f (n+k)=true := by cases h : f (n+k) <;> simp_all
++          have hbud : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1)≤3 := by
++            have h := count_prefix_le (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) B hk
++            omega
++          have hpar := addition_endable_partition f n (k+1)
++          have hp := hpos (k+1) (by omega) hk
++          have ha := cN_succ_pos (fun u => f u=true) n k hA
++          have hs := cN_succ_neg (fun u => f u=false) n k (by simp [hA])
++          have hbal : 1≤(cN (fun u => f u=false) n k : Int)-
++              (cN (fun u => f u=true) n k+1 : Nat)+
++              (cN (fun u => f u=true ∧ ¬EndN f 0 u) n (k+1) : Int) := by omega
++          by_cases he : EndN f 0 (n+k)
++          · exact Recaman.ThreeNonsuppliedData.member_stepA _
++              Recaman.ThreeNonsuppliedData.rows_verified _ _ true hprev
++              (actualSmallState_A f n a k hβ hseg hA hcount true he hbud hbal)
++          · exact Recaman.ThreeNonsuppliedData.member_stepA _
++              Recaman.ThreeNonsuppliedData.rows_verified _ _ false hprev
++              (actualSmallState_A f n a k hβ hseg hA hcount false he hbud hbal)
++  exact hmember B (Nat.le_refl _)
++
++theorem three_nonsupplied_additions_le_seven (f : Nat → Bool) (n a B : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1 ≤ cN (fun u => f u=false) n k)
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤3) :
++    cN (fun u => f u=true) n B≤7 := by
++  have hm := three_nonsupplied_state_member f n a B hβ hseg hpos hbudget
++  have h := Recaman.ThreeNonsuppliedData.member_additions_lt_eight
++    Recaman.ThreeNonsuppliedData.rows Recaman.ThreeNonsuppliedData.rows_verified _ hm
++  change cN (fun u => f u=true) n B<8 at h
++  omega
++
++theorem seg_take (f : Nat → Bool) (n B j : Nat) (hj : j≤B) :
++    (seg f n B).take j = seg f n j := by
++  have h := seg_add f n j (B-j)
++  rw [Nat.add_sub_cancel' hj] at h
++  calc
++    (seg f n B).take j = (seg f n j ++ seg f (n+j) (B-j)).take
++        (seg f n j).length := by rw [seg_length, h]
++    _ = _ := List.take_left
++
++theorem endpoint_words_depth_checked :
++    (Recaman.ThreeNonsuppliedData.endpointWords.all fun w =>
++      (List.range (w.length+1)).all fun j => decide (-4 ≤ mass (w.take j)))=true := by decide
++
++theorem endpoint_word_prefix_depth (w : List Bool)
++    (hw : w ∈ Recaman.ThreeNonsuppliedData.endpointWords) (j : Nat) (hj : j≤w.length) :
++    -4≤mass (w.take j) := by
++  have h := List.all_eq_true.mp endpoint_words_depth_checked w hw
++  exact of_decide_eq_true (List.all_eq_true.mp h j (List.mem_range.mpr (by omega)))
++
++/-- The eight endpoint words are classified for arbitrary length and arbitrary
++old block prefix, using the original-base supplies throughout. -/
++theorem three_nonsupplied_excursion_word (f : Nat → Bool) (n a B : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1 ≤ cN (fun u => f u=false) n k)
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤3)
++    (hend : cN (EndN f 0) n B+1 = cN (fun u => f u=false) n B) :
++    seg f n B ∈ Recaman.ThreeNonsuppliedData.endpointWords := by
++  have hm := three_nonsupplied_state_member f n a B hβ hseg hpos hbudget
++  have ha := three_nonsupplied_additions_le_seven f n a B hβ hseg hpos hbudget
++  have hpar := addition_endable_partition f n B
++  have hslt : cN (fun u => f u=false) n B<13 := by omega
++  have hnot : ¬13≤cN (fun u => f u=false) n B := by omega
++  have hmin : min 13 (cN (fun u => f u=false) n B)=cN (fun u => f u=false) n B := by omega
++  have hbal : ((actualSmallState f n B).subtractions : Int)-
++      ((actualSmallState f n B).additions : Int)+
++      ((actualSmallState f n B).nonsupplied : Int)=1 := by
++    simp only [actualSmallState, hmin]
++    omega
++  have h := Recaman.ThreeNonsuppliedData.member_endpoint_word
++    Recaman.ThreeNonsuppliedData.rows Recaman.ThreeNonsuppliedData.rows_verified _ hm hbal
++  simpa only [actualSmallState, if_neg hnot] using h
++
++theorem three_nonsupplied_excursion_depth_offset (f : Nat → Bool) (n a B : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true)
++    (hpos : ∀ k, 0<k → k≤B → cN (EndN f 0) n k+1 ≤ cN (fun u => f u=false) n k)
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n B≤3)
++    (hend : cN (EndN f 0) n B+1 = cN (fun u => f u=false) n B)
++    (j : Nat) (hj : j≤B) : Fw f n-4 ≤ Fw f (n+j) := by
++  have hw := three_nonsupplied_excursion_word f n a B hβ hseg hpos hbudget hend
++  have hd := endpoint_word_prefix_depth (seg f n B) hw j (by rw [seg_length]; exact hj)
++  rw [seg_take f n B j hj, seg_mass] at hd
++  omega
++
++/-- Card H-20261023-01 in the original left-base convention. The old global
++deficit is zero at n and positive afterwards, with final deficit one. -/
++theorem three_nonsupplied_excursion_depth (f : Nat → Bool) (n a q : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q)
++    (hzero : cN (EndN f 0) 0 n = cN (fun u => f u=false) 0 n)
++    (hpos : ∀ u, n<u → u≤q → cN (EndN f 0) 0 u+1 ≤ cN (fun u => f u=false) 0 u)
++    (hend : cN (EndN f 0) 0 q+1 = cN (fun u => f u=false) 0 q)
++    (hbudget : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3) :
++    ∀ u, n≤u → u≤q → Fw f n-4≤Fw f u := by
++  have hrel : ∀ k, 0<k → k≤q-n →
++      cN (EndN f 0) n k+1≤cN (fun u => f u=false) n k := by
++    intro k hk hkle
++    have hp := hpos (n+k) (by omega) (by omega)
++    have he := cN_add (EndN f 0) 0 n k
++    have hs := cN_add (fun u => f u=false) 0 n k
++    simp only [Nat.zero_add] at he hs
++    omega
++  have hlast : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n) := by
++    have he := cN_add (EndN f 0) 0 n (q-n)
++    have hs := cN_add (fun u => f u=false) 0 n (q-n)
++    rw [Nat.add_sub_cancel' hnq] at he hs
++    simp only [Nat.zero_add] at he hs
++    omega
++  intro u hnu huq
++  have h := three_nonsupplied_excursion_depth_offset f n a (q-n) hβ hseg hrel hbudget hlast
++    (u-n) (by omega)
++  simpa only [Nat.add_sub_cancel' hnu] using h
++
++-- Checker controls: a missing legal edge, an out-of-range S edge, and a
++-- forbidden supply tag must be rejected. The transition function itself
++-- permits an eighth A; its absence is established by the checked graph.
++example :
++    let rs := Recaman.ThreeNonsuppliedData.rows
++    let bad : Recaman.ThreeNonsuppliedData.Table := ⟨rs.size, fun i =>
++      let row := rs.get i
++      if i=1 then (row.1,row.2.1,0,row.2.2.2) else row⟩
++    Recaman.ThreeNonsuppliedData.checkOne bad 1=false := by decide
++
++example :
++    let rs := Recaman.ThreeNonsuppliedData.rows
++    let bad : Recaman.ThreeNonsuppliedData.Table := ⟨rs.size, fun i =>
++      let row := rs.get i
++      if i=0 then (row.1,rs.size,row.2.2.1,row.2.2.2) else row⟩
++    Recaman.ThreeNonsuppliedData.checkOne bad 0=false := by decide
++
++example :
++    let rs := Recaman.ThreeNonsuppliedData.rows
++    let bad : Recaman.ThreeNonsuppliedData.Table := ⟨rs.size, fun i =>
++      let row := rs.get i
++      if i=0 then (row.1,row.2.1,row.2.2.1,1) else row⟩
++    Recaman.ThreeNonsuppliedData.checkOne bad 0=false := by decide
++
++example : (Recaman.ThreeNonsuppliedData.stepA
++    ⟨[false,true,true],7,12,2⟩ true).map (fun s => s.additions) = some 8 := by decide
++
++-- Without BlockWord, SSAAA | AS gives an old P2 window with only one tail A
++-- and one tail S, violating s≤2a−2. This is a hypothesis control, not a Q counterexample.
++example : mass [false,false,true,true,true,true,false]=1 ∧
++    areaW [false,false,true,true,true,true,false]=0 := by decide
++
++theorem wordSupply_admitted (f : Nat → Bool) (n a b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnb : n≤b) (hA : f b=true)
++    (e : Bool) (he : if e then EndN f 0 b else ¬EndN f 0 b) :
++    (if e then Recaman.ThreeNonsuppliedData.localSupply (seg f n (b-n)) ||
++        Recaman.ThreeNonsuppliedData.oldSignature (seg f n (b-n))
++      else !Recaman.ThreeNonsuppliedData.localSupply (seg f n (b-n)))=true := by
++  cases e
++  · cases hl : Recaman.ThreeNonsuppliedData.localSupply (seg f n (b-n))
++    · rfl
++    · have hloc := (localSupply_seg_iff f n b hnb hA).mp hl
++      exact False.elim (he (end_mono f 0 n b (Nat.zero_le _) hloc))
++  · obtain ⟨_,t,k,_,htk,hk,hF,hAr⟩ := he
++    by_cases htn : n≤t
++    · have hl := (localSupply_seg_iff f n b hnb hA).mpr
++        ⟨hA,t,k,htn,htk,hk,hF,hAr⟩
++      simp [hl]
++    · have hwin : Win f t (b-t) := by
++        have heq : b-t=k := by omega
++        simpa only [heq] using (show Win f t k from ⟨hk,hF,hAr⟩)
++      have ho := old_window_signature f n a t b hβ hseg (by omega) hnb hwin
++      simp [ho]
++
++noncomputable def actualQState (f : Nat → Bool) (n q k : Nat) :
++    Recaman.ThreeNonsuppliedQData.State :=
++  ⟨seg f n (q-n),seg f n (q-n+k),cN (fun u => f u=true ∧ ¬EndN f 0 u) q k⟩
++
++theorem actualQState_zero (f : Nat → Bool) (n q : Nat) :
++    actualQState f n q 0 = ⟨seg f n (q-n),seg f n (q-n),0⟩ := by
++  simp [actualQState,cN]
++
++theorem actualQState_deficit (f : Nat → Bool) (n q k : Nat) (hnq : n≤q)
++    (hend : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n)) :
++    mass (actualQState f n q k).root+1+
++      ((actualQState f n q k).nonsupplied : Int)-mass (actualQState f n q k).word =
++      (cN (fun u => f u=false) n (q-n+k) : Int) - (cN (EndN f 0) n (q-n+k) : Int) := by
++  have hr := cN_walk f n (q-n)
++  have hw := cN_walk f n (q-n+k)
++  have hpr := addition_endable_partition f n (q-n)
++  have hpw := addition_endable_partition f n (q-n+k)
++  have hsplit := cN_add (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n) k
++  rw [Nat.add_sub_cancel' hnq] at hsplit
++  simp only [actualQState,seg_mass]
++  omega
++
++theorem actualQState_S (f : Nat → Bool) (n q k : Nat) (hnq : n≤q)
++    (hS : f (q+k)=false) (hdepth : -4≤mass (actualQState f n q (k+1)).word) :
++    Recaman.ThreeNonsuppliedQData.stepS (actualQState f n q k) =
++      some (actualQState f n q (k+1)) := by
++  have han := cN_succ_neg (fun u => f u=true ∧ ¬EndN f 0 u) q k (by simp [hS])
++  have hw : (actualQState f n q (k+1)).word = (actualQState f n q k).word++[false] := by
++    simp only [actualQState]
++    rw [show q-n+(k+1)=q-n+k+1 by omega,seg_succ,
++      show n+(q-n+k)=q+k by omega,hS]
++  have hd : -4≤mass ((actualQState f n q k).word++[false]) := by rwa [←hw]
++  simp only [Recaman.ThreeNonsuppliedQData.stepS,if_pos hd]
++  apply congrArg some
++  simp only [actualQState,han] at hw ⊢
++  rw [← hw]
++
++theorem actualQState_A (f : Nat → Bool) (n a q k : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q)
++    (hA : f (q+k)=true) (e : Bool)
++    (he : if e then EndN f 0 (q+k) else ¬EndN f 0 (q+k))
++    (hbudget : (actualQState f n q (k+1)).nonsupplied≤1)
++    (hbalance : 1≤mass (actualQState f n q (k+1)).root+1+
++      ((actualQState f n q (k+1)).nonsupplied : Int)-mass (actualQState f n q (k+1)).word) :
++    Recaman.ThreeNonsuppliedQData.stepA (actualQState f n q k) e =
++      some (actualQState f n q (k+1)) := by
++  have han : cN (fun u => f u=true ∧ ¬EndN f 0 u) q (k+1) =
++      cN (fun u => f u=true ∧ ¬EndN f 0 u) q k+(if e then 0 else 1) := by
++    cases e
++    · exact cN_succ_pos _ q k ⟨hA,he⟩
++    · have he' : EndN f 0 (q+k) := by simpa using he
++      have h := cN_succ_neg (fun u => f u=true ∧ ¬EndN f 0 u) q k (fun h => h.2 he')
++      simpa using h
++  have hw : (actualQState f n q (k+1)).word = (actualQState f n q k).word++[true] := by
++    simp only [actualQState]
++    rw [show q-n+(k+1)=q-n+k+1 by omega,seg_succ,
++      show n+(q-n+k)=q+k by omega,hA]
++  have hadmit : (if e then Recaman.ThreeNonsuppliedData.localSupply (actualQState f n q k).word ||
++        Recaman.ThreeNonsuppliedData.oldSignature (actualQState f n q k).word
++      else !Recaman.ThreeNonsuppliedData.localSupply (actualQState f n q k).word)=true := by
++    have h := wordSupply_admitted f n a (q+k) hβ hseg (by omega) hA e he
++    simpa only [actualQState,show q+k-n=q-n+k by omega] using h
++  have hb : (actualQState f n q k).nonsupplied+(if e then 0 else 1)≤1 := by
++    simpa only [actualQState,han] using hbudget
++  have hd : 1≤mass (actualQState f n q k).root+1+
++      ((actualQState f n q k).nonsupplied+(if e then 0 else 1) : Nat)-
++      mass ((actualQState f n q k).word++[true]) := by
++    rw [←hw]
++    simpa only [actualQState,han] using hbalance
++  have heval : Recaman.ThreeNonsuppliedQData.stepA (actualQState f n q k) e =
++      some ⟨(actualQState f n q k).root,(actualQState f n q k).word++[true],
++        (actualQState f n q k).nonsupplied+(if e then 0 else 1)⟩ := by
++    push_cast at hd
++    simp [Recaman.ThreeNonsuppliedQData.stepA,hadmit,hb,hd]
++  rw [heval]
++  apply congrArg some
++  simp only [actualQState,han] at hw ⊢
++  rw [←hw]
++
++theorem three_nonsupplied_Q_state_member (f : Nat → Bool) (n a q K : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q)
++    (hpos : ∀ j, 0<j → j≤q-n+K → cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j)
++    (hroot : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n))
++    (haz : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3)
++    (hay : cN (fun u => f u=true ∧ ¬EndN f 0 u) q K≤1)
++    (hdepth : ∀ j, j≤q-n+K → -4≤mass (seg f n j)) :
++    Recaman.ThreeNonsuppliedQData.Member Recaman.ThreeNonsuppliedQData.rows
++      (actualQState f n q K) := by
++  have hposz : ∀ j, 0<j → j≤q-n → cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j := by
++    intro j hj hjq; exact hpos j hj (by omega)
++  have hw := three_nonsupplied_excursion_word f n a (q-n) hβ hseg hposz haz hroot
++  have hmember : ∀ k, k≤K → Recaman.ThreeNonsuppliedQData.Member
++      Recaman.ThreeNonsuppliedQData.rows (actualQState f n q k) := by
++    intro k
++    induction k with
++    | zero =>
++        intro _
++        rw [actualQState_zero]
++        exact Recaman.ThreeNonsuppliedQData.initial_member _ hw
++    | succ k ih =>
++        intro hk
++        have hprev := ih (by omega)
++        by_cases hS : f (q+k)=false
++        · apply Recaman.ThreeNonsuppliedQData.member_stepS _
++            Recaman.ThreeNonsuppliedQData.rows_verified _ _ hprev
++          apply actualQState_S f n q k hnq hS
++          exact hdepth _ (by omega)
++        · have hA : f (q+k)=true := by cases h : f (q+k) <;> simp_all
++          have hbud : (actualQState f n q (k+1)).nonsupplied≤1 := by
++            have hc := count_prefix_le (fun u => f u=true ∧ ¬EndN f 0 u) q (k+1) K hk
++            change cN (fun u => f u=true ∧ ¬EndN f 0 u) q (k+1)≤1
++            omega
++          have hbal : 1≤mass (actualQState f n q (k+1)).root+1+
++              ((actualQState f n q (k+1)).nonsupplied : Int)-mass (actualQState f n q (k+1)).word := by
++            rw [actualQState_deficit f n q (k+1) hnq hroot]
++            have hp := hpos (q-n+(k+1)) (by omega) (by omega)
++            omega
++          by_cases he : EndN f 0 (q+k)
++          · exact Recaman.ThreeNonsuppliedQData.member_stepA _
++              Recaman.ThreeNonsuppliedQData.rows_verified _ _ true hprev
++              (actualQState_A f n a q k hβ hseg hnq hA true he hbud hbal)
++          · exact Recaman.ThreeNonsuppliedQData.member_stepA _
++              Recaman.ThreeNonsuppliedQData.rows_verified _ _ false hprev
++              (actualQState_A f n a q k hβ hseg hnq hA false he hbud hbal)
++  exact hmember K (Nat.le_refl _)
++
++theorem three_nonsupplied_area_of_depth_four (f : Nat → Bool) (n a q K : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q)
++    (hpos : ∀ j, 0<j → j≤q-n+K → cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j)
++    (hroot : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n))
++    (haz : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3)
++    (hay : cN (fun u => f u=true ∧ ¬EndN f 0 u) q K≤1)
++    (hdepth : ∀ j, j≤q-n+K → Fw f n-4≤Fw f (n+j))
++    (hguard : Fw f (q+K)≤Fw f n) :
++    1≤Ar f n (q-n+K)+((q-n+K : Nat) : Int)*(Fw f n-Fw f (q+K)+1) := by
++  have hd : ∀ j, j≤q-n+K → -4≤mass (seg f n j) := by
++    intro j hj
++    rw [seg_mass]
++    have h := hdepth j hj
++    omega
++  have hm := three_nonsupplied_Q_state_member f n a q K hβ hseg hnq hpos hroot haz hay hd
++  have hg : mass (actualQState f n q K).word≤0 := by
++    simp only [actualQState,seg_mass]
++    rw [show n+(q-n+K)=q+K by omega]
++    omega
++  have harea := Recaman.ThreeNonsuppliedQData.member_area
++    Recaman.ThreeNonsuppliedQData.rows Recaman.ThreeNonsuppliedQData.rows_verified _ hm hg
++  simp only [actualQState,checked_wordArea_eq,←Ar_areaW,seg_length,seg_mass] at harea
++  rw [show n+(q-n+K)=q+K by omega] at harea
++  grind
++
++theorem exists_minimum_visit (f : Nat → Bool) (n : Nat) : ∀ B : Nat,
++    ∃ r, n≤r ∧ r≤n+B ∧ ∀ u, n≤u → u≤n+B → Fw f r≤Fw f u
++  | 0 => by
++      refine ⟨n,Nat.le_refl _,by omega,?_⟩
++      intro u hu hu'
++      have heq : u=n := by omega
++      rw [heq]
++      exact Int.le_refl _
++  | B+1 => by
++      obtain ⟨r,hnr,hrb,hmin⟩ := exists_minimum_visit f n B
++      by_cases hlast : Fw f (n+B+1)≤Fw f r
++      · refine ⟨n+B+1,by omega,by omega,?_⟩
++        intro u hnu hub
++        by_cases hu : u≤n+B
++        · have hm := hmin u hnu hu; omega
++        · have : u=n+B+1 := by omega
++          simp [this]
++      · refine ⟨r,hnr,by omega,?_⟩
++        intro u hnu hub
++        by_cases hu : u≤n+B
++        · exact hmin u hnu hu
++        · have : u=n+B+1 := by omega
++          rw [this]; omega
++
++/-- Q for at most three nonsupplied additions before q, with arbitrary
++future length and depth. Deep future visits use the independent fresh-low
++area lemma, rather than a finite-depth assumption on the final theorem. -/
++theorem three_nonsupplied_area_nonnegative (f : Nat → Bool) (n a q K : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q)
++    (hpos : ∀ j, 0<j → j≤q-n+K → cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j)
++    (hroot : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n))
++    (haz : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3)
++    (hay : cN (fun u => f u=true ∧ ¬EndN f 0 u) q K≤1)
++    (hguard : Fw f (q+K)≤Fw f n) :
++    0≤Ar f n (q-n+K)+((q-n+K : Nat) : Int)*(Fw f n-Fw f (q+K)+1) := by
++  by_cases hdepth : ∀ j, j≤q-n+K → Fw f n-4≤Fw f (n+j)
++  · have h := three_nonsupplied_area_of_depth_four f n a q K hβ hseg hnq hpos hroot haz hay hdepth hguard
++    omega
++  · obtain ⟨r,hnr,hrb,hmin⟩ := exists_minimum_visit f n (q-n+K)
++    have hposz : ∀ j, 0<j → j≤q-n → cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j := by
++      intro j hj hjq; exact hpos j hj (by omega)
++    have hqr : q≤r := by
++      apply Classical.byContradiction
++      intro hneg
++      have hz := three_nonsupplied_excursion_depth_offset f n a (q-n) hβ hseg hposz haz hroot
++        (r-n) (by omega)
++      rw [Nat.add_sub_cancel' hnr] at hz
++      apply hdepth
++      intro j hj
++      have hm := hmin (n+j) (by omega) (by omega)
++      omega
++    have harea := area_nonneg_of_fresh_low_visit f n a q r (q+K) hβ hseg hnq hqr
++      (by omega) (Fw f r) rfl (by
++        intro u hnu hub
++        apply hmin u hnu
++        omega) (by simpa using hay)
++    simpa only [show q+K-n=q-n+K by omega] using harea
++
++/-- Original-base deficit form of Q. Both z and y may have arbitrary length;
++there is no depth hypothesis on the final statement. -/
++theorem three_nonsupplied_area_from_zero (f : Nat → Bool) (n a q b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q) (hqb : q≤b)
++    (hzero : cN (EndN f 0) 0 n=cN (fun u => f u=false) 0 n)
++    (hpos : ∀ u, n<u → u≤b → cN (EndN f 0) 0 u+1≤cN (fun u => f u=false) 0 u)
++    (hroot : cN (EndN f 0) 0 q+1=cN (fun u => f u=false) 0 q)
++    (haz : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3)
++    (hay : cN (fun u => f u=true ∧ ¬EndN f 0 u) q (b-q)≤1)
++    (hguard : Fw f b≤Fw f n) :
++    0≤Ar f n (b-n)+((b-n : Nat) : Int)*(Fw f n-Fw f b+1) := by
++  have hrel : ∀ j, 0<j → j≤q-n+(b-q) →
++      cN (EndN f 0) n j+1≤cN (fun u => f u=false) n j := by
++    intro j hj hjb
++    have hp := hpos (n+j) (by omega) (by omega)
++    have he := cN_add (EndN f 0) 0 n j
++    have hs := cN_add (fun u => f u=false) 0 n j
++    simp only [Nat.zero_add] at he hs
++    omega
++  have hr : cN (EndN f 0) n (q-n)+1=cN (fun u => f u=false) n (q-n) := by
++    have he := cN_add (EndN f 0) 0 n (q-n)
++    have hs := cN_add (fun u => f u=false) 0 n (q-n)
++    rw [Nat.add_sub_cancel' hnq] at he hs
++    simp only [Nat.zero_add] at he hs
++    omega
++  have h := three_nonsupplied_area_nonnegative f n a q (b-q) hβ hseg hnq hrel hr haz hay
++    (by simpa only [Nat.add_sub_cancel' hqb] using hguard)
++  simpa only [Nat.add_sub_cancel' hqb,show q-n+(b-q)=b-n by omega] using h
++
++/-- The a_z≤3 subcase of C1: an older P2 start is impossible under the
++actual positive-deficit and nonsupplied-A budgets. This does not cover a_z≥4. -/
++theorem three_nonsupplied_no_old_window (f : Nat → Bool) (n a q b t : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnq : n≤q) (hqb : q≤b)
++    (hzero : cN (EndN f 0) 0 n=cN (fun u => f u=false) 0 n)
++    (hpos : ∀ u, n<u → u≤b → cN (EndN f 0) 0 u+1≤cN (fun u => f u=false) 0 u)
++    (hroot : cN (EndN f 0) 0 q+1=cN (fun u => f u=false) 0 q)
++    (haz : cN (fun u => f u=true ∧ ¬EndN f 0 u) n (q-n)≤3)
++    (hay : cN (fun u => f u=true ∧ ¬EndN f 0 u) q (b-q)≤1)
++    (htn : t<n) : ¬Win f t (b-t) := by
++  intro hwin
++  have hp := block_suffix_positive_walk f 0 n a hβ hseg t (Nat.zero_le _) (by omega)
++  simp only [Nat.zero_add] at hp
++  have hlevel := hwin.2.1
++  rw [show t+(b-t)=b by omega] at hlevel
++  have hguard : Fw f b≤Fw f n := by omega
++  have harea := three_nonsupplied_area_from_zero f n a q b hβ hseg hnq hqb hzero hpos hroot haz hay hguard
++  have hsplit := area_split_at f t n b (by omega) (by omega)
++  have heq : Fw f n-Fw f t=Fw f n-Fw f b+1 := by omega
++  rw [heq] at hsplit
++  have hzeroAr := hwin.2.2
++  omega
++
++-- A positive control for the second checker: full words of length21 are
++-- legal transition outputs. The observed maximum20 is supplied by closure,
++-- rather than imposed as a cutoff in the transition function.
++example : (Recaman.ThreeNonsuppliedQData.stepS
++    ⟨[false],List.replicate 20 true,0⟩).map (fun s => s.word.length)=some 21 := by decide
++
++/-- Before the next supplied addition, an S-only gap has length at most
++twice the number of all A clocks already in the tail minus two. The bound
++depends on the present word, not on a fixed length, depth or A-budget cutoff. -/
++theorem supplied_after_S_gap_bound (f : Nat → Bool) (n a b j : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnb : n<b)
++    (hS : ∀ u, b≤u → u<b+j → f u=false) (he : EndN f 0 (b+j)) :
++    (j : Int)≤2*ones (seg f n (b-n))-2 := by
++  have hword : seg f n (b+j-n)=seg f n (b-n)++List.replicate j false := by
++    have h := seg_add f n (b-n) j
++    rw [show n+(b-n)=b by omega,seg_false f b j hS] at h
++    simpa only [show b-n+j=b+j-n by omega] using h
++  have hrep : ones (List.replicate j false)=0 := by
++    have hm := mass_eq (List.replicate j false)
++    rw [mass_rep_false,List.length_replicate] at hm
++    omega
++  have hAcount : ones (seg f n (b+j-n))=ones (seg f n (b-n)) := by
++    rw [hword,ones_append,hrep]; omega
++  obtain ⟨_,t,k,_,htk,hk,hF,hAr⟩ := he
++  by_cases htn : t<n
++  · have hwin : Win f t (b+j-t) := by
++      have heq : b+j-t=k := by omega
++      simpa only [heq] using (show Win f t k from ⟨hk,hF,hAr⟩)
++    have hc := old_window_count_barrier f n a t (b+j) hβ hseg htn (by omega) hwin
++    rw [hAcount] at hc
++    have hb := ones_bounds (seg f n (b-n))
++    rw [seg_length] at hb
++    omega
++  · by_cases htb : b≤t
++    · have hdown := fw_false_run f t k (fun u htu huk => hS u (by omega) (by omega))
++      omega
++    · have hdrop : (seg f n (b-n)).drop (t-n)=seg f t (b-t) := by
++        have h := seg_drop f n (b-n) (t-n) (by omega)
++        simpa only [show n+(t-n)=t by omega,show b-n-(t-n)=b-t by omega] using h
++      have hle := ones_drop_le (seg f n (b-n)) (t-n)
++      rw [hdrop] at hle
++      have hm := mass_eq (seg f t (b-t))
++      rw [seg_mass,show t+(b-t)=b by omega] at hm
++      have hb := ones_bounds (seg f t (b-t))
++      have hdown := fw_false_run f b j hS
++      rw [htk] at hF
++      have hmass : (j : Int)+1≤ones (seg f n (b-n)) := by omega
++      omega
++
++def tail_S5A3S4A4SA3 : List Bool :=
++  List.replicate 5 false ++ List.replicate 3 true ++ List.replicate 4 false ++
++    List.replicate 4 true ++ [false] ++ List.replicate 3 true
++
++theorem tail_S5A3S4A4SA3_no_supply_check :
++    ((List.range 19).all fun j =>
++      !(Recaman.ThreeNonsuppliedData.localSupply (tail_S5A3S4A4SA3++List.replicate j false) ||
++        Recaman.ThreeNonsuppliedData.oldSignature (tail_S5A3S4A4SA3++List.replicate j false)))=true := by decide
++
++/-- This actual twenty-clock tail cannot produce any further A if no
++additional nonsupplied A is available. The future length K is arbitrary;
++the nineteen checks concern the first possible supplied A, not a K cutoff. -/
++theorem no_additions_after_S5A3S4A4SA3 (f : Nat → Bool) (n a b K : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : seg f 0 n = β ++ List.replicate a true) (hnb : n<b)
++    (hword : seg f n (b-n)=tail_S5A3S4A4SA3)
++    (hfree : cN (fun u => f u=true ∧ ¬EndN f 0 u) b K=0) :
++    cN (fun u => f u=true) b K=0 := by
++  have hall : ∀ j, j<K → f (b+j)=false := by
++    intro j
++    induction j using Nat.strongRecOn with
++    | ind j ih =>
++      intro hjK
++      cases hA : f (b+j)
++      · rfl
++      · have hnot := not_of_cN_zero (fun u => f u=true ∧ ¬EndN f 0 u) b K hfree
++          (b+j) (by omega) (by omega)
++        have he : EndN f 0 (b+j) := by
++          apply Classical.byContradiction
++          intro hn
++          exact hnot ⟨hA,hn⟩
++        have hgap : ∀ u, b≤u → u<b+j → f u=false := by
++          intro u hbu huj
++          have h := ih (u-b) (by omega) (by omega)
++          simpa only [Nat.add_sub_cancel' hbu] using h
++        have hbound := supplied_after_S_gap_bound f n a b j hβ hseg hnb hgap he
++        rw [hword] at hbound
++        have hones : ones tail_S5A3S4A4SA3=10 := by decide
++        rw [hones] at hbound
++        have hj19 : j<19 := by omega
++        have hw : seg f n (b+j-n)=tail_S5A3S4A4SA3++List.replicate j false := by
++          have h := seg_add f n (b-n) j
++          rw [show n+(b-n)=b by omega,seg_false f b j hgap,hword] at h
++          simpa only [show b-n+j=b+j-n by omega] using h
++        have hadmit := wordSupply_admitted f n a (b+j) hβ hseg (by omega) hA true he
++        change (Recaman.ThreeNonsuppliedData.localSupply (seg f n (b+j-n)) ||
++          Recaman.ThreeNonsuppliedData.oldSignature (seg f n (b+j-n)))=true at hadmit
++        rw [hw] at hadmit
++        have hc := List.all_eq_true.mp tail_S5A3S4A4SA3_no_supply_check j (List.mem_range.mpr hj19)
++        simp [hadmit] at hc
++  apply cN_zero_of
++  intro u hbu huend
++  have hf := hall (u-b) (by omega)
++  rw [Nat.add_sub_cancel' hbu] at hf
++  simp [hf]
++
++/-! Integer-clock adapters for the completed C1 setting. These only translate
++the already-proved natural-clock result; they are not separate research claims. -/
++
++open Classical in
++theorem nonsupplied_count_shift (e : Int → Bool) (p : Int) (s m : Nat) :
++    countP (fun c => e c=true ∧ ¬Endable e p c) (p+(s : Int)) m =
++      cN (fun i => e (p+(i : Int))=true ∧
++        ¬EndN (fun j => e (p+(j : Int))) 0 i) s m := by
++  classical
++  rw [countP_cN (fun c => e c=true ∧ ¬Endable e p c) p (p+(s : Int)) s rfl m]
++  apply cN_congr
++  intro i _ _
++  rw [endable_iff e p p (p+(i : Int)) 0 i (by simp) rfl]
++
++theorem endableCount_shift (e : Int → Bool) (p : Int) (m : Nat) :
++    endableCount e p m = cN (EndN (fun i => e (p+(i : Int))) 0) 0 m := by
++  classical
++  have h := @countP_cN (Endable e p) (classDec _) p p 0 (by simp) m
++  change @countP (Endable e p) (classDec _) p m = _
++  rw [h]
++  apply cN_congr
++  intro i _ _
++  exact endable_iff e p p (p+(i : Int)) 0 i (by simp) rfl
++
++theorem subtractionCount_shift (e : Int → Bool) (p : Int) (m : Nat) :
++    subtractionCount e p m = cN (fun i => e (p+(i : Int))=false) 0 m := by
++  exact countP_cN (fun c => e c=false) p p 0 (by simp) m
++
++open Classical in
++theorem three_nonsupplied_area_int (e : Int → Bool) (p : Int) (n a q b : Nat)
++    {β : List Bool} (hβ : BlockWord β)
++    (hseg : segment e p n = β ++ List.replicate a true) (hnq : n≤q) (hqb : q≤b)
++    (hzero : endableCount e p n=subtractionCount e p n)
++    (hpos : ∀ u, n<u → u≤b → endableCount e p u+1≤subtractionCount e p u)
++    (hroot : endableCount e p q+1=subtractionCount e p q)
++    (haz : countP (fun c => e c=true ∧ ¬Endable e p c) (p+(n : Int)) (q-n)≤3)
++    (hay : countP (fun c => e c=true ∧ ¬Endable e p c) (p+(q : Int)) (b-q)≤1)
++    (hguard : Fw (fun i => e (p+(i : Int))) b≤Fw (fun i => e (p+(i : Int))) n) :
++    0≤Ar (fun i => e (p+(i : Int))) n (b-n)+((b-n : Nat) : Int)*
++      (Fw (fun i => e (p+(i : Int))) n-Fw (fun i => e (p+(i : Int))) b+1) := by
++  classical
++  rw [segment_seg e p p 0 (by simp)] at hseg
++  simp only [endableCount_shift,subtractionCount_shift] at hzero hpos hroot
++  rw [nonsupplied_count_shift] at haz hay
++  exact three_nonsupplied_area_from_zero (fun i => e (p+(i : Int))) n a q b
++    hβ hseg hnq hqb hzero hpos hroot haz hay hguard
++
+ end Recaman.BlockSuffixPositivity
+diff --git a/docs/AI_RESEARCH_PROTOCOL.md b/docs/AI_RESEARCH_PROTOCOL.md
+index a99dffe..9e3f769 100644
+--- a/docs/AI_RESEARCH_PROTOCOL.md
++++ b/docs/AI_RESEARCH_PROTOCOL.md
+@@ -1,6 +1,6 @@
+ # AI と進める数学研究プロトコル
+ 
+-最終更新: 2026-09-15
++最終更新: 2026-10-21
+ 
+ ## 結論
+ 
+@@ -57,7 +57,7 @@ Daviesらの枠組みは、データから関係を予測するだけで終わ
+ ### 1.4 検索とpremise selectionを局所化する
+ 
+ LeanDojo/ReProverとLean Copilotは、巨大なライブラリから関連premiseを検索することと、proof stateから
+-局所的な次手を生成することを分けている。本リポジトリでも全228モジュールを毎回コンテキストへ詰めず、
++局所的な次手を生成することを分けている。本リポジトリでも全モジュールを毎回コンテキストへ詰めず、
+ `PROOF_MAP`から対象義務の依存閉包を選び、関連定義・既存定理・既知反例だけをwork packetへ入れる。
+ 
+ ### 1.5 プロンプトは手順列より成果条件を中心にする
+@@ -66,6 +66,41 @@ OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、
+ 許可境界を明示し、同じ指示を重複させないことを勧めている。本プロトコルでは、研究依頼を
+ 「何を順番に考えるか」ではなく「どのstatementを、何を証拠として、どこで止めるか」で指定する。
+ 
++### 1.6 探索・活用を、次の判断を変える情報で配分する
++
++研究単位の目的を次の三つに区別する。証明・反例探索・計算は**手段**であり、これとは別の軸である。
++
++- **活用**: 選択済みの機構で、特定の未証明edgeを閉じる。反例探索による最後の適用条件確認も含む。
++- **局所探索**: 同じ経路の候補・仮定・表現を比較し、どの研究単位へ進むかを決める。
++- **大域探索**: 経路そのもの、対象、または証明機構を変える候補を比較する。
++
++同じ有限表の枠数・lag・走査上限を増やすだけでは、独立した機構の探索と数えない。
++同じ未証明仮定に依存する複数候補も、その依存関係を明記する。
++
++HayらのmetareasoningとRusso・Van Royのinformation-directed samplingを参考に、各候補について
++「成功したらどのedgeが閉じるか」「失敗したら何を除外でき、次の選択がどう変わるか」「費用上限」を書く。
++成功確率や情報量を推定できない場合は、根拠を添えた定性的比較でよい。架空の確率や合成点数を作らない。
++両論文のモデルにおける最適性・regret保証を、この数学研究へそのまま移してはならない。
++
++### 1.7 予算と切替は実行前に固定し、判定後に更新する
++
++1. cycleの総予算と各カードの配分を同じ単位で記録する。初期値の例は**活用60・探索30・監査10%**。
++   これは運用仮説であり最適比率ではない。探索は局所・大域の内訳も記す。
++2. 時間、CPU時間、token、金銭は別々に上限を持つ。並行作業なら延べ作業時間と経過時間を区別する。
++   親cycleと子カードで同じ費用を二重計上せず、予定と実績を分け、未実行は未実行と書く。
++3. 各unitに最初の確認点、継続・切替・停止・再開の条件を置く。反例、循環仮定、同値な言い換え、
++   予算到達、同じ障害の再出現を判定材料にする。反例数ゼロだけでは延長理由にならない。
++4. 継続は、供給元を確認した新補題、反例による候補族の排除、非同値な未知edgeの特定などを根拠にする。
++   未証明仮定を増やしたり、監査を省いたりして予算を守らない。監査が超過する分は他の配分から移す。
++5. 再配分は判定時点で、旧配分・新配分・証拠・次の判断を記録する。止まった枝へ余り時間を自動投入しない。
++   同じ障害で2 cycle連続してedgeも候補集合も変わらなければ、次cycleの探索枠の少なくとも半分を
++   別機構の評価へ移す。これは停止済み枝の無条件再開を許可する規則ではない。
++6. 定理数、module数、commit数、調べた上限の増加を報酬にしない。反証・停止も、次の選択を変えるなら成果。
++
++命題の証拠labelと作業状態は分ける。未着手・継続待ち・切替は作業状態で、追加の証拠labelではない。
++強い補助命題が反証されても親命題は自動的に`REFUTED`にならない。方法だけが停止した場合は、命題を
++`CONJECTURED`のまま残し、停止した方法を`STOPPED`として特定する。
++
+ ## 2. 標準研究サイクル
+ 
+ ### Phase A: 問いを一枚に固定する
+@@ -75,6 +110,8 @@ OpenAIの公式モデルガイドは、長期・tool-heavy taskについて、
+ - exact statementと全量化子。
+ - 実軌道、抽象history、finite prefixのどれを扱うか。
+ - 既存のどの残余を除くか。
++- 活用・局所探索・大域探索の別、cycle内の配分、費用上限、最初の確認点。
++- 成功時の前進と、失敗時に得る情報・切り替える行き先。
+ - 発見rangeと未使用holdout range。
+ - 一度だけ許す修理と停止条件。
+ 
+@@ -91,7 +128,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ 4. `Objects`: 必要な定義とnotation。
+ 5. `Acceptance`: 合格する成果物と検証command。
+ 6. `Stop`: 何が起きたら棄却するか。
+-7. `Output`: hypothesis card、patch、実験logなどの形。
++7. `Allocation / Decision`: 予算、確認点、継続・切替条件と依存する別カード。
++8. `Output`: hypothesis card、patch、実験logなどの形。
+ 
+ 長い作業では、各サイクル終了時にこのpacketを更新する。会話の要約には「結論、証拠、反例、未解決義務、
+ 次の判断」だけを残し、試行錯誤の全文はdevelopment logまたはカードへ退避する。
+@@ -106,9 +144,11 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ 3. 既存countermodelへ適用する。
+ 4. discovery rangeで候補を絞る。
+ 5. statementを凍結してholdoutを一回だけ実行する。
+-6. 破れたら一回だけ原因に基づく修理を許し、再度破れたら`STOPPED`にする。
++6. 破れたら元の命題と反例を保存する。一回だけ原因に基づく修理版を別versionで許し、再度破れたら方法を`STOPPED`にする。
+ 
+-データを見た後で量化子、定数、rangeを黙って変更してはならない。
++データを見た後で量化子、定数、rangeを黙って変更してはならない。既に見たrangeをholdoutと呼ばない。
++修理に使ったholdoutはdiscoveryへ移し、新しい未使用holdoutを凍結する。紙上専用unitはrange欄を
++「該当なし」とし、既知反例と境界条件による反証passを省略しない。
+ 
+ ### Phase D: 紙上証明から最小Lean statementへ移す
+ 
+@@ -133,6 +173,8 @@ AIへ渡すpacketは次の順にし、セッション履歴そのものを知識
+ - `STOPPED`: 再開条件を一文で残す。
+ 
+ 「有望そう」「さらに調べる」で閉じない。
++unit終了時に予定・実績・得た情報・次配分をカードへ残す。今回の問いを判定できなければ、停止した
++方法と不足入力を明示する。証拠labelを昇格させて時間切れを成功に見せない。
+ 
+ ## 3. 指示テンプレート
+ 
+@@ -147,6 +189,11 @@ Known (evidence-labelled):
+ No-go / do not repeat:
+   - [既知反例、空虚なinterface、停止済み戦略]
+ 
++Allocation / value of information:
++  - [cycle ID、活用/局所探索/大域探索、総予算に対する配分、監査枠]
++  - [成功時に閉じるedge、失敗時に除外する候補と次の選択]
++  - [最初の確認点、各費用上限、実績の記録先]
++
+ Acceptance:
+   - exactなstatement、または最小反例を返す
+   - 既存結果より強い理由を示す
+@@ -158,6 +205,8 @@ Falsification first:
+ 
+ Stop:
+   - [反例、同値変形への還元、二度目の修理など]
++Continue / switch:
++  - [継続を正当化する新情報、切替先、再開に必要な外部入力]
+ 
+ Output:
+   結論、証拠label、変更、command、失敗、未確実性、次の判断。
+@@ -205,6 +254,8 @@ gate は heuristic で、`have` を含む連言合成や regime を仮定した
+ - K. Yang et al., [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626), NeurIPS 2023. proof stateと関連premiseの局所retrievalを採用。
+ - S. Song et al., [Towards Large Language Models as Copilots for Theorem Proving in Lean](https://arxiv.org/abs/2404.12534) (2024). tactic suggestion、proof search、premise selectionの分離を採用。
+ - T. Tao, [Machine Assisted Proof](https://terrytao.wordpress.com/wp-content/uploads/2024/03/machine-assisted-proof-notices.pdf), Notices of the AMS (2024). 形式化による細粒度分業と検証可能な協働を採用。
++- N. Hay et al., [Selecting Computations: Theory and Applications](https://arxiv.org/abs/1408.2048), UAI 2012（arXiv掲載2014）. 次の判断を改善する計算と費用を比較する考え方を採用。
++- D. Russo and B. Van Roy, [Learning to Optimize via Information-Directed Sampling](https://arxiv.org/abs/1403.5556), 2014–2017. 選択に関係する情報と活用の利益をともに考慮する設計を参考にする。
+ - OpenAI, [Model guidance: prompting best practices](https://developers.openai.com/api/docs/guides/latest-model) (参照日 2026-09-01). outcome、証拠、成功条件、停止条件、権限境界を明示するlean prompt設計を採用。
+ 
+ これらの論文はRecamán全域性の新しい数学的証拠ではない。本書が導入するのは、候補生成を増やしつつ、
+diff --git a/docs/CURRENT_FRONTIER.md b/docs/CURRENT_FRONTIER.md
+index e35cf4e..9b6e23e 100644
+--- a/docs/CURRENT_FRONTIER.md
++++ b/docs/CURRENT_FRONTIER.md
+@@ -1,11 +1,28 @@
+ # Current research frontier
+ 
+-最終更新: 2026-10-20（E-360 は 2026-09-21 の Sol 週間研究、E-361〜E-368 は 2026-10-03、E-369〜は 2026-10-20）
++最終更新: 2026-10-23（E-385〜E-389。中心命題の証拠labelは変更なし）
+ 
+ この文書を、研究状態と次の研究gateに関する唯一の正本とする。個々の主張の証拠は
+ [`EVIDENCE_REGISTRY.tsv`](EVIDENCE_REGISTRY.tsv)、Lean kernel上の公理依存は
+ [`Recaman/Audit.lean`](../Recaman/Audit.lean)を正本とする。
+ 
++## Research brief
++
++- 現在の研究単位: a_z≤3の全長深さ4をE-386、任意長/任意深さの将来yに対するQとold P2排除をE-387でLean証明。a_z≤4はE-388の全長COMPUTED入力。次はE-389のS-gap/terminal rayを使ってr4のkernel証明書を圧縮する。区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
++- 探索用の入力: E-380は深さ4ならk1直前11clockより古いprefixを除いてもEndableが不変であることを形式化。k1以後の全tailを保持する条件付きcontext削減で、深さ4の供給や有限lag化の証明ではない。
++- 面積の新入力: E-381はブロック接尾辞の2area+2≥mass(mass+1)と等号二族を形式化。上界4area≤5mass²−11mass+16も形式化。古いP2窓には2Z≤2−r(r+1)が必要になるが、Zの未知下界やC1全体は証明していない。
++- 計算の部分場合: E-382の旧COMPUTEDなQ領域は、E-387が必要old signatureの312状態と実語のsimulationでkernelへ移した。E-382自体の過去の計算labelは保持し、同じ木の再実行は次unitにしない。
++- 有限tailの監査: E-383はtail長1..32・a_z≤3で、任意長のBlockWord prefixをmass≤17の20111代表へ削減し全探索。深さ≥5は0。この旧計算だけでは一様化できなかったが、現在はE-386が同じa_z≤3の全長深さ4をPROVED-LEANで供給する。
++- Qの部分領域: a_z≤3なら任意のyについてZ≥0をE-387で形式化。深さ4内はkernel graph、外はE-386が全区間最低値をq0以後に供給してE-379へ接続。古いt<k1の全P2窓も排除する。一般Q/C1のa_z≥4、C2/F/TSは未解決。
++- 紙上の入力: E-384は全massのBlockWord面積spectrumを二次下限と上限の間の全整数として分類（mass0/1は例外）。存在方向は未Lean。別々の窓が同じprefixを共有できるという十分条件にはしない。
++- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
++- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-379は最低水準の訪問位置を制限したQ、E-380は高さ下界を仮定したprefix削減。C1・Q・TS・SL全体は未証明。
++- 新しい不等式: E-385は古いP2窓にtailのS数≤2×全A数−2を課す。これが無制限Sの状態圧縮を正当化し、E-386は独立old signature緩和の3,324状態とactual-word simulationをkernelで検査した。全Aと非Endable Aを混同しない。
++- r4の証拠境界: E-388は個別old signature緩和の440943訪問で全A≤10・終端8語・深さ4をCOMPUTEDとして供給。Q4も719状態で全edge独立照合しZ最小1。r4はkernel未検査、一般a_z≥5と任意rのrankは未解決。
++- 次の判定: E-389は次の供給A前のS-gapをj≤2×全A−2へ絞り、最高A10の具体tailから零追加free予算ではAが増えないことをLean証明。次はA-eventでr4 certificateを圧縮する。供給でないAは長いgap後にも置けるので、それを黙って切らない。[r4 note](RESEARCH_NOTE_2026-10-23_C1_FOUR.md)と[次のmacro-stepカード](HYPOTHESIS_CARD_2026-10-24_C1_FOUR_KERNEL.md)を引き継ぐ。
++- 配分と切替: [本日handoff](RESEARCH_HANDOFF_2026-10-23_DAILY.md)と実時計journalへ実績を保存。第16Aの実prefix holdoutは28秒guardで未完了、同設定延長をSTOPPEDとしてprefix-freeモデルへ変更した。任意rのrankはCONJECTURED、同じ障害2 cycleの判定を日付でリセットしない。
++- 定期研究: [毎日6:00〜8:00 JST](DAILY_RESEARCH_SCHEDULE.md)。本日はH-20261023-01/02を完了し局所探索から監査へ移行。[日次handoff](RESEARCH_HANDOFF_2026-10-23_DAILY.md)の最後の次unitから再開し、完了したa_z≤3の深さ/QやC2/Pの入力確認を反復しない。実績は確認済みjournalだけとし待機・中断・不足とCPUは別記する。
++
+ ## 結論
+ 
+ ### 監査による訂正（2026-09-15）
+@@ -699,6 +716,8 @@ hypothesis cardが作られるまでactive branchへ昇格しない。
+ 3. computationのhorizon延長だけではlabelを上げない。
+ 4. exact命題が`CONJECTURED`でも、証明ルートが尽きれば別rowで`STOPPED`にする。
+ 5. current branchの変更は、この文書とregistryを同じchange setで更新する。
++   `Research brief` 節を現在の研究単位・未証明義務・有限証拠の範囲に同期する。
++   `make brief` はこの節と台帳を直接読み、ラベルや件数をコードに固定しない。
+ 6. `bash scripts/check_research_registry.sh`と`./scripts/check.sh`を通してからhandoffする。
+ 
+ ## 現在の検証基準
+diff --git a/docs/EVIDENCE_REGISTRY.tsv b/docs/EVIDENCE_REGISTRY.tsv
+index 1672478..922494e 100644
+--- a/docs/EVIDENCE_REGISTRY.tsv
++++ b/docs/EVIDENCE_REGISTRY.tsv
+@@ -377,3 +377,14 @@ E-375	PROVED-LEAN	unclean-window-structure	研究計画P2、H-20261020-01（サ
+ E-376	PROVED-LEAN	capacity-equality-induction	研究計画P2、H-20261020-01（サブエージェント pump の定理 1 と密度補題を親が検算・仕様化、サブエージェント leanEqH が Lean 化）。BlockWord（(SAAA | SSAAAASAAA | A)* を古い順の list で帰納的に定義）、HCap e p n（区間 [p, p+n) で Endable 数 ≤ 減算数＝区間容量予想 H の 1 区間）、EqClassW e p n（[p, p+n) が等号で最後の clock が endable ならブロック語）。**密度補題**（dense_of_block）：ブロック語の任意の接尾辞 v は 10·#S(v) ≤ 3|v|（末尾に A を足しても同じ）。no_p2_suffix：その形の区間の直後の clock の P2 窓は存在しない。**hcap_step：同じ始点 p で、長さ n 未満の HCap と EqClassW から長さ n の HCap が従う**。系 hcap_of_eqclassW：全ての長さの EqClassW ⇒ 全ての長さの HCap。従って**区間容量予想 H（⇒ E-070、E-370）は EqClassW（等号の場合がブロック語であること）だけに帰着する**。EqClassW は仮定（statement audit の check 2 = yes）。計算では EqClassW は長さ ≤ 31 の全語・窓長 ≤ 31 の全幅で成立（E-369・E-374）	Recaman/CapacityEqualityInduction.lean	Recaman.CapacityEqualityInduction.dense_of_block;Recaman.CapacityEqualityInduction.no_p2_suffix;Recaman.CapacityEqualityInduction.hcap_step;Recaman.CapacityEqualityInduction.hcap_of_eqclassW	EqClassW の帰納段（最小反例は x = w·A^i·y、y の内部で不足 d > 0、w のブロック境界は全て y で終わる窓にまたがれる）
+ E-377	PROVED-LEAN	single-window-equality	研究計画P2、H-20261020-01（定理 B：サブエージェント caseB の紙上証明を親が全段検算、サブエージェント leanCaseB が Lean 化）。**EqClassW の帰納段の場合 (B) は起こらない**：区間 [p, p+n) が等号（endable 数 = 減算数）で、最後の clock p+n−1 が加算かつ [p, p+n−2] がその P2 窓（最小でなくてよい）なら、始点 p と p+2 での短い区間の HCap と EqClassW（仮定）から segment = SAAA（single_window_equality）。証明：等号から endable でない A はちょうど 2 個で語は S^j AAA…（step1）、接頭区間の HCap で F ≤ 2、F = 2 に達すると EqClassW で接頭辞が SAAA（j ≥ 2 なら F ≤ 1）、dip 補題（P2 窓は始点の水準より真に下がる）で最小値の最後の訪問は j、水準 −j+1・−j+2 の A に窓の始点がなく F ≥ −j+3、j = 1, 2, 3 は面積と F(L−1) = 0 で矛盾、j ≥ 4 は始点 2 の HCap で初めて F = 1 になる区間が等号になり、EqClassW のブロック語が S^{j−2}A で始まって矛盾（j ≥ 5 は SSS、j = 4 は三つ組で F(12) = 2）（case_big）。仮定 hH・hE は帰納法の仮定（短い区間の H と EqClassW）。**H（⇒ E-070）の残りは EqClassW の帰納段の場合 (A)＝はみ出し補題 SL（a_y + d ≤ 2 なら X ≤ d、長さ ≤ 28 で成立）だけ**（カード）	Recaman/SingleWindowEquality.lean	Recaman.SingleWindowEquality.dip;Recaman.SingleWindowEquality.step1;Recaman.SingleWindowEquality.case_big;Recaman.SingleWindowEquality.single_window_equality	場合 (A)：はみ出し補題 SL の証明
+ E-378	PROVED-LEAN	block-suffix-positivity	研究計画P2、H-20261020-01（サブエージェント straddle・straddle2 の補題 1・1′・TS₁ を親が検算・仕様化、サブエージェント leanTS1 が Lean 化）。**ブロック接尾辞の正値性**（block_suffix_positive）：ブロック語 β の後に A を a 個つけた語の空でない任意の接尾辞 v は mass v ≥ 1 かつ面積 areaW v ≥ 1（古い順の語の面積 areaW、areaW_append）。**S の連の後の A は区間内の窓を持たない**（no_endable_after_S_run）：[p, p+n) がブロック語＋A^a で、その直後に S が j 個続くなら、次の clock は p から endable でない。**TS₁**（ts_one）：長さ ≤ n の HCap と EqClassW（仮定）の下で、[p+n, b) が S だけで b が p から endable なら slack(p, p+n) ≥ 1。はみ出し補題 SL・補題 TS の部品。H・EqClassW・SL・TS 自体は未証明	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.areaW_append;Recaman.BlockSuffixPositivity.block_suffix_positive;Recaman.BlockSuffixPositivity.no_endable_after_S_run;Recaman.BlockSuffixPositivity.ts_one	補題 TS（不足 ≥ 3）、はみ出し補題 SL の残りの場合
++E-379	PROVED-LEAN	fresh-low-visit-area	H-20261022-01。任意の符号語とブロック語+A^aのprefixを仮定。区間の下界mより高々1上のclockはEndableでない（block_prefix_low_clock_not_endable）。下界を訪れた後に2段回復すれば、元のp基点で非EndableなAが2clock必要（two_nonsupplied_additions_of_recovery）。従ってq0以後に[k1,b]全体の最低水準を訪れ、a_p(q0,b)≤1ならC1の面積Z(b)≥0（area_nonneg_of_fresh_low_visit、整数clock版も検証）。長さ・lagの上限なし。ブロックprefixは仮定であり、Dからの供給は短いEqClassWを使う別依存。最低水準がq0前にしかない場合、Q/C1/H/SL全体は未解決。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.block_prefix_low_clock_not_endable;Recaman.BlockSuffixPositivity.two_nonsupplied_additions_of_recovery;Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit;Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit_int	最低水準がq0前にしかない場合の面積結合。独立なAz≥0は反証済みで再開しない
++E-380	PROVED-LEAN	block-prefix-context-radius	H-20261022-01。任意の符号語、ブロック語+A^aのprefix終端nを仮定。接尾辞の長さLとmass rは2L≤5r。Fw(b)≥Fw(n)−Dのclock bについて、prefixの直前floor(5(D+1)/2)clockを残せば、それより古い窓始点を除いてもEndableは両方向に不変。さらにD=4ではmass parityから11clockで十分（endable_iff_last_eleven_of_depth_four）。n以後のtailは全て保持し、lagの上限や11clockの有限状態化ではない。深さ上限Dやa_z上限自体は証明していない。C1/Q/H/SL全体は未解決。 ブロック語の任意suffixはブロック語（block_suffix）なので、必要Wclockを長さWちょうどのブロック語で代表できる（block_suffix_representative）。 有限の後半区間では最古のold window始点を選び、mass≤D+1の一つのBlockWord prefix代表で全Endable patternを保てる（endable_tail_mass_representative）。削除前prefixの不足d=0の保存は主張しない。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.endable_iff_trimmed_block_prefix;Recaman.BlockSuffixPositivity.endable_iff_last_eleven_of_depth_four;Recaman.BlockSuffixPositivity.block_suffix;Recaman.BlockSuffixPositivity.block_suffix_representative;Recaman.BlockSuffixPositivity.endable_tail_mass_representative	元のDで深さを有効に制御する別入力、または有限contextを用いた一様な面積評価
++E-381	PROVED-LEAN	block-prefix-quadratic-area	H-20261022-01。全BlockWord wでmass(w)(mass(w)+1)≤2areaW(w)+2（block_area_quadratic_lower）。SAAA A^jは全j≥0で等号となり定数2はsharp（block_area_quadratic_sharp）。任意のブロック語+A^aのprefixと古い始点t≤k1について、同じ二次下界を実際のFw/Arへ供給（block_prefix_area_quadratic_lower）。既存の面積≥1より強いmass依存の入力で、Q自体や全区間Hを仮定しない。C1/Q/H/SL全体は未解決。 等号はSAAA A^jまたはSSAAAASAAA A^jの場合ちょうど（block_area_quadratic_equality）。実際の古いP2窓があればr=F(k1)−F(b)+1に対し2Z≤2−r(r+1)が必要（old_window_area_upper）。この必要条件だけで古い窓を排除したとは主張しない。 さらに全BlockWordで4areaW≤5mass²−11mass+16を証明（block_area_quadratic_upper）。A SAAAで等号、実際のprefix接尾辞にも接続。面積値の区間内の全整数が実現するという完全spectrum分類は主張しない。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.block_area_quadratic_lower;Recaman.BlockSuffixPositivity.block_area_quadratic_sharp;Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_lower;Recaman.BlockSuffixPositivity.triple_area_quadratic_sharp;Recaman.BlockSuffixPositivity.block_area_quadratic_equality;Recaman.BlockSuffixPositivity.old_window_area_upper;Recaman.BlockSuffixPositivity.block_area_quadratic_upper;Recaman.BlockSuffixPositivity.block_area_upper_sharp;Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_upper	旧minimum caseのZにmass依存の下界を供給する非循環な入力
++E-382	COMPUTED	depth-four-three-nonsupplied-area	H-20261022-01。E-380と文法suffix閉性で全ブロックprefixのold contextを長さ≤11の71代表へ帰着。a_z≤3、最後の零点後d>0、d(q0)=1、全[k1,b]でF≥g−4、a_p(q0,b+1)≤1、b+1までd≥1、F(b)≤gの下でQを分類。全71代表・46,674 nodeの有限探索木を完了しQ最小1、語長/S数の数学的cutoffと保護guardは未使用。a_z=3のzはSASAAA/SSAAAA/SSAAAASA/SSSSAAAASAAAの4語のみ（許容contextはprefixに依存）。別Pythonの全始点直接mass/moment・直接面積和で全counts一致、NFAの13状態でcontext集合も独立照合。深さ4やa_z≤3の供給と、この計算のLean証明書化は未完了。一般Q/C1/H/SLの証明ではない。	docs/data/c1_q_makeup_20261022/context-classify.json	-	a_z≤3に対する深さ4の供給、または全71代表の探索木をkernelで検証する証明書。単なる語長/S上限延長はしない
++E-383	COMPUTED	short-tail-prefix-mass-classification	H-20261022-01。任意長BlockWord prefixの最後の零点k1から、長さ1..32の正不足excursionでd(q0)=1かつa_z≤3となるzを分類。E-380の適応的代表により全old windowをmass≤17の20111語へ帰着し、prefix不足0を別実装で確認。125181373 nodeを全探索し深さ≥5は0、a_z=3のzはE-382と同じ4語。深さcutoffは置かない。全prefixの文法・不足を独立監査、短縮範囲N12/R7で全探索countsを直接mass/moment実装と照合。N32全125181373 nodeも別C++の全始点後ろ向きmass/moment・直接面積和で再実行し、全node/cut数・全候補・min値が一致した。Lean証明書はない。長さ32より長いtailと一般Qは未解決。	docs/data/c1_q_makeup_20261022/prefix-mass-32.json	-	a_z≤3から深さ≤4への語長に依存しない入力。上限延長だけを次unitにしない
++E-384	PROVED-PAPER	block-prefix-area-spectrum	H-20261022-01。全BlockWordのmass mに対するarea集合は、m=0で{0}、m=1で{1}、m≥2では整数区間[m(m+1)/2−1, floor((5m²−11m+16)/4)]の全体ちょうど。E-381が区間外を排除し、三atomの再帰・m=0..7の明示集合・m≥8の隙間なし不等式による帰納が各整数の具体語を供給する。mass≤17の独立全語集合と丸め/係数を別passで照合。存在方向は未Lean、人間レビュー未。各old windowの個別signatureの結果で、複数clockを共通prefixに同時実現する定理やQ全体ではない。	docs/RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md	-	存在方向のLean化は別unit。C1の主な未入力はa_z≤3からの一様な深さ4制御またはZの面積結合
++E-385	PROVED-LEAN	old-window-tail-count-barrier	H-20261023-01。任意のpadded BlockWord prefixの真に古い始点t<nからb>nへ実際のP2窓があるなら、tail [n,b)の全A数aとS数sはs≤2a−2。固定個数の語の面積はS^s A^aで最小という交換下界とE-381の旧面積下界を同じ語で合成。aは非Endable A数ではない。SAAA|SSSSAAAで等号、BlockWordを外すSSAAA|ASは反例。Q全体の排除ではない。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.areaW_count_lower;Recaman.BlockSuffixPositivity.old_window_count_barrier	a_z≥4の深さ・面積を制御する別入力。個数下界だけから一般Qを昇格しない
++E-386	PROVED-LEAN	three-nonsupplied-excursion-depth	H-20261023-01。任意長のpadded BlockWord prefix後、元0基点で正不足excursion・非Endable A数≤3なら全A数≤7。終端不足1ならzはS/SA/SAA/SSAAA/SASAAA/SSAAAA/SSAAAASA/SSSSAAAASAAAの8語のいずれか、従って全zの高さは開始高さ−4以上。語長/S数/lagの数学的cutoffなし。3,324状態の個別old signature緩和グラフをdecideでkernel検査し、実際の全P2・旧面積上下界から全長のsimulationを証明。S≥13ではE-385がold supplyを排除、7個以下の先行Aならlocal窓長≤13。A上限はinduction invariantから供給し仮定しない。Q/C1/H/SL全体とa_z≥4は未解決。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.three_nonsupplied_state_member;Recaman.BlockSuffixPositivity.three_nonsupplied_additions_le_seven;Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_word;Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_depth	a_z≤3のQに残るE-382のkernel証明書化、またはa_z≥4の独立入力。完了した深さの問いを再実行しない
++E-387	PROVED-LEAN	three-nonsupplied-C1-area	H-20261023-02。元0基点のpadded BlockWord prefix終端nの不足0、以後の正不足、qで不足1、[n,q)の非Endable A≤3、[q,b)の非Endable A≤1、Fw(b)≤Fw(n)の下でC1の面積Q: Z(b)≥0。z/yの語長・深さ・lagの上限なし。E-386の終端8語から個別old signature緩和の312状態をkernel検査し、全将来長のactual-word simulationを証明。深さ4を下回る将来は全区間最低値がq以後にあることをE-386から供給してE-379へ接続。同じ条件なら全t<nのP2(t,b)を排除。a_z≥4、一般C1/H/SL、C2/F/TSは未解決。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.three_nonsupplied_Q_state_member;Recaman.BlockSuffixPositivity.three_nonsupplied_area_nonnegative;Recaman.BlockSuffixPositivity.three_nonsupplied_area_from_zero;Recaman.BlockSuffixPositivity.three_nonsupplied_no_old_window;Recaman.BlockSuffixPositivity.three_nonsupplied_area_int	一般C1のa_z≥4を供給する新しい機構か反例。完了したa_z≤3の深さ/Qや旧COMPUTED探索を反復しない
++E-388	COMPUTED	four-nonsupplied-C1-area	H-20261023-03/04。padded BlockWord後、元0基点でd(n)=0・以後正不足・非Endable A≤4について、個別old signature緩和の全440943訪問・46892 saturated状態を完了。第16A停止線とS29/末尾29圧縮をE-385から正当化し全A≤10、終端不足1のr4は8語・全A≤8・長さ≤13・深さ≤4。独立forward実装とliteral mass≤14の3721語/498signatureで全counts・全候補・P最大が一致。16初期語のQ4も719状態・572guard・Z最小1で全edge独立照合、future深さ外はE-379への紙上接続。語長/S数の数学的cutoffなし。r4はkernel未検査、一般a_z≥5と一般rankは未解決。	docs/RESEARCH_NOTE_2026-10-23_C1_FOUR.md	-	r4のkernel証明書をA-event/S-gap圧縮で構成する。未完了の実prefix holdoutや同CPU設定の延長を再開しない
++E-389	PROVED-LEAN	supplied-S-gap-and-terminal-tail	H-20261023-05/06。任意のpadded BlockWord prefix終端nとn<b、[b,b+j)が全Sで元0からb+jが実Endableなら、j≤2×[n,b)の全A数−2。old/new始点の分解から固定A/深さ/語長上限なしに証明。具体tail S5 A3 S4 A4 S A3では全j0..18のlocal/必要old供給をkernelで否定し、futureの非Endable A予算0なら任意長Kのfuture全Aも0と証明。4種の実prefixからの入力ledgerと、free予算1なら次Aを許す対照を保存。一般rank/r4全分類の証明ではない。	Recaman/BlockSuffixPositivity.lean	Recaman.BlockSuffixPositivity.supplied_after_S_gap_bound;Recaman.BlockSuffixPositivity.no_additions_after_S5A3S4A4SA3	次のA eventとterminal S-rayでr4 certificateを圧縮する。新しい定義だけや一般rankを仮定したwrapperを進捗にしない
+diff --git a/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md b/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
+index 7603d6d..9ef163f 100644
+--- a/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
++++ b/docs/HYPOTHESIS_CARD_2026-10-20_LINE_CAPACITY.md
+@@ -5,6 +5,7 @@
+ - Created: 2026-10-20 20:15 JST
+ - Status: `CONJECTURED`
+ - Research branch: issue #73、研究計画 P2（G1）。[H-20261003-01](HYPOTHESIS_CARD_2026-10-03_GENERAL_LAG_CLOSURE.md) の Claim P の続き。
++- Work state（2026-10-21追記）: 親予想は未解決。次のbounded unitと配分は [R-20261021-01](RESEARCH_ALLOCATION_2026-10-21.md)。旧実験の実績を新cycleの実績として転記しない。
+ 
+ ## Exact statement
+ 
+@@ -221,7 +222,35 @@ EqClass_L を全幅で検査：L ≤ 31 で違反 0（`eqclassL.c`）。周期
+ - **独立監査（サブエージェント auditPaper、共有コードなしの全数検査 a1.c で長さ ≤ 30）**：短い z の補題（a_z = 2）・capret の定理 2・3（S1 を条件として）・
+   sld1 の補題 T・sl01 の d = 0・j ≥ 4 の証明は**いずれも確認**（偽はなし）。短い z の補題の j = 4 の枝は記述に欠落があるが、全数検査（j4.py：w ≤ 16、z ≤ 20）で補われる。
+ 
+-## Decision
++## Decision（2026-10-20の記録）
+ 
+ - H と EqClass を次の目標とする。H は E-070 を含意するので、ここが問題の核心。
+ - Lean：E-370（H ⇒ 周期版容量）。次は「H ∧ EqClass ⇒ 閉包の分類」の Lean 化、または H の部分クラス（lag ≤ 7 の line 版など）。
++
++## Allocation / Decision（2026-10-21）
++
++Hを直接の作業単位にはせず、次の三カードに分ける。H・C1・C2・TSの無制限の主張は
++`CONJECTURED` のままであり、この追記は新しい数学的証拠を加えない。
++
++| 次のunit | 目的 | 予定agent分 | 継続の根拠 / 切替条件 |
++|---|---|---|---|
++| [C2 / H-20261021-03](HYPOTHESIS_CARD_2026-10-21_C2_WINDOW_POSITION.md) | 活用: 窓位置の仕様照合から一様な紙上chainへ | 60 | 最初の15分で仮定供給とprobeの範囲を確認。確認できなければ残り45分をC1/TSへ |
++| [C1 / H-20261021-04](HYPOTHESIS_CARD_2026-10-21_C1_AREA.md) | 局所探索: Qと接尾辞正値性の入力を分離 | 15 | 未知edgeを一つにする。Qを仮定するwrapperや上限延長なら停止 |
++| [TS / H-20261021-05](HYPOTHESIS_CARD_2026-10-21_TS_COUNTING.md) | 局所探索: 漏れの鎖を保持する始点数の表現 | 15 | 具体的な反証可能な候補が出れば次unitへ。固定枠の表拡張は停止維持 |
++| 共通監査 | 提案・反証・紙上chainとは別pass | 10 | 仮定・帰着・証拠labelを照合。超過は研究枠から移す |
++
++- Cycle: `R-20261021-01`。活用60・局所探索30・大域探索0・監査10、合計100分。全unitの実績は未実行。
++- 期待する前進: C2のedge、またはC1/TSの次に必要な独立入力の固定。失敗時も、強い補助命題と完成した主張の差を保存する。
++- 依存: 三候補は全てH経路内。C1/C2は併せて使うため、一方の証明をSL全体の証明と数えない。
++- 二cycle連続で同じ障害かつedgeも候補集合も変わらなければ、活用40・探索50・監査10へ変更し、
++  探索の少なくとも25分を別機構の評価へ移す。停止済み枝は元の再開条件を満たす場合だけ再開する。
++- 強い補助命題が反証されてもHやSLを自動的に反証済みにしない。方法停止と命題の証拠labelを分ける。
++- 実績・再配分・command・次判断は各子カードとcycleの台帳へ記録し、CURRENT_FRONTIERを同期する。
++
++### 2026-10-22 の判定
++
++[入力監査](RESEARCH_NOTE_2026-10-22_INPUT_AUDIT.md)と[日次handoff](RESEARCH_HANDOFF_2026-10-22_DAILY.md)を参照。
++C2の仕様と既知の弱化対照を照合し、C1のPを短いEqClassW＋E-378へ接続した。
++TSの始点数mだけの案M0は、ASAA/AASAの紙上反例で `REFUTED`。
++H・SL・C1・C2・TSの無制限の主張は未解決で、台帳の証拠labelを昇格させない。
++次の活用単位はC1のQに移し、旧仕様確認やmだけの圧縮の再走を避ける。実績を予定100分と取り違えない。
+diff --git a/docs/HYPOTHESIS_CARD_TEMPLATE.md b/docs/HYPOTHESIS_CARD_TEMPLATE.md
+index a13f789..51661ca 100644
+--- a/docs/HYPOTHESIS_CARD_TEMPLATE.md
++++ b/docs/HYPOTHESIS_CARD_TEMPLATE.md
+@@ -5,6 +5,8 @@
+ - Created:
+ - Status: `CONJECTURED`
+ - Research branch:
++- Work state (separate from evidence label; e.g. unstarted / active / waiting / method stopped):
++- Parent card / allocation cycle:
+ 
+ ## Exact statement
+ 
+@@ -17,6 +19,27 @@ a proposed Lean declaration, include its signature here before implementation.
+ - Stronger than an existing identity or equivalent reformulation because:
+ - Smallest useful consequence:
+ 
++## Allocation and decision value
++
++- Mode: exploitation / local exploration / global exploration (split mixed work into units):
++- Competing units and shared bottlenecks:
++- Why this unit now (evidence, not an invented success probability):
++- If successful, which dependency edge changes?:
++- If unsuccessful, which candidate family is excluded and how does the next choice change?:
++
++| Budget dimension | Cycle total | This unit planned | This unit actual | Cap / accounting rule |
++|---|---|---|---|---|
++| Agent work minutes (elapsed time recorded separately if parallel) | | | unstarted | |
++| Compute / tokens / money, each in its own unit if used | | | unstarted | |
++
++- Cycle allocation: exploitation / local exploration / global exploration / audit:
++- Audit reservation and who performs the separate audit pass:
++- First checkpoint (time or artifact):
++
++Do not add unlike units or count the same work in both parent and child budgets. A starting
++60/30/10 exploitation/exploration/audit split is a revisable policy, not an optimality claim.
++Audit overruns reduce other allocations; never omit required validation to meet a time cap.
++
+ ## Provenance and dependencies
+ 
+ - Definitions used:
+@@ -33,6 +56,9 @@ a proposed Lean declaration, include its signature here before implementation.
+ - Maximum one permitted repair:
+ - Stop condition:
+ 
++Previously inspected ranges belong to discovery. For paper-only units, mark ranges not applicable
++and retain boundary/countermodel checks. Freeze a fresh holdout after any permitted repair.
++
+ ## Evidence log
+ 
+ | Date | Label | Revision / command | Result |
+@@ -50,5 +76,19 @@ a proposed Lean declaration, include its signature here before implementation.
+ ## Decision
+ 
+ - Continue / formalize / refute / stop:
++- Continue only if (new evidence or a smaller non-equivalent obligation):
++- Switch if / destination (including cost cap and repeated obstacle):
++- Stop this method if (distinguish method failure from refuting the exact statement):
+ - Reason:
+ - Reopen only if:
++
++## Allocation update log
++
++| Checkpoint / date | Evidence and decision-changing information | Planned → actual cost | Old → new allocation and destination | Next acceptance / stop test |
++|---|---|---|---|---|
++| Unstarted | No execution evidence yet | — | — | |
++
++Record counterexamples against the exact version they refute; a failed stronger auxiliary does
++not refute the parent claim. Two consecutive cycles with the same obstacle and no new edge or
++candidate elimination trigger the protocol's review of another mechanism. Record a method as
++`STOPPED` without promoting or refuting an unresolved parent merely to close a work session.
+diff --git a/docs/PROOF_MAP.md b/docs/PROOF_MAP.md
+index 8780330..ad24a14 100644
+--- a/docs/PROOF_MAP.md
++++ b/docs/PROOF_MAP.md
+@@ -1428,3 +1428,86 @@ hP : every nonempty closed configuration has a private member  ->  every closed
+ 
+ `motifFull_of_private` is a reduction: its hypothesis hP (Claim P) is not proved. The classification
+ and G1 are therefore not proved unconditionally.
++
++## 2026-10-22: C1 area after a fresh low visit and exact old context (E-379–E-380)
++
++```text
++padded BlockWord prefix
++  -> suffix mass/area positive (E-378)
++  -> A at lower bound m or m+1 is not Endable (E-379, same original left base)
++  -> recovering from m to m+2 after q0 needs two nonsupplied A clocks
++  + a_p(q0,b) <= 1 + a minimum of [k1,b] visited after q0
++  -> every F(u)-F(b)+1 >= 0 -> C1 area Q for this case (E-379)
++```
++
++The minimum occurring only before q0 remains open. `SAAA|SSSSAAAASAAA` has Az=-2,
++so proving the earlier area nonnegative on its own is stopped. This is not a counterexample to Q.
++The prefix is an explicit assumption; supplying it from completed setting D uses shorter EqClassW
++as recorded in [the input audit](RESEARCH_NOTE_2026-10-22_INPUT_AUDIT.md).
++
++```text
++padded BlockWord suffix density 10S <= 3L + mass R=L-2S
++  -> 2L <= 5R
++  + P2 start mass R=F(k1)-F(b)+1 + F(b)>=F(k1)-depth
++  -> all older starts lie within floor(5(depth+1)/2) clocks of k1
++  -> exact Endable equivalence after trimming the older prefix (E-380)
++  + depth=4 + mass parity -> last 11 prefix clocks suffice
++```
++
++All clocks after k1 remain in the history; window lag is unbounded. E-380 does not supply the
++depth bound. Depth-4/fixed-nonsupplied-budget classification is a separate computational unit.
++H, EqClassW, SL, C1 and unrestricted Q remain unproved. See [C1 note](RESEARCH_NOTE_2026-10-22_C1_Q.md)
++and the [additional-session card](HYPOTHESIS_CARD_2026-10-22_C1_Q_MAKEUP.md).
++
++The same block language is suffix-closed (`block_suffix`), so W-clock old contexts
++have BlockWord representatives of length exactly W. The adaptive theorem
++`endable_tail_mass_representative` selects the earliest actual older window start
++over a finite tail: it preserves all Endable clocks with one prefix representative
++of mass at most depth+1. It does not assert preservation of the deleted prefix's deficit.
++
++```text
++BlockWord grammar -> 2*areaW(w)+2 >= mass(w)*(mass(w)+1) (E-381)
++  equality iff w = SAAA A^j or SSAAAASAAA A^j
++  -> quadratic area bound on every older prefix suffix
++  + an actual P2(t,b), r=F(k1)-F(b)+1
++  -> necessary 2*Z(b) <= 2-r*(r+1)
++```
++
++This strengthens the prefix input, not the unknown lower bound on Z.
++E-382 is the independently audited computational classification at depth four and
++a_z<=3; its entire finite reachable tree completed without a word-length cutoff.
++Supplying depth four or verifying that tree in Lean remains a separate obligation.
++
++## 2026-10-22 C1 Q追加研究の最終入力
++
++- E-380（PROVED-LEAN）: 全後半clockのEndableを同時保存する、mass≤D+1のBlockWord prefix代表。削除prefixの不足の保存は別義務。
++- E-381（PROVED-LEAN）: BlockWordの二次面積下界・等号二族に加え、上界4area≤5mass²−11mass+16。
++- E-383（COMPUTED）: 任意長prefixをmass≤17へ帰着したtail長1..32・a_z≤3の分類。深さ≥5は0。全125181373 nodeを独立実装で再検証。一様な深さ供給ではない。
++- E-384（PROVED-PAPER）: [全massの面積spectrum](RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md)。存在方向は未Lean、共通prefixでの同時実現は主張しない。
++
++**Q/C1/H/SLは未解決。** 次はa_z≤3から深さ≤4を導く語長非依存の入力か反例。一様な供給なしにE-382の深さ制限を外さない。
++
++## 2026-10-23: 低free-A領域の全長証明（E-385〜E-389）
++
++```text
++actual old P2 + block area lower + fixed-count word area lower
++  -> old tail S <= 2*all-A-2 (E-385)
++  -> before first eighth A: local lag<=13, S>=13 excludes old windows
++  -> 3,324-state independent-signature certificate + actual-word induction
++  -> all-A<=7; d=1 endpoint eight words; depth<=4 (E-386, PROVED-LEAN)
++  -> 312-state future certificate, Ay<=1, depth>=-4: Z>=1
++  + deeper future minimum supplied after q by E-386 -> fresh-low E-379
++  -> arbitrary-future Q and all old P2 starts excluded for az<=3 (E-387)
++```
++
++The original Int base p is preserved by `three_nonsupplied_area_int`; it does not rebase Endable at n.
++The complete D supplies the padded prefix through the previously audited shorter-interval dependencies.
++The new proof consumes its actual zero/positive/final-one deficits and budgets; it does not assume H or Q.
++General C1/Q, C2/F/TS/SL/H remain open.
++
++E-388 is COMPUTED only: independent-signature AN<=4 model,440943 visits, max all-A10,
++eight additional d=1 words/depth4; Q4 has719 states and minZ1. Its kernel conversion is open.
++E-389 (PROVED-LEAN) bounds an S-only gap before a supplied A by2*existing-A-2 and proves that
++the explicit tail S5 A3 S4 A4 S A3 with zero further nonsupplied budget admits no later A.
++This supports event/terminal-ray compression, not a general rank theorem.
++Next: [r4 A-event macro simulation](HYPOTHESIS_CARD_2026-10-24_C1_FOUR_KERNEL.md).
+diff --git a/docs/REPRODUCIBILITY.md b/docs/REPRODUCIBILITY.md
+index ed77049..8215d76 100644
+--- a/docs/REPRODUCIBILITY.md
++++ b/docs/REPRODUCIBILITY.md
+@@ -4,6 +4,7 @@
+ 
+ - Lean 4.33.1
+ - Lake
++- Python 3（研究toolと回帰検査）
+ - Cコンパイラ（Work環境用ラッパーを使う場合のみ）
+ - C++20コンパイラ（実験を再現する場合のみ）
+ - `rg`（一括検証スクリプトで使用）
+@@ -27,10 +28,11 @@ lake env lean Recaman/Audit.lean
+ ## 一括検証
+ 
+ ```bash
+-./scripts/check.sh
++make test
+ ```
+ 
+-このスクリプトは次を順に行う。
++`make test` は研究toolの回帰、Lean検証、計算実験の回帰、viewer manifestの整合を検査する。
++Lean検証だけの `./scripts/check.sh` は次を順に行う。
+ 
+ 1. module graphのroot到達性、import解決、acyclic性、frontier direct-import契約を検査
+ 2. `EVIDENCE_REGISTRY.tsv`のlabel、artifact、frontier参照、Audit定理を検査
+@@ -45,6 +47,29 @@ bash scripts/check_module_architecture.sh
+ bash scripts/check_research_registry.sh
+ ```
+ 
++研究toolだけの高速な回帰検査は `make test-tools`。
++`bash scripts/test_harness_gates.sh` は Python 標準ライブラリのテストを起動し、
++G1–G5/P の正常例・負例と、2026-10-21 の受理漏れ3件を検査する。
++全ての変更用fixtureは一時ディレクトリ内に置き、実台帳・監査ファイルへは書き込まない。
++CI は Ubuntu と macOS でこの検査を実行し、通過後に全体検証へ進む。
++
++G5 は各 `## Recaman.…` 節で定理文を `lean` code block に逐語引用し、その節内に
++`1. yes/no`、`2. yes/no`、`3. yes/no` の回答を一つずつ記入することを要求する。
++`yes/no` のままの選択肢・TODO は未回答として拒否する。2 が yes の場合は条件付き仮説を説明する。
++ファイル冒頭の `- reviewer:` には名前と `YYYY-MM-DD` の日付が必要。
++これは記入の完了検査であり、回答の数学的正しさや人間の本人性を保証する検査ではない。
++
++## 現在の研究ブリーフ
++
++```bash
++make brief
++```
++
++`CURRENT_FRONTIER.md` の `Research brief` 節を表示し、引用された evidence と中心命題の
++ラベルは台帳から読む。研究単位が変わったら、この正本の節を更新する。
++定理・ファイル・import契約の件数は実ファイルから数え、監査を実行済みとは表示しない。
++節が欠ける・重複する・未知の evidence ID を参照する場合は、古い固定文へ戻さず失敗する。
++
+ ## Work環境
+ 
+ 同梱の`scripts/lakew`は、本研究で使用したWork環境向けの薄いラッパーである。
+diff --git a/docs/RESEARCH_PORTFOLIO.md b/docs/RESEARCH_PORTFOLIO.md
+index f52eb7d..7ad6439 100644
+--- a/docs/RESEARCH_PORTFOLIO.md
++++ b/docs/RESEARCH_PORTFOLIO.md
+@@ -348,3 +348,48 @@ E-056をPROVED-LEANへ昇格。任意finite F、seed density/range/parity、actu
+ first late landing/no-wrap/future wrap、positive blocker一回使用を同時に満たす一般反例族を認証した。
+ 固定prefix inclusionだけでsurvivalを救う枝の停止理由がLeanで確定した。
+ [形式化カード](HYPOTHESIS_CARD_2026-09-07_ISSUE70_FORMALIZATION.md)を参照。
++
++## 2026-10-22: C1 Qの独立な前半面積下界はSTOPPED
++
++- 具体的候補Az>=0はREFUTED: `SAAA|SSSSAAAASAAA`, k1=4,q0=16でAz=-2。
++  q0自身はF(q0)>gなので、これをQ/C1の反例とは呼ばない。Az>=1はz=Sでも偽。
++- 再開条件: 修理した独立下界の追加仮定が完成Dから別に供給できる場合のみ。
++  根拠なく定数を下げたり同じ上限探索を延長したりしない。
++- N（走行最小値とその+1のAは非Endable）と個数制約だけでもQは出ない。
++  自由tagモデルS^m A^(m+1)SS（m>=4）はZ=2m+3-m^2<0。
++  実際のmomentを照合すると偽のEndableがあり、実語のQを反証していない。
++- 進める入力はE-379のfresh-low部分場合とE-380のexact prefix context。
++  残余は最低水準がq0前にしかない場合。局所面積候補R_C1は未証明で、E-366のTheorem Rとは別。
++- 詳細・反例・再現・停止判断: [C1 Q note](RESEARCH_NOTE_2026-10-22_C1_Q.md)。
++
++## 2026-10-22 C1 Q追加cycle: 停止方法と再開条件
++
++[H-20261022-01](HYPOTHESIS_CARD_2026-10-22_C1_Q_MAKEUP.md)、[handoff](RESEARCH_HANDOFF_2026-10-22_MAKEUP.md)。
++Q/C1自体はCONJECTURED。E-379〜E-384の新入力・部分領域を得たため、無変化cycleとは数えない。
++
++### 2026-10-23の更新
++
++E-385/E-386/E-387でa_z≤3の一様深さ4・全長Q・old P2排除をPROVED-LEANへ移した。
++一般Q/C1はCONJECTURED。a_z≤4のE-388はCOMPUTEDで、kernel未検査。一般a_z≥5とrankは未解決。
++E-389のS-gap/terminal wordが次のcertificate圧縮入力。最新は[DAILY](RESEARCH_HANDOFF_2026-10-23_DAILY.md)。
++
++- 全prefix A≤2^r−1はSAAA|SSSSAAAASAのr2/A5/d2でREFUTED。終端d1の親命題は未反証。
++- 修理P=A−2(d−1)≤2^r−1はr≤4で違反なしだが、任意rのstrict progressを供給できず一般rank方法はSTOPPED。
++  再開は供給A前にslack≥3を与える独立な入力がある場合。有限rを増やすだけで再開しない。
++- 実prefix r4 holdoutは28秒guardで782/3708context完了・1中断、同設定時間追加をSTOPPED。
++  prefix-free modelの完了結果とは区別する。
++- 新edgeと候補集合が変わったので連続無変化cycleは0（進捗による更新で、日付resetではない）。
++  次は[r4 A-event macro simulation](HYPOTHESIS_CARD_2026-10-24_C1_FOUR_KERNEL.md)から。
++
++- Azの独立非負はREFUTED、これを単独入力にする方法はSTOPPED。SAAA|SSSSAAAASAAAのAz=−2を保存。
++  再開には元のDから独立に供給できる追加仮定が必要で、定数だけを下げて再走しない。
++- Nと個数条件だけを残す自由Endable tag法はSTOPPED。S^m A^(m+1)の一様な弱化モデルで不足が出る。
++  真のP2 momentを再び強制する別機構なしに再開しない。これはQの反例ではない。
++- 固定A予算のS上限拡大はSTOPPED。590秒の旧探索は未完了で、E-380のprefix削減へ切替済み。
++- prefix=SAAA、q0=80のR-negative/peak-five/deep-threeは各900秒でUNKNOWN、Y-triangleは120秒でUNKNOWN。
++  **同じ設定への時間追加はSTOPPED**。新しい独立な制約入力で問いが変わるまで自動再実行しない。
++  R/Y/深さの数学的候補をREFUTEDやPROVEDへ昇格させない。
++- old spectrum緩和N=32はINFEASIBLE。共通prefixへの持上げはSAT時の義務であり今回は実行していない。
++  これを無制限の深さ供給や、持上げ不能の証拠と呼ばない。
++
++次はa_z≤3の一様な深さ4入力。E-383の32を単に増やすことを次unitにしない。
+diff --git a/docs/statement_audits/E-348.md b/docs/statement_audits/E-348.md
+index 529f6a6..6df5529 100644
+--- a/docs/statement_audits/E-348.md
++++ b/docs/statement_audits/E-348.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/LagSevenDonorCoverage.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `lag7_cover_*` と `coverOK_of_stream` は `e : Int → Bool` と位置 `u0 u : Int` を binder に持つ。`minimal_ss2_eleven_words`、
+      `oldestOffset_*`、`coverOK_classification` は具体的な有限語（`bitWords 11`、7 語、2 語）上の `decide`。
+@@ -19,9 +20,9 @@
+ : (bitWords 11).filter (fun w => isP2Word w && !hasP2Prefix w && ssCount w == 2) = [d5, d7, d4, d6, d3, d2, d1]
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（自由な軌道・窓 binder はなく、bitWords 11 の有限列挙）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.minimal_ss2_eleven_mem_donors
+ 
+@@ -29,9 +30,9 @@
+ (w : List Bool) (hlen : w.length = 11) (hP : P2 w) (hmin : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d)) (hss : ssCount w = 2) : w ∈ donors
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.minimal_ss2_lt_fifteen_mem_donors
+ 
+@@ -39,9 +40,9 @@
+ (w : List Bool) (hP : P2 w) (hmin : ∀ d, d < w.length → 0 < d → ¬ P2 (w.take d)) (hss : ssCount w = 2) (hlt : w.length < 15) : w ∈ donors
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 既存の最小 lag 分類と minimal_ss2_eleven_mem_donors の適用
+ 
+ ## Recaman.LagSevenDonorCoverage.oldestOffset_donors
+ 
+@@ -49,9 +50,9 @@
+ : oldestOffset d1 = 10 ∧ oldestOffset d2 = 10 ∧ oldestOffset d3 = 10 ∧ oldestOffset d4 = 11 ∧ oldestOffset d5 = 11 ∧ oldestOffset d6 = 10 ∧ oldestOffset d7 = 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（7 個の固定された donor 語の計算）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.oldestOffset_is_oldest_S
+ 
+@@ -59,9 +60,9 @@
+ : ∀ w ∈ donors, w.getD (oldestOffset w - 1) true = false ∧ ∀ j ∈ List.range 11, oldestOffset w ≤ j → w.getD j true = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.coverOK_of_stream
+ 
+@@ -69,9 +70,9 @@
+ (e : Int → Bool) (u0 u : Int) (off k : Nat) (huA : e u = true) (hpos : u - 1 - (k : Int) = u0 - (off : Int)) : coverOK (past e u0 11) (past e u 7) off k = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.coverOK_classification
+ 
+@@ -79,9 +80,9 @@
+ : ∀ w ∈ donors, ∀ v ∈ lag7Words, ∀ k ∈ List.range 7, coverOK w v (oldestOffset w) k = true → k = 0 ∧ v = w1 ∧ (w = d1 ∨ w = d2 ∨ w = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification
+ 
+@@ -89,9 +90,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 ∈ donors) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ u = u0 - (oldestOffset (past e u0 11) : Int) + 1 ∧ (past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification_explicit
+ 
+@@ -99,9 +100,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 ∈ donors) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ ((past e u0 11 = d1 ∧ u = u0 - 9) ∨ (past e u0 11 = d2 ∧ u = u0 - 9) ∨ (past e u0 11 = d4 ∧ u = u0 - 10))
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_impossible_d3_d5_d6_d7
+ 
+@@ -109,9 +110,9 @@
+ (e : Int → Bool) (u0 u : Int) (hdon : past e u0 11 = d3 ∨ past e u0 11 = d5 ∨ past e u0 11 = d6 ∨ past e u0 11 = d7) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : False
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.LagSevenDonorCoverage.lag7_cover_classification_of_minimal
+ 
+@@ -119,7 +120,7 @@
+ (e : Int → Bool) (u0 u : Int) (hP : Recaman.ShortPeriodicSupply.P2 e u0 11) (hmin : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e u0 11).take d)) (hss : ssCount (past e u0 11) = 2) (huA : e u = true) (hw : past e u 7 = w1 ∨ past e u 7 = w2) (hcov : ∃ k : Nat, k < 7 ∧ e (u - 1 - (k : Int)) = false ∧ u - 1 - (k : Int) = u0 - (oldestOffset (past e u0 11) : Int)) : past e u 7 = w1 ∧ u = u0 - (oldestOffset (past e u0 11) : Int) + 1 ∧ (past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d4)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/docs/statement_audits/E-350.md b/docs/statement_audits/E-350.md
+index 376d6ed..95f50a9 100644
+--- a/docs/statement_audits/E-350.md
++++ b/docs/statement_audits/E-350.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TrueOldestGateT6.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — 主定理は `e : Int → Bool`、周期 `p`、供給リスト `U`、`lag`、donor `u0` を binder に持ち、結論は `deletedNeighborhood` の長さ不等式。
+      `donor_oldestOffset`／`aasClash_donors`／`offset_eleven_is_A_of_offset_ten` は 7 語上の `decide`。
+@@ -19,9 +20,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 ∈ donors) : ((past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d3 ∨ past e u0 11 = d6) ∧ oldestOffset (past e u0 11) = 10) ∨ ((past e u0 11 = d4 ∨ past e u0 11 = d5 ∨ past e u0 11 = d7) ∧ oldestOffset (past e u0 11) = 11)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_eleven
+ 
+@@ -29,9 +30,9 @@
+ (e : Int → Bool) (p : Nat) (u0 : Nat) (hdon : past e (u0 : Int) 11 = d4 ∨ past e (u0 : Int) 11 = d5 ∨ past e (u0 : Int) 11 = d7) : trueOldestPhase e p u0 11 = oldestSubtractionPhase p u0 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldestPhase_eq_of_offset_ten
+ 
+@@ -39,9 +40,9 @@
+ (e : Int → Bool) (p : Nat) (u0 : Nat) (hdon : past e (u0 : Int) 11 = d1 ∨ past e (u0 : Int) 11 = d2 ∨ past e (u0 : Int) 11 = d3 ∨ past e (u0 : Int) 11 = d6) : trueOldestPhase e p u0 11 = endpointPhase p (u0 : Int) 10
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.offset_eleven_is_A_of_offset_ten
+ 
+@@ -49,9 +50,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 = d1 ∨ past e u0 11 = d2 ∨ past e u0 11 = d3 ∨ past e u0 11 = d6) : e (u0 - 11) = true
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldest_bit_is_S
+ 
+@@ -59,9 +60,9 @@
+ (e : Int → Bool) (u0 : Int) (hdon : past e u0 11 ∈ donors) : e (u0 - (oldestOffset (past e u0 11) : Int)) = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.trueOldest_is_subtraction
+ 
+@@ -69,9 +70,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (u0 : Nat) (hdon : past e (u0 : Int) 11 ∈ donors) : trueOldestPhase e p u0 11 ∈ LagElevenPeriodic.subPhases e 0 p
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — oldest_is_subtraction と trueOldest_bit_is_S の合成
+ 
+ ## Recaman.TrueOldestGateT6.aasClash_donors
+ 
+@@ -79,9 +80,9 @@
+ : ∀ w ∈ donors, aasClash w = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.aas_endpoint_ne_trueOldest
+ 
+@@ -89,9 +90,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (u0 u : Nat) (hdon : past e (u0 : Int) 11 ∈ donors) (_huA : e (u : Int) = true) (haas : e ((u : Int) - 1) = true ∧ e ((u : Int) - 2) = true ∧ e ((u : Int) - 3) = false) : endpointPhase p (u : Int) 3 ≠ trueOldestPhase e p u0 11
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest
+ 
+@@ -99,9 +100,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (_hd_lt : lag u0 < 15) (_hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hdon : past e (u0 : Int) 11 ∈ donors) (_hlag11 : lag u0 = 11) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 11)).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_lag
+ 
+@@ -109,9 +110,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (hd_lt : lag u0 < 15) (hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hdon : past e (u0 : Int) 11 ∈ donors) (hlag11 : lag u0 = 11) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 (lag u0))).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TrueOldestGateT6.p10_gate_t6_true_oldest_of_minimal
+ 
+@@ -119,7 +120,7 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp10 : p ≤ 10) (hpos : 0 < ShortPeriodicSupply.signSum e 0 p) (hper : ∀ x : Int, e (x + p) = e x) (U : List Nat) (lag : Nat → Nat) (hslack : U.length < (LagElevenPeriodic.subPhases e 0 p).length) (u0 : Nat) (hu0 : u0 ∈ U) (hd_lt : lag u0 < 15) (hu0A : e (u0 : Int) = true) (hP0 : ShortPeriodicSupply.P2 e (u0 : Int) (lag u0)) (hss0 : ssCount (past e (u0 : Int) (lag u0)) = 2) (hhall_orig : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hU_pos : ∀ u ∈ U, 0 < lag u) (hU_P2 : ∀ u ∈ U, ShortPeriodicSupply.P2 e (u : Int) (lag u)) (hU_A : ∀ u ∈ U, e (u : Int) = true) (hlag11 : lag u0 = 11) (hmin : ∀ d, d < 11 → 0 < d → ¬ P2 ((past e (u0 : Int) 11).take d)) : ∀ A : List Nat, List.Sublist A U → A.length ≤ (deletedNeighborhood e p A lag (trueOldestPhase e p u0 11)).length
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/docs/statement_audits/E-351.md b/docs/statement_audits/E-351.md
+index 127d695..e5a2a0e 100644
+--- a/docs/statement_audits/E-351.md
++++ b/docs/statement_audits/E-351.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TightHallAugmentation.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `hall_forces_membership` と系は `e : Int → Bool`、`p`、`U B : List Nat`、`lag` を binder に持ち、`neighborhood`（実際の被覆リスト）で述べる。
+      `filter_mem_of_sublist_nodup`／`filter_mem_or_eq_length` はリスト補題（純粋な List 命題、数え上げの本体）。`w1_bits` は `past e t 7 = w1` からの bit 取り出し。
+@@ -17,9 +18,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (hU : U.Nodup) : U.filter (fun y => decide (y ∈ B)) = B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題で、軌道や窓の条件はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.filter_mem_or_eq_length
+ 
+@@ -27,9 +28,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (hU : U.Nodup) (x : Nat) (hxU : x ∈ U) (hxB : x ∉ B) : (U.filter (fun y => decide (y ∈ B ∨ y = x))).length = B.length + 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題で、軌道や窓の条件はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.hall_forces_membership
+ 
+@@ -37,9 +38,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (x : Nat) (hxU : x ∈ U) (hcov : ∀ s, s ∈ neighborhood e p [x] lag → s ∈ neighborhood e p B lag) : x ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.tight_member_of_neighborhood_subset
+ 
+@@ -47,9 +48,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (x : Nat) (hxU : x ∈ U) (hsub : neighborhood e p [x] lag ⊆ neighborhood e p B lag) : x ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — hall_forces_membership の適用
+ 
+ ## Recaman.TightHallAugmentation.w1_bits
+ 
+@@ -57,9 +58,9 @@
+ (e : Int → Bool) (t : Int) (hw1 : past e t 7 = w1) : e (t - 1) = false ∧ e (t - 2) = true ∧ e (t - 3) = true ∧ e (t - 4) = true ∧ e (t - 5) = true ∧ e (t - 6) = false ∧ e (t - 7) = false
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 既存の w1_* ビット補題をまとめる
+ 
+ ## Recaman.TightHallAugmentation.w1_sibling_neighborhood_subset
+ 
+@@ -67,9 +68,9 @@
+ (e : Int → Bool) (p : Nat) (lag : Nat → Nat) (u v : Nat) (hvu : v + 3 = u) (hlu : lag u = 7) (hlv : lag v = 3) (hw1 : past e (u : Int) 7 = w1) : neighborhood e p [v] lag ⊆ neighborhood e p [u] lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.w1_sibling_forced
+ 
+@@ -77,9 +78,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u v : Nat) (huB : u ∈ B) (hvU : v ∈ U) (hvu : v + 3 = u) (hlu : lag u = 7) (hlv : lag v = 3) (hw1 : past e (u : Int) 7 = w1) : v ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 包含補題と tight_member_of_neighborhood_subset の合成
+ 
+ ## Recaman.TightHallAugmentation.aas_after_w1_neighborhood_subset
+ 
+@@ -87,9 +88,9 @@
+ (e : Int → Bool) (p : Nat) (lag : Nat → Nat) (u w : Nat) (hwu : w = u + 2) (hlu : lag u = 7) (hlw : lag w = 3) (huA : e (u : Int) = true) (hu1 : e ((u : Int) + 1) = true) (hw1 : past e (u : Int) 7 = w1) : neighborhood e p [w] lag ⊆ neighborhood e p [u] lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightHallAugmentation.aas_after_w1_forced
+ 
+@@ -97,7 +98,7 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hU : U.Nodup) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u w : Nat) (huB : u ∈ B) (hwU : w ∈ U) (hwu : w = u + 2) (hlu : lag u = 7) (hlw : lag w = 3) (huA : e (u : Int) = true) (hu1 : e ((u : Int) + 1) = true) (hw1 : past e (u : Int) 7 = w1) : w ∈ B
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — 包含補題と tight_member_of_neighborhood_subset の合成
+ 
+diff --git a/docs/statement_audits/E-355.md b/docs/statement_audits/E-355.md
+index bced1b3..5e1197c 100644
+--- a/docs/statement_audits/E-355.md
++++ b/docs/statement_audits/E-355.md
+@@ -2,6 +2,7 @@
+ 
+ - artifact: `Recaman/TightPrivatePhase.lean`
+ - reviewer: Claude Fable 5.1（親セッション）2026-09-15。人間レビュー: 未（広木さん）
++- answer completion: Codex 2026-10-21。既存の総括と定理の署名・証明を照合し、定理別の未記入欄を整理。人間査読の代替ではない。
+ - summary of the three checks:
+   1. yes — `tight_erase_length`／`private_phases_le_one`／`private_phase_unique` は `e`、`p`、`U B`、`lag` と `neighborhood` で述べる。
+      `lag7_w1_two_phases_covered_by_others` は `past e u 7 = w1`、周期性 `hper`、`7 ≤ p` を仮定に持つ。`erase_sublist_of_sublist`／`neighborhood_erase_subset` は一般補題。
+@@ -17,9 +18,9 @@
+ {B U : List Nat} (hB : List.Sublist B U) (v : Nat) : List.Sublist (B.erase v) U
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（一般の List Nat の補題）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. yes — List.erase_sublist と Sublist.trans の適用
+ 
+ ## Recaman.TightPrivatePhase.neighborhood_erase_subset
+ 
+@@ -27,9 +28,9 @@
+ (e : Int → Bool) (p : Nat) (B : List Nat) (lag : Nat → Nat) (v : Nat) : neighborhood e p (B.erase v) lag ⊆ neighborhood e p B lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.tight_erase_length
+ 
+@@ -37,9 +38,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) : (neighborhood e p B lag).length ≤ (neighborhood e p (B.erase v) lag).length + 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.mem_privatePhases_iff
+ 
+@@ -47,9 +48,9 @@
+ (e : Int → Bool) (p : Nat) (B : List Nat) (lag : Nat → Nat) (v s : Nat) : s ∈ privatePhases e p B lag v ↔ s ∈ neighborhood e p B lag ∧ s ∉ neighborhood e p (B.erase v) lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.private_phases_le_one
+ 
+@@ -57,9 +58,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) : (privatePhases e p B lag v).length ≤ 1
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.private_phase_unique
+ 
+@@ -67,9 +68,9 @@
+ (e : Int → Bool) (p : Nat) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (v : Nat) (hvB : v ∈ B) (s t : Nat) (hs : s ∈ privatePhases e p B lag v) (ht : t ∈ privatePhases e p B lag v) : s = t
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.endpointPhase_mem_neighborhood
+ 
+@@ -77,9 +78,9 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hper : ∀ x : Int, e (x + p) = e x) (B : List Nat) (lag : Nat → Nat) (u : Nat) (huB : u ∈ B) (d : Nat) (hd : 0 < d) (hdl : d ≤ lag u) (hS : e ((u : Int) - (d : Int)) = false) : endpointPhase p (u : Int) d ∈ neighborhood e p B lag
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.endpointPhase_ne_of_lt
+ 
+@@ -87,9 +88,9 @@
+ (p : Nat) (hp : 0 < p) (t : Int) (d d' : Nat) (hdd' : d < d') (hlt : d' - d < p) : endpointPhase p t d ≠ endpointPhase p t d'
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. no（位相端点の算術補題で、符号語・軌道の binder はない）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+ ## Recaman.TightPrivatePhase.lag7_w1_two_phases_covered_by_others
+ 
+@@ -97,7 +98,7 @@
+ (e : Int → Bool) (p : Nat) (hp : 0 < p) (hp7 : 7 ≤ p) (hper : ∀ x : Int, e (x + p) = e x) (U B : List Nat) (lag : Nat → Nat) (hhall : ∀ A : List Nat, List.Sublist A U → A.length ≤ (neighborhood e p A lag).length) (hB : List.Sublist B U) (htight : (neighborhood e p B lag).length = B.length) (u : Nat) (huB : u ∈ B) (hlu : lag u = 7) (hw1 : past e (u : Int) 7 = w1) : (endpointPhase p (u : Int) 1 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 6 ∈ neighborhood e p (B.erase u) lag) ∨ (endpointPhase p (u : Int) 1 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 7 ∈ neighborhood e p (B.erase u) lag) ∨ (endpointPhase p (u : Int) 6 ∈ neighborhood e p (B.erase u) lag ∧ endpointPhase p (u : Int) 7 ∈ neighborhood e p (B.erase u) lag)
+ ```
+ 
+-1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+-2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+-3. the proof is a wrapper/omega/rfl over imported results: yes/no
++1. yes（符号語 e、または具体的な窓語・位相リスト。署名と冒頭の総括を参照）
++2. no（未証明の予想を定義した Prop や結論そのものを仮定していない。仮定がある場合は具体的な窓・リスト・周期性・Hall 条件。冒頭の総括を参照）
++3. no（有限語の判定、ビット／位相の照合、またはリスト・近傍の数え上げ。冒頭の総括を参照）
+ 
+diff --git a/scripts/dev_tool.py b/scripts/dev_tool.py
+index a1a455d..3c537a6 100755
+--- a/scripts/dev_tool.py
++++ b/scripts/dev_tool.py
+@@ -13,6 +13,7 @@ Provides automation and token-saving utilities:
+ from __future__ import annotations
+ 
+ import argparse
++import csv
+ import datetime
+ import re
+ import sys
+@@ -27,6 +28,7 @@ RECAMAN_ROOT_LEAN = ROOT / "Recaman.lean"
+ AUDIT_LEAN = RECAMAN_DIR / "Audit.lean"
+ TEMPLATE_CARD = DOCS_DIR / "HYPOTHESIS_CARD_TEMPLATE.md"
+ FRONTIER_MD = DOCS_DIR / "CURRENT_FRONTIER.md"
++PROTECTED_TSV = DOCS_DIR / "PROTECTED_CLAIMS.tsv"
+ 
+ 
+ def get_label_color(label: str) -> tuple[str, str]:
+@@ -43,47 +45,55 @@ def get_label_color(label: str) -> tuple[str, str]:
+ 
+ 
+ def show_brief(args: argparse.Namespace) -> None:
+-    """Display an ultra-compact summary of the current research frontier (< 400 tokens)."""
+-    if not FRONTIER_MD.exists():
+-        print(f"error: {FRONTIER_MD} not found", file=sys.stderr)
++    """Read the canonical short frontier; never substitute a historical snapshot."""
++    try:
++        frontier = FRONTIER_MD.read_text(encoding="utf-8")
++        sections = re.findall(
++            r"^## Research brief[^\S\n]*\n(.*?)(?=^## |\Z)", frontier,
++            flags=re.M | re.S,
++        )
++        if len(sections) != 1 or not sections[0].strip():
++            raise ValueError("CURRENT_FRONTIER.md needs one nonempty '## Research brief' section")
++        section = sections[0].strip()
++        with REGISTRY_TSV.open(encoding="utf-8", newline="") as source:
++            rows = list(csv.DictReader(source, delimiter="\t"))
++        evidence = {row["id"]: row for row in rows}
++        if len(evidence) != len(rows):
++            raise ValueError("duplicate evidence IDs in EVIDENCE_REGISTRY.tsv")
++        with PROTECTED_TSV.open(encoding="utf-8", newline="") as source:
++            central = [row["id"] for row in csv.DictReader(source, delimiter="\t")]
++        # Japanese letters also count as Unicode word characters, so \b drops
++        # ordinary prose such as "E-379で". Guard against ASCII ID continuations.
++        selected = list(dict.fromkeys(re.findall(
++            r"(?<![A-Za-z0-9_])E-\d{3}(?![A-Za-z0-9_])", section,
++        ) + central))
++        if not selected:
++            raise ValueError("Research brief must reference evidence IDs")
++        missing = [eid for eid in selected if eid not in evidence]
++        if missing:
++            raise ValueError("unknown brief/protected evidence IDs: " + ", ".join(missing))
++        with CONTRACTS_TSV.open(encoding="utf-8", newline="") as source:
++            contracts_count = sum(1 for _ in csv.DictReader(source, delimiter="\t"))
++        audit_count = len(re.findall(
++            r"^#print axioms\s+", AUDIT_LEAN.read_text(encoding="utf-8"), re.M,
++        ))
++    except (OSError, KeyError, ValueError) as error:
++        print(f"error: cannot generate research brief: {error}", file=sys.stderr)
+         sys.exit(1)
+ 
+-    print("=" * 60)
+-    print("  RECAMÁN RESEARCH FRONTIER BRIEF")
+-    print("=" * 60)
+-
+-    # 1. Active Frontier & Open Gate
+-    print("\n[NEXT RESEARCH GATE]")
+-    print("  * Gate: T6 (E-179) - High-SS Local Donation")
+-    print("  * Claim: Every high-SS supply window (ssCount>=2) donates an internally removable S.")
+-    print("  * Evidence: COMPUTED across 53,000+ words (p=8..22, 0 exceptions).")
+-    print("  * Target: Formalize or refute minimal case ssCount=2 in Lean.")
+-
+-    # 2. Key Established Ground Truth
+-    print("\n[ESTABLISHED BOUNDARIES (Do Not Re-prove)]")
+-    print("  * E-176: |U|<=|D| is sharp across all periods (tight words exist for all p).")
+-    print("  * E-177: Tight words (|U|=|D|) have ONLY low-SS windows (ssCount<=1).")
+-    print("           Equality side is completely covered by E-128 (PROVED-LEAN).")
+-    print("  * E-178: Forced matching on tight words matches oldest-S (E-069).")
+-    print("  * E-181: Positive period mass guarantees finite lag bound d <= p(p+1) (PROVED-LEAN).")
+-    print("  * E-128: Low-SS joint endpoint capacity |U_clean U U_SS1| <= |D| (PROVED-LEAN).")
+-
+-    # 3. Stopped / Refuted Approaches (Do Not Re-open without declared gate)
+-    print("\n[STOPPED & REFUTED DIRECTIONS (Do Not Propose)]")
+-    print("  * E-180 (REFUTED): Linear slack charge slack >= c is false (counterexample at p=18,21).")
+-    print("  * E-178 (CLOSED): Generic selector search is FINISHED (selector is forced on tight).")
+-    print("  * E-088 (STOPPED): Lag-by-lag type offset charging is STOPPED.")
+-    print("  * E-133 (REFUTED): Named 4-charge extension on SS=2 is STOPPED.")
+-    print("  * E-142 (REFUTED): Unrestricted one-per-run on abstract words is REFUTED.")
+-
+-    # 4. Codebase & Audit Status
+-    modules = list(RECAMAN_DIR.glob("*.lean"))
+-    contracts_count = len([l for l in CONTRACTS_TSV.read_text(encoding="utf-8").splitlines()[1:] if l.strip()])
+-    print("\n[REPOSITORY INTEGRITY]")
+-    print(f"  * Lean Modules: {len(modules)} library modules | Frontier Contracts: {contracts_count}")
+-    print("  * Audit State: 1,743 declarations verified within standard axioms.")
+-    print("  * Verification: Run 'make check' or 'make test'.")
+-    print("=" * 60)
++    print("RECAMÁN RESEARCH FRONTIER BRIEF")
++    print("Source: docs/CURRENT_FRONTIER.md / Research brief")
++    updated = re.search(r"^最終更新:.*$", frontier, re.M)
++    if updated:
++        print(updated.group(0))
++    print("\n" + section)
++    print("\n[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]")
++    for eid in selected:
++        row = evidence[eid]
++        print(f"  {eid} [{row['label']}] {row['branch']} — {row['artifact']}")
++    print("\n[SOURCE COUNTS — run make check to verify]")
++    print(f"  Lean source files: {len(list(RECAMAN_DIR.glob('*.lean')))} (including Audit)")
++    print(f"  Import contracts: {contracts_count}; audit declarations: {audit_count}")
+ 
+ 
+ def show_decls(args: argparse.Namespace) -> None:
+diff --git a/scripts/harness_gate.py b/scripts/harness_gate.py
+index b413d05..6fbb0cb 100755
+--- a/scripts/harness_gate.py
++++ b/scripts/harness_gate.py
+@@ -5,13 +5,14 @@ Each gate maps to an evidence-based root cause of the incident in
+ docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md:
+ 
+   G1 unresolved symbol      a PROVED-LEAN row must cite theorems that exist
+-  G2 hard vacuity           no cited theorem may have conclusion == hypothesis or `x = x`
++  G2 hard vacuity           no conclusion (or conjunct) may be a hypothesis or `x = x`
+   G3 substantive content    at least one cited theorem is neither pure-arithmetic, nor a
+                             wrapper (only intro/exact/refine/rcases/omega/rfl lines), nor trivial
+   G4 name inflation         no cited theorem/module name contains grand|master|universal|
+                             closure|synthesis|resolution|apex (rows >= NAME_LINT_FROM_ID)
+   G5 statement audit        docs/statement_audits/E-NNN.md exists and quotes every cited
+-                            signature verbatim (rows >= STATEMENT_AUDIT_FROM_ID)
++                            signature verbatim, with a dated reviewer and three completed
++                            checks per theorem (rows >= STATEMENT_AUDIT_FROM_ID)
+   P  protected claims       labels of the central rows in docs/PROTECTED_CLAIMS.tsv must match
+                             the registry; changing them is a human decision
+ 
+@@ -147,6 +148,74 @@ def signature_text(sig):
+     return normalize(strip_comments(sig))
+ 
+ 
++REVIEW_PLACEHOLDER = re.compile(
++    r'\byes\s*/\s*no\b|\bno\s*/\s*yes\b|\bTODO\b|\bTBD\b|'
++    r'\(name\s*,\s*date\)|未記入', re.I,
++)
++
++
++def review_prose(text):
++    """Exclude code blocks so Lean comments cannot supply reviewer answers."""
++    lines = []
++    fence = None
++    for line in text.splitlines():
++        marker = re.match(r'^\s*(`{3,}|~{3,})', line)
++        if marker:
++            token = marker.group(1)
++            if fence is None:
++                fence = token
++            elif token[0] == fence[0] and len(token) >= len(fence):
++                fence = None
++        elif fence is None:
++            lines.append(line)
++    return '\n'.join(lines)
++
++
++def statement_audit_errors(text, symbols, idx):
++    """Check completion, not the truth of the review or reviewer identity.
++
++    A yes on check 2/3 is allowed: named conditional results and wrappers may
++    be cited, subject to G2/G3 and an honest claim. Missing answers are not.
++    """
++    errors = []
++    headings = list(re.finditer(r'^##[ \t]+(.+?)[ \t]*$', text, re.M))
++    preamble = review_prose(text[:headings[0].start()] if headings else text)
++    reviewers = re.findall(r'^- reviewer:[ \t]*(.*(?:\n[ \t]+[^\n]+)*)', preamble, re.M)
++    if (len(reviewers) != 1 or not reviewers[0].strip()
++            or REVIEW_PLACEHOLDER.search(reviewers[0])
++            or not re.search(r'\b\d{4}-\d{2}-\d{2}\b', reviewers[0])
++            or not re.sub(r'\b\d{4}-\d{2}-\d{2}\b', '', reviewers[0]).strip(' \t,;()')):
++        errors.append('needs a completed reviewer field with name and YYYY-MM-DD date')
++    for symbol in symbols:
++        matches = [i for i, heading in enumerate(headings) if heading.group(1) == symbol]
++        if len(matches) != 1:
++            errors.append(f'needs exactly one theorem section for {symbol}')
++            continue
++        i = matches[0]
++        end = headings[i+1].start() if i+1 < len(headings) else len(text)
++        section = text[headings[i].end():end]
++        quotes = re.findall(r'^```lean[^\S\n]*\n(.*?)^```[^\S\n]*$', section, re.M | re.S)
++        hit = idx.get(symbol)
++        if hit and not any(signature_text(hit[1]) in normalize(quote) for quote in quotes):
++            errors.append(f'does not quote the signature of {symbol} verbatim in its section')
++        answers = re.findall(r'^[ \t]*([123])\.[ \t]*(.+)$', review_prose(section), re.M)
++        for number in ('1', '2', '3'):
++            entries = [body for n, body in answers if n == number]
++            if len(entries) != 1:
++                errors.append(f'{symbol}: needs exactly one completed check {number}')
++                continue
++            body = entries[0].replace('**', '').replace('`', '').strip()
++            answer = re.match(r'(yes|no)(?![A-Za-z/])', body, re.I)
++            if answer is None:
++                answer = re.search(r':[ \t]*(yes|no)(?![A-Za-z/])', body, re.I)
++            if answer is None or REVIEW_PLACEHOLDER.search(body):
++                errors.append(f'{symbol}: check {number} needs an explicit yes/no answer, not a placeholder')
++            elif number == '2' and answer.group(1).lower() == 'yes':
++                if not body[answer.end():].strip(' \t—–-:;,（()）.'):
++                    errors.append(f'{symbol}: check 2 must identify the conditional hypothesis')
++    return errors
++
++
+ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+     idx = theorem_index()
+     errors = []
+@@ -170,7 +239,7 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+                 continue
+             f, sig, proof = hit
+             reasons, kind, substantive = classify(sig, proof)
+-            if 'conclusion-is-hypothesis' in reasons or 'x=x' in reasons:
++            if {'conclusion-is-hypothesis', 'conjunct-is-hypothesis', 'x=x'}.intersection(reasons):
+                 errors.append(f'{rid}: G2 {sym} is vacuous ({",".join(reasons)})')
+             if num >= NAME_LINT_FROM_ID:
+                 mod = os.path.basename(f)[:-5]
+@@ -186,11 +255,9 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
+             if not os.path.isfile(audit_path):
+                 errors.append(f'{rid}: G5 missing {audit_path} (generate with --audit-template {rid})')
+             else:
+-                text = normalize(open(audit_path, encoding='utf-8').read())
+-                for sym in syms:
+-                    hit = idx.get(sym)
+-                    if hit and signature_text(hit[1]) not in text:
+-                        errors.append(f'{rid}: G5 {audit_path} does not quote the signature of {sym} verbatim')
++                text = open(audit_path, encoding='utf-8').read()
++                for error in statement_audit_errors(text, syms, idx):
++                    errors.append(f'{rid}: G5 {audit_path} {error}')
+     for e in errors:
+         print('error:', e, file=sys.stderr)
+     if errors:
+@@ -246,7 +313,7 @@ def audit_template(rid, reg='docs/EVIDENCE_REGISTRY.tsv'):
+         print(f'error: {rid} not in {reg}', file=sys.stderr)
+         return 1
+     out = [f'# Statement audit: {rid}', '',
+-           f'- artifact: `{row[4]}`', '- reviewer: (name, date)',
++           f'- artifact: `{row[4]}`', '- reviewer: TODO (name, YYYY-MM-DD)',
+            '- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3',
+            '  means the row must not be described as resolving anything unconditional.', '']
+     for sym in row[5].split(';'):
+diff --git a/scripts/test_harness_gates.sh b/scripts/test_harness_gates.sh
+index 96793b7..8b53089 100755
+--- a/scripts/test_harness_gates.sh
++++ b/scripts/test_harness_gates.sh
+@@ -1,64 +1,5 @@
+ #!/usr/bin/env bash
+-# Negative and positive tests for the research-harness gates (INC-20260915-01).
+-# Run from the repository root: bash scripts/test_harness_gates.sh
++# Mutating fixtures are isolated in TemporaryDirectory.
+ set -euo pipefail
+-cd "$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
+-TMP="$(mktemp -d)"; trap 'rm -rf "$TMP" docs/statement_audits/E-99[0-9].md' EXIT
+-REG=docs/EVIDENCE_REGISTRY.tsv
+-fail=0
+-expect_fail() { # name, command...
+-  local name="$1"; shift
+-  if "$@" >/dev/null 2>"$TMP/err"; then echo "FAIL (passed but should fail): $name"; fail=1
+-  else echo "ok   (rejected): $name  -- $(head -1 "$TMP/err")"; fi
+-}
+-expect_pass() {
+-  local name="$1"; shift
+-  if "$@" >/dev/null 2>"$TMP/err"; then echo "ok   (accepted): $name"
+-  else echo "FAIL (rejected but should pass): $name -- $(head -1 "$TMP/err")"; fail=1; fi
+-}
+-row() { printf 'E-%s\tPROVED-LEAN\ttest\tclaim\tRecaman/AuditSalvage.lean\t%s\tgate\n' "$1" "$2"; }
+-SUBST=Recaman.TwelveGateT6Unconditional.tight_avoiding_le_two_all_lag_three_general
+-WRAP=Recaman.a_zero_eq_zero
+-
+-# --- positive: the live registry passes all gates
+-expect_pass "live registry" python3 scripts/harness_gate.py --check-registry "$REG"
+-expect_pass "live protected claims" python3 scripts/harness_gate.py --check-protected "$REG" docs/PROTECTED_CLAIMS.tsv
+-
+-# --- G1 unresolved symbol
+-{ cat "$REG"; row 990 Recaman.no_such_theorem_xyz; } > "$TMP/g1.tsv"
+-expect_fail "G1 unresolved symbol" python3 scripts/harness_gate.py --check-registry "$TMP/g1.tsv"
+-
+-# --- G2/G3 pure-arithmetic tautology (a real tautology compiled into a scratch module)
+-mkdir -p "$TMP/mod"
+-cat > "$TMP/pure.lean" <<'LEAN'
+-namespace Recaman
+-theorem gate_test_taut (card_U card_D k : Nat) (h_rem : card_U - k ≤ card_D - k) (hkU : k ≤ card_U) (hkD : k ≤ card_D) : card_U ≤ card_D := by omega
+-theorem gate_test_xx (k : Nat) : k = k := rfl
+-end Recaman
+-LEAN
+-expect_fail "lint-module: pure-arithmetic module has no substantive theorem" python3 scripts/harness_gate.py --lint-module "$TMP/pure.lean"
+-
+-# --- G3 wrapper-only row
+-{ cat "$REG"; row 991 "$WRAP"; } > "$TMP/g3.tsv"
+-expect_fail "G3 wrapper-only symbols" python3 scripts/harness_gate.py --check-registry "$TMP/g3.tsv"
+-
+-# --- G4 name inflation (rename a substantive theorem's row to an inflated module via a scratch copy is not
+-#     possible without a module; test the regex through a row citing a real theorem in an inflated name)
+-{ cat "$REG"; row 992 Recaman.grand_permanent_high_internal_blocker_synthesis; } > "$TMP/g4.tsv"
+-python3 scripts/harness_gate.py --check-registry "$TMP/g4.tsv" >/dev/null 2>"$TMP/err" && { echo "FAIL: G4 inflated name accepted"; fail=1; } || \
+-  { grep -q 'G4' "$TMP/err" && echo "ok   (rejected): G4 inflated name -- $(grep G4 "$TMP/err" | head -1)" || { echo "FAIL: G4 not the reason"; fail=1; }; }
+-
+-# --- G5 statement audit missing, then present
+-{ cat "$REG"; row 993 "$SUBST"; } > "$TMP/g5.tsv"
+-expect_fail "G5 missing statement audit" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-python3 scripts/harness_gate.py --audit-template E-993 "$TMP/g5.tsv" > docs/statement_audits/E-993.md
+-expect_pass "G5 statement audit present with verbatim signature" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-sed -i '' 's/lag u = 3 ∨ lag u = 7/lag u = 3/' docs/statement_audits/E-993.md
+-expect_fail "G5 statement audit with altered signature" python3 scripts/harness_gate.py --check-registry "$TMP/g5.tsv"
+-rm -f docs/statement_audits/E-993.md
+-
+-# --- P protected label changed silently
+-sed 's/^E-070\tCONJECTURED/E-070\tPROVED-LEAN/' "$REG" > "$TMP/p.tsv"
+-expect_fail "P protected label E-070 promoted without approval file change" python3 scripts/harness_gate.py --check-protected "$TMP/p.tsv" docs/PROTECTED_CLAIMS.tsv
+-
+-if [[ "$fail" -eq 0 ]]; then echo "harness gate tests: all passed"; else echo "harness gate tests: FAILURES" >&2; exit 1; fi
++RECAMAN_TEST_ROOT="$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
++exec python3 "$RECAMAN_TEST_ROOT/scripts/test_harness_gates.py" "$@"
+diff --git a/viewer/manifest.json b/viewer/manifest.json
+index 5df68e6..286ac07 100644
+--- a/viewer/manifest.json
++++ b/viewer/manifest.json
+@@ -44000,6 +44000,84 @@
+    "hasEnglishDocstring": true,
+    "hasReport": false
+   },
++  {
++   "name": "SS2OldestPattern",
++   "lines": 310,
++   "imports": [
++    "ShortTightDonorAvoidance"
++   ],
++   "decls": [
++    {
++     "kind": "theorem",
++     "name": "moment_ending_A_budget",
++     "line": 19
++    },
++    {
++     "kind": "theorem",
++     "name": "moment_ending_AA_ss2",
++     "line": 36
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_intervening_prefix",
++     "line": 59
++    },
++    {
++     "kind": "theorem",
++     "name": "moment_replicate_A_nonneg",
++     "line": 139
++    },
++    {
++     "kind": "theorem",
++     "name": "p2_append_A_tail_data",
++     "line": 145
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_aas_oldest_has_prefix",
++     "line": 160
++    },
++    {
++     "kind": "theorem",
++     "name": "ss2_no_w1_oldest",
++     "line": 204
++    },
++    {
++     "kind": "theorem",
++     "name": "oldestOffset_le_length",
++     "line": 228
++    },
++    {
++     "kind": "theorem",
++     "name": "oldestOffset_split",
++     "line": 238
++    },
++    {
++     "kind": "theorem",
++     "name": "ssCount_append_replicate_A",
++     "line": 250
++    },
++    {
++     "kind": "theorem",
++     "name": "past_oldest_split",
++     "line": 259
++    },
++    {
++     "kind": "theorem",
++     "name": "oldest_cover_clock_lt",
++     "line": 269
++    },
++    {
++     "kind": "theorem",
++     "name": "past_oldest_cover_decomposition",
++     "line": 288
++    }
++   ],
++   "theorems": 13,
++   "defs": 0,
++   "hasEnglishDocstring": true,
++   "hasReport": false
++  },
+   {
+    "name": "SS2StrictSlackTheorem",
+    "lines": 86,
+@@ -51247,6 +51325,6 @@
+    "hasReport": false
+   }
+  ],
+- "total": 401,
++ "total": 402,
+  "withReport": 167
+ }

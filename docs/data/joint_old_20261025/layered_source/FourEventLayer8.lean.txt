@@ -1,0 +1,534 @@
+/- Same numeric input SHA256 716ea518a9592ae1ef2dbc8930d6f51fb8e2be1503c5ff0f641c5aff4977ba6d; A layer 8. -/
+import Recaman.FourEventLayer9
+set_option maxRecDepth 100000
+set_option maxHeartbeats 3000000
+set_option Elab.async false
+namespace Recaman.FourEventData
+open Recaman.FourNonsuppliedData Recaman.FourEventProof
+open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+def s_12773 : State := ⟨[false,true,false,false,false,false,false,true,true,true,true,false,true,true,true],8,7,4⟩
+theorem c_12773 : Checked s_12773 := by
+  apply checked_of_children s_12773 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12773 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12774 : State := ⟨[false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,7,4⟩
+theorem c_12774 : Checked s_12774 := by
+  apply checked_of_children s_12774 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12774 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12775 : State := ⟨[false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,8,4⟩
+theorem c_12775 : Checked s_12775 := by
+  apply checked_of_children s_12775 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12775 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12776 : State := ⟨[false,false,false,true,false,false,true,true,true,true,false,true,true,true],8,6,4⟩
+theorem c_12776 : Checked s_12776 := by
+  apply checked_of_children s_12776 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12776 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12777 : State := ⟨[false,false,false,true,false,false,true,true,true,true,false,false,true,true,true],8,7,4⟩
+theorem c_12777 : Checked s_12777 := by
+  apply checked_of_children s_12777 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12777 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12778 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,true],8,5,4⟩
+theorem c_12778 : Checked s_12778 := by
+  apply checked_of_children s_12778 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12778 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12779 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,true],8,6,4⟩
+theorem c_12779 : Checked s_12779 := by
+  apply checked_of_children s_12779 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12779 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12780 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,true],8,7,4⟩
+theorem c_12780 : Checked s_12780 := by
+  apply checked_of_children s_12780 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12780 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12781 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,true],8,8,4⟩
+theorem c_12781 : Checked s_12781 := by
+  apply checked_of_children s_12781 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12781 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12782 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,true],8,9,4⟩
+theorem c_12782 : Checked s_12782 := by
+  apply checked_of_children s_12782 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12782 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12783 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,true],8,10,4⟩
+theorem c_12783 : Checked s_12783 := by
+  apply checked_of_children s_12783 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12783 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12784 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,true],8,11,4⟩
+theorem c_12784 : Checked s_12784 := by
+  apply checked_of_children s_12784 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12784 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12785 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,true],8,12,4⟩
+theorem c_12785 : Checked s_12785 := by
+  apply checked_of_children s_12785 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12785 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12786 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,true],8,13,4⟩
+theorem c_12786 : Checked s_12786 := by
+  apply checked_of_children s_12786 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12786 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12787 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,true],8,14,4⟩
+theorem c_12787 : Checked s_12787 := by
+  apply checked_of_children s_12787 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12787 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12788 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,true],8,15,4⟩
+theorem c_12788 : Checked s_12788 := by
+  apply checked_of_children s_12788 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12788 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12789 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,true],8,16,4⟩
+theorem c_12789 : Checked s_12789 := by
+  apply checked_of_children s_12789 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12789 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12790 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,true],8,17,4⟩
+theorem c_12790 : Checked s_12790 := by
+  apply checked_of_children s_12790 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12790 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12791 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,18,4⟩
+theorem c_12791 : Checked s_12791 := by
+  apply checked_of_children s_12791 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12791 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12792 : State := ⟨[false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,19,4⟩
+theorem c_12792 : Checked s_12792 := by
+  apply checked_of_children s_12792 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12792 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12793 : State := ⟨[true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,19,4⟩
+theorem c_12793 : Checked s_12793 := by
+  apply checked_of_children s_12793 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12793 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12794 : State := ⟨[true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,19,4⟩
+theorem c_12794 : Checked s_12794 := by
+  apply checked_of_children s_12794 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12794 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12795 : State := ⟨[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,19,4⟩
+theorem c_12795 : Checked s_12795 := by
+  apply checked_of_children s_12795 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12795 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12796 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],8,19,4⟩
+theorem c_12796 : Checked s_12796 := by
+  apply checked_of_children s_12796 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12796 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12797 : State := ⟨[false,false,false,false,true,true,true,true,false,true,true,false,true,false,true],8,7,4⟩
+theorem c_12797 : Checked s_12797 := by
+  apply checked_of_children s_12797 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12797 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12798 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,true,true,true],8,6,4⟩
+theorem c_12798 : Checked s_12798 := by
+  apply checked_of_children s_12798 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12798 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12799 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,true,true,true],8,7,4⟩
+theorem c_12799 : Checked s_12799 := by
+  apply checked_of_children s_12799 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12799 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12800 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,true,true,true],8,8,4⟩
+theorem c_12800 : Checked s_12800 := by
+  apply checked_of_children s_12800 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12800 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12801 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,true,true,true],8,9,4⟩
+theorem c_12801 : Checked s_12801 := by
+  apply checked_of_children s_12801 [s_12830]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12801 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12830
+
+def s_12802 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,true,true,true],8,10,4⟩
+theorem c_12802 : Checked s_12802 := by
+  apply checked_of_children s_12802 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12802 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12803 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,true,true,true],8,11,4⟩
+theorem c_12803 : Checked s_12803 := by
+  apply checked_of_children s_12803 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12803 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12804 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,true,true,true],8,12,4⟩
+theorem c_12804 : Checked s_12804 := by
+  apply checked_of_children s_12804 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12804 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12805 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,true,true,true],8,13,4⟩
+theorem c_12805 : Checked s_12805 := by
+  apply checked_of_children s_12805 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12805 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12806 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,true,true,true],8,14,4⟩
+theorem c_12806 : Checked s_12806 := by
+  apply checked_of_children s_12806 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12806 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12807 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,true,true,true],8,15,4⟩
+theorem c_12807 : Checked s_12807 := by
+  apply checked_of_children s_12807 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12807 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12808 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,16,4⟩
+theorem c_12808 : Checked s_12808 := by
+  apply checked_of_children s_12808 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12808 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12809 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,17,4⟩
+theorem c_12809 : Checked s_12809 := by
+  apply checked_of_children s_12809 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12809 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12810 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,18,4⟩
+theorem c_12810 : Checked s_12810 := by
+  apply checked_of_children s_12810 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12810 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12811 : State := ⟨[false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,19,4⟩
+theorem c_12811 : Checked s_12811 := by
+  apply checked_of_children s_12811 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12811 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12812 : State := ⟨[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,19,4⟩
+theorem c_12812 : Checked s_12812 := by
+  apply checked_of_children s_12812 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12812 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12813 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true],8,19,4⟩
+theorem c_12813 : Checked s_12813 := by
+  apply checked_of_children s_12813 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12813 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12814 : State := ⟨[false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true],8,8,4⟩
+theorem c_12814 : Checked s_12814 := by
+  apply checked_of_children s_12814 [s_12831]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12814 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12831
+
+def s_12815 : State := ⟨[false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,9,4⟩
+theorem c_12815 : Checked s_12815 := by
+  apply checked_of_children s_12815 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12815 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12816 : State := ⟨[false,false,false,false,true,false,false,false,true,true,true,true,false,true,true,true],8,8,4⟩
+theorem c_12816 : Checked s_12816 := by
+  apply checked_of_children s_12816 [s_12832]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12816 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12832
+
+def s_12817 : State := ⟨[false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,10,4⟩
+theorem c_12817 : Checked s_12817 := by
+  apply checked_of_children s_12817 [s_12833]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12817 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12833
+
+def s_12818 : State := ⟨[false,false,false,false,false,true,false,false,true,true,true,true,false,true,true,true],8,8,4⟩
+theorem c_12818 : Checked s_12818 := by
+  apply checked_of_children s_12818 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12818 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12819 : State := ⟨[false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,11,4⟩
+theorem c_12819 : Checked s_12819 := by
+  apply checked_of_children s_12819 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12819 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12820 : State := ⟨[false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,12,4⟩
+theorem c_12820 : Checked s_12820 := by
+  apply checked_of_children s_12820 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12820 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12821 : State := ⟨[false,false,false,false,false,false,false,false,true,true,true,false,true,true,true,true,false,true],8,10,4⟩
+theorem c_12821 : Checked s_12821 := by
+  apply checked_of_children s_12821 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12821 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12822 : State := ⟨[false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,13,4⟩
+theorem c_12822 : Checked s_12822 := by
+  apply checked_of_children s_12822 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12822 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12823 : State := ⟨[false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,14,4⟩
+theorem c_12823 : Checked s_12823 := by
+  apply checked_of_children s_12823 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12823 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12824 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,true,true,true,true],8,11,4⟩
+theorem c_12824 : Checked s_12824 := by
+  apply checked_of_children s_12824 [s_12834]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12824 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12834
+
+def s_12825 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,15,4⟩
+theorem c_12825 : Checked s_12825 := by
+  apply checked_of_children s_12825 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12825 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12826 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,16,4⟩
+theorem c_12826 : Checked s_12826 := by
+  apply checked_of_children s_12826 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12826 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12827 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,17,4⟩
+theorem c_12827 : Checked s_12827 := by
+  apply checked_of_children s_12827 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12827 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12828 : State := ⟨[false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,18,4⟩
+theorem c_12828 : Checked s_12828 := by
+  apply checked_of_children s_12828 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12828 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12829 : State := ⟨[false,false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true],8,19,4⟩
+theorem c_12829 : Checked s_12829 := by
+  apply checked_of_children s_12829 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12829 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+end Recaman.FourEventData

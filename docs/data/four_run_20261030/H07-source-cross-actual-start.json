@@ -1,0 +1,18 @@
+{
+  "tag": "H07-source-cross-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/SourceCrossSurplus.lean"
+  ],
+  "started_jst": "2026-10-30T06:40:06.152898+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SourceCrossSurplus.lean": "84a0ac90d5f3e619ab661d3d6755081fb57497332eb4328a925214b93949e22d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

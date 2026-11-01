@@ -1,0 +1,52 @@
+Recaman/OldTargetFirstRun.lean:44:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 2
+  0 ≤ a ≤ 1
+where
+ a := ↑(cN (EndN f 0) (n + h) (2 + 1))
+ b := ↑(cN (EndN f 0) (n + h) 3)
+Recaman/OldTargetFirstRun.lean:137:13: error(lean.unknownIdentifier): Unknown identifier `third_ray_four_source_bound`
+Recaman/OldTargetFirstRun.lean:122:39: error: unsolved goals
+f : Nat → Bool
+n h M m L s T : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : M ≤ 3
+hs : 1 ≤ s
+hSsum : 3 ≤ h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hb2 : cN (EndN f 0) n (h + M + m + L) ≤ 4
+hword :
+  seg f n (h + M + m + L + s + 0) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate 0 true
+hp :
+  seg f 0 (n + h + M + m + L + s) =
+    w ++
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false)
+hcS :
+  3 ≤
+    cntF
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false)
+ho :
+  rayCount
+      (w ++
+        (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false))
+      T ≤
+    1 +
+      rayCount
+        (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false)
+        T
+⊢ cN (EndN f 0) n (h + M + m + L + s + T) ≤ 9

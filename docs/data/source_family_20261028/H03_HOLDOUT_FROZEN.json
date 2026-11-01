@@ -1,0 +1,22 @@
+{
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/source_family_20261028/first_A_local_holdout.py": "1514ed3a361f63bf68f32adbad93a1910c57aadbbd3ad99f805db04d9e9f1563",
+    "docs/data/source_family_20261028/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "prior_frozen_lean_manifest": "H03_DISCO_FROZEN.json",
+  "actual_prior_math_cpu": 0.20809899999999998,
+  "cumulative_reservation": 20,
+  "this_cap": 10,
+  "argv": [
+    "python3",
+    "docs/data/source_family_20261028/run_single.py",
+    "--tag",
+    "first-A-local-holdout",
+    "--cpu",
+    "10",
+    "--wall",
+    "20",
+    "docs/data/source_family_20261028/first_A_local_holdout.py"
+  ]
+}

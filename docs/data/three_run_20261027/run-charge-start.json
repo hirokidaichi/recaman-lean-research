@@ -1,0 +1,16 @@
+{
+  "tag": "run-charge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/ThreeRunSupplyBudget.lean"
+  ],
+  "started_jst": "2026-10-27T06:14:16.828306+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/ThreeRunSupplyBudget.lean": "0f3567c76abdeca70b77a54a55204f5df17f48ef4540ca69aa7d873cdf0087bd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

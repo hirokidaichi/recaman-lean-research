@@ -1,0 +1,89 @@
+import Recaman.BlockSameMassSpan
+
+namespace Recaman.PenultimateRunWindow
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.BlockOldRay Recaman.RunSupplyKeys Recaman.RunSupplyBudget
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private theorem key_S (s : Nat) : runKey (List.replicate s false) = -2*(s : Int)^2 := by
+  have h := runKey_prepend_S s []
+  simpa [runKey,areaW,mass,cntF] using h
+
+/-- Exact square condition for a P2 window starting in an A run before
+one more S/A run. Only its endpoint gap is separated; s is unbounded. -/
+theorem ASAS_window_square (d s T j : Nat)
+    (hm : mass (List.replicate d true++List.replicate s false++
+      List.replicate T true++List.replicate j false)=1)
+    (ha : areaW (List.replicate d true++List.replicate s false++
+      List.replicate T true++List.replicate j false)=0) :
+    (d : Int)^2=(T : Int)*((T : Int)-2*((j : Int)+1)) := by
+  let v:=List.replicate d true++List.replicate s false++List.replicate T true
+  have hmv : mass v=(j : Int)+1 := by
+    simpa only [v,mass_append,mass_replicate_A,mass_rep_false] using (show mass v=(j : Int)+1 by
+      change mass (v++List.replicate j false)=1 at hm
+      rw [mass_append,mass_rep_false] at hm
+      omega)
+  have hmass : (d : Int)-(s : Int)+(T : Int)=(j : Int)+1 := by
+    simpa only [v,mass_append,mass_replicate_A,mass_rep_false,Int.sub_eq_add_neg] using hmv
+  have hkv : runKey v= -2*(s : Int)^2+4*(d : Int)*(s : Int) := by
+    dsimp [v]
+    rw [runKey_append_A,runKey_prepend_A,key_S,cntF_replicate_S]
+  have hwhole : runKey (v++List.replicate j false)= -2 := by
+    unfold runKey
+    change mass (v++List.replicate j false)=1 at hm
+    change areaW (v++List.replicate j false)=0 at ha
+    rw [hm,ha]
+  rw [runKey_append,hkv,key_S,cntF_replicate_S,hmv] at hwhole
+  have hs : (s : Int)=(d : Int)+(T : Int)-(j : Int)-1 := by omega
+  rw [hs] at hwhole
+  grind
+
+private theorem small_square_not (d T j : Nat) (hd : 1≤d) (hA : d+T≤20)
+    (hj : 4≤j) (hj9 : j≤9) :
+    (d : Int)^2≠(T : Int)*((T : Int)-2*((j : Int)+1)) := by
+  have hc : (List.range 21).all (fun d => (List.range 21).all (fun T =>
+      (List.range 10).all (fun j => decide (1≤d ∧ d+T≤20 ∧ 4≤j ∧ j≤9 →
+        (d : Int)^2≠(T : Int)*((T : Int)-2*((j : Int)+1))))))=true := by decide
+  have h := of_decide_eq_true (List.all_eq_true.mp (List.all_eq_true.mp (List.all_eq_true.mp hc d
+    (List.mem_range.mpr (by omega))) T (List.mem_range.mpr (by omega))) j (List.mem_range.mpr (by omega)))
+  exact h ⟨hd,hA,hj,hj9⟩
+
+/-- Under the actual three-run residual bounds this entire source shape
+is excluded, without limiting the intervening S-run length. -/
+theorem ASAS_no_small_window (d s T j : Nat) (hd : 1≤d) (hA : d+T≤20)
+    (hj : 4≤j) (hj9 : j≤9) :
+    ¬(mass (List.replicate d true++List.replicate s false++
+        List.replicate T true++List.replicate j false)=1 ∧
+      areaW (List.replicate d true++List.replicate s false++
+        List.replicate T true++List.replicate j false)=0) := by
+  rintro ⟨hm,ha⟩
+  exact small_square_not d T j hd hA hj hj9 (ASAS_window_square d s T j hm ha)
+
+/-- Literal actual-window adapter; arbitrary earlier history is retained.
+Only a window with this start/run shape is ruled out. -/
+theorem actual_ASAS_no_small_window (f : Nat → Bool) (start d s T j : Nat)
+    (hword : seg f start (d+s+T+j)=List.replicate d true++List.replicate s false++
+      List.replicate T true++List.replicate j false)
+    (hd : 1≤d) (hA : d+T≤20) (hj : 4≤j) (hj9 : j≤9) :
+    ¬Win f start (d+s+T+j) := by
+  intro hw
+  apply ASAS_no_small_window d s T j hd hA hj hj9
+  constructor
+  · rw [←hword,seg_mass]
+    exact hw.2.1
+  · rw [←hword,←Ar_areaW]
+    exact hw.2.2
+
+/-- These are window controls outside the declared assumptions, not C1
+counterexamples. They prevent erasing the A budget or the gap lower bound. -/
+theorem outside_assumption_controls :
+    mass (List.replicate 3 true++List.replicate 8 false++
+      List.replicate 9 true++List.replicate 3 false)=1 ∧
+    areaW (List.replicate 3 true++List.replicate 8 false++
+      List.replicate 9 true++List.replicate 3 false)=0 ∧
+    mass (List.replicate 8 true++List.replicate 18 false++
+      List.replicate 16 true++List.replicate 5 false)=1 ∧
+    areaW (List.replicate 8 true++List.replicate 18 false++
+      List.replicate 16 true++List.replicate 5 false)=0 := by decide
+
+end Recaman.PenultimateRunWindow

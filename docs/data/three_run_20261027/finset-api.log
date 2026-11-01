@@ -1,0 +1,10 @@
+docs/data/three_run_20261027/check_finset_api.lean:2:7: error(lean.unknownIdentifier): Unknown identifier `Finset`
+docs/data/three_run_20261027/check_finset_api.lean:3:7: error(lean.unknownIdentifier): Unknown identifier `Finset.mem_image`
+docs/data/three_run_20261027/check_finset_api.lean:4:7: error(lean.unknownIdentifier): Unknown identifier `Finset.mem_filter`
+docs/data/three_run_20261027/check_finset_api.lean:5:7: error(lean.unknownIdentifier): Unknown identifier `Finset.mem_union`
+docs/data/three_run_20261027/check_finset_api.lean:6:7: error(lean.unknownIdentifier): Unknown constant `List.mem_toFinset`
+Array.getElem?_eq_getElem.{u_1} {α : Type u_1} {xs : Array α} {i : Nat} (h : i < xs.size) : xs[i]? = some xs[i]
+List.take_append_drop.{u_1} {α : Type u_1} (i : Nat) (l : List α) : List.take i l ++ List.drop i l = l
+List.drop_append.{u_1} {α : Type u_1} {l₁ l₂ : List α} {i : Nat} :
+  List.drop i (l₁ ++ l₂) = List.drop i l₁ ++ List.drop (i - l₁.length) l₂
+docs/data/three_run_20261027/check_finset_api.lean:10:7: error(lean.unknownIdentifier): Unknown identifier `Finset.ext`

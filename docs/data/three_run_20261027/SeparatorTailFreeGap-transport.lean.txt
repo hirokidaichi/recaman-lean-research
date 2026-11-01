@@ -1,0 +1,143 @@
+import Recaman.SeparatorSupplyReset
+
+namespace Recaman.SeparatorTailFreeGap
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.PrefixMassBarrier
+open Recaman.RunSupplyKeys Recaman.RunSupplyBudget Recaman.BlockOldRay Recaman.ThreeRunSupplyBudget
+open Recaman.SeparatorSupplyReset
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+/-- Natural-clock shifting changes neither the window nor its base relative
+position; it is transported through the existing integer-clock equivalence. -/
+theorem endN_nat_shift (f : Nat → Bool) (q s b : Nat) :
+    EndN f (q+s) (q+b) ↔ EndN (fun i => f (q+i)) s b := by
+  let e : Int → Bool := fun z => f z.toNat
+  have e0 : (fun i : Nat => e (0+(i : Int)))=f := by
+    funext i
+    simp [e]
+  have eq : (fun i : Nat => e ((q : Int)+(i : Int)))=(fun i => f (q+i)) := by
+    funext i
+    simp only [e,←Int.natCast_add,Int.toNat_natCast]
+  have h1 := endable_iff e 0 ((q+s : Nat) : Int) ((q+b : Nat) : Int)
+    (q+s) (q+b) (by omega) (by omega)
+  have h2 := endable_iff e (q : Int) ((q+s : Nat) : Int) ((q+b : Nat) : Int)
+    s b (by omega) (by omega)
+  rw [e0] at h1
+  rw [eq] at h2
+  exact h1.symm.trans h2
+
+theorem count_nat_shift (P : Nat → Prop) (q s K : Nat) :
+    cN (fun i => P (q+i)) s K=cN P (q+s) K := by
+  induction K with
+  | zero => rfl
+  | succ K ih =>
+    by_cases hp : P (q+s+K)
+    · rw [cN_succ_pos (fun i => P (q+i)) s K (by simpa only [Nat.add_assoc] using hp),
+        cN_succ_pos P (q+s) K hp,ih]
+    · rw [cN_succ_neg (fun i => P (q+i)) s K (by simpa only [Nat.add_assoc] using hp),
+        cN_succ_neg P (q+s) K hp,ih]
+
+theorem seg_nat_shift (f : Nat → Bool) (q s K : Nat) :
+    seg (fun i => f (q+i)) s K=seg f (q+s) K := by
+  simp only [seg,Nat.add_assoc]
+
+theorem free_count_nat_shift (f : Nat → Bool) (q s K : Nat) :
+    cN (fun i => f i=true ∧ ¬EndN f q i) (q+s) K=
+      cN (fun i => f (q+i)=true ∧ ¬EndN (fun t => f (q+t)) 0 i) s K := by
+  rw [←count_nat_shift (fun i => f i=true ∧ ¬EndN f q i) q s K]
+  apply cN_congr
+  intro i _ _
+  have h := endN_nat_shift f q 0 i
+  simp only [Nat.add_zero] at h
+  exact and_congr_right (fun _ => not_congr h)
+
+private theorem prefix_S_word (f : Nat → Bool) (s m : Nat) (x : List Bool)
+    (hword : seg f s (m+x.length)=List.replicate m false++x) (k : Nat) (hk : k≤m) :
+    seg f s k=List.replicate k false := by
+  have h := seg_take f s (m+x.length) k (by omega)
+  rw [hword,List.take_append_of_le_length (by simpa only [List.length_replicate] using hk),
+    List.take_replicate,Nat.min_eq_left hk] at h
+  exact h.symm
+
+private theorem true_count_zero_of_S (f : Nat → Bool) (s K : Nat)
+    (hword : seg f s K=List.replicate K false) : cN (fun i => f i=true) s K=0 := by
+  have h := ones_seg_eq_count f s K
+  rw [hword,ones_replicate_S] at h
+  omega
+
+/-- A separator longer than the entire possible A budget supplies actual
+positive relative deficit at every nonempty prefix, independently of history. -/
+theorem positive_after_manyS (f : Nat → Bool) (m B : Nat) (x : List Bool)
+    (hword : seg f 0 (m+x.length)=List.replicate m false++x)
+    (hbudget : ones x≤(B : Int)) (hm : B+1≤m) :
+    ∀ k, 0<k → k≤m+x.length →
+      cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k := by
+  intro k hk hkB
+  have hE : cN (EndN f 0) 0 k≤cN (fun i => f i=true) 0 k := by
+    apply cN_mono
+    intro i _ _ he
+    exact he.1
+  by_cases hkm : k≤m
+  · have hA := true_count_zero_of_S f 0 k (prefix_S_word f 0 m x hword k hkm)
+    have hc := (cN_walk f 0 k).2
+    omega
+  · have hAm := true_count_zero_of_S f 0 m (prefix_S_word f 0 m x hword m (Nat.le_refl _))
+    have hSm := (cN_walk f 0 m).2
+    have hmono := count_prefix_le (fun i => f i=false) 0 m k (by omega)
+    have hAtotal := ones_seg_eq_count f 0 (m+x.length)
+    rw [hword,ones_append,ones_replicate_S] at hAtotal
+    have hAmono := count_prefix_le (fun i => f i=true) 0 k (m+x.length) hkB
+    omega
+
+private theorem suffix_segment (f : Nat → Bool) (n : Nat) (u v : List Bool)
+    (hword : seg f n (u.length+v.length)=u++v) : seg f (n+u.length) v.length=v := by
+  have hd := seg_drop f n (u.length+v.length) u.length (by omega)
+  rw [hword,List.drop_append,List.drop_length,Nat.sub_self,List.drop_zero,List.nil_append] at hd
+  simpa only [Nat.add_sub_cancel_left] using hd.symm
+
+/-- This full count transport explicitly covers the initial S signs too;
+only the proved reset, never a silent rebasing, identifies the free counts. -/
+theorem free_count_reset_shift (f : Nat → Bool) (n a m B : Nat) (u x : List Bool)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hword : seg f n (u.length+m+x.length)=u++(List.replicate m false++x))
+    (hB : 1≤B) (hbudget : ones u+ones x≤(B : Int)) (hm : 2*(B : Int)-1≤(m : Int)) :
+    cN (fun i => f i=true ∧ ¬EndN f 0 i) (n+u.length) (m+x.length)=
+      cN (fun i => f (n+u.length+i)=true ∧
+        ¬EndN (fun t => f (n+u.length+t)) 0 i) 0 (m+x.length) := by
+  let q := n+u.length
+  have hv : seg f q (m+x.length)=List.replicate m false++x := by
+    simpa only [List.length_append,List.length_replicate,q] using
+      suffix_segment f n u (List.replicate m false++x)
+        (by simpa only [List.length_append,List.length_replicate,Nat.add_assoc] using hword)
+  have hg : seg (fun i => f (q+i)) 0 (m+x.length)=List.replicate m false++x := by
+    rw [seg_nat_shift,Nat.add_zero]
+    exact hv
+  have hA := true_count_zero_of_S f q m (prefix_S_word f q m x hv m (Nat.le_refl _))
+  have hgA := true_count_zero_of_S (fun i => f (q+i)) 0 m
+    (prefix_S_word (fun i => f (q+i)) 0 m x hg m (Nat.le_refl _))
+  have hF : cN (fun i => f i=true ∧ ¬EndN f 0 i) q m=0 := by
+    have hmono : cN (fun i => f i=true ∧ ¬EndN f 0 i) q m≤cN (fun i => f i=true) q m := by
+      apply cN_mono
+      intro i _ _ he
+      exact he.1
+    omega
+  have hgF : cN (fun i => f (q+i)=true ∧ ¬EndN (fun t => f (q+t)) 0 i) 0 m=0 := by
+    have hmono : cN (fun i => f (q+i)=true ∧ ¬EndN (fun t => f (q+t)) 0 i) 0 m≤
+        cN (fun i => f (q+i)=true) 0 m := by
+      apply cN_mono
+      intro i _ _ he
+      exact he.1
+    omega
+  have hr := (separator_future_count_eq f n a m B u x hw hpre hword hB hbudget hm).2
+  have hs := free_count_nat_shift f q m x.length
+  have hc := cN_add (fun i => f i=true ∧ ¬EndN f 0 i) q m x.length
+  have hcg := cN_add (fun i => f (q+i)=true ∧ ¬EndN (fun t => f (q+t)) 0 i) 0 m x.length
+  simp only [Nat.zero_add] at hcg
+  change cN (fun i => f i=true ∧ ¬EndN f 0 i) q (m+x.length)=
+    cN (fun i => f (q+i)=true ∧ ¬EndN (fun t => f (q+t)) 0 i) 0 (m+x.length)
+  change cN (fun i => f i=true ∧ ¬EndN f 0 i) (q+m) x.length=_ at hr
+  dsimp only [q] at *
+  simp only [Nat.add_assoc] at *
+  omega
+
+end Recaman.SeparatorTailFreeGap

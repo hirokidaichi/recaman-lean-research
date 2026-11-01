@@ -1,0 +1,139 @@
+Recaman/TwoRunSupply.lean:147:8: error: `grind` failed
+case grind.2.1.2.1.2.2
+q M m r j : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hbal : ↑M + ↑r = ↑j + 1 + ↑q + ↑m
+hkey : (↑j + 1) ^ 2 = (↑q + ↑m) ^ 2 - 2 * ↑m * ↑M
+E : Int := ↑M + ↑r
+D : Int := ↑q + ↑m - (↑j + 1)
+hE : 0 < ↑M + ↑r
+hN : 0 < 2 * ↑m * ↑M
+hprod : (↑M + ↑r) * (↑q + ↑m - (↑j + 1)) = 2 * ↑m * ↑M
+hD : 1 ≤ ↑q + ↑m - (↑j + 1)
+hd : ↑q + ↑m - (↑j + 1) = 1
+h_1 : ¬↑m = ↑j + 1
+h_2 : ↑M = ↑m
+h_3 : ¬↑q = ↑j + 1
+h_4 : ↑q = ↑m
+h_5 : ¬↑j = ↑q + ↑m - (↑j + 1)
+h_6 : ¬↑m = ↑j
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+    [prop] -1 * ↑q + ↑M + -1 * ↑m + ↑r + -1 * ↑j + -1 = 0
+    [prop] 2 * ↑m * ↑M + -1 * (↑q + ↑m) ^ 2 + (↑j + 1) ^ 2 = 0
+    [prop] -1 * ↑M + -1 * ↑r + 1 ≤ 0
+    [prop] -1 * (2 * ↑m * ↑M) + 1 ≤ 0
+    [prop] (↑M + ↑r) * (↑q + ↑m - (↑j + 1)) = 2 * ↑m * ↑M
+    [prop] -1 * ↑q + -1 * ↑m + ↑j + 2 ≤ 0
+    [prop] ↑q + ↑m + -1 * ↑j + -2 = 0
+    [prop] ¬↑m = ↑j + 1
+    [prop] ↑M = ↑m
+    [prop] ¬↑q = ↑j + 1
+    [prop] ↑q = ↑m
+    [prop] ¬↑j = ↑q + ↑m - (↑j + 1)
+    [prop] ¬↑m = ↑j
+  [eqc] True propositions
+    [prop] ↑q = ↑M
+    [prop] ↑q = ↑m
+    [prop] ↑M = ↑m
+    [prop] -1 * ↑q + -1 * ↑m + ↑j + 2 ≤ 0
+    [prop] -1 * ↑M + -1 * ↑r + 1 ≤ 0
+    [prop] -1 * (2 * ↑m * ↑M) + 1 ≤ 0
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+  [eqc] False propositions
+    [prop] ↑q = ↑j + 1
+    [prop] ↑m = ↑j
+    [prop] ↑m = ↑j + 1
+    [prop] ↑j = ↑q + ↑m - (↑j + 1)
+  [eqc] Equivalence classes
+    [eqc] others
+      [eqc] {↑q, ↑M, ↑m}
+      [eqc] {0,
+          ↑q + ↑m + -1 * ↑j + -2,
+          -1 * ↑q + ↑M + -1 * ↑m + ↑r + -1 * ↑j + -1,
+          2 * ↑m * ↑M + -1 * (↑q + ↑m) ^ 2 + (↑j + 1) ^ 2}
+      [eqc] {↑M * ↑q + -1 * (↑m * ↑q), ↑M * ↑m + -1 * (↑m * ↑q)}
+      [eqc] {↑q * ↑r, ↑m * ↑r}
+      [eqc] {↑M * ↑q, ↑M * ↑m, ↑m * ↑q}
+      [eqc] {-1 * ↑q, -1 * ↑M, -1 * ↑m}
+      [eqc] {-1 * (↑M * ↑m), -1 * (↑m * ↑q)}
+      [eqc] {-1 * ↑q ^ 2, -1 * ↑m ^ 2}
+      [eqc] {-2 * (↑M * ↑m), -2 * (↑m * ↑q)}
+      [eqc] {(↑M + ↑r) * (↑q + ↑m - (↑j + 1)), 2 * ↑m * ↑M}
+      [eqc] {↑q ^ 2, ↑m ^ 2}
+  [cases] Case analyses
+    [cases] [2/2]: ↑m = ↑j + 1
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑m ^ 2
+          and
+            (↑j + 1) ^ 2
+    [cases] [1/2]: ↑M = ↑m
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑m * ↑q
+          and
+            ↑M * ↑m
+    [cases] [2/2]: ↑q = ↑j + 1
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑q ^ 2
+          and
+            (↑j + 1) ^ 2
+    [cases] [1/2]: ↑q = ↑m
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑q ^ 2
+          and
+            ↑m ^ 2
+    [cases] [2/2]: ↑j = ↑q + ↑m - (↑j + 1)
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * ↑j
+          and
+            (↑M + ↑r) * (↑q + ↑m - (↑j + 1))
+    [cases] [2/2]: ↑m = ↑j
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑j ^ 2
+          and
+            ↑m ^ 2
+  [ematch] E-matching patterns
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] q := 3
+    [assign] M := 3
+    [assign] m := 3
+    [assign] r := 8
+    [assign] j := 4
+    [assign] E := 27
+    [assign] D := 28
+    [assign] 「↑q ^ 2」 := 5
+    [assign] 「↑m ^ 2」 := 5
+    [assign] 「↑j ^ 2」 := 1
+    [assign] 「(↑q + ↑m) ^ 2」 := 0
+    [assign] 「(↑j + 1) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑j ^ 2 + -2 = 0
+      [_] ↑M + -1 * ↑m + -1 * ↑q + ↑r + -1 * ↑j + -1 = 0
+      [_] ↑m + ↑q + -1 * ↑j + -2 = 0
+      [_] ↑q + -1 * ↑r + ↑j + 1 = 0
+      [_] 2 * ↑r + -3 * ↑j + -4 = 0
+    [diseqs] Disequalities
+      [_] ¬-1 * ↑j = 0
+      [_] ¬-1 * ↑j = 0
+      [_] ¬↑j + -1 = 0
+      [_] ¬-1 * ↑j + 2 = 0
+Recaman/TwoRunSupply.lean:159:31: warning: Variable name `M` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _M
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/TwoRunSupply.lean:159:58: warning: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

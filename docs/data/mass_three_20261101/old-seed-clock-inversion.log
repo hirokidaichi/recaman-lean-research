@@ -1,0 +1,79 @@
+Recaman/OldSeedInversionKey.lean:22:2: error: `grind` failed
+case grind.1.2
+u z : List Bool
+hu : BlockWord u
+hmz : mass z = 0
+v i : Nat
+I : Int
+hmeasure : runKey z = 4 * I - 2 * ↑(cntF z) ^ 2
+hmass : mass u - ↑v + ↑i = 1
+hkey : runKey u + (4 * I - 2 * ↑(cntF z) ^ 2) + 4 * mass u * ↑(cntF z) + 4 * ↑v * (mass u + 0) - 2 * ↑v ^ 2 = -2
+hl : -2 ≤ runKey u
+h : -2 * I + -1 * (2 * mass u * ↑(cntF z)) + -1 * mass u ^ 2 + ↑(cntF z) ^ 2 + (↑i + -1) ^ 2 + 1 ≤ 0
+h_1 : ↑i = ↑(cntF z)
+h_2 : ¬↑v = ↑(cntF z)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] mass z = 0
+    [prop] -4 * I + runKey z + 2 * ↑(cntF z) ^ 2 = 0
+    [prop] mass u + -1 * ↑v + ↑i + -1 = 0
+    [prop] 4 * I + runKey u + 4 * mass u * ↑(cntF z) + 4 * ↑v * (mass u + 0) + -2 * ↑v ^ 2 + -2 * ↑(cntF z) ^ 2 + 2 = 0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] -2 * I + -1 * (2 * mass u * ↑(cntF z)) + -1 * mass u ^ 2 + ↑(cntF z) ^ 2 + (↑i + -1) ^ 2 + 1 ≤ 0
+    [prop] ↑i = ↑(cntF z)
+    [prop] ¬↑v = ↑(cntF z)
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] ↑i = ↑(cntF z)
+    [prop] -2 * I + -1 * (2 * mass u * ↑(cntF z)) + -1 * mass u ^ 2 + ↑(cntF z) ^ 2 + (↑i + -1) ^ 2 + 1 ≤ 0
+    [prop] -1 * runKey u + -2 ≤ 0
+  [eqc] False propositions
+    [prop] ↑v = ↑i
+    [prop] ↑v = ↑(cntF z)
+  [eqc] Equivalence classes
+    [eqc] {mass u, mass u + 0}
+    [eqc] {mass z,
+        0,
+        mass u + -1 * ↑v + ↑i + -1,
+        4 * I + runKey u + 4 * mass u * ↑(cntF z) + 4 * ↑v * (mass u + 0) + -2 * ↑v ^ 2 + -2 * ↑(cntF z) ^ 2 + 2,
+        -4 * I + runKey z + 2 * ↑(cntF z) ^ 2,
+        2 * ↑(cntF z) ^ 2 + -4 * I + runKey z}
+    [eqc] others
+      [eqc] {↑i, ↑(cntF z)}
+      [eqc] {↑i ^ 2, ↑(cntF z) ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: ↑i = ↑(cntF z)
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑i ^ 2
+          and
+            ↑(cntF z) ^ 2
+    [cases] [2/2]: ↑v = ↑(cntF z)
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑v ^ 2
+          and
+            ↑(cntF z) ^ 2
+  [cutsat] Assignment satisfying linear constraints
+    [assign] v := 1
+    [assign] i := 0
+    [assign] I := 0
+    [assign] cntF z := 0
+    [assign] mass u := 2
+    [assign] mass z := 0
+    [assign] runKey u := -2
+    [assign] runKey z := 0
+    [assign] 「mass u ^ 2」 := 2
+    [assign] 「↑v ^ 2」 := 0
+    [assign] 「↑i ^ 2」 := 0
+    [assign] 「↑(cntF z) ^ 2」 := 0
+    [assign] 「(↑i + -1) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 2 * ↑v ^ 2 + -8 * I + 3 * runKey z + 4 * ↑v + 4 * ↑i + runKey u + 2 = 0
+      [_] 2 * ↑i ^ 2 + -4 * I + runKey z = 0
+      [_] ↑(cntF z) + -1 * ↑i = 0
+      [_] mass u + -1 * ↑v + ↑i + -1 = 0
+    [diseqs] Disequalities
+      [_] ¬↑v + -1 * ↑i = 0
+      [_] ¬↑v + -1 * ↑i = 0

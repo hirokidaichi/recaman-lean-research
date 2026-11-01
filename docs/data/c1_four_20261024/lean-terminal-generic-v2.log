@@ -1,0 +1,12 @@
+Recaman/BlockSuffixPositivity.lean:2093:16: error: unsolved goals
+case cons.true
+w : List Bool
+ih : ones w = ↑(List.count true w)
+⊢ 1 + ↑(List.count true w) = ↑(List.count true w) + 1
+Recaman/BlockSuffixPositivity.lean:2093:42: warning: This simp argument is unused:
+  List.count_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ones, ih]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

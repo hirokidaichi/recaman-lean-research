@@ -1,0 +1,58 @@
+Recaman/MassThreeOldPair.lean:12:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:15:16: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:21:8: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:35:42: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:37:40: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:39:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:40:48: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:42:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:34:16: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:44:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/MassThreeOldPair.lean:53:12: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c - 2*e ≤ 1
+  7*c - 2*d + 2*e ≥ -14
+where
+ c := S
+ d := B / 2
+ e := S / 2
+Recaman/MassThreeOldPair.lean:50:13: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:50:37: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:52:23: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:53:12: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:46:16: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:50:37: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaPairs, List.mem_cons, Prod.mk.injEq] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/MassThreeOldPair.lean:52:54: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [coupledAreaPairs, List.mem_cons, Prod.mk.injEq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/MassThreeOldPair.lean:68:63: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:69:83: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:70:83: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:75:56: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:76:104: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:78:124: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeOldPair.lean:58:8: error: (kernel) excessive memory consumption detected

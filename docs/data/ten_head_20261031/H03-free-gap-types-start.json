@@ -1,0 +1,18 @@
+{
+  "tag": "H03-free-gap-types",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/TenHeadFreeGap.lean"
+  ],
+  "started_jst": "2026-10-31T06:20:03.482519+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TenHeadFreeGap.lean": "a4ebdb115c0dfe2f86a641281e9b168b382711cd852194c5b5a52949231aaf35"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

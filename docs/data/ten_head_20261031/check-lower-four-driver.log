@@ -1,0 +1,13 @@
+{"tag": "check-lower-four", "argv": ["./scripts/check.sh"], "started_jst": "2026-10-31T07:31:06.624961+09:00", "wall_cap_seconds": 90, "cpu_limit_per_process_seconds": 60, "source_sha256": {"./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"}, "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants", "exit_code": 0, "reason": "completed", "wall_seconds": 6.704257582779974, "cpu_seconds": 8.136772, "finished_jst": "2026-10-31T07:31:13.329150+09:00"}
+warning: Recaman/LowerMomentOldClock.lean:151:22: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [498/501] Built Recaman.LowerMomentBase (413ms)
+✔ [499/501] Built Recaman.LowerFourBase (412ms)
+✔ [500/501] Built Recaman (318ms)
+Build completed successfully (501 jobs).
+Axiom audit: 3111 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.

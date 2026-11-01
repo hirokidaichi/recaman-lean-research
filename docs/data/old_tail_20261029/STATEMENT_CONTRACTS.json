@@ -1,0 +1,51 @@
+{
+  "role": "validation fixture, no new mathematical result",
+  "contracts": [
+    {
+      "evidence": "E-445",
+      "symbol": "Recaman.ThreeRunOldTargetGap.three_run_old_target_free_gap_int",
+      "audit_sha256": "f093227cdf7ce8953250a031075dcbbb035b19cf8ddbcded123c11e7f89309aa",
+      "quoted_signature_sha256": "abb811f78a10b7ae4aa9b74e87463f0132ed2c1b6e0d318f217b8e9081a12ddb",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    },
+    {
+      "evidence": "E-450",
+      "symbol": "Recaman.ThreeRunInitialSTargetGap.three_run_initial_S_target_free_gap_int",
+      "audit_sha256": "f71a924ca5b1c5c66887122d5f21c51efcdc5337847665f7e68cdbc8f14a0961",
+      "quoted_signature_sha256": "1a8941f0050f109f36dab6b5b3da0b4c9b9241e7da2f8659fa1b444d20961503",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    },
+    {
+      "evidence": "E-451",
+      "symbol": "Recaman.ThreeRunFreeGap.three_run_free_gap_int",
+      "audit_sha256": "f20b426227551a0fbaab63d3bd17cc5a607a8da836ca3a1aeb3783e1c2a2e309",
+      "quoted_signature_sha256": "5423a88b2989b68c8dd595b16fcf54db4687bee28ef90e716712967f898193cb",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    },
+    {
+      "evidence": "E-452",
+      "symbol": "Recaman.LocalSourcePrefixBudget.actual_local_source_prefix_A",
+      "audit_sha256": "e5c79e838ba087e162692276fe3edc0df711197a777227d4b6b1e242aa6b7681",
+      "quoted_signature_sha256": "9565bd32c42cf999612208410605dc014521500b689972c4b646d1cb6d370680",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    },
+    {
+      "evidence": "E-454",
+      "symbol": "Recaman.PrefixKeySourceBudget.actual_local_source_prefix_A_of_key",
+      "audit_sha256": "938a9295e18f0a4b38c721f61f913e8961d70e2886db456d0fe3e7841e3a57b8",
+      "quoted_signature_sha256": "81dfb433aada41a81d767417e55c0a1878fddca1c75384c36b003d7d91f79e2d",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    },
+    {
+      "evidence": "E-453",
+      "symbol": "Recaman.FreePrefixCounterexample.free_before_source_counterexample",
+      "audit_sha256": "202b468e9a6b778c10b40afd41c4ce3b9a2a81f08a48a6621b358fe99798c574",
+      "quoted_signature_sha256": "147ac5a8973b894f744bac9829bc710d0863c90cf3d1fb7bfe4066f51fe0fffc",
+      "check": "exact whole type ascription of @constant with autoImplicit false; post-implementation audit, not preimplementation freeze"
+    }
+  ],
+  "initial_fixture_source_sha256": "bd9c0d92aece988bf9c6e7d4b0928624e56e57fd2ad7eb839d8e4560cd08ac58",
+  "source_sha256": "d277e02b71292fe6df3fa3b6d1c494b8b26a1f7607c91535d9d19649350aa0f3",
+  "result": "H13-statement-contracts-local-result.json",
+  "repair": "same six signatures and caps; preserve open Classical; import leaf dependency closures instead of whole root; original failed log/source retained"
+}

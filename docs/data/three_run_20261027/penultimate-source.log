@@ -1,0 +1,31 @@
+Recaman/PenultimateRunWindow.lean:10:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq Int
+    (2 * areaW (List.replicate s false) -
+      ↑s * ShortPeriodicSupply.sign false * (↑s * ShortPeriodicSupply.sign false + 1))
+    (-(2 * ↑s ^ 2))
+but is expected to have type
+  @Eq Int
+    (2 * areaW (List.replicate s false) -
+      ↑s * ShortPeriodicSupply.sign false * (↑s * ShortPeriodicSupply.sign false + 1))
+    (-2 * ↑s ^ 2)
+Recaman/PenultimateRunWindow.lean:31:58: error: unsolved goals
+d s T j : Nat
+v : List Bool := List.replicate d true ++ List.replicate s false ++ List.replicate T true
+hmv : mass v = ↑j + 1
+hmass : ↑d - ↑s + ↑T = ↑j + 1
+hkv : runKey v = -2 * ↑s ^ 2 + 4 * ↑d * ↑s
+hm : mass (v ++ List.replicate j false) = 1
+ha : areaW (v ++ List.replicate j false) = 0
+⊢ 2 * 0 - 1 * (1 + 1) = -2
+Recaman/PenultimateRunWindow.lean:41:16: error: (kernel) excessive memory consumption detected
+Recaman/PenultimateRunWindow.lean:53:8: error: (kernel) excessive memory consumption detected
+Recaman/PenultimateRunWindow.lean:73:4: error: Type mismatch
+  hw.right.left
+has type
+  Fw f (start + (d + s + T + j)) = Fw f start + 1
+but is expected to have type
+  Fw f (start + (d + s + T + j)) - Fw f start = 1
+Recaman/PenultimateRunWindow.lean:64:8: error: (kernel) excessive memory consumption detected
+Recaman/PenultimateRunWindow.lean:79:8: error: (kernel) excessive memory consumption detected

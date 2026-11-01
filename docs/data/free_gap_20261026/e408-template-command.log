@@ -1,0 +1,87 @@
+# Statement audit: E-408
+
+- artifact: `Recaman/RunSupplyKeys.lean`
+- reviewer: TODO (name, YYYY-MM-DD)
+- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3
+  means the row must not be described as resolving anything unconditional.
+
+## Recaman.RunSupplyKeys.runKey_append_A
+
+```lean
+(w : List Bool) (r : Nat) : runKey (w++List.replicate r true)=runKey w
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.localSupply_A_S_iff
+
+```lean
+(u : List Bool) (r j : Nat) : Recaman.ThreeNonsuppliedData.localSupply (u++List.replicate r true++List.replicate j false)=true ↔ ∃ t, t<u.length ∧ mass (u.drop t)+(r : Int)=(j : Int)+1 ∧ runKey (u.drop t)=-2*((j : Int)+1)^2
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.runKey_count_lower
+
+```lean
+(w : List Bool) : -2*(cntF w : Int)^2≤runKey w
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.localSupply_run_bounds
+
+```lean
+(u : List Bool) (r j : Nat) (h : Recaman.ThreeNonsuppliedData.localSupply (u++List.replicate r true++List.replicate j false)=true) : j+1≤cntF u ∧ r≤2*cntF u
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.endable_after_A_S_iff
+
+```lean
+(f : Nat → Bool) (n r j : Nat) (hw : seg f n (r+j)=List.replicate r true++List.replicate j false) (hA : f (n+r+j)=true) : EndN f 0 (n+r+j) ↔ ∃ t, t<n ∧ mass ((seg f 0 n).drop t)+(r : Int)=(j : Int)+1 ∧ runKey ((seg f 0 n).drop t)=-2*((j : Int)+1)^2
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.endable_run_bounds
+
+```lean
+(f : Nat → Bool) (n r j : Nat) (hw : seg f n (r+j)=List.replicate r true++List.replicate j false) (he : EndN f 0 (n+r+j)) : j+1≤cN (fun x => f x=false) 0 n ∧ r≤2*cN (fun x => f x=false) 0 n
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.run_bounds_sharp
+
+```lean
+(h : Nat) (hh : 1≤h) : cntF (List.replicate h false)=h ∧ Recaman.ThreeNonsuppliedData.localSupply (List.replicate h false++List.replicate (2*h) true++List.replicate (h-1) false)=true
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+
+## Recaman.RunSupplyKeys.endable_run_bounds_int
+
+```lean
+(e : Int → Bool) (p : Int) (n r j : Nat) (hw : segment e (p+(n : Int)) (r+j)=List.replicate r true++List.replicate j false) (he : Endable e p (p+((n+r+j : Nat) : Int))) : j+1≤subtractionCount e p n ∧ r≤2*subtractionCount e p n
+```
+
+1. binders mention the sign word `e`, the orbit `a`/`stateAt`, windows or phase lists: yes/no
+2. some hypothesis is an unproved defined Prop or is (equivalent to) the conclusion: yes/no, which
+3. the proof is a wrapper/omega/rfl over imported results: yes/no
+

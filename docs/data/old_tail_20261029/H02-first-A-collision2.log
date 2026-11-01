@@ -1,0 +1,90 @@
+Recaman/OldTargetClockCollision.lean:101:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  k ≥ 1
+  0 ≤ g ≤ 1
+  f ≥ 0
+  d ≥ 0
+  c ≥ 1
+  b ≥ 1
+  a ≥ 4
+  a - b - d - f ≥ -10
+  a - d - g ≥ -1
+  2*a - b - d - f ≤ -4
+where
+ a := ↑j
+ b := ↑L
+ c := ↑e
+ d := ↑T
+ f := ↑M
+ g := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ k := ↑L * ↑s
+ l := (↑e - 1) * (↑m + ↑s)
+Recaman/OldTargetClockCollision.lean:105:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 0
+  l ≥ 1
+  k ≤ 1
+  g ≥ 0
+  f ≥ 0
+  d ≥ 2
+  1 ≤ c ≤ 2
+  b ≥ 1
+  a ≥ 4
+  a - b - f - g ≥ -10
+  a - f - k ≥ -1
+  2*a - b - f - g ≤ -5
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑e
+ f := ↑T
+ g := ↑M
+ k := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ l := ↑L * ↑s
+ n := (↑e - 1) * (↑m + ↑s)
+Recaman/OldTargetClockCollision.lean:106:53: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≤ 1
+  f ≥ 2
+  e ≥ 0
+  d ≥ 0
+  1 ≤ c ≤ 2
+  b ≥ 1
+  a ≥ 4
+  a - b - d - e ≥ -10
+  a - d - g ≥ -1
+  2*a - b - d - e ≤ -5
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑T
+ e := ↑M
+ f := ↑L * ↑s
+ g := mass (List.replicate 1 true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+Recaman/OldTargetClockCollision.lean:116:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 0
+  l ≥ 1
+  0 ≤ k ≤ 1
+  g ≥ 0
+  f ≥ 0
+  d ≥ 1
+  1 ≤ c ≤ 3
+  b ≥ 1
+  a ≥ 4
+  a - b - f - g ≥ -10
+  a - f - k ≥ -1
+  2*a - b - f - g ≤ -6
+where
+ a := ↑j
+ b := ↑L
+ c := ↑s
+ d := ↑e
+ f := ↑T
+ g := ↑M
+ k := mass (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false)
+ l := ↑L * ↑s
+ n := (↑e - 1) * (↑m + ↑s)

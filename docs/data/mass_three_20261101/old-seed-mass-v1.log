@@ -1,0 +1,14 @@
+Recaman/OldSeedMassBound.lean:37:50: error: Application type mismatch: The argument
+  hkeygap
+has type
+  runKey (List.drop s w ++ a) + 9 ≤ runKey (List.drop t w ++ a)
+but is expected to have type
+  runKey (List.drop t w ++ a) + 9 ≤ runKey (List.drop s w ++ a)
+in the application
+  old_key_mass_order w a hw s t hkeygap
+Recaman/OldSeedMassBound.lean:41:4: error: Type mismatch: After simplification, term
+  hmi
+ has type
+  mass (List.drop t w) + (0 + -↑v) + ↑i = 1
+but is expected to have type
+  mass (List.drop t w) - ↑v + ↑i = 1

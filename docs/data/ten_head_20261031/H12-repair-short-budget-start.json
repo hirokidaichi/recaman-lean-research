@@ -1,0 +1,18 @@
+{
+  "tag": "H12-repair-short-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ShortGapLocalBudget.lean"
+  ],
+  "started_jst": "2026-10-31T06:59:14.839152+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortGapLocalBudget.lean": "d5f0981e27ab5b8b1df2414844e5d5442c096c23ff0b6b4cae8f7a9f41e2d61d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-10-27T06:11:04.387941+09:00",
+  "tag": "charge-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/run_single.py",
+    "--worker",
+    "15",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/three_run_20261027/charge_holdout.py"
+  ],
+  "worker_cpu_cap_seconds": 15,
+  "wall_cap_seconds": 20.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "a3989ade570ed898d2830676f3b4546bad18a7c91bb1827958e253ecf6d2e118",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 70417,
+  "process_group": 70417,
+  "finished_jst": "2026-10-27T06:11:04.450701+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.06284079188480973,
+  "worker_user_seconds": 0.049541999999999996,
+  "worker_sys_seconds": 0.0063679999999999995,
+  "worker_cpu_seconds": 0.055909999999999994,
+  "worker_maxrss_native": 22953984,
+  "controller_cpu_seconds": 0.0014350000000000022,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

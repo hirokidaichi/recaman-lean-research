@@ -1,0 +1,7 @@
+# H07 semantic audit
+
+C/D come from the same concrete nonempty BlockWord suffix u. Full tail, literal mass1/area0 and all run lengths quantified. Source identity is2D+C(C-1)=2A(A-2R)-4I, I=M(m+s)+Ls. Same u supplies quadraticarea lower andpositiveC/D. Rawstrict A>=2R+1 is sharp by u=A/ S3 A S^(R-2) A S A^(2R-1)/S^(R-1), allR>=3. This is a literal oldP2 family, not an asserted actualzero-positive/freecounter history or C1 counterexample; do not extend the refutation to a stronger condition not tested.
+
+Actual f adapter constructs u=seg f t(n-t) from same original oldprefix/Win and proves it is BlockWord. Actualcounter old band: r4..7/A17/j4..7/C7/H16/u17. Joint E=A-R<=9 andR>=5 givesA(A-2R)=E²-R²<=56, thusC²<=57 ->C7. Earlier independentmax boundC10/H22/u25 was strengthened before registration. u17 bounds target's source suffix, not the full earlier prefix or oldsuppliers for other clocks; no EndN erasure/rebase. Generalactualthree-run band covers all target starts via E435: old or initialS (the latter fourpairsj<=6/A<=16), afterfirstA alreadyexcluded. Intp adapter preserves actualEndable and zero/positive via cNadd, no source/budget assumed as conclusion.
+
+New mathematical searchCPU0, same Lean512/-j1/10CPU/20wall. One cast-name elaboration correction; no mathematical conjecture repair. Fullcheck/G5/Audit before promotion. InitialS andold absence/generalC1 still unproved. Humanreview pending.

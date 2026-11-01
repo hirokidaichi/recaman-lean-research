@@ -1,0 +1,43 @@
+l3blocked positive-blocker multiplicity audit
+date=2026-09-06
+HEAD=904ab5693303530a0576a1e2f76358c93b6305d7
+arc_death_rule_probe.cpp sha256=b56b8860077833bdf85d2233f018fe12e5ce92d0c2f662338df6d9d3e8e83752
+l3blocked_resource_multiplicity.py sha256=5c2b7745205ed9c30424bc1565a42960719289b6fab9386324485880de8f55d1
+binary sha256=8d11b1ef1314b367afe31f49e2f36d18a209a9c8537920bdd4a073283e4fdf6b
+comb_ends.txt sha256=83e101f68277e4a69b8594a233868e411036ea47aec92347db35f288a7d0f033
+trace.txt sha256=2057f663262961653f3f2cb4d2b19f6ba54b15d61b3dbf1fedff8661271b8f48
+summary.txt sha256=37288e83df2b8fd0729d718d16f8b7df39c9069b4159b2f0d9b489afaf461db9
+
+command:
+  DEATHRULE 2000000 OUTDIR 1 2000000
+  python3 experiments/l3blocked_resource_multiplicity.py \
+    OUTDIR/comb_ends.txt OUTDIR/trace.txt \
+    --discovery-end 600000 --holdout-end 2000000
+
+simulator:
+  horizon=2000000
+  checkpoint(first 19 landings)=PASS
+  completed arcs=24
+  comb recurrence checks=851 mismatches=0
+  lock checks mismatches=0
+  completed-arc comb ends=829 unresolved=0
+
+audit:
+  recurrence checks=2000000 mismatches=0
+  distinct visited values=1461899
+  discovery 1<=s<=600000:
+    excursions=17 positive blocked uses=6305 max multiplicity=2
+    violations(>2)=0 endpoints late=15 wrap=2
+  holdout 600000<s<=2000000:
+    excursions=22 positive blocked uses=12802 max multiplicity=1
+    violations(>2)=0 endpoints late=22 wrap=0
+  resources with multiplicity>=2 across both ranges=15
+
+selected witnesses:
+  c=97896 s=97983 e=98664 w=395883 firstBirth=97902 uses=98010,98166
+  c=97896 s=97983 e=98664 w=395922 firstBirth=97980 uses=97984,98140
+  c=559183 s=559188 e=560921 w=1167709 firstBirth=553005 uses=559545,559573
+
+limits:
+  COMPUTED finite evidence only.  The all-scale multiplicity bound remains CONJECTURED.
+  Records from the open arc at horizon are excluded by the completed-arc requirement.

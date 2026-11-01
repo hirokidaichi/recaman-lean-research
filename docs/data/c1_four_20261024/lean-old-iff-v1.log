@@ -1,0 +1,67 @@
+Recaman/BlockSuffixPositivity.lean:3030:7: error: unknown tactic
+Recaman/BlockSuffixPositivity.lean:3010:55: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  g ≥ 0
+  g - i ≥ 1
+  e ≥ 0
+  d ≥ 0
+  d - e ≥ 1
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := ↑t
+ g := ↑?m.232
+ i := ↑?m.231
+Recaman/BlockSuffixPositivity.lean:3010:6: error: Type mismatch: After simplification, term
+  Eq.symm h
+ has type
+  seg f 0 t ++ seg f t (n - t) = seg f 0 (t + (n - t))
+but is expected to have type
+  seg f 0 t ++ v = seg f 0 n
+Recaman/BlockSuffixPositivity.lean:3029:30: error: unsolved goals
+f : Nat → Bool
+n a : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+r : List Bool
+hr : r ∈ jointOldRoots
+hrs : r <:+ seg f 0 n
+hrep : ∀ (v : List Bool), mass v = 3 ∨ mass v = 4 → (v <:+ seg f 0 n ↔ v <:+ r)
+b : Nat
+hnb : n < b
+hm : 1 + Fw f n - Fw f b = 3 ∨ 1 + Fw f n - Fw f b = 4
+v : List Bool
+hvr : v <:+ r
+hvm : mass v = 1 + Fw f n - Fw f b
+hva : areaW v = -Ar f n (b - n) - ↑(b - n) * (1 + Fw f n - Fw f b)
+u : List Bool
+hu : u ++ v = seg f 0 n
+hlen : u.length + v.length = n
+⊢ v.length > 0
+Recaman/BlockSuffixPositivity.lean:3023:2: error: unsolved goals
+case mpr
+f : Nat → Bool
+n a : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+r : List Bool
+hr : r ∈ jointOldRoots
+hrs : r <:+ seg f 0 n
+hrep : ∀ (v : List Bool), mass v = 3 ∨ mass v = 4 → (v <:+ seg f 0 n ↔ v <:+ r)
+b : Nat
+hnb : n < b
+hm : 1 + Fw f n - Fw f b = 3 ∨ 1 + Fw f n - Fw f b = 4
+v : List Bool
+hvr : v <:+ r
+hvm : mass v = 1 + Fw f n - Fw f b
+hva : areaW v = -Ar f n (b - n) - ↑(b - n) * (1 + Fw f n - Fw f b)
+u : List Bool
+hu : u ++ v = seg f 0 n
+hlen : u.length + v.length = n
+hvne : v.length > 0
+⊢ ∃ t, t < n ∧ Win f t (b - t)

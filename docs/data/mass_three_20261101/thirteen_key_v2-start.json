@@ -1,0 +1,25 @@
+{
+  "tag": "thirteen_key_v2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldFourThirteenKey.olean",
+    "Recaman/OldFourThirteenKey.lean"
+  ],
+  "started_jst": "2026-11-01T07:21:35.308608+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldFourThirteenKey.lean": "009004bacdac01f0b317227517ddc04eec48d5124d48c91e7b20d7bc4a043441"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "1064fbe23f4f9cda5ed9f88359dfceddb775abe48e5d76d11ae8853b3121718e",
+  "source_tree_sha256": "7d0e005cee745e4a064b6ab92846ed593a4a06a0b4dc8a59da25f8d3621b54fe",
+  "source_tree_manifest": "thirteen_key_v2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

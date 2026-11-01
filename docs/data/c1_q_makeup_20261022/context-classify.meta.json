@@ -1,0 +1,17 @@
+{
+  "started_jst": "2026-10-22T09:08:42.963542+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "source": "context_classify.cpp",
+  "sha256": "3ba9e1f0c7904eeb2eb91fad7cf6ba79dc99846edd4cfb6f1262aed245cdad00",
+  "argv": [
+    "/tmp/recaman-c1-context-classify",
+    "120",
+    "docs/data/c1_q_makeup_20261022/contexts.json"
+  ],
+  "cpu_limit_seconds": 130,
+  "wall_limit_internal_seconds": 120,
+  "tail_stack_guard": 512,
+  "guard_hit_is_incomplete": true,
+  "mathematical_S_or_length_cutoff": false,
+  "domain": "block prefix; depth at most four through b; az<=3; positive deficit; ay<=1 through b+1; prefix Q not completed D"
+}

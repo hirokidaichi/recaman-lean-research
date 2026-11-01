@@ -1,0 +1,650 @@
+{
+  "matched": {
+    "Recaman/EarlyOldFourBase.lean": {
+      "sha256": "b6b0035f02e853626c4d8f3248d7ea0746415e1c1422d59f3256427b6eed58c0",
+      "record": "four_residual_base-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/EarlyOldFourBase.lean"
+      ],
+      "cpu_seconds": 0.37533299999999997,
+      "wall_seconds": 0.49939033412374556
+    },
+    "Recaman/EarlyOldFourFree.lean": {
+      "sha256": "55d3e58cba87a55f5820100c7862747a905a5aabfdc1bf7b6820e316dccf9a0a",
+      "record": "four_free_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/EarlyOldFourFree.olean",
+        "Recaman/EarlyOldFourFree.lean"
+      ],
+      "cpu_seconds": 0.298929,
+      "wall_seconds": 0.4497305420227349
+    },
+    "Recaman/EarlyOldFourFreeBase.lean": {
+      "sha256": "82ac7f4e6bd034133ca8edb3f972456316fb1f3dd76864c4984822e0964e79c7",
+      "record": "four_free_base-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/EarlyOldFourFreeBase.lean"
+      ],
+      "cpu_seconds": 0.347151,
+      "wall_seconds": 0.45457279216498137
+    },
+    "Recaman/EarlyOldFourResidual.lean": {
+      "sha256": "390eb4204e01016e165847b04011e9550f2ae9994409995b9d3d561af5b6420f",
+      "record": "four_residual-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/EarlyOldFourResidual.olean",
+        "Recaman/EarlyOldFourResidual.lean"
+      ],
+      "cpu_seconds": 1.004985,
+      "wall_seconds": 1.144068832974881
+    },
+    "Recaman/EarlyOldHeadBase.lean": {
+      "sha256": "cd24a7fc367bbd7cc2886f9a727b9f7df00ebeffb0574bb446c48f96f1c2b24b",
+      "record": "early-old-bases-five-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/EarlyOldHeadBase.lean"
+      ],
+      "cpu_seconds": 0.52021,
+      "wall_seconds": 0.5802174161653966
+    },
+    "Recaman/EarlyOldHeadFree.lean": {
+      "sha256": "406d53211471517ccf4423e0dd8bf77ad9f2a0df2f9cf2fbb75ee3a9cc7d2846",
+      "record": "early-old-mass-five-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/EarlyOldHeadFree.olean",
+        "Recaman/EarlyOldHeadFree.lean"
+      ],
+      "cpu_seconds": 1.18838,
+      "wall_seconds": 1.2539565830957144
+    },
+    "Recaman/EarlyOldSixBase.lean": {
+      "sha256": "4a636b37291b27ba67d0649fa03cdcba6653ad0e5310b04ad72216d4340fda2a",
+      "record": "six_base_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/EarlyOldSixBase.lean"
+      ],
+      "cpu_seconds": 0.35681199999999996,
+      "wall_seconds": 0.5104771249461919
+    },
+    "Recaman/EarlyOldSixFree.lean": {
+      "sha256": "1bf1c1332158a5a93d681e9038df6559d43f452b06a61fdb6ee3083c89b58619",
+      "record": "six_free_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/EarlyOldSixFree.olean",
+        "Recaman/EarlyOldSixFree.lean"
+      ],
+      "cpu_seconds": 0.878728,
+      "wall_seconds": 0.9769822498783469
+    },
+    "Recaman/FirstATargetSquare.lean": {
+      "sha256": "20a367c4eb07894f98567253bfff1808f505ce3c63de4ce8a1b25c93c50b1c82",
+      "record": "firstA_square_v1-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FirstATargetSquare.olean",
+        "Recaman/FirstATargetSquare.lean"
+      ],
+      "cpu_seconds": 0.568702,
+      "wall_seconds": 0.6946254998911172
+    },
+    "Recaman/FourSAnyOldBase.lean": {
+      "sha256": "4fbc44b8a77bf4f7c53422ac98786c70b033da42c789fe15ff2efcedc7874013",
+      "record": "docstring-FourSAnyOldBase-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/FourSAnyOldBase.lean"
+      ],
+      "cpu_seconds": 0.518628,
+      "wall_seconds": 0.6295598340220749
+    },
+    "Recaman/FourSAnyOldGap.lean": {
+      "sha256": "a20ecdfd96057e9c192954d0039e57ee30eba79e350250133a0cedea744663d1",
+      "record": "docstring-FourSAnyOldGap-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/FourSAnyOldGap.lean"
+      ],
+      "cpu_seconds": 0.478253,
+      "wall_seconds": 0.6279424158856273
+    },
+    "Recaman/FourSFirstATarget.lean": {
+      "sha256": "c3c0ddbda37c282b137b077b36d1b624ce5de74d99cf2173665d2ac8bf48f28c",
+      "record": "fourS_firstA-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourSFirstATarget.olean",
+        "Recaman/FourSFirstATarget.lean"
+      ],
+      "cpu_seconds": 0.547374,
+      "wall_seconds": 0.6904657080303878
+    },
+    "Recaman/HighTargetBase.lean": {
+      "sha256": "d84bc80af973b4a393bb317c6d8407da0715ac91ec084f144f50e1744945b2f1",
+      "record": "high_four_base_v1-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/HighTargetBase.lean"
+      ],
+      "cpu_seconds": 0.523743,
+      "wall_seconds": 0.670991332968697
+    },
+    "Recaman/HighTargetCharge.lean": {
+      "sha256": "8dda10cbb4dd93845a5cb39e8cf68a6c7ddf127f1bf3863ab4f3e2cf3f45465f",
+      "record": "high_four_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/HighTargetCharge.olean",
+        "Recaman/HighTargetCharge.lean"
+      ],
+      "cpu_seconds": 1.055798,
+      "wall_seconds": 1.1871110829524696
+    },
+    "Recaman/InversionActualBudget.lean": {
+      "sha256": "6b8e5bb5f92e664dcf27070098a5ee21aacdab1d5f72d2f8909e944246546bba",
+      "record": "inv_actual_v3-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/InversionActualBudget.olean",
+        "Recaman/InversionActualBudget.lean"
+      ],
+      "cpu_seconds": 0.5054259999999999,
+      "wall_seconds": 0.6533472079318017
+    },
+    "Recaman/InversionNine.lean": {
+      "sha256": "af133d3a4589b147f3d8f480ab4c49527862c5f250ba457c6e461def875ddef7",
+      "record": "inv9_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/InversionNine.olean",
+        "Recaman/InversionNine.lean"
+      ],
+      "cpu_seconds": 0.485554,
+      "wall_seconds": 0.6115059170406312
+    },
+    "Recaman/InversionNineActual.lean": {
+      "sha256": "79fce3d72981693d3c2eb6d9b04aea37d1886fd47043f9b017f2fabbfd8a1292",
+      "record": "inv9_actual_export-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/InversionNineActual.olean",
+        "Recaman/InversionNineActual.lean"
+      ],
+      "cpu_seconds": 0.26190800000000003,
+      "wall_seconds": 0.4016005408484489
+    },
+    "Recaman/MassThreeOldOneBase.lean": {
+      "sha256": "a77882108824e17a42ca4bfd752694b5d00dc2431a6cfcaa5f2c244710f29f64",
+      "record": "docstring-MassThreeOldOneBase-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/MassThreeOldOneBase.lean"
+      ],
+      "cpu_seconds": 0.437368,
+      "wall_seconds": 0.5587310411501676
+    },
+    "Recaman/MassThreeOldOneGap.lean": {
+      "sha256": "486c0b99f9bab9fd27afbfc84f9efd3d5a0ef48a5fa4b295762bdad5f515d360",
+      "record": "docstring-MassThreeOldOneGap-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/MassThreeOldOneGap.lean"
+      ],
+      "cpu_seconds": 0.816242,
+      "wall_seconds": 0.966970874927938
+    },
+    "Recaman/MassThreeOldZeroBase.lean": {
+      "sha256": "603ba4ababf71c251cd61cf5999616f3f3edabb9677e379c7684fe17821aac62",
+      "record": "docstring-MassThreeOldZeroBase-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/MassThreeOldZeroBase.lean"
+      ],
+      "cpu_seconds": 0.433017,
+      "wall_seconds": 0.570380707969889
+    },
+    "Recaman/MassThreeOldZeroGap.lean": {
+      "sha256": "618b62461d3e00cc16773123ffc700fd6757d5de339771afe5c37bddc5186431",
+      "record": "docstring-MassThreeOldZeroGap-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/MassThreeOldZeroGap.lean"
+      ],
+      "cpu_seconds": 0.813232,
+      "wall_seconds": 0.9192511250730604
+    },
+    "Recaman/OldFourThirteenActual.lean": {
+      "sha256": "b4799f9db1de1a1739f497913fc232d69c055294984f97b004b8cc98cc2c2f61",
+      "record": "thirteen_actual-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldFourThirteenActual.olean",
+        "Recaman/OldFourThirteenActual.lean"
+      ],
+      "cpu_seconds": 0.387324,
+      "wall_seconds": 0.5466525419615209
+    },
+    "Recaman/OldFourThirteenBase.lean": {
+      "sha256": "84ed85398df430f559d73efdf8f623832e25fb1553192b6e1dfbcf24385668a1",
+      "record": "thirteen_base_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/OldFourThirteenBase.lean"
+      ],
+      "cpu_seconds": 0.31707799999999997,
+      "wall_seconds": 0.4528164581861347
+    },
+    "Recaman/OldFourThirteenKey.lean": {
+      "sha256": "009004bacdac01f0b317227517ddc04eec48d5124d48c91e7b20d7bc4a043441",
+      "record": "thirteen_key_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldFourThirteenKey.olean",
+        "Recaman/OldFourThirteenKey.lean"
+      ],
+      "cpu_seconds": 0.363141,
+      "wall_seconds": 0.4972339170053601
+    },
+    "Recaman/OldMassFiveBase.lean": {
+      "sha256": "0f00a8de1af78990d85170e3c765ac81b29ea2bf2cd2884e6cee568a419dc95b",
+      "record": "mass_five_base-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/OldMassFiveBase.lean"
+      ],
+      "cpu_seconds": 0.519327,
+      "wall_seconds": 0.6763137499801815
+    },
+    "Recaman/OldMassFiveGap.lean": {
+      "sha256": "24304ca5a2d4df3fc794dd3d3e9ad8d9056382a8aca56e45e00f26636e52e16d",
+      "record": "mass_five_gap-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldMassFiveGap.olean",
+        "Recaman/OldMassFiveGap.lean"
+      ],
+      "cpu_seconds": 1.033456,
+      "wall_seconds": 1.1704013340640813
+    },
+    "Recaman/OldOneInitialSource.lean": {
+      "sha256": "f4ea7c2dfae779dc9085a7df37b6cd947864073b80da693440d7d5555727aa55",
+      "record": "old_one_initial-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldOneInitialSource.olean",
+        "Recaman/OldOneInitialSource.lean"
+      ],
+      "cpu_seconds": 0.485479,
+      "wall_seconds": 0.6114136669784784
+    },
+    "Recaman/OldOneLastSix.lean": {
+      "sha256": "8b4a49320cbce68f85b12e762f5f6f2dba0c806d5e4cee6507a46f2fa5cd1b73",
+      "record": "old_one_last6_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldOneLastSix.olean",
+        "Recaman/OldOneLastSix.lean"
+      ],
+      "cpu_seconds": 0.458205,
+      "wall_seconds": 0.5633950410410762
+    },
+    "Recaman/OldSeedActualGap.lean": {
+      "sha256": "258758ca1fabe13a0ccd524cdb2c23f94d9194b5f8984f3311c5f2c6ed820dd3",
+      "record": "old-seed-actual-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldSeedActualGap.olean",
+        "Recaman/OldSeedActualGap.lean"
+      ],
+      "cpu_seconds": 0.7382519999999999,
+      "wall_seconds": 0.7988234590739012
+    },
+    "Recaman/OldSeedBase.lean": {
+      "sha256": "77ea58f3624f998352ee1a8e8f9bc167414f9a3444ff1ca381cc672a8c7e27a5",
+      "record": "old-seed-base-v1-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/OldSeedBase.lean"
+      ],
+      "cpu_seconds": 0.536745,
+      "wall_seconds": 0.6155597909819335
+    },
+    "Recaman/OldSeedInversionKey.lean": {
+      "sha256": "d6bdd496294dac606aa19312f2e533c7368b3185952d403ce13d3bfd605e9f86",
+      "record": "old-seed-clock-inversion-v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldSeedInversionKey.olean",
+        "Recaman/OldSeedInversionKey.lean"
+      ],
+      "cpu_seconds": 0.38743,
+      "wall_seconds": 0.45801133406348526
+    },
+    "Recaman/OldSeedMassBound.lean": {
+      "sha256": "2cc34ca404a0f8aab5a21882988fba331df11deae63add2142a640c4530a0769",
+      "record": "old-seed-mass-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldSeedMassBound.olean",
+        "Recaman/OldSeedMassBound.lean"
+      ],
+      "cpu_seconds": 0.513423,
+      "wall_seconds": 0.5767905828543007
+    },
+    "Recaman/OldZeroInitialSource.lean": {
+      "sha256": "df8a72a3a3038baf0a5d62c50544a61ce49525221adc9e419ff9fb42cc59f07d",
+      "record": "old-zero-count-v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldZeroInitialSource.olean",
+        "Recaman/OldZeroInitialSource.lean"
+      ],
+      "cpu_seconds": 0.7724629999999999,
+      "wall_seconds": 0.9013888330664486
+    },
+    "Recaman/OldZeroLastFive.lean": {
+      "sha256": "ce61383672316f92c0204f0867ab706b92491132355ed1d2f835925065e68798",
+      "record": "old_zero_last5_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldZeroLastFive.olean",
+        "Recaman/OldZeroLastFive.lean"
+      ],
+      "cpu_seconds": 0.399265,
+      "wall_seconds": 0.4992990419268608
+    },
+    "Recaman/OldZeroTargetBase.lean": {
+      "sha256": "7899e36bd9242330fa32a9c4b2ec7f4be02186e300ba036db5530370381bd3af",
+      "record": "old-zero-target-base-v1-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "Recaman/OldZeroTargetBase.lean"
+      ],
+      "cpu_seconds": 0.452416,
+      "wall_seconds": 0.561860416084528
+    },
+    "Recaman/OldZeroTargetGap.lean": {
+      "sha256": "07c55caccae404d42003fb105bcb6a3fa93acc8f4e0c12d7c14d053be38a551c",
+      "record": "old-zero-target-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldZeroTargetGap.olean",
+        "Recaman/OldZeroTargetGap.lean"
+      ],
+      "cpu_seconds": 0.559943,
+      "wall_seconds": 0.6844065000768751
+    },
+    "Recaman/SmallInversionActual.lean": {
+      "sha256": "88bed0cd52d145f227171c8f156580d46a28402f91a8cc9d2897d1dbae20b6cb",
+      "record": "joint_actual_export-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/SmallInversionActual.olean",
+        "Recaman/SmallInversionActual.lean"
+      ],
+      "cpu_seconds": 0.458785,
+      "wall_seconds": 0.6166207089554518
+    },
+    "Recaman/SmallInversionBudget.lean": {
+      "sha256": "dba431fef3feb2c4f6080d582595c77ae4b50cd0d1e4f9232e0c8f127a2bac4a",
+      "record": "small-inversion-budget-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/SmallInversionBudget.olean",
+        "Recaman/SmallInversionBudget.lean"
+      ],
+      "cpu_seconds": 0.347346,
+      "wall_seconds": 0.4043045830912888
+    },
+    "Recaman/SmallInversionJoint.lean": {
+      "sha256": "e8fd428b60bf05949cebf34070f9d7b5e41208d8f890ff796cf45a56f683e960",
+      "record": "joint_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/SmallInversionJoint.olean",
+        "Recaman/SmallInversionJoint.lean"
+      ],
+      "cpu_seconds": 0.633311,
+      "wall_seconds": 0.7447580408770591
+    },
+    "Recaman/SmallInversionSources.lean": {
+      "sha256": "2844d6835ffc3d0603b977196f0a596b44541be8a44942b55ecb510c5d3c3526",
+      "record": "small-inversion-olean-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/SmallInversionSources.olean",
+        "Recaman/SmallInversionSources.lean"
+      ],
+      "cpu_seconds": 2.1542239999999997,
+      "wall_seconds": 2.259388957871124
+    },
+    "Recaman/ThirteenRunFactors.lean": {
+      "sha256": "47b88ef5535344e3e5fdc48f495edaa55d97e172af4635759de7feb07df5d151",
+      "record": "six_factors_repair-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ThirteenRunFactors.olean",
+        "Recaman/ThirteenRunFactors.lean"
+      ],
+      "cpu_seconds": 0.633095,
+      "wall_seconds": 0.8028237919788808
+    },
+    "Recaman/ThirteenSixSources.lean": {
+      "sha256": "21c46093cd1de6e23971b2b0717c83214c3c45b49f23808d9f6444a35313ca47",
+      "record": "six_joint_v2-result.json",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ThirteenSixSources.olean",
+        "Recaman/ThirteenSixSources.lean"
+      ],
+      "cpu_seconds": 0.8631239999999999,
+      "wall_seconds": 0.9746926671359688
+    }
+  },
+  "missing": [],
+  "final_check_record": "check_0747-result.json",
+  "current_tree_matches_check": true,
+  "new_lean_count": 42
+}

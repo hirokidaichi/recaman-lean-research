@@ -1,0 +1,16 @@
+Recaman/BlockSuffixPositivity.lean:2366:50: error: Application type mismatch: The argument
+  htn
+has type
+  t ≤ n
+but is expected to have type
+  t ≤ 0 + n
+in the application
+  suffix_split f 0 n t (Nat.zero_le t) htn
+Recaman/BlockSuffixPositivity.lean:2367:50: error: Application type mismatch: The argument
+  hun
+has type
+  u ≤ n
+but is expected to have type
+  u ≤ 0 + n
+in the application
+  suffix_split f 0 n u (Nat.zero_le u) hun

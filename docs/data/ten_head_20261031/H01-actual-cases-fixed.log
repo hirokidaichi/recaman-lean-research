@@ -1,0 +1,37 @@
+Recaman/TenHeadActualCases.lean:15:21: warning: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/TenHeadActualCases.lean:60:24: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 0
+  m ≥ 0
+  m - o ≥ 4
+  l ≥ 0
+  0 ≤ k ≤ 3
+  k - l ≥ 0
+  h ≥ 0
+  g ≥ 0
+  g - h ≥ 1
+  g - h - k ≤ 0
+  e ≥ 1
+  d ≥ 1
+  d - e ≥ 0
+  46 ≤ c ≤ 64
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := B
+ d := ↑v
+ e := ↑q
+ g := ↑T
+ h := ↑i
+ k := ↑j
+ l := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (20 + v + T))
+ m := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (20 + (v + T)))
+ o := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + 20) (v + T))

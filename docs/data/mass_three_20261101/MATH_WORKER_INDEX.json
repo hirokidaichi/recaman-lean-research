@@ -1,0 +1,192 @@
+[
+  {
+    "tag": "early-source-clock2",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.032642,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/early_source_literal.py"
+    ],
+    "source": "cb6b688ec57f77b74d8de00e0d6b223388e61feae996f8bbf1fadd81ae5af0b5",
+    "result": "early-source-clock2-result.json"
+  },
+  {
+    "tag": "four-s-discovery",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.033762,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/four_s_literal.py",
+      "discovery"
+    ],
+    "source": "1e359148e09ac8855fe149860bc984b26c6a878a20a34443c61bef57e8737904",
+    "result": "four-s-discovery-result.json"
+  },
+  {
+    "tag": "four-s-holdout",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.03393,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/four_s_literal.py",
+      "holdout"
+    ],
+    "source": "1e359148e09ac8855fe149860bc984b26c6a878a20a34443c61bef57e8737904",
+    "result": "four-s-holdout-result.json"
+  },
+  {
+    "tag": "high-mass-discovery",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.032436,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/high_mass_literal.py",
+      "discovery"
+    ],
+    "source": "f036b00bc46fa18b609fdf4faf55001615d64596a5775eb101bafe68eb959adc",
+    "result": "high-mass-discovery-result.json"
+  },
+  {
+    "tag": "high-mass-holdout",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.032485,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/high_mass_literal.py",
+      "holdout"
+    ],
+    "source": "f036b00bc46fa18b609fdf4faf55001615d64596a5775eb101bafe68eb959adc",
+    "result": "high-mass-holdout-result.json"
+  },
+  {
+    "tag": "inversion-discovery",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.08323099999999999,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/inversion_audit.py",
+      "discovery"
+    ],
+    "source": "e534ea361ef9231ba531fe766a0ca34aabc511bf04459fcf4ac59ebd91b3b65b",
+    "result": "inversion-discovery-result.json"
+  },
+  {
+    "tag": "inversion-holdout",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.042422,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/inversion_audit.py",
+      "holdout"
+    ],
+    "source": "e534ea361ef9231ba531fe766a0ca34aabc511bf04459fcf4ac59ebd91b3b65b",
+    "result": "inversion-holdout-result.json"
+  },
+  {
+    "tag": "literal-discovery",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.034164,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/literal_audit.py",
+      "discovery"
+    ],
+    "source": "091616cbb7bd7f3c841ff1473424e4f6ec24f363696a5e4a1de29434fb07dcd9",
+    "result": "literal-discovery-result.json"
+  },
+  {
+    "tag": "literal-holdout",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.030869999999999998,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/literal_audit.py",
+      "holdout"
+    ],
+    "source": "091616cbb7bd7f3c841ff1473424e4f6ec24f363696a5e4a1de29434fb07dcd9",
+    "result": "literal-holdout-result.json"
+  },
+  {
+    "tag": "old-four-discovery",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.164683,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/old_four_head_probe.py",
+      "discovery"
+    ],
+    "source": "c7e9a028ac737e63778494efb6ef1d1bb2eec6a4f2f46cb3d132b16307335d7a",
+    "result": "old-four-discovery-result.json"
+  },
+  {
+    "tag": "old-four-holdout",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.16491799999999998,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/old_four_head_probe.py",
+      "holdout"
+    ],
+    "source": "c7e9a028ac737e63778494efb6ef1d1bb2eec6a4f2f46cb3d132b16307335d7a",
+    "result": "old-four-holdout-result.json"
+  },
+  {
+    "tag": "weak-old-zero",
+    "cap": 1,
+    "wallcap": 3.0,
+    "cpu": 0.030275999999999997,
+    "argv": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/run_single.py",
+      "--worker",
+      "1",
+      "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/mass_three_20261101/weak_old_zero.py"
+    ],
+    "source": "5861964bd2e7910ef425f43ad6cda86f3c108508f6f0edf9329fedddc394db85",
+    "result": "weak-old-zero-result.json"
+  }
+]

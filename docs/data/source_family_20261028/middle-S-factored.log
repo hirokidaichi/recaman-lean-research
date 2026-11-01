@@ -1,0 +1,261 @@
+Recaman/MiddleSTargetFreeGap.lean:155:6: error: `grind` failed
+case grind.1.2.1.1.2.2
+q L s T j : Nat
+hL : 1 ≤ L
+hs : 1 ≤ s
+hmass :
+  mass
+      (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+        List.replicate j false) =
+    1
+harea :
+  areaW
+      (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+        List.replicate j false) =
+    0
+he : L + T = q + s + j + 1 ∧ (↑q + ↑s) ^ 2 - (↑j + 1) ^ 2 = 2 * ↑L * ↑s ∧ j + 1 < q + s
+hh : q + s = j + 2
+hi : ↑q + ↑s = ↑j + 2
+h_1 : q = s
+h_2 : ¬↑s = ↑j + 1
+h_3 : ↑L = ↑s
+h_4 : L = s
+h_5 : ¬↑s = ↑j
+h_6 : ¬s = j
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] mass
+            (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+              List.replicate j false) =
+          1
+    [prop] areaW
+            (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+              List.replicate j false) =
+          0
+    [prop] L + T = q + s + j + 1 ∧ -1 * (2 * ↑L * ↑s) + (↑q + ↑s) ^ 2 + -1 * (↑j + 1) ^ 2 = 0 ∧ j + 2 ≤ q + s
+    [prop] q + s = j + 2
+    [prop] ↑q + ↑s + -1 * ↑j + -2 = 0
+    [prop] List.replicate q false ++ List.replicate L true ++ List.replicate s false =
+          List.replicate q false ++ (List.replicate L true ++ List.replicate s false)
+    [prop] List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true =
+          List.replicate q false ++ List.replicate L true ++ (List.replicate s false ++ List.replicate T true)
+    [prop] List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+            List.replicate j false =
+          List.replicate q false ++ List.replicate L true ++ List.replicate s false ++
+            (List.replicate T true ++ List.replicate j false)
+    [prop] List.replicate q false ++ (List.replicate L true ++ List.replicate s false) ++
+            (List.replicate T true ++ List.replicate j false) =
+          List.replicate q false ++
+            (List.replicate L true ++ List.replicate s false ++ (List.replicate T true ++ List.replicate j false))
+    [prop] List.replicate q false ++ List.replicate L true ++ List.replicate s false ++
+            (List.replicate T true ++ List.replicate j false) =
+          List.replicate q false ++ List.replicate L true ++
+            (List.replicate s false ++ (List.replicate T true ++ List.replicate j false))
+    [prop] List.replicate q false ++ List.replicate L true ++ (List.replicate s false ++ List.replicate T true) =
+          List.replicate q false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true))
+    [prop] List.replicate q false ++ (List.replicate L true ++ List.replicate s false) ++ List.replicate T true =
+          List.replicate q false ++ (List.replicate L true ++ List.replicate s false ++ List.replicate T true)
+    [prop] List.replicate q false ++ List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++
+            List.replicate j false =
+          List.replicate q false ++ List.replicate L true ++
+            (List.replicate s false ++ List.replicate T true ++ List.replicate j false)
+    [prop] List.replicate s false ++ List.replicate T true ++ List.replicate j false =
+          List.replicate s false ++ (List.replicate T true ++ List.replicate j false)
+    [prop] List.replicate q false ++ List.replicate L true ++
+            (List.replicate s false ++ List.replicate T true ++ List.replicate j false) =
+          List.replicate q false ++
+            (List.replicate L true ++ (List.replicate s false ++ List.replicate T true ++ List.replicate j false))
+    [prop] List.replicate L true ++ List.replicate s false ++ List.replicate T true =
+          List.replicate L true ++ (List.replicate s false ++ List.replicate T true)
+    [prop] List.replicate q false ++ List.replicate L true ++
+            (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)) =
+          List.replicate q false ++
+            (List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)))
+    [prop] List.replicate L true ++ List.replicate s false ++ (List.replicate T true ++ List.replicate j false) =
+          List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false))
+    [prop] List.replicate q false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true)) ++
+            List.replicate j false =
+          List.replicate q false ++
+            (List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++ List.replicate j false)
+    [prop] List.replicate q false ++ (List.replicate L true ++ List.replicate s false ++ List.replicate T true) ++
+            List.replicate j false =
+          List.replicate q false ++
+            (List.replicate L true ++ List.replicate s false ++ List.replicate T true ++ List.replicate j false)
+    [prop] List.replicate L true ++ List.replicate s false ++ List.replicate T true ++ List.replicate j false =
+          List.replicate L true ++ List.replicate s false ++ (List.replicate T true ++ List.replicate j false)
+    [prop] List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++ List.replicate j false =
+          List.replicate L true ++ (List.replicate s false ++ List.replicate T true ++ List.replicate j false)
+    [prop] q = s
+    [prop] ¬↑s = ↑j + 1
+    [prop] ↑L = ↑s
+    [prop] L = s
+    [prop] ¬↑s = ↑j
+    [prop] ¬s = j
+  [eqc] True propositions
+    [prop] -1 * (2 * ↑L * ↑s) + (↑q + ↑s) ^ 2 + -1 * (↑j + 1) ^ 2 = 0 ∧ j + 2 ≤ q + s
+    [prop] L + T = q + s + j + 1 ∧ -1 * (2 * ↑L * ↑s) + (↑q + ↑s) ^ 2 + -1 * (↑j + 1) ^ 2 = 0 ∧ j + 2 ≤ q + s
+    [prop] ↑q = ↑s
+    [prop] ↑L = ↑s
+    [prop] -1 * (2 * ↑L * ↑s) + (↑q + ↑s) ^ 2 + -1 * (↑j + 1) ^ 2 = 0
+    [prop] q = L
+    [prop] q = s
+    [prop] L = s
+    [prop] L + T = q + s + j + 1
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] j + 2 ≤ q + s
+  [eqc] False propositions
+    [prop] ↑q = ↑j + 1
+    [prop] ↑s = ↑j
+    [prop] ↑s = ↑j + 1
+    [prop] s = j
+  [eqc] Equivalence classes
+    [eqc] {q, L, s}
+    [eqc] {areaW
+          (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+            List.replicate j false),
+        0}
+      [eqc] {↑0, ↑q + ↑s + -1 * ↑j + -2, -1 * (2 * ↑L * ↑s) + (↑q + ↑s) ^ 2 + -1 * (↑j + 1) ^ 2}
+    [eqc] {mass
+          (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+            List.replicate j false),
+        1}
+    [eqc] {List.replicate q false, List.replicate s false}
+    [eqc] {q + s, j + 2}
+    [eqc] {L + T, q + s + j + 1}
+    [eqc] {List.replicate q false ++ List.replicate L true ++ List.replicate s false,
+        List.replicate q false ++ (List.replicate L true ++ List.replicate s false)}
+    [eqc] {List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true,
+        List.replicate q false ++ List.replicate L true ++ (List.replicate s false ++ List.replicate T true),
+        List.replicate q false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true)),
+        List.replicate q false ++ (List.replicate L true ++ List.replicate s false ++ List.replicate T true),
+        List.replicate q false ++ (List.replicate L true ++ List.replicate s false) ++ List.replicate T true}
+    [eqc] {List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+          List.replicate j false,
+        List.replicate q false ++ List.replicate L true ++ List.replicate s false ++
+          (List.replicate T true ++ List.replicate j false),
+        List.replicate q false ++
+          (List.replicate L true ++ List.replicate s false ++ (List.replicate T true ++ List.replicate j false)),
+        List.replicate q false ++ List.replicate L true ++
+          (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)),
+        List.replicate q false ++ List.replicate L true ++
+          (List.replicate s false ++ List.replicate T true ++ List.replicate j false),
+        List.replicate q false ++ (List.replicate L true ++ List.replicate s false) ++
+          (List.replicate T true ++ List.replicate j false),
+        List.replicate q false ++ List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++
+          List.replicate j false,
+        List.replicate q false ++
+          (List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false))),
+        List.replicate q false ++
+          (List.replicate L true ++ (List.replicate s false ++ List.replicate T true ++ List.replicate j false)),
+        List.replicate q false ++
+          (List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++ List.replicate j false),
+        List.replicate q false ++
+          (List.replicate L true ++ List.replicate s false ++ List.replicate T true ++ List.replicate j false),
+        List.replicate q false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate T true)) ++
+          List.replicate j false,
+        List.replicate q false ++ (List.replicate L true ++ List.replicate s false ++ List.replicate T true) ++
+          List.replicate j false}
+    [eqc] {List.replicate L true ++ (List.replicate s false ++ List.replicate T true),
+        List.replicate L true ++ List.replicate s false ++ List.replicate T true}
+    [eqc] {List.replicate s false ++ (List.replicate T true ++ List.replicate j false),
+        List.replicate s false ++ List.replicate T true ++ List.replicate j false}
+    [eqc] {List.replicate L true ++ List.replicate s false ++ (List.replicate T true ++ List.replicate j false),
+        List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)),
+        List.replicate L true ++ (List.replicate s false ++ List.replicate T true ++ List.replicate j false),
+        List.replicate L true ++ (List.replicate s false ++ List.replicate T true) ++ List.replicate j false,
+        List.replicate L true ++ List.replicate s false ++ List.replicate T true ++ List.replicate j false}
+    [eqc] others
+      [eqc] {↑q, ↑L, ↑s}
+      [eqc] {↑q, ↑L, ↑s}
+      [eqc] {↑(q + s), ↑(j + 2)}
+      [eqc] {↑(L + T), ↑(q + s + j + 1)}
+      [eqc] {↑L * ↑s, ↑s * ↑q}
+      [eqc] {↑q ^ 2, ↑s ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: q = s
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate s false
+          and
+            List.replicate q false
+    [cases] [2/2]: ↑s = ↑j + 1
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑s ^ 2
+          and
+            (↑j + 1) ^ 2
+    [cases] [1/2]: ↑L = ↑s
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑s * ↑q
+          and
+            ↑L * ↑s
+    [cases] [1/2]: L = s
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate s false
+          and
+            List.replicate L true
+    [cases] [2/2]: ↑s = ↑j
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑j ^ 2
+          and
+            ↑s ^ 2
+    [cases] [2/2]: s = j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate j false
+          and
+            List.replicate L true
+  [ematch] E-matching patterns
+    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ (@HAppend.hAppend (List _) (List _) (List _) _ #2 #1) #0]
+    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ #2 (@HAppend.hAppend (List _) (List _) (List _) _ #1 #0)]
+    [thm] List.replicate_succ: [@List.replicate #2 (#0 + 1) #1]
+    [thm] List.replicate_zero: [@List.replicate #1 `[0] #0]
+    [thm] List.append_nil: [@HAppend.hAppend (List #1) (List _) (List _) _ #0 (@List.nil _)]
+    [thm] List.nil_append: [@HAppend.hAppend (List #1) (List _) (List _) _ (@List.nil _) #0]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] q := 3
+    [assign] L := 3
+    [assign] s := 3
+    [assign] T := 8
+    [assign] j := 4
+    [assign] areaW
+          (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+            List.replicate j false) := 0
+    [assign] mass
+          (List.replicate q false ++ List.replicate L true ++ List.replicate s false ++ List.replicate T true ++
+            List.replicate j false) := 1
+    [assign] 「↑q ^ 2」 := 5
+    [assign] 「↑s ^ 2」 := 5
+    [assign] 「↑j ^ 2」 := 1
+    [assign] 「(↑q + ↑s) ^ 2」 := 0
+    [assign] 「(↑j + 1) ^ 2」 := 0
+  [ring] Rings
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] ↑j ^ 2 + -2 = 0
+        [_] 2 * ↑L + -1 * ↑j + -2 = 0
+        [_] ↑s + ↑q + -1 * ↑j + -2 = 0
+        [_] 2 * ↑q + -1 * ↑j + -2 = 0
+      [diseqs] Disequalities
+        [_] ¬-1 * ↑j = 0
+        [_] ¬-1 * ↑j = 0
+        [_] ¬-1 * ↑j + 2 = 0
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑L + ↑T + -1 * ↑q + -1 * ↑s + -1 * ↑j + -1 = 0
+        [_] 2 * ↑T + -3 * ↑j + -4 = 0
+        [_] ↑q + ↑s + -1 * ↑j + -2 = 0
+        [_] 2 * ↑s + -1 * ↑j + -2 = 0
+      [diseqs] Disequalities
+        [_] ¬-1 * ↑j + 2 = 0
+  [assoc] Operator `HAppend.hAppend`
+    [basis] Basis
+      [_] List.replicate s false = List.replicate q false
+    [properties] Properties
+      [_] identity: `[]`
+[grind] Diagnostics
+  [thm] E-Matching instances
+    [thm] List.append_assoc ↦ 17

@@ -1,0 +1,134 @@
+docs/data/old_tail_20261029/statement_contracts.lean:11:914: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred fun x => e x = true ∧ ¬Endable e p x
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/data/old_tail_20261029/statement_contracts.lean:11:4: error: (kernel) excessive memory consumption detected
+ThreeRunOldTargetGap.three_run_old_target_free_gap_int : ∀ (e : Int → Bool) (p : Int) (n a t h M m L s T j : Nat)
+  (w : List Bool),
+  BlockWord w →
+    segment e p n = w ++ List.replicate a true →
+      t < n →
+        1 ≤ M →
+          1 ≤ m →
+            1 ≤ L →
+              1 ≤ s →
+                1 ≤ T →
+                  (∀ (x : Nat), n ≤ x → x < n + h → e (p + ↑x) = false) →
+                    (∀ (i : Nat), i < M → e (p + ↑(n + h + i)) = true) →
+                      (∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → e (p + ↑x) = false) →
+                        (∀ (i : Nat), i < L → e (p + ↑(n + h + M + m + i)) = true) →
+                          (∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → e (p + ↑x) = false) →
+                            (∀ (i : Nat), i < T → e (p + ↑(n + h + M + m + L + s + i)) = true) →
+                              endableCount e p n = subtractionCount e p n →
+                                (∀ (u : Nat),
+                                    n < u →
+                                      u ≤ n + h + M + m + L + s + T + j →
+                                        endableCount e p u + 1 ≤ subtractionCount e p u) →
+                                  (∀ (x : Nat),
+                                      n + h + M + m + L + s + T ≤ x →
+                                        x < n + h + M + m + L + s + T + j → e (p + ↑x) = false) →
+                                    Endable e p (p + ↑(n + h + M + m + L + s + T + j)) →
+                                      P2
+                                          (past e (p + ↑(n + h + M + m + L + s + T + j))
+                                            (n + h + M + m + L + s + T + j - t)) →
+                                        j + 1 ≤
+                                          countP (fun x => e x = true ∧ ¬Endable e p x) (p + ↑n) (h + M + m + L + s + T)
+docs/data/old_tail_20261029/statement_contracts.lean:14:922: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred fun x => e x = true ∧ ¬Endable e p x
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/data/old_tail_20261029/statement_contracts.lean:14:4: error: (kernel) excessive memory consumption detected
+ThreeRunInitialSTargetGap.three_run_initial_S_target_free_gap_int : ∀ (e : Int → Bool) (p : Int)
+  (n a h q M m L s T j : Nat) (w : List Bool),
+  BlockWord w →
+    segment e p n = w ++ List.replicate a true →
+      1 ≤ q →
+        q ≤ h →
+          1 ≤ M →
+            1 ≤ m →
+              1 ≤ L →
+                1 ≤ s →
+                  1 ≤ T →
+                    (∀ (x : Nat), n ≤ x → x < n + h → e (p + ↑x) = false) →
+                      (∀ (i : Nat), i < M → e (p + ↑(n + h + i)) = true) →
+                        (∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → e (p + ↑x) = false) →
+                          (∀ (i : Nat), i < L → e (p + ↑(n + h + M + m + i)) = true) →
+                            (∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → e (p + ↑x) = false) →
+                              (∀ (i : Nat), i < T → e (p + ↑(n + h + M + m + L + s + i)) = true) →
+                                endableCount e p n = subtractionCount e p n →
+                                  (∀ (u : Nat),
+                                      n < u →
+                                        u ≤ n + h + M + m + L + s + T + j →
+                                          endableCount e p u + 1 ≤ subtractionCount e p u) →
+                                    (∀ (x : Nat),
+                                        n + h + M + m + L + s + T ≤ x →
+                                          x < n + h + M + m + L + s + T + j → e (p + ↑x) = false) →
+                                      Endable e p (p + ↑(n + h + M + m + L + s + T + j)) →
+                                        P2 (past e (p + ↑(n + h + M + m + L + s + T + j)) (q + M + m + L + s + T + j)) →
+                                          j + 1 ≤
+                                            countP (fun x => e x = true ∧ ¬Endable e p x) (p + ↑n)
+                                              (h + M + m + L + s + T)
+docs/data/old_tail_20261029/statement_contracts.lean:17:821: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  DecidablePred fun x => e x = true ∧ ¬Endable e p x
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+docs/data/old_tail_20261029/statement_contracts.lean:17:4: error: (kernel) excessive memory consumption detected
+ThreeRunFreeGap.three_run_free_gap_int : ∀ (e : Int → Bool) (p : Int) (n a h M m L s T j : Nat) (w : List Bool),
+  BlockWord w →
+    segment e p n = w ++ List.replicate a true →
+      1 ≤ M →
+        1 ≤ m →
+          1 ≤ L →
+            1 ≤ s →
+              1 ≤ T →
+                (∀ (x : Nat), n ≤ x → x < n + h → e (p + ↑x) = false) →
+                  (∀ (i : Nat), i < M → e (p + ↑(n + h + i)) = true) →
+                    (∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → e (p + ↑x) = false) →
+                      (∀ (i : Nat), i < L → e (p + ↑(n + h + M + m + i)) = true) →
+                        (∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → e (p + ↑x) = false) →
+                          (∀ (i : Nat), i < T → e (p + ↑(n + h + M + m + L + s + i)) = true) →
+                            endableCount e p n = subtractionCount e p n →
+                              (∀ (u : Nat),
+                                  n < u →
+                                    u ≤ n + h + M + m + L + s + T + j →
+                                      endableCount e p u + 1 ≤ subtractionCount e p u) →
+                                (∀ (x : Nat),
+                                    n + h + M + m + L + s + T ≤ x →
+                                      x < n + h + M + m + L + s + T + j → e (p + ↑x) = false) →
+                                  Endable e p (p + ↑(n + h + M + m + L + s + T + j)) →
+                                    j + 1 ≤
+                                      countP (fun x => e x = true ∧ ¬Endable e p x) (p + ↑n) (h + M + m + L + s + T)
+docs/data/old_tail_20261029/statement_contracts.lean:20:4: error: (kernel) excessive memory consumption detected
+LocalSourcePrefixBudget.actual_local_source_prefix_A : ∀ (f : Nat → Bool) (n s z B i T j : Nat),
+  BlockWord (seg f 0 n) →
+    s < n →
+      n ≤ z →
+        z ≤ n + B →
+          i < T →
+            2 ≤ j →
+              T ≤ i + j →
+                (∀ (k : Nat), k < T → f (n + B + k) = true) →
+                  (∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false) →
+                    Win f z (n + B + i - z) → Win f s (n + B + T + j - s) → j + 1 ≤ cN (fun x => f x = true) n (z - n)
+docs/data/old_tail_20261029/statement_contracts.lean:23:4: error: (kernel) excessive memory consumption detected
+PrefixKeySourceBudget.actual_local_source_prefix_A_of_key : ∀ (f : Nat → Bool) (n s z B i T j : Nat),
+  -2 ≤ runKey (seg f s (n - s)) →
+    s < n →
+      n ≤ z →
+        z ≤ n + B →
+          i < T →
+            2 ≤ j →
+              T ≤ i + j →
+                (∀ (k : Nat), k < T → f (n + B + k) = true) →
+                  (∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false) →
+                    Win f z (n + B + i - z) → Win f s (n + B + T + j - s) → j + 1 ≤ cN (fun x => f x = true) n (z - n)
+docs/data/old_tail_20261029/statement_contracts.lean:26:4: error: (kernel) excessive memory consumption detected
+free_before_source_counterexample : BlockWord (seg f 0 1) ∧
+  cN (EndN f 0) 0 1 = cN (fun x => f x = false) 0 1 ∧
+    (∀ (k : Nat), 1 < k → k ≤ 27 → cN (EndN f 0) 0 k + 1 ≤ cN (fun x => f x = false) 0 k) ∧
+      Win f 0 27 ∧
+        Win f 12 7 ∧
+          f 27 = true ∧
+            f 19 = true ∧
+              cN (fun x => f x = true) 1 11 = 5 ∧
+                cN (fun x => f x = true ∧ ¬EndN f 0 x) 1 11 = 4 ∧ cN (fun x => f x = true ∧ ¬EndN f 0 x) 1 22 = 10

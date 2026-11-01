@@ -1,0 +1,15 @@
+Recaman/RunSupplyKeys.lean:47:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ones (List.replicate ?m true)
+in the target expression
+  mass (List.replicate (r - (t - u.length)) true) = ↑j + 1
+
+case neg
+u : List Bool
+r j t : Nat
+ht : t < (u ++ List.replicate r true).length
+hm : mass (List.replicate (r - (t - u.length)) true) = ↑j + 1
+hk : supplyGapKey (List.replicate (r - (t - u.length)) true) = 0
+htu : ¬t < u.length
+hd : List.drop t (u ++ List.replicate r true) = List.replicate (r - (t - u.length)) true
+hb : 2 * mass (List.replicate (r - (t - u.length)) true) ≤ ↑(r - (t - u.length))
+⊢ ∃ t, t < u.length ∧ mass (List.drop t u) + ↑r = ↑j + 1 ∧ runKey (List.drop t u) = -2 * (↑j + 1) ^ 2

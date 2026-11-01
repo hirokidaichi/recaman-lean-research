@@ -1,0 +1,31 @@
+{
+  "tag": "joint_v2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SmallInversionJoint.olean",
+    "Recaman/SmallInversionJoint.lean"
+  ],
+  "started_jst": "2026-11-01T07:07:50.716940+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallInversionJoint.lean": "e8fd428b60bf05949cebf34070f9d7b5e41208d8f890ff796cf45a56f683e960"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "ca32ca0b9e28ecce4f7a119b7ca090dd72431bb33a600b6aa57bfd8266a7c5ff",
+  "source_tree_sha256": "057b0ac47378265bc4fe234af095994ec66ac68f1b0007be67aecd72a0c103d0",
+  "source_tree_manifest": "joint_v2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ca32ca0b9e28ecce4f7a119b7ca090dd72431bb33a600b6aa57bfd8266a7c5ff",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7447580408770591,
+  "cpu_seconds": 0.633311,
+  "finished_jst": "2026-11-01T07:07:51.461642+09:00"
+}

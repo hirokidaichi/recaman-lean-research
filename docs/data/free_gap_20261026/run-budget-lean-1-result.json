@@ -1,0 +1,21 @@
+{
+  "tag": "run-budget-lean-1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/RunSupplyBudget.lean"
+  ],
+  "started_jst": "2026-10-26T06:39:38.248201+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/RunSupplyBudget.lean": "36feb46d9df166b5b917510da545ae6d2d6e970a58f751d6fb2e52b1c83b3363"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.394581374945119,
+  "cpu_seconds": 0.569973,
+  "finished_jst": "2026-10-26T06:39:38.642712+09:00"
+}

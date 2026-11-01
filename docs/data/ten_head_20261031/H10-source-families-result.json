@@ -1,0 +1,25 @@
+{
+  "tag": "H10-source-families",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/FourthSourceFamilies.lean"
+  ],
+  "started_jst": "2026-10-31T06:50:09.843637+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthSourceFamilies.lean": "7ad726aaa117f9dae663d3c5a3995b1b2e5de57df47d16519491c4bd98538ca8"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "33187ec0fa3d44b33932263ac76945572a6d8a02cef9f35adb0465e568566feb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4488944159820676,
+  "cpu_seconds": 0.34613299999999997,
+  "finished_jst": "2026-10-31T06:50:10.292468+09:00"
+}

@@ -1,0 +1,671 @@
+{
+  "at": "2026-10-29T07:50:16.114451+09:00",
+  "measured_totals_seconds": {
+    "Lean_and_build_validation": 109.75338300000001,
+    "mathematical_worker_and_fixed_controls": 0.6603749999999998,
+    "guard_validation": 1.126309
+  },
+  "record_counts": {
+    "Lean_and_build_validation": 69,
+    "mathematical_worker_and_fixed_controls": 7,
+    "guard_validation": 5
+  },
+  "records": [
+    {
+      "record": "H01-S-exclusion-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.5193989999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-actual-free-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.139921,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-actual-free2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.223131,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-actual-free3-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.0019419999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-tail-clock-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.43817599999999995,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-tail-clock2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.47548399999999996,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H01-tail-three-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.6428429999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-actual-free-two-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.40244,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-actual-free-two2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.415553,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-actual-free-two3-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.435867,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-debug-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.735038,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-discovery-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.17568299999999998,
+      "controller_cpu_seconds": 0.0015290000000000026,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-first-A-collision-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.7130799999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-first-A-collision2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.747982,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-first-A-collision3-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.796306,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-holdout-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.314631,
+      "controller_cpu_seconds": 0.0016779999999999972,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-posthoc-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.040713,
+      "controller_cpu_seconds": 0.0015139999999999997,
+      "reason": "completed"
+    },
+    {
+      "record": "H02-two-clock-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.2456509999999998,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-clock-charge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.957036,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-clock-charge2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.968006,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-count-charge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.5155539999999998,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-count-charge2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.327549,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-middle-charge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.622223,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H03-middle-charge2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.6844309999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H04-actual-old-gap-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.329473,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H04-actual-old-gap2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.983636,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H04-actual-old-gap3-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.906857,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H04-original-p-old-gap-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.1132719999999998,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H05-actual-old-pair-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.578108,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H05-old-pair-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.40052299999999996,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H06-initial-first-A-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.5984619999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H06-tail-bounds-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.978775,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H06-tail-bounds2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.002193,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H06-two-shapes-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.8221579999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H06-two-shapes2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.857679,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H07-actual-initial-gap-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.569821,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H07-all-three-run-gap-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.363675,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H07-initial-count-charge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.071763,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H07-original-p-all-three-run-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.46255599999999997,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H07-original-p-initial-gap-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.753044,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H08-actual-source-cut-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.8474839999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H08-mixed-source-cut-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.40338,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H09-discovery-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.031404,
+      "controller_cpu_seconds": 0.0015360000000000061,
+      "reason": "completed"
+    },
+    {
+      "record": "H09-holdout-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.036037,
+      "controller_cpu_seconds": 0.001988000000000002,
+      "reason": "completed"
+    },
+    {
+      "record": "H09-literal-counterexample-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.8711819999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H09-literal-counterexample2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.6758489999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H10-key-necessity-controls-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.75018,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H10-key-only-source-cut-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.696305,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H11-domains-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.031738999999999996,
+      "controller_cpu_seconds": 0.0016779999999999955,
+      "reason": "completed"
+    },
+    {
+      "record": "H11-nonvacuity-replay-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.76013,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H13-statement-contracts-local-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.382933,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H13-statement-contracts-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.6921569999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H19-dependency-audit-repair-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.367693,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H19-dependency-audit-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.24199700000000002,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H21-four-run-base-bridge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.595891,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H21-four-run-repair-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.49146799999999996,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H21-four-run-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 0.515242,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "H22-four-run-control-result.json",
+      "category": "mathematical_worker_and_fixed_controls",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.030168,
+      "controller_cpu_seconds": 0.0015180000000000055,
+      "reason": "completed"
+    },
+    {
+      "record": "H23-four-run-statement-contract-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.444123,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-clock-collision-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.765482,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-initial-actual-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.825001,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-initial-count-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.142269,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-initial-tail-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 1.1307289999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-initial-tail2-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.195999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-initial-two-shapes-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.916661,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-local-prefix-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.7921769999999999,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "build-middle-charge-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 1.5857519999999998,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E442-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 7.341759,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E445-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 7.305697,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E446-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 6.708391,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E451-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 6.546109,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E455-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 8.052688,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-E456-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 6.7420789999999995,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-final-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 6.787825,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "check-final-source-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 7.249865,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "cold-all-new-claims-result.json",
+      "category": "Lean_and_build_validation",
+      "exit_code": 1,
+      "measured_cpu_seconds": 2.129279,
+      "controller_cpu_seconds": null,
+      "reason": "completed"
+    },
+    {
+      "record": "guard-cpu-result.json",
+      "category": "guard_validation",
+      "exit_code": -24,
+      "measured_cpu_seconds": 1.001362,
+      "controller_cpu_seconds": 0.001903999999999996,
+      "reason": "signal 24 (see CPU cap and output)"
+    },
+    {
+      "record": "guard-exec-result.json",
+      "category": "guard_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.031838,
+      "controller_cpu_seconds": 0.0015360000000000026,
+      "reason": "completed"
+    },
+    {
+      "record": "guard-fork-result.json",
+      "category": "guard_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.033215,
+      "controller_cpu_seconds": 0.001697000000000005,
+      "reason": "completed"
+    },
+    {
+      "record": "guard-normal-result.json",
+      "category": "guard_validation",
+      "exit_code": 0,
+      "measured_cpu_seconds": 0.031146,
+      "controller_cpu_seconds": 0.0014330000000000028,
+      "reason": "completed"
+    },
+    {
+      "record": "guard-wall-result.json",
+      "category": "guard_validation",
+      "exit_code": -9,
+      "measured_cpu_seconds": 0.028748,
+      "controller_cpu_seconds": 0.0021179999999999914,
+      "reason": "wall/deadline cap"
+    }
+  ],
+  "limitations": [
+    "worker4CPU cap excludes guard/Lean/build validation",
+    "per-process Lean CPU cap is not a tree cumulative cap",
+    "wait4 includes reaped descendants; failed/killed jobs included",
+    "controller CPU separately recorded when present",
+    "shell/lint/source restoration/agent/tool-service CPU is unmeasured, not zero",
+    "not a measure of thinking time"
+  ]
+}

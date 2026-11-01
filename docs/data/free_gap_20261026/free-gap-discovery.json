@@ -1,0 +1,237 @@
+{
+  "protocol": "FREE_GAP_PROTOCOL.json",
+  "domain": [
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "prefixes": [
+    "",
+    "A",
+    "AAA",
+    "SAAA",
+    "ASAAA",
+    "SAAAA",
+    "SAAASAAA",
+    "SSAAAASAAA"
+  ],
+  "counts": {
+    "pairs": 5000,
+    "zero_prefix": 5000,
+    "positive_body": 4376,
+    "supplied_gaps": 2343,
+    "violations": 0
+  },
+  "max_gap_by_free": {
+    "3": 1,
+    "4": 1,
+    "6": 2,
+    "5": 2,
+    "7": 3,
+    "8": 4,
+    "10": 3,
+    "9": 4
+  },
+  "violations": [],
+  "extremal_updates": [
+    {
+      "prefix": "",
+      "parameters": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "tail": "SASAA",
+      "gap": 0,
+      "free": 3,
+      "start": 2,
+      "fullword": "SASAAA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "tail": "SASSAAAA",
+      "gap": 1,
+      "free": 4,
+      "start": 2,
+      "fullword": "SASSAAAASA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        1,
+        1,
+        3,
+        6
+      ],
+      "tail": "SASSSAAAAAA",
+      "gap": 2,
+      "free": 6,
+      "start": 2,
+      "fullword": "SASSSAAAAAASSA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "tail": "SAASSAAAA",
+      "gap": 1,
+      "free": 5,
+      "start": 3,
+      "fullword": "SAASSAAAASA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "tail": "SAASSSAAAAAA",
+      "gap": 2,
+      "free": 7,
+      "start": 3,
+      "fullword": "SAASSSAAAAAASSA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        2,
+        4,
+        3,
+        6
+      ],
+      "tail": "SSAAAASSSAAAAAA",
+      "gap": 2,
+      "free": 8,
+      "start": 6,
+      "fullword": "SSAAAASSSAAAAAASSA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        2,
+        6,
+        3,
+        6
+      ],
+      "tail": "SSAAAAAASSSAAAAAA",
+      "gap": 2,
+      "free": 10,
+      "start": 8,
+      "fullword": "SSAAAAAASSSAAAAAASSA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        4,
+        6,
+        4,
+        6
+      ],
+      "tail": "SSSSAAAAAASSSSAAAAAA",
+      "gap": 3,
+      "free": 10,
+      "start": 0,
+      "fullword": "SSSSAAAAAASSSSAAAAAASSSA"
+    },
+    {
+      "prefix": "",
+      "parameters": [
+        6,
+        6,
+        2,
+        6
+      ],
+      "tail": "SSSSSSAAAAAASSAAAAAA",
+      "gap": 4,
+      "free": 9,
+      "start": 1,
+      "fullword": "SSSSSSAAAAAASSAAAAAASSSSA"
+    },
+    {
+      "prefix": "A",
+      "parameters": [
+        4,
+        3,
+        1,
+        4
+      ],
+      "tail": "SSSSAAASAAAA",
+      "gap": 2,
+      "free": 5,
+      "start": 0,
+      "fullword": "ASSSSAAASAAAASSA"
+    },
+    {
+      "prefix": "AAA",
+      "parameters": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "tail": "SSSASSAAAA",
+      "gap": 1,
+      "free": 3,
+      "start": 7,
+      "fullword": "AAASSSASSAAAASA"
+    },
+    {
+      "prefix": "AAA",
+      "parameters": [
+        6,
+        4,
+        2,
+        6
+      ],
+      "tail": "SSSSSSAAAASSAAAAAA",
+      "gap": 3,
+      "free": 8,
+      "start": 1,
+      "fullword": "AAASSSSSSAAAASSAAAAAASSSA"
+    },
+    {
+      "prefix": "SAAA",
+      "parameters": [
+        6,
+        3,
+        1,
+        6
+      ],
+      "tail": "SSSSSSAAASAAAAAA",
+      "gap": 3,
+      "free": 7,
+      "start": 0,
+      "fullword": "SAAASSSSSSAAASAAAAAASSSA"
+    },
+    {
+      "prefix": "SAAAA",
+      "parameters": [
+        6,
+        6,
+        2,
+        6
+      ],
+      "tail": "SSSSSSAAAAAASSAAAAAA",
+      "gap": 4,
+      "free": 8,
+      "start": 6,
+      "fullword": "SAAAASSSSSSAAAAAASSAAAAAASSSSA"
+    }
+  ],
+  "evidence": "finite exact discovery only; zero-key filtering uses full actual prefix and validates original-base EndN"
+}

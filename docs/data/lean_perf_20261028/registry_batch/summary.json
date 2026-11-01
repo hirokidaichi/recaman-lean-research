@@ -1,0 +1,34 @@
+{
+  "scope": "registry performance only, no theorem/source/claim/central-pin changes; no stage/commit/push",
+  "changed_source_files": [
+    "scripts/check_research_registry.sh",
+    "scripts/test_harness_gates.py"
+  ],
+  "existing_harness_tests_preserved": true,
+  "before_median_seconds": 7.126564458012581,
+  "after_median_seconds": 3.1503522088751197,
+  "reduction_percent": 55.794236796201325,
+  "runs_each": 3,
+  "input_hashes_identical": true,
+  "successful_stdout_identical": true,
+  "rg_link_processes_before": 1864,
+  "rg_link_processes_after": 0,
+  "tests": {
+    "make_test_tools_exit_code": 0,
+    "brief_tests": 7,
+    "time_accounting_tests": 12,
+    "harness_tests_including_new_wrapper_tests": 30,
+    "new_wrapper_tests": 12
+  },
+  "full_check": {
+    "argv": [
+      "./scripts/check.sh"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 8.939480458153412,
+    "cpu_seconds": 6.478439,
+    "scope": "source unchanged Lean/cache; full validation after registry-only change, per-process30CPU/group45wall, not generic tree CPU cap"
+  },
+  "boundary_behavior": "retains literal substring and Bash TSV/EOF behavior; NUL-containing lookup files now reject explicitly to prevent false matches",
+  "rejected_candidate": "quoted regex matching measured4.235s, slower than glob literal matching; not applied"
+}

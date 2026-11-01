@@ -1,0 +1,12 @@
+Recaman/BlockSuffixSpectrum.lean:130:33: warning: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/BlockSuffixSpectrum.lean:202:111: error: Type mismatch
+  hv
+has type
+  -(↑v.length * (↑v.length + 1)) ≤ 2 * areaW v
+but is expected to have type
+  -↑v.length * (↑v.length + 1) ≤ 2 * areaW v

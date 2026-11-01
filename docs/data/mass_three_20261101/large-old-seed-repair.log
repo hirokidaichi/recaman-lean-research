@@ -1,0 +1,102 @@
+Recaman/LargeOldSeedGap.lean:165:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ n_1 ≤ 7
+  m_1 ≥ 0
+  0 ≤ m_1 - n_1 ≤ 8
+  0 ≤ l_1 ≤ 6
+  k_1 ≥ 0
+  j_1 ≥ 0
+  j_1 - k_1 ≤ 1
+  e_1 + f_1 ≤ 14
+  2*e_1 + 2*f_1 - g_1 + h_1 + i_1 ≤ 1
+  16 ≤ d_1 ≤ 17
+  c_1 ≥ 0
+  c_1 - d_1 ≥ 4
+  a_1 - b_1 ≥ 1
+  x ≥ 0
+  0 ≤ u ≤ 16
+  u - c_1 ≤ -3
+  r ≥ 0
+  p ≥ 6
+  p - y ≥ 1
+  0 ≤ o ≤ 1
+  o + u - c_1 ≤ -1
+  1 ≤ o + p - y ≤ 2
+  o + p ≥ 2
+  o + p + u - y - c_1 ≤ -2
+  o + p + u - y - d_1 ≤ 0
+  o + p + r + u - y - c_1 ≤ 0
+  2*o + 2*p + 2*u + x - 2*y - 2*c_1 ≥ 4
+  l ≥ 0
+  k ≥ 1
+  g ≥ 1
+  e ≥ 1
+  e + k - u ≤ -1
+  d ≥ 1
+  d + g - u ≤ -1
+  c ≥ 0
+  b ≥ 0
+  b - c ≥ 1
+  b - l ≥ 1
+where
+ b := ↑n
+ c := ↑t
+ d := ↑m
+ e := ↑L
+ g := ↑s
+ k := ↑U
+ l := ↑sOld
+ o := ↑kOld
+ p := mass (List.drop sOld w)
+ r := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ u := ↑(cntF z)
+ x := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ y := mass (List.drop t w)
+ a_1 := mass (seg f sOld (n - sOld))
+ b_1 := mass (seg f t (n - t))
+ c_1 := ↑(cN (fun x => f x = true) n (H + v + T))
+ d_1 := ↑(cN (EndN f 0) n (H + v + T))
+ e_1 := ↑M * (↑m + ↑s)
+ f_1 := ↑L * ↑s
+ g_1 := ↑(cntF z) ^ 2
+ h_1 := 2 * mass (List.drop sOld w) * ↑(cntF z)
+ i_1 := mass (List.drop sOld w) ^ 2
+ j_1 := ↑(rayCount (w ++ (z ++ List.replicate v false)) T)
+ k_1 := ↑(rayCount (z ++ List.replicate v false) T)
+ l_1 := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ m_1 := ↑(cN (EndN f 0) n (H + (v + T)))
+ n_1 := ↑(cN (EndN f 0) (n + (H + v)) T)
+Recaman/LargeOldSeedGap.lean:95:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:101:25: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:104:65: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:105:24: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:114:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:120:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:128:37: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:129:35: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:132:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:135:8: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:135:29: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:136:25: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:138:8: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:139:33: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:141:30: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:146:58: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:152:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:156:39: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:156:66: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:166:25: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:168:8: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:168:29: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:170:49: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:170:87: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:171:49: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:171:77: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:173:4: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:174:2: error: (kernel) excessive memory consumption detected
+Recaman/LargeOldSeedGap.lean:18:8: error: (kernel) excessive memory consumption detected

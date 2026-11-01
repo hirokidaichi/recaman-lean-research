@@ -1,0 +1,34 @@
+Recaman/FourEventPruned.lean:67:4: error: unsolved goals
+case pos
+s : State
+e : Bool
+hb : (s.nonsupplied + if e = true then 0 else 1) ≤ 4
+hd : s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + (↑s.nonsupplied + if e = true then 0 else 1)
+⊢ ¬s.subtractions = 19 →
+    ↑s.subtractions - (↑s.additions + 1) + (↑s.nonsupplied + ↑(if e = true then 0 else 1)) < 1 → none = fastStepA s e
+Recaman/FourEventPruned.lean:68:4: error: unsolved goals
+case neg
+s : State
+e : Bool
+hb : (s.nonsupplied + if e = true then 0 else 1) ≤ 4
+hd : ¬(s.subtractions = 19 ∨ 1 ≤ ↑s.subtractions - ↑(s.additions + 1) + (↑s.nonsupplied + if e = true then 0 else 1))
+⊢ ¬s.subtractions = 19 →
+    ↑s.subtractions - (↑s.additions + 1) + (↑s.nonsupplied + ↑(if e = true then 0 else 1)) < 1 →
+      (if e = true then (scan s.word).found = true ∨ s.subtractions < 19 ∧ oldFrom (scan s.word) = true
+        else (scan s.word).found = false) →
+        ¬s.subtractions = 19 ∧
+          ↑s.subtractions - (↑s.additions + 1) + (↑s.nonsupplied + ↑(if e = true then 0 else 1)) < 1
+Recaman/FourEventPruned.lean:67:27: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [budgetStepA, hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourEventPruned.lean:68:37: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [budgetStepA, fastStepA, hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

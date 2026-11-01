@@ -1,0 +1,24 @@
+docs/data/old_tail_20261029/dependency_audit.lean:5:15: error: unknown namespace `Command`
+docs/data/old_tail_20261029/dependency_audit.lean:9:2: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  n
+has type `Name` which does not have the necessary form.
+docs/data/old_tail_20261029/dependency_audit.lean:9:38: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  n
+has type `Name` which does not have the necessary form.
+docs/data/old_tail_20261029/dependency_audit.lean:15:7: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  seen
+has type `NameSet` which does not have the necessary form.
+docs/data/old_tail_20261029/dependency_audit.lean:16:18: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  seen
+has type `NameSet` which does not have the necessary form.
+docs/data/old_tail_20261029/dependency_audit.lean:17:12: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  env
+has type `Environment` which does not have the necessary form.
+docs/data/old_tail_20261029/dependency_audit.lean:20:20: error(lean.invalidField): Invalid field notation: Type of
+  c
+is not known; cannot resolve field `getUsedConstantsAsSet`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `Lean.ConstantInfo.getUsedConstantsAsSet`
+  • `Lean.Expr.getUsedConstantsAsSet`
+docs/data/old_tail_20261029/dependency_audit.lean:23:0: error: to use this command, include `import Lean.Elab.Command`

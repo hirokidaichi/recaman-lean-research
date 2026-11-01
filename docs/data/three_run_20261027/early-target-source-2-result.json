@@ -1,0 +1,22 @@
+{
+  "tag": "early-target-source-2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/ThreeRunTargetSource.lean"
+  ],
+  "started_jst": "2026-10-27T07:25:46.299210+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunTargetSource.lean": "9913b7479c5d185340b3476203184f205a0291f872f14fe93611bfa5612537dd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4671097088139504,
+  "cpu_seconds": 0.536143,
+  "finished_jst": "2026-10-27T07:25:46.766264+09:00"
+}

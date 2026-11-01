@@ -1,0 +1,4 @@
+Bool.and_eq_true_iff {x y : Bool} : (x && y) = true ↔ x = true ∧ y = true
+Bool.and_eq_true (a b : Bool) : ((a && b) = true) = (a = true ∧ b = true)
+Bool.and_eq_true_iff {x y : Bool} : (x && y) = true ↔ x = true ∧ y = true
+Bool.and_eq_true_iff.mp : (?m.1 && ?m.2) = true → ?m.1 = true ∧ ?m.2 = true

@@ -1,0 +1,53 @@
+Recaman/BlockSuffixPositivity.lean:867:9: error: unknown tactic
+Recaman/BlockSuffixPositivity.lean:865:60: error(lean.unknownIdentifier): Unknown constant `Nat.cast_add`
+Recaman/BlockSuffixPositivity.lean:865:74: error(lean.unknownIdentifier): Unknown constant `Nat.cast_one`
+Recaman/BlockSuffixPositivity.lean:865:60: error(lean.unknownIdentifier): Unknown constant `Nat.cast_add`
+Recaman/BlockSuffixPositivity.lean:865:74: error(lean.unknownIdentifier): Unknown constant `Nat.cast_one`
+Recaman/BlockSuffixPositivity.lean:866:6: error: unsolved goals
+case cons.false
+w : List Bool
+ih :
+  ones w * (ones w + 1) - (↑w.length - ones w) * (↑w.length - ones w + 1) - 2 * ones w * (↑w.length - ones w) ≤
+    2 * areaW w
+hb : 0 ≤ ones w ∧ ones w ≤ ↑w.length
+⊢ (0 + ones w) * (0 + ones w + 1) - (↑(w.length + 1) - (0 + ones w)) * (↑(w.length + 1) - (0 + ones w) + 1) -
+      2 * (0 + ones w) * (↑(w.length + 1) - (0 + ones w)) ≤
+    2 * (-1 * (↑w.length + 1) + areaW w)
+Recaman/BlockSuffixPositivity.lean:863:16: error: unsolved goals
+case cons.true
+w : List Bool
+ih :
+  ones w * (ones w + 1) - (↑w.length - ones w) * (↑w.length - ones w + 1) - 2 * ones w * (↑w.length - ones w) ≤
+    2 * areaW w
+hb : 0 ≤ ones w ∧ ones w ≤ ↑w.length
+⊢ ((if True then 1 else 0) + ones w) * ((if True then 1 else 0) + ones w + 1) -
+        (↑(w.length + 1) - ((if True then 1 else 0) + ones w)) *
+          (↑(w.length + 1) - ((if True then 1 else 0) + ones w) + 1) -
+      2 * ((if True then 1 else 0) + ones w) * (↑(w.length + 1) - ((if True then 1 else 0) + ones w)) ≤
+    2 * (sign true * (↑w.length + 1) + areaW w)
+Recaman/BlockSuffixPositivity.lean:898:3: error: unknown tactic
+Recaman/BlockSuffixPositivity.lean:897:16: error(lean.unknownIdentifier): Unknown identifier `mul_neg_of_pos_of_neg`
+Recaman/BlockSuffixPositivity.lean:879:38: error: unsolved goals
+f : Nat → Bool
+n a t b : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+htn : t < n
+hnb : n < b
+hwin : Win f t (b - t)
+hp : 1 ≤ Fw f n - Fw f t ∧ 1 ≤ Ar f t (n - t)
+hquad : 2 * (Ar f n (b - n) + ↑(b - n) * (Fw f n - Fw f b + 1)) ≤ 2 - (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+harea :
+  ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1) -
+        (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1) -
+      2 * ones (seg f n (b - n)) * (↑(b - n) - ones (seg f n (b - n))) ≤
+    2 * Ar f n (b - n)
+hmass : Fw f b - Fw f n = 2 * ones (seg f n (b - n)) - ↑(b - n)
+hlevel : Fw f b = Fw f t + 1
+hbnds : 0 ≤ ones (seg f n (b - n)) ∧ ones (seg f n (b - n)) ≤ ↑(b - n)
+hlen : 0 < ↑(b - n)
+hs : 0 < ↑(b - n) - ones (seg f n (b - n))
+hneg : ¬↑(b - n) - ones (seg f n (b - n)) ≤ 2 * ones (seg f n (b - n)) - 2
+hbad : 2 * ones (seg f n (b - n)) - (↑(b - n) - ones (seg f n (b - n))) - 2 < 0
+⊢ False

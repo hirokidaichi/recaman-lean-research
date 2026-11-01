@@ -1,0 +1,61 @@
+Recaman/LowerMomentOldClock.lean:69:44: error: unknown tactic
+Recaman/LowerMomentOldClock.lean:68:11: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey u
+in the target expression
+  1 + (0 + -↑v) + ↑i = 1
+
+case pos
+w z : List Bool
+hw : BlockWord w
+B : Int
+hmz : mass z = 0
+haz : areaW z = -B
+hlo : 4 * ↑(cntF z) + 5 ≤ B
+hhi : B ≤ 6 * ↑(cntF z) + 4
+v i : Nat
+hv : 1 ≤ v
+hi : i ≤ 1
+t : Nat
+ht : t < w.length
+u : List Bool := List.drop t w
+hu : BlockWord u
+hne : u ≠ []
+hC : 1 ≤ mass u
+hl : -2 ≤ runKey u
+hkz : runKey z = -2 * B
+hm : 1 + (0 + -↑v) + ↑i = 1
+hk : runKey u + (-2 * B + 4 * ↑v * 0 - 2 * ↑v ^ 2) + 4 * mass u * (↑(cntF z) + ↑v) = -2
+hkey : runKey u = 2 * B - 2 + 2 * ↑v ^ 2 - 4 * 1 * (↑(cntF z) + ↑v)
+hC2 : mass u ≤ 2
+hic : i = 0 ∨ i = 1
+h1 : mass u = 1
+hu1 : u = [true]
+hku : runKey u = 0
+⊢ v = 2 ∧ i = 1 ∧ B = 4 * ↑(cntF z) + 5 ∧ ∃ t, t < w.length ∧ List.drop t w = [true, true]
+Recaman/LowerMomentOldClock.lean:38:48: error: unsolved goals
+case neg
+w z : List Bool
+hw : BlockWord w
+B : Int
+hmz : mass z = 0
+haz : areaW z = -B
+hlo : 4 * ↑(cntF z) + 5 ≤ B
+hhi : B ≤ 6 * ↑(cntF z) + 4
+v i : Nat
+hv : 1 ≤ v
+hi : i ≤ 1
+t : Nat
+ht : t < w.length
+u : List Bool := List.drop t w
+hu : BlockWord u
+hne : u ≠ []
+hC : 1 ≤ mass u
+hl : -2 ≤ runKey u
+hkz : runKey z = -2 * B
+hm : mass u + (0 + -↑v) + ↑i = 1
+hk : runKey u + (-2 * B + 4 * ↑v * 0 - 2 * ↑v ^ 2) + 4 * mass u * (↑(cntF z) + ↑v) = -2
+hkey : runKey u = 2 * B - 2 + 2 * ↑v ^ 2 - 4 * mass u * (↑(cntF z) + ↑v)
+hC2 : mass u ≤ 2
+hic : i = 0 ∨ i = 1
+h1 : ¬mass u = 1
+⊢ v = 2 ∧ i = 1 ∧ B = 4 * ↑(cntF z) + 5 ∧ ∃ t, t < w.length ∧ List.drop t w = [true, true]

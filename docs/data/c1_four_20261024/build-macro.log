@@ -1,0 +1,27 @@
+✖ [5/5] Building Recaman.FourNonsuppliedData (297ms)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/FourNonsuppliedData.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/FourNonsuppliedData.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/FourNonsuppliedData.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/FourNonsuppliedData.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/FourNonsuppliedData.setup.json --json
+error: Recaman/FourNonsuppliedData.lean:89:2: unsolved goals
+case pos
+s : State
+j k : Nat
+hmin : min 19 (min 19 (s.subtractions + j) + k) = min 19 (s.subtractions + (j + k))
+hfirst : min 19 (s.subtractions + j) = 19
+hlast : min 19 (s.subtractions + (j + k)) = 19
+⊢ {
+      word :=
+        if min 19 (19 + k) = 19 then trim (s.word ++ List.replicate (j + k) false)
+        else trim (s.word ++ List.replicate j false) ++ List.replicate k false,
+      additions := s.additions, subtractions := min 19 (19 + k), nonsupplied := s.nonsupplied } =
+    { word := trim (s.word ++ List.replicate (j + k) false), additions := s.additions, subtractions := 19,
+      nonsupplied := s.nonsupplied }
+warning: Recaman/FourNonsuppliedData.lean:90:40: This simp argument is unused:
+  hmin
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [gap, hfirst, if_true, hlast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.FourNonsuppliedData
+error: build failed

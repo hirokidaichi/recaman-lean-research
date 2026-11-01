@@ -1,0 +1,7 @@
+Recaman/SeparatorSupplyReset.lean:39:75: warning: This simp argument is unused:
+  Int.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ones_append, ones_replicate_S, Int.natCast_add, Int.zero_add] at hc
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

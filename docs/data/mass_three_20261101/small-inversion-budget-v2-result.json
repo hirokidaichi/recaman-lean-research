@@ -1,0 +1,25 @@
+{
+  "tag": "small-inversion-budget-v2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/SmallInversionBudget.lean"
+  ],
+  "started_jst": "2026-11-01T06:37:42.876626+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallInversionBudget.lean": "dba431fef3feb2c4f6080d582595c77ae4b50cd0d1e4f9232e0c8f127a2bac4a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "89daa7cddbc9746f6e612cd40ff15d00d4cf88838205e5132befde3caa6909d9",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4664622501004487,
+  "cpu_seconds": 0.40188999999999997,
+  "finished_jst": "2026-11-01T06:37:43.342976+09:00"
+}

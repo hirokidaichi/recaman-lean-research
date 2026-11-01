@@ -1,0 +1,29 @@
+/- Same numeric input SHA256 716ea518a9592ae1ef2dbc8930d6f51fb8e2be1503c5ff0f641c5aff4977ba6d; A layer 10. -/
+import Recaman.FourEventPruned
+set_option maxRecDepth 100000
+set_option maxHeartbeats 3000000
+set_option Elab.async false
+namespace Recaman.FourEventData
+open Recaman.FourNonsuppliedData Recaman.FourEventProof
+open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+def s_12835 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,true,true,true,true,false,true],10,10,4⟩
+theorem c_12835 : Checked s_12835 := by
+  apply checked_of_children s_12835 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12835 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12836 : State := ⟨[false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true,true,true],10,10,4⟩
+theorem c_12836 : Checked s_12836 := by
+  apply checked_of_children s_12836 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12836 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+end Recaman.FourEventData

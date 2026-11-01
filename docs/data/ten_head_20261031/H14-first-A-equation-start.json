@@ -1,0 +1,18 @@
+{
+  "tag": "H14-first-A-equation",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentFirstASource.lean"
+  ],
+  "started_jst": "2026-10-31T07:07:52.030358+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentFirstASource.lean": "be60ad278b43247b47612570559a6635c9b1606b8bba16e1e8d9da811ed9e131"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

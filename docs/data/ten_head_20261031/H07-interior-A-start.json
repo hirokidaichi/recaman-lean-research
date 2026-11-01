@@ -1,0 +1,18 @@
+{
+  "tag": "H07-interior-A",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OneGapInteriorA.lean"
+  ],
+  "started_jst": "2026-10-31T06:35:24.009671+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OneGapInteriorA.lean": "a21a8e3937a0d9ae38084a8ee753d193182ed6f586fa5358f01fcda2f160a9b0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

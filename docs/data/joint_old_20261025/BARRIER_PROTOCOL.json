@@ -1,0 +1,17 @@
+{
+  "card": "H-20261025-02",
+  "frozen_utc": "2026-10-24T21:10:47.372919+00:00",
+  "argv": [
+    "python3",
+    "docs/data/joint_old_20261025/barrier_falsify.py"
+  ],
+  "source_sha256": "c5a87492b56f819a81f318b5f9cb9e70325703063815c4eea2c1c77ddcf5a90d",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "437ea8547eb71fca51eedb670a930da599d72d69a674ee163fc55d2010b92ef9",
+  "discovery": "all u/v lengths 0..5",
+  "holdout": "all u/v lengths 6..7; concatenated lengths >=12 distinct from discovery",
+  "bounds": "localSupply erasure at mass(v)+ones(u)<=0; additionally attack relaxed <=1 and <=2 without repairing the target",
+  "cpu_cap_seconds": 10,
+  "wall_cap_seconds": 9,
+  "allocation": "up to 10 seconds from H02 research, separate CPU; one permitted repair"
+}

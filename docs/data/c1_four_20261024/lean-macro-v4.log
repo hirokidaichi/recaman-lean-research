@@ -1,0 +1,21 @@
+Recaman/FourNonsuppliedData.lean:89:2: error: unsolved goals
+case pos
+s : State
+j k : Nat
+hmin : min 19 (min 19 (s.subtractions + j) + k) = min 19 (s.subtractions + (j + k))
+hfirst : min 19 (s.subtractions + j) = 19
+hlast : min 19 (s.subtractions + (j + k)) = 19
+⊢ {
+      word :=
+        if min 19 (19 + k) = 19 then trim (s.word ++ List.replicate (j + k) false)
+        else trim (s.word ++ List.replicate j false) ++ List.replicate k false,
+      additions := s.additions, subtractions := min 19 (19 + k), nonsupplied := s.nonsupplied } =
+    { word := trim (s.word ++ List.replicate (j + k) false), additions := s.additions, subtractions := 19,
+      nonsupplied := s.nonsupplied }
+Recaman/FourNonsuppliedData.lean:90:40: warning: This simp argument is unused:
+  hmin
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [gap, hfirst, if_true, hlast]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-27T07:04:33.336001+09:00",
+  "card": "H-20261027-11",
+  "validation_only": true,
+  "sources": {
+    "docs/data/three_run_20261027/SpectrumSevenCandidate.lean": "b2daf48d3054459f4e46d3fa47e10f81c0fb9b2a88871ba8057a01cbab222740",
+    "docs/data/three_run_20261027/run_spectrum_kernel.py": "c4f77f72957a7236b65a7ffa05e3917bb3d72b18b6c04c81bde8370d2422cec5",
+    "docs/data/three_run_20261027/signature-R7.json": "854602b044a5b96d61673cdd7a0d0cec52c12328651dd1aabb8792311f2c501b",
+    "docs/data/three_run_20261027/signature-R11.json": "4ad675b2b217231e5626401f2eeb45cbf3c61b16bc8122d5909f54bb55533f24",
+    "docs/data/three_run_20261027/generate_spectrum_lean.py": "882eeba537b6f5285357b40b085e6d9b4d2b52d0c9e372171f90a3164527d302",
+    "Recaman/OldSpectrumEleven.lean": "f039de2a388fe6d2218e5ab8d832fb40a5e6ce45d0aba3cda08c579053f62c59",
+    "Recaman/BlockSuffixSpectrum.lean": "caaef6d0b5c4f117ec9bdc39469690b429212d08c8c652362b7e2928b3cf97ac"
+  },
+  "gate": "R7 candidate exit0 and measured completed CPU<=1s before attempting frozen R11 candidate",
+  "caps": "perprocess15CPU/30wall/1GiB virtual AS for each candidate; not cumulative tree cap",
+  "stop": "resource failure=>STOPPED, no timeout/memory addition; no mathematical repairs unless predeclared one",
+  "argv": [
+    [
+      "python3",
+      "docs/data/three_run_20261027/run_spectrum_kernel.py",
+      "spectrum-seven",
+      "lake",
+      "env",
+      "lean",
+      "docs/data/three_run_20261027/SpectrumSevenCandidate.lean"
+    ],
+    [
+      "python3",
+      "docs/data/three_run_20261027/run_spectrum_kernel.py",
+      "spectrum-eleven",
+      "lake",
+      "env",
+      "lean",
+      "Recaman/OldSpectrumEleven.lean"
+    ]
+  ]
+}

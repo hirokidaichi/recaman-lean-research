@@ -1,0 +1,32 @@
+{
+  "registered_jst": "2026-10-23T06:10:54.090658+09:00",
+  "head": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_patch_sha256": "bcb3b0be3d8b3ba2dac9102d7b5ded9ba30875a819e3ee2256c5aeecc159898a",
+  "source_sha256": "2fa33bf5e86028512e382962d6247f90b5a829593adaed71faf5fab84b1fd3ef",
+  "binary_sha256": "998c836bc4d1aca9c5ac9744c6f0b81bd92e33d61d2fc52e021e296394f2b2d4",
+  "runs": [
+    {
+      "id": "discovery",
+      "argv": [
+        "/tmp/recaman-eighth-a-20261023",
+        "0",
+        "8",
+        "60"
+      ],
+      "stdout": "discovery.json",
+      "cpu_cap_seconds": 60
+    },
+    {
+      "id": "holdout",
+      "argv": [
+        "/tmp/recaman-eighth-a-20261023",
+        "9",
+        "13",
+        "60"
+      ],
+      "stdout": "holdout.json",
+      "cpu_cap_seconds": 60
+    }
+  ],
+  "independent_audit": "source and argv will be frozen separately before execution, reserved CPU120s"
+}

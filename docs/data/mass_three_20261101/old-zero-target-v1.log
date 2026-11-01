@@ -1,0 +1,31 @@
+Recaman/OldZeroTargetGap.lean:33:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  b ≥ 0
+  b - c ≥ 0
+  -2 ≤ b - e ≤ 4
+  a ≥ 5
+where
+ a := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)
+ b := ↑j
+ c := ↑(cN P n (H + v + T))
+ d := ↑(cN P (n + (H + v)) T)
+ e := ↑(cN P (n + H + v) T)
+Recaman/OldZeroTargetGap.lean:69:4: error: `dsimp` made no progress
+Recaman/OldZeroTargetGap.lean:87:42: warning: This simp argument is unused:
+  mass_replicate_A
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, hmz, List.replicate_zero, List.append_nil] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/OldZeroTargetGap.lean:98:65: warning: This simp argument is unused:
+  mass_replicate_A
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.replicate_zero, List.append_nil, mass_append] at hm ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

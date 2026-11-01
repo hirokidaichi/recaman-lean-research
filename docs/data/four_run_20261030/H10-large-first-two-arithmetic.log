@@ -1,0 +1,594 @@
+Recaman/LargePrefixTargetArea.lean:45:6: error: `grind` failed
+case grind.1.1.1.1.1.1.1.1.2.1.2.2.2.1.2.1.2.1.2.2.2
+u : List Bool
+hu : BlockWord u
+hne : u ≠ []
+h M m L s U v T j : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hshort : T ≤ j + 2
+hML : j + 1 ≤ M + L
+hmass :
+  mass
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+harea :
+  areaW
+      (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+hb : 2 * (j + 1) + 2 ≤ M + L + U + T
+A : Int := ↑M + ↑L + ↑U + ↑T
+R : Int := ↑j + 1
+I : Int := ↑M * (↑m + ↑s + ↑v) + ↑L * (↑s + ↑v) + ↑U * ↑v
+he :
+  2 * areaW u + mass u * (mass u - 1) =
+    2 * (↑M + ↑L + ↑U + ↑T) * (↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1)) - 4 * (↑M * (↑m + ↑s + ↑v) + ↑L * (↑s + ↑v) + ↑U * ↑v)
+hlow : mass u * (mass u + 1) ≤ 2 * areaW u + 2
+hC : 1 ≤ mass u
+hmp : 0 ≤ ↑M * (↑m + ↑s + ↑v - 3)
+hlp : 0 ≤ ↑L * (↑s + ↑v - 2)
+hup : 0 ≤ ↑U * (↑v - 1)
+hI : A ≤ I
+hh : ¬2 * (j + 1) + 3 ≤ M + L + U + T
+hAe : A = 2 * R + 2
+hq : mass u ^ 2 + 2 * I ≤ (2 * R + 2) * (2 * R + 2 - 2 * R) + 1
+hp : 0 ≤ (mass u - 1) * (mass u + 1)
+h_1 : ¬mass u = 1
+h_2 : v = j
+h_3 : s = j
+h_4 : L = U
+h_5 : m = j
+h_6 : M = U
+h_7 : ↑s + ↑v - 2 = ↑m + ↑s + ↑v - 3
+h_8 : ↑T = ↑m + ↑s + ↑v
+h_9 : ↑U = ↑j
+h_10 : ¬mass u = ↑T
+h_11 : U = j
+h_12 : ¬mass u - 1 = ↑m + ↑s + ↑v - 3
+h_13 : ¬2 = ↑m + ↑s + ↑v - 3
+h_14 : ¬2 = mass u - 1
+h_15 : 1 = ↑M ^ j
+h_16 : ¬0 = 2
+h_17 : 2 = ↑T ^ j
+h_18 : ¬1 = mass u - 1
+h_19 : 3 = mass u - 1
+h_20 : ¬2 = mass u ^ M
+h_21 : ¬0 = mass u ^ M
+h_22 : ¬1 = mass u ^ M
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] ¬u = []
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] 1 ≤ U
+    [prop] 1 ≤ v
+    [prop] T ≤ j + 2
+    [prop] j + 1 ≤ M + L
+    [prop] mass
+            (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                      List.replicate s false ++
+                    List.replicate U true ++
+                  List.replicate v false ++
+                List.replicate T true ++
+              List.replicate j false) =
+          1
+    [prop] areaW
+            (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                      List.replicate s false ++
+                    List.replicate U true ++
+                  List.replicate v false ++
+                List.replicate T true ++
+              List.replicate j false) =
+          0
+    [prop] 2 * j + 4 ≤ M + L + U + T
+    [prop] 2 * areaW u + mass u * (mass u - 1) + 4 * (↑M * (↑m + ↑s + ↑v)) + 4 * (↑L * (↑s + ↑v)) + 4 * (↑U * ↑v) +
+            -1 * (2 * (↑M + ↑L + ↑U + ↑T) * (↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1))) =
+          0
+    [prop] -2 * areaW u + mass u * (mass u + 1) + -2 ≤ 0
+    [prop] -1 * mass u + 1 ≤ 0
+    [prop] -1 * (↑M * (↑m + ↑s + ↑v - 3)) ≤ 0
+    [prop] -1 * (↑L * (↑s + ↑v - 2)) ≤ 0
+    [prop] -1 * (↑U * (↑v - 1)) ≤ 0
+    [prop] ↑M + ↑L + ↑U + ↑T + -1 * (↑M * (↑m + ↑s + ↑v)) + -1 * (↑L * (↑s + ↑v)) + -1 * (↑U * ↑v) ≤ 0
+    [prop] M + L + U + T ≤ 2 * j + 4
+    [prop] ↑M + ↑L + ↑U + ↑T + -2 * ↑j + -4 = 0
+    [prop] 2 * (↑M * (↑m + ↑s + ↑v)) + 2 * (↑L * (↑s + ↑v)) + 2 * (↑U * ↑v) +
+                -1 * ((2 * (↑j + 1) + 2) * (2 * (↑j + 1) + 2 - 2 * (↑j + 1))) +
+              mass u ^ 2 +
+            -1 ≤
+          0
+    [prop] -1 * ((mass u - 1) * (mass u + 1)) ≤ 0
+    [prop] ¬mass u = 1
+    [prop] v = j
+    [prop] s = j
+    [prop] L = U
+    [prop] m = j
+    [prop] M = U
+    [prop] ↑s + ↑v - 2 = ↑m + ↑s + ↑v - 3
+    [prop] ↑T = ↑m + ↑s + ↑v
+    [prop] ↑U = ↑j
+    [prop] ¬mass u = ↑T
+    [prop] U = j
+    [prop] ¬mass u - 1 = ↑m + ↑s + ↑v - 3
+    [prop] ¬2 = ↑m + ↑s + ↑v - 3
+    [prop] ¬2 = mass u - 1
+    [prop] 1 = ↑M ^ j
+    [prop] ¬0 = 2
+    [prop] 2 = ↑T ^ j
+    [prop] ¬1 = mass u - 1
+    [prop] 3 = mass u - 1
+    [prop] ¬2 = mass u ^ M
+    [prop] ¬0 = mass u ^ M
+    [prop] ¬1 = mass u ^ M
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] ↑M = ↑L
+    [prop] ↑M = ↑U
+    [prop] ↑m = ↑L
+    [prop] ↑m = ↑s
+    [prop] ↑m = ↑U
+    [prop] ↑m = ↑v
+    [prop] ↑m = ↑j
+    [prop] ↑L = ↑s
+    [prop] ↑L = ↑U
+    [prop] ↑L = ↑v
+    [prop] ↑L = ↑j
+    [prop] ↑s = ↑U
+    [prop] ↑s = ↑v
+    [prop] ↑s = ↑j
+    [prop] ↑U = ↑v
+    [prop] ↑U = ↑j
+    [prop] ↑v = ↑j
+    [prop] ↑T = ↑m + ↑s + ↑v
+    [prop] 1 = ↑M ^ j
+    [prop] 2 = ↑T ^ j
+    [prop] 3 = mass u - 1
+    [prop] ↑v - 1 = ↑s + ↑v - 2
+    [prop] ↑v - 1 = ↑m + ↑s + ↑v - 3
+    [prop] ↑s + ↑v - 2 = ↑m + ↑s + ↑v - 3
+    [prop] M = m
+    [prop] M = L
+    [prop] M = s
+    [prop] M = U
+    [prop] M = v
+    [prop] M = j
+    [prop] m = L
+    [prop] m = s
+    [prop] m = U
+    [prop] m = v
+    [prop] m = j
+    [prop] L = s
+    [prop] L = U
+    [prop] L = v
+    [prop] L = j
+    [prop] s = U
+    [prop] s = v
+    [prop] s = j
+    [prop] U = v
+    [prop] U = j
+    [prop] v = j
+    [prop] ↑M + ↑L + ↑U + ↑T + -1 * (↑M * (↑m + ↑s + ↑v)) + -1 * (↑L * (↑s + ↑v)) + -1 * (↑U * ↑v) ≤ 0
+    [prop] 2 * (↑M * (↑m + ↑s + ↑v)) + 2 * (↑L * (↑s + ↑v)) + 2 * (↑U * ↑v) +
+                -1 * ((2 * (↑j + 1) + 2) * (2 * (↑j + 1) + 2 - 2 * (↑j + 1))) +
+              mass u ^ 2 +
+            -1 ≤
+          0
+    [prop] -2 * areaW u + mass u * (mass u + 1) + -2 ≤ 0
+    [prop] -1 * mass u + 1 ≤ 0
+    [prop] -1 * (↑M * (↑m + ↑s + ↑v - 3)) ≤ 0
+    [prop] -1 * (↑L * (↑s + ↑v - 2)) ≤ 0
+    [prop] -1 * (↑U * (↑v - 1)) ≤ 0
+    [prop] -1 * ((mass u - 1) * (mass u + 1)) ≤ 0
+    [prop] T ≤ j + 2
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] 1 ≤ U
+    [prop] 1 ≤ v
+    [prop] j + 1 ≤ M + L
+    [prop] M + L + U + T ≤ 2 * j + 4
+    [prop] 2 * j + 4 ≤ M + L + U + T
+  [eqc] False propositions
+    [prop] mass u = ↑T
+    [prop] mass u = 1
+    [prop] 0 = 2
+    [prop] 0 = mass u ^ M
+    [prop] 0 = ↑T ^ j
+    [prop] 1 = mass u ^ M
+    [prop] 1 = mass u - 1
+    [prop] 2 = mass u ^ M
+    [prop] 2 = mass u - 1
+    [prop] 2 = ↑v - 1
+    [prop] 2 = ↑s + ↑v - 2
+    [prop] 2 = ↑m + ↑s + ↑v - 3
+    [prop] ↑M ^ j = mass u - 1
+    [prop] mass u - 1 = ↑v - 1
+    [prop] mass u - 1 = ↑s + ↑v - 2
+    [prop] mass u - 1 = ↑m + ↑s + ↑v - 3
+    [prop] u = []
+  [eqc] Equivalence classes
+    [eqc] {M, m, L, s, U, v, j, 1}
+    [eqc] {areaW
+          (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                    List.replicate s false ++
+                  List.replicate U true ++
+                List.replicate v false ++
+              List.replicate T true ++
+            List.replicate j false),
+        0,
+        -2 * ↑M ^ 2 + 4 * (↑M * ↑m) + -4 * (↑M * ↑L) + -2 * ↑L ^ 2 + 4 * (↑M * ↑s) + 4 * (↑L * ↑s) + -4 * (↑M * ↑U) +
+                                                -4 * (↑L * ↑U) +
+                                              -2 * ↑U ^ 2 +
+                                            4 * (↑M * ↑v) +
+                                          4 * (↑L * ↑v) +
+                                        4 * (↑U * ↑v) +
+                                      -4 * (↑M * ↑T) +
+                                    -4 * (↑L * ↑T) +
+                                  -4 * (↑U * ↑T) +
+                                -2 * ↑T ^ 2 +
+                              4 * (↑M * ↑j) +
+                            4 * (↑L * ↑j) +
+                          4 * (↑U * ↑j) +
+                        4 * (↑T * ↑j) +
+                      mass u ^ 2 +
+                    4 * ↑M +
+                  4 * ↑L +
+                4 * ↑U +
+              4 * ↑T +
+            -1 * mass u +
+          2 * areaW u,
+        2 * areaW u + mass u * (mass u - 1) + 4 * (↑M * (↑m + ↑s + ↑v)) + 4 * (↑L * (↑s + ↑v)) + 4 * (↑U * ↑v) +
+          -1 * (2 * (↑M + ↑L + ↑U + ↑T) * (↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1)))}
+      [eqc] {↑M + ↑L + ↑U + ↑T + -2 * ↑j + -4, ↑v - 1, ↑s + ↑v - 2, ↑m + ↑s + ↑v - 3}
+    [eqc] {mass u, 4}
+      [eqc] {↑M + ↑L + ↑U + ↑T + -2 * ↑j}
+    [eqc] {mass
+          (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                    List.replicate s false ++
+                  List.replicate U true ++
+                List.replicate v false ++
+              List.replicate T true ++
+            List.replicate j false),
+        1}
+      [eqc] {↑M,
+          ↑m,
+          ↑L,
+          ↑s,
+          ↑U,
+          ↑v,
+          ↑j,
+          ↑M * ↑m,
+          ↑M * ↑L,
+          ↑M * ↑s,
+          ↑M * ↑U,
+          ↑M * ↑v,
+          ↑M * ↑j,
+          ↑M * ↑M ^ j,
+          ↑L * ↑s,
+          ↑L * ↑U,
+          ↑L * ↑v,
+          ↑L * ↑j,
+          ↑L * ↑L ^ j,
+          ↑U * ↑v,
+          ↑U * ↑j,
+          ↑U * ↑U ^ j,
+          ↑M ^ j * ↑M,
+          ↑L ^ j * ↑L,
+          ↑U ^ j * ↑U,
+          ↑M ^ j,
+          ↑M ^ 2,
+          ↑L ^ j,
+          ↑L ^ 2,
+          ↑U ^ j,
+          ↑U ^ 2}
+    [eqc] {List.replicate M true, List.replicate L true, List.replicate U true}
+    [eqc] {List.replicate m false, List.replicate s false, List.replicate v false, List.replicate j false}
+    [eqc] {3, mass u - 1}
+      [eqc] {↑T, ↑M + ↑L + ↑U, ↑m + ↑s + ↑v, ↑M * ↑m + ↑M * ↑s + ↑M * ↑v}
+    [eqc] {2, M + L, j + 1}
+    [eqc] {-1 * mass u ^ M + mass u ^ L, -1 * mass u ^ M + mass u ^ j}
+    [eqc] {mass u ^ M * mass u ^ L + -1 * (mass u * mass u ^ j), mass u ^ 2 + -1 * (mass u * mass u ^ j)}
+    [eqc] {mass u ^ M * mass u ^ L, mass u ^ j * mass u, mass u ^ 2}
+    [eqc] {mass u ^ M, mass u ^ L, mass u ^ j}
+    [eqc] others
+      [eqc] {2,
+          ↑M + ↑L,
+          ↑m + ↑s,
+          ↑s + ↑v,
+          ↑j + 1,
+          ↑M * ↑m + ↑M * ↑s,
+          ↑T ^ j,
+          ↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1),
+          2 * (↑j + 1) + 2 - 2 * (↑j + 1)}
+      [eqc] {↑M + ↑L + ↑U + ↑T, 2 * (↑j + 1) + 2}
+      [eqc] {-1 * (↑M * ↑m) + -1 * (↑M * ↑s) + -1 * (↑M * ↑v), -1 * (↑M * ↑m) + -1 * (↑M * ↑s) + -1 * (↑L * ↑s)}
+      [eqc] {↑M * ↑m + -1 * (↑M * ↑v),
+          ↑M * ↑L + -1 * (↑L * ↑v),
+          ↑M * ↑s + -1 * (↑M * ↑v),
+          ↑M * ↑v + -1 * (↑L * ↑v),
+          ↑M * ↑M ^ j + -1 * (↑L * ↑L ^ j),
+          ↑L * ↑s + -1 * (↑L * ↑v),
+          ↑U * ↑U ^ j + -1 * (↑L * ↑L ^ j),
+          ↑M ^ 2 + -1 * ↑L ^ 2,
+          ↑L ^ 2 + -1 * (↑L * ↑v)}
+      [eqc] {↑L * ↑v + -1, ↑M ^ j + -1}
+      [eqc] {-1 * (↑M * ↑m) + -1 * (↑M * ↑s), -1 * (↑L * ↑s) + -1 * (↑L * ↑v)}
+      [eqc] {-1 * (↑M * ↑L) + ↑M * ↑U,
+          -1 * (↑M * ↑L) + ↑L * ↑U,
+          -1 * (↑M * ↑v) + ↑M * ↑j,
+          -1 * (↑L * ↑v) + ↑L * ↑j,
+          -1 * (↑L * ↑v) + ↑L * ↑L ^ j,
+          -1 * (↑L * ↑v) + ↑U * ↑v,
+          -1 * (↑U * ↑v) + ↑U,
+          -1 * (↑U * ↑v) + ↑U * ↑j,
+          -1 * ↑M ^ j + ↑L ^ j,
+          -1 * ↑M ^ j + ↑U ^ j,
+          -1 * ↑L ^ 2 + ↑M * ↑M ^ j,
+          -1 * ↑L ^ 2 + ↑L * ↑L ^ j,
+          -1 * ↑L ^ 2 + ↑U * ↑U ^ j,
+          -1 * ↑L ^ 2 + ↑U ^ 2}
+      [eqc] {mass u * (mass u - 1), 4 * ↑T}
+      [eqc] {↑M * ↑T, ↑M * (↑m + ↑s + ↑v), ↑L * ↑T, ↑U * ↑T}
+      [eqc] {↑M * (↑m + ↑s + ↑v - 3), ↑L * (↑s + ↑v - 2), ↑U * (↑v - 1)}
+      [eqc] {↑T * ↑j, 3 * ↑M}
+      [eqc] {-1 * ↑U,
+          -1 * (↑M * ↑m),
+          -1 * (↑M * ↑L),
+          -1 * (↑M * ↑s),
+          -1 * (↑M * ↑v),
+          -1 * (↑L * ↑s),
+          -1 * (↑L * ↑v),
+          -1 * (↑L * ↑L ^ j),
+          -1 * (↑U * ↑v),
+          -1 * ↑M ^ j,
+          -1 * ↑L ^ 2}
+      [eqc] {-1 * (↑M * (↑m + ↑s + ↑v)), -1 * (↑L * ↑T)}
+      [eqc] {-1 * (↑M * (↑m + ↑s + ↑v - 3)), -1 * (↑L * (↑s + ↑v - 2)), -1 * (↑U * (↑v - 1))}
+      [eqc] {-2 * ↑L, -2 * ↑j, -2 * ↑M ^ 2, -2 * ↑L ^ 2, -2 * ↑U ^ 2}
+      [eqc] {-4 * ↑j, -4 * (↑M * ↑L), -4 * (↑M * ↑U), -4 * (↑L * ↑U)}
+      [eqc] {-4 * (↑M * ↑T), -4 * (↑L * ↑T), -4 * (↑U * ↑T)}
+      [eqc] {2 * ↑L, 2 * (↑M * ↑m), 2 * (↑M * ↑s), 2 * (↑M * ↑v), 2 * (↑L * ↑s), 2 * (↑L * ↑v), 2 * (↑U * ↑v)}
+      [eqc] {4 * ↑M,
+          4 * ↑L,
+          4 * ↑U,
+          4 * (↑M * ↑m),
+          4 * (↑M * ↑s),
+          4 * (↑M * ↑v),
+          4 * (↑M * ↑j),
+          4 * (↑L * ↑s),
+          4 * (↑L * ↑v),
+          4 * (↑L * ↑j),
+          4 * (↑U * ↑v),
+          4 * (↑U * ↑j)}
+      [eqc] {↑T ^ j * ↑T, ↑T ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: v = j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate j false
+          and
+            List.replicate v false
+    [cases] [1/2]: s = j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate j false
+          and
+            List.replicate s false
+    [cases] [1/2]: L = U
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate U true
+          and
+            List.replicate L true
+    [cases] [1/2]: m = j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate j false
+          and
+            List.replicate m false
+    [cases] [1/2]: M = U
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate U true
+          and
+            List.replicate M true
+    [cases] [1/2]: ↑s + ↑v - 2 = ↑m + ↑s + ↑v - 3
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑L * (↑s + ↑v - 2)
+          and
+            ↑M * (↑m + ↑s + ↑v - 3)
+    [cases] [1/2]: ↑T = ↑m + ↑s + ↑v
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * ↑T
+          and
+            ↑M * (↑m + ↑s + ↑v)
+    [cases] [1/2]: ↑U = ↑j
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * ↑j
+          and
+            ↑M * ↑U
+    [cases] [2/2]: mass u = ↑T
+      [cases] source: Model-based theory combination at argument #4 of
+            mass u ^ 2
+          and
+            ↑T ^ 2
+    [cases] [1/2]: U = j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate j false
+          and
+            List.replicate U true
+    [cases] [2/2]: mass u - 1 = ↑m + ↑s + ↑v - 3
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * (↑m + ↑s + ↑v - 3)
+          and
+            mass u * (mass u - 1)
+    [cases] [2/2]: 2 = ↑m + ↑s + ↑v - 3
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * (↑m + ↑s + ↑v - 3)
+          and
+            2 * (↑M + ↑L + ↑U + ↑T) * (↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1))
+    [cases] [2/2]: 2 = mass u - 1
+      [cases] source: Model-based theory combination at argument #5 of
+            2 * (↑M + ↑L + ↑U + ↑T) * (↑M + ↑L + ↑U + ↑T - 2 * (↑j + 1))
+          and
+            mass u * (mass u - 1)
+    [cases] [1/2]: 1 = ↑M ^ j
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑L * ↑L ^ j
+          and
+            ↑L * ↑v
+    [cases] [2/2]: 0 = 2
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑M * (↑m + ↑s + ↑v - 3)
+          and
+            ↑L * (↑s + ↑v)
+    [cases] [1/2]: 2 = ↑T ^ j
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑T * ↑T ^ j
+          and
+            ↑L * (↑s + ↑v)
+    [cases] [2/2]: 1 = mass u - 1
+      [cases] source: Model-based theory combination at argument #4 of
+            (mass u - 1) * (mass u + 1)
+          and
+            ↑M * (↑m + ↑s + ↑v)
+    [cases] [1/2]: 3 = mass u - 1
+      [cases] source: Model-based theory combination at argument #4 of
+            (mass u - 1) * (mass u + 1)
+          and
+            ↑T * ↑j
+    [cases] [2/2]: 2 = mass u ^ M
+      [cases] source: Model-based theory combination at argument #4 of
+            mass u ^ M * mass u ^ L
+          and
+            ↑T ^ j * ↑T
+    [cases] [2/2]: 0 = mass u ^ M
+      [cases] source: Model-based theory combination at argument #5 of
+            mass u ^ M * mass u ^ L
+          and
+            ↑M * (↑m + ↑s + ↑v - 3)
+    [cases] [2/2]: 1 = mass u ^ M
+      [cases] source: Model-based theory combination at argument #5 of
+            mass u ^ M * mass u ^ L
+          and
+            ↑L * ↑v
+  [cutsat] Assignment satisfying linear constraints
+    [assign] h := 7
+    [assign] M := 1
+    [assign] m := 1
+    [assign] L := 1
+    [assign] s := 1
+    [assign] U := 1
+    [assign] v := 1
+    [assign] T := 3
+    [assign] j := 1
+    [assign] A := 14
+    [assign] R := 15
+    [assign] I := 16
+    [assign] areaW u := 5
+    [assign] areaW
+          (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                    List.replicate s false ++
+                  List.replicate U true ++
+                List.replicate v false ++
+              List.replicate T true ++
+            List.replicate j false) := 0
+    [assign] mass u := 5
+    [assign] mass
+          (u ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                    List.replicate s false ++
+                  List.replicate U true ++
+                List.replicate v false ++
+              List.replicate T true ++
+            List.replicate j false) := 1
+    [assign] 「mass u ^ M」 := 3
+    [assign] 「mass u ^ L」 := 3
+    [assign] 「mass u ^ j」 := 3
+    [assign] 「mass u ^ 2」 := 0
+    [assign] 「↑M ^ j」 := 1
+    [assign] 「↑M ^ 2」 := 1
+    [assign] 「↑L ^ j」 := 1
+    [assign] 「↑L ^ 2」 := 1
+    [assign] 「↑U ^ j」 := 1
+    [assign] 「↑U ^ 2」 := 1
+    [assign] 「↑T ^ j」 := 0
+    [assign] 「↑T ^ 2」 := 6
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] (mass u ^ j) ^ 2 + -4 * mass u ^ j = 0
+      [_] ↑M + ↑L + ↑U + ↑T + -2 * ↑j + -4 = 0
+      [_] ↑m + -1 * ↑j = 0
+      [_] ↑L + -1 * ↑U = 0
+      [_] ↑s + -1 * ↑j = 0
+      [_] 3 * ↑U + ↑T + -2 * ↑j + -4 = 0
+      [_] ↑v + -1 * ↑j = 0
+      [_] ↑T + -3 = 0
+      [_] ↑j + -1 = 0
+      [_] mass u + -4 = 0
+      [_] areaW u + 6 = 0
+      [_] ↑T ^ j + -2 = 0
+      [_] ↑M ^ j + -1 * ↑L ^ j = 0
+      [_] ↑U ^ j + -1 * ↑L ^ j = 0
+      [_] ↑L ^ j + -1 = 0
+      [_] mass u ^ M + -1 * mass u ^ j = 0
+      [_] mass u ^ L + -1 * mass u ^ j = 0
+    [diseqs] Disequalities
+      [_] ¬-1 * mass u ^ j + 2 = 0
+      [_] ¬-1 * mass u ^ j = 0
+      [_] ¬-1 * mass u ^ j + 1 = 0
+  [assoc] Operator `HAppend.hAppend`
+    [basis] Basis
+      [_] List.replicate U true = List.replicate M true
+      [_] List.replicate L true = List.replicate M true
+      [_] List.replicate v false = List.replicate m false
+      [_] List.replicate j false = List.replicate m false
+      [_] List.replicate s false = List.replicate m false
+    [diseqs] Disequalities
+      [_] u ≠ []
+    [properties] Properties
+      [_] identity: `[]`
+  [limits] Thresholds reached
+    [limit] maximum number of case-splits has been reached, threshold: `(splits := 9)`
+[grind] Issues
+  [issue] ring term with unexpected instance
+        ↑T ^ j
+  [issue] ring term with unexpected instance
+        ↑M ^ j
+  [issue] ring term with unexpected instance
+        ↑T ^ j
+  [issue] ring term with unexpected instance
+        ↑M ^ j
+  [issue] ring term with unexpected instance
+        ↑M ^ j
+  [issue] ring term with unexpected instance
+        ↑T ^ j
+  [issue] failed to convert to ring expression
+        3
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M
+  [issue] ring term with unexpected instance
+        mass u ^ M

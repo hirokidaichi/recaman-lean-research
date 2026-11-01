@@ -1,0 +1,25 @@
+{
+  "tag": "H03-middle-charge2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldTargetMiddleCharge.lean"
+  ],
+  "started_jst": "2026-10-29T06:21:46.562787+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetMiddleCharge.lean": "5f16f354c83177941f7ac954285c177f87883c4f9adf015116a7150208405ee1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_hash": "30fa8f62fe8e004eaeb8ea762702f49a28d6757888fb279881c8ca6a18302e80",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7385500001255423,
+  "cpu_seconds": 0.6844309999999999,
+  "finished_jst": "2026-10-29T06:21:47.301280+09:00"
+}

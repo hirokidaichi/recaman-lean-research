@@ -1,0 +1,325 @@
+Module graph audit: Recaman root reaches 493 of 493 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 480 entries, 250 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 106 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+ℹ [278/496] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [279/496] Replayed Recaman.TwoLagSevenPhaseConflict
+info: Recaman/TwoLagSevenPhaseConflict.lean:170:0: 'Recaman.TwoLagSevenPhaseConflict.w1_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:171:0: 'Recaman.TwoLagSevenPhaseConflict.w2_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:172:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_intersection_le_one' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:173:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_union_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:174:0: 'Recaman.TwoLagSevenPhaseConflict.past_w1_w2_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:175:0: 'Recaman.TwoLagSevenPhaseConflict.past_w2_w1_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:176:0: 'Recaman.TwoLagSevenPhaseConflict.two_lag7_tight_subset_impossible' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:177:0: 'Recaman.TwoLagSevenPhaseConflict.grand_two_lag7_phase_conflict_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [280/496] Replayed Recaman.LagSevenDistanceSeparationRigidity
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:402:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:403:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:404:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:405:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:406:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:407:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:408:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:409:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:410:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:411:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:412:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:413:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:414:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:415:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:416:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:417:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:418:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_distance_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:419:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_stream_distance_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:420:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_non_consecutive_distance_ge_ten' depends on axioms: [propext,
+ Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:421:0: 'Recaman.LagSevenDistanceSeparationRigidity.grand_lag7_distance_separation_rigidity_synthesis' depends on axioms: [propext,
+ Quot.sound]
+⚠ [411/496] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [414/496] Replayed Recaman.FourEventPruned
+warning: Recaman/FourEventPruned.lean:69:56: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [budgetStepA, fastStepA, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [421/496] Replayed Recaman.BlockSuffixSpectrum
+warning: Recaman/BlockSuffixSpectrum.lean:130:33: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [440/496] Replayed Recaman.InitialSTargetOldPair
+warning: Recaman/InitialSTargetOldPair.lean:114:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [442/496] Replayed Recaman.InitialSTargetTwoShapes
+warning: Recaman/InitialSTargetTwoShapes.lean:28:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:28:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:43:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:43:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:61:17: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetTwoShapes.lean:61:45: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [443/496] Replayed Recaman.InitialSTargetCountCharge
+warning: Recaman/InitialSTargetCountCharge.lean:80:19: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/InitialSTargetCountCharge.lean:80:47: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [449/496] Replayed Recaman.FourRunSupplyBudget
+warning: Recaman/FourRunSupplyBudget.lean:50:22: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rs, runWord, cntF_append, cntF_replicate_S, cntF_A, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [450/496] Replayed Recaman.FourRunTargetArea
+warning: Recaman/FourRunTargetArea.lean:181:5: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [452/496] Replayed Recaman.FourRunSupplySeventeen
+warning: Recaman/FourRunSupplySeventeen.lean:58:22: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rs, runWord, cntF_append, cntF_replicate_S, cntF_A, List.append_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [460/496] Replayed Recaman.FinalSTargetWidth
+warning: Recaman/FinalSTargetWidth.lean:10:49: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/FinalSTargetWidth.lean:27:49: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [462/496] Replayed Recaman.TerminalOldClock
+warning: Recaman/TerminalOldClock.lean:17:55: Variable name `hV` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hV
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [465/496] Replayed Recaman.MomentBandOldClock
+warning: Recaman/MomentBandOldClock.lean:35:17: Variable name `hv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/MomentBandOldClock.lean:124:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [466/496] Replayed Recaman.TenHeadTargetCases
+warning: Recaman/TenHeadTargetCases.lean:51:5: Variable name `hlo` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlo
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/TenHeadTargetCases.lean:52:16: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/TenHeadTargetCases.lean:52:39: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [467/496] Replayed Recaman.TenHeadActualCases
+warning: Recaman/TenHeadActualCases.lean:15:21: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [470/496] Replayed Recaman.TenHeadLocalBudget
+warning: Recaman/TenHeadLocalBudget.lean:34:16: Variable name `hM` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hM
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [473/496] Replayed Recaman.MomentTargetMass
+warning: Recaman/MomentTargetMass.lean:10:68: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/MomentTargetMass.lean:36:34: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/MomentTargetMass.lean:36:57: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [477/496] Replayed Recaman.OneGapInteriorA
+warning: Recaman/OneGapInteriorA.lean:22:37: This simp argument is unused:
+  Int.natCast_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_replicate_A, mass_rep_false, mass_cons, mass_nil,
+    Recaman.ShortPeriodicSupply.sign] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [478/496] Replayed Recaman.FourthClockClassifier
+warning: Recaman/FourthClockClassifier.lean:66:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/FourthClockClassifier.lean:76:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/FourthClockClassifier.lean:88:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/FourthClockClassifier.lean:97:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/FourthClockClassifier.lean:108:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Recaman/FourthClockClassifier.lean:117:15: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_replicate, List.drop_replicate, mass_rep_false] at ht hm hk
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [484/496] Replayed Recaman.MomentSmallHeadPruning
+warning: Recaman/MomentSmallHeadPruning.lean:65:5: Variable name `hh` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hh
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Recaman/MomentSmallHeadPruning.lean:65:60: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [490/496] Replayed Recaman.ThreeGapInteriorA
+warning: Recaman/ThreeGapInteriorA.lean:15:5: Variable name `hh` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hh
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [494/496] Built Recaman.LowerMomentOldClock (648ms)
+warning: Recaman/LowerMomentOldClock.lean:140:22: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [495/496] Built Recaman (307ms)
+Build completed successfully (496 jobs).
+Axiom audit: 3103 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.

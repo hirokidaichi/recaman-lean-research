@@ -1,0 +1,18 @@
+{
+  "tag": "H18-parity-audit",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/LowerMomentOldClock.lean"
+  ],
+  "started_jst": "2026-10-31T07:28:27.872886+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowerMomentOldClock.lean": "bd563c3d28f333c0ba358767cd16f7aff35fa575295853ec0c82097c4ce9f9cd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "thirteen_actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldFourThirteenActual.olean",
+    "Recaman/OldFourThirteenActual.lean"
+  ],
+  "started_jst": "2026-11-01T07:21:53.180953+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldFourThirteenActual.lean": "b4799f9db1de1a1739f497913fc232d69c055294984f97b004b8cc98cc2c2f61"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "1064fbe23f4f9cda5ed9f88359dfceddb775abe48e5d76d11ae8853b3121718e",
+  "source_tree_sha256": "980b09eeddbc8ef8352a3697ee890e8e69bd59ae8b37f2a3b70bb509dd9bc930",
+  "source_tree_manifest": "thirteen_actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1064fbe23f4f9cda5ed9f88359dfceddb775abe48e5d76d11ae8853b3121718e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5466525419615209,
+  "cpu_seconds": 0.387324,
+  "finished_jst": "2026-11-01T07:21:53.727545+09:00"
+}

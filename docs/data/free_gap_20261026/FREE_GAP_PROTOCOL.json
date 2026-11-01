@@ -1,0 +1,24 @@
+{
+  "frozen_jst": "2026-10-26T06:12:33.155647+09:00",
+  "card": "H-20261026-01",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_source_sha256": {
+    "docs/data/free_gap_20261026/free_gap_discovery.py": "5ad0bda170588a4613694441c6a5fc90fc12d5479bd036f810d1f036c0e0d2c7",
+    "docs/data/free_gap_20261026/free_gap_holdout.py": "1795428c538ad352205e0d1df8be1c3bfa48e831a525bedde630cf3d5db41003",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "sources_unchanged_from_start": "START.json",
+  "guard_validation": "guard-validation.json passed, supported contract one reviewed cooperative Python process/group; no descendants",
+  "old_cpu_budget": 0,
+  "new_math_worker_cpu_cap_seconds": 20,
+  "per_worker_cpu_seconds": 10,
+  "per_worker_wall_seconds": 15,
+  "controller_overhead_reserved_cpu_seconds": 2,
+  "validation_cpu_recorded_separately": true,
+  "allocation": "up to3 research minutes for guard validation/new structured falsifier, subtract from C1 exploitation; no double count",
+  "discovery": "8 known BlockWord prefixes x [1,2,3,4,6]^4 independent two-run parameters; candidate S-gaps from full-history zero-key suffixes; original-base EndN checked",
+  "holdout": "5 prefixes x [5,7,9]^4; no shared discovery implementation; all gap0..floor(allA/2)-1 by E407; tuples/prefix-tuple pairs disjoint, prefix words may be historically known",
+  "acceptance": "exact prefix d(n)=0 and all positive tail deficits through endpoint, actual EndN and j+1>actual prior free -> REFUTED; no violations only COMPUTED, not general proof",
+  "repair_limit": 1,
+  "stop": "timeout/unsupported process creation/no complete CPU measurement -> no continuation of computation; no range increase; if no independent C1 edge by06:18:45 switch key-return/multi-run"
+}

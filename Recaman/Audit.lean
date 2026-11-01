@@ -1,3 +1,34 @@
+import Recaman.FourSFirstATarget
+import Recaman.OldOneInitialSource
+import Recaman.OldOneLastSix
+import Recaman.MassThreeOldOneGap
+import Recaman.MassThreeOldOneBase
+import Recaman.FourSAnyOldGap
+import Recaman.FourSAnyOldBase
+import Recaman.FirstATargetSquare
+import Recaman.OldZeroLastFive
+import Recaman.MassThreeOldZeroGap
+import Recaman.MassThreeOldZeroBase
+import Recaman.ThirteenRunFactors
+import Recaman.ThirteenSixSources
+import Recaman.EarlyOldFourFree
+import Recaman.EarlyOldFourFreeBase
+import Recaman.OldFourThirteenKey
+import Recaman.OldFourThirteenActual
+import Recaman.OldFourThirteenBase
+import Recaman.InversionNine
+import Recaman.InversionActualBudget
+import Recaman.InversionNineActual
+import Recaman.EarlyOldFourResidual
+import Recaman.EarlyOldFourBase
+import Recaman.SmallInversionJoint
+import Recaman.SmallInversionActual
+import Recaman.EarlyOldSixFree
+import Recaman.EarlyOldSixBase
+import Recaman.HighTargetCharge
+import Recaman.HighTargetBase
+import Recaman.OldMassFiveGap
+import Recaman.OldMassFiveBase
 import Recaman
 
 -- Kernel dependency audit for the principal research lemmas.
@@ -2806,3 +2837,636 @@ import Recaman
 #print axioms Recaman.BlockSuffixPositivity.block_suffix_positive
 #print axioms Recaman.BlockSuffixPositivity.no_endable_after_S_run
 #print axioms Recaman.BlockSuffixPositivity.ts_one
+#print axioms Recaman.BlockSuffixPositivity.area_nondecreasing_tail
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_low_clock_not_endable
+#print axioms Recaman.BlockSuffixPositivity.two_marks_le_count
+#print axioms Recaman.BlockSuffixPositivity.two_nonsupplied_additions_of_recovery
+#print axioms Recaman.BlockSuffixPositivity.shifted_area_nonneg
+#print axioms Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit
+#print axioms Recaman.BlockSuffixPositivity.area_nonneg_of_fresh_low_visit_int
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_suffix_length_bound
+#print axioms Recaman.BlockSuffixPositivity.endable_iff_trimmed_block_prefix
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_suffix_length_le_eleven
+#print axioms Recaman.BlockSuffixPositivity.endable_iff_last_eleven_of_depth_four
+#print axioms Recaman.BlockSuffixPositivity.block_append
+#print axioms Recaman.BlockSuffixPositivity.block_replicate_A
+#print axioms Recaman.BlockSuffixPositivity.block_drop_free
+#print axioms Recaman.BlockSuffixPositivity.block_drop_aas
+#print axioms Recaman.BlockSuffixPositivity.block_drop_triple
+#print axioms Recaman.BlockSuffixPositivity.block_suffix_append
+#print axioms Recaman.BlockSuffixPositivity.block_suffix
+#print axioms Recaman.BlockSuffixPositivity.block_suffix_representative
+#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_lower
+#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_sharp
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_lower
+#print axioms Recaman.BlockSuffixPositivity.triple_area_quadratic_sharp
+#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_equality
+#print axioms Recaman.BlockSuffixPositivity.area_split_at
+#print axioms Recaman.BlockSuffixPositivity.old_window_area_upper
+#print axioms Recaman.BlockSuffixPositivity.endable_tail_mass_representative
+#print axioms Recaman.BlockSuffixPositivity.block_mass_nonnegative
+#print axioms Recaman.BlockSuffixPositivity.block_mass_one
+#print axioms Recaman.BlockSuffixPositivity.block_mass_two
+#print axioms Recaman.BlockSuffixPositivity.block_area_quadratic_upper
+#print axioms Recaman.BlockSuffixPositivity.block_area_upper_sharp
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_area_quadratic_upper
+
+-- 2026-10-23: one finite certificate and its actual-word simulation.
+#print axioms Recaman.BlockSuffixPositivity.areaW_count_lower
+#print axioms Recaman.BlockSuffixPositivity.old_window_count_barrier
+#print axioms Recaman.BlockSuffixPositivity.checked_wordArea_eq
+#print axioms Recaman.BlockSuffixPositivity.ones_drop_le
+#print axioms Recaman.BlockSuffixPositivity.localSupply_iff
+#print axioms Recaman.BlockSuffixPositivity.localSupply_trim
+#print axioms Recaman.BlockSuffixPositivity.seg_drop
+#print axioms Recaman.BlockSuffixPositivity.localSupply_seg_iff
+#print axioms Recaman.BlockSuffixPositivity.old_window_signature
+#print axioms Recaman.BlockSuffixPositivity.ones_seg_eq_count
+#print axioms Recaman.BlockSuffixPositivity.supply_clock_smallA
+#print axioms Recaman.BlockSuffixPositivity.trim_append_letter
+#print axioms Recaman.BlockSuffixPositivity.actualSmallState_zero
+#print axioms Recaman.BlockSuffixPositivity.actualSmallState_S
+#print axioms Recaman.BlockSuffixPositivity.actualSmallState_local
+#print axioms Recaman.BlockSuffixPositivity.actualSmallState_admitted
+#print axioms Recaman.BlockSuffixPositivity.actualSmallState_A
+#print axioms Recaman.BlockSuffixPositivity.count_prefix_le
+#print axioms Recaman.BlockSuffixPositivity.addition_endable_partition
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_state_member
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_additions_le_seven
+#print axioms Recaman.BlockSuffixPositivity.seg_take
+#print axioms Recaman.BlockSuffixPositivity.endpoint_words_depth_checked
+#print axioms Recaman.BlockSuffixPositivity.endpoint_word_prefix_depth
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_word
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_depth_offset
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_excursion_depth
+#print axioms Recaman.ThreeNonsuppliedData.verifiedRange_at
+#print axioms Recaman.ThreeNonsuppliedData.member_additions_lt_eight
+#print axioms Recaman.ThreeNonsuppliedData.member_endpoint_word
+#print axioms Recaman.ThreeNonsuppliedData.member_stepS
+#print axioms Recaman.ThreeNonsuppliedData.member_stepA
+#print axioms Recaman.ThreeNonsuppliedData.rows_verified
+#print axioms Recaman.ThreeNonsuppliedData.initial_member
+
+-- 2026-10-23: a_z<=3 area Q for arbitrary future length/depth.
+#print axioms Recaman.BlockSuffixPositivity.wordSupply_admitted
+#print axioms Recaman.BlockSuffixPositivity.actualQState_zero
+#print axioms Recaman.BlockSuffixPositivity.actualQState_deficit
+#print axioms Recaman.BlockSuffixPositivity.actualQState_S
+#print axioms Recaman.BlockSuffixPositivity.actualQState_A
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_Q_state_member
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_of_depth_four
+#print axioms Recaman.BlockSuffixPositivity.exists_minimum_visit
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_nonnegative
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_from_zero
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_no_old_window
+#print axioms Recaman.ThreeNonsuppliedQData.verifiedRange_at
+#print axioms Recaman.ThreeNonsuppliedQData.member_area
+#print axioms Recaman.ThreeNonsuppliedQData.member_stepS
+#print axioms Recaman.ThreeNonsuppliedQData.member_stepA
+#print axioms Recaman.ThreeNonsuppliedQData.rows_verified
+#print axioms Recaman.ThreeNonsuppliedQData.initial_member
+
+-- S-gap/terminal certificate and original integer-base adapters.
+#print axioms Recaman.BlockSuffixPositivity.supplied_after_S_gap_bound
+#print axioms Recaman.BlockSuffixPositivity.tail_S5A3S4A4SA3_no_supply_check
+#print axioms Recaman.BlockSuffixPositivity.no_additions_after_S5A3S4A4SA3
+#print axioms Recaman.BlockSuffixPositivity.nonsupplied_count_shift
+#print axioms Recaman.BlockSuffixPositivity.endableCount_shift
+#print axioms Recaman.BlockSuffixPositivity.subtractionCount_shift
+#print axioms Recaman.BlockSuffixPositivity.three_nonsupplied_area_int
+
+-- 2026-10-24: actual gap compression, finite terminal checks, explicit-root area, odd runs.
+#print axioms Recaman.FourNonsuppliedData.gap_clamp
+#print axioms Recaman.FourNonsuppliedData.gap_add
+#print axioms Recaman.BlockSuffixPositivity.four_localSupply_trim
+#print axioms Recaman.BlockSuffixPositivity.actualFourState_macro
+#print axioms Recaman.BlockSuffixPositivity.no_additions_of_terminalSupplyCheck
+#print axioms Recaman.SixteenRootAreaData.rows_verified
+#print axioms Recaman.SixteenRootAreaData.initial_member
+#print axioms Recaman.BlockSuffixPositivity.sixteen_root_state_member
+#print axioms Recaman.BlockSuffixPositivity.sixteen_root_area_nonnegative
+#print axioms Recaman.BlockSuffixPositivity.sixteen_root_no_old_window
+#print axioms Recaman.BlockSuffixPositivity.sixteen_root_area_int
+#print axioms Recaman.BlockSuffixPositivity.three_runs_window_middle
+#print axioms Recaman.BlockSuffixPositivity.localSupply_odd_middle
+#print axioms Recaman.BlockSuffixPositivity.no_endable_after_manyS_oddA
+#print axioms Recaman.BlockSuffixPositivity.no_additions_after_manyS_oddA
+#print axioms Recaman.BlockSuffixPositivity.old_count_barrier_sharp_family
+
+-- Shared mass3 prefix constraints (no independent choice of the two old extremes).
+#print axioms Recaman.BlockSuffixPositivity.block_mass_three
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_mass_three_area_exclusion
+#print axioms Recaman.BlockSuffixPositivity.no_old_mass_three_area_pair
+
+-- Exact three-run recognition and a six-node zero-free continuation certificate.
+#print axioms Recaman.BlockSuffixPositivity.three_runs_window_iff
+#print axioms Recaman.BlockSuffixPositivity.localSupply_three_runs_iff
+#print axioms Recaman.BlockSuffixPositivity.endable_after_manyS_A_iff
+#print axioms Recaman.BlockSuffixPositivity.zeroFreeMotif_checked
+#print axioms Recaman.BlockSuffixPositivity.zeroFreeMotif_supply_step
+#print axioms Recaman.BlockSuffixPositivity.zeroFreeMotif_additions_bound
+
+-- Unbounded even-run continuation and the exact mass4 suffix compatibility input.
+#print axioms Recaman.BlockSuffixPositivity.localSupply_even_followup
+#print axioms Recaman.BlockSuffixPositivity.no_endable_even_followup
+#print axioms Recaman.BlockSuffixPositivity.no_additions_even_followup
+#print axioms Recaman.BlockSuffixPositivity.one_addition_after_manyS_evenA
+#print axioms Recaman.BlockSuffixPositivity.block_mass_four
+#print axioms Recaman.BlockSuffixPositivity.mass_four_suffix_pairs_checked
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_mass_four_area_pair
+#print axioms Recaman.BlockSuffixPositivity.mass_four_extremes_coexist
+
+-- One fixed representative preserves the joint mass3/4 suffix information.
+#print axioms Recaman.BlockSuffixPositivity.finite_suffix_representative
+#print axioms Recaman.BlockSuffixPositivity.block_low_mass_suffix_representative
+#print axioms Recaman.BlockSuffixPositivity.block_prefix_low_mass_representative
+#print axioms Recaman.BlockSuffixPositivity.joint_old_roots_checked
+
+-- Exact low-mass old-window and actual-A equivalence, same representative for all clocks.
+#print axioms Recaman.BlockSuffixPositivity.low_mass_old_window_iff
+#print axioms Recaman.BlockSuffixPositivity.low_mass_endable_iff
+
+-- Arbitrary earlier tails behind a sufficiently long negative-mass separator.
+#print axioms Recaman.PrefixMassBarrier.localSupply_erase_prefix
+#print axioms Recaman.PrefixMassBarrier.endable_after_prefix_manyS_A_iff
+#print axioms Recaman.PrefixMassBarrier.no_endable_prefix_even_followup
+#print axioms Recaman.PrefixMassBarrier.no_additions_prefix_even_followup
+#print axioms Recaman.PrefixMassBarrier.one_addition_after_prefix_manyS_evenA
+
+-- Every future context within an explicit remaining A budget.
+#print axioms Recaman.PrefixMassBarrier.mass_drop_le_suffixCeiling
+#print axioms Recaman.PrefixMassBarrier.localSupply_erase_prefix_ceiling
+#print axioms Recaman.PrefixMassBarrier.bounded_future_context_erasure
+#print axioms Recaman.PrefixMassBarrier.contextTrimAux_future
+#print axioms Recaman.PrefixMassBarrier.contextTrim_future
+
+-- Unbounded counterfamily for erasure without a future budget (E405).
+#print axioms Recaman.PrefixMassBarrier.context_buffer_counterfamily
+#print axioms Recaman.PrefixMassBarrier.no_unbounded_future_context_threshold
+#print axioms Recaman.PrefixMassBarrier.unit_barrier_counterexample
+
+-- Separate local height and global old-window count barriers (E406).
+#print axioms Recaman.PrefixMassBarrier.endable_after_separated_run_iff
+#print axioms Recaman.PrefixMassBarrier.no_endable_separated_even_followup
+#print axioms Recaman.PrefixMassBarrier.no_additions_separated_even_followup
+#print axioms Recaman.PrefixMassBarrier.one_addition_after_separated_evenA
+#print axioms Recaman.PrefixMassBarrier.one_addition_after_two_A_runs
+
+-- Sharp S-only supply-gap bound with no A/free/length cutoff.
+#print axioms Recaman.PrefixMassBarrier.supplyGapKey_append_S
+#print axioms Recaman.PrefixMassBarrier.localSupply_gap_key_iff
+#print axioms Recaman.PrefixMassBarrier.positive_zero_gap_key_count
+#print axioms Recaman.PrefixMassBarrier.localSupply_gap_half_bound
+#print axioms Recaman.PrefixMassBarrier.oldSignature_gap_half_bound
+#print axioms Recaman.PrefixMassBarrier.wordSupply_gap_half_bound
+#print axioms Recaman.PrefixMassBarrier.supplied_after_S_gap_half_bound
+#print axioms Recaman.PrefixMassBarrier.sharp_half_gap_family
+
+-- Exact same-state checker equalities; concrete r4 initial certificate remains unprovided.
+#print axioms Recaman.FourEventFast.scan_values
+#print axioms Recaman.FourEventFast.fastStepA_eq
+#print axioms Recaman.FourEventPruned.successors_eq_pruned
+
+-- Arbitrary-prefix A-run/supply clocks with both original-history adapters.
+#print axioms Recaman.RunSupplyKeys.runKey_append_A
+#print axioms Recaman.RunSupplyKeys.localSupply_A_S_iff
+#print axioms Recaman.RunSupplyKeys.runKey_count_lower
+#print axioms Recaman.RunSupplyKeys.localSupply_run_bounds
+#print axioms Recaman.RunSupplyKeys.endable_after_A_S_iff
+#print axioms Recaman.RunSupplyKeys.endable_run_bounds
+#print axioms Recaman.RunSupplyKeys.run_bounds_sharp
+#print axioms Recaman.RunSupplyKeys.endable_run_bounds_int
+
+-- Two-run same-suffix factor bounds, independent of initial S length.
+#print axioms Recaman.TwoRunSupply.localSupply_two_run_iff
+#print axioms Recaman.TwoRunSupply.localSupply_second_run_bound
+#print axioms Recaman.TwoRunSupply.crossing_run_sharp
+#print axioms Recaman.TwoRunSupply.endable_two_run_bound
+#print axioms Recaman.TwoRunSupply.endable_two_run_bound_int
+#print axioms Recaman.TwoRunSupply.first_run_cannot_be_ignored
+
+-- A-only future supply is paid by the actual prefix constant-block partition.
+#print axioms Recaman.RunSupplyBudget.constant_run_root_unique
+#print axioms Recaman.RunSupplyBudget.rayCount_const_append
+#print axioms Recaman.RunSupplyBudget.rayCount_runWord
+#print axioms Recaman.RunSupplyBudget.endable_A_run_count
+#print axioms Recaman.RunSupplyBudget.A_run_free_budget
+#print axioms Recaman.RunSupplyBudget.A_run_free_budget_int
+
+-- Same BlockWord prefix, all-mass old clocks within a fixed A-only run.
+#print axioms Recaman.BlockOldRay.block_prefix_key_bounds
+#print axioms Recaman.BlockOldRay.oldRay_clock_unique
+#print axioms Recaman.BlockOldRay.block_old_profile_mass_unique
+#print axioms Recaman.BlockOldRay.tailOldRay_clock_unique
+#print axioms Recaman.BlockOldRay.ray_supply_append_iff
+#print axioms Recaman.BlockOldRay.block_rayCount_append
+#print axioms Recaman.BlockOldRay.block_A_run_free_budget
+#print axioms Recaman.BlockOldRay.block_A_run_free_budget_int
+#print axioms Recaman.BlockOldRay.old_window_A_run_unique
+
+-- Same-base C1 free-gap for one S/A run, without a global rank hypothesis.
+#print axioms Recaman.BlockOldRay.ray_supply_after_S_iff
+#print axioms Recaman.BlockOldRay.block_rayCount_after_S
+#print axioms Recaman.BlockOldRay.single_A_run_free_budget
+#print axioms Recaman.BlockOldRay.single_A_run_free_gap
+#print axioms Recaman.BlockOldRay.single_A_run_free_gap_int
+
+-- Actual positive-deficit free-gap for two A runs, no run-length cap.
+#print axioms Recaman.BlockOldRay.rayCount_S_A_S
+#print axioms Recaman.BlockOldRay.positive_r3_additions_free_bound
+#print axioms Recaman.BlockOldRay.positive_r3_free_gap
+#print axioms Recaman.BlockOldRay.two_A_run_supply_budget
+#print axioms Recaman.BlockOldRay.two_A_run_free_gap
+#print axioms Recaman.BlockOldRay.two_A_run_free_gap_from_zero
+#print axioms Recaman.BlockOldRay.two_A_run_free_gap_int
+
+-- Concrete local countermodel only: no C1-history claim.
+#print axioms Recaman.BlockOldRay.third_A_ray_four_local_clocks
+
+-- Three-run actual count budget and residual band; original base retained.
+#print axioms Recaman.ThreeRunSupplyBudget.three_run_supply_budget
+#print axioms Recaman.ThreeRunSupplyBudget.three_run_free_gap_residual
+#print axioms Recaman.ThreeRunSupplyBudget.three_run_bounds_from_zero
+#print axioms Recaman.ThreeRunSupplyBudget.three_run_bounds_int
+
+-- Actual source positions supply first-/two-run charge bounds.
+#print axioms Recaman.ThreeRunSupplyBudget.first_two_A_not_supplied
+#print axioms Recaman.ThreeRunSupplyBudget.first_run_additions_free_bound
+#print axioms Recaman.ThreeRunSupplyBudget.two_run_additions_free_bound
+#print axioms Recaman.ThreeRunSupplyBudget.first_run_additions_free_bound_int
+#print axioms Recaman.ThreeRunSupplyBudget.two_run_additions_free_bound_int
+
+-- Budgeted actual separator reset; both old/local starts and all future counts.
+#print axioms Recaman.SeparatorSupplyReset.endable_budget_separator_iff
+#print axioms Recaman.SeparatorSupplyReset.endable_budget_separator_int
+#print axioms Recaman.SeparatorSupplyReset.endable_budget_separator_prefix
+#print axioms Recaman.SeparatorSupplyReset.separator_future_count_eq
+#print axioms Recaman.SeparatorSupplyReset.separator_threshold_control
+
+-- A long final S separator cannot occur in the derived three-run counterexample band.
+#print axioms Recaman.SeparatorSupplyReset.long_separator_run_gap_iff
+#print axioms Recaman.SeparatorSupplyReset.long_separator_A_supply_count
+#print axioms Recaman.SeparatorSupplyReset.long_separator_free_gap
+#print axioms Recaman.SeparatorSupplyReset.three_run_counterexample_last_S_bound
+#print axioms Recaman.SeparatorSupplyReset.long_separator_free_gap_int
+
+-- Reset positive deficit and original-base counts exclude the middle long S run too.
+#print axioms Recaman.SeparatorTailFreeGap.positive_after_manyS
+#print axioms Recaman.SeparatorTailFreeGap.free_count_reset_shift
+#print axioms Recaman.SeparatorTailFreeGap.long_separator_two_run_free_gap
+#print axioms Recaman.SeparatorTailFreeGap.three_run_counterexample_middle_S_bound
+#print axioms Recaman.SeparatorTailFreeGap.three_run_counterexample_internal_S_bounds
+#print axioms Recaman.SeparatorTailFreeGap.long_separator_two_run_free_gap_int
+
+-- Fixed-budget initial S normalization preserves actual counters and whole future.
+#print axioms Recaman.InitialSeparatorTrim.initial_S_local_trim
+#print axioms Recaman.InitialSeparatorTrim.initial_S_endable_trim
+#print axioms Recaman.InitialSeparatorTrim.initial_S_prefix_endable_trim
+#print axioms Recaman.InitialSeparatorTrim.initial_S_full_free_count
+#print axioms Recaman.InitialSeparatorTrim.initial_S_counterexample_transfer
+#print axioms Recaman.InitialSeparatorTrim.initial_S_endable_trim_int
+#print axioms Recaman.InitialSeparatorTrim.initial_S_full_free_count_int
+
+-- Future A budget derives an exact old context radius without a depth hypothesis.
+#print axioms Recaman.OldContextBudget.old_window_budget_radius
+#print axioms Recaman.OldContextBudget.endable_budget_old_prefix_trim
+#print axioms Recaman.OldContextBudget.endable_budget_prefix_trim
+#print axioms Recaman.OldContextBudget.old_prefix_budget_counts
+#print axioms Recaman.OldContextBudget.budget_context_rebase
+#print axioms Recaman.OldContextBudget.budget_context_positive_transfer
+#print axioms Recaman.OldContextBudget.endable_budget_old_prefix_trim_int
+
+-- Actual three-run counterexamples have bounded-context representatives.
+#print axioms Recaman.ThreeRunFiniteContext.three_run_counterexample_context
+
+-- A joint actual old mass/area spectrum preserves all bounded-A future tags and counts.
+#print axioms Recaman.BlockSuffixSpectrum.spectrum_append
+#print axioms Recaman.BlockSuffixSpectrum.old_suffix_mass_bound
+#print axioms Recaman.BlockSuffixSpectrum.localSupply_budget_spectrum_iff
+#print axioms Recaman.BlockSuffixSpectrum.localSupply_same_spectrum
+#print axioms Recaman.BlockSuffixSpectrum.endable_same_spectrum
+#print axioms Recaman.BlockSuffixSpectrum.spectrum_future_counts
+
+-- Same-mass sources in one BlockWord have bounded clock and area spread.
+#print axioms Recaman.BlockSameMassSpan.block_zero_mass_prefix
+#print axioms Recaman.BlockSameMassSpan.block_same_mass_suffixes
+#print axioms Recaman.BlockSameMassSpan.trip_area_spread_boundary
+#print axioms Recaman.BlockSameMassSpan.six_clock_span_boundary
+#print axioms Recaman.BlockSameMassSpan.same_level_old_window_areas
+
+-- Residual three-run target windows cannot start in the second A run.
+#print axioms Recaman.PenultimateRunWindow.ASAS_window_square
+#print axioms Recaman.PenultimateRunWindow.ASAS_no_small_window
+#print axioms Recaman.PenultimateRunWindow.actual_ASAS_no_small_window
+#print axioms Recaman.PenultimateRunWindow.three_run_counterexample_not_second_A
+#print axioms Recaman.PenultimateRunWindow.outside_assumption_controls
+
+-- Every three-run counterexample target source reaches before the second A run.
+#print axioms Recaman.ThreeRunTargetSource.three_run_target_source_before_second_A
+
+-- Same-source reuse across one endpoint S gap has exact offset/divisibility constraints.
+#print axioms Recaman.ASourceReuse.A_source_reuse_equation
+#print axioms Recaman.ASourceReuse.A_source_reuse_order
+#print axioms Recaman.ASourceReuse.actual_A_source_reuse
+#print axioms Recaman.ASourceReuse.odd_gap_no_A_reuse
+#print axioms Recaman.ASourceReuse.S_source_reuse_equation
+#print axioms Recaman.ASourceReuse.S_source_reuse_order
+#print axioms Recaman.ASourceReuse.first_numeric_source_not_reused
+#print axioms Recaman.ASourceReuse.S_source_odd_gap_control
+
+-- E432: actual free count for the stated three-run family, no deficit input.
+#print axioms Recaman.SourceFamilyFreeCount.third_ray_local_clock
+#print axioms Recaman.SourceFamilyFreeCount.second_ray_local_clock
+#print axioms Recaman.SourceFamilyFreeCount.family_later_supply_bounds
+#print axioms Recaman.SourceFamilyFreeCount.family_free_lower
+#print axioms Recaman.SourceFamilyFreeCount.family_free_lower_int
+#print axioms Recaman.SourceFamilyFreeCount.source_family_boundary_controls
+
+-- E433: all first-block lengths, including the exceptional local source.
+#print axioms Recaman.SourceFamilyFirstBlock.first_A_third_ray_key
+#print axioms Recaman.SourceFamilyFirstBlock.third_ray_local_clocks
+#print axioms Recaman.SourceFamilyFirstBlock.third_ray_local_count_all
+#print axioms Recaman.SourceFamilyFirstBlock.third_ray_local_count_M4
+#print axioms Recaman.SourceFamilyFirstBlock.family_later_supply_bounds_all
+#print axioms Recaman.SourceFamilyFirstBlock.family_free_lower_all
+#print axioms Recaman.SourceFamilyFirstBlock.family_free_lower_all_int
+#print axioms Recaman.SourceFamilyFirstBlock.R5_M5_local_clock0
+
+-- E434: all-length first-A source branch of actual three-run free-gap.
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_equations
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_residual
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_later_A
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_excludes_ray_key
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_third_ray_count
+#print axioms Recaman.ThreeRunSourceShape.first_A_target_free_bounded
+#print axioms Recaman.ThreeRunSourceShape.three_run_first_A_free_gap
+#print axioms Recaman.ThreeRunSourceShape.three_run_first_A_free_gap_from_zero
+#print axioms Recaman.ThreeRunSourceShape.three_run_first_A_free_gap_int
+
+-- E435: actual middle-S target source and remaining start location.
+#print axioms Recaman.MiddleSTargetFreeGap.middle_S_target_later_A
+#print axioms Recaman.MiddleSTargetFreeGap.middle_S_target_free_bounded
+#print axioms Recaman.MiddleSTargetFreeGap.three_run_middle_S_free_gap
+#print axioms Recaman.MiddleSTargetFreeGap.three_run_middle_S_free_gap_from_zero
+#print axioms Recaman.MiddleSTargetFreeGap.three_run_middle_S_free_gap_int
+#print axioms Recaman.MiddleSTargetFreeGap.three_run_counterexample_source_before_first_A
+
+-- E436: same-word local dominance and actual initial-S four-pair reduction.
+#print axioms Recaman.InitialSTargetBounds.localSupply_S_prefix_domination
+#print axioms Recaman.InitialSTargetBounds.rayCount_S_prefix_domination
+#print axioms Recaman.InitialSTargetBounds.initial_S_target_equations
+#print axioms Recaman.InitialSTargetBounds.initial_S_target_even_A
+#print axioms Recaman.InitialSTargetBounds.initial_S_critical_pairs
+#print axioms Recaman.InitialSTargetBounds.initial_S_counterexample_pairs
+#print axioms Recaman.InitialSTargetBounds.S_prefix_domination_boundary
+
+-- E437: source-complete upper clock predicates; stopped certificate is excluded.
+#print axioms Recaman.RunClockClassifier.secondClock_sound
+#print axioms Recaman.RunClockClassifier.thirdClock_sound
+#print axioms Recaman.RunClockClassifier.second_ray_fast_bound
+#print axioms Recaman.RunClockClassifier.third_ray_fast_bound
+#print axioms Recaman.RunClockClassifier.clock_classifier_controls
+
+-- E438: same old-source area/mass and the smaller actual three-run band.
+#print axioms Recaman.OldTargetAreaBudget.old_target_word_budget
+#print axioms Recaman.OldTargetAreaBudget.old_target_strict_bound_sharp
+#print axioms Recaman.OldTargetAreaBudget.actual_old_target_budget
+#print axioms Recaman.OldTargetAreaBudget.old_target_counterexample_band
+#print axioms Recaman.OldTargetAreaBudget.three_run_counterexample_smaller_band
+#print axioms Recaman.OldTargetAreaBudget.three_run_counterexample_smaller_band_int
+
+-- E439: actual first-run charge sharpens the same old source mass.
+#print axioms Recaman.OldTargetFirstRun.first_run_supply_le_one
+#print axioms Recaman.OldTargetFirstRun.two_run_small_first_positive
+#print axioms Recaman.OldTargetFirstRun.three_run_count_small_first
+#print axioms Recaman.OldTargetFirstRun.old_target_mass_six
+#print axioms Recaman.OldTargetFirstRun.old_target_mass_six_int
+
+#print axioms Recaman.OldTargetMassFive.old_target_mass_five
+#print axioms Recaman.OldTargetMassFive.old_target_mass_five_int
+
+#print axioms Recaman.OldSourceKeyOrder.old_key_mass_order
+#print axioms Recaman.OldSourceKeyOrder.old_target_prior_clock
+#print axioms Recaman.OldSourceKeyOrder.actual_old_target_prior_clock
+#print axioms Recaman.OldSourceKeyOrder.old_target_tail_local_iff
+#print axioms Recaman.OldSourceKeyOrder.actual_old_target_tail_base
+#print axioms Recaman.OldSourceKeyOrder.eight_key_equal_mass_control
+
+#print axioms Recaman.OldTargetLocalTail.initial_S_tail_exclusion
+#print axioms Recaman.OldTargetLocalTail.old_target_tail_clock_sound
+#print axioms Recaman.OldTargetLocalTail.tailClock_count_le_three
+#print axioms Recaman.OldTargetLocalTail.full_old_target_tail_clock
+#print axioms Recaman.OldTargetLocalTail.full_old_target_ray_count
+#print axioms Recaman.OldTargetLocalTail.actual_old_target_ray_free
+#print axioms Recaman.OldTargetLocalTail.zero_gap_initial_source_control
+
+#print axioms Recaman.OldTargetClockCollision.first_A_tail_A_budget
+#print axioms Recaman.OldTargetClockCollision.first_A_tail_clock_two
+#print axioms Recaman.OldTargetClockCollision.old_target_two_clock_sound
+#print axioms Recaman.OldTargetClockCollision.full_old_target_ray_count_two
+#print axioms Recaman.OldTargetClockCollision.actual_old_target_ray_free_two
+
+#print axioms Recaman.OldTargetMiddleCharge.middle_S_tail_first_run
+#print axioms Recaman.OldTargetMiddleCharge.full_small_first_tail_clock
+#print axioms Recaman.OldTargetMiddleCharge.old_target_count_charge
+
+#print axioms Recaman.ThreeRunOldTargetGap.three_run_old_target_free_gap
+#print axioms Recaman.ThreeRunOldTargetGap.three_run_old_target_free_gap_from_zero
+#print axioms Recaman.ThreeRunOldTargetGap.three_run_old_target_free_gap_int
+
+#print axioms Recaman.InitialSTargetOldPair.first_third_old_clock_order
+#print axioms Recaman.InitialSTargetOldPair.third_old_excludes_first_old
+#print axioms Recaman.InitialSTargetOldPair.first_ray_le_one_of_third_old
+#print axioms Recaman.InitialSTargetOldPair.actual_first_supply_le_one
+
+#print axioms Recaman.InitialSTargetTail.first_A_tail_budget
+#print axioms Recaman.InitialSTargetTail.local_tail_two_clock
+#print axioms Recaman.InitialSTargetTail.local_tail_small_first
+#print axioms Recaman.InitialSTargetTail.initial_S_ray_bounds
+
+#print axioms Recaman.InitialSTargetTwoShapes.large_first_two_shapes
+#print axioms Recaman.InitialSTargetTwoShapes.two_shape_clock
+#print axioms Recaman.InitialSTargetTwoShapes.two_shape_local_count
+
+#print axioms Recaman.InitialSTargetCountCharge.initial_S_target_count_charge
+
+#print axioms Recaman.ThreeRunInitialSTargetGap.three_run_initial_S_target_free_gap
+#print axioms Recaman.ThreeRunInitialSTargetGap.three_run_initial_S_target_free_gap_from_zero
+#print axioms Recaman.ThreeRunInitialSTargetGap.three_run_initial_S_target_free_gap_int
+
+#print axioms Recaman.ThreeRunFreeGap.three_run_free_gap
+#print axioms Recaman.ThreeRunFreeGap.three_run_free_gap_from_zero
+#print axioms Recaman.ThreeRunFreeGap.three_run_free_gap_int
+
+#print axioms Recaman.LocalSourcePrefixBudget.block_continuation_key_lower
+#print axioms Recaman.LocalSourcePrefixBudget.local_source_prefix_A
+#print axioms Recaman.LocalSourcePrefixBudget.actual_local_source_prefix_A
+
+#print axioms Recaman.FreePrefixCounterexample.free_before_source_counterexample
+
+#print axioms Recaman.PrefixKeySourceBudget.continuation_key_lower
+#print axioms Recaman.PrefixKeySourceBudget.local_source_prefix_A_of_key
+#print axioms Recaman.PrefixKeySourceBudget.actual_local_source_prefix_A_of_key
+#print axioms Recaman.PrefixKeySourceBudget.negative_mass_source_control
+
+#print axioms Recaman.PrefixKeySourceBudget.mass_only_source_cut_counterexample
+
+#print axioms Recaman.FreePrefixCounterexample.three_run_bound_replay
+
+#print axioms Recaman.FourRunSupplyBudget.four_run_supply_budget
+#print axioms Recaman.FourRunSupplyBudget.four_run_free_gap_residual
+#print axioms Recaman.FourRunSupplyBudget.four_run_bounds_int
+
+#print axioms Recaman.FourRunTargetArea.old_target_area_identity
+#print axioms Recaman.FourRunTargetArea.old_target_short_last_A_budget
+#print axioms Recaman.FourRunTargetArea.actual_final_S_source_A_budget
+#print axioms Recaman.FourRunTargetArea.short_last_raw_boundary
+
+#print axioms Recaman.AdjacentRunSupply.preceding_A_key_exclusion
+#print axioms Recaman.FourRunSupplySeventeen.four_run_supply_le_seventeen
+#print axioms Recaman.FourRunSourceBase.final_S_band_int
+
+#print axioms Recaman.SourceCrossSurplus.two_source_cross_identity
+#print axioms Recaman.SourceCrossSurplus.source_prefix_A_strict
+#print axioms Recaman.SourceCrossSurplus.actual_source_prefix_A_strict
+
+#print axioms Recaman.FinalBandSupplyClock.final_band_clock_two
+#print axioms Recaman.FinalBandSupplyClock.last_ray_count_le_three
+#print axioms Recaman.SmallPrefixSupplyThirteen.four_run_small_prefix_supply_le_thirteen
+#print axioms Recaman.SmallPrefixSupplyThirteen.small_prefix_band_int
+#print axioms Recaman.SourceCrossSurplus.cross_of_AS
+
+#print axioms Recaman.LargePrefixTargetArea.large_first_two_A_budget
+#print axioms Recaman.LargePrefixTargetArea.actual_large_first_two_A_budget
+#print axioms Recaman.LargePrefixTargetArea.large_first_two_raw_boundary
+
+#print axioms Recaman.FinalSSourceResidual.final_S_band_int_twelve
+
+#print axioms Recaman.OldTargetMassCircle.target_mass_circle
+#print axioms Recaman.OldTargetMassCircle.large_prefix_mass_circle
+#print axioms Recaman.FinalSTargetWidth.final_S_target_mass_width
+
+#print axioms Recaman.TerminalLocalProfile.terminal_local_clock_iff
+#print axioms Recaman.TerminalOldClock.terminal_old_clock_ge_four
+#print axioms Recaman.TerminalFourthCharge.terminal_four_run_charge
+#print axioms Recaman.TerminalFourthBase.terminal_final_S_gap_int
+
+#print axioms Recaman.MomentBandOldClock.moment_band_old_clock
+#print axioms Recaman.MomentBandOldClock.actual_moment_band_old_clock
+#print axioms Recaman.MomentBandOldClock.upper_band_raw_control
+#print axioms Recaman.MomentBandOldClock.lower_band_raw_control
+#print axioms Recaman.MomentBandOldClock.moment_band_local_half_counterexample
+#print axioms Recaman.MomentBandOldClock.ten_sign_local_half_counterexample
+#print axioms Recaman.TenHeadTargetCases.ten_head_target_cases
+#print axioms Recaman.TenHeadActualCases.ten_head_free_four
+#print axioms Recaman.TenHeadActualCases.actual_ten_head_target_cases
+#print axioms Recaman.TenHeadActualCases.actual_two_cases_no_old
+#print axioms Recaman.TenHeadSourcePruning.initial_S_source_excluded
+#print axioms Recaman.TenHeadSourcePruning.ten_head_local_le_five
+#print axioms Recaman.TenHeadFirstASource.first_A_source_odd_separator
+#print axioms Recaman.TenHeadFirstASource.second_A_odd_source_excluded
+#print axioms Recaman.TenHeadLocalBudget.first_case_local_four
+#print axioms Recaman.TenHeadFreeGap.last_count_eq_local
+#print axioms Recaman.TenHeadFreeGap.ten_head_final_S_free_gap
+#print axioms Recaman.TenHeadFreeBase.ten_head_gap_from_zero
+#print axioms Recaman.TenHeadFreeBase.ten_head_gap_int
+#print axioms Recaman.MomentTargetMass.moment_target_low_mass
+#print axioms Recaman.MomentTargetMass.mass_two_separator_three_control
+#print axioms Recaman.MomentActualTarget.actual_moment_target_low_mass
+#print axioms Recaman.MomentNoOld.actual_moment_no_old
+#print axioms Recaman.MomentNoOld.last_count_eq_local
+#print axioms Recaman.MomentRunResidual.moment_run_counter_residual
+#print axioms Recaman.OneGapInteriorA.interior_A_one_gap_clock
+#print axioms Recaman.OneGapInteriorA.empty_A_boundary_control
+#print axioms Recaman.FourthClockClassifier.fourthClock_sound
+#print axioms Recaman.FourthClockClassifier.fourth_ray_fast_bound
+#print axioms Recaman.FourthClockClassifier.fourth_clock_controls
+#print axioms Recaman.ShortGapSourceClocks.initial_S_small_gap_clock
+#print axioms Recaman.ShortGapSourceClocks.tail_S_small_gap_clock
+#print axioms Recaman.ShortGapLocalBudget.short_gap_local_budget
+#print axioms Recaman.ShortGapLocalBudget.two_gap_tall_initial_local_four
+#print axioms Recaman.MomentMassOneGap.moment_mass_one_large_head_gap
+#print axioms Recaman.MomentMassOneSmall.moment_mass_one_small_head_gap
+#print axioms Recaman.MomentMassOneBase.moment_mass_one_gap
+#print axioms Recaman.MomentMassOneBase.moment_mass_one_gap_int
+#print axioms Recaman.MomentMassTwoParameters.moment_counter_mass_two_parameters
+#print axioms Recaman.MomentFirstASource.first_A_clock_equation
+#print axioms Recaman.MomentMassTwoLocal.mass_two_short_local_budget
+#print axioms Recaman.ThreeGapInteriorA.special_second_A_clock_zero
+#print axioms Recaman.MomentMassTwoThreeGap.mass_two_three_local_budget
+#print axioms Recaman.MomentFinalSGap.moment_final_S_free_gap
+#print axioms Recaman.MomentFinalSBase.moment_final_S_gap_from_zero
+#print axioms Recaman.MomentFinalSBase.moment_final_S_gap_int
+#print axioms Recaman.LowerMomentOldClock.early_old_lower_boundary
+#print axioms Recaman.LowerMomentOldClock.lower_five_circle_excluded
+#print axioms Recaman.LowerMomentOldClock.lower_band_target_no_old
+#print axioms Recaman.LowerMomentOldClock.actual_lower_band_no_old
+#print axioms Recaman.LowerMomentBoundary.lower_boundary_target
+#print axioms Recaman.LowerMomentBoundary.lower_short_gap_local_budget
+#print axioms Recaman.LowerMomentFreeGap.lower_moment_final_S_free_gap
+#print axioms Recaman.LowerMomentBase.lower_moment_gap_int
+#print axioms Recaman.LowerMomentBoundary.lower_five_counter_target_absent
+#print axioms Recaman.LowerMomentBoundary.lower_four_target
+#print axioms Recaman.LowerFourFreeGap.lower_four_final_S_free_gap
+#print axioms Recaman.LowerFourBase.lower_four_gap_int
+
+#print axioms Recaman.OldSeedMassBound.old_seed_high_target_impossible
+#print axioms Recaman.OldSeedActualGap.high_mass_old_seed_free_gap
+#print axioms Recaman.OldSeedBase.high_mass_old_seed_gap_from_zero
+#print axioms Recaman.OldSeedBase.high_mass_old_seed_gap_int
+
+#print axioms Recaman.SmallInversionSources.small_inversion_third_local_two
+#print axioms Recaman.SmallInversionSources.small_inversion_third_local_three
+#print axioms Recaman.SmallInversionBudget.small_inversion_three_run_count_eight
+#print axioms Recaman.SmallInversionBudget.small_inversion_three_run_count_nine
+#print axioms Recaman.OldSeedInversionKey.old_seed_inversion_inequality
+
+#print axioms Recaman.OldSeedInversionKey.old_seed_clock_inversion
+#print axioms Recaman.EarlyOldHeadFree.early_old_head_free_five
+#print axioms Recaman.EarlyOldHeadFree.early_old_mass_five_head_free
+#print axioms Recaman.EarlyOldHeadBase.early_old_mass_five_free_int
+#print axioms Recaman.OldZeroInitialSource.old_zero_initial_source_exclusion
+#print axioms Recaman.OldZeroInitialSource.old_zero_fourth_ray_count_six
+#print axioms Recaman.OldZeroTargetGap.old_zero_short_target_free_gap
+#print axioms Recaman.OldZeroTargetBase.old_zero_target_gap_int
+
+#print axioms Recaman.SmallInversionJoint.small_inversion_joint_count
+#print axioms Recaman.SmallInversionActual.small_inversion_three_run_count_seven
+#print axioms Recaman.EarlyOldSixFree.early_old_mass_five_six_free
+#print axioms Recaman.EarlyOldSixBase.early_old_six_free_int
+#print axioms Recaman.HighTargetCharge.old_seed_target_four_gap
+#print axioms Recaman.HighTargetBase.old_seed_four_gap_int
+#print axioms Recaman.OldMassFiveGap.mass_five_supplier_gap
+#print axioms Recaman.OldMassFiveBase.mass_five_gap_int
+
+#print axioms Recaman.InversionNine.third_local_one
+#print axioms Recaman.InversionNine.second_local_one
+#print axioms Recaman.InversionActualBudget.three_run_min_joint_budget
+#print axioms Recaman.InversionNineActual.inversion_nine_actual_six
+#print axioms Recaman.EarlyOldFourResidual.early_old_mass_four_residual
+#print axioms Recaman.EarlyOldFourBase.early_old_four_residual_int
+
+#print axioms Recaman.OldFourThirteenKey.block_four_key_bounds
+#print axioms Recaman.OldFourThirteenKey.same_old_four_thirteen
+#print axioms Recaman.OldFourThirteenActual.actual_old_four_thirteen
+#print axioms Recaman.OldFourThirteenBase.old_four_thirteen_int
+
+#print axioms Recaman.ThirteenRunFactors.second_double_six
+#print axioms Recaman.ThirteenSixSources.second_non_two_shape
+#print axioms Recaman.ThirteenSixSources.six_shape_third_one
+#print axioms Recaman.ThirteenSixSources.thirteen_joint_four
+#print axioms Recaman.EarlyOldFourFree.early_old_mass_four_free
+#print axioms Recaman.EarlyOldFourFreeBase.early_old_four_free_int
+
+#print axioms Recaman.FirstATargetSquare.first_A_source_zero
+#print axioms Recaman.OldZeroLastFive.old_zero_target_last_five
+#print axioms Recaman.MassThreeOldZeroGap.mass_three_old_zero_gap
+#print axioms Recaman.MassThreeOldZeroBase.mass_three_old_zero_gap_int
+
+#print axioms Recaman.FourSFirstATarget.first_A_source_at_most_one
+#print axioms Recaman.OldOneInitialSource.old_one_initial_source_exclusion
+#print axioms Recaman.OldOneLastSix.old_one_target_last_six
+#print axioms Recaman.MassThreeOldOneGap.mass_three_old_one_gap
+#print axioms Recaman.MassThreeOldOneBase.mass_three_old_one_gap_int
+#print axioms Recaman.FourSAnyOldGap.four_S_any_old_gap
+#print axioms Recaman.FourSAnyOldBase.four_S_any_old_int

@@ -1,0 +1,35 @@
+Recaman/TerminalFourthCharge.lean:49:4: error: No goals to be solved
+Recaman/TerminalFourthCharge.lean:78:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 5
+  0 ≤ b ≤ 3
+  a ≥ 1
+where
+ a := ↑v
+ b := ↑(cN P n 20)
+ c := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n 20)
+Recaman/TerminalFourthCharge.lean:85:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f x
+in the target expression
+  P x
+
+f : Nat → Bool
+n v T : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hseed : seg f n 20 = seed
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n + 20 ≤ x → x < n + 20 + v → f x = false
+hA : ∀ (i : Nat), i < T → f (n + 20 + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ 20 + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hA10 : cN (fun x => f x = true) n 20 = 10
+hF4 : 4 ≤ cN P n 20
+hlast : T ≤ 2 * cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + 20 + v) T + 1
+x : Nat
+hx : n + 20 ≤ x
+hxv : x < n + 20 + v
+he : P x
+hh : f x = false
+⊢ False

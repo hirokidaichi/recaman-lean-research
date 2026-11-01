@@ -1,0 +1,21 @@
+{
+  "tag": "old-context-rebase",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "Recaman/OldContextBudget.lean"
+  ],
+  "started_jst": "2026-10-27T06:52:14.553619+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/OldContextBudget.lean": "58de4a7d98ae9272fe439d1e933a73c4309a6b629cbb7f338e49cd7a5a06995e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4068826660513878,
+  "cpu_seconds": 0.559407,
+  "finished_jst": "2026-10-27T06:52:14.960429+09:00"
+}

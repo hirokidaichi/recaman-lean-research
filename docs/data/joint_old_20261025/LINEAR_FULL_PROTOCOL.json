@@ -1,0 +1,27 @@
+{
+  "card": "H-20261025-07",
+  "frozen_utc": "2026-10-24T21:54:48.827081+00:00",
+  "source_sha256": {
+    "Recaman/FourEventProof.lean": "cf444862e8de0def4a7fa466dc3de442f375978a17359328628a1ed773f368cf",
+    "Recaman/FourEventFast.lean": "c41ba13c7a72f720fea9762ec8275b07f18e36c0c208d6823c7b4ae7d19b5f32",
+    "Recaman/FourEventData.lean": "0986495437b586dbd2e739d541a696e7223bf74dd4ca0da5a37e98e62a570fcc",
+    "docs/data/joint_old_20261025/generate_dag.py": "805343bcf6fd74ba6dca056dca5cf74a6da15a5512fcfb39131b3246c0a94233",
+    "docs/data/joint_old_20261025/run_guard.py": "d814479a1f4aef1e2439ff3ba7c7235f39c74a651a85ed6a16e46125ee469cc2"
+  },
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "d9f8838b11e5ac77308c37cc1621cdef871a23bd76aa5c911a512abda33ab72d",
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.FourEventData"
+  ],
+  "cpu_cap_seconds": 2400,
+  "wall_cap_seconds": 2400,
+  "process_group_rss_cap_kib": 4194304,
+  "absolute_stop_jst": "2026-10-25T07:45:00+09:00",
+  "gate": "same256closednode proof succeeds in31.24wall instead72.52, full assertions and childlists unchanged. Allword scan/macro equality proved.",
+  "old_job": "stopped own processgroup6916 after966.515wall; raw result reason completed is overridden by explicit cancellation record, no full theorem claimed",
+  "acceptance": "all12837proof nodes, initial certificate, actual whole-length classification/Q/old exclusion, then Audit/G5/fullcheck. COMPUTED until all checks.",
+  "stop": "if guard fails no cap increase, retain failure and switch to independent audit; 7:45/8:00 apply",
+  "accounting": "validation CPU and parent elapsed distinct; concurrent mathematical work not double counted"
+}

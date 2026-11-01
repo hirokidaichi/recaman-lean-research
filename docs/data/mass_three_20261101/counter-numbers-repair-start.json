@@ -1,0 +1,18 @@
+{
+  "tag": "counter-numbers-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MassThreeCounterNumbers.lean"
+  ],
+  "started_jst": "2026-11-01T06:08:11.673443+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeCounterNumbers.lean": "8783d81db725d5ff3cadd052da1a758d3e8c7f84b52eafc223477ff3515b20a3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

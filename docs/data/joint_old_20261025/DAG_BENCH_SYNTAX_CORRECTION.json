@@ -1,0 +1,13 @@
+{
+  "card": "H-20261025-04",
+  "frozen_utc": "2026-10-24T21:33:34.235472+00:00",
+  "source_sha256": "64f07bb274ea904737c9514468d68765c97826a67f1445d663cb1e39fe0aba84",
+  "correction": "Complete List membership simplification includes []=False, so rcases equality branches have the stated shape. Concrete states/40transitions/Checked statement unchanged. Synchronous elaboration explicit in source, worker1 retained, same90CPU/90wall/4GiB caps. Earlier v1 source and both failures preserved.",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "docs/data/joint_old_20261025/dag_bench.lean"
+  ]
+}

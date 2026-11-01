@@ -1,0 +1,40 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-31（数学探索終了、保存中）。E-451で三A-runの元p実free-gapを全長で証明。四run全体/任意r rank/C1/Q/H/SL/全射性は未証明。
+
+- **現在**: R-20261031-01、06:03:36実開始。最初15分gateはactual二case/全last old排除という新edgeで通過。実績正本は[当日journal](data/daily_research/2026-10-31.json)、[DAILY](RESEARCH_HANDOFF_2026-10-31_DAILY.md)。open区間/予定120分を先取りしない。
+- **最も強い成果 E-482 PROVED-LEAN**: 任意元Intp/padded BlockWord履歴/zero-fullpositive、全正三A-run head A=S/area=-B/`4S+4<=B<=6S+4`、同じold targetと最終S local bandなら第四ray後の`j+1<=actual full-tail free`。全S/run長/old履歴/未来長を量化。lower4境界ではold<=1を残してlocal<=5/headfree>=6で支払う。一般四run/C1/rank/全射性ではない。07:31全check501jobs/3111宣言PASS、許容三公理のみ。
+- **依存成果**: E-467/E-468/E-469はS10二case/actual供給/local4/5。E-470/E-471は同target低mass/任意S反例残余。E-472/E-473はsource clockと全包含classifier。E-474/E-475は源重複と全S mass1 free-gap。E-476/E-477/E-478はactual mass2九群とlocal3/4/5/元帯の全S。r3 kernel count依存を明示し、未検証table/E384存在方向には依存しない。
+- **意味監査 E-479/E-481 PROVED-LEAN**: same targetとword偶奇でlower5のold排除を証明。ただし新境界B4S+5はR>=5 counter target自体が不可能。形式的な帯拡張を新履歴coverageの進展に数えない。E482 lower4は実在するpositive適用例を含む。
+- **反証 E-480 REFUTED**: lower4までのold-erasure強化は元0zero/fullpositiveのliteral履歴で破れる。clock1 oldとtarget/localが併存しfullfreeは十分、COMPUTEDの補助反例でありC1/標準軌道の反例ではない。
+- **帯外 E-483 PROVED-PAPER（未Lean・人間レビュー未）**: mass3 target/v3/oldmass4-clock0を同prefixで結合し10area対から5対へ。actual count/freeとv4mass5は未供給。18pair/mod4 monolithic layoutは一回修理後512MB STOPPED、sourceはpacketへ隔離し輸入しない。
+- **次の一問**: [H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)のarea無制限・zero-mass head/targetmass3/最終S3/実oldmass4-clock0枝で、元full-tail actual free-gapを供給できるか。最初15分はactual source-conditioned inequality/strict候補削減を要求。E483を仮定したadapterだけは進捗に数えない。
+- **停止保持**: H02の61head表、H12の五形/30cell、H19 freshS30 CPU上限、H21の18pair layoutは資源追加/compiled移動だけで再開しない。H12で上限を継承しなかった通常build結果は不採用/隔離、採用proofは独立したheight pruningを同512MBで再検証。旧H06/133core/r4 E412/E427二回0/0/R19/R7R11/cold512/combined19/literal43/width adapterの停止も保持。
+- **残る範囲**: moment帯外、nonzero-mass head、他target/local源位置、任意run数/任意r rankとC1/Q/H/SL/全射性は未解決。全体連続無変化0（E482新edge）、r4同表枝のSTOPPEDを日付でresetしない。CPU探索と実時計は別計上、人間レビュー未。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-482 [PROVED-LEAN] lower-four-moment-band-actual-free-charge — Recaman/LowerFourFreeGap.lean
+  E-467 [PROVED-LEAN] zero-mass-ten-sign-head-old-target-two-cases — Recaman/TenHeadTargetCases.lean
+  E-468 [PROVED-LEAN] ten-head-target-source-family-local-budget — Recaman/TenHeadSourcePruning.lean
+  E-469 [PROVED-LEAN] ten-head-moment-band-actual-final-S-free-gap — Recaman/TenHeadFreeGap.lean
+  E-470 [PROVED-LEAN] moment-band-target-low-mass-and-separator — Recaman/MomentTargetMass.lean
+  E-471 [PROVED-LEAN] moment-band-actual-counter-run-residual — Recaman/MomentRunResidual.lean
+  E-472 [PROVED-LEAN] single-final-S-interior-A-source-clock-two — Recaman/OneGapInteriorA.lean
+  E-473 [PROVED-LEAN] fourth-A-ray-all-source-arithmetic-classifier — Recaman/FourthClockClassifier.lean
+  E-474 [PROVED-LEAN] short-final-gap-source-overlap-local-budgets — Recaman/ShortGapLocalBudget.lean
+  E-475 [PROVED-LEAN] moment-band-mass-one-target-actual-free-gap — Recaman/MomentMassOneBase.lean
+  E-476 [PROVED-LEAN] moment-band-actual-mass-two-counter-parameters — Recaman/MomentMassTwoParameters.lean
+  E-477 [PROVED-LEAN] mass-two-target-source-clock-overlap — Recaman/MomentFirstASource.lean
+  E-478 [PROVED-LEAN] zero-mass-moment-band-final-S-source-actual-free-gap — Recaman/MomentFinalSGap.lean
+  E-479 [PROVED-LEAN] lower-moment-band-same-target-old-exclusion — Recaman/LowerMomentOldClock.lean
+  E-481 [PROVED-LEAN] lower-five-moment-band-actual-full-free-gap — Recaman/LowerMomentFreeGap.lean
+  E-480 [REFUTED] lower-four-moment-actual-old-erasure — docs/data/ten_head_20261031/lower_boundary_probe.py
+  E-483 [PROVED-PAPER] mass-three-target-old-four-joint-area-pairs — docs/RESEARCH_NOTE_2026-10-31_C1_MOMENT_BAND.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 499 (including Audit)
+  Import contracts: 110; audit declarations: 3111

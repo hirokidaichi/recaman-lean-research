@@ -1,0 +1,88 @@
+Recaman/FourthClockClassifier.lean:60:9: error: Type mismatch: After simplification, term
+  hm
+ has type
+  @Eq Int
+    (mass
+        (List.drop t
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))) +
+      ↑i)
+    (↑0 + 1)
+but is expected to have type
+  @Eq Int
+    (mass
+        (List.drop t
+          (List.replicate h false ++
+            (List.replicate M true ++
+              (List.replicate m false ++
+                (List.replicate L true ++
+                  (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))) +
+      ↑i)
+    1
+Recaman/FourthClockClassifier.lean:60:54: error: Type mismatch: After simplification, term
+  hk
+ has type
+  @Eq Int
+    (runKey
+      (List.drop t
+        (List.replicate h false ++
+          (List.replicate M true ++
+            (List.replicate m false ++
+              (List.replicate L true ++
+                (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))))
+    (-2 * (↑0 + 1) ^ 2)
+but is expected to have type
+  @Eq Int
+    (runKey
+      (List.drop t
+        (List.replicate h false ++
+          (List.replicate M true ++
+            (List.replicate m false ++
+              (List.replicate L true ++
+                (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))))
+    (-2)
+Recaman/FourthClockClassifier.lean:66:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourthClockClassifier.lean:76:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourthClockClassifier.lean:88:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourthClockClassifier.lean:97:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourthClockClassifier.lean:108:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_rep_false, mass_replicate_A] at hm
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/FourthClockClassifier.lean:117:15: warning: This simp argument is unused:
+  P
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.length_replicate, List.drop_replicate, mass_rep_false] at ht hm hk
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

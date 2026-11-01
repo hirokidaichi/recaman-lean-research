@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-10-29T07:13:56.234074+09:00",
+  "tag": "H11-domains",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/old_tail_20261029/domain_controls.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "62d0794b67b35bf93b631bfc2d45f039e02eb8831a94e3ab74373a51f558aad0",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 13848,
+  "process_group": 13848
+}

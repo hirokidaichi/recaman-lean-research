@@ -1,0 +1,7 @@
+# H10 independent semantic audit
+
+E441 accepted after full check437/2978 at07:35:39.696289, not an E431 algebraic wrapper. Both sources are suffixes of one actual BlockWord and share the exact same arbitrary internal v. Ordered suffix splitting plus negative/zero/positive intervening-mass bounds proves key gap9 -> strict mass order; equal-mass gap8 control is retained. Source_key_before_gap is negative -2R². Preliminary opposite sign was rejected before implementation; no false direction survives.
+
+Old supplier mass > old target mass, and i+j<T, so all existing A clocks with i+j>=T have no old source. Actual version preserves f, original0, two actual Win and run signs. The restricted EndN0/EndNn equivalence does not assume an unknown new Prop and is proved by eliminating every actual old start, not by redefining EndN. It applies only within the final min(T,j) A interval, under the actual old target window and j>=2. It does not cut the whole old history, prove arbitrary future rank, or bound all old suppliers by target mass5.
+
+Theorems use arbitrary common internal words; even arbitrary run counts are allowed for this supply edge, but the actual free-gap conclusion for general runs is not derived. Zero gap same-source reuse and gap8/equal-mass boundaries are checked. No discovery CPU; literal controls are verification of fixed proposed cases, not a finite absence search. Human review pending.

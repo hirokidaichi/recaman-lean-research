@@ -1,0 +1,18 @@
+{
+  "tag": "run-clock-soundness-only",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/RunClockClassifier.lean"
+  ],
+  "started_jst": "2026-10-28T07:00:32.175393+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RunClockClassifier.lean": "86a738ae1b25ed26de897c4c8fa505c1e2fde9b3352ac9286a0d63cf562f7f15"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

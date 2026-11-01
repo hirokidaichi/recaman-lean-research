@@ -1,0 +1,32 @@
+Recaman/PrefixMassBarrier.lean:682:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≤ 0
+  a - b - c ≤ 0
+  2*a - b - c - 2*d + e ≥ 1
+where
+ a := ones w
+ b := ↑w.length
+ c := ↑j
+ d := ones (w ++ List.replicate j false)
+ e := ↑(w ++ List.replicate j false).length
+Recaman/PrefixMassBarrier.lean:684:58: error(lean.unknownIdentifier): Unknown constant `Nat.cast_add`
+Recaman/PrefixMassBarrier.lean:716:25: error(lean.unknownIdentifier): Unknown constant `Int.mul_self_nonneg`
+Recaman/PrefixMassBarrier.lean:730:39: error(lean.unknownIdentifier): Unknown constant `Int.mul_self_nonneg`
+Recaman/PrefixMassBarrier.lean:680:17: warning: This simp argument is unused:
+  mass_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [V, mass_rep_false, mass_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/PrefixMassBarrier.lean:680:29: warning: This simp argument is unused:
+  mass_rep_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [V, mass_append, mass_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

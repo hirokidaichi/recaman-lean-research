@@ -1,0 +1,18 @@
+✖ [5/5] Building Recaman.ThreeNonsuppliedQData (4.8s)
+trace: .> LEAN_PATH=/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean /Users/hirokidaichi/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/Recaman/ThreeNonsuppliedQData.lean -o /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ThreeNonsuppliedQData.olean -i /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/lib/lean/Recaman/ThreeNonsuppliedQData.ilean -c /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ThreeNonsuppliedQData.c --setup /Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/.lake/build/ir/Recaman/ThreeNonsuppliedQData.setup.json --json
+error: Recaman/ThreeNonsuppliedQData.lean:1112:4: Tactic `subst` failed: did not find equation for eliminating 'w'
+
+case inr.inr.inr.inr.inr.inr.inr
+w : List Bool
+h7 : w = [false, false, false, false, true, true, true, true, false, true, true, true] ∨ w ∈ []
+⊢ Member rows { root := w, word := w, nonsupplied := 0 }
+warning: Recaman/ThreeNonsuppliedQData.lean:1103:43: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [endpointWords, List.mem_cons] at hw
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Recaman.ThreeNonsuppliedQData

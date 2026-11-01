@@ -1,0 +1,7 @@
+name = "recaman"
+version = "0.1.0"
+defaultTargets = ["Recaman"]
+
+[[lean_lib]]
+name = "Recaman"
+moreLeanArgs = ["-j1", "-M512"]

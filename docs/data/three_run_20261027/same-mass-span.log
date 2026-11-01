@@ -1,0 +1,15 @@
+Recaman/BlockSameMassSpan.lean:73:50: error: unsolved goals
+w w✝ : List Bool
+hw : BlockWord w✝
+ih :
+  ∀ (k : Nat),
+    mass (List.take k w✝) = 0 → (List.take k w✝).length ≤ 6 ∧ -4 ≤ areaW (List.take k w✝) ∧ areaW (List.take k w✝) ≤ 4
+⊢ [false, true, true, true] = aasW ∨ [false, true, true, true] = tripW
+Recaman/BlockSameMassSpan.lean:74:53: error: unsolved goals
+w w✝ : List Bool
+hw : BlockWord w✝
+ih :
+  ∀ (k : Nat),
+    mass (List.take k w✝) = 0 → (List.take k w✝).length ≤ 6 ∧ -4 ≤ areaW (List.take k w✝) ∧ areaW (List.take k w✝) ≤ 4
+⊢ [false, false, true, true, true, true, false, true, true, true] = aasW ∨
+    [false, false, true, true, true, true, false, true, true, true] = tripW

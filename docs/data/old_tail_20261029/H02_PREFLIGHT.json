@@ -1,0 +1,32 @@
+{
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "dirty_diff_sha256": "30fa8f62fe8e004eaeb8ea762702f49a28d6757888fb279881c8ca6a18302e80",
+  "worker_sha256": "43c031eaaecf8b82f0a3153069b93cdd667c597d0605b4cf0011caea214432d7",
+  "argv_discovery": [
+    "python3",
+    "docs/data/old_tail_20261029/run_single.py",
+    "--tag",
+    "H02-discovery",
+    "--cpu",
+    "2",
+    "--wall",
+    "10",
+    "docs/data/old_tail_20261029/old_count_model.py",
+    "discovery"
+  ],
+  "argv_holdout": [
+    "python3",
+    "docs/data/old_tail_20261029/run_single.py",
+    "--tag",
+    "H02-holdout",
+    "--cpu",
+    "2",
+    "--wall",
+    "10",
+    "docs/data/old_tail_20261029/old_count_model.py",
+    "holdout"
+  ],
+  "ranges": "disjoint target mass1..3 vs4..5; all finite bands derived from E438/E440; holdout algorithm same, data domain not inspected before freeze",
+  "guard_validation": "GUARD_VALIDATION.json",
+  "initial_max_total_math_CPU": 4
+}

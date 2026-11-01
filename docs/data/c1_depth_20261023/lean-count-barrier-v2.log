@@ -1,0 +1,261 @@
+Recaman/BlockSuffixPositivity.lean:893:2: error: `grind` failed
+case grind.2.2.1.1.2.1.2.2.2.2.1.2.2
+f : Nat → Bool
+n a t b : Nat
+β : List Bool
+hβ : BlockWord β
+hseg : seg f 0 n = β ++ List.replicate a true
+htn : t < n
+hnb : n < b
+hwin : Win f t (b - t)
+hp : 1 ≤ Fw f n - Fw f t ∧ 1 ≤ Ar f t (n - t)
+hquad : 2 * (Ar f n (b - n) + ↑(b - n) * (Fw f n - Fw f b + 1)) ≤ 2 - (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+harea :
+  ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1) -
+        (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1) -
+      2 * ones (seg f n (b - n)) * (↑(b - n) - ones (seg f n (b - n))) ≤
+    2 * Ar f n (b - n)
+hmass : Fw f b - Fw f n = 2 * ones (seg f n (b - n)) - ↑(b - n)
+hlevel : Fw f b = Fw f t + 1
+hbnds : 0 ≤ ones (seg f n (b - n)) ∧ ones (seg f n (b - n)) ≤ ↑(b - n)
+hlen : 0 < ↑(b - n)
+hs : 0 < ↑(b - n) - ones (seg f n (b - n))
+hneg : ¬↑(b - n) - ones (seg f n (b - n)) ≤ 2 * ones (seg f n (b - n)) - 2
+hbad : 2 * ones (seg f n (b - n)) - (↑(b - n) - ones (seg f n (b - n))) - 2 < 0
+h : ¬Fw f n - Fw f b + 1 + 1 = Fw f n - Fw f b + 1
+h_1 : ¬ones (seg f n (b - n)) + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+h_2 : (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = Fw f n - Fw f b + 1
+h_3 : Fw f b = if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0
+h_4 : ¬ones (seg f n (b - n)) = ↑(b - n) - ones (seg f n (b - n))
+h_5 : n = b - n
+h_6 : ¬ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1
+h_7 : ¬ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1 + 1
+h_8 : ¬(if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = ↑(b - n) - ones (seg f n (b - n)) + 1
+h_9 : ¬Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+h_10 : n - t = b - n
+h_11 : ¬Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n))
+h_12 : ¬Fw f n = ↑(b - n) - ones (seg f n (b - n))
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord β
+    [prop] seg f 0 n = β ++ List.replicate a true
+    [prop] t + 1 ≤ n
+    [prop] n + 1 ≤ b
+    [prop] Win f t (b - t)
+    [prop] ↑(b - t) = if ↑t + -1 * ↑b ≤ 0 then -1 * ↑t + ↑b else 0
+    [prop] -1 * Fw f n + Fw f t + 1 ≤ 0 ∧ -1 * Ar f t (n - t) + 1 ≤ 0
+    [prop] ↑(n - t) = if -1 * ↑n + ↑t ≤ 0 then ↑n + -1 * ↑t else 0
+    [prop] 2 * Ar f n (b - n) + 2 * (↑(b - n) * (Fw f n - Fw f b + 1)) +
+              (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1) +
+            -2 ≤
+          0
+    [prop] ↑(b - n) = if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0
+    [prop] -2 * Ar f n (b - n) + ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1) +
+              -1 * (2 * ones (seg f n (b - n)) * (↑(b - n) - ones (seg f n (b - n)))) +
+            -1 * ((↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)) ≤
+          0
+    [prop] -2 * ones (seg f n (b - n)) + -1 * Fw f n + Fw f b + ↑(b - n) = 0
+    [prop] -1 * Fw f t + Fw f b + -1 = 0
+    [prop] -1 * ones (seg f n (b - n)) ≤ 0 ∧ ones (seg f n (b - n)) + -1 * ↑(b - n) ≤ 0
+    [prop] -1 * ↑(b - n) + 1 ≤ 0
+    [prop] ones (seg f n (b - n)) + -1 * ↑(b - n) + 1 ≤ 0
+    [prop] 3 * ones (seg f n (b - n)) + -1 * ↑(b - n) + -1 ≤ 0
+    [prop] 3 * ones (seg f n (b - n)) + -1 * ↑(b - n) + -1 ≤ 0
+    [prop] ¬Fw f n - Fw f b + 1 + 1 = Fw f n - Fw f b + 1
+    [prop] ¬ones (seg f n (b - n)) + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = Fw f n - Fw f b + 1
+    [prop] Fw f b = if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0
+    [prop] ¬ones (seg f n (b - n)) = ↑(b - n) - ones (seg f n (b - n))
+    [prop] n = b - n
+    [prop] ¬ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1
+    [prop] ¬ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1 + 1
+    [prop] ¬(if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] ¬Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] n - t = b - n
+    [prop] ¬Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n))
+    [prop] ¬Fw f n = ↑(b - n) - ones (seg f n (b - n))
+  [eqc] True propositions
+    [prop] BlockWord β
+    [prop] -1 * Fw f n + Fw f t + 1 ≤ 0 ∧ -1 * Ar f t (n - t) + 1 ≤ 0
+    [prop] -1 * ones (seg f n (b - n)) ≤ 0 ∧ ones (seg f n (b - n)) + -1 * ↑(b - n) ≤ 0
+    [prop] Fw f b = if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0
+    [prop] Fw f b = Fw f n - Fw f b + 1
+    [prop] (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = Fw f n - Fw f b + 1
+    [prop] n = b - n
+    [prop] n - t = b - n
+    [prop] Win f t (b - t)
+    [prop] ones (seg f n (b - n)) + -1 * ↑(b - n) ≤ 0
+    [prop] ↑n + -1 * ↑b ≤ 0
+    [prop] ↑t + -1 * ↑b ≤ 0
+    [prop] ones (seg f n (b - n)) + -1 * ↑(b - n) + 1 ≤ 0
+    [prop] -2 * Ar f n (b - n) + ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1) +
+              -1 * (2 * ones (seg f n (b - n)) * (↑(b - n) - ones (seg f n (b - n)))) +
+            -1 * ((↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)) ≤
+          0
+    [prop] 2 * Ar f n (b - n) + 2 * (↑(b - n) * (Fw f n - Fw f b + 1)) +
+              (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1) +
+            -2 ≤
+          0
+    [prop] -1 * Fw f n + Fw f t + 1 ≤ 0
+    [prop] 3 * ones (seg f n (b - n)) + -1 * ↑(b - n) + -1 ≤ 0
+    [prop] -1 * ↑n + ↑t ≤ 0
+    [prop] -1 * ↑(b - n) + 1 ≤ 0
+    [prop] -1 * Ar f t (n - t) + 1 ≤ 0
+    [prop] -1 * ones (seg f n (b - n)) ≤ 0
+    [prop] n + 1 ≤ b
+    [prop] t + 1 ≤ n
+  [eqc] False propositions
+    [prop] ones (seg f n (b - n)) = ↑(b - n) - ones (seg f n (b - n))
+    [prop] Fw f n = ↑(b - n) - ones (seg f n (b - n))
+    [prop] Fw f b = ones (seg f n (b - n)) + 1
+    [prop] Fw f b = Fw f n - Fw f b + 1 + 1
+    [prop] Fw f b = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = ones (seg f n (b - n)) + 1
+    [prop] (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = Fw f n - Fw f b + 1 + 1
+    [prop] (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1 + 1
+    [prop] ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1
+    [prop] ones (seg f n (b - n)) + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] Fw f n - Fw f b + 1 + 1 = Fw f n - Fw f b + 1
+    [prop] Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+    [prop] Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n))
+    [prop] Fw f n - Fw f b + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+  [eqc] Equivalence classes
+    [eqc] {n, n - t, b - n}
+    [eqc] {Fw f b, Fw f n - Fw f b + 1}
+      [eqc] {↑n,
+          ↑(n - t),
+          ↑(b - n),
+          if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0,
+          if -1 * ↑n + ↑t ≤ 0 then ↑n + -1 * ↑t else 0,
+          ↑n + -1 * ↑t,
+          -1 * ↑n + ↑b}
+    [eqc] {0, -2 * ones (seg f n (b - n)) + -1 * Fw f n + Fw f b + ↑(b - n), -1 * Fw f t + Fw f b + -1}
+      [eqc] {↑t, ↑0}
+    [eqc] {seg f 0 n, β ++ List.replicate a true}
+    [eqc] {Fw f n * Fw f b, Fw f n * ↑(b - n)}
+    [eqc] {Fw f b * ↑(b - n), ↑(b - n) * (Fw f n - Fw f b + 1)}
+    [eqc] {2 * (Fw f b * ↑(b - n)), 2 * (↑(b - n) * (Fw f n - Fw f b + 1))}
+    [eqc] others
+      [eqc] {↑(n - t), ↑(b - n)}
+      [eqc] {↑b, ↑(b - t), if ↑t + -1 * ↑b ≤ 0 then -1 * ↑t + ↑b else 0, -1 * ↑t + ↑b}
+      [eqc] {-1 * ↑n, -1 * ↑(b - n)}
+      [eqc] {Fw f b ^ 2, ↑(b - n) ^ 2}
+  [cases] Case analyses
+    [cases] [2/2]: Fw f n - Fw f b + 1 + 1 = Fw f n - Fw f b + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+          and
+            ↑(b - n) * (Fw f n - Fw f b + 1)
+    [cases] [2/2]: ones (seg f n (b - n)) + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)
+          and
+            ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1)
+    [cases] [1/2]: (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = Fw f n - Fw f b + 1
+      [cases] source: Model-based theory combination at argument #4 of
+            (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+          and
+            ↑(b - n) * (Fw f n - Fw f b + 1)
+    [cases] [1/2]: Fw f b = if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0
+      [cases] source: Model-based theory combination at argument #5 of
+            Fw f n * ↑(b - n)
+          and
+            Fw f n * Fw f b
+    [cases] [2/2]: ones (seg f n (b - n)) = ↑(b - n) - ones (seg f n (b - n))
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)
+          and
+            ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1)
+    [cases] [1/2]: n = b - n
+      [cases] source: Model-based theory combination at argument #2 of
+            seg f n (b - n)
+          and
+            seg f 0 n
+    [cases] [2/2]: ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1)
+          and
+            ↑(b - n) * (Fw f n - Fw f b + 1)
+    [cases] [2/2]: ones (seg f n (b - n)) + 1 = Fw f n - Fw f b + 1 + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            ones (seg f n (b - n)) * (ones (seg f n (b - n)) + 1)
+          and
+            (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+    [cases] [2/2]: (if ↑n + -1 * ↑b ≤ 0 then -1 * ↑n + ↑b else 0) = ↑(b - n) - ones (seg f n (b - n)) + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)
+          and
+            Fw f n * ↑(b - n)
+    [cases] [2/2]: Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n)) + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)
+          and
+            (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+    [cases] [1/2]: n - t = b - n
+      [cases] source: Model-based theory combination at argument #2 of
+            Ar f n (b - n)
+          and
+            Ar f t (n - t)
+    [cases] [2/2]: Fw f n - Fw f b + 1 + 1 = ↑(b - n) - ones (seg f n (b - n))
+      [cases] source: Model-based theory combination at argument #5 of
+            2 * ones (seg f n (b - n)) * (↑(b - n) - ones (seg f n (b - n)))
+          and
+            (Fw f n - Fw f b + 1) * (Fw f n - Fw f b + 1 + 1)
+    [cases] [2/2]: Fw f n = ↑(b - n) - ones (seg f n (b - n))
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑(b - n) - ones (seg f n (b - n))) * (↑(b - n) - ones (seg f n (b - n)) + 1)
+          and
+            Fw f n * ↑(b - n)
+  [ematch] E-matching patterns
+    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ (@HAppend.hAppend (List _) (List _) (List _) _ #2 #1) #0]
+    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ #2 (@HAppend.hAppend (List _) (List _) (List _) _ #1 #0)]
+    [thm] List.replicate_succ: [@List.replicate #2 (#0 + 1) #1]
+    [thm] List.replicate_zero: [@List.replicate #1 `[0] #0]
+    [thm] List.append_nil: [@HAppend.hAppend (List #1) (List _) (List _) _ #0 (@List.nil _)]
+    [thm] List.nil_append: [@HAppend.hAppend (List #1) (List _) (List _) _ (@List.nil _) #0]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] n := 2
+    [assign] a := 7
+    [assign] t := 0
+    [assign] b := 4
+    [assign] ones (seg f n (b - n)) := 0
+    [assign] Fw f n := 4
+    [assign] Fw f t := 1
+    [assign] Fw f b := 2
+    [assign] Ar f n (b - n) := 0
+    [assign] Ar f t (n - t) := 1
+    [assign] 「ones (seg f n (b - n)) ^ 2」 := 1
+    [assign] 「Fw f n ^ 2」 := 0
+    [assign] 「Fw f b ^ 2」 := 0
+    [assign] 「↑(b - n) ^ 2」 := 0
+  [ring] Rings
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑(n - t) + -1 * ↑(b - n) = 0
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] ↑t = 0
+        [_] ↑n + -1 * ↑b + ↑(b - n) = 0
+        [_] ↑b + -2 * ↑(b - n) = 0
+        [_] Fw f n + -1 * Fw f b + -1 * ↑(b - n) + 2 * ones (seg f n (b - n)) = 0
+        [_] Fw f t + -1 * Fw f b + 1 = 0
+        [_] Fw f b + -1 * ↑(b - n) = 0
+        [_] 2 * ones (seg f n (b - n)) + -1 = 0
+      [diseqs] Disequalities
+        [_] ¬-1 * ↑(b - n) + 1 = 0
+        [_] ¬-1 * ↑(b - n) + 1 = 0
+        [_] ¬-2 * ↑(b - n) + 3 = 0
+        [_] ¬2 * ↑(b - n) + -3 = 0
+        [_] ¬2 * ↑(b - n) + -3 = 0
+        [_] ¬-2 * ↑(b - n) + 1 = 0
+        [_] ¬2 * ↑(b - n) + -1 = 0
+  [limits] Thresholds reached
+    [limit] maximum number of case-splits has been reached, threshold: `(splits := 9)`
+[grind] Issues
+  [issue] monomial expected, found numeral
+        1
+      internalizing as variable

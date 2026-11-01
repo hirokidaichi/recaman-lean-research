@@ -1,0 +1,29 @@
+{
+  "tag": "mass3_base_v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MassThreeOldZeroBase.lean"
+  ],
+  "started_jst": "2026-11-01T07:35:59.404432+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeOldZeroBase.lean": "11bdf994ae72cebeec625e61a632e56dae3e66bd34f22f2a79c05d42cce00bf5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "0da2a7abb6d9f6a6ecd753a042599e8c0df08812e06b1b19ee43efa6bcd4a0a9",
+  "source_tree_sha256": "7485daad3a97c320e37901fc26365a16c7090139127004f6dbec965b9d8d46c7",
+  "source_tree_manifest": "mass3_base_v1-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0da2a7abb6d9f6a6ecd753a042599e8c0df08812e06b1b19ee43efa6bcd4a0a9",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5604992909356952,
+  "cpu_seconds": 0.432021,
+  "finished_jst": "2026-11-01T07:35:59.964873+09:00"
+}

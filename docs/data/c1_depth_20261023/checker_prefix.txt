@@ -1,0 +1,146 @@
+import Recaman.LeadingRunSupply
+
+set_option maxRecDepth 100000
+
+namespace Recaman.ThreeNonsuppliedData
+
+open Recaman.LeadingRunSupply
+open Recaman.ShortPeriodicSupply (sign)
+
+def wordArea : List Bool → Int
+  | [] => 0
+  | c :: w => sign c * ((w.length : Int)+1) + wordArea w
+
+def localSupply (w : List Bool) : Bool :=
+  (List.range w.length).any fun t => decide (mass (w.drop t) = 1 ∧ wordArea (w.drop t) = 0)
+
+def oldSignature (w : List Bool) : Bool :=
+  let r := 1-mass w
+  let B := -wordArea w-(w.length : Int)*r
+  decide (1 ≤ r ∧ 1 ≤ B ∧ r*(r+1) ≤ 2*B+2 ∧
+    4*B ≤ 5*r*r-11*r+16 ∧ (r=1 → B=1))
+
+structure State where
+  word : List Bool
+  additions : Nat
+  subtractions : Nat
+  nonsupplied : Nat
+  deriving DecidableEq, Inhabited
+
+def endpointWords : List (List Bool) :=
+  [[false], [false,true], [false,true,true], [false,false,true,true,true],
+   [false,true,false,true,true,true], [false,false,true,true,true,true],
+   [false,false,true,true,true,true,false,true],
+   [false,false,false,false,true,true,true,true,false,true,true,true]]
+
+def goodState (s : State) : Bool :=
+  decide (s.additions<8 ∧
+    (((s.subtractions : Int)-(s.additions : Int)+(s.nonsupplied : Int)=1) → s.word ∈ endpointWords))
+
+def trim (w : List Bool) : List Bool := w.drop (w.length-13)
+
+def stepS (s : State) : State :=
+  let ns := min 13 (s.subtractions+1)
+  ⟨if ns=13 then trim (s.word++[false]) else s.word++[false],
+   s.additions, ns, s.nonsupplied⟩
+
+def stepA (s : State) (e : Bool) : Option State :=
+  let an := s.nonsupplied + if e then 0 else 1
+  let admitted := if e then localSupply s.word ||
+      (decide (s.subtractions<13) && oldSignature s.word) else !localSupply s.word
+  if admitted && decide (an≤3) &&
+      decide (s.subtractions=13 ∨ 1 ≤ (s.subtractions : Int)-(s.additions+1 : Nat)+an) then
+    some ⟨if s.subtractions=13 then trim (s.word++[true]) else s.word++[true],
+      s.additions+1, s.subtractions, an⟩
+  else none
+
+def decodeWord : Nat → Nat → List Bool
+  | 0, _ => []
+  | fuel+1, code =>
+      if code≤1 then [] else decodeWord fuel (code/2) ++ [decide (code%2=1)]
+
+def unpack (code : Nat) : State :=
+  ⟨decodeWord 20 (code/512), code%8, (code/8)%16, (code/128)%4⟩
+
+abbrev Row := Nat × Nat × Nat × Nat
+
+structure Table where
+  size : Nat
+  get : Nat → Row
+
+def stateAt (rs : Table) (i : Nat) : State := unpack (rs.get i).1
+
+def checkChild (rs : Table) (s : State) (j : Nat) : Bool :=
+  decide (j<rs.size ∧ stateAt rs j=s)
+
+def checkOption (rs : Table) (s : Option State) (j : Nat) : Bool :=
+  match s with
+  | none => decide (j=0)
+  | some t => decide (0<j) && checkChild rs t (j-1)
+
+def checkOne (rs : Table) (i : Nat) : Bool :=
+  let row := rs.get i
+  let s := stateAt rs i
+  [goodState s, checkChild rs (stepS s) row.2.1,
+    checkOption rs (stepA s false) row.2.2.1,
+    checkOption rs (stepA s true) row.2.2.2].all id
+
+def verified (rs : Table) : Bool := (List.range rs.size).all (checkOne rs)
+
+def verifiedRange (rs : Table) (lo count : Nat) : Bool :=
+  (List.range count).all fun j => checkOne rs (lo+j)
+
+theorem verifiedRange_at (rs : Table) (lo count : Nat) (h : verifiedRange rs lo count=true)
+    (i : Nat) (hlo : lo≤i) (hhi : i<lo+count) : checkOne rs i=true := by
+  have ht := List.all_eq_true.mp h (i-lo) (List.mem_range.mpr (by omega))
+  rwa [Nat.add_sub_cancel' hlo] at ht
+
+def Member (rs : Table) (s : State) : Prop :=
+  ∃ i, i<rs.size ∧ stateAt rs i=s
+
+theorem row_checked (rs : Table) (h : verified rs=true) (i : Nat) (hi : i<rs.size) :
+    checkOne rs i=true := by
+  exact List.all_eq_true.mp h i (List.mem_range.mpr hi)
+
+theorem member_additions_lt_eight (rs : Table) (h : verified rs=true)
+    (s : State) (hs : Member rs s) : s.additions<8 := by
+  obtain ⟨i, hi, rfl⟩ := hs
+  have hr := row_checked rs h i hi
+  simp [checkOne, goodState] at hr
+  exact hr.1.1
+
+theorem member_endpoint_word (rs : Table) (h : verified rs=true)
+    (s : State) (hs : Member rs s)
+    (hd : (s.subtractions : Int)-(s.additions : Int)+(s.nonsupplied : Int)=1) :
+    s.word ∈ endpointWords := by
+  obtain ⟨i, hi, rfl⟩ := hs
+  have hr := row_checked rs h i hi
+  simp [checkOne, goodState] at hr
+  rcases hr.1.2 with hnot | hword
+  · exact False.elim (hnot hd)
+  · exact hword
+
+theorem member_stepS (rs : Table) (h : verified rs=true)
+    (s : State) (hs : Member rs s) : Member rs (stepS s) := by
+  obtain ⟨i, hi, rfl⟩ := hs
+  have hr := row_checked rs h i hi
+  simp only [checkOne, List.all_cons, List.all_nil, id_eq,
+    Bool.and_true, Bool.and_eq_true] at hr
+  have hc := hr.2.1
+  exact ⟨(rs.get i).2.1, (of_decide_eq_true hc).1, (of_decide_eq_true hc).2⟩
+
+theorem member_stepA (rs : Table) (h : verified rs=true)
+    (s t : State) (e : Bool) (hs : Member rs s) (ht : stepA s e=some t) : Member rs t := by
+  obtain ⟨i, hi, rfl⟩ := hs
+  have hr := row_checked rs h i hi
+  simp only [checkOne, List.all_cons, List.all_nil, id_eq,
+    Bool.and_true, Bool.and_eq_true] at hr
+  have hc : checkOption rs (stepA (stateAt rs i) e)
+      (if e then (rs.get i).2.2.2 else (rs.get i).2.2.1)=true := by
+    cases e
+    · exact hr.2.2.1
+    · exact hr.2.2.2
+  rw [ht] at hc
+  simp [checkOption, checkChild] at hc
+  exact ⟨_, hc.2.1, hc.2.2⟩
+

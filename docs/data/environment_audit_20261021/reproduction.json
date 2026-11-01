@@ -1,0 +1,46 @@
+{
+  "source_revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "python_version": "3.14.3",
+  "source_sha256": {
+    "scripts/harness_gate.py": "e07f50f2696a28ffc441ff2d99675bd8d8b4389ea0717a88833259adc6ca1107",
+    "scripts/report_vacuity.py": "9047ec7d616cf490e91c19d048072e3a799e58884b173aa4cac9a1202dd3a6ac",
+    "scripts/dev_tool.py": "fba20f7cea25dae6ad2b6d5d1113f5c95ea2531609bff67a12a01bc4d75bab2f",
+    "scripts/test_harness_gates.sh": "48c5c834e84c84266ec5a454964df832226fbe476f89417776cc7513882157da",
+    "scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536",
+    "Makefile": "fca1ca25466c020c47c50f18da51fe717664aa68dc8e958c00911c6849f4abe6",
+    "experiments/Makefile": "8cd5b9402bd66ac59bfcb288979f664a39bdf3358f4d1518da880c66f1643d66",
+    ".github/workflows/ci.yml": "66f83c2a13e1e1299e1d4147d717338aedc922182533dd6e77a45af3e35e194c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "docs/CURRENT_FRONTIER.md": "f1f02bd5359f726359fcf752ec978788d3b871943288483d79bda7ce3833f2f7",
+    "docs/EVIDENCE_REGISTRY.tsv": "b1de3c05a1fc984b56a2456f5a76dcfd419ad582b3aa924b8ba64a2ab85a0a19"
+  },
+  "Recaman_directory_sha256": "5df6e559539cd1362a04158355b6e8471e2fe61259320a2c8b6f53ab3e9f47e5",
+  "registry_labels": {
+    "COMPUTED": 68,
+    "CONJECTURED": 7,
+    "PROVED-LEAN": 167,
+    "PROVED-PAPER": 11,
+    "REFUTED": 24,
+    "STOPPED": 101
+  },
+  "audit_print_count": 2652,
+  "brief_stdout": "============================================================\n  RECAMÁN RESEARCH FRONTIER BRIEF\n============================================================\n\n[NEXT RESEARCH GATE]\n  * Gate: T6 (E-179) - High-SS Local Donation\n  * Claim: Every high-SS supply window (ssCount>=2) donates an internally removable S.\n  * Evidence: COMPUTED across 53,000+ words (p=8..22, 0 exceptions).\n  * Target: Formalize or refute minimal case ssCount=2 in Lean.\n\n[ESTABLISHED BOUNDARIES (Do Not Re-prove)]\n  * E-176: |U|<=|D| is sharp across all periods (tight words exist for all p).\n  * E-177: Tight words (|U|=|D|) have ONLY low-SS windows (ssCount<=1).\n           Equality side is completely covered by E-128 (PROVED-LEAN).\n  * E-178: Forced matching on tight words matches oldest-S (E-069).\n  * E-181: Positive period mass guarantees finite lag bound d <= p(p+1) (PROVED-LEAN).\n  * E-128: Low-SS joint endpoint capacity |U_clean U U_SS1| <= |D| (PROVED-LEAN).\n\n[STOPPED & REFUTED DIRECTIONS (Do Not Propose)]\n  * E-180 (REFUTED): Linear slack charge slack >= c is false (counterexample at p=18,21).\n  * E-178 (CLOSED): Generic selector search is FINISHED (selector is forced on tight).\n  * E-088 (STOPPED): Lag-by-lag type offset charging is STOPPED.\n  * E-133 (REFUTED): Named 4-charge extension on SS=2 is STOPPED.\n  * E-142 (REFUTED): Unrestricted one-per-run on abstract words is REFUTED.\n\n[REPOSITORY INTEGRITY]\n  * Lean Modules: 402 library modules | Frontier Contracts: 110\n  * Audit State: 1,743 declarations verified within standard axioms.\n  * Verification: Run 'make check' or 'make test'.\n============================================================\n",
+  "isolated_gate_fixtures": {
+    "G5_unfilled_template": {
+      "exit_code": 0,
+      "stdout": "Harness gates G1-G5: 1 PROVED-LEAN rows >= E-344 pass.",
+      "stderr": ""
+    },
+    "G5_signature_only": {
+      "exit_code": 0,
+      "stdout": "Harness gates G1-G5: 1 PROVED-LEAN rows >= E-344 pass.",
+      "stderr": ""
+    },
+    "G2_conjunct_hypothesis_with_substantive_companion": {
+      "exit_code": 0,
+      "stdout": "Harness gates G1-G5: 1 PROVED-LEAN rows >= E-344 pass.",
+      "stderr": ""
+    }
+  },
+  "interpretation": "Fixture exit 0 means the incomplete or disallowed row was accepted."
+}

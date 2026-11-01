@@ -5,13 +5,14 @@ Each gate maps to an evidence-based root cause of the incident in
 docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md:
 
   G1 unresolved symbol      a PROVED-LEAN row must cite theorems that exist
-  G2 hard vacuity           no cited theorem may have conclusion == hypothesis or `x = x`
+  G2 hard vacuity           no conclusion (or conjunct) may be a hypothesis or `x = x`
   G3 substantive content    at least one cited theorem is neither pure-arithmetic, nor a
                             wrapper (only intro/exact/refine/rcases/omega/rfl lines), nor trivial
   G4 name inflation         no cited theorem/module name contains grand|master|universal|
                             closure|synthesis|resolution|apex (rows >= NAME_LINT_FROM_ID)
   G5 statement audit        docs/statement_audits/E-NNN.md exists and quotes every cited
-                            signature verbatim (rows >= STATEMENT_AUDIT_FROM_ID)
+                            signature verbatim, with a dated reviewer and three completed
+                            checks per theorem (rows >= STATEMENT_AUDIT_FROM_ID)
   P  protected claims       labels of the central rows in docs/PROTECTED_CLAIMS.tsv must match
                             the registry; changing them is a human decision
 
@@ -147,6 +148,74 @@ def signature_text(sig):
     return normalize(strip_comments(sig))
 
 
+REVIEW_PLACEHOLDER = re.compile(
+    r'\byes\s*/\s*no\b|\bno\s*/\s*yes\b|\bTODO\b|\bTBD\b|'
+    r'\(name\s*,\s*date\)|未記入', re.I,
+)
+
+
+def review_prose(text):
+    """Exclude code blocks so Lean comments cannot supply reviewer answers."""
+    lines = []
+    fence = None
+    for line in text.splitlines():
+        marker = re.match(r'^\s*(`{3,}|~{3,})', line)
+        if marker:
+            token = marker.group(1)
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence):
+                fence = None
+        elif fence is None:
+            lines.append(line)
+    return '\n'.join(lines)
+
+
+def statement_audit_errors(text, symbols, idx):
+    """Check completion, not the truth of the review or reviewer identity.
+
+    A yes on check 2/3 is allowed: named conditional results and wrappers may
+    be cited, subject to G2/G3 and an honest claim. Missing answers are not.
+    """
+    errors = []
+    headings = list(re.finditer(r'^##[ \t]+(.+?)[ \t]*$', text, re.M))
+    preamble = review_prose(text[:headings[0].start()] if headings else text)
+    reviewers = re.findall(r'^- reviewer:[ \t]*(.*(?:\n[ \t]+[^\n]+)*)', preamble, re.M)
+    if (len(reviewers) != 1 or not reviewers[0].strip()
+            or REVIEW_PLACEHOLDER.search(reviewers[0])
+            or not re.search(r'\b\d{4}-\d{2}-\d{2}\b', reviewers[0])
+            or not re.sub(r'\b\d{4}-\d{2}-\d{2}\b', '', reviewers[0]).strip(' \t,;()')):
+        errors.append('needs a completed reviewer field with name and YYYY-MM-DD date')
+    for symbol in symbols:
+        matches = [i for i, heading in enumerate(headings) if heading.group(1) == symbol]
+        if len(matches) != 1:
+            errors.append(f'needs exactly one theorem section for {symbol}')
+            continue
+        i = matches[0]
+        end = headings[i+1].start() if i+1 < len(headings) else len(text)
+        section = text[headings[i].end():end]
+        quotes = re.findall(r'^```lean[^\S\n]*\n(.*?)^```[^\S\n]*$', section, re.M | re.S)
+        hit = idx.get(symbol)
+        if hit and not any(signature_text(hit[1]) in normalize(quote) for quote in quotes):
+            errors.append(f'does not quote the signature of {symbol} verbatim in its section')
+        answers = re.findall(r'^[ \t]*([123])\.[ \t]*(.+)$', review_prose(section), re.M)
+        for number in ('1', '2', '3'):
+            entries = [body for n, body in answers if n == number]
+            if len(entries) != 1:
+                errors.append(f'{symbol}: needs exactly one completed check {number}')
+                continue
+            body = entries[0].replace('**', '').replace('`', '').strip()
+            answer = re.match(r'(yes|no)(?![A-Za-z/])', body, re.I)
+            if answer is None:
+                answer = re.search(r':[ \t]*(yes|no)(?![A-Za-z/])', body, re.I)
+            if answer is None or REVIEW_PLACEHOLDER.search(body):
+                errors.append(f'{symbol}: check {number} needs an explicit yes/no answer, not a placeholder')
+            elif number == '2' and answer.group(1).lower() == 'yes':
+                if not body[answer.end():].strip(' \t—–-:;,（()）.'):
+                    errors.append(f'{symbol}: check 2 must identify the conditional hypothesis')
+    return errors
+
+
 def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
     idx = theorem_index()
     errors = []
@@ -170,7 +239,7 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
                 continue
             f, sig, proof = hit
             reasons, kind, substantive = classify(sig, proof)
-            if 'conclusion-is-hypothesis' in reasons or 'x=x' in reasons:
+            if {'conclusion-is-hypothesis', 'conjunct-is-hypothesis', 'x=x'}.intersection(reasons):
                 errors.append(f'{rid}: G2 {sym} is vacuous ({",".join(reasons)})')
             if num >= NAME_LINT_FROM_ID:
                 mod = os.path.basename(f)[:-5]
@@ -186,11 +255,9 @@ def check_registry(path='docs/EVIDENCE_REGISTRY.tsv'):
             if not os.path.isfile(audit_path):
                 errors.append(f'{rid}: G5 missing {audit_path} (generate with --audit-template {rid})')
             else:
-                text = normalize(open(audit_path, encoding='utf-8').read())
-                for sym in syms:
-                    hit = idx.get(sym)
-                    if hit and signature_text(hit[1]) not in text:
-                        errors.append(f'{rid}: G5 {audit_path} does not quote the signature of {sym} verbatim')
+                text = open(audit_path, encoding='utf-8').read()
+                for error in statement_audit_errors(text, syms, idx):
+                    errors.append(f'{rid}: G5 {audit_path} {error}')
     for e in errors:
         print('error:', e, file=sys.stderr)
     if errors:
@@ -246,7 +313,7 @@ def audit_template(rid, reg='docs/EVIDENCE_REGISTRY.tsv'):
         print(f'error: {rid} not in {reg}', file=sys.stderr)
         return 1
     out = [f'# Statement audit: {rid}', '',
-           f'- artifact: `{row[4]}`', '- reviewer: (name, date)',
+           f'- artifact: `{row[4]}`', '- reviewer: TODO (name, YYYY-MM-DD)',
            '- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3',
            '  means the row must not be described as resolving anything unconditional.', '']
     for sym in row[5].split(';'):

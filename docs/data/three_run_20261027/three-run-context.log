@@ -1,0 +1,119 @@
+Recaman/ThreeRunFiniteContext.lean:57:53: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 21
+  l ≥ 0
+  0 ≤ k ≤ 20
+  4 ≤ i ≤ 9
+  0 ≤ g ≤ 9
+  g - i ≥ 0
+  e ≥ 0
+  0 ≤ d ≤ 38
+  c ≥ 0
+  0 ≤ b ≤ 38
+  b + c + d + e - l ≤ 0
+  a ≥ 0
+  a + l ≥ 1
+where
+ a := ↑h
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑T
+ g := ↑j
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T))
+ k := ↑(cN (fun x => f x = true) n (h + M + m + L + s + T))
+ l := ↑x.length
+ o := ↑(cN (fun u => f u = true) n (h + (M + m + L + s + T)))
+Recaman/ThreeRunFiniteContext.lean:117:6: error: Type mismatch: After simplification, term
+  hc.right.right.left
+ has type
+  seg (fun i => f (n - 47 + i)) (n - (n - 47))
+      (List.replicate h false ++
+          (List.replicate M true ++
+            (List.replicate m false ++
+              (List.replicate L true ++
+                (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)))))).length =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          (List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)))))
+but is expected to have type
+  seg (fun i => f (n - 47 + i)) (n - (n - 47)) (h + M + m + L + s + T + j) =
+    List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          (List.replicate L true ++ (List.replicate s false ++ (List.replicate T true ++ List.replicate j false)))))
+Recaman/ThreeRunFiniteContext.lean:120:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (fun i => f (n - 47 + i) = true ∧ ¬EndN (fun i => f (n - 47 + i)) 0 i) (n - (n - 47)) (h + M + m + L + s + T)
+in the target expression
+  cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) < j + 1
+
+case neg.refine_4
+f : Nat → Bool
+n h M m L s T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + i) = true
+hB : 0 < h + M + m + L + s + T
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + T ≤ x → x < n + h + M + m + L + s + T + j → f x = false
+he : EndN f 0 (n + h + M + m + L + s + T + j)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) < j + 1
+hr :
+  4 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) ∧
+    cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T) ≤ 9 ∧
+      cN (fun x => f x = true) n (h + M + m + L + s + T) ≤ 20 ∧ j ≤ 9
+hss : m < 39 ∧ s < 39
+hshape :
+  seg f n (h + M + m + L + s + T) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate T true
+x : List Bool :=
+  List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+    List.replicate T true
+hxl : x.length = M + m + L + s + T
+hword : seg f n (h + x.length) = List.replicate h false ++ x
+ho : 0 + ones x = ↑(cN (fun u => f u = true) n (h + x.length))
+hxo : ones x ≤ 20
+hMA : M + L + T ≤ 20
+hpre0 : seg f 0 n = w ++ List.replicate 0 true
+hwj : seg f n (h + (x ++ List.replicate j false).length) = List.replicate h false ++ (x ++ List.replicate j false)
+hh : ¬39 ≤ h
+z : List Bool := List.replicate h false ++ (x ++ List.replicate j false)
+hzl : z.length = h + M + m + L + s + T + j
+hzword : seg f n z.length = z
+hzo : ones z ≤ 20
+h47 : 5 * (20 - 1) / 2 = 47
+hc :
+  BlockWord (seg (fun i => f (n - 47 + i)) 0 (n - (n - 47))) ∧
+    n - (n - 47) ≤ 47 ∧
+      seg (fun i => f (n - 47 + i)) (n - (n - 47)) z.length = z ∧
+        (∀ (k : Nat), k ≤ z.length → (EndN f 0 (n + k) ↔ EndN (fun i => f (n - 47 + i)) 0 (n - (n - 47) + k))) ∧
+          ∀ (k : Nat),
+            k ≤ z.length →
+              cN (EndN f 0) n k = cN (EndN (fun i => f (n - 47 + i)) 0) (n - (n - 47)) k ∧
+                cN (fun i => f i = true ∧ ¬EndN f 0 i) n k =
+                  cN (fun i => f (n - 47 + i) = true ∧ ¬EndN (fun i => f (n - 47 + i)) 0 i) (n - (n - 47)) k
+q : Nat := n - 47
+g : Nat → Bool := fun i => f (q + i)
+hN : n - q ≤ 47
+hcount :
+  cN (EndN f 0) n (h + M + m + L + s + T) =
+      cN (EndN (fun i => f (n - 47 + i)) 0) (n - (n - 47)) (h + M + m + L + s + T) ∧
+    cN (fun i => f i = true ∧ ¬EndN f 0 i) n (h + M + m + L + s + T) =
+      cN (fun i => f (n - 47 + i) = true ∧ ¬EndN (fun i => f (n - 47 + i)) 0 i) (n - (n - 47)) (h + M + m + L + s + T)
+hend : EndN (fun i => f (n - 47 + i)) 0 (n - (n - 47) + z.length)
+hp :
+  ∀ (k : Nat),
+    0 < k →
+      k ≤ (List.replicate h false ++ x).length →
+        cN (EndN (fun i => f (n - 47 + i)) 0) (n - (n - 47)) k + 1 ≤
+          cN (fun i => f (n - 47 + i) = false) (n - (n - 47)) k
+⊢ cN (fun i => g i = true ∧ ¬EndN g 0 i) (n - q) (h + M + m + L + s + T) < j + 1

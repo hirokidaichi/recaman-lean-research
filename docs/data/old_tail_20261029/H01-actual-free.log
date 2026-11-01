@@ -1,0 +1,30 @@
+Recaman/OldTargetLocalTail.lean:218:4: error: Type mismatch: After simplification, term
+  hA (x - (n + B))
+    (Decidable.byContradiction fun a => actual_old_target_ray_free._proof_1_2 n t h M m L s T j w hwlen x hx hxT a)
+ has type
+  f (n + (h + M + m + L + s) + (x - (n + B))) = true
+but is expected to have type
+  f x = true
+Recaman/OldTargetLocalTail.lean:226:4: error: No goals to be solved
+Recaman/OldTargetLocalTail.lean:236:66: error: Application type mismatch: The argument
+  hm
+has type
+  mass (List.drop t w ++ v ++ List.replicate T true ++ List.replicate j false) = 1
+but is expected to have type
+  mass
+      (List.drop t w ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++
+              List.replicate L true ++
+            List.replicate s false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+in the application
+  full_old_target_ray_count w hw t h M m L s T j hs hj hm
+Recaman/OldTargetLocalTail.lean:239:2: error: 'change' tactic failed, pattern
+  rayCount (w ++ v) T ≤ T - j + 3
+is not definitionally equal to target
+  rayCount
+      (w ++ List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false)
+      T ≤
+    T - j + 3

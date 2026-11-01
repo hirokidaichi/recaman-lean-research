@@ -1,0 +1,9 @@
+✔ [14/16] Built Recaman.PrefixMassBarrier (1.4s)
+⚠ [15/16] Built Recaman.FourEventPruned (220ms)
+warning: Recaman/FourEventPruned.lean:69:56: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [budgetStepA, fastStepA, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

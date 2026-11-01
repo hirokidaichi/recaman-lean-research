@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-27T07:15:39.475395+09:00",
+  "repair_number": 1,
+  "scope": "implementation-only __file__ binding in independent replay; no math domain/model/gate change",
+  "prior_completed_worker_cpu_seconds": 0.622562,
+  "original_total_cpu_budget": 15,
+  "remaining_before_retry_seconds": 14.377438,
+  "retry_cpu_cap": 4,
+  "retry_wall_cap": 7,
+  "source_sha256": "ea7a1093f58d16c7267314547579930f0f202914c48d771a832ee4c1e8ddcca9",
+  "argv": [
+    "python3",
+    "docs/data/three_run_20261027/run_single.py",
+    "--tag",
+    "same-mass-replay-repair",
+    "--cpu",
+    "4",
+    "--wall",
+    "7",
+    "docs/data/three_run_20261027/same_mass_replay.py"
+  ],
+  "stop": "no second repair or budget extension; graph is already STOPPED no reduction"
+}

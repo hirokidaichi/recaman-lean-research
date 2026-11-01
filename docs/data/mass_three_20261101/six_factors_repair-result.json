@@ -1,0 +1,31 @@
+{
+  "tag": "six_factors_repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirteenRunFactors.olean",
+    "Recaman/ThirteenRunFactors.lean"
+  ],
+  "started_jst": "2026-11-01T07:25:16.153280+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirteenRunFactors.lean": "47b88ef5535344e3e5fdc48f495edaa55d97e172af4635759de7feb07df5d151"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "65387a5406e10299a97b364bdb7bda0bd9a441c5c9e1e1112f3ee8c98e9e7f6f",
+  "source_tree_sha256": "bbb01b2121eadafda651cf5b61b47dee4718bbeb017e3f3ae5c52f70d56d472a",
+  "source_tree_manifest": "six_factors_repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "65387a5406e10299a97b364bdb7bda0bd9a441c5c9e1e1112f3ee8c98e9e7f6f",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8028237919788808,
+  "cpu_seconds": 0.633095,
+  "finished_jst": "2026-11-01T07:25:16.956041+09:00"
+}

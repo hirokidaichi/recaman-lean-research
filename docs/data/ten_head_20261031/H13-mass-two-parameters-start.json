@@ -1,0 +1,18 @@
+{
+  "tag": "H13-mass-two-parameters",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentMassTwoParameters.lean"
+  ],
+  "started_jst": "2026-10-31T07:06:17.188110+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentMassTwoParameters.lean": "9ada7d7d67af6bdd562c1861217aa0a64c012a227745d39019a0e2a71ac21c50"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

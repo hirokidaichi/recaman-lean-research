@@ -1,0 +1,8 @@
+Recaman/SeparatorSupplyReset.lean:88:73: error: Application type mismatch: The argument
+  hprefix
+has type
+  seg f n (u.length + m + k) = u ++ (List.replicate m false ++ List.take k x)
+but is expected to have type
+  seg f n (u.length + m + (List.take k x).length) = u ++ (List.replicate m false ++ List.take k x)
+in the application
+  endable_budget_separator_iff f n a m B u (List.take k x) hw hpre hprefix

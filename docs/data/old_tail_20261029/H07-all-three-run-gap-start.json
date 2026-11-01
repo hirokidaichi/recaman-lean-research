@@ -1,0 +1,18 @@
+{
+  "tag": "H07-all-three-run-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ThreeRunFreeGap.lean"
+  ],
+  "started_jst": "2026-10-29T06:47:59.026513+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunFreeGap.lean": "c953f94a699b9a9aff8d2e23b7736a22091c72f5e4de524a1ad74595ca87282f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

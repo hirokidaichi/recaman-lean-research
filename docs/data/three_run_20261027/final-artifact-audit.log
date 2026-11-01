@@ -1,0 +1,56 @@
+{
+  "math_worker_cpu_seconds": 6.512746,
+  "math_worker_controller_cpu_seconds": 0.018722000000000006,
+  "guard_worker_cpu_seconds": 1.1241929999999998,
+  "guard_controller_cpu_seconds": 0.008579999999999997,
+  "recorded_validation_cpu_seconds": 159.134088,
+  "recorded_validation_runs": 71,
+  "unmeasured_preexec_child_cpu": true,
+  "unmeasured_reason": "one Popen preexec failed while trying unsupported RLIMIT_AS; no wait4 usage was captured, never infer zero",
+  "missing_result_runs": [
+    {
+      "tag": "spectrum-seven",
+      "start": "spectrum-seven-start.json",
+      "reason": "AS preexec rejected before launch"
+    }
+  ],
+  "contract": "math/guard are cooperative single-Python descendants-forbidden; validation caps are per-process, not hard cumulative tree caps; CPU separate from journal wall work",
+  "cpu_totals_complete_for_entire_session": false
+}
+{
+  "at": "2026-10-27T08:01:01.447624+09:00",
+  "existing_lean_changed": [
+    "Recaman/Audit.lean",
+    "Recaman.lean"
+  ],
+  "new_lean_count": 11,
+  "unrelated_lean_preserved": true,
+  "evidence_labels": {
+    "E-416": "PROVED-LEAN",
+    "E-417": "PROVED-LEAN",
+    "E-418": "PROVED-LEAN",
+    "E-419": "PROVED-LEAN",
+    "E-420": "PROVED-LEAN",
+    "E-421": "PROVED-LEAN",
+    "E-422": "PROVED-LEAN",
+    "E-423": "PROVED-LEAN",
+    "E-424": "COMPUTED",
+    "E-425": "PROVED-LEAN",
+    "E-426": "PROVED-LEAN",
+    "E-427": "COMPUTED",
+    "E-428": "PROVED-LEAN",
+    "E-429": "PROVED-LEAN",
+    "E-430": "REFUTED",
+    "E-431": "PROVED-LEAN",
+    "E-432": "PROVED-PAPER"
+  },
+  "last_full_check": "check-final-references:427jobs/2918 declarations",
+  "link_errors": [],
+  "stage_commit_push": "none",
+  "journal": "stopped; cursor null",
+  "finite_tables_not_kernel": true,
+  "automation_prompt_readback": true,
+  "confirmed_work_seconds": 7093.925,
+  "shortfall_seconds": 106.075,
+  "actual_end": "2026-10-27T08:00:04.411787+09:00"
+}

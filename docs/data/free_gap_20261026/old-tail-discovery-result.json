@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-10-26T07:02:38.541259+09:00",
+  "tag": "old-tail-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/free_gap_20261026/run_single.py",
+    "--worker",
+    "10",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/free_gap_20261026/old_tail_discovery.py"
+  ],
+  "worker_cpu_cap_seconds": 10,
+  "wall_cap_seconds": 15.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "8a560cf4540318c2b9877c53283bbeec71a29a10f80bd50d933fea19f3ecad2c",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 96736,
+  "process_group": 96736,
+  "finished_jst": "2026-10-26T07:02:38.648191+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.10702204192057252,
+  "worker_user_seconds": 0.09480899999999999,
+  "worker_sys_seconds": 0.006409,
+  "worker_cpu_seconds": 0.10121799999999999,
+  "worker_maxrss_native": 22724608,
+  "controller_cpu_seconds": 0.001453999999999997,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

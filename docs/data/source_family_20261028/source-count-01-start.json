@@ -1,0 +1,17 @@
+{
+  "tag": "source-count-01",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "Recaman/ThreeRunSourceShape.lean"
+  ],
+  "started_jst": "2026-10-28T06:23:24.457815+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunSourceShape.lean": "7cc61fd620c6f2e4afa0156a74355b2879dcd1b470b105483c9c2310ba3c2d3e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

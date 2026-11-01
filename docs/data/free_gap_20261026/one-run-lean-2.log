@@ -1,0 +1,188 @@
+Recaman/BlockOldRay.lean:274:26: warning: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockOldRay.lean:331:17: error(lean.unknownIdentifier): Unknown constant `Nat.cast_zero`
+Recaman/BlockOldRay.lean:331:6: error: `simp` made no progress
+Recaman/BlockOldRay.lean:333:33: error(lean.unknownIdentifier): Unknown identifier `cntF_rep_false`
+Recaman/BlockOldRay.lean:334:64: error: `grind` failed
+case grind
+w : List Bool
+h i t : Nat
+hk_1 : runKey (List.replicate h false) = -2 * ↑h ^ 2
+ht : t < w.length
+hm : mass (List.drop t w) + -↑h + ↑i = 1
+hk : runKey (List.drop t w) + -2 * ↑h ^ 2 + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) = -2
+h_1 : ¬runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) + -2 * ↑h ^ 2 + 2 = 0
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] runKey (List.replicate h false) + 2 * ↑h ^ 2 = 0
+    [prop] t + 1 ≤ w.length
+    [prop] mass (List.drop t w) + -1 * ↑h + ↑i + -1 = 0
+    [prop] runKey (List.drop t w) + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) + -2 * ↑h ^ 2 + 2 = 0
+    [prop] ¬runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) + -2 * ↑h ^ 2 + 2 = 0
+  [eqc] True propositions
+    [prop] t + 1 ≤ w.length
+  [eqc] False propositions
+    [prop] runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) + -2 * ↑h ^ 2 + 2 = 0
+  [eqc] Equivalence classes
+    [eqc] {0,
+        runKey (List.replicate h false) + 2 * ↑h ^ 2,
+        mass (List.drop t w) + -1 * ↑h + ↑i + -1,
+        runKey (List.drop t w) + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) + -2 * ↑h ^ 2 + 2,
+        2 * ↑h ^ 2 + runKey (List.replicate h false)}
+      [eqc] {↑0}
+  [ematch] E-matching patterns
+    [thm] List.replicate_succ: [@List.replicate #2 (#0 + 1) #1]
+    [thm] List.replicate_zero: [@List.replicate #1 `[0] #0]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] List.eq_nil_of_length_eq_zero: [@List.length #2 #1]
+    [thm] List.length_replicate: [@List.length #2 (@List.replicate _ #1 #0)]
+    [thm] List.length_drop: [@List.length #2 (@List.drop _ #1 #0)]
+    [thm] List.drop_replicate: [@List.drop #3 #1 (@List.replicate _ #0 #2)]
+    [thm] List.drop_length: [@List.drop #1 (@List.length _ #0) #0]
+    [thm] List.drop_zero: [@List.drop #1 `[0] #0]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] h := 0
+    [assign] i := 0
+    [assign] t := 0
+    [assign] cntF (List.replicate h false) := 0
+    [assign] mass (List.drop t w) := 1
+    [assign] runKey (List.drop t w) := -2
+    [assign] runKey (List.replicate h false) := 0
+    [assign] w.length := 1
+    [assign] 「↑h ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 4 * (↑i ^ 2 * ↑(cntF (List.replicate h false))) +
+                                    -1 * (runKey (List.replicate h false) * mass (List.drop t w)) +
+                                  -2 * (runKey (List.replicate h false) * ↑i) +
+                                -1 * (mass (List.drop t w) * runKey (List.drop t w)) +
+                              -2 * (↑i * runKey (List.drop t w)) +
+                            2 * (runKey (List.replicate h false) * ↑(cntF (List.replicate h false))) +
+                          -8 * (↑i * ↑(cntF (List.replicate h false))) +
+                        2 * runKey (List.replicate h false) +
+                      -2 * mass (List.drop t w) +
+                    -4 * ↑i +
+                  2 * runKey (List.drop t w) +
+                4 * ↑(cntF (List.replicate h false)) +
+              4 =
+            0
+      [_] 2 * mass (List.drop t w) ^ 2 + 4 * (mass (List.drop t w) * ↑i) + 2 * ↑i ^ 2 +
+                    runKey (List.replicate h false) +
+                  -4 * mass (List.drop t w) +
+                -4 * ↑i +
+              2 =
+            0
+      [_] 4 * (mass (List.drop t w) * ↑(cntF (List.replicate h false))) + runKey (List.replicate h false) +
+                runKey (List.drop t w) +
+              2 =
+            0
+      [_] ↑h + -1 * mass (List.drop t w) + -1 * ↑i + 1 = 0
+    [diseqs] Disequalities
+      [_] ¬-4 * (mass (List.drop t w) * ↑i) + -4 * ↑i ^ 2 + -1 * runKey (List.replicate h false) +
+                      4 * mass (List.drop t w) +
+                    8 * ↑i +
+                  runKey (List.drop t w) +
+                -2 =
+              0
+Recaman/BlockOldRay.lean:334:64: error: `grind` failed
+case grind
+w : List Bool
+h i t : Nat
+hk_1 : runKey (List.replicate h false) = -2 * ↑h ^ 2
+ht : t < w.length
+hm : mass (List.drop t w) + ↑i = ↑h + 1
+hk : runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) - 2 * ↑h ^ 2 = -2
+h_1 : ¬runKey (List.drop t w) + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) + -2 * ↑h ^ 2 + 2 = 0
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] runKey (List.replicate h false) + 2 * ↑h ^ 2 = 0
+    [prop] t + 1 ≤ w.length
+    [prop] mass (List.drop t w) + -1 * ↑h + ↑i + -1 = 0
+    [prop] runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) + -2 * ↑h ^ 2 + 2 = 0
+    [prop] ¬runKey (List.drop t w) + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) + -2 * ↑h ^ 2 + 2 = 0
+  [eqc] True propositions
+    [prop] t + 1 ≤ w.length
+  [eqc] False propositions
+    [prop] runKey (List.drop t w) + 4 * mass (List.drop t w) * ↑(cntF (List.replicate h false)) + -2 * ↑h ^ 2 + 2 = 0
+  [eqc] Equivalence classes
+    [eqc] {0,
+        runKey (List.replicate h false) + 2 * ↑h ^ 2,
+        mass (List.drop t w) + -1 * ↑h + ↑i + -1,
+        runKey (List.drop t w) + 4 * ↑h * mass (List.drop t w) + -2 * ↑h ^ 2 + 2,
+        2 * ↑h ^ 2 + runKey (List.replicate h false)}
+      [eqc] {↑0}
+  [ematch] E-matching patterns
+    [thm] List.replicate_succ: [@List.replicate #2 (#0 + 1) #1]
+    [thm] List.replicate_zero: [@List.replicate #1 `[0] #0]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] List.eq_nil_of_length_eq_zero: [@List.length #2 #1]
+    [thm] List.length_replicate: [@List.length #2 (@List.replicate _ #1 #0)]
+    [thm] List.length_drop: [@List.length #2 (@List.drop _ #1 #0)]
+    [thm] List.drop_replicate: [@List.drop #3 #1 (@List.replicate _ #0 #2)]
+    [thm] List.drop_length: [@List.drop #1 (@List.length _ #0) #0]
+    [thm] List.drop_zero: [@List.drop #1 `[0] #0]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] h := 0
+    [assign] i := 0
+    [assign] t := 0
+    [assign] cntF (List.replicate h false) := 0
+    [assign] mass (List.drop t w) := 1
+    [assign] runKey (List.drop t w) := -2
+    [assign] runKey (List.replicate h false) := 0
+    [assign] w.length := 1
+    [assign] 「↑h ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 8 * (runKey (List.replicate h false) * ↑i ^ 2) + runKey (List.replicate h false) ^ 2 +
+                        -16 * (runKey (List.replicate h false) * ↑i) +
+                      -2 * (runKey (List.replicate h false) * runKey (List.drop t w)) +
+                    runKey (List.drop t w) ^ 2 +
+                  4 * runKey (List.replicate h false) +
+                4 * runKey (List.drop t w) +
+              4 =
+            0
+      [_] runKey (List.replicate h false) * mass (List.drop t w) + -1 * (runKey (List.replicate h false) * ↑i) +
+                          -1 * (mass (List.drop t w) * runKey (List.drop t w)) +
+                        -1 * (↑i * runKey (List.drop t w)) +
+                      runKey (List.replicate h false) +
+                    -2 * mass (List.drop t w) +
+                  -2 * ↑i +
+                runKey (List.drop t w) +
+              2 =
+            0
+      [_] 2 * mass (List.drop t w) ^ 2 + 4 * (mass (List.drop t w) * ↑i) + 2 * ↑i ^ 2 +
+                    runKey (List.replicate h false) +
+                  -4 * mass (List.drop t w) +
+                -4 * ↑i +
+              2 =
+            0
+      [_] 4 * (mass (List.drop t w) * ↑i) + 4 * ↑i ^ 2 + runKey (List.replicate h false) + -4 * mass (List.drop t w) +
+                  -8 * ↑i +
+                -1 * runKey (List.drop t w) +
+              2 =
+            0
+      [_] ↑h + -1 * mass (List.drop t w) + -1 * ↑i + 1 = 0
+    [diseqs] Disequalities
+      [_] ¬4 * (mass (List.drop t w) * ↑(cntF (List.replicate h false))) + runKey (List.replicate h false) +
+                  runKey (List.drop t w) +
+                2 =
+              0
+Recaman/BlockOldRay.lean:397:76: error: Application type mismatch: The argument
+  hS
+has type
+  ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+but is expected to have type
+  ∀ (i : Nat), 0 + n ≤ i → i < 0 + n + h → f i = false
+in the application
+  no_window_after_S_run f 0 n 0 h hw hseg hS
+Recaman/BlockOldRay.lean:402:15: error(lean.unknownIdentifier): Unknown identifier `cN_zero`
+Recaman/BlockOldRay.lean:402:4: error: `simp` made no progress

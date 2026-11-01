@@ -1,0 +1,18 @@
+{
+  "tag": "H11-target-profile",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentTargetProfile.lean"
+  ],
+  "started_jst": "2026-10-31T06:53:19.560288+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentTargetProfile.lean": "807544ccf730e2a9c281db5b7fb82a77497d749c3ac58007ec63421a0ce17f60"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

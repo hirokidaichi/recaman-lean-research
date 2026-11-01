@@ -1,0 +1,72 @@
+level-5/4 survival census after l3blocked
+date: 2026-09-05
+source revision: 904ab5693303530a0576a1e2f76358c93b6305d7 plus the recorded working-tree instrumentation
+source sha256: 22837d9267f3398392e9836a5cbff4554bbc4cfe9acc57fc43855d4711d9e5ec
+binary sha256: d2ec0a08f19ec5b965d39c7e918e35e7427a154d1548d3e8e2439da994c12489
+command:
+  c++ -O3 -std=c++20 -Wall -Wextra -Wpedantic -Werror \
+    experiments/arc_death_rule_probe.cpp -o /tmp/recaman_arc_death_rule_probe_l45
+  /tmp/recaman_arc_death_rule_probe_l45 20000000000 OUTDIR
+runtime: 442.546 s
+summary sha256: d24cd08b98592035588d0753d978c72ca1f25362d078af34405353e5bec754de
+comb_ends sha256: 03607e828eb23b1b197b43b7722733e997f13da7a705d31ae1c35d1ae9ccd45c
+
+checkpoint(first 19 landings): PASS
+completed arcs: 40
+verification a(c+3): checked=56580 mismatches=0
+verification blocked step c+4: checked=56580 mismatches=0
+lock mismatches: 0
+completed-arc unresolved records: 0
+
+Definitions:
+  entry m = c + 5 + 2*iObs after l3blocked
+  entry residue r5 = v - 10 - 7*iObs
+  L45 = completed initial level-5/4 ping-pong pairs
+  budgetWrap = outcome=wrap and L45=floor(r5/9)
+  tested claim = terminal (no later late landing in the arc) iff budgetWrap
+
+scope                    all  terminal  budgetWrap  iffBad  wrapIndexBad
+discovery c<1e10        3478         2           1       1             0
+holdout [1e10,2e10)     1366         0           0       0             0
+
+first-exit outcomes:
+scope                    wrap  upperBlocked  lowerFresh  late  other
+discovery                   1           628        2849     0      0
+holdout                     0           223        1143     0      0
+
+Counterexample to terminal iff budgetWrap:
+  arc=22 c=588583 v=4802 T=1 J=41 hPrev=4926 iObs=0
+  terminal=true gapToArcWrap=1350
+  level-five entry residue r5=4792, budget index floor(r5/9)=532
+  initial level-5/4 outcome=lowerFresh after L45=43 pairs at offset c+93
+  Therefore the initial run leaves for level 3 long before budget exhaustion, yet the
+  same arc later wraps without another late landing.
+
+Exact single-counterexample phase audit:
+  source sha256: b56b8860077833bdf85d2233f018fe12e5ce92d0c2f662338df6d9d3e8e83752
+  binary sha256: 5a1897a4c58797e30419962f7fc29011f7eb9507d6c27671c57778f419c5f773
+  command: /tmp/recaman_arc_death_rule_probe_trace 589933 OUTDIR 588588 589933
+  trace sha256: d5754fec275d1c2e274ceb2f7d7f909bb7ffa8f4302481cff2913722ecc1355e
+  The 44 level-5 upper states at clocks 588588+2j (0<=j<=43) have residue
+  4792-9j, with 0 mismatches.  The lowerFresh step at clock 588676 enters
+  level 3 with residue 4396.  From the next level-4 upper state, all 628 upper
+  states at clocks 588677+2j (0<=j<=627) have residue 4393-7j, with 0
+  mismatches.  At j=627 the residue is 4; the following level-3 subtraction
+  reaches residue 0 and the next step wraps.  This is a two-phase 5/4 -> 4/3
+  budget descent, not evidence that every lowerFresh exit has the same survival.
+
+Exploratory non-wrap depth (not a frozen hypothesis):
+  among 4843 non-wrap records, max L45/floor(r5/9) = 0.307037896365
+  at c=1610175617, v=23289, lowerFresh after 794 of 2586 budget pairs
+  count with L45/floor(r5/9) >= 1/2: 0
+  Label: OBSERVED; no replacement constant was fitted or promoted.
+
+Positive boundary case:
+  arc=19 c=99734 v=19 T=1 J=9 hPrev=47 iObs=0
+  level-five entry residue r5=9
+  initial level-5/4 outcome=wrap after L45=1=floor(r5/9), at offset c+8
+
+Conclusion:
+  The proposed iff is REFUTED in discovery.  Every observed direct budget wrap has the
+  exact floor(r5/9) index, as proved conditionally by level45_run_wrap, but first-exit
+  class does not characterize arc terminality.  No constant repair was permitted.

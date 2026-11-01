@@ -1,0 +1,60 @@
+/- Same numeric input SHA256 716ea518a9592ae1ef2dbc8930d6f51fb8e2be1503c5ff0f641c5aff4977ba6d; A layer 9. -/
+import Recaman.FourEventLayer10
+set_option maxRecDepth 100000
+set_option maxHeartbeats 3000000
+set_option Elab.async false
+namespace Recaman.FourEventData
+open Recaman.FourNonsuppliedData Recaman.FourEventProof
+open Recaman.BlockSuffixPositivity Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+def s_12830 : State := ⟨[false,false,false,false,true,true,true,true,false,true,false,false,false,false,true,true,true,true],9,9,4⟩
+theorem c_12830 : Checked s_12830 := by
+  apply checked_of_children s_12830 [s_12835]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12830 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12835
+
+def s_12831 : State := ⟨[false,false,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,true],9,9,4⟩
+theorem c_12831 : Checked s_12831 := by
+  apply checked_of_children s_12831 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12831 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12832 : State := ⟨[false,false,false,false,true,false,false,false,true,true,true,true,false,true,true,true,false,false,true],9,10,4⟩
+theorem c_12832 : Checked s_12832 := by
+  apply checked_of_children s_12832 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12832 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+def s_12833 : State := ⟨[false,false,false,false,false,true,true,true,false,false,false,false,true,true,true,true,false,true,true],9,10,4⟩
+theorem c_12833 : Checked s_12833 := by
+  apply checked_of_children s_12833 [s_12836]
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12833 (by decide) (by decide)]
+    decide
+  · intro t ht
+    simp only [List.mem_cons,List.not_mem_nil,or_false] at ht
+    rcases ht with rfl
+    · exact c_12836
+
+def s_12834 : State := ⟨[false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,true,true,true,true,false,true],9,12,4⟩
+theorem c_12834 : Checked s_12834 := by
+  apply checked_of_children s_12834 []
+  · decide
+  · rw [Recaman.FourEventPruned.successors_eq_pruned s_12834 (by decide) (by decide)]
+    decide
+  · intro t ht
+    exact False.elim (List.not_mem_nil ht)
+
+end Recaman.FourEventData

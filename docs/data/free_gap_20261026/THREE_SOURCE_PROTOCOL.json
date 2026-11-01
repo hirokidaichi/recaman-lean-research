@@ -1,0 +1,22 @@
+{
+  "card": "H-20261026-09",
+  "unit": "local-source-count-input",
+  "frozen_jst": "2026-10-26T07:34:18.839342+09:00",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "sources": {
+    "docs/data/free_gap_20261026/three_source_discovery.py": "d8cda12871d0faff7ec81deb7343ae05063fb1d17131208411c0be81224675d7",
+    "docs/data/free_gap_20261026/three_source_holdout.py": "d88c0b41098a59c2737dc30a5bc54e67b5e8030822ba8339645fcb93ec0132ef",
+    "docs/data/free_gap_20261026/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "worker_cpu_total_seconds": 10,
+  "per_worker_cpu_seconds": 5,
+  "wall_seconds": 8,
+  "controller_cpu_reserve_seconds": 2,
+  "old_budget": 0,
+  "reallocation": "up to3min of remaining local exploration; not extra daily time",
+  "question": "rayCount Sh AM Sm AL Ss <=2 at all A-only future clocks, no actualold/positive assumptions; auxiliary input only",
+  "discovery": "exact quadratic suffix candidates M,L,m,s1..32; initial h can be arbitrarily large",
+  "holdout": "independent literal mass/area profile, disjoint tuples",
+  "accept": "exact >=3-clock word refutes stronger auxiliary bound; no counter is only COMPUTED",
+  "stop": "no counter => no range increase; general proof requires separate invariant, gate07:40"
+}

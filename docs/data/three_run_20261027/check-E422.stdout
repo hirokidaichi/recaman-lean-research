@@ -1,0 +1,67 @@
+{"tag": "check-E422", "argv": ["./scripts/check.sh"], "started_jst": "2026-10-27T06:52:58.430303+09:00", "wall_cap_seconds": 90, "cpu_limit_per_process_seconds": 60, "source_sha256": {"./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"}, "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants", "exit_code": 0, "reason": "completed", "wall_seconds": 8.137521374970675, "cpu_seconds": 7.845928, "finished_jst": "2026-10-27T06:53:06.567809+09:00"}
+Module graph audit: Recaman root reaches 418 of 418 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 422 entries, 200 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 56 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+ℹ [278/421] Replayed Recaman.LagSevenPrefixRigidity
+info: Recaman/LagSevenPrefixRigidity.lean:123:0: 'Recaman.LagSevenPrefixRigidity.lag7_p2_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:124:0: 'Recaman.LagSevenPrefixRigidity.lag7_w3_w4_have_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:125:0: 'Recaman.LagSevenPrefixRigidity.lag7_w1_w2_no_p2_prefix' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:126:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_words_classification' does not depend on any axioms
+info: Recaman/LagSevenPrefixRigidity.lean:127:0: 'Recaman.LagSevenPrefixRigidity.lag7_minimal_lag7_must_be_w1_or_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenPrefixRigidity.lean:128:0: 'Recaman.LagSevenPrefixRigidity.grand_lag7_prefix_rigidity_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [279/421] Replayed Recaman.TwoLagSevenPhaseConflict
+info: Recaman/TwoLagSevenPhaseConflict.lean:170:0: 'Recaman.TwoLagSevenPhaseConflict.w1_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:171:0: 'Recaman.TwoLagSevenPhaseConflict.w2_distinct_differences' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:172:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_intersection_le_one' does not depend on any axioms
+info: Recaman/TwoLagSevenPhaseConflict.lean:173:0: 'Recaman.TwoLagSevenPhaseConflict.same_word_union_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:174:0: 'Recaman.TwoLagSevenPhaseConflict.past_w1_w2_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:175:0: 'Recaman.TwoLagSevenPhaseConflict.past_w2_w1_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:176:0: 'Recaman.TwoLagSevenPhaseConflict.two_lag7_tight_subset_impossible' depends on axioms: [propext, Quot.sound]
+info: Recaman/TwoLagSevenPhaseConflict.lean:177:0: 'Recaman.TwoLagSevenPhaseConflict.grand_two_lag7_phase_conflict_synthesis' depends on axioms: [propext, Quot.sound]
+ℹ [280/421] Replayed Recaman.LagSevenDistanceSeparationRigidity
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:402:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:403:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:404:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:405:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d1_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:406:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:407:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:408:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:409:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d2_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:410:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:411:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:412:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:413:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d3_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:414:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:415:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w1_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:416:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w1' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:417:0: 'Recaman.LagSevenDistanceSeparationRigidity.conflict_d4_w2_w2' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:418:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_distance_conflict' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:419:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_stream_distance_ge_five' depends on axioms: [propext, Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:420:0: 'Recaman.LagSevenDistanceSeparationRigidity.lag7_non_consecutive_distance_ge_ten' depends on axioms: [propext,
+ Quot.sound]
+info: Recaman/LagSevenDistanceSeparationRigidity.lean:421:0: 'Recaman.LagSevenDistanceSeparationRigidity.grand_lag7_distance_separation_rigidity_synthesis' depends on axioms: [propext,
+ Quot.sound]
+⚠ [411/421] Replayed Recaman.BlockOldRay
+warning: Recaman/BlockOldRay.lean:274:26: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [414/421] Replayed Recaman.FourEventPruned
+warning: Recaman/FourEventPruned.lean:69:56: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [budgetStepA, fastStepA, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [419/421] Built Recaman.OldContextBudget (375ms)
+✔ [420/421] Built Recaman (311ms)
+Build completed successfully (421 jobs).
+Axiom audit: 2892 declarations, all within {propext, Classical.choice, Quot.sound}.
+All Lean builds and audits passed.
+

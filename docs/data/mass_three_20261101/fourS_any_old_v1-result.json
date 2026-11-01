@@ -1,0 +1,31 @@
+{
+  "tag": "fourS_any_old_v1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourSAnyOldGap.olean",
+    "Recaman/FourSAnyOldGap.lean"
+  ],
+  "started_jst": "2026-11-01T07:39:53.655500+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourSAnyOldGap.lean": "2a9c4cf17227b79802cd0b4be3d02c1554e38de0afe8c9a8e5666bedd04b14f2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "8d0025365163fe78df6c52a6d10df43509a3a84a72cd13e32a40de82f5c4feb1",
+  "source_tree_sha256": "bedc3a05ff9d538139ba91ead7379cd7268e74abfa453f9584b00b4bd158332d",
+  "source_tree_manifest": "fourS_any_old_v1-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "8d0025365163fe78df6c52a6d10df43509a3a84a72cd13e32a40de82f5c4feb1",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6015884999651462,
+  "cpu_seconds": 0.489818,
+  "finished_jst": "2026-11-01T07:39:54.257032+09:00"
+}

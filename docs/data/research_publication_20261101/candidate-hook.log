@@ -1,0 +1,8 @@
+Running pre-commit checks...
+Module graph audit: Recaman root reaches 539 of 539 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 110 frontier modules match their direct-import boundary.
+Research registry audit: 500 entries, 267 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 123 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+manifest.json is up to date: 540 modules, 167 reports
+error: 139 new Lean modules in one commit; one module per research unit (RECAMAN_ALLOW_BURST=1 to override)

@@ -1,0 +1,117 @@
+import Recaman.RunSupplyKeys
+
+namespace Recaman.TwoRunSupply
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier Recaman.RunSupplyKeys
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private theorem exists_drop_append (u v : List Bool) (P : List Bool → Prop) :
+    (∃ t, t<(u++v).length ∧ P ((u++v).drop t)) ↔
+      (∃ t, t<u.length ∧ P (u.drop t++v)) ∨ (∃ t, t<v.length ∧ P (v.drop t)) := by
+  constructor
+  · rintro ⟨t,ht,hp⟩
+    by_cases h : t<u.length
+    · left
+      refine ⟨t,h,?_⟩
+      simpa only [List.drop_append,show t-u.length=0 by omega,List.drop_zero] using hp
+    · right
+      refine ⟨t-u.length,by simp only [List.length_append] at ht; omega,?_⟩
+      simpa only [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append] using hp
+  · rintro (⟨t,ht,hp⟩|⟨t,ht,hp⟩)
+    · refine ⟨t,by simp only [List.length_append]; omega,?_⟩
+      simpa only [List.drop_append,show t-u.length=0 by omega,List.drop_zero] using hp
+    · refine ⟨u.length+t,by simp only [List.length_append]; omega,?_⟩
+      simpa only [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append,
+        show u.length+t-u.length=t by omega] using hp
+
+private theorem exists_drop_replicate (n : Nat) (b : Bool) (P : List Bool → Prop) :
+    (∃ t, t<(List.replicate n b).length ∧ P ((List.replicate n b).drop t)) ↔
+      ∃ k, 1≤k ∧ k≤n ∧ P (List.replicate k b) := by
+  simp only [List.length_replicate,List.drop_replicate]
+  constructor
+  · rintro ⟨t,ht,hp⟩
+    exact ⟨n-t,by omega,by omega,hp⟩
+  · rintro ⟨k,hk,hkn,hp⟩
+    exact ⟨n-k,by omega,by simpa only [show n-(n-k)=k by omega] using hp⟩
+
+theorem runKey_append_S (w : List Bool) (m : Nat) :
+    runKey (w++List.replicate m false)=runKey w+4*(m : Int)*mass w-2*(m : Int)^2 := by
+  have ha := twice_area_replicate_S m
+  simp only [runKey,areaW_append,mass_append,mass_rep_false,List.length_replicate]
+  grind
+
+theorem runKey_S (h : Nat) : runKey (List.replicate h false)=-2*(h : Int)^2 := by
+  have ha := twice_area_replicate_S h
+  simp only [runKey,mass_rep_false]
+  grind
+
+theorem runKey_A_S (a m : Nat) :
+    runKey (List.replicate a true++List.replicate m false)=
+      4*(m : Int)*(a : Int)-2*(m : Int)^2 := by
+  rw [runKey_append_S,mass_replicate_A]
+  have hz : runKey (List.replicate a true)=0 := by
+    have h := runKey_append_A [] a
+    simpa only [List.nil_append,runKey,List.length_nil,areaW,Recaman.LeadingRunSupply.mass_nil] using h
+  rw [hz]
+  omega
+
+theorem runKey_S_A_S (q M m : Nat) :
+    runKey (List.replicate q false++List.replicate M true++List.replicate m false)=
+      4*(m : Int)*(M : Int)-2*((q : Int)+(m : Int))^2 := by
+  rw [runKey_append_S,runKey_append_A,runKey_S,mass_append,mass_rep_false,mass_replicate_A]
+  grind
+
+private theorem positive_square_eq (a b : Int) (ha : 0<a) (hb : 0<b)
+    (h : a^2=b^2) : a=b := by
+  have hz : (a-b)*(a+b)=0 := by grind
+  rcases Int.mul_eq_zero.mp hz with h0|h0 <;> omega
+
+/-- Every suffix begins in one of the three runs preceding the final A run.
+The same suffix supplies both its mass and its negative-square key. -/
+theorem localSupply_two_run_iff (h M m r j : Nat) :
+    Recaman.ThreeNonsuppliedData.localSupply
+      (List.replicate h false++List.replicate M true++List.replicate m false++
+        List.replicate r true++List.replicate j false)=true ↔
+    (∃ q, 1≤q ∧ q≤h ∧
+      (M : Int)+(r : Int)=(j : Int)+1+(q : Int)+(m : Int) ∧
+      ((j : Int)+1)^2=((q : Int)+(m : Int))^2-2*(m : Int)*(M : Int)) ∨
+    (∃ a, 1≤a ∧ a≤M ∧
+      (r : Int)+(a : Int)=(j : Int)+1+(m : Int) ∧
+      ((j : Int)+1)^2=(m : Int)*((m : Int)-2*(a : Int))) ∨
+    (r=2*(j+1) ∧ j+1≤m) := by
+  rw [localSupply_A_S_iff,exists_drop_append,exists_drop_append,
+    exists_drop_replicate,exists_drop_replicate,exists_drop_replicate]
+  rw [or_assoc]
+  apply or_congr
+  · apply exists_congr
+    intro q
+    simp only [mass_append,mass_rep_false,mass_replicate_A,runKey_S_A_S]
+    constructor <;> rintro ⟨hq,hqh,hmass,hkey⟩
+    · refine ⟨hq,hqh,by omega,?_⟩
+      omega
+    · refine ⟨hq,hqh,by omega,?_⟩
+      omega
+  · apply or_congr
+    · apply exists_congr
+      intro a
+      simp only [mass_append,mass_replicate_A,mass_rep_false,runKey_A_S]
+      constructor <;> rintro ⟨ha,haM,hmass,hkey⟩
+      · refine ⟨ha,haM,by omega,?_⟩
+        have hid : (m : Int)*((m : Int)-2*(a : Int))=(m : Int)^2-2*(m : Int)*(a : Int) := by grind
+        rw [hid]
+        omega
+      · refine ⟨ha,haM,by omega,?_⟩
+        have hid : (m : Int)*((m : Int)-2*(a : Int))=(m : Int)^2-2*(m : Int)*(a : Int) := by grind
+        rw [hid] at hkey
+        omega
+    · simp only [mass_rep_false,runKey_S]
+      constructor
+      · rintro ⟨s,hs,hsm,hmass,hkey⟩
+        have heq : (s : Int)=(j : Int)+1 := positive_square_eq _ _ (by omega) (by omega) (by omega)
+        constructor <;> omega
+      · rintro ⟨hr,hjm⟩
+        refine ⟨j+1,by omega,hjm,by omega,?_⟩
+        simp only [Int.natCast_add,Int.natCast_one]
+
+end Recaman.TwoRunSupply

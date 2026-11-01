@@ -1,0 +1,38 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-22（追加研究E-379〜E-384。中心命題の証拠labelは変更なし）
+
+- 現在の研究単位: C1 Qのうち、[k1,b]の最低水準をq0以後に訪れる場合はE-379で形式化。次は[C1深さの一様入力](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)（a_z≤3 ⇒ 深さ≤4）から再開する。区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
+- 探索用の入力: E-380は深さ4ならk1直前11clockより古いprefixを除いてもEndableが不変であることを形式化。k1以後の全tailを保持する条件付きcontext削減で、深さ4の供給や有限lag化の証明ではない。
+- 面積の新入力: E-381はブロック接尾辞の2area+2≥mass(mass+1)と等号二族を形式化。上界4area≤5mass²−11mass+16も形式化。古いP2窓には2Z≤2−r(r+1)が必要になるが、Zの未知下界やC1全体は証明していない。
+- 計算の部分場合: E-382は深さ4・a_z≤3を仮定した全71contextの有限探索木を、語長/S数cutoffなしで完了し独立実装でも一致。一般Qの証明ではなく、この領域のkernel証明書化と深さ4の供給が残る。
+- 有限tailの監査: E-383はtail長1..32・a_z≤3で、任意長のBlockWord prefixをmass≤17の20111代表へ削減し全探索。深さ≥5は0だが、長さ32以後への一様化は未証明。
+- Qの部分領域: a_z≤3でzの深さ≤4なら、全yが深さ4内のときE-382、外へ下がるときfresh-lowのE-379を使える。z長≤32ではE-383が深さを供給する。COMPUTED依存であり、一般Qには長いzとa_z≥4が残る。
+- 紙上の入力: E-384は全massのBlockWord面積spectrumを二次下限と上限の間の全整数として分類（mass0/1は例外）。存在方向は未Lean。別々の窓が同じprefixを共有できるという十分条件にはしない。
+- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
+- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-379は最低水準の訪問位置を制限したQ、E-380は高さ下界を仮定したprefix削減。C1・Q・TS・SL全体は未証明。
+- 次の判定: [C1の追加研究](RESEARCH_NOTE_2026-10-22_C1_Q.md)でAzの独立な非負下界を反証。次はa_z≤3から深さ≤4を供給する一様な不等式か反例を一問として固定する。R/Y三角評価の有界ソルバはUNKNOWNで停止し、上限延長はしない。C2の再監査やPの供給確認を最初から繰り返さない。
+- 配分と切替: [追加研究の引き継ぎ](RESEARCH_HANDOFF_2026-10-22_MAKEUP.md)に実時刻・CPU・途中判断を保存。今回は08:28:14開始の100分枠で、朝の未稼働時間を実績へ加算しない。同じ障害で2 cycle無進展なら別機構へ配分し、有限lag延長だけで一般結果へ昇格しない。
+- 定期研究: [毎日6:00〜8:00 JST](DAILY_RESEARCH_SCHEDULE.md)。2026-10-23はH-20261023-01から再開。30分は保存/復帰用、8時まで次のunitへ継続する。実時計journalの確認済み区間を実績とし、待機・中断・不足とCPUは別記する。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-379 [PROVED-LEAN] fresh-low-visit-area — Recaman/BlockSuffixPositivity.lean
+  E-370 [PROVED-LEAN] line-capacity-periodic-reduction — Recaman/LineCapacityPeriodic.lean
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-380 [PROVED-LEAN] block-prefix-context-radius — Recaman/BlockSuffixPositivity.lean
+  E-381 [PROVED-LEAN] block-prefix-quadratic-area — Recaman/BlockSuffixPositivity.lean
+  E-382 [COMPUTED] depth-four-three-nonsupplied-area — docs/data/c1_q_makeup_20261022/context-classify.json
+  E-383 [COMPUTED] short-tail-prefix-mass-classification — docs/data/c1_q_makeup_20261022/prefix-mass-32.json
+  E-384 [PROVED-PAPER] block-prefix-area-spectrum — docs/RESEARCH_NOTE_2026-10-22_BLOCK_AREA_SPECTRUM.md
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-369 [COMPUTED] line-capacity-conjecture-H — docs/data/issue73_20261020/hall34.out
+  E-372 [COMPUTED] bounded-lag-line-capacity — docs/data/issue73_20261020/potL27.out
+  E-374 [COMPUTED] bounded-lag-closure-classification — docs/data/issue73_20261020/eqclassL_tightcyc.out
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 402 (including Audit)
+  Import contracts: 110; audit declarations: 2685

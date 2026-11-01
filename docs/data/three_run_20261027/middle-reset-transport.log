@@ -1,0 +1,28 @@
+Recaman/SeparatorTailFreeGap.lean:33:14: error: unsolved goals
+case succ
+P : Nat → Prop
+q s K : Nat
+ih : cN (fun i => P (q + i)) s K = cN P (q + s) K
+⊢ (cN P (q + s) K + if P (q + (s + K)) then 1 else 0) = cN P (q + s) K + if P (q + s + K) then 1 else 0
+Recaman/SeparatorTailFreeGap.lean:104:37: error: Type mismatch: After simplification, term
+  hword
+ has type
+  seg f n (u.length + (m + x.length)) = u ++ (List.replicate m false ++ x)
+but is expected to have type
+  seg f n (u.length + List.length ?m.121) = u ++ ?m.121
+Recaman/SeparatorTailFreeGap.lean:132:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  g - h ≥ 1
+  e ≥ 0
+  b ≥ 1
+  b - c - d ≥ 0
+  2*b - e ≤ 1
+where
+ b := ↑B
+ c := ones u
+ d := ones x
+ e := ↑m
+ g := ↑(cN (fun i => f (q + i) = true ∧ ¬EndN (fun t => f (q + t)) 0 i) 0 (m + x.length))
+ h := ↑(cN (fun i => f i = true ∧ ¬EndN f (n + u.length) i) (n + u.length + m) x.length)

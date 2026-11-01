@@ -1,0 +1,127 @@
+{
+  "mode": "holdout",
+  "implementation": "independent forward Fw and cumulative Ar",
+  "range": [
+    8,
+    12
+  ],
+  "rows": [
+    {
+      "R": 8,
+      "word": "ASSSSSSSSSAAAAAAAAASSASAAAAAAAAASSSSSSSA",
+      "n": 1,
+      "z": 18,
+      "last_ray_start": 23,
+      "i": 2,
+      "T": 9,
+      "j": 7,
+      "target": 39,
+      "prefix_A": 8,
+      "prefix_actual_free": 7,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        12,
+        25,
+        39
+      ],
+      "old_target_window": "ASSSSSSSSSAAAAAAAAASSASAAAAAAAAASSSSSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 9,
+      "word": "ASSSSSSSSSSAAAAAAAAAASSASAAAAAAAAAASSSSSSSSA",
+      "n": 1,
+      "z": 20,
+      "last_ray_start": 25,
+      "i": 2,
+      "T": 10,
+      "j": 8,
+      "target": 43,
+      "prefix_A": 9,
+      "prefix_actual_free": 8,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        13,
+        27,
+        43
+      ],
+      "old_target_window": "ASSSSSSSSSSAAAAAAAAAASSASAAAAAAAAAASSSSSSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 10,
+      "word": "ASSSSSSSSSSSAAAAAAAAAAASSASAAAAAAAAAAASSSSSSSSSA",
+      "n": 1,
+      "z": 22,
+      "last_ray_start": 27,
+      "i": 2,
+      "T": 11,
+      "j": 9,
+      "target": 47,
+      "prefix_A": 10,
+      "prefix_actual_free": 9,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        14,
+        29,
+        47
+      ],
+      "old_target_window": "ASSSSSSSSSSSAAAAAAAAAAASSASAAAAAAAAAAASSSSSSSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 11,
+      "word": "ASSSSSSSSSSSSAAAAAAAAAAAASSASAAAAAAAAAAAASSSSSSSSSSA",
+      "n": 1,
+      "z": 24,
+      "last_ray_start": 29,
+      "i": 2,
+      "T": 12,
+      "j": 10,
+      "target": 51,
+      "prefix_A": 11,
+      "prefix_actual_free": 10,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        15,
+        31,
+        51
+      ],
+      "old_target_window": "ASSSSSSSSSSSSAAAAAAAAAAAASSASAAAAAAAAAAAASSSSSSSSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 12,
+      "word": "ASSSSSSSSSSSSSAAAAAAAAAAAAASSASAAAAAAAAAAAAASSSSSSSSSSSA",
+      "n": 1,
+      "z": 26,
+      "last_ray_start": 31,
+      "i": 2,
+      "T": 13,
+      "j": 11,
+      "target": 55,
+      "prefix_A": 12,
+      "prefix_actual_free": 11,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        16,
+        33,
+        55
+      ],
+      "old_target_window": "ASSSSSSSSSSSSSAAAAAAAAAAAAASSASAAAAAAAAAAAAASSSSSSSSSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    }
+  ],
+  "counterexamples": 5,
+  "label": "COMPUTED finite actual replay; family allR still requires proof"
+}

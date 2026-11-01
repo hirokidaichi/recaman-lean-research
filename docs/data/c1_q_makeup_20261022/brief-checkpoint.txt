@@ -1,0 +1,27 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-10-22（C1 Qのfresh-low部分場合E-379を追加。中心命題の証拠labelは変更なし）
+
+- 現在の研究単位: C1 Qのうち、[k1,b]の最低水準をq0以後に訪れる場合はE-379で形式化。次は最低水準がq0前にしかない場合の面積結合。区間容量予想 H は未証明。H ⇒ 周期容量は H を仮定した帰着（E-370）で、E-070 の証明ではない。
+- 探索用の入力: E-380は深さ4ならk1直前11clockより古いprefixを除いてもEndableが不変であることを形式化。k1以後の全tailを保持する条件付きcontext削減で、深さ4の供給や有限lag化の証明ではない。
+- 残余: H ⟸ EqClassW の帰納段（E-376）。場合 (B) は E-377、場合 (A) ははみ出し補題 SL。SL の d=1 は S1 の C1（面積不等式 Q）・C2（窓位置）、d=2 は TS が未解決。
+- 証拠の境界: E-369 は長さ ≤34 の有限計算、E-372・E-374 は窓長 ≤31 の計算機援用。E-379は最低水準の訪問位置を制限したQ、E-380は高さ下界を仮定したprefix削減。C1・Q・TS・SL全体は未証明。
+- 次の判定: [C1の追加研究](RESEARCH_NOTE_2026-10-22_C1_Q.md)でAzの独立な非負下界を反証。次は最低水準がq0前にしかない場合の面積結合Rと、有限contextでの固定A予算分類。C2の再監査やPの供給確認を最初から繰り返さない。
+- 配分と切替: [追加研究の引き継ぎ](RESEARCH_HANDOFF_2026-10-22_MAKEUP.md)に実時刻・CPU・途中判断を保存。今回は08:28:14開始の100分枠で、朝の未稼働時間を実績へ加算しない。同じ障害で2 cycle無進展なら別機構へ配分し、有限lag延長だけで一般結果へ昇格しない。
+- 定期研究: [毎日6:00〜8:00 JST](DAILY_RESEARCH_SCHEDULE.md)、初回2026-10-22。100分cycleに開始確認・引き継ぎ20分を加え、前日の判定から継続する。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-370 [PROVED-LEAN] line-capacity-periodic-reduction — Recaman/LineCapacityPeriodic.lean
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-376 [PROVED-LEAN] capacity-equality-induction — Recaman/CapacityEqualityInduction.lean
+  E-377 [PROVED-LEAN] single-window-equality — Recaman/SingleWindowEquality.lean
+  E-369 [COMPUTED] line-capacity-conjecture-H — docs/data/issue73_20261020/hall34.out
+  E-372 [COMPUTED] bounded-lag-line-capacity — docs/data/issue73_20261020/potL27.out
+  E-374 [COMPUTED] bounded-lag-closure-classification — docs/data/issue73_20261020/eqclassL_tightcyc.out
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 402 (including Audit)
+  Import contracts: 110; audit declarations: 2663

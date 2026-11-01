@@ -1,0 +1,23 @@
+{
+  "tag": "check_0724",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-01T07:23:21.568754+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "5606b64d27290a9959e1dbf19d5e7c58840a0a85",
+  "tracked_diff_sha256": "65387a5406e10299a97b364bdb7bda0bd9a441c5c9e1e1112f3ee8c98e9e7f6f",
+  "source_tree_sha256": "32fd32f5c477de0b87f32ce93f0319546bd00ff8b02aecc0f17800d5a1b67a8f",
+  "source_tree_manifest": "check_0724-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 8.446012457832694,
+  "cpu_seconds": 10.93763,
+  "finished_jst": "2026-11-01T07:23:30.014672+09:00"
+}

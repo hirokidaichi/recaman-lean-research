@@ -1,0 +1,84 @@
+Recaman/ThreeRunTargetSource.lean:70:6: error: Type mismatch: After simplification, term
+  hshape
+ has type
+  seg f n (h + M + m + L + s) =
+    List.replicate h false ++
+      (List.replicate M true ++ (List.replicate m false ++ (List.replicate L true ++ List.replicate s false)))
+but is expected to have type
+  w ++ seg f n (h + M + m + L + s) =
+    w ++
+      (List.replicate h false ++
+        (List.replicate M true ++ (List.replicate m false ++ (List.replicate L true ++ List.replicate s false))))
+Recaman/ThreeRunTargetSource.lean:74:77: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ p ≤ 2
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  0 ≤ i ≤ 20
+  4 ≤ g ≤ 9
+  4 ≤ e ≤ 9
+  e - g ≥ 0
+  d ≥ 0
+  d - e ≥ 1
+  c ≥ 0
+  b ≥ 0
+  b + d - o ≤ 0
+  a ≥ 1
+  a + c - d - k + l + o ≤ 0
+  a + c + 2*e + o ≥ -1
+where
+ a := ↑M
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑j
+ g := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T))
+ i := ↑(cN (fun x => f x = true) n (h + M + m + L + s + T))
+ k := ↑t
+ l := ↑n
+ o := ↑(cntF
+    (List.replicate h false ++
+      (List.replicate M true ++ (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ []))))))
+ p := ↑(cntF (runWord rs))
+Recaman/ThreeRunTargetSource.lean:88:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  u ≥ 0
+  r ≥ 0
+  r + u ≥ 0
+  q ≥ 0
+  p ≥ 0
+  p - q ≤ -1
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  4 ≤ i ≤ 9
+  i - r - u ≥ 0
+  2*i - u ≤ 4
+  0 ≤ g ≤ 20
+  4 ≤ e ≤ 9
+  d ≥ 0
+  d - i ≥ 1
+  c ≥ 0
+  b ≥ 0
+  b + d - o ≤ 0
+  a ≥ 1
+  a + c - d - k + l + o ≤ 0
+  a + c + 2*i + o ≥ -1
+where
+ a := ↑M
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + T))
+ g := ↑(cN (fun x => f x = true) n (h + M + m + L + s + T))
+ i := ↑j
+ k := ↑t
+ l := ↑n
+ o := ↑(cntF
+    (List.replicate h false ++
+      (List.replicate M true ++ (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ []))))))
+ p := ↑(cN P n h)
+ q := ↑(cN P n (h + M + m + L + s))
+ r := ↑(cN P n (h + (M + (m + (L + s)))))
+ u := ↑(cN P (n + (h + (M + (m + (L + s))))) T)

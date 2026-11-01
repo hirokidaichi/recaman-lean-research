@@ -1,0 +1,18 @@
+{
+  "tag": "H14-mass-two-short-local",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/MomentMassTwoLocal.lean"
+  ],
+  "started_jst": "2026-10-31T07:08:47.315932+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MomentMassTwoLocal.lean": "7c9f88462cc7f591c2cf963d70017a2f265f87fb26bde61ad7b926f824ad7246"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

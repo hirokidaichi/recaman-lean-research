@@ -1,0 +1,36 @@
+{
+  "python": {
+    "command": [
+      "python3",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Python 3.14.3"
+  },
+  "lean": {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)"
+  },
+  "clang": {
+    "command": [
+      "clang++",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Apple clang version 17.0.0 (clang-1700.6.3.2)\nTarget: arm64-apple-darwin25.5.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+  },
+  "git": {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "git version 2.50.1 (Apple Git-155)"
+  }
+}

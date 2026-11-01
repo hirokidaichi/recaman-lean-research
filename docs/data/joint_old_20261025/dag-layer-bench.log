@@ -1,0 +1,12 @@
+⚠ [15/18] Replayed Recaman.FourEventPruned
+warning: Recaman/FourEventPruned.lean:69:56: This simp argument is unused:
+  ite_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [budgetStepA, fastStepA, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [16/18] Built Recaman.FourEventLayer10 (322ms)
+✔ [17/18] Built Recaman.FourEventLayer9 (469ms)
+✔ [18/18] Built Recaman.FourEventLayer8 (3.6s)
+Build completed successfully (18 jobs).

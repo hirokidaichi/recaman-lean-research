@@ -1,0 +1,82 @@
+Recaman/InitialSTargetTwoShapes.lean:22:69: error: Application type mismatch: The argument
+  hbudget
+has type
+  M + L + T ≤ 20
+but is expected to have type
+  M + L + T < j + 11
+in the application
+  initial_S_critical_pairs q M m L s T j ?m.167 hm hj hbudget
+Recaman/InitialSTargetTwoShapes.lean:28:17: warning: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:28:45: warning: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:43:17: warning: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:43:45: warning: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:61:17: warning: This simp argument is unused:
+  Int.reduceAdd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reducePow, Int.reduceSub] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:61:45: warning: This simp argument is unused:
+  Int.reduceSub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Int.reduceAdd, Int.reducePow] at he
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/InitialSTargetTwoShapes.lean:87:6: error: `grind` failed
+case grind
+h i : Nat
+hv : 1 ≤ ↑i + ↑1 - ↑3 - 1
+hvm : ↑i + ↑1 - ↑3 - 1 ≤ ↑2
+heq : (↑i + ↑1 - ↑3 - 1 + ↑3) ^ 2 = 2 * ↑1 * ↑3 + 1
+h_1 : ¬i = 2
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * ↑i + 4 ≤ 0
+    [prop] ↑i + -5 ≤ 0
+    [prop] ↑i ^ 2 = 7
+    [prop] ¬i = 2
+  [eqc] True propositions
+    [prop] ↑i + -5 ≤ 0
+    [prop] -1 * ↑i + 4 ≤ 0
+  [eqc] False propositions
+    [prop] i = 2
+  [eqc] Equivalence classes
+    [eqc] others
+      [eqc] {7, ↑i ^ 2}
+  [ematch] E-matching patterns
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] h := 1
+    [assign] i := 4
+    [assign] 「↑i ^ 2」 := 7
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑i ^ 2 + -7 = 0

@@ -1,0 +1,82 @@
+{
+  "mode": "discovery",
+  "implementation": "literal suffix mass/area",
+  "range": [
+    3,
+    5
+  ],
+  "rows": [
+    {
+      "R": 3,
+      "word": "ASSSSAAAASSASAAAASSA",
+      "n": 1,
+      "z": 8,
+      "last_ray_start": 13,
+      "i": 2,
+      "T": 4,
+      "j": 2,
+      "target": 19,
+      "prefix_A": 3,
+      "prefix_actual_free": 2,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        7,
+        15,
+        19
+      ],
+      "old_target_window": "ASSSSAAAASSASAAAASS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 4,
+      "word": "ASSSSSAAAAASSASAAAAASSSA",
+      "n": 1,
+      "z": 10,
+      "last_ray_start": 15,
+      "i": 2,
+      "T": 5,
+      "j": 3,
+      "target": 23,
+      "prefix_A": 4,
+      "prefix_actual_free": 3,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        8,
+        17,
+        23
+      ],
+      "old_target_window": "ASSSSSAAAAASSASAAAAASSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    },
+    {
+      "R": 5,
+      "word": "ASSSSSSAAAAAASSASAAAAAASSSSA",
+      "n": 1,
+      "z": 12,
+      "last_ray_start": 17,
+      "i": 2,
+      "T": 6,
+      "j": 4,
+      "target": 27,
+      "prefix_A": 5,
+      "prefix_actual_free": 4,
+      "zero": true,
+      "all_positive_through_target": true,
+      "EndN_clocks": [
+        9,
+        15,
+        19,
+        27
+      ],
+      "old_target_window": "ASSSSSSAAAAAASSASAAAAAASSSS",
+      "local_window": "ASSASAA",
+      "claim": "REFUTED auxiliary free-prefix strengthening; not parent C1"
+    }
+  ],
+  "counterexamples": 3,
+  "label": "COMPUTED finite actual replay; family allR still requires proof"
+}

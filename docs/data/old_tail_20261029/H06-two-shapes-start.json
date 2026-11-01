@@ -1,0 +1,18 @@
+{
+  "tag": "H06-two-shapes",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/InitialSTargetTwoShapes.lean"
+  ],
+  "started_jst": "2026-10-29T06:43:25.784506+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTargetTwoShapes.lean": "268d129e7252ff670fa9a3fbc7be35d81112817bfa8ecace518474b7f360f806"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants"
+}

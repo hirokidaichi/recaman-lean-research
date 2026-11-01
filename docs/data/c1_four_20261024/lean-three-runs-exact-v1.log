@@ -1,0 +1,122 @@
+Recaman/BlockSuffixPositivity.lean:2334:6: error: `grind` failed
+case grind.2.2.2.2
+s r j : Nat
+hr : r = 2 * (j + 1)
+hs : s = j + 1
+hS : 2 * areaW (List.replicate s false) = -↑s * (↑s + 1)
+hA : 2 * areaW (List.replicate r true) = ↑r * (↑r + 1)
+hJ : 2 * areaW (List.replicate j false) = -↑j * (↑j + 1)
+hr' : 2 * (↑j + 1) = 2 * (↑j + 1)
+hs' : ↑j + 1 = ↑j + 1
+h :
+  ¬areaW (List.replicate s false) + areaW (List.replicate r true) + areaW (List.replicate j false) +
+          ↑j * (-(↑j + 1) + 2 * (↑j + 1)) +
+        2 * (↑j + 1) * -(↑j + 1) =
+      0
+h_1 : ¬↑j = -↑j
+h_2 : ¬j + 1 = 2 * j + 1
+h_3 : ¬j = 2 * j
+h_4 : ¬j + 1 = 2 * j
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] r = 2 * j + 2
+    [prop] s = j + 1
+    [prop] 2 * areaW (List.replicate s false) + -1 * (-↑s * (↑s + 1)) = 0
+    [prop] 2 * areaW (List.replicate r true) + -1 * (↑r * (↑r + 1)) = 0
+    [prop] 2 * areaW (List.replicate j false) + -1 * (-↑j * (↑j + 1)) = 0
+    [prop] ¬areaW (List.replicate s false) + areaW (List.replicate r true) + areaW (List.replicate j false) +
+                ↑j * (-(↑j + 1) + 2 * (↑j + 1)) +
+              2 * (↑j + 1) * -(↑j + 1) =
+            0
+    [prop] List.replicate (2 * j + 2) true = true :: List.replicate (2 * j + 1) true
+    [prop] List.replicate (j + 1) false = false :: List.replicate j false
+    [prop] List.replicate (2 * j + 1) true = true :: List.replicate (2 * j) true
+    [prop] ¬↑j = -↑j
+    [prop] ¬j + 1 = 2 * j + 1
+    [prop] ¬j = 2 * j
+    [prop] ¬j + 1 = 2 * j
+  [eqc] False propositions
+    [prop] ↑j = -↑j
+    [prop] areaW (List.replicate s false) + areaW (List.replicate r true) + areaW (List.replicate j false) +
+              ↑j * (-(↑j + 1) + 2 * (↑j + 1)) +
+            2 * (↑j + 1) * -(↑j + 1) =
+          0
+    [prop] j + 1 = 2 * j + 1
+    [prop] j = 2 * j
+    [prop] j + 1 = 2 * j
+  [eqc] Equivalence classes
+    [eqc] {s, j + 1}
+    [eqc] {r, 2 * j + 2}
+    [eqc] {List.replicate s false, false :: List.replicate j false, List.replicate (j + 1) false}
+    [eqc] {List.replicate r true, true :: List.replicate (2 * j + 1) true, List.replicate (2 * j + 2) true}
+    [eqc] {0,
+        -1 * ↑r ^ 2 + -1 * ↑r + 2 * areaW (List.replicate r true),
+        ↑s ^ 2 + ↑s + 2 * areaW (List.replicate s false),
+        ↑j ^ 2 + ↑j + 2 * areaW (List.replicate j false),
+        2 * areaW (List.replicate s false) + -1 * (-↑s * (↑s + 1)),
+        2 * areaW (List.replicate r true) + -1 * (↑r * (↑r + 1)),
+        2 * areaW (List.replicate j false) + -1 * (-↑j * (↑j + 1))}
+      [eqc] {↑0}
+    [eqc] {List.replicate (2 * j + 1) true, true :: List.replicate (2 * j) true}
+    [eqc] others
+      [eqc] {↑s, ↑(j + 1), ↑j + 1, -(↑j + 1) + 2 * (↑j + 1)}
+      [eqc] {↑r, ↑(2 * j + 2)}
+      [eqc] {-↑s, -(↑j + 1)}
+  [cases] Case analyses
+    [cases] [2/2]: ↑j = -↑j
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑j * (-(↑j + 1) + 2 * (↑j + 1))
+          and
+            -↑j * (↑j + 1)
+    [cases] [2/2]: j + 1 = 2 * j + 1
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate (2 * j + 1) true
+          and
+            List.replicate s false
+    [cases] [2/2]: j = 2 * j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate (2 * j) true
+          and
+            List.replicate j false
+    [cases] [2/2]: j + 1 = 2 * j
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate (2 * j) true
+          and
+            List.replicate s false
+  [ematch] E-matching patterns
+    [thm] List.replicate_succ: [@List.replicate #2 (#0 + 1) #1]
+    [thm] List.replicate_zero: [@List.replicate #1 `[0] #0]
+    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] s := 3
+    [assign] r := 6
+    [assign] j := 2
+    [assign] areaW (List.replicate s false) := -2
+    [assign] areaW (List.replicate r true) := 3
+    [assign] areaW (List.replicate j false) := -1
+    [assign] 「↑s ^ 2」 := 1
+    [assign] 「↑r ^ 2」 := 0
+    [assign] 「↑j ^ 2」 := 0
+  [ring] Rings
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] ↑j ^ 2 + ↑j + 2 * areaW (List.replicate j false) = 0
+        [_] ↑s ^ 2 + ↑s + 2 * areaW (List.replicate s false) = 0
+        [_] ↑r ^ 2 + ↑r + -2 * areaW (List.replicate r true) = 0
+      [diseqs] Disequalities
+        [_] ¬-2 * ↑j + areaW (List.replicate s false) + areaW (List.replicate r true) +
+                    3 * areaW (List.replicate j false) +
+                  -2 =
+                0
+        [_] ¬2 * ↑j = 0
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [diseqs] Disequalities
+        [_] ¬-1 * ↑j = 0
+        [_] ¬-1 * ↑j = 0
+        [_] ¬-1 * ↑j + 1 = 0
+[grind] Diagnostics
+  [thm] E-Matching instances
+    [thm] List.replicate_succ ↦ 3
+Recaman/BlockSuffixPositivity.lean:2368:70: error: No goals to be solved

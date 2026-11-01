@@ -1,0 +1,10 @@
+Recaman/SourceFamilyFreeCount.lean:68:55: warning: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SourceFamilyFreeCount.lean:241:2: error: 'change' tactic failed, pattern
+  R = cN P (n + h + M + (R + 1)) R + ?m.487
+is not definitionally equal to target
+  R = cN (EndN f 0) (n + h + M + (R + 1)) R + cN (fun u => f u = true ∧ ¬EndN f 0 u) (n + h + M + (R + 1)) R

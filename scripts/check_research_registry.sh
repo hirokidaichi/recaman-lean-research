@@ -54,6 +54,20 @@ if [[ -n "$RECAMAN_DUPLICATE_IDS" ]]; then
   exit 1
 fi
 
+# Snapshot each lookup file once per invocation. Quoted pattern fragments below
+# retain rg -F's literal substring checks without starting a process per link.
+# read reaches EOF with status 1 for text files; status 0 means a NUL delimiter.
+RECAMAN_FRONTIER_TEXT=""
+if IFS= read -r -d '' RECAMAN_FRONTIER_TEXT < "$RECAMAN_FRONTIER"; then
+  echo "error: $RECAMAN_FRONTIER contains NUL bytes" >&2
+  exit 1
+fi
+RECAMAN_AUDIT_TEXT=""
+if IFS= read -r -d '' RECAMAN_AUDIT_TEXT < "$RECAMAN_AUDIT"; then
+  echo "error: $RECAMAN_AUDIT contains NUL bytes" >&2
+  exit 1
+fi
+
 RECAMAN_ROW_COUNT=0
 RECAMAN_PROVED_LEAN_COUNT=0
 
@@ -83,7 +97,7 @@ while IFS=$'\t' read -r evidence_id evidence_label branch claim artifact audit_s
     exit 1
   fi
 
-  if ! rg -F -q "$evidence_id" "$RECAMAN_FRONTIER"; then
+  if [[ "$RECAMAN_FRONTIER_TEXT" != *"$evidence_id"* ]]; then
     echo "error: $evidence_id is not referenced by $RECAMAN_FRONTIER" >&2
     exit 1
   fi
@@ -104,7 +118,7 @@ while IFS=$'\t' read -r evidence_id evidence_label branch claim artifact audit_s
         echo "error: invalid audit symbol for $evidence_id: $audit_symbol" >&2
         exit 1
       fi
-      if ! rg -F -q "#print axioms $audit_symbol" "$RECAMAN_AUDIT"; then
+      if [[ "$RECAMAN_AUDIT_TEXT" != *"#print axioms $audit_symbol"* ]]; then
         echo "error: unaudited symbol for $evidence_id: $audit_symbol" >&2
         exit 1
       fi

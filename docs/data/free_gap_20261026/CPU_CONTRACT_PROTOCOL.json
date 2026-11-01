@@ -1,0 +1,11 @@
+{
+  "card": "H-20261026-01 infrastructure prerequisite, not new mathematical evidence",
+  "purpose": "Replace an inaccurate generic cumulative-process CPU claim with an enforced single Python worker contract for the planned pure-Python falsifier.",
+  "validation_cpu_budget_seconds": 6,
+  "validation_wall_budget_seconds": 30,
+  "worker_process_group": "exactly one worker process; all its threads share kernel RLIMIT_CPU; process creation/exec is rejected by audit hook for cooperative frozen workers",
+  "supported": "reviewed pure Python scripts without subprocess/native escape; not a security sandbox and not a general lake/Lean process-tree runner",
+  "acceptance": "exact os.wait4 CPU for normal/CPU-killed/wall-killed runs; threads counted; fork/exec attempts rejected; group absent after completion; controller overhead reported separately",
+  "stop": "any unsupported child creation or missing CPU measurement -> no mathematical CPU search, retain budget0 and work on paper",
+  "accounting": "group CPU equals worker CPU under this no-descendants contract. Do not claim generic process-tree accounting or add CPU to journal. Freeze each math worker source, argv, discovery/holdout and revision before execution."
+}

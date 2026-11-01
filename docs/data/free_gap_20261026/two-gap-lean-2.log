@@ -1,0 +1,46 @@
+Recaman/BlockOldRay.lean:274:26: warning: This simp argument is unused:
+  Nat.sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Nat.zero_add] at hd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BlockOldRay.lean:560:18: error: unsolved goals
+case succ
+f : Nat → Bool
+n h m L : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hsum : 3 ≤ h + m
+hp1 : seg f 0 (n + h) = w ++ List.replicate h false
+M : Nat
+ih :
+  (∀ (i : Nat), i < M → f (n + h + i) = true) →
+    (∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false) →
+      (∀ (i : Nat), i < L → f (n + h + M + m + i) = true) →
+        cN (EndN f 0) (n + h) M = rayCount (w ++ List.replicate h false) M →
+          rayCount (w ++ List.replicate h false) M ≤ 2 →
+            seg f 0 (n + h + M + m) = w ++ (List.replicate h false ++ List.replicate M true ++ List.replicate m false) →
+              cN (EndN f 0) (n + h + M + m) L =
+                  rayCount (w ++ (List.replicate h false ++ List.replicate M true ++ List.replicate m false)) L →
+                cntF (List.replicate M true) = 0
+hA : ∀ (i : Nat), i < M + 1 → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + (M + 1) ≤ x → x < n + h + (M + 1) + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + (M + 1) + m + i) = true
+hr1 : cN (EndN f 0) (n + h) (M + 1) = rayCount (w ++ List.replicate h false) (M + 1)
+hb1 : rayCount (w ++ List.replicate h false) (M + 1) ≤ 2
+hp2 :
+  seg f 0 (n + h + (M + 1) + m) = w ++ (List.replicate h false ++ List.replicate (M + 1) true ++ List.replicate m false)
+hr2 :
+  cN (EndN f 0) (n + h + (M + 1) + m) L =
+    rayCount (w ++ (List.replicate h false ++ List.replicate (M + 1) true ++ List.replicate m false)) L
+⊢ cntF (List.replicate M true) = 0
+Recaman/BlockOldRay.lean:560:52: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.replicate_succ, cntF]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
