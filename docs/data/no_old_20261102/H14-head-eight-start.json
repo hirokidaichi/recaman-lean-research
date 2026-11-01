@@ -1,0 +1,25 @@
+{
+  "tag": "H14-head-eight",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/EqualTargetHeadBound.olean",
+    "Recaman/EqualTargetHeadBound.lean"
+  ],
+  "started_jst": "2026-11-02T07:13:45.614735+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/EqualTargetHeadBound.lean": "acae3a37dd772176ef8c61d5a5d0823eb99cb8dcd6c19405674c12ad7095a9a3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "56c6ac2c174476f6f70d8c793e5d265a27e28b141766782cc559f48c3397ef42",
+  "source_tree_sha256": "89be467fea4795cf0400087babab2bac4e0676f79460ea505579f8789b959000",
+  "source_tree_manifest": "H14-head-eight-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

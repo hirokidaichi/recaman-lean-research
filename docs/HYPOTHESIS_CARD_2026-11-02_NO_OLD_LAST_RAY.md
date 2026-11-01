@@ -1,6 +1,6 @@
 # H-20261102-01: old供給無しのmass3/S3 last-ray
 
-Status: CONJECTURED。親cycleは11/02の実開始時に採番し、11/01 R-20261101-01の費用を加算しない。活用60/局所探索30/別pass監査10を予定、CPU探索初期0。最新入力はE484/E485/E492/E497/E498〜500のkernel成果。完了したD4 headfree5、v3old0/v4anyold、旧r3/C2/P監査を再実行しない。
+Status: PROVED-LEAN（末尾の終了時判断を正本とする。以下は開始時の仮説・費用条件）。親cycleは11/02の実開始時に採番し、11/01 R-20261101-01の費用を加算しない。活用60/局所探索30/別pass監査10を予定、CPU探索初期0。最新入力はE484/E485/E492/E497/E498〜500のkernel成果。完了したD4 headfree5、v3old0/v4anyold、旧r3/C2/P監査を再実行しない。
 
 ## 一回の問い・全量化子
 
@@ -23,3 +23,13 @@ Status: CONJECTURED。親cycleは11/02の実開始時に採番し、11/01 R-2026
 旧H01 scalar/firstA、LargeOldSeedGap、一般I25 monolith、H06/133core/r4/R19等の停止は保持する。新E498/E499は独立したsame-target平方比較であり旧jobの資源追加ではない。再開には独立pruning/小完全certificateと測定改善。Lean個別-M512、10CPU per-process/20wallをargvへ明示し、通常buildで失敗sourceを採用しない。未知Prop、結論/freeや同値wrapperを入力にしない。
 
 07:45新探索終了、07:59:40目安stop/08時期限。journalの実開始/checkpoint/stopを保存し、open/予定を実績にしない。当日最後は日本語で実績/成果の証拠水準/残余/失敗/次問/DAILYとjournalを必ず報告する。
+
+## 11/02 実行開始
+
+R-20261102-01、実開始06:03:32.373375 JST。setup34.837秒の後06:04:07にH01開始、15分gate06:19:07。提案/境界反証/依存chainは当日DAILYに先に固定。探索CPU0、個別-M512/10CPU per process/20wall。開始HEAD cbb721b/remote同期、他session dirtyなし。
+
+H01判定06:15: E-512 PROVED-LEAN、全check554jobs/3279宣言PASS、人間レビュー未。元no-old全長問い完了。追加local band不要。次は同mass3/S3のold有無統合H-20261102-02へ。停止済みr4表は再開していない。
+
+## 終了時判断
+
+E-512 PROVED-LEAN。no-old及びold有無統合を完了。 全体検証・逐語audit・実績正本は11/02 DAILY/journalを参照。親C1全体は未解決。

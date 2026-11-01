@@ -1,0 +1,25 @@
+{
+  "tag": "comment-ShortTargetSourceBase",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortTargetSourceBase.olean",
+    "Recaman/ShortTargetSourceBase.lean"
+  ],
+  "started_jst": "2026-11-02T07:42:10.910839+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortTargetSourceBase.lean": "a5571d17bbd0c2ac4d4ef54ccb54de689d3b8534938b1aadac04323ced0c9dfb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "109ffa1f7f191535ee231427a8d08bde4587aeff237c5f23e98a116815e21c9a",
+  "source_tree_sha256": "16377dbbc7b35786d89f8f44a0199580d9523a848306603d985858ce3e565463",
+  "source_tree_manifest": "comment-ShortTargetSourceBase-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

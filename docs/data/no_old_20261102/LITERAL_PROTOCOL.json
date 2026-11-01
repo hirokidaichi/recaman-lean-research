@@ -1,0 +1,49 @@
+{
+  "fixed_jst": "2026-11-02T06:13:20.134689+09:00",
+  "purpose": "Independent literal nonemptiness and base/positive/no-old audit; not absence search and not a proof of infinite claim",
+  "math_cpu_total_limit_seconds": 4,
+  "per_literal_worker_cpu_seconds": 2,
+  "per_literal_wall_seconds": 5,
+  "discovery": {
+    "old": "AAA",
+    "head": [
+      8,
+      1,
+      1,
+      1,
+      1,
+      8
+    ],
+    "R": 5
+  },
+  "independent_holdout": {
+    "old": "SAAAAAA",
+    "head": [
+      7,
+      1,
+      3,
+      1,
+      1,
+      9
+    ],
+    "R": 6
+  },
+  "repair_limit": 1,
+  "prerequisite": "fork rejected; wall stop; all-thread CPU stop in no-child single cooperative worker; inspect results before literal work",
+  "reallocation": "up to 1 minute local exploration budget -> literal semantic audit. Actual CPU separately counted; no past-day carryover",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "dirty_tracked_sha256": "b4faad557337174eed2736e7d13dbdc6208735bfcfa284291adf524347dd3b66",
+  "argv": [
+    "python3",
+    "docs/data/no_old_20261102/run_single.py",
+    "--tag",
+    "TAG",
+    "--cpu",
+    "2",
+    "--wall",
+    "5",
+    "docs/data/no_old_20261102/literal_no_old.py",
+    "discovery|holdout"
+  ],
+  "frozen_worker_sha256": "b60cd20a0c8435b1d9dea494f10c411fa3765bd6f30d910eb5e7d5d0e8bd07db"
+}

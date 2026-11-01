@@ -1,0 +1,10 @@
+Recaman/NoOldCounterFive.lean:54:23: error: Type mismatch: After simplification, term
+  hk
+ has type
+  runKey (List.drop t w) = -(-2 * B) - 12 * (↑h + ↑m + ↑s) - 18 - 2 * (↑j + 1) ^ 2
+but is expected to have type
+  runKey (List.drop t w) = 2 * B - 12 * (↑h + ↑m + ↑s) - 18 - 2 * (↑j + 1) ^ 2
+Recaman/NoOldCounterFive.lean:89:4: error: 'change' tactic failed, pattern
+  ↑M + ↑L + ↑U = ↑(cN (fun x => f x = true) n H)
+is not definitionally equal to target
+  0 + ↑M + 0 + ↑L + 0 + ↑U = ↑(cN (fun u => f u = true) n H)

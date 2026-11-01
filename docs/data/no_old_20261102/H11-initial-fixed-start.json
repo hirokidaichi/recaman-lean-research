@@ -1,0 +1,25 @@
+{
+  "tag": "H11-initial-fixed",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourMassShortSources.olean",
+    "Recaman/FourMassShortSources.lean"
+  ],
+  "started_jst": "2026-11-02T07:07:37.994765+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourMassShortSources.lean": "39871db1b4226cda1e8342d318d4b55c1a2d6ba7a4734f0321941b753d92d40c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "aa1b4bec0e5be179a568460f9b38adaf1c7a5dc7d7cbd6689819bee7c7673bbd",
+  "source_tree_sha256": "ebbfdcad51832f0fe951feeab88b86d28ca84ccb328ec408d7e7e3d033f2baf5",
+  "source_tree_manifest": "H11-initial-fixed-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

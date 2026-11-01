@@ -1,0 +1,6 @@
+Recaman/FourSInitialTarget.lean:106:6: error: Type mismatch: After simplification, term
+  hbal
+ has type
+  @Eq Int (mass (List.replicate q false ++ (x ++ List.replicate v false)) + ↑0) 1
+but is expected to have type
+  @Eq Int (mass (List.replicate q false ++ (x ++ List.replicate v false)) + 0) 1

@@ -1,0 +1,25 @@
+{
+  "tag": "H02-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldMassThreeBase.olean",
+    "Recaman/NoOldMassThreeBase.lean"
+  ],
+  "started_jst": "2026-11-02T06:12:20.995481+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldMassThreeBase.lean": "af729127c06b9c1e44f0ba185d65b2bff0817e98b45d8cfbd6f4c12eab014151"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "b4faad557337174eed2736e7d13dbdc6208735bfcfa284291adf524347dd3b66",
+  "source_tree_sha256": "f95048cda29c83b48210c195b0106f452070775c911d93552d5fa85ca2177ecf",
+  "source_tree_manifest": "H02-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

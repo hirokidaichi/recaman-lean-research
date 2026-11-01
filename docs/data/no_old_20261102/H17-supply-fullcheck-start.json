@@ -1,0 +1,18 @@
+{
+  "tag": "H17-supply-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-02T07:36:17.684658+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "288dcc9fa110953dd6a57c095e37d3425675f069bdac0a2fb18cf98e04ecd3c4",
+  "source_tree_sha256": "bdb192819d0586df439929dda0285808263e31037831f5aa15c05831da134f5c",
+  "source_tree_manifest": "H17-supply-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

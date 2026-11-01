@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-02T06:58:42.717329+09:00",
+  "tag": "low-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/no_old_20261102/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/no_old_20261102/literal_low_S.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "a1ea7ef18af24f86185b538a64f2ad1b6757cff87e85ab8715d72cdc6b50bf55",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 93810,
+  "process_group": 93810,
+  "finished_jst": "2026-11-02T06:58:42.773548+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.05631312495097518,
+  "worker_user_seconds": 0.027011999999999998,
+  "worker_sys_seconds": 0.007703,
+  "worker_cpu_seconds": 0.034714999999999996,
+  "worker_maxrss_native": 23314432,
+  "controller_cpu_seconds": 0.001767000000000003,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

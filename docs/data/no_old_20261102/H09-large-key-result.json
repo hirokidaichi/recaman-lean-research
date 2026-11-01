@@ -1,0 +1,31 @@
+{
+  "tag": "H09-large-key",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LargeSeparatorKey.olean",
+    "Recaman/LargeSeparatorKey.lean"
+  ],
+  "started_jst": "2026-11-02T06:56:30.418284+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeSeparatorKey.lean": "ec884fcf78d467054ef4d86ae9f192289be2bac5096d4d7d8e503d82d1b3dfd5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "source_tree_sha256": "0222d1d87b3868c0a4efefb5ec0779e054a11c48a2ae1e7abf51e34e6f16e8e8",
+  "source_tree_manifest": "H09-large-key-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5597577090375125,
+  "cpu_seconds": 0.44579899999999995,
+  "finished_jst": "2026-11-02T06:56:30.977975+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H11-counter",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourMassTargetCounter.olean",
+    "Recaman/FourMassTargetCounter.lean"
+  ],
+  "started_jst": "2026-11-02T07:06:54.578800+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourMassTargetCounter.lean": "07e7d945a5f9127ece0a2a61d3f465a5f5b085525bf0125ec093dbe5ca10d82e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "aa1b4bec0e5be179a568460f9b38adaf1c7a5dc7d7cbd6689819bee7c7673bbd",
+  "source_tree_sha256": "ffc0837b81db6b9b80c97f5f1c2c58f4040b5430216673ced926e72e42cf072c",
+  "source_tree_manifest": "H11-counter-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

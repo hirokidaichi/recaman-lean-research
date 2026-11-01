@@ -1798,3 +1798,11 @@ padding family; a collision can still have sufficient capacity.
 See [current strategy](RESEARCH_PLAN_2026-10-06_SS2_REMAINING.md),
 [complete independent proof](data/ss2_pair_endpoints_20261006/audit/oldest-sss-endpoint-addendum.md).
 New statements are paper-only; no Lean/Audit symbols were added.
+
+## 2026-11-02: no-old mass3/S3 fullgap
+
+E-512 PROVED-LEAN（人間レビュー未）。[NoOldMassThreeGap](../Recaman/NoOldMassThreeGap.lean)/[元p](../Recaman/NoOldMassThreeBase.lean)。同targetがcounter R5/S15/M予算を供給し、初期S排除とfirstA0、既存第三S0/2の合流でlast4。E497を使わず同target/headS10/r3 countからheadfree4、元cN加法で全長fullgap。no-oldは全old源への明示枝条件、全四run/C1の証明ではない。次は同mass3/S3のold有無接着。
+
+## 2026-11-02: zerohead old-target 四run部分域
+
+E512→E515はC3の全v actual fullgap、E516/E517/E518はC>=4/v>=Cを全量化で供給。E519は全mixed sourceのmass>=2 strict A cutで、free cutではない。E520はC>=4/v<C counterのsource位置削減、E522は元p last supply4/3。E521五bandはPROVED-PAPERのまま（五band包含未Lean/人間レビュー未）。経路は同target primitive key→source削減→元actual count課金。新しいrank/任意run/C1全体ではない。次H-20261103-01はfactored-circleによるactual strict候補削減であり停止monolithの単純再実行をしない。

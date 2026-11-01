@@ -1,0 +1,25 @@
+{
+  "tag": "H14-equal-base-normalized",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/EqualTargetBase.olean",
+    "Recaman/EqualTargetBase.lean"
+  ],
+  "started_jst": "2026-11-02T07:16:03.772008+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/EqualTargetBase.lean": "b9de681df8d72d019267cbdaae9fd9e831e7278ad61100423a2cd60776e3c760"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "56c6ac2c174476f6f70d8c793e5d265a27e28b141766782cc559f48c3397ef42",
+  "source_tree_sha256": "cb244f39b970edcfd33363eda447fff474f48b62e259842c52d83fe113a226fd",
+  "source_tree_manifest": "H14-equal-base-normalized-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

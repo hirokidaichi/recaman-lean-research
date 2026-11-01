@@ -1,0 +1,672 @@
+Recaman/OffsetTargetCounter.lean:72:4: error: `grind` failed
+case grind.1.1.1.1.1.1.1.1.1.2.1.1.1.1.1.1.1.1.1
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : v = C + 2
+hC4 : 4 ≤ C
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hC : mass (List.drop t w) = ↑C
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hT : T = j + 3
+B : Int := -areaW z
+hB : runKey z = -2 * B
+hkt : runKey (List.drop t w) = 2 * B - 4 * ↑C * (↑(h + m + s) + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hprod : 0 ≤ (↑C - 3) * (↑C + 3 + 2 * (↑h + ↑m + ↑s))
+hcv : ↑v = ↑C + 2
+h_1 :
+  -1 * runKey (List.drop t w) + -1 * runKey (seg f n (h + M + m + L + s + U)) + -12 * ↑h + -12 * ↑m + -12 * ↑s +
+        -2 * (↑j + 1) ^ 2 +
+      -9 ≤
+    0
+h_2 : -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤ 0
+h_3 : 1 ≤ L + s
+h_4 : 1 ≤ M + m + L + s
+h_5 : 1 ≤ U + v
+h_6 : 1 ≤ L + s + U + v
+h_7 : 1 ≤ M + m + L + s + U + v
+h_8 : 1 ≤ U + v + T + j
+h_9 : 1 ≤ L + s + U + v + T + j
+h_10 : 1 ≤ M + m + L + s + U + v + T + j
+h_11 : ¬M = 0
+h_12 : 1 ≤ M + m
+h_13 : j ≤ h
+h_14 : j ≤ h + M + m
+h_15 : j ≤ h + M + m + L + s
+h_16 : L = U
+h_17 : m = s
+h_18 : M = U
+h_19 : h = s
+h_20 : L = s
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord w
+    [prop] seg f 0 n = w
+    [prop] t + 1 ≤ n
+    [prop] 1 ≤ h
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] 1 ≤ U
+    [prop] v = C + 2
+    [prop] 4 ≤ C
+    [prop] M + L + U = h + m + s
+    [prop] ∀ (x : Nat), n ≤ x → x + 1 ≤ n + h → f x = false
+    [prop] ∀ (k : Nat), k + 1 ≤ M → f (n + h + k) = true
+    [prop] ∀ (x : Nat), n + h + M ≤ x → x + 1 ≤ n + h + M + m → f x = false
+    [prop] ∀ (k : Nat), k + 1 ≤ L → f (n + h + M + m + k) = true
+    [prop] ∀ (x : Nat), n + h + M + m + L ≤ x → x + 1 ≤ n + h + M + m + L + s → f x = false
+    [prop] ∀ (k : Nat), k + 1 ≤ U → f (n + h + M + m + L + s + k) = true
+    [prop] ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x + 1 ≤ n + h + M + m + L + s + U + v → f x = false
+    [prop] ∀ (k : Nat), k + 1 ≤ T → f (n + h + M + m + L + s + U + v + k) = true
+    [prop] ∀ (x : Nat),
+          n + h + M + m + L + s + U + v + T ≤ x → x + 1 ≤ n + h + M + m + L + s + U + v + T + j → f x = false
+    [prop] Win f t (n + h + M + m + L + s + U + v + T + j - t)
+    [prop] ↑(n + h + M + m + L + s + U + v + T + j - t) =
+          if
+              -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤
+                0 then
+            ↑n + -1 * ↑t + ↑h + ↑M + ↑m + ↑L + ↑s + ↑U + ↑v + ↑T + ↑j
+          else 0
+    [prop] mass (List.drop t w) = ↑C
+    [prop] ∀ (k : Nat),
+          1 ≤ k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+    [prop] cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ≤ j
+    [prop] seg f n (h + M + m + L + s + U) =
+          List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+              List.replicate s false ++
+            List.replicate U true
+    [prop] mass (seg f n (h + M + m + L + s + U)) = 0
+    [prop] cntF (seg f n (h + M + m + L + s + U)) = h + m + s
+    [prop] mass
+              (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+                List.replicate j false) =
+            1 ∧
+          areaW
+              (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+                List.replicate j false) =
+            0
+    [prop] T = j + 3
+    [prop] -2 * areaW (seg f n (h + M + m + L + s + U)) + runKey (seg f n (h + M + m + L + s + U)) = 0
+    [prop] 2 * areaW (seg f n (h + M + m + L + s + U)) + runKey (List.drop t w) + 4 * ↑C * (↑h + ↑m + ↑s + ↑v) +
+              -2 * ↑v ^ 2 +
+            2 * (↑j + 1) ^ 2 =
+          0
+    [prop] -1 * ((↑C - 3) * (↑C + 3 + 2 * (↑h + ↑m + ↑s))) ≤ 0
+    [prop] ↑v + -1 * ↑C + -2 = 0
+    [prop] -1 * runKey (List.drop t w) + -1 * runKey (seg f n (h + M + m + L + s + U)) + -12 * ↑h + -12 * ↑m +
+                -12 * ↑s +
+              -2 * (↑j + 1) ^ 2 +
+            -9 ≤
+          0
+    [prop] 1 ≤ M → f (n + h) = true
+    [prop] 1 ≤ L → f (n + h + M + m) = true
+    [prop] 1 ≤ U → f (n + h + M + m + L + s) = true
+    [prop] 1 ≤ U → cN (EndN f 0) n U + 1 ≤ cN (fun x => f x = false) n U
+    [prop] 1 ≤ s → cN (EndN f 0) n s + 1 ≤ cN (fun x => f x = false) n s
+    [prop] 1 ≤ L → cN (EndN f 0) n L + 1 ≤ cN (fun x => f x = false) n L
+    [prop] 1 ≤ m → cN (EndN f 0) n m + 1 ≤ cN (fun x => f x = false) n m
+    [prop] 1 ≤ M → cN (EndN f 0) n M + 1 ≤ cN (fun x => f x = false) n M
+    [prop] 1 ≤ h → cN (EndN f 0) n h + 1 ≤ cN (fun x => f x = false) n h
+    [prop] M = 0 → 1 ≤ M + m → f (n + h) = false
+    [prop] L = 0 → 1 ≤ L + s → f (n + h + M + m) = false
+    [prop] M + m + L = 0 → 1 ≤ M + m + L + s → f (n + h) = false
+    [prop] U = 0 → 1 ≤ U + v → f (n + h + M + m + L + s) = false
+    [prop] L + s + U = 0 → 1 ≤ L + s + U + v → f (n + h + M + m) = false
+    [prop] M + m + L + s + U = 0 → 1 ≤ M + m + L + s + U + v → f (n + h) = false
+    [prop] U + v + T = 0 → 1 ≤ U + v + T + j → f (n + h + M + m + L + s) = false
+    [prop] L + s + U + v + T = 0 → 1 ≤ L + s + U + v + T + j → f (n + h + M + m) = false
+    [prop] M + m + L + s + U + v + T = 0 → 1 ≤ M + m + L + s + U + v + T + j → f (n + h) = false
+    [prop] 1 ≤ M + m + L + s + U + v + T + j →
+          j ≤ h →
+            cN (EndN f 0) n (M + m + L + s + U + v + T + j) + 1 ≤
+              cN (fun x => f x = false) n (M + m + L + s + U + v + T + j)
+    [prop] 1 ≤ L + s + U + v + T + j →
+          j ≤ h + M + m →
+            cN (EndN f 0) n (L + s + U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v + T + j)
+    [prop] 1 ≤ U + v + T + j →
+          j ≤ h + M + m + L + s → cN (EndN f 0) n (U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (U + v + T + j)
+    [prop] 1 ≤ M + m + L + s + U + v →
+          cN (EndN f 0) n (M + m + L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s + U + v)
+    [prop] 1 ≤ L + s + U + v → cN (EndN f 0) n (L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v)
+    [prop] 1 ≤ U + v → cN (EndN f 0) n (U + v) + 1 ≤ cN (fun x => f x = false) n (U + v)
+    [prop] 1 ≤ M + m + L + s → cN (EndN f 0) n (M + m + L + s) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s)
+    [prop] 1 ≤ L + s → cN (EndN f 0) n (L + s) + 1 ≤ cN (fun x => f x = false) n (L + s)
+    [prop] 1 ≤ M + m → cN (EndN f 0) n (M + m) + 1 ≤ cN (fun x => f x = false) n (M + m)
+    [prop] -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤ 0
+    [prop] 1 ≤ L + s
+    [prop] 1 ≤ M + m + L + s
+    [prop] 1 ≤ U + v
+    [prop] 1 ≤ L + s + U + v
+    [prop] 1 ≤ M + m + L + s + U + v
+    [prop] 1 ≤ U + v + T + j
+    [prop] 1 ≤ L + s + U + v + T + j
+    [prop] 1 ≤ M + m + L + s + U + v + T + j
+    [prop] ¬M = 0
+    [prop] 1 ≤ M + m
+    [prop] j ≤ h
+    [prop] j ≤ h + M + m
+    [prop] j ≤ h + M + m + L + s
+    [prop] L = U
+    [prop] m = s
+    [prop] M = U
+    [prop] h = s
+    [prop] L = s
+  [eqc] True propositions
+    [prop] BlockWord w
+    [prop] mass
+              (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+                List.replicate j false) =
+            1 ∧
+          areaW
+              (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+                List.replicate j false) =
+            0
+    [prop] areaW
+            (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+              List.replicate j false) =
+          0
+    [prop] mass
+            (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+              List.replicate j false) =
+          1
+    [prop] ↑h = ↑m
+    [prop] ↑h = ↑s
+    [prop] ↑m = ↑s
+    [prop] h = L
+    [prop] h = s
+    [prop] M = m
+    [prop] M = L
+    [prop] M = s
+    [prop] m = L
+    [prop] m = U
+    [prop] Win f t (n + h + M + m + L + s + U + v + T + j - t)
+    [prop] -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤ 0
+    [prop] -1 * runKey (List.drop t w) + -1 * runKey (seg f n (h + M + m + L + s + U)) + -12 * ↑h + -12 * ↑m +
+                -12 * ↑s +
+              -2 * (↑j + 1) ^ 2 +
+            -9 ≤
+          0
+    [prop] -1 * ((↑C - 3) * (↑C + 3 + 2 * (↑h + ↑m + ↑s))) ≤ 0
+    [prop] 1 ≤ h
+    [prop] 1 ≤ M
+    [prop] 1 ≤ m
+    [prop] 1 ≤ L
+    [prop] 1 ≤ s
+    [prop] 1 ≤ U
+    [prop] 4 ≤ C
+    [prop] cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ≤ j
+    [prop] t + 1 ≤ n
+    [prop] ∀ (x : Nat), n ≤ x → x + 1 ≤ n + h → f x = false
+    [prop] ∀ (k : Nat),
+          1 ≤ k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+    [prop] ∀ (k : Nat), k + 1 ≤ M → f (n + h + k) = true
+    [prop] ∀ (k : Nat), k + 1 ≤ L → f (n + h + M + m + k) = true
+    [prop] ∀ (k : Nat), k + 1 ≤ U → f (n + h + M + m + L + s + k) = true
+    [prop] ∀ (k : Nat), k + 1 ≤ T → f (n + h + M + m + L + s + U + v + k) = true
+    [prop] ∀ (x : Nat), n + h + M ≤ x → x + 1 ≤ n + h + M + m → f x = false
+    [prop] ∀ (x : Nat), n + h + M + m + L ≤ x → x + 1 ≤ n + h + M + m + L + s → f x = false
+    [prop] ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x + 1 ≤ n + h + M + m + L + s + U + v → f x = false
+    [prop] ∀ (x : Nat),
+          n + h + M + m + L + s + U + v + T ≤ x → x + 1 ≤ n + h + M + m + L + s + U + v + T + j → f x = false
+    [prop] f (n + h) = true
+    [prop] f (n + h + M + m) = true
+    [prop] f (n + h + M + m + L + s) = true
+    [prop] h = M
+    [prop] h = m
+    [prop] h = U
+    [prop] M = U
+    [prop] m = s
+    [prop] L = s
+    [prop] L = U
+    [prop] s = U
+    [prop] cN (EndN f 0) n h + 1 ≤ cN (fun x => f x = false) n h
+    [prop] cN (EndN f 0) n M + 1 ≤ cN (fun x => f x = false) n M
+    [prop] cN (EndN f 0) n m + 1 ≤ cN (fun x => f x = false) n m
+    [prop] cN (EndN f 0) n L + 1 ≤ cN (fun x => f x = false) n L
+    [prop] cN (EndN f 0) n s + 1 ≤ cN (fun x => f x = false) n s
+    [prop] cN (EndN f 0) n U + 1 ≤ cN (fun x => f x = false) n U
+    [prop] 1 ≤ h → cN (EndN f 0) n h + 1 ≤ cN (fun x => f x = false) n h
+    [prop] 1 ≤ M → f (n + h) = true
+    [prop] 1 ≤ M → cN (EndN f 0) n M + 1 ≤ cN (fun x => f x = false) n M
+    [prop] 1 ≤ m → cN (EndN f 0) n m + 1 ≤ cN (fun x => f x = false) n m
+    [prop] 1 ≤ L → f (n + h + M + m) = true
+    [prop] 1 ≤ L → cN (EndN f 0) n L + 1 ≤ cN (fun x => f x = false) n L
+    [prop] 1 ≤ s → cN (EndN f 0) n s + 1 ≤ cN (fun x => f x = false) n s
+    [prop] 1 ≤ U → f (n + h + M + m + L + s) = true
+    [prop] 1 ≤ U → cN (EndN f 0) n U + 1 ≤ cN (fun x => f x = false) n U
+    [prop] 1 ≤ M + m
+    [prop] 1 ≤ L + s
+    [prop] 1 ≤ U + v
+    [prop] 1 ≤ M + m + L + s
+    [prop] 1 ≤ L + s + U + v
+    [prop] 1 ≤ U + v + T + j
+    [prop] 1 ≤ M + m + L + s + U + v
+    [prop] 1 ≤ L + s + U + v + T + j
+    [prop] 1 ≤ M + m + L + s + U + v + T + j
+    [prop] M = 0 → 1 ≤ M + m → f (n + h) = false
+    [prop] L = 0 → 1 ≤ L + s → f (n + h + M + m) = false
+    [prop] U = 0 → 1 ≤ U + v → f (n + h + M + m + L + s) = false
+    [prop] M + m + L = 0 → 1 ≤ M + m + L + s → f (n + h) = false
+    [prop] L + s + U = 0 → 1 ≤ L + s + U + v → f (n + h + M + m) = false
+    [prop] U + v + T = 0 → 1 ≤ U + v + T + j → f (n + h + M + m + L + s) = false
+    [prop] M + m + L + s + U = 0 → 1 ≤ M + m + L + s + U + v → f (n + h) = false
+    [prop] L + s + U + v + T = 0 → 1 ≤ L + s + U + v + T + j → f (n + h + M + m) = false
+    [prop] M + m + L + s + U + v + T = 0 → 1 ≤ M + m + L + s + U + v + T + j → f (n + h) = false
+    [prop] M + m = L + s
+    [prop] j ≤ h
+    [prop] j ≤ h + M + m
+    [prop] j ≤ h + M + m + L + s
+    [prop] cN (EndN f 0) n (M + m) + 1 ≤ cN (fun x => f x = false) n (M + m)
+    [prop] cN (EndN f 0) n (L + s) + 1 ≤ cN (fun x => f x = false) n (L + s)
+    [prop] cN (EndN f 0) n (U + v) + 1 ≤ cN (fun x => f x = false) n (U + v)
+    [prop] cN (EndN f 0) n (M + m + L + s) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s)
+    [prop] cN (EndN f 0) n (L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v)
+    [prop] cN (EndN f 0) n (U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (U + v + T + j)
+    [prop] cN (EndN f 0) n (M + m + L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s + U + v)
+    [prop] cN (EndN f 0) n (L + s + U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v + T + j)
+    [prop] cN (EndN f 0) n (M + m + L + s + U + v + T + j) + 1 ≤
+          cN (fun x => f x = false) n (M + m + L + s + U + v + T + j)
+    [prop] j ≤ h →
+          cN (EndN f 0) n (M + m + L + s + U + v + T + j) + 1 ≤
+            cN (fun x => f x = false) n (M + m + L + s + U + v + T + j)
+    [prop] j ≤ h + M + m →
+          cN (EndN f 0) n (L + s + U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v + T + j)
+    [prop] j ≤ h + M + m + L + s → cN (EndN f 0) n (U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (U + v + T + j)
+    [prop] 1 ≤ M + m → cN (EndN f 0) n (M + m) + 1 ≤ cN (fun x => f x = false) n (M + m)
+    [prop] 1 ≤ L + s → cN (EndN f 0) n (L + s) + 1 ≤ cN (fun x => f x = false) n (L + s)
+    [prop] 1 ≤ U + v → cN (EndN f 0) n (U + v) + 1 ≤ cN (fun x => f x = false) n (U + v)
+    [prop] 1 ≤ M + m + L + s → cN (EndN f 0) n (M + m + L + s) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s)
+    [prop] 1 ≤ L + s + U + v → cN (EndN f 0) n (L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v)
+    [prop] 1 ≤ U + v + T + j →
+          j ≤ h + M + m + L + s → cN (EndN f 0) n (U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (U + v + T + j)
+    [prop] 1 ≤ M + m + L + s + U + v →
+          cN (EndN f 0) n (M + m + L + s + U + v) + 1 ≤ cN (fun x => f x = false) n (M + m + L + s + U + v)
+    [prop] 1 ≤ L + s + U + v + T + j →
+          j ≤ h + M + m →
+            cN (EndN f 0) n (L + s + U + v + T + j) + 1 ≤ cN (fun x => f x = false) n (L + s + U + v + T + j)
+    [prop] 1 ≤ M + m + L + s + U + v + T + j →
+          j ≤ h →
+            cN (EndN f 0) n (M + m + L + s + U + v + T + j) + 1 ≤
+              cN (fun x => f x = false) n (M + m + L + s + U + v + T + j)
+  [eqc] False propositions
+    [prop] f (n + h) = false
+    [prop] f (n + h + M + m) = false
+    [prop] f (n + h + M + m + L + s) = false
+    [prop] M = 0
+    [prop] L = 0
+    [prop] U = 0
+    [prop] M + m + L = 0
+    [prop] L + s + U = 0
+    [prop] U + v + T = 0
+    [prop] M + m + L + s + U = 0
+    [prop] L + s + U + v + T = 0
+    [prop] M + m + L + s + U + v + T = 0
+    [prop] 1 ≤ M + m → f (n + h) = false
+    [prop] 1 ≤ L + s → f (n + h + M + m) = false
+    [prop] 1 ≤ U + v → f (n + h + M + m + L + s) = false
+    [prop] 1 ≤ M + m + L + s → f (n + h) = false
+    [prop] 1 ≤ L + s + U + v → f (n + h + M + m) = false
+    [prop] 1 ≤ U + v + T + j → f (n + h + M + m + L + s) = false
+    [prop] 1 ≤ M + m + L + s + U + v → f (n + h) = false
+    [prop] 1 ≤ L + s + U + v + T + j → f (n + h + M + m) = false
+    [prop] 1 ≤ M + m + L + s + U + v + T + j → f (n + h) = false
+  [eqc] Equivalence classes
+    [eqc] {h, M, m, L, s, U}
+    [eqc] {v, C + 2}
+    [eqc] {T, j + 3}
+    [eqc] {w, seg f 0 n}
+    [eqc] {true, f (n + h), f (n + h + M + m), f (n + h + M + m + L + s)}
+    [eqc] {areaW
+          (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false),
+        mass (seg f n (h + M + m + L + s + U)),
+        0,
+        2 * areaW (seg f n (h + M + m + L + s + U)) + runKey (List.drop t w) + 4 * ↑C * (↑h + ↑m + ↑s + ↑v) +
+            -2 * ↑v ^ 2 +
+          2 * (↑j + 1) ^ 2,
+        -2 * areaW (seg f n (h + M + m + L + s + U)) + runKey (seg f n (h + M + m + L + s + U))}
+      [eqc] {↑0, ↑v + -1 * ↑C + -2}
+    [eqc] {cntF (seg f n (h + M + m + L + s + U)), h + M + m, h + m + s, M + L + U, M + m + L, L + s + U}
+    [eqc] {mass
+          (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false),
+        1}
+      [eqc] {↑1}
+    [eqc] {List.replicate h false, List.replicate m false, List.replicate s false}
+    [eqc] {List.replicate M true, List.replicate L true, List.replicate U true}
+    [eqc] {seg f n (h + M + m + L + s + U),
+        List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate U true}
+    [eqc] {h + M, h + m, M + L, M + m, L + s}
+    [eqc] {h + M + m + L, M + m + L + s}
+    [eqc] {h + M + m + L + s, M + m + L + s + U}
+    [eqc] {cN (EndN f 0) n h,
+        cN (EndN f 0) n M,
+        cN (EndN f 0) n m,
+        cN (EndN f 0) n L,
+        cN (EndN f 0) n s,
+        cN (EndN f 0) n U}
+    [eqc] {cN (fun x => f x = false) n h,
+        cN (fun x => f x = false) n M,
+        cN (fun x => f x = false) n m,
+        cN (fun x => f x = false) n L,
+        cN (fun x => f x = false) n s,
+        cN (fun x => f x = false) n U}
+    [eqc] {cN (EndN f 0) n h + 1,
+        cN (EndN f 0) n M + 1,
+        cN (EndN f 0) n m + 1,
+        cN (EndN f 0) n L + 1,
+        cN (EndN f 0) n s + 1,
+        cN (EndN f 0) n U + 1}
+    [eqc] {cN (EndN f 0) n (M + m), cN (EndN f 0) n (L + s)}
+    [eqc] {cN (fun x => f x = false) n (M + m), cN (fun x => f x = false) n (L + s)}
+    [eqc] {cN (EndN f 0) n (M + m) + 1, cN (EndN f 0) n (L + s) + 1}
+    [eqc] others
+      [eqc] {mass (List.drop t w), ↑C}
+      [eqc] {↑h, ↑M, ↑m, ↑L, ↑s, ↑U}
+      [eqc] {↑h, ↑M, ↑m, ↑L, ↑s, ↑U}
+      [eqc] {↑v, ↑(C + 2)}
+      [eqc] {↑T, ↑(j + 3)}
+      [eqc] {↑(cN (EndN f 0) n h),
+          ↑(cN (EndN f 0) n M),
+          ↑(cN (EndN f 0) n m),
+          ↑(cN (EndN f 0) n L),
+          ↑(cN (EndN f 0) n s),
+          ↑(cN (EndN f 0) n U)}
+      [eqc] {↑(cN (EndN f 0) n (M + m)), ↑(cN (EndN f 0) n (L + s))}
+      [eqc] {↑(cN (fun x => f x = false) n h),
+          ↑(cN (fun x => f x = false) n M),
+          ↑(cN (fun x => f x = false) n m),
+          ↑(cN (fun x => f x = false) n L),
+          ↑(cN (fun x => f x = false) n s),
+          ↑(cN (fun x => f x = false) n U)}
+      [eqc] {↑(cN (fun x => f x = false) n (M + m)), ↑(cN (fun x => f x = false) n (L + s))}
+      [eqc] {↑(h + m + s), ↑(M + L + U), ↑(M + m + L), ↑(L + s + U)}
+      [eqc] {↑(n + h + M + m + L + s + U + v + T + j - t),
+          if
+              -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤
+                0 then
+            ↑n + -1 * ↑t + ↑h + ↑M + ↑m + ↑L + ↑s + ↑U + ↑v + ↑T + ↑j
+          else 0,
+          ↑n + -1 * ↑t + ↑h + ↑M + ↑m + ↑L + ↑s + ↑U + ↑v + ↑T + ↑j}
+      [eqc] {↑h * ↑C, ↑m * ↑C, ↑s * ↑C}
+      [eqc] {-1 * ↑h, -1 * ↑M, -1 * ↑m, -1 * ↑L, -1 * ↑s, -1 * ↑U}
+      [eqc] {-2 * (↑h * ↑C), -2 * (↑m * ↑C), -2 * (↑s * ↑C)}
+      [eqc] {-12 * ↑h, -12 * ↑m, -12 * ↑s}
+      [eqc] {4 * (↑h * ↑C), 4 * (↑m * ↑C), 4 * (↑s * ↑C)}
+      [eqc] {6 * ↑h, 6 * ↑m, 6 * ↑s}
+      [eqc] {↑(M + m), ↑(L + s)}
+  [cases] Case analyses
+    [cases] [1/2]: if
+            -1 * ↑n + ↑t + -1 * ↑h + -1 * ↑M + -1 * ↑m + -1 * ↑L + -1 * ↑s + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j ≤
+              0 then
+          ↑n + -1 * ↑t + ↑h + ↑M + ↑m + ↑L + ↑s + ↑U + ↑v + ↑T + ↑j
+        else 0
+      [cases] source: Initial goal
+    [cases] [1/2]: 1 ≤ L + s
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ M + m + L + s
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ U + v
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ L + s + U + v
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ M + m + L + s + U + v
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ U + v + T + j
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ L + s + U + v + T + j
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: 1 ≤ M + m + L + s + U + v + T + j
+      [cases] source: E-matching `hpos`
+    [cases] [2/2]: M = 0
+      [cases] source: E-matching `hS2`
+    [cases] [1/2]: 1 ≤ M + m
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: j ≤ h
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: j ≤ h + M + m
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: j ≤ h + M + m + L + s
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: L = U
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate U true
+          and
+            List.replicate L true
+    [cases] [1/2]: m = s
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate s false
+          and
+            List.replicate m false
+    [cases] [1/2]: M = U
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate U true
+          and
+            List.replicate M true
+    [cases] [1/2]: h = s
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate s false
+          and
+            List.replicate h false
+    [cases] [1/2]: L = s
+      [cases] source: Model-based theory combination at argument #2 of
+            cN (EndN f 0) n L
+          and
+            cN (EndN f 0) n s
+  [ematch] E-matching patterns
+    [thm] hS: [@LE.le `[Nat] `[instLENat] `[n] #2]
+    [thm] hS: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[n + h]]
+    [thm] hS: [f #2]
+    [thm] hA: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[M]]
+    [thm] hA: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[n + h] #1)]
+    [thm] hA: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[M]]
+    [thm] hS2: [@LE.le `[Nat] `[instLENat] `[n + h + M] #2]
+    [thm] hS2: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[n + h + M + m]]
+    [thm] hS2: [f #2]
+    [thm] hA2: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[L]]
+    [thm] hA2: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[n + h + M + m] #1)]
+    [thm] hA2: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[L]]
+    [thm] hS3: [@LE.le `[Nat] `[instLENat] `[n + h + M + m + L] #2]
+    [thm] hS3: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[n + h + M + m + L +
+           s]]
+    [thm] hS3: [f #2]
+    [thm] hA3: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[U]]
+    [thm] hA3: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[n + h + M + m + L + s] #1)]
+    [thm] hA3: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[U]]
+    [thm] hS4: [@LE.le `[Nat] `[instLENat] `[n + h + M + m + L + s + U] #2]
+    [thm] hS4: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[n + h + M + m + L +
+               s +
+             U +
+           v]]
+    [thm] hS4: [f #2]
+    [thm] hA4: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[T]]
+    [thm] hA4: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[n + h + M + m + L + s + U + v] #1)]
+    [thm] hA4: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[T]]
+    [thm] hgap: [@LE.le `[Nat] `[instLENat] `[n + h + M + m + L + s + U + v + T] #2]
+    [thm] hgap: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[n + h + M + m + L +
+                   s +
+                 U +
+               v +
+             T +
+           j]]
+    [thm] hgap: [f #2]
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] `[1] #2]
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] #2 `[h + M + m + L + s + U + v + T]]
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] (cN `[EndN f
+             0] `[n] #2) `[1]) (cN `[fun x => f x = false] `[n] #2)]
+    [thm] hpos: [cN `[EndN f 0] `[n] #2]
+    [thm] hpos: [cN `[fun x => f x = false] `[n] #2]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] n := 1
+    [assign] t := 0
+    [assign] h := 1
+    [assign] M := 1
+    [assign] m := 1
+    [assign] L := 1
+    [assign] s := 1
+    [assign] U := 1
+    [assign] v := 6
+    [assign] T := 3
+    [assign] j := 0
+    [assign] C := 4
+    [assign] H := 34
+    [assign] B := 35
+    [assign] areaW (seg f n (h + M + m + L + s + U)) := 0
+    [assign] areaW
+          (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false) := 0
+    [assign] cntF (seg f n (h + M + m + L + s + U)) := 3
+    [assign] mass (List.drop t w) := 4
+    [assign] mass (seg f n (h + M + m + L + s + U)) := 0
+    [assign] mass
+          (List.drop t w ++ seg f n (h + M + m + L + s + U) ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false) := 1
+    [assign] runKey (List.drop t w) := -2
+    [assign] runKey (seg f n (h + M + m + L + s + U)) := 0
+    [assign] cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) := 0
+    [assign] 「↑v ^ 2」 := 0
+    [assign] 「↑j ^ 2」 := 0
+    [assign] 「↑C ^ 2」 := 27
+    [assign] 「(↑j + 1) ^ 2」 := 0
+    [assign] cN (EndN f 0) n h := 0
+    [assign] cN (EndN f 0) n M := 0
+    [assign] cN (EndN f 0) n m := 0
+    [assign] cN (EndN f 0) n L := 0
+    [assign] cN (EndN f 0) n s := 0
+    [assign] cN (EndN f 0) n U := 0
+    [assign] cN (fun x => f x = false) n h := 1
+    [assign] cN (fun x => f x = false) n M := 1
+    [assign] cN (fun x => f x = false) n m := 1
+    [assign] cN (fun x => f x = false) n L := 1
+    [assign] cN (fun x => f x = false) n s := 1
+    [assign] cN (fun x => f x = false) n U := 1
+    [assign] cN (EndN f 0) n (M + m) := 0
+    [assign] cN (EndN f 0) n (L + s) := 0
+    [assign] cN (EndN f 0) n (U + v) := 0
+    [assign] cN (EndN f 0) n (M + m + L + s) := 0
+    [assign] cN (EndN f 0) n (L + s + U + v) := 0
+    [assign] cN (EndN f 0) n (U + v + T + j) := 0
+    [assign] cN (EndN f 0) n (M + m + L + s + U + v) := 0
+    [assign] cN (EndN f 0) n (L + s + U + v + T + j) := 0
+    [assign] cN (EndN f 0) n (M + m + L + s + U + v + T + j) := 0
+    [assign] cN (fun x => f x = false) n (M + m) := 1
+    [assign] cN (fun x => f x = false) n (L + s) := 1
+    [assign] cN (fun x => f x = false) n (U + v) := 1
+    [assign] cN (fun x => f x = false) n (M + m + L + s) := 1
+    [assign] cN (fun x => f x = false) n (L + s + U + v) := 1
+    [assign] cN (fun x => f x = false) n (U + v + T + j) := 1
+    [assign] cN (fun x => f x = false) n (M + m + L + s + U + v) := 1
+    [assign] cN (fun x => f x = false) n (L + s + U + v + T + j) := 1
+    [assign] cN (fun x => f x = false) n (M + m + L + s + U + v + T + j) := 1
+  [ring] Rings
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑M + ↑L + ↑U + -1 * ↑h + -1 * ↑m + -1 * ↑s = 0
+        [_] ↑L + -1 * ↑U = 0
+        [_] 3 * ↑U + -1 * ↑h + -2 * ↑s = 0
+        [_] ↑h + -1 * ↑s = 0
+        [_] ↑m + -1 * ↑s = 0
+        [_] ↑v + -1 * ↑C + -2 = 0
+        [_] ↑T + -1 * ↑j + -3 = 0
+      [diseqs] Disequalities
+        [_] ¬3 * ↑s = 0
+        [_] ¬9 * ↑s = 0
+        [_] ¬3 * ↑s = 0
+        [_] ¬9 * ↑s = 0
+        [_] ¬5 * ↑s = 0
+        [_] ¬3 * ↑s + 3 * ↑C + 3 * ↑j + 15 = 0
+        [_] ¬9 * ↑s + 3 * ↑C + 3 * ↑j + 15 = 0
+        [_] ¬5 * ↑s + ↑C + ↑j + 5 = 0
+        [_] ¬3 * ↑s = 0
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] 12 * (↑U * ↑v) + 2 * ↑v ^ 2 + 2 * ↑j ^ 2 + -24 * ↑U + -8 * ↑v + 4 * ↑j +
+                    runKey (seg f n (h + M + m + L + s + U)) +
+                  runKey (List.drop t w) +
+                2 =
+              0
+        [_] ↑h + -1 * ↑s = 0
+        [_] ↑M + -1 * ↑U = 0
+        [_] ↑m + -1 * ↑s = 0
+        [_] ↑L + -1 * ↑U = 0
+        [_] ↑s + -1 * ↑U = 0
+        [_] ↑C + -1 * ↑v + 2 = 0
+        [_] 2 * areaW (seg f n (h + M + m + L + s + U)) + -1 * runKey (seg f n (h + M + m + L + s + U)) = 0
+        [_] ↑(cN (EndN f 0) n U) + -1 * ↑(cN (EndN f 0) n L) = 0
+        [_] ↑(cN (fun x => f x = false) n U) + -1 * ↑(cN (fun x => f x = false) n L) = 0
+        [_] ↑(cN (EndN f 0) n s) + -1 * ↑(cN (EndN f 0) n m) = 0
+        [_] ↑(cN (fun x => f x = false) n s) + -1 * ↑(cN (fun x => f x = false) n m) = 0
+        [_] ↑(cN (EndN f 0) n L) + -1 * ↑(cN (EndN f 0) n M) = 0
+        [_] ↑(cN (fun x => f x = false) n L) + -1 * ↑(cN (fun x => f x = false) n M) = 0
+        [_] ↑(cN (EndN f 0) n m) + -1 * ↑(cN (EndN f 0) n h) = 0
+        [_] ↑(cN (fun x => f x = false) n m) + -1 * ↑(cN (fun x => f x = false) n h) = 0
+        [_] ↑(cN (EndN f 0) n M) + -1 * ↑(cN (EndN f 0) n h) = 0
+        [_] ↑(cN (fun x => f x = false) n M) + -1 * ↑(cN (fun x => f x = false) n h) = 0
+        [_] ↑(cN (EndN f 0) n (L + s)) + -1 * ↑(cN (EndN f 0) n (M + m)) = 0
+        [_] ↑(cN (fun x => f x = false) n (L + s)) + -1 * ↑(cN (fun x => f x = false) n (M + m)) = 0
+  [assoc] Operator `HAppend.hAppend`
+    [basis] Basis
+      [_] List.replicate s false = List.replicate h false
+      [_] List.replicate m false = List.replicate h false
+      [_] List.replicate U true = List.replicate M true
+      [_] List.replicate L true = List.replicate M true
+      [_] List.replicate h false ++
+              (List.replicate M true ++
+                (List.replicate h false ++
+                  (List.replicate M true ++ (List.replicate h false ++ List.replicate M true)))) =
+            seg f n (h + M + m + L + s + U)
+    [properties] Properties
+      [_] identity: `[]`
+[grind] Issues
+  [issue] monomial expected, found numeral
+        3
+      internalizing as variable
+[grind] Diagnostics
+  [thm] E-Matching instances
+    [thm] hpos ↦ 15
+    [thm] hS ↦ 3
+    [thm] hS2 ↦ 3
+    [thm] hS3 ↦ 3
+    [thm] hS4 ↦ 3
+    [thm] hgap ↦ 3
+    [thm] hA ↦ 1
+    [thm] hA2 ↦ 1
+    [thm] hA3 ↦ 1

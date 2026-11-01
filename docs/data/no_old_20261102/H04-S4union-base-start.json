@@ -1,0 +1,25 @@
+{
+  "tag": "H04-S4union-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeS4Base.olean",
+    "Recaman/MassThreeS4Base.lean"
+  ],
+  "started_jst": "2026-11-02T06:24:49.394763+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeS4Base.lean": "3d2ee968f03d100f87dc1c9c8c50f5f018f5c82387339eb60c2744f1da8b2b16"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "source_tree_sha256": "0098c38a533aa30357b7f8a08a43038be4f97be84e9338b8bde02536dff34324",
+  "source_tree_manifest": "H04-S4union-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

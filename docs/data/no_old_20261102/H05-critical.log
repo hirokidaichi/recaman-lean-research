@@ -1,0 +1,8 @@
+Recaman/LowSeparatorCounterCritical.lean:87:51: error: Application type mismatch: The argument
+  hwin
+has type
+  Win f r (n + H + v + k - r)
+but is expected to have type
+  Win f r (n + (H + v) + k - r)
+in the application
+  OldSourceKeyOrder.actual_old_target_prior_clock f n r t (H + v) k T j hw' hr ht ?m.1017 ?m.1018 ?m.1019 ?m.1020 hwin

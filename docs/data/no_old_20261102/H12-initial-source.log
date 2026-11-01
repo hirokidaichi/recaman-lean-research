@@ -1,0 +1,231 @@
+Recaman/OffsetOneInitialSource.lean:72:4: error: `grind` failed
+case grind.1.1.1.2.2.1
+u x : List Bool
+hu : BlockWord u
+h R i v : Nat
+hR : 5 ≤ R
+hv : 5 ≤ v
+hmz : mass (List.replicate h false ++ x) = 0
+hS15 : cntF (List.replicate h false ++ x) ≤ 15
+hkeyTarget :
+  runKey u =
+    -runKey (List.replicate h false ++ x) - 4 * (↑v - 1) * (↑(cntF (List.replicate h false ++ x)) + ↑v) + 2 * ↑v ^ 2 -
+      2 * ↑R ^ 2
+q : Nat
+hq_1 : 1 ≤ q
+hqh : q ≤ h
+hbal : mass (List.replicate q false ++ (x ++ List.replicate v false)) + ↑i = 1
+hkey : runKey (List.replicate q false ++ (x ++ List.replicate v false)) = -2
+d : Nat := h - q
+r : List Bool := List.replicate q false ++ x
+S : Int := ↑(cntF (List.replicate h false ++ x))
+hsplit : List.replicate h false ++ x = List.replicate d false ++ r
+hmr : mass r = ↑d
+hcr : ↑(cntF r) = S - ↑d
+hkr : runKey r + 4 * ↑v * ↑d - 2 * ↑v ^ 2 = -2
+hdi : ↑d + ↑i = ↑v + 1
+hkz : runKey (List.replicate h false ++ x) = runKey r - 4 * ↑d * (S - ↑d) - 2 * ↑d ^ 2
+hku : runKey u = -2 * ↑R ^ 2 + 2 + 4 * (2 - ↑i) * (S + ↑v) - 2 * ↑d ^ 2
+hlu : -2 ≤ runKey u
+hRR : 0 ≤ (↑R - 5) * (↑R + 5)
+hS0 : 0 ≤ S
+hSmax : S ≤ 15
+hi : ¬i = 0
+hi1 : ¬i = 1
+hp : 0 ≤ (↑i - 2) * (S + 4)
+hq : 0 ≤ ↑d ^ 2
+h_1 : ¬i = 0
+h_2 : h = q
+h_3 : ↑R = ↑v
+h_4 : (if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0) = ↑(cntF (List.replicate h false ++ x)) - ↑(h - q)
+h_5 : ¬↑i = ↑(cntF (List.replicate h false ++ x)) + ↑v
+h_6 : ¬↑R - 5 = ↑i - 2
+h_7 : 0 = ↑R - 5
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] 5 ≤ R
+    [prop] 5 ≤ v
+    [prop] mass (List.replicate h false ++ x) = 0
+    [prop] cntF (List.replicate h false ++ x) ≤ 15
+    [prop] runKey u + runKey (List.replicate h false ++ x) +
+                4 * (↑v - 1) * (↑(cntF (List.replicate h false ++ x)) + ↑v) +
+              2 * ↑R ^ 2 +
+            -2 * ↑v ^ 2 =
+          0
+    [prop] 1 ≤ q
+    [prop] q ≤ h
+    [prop] mass (List.replicate q false ++ (x ++ List.replicate v false)) + ↑i + -1 = 0
+    [prop] runKey (List.replicate q false ++ (x ++ List.replicate v false)) = -2
+    [prop] List.replicate h false ++ x = List.replicate (h - q) false ++ (List.replicate q false ++ x)
+    [prop] ↑(h - q) = if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0
+    [prop] mass (List.replicate q false ++ x) = ↑(h - q)
+    [prop] -1 * ↑(cntF (List.replicate h false ++ x)) + ↑(cntF (List.replicate q false ++ x)) + ↑(h - q) = 0
+    [prop] runKey (List.replicate q false ++ x) + 4 * ↑v * ↑(h - q) + -2 * ↑v ^ 2 + 2 = 0
+    [prop] ↑i + -1 * ↑v + ↑(h - q) + -1 = 0
+    [prop] runKey (List.replicate h false ++ x) + -1 * runKey (List.replicate q false ++ x) +
+              4 * ↑(h - q) * (↑(cntF (List.replicate h false ++ x)) - ↑(h - q)) +
+            2 * ↑(h - q) ^ 2 =
+          0
+    [prop] runKey u + -1 * (4 * (2 - ↑i) * (↑(cntF (List.replicate h false ++ x)) + ↑v)) + 2 * ↑R ^ 2 +
+              2 * ↑(h - q) ^ 2 +
+            -2 =
+          0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] -1 * ↑(cntF (List.replicate h false ++ x)) ≤ 0
+    [prop] ↑(cntF (List.replicate h false ++ x)) + -15 ≤ 0
+    [prop] ¬i = 0
+    [prop] ¬i = 1
+    [prop] -1 * ((↑i - 2) * (↑(cntF (List.replicate h false ++ x)) + 4)) ≤ 0
+    [prop] -1 * ↑(h - q) ^ 2 ≤ 0
+    [prop] ¬i = 0
+    [prop] h = q
+    [prop] ↑R = ↑v
+    [prop] (if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0) = ↑(cntF (List.replicate h false ++ x)) - ↑(h - q)
+    [prop] ¬↑i = ↑(cntF (List.replicate h false ++ x)) + ↑v
+    [prop] ¬↑R - 5 = ↑i - 2
+    [prop] 0 = ↑R - 5
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] ↑R = ↑v
+    [prop] 0 = ↑R - 5
+    [prop] (if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0) = ↑(cntF (List.replicate h false ++ x)) - ↑(h - q)
+    [prop] h = q
+    [prop] ↑(cntF (List.replicate h false ++ x)) + -15 ≤ 0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] -1 * ↑h + ↑q ≤ 0
+    [prop] -1 * ↑(cntF (List.replicate h false ++ x)) ≤ 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] -1 * ((↑i - 2) * (↑(cntF (List.replicate h false ++ x)) + 4)) ≤ 0
+    [prop] -1 * ↑(h - q) ^ 2 ≤ 0
+    [prop] q ≤ h
+    [prop] cntF (List.replicate h false ++ x) ≤ 15
+    [prop] 1 ≤ q
+    [prop] 5 ≤ R
+    [prop] 5 ≤ v
+  [eqc] False propositions
+    [prop] ↑i = ↑(cntF (List.replicate h false ++ x)) + ↑v
+    [prop] ↑R - 5 = ↑i - 2
+    [prop] i = 0
+    [prop] i = 1
+  [eqc] Equivalence classes
+    [eqc] {h, q}
+    [eqc] {cntF (List.replicate h false ++ x), cntF (List.replicate q false ++ x)}
+    [eqc] {mass (List.replicate h false ++ x),
+        mass (List.replicate q false ++ x),
+        0,
+        mass (List.replicate q false ++ (x ++ List.replicate v false)) + ↑i + -1,
+        runKey (List.replicate h false ++ x) + -1 * runKey (List.replicate q false ++ x) +
+            4 * ↑(h - q) * (↑(cntF (List.replicate h false ++ x)) - ↑(h - q)) +
+          2 * ↑(h - q) ^ 2,
+        runKey (List.replicate q false ++ x) + 4 * ↑v * ↑(h - q) + -2 * ↑v ^ 2 + 2,
+        runKey u + runKey (List.replicate h false ++ x) + 4 * (↑v - 1) * (↑(cntF (List.replicate h false ++ x)) + ↑v) +
+            2 * ↑R ^ 2 +
+          -2 * ↑v ^ 2,
+        runKey u + -1 * (4 * (2 - ↑i) * (↑(cntF (List.replicate h false ++ x)) + ↑v)) + 2 * ↑R ^ 2 + 2 * ↑(h - q) ^ 2 +
+          -2,
+        2 * ↑R ^ 2 + 2 * ↑v ^ 2 + 4 * (↑v * ↑(cntF (List.replicate h false ++ x))) + -4 * ↑v +
+              -4 * ↑(cntF (List.replicate h false ++ x)) +
+            runKey u +
+          runKey (List.replicate h false ++ x),
+        4 * (↑(cntF (List.replicate h false ++ x)) * ↑(h - q)) + -2 * ↑(h - q) ^ 2 +
+            runKey (List.replicate h false ++ x) +
+          -1 * runKey (List.replicate q false ++ x)}
+      [eqc] {↑(cntF (List.replicate h false ++ x)),
+          ↑(cntF (List.replicate q false ++ x)),
+          ↑0,
+          ↑(h - q),
+          if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0,
+          ↑h + -1 * ↑q,
+          ↑i + -1 * ↑v + ↑(h - q) + -1,
+          -1 * ↑(cntF (List.replicate h false ++ x)) + ↑(cntF (List.replicate q false ++ x)) + ↑(h - q),
+          ↑R - 5,
+          ↑(cntF (List.replicate h false ++ x)) - ↑(h - q)}
+    [eqc] {runKey (List.replicate h false ++ x), runKey (List.replicate q false ++ x)}
+    [eqc] {runKey (List.replicate q false ++ (x ++ List.replicate v false)), -2}
+    [eqc] {List.replicate h false, List.replicate q false}
+    [eqc] {List.replicate h false ++ x,
+        List.replicate q false ++ x,
+        List.replicate (h - q) false ++ (List.replicate q false ++ x)}
+    [eqc] others
+      [eqc] {↑h, ↑q}
+      [eqc] {↑R, ↑v, ↑(cntF (List.replicate h false ++ x)) + ↑v}
+      [eqc] {↑(cntF (List.replicate h false ++ x)) + 4, ↑v - 1}
+      [eqc] {↑v * ↑(cntF (List.replicate h false ++ x)), ↑v * ↑(h - q)}
+      [eqc] {-1 * ↑h, -1 * ↑q}
+      [eqc] {-1 * ↑R ^ 2, -1 * ↑v ^ 2}
+      [eqc] {2 * ↑R ^ 2, 2 * ↑v ^ 2}
+      [eqc] {4 * (↑v * ↑(cntF (List.replicate h false ++ x))), 4 * (↑v * ↑(h - q))}
+      [eqc] {↑R ^ 2, ↑v ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: h = q
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate q false
+          and
+            List.replicate h false
+    [cases] [1/2]: ↑R = ↑v
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑v ^ 2
+          and
+            ↑R ^ 2
+    [cases] [1/2]: (if -1 * ↑h + ↑q ≤ 0 then ↑h + -1 * ↑q else 0) = ↑(cntF (List.replicate h false ++ x)) - ↑(h - q)
+      [cases] source: Model-based theory combination at argument #5 of
+            4 * ↑(h - q) * (↑(cntF (List.replicate h false ++ x)) - ↑(h - q))
+          and
+            4 * ↑v * ↑(h - q)
+    [cases] [2/2]: ↑i = ↑(cntF (List.replicate h false ++ x)) + ↑v
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑v * ↑i
+          and
+            4 * (↑v - 1) * (↑(cntF (List.replicate h false ++ x)) + ↑v)
+    [cases] [2/2]: ↑R - 5 = ↑i - 2
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑i - 2) * (↑(cntF (List.replicate h false ++ x)) + 4)
+          and
+            (↑R - 5) * (↑R + 5)
+    [cases] [1/2]: 0 = ↑R - 5
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑R - 5) * (↑R + 5)
+          and
+            ↑(cntF (List.replicate h false ++ x)) * ↑(h - q)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] h := 1
+    [assign] R := 37
+    [assign] i := 38
+    [assign] v := 37
+    [assign] q := 1
+    [assign] d := 21
+    [assign] S := 22
+    [assign] cntF (List.replicate h false ++ x) := 0
+    [assign] cntF (List.replicate q false ++ x) := 0
+    [assign] mass (List.replicate h false ++ x) := 0
+    [assign] mass (List.replicate q false ++ x) := 0
+    [assign] mass (List.replicate q false ++ (x ++ List.replicate v false)) := -37
+    [assign] runKey u := 0
+    [assign] runKey (List.replicate h false ++ x) := 48
+    [assign] runKey (List.replicate q false ++ x) := 48
+    [assign] runKey (List.replicate q false ++ (x ++ List.replicate v false)) := -2
+    [assign] 「↑R ^ 2」 := 25
+    [assign] 「↑v ^ 2」 := 25
+    [assign] 「↑(h - q) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑R + -1 * ↑i + 1 = 0
+      [_] ↑v + -1 * ↑i + -1 * ↑(h - q) + 1 = 0
+      [_] ↑(cntF (List.replicate h false ++ x)) + -1 * ↑(cntF (List.replicate q false ++ x)) + -1 * ↑(h - q) = 0
+      [_] runKey u + -4 * ↑i + 3 * runKey (List.replicate q false ++ x) + 8 = 0
+      [_] runKey (List.replicate h false ++ x) + -1 * runKey (List.replicate q false ++ x) = 0
+      [_] ↑q + -1 * ↑h + ↑(h - q) = 0
+      [_] mass (List.replicate q false ++ (x ++ List.replicate v false)) + ↑i + -1 = 0
+      [_] ↑i + -6 = 0
+      [_] ↑(cntF (List.replicate q false ++ x)) = 0
+      [_] ↑(h - q) = 0
+      [_] runKey (List.replicate q false ++ x) + -48 = 0
+  [assoc] Operator `HAppend.hAppend`
+    [basis] Basis
+      [_] List.replicate q false = List.replicate h false
+      [_] List.replicate (h - q) false ++ (List.replicate h false ++ x) = List.replicate h false ++ x
+    [properties] Properties
+      [_] identity: `[]`

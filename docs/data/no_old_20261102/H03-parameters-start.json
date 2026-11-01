@@ -1,0 +1,25 @@
+{
+  "tag": "H03-parameters",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeTargetCounter.olean",
+    "Recaman/MassThreeTargetCounter.lean"
+  ],
+  "started_jst": "2026-11-02T06:16:29.568840+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeTargetCounter.lean": "eb749fa24922ae53dfdcc2c42e6bff2965fec5129fdc21f30413b82398363c3e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "c5e439a47258067747903b2fd732389925ff1b92ef464541d9c4adf293b42f9f",
+  "source_tree_sha256": "fed4760ea5d4c646b413e3b2b5c75167056c9672dbebd56f08d5ea8da715fa3b",
+  "source_tree_manifest": "H03-parameters-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

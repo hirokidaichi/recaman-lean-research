@@ -1,0 +1,36 @@
+Recaman/LowSeparatorSources.lean:65:15: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/LowSeparatorSources.lean:65:4: error: `simp` made no progress
+Recaman/LowSeparatorSources.lean:84:22: error(lean.unknownIdentifier): Unknown identifier `runKey_five_runs`
+Recaman/LowSeparatorSources.lean:81:67: error: unsolved goals
+u : List Bool
+hu : BlockWord u
+hcu : mass u = 3
+h M m L s U v R i : Nat
+hv : v = 1 ∨ v = 2
+hzero : M + L + U = h + m + s
+hbudget : M ≤ R + 1
+B : Int
+hB :
+  runKey
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false) =
+    -2 * B
+hkeyTarget : runKey u = 2 * B - 12 * (↑h + ↑m + ↑s + ↑v) + 2 * ↑v ^ 2 - 2 * ↑R ^ 2
+e : Nat
+he : 1 ≤ e
+heM : e ≤ M
+hbal :
+  mass
+        (List.replicate e true ++
+          (List.replicate m false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+            List.replicate v false)) +
+      ↑i =
+    1
+hkey :
+  runKey
+      (List.replicate e true ++
+        (List.replicate m false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+          List.replicate v false)) =
+    -2
+hUval : ↑U = ↑h + ↑m + ↑s - ↑M - ↑L
+⊢ False

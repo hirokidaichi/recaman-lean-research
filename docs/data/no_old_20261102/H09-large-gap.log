@@ -1,0 +1,89 @@
+Recaman/LargeSeparatorMassThreeGap.lean:69:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  x ≥ 0
+  0 ≤ u ≤ 7
+  q ≥ 0
+  q + u ≥ 0
+  p ≥ 0
+  p - q ≥ 0
+  o ≥ 0
+  o - p + q ≤ 0
+  l ≥ 0
+  k ≥ 0
+  i ≥ 0
+  i - k ≥ 0
+  i - q - u ≤ -4
+  i - q - u - x ≤ -8
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - l ≤ -1
+  c ≥ 1
+  c + e - l ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cntF z)
+ o := ↑(cN P (n + (h + (M + (m + (L + (s + U)))))) v)
+ p := ↑(cN P n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ q := ↑(cN P (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ u := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ x := ↑(cN P n (h + M + m + L + s + U))
+Recaman/LargeSeparatorMassThreeGap.lean:85:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b_1 ≥ 0
+  a_1 ≥ 0
+  a_1 - b_1 ≥ 0
+  y ≥ 0
+  y - a_1 + b_1 ≤ 0
+  x ≥ 0
+  u ≥ 0
+  2*u - x ≥ -1
+  0 ≤ q ≤ 3
+  2*q - x ≥ -1
+  0 ≤ p ≤ 7
+  o ≥ 0
+  l ≥ 0
+  l + o ≥ 0
+  k ≥ 0
+  i ≥ 0
+  i - k ≥ 0
+  i - l - o ≤ -4
+  i - l - o - q ≥ -7
+  i - q ≤ -1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - x ≤ -1
+  c ≥ 1
+  c + e - x ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (EndN f 0) (n + (h + M + m + L + s + U) + v) T)
+ o := ↑(cN P (n + (h + M + m + L + s + U) + v) T)
+ p := ↑(cN (EndN f 0) (n + h + M + m + L + s + U + v) T)
+ q := ↑(cN P n (h + M + m + L + s + U))
+ u := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U))
+ x := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U))
+ y := ↑(cN P (n + (h + (M + (m + (L + (s + U)))))) v)
+ a_1 := ↑(cN P n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ b_1 := ↑(cN P (n + (h + (M + (m + (L + (s + (U + v))))))) T)

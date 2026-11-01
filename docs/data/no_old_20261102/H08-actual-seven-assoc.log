@@ -1,0 +1,38 @@
+Recaman/FourthActualSeven.lean:44:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  j - k ≥ -1
+  0 ≤ i ≤ 6
+  g ≥ 8
+  e ≥ 3
+  d ≥ 1
+  c ≥ 1
+  b ≥ 1
+  a ≥ 1
+where
+ a := ↑h
+ b := ↑m
+ c := ↑s
+ d := ↑v
+ e := ↑(cntF (z ++ List.replicate v false))
+ g := ↑(rayCount (w ++ (z ++ List.replicate v false)) T)
+ i := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ j := ↑(rayCount
+    (List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          (List.replicate L true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))
+    T)
+ k := ↑(rayCount
+    (w ++
+      (List.replicate h false ++
+        (List.replicate M true ++
+          (List.replicate m false ++
+            (List.replicate L true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false)))))))
+    T)

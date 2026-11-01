@@ -1,0 +1,25 @@
+{
+  "tag": "H12-no-old-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OffsetOneNoOldGap.olean",
+    "Recaman/OffsetOneNoOldGap.lean"
+  ],
+  "started_jst": "2026-11-02T07:10:16.434929+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OffsetOneNoOldGap.lean": "dd96a9e744a0d7d8d4a9e741f3b9cd73c11ce39c07f8ff2f99c0b660ba28983e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "aa1b4bec0e5be179a568460f9b38adaf1c7a5dc7d7cbd6689819bee7c7673bbd",
+  "source_tree_sha256": "cc7ba8e1bddab048fa2bb7c919466a6665637ed3cb13463994958bfe437f59f9",
+  "source_tree_manifest": "H12-no-old-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

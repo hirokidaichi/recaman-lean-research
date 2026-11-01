@@ -1,0 +1,31 @@
+{
+  "tag": "H10-offset-counter-isolated",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OffsetTargetCounter.olean",
+    "Recaman/OffsetTargetCounter.lean"
+  ],
+  "started_jst": "2026-11-02T07:01:23.845417+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OffsetTargetCounter.lean": "defb4a0d29e1eb48f9d8b9594000535bf9ef306efabe4a6456c436de84a57798"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "source_tree_sha256": "7a26f4cfb286298b4b15304413fd92ef4d2386bde714709aa970f9a92735661a",
+  "source_tree_manifest": "H10-offset-counter-isolated-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.975388916907832,
+  "cpu_seconds": 0.850857,
+  "finished_jst": "2026-11-02T07:01:24.820737+09:00"
+}

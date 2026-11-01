@@ -1,0 +1,25 @@
+{
+  "tag": "H10-offset-head",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OffsetHeadBound.olean",
+    "Recaman/OffsetHeadBound.lean"
+  ],
+  "started_jst": "2026-11-02T06:59:52.654443+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OffsetHeadBound.lean": "d61bd28365ee1347f778f076a02482dc82032045dee0913212e97ef08c0b62db"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "source_tree_sha256": "10357c547b4a22926b69c0eef78c8e98b0f03f5a07de0092f05892ffe6c67678",
+  "source_tree_manifest": "H10-offset-head-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,54 @@
+Recaman/EqualTargetNoOldGap.lean:115:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d_1 ≤ 5
+  c_1 ≥ 0
+  c_1 + d_1 ≥ 5
+  b_1 ≥ 0
+  b_1 - c_1 ≥ 0
+  a_1 ≥ 0
+  a_1 - c_1 - d_1 ≤ -1
+  y ≥ 0
+  y - b_1 + c_1 ≤ -5
+  8 ≤ x ≤ 15
+  r ≥ 0
+  0 ≤ q ≤ 5
+  2*l - 2*o + p - u - 12*x ≥ 18
+  k ≥ 0
+  k - c_1 - d_1 ≤ -1
+  i ≥ 4
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - x ≤ -1
+  d + g - x + c_1 + d_1 ≥ -1
+  c ≥ 1
+  c + e - x ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := mass (List.drop t w)
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := areaW z
+ o := ↑v ^ 2
+ p := 4 * ↑v * (↑h + ↑m + ↑s + ↑v)
+ q := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ r := ↑(rayCount (z ++ List.replicate v false) T)
+ u := runKey (seg f n (h + M + m + L + s + U))
+ x := ↑(cN (fun u => f u = true) n H)
+ y := ↑(cN P (n + H) v)
+ a_1 := ↑(cN P n (H + v + T))
+ b_1 := ↑(cN P n (H + (v + T)))
+ c_1 := ↑(cN P (n + (H + v)) T)
+ d_1 := ↑(cN (EndN f 0) (n + (H + v)) T)

@@ -1,0 +1,227 @@
+Recaman/NoOldTargetBounds.lean:111:14: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cntF z
+in the target expression
+  0 = 2 * ones z - ↑z.length
+
+f : Nat → Bool
+n t h M m L s U T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm✝ : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + 3 → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + 3 + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + 3 + T ≤ x → x < n + h + M + m + L + s + U + 3 + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + 3 + T + j - t)
+hC : mass (List.drop t w) = 3
+hno : ∀ (k : Nat), k < T → ∀ (r : Nat), r < n → ¬Win f r (n + h + M + m + L + s + U + 3 + k - r)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + 3 + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 0
+hT : T = j + 1
+B : Int := -areaW z
+hB : runKey z = -2 * B
+hkt : runKey (List.drop t w) = 2 * B - 4 * 3 * (↑(h + m + s) + ↑3) + 2 * ↑3 ^ 2 - 2 * (↑j + 1) ^ 2
+hkey : runKey (List.drop t w) = -runKey z - 12 * (↑h + ↑m + ↑s) - 18 - 2 * (↑j + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hRS : j + 1 + 1 ≤ cntF z
+hword : seg f n (H + 3 + T) = z ++ List.replicate 3 false ++ List.replicate T true
+hc✝ : ones (z ++ List.replicate 3 false ++ List.replicate T true) = ↑(cN (fun u => f u = true) n (H + 3 + T))
+hc : 0 = ↑z.length - 2 * ↑(h + m + s)
+hm : 0 = 2 * ones z - ↑z.length
+⊢ ones z = ↑(h + m + s)
+Recaman/NoOldTargetBounds.lean:141:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f x
+in the target expression
+  EndN f 0 x
+
+f : Nat → Bool
+n t h M m L s U T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + 3 → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + 3 + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + 3 + T ≤ x → x < n + h + M + m + L + s + U + 3 + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + 3 + T + j - t)
+hC : mass (List.drop t w) = 3
+hno : ∀ (k : Nat), k < T → ∀ (r : Nat), r < n → ¬Win f r (n + h + M + m + L + s + U + 3 + k - r)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + 3 + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate 3 false ++ List.replicate T true ++ List.replicate j false) = 0
+hT : T = j + 1
+B : Int := -areaW z
+hB : runKey z = -2 * B
+hkt : runKey (List.drop t w) = 2 * B - 4 * 3 * (↑(h + m + s) + ↑3) + 2 * ↑3 ^ 2 - 2 * (↑j + 1) ^ 2
+hkey : runKey (List.drop t w) = -runKey z - 12 * (↑h + ↑m + ↑s) - 18 - 2 * (↑j + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hRS : j + 1 + 1 ≤ cntF z
+hword : seg f n (H + 3 + T) = z ++ List.replicate 3 false ++ List.replicate T true
+hAc : cN (fun x => f x = true) n (H + 3 + T) = h + m + s + T
+hR : 5 ≤ j + 1
+hlastEq : cN (EndN f 0) (n + H + 3) T = rayCount (z ++ List.replicate 3 false) T
+hlocal6 :
+  rayCount
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+            List.replicate s false ++
+          List.replicate U true ++
+        List.replicate 3 false)
+      T ≤
+    6
+hlast : cN (EndN f 0) (n + H + 3) T ≤ 6
+hhead10 : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 10
+x : Nat
+hx : n + H ≤ x
+hxe : x < n + H + 3
+he : EndN f 0 x
+hf : f x = false
+⊢ False
+Recaman/NoOldTargetBounds.lean:151:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ u ≤ 6
+  r ≥ 0
+  0 ≤ r - u ≤ 10
+  q ≥ 0
+  p ≥ 0
+  o ≥ 0
+  o + p ≥ 0
+  0 ≤ l ≤ 6
+  k ≥ 0
+  i ≥ 4
+  i - o - p ≤ -17
+  i - q ≥ 0
+  2*i - o - p ≤ -3
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g + i - o - p ≤ -2
+  c ≥ 1
+  c + e + i - o - p ≤ -2
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := ↑(rayCount (z ++ List.replicate 3 false) T)
+ l := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate 3 false)
+    T)
+ o := ↑(cN (EndN f 0) n (H + 3 + T))
+ p := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (H + 3 + T))
+ q := ↑(cN P n (H + 3 + T))
+ r := ↑(cN (EndN f 0) n (H + (3 + T)))
+ u := ↑(cN (EndN f 0) (n + (H + 3)) T)
+Recaman/NoOldTargetBounds.lean:165:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  y ≥ 0
+  x ≥ 0
+  x - y ≥ 0
+  v ≥ 0
+  u ≥ 0
+  u - x + y ≤ 0
+  0 ≤ r ≤ 2
+  r + u ≥ 1
+  q ≥ 0
+  p ≥ 0
+  o ≥ 0
+  o - p ≥ 0
+  o + q ≥ 0
+  0 ≤ l ≤ 10
+  0 ≤ k ≤ 6
+  0 ≤ i ≤ 6
+  g ≥ 4
+  -16 ≤ g - o - q ≤ -1
+  g - r - u ≤ -3
+  g - v ≥ 0
+  2*g - o - q ≤ -3
+  e ≥ 1
+  e + g - o - q + r + u ≤ -2
+  d ≥ 1
+  c ≥ 1
+  c + d + g - o - q ≤ -2
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑s
+ e := ↑U
+ g := ↑j
+ i := ↑(rayCount (z ++ List.replicate 3 false) T)
+ k := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate 3 false)
+    T)
+ l := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ o := ↑(cN (EndN f 0) n (H + 3 + T))
+ p := ↑(cN (EndN f 0) (n + (H + 3)) T)
+ q := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (H + 3 + T))
+ r := ↑(rayCount (w ++ List.replicate h false) M)
+ u := ↑(cN P (n + h) M)
+ v := ↑(cN P n (h + M + m + L + s + U + 3 + T))
+ x := ↑(cN P n (h + (M + (m + (L + (s + (U + (3 + T))))))))
+ y := ↑(cN P (n + (h + M)) (m + (L + (s + (U + (3 + T))))))

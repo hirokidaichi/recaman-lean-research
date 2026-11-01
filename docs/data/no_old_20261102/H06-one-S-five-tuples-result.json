@@ -1,0 +1,31 @@
+{
+  "tag": "H06-one-S-five-tuples",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OneSMiddleSourcePruning.olean",
+    "Recaman/OneSMiddleSourcePruning.lean"
+  ],
+  "started_jst": "2026-11-02T06:41:09.315912+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OneSMiddleSourcePruning.lean": "1edcc8614aa64f698c6f4500236516ee635a6213e0d8f25983e821ef51eca931"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "ffc9bfaaa59caf053268ebdf57d7fb127aa467cfa7489bad83d50607737d925a",
+  "source_tree_manifest": "H06-one-S-five-tuples-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 5.793474166188389,
+  "cpu_seconds": 5.682222,
+  "finished_jst": "2026-11-02T06:41:15.109161+09:00"
+}

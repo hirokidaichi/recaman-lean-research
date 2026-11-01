@@ -1,0 +1,25 @@
+{
+  "tag": "H05-critical-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowSeparatorCounterBase.olean",
+    "Recaman/LowSeparatorCounterBase.lean"
+  ],
+  "started_jst": "2026-11-02T06:35:30.091526+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowSeparatorCounterBase.lean": "d684454fc24da3050d3cccb2b4c3ca89b7eb4e86e0c8041afd05d8361a1081c5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "ee2e137784ac5cb5c4c7c0be4e606027c6cc862060af0cef4ea0143d8b51e9c7",
+  "source_tree_manifest": "H05-critical-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

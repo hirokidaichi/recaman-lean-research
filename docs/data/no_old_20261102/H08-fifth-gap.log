@@ -1,0 +1,57 @@
+Recaman/MassThreeS5Gap.lean:88:5: error: unknown tactic
+Recaman/MassThreeS5Gap.lean:88:2: error: unsolved goals
+case neg
+f : Nat → Bool
+n t h M m L s U T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + 5 → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + 5 + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + 5 + T ≤ x → x < n + h + M + m + L + s + U + 5 + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + 5 + T + j - t)
+hC : mass (List.drop t w) = 3
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + 5 + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 5 + T)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 5 + T) < j + 1
+hb :
+  T + 2 = 5 + j ∧
+    5 ≤ j + 1 ∧
+      M ≤ j + 2 ∧
+        runKey (List.drop t w) =
+          -runKey (seg f n (h + M + m + L + s + U)) - 12 * (↑h + ↑m + ↑s + ↑5) + 2 * ↑5 ^ 2 - 2 * (↑j + 1) ^ 2
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hu : BlockWord (List.drop t w)
+hkey : runKey (List.drop t w) = -runKey z - 12 * (↑h + ↑m + ↑s) - 10 - 2 * (↑j + 1) ^ 2
+hS10 : 10 ≤ h + m + s
+hAh : 0 + ↑M + 0 + ↑L + 0 + ↑U = ↑(cN (fun u => f u = true) n H)
+hfhead : 4 ≤ cN P n H
+hc1 : cN P n (H + 5) = cN P n H + cN P (n + H) 5
+hc2 : cN P n (H + 5 + T) = cN P n (H + 5) + cN P (n + (H + 5)) T
+hp : T = cN (EndN f 0) (n + H + 5) T + cN P (n + H + 5) T
+hT : T + 2 = 5 + j
+hno : ¬∀ (k : Nat), k < T → ∀ (r : Nat), r < n → ¬Win f r (n + H + 5 + k - r)
+⊢ j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 5 + T)

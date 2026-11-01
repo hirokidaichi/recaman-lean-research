@@ -1,0 +1,31 @@
+{
+  "tag": "H10-large-offset",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LargeTargetOffsetGap.olean",
+    "Recaman/LargeTargetOffsetGap.lean"
+  ],
+  "started_jst": "2026-11-02T07:00:24.465601+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeTargetOffsetGap.lean": "7558c63494fbbd218ed845a45973aba6be53a355ed3d8e8253cf8e72bb32839a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "source_tree_sha256": "bed6d1477379fc017999eb41cb738a2674944add9f62b21a1c606a226a014947",
+  "source_tree_manifest": "H10-large-offset-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 2.819811083842069,
+  "cpu_seconds": 2.942087,
+  "finished_jst": "2026-11-02T07:00:27.285331+09:00"
+}

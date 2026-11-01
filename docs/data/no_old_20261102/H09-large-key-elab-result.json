@@ -1,0 +1,31 @@
+{
+  "tag": "H09-large-key-elab",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LargeSeparatorKey.olean",
+    "Recaman/LargeSeparatorKey.lean"
+  ],
+  "started_jst": "2026-11-02T06:56:38.966303+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeSeparatorKey.lean": "7ace3fca5ed844fbb1e1a5eaef5b75027357f68c1cf86cdd4c899adf2d7bb9f3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "source_tree_sha256": "9e80b65719e0eb20b7cc5b5686b18af57687cf183af10c5e3e231bad920e5f88",
+  "source_tree_manifest": "H09-large-key-elab-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7414965000934899,
+  "cpu_seconds": 0.627408,
+  "finished_jst": "2026-11-02T06:56:39.707731+09:00"
+}

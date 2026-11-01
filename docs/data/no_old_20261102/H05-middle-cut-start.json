@@ -1,0 +1,25 @@
+{
+  "tag": "H05-middle-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MiddleSSourceCharge.olean",
+    "Recaman/MiddleSSourceCharge.lean"
+  ],
+  "started_jst": "2026-11-02T06:37:20.128470+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MiddleSSourceCharge.lean": "37559a2e58f9f362dd40d8efc07c5fc97f071a2d84cf89f6cf4dd21c40b6634a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "9417e6d3811944f8ae785780ce184a502660a7f258781f27b31c44b7d8e6533f",
+  "source_tree_manifest": "H05-middle-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

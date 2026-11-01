@@ -1,0 +1,32 @@
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:18:57: error(lean.unknownIdentifier): Unknown identifier `r`
+Recaman/LargeSeparatorKey.lean:19:4: error: unexpected token '('; expected command
+Recaman/LargeSeparatorKey.lean:45:40: error: unsolved goals
+u z : List Bool
+hu : BlockWord u
+h M m L s U R v r : Nat
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hz :
+  z =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : M + L + U = h + m + s
+hv : 6 ≤ v
+hcost : r + v ≤ 9
+hsmall : h + m + s ≤ 2 * r + 1
+hR : r + 1 ≤ R
+hid : runKey u = -runKey z - 12 * (↑h + ↑m + ↑s + ↑v) + 2 * ↑v ^ 2 - 2 * ↑R ^ 2
+hlo : -2 ≤ runKey u
+hc : mass z = ↑z.length - 2 * ↑(cntF z)
+hm0 : mass z = 0
+⊢ h + (M + (m + (L + (s + U)))) = h + M + m + L + s + U

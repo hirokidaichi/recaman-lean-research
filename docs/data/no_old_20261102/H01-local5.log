@@ -1,0 +1,51 @@
+Recaman/NoOldLocalFive.lean:32:64: error: unsolved goals
+u : List Bool
+hu : BlockWord u
+hcu : mass u = 3
+h M m L s U R i : Nat
+hR : 5 ≤ R
+hzero : M + L + U = h + m + s
+hS15 : h + m + s ≤ 15
+hbudget : M ≤ R + 1
+B : Int
+hB :
+  runKey
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true) =
+    -2 * B
+hkeyTarget : runKey u = 2 * B - 12 * (↑h + ↑m + ↑s) - 18 - 2 * ↑R ^ 2
+hi :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+              List.replicate s false ++
+            List.replicate U true ++
+          List.replicate 3 false ++
+        List.replicate i true) =
+    true
+x : List Bool :=
+  List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+    List.replicate U true
+hmz : mass (List.replicate h false ++ x) = 0
+hm :
+  mass (List.replicate h false ++ x) = ↑(List.replicate h false ++ x).length - 2 * ↑(cntF (List.replicate h false ++ x))
+⊢ h + (M + m + L + s + U) = h + M + m + L + s + U
+Recaman/NoOldLocalFive.lean:38:10: error: Type mismatch: After simplification, term
+  hkeyTarget
+ has type
+  runKey u = 2 * B - 12 * (↑h + ↑m + ↑s) - 18 - 2 * ↑R ^ 2
+but is expected to have type
+  runKey u =
+    -runKey
+              (List.replicate h false ++
+                (List.replicate M true ++
+                  (List.replicate m false ++
+                    (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))) -
+          12 *
+            ↑(cntF
+                (List.replicate h false ++
+                  (List.replicate M true ++
+                    (List.replicate m false ++
+                      (List.replicate L true ++ (List.replicate s false ++ List.replicate U true)))))) -
+        18 -
+      2 * ↑R ^ 2

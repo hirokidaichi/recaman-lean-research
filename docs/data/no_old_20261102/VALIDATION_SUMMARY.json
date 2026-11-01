@@ -1,0 +1,21 @@
+{
+  "final_full_check": "FINAL-check-frontier-repair-result.json",
+  "final_full_check_exit": 0,
+  "jobs": 622,
+  "audited_declarations": 3364,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_lean_files": 74,
+  "all_new_source_hashes_have_successful_explicit_M512": true,
+  "make_test_tools": "PASS (brief, journal and harness tests; gates unchanged)",
+  "make_check_manifest": "PASS",
+  "git_diff_check": "PASS",
+  "G3_standalone_helper_diagnostic": "TargetMassKeyComparison is pure arithmetic and is not a separately registered research result",
+  "semantic_docstring_audit": "17 copied scope comments corrected to their signatures; proof/binders unchanged and bytes revalidated",
+  "final_frontier_check_repair": "compact frontier initially omitted 116 historical registry references; restored evidence reference index, kept labels/gates unchanged; full check PASS",
+  "unverified_sources": "only packet/intermediate text files, no library/root/Audit adoption",
+  "complete_cold_M512_build": "not claimed"
+}

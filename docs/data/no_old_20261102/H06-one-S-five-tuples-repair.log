@@ -1,0 +1,14 @@
+Recaman/OneSMiddleSourcePruning.lean:28:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 2
+  a ≥ 1
+  30 ≤ 5*a + 9*b ≤ 31
+where
+ a := ↑m
+ b := ↑s
+Recaman/OneSMiddleSourcePruning.lean:53:27: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

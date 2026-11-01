@@ -1,0 +1,30 @@
+Recaman/ShortTargetLast4.lean:71:88: warning: This simp argument is unused:
+  List.replicate_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.nil_append] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortTargetLast4.lean:71:108: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.replicate_zero] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortTargetLast4.lean:74:20: warning: This simp argument is unused:
+  List.replicate_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [z, hz, List.nil_append, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortTargetLast4.lean:74:40: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [z, hz, List.replicate_zero, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

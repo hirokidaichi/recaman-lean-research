@@ -1,0 +1,25 @@
+{
+  "tag": "H07-prefix-square-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MiddleSPrefixSquare.olean",
+    "Recaman/MiddleSPrefixSquare.lean"
+  ],
+  "started_jst": "2026-11-02T06:46:54.537769+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MiddleSPrefixSquare.lean": "3b0e88f911eda26e4ebe67b1fa7367ea8afe0327f1d419a345ae47204d09763e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "dde83dde6536b558e751150f62c42b25d130afbfd56866f993dbb8393c3123d3",
+  "source_tree_manifest": "H07-prefix-square-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

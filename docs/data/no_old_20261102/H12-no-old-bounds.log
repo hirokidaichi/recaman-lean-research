@@ -1,0 +1,50 @@
+Recaman/OffsetOneNoOldBounds.lean:24:24: error(lean.unknownIdentifier): Unknown identifier `v`
+Recaman/OffsetOneNoOldBounds.lean:99:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a_1 ≥ 0
+  0 ≤ y ≤ 6
+  x ≥ 0
+  x - y ≥ 0
+  x + a_1 ≥ 0
+  u ≥ 0
+  -10 ≤ u - x + y ≤ 0
+  0 ≤ r ≤ 6
+  q ≥ 0
+  p ≥ 15
+  p - x - a_1 ≤ -6
+  p - x ≤ -2
+  k + 2*l + o + 12*p ≤ -16
+  i ≥ 4
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - 2*p + x + a_1 ≥ 0
+  d + g - p ≤ -1
+  c ≥ 1
+  c + e - p ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := mass (List.drop t w)
+ k := runKey (seg f n (h + M + m + L + s + U))
+ l := (↑j + 1) ^ 2
+ o := runKey (List.drop t w)
+ p := ↑(cntF z)
+ q := ↑(rayCount (z ++ List.replicate v false) T)
+ r := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ u := ↑(cN (EndN f 0) (n + H) v)
+ x := ↑(cN (EndN f 0) n (H + (v + T)))
+ y := ↑(cN (EndN f 0) (n + (H + v)) T)
+ a_1 := ↑(cN P n (H + (v + T)))

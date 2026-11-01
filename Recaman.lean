@@ -526,3 +526,18 @@ import Recaman.MassThreeOldOneGap
 import Recaman.MassThreeOldOneBase
 import Recaman.FourSAnyOldGap
 import Recaman.FourSAnyOldBase
+
+-- 2026-11-02: no-old mass-three/S3 branch, original-base counts.
+import Recaman.NoOldMassThreeBase
+import Recaman.MassThreeS3Base
+import Recaman.NoOldFourSBase
+import Recaman.MassThreeS4Base
+import Recaman.LowSeparatorCounterBase
+import Recaman.LowSeparatorMassThreeBase
+import Recaman.MassThreeAllBase
+import Recaman.TargetOffsetBase
+import Recaman.OffsetOneTargetBase
+import Recaman.EqualTargetBase
+import Recaman.SourceMassStrictBase
+import Recaman.ShortTargetSourceBase
+import Recaman.ShortTargetSupplyBase

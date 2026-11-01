@@ -1,0 +1,31 @@
+{
+  "tag": "H04-S4bounds",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldFourSTargetBounds.olean",
+    "Recaman/NoOldFourSTargetBounds.lean"
+  ],
+  "started_jst": "2026-11-02T06:23:26.704321+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldFourSTargetBounds.lean": "a92275023a8c6808c6385589784f3d911a65e11307991ef9e3c3d2a6a040fc5d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "source_tree_sha256": "be8cd6d770ad900d4c1bb1d8c2729205857f1439be01b509efb3d92d032fd1b7",
+  "source_tree_manifest": "H04-S4bounds-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.7377481670118868,
+  "cpu_seconds": 0.618412,
+  "finished_jst": "2026-11-02T06:23:27.441987+09:00"
+}

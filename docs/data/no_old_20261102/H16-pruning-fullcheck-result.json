@@ -1,0 +1,23 @@
+{
+  "tag": "H16-pruning-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-02T07:25:50.254353+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "110ac3259bec37c234cf484436ec040c538bc7e739a7d8d80c89059ec43d896e",
+  "source_tree_sha256": "612fe7400f57eb2991fd5dc27fb009ae1f5de96504b6ccdb512ef6b575d8d3d7",
+  "source_tree_manifest": "H16-pruning-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 8.882912332890555,
+  "cpu_seconds": 10.596191000000001,
+  "finished_jst": "2026-11-02T07:25:59.137451+09:00"
+}

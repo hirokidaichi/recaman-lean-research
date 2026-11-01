@@ -1,0 +1,34 @@
+Recaman/FourSInitialFirstCollision.lean:59:4: error: Application type mismatch: The argument
+  hbal
+has type
+  mass
+        (List.replicate e true ++
+          (List.replicate m false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+            List.replicate 4 false)) +
+      ↑1 =
+    1
+but is expected to have type
+  mass
+        (List.replicate e true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+            List.replicate U true ++
+          List.replicate 4 false) +
+      ↑1 =
+    1
+in the application
+  MomentFirstASource.first_A_clock_equation h M m L s U S 4 e 1 (10 * ↑S) rfl ?m.383 ?m.384 hbal
+Recaman/FourSInitialFirstCollision.lean:58:8: error: Type mismatch: After simplification, term
+  haz
+ has type
+  @Eq Int
+    (areaW
+      (List.replicate h false ++
+        (List.replicate M true ++
+          (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))))
+    (-10 * ↑S)
+but is expected to have type
+  @Eq Int
+    (areaW
+      (List.replicate h false ++
+        (List.replicate M true ++
+          (List.replicate m false ++ (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))))
+    (-(10 * ↑S))

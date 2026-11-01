@@ -1,0 +1,273 @@
+Recaman/ShortBandArithmetic.lean:28:61: error: `grind` failed
+case grind.1
+C v R S T : Nat
+hC : 4 ≤ C
+hv : 1 ≤ v
+hvC : v < C
+hR : 5 ≤ R
+hS : 1 ≤ S
+hT : T + C = v + R
+hsmall : C = v + 1 → S ≤ 14
+hdeep : v + 2 ≤ C → S ≤ C - v + 12
+hkey : ↑R ^ 2 ≤ ↑S ^ 2 - 2 * ↑C * ↑S + ↑v ^ 2 - 2 * ↑C * ↑v + 1
+D : Nat := C - v
+hD : 1 ≤ D
+hCD : ↑C = ↑v + ↑D
+hRR : 0 ≤ (↑R - 5) * (↑R + 5)
+hlarge : 2 * C < S
+heq : C = v + 1
+hS14 : S ≤ 14
+hp : 0 ≤ (14 - ↑S) * (14 + ↑S - 2 * ↑C)
+h : -28 * ↑C + -1 * ↑C ^ 2 + -1 * ↑R ^ 2 + 199 ≤ 0
+h_1 : ↑R - 5 = 14 - ↑S
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] 4 ≤ C
+    [prop] 1 ≤ v
+    [prop] v + 1 ≤ C
+    [prop] 5 ≤ R
+    [prop] 1 ≤ S
+    [prop] C + T = v + R
+    [prop] C = v + 1 → S ≤ 14
+    [prop] v + 2 ≤ C → S ≤ C - v + 12
+    [prop] ↑(C - v) = if -1 * ↑C + ↑v ≤ 0 then ↑C + -1 * ↑v else 0
+    [prop] 2 * ↑C * ↑v + 2 * ↑C * ↑S + -1 * ↑v ^ 2 + ↑R ^ 2 + -1 * ↑S ^ 2 + -1 ≤ 0
+    [prop] 1 ≤ C - v
+    [prop] ↑C + -1 * ↑v + -1 * ↑(C - v) = 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] 2 * C + 1 ≤ S
+    [prop] C = v + 1
+    [prop] S ≤ 14
+    [prop] -1 * ((14 - ↑S) * (14 + ↑S - 2 * ↑C)) ≤ 0
+    [prop] -28 * ↑C + -1 * ↑C ^ 2 + -1 * ↑R ^ 2 + 199 ≤ 0
+    [prop] ↑R - 5 = 14 - ↑S
+  [eqc] True propositions
+    [prop] ↑R - 5 = 14 - ↑S
+    [prop] C = v + 1
+    [prop] 2 * ↑C * ↑v + 2 * ↑C * ↑S + -1 * ↑v ^ 2 + ↑R ^ 2 + -1 * ↑S ^ 2 + -1 ≤ 0
+    [prop] -28 * ↑C + -1 * ↑C ^ 2 + -1 * ↑R ^ 2 + 199 ≤ 0
+    [prop] -1 * ↑C + ↑v ≤ 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] -1 * ((14 - ↑S) * (14 + ↑S - 2 * ↑C)) ≤ 0
+    [prop] S ≤ 14
+    [prop] 1 ≤ v
+    [prop] 1 ≤ S
+    [prop] 1 ≤ C - v
+    [prop] 4 ≤ C
+    [prop] 5 ≤ R
+    [prop] v + 1 ≤ C
+    [prop] 2 * C + 1 ≤ S
+    [prop] C = v + 1 → S ≤ 14
+    [prop] v + 2 ≤ C → S ≤ C - v + 12
+  [eqc] False propositions
+    [prop] v + 2 ≤ C
+  [eqc] Equivalence classes
+    [eqc] {C, v + 1}
+    [eqc] {C + T, v + R}
+    [eqc] others
+      [eqc] {↑C, ↑(v + 1)}
+      [eqc] {↑(C + T), ↑(v + R)}
+      [eqc] {↑(C - v), if -1 * ↑C + ↑v ≤ 0 then ↑C + -1 * ↑v else 0, ↑C + -1 * ↑v}
+      [eqc] {0, ↑C + -1 * ↑v + -1 * ↑(C - v)}
+      [eqc] {↑R - 5, 14 - ↑S}
+  [cases] Case analyses
+    [cases] [1/2]: ↑R - 5 = 14 - ↑S
+      [cases] source: Model-based theory combination at argument #4 of
+            (14 - ↑S) * (14 + ↑S - 2 * ↑C)
+          and
+            (↑R - 5) * (↑R + 5)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] C := 4
+    [assign] v := 3
+    [assign] R := 5
+    [assign] S := 9
+    [assign] T := 4
+    [assign] D := 33
+    [assign] 「↑C ^ 2」 := 62
+    [assign] 「↑v ^ 2」 := 0
+    [assign] 「↑R ^ 2」 := 25
+    [assign] 「↑S ^ 2」 := 24
+  [ring] Rings
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] ↑C + -1 * ↑v + -1 * ↑(C - v) = 0
+        [_] ↑R + ↑S + -19 = 0
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑C + ↑T + -1 * ↑v + -1 * ↑R = 0
+        [_] ↑T + -1 * ↑R + 1 = 0
+[grind] Issues
+  [issue] monomial expected, found numeral
+        14
+      internalizing as variable
+Recaman/ShortBandArithmetic.lean:52:95: error: `grind` failed
+case grind.1
+C v R S T : Nat
+hC : 4 ≤ C
+hv : 1 ≤ v
+hvC : v < C
+hR : 5 ≤ R
+hS : 1 ≤ S
+hT : T + C = v + R
+hsmall : C = v + 1 → S ≤ 14
+hdeep : v + 2 ≤ C → S ≤ C - v + 12
+hkey : ↑R ^ 2 ≤ ↑S ^ 2 - 2 * ↑C * ↑S + ↑v ^ 2 - 2 * ↑C * ↑v + 1
+D : Nat := C - v
+hD : 1 ≤ D
+hCD : ↑C = ↑v + ↑D
+hRR : 0 ≤ (↑R - 5) * (↑R + 5)
+hlarge : 2 * C < S
+heq : ¬C = v + 1
+hd : 2 ≤ D
+hSmax : S ≤ D + 12
+hp : 0 ≤ (↑D + 12 - ↑S) * (↑D + 12 + ↑S - 2 * ↑C)
+h : -24 * ↑v + -1 * (4 * ↑(C - v) * ↑v) + -1 * ↑v ^ 2 + -1 * ↑R ^ 2 + -1 * ↑(C - v) ^ 2 + 146 ≤ 0
+h_1 : ↑R - 5 = ↑(C - v) + 12 - ↑S
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] 4 ≤ C
+    [prop] 1 ≤ v
+    [prop] v + 1 ≤ C
+    [prop] 5 ≤ R
+    [prop] 1 ≤ S
+    [prop] C + T = v + R
+    [prop] C = v + 1 → S ≤ 14
+    [prop] v + 2 ≤ C → S ≤ C - v + 12
+    [prop] ↑(C - v) = if -1 * ↑C + ↑v ≤ 0 then ↑C + -1 * ↑v else 0
+    [prop] 2 * ↑C * ↑v + 2 * ↑C * ↑S + -1 * ↑v ^ 2 + ↑R ^ 2 + -1 * ↑S ^ 2 + -1 ≤ 0
+    [prop] 1 ≤ C - v
+    [prop] ↑C + -1 * ↑v + -1 * ↑(C - v) = 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] 2 * C + 1 ≤ S
+    [prop] ¬C = v + 1
+    [prop] 2 ≤ C - v
+    [prop] S ≤ C - v + 12
+    [prop] -1 * ((↑(C - v) + 12 - ↑S) * (↑(C - v) + 12 + ↑S - 2 * ↑C)) ≤ 0
+    [prop] -24 * ↑v + -1 * (4 * ↑(C - v) * ↑v) + -1 * ↑v ^ 2 + -1 * ↑R ^ 2 + -1 * ↑(C - v) ^ 2 + 146 ≤ 0
+    [prop] ↑R - 5 = ↑(C - v) + 12 - ↑S
+  [eqc] True propositions
+    [prop] ↑R - 5 = ↑(C - v) + 12 - ↑S
+    [prop] -24 * ↑v + -1 * (4 * ↑(C - v) * ↑v) + -1 * ↑v ^ 2 + -1 * ↑R ^ 2 + -1 * ↑(C - v) ^ 2 + 146 ≤ 0
+    [prop] 2 * ↑C * ↑v + 2 * ↑C * ↑S + -1 * ↑v ^ 2 + ↑R ^ 2 + -1 * ↑S ^ 2 + -1 ≤ 0
+    [prop] -1 * ↑C + ↑v ≤ 0
+    [prop] -1 * ((↑R - 5) * (↑R + 5)) ≤ 0
+    [prop] -1 * ((↑(C - v) + 12 - ↑S) * (↑(C - v) + 12 + ↑S - 2 * ↑C)) ≤ 0
+    [prop] S ≤ C - v + 12
+    [prop] 1 ≤ v
+    [prop] 1 ≤ S
+    [prop] 1 ≤ C - v
+    [prop] 2 ≤ C - v
+    [prop] 4 ≤ C
+    [prop] 5 ≤ R
+    [prop] v + 1 ≤ C
+    [prop] 2 * C + 1 ≤ S
+    [prop] C = v + 1 → S ≤ 14
+    [prop] v + 2 ≤ C → S ≤ C - v + 12
+  [eqc] False propositions
+    [prop] C = v + 1
+  [eqc] Equivalence classes
+    [eqc] {C + T, v + R}
+    [eqc] others
+      [eqc] {↑(C + T), ↑(v + R)}
+      [eqc] {↑(C - v), if -1 * ↑C + ↑v ≤ 0 then ↑C + -1 * ↑v else 0, ↑C + -1 * ↑v}
+      [eqc] {0, ↑C + -1 * ↑v + -1 * ↑(C - v)}
+      [eqc] {↑R - 5, ↑(C - v) + 12 - ↑S}
+  [cases] Case analyses
+    [cases] [1/2]: ↑R - 5 = ↑(C - v) + 12 - ↑S
+      [cases] source: Model-based theory combination at argument #4 of
+            (↑(C - v) + 12 - ↑S) * (↑(C - v) + 12 + ↑S - 2 * ↑C)
+          and
+            (↑R - 5) * (↑R + 5)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] C := 4
+    [assign] v := 1
+    [assign] R := 5
+    [assign] S := 9
+    [assign] T := 2
+    [assign] D := 33
+    [assign] 「↑v ^ 2」 := 0
+    [assign] 「↑R ^ 2」 := 25
+    [assign] 「↑S ^ 2」 := 24
+    [assign] 「↑(C - v) ^ 2」 := 0
+  [ring] Rings
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] ↑C + -1 * ↑v + -1 * ↑(C - v) = 0
+        [_] ↑R + ↑S + -1 * ↑(C - v) + -17 = 0
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑C + ↑T + -1 * ↑v + -1 * ↑R = 0
+      [diseqs] Disequalities
+        [_] ¬-1 * ↑T + ↑R + -1 = 0
+[grind] Issues
+  [issue] monomial expected, found numeral
+        12
+      internalizing as variable
+Recaman/ShortBandArithmetic.lean:15:33: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:16:60: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:17:50: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:17:80: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:21:51: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:21:91: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:22:51: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:22:91: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:23:6: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:26:52: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:27:42: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:32:55: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:32:86: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:33:8: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:34:30: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:39:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:39:87: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:40:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:41:24: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:41:42: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:45:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:45:87: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:46:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:47:32: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:47:51: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:48:35: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:49:37: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:50:62: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:51:52: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:56:56: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:56:86: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:57:56: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:57:86: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:58:84: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:59:8: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:60:37: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:65:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:65:88: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:66:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:67:27: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:71:59: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:71:90: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:72:58: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:72:88: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:73:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:74:44: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:74:76: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:78:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:78:88: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:79:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:83:58: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:83:88: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:84:58: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:84:89: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:85:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:86:52: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:86:85: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:90:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:90:88: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:91:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:95:57: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:95:87: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:96:10: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:97:52: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:97:85: error: (kernel) excessive memory consumption detected
+Recaman/ShortBandArithmetic.lean:7:8: error: (kernel) excessive memory consumption detected

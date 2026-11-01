@@ -1,0 +1,22 @@
+Recaman/ShortTargetLast3.lean:65:4: error: Type mismatch: After simplification, term
+  he
+ has type
+  seg f N (0 + L + s + U) = [] ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true
+but is expected to have type
+  seg f N (L + s + U) = [] ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true
+Recaman/ShortTargetLast3.lean:72:88: warning: This simp argument is unused:
+  List.replicate_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.nil_append] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortTargetLast3.lean:72:108: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.replicate_zero] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

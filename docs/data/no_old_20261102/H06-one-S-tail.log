@@ -1,0 +1,6 @@
+Recaman/OneSLocalSaturation.lean:57:46: error: Type mismatch: After simplification, term
+  hkeyTarget
+ has type
+  @Eq Int (runKey u) (2 * B - 12 * (↑h + ↑m + ↑s + 1) + 2 - 2 * ↑R ^ 2)
+but is expected to have type
+  @Eq Int (runKey u) (2 * B - 12 * (↑h + ↑m + ↑s + 1) + 2 * 1 ^ 2 - 2 * ↑R ^ 2)

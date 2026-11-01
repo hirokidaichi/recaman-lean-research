@@ -498,3 +498,11 @@ E487/491/493の同inversion joint/local予算→E496の実S13/I23..25/priorA12�
 旧scalar/firstA、LargeOldSeedGap、一般I25 monolithの512MB STOPPEDは保持。六形Orの巨大omega proofは同命題のexplicit constructorを同512MBで検査して採用、資源追加/compiled移動なし。E495一般I25 joint4は未Lean、D4 headfreeの帰結だけE497で別証明。E483五area対は未Lean、E388 COMPUTED/E404 CONJECTURED/E384未Leanを保持。全体無変化0は新edgeによる更新で、r4 E412/E427二回0/0 STOPPEDは日付resetしない。
 
 次: [H-20261102-01 no-old last-ray](HYPOTHESIS_CARD_2026-11-02_NO_OLD_LAST_RAY.md)。old供給無しではheadfree5を使えない。非zerohead/他source位置/任意run数/rank/C1/Q/H/SL/全射性も未解決。詳細は[同target平方note](RESEARCH_NOTE_2026-11-01_C1_TARGET_SQUARE.md)と[当日DAILY](RESEARCH_HANDOFF_2026-11-01_DAILY.md)。
+
+## 2026-11-02 method decisions
+
+- R-20261102-01: C3全separatorとC>=4/v>=Cへ新しいsource/actual edges（E512〜520/E522）。全体連続無変化0は新edge由来で日付resetでない。既存r4表枝2回0/0はSTOPPEDのまま。
+- H06低separator五tuple monolith: 200k heartbeats/512MB、一回の解析S>=12修理後も整数Or枝が閉じずSTOPPED。packet/intermediateへ隔離。独立したsource-prefix平方E514で親課題を閉じたが、このjobを再開しない。
+- H13五band算術monolith: Nat/Int cast/grindと512MB kernel memoryでSTOPPED。依存actual adapterも未検証のままpacket隔離。E521はPROVED-PAPER、actual last3/4だけE522でkernel。再開はactual S上界からfactored-circleでstrict候補削減を供給する独立の数学入力を要する。時間/メモリ追加や単なるsplit/import移動は禁止。
+- C4専用の個別成功5moduleと重複local6実装は一般版/既存AdjacentRunSupplyへ置換しlibrary不採用。module本数を新しい証拠数としない。
+- 新C1反例なし。全source countと実freeを区別、E453 mass1/free-prefix反証を保持。

@@ -1,0 +1,25 @@
+{
+  "tag": "H05-source-cover",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowSeparatorLocalBudget.olean",
+    "Recaman/LowSeparatorLocalBudget.lean"
+  ],
+  "started_jst": "2026-11-02T06:36:28.747899+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowSeparatorLocalBudget.lean": "2d537cb7190dc30e0e859f491bf36842f239a9874234ba561c01118284758591"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "7540fde9c76a4e61f63d940ca71a3a8b2a4799efaecaf409766a70085b5456a0",
+  "source_tree_manifest": "H05-source-cover-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

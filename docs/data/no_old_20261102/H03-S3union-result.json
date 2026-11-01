@@ -1,0 +1,31 @@
+{
+  "tag": "H03-S3union",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeS3Gap.olean",
+    "Recaman/MassThreeS3Gap.lean"
+  ],
+  "started_jst": "2026-11-02T06:17:21.190020+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeS3Gap.lean": "4d6c9ecc828df34e9c1b9c8fd29c94b9e80db1ddc60b854508e8485433a1d590"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "c5e439a47258067747903b2fd732389925ff1b92ef464541d9c4adf293b42f9f",
+  "source_tree_sha256": "0d4e638a27863b86be8f42ae5fcbae580db47bbdeed940a8e98289fdbbbdbcb1",
+  "source_tree_manifest": "H03-S3union-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c5e439a47258067747903b2fd732389925ff1b92ef464541d9c4adf293b42f9f",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.3725970829837024,
+  "cpu_seconds": 0.239375,
+  "finished_jst": "2026-11-02T06:17:21.562536+09:00"
+}

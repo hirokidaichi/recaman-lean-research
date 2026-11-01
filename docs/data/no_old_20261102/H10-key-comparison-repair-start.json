@@ -1,0 +1,25 @@
+{
+  "tag": "H10-key-comparison-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TargetMassKeyComparison.olean",
+    "Recaman/TargetMassKeyComparison.lean"
+  ],
+  "started_jst": "2026-11-02T07:01:11.589345+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TargetMassKeyComparison.lean": "5032c5f72be8dbffb93a096665e73aa01e302b2a7df760477a0b656d75575227"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "source_tree_sha256": "8c5873404e170957a00482c3b50d1e251a9d8047bf291ae36f986bcc8fa09989",
+  "source_tree_manifest": "H10-key-comparison-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

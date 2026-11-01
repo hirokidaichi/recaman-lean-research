@@ -1,0 +1,31 @@
+{
+  "tag": "H08-fifth-gap-elab",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeS5Gap.olean",
+    "Recaman/MassThreeS5Gap.lean"
+  ],
+  "started_jst": "2026-11-02T06:55:29.224640+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeS5Gap.lean": "8e2c26b8fc98894684c39556ab7f52a66ddaa82e7fb31197801f4d84265d908e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "source_tree_sha256": "c4d1f86ddb066bcebae5ab52aca9b3fb19b2419906019254ade36c08ba0881a2",
+  "source_tree_manifest": "H08-fifth-gap-elab-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9089319589547813,
+  "cpu_seconds": 0.7783089999999999,
+  "finished_jst": "2026-11-02T06:55:30.133507+09:00"
+}

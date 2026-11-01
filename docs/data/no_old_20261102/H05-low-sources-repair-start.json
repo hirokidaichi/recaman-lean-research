@@ -1,0 +1,25 @@
+{
+  "tag": "H05-low-sources-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowSeparatorSources.olean",
+    "Recaman/LowSeparatorSources.lean"
+  ],
+  "started_jst": "2026-11-02T06:30:50.241215+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowSeparatorSources.lean": "c11a0c21c1ce6b186579a1abb6982522c25a6d70c446c61e48d047fc41d7de20"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "08af45df58c6f077cbf0f335c77c222494ad240a6b1c79c5ad8aeea5c320f36f",
+  "source_tree_manifest": "H05-low-sources-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

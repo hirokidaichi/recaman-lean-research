@@ -1,0 +1,4 @@
+Recaman/FourMassShortSources.lean:50:4: error: 'change' tactic failed, pattern
+  runKey u = -runKey (List.replicate h false ++ x) - 16 * S - 30 - 2 * ↑R ^ 2
+is not definitionally equal to target
+  runKey u = -runKey (List.replicate h false ++ x) - 12 * ↑(cntF (List.replicate h false ++ x)) - 30 - 2 * ↑R ^ 2

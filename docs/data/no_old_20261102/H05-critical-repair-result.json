@@ -1,0 +1,31 @@
+{
+  "tag": "H05-critical-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowSeparatorCounterCritical.olean",
+    "Recaman/LowSeparatorCounterCritical.lean"
+  ],
+  "started_jst": "2026-11-02T06:32:46.730446+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowSeparatorCounterCritical.lean": "dba2addafbb2fa83de82a524c14a2e7c56c44c3bd54f039d300cbfcea8eba717"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "c0ab357891b15e40111b69d5539fa1dbdc60ebb185c4b17c7aaef901b8735412",
+  "source_tree_manifest": "H05-critical-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.3158742079976946,
+  "cpu_seconds": 1.0944669999999999,
+  "finished_jst": "2026-11-02T06:32:48.046213+09:00"
+}

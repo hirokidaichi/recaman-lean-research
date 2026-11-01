@@ -1,0 +1,25 @@
+{
+  "tag": "H01-local5-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldLocalFive.olean",
+    "Recaman/NoOldLocalFive.lean"
+  ],
+  "started_jst": "2026-11-02T06:09:04.413801+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldLocalFive.lean": "d13465ffd8209e3e8a51231dd6aa146432e0d2b49fc69a51ad2c80800c555f14"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "b4faad557337174eed2736e7d13dbdc6208735bfcfa284291adf524347dd3b66",
+  "source_tree_sha256": "9c72c9921cb380da183bfb2749240366f3488b2588912051824fd091a2f96e0f",
+  "source_tree_manifest": "H01-local5-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

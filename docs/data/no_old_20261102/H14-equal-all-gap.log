@@ -1,0 +1,7 @@
+Recaman/EqualTargetGap.lean:102:6: error: Type mismatch: After simplification, term
+  hm
+ has type
+  mass (List.drop r w) + (mass z + mass (List.replicate v false)) = 1
+but is expected to have type
+  mass (List.drop r w) + (mass z + mass (List.replicate v false)) + 0 = 1
+Recaman/EqualTargetGap.lean:103:15: error(lean.unknownIdentifier): Unknown identifier `source_key_before_gap`

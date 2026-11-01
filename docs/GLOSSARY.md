@@ -718,3 +718,7 @@ E456のk4実供給<=19/反例free4..17/A36/j17は数値候補領域の縮約。S
 ### 同targetによる平方比較（2026-11-01）
 
 zero-mass三run headの面積Bと、同じold targetのprimitive keyをfirstA local源のmass/key式へ同時代入する方法。明示A予算M<=R+1の下で、S3ではsourceclock0、S4では0/1だけへ絞る。A予算はactual主定理でcounter/第一run供給2から内部供給し、無条件source不存在ではない（E498/E499）。早期old sourceによるheadfree5（E497）と別の義務であり、old無し枝では勝手に適用しない。
+
+### no-old last-ray（2026-11-02）
+
+最後のA-rayの全clock i<T、元prefixの全開始r<nについて、同じ元p/実P2窓が無いという明示枝条件。oldのmass上限や独立tagの不在ではない。E-512はmass3 target/S3/zeroheadのこの枝で元full-tail free-gap。headfree4はcounter内の同target/headS10/r3 countから供給し、old seedが必要なE497 headfree5とは区別する。

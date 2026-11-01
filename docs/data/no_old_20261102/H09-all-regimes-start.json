@@ -1,0 +1,25 @@
+{
+  "tag": "H09-all-regimes",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeAllSeparators.olean",
+    "Recaman/MassThreeAllSeparators.lean"
+  ],
+  "started_jst": "2026-11-02T06:57:28.084592+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeAllSeparators.lean": "00a781239df6c40dce2d6605a27a0de6ae52431259252e28908fb5a461116620"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "source_tree_sha256": "35c8daf4409e04ca69176da8a2755fa4b09c10f94dac034c019df00b6b8cfbd8",
+  "source_tree_manifest": "H09-all-regimes-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

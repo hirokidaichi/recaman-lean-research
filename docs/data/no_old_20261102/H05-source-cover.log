@@ -1,0 +1,42 @@
+Recaman/LowSeparatorLocalBudget.lean:224:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 0
+  l ≥ 0
+  k ≥ 0
+  k - l ≤ 0
+  0 ≤ j ≤ 2
+  i ≥ 0
+  i - n ≥ 3
+  g ≥ 0
+  g - i ≥ 0
+  g - j - k ≤ 0
+  f ≥ 0
+  e ≥ 1
+  d ≥ 0
+  d + e - f ≤ 0
+  c ≥ 0
+  b ≥ 0
+  b + c - f ≤ 0
+  a ≥ 1
+  a + b + c - f ≥ -1
+where
+ a := ↑R
+ b := ↑L
+ c := ↑U
+ d := ↑m
+ e := ↑s
+ f := ↑(cntF (List.replicate h false ++ x))
+ g := ↑(cN (fun i => P i ∨ Q i ∨ v = 2 ∧ D i) 0 K)
+ i := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    K)
+ j := ↑(cN P 0 K)
+ k := ↑(cN (fun i => Q i ∨ v = 2 ∧ D i) 0 K)
+ l := ↑(cN Q 0 K)
+ n := ↑(cN
+    (sourceAt false m
+      (List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false))
+    0 K)

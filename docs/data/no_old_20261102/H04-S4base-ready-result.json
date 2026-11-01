@@ -1,0 +1,31 @@
+{
+  "tag": "H04-S4base-ready",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldFourSBase.olean",
+    "Recaman/NoOldFourSBase.lean"
+  ],
+  "started_jst": "2026-11-02T06:24:06.949742+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldFourSBase.lean": "3c17f8b763e28a21c47d96c6646ff072b298eaf72ea42ea13d3d1aca50cb1c55"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "source_tree_sha256": "7e25a66366a2b05b9a7e04f2594978913d3b91d48e6bf4d36ca75ddc342c1fe3",
+  "source_tree_manifest": "H04-S4base-ready-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6043371250852942,
+  "cpu_seconds": 0.467022,
+  "finished_jst": "2026-11-02T06:24:07.553992+09:00"
+}

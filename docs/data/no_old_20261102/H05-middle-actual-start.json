@@ -1,0 +1,25 @@
+{
+  "tag": "H05-middle-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowSeparatorCounterMiddle.olean",
+    "Recaman/LowSeparatorCounterMiddle.lean"
+  ],
+  "started_jst": "2026-11-02T06:37:59.497296+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowSeparatorCounterMiddle.lean": "3d81989cca2f6d71206c0d11a1845b0887687c57f2bc46fb8d9b8c082f04415e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "22c40b49a53014f7f7a7cf04dddbc34305428a2b9a7dfbe1e1a4aec016dc203d",
+  "source_tree_sha256": "dbca47075113b0daa9dd3b559e09454ce9f08713f8c541384d47585100fefd20",
+  "source_tree_manifest": "H05-middle-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

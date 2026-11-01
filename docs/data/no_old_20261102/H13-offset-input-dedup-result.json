@@ -1,0 +1,31 @@
+{
+  "tag": "H13-offset-input-dedup",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OffsetTwoTargetGap.olean",
+    "Recaman/OffsetTwoTargetGap.lean"
+  ],
+  "started_jst": "2026-11-02T07:11:47.273536+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OffsetTwoTargetGap.lean": "d1d39ca3fb6fd6c6631bfdd4ab5374ffc25293abd136488940794b7de4c7ff85"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "ba035b6ef0e35a416bf863903b7f157d96140eaf26abbf133502902838b39431",
+  "source_tree_sha256": "488a1f0fe16013916653e6a86cdfc3612a39c783b7bb5a7ea206ffd09a2aca0b",
+  "source_tree_manifest": "H13-offset-input-dedup-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ba035b6ef0e35a416bf863903b7f157d96140eaf26abbf133502902838b39431",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8980314589571208,
+  "cpu_seconds": 0.781781,
+  "finished_jst": "2026-11-02T07:11:48.171510+09:00"
+}

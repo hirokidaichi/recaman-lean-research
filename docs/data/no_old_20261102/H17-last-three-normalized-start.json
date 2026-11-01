@@ -1,0 +1,25 @@
+{
+  "tag": "H17-last-three-normalized",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortTargetLast3.olean",
+    "Recaman/ShortTargetLast3.lean"
+  ],
+  "started_jst": "2026-11-02T07:32:46.360266+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortTargetLast3.lean": "45a093b63d9d40c9d44ac0ce331642b35bf829bf7629cec43e6e4c015c97eb73"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "6405f1e954c4f99bd16b67501ad2261cd7ca2720d03deeeec8319ff69caa9256",
+  "source_tree_sha256": "79047879d5cd41d1e1378b9018761e9936ec3ae73ee8958de1b5332743d2ec51",
+  "source_tree_manifest": "H17-last-three-normalized-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

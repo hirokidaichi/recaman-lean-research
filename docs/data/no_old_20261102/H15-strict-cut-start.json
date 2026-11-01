@@ -1,0 +1,25 @@
+{
+  "tag": "H15-strict-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SourceMassStrictCut.olean",
+    "Recaman/SourceMassStrictCut.lean"
+  ],
+  "started_jst": "2026-11-02T07:19:47.657677+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SourceMassStrictCut.lean": "34146036688780a3a28b49dc3e1624246840ac9b8567548859ae2f9b8fce6742"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "a9c36a48f31c06df2680f98df7bca5eb2c51699afc2e1038defa2b7795935788",
+  "source_tree_sha256": "d5cd867a61cbf61fbb94f89a1f677ffa56596488970eea629b934e7f6f34ea6a",
+  "source_tree_manifest": "H15-strict-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

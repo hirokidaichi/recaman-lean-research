@@ -254,7 +254,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3420,
+   "lines": 3515,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -28325,6 +28325,226 @@
    "hasReport": false
   },
   {
+   "name": "EqualTargetBase",
+   "lines": 79,
+   "imports": [
+    "EqualTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "equal_target_gap_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetCounter",
+   "lines": 134,
+   "imports": [
+    "NoOldTargetBounds",
+    "EqualTargetHeadBound",
+    "TargetMassKeyComparison"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_counter",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetFirstA",
+   "lines": 55,
+   "imports": [
+    "FourthSourceFamilies",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_first_A_zero",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetGap",
+   "lines": 132,
+   "imports": [
+    "EqualTargetNoOldGap",
+    "OldZeroInitialSource",
+    "FourthActualSeven",
+    "EarlyOldSixFree",
+    "EqualTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_gap",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetHeadBound",
+   "lines": 26,
+   "imports": [
+    "OffsetHeadBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_head_eight",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetInitialS",
+   "lines": 70,
+   "imports": [
+    "NoOldInitialSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_initial_excluded",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetLocalFive",
+   "lines": 79,
+   "imports": [
+    "InitialFirstParityCollision",
+    "EqualTargetInitialS",
+    "EqualTargetFirstA"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_local_five",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetLocalFour",
+   "lines": 78,
+   "imports": [
+    "EqualTargetLocalFive",
+    "EqualTargetMiddleSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_local_four",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetMiddleSquare",
+   "lines": 100,
+   "imports": [
+    "SourceCrossSurplus",
+    "LowSeparatorCounterMiddle"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_middle_positive_excluded",
+     "line": 29
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetNoOldBounds",
+   "lines": 84,
+   "imports": [
+    "EqualTargetCounter",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_no_old_bounds",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "EqualTargetNoOldGap",
+   "lines": 144,
+   "imports": [
+    "EqualTargetNoOldBounds",
+    "EqualTargetHeadBound",
+    "EqualTargetLocalFour",
+    "OffsetHeadBound",
+    "EqualTargetLocalFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_target_no_old_gap",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "EventualEscape",
    "lines": 120,
    "imports": [
@@ -29149,6 +29369,42 @@
    "hasReport": false
   },
   {
+   "name": "FifthHeadBound",
+   "lines": 26,
+   "imports": [
+    "FifthTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_head_ten_fifth",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FifthTargetCounter",
+   "lines": 137,
+   "imports": [
+    "NoOldTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fifth_counter_parameters",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FinalBandSupplyClock",
    "lines": 120,
    "imports": [
@@ -29547,6 +29803,29 @@
    "theorems": 4,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "FirstRunPrefixCounts",
+   "lines": 48,
+   "imports": [
+    "RunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_run_prefix_count",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_S_prefix_count",
+     "line": 31
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -30315,6 +30594,48 @@
    "hasReport": false
   },
   {
+   "name": "FourSInitialFirstCollision",
+   "lines": 87,
+   "imports": [
+    "FourSInitialTarget",
+    "MomentFirstASource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_zero_first_one_excluded",
+     "line": 25
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourSInitialTarget",
+   "lines": 116,
+   "imports": [
+    "NoOldInitialSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_source_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_zero_head_key",
+     "line": 77
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourTierCapacityReduction",
    "lines": 145,
    "imports": [
@@ -30411,6 +30732,24 @@
    "theorems": 17,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "FourthActualSeven",
+   "lines": 46,
+   "imports": [
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fourth_actual_seven",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -31626,6 +31965,26 @@
    "theorems": 5,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "InitialFirstParityCollision",
+   "lines": 65,
+   "imports": [
+    "FourSInitialTarget",
+    "MomentFirstASource",
+    "LowerMomentOldClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_zero_first_one_excluded_all_v",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -33303,6 +33662,63 @@
     }
    ],
    "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LargeSeparatorKey",
+   "lines": 65,
+   "imports": [
+    "FourthActualSeven"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_separator_key_excluded",
+     "line": 30
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LargeSeparatorMassThreeGap",
+   "lines": 104,
+   "imports": [
+    "LargeSeparatorKey",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_separator_mass_three_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LargeTargetOffsetGap",
+   "lines": 111,
+   "imports": [
+    "TargetOffsetKey",
+    "TargetMassKeyComparison",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_target_offset_gap",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -35236,6 +35652,178 @@
    "hasReport": false
   },
   {
+   "name": "LowSeparatorCounterBase",
+   "lines": 87,
+   "imports": [
+    "LowSeparatorCounterCritical",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_counter_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "low_counter_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorCounterCritical",
+   "lines": 150,
+   "imports": [
+    "LowSeparatorTargetCounter",
+    "LowSeparatorLocalBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_counter_critical",
+     "line": 30
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorCounterMiddle",
+   "lines": 117,
+   "imports": [
+    "MiddleSSourceCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_counter_middle",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorLocalBudget",
+   "lines": 228,
+   "imports": [
+    "LowSeparatorSources"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_source_cover",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "low_separator_local_budget",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "low_separator_middle_source_bound",
+     "line": 149
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorMassThreeBase",
+   "lines": 80,
+   "imports": [
+    "LowSeparatorMassThreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_gap_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "low_separator_gap_int",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorMassThreeGap",
+   "lines": 59,
+   "imports": [
+    "MiddleSPrefixSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_mass_three_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorSources",
+   "lines": 113,
+   "imports": [
+    "FirstATargetSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_initial_source_excluded",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "low_separator_first_A_excluded",
+     "line": 73
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowSeparatorTargetCounter",
+   "lines": 135,
+   "imports": [
+    "NoOldTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_separator_counter_parameters",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "LowerFourBase",
    "lines": 84,
    "imports": [
@@ -35394,6 +35982,52 @@
    "hasReport": false
   },
   {
+   "name": "MassThreeAllBase",
+   "lines": 80,
+   "imports": [
+    "MassThreeAllSeparators",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_all_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_three_all_gap_int",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeAllSeparators",
+   "lines": 53,
+   "imports": [
+    "LowSeparatorMassThreeGap",
+    "MassThreeS3Gap",
+    "MassThreeS4Gap",
+    "MassThreeS5Gap",
+    "LargeSeparatorMassThreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_all_separators_gap",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MassThreeOldOneBase",
    "lines": 85,
    "imports": [
@@ -35474,6 +36108,133 @@
      "kind": "theorem",
      "name": "mass_three_old_zero_gap",
      "line": 40
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeS3Base",
+   "lines": 78,
+   "imports": [
+    "MassThreeS3Gap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_S3_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_three_S3_gap_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeS3Gap",
+   "lines": 70,
+   "imports": [
+    "NoOldMassThreeGap",
+    "MassThreeOldZeroGap",
+    "MassThreeTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_S3_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeS4Base",
+   "lines": 78,
+   "imports": [
+    "MassThreeS4Gap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_S4_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_three_S4_gap_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeS4Gap",
+   "lines": 76,
+   "imports": [
+    "NoOldFourSGap",
+    "OldZeroTargetGap",
+    "MassThreeOldOneGap",
+    "MassThreeTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_S4_gap",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeS5Gap",
+   "lines": 133,
+   "imports": [
+    "FifthHeadBound",
+    "FourthActualSeven",
+    "EarlyOldFourFree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_S5_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassThreeTargetCounter",
+   "lines": 136,
+   "imports": [
+    "NoOldTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_three_counter_parameters",
+     "line": 12
     }
    ],
    "theorems": 1,
@@ -35566,6 +36327,44 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "MiddleSPrefixSquare",
+   "lines": 113,
+   "imports": [
+    "SourceCrossSurplus",
+    "LowSeparatorCounterMiddle"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "middle_S_prefix_square_excluded",
+     "line": 43
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MiddleSSourceCharge",
+   "lines": 49,
+   "imports": [
+    "LocalSourcePrefixBudget",
+    "LowSeparatorCounterCritical"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "middle_S_source_A_cut",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "MiddleSTargetFreeGap",
@@ -36493,6 +37292,226 @@
    "hasReport": true
   },
   {
+   "name": "NoOldFourSBase",
+   "lines": 94,
+   "imports": [
+    "NoOldFourSGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_old_four_S_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_four_S_gap_int",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldFourSGap",
+   "lines": 98,
+   "imports": [
+    "NoOldFourSTargetBounds",
+    "NoOldFourSLocalFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_old_four_S_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldFourSLocalFive",
+   "lines": 99,
+   "imports": [
+    "FourSInitialFirstCollision",
+    "FourSFirstATarget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_S_local_count_five",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldFourSTargetBounds",
+   "lines": 107,
+   "imports": [
+    "MassThreeTargetCounter",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_head_ten_S4",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_four_S_counter_bounds",
+     "line": 29
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldInitialSource",
+   "lines": 75,
+   "imports": [
+    "FourthSourceFamilies",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_initial_S_excluded",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldLocalFive",
+   "lines": 78,
+   "imports": [
+    "NoOldInitialSource",
+    "FirstATargetSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_local_five_sources",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "target_local_count_five",
+     "line": 49
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldLocalFour",
+   "lines": 48,
+   "imports": [
+    "NoOldLocalFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_local_count_four",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldMassThreeBase",
+   "lines": 94,
+   "imports": [
+    "NoOldMassThreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_old_target_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_mass_three_gap_int",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldMassThreeGap",
+   "lines": 98,
+   "imports": [
+    "NoOldTargetBounds",
+    "NoOldLocalFour"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_old_mass_three_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NoOldTargetBounds",
+   "lines": 190,
+   "imports": [
+    "NoOldInitialSource",
+    "MomentNoOld",
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_head_S_bound",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "target_head_ten_S",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "no_old_counter_bounds",
+     "line": 51
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "NoSSMassOne",
    "lines": 413,
    "imports": [
@@ -37101,6 +38120,224 @@
    "defs": 2,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "OffsetHeadBound",
+   "lines": 26,
+   "imports": [
+    "FifthTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_head_ten",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneCounter",
+   "lines": 130,
+   "imports": [
+    "NoOldTargetBounds",
+    "TargetMassKeyComparison"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_counter",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneFirstASource",
+   "lines": 55,
+   "imports": [
+    "FourthSourceFamilies",
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_first_A_one",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneInitialSource",
+   "lines": 75,
+   "imports": [
+    "NoOldInitialSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_initial_zero",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneLocalFive",
+   "lines": 96,
+   "imports": [
+    "InitialFirstParityCollision",
+    "OffsetOneInitialSource",
+    "OffsetOneFirstASource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_local_five",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneNoOldBounds",
+   "lines": 84,
+   "imports": [
+    "OffsetOneCounter",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_no_old_bounds",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneNoOldGap",
+   "lines": 114,
+   "imports": [
+    "OffsetOneNoOldBounds",
+    "OffsetHeadBound",
+    "OffsetOneLocalFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_no_old_gap",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneTargetBase",
+   "lines": 79,
+   "imports": [
+    "OffsetOneTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_target_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "offset_one_target_gap_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetOneTargetGap",
+   "lines": 100,
+   "imports": [
+    "OffsetOneNoOldGap",
+    "FourthActualSeven",
+    "EarlyOldSixFree",
+    "OffsetOneCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_one_target_gap",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetTargetCounter",
+   "lines": 116,
+   "imports": [
+    "NoOldTargetBounds",
+    "TargetMassKeyComparison"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_two_counter",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OffsetTwoTargetGap",
+   "lines": 131,
+   "imports": [
+    "OffsetHeadBound",
+    "OffsetTargetCounter",
+    "FourthActualSeven",
+    "EarlyOldFourFree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "offset_two_target_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "OldContextBudget",
@@ -50572,6 +51809,154 @@
    "hasReport": false
   },
   {
+   "name": "ShortTargetCounter",
+   "lines": 128,
+   "imports": [
+    "NoOldTargetBounds",
+    "ShortTargetHeadBound",
+    "TargetMassKeyComparison"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_target_counter",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetHeadBound",
+   "lines": 29,
+   "imports": [
+    "EqualTargetHeadBound"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_target_head_eight",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetLast3",
+   "lines": 79,
+   "imports": [
+    "ShortTargetSourcePruning",
+    "MomentNoOld",
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_last_3",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetLast4",
+   "lines": 78,
+   "imports": [
+    "ShortTargetSourcePruning",
+    "MomentNoOld",
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_last_4",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetSourceBase",
+   "lines": 101,
+   "imports": [
+    "ShortTargetSourcePruning",
+    "FourRunSourceBase",
+    "CleanWindowCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_source_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "short_source_int",
+     "line": 50
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetSourcePruning",
+   "lines": 73,
+   "imports": [
+    "ShortTargetCounter",
+    "SourceMassStrictActual",
+    "FirstRunPrefixCounts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_source_pruning",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetSupplyBase",
+   "lines": 93,
+   "imports": [
+    "ShortTargetLast4",
+    "ShortTargetLast3",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_supply_from_zero",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "short_supply_int",
+     "line": 50
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ShortTightDonorAvoidance",
    "lines": 669,
    "imports": [
@@ -51670,6 +53055,62 @@
     }
    ],
    "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceMassStrictActual",
+   "lines": 58,
+   "imports": [
+    "SourceMassStrictCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_mass_two_strict_A",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceMassStrictBase",
+   "lines": 33,
+   "imports": [
+    "SourceMassStrictActual",
+    "FourRunSourceBase",
+    "CleanWindowCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_two_strict_A_int",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceMassStrictCut",
+   "lines": 56,
+   "imports": [
+    "SourceCrossSurplus"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "source_mass_two_strict_A",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -53508,6 +54949,85 @@
    "theorems": 8,
    "defs": 3,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "TargetMassKeyComparison",
+   "lines": 17,
+   "imports": [
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_mass_key_upper",
+     "line": 7
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TargetOffsetBase",
+   "lines": 79,
+   "imports": [
+    "TargetOffsetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_offset_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "target_offset_gap_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TargetOffsetGap",
+   "lines": 38,
+   "imports": [
+    "OffsetTwoTargetGap",
+    "LargeTargetOffsetGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_offset_gap",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TargetOffsetKey",
+   "lines": 63,
+   "imports": [
+    "FourthActualSeven"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "target_offset_key_excluded",
+     "line": 28
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -58633,6 +60153,6 @@
    "hasReport": false
   }
  ],
- "total": 546,
+ "total": 620,
  "withReport": 167
 }

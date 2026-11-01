@@ -1,0 +1,31 @@
+{
+  "tag": "H08-actual-seven",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthActualSeven.olean",
+    "Recaman/FourthActualSeven.lean"
+  ],
+  "started_jst": "2026-11-02T06:54:24.078852+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthActualSeven.lean": "72b2cb60e3ed4c51fcd361c603b2a6866d8a47f340da1f42a74f4d9f2a15271b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "source_tree_sha256": "e8c84d9fe6cf8208bee9e1a216b2aec6977b123697ca7e5d5bc040fb03a06f6a",
+  "source_tree_manifest": "H08-actual-seven-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0a9f60cd802b03f751441a2999714cf5daf01f83e791c14d66e7687dc4c943ea",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.38927350006997585,
+  "cpu_seconds": 0.257007,
+  "finished_jst": "2026-11-02T06:54:24.468058+09:00"
+}

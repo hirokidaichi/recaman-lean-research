@@ -1,0 +1,25 @@
+{
+  "tag": "H04-S4local5",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldFourSLocalFive.olean",
+    "Recaman/NoOldFourSLocalFive.lean"
+  ],
+  "started_jst": "2026-11-02T06:22:56.342251+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldFourSLocalFive.lean": "42ea1675fea7297c59e089fae1d85361b97cf826c8367029f7dd61fa470b1d95"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "5a810425551d1007cd971add6d69ebf2f18fb45459caa4fd61d6b3fba45903c6",
+  "source_tree_sha256": "7a3c58b0c7d1fd19d204ef4f674aed5658be0b17b878de6f3dc2592d82507088",
+  "source_tree_manifest": "H04-S4local5-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

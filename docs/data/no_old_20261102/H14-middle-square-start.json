@@ -1,0 +1,25 @@
+{
+  "tag": "H14-middle-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/EqualTargetMiddleSquare.olean",
+    "Recaman/EqualTargetMiddleSquare.lean"
+  ],
+  "started_jst": "2026-11-02T07:14:00.134241+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/EqualTargetMiddleSquare.lean": "7b34c4a3f5d7c988911d786281cda76295b12808d688fa6aaf8105abbbe1e7b0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "56c6ac2c174476f6f70d8c793e5d265a27e28b141766782cc559f48c3397ef42",
+  "source_tree_sha256": "e4de347feca065f4804b08b6f5702f36c37189fe054a7a20d8ef68b0d4405c5a",
+  "source_tree_manifest": "H14-middle-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

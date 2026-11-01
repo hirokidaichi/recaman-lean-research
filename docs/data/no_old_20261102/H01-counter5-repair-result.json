@@ -1,0 +1,31 @@
+{
+  "tag": "H01-counter5-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldCounterFive.olean",
+    "Recaman/NoOldCounterFive.lean"
+  ],
+  "started_jst": "2026-11-02T06:09:46.255464+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldCounterFive.lean": "43d7d7aecebbc8a9ebcc5132e2eb97b8b3918204e57905f8b25559aeffb55aac"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "b4faad557337174eed2736e7d13dbdc6208735bfcfa284291adf524347dd3b66",
+  "source_tree_sha256": "fcd7540963ba786c30a09049b9144c878d093b9a3dc8d4f91eb253fceadb0115",
+  "source_tree_manifest": "H01-counter5-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b4faad557337174eed2736e7d13dbdc6208735bfcfa284291adf524347dd3b66",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6657488748896867,
+  "cpu_seconds": 0.5542999999999999,
+  "finished_jst": "2026-11-02T06:09:46.921123+09:00"
+}

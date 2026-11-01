@@ -1,0 +1,31 @@
+{
+  "tag": "H10-key-comparison",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TargetMassKeyComparison.olean",
+    "Recaman/TargetMassKeyComparison.lean"
+  ],
+  "started_jst": "2026-11-02T07:00:48.289327+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TargetMassKeyComparison.lean": "2d9625e9e6e46c5000191a70766fdba64b4d1c901885b8a35a10a26ed7f9157a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "tracked_diff_sha256": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "source_tree_sha256": "8aaf5b81a96fec140a638660c84c2282f17c595193ed429d132f151d95dba378",
+  "source_tree_manifest": "H10-key-comparison-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "d0211e86115cdc87f8d3ad99f142f2f035f6d6f4d718f7871b3dcab0387b68c1",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.38439966598525643,
+  "cpu_seconds": 0.246471,
+  "finished_jst": "2026-11-02T07:00:48.673627+09:00"
+}
