@@ -1,0 +1,54 @@
+{
+  "base_sha": "cbb721b9faf749d56eace31e2a7eb675b91e06f7",
+  "branch": "main",
+  "destination": "origin/main",
+  "validated_math_snapshot": "committed and pushed; local validation PASS",
+  "final_journal_snapshot": {
+    "state": "journal stopped; these final records prepared for explicit-path commit and normal main push",
+    "start_jst": "2026-11-02T06:03:32.373375+09:00",
+    "end_jst": "2026-11-02T07:58:30.167815+09:00",
+    "confirmed_work_seconds": 6897.794,
+    "shortfall_seconds": 302.206,
+    "self_commit_sha": "cannot embed own commit SHA; exact post-commit HEAD and remote are verified in final chat report"
+  },
+  "hosted_ci": {
+    "run_id": 41358899803,
+    "sha": "c8fb8b4cec79272045c26a0191a158f1c784e74f",
+    "status": "in_progress",
+    "conclusion": null,
+    "url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/41358899803",
+    "observed_at_jst": "2026-11-02T07:57:34.117011+09:00",
+    "jobs": [
+      {
+        "name": "Research harness (ubuntu-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "active_step": null
+      },
+      {
+        "name": "Research harness (macos-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "active_step": null
+      },
+      {
+        "name": "Lean Audit & Empirical Regression Suite",
+        "status": "in_progress",
+        "conclusion": null,
+        "active_step": "Build deep trace certificates sequentially"
+      }
+    ]
+  },
+  "force_push": false,
+  "authorization": "2026-11-01 daily validated snapshots and per-command RECAMAN_ALLOW_BURST=1",
+  "math_snapshot_sha": "c8fb8b4cec79272045c26a0191a158f1c784e74f",
+  "math_snapshot_committed_at": "2026-11-02T07:45:26.031798+09:00",
+  "math_snapshot_owned_files": 948,
+  "math_push": "success",
+  "remote_ref": "refs/heads/main",
+  "remote_sha": "c8fb8b4cec79272045c26a0191a158f1c784e74f",
+  "remote_exact_match": true,
+  "remote_verified_at": "2026-11-02T07:54:58.064611+09:00",
+  "local_processes_remaining": "No matching run_lean/run_short_lean/cooperative_worker/lake env lean process found by scoped process check at07:49:44JST; initial sandbox ps denial was resolved by read-only escalation",
+  "no_unowned_files_included": true
+}

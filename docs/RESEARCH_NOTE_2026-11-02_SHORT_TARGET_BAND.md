@@ -1,6 +1,6 @@
 # Short-target counter band (2026-11-02)
 
-結論候補 E-521: 同じ元p/padded BlockWord/zero-fullpositive/全正三run zerohead/同old target実mass C>=4/1<=v<Cで、full-tail free<R=j+1というcounterがあれば、下記五bandに限られる。全old履歴は無制限。紙上証明と別pass監査の後も、actual last count接着・残余全包含はLean未形式化なのでPROVED-PAPER、human review未とする。counter不在やC1全体ではない。
+結論候補 E-521: 同じ元p/padded BlockWord/zero-fullpositive/全正三run zerohead/同old target実mass C>=4/1<=v<Cで、full-tail free<R=j+1というcounterがあれば、下記五bandに限られる。全old履歴は無制限。actual last count接着はE522でPROVED-LEAN。残余の五band全包含はLean未形式化なのでE521はPROVED-PAPER、human review未とする。counter不在やC1全体ではない。
 
 ## Exact quantifiers and starting evidence
 
@@ -61,7 +61,7 @@ R>=5よりD²+4Dv+v²+24v<=120。v4/D2でも148>120なのでv<=3。
 
 ## Status and next decision
 
-紙上chainは閉じている。証拠水準はPROVED-PAPER、人間レビュー未。未Leanの最弱edgeは、E520の実window/source削減から同じ元pのlast supplied<=4/3を供給するcount接着。その後(K)/(Q)と五band包含を形式化する。C/v/R上界を仮定した同値wrapperや既知大表の資源追加で代用しない。五bandの反例不在、C<=2、非zerohead、他target source位置、任意run/C1/Q/H/SL/全射性は未解決。
+紙上chainは閉じている。証拠水準はPROVED-PAPER、人間レビュー未。E520の実window/source削減から同じ元pのlast supplied<=4/3を供給するcount接着はE522で完了した。現在の最弱未知edgeは、その実countからS上界を内部供給し、(K)/(Q)と五band包含へ接続する部分である。C/v/R上界を仮定した同値wrapperや既知大表の資源追加で代用しない。五bandの反例不在、C<=2、非zerohead、他target source位置、任意run/C1/Q/H/SL/全射性は未解決。
 
 ## 07:35 evidence update
 

@@ -12,7 +12,7 @@ Status: PROVED-PAPER（末尾の終了時判断を正本とする。以下は開
 
 停止: 07:37に完全chainが得られなければCONJECTURED/STOPPEDを正確に記録して独立監査へ。新しい大表やCPU探索を開始しない。07:45以降は検証/記録/公開のみ。
 
-結果: E-521 PROVED-PAPER。完全chainと独立境界監査をRESEARCH_NOTE_2026-11-02_SHORT_TARGET_BAND.mdへ記録。last actual3/4と五band包含は未Lean/人間レビュー未。有限history不在を主張せず、旧tableを再開しない。
+結果（H12終了時点）: E-521 PROVED-PAPER。完全chainと独立境界監査をRESEARCH_NOTE_2026-11-02_SHORT_TARGET_BAND.mdへ記録。当時はlast actual3/4と五band包含が未Leanだったが、後続H13/E522で元p actual last3/4はPROVED-LEAN。五band包含は未Lean/人間レビュー未を保持。有限history不在を主張せず、旧tableを再開しない。
 
 ## 終了時判断
 

@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-11-02（当日journalは継続中、確定値はDAILY参照）。三A-runの元p全長free-gapはE-451で完了。四run全体/任意run・rank/C1/Q/H/SL/全射性は未証明。
+最終更新: 2026-11-02（当日journalはstop済み、確認済み114分57.794秒、確定値はDAILY参照）。三A-runの元p全長free-gapはE-451で完了。四run全体/任意run・rank/C1/Q/H/SL/全射性は未証明。
 
 ## Research brief
 

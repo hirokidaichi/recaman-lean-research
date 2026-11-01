@@ -33,3 +33,7 @@ H01判定06:15: E-512 PROVED-LEAN、全check554jobs/3279宣言PASS、人間レ�
 ## 終了時判断
 
 E-512 PROVED-LEAN。no-old及びold有無統合を完了。 全体検証・逐語audit・実績正本は11/02 DAILY/journalを参照。親C1全体は未解決。
+
+## 親cycleの確定実績（重複計上なし）
+
+R-20261102-01の当日実開始2026-11-02T06:03:32.373375+09:00、終了2026-11-02T07:58:30.167815+09:00、確認済み114分57.794秒、不足5分02.206秒。本カードH01のclosed research/audit区間は12分22.306秒で、親cycle実績の内数。親全時間をH01の単位費用として再加算しない。setup34.837秒は別phase。waiting/gap0、CPU/過去日/stop後公開時間を加えない。正本は[DAILY](RESEARCH_HANDOFF_2026-11-02_DAILY.md)/[journal](data/daily_research/2026-11-02.json)、次は[H-20261103-01](HYPOTHESIS_CARD_2026-11-03_SHORT_SUPPLY_BAND_KERNEL.md)。

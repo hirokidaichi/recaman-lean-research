@@ -25,3 +25,7 @@ D1のmiddleS/i0を切らず、clock重複を供給数へ過大計上しない。
 一般四run、C<=2、非zerohead、他target source位置、任意run/rank/C1/Q/H/SL/全射性は未解決。E521はPROVED-PAPER（五band包含未Lean・人間レビュー未、actual lastはE522でLean済み）から始め、未検証候補を昇格させない。
 
 11/02追加停止: ShortBandArithmetic/ShortTargetBandsのmonolithic kernelは512MBでSTOPPED・未検証source隔離。単なるcast修正/分割/import移動や資源追加を再開条件としない。独立factor入力は X=S-C>0、D>=2でX<=12-v、同targetからR²+C²+2Cv-v²-1<=X²。actual S上界とこの比較を結合してstrict候補削減を先に得る。circleの同値wrapperだけは進捗にしない。
+
+## 公開状態の開始確認
+
+11/02の数学snapshot c8fb8b4cec79272045c26a0191a158f1c784e74fはorigin/mainへ到達・SHA照合済み。hosted CI 41358899803は07:54:58時点でLinux/macOS harness PASS、Lean/empiricalはcold certificate build中だった。終了journalを含む後続docs commitのSHAとpush結果は11/02最終chat報告を参照する。次回setupでorigin/mainをfetchし、その実SHAのCIを読み取り確認する。CI未完了をPASSにせず、失敗ならログと対象SHAを保存して必要な修正・通常pushへつなげる。ローカル622jobs/3364宣言PASSとhosted結果を区別し、CI待ちを数学探索CPU/実績へ加算しない。

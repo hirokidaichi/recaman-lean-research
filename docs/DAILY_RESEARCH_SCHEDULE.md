@@ -208,3 +208,9 @@ CPU探索は0から。検証済み計測はcooperative single-Python worker（�
 
 
 次は[H-20261101-01](HYPOTHESIS_CARD_2026-11-01_MASS_THREE_ACTUAL_CHARGE.md)。E482の完了帯を再実行せず、E483の帯外mass3 target/old4をactualfreeへ接続する。自動実行の同ID/ACTIVE/6時・6時半・7時・7時半/同chat/必須final報告をreadback済み。未来の2時間完遂は未確認。正本は[DAILY](RESEARCH_HANDOFF_2026-10-31_DAILY.md)/[journal](data/daily_research/2026-10-31.json)。
+
+## 2026-11-02 確定実績と次の入口
+
+実開始2026-11-02T06:03:32.373375+09:00、実終了2026-11-02T07:58:30.167815+09:00。confirmed_work_seconds=6897.794、114分57.794秒、不足5分02.206秒。待機/中断/gap0、openなし。CPU/過去実績/stop後の公開時間を加えない。配信時点06:02:01.693からの実開始遅れを遡及補填しない。
+
+正本は[DAILY](RESEARCH_HANDOFF_2026-11-02_DAILY.md)/[journal](data/daily_research/2026-11-02.json)。次は[H-20261103-01](HYPOTHESIS_CARD_2026-11-03_SHORT_SUPPLY_BAND_KERNEL.md)。E520/E522のactual source/last供給を利用し、factored-circleから新しいstrict候補削減を先に得る。五bandはPROVED-PAPERのまま。旧monolithへ時間/メモリを追加しない。自動実行の同ID/ACTIVE/同schedule/chatと次cardをreadback済み、未来の完遂は未確認。
