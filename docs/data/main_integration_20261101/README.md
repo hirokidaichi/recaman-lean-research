@@ -41,3 +41,7 @@ rootへimportせずPROVED-LEANに新登録しない。元の3 dirty差分のう�
 
 検証は同一source/toolchainのLake cacheを使う差分検証で、cold build成功とは呼ばない。
 [CACHE_PROVENANCE](CACHE_PROVENANCE.json)にdeep certificateの同一source/cache再利用を記録した。
+
+## 統合後のhosted CI修正
+
+初回main pushの[run 41299439984](https://github.com/hirokidaichi/recaman-lean-research/actions/runs/41299439984)は、新設harnessのUbuntu runnerにrgがないため失敗した。verify jobの導入処理は別runnerへ伝わらない。Linux harnessで明示導入し、macOSでも必要時に導入、両OSで事前version確認を追加した。詳細は[CI_FAILURE](CI_FAILURE.json)。

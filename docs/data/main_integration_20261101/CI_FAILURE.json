@@ -1,0 +1,11 @@
+{
+  "commit": "c31f0a2b23f0912552e304eddcd1d48def14a2c0",
+  "run_id": 41299439984,
+  "job_id": 124827133986,
+  "run_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/41299439984",
+  "job": "Research harness (ubuntu-latest)",
+  "error": "error: rg (ripgrep) was not found",
+  "impact": "18 fixture assertions failed before reaching their intended checks; macOS cancelled and Lean job skipped.",
+  "cause": "The newly added harness uses a separate runner from verify; ripgrep installation existed only in verify.",
+  "fix": "Install ripgrep in Linux harness, ensure it exists on macOS, and verify prerequisites before tests."
+}
