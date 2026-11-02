@@ -1,0 +1,31 @@
+{
+  "tag": "H11-inversion-circle-support",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourOneArithmetic.olean",
+    "Recaman/MassFourOneArithmetic.lean"
+  ],
+  "started_jst": "2026-11-03T07:22:22.486749+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourOneArithmetic.lean": "9d25fef9e5b3109d2dde4f9887de3dc9c217ce028b3d95f93155b082d67705e9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "8969aaf1fd378dbba4d779672d6062f04319b3fae1071005bbcc9fc914e6d977",
+  "source_tree_sha256": "a40090ae96b5eabc12511f326861ebaf84205aad991e368713a4a8ccb1b82eca",
+  "source_tree_manifest": "H11-inversion-circle-support-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "8969aaf1fd378dbba4d779672d6062f04319b3fae1071005bbcc9fc914e6d977",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.4446948752738535,
+  "cpu_seconds": 1.312001,
+  "finished_jst": "2026-11-03T07:22:23.931334+09:00"
+}

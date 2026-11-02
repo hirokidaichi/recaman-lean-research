@@ -1,0 +1,25 @@
+{
+  "tag": "H16-original-p-R6-only",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourOneR6Base.olean",
+    "Recaman/MassFourOneR6Base.lean"
+  ],
+  "started_jst": "2026-11-03T07:40:54.289733+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourOneR6Base.lean": "2d8c3e10ad7a8e9097d34df0b7f2d81f6edba77cb42b27bc3157b954c27e6679"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "c32361cd5ae3b8d7b51c6db568a39ad5a7ccdcb2fa58322507ba38dd9156a049",
+  "source_tree_sha256": "6df9c613b05344edb135f54d3c003e487aa8146a34c0adf8ae79a1d7f57dd10f",
+  "source_tree_manifest": "H16-original-p-R6-only-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

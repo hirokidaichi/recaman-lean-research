@@ -1,0 +1,31 @@
+{
+  "tag": "H09-old-prefix-inequality",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldRayPrefixInequality.olean",
+    "Recaman/OldRayPrefixInequality.lean"
+  ],
+  "started_jst": "2026-11-03T07:13:13.493897+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldRayPrefixInequality.lean": "8afd25dc8198267f65d9599ff0d0dd21cdd33988c08a71fa70acba99e3d43965"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "240845c8993b3e3d453c41b98ff4836dc934401772191c59f46d5b57fd2dea9c",
+  "source_tree_sha256": "92e3920bb4214fe23a2013b04fca3e362e437b33d180be93d14a3b1284414939",
+  "source_tree_manifest": "H09-old-prefix-inequality-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "240845c8993b3e3d453c41b98ff4836dc934401772191c59f46d5b57fd2dea9c",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.46269545797258615,
+  "cpu_seconds": 0.28499299999999994,
+  "finished_jst": "2026-11-03T07:13:13.956516+09:00"
+}

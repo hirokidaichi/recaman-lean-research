@@ -1,0 +1,25 @@
+{
+  "tag": "H06-arithmetic-identity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFiveOneArithmetic.olean",
+    "Recaman/MassFiveOneArithmetic.lean"
+  ],
+  "started_jst": "2026-11-03T06:54:55.737757+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFiveOneArithmetic.lean": "b58dc43edf8e911a32be26b10c598f024b3c7402930527ea326b189b0e7fce64"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "21adc5f5cf8c1d09aa1bb2029590cdbad55c096e7129daa76c8fe4944e74fc79",
+  "source_tree_sha256": "1c061a8c5a633415a1d8c0990ee3ed4d8aeacf3e8ba330c2182190f85e9ede16",
+  "source_tree_manifest": "H06-arithmetic-identity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

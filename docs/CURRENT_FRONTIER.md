@@ -1,38 +1,40 @@
 # Current research frontier
 
-最終更新: 2026-11-02（当日journalはstop済み、確認済み114分57.794秒、確定値はDAILY参照）。三A-runの元p全長free-gapはE-451で完了。四run全体/任意run・rank/C1/Q/H/SL/全射性は未証明。
+最終更新: 2026-11-03。journalは保存作業中、確定時間は当日DAILY/journalを正本とする。新しい数学探索は07:41で終了、07:45以降は検証・保存のみ。一般C1/Q/H/SL/全射性は未証明。
 
 ## Research brief
 
-R-20261102-01。[11/02 DAILY](RESEARCH_HANDOFF_2026-11-02_DAILY.md)、[journal](data/daily_research/2026-11-02.json)、[source note](RESEARCH_NOTE_2026-11-02_C1_NO_OLD.md)、[五bandの紙上chain](RESEARCH_NOTE_2026-11-02_SHORT_TARGET_BAND.md)が正本。実開始06:03:32.373375 JST。予定120分/open区間を実績にしない。
+**E-535 PROVED-LEAN**: 元Intp/padded BlockWord/zero-fullpositive/正三非空A-run zero-mass head/同old targetmass4/最終S1のactual fullgap counterは、S14/R6/j5/T3/K19又20又21のみ。K=M(m+s)+Ls。全old history・他supplier高mass・source以前prefixは無限のまま保持。三候補の不在は未証明、人間レビュー未。
 
-**次の入口: [H-20261103-01](HYPOTHESIS_CARD_2026-11-03_SHORT_SUPPLY_BAND_KERNEL.md)。** E520/E522の実last3/4と同target keyからfactored-circleでstrict候補削減を先に供給し、E521の五band包含をkernel化する。完了したmass3/no-old/全vを再実行しない。
+**次の入口: [H-20261104-01](HYPOTHESIS_CARD_2026-11-04_R6_SAME_TARGET_SOURCE.md)**。[11/03 DAILY](RESEARCH_HANDOFF_2026-11-03_DAILY.md)→[target residual note](RESEARCH_NOTE_2026-11-03_C1_TARGET_RESIDUAL.md)→同カード。最初15分はK21部分枝の同target trip/key-2と第二non2/第三sourceを結合した新source-conditioned inequality又はstrict削減を内部供給する。八head/head8/結論を新Propで入力しない。
 
-| 全域で保持する前提: 元Intp/padded BlockWord・zero/fullpositive・正三run zero-mass head・同old target | 証拠 | 結果 |
+| 同じ限定履歴モデルでの結果 | 証拠 | 範囲 |
 |---|---|---|
-| target mass C=3、全最終S長v>=1 | E-512/E-513/E-514/E-515 PROVED-LEAN | 元full-tail actual free>=j+1。area帯/old有無/local band/target endpoint Aは入力不要 |
-| C>=4、v>=C | E-516/E-517/E-518 PROVED-LEAN | 同じ全長actual free-gap。全C/v/old履歴に上限なし |
-| C>=4、1<=v<C、実counter | E-520 PROVED-LEAN | R5/M<=R+1/全old排除。initialS/firstA源排除、middleSはC=v+1/i0/M=R+1のみ |
-| 上の実counterの最後A-ray | E-522 PROVED-LEAN | 元p実Endable count<=4、C>=v+2なら<=3。五band包含はまだ未Lean |
-| 上の実counterの解析的残余 | E-521 PROVED-PAPER、未Lean/人間レビュー未 | 五band、全体C<=8/v<=4/R<=9/headS<=19/A<=21。全old historyは無限で反例不在ではない |
+| actual count/factor cutsと五band全包含 | E-521/E-523 PROVED-LEAN | 旧monolithを再実行せずstrict cuts→五constructorでkernel化 |
+| endpoint A不要のT>=1とR>C-v | E-524 PROVED-LEAN | Winのstrict-prefix依存と補完gから元actual countへ戻す |
+| 第三/最後のjoint free/cross、C<=5/v<=3 | E-525 PROVED-LEAN | S<=R+9、U+v<=C+8/deep7、shifted Q186/133 |
+| mass5/S2とmass5/S1の全長free-gap | E-526/E-527 PROVED-LEAN | source-conditioned head8/long-first9と同元weighted free |
+| mass4/S3の全長free-gap | E-528 PROVED-LEAN | source-conditioned last3、W+2v<=2C+5 |
+| mass4/S2を二headへ削減、全長gapへ接着 | E-529/E-530 PROVED-LEAN | all-old prefix必要式で元第二供給<=2 |
+| mass4/S1のR/S/K strict削減 | E-531/E-532/E-533 PROVED-LEAN | S15/R8とK16/S13をsource/actual freeで排除 |
+| 同target mass4 grammar key spectrum | E-534 PROVED-LEAN | S14/R5/K25,26又はR6/K19,20,21、他oldmassは保持 |
+| R5/K25,26の内部long-first排除 | E-535 PROVED-LEAN | 残るactual counterは上記R6のみ |
 
-**E-519 PROVED-LEAN**はzerohead/run数を要しない別の供給edge。同old targetmass>=2・同local窓・j>=2・非負delayならsource以前A>=R+delay+1。AS pair仮定不要。Aをfreeへ置換しない。E453のmass1/prefixA5/free4反例は保持。
-
-C1への残り: 上表の短separator実counterの不在、C<=2一般域、非zerohead、他target source位置、四run全体と任意run/rank。限定source域をC1全体の証明と呼ばない。新しい実C1反例はなし。人間レビューは全新結果で未。
+完了域の合成は新rowに数えない。既存E-515のC3全v、E-516/E-517/E-518のC>=4/v>=C、当日mass4/S2,S3・mass5二枝・E525 cutsを合わせ、C>=3の同oldtargetで残るcounterはE535。C<=2、非zerohead、他target位置、一般四run/任意run/rank/C1/Q/H/SL/全射性は別途未解決。E-519 strict A-prefix cutをfree-prefix/rankへ置換しない。E-520/E-522のsource/last3,4は既存入力。
 
 ## 次のgateと停止保持
 
-最初15分はE520/E522からactual S<=14/D+12を供給し、X=S-Cのfactored-circleで、D1のC<=5又はD>=2のv<=3という新kernel候補削減を得る。単なるcircle同値wrapper、五bandを仮定するProp、純算術helper単独は受入しない。進まなければD1境界のmiddleS/i0/M=R+1と後続free0の両立25分、same-target平方/word parity別機構20分へ。
+H13のS14/R6八head local8rowは個別kernel受理後、import/source分類が512MB STOPPED。actual接着は未検証、sourceとlocal-only certificateはpacket .lean.txtへ隔離しroot/Audit採用なし。再開は独立数学pruning/小さい完全symbolic certificateと測定改善を要し、単なるsplit/import移動や資源追加は禁止。E534/E535は同jobを再開しない独立target-grammar入力。
 
-11/02の五tuple monolithic/single-scalar修理はSTOPPED、source-prefix平方の独立入力で迂回。追加五band算術monolithも512MB STOPPED、未検証source/adapterはpacket隔離。再開は独立factorによるstrict候補削減と測定改善が必要。時間/メモリ追加、単なるsplit/import移動は再開条件でない。
+旧H06/133core、H21/I25、r4 E412/E427（二回12837/40024・削減0/0）、R19/R7R11、cold512/combined19/literal43/width、11/01 scalar、11/02五tuple/五band monolithのSTOPも保持。E-388 COMPUTED/E-404 CONJECTURED、E-384存在方向未Lean/人間レビュー未。E-451/E-414/E-385/E-386/E-387は再証明しない。
 
-旧H06/133core、H21、r4 E412/E427（12837states/40024edges・2回0/0）、R19/R7R11、cold512/combined19/literal43/width adapters、11/01 scalar/I25の各停止は維持。E-388 COMPUTED/E-404 CONJECTURED、E-384存在方向未Lean/人間レビュー未。E-451/E-414/E-385〜387は既存入力で再証明しない。旧r4/E384には当日のkernel結果は依存しない。
+任意target以前prefixはBlockWordとは限らない。SAAAA/drop1=A4/take1=Sという弱化grammar例を保持、C1反例ではない。E491/E497のearly-old seedは最後A-ray条件で第二ray/no-oldへ転用しない。mass4 area9/13の共存も保持する。
 
 ## 運用・検証
 
-main cbb721bから当日開始、所有範囲は自分のjournalと本日差分のみ。日次公開先origin/main、検証済みsnapshot限り単一commit commandのRECAMAN_ALLOW_BURST=1は承認済み。force/全stage/他セッション巻込み/ゲート無効化は禁止。stop後の確定実績を保存して最終commit/pushしSHAをremote照合する。
+開始main/origin main fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65、初期dirtyは当日journalのみ。検証済みowned snapshotのみ通常origin/mainへpush、単発RECAMAN_ALLOW_BURST=1は既承認、hook/G1-G5/保護claim維持。確定stop/journal後に最終metadata保存しSHA/remote/hosted CIを別々に報告。
 
-個別Lean -j1 -M512/10CPU per-process/20wall、新規lint/G5/Audit/fullcheck。純算術TargetMassKeyComparisonはG3単独不適格を明示し、独立登録しない。module本数を進展量にしない。CPUはmath literal/guard/Lean別、generic process-tree capを主張しない。過去日の実績・未計測CPUを当日に加算しない。
+最終Lean全check: 676jobs/3476declarations PASS。新規moduleはexact current bytesと個別-j1 -M512受理receiptを照合、root/Auditは全check。純算術helperの単独G3不適格は独立登録せずdummy wrapperなし。数学探索worker未起動/予算0。Lean validation CPUは別計上、process-tree累積cap/OS ASを主張しない。人間レビューは未。
 
 以下は監査履歴。現在の再開点は上のResearch briefを優先する。
 

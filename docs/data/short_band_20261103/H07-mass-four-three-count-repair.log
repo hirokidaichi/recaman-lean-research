@@ -1,0 +1,97 @@
+Recaman/MassFourThreeGap.lean:122:10: error: Function expected at
+  MassFourThreeArithmetic.nonboundary (↑h + ↑m + ↑s) (↑j + 1) (↑M) (↑M + ↑L) K ?m.1942 ?m.1943 ?m.1944 ?m.1945 hWM
+    ?m.1946 ?m.1947
+but this term has type
+  False
+
+Note: Expected a function because this term is being applied to the argument
+  hcircle
+Recaman/MassFourThreeGap.lean:124:39: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≤ 58
+  l + 2*o + 2*p - q ≤ -30
+  4 ≤ k ≤ 6
+  i ≥ 0
+  i - k ≤ 0
+  1 ≤ g ≤ 4
+  g - 2*k ≤ -2
+  e ≥ 1
+  d ≥ 1
+  d + g ≤ 9
+  d + g + k ≥ 12
+  d + 2*g + o + p ≥ 26
+  c ≥ 1
+  c + e ≤ 12
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T))
+ k := ↑T
+ l := (↑j + 1) ^ 2
+ o := ↑M * (↑m + ↑s)
+ p := ↑L * ↑s
+ q := (↑h + ↑m + ↑s - 4) ^ 2
+Recaman/MassFourThreeGap.lean:124:110: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+f : Nat → Bool
+n t h M m L s U T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hC : mass (List.drop t w) = ↑4
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + 3 → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + 3 + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + 3 + T ≤ x → x < n + h + M + m + L + s + U + 3 + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + 3 + T + j - t)
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + 3 + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T) < j + 1
+hb :
+  T + 4 = 3 + j + 1 ∧
+    5 ≤ j + 1 ∧
+      M ≤ j + 2 ∧
+        runKey (List.drop t w) =
+          -runKey (seg f n (h + M + m + L + s + U)) - 4 * ↑4 * (↑h + ↑m + ↑s + ↑3) + 2 * ↑3 ^ 2 - 2 * (↑j + 1) ^ 2
+hj : h + m + s ≤ j + 10 ∧ U + 3 ≤ 4 + 8 ∧ (3 + 2 ≤ 4 → U + 3 ≤ 4 + 7)
+hwc :
+  2 * (h + m + s) ≤ M + L + 2 * (j + 1) + 9 ∧
+    2 * (h + m + s) + 2 * 3 ≤ M + L + 2 * 4 + 17 ∧
+      (3 + 2 ≤ 4 → 2 * (h + m + s) + 2 * 3 ≤ M + L + 2 * 4 + 15) ∧ (M ≤ 3 → h + m + s ≤ j + 9)
+hcuts : 2 * 4 < h + m + s ∧ (4 = 3 + 1 → 4 ≤ 5) ∧ (3 + 2 ≤ 4 → 3 ≤ 3)
+hq :
+  (4 = 3 + 1 → (↑j + 1) ^ 2 + ↑4 ^ 2 + 28 * ↑4 ≤ 186) ∧
+    (3 + 2 ≤ 4 → (↑j + 1) ^ 2 + (↑4 - ↑3) ^ 2 + 4 * (↑4 - ↑3) * ↑3 + ↑3 ^ 2 + 24 * ↑3 ≤ 133) ∧
+      (3 + 2 ≤ 4 → 16 * ↑4 + 2 * ↑4 * ↑3 - ↑3 ^ 2 + 2 * ↑3 - 76 ≤ 2 * (↑j + 1) * (8 - ↑4))
+K : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hWM : ↑M + ↑L + ↑M ≤ K
+hraw : (↑j + 1) ^ 2 + 4 ^ 2 + 2 * 4 * 3 - 3 ^ 2 - 1 + 2 * K ≤ (↑h + ↑m + ↑s - 4) ^ 2
+hcircle : (↑j + 1) ^ 2 + 30 + 2 * K ≤ (↑h + ↑m + ↑s - 4) ^ 2
+hhead_budget : ∀ (B : Nat), cN (EndN f 0) n (h + M + m + L + s + U) ≤ B → h + m + s ≤ j + B
+hR7 : j + 1 ≤ 7
+hS14 : h + m + s ≤ 14
+hMeq : ¬M = j + 2
+hs12 : h + m + s + 3 ≤ 4 + 12
+hw17 : 2 * (h + m + s) + 2 * 3 ≤ M + L + 2 * 4 + 15
+hsmall : M ≤ 2 → h + m + s ≤ j + 8
+⊢ (↑j + 1) ^ 2 + 30 + 2 * K ≤ (↑h + ↑m + ↑s - 4) ^ 2

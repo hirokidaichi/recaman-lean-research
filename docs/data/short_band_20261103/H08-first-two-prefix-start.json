@@ -1,0 +1,25 @@
+{
+  "tag": "H08-first-two-prefix",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FirstTwoActualBounds.olean",
+    "Recaman/FirstTwoActualBounds.lean"
+  ],
+  "started_jst": "2026-11-03T07:09:33.877254+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FirstTwoActualBounds.lean": "5e4df830a06f1b592a8f6da6bc97d75f6a2fb5646fdd29dde4bcc80db6480ce3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "316394a5266e9ff59e489644abfb59e002dda20be592e113a90e52681bde2314",
+  "source_tree_sha256": "db13f9c394c85709dd007af0de087797cd16dcfd5bc02684cef492f5ed0be9fc",
+  "source_tree_manifest": "H08-first-two-prefix-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

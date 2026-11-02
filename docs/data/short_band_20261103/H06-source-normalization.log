@@ -1,0 +1,29 @@
+Recaman/HeadRunSupplyBudgets.lean:15:6: error: `simp` made no progress
+Recaman/HeadRunSupplyBudgets.lean:75:41: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 1
+  b ≤ 6
+  a ≥ 0
+  a - c ≥ 0
+where
+ a := ↑h
+ b := (↑q + 1) ^ 2
+ c := ↑h₁.choose
+case inl
+h K i : Nat
+hi :
+  ThreeNonsuppliedData.localSupply
+      (List.replicate h false ++ List.replicate 3 true ++ List.replicate 1 false ++ List.replicate i true) =
+    true
+he :
+  ThreeNonsuppliedData.localSupply
+        (List.replicate h false ++ List.replicate 3 true ++ List.replicate 1 false ++ List.replicate i true) =
+      true ↔
+    (∃ q, 1 ≤ q ∧ q ≤ h ∧ ↑3 + ↑i = 1 + ↑q + ↑1 ∧ 1 = (↑q + ↑1) ^ 2 - 2 * ↑1 * ↑3) ∨
+      (∃ a, 1 ≤ a ∧ a ≤ 3 ∧ ↑i + ↑a = 1 + ↑1 ∧ 1 = ↑1 * (↑1 - 2 * ↑a)) ∨ i = 2 ∧ 1 ≤ 1
+q : Nat
+hq : 1 ≤ q
+hqh : q ≤ h
+hm : ↑3 + ↑i = 1 + ↑q + ↑1
+hk : 1 = (↑q + ↑1) ^ 2 - 2 * ↑1 * ↑3
+⊢ i = 2

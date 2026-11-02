@@ -1,0 +1,22 @@
+{
+  "cycle": "R-20261103-01",
+  "session": "f9152e9d-af2b-440c-897b-4f2da8c07e4d",
+  "baseline_sha": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "branch": "main",
+  "origin_main": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "initial_dirty": [
+    "docs/data/daily_research/2026-11-03.json"
+  ],
+  "planned_minutes": {
+    "setup": 10,
+    "exploitation": 60,
+    "local_exploration": 30,
+    "audit": 10,
+    "handoff": 10
+  },
+  "mathematical_exploration_cpu_budget": 0,
+  "validation_contract": "per-process10CPU/20wall, explicit Lean -j1 -M512, terminate process group on deadline08:00; not a cumulative tree CPU cap",
+  "created_at": "2026-11-03T06:02:09.445314+09:00",
+  "first_gate": "15min after setup; actual D1 C<=5 or deep v<=3, not circle wrapper",
+  "publication": "owned validated main normal push; per-command RECAMAN_ALLOW_BURST=1 authorized"
+}

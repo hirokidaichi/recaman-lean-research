@@ -1,0 +1,31 @@
+{
+  "tag": "H02-five-boxes",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterBoxes.olean",
+    "Recaman/ShortCounterBoxes.lean"
+  ],
+  "started_jst": "2026-11-03T06:09:33.613506+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterBoxes.lean": "dba13217243ae1f768898cd386cb115ee297263223719d3d818cb2487f6e025b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "source_tree_sha256": "cb1c7ff3852fff79a71b15d405ac4c59a1959217265d203b78aa8e5daced7d6d",
+  "source_tree_manifest": "H02-five-boxes-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6271231668069959,
+  "cpu_seconds": 0.49453499999999995,
+  "finished_jst": "2026-11-03T06:09:34.240564+09:00"
+}

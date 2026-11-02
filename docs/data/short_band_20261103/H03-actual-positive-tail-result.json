@@ -1,0 +1,31 @@
+{
+  "tag": "H03-actual-positive-tail",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterPositiveTail.olean",
+    "Recaman/ShortCounterPositiveTail.lean"
+  ],
+  "started_jst": "2026-11-03T06:17:35.825462+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterPositiveTail.lean": "0e6e8c9b4f1944482069c00c4089215d75e1d3cb9a170823e66a6cb16fab3c86"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "source_tree_sha256": "b4402db17e74c51be81cbbb1979c01c69d5db54214ef541899cfab88652ace35",
+  "source_tree_manifest": "H03-actual-positive-tail-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6325061246752739,
+  "cpu_seconds": 0.472502,
+  "finished_jst": "2026-11-03T06:17:36.457908+09:00"
+}

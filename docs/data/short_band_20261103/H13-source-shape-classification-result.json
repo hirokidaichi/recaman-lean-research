@@ -1,0 +1,31 @@
+{
+  "tag": "H13-source-shape-classification",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/S14R6SourceShapes.olean",
+    "Recaman/S14R6SourceShapes.lean"
+  ],
+  "started_jst": "2026-11-03T07:31:52.274559+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/S14R6SourceShapes.lean": "4d419d070680757fb9a9f4324d87e69555f5ab305fd2863e425e5fecff2a62fa"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "300b8e61b5162f16cd64db435c9c041f786ad57683c10382ed0cccb44b0a88e8",
+  "source_tree_sha256": "d4b8b32f397986073055be8b52d00ecd8889dc2dc0822eafdf90c858eef39b01",
+  "source_tree_manifest": "H13-source-shape-classification-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "300b8e61b5162f16cd64db435c9c041f786ad57683c10382ed0cccb44b0a88e8",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.1015131250023842,
+  "cpu_seconds": 0.943056,
+  "finished_jst": "2026-11-03T07:31:53.375980+09:00"
+}

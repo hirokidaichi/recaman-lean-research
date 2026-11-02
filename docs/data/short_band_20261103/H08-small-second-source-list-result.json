@@ -1,0 +1,31 @@
+{
+  "tag": "H08-small-second-source-list",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondRaySmallShapes.olean",
+    "Recaman/SecondRaySmallShapes.lean"
+  ],
+  "started_jst": "2026-11-03T07:07:33.104757+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondRaySmallShapes.lean": "b0d4d00c13bef1bca9b087988be80dd9010dc121c836a28cab9de9446ca1ebee"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "316394a5266e9ff59e489644abfb59e002dda20be592e113a90e52681bde2314",
+  "source_tree_sha256": "ad706c8badc361b0bc61dd204b6a335b8028b863f1fa263bd75c8279426dc8b5",
+  "source_tree_manifest": "H08-small-second-source-list-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "316394a5266e9ff59e489644abfb59e002dda20be592e113a90e52681bde2314",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6462662504054606,
+  "cpu_seconds": 0.4722299999999999,
+  "finished_jst": "2026-11-03T07:07:33.750980+09:00"
+}

@@ -1,0 +1,125 @@
+Recaman/MassFourTwoArithmetic.lean:26:28: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  i ≥ 0
+  f - i ≥ 1
+  e ≤ 9
+  c ≥ 1
+  c - e ≤ -4
+  c - f - k ≥ 1
+  2*c + d - 2*e ≤ -4
+  b ≥ 1
+  b + f - i ≥ 3
+  9 ≤ b + d + f - i ≤ 14
+  2*b + 2*d - e + 2*f - 2*i ≤ 19
+  8*b - 6*c + 8*d + 6*e + 10*f + g - 8*i - j + 2*k ≤ -11
+  5 ≤ a ≤ 7
+  a + c - e ≥ -1
+where
+ a := R
+ b := m
+ c := L
+ d := h
+ e := W
+ f := L * s
+ g := R ^ 2
+ i := (L - 1) * s
+ j := S ^ 2
+ k := M * (m + s - 3)
+Recaman/MassFourTwoArithmetic.lean:79:52: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  f ≥ 25
+  f + g ≤ 25
+  2*d + 2*e + f + g ≤ 37
+  5 ≤ c ≤ 8
+  c - d - e ≤ -1
+  b ≥ 1
+  a ≥ 1
+where
+ a := m
+ b := s
+ c := W
+ d := M * (m + s)
+ e := L * s
+ f := R ^ 2
+ g := S * (12 - S)
+Recaman/MassFourTwoArithmetic.lean:84:36: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  R
+in the target expression
+  2 * 12 ≤ W + 19
+
+S R M m s L W K : Int
+hS : 8 < S
+hS13 : S ≤ 13
+hR : 5 ≤ R
+hM : 1 ≤ M
+hm : 1 ≤ m
+hs : 1 ≤ s
+hL : 1 ≤ L
+hMb : M ≤ R + 1
+hW : W = M + L
+hW8 : W ≤ 8
+hw : 2 * 12 ≤ W + 19
+hWM : W + M ≤ K
+hK : K = M * (m + s) + L * s
+hsmall : M ≤ 2 → S ≤ 12
+hc : 5 ^ 2 + 27 + 2 * K ≤ (12 - 4) ^ 2
+he4 : (S - 4) ^ 2 = S ^ 2 - 8 * S + 16
+hpoly : R ^ 2 + 2 * M - 27 ≤ S ^ 2 - 12 * S
+hR25 : 5 ^ 2 ≤ R ^ 2
+hM2 : M ≤ 2
+hS12 : S ≤ 12
+hp : 0 ≤ S * (12 - S)
+he : S * (12 - S) = 12 * S - S ^ 2
+hMeq : M = 1
+hR5 : R = 5
+hS12eq : S = 12
+⊢ W = 5
+Recaman/MassFourTwoArithmetic.lean:113:70: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  f ≥ 25
+  e - h ≥ 1
+  d + e ≤ 14
+  2*d + 2*e + f - g ≤ -115
+  7 ≤ c ≤ 8
+  b ≥ 1
+  b - 2*c + d + e ≥ 0
+  -6 ≤ b - c ≤ -4
+  2*b - 2*c - f + g ≥ 129
+  a ≥ 1
+  a + e - h ≤ 2
+where
+ a := m
+ b := L
+ c := W
+ d := M * (m + s)
+ e := L * s
+ f := R ^ 2
+ g := S ^ 2
+ h := (L - 1) * s
+Recaman/MassFourTwoArithmetic.lean:118:10: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≥ 0
+  g ≥ 0
+  e ≥ 25
+  d - g ≥ 1
+  7 ≤ c ≤ 8
+  b ≥ 1
+  -6 ≤ b - c ≤ -4
+  2*b - 2*c - e + f ≥ 129
+  2*b - c - d - h ≤ 0
+  3*b - 3*c - d - h ≥ -14
+  6*b - 6*c - 2*d - e + f - 2*h ≥ 115
+  a ≥ 1
+  a + d - g ≥ 3
+where
+ a := m
+ b := L
+ c := W
+ d := L * s
+ e := R ^ 2
+ f := S ^ 2
+ g := (L - 1) * s
+ h := M * (m + s - 3)

@@ -1,0 +1,32 @@
+Recaman/MassFourThreeGap.lean:119:39: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≤ 58
+  l + 2*o + 2*p - q ≤ -30
+  4 ≤ k ≤ 6
+  i ≥ 0
+  i - k ≤ 0
+  1 ≤ g ≤ 4
+  g - 2*k ≤ -2
+  e ≥ 1
+  d ≥ 1
+  d + g ≤ 9
+  d + g + k ≥ 12
+  d + 2*g + o + p ≥ 26
+  c ≥ 1
+  c + e ≤ 12
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 3 + T))
+ k := ↑T
+ l := (↑j + 1) ^ 2
+ o := ↑M * (↑m + ↑s)
+ p := ↑L * ↑s
+ q := (↑h + ↑m + ↑s - 4) ^ 2

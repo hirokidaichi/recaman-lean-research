@@ -506,3 +506,15 @@ E487/491/493の同inversion joint/local予算→E496の実S13/I23..25/priorA12�
 - H13五band算術monolith: Nat/Int cast/grindと512MB kernel memoryでSTOPPED。依存actual adapterも未検証のままpacket隔離。E521はPROVED-PAPER、actual last3/4だけE522でkernel。再開はactual S上界からfactored-circleでstrict候補削減を供給する独立の数学入力を要する。時間/メモリ追加や単なるsplit/import移動は禁止。
 - C4専用の個別成功5moduleと重複local6実装は一般版/既存AdjacentRunSupplyへ置換しlibrary不採用。module本数を新しい証拠数としない。
 - 新C1反例なし。全source countと実freeを区別、E453 mass1/free-prefix反証を保持。
+
+## 2026-11-03: 実count/factored-circleとendpoint前依存
+
+E523 PROVED-LEAN: short counterのhead10/last4-3を元実partitionへ接着してS+v<=C+13/12、S>2C、D1 C<=5/deep v<=3を全old履歴/全長で供給。これを先に消費する明示五constructorでE521五band包含/C8-v4-R9-S19-A21/deep QをPROVED-LEANへ更新。旧11/02 monolithは停止保持で資源追加なし。五bandのcounter不在や有限history分類ではない。
+
+E524 PROVED-LEAN: Winと現在endpoint-Aを同一視せず、targetの一clockだけAへ補完しstrict pastのEndN/free countを同じ基点で厳密保存。既存E451を消費して三runのWin-only gapを供給し、実short counterからT>=1/R>C-v。SAA/endpoint-SはWinだがEndNでないkernel境界で、親C1反例ではない。未知Prop/予算/free結論を入力していない。人間レビュー未、一般四run/C1/rank/全射性は未解決。
+
+## 2026-11-03 actual old-target update
+
+E-526/E-527は同zero-positive三run zerohead/oldtargetmass5のS2/S1、E-528/E-530はmass4/S3,S2の全長元p free-gap。E-529/E-531/E-532/E-533/E-534のsource/target/cross課金を経てE-535は残るC4/S1 actual counterをS14/R6/j5/T3/K19,20,21へstrict削減（PROVED-LEAN、人間レビュー未）。反例不在・一般C1は未証明。current frontier/当日target residual noteを正本とする。
+
+H13のlocal8rowは個別kernel受理のみ、import/source分類512MB STOPPED、未検証source/finite certificateはpacket .lean.txtへ隔離、actual接着は未採用。再開は独立数学pruningと測定改善を要し、資源増加や単なるsplit/import移動は不可。E534/E535は独立target grammar入力。target以前prefixをBlockWordへresetする弱化補助仮定はSAAAA/drop1=A4/take1=SでREFUTED、C1反例ではない。

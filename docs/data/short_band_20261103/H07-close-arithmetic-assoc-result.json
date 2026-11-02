@@ -1,0 +1,31 @@
+{
+  "tag": "H07-close-arithmetic-assoc",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourThreeArithmetic.olean",
+    "Recaman/MassFourThreeArithmetic.lean"
+  ],
+  "started_jst": "2026-11-03T07:00:45.915188+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourThreeArithmetic.lean": "962ed5113dff5b0c271e3fcc9038863c29ade066a8f3582af0a424481ee8fcb5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "source_tree_sha256": "fd835dd06eefe217cec349a5369694ab3cf12654cb9c3668be8e89b449db07f9",
+  "source_tree_manifest": "H07-close-arithmetic-assoc-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9247041251510382,
+  "cpu_seconds": 0.785832,
+  "finished_jst": "2026-11-03T07:00:46.839835+09:00"
+}

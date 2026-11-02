@@ -1,0 +1,25 @@
+{
+  "tag": "H04-shifted-circle",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/JointShiftedCircle.olean",
+    "Recaman/JointShiftedCircle.lean"
+  ],
+  "started_jst": "2026-11-03T06:28:37.123726+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/JointShiftedCircle.lean": "9ca15fcbea0810eb2fec460954f20e356a141fffd5c33046e44426bf48c2dbe1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f0efb37f760ae458cd0bc11461aa3a5ead296d297f789029f5f08ed2febe138e",
+  "source_tree_sha256": "b96cc0489fb66420bb59a7d40cffe8545fa6aac57f72b4bfc9fe155d858a29be",
+  "source_tree_manifest": "H04-shifted-circle-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H03-window-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThreeRunWindowGap.olean",
+    "Recaman/ThreeRunWindowGap.lean"
+  ],
+  "started_jst": "2026-11-03T06:16:54.313210+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeRunWindowGap.lean": "4ae13c25c17801b266813fd38b07526d95db9a3c8a043ec6550734558e30ebbe"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "source_tree_sha256": "d4d4618ccbf8a12275228392f86749b0d5e7a3f41963b559c7e5c1787510ba2d",
+  "source_tree_manifest": "H03-window-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5107013750821352,
+  "cpu_seconds": 0.377346,
+  "finished_jst": "2026-11-03T06:16:54.823844+09:00"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H12-inversion17-product-identity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SeventeenSecondSource.olean",
+    "Recaman/SeventeenSecondSource.lean"
+  ],
+  "started_jst": "2026-11-03T07:26:27.701023+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SeventeenSecondSource.lean": "4cd0e9b6780e164ab0eba196c7e824cd9fd0128be15356ad12ea209ab626bcbc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "9aa302e0f13654bc41044946c301a52b0046593a096f48b5767e966eaea4d781",
+  "source_tree_sha256": "eb4f03eb36e2088ac32ada75551bf74a1894c0f3008eac2b9f116cb3ef27916e",
+  "source_tree_manifest": "H12-inversion17-product-identity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9aa302e0f13654bc41044946c301a52b0046593a096f48b5767e966eaea4d781",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9868228328414261,
+  "cpu_seconds": 0.8337169999999999,
+  "finished_jst": "2026-11-03T07:26:28.687755+09:00"
+}

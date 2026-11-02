@@ -1,0 +1,25 @@
+{
+  "tag": "H07-nonboundary-S13-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourThreeArithmetic.olean",
+    "Recaman/MassFourThreeArithmetic.lean"
+  ],
+  "started_jst": "2026-11-03T07:01:33.558324+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourThreeArithmetic.lean": "4eabf386e2c27de388e3c19900a8040825460a97673f8bedb322a557be3db033"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "source_tree_sha256": "28261700b9dcaad8c7735720abf87b244e576f35556242f297b62a82bea07394",
+  "source_tree_manifest": "H07-nonboundary-S13-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

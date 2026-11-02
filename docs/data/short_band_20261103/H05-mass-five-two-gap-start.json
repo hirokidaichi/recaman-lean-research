@@ -1,0 +1,25 @@
+{
+  "tag": "H05-mass-five-two-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFiveTwoGap.olean",
+    "Recaman/MassFiveTwoGap.lean"
+  ],
+  "started_jst": "2026-11-03T06:40:38.434389+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFiveTwoGap.lean": "7d3a8a451e9dac18e4ec7efb9eb45a335775fd755ea4c54afd6ba04e1f68ac70"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "1e25f6eacd3e9114043c79510e1213c008d0615d0d07dd6c0297ecb3243a48f4",
+  "source_tree_sha256": "d027cbcf6aa7607f7b1cfc35305cf54a79aa4abd516c6384b4db9a03564ea58e",
+  "source_tree_manifest": "H05-mass-five-two-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

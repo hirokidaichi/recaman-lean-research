@@ -1,0 +1,25 @@
+{
+  "tag": "H14-target-key-namespace",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourTargetKeys.olean",
+    "Recaman/MassFourTargetKeys.lean"
+  ],
+  "started_jst": "2026-11-03T07:34:52.962877+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourTargetKeys.lean": "8e8598ff5f825c5412f8e0448f1302e6640836289e47b86f9e2c43f79a401d50"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "300b8e61b5162f16cd64db435c9c041f786ad57683c10382ed0cccb44b0a88e8",
+  "source_tree_sha256": "c373a0ce63274a249c0c165b9c44eae8801eb1cbcac6dfcd823d36b7bff1cf10",
+  "source_tree_manifest": "H14-target-key-namespace-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

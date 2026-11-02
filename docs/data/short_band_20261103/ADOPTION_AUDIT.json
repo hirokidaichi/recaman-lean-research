@@ -1,0 +1,385 @@
+{
+  "scope": "new adopted library module exact-byte -j1 -M512 passes; root/Audit fullcheck separately",
+  "modules": [
+    {
+      "source": "Recaman/FirstTwoActualBounds.lean",
+      "sha256": "5e4df830a06f1b592a8f6da6bc97d75f6a2fb5646fdd29dde4bcc80db6480ce3",
+      "accepted_receipts": [
+        "H08-first-two-prefix-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/HeadRunCountBounds.lean",
+      "sha256": "efc4d187d8e561e86eb5ea8672c46ae524586e884e0efd88e1eb95aa14494ec2",
+      "accepted_receipts": [
+        "H06-head-counts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/HeadRunSupplyBudgets.lean",
+      "sha256": "ad4412a3ddc9f6f56180d7e96fc7ca691fc9bba76a561e0262005d3fd37e5d4a",
+      "accepted_receipts": [
+        "H06-source-explicit-casts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/HeadSixSevenCount.lean",
+      "sha256": "41f966df7aa8c628825243d4f574c1d5752167df12d0f744380d105ccd64b1ae",
+      "accepted_receipts": [
+        "H07-boundary-head-eight-source-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/JointShiftedCircle.lean",
+      "sha256": "aa5f36af16b593759d342f9f17b302b8cc4cf313912a0318695f7ff69caa8bcf",
+      "accepted_receipts": [
+        "H04-shifted-circle-product-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveOneArithmetic.lean",
+      "sha256": "b58dc43edf8e911a32be26b10c598f024b3c7402930527ea326b189b0e7fce64",
+      "accepted_receipts": [
+        "H06-arithmetic-identity-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveOneBase.lean",
+      "sha256": "13e3d2f4daadd2b6e0b430f0c598c668f06c5ae107500a1aeb5f7eaed91364da",
+      "accepted_receipts": [
+        "H06-original-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveOneGap.lean",
+      "sha256": "77191898cb8b16d8d90fcf6877e1085e8bf345b733d424c8762a17ca393e3be1",
+      "accepted_receipts": [
+        "H06-actual-counts-normalized-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveTwoArithmetic.lean",
+      "sha256": "55454ac8119473706fd32080ab80b1d47dcf7e24de9135d6b278755cea26ad35",
+      "accepted_receipts": [
+        "H05-mass5-S2-scalar-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveTwoBase.lean",
+      "sha256": "3ee3632e1732b7a1b4e05bf04f87ea10fc9953001367903497db12ff0ea794f9",
+      "accepted_receipts": [
+        "H05-mass-five-two-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFiveTwoGap.lean",
+      "sha256": "7d3a8a451e9dac18e4ec7efb9eb45a335775fd755ea4c54afd6ba04e1f68ac70",
+      "accepted_receipts": [
+        "H05-mass-five-two-gap-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneArithmetic.lean",
+      "sha256": "9d25fef9e5b3109d2dde4f9887de3dc9c217ce028b3d95f93155b082d67705e9",
+      "accepted_receipts": [
+        "H11-inversion-circle-support-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneBandBase.lean",
+      "sha256": "a43aa79228303553dbe9d2f4c644b2aeaff266907148c4499ab588db8789a809",
+      "accepted_receipts": [
+        "H11-original-p-three-bands-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneBands.lean",
+      "sha256": "7829b4a530b04e8446f253ef4f47dee20b88259ced774d3740edb38a30760801",
+      "accepted_receipts": [
+        "H11-actual-three-inversion-bands-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneBase.lean",
+      "sha256": "d1692e52d7e15fb1e59f29863da22dcc783044853a7a1aa32ee4f779fb58cb55",
+      "accepted_receipts": [
+        "H10-original-p-bounds-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneBounds.lean",
+      "sha256": "95e7c0a501e3002a86e560e9cd82c09326a4030973e2e70da06a84aeb07419c4",
+      "accepted_receipts": [
+        "H10-actual-large-R-S15-bounds-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneFourteen.lean",
+      "sha256": "bf2970e8c61cd21f89e158ef160ba120cb1ed5df940ff0e64e963ca30630ff3b",
+      "accepted_receipts": [
+        "H12-actual-S14-imports-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneFourteenBase.lean",
+      "sha256": "f7dc674403ee094ad984ed7d3f0d633363664536b7d116bcd15db2a28c673ab1",
+      "accepted_receipts": [
+        "H12-original-p-S14-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneR6.lean",
+      "sha256": "d377970ac46d2c9304f1d7c5c6d02b3cce75d1cc2e15c9c84560ee6175a3b096",
+      "accepted_receipts": [
+        "H16-R5-target-excluded-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourOneR6Base.lean",
+      "sha256": "2d8c3e10ad7a8e9097d34df0b7f2d81f6edba77cb42b27bc3157b954c27e6679",
+      "accepted_receipts": [
+        "H16-original-p-R6-only-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTargetBase.lean",
+      "sha256": "e59a9e00503fb754d4162cf33394548cc938ccc1baf19eed4f77924fa67907cc",
+      "accepted_receipts": [
+        "H14-original-p-key-cuts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTargetCounter.lean",
+      "sha256": "4a5891e817c6c377b12c91a519763f0d76da38f3f544ffd35560275ee8189484",
+      "accepted_receipts": [
+        "H14-actual-target-spectrum-cuts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTargetKeys.lean",
+      "sha256": "8e8598ff5f825c5412f8e0448f1302e6640836289e47b86f9e2c43f79a401d50",
+      "accepted_receipts": [
+        "H14-target-key-namespace-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourThreeArithmetic.lean",
+      "sha256": "962ed5113dff5b0c271e3fcc9038863c29ade066a8f3582af0a424481ee8fcb5",
+      "accepted_receipts": [
+        "H07-repaired-prefix-budget-arithmetic-result.json",
+        "H07-close-arithmetic-assoc-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourThreeBase.lean",
+      "sha256": "05c89883c31274ec4679de735703d91e2afeaed66e9b452438aef29e2d003def",
+      "accepted_receipts": [
+        "H07-original-p-accepted-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourThreeGap.lean",
+      "sha256": "f96bc1d678c1db730753a0484958974d343affd84051ab4a0b0333bb8f5b2ecf",
+      "accepted_receipts": [
+        "H07-mass-four-three-joint-gap-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTwoArithmetic.lean",
+      "sha256": "6e7aec43c4a158fd68d50c24a5335fed66f5c6f115008a7fbd62fd3ee182d6e9",
+      "accepted_receipts": [
+        "H08-long-residual-identities-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTwoBase.lean",
+      "sha256": "3f9bd8479dc5309cab984ab19bda8cb3358d0664ccab7659aab15675491ab85e",
+      "accepted_receipts": [
+        "FINAL-current-adapter-bytes-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTwoGap.lean",
+      "sha256": "e429efc35d3e425fbe37888bb7ee1a36f3c1fa59aa10b42467d3a61bc4f04a57",
+      "accepted_receipts": [
+        "H09-mass-four-two-gap-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTwoGapBase.lean",
+      "sha256": "3409b8135bafb045a03ea35edbb4b51cef686383abfe1642956915abbf872798",
+      "accepted_receipts": [
+        "H09-original-p-namespace-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/MassFourTwoResidual.lean",
+      "sha256": "66fe647ec5cb807931f347f0a9bfb540b30de56ee09aa9a24ca4ac9549c38b35",
+      "accepted_receipts": [
+        "FINAL-current-residual-bytes-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/OldRayPrefixInequality.lean",
+      "sha256": "0ef1639690f81f5ad862b8df5b453ca49b20142ee5edbfd382cb2f9ad60cf62f",
+      "accepted_receipts": [
+        "H09-old-exclusion-actual-count-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/PrefixSupplyCongruence.lean",
+      "sha256": "90992608363708c42552883e59d88fc30f44aaf01d2cd61535a50a146703d0f1",
+      "accepted_receipts": [
+        "H03-endpoint-boundary-unfold-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/S15SecondExclusion.lean",
+      "sha256": "3d9ee8a908e2424c34cb6ddf4e263fdeea2d8870562dcfa5766b47f1f94e6962",
+      "accepted_receipts": [
+        "H10-S15-second-local-boolean-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/SecondRaySmallShapes.lean",
+      "sha256": "91e56300765a1dff03251a216fa532cf41da3dc5a902a90605654a0593ea051d",
+      "accepted_receipts": [
+        "H08-small-source-head-adopt-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/SeventeenSecondSource.lean",
+      "sha256": "4cd0e9b6780e164ab0eba196c7e824cd9fd0128be15356ad12ea209ab626bcbc",
+      "accepted_receipts": [
+        "H12-inversion17-product-identity-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterBandBase.lean",
+      "sha256": "9ca964bc8135ee592bccbc1e598dbc64fcc9fbeaec90a01fd3b52c80611a2735",
+      "accepted_receipts": [
+        "H02-actual-five-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterBands.lean",
+      "sha256": "519c18278970279c5273cbae294f3621922b6c63e8fba76ce8bfb94ca9711317",
+      "accepted_receipts": [
+        "H02-actual-five-bands-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterBoxes.lean",
+      "sha256": "dba13217243ae1f768898cd386cb115ee297263223719d3d818cb2487f6e025b",
+      "accepted_receipts": [
+        "H02-five-boxes-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterCutBase.lean",
+      "sha256": "1ec3cb2d2b16f531dd1b41bceb64032cf4c45b31811bd0f3c383983e9311cf15",
+      "accepted_receipts": [
+        "H01-actual-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterFactorBounds.lean",
+      "sha256": "453cceb9b3d0e78d208a091c788e3351bdfe03a3457e9c62a945ab19c29846b4",
+      "accepted_receipts": [
+        "H02-quadratic-factors-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterHeadCounts.lean",
+      "sha256": "cc905b101999c30dcb6d6236f5929dfad3d10f0151f1ba8f02237d47e3f19af9",
+      "accepted_receipts": [
+        "H01-counts-assoc-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterJointBase.lean",
+      "sha256": "094ce2fa97732ff984b91925418320e5fce543dd8f9404d6f5f0a280445621e9",
+      "accepted_receipts": [
+        "H04-joint-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterJointCounts.lean",
+      "sha256": "18c5a90485ced9d1c36c54b86d6254761a392df6038f63cfdd5121fed2b44904",
+      "accepted_receipts": [
+        "H04-joint-counts-head-alias-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterJointCuts.lean",
+      "sha256": "aa7db2eb9c51d6d06a4641be938fef562bb7bb61f8b111f6b48d091f5e7f2539",
+      "accepted_receipts": [
+        "H04-actual-joint-cuts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterJointQuadratic.lean",
+      "sha256": "3d46f95452e26169dd3ea1dbf2160e58e26497e133fce2d17ea1b111e6011f38",
+      "accepted_receipts": [
+        "H05-cross-circle-export-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterParameterCuts.lean",
+      "sha256": "aa1b572c99641c05a708f939848eccb7be33ec30adafdf6304a585d4ee9063ba",
+      "accepted_receipts": [
+        "H01-actual-cut-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterPositiveTail.lean",
+      "sha256": "0e6e8c9b4f1944482069c00c4089215d75e1d3cb9a170823e66a6cb16fab3c86",
+      "accepted_receipts": [
+        "H03-actual-positive-tail-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterQuadratic.lean",
+      "sha256": "b6e1acccf8945434f5b1eff85e13f295f739f06dafdce5ef2b29005716cebbdb",
+      "accepted_receipts": [
+        "H02-actual-quadratic-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterSourceCounts.lean",
+      "sha256": "96545eca80df13244119bf396231a1deea0dc1cb3451e6f518466d7f9db1de57",
+      "accepted_receipts": [
+        "H08-prefix-last-budget-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterTailBase.lean",
+      "sha256": "ae13849248206b04bbb5a27f1f2726eed16cab0ecbdb9dcf878727f5898ada10",
+      "accepted_receipts": [
+        "H03-positive-tail-base-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortCounterWeightedCounts.lean",
+      "sha256": "0dea09c832948e3bb6d46832814bfd6a9b67fe68800964df258920ff284365e6",
+      "accepted_receipts": [
+        "H05-weighted-counts-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ShortTargetLastSource.lean",
+      "sha256": "8655b33aefe21013f678ec00281f9144de74c61608d2691b40f89e59d128faa2",
+      "accepted_receipts": [
+        "H07-source-last-three-result.json"
+      ]
+    },
+    {
+      "source": "Recaman/ThreeRunWindowGap.lean",
+      "sha256": "4ae13c25c17801b266813fd38b07526d95db9a3c8a043ec6550734558e30ebbe",
+      "accepted_receipts": [
+        "H03-window-gap-result.json",
+        "H03-window-gap-current-deps-result.json"
+      ]
+    }
+  ]
+}

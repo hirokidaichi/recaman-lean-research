@@ -1,0 +1,104 @@
+Recaman/ShortCounterFactorBounds.lean:30:4: error: `grind` failed
+case grind.2.1.1
+S C v R : Int
+hS : 0 < S
+hC : 4 ≤ C
+hv : 1 ≤ v
+hvC : v < C
+hR : 5 ≤ R
+hcircle : R ^ 2 + C ^ 2 + 2 * C * v - v ^ 2 - 1 ≤ (S - C) ^ 2
+hfour : S + v ≤ C + 13
+hthree : v + 2 ≤ C → S + v ≤ C + 12
+hRR : 0 ≤ (R - 5) * (R + 5)
+hCv : 0 ≤ v * (2 * C - v)
+hSC : 2 * C < S
+hclose : C = v + 1
+hx : 0 < S - C
+hxB : S - C ≤ 14 - C
+hp : 0 ≤ (14 - C - (S - C)) * (14 - C + (S - C))
+hh : ¬C ≤ 5
+hC6 : 0 ≤ (C - 6) * (C + 6)
+h : ¬-1 * C + v + 2 ≤ 0
+h_1 : v = R
+h_2 : C - 6 = 14 - C - (S + -1 * C)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * S + 1 ≤ 0
+    [prop] -1 * C + 4 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] -1 * C + v + 1 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] 2 * C * v + C ^ 2 + -1 * v ^ 2 + R ^ 2 + -1 * (S + -1 * C) ^ 2 + -1 ≤ 0
+    [prop] S + -1 * C + v + -13 ≤ 0
+    [prop] -1 * C + v + 2 ≤ 0 → S + -1 * C + v + -12 ≤ 0
+    [prop] -1 * ((R - 5) * (R + 5)) ≤ 0
+    [prop] -1 * (v * (2 * C - v)) ≤ 0
+    [prop] -1 * S + 2 * C + 1 ≤ 0
+    [prop] C + -1 * v + -1 = 0
+    [prop] -1 * S + C + 1 ≤ 0
+    [prop] S + -14 ≤ 0
+    [prop] -1 * ((14 - C - (S + -1 * C)) * (14 - C + (S + -1 * C))) ≤ 0
+    [prop] -1 * C + 6 ≤ 0
+    [prop] -1 * ((C - 6) * (C + 6)) ≤ 0
+    [prop] ¬-1 * C + v + 2 ≤ 0
+    [prop] v = R
+    [prop] C - 6 = 14 - C - (S + -1 * C)
+  [eqc] True propositions
+    [prop] v = R
+    [prop] C - 6 = R - 5
+    [prop] C - 6 = 14 - C - (S + -1 * C)
+    [prop] R - 5 = 14 - C - (S + -1 * C)
+    [prop] S + -14 ≤ 0
+    [prop] S + -1 * C + v + -13 ≤ 0
+    [prop] 2 * C * v + C ^ 2 + -1 * v ^ 2 + R ^ 2 + -1 * (S + -1 * C) ^ 2 + -1 ≤ 0
+    [prop] -1 * S + C + 1 ≤ 0
+    [prop] -1 * S + 2 * C + 1 ≤ 0
+    [prop] -1 * C + v + 1 ≤ 0
+    [prop] -1 * S + 1 ≤ 0
+    [prop] -1 * C + 4 ≤ 0
+    [prop] -1 * C + 6 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] -1 * (v * (2 * C - v)) ≤ 0
+    [prop] -1 * ((C - 6) * (C + 6)) ≤ 0
+    [prop] -1 * ((R - 5) * (R + 5)) ≤ 0
+    [prop] -1 * ((14 - C - (S + -1 * C)) * (14 - C + (S + -1 * C))) ≤ 0
+    [prop] -1 * C + v + 2 ≤ 0 → S + -1 * C + v + -12 ≤ 0
+  [eqc] False propositions
+    [prop] -1 * C + v + 2 ≤ 0
+  [eqc] Equivalence classes
+    [eqc] {v, R}
+    [eqc] {0, C + -1 * v + -1}
+    [eqc] {-1 * v, -1 * R}
+    [eqc] {-1 * v ^ 2, -1 * R ^ 2}
+    [eqc] {v ^ 2, R ^ 2}
+    [eqc] {C - 6, R - 5, 14 - C - (S + -1 * C)}
+  [cases] Case analyses
+    [cases] [2/2]: -1 * C + v + 2 ≤ 0
+      [cases] source: Initial goal
+    [cases] [1/2]: v = R
+      [cases] source: Model-based theory combination at argument #4 of
+            R ^ 2
+          and
+            v ^ 2
+    [cases] [1/2]: C - 6 = 14 - C - (S + -1 * C)
+      [cases] source: Model-based theory combination at argument #4 of
+            (C - 6) * (C + 6)
+          and
+            (14 - C - (S + -1 * C)) * (14 - C + (S + -1 * C))
+  [cutsat] Assignment satisfying linear constraints
+    [assign] S := 13
+    [assign] C := 6
+    [assign] v := 5
+    [assign] R := 5
+    [assign] 「S ^ 2」 := 0
+    [assign] 「C ^ 2」 := 36
+    [assign] 「v ^ 2」 := 25
+    [assign] 「R ^ 2」 := 25
+    [assign] 「(S + -1 * C) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] S + R + -19 = 0
+      [_] C + -1 * v + -1 = 0
+      [_] v + -1 * R = 0

@@ -1,0 +1,31 @@
+{
+  "tag": "H04-joint-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterJointBase.olean",
+    "Recaman/ShortCounterJointBase.lean"
+  ],
+  "started_jst": "2026-11-03T06:30:21.110651+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterJointBase.lean": "094ce2fa97732ff984b91925418320e5fce543dd8f9404d6f5f0a280445621e9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f0efb37f760ae458cd0bc11461aa3a5ead296d297f789029f5f08ed2febe138e",
+  "source_tree_sha256": "5319ecb88eefaf16a9fef7897f51b64dd0489907ecdc8f9c287d9a867dde58ab",
+  "source_tree_manifest": "H04-joint-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f0efb37f760ae458cd0bc11461aa3a5ead296d297f789029f5f08ed2febe138e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5697670830413699,
+  "cpu_seconds": 0.403439,
+  "finished_jst": "2026-11-03T06:30:21.680354+09:00"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H12-actual-S13-exclusion",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourOneFourteen.olean",
+    "Recaman/MassFourOneFourteen.lean"
+  ],
+  "started_jst": "2026-11-03T07:27:03.540669+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourOneFourteen.lean": "2ce2ee45cd42a8e48e21bbfc2c24a247f9ba570d46c20ac46d35db1f4e74b159"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "9aa302e0f13654bc41044946c301a52b0046593a096f48b5767e966eaea4d781",
+  "source_tree_sha256": "941c7358ecdd6526b45fdccbf0d7403d9969fa2da9fb7468315d4035a69ef888",
+  "source_tree_manifest": "H12-actual-S13-exclusion-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9aa302e0f13654bc41044946c301a52b0046593a096f48b5767e966eaea4d781",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2080793334171176,
+  "cpu_seconds": 1.0822209999999999,
+  "finished_jst": "2026-11-03T07:27:04.748654+09:00"
+}

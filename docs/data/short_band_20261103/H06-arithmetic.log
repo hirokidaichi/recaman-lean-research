@@ -1,0 +1,47 @@
+Recaman/MassFiveOneArithmetic.lean:11:3: error: unknown tactic
+Recaman/MassFiveOneArithmetic.lean:10:69: error: unsolved goals
+S R M h m s L K : Int
+hS : 10 < S
+hS16 : S ≤ 16
+hR : 5 ≤ R
+hM : 4 ≤ M
+hm : 1 ≤ m
+hs : 1 ≤ s
+hL : 1 ≤ L
+hshape : S = h + m + s
+hMbound : M ≤ R + 1
+hhead : S ≤ R + 9
+hK : K = M * (m + s) + L * s
+hcircle : R ^ 2 + 33 + 2 * K ≤ (S - 5) ^ 2
+⊢ 2 * M ≤ h + 3
+Recaman/MassFiveOneArithmetic.lean:49:7: error: unknown tactic
+Recaman/MassFiveOneArithmetic.lean:44:37: error: Type mismatch
+  R + 7 + S - 14
+has type
+  Int
+of sort `Type` but is expected to have type
+  0 ≤ ?m.293
+of sort `Prop`
+Recaman/MassFiveOneArithmetic.lean:40:46: error: unsolved goals
+S R M m s L W K : Int
+hS : 10 < S
+hS16 : S ≤ 16
+hR : 5 ≤ R
+hR8 : R ≤ 8
+hm : 1 ≤ m
+hs : 1 ≤ s
+hL : 1 ≤ L
+hW : W = M + L
+hKdef : K = M * (m + s) + L * s
+hK3 : 3 ≤ K
+hWM : W + M ≤ K
+hweighted : 2 * S ≤ W + 23
+hsmall2 : M ≤ 2 → S ≤ R + 7
+hsmall3 : M = 3 → S ≤ R + 8
+hspecial : M = 3 → m = 1 → S ≤ R + 7
+hlong : 4 ≤ M → S ≤ R + 8
+hcircle : R ^ 2 + 33 + 2 * K ≤ (S - 5) ^ 2
+he : (S - 5) ^ 2 = S ^ 2 - 10 * S + 25
+hpoly : R ^ 2 + 4 * M - 54 ≤ S ^ 2 - 14 * S
+small_eight : S ≤ R + 7 → False
+⊢ False

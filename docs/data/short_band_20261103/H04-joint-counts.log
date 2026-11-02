@@ -1,0 +1,120 @@
+Recaman/ShortCounterJointCounts.lean:101:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c_1 ≤ 4
+  b_1 ≥ 0
+  b_1 + c_1 ≥ 0
+  a_1 ≥ 0
+  a_1 - b_1 ≥ 0
+  0 ≤ z ≤ 4
+  0 ≤ y ≤ 5
+  0 ≤ x ≤ 5
+  u ≥ 0
+  u - a_1 + b_1 ≤ 0
+  r ≥ 0
+  r + y ≥ 1
+  q ≥ 0
+  q + r ≥ 0
+  p ≥ 0
+  0 ≤ o ≤ 10
+  o + p ≥ 0
+  0 ≤ l ≤ 10
+  k ≥ 0
+  i ≥ 4
+  i - k ≥ 0
+  i - o - p ≥ -10
+  i - r - y - b_1 - c_1 ≤ -10
+  i - a_1 ≥ 0
+  i - b_1 - c_1 ≥ 0
+  g ≥ 4
+  g - i + b_1 + c_1 ≥ 2
+  e ≥ 1
+  d ≥ 1
+  d - o - p + r + y ≤ -1
+  d + i - o - p + r + y ≥ -2
+  c ≥ 1
+  c + e - o - p ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := mass (List.drop t w)
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ o := ↑(cN (EndN f 0) n H)
+ p := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n H)
+ q := ↑(cN P n I)
+ r := ↑(cN P (n + I) U)
+ u := ↑(cN P (n + H) v)
+ x := ↑(cN (EndN f 0) (n + h + M + m + L + s) U)
+ y := ↑(cN (EndN f 0) (n + I) U)
+ z := ↑(cN (EndN f 0) (n + h + M + m + L + s + U + v) T)
+ a_1 := ↑(cN P n (H + (v + T)))
+ b_1 := ↑(cN P (n + (H + v)) T)
+ c_1 := ↑(cN (EndN f 0) (n + (H + v)) T)
+Recaman/ShortCounterJointCounts.lean:107:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d_1 ≤ 3
+  c_1 ≥ 0
+  c_1 + d_1 ≥ 0
+  b_1 ≥ 0
+  b_1 - c_1 ≥ 0
+  0 ≤ a_1 ≤ 4
+  0 ≤ z ≤ 3
+  0 ≤ y ≤ 5
+  0 ≤ x ≤ 5
+  u ≥ 0
+  u - b_1 + c_1 ≤ 0
+  r ≥ 0
+  r + y ≥ 1
+  q ≥ 0
+  q + r ≥ 0
+  p ≥ 0
+  0 ≤ o ≤ 10
+  o + p ≥ 0
+  0 ≤ l ≤ 10
+  k ≥ 0
+  i ≥ 4
+  i - k ≥ 0
+  i - o - p ≥ -10
+  i - r - y - c_1 - d_1 ≤ -9
+  i - b_1 ≥ 0
+  i - c_1 - d_1 ≥ 1
+  g ≥ 4
+  g - i + c_1 + d_1 ≥ 2
+  e ≥ 1
+  d ≥ 1
+  d - o - p + r + y ≤ -1
+  d + i - o - p + r + y ≥ -2
+  c ≥ 1
+  c + e - o - p ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := mass (List.drop t w)
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ o := ↑(cN (EndN f 0) n H)
+ p := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n H)
+ q := ↑(cN P n I)
+ r := ↑(cN P (n + I) U)
+ u := ↑(cN P (n + H) v)
+ x := ↑(cN (EndN f 0) (n + h + M + m + L + s) U)
+ y := ↑(cN (EndN f 0) (n + I) U)
+ z := ↑(cN (EndN f 0) (n + h + M + m + L + s + U + v) T)
+ a_1 := ↑(cN (EndN f 0) (n + H + v) T)
+ b_1 := ↑(cN P n (H + (v + T)))
+ c_1 := ↑(cN P (n + (H + v)) T)
+ d_1 := ↑(cN (EndN f 0) (n + (H + v)) T)

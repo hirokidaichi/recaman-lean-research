@@ -1,0 +1,25 @@
+{
+  "tag": "H06-source-budgets",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeadRunSupplyBudgets.olean",
+    "Recaman/HeadRunSupplyBudgets.lean"
+  ],
+  "started_jst": "2026-11-03T06:48:57.568624+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeadRunSupplyBudgets.lean": "c4ca85e41a22d6c2a1e4dc7e811e3fea0fd4695fbbb1242822e1ade555626d69"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "21adc5f5cf8c1d09aa1bb2029590cdbad55c096e7129daa76c8fe4944e74fc79",
+  "source_tree_sha256": "624f7ffc10dd64c598ef16de815d2be1cb2a27ef2d0f9c0e9f6fcc9c08054e7d",
+  "source_tree_manifest": "H06-source-budgets-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

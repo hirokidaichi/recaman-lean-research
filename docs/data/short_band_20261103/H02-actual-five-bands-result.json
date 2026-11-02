@@ -1,0 +1,31 @@
+{
+  "tag": "H02-actual-five-bands",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterBands.olean",
+    "Recaman/ShortCounterBands.lean"
+  ],
+  "started_jst": "2026-11-03T06:10:17.779766+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterBands.lean": "519c18278970279c5273cbae294f3621922b6c63e8fba76ce8bfb94ca9711317"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "source_tree_sha256": "dd8364c5a91d16b8ef69afb3d078e227c63ca3d6532b3c7f5ff36d5561ac5566",
+  "source_tree_manifest": "H02-actual-five-bands-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0911862081848085,
+  "cpu_seconds": 0.956737,
+  "finished_jst": "2026-11-03T06:10:18.870893+09:00"
+}

@@ -254,7 +254,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3515,
+   "lines": 3627,
    "imports": [],
    "decls": [],
    "theorems": 0,
@@ -29829,6 +29829,24 @@
    "hasReport": false
   },
   {
+   "name": "FirstTwoActualBounds",
+   "lines": 26,
+   "imports": [
+    "HeadRunCountBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "prefix_first_one",
+     "line": 8
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FiveSSClassification",
    "lines": 114,
    "imports": [
@@ -31257,6 +31275,113 @@
    "hasReport": false
   },
   {
+   "name": "HeadRunCountBounds",
+   "lines": 132,
+   "imports": [
+    "HeadRunSupplyBudgets",
+    "OldTargetFirstRun"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_S_prefix",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "head_from_prefix",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "head_first_two_eight",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "head_long_first_nine",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "head_three_middle_one_eight",
+     "line": 105
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeadRunSupplyBudgets",
+   "lines": 140,
+   "imports": [
+    "ShortCounterJointCounts",
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_long_clock",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "first_long_one",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "first_two_zero",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "second_three_one_local",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "second_actual_bound",
+     "line": 95
+    },
+    {
+     "kind": "theorem",
+     "name": "two_prefix_count",
+     "line": 122
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeadSixSevenCount",
+   "lines": 69,
+   "imports": [
+    "HeadRunCountBounds",
+    "OldTargetFirstRun"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_six_seven_local",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "head_six_seven_middle_one_eight",
+     "line": 42
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "HighCandidateCausalReuse",
    "lines": 115,
    "imports": [
@@ -32311,6 +32436,29 @@
     }
    ],
    "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "JointShiftedCircle",
+   "lines": 104,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "shifted_bounds",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "parameter_cuts",
+     "line": 67
+    }
+   ],
+   "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -35982,6 +36130,656 @@
    "hasReport": false
   },
   {
+   "name": "MassFiveOneArithmetic",
+   "lines": 68,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "long_initial",
+     "line": 7
+    },
+    {
+     "kind": "theorem",
+     "name": "excluded",
+     "line": 36
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFiveOneBase",
+   "lines": 77,
+   "imports": [
+    "MassFiveOneGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_five_one_int",
+     "line": 43
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFiveOneGap",
+   "lines": 122,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFiveOneArithmetic",
+    "HeadRunCountBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_one_gap",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFiveTwoArithmetic",
+   "lines": 23,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "excluded",
+     "line": 8
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFiveTwoBase",
+   "lines": 77,
+   "imports": [
+    "MassFiveTwoGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_two_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_five_two_int",
+     "line": 43
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFiveTwoGap",
+   "lines": 73,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFiveTwoArithmetic"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_five_two_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneArithmetic",
+   "lines": 144,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "large_R_excluded",
+     "line": 5
+    },
+    {
+     "kind": "theorem",
+     "name": "S15_residual",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "small_inversion_impossible",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "inversion_three_bands",
+     "line": 112
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneBandBase",
+   "lines": 87,
+   "imports": [
+    "MassFourOneBands",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneBands",
+   "lines": 109,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourOneArithmetic",
+    "MassFourOneBounds",
+    "SmallInversionActual",
+    "S15SecondExclusion",
+    "SecondRaySmallShapes",
+    "FirstTwoActualBounds",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_bands",
+     "line": 19
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneBase",
+   "lines": 79,
+   "imports": [
+    "MassFourOneBounds",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneBounds",
+   "lines": 120,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourOneArithmetic",
+    "S15SecondExclusion",
+    "SecondRaySmallShapes",
+    "FirstTwoActualBounds",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_bounds",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneFourteen",
+   "lines": 135,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourOneArithmetic",
+    "MassFourOneBands",
+    "SeventeenSecondSource",
+    "FirstTwoActualBounds",
+    "MassFourOneBounds",
+    "SmallInversionActual",
+    "S15SecondExclusion",
+    "SecondRaySmallShapes",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_fourteen",
+     "line": 21
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneFourteenBase",
+   "lines": 87,
+   "imports": [
+    "MassFourOneFourteen",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_int",
+     "line": 48
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneR6",
+   "lines": 94,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourOneArithmetic",
+    "MassFourOneBands",
+    "MassFourOneFourteen",
+    "MassFourTargetKeys",
+    "MassFourTargetCounter",
+    "SeventeenSecondSource",
+    "FirstTwoActualBounds",
+    "MassFourOneBounds",
+    "SmallInversionActual",
+    "S15SecondExclusion",
+    "SecondRaySmallShapes",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_R6",
+     "line": 24
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourOneR6Base",
+   "lines": 83,
+   "imports": [
+    "MassFourOneR6",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_int",
+     "line": 46
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTargetBase",
+   "lines": 89,
+   "imports": [
+    "MassFourTargetCounter",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_one_int",
+     "line": 49
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTargetCounter",
+   "lines": 77,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourOneArithmetic",
+    "MassFourOneBands",
+    "MassFourOneFourteen",
+    "MassFourTargetKeys",
+    "SeventeenSecondSource",
+    "FirstTwoActualBounds",
+    "MassFourOneBounds",
+    "SmallInversionActual",
+    "S15SecondExclusion",
+    "SecondRaySmallShapes",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_target_counter",
+     "line": 23
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTargetKeys",
+   "lines": 11,
+   "imports": [
+    "BlockOldRay"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_keys",
+     "line": 6
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourThreeArithmetic",
+   "lines": 81,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "nonboundary",
+     "line": 6
+    },
+    {
+     "kind": "theorem",
+     "name": "notlong",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "boundary_geometry",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "boundary_small",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "boundary_excluded",
+     "line": 75
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourThreeBase",
+   "lines": 77,
+   "imports": [
+    "MassFourThreeGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_three_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_three_int",
+     "line": 43
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourThreeGap",
+   "lines": 121,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourThreeArithmetic",
+    "HeadSixSevenCount",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_three_gap",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTwoArithmetic",
+   "lines": 127,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "long_initial",
+     "line": 5
+    },
+    {
+     "kind": "theorem",
+     "name": "residual",
+     "line": 58
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTwoBase",
+   "lines": 79,
+   "imports": [
+    "MassFourTwoResidual",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTwoGap",
+   "lines": 53,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourTwoResidual",
+    "OldRayPrefixInequality",
+    "SecondRaySmallShapes",
+    "FirstTwoActualBounds",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_gap",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTwoGapBase",
+   "lines": 77,
+   "imports": [
+    "MassFourTwoGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_int",
+     "line": 43
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MassFourTwoResidual",
+   "lines": 127,
+   "imports": [
+    "ShortCounterWeightedCounts",
+    "ShortCounterJointQuadratic",
+    "MassFourTwoArithmetic",
+    "SecondRaySmallShapes",
+    "FirstTwoActualBounds",
+    "ShortCounterSourceCounts",
+    "ShortCounterJointCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mass_four_two_residual",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MassThreeAllBase",
    "lines": 80,
    "imports": [
@@ -38527,6 +39325,39 @@
     }
    ],
    "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldRayPrefixInequality",
+   "lines": 71,
+   "imports": [
+    "BlockOldRay"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_ray_prefix_inequality",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "seed_second_old_excluded",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "seed_second_ray_two",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "seed_second_actual_two",
+     "line": 45
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -47297,6 +48128,64 @@
    "hasReport": false
   },
   {
+   "name": "PrefixSupplyCongruence",
+   "lines": 79,
+   "imports": [
+    "SingleWindowEquality"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_eq",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "area_eq",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "window_iff",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_iff",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "segment_eq",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "supply_count_eq",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "S_count_eq",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "free_count_eq",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "window_without_endpoint_A",
+     "line": 68
+    }
+   ],
+   "theorems": 9,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "PrestateCoverage",
    "lines": 315,
    "imports": [
@@ -49519,6 +50408,35 @@
    "hasReport": false
   },
   {
+   "name": "S15SecondExclusion",
+   "lines": 69,
+   "imports": [
+    "OldRayPrefixInequality",
+    "HeadRunCountBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "S15_second_old_excluded",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "S15_second_ray_zero",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "S15_second_actual_zero",
+     "line": 43
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SS2AASCollisionObstruction",
    "lines": 155,
    "imports": [
@@ -50757,6 +51675,29 @@
    "hasReport": false
   },
   {
+   "name": "SecondRaySmallShapes",
+   "lines": 100,
+   "imports": [
+    "HeadRunCountBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_second_local",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "head_small_second_eight",
+     "line": 55
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SeededHighCorridorNoGo",
    "lines": 158,
    "imports": [
@@ -51267,6 +52208,35 @@
    "hasReport": false
   },
   {
+   "name": "SeventeenSecondSource",
+   "lines": 88,
+   "imports": [
+    "RunClockClassifier",
+    "HeadRunCountBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_clock_two",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "second_ray_one",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "long_initial",
+     "line": 74
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SharpPeriodicSupply",
    "lines": 176,
    "imports": [
@@ -51427,6 +52397,371 @@
    "theorems": 7,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterBandBase",
+   "lines": 91,
+   "imports": [
+    "ShortCounterBands",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_bands_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "short_bands_int",
+     "line": 50
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterBands",
+   "lines": 76,
+   "imports": [
+    "ShortCounterQuadratic",
+    "ShortCounterBoxes"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_five_bands",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterBoxes",
+   "lines": 93,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "five_boxes",
+     "line": 51
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterCutBase",
+   "lines": 79,
+   "imports": [
+    "ShortCounterParameterCuts",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_cuts_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "short_cuts_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterFactorBounds",
+   "lines": 83,
+   "imports": [
+    "RunSupplyKeys"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "factor_cuts",
+     "line": 7
+    },
+    {
+     "kind": "theorem",
+     "name": "square_lower",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "close_quadratic",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "deep_quadratic",
+     "line": 71
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterHeadCounts",
+   "lines": 74,
+   "imports": [
+    "ShortTargetLast4",
+    "ShortTargetLast3",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_head_counts",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterJointBase",
+   "lines": 79,
+   "imports": [
+    "ShortCounterJointCuts",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "joint_cuts_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_cuts_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterJointCounts",
+   "lines": 110,
+   "imports": [
+    "ShortCounterHeadCounts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_actual_five",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "short_counter_joint_counts",
+     "line": 43
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterJointCuts",
+   "lines": 52,
+   "imports": [
+    "ShortCounterJointQuadratic",
+    "ShortCounterBands"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_joint_cuts",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterJointQuadratic",
+   "lines": 123,
+   "imports": [
+    "ShortCounterJointCounts",
+    "JointShiftedCircle",
+    "ShortCounterParameterCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_cross_circle",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "short_counter_joint_quadratic",
+     "line": 56
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterParameterCuts",
+   "lines": 73,
+   "imports": [
+    "ShortCounterHeadCounts",
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_parameter_cuts",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterPositiveTail",
+   "lines": 64,
+   "imports": [
+    "ThreeRunWindowGap",
+    "ShortTargetCounter"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_positive_tail",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterQuadratic",
+   "lines": 76,
+   "imports": [
+    "ShortCounterParameterCuts",
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_quadratic",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterSourceCounts",
+   "lines": 250,
+   "imports": [
+    "ShortTargetLastSource",
+    "ShortCounterWeightedCounts",
+    "ShortTargetLast3",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_source_head_count",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "short_counter_source_weighted_count",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "short_counter_source_head_budget",
+     "line": 130
+    },
+    {
+     "kind": "theorem",
+     "name": "short_counter_source_prefix_budget",
+     "line": 183
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterTailBase",
+   "lines": 79,
+   "imports": [
+    "ShortCounterPositiveTail",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_tail_from_zero",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_tail_int",
+     "line": 44
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortCounterWeightedCounts",
+   "lines": 102,
+   "imports": [
+    "ShortCounterJointCounts",
+    "OldTargetFirstRun"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_weighted_counts",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -51878,6 +53213,26 @@
     {
      "kind": "theorem",
      "name": "short_counter_last_4",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortTargetLastSource",
+   "lines": 81,
+   "imports": [
+    "ShortTargetSourcePruning",
+    "MomentNoOld",
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_counter_last_source_three",
      "line": 13
     }
    ],
@@ -56996,6 +58351,25 @@
    "hasReport": false
   },
   {
+   "name": "ThreeRunWindowGap",
+   "lines": 67,
+   "imports": [
+    "ThreeRunFreeGap",
+    "PrefixSupplyCongruence"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_run_window_gap",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ThreeSSClassification",
    "lines": 164,
    "imports": [
@@ -60153,6 +61527,6 @@
    "hasReport": false
   }
  ],
- "total": 620,
+ "total": 674,
  "withReport": 167
 }

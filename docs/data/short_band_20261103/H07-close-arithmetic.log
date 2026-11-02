@@ -1,0 +1,24 @@
+Recaman/MassFourThreeArithmetic.lean:44:61: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  i ≥ 0
+  f - g - l ≤ 31
+  e - k ≥ 1
+  2*e - f + g + 2*i + 2*j ≤ -30
+  6 ≤ d ≤ 8
+  c - 2*d ≤ -4
+  b ≥ 1
+  a ≥ 1
+  9 ≤ a + c + e - k ≤ 14
+where
+ a := m
+ b := L
+ c := h
+ d := M
+ e := L * s
+ f := (S - 4) ^ 2
+ g := R ^ 2
+ i := M * (m + s - (S - 2 * R + 2))
+ j := M * (S - 2 * R + 2)
+ k := (L - 1) * s
+ l := 2 * M * (S - 2 * R + 2)

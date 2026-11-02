@@ -1,6 +1,6 @@
 # H-20261103-01: short-target の実last供給と五band包含
 
-Status: CONJECTURED（E521の紙上結果をkernel化する新unit）。親R-20261102-01/H12。入口は11/02 DAILY→C1_NO_OLD note→SHORT_TARGET_BAND note→本カード。完了したC3全v/E515、C>=4/v>=CのE516〜518、E519 strict A cut、E520 source pruningを再実行しない。
+Status: PROVED-LEAN（E523で最初のstrict候補削減を受入。E521五band全包含は次H02で引き継ぐ）。親R-20261102-01/H12。入口は11/02 DAILY→C1_NO_OLD note→SHORT_TARGET_BAND note→本カード。完了したC3全v/E515、C>=4/v>=CのE516〜518、E519 strict A cut、E520 source pruningを再実行しない。
 
 ## Exact question and quantifiers
 
@@ -29,3 +29,15 @@ D1のmiddleS/i0を切らず、clock重複を供給数へ過大計上しない。
 ## 公開状態の開始確認
 
 11/02の数学snapshot c8fb8b4cec79272045c26a0191a158f1c784e74fはorigin/mainへ到達・SHA照合済み。hosted CI 41358899803は07:54:58時点でLinux/macOS harness PASS、Lean/empiricalはcold certificate build中だった。終了journalを含む後続docs commitのSHAとpush結果は11/02最終chat報告を参照する。次回setupでorigin/mainをfetchし、その実SHAのCIを読み取り確認する。CI未完了をPASSにせず、失敗ならログと対象SHAを保存して必要な修正・通常pushへつなげる。ローカル622jobs/3364宣言PASSとhosted結果を区別し、CI待ちを数学探索CPU/実績へ加算しない。
+
+## 11/03 開始前の役割・依存chain
+
+R-20261103-01、CPU探索0。提案: actual partitionでhead10+last4/3からS+v<=C+13/12、同じtarget/headのkeyからX=S-C>0とcircleを供給。D1ではX<=14-C、deepではX<=12-vを非負積で二乗比較し、単調な下限でC<=5又はv<=3というstrict実候補削減へ。旧巨大Or算術jobのcast修理/分割を再実行しない。
+
+反証pass（紙上、discovery/holdout該当なし）: C=v+1のmiddleS/i0を残す。S<=2Cでは負定数を持つtarget平方が不可能であり、S>2Cを先に供給。X上界を二乗する前にX>0と上界の非負を確認。D1C6の境界は25+2*36-2=95 > (14-6)^2=64、deep v4/C6は25+36+48-16-1=92 > (12-4)^2=64。C>=4/target/positive/actual counterのいずれも外して当該数値排除を全four-runへ適用しない。既知mass1/free-prefix反例E453は域外、Aをfreeへ置換しない。
+
+形式化: 既存E522の同じEndN基点のlast上界を消費し、S boundは実countから供給。新unknown Propや供給予算/free結論の入力なし。factor helperだけでは受入せず、実phase/signの全長主定理に接着してからG5/Audit/fullcheck。別pass監査で元Intp/padded/zero/fullpositiveの量化子とwrapperの独立性を点検する。
+
+06:05 gate候補: actual counts、factor helper、Nat actual strict cuts、元p/padded adapterが各-M512で成功。初回の結合正規化、未提供by_contra tactic、D1のgrind非正規化を、同じ数学statement/同上限で明示平方差identityへ変更。数学的仮説/量化子の修理なし、旧五band monolith未再開。G5/lint/Audit/fullcheckと別pass意味監査を通すまで受入確定しない。
+
+06:06:18受入: E-523 PROVED-LEAN、fullcheck626jobs/3369宣言PASS、個別-M512/G5/Audit済み、人間レビュー未。actual countsと同target circleを内部供給して元pのS>2C、D1 C<=5/deep v<=3を全長で供給した。親cycleは継続しH02五band包含へ進む。数学CPU探索0、純helperの警告をdummy wrapperで消していない。

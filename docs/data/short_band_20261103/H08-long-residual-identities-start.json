@@ -1,0 +1,25 @@
+{
+  "tag": "H08-long-residual-identities",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourTwoArithmetic.olean",
+    "Recaman/MassFourTwoArithmetic.lean"
+  ],
+  "started_jst": "2026-11-03T07:09:13.785785+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourTwoArithmetic.lean": "6e7aec43c4a158fd68d50c24a5335fed66f5c6f115008a7fbd62fd3ee182d6e9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "316394a5266e9ff59e489644abfb59e002dda20be592e113a90e52681bde2314",
+  "source_tree_sha256": "dd105d98d03ddfb35effe187994fc4e9d120357a818717f8a812fe1cb8cc90bf",
+  "source_tree_manifest": "H08-long-residual-identities-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

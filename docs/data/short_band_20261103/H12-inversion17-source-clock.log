@@ -1,0 +1,45 @@
+Recaman/SeventeenSecondSource.lean:20:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h ≤ -1
+  f ≥ 0
+  5 ≤ e - f + g ≤ 9
+  d ≥ 0
+  c ≥ 1
+  b ≥ 1
+  a ≥ 1
+  a - d ≥ 1
+  a - d - e + f - g ≤ -7
+  a - e + f - g ≤ -3
+  a + c - d - e + f - g ≤ -2
+where
+ a := L
+ b := s
+ c := q
+ d := i
+ e := L * s
+ f := (M + L) * (s - 1)
+ g := M * s
+ h := (M + L) * s
+Recaman/SeventeenSecondSource.lean:45:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  7 ≤ d - e + f ≤ 9
+  c ≥ 0
+  c ≤ 3
+  c + d - e + f ≥ 7
+  b ≥ 1
+  b ≤ 4
+  a ≥ 1
+where
+ a := s
+ b := q
+ c := i
+ d := L * s
+ e := (M + L) * (s - 1)
+ f := M * s
+Recaman/SeventeenSecondSource.lean:75:21: warning: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

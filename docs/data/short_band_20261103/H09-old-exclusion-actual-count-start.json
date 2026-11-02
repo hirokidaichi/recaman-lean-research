@@ -1,0 +1,25 @@
+{
+  "tag": "H09-old-exclusion-actual-count",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldRayPrefixInequality.olean",
+    "Recaman/OldRayPrefixInequality.lean"
+  ],
+  "started_jst": "2026-11-03T07:13:31.394213+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldRayPrefixInequality.lean": "0ef1639690f81f5ad862b8df5b453ca49b20142ee5edbfd382cb2f9ad60cf62f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "240845c8993b3e3d453c41b98ff4836dc934401772191c59f46d5b57fd2dea9c",
+  "source_tree_sha256": "57bce22fc2e60d7b55861b0b942f8ce61c29b6808730455a37528de3c70aff86",
+  "source_tree_manifest": "H09-old-exclusion-actual-count-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

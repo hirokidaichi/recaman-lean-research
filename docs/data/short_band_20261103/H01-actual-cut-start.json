@@ -1,0 +1,25 @@
+{
+  "tag": "H01-actual-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterParameterCuts.olean",
+    "Recaman/ShortCounterParameterCuts.lean"
+  ],
+  "started_jst": "2026-11-03T06:04:36.299947+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterParameterCuts.lean": "aa1b572c99641c05a708f939848eccb7be33ec30adafdf6304a585d4ee9063ba"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "2d8bd7fc873bf2d1ed4abac5cf9e9e4ff72fde191ebeef74f4c397f774aca6c4",
+  "source_tree_sha256": "c4df0bbbf7c1f1290c0d258236dd0719708180b3b82099e37f9c10e23ad8dfcf",
+  "source_tree_manifest": "H01-actual-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

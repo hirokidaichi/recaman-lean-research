@@ -1,0 +1,29 @@
+{
+  "tag": "H07-boundary-head-eight",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeadSixSevenCount.olean",
+    "Recaman/HeadSixSevenCount.lean"
+  ],
+  "started_jst": "2026-11-03T06:59:49.562839+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "source_tree_sha256": "4a43eb1c0db871247f526a2e9db4a81b568981b36d348416bc1fb8c347350187",
+  "source_tree_manifest": "H07-boundary-head-eight-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.17089625028893352,
+  "cpu_seconds": 0.054841,
+  "finished_jst": "2026-11-03T06:59:49.733674+09:00"
+}

@@ -1,0 +1,8 @@
+Recaman/S15SecondExclusion.lean:37:27: warning: This simp argument is unused:
+  Nat.zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [rayCount, cN, Nat.add_zero, List.replicate_zero, List.append_nil, hlocal, Bool.false_eq_true,
+    ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

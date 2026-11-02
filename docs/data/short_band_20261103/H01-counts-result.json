@@ -1,0 +1,31 @@
+{
+  "tag": "H01-counts",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterHeadCounts.olean",
+    "Recaman/ShortCounterHeadCounts.lean"
+  ],
+  "started_jst": "2026-11-03T06:02:43.766573+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterHeadCounts.lean": "b7bd3ee77c958af78bbbeee82a385ad1952e7cd56f5ce5ad6c180e53a72ae9a4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "2d8bd7fc873bf2d1ed4abac5cf9e9e4ff72fde191ebeef74f4c397f774aca6c4",
+  "source_tree_sha256": "3ebb310525df8cfa0f6282fb586b4cd088e063237ca89136dd2d04f404700dd0",
+  "source_tree_manifest": "H01-counts-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "2d8bd7fc873bf2d1ed4abac5cf9e9e4ff72fde191ebeef74f4c397f774aca6c4",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 2.2332050828263164,
+  "cpu_seconds": 0.5779319999999999,
+  "finished_jst": "2026-11-03T06:02:45.999737+09:00"
+}

@@ -1,0 +1,8 @@
+Recaman/SecondRaySmallShapes.lean:44:88: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 5
+  a ≥ 0
+  a - b ≥ 0
+where
+ a := ↑h
+ b := ↑h₁.choose

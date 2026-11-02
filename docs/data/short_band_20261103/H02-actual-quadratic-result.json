@@ -1,0 +1,31 @@
+{
+  "tag": "H02-actual-quadratic",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortCounterQuadratic.olean",
+    "Recaman/ShortCounterQuadratic.lean"
+  ],
+  "started_jst": "2026-11-03T06:08:53.139908+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortCounterQuadratic.lean": "b6e1acccf8945434f5b1eff85e13f295f739f06dafdce5ef2b29005716cebbdb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "source_tree_sha256": "d9ebe7c7df627228ac56c069d09a9523dd418651ff3159a8a1d9e88c66a6802f",
+  "source_tree_manifest": "H02-actual-quadratic-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c4cd1227d630ee4bb6b7ce32a192997c1d188f2357994c7b637d8c7bb43db8a8",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6285771252587438,
+  "cpu_seconds": 0.5138389999999999,
+  "finished_jst": "2026-11-03T06:08:53.768417+09:00"
+}

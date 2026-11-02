@@ -1,0 +1,10 @@
+Recaman/S15SecondExclusion.lean:35:107: error: Tactic `decide` failed for proposition
+  rayCount (List.replicate 12 false ++ List.replicate 8 true ++ List.replicate 2 false) 1 = 0
+because its `Decidable` instance
+  instDecidableEqNat (rayCount (List.replicate 12 false ++ List.replicate 8 true ++ List.replicate 2 false) 1) 0
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (rayCount (List.replicate 12 false ++ List.replicate 8 true ++ List.replicate 2 false) 1).beq 0 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯

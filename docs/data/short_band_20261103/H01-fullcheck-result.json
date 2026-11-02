@@ -1,0 +1,23 @@
+{
+  "tag": "H01-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-03T06:06:08.306445+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "5c8a4493c09919ea41b8385562fa1263029cb5d9c54d08f5c96130ef06c5f41c",
+  "source_tree_sha256": "8b187f3e1514a177c035572e1f09a3b3f85df176757b06aa8b28208c581b62bd",
+  "source_tree_manifest": "H01-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 10.045789207797498,
+  "cpu_seconds": 9.640433,
+  "finished_jst": "2026-11-03T06:06:18.352270+09:00"
+}

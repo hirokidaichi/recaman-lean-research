@@ -1806,3 +1806,15 @@ E-512 PROVED-LEAN（人間レビュー未）。[NoOldMassThreeGap](../Recaman/No
 ## 2026-11-02: zerohead old-target 四run部分域
 
 E512→E515はC3の全v actual fullgap、E516/E517/E518はC>=4/v>=Cを全量化で供給。E519は全mixed sourceのmass>=2 strict A cutで、free cutではない。E520はC>=4/v<C counterのsource位置削減、E522は元p last supply4/3。E521五bandはPROVED-PAPERのまま（五band包含未Lean/人間レビュー未）。経路は同target primitive key→source削減→元actual count課金。新しいrank/任意run/C1全体ではない。次H-20261103-01はfactored-circleによるactual strict候補削減であり停止monolithの単純再実行をしない。
+
+## 2026-11-03: 実count/factored-circleとendpoint前依存
+
+E523 PROVED-LEAN: short counterのhead10/last4-3を元実partitionへ接着してS+v<=C+13/12、S>2C、D1 C<=5/deep v<=3を全old履歴/全長で供給。これを先に消費する明示五constructorでE521五band包含/C8-v4-R9-S19-A21/deep QをPROVED-LEANへ更新。旧11/02 monolithは停止保持で資源追加なし。五bandのcounter不在や有限history分類ではない。
+
+E524 PROVED-LEAN: Winと現在endpoint-Aを同一視せず、targetの一clockだけAへ補完しstrict pastのEndN/free countを同じ基点で厳密保存。既存E451を消費して三runのWin-only gapを供給し、実short counterからT>=1/R>C-v。SAA/endpoint-SはWinだがEndNでないkernel境界で、親C1反例ではない。未知Prop/予算/free結論を入力していない。人間レビュー未、一般四run/C1/rank/全射性は未解決。
+
+## 2026-11-03 actual old-target update
+
+E-526/E-527は同zero-positive三run zerohead/oldtargetmass5のS2/S1、E-528/E-530はmass4/S3,S2の全長元p free-gap。E-529/E-531/E-532/E-533/E-534のsource/target/cross課金を経てE-535は残るC4/S1 actual counterをS14/R6/j5/T3/K19,20,21へstrict削減（PROVED-LEAN、人間レビュー未）。反例不在・一般C1は未証明。current frontier/当日target residual noteを正本とする。
+
+H13のlocal8rowは個別kernel受理のみ、import/source分類512MB STOPPED、未検証source/finite certificateはpacket .lean.txtへ隔離、actual接着は未採用。再開は独立数学pruningと測定改善を要し、資源増加や単なるsplit/import移動は不可。E534/E535は独立target grammar入力。target以前prefixをBlockWordへresetする弱化補助仮定はSAAAA/drop1=A4/take1=SでREFUTED、C1反例ではない。

@@ -1,0 +1,31 @@
+{
+  "tag": "H09-original-p-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourTwoGapBase.olean",
+    "Recaman/MassFourTwoGapBase.lean"
+  ],
+  "started_jst": "2026-11-03T07:14:00.669341+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourTwoGapBase.lean": "14336960ade33956d096bf5b2a9bc657acf51d14f32934d0ca41308f600e0e7c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "240845c8993b3e3d453c41b98ff4836dc934401772191c59f46d5b57fd2dea9c",
+  "source_tree_sha256": "e15f878e645e75184f9193e41c867a846369ea0a7b0382e7614466c920083b22",
+  "source_tree_manifest": "H09-original-p-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "240845c8993b3e3d453c41b98ff4836dc934401772191c59f46d5b57fd2dea9c",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6880120001733303,
+  "cpu_seconds": 0.5153030000000001,
+  "finished_jst": "2026-11-03T07:14:01.357272+09:00"
+}

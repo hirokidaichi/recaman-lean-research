@@ -1,0 +1,31 @@
+{
+  "tag": "H03-prefix-congruence",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrefixSupplyCongruence.olean",
+    "Recaman/PrefixSupplyCongruence.lean"
+  ],
+  "started_jst": "2026-11-03T06:15:51.365037+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrefixSupplyCongruence.lean": "27876164674d6ecd430849e8022e06d6c49cd85e09c9f3f7a600173a949171ed"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "source_tree_sha256": "f966e4165d3cb8046200cc243eaf788731d2c398e9dd9d39ed47141ef7ab3a1a",
+  "source_tree_manifest": "H03-prefix-congruence-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f54c14898ba9439b6cf4878080f0d55a2ed0a5f3974504e21f9cc6a26b804bf2",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4578911657445133,
+  "cpu_seconds": 0.282408,
+  "finished_jst": "2026-11-03T06:15:51.822875+09:00"
+}

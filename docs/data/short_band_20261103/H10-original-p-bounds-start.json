@@ -1,0 +1,25 @@
+{
+  "tag": "H10-original-p-bounds",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourOneBase.olean",
+    "Recaman/MassFourOneBase.lean"
+  ],
+  "started_jst": "2026-11-03T07:19:41.972498+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourOneBase.lean": "d1692e52d7e15fb1e59f29863da22dcc783044853a7a1aa32ee4f779fb58cb55"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "c8e11e0acd361e09778864a9a35aa8f9500a5b7f752b512d849ea0d6353bf44a",
+  "source_tree_sha256": "e198a929759957f2eae6fc7bd9322c39978814b2b17d33e1b5b991ed4c72e0f0",
+  "source_tree_manifest": "H10-original-p-bounds-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

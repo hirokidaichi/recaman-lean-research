@@ -1,0 +1,86 @@
+Recaman/MassFiveOneGap.lean:69:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  r ≥ 16
+  l ≤ 76
+  l + 2*o + 2*p - q ≤ -33
+  1 ≤ k ≤ 4
+  k - r ≥ -12
+  i ≥ 0
+  i - k ≤ 3
+  1 ≤ g ≤ 11
+  g - 2*k + r ≤ 16
+  g ≥ 1
+  g + r ≤ 22
+  e ≥ 1
+  d ≥ 1
+  d + g - r ≤ -3
+  d + g + k - r ≥ -4
+  d + 2*g + o + p - 2*r ≥ 2
+  c ≥ 1
+  c + e - r ≤ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 1 + T))
+ k := ↑T
+ l := (↑j + 1) ^ 2
+ o := ↑M * (↑m + ↑s)
+ p := ↑L * ↑s
+ q := (↑h + ↑m + ↑s - 5) ^ 2
+ r := ↑(h + m + s - 1)
+Recaman/MassFiveOneGap.lean:87:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  y ≥ 0
+  x ≥ 0
+  x - y ≥ 0
+  v ≥ 0
+  u ≥ 0
+  11 ≤ u + y ≤ 16
+  u + v ≥ 0
+  r ≥ 0
+  l ≤ 76
+  l + 2*o + 2*p - q ≤ -33
+  1 ≤ k ≤ 4
+  k - r ≥ -3
+  k - u - y ≥ -13
+  k - u + x - y ≤ -4
+  i ≥ 0
+  i - k ≤ 3
+  1 ≤ g ≤ 11
+  g - 2*k + u + y ≤ 17
+  g + u + y ≤ 23
+  e ≥ 1
+  d ≥ 1
+  d + g - u - y ≤ -4
+  d + g + k - u - y ≥ -5
+  d + 2*g + o + p - 2*u - 2*y ≥ 0
+  c ≥ 1
+  c + e - u - y ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 1 + T))
+ k := ↑T
+ l := (↑j + 1) ^ 2
+ o := ↑M * (↑m + ↑s)
+ p := ↑L * ↑s
+ q := (↑h + ↑m + ↑s - 5) ^ 2
+ r := ↑(cN P n (h + M + m + L + s + U + 1 + T))
+ u := ↑(cN P n (h + (M + (m + (L + (s + U))))))
+ v := ↑(cN P (n + (h + (M + (m + (L + (s + U)))))) (1 + T))
+ x := ↑B
+ y := ↑(cN (EndN f 0) n (h + (M + (m + (L + (s + U))))))

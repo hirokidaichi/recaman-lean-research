@@ -1,0 +1,25 @@
+{
+  "tag": "H07-boundary-head-eight-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeadSixSevenCount.olean",
+    "Recaman/HeadSixSevenCount.lean"
+  ],
+  "started_jst": "2026-11-03T07:00:01.665686+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeadSixSevenCount.lean": "41f966df7aa8c628825243d4f574c1d5752167df12d0f744380d105ccd64b1ae"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65",
+  "tracked_diff_sha256": "f1f1acf178cc96ce40cdb0569bec5c768c60e5bcffdf13471738e4d3dad275a3",
+  "source_tree_sha256": "662995af1507a27a965ea61ebef7be2c7c982d70c97d860ac6cf29b51452ec65",
+  "source_tree_manifest": "H07-boundary-head-eight-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

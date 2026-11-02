@@ -1,0 +1,32 @@
+Recaman/MassFiveOneArithmetic.lean:16:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  i ≤ 0
+  2*g + 2*i - j + k ≤ -33
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  11 ≤ c + d + f ≤ 16
+  b ≥ 4
+  2*b - f ≥ 4
+  a ≥ 5
+  a - b ≥ -1
+  a - c - d - f ≥ -9
+where
+ a := R
+ b := M
+ c := m
+ d := s
+ e := L
+ f := h
+ g := M * (m + s)
+ i := L * s
+ j := (S - 5) ^ 2
+ k := R ^ 2
+ l := (L - 1) * s
+Recaman/MassFiveOneArithmetic.lean:37:42: warning: Variable name `hK3` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hK3
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

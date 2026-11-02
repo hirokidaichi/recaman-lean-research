@@ -1,0 +1,19 @@
+Recaman/JointShiftedCircle.lean:63:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 9
+  e ≥ 4
+  d ≥ 25
+  c ≥ 5
+  a ≥ 3
+  a - b ≤ -2
+  2*a - h ≤ 0
+  24*a + d + e + f + g ≤ 133
+where
+ a := v
+ b := C
+ c := R
+ d := R ^ 2
+ e := (C - v) ^ 2
+ f := 4 * (C - v) * v
+ g := v ^ 2
+ h := (C - v) * v
