@@ -4,11 +4,13 @@
 
 数学的な意味: 過去の窓を再使用して供給できるA数を、同じ元基点のfree数へ正確に課金した。供給予算を仮定したwrapperではなく、具体sourceの平方/質量/area/keyと同targetを組み合わせて、自由Aが不足する候補を減らした。有限historyを総当たりして無制限の定理と呼んでいない。
 
-## 実時計と確定前の保存状態
+## 実時計と確定実績
 
-実setup開始06:00:02.472588 JST、waiting05:58:57.486024〜06:00:02.472588（64.987秒）は実績から除外。session f9152e9d-af2b-440c-897b-4f2da8c07e4d、親R-20261103-01。[journal](data/daily_research/2026-11-03.json)のclosed confirmed区間だけを実績とし、終了値はstop後に本節へ追記する。現在handoff中で120分完了/未来区間を先に計上しない。数学探索は07:41で終了、07:45以降は検証・保存・publicationのみ。
+実開始 2026-11-03T06:00:02.472588+09:00、実終了 2026-11-03T07:58:52.893434+09:00（Asia/Tokyo、journal stop）。confirmed_work_seconds=7130.421秒＝118分50.421秒、120分に対する不足1分09.579秒。waiting64.987秒を除外、中断/gap0、overtime0、cursor閉鎖済み。開いた区間や予定を計上せず、stop後の最終publicationも実績へ戻さない。不足理由は06:00直後のsetup切替差と08:00前の確定記録/commit/push余裕、遡及補填なし。
 
-予定setup10/活用60/局所30/別pass監査10/handoff10分。setup実績127.023秒へ短縮して残りを研究監査へ再配分した。各unit gate通過後も一日を継続し、H13 cap STOPから独立target grammarへ切替。監査/保存超過分は研究から差引き、最終phase/unit集計をjournalから保存する。過去日の時間/CPU持越なし。
+[確定集計](data/short_band_20261103/WORK_ACCOUNTING_FINAL.json)と[journal](data/daily_research/2026-11-03.json)が正本。phase実績はsetup 2分07.023秒、research 60分50.407秒、audit 42分22.839秒、handoff 13分30.152秒。research内の活用36分31.824秒、局所探索24分18.583秒。これはjournalに記録した作業区間で純思考/純CPU時間ではない。
+
+旧予定setup10/活用60/局所30/別pass監査10/handoff10分に対し、setupを実127.023秒へ縮め、その余裕を含めて監査・保存へ再配分。G5逐語意味監査・source全量化・resource失敗対応とpublicationの実費を研究枠から差引き、活用/局所の予定90分を実行済みとは呼ばない。H13 cap STOP後も独立target grammarとR5 edgeへ継続。前日時間/CPU持越なし。全体無変化counter0は当日新edgeによる更新で日付resetではない。
 
 ## 証拠・検証
 
@@ -33,3 +35,9 @@ Winだけから元fのEndNを推論する補助案はSAA/endpointSで偽、stric
 時刻注記: 06:28:38 noteの06:30、06:59:22 noteの07:00は実時刻ではなく近傍保存の誤記。正本journalには実06:30:21と07:00:02の別checkpointがあり、実績を遡及修正しない。
 
 詳細unit記録は[data/UNIT_PROGRESS_LOG](data/short_band_20261103/UNIT_PROGRESS_LOG.md)、commands/argv/revision/dirty source tree/CPU/FAIL/PASSは同packetを参照。
+
+Publication first snapshot: `8e3e14d242e9eb6324ce423b3f7d0db5d31a8424` をorigin/mainへ通常push、ls-remote exact一致。CI [41540613926](https://github.com/hirokidaichi/recaman-lean-research/actions/runs/41540613926)は07:51時点でLinux/macOS harness成功、Lean Auditは実行中で全成功未確認。make test-toolsは7 brief/12 journal/30 harness PASS。最終確定journalはstop後のmetadata commitで保存する。
+
+最終保存: journal stopの確定値を含むmetadata commitを、この研究snapshot8e3e14dの後続として通常origin/mainへpushする。最終metadata SHAとls-remote一致はこのチャットの終了報告で示す（commit自身のSHAを自身の内容へ埋め込まない）。全研究成果/停止記録は保存対象、未公開研究sourceなし。hosted Lean CIは最終readbackでdeep trace certificates build中、全成功未確認。終了後にCI成功を推定しない。
+
+G5最終監査では14本の元p shift adapterの質問3を明示yes（wrapper、独立成果ではない）に修正し、具体source/core定理と区別した。逐語signature/Lean statementは不変、registry G1-G5再PASS。

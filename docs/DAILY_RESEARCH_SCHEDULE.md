@@ -212,3 +212,5 @@ CPU探索は0から。検証済み計測はcooperative single-Python worker（�
 実開始2026-11-02T06:03:32.373375+09:00、実終了2026-11-02T07:58:30.167815+09:00。confirmed_work_seconds=6897.794、114分57.794秒、不足5分02.206秒。待機/中断/gap0、openなし。CPU/過去実績/stop後の公開時間を加えない。配信時点06:02:01.693からの実開始遅れを遡及補填しない。
 
 正本は[DAILY](RESEARCH_HANDOFF_2026-11-02_DAILY.md)/[journal](data/daily_research/2026-11-02.json)。次は[H-20261103-01](HYPOTHESIS_CARD_2026-11-03_SHORT_SUPPLY_BAND_KERNEL.md)。E520/E522のactual source/last供給を利用し、factored-circleから新しいstrict候補削減を先に得る。五bandはPROVED-PAPERのまま。旧monolithへ時間/メモリを追加しない。自動実行の同ID/ACTIVE/同schedule/chatと次cardをreadback済み、未来の完遂は未確認。
+
+2026-11-03確定: 実開始2026-11-03T06:00:02.472588+09:00〜終了2026-11-03T07:58:52.893434+09:00、confirmed 7130.421秒（118分50.421秒）、不足1分09.579秒、waiting64.987秒/gap0は除外。E535/R6未解決、H13 cap STOP、main研究snapshot8e3e14d＋後続確定metadata、hosted CIは未完了。[DAILY](RESEARCH_HANDOFF_2026-11-03_DAILY.md)を正本とし、翌日の実績へ加えない。

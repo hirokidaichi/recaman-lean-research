@@ -1,6 +1,6 @@
 # Current research frontier
 
-最終更新: 2026-11-03。journalは保存作業中、確定時間は当日DAILY/journalを正本とする。新しい数学探索は07:41で終了、07:45以降は検証・保存のみ。一般C1/Q/H/SL/全射性は未証明。
+最終更新: 2026-11-03。journal stop済み、confirmed 118分50.421秒、不足1分09.579秒。確定値は当日DAILY/journalを正本とする。新しい数学探索は07:41で終了、07:45以降は検証・保存のみ。一般C1/Q/H/SL/全射性は未証明。
 
 ## Research brief
 
