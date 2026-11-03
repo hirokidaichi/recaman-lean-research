@@ -1,0 +1,31 @@
+{
+  "tag": "H04-old-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoEqualOldGapBase.olean",
+    "Recaman/MassTwoEqualOldGapBase.lean"
+  ],
+  "started_jst": "2026-11-04T06:29:38.837166+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoEqualOldGapBase.lean": "f440373cc1769c65dc2378c9ca7c57c339d2ebb4b56a67836532c82a33ea8d1d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "506e2778f62a25eef180d6eab91f1d35bfe1d1325c0974b0fab779265a584e5a",
+  "source_tree_sha256": "ed5932243afc105069e53d45b8b79776b8c79204dad4e359ddd40b16a31dd4cb",
+  "source_tree_manifest": "H04-old-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "506e2778f62a25eef180d6eab91f1d35bfe1d1325c0974b0fab779265a584e5a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6055126660503447,
+  "cpu_seconds": 0.488297,
+  "finished_jst": "2026-11-04T06:29:39.442616+09:00"
+}

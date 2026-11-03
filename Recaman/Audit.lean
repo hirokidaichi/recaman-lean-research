@@ -1,3 +1,30 @@
+import Recaman.UnitOneInitialSource
+import Recaman.UnitOneLastFive
+import Recaman.UnitOneLastFiveBase
+import Recaman.KFiveHeadSources
+import Recaman.KFiveHeadActual
+import Recaman.UnitTargetNoOldFour
+import Recaman.UnitTargetNoOldFourBase
+import Recaman.UnitTargetTwoS
+import Recaman.SingleASPrefixWord
+import Recaman.UnitTargetDeepSecondS
+import Recaman.UnitTargetActualBoundary
+import Recaman.UnitTargetLateSources
+import Recaman.UnitTargetNoOldLast
+import Recaman.UnitTargetNoOldCounter
+import Recaman.UnitTargetNoOldBase
+import Recaman.UnitTargetSmallHeadKey
+import Recaman.UnitTargetNoOldResidual
+import Recaman.UnitTargetNoOldResidualBase
+import Recaman.UnitTargetZeroCross
+import Recaman.FirstRayBoundaryControl
+import Recaman.UnitTargetPrefixParity
+import Recaman.UnitTargetActualCut
+import Recaman.LowTargetSeedParity
+import Recaman.LowTargetActualCircle
+import Recaman.MassOneTargetCounter
+import Recaman.MassOneOldTwoGap
+import Recaman.MassOneOldTwoGapBase
 import Recaman
 
 -- Kernel dependency audit for the principal research lemmas.
@@ -3625,3 +3652,85 @@ import Recaman
 #print axioms Recaman.MassFourOneR6.mass_four_one_R6
 #print axioms Recaman.MassFourOneR6Base.mass_four_one_from_zero
 #print axioms Recaman.MassFourOneR6Base.mass_four_one_int
+
+#print axioms Recaman.NonsquareHeadSupply.initial_source_key_excluded
+#print axioms Recaman.NonsquareHeadSupply.third_ray_three
+#print axioms Recaman.NonsquareActualSupply.third_actual_four
+#print axioms Recaman.MassFourOneGap.long_initial
+#print axioms Recaman.MassFourOneGap.mass_four_one_gap
+#print axioms Recaman.MassFourOneGapBase.mass_four_one_from_zero
+#print axioms Recaman.MassFourOneGapBase.mass_four_one_int
+#print axioms Recaman.MassTwoShortCounter.mass_two_short_counter
+#print axioms Recaman.MassTwoShortSources.mass_two_short_sources
+#print axioms Recaman.MassTwoPrefixKey.mass_two_key_bounds
+#print axioms Recaman.MassTwoPrefixKey.middle_prefix_key_excluded
+#print axioms Recaman.MassTwoMiddleSource.zero_clock_bridge
+#print axioms Recaman.MassTwoMiddleSource.middle_actual_excluded
+#print axioms Recaman.MassTwoShortLastThree.short_counter_last_source_three
+#print axioms Recaman.MassTwoOneGap.mass_two_one_gap
+#print axioms Recaman.MassTwoOneGapBase.mass_two_one_from_zero
+#print axioms Recaman.MassTwoOneGapBase.mass_two_one_int
+#print axioms Recaman.NonsquareHeadSupply.initial_source_key_between
+#print axioms Recaman.NonsquareHeadSupply.third_ray_three_between
+#print axioms Recaman.NonsquareActualSupply.third_actual_four_between
+#print axioms Recaman.MassTwoEqualCounter.mass_two_equal_counter
+#print axioms Recaman.MassTwoThreeKeys.mass_two_keys
+#print axioms Recaman.MassTwoThreeKeys.mass_three_keys
+#print axioms Recaman.MassTwoThreeKeys.joint_minus_two_excluded
+#print axioms Recaman.MassTwoEqualOldResidual.mass_two_equal_old_residual
+#print axioms Recaman.MassTwoEqualOldGap.mass_two_equal_old_gap
+#print axioms Recaman.MassTwoEqualOldGapBase.mass_two_equal_old_from_zero
+#print axioms Recaman.MassTwoEqualOldGapBase.mass_two_equal_old_int
+#print axioms Recaman.MassTwoMiddleDelay.equal_delay_bridge
+#print axioms Recaman.MassTwoMiddleDelay.middle_delay_excluded
+#print axioms Recaman.MassTwoEqualPositiveSources.mass_two_equal_positive_sources
+#print axioms Recaman.RayCountFromBase.count_from_base
+#print axioms Recaman.RayCountFromBase.count_with_first_clock
+#print axioms Recaman.MassTwoEqualNoOldLast.mass_two_equal_no_old_last_four
+#print axioms Recaman.MassTwoEqualGap.mass_two_equal_gap
+#print axioms Recaman.MassTwoEqualGapBase.mass_two_equal_from_zero
+#print axioms Recaman.MassTwoEqualGapBase.mass_two_equal_int
+#print axioms Recaman.MassTwoTargetCounter.mass_two_target_counter
+#print axioms Recaman.LargeSeparatorMassTwoGap.large_separator_mass_two_gap
+#print axioms Recaman.LargeSeparatorMassTwoBase.large_separator_mass_two_from_zero
+#print axioms Recaman.LargeSeparatorMassTwoBase.large_separator_mass_two_int
+#print axioms Recaman.RayCountFromBase.count_with_initial_segment
+#print axioms Recaman.MassTwoBandSources.mass_two_band_sources
+#print axioms Recaman.MassTwoNoOldLast.mass_two_no_old_last_budget
+#print axioms Recaman.NoOldMassTwoGap.no_old_mass_two_gap
+#print axioms Recaman.NoOldMassTwoBase.no_old_mass_two_from_zero
+#print axioms Recaman.NoOldMassTwoBase.no_old_mass_two_int
+#print axioms Recaman.OldThreeKeyParity.mass_three_seed_parity
+#print axioms Recaman.OldThreeKeyParity.old_three_target_even
+#print axioms Recaman.OldThreeActualParity.actual_old_three_target_even
+
+#print axioms Recaman.LowTargetSeedParity.old_two_target_circle
+#print axioms Recaman.MassOneTargetCounter.mass_one_target_counter
+#print axioms Recaman.MassOneOldTwoGap.mass_one_old_two_gap
+#print axioms Recaman.MassOneOldTwoGapBase.mass_one_old_two_int
+
+#print axioms Recaman.UnitTargetPrefixParity.cross_four
+#print axioms Recaman.UnitTargetPrefixParity.unit_target_prefix_cut
+#print axioms Recaman.UnitTargetActualCut.actual_unit_source_prefix_two
+
+#print axioms Recaman.UnitTargetZeroCross.source_zero_cross_boundary
+#print axioms Recaman.FirstRayBoundaryControl.first_ray_two_control
+
+#print axioms Recaman.UnitTargetDeepSecondS.unit_target_deep_second_S_excluded
+#print axioms Recaman.UnitTargetLateSources.unit_target_late_sources
+#print axioms Recaman.UnitTargetNoOldLast.unit_target_no_old_last_budget
+#print axioms Recaman.UnitTargetNoOldCounter.unit_no_old_counter
+#print axioms Recaman.UnitTargetNoOldBase.unit_no_old_int
+#print axioms Recaman.UnitTargetNoOldResidual.unit_no_old_residual
+#print axioms Recaman.UnitTargetNoOldResidualBase.unit_no_old_residual_int
+
+#print axioms Recaman.KFiveHeadSources.second_old_excluded
+#print axioms Recaman.KFiveHeadSources.third_only_two
+#print axioms Recaman.KFiveHeadActual.K_five_head_three
+#print axioms Recaman.UnitTargetNoOldFour.unit_no_old_head_four
+#print axioms Recaman.UnitTargetNoOldFourBase.unit_no_old_four_int
+#print axioms Recaman.UnitTargetTwoS.two_S_source_excluded
+
+#print axioms Recaman.UnitOneInitialSource.unit_one_initial_excluded
+#print axioms Recaman.UnitOneLastFive.unit_one_counter_last_five
+#print axioms Recaman.UnitOneLastFiveBase.unit_one_counter_int

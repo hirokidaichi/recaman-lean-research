@@ -1,0 +1,599 @@
+{
+  "modules": [
+    {
+      "path": "Recaman/FirstRayBoundaryControl.lean",
+      "sha256": "a18f9990227ba1e19feaea469079ad27840a13a933632e81f534c1abdc70d1cd",
+      "individual_M512_receipts": [
+        "H15-first-control-final-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "first_ray_two_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/FirstRayBoundaryControl.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/KFiveHeadActual.lean",
+      "sha256": "5200c56bf98ea3b029f41f1215de9e1d316c2a59ef76c97a1bf5fbb818e699f7",
+      "individual_M512_receipts": [
+        "H20-K5-actual-head-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "K_five_head_three: concrete / proof=work / SUBSTANTIVE\n# Recaman/KFiveHeadActual.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/KFiveHeadSources.lean",
+      "sha256": "90bdf080c44b184feb65122b46bd0170da5e189a8120ef645d366dabb7ececcc",
+      "individual_M512_receipts": [
+        "H20-K5-ray-counts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "K_five_bounds: pure-arithmetic / proof=work / -\nno_small_odd_square: pure-arithmetic / proof=work / -\nno_eleven: pure-arithmetic / proof=work / -\nsecond_only_two: concrete / proof=work / SUBSTANTIVE\nthird_only_two: concrete / proof=work / SUBSTANTIVE\nsecond_old_excluded: concrete / proof=work / SUBSTANTIVE\nsecond_ray_one: concrete / proof=work / SUBSTANTIVE\nthird_ray_one: concrete / proof=work / SUBSTANTIVE\n# Recaman/KFiveHeadSources.lean: 5/8 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/LargeSeparatorMassTwoBase.lean",
+      "sha256": "5f5f394861d48b9f44acae7f625354edb535c9fad31add876e8de2c12459e291",
+      "individual_M512_receipts": [
+        "H06-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "large_separator_mass_two_from_zero: concrete / proof=work / SUBSTANTIVE\nlarge_separator_mass_two_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/LargeSeparatorMassTwoBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/LargeSeparatorMassTwoGap.lean",
+      "sha256": "3d6cba3ea6ecdc71bc11661d2dfc07e7b6561d90f53d95470c82ac0ea3cc2cf3",
+      "individual_M512_receipts": [
+        "H06-large-gap-import-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "large_separator_mass_two_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/LargeSeparatorMassTwoGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/LowTargetActualCircle.lean",
+      "sha256": "8c3ad0378af63a1fd1aa4b0c81de716847bbe74ef018ea2275caa0cfea10e0cf",
+      "individual_M512_receipts": [
+        "H11-actual-circle-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "actual_old_two_target_circle: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowTargetActualCircle.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/LowTargetSeedParity.lean",
+      "sha256": "1c0025222fdcf48e400043857d8bf070994d3cccc2e2bebd3aab37e2b5795c71",
+      "individual_M512_receipts": [
+        "H11-source-circle-qualified-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "seed_key_parity: concrete / proof=work / SUBSTANTIVE\nold_two_target_circle: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowTargetSeedParity.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassFourOneGap.lean",
+      "sha256": "08b65c7f6a6da5af78b61ffebd1509a023a6bc4b04c128209557e6f890b7225b",
+      "individual_M512_receipts": [
+        "H01-gap-count-normalized-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "long_initial: pure-arithmetic / proof=work / -\nmass_four_one_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassFourOneGap.lean: 1/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassFourOneGapBase.lean",
+      "sha256": "6b8d95fa2efe38f64234412d69a69a3e283f432e5e5ef1e09c318ba272c0df7a",
+      "individual_M512_receipts": [
+        "H01-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_four_one_from_zero: concrete / proof=work / SUBSTANTIVE\nmass_four_one_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassFourOneGapBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassOneOldTwoGap.lean",
+      "sha256": "fe79cf9a27f73b8b6ad7324bc68a8a3a478e640c4cbed3cca9093c07c9d590ae",
+      "individual_M512_receipts": [
+        "H11-gap-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_one_old_two_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassOneOldTwoGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassOneOldTwoGapBase.lean",
+      "sha256": "4693ff09bec9a486cd5195fa1d2719d4cbb24304e5ae70bd214ae099a82b13bc",
+      "individual_M512_receipts": [
+        "H11-original-p-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_one_old_two_from_zero: concrete / proof=work / SUBSTANTIVE\nmass_one_old_two_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassOneOldTwoGapBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassOneTargetCounter.lean",
+      "sha256": "af0251a2027adb9da74281c2ca35ab357108bde6fa09051d2b796c1511404376",
+      "individual_M512_receipts": [
+        "H11-counter-arithmetic-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_one_target_counter: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassOneTargetCounter.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoBandSources.lean",
+      "sha256": "58b52973270ad053f515826ac63462401907896b80b109f80d0200f57ed49e9d",
+      "individual_M512_receipts": [
+        "H07-band-source-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_band_sources: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoBandSources.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualCounter.lean",
+      "sha256": "855b543792628520a8a620af91e8b5195505facca46b51e3bbfcac896958a29c",
+      "individual_M512_receipts": [
+        "H04-counter-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_counter: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualCounter.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualGap.lean",
+      "sha256": "f3832594ba0d19d5e6379a49988e95519496641c3667ccf52e3d9e3044322513",
+      "individual_M512_receipts": [
+        "H05-gap-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualGapBase.lean",
+      "sha256": "cc7ac7c160952b11b5459e0e84beb2a1804bc81d188abb4553cef1f5e45ac6bf",
+      "individual_M512_receipts": [
+        "H05-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_from_zero: concrete / proof=work / SUBSTANTIVE\nmass_two_equal_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualGapBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualNoOldLast.lean",
+      "sha256": "d5962c90001117c0a5d73be6f14ae895f79f80408b2560a4b067234deb733c05",
+      "individual_M512_receipts": [
+        "H05-last4-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_no_old_last_four: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualNoOldLast.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualOldGap.lean",
+      "sha256": "239a38fe4fa2a85c18ef368765592b050e42d0ccbcbe8327448049085baed508",
+      "individual_M512_receipts": [
+        "H04-old-gap-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_old_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualOldGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualOldGapBase.lean",
+      "sha256": "f440373cc1769c65dc2378c9ca7c57c339d2ebb4b56a67836532c82a33ea8d1d",
+      "individual_M512_receipts": [
+        "H04-old-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_old_from_zero: concrete / proof=work / SUBSTANTIVE\nmass_two_equal_old_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualOldGapBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualOldResidual.lean",
+      "sha256": "6bf31d82b33eb30be6ae52b0b7415488913fecba3ba39ea370d98a9826a34518",
+      "individual_M512_receipts": [
+        "H04-old-residual-counts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_old_residual: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualOldResidual.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoEqualPositiveSources.lean",
+      "sha256": "b8fc1a13aa7503388ae7a23a0c42c98c029d0c94476fe7930c16a2cfc98e8fb6",
+      "individual_M512_receipts": [
+        "H05-positive-sources-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_equal_positive_sources: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoEqualPositiveSources.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoMiddleDelay.lean",
+      "sha256": "196f5bbe444cce38a46c2cdaae26dd6b1a1c38e6b19de9473990356bcedbbb89",
+      "individual_M512_receipts": [
+        "H05-middle-delay-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "equal_delay_bridge: concrete / proof=work / SUBSTANTIVE\nmiddle_delay_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoMiddleDelay.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoMiddleSource.lean",
+      "sha256": "7a8bab01e934a66e445e96980ca102b8a3f24e3e3f44ca19aca603af60e96afe",
+      "individual_M512_receipts": [
+        "H03-middle-actual-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "zero_clock_bridge: concrete / proof=work / SUBSTANTIVE\nmiddle_actual_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoMiddleSource.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoNoOldLast.lean",
+      "sha256": "8be1ad50560a3e53b728feb5f674700234ded7d1fce5b442b824fbc50acb3f24",
+      "individual_M512_receipts": [
+        "H07-no-old-last-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_no_old_last_budget: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoNoOldLast.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoOneGap.lean",
+      "sha256": "9532b4188268e51bda3f8cd150ec076f46082d07233914f633813879f307affd",
+      "individual_M512_receipts": [
+        "H03-gap-counts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_one_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoOneGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoOneGapBase.lean",
+      "sha256": "c5b0fd9c92a18a5c3a76a112f119ca33fccfd0ff0d0e8c14cff28c2a7b409551",
+      "individual_M512_receipts": [
+        "H03-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_one_from_zero: concrete / proof=work / SUBSTANTIVE\nmass_two_one_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoOneGapBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoPrefixKey.lean",
+      "sha256": "c65dc561af1f3ca8583193fa1de1608b2309d4f887a2f62ca7a31a80916d9e28",
+      "individual_M512_receipts": [
+        "H03-prefix-normalized-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_key_bounds: concrete / proof=work / SUBSTANTIVE\nmiddle_prefix_key_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoPrefixKey.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoShortCounter.lean",
+      "sha256": "b5cb23c8d07678820b46f4ac020ad1ab319db516e5b09d6ce875cf1438e252a2",
+      "individual_M512_receipts": [
+        "H02-counter-casts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_short_counter: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoShortCounter.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoShortLastThree.lean",
+      "sha256": "124f4885c0b5e17adb3b57d66c08c554d6822e3a24c8e77e026f1d9e4164131d",
+      "individual_M512_receipts": [
+        "H03-last3-all-cast-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "short_counter_last_source_three: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoShortLastThree.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoShortSources.lean",
+      "sha256": "08943799938a1d73325ae25ac379370541d20910ff4d2008e6c195ca99211549",
+      "individual_M512_receipts": [
+        "H02-sources-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_short_sources: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoShortSources.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoSmallHeadKey.lean",
+      "sha256": "6c582e56a87ed481afd3e01226464cbe8735ccc8d911c2326285d2637a878db6",
+      "individual_M512_receipts": [
+        "H07-small-key-result.json"
+      ],
+      "lint_exit": 1,
+      "lint_stdout": "quadratic_upper: pure-arithmetic / proof=work / -\nlate_small_free_key_excluded: pure-arithmetic / proof=work / -\npositive_quadratic_upper: pure-arithmetic / proof=work / -\nno_old_small_free_key_excluded: pure-arithmetic / proof=work / -\n# Recaman/MassTwoSmallHeadKey.lean: 0/4 substantive theorems  <-- would fail G3 if registered alone\n",
+      "lint_stderr": "",
+      "lint_disposition": "pure arithmetic support only; not independently registered; no dummy wrapper or gate exemption"
+    },
+    {
+      "path": "Recaman/MassTwoTargetCounter.lean",
+      "sha256": "76518fb6e80ce820d86b4e8475f6eb1983866c8b169ce45a3d4796c2fd0baf2d",
+      "individual_M512_receipts": [
+        "H06-counter-branches-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_target_counter: concrete / proof=work / SUBSTANTIVE\n# Recaman/MassTwoTargetCounter.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/MassTwoThreeKeys.lean",
+      "sha256": "c20f4cef84f7f190758e01452d52bd3bb5ecfdc9c6e5b9de7495ebfdc3db25fc",
+      "individual_M512_receipts": [
+        "H04-joint-keys-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_two_keys: concrete / proof=work / SUBSTANTIVE\nmass_three_keys: concrete / proof=work / SUBSTANTIVE\njoint_minus_two_excluded: concrete / proof=work / SUBSTANTIVE\nold_pair_parameters: pure-arithmetic / proof=work / -\n# Recaman/MassTwoThreeKeys.lean: 3/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/NoOldMassTwoBase.lean",
+      "sha256": "fc71a6e1fb3ee4db93621a97c1b7c96481cdfc8a59ba0f122c57459450b18921",
+      "individual_M512_receipts": [
+        "H07-base-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "no_old_mass_two_from_zero: concrete / proof=work / SUBSTANTIVE\nno_old_mass_two_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/NoOldMassTwoBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/NoOldMassTwoGap.lean",
+      "sha256": "2e0992f1bb55871c05fd9042a7a7a757c1846c7cdd6a39266881b2d2091ebb63",
+      "individual_M512_receipts": [
+        "H07-no-old-gap-counts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "no_old_mass_two_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/NoOldMassTwoGap.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/NonsquareActualSupply.lean",
+      "sha256": "86e1f3163757ed885154de7689c095186028535f3ef8235424e54b24b9fd1517",
+      "individual_M512_receipts": [
+        "H04-actual-between-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "cntF_A: concrete / proof=work / SUBSTANTIVE\nthird_actual_four: concrete / proof=work / SUBSTANTIVE\nthird_actual_four_between: concrete / proof=work / SUBSTANTIVE\n# Recaman/NonsquareActualSupply.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/NonsquareHeadSupply.lean",
+      "sha256": "0fd75057475321363c7cb0f5dc569cd458448e6006e08524af211ac360d5eebf",
+      "individual_M512_receipts": [
+        "H04-local-between-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "square_gap: pure-arithmetic / proof=work / -\ninitial_source_key_excluded: concrete / proof=work / SUBSTANTIVE\nerase_prefix_run: concrete / proof=work / SUBSTANTIVE\nthird_ray_three: concrete / proof=work / SUBSTANTIVE\ninitial_source_key_between: concrete / proof=work / SUBSTANTIVE\nthird_ray_three_between: concrete / proof=work / SUBSTANTIVE\n# Recaman/NonsquareHeadSupply.lean: 5/6 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/OldThreeActualParity.lean",
+      "sha256": "e0e41c1ba2db72b0026145fdb8c18c0938204ce7224ac5298ded21d1b2bfe849",
+      "individual_M512_receipts": [
+        "H09-actual-parity-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "actual_old_three_target_even: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldThreeActualParity.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/OldThreeKeyParity.lean",
+      "sha256": "fbfe867c57599bb27b38b95474c3eeb0bcb2b3e2fa38dd3ce64c61f119cbc55b",
+      "individual_M512_receipts": [
+        "H09-two-word-parity-counts-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "square_even_delta: pure-arithmetic / proof=work / -\nodd_square_eight: pure-arithmetic / proof=work / -\nodd_R_keys_excluded: pure-arithmetic / proof=work / -\nmass_three_seed_parity: concrete / proof=work / SUBSTANTIVE\nold_three_target_even: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldThreeKeyParity.lean: 2/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/RayCountFromBase.lean",
+      "sha256": "903ebba6d52b92094c05ea3ae15c39d09648e5fed995745a65a4117d4d330da7",
+      "individual_M512_receipts": [
+        "H07-count-band-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "count_translate: concrete / proof=work / SUBSTANTIVE\ncount_from_base: concrete / proof=work / SUBSTANTIVE\ncount_with_first_clock: concrete / proof=work / SUBSTANTIVE\ncount_length_le: concrete / proof=work / SUBSTANTIVE\ninitial_count_le: concrete / proof=work / SUBSTANTIVE\ncount_with_initial_segment: concrete / proof=work / SUBSTANTIVE\n# Recaman/RayCountFromBase.lean: 6/6 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/SingleASPrefixWord.lean",
+      "sha256": "8da4da1ee470bc950c5e99c0ca35efe13d82d2c621871796247bfe3827652d30",
+      "individual_M512_receipts": [
+        "H18-first-prefix-word-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "middle_prefix_word: concrete / proof=work / SUBSTANTIVE\nfirst_prefix_word: concrete / proof=work / SUBSTANTIVE\nS_A_S_has_pair: concrete / proof=work / SUBSTANTIVE\n# Recaman/SingleASPrefixWord.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitOneInitialSource.lean",
+      "sha256": "37bc6b2bba189a3c721655d1a3b603695c2ea04bf3099b2a7cb82167006a0ee2",
+      "individual_M512_receipts": [
+        "H23-unit-one-initial-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_one_initial_excluded: concrete / proof=work / SUBSTANTIVE\nfourth_local_five: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitOneInitialSource.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitOneLastFive.lean",
+      "sha256": "41a9e68b009eeca4f861a84676d1da3198a49305af9b3b0a5eb5ac1f19947caf",
+      "individual_M512_receipts": [
+        "H23-import-unique-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_one_counter_last_five: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitOneLastFive.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitOneLastFiveBase.lean",
+      "sha256": "17301b21b2814e2fb4afefb3ddd678a0b6923ae492557bd61b7a102ac9d24373",
+      "individual_M512_receipts": [
+        "H23-original-p-counter-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_one_counter_from_zero: concrete / proof=work / SUBSTANTIVE\nunit_one_counter_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitOneLastFiveBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetActualBoundary.lean",
+      "sha256": "321cc10fcd8a19a3ec46976768cd9826ed2cf6bfd7fe4dc53648b12e1481258a",
+      "individual_M512_receipts": [
+        "H18-zero-cross-actual-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "actual_unit_zero_cross: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetActualBoundary.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetActualCut.lean",
+      "sha256": "b7176befa69ecc7f3c92a45cf2d29cf409d5091528de854a73b97cc843207994",
+      "individual_M512_receipts": [
+        "H15-actual-cut-qualified-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "actual_unit_source_prefix_two: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetActualCut.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetDeepSecondS.lean",
+      "sha256": "632791dd5ba0099d980c5c50ed98139027a14a0bdfa418030e9976d1fb8cccdc",
+      "individual_M512_receipts": [
+        "H17-actual-deep-S-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_target_deep_second_S_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetDeepSecondS.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetLateSources.lean",
+      "sha256": "899350a3378b6ca924937ab5d3d8ea9b98a168f908549d9f1cd3773ebf897b42",
+      "individual_M512_receipts": [
+        "H18-late-sources-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_target_late_sources: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetLateSources.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldBase.lean",
+      "sha256": "068a2f82f32c85c7b6ca34964121d75d92ba7cef4abe0855ab4d7d696e3bb5e5",
+      "individual_M512_receipts": [
+        "H18-no-old-original-p-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_from_zero: concrete / proof=work / SUBSTANTIVE\nunit_no_old_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldCounter.lean",
+      "sha256": "fbc99b24b2344fee0263fb7457e281766846258ec9e2acb8393f3e4e4f26c019",
+      "individual_M512_receipts": [
+        "H18-no-old-counter-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_counter: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldCounter.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldFour.lean",
+      "sha256": "75cb3f0afc7086f98103f8f934a8612cf7a5571d00107d83faadcd665401e18c",
+      "individual_M512_receipts": [
+        "H20-no-old-head-four-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_head_four: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldFour.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldFourBase.lean",
+      "sha256": "639822fe2b28bdc0797d1bd039958abde749f7fcc3a1402de5ea0f822f54b298",
+      "individual_M512_receipts": [
+        "H20-original-p-head-four-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_four_from_zero: concrete / proof=work / SUBSTANTIVE\nunit_no_old_four_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldFourBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldLast.lean",
+      "sha256": "5f58a7c0002f3a1a04a10ab1f333c84a0c48188f6eb2473e274a96a762b41283",
+      "individual_M512_receipts": [
+        "H18-no-old-last-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_target_no_old_last_budget: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldLast.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldResidual.lean",
+      "sha256": "8ac3b996b5c88eee759f5c47f213f996187944b062e803dc060aaae87d8f1736",
+      "individual_M512_receipts": [
+        "H19-actual-residual-count-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_residual: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldResidual.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetNoOldResidualBase.lean",
+      "sha256": "efd1a3416eb5463061c195f5eace77f6815899203b08c4f96fa947154a068b41",
+      "individual_M512_receipts": [
+        "H19-original-p-residual-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "unit_no_old_residual_from_zero: concrete / proof=work / SUBSTANTIVE\nunit_no_old_residual_int: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetNoOldResidualBase.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetPrefixParity.lean",
+      "sha256": "82a68302e4f68975360226e65ee6a99ba60bfe2d54a239214acf7da1f487f646",
+      "individual_M512_receipts": [
+        "H15-prefix-parity-linear-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "cross_four: concrete / proof=work / SUBSTANTIVE\nsquare_parity: pure-arithmetic / proof=work / -\nunit_target_prefix_cut: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetPrefixParity.lean: 2/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetSmallHeadKey.lean",
+      "sha256": "778edae4b10b5da8b6954e5769f045e19eb6a627d960e4d7585eeaa0b1eaed24",
+      "individual_M512_receipts": [
+        "H19-small-head-key-result.json"
+      ],
+      "lint_exit": 1,
+      "lint_stdout": "small_head_residual: pure-arithmetic / proof=work / -\n# Recaman/UnitTargetSmallHeadKey.lean: 0/1 substantive theorems  <-- would fail G3 if registered alone\n",
+      "lint_stderr": "",
+      "lint_disposition": "pure arithmetic support only; not independently registered; no dummy wrapper or gate exemption"
+    },
+    {
+      "path": "Recaman/UnitTargetTwoS.lean",
+      "sha256": "5a461e127ca76b8b2abc7430fac2898be8c205e7bf2e9f2d8cfbb254d610946e",
+      "individual_M512_receipts": [
+        "H22-two-S-algebra-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "two_S_source_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetTwoS.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    {
+      "path": "Recaman/UnitTargetZeroCross.lean",
+      "sha256": "9f4948580b9c705fb514a6814d32d748a24c6583a781ba3e33f65bec30a52eff",
+      "individual_M512_receipts": [
+        "H16-zero-cross-nil-result.json"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "source_zero_cross_boundary: concrete / proof=work / SUBSTANTIVE\n# Recaman/UnitTargetZeroCross.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    }
+  ],
+  "module_count": 59,
+  "failures": [],
+  "scope": "current source bytes must match completed -M512 individual validation; all source tree hashes archived in receipts; pure arithmetic lint warnings are not standalone evidence"
+}

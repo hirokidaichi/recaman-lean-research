@@ -1,0 +1,31 @@
+{
+  "tag": "H01-local",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NonsquareHeadSupply.olean",
+    "Recaman/NonsquareHeadSupply.lean"
+  ],
+  "started_jst": "2026-11-04T06:06:21.887000+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NonsquareHeadSupply.lean": "5bb062a09bd9cfa76628fed489810441da7646bb1527fba49ce7b6da930cbd60"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "6269c5dc0456f7c9aa0bffc0a5c821d279ee1bb1ca36e03b77c6eca96abbce96",
+  "source_tree_sha256": "0c1af77b0850b8f4d87f5894f205b61acdb9e40977ed2fb298131c3ab3db2c0c",
+  "source_tree_manifest": "H01-local-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6269c5dc0456f7c9aa0bffc0a5c821d279ee1bb1ca36e03b77c6eca96abbce96",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.9419538751244545,
+  "cpu_seconds": 0.4809049999999999,
+  "finished_jst": "2026-11-04T06:06:23.828885+09:00"
+}

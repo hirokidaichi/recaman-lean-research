@@ -1,0 +1,25 @@
+{
+  "tag": "H07-count-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RayCountFromBase.olean",
+    "Recaman/RayCountFromBase.lean"
+  ],
+  "started_jst": "2026-11-04T06:42:43.406022+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RayCountFromBase.lean": "903ebba6d52b92094c05ea3ae15c39d09648e5fed995745a65a4117d4d330da7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "source_tree_sha256": "4e5b69d784b9c196bf76e3a3ac3d714fb402519f9585c68acd7618cba0114c1a",
+  "source_tree_manifest": "H07-count-band-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

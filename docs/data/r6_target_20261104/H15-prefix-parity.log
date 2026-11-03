@@ -1,0 +1,41 @@
+Recaman/UnitTargetPrefixParity.lean:22:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey b + 2 * ↑(cntF b) ^ 2
+in the target expression
+  runKey ([false] ++ b) + 2 * ↑(cntF ([false] ++ b)) ^ 2 = 0 + runKey b + 2 * ↑(cntF b) ^ 2 + 4 * 0 * ↑(cntF b)
+
+case cons.false
+b : List Bool
+Q : Int
+hQ : runKey b + 2 * ↑(cntF b) ^ 2 = 4 * Q
+he : runKey ([false] ++ b) + 2 * ↑(cntF ([false] ++ b)) ^ 2 = 0 + runKey b + 2 * ↑(cntF b) ^ 2 + 4 * 0 * ↑(cntF b)
+h0 : runKey [false] + 2 * ↑(cntF [false]) ^ 2 = 0
+ha : ones [false] = 0
+⊢ runKey (false :: b) + 2 * ↑(cntF (false :: b)) ^ 2 = 4 * Q
+Recaman/UnitTargetPrefixParity.lean:28:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey b + 2 * ↑(cntF b) ^ 2
+in the target expression
+  runKey ([true] ++ b) + 2 * ↑(cntF ([true] ++ b)) ^ 2 = 0 + runKey b + 2 * ↑(cntF b) ^ 2 + 4 * 1 * ↑(cntF b)
+
+case cons.true
+b : List Bool
+Q : Int
+hQ : runKey b + 2 * ↑(cntF b) ^ 2 = 4 * Q
+he : runKey ([true] ++ b) + 2 * ↑(cntF ([true] ++ b)) ^ 2 = 0 + runKey b + 2 * ↑(cntF b) ^ 2 + 4 * 1 * ↑(cntF b)
+h0 : runKey [true] + 2 * ↑(cntF [true]) ^ 2 = 0
+ha : ones [true] = 1
+⊢ runKey (true :: b) + 2 * ↑(cntF (true :: b)) ^ 2 = 4 * (Q + ↑(cntF b))
+Recaman/UnitTargetPrefixParity.lean:95:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 1
+  g ≥ 0
+  f - h - 2*l ≤ -1
+  f - 2*l ≥ 3
+  e ≥ 0
+  e - 2*f + h + 4*l ≥ 0
+where
+ e := ↑T
+ f := (↑j + 1) ^ 2
+ g := d * ↑(cntF v)
+ h := ones b
+ k := Q
+ l := c

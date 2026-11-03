@@ -1,0 +1,31 @@
+{
+  "tag": "H07-no-old-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldMassTwoGap.olean",
+    "Recaman/NoOldMassTwoGap.lean"
+  ],
+  "started_jst": "2026-11-04T06:43:48.621315+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldMassTwoGap.lean": "e810ac9a06efe43faf55979b26067582082703fbcb2d723e9e104d974f3f582d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "source_tree_sha256": "990af04f0aef27cd377e4daa6e353e742f38a163468ded3734b93a040623a582",
+  "source_tree_manifest": "H07-no-old-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.428635542280972,
+  "cpu_seconds": 1.287491,
+  "finished_jst": "2026-11-04T06:43:50.049879+09:00"
+}

@@ -1,0 +1,13 @@
+Recaman/UnitTargetZeroCross.lean:37:6: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq Int (runKey (List.replicate M true)) (runKey [])
+but is expected to have type
+  @Eq Int (runKey (List.replicate M true)) 0
+Recaman/UnitTargetZeroCross.lean:46:63: warning: This simp argument is unused:
+  hmb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_replicate_A, mass_rep_false, hmu] at hm1 hm2
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

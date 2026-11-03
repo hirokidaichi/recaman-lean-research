@@ -1,42 +1,47 @@
 # Current research frontier
 
-最終更新: 2026-11-03。journal stop済み、confirmed 118分50.421秒、不足1分09.579秒。確定値は当日DAILY/journalを正本とする。新しい数学探索は07:41で終了、07:45以降は検証・保存のみ。一般C1/Q/H/SL/全射性は未証明。
+最終更新: 2026-11-04。一般C1/Q/H/SL/全射性は未証明。研究時間は当日journalの確定区間だけを採用する。
 
 ## Research brief
 
-**E-535 PROVED-LEAN**: 元Intp/padded BlockWord/zero-fullpositive/正三非空A-run zero-mass head/同old targetmass4/最終S1のactual fullgap counterは、S14/R6/j5/T3/K19又20又21のみ。K=M(m+s)+Ls。全old history・他supplier高mass・source以前prefixは無限のまま保持。三候補の不在は未証明、人間レビュー未。
+**E-557 PROVED-PAPER（未Lean・人間レビュー未）**: 正三run zero-mass head/同mass1 old target/no-oldの元p fullgapを全separatorで紙上証明。v1はfirstA/middleSの別clock0/1を同target cross式で排除、v2はinitial0/final2と二family clock1の衝突。E554 PAPERの初期S全不在を入力しない独立機構。新joint-source/countのkernel化は未完。
 
-**次の入口: [H-20261104-01](HYPOTHESIS_CARD_2026-11-04_R6_SAME_TARGET_SOURCE.md)**。[11/03 DAILY](RESEARCH_HANDOFF_2026-11-03_DAILY.md)→[target residual note](RESEARCH_NOTE_2026-11-03_C1_TARGET_RESIDUAL.md)→同カード。最初15分はK21部分枝の同target trip/key-2と第二non2/第三sourceを結合した新source-conditioned inequality又はstrict削減を内部供給する。八head/head8/結論を新Propで入力しない。
+**E-553/E-556 PROVED-LEAN**: 同actual counterはheadfree4/v<=2。v1 no-oldならlastactual5/fullfree=jを元pまで供給。E-555はmass1 targetと先行S差d<=2のlocal sourceを任意mixed futureで排除、global S/E/v/counter上界不要。これらはcounter不在/fullgap/C1全体ではない。
 
-| 同じ限定履歴モデルでの結果 | 証拠 | 範囲 |
-|---|---|---|
-| actual count/factor cutsと五band全包含 | E-521/E-523 PROVED-LEAN | 旧monolithを再実行せずstrict cuts→五constructorでkernel化 |
-| endpoint A不要のT>=1とR>C-v | E-524 PROVED-LEAN | Winのstrict-prefix依存と補完gから元actual countへ戻す |
-| 第三/最後のjoint free/cross、C<=5/v<=3 | E-525 PROVED-LEAN | S<=R+9、U+v<=C+8/deep7、shifted Q186/133 |
-| mass5/S2とmass5/S1の全長free-gap | E-526/E-527 PROVED-LEAN | source-conditioned head8/long-first9と同元weighted free |
-| mass4/S3の全長free-gap | E-528 PROVED-LEAN | source-conditioned last3、W+2v<=2C+5 |
-| mass4/S2を二headへ削減、全長gapへ接着 | E-529/E-530 PROVED-LEAN | all-old prefix必要式で元第二供給<=2 |
-| mass4/S1のR/S/K strict削減 | E-531/E-532/E-533 PROVED-LEAN | S15/R8とK16/S13をsource/actual freeで排除 |
-| 同target mass4 grammar key spectrum | E-534 PROVED-LEAN | S14/R5/K25,26又はR6/K19,20,21、他oldmassは保持 |
-| R5/K25,26の内部long-first排除 | E-535 PROVED-LEAN | 残るactual counterは上記R6のみ |
+**次の入口: [H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)**。[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)→[family collision note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)→同カード。最初15分はv1第一A/第二S二sourceの共同排除を同元actual targetからLeanへ。進まなければv2 initial0/final2のclock衝突25分、source個別N/共通prefix/count union監査20分。
 
-完了域の合成は新rowに数えない。既存E-515のC3全v、E-516/E-517/E-518のC>=4/v>=C、当日mass4/S2,S3・mass5二枝・E525 cutsを合わせ、C>=3の同oldtargetで残るcounterはE535。C<=2、非zerohead、他target位置、一般四run/任意run/rank/C1/Q/H/SL/全射性は別途未解決。E-519 strict A-prefix cutをfree-prefix/rankへ置換しない。E-520/E-522のsource/last3,4は既存入力。
+| 当日安定した証拠 | 正確な範囲 |
+|---|---|
+| E-536 / E-537 PROVED-LEAN | 全長非平方source排除→元p mass4/S1 freegap。限定zerohead/same-oldtargetのC>=3域が既存結果と合成可能。 |
+| E-538 / E-539 PROVED-LEAN | mass2/S1のmiddleS bridge排除と元p fullgap。 |
+| E-540 / E-541 PROVED-LEAN | mass2/S2のold/no-old両枝、元p fullgap。 |
+| E-542 / E-543 PROVED-LEAN | mass2全v>=5及び全v/no-oldの元p fullgap。残るv3/4 oldは未証明。 |
+| E-544 PROVED-LEAN | mass2 target/oldmass3 sourceの共通prefix R偶数。fullgapでない。 |
+| E-545 PROVED-LEAN | mass1 target/oldmass2実source枝の全v元p fullgap。 |
+| E-546 / E-547 PROVED-PAPER | mass1 oldmass3及び>=4枝の全v fullgap。未Lean・人間レビュー未。 |
+| E-548 / E-549 PROVED-LEAN | mass1 AS source以前A>=R+delay+2、cross0 exact境界。Aをfreeへ置換しない。 |
+| E-550 REFUTED | h=R+1 first supply1 shortcut。literal二時計、親C1反例ではない。 |
+| E-551 / E-552 PROVED-LEAN | mass1/no-old counterのlast v+4/headfree4上界、r4又はS7/K5残余。 |
+| E-553 PROVED-LEAN | K5 symbolic source pruningでr3を排除し元p headfree4。五head tableなし。 |
+| E-554 PROVED-PAPER | small-separator initialS排除/last5/v2 fullgap。旧H21 sourceはSTOPPED。 |
+| E-555 / E-556 PROVED-LEAN | d<=2 shared two-window排除とv1 no-old exact actual counter。 |
+| E-557 PROVED-PAPER | no-old全vのjoint family collision/fullgap、kernel化未完。 |
 
 ## 次のgateと停止保持
 
-H13のS14/R6八head local8rowは個別kernel受理後、import/source分類が512MB STOPPED。actual接着は未検証、sourceとlocal-only certificateはpacket .lean.txtへ隔離しroot/Audit採用なし。再開は独立数学pruning/小さい完全symbolic certificateと測定改善を要し、単なるsplit/import移動や資源追加は禁止。E534/E535は同jobを再開しない独立target-grammar入力。
+H08/H10/H12/H13/H21のkernel512MB sourceはpacket隔離してSTOPPED。H10の個別受理conditional helperもactual接着未完のままpacketだけに保持。資源追加/tactic/split/import移動だけで再開しない。E555はglobal boundを全て落とした独立source theorem、E557 v2はinitialS源を保持してclock0へ集約する別機構。
 
-旧H06/133core、H21/I25、r4 E412/E427（二回12837/40024・削減0/0）、R19/R7R11、cold512/combined19/literal43/width、11/01 scalar、11/02五tuple/五band monolithのSTOPも保持。E-388 COMPUTED/E-404 CONJECTURED、E-384存在方向未Lean/人間レビュー未。E-451/E-414/E-385/E-386/E-387は再証明しない。
+旧H13八head/H06/133core、r4 E412/E427同表12837states/40024edges・二回削減0/0、R19/R7R11等のSTOPPEDも継承。日付でresetしない。全体無変化0は新source/candidate edgeによる更新、停止した同表枝は別保持。
 
-任意target以前prefixはBlockWordとは限らない。SAAAA/drop1=A4/take1=Sという弱化grammar例を保持、C1反例ではない。E491/E497のearly-old seedは最後A-ray条件で第二ray/no-oldへ転用しない。mass4 area9/13の共存も保持する。
+未解決: C2v3/4 old、mass1紙上枝のLean化、非zerohead、他target source位置、一般四run/任意run/rank、C1/Q/H/SL/全射性。全old history/source以前prefixは無限のまま。COMPUTED/条件付き局所制約を一般証明と呼ばない。
 
 ## 運用・検証
 
-開始main/origin main fc61a067ad30bcdfe55fe509f0d4c4a1b4634d65、初期dirtyは当日journalのみ。検証済みowned snapshotのみ通常origin/mainへpush、単発RECAMAN_ALLOW_BURST=1は既承認、hook/G1-G5/保護claim維持。確定stop/journal後に最終metadata保存しSHA/remote/hosted CIを別々に報告。
+数学worker未起動/探索予算0。個別Leanはcurrent bytes/argv/source tree hashを凍結して-j1 -M512、10CPU per-process/20wall。tree累積CPU/OS AS capを保証したと呼ばない。純算術helper2本の単独G3不適合は記録し独立rowに登録せず、dummy wrapperを作らない。root/Audit/G5/全checkとviewerを同期する。
 
-最終Lean全check: 676jobs/3476declarations PASS。新規moduleはexact current bytesと個別-j1 -M512受理receiptを照合、root/Auditは全check。純算術helperの単独G3不適格は独立登録せずdummy wrapperなし。数学探索worker未起動/予算0。Lean validation CPUは別計上、process-tree累積cap/OS ASを主張しない。人間レビューは未。
+当日確定journal/CPU/commands/失敗/変更所有範囲/commit・remote・CIはDAILY及びpacketを正本にする。main通常pushは利用者の継続承認済み、検証snapshot単一commit commandのRECAMAN_ALLOW_BURST=1のみ使用し、他gateは維持。
 
-以下は監査履歴。現在の再開点は上のResearch briefを優先する。
+以下は継承した過去の証拠・訂正の記録であり、現在の次の一問は上記を優先する。
 
 ## 結論
 
@@ -892,3 +897,25 @@ E-522 PROVED-LEAN: E520 actual counterの元p最後Endable count<=4、C>=v+2な�
 - COMPUTED: E-382, E-383, E-400, E-403, E-412, E-424, E-427。
 - REFUTED: E-395, E-405, E-415, E-430, E-453, E-455, E-459, E-466, E-480。
 - PROVED-PAPER: E-483, E-488, E-495。
+
+## 継承evidenceの追加参照（当日進展ではない）
+
+- E-384 PROVED-PAPER: block-prefix-area-spectrum。正確な範囲と再開条件はregistry rowを参照。
+- E-385 PROVED-LEAN: old-window-tail-count-barrier。正確な範囲と再開条件はregistry rowを参照。
+- E-388 COMPUTED: four-nonsupplied-C1-area。正確な範囲と再開条件はregistry rowを参照。
+- E-404 CONJECTURED: four-free-A-excursion-classification。正確な範囲と再開条件はregistry rowを参照。
+- E-414 PROVED-LEAN: two-A-run-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-451 PROVED-LEAN: three-A-run-original-base-actual-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-523 PROVED-LEAN: short-counter-count-factor-parameter-cuts。正確な範囲と再開条件はregistry rowを参照。
+- E-524 PROVED-LEAN: short-counter-positive-fourth-run。正確な範囲と再開条件はregistry rowを参照。
+- E-525 PROVED-LEAN: joint-third-last-free-shifted-circle-cuts。正確な範囲と再開条件はregistry rowを参照。
+- E-526 PROVED-LEAN: mass-five-separator-two-full-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-527 PROVED-LEAN: mass-five-separator-one-full-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-528 PROVED-LEAN: mass-four-separator-three-actual-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-529 PROVED-LEAN: mass-four-separator-two-actual-counter-shapes。正確な範囲と再開条件はregistry rowを参照。
+- E-530 PROVED-LEAN: mass-four-separator-two-full-actual-free-gap。正確な範囲と再開条件はregistry rowを参照。
+- E-531 PROVED-LEAN: mass-four-one-large-R-S15-source-pruning。正確な範囲と再開条件はregistry rowを参照。
+- E-532 PROVED-LEAN: mass-four-one-actual-inversion-three-bands。正確な範囲と再開条件はregistry rowを参照。
+- E-533 PROVED-LEAN: mass-four-one-S13-source-elimination。正確な範囲と再開条件はregistry rowを参照。
+- E-534 PROVED-LEAN: mass-four-target-key-spectrum-actual-counter-cuts。正確な範囲と再開条件はregistry rowを参照。
+- E-535 PROVED-LEAN: mass-four-one-R5-actual-counter-elimination。正確な範囲と再開条件はregistry rowを参照。

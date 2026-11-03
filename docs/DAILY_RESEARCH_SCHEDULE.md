@@ -1,6 +1,6 @@
 # 毎日6:00〜8:00の研究スケジュール
 
-最終更新: 2026-11-03。以下を2026-10-23以降の現行ルールとする。
+最終更新: 2026-11-04。以下を2026-10-23以降の現行ルールとする。
 
 - 毎日、日本時間（Asia/Tokyo）の06:00〜08:00。このチャットで研究・反証・形式化・監査・記録を継続する。
 - 対象: `/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research`。
@@ -13,9 +13,9 @@
 
 ## 再開する問いと参照順
 
-2026-11-04の現行入口は[H-20261104-01](HYPOTHESIS_CARD_2026-11-04_R6_SAME_TARGET_SOURCE.md)。[11/03 DAILY](RESEARCH_HANDOFF_2026-11-03_DAILY.md)→[target residual note](RESEARCH_NOTE_2026-11-03_C1_TARGET_RESIDUAL.md)→同カードを読む。
-E535 PROVED-LEANは限定zerohead/sameoldtargetのactual counterをC4/S1/S14/R6/j5/T3/K19,20,21へstrict削減、全old historyは無限で反例不在/C1全体ではない。mass5/S1,S2・mass4/S2,S3は全長gap完了。最初15分はK21同target trip/key-2と第二non2/第三sourceを結合した新edge/strict削減。進まなければK19/20同source平方25分、target以前prefix共同実現条件20分へ。
-H13 local8row/import/source分類は512MB STOPPED・packet隔離。独立数学pruningと測定改善なしに資源追加/単なるsplit/importで再開しない。E534/E535は独立target grammar入力。target以前prefixをBlockWordへresetせず、他oldmassを切らず、未知八head/headfreeを仮定しない。CPU探索当初0、必須終了報告・確定journal・検証済みmainへの通常commit/pushを継続。設定更新を未来の120分完遂と呼ばない。
+2026-11-05の現行入口は[H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)。[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)→[family collision note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)→同カードを読む。
+E553/E556 PROVED-LEANはmass1/no-old actual counterのheadfree4/v<=2、v1 lastactual5/fullfree=j。E555はglobal上界不要のd<=2二窓source排除。E557 PROVED-PAPERは同targetの二family/clock衝突で全v no-old fullgap、未Lean・人間レビュー未。最初15分はv1第一A/第二Sの0/1二case共同source排除を元actualへ接着、進まなければv2 initial0/final2 clock衝突25分とsource個別N/共通prefix/count union監査20分へ。
+E536/E537 mass4/S1、C2v1/v2/v>=5/no-old、r3/Q初期監査を再実行しない。H08/H10/H12/H13/H21と旧同表のSTOPPEDを資源/tactic/split/import変更だけで再開しない。全old/source以前prefixと元pを保持し、Aをfreeへ置換しない。CPU探索当初0、07:45探索stop、確定journal/main通常publication/必須終了報告を継続する。未来の120分を設定で完遂扱いにしない。
 以下の初回計画と日付付き履歴は当時の記録であり、最新の入口を優先する。
 
 初回（2026-10-23）は[C1深さカード H-20261023-01](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)から始める。

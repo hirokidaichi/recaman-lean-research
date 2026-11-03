@@ -1,0 +1,31 @@
+{
+  "tag": "H23-import-unique",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitOneLastFive.olean",
+    "Recaman/UnitOneLastFive.lean"
+  ],
+  "started_jst": "2026-11-04T07:43:25.467963+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitOneLastFive.lean": "41a9e68b009eeca4f861a84676d1da3198a49305af9b3b0a5eb5ac1f19947caf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "ad62261a66e67ec06b610d344cd40466301626f828dd886e6262b09e0af0bd00",
+  "source_tree_sha256": "72f66962cfa540cc251f04907eddb878abd04cf54c207be8d09a36a0df46bcda",
+  "source_tree_manifest": "H23-import-unique-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ad62261a66e67ec06b610d344cd40466301626f828dd886e6262b09e0af0bd00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 2.07399412477389,
+  "cpu_seconds": 0.7033590000000001,
+  "finished_jst": "2026-11-04T07:43:27.541876+09:00"
+}

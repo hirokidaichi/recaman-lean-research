@@ -1,0 +1,25 @@
+{
+  "tag": "H03-last3-all-cast",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoShortLastThree.olean",
+    "Recaman/MassTwoShortLastThree.lean"
+  ],
+  "started_jst": "2026-11-04T06:18:31.160857+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoShortLastThree.lean": "124f4885c0b5e17adb3b57d66c08c554d6822e3a24c8e77e026f1d9e4164131d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "source_tree_sha256": "5c7c6918d0acf0366732a61ef5e3754d8da25c5f3ec62e32c22795590f07333a",
+  "source_tree_manifest": "H03-last3-all-cast-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

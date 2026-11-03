@@ -1,0 +1,125 @@
+Recaman/MassOneTargetCounter.lean:125:7: error: unknown tactic
+Recaman/MassOneTargetCounter.lean:106:4: error: unsolved goals
+case neg
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hC1 : C = 1
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3✝ : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hC : mass (List.drop t w) = ↑C
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hT : T + C = v + j + 1
+B : Int := -areaW z
+hB : runKey z = -2 * B
+hkt : runKey (List.drop t w) = 2 * B - 4 * ↑C * (↑(h + m + s) + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hkey : runKey (List.drop t w) = -runKey z - 4 * ↑1 * (3 + ↑1) + 2 * ↑1 ^ 2 - 2 * (↑3 + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hword : seg f n (H + v + T) = z ++ List.replicate v false ++ List.replicate T true
+hAc : cN (fun x => f x = true) n (H + v + T) = h + m + s + T
+hlowz : -2 * 3 ^ 2 ≤ runKey z
+hlowu : -2 ≤ runKey (List.drop t w)
+hSnonneg : 0 ≤ ↑h + ↑m + ↑s
+hR5 : ¬5 ≤ j + 1
+hf : cN P n (H + v + T) ≤ 3
+hpre0 : seg f 0 n = w ++ List.replicate 0 true
+hb : h + m + s + T ≤ 2 * cN P n (H + v + T) + 1
+hbad : cN P n (H + v + T) < j + 1
+hSleR : h + m + s + v ≤ j + 1
+hS3 : 3 ≤ h + m + s
+hv1 : v = 1
+hSval : h + m + s = 3
+hj3 : j = 3
+hSi : ↑h + ↑m + ↑s = 3
+⊢ 5 ≤ j + 1
+Recaman/MassOneTargetCounter.lean:34:97: error: unsolved goals
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hC1 : C = 1
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hC : mass (List.drop t w) = ↑C
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hhead :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hprof :
+  mass (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hT : T + C = v + j + 1
+B : Int := -areaW z
+hB : runKey z = -2 * B
+hkt : runKey (List.drop t w) = 2 * B - 4 * ↑C * (↑(h + m + s) + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hkey : runKey (List.drop t w) = -runKey z - 4 * ↑C * (↑h + ↑m + ↑s + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hword : seg f n (H + v + T) = z ++ List.replicate v false ++ List.replicate T true
+hAc : cN (fun x => f x = true) n (H + v + T) = h + m + s + T
+hlowz : -2 * ↑(cntF z) ^ 2 ≤ runKey z
+hlowu : -2 ≤ runKey (List.drop t w)
+hSnonneg : 0 ≤ ↑h + ↑m + ↑s
+hR : 5 ≤ j + 1
+⊢ T + C = v + j + 1 ∧
+    5 ≤ j + 1 ∧
+      M ≤ j + 2 ∧
+        runKey (List.drop t w) =
+          -runKey (seg f n (h + M + m + L + s + U)) - 4 * ↑C * (↑h + ↑m + ↑s + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2

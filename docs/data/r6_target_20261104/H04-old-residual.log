@@ -1,0 +1,39 @@
+Recaman/MassTwoEqualOldResidual.lean:99:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  y ≥ 0
+  x ≥ 0
+  u ≥ 0
+  u - x ≥ 0
+  0 ≤ q ≤ 10
+  q + u - x ≥ 0
+  o - p ≥ 1
+  l ≥ 4
+  l - q - u + x ≤ -11
+  l - y ≥ 0
+  k ≥ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - q - u + x ≤ -1
+  d + g + l - q - u + x ≥ -2
+  c ≥ 1
+  c + e - q - u + x ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - k ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := ↑r
+ l := ↑j
+ o := mass (seg f r (n - r))
+ p := mass (seg f t (n - t))
+ q := ↑(cN (EndN f 0) n (h + (M + (m + (L + (s + U))))))
+ u := ↑(cN P n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ x := ↑(cN P (n + (h + (M + (m + (L + (s + U)))))) (v + T))
+ y := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + (M + (m + (L + (s + (U + (v + T))))))))

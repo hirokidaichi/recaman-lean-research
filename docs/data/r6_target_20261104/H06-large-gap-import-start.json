@@ -1,0 +1,25 @@
+{
+  "tag": "H06-large-gap-import",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LargeSeparatorMassTwoGap.olean",
+    "Recaman/LargeSeparatorMassTwoGap.lean"
+  ],
+  "started_jst": "2026-11-04T06:41:08.727799+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeSeparatorMassTwoGap.lean": "3d6cba3ea6ecdc71bc11661d2dfc07e7b6561d90f53d95470c82ac0ea3cc2cf3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "source_tree_sha256": "062cc1b86723f87a516debf7ac831f54bfa5b3b608cfcd7e16e45a452125a22c",
+  "source_tree_manifest": "H06-large-gap-import-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

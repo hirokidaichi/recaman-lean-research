@@ -1,0 +1,25 @@
+{
+  "tag": "H02-counter",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoShortCounter.olean",
+    "Recaman/MassTwoShortCounter.lean"
+  ],
+  "started_jst": "2026-11-04T06:14:18.882247+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoShortCounter.lean": "9e38e78c4ae35dca09dd5c635ee1252942aa3195060ac98237ca2fc0b64040a3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "source_tree_sha256": "af28784fcc8fcf3740b3041bb0160c4463f4e6700c9462cecfd06a86533e20c3",
+  "source_tree_manifest": "H02-counter-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

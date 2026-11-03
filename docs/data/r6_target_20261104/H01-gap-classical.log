@@ -1,0 +1,34 @@
+Recaman/MassFourOneGap.lean:11:21: warning: Variable name `hm` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hm
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/MassFourOneGap.lean:83:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 9
+  l ≥ 0
+  0 ≤ k ≤ 4
+  -4 ≤ k - l ≤ 0
+  0 ≤ i ≤ 5
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  11 ≤ d + g ≤ 13
+  d + g ≥ 7
+  c ≥ 1
+  c + e ≤ 13
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + 1 + T))
+ k := ↑(cN (EndN f 0) n (h + (M + (m + (L + s)))))
+ l := ↑(cN (EndN f 0) n (h + (M + (m + (L + (s + U))))))
+ o := ↑(cN (EndN f 0) n (h + M + m + L + s + U))

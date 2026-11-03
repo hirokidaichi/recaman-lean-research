@@ -1,0 +1,25 @@
+{
+  "tag": "H15-first-control-final",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FirstRayBoundaryControl.olean",
+    "Recaman/FirstRayBoundaryControl.lean"
+  ],
+  "started_jst": "2026-11-04T07:18:17.058349+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FirstRayBoundaryControl.lean": "a18f9990227ba1e19feaea469079ad27840a13a933632e81f534c1abdc70d1cd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "ba5a2edaed17a4089c257b95e9a5031e0b63fe4696816199ea0845b796b52484",
+  "source_tree_sha256": "ce3e3c815adeac6727c49fc2f4f948685360c20d6fe564691a70c7b07565cb17",
+  "source_tree_manifest": "H15-first-control-final-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

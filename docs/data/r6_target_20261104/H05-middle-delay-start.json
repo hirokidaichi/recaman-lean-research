@@ -1,0 +1,25 @@
+{
+  "tag": "H05-middle-delay",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoMiddleDelay.olean",
+    "Recaman/MassTwoMiddleDelay.lean"
+  ],
+  "started_jst": "2026-11-04T06:33:12.988230+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoMiddleDelay.lean": "196f5bbe444cce38a46c2cdaae26dd6b1a1c38e6b19de9473990356bcedbbb89"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "source_tree_sha256": "ad2a2a631b52b92bedc499be8774e0782253327250df56d654acfae529befdcd",
+  "source_tree_manifest": "H05-middle-delay-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

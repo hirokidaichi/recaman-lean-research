@@ -1,0 +1,31 @@
+{
+  "tag": "H03-middle-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoMiddleSource.olean",
+    "Recaman/MassTwoMiddleSource.lean"
+  ],
+  "started_jst": "2026-11-04T06:18:06.496792+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoMiddleSource.lean": "7a8bab01e934a66e445e96980ca102b8a3f24e3e3f44ca19aca603af60e96afe"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "source_tree_sha256": "adc00f1a550c0cadd89ac3646ca6be8e5587261e4381901cc40680dcc0089399",
+  "source_tree_manifest": "H03-middle-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7242189589887857,
+  "cpu_seconds": 0.593714,
+  "finished_jst": "2026-11-04T06:18:07.220942+09:00"
+}

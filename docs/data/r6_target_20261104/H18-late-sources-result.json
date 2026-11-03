@@ -1,0 +1,31 @@
+{
+  "tag": "H18-late-sources",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitTargetLateSources.olean",
+    "Recaman/UnitTargetLateSources.lean"
+  ],
+  "started_jst": "2026-11-04T07:21:58.362941+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitTargetLateSources.lean": "899350a3378b6ca924937ab5d3d8ea9b98a168f908549d9f1cd3773ebf897b42"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "source_tree_sha256": "a231613379a2906151221edf940f6dfdc3bd6750d1e13bcada852eac8526d85b",
+  "source_tree_manifest": "H18-late-sources-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9826317089609802,
+  "cpu_seconds": 0.69875,
+  "finished_jst": "2026-11-04T07:21:59.345471+09:00"
+}

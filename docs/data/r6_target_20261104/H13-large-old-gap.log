@@ -1,0 +1,136 @@
+Recaman/MassOneLargeOldGap.lean:95:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d_1 ≥ 0
+  c_1 ≥ 0
+  -10 ≤ c_1 - d_1 ≤ 0
+  c_1 ≥ 1
+  b_1 ≥ 0
+  0 ≤ a_1 ≤ 7
+  y ≥ 0
+  y + a_1 ≥ 0
+  x ≥ 0
+  x - y ≥ 0
+  u ≥ 0
+  u - x + y ≤ 0
+  q ≥ 0
+  p ≥ 4
+  p - q ≥ 0
+  p - x ≥ 0
+  p - y - a_1 ≤ -1
+  p - y - a_1 - b_1 ≥ -7
+  p - y - a_1 - d_1 ≥ -17
+  o ≥ 4
+  l ≥ 0
+  l - y - a_1 ≤ -1
+  k ≥ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - d_1 ≤ -1
+  d + g + p - d_1 ≥ -2
+  c ≥ 1
+  c + e - d_1 ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - k ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := ↑r
+ l := ↑i
+ o := mass (List.drop r w)
+ p := ↑j
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ u := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + U)))))) v)
+ x := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ y := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ a_1 := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ b_1 := ↑(cN P n H)
+ c_1 := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (h + M + m + L + s + U))
+ d_1 := ↑(cN (fun i => f i = false) n (h + M + m + L + s + U))
+Recaman/MassOneLargeOldGap.lean:119:54: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  4 ≤ b_1 ≤ 11
+  a_1 ≥ 0
+  a_1 - b_1 ≤ 0
+  a_1 ≥ 1
+  2*a_1 - b_1 ≥ -1
+  0 ≤ y ≤ 10
+  0 ≤ x ≤ 7
+  u ≥ 0
+  u + x ≥ 10
+  q ≥ 0
+  q - u ≥ 0
+  q - u - x ≤ -6
+  p ≥ 0
+  p - q + u ≤ 0
+  o ≥ 0
+  o - u - x ≤ -6
+  l ≥ 4
+  l ≤ 4
+  l + u + x ≥ 8
+  k ≥ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - b_1 ≤ -1
+  d + g + u + x - b_1 ≥ 4
+  c ≥ 1
+  c + e - b_1 ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - k ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := ↑r
+ l := mass (List.drop r w)
+ o := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ p := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + U)))))) v)
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ u := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ x := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ y := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ a_1 := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n H)
+ b_1 := ↑(cN (fun i => f i = false) n H)
+Recaman/MassOneLargeOldGap.lean:37:79: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:47:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:53:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:62:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:74:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:76:8: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:76:66: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:82:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:88:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:90:35: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:90:57: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:98:63: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:99:16: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:103:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:107:35: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:108:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:112:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:113:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:114:47: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:117:53: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:120:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:121:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:122:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:123:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:124:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:125:25: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:135:60: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:136:53: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:136:85: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:137:4: error: (kernel) excessive memory consumption detected
+Recaman/MassOneLargeOldGap.lean:12:8: error: (kernel) excessive memory consumption detected

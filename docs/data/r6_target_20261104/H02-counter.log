@@ -1,0 +1,35 @@
+Recaman/MassTwoShortCounter.lean:121:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ q ≤ 3
+  o ≥ 0
+  o - 2*q ≤ 1
+  l - r ≥ 0
+  k + p ≥ 0
+  0 ≤ i ≤ 3
+  i - o ≤ 0
+  i - q ≥ 0
+  2*i - o ≥ -1
+  4*i - k - l - 4*o ≥ 2
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g + i - o ≤ -1
+  c ≥ 1
+  c + e + i - o ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := areaW z
+ l := (↑j + 1) ^ 2
+ o := ↑(cN (fun x => f x = true) n (H + v + T))
+ p := ↑(h + m + s) ^ 2
+ q := ↑(cN P n (H + v + T))
+ r := (↑h + ↑m + ↑s) ^ 2

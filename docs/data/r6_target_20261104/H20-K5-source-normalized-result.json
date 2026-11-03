@@ -1,0 +1,31 @@
+{
+  "tag": "H20-K5-source-normalized",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/KFiveHeadSources.olean",
+    "Recaman/KFiveHeadSources.lean"
+  ],
+  "started_jst": "2026-11-04T07:29:22.971897+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/KFiveHeadSources.lean": "f6b75c83ad5e569b64a27d89bf07d3aea66b127816b4dd33b352e75c47b30af2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3a6ad336680cb3fb20149f6c9da05e9dd75fb48e3b6921ab62163e2805c9eee8",
+  "source_tree_sha256": "5423edcf23a2d81b8db2f577893f934f740a3b53da5dff8954cab1cf2746fcc8",
+  "source_tree_manifest": "H20-K5-source-normalized-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "3a6ad336680cb3fb20149f6c9da05e9dd75fb48e3b6921ab62163e2805c9eee8",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9537412920035422,
+  "cpu_seconds": 0.8038810000000001,
+  "finished_jst": "2026-11-04T07:29:23.925576+09:00"
+}

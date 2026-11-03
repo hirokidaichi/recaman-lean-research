@@ -1,0 +1,31 @@
+{
+  "tag": "H09-two-word-parity-counts",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldThreeKeyParity.olean",
+    "Recaman/OldThreeKeyParity.lean"
+  ],
+  "started_jst": "2026-11-04T06:52:54.477141+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldThreeKeyParity.lean": "fbfe867c57599bb27b38b95474c3eeb0bcb2b3e2fa38dd3ce64c61f119cbc55b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "source_tree_sha256": "36727a5b901f4ac42bc48c31e9b1551ec13d0cee4da1168015ea6a7fcb36cf0d",
+  "source_tree_manifest": "H09-two-word-parity-counts-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8598395409062505,
+  "cpu_seconds": 0.7489859999999999,
+  "finished_jst": "2026-11-04T06:52:55.336915+09:00"
+}

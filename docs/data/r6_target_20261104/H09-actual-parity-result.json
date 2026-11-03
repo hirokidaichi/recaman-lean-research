@@ -1,0 +1,31 @@
+{
+  "tag": "H09-actual-parity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldThreeActualParity.olean",
+    "Recaman/OldThreeActualParity.lean"
+  ],
+  "started_jst": "2026-11-04T06:53:25.220481+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldThreeActualParity.lean": "e0e41c1ba2db72b0026145fdb8c18c0938204ce7224ac5298ded21d1b2bfe849"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "source_tree_sha256": "9f0887b7852f381ccc278f9dc0c7a8703ae47cd504050bcd6d71c1706f284282",
+  "source_tree_manifest": "H09-actual-parity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.49078895803540945,
+  "cpu_seconds": 0.340225,
+  "finished_jst": "2026-11-04T06:53:25.711214+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H19-original-p-residual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitTargetNoOldResidualBase.olean",
+    "Recaman/UnitTargetNoOldResidualBase.lean"
+  ],
+  "started_jst": "2026-11-04T07:25:39.696362+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitTargetNoOldResidualBase.lean": "efd1a3416eb5463061c195f5eace77f6815899203b08c4f96fa947154a068b41"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "source_tree_sha256": "26df7aae92217f8b65f041b16af7ddea4cfc2ca5462b87ee9964b620d6e2cba8",
+  "source_tree_manifest": "H19-original-p-residual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H22-two-S-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitTargetTwoS.olean",
+    "Recaman/UnitTargetTwoS.lean"
+  ],
+  "started_jst": "2026-11-04T07:34:31.010467+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitTargetTwoS.lean": "8e8d7a0e6194ae6e43a00e2c3c7aab70dd3a2b5a991464a9495f36424da35aa0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3a6ad336680cb3fb20149f6c9da05e9dd75fb48e3b6921ab62163e2805c9eee8",
+  "source_tree_sha256": "d5c58f408910ac72340914a30f39b2ee7fc8a7c388344dd9a6f23fcc93f93f9f",
+  "source_tree_manifest": "H22-two-S-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "3a6ad336680cb3fb20149f6c9da05e9dd75fb48e3b6921ab62163e2805c9eee8",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.7444487498141825,
+  "cpu_seconds": 0.5707819999999999,
+  "finished_jst": "2026-11-04T07:34:31.754839+09:00"
+}

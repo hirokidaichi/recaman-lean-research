@@ -1,0 +1,31 @@
+{
+  "tag": "H18-first-prefix-word",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SingleASPrefixWord.olean",
+    "Recaman/SingleASPrefixWord.lean"
+  ],
+  "started_jst": "2026-11-04T07:21:24.337799+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SingleASPrefixWord.lean": "8da4da1ee470bc950c5e99c0ca35efe13d82d2c621871796247bfe3827652d30"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "source_tree_sha256": "6d4a5727cf7d79d024768d8d2cf9a343aff70a3333deb17d1574ffb7176b1033",
+  "source_tree_manifest": "H18-first-prefix-word-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.44778116699308157,
+  "cpu_seconds": 0.32204699999999997,
+  "finished_jst": "2026-11-04T07:21:24.785514+09:00"
+}

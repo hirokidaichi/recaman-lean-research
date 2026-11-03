@@ -1,0 +1,60 @@
+Recaman/MassTwoOneGap.lean:74:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 0
+  l ≥ 8
+  l - o ≥ 1
+  k ≥ 4
+  i ≥ 0
+  i - k ≤ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - l ≤ -1
+  d + g + k - l ≥ -2
+  c ≥ 1
+  c + e - l ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑T
+ l := ↑(cN (fun u => f u = true) n (h + M + m + L + s + U))
+ o := ↑(cN (fun x => f x = true) n H)
+Recaman/MassTwoOneGap.lean:81:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  p ≥ 0
+  0 ≤ o ≤ 3
+  l ≥ 8
+  l - 2*p ≤ 1
+  k ≥ 4
+  i ≥ 0
+  i - k ≤ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - l ≤ -1
+  d + g + k - l ≥ -2
+  c ≥ 1
+  c + e - l ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑T
+ l := ↑(cN (fun x => f x = true) n H)
+ o := ↑(cN P n H)
+ p := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)

@@ -1,0 +1,31 @@
+{
+  "tag": "H05-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoEqualGap.olean",
+    "Recaman/MassTwoEqualGap.lean"
+  ],
+  "started_jst": "2026-11-04T06:35:21.251390+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoEqualGap.lean": "f3832594ba0d19d5e6379a49988e95519496641c3667ccf52e3d9e3044322513"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "source_tree_sha256": "f0d33ac3cfee6357736fc02187bbce3819f77c95ee4a1c6cac8bc0eb54b8ce58",
+  "source_tree_manifest": "H05-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9169672909192741,
+  "cpu_seconds": 0.7826,
+  "finished_jst": "2026-11-04T06:35:22.168285+09:00"
+}

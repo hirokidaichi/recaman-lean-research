@@ -1,0 +1,12 @@
+Recaman/MassTwoPrefixKey.lean:39:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  c - d ≤ -3
+  -8 ≤ b + 4*c - 4*d ≤ -6
+  a ≥ 1
+  a + c - d ≤ 2
+where
+ a := ↑p
+ b := 4 * ↑M * ↑p
+ c := ↑M * (↑p - 1)
+ d := ↑M * ↑p

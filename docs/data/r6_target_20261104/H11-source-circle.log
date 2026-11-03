@@ -1,0 +1,134 @@
+Recaman/LowTargetSeedParity.lean:34:17: error(lean.unknownIdentifier): Unknown identifier `square_even_delta`
+Recaman/LowTargetSeedParity.lean:34:9: error: Tactic `rcases` failed: `x✝ : ?m.360` is not an inductive datatype
+Recaman/LowTargetSeedParity.lean:81:5: error: unknown tactic
+Recaman/LowTargetSeedParity.lean:80:36: error: unsolved goals
+w : List Bool
+hw : BlockWord w
+t r h M m L s U v i T j : Nat
+ht : t < w.length
+hr : r < w.length
+hC : mass (List.drop t w) = 1
+hD : mass (List.drop r w) = 2
+hzero : M + L + U = h + m + s
+hm1 :
+  mass
+      (List.drop r w ++
+            (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true) ++
+          List.replicate v false ++
+        List.replicate i true) =
+    1
+ha1 :
+  areaW
+      (List.drop r w ++
+            (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true) ++
+          List.replicate v false ++
+        List.replicate i true) =
+    0
+hm2 :
+  mass
+      (List.drop t w ++
+              (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                  List.replicate s false ++
+                List.replicate U true) ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (List.drop t w ++
+              (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                  List.replicate s false ++
+                List.replicate U true) ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+z : List Bool :=
+  List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+      List.replicate s false ++
+    List.replicate U true
+hmz : mass z = 0
+hSz : ↑(cntF z) = ↑h + ↑m + ↑s
+hk1 : runKey (List.drop r w) + runKey z + 4 * 2 * (↑h + ↑m + ↑s) + 4 * ↑v * (2 + 0) - 2 * ↑v ^ 2 = -2 * (↑0 + 1) ^ 2
+hk2 : runKey (List.drop t w) + runKey z + 4 * 1 * (↑h + ↑m + ↑s) + 4 * ↑v * (1 + 0) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+hseed : runKey (List.drop r w ++ z ++ List.replicate v false) = -2
+Z : Int
+hZ : runKey (List.drop r w) = 2 * (↑h + ↑m + ↑s + ↑v) - 2 + 4 * Z
+hdiff : runKey (List.drop t w) - runKey (List.drop r w) = 4 * (↑h + ↑m + ↑s + ↑v) + 2 - 2 * (↑j + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hv : BlockWord (List.drop r w)
+hku : runKey (List.drop t w) = 0
+hks : runKey (List.drop r w) = -2 ∨ runKey (List.drop r w) = 0
+hdiff0 : -runKey (List.drop r w) = 4 * (↑h + ↑m + ↑s + ↑v) + 2 - 2 * (↑j + 1) ^ 2
+⊢ (↑j + 1) % 2 = 0
+Recaman/LowTargetSeedParity.lean:51:87: error: unsolved goals
+w : List Bool
+hw : BlockWord w
+t r h M m L s U v i T j : Nat
+ht : t < w.length
+hr : r < w.length
+hC : mass (List.drop t w) = 1
+hD : mass (List.drop r w) = 2
+hzero : M + L + U = h + m + s
+hm1 :
+  mass
+      (List.drop r w ++
+            (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true) ++
+          List.replicate v false ++
+        List.replicate i true) =
+    1
+ha1 :
+  areaW
+      (List.drop r w ++
+            (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                List.replicate s false ++
+              List.replicate U true) ++
+          List.replicate v false ++
+        List.replicate i true) =
+    0
+hm2 :
+  mass
+      (List.drop t w ++
+              (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                  List.replicate s false ++
+                List.replicate U true) ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    1
+ha2 :
+  areaW
+      (List.drop t w ++
+              (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                  List.replicate s false ++
+                List.replicate U true) ++
+            List.replicate v false ++
+          List.replicate T true ++
+        List.replicate j false) =
+    0
+z : List Bool :=
+  List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+      List.replicate s false ++
+    List.replicate U true
+hmz : mass z = 0
+hSz : ↑(cntF z) = ↑h + ↑m + ↑s
+hk1 : runKey (List.drop r w) + runKey z + 4 * 2 * (↑h + ↑m + ↑s) + 4 * ↑v * (2 + 0) - 2 * ↑v ^ 2 = -2 * (↑0 + 1) ^ 2
+hk2 : runKey (List.drop t w) + runKey z + 4 * 1 * (↑h + ↑m + ↑s) + 4 * ↑v * (1 + 0) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+hseed : runKey (List.drop r w ++ z ++ List.replicate v false) = -2
+Z : Int
+hZ : runKey (List.drop r w) = 2 * (↑h + ↑m + ↑s + ↑v) - 2 + 4 * Z
+hdiff : runKey (List.drop t w) - runKey (List.drop r w) = 4 * (↑h + ↑m + ↑s + ↑v) + 2 - 2 * (↑j + 1) ^ 2
+hu : BlockWord (List.drop t w)
+hv : BlockWord (List.drop r w)
+hku : runKey (List.drop t w) = 0
+hks : runKey (List.drop r w) = -2 ∨ runKey (List.drop r w) = 0
+hdiff0 : -runKey (List.drop r w) = 4 * (↑h + ↑m + ↑s + ↑v) + 2 - 2 * (↑j + 1) ^ 2
+heven : (↑j + 1) % 2 = 0
+⊢ (↑j + 1) % 2 = 0 ∧ (↑j + 1) ^ 2 = 2 * (↑h + ↑m + ↑s + ↑v)

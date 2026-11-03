@@ -1,0 +1,31 @@
+{
+  "tag": "H06-counter-branches",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoTargetCounter.olean",
+    "Recaman/MassTwoTargetCounter.lean"
+  ],
+  "started_jst": "2026-11-04T06:39:52.883167+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoTargetCounter.lean": "76518fb6e80ce820d86b4e8475f6eb1983866c8b169ce45a3d4796c2fd0baf2d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "source_tree_sha256": "fc38881024967c190886eb23127919e3da5c1ace6183b0253a953338473a50ea",
+  "source_tree_manifest": "H06-counter-branches-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.259617208968848,
+  "cpu_seconds": 1.121528,
+  "finished_jst": "2026-11-04T06:39:54.142711+09:00"
+}

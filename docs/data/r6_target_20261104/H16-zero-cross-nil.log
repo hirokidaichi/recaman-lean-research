@@ -1,0 +1,7 @@
+Recaman/UnitTargetZeroCross.lean:47:63: warning: This simp argument is unused:
+  hmb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mass_append, mass_replicate_A, mass_rep_false, hmu] at hm1 hm2
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

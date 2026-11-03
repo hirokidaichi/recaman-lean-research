@@ -1,0 +1,590 @@
+{
+  "version": 1,
+  "date": "2026-11-04",
+  "timezone": "Asia/Tokyo",
+  "target_seconds": 7200,
+  "events": [
+    {
+      "at": "2026-11-04T06:03:29.003854+09:00",
+      "action": "start",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": ""
+    },
+    {
+      "at": "2026-11-04T06:04:14.590310+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "実時計確認、前日CI全成功、origin/main一致。初期dirtyは当日journalのみ。探索CPU予算0。"
+    },
+    {
+      "at": "2026-11-04T06:05:03.166770+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "同target残余K19/20/21の第三initialS源はsquare=2K+1=39/41/43。6平方と7平方の間で排除できればlocal3/actual head8へ。探索CPU0。"
+    },
+    {
+      "at": "2026-11-04T06:08:30.840918+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "平方間隔の独立source排除とthird local3/actual4からmass4/S1全gap・元Intp adapterが個別M512受理。旧H13不使用。15分gateは新edgeで通過、内容監査と全checkへ。"
+    },
+    {
+      "at": "2026-11-04T06:10:37.384133+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E536/E537全check 680jobs/3483declarations PASS。C>=3合成と残るC1/2のtarget-square/source条件を新unitで監査する。H01数学時間は06:05:03〜06:08:30、監査を別計上。"
+    },
+    {
+      "at": "2026-11-04T06:14:52.485571+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "C2/v1 actual counterのmass balance/R5/M予算/key式がM512受理。既存E519はC>=2なので実sourceへ適用可能。小free r3は既存定理だけ利用し分類再実行なし。"
+    },
+    {
+      "at": "2026-11-04T06:20:52.761588+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "C2/v1で同target mass2 key[-2,0]がmiddleS i0例外を排除し、元Intp fullgap M512受理。E538/539 G5・全checkへ。数学探索CPU0。"
+    },
+    {
+      "at": "2026-11-04T06:23:41.359340+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E538/539全check687jobs/3493declarations PASS。次C2/v2 old存在枝を同target/source key spectrumで削減。R5を既存r3定理で内部供給し分類再実行なし。"
+    },
+    {
+      "at": "2026-11-04T06:28:24.118984+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "同prefix mass2/mass3 key二源の差4S+10-2R²と非共存key-2 pairをkernel供給。counter内部K63へのactual接着を検証中。"
+    },
+    {
+      "at": "2026-11-04T06:29:39.485207+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "06:30近傍保存。C2/v2 old存在枝は同prefix二sourceでS15/R6/K63へ削減、127非平方でactual head9、元fullgapを個別M512受理。内容監査へ。"
+    },
+    {
+      "at": "2026-11-04T06:30:23.885471+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "06:30境界。H01〜H04の新source/free edgeとscopeを保存。研究を終了せずC2/v2 no-oldの次bounded unitへ続ける。"
+    },
+    {
+      "at": "2026-11-04T06:32:36.131380+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E540 C2/v2 old枝全check692jobs/3504declarations PASS。no-old枝はclock0を保持し正clock全sourceの合流でlast4へ課金する新機構を固定。"
+    },
+    {
+      "at": "2026-11-04T06:35:22.212884+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "正clockの源は第二A以後へ一様制限、clock0全sourceを保持して元last<=4がM512受理。C2/v2 old/no-old統合のactual fullgapを検証中。"
+    },
+    {
+      "at": "2026-11-04T06:39:45.319338+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "C2S2全check698jobs/3513declarations PASS。H06は任意separator R5とv>=5全old/no-oldのactual free-gapを一問として固定。"
+    },
+    {
+      "at": "2026-11-04T06:41:38.035990+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "任意vのC2 actual R5/M予算がM512受理。v>=5はactual last7でheadfree<=3へ制限し、三正runのK>=3とtarget keyを接着中。"
+    },
+    {
+      "at": "2026-11-04T06:45:16.204005+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "全vのC2 band源削減とactual last<=v+2がM512受理。no-oldのgeneric last6と結合しheadfree<=3・小headの平方排除を接着。"
+    },
+    {
+      "at": "2026-11-04T06:47:16.486389+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "C2 v>=5全old域と全v no-old域の元Intp adapterを保存、E542/543のG5/root/Auditを接続。C2残余v3/4 old-D3を新unitへ切替予定。"
+    },
+    {
+      "at": "2026-11-04T06:48:55.931916+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "C2残余v3/4 old-D3を同prefix二source keyとinitialS再使用式で攻撃。全unknown予算は内部供給、D>=4既存seedは実last-ray条件を保持。"
+    },
+    {
+      "at": "2026-11-04T06:50:50.140662+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H08 monolithic四tuple法はkernel512MBでSTOPPED/隔離。新しい全v二source key偶奇からR oddを一様排除する独立unitへ切替。"
+    },
+    {
+      "at": "2026-11-04T06:55:23.619941+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E544の新uniform parity edgeを受理、同512MBの低CPU測定済み。H08 tuple jobは隔離STOPPED保持。別のsum E=S+v17/18機構でactual接着を問う。"
+    },
+    {
+      "at": "2026-11-04T06:58:45.992838+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E544 uniform parity全check708jobs/3526declarations PASS。新even-R source sum17/18とinitialS再使用排除をM512受理、actual countへ接着中。H08 tuple法はSTOPPED保持。"
+    },
+    {
+      "at": "2026-11-04T07:00:43.220173+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H10 actual glueがkernel512MB STOPPED/隔離。raw sum/initialS source補助のみ個別受理。C2 v3/4 old枝は未証明。mass1 target/mass2 sourceの別primitive spectrumへ切替。"
+    },
+    {
+      "at": "2026-11-04T07:05:43.218951+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "mass1 target and oldmass2 source all separator actual fullgap checked at M512; original-p adapter and G5 audit follow, E519 target cut not used"
+    },
+    {
+      "at": "2026-11-04T07:06:39.208818+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H11 original-p fullgap individually accepted, E545 G5 connected; next independent mass1 target with oldmass3 spectrum, no C2 stopped actual-glue restart"
+    },
+    {
+      "at": "2026-11-04T07:08:33.890137+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H12 raw circle M512 STOPPED isolated; new independent early-old free5 plus large-clock smallhead source mechanism"
+    },
+    {
+      "at": "2026-11-04T07:09:46.013153+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H13 M512 STOPPED, no tactic-only repair; independent proposer/falsifier paper audit of D>=4 and D3 source coupling, complete dependency chain and original p semantics"
+    },
+    {
+      "at": "2026-11-04T07:12:53.045027+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H14 paper D3 and D>=4 chains audited; H12/H13 remain STOPPED. Independent no-old mass1 final-band source boundary asks whether a non-strict prefix equality forces h=R+1/M=R/i=v"
+    },
+    {
+      "at": "2026-11-04T07:15:34.680210+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E548 literal/actual parity cut M512 accepted; next independent cross0 source boundary at M<=R+1, source suffix S count>=1. Paper branches and cap failures retained"
+    },
+    {
+      "at": "2026-11-04T07:17:26.885880+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "Cross0 boundary accepted M512. Falsifier catches invalid first-supply<=1 at h=R+1/M=R+1; preserve firstA boundary rather than erase it, source clock i=v merges with middleS boundary. One math repair"
+    },
+    {
+      "at": "2026-11-04T07:19:49.889978+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E549 cross0 checked, E550 literal shortcut refuted, E551 no-old last v+4 only PAPER. New actual coupling goal: exclude deep second-S source from same mass1 counter via parity +2 and internally derived M budget"
+    },
+    {
+      "at": "2026-11-04T07:21:23.515709+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H17 actual deep second-S exclusion accepted M512. Next actual i>=v+1 early-source exclusion via cross0 boundary, preserve i=v countermodel boundary and connect no-old last v+4"
+    },
+    {
+      "at": "2026-11-04T07:24:18.268379+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E551 no-old actual last v+4/headfree4 original-p adapter passed M512. Next bounded residual reduction: headfree<=3 should force r3/S7/v2/R5/K5, leaving r4/v1,2 and one symbolic boundary, not finite-history classification"
+    },
+    {
+      "at": "2026-11-04T07:27:55.022052+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H19 original-p small-head residual accepted M512. New symbolic K5 source pruning: first M<=2, second old absent by mass/key barrier, third local only clock2; finite five heads not used as table"
+    },
+    {
+      "at": "2026-11-04T07:29:55.107664+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "07:30 checkpoint. K5 symbolic second-old exclusion and local second/third clock2 classification individually checked; connect actual head count, no five-head table or math worker"
+    },
+    {
+      "at": "2026-11-04T07:31:01.097923+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "07:30 explicit checkpoint after bound; K5 raw/actual head3 accepted; source exceptions preserved. Audit original-p no-old headfree4 strict reduction and prepare next r4/v1,2 question"
+    },
+    {
+      "at": "2026-11-04T07:32:27.202202+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "K5 actual head3 removes r3 residual; original-p no-old counter now headfree4/v<=2. Independent initialS parity pruning may exclude v2, remains bounded until 07:45; no prior cap job restart"
+    },
+    {
+      "at": "2026-11-04T07:34:30.966672+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H21 M512 STOPPED isolated. New independent stronger two-window result removes all E/S/v/zerohead bounds: mass1 target with only d<=2 initial S before local source impossible by local P2 odd-S parity. Small symbolic proof, cap10CPU/M512/20wall"
+    },
+    {
+      "at": "2026-11-04T07:36:18.509296+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "E555 unbounded d<=2 source exclusion accepted. Last bounded math unit before 07:45: supply d<=2 from zerohead/v1 and connect actual no-old last5/exact counter; stop new math by 07:45"
+    },
+    {
+      "at": "2026-11-04T07:38:34.523967+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "H23 original-p counter exact-free j individually accepted. No further new math planned; substantive source/count audits, owned current-source M512 receipts, G5, cards/handoff and publication preparation continue before 07:45"
+    },
+    {
+      "at": "2026-11-04T07:40:46.519363+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "Final pre-07:45 paper audit: E556 last5 requires all five families distinct, but firstA/middleS clocks only0/1; shared target cross0/AS equality excludes distinct pair. No new Lean run; save full argument and next bounded kernel question"
+    },
+    {
+      "at": "2026-11-04T07:44:28.502112+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "New mathematics ended before07:45. Stable evidence/frontier/next card synchronized; remaining work validation, exact ownership/source audit, closed journal and main publication by08:00"
+    },
+    {
+      "at": "2026-11-04T07:47:59.313396+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "Final fullcheck735jobs/3551declarations PASS, adoption59 current-source M512 receipts match, no forbidden Lean. Publication preflight checks exact coverage C>=3 and PAPER source coupling against existing statements, not new exploration"
+    },
+    {
+      "at": "2026-11-04T07:51:45.693300+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "Explicit745 owned paths staged, no unowned/protected/gate changes, current-source hashes match. Staged diff whitespace audit found8 G5 EOF blank lines; trimmed only docs and rechecked registry. Preparing closed-journal final metadata and normal main push"
+    },
+    {
+      "at": "2026-11-04T07:55:25.234988+09:00",
+      "action": "checkpoint",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "735-job fullcheck/G1-G5/protected claims/59 source receipts/199 local links/viewer validation all checked. Current mathematical source finished, no running validation controllers. Final fetch, journal stop and exact metadata then commit/push before08:00"
+    },
+    {
+      "at": "2026-11-04T07:57:23.492483+09:00",
+      "action": "stop",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "note": "07:45前に数学探索終了、current Lean59個別M512/735jobs3551decl全check/内容監査/全validation controller終了を確認。確定journalと最終metadataを保存し、承認済みmain通常commit/push・remote照合のため期限前余裕を残して閉じる。開始遅延/stop後publicationを遡及加算しない"
+    }
+  ],
+  "segments": [
+    {
+      "start": "2026-11-04T06:03:29.003854+09:00",
+      "end": "2026-11-04T06:04:14.590310+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "setup",
+      "unit": "R-20261104-01/setup"
+    },
+    {
+      "start": "2026-11-04T06:04:14.590310+09:00",
+      "end": "2026-11-04T06:05:03.166770+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "setup",
+      "unit": "R-20261104-01/context"
+    },
+    {
+      "start": "2026-11-04T06:05:03.166770+09:00",
+      "end": "2026-11-04T06:08:30.840918+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-01/proposer-falsifier"
+    },
+    {
+      "start": "2026-11-04T06:08:30.840918+09:00",
+      "end": "2026-11-04T06:10:37.384133+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-01/statement-audit"
+    },
+    {
+      "start": "2026-11-04T06:10:37.384133+09:00",
+      "end": "2026-11-04T06:14:52.485571+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-02/low-target-gate"
+    },
+    {
+      "start": "2026-11-04T06:14:52.485571+09:00",
+      "end": "2026-11-04T06:20:52.761588+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-02/source-pruning"
+    },
+    {
+      "start": "2026-11-04T06:20:52.761588+09:00",
+      "end": "2026-11-04T06:23:41.359340+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-03/audit"
+    },
+    {
+      "start": "2026-11-04T06:23:41.359340+09:00",
+      "end": "2026-11-04T06:28:24.118984+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-04/old-pair-gate"
+    },
+    {
+      "start": "2026-11-04T06:28:24.118984+09:00",
+      "end": "2026-11-04T06:29:39.485207+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-04/actual-pair"
+    },
+    {
+      "start": "2026-11-04T06:29:39.485207+09:00",
+      "end": "2026-11-04T06:30:23.885471+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-04/audit"
+    },
+    {
+      "start": "2026-11-04T06:30:23.885471+09:00",
+      "end": "2026-11-04T06:32:36.131380+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "R-20261104-01/0630-checkpoint"
+    },
+    {
+      "start": "2026-11-04T06:32:36.131380+09:00",
+      "end": "2026-11-04T06:35:22.212884+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-05/positive-source-gate"
+    },
+    {
+      "start": "2026-11-04T06:35:22.212884+09:00",
+      "end": "2026-11-04T06:39:45.319338+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-05/full-count"
+    },
+    {
+      "start": "2026-11-04T06:39:45.319338+09:00",
+      "end": "2026-11-04T06:41:38.035990+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-06/large-separator-gate"
+    },
+    {
+      "start": "2026-11-04T06:41:38.035990+09:00",
+      "end": "2026-11-04T06:45:16.204005+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-06/target-key-check"
+    },
+    {
+      "start": "2026-11-04T06:45:16.204005+09:00",
+      "end": "2026-11-04T06:47:16.486389+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-07/actual-no-old-count"
+    },
+    {
+      "start": "2026-11-04T06:47:16.486389+09:00",
+      "end": "2026-11-04T06:48:55.931916+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-07/scope-audit"
+    },
+    {
+      "start": "2026-11-04T06:48:55.931916+09:00",
+      "end": "2026-11-04T06:50:50.140662+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-08/short-old-gate"
+    },
+    {
+      "start": "2026-11-04T06:50:50.140662+09:00",
+      "end": "2026-11-04T06:55:23.619941+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-09/parity-gate"
+    },
+    {
+      "start": "2026-11-04T06:55:23.619941+09:00",
+      "end": "2026-11-04T06:58:45.992838+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-10/source-sum-gate"
+    },
+    {
+      "start": "2026-11-04T06:58:45.992838+09:00",
+      "end": "2026-11-04T07:00:43.220173+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-10/actual-sum"
+    },
+    {
+      "start": "2026-11-04T07:00:43.220173+09:00",
+      "end": "2026-11-04T07:05:43.218951+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-11/mass-one-old-two"
+    },
+    {
+      "start": "2026-11-04T07:05:43.218951+09:00",
+      "end": "2026-11-04T07:06:39.208818+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-11/original-p-and-g5"
+    },
+    {
+      "start": "2026-11-04T07:06:39.208818+09:00",
+      "end": "2026-11-04T07:08:33.890137+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-12/mass-one-old-three"
+    },
+    {
+      "start": "2026-11-04T07:08:33.890137+09:00",
+      "end": "2026-11-04T07:09:46.013153+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-13/mass-one-large-old"
+    },
+    {
+      "start": "2026-11-04T07:09:46.013153+09:00",
+      "end": "2026-11-04T07:12:53.045027+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-14/mass-one-paper-source-audit"
+    },
+    {
+      "start": "2026-11-04T07:12:53.045027+09:00",
+      "end": "2026-11-04T07:15:34.680210+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-15/mass-one-band-boundary"
+    },
+    {
+      "start": "2026-11-04T07:15:34.680210+09:00",
+      "end": "2026-11-04T07:17:26.885880+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-16/unit-target-cross-zero"
+    },
+    {
+      "start": "2026-11-04T07:17:26.885880+09:00",
+      "end": "2026-11-04T07:19:49.889978+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-15/falsifier-correct-first-boundary"
+    },
+    {
+      "start": "2026-11-04T07:19:49.889978+09:00",
+      "end": "2026-11-04T07:21:23.515709+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-17/unit-target-deep-S"
+    },
+    {
+      "start": "2026-11-04T07:21:23.515709+09:00",
+      "end": "2026-11-04T07:24:18.268379+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-18/unit-target-late-source-count"
+    },
+    {
+      "start": "2026-11-04T07:24:18.268379+09:00",
+      "end": "2026-11-04T07:27:55.022052+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-19/unit-target-small-head"
+    },
+    {
+      "start": "2026-11-04T07:27:55.022052+09:00",
+      "end": "2026-11-04T07:29:55.107664+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-20/K5-source-pruning"
+    },
+    {
+      "start": "2026-11-04T07:29:55.107664+09:00",
+      "end": "2026-11-04T07:31:01.097923+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-20/K5-actual-head"
+    },
+    {
+      "start": "2026-11-04T07:31:01.097923+09:00",
+      "end": "2026-11-04T07:32:27.202202+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "H-20261104-20/0730-head-four-audit"
+    },
+    {
+      "start": "2026-11-04T07:32:27.202202+09:00",
+      "end": "2026-11-04T07:34:30.966672+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-21/unit-target-initial-S"
+    },
+    {
+      "start": "2026-11-04T07:34:30.966672+09:00",
+      "end": "2026-11-04T07:36:18.509296+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-22/two-S-source-boundary"
+    },
+    {
+      "start": "2026-11-04T07:36:18.509296+09:00",
+      "end": "2026-11-04T07:38:34.523967+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-23/unit-one-exact-last-five"
+    },
+    {
+      "start": "2026-11-04T07:38:34.523967+09:00",
+      "end": "2026-11-04T07:40:46.519363+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "R-20261104-01/final-semantics-and-ownership"
+    },
+    {
+      "start": "2026-11-04T07:40:46.519363+09:00",
+      "end": "2026-11-04T07:44:28.502112+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "research",
+      "unit": "H-20261104-24/unit-one-two-family-collision"
+    },
+    {
+      "start": "2026-11-04T07:44:28.502112+09:00",
+      "end": "2026-11-04T07:47:59.313396+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "handoff",
+      "unit": "R-20261104-01/0745-validation-publication"
+    },
+    {
+      "start": "2026-11-04T07:47:59.313396+09:00",
+      "end": "2026-11-04T07:51:45.693300+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "audit",
+      "unit": "R-20261104-01/domain-coverage-and-paper-review"
+    },
+    {
+      "start": "2026-11-04T07:51:45.693300+09:00",
+      "end": "2026-11-04T07:55:25.234988+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "handoff",
+      "unit": "R-20261104-01/staged-review-and-close"
+    },
+    {
+      "start": "2026-11-04T07:55:25.234988+09:00",
+      "end": "2026-11-04T07:57:23.492483+09:00",
+      "session": "7a4bb4ec-bf59-4128-9c81-d37bc7015310",
+      "phase": "handoff",
+      "unit": "R-20261104-01/final-publication-preflight"
+    }
+  ],
+  "unconfirmed_gaps": [],
+  "cursor": null
+}

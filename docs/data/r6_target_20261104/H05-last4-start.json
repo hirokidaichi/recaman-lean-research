@@ -1,0 +1,25 @@
+{
+  "tag": "H05-last4",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoEqualNoOldLast.olean",
+    "Recaman/MassTwoEqualNoOldLast.lean"
+  ],
+  "started_jst": "2026-11-04T06:34:54.431395+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoEqualNoOldLast.lean": "d5962c90001117c0a5d73be6f14ae895f79f80408b2560a4b067234deb733c05"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "source_tree_sha256": "c17d32c89e7bc1ea1eda450a9852b16ddbefb9f22310393df1d7a598d7f5a611",
+  "source_tree_manifest": "H05-last4-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

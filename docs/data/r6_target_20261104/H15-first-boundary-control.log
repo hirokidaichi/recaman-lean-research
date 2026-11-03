@@ -1,0 +1,10 @@
+Recaman/FirstRayBoundaryControl.lean:11:77: error: Tactic `decide` failed for proposition
+  rayCount ([false, true, true, true, true] ++ List.replicate 6 false) 6 = 2
+because its `Decidable` instance
+  instDecidableEqNat (rayCount ([false, true, true, true, true] ++ List.replicate 6 false) 6) 2
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (rayCount ([false, true, true, true, true] ++ List.replicate 6 false) 6).beq 2 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯

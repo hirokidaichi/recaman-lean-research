@@ -1,0 +1,25 @@
+{
+  "tag": "H11-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassOneOldTwoGapBase.olean",
+    "Recaman/MassOneOldTwoGapBase.lean"
+  ],
+  "started_jst": "2026-11-04T07:05:43.250640+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassOneOldTwoGapBase.lean": "4693ff09bec9a486cd5195fa1d2719d4cbb24304e5ae70bd214ae099a82b13bc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "source_tree_sha256": "a4a4553adaba1b27d72925192c68eebf6854af71e1f469fdb31dfc7e7c8ded81",
+  "source_tree_manifest": "H11-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,6 @@
+Recaman/UnitTargetTwoS.lean:25:4: error: Type mismatch: After simplification, term
+  hz
+ has type
+  @Eq Int (runKey (List.replicate d false)) (-(2 * ↑d ^ 2))
+but is expected to have type
+  @Eq Int (runKey (List.replicate d false)) (-2 * ↑d ^ 2)

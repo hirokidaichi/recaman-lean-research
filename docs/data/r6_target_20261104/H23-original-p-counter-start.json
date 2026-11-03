@@ -1,0 +1,25 @@
+{
+  "tag": "H23-original-p-counter",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitOneLastFiveBase.olean",
+    "Recaman/UnitOneLastFiveBase.lean"
+  ],
+  "started_jst": "2026-11-04T07:38:00.793865+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitOneLastFiveBase.lean": "17301b21b2814e2fb4afefb3ddd678a0b6923ae492557bd61b7a102ac9d24373"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "ca559a5c781b5f101d6cc2c189ac0156415cf1c83715001b429e6730c542d655",
+  "source_tree_sha256": "0e6e0320945fe95128cae2ba18b7a24eddae8b10b37d09b245a4ff57be994d73",
+  "source_tree_manifest": "H23-original-p-counter-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

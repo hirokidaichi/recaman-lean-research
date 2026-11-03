@@ -1,0 +1,40 @@
+Recaman/UnitTargetNoOldResidual.lean:80:23: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  u + x ≥ 3
+  q ≥ 0
+  p ≥ 0
+  p - 2*q ≤ 1
+  o ≥ 0
+  0 ≤ l ≤ 3
+  2*l - p ≤ -2
+  k ≥ 0
+  i ≥ 4
+  i - k ≥ 0
+  i - l - o ≥ -6
+  i - o ≤ -1
+  i - o - p ≥ -16
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - p ≤ -1
+  d + g + i - p ≥ -2
+  c ≥ 1
+  c + e - p ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U))
+ o := ↑T
+ p := ↑(cN (fun x => f x = true) n H)
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)
+ u := ↑M * (↑m + ↑s)
+ x := ↑L * ↑s

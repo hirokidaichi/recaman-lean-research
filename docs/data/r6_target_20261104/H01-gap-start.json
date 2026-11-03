@@ -1,0 +1,25 @@
+{
+  "tag": "H01-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassFourOneGap.olean",
+    "Recaman/MassFourOneGap.lean"
+  ],
+  "started_jst": "2026-11-04T06:07:37.345400+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassFourOneGap.lean": "d0bfc7011acc5c09da712d4e9088f1eff27f3f1c8506a81f396695487da8d2ac"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "6269c5dc0456f7c9aa0bffc0a5c821d279ee1bb1ca36e03b77c6eca96abbce96",
+  "source_tree_sha256": "ff011b0a9767de71d3ff3703352557161e8a4542d8bb6dad4a50bd086ebe4e10",
+  "source_tree_manifest": "H01-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

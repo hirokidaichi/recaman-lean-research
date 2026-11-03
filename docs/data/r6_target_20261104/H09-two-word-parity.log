@@ -1,0 +1,29 @@
+Recaman/OldThreeKeyParity.lean:97:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  k ≥ 0
+  k - l ≥ 1
+  g ≥ 0
+  f ≥ 0
+  f + g - k ≤ 0
+  e ≥ 0
+  d ≥ 0
+  d + e - k ≤ 0
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≥ 1
+where
+ a := ↑w.length
+ b := ↑t
+ c := ↑r
+ d := ↑L
+ e := ↑U
+ f := ↑m
+ g := ↑s
+ k := ↑(cntF
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true))
+ l := ↑(cntF z)

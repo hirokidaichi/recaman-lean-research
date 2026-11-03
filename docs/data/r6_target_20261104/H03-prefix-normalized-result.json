@@ -1,0 +1,31 @@
+{
+  "tag": "H03-prefix-normalized",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoPrefixKey.olean",
+    "Recaman/MassTwoPrefixKey.lean"
+  ],
+  "started_jst": "2026-11-04T06:17:14.555513+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoPrefixKey.lean": "c65dc561af1f3ca8583193fa1de1608b2309d4f887a2f62ca7a31a80916d9e28"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "source_tree_sha256": "fa6d7532c4b30b749a8e2420c34deebf08ec9e359e2fb07c53f203135348a2c6",
+  "source_tree_manifest": "H03-prefix-normalized-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "026683ea9ab11354f59710109f137a9f7354e2814bdfd6c4943932e7bd18e1f6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5069194999523461,
+  "cpu_seconds": 0.38805599999999996,
+  "finished_jst": "2026-11-04T06:17:15.062367+09:00"
+}

@@ -1,0 +1,20 @@
+Recaman/SingleASPrefixWord.lean:23:2: error: Tactic `apply` failed: could not unify the conclusion of `seg_false`
+  seg ?f ?s ?j = List.replicate ?j false
+with the goal
+  seg f (n + (h + M)) (k - (h + M)) = List.replicate (h + M + (k - (h + M)) - (h + M)) false
+
+Note: The full type of `seg_false` is
+  ∀ (f : Nat → Bool) (s j : Nat), (∀ (i : Nat), s ≤ i → i < s + j → f i = false) → seg f s j = List.replicate j false
+
+case e_a
+f : Nat → Bool
+n h M m k : Nat
+hk : h + M ≤ k
+hkm : k ≤ h + M + m
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+ha : seg f (n + h) M = List.replicate M true
+⊢ seg f (n + (h + M)) (k - (h + M)) = List.replicate (h + M + (k - (h + M)) - (h + M)) false
+Recaman/SingleASPrefixWord.lean:31:32: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`
+Recaman/SingleASPrefixWord.lean:34:32: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`

@@ -1,0 +1,25 @@
+{
+  "tag": "H11-actual-circle",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowTargetActualCircle.olean",
+    "Recaman/LowTargetActualCircle.lean"
+  ],
+  "started_jst": "2026-11-04T07:04:20.022282+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowTargetActualCircle.lean": "8c3ad0378af63a1fd1aa4b0c81de716847bbe74ef018ea2275caa0cfea10e0cf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "source_tree_sha256": "e3d8acb5dc9fd769ea29272a616af81e72f71e4fe72a91e64a38c710c7c0a2f1",
+  "source_tree_manifest": "H11-actual-circle-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

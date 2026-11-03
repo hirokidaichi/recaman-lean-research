@@ -518,3 +518,11 @@ E524 PROVED-LEAN: Winと現在endpoint-Aを同一視せず、targetの一clock�
 E-526/E-527は同zero-positive三run zerohead/oldtargetmass5のS2/S1、E-528/E-530はmass4/S3,S2の全長元p free-gap。E-529/E-531/E-532/E-533/E-534のsource/target/cross課金を経てE-535は残るC4/S1 actual counterをS14/R6/j5/T3/K19,20,21へstrict削減（PROVED-LEAN、人間レビュー未）。反例不在・一般C1は未証明。current frontier/当日target residual noteを正本とする。
 
 H13のlocal8rowは個別kernel受理のみ、import/source分類512MB STOPPED、未検証source/finite certificateはpacket .lean.txtへ隔離、actual接着は未採用。再開は独立数学pruningと測定改善を要し、資源増加や単なるsplit/import移動は不可。E534/E535は独立target grammar入力。target以前prefixをBlockWordへresetする弱化補助仮定はSAAAA/drop1=A4/take1=SでREFUTED、C1反例ではない。
+
+## 2026-11-04: same-target source-family frontier
+
+E536/E537はK非平方の全長source排除でmass4/S1を元p freegapへ接続。E538〜545はC2のS1/S2/全v>=5/no-oldとC1mass1のoldmass2を元p fullgapへ。E548/E549はmass1のAS+2/cross0 source制約（Aでありfreeではない）。E551〜553はmass1/no-old actual counterをheadfree4/v<=2へ、E555/E556はd<=2二窓排除とv1 last5/free=jへ。E550 first供給1 shortcutはliteral2clockでREFUTED、親C1反例なし。
+
+E546/E547 oldmass3/>=4、E554 small-separator initial source、E557 no-old全v source-family衝突はPROVED-PAPER、未Lean・人間レビュー未。H08/H10/H12/H13/H21 kernel512MB sourceはSTOPPED/packet隔離。E557はH21 global parityを入力せずinitialSをclock0へ保持する独立機構。旧r4表二回0/0等の停止は維持。全history分類/一般C1/Q/H/SL/全射性ではない。
+
+次の正本は[H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)、[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)、[joint-source note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)。

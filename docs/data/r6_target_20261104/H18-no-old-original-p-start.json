@@ -1,0 +1,25 @@
+{
+  "tag": "H18-no-old-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitTargetNoOldBase.olean",
+    "Recaman/UnitTargetNoOldBase.lean"
+  ],
+  "started_jst": "2026-11-04T07:23:29.088628+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitTargetNoOldBase.lean": "068a2f82f32c85c7b6ca34964121d75d92ba7cef4abe0855ab4d7d696e3bb5e5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "17d6ae87cce912f643621bcd0c0ebc2132fb08bb47321b1c487c31eaee17384a",
+  "source_tree_sha256": "c9744d3445c40ec127139c0179c6f36a5b34289791ce4510d7eb17897684bad2",
+  "source_tree_manifest": "H18-no-old-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

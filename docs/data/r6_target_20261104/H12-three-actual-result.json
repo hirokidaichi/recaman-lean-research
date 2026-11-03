@@ -1,0 +1,31 @@
+{
+  "tag": "H12-three-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitTargetThreeActual.olean",
+    "Recaman/UnitTargetThreeActual.lean"
+  ],
+  "started_jst": "2026-11-04T07:07:27.250421+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitTargetThreeActual.lean": "43b586a93db6015a9e5722cf950e560cda517c63812a70d0313bb5086828ac6c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "7be42e1bbd101b91ca940b31a88c12d0fcbd004ede1d69805d10ec0f7792dba7",
+  "source_tree_sha256": "353b96a82a673597a78ccd3f811033bc604b2049b4a9b2b4c7491323bface55a",
+  "source_tree_manifest": "H12-three-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "7be42e1bbd101b91ca940b31a88c12d0fcbd004ede1d69805d10ec0f7792dba7",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.2727394588291645,
+  "cpu_seconds": 0.127719,
+  "finished_jst": "2026-11-04T07:07:27.523090+09:00"
+}

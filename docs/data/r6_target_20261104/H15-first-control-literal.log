@@ -1,0 +1,8 @@
+Recaman/FirstRayBoundaryControl.lean:20:2: error: No goals to be solved
+Recaman/FirstRayBoundaryControl.lean:19:50: warning: This simp argument is unused:
+  not_false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [h0, h1, h2, h3, h4, h5, Bool.false_eq_true, ite_false, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

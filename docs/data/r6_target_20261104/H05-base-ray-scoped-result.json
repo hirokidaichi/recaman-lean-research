@@ -1,0 +1,31 @@
+{
+  "tag": "H05-base-ray-scoped",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RayCountFromBase.olean",
+    "Recaman/RayCountFromBase.lean"
+  ],
+  "started_jst": "2026-11-04T06:34:20.159332+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RayCountFromBase.lean": "6b1004af71fcfaf22be3f984f139c1264d58391a754978c1f1733dc8d3e6598d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "source_tree_sha256": "579357f6611e7132a7ba003e2976275efa53f1f0caa47aa06e733e5903f8b7db",
+  "source_tree_manifest": "H05-base-ray-scoped-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "3b4039baafcb2a061f068720396a586ef5da5bb01e239065dd2284af5db2a7cc",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4366440000012517,
+  "cpu_seconds": 0.27627199999999996,
+  "finished_jst": "2026-11-04T06:34:20.595909+09:00"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H08-old-keys",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoShortOldKeys.olean",
+    "Recaman/MassTwoShortOldKeys.lean"
+  ],
+  "started_jst": "2026-11-04T06:48:56.113060+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoShortOldKeys.lean": "1e62e834cfd721d0095f36bb298d3a1a3b12f0c8c25fc6a1cbfc26f64c799f75"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "source_tree_sha256": "c380d49e76e8093d1cb6c7b52699e1241dd3ed85cd7461e1e195f46456fa7430",
+  "source_tree_manifest": "H08-old-keys-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "18b9b17c2e9035b79f72d5dbd28a64f21ae0065217a2ddec8149a68f2cfb361e",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 3.3223247081041336,
+  "cpu_seconds": 3.171497,
+  "finished_jst": "2026-11-04T06:48:59.435319+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H04-local-between",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NonsquareHeadSupply.olean",
+    "Recaman/NonsquareHeadSupply.lean"
+  ],
+  "started_jst": "2026-11-04T06:27:00.963417+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NonsquareHeadSupply.lean": "0fd75057475321363c7cb0f5dc569cd458448e6006e08524af211ac360d5eebf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "506e2778f62a25eef180d6eab91f1d35bfe1d1325c0974b0fab779265a584e5a",
+  "source_tree_sha256": "98d254d8ac3a1cd8be7f6046683758dfd3a78486f98808c46b4cdf684353b655",
+  "source_tree_manifest": "H04-local-between-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

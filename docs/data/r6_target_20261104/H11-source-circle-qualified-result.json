@@ -1,0 +1,31 @@
+{
+  "tag": "H11-source-circle-qualified",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowTargetSeedParity.olean",
+    "Recaman/LowTargetSeedParity.lean"
+  ],
+  "started_jst": "2026-11-04T07:04:04.855913+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowTargetSeedParity.lean": "1c0025222fdcf48e400043857d8bf070994d3cccc2e2bebd3aab37e2b5795c71"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "source_tree_sha256": "c7916e597b3c3179861e8e2357021376a1791066d34425531f924b021c072fc9",
+  "source_tree_manifest": "H11-source-circle-qualified-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0907157501205802,
+  "cpu_seconds": 0.969575,
+  "finished_jst": "2026-11-04T07:04:05.946567+09:00"
+}

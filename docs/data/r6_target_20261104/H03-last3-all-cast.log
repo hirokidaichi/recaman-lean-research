@@ -1,0 +1,16 @@
+Recaman/MassTwoShortLastThree.lean:82:88: warning: This simp argument is unused:
+  List.replicate_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.nil_append] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/MassTwoShortLastThree.lean:82:108: warning: This simp argument is unused:
+  List.nil_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [runWord, List.length_cons, List.length_nil, List.append_nil, List.append_assoc,
+    List.replicate_zero] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

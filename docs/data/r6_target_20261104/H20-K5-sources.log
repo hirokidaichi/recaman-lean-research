@@ -1,0 +1,134 @@
+Recaman/KFiveHeadSources.lean:22:60: warning: Variable name `hA1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/KFiveHeadSources.lean:46:70: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≤ 1
+  j ≥ 0
+  g ≥ 0
+  1 ≤ f ≤ 3
+  e ≤ 3
+  1 ≤ d ≤ 2
+  c ≥ 1
+  b ≥ 1
+  b + d ≤ 4
+  1 ≤ a ≤ 2
+  a - b + g ≥ 2
+  a - b + g - j ≤ 1
+  a + c ≤ 4
+where
+ a := ↑M
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑L * ↑s
+ f := ↑M * ↑m
+ g := ↑i
+ j := ↑h
+ k := ?m.90
+Recaman/KFiveHeadSources.lean:56:38: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≤ -1
+  j ≥ 0
+  g ≥ 0
+  f ≤ 3
+  e ≤ 3
+  1 ≤ d ≤ 2
+  c ≥ 1
+  b ≥ 1
+  b + d ≤ 4
+  1 ≤ a ≤ 2
+  a - b + c - d + g ≥ 2
+  a - b + c - d + g - j ≤ 1
+  a + c ≤ 4
+where
+ a := ↑M
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑L * ↑s
+ f := ↑M * ↑m
+ g := ↑i
+ j := ↑h
+ k := ?m.83
+Recaman/KFiveHeadSources.lean:61:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 1
+  d ≤ 3
+  c ≤ 3
+  b ≥ 1
+  b + e ≤ 2
+  1 ≤ a ≤ 2
+  a + b ≤ 4
+  a + b + e ≥ 3
+where
+ a := ↑M
+ b := ↑L
+ c := ↑L * ↑s
+ d := ↑M * ↑m
+ e := ↑i
+Recaman/KFiveHeadSources.lean:63:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 1
+  d ≤ 3
+  1 ≤ c ≤ 2
+  b ≥ 1
+  b + e ≤ 3
+  1 ≤ a ≤ 2
+  a ≥ 1
+  a + b ≤ 4
+  a + b + e ≥ 4
+where
+ a := ↑M
+ b := ↑L
+ c := ↑s
+ d := ↑M * ↑m
+ e := ↑i
+Recaman/KFiveHeadSources.lean:65:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ f ≤ 1
+  e ≤ 3
+  d ≤ 3
+  1 ≤ c ≤ 2
+  b ≥ 1
+  b + f ≤ 4
+  1 ≤ a ≤ 2
+  a + b ≤ 4
+  a + b + f ≥ 5
+where
+ a := ↑M
+ b := ↑L
+ c := ↑s
+ d := ↑L * ↑s
+ e := ↑M * ↑m
+ f := ↑i
+Recaman/KFiveHeadSources.lean:67:70: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≤ 1
+  g ≥ 0
+  f ≤ 3
+  1 ≤ e ≤ 3
+  1 ≤ d ≤ 2
+  c ≥ 1
+  c - d + g ≥ 2
+  b ≥ 1
+  b - c + d - g ≥ -1
+  b + d ≤ 4
+  1 ≤ a ≤ 2
+  a + c ≤ 4
+where
+ a := ↑M
+ b := ↑m
+ c := ↑L
+ d := ↑s
+ e := ↑L * ↑s
+ f := ↑M * ↑m
+ g := ↑i
+ j := ?m.236
+Recaman/KFiveHeadSources.lean:92:2: error: 'change' tactic failed, pattern
+  runKey (List.drop t w) + (4 * ↑M * ↑m - 2 * S ^ 2) + 4 * mass (List.drop t w) * S = -2
+is not definitionally equal to target
+  runKey (List.drop t w) + (4 * ↑m * ↑M - 2 * (↑h + ↑m) ^ 2) + 4 * mass (List.drop t w) * (↑h + ↑0 + ↑m) = -2

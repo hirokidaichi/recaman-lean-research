@@ -1,0 +1,31 @@
+{
+  "tag": "H04-joint-keys",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoThreeKeys.olean",
+    "Recaman/MassTwoThreeKeys.lean"
+  ],
+  "started_jst": "2026-11-04T06:26:31.334434+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoThreeKeys.lean": "c20f4cef84f7f190758e01452d52bd3bb5ecfdc9c6e5b9de7495ebfdc3db25fc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "506e2778f62a25eef180d6eab91f1d35bfe1d1325c0974b0fab779265a584e5a",
+  "source_tree_sha256": "f70c685a46b92608c3e658ba91c76bca75ebd6a779261c44a00d854b10630611",
+  "source_tree_manifest": "H04-joint-keys-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "506e2778f62a25eef180d6eab91f1d35bfe1d1325c0974b0fab779265a584e5a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9254719996824861,
+  "cpu_seconds": 0.777503,
+  "finished_jst": "2026-11-04T06:26:32.259832+09:00"
+}

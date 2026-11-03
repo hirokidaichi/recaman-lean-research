@@ -1,0 +1,31 @@
+{
+  "tag": "H07-base",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NoOldMassTwoBase.olean",
+    "Recaman/NoOldMassTwoBase.lean"
+  ],
+  "started_jst": "2026-11-04T06:45:44.148708+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NoOldMassTwoBase.lean": "fc71a6e1fb3ee4db93621a97c1b7c96481cdfc8a59ba0f122c57459450b18921"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "source_tree_sha256": "4d3f7322242082d68b7f112fcab3fdb46019b1b315abd13490dba05df4628a7d",
+  "source_tree_manifest": "H07-base-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a6a66a9832d081db60108a5ad20297b12e6831adbc8ee5aa71ac8248c43e9658",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6342458333820105,
+  "cpu_seconds": 0.47709199999999996,
+  "finished_jst": "2026-11-04T06:45:44.782862+09:00"
+}

@@ -1,6 +1,6 @@
 # H-20261104-01: R6/K21の同target tripとactual source/free課金
 
-Owner Codex。Created 2026-11-03。Status CONJECTURED。Work state unstarted。Parent 次回R-20261104-01、main。予定は開始10/研究監査100（活用60・局所30・別pass10）/handoff10、実績は未計上。探索CPU当初0。
+Owner Codex。Created 2026-11-03。Status CONJECTURED。Work state active。Parent 次回R-20261104-01、main。予定は開始10/研究監査100（活用60・局所30・別pass10）/handoff10、実績は未計上。探索CPU当初0。
 
 ## Exact bounded question
 
@@ -26,4 +26,21 @@ H13はlocal-only8row個別kernel受理後、import/source分類が512MB STOPPED�
 
 ## Handoff
 
-本カードは次回の予定であり未実施。次回もfirst-tool journal setupを先に開始し、main fetch/dirty所有範囲を固定、120分実時計・毎日確定journal・検証済みmain commit/push・必須日本語終了報告を守る。
+06:03:29 JSTに当日journal setup開始。開始遅延を遡及計上しない。次回もfirst-tool journal setupを先に開始し、main fetch/dirty所有範囲を固定、120分実時計・毎日確定journal・検証済みmain commit/push・必須日本語終了報告を守る。
+
+## 06:05〜06:08 proposer / falsifier gate — independent square gap
+
+新chain: 同actual targetからE535が内部供給するK19/20/21では2K+1=39/41/43で、6²と7²の間。第三A-rayの初期S源suffix S^q A^M S^m A^L S^sのprimitive key=-2は(q+m+s)²=2K+1を強制し、全qを排除する。したがって第三local rayは先頭Sを消した A^M S^m A^L S^s のみで、定符号run課金1+two-run2によりlocal<=3、全old<=1を保持してactual第三<=4。S14/M<=7/K<=21からfirst small又は内部longを供給すればfirst<=1、second<=3、head<=8、headfree>=6でR6 counterを排除できる。
+
+これはH13八head tableの分割/import移動ではなく、任意長・全sourceの一run消去による独立数学的pruning。K21だけでなくK19/20にも同時に適用できる候補。受入は新source排除とlocal3の全長Lean、その後actual head8/fullgap接着。探索CPU0、個別Lean -j1 -M512、10CPU per-process/20wall、source hash/argvをpacket保存。数学修理一回。
+
+反証pass（紙上、COMPUTEDとは呼ばない）: K17では2K+1=35でも平方なし、K24では49で初期源を許すためK上界23は不可欠。K4では9の初期源があり無条件消去不可。q>=1だけでなくx=q+m+s>=0を保ちsquare比較。oldmass>=5は一切消去せずgeneric old1を加算する。初期S源消去はlocal判定だけで、元base/countは後段adapterでactualに接続する。target以前prefixはresetしない。最弱new edgeはこの全長initial-S source排除。
+
+## First gate result
+
+06:07:52 Nat actual fullgap、06:08:20 original Intp adapterを各-j1 -M512/10CPU per-process/20wallで受理。E536/E537としてG5へ接続中、全check待ち。新source edgeにより15分gateを通過、K19/20も同じ平方間隔で同時排除。H13八head tableを再開せず、全source一run削減で測定も0.85wall秒/0.712CPU秒のmain core。数学修理0（算術積正規化、unsupported tacticの標準term化、add_assoc整列は実装修正）。一度依存未受理に気付かずadapter実行してmissing olean失敗、受理後に再実行し成功。未受理runを採用根拠にしない。
+
+## 当日最終判断（2026-11-04）
+
+PROVED-LEAN E536/E537。元p mass4/S1の全長gap完了。旧H13を再開せず独立非平方sourceで閉じた。
+完全な実時計・commands・失敗receipt・次の入口は[DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)と当日packetを参照。

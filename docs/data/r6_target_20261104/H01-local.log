@@ -1,0 +1,8 @@
+Recaman/NonsquareHeadSupply.lean:29:70: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  18 ≤ a + b ≤ 23
+  2*a + 2*b - c ≥ 0
+where
+ a := ↑M * (↑m + ↑s)
+ b := ↑L * ↑s
+ c := (↑q + ↑m + ↑s) ^ 2

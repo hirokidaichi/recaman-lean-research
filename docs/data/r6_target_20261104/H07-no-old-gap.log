@@ -1,0 +1,54 @@
+Recaman/NoOldMassTwoGap.lean:89:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b_1 ≥ 4
+  a_1 ≥ 0
+  0 ≤ y ≤ 6
+  x ≥ 0
+  x + y ≥ 0
+  u ≥ 0
+  u - x ≥ 0
+  q ≥ 0
+  q - u + x ≤ 0
+  0 ≤ p ≤ 6
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  i ≥ 4
+  i - k ≥ 0
+  i - u ≥ 0
+  i - x - y ≤ 0
+  i - x - y - a_1 ≥ -6
+  i - x ≤ 3
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - l ≤ -1
+  d + g + i - l ≥ -2
+  c ≥ 1
+  c + e - l ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑j
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cntF z)
+ o := ↑(rayCount (z ++ List.replicate v false) T)
+ p := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + U)))))) v)
+ u := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ x := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ y := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ a_1 := ↑(cN P n H)
+ b_1 := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U))

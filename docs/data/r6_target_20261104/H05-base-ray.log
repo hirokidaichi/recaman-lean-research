@@ -1,0 +1,17 @@
+Recaman/RayCountFromBase.lean:32:11: error(lean.unknownIdentifier): Unknown identifier `localSupply_seg_iff`
+Recaman/RayCountFromBase.lean:19:38: error: unsolved goals
+f : Nat → Bool
+a b K : Nat
+w : List Bool
+hab : a ≤ b
+hw : seg f a (b - a) = w
+hA : ∀ (i : Nat), i < K → f (b + i) = true
+i : Nat
+a✝ : 0 ≤ i
+hi : i < 0 + K
+hword : seg f a (b + i - a) = w ++ List.replicate i true
+⊢ EndN f a (b + i) ↔ ThreeNonsuppliedData.localSupply (w ++ List.replicate i true) = true
+Recaman/RayCountFromBase.lean:55:2: error: 'change' tactic failed, pattern
+  ?m.144 ≤ 1 + cN Q 0 K
+is not definitionally equal to target
+  cN (fun i => EndN f 0 (b + (0 + i))) 0 K ≤ 1 + cN (EndN f a) b K

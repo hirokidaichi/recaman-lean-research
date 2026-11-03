@@ -1,0 +1,31 @@
+{
+  "tag": "H10-initial-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeZeroKeySource.olean",
+    "Recaman/MassThreeZeroKeySource.lean"
+  ],
+  "started_jst": "2026-11-04T06:57:12.216429+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeZeroKeySource.lean": "e782a3ea673771c14bba27ac6278d9c3a55a198b5766fe72bcc78b17336af68d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "source_tree_sha256": "835777247b089ccaee99e862dd2a5339947eff6048964299c5236fe50d6ffb95",
+  "source_tree_manifest": "H10-initial-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.654869666788727,
+  "cpu_seconds": 0.5082,
+  "finished_jst": "2026-11-04T06:57:12.871228+09:00"
+}

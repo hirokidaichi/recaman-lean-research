@@ -1,0 +1,25 @@
+{
+  "tag": "H10-actual-sum",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoShortOldSum.olean",
+    "Recaman/MassTwoShortOldSum.lean"
+  ],
+  "started_jst": "2026-11-04T06:58:38.218773+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoShortOldSum.lean": "006ba5e3688a35aa3e78568fdcfc6409c3b98e49d049f8eef23a8111f9a407cc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "facd54adf68c01dfdce2d5bb97ab2a195c025089",
+  "tracked_diff_sha256": "91e2238f34ccb04bc5d456440a263102610f50e1dd072d925c54f072c480ced7",
+  "source_tree_sha256": "0a6eb6b6492c796bcbd7b24cecee561f8fcc2cee8b85db62079e075bdc909a5e",
+  "source_tree_manifest": "H10-actual-sum-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}
