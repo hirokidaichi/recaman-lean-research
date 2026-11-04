@@ -89,7 +89,7 @@ R-20261105-01を一つの継続sessionで実行。H01〜07: jointsource clock/no
 
 開始時main/f06d97eとfetch済みorigin/mainは一致、initialdirtyは当日journalのみ。最後のfetchでも同基点。他セッションの変更は含めない。変更は当日55Lean、root/Audit、当日cards/notes、E546/E547/E557及びE558〜E580台帳/逐語audit、CURRENT_FRONTIER/PROOF_MAP/PORTFOLIO/SCHEDULE、viewer/manifest、当日確定journal/再現packet/DAILY/翌日card。詳細はpacketのPUBLICATION_PATHS.json。lock/cache/認証情報は除外。
 
-未実施。基点/取得origin/mainは `f06d97ea35ffa528a383f1edd37ecd27f2d6bf35`、main。journal stop後に検証済みsnapshotを通常pushし、SHA/ls-remote/hostedCIを別々に確認する。予定を成功と記録しない。
+Snapshot SHA: `4418c666cb1979b83e7388f711530e8323944b30`; push `origin/main`: True; ls-remote照合: True; hostedCI: not yet visible; unconfirmed。publication receipt自体は別のdoc-only commitで保存し、その最終SHAはチャット報告とgit履歴で確認する。
 
 RECAMAN_ALLOW_BURST=1は利用者承認済みvalidated daily snapshotの個別commitだけに適用、hook/G1〜G5/保護claimは維持。force push/add-A/add-dot/空commitなし。ローカル検証・remote到達・hostedCIを混同しない。
 

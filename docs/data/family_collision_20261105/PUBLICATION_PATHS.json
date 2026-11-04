@@ -685,5 +685,12 @@
     "cache",
     "credentials"
   ],
-  "commit_exception": "RECAMAN_ALLOW_BURST=1 on validated snapshot commit only"
+  "commit_exception": "RECAMAN_ALLOW_BURST=1 on validated snapshot commit only",
+  "publication_receipt_paths": [
+    "docs/RESEARCH_HANDOFF_2026-11-05_DAILY.md",
+    "docs/data/family_collision_20261105/PUBLICATION_RECEIPT.json",
+    "docs/data/family_collision_20261105/SNAPSHOT_COMMIT.log",
+    "docs/data/family_collision_20261105/JOURNAL_STATUS.json",
+    "viewer/manifest.json"
+  ]
 }
