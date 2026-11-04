@@ -74,20 +74,7 @@ jobs:
       # The larger kernel-checked certificate peaks above 16 GiB locally.
       # Keep the full proof check and provide room beyond hosted-runner RAM.
       - name: Reserve swap for kernel verification
-        run: |
-          SWAP_PATH="$RUNNER_TEMP/recaman-kernel.swap"
-          AVAILABLE_KIB=$(df --output=avail "$RUNNER_TEMP" | tail -n 1)
-          if [ "$AVAILABLE_KIB" -lt 37748736 ]; then
-            echo "Need 36 GiB free to reserve 32 GiB swap and retain build space"
-            df -h
-            exit 1
-          fi
-          sudo fallocate -l 32G "$SWAP_PATH"
-          sudo chmod 600 "$SWAP_PATH"
-          sudo mkswap "$SWAP_PATH"
-          sudo swapon "$SWAP_PATH"
-          free -h
-          df -h "$RUNNER_TEMP"
+        run: bash scripts/prepare_ci_swap.sh
 
       # These large kernel-checked trace certificates otherwise compile at once.
       # Warm them sequentially; make test still verifies the entire project.

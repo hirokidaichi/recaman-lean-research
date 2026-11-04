@@ -12,6 +12,7 @@ test-tools:
 	@python3 scripts/test_dev_tool.py
 	@python3 scripts/test_research_session.py
 	@bash scripts/test_harness_gates.sh
+	@python3 scripts/test_ci_swap.py
 
 check:
 	@./scripts/check.sh
