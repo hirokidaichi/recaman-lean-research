@@ -1,0 +1,31 @@
+{
+  "tag": "H14-mass-three-seed-namespace",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeSeedGap.olean",
+    "Recaman/MassThreeSeedGap.lean"
+  ],
+  "started_jst": "2026-11-05T06:32:23.448443+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeSeedGap.lean": "f429c63fff38de8d5e0b3b400ad42eb69495e67e179c8523cc8e27e5c3f54247"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "8991d4c41f70cb0ddc09a6a459205f5d5347af4d97c67351e1d1dc6d056f57ba",
+  "source_tree_manifest": "H14-mass-three-seed-namespace-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.4480955828912556,
+  "cpu_seconds": 1.338308,
+  "finished_jst": "2026-11-05T06:32:24.896477+09:00"
+}

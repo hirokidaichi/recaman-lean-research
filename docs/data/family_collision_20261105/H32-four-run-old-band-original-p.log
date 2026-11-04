@@ -1,0 +1,17 @@
+Recaman/FourRunOldCounterBandBase.lean:50:2: error: Type mismatch
+  FourRunOldCounterBand.four_run_old_counter_band (fun k => e (p + ↑k)) n t h M m L s U v T j C
+    (w ++ List.replicate a true) (block_append hw (block_replicate_A a)) hpre ht hC hm hs hv hS hA hS2 hA2 hS3 hA3 hS4
+    hA4 hrel hgap hW hbad
+has type
+  4 ≤ cN (fun x => e (p + ↑x) = true ∧ ¬EndN (fun k => e (p + ↑k)) 0 x) n (h + M + m + L + s + U + v + T) ∧
+    cN (fun x => e (p + ↑x) = true ∧ ¬EndN (fun k => e (p + ↑k)) 0 x) n (h + M + m + L + s + U + v + T) ≤ 16 ∧
+      cN (fun x => e (p + ↑x) = true) n (h + M + m + L + s + U + v + T) ≤ 35 ∧ j ≤ 16 ∧ 2 ≤ C ∧ C ≤ 17
+but is expected to have type
+  4 ≤ cN (fun i => e (p + ↑i) = true ∧ ¬EndN (fun j => e (p + ↑j)) 0 i) n (h + M + m + L + s + U + v + T) ∧
+    cN (fun i => e (p + ↑i) = true ∧ ¬EndN (fun j => e (p + ↑j)) 0 i) n (h + M + m + L + s + U + v + T) ≤ 16 ∧
+      cN (fun i => e (p + ↑i) = true) n (h + M + m + L + s + U + v + T) ≤ 35 ∧
+        j ≤ 16 ∧
+          2 ≤ C ∧
+            C ≤ 17 ∧
+              cN (fun i => e (p + ↑i) = false) n (h + M + m + L + s + U + v + T) ≤ 35 ∧
+                h + M + m + L + s + U + v + T ≤ 70 ∧ n - t ≤ 42 ∧ n + h + M + m + L + s + U + v + T + j - t ≤ 128

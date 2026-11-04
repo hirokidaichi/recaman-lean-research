@@ -1826,3 +1826,8 @@ E536/E537はK非平方の全長source排除でmass4/S1を元p freegapへ接続�
 E546/E547 oldmass3/>=4、E554 small-separator initial source、E557 no-old全v source-family衝突はPROVED-PAPER、未Lean・人間レビュー未。H08/H10/H12/H13/H21 kernel512MB sourceはSTOPPED/packet隔離。E557はH21 global parityを入力せずinitialSをclock0へ保持する独立機構。旧r4表二回0/0等の停止は維持。全history分類/一般C1/Q/H/SL/全射性ではない。
 
 次の正本は[H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)、[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)、[joint-source note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)。
+
+
+## 2026-11-05 scope update
+
+E568 integrates all positive old-target masses for positive three-run zeroheads, preserving originalp and actualfree. E575 gives mass1 for arbitrary mixed tails by original actual mass/count accounting; do not count the earlier narrow mass1 branches as additional coverage. E576 extends existingE438's three-run AS identity to arbitrary mixedwords. E579 uses existingE458 supply17 and genuine/head-A AS cross to excludej14; genuine four-run old-target counter remains in free4..13/A30/j13/selectedwindow108, without bounding the history before the selectedtarget. E580's topj13 source/saturation/negativehead classification is PAPER only. Next H-20261106-01 targets actual sourcewitness-to-clock coupling, not an assumed fourtuple wrapper. GeneralC1/Q/H/SL/surjectivity remain unresolved; r3 checked count projection is used, unverifiedr4/E384 are not.

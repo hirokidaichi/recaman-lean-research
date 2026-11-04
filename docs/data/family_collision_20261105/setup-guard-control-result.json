@@ -1,0 +1,27 @@
+{
+  "tag": "setup-guard-control",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "--version"
+  ],
+  "started_jst": "2026-11-05T06:02:12.290535+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "72f66962cfa540cc251f04907eddb878abd04cf54c207be8d09a36a0df46bcda",
+  "source_tree_manifest": "setup-guard-control-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.894904667045921,
+  "cpu_seconds": 0.144114,
+  "finished_jst": "2026-11-05T06:02:14.185337+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H31-four-run-old-counter-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+    "Recaman/FourRunOldCounterBand.lean"
+  ],
+  "started_jst": "2026-11-05T07:20:45.869354+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourRunOldCounterBand.lean": "2f6c7715bac9b2cf75a0885b526cbbba09fd42a31e6e5da5aa3cbaff09223be7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "b511db0ad488b2df854cd65337d6d6256d1556a767c75386201d9e652c84d711",
+  "source_tree_manifest": "H31-four-run-old-counter-band-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

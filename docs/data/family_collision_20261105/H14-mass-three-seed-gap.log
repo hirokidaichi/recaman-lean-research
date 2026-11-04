@@ -1,0 +1,82 @@
+Recaman/MassThreeSeedGap.lean:144:13: error(lean.unknownIdentifier): Unknown identifier `two_run_supply_of_positive`
+Recaman/MassThreeSeedGap.lean:37:66: error: unsolved goals
+case neg
+f : Nat → Bool
+n t h M m L s U v T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hzeroMass : M + L + U = h + m + s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hC : mass (List.drop t w) = 1
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+r i : Nat
+hr : r < n
+hi : i < T
+hseed : Win f r (n + h + M + m + L + s + U + v + i - r)
+hD : mass (List.drop r w) = 3
+hgood : ¬j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+free : Nat := cN P n H
+hword :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hlast : cN (EndN f 0) (n + h + M + m + L + s + U + v) T ≤ 6
+hcost : T + 1 = v + j + 1 ∧ free + v + 1 ≤ 7
+hfree1 : 1 ≤ free
+hv5 : v ≤ 5
+hfree4 : 4 ≤ free
+hpseed :
+  mass (List.drop r w ++ z ++ List.replicate v false ++ List.replicate i true ++ List.replicate 0 false) = 1 ∧
+    areaW (List.drop r w ++ z ++ List.replicate v false ++ List.replicate i true ++ List.replicate 0 false) = 0
+hv2 : 2 ≤ v
+hveq : v = 2
+hfreeeq : free = 4
+hc : (↑j + 1) % 2 = 0 ∧ (↑j + 1) ^ 2 = 4 * (↑(cntF z) + ↑v) ∧ runKey (List.drop r w) = -2 ∧ (↑(cntF z) + ↑v) % 2 = 0
+hAc : cN (fun x => f x = true) n H = h + m + s
+hpart : h + m + s = cN (EndN f 0) n H + free
+hhead10 : cN (EndN f 0) n H ≤ 10
+hE16 : cntF z + v ≤ 16
+hR5 :
+  T + 1 = v + j + 1 ∧
+    5 ≤ j + 1 ∧
+      M ≤ j + 2 ∧
+        runKey (List.drop t w) =
+          -runKey (seg f n (h + M + m + L + s + U)) - 4 * ↑1 * (↑h + ↑m + ↑s + ↑v) + 2 * ↑v ^ 2 - 2 * (↑j + 1) ^ 2
+hj4 : 4 ≤ j
+hR8 : ↑j + 1 ≤ 8
+hj7 : j = 7
+hSz14 : cntF z = 14
+hhead10eq : cN (EndN f 0) n H = 10
+K : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hkz : runKey z = 4 * K - 2 * ↑(cntF z) ^ 2
+hkseed : runKey (List.drop r w ++ z ++ List.replicate v false) = -2 * (↑0 + 1) ^ 2
+hkseed' : -2 + (4 * K - 2 * ↑14 ^ 2) + 4 * 3 * ↑14 + 4 * ↑2 * (3 + 0) - 2 * ↑2 ^ 2 = -2
+hku : runKey (List.drop r w) = -2
+hK52 : K = 52
+hthird : cN (EndN f 0) (n + h + M + m + L + s) U ≤ 4
+⊢ j + 1 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T)

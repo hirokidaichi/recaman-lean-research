@@ -1,0 +1,31 @@
+{
+  "tag": "H25-positive-defect-after-strict-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveDefectGap.olean",
+    "Recaman/PositiveDefectGap.lean"
+  ],
+  "started_jst": "2026-11-05T07:05:00.827354+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveDefectGap.lean": "56f44ab4c907567fcaed9f033a2360e15466951173a2c8cf9d9f2d1797ec53ba"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "527022e274d3d2019499f946c397c1d6a0c2311c81af65911e3418d47b5449ae",
+  "source_tree_manifest": "H25-positive-defect-after-strict-pruning-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2139417920261621,
+  "cpu_seconds": 1.045198,
+  "finished_jst": "2026-11-05T07:05:02.041235+09:00"
+}

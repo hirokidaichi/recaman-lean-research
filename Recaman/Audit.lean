@@ -3734,3 +3734,67 @@ import Recaman
 #print axioms Recaman.UnitOneInitialSource.unit_one_initial_excluded
 #print axioms Recaman.UnitOneLastFive.unit_one_counter_last_five
 #print axioms Recaman.UnitOneLastFiveBase.unit_one_counter_int
+
+#print axioms Recaman.UnitOneEarlySourceCollision.early_source_clocks_equal
+#print axioms Recaman.UnitOneLocalFour.early_union_count
+#print axioms Recaman.UnitOneLocalFour.fourth_local_four
+#print axioms Recaman.UnitTwoInitialClock.initial_two_clock_zero
+#print axioms Recaman.UnitTwoLocalFive.fourth_two_local_five
+#print axioms Recaman.UnitOneNoOldGap.unit_one_no_old_gap
+#print axioms Recaman.UnitNoOldGap.unit_two_no_old_gap
+#print axioms Recaman.UnitNoOldGap.unit_no_old_gap
+#print axioms Recaman.UnitNoOldGapBase.unit_no_old_gap_int
+
+#print axioms Recaman.OldInitialKeyGap.low_mass_initial_excluded
+#print axioms Recaman.LowOldInitialSources.low_old_initial_excluded
+#print axioms Recaman.LowOldActualSix.low_old_actual_six
+#print axioms Recaman.MixedZeroSeedParity.zero_head_seed_parity
+#print axioms Recaman.MixedZeroSeedParity.mixed_old_three_circle
+#print axioms Recaman.MixedZeroActualCircle.actual_mixed_old_three_circle
+#print axioms Recaman.BoundedOldSourceFloor.small_head_seed_excluded
+#print axioms Recaman.BoundedOldActualFree.bounded_old_head_free_four
+#print axioms Recaman.MassThreeSeedGap.mass_three_seed_gap
+#print axioms Recaman.MassThreeSeedGapBase.mass_three_seed_int
+#print axioms Recaman.LargeSeedGap.large_seed_gap
+#print axioms Recaman.LargeSeedGapBase.large_seed_int
+#print axioms Recaman.MassOneFullGap.mass_one_full_gap
+#print axioms Recaman.MassOneFullGapBase.mass_one_gap_int
+
+#print axioms Recaman.MassTwoFourGap.mass_two_four_gap
+#print axioms Recaman.MassTwoFourGapBase.mass_two_four_int
+
+#print axioms Recaman.OldInitialClockOrder.initial_clock_before_old
+#print axioms Recaman.MassTwoBandBudget.mass_two_all_old_last_budget
+#print axioms Recaman.MassTwoFullGap.mass_two_full_gap
+#print axioms Recaman.MassTwoFullGapBase.mass_two_gap_int
+
+#print axioms Recaman.ZeroHeadOldTargetGap.zero_head_old_target_gap
+#print axioms Recaman.ZeroHeadOldTargetGapBase.zero_head_target_gap_int
+#print axioms Recaman.MixedSeedParity.mixed_seed_parity
+#print axioms Recaman.MixedSeedParity.mixed_old_two_circle
+#print axioms Recaman.MixedActualCircle.actual_mixed_old_two_circle
+#print axioms Recaman.UnitDefectInitialSource.unit_defect_initial_excluded
+#print axioms Recaman.UnitDefectLocalFour.fourth_local_four
+#print axioms Recaman.UnitDefectCost.mass_free_charge
+#print axioms Recaman.PositiveHeadCut.positive_head_cut
+#print axioms Recaman.PositiveDefectGap.positive_counter_excluded
+#print axioms Recaman.PositiveDefectGapBase.positive_defect_gap_int
+#print axioms Recaman.DoubleDefectSupport.double_defect_local_support
+#print axioms Recaman.DoubleDefectActualFive.double_defect_actual_five
+#print axioms Recaman.MixedThirdActualCircle.mixed_old_three_circle
+#print axioms Recaman.MixedThirdActualCircle.actual_mixed_old_three_circle
+#print axioms Recaman.OldTargetFreeAccounting.old_target_free_charge
+#print axioms Recaman.OldTargetFreeAccounting.old_target_free_charge_int
+#print axioms Recaman.OldTargetFreeAccounting.unit_old_target_gap
+#print axioms Recaman.PrimitiveOldTargetCut.primitive_old_target_A_cut
+#print axioms Recaman.PrimitiveOldTargetCut.actual_old_target_A_cut
+#print axioms Recaman.PrimitiveOldTargetCut.actual_old_target_square_budget
+#print axioms Recaman.FourRunOldCounterBand.four_run_old_counter_band
+#print axioms Recaman.FourRunOldCounterBandBase.four_run_old_counter_band_int
+#print axioms Recaman.GenuineFourCross.four_cross_twenty_four
+#print axioms Recaman.GenuineFourOldCounterBand.genuine_four_old_counter_band
+#print axioms Recaman.GenuineFourOldCounterBandBase.genuine_four_old_counter_band_int
+#print axioms Recaman.GenuineFourCross.head_A_cross_lower
+#print axioms Recaman.TopGapCounter.top_gap_counter_excluded
+#print axioms Recaman.TopGapCounter.top_gap_smaller_band
+#print axioms Recaman.TopGapCounterBase.top_gap_smaller_band_int

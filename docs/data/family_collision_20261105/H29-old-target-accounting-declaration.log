@@ -1,0 +1,25 @@
+Recaman/OldTargetFreeAccounting.lean:51:74: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  i ≥ 0
+  i + k ≤ 0
+  h ≥ 0
+  g ≥ 0
+  g - h ≥ 1
+  f ≥ 0
+  d ≥ 0
+  d - f ≥ 1
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - i - k ≥ 0
+where
+ a := ↑t
+ b := ↑C
+ c := ↑(cN (fun i => e (p + ↑i) = false) 0 n)
+ d := ↑(cN (fun i => e (p + ↑i) = false) 0 (n + B))
+ f := ↑(cN (EndN (fun i => e (p + ↑i)) 0) 0 (n + B))
+ g := ↑(cN (fun k => e (p + ↑k) = false) n B)
+ h := ↑(cN (EndN (fun k => e (p + ↑k)) 0) n B)
+ i := ↑B
+ k := ↑j

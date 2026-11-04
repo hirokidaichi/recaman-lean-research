@@ -1,0 +1,945 @@
+Recaman/UnitOneLocalFour.lean:15:12: error(lean.unknownIdentifier): Unknown identifier `Recaman.AdjacentRunSupply.constant_run_root_unique`
+Recaman/UnitOneLocalFour.lean:12:61: error: unsolved goals
+b : Bool
+N : Nat
+x : List Bool
+i k q : Nat
+hq : 1 ≤ q
+hqN : q ≤ N
+hmq : mass (List.replicate q b ++ x) + ↑i = 1
+hkq : runKey (List.replicate q b ++ x) = -2
+r : Nat
+hr : 1 ≤ r
+hrN : r ≤ N
+hmr : mass (List.replicate r b ++ x) + ↑k = 1
+hkr : runKey (List.replicate r b ++ x) = -2
+⊢ i = k
+Recaman/UnitOneLocalFour.lean:59:4: error: Type mismatch
+  UnitOneInitialSource.unit_one_initial_excluded
+    (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+      List.replicate U true)
+    h i (j + 1) j hj
+    (Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrArg mass
+              (congrArg (HAppend.hAppend (List.replicate h false))
+                (Eq.trans
+                  (Eq.trans
+                    (congrFun'
+                      (congrArg HAppend.hAppend
+                        (Eq.trans
+                          (Eq.trans
+                            (congrFun'
+                              (congrArg HAppend.hAppend
+                                (List.append_assoc (List.replicate M true) (List.replicate m false)
+                                  (List.replicate L true)))
+                              (List.replicate s false))
+                            (List.append_assoc (List.replicate M true) (List.replicate m false ++ List.replicate L true)
+                              (List.replicate s false)))
+                          (congrArg (HAppend.hAppend (List.replicate M true))
+                            (List.append_assoc (List.replicate m false) (List.replicate L true)
+                              (List.replicate s false)))))
+                      (List.replicate U true))
+                    (List.append_assoc (List.replicate M true)
+                      (List.replicate m false ++ (List.replicate L true ++ List.replicate s false))
+                      (List.replicate U true)))
+                  (congrArg (HAppend.hAppend (List.replicate M true))
+                    (Eq.trans
+                      (List.append_assoc (List.replicate m false) (List.replicate L true ++ List.replicate s false)
+                        (List.replicate U true))
+                      (congrArg (HAppend.hAppend (List.replicate m false))
+                        (List.append_assoc (List.replicate L true) (List.replicate s false)
+                          (List.replicate U true)))))))))
+          0))
+      (Eq.mp
+        (congrFun'
+          (congrArg Eq
+            (congrArg mass
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg HAppend.hAppend
+                      (Eq.trans
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HAppend.hAppend
+                              (Eq.trans
+                                (Eq.trans
+                                  (congrFun'
+                                    (congrArg HAppend.hAppend
+                                      (List.append_assoc (List.replicate h false) (List.replicate M true)
+                                        (List.replicate m false)))
+                                    (List.replicate L true))
+                                  (List.append_assoc (List.replicate h false)
+                                    (List.replicate M true ++ List.replicate m false) (List.replicate L true)))
+                                (congrArg (HAppend.hAppend (List.replicate h false))
+                                  (List.append_assoc (List.replicate M true) (List.replicate m false)
+                                    (List.replicate L true)))))
+                            (List.replicate s false))
+                          (List.append_assoc (List.replicate h false)
+                            (List.replicate M true ++ (List.replicate m false ++ List.replicate L true))
+                            (List.replicate s false)))
+                        (congrArg (HAppend.hAppend (List.replicate h false))
+                          (Eq.trans
+                            (List.append_assoc (List.replicate M true) (List.replicate m false ++ List.replicate L true)
+                              (List.replicate s false))
+                            (congrArg (HAppend.hAppend (List.replicate M true))
+                              (List.append_assoc (List.replicate m false) (List.replicate L true)
+                                (List.replicate s false)))))))
+                    (List.replicate U true))
+                  (List.append_assoc (List.replicate h false)
+                    (List.replicate M true ++
+                      (List.replicate m false ++ (List.replicate L true ++ List.replicate s false)))
+                    (List.replicate U true)))
+                (congrArg (HAppend.hAppend (List.replicate h false))
+                  (Eq.trans
+                    (List.append_assoc (List.replicate M true)
+                      (List.replicate m false ++ (List.replicate L true ++ List.replicate s false))
+                      (List.replicate U true))
+                    (congrArg (HAppend.hAppend (List.replicate M true))
+                      (Eq.trans
+                        (List.append_assoc (List.replicate m false) (List.replicate L true ++ List.replicate s false)
+                          (List.replicate U true))
+                        (congrArg (HAppend.hAppend (List.replicate m false))
+                          (List.append_assoc (List.replicate L true) (List.replicate s false)
+                            (List.replicate U true))))))))))
+          0)
+        hmz))
+    (Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrArg mass
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg HAppend.hAppend
+                      (Eq.trans
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HAppend.hAppend
+                              (Eq.trans
+                                (Eq.trans
+                                  (congrFun'
+                                    (congrArg HAppend.hAppend
+                                      (congrArg (HAppend.hAppend [true])
+                                        (congrArg (HAppend.hAppend (List.replicate h false))
+                                          (Eq.trans
+                                            (Eq.trans
+                                              (congrFun'
+                                                (congrArg HAppend.hAppend
+                                                  (Eq.trans
+                                                    (Eq.trans
+                                                      (congrFun'
+                                                        (congrArg HAppend.hAppend
+                                                          (List.append_assoc (List.replicate M true)
+                                                            (List.replicate m false) (List.replicate L true)))
+                                                        (List.replicate s false))
+                                                      (List.append_assoc (List.replicate M true)
+                                                        (List.replicate m false ++ List.replicate L true)
+                                                        (List.replicate s false)))
+                                                    (congrArg (HAppend.hAppend (List.replicate M true))
+                                                      (List.append_assoc (List.replicate m false)
+                                                        (List.replicate L true) (List.replicate s false)))))
+                                                (List.replicate U true))
+                                              (List.append_assoc (List.replicate M true)
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false))
+                                                (List.replicate U true)))
+                                            (congrArg (HAppend.hAppend (List.replicate M true))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate m false)
+                                                  (List.replicate L true ++ List.replicate s false)
+                                                  (List.replicate U true))
+                                                (congrArg (HAppend.hAppend (List.replicate m false))
+                                                  (List.append_assoc (List.replicate L true) (List.replicate s false)
+                                                    (List.replicate U true)))))))))
+                                    (List.replicate 1 false))
+                                  (List.append_assoc [true]
+                                    (List.replicate h false ++
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++
+                                            (List.replicate s false ++ List.replicate U true)))))
+                                    (List.replicate 1 false)))
+                                (congrArg (HAppend.hAppend [true])
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate h false)
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))
+                                      (List.replicate 1 false))
+                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate M true)
+                                          (List.replicate m false ++
+                                            (List.replicate L true ++
+                                              (List.replicate s false ++ List.replicate U true)))
+                                          (List.replicate 1 false))
+                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate m false)
+                                              (List.replicate L true ++
+                                                (List.replicate s false ++ List.replicate U true))
+                                              (List.replicate 1 false))
+                                            (congrArg (HAppend.hAppend (List.replicate m false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate L true)
+                                                  (List.replicate s false ++ List.replicate U true)
+                                                  (List.replicate 1 false))
+                                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                                  (List.append_assoc (List.replicate s false) (List.replicate U true)
+                                                    (List.replicate 1 false)))))))))))))
+                            (List.replicate (j + 1) true))
+                          (List.append_assoc [true]
+                            (List.replicate h false ++
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))))
+                            (List.replicate (j + 1) true)))
+                        (congrArg (HAppend.hAppend [true])
+                          (Eq.trans
+                            (List.append_assoc (List.replicate h false)
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))))
+                              (List.replicate (j + 1) true))
+                            (congrArg (HAppend.hAppend (List.replicate h false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate M true)
+                                  (List.replicate m false ++
+                                    (List.replicate L true ++
+                                      (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))
+                                  (List.replicate (j + 1) true))
+                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate m false)
+                                      (List.replicate L true ++
+                                        (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))
+                                      (List.replicate (j + 1) true))
+                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate L true)
+                                          (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))
+                                          (List.replicate (j + 1) true))
+                                        (congrArg (HAppend.hAppend (List.replicate L true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate s false)
+                                              (List.replicate U true ++ List.replicate 1 false)
+                                              (List.replicate (j + 1) true))
+                                            (congrArg (HAppend.hAppend (List.replicate s false))
+                                              (List.append_assoc (List.replicate U true) (List.replicate 1 false)
+                                                (List.replicate (j + 1) true)))))))))))))))
+                    (List.replicate j false))
+                  (List.append_assoc [true]
+                    (List.replicate h false ++
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))))
+                    (List.replicate j false)))
+                (congrArg (HAppend.hAppend [true])
+                  (Eq.trans
+                    (List.append_assoc (List.replicate h false)
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))))
+                      (List.replicate j false))
+                    (congrArg (HAppend.hAppend (List.replicate h false))
+                      (Eq.trans
+                        (List.append_assoc (List.replicate M true)
+                          (List.replicate m false ++
+                            (List.replicate L true ++
+                              (List.replicate s false ++
+                                (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))
+                          (List.replicate j false))
+                        (congrArg (HAppend.hAppend (List.replicate M true))
+                          (Eq.trans
+                            (List.append_assoc (List.replicate m false)
+                              (List.replicate L true ++
+                                (List.replicate s false ++
+                                  (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))
+                              (List.replicate j false))
+                            (congrArg (HAppend.hAppend (List.replicate m false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate L true)
+                                  (List.replicate s false ++
+                                    (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))
+                                  (List.replicate j false))
+                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate s false)
+                                      (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))
+                                      (List.replicate j false))
+                                    (congrArg (HAppend.hAppend (List.replicate s false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate U true)
+                                          (List.replicate 1 false ++ List.replicate (j + 1) true)
+                                          (List.replicate j false))
+                                        (congrArg (HAppend.hAppend (List.replicate U true))
+                                          (List.append_assoc (List.replicate 1 false) (List.replicate (j + 1) true)
+                                            (List.replicate j false))))))))))))))))))
+          1))
+      (Eq.mp
+        (congrFun'
+          (congrArg Eq
+            (congrArg mass
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg HAppend.hAppend
+                      (Eq.trans
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HAppend.hAppend
+                              (Eq.trans
+                                (Eq.trans
+                                  (congrFun'
+                                    (congrArg HAppend.hAppend
+                                      (Eq.trans
+                                        (Eq.trans
+                                          (congrFun'
+                                            (congrArg HAppend.hAppend
+                                              (Eq.trans
+                                                (Eq.trans
+                                                  (congrFun'
+                                                    (congrArg HAppend.hAppend
+                                                      (Eq.trans
+                                                        (Eq.trans
+                                                          (congrFun'
+                                                            (congrArg HAppend.hAppend
+                                                              (Eq.trans
+                                                                (Eq.trans
+                                                                  (congrFun'
+                                                                    (congrArg HAppend.hAppend
+                                                                      (List.append_assoc [true] (List.replicate h false)
+                                                                        (List.replicate M true)))
+                                                                    (List.replicate m false))
+                                                                  (List.append_assoc [true]
+                                                                    (List.replicate h false ++ List.replicate M true)
+                                                                    (List.replicate m false)))
+                                                                (congrArg (HAppend.hAppend [true])
+                                                                  (List.append_assoc (List.replicate h false)
+                                                                    (List.replicate M true) (List.replicate m false)))))
+                                                            (List.replicate L true))
+                                                          (List.append_assoc [true]
+                                                            (List.replicate h false ++
+                                                              (List.replicate M true ++ List.replicate m false))
+                                                            (List.replicate L true)))
+                                                        (congrArg (HAppend.hAppend [true])
+                                                          (Eq.trans
+                                                            (List.append_assoc (List.replicate h false)
+                                                              (List.replicate M true ++ List.replicate m false)
+                                                              (List.replicate L true))
+                                                            (congrArg (HAppend.hAppend (List.replicate h false))
+                                                              (List.append_assoc (List.replicate M true)
+                                                                (List.replicate m false) (List.replicate L true)))))))
+                                                    (List.replicate s false))
+                                                  (List.append_assoc [true]
+                                                    (List.replicate h false ++
+                                                      (List.replicate M true ++
+                                                        (List.replicate m false ++ List.replicate L true)))
+                                                    (List.replicate s false)))
+                                                (congrArg (HAppend.hAppend [true])
+                                                  (Eq.trans
+                                                    (List.append_assoc (List.replicate h false)
+                                                      (List.replicate M true ++
+                                                        (List.replicate m false ++ List.replicate L true))
+                                                      (List.replicate s false))
+                                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                                      (Eq.trans
+                                                        (List.append_assoc (List.replicate M true)
+                                                          (List.replicate m false ++ List.replicate L true)
+                                                          (List.replicate s false))
+                                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                                          (List.append_assoc (List.replicate m false)
+                                                            (List.replicate L true) (List.replicate s false)))))))))
+                                            (List.replicate U true))
+                                          (List.append_assoc [true]
+                                            (List.replicate h false ++
+                                              (List.replicate M true ++
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false))))
+                                            (List.replicate U true)))
+                                        (congrArg (HAppend.hAppend [true])
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate h false)
+                                              (List.replicate M true ++
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false)))
+                                              (List.replicate U true))
+                                            (congrArg (HAppend.hAppend (List.replicate h false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate M true)
+                                                  (List.replicate m false ++
+                                                    (List.replicate L true ++ List.replicate s false))
+                                                  (List.replicate U true))
+                                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                                  (Eq.trans
+                                                    (List.append_assoc (List.replicate m false)
+                                                      (List.replicate L true ++ List.replicate s false)
+                                                      (List.replicate U true))
+                                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                                      (List.append_assoc (List.replicate L true)
+                                                        (List.replicate s false) (List.replicate U true)))))))))))
+                                    (List.replicate 1 false))
+                                  (List.append_assoc [true]
+                                    (List.replicate h false ++
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++
+                                            (List.replicate s false ++ List.replicate U true)))))
+                                    (List.replicate 1 false)))
+                                (congrArg (HAppend.hAppend [true])
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate h false)
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))
+                                      (List.replicate 1 false))
+                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate M true)
+                                          (List.replicate m false ++
+                                            (List.replicate L true ++
+                                              (List.replicate s false ++ List.replicate U true)))
+                                          (List.replicate 1 false))
+                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate m false)
+                                              (List.replicate L true ++
+                                                (List.replicate s false ++ List.replicate U true))
+                                              (List.replicate 1 false))
+                                            (congrArg (HAppend.hAppend (List.replicate m false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate L true)
+                                                  (List.replicate s false ++ List.replicate U true)
+                                                  (List.replicate 1 false))
+                                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                                  (List.append_assoc (List.replicate s false) (List.replicate U true)
+                                                    (List.replicate 1 false)))))))))))))
+                            (List.replicate (j + 1) true))
+                          (List.append_assoc [true]
+                            (List.replicate h false ++
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))))
+                            (List.replicate (j + 1) true)))
+                        (congrArg (HAppend.hAppend [true])
+                          (Eq.trans
+                            (List.append_assoc (List.replicate h false)
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))))
+                              (List.replicate (j + 1) true))
+                            (congrArg (HAppend.hAppend (List.replicate h false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate M true)
+                                  (List.replicate m false ++
+                                    (List.replicate L true ++
+                                      (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))
+                                  (List.replicate (j + 1) true))
+                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate m false)
+                                      (List.replicate L true ++
+                                        (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))
+                                      (List.replicate (j + 1) true))
+                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate L true)
+                                          (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))
+                                          (List.replicate (j + 1) true))
+                                        (congrArg (HAppend.hAppend (List.replicate L true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate s false)
+                                              (List.replicate U true ++ List.replicate 1 false)
+                                              (List.replicate (j + 1) true))
+                                            (congrArg (HAppend.hAppend (List.replicate s false))
+                                              (List.append_assoc (List.replicate U true) (List.replicate 1 false)
+                                                (List.replicate (j + 1) true)))))))))))))))
+                    (List.replicate j false))
+                  (List.append_assoc [true]
+                    (List.replicate h false ++
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))))
+                    (List.replicate j false)))
+                (congrArg (HAppend.hAppend [true])
+                  (Eq.trans
+                    (List.append_assoc (List.replicate h false)
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))))
+                      (List.replicate j false))
+                    (congrArg (HAppend.hAppend (List.replicate h false))
+                      (Eq.trans
+                        (List.append_assoc (List.replicate M true)
+                          (List.replicate m false ++
+                            (List.replicate L true ++
+                              (List.replicate s false ++
+                                (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))
+                          (List.replicate j false))
+                        (congrArg (HAppend.hAppend (List.replicate M true))
+                          (Eq.trans
+                            (List.append_assoc (List.replicate m false)
+                              (List.replicate L true ++
+                                (List.replicate s false ++
+                                  (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))
+                              (List.replicate j false))
+                            (congrArg (HAppend.hAppend (List.replicate m false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate L true)
+                                  (List.replicate s false ++
+                                    (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))
+                                  (List.replicate j false))
+                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate s false)
+                                      (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))
+                                      (List.replicate j false))
+                                    (congrArg (HAppend.hAppend (List.replicate s false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate U true)
+                                          (List.replicate 1 false ++ List.replicate (j + 1) true)
+                                          (List.replicate j false))
+                                        (congrArg (HAppend.hAppend (List.replicate U true))
+                                          (List.append_assoc (List.replicate 1 false) (List.replicate (j + 1) true)
+                                            (List.replicate j false))))))))))))))))))
+          1)
+        hmt))
+    (Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrArg areaW
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg HAppend.hAppend
+                      (Eq.trans
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HAppend.hAppend
+                              (Eq.trans
+                                (Eq.trans
+                                  (congrFun'
+                                    (congrArg HAppend.hAppend
+                                      (congrArg (HAppend.hAppend [true])
+                                        (congrArg (HAppend.hAppend (List.replicate h false))
+                                          (Eq.trans
+                                            (Eq.trans
+                                              (congrFun'
+                                                (congrArg HAppend.hAppend
+                                                  (Eq.trans
+                                                    (Eq.trans
+                                                      (congrFun'
+                                                        (congrArg HAppend.hAppend
+                                                          (List.append_assoc (List.replicate M true)
+                                                            (List.replicate m false) (List.replicate L true)))
+                                                        (List.replicate s false))
+                                                      (List.append_assoc (List.replicate M true)
+                                                        (List.replicate m false ++ List.replicate L true)
+                                                        (List.replicate s false)))
+                                                    (congrArg (HAppend.hAppend (List.replicate M true))
+                                                      (List.append_assoc (List.replicate m false)
+                                                        (List.replicate L true) (List.replicate s false)))))
+                                                (List.replicate U true))
+                                              (List.append_assoc (List.replicate M true)
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false))
+                                                (List.replicate U true)))
+                                            (congrArg (HAppend.hAppend (List.replicate M true))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate m false)
+                                                  (List.replicate L true ++ List.replicate s false)
+                                                  (List.replicate U true))
+                                                (congrArg (HAppend.hAppend (List.replicate m false))
+                                                  (List.append_assoc (List.replicate L true) (List.replicate s false)
+                                                    (List.replicate U true)))))))))
+                                    (List.replicate 1 false))
+                                  (List.append_assoc [true]
+                                    (List.replicate h false ++
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++
+                                            (List.replicate s false ++ List.replicate U true)))))
+                                    (List.replicate 1 false)))
+                                (congrArg (HAppend.hAppend [true])
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate h false)
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))
+                                      (List.replicate 1 false))
+                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate M true)
+                                          (List.replicate m false ++
+                                            (List.replicate L true ++
+                                              (List.replicate s false ++ List.replicate U true)))
+                                          (List.replicate 1 false))
+                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate m false)
+                                              (List.replicate L true ++
+                                                (List.replicate s false ++ List.replicate U true))
+                                              (List.replicate 1 false))
+                                            (congrArg (HAppend.hAppend (List.replicate m false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate L true)
+                                                  (List.replicate s false ++ List.replicate U true)
+                                                  (List.replicate 1 false))
+                                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                                  (List.append_assoc (List.replicate s false) (List.replicate U true)
+                                                    (List.replicate 1 false)))))))))))))
+                            (List.replicate (j + 1) true))
+                          (List.append_assoc [true]
+                            (List.replicate h false ++
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))))
+                            (List.replicate (j + 1) true)))
+                        (congrArg (HAppend.hAppend [true])
+                          (Eq.trans
+                            (List.append_assoc (List.replicate h false)
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))))
+                              (List.replicate (j + 1) true))
+                            (congrArg (HAppend.hAppend (List.replicate h false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate M true)
+                                  (List.replicate m false ++
+                                    (List.replicate L true ++
+                                      (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))
+                                  (List.replicate (j + 1) true))
+                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate m false)
+                                      (List.replicate L true ++
+                                        (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))
+                                      (List.replicate (j + 1) true))
+                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate L true)
+                                          (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))
+                                          (List.replicate (j + 1) true))
+                                        (congrArg (HAppend.hAppend (List.replicate L true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate s false)
+                                              (List.replicate U true ++ List.replicate 1 false)
+                                              (List.replicate (j + 1) true))
+                                            (congrArg (HAppend.hAppend (List.replicate s false))
+                                              (List.append_assoc (List.replicate U true) (List.replicate 1 false)
+                                                (List.replicate (j + 1) true)))))))))))))))
+                    (List.replicate j false))
+                  (List.append_assoc [true]
+                    (List.replicate h false ++
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))))
+                    (List.replicate j false)))
+                (congrArg (HAppend.hAppend [true])
+                  (Eq.trans
+                    (List.append_assoc (List.replicate h false)
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))))
+                      (List.replicate j false))
+                    (congrArg (HAppend.hAppend (List.replicate h false))
+                      (Eq.trans
+                        (List.append_assoc (List.replicate M true)
+                          (List.replicate m false ++
+                            (List.replicate L true ++
+                              (List.replicate s false ++
+                                (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))
+                          (List.replicate j false))
+                        (congrArg (HAppend.hAppend (List.replicate M true))
+                          (Eq.trans
+                            (List.append_assoc (List.replicate m false)
+                              (List.replicate L true ++
+                                (List.replicate s false ++
+                                  (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))
+                              (List.replicate j false))
+                            (congrArg (HAppend.hAppend (List.replicate m false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate L true)
+                                  (List.replicate s false ++
+                                    (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))
+                                  (List.replicate j false))
+                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate s false)
+                                      (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))
+                                      (List.replicate j false))
+                                    (congrArg (HAppend.hAppend (List.replicate s false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate U true)
+                                          (List.replicate 1 false ++ List.replicate (j + 1) true)
+                                          (List.replicate j false))
+                                        (congrArg (HAppend.hAppend (List.replicate U true))
+                                          (List.append_assoc (List.replicate 1 false) (List.replicate (j + 1) true)
+                                            (List.replicate j false))))))))))))))))))
+          0))
+      (Eq.mp
+        (congrFun'
+          (congrArg Eq
+            (congrArg areaW
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg HAppend.hAppend
+                      (Eq.trans
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HAppend.hAppend
+                              (Eq.trans
+                                (Eq.trans
+                                  (congrFun'
+                                    (congrArg HAppend.hAppend
+                                      (Eq.trans
+                                        (Eq.trans
+                                          (congrFun'
+                                            (congrArg HAppend.hAppend
+                                              (Eq.trans
+                                                (Eq.trans
+                                                  (congrFun'
+                                                    (congrArg HAppend.hAppend
+                                                      (Eq.trans
+                                                        (Eq.trans
+                                                          (congrFun'
+                                                            (congrArg HAppend.hAppend
+                                                              (Eq.trans
+                                                                (Eq.trans
+                                                                  (congrFun'
+                                                                    (congrArg HAppend.hAppend
+                                                                      (List.append_assoc [true] (List.replicate h false)
+                                                                        (List.replicate M true)))
+                                                                    (List.replicate m false))
+                                                                  (List.append_assoc [true]
+                                                                    (List.replicate h false ++ List.replicate M true)
+                                                                    (List.replicate m false)))
+                                                                (congrArg (HAppend.hAppend [true])
+                                                                  (List.append_assoc (List.replicate h false)
+                                                                    (List.replicate M true) (List.replicate m false)))))
+                                                            (List.replicate L true))
+                                                          (List.append_assoc [true]
+                                                            (List.replicate h false ++
+                                                              (List.replicate M true ++ List.replicate m false))
+                                                            (List.replicate L true)))
+                                                        (congrArg (HAppend.hAppend [true])
+                                                          (Eq.trans
+                                                            (List.append_assoc (List.replicate h false)
+                                                              (List.replicate M true ++ List.replicate m false)
+                                                              (List.replicate L true))
+                                                            (congrArg (HAppend.hAppend (List.replicate h false))
+                                                              (List.append_assoc (List.replicate M true)
+                                                                (List.replicate m false) (List.replicate L true)))))))
+                                                    (List.replicate s false))
+                                                  (List.append_assoc [true]
+                                                    (List.replicate h false ++
+                                                      (List.replicate M true ++
+                                                        (List.replicate m false ++ List.replicate L true)))
+                                                    (List.replicate s false)))
+                                                (congrArg (HAppend.hAppend [true])
+                                                  (Eq.trans
+                                                    (List.append_assoc (List.replicate h false)
+                                                      (List.replicate M true ++
+                                                        (List.replicate m false ++ List.replicate L true))
+                                                      (List.replicate s false))
+                                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                                      (Eq.trans
+                                                        (List.append_assoc (List.replicate M true)
+                                                          (List.replicate m false ++ List.replicate L true)
+                                                          (List.replicate s false))
+                                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                                          (List.append_assoc (List.replicate m false)
+                                                            (List.replicate L true) (List.replicate s false)))))))))
+                                            (List.replicate U true))
+                                          (List.append_assoc [true]
+                                            (List.replicate h false ++
+                                              (List.replicate M true ++
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false))))
+                                            (List.replicate U true)))
+                                        (congrArg (HAppend.hAppend [true])
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate h false)
+                                              (List.replicate M true ++
+                                                (List.replicate m false ++
+                                                  (List.replicate L true ++ List.replicate s false)))
+                                              (List.replicate U true))
+                                            (congrArg (HAppend.hAppend (List.replicate h false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate M true)
+                                                  (List.replicate m false ++
+                                                    (List.replicate L true ++ List.replicate s false))
+                                                  (List.replicate U true))
+                                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                                  (Eq.trans
+                                                    (List.append_assoc (List.replicate m false)
+                                                      (List.replicate L true ++ List.replicate s false)
+                                                      (List.replicate U true))
+                                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                                      (List.append_assoc (List.replicate L true)
+                                                        (List.replicate s false) (List.replicate U true)))))))))))
+                                    (List.replicate 1 false))
+                                  (List.append_assoc [true]
+                                    (List.replicate h false ++
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++
+                                            (List.replicate s false ++ List.replicate U true)))))
+                                    (List.replicate 1 false)))
+                                (congrArg (HAppend.hAppend [true])
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate h false)
+                                      (List.replicate M true ++
+                                        (List.replicate m false ++
+                                          (List.replicate L true ++ (List.replicate s false ++ List.replicate U true))))
+                                      (List.replicate 1 false))
+                                    (congrArg (HAppend.hAppend (List.replicate h false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate M true)
+                                          (List.replicate m false ++
+                                            (List.replicate L true ++
+                                              (List.replicate s false ++ List.replicate U true)))
+                                          (List.replicate 1 false))
+                                        (congrArg (HAppend.hAppend (List.replicate M true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate m false)
+                                              (List.replicate L true ++
+                                                (List.replicate s false ++ List.replicate U true))
+                                              (List.replicate 1 false))
+                                            (congrArg (HAppend.hAppend (List.replicate m false))
+                                              (Eq.trans
+                                                (List.append_assoc (List.replicate L true)
+                                                  (List.replicate s false ++ List.replicate U true)
+                                                  (List.replicate 1 false))
+                                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                                  (List.append_assoc (List.replicate s false) (List.replicate U true)
+                                                    (List.replicate 1 false)))))))))))))
+                            (List.replicate (j + 1) true))
+                          (List.append_assoc [true]
+                            (List.replicate h false ++
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))))
+                            (List.replicate (j + 1) true)))
+                        (congrArg (HAppend.hAppend [true])
+                          (Eq.trans
+                            (List.append_assoc (List.replicate h false)
+                              (List.replicate M true ++
+                                (List.replicate m false ++
+                                  (List.replicate L true ++
+                                    (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))))
+                              (List.replicate (j + 1) true))
+                            (congrArg (HAppend.hAppend (List.replicate h false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate M true)
+                                  (List.replicate m false ++
+                                    (List.replicate L true ++
+                                      (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))))
+                                  (List.replicate (j + 1) true))
+                                (congrArg (HAppend.hAppend (List.replicate M true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate m false)
+                                      (List.replicate L true ++
+                                        (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false)))
+                                      (List.replicate (j + 1) true))
+                                    (congrArg (HAppend.hAppend (List.replicate m false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate L true)
+                                          (List.replicate s false ++ (List.replicate U true ++ List.replicate 1 false))
+                                          (List.replicate (j + 1) true))
+                                        (congrArg (HAppend.hAppend (List.replicate L true))
+                                          (Eq.trans
+                                            (List.append_assoc (List.replicate s false)
+                                              (List.replicate U true ++ List.replicate 1 false)
+                                              (List.replicate (j + 1) true))
+                                            (congrArg (HAppend.hAppend (List.replicate s false))
+                                              (List.append_assoc (List.replicate U true) (List.replicate 1 false)
+                                                (List.replicate (j + 1) true)))))))))))))))
+                    (List.replicate j false))
+                  (List.append_assoc [true]
+                    (List.replicate h false ++
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))))
+                    (List.replicate j false)))
+                (congrArg (HAppend.hAppend [true])
+                  (Eq.trans
+                    (List.append_assoc (List.replicate h false)
+                      (List.replicate M true ++
+                        (List.replicate m false ++
+                          (List.replicate L true ++
+                            (List.replicate s false ++
+                              (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))))
+                      (List.replicate j false))
+                    (congrArg (HAppend.hAppend (List.replicate h false))
+                      (Eq.trans
+                        (List.append_assoc (List.replicate M true)
+                          (List.replicate m false ++
+                            (List.replicate L true ++
+                              (List.replicate s false ++
+                                (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))))
+                          (List.replicate j false))
+                        (congrArg (HAppend.hAppend (List.replicate M true))
+                          (Eq.trans
+                            (List.append_assoc (List.replicate m false)
+                              (List.replicate L true ++
+                                (List.replicate s false ++
+                                  (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))))
+                              (List.replicate j false))
+                            (congrArg (HAppend.hAppend (List.replicate m false))
+                              (Eq.trans
+                                (List.append_assoc (List.replicate L true)
+                                  (List.replicate s false ++
+                                    (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true)))
+                                  (List.replicate j false))
+                                (congrArg (HAppend.hAppend (List.replicate L true))
+                                  (Eq.trans
+                                    (List.append_assoc (List.replicate s false)
+                                      (List.replicate U true ++ (List.replicate 1 false ++ List.replicate (j + 1) true))
+                                      (List.replicate j false))
+                                    (congrArg (HAppend.hAppend (List.replicate s false))
+                                      (Eq.trans
+                                        (List.append_assoc (List.replicate U true)
+                                          (List.replicate 1 false ++ List.replicate (j + 1) true)
+                                          (List.replicate j false))
+                                        (congrArg (HAppend.hAppend (List.replicate U true))
+                                          (List.append_assoc (List.replicate 1 false) (List.replicate (j + 1) true)
+                                            (List.replicate j false))))))))))))))))))
+          0)
+        hat))
+has type
+  ¬sourceAt false h
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate 1 false)
+      i
+but is expected to have type
+  ¬sourceAt false h (List.replicate M true ++ List.replicate m false ++ x) i

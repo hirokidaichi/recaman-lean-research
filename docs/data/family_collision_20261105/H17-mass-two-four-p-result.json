@@ -1,0 +1,31 @@
+{
+  "tag": "H17-mass-two-four-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoFourGapBase.olean",
+    "Recaman/MassTwoFourGapBase.lean"
+  ],
+  "started_jst": "2026-11-05T06:41:39.354550+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoFourGapBase.lean": "fad5b445b934b9d5e7c2388c44b7f85f58a7116522f51589c3b37dfc0d3a2670"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "a77099f12c82fcfd62960b1987d55db2d93bb8a598967ff44712599dc9a79f66",
+  "source_tree_sha256": "e5c79536c5821720baac7437276099a901ce90152e2c702eeff816dd468dba9e",
+  "source_tree_manifest": "H17-mass-two-four-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a77099f12c82fcfd62960b1987d55db2d93bb8a598967ff44712599dc9a79f66",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5795580828562379,
+  "cpu_seconds": 0.43052899999999994,
+  "finished_jst": "2026-11-05T06:41:39.934060+09:00"
+}

@@ -1,0 +1,30 @@
+Recaman/PositiveHeadCounter.lean:60:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  p ≥ 0
+  o ≥ 0
+  o - p ≥ 1
+  l ≥ 1
+  k ≥ 1
+  i ≥ 0
+  i - l ≤ -1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g + l - o ≤ -1
+  c ≥ 1
+  c + e + k + l - o ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := mass z
+ l := ↑T
+ o := ↑(cN (fun u => f u = true) n (h + M + m + L + s + U + v + T))
+ p := ↑(cN (fun x => f x = true) n (H + v + T))

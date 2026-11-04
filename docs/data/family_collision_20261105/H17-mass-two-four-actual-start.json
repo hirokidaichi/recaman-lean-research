@@ -1,0 +1,25 @@
+{
+  "tag": "H17-mass-two-four-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoFourGap.olean",
+    "Recaman/MassTwoFourGap.lean"
+  ],
+  "started_jst": "2026-11-05T06:39:30.428760+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoFourGap.lean": "1fb7fd4d1d6fc5877f36b886a8ca57fcba38d8f104381bf3d86fa1233d1b9222"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "a77099f12c82fcfd62960b1987d55db2d93bb8a598967ff44712599dc9a79f66",
+  "source_tree_sha256": "4e47c94d6637fdb7765e763bc971604aefbdc5c6e49f4d5c6098a80f2e41251c",
+  "source_tree_manifest": "H17-mass-two-four-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

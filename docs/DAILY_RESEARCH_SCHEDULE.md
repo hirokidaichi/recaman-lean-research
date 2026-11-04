@@ -1,6 +1,6 @@
 # 毎日6:00〜8:00の研究スケジュール
 
-最終更新: 2026-11-04。以下を2026-10-23以降の現行ルールとする。
+最終更新: 2026-11-05。以下を2026-10-23以降の現行ルールとする。
 
 - 毎日、日本時間（Asia/Tokyo）の06:00〜08:00。このチャットで研究・反証・形式化・監査・記録を継続する。
 - 対象: `/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research`。
@@ -13,9 +13,9 @@
 
 ## 再開する問いと参照順
 
-2026-11-05の現行入口は[H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)。[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)→[family collision note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)→同カードを読む。
-E553/E556 PROVED-LEANはmass1/no-old actual counterのheadfree4/v<=2、v1 lastactual5/fullfree=j。E555はglobal上界不要のd<=2二窓source排除。E557 PROVED-PAPERは同targetの二family/clock衝突で全v no-old fullgap、未Lean・人間レビュー未。最初15分はv1第一A/第二Sの0/1二case共同source排除を元actualへ接着、進まなければv2 initial0/final2 clock衝突25分とsource個別N/共通prefix/count union監査20分へ。
-E536/E537 mass4/S1、C2v1/v2/v>=5/no-old、r3/Q初期監査を再実行しない。H08/H10/H12/H13/H21と旧同表のSTOPPEDを資源/tactic/split/import変更だけで再開しない。全old/source以前prefixと元pを保持し、Aをfreeへ置換しない。CPU探索当初0、07:45探索stop、確定journal/main通常publication/必須終了報告を継続する。未来の120分を設定で完遂扱いにしない。
+2026-11-06の現行入口は[H-20261106-01](HYPOTHESIS_CARD_2026-11-06_TOP_GAP_SAME_TARGET.md)。[11/05 DAILY](RESEARCH_HANDOFF_2026-11-05_DAILY.md)→[source collision note](RESEARCH_NOTE_2026-11-05_C1_SOURCE_COLLISION.md)→[gap13 source note](RESEARCH_NOTE_2026-11-05_TOP_GAP_SOURCE.md)→同カード。
+E568 zerohead/oldtarget全massとE575 arbitrarymixed mass1はPROVED-LEAN。E579 genuine四run oldtarget counterはj13/A30/selectedwindow108へ。E580 j13のv1/A30/C2..4/T15or16/negativeheadはPAPER、actual counted-source witness/clock接着は未Lean。最初15分は同元p j13/C4 counterからold+initialS witnessとT>=15/h>=7を内部供給し、未知tuple/free結論を新Propで入力しない。進まなければC2/C3同joint25分とnegativehead/shared-prefix機構20分へ。全old履歴と他source massを保持する。
+E438 AS式/E458 actual17は既存入力で再証明しない。狭いmass1枝をE575に追加の独立coverageと数えない。H12/H23及び旧r4/H06/H21等STOPは資源/tactic/split/import変更で再開せず、r3/Q/C2初日監査へ戻らない。CPU探索当初0、07:45探索stop、確定journal/main通常publication/必須日次報告を継続する。
 以下の初回計画と日付付き履歴は当時の記録であり、最新の入口を優先する。
 
 初回（2026-10-23）は[C1深さカード H-20261023-01](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)から始める。

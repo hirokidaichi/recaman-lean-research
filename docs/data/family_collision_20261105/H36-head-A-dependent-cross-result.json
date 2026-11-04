@@ -1,0 +1,31 @@
+{
+  "tag": "H36-head-A-dependent-cross",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+    "Recaman/GenuineFourCross.lean"
+  ],
+  "started_jst": "2026-11-05T07:35:05.167240+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GenuineFourCross.lean": "d803a127981093d4fea8650a94ffb526eb891bd7c41688932175557eb6a8fedf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "95cae424272d8eb1ca9bcc65a329f843c1112b4383e2348780c4805f2fcdac8b",
+  "source_tree_sha256": "976880ecd06959d1479efc280cbe817bb349aec9a6f5b60c0efff30fdaf437b3",
+  "source_tree_manifest": "H36-head-A-dependent-cross-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "95cae424272d8eb1ca9bcc65a329f843c1112b4383e2348780c4805f2fcdac8b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0346275828778744,
+  "cpu_seconds": 0.8677469999999999,
+  "finished_jst": "2026-11-05T07:35:06.201814+09:00"
+}

@@ -1,0 +1,39 @@
+Recaman/FourRunOldCounterBand.lean:58:12: error(lean.unknownIdentifier): Unknown identifier `Recaman.PrimitiveOldTargetCut.actual_old_target_square_budget`
+Recaman/FourRunOldCounterBand.lean:29:71: error: unsolved goals
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hC : mass (seg f t (n - t)) = ↑C
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+B : Nat := h + M + m + L + s + U + v + T
+A : Nat := cN (fun x => f x = true) n B
+F : Nat := cN (fun x => f x = true ∧ ¬EndN f 0 x) n B
+hposB : cN (EndN f 0) n B + 1 ≤ cN (fun x => f x = false) n B
+hC2 : 2 ≤ C
+hAlo : 2 * j + 3 ≤ A
+hsup : cN (EndN f 0) n B ≤ 19
+hpart : A = cN (EndN f 0) n B + F
+hbad : F < j + 1
+hF4 : 4 ≤ F
+hj16 : j ≤ 16
+hF16 : F ≤ 16
+hA35 : A ≤ 35
+⊢ 4 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ∧
+    cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ≤ 16 ∧
+      cN (fun x => f x = true) n (h + M + m + L + s + U + v + T) ≤ 35 ∧ j ≤ 16 ∧ 2 ≤ C ∧ C ≤ 17

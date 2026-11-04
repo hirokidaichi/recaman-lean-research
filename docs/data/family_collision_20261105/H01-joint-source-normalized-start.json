@@ -1,0 +1,25 @@
+{
+  "tag": "H01-joint-source-normalized",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitOneEarlySourceCollision.olean",
+    "Recaman/UnitOneEarlySourceCollision.lean"
+  ],
+  "started_jst": "2026-11-05T06:05:59.768570+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitOneEarlySourceCollision.lean": "1405a2dfbd6c5aa7f11a689b20ff6f9d1ef6b66a0e755b49542e9fee62be8326"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "838a6ebc0e2831ebf2a0bb2e38600d0cc4559ad13d05558a5880a77fa6e65ccf",
+  "source_tree_manifest": "H01-joint-source-normalized-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

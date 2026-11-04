@@ -1,0 +1,25 @@
+{
+  "tag": "H20-mass-two-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassTwoFullGapBase.olean",
+    "Recaman/MassTwoFullGapBase.lean"
+  ],
+  "started_jst": "2026-11-05T06:46:52.247597+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassTwoFullGapBase.lean": "a68ec5eb84d085d40dc6e3cef3a13e14529e29138fecbd610871c02849b13cff"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "5a583fedf1bae2a5209b1ef6885894bb499ac0fcd0733b12f01a2414020706ed",
+  "source_tree_sha256": "bfd1ffbaef62b884733ddc314a8b96b7189dff5f0d0e2ce4a77a474a0d15fcb8",
+  "source_tree_manifest": "H20-mass-two-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

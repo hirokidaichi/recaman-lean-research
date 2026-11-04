@@ -1,0 +1,30 @@
+Recaman/ZeroHeadCounterCost.lean:40:21: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  k ≥ 0
+  i ≥ 0
+  h ≥ 0
+  h - i ≥ 0
+  g ≥ 0
+  g - h ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e - g ≤ 1
+  d - k ≥ 0
+  c ≥ 0
+  c - d + k ≥ 0
+  c - d + g - l ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑K
+ d := ↑T
+ e := ↑v
+ g := ↑j
+ h := ↑(cN P n (B + v + T))
+ i := ↑(cN P (n + (B + v)) T)
+ k := ↑(cN P (n + B + v) T)
+ l := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n B)

@@ -1,0 +1,31 @@
+{
+  "tag": "H14-generic-count-cost",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ZeroHeadCounterCost.olean",
+    "Recaman/ZeroHeadCounterCost.lean"
+  ],
+  "started_jst": "2026-11-05T06:30:12.702990+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ZeroHeadCounterCost.lean": "2c673f9deef7b4d21c32739958305df44f7b8ab6577bdb7dd7ce40a509f0fd95"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "001c4efc2cb32b2461abb275dacdd528d06241cc4a3bd05a185acb34343e3164",
+  "source_tree_manifest": "H14-generic-count-cost-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4153969995677471,
+  "cpu_seconds": 0.260116,
+  "finished_jst": "2026-11-05T06:30:13.118329+09:00"
+}

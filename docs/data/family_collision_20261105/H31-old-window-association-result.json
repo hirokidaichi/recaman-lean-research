@@ -1,0 +1,31 @@
+{
+  "tag": "H31-old-window-association",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+    "Recaman/FourRunOldCounterBand.lean"
+  ],
+  "started_jst": "2026-11-05T07:23:12.146425+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourRunOldCounterBand.lean": "23f1afac70514a86a4a02c4dce6929493518029ec081e34f59f86cd60b203fed"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "82e2a0390907cd586f77bcc0e7b508b38332741acbbd7f37bee9f195f77874f0",
+  "source_tree_manifest": "H31-old-window-association-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2997961253859103,
+  "cpu_seconds": 1.1676309999999999,
+  "finished_jst": "2026-11-05T07:23:13.446167+09:00"
+}

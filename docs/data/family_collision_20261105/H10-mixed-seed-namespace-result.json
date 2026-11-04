@@ -1,0 +1,31 @@
+{
+  "tag": "H10-mixed-seed-namespace",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedZeroSeedParity.olean",
+    "Recaman/MixedZeroSeedParity.lean"
+  ],
+  "started_jst": "2026-11-05T06:21:36.038749+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedZeroSeedParity.lean": "7cfc524d83fc61a7936fbc63c242450d1e724033b9a73a6e9dcc5f00bdfd1623"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "a8c32f8f5301c67e99b51351c790a6f138ea991009cd33730f81e4a1b1410da6",
+  "source_tree_manifest": "H10-mixed-seed-namespace-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5889560002833605,
+  "cpu_seconds": 0.43607,
+  "finished_jst": "2026-11-05T06:21:36.627647+09:00"
+}

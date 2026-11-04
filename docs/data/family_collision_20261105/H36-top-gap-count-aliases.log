@@ -1,0 +1,44 @@
+Recaman/TopGapCounter.lean:80:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ b_1 ≤ 7
+  a_1 ≥ 0
+  0 ≤ a_1 - b_1 ≤ 9
+  0 ≤ z ≤ 7
+  u - x - y ≥ 11
+  0 ≤ r ≤ 110
+  1 ≤ q ≤ 35
+  q - r ≥ -75
+  p ≥ 1
+  0 ≤ o ≤ 30
+  0 ≤ l ≤ 31
+  1 ≤ l - o ≤ 13
+  4 ≤ k ≤ 14
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  b ≥ 1
+  b + c + d + e + g + i + p + q - r ≤ -15
+  a ≥ 0
+  a + q ≥ 0
+where
+ a := ↑t
+ b := ↑L
+ c := ↑U
+ d := ↑T
+ e := ↑m
+ g := ↑s
+ i := ↑v
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ o := ↑(cN (fun x => f x = false) n (h + M + m + L + s + U + v + T))
+ p := ↑h
+ q := ↑(n - t)
+ r := ↑(n + h + M + m + L + s + U + v + T + j - t)
+ u := (↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T)) - (↑j + 1)) ^ 2
+ x := ↑C ^ 2
+ y := (↑j + 1) ^ 2
+ z := ↑(cN (EndN f 0) (n + h + M + m + L + s + U + v) T)
+ a_1 := ↑(cN (EndN f 0) n (H + (v + T)))
+ b_1 := ↑(cN (EndN f 0) (n + (H + v)) T)

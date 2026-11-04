@@ -1,0 +1,31 @@
+{
+  "tag": "H35-retained-cross-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBandBase.olean",
+    "Recaman/GenuineFourOldCounterBandBase.lean"
+  ],
+  "started_jst": "2026-11-05T07:34:05.573750+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GenuineFourOldCounterBandBase.lean": "58c3a7808bdb06e79e8df28e8e5f864a2d0648674da56ab61bc79174bf749d20"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "992d5c768103cc5703b7ab8f8e6c4b508a2efc59a089b1041fd50d5fee9be7a1",
+  "source_tree_sha256": "95003fb2574e43edecdafb0e456e47c6b8a1e17210f256ed158eed61e5b69798",
+  "source_tree_manifest": "H35-retained-cross-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "992d5c768103cc5703b7ab8f8e6c4b508a2efc59a089b1041fd50d5fee9be7a1",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5841022077947855,
+  "cpu_seconds": 0.414456,
+  "finished_jst": "2026-11-05T07:34:06.157779+09:00"
+}

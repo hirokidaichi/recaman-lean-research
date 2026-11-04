@@ -1,0 +1,31 @@
+{
+  "tag": "H13-source-rectangle",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/BoundedOldSourceFloor.olean",
+    "Recaman/BoundedOldSourceFloor.lean"
+  ],
+  "started_jst": "2026-11-05T06:28:03.338786+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/BoundedOldSourceFloor.lean": "1bb4eee8982528b7948bc0cbc522dedaef4db374044920c67626e51683c4e60f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "35c016096a547906bf3ad4566df561bf8259c348f0f1448e492cd717982175d7",
+  "source_tree_manifest": "H13-source-rectangle-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5767692080698907,
+  "cpu_seconds": 0.403752,
+  "finished_jst": "2026-11-05T06:28:03.915495+09:00"
+}

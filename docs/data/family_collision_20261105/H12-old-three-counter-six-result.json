@@ -1,0 +1,31 @@
+{
+  "tag": "H12-old-three-counter-six",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassThreeCounterSix.olean",
+    "Recaman/MassThreeCounterSix.lean"
+  ],
+  "started_jst": "2026-11-05T06:24:04.300610+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassThreeCounterSix.lean": "fa4ea6fa4363b827e6d4fa1e5a33234cc7d53b932754ea23c1671836387a6499"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "e91b4b8532e80edc53b5e6f9b61ec161bdbc21490a73e09816c3f40816f36610",
+  "source_tree_manifest": "H12-old-three-counter-six-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.8192622503265738,
+  "cpu_seconds": 1.674397,
+  "finished_jst": "2026-11-05T06:24:06.119813+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H24-positive-head-strict-cut-namespace",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveHeadCut.olean",
+    "Recaman/PositiveHeadCut.lean"
+  ],
+  "started_jst": "2026-11-05T07:02:59.563259+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveHeadCut.lean": "b6edae6a121e44ac76599cd1a7f0034f91569087fde7e0c6eadd70ee64adeb4f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "79b386563beac626bd6e57302aa992625fe7ea90fe8b510c85205f81a0d0c4ae",
+  "source_tree_manifest": "H24-positive-head-strict-cut-namespace-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,35 @@
+Recaman/PositiveHeadCut.lean:44:66: error(lean.unknownIdentifier): Unknown identifier `cntF_A`
+Recaman/PositiveHeadCut.lean:44:92: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  r ≥ 0
+  q ≥ 0
+  p ≥ 0
+  p + q + r ≥ 1
+  o ≥ 1
+  l ≥ 5
+  k ≥ 0
+  k - l ≤ -1
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c - d + e - g + i - o ≥ 1
+  c - l ≤ 1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑M
+ d := ↑m
+ e := ↑L
+ g := ↑s
+ i := ↑U
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑T
+ o := mass z
+ p := ↑(cntF (List.replicate M true))
+ q := ↑(cntF (List.replicate L true))
+ r := ↑(cntF (List.replicate U true))

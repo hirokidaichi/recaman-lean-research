@@ -1,0 +1,8 @@
+Recaman/MixedZeroActualCircle.lean:34:14: error(lean.unknownIdentifier): Unknown constant `Nat.cast_add`
+Recaman/MixedZeroActualCircle.lean:34:27: error(lean.unknownIdentifier): Unknown constant `Nat.cast_one`
+Recaman/MixedZeroActualCircle.lean:34:2: error: Type mismatch: After simplification, term
+  MixedZeroSeedParity.mixed_old_three_circle (List.drop r w) z hrw hD hmz v (j + 1) hseedKey hk2
+ has type
+  And (↑(j + 1) % 2 = 0) (↑(j + 1) ^ 2 = 4 * (↑(cntF z) + ↑v) ∧ runKey (List.drop r w) = -2 ∧ (↑(cntF z) + ↑v) % 2 = 0)
+but is expected to have type
+  And ((↑j + 1) % 2 = 0) ((↑j + 1) ^ 2 = 4 * (↑(cntF z) + ↑v) ∧ runKey (List.drop r w) = -2 ∧ (↑(cntF z) + ↑v) % 2 = 0)

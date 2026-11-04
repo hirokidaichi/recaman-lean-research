@@ -1,0 +1,31 @@
+{
+  "tag": "H22-mixed-seed-parity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedSeedParity.olean",
+    "Recaman/MixedSeedParity.lean"
+  ],
+  "started_jst": "2026-11-05T06:57:32.585869+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedSeedParity.lean": "33fcd974d53957d50ad4e0d2f799ec894a650594bea3e428ad0a098354f72ec2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "9ec8ac33ae86264cc6bec4d2a6e3c77f3d42c522b9d8926c064ff20b5f876c9a",
+  "source_tree_manifest": "H22-mixed-seed-parity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6426590415649116,
+  "cpu_seconds": 0.458569,
+  "finished_jst": "2026-11-05T06:57:33.228477+09:00"
+}

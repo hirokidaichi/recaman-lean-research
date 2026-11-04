@@ -1,0 +1,25 @@
+{
+  "tag": "H16-mass-one-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MassOneFullGapBase.olean",
+    "Recaman/MassOneFullGapBase.lean"
+  ],
+  "started_jst": "2026-11-05T06:35:38.612316+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MassOneFullGapBase.lean": "ae4d70eb86f6c662780dc9840ea7a5782211416bc5f6441e68592efb6429fa4b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "bffb323437088a04dcb83ae3859b7e0aa1ad90f9b1d006ac6a12872167eed7b0",
+  "source_tree_manifest": "H16-mass-one-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

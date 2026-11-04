@@ -1,0 +1,137 @@
+Recaman/PositiveHeadGap.lean:47:66: error(lean.unknownIdentifier): Unknown identifier `cntF_A`
+Recaman/PositiveHeadGap.lean:47:92: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  r ≥ 0
+  q ≥ 0
+  p ≥ 0
+  p + q + r ≥ 1
+  o ≥ 1
+  l ≥ 5
+  k ≥ 0
+  k - l ≤ -1
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c - d + e - g + i - o ≥ 1
+  c - l ≤ 1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑M
+ d := ↑m
+ e := ↑L
+ g := ↑s
+ i := ↑U
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑T
+ o := mass z
+ p := ↑(cntF (List.replicate M true))
+ q := ↑(cntF (List.replicate L true))
+ r := ↑(cntF (List.replicate U true))
+Recaman/PositiveHeadGap.lean:89:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b_1 ≥ 0
+  a_1 ≥ 0
+  a_1 - b_1 ≤ 0
+  y ≥ 0
+  y + a_1 ≥ 5
+  x ≥ 0
+  x - y ≥ 0
+  u ≥ 0
+  u - y - a_1 ≤ -1
+  r ≥ 0
+  r - x + y ≤ 0
+  r - x + y + b_1 ≤ 0
+  0 ≤ q ≤ 5
+  0 ≤ p ≤ 4
+  0 ≤ o ≤ 4
+  l ≥ 0
+  k ≥ 0
+  k - l ≤ -1
+  i ≥ 0
+  i - y - a_1 ≤ -1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - l ≤ -1
+  d + g - l + y + a_1 ≥ -1
+  c ≥ 1
+  c + e - k ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑(cntF z)
+ l := ↑(cN (fun x => f x = true) n H)
+ o := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    T)
+ p := ↑(rayCount (z ++ List.replicate v false) T)
+ q := ↑(rayCount (w ++ (z ++ List.replicate v false)) T)
+ r := ↑(cN P (n + H) v)
+ u := ↑(cN P n (H + v + T))
+ x := ↑(cN P n (H + (v + T)))
+ y := ↑(cN P (n + (H + v)) T)
+ a_1 := ↑(cN (EndN f 0) (n + (H + v)) T)
+ b_1 := ↑K
+Recaman/PositiveHeadGap.lean:165:4: error: 'change' tactic failed, pattern
+  4 * K - 2 * S ^ 2 + 4 * S + 4 * ↑v * (1 + ↑μ) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+is not definitionally equal to target
+  0 + (4 * K - 2 * S ^ 2) + 4 * 1 * (↑h + ↑m + ↑s) + 4 * ↑v * (1 + ↑μ) - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+Recaman/PositiveHeadGap.lean:46:104: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:53:4: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:63:83: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:64:8: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:65:24: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:71:30: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:76:94: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:79:4: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:94:65: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:95:18: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:97:41: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:97:52: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:102:35: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:103:35: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:105:67: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:109:6: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:115:56: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:117:10: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:117:68: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:124:6: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:125:58: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:127:55: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:127:87: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:128:49: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:129:25: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:136:76: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:138:53: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:144:53: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:144:91: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:145:53: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:145:81: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:147:6: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:151:6: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:157:48: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:158:36: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:159:33: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:160:58: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:161:33: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:162:56: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:162:88: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:163:45: error: (kernel) excessive memory consumption detected
+Recaman/PositiveHeadGap.lean:14:8: error: (kernel) excessive memory consumption detected

@@ -1,0 +1,26 @@
+Recaman/OldTargetFreeAccounting.lean:33:78: error: unexpected token 'open'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_cbv_simproc', 'builtin_cbv_simproc_decl', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'cbv_simproc', 'cbv_simproc_decl', 'class', 'coinductive', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'register_try?_tactic', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'
+Recaman/OldTargetFreeAccounting.lean:51:74: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  i ≥ 0
+  i + k ≤ 0
+  h ≥ 0
+  g ≥ 0
+  g - h ≥ 1
+  f ≥ 0
+  d ≥ 0
+  d - f ≥ 1
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - i - k ≥ 0
+where
+ a := ↑t
+ b := ↑C
+ c := ↑(cN (fun i => e (p + ↑i) = false) 0 n)
+ d := ↑(cN (fun i => e (p + ↑i) = false) 0 (n + B))
+ f := ↑(cN (EndN (fun i => e (p + ↑i)) 0) 0 (n + B))
+ g := ↑(cN (fun k => e (p + ↑k) = false) n B)
+ h := ↑(cN (EndN (fun k => e (p + ↑k)) 0) n B)
+ i := ↑B
+ k := ↑j

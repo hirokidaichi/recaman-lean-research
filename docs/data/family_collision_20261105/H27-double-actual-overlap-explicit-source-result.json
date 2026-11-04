@@ -1,0 +1,31 @@
+{
+  "tag": "H27-double-actual-overlap-explicit-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DoubleDefectActualFive.olean",
+    "Recaman/DoubleDefectActualFive.lean"
+  ],
+  "started_jst": "2026-11-05T07:10:20.936446+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DoubleDefectActualFive.lean": "155460b6f83650d02feaa5090094571a23885c396889dfbb47cf487e5ceeff3b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "10b8c8e1c2d277c77e7e35a4a481ad132d84f3ba0483874bf73922ac9bf298bf",
+  "source_tree_manifest": "H27-double-actual-overlap-explicit-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0392327499575913,
+  "cpu_seconds": 0.863572,
+  "finished_jst": "2026-11-05T07:10:21.975605+09:00"
+}

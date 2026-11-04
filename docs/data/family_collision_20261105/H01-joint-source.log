@@ -1,0 +1,24 @@
+Recaman/UnitOneEarlySourceCollision.lean:71:105: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  n ≥ 1
+  l ≥ 1
+  k ≤ 3
+  g ≥ 1
+  f ≤ 0
+  e ≥ 0
+  e - n ≥ 1
+  c ≥ 1
+  b ≥ 2
+  b - c ≥ -2
+  a ≥ 1
+where
+ a := ↑(cntF x)
+ b := ↑j
+ c := ↑M
+ e := ↑m
+ f := mass (List.replicate q false ++ x)
+ g := ↑(cntF y)
+ k := 4 * ↑M * ↑d
+ l := ↑M * ↑d
+ n := ↑(m - q)
+Recaman/UnitOneEarlySourceCollision.lean:128:62: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`

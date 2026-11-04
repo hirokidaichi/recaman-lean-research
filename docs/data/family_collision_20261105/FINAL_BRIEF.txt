@@ -1,0 +1,46 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-05。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+
+- **E-568 PROVED-LEAN**: 正三run zerohead/同oldtargetの全正mass・全separator長の元p actual fullgap。mass2残枝を新all-old帯budget E-566とsource floor E-562で閉じ、既存C>=3と合成。合成そのものは追加source edgeではない。
+- **E-575 PROVED-LEAN**: 任意mixed tail/全run数/全headmassで同old targetmass1は元p endpoint-positiveの会計だけでfullgap。一般式free+C>=j+2。狭いmass1 fullgap枝 E-545/E-546/E-547/E-557/E-563/E-572を独立C1 coverage進展として重複計上しない。
+- **E-579 PROVED-LEAN**: 非zeroheadも含むgenuine四run/同oldtarget actualcounterはfree4..13/A30/j13/selectedtargetmass2..14/S30/tail60/oldsuffix35/選んだP2window108以下。j14 actual saturationをhead-A crossで排除。全oldprefix・他supplier massは無制限で反例不在ではない。広い空A区間許可域は E-577 のj16/A35/window128。
+- **E-580 PROVED-PAPER**: 残るj13ならA30/free13/head10/last7/v1/C2..4/T15or16、headmass負。actual source witness/clock接着とC4四tupleは未Lean・人間レビュー未。
+
+独立source入力: E-558 early二family共同clock、E-560 low-old/initialS排除、E-561/E-569/E-574 mixedhead circle、E-565 任意mixed old/initial時計順序、E-570 effective-defect local4、E-571 actual mass charge、E-573 old/local共通support課金。E-576 は既存E-438の三run mass-area式のmixedword拡張で、同identityの再発見を別成果と数えない。E-578 は既存E-458供給17とgenuine crossをcoupleしたcounterband。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-568 [PROVED-LEAN] zero-head-old-target-all-masses-full-gap — Recaman/ZeroHeadOldTargetGapBase.lean
+  E-566 [PROVED-LEAN] mass-two-all-old-last-band-budget — Recaman/MassTwoBandBudget.lean
+  E-562 [PROVED-LEAN] bounded-separator-old-source-actual-free-floor — Recaman/BoundedOldActualFree.lean
+  E-575 [PROVED-LEAN] old-target-actual-free-mass-accounting — Recaman/OldTargetFreeAccounting.lean
+  E-545 [PROVED-LEAN] mass-one-target-old-two-actual-free-gap — Recaman/MassOneOldTwoGap.lean
+  E-546 [PROVED-LEAN] mass-one-target-old-three-free-gap — Recaman/MassThreeSeedGapBase.lean
+  E-547 [PROVED-LEAN] mass-one-target-large-old-free-gap — Recaman/LargeSeedGapBase.lean
+  E-557 [PROVED-LEAN] mass-one-no-old-shared-family-full-gap — Recaman/UnitNoOldGapBase.lean
+  E-563 [PROVED-LEAN] mass-one-old-target-zero-head-full-gap — Recaman/MassOneFullGapBase.lean
+  E-572 [PROVED-LEAN] positive-head-unit-defect-full-gap — Recaman/PositiveDefectGapBase.lean
+  E-579 [PROVED-LEAN] top-gap-actual-saturation-counter-cut — Recaman/TopGapCounterBase.lean
+  E-577 [PROVED-LEAN] four-run-old-target-counter-window-band — Recaman/FourRunOldCounterBandBase.lean
+  E-580 [PROVED-PAPER] gap-thirteen-actual-source-saturation-necessary-band — docs/RESEARCH_NOTE_2026-11-05_TOP_GAP_SOURCE.md
+  E-558 [PROVED-LEAN] mass-one-shared-early-source-clock-collision — Recaman/UnitOneEarlySourceCollision.lean
+  E-560 [PROVED-LEAN] low-old-initial-S-shared-key-exclusion — Recaman/LowOldActualSix.lean
+  E-561 [PROVED-LEAN] mixed-zero-head-seed-parity-circle — Recaman/MixedZeroActualCircle.lean
+  E-569 [PROVED-LEAN] mixed-head-old-two-source-circle — Recaman/MixedActualCircle.lean
+  E-574 [PROVED-LEAN] arbitrary-mixed-head-old-three-circle — Recaman/MixedThirdActualCircle.lean
+  E-565 [PROVED-LEAN] old-initial-source-clock-order — Recaman/OldInitialClockOrder.lean
+  E-570 [PROVED-LEAN] unit-defect-initial-exclusion-local-four — Recaman/UnitDefectLocalFour.lean
+  E-571 [PROVED-LEAN] positive-head-actual-mass-charge-cut — Recaman/PositiveHeadCut.lean
+  E-573 [PROVED-LEAN] double-defect-old-local-overlapping-clock-budget — Recaman/DoubleDefectActualFive.lean
+  E-576 [PROVED-LEAN] primitive-old-target-sharp-A-square-cut — Recaman/PrimitiveOldTargetCut.lean
+  E-438 [PROVED-LEAN] old-target-mass-area-and-three-run-residual — Recaman/OldTargetAreaBudget.lean
+  E-578 [PROVED-LEAN] genuine-four-old-target-cross-counter-band — Recaman/GenuineFourOldCounterBandBase.lean
+  E-458 [PROVED-LEAN] adjacent-A-source-pruning-four-run-actual-seventeen — Recaman/FourRunSupplySeventeen.lean
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 788 (including Audit)
+  Import contracts: 110; audit declarations: 3610

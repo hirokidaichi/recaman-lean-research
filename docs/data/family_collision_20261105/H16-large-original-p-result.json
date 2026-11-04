@@ -1,0 +1,31 @@
+{
+  "tag": "H16-large-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LargeSeedGapBase.olean",
+    "Recaman/LargeSeedGapBase.lean"
+  ],
+  "started_jst": "2026-11-05T06:35:09.961509+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LargeSeedGapBase.lean": "68b4e7ea17b5fff8d20b93b3715cce9e4eee801e868ad6ebc5c296300c096645"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "4f81e4079b58bcd26b2278ad521362ca91ab9c72d2823b8fb81d5a8891f795b8",
+  "source_tree_manifest": "H16-large-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.637700084131211,
+  "cpu_seconds": 0.502174,
+  "finished_jst": "2026-11-05T06:35:10.599144+09:00"
+}

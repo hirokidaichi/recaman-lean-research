@@ -1,0 +1,23 @@
+{
+  "tag": "H07-fullcheck-frontier",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-05T06:14:23.230211+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "8cf0c59db1523967a3ed19ddad535012c0d422d9f778f2e6e9f3854ad01b64a4",
+  "source_tree_sha256": "485e1f84806c6023416d3e71b21a4d1cda35ca2abf2e025b1413a89eee98df1f",
+  "source_tree_manifest": "H07-fullcheck-frontier-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 11.56297391699627,
+  "cpu_seconds": 12.013261,
+  "finished_jst": "2026-11-05T06:14:34.793095+09:00"
+}

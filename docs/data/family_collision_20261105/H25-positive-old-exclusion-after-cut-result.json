@@ -1,0 +1,31 @@
+{
+  "tag": "H25-positive-old-exclusion-after-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveOldExcluded.olean",
+    "Recaman/PositiveOldExcluded.lean"
+  ],
+  "started_jst": "2026-11-05T07:04:16.777362+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveOldExcluded.lean": "65ff9cd915d595ef78358cc7803d2d1b205f28c7b0038e0ccd743c07dc716118"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "457e33e0f5babd14bdc091dfd10e9436b9a9220cb2ea57b90676ddf05437caf4",
+  "source_tree_manifest": "H25-positive-old-exclusion-after-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9907215000130236,
+  "cpu_seconds": 0.8335489999999999,
+  "finished_jst": "2026-11-05T07:04:17.768023+09:00"
+}

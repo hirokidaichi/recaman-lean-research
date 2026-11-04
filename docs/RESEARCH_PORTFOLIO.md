@@ -526,3 +526,12 @@ E536/E537はK非平方の全長source排除でmass4/S1を元p freegapへ接続�
 E546/E547 oldmass3/>=4、E554 small-separator initial source、E557 no-old全v source-family衝突はPROVED-PAPER、未Lean・人間レビュー未。H08/H10/H12/H13/H21 kernel512MB sourceはSTOPPED/packet隔離。E557はH21 global parityを入力せずinitialSをclock0へ保持する独立機構。旧r4表二回0/0等の停止は維持。全history分類/一般C1/Q/H/SL/全射性ではない。
 
 次の正本は[H-20261105-01](HYPOTHESIS_CARD_2026-11-05_SAME_TARGET_FAMILY_COLLISION.md)、[11/04 DAILY](RESEARCH_HANDOFF_2026-11-04_DAILY.md)、[joint-source note](RESEARCH_NOTE_2026-11-04_C1_FAMILY_COLLISION.md)。
+
+
+## 2026-11-05 R-20261105-01 decisions
+
+- H01 gate passed with same-target early-family joint clock; H08 target-free low-old/initial exclusion, H18 mixed old/initial clock order, H19 all-old last-band budget changed candidates. E567 closes zerohead mass2, E568 integrates zerohead/oldtarget coverage.
+- H12 R8/v2..5 count monolith kernel512MB STOPPED; isolated STOPPED_MassThreeCounterSix.lean.txt. H23 positivehead combined fullglue kernel512MB STOPPED; isolated STOPPED_PositiveHeadGap_H23.lean.txt. No cap increase/tactic/import/split retry. Independent actual source-floor and mass/free pruning changed candidates; accepted current-byte proofs are separate.
+- Accounting audit E575 subsumes all mass1 narrow fullgap branches. Their source lemmas remain useful but fullgap coverage is not additive. Defect2 narrower accepted proofs are parked VALIDATED_REDUNDANT .lean.txt, not adopted as extra research rows.
+- E438 sharpA identity/E458 actual17 already existed; E576 generalizes mixedword scope and E578/E579 couple existing inputs to actual counter/window cuts. This is not a newly discovered17 budget. E579 givesj13/A30/window108 in genuine four-run old-target counters. E580 topj13 classification is PAPER, not finite absence.
+- Next H-20261106-01 supplies counted old+initialS witnesses at the same actualtarget, retaining all originalp/oldhistory. Oldr4 E412/E427 two0/0 and all prior resourceSTOPs retain their gates. Finite necessary width does not authorize table restart or source-prefix truncation. Overall no-change counter0 is supported by new source/candidate edges; oldr4 branch2 is not reset bydate.

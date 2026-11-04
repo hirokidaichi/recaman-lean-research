@@ -1,0 +1,87 @@
+Recaman/PrimitiveOldTargetCut.lean:60:2: error: `grind` failed
+case grind.1.1
+u z : List Bool
+hu : BlockWord u
+j : Nat
+ha : areaW (u ++ z ++ List.replicate j false) = 0
+hk : runKey u + runKey z + 4 * mass u * ↑(cntF z) = -2 * (↑j + 1) ^ 2
+huKey : -2 ≤ runKey u
+hcross : -2 * ↑(cntF z) ^ 2 ≤ runKey z
+hmass : mass z = 2 * ones z - ↑z.length
+hcnt : ↑(cntF z) = ↑z.length - ones z
+hm : mass u + mass z + -↑j = 1
+h : -1 * mass u ^ 2 + -1 * (↑j + 1) ^ 2 + (ones z + -1 * ↑j + -1) ^ 2 + 2 ≤ 0
+h_1 : ↑j = ↑(cntF z)
+h_2 : ones z = ↑(cntF z)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] BlockWord u
+    [prop] areaW (u ++ z ++ List.replicate j false) = 0
+    [prop] runKey u + runKey z + 4 * mass u * ↑(cntF z) + 2 * (↑j + 1) ^ 2 = 0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] -1 * runKey z + -2 * ↑(cntF z) ^ 2 ≤ 0
+    [prop] mass z + -2 * ones z + ↑z.length = 0
+    [prop] ones z + ↑(cntF z) + -1 * ↑z.length = 0
+    [prop] mass u + mass z + -1 * ↑j + -1 = 0
+    [prop] -1 * mass u ^ 2 + -1 * (↑j + 1) ^ 2 + (ones z + -1 * ↑j + -1) ^ 2 + 2 ≤ 0
+    [prop] ↑j = ↑(cntF z)
+    [prop] ones z = ↑(cntF z)
+  [eqc] True propositions
+    [prop] BlockWord u
+    [prop] mass u = ↑j + 1
+    [prop] ones z = ↑j
+    [prop] ones z = ↑(cntF z)
+    [prop] ↑j = ↑(cntF z)
+    [prop] -1 * mass u ^ 2 + -1 * (↑j + 1) ^ 2 + (ones z + -1 * ↑j + -1) ^ 2 + 2 ≤ 0
+    [prop] -1 * runKey u + -2 ≤ 0
+    [prop] -1 * runKey z + -2 * ↑(cntF z) ^ 2 ≤ 0
+  [eqc] Equivalence classes
+    [eqc] {areaW (u ++ z ++ List.replicate j false),
+        mass z,
+        0,
+        mass z + -2 * ones z + ↑z.length,
+        ones z + ↑(cntF z) + -1 * ↑z.length,
+        mass u + mass z + -1 * ↑j + -1,
+        runKey u + runKey z + 4 * mass u * ↑(cntF z) + 2 * (↑j + 1) ^ 2}
+    [eqc] others
+      [eqc] {mass u, ↑j + 1}
+      [eqc] {ones z, ↑j, ↑(cntF z)}
+      [eqc] {-1 * mass u ^ 2, -1 * (↑j + 1) ^ 2}
+      [eqc] {mass u ^ 2, (↑j + 1) ^ 2}
+      [eqc] {ones z ^ 2, ↑j ^ 2, ↑(cntF z) ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: ↑j = ↑(cntF z)
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑(cntF z) ^ 2
+          and
+            ↑j ^ 2
+    [cases] [1/2]: ones z = ↑(cntF z)
+      [cases] source: Model-based theory combination at argument #4 of
+            ones z ^ 2
+          and
+            ↑(cntF z) ^ 2
+  [cutsat] Assignment satisfying linear constraints
+    [assign] j := 0
+    [assign] areaW (u ++ z ++ List.replicate j false) := 0
+    [assign] cntF z := 0
+    [assign] mass u := 1
+    [assign] mass z := 0
+    [assign] ones z := 0
+    [assign] runKey u := -2
+    [assign] runKey z := 0
+    [assign] z.length := 0
+    [assign] 「mass u ^ 2」 := 1
+    [assign] 「ones z ^ 2」 := 0
+    [assign] 「↑j ^ 2」 := 0
+    [assign] 「↑(cntF z) ^ 2」 := 0
+    [assign] 「(↑j + 1) ^ 2」 := 1
+    [assign] 「(ones z + -1 * ↑j + -1) ^ 2」 := 1
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 3 * ↑z.length ^ 2 + 2 * runKey u + 2 * runKey z + 8 * ↑z.length + 4 = 0
+      [_] ↑j + -1 * mass u + -2 * ones z + ↑z.length + 1 = 0
+      [_] mass u + 3 * ones z + -2 * ↑z.length + -1 = 0
+      [_] ↑(cntF z) + ones z + -1 * ↑z.length = 0
+      [_] mass z + -2 * ones z + ↑z.length = 0
+      [_] 2 * ones z + -1 * ↑z.length = 0

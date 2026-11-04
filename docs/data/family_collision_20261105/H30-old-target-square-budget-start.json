@@ -1,0 +1,25 @@
+{
+  "tag": "H30-old-target-square-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrimitiveOldTargetCut.olean",
+    "Recaman/PrimitiveOldTargetCut.lean"
+  ],
+  "started_jst": "2026-11-05T07:20:41.812587+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrimitiveOldTargetCut.lean": "e69bcca4ef5a2403f0ba648c4bfd9eeb2f885680c067bc73f0a9924d077420e0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "d7e2e858e94786d60357c55ed308eeeb78a79446dff2aed762230d9c808267c5",
+  "source_tree_manifest": "H30-old-target-square-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

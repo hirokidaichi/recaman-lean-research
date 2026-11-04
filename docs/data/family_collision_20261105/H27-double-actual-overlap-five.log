@@ -1,0 +1,68 @@
+Recaman/DoubleDefectActualFive.lean:95:42: error: don't know how to synthesize placeholder for argument `x`
+context:
+f : Nat → Bool
+n t h M m L s U v T j μ : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hh : 1 ≤ h
+hM : 1 ≤ M
+hm : 1 ≤ m
+hL : 1 ≤ L
+hs : 1 ≤ s
+hU : 1 ≤ U
+hμ : 1 ≤ μ
+hv : v = μ + 2
+hheadMass : M + L + U = h + m + s + μ
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hC : mass (List.drop t w) = 1
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+hb : T = j + 2 ∧ 5 ≤ j + 1 ∧ M ≤ j + 2
+H : Nat := ⋯
+z : List Bool := ⋯
+P : Nat → Prop := ⋯
+Q : Nat → Prop := ⋯
+A : Nat → Prop := ⋯
+hword :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hzeq :
+  z =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = ↑μ
+hu : BlockWord (List.drop t w)
+hu1 : List.drop t w = [true]
+hp :
+  mass (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 1 ∧
+    areaW (List.drop t w ++ z ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hsupport :
+  ∀ (i : Nat),
+    ThreeNonsuppliedData.localSupply
+          (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+                  List.replicate s false ++
+                List.replicate U true ++
+              List.replicate v false ++
+            List.replicate i true) =
+        true →
+      i ≤ 2 ∨
+        sourceAt true L (List.replicate s false ++ List.replicate U true ++ List.replicate v false) i ∨
+          sourceAt false s (List.replicate U true ++ List.replicate v false) i
+hmono : cN (fun i => EndN f 0 (n + H + v + i)) 0 T ≤ cN (fun i => i ≤ 2 ∨ Q i ∨ A i) 0 T
+h3 : cN (fun i => i ≤ 2) 0 T ≤ 3
+⊢ List Bool
+Recaman/DoubleDefectActualFive.lean:95:9: error: failed to infer `have` declaration type

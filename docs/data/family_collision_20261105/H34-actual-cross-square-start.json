@@ -1,0 +1,25 @@
+{
+  "tag": "H34-actual-cross-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+    "Recaman/GenuineFourCross.lean"
+  ],
+  "started_jst": "2026-11-05T07:28:42.409281+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GenuineFourCross.lean": "46ba410c836dd1e02490622401b9750e4eac5be4c3279dffd51921bebc9eaeb0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "992d5c768103cc5703b7ab8f8e6c4b508a2efc59a089b1041fd50d5fee9be7a1",
+  "source_tree_sha256": "d33ae0fa1031d8741dda447c2e432d21f18c2f9c5de2563c106ddaf0af65d634",
+  "source_tree_manifest": "H34-actual-cross-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

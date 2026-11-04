@@ -1,0 +1,6 @@
+Recaman/LowOldActualSix.lean:53:4: error: Type mismatch: After simplification, term
+  hkey
+ has type
+  @Eq Int (runKey (List.drop r w ++ (z ++ List.replicate v false))) (-2 * (↑0 + 1) ^ 2)
+but is expected to have type
+  @Eq Int (runKey (List.drop r w ++ (z ++ List.replicate v false))) (-2)

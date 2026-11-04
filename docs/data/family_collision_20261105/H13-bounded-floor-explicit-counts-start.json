@@ -1,0 +1,25 @@
+{
+  "tag": "H13-bounded-floor-explicit-counts",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/BoundedOldActualFree.olean",
+    "Recaman/BoundedOldActualFree.lean"
+  ],
+  "started_jst": "2026-11-05T06:29:04.961390+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/BoundedOldActualFree.lean": "76ac943caa9a5b28c38fc761cf27722e5257b9108782da5a3ece42416bd66cb4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "b7671978e86da3d4971bfca73404f3f7c3c009ce288b2cfcd22f6aca2a3d68e5",
+  "source_tree_manifest": "H13-bounded-floor-explicit-counts-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H35-genuine-four-counter-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBand.olean",
+    "Recaman/GenuineFourOldCounterBand.lean"
+  ],
+  "started_jst": "2026-11-05T07:29:32.031047+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GenuineFourOldCounterBand.lean": "6fabdc4319e2313d7f6cd1636ab59fb4baa1374170e13b086b157e0c04184ab2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "992d5c768103cc5703b7ab8f8e6c4b508a2efc59a089b1041fd50d5fee9be7a1",
+  "source_tree_sha256": "30f1f42ea9cf030047520518627732670df342666c91ee04c34af1dface0f76d",
+  "source_tree_manifest": "H35-genuine-four-counter-band-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

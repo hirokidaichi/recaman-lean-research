@@ -1,0 +1,80 @@
+Recaman/BoundedOldActualFree.lean:46:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  z
+in the target expression
+  ones (seg f n H) = ↑(cN (fun u => f u = true) n H)
+
+f : Nat → Bool
+n h M m L s U v T : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hh : 1 ≤ h
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (k : Nat), k < M → f (n + h + k) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (k : Nat), k < L → f (n + h + M + m + k) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (k : Nat), k < U → f (n + h + M + m + L + s + k) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (k : Nat), k < T → f (n + h + M + m + L + s + U + v + k) = true
+hzero : M + L + U = h + m + s
+r i : Nat
+hr : r < n
+hi : i < T
+hseed : Win f r (n + h + M + m + L + s + U + v + i - r)
+hregion : 3 ≤ mass (List.drop r w) ∧ v ≤ 5 ∨ 4 ≤ mass (List.drop r w) ∧ v ≤ 6
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgood : ¬4 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U) ≤ 3
+H : Nat := h + M + m + L + s + U
+z : List Bool := seg f n H
+K : Int := ↑M * (↑m + ↑s) + ↑L * ↑s
+hword :
+  seg f n (h + M + m + L + s + U) =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+        List.replicate s false ++
+      List.replicate U true
+hmz : mass z = 0
+hSz : cntF z = h + m + s
+hc : ones (seg f n H) = ↑(cN (fun u => f u = true) n H)
+⊢ cN (fun x => f x = true) n H = h + m + s
+Recaman/BoundedOldActualFree.lean:51:54: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  t ≥ 3
+  q ≥ 0
+  p ≥ 8
+  p - 2*q ≤ 1
+  0 ≤ o ≤ 3
+  l ≥ 0
+  k ≥ 0
+  k - l ≥ 1
+  j ≥ 0
+  g ≥ 0
+  g - j ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + e - p ≤ -1
+  1 ≤ c ≤ 5
+  b ≥ 1
+  a ≥ 1
+  a + b - p ≤ -1
+where
+ a := ↑m
+ b := ↑s
+ c := ↑v
+ d := ↑L
+ e := ↑U
+ g := ↑n
+ j := ↑r
+ k := ↑T
+ l := ↑i
+ o := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U))
+ p := ↑(cN (fun x => f x = true) n H)
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)
+ t := mass (List.drop r w)

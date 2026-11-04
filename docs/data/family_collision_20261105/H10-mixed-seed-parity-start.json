@@ -1,0 +1,25 @@
+{
+  "tag": "H10-mixed-seed-parity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedZeroSeedParity.olean",
+    "Recaman/MixedZeroSeedParity.lean"
+  ],
+  "started_jst": "2026-11-05T06:20:53.515556+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedZeroSeedParity.lean": "c2f180981e18094b31feabdfe44fda6e20ad90f70fbeba55dc83875be8028d6c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "269f7c8354f12e128ff6250ad49c35bb9aa9f895897e4377f40a39470157a744",
+  "source_tree_manifest": "H10-mixed-seed-parity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

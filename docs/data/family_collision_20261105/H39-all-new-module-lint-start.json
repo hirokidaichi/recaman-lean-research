@@ -1,0 +1,19 @@
+{
+  "tag": "H39-all-new-module-lint",
+  "argv": [
+    "python3",
+    "/private/tmp/recaman_lint_new.py"
+  ],
+  "started_jst": "2026-11-05T07:40:56.215413+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "/private/tmp/recaman_lint_new.py": "e90ece321747d1483c9afc8540a308ca8c2e4a962a64b2193cae89793b392c05"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "870fb66f0836058f496dfddc7b21058921db6daa5272fd8d113ea4fc3082fcc8",
+  "source_tree_sha256": "75ec95b379c23bc060bfb4fd13f4b6ead12667bcebe8aafdc64d90c2077da8cb",
+  "source_tree_manifest": "H39-all-new-module-lint-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

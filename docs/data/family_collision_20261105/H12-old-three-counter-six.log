@@ -1,0 +1,75 @@
+Recaman/MassThreeCounterSix.lean:94:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b_1 ≥ 0
+  a_1 ≥ 0
+  -10 ≤ a_1 - b_1 ≤ 0
+  a_1 ≥ 1
+  y ≥ 0
+  0 ≤ x ≤ 6
+  u ≥ 0
+  u + x ≥ 0
+  q ≥ 0
+  q - u ≥ 0
+  p ≥ 0
+  p - q + u ≤ 0
+  o ≥ 4
+  o - q ≥ 0
+  o - u - x ≤ -1
+  o - u - x - y ≥ -6
+  o - u - x - b_1 ≥ -16
+  l ≥ 0
+  l - u - x ≤ -1
+  k ≥ 0
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + g - b_1 ≤ -1
+  d + g + o - b_1 ≥ -2
+  c ≥ 1
+  c + e - b_1 ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - k ≥ 1
+where
+ a := ↑n
+ b := ↑t
+ c := ↑m
+ d := ↑L
+ e := ↑s
+ g := ↑U
+ k := ↑r
+ l := ↑i
+ o := ↑j
+ p := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + U)))))) v)
+ q := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + (M + (m + (L + (s + (U + (v + T))))))))
+ u := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ x := ↑(cN (EndN f 0) (n + (h + (M + (m + (L + (s + (U + v))))))) T)
+ y := ↑(cN P n H)
+ a_1 := ↑(cN (fun u => f u = true ∧ ¬EndN f 0 u) n (h + M + m + L + s + U))
+ b_1 := ↑(cN (fun i => f i = false) n (h + M + m + L + s + U))
+Recaman/MassThreeCounterSix.lean:46:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:52:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:61:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:73:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:75:8: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:75:66: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:81:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:87:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:89:35: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:89:57: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:102:58: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:106:53: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:106:85: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:110:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:115:30: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:117:49: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:125:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:128:63: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:129:16: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:133:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:134:23: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:141:4: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:147:63: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:149:39: error: (kernel) excessive memory consumption detected
+Recaman/MassThreeCounterSix.lean:13:8: error: (kernel) excessive memory consumption detected

@@ -1,0 +1,25 @@
+{
+  "tag": "H29-old-target-accounting-declaration",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldTargetFreeAccounting.olean",
+    "Recaman/OldTargetFreeAccounting.lean"
+  ],
+  "started_jst": "2026-11-05T07:17:07.951596+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetFreeAccounting.lean": "0219b5657627fc3073900d739f395065ff68c987c4eb23aaf4e0984158ab810d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "2afc69ac01c168a9f9d125783d8f370c1163f3e524d00dd008edbe369c94765b",
+  "source_tree_manifest": "H29-old-target-accounting-declaration-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

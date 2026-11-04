@@ -1,0 +1,1719 @@
+{
+  "mathematical_worker": "not launched; budget0",
+  "measured_cpu_seconds": {
+    "lean_validation": 191.88890600000002,
+    "guard_validation": 13.646154
+  },
+  "unmeasured_receipts": [],
+  "other_shell_git_journal_docs_cpu": "not measured; not counted as0",
+  "cap_scope": "10CPU per-process/20wall individual Lean,60CPU per-process/90wall wholecheck; NOT cumulative process-tree/OS address-space cap",
+  "entries": [
+    {
+      "receipt": "docs/data/family_collision_20261105/H21-zerohead-coverage-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.40299399999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ZeroHeadOldTargetGap.olean",
+        "Recaman/ZeroHeadOldTargetGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H13-bounded-floor-explicit-counts-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5790609999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/BoundedOldActualFree.olean",
+        "Recaman/BoundedOldActualFree.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H05-two-local-five-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.40838199999999997,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitTwoLocalFive.olean",
+        "Recaman/UnitTwoLocalFive.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H24-positive-head-strict-cut-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.73968,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadCut.olean",
+        "Recaman/PositiveHeadCut.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H29-old-target-general-accounting-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5313129999999999,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldTargetFreeAccounting.olean",
+        "Recaman/OldTargetFreeAccounting.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H34-actual-cross-current-bytes-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5330539999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+        "Recaman/GenuineFourCross.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H31-four-run-old-counter-band-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.391355,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+        "Recaman/FourRunOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H20-mass-two-all-v-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.463526,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassTwoFullGap.olean",
+        "Recaman/MassTwoFullGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H34-four-run-cross-twenty-four-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.440248,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+        "Recaman/GenuineFourCross.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H21-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 9.85806,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H36-head-A-dependent-cross-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.8677469999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+        "Recaman/GenuineFourCross.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H09-actual-last-six-key-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.37023799999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LowOldActualSix.olean",
+        "Recaman/LowOldActualSix.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H29-old-target-accounting-nonempty-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.41031799999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldTargetFreeAccounting.olean",
+        "Recaman/OldTargetFreeAccounting.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H01-SAS-profile-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.47368899999999997,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitTargetSASProfile.olean",
+        "Recaman/UnitTargetSASProfile.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H35-retained-cross-and-mass-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.096203,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBand.olean",
+        "Recaman/GenuineFourOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H25-positive-old-exclusion-after-cut-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.8335489999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveOldExcluded.olean",
+        "Recaman/PositiveOldExcluded.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H15-large-seed-direct-floor-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.579279,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LargeSeedGap.olean",
+        "Recaman/LargeSeedGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H32-four-run-old-band-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.397115,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBandBase.olean",
+        "Recaman/FourRunOldCounterBandBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-positive-head-counter-elaboration-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.47388199999999997,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadCounter.olean",
+        "Recaman/PositiveHeadCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H29-old-target-accounting-declaration-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.37388699999999997,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldTargetFreeAccounting.olean",
+        "Recaman/OldTargetFreeAccounting.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H07-original-p-fullgap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.561136,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitNoOldGapBase.olean",
+        "Recaman/UnitNoOldGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-mass-three-seed-complete-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.59374,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeSeedGap.olean",
+        "Recaman/MassThreeSeedGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-positive-head-counter-alias-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.503703,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadCounter.olean",
+        "Recaman/PositiveHeadCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H35-retained-cross-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.414456,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBandBase.olean",
+        "Recaman/GenuineFourOldCounterBandBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H39-all-new-module-lint-result.json",
+      "kind": "guard_validation",
+      "cpu_seconds": 1.184068,
+      "exit_code": 0,
+      "argv": [
+        "python3",
+        "/private/tmp/recaman_lint_new.py"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H30-primitive-old-target-sharp-A-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5104259999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PrimitiveOldTargetCut.olean",
+        "Recaman/PrimitiveOldTargetCut.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H28-mixed-third-actual-circle-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.521094,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedThirdActualCircle.olean",
+        "Recaman/MixedThirdActualCircle.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H37-top-gap-smaller-band-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.1716870000000001,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/TopGapCounter.olean",
+        "Recaman/TopGapCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H35-genuine-four-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.399652,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBandBase.olean",
+        "Recaman/GenuineFourOldCounterBandBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H07-fullcheck-frontier-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 12.013261,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H26-old-theorem-layout-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.842351,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveOldExcluded.olean",
+        "Recaman/PositiveOldExcluded.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H07-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 5.861314,
+      "exit_code": 1,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H44-post-stage-all-source-lint-result.json",
+      "kind": "guard_validation",
+      "cpu_seconds": 1.201334,
+      "exit_code": 0,
+      "argv": [
+        "python3",
+        "/private/tmp/recaman_lint_new.py"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H31-old-window-association-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.1676309999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+        "Recaman/FourRunOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H10-mixed-seed-namespace-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.43607,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedZeroSeedParity.olean",
+        "Recaman/MixedZeroSeedParity.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-fullcheck-explicit-ids-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 16.309586,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H09-low-old-initial-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.30997600000000003,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LowOldInitialSources.olean",
+        "Recaman/LowOldInitialSources.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-mass-one-all-old-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.355419,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassOneFullGap.olean",
+        "Recaman/MassOneFullGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H17-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 10.13989,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H31-chosen-target-window-bound-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.0001309999999999,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+        "Recaman/FourRunOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H26-audit-layout-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 14.046895,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H33-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 14.799443,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H34-actual-cross-square-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.432724,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourCross.olean",
+        "Recaman/GenuineFourCross.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H28-double-defect-direct-factor-gap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.046937,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectGap.olean",
+        "Recaman/DoubleDefectGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H19-all-old-band-budget-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.706988,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassTwoBandBudget.olean",
+        "Recaman/MassTwoBandBudget.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H26-positive-defect-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.436698,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveDefectGapBase.olean",
+        "Recaman/PositiveDefectGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H30-old-target-square-budget-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.633277,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PrimitiveOldTargetCut.olean",
+        "Recaman/PrimitiveOldTargetCut.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H13-source-rectangle-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.403752,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/BoundedOldSourceFloor.olean",
+        "Recaman/BoundedOldSourceFloor.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-unit-defect-initial-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.28221399999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitDefectInitialSource.olean",
+        "Recaman/UnitDefectInitialSource.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H09-actual-last-six-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.346284,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LowOldActualSix.olean",
+        "Recaman/LowOldActualSix.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-mass-one-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.409987,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassOneFullGapBase.olean",
+        "Recaman/MassOneFullGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-mass-three-seed-count-api-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.363475,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeSeedGap.olean",
+        "Recaman/MassThreeSeedGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H32-old-band-original-p-current-prerequisite-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.39432999999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBandBase.olean",
+        "Recaman/FourRunOldCounterBandBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H01-SAS-profile-count-rewrite-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.336345,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitTargetSASProfile.olean",
+        "Recaman/UnitTargetSASProfile.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-large-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.502174,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LargeSeedGapBase.olean",
+        "Recaman/LargeSeedGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H21-zerohead-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.41527,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ZeroHeadOldTargetGapBase.olean",
+        "Recaman/ZeroHeadOldTargetGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H04-initial-zero-assoc-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.282431,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitTwoInitialClock.olean",
+        "Recaman/UnitTwoInitialClock.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H26-positive-theorem-layout-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.030059,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveDefectGap.olean",
+        "Recaman/PositiveDefectGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H36-top-gap-total-clock-association-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.9074739999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/TopGapCounter.olean",
+        "Recaman/TopGapCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H13-bounded-old-actual-floor-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.513626,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/BoundedOldActualFree.olean",
+        "Recaman/BoundedOldActualFree.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-generic-count-cost-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.260116,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ZeroHeadCounterCost.olean",
+        "Recaman/ZeroHeadCounterCost.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H27-double-initial-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.34069099999999997,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectInitial.olean",
+        "Recaman/DoubleDefectInitial.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H10-mixed-seed-parity-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.42032,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedZeroSeedParity.olean",
+        "Recaman/MixedZeroSeedParity.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H36-top-gap-count-aliases-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.8721349999999999,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/TopGapCounter.olean",
+        "Recaman/TopGapCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H04-initial-zero-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.291717,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitTwoInitialClock.olean",
+        "Recaman/UnitTwoInitialClock.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H27-double-actual-overlap-explicit-source-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.863572,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectActualFive.olean",
+        "Recaman/DoubleDefectActualFive.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H27-double-actual-overlap-five-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.8357029999999999,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectActualFive.olean",
+        "Recaman/DoubleDefectActualFive.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H29-old-target-accounting-classical-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.37335999999999997,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldTargetFreeAccounting.olean",
+        "Recaman/OldTargetFreeAccounting.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H20-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 10.917099,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H11-mixed-actual-cast-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.256968,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedZeroActualCircle.olean",
+        "Recaman/MixedZeroActualCircle.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H08-key-gap-pruning-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.45257899999999995,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldInitialKeyGap.olean",
+        "Recaman/OldInitialKeyGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H09-initial-clean-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.328086,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/LowOldInitialSources.olean",
+        "Recaman/LowOldInitialSources.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H17-mass-two-four-actual-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.617421,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassTwoFourGap.olean",
+        "Recaman/MassTwoFourGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H24-positive-mass-free-charge-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.24928099999999997,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitDefectCost.olean",
+        "Recaman/UnitDefectCost.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H43-post-stage-lint-result.json",
+      "kind": "guard_validation",
+      "cpu_seconds": 0.035509,
+      "exit_code": 0,
+      "argv": [
+        "python3",
+        "/private/tmp/recaman_lint_new.py"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H42-frontier-reference-check-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 8.96312,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H24-positive-head-strict-cut-namespace-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.7833289999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadCut.olean",
+        "Recaman/PositiveHeadCut.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-positive-head-counter-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.458066,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadCounter.olean",
+        "Recaman/PositiveHeadCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H28-double-defect-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.45364499999999996,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectGapBase.olean",
+        "Recaman/DoubleDefectGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H36-top-gap-saturation-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.838328,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/TopGapCounter.olean",
+        "Recaman/TopGapCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H20-mass-two-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.39607299999999995,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassTwoFullGapBase.olean",
+        "Recaman/MassTwoFullGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H02-local-four-assoc-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.35907,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitOneLocalFour.olean",
+        "Recaman/UnitOneLocalFour.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H31-four-run-old-counter-band-prerequisite-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5484479999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/FourRunOldCounterBand.olean",
+        "Recaman/FourRunOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H35-genuine-four-counter-band-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.104383,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/GenuineFourOldCounterBand.olean",
+        "Recaman/GenuineFourOldCounterBand.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H02-local-four-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.5405329999999999,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitOneLocalFour.olean",
+        "Recaman/UnitOneLocalFour.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-unit-defect-local-four-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.358207,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitDefectLocalFour.olean",
+        "Recaman/UnitDefectLocalFour.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H12-old-three-counter-six-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.674397,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeCounterSix.olean",
+        "Recaman/MassThreeCounterSix.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H17-mass-two-four-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.43052899999999994,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassTwoFourGapBase.olean",
+        "Recaman/MassTwoFourGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-D3-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.525745,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeSeedGapBase.olean",
+        "Recaman/MassThreeSeedGapBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/setup-guard-control-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.144114,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "--version"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H01-joint-source-normalized-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.643414,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitOneEarlySourceCollision.olean",
+        "Recaman/UnitOneEarlySourceCollision.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H18-global-old-initial-order-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.366471,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/OldInitialClockOrder.olean",
+        "Recaman/OldInitialClockOrder.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H06-all-no-old-gap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.61268,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitNoOldGap.olean",
+        "Recaman/UnitNoOldGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-mass-three-seed-gap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.3547040000000001,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeSeedGap.olean",
+        "Recaman/MassThreeSeedGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-mass-three-seed-namespace-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.338308,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MassThreeSeedGap.olean",
+        "Recaman/MassThreeSeedGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-arbitrary-head-actual-circle-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.251784,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedActualCircle.olean",
+        "Recaman/MixedActualCircle.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H16-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 5.915744,
+      "exit_code": 1,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H03-v1-actual-gap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.399037,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitOneNoOldGap.olean",
+        "Recaman/UnitOneNoOldGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H14-generic-count-assoc-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.295048,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/ZeroHeadCounterCost.olean",
+        "Recaman/ZeroHeadCounterCost.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H22-mixed-seed-parity-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.458569,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedSeedParity.olean",
+        "Recaman/MixedSeedParity.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H27-double-support-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.42440799999999995,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectSupport.olean",
+        "Recaman/DoubleDefectSupport.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H26-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 6.388467,
+      "exit_code": 1,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H10-mixed-seed-two-run-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.500995,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedZeroSeedParity.olean",
+        "Recaman/MixedZeroSeedParity.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H40-tool-suite-result.json",
+      "kind": "guard_validation",
+      "cpu_seconds": 11.225242999999999,
+      "exit_code": 0,
+      "argv": [
+        "make",
+        "test-tools"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H30-target-square-explicit-identity-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.7470009999999999,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PrimitiveOldTargetCut.olean",
+        "Recaman/PrimitiveOldTargetCut.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H11-mixed-actual-circle-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.26085899999999995,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/MixedZeroActualCircle.olean",
+        "Recaman/MixedZeroActualCircle.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H04-early-clock-bound-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.418341,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitEarlyClockBound.olean",
+        "Recaman/UnitEarlyClockBound.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H38-fullcheck-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 13.383106,
+      "exit_code": 0,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H23-positive-head-full-gap-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.28106,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveHeadGap.olean",
+        "Recaman/PositiveHeadGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H37-smaller-band-original-p-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.405605,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/TopGapCounterBase.olean",
+        "Recaman/TopGapCounterBase.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H25-positive-defect-after-strict-pruning-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 1.045198,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/PositiveDefectGap.olean",
+        "Recaman/PositiveDefectGap.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H01-joint-source-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.810338,
+      "exit_code": 1,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/UnitOneEarlySourceCollision.olean",
+        "Recaman/UnitOneEarlySourceCollision.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H27-double-counter-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 0.517683,
+      "exit_code": 0,
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "-j1",
+        "-M512",
+        "-o",
+        ".lake/build/lib/lean/Recaman/DoubleDefectCounter.olean",
+        "Recaman/DoubleDefectCounter.lean"
+      ]
+    },
+    {
+      "receipt": "docs/data/family_collision_20261105/H41-final-check-result.json",
+      "kind": "lean_validation",
+      "cpu_seconds": 5.787565000000001,
+      "exit_code": 1,
+      "argv": [
+        "./scripts/check.sh"
+      ]
+    }
+  ]
+}

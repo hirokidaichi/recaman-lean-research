@@ -1,0 +1,31 @@
+{
+  "tag": "H22-positive-head-counter-alias",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveHeadCounter.olean",
+    "Recaman/PositiveHeadCounter.lean"
+  ],
+  "started_jst": "2026-11-05T06:59:35.770375+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveHeadCounter.lean": "839da472cdc3266807aaec036985a517c6b054a70b23dfe7c320526687c656d9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "31f4bb3d78a5d94b7178aab58a3dee07fae6274c8da727af208a0123f2de90c6",
+  "source_tree_manifest": "H22-positive-head-counter-alias-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6395799578167498,
+  "cpu_seconds": 0.503703,
+  "finished_jst": "2026-11-05T06:59:36.409895+09:00"
+}

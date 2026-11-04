@@ -1,0 +1,25 @@
+{
+  "tag": "H36-top-gap-count-aliases",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TopGapCounter.olean",
+    "Recaman/TopGapCounter.lean"
+  ],
+  "started_jst": "2026-11-05T07:36:16.126326+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TopGapCounter.lean": "d19d77f4e69a69a02ff031c7ebd0cbc2aa467f8dd6d5674bf9b94b14a04e2a77"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "95cae424272d8eb1ca9bcc65a329f843c1112b4383e2348780c4805f2fcdac8b",
+  "source_tree_sha256": "f7db2e538badf46992ed7dbda25015e0c1ddb72e91b79d306be16356088e8984",
+  "source_tree_manifest": "H36-top-gap-count-aliases-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

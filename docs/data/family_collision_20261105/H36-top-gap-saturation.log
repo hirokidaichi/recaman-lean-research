@@ -1,0 +1,119 @@
+Recaman/TopGapCounter.lean:63:66: error: `dsimp` made no progress
+Recaman/TopGapCounter.lean:70:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f x
+in the target expression
+  EndN f 0 x
+
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hC : mass (seg f t (n - t)) = ↑C
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT : 1 ≤ T
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+hj : j = 14
+hb :
+  4 ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ∧
+    cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) ≤ 14 ∧
+      cN (fun x => f x = true) n (h + M + m + L + s + U + v + T) ≤ 31 ∧
+        j ≤ 14 ∧
+          2 ≤ C ∧
+            C ≤ 14 ∧
+              cN (fun x => f x = false) n (h + M + m + L + s + U + v + T) ≤ 30 ∧
+                h + M + m + L + s + U + v + T ≤ 61 ∧
+                  n - t ≤ 35 ∧
+                    n + h + M + m + L + s + U + v + T + j - t ≤ 110 ∧
+                      ↑C ^ 2 + (↑j + 1) ^ 2 + 12 ≤
+                          (↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T)) - (↑j + 1)) ^ 2 + 1 ∧
+                        cN (fun x => f x = false) n (h + M + m + L + s + U + v + T) + j + 1 =
+                          cN (fun x => f x = true) n (h + M + m + L + s + U + v + T) + C
+B : Nat := h + M + m + L + s + U + v + T
+H : Nat := h + M + m + L + s + U
+A : Nat := cN (fun x => f x = true) n B
+F : Nat := cN (fun x => f x = true ∧ ¬EndN f 0 x) n B
+hC2 : 2 ≤ C
+hAlo : 2 * j + 3 ≤ cN (fun x => f x = true) n B
+hA31 : A = 31
+hF14 : F = 14
+hE17 : cN (EndN f 0) n B = 17
+hh : 1 ≤ h
+hhead10 : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 10
+hlast7 : cN (EndN f 0) (n + h + M + m + L + s + U + v) T ≤ 7
+x : Nat
+hx : n + H ≤ x
+hxv : x < n + H + v
+he : EndN f 0 x
+hf : f x = false
+⊢ False
+Recaman/TopGapCounter.lean:76:4: error: 'change' tactic failed, pattern
+  cN (EndN f 0) (n + H + v) T ≤ 7
+is not definitionally equal to target
+  cN (EndN f 0) (n + h + M + m + L + s + U + v) T ≤ 7
+Recaman/TopGapCounter.lean:94:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d_1 ≤ 13
+  c_1 ≥ 14
+  b_1 ≥ 4
+  a_1 ≥ 0
+  0 ≤ z ≤ 7
+  0 ≤ y ≤ 10
+  r - u - x ≥ 11
+  0 ≤ q ≤ 110
+  q ≥ 0
+  1 ≤ p ≤ 35
+  p - q ≥ -75
+  o ≥ 1
+  0 ≤ l ≤ 30
+  0 ≤ k ≤ 31
+  1 ≤ k - l ≤ 13
+  4 ≤ i ≤ 14
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  d + e + g + o + p - q + d_1 ≤ -15
+  c ≥ 1
+  b ≥ 1
+  b + c - d_1 ≤ -1
+  a ≥ 0
+  a + p ≥ 0
+where
+ a := ↑t
+ b := ↑L
+ c := ↑U
+ d := ↑m
+ e := ↑s
+ g := ↑v
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (fun x => f x = false) n (h + M + m + L + s + U + v + T))
+ o := ↑h
+ p := ↑(n - t)
+ q := ↑(n + h + M + m + L + s + U + v + T + j - t)
+ r := (↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T)) - (↑j + 1)) ^ 2
+ u := ↑C ^ 2
+ x := (↑j + 1) ^ 2
+ y := ↑(cN (EndN f 0) n (h + M + m + L + s + U))
+ z := ↑(cN (EndN f 0) (n + h + M + m + L + s + U + v) T)
+ a_1 := ↑(cN (EndN f 0) (n + (H + v)) T)
+ b_1 := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)
+ c_1 := ↑(cN (fun x => f x = true) n H)
+ d_1 := ↑(cN (fun u => f u = true) n (h + M + m + L + s + U))

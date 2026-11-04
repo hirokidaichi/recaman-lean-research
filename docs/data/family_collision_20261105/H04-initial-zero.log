@@ -1,0 +1,6 @@
+Recaman/UnitTwoInitialClock.lean:29:4: error: Type mismatch: After simplification, term
+  hbal
+ has type
+  mass (List.replicate q false) + (mass x + mass (List.replicate 2 false)) + ↑i = 1
+but is expected to have type
+  mass (List.replicate q false) + (mass x + (mass (List.replicate 2 false) + ↑i)) = 1

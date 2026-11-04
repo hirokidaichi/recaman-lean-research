@@ -1,0 +1,29 @@
+Recaman/MixedZeroSeedParity.lean:18:6: error(lean.unknownIdentifier): Unknown identifier `runKey_append_S`
+Recaman/MixedZeroSeedParity.lean:14:62: error: unsolved goals
+u z : List Bool
+v : Nat
+hmz : mass z = 0
+hseed : runKey (u ++ z ++ List.replicate v false) = -2
+Q : Int
+hQ : runKey z + 2 * ↑(cntF z) ^ 2 = 4 * Q
+a : Int
+ha : ↑(cntF z) ^ 2 = ↑(cntF z) + 2 * a
+b : Int
+hb : ↑v ^ 2 = ↑v + 2 * b
+⊢ ∃ Z, runKey u = 2 * (↑(cntF z) + ↑v) - 2 + 4 * Z
+Recaman/MixedZeroSeedParity.lean:57:6: error(lean.unknownIdentifier): Unknown identifier `runKey_append_S`
+Recaman/MixedZeroSeedParity.lean:51:40: error: unsolved goals
+u z : List Bool
+hu : BlockWord u
+hD : mass u = 3
+hmz : mass z = 0
+v R : Nat
+hseed : runKey (u ++ z ++ List.replicate v false) = -2
+htarget : runKey ([true] ++ z ++ List.replicate v false) = -2 * ↑R ^ 2
+Z : Int
+hZ : runKey u = 2 * (↑(cntF z) + ↑v) - 2 + 4 * Z
+hmu : mass [true] = 1
+hku : runKey [true] = 0
+hs : runKey (u ++ z ++ List.replicate v false) = -2
+ht : runKey ([true] ++ z ++ List.replicate v false) = -2 * ↑R ^ 2
+⊢ ↑R % 2 = 0 ∧ ↑R ^ 2 = 4 * (↑(cntF z) + ↑v) ∧ runKey u = -2 ∧ (↑(cntF z) + ↑v) % 2 = 0

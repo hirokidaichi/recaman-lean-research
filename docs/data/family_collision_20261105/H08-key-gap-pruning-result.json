@@ -1,0 +1,31 @@
+{
+  "tag": "H08-key-gap-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldInitialKeyGap.olean",
+    "Recaman/OldInitialKeyGap.lean"
+  ],
+  "started_jst": "2026-11-05T06:18:06.958992+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldInitialKeyGap.lean": "f592ac088e9dd38d6d6c0e3b077759e9acb7982ecad2afeb3bf88314dfba2f38"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "193588f66694098de01be3894e1a9e672a78d657378f075c290e89cf288aab1b",
+  "source_tree_manifest": "H08-key-gap-pruning-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5825937921181321,
+  "cpu_seconds": 0.45257899999999995,
+  "finished_jst": "2026-11-05T06:18:07.541517+09:00"
+}

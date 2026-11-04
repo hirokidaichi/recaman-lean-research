@@ -1,0 +1,25 @@
+{
+  "tag": "H09-actual-last-six",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowOldActualSix.olean",
+    "Recaman/LowOldActualSix.lean"
+  ],
+  "started_jst": "2026-11-05T06:20:01.611384+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowOldActualSix.lean": "4a36d643daf2ac2042b8699f14ad4e0c5636cb54fe3256a445602d8d4067974e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "e2eee8c3521cf4380283e14dc4e2f9f61bda1fe2ba487e4c59b24d2ada63e5f7",
+  "source_tree_manifest": "H09-actual-last-six-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

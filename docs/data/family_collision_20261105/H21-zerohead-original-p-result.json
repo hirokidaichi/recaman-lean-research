@@ -1,0 +1,31 @@
+{
+  "tag": "H21-zerohead-original-p",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ZeroHeadOldTargetGapBase.olean",
+    "Recaman/ZeroHeadOldTargetGapBase.lean"
+  ],
+  "started_jst": "2026-11-05T06:51:12.629687+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ZeroHeadOldTargetGapBase.lean": "82612190ce5b80ccfa6e76f84bbdfcd8fc91aef84911ce9ba06365baaa5999a5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "4e6d59c27624afa989e6e21fd38e5b631cb10b51bec1d3e7d83ea0c89597a30a",
+  "source_tree_sha256": "dba8334f3ed68882827e66cbe40c32a1554e79cb5dc4dfca194beb66a2e90615",
+  "source_tree_manifest": "H21-zerohead-original-p-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "4e6d59c27624afa989e6e21fd38e5b631cb10b51bec1d3e7d83ea0c89597a30a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5898211249150336,
+  "cpu_seconds": 0.41527,
+  "finished_jst": "2026-11-05T06:51:13.219453+09:00"
+}

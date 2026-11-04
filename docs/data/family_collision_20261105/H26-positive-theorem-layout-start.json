@@ -1,0 +1,25 @@
+{
+  "tag": "H26-positive-theorem-layout",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveDefectGap.olean",
+    "Recaman/PositiveDefectGap.lean"
+  ],
+  "started_jst": "2026-11-05T07:08:16.184768+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveDefectGap.lean": "e5c435c7df7b759657f0565dbd450bd1420ffeff9de5c6fab4f65e0f1d087a65"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "0d4b57e066ba894e4dfde61a244f01d0d384ac0629e70d06c2316a1893229f5e",
+  "source_tree_sha256": "b12142319c7d3c1cc8294ce154f73b7f9d41b8fc7bc470e97133d5a89346c390",
+  "source_tree_manifest": "H26-positive-theorem-layout-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

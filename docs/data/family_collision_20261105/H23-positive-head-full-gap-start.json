@@ -1,0 +1,25 @@
+{
+  "tag": "H23-positive-head-full-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PositiveHeadGap.olean",
+    "Recaman/PositiveHeadGap.lean"
+  ],
+  "started_jst": "2026-11-05T07:01:02.707725+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PositiveHeadGap.lean": "6bae059db3291c782c4139fb9359ca878fa6dd3c26b068dc420149bd6be6bbaf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "b722ccaceed262c3bdf373025242ad1dbc8b46393a4abbd12582c990451cb5eb",
+  "source_tree_sha256": "383a2cd905c8c1dfc52e69034d3fcfe33a12d461017b1538dfd96e5b56e446d9",
+  "source_tree_manifest": "H23-positive-head-full-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

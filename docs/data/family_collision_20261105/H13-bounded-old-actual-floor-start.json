@@ -1,0 +1,25 @@
+{
+  "tag": "H13-bounded-old-actual-floor",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/BoundedOldActualFree.olean",
+    "Recaman/BoundedOldActualFree.lean"
+  ],
+  "started_jst": "2026-11-05T06:28:50.364578+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/BoundedOldActualFree.lean": "1303982095594b111e2ae9ec4d61e761d552e91612b2482b309c4376290f1f1e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "f06d97ea35ffa528a383f1edd37ecd27f2d6bf35",
+  "tracked_diff_sha256": "6bdb01f23660e2e312f083d66ec75715894f3f396174561c75d6d8d4af0f611b",
+  "source_tree_sha256": "fed9196f8a80070ccda221d32bfef1de3f4d28eaa89d3fcca28507e26004d5d4",
+  "source_tree_manifest": "H13-bounded-old-actual-floor-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}
