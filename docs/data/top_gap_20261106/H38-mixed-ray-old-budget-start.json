@@ -1,0 +1,25 @@
+{
+  "tag": "H38-mixed-ray-old-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedFinalRayOldBudget.olean",
+    "Recaman/MixedFinalRayOldBudget.lean"
+  ],
+  "started_jst": "2026-11-06T07:16:54.139107+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedFinalRayOldBudget.lean": "4fa0c051c76e772e7134ff220a9732ecbed59d74c22713ec088cc446d7f015a9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "f5a22f0c15ace06f36a4a67f0e41049cc49323dce3bc09432d45600c5b66b842",
+  "source_tree_manifest": "H38-mixed-ray-old-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

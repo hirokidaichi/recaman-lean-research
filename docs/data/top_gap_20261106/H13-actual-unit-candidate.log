@@ -1,0 +1,17 @@
+Recaman/FourHighGapCandidate.lean:62:31: error: Application type mismatch: The argument
+  hC2
+has type
+  (2 : Nat) ≤ C
+but is expected to have type
+  (2 : Int) ≤ mass (seg f t (n - t))
+in the application
+  PrimitiveOldTargetCut.actual_old_target_A_cut f n t (B + T) j w hw hpre ht hC2
+Recaman/FourHighGapCandidate.lean:95:4: error: Application type mismatch: The argument
+  hcut1
+has type
+  M ≤ j → E ≤ T - j + 3
+but is expected to have type
+  M ≤ j → j ≤ T → E ≤ T - j + 3
+in the application
+  HighGapScalarCuts.high_gap_unit_candidate_nat j M m L s U v T C A r EH E F hj hM hm hL hs hU hv hC2 hAlo hcount hEH hF
+    hr4 hE hfree hMcost hAeq (fun ht => ?m.1301) hcut1

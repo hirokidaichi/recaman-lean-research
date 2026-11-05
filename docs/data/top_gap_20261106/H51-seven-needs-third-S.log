@@ -1,0 +1,11 @@
+Recaman/ThirdSTargetSaturation.lean:22:2: error: 'change' tactic failed, pattern
+  7 ≤ rayCount (w ++ y) T → ?m.105
+is not definitionally equal to target
+  7 ≤
+      rayCount
+        (w ++
+          (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+              List.replicate s false ++
+            (List.replicate U true ++ List.replicate v false)))
+        T →
+    ∃ i, i < T ∧ sourceAt false s (List.replicate U true ++ List.replicate v false) i

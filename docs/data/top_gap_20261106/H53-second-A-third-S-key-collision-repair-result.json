@@ -1,0 +1,31 @@
+{
+  "tag": "H53-second-A-third-S-key-collision-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSResidualSquare.olean",
+    "Recaman/ThirdSResidualSquare.lean"
+  ],
+  "started_jst": "2026-11-06T07:41:42.017544+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSResidualSquare.lean": "6f7cbe46b4d8b079c348faa5248eb0cf6d41b0bde4b6ab6df9bcfaab12b3d971"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "81eeca15fcf7e70b7ca0feef922a08de1fee537ebdd07da5a7c076434b5dd1c2",
+  "source_tree_sha256": "2e45bcf3a94dff5df8abfa57b55e31377d229fd17e81c0da64982705a63b9b6f",
+  "source_tree_manifest": "H53-second-A-third-S-key-collision-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "81eeca15fcf7e70b7ca0feef922a08de1fee537ebdd07da5a7c076434b5dd1c2",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8679564579942962,
+  "cpu_seconds": 0.737715,
+  "finished_jst": "2026-11-06T07:41:42.885405+09:00"
+}

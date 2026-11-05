@@ -1,0 +1,25 @@
+{
+  "tag": "H03-gap-thirteen",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TopGapThirteen.olean",
+    "Recaman/TopGapThirteen.lean"
+  ],
+  "started_jst": "2026-11-06T06:13:51.867579+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TopGapThirteen.lean": "768ecc9fba51951f4032f1f0eb13ff9781da23a9d4bd0d64684ffd3a6f925793"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "e685e6b5c446163b595e89f95ac2d0f78e9747d69cb8dfe9c95cae633a57daa9",
+  "source_tree_manifest": "H03-gap-thirteen-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

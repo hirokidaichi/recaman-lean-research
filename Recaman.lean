@@ -669,3 +669,8 @@ import Recaman.MixedThirdActualCircle
 import Recaman.FourRunOldCounterBandBase
 import Recaman.GenuineFourOldCounterBandBase
 import Recaman.TopGapCounterBase
+import Recaman.FourOldTargetGapBase
+import Recaman.FourthSaturationSquare
+import Recaman.FourLateLocalTargetGapBase
+import Recaman.FourThirdSTargetGapBase
+import Recaman.ThirdSResidualSquare

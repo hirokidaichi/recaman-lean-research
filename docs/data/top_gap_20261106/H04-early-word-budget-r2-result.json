@@ -1,0 +1,31 @@
+{
+  "tag": "H04-early-word-budget-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldTargetEarlyClockBudget.olean",
+    "Recaman/OldTargetEarlyClockBudget.lean"
+  ],
+  "started_jst": "2026-11-06T06:19:32.981846+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetEarlyClockBudget.lean": "2155b054aeca1ece7ac1ddf7d1c5aaeb2af0e18e83009555c0d74a9262f17ae5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "bfdb121c7bd4c5d60056e8039932284865b582fa3ac9a04ee730cad2d018a7ee",
+  "source_tree_manifest": "H04-early-word-budget-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.505675375003193,
+  "cpu_seconds": 0.362129,
+  "finished_jst": "2026-11-06T06:19:33.487463+09:00"
+}

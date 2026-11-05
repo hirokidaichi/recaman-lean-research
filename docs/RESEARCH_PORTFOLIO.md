@@ -535,3 +535,10 @@ E546/E547 oldmass3/>=4、E554 small-separator initial source、E557 no-old全v s
 - Accounting audit E575 subsumes all mass1 narrow fullgap branches. Their source lemmas remain useful but fullgap coverage is not additive. Defect2 narrower accepted proofs are parked VALIDATED_REDUNDANT .lean.txt, not adopted as extra research rows.
 - E438 sharpA identity/E458 actual17 already existed; E576 generalizes mixedword scope and E578/E579 couple existing inputs to actual counter/window cuts. This is not a newly discovered17 budget. E579 givesj13/A30/window108 in genuine four-run old-target counters. E580 topj13 classification is PAPER, not finite absence.
 - Next H-20261106-01 supplies counted old+initialS witnesses at the same actualtarget, retaining all originalp/oldhistory. Oldr4 E412/E427 two0/0 and all prior resourceSTOPs retain their gates. Finite necessary width does not authorize table restart or source-prefix truncation. Overall no-change counter0 is supported by new source/candidate edges; oldr4 branch2 is not reset bydate.
+
+## 2026-11-06 — 四run旧対象、第三A以降、第三Sの一部
+
+- E-583 PROVED-LEAN。四非空A-run/同oldtarget/元Intp padded BlockWord zero-fullpositiveの全長で実free-gap。E-586第三A以降、E-588第三S q<=3又はq+j+1<=vを続けて検証。独立countと源の入力はE-581/E-582/E-584/E-585/E-587/E-589。狭いH39はE586に包含される。
+- H01専用時計順序試作は許可された一回より多く修正した。個別受理した最終bytesもroot/Audit採用外。H08/H11 kernel512MB、H43 CPU、H44 kernel512MB、H50/H51 LeanエラーでSTOPPED。H45は前提module未受理のため個別接続を採用しない。packetと対応ログを保存した。
+- H49は固定q3の独立因数化、H52/H53は第三Sと第二Aの独立key機構。E-590紙上はq>=4で供給飽和を全て排除しW+q+v<=15。再開はこの新しい数学入力によるactual source抽出であり、停止jobの資源増量・同じsourceの再実行を含まない。全旧履歴と他source massを保つ。
+- 全体の連続無変化は0。旧r4同表二回0/0および継承停止は保持。次は[H-20261107-01](HYPOTHESIS_CARD_2026-11-07_THIRD_S_SATURATION.md)。[日次記録](RESEARCH_HANDOFF_2026-11-06_DAILY.md)。

@@ -1,0 +1,31 @@
+{
+  "tag": "H44-third-S-short-factors",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSShortFactors.olean",
+    "Recaman/ThirdSShortFactors.lean"
+  ],
+  "started_jst": "2026-11-06T07:28:47.644594+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSShortFactors.lean": "a39efca2e078b57bbc6da25e21d593959aa7f5be1d6dbcf1b8ace1e0eb4ff850"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "b910e4467d0c8b63a995c1897cae8c6ae3f54050add189d0e69215fb9e3302c5",
+  "source_tree_manifest": "H44-third-S-short-factors-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 2.1723737499996787,
+  "cpu_seconds": 2.008973,
+  "finished_jst": "2026-11-06T07:28:49.816854+09:00"
+}

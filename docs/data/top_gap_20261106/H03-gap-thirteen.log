@@ -1,0 +1,98 @@
+Recaman/TopGapThirteen.lean:75:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a_1 ≥ 0
+  z ≥ 0
+  2*z - a_1 ≥ -1
+  0 ≤ y ≤ 3
+  -10 ≤ y - a_1 ≤ -9
+  0 ≤ x ≤ 7
+  x - y + a_1 ≥ 0
+  0 ≤ u ≤ 13
+  29 ≤ u + x - y + a_1 ≤ 30
+  0 ≤ r ≤ 108
+  1 ≤ q ≤ 35
+  q - r ≥ -73
+  p ≥ 1
+  0 ≤ o ≤ 30
+  0 ≤ l ≤ 30
+  4 ≤ k ≤ 13
+  j ≥ 1
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c + d + e + g + i + j + p + q - r ≤ -14
+  2 ≤ b ≤ 14
+  a ≥ 0
+  a + q ≥ 0
+where
+ a := ↑t
+ b := ↑C
+ c := ↑L
+ d := ↑U
+ e := ↑T
+ g := ↑m
+ i := ↑s
+ j := ↑v
+ k := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ o := ↑(cN (fun x => f x = false) n (h + M + m + L + s + U + v + T))
+ p := ↑h
+ q := ↑(n - t)
+ r := ↑(n + h + M + m + L + s + U + v + T + 13 - t)
+ u := ↑(cN P n (B + T))
+ x := ↑(cN (EndN f 0) (n + B) T)
+ y := ↑(cN P n H)
+ z := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n H)
+ a_1 := ↑(cN (fun x => f x = true) n H)
+Recaman/TopGapThirteen.lean:85:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a_1 ≥ 0
+  z ≥ 0
+  y ≥ 0
+  y - z ≥ 4
+  x ≥ 0
+  0 ≤ x + a_1 ≤ 13
+  0 ≤ u ≤ 7
+  u + x ≥ 17
+  9 ≤ r ≤ 10
+  r + u ≥ 0
+  29 ≤ r + u + x + a_1 ≤ 30
+  0 ≤ q ≤ 108
+  q ≥ 0
+  1 ≤ p ≤ 35
+  p - q ≥ -73
+  o ≥ 1
+  0 ≤ l ≤ 30
+  0 ≤ k ≤ 30
+  4 ≤ j ≤ 13
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c + d + e + g + i + o + p - q + u + x ≤ -14
+  2 ≤ b ≤ 14
+  a ≥ 0
+  a + p ≥ 0
+where
+ a := ↑t
+ b := ↑C
+ c := ↑L
+ d := ↑U
+ e := ↑m
+ g := ↑s
+ i := ↑v
+ j := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ l := ↑(cN (fun x => f x = false) n (h + M + m + L + s + U + v + T))
+ o := ↑h
+ p := ↑(n - t)
+ q := ↑(n + h + M + m + L + s + U + v + T + 13 - t)
+ r := ↑(cN (EndN f 0) n H)
+ u := ↑(cN (EndN f 0) (n + B) T)
+ x := ↑(cN P (n + B) T)
+ y := ↑(cN P n (H + v))
+ z := ↑(cN P (n + H) v)
+ a_1 := ↑(cN P n B)

@@ -1,0 +1,9 @@
+Recaman/GapSixScalar.lean:69:44: error: unsolved goals
+j T r W E : Nat
+hj : 6 ≤ j
+hr : 4 ≤ r
+hW : W ≤ r + 5
+hfree : T + r ≤ j + E
+hcut : E ≤ max (T - j) (W + T - (2 * j + 1)) + 1
+hT : T + r ≤ j + 1
+⊢ max 0 0 = 0

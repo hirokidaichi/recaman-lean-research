@@ -1,13 +1,21 @@
 # Current research frontier
 
-最終更新: 2026-11-05。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-06。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
+
+- **E-583 PROVED-LEAN**。旧履歴から始まる実P2対象窓のある真正四A-runで、元の整数基点・padded BlockWord・zero/fullpositiveのもと、全長で実freeがgap+1以上。headmassや全old履歴を制限しない。E-579の必要条件とE-580の紙上候補はこの証明の前段。
+- **E-581 / E-582 PROVED-LEAN**。任意mixed prefixで選択oldmass>=2なら、遅延に応じた手前A数から全old/localの共通時計帯を得る。最後A-ray直前まで適用すると、反例の前半実供給にgap+1の下限が付く。
+- **E-584 / E-585 PROVED-LEAN**。最後供給7件の区間内旧・初期S源の存在と、初期S源と同じold対象の実平方予算。E-583とcoverageを重複計上しない。
+- **E-586 / E-588 PROVED-LEAN**。同じ元Intp/padded/zero-fullpositive/真正四runで、第三A以降の実対象と、第三S内の残余q<=3又はq+j+1<=vの実対象は全長full-tail free>=j+1。
+- **E-587 / E-589 PROVED-LEAN**。第三Sの対象平方と同separator源の厳密時計を保持。残余S和14ではその源が存在できず、L<=3/s+v>=12では第二Aと第三Sの両源が共存できない。
+- **E-590 PROVED-PAPER**。第三S q>=4のactual counterでは実供給17の飽和を排除してM+L+q+v<=15。全run長・全旧履歴を保持する。実7件からの両源抽出とactual接続は未Lean。
+
 
 - **E-568 PROVED-LEAN**: 正三run zerohead/同oldtargetの全正mass・全separator長の元p actual fullgap。mass2残枝を新all-old帯budget E-566とsource floor E-562で閉じ、既存C>=3と合成。合成そのものは追加source edgeではない。
 - **E-575 PROVED-LEAN**: 任意mixed tail/全run数/全headmassで同old targetmass1は元p endpoint-positiveの会計だけでfullgap。一般式free+C>=j+2。狭いmass1 fullgap枝 E-545/E-546/E-547/E-557/E-563/E-572を独立C1 coverage進展として重複計上しない。
 - **E-579 PROVED-LEAN**: 非zeroheadも含むgenuine四run/同oldtarget actualcounterはfree4..13/A30/j13/selectedtargetmass2..14/S30/tail60/oldsuffix35/選んだP2window108以下。j14 actual saturationをhead-A crossで排除。全oldprefix・他supplier massは無制限で反例不在ではない。広い空A区間許可域は E-577 のj16/A35/window128。
-- **E-580 PROVED-PAPER**: 残るj13ならA30/free13/head10/last7/v1/C2..4/T15or16、headmass負。actual source witness/clock接着とC4四tupleは未Lean・人間レビュー未。
+- **E-580 PROVED-PAPER**: 残るj13ならA30/free13/head10/last7/v1/C2..4/T15or16、headmass負。この全分類は紙上のまま。E583が同じ旧対象の反例を排除する。
 
 独立source入力: E-558 early二family共同clock、E-560 low-old/initialS排除、E-561/E-569/E-574 mixedhead circle、E-565 任意mixed old/initial時計順序、E-570 effective-defect local4、E-571 actual mass charge、E-573 old/local共通support課金。E-576 は既存E-438の三run mass-area式のmixedword拡張で、同identityの再発見を別成果と数えない。E-578 は既存E-458供給17とgenuine crossをcoupleしたcounterband。
 
@@ -20,17 +28,19 @@
 | E-560 / E-561 / E-562 | low-old排除、mixed zerohead circle、actual source free-floor。 |
 | E-564 / E-566 / E-567 | mass2 v4/all-old帯budget/全v zerohead fullgap。 |
 | E-565 / E-569 / E-570 / E-571 / E-573 / E-574 | mixed source順序、circle、defect source union、actual mass charge。 |
-| E-568 / E-575 / E-576 / E-577 / E-578 / E-579 / E-580 | 現行coverage・会計・mixed拡張・actual counterband・未Lean次unit。 |
+| E-568 / E-575 / E-576 / E-577 / E-578 / E-579 / E-580 | 従来coverage・会計・mixed拡張・actual counterbandと紙上候補。 |
 
 ## 次の一問
 
-[H-20261106-01](HYPOTHESIS_CARD_2026-11-06_TOP_GAP_SAME_TARGET.md): j13/C4 actualcounterからold+initialS counted witnessと共同clockを内部供給し、T>=15/h>=7又はfullgapへ。E580の四tuple/free/供給結論を新Propで入力しない。最初15分で新source edge/strict削減、進まなければC2/C3同joint25分とnegativehead/shared-prefix機構20分へ。
+第三Sの未解決部分で、実供給7件から第二Aと第三Sの供給元を同じ元基点で抽出し、E-590の等号排除をLeanへ接続する。次の入口は[H-20261107-01](HYPOTHESIS_CARD_2026-11-07_THIRD_S_SATURATION.md)と[11/06 DAILY](RESEARCH_HANDOFF_2026-11-06_DAILY.md)。
+
+[H-20261106-01](HYPOTHESIS_CARD_2026-11-06_TOP_GAP_SAME_TARGET.md): 当日の入口。E-583で同old targetの全gapを排除。
 
 ## 停止と証拠の境界
 
-当日H12 R8/v2..5 count monolithとH23 positivehead fullglueはkernel512MB STOPPED、packet隔離。新source floor/actual mass chargeのstrict pruning後の採用bytesだけを使用。旧H06/133core/H21/I25/H13八head、r4 E412/E427 12837/40024二回削減0/0、R19/R7R11/cold512/combined19/literal43/width等STOPは継承し、資源追加/tactic/split/import移動だけで再開しない。検証済みだがE575に包含されたdefect2 fullgap sourceは VALIDATED_REDUNDANT .lean.txtに保存しroot/Audit未採用。
+11/06 H08/H11の高gap実接続monolithは512MB STOPPED、packet隔離。別の遅延付き供給機構でE-583を検証。H01時計順序試作は修正回数超過で採用外。H43広q3はCPU上限、H44広因数は512MB、H50/H51 actual上限/抽出はLeanエラーでSTOPPED。固定q3だけを独立因数化してE-588を検証、H52/H53の別key機構でE-589を検証。11/05 H12 R8/v2..5 count monolithとH23 positivehead fullglueはkernel512MB STOPPED、packet隔離。新source floor/actual mass chargeのstrict pruning後の採用bytesだけを使用。旧H06/133core/H21/I25/H13八head、r4 E412/E427 12837/40024二回削減0/0、R19/R7R11/cold512/combined19/literal43/width等STOPは継承し、資源追加/tactic/split/import移動だけで再開しない。検証済みだがE575に包含されたdefect2 fullgap sourceは VALIDATED_REDUNDANT .lean.txtに保存しroot/Audit未採用。
 
-未解決: nonzerohead mass>=2 oldtargetの不在、他target位置、一般四run/任意run/rank/C1/Q/H/SL/全射性。E-388 COMPUTED/E-404 CONJECTURED/E-384存在方向未Lean・人間レビュー未。r3 kernel countへの依存は維持し、未検証r4表/E384に依存しない。
+未解決: 第三Sの残余q>=4かつq+j+1>v、第三Sより前の局所対象、一般四run/任意run/rank/C1/Q/H/SL/全射性。E-388 COMPUTED/E-404 CONJECTURED/E-384存在方向未Lean・人間レビュー未。r3 kernel countへの依存は維持し、未検証r4表/E384に依存しない。
 
 数学worker未起動/予算0。個別Leanはcurrent bytes/source-tree hash、-j1-M512、10CPU per-process/20wall。tree累積CPU/OS AS capではない。全check/G5/Audit/lint/briefを同期し、元p/P2/actual countを保持する。日次validated snapshotのmain通常pushは継続承認済み。
 

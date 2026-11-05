@@ -1,0 +1,122 @@
+Recaman/FourthSaturationClock.lean:53:4: error: Type mismatch
+  hword
+has type
+  seg f n (b - n) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+but is expected to have type
+  w ++ seg f n (b - n) = w ++ y
+Recaman/FourthSaturationClock.lean:99:35: error: Application type mismatch: The argument
+  List.take t w
+has type
+  List Bool
+but is expected to have type
+  Nat
+in the application
+  block_suffix_positive hw (List.take t w)
+Recaman/FourthSaturationClock.lean:106:28: error(lean.unknownIdentifier): Unknown constant `List.replicate_add`
+Recaman/FourthSaturationClock.lean:116:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  y
+in the target expression
+  mass (List.drop r w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+                List.replicate U true ++
+              List.replicate v false)) +
+      ↑i =
+    1
+
+f : Nat → Bool
+n b t h M m L s U v T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hnb : n ≤ b
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hj : 2 ≤ j
+hword :
+  seg f n (b - n) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+hA : ∀ (i : Nat), i < T → f (b + i) = true
+hgap : ∀ (a : Nat), b + T ≤ a → a < b + T + j → f a = false
+htarget : Win f t (b + T + j - t)
+x : List Bool :=
+  List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+      List.replicate U true ++
+    List.replicate v false
+y : List Bool := List.replicate h false ++ x
+h7 : 7 ≤ rayCount (w ++ y) T
+hbase : seg f 0 b = w ++ y
+hl : (w ++ y).length = b
+hn : w.length = n
+i : Nat
+hi : i < T
+r : Nat
+hr : r < w.length
+hmi :
+  mass (List.drop r w) +
+        mass
+          (List.replicate h false ++
+            (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+                List.replicate U true ++
+              List.replicate v false)) +
+      ↑i =
+    1
+hki :
+  runKey (List.drop r w) +
+        runKey
+          (List.replicate h false ++
+            (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+                List.replicate U true ++
+              List.replicate v false)) +
+      4 * mass (List.drop r w) *
+        ↑(cntF
+            (List.replicate h false ++
+              (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+                  List.replicate U true ++
+                List.replicate v false))) =
+    -2
+k : Nat
+hk : k < T
+q : Nat
+hq : 1 ≤ q
+hqh : q ≤ h
+hmk :
+  mass
+        (List.replicate q false ++
+          (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+              List.replicate U true ++
+            List.replicate v false)) +
+      ↑k =
+    1
+hkk :
+  runKey
+      (List.replicate q false ++
+        (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+            List.replicate U true ++
+          List.replicate v false)) =
+    -2
+hfull : ∀ (a : Nat), a < T → seg f 0 (b + a) = w ++ y ++ List.replicate a true
+hrn : r < n
+hdropOld : List.drop r (w ++ y) = List.drop r w ++ y
+hwinOld : Win f r (b + i - r)
+hqb : n + (h - q) < b
+hdropLocal : List.drop (n + (h - q)) (w ++ y) = List.replicate q false ++ x
+hwinLocal : Win f (n + (h - q)) (b + k - (n + (h - q)))
+hprior : mass (seg f t (n - t)) < mass (seg f r (n - r)) ∧ i + j < T
+hdr : List.drop r w = seg f r (n - r)
+hu : BlockWord (List.drop r w)
+htpos : 0 < mass (seg f t (n - t))
+hD : 2 ≤ mass (List.drop r w)
+hsplit : y = List.replicate (h - q) false ++ (List.replicate q false ++ x)
+hiOrd : k < i
+⊢ ↑h = ↑q + mass (seg f r (n - r)) + ↑i - ↑k

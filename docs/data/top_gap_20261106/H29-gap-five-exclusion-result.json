@@ -1,0 +1,31 @@
+{
+  "tag": "H29-gap-five-exclusion",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourGapFiveExclusion.olean",
+    "Recaman/FourGapFiveExclusion.lean"
+  ],
+  "started_jst": "2026-11-06T07:02:51.564923+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourGapFiveExclusion.lean": "723178aa50e9256ee0247d62649265b598e423d60e4f076c445655ca3a723681"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "a03c3f14cbe2ba36460881ac919e91e6087322fd88f378250dbda341a1fa57a2",
+  "source_tree_manifest": "H29-gap-five-exclusion-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.38425533400004497,
+  "cpu_seconds": 0.268391,
+  "finished_jst": "2026-11-06T07:02:51.949109+09:00"
+}

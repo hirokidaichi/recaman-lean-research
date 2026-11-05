@@ -1,0 +1,25 @@
+{
+  "tag": "H11-high-gap-unit-cut-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourHighGapUnitCut.olean",
+    "Recaman/FourHighGapUnitCut.lean"
+  ],
+  "started_jst": "2026-11-06T06:30:22.304336+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourHighGapUnitCut.lean": "9a8be9319646a45dd14f9ce1eb47e92d66b59cec8172cb2ff1c10173712cc152"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "611a833eb9652dd931f6e37b9738598a7717737440a6553ceef3d414897a2243",
+  "source_tree_manifest": "H11-high-gap-unit-cut-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

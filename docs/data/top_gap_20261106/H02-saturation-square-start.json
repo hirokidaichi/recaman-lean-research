@@ -1,0 +1,25 @@
+{
+  "tag": "H02-saturation-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthSaturationSquare.olean",
+    "Recaman/FourthSaturationSquare.lean"
+  ],
+  "started_jst": "2026-11-06T06:12:15.483213+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthSaturationSquare.lean": "e2ab51eb35f0bb2a771a0557dccb0a9541e026cbc0e4fe9b378063a9072ac51a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "1530ed1b5a431ae2c9ab515539a9ab2cf974fa3da7e0f205e5772cdccbf1e997",
+  "source_tree_manifest": "H02-saturation-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

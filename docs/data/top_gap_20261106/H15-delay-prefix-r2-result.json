@@ -1,0 +1,31 @@
+{
+  "tag": "H15-delay-prefix-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DelayedSourcePrefix.olean",
+    "Recaman/DelayedSourcePrefix.lean"
+  ],
+  "started_jst": "2026-11-06T06:38:44.037942+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DelayedSourcePrefix.lean": "29fc1fa6ab09fe8f2ef835e0999d7f7f8d23e225c8595c5f6b0a083c65cd66d4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "d6f07a335e62072cb39e8e1403cdceaba8520213ef47e1cd5dbd5314875279f4",
+  "source_tree_manifest": "H15-delay-prefix-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8056784169966704,
+  "cpu_seconds": 0.6739809999999999,
+  "finished_jst": "2026-11-06T06:38:44.843549+09:00"
+}

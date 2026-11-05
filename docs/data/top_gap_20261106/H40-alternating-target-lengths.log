@@ -1,0 +1,204 @@
+Recaman/AlternatingTargetLengths.lean:70:6: error: `grind` failed
+case grind.1.1.2.1.2.2
+f : Nat → Bool
+a U v T j t : Nat
+hta : a ≤ t
+htb : t < a + U
+hA0 : ∀ (i : Nat), i < U → f (a + i) = true
+hS : ∀ (x : Nat), a + U ≤ x → x < a + U + v → f x = false
+hA : ∀ (i : Nat), i < T → f (a + U + v + i) = true
+hgap : ∀ (x : Nat), a + U + v + T ≤ x → x < a + U + v + T + j → f x = false
+htarget : Win f t (a + U + v + T + j - t)
+e : Nat := a + U - t
+he : 1 ≤ e
+heend : t + e = a + U
+hA0' : seg f t e = List.replicate e true
+hAa : seg f (a + U + v) T = List.replicate T true
+hword :
+  seg f t (a + U + v + T + j - t) =
+    List.replicate e true ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false
+ha : areaW (List.replicate e true ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false) = 0
+hk : 4 * ↑v * ↑e - 2 * ↑v ^ 2 = -2 * (↑j + 1) ^ 2
+hm : ↑e + -↑v + ↑T + -↑j = 1
+R : Int := ↑j + 1
+hR2 : 1 ^ 2 ≤ R ^ 2
+hV0 : 0 < ↑v
+hEq : ↑v ^ 2 - 2 * ↑e * ↑v = R ^ 2
+hRv : R < ↑v
+hl : ↑T ≤ 2 * R
+hprod : ↑v * (↑T - 2 * R) ≤ 0
+hpos : 0 < (↑v - R) * (↑v - R)
+hbalance : ↑e - ↑v + ↑T = R
+h : ↑T + -2 * ↑j + -2 ≤ 0
+h_1 : -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0
+h_2 : ↑j = ↑T - 2 * (↑j + 1)
+h_3 : ¬↑v - (↑j + 1) = ↑T - 2 * (↑j + 1)
+h_4 : v = T
+h_5 : ¬(if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0) = ↑v - (↑j + 1)
+h_6 : ¬↑v = ↑v - (↑j + 1)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] a ≤ t
+    [prop] t + 1 ≤ a + U
+    [prop] ∀ (i : Nat), i + 1 ≤ U → f (a + i) = true
+    [prop] ∀ (x : Nat), a + U ≤ x → x + 1 ≤ a + U + v → f x = false
+    [prop] ∀ (i : Nat), i + 1 ≤ T → f (a + U + v + i) = true
+    [prop] ∀ (x : Nat), a + U + v + T ≤ x → x + 1 ≤ a + U + v + T + j → f x = false
+    [prop] Win f t (a + U + v + T + j - t)
+    [prop] ↑(a + U + v + T + j - t) =
+          if -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0 then ↑a + ↑U + ↑v + ↑T + ↑j + -1 * ↑t else 0
+    [prop] 1 ≤ a + U - t
+    [prop] ↑(a + U - t) = if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0
+    [prop] t + (a + U - t) = a + U
+    [prop] seg f t (a + U - t) = List.replicate (a + U - t) true
+    [prop] seg f (a + U + v) T = List.replicate T true
+    [prop] seg f t (a + U + v + T + j - t) =
+          List.replicate (a + U - t) true ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false
+    [prop] areaW
+            (List.replicate (a + U - t) true ++ List.replicate v false ++ List.replicate T true ++
+              List.replicate j false) =
+          0
+    [prop] 4 * ↑v * ↑(a + U - t) + -2 * ↑v ^ 2 + 2 * (↑j + 1) ^ 2 = 0
+    [prop] -1 * ↑v + ↑T + -1 * ↑j + ↑(a + U - t) + -1 = 0
+    [prop] -1 * (↑j + 1) ^ 2 + 1 ≤ 0
+    [prop] -1 * ↑v + 1 ≤ 0
+    [prop] -1 * (2 * ↑(a + U - t) * ↑v) + ↑v ^ 2 + -1 * (↑j + 1) ^ 2 = 0
+    [prop] -1 * ↑v + ↑j + 2 ≤ 0
+    [prop] ↑T + -2 * ↑j + -2 ≤ 0
+    [prop] ↑v * (↑T - 2 * (↑j + 1)) ≤ 0
+    [prop] -1 * ((↑v - (↑j + 1)) * (↑v - (↑j + 1))) + 1 ≤ 0
+    [prop] -1 * ↑v + ↑T + -1 * ↑j + ↑(a + U - t) + -1 = 0
+    [prop] ↑T + -2 * ↑j + -2 ≤ 0
+    [prop] -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0
+    [prop] ↑j = ↑T - 2 * (↑j + 1)
+    [prop] ¬↑v - (↑j + 1) = ↑T - 2 * (↑j + 1)
+    [prop] v = T
+    [prop] ¬(if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0) = ↑v - (↑j + 1)
+    [prop] ¬↑v = ↑v - (↑j + 1)
+  [eqc] True propositions
+    [prop] ↑v = ↑T
+    [prop] ↑j = ↑T - 2 * (↑j + 1)
+    [prop] v = T
+    [prop] Win f t (a + U + v + T + j - t)
+    [prop] ↑T + -2 * ↑j + -2 ≤ 0
+    [prop] -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0
+    [prop] -1 * ↑a + -1 * ↑U + ↑t ≤ 0
+    [prop] -1 * ↑v + ↑j + 2 ≤ 0
+    [prop] -1 * ↑v + 1 ≤ 0
+    [prop] -1 * ((↑v - (↑j + 1)) * (↑v - (↑j + 1))) + 1 ≤ 0
+    [prop] -1 * (↑j + 1) ^ 2 + 1 ≤ 0
+    [prop] ↑v * (↑T - 2 * (↑j + 1)) ≤ 0
+    [prop] a ≤ t
+    [prop] 1 ≤ a + U - t
+    [prop] t + 1 ≤ a + U
+    [prop] ∀ (i : Nat), i + 1 ≤ U → f (a + i) = true
+    [prop] ∀ (i : Nat), i + 1 ≤ T → f (a + U + v + i) = true
+    [prop] ∀ (x : Nat), a + U ≤ x → x + 1 ≤ a + U + v → f x = false
+    [prop] ∀ (x : Nat), a + U + v + T ≤ x → x + 1 ≤ a + U + v + T + j → f x = false
+  [eqc] False propositions
+    [prop] ↑v = ↑v - (↑j + 1)
+    [prop] ↑j = ↑v - (↑j + 1)
+    [prop] (if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0) = ↑v - (↑j + 1)
+    [prop] ↑v - (↑j + 1) = ↑T - 2 * (↑j + 1)
+  [eqc] Equivalence classes
+    [eqc] {v, T}
+    [eqc] {areaW
+          (List.replicate (a + U - t) true ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false),
+        0}
+      [eqc] {-1 * ↑v + ↑T + -1 * ↑j + ↑(a + U - t) + -1,
+          ↑v ^ 2 + -1 * ↑j ^ 2 + -2 * (↑v * ↑(a + U - t)) + -2 * ↑j + -1,
+          -1 * (2 * ↑(a + U - t) * ↑v) + ↑v ^ 2 + -1 * (↑j + 1) ^ 2,
+          4 * ↑v * ↑(a + U - t) + -2 * ↑v ^ 2 + 2 * (↑j + 1) ^ 2}
+    [eqc] {List.replicate T true, seg f (a + U + v) T}
+    [eqc] {List.replicate (a + U - t) true, seg f t (a + U - t)}
+    [eqc] {seg f t (a + U + v + T + j - t),
+        List.replicate (a + U - t) true ++ List.replicate v false ++ List.replicate T true ++ List.replicate j false}
+    [eqc] {a + U, t + (a + U - t)}
+    [eqc] others
+      [eqc] {↑v, ↑T}
+      [eqc] {↑v, ↑T}
+      [eqc] {↑j, ↑T - 2 * (↑j + 1)}
+      [eqc] {↑(a + U), ↑(t + (a + U - t))}
+      [eqc] {↑(a + U - t), if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0, ↑a + ↑U + -1 * ↑t}
+      [eqc] {↑(a + U + v + T + j - t),
+          if -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0 then ↑a + ↑U + ↑v + ↑T + ↑j + -1 * ↑t else 0,
+          ↑a + ↑U + ↑v + ↑T + ↑j + -1 * ↑t}
+      [eqc] {-1 * ↑v + ↑T + -1 * ↑j + ↑(a + U - t), ↑v ^ 2 + -1 * ↑j ^ 2 + -2 * (↑v * ↑(a + U - t)) + -2 * ↑j}
+      [eqc] {↑v * ↑j, ↑v * (↑T - 2 * (↑j + 1))}
+      [eqc] {-1 * ↑v, -1 * ↑T}
+  [cases] Case analyses
+    [cases] [1/2]: if -1 * ↑a + -1 * ↑U + -1 * ↑v + -1 * ↑T + -1 * ↑j + ↑t ≤ 0 then ↑a + ↑U + ↑v + ↑T + ↑j + -1 * ↑t
+        else 0
+      [cases] source: Initial goal
+    [cases] [1/2]: ↑j = ↑T - 2 * (↑j + 1)
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑v * ↑j
+          and
+            ↑v * (↑T - 2 * (↑j + 1))
+    [cases] [2/2]: ↑v - (↑j + 1) = ↑T - 2 * (↑j + 1)
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑v - (↑j + 1)) * (↑v - (↑j + 1))
+          and
+            ↑v * (↑T - 2 * (↑j + 1))
+    [cases] [1/2]: v = T
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate v false
+          and
+            List.replicate T true
+    [cases] [2/2]: (if -1 * ↑a + -1 * ↑U + ↑t ≤ 0 then ↑a + ↑U + -1 * ↑t else 0) = ↑v - (↑j + 1)
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑v - (↑j + 1)) * (↑v - (↑j + 1))
+          and
+            4 * ↑v * ↑(a + U - t)
+    [cases] [2/2]: ↑v = ↑v - (↑j + 1)
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑v - (↑j + 1)) * (↑v - (↑j + 1))
+          and
+            2 * ↑(a + U - t) * ↑v
+  [ematch] E-matching patterns
+    [thm] hA0: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[U]]
+    [thm] hA0: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[a] #1)]
+    [thm] hA0: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[U]]
+    [thm] hS: [@LE.le `[Nat] `[instLENat] `[a + U] #2]
+    [thm] hS: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[a + U + v]]
+    [thm] hS: [f #2]
+    [thm] hA: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 `[1]) `[T]]
+    [thm] hA: [f (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] `[a + U + v] #1)]
+    [thm] hA: [@LE.le `[Nat] `[instLENat] (#1 + 1) `[T]]
+    [thm] hgap: [@LE.le `[Nat] `[instLENat] `[a + U + v + T] #2]
+    [thm] hgap: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #2 `[1]) `[a + U + v + T + j]]
+    [thm] hgap: [f #2]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] a := 0
+    [assign] U := 1
+    [assign] v := 2
+    [assign] T := 2
+    [assign] j := 0
+    [assign] t := 0
+    [assign] e := 16
+    [assign] R := 32
+    [assign] areaW
+          (List.replicate (a + U - t) true ++ List.replicate v false ++ List.replicate T true ++
+            List.replicate j false) := 0
+    [assign] 「↑v ^ 2」 := 3
+    [assign] 「↑j ^ 2」 := 2
+    [assign] 「(↑j + 1) ^ 2」 := 0
+  [ring] Rings
+    [ring] Ring `Int`
+      [basis] Basis
+        [_] 2 * ↑(a + U - t) ^ 2 + -4 * ↑(a + U - t) + 1 = 0
+        [_] ↑a + -1 * ↑t + ↑U + -1 * ↑(a + U - t) = 0
+        [_] ↑v + -1 * ↑T + ↑j + -1 * ↑(a + U - t) + 1 = 0
+        [_] ↑T + -3 * ↑j + -2 = 0
+        [_] ↑j + -1 * ↑(a + U - t) + 1 = 0
+      [diseqs] Disequalities
+        [_] ¬↑(a + U - t) = 0
+        [_] ¬-1 * ↑(a + U - t) = 0
+        [_] ¬-1 * ↑(a + U - t) + 1 = 0
+        [_] ¬↑(a + U - t) = 0
+    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`
+      [basis] Basis
+        [_] ↑t + ↑(a + U - t) + -1 * ↑a + -1 * ↑U = 0
+        [_] ↑v + -1 * ↑T = 0

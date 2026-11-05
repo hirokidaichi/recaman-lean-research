@@ -1,0 +1,31 @@
+{
+  "tag": "H26-fourth-delayed-witness",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthDelayedWitness.olean",
+    "Recaman/FourthDelayedWitness.lean"
+  ],
+  "started_jst": "2026-11-06T06:58:31.085990+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthDelayedWitness.lean": "34ef39ad95eafd6cc7b5f107f9ea1f0e92c396742a93738e97e1f3dcf9b2af7c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "255cbda179706fa080e79d614b5d4e8e734cc69d933e3334692b6707fbf698a2",
+  "source_tree_manifest": "H26-fourth-delayed-witness-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4831208749965299,
+  "cpu_seconds": 0.37343099999999996,
+  "finished_jst": "2026-11-06T06:58:31.569035+09:00"
+}

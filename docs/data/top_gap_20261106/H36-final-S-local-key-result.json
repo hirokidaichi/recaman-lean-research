@@ -1,0 +1,31 @@
+{
+  "tag": "H36-final-S-local-key",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FinalSLocalKey.olean",
+    "Recaman/FinalSLocalKey.lean"
+  ],
+  "started_jst": "2026-11-06T07:14:38.326327+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FinalSLocalKey.lean": "1416b8ece42bf75f495fe418ff7839fc9b9fe3cdf1b50aba092014caa5bc5d6b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "07ad42c4f8e3661b83cfc2947ec37efc1caa122f446cca32a83a90ef99219823",
+  "source_tree_manifest": "H36-final-S-local-key-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6886653339970508,
+  "cpu_seconds": 0.577148,
+  "finished_jst": "2026-11-06T07:14:39.014928+09:00"
+}

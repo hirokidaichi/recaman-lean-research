@@ -1,6 +1,6 @@
 # 毎日6:00〜8:00の研究スケジュール
 
-最終更新: 2026-11-05。以下を2026-10-23以降の現行ルールとする。
+最終更新: 2026-11-06。以下を2026-10-23以降の現行ルールとする。
 
 - 毎日、日本時間（Asia/Tokyo）の06:00〜08:00。このチャットで研究・反証・形式化・監査・記録を継続する。
 - 対象: `/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research`。
@@ -13,9 +13,9 @@
 
 ## 再開する問いと参照順
 
-2026-11-06の現行入口は[H-20261106-01](HYPOTHESIS_CARD_2026-11-06_TOP_GAP_SAME_TARGET.md)。[11/05 DAILY](RESEARCH_HANDOFF_2026-11-05_DAILY.md)→[source collision note](RESEARCH_NOTE_2026-11-05_C1_SOURCE_COLLISION.md)→[gap13 source note](RESEARCH_NOTE_2026-11-05_TOP_GAP_SOURCE.md)→同カード。
-E568 zerohead/oldtarget全massとE575 arbitrarymixed mass1はPROVED-LEAN。E579 genuine四run oldtarget counterはj13/A30/selectedwindow108へ。E580 j13のv1/A30/C2..4/T15or16/negativeheadはPAPER、actual counted-source witness/clock接着は未Lean。最初15分は同元p j13/C4 counterからold+initialS witnessとT>=15/h>=7を内部供給し、未知tuple/free結論を新Propで入力しない。進まなければC2/C3同joint25分とnegativehead/shared-prefix機構20分へ。全old履歴と他source massを保持する。
-E438 AS式/E458 actual17は既存入力で再証明しない。狭いmass1枝をE575に追加の独立coverageと数えない。H12/H23及び旧r4/H06/H21等STOPは資源/tactic/split/import変更で再開せず、r3/Q/C2初日監査へ戻らない。CPU探索当初0、07:45探索stop、確定journal/main通常publication/必須日次報告を継続する。
+2026-11-07の現行入口は[H-20261107-01](HYPOTHESIS_CARD_2026-11-07_THIRD_S_SATURATION.md)。[11/06 DAILY](RESEARCH_HANDOFF_2026-11-06_DAILY.md)→[第三Sの飽和排除](RESEARCH_NOTE_2026-11-06_THIRD_S_SATURATION.md)→同カード。
+E583旧対象全域、E586第三A以降、E588第三S q<=3又はq+R<=v はPROVED-LEAN。E587同第三S源の時計/因数、E589残余和14と第二A/第三Sのkey衝突を使う。E590の実countからW+q+v<=15への接続はPROVED-PAPER。最初15分で実最後供給7から第二Aと第三S源を内部抽出し、進まなければp7/8収支25分とより早い局所対象のsource-collision20分へ。全旧履歴・他source massを保持する。
+H08/H11、H43/H44、H50/H51及び継承STOPを、資源・tactic・split・import変更だけで再開しない。完了した対象枝の再証明はしない。CPU探索当初0、07:45探索終了、確定journal/main通常publication/必須日次報告を継続する。
 以下の初回計画と日付付き履歴は当時の記録であり、最新の入口を優先する。
 
 初回（2026-10-23）は[C1深さカード H-20261023-01](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)から始める。

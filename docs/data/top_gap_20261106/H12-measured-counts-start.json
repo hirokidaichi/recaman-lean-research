@@ -1,0 +1,25 @@
+{
+  "tag": "H12-measured-counts",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourMeasuredCounts.olean",
+    "Recaman/FourMeasuredCounts.lean"
+  ],
+  "started_jst": "2026-11-06T06:31:46.039891+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourMeasuredCounts.lean": "a8745ad6ecd66961f7949bb9f87a0468413db54253d389d50a18cba4f2ffdf5a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "7123189cde657423be5b0b532896f8b2bcec070482e36ddbfb6da0708d4a9dc7",
+  "source_tree_manifest": "H12-measured-counts-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

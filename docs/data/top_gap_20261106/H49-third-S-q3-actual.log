@@ -1,0 +1,68 @@
+Recaman/FourThirdSTargetGap.lean:87:3: error: unknown tactic
+Recaman/FourThirdSTargetGap.lean:30:66: error: unsolved goals
+case neg
+f : Nat → Bool
+n t h M m L s U v T j : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT : 1 ≤ T
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+hta : n + h + M + m + L ≤ t
+htb : t < n + h + M + m + L + s
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+R : Nat := j + 1
+a : Nat := n + h + M + m + L
+q : Nat := a + s - t
+hq : 1 ≤ q
+hsq : (↑(a + s - t) + ↑v) ^ 2 = (↑j + 1) ^ 2 + 2 * ↑U * ↑v
+hbalance : T + U = R + q + v
+hbal : ↑T + ↑U = ↑R + ↑3 + ↑v
+hsqi : (↑3 + ↑v) ^ 2 = ↑R ^ 2 + 2 * ↑U * ↑v
+hlong : ¬q + R ≤ v
+hshort : q ≤ 3 ∨ q + R ≤ v
+H : Nat := h + M + m + L + s + U
+B : Nat := H + v
+N : Nat := M + L + U
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+F : Nat := cN P n (B + T)
+r : Nat := cN P n H
+E : Nat := cN (EndN f 0) (n + B) T
+hf : ¬R ≤ F
+left✝² : cN (EndN f 0) n (h + M + m + L + s + U) ≤ 10
+left✝¹ :
+  cN (fun x => f x = true) n (h + M + m + L + s + U + v + T) =
+    cN (EndN f 0) n (h + M + m + L + s + U) + cN (EndN f 0) (n + (h + M + m + L + s + U + v)) T +
+      cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T)
+left✝ :
+  cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U) ≤ 3 →
+    cN (EndN f 0) n (h + M + m + L + s + U) ≤ cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U) + 1
+hword :
+  seg f n (h + M + m + L + s + U + v) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+hE7 : E ≤ 7
+hfree : T + r ≤ F + E
+hET : E ≤ T
+hNA : cN (fun x => f x = true) n H = N
+hNcut : r ≤ 3 → N ≤ 2 * r + 1
+hq2 : ¬q ≤ 2
+hq3 : q = 3
+⊢ False

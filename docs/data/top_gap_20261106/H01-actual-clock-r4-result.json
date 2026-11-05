@@ -1,0 +1,31 @@
+{
+  "tag": "H01-actual-clock-r4",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthSaturationClock.olean",
+    "Recaman/FourthSaturationClock.lean"
+  ],
+  "started_jst": "2026-11-06T06:09:48.058810+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthSaturationClock.lean": "7a2df4bb5307a6758075c33ea79a9c40635b0cc2da322c10bae20e20d16447b2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "0ea9fad5388e841b2eb9c9a48ec1b7fb0f7a000c2dee9f8a5d219d058e364fc6",
+  "source_tree_manifest": "H01-actual-clock-r4-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8995236670016311,
+  "cpu_seconds": 0.785835,
+  "finished_jst": "2026-11-06T06:09:48.958272+09:00"
+}

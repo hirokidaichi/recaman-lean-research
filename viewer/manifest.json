@@ -210,6 +210,25 @@
    "hasReport": false
   },
   {
+   "name": "AlternatingTargetLengths",
+   "lines": 78,
+   "imports": [
+    "FinalSTargetLengths",
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_A_S_A_S_target_lengths",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "AnchorBoundary",
    "lines": 209,
    "imports": [
@@ -254,7 +273,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3800,
+   "lines": 3819,
    "imports": [
     "UnitOneInitialSource",
     "UnitOneLastFive",
@@ -3701,6 +3720,34 @@
    "theorems": 12,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ClockCountSaturation",
+   "lines": 69,
+   "imports": [
+    "SingleWindowEquality"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "count_le_length",
+     "line": 7
+    },
+    {
+     "kind": "theorem",
+     "name": "full_count_at",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "saturated_pair_clock",
+     "line": 45
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -27482,6 +27529,68 @@
    "hasReport": false
   },
   {
+   "name": "DelayedOldTargetBudget",
+   "lines": 128,
+   "imports": [
+    "DelayedSourcePrefix",
+    "OldTargetEarlyClockBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "delayed_source_after_cut",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "delayed_clock_budget",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "delayed_word_budget",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "delayed_word_support",
+     "line": 89
+    },
+    {
+     "kind": "theorem",
+     "name": "delayed_after_A_word_support",
+     "line": 108
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DelayedSourcePrefix",
+   "lines": 88,
+   "imports": [
+    "SourceCrossSurplus"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "delay_source_prefix_A",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_delay_source_prefix_A",
+     "line": 40
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DemandProvenanceCounterexample",
    "lines": 88,
    "imports": [
@@ -29582,6 +29691,60 @@
    "hasReport": false
   },
   {
+   "name": "FinalSLocalKey",
+   "lines": 79,
+   "imports": [
+    "FourCrossExact",
+    "FourthSourceFamilies",
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fourth_prefix_key",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "third_separator_A_floor",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "small_head_no_local_early",
+     "line": 36
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FinalSSmallHeadCaps",
+   "lines": 111,
+   "imports": [
+    "FinalSLocalKey",
+    "ThirdSeparatorClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_head_final_local_three",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "small_head_large_separator_local_five",
+     "line": 75
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FinalSSourceResidual",
    "lines": 128,
    "imports": [
@@ -29606,6 +29769,24 @@
     }
    ],
    "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FinalSTargetLengths",
+   "lines": 48,
+   "imports": [
+    "UnitTargetSASProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "final_S_target_lengths",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -30239,6 +30420,52 @@
    "hasReport": false
   },
   {
+   "name": "FourCrossExact",
+   "lines": 33,
+   "imports": [
+    "GenuineFourCross"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_cross_exact",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "four_cross_head_first_lower",
+     "line": 22
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourDelayedCounterData",
+   "lines": 121,
+   "imports": [
+    "FourMeasuredCounts",
+    "FourthDelayedCuts",
+    "ThreeHeadFreeCuts",
+    "FourCrossExact",
+    "FourRunSupplySeventeen",
+    "OldTargetHeadSupplyFloor"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_delayed_counter_data",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourEventFast",
    "lines": 91,
    "imports": [
@@ -30489,6 +30716,201 @@
    "hasReport": false
   },
   {
+   "name": "FourGapFiveCandidate",
+   "lines": 57,
+   "imports": [
+    "FourDelayedCounterData",
+    "FourthDelayedWitness",
+    "GapFiveClockReduction",
+    "GapFiveScalar"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_gap_five_candidate",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourGapFiveExclusion",
+   "lines": 36,
+   "imports": [
+    "FourGapFiveCandidate",
+    "HeadSaturationCross"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_gap_five_excluded",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourGapFourCandidate",
+   "lines": 75,
+   "imports": [
+    "FourDelayedCounterData",
+    "FourthDelayedWitness",
+    "GapFourClockReduction",
+    "GapFourScalar"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_gap_four_candidate",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourGapFourExclusion",
+   "lines": 36,
+   "imports": [
+    "FourGapFourCandidate",
+    "HeadSaturationCross"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_gap_four_excluded",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourGapSixCandidate",
+   "lines": 40,
+   "imports": [
+    "FourDelayedCounterData",
+    "GapSixScalar"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_gap_six_candidate",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourGapSixExclusion",
+   "lines": 36,
+   "imports": [
+    "FourGapSixCandidate",
+    "HeadSaturationCross"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_gap_ge_six_excluded",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourLateLocalTargetGap",
+   "lines": 70,
+   "imports": [
+    "FourLongFinalRayGap",
+    "AlternatingTargetLengths"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_late_local_target_free_gap",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourLateLocalTargetGapBase",
+   "lines": 54,
+   "imports": [
+    "FourLateLocalTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_late_local_target_free_gap_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourLongFinalRayGap",
+   "lines": 97,
+   "imports": [
+    "FourMeasuredCounts",
+    "FinalSSmallHeadCaps",
+    "MixedFinalRayOldBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_long_final_ray_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourMeasuredCounts",
+   "lines": 97,
+   "imports": [
+    "FourthActualSeven",
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "measured_counts",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourNonsuppliedData",
    "lines": 118,
    "imports": [
@@ -30573,6 +30995,45 @@
    ],
    "theorems": 8,
    "defs": 7,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourOldTargetGap",
+   "lines": 61,
+   "imports": [
+    "FourGapSixExclusion",
+    "FourGapFiveExclusion",
+    "FourGapFourExclusion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_old_target_free_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourOldTargetGapBase",
+   "lines": 58,
+   "imports": [
+    "FourOldTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_old_target_free_gap_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -30858,6 +31319,45 @@
    "hasReport": false
   },
   {
+   "name": "FourThirdSTargetGap",
+   "lines": 114,
+   "imports": [
+    "FourLongFinalRayGap",
+    "ThirdSTargetProfile",
+    "ThirdSQThreeFactors"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_third_S_target_free_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourThirdSTargetGapBase",
+   "lines": 55,
+   "imports": [
+    "FourThirdSTargetGap",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_third_S_target_free_gap_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourTierCapacityReduction",
    "lines": 145,
    "imports": [
@@ -31013,6 +31513,92 @@
    "hasReport": false
   },
   {
+   "name": "FourthDelayedCuts",
+   "lines": 47,
+   "imports": [
+    "DelayedOldTargetBudget",
+    "AdjacentRunSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fourth_delayed_cuts",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourthDelayedWitness",
+   "lines": 88,
+   "imports": [
+    "DelayedOldTargetBudget",
+    "ThirdSeparatorClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fourth_delayed_pair_support",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_second_A_tail_support",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_third_S_tail_support",
+     "line": 68
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourthSaturationSources",
+   "lines": 63,
+   "imports": [
+    "FourthSourceFamilies",
+    "UnitTargetSASProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fourth_seven_sources",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourthSaturationSquare",
+   "lines": 69,
+   "imports": [
+    "InitialOldTargetSquare",
+    "FourthSaturationSources"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_last_seven_square",
+     "line": 21
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourthSourceFamilies",
    "lines": 134,
    "imports": [
@@ -31028,6 +31614,11 @@
      "kind": "theorem",
      "name": "sourceAt_count_le_one",
      "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "local_const_split",
+     "line": 26
     },
     {
      "kind": "theorem",
@@ -31050,7 +31641,7 @@
      "line": 128
     }
    ],
-   "theorems": 5,
+   "theorems": 6,
    "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -31100,6 +31691,103 @@
    ],
    "theorems": 3,
    "defs": 4,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapFiveClockReduction",
+   "lines": 74,
+   "imports": [
+    "ClockCountSaturation",
+    "ThirdSeparatorClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_five_clock_reduction",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapFiveScalar",
+   "lines": 57,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_five_head_candidate",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapFourClockReduction",
+   "lines": 101,
+   "imports": [
+    "ClockCountSaturation",
+    "ThirdSeparatorClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_four_clock_reduction",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapFourScalar",
+   "lines": 65,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_four_head_candidate",
+     "line": 18
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapSixScalar",
+   "lines": 75,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_six_candidate",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "last_pair_budget",
+     "line": 57
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -31647,6 +32335,25 @@
    "hasReport": false
   },
   {
+   "name": "HeadSaturationCross",
+   "lines": 74,
+   "imports": [
+    "HeadRunCountBounds",
+    "HeadUnitPairSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "head_ten_cross_extra_six",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "HeadSixSevenCount",
    "lines": 69,
    "imports": [
@@ -31663,6 +32370,30 @@
      "kind": "theorem",
      "name": "head_six_seven_middle_one_eight",
      "line": 42
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeadUnitPairSupply",
+   "lines": 84,
+   "imports": [
+    "RunClockClassifier",
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_unit_pair_local",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "head_unit_pair_eight",
+     "line": 41
     }
    ],
    "theorems": 2,
@@ -32394,6 +33125,24 @@
      "kind": "theorem",
      "name": "initial_zero_first_one_excluded_all_v",
      "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialOldTargetSquare",
+   "lines": 43,
+   "imports": [
+    "MomentTargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_old_target_square",
+     "line": 12
     }
    ],
    "theorems": 1,
@@ -38617,6 +39366,25 @@
    "hasReport": false
   },
   {
+   "name": "MixedFinalRayOldBudget",
+   "lines": 39,
+   "imports": [
+    "BlockOldRay",
+    "ClockCountSaturation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_mixed_ray_old_budget",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MixedSeedParity",
    "lines": 53,
    "imports": [
@@ -41170,6 +41938,36 @@
    "hasReport": false
   },
   {
+   "name": "OldTargetEarlyClockBudget",
+   "lines": 76,
+   "imports": [
+    "OldSourceKeyOrder",
+    "LocalSourcePrefixBudget",
+    "RayCountFromBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_target_early_clock_budget",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "prefix_word_ray_measure",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "old_target_early_word_budget",
+     "line": 63
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "OldTargetFirstRun",
    "lines": 270,
    "imports": [
@@ -41242,6 +42040,25 @@
     }
    ],
    "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldTargetHeadSupplyFloor",
+   "lines": 69,
+   "imports": [
+    "DelayedOldTargetBudget",
+    "PrimitiveOldTargetCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_target_head_supply_floor",
+     "line": 21
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -59024,6 +59841,140 @@
    "hasReport": false
   },
   {
+   "name": "ThirdSQThreeFactors",
+   "lines": 83,
+   "imports": [
+    "ThirdSShortTwo"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_S_q_three_choices",
+     "line": 38
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSResidualSquare",
+   "lines": 92,
+   "imports": [
+    "ThirdSTargetProfile",
+    "ThirdSShortTwo"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_S_source_excludes_residual_fourteen",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "second_A_third_S_key_collision",
+     "line": 69
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSShortTwo",
+   "lines": 73,
+   "imports": [
+    "ShortCounterFactorBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "le_of_square_le",
+     "line": 7
+    },
+    {
+     "kind": "theorem",
+     "name": "third_S_short_two",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "third_S_target_long_ray",
+     "line": 61
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSTargetProfile",
+   "lines": 80,
+   "imports": [
+    "ThirdSeparatorClock",
+    "ASourceReuse"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_third_S_target_profile",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "third_S_same_separator_clock",
+     "line": 63
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSeparatorClock",
+   "lines": 87,
+   "imports": [
+    "FourthSourceFamilies",
+    "ShortCounterFactorBounds",
+    "UnitTargetSASProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_separator_clock",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "third_separator_or_pair",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "second_A_or_third_separator_or_pair",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "second_A_one_unit_tail_absent",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "same_family_clock",
+     "line": 79
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ThirteenRunFactors",
    "lines": 61,
    "imports": [
@@ -59087,6 +60038,24 @@
      "kind": "theorem",
      "name": "special_second_A_clock_zero",
      "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeHeadFreeCuts",
+   "lines": 51,
+   "imports": [
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "head_free_cuts",
+     "line": 11
     }
    ],
    "theorems": 1,
@@ -64180,6 +65149,6 @@
    "hasReport": false
   }
  ],
- "total": 788,
+ "total": 832,
  "withReport": 167
 }

@@ -1,0 +1,25 @@
+{
+  "tag": "H01-source-split",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthSourceFamilies.olean",
+    "Recaman/FourthSourceFamilies.lean"
+  ],
+  "started_jst": "2026-11-06T06:05:14.918484+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthSourceFamilies.lean": "66c4698ee96a5589d4bd38be8778a5264a0e24daf594c00e6072f4f89d311731"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "14903f345ea29d23862e832fce7209c0ef9f56fc1700320959a5fcc4e8bcb010",
+  "source_tree_manifest": "H01-source-split-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

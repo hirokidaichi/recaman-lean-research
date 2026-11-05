@@ -1,0 +1,31 @@
+{
+  "tag": "H49-third-S-q3-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourThirdSTargetGap.olean",
+    "Recaman/FourThirdSTargetGap.lean"
+  ],
+  "started_jst": "2026-11-06T07:35:37.004895+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourThirdSTargetGap.lean": "ad4c310e77cae4ccc476edaec6a2b83998b405c91186e8aace0a912a83f76e90"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "f2578565703e2102c00fc6e2325e437ada3027bd232e89f8725c28aaa088d5c9",
+  "source_tree_manifest": "H49-third-S-q3-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.6857705830043415,
+  "cpu_seconds": 0.585726,
+  "finished_jst": "2026-11-06T07:35:37.690586+09:00"
+}

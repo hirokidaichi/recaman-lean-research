@@ -1,0 +1,23 @@
+Recaman/HeadUnitPairSupply.lean:28:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑i + ↑L - 1 - 1
+in the target expression
+  (↑i + ↑L - ↑1 - 1 + ↑1) ^ 2 = 2 * ↑L * ↑1 + 1
+
+case inr.inr.inr
+h M L U : Nat
+x : List Bool := List.replicate M true ++ List.replicate 1 false ++ List.replicate L true ++ List.replicate 1 false
+i : Nat
+hi : ThreeNonsuppliedData.localSupply (x ++ List.replicate i true) = true
+hv : 1 ≤ ↑i + ↑L - ↑1 - 1
+hv1 : ↑i + ↑L - ↑1 - 1 ≤ ↑1
+hkey : (↑i + ↑L - ↑1 - 1 + ↑1) ^ 2 = 2 * ↑L * ↑1 + 1
+he : ↑i + ↑L - 1 - 1 = 1
+⊢ i = 2
+Recaman/HeadUnitPairSupply.lean:62:46: error(lean.unknownIdentifier): Unknown identifier `Recaman.UnitTargetSASProfile.cntF_A`
+Recaman/HeadUnitPairSupply.lean:62:82: warning: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [y, cntF_append, cntF_replicate_S, Recaman.UnitTargetSASProfile.cntF_A]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

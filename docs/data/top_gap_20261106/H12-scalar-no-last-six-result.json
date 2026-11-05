@@ -1,0 +1,31 @@
+{
+  "tag": "H12-scalar-no-last-six",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HighGapScalarCuts.olean",
+    "Recaman/HighGapScalarCuts.lean"
+  ],
+  "started_jst": "2026-11-06T06:31:46.714440+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HighGapScalarCuts.lean": "d6cb9499ea76a30e1095173cb4c8425bc5e07cfbb5fd82e3cb723171848b7719"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "7123189cde657423be5b0b532896f8b2bcec070482e36ddbfb6da0708d4a9dc7",
+  "source_tree_manifest": "H12-scalar-no-last-six-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0741411249982775,
+  "cpu_seconds": 0.9727399999999999,
+  "finished_jst": "2026-11-06T06:31:47.788516+09:00"
+}

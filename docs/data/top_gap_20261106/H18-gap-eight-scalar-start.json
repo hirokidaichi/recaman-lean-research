@@ -1,0 +1,25 @@
+{
+  "tag": "H18-gap-eight-scalar",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapEightScalarCuts.olean",
+    "Recaman/GapEightScalarCuts.lean"
+  ],
+  "started_jst": "2026-11-06T06:41:58.092874+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapEightScalarCuts.lean": "a5454e69e40fe4b082c5e82c646fc4f571f24560f99462a49d5406d6a61b9796"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "b396ccbdcdf33a6efc29f2870c244488c423363d6f96793c54904a94ec4c0c86",
+  "source_tree_manifest": "H18-gap-eight-scalar-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

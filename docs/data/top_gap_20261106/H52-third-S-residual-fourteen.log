@@ -1,0 +1,38 @@
+Recaman/ThirdSResidualSquare.lean:51:5: error: unknown tactic
+Recaman/ThirdSResidualSquare.lean:50:30: error: unsolved goals
+q s U v T j i : Nat
+hj : 1 ≤ j
+hv : 1 ≤ v
+hU : 1 ≤ U
+hbalance : T + U = j + 1 + q + v
+hsq : (↑q + ↑v) ^ 2 = (↑j + 1) ^ 2 + 2 * ↑U * ↑v
+hs : sourceAt false s (List.replicate U true ++ List.replicate v false) i
+h14 : q + v = 14
+left✝² : i + j < T
+k : Nat
+hk : 1 ≤ k
+left✝¹ : k ≤ s
+hkq : k < q
+left✝ : q - k = T - j - i
+hfac : (↑q - ↑k) * (↑q + ↑k + 2 * ↑v) = (↑j + 1) ^ 2 - 1
+hqv : ↑q + ↑v = 14
+⊢ ↑j + 1 ≤ 13
+Recaman/ThirdSResidualSquare.lean:45:14: error: unsolved goals
+q s U v T j i : Nat
+hj : 1 ≤ j
+hv : 1 ≤ v
+hU : 1 ≤ U
+hbalance : T + U = j + 1 + q + v
+hsq : (↑q + ↑v) ^ 2 = (↑j + 1) ^ 2 + 2 * ↑U * ↑v
+hs : sourceAt false s (List.replicate U true ++ List.replicate v false) i
+h14 : q + v = 14
+left✝² : i + j < T
+k : Nat
+hk : 1 ≤ k
+left✝¹ : k ≤ s
+hkq : k < q
+left✝ : q - k = T - j - i
+hfac : (↑q - ↑k) * (↑q + ↑k + 2 * ↑v) = (↑j + 1) ^ 2 - 1
+hqv : ↑q + ↑v = 14
+hR : ↑j + 1 ≤ 13
+⊢ False

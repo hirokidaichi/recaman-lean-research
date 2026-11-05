@@ -1,0 +1,25 @@
+{
+  "tag": "H39-final-S-full-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourFinalSTargetGap.olean",
+    "Recaman/FourFinalSTargetGap.lean"
+  ],
+  "started_jst": "2026-11-06T07:18:04.033289+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourFinalSTargetGap.lean": "ced0056b5f394dc84ae7683ff18c0cef4662d0062a505d6b2b40b2018fa1a909"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "5fe6b2109e0d312a2d2febb0a55ea48f3200e343d0ffddeba37d929f83d5ce15",
+  "source_tree_manifest": "H39-final-S-full-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

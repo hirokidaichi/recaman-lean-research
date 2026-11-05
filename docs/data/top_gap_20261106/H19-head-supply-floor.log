@@ -1,0 +1,58 @@
+Recaman/OldTargetHeadSupplyFloor.lean:52:71: error: unknown tactic
+Recaman/OldTargetHeadSupplyFloor.lean:37:56: error: Application type mismatch: The argument
+  seg f 0 n
+has type
+  List Bool
+of sort `Type` but is expected to have type
+  BlockWord ?m.173
+of sort `Prop` in the application
+  positive_r3_additions_free_bound f n 0 B (seg f 0 n)
+Recaman/OldTargetHeadSupplyFloor.lean:37:75: error: `simp` made no progress
+Recaman/OldTargetHeadSupplyFloor.lean:52:43: error: unsolved goals
+f : Nat → Bool
+n t B T j : Nat
+hw : BlockWord (seg f 0 n)
+ht : t < n
+hj : 2 ≤ j
+hC : 2 ≤ mass (seg f t (n - t))
+hN : 2 ≤ cN (fun x => f x = true) n B
+hpos : ∀ (k : Nat), 0 < k → k ≤ B → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hA : ∀ (i : Nat), i < T → f (n + B + i) = true
+hgap : ∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false
+htarget : Win f t (n + B + T + j - t)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (B + T) < j + 1
+N : Nat := cN (fun x => f x = true) n B
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+r : Nat := cN P n B
+E : Nat := cN (EndN f 0) (n + B) T
+hr : 1 ≤ r
+hAlower : 2 * j + 3 ≤ N + T
+htA : cN (fun x => f x = true) (n + B) T = T
+hAeq : cN (fun x => f x = true) n (B + T) = N + T
+⊢ ↑(cN (fun u => f u = true) n B) ≤ ↑N
+Recaman/OldTargetHeadSupplyFloor.lean:30:29: error: unsolved goals
+f : Nat → Bool
+n t B T j : Nat
+hw : BlockWord (seg f 0 n)
+ht : t < n
+hj : 2 ≤ j
+hC : 2 ≤ mass (seg f t (n - t))
+hN : 2 ≤ cN (fun x => f x = true) n B
+hpos : ∀ (k : Nat), 0 < k → k ≤ B → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hA : ∀ (i : Nat), i < T → f (n + B + i) = true
+hgap : ∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false
+htarget : Win f t (n + B + T + j - t)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (B + T) < j + 1
+N : Nat := cN (fun x => f x = true) n B
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+r : Nat := cN P n B
+E : Nat := cN (EndN f 0) (n + B) T
+hr : 1 ≤ r
+hAlower : 2 * j + 3 ≤ N + T
+htA : cN (fun x => f x = true) (n + B) T = T
+hAeq : cN (fun x => f x = true) n (B + T) = N + T
+hcut :
+  (∀ (i : Nat), i < T → f (n + B + i) = true) →
+    (∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false) →
+      Win f t (n + B + T + j - t) → cN (EndN f 0) (n + B) T ≤ max (T - j) (N + T - (2 * j + 1)) + rayCount [] T
+⊢ j + 1 ≤ cN (EndN f 0) n B

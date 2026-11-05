@@ -1,0 +1,25 @@
+{
+  "tag": "H50-third-S-actual-counter-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSTargetCounterBand.olean",
+    "Recaman/ThirdSTargetCounterBand.lean"
+  ],
+  "started_jst": "2026-11-06T07:37:29.308003+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSTargetCounterBand.lean": "5355256afe29946595d71d640b84e0b8e8e836d5ba430019ade7dbb3e37fe23c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "99bec61a247617b23cc3f1d3c1ed2672d0cd4968fc9f2dd5f07794d3e7e08a09",
+  "source_tree_sha256": "fdf856aaf98fb7748f45fc740a121e8360c941a508c761df4b0a11cb9cfabdba",
+  "source_tree_manifest": "H50-third-S-actual-counter-band-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

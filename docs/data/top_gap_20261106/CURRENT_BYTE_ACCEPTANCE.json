@@ -1,0 +1,271 @@
+{
+  "root_and_audit_full_pass": "H56-publishable-snapshot-check",
+  "build_jobs": 834,
+  "audit_declarations": 3629,
+  "new_modules": {
+    "Recaman/AlternatingTargetLengths.lean": {
+      "sha256": "cc081b0ef4710bba2dc26259bf0e97960073858e66ed78db24d2387ca87d4b55",
+      "individual_pass": [
+        "H41-alternating-lengths-r2"
+      ]
+    },
+    "Recaman/ClockCountSaturation.lean": {
+      "sha256": "edc77eb28fc8be833db7e1730f4fb2ce274454f8c0142e5b5fa609bd9f9b506b",
+      "individual_pass": [
+        "H25-count-saturation"
+      ]
+    },
+    "Recaman/DelayedOldTargetBudget.lean": {
+      "sha256": "019b597abc4ae860d33cefc50e9442eda3b597f4d62c507c71d3725d59daf01e",
+      "individual_pass": [
+        "H24-delay-clock-support"
+      ]
+    },
+    "Recaman/DelayedSourcePrefix.lean": {
+      "sha256": "29fc1fa6ab09fe8f2ef835e0999d7f7f8d23e225c8595c5f6b0a083c65cd66d4",
+      "individual_pass": [
+        "H15-delay-prefix-r2"
+      ]
+    },
+    "Recaman/FinalSLocalKey.lean": {
+      "sha256": "1416b8ece42bf75f495fe418ff7839fc9b9fe3cdf1b50aba092014caa5bc5d6b",
+      "individual_pass": [
+        "H36-final-S-local-key"
+      ]
+    },
+    "Recaman/FinalSSmallHeadCaps.lean": {
+      "sha256": "f4e61951dfc2f74539225a67f76b8a2f498cf243f968b79d844ce664e3a56ef7",
+      "individual_pass": [
+        "H37-final-S-local-caps"
+      ]
+    },
+    "Recaman/FinalSTargetLengths.lean": {
+      "sha256": "7892790b6559679eabc5d4fec823415e4cece4b8817851bb7721083ef0f0a71e",
+      "individual_pass": [
+        "H38-final-S-target-lengths"
+      ]
+    },
+    "Recaman/FourCrossExact.lean": {
+      "sha256": "3b0c58e5e7a4eae3722b893e2ae1af01e03566a50431eda11aa8610a1c6b8dc9",
+      "individual_pass": [
+        "H07-four-cross-exact"
+      ]
+    },
+    "Recaman/FourDelayedCounterData.lean": {
+      "sha256": "14ddf12cd698206ea6f7b7216da371a2926a36058db183585d49242725f7d1f3",
+      "individual_pass": [
+        "H26-counter-data-word"
+      ]
+    },
+    "Recaman/FourGapFiveCandidate.lean": {
+      "sha256": "020c81053db0f1d6baa7eaa905a21bc33cc0c80d1bcd6cd632a656c814c2943c",
+      "individual_pass": [
+        "H28-gap-five-candidate"
+      ]
+    },
+    "Recaman/FourGapFiveExclusion.lean": {
+      "sha256": "723178aa50e9256ee0247d62649265b598e423d60e4f076c445655ca3a723681",
+      "individual_pass": [
+        "H29-gap-five-exclusion"
+      ]
+    },
+    "Recaman/FourGapFourCandidate.lean": {
+      "sha256": "d3e7cb0b1cb64ea05429b9b24bf1cccbb42596bc29a5b9e718208d6a3da7d8f5",
+      "individual_pass": [
+        "H32-gap-four-candidate"
+      ]
+    },
+    "Recaman/FourGapFourExclusion.lean": {
+      "sha256": "6a3e366f92e02da0515e6b431e87745d742b5b869abbafd4fc9600b6517649d7",
+      "individual_pass": [
+        "H32-gap-four-exclusion"
+      ]
+    },
+    "Recaman/FourGapSixCandidate.lean": {
+      "sha256": "0147a5fa4f988c19d172b86f8383304d01dbfdbb4c748af017c7157b49f2f4a3",
+      "individual_pass": [
+        "H33-six-current"
+      ]
+    },
+    "Recaman/FourGapSixExclusion.lean": {
+      "sha256": "856be4b94e837fc188f7ab2eaed8998175dce1105e0e6226570a57f64adc3603",
+      "individual_pass": [
+        "H33-six-exclusion-current"
+      ]
+    },
+    "Recaman/FourLateLocalTargetGap.lean": {
+      "sha256": "0fe3e16e4eb3776212bf9c7109a8dd9c3f46a7c6d47cb66f1bb0bc1edaba1641",
+      "individual_pass": [
+        "H41-late-local-gap"
+      ]
+    },
+    "Recaman/FourLateLocalTargetGapBase.lean": {
+      "sha256": "244e0f9ca06a4058e75ce1745d97958a8bdde42fda89ce78fa67a53f28777404",
+      "individual_pass": [
+        "H41-late-local-gap-int"
+      ]
+    },
+    "Recaman/FourLongFinalRayGap.lean": {
+      "sha256": "79a439c5bd8662ed9cde8f04797baef09ea9eed07d5f8a0af71ebb02f97b1082",
+      "individual_pass": [
+        "H41-long-ray-current"
+      ]
+    },
+    "Recaman/FourMeasuredCounts.lean": {
+      "sha256": "a8745ad6ecd66961f7949bb9f87a0468413db54253d389d50a18cba4f2ffdf5a",
+      "individual_pass": [
+        "H12-measured-counts"
+      ]
+    },
+    "Recaman/FourOldTargetGap.lean": {
+      "sha256": "651ba282b5bb20ef86708ab1556c26059e66d00cd03c7cecabcd7ea71ab1295c",
+      "individual_pass": [
+        "H33-full-old-target"
+      ]
+    },
+    "Recaman/FourOldTargetGapBase.lean": {
+      "sha256": "73d0eb6b774478d2579d1702429f536c26b68c5852a955d5ad42f7838aca6c42",
+      "individual_pass": [
+        "H33-full-old-target-int"
+      ]
+    },
+    "Recaman/FourThirdSTargetGap.lean": {
+      "sha256": "e7d7fc973ab64f986c934f567ea6cd397adb82c843c71df7486c82402226c092",
+      "individual_pass": [
+        "H49-third-S-q3-actual-repair"
+      ]
+    },
+    "Recaman/FourThirdSTargetGapBase.lean": {
+      "sha256": "10b23323a7b3b19779c8f0c099ef7971799991da56dd1e42ea1fc349701ad047",
+      "individual_pass": [
+        "H49-third-S-q3-int"
+      ]
+    },
+    "Recaman/FourthDelayedCuts.lean": {
+      "sha256": "309dcb6a7f9eb04a756645e91074fab58e69860712b225965d0315b6dc0bc3d9",
+      "individual_pass": [
+        "H17-fourth-delay-cuts"
+      ]
+    },
+    "Recaman/FourthDelayedWitness.lean": {
+      "sha256": "34ef39ad95eafd6cc7b5f107f9ea1f0e92c396742a93738e97e1f3dcf9b2af7c",
+      "individual_pass": [
+        "H26-fourth-delayed-witness"
+      ]
+    },
+    "Recaman/FourthSaturationSources.lean": {
+      "sha256": "e2a1b75652bdc98d35922006bbc4caa0367f5ea3a3f4b7ec24846b4087cc4109",
+      "individual_pass": [
+        "H01-seven-sources-r2"
+      ]
+    },
+    "Recaman/FourthSaturationSquare.lean": {
+      "sha256": "e2ab51eb35f0bb2a771a0557dccb0a9541e026cbc0e4fe9b378063a9072ac51a",
+      "individual_pass": [
+        "H02-saturation-square"
+      ]
+    },
+    "Recaman/GapFiveClockReduction.lean": {
+      "sha256": "3ce1ab118bc4fce54a2a6cd36ecabd6ac9f2e8aa32d93ba9648fa513bac5a0ef",
+      "individual_pass": [
+        "H27-gap-five-clock-reduction"
+      ]
+    },
+    "Recaman/GapFiveScalar.lean": {
+      "sha256": "d328dddf013468ae010cbecd89c1bf341603277450c0e17e95ef00e2f4f36211",
+      "individual_pass": [
+        "H28-gap-five-scalar"
+      ]
+    },
+    "Recaman/GapFourClockReduction.lean": {
+      "sha256": "89ba7e20f9e050f56e0368b5cafa9037344ba7e2b86c479f90abeec815548376",
+      "individual_pass": [
+        "H30-gap-four-clock-r2"
+      ]
+    },
+    "Recaman/GapFourScalar.lean": {
+      "sha256": "bc2e4814d45bcd2f4c6bba3a365f582241a6faac4719114bc228abd014687dbe",
+      "individual_pass": [
+        "H31-gap-four-scalar-r2"
+      ]
+    },
+    "Recaman/GapSixScalar.lean": {
+      "sha256": "03dcc2dbc84e24f582373e73130d157b8964daf656768a884704a5bc9e396750",
+      "individual_pass": [
+        "H22-last-pair-budget-r2"
+      ]
+    },
+    "Recaman/HeadSaturationCross.lean": {
+      "sha256": "f99052901ccb92c9c506cfff76e11447985a5fc95ea93e04a6665641117e05ae",
+      "individual_pass": [
+        "H27-head-cross-extra-six-r2"
+      ]
+    },
+    "Recaman/HeadUnitPairSupply.lean": {
+      "sha256": "476ff289286de943c0c2dced3cd5b73dfa587ebc0dbe513b2308d22019b157b4",
+      "individual_pass": [
+        "H17-head-unit-pair-r2"
+      ]
+    },
+    "Recaman/InitialOldTargetSquare.lean": {
+      "sha256": "2834f8526485deda2daf8f622cc103157af687db27e2300863d3ec45849f9779",
+      "individual_pass": [
+        "H02-initial-target-square"
+      ]
+    },
+    "Recaman/MixedFinalRayOldBudget.lean": {
+      "sha256": "4fa0c051c76e772e7134ff220a9732ecbed59d74c22713ec088cc446d7f015a9",
+      "individual_pass": [
+        "H38-mixed-ray-old-budget"
+      ]
+    },
+    "Recaman/OldTargetEarlyClockBudget.lean": {
+      "sha256": "1e34a4f352c5645111c2f6b1b7fcc3f8bfee5893e683a7985d27dd26d4617aee",
+      "individual_pass": [
+        "H16-prefix-measure"
+      ]
+    },
+    "Recaman/OldTargetHeadSupplyFloor.lean": {
+      "sha256": "60765ecea25e1998b66ab4f5c386c33663e61e6e30c2d656a10da7574349db9d",
+      "individual_pass": [
+        "H19-head-supply-floor-r2"
+      ]
+    },
+    "Recaman/ThirdSQThreeFactors.lean": {
+      "sha256": "eb517df6124ef122ea21a316added8ee057e2814b9bee1306e09e94898f6d961",
+      "individual_pass": [
+        "H48-third-S-q-three-factors"
+      ]
+    },
+    "Recaman/ThirdSResidualSquare.lean": {
+      "sha256": "1336a8cdb06c4e9873b091f92b65a5084478e6251f96cfe7269b1c30152bb26a",
+      "individual_pass": [
+        "H53-source-key-final-bytes"
+      ]
+    },
+    "Recaman/ThirdSShortTwo.lean": {
+      "sha256": "065bfa7c8ec981564bd8dce364dfb6b17d6eb09cff360b9fe2d199d59aecb361",
+      "individual_pass": [
+        "H48-third-S-square-comparison"
+      ]
+    },
+    "Recaman/ThirdSTargetProfile.lean": {
+      "sha256": "451fd289ba3f0d04cef8484a6022fc10aaa2c3042437af0a4d3873f6a32d4f85",
+      "individual_pass": [
+        "H42-third-S-target-profile"
+      ]
+    },
+    "Recaman/ThirdSeparatorClock.lean": {
+      "sha256": "f8ace010b80f7eec185847450e745cf22b2fe0afc33d666cb4119071cf71505d",
+      "individual_pass": [
+        "H26-third-separator-unique"
+      ]
+    },
+    "Recaman/ThreeHeadFreeCuts.lean": {
+      "sha256": "2fb72eabec2ee88e6f4cf7400b3827ffda689c9c520f26a446b20284af380183",
+      "individual_pass": [
+        "H07-head-free-cuts-r2"
+      ]
+    }
+  }
+}

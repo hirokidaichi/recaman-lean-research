@@ -1,0 +1,25 @@
+{
+  "tag": "H22-last-pair-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapSixScalar.olean",
+    "Recaman/GapSixScalar.lean"
+  ],
+  "started_jst": "2026-11-06T06:49:15.073740+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapSixScalar.lean": "e65651576bf79a9ee919fb0ea4f19f701d1af648d3fa6e2a499d1c09da84bf5c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "4893a8f76682814ab2fcaa3e383163752f3630cb21a9f030882e2f891b3da960",
+  "source_tree_manifest": "H22-last-pair-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

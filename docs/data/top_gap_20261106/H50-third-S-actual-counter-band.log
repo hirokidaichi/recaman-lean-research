@@ -1,0 +1,151 @@
+Recaman/ThirdSTargetCounterBand.lean:13:26: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:13:47: error: Function expected at
+  seg
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  f
+
+Hint: The identifier `seg` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:24:6: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (EndN f 0)
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:24:26: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (fun x => f x = false)
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:27:15: error: Function expected at
+  Win
+but this term has type
+  ?m.4
+
+Note: Expected a function because this term is being applied to the argument
+  f
+
+Hint: The identifier `Win` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:28:12: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (fun x => f x = true ∧ ¬EndN f 0 x)
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:32:30: error: Function expected at
+  EndN
+but this term has type
+  ?m.5
+
+Note: Expected a function because this term is being applied to the argument
+  f
+
+Hint: The identifier `EndN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:33:40: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  P
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:35:6: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (EndN f 0)
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:35:29: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (EndN f 0)
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:35:55: error: Function expected at
+  cN
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  P
+
+Hint: The identifier `cN` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ThirdSTargetCounterBand.lean:40:9: error: Function expected at
+  cN
+but this term has type
+  x✝²
+
+Note: Expected a function because this term is being applied to the argument
+  (fun x => f x = true)
+Recaman/ThirdSTargetCounterBand.lean:35:74: error: unsolved goals
+x✝⁴ : Sort u_1
+BlockWord : x✝⁴
+x✝³ : Sort u_2
+seg : x✝³
+x✝² : Sort u_3
+cN : x✝²
+x✝¹ : Sort u_4
+Win : x✝¹
+x✝ : Sort u_5
+EndN : x✝
+f : Nat → Bool
+n t h M m L s U v T j : Nat
+w : List Bool
+hw : sorry
+hpre : sorry = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT : 1 ≤ T
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → sorry + 1 ≤ sorry
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+hta : n + h + M + m + L ≤ t
+htb : t < n + h + M + m + L + s
+htarget : sorry
+hbad : sorry < j + 1
+q : Nat := n + h + M + m + L + s - t
+H : Nat := h + M + m + L + s + U
+B : Nat := H + v
+⊢ j + 1 < n + h + M + m + L + s - t + v ∧
+    M + L + (n + h + M + m + L + s - t) + v ≤ 16 ∧
+      T + U ≤ 27 ∧
+        n + h + M + m + L + s - t + v + sorry ≤ U + 6 ∧
+          (M + L + (n + h + M + m + L + s - t) + v = 16 → sorry = 10 ∧ sorry = 7 ∧ sorry = j)

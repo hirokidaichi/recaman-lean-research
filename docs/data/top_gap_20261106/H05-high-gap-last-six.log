@@ -1,0 +1,56 @@
+Recaman/HighGapLastSix.lean:132:21: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b_1 ≥ 0
+  a_1 ≥ 0
+  a_1 - b_1 ≥ 4
+  z ≥ 0
+  z + a_1 ≥ 0
+  0 ≤ y ≤ 6
+  y + z ≥ 1
+  5 ≤ x ≤ 10
+  x + y ≥ 0
+  x + y + z + a_1 ≥ 0
+  0 ≤ u ≤ 108
+  u ≥ 0
+  1 ≤ r ≤ 35
+  q ≥ 1
+  0 ≤ p ≤ 30
+  0 ≤ o ≤ 30
+  4 ≤ l ≤ 13
+  9 ≤ k ≤ 13
+  k - l ≥ 0
+  k - o ≤ -17
+  k - x - y - z - a_1 ≥ -17
+  k - y - z ≥ -3
+  k - z - a_1 ≥ 0
+  k + r - u ≥ -60
+  2*k - x - y - z - a_1 ≤ -3
+  i ≥ 1
+  g ≥ 1
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  c + d + e + g + i + k + q + r - u + y + z ≤ -1
+  2 ≤ b ≤ 14
+  a ≥ 0
+  a + r ≥ 0
+where
+ a := ↑t
+ b := ↑C
+ c := ↑L
+ d := ↑U
+ e := ↑m
+ g := ↑s
+ i := ↑v
+ k := ↑j
+ l := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ o := ↑(cN (fun x => f x = true) n (h + M + m + L + s + U + v + T))
+ p := ↑(cN (fun x => f x = false) n (h + M + m + L + s + U + v + T))
+ q := ↑h
+ r := ↑(n - t)
+ u := ↑(n + h + M + m + L + s + U + v + T + j - t)
+ x := ↑(cN (EndN f 0) n H)
+ y := ↑(cN (EndN f 0) (n + B) T)
+ z := ↑(cN P (n + B) T)
+ a_1 := ↑(cN P n B)
+ b_1 := ↑(cN P (n + H) v)

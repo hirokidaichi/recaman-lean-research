@@ -1,0 +1,31 @@
+{
+  "tag": "H33-six-exclusion-current",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourGapSixExclusion.olean",
+    "Recaman/FourGapSixExclusion.lean"
+  ],
+  "started_jst": "2026-11-06T07:06:07.673576+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourGapSixExclusion.lean": "856be4b94e837fc188f7ab2eaed8998175dce1105e0e6226570a57f64adc3603"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "e3d652a5a0cd95192a7608ffd30917ad1632abf5718d96add96e8440a6ef1727",
+  "source_tree_manifest": "H33-six-exclusion-current-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.39065591700637015,
+  "cpu_seconds": 0.261996,
+  "finished_jst": "2026-11-06T07:06:08.064153+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H25-third-separator-clock",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSeparatorClock.olean",
+    "Recaman/ThirdSeparatorClock.lean"
+  ],
+  "started_jst": "2026-11-06T06:56:25.672702+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSeparatorClock.lean": "050cb1a28c776c2922f3e414405c61c36b7010f5bbcb01efc874e8110c70865a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "b108c057d20d1df314df27563b9978cc3665485b9174e8c2abfd7de067016823",
+  "source_tree_manifest": "H25-third-separator-clock-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,26 @@
+Recaman/OldTargetEarlyClockBudget.lean:57:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  List.drop (List.length ?m.207) (?m.207 ++ ?m.208)
+in the target expression
+  List.drop (seg f n a.length).length
+      (seg f n (seg f n a.length).length ++ seg f (n + (seg f n a.length).length) z.length) =
+    List.drop (seg f n a.length).length (a ++ z)
+
+f : Nat → Bool
+n t B T j : Nat
+a z : List Bool
+hw : BlockWord (seg f 0 n)
+ht : t < n
+hj : 2 ≤ j
+hword : seg f n B = a ++ z
+hcut : ones a ≤ ↑j
+hA : ∀ (i : Nat), i < T → f (n + B + i) = true
+hgap : ∀ (x : Nat), n + B + T ≤ x → x < n + B + T + j → f x = false
+htarget : Win f t (n + B + T + j - t)
+hlen : a.length + z.length = B
+hsplit : seg f n a.length ++ seg f (n + a.length) z.length = a ++ z
+ha : seg f n a.length = a
+h :
+  List.drop (seg f n a.length).length
+      (seg f n (seg f n a.length).length ++ seg f (n + (seg f n a.length).length) z.length) =
+    List.drop (seg f n a.length).length (a ++ z)
+⊢ seg f (n + a.length) (n + B - (n + a.length)) = z

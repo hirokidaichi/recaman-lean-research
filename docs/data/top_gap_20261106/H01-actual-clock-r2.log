@@ -1,0 +1,58 @@
+Recaman/FourthSaturationClock.lean:101:18: error: Function expected at
+  List.length_drop
+but this term has type
+  (List.drop ?m.872 ?m.873).length = List.length ?m.873 - ?m.872
+
+Note: Expected a function because this term is being applied to the argument
+  t
+Recaman/FourthSaturationClock.lean:124:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f_1 ≥ 2
+  e_1 ≥ 1
+  d_1 - e_1 ≥ 1
+  c_1 ≥ 0
+  c_1 - d_1 - g_1 ≥ -1
+  b_1 ≤ 1
+  b_1 - g_1 ≥ 1
+  b_1 + c_1 - d_1 - g_1 ≥ 1
+  a_1 ≥ 0
+  a_1 - c_1 ≥ 1
+  z ≥ 0
+  u ≥ 0
+  u - c_1 + d_1 + g_1 ≥ 2
+  u + b_1 ≥ 2
+  p ≥ 0
+  p - z ≥ 1
+  o ≥ 0
+  o - p ≥ 0
+  o - p - c_1 ≥ 1
+  l ≥ 7
+  g ≥ 2
+  g - u + c_1 - d_1 - g_1 ≤ -2
+  e ≥ 1
+  d ≥ 1
+  c ≥ 1
+  a ≥ 0
+  a - p ≤ -1
+where
+ a := ↑t
+ c := ↑m
+ d := ↑s
+ e := ↑v
+ g := ↑j
+ l := ↑(rayCount (w ++ y) T)
+ o := ↑(w ++ y).length
+ p := ↑w.length
+ u := ↑T
+ z := ↑r
+ a_1 := ↑h
+ b_1 := mass
+  (List.replicate q false ++
+    (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false))
+ c_1 := ↑(h - q)
+ d_1 := mass (seg f r (n - r))
+ e_1 := mass (seg f t (n - t))
+ f_1 := mass (List.drop r w)
+ g_1 := mass (List.replicate q false ++ x)

@@ -1,0 +1,25 @@
+{
+  "tag": "H13-actual-unit-candidate-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourHighGapCandidate.olean",
+    "Recaman/FourHighGapCandidate.lean"
+  ],
+  "started_jst": "2026-11-06T06:34:06.350606+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourHighGapCandidate.lean": "625562ce76b0bda0b5fa865d4ecdc53a9ee708cbd6c6a2f75b3b68a8ee677fb9"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "142b6cd25daf25c9552cfb8dbe6680a8aab2cb6001d49b6572342caf7f997112",
+  "source_tree_manifest": "H13-actual-unit-candidate-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

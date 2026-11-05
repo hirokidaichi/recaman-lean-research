@@ -1,0 +1,25 @@
+{
+  "tag": "H17-head-unit-pair-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeadUnitPairSupply.olean",
+    "Recaman/HeadUnitPairSupply.lean"
+  ],
+  "started_jst": "2026-11-06T06:41:57.560130+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeadUnitPairSupply.lean": "476ff289286de943c0c2dced3cd5b73dfa587ebc0dbe513b2308d22019b157b4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "b396ccbdcdf33a6efc29f2870c244488c423363d6f96793c54904a94ec4c0c86",
+  "source_tree_manifest": "H17-head-unit-pair-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

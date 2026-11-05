@@ -1,0 +1,31 @@
+{
+  "tag": "H11-high-gap-unit-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourHighGapUnitCut.olean",
+    "Recaman/FourHighGapUnitCut.lean"
+  ],
+  "started_jst": "2026-11-06T06:29:31.486532+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourHighGapUnitCut.lean": "be444e9366678a3abaabb32455bbf727acbd6909751a6617f139af610521ced2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "ee3dfec5da368800f35f7cce3f7a55253668c5b80aca524133c5687137be6099",
+  "source_tree_manifest": "H11-high-gap-unit-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.2690994160002447,
+  "cpu_seconds": 1.119702,
+  "finished_jst": "2026-11-06T06:29:32.755569+09:00"
+}

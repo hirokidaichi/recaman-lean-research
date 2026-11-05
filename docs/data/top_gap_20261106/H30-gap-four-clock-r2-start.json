@@ -1,0 +1,25 @@
+{
+  "tag": "H30-gap-four-clock-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapFourClockReduction.olean",
+    "Recaman/GapFourClockReduction.lean"
+  ],
+  "started_jst": "2026-11-06T07:03:41.550675+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapFourClockReduction.lean": "89ba7e20f9e050f56e0368b5cafa9037344ba7e2b86c479f90abeec815548376"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "c125935a389e380d0e08ec238d9dfe273bf7dcd344aad2a1675b6b47e762ee0c",
+  "source_tree_manifest": "H30-gap-four-clock-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

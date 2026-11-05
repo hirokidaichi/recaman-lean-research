@@ -23,7 +23,7 @@ theorem sourceAt_count_le_one (b : Bool) (N : Nat) (x : List Bool) (K : Nat) :
   subst l
   omega
 
-private theorem local_const_split (b : Bool) (N : Nat) (x : List Bool) (i : Nat) :
+theorem local_const_split (b : Bool) (N : Nat) (x : List Bool) (i : Nat) :
     Recaman.ThreeNonsuppliedData.localSupply ((List.replicate N b++x)++List.replicate i true)=true ↔
       sourceAt b N x i ∨ Recaman.ThreeNonsuppliedData.localSupply (x++List.replicate i true)=true := by
   let P:=fun y : List Bool=>mass y+(i : Int)=1 ∧ runKey y= -2

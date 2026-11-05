@@ -1,0 +1,67 @@
+Recaman/GapFourScalar.lean:32:27: error: Type mismatch
+  Nat.mul_le_mul h1 hs
+has type
+  1 * 1 ≤ M * m * s
+but is expected to have type
+  9 ≤ (M + L) * s
+Recaman/GapFourScalar.lean:38:31: error: Type mismatch
+  Nat.mul_le_mul h1 hs2
+has type
+  1 * 2 ≤ M * m * s
+but is expected to have type
+  18 ≤ (M + L) * s
+Recaman/GapFourScalar.lean:40:42: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  M + L
+in the target expression
+  32 ≤ (↑M + ↑L + ↑U) * ↑v + ↑I
+
+M m L s U v T C A EH : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hC : 2 ≤ C
+hT7 : T ≤ 7
+hW : M + L = 9
+hEH : EH ≤ 10
+hhead : EH = 5 + U
+hAeq : A = M + L + U + T
+I : Nat := M * (m + s) + L * s
+Q : Int := ↑(M + L + U) * ↑v + ↑I
+h : ↑C ^ 2 + 25 + 2 * Q ≤ (↑A - 5) ^ 2 + 1
+hIform : I = M * m + (M + L) * s
+hI10 : 10 ≤ I
+hT : T = 1
+hU4 : U = 4
+hv1 : v = 1
+hs2 : 2 ≤ s
+hA14 : A = 14
+hI19 : 19 ≤ I
+⊢ 32 ≤ (↑M + ↑L + ↑U) * ↑v + ↑I
+Recaman/GapFourScalar.lean:47:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  M + L
+in the target expression
+  (9 + ↑U) * (2 * ↑T - 4) + ↑I ≤ (↑M + ↑L + ↑U) * ↑v + ↑I
+
+M m L s U v T C A EH : Nat
+hM : 1 ≤ M
+hm : 1 ≤ m
+hs : 1 ≤ s
+hU : 1 ≤ U
+hv : 1 ≤ v
+hC : 2 ≤ C
+hT7 : T ≤ 7
+hW : M + L = 9
+hEH : EH ≤ 10
+hhead : EH = 5 + U
+hAeq : A = M + L + U + T
+I : Nat := M * (m + s) + L * s
+Q : Int := ↑(M + L + U) * ↑v + ↑I
+h : ↑C ^ 2 + 25 + 2 * Q ≤ (↑A - 5) ^ 2 + 1
+hIform : I = M * m + (M + L) * s
+hI10 : 10 ≤ I
+hT : 4 ≤ T
+hvlarge : 2 * T - 4 ≤ v
+hv' : 2 * ↑T - 4 ≤ ↑v
+⊢ (9 + ↑U) * (2 * ↑T - 4) + ↑I ≤ (↑M + ↑L + ↑U) * ↑v + ↑I

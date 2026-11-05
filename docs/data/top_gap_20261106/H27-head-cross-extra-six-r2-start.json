@@ -1,0 +1,25 @@
+{
+  "tag": "H27-head-cross-extra-six-r2",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeadSaturationCross.olean",
+    "Recaman/HeadSaturationCross.lean"
+  ],
+  "started_jst": "2026-11-06T06:59:40.085959+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeadSaturationCross.lean": "f99052901ccb92c9c506cfff76e11447985a5fc95ea93e04a6665641117e05ae"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "0b7f1a771f1056c517d30199f5e8f255cca0a5b81e1c5b74ef5b429347e94117",
+  "source_tree_manifest": "H27-head-cross-extra-six-r2-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

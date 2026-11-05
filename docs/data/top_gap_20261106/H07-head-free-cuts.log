@@ -1,0 +1,4 @@
+Recaman/ThreeHeadFreeCuts.lean:31:2: error: 'change' tactic failed, pattern
+  cN P n Q = cN P n (h + M) + cN P (n + (h + M)) (m + L)
+is not definitionally equal to target
+  cN P n (h + M + (m + L)) = cN P n (h + M) + cN P (n + (h + M)) (m + L)

@@ -1,0 +1,31 @@
+{
+  "tag": "H28-gap-five-scalar",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapFiveScalar.olean",
+    "Recaman/GapFiveScalar.lean"
+  ],
+  "started_jst": "2026-11-06T07:00:58.860303+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapFiveScalar.lean": "d328dddf013468ae010cbecd89c1bf341603277450c0e17e95ef00e2f4f36211"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "6840b9689109177a56a2ed96281d778a8886e3d998fc8a6b4ccb3e9d9a6b5e8f",
+  "source_tree_manifest": "H28-gap-five-scalar-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8062276249984279,
+  "cpu_seconds": 0.665407,
+  "finished_jst": "2026-11-06T07:00:59.666459+09:00"
+}

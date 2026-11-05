@@ -1,0 +1,18 @@
+{
+  "tag": "H56-publishable-snapshot-check",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-06T07:47:30.396251+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "d59f447be10c2b9737090bed79771e96f7ff69ab01366feb70cc5fc634427ad8",
+  "source_tree_sha256": "3c7c95082948e8fbff806563fe2b13216e72ad8fdc1b0cfac8b3aa6a518a5901",
+  "source_tree_manifest": "H56-publishable-snapshot-check-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

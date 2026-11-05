@@ -1,0 +1,31 @@
+{
+  "tag": "H09-unit-separators",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourthUnitSeparators.olean",
+    "Recaman/FourthUnitSeparators.lean"
+  ],
+  "started_jst": "2026-11-06T06:27:24.831268+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourthUnitSeparators.lean": "5235e619c27c8f69f86a6df5dac427dcf7628e8e4ac9db8b425eecdd041bc9e1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "211dea7b47561d046f2bedc7266b7172b3d886ce2542b9aad8ec7a0e61f84def",
+  "source_tree_manifest": "H09-unit-separators-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.38973508400522405,
+  "cpu_seconds": 0.264205,
+  "finished_jst": "2026-11-06T06:27:25.220938+09:00"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H02-initial-target-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialOldTargetSquare.olean",
+    "Recaman/InitialOldTargetSquare.lean"
+  ],
+  "started_jst": "2026-11-06T06:11:27.396097+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialOldTargetSquare.lean": "2834f8526485deda2daf8f622cc103157af687db27e2300863d3ec45849f9779"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "0e9b948c38e2cc3bc82028f84fed32de7c5f6b0bbc940b663e75dbaec20a0f03",
+  "source_tree_manifest": "H02-initial-target-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5622725829962292,
+  "cpu_seconds": 0.423599,
+  "finished_jst": "2026-11-06T06:11:27.958309+09:00"
+}

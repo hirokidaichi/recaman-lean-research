@@ -1,0 +1,34 @@
+Recaman/FourthSaturationSources.lean:42:5: error: unknown tactic
+Recaman/FourthSaturationSources.lean:38:31: error(lean.unknownIdentifier): Unknown identifier `cntF_A`
+Recaman/FourthSaturationSources.lean:42:2: error: unsolved goals
+case left
+w : List Bool
+hw : BlockWord w
+h M m L s U v T : Nat
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+x : List Bool := ⋯
+y : List Bool := ⋯
+h7 : 7 ≤ rayCount (w ++ y) T
+hlocal : rayCount y T ≤ 6
+hrest : rayCount x T ≤ 5
+hS : 3 ≤ cntF y
+hb : rayCount (w ++ y) T ≤ 1 + rayCount y T
+⊢ ∃ i, i < T ∧ tailOldRay w y i
+Recaman/FourthSaturationSources.lean:18:75: error: unsolved goals
+case right
+w : List Bool
+hw : BlockWord w
+h M m L s U v T : Nat
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+x : List Bool := ⋯
+y : List Bool := ⋯
+h7 : 7 ≤ rayCount (w ++ y) T
+hlocal : rayCount y T ≤ 6
+hrest : rayCount x T ≤ 5
+hS : 3 ≤ cntF y
+hb : rayCount (w ++ y) T ≤ 1 + rayCount y T
+⊢ ∃ k, k < T ∧ sourceAt false h x k

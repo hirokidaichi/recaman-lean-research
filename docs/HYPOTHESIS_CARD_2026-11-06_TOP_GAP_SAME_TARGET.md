@@ -9,3 +9,7 @@
 - Falsifier before Lean: no-old wouldgiveactual<=6, so do notassumeoldsupplierwithout derivingit. No initialS insideclocks<T likewisegives<=6; an initialS source outsideT does notprove a counted witness. Keepi/k range and selectedsourceprefix. Window108 is selectedtarget only, not allhistory. C4primitivekey includes4/6, not just{-2,0,2}. Nonzero negativehead is essential; do notapplyzerohead E568.
 - Acceptance: newactual source inequality/strictcandidate reduction or counterexample, sameoriginalp andactualP2/Endable, currentbytes-j1-M512/exactstatementaudit/Audit/fullcheck. A fourtuple wrapper is not progress.
 - Stop/switch: no newedge in15min -> C2/C3 gap13 saturation25min and independent negativehead/shared-prefix source coupling20min. Keep H12/H23/oldr4/H06 etcSTOPPED; noresource/tactic/import/split retry. Mathematical worker startsbudget0; verify anynewcooperativesingle-worker contract beforepermission/reallocation. One mathrepair maximum; stopnewmath07:45 andfinishjournal/publicationbefore08.
+
+## 11/06 結果
+
+E-583 **PROVED-LEAN**。元Intp/padded/zero-fullpositiveの真正四run旧対象を全選択mass・全gap・全旧履歴で閉じた。採用証明はE-581/E-582の遅延付き実供給会計とgap別の同対象平方を使う。E-584の区間内供給元存在とE-585の実平方は別入力。H01の専用時計順序試作は許可の一回を超えて修正したため、最終bytesの個別受理にかかわらず採用外とした。H08/H11 monolithは512MBで停止。E-580の四tuple分類は紙上のまま。詳細と確定実績は[11/06 DAILY](RESEARCH_HANDOFF_2026-11-06_DAILY.md)。

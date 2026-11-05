@@ -1,0 +1,52 @@
+Recaman/FourHighGapExclusion.lean:35:51: error: unsolved goals
+f : Nat → Bool
+n t h M m L s U v T j C : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+ht : t < n
+hC : mass (seg f t (n - t)) = ↑C
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT✝ : 1 ≤ T
+hm : 1 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f t (n + h + M + m + L + s + U + v + T + j - t)
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T) < j + 1
+hj : 9 ≤ j
+B : Nat := h + M + m + L + s + U + v
+hj9 : j = 9
+left✝ : cN (fun x => f x = true) n (h + M + m + L + s + U + v + T) = 24
+hT : T ≤ 6
+hm1 : m = 1
+hs1 : s = 1
+hv1 : v = 1
+hE : 5 ≤ cN (EndN f 0) (n + (h + M + m + L + s + U + v)) T
+hword :
+  seg f n (h + M + m + L + s + U + v) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+z : List Bool :=
+  List.replicate M true ++ List.replicate 1 false ++ List.replicate L true ++ List.replicate 1 false ++
+      List.replicate U true ++
+    List.replicate 1 false
+⊢ List.replicate h false ++
+      (List.replicate M true ++ List.replicate 1 false ++ List.replicate L true ++ List.replicate 1 false ++
+          List.replicate U true ++
+        List.replicate 1 false) =
+    List.replicate h false ++
+      (List.replicate M true ++ [false] ++ List.replicate L true ++ [false] ++ List.replicate U true ++ [false])

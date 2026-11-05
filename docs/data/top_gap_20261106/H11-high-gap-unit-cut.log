@@ -1,0 +1,45 @@
+Recaman/FourHighGapUnitCut.lean:119:4: error: Type mismatch
+  hword
+has type
+  seg f n (h + M + 1 + L + 1 + U + 1) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate 1 false ++ List.replicate L true ++ List.replicate 1 false ++
+          List.replicate U true ++
+        List.replicate 1 false)
+but is expected to have type
+  seg f n B = List.replicate h false ++ z
+Recaman/FourHighGapUnitCut.lean:49:44: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:65:29: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:68:15: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:79:4: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:84:21: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:90:47: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:92:61: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:95:23: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:96:4: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:100:4: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:103:23: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:104:4: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:8: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:19: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:30: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:41: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:52: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:63: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:74: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:108:85: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:8: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:19: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:30: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:41: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:52: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:63: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:74: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:109:85: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:115:25: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:116:25: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:117:25: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:122:42: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:122:79: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:124:2: error: (kernel) excessive memory consumption detected
+Recaman/FourHighGapUnitCut.lean:15:8: error: (kernel) excessive memory consumption detected

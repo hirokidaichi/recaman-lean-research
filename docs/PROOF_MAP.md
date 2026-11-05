@@ -1831,3 +1831,10 @@ E546/E547 oldmass3/>=4、E554 small-separator initial source、E557 no-old全v s
 ## 2026-11-05 scope update
 
 E568 integrates all positive old-target masses for positive three-run zeroheads, preserving originalp and actualfree. E575 gives mass1 for arbitrary mixed tails by original actual mass/count accounting; do not count the earlier narrow mass1 branches as additional coverage. E576 extends existingE438's three-run AS identity to arbitrary mixedwords. E579 uses existingE458 supply17 and genuine/head-A AS cross to excludej14; genuine four-run old-target counter remains in free4..13/A30/j13/selectedwindow108, without bounding the history before the selectedtarget. E580's topj13 source/saturation/negativehead classification is PAPER only. Next H-20261106-01 targets actual sourcewitness-to-clock coupling, not an assumed fourtuple wrapper. GeneralC1/Q/H/SL/surjectivity remain unresolved; r3 checked count projection is used, unverifiedr4/E384 are not.
+
+### 2026-11-06 — 四A-run対象位置ごとの実free-gap
+
+- E-581の元count付き遅延帯とE-582の実head供給床 → E-583の全gap・全長の旧対象実free-gap。元Intp/padded BlockWord/zero-fullpositive/四非空A-run、headmass制限なし。E-580旧四tuple分類を前提にしない。
+- E-584 最後ray供給7の区間内旧・初期S源 → E-585 同old対象の実平方予算。E-583とcoverageは重複。
+- E-586 長い最終rayで実free-gap → 第三A以降の全対象始点。E-587 実第三S対象のprofileと同separator源 → E-588 q<=3 又は q+j+1<=vの実free-gap。E-589 q+v=14の同第三S源排除と短第二A/第三Sのkey衝突。
+- E-590 PROVED-PAPER。真の四run第三Sの残余q>=4で元実counterなら M+L+q+v<=15。元実供給7から二源を抽出するLean接続が次の未完了edge。他の早期局所対象・一般四run/任意run/C1/Q/H/SL/全射性は未解決。

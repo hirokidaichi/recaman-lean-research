@@ -1,0 +1,6 @@
+Recaman/HeadSaturationCross.lean:66:29: error: Type mismatch
+  Nat.mul_le_mul (Nat.le_refl ?m.692) hs
+has type
+  ?m.692 * 1 ≤ ?m.692 * s
+but is expected to have type
+  M + L ≤ (M + L) * s

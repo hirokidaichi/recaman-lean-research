@@ -1,0 +1,31 @@
+{
+  "math_worker": {
+    "started": false,
+    "budget_cpu_seconds": 0
+  },
+  "individual_lean": {
+    "runs": 108,
+    "wait4_cpu_seconds": 68.019606,
+    "pass_cpu_seconds": 39.604369,
+    "unsuccessful_cpu_seconds": 28.415237
+  },
+  "full_validation_with_guards": {
+    "runs": 3,
+    "wait4_cpu_seconds": 247.78284
+  },
+  "guard_only_failed_run": {
+    "runs": 1,
+    "wait4_cpu_seconds": 6.787956
+  },
+  "other_guard_tools": {
+    "measured_cpu_seconds": null,
+    "commands": [
+      "make test-tools",
+      "make brief",
+      "make check-manifest",
+      "module lints",
+      "git hook"
+    ]
+  },
+  "accounting": "Completed wait4 including reaped descendants. Individual and full runs have per-process CPU ceilings, not a cumulative tree ceiling. Do not sum with research journal time."
+}

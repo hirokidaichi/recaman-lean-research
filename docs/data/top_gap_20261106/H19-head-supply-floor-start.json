@@ -1,0 +1,25 @@
+{
+  "tag": "H19-head-supply-floor",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldTargetHeadSupplyFloor.olean",
+    "Recaman/OldTargetHeadSupplyFloor.lean"
+  ],
+  "started_jst": "2026-11-06T06:45:15.637900+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldTargetHeadSupplyFloor.lean": "66530f9d0e41d0e12f8d4477dfe1a65ffb41d3a0ec3b57ef49611b460bae6a8e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "ae4d701ecbc6844ea8109f653b3791b5935c2450",
+  "tracked_diff_sha256": "954c38017f0ff2713754483ddd5ff5113c02e692348d97d5c92c4dc1b1d56ec5",
+  "source_tree_sha256": "850808945c057ee4b8e3ca24ecafb44d68049931374ad12370156061460cfb91",
+  "source_tree_manifest": "H19-head-supply-floor-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}
