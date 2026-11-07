@@ -1,0 +1,23 @@
+Recaman/MixedASQuarterBudget.lean:46:38: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  4*l - 4*m - n ≥ 1
+  g - h ≥ 0
+  f ≥ 0
+  f - 2*g ≤ 1
+  f - 2*h ≤ 0
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  b ≥ 1
+  b - c ≤ 0
+where
+ b := ↑a
+ c := ↑L
+ d := ↑i
+ e := ↑j
+ f := ↑(cntF x)
+ g := z / 2
+ h := y / 2
+ l := A
+ m := B
+ n := ↑a * z

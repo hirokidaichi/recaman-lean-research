@@ -1,0 +1,31 @@
+{
+  "tag": "H09-separated-S-depth",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SeparatedSSourceCut.olean",
+    "Recaman/SeparatedSSourceCut.lean"
+  ],
+  "started_jst": "2026-11-08T06:17:58.239892+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SeparatedSSourceCut.lean": "1b1d373f136aeba163aadf5771eddfe556155229466a598a9ae1cdb5f54ae315"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "source_tree_sha256": "d65daa2bb2b02dd734246e5799dab3ef3b2be24d90f607a5f8030444a602abe0",
+  "source_tree_manifest": "H09-separated-S-depth-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.6169281249749474,
+  "cpu_seconds": 0.44051799999999997,
+  "finished_jst": "2026-11-08T06:17:58.856731+09:00"
+}

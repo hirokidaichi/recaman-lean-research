@@ -1,0 +1,25 @@
+{
+  "tag": "H30b-head-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortEarlyHeadBudget.olean",
+    "Recaman/ShortEarlyHeadBudget.lean"
+  ],
+  "started_jst": "2026-11-08T07:26:18.945211+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortEarlyHeadBudget.lean": "20cc26befa46d5a1b8f69f3ce0e69616c1157f5c849414c1458285e184b6cdb3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "source_tree_sha256": "711aa9fc1bf2165ecf4e27f61e0f87c0f0307906f045bfb91a1ee609df9fc5f5",
+  "source_tree_manifest": "H30b-head-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

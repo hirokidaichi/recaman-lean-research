@@ -1,0 +1,13 @@
+/tmp/RecamanUnitSTargetSquare.lean:9:11: error(lean.unknownIdentifier): Unknown constant `Int.mul_self_nonneg`
+/tmp/RecamanUnitSTargetSquare.lean:8:31: error: unsolved goals
+D R L U v : Int
+hD : 6 ≤ D
+hD7 : D ≤ 7
+hR : 5 ≤ R
+hRD : R < D
+hL : 1 ≤ L
+hv : 1 ≤ v
+hU : D ≤ U
+hUR : U ≤ R + 2
+hsq : D ^ 2 = R ^ 2 + L ^ 2 - 2 * L + 2 * U * v
+⊢ L = 1 ∧ U = D ∧ v = 1 ∧ D = R + 1

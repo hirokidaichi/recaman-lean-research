@@ -1,0 +1,25 @@
+{
+  "tag": "H17-actual-short-A-pair-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedShortAPairBudget.olean",
+    "Recaman/MixedShortAPairBudget.lean"
+  ],
+  "started_jst": "2026-11-08T07:03:18.017810+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedShortAPairBudget.lean": "19c4721269df26ba6d19b5597ed982299ac75927f7c46ba10ae5f66045344109"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "source_tree_sha256": "bbfe3a222f3ff3282ffc762def62e8bc6d6572fb327becb0de3f262f8987a664",
+  "source_tree_manifest": "H17-actual-short-A-pair-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

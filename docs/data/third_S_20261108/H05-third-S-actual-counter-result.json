@@ -1,0 +1,31 @@
+{
+  "tag": "H05-third-S-actual-counter",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSActualCounterCut.olean",
+    "Recaman/ThirdSActualCounterCut.lean"
+  ],
+  "started_jst": "2026-11-08T06:09:30.999535+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSActualCounterCut.lean": "845eb199b2101d76799d44ea25f369d4d1bbf5f6c77a17fe5eccebdd449132d1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "435e4cf3b978fd35c7a80cb69fa41ee9dfc7c4a6f4caccb1396c400ba2353219",
+  "source_tree_manifest": "H05-third-S-actual-counter-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2053876669961028,
+  "cpu_seconds": 1.0570789999999999,
+  "finished_jst": "2026-11-08T06:09:32.203049+09:00"
+}

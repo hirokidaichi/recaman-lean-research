@@ -1,0 +1,25 @@
+{
+  "tag": "H31b-small-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondASmallSquare.olean",
+    "Recaman/SecondASmallSquare.lean"
+  ],
+  "started_jst": "2026-11-08T07:27:21.360871+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondASmallSquare.lean": "e4c36ace339d9d35e2d7ee41d8f97eb7a1c0c6fe8db04cb35966d742328d2068"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "source_tree_sha256": "c42701cdd02532887aa701d6536f64fa0bfa3bc6eddecf01e5d8af3f7ee71910",
+  "source_tree_manifest": "H31b-small-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

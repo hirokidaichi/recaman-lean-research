@@ -1,0 +1,31 @@
+{
+  "tag": "H10-short-separated-S-clock",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortSeparatedSSupply.olean",
+    "Recaman/ShortSeparatedSSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:20:48.771879+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortSeparatedSSupply.lean": "d7f04cebb79e53c471284c4bc252fd1a9d221b447019ea552cf98b6e7367055e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "source_tree_sha256": "d97045af1c71321f9af6a87371e40debea3d46c5d6b51918419941f16cf009d6",
+  "source_tree_manifest": "H10-short-separated-S-clock-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.8953219590184744,
+  "cpu_seconds": 0.719668,
+  "finished_jst": "2026-11-08T06:20:49.667074+09:00"
+}

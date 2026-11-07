@@ -1,0 +1,31 @@
+{
+  "tag": "H38-second-S-profile",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondSTargetProfile.olean",
+    "Recaman/SecondSTargetProfile.lean"
+  ],
+  "started_jst": "2026-11-08T07:33:04.280522+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondSTargetProfile.lean": "35bc4531d0343c526810c16a12a6f5deda36f7e35be448ce5e0a6a2f0504854a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "source_tree_sha256": "392c5c09a6203b2b3df4d0b76388d0835a01b2891d38725be5cbd1520e8d18f8",
+  "source_tree_manifest": "H38-second-S-profile-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5842805420106743,
+  "cpu_seconds": 0.423657,
+  "finished_jst": "2026-11-08T07:33:04.864707+09:00"
+}

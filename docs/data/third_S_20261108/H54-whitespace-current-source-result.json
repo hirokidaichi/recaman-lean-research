@@ -1,0 +1,31 @@
+{
+  "tag": "H54-whitespace-current-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSSaturatedSources.olean",
+    "Recaman/ThirdSSaturatedSources.lean"
+  ],
+  "started_jst": "2026-11-08T07:52:58.198664+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSSaturatedSources.lean": "67a6ccff14961e7fe31eabf7ae1e868b69afa750d96b73b5250ad589caafdbc1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "5ba168f8324c09056bcd0b5e494034b816032c15f9d73f6816d614a9a293f872",
+  "source_tree_sha256": "ecc4be9d65b4e5f10bb7ea088066eb08bb4d19edc7572fc7b7530a8df17897c6",
+  "source_tree_manifest": "H54-whitespace-current-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "5ba168f8324c09056bcd0b5e494034b816032c15f9d73f6816d614a9a293f872",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5238705000083428,
+  "cpu_seconds": 0.344603,
+  "finished_jst": "2026-11-08T07:52:58.722481+09:00"
+}

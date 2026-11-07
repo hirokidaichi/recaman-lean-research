@@ -1,0 +1,11 @@
+Recaman/SeparatedSSourceCut.lean:43:26: error: Application type mismatch: The argument
+  hk
+has type
+  4 * ↑L * (↑s + ↑v) + 4 * ↑U * ↑v - 2 * (↑b + ↑s + ↑v) ^ 2 = -2
+but is expected to have type
+  runKey
+      (List.replicate b false ++
+        (List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false)) =
+    -2
+in the application
+  ⟨hm, hk⟩

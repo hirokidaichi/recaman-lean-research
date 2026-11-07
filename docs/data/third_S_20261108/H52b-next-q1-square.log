@@ -1,0 +1,248 @@
+/tmp/RecamanUnitSTargetSquare.lean:16:33: error: `grind` failed
+case grind.1.2.1
+D R L U v : Int
+hD : 6 ≤ D
+hD7 : D ≤ 7
+hR : 5 ≤ R
+hRD : R < D
+hL : 1 ≤ L
+hv : 1 ≤ v
+hU : D ≤ U
+hUR : U ≤ R + 2
+hsq : D ^ 2 = R ^ 2 + L ^ 2 - 2 * L + 2 * U * v
+hl : 0 ≤ (L - 1) * (L - 1)
+huv : D ≤ U * v
+he : D = R + 1
+hp : 0 ≤ (U - D) * v
+hvp : 0 ≤ D * (v - 1)
+h : ¬(L + -1) ^ 2 = 0
+h_1 : D = U
+h_2 : ¬L + -1 = U - D
+h_3 : L + -1 = v - 1
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * D + 6 ≤ 0
+    [prop] D + -7 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] -1 * D + R + 1 ≤ 0
+    [prop] -1 * L + 1 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] D + -1 * U ≤ 0
+    [prop] -1 * R + U + -2 ≤ 0
+    [prop] 2 * L + -1 * (2 * U * v) + D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2 = 0
+    [prop] -1 * ((L - 1) * (L - 1)) ≤ 0
+    [prop] D + -1 * (U * v) ≤ 0
+    [prop] D + -1 * R + -1 = 0
+    [prop] -1 * ((U - D) * v) ≤ 0
+    [prop] -1 * (D * (v - 1)) ≤ 0
+    [prop] ¬(L + -1) ^ 2 = 0
+    [prop] D = U
+    [prop] ¬L + -1 = U - D
+    [prop] L + -1 = v - 1
+  [eqc] True propositions
+    [prop] D = U
+    [prop] L + -1 = v - 1
+    [prop] D + -7 ≤ 0
+    [prop] D + -1 * U ≤ 0
+    [prop] D + -1 * (U * v) ≤ 0
+    [prop] -1 * D + R + 1 ≤ 0
+    [prop] -1 * R + U + -2 ≤ 0
+    [prop] -1 * D + 6 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] -1 * L + 1 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] -1 * (D * (v - 1)) ≤ 0
+    [prop] -1 * ((L - 1) * (L - 1)) ≤ 0
+    [prop] -1 * ((U - D) * v) ≤ 0
+  [eqc] False propositions
+    [prop] L + -1 = U - D
+    [prop] (L + -1) ^ 2 = 0
+  [eqc] Equivalence classes
+    [eqc] {D, U}
+    [eqc] {L, v}
+    [eqc] {0,
+        D + -1 * R + -1,
+        2 * L + -1 * (2 * U * v) + D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2,
+        D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2 + -2 * (v * U) + 2 * L,
+        U - D}
+    [eqc] {L + -1, L - 1, v - 1}
+    [eqc] {-1 * L + 1, -1 * v + 1}
+    [eqc] {D * v, U * v}
+    [eqc] {-1 * D, -1 * U}
+    [eqc] {-1 * L, -1 * v}
+    [eqc] {-1 * (D * v), -1 * (U * v)}
+  [cases] Case analyses
+    [cases] [1/2]: D = U
+      [cases] source: Model-based theory combination at argument #4 of
+            D * v
+          and
+            U * v
+    [cases] [2/2]: L + -1 = U - D
+      [cases] source: Model-based theory combination at argument #4 of
+            (U - D) * v
+          and
+            (L - 1) * (L - 1)
+    [cases] [1/2]: L + -1 = v - 1
+      [cases] source: Model-based theory combination at argument #5 of
+            D * (v - 1)
+          and
+            (L - 1) * (L - 1)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] D := 6
+    [assign] R := 5
+    [assign] L := 2
+    [assign] U := 6
+    [assign] v := 2
+    [assign] 「D ^ 2」 := 0
+    [assign] 「R ^ 2」 := -11
+    [assign] 「L ^ 2」 := 3
+    [assign] 「(L + -1) ^ 2」 := 1
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] v ^ 2 + 2 * (v * U) + -2 * v + -2 * U + 1 = 0
+      [_] D + -1 * R + -1 = 0
+      [_] R + -1 * U + 1 = 0
+      [_] L + -1 * v = 0
+    [diseqs] Disequalities
+      [_] ¬-2 * (v * U) + 2 * U = 0
+      [_] ¬v + -1 = 0
+/tmp/RecamanUnitSTargetSquare.lean:27:8: error: `grind` failed
+case grind.1.2.2.2.2
+D R L U v : Int
+hD : 6 ≤ D
+hD7 : D ≤ 7
+hR : 5 ≤ R
+hRD : R < D
+hL : 1 ≤ L
+hv : 1 ≤ v
+hU : D ≤ U
+hUR : U ≤ R + 2
+hsq : D ^ 2 = R ^ 2 + L ^ 2 - 2 * L + 2 * U * v
+hl : 0 ≤ (L - 1) * (L - 1)
+huv : D ≤ U * v
+he_1 : D = R + 1
+hp_1 : 0 ≤ (U - D) * v
+hvp : 0 ≤ D * (v - 1)
+hzero : (L - 1) ^ 2 = 0
+hL1 : L = 1
+he : ¬v = 1
+hh : 2 ≤ v
+hp : 0 ≤ U * (v - 2)
+h : ¬v = 1
+h_1 : D = U
+h_2 : ¬v - 1 = v - 2
+h_3 : ¬0 = v - 1
+h_4 : ¬0 = v - 2
+h_5 : ¬v = v - 2
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] -1 * D + 6 ≤ 0
+    [prop] D + -7 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] -1 * D + R + 1 ≤ 0
+    [prop] -1 * L + 1 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] D + -1 * U ≤ 0
+    [prop] -1 * R + U + -2 ≤ 0
+    [prop] 2 * L + -1 * (2 * U * v) + D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2 = 0
+    [prop] -1 * ((L - 1) * (L - 1)) ≤ 0
+    [prop] D + -1 * (U * v) ≤ 0
+    [prop] D + -1 * R + -1 = 0
+    [prop] -1 * ((U - D) * v) ≤ 0
+    [prop] -1 * (D * (v - 1)) ≤ 0
+    [prop] (L + -1) ^ 2 = 0
+    [prop] L = 1
+    [prop] ¬v = 1
+    [prop] -1 * v + 2 ≤ 0
+    [prop] -1 * (U * (v - 2)) ≤ 0
+    [prop] ¬v = 1
+    [prop] D = U
+    [prop] ¬v - 1 = v - 2
+    [prop] ¬0 = v - 1
+    [prop] ¬0 = v - 2
+    [prop] ¬v = v - 2
+  [eqc] True propositions
+    [prop] D = U
+    [prop] 0 = U - D
+    [prop] D + -7 ≤ 0
+    [prop] D + -1 * U ≤ 0
+    [prop] D + -1 * (U * v) ≤ 0
+    [prop] -1 * D + R + 1 ≤ 0
+    [prop] -1 * R + U + -2 ≤ 0
+    [prop] -1 * D + 6 ≤ 0
+    [prop] -1 * R + 5 ≤ 0
+    [prop] -1 * L + 1 ≤ 0
+    [prop] -1 * v + 1 ≤ 0
+    [prop] -1 * v + 2 ≤ 0
+    [prop] -1 * (D * (v - 1)) ≤ 0
+    [prop] -1 * (U * (v - 2)) ≤ 0
+    [prop] -1 * ((L - 1) * (L - 1)) ≤ 0
+    [prop] -1 * ((U - D) * v) ≤ 0
+  [eqc] False propositions
+    [prop] v = 1
+    [prop] v = v - 2
+    [prop] 0 = v - 1
+    [prop] 0 = v - 2
+    [prop] v - 1 = v - 2
+  [eqc] Equivalence classes
+    [eqc] {D, U}
+    [eqc] {L, 1, D + -1 * R}
+    [eqc] {0,
+        L + -1,
+        D + -1 * R + -1,
+        2 * L + -1 * (2 * U * v) + D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2,
+        D ^ 2 + -1 * R ^ 2 + -1 * L ^ 2 + -2 * (v * U) + 2 * L,
+        (L + -1) ^ 2,
+        L - 1,
+        U - D}
+    [eqc] {D * v, U * v}
+    [eqc] {-1 * D, -1 * U}
+    [eqc] {-1 * (D * v), -1 * (U * v)}
+  [cases] Case analyses
+    [cases] [1/2]: D = U
+      [cases] source: Model-based theory combination at argument #4 of
+            D * v
+          and
+            U * v
+    [cases] [2/2]: v - 1 = v - 2
+      [cases] source: Model-based theory combination at argument #5 of
+            U * (v - 2)
+          and
+            D * (v - 1)
+    [cases] [2/2]: 0 = v - 1
+      [cases] source: Model-based theory combination at argument #5 of
+            D * (v - 1)
+          and
+            (L - 1) * (L - 1)
+    [cases] [2/2]: 0 = v - 2
+      [cases] source: Model-based theory combination at argument #5 of
+            U * (v - 2)
+          and
+            (L - 1) * (L - 1)
+    [cases] [2/2]: v = v - 2
+      [cases] source: Model-based theory combination at argument #5 of
+            U * (v - 2)
+          and
+            2 * U * v
+  [cutsat] Assignment satisfying linear constraints
+    [assign] D := 6
+    [assign] R := 5
+    [assign] L := 1
+    [assign] U := 6
+    [assign] v := 2
+    [assign] 「D ^ 2」 := 0
+    [assign] 「R ^ 2」 := -23
+    [assign] 「L ^ 2」 := 1
+    [assign] 「(L + -1) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] v * U + -1 * R + -1 = 0
+      [_] D + -1 * R + -1 = 0
+      [_] R + -1 * U + 1 = 0
+      [_] L + -1 = 0
+    [diseqs] Disequalities
+      [_] ¬v + -1 = 0
+      [_] ¬-1 * v + 1 = 0
+      [_] ¬-1 * v + 2 = 0

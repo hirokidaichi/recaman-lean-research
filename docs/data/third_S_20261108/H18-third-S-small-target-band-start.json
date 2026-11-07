@@ -1,0 +1,25 @@
+{
+  "tag": "H18-third-S-small-target-band",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSTargetSmallBand.olean",
+    "Recaman/ThirdSTargetSmallBand.lean"
+  ],
+  "started_jst": "2026-11-08T07:03:59.875115+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSTargetSmallBand.lean": "483014f91f3d7c0cbf0c84ee0197fa54178b9d00af69b63156e44d6c40782146"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "source_tree_sha256": "aec674bd5fcd69b9bef58b90ebfd3be0ffc0090c4073d01dc53a9fc2fcbb25fd",
+  "source_tree_manifest": "H18-third-S-small-target-band-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

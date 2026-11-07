@@ -1,0 +1,16 @@
+Recaman/LayeredPrimitiveSupply.lean:80:35: error: Application type mismatch: The argument
+  hP 0 ?m.53
+has type
+  P (f 0)
+but is expected to have type
+  P (0 + f 0)
+in the application
+  cN_succ_pos P 0 (f 0) (hP 0 ?m.53)
+Recaman/LayeredPrimitiveSupply.lean:88:39: error: Application type mismatch: The argument
+  hP (N + 1) ?m.176
+has type
+  P (f (N + 1))
+but is expected to have type
+  P (0 + f (N + 1))
+in the application
+  cN_succ_pos P 0 (f (N + 1)) (hP (N + 1) ?m.176)

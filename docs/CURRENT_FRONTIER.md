@@ -1,16 +1,24 @@
 # Current research frontier
 
-最終更新: 2026-11-06。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-08。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
+
+- **E-599 / E-601 PROVED-LEAN**。元Intp/padded BlockWord/zero-fullpositive/真正四A-runで、同actual targetが第二A開始以降なら全gap/全run長の元full-tail free>=j+1。第三S全域と第二A内全域を独立source/head供給で閉じ、既存late域へ統合した。全old履歴・他supplier massは無制限。初期S/第一A/第二S、任意run/C1/Q/H/SL/全射性は未証明。人間レビュー未。
+- **E-600 / E-602 / E-603 PROVED-LEAN**。短い前二Aなら元head供給<=M+L+3、whole-A targetによるA族排除、第二S残余1の同S族除去によるactual last<=6。q1 fullgapはE-604 PROVED-PAPERのまま（actual bootstrap/小factor未Lean）。
 
 - **E-583 PROVED-LEAN**。旧履歴から始まる実P2対象窓のある真正四A-runで、元の整数基点・padded BlockWord・zero/fullpositiveのもと、全長で実freeがgap+1以上。headmassや全old履歴を制限しない。E-579の必要条件とE-580の紙上候補はこの証明の前段。
 - **E-581 / E-582 PROVED-LEAN**。任意mixed prefixで選択oldmass>=2なら、遅延に応じた手前A数から全old/localの共通時計帯を得る。最後A-ray直前まで適用すると、反例の前半実供給にgap+1の下限が付く。
 - **E-584 / E-585 PROVED-LEAN**。最後供給7件の区間内旧・初期S源の存在と、初期S源と同じold対象の実平方予算。E-583とcoverageを重複計上しない。
 - **E-586 / E-588 PROVED-LEAN**。同じ元Intp/padded/zero-fullpositive/真正四runで、第三A以降の実対象と、第三S内の残余q<=3又はq+j+1<=vの実対象は全長full-tail free>=j+1。
 - **E-587 / E-589 PROVED-LEAN**。第三Sの対象平方と同separator源の厳密時計を保持。残余S和14ではその源が存在できず、L<=3/s+v>=12では第二Aと第三Sの両源が共存できない。
-- **E-590 PROVED-PAPER**。第三S q>=4のactual counterでは実供給17の飽和を排除してM+L+q+v<=15。全run長・全旧履歴を保持する。実7件からの両源抽出とactual接続は未Lean。
+- **E-590 PROVED-LEAN**。第三S q>=4の元Intp/padded/zero-fullpositive actual counterでは、実7件から二つの区間内sourceを内部抽出し、同target平方とheadfree会計によりM+L+q+v<=15、q+v<=13、R<=12、T+U<=25、A<=27。全旧履歴・他supplier massを保持。候補上界であり第三S全域のcounter不在ではない。人間レビュー未。
+- **E-591 / E-592 PROVED-LEAN**。L<=3/s+v>=12で第二A/第三SのOR供給を1件へ共同課金し、元最後rayを6件以下へ。一方、元実最後7件なら両sourceの独立clockを内部抽出する。11/06の停止sourceを再使用せず、新しいlate suffix和集合予算で接続した。
 
+
+- **E-594 / E-595 / E-596 PROVED-LEAN**。S/Sの源深さを中間A長未満へ削減し、A長4以下なら二源が同じclockへ重なる。元actual last<=6。さらに同第三S対象の偶奇で第二Aの奇数depthを排除し、L1はlast<=5、元Intpのcounterを残余S和11/R10/A24以下へstrict削減。全旧履歴は保持。
+- **E-593 / E-597 PROVED-LEAN**。任意mixed futureに広げた別の全word交差整数性でA/S源のdepthを4の倍数、quarter上界へ。短Aを挟むS-A-S三族は一clockへ共同課金でき、全oldと任意前置を保つactual予算を供給。旧H08試作はSTOPPEDのまま。
+- **E-598 REFUTED**。全runへ最後供給の固定定数上限を外挿する補助案は、元zero/fullpositive/実targetの明示無限族で偽。同じ族でfullfree>=N+1、N>=1なら全actual last供給<=fullfreeもkernel証明し、C1反例とは区別する。
 
 - **E-568 PROVED-LEAN**: 正三run zerohead/同oldtargetの全正mass・全separator長の元p actual fullgap。mass2残枝を新all-old帯budget E-566とsource floor E-562で閉じ、既存C>=3と合成。合成そのものは追加source edgeではない。
 - **E-575 PROVED-LEAN**: 任意mixed tail/全run数/全headmassで同old targetmass1は元p endpoint-positiveの会計だけでfullgap。一般式free+C>=j+2。狭いmass1 fullgap枝 E-545/E-546/E-547/E-557/E-563/E-572を独立C1 coverage進展として重複計上しない。
@@ -32,15 +40,13 @@
 
 ## 次の一問
 
-第三Sの未解決部分で、実供給7件から第二Aと第三Sの供給元を同じ元基点で抽出し、E-590の等号排除をLeanへ接続する。次の入口は[H-20261107-01](HYPOTHESIS_CARD_2026-11-07_THIRD_S_SATURATION.md)と[11/06 DAILY](RESEARCH_HANDOFF_2026-11-06_DAILY.md)。
-
-[H-20261106-01](HYPOTHESIS_CARD_2026-11-06_TOP_GAP_SAME_TARGET.md): 当日の入口。E-583で同old targetの全gapを排除。
+[H-20261109-01](HYPOTHESIS_CARD_2026-11-09_UNIT_SECOND_S_ACTUAL_BOOTSTRAP.md): 元actual第二S残余1 counterでE603のsource6を内部消費しM<=8/L<=7又はfullgapを供給する。入口は[11/08 DAILY](RESEARCH_HANDOFF_2026-11-08_DAILY.md)の末尾→[同target/source予算note](RESEARCH_NOTE_2026-11-08_SOURCE_CLOCK_BUDGET.md)→カード。最初15分で新actual edge/strict候補削減/反例がなければ、q2のcounter-conditioned同S源除去25分と任意run sourceのfree課金20分へ。
 
 ## 停止と証拠の境界
 
 11/06 H08/H11の高gap実接続monolithは512MB STOPPED、packet隔離。別の遅延付き供給機構でE-583を検証。H01時計順序試作は修正回数超過で採用外。H43広q3はCPU上限、H44広因数は512MB、H50/H51 actual上限/抽出はLeanエラーでSTOPPED。固定q3だけを独立因数化してE-588を検証、H52/H53の別key機構でE-589を検証。11/05 H12 R8/v2..5 count monolithとH23 positivehead fullglueはkernel512MB STOPPED、packet隔離。新source floor/actual mass chargeのstrict pruning後の採用bytesだけを使用。旧H06/133core/H21/I25/H13八head、r4 E412/E427 12837/40024二回削減0/0、R19/R7R11/cold512/combined19/literal43/width等STOPは継承し、資源追加/tactic/split/import移動だけで再開しない。検証済みだがE575に包含されたdefect2 fullgap sourceは VALIDATED_REDUNDANT .lean.txtに保存しroot/Audit未採用。
 
-未解決: 第三Sの残余q>=4かつq+j+1>v、第三Sより前の局所対象、一般四run/任意run/rank/C1/Q/H/SL/全射性。E-388 COMPUTED/E-404 CONJECTURED/E-384存在方向未Lean・人間レビュー未。r3 kernel countへの依存は維持し、未検証r4表/E384に依存しない。
+未解決: 初期S/第一A/第二Sの局所対象（q1はPAPERのみ）、一般四run/任意run/rank/C1/Q/H/SL/全射性。E-388 COMPUTED/E-404 CONJECTURED/E-384存在方向未Lean・人間レビュー未。r3 kernel countへの依存は維持し、未検証r4表/E384に依存しない。
 
 数学worker未起動/予算0。個別Leanはcurrent bytes/source-tree hash、-j1-M512、10CPU per-process/20wall。tree累積CPU/OS AS capではない。全check/G5/Audit/lint/briefを同期し、元p/P2/actual countを保持する。日次validated snapshotのmain通常pushは継続承認済み。
 
@@ -963,3 +969,31 @@ E-579 PROVED-LEAN: same actual供給飽和とhead-A crossでj14を排除。genui
 | E-554 | PROVED-PAPER | mass-one-no-old-small-separator-initial-source |
 | E-555 | PROVED-LEAN | mass-one-target-two-S-source-exclusion |
 | E-556 | PROVED-LEAN | mass-one-one-separator-no-old-exact-counter |
+
+## 2026-11-08 source共同予算
+
+E-593は当初紙上のA/S二源depth4/二次上界から、独立全word因数化によるPROVED-LEANのquarter予算へ更新。H08 Lean試作そのものは一修理後STOPPEDでpacket隔離し、kernel根拠にしない。E-594 PROVED-LEANは独立S/S平方差から前のsource depth<L、L<=4で同clockを供給し、全old付き元実last<=6へ接続。E-595 PROVED-LEANは同第三S対象の平方mod4から第二A depthを偶数へ、L1では元実last<=5へ。一般C1/全第三S counter不在を主張しない。
+
+E-596 PROVED-LEAN。同じ元Intp/padded/zero-fullpositive/真正四run/第三S q>=4/L1 actual counterはM+q+v<=13、q+v<=11、R<=10、T+U<=21、A<=24。実last5の飽和から残余12を排除したstrict候補削減で、全old履歴は無限のまま。
+
+E-597のscope拡張は既存cross_fourの再発見ではない。E-598は全runのcounter限定でなく、free不足を入れない最後供給定数の反証。固定四runのE458やC1を反証しない。E593は独立全word factorizationでPROVED-LEANへ更新したがH08停止は保持。
+
+E-599はE588の短域とE590/E596の必要counter帯を同第三S scopeで包含する。狭い帯を独立coverageとして加算しない。任意mixed sourceのE593/E597と補助定数反証E598は別の入力であり、一般C1への課金は未完了。
+
+### 2026-11-08 07:28追加 — E-600/E-601/E-602
+
+E-600 `PROVED-LEAN` はM,L<=8の元actual head<=M+L+3。E-601 `PROVED-LEAN` は元Intp/padded BlockWord/zero-fullpositive/真正四A-run/第二A内の同actual target全域のfull-tail free>=j+1。全gap/全run長/全old履歴を保持し、target以前prefixをresetしない。新head供給からD<=7/U帯を内部導出し、小平方矛盾で閉じる。E-599と既存late域の統合で第二A開始以降を供給、wrapperに別coverageを計上しない。E-602 `PROVED-LEAN` はwhole-A targetのkey単調性からA source族を排除、R>=2を保持。狭い開始target bandのcoverageはE-601に包含。
+
+H26一般counter-band旧jobは512MB STOPPED、隔離を維持。E-601は独立E-600のhead削減を消費した同512MBの新証明で、単なるlayout/resource変更でない。残る局所対象は初期S/第一A/第二S。任意run数ではE-598の供給非有界族が固定定数法を反証しており、元actual freeへ増えるsourceを償却課金する機構が未供給。人間レビュー未、C1/Q/H/SL/全射性は未証明。
+
+### 07:35 層状反証族の支払い監査と第二Sの停止
+
+E-598の同じ全N構成で、元fullfree>=N+1、4*3^N<=fullfree+2、N>=1なら最後rayの全actual供給<=fullfreeをkernel供給。local上界2N+2と最初Aのfreeを結合したこの族だけの償却会計。一般historyのsource→free単射、全run/C1の証明ではなく、独立coverageに計上しない。固定定数法はREFUTEDのまま。
+
+第二S actual counterのM9/p7/R5排除chainはPAPER。H39は一回import修理後512MB kernel STOPPED、counter未検証sourceと受理済みprofileをpacket隔離しroot/Auditへ採用しない。任意S源順序のH22案は既存ASourceReuseで既知と判明し再証明せず停止。次回の第二SではこのPAPERの再layoutでなく、同targetから別のsource族削減を先に得る必要がある。
+
+### 07:39 E-603 — 第二S残余1の新actual source削減
+
+`PROVED-LEAN`。同じ元Nat0/BlockWord旧履歴/四run/第二S残余1 actual target/j>=1から、同S族を全除去し元lastEndN<=6を供給。全M/L/old履歴でsource不存在やcount上界を入力しない。raw source単調性は任意mixed x、actual adapterは四run。j0では自己sourceが共存するliteral境界を受理。H39の一般counter jobを再開せず新source入力を得た。q1のfullgap、q>=2の第二S、初期S/第一Aは未証明。
+
+E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新source6からM8/L7をbootstrapしてE600を消費するがactual接着は未Lean・人間レビュー未。H52小平方helper一回修理後STOPPED、root/Audit未採用。一般H39 STOPも維持。

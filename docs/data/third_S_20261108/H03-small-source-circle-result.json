@@ -1,0 +1,31 @@
+{
+  "tag": "H03-small-source-circle",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSSmallCircle.olean",
+    "Recaman/ThirdSSmallCircle.lean"
+  ],
+  "started_jst": "2026-11-08T06:07:14.375570+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSSmallCircle.lean": "4336b951dca215273d6d570fbc165549005c702ce2c089dbe32ed861d9baa951"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "a9f96cd6813be1d12bf3b0d82f61ea4e276d9de5cf27a7fe8cd2a19b747c230a",
+  "source_tree_manifest": "H03-small-source-circle-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5115796669851989,
+  "cpu_seconds": 0.381795,
+  "finished_jst": "2026-11-08T06:07:14.887088+09:00"
+}

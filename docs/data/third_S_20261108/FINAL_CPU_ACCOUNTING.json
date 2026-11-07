@@ -1,0 +1,146 @@
+{
+  "mathematical_worker_started": false,
+  "mathematical_worker_cpu_seconds": 0,
+  "lean_individual_measured_cpu_seconds": 42.19793,
+  "fullcheck_measured_cpu_seconds": 141.244572,
+  "other_receipts": [
+    {
+      "result": "H53-final-harness-result.json",
+      "argv": [
+        "make",
+        "test-tools"
+      ],
+      "exit_code": 0,
+      "cpu_seconds": 11.93131
+    }
+  ],
+  "failed_jobs_measured_not_zero": [
+    [
+      "H08-paired-depth-budget-result.json",
+      0.5987979999999999
+    ],
+    [
+      "H07-first-full-check-result.json",
+      6.468863000000001
+    ],
+    [
+      "H39-second-S-pruning-result.json",
+      0.38912599999999997
+    ],
+    [
+      "X10-positive-family-free-audit-result.json",
+      0.48464799999999997
+    ],
+    [
+      "H29-second-A-start-counter-band-result.json",
+      0.8952969999999999
+    ],
+    [
+      "H52-next-q1-square-result.json",
+      0.247425
+    ],
+    [
+      "X07-layered-primitive-clock-family-result.json",
+      0.419432
+    ],
+    [
+      "H26-second-A-original-counter-band-result.json",
+      0.738062
+    ],
+    [
+      "H40-layered-upper-result.json",
+      0.418863
+    ],
+    [
+      "H10-short-separated-S-clock-result.json",
+      0.719668
+    ],
+    [
+      "H31-small-square-result.json",
+      0.352309
+    ],
+    [
+      "H37-layered-free-charge-result.json",
+      0.546183
+    ],
+    [
+      "H52b-next-q1-square-result.json",
+      0.48897299999999994
+    ],
+    [
+      "H35-registered-second-A-fullcheck-result.json",
+      6.45115
+    ],
+    [
+      "H13-unit-target-actual-five-result.json",
+      0.36125999999999997
+    ],
+    [
+      "H45-unit-S-actual-key-result.json",
+      0.23711500000000002
+    ],
+    [
+      "H19-two-target-middle-source-exclusion-result.json",
+      0.46380299999999997
+    ],
+    [
+      "H34-second-A-fullcheck-result.json",
+      1.715951
+    ],
+    [
+      "H09-separated-S-depth-result.json",
+      0.44051799999999997
+    ],
+    [
+      "X09-positive-history-unbounded-last-result.json",
+      0.37252399999999997
+    ],
+    [
+      "H22-original-after-second-A-gap-result.json",
+      0.42809200000000003
+    ],
+    [
+      "X04-mixed-A-S-quarter-budget-result.json",
+      1.1293929999999999
+    ],
+    [
+      "H30-head-budget-result.json",
+      0.262696
+    ],
+    [
+      "X02-mixed-separated-source-cut-result.json",
+      0.580861
+    ],
+    [
+      "H38-second-S-profile-result.json",
+      0.423657
+    ],
+    [
+      "H15-unit-third-S-counter-cut-result.json",
+      1.277839
+    ],
+    [
+      "H49-unit-S-registered-fullcheck-result.json",
+      8.377376
+    ],
+    [
+      "H11-separated-S-actual-budget-result.json",
+      0.322751
+    ],
+    [
+      "H39b-second-S-pruning-result.json",
+      0.774347
+    ],
+    [
+      "H08b-paired-depth-budget-result.json",
+      0.5880529999999999
+    ],
+    [
+      "H47-unit-S-boundary-result.json",
+      0.290861
+    ]
+  ],
+  "note": "Measured wait4 receipts; per-process limits are not a cumulative process-tree cap. Lint/gate/python bookkeeping CPU not separately measured, not zero.",
+  "harness_validation_measured_cpu_seconds": 11.93131,
+  "final_fullcheck": "H55-final-saved-tree-check-result.json"
+}

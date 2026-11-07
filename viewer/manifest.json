@@ -273,7 +273,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3819,
+   "lines": 3873,
    "imports": [
     "UnitOneInitialSource",
     "UnitOneLastFive",
@@ -31319,6 +31319,55 @@
    "hasReport": false
   },
   {
+   "name": "FourShortPrefixBounds",
+   "lines": 53,
+   "imports": [
+    "MixedShortAPairBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_one_short_bound",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_one_short_bound",
+     "line": 35
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourThirdSFullGapBase",
+   "lines": 88,
+   "imports": [
+    "FourThirdSTargetGap",
+    "ThirdSResidualFreeGap",
+    "FourRunSourceBase",
+    "FourLateLocalTargetGapBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_third_S_target_free_gap_int",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "four_after_second_A_target_free_gap_int",
+     "line": 63
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourThirdSTargetGap",
    "lines": 114,
    "imports": [
@@ -33172,6 +33221,45 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "InitialSPaddingPositive",
+   "lines": 63,
+   "imports": [
+    "LayeredPrimitiveSupply",
+    "InitialSeparatorTrim"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "finiteSign",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "finiteSign_seg",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "finiteSign_after",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_positive",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_ray_retains_suffix",
+     "line": 53
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "InitialSTargetBounds",
@@ -35060,6 +35148,54 @@
    ],
    "theorems": 1,
    "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LayeredPrimitiveSupply",
+   "lines": 121,
+   "imports": [
+    "MixedThreeFamilyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "layered",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "layered_profile",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "layered_length",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "nested_suffix",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "layer_supplies_clock",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "layered_ray_count_unbounded",
+     "line": 93
+    },
+    {
+     "kind": "theorem",
+     "name": "layered_ray_upper",
+     "line": 106
+    }
+   ],
+   "theorems": 6,
+   "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -39347,6 +39483,35 @@
    "hasReport": false
   },
   {
+   "name": "MixedASQuarterBudget",
+   "lines": 95,
+   "imports": [
+    "MixedSeparatedSources",
+    "OldThreeKeyParity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "source_subtraction_odd",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "mixed_A_S_quarter_budget",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "quarter_budget_sharp",
+     "line": 87
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MixedActualCircle",
    "lines": 37,
    "imports": [
@@ -39408,6 +39573,125 @@
    "hasReport": false
   },
   {
+   "name": "MixedSeparatedBudget",
+   "lines": 73,
+   "imports": [
+    "MixedSeparatedSources",
+    "MixedFinalRayOldBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mixed_S_union_one",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_count_saving",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_prefix_saving",
+     "line": 54
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedSeparatedSources",
+   "lines": 69,
+   "imports": [
+    "ShortSeparatedSSupply",
+    "UnitTargetPrefixParity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "earlier_S_depth_mixed",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "short_A_same_clock_mixed",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_future_distinct_clocks",
+     "line": 62
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedShortAPairBudget",
+   "lines": 82,
+   "imports": [
+    "MixedThreeFamilyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "pair_count_one",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "pair_prefix_saving",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_local_bounds",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_fourth_bounds",
+     "line": 64
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedShortASources",
+   "lines": 87,
+   "imports": [
+    "MixedASQuarterBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "A_depth_needs_subtractions",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "short_A_S_A_collision",
+     "line": 24
+    },
+    {
+     "kind": "theorem",
+     "name": "length_nine_joint_witness",
+     "line": 79
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MixedThirdActualCircle",
    "lines": 78,
    "imports": [
@@ -39427,6 +39711,35 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedThreeFamilyBudget",
+   "lines": 86,
+   "imports": [
+    "MixedSeparatedBudget",
+    "MixedShortASources"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_family_one",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_one_saving",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_prefix_two_saving",
+     "line": 67
+    }
+   ],
+   "theorems": 3,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -44391,6 +44704,24 @@
    "theorems": 14,
    "defs": 3,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PaddedLayeredSupply",
+   "lines": 141,
+   "imports": [
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_history_many_last_clocks",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -54320,6 +54651,126 @@
    "hasReport": false
   },
   {
+   "name": "SecondAHeadBudgetGap",
+   "lines": 122,
+   "imports": [
+    "SecondATargetProfile",
+    "FourMeasuredCounts",
+    "FourRunSupplySeventeen",
+    "SecondASmallSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_A_head_budget_free_gap",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SecondAHeadBudgetGapBase",
+   "lines": 81,
+   "imports": [
+    "FourThirdSFullGapBase",
+    "SecondAHeadBudgetGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_second_A_target_free_gap_int",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "four_from_second_A_target_free_gap_int",
+     "line": 56
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SecondASmallSquare",
+   "lines": 39,
+   "imports": [
+    "ShortEarlyHeadBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_square_impossible",
+     "line": 5
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SecondAStartCounterBand",
+   "lines": 109,
+   "imports": [
+    "SecondAStartRayBudget",
+    "FourMeasuredCounts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "second_A_start_counter_band",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SecondAStartRayBudget",
+   "lines": 60,
+   "imports": [
+    "WholeATargetSourceCut",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_start_six",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SecondATargetProfile",
+   "lines": 81,
+   "imports": [
+    "FourShortPrefixBounds",
+    "ThreeRunSourceShape"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_second_A_profile",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SecondRaySmallShapes",
    "lines": 100,
    "imports": [
@@ -54720,6 +55171,68 @@
    "defs": 4,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "SeparatedSActualBudget",
+   "lines": 89,
+   "imports": [
+    "ShortSeparatedSSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "paired_S_count_four",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_three",
+     "line": 26
+    },
+    {
+     "kind": "theorem",
+     "name": "local_five",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_six",
+     "line": 73
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SeparatedSSourceCut",
+   "lines": 70,
+   "imports": [
+    "ThirdSPairedSupply",
+    "SourceFamilyFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "earlier_S_depth_cut",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_A_S_collision",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "paired_S_count",
+     "line": 56
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "SeparatorSupplyReset",
@@ -55410,6 +55923,25 @@
    "hasReport": false
   },
   {
+   "name": "ShortEarlyHeadBudget",
+   "lines": 72,
+   "imports": [
+    "FourMeasuredCounts",
+    "MixedShortAPairBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_short_head_budget",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ShortGapLocalBudget",
    "lines": 162,
    "imports": [
@@ -55786,6 +56318,39 @@
    "theorems": 10,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ShortSeparatedSSupply",
+   "lines": 115,
+   "imports": [
+    "SeparatedSSourceCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_clock_equation",
+     "line": 32
+    },
+    {
+     "kind": "theorem",
+     "name": "separated_S_same_clock",
+     "line": 74
+    },
+    {
+     "kind": "theorem",
+     "name": "length_two_shared_clock_witness",
+     "line": 97
+    },
+    {
+     "kind": "theorem",
+     "name": "length_five_distinct_clock_witness",
+     "line": 107
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -59841,6 +60406,108 @@
    "hasReport": false
   },
   {
+   "name": "ThirdSActualCounterCut",
+   "lines": 104,
+   "imports": [
+    "ThirdSSaturatedSources",
+    "ThirdSSaturationAlgebra",
+    "FourMeasuredCounts",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_S_actual_counter_cut",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSActualCounterCutBase",
+   "lines": 57,
+   "imports": [
+    "ThirdSActualCounterCut",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_S_actual_counter_cut_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSMiddleSources",
+   "lines": 94,
+   "imports": [
+    "ThirdSTargetSmallBand"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "middle_sources_absent",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "middle_ray_one",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_last_three",
+     "line": 75
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSPairedSupply",
+   "lines": 85,
+   "imports": [
+    "ThirdSResidualSquare",
+    "MixedFinalRayOldBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "paired_source_count",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "paired_suffix_count",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_local_paired_count",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_paired_six",
+     "line": 68
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ThirdSQThreeFactors",
    "lines": 83,
    "imports": [
@@ -59851,6 +60518,25 @@
      "kind": "theorem",
      "name": "third_S_q_three_choices",
      "line": 38
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSResidualFreeGap",
+   "lines": 137,
+   "imports": [
+    "ThirdSMiddleSources",
+    "ThirdSActualCounterCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "third_S_residual_free_gap",
+     "line": 12
     }
    ],
    "theorems": 1,
@@ -59878,6 +60564,52 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSSaturatedSources",
+   "lines": 96,
+   "imports": [
+    "ThirdSPairedSupply"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "suffix_three_needs_both",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_seven_needs_late_sources",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_seven_needs_late_sources",
+     "line": 79
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSSaturationAlgebra",
+   "lines": 51,
+   "imports": [
+    "ThirdSSmallCircle"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "saturation_equations_impossible",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -59911,6 +60643,52 @@
    "hasReport": false
   },
   {
+   "name": "ThirdSSmallCircle",
+   "lines": 27,
+   "imports": [
+    "ThirdSResidualSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_source_circle",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSTargetParity",
+   "lines": 64,
+   "imports": [
+    "SeparatedSActualBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "even_A_source_depth",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_A_source_excluded",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_A_without_target_witness",
+     "line": 59
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ThirdSTargetProfile",
    "lines": 80,
    "imports": [
@@ -59930,6 +60708,53 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSTargetSmallBand",
+   "lines": 51,
+   "imports": [
+    "MixedShortAPairBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "small_target_band",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThirdSUnitLastBudget",
+   "lines": 99,
+   "imports": [
+    "ThirdSTargetParity",
+    "FourRunSupplySeventeen"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "suffix_two",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_five_from_profile",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_third_S_five",
+     "line": 72
+    }
+   ],
+   "theorems": 3,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -64089,6 +64914,57 @@
    "hasReport": false
   },
   {
+   "name": "UnitSActualLastBudget",
+   "lines": 100,
+   "imports": [
+    "UnitSSelectedSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_second_S_target_key",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_second_S_unit_six",
+     "line": 51
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSSelectedSource",
+   "lines": 39,
+   "imports": [
+    "SecondAStartRayBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_S_target_excludes_source",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_S_prefix_saving",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_gap_control",
+     "line": 33
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "UnitTargetActualBoundary",
    "lines": 69,
    "imports": [
@@ -64430,6 +65306,44 @@
     {
      "kind": "theorem",
      "name": "source_zero_cross_boundary",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitThirdSCounterCut",
+   "lines": 122,
+   "imports": [
+    "ThirdSUnitLastBudget",
+    "ThirdSActualCounterCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_third_S_counter_cut",
+     "line": 23
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitThirdSCounterCutBase",
+   "lines": 58,
+   "imports": [
+    "UnitThirdSCounterCut",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_third_S_counter_cut_int",
      "line": 12
     }
    ],
@@ -64945,6 +65859,34 @@
    "hasReport": false
   },
   {
+   "name": "WholeATargetSourceCut",
+   "lines": 58,
+   "imports": [
+    "SecondATargetProfile"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "whole_A_target_excludes_source",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_start_excludes_source",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_R_control",
+     "line": 51
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "WrapObstruction",
    "lines": 153,
    "imports": [
@@ -65149,6 +66091,6 @@
    "hasReport": false
   }
  ],
- "total": 832,
+ "total": 869,
  "withReport": 167
 }

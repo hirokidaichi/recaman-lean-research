@@ -1,0 +1,19 @@
+Recaman/PaddedLayeredSupply.lean:83:40: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≤ -3
+  i ≥ 0
+  e ≥ 0
+  e - i ≤ 0
+  c ≥ 0
+  b ≥ 0
+  b - c ≥ 3
+  b - e ≤ 1
+  0 ≤ a ≤ 2
+where
+ a := ↑(cN (fun i => g i = true) 0 (B + T))
+ b := ↑(rayCount w (T + 1))
+ c := ↑n
+ e := ↑(rayCount w T)
+ i := ↑(cN (EndN g 0) B T)
+ j := runKey (layered (n + 1))
+Recaman/PaddedLayeredSupply.lean:103:59: error(lean.unknownIdentifier): Unknown identifier `block_nil`

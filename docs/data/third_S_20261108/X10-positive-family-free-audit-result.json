@@ -1,0 +1,31 @@
+{
+  "tag": "X10-positive-family-free-audit",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PaddedLayeredSupply.olean",
+    "Recaman/PaddedLayeredSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:56:00.438121+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PaddedLayeredSupply.lean": "73b8ceb892a66feb91d485ef332aeb05b1eee0e3c1f0cd6724031575ea6f0d96"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "d61c0e295870da07a06daddbc46507f2c66f7553d2fa9151dc0debab3750b99e",
+  "source_tree_manifest": "X10-positive-family-free-audit-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.658294749999186,
+  "cpu_seconds": 0.48464799999999997,
+  "finished_jst": "2026-11-08T06:56:01.096342+09:00"
+}

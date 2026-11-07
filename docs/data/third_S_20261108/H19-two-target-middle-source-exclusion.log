@@ -1,0 +1,16 @@
+Recaman/ThirdSMiddleSources.lean:72:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 2
+  c ≥ 0
+  0 ≤ b ≤ 1
+  b - c ≥ 0
+  a ≥ 0
+  a ≥ 8
+where
+ a := ↑s
+ b := ↑(rayCount x K)
+ c := ↑(rayCount (List.replicate m false ++ (List.replicate 1 true ++ (List.replicate s false ++ x))) K)
+ d := ↑(rayCount
+    (List.replicate m false ++
+      (List.replicate 1 true ++ (List.replicate s false ++ (List.replicate 12 true ++ List.replicate v false))))
+    K)

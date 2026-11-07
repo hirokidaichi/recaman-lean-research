@@ -1,0 +1,25 @@
+{
+  "tag": "H01-joint-paired-supply",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSPairedSupply.olean",
+    "Recaman/ThirdSPairedSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:04:09.361662+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSPairedSupply.lean": "3cadaabaee320ab29b641a846c951a924f28162dd7c518faab7f63a04e00b0d5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "80b91d456aa0f497d2a87a567bbf564aaa0727eab9adcf6976c7ae9889e3a4f0",
+  "source_tree_manifest": "H01-joint-paired-supply-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

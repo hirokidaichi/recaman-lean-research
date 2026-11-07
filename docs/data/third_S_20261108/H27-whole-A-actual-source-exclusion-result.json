@@ -1,0 +1,31 @@
+{
+  "tag": "H27-whole-A-actual-source-exclusion",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/WholeATargetSourceCut.olean",
+    "Recaman/WholeATargetSourceCut.lean"
+  ],
+  "started_jst": "2026-11-08T07:17:35.343801+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/WholeATargetSourceCut.lean": "55e6ba76b21fe103007fda38ae95e86cc846f211a5ec09c8ec32cff69b639561"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "source_tree_sha256": "3f5b5566cfb8ff918ab95e00fb58a7aa05c71b2ba03d360f960f7b1bac03dd85",
+  "source_tree_manifest": "H27-whole-A-actual-source-exclusion-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5810040420037694,
+  "cpu_seconds": 0.400845,
+  "finished_jst": "2026-11-08T07:17:35.924730+09:00"
+}

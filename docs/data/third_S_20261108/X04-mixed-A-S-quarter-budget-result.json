@@ -1,0 +1,31 @@
+{
+  "tag": "X04-mixed-A-S-quarter-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedASQuarterBudget.olean",
+    "Recaman/MixedASQuarterBudget.lean"
+  ],
+  "started_jst": "2026-11-08T06:40:19.841573+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedASQuarterBudget.lean": "b93eef78e94919816f0120176f550afe1ddb3f1cabc487873aff194e97b99fc0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "9b316dbe2edbe55a2ec5256cfcf15235bb9bb90826802bee26dd39fa2a18f124",
+  "source_tree_manifest": "X04-mixed-A-S-quarter-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.3018762500141747,
+  "cpu_seconds": 1.1293929999999999,
+  "finished_jst": "2026-11-08T06:40:21.143347+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "X06-mixed-three-family-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedThreeFamilyBudget.olean",
+    "Recaman/MixedThreeFamilyBudget.lean"
+  ],
+  "started_jst": "2026-11-08T06:44:02.568247+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedThreeFamilyBudget.lean": "681ab34f56dc2811e0dc93d5677752159211927911993b59d87178c2b609004d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "413476ad9d84900fc449192959b60be00e8d20235aafc6c0bbdb76bdc271be71",
+  "source_tree_manifest": "X06-mixed-three-family-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

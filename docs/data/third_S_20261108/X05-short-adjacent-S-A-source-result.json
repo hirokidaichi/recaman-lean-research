@@ -1,0 +1,31 @@
+{
+  "tag": "X05-short-adjacent-S-A-source",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedShortASources.olean",
+    "Recaman/MixedShortASources.lean"
+  ],
+  "started_jst": "2026-11-08T06:43:03.776100+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedShortASources.lean": "a205733f60102aa4dbf71a3b353bd92e2147f8df7e02d9d27fc44666f2549214"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "ee71bae801c3d37596cbef08870f4aacfcec8cace30faf766ad4268ebb976c46",
+  "source_tree_manifest": "X05-short-adjacent-S-A-source-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8154474170005415,
+  "cpu_seconds": 0.658963,
+  "finished_jst": "2026-11-08T06:43:04.591468+09:00"
+}

@@ -1,0 +1,28 @@
+Recaman/ThirdSTargetSmallBand.lean:30:53: warning: This simp argument is unused:
+  Int.mul_emod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ThirdSTargetSmallBand.lean:38:29: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.mem_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ThirdSTargetSmallBand.lean:40:29: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.mem_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ThirdSTargetSmallBand.lean:42:29: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.mem_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

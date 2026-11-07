@@ -1,0 +1,25 @@
+{
+  "tag": "X02b-mixed-separated-source-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedSeparatedSources.olean",
+    "Recaman/MixedSeparatedSources.lean"
+  ],
+  "started_jst": "2026-11-08T06:38:10.593806+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedSeparatedSources.lean": "cef44b147d34321bd6a973e0f39db410fc014be827c4ad2266be2a1d1f0b9eb5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "28a45778959847571a9b0ea16d1cd573f9f75a148808ea230bdf59ca1d8ac3f0",
+  "source_tree_manifest": "X02b-mixed-separated-source-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

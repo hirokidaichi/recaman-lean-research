@@ -1,0 +1,18 @@
+{
+  "tag": "H36-frontier-second-A-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-08T07:29:41.191557+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "source_tree_sha256": "7a9e06c773bb46264c34900a31970a92d9e7ea4156e5955b1909bfe1dcd61ab2",
+  "source_tree_manifest": "H36-frontier-second-A-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

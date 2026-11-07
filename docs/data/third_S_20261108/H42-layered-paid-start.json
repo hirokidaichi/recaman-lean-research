@@ -1,0 +1,25 @@
+{
+  "tag": "H42-layered-paid",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PaddedLayeredSupply.olean",
+    "Recaman/PaddedLayeredSupply.lean"
+  ],
+  "started_jst": "2026-11-08T07:35:34.390239+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PaddedLayeredSupply.lean": "1c03b5c2cc9f11e92b753e17fb7500fad8fcca786a4083a5d3a2199dfb50c8f6"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "source_tree_sha256": "951196d712e5bf13053dcdeaae1936b8e8b76822aa140c20fee6e13c078dc5a8",
+  "source_tree_manifest": "H42-layered-paid-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

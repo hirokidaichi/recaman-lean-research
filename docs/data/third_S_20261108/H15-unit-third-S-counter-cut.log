@@ -1,0 +1,6 @@
+Recaman/UnitThirdSCounterCut.lean:116:6: error: Type mismatch: After simplification, term
+  hsq
+ has type
+  @Eq Int (12 ^ 2) ((↑j + 1) ^ 2 + 2 * ↑U * ↑v)
+but is expected to have type
+  @Eq Int 144 ((↑j + 1) ^ 2 + 2 * ↑U * ↑v)

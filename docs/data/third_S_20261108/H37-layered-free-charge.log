@@ -1,0 +1,25 @@
+Recaman/PaddedLayeredSupply.lean:117:38: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≤ -3
+  k ≥ 0
+  j ≥ 0
+  i ≥ 0
+  i - j ≤ 0
+  e ≥ 0
+  c ≥ 0
+  c - e ≥ 3
+  c - i ≤ 1
+  b ≥ 0
+  a ≥ 0
+  3*a - e ≤ 1
+  12*a - k ≤ 2
+  27*a - b ≥ -2
+where
+ a := ↑3 ^ N
+ b := ↑(cN (fun i => g i = true) 0 (B + T))
+ c := ↑(rayCount w (T + 1))
+ e := ↑N
+ i := ↑(rayCount w T)
+ j := ↑(cN (EndN g 0) B T)
+ k := ↑(cN (fun i => g i = true ∧ ¬EndN g 0 i) 0 (B + T))
+ l := runKey (layered (N + 1))

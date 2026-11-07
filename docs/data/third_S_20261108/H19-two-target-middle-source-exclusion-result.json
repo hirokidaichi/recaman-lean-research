@@ -1,0 +1,31 @@
+{
+  "tag": "H19-two-target-middle-source-exclusion",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSMiddleSources.olean",
+    "Recaman/ThirdSMiddleSources.lean"
+  ],
+  "started_jst": "2026-11-08T07:05:29.504803+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSMiddleSources.lean": "7a2a6897af62cf97f19ab19948c091ef27e6f779f856ec12bf0e89c5439a6e2d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "source_tree_sha256": "7c3e781399c8bbe7805ff256dadaa4b70138fe017d8c1b896e233b336070e6fd",
+  "source_tree_manifest": "H19-two-target-middle-source-exclusion-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5863366659905296,
+  "cpu_seconds": 0.46380299999999997,
+  "finished_jst": "2026-11-08T07:05:30.091083+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "X09b-positive-history-unbounded-last",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PaddedLayeredSupply.olean",
+    "Recaman/PaddedLayeredSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:54:00.869220+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PaddedLayeredSupply.lean": "7816136c2f276b6223ca992b8ad0565ed475dc49b70f870d267d3526194a09ba"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "09be301aec19e523ca08ed440356ca6af4f2a04ac1f864dd4acd15c78da626c9",
+  "source_tree_manifest": "X09b-positive-history-unbounded-last-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

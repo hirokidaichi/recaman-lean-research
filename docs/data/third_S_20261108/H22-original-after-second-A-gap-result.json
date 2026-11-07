@@ -1,0 +1,31 @@
+{
+  "tag": "H22-original-after-second-A-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourThirdSFullGapBase.olean",
+    "Recaman/FourThirdSFullGapBase.lean"
+  ],
+  "started_jst": "2026-11-08T07:09:08.160158+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourThirdSFullGapBase.lean": "b942700449217041ccc115d08d735e76c862b7fcc8d3a5769f74cff2a33f824a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "source_tree_sha256": "2ca19d5f29dfe4f05df1579daf37178a792a099854bdb7b7fd1d5d905f4a9eb8",
+  "source_tree_manifest": "H22-original-after-second-A-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "30f7f5bd2999251540ebb2a2cb895f52cd6d9b93ec9e22db9a7116e2ce8922d5",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.6019671669928357,
+  "cpu_seconds": 0.42809200000000003,
+  "finished_jst": "2026-11-08T07:09:08.762047+09:00"
+}

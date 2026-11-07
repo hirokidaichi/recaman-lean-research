@@ -1,0 +1,25 @@
+{
+  "tag": "H11b-separated-S-actual-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SeparatedSActualBudget.olean",
+    "Recaman/SeparatedSActualBudget.lean"
+  ],
+  "started_jst": "2026-11-08T06:22:46.541620+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SeparatedSActualBudget.lean": "13878008fe03363b5d67b9be0fe4f69c71e56052f499223bb45d828b8cd9ed83"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "source_tree_sha256": "2d76dc45112e780d8875ae89c98f7c29e006b28c82e6ed89991dd8ec81539f26",
+  "source_tree_manifest": "H11b-separated-S-actual-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

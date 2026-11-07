@@ -1,0 +1,22 @@
+{
+  "tag": "H53-final-harness",
+  "argv": [
+    "make",
+    "test-tools"
+  ],
+  "started_jst": "2026-11-08T07:49:52.557100+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "21ca3574cea6a5cfc3045f9d2685f8d67d3742cfd7c9c2d8a9738d48300af7cf",
+  "source_tree_sha256": "20ef391f1163f8bca4e0a621c23fe74361011cf6a84a9be9e6547bba7969d7d3",
+  "source_tree_manifest": "H53-final-harness-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 13.6443515830033,
+  "cpu_seconds": 11.93131,
+  "finished_jst": "2026-11-08T07:50:06.200972+09:00"
+}

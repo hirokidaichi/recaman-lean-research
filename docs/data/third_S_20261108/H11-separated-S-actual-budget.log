@@ -1,0 +1,32 @@
+Recaman/SeparatedSActualBudget.lean:68:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 6
+  e ≥ 0
+  d ≥ 0
+  d - e ≥ -2
+  0 ≤ c ≤ 3
+  b ≥ 1
+  0 ≤ a ≤ 4
+where
+ a := ↑L
+ b := ↑v
+ c := ↑(rayCount
+    (List.replicate m false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+      List.replicate v false)
+    K)
+ d := ↑(rayCount
+    (List.replicate m false ++
+      (List.replicate L true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))
+    K)
+ e := ↑(rayCount
+    (List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          (List.replicate L true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))
+    K)
+ f := ↑(rayCount
+    (List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false)
+    K)

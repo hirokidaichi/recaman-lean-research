@@ -1,0 +1,25 @@
+{
+  "tag": "H16-unit-original-int-counter",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitThirdSCounterCutBase.olean",
+    "Recaman/UnitThirdSCounterCutBase.lean"
+  ],
+  "started_jst": "2026-11-08T06:30:47.136428+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitThirdSCounterCutBase.lean": "a82df6aeb184b154f17adc63420786567946f7349ee5e87f203c4a34c6b1a7b1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ae5e32ec16d190caea095a8ffdd2fe363a829aee469bad1b6120ad1cccada7a0",
+  "source_tree_sha256": "c6ce7f259318fb5419bc18ddb4e50b77e6133973e327ccaad3d5ffe2cc6c8a75",
+  "source_tree_manifest": "H16-unit-original-int-counter-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

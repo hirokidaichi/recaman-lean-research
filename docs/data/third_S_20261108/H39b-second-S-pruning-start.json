@@ -1,0 +1,25 @@
+{
+  "tag": "H39b-second-S-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondSActualCounterBand.olean",
+    "Recaman/SecondSActualCounterBand.lean"
+  ],
+  "started_jst": "2026-11-08T07:34:07.308624+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondSActualCounterBand.lean": "64a9a70a4838bf41498412875ba9424d52c5e403212f84270350e9d91b6ff9f7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "source_tree_sha256": "cc25095107c0b3db6ccdf311ffec492387b003b03a87df31c01334cbe79ca2a4",
+  "source_tree_manifest": "H39b-second-S-pruning-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

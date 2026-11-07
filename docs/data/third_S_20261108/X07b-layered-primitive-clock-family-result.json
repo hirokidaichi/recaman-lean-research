@@ -1,0 +1,31 @@
+{
+  "tag": "X07b-layered-primitive-clock-family",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LayeredPrimitiveSupply.olean",
+    "Recaman/LayeredPrimitiveSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:48:28.155127+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LayeredPrimitiveSupply.lean": "0fcedf012b2fbd84eeb7333e2df1e48ad02a58a5067dd4c32b993c7984f9c545"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "6570161ad91f5522f4f7955ed68c3081e20c1d249210d8bb72664a092b225d8b",
+  "source_tree_manifest": "X07b-layered-primitive-clock-family-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5878313340072054,
+  "cpu_seconds": 0.4231579999999999,
+  "finished_jst": "2026-11-08T06:48:28.742887+09:00"
+}

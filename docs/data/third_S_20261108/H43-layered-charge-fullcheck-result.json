@@ -1,0 +1,23 @@
+{
+  "tag": "H43-layered-charge-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-08T07:36:50.136541+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "bc295c60ed31a2c9cc973785c4ac4a5619db955e9554ec517eab408b1aa4401f",
+  "source_tree_sha256": "951196d712e5bf13053dcdeaae1936b8e8b76822aa140c20fee6e13c078dc5a8",
+  "source_tree_manifest": "H43-layered-charge-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 9.877657167002326,
+  "cpu_seconds": 11.833069,
+  "finished_jst": "2026-11-08T07:37:00.013832+09:00"
+}

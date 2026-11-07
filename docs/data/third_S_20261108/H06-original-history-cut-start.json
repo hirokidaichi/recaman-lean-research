@@ -1,0 +1,25 @@
+{
+  "tag": "H06-original-history-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSActualCounterCutBase.olean",
+    "Recaman/ThirdSActualCounterCutBase.lean"
+  ],
+  "started_jst": "2026-11-08T06:11:53.542825+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSActualCounterCutBase.lean": "8e9c16944a0728d1501351bec495d4681af3656dcd1f4d5f0595e1426eea3010"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "d8828ddfa32de5523618281bb5fb0f8c9539294f814b9c7c7fb96765d6fc47b5",
+  "source_tree_manifest": "H06-original-history-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

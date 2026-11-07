@@ -1,0 +1,25 @@
+{
+  "tag": "H28-second-A-start-actual-six",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondAStartRayBudget.olean",
+    "Recaman/SecondAStartRayBudget.lean"
+  ],
+  "started_jst": "2026-11-08T07:18:28.194823+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondAStartRayBudget.lean": "8420277bde913c7d439dca643257bc59b418c89ed466107921266a1be4a79e05"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "source_tree_sha256": "8958b42f8199ff7ba9b39e573d1b08a7d431c6688f67b7fc47fc1bb5e4aa447a",
+  "source_tree_manifest": "H28-second-A-start-actual-six-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "X01-shared-short-arithmetic-helper",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortSeparatedSSupply.olean",
+    "Recaman/ShortSeparatedSSupply.lean"
+  ],
+  "started_jst": "2026-11-08T06:37:16.971121+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortSeparatedSSupply.lean": "af2c92b8a06711aef55151e43555d3dc0e31c4c13dbf0cd5a337636da8ea5c02"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "0114e42d8897294dc29d447a466cd247809142fda5377465b502018af64ba2e6",
+  "source_tree_manifest": "X01-shared-short-arithmetic-helper-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

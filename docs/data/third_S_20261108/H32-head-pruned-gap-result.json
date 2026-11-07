@@ -1,0 +1,31 @@
+{
+  "tag": "H32-head-pruned-gap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondAHeadBudgetGap.olean",
+    "Recaman/SecondAHeadBudgetGap.lean"
+  ],
+  "started_jst": "2026-11-08T07:27:21.945167+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondAHeadBudgetGap.lean": "3cb935ab9ab0867a7fdf0f6d8e79f15cb954fe7847b02a0390578544102892fb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "source_tree_sha256": "d7c2d97d68977fda8fa4cfec1c13c06daf5edc2cafee1f0915fd869d5387d584",
+  "source_tree_manifest": "H32-head-pruned-gap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ea8a4e5a5aa4786e17a6ac337384dd5ce76c344d30f253c1fa0a856f07626d15",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2960136670153588,
+  "cpu_seconds": 1.1506949999999998,
+  "finished_jst": "2026-11-08T07:27:23.241067+09:00"
+}

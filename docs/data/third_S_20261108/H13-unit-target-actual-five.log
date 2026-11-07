@@ -1,0 +1,34 @@
+Recaman/ThirdSUnitLastBudget.lean:67:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  j ≥ 6
+  i ≥ 0
+  i - j ≥ -1
+  g ≥ 0
+  0 ≤ e ≤ 2
+  e - g ≥ -2
+  d ≥ 3
+  c ≥ 1
+  b ≥ 1
+  a ≥ 1
+where
+ a := ↑m
+ b := ↑s
+ c := ↑v
+ d := ↑(cntF y)
+ e := ↑(rayCount
+    (List.replicate m false ++
+      (List.replicate 1 true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))
+    T)
+ g := ↑(rayCount
+    (List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          (List.replicate 1 true ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))
+    T)
+ i := ↑(rayCount
+    (List.replicate h false ++
+      (List.replicate M true ++
+        (List.replicate m false ++
+          ([true] ++ (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))))))
+    T)
+ j := ↑(cN (EndN f 0) (n + B) T)

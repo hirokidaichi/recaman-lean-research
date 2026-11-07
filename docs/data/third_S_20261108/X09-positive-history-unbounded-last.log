@@ -1,0 +1,9 @@
+Recaman/PaddedLayeredSupply.lean:52:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  a ≤ 0
+  a ≤ 0
+  3*a + b ≥ 3
+where
+ a := mass w
+ b := ↑(cN (fun i => g i = true) 0 (B + (d + 1)))

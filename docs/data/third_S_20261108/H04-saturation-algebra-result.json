@@ -1,0 +1,31 @@
+{
+  "tag": "H04-saturation-algebra",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSSaturationAlgebra.olean",
+    "Recaman/ThirdSSaturationAlgebra.lean"
+  ],
+  "started_jst": "2026-11-08T06:08:39.544669+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSSaturationAlgebra.lean": "6c9c08c869272cbaf4380ef0547eb7a1ff981bf4e96c3f0cd0b97ea477aa7700"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "5ad7c90f02e3a64d0343a23e791ddd04929e1fce3df2ffd0f674c2f6f35f1f3d",
+  "source_tree_manifest": "H04-saturation-algebra-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6790603340195958,
+  "cpu_seconds": 0.549523,
+  "finished_jst": "2026-11-08T06:08:40.223646+09:00"
+}

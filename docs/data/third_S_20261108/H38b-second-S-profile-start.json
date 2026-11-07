@@ -1,0 +1,25 @@
+{
+  "tag": "H38b-second-S-profile",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SecondSTargetProfile.olean",
+    "Recaman/SecondSTargetProfile.lean"
+  ],
+  "started_jst": "2026-11-08T07:33:17.073162+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SecondSTargetProfile.lean": "f8f3ebc18d4ca7052fb9ac6ad358607aebf87eb6bec3386814213e91a864faf2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "1a65652fe078621846b179cfdbcd5ab8e131d9469c1cf9b2c70ccf854bd325c2",
+  "source_tree_sha256": "6c6b827f401af874ebd84f83a5433dc47ae626b60f6ff7f0d938ff205161fe5a",
+  "source_tree_manifest": "H38b-second-S-profile-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

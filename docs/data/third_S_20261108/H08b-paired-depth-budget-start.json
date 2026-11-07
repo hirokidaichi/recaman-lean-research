@@ -1,0 +1,25 @@
+{
+  "tag": "H08b-paired-depth-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdSPairedDepth.olean",
+    "Recaman/ThirdSPairedDepth.lean"
+  ],
+  "started_jst": "2026-11-08T06:15:36.103985+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdSPairedDepth.lean": "b3a518018bc8e79683b214da95a6bf3a4adc938dec056c5ab1d4e10aaa0db68f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "60a659c9d619eca3cda8bf10dc46f9f20cf5acb6897aba911556eebc042a8fd3",
+  "source_tree_sha256": "800011e32a59dd8c1f29552a3efcf056f28398460ce87ff97aa40b1d426b42b8",
+  "source_tree_manifest": "H08b-paired-depth-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

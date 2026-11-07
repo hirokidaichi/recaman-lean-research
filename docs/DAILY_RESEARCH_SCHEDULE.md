@@ -1,6 +1,6 @@
 # 毎日6:00〜8:00の研究スケジュール
 
-最終更新: 2026-11-06。以下を2026-10-23以降の現行ルールとする。
+最終更新: 2026-11-08。以下を2026-10-23以降の現行ルールとする。
 
 - 毎日、日本時間（Asia/Tokyo）の06:00〜08:00。このチャットで研究・反証・形式化・監査・記録を継続する。
 - 対象: `/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research`。
@@ -13,9 +13,8 @@
 
 ## 再開する問いと参照順
 
-2026-11-07の現行入口は[H-20261107-01](HYPOTHESIS_CARD_2026-11-07_THIRD_S_SATURATION.md)。[11/06 DAILY](RESEARCH_HANDOFF_2026-11-06_DAILY.md)→[第三Sの飽和排除](RESEARCH_NOTE_2026-11-06_THIRD_S_SATURATION.md)→同カード。
-E583旧対象全域、E586第三A以降、E588第三S q<=3又はq+R<=v はPROVED-LEAN。E587同第三S源の時計/因数、E589残余和14と第二A/第三Sのkey衝突を使う。E590の実countからW+q+v<=15への接続はPROVED-PAPER。最初15分で実最後供給7から第二Aと第三S源を内部抽出し、進まなければp7/8収支25分とより早い局所対象のsource-collision20分へ。全旧履歴・他source massを保持する。
-H08/H11、H43/H44、H50/H51及び継承STOPを、資源・tactic・split・import変更だけで再開しない。完了した対象枝の再証明はしない。CPU探索当初0、07:45探索終了、確定journal/main通常publication/必須日次報告を継続する。
+2026-11-09の現行入口は[H-20261109-01](HYPOTHESIS_CARD_2026-11-09_UNIT_SECOND_S_ACTUAL_BOOTSTRAP.md)。[11/08 DAILY](RESEARCH_HANDOFF_2026-11-08_DAILY.md)末尾→[同target/source予算](RESEARCH_NOTE_2026-11-08_SOURCE_CLOCK_BUDGET.md)→同カード。E599/E601で第二A開始以降の全actual targetの元fullgapを供給済み。E603第二S残余1のsource6を元actual counterへ内部消費しM8/L7又はfullgapを供給する15分gate。E604 PAPER結論やbandを新Prop入力せず、全oldmass/源以前prefixを保持。進まなければq2 counter-conditioned source除去25分、任意runのfree課金20分へ。
+11/08 H26一般第二A band/H39一般第二S band/H52小平方helper及び継承STOPを保持。H26の限定scopeは独立E600による新proof E601で閉じたが旧jobを再開しない。H52再開は三非負項の独立factor certificateと測定改善が必要。旧r4 E412/E427同表2回削減0/0は別保持。CPU探索当初0、07:45探索終了、確定journalとmain通常publication、必須日次報告を継続する。
 以下の初回計画と日付付き履歴は当時の記録であり、最新の入口を優先する。
 
 初回（2026-10-23）は[C1深さカード H-20261023-01](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)から始める。
@@ -214,3 +213,11 @@ CPU探索は0から。検証済み計測はcooperative single-Python worker（�
 正本は[DAILY](RESEARCH_HANDOFF_2026-11-02_DAILY.md)/[journal](data/daily_research/2026-11-02.json)。次は[H-20261103-01](HYPOTHESIS_CARD_2026-11-03_SHORT_SUPPLY_BAND_KERNEL.md)。E520/E522のactual source/last供給を利用し、factored-circleから新しいstrict候補削減を先に得る。五bandはPROVED-PAPERのまま。旧monolithへ時間/メモリを追加しない。自動実行の同ID/ACTIVE/同schedule/chatと次cardをreadback済み、未来の完遂は未確認。
 
 2026-11-03確定: 実開始2026-11-03T06:00:02.472588+09:00〜終了2026-11-03T07:58:52.893434+09:00、confirmed 7130.421秒（118分50.421秒）、不足1分09.579秒、waiting64.987秒/gap0は除外。E535/R6未解決、H13 cap STOP、main研究snapshot8e3e14d＋後続確定metadata、hosted CIは未完了。[DAILY](RESEARCH_HANDOFF_2026-11-03_DAILY.md)を正本とし、翌日の実績へ加えない。
+
+## 2026-11-08 確定実績と次の入口
+
+実開始 **06:01:51.912245 JST**、実終了 **07:56:27.555859 JST**。`confirmed_work_seconds=6875.644`、**114分35.644秒**。120分に対する不足 **5分24.356秒**。待機/blocked除外0秒、未確認gap0秒、overtime0秒。開始遅れとstop後のcommit/push・remote/hosted CI確認時間を研究実績へ加えない。
+
+phase実績: setup 1分27.657秒 / research 94分32.083秒 / audit 9分29.231秒 / handoff 9分06.672秒。終了済みjournalへstart/stopを追加しない。
+
+[当日DAILY](RESEARCH_HANDOFF_2026-11-08_DAILY.md)と[翌日カード](HYPOTHESIS_CARD_2026-11-09_UNIT_SECOND_S_ACTUAL_BOOTSTRAP.md)へ続く。

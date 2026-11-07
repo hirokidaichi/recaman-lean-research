@@ -1,0 +1,25 @@
+{
+  "tag": "X08-initial-S-positive-padding",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSPaddingPositive.olean",
+    "Recaman/InitialSPaddingPositive.lean"
+  ],
+  "started_jst": "2026-11-08T06:52:36.475437+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSPaddingPositive.lean": "66e0f1c891fcbe4ad854ca1a09f34241b0d9172a59544bbbcec1a99748f90e14"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "ed06991a7f395412484dcf6b54a03f5c8a5d5e0a843113e5460c75d3b111dff4",
+  "source_tree_sha256": "2704896ac31a3037eb12f2fdd74ad9e5cf22338b4b130e78767d30f063e9a7e0",
+  "source_tree_manifest": "X08-initial-S-positive-padding-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

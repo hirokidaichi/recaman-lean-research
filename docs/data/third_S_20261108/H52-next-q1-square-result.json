@@ -1,0 +1,29 @@
+{
+  "tag": "H52-next-q1-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "/tmp/RecamanUnitSTargetSquare.lean"
+  ],
+  "started_jst": "2026-11-08T07:42:02.387534+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "/tmp/RecamanUnitSTargetSquare.lean": "6ca13453cadbd242c9955e008b50ccf7c4ce5020d48fbc67882fc27aae9613a0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "b52bee1f91b7b6756ac371a75a96277719301a9fbd5ea1701828e4b07f766074",
+  "source_tree_sha256": "20ef391f1163f8bca4e0a621c23fe74361011cf6a84a9be9e6547bba7969d7d3",
+  "source_tree_manifest": "H52-next-q1-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b52bee1f91b7b6756ac371a75a96277719301a9fbd5ea1701828e4b07f766074",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4081975409935694,
+  "cpu_seconds": 0.247425,
+  "finished_jst": "2026-11-08T07:42:02.795638+09:00"
+}

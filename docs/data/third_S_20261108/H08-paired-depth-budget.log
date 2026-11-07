@@ -1,0 +1,5 @@
+Recaman/ThirdSPairedDepth.lean:44:13: error(lean.unknownIdentifier): Unknown identifier `cntF_append`
+Recaman/ThirdSPairedDepth.lean:44:2: error: `simp` made no progress
+Recaman/ThirdSPairedDepth.lean:93:36: error: Tactic `decide` proved that the proposition
+  mass (List.replicate 4 true ++ (List.replicate 8 false ++ (List.replicate 4 true ++ List.replicate 1 false))) + ↑6 = 1
+is false

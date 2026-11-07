@@ -1,0 +1,18 @@
+{
+  "tag": "X11-generic-and-countermodel-full-check",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-08T06:57:57.660279+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "2166f0360933d467f8c0346f99d1ab1829f3e656",
+  "tracked_diff_sha256": "c061804d9b7f41a424f1ddec5de4c05e0ed3b5001d3b3d76c98b2b7da110322a",
+  "source_tree_sha256": "0654a6203987ee7bf97513022fbf034ce90f301db63b9cfb7d857fc815fc767e",
+  "source_tree_manifest": "X11-generic-and-countermodel-full-check-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

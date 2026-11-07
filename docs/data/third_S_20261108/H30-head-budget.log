@@ -1,0 +1,50 @@
+Recaman/ShortEarlyHeadBudget.lean:27:5: error: unknown tactic
+Recaman/ShortEarlyHeadBudget.lean:26:19: error: unsolved goals
+f : Nat → Bool
+n h M m L s U : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hhM : M ≤ 8
+hhL : L ≤ 8
+hm : 1 ≤ m
+hs : 1 ≤ s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+C : Nat := h + M + m + L + s
+y : List Bool :=
+  List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+    List.replicate s false
+⊢ 1 ≤ h
+Recaman/ShortEarlyHeadBudget.lean:22:43: error: unsolved goals
+f : Nat → Bool
+n h M m L s U : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hhM : M ≤ 8
+hhL : L ≤ 8
+hm : 1 ≤ m
+hs : 1 ≤ s
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+C : Nat := h + M + m + L + s
+y : List Bool :=
+  List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+    List.replicate s false
+hh : 1 ≤ h
+⊢ cN (EndN f 0) n (h + M + m + L + s + U) ≤ M + L + 3

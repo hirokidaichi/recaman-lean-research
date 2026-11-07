@@ -1,0 +1,6 @@
+Recaman/SecondAStartCounterBand.lean:44:12: error: Type mismatch: After simplification, term
+  htarget
+ has type
+  Win f (n + (h + (M + m))) (L + (s + (U + (v + (T + j)))))
+but is expected to have type
+  Win f (n + (h + (M + m))) (n + (h + (M + (m + (L + (s + (U + (v + (T + j)))))))) - (n + (h + (M + m))))

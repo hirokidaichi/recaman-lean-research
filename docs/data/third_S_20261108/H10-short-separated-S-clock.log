@@ -1,0 +1,58 @@
+Recaman/ShortSeparatedSSupply.lean:24:55: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.mem_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortSeparatedSSupply.lean:25:35: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.mem_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ShortSeparatedSSupply.lean:50:9: error: unknown tactic
+Recaman/ShortSeparatedSSupply.lean:49:6: error: unsolved goals
+case inr.inl.inr.inr
+L b z y P : Int
+hL : L ≤ 4
+hb : 1 ≤ b
+hbl : b < L
+hz : 2 ≤ z
+hy : 2 ≤ y
+hyz : y ≤ z
+he : (b + z) ^ 2 = y ^ 2 + 2 * L * z
+hodd : y ^ 2 = 1 + 2 * P
+h3 : L = 3
+hb2 : b = 2
+hs : 3 ^ 2 - 1 ^ 2 = 3
+h : y = 3 ∧ z - 1 = 1
+⊢ b + z - y = L
+Recaman/ShortSeparatedSSupply.lean:34:61: error: unsolved goals
+case inr.inr
+L b z y P : Int
+hL : L ≤ 4
+hb : 1 ≤ b
+hbl : b < L
+hz : 2 ≤ z
+hy : 2 ≤ y
+hyz : y ≤ z
+he : (b + z) ^ 2 = y ^ 2 + 2 * L * z
+hodd : y ^ 2 = 1 + 2 * P
+h4 : L = 4
+⊢ b + z - y = L
+Recaman/ShortSeparatedSSupply.lean:84:56: error: Application type mismatch: The argument
+  hk
+has type
+  runKey
+      (List.replicate b false ++
+        (List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false)) =
+    -2
+but is expected to have type
+  runKey
+      (List.replicate b false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+        List.replicate v false) =
+    ?m.178
+in the application
+  Eq.trans (Eq.symm hke) hk
