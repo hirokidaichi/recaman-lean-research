@@ -273,7 +273,7 @@
   },
   {
    "name": "Audit",
-   "lines": 3873,
+   "lines": 3951,
    "imports": [
     "UnitOneInitialSource",
     "UnitOneLastFive",
@@ -30420,6 +30420,24 @@
    "hasReport": false
   },
   {
+   "name": "ForwardSourceActualFree",
+   "lines": 84,
+   "imports": [
+    "SevenPrefixSourceShape"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "forward_pair_needs_two_actual_free",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FourCrossExact",
    "lines": 33,
    "imports": [
@@ -30712,6 +30730,25 @@
    ],
    "theorems": 6,
    "defs": 3,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourFromSecondSLastTarget",
+   "lines": 37,
+   "imports": [
+    "UnitSecondSNoCounterBase",
+    "SecondAHeadBudgetGapBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "four_from_last_second_S_target_free_gap_int",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -39550,6 +39587,71 @@
    "hasReport": false
   },
   {
+   "name": "MixedPrefixClockSquare",
+   "lines": 74,
+   "imports": [
+    "PrimitiveClockRadius"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "mixed_prefix_clock_square",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_advance_sharp",
+     "line": 68
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedPrefixDistinctClock",
+   "lines": 74,
+   "imports": [
+    "MixedPrefixClockSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "distinct_clock_square",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "reversed_clock_control",
+     "line": 69
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "MixedPrefixDistinctRadius",
+   "lines": 82,
+   "imports": [
+    "MixedPrefixDistinctClock",
+    "PrimitiveLayerActualFree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_distinct_small_free_clock_radius",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "MixedSeedParity",
    "lines": 53,
    "imports": [
@@ -41008,6 +41110,34 @@
    "theorems": 27,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "NonnegativeFutureOldSource",
+   "lines": 62,
+   "imports": [
+    "BlockOldRay"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "no_old_source",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "SAAS_next_actual_free",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "SAAS_clock_two_local_control",
+     "line": 59
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -50703,6 +50833,30 @@
    "hasReport": false
   },
   {
+   "name": "PositiveTwoClockHistory",
+   "lines": 75,
+   "imports": [
+    "SlowPrimitiveClockPair",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_clocks_positive_history",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_slow_relative_growth",
+     "line": 64
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "PreTailBudgetSeparation",
    "lines": 444,
    "imports": [
@@ -51171,6 +51325,75 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "PrimitiveClockRadius",
+   "lines": 83,
+   "imports": [
+    "PrimitiveLayerClockCost"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "cross_upper",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "primitive_clock_half_S",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "layer_A_square",
+     "line": 59
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "PrimitiveLayerActualFree",
+   "lines": 66,
+   "imports": [
+    "PrimitiveLayerClockCost"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "outer_layer_actual_free_charge",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "PrimitiveLayerClockCost",
+   "lines": 64,
+   "imports": [
+    "MixedASQuarterBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "layer_clock_A_cost",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "cost_sharp",
+     "line": 58
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "PrimitiveOldTargetCut",
@@ -53125,6 +53348,25 @@
    "hasReport": false
   },
   {
+   "name": "ReversedClockActualControl",
+   "lines": 72,
+   "imports": [
+    "MixedPrefixDistinctRadius",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_reversed_clock_example",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "RunClockClassifier",
    "lines": 195,
    "imports": [
@@ -54794,6 +55036,24 @@
    "hasReport": false
   },
   {
+   "name": "SecondSTargetProfile",
+   "lines": 53,
+   "imports": [
+    "InitialSTargetBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_second_S_target_profile",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SeededHighCorridorNoGo",
    "lines": 158,
    "imports": [
@@ -55361,6 +55621,24 @@
     }
    ],
    "theorems": 10,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SevenPrefixSourceShape",
+   "lines": 48,
+   "imports": [
+    "MixedPrefixClockSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "seven_positive_key_shape",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -57337,6 +57615,34 @@
    ],
    "theorems": 30,
    "defs": 15,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SlowPrimitiveClockPair",
+   "lines": 92,
+   "imports": [
+    "PrimitiveLayerClockCost"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_pair_family",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "same_word_two_clocks",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrarily_slow_relative_growth",
+     "line": 74
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -59617,6 +59923,24 @@
      "kind": "theorem",
      "name": "target_offset_key_excluded",
      "line": 28
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TargetSSourceSquareOrder",
+   "lines": 28,
+   "imports": [
+    "TwoSecondSLastFour"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "last_S_source_excluded",
+     "line": 13
     }
    ],
    "theorems": 1,
@@ -62178,6 +62502,34 @@
    "hasReport": false
   },
   {
+   "name": "ThreeSSelectedSource",
+   "lines": 64,
+   "imports": [
+    "TwoSNextASpectrum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "same_S_depth_spectrum",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "R_five_S_boundary",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "R_seven_S_boundary",
+     "line": 58
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TightAvoidingLagCertificate",
    "lines": 121,
    "imports": [
@@ -63563,6 +63915,70 @@
    "hasReport": false
   },
   {
+   "name": "TwoSActualLastBudget",
+   "lines": 69,
+   "imports": [
+    "TwoSSelectedSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_second_S_two_budgets",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSActualSourceClock",
+   "lines": 96,
+   "imports": [
+    "TwoSNextASpectrum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "counter_next_A_source_excluded",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSNextASpectrum",
+   "lines": 74,
+   "imports": [
+    "TwoSecondSCounterCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "next_A_depth_spectrum",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "R_five_A_boundary",
+     "line": 60
+    },
+    {
+     "kind": "theorem",
+     "name": "R_seven_A_boundary",
+     "line": 67
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TwoSSAvoidTight",
    "lines": 182,
    "imports": [
@@ -64331,6 +64747,143 @@
    "hasReport": false
   },
   {
+   "name": "TwoSSelectedSource",
+   "lines": 63,
+   "imports": [
+    "UnitSNextAFamily"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "same_S_source_square",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "same_S_source_floor",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "same_S_prefix_saving",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "R_four_same_S_boundary",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "sixteen_S_boundary",
+     "line": 57
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSTargetBounds",
+   "lines": 18,
+   "imports": [
+    "UnitSLongAExclusion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_target_L_cut",
+     "line": 7
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSTwoSquareSource",
+   "lines": 63,
+   "imports": [
+    "TargetSSourceSquareOrder"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "last_S_source_excluded",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "D_seven_source_boundary",
+     "line": 56
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSecondSCounterCut",
+   "lines": 93,
+   "imports": [
+    "SecondSTargetProfile",
+    "TwoSTargetBounds",
+    "TwoSActualLastBudget",
+    "UnitSActualLastBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_second_S_counter_cut",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSecondSCounterCutBase",
+   "lines": 58,
+   "imports": [
+    "TwoSecondSCounterCut",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_second_S_counter_cut_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TwoSecondSLastFour",
+   "lines": 77,
+   "imports": [
+    "TwoSActualSourceClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "two_second_S_counter_last_four",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TypedNormalProvenance",
    "lines": 673,
    "imports": [
@@ -64937,6 +65490,62 @@
    "hasReport": false
   },
   {
+   "name": "UnitSLongAExclusion",
+   "lines": 46,
+   "imports": [
+    "SecondASmallSquare"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_target_L_cut",
+     "line": 7
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_target_residual",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "last_four_square_impossible",
+     "line": 39
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSNextAFamily",
+   "lines": 62,
+   "imports": [
+    "UnitSecondSCounterCut"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "next_A_source_excluded",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "two_family_saving",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "R_four_boundary",
+     "line": 54
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "UnitSSelectedSource",
    "lines": 39,
    "imports": [
@@ -64960,6 +65569,105 @@
     }
    ],
    "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSecondSCounterCut",
+   "lines": 85,
+   "imports": [
+    "SecondSTargetProfile",
+    "UnitSLongAExclusion",
+    "UnitSActualLastBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_counter_cut",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSecondSCounterCutBase",
+   "lines": 58,
+   "imports": [
+    "UnitSecondSCounterCut",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_counter_cut_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSecondSLastFour",
+   "lines": 64,
+   "imports": [
+    "UnitSNextAFamily"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_counter_last_four",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSecondSNoCounter",
+   "lines": 114,
+   "imports": [
+    "UnitSecondSLastFour"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_counter_excluded",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_free_gap",
+     "line": 92
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "UnitSecondSNoCounterBase",
+   "lines": 57,
+   "imports": [
+    "UnitSecondSNoCounter",
+    "FourRunSourceBase"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "unit_second_S_free_gap_int",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -66091,6 +66799,6 @@
    "hasReport": false
   }
  ],
- "total": 869,
+ "total": 901,
  "withReport": 167
 }

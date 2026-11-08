@@ -1,0 +1,29 @@
+Recaman/PrimitiveClockRadius.lean:26:15: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ones ([false] ++ w)
+in the target expression
+  runKey ([false] ++ w) + 2 * (1 + ↑(cntF w)) ^ 2 = 0 + runKey w + 2 * ↑(cntF w) ^ 2 + 4 * 0 * ↑(cntF w)
+
+case cons.false
+w : List Bool
+ih : runKey w + 2 * ↑(cntF w) ^ 2 ≤ 4 * ones w * ↑(cntF w)
+he : runKey ([false] ++ w) + 2 * (1 + ↑(cntF w)) ^ 2 = 0 + runKey w + 2 * ↑(cntF w) ^ 2 + 4 * 0 * ↑(cntF w)
+h0 : runKey [false] + 2 * ↑(cntF [false]) ^ 2 = 0
+ha : ones [false] = 0
+hcnt : ↑(cntF ([false] ++ w)) = 1 + ↑(cntF w)
+hones : ones ([false] ++ w) = ones w
+hon : 0 ≤ ones w
+⊢ runKey ([false] ++ w) + 2 * (1 + ↑(cntF w)) ^ 2 ≤ 4 * ones ([false] ++ w) * (1 + ↑(cntF w))
+Recaman/PrimitiveClockRadius.lean:36:15: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ones ([true] ++ w)
+in the target expression
+  runKey ([true] ++ w) + 2 * ↑(cntF w) ^ 2 = 0 + runKey w + 2 * ↑(cntF w) ^ 2 + 4 * 1 * ↑(cntF w)
+
+case cons.true
+w : List Bool
+ih : runKey w + 2 * ↑(cntF w) ^ 2 ≤ 4 * ones w * ↑(cntF w)
+he : runKey ([true] ++ w) + 2 * ↑(cntF w) ^ 2 = 0 + runKey w + 2 * ↑(cntF w) ^ 2 + 4 * 1 * ↑(cntF w)
+h0 : runKey [true] + 2 * ↑(cntF [true]) ^ 2 = 0
+ha : ones [true] = 1
+hcnt : ↑(cntF ([true] ++ w)) = ↑(cntF w)
+hones : ones ([true] ++ w) = 1 + ones w
+⊢ runKey ([true] ++ w) + 2 * ↑(cntF w) ^ 2 ≤ 4 * ones ([true] ++ w) * ↑(cntF w)

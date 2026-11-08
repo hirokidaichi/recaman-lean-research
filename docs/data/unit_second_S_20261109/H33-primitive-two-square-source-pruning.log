@@ -1,0 +1,7 @@
+Recaman/TwoSTwoSquareSource.lean:19:78: warning: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cntF_append, cntF_replicate_S, Recaman.UnitTargetSASProfile.cntF_A, Nat.zero_add] at hodd
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

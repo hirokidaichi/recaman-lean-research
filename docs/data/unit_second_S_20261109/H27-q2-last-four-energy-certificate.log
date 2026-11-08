@@ -1,0 +1,22 @@
+Recaman/TwoSLastFourEnergy.lean:12:11: error(lean.unknownIdentifier): Unknown constant `Int.mul_self_nonneg`
+Recaman/TwoSLastFourEnergy.lean:10:37: error: unsolved goals
+L U v z R D : Int
+hU : 1 ≤ U
+hv : 1 ≤ v
+hR : 5 ≤ R
+hD : 0 ≤ D
+hbal : D + L = z + 2
+hsq : (z + 2) ^ 2 = R ^ 2 + 2 * L * z + 2 * U * v
+he : D ^ 2 = R ^ 2 + (L - 2) ^ 2 - 4 + 2 * U * v
+⊢ D ^ 2 = R ^ 2 + (L - 2) ^ 2 - 4 + 2 * U * v ∧ R ≤ D
+Recaman/TwoSLastFourEnergy.lean:27:11: error(lean.unknownIdentifier): Unknown constant `Int.mul_self_nonneg`
+Recaman/TwoSLastFourEnergy.lean:26:29: error: unsolved goals
+L U v R D : Int
+hR : 5 ≤ R
+hRD : R ≤ D
+hD6 : D ≤ 6
+hU : D + 1 ≤ U
+hUR : U ≤ R + 2
+hv : 1 ≤ v
+he : D ^ 2 = R ^ 2 + (L - 2) ^ 2 - 4 + 2 * U * v
+⊢ R = 5 ∧ D = 6 ∧ U = 7 ∧ v = 1

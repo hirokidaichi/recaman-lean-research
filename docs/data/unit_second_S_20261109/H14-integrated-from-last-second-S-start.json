@@ -1,0 +1,25 @@
+{
+  "tag": "H14-integrated-from-last-second-S",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourFromSecondSLastTarget.olean",
+    "Recaman/FourFromSecondSLastTarget.lean"
+  ],
+  "started_jst": "2026-11-09T06:16:02.569490+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourFromSecondSLastTarget.lean": "853ad4593cbeb418554ca69a90d8c5723f870e127ebf06ae1d3cdadbd91cacd3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "aac386099fa84688eed130c2c50206229d175526df9860f804dc67a16321198f",
+  "source_tree_sha256": "127984ca9092b264742e6e6acdc7ab2a98b6b546a5927de92cf2dbdd9b100eb3",
+  "source_tree_manifest": "H14-integrated-from-last-second-S-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

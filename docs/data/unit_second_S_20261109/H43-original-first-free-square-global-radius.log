@@ -1,0 +1,24 @@
+Recaman/PrimitiveLayerFreeRadius.lean:50:14: error(lean.unknownIdentifier): Unknown identifier `Recaman.TwoRunSupply.count_prefix_le`
+Recaman/PrimitiveLayerFreeRadius.lean:45:69: error: unsolved goals
+f : Nat → Bool
+n h a b B i j R : Nat
+w u : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hb : 1 ≤ b
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (r : Nat), r < a → f (n + h + r) = true
+hfull : seg f 0 B = w ++ List.replicate h false ++ List.replicate a true ++ List.replicate b false ++ u
+hlast : ∀ (r : Nat), r ≤ j → f (B + r) = true
+hkey : runKey u = -2
+hnewkey : runKey (List.replicate a true ++ (List.replicate b false ++ u)) = -2
+hm : mass u + ↑i = 1
+hnewmass : mass (List.replicate a true ++ (List.replicate b false ++ u)) + ↑j = 1
+hB : n + h + a ≤ B
+hbad : cN (fun x => f x = true ∧ ¬EndN f 0 x) n (B + j + 1 - n) < R
+hsquare : 8 * ↑i ≤ (↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + h) a) + 2) ^ 2
+hendi : EndN f 0 (B + i)
+hendj : EndN f 0 (B + j)
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+hsplit : cN P n (h + a) = cN P n h + cN P (n + h) a
+⊢ 8 * ↑i ≤ (↑R + 1) ^ 2 ∧ EndN f 0 (B + i) ∧ EndN f 0 (B + j)

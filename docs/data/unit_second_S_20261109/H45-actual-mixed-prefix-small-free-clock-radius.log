@@ -1,0 +1,20 @@
+Recaman/MixedPrefixActualClockRadius.lean:37:53: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d - g ≤ 1
+  c ≥ 1
+  c - e ≤ -2
+  0 ≤ b ≤ 3
+  2*b - e ≥ -1
+  a ≤ 1
+  a + c ≤ 1
+  a + c + h ≤ 0
+  4*a + 4*c + d ≥ 5
+where
+ a := mass (p ++ u)
+ b := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n K)
+ c := ↑(j - i)
+ d := ones p ^ 2
+ e := ↑(cN (fun x => f x = true) n K)
+ g := 4 * ↑r * (↑r + 1)
+ h := ↑r * (↑r + 1)

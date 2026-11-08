@@ -1,0 +1,11 @@
+Recaman/NonnegativeFutureOldSource.lean:14:12: error(lean.unknownIdentifier): Unknown identifier `drop_nonempty`
+Recaman/NonnegativeFutureOldSource.lean:11:25: error: unsolved goals
+w x : List Bool
+hw : BlockWord w
+hk : 0 ≤ runKey x
+i t : Nat
+ht : t < w.length
+hm : mass (List.drop t w) + mass x + ↑i = 1
+hkey : runKey (List.drop t w) + runKey x + 4 * mass (List.drop t w) * ↑(cntF x) = -2
+hdrop : BlockWord (List.drop t w)
+⊢ False

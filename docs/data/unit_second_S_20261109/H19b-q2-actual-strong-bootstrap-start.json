@@ -1,0 +1,25 @@
+{
+  "tag": "H19b-q2-actual-strong-bootstrap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSecondSCounterCut.olean",
+    "Recaman/TwoSecondSCounterCut.lean"
+  ],
+  "started_jst": "2026-11-09T06:22:50.158265+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSecondSCounterCut.lean": "7185bbd7abd082106aa3657f96c5117f8d077c99e89291c6c3b80768adace597"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "afa9864e800f4452d8cee7ed7c436274975bb0ee02a06eebf0f61d57bf5427f8",
+  "source_tree_sha256": "9acfafe74563d7ce7be25b4bdf12065af1a8ee8aeeeabad1d15e16271418b91a",
+  "source_tree_manifest": "H19b-q2-actual-strong-bootstrap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

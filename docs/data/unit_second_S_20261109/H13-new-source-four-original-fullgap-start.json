@@ -1,0 +1,25 @@
+{
+  "tag": "H13-new-source-four-original-fullgap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitSecondSNoCounterBase.olean",
+    "Recaman/UnitSecondSNoCounterBase.lean"
+  ],
+  "started_jst": "2026-11-09T06:15:36.148927+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitSecondSNoCounterBase.lean": "a1f5e55c0310f8f5360587d9b3e882317db21f1a7193bc07fe2bcc1827eee3ba"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "aac386099fa84688eed130c2c50206229d175526df9860f804dc67a16321198f",
+  "source_tree_sha256": "771ef6d20ca2ce1775a25b7079e96f88292b5c719be0c062df4d438134f64040",
+  "source_tree_manifest": "H13-new-source-four-original-fullgap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

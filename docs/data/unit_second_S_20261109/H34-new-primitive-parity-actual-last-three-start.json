@@ -1,0 +1,25 @@
+{
+  "tag": "H34-new-primitive-parity-actual-last-three",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSecondSParityLastThree.olean",
+    "Recaman/TwoSecondSParityLastThree.lean"
+  ],
+  "started_jst": "2026-11-09T06:47:05.029473+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSecondSParityLastThree.lean": "e57776c6bd551c84bdc653e91d785c7b9db3452ea57b215ef1998ef74f2d7786"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "fa7447b654e6df0c33afab2c77e76630a486ce6a47e514e917958dc45e88026b",
+  "source_tree_sha256": "b6ae5bbe495a5bf7c1abc08703621aeea03c62cd40192d7c1d2cc75b0bf33730",
+  "source_tree_manifest": "H34-new-primitive-parity-actual-last-three-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

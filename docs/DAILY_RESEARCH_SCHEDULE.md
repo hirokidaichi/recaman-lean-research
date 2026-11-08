@@ -1,6 +1,6 @@
 # 毎日6:00〜8:00の研究スケジュール
 
-最終更新: 2026-11-08。以下を2026-10-23以降の現行ルールとする。
+最終更新: 2026-11-09。以下を2026-10-23以降の現行ルールとする。
 
 - 毎日、日本時間（Asia/Tokyo）の06:00〜08:00。このチャットで研究・反証・形式化・監査・記録を継続する。
 - 対象: `/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research`。
@@ -13,8 +13,8 @@
 
 ## 再開する問いと参照順
 
-2026-11-09の現行入口は[H-20261109-01](HYPOTHESIS_CARD_2026-11-09_UNIT_SECOND_S_ACTUAL_BOOTSTRAP.md)。[11/08 DAILY](RESEARCH_HANDOFF_2026-11-08_DAILY.md)末尾→[同target/source予算](RESEARCH_NOTE_2026-11-08_SOURCE_CLOCK_BUDGET.md)→同カード。E599/E601で第二A開始以降の全actual targetの元fullgapを供給済み。E603第二S残余1のsource6を元actual counterへ内部消費しM8/L7又はfullgapを供給する15分gate。E604 PAPER結論やbandを新Prop入力せず、全oldmass/源以前prefixを保持。進まなければq2 counter-conditioned source除去25分、任意runのfree課金20分へ。
-11/08 H26一般第二A band/H39一般第二S band/H52小平方helper及び継承STOPを保持。H26の限定scopeは独立E600による新proof E601で閉じたが旧jobを再開しない。H52再開は三非負項の独立factor certificateと測定改善が必要。旧r4 E412/E427同表2回削減0/0は別保持。CPU探索当初0、07:45探索終了、確定journalとmain通常publication、必須日次報告を継続する。
+2026-11-10の現行入口は[H-20261110-01](HYPOTHESIS_CARD_2026-11-10_FORWARD_SOURCE_TEMPORAL_FREE.md)。[11/09 DAILY](RESEARCH_HANDOFF_2026-11-09_DAILY.md)末尾→[source時計/時間順予算](RESEARCH_NOTE_2026-11-09_SOURCE_CLOCK_CHARGE.md)→同カード。E604 q1第二S元actual fullgap、E609 q2 actual last4、E612/E615/E617/E618の全run source必要条件は完了。E619 forward free3の紙上chainを、同actual free2から時間順profileへ内部接続する15分gate。E616/E619やJ0/Z0を新Propとして入力しない。全oldmass/源以前prefixを保持。失敗時は同prefix old/local時計25分とforward free3/i4,j5候補の共同実現20分へ。
+11/09 H27/H32/H34 q2 actual glue、H43 firstfree-square、H49/H50時間順試作及び継承STOPを保持。独立数学pruning/小完全certificateと測定改善なしに資源/tactic/split/importだけで再開しない。
 以下の初回計画と日付付き履歴は当時の記録であり、最新の入口を優先する。
 
 初回（2026-10-23）は[C1深さカード H-20261023-01](HYPOTHESIS_CARD_2026-10-23_C1_DEPTH.md)から始める。

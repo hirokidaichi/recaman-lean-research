@@ -1,0 +1,14 @@
+Recaman/SlowPrimitiveClockPair.lean:11:39: warning: Variable name `hl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SlowPrimitiveClockPair.lean:34:6: warning: This simp argument is unused:
+  Nat.zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cntF_append, cntF_replicate_S, Recaman.UnitTargetSASProfile.cntF_A, Nat.add_zero, Int.natCast_add,
+    Int.natCast_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

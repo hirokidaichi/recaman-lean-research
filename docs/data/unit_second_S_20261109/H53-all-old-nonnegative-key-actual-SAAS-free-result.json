@@ -1,0 +1,31 @@
+{
+  "tag": "H53-all-old-nonnegative-key-actual-SAAS-free",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NonnegativeFutureOldSource.olean",
+    "Recaman/NonnegativeFutureOldSource.lean"
+  ],
+  "started_jst": "2026-11-09T07:35:58.971672+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NonnegativeFutureOldSource.lean": "c955bf20c7f05ba58dea028082a0ec7f50627919539d7d6acb1896927e91e9b0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "bc7c13c74c2a2acfde3eef5f47c03a667fdbb6df95938ddf15b6c3ad6e5493e7",
+  "source_tree_manifest": "H53-all-old-nonnegative-key-actual-SAAS-free-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4004865420065471,
+  "cpu_seconds": 0.212111,
+  "finished_jst": "2026-11-09T07:35:59.371370+09:00"
+}

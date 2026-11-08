@@ -1,0 +1,31 @@
+{
+  "tag": "H23-R5-own-clock-source-shapes",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSSmallSourceShapes.olean",
+    "Recaman/TwoSSmallSourceShapes.lean"
+  ],
+  "started_jst": "2026-11-09T06:27:21.161644+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSSmallSourceShapes.lean": "896a7b944d7fb65d11e6938bbebc2acc13ac62d272d33cb05bad35aa3b817ec7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "4dfc0eec7ebb7224209e0d38ebc4a996f0092cc58ef11330ff728dad8a27a7a7",
+  "source_tree_sha256": "cfd385ebbac206bfbafffe79bb578c12e2b1ab38cdb6e66e717eb9c1306f95ef",
+  "source_tree_manifest": "H23-R5-own-clock-source-shapes-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "4dfc0eec7ebb7224209e0d38ebc4a996f0092cc58ef11330ff728dad8a27a7a7",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.45546474999719067,
+  "cpu_seconds": 0.314334,
+  "finished_jst": "2026-11-09T06:27:21.617032+09:00"
+}

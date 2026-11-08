@@ -1,0 +1,25 @@
+{
+  "tag": "H49b-triangular-budget-one-import-base-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SuppliedPrefixPairBudget.olean",
+    "Recaman/SuppliedPrefixPairBudget.lean"
+  ],
+  "started_jst": "2026-11-09T07:22:27.609389+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SuppliedPrefixPairBudget.lean": "1d193398d4adcee061f7d7be077d075ea3f9644580f51ce76dda52df3a4cfc14"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "2dfa48363a37b427fe58de94a7da6028137d4bc2e59592480a8d9676edeaa0d2",
+  "source_tree_manifest": "H49b-triangular-budget-one-import-base-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

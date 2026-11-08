@@ -1,0 +1,174 @@
+Recaman/ThreeSActualSourceClock.lean:97:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  3 + ↑s + ↑v
+in the target expression
+  (↑3 + ↑s + ↑v) ^ 2 - (↑j + 1) ^ 2 = 2 * ↑L * (↑s + ↑v) + 2 * ↑U * ↑v
+
+case inl
+f : Nat → Bool
+n h M m L s U v T j i : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT : 1 ≤ T
+hm : 3 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f (n + h + M + m - 3) (3 + L + s + U + v + T + j)
+H : Nat := h + M + m + L + s + U
+B : Nat := H + v
+A : Nat := cN (fun x => f x = true) n (B + T)
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+F : Nat := cN P n (B + T)
+r : Nat := cN P n H
+EH : Nat := cN (EndN f 0) n H
+E : Nat := cN (EndN f 0) (n + B) T
+hbal : L + U + T = j + 1 + 3 + s + v
+hstrict : j + 2 < 3 + s + v
+hsq : (↑3 + ↑s + ↑v) ^ 2 - (↑j + 1) ^ 2 = 2 * ↑L * (↑s + ↑v) + 2 * ↑U * ↑v
+hword :
+  seg f n (h + M + m + L + s + U + v) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+hEH : EH ≤ 10
+hE : E ≤ 7
+hcount : A = EH + E + F
+hfree : T + r ≤ F + E
+hrsmall : r ≤ 3 → EH ≤ r + 1
+hbad : F < j + 1
+hET : E ≤ T
+hAeq : A = M + L + U + T
+hF4 : 4 ≤ F
+h16 : M + 3 + s + v ≤ 16
+hz12 : s + v ≤ 12
+hR5 : 5 ≤ j + 1
+hk :
+  runKey
+      (List.replicate 3 false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+        List.replicate v false) =
+    -2 * (↑j + 1) ^ 2
+x : List Bool := List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false
+hFx : cntF x = s + v
+k : Nat
+hk1 : 1 ≤ k
+hkm : k ≤ m
+hkey :
+  runKey
+      (List.replicate k false ++
+        (List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false)) =
+    -2
+hkone : k = 1
+hmass : -↑1 + (↑L + -↑s + ↑U + -↑v) + ↑i = 1
+hclock : T = i + (j + 1) + 1
+hwB :
+  seg f n B =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false
+hA4B : ∀ (i : Nat), i < T → f (n + B + i) = true
+hUv : 0 < ↑U * ↑v
+h5 : j + 1 = 5 ∧ cntF x = 4
+hz : ↑s + ↑v = 4
+⊢ False
+Recaman/ThreeSActualSourceClock.lean:119:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  3 + ↑s + ↑v
+in the target expression
+  (↑3 + ↑s + ↑v) ^ 2 - (↑j + 1) ^ 2 = 2 * ↑L * (↑s + ↑v) + 2 * ↑U * ↑v
+
+case inr
+f : Nat → Bool
+n h M m L s U v T j i : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hM : 1 ≤ M
+hL : 1 ≤ L
+hU : 1 ≤ U
+hT : 1 ≤ T
+hm : 3 ≤ m
+hs : 1 ≤ s
+hv : 1 ≤ v
+hS : ∀ (x : Nat), n ≤ x → x < n + h → f x = false
+hA : ∀ (i : Nat), i < M → f (n + h + i) = true
+hS2 : ∀ (x : Nat), n + h + M ≤ x → x < n + h + M + m → f x = false
+hA2 : ∀ (i : Nat), i < L → f (n + h + M + m + i) = true
+hS3 : ∀ (x : Nat), n + h + M + m + L ≤ x → x < n + h + M + m + L + s → f x = false
+hA3 : ∀ (i : Nat), i < U → f (n + h + M + m + L + s + i) = true
+hS4 : ∀ (x : Nat), n + h + M + m + L + s + U ≤ x → x < n + h + M + m + L + s + U + v → f x = false
+hA4 : ∀ (i : Nat), i < T → f (n + h + M + m + L + s + U + v + i) = true
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + M + m + L + s + U + v + T → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hgap : ∀ (x : Nat), n + h + M + m + L + s + U + v + T ≤ x → x < n + h + M + m + L + s + U + v + T + j → f x = false
+htarget : Win f (n + h + M + m - 3) (3 + L + s + U + v + T + j)
+H : Nat := h + M + m + L + s + U
+B : Nat := H + v
+A : Nat := cN (fun x => f x = true) n (B + T)
+P : Nat → Prop := fun x => f x = true ∧ ¬EndN f 0 x
+F : Nat := cN P n (B + T)
+r : Nat := cN P n H
+EH : Nat := cN (EndN f 0) n H
+E : Nat := cN (EndN f 0) (n + B) T
+hbal : L + U + T = j + 1 + 3 + s + v
+hstrict : j + 2 < 3 + s + v
+hsq : (↑3 + ↑s + ↑v) ^ 2 - (↑j + 1) ^ 2 = 2 * ↑L * (↑s + ↑v) + 2 * ↑U * ↑v
+hword :
+  seg f n (h + M + m + L + s + U + v) =
+    List.replicate h false ++
+      (List.replicate M true ++ List.replicate m false ++ List.replicate L true ++ List.replicate s false ++
+          List.replicate U true ++
+        List.replicate v false)
+hEH : EH ≤ 10
+hE : E ≤ 7
+hcount : A = EH + E + F
+hfree : T + r ≤ F + E
+hrsmall : r ≤ 3 → EH ≤ r + 1
+hbad : F < j + 1
+hET : E ≤ T
+hAeq : A = M + L + U + T
+hF4 : 4 ≤ F
+h16 : M + 3 + s + v ≤ 16
+hz12 : s + v ≤ 12
+hR5 : 5 ≤ j + 1
+hk :
+  runKey
+      (List.replicate 3 false ++ List.replicate L true ++ List.replicate s false ++ List.replicate U true ++
+        List.replicate v false) =
+    -2 * (↑j + 1) ^ 2
+x : List Bool := List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false
+hFx : cntF x = s + v
+k : Nat
+hk1 : 1 ≤ k
+hkm : k ≤ m
+hkey :
+  runKey
+      (List.replicate k false ++
+        (List.replicate L true ++ List.replicate s false ++ List.replicate U true ++ List.replicate v false)) =
+    -2
+hkone : k = 1
+hmass : -↑1 + (↑L + -↑s + ↑U + -↑v) + ↑i = 1
+hclock : T = i + (j + 1) + 1
+hwB :
+  seg f n B =
+    List.replicate h false ++ List.replicate M true ++ List.replicate m false ++ List.replicate L true ++
+          List.replicate s false ++
+        List.replicate U true ++
+      List.replicate v false
+hA4B : ∀ (i : Nat), i < T → f (n + B + i) = true
+hUv : 0 < ↑U * ↑v
+h7 : j + 1 = 7 ∧ cntF x = 10
+hz : ↑s + ↑v = 10
+⊢ False

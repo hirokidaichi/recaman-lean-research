@@ -1,0 +1,25 @@
+Recaman/SlowPrimitiveClockPair.lean:11:39: warning: Variable name `hl` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/SlowPrimitiveClockPair.lean:34:6: warning: This simp argument is unused:
+  Nat.zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cntF_append, cntF_replicate_S, Recaman.UnitTargetSASProfile.cntF_A, Nat.add_zero, Int.natCast_add,
+    Int.natCast_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/SlowPrimitiveClockPair.lean:61:8: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but `w` is a value of type
+  List Bool
+Recaman/SlowPrimitiveClockPair.lean:66:13: error: Type mismatch: After simplification, term
+  hnmass
+ has type
+  @Eq Int (mass w + ↑(2 * l * l + 2)) 1
+but is expected to have type
+  @Eq Int (mass w + ↑(2 * l * l + 2)) (↑0 + 1)
+Recaman/SlowPrimitiveClockPair.lean:81:43: error: `dsimp` made no progress
+Recaman/SlowPrimitiveClockPair.lean:81:65: error: `dsimp` made no progress
+Recaman/SlowPrimitiveClockPair.lean:85:53: error: No goals to be solved

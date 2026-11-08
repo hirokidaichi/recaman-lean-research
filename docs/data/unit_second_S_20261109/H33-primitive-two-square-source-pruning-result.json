@@ -1,0 +1,31 @@
+{
+  "tag": "H33-primitive-two-square-source-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSTwoSquareSource.olean",
+    "Recaman/TwoSTwoSquareSource.lean"
+  ],
+  "started_jst": "2026-11-09T06:46:41.025626+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSTwoSquareSource.lean": "9ceae223057d246b6f677b0bf723a3258012089c6d1b11e28aa5c78d14a689c6"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "fa7447b654e6df0c33afab2c77e76630a486ce6a47e514e917958dc45e88026b",
+  "source_tree_sha256": "51cdfc73106e26550e8fd79dd0b98e3c0e028b75f0918194760708a0121283db",
+  "source_tree_manifest": "H33-primitive-two-square-source-pruning-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "fa7447b654e6df0c33afab2c77e76630a486ce6a47e514e917958dc45e88026b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.683905332996801,
+  "cpu_seconds": 0.5459849999999999,
+  "finished_jst": "2026-11-09T06:46:41.709429+09:00"
+}

@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "rg",
+    "-n",
+    "--glob",
+    "*.lean",
+    "\\b(sorry|admit|native_decide|axiom)\\b",
+    "."
+  ],
+  "exit_code": 1,
+  "matches": "",
+  "scope": "all current .lean including frozen packet; no custom axiom/proof escape found"
+}

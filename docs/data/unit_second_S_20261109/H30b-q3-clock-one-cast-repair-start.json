@@ -1,0 +1,25 @@
+{
+  "tag": "H30b-q3-clock-one-cast-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThreeSActualSourceClock.olean",
+    "Recaman/ThreeSActualSourceClock.lean"
+  ],
+  "started_jst": "2026-11-09T06:41:02.275753+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeSActualSourceClock.lean": "b0b95502e2ef273759b422112fc626f530d3de0deb640a515a1bd9e2b3df6ecc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "e5ef7b57d943c21f5e7d6e40dfdd71efe1d05834b39758b417dd542de2a8f1c4",
+  "source_tree_sha256": "a85937286b0ab0e0276b16aa0ab5e9c188655ad85b827ea08bdf889ea0746cfd",
+  "source_tree_manifest": "H30b-q3-clock-one-cast-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

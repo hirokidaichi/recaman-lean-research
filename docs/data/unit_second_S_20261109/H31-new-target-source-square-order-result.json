@@ -1,0 +1,31 @@
+{
+  "tag": "H31-new-target-source-square-order",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TargetSSourceSquareOrder.olean",
+    "Recaman/TargetSSourceSquareOrder.lean"
+  ],
+  "started_jst": "2026-11-09T06:43:27.345177+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TargetSSourceSquareOrder.lean": "f6538a36492b4ec3d891bed4861530a61c90c59d6077ee70da0b4609f7750c8b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "ac7db5c1457dd882d40af38552f055209c53b52d34a2d40fdcd207e75dbae049",
+  "source_tree_sha256": "4d3d04719ee7b2357257b6cab83faf79d2926b1a30e37c609094b360ad2be18e",
+  "source_tree_manifest": "H31-new-target-source-square-order-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ac7db5c1457dd882d40af38552f055209c53b52d34a2d40fdcd207e75dbae049",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.46425362499576295,
+  "cpu_seconds": 0.296413,
+  "finished_jst": "2026-11-09T06:43:27.809356+09:00"
+}

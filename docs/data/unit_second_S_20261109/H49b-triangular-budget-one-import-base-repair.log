@@ -1,0 +1,6 @@
+Recaman/SuppliedPrefixPairBudget.lean:22:9: error: unsolved goals
+case zero
+f : Nat → Bool
+n : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ 0 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+⊢ 0 ≤ 0

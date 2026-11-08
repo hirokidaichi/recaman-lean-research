@@ -1,0 +1,17 @@
+{
+  "tag": "H56-publication-harness-test-tools",
+  "argv": [
+    "make",
+    "test-tools"
+  ],
+  "started_jst": "2026-11-09T07:45:21.859614+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "02be184aa9a7b6736b8ec3059390abf45a27065a77d96bd868597a6e8ba617c2",
+  "source_tree_sha256": "72f0478c43b1d56d33840d5b358a6e2676b064331d89f600f1d6d483f283829f",
+  "source_tree_manifest": "H56-publication-harness-test-tools-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

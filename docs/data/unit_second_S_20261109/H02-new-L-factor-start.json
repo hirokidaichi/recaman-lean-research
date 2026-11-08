@@ -1,0 +1,25 @@
+{
+  "tag": "H02-new-L-factor",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitSLongAExclusion.olean",
+    "Recaman/UnitSLongAExclusion.lean"
+  ],
+  "started_jst": "2026-11-09T06:04:15.570206+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitSLongAExclusion.lean": "aba9cf097fe385df0e371edce960b4b6d438aa9cf64660738e809832557064ee"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "b0fdf753e8852a386616435fea17d7a2c600c68121c3616090a78e594e4e0b75",
+  "source_tree_manifest": "H02-new-L-factor-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

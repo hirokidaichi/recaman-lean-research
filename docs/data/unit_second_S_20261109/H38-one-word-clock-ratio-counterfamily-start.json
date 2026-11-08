@@ -1,0 +1,25 @@
+{
+  "tag": "H38-one-word-clock-ratio-counterfamily",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SlowPrimitiveClockPair.olean",
+    "Recaman/SlowPrimitiveClockPair.lean"
+  ],
+  "started_jst": "2026-11-09T06:54:13.477577+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SlowPrimitiveClockPair.lean": "b48edaae748a752c1d43d9da811821b628e80bf923588f5f545d75b42e691df2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "source_tree_sha256": "61fa024928afcbacb0fa28fda0f3166a7258ef5d00c6327aab7344c3176c9dcc",
+  "source_tree_manifest": "H38-one-word-clock-ratio-counterfamily-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H30-q3-same-S-actual-clock-exclusion",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThreeSActualSourceClock.olean",
+    "Recaman/ThreeSActualSourceClock.lean"
+  ],
+  "started_jst": "2026-11-09T06:40:47.652331+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThreeSActualSourceClock.lean": "7b570b77c54098c3d7485ef18f39a3d34fa550ae89e52540d9519f2997eb1f2b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "e5ef7b57d943c21f5e7d6e40dfdd71efe1d05834b39758b417dd542de2a8f1c4",
+  "source_tree_sha256": "3da48ada6e8ebb6cf18b6fa909aaae37432b410c1556fb224a3d7fe645034493",
+  "source_tree_manifest": "H30-q3-same-S-actual-clock-exclusion-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e5ef7b57d943c21f5e7d6e40dfdd71efe1d05834b39758b417dd542de2a8f1c4",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.9503017500028363,
+  "cpu_seconds": 0.868038,
+  "finished_jst": "2026-11-09T06:40:48.602523+09:00"
+}

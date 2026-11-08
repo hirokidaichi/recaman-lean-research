@@ -1,0 +1,22 @@
+{
+  "validation_kind": "existing empirical regression; no discovery or holdout search; no new mathematical evidence from re-running this suite",
+  "receipt_tag": "H57-publication-existing-empirical-regression",
+  "exit_code": 0,
+  "cpu_seconds": 0.052974,
+  "cpp_source_and_build_sha256": {
+    "experiments/lean_trace_witness_test.cpp": "6b119b53235e555278905ee260dfa0afbdbe542f7c083332e005ccc60df09f07",
+    "experiments/prefix_successor_certificate_test.cpp": "35b9a2f377782fb8e9e47cc3293dd730ea17b6a1ee552272da728eda78e61201",
+    "experiments/balanced_trace_source_test.cpp": "eb35d0802a995ce3758fffd58ccc68e66d0517980a49987cd0b67b693e7cb62d",
+    "experiments/Makefile": "bde0baa1c0e7e3216f5aff70089595d8d86cf989cec46f438e2b168cb074f63e",
+    "experiments/lean_trace_witness.hpp": "6ba1bc1a3a683ecfcf8e4d0d3758f8353dd9b7a7f0b63c72c9393485cb01848f",
+    "experiments/prefix_successor_certificate.hpp": "03381400951ab10ed059c1d3580557c59b8fb251d45843390f2209b378a21e17",
+    "experiments/balanced_trace_source.hpp": "4c8947a1f9a08f67e58e11a0f04e62d3a5ab6f1bdcbdc6125cff26f7137b31eb"
+  },
+  "tested_binary_sha256": {
+    "experiments/bin/prefix_successor_certificate_test": "a52af001620c0c81776549f48a661f90453222f35bc669600d8d218641ae95a7",
+    "experiments/bin/lean_trace_witness_test": "1387700b36df8ec984e85233fb17235ce77d467713edacd0e553bb0f71aa2335",
+    "experiments/bin/balanced_trace_source_test": "2488c80bd159f2168579380bfa727758894826b99496dae3a5b7cbbb770aaead"
+  },
+  "experiments_tracked_diff": "",
+  "inherited_runner_scope_label": "run_lean.py says Lean validation only; H56 is harness validation and H57 is existing empirical regression, classified separately here and in FINAL_CPU_ACCOUNTING, not mathematical exploration"
+}

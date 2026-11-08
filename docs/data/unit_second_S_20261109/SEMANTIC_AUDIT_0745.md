@@ -1,0 +1,18 @@
+# 最終別pass意味監査 2026-11-09
+
+E604は同元Intp/padded/zero-fullpositive/真正四run/第二S残余1の元fulltail freegap。E605 bootstrapは包含され二重coverage計上しない。q2はactual last4までE609で、fullgap紙上/actual last3接続STOPを保持。raw q3/squareorderもactual fullgapへ昇格しない。
+
+E612のfree課金は元BlockWord後の最外layer一個。内側のprefix grammarや区間非重複を供給しておらず一般rankの単射でない。E613固定倍率packing反例は同actual positive historyにも輸送したがfree不足/正の末尾gapを満たすC1反例ではない。E615は既存r3を入力するsource半径でr3 coverageの再計上でない。
+
+E617のhfull/hlastはsource適用範囲として保持するがfree不等式proof本体で未使用。E618 old suffixだけが既存BlockWord閉性を使う。任意local prefixをresetしない。clock2 local controlを保持しSAAS次A一本を全runへ拡張しない。
+
+E616のE/J/Zは全て同じnからの元EndN f0 count。供給AのE_currentは1..E、free Aでは以前のEと一致するのでW恒等式成立。strict E+1<=SがZ>=0を供給し、weak E<=Sへ弱めるとSAAA controlで破れる。
+E619 free2ではd²+2dF>=3、A<=5、rhs=A-2<=3、従ってA5/d1/F1/JZ0。free二件全てが供給より先、Z0から最初二A直前のSは1、第三供給A直前Sは2で、正確にSAASから次A供給を要する。E618で矛盾。数学chainは完全だが同actualからの時間順producer未Lean、PROVED-PAPERを維持。free3のattainment/最適性は未供給。
+
+H43/H49/H50は修理一回後STOP、未受理sourceはpacketだけ。H45 ordered-only actual radiusは検証済みだが新distinct両順序に包含されVALIDATED_REDUNDANT packetへ移しroot未採用。pure arithmetic helpersを独立row化/dummy wrapper化しない。旧r4 table/一般C1/Q/H/SL/全射性未解決とE388 COMPUTED/E404 CONJECTURED/E384未Leanを保持。
+
+## 全体証明との距離の説明監査
+
+四runのq1全長という限定域の完了と、run数に依らない二source必要条件は異なる進展。後者は任意runのwordに使えるが、複数源へ同時に課金する定理ではない。最外sourceから内側へ移るとBlockWord開始条件を保存できず、同じfreeを複数layerへ重複課金する可能性も未排除。二sourceでfree2/紙上free3を得てもsource全体の単射や一般rankは得られない。
+
+E613は等比packingを否定するが、別の時間順potentialの存在を否定しない。E616でJを残すことは重複の時間順を数える入口だが、r>=4でA依存の項が残るため、freeだけに支配された一様会計はまだ得ていない。次回free3 producerはこの入口の小さいkernel接続を試すものであり、全射性の完成見込みを保証しない。

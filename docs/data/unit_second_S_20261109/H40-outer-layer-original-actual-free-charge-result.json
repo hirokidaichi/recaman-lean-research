@@ -1,0 +1,31 @@
+{
+  "tag": "H40-outer-layer-original-actual-free-charge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrimitiveLayerActualFree.olean",
+    "Recaman/PrimitiveLayerActualFree.lean"
+  ],
+  "started_jst": "2026-11-09T06:58:45.250985+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrimitiveLayerActualFree.lean": "9ee7800473219f86dcb25a6b561a4c2fc435071bf0bc6e2b1efe3475bd5ac9f2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "source_tree_sha256": "9be8b2302b4b2b856949daac80b1fa627cdce00a1668ee3f98b53e32877bac2c",
+  "source_tree_manifest": "H40-outer-layer-original-actual-free-charge-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5056094579995261,
+  "cpu_seconds": 0.336634,
+  "finished_jst": "2026-11-09T06:58:45.756510+09:00"
+}

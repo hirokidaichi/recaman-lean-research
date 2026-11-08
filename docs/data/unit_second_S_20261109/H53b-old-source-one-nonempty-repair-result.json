@@ -1,0 +1,31 @@
+{
+  "tag": "H53b-old-source-one-nonempty-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NonnegativeFutureOldSource.olean",
+    "Recaman/NonnegativeFutureOldSource.lean"
+  ],
+  "started_jst": "2026-11-09T07:36:16.305369+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NonnegativeFutureOldSource.lean": "c00e67dbcf5fa0e921ba6fe28b198462087fd01a728b44aafd6a6495be01b6d3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "4d5387adf1127727267439ca18df0679c4624ea537d12061788448782ad972bc",
+  "source_tree_manifest": "H53b-old-source-one-nonempty-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4108327919966541,
+  "cpu_seconds": 0.285578,
+  "finished_jst": "2026-11-09T07:36:16.716127+09:00"
+}

@@ -1,0 +1,46 @@
+Recaman/TwoSecondSLastFour.lean:38:70: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  p ≥ 0
+  o ≥ 0
+  l ≥ 0
+  k ≥ 0
+  k ≥ 0
+  i ≥ 0
+  4 ≤ g ≤ 10
+  g - i ≥ 0
+  e ≥ 1
+  d ≥ 1
+  d + e ≤ 11
+  c ≥ 2
+  c - d - e + l + o - p ≥ -10
+  -5 ≤ c + l + o - p ≤ 1
+  b ≥ 1
+  a ≥ 1
+  -9 ≤ a + b + d + e + g - k ≤ -3
+where
+ a := ↑U
+ b := ↑T
+ c := ↑m
+ d := ↑s
+ e := ↑v
+ g := ↑j
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (h + M + m + L + s + U + v + T))
+ k := ↑(n + h + M + m + L + s + U + v + T + j - (n + h + M + m - 2))
+ l := ↑n
+ o := ↑h
+ p := ↑(n + h + M + m - 2)
+Recaman/TwoSecondSLastFour.lean:38:78: error: Type mismatch
+  htarget
+has type
+  Win f (n + h + M + m - 2) (2 + L + s + U + v + T + j)
+but is expected to have type
+  Win f (n + h + M + m - 2) (1 + L + s + U + v + T + j)
+Recaman/TwoSecondSLastFour.lean:55:63: error: Application type mismatch: The argument
+  ha
+has type
+  FourthSourceFamilies.sourceAt true L x i
+but is expected to have type
+  FourthSourceFamilies.sourceAt true L (List.replicate s false ++ List.replicate U true ++ List.replicate v false) i
+in the application
+  TwoSActualSourceClock.counter_next_A_source_excluded f n h M m L s U v T j i w hw hpre hM hL hU hT hm hs hv hS hA hS2
+    hA2 hS3 hA3 hS4 hA4 hpos hgap htarget hbad ha

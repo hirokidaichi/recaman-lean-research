@@ -1,0 +1,25 @@
+{
+  "tag": "H42-sharp-primitive-clock-radius",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrimitiveClockRadius.olean",
+    "Recaman/PrimitiveClockRadius.lean"
+  ],
+  "started_jst": "2026-11-09T07:02:39.073793+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrimitiveClockRadius.lean": "75f4dfe4850b29196c813b8d2cc128d23d6e3940c269d959a9a3a53ac938be6b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "d435d253dfed282886598d2f842331f9611c0898169d98f8e5c8d199fc70a8cb",
+  "source_tree_manifest": "H42-sharp-primitive-clock-radius-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H36-primitive-layer-clock-A-cost",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrimitiveLayerClockCost.olean",
+    "Recaman/PrimitiveLayerClockCost.lean"
+  ],
+  "started_jst": "2026-11-09T06:52:05.359518+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrimitiveLayerClockCost.lean": "5e62c74acc5243982a1d9304a7e9ce2d4c9feaf89d399d1b3b32808456fdac4b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "source_tree_sha256": "1a3f82df72a363f00ad485f92edb66f7e0309804c92fed27b5405ddd9b5824b6",
+  "source_tree_manifest": "H36-primitive-layer-clock-A-cost-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

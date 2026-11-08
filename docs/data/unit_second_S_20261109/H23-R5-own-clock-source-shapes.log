@@ -1,0 +1,33 @@
+Recaman/TwoSSmallSourceShapes.lean:55:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  runKey (List.replicate ?q false ++ List.replicate ?M true ++ List.replicate ?m false)
+in the target expression
+  runKey (List.replicate s false ++ (List.replicate U true ++ List.replicate v false)) +
+      4 * ↑L * ↑(cntF (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))) =
+    -2
+
+L s U v i : Nat
+hL : 1 ≤ L
+hU : 1 ≤ U
+hs : 1 ≤ s
+hv : 1 ≤ v
+hF : s + v = 5
+htarget :
+  runKey
+      (List.replicate 2 false ++
+        (List.replicate L true ++ (List.replicate s false ++ List.replicate U true ++ List.replicate v false))) =
+    -50
+a : Nat
+ha : 1 ≤ a
+haL : a ≤ L
+hkey :
+  runKey (List.replicate s false ++ (List.replicate U true ++ List.replicate v false)) +
+      4 * ↑L * ↑(cntF (List.replicate s false ++ (List.replicate U true ++ List.replicate v false))) =
+    -2
+x : List Bool := List.replicate s false ++ List.replicate U true ++ List.replicate v false
+hFx : cntF x = 5
+haeq : a = L
+hcases : 5 = 5 ∧ cntF x = 5 ∧ L ≤ 2 ∨ 5 = 7 ∧ cntF x = 11 ∧ L ≤ 5
+hL2 : L ≤ 2
+hm : ↑L + (-↑s + ↑U + -↑v) + ↑i = 1
+hclock : L + U + i = 6
+⊢ L = 2 ∧ (s = 3 ∧ U = 1 ∧ v = 2 ∧ i = 3 ∨ s = 4 ∧ U = 2 ∧ v = 1 ∧ i = 2)

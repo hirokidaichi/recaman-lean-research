@@ -1,0 +1,18 @@
+Recaman/ReversedClockActualControl.lean:40:43: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 2
+  b ≥ 0
+  0 ≤ a ≤ 1
+where
+ a := ↑(rayCount (List.replicate 2 false) 4)
+ b := ↑(cN (EndN f 0) (0 + 2) 4)
+ c := ↑(cN (EndN f 0) 0 6)
+Recaman/ReversedClockActualControl.lean:45:43: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  0 ≤ a ≤ 1
+where
+ a := ↑(rayCount (List.replicate 2 false) 4)
+ b := ↑(cN (EndN f 0) (0 + 2) 4)
+ c := ↑(cN (EndN f 0) 0 4)

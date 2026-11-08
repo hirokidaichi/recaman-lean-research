@@ -1,0 +1,31 @@
+{
+  "tag": "H44-arbitrary-mixed-prefix-clock-square",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedPrefixClockSquare.olean",
+    "Recaman/MixedPrefixClockSquare.lean"
+  ],
+  "started_jst": "2026-11-09T07:08:02.396197+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedPrefixClockSquare.lean": "582a91ababd3d3010b4e5adbbb3dc4e77079610f5f80160cc690753d590d605d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "5a0ab51f401f11cad3cfd371bfd727699a8b028123d5223d1633e3327140df2d",
+  "source_tree_manifest": "H44-arbitrary-mixed-prefix-clock-square-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.1245227500039618,
+  "cpu_seconds": 1.017779,
+  "finished_jst": "2026-11-09T07:08:03.520602+09:00"
+}

@@ -3871,3 +3871,81 @@ import Recaman
 #print axioms Recaman.UnitSSelectedSource.unit_S_prefix_saving
 #print axioms Recaman.UnitSSelectedSource.zero_gap_control
 #print axioms Recaman.UnitSActualLastBudget.actual_second_S_unit_six
+#print axioms Recaman.UnitSecondSCounterCut.unit_second_S_counter_cut
+#print axioms Recaman.UnitSecondSCounterCutBase.unit_second_S_counter_cut_int
+#print axioms Recaman.UnitSecondSNoCounter.unit_second_S_counter_excluded
+#print axioms Recaman.UnitSecondSNoCounter.unit_second_S_free_gap
+#print axioms Recaman.UnitSecondSNoCounterBase.unit_second_S_free_gap_int
+#print axioms Recaman.FourFromSecondSLastTarget.four_from_last_second_S_target_free_gap_int
+#print axioms Recaman.UnitSNextAFamily.next_A_source_excluded
+#print axioms Recaman.UnitSNextAFamily.two_family_saving
+#print axioms Recaman.UnitSNextAFamily.R_four_boundary
+#print axioms Recaman.UnitSecondSLastFour.unit_second_S_counter_last_four
+#print axioms Recaman.TwoSSelectedSource.same_S_source_square
+#print axioms Recaman.TwoSSelectedSource.same_S_source_floor
+#print axioms Recaman.TwoSSelectedSource.R_four_same_S_boundary
+#print axioms Recaman.TwoSSelectedSource.sixteen_S_boundary
+#print axioms Recaman.TwoSActualLastBudget.actual_second_S_two_budgets
+#print axioms Recaman.TwoSecondSCounterCut.two_second_S_counter_cut
+#print axioms Recaman.TwoSecondSCounterCutBase.two_second_S_counter_cut_int
+#print axioms Recaman.TwoSNextASpectrum.next_A_depth_spectrum
+#print axioms Recaman.TwoSNextASpectrum.R_five_A_boundary
+#print axioms Recaman.TwoSNextASpectrum.R_seven_A_boundary
+
+#print axioms Recaman.TwoSActualSourceClock.counter_next_A_source_excluded
+
+#print axioms Recaman.TwoSecondSLastFour.two_second_S_counter_last_four
+
+#print axioms Recaman.ThreeSSelectedSource.same_S_depth_spectrum
+
+#print axioms Recaman.ThreeSSelectedSource.R_five_S_boundary
+
+#print axioms Recaman.ThreeSSelectedSource.R_seven_S_boundary
+
+#print axioms Recaman.TargetSSourceSquareOrder.last_S_source_excluded
+
+#print axioms Recaman.TwoSTwoSquareSource.last_S_source_excluded
+
+#print axioms Recaman.TwoSTwoSquareSource.D_seven_source_boundary
+
+#print axioms Recaman.PrimitiveLayerClockCost.layer_clock_A_cost
+
+#print axioms Recaman.PrimitiveLayerClockCost.cost_sharp
+
+#print axioms Recaman.PrimitiveLayerActualFree.outer_layer_actual_free_charge
+
+#print axioms Recaman.SlowPrimitiveClockPair.clock_pair_family
+
+#print axioms Recaman.SlowPrimitiveClockPair.same_word_two_clocks
+
+#print axioms Recaman.SlowPrimitiveClockPair.arbitrarily_slow_relative_growth
+
+#print axioms Recaman.PositiveTwoClockHistory.two_clocks_positive_history
+
+#print axioms Recaman.PositiveTwoClockHistory.actual_slow_relative_growth
+
+#print axioms Recaman.PrimitiveClockRadius.primitive_clock_half_S
+
+#print axioms Recaman.PrimitiveClockRadius.layer_A_square
+
+#print axioms Recaman.MixedPrefixClockSquare.mixed_prefix_clock_square
+
+#print axioms Recaman.MixedPrefixClockSquare.unit_advance_sharp
+
+#print axioms Recaman.MixedPrefixDistinctClock.distinct_clock_square
+
+#print axioms Recaman.MixedPrefixDistinctClock.reversed_clock_control
+
+#print axioms Recaman.MixedPrefixDistinctRadius.actual_distinct_small_free_clock_radius
+
+#print axioms Recaman.ReversedClockActualControl.actual_reversed_clock_example
+
+#print axioms Recaman.SevenPrefixSourceShape.seven_positive_key_shape
+
+#print axioms Recaman.ForwardSourceActualFree.forward_pair_needs_two_actual_free
+
+#print axioms Recaman.NonnegativeFutureOldSource.no_old_source
+
+#print axioms Recaman.NonnegativeFutureOldSource.SAAS_next_actual_free
+
+#print axioms Recaman.NonnegativeFutureOldSource.SAAS_clock_two_local_control

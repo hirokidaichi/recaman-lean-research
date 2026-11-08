@@ -1,0 +1,31 @@
+{
+  "tag": "H49-all-run-actual-supply-triangular-SA-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SuppliedPrefixPairBudget.olean",
+    "Recaman/SuppliedPrefixPairBudget.lean"
+  ],
+  "started_jst": "2026-11-09T07:22:14.946886+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SuppliedPrefixPairBudget.lean": "dc57e8abd4819fce48833db0acbaed841e2970d27f66487c44a3b36bf40293bd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "361fa904b1af2021b1e0d490c89eaff8e70f7ec7fbb1012b5d96c4ad4b5949d8",
+  "source_tree_manifest": "H49-all-run-actual-supply-triangular-SA-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.45700500000384636,
+  "cpu_seconds": 0.277759,
+  "finished_jst": "2026-11-09T07:22:15.403816+09:00"
+}

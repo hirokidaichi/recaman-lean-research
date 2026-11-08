@@ -1,0 +1,17 @@
+Recaman/SlowPrimitiveClockPair.lean:19:53: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 2
+  b - c ≤ -1
+  a ≥ 1
+where
+ a := ↑l
+ b := ↑4 * ↑l * ↑l
+ c := 4 * ↑l * ↑l
+Recaman/SlowPrimitiveClockPair.lean:32:6: warning: This simp argument is unused:
+  Nat.zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cntF_append, cntF_replicate_S, Recaman.UnitTargetSASProfile.cntF_A, Nat.add_zero, Int.natCast_add,
+    Int.natCast_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

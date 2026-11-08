@@ -1,0 +1,23 @@
+{
+  "tag": "H22-q2-counter-and-spectrum-fullcheck",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-09T06:26:21.997354+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "4dfc0eec7ebb7224209e0d38ebc4a996f0092cc58ef11330ff728dad8a27a7a7",
+  "source_tree_sha256": "7263ba60554fbef1e20ab9df30e816722a1bd8a4a8e99f10bc1cdac76f5ebe74",
+  "source_tree_manifest": "H22-q2-counter-and-spectrum-fullcheck-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 6.666856458999973,
+  "cpu_seconds": 6.223144,
+  "finished_jst": "2026-11-09T06:26:28.663811+09:00"
+}

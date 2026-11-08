@@ -1,0 +1,31 @@
+{
+  "tag": "H42b-clock-radius-one-rewrite-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrimitiveClockRadius.olean",
+    "Recaman/PrimitiveClockRadius.lean"
+  ],
+  "started_jst": "2026-11-09T07:02:50.300597+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrimitiveClockRadius.lean": "8c4fe061bdd6dbd126368763b11aac0367d0c489bfd55428f970e420b647d955"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "3f81b85d71f34a950c0b80149992ffce7d7b45e8c95f9e2efbda74f1e57c1504",
+  "source_tree_manifest": "H42b-clock-radius-one-rewrite-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.629642749998311,
+  "cpu_seconds": 0.476379,
+  "finished_jst": "2026-11-09T07:02:50.930151+09:00"
+}

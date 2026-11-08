@@ -1,0 +1,31 @@
+{
+  "tag": "H46b-distinct-clock-one-nonnegative-certificate-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedPrefixDistinctClock.olean",
+    "Recaman/MixedPrefixDistinctClock.lean"
+  ],
+  "started_jst": "2026-11-09T07:16:39.280442+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedPrefixDistinctClock.lean": "b53915247fe5ceb64084605827aba68b6cdf31dd7f62b16af2ac298f6070569c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "6949ff1bc01055abcc38df3d26f922a9e3ade067337d5e5366181797f124cee9",
+  "source_tree_manifest": "H46b-distinct-clock-one-nonnegative-certificate-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.0041610000043875,
+  "cpu_seconds": 0.854315,
+  "finished_jst": "2026-11-09T07:16:40.284492+09:00"
+}

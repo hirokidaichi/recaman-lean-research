@@ -1,0 +1,25 @@
+{
+  "tag": "H52-actual-forward-source-needs-free-two",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ForwardSourceActualFree.olean",
+    "Recaman/ForwardSourceActualFree.lean"
+  ],
+  "started_jst": "2026-11-09T07:32:08.743420+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ForwardSourceActualFree.lean": "6ddc1c58b5561ace6965577a3c80ce49ff6e945e88d37a32e6b81a4a428bf27a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "d2e888efcd4a60ab08781be94f7e53c265ac3ece646804b39c529fd5c345b98c",
+  "source_tree_manifest": "H52-actual-forward-source-needs-free-two-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

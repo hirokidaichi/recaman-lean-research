@@ -1,0 +1,25 @@
+{
+  "tag": "H23b-R5-own-clock-source-shapes-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSSmallSourceShapes.olean",
+    "Recaman/TwoSSmallSourceShapes.lean"
+  ],
+  "started_jst": "2026-11-09T06:30:30.138642+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSSmallSourceShapes.lean": "271b68827673d501fc1a9bd08d7ebf0ac06cbdecc4259cc0daa1fd0ea6d99e1a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "5da28632e90845145225e9baea9630745acf33d375e8f89ef0f58959a6f0b751",
+  "source_tree_sha256": "a8ce76f4bc44a91961a9e49ffbd23fcb91458059ae0b3d7ce96dd645dc881461",
+  "source_tree_manifest": "H23b-R5-own-clock-source-shapes-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

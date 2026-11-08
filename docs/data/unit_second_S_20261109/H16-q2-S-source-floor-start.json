@@ -1,0 +1,25 @@
+{
+  "tag": "H16-q2-S-source-floor",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSSelectedSource.olean",
+    "Recaman/TwoSSelectedSource.lean"
+  ],
+  "started_jst": "2026-11-09T06:19:58.692287+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSSelectedSource.lean": "79a3e6ef30d338f125e0de12819d39793c19b8c9a441adcc5920931908d7cbec"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "afa9864e800f4452d8cee7ed7c436274975bb0ee02a06eebf0f61d57bf5427f8",
+  "source_tree_sha256": "ca1ce1f9c1747f481c2fe947f2bdcdd6e4668c64b34b5068aa4a5394a7af379c",
+  "source_tree_manifest": "H16-q2-S-source-floor-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

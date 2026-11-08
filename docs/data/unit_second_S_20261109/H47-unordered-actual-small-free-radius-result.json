@@ -1,0 +1,31 @@
+{
+  "tag": "H47-unordered-actual-small-free-radius",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/MixedPrefixDistinctRadius.olean",
+    "Recaman/MixedPrefixDistinctRadius.lean"
+  ],
+  "started_jst": "2026-11-09T07:17:33.906130+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/MixedPrefixDistinctRadius.lean": "1ad83e6fd056a2c673eeeeefe37556aa7ba02956ecd2e2f492543b6079ca2a95"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "80f87e43602f4fb88d4a5a0239cc1d2cac563e0ec49f2df80b86dc8ae2cd482e",
+  "source_tree_manifest": "H47-unordered-actual-small-free-radius-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5923534589965129,
+  "cpu_seconds": 0.439777,
+  "finished_jst": "2026-11-09T07:17:34.497813+09:00"
+}

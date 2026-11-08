@@ -1,0 +1,101 @@
+Recaman/ChronologicalSupplyKeyBudget.lean:6:5: error: unknown namespace `Recaman.BlockOldRay`
+Recaman/ChronologicalSupplyKeyBudget.lean:10:74: error: unexpected token 'open'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_cbv_simproc', 'builtin_cbv_simproc_decl', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'cbv_simproc', 'cbv_simproc_decl', 'class', 'coinductive', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'register_try?_tactic', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'
+Recaman/ChronologicalSupplyKeyBudget.lean:21:4: error: Function expected at
+  runKey
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (seg f n K)
+
+Hint: The identifier `runKey` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/ChronologicalSupplyKeyBudget.lean:28:55: error: Invalid argument: Variable `runKey` is not a proposition or let-declaration
+Recaman/ChronologicalSupplyKeyBudget.lean:28:9: error: unsolved goals
+case zero
+x✝ : Sort u_1
+runKey : x✝
+f : Nat → Bool
+n : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ 0 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+⊢ sorry () ≤ 0
+Recaman/ChronologicalSupplyKeyBudget.lean:36:16: error: Function expected at
+  runKey
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (seg f n (K + 1))
+Recaman/ChronologicalSupplyKeyBudget.lean:36:39: error: Function expected at
+  runKey
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (seg f n K)
+Recaman/ChronologicalSupplyKeyBudget.lean:59:71: error: unsolved goals
+x✝ : Sort u_1
+runKey : x✝
+f : Nat → Bool
+n K : Nat
+ih :
+  (∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k) →
+    sorry + 2 * ↑(cN (fun x => f x = false) n K) ^ 2 + 4 * ↑(cN (fun x => f x = true) n K) +
+          2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+        4 * ↑(suppliedFreePairs f n K) ≤
+      4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)
+hpos : ∀ (k : Nat), 0 < k → k ≤ K + 1 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hIH :
+  sorry + 2 * ↑(cN (fun x => f x = false) n K) ^ 2 + 4 * ↑(cN (fun x => f x = true) n K) +
+        2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+      4 * ↑(suppliedFreePairs f n K) ≤
+    4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)
+hP : cN (EndN f 0) n (K + 1) + 1 ≤ cN (fun x => f x = false) n (K + 1)
+hA : ¬f (n + K) = true
+hfalse : f (n + K) = false
+hAc : cN (fun x => f x = true) n (K + 1) = cN (fun x => f x = true) n K
+hSc : cN (fun x => f x = false) n (K + 1) = cN (fun x => f x = false) n K + 1
+hEc : cN (EndN f 0) n (K + 1) = cN (EndN f 0) n K
+⊢ (suppliedFreePairs f n K + if f (n + K) = true ∧ ¬EndN f 0 (n + K) then cN (EndN f 0) n K else 0) =
+    suppliedFreePairs f n K
+Recaman/ChronologicalSupplyKeyBudget.lean:65:16: error: Function expected at
+  runKey
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (seg f n (K + 1))
+Recaman/ChronologicalSupplyKeyBudget.lean:65:39: error: Function expected at
+  runKey
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (seg f n K)
+Recaman/ChronologicalSupplyKeyBudget.lean:28:30: warning: This simp argument is unused:
+  seg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [cN, suppliedFreePairs, runKey, areaW, mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ChronologicalSupplyKeyBudget.lean:28:62: warning: This simp argument is unused:
+  areaW
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seg, cN, suppliedFreePairs, runKey, mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ChronologicalSupplyKeyBudget.lean:28:68: warning: This simp argument is unused:
+  mass
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [seg, cN, suppliedFreePairs, runKey, areaW]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/ChronologicalSupplyKeyBudget.lean:60:94: warning: This simp argument is unused:
+  Nat.add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [suppliedFreePairs, if_neg (show ¬(f (n + K) = true ∧ ¬EndN f 0 (n + K)) by omega)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

@@ -1,0 +1,25 @@
+{
+  "tag": "H20-q2-original-int-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSecondSCounterCutBase.olean",
+    "Recaman/TwoSecondSCounterCutBase.lean"
+  ],
+  "started_jst": "2026-11-09T06:24:32.851803+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSecondSCounterCutBase.lean": "3a0768c8e0fc02808dd5495d3095eb169a4dd6cc7dfe97aaa527db4eb414c3a1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "afa9864e800f4452d8cee7ed7c436274975bb0ee02a06eebf0f61d57bf5427f8",
+  "source_tree_sha256": "e469b8d45d508d94e9a5e1f81366535c9163d6044900d0a2bdc3b1d21b57ad9c",
+  "source_tree_manifest": "H20-q2-original-int-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

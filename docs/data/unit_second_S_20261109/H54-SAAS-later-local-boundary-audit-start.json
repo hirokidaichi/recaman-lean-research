@@ -1,0 +1,25 @@
+{
+  "tag": "H54-SAAS-later-local-boundary-audit",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NonnegativeFutureOldSource.olean",
+    "Recaman/NonnegativeFutureOldSource.lean"
+  ],
+  "started_jst": "2026-11-09T07:37:53.402248+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NonnegativeFutureOldSource.lean": "db6085f392cc01e9330886098ed07f788b7bfcd30d549f0f48938ca17b06f698"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "b1630f9cb0c98df16c93560e7b395f3d6f7a671acd832ec27433f3992d8d8b3d",
+  "source_tree_manifest": "H54-SAAS-later-local-boundary-audit-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H10-new-actual-last-four",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitSecondSLastFour.olean",
+    "Recaman/UnitSecondSLastFour.lean"
+  ],
+  "started_jst": "2026-11-09T06:13:34.771119+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitSecondSLastFour.lean": "2d5a70532e84a13ed320894d7a2039f8b79a6496d5d001d015ab0ef040a46307"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "aac386099fa84688eed130c2c50206229d175526df9860f804dc67a16321198f",
+  "source_tree_sha256": "cfb2662351d88892d70ce83ca1204e6dcfb4fcb1aba23b4d9cdc7ac451002afd",
+  "source_tree_manifest": "H10-new-actual-last-four-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "aac386099fa84688eed130c2c50206229d175526df9860f804dc67a16321198f",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5951293340040138,
+  "cpu_seconds": 0.455094,
+  "finished_jst": "2026-11-09T06:13:35.366162+09:00"
+}

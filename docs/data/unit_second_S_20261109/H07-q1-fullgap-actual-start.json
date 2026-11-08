@@ -1,0 +1,25 @@
+{
+  "tag": "H07-q1-fullgap-actual",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitSecondSFreeGap.olean",
+    "Recaman/UnitSecondSFreeGap.lean"
+  ],
+  "started_jst": "2026-11-09T06:08:28.382125+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitSecondSFreeGap.lean": "252c6fdaecc20f6c12c1b3a20ea82451197ed67355906a4cc5ced25f4f17a20c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "19f5ed11f203351450ea93d898076b9c8c60a582b9db2afb84f53d59e2a328dd",
+  "source_tree_sha256": "df7a940c2442a26ecee8d193abaf13889d2127952788cd197f2d331aad51753e",
+  "source_tree_manifest": "H07-q1-fullgap-actual-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

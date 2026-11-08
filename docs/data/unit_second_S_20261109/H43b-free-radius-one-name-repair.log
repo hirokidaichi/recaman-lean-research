@@ -1,0 +1,72 @@
+Recaman/PrimitiveLayerFreeRadius.lean:51:41: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  t ≥ 0
+  s ≥ 0
+  r ≥ 0
+  r + s ≥ 0
+  r + s - t ≤ 0
+  p ≥ 0
+  o ≥ 0
+  o - p ≥ 1
+  o - s ≤ 0
+  m ≥ 0
+  l ≥ 0
+  k ≥ 0
+  g ≥ 0
+  g - k - l - m ≥ 0
+  e ≥ 0
+  d ≥ 0
+  8*d - q ≤ 0
+  c ≥ 1
+where
+ c := ↑b
+ d := ↑i
+ e := ↑j
+ g := ↑B
+ k := ↑n
+ l := ↑h
+ m := ↑a
+ o := ↑R
+ p := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (B + j + 1 - n))
+ q := (↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + h) a) + 2) ^ 2
+ r := ↑(cN P n h)
+ s := ↑(cN P (n + h) a)
+ t := ↑(cN P n (B + j + 1 - n))
+Recaman/PrimitiveLayerFreeRadius.lean:54:12: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  v - x ≥ 0
+  t ≥ 0
+  s ≥ 0
+  r ≥ 0
+  r + s ≥ 0
+  r + s - t ≤ 0
+  p ≥ 0
+  o ≥ 0
+  o - p ≥ 1
+  o - s ≥ 1
+  m ≥ 0
+  l ≥ 0
+  k ≥ 0
+  g ≥ 0
+  g - k - l - m ≥ 0
+  e ≥ 0
+  d ≥ 0
+  8*d - q ≤ 0
+  8*d - v ≥ 1
+  c ≥ 1
+where
+ c := ↑b
+ d := ↑i
+ e := ↑j
+ g := ↑B
+ k := ↑n
+ l := ↑h
+ m := ↑a
+ o := ↑R
+ p := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (B + j + 1 - n))
+ q := (↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) (n + h) a) + 2) ^ 2
+ r := ↑(cN P n h)
+ s := ↑(cN P (n + h) a)
+ t := ↑(cN P n (B + j + 1 - n))
+ v := (↑R + 1) ^ 2
+ x := (↑(cN P (n + h) a) + 2) ^ 2

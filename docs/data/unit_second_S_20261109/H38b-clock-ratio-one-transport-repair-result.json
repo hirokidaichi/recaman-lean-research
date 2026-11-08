@@ -1,0 +1,31 @@
+{
+  "tag": "H38b-clock-ratio-one-transport-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SlowPrimitiveClockPair.olean",
+    "Recaman/SlowPrimitiveClockPair.lean"
+  ],
+  "started_jst": "2026-11-09T06:54:45.274352+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SlowPrimitiveClockPair.lean": "a14c7e2c27a38c699938937f79bf57fc139ff83c250370836b57e4bbfbb81dd0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "source_tree_sha256": "7f7364c6050bf118d3fe2ec3f00e39008dd5a93ce3c522ec8a9173c5ac6f1001",
+  "source_tree_manifest": "H38b-clock-ratio-one-transport-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5816463329974795,
+  "cpu_seconds": 0.40328899999999995,
+  "finished_jst": "2026-11-09T06:54:45.855906+09:00"
+}

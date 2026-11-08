@@ -1,0 +1,25 @@
+{
+  "tag": "H48b-actual-nonvacuity-one-count-index-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ReversedClockActualControl.olean",
+    "Recaman/ReversedClockActualControl.lean"
+  ],
+  "started_jst": "2026-11-09T07:18:49.426288+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ReversedClockActualControl.lean": "8b0038e013730958920fc803299abdb86268f81f56d57d88025ae4dc56283da2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "29fb8e196c253eedc08229df8eb3db06b8041ae6df3f608404d30f6c25aeac77",
+  "source_tree_manifest": "H48b-actual-nonvacuity-one-count-index-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

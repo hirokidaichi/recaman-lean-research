@@ -1,0 +1,25 @@
+{
+  "tag": "H03-source6-actual-bootstrap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/UnitSecondSCounterCut.olean",
+    "Recaman/UnitSecondSCounterCut.lean"
+  ],
+  "started_jst": "2026-11-09T06:04:57.535560+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/UnitSecondSCounterCut.lean": "4d489c485e8a15ec02b2d62178522f6a91d31f5ea50558ab7ea7c449045828cf"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "4a4a040491ab770b55e09da10c4c24a598668ba1e1201f7d37fc52c1c85c2559",
+  "source_tree_manifest": "H03-source6-actual-bootstrap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

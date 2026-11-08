@@ -1,0 +1,158 @@
+Recaman/ChronologicalSupplyKeyBudget.lean:71:8: error: `grind` failed
+case grind.2.1.1
+f : Nat → Bool
+n K : Nat
+ih :
+  (∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k) →
+    runKey (seg f n K) + 2 * ↑(cN (fun x => f x = false) n K) ^ 2 + 4 * ↑(cN (fun x => f x = true) n K) +
+          2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+        4 * ↑(suppliedFreePairs f n K) ≤
+      4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)
+hpos : ∀ (k : Nat), 0 < k → k ≤ K + 1 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+hIH :
+  runKey (seg f n K) + 2 * ↑(cN (fun x => f x = false) n K) ^ 2 + 4 * ↑(cN (fun x => f x = true) n K) +
+        2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+      4 * ↑(suppliedFreePairs f n K) ≤
+    4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)
+hP : cN (EndN f 0) n (K + 1) + 1 ≤ cN (fun x => f x = false) n (K + 1)
+hA : ¬f (n + K) = true
+hfalse : f (n + K) = false
+hAc : cN (fun x => f x = true) n (K + 1) = cN (fun x => f x = true) n K
+hSc : cN (fun x => f x = false) n (K + 1) = cN (fun x => f x = false) n K + 1
+hEc : cN (EndN f 0) n (K + 1) = cN (EndN f 0) n K
+hJ : suppliedFreePairs f n (K + 1) = suppliedFreePairs f n K
+hmass : mass (seg f n K) = ↑(cN (fun x => f x = true) n K) - ↑(cN (fun x => f x = false) n K)
+he :
+  runKey (seg f n K ++ List.replicate 1 false) =
+    runKey (seg f n K) + 4 * ↑1 * (↑(cN (fun x => f x = true) n K) - ↑(cN (fun x => f x = false) n K)) - 2 * ↑1 ^ 2
+h :
+  ¬-1 * runKey (seg f n K) + runKey (seg f n K ++ [false]) + 4 * ↑(cN (fun x => f x = false) n K) +
+          -4 * ↑(cN (fun x => f x = true) n K) +
+        2 =
+      0
+h_1 : ¬(fun x => f x = false) = fun x => f x = true
+h_2 : 1 ≤ K
+h_3 : ↑(cN (fun x => f x = false) n K) = ↑(cN (EndN f 0) n K) + 1
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] (∃ k, ¬(1 ≤ k → k ≤ K → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k)) ∨
+          runKey (seg f n K) + 4 * ↑(suppliedFreePairs f n K) + 4 * ↑(cN (fun x => f x = true) n K) +
+                  2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+                -1 * (4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)) +
+              2 * ↑(cN (fun x => f x = false) n K) ^ 2 ≤
+            0
+    [prop] ∀ (k : Nat), 1 ≤ k → k ≤ K + 1 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+    [prop] runKey (seg f n K) + 4 * ↑(suppliedFreePairs f n K) + 4 * ↑(cN (fun x => f x = true) n K) +
+                2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+              -1 * (4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)) +
+            2 * ↑(cN (fun x => f x = false) n K) ^ 2 ≤
+          0
+    [prop] cN (EndN f 0) n (K + 1) + 1 ≤ cN (fun x => f x = false) n (K + 1)
+    [prop] f (n + K) = false
+    [prop] f (n + K) = false
+    [prop] cN (fun x => f x = true) n (K + 1) = cN (fun x => f x = true) n K
+    [prop] cN (fun x => f x = false) n (K + 1) = cN (fun x => f x = false) n K + 1
+    [prop] cN (EndN f 0) n (K + 1) = cN (EndN f 0) n K
+    [prop] suppliedFreePairs f n (K + 1) = suppliedFreePairs f n K
+    [prop] mass (seg f n K) + ↑(cN (fun x => f x = false) n K) + -1 * ↑(cN (fun x => f x = true) n K) = 0
+    [prop] -1 * runKey (seg f n K) + runKey (seg f n K ++ List.replicate 1 false) +
+                4 * ↑(cN (fun x => f x = false) n K) +
+              -4 * ↑(cN (fun x => f x = true) n K) +
+            2 =
+          0
+    [prop] ¬-1 * runKey (seg f n K) + runKey (seg f n K ++ [false]) + 4 * ↑(cN (fun x => f x = false) n K) +
+                -4 * ↑(cN (fun x => f x = true) n K) +
+              2 =
+            0
+    [prop] cN (EndN f 0) n (K + 1) + 1 ≤ cN (fun x => f x = false) n (K + 1)
+    [prop] 1 ≤ K → cN (EndN f 0) n K + 1 ≤ cN (fun x => f x = false) n K
+    [prop] ¬(fun x => f x = false) = fun x => f x = true
+    [prop] 1 ≤ K
+    [prop] ↑(cN (fun x => f x = false) n K) = ↑(cN (EndN f 0) n K) + 1
+  [eqc] True propositions
+    [prop] (∃ k, ¬(1 ≤ k → k ≤ K → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k)) ∨
+          runKey (seg f n K) + 4 * ↑(suppliedFreePairs f n K) + 4 * ↑(cN (fun x => f x = true) n K) +
+                  2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+                -1 * (4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)) +
+              2 * ↑(cN (fun x => f x = false) n K) ^ 2 ≤
+            0
+    [prop] ↑(cN (fun x => f x = false) n K) = ↑(cN (EndN f 0) n K) + 1
+    [prop] runKey (seg f n K) + 4 * ↑(suppliedFreePairs f n K) + 4 * ↑(cN (fun x => f x = true) n K) +
+                2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1) +
+              -1 * (4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)) +
+            2 * ↑(cN (fun x => f x = false) n K) ^ 2 ≤
+          0
+    [prop] cN (EndN f 0) n (K + 1) + 1 ≤ cN (fun x => f x = false) n (K + 1)
+    [prop] ∀ (k : Nat), 1 ≤ k → k ≤ K + 1 → cN (EndN f 0) n k + 1 ≤ cN (fun x => f x = false) n k
+    [prop] 1 ≤ K
+    [prop] cN (EndN f 0) n K + 1 ≤ cN (fun x => f x = false) n K
+    [prop] 1 ≤ K → cN (EndN f 0) n K + 1 ≤ cN (fun x => f x = false) n K
+  [eqc] False propositions
+    [prop] -1 * runKey (seg f n K) + runKey (seg f n K ++ [false]) + 4 * ↑(cN (fun x => f x = false) n K) +
+              -4 * ↑(cN (fun x => f x = true) n K) +
+            2 =
+          0
+    [prop] (fun x => f x = false) = fun x => f x = true
+  [eqc] Equivalence classes
+    [eqc] {false, f (n + K)}
+    [eqc] {0,
+        mass (seg f n K) + ↑(cN (fun x => f x = false) n K) + -1 * ↑(cN (fun x => f x = true) n K),
+        -1 * runKey (seg f n K) + runKey (seg f n K ++ List.replicate 1 false) + 4 * ↑(cN (fun x => f x = false) n K) +
+            -4 * ↑(cN (fun x => f x = true) n K) +
+          2}
+      [eqc] {↑0}
+    [eqc] {suppliedFreePairs f n K, suppliedFreePairs f n (K + 1)}
+    [eqc] {cN (EndN f 0) n K, cN (EndN f 0) n (K + 1)}
+    [eqc] {cN (fun x => f x = false) n (K + 1), cN (fun x => f x = false) n K + 1}
+    [eqc] {cN (fun x => f x = true) n K, cN (fun x => f x = true) n (K + 1)}
+    [eqc] {cN (EndN f 0) n (K + 1) + 1, cN (EndN f 0) n K + 1}
+    [eqc] others
+      [eqc] {↑(cN (EndN f 0) n K), ↑(cN (EndN f 0) n (K + 1))}
+      [eqc] {↑(cN (fun x => f x = false) n K), ↑(cN (EndN f 0) n K) + 1}
+      [eqc] {↑(cN (fun x => f x = false) n (K + 1)), ↑(cN (fun x => f x = false) n K + 1)}
+  [cases] Case analyses
+    [cases] [2/2]: (fun x => f x = false) = fun x => f x = true
+      [cases] source: Initial goal
+    [cases] [1/2]: 1 ≤ K
+      [cases] source: E-matching `hpos`
+    [cases] [1/2]: ↑(cN (fun x => f x = false) n K) = ↑(cN (EndN f 0) n K) + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            4 * ↑(cN (fun x => f x = true) n K) * ↑(cN (fun x => f x = false) n K)
+          and
+            2 * ↑(cN (EndN f 0) n K) * (↑(cN (EndN f 0) n K) + 1)
+  [ematch] E-matching patterns
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] `[1] #2]
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] #2 `[K + 1]]
+    [thm] hpos: [@LE.le `[Nat] `[instLENat] (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] (cN `[EndN f
+             0] `[n] #2) `[1]) (cN `[fun x => f x = false] `[n] #2)]
+    [thm] hpos: [cN `[EndN f 0] `[n] #2]
+    [thm] hpos: [cN `[fun x => f x = false] `[n] #2]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] n := 0
+    [assign] K := 1
+    [assign] mass (seg f n K) := -1
+    [assign] runKey (seg f n K) := 0
+    [assign] runKey (seg f n K ++ [false]) := 0
+    [assign] runKey (seg f n K ++ List.replicate 1 false) := -6
+    [assign] suppliedFreePairs f n K := 0
+    [assign] suppliedFreePairs f n (K + 1) := 0
+    [assign] cN (EndN f 0) n K := 0
+    [assign] cN (EndN f 0) n (K + 1) := 0
+    [assign] cN (fun x => f x = false) n K := 1
+    [assign] cN (fun x => f x = false) n (K + 1) := 2
+    [assign] cN (fun x => f x = true) n K := 0
+    [assign] cN (fun x => f x = true) n (K + 1) := 0
+    [assign] 「↑(cN (EndN f 0) n K) ^ 2」 := 0
+    [assign] 「↑(cN (fun x => f x = false) n K) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑(cN (EndN f 0) n K) + -1 * ↑(cN (EndN f 0) n (K + 1)) = 0
+      [_] runKey (seg f n K) + 4 * mass (seg f n K) + -1 * runKey (seg f n K ++ List.replicate 1 false) + -2 = 0
+      [_] ↑(cN (fun x => f x = true) n K) + -1 * ↑(cN (fun x => f x = false) n K) + -1 * mass (seg f n K) = 0
+      [_] ↑(cN (fun x => f x = false) n K) + -1 * ↑(cN (EndN f 0) n (K + 1)) + -1 = 0
+    [diseqs] Disequalities
+      [_] ¬-1 * runKey (seg f n K ++ List.replicate 1 false) + runKey (seg f n K ++ [false]) = 0
+[grind] Diagnostics
+  [thm] E-Matching instances
+    [thm] hpos ↦ 2

@@ -1,0 +1,149 @@
+Recaman/MixedPrefixClockSquare.lean:30:52: error: `grind` failed
+case grind.1.1.1
+p u : List Bool
+i j : Nat
+hij : i < j
+hkey : runKey u = -2
+hm : mass u + ↑i = 1
+hodd : ↑(cntF u) % 2 = 1
+hnodd : (↑(cntF p) + ↑(cntF u)) % 2 = 1
+hpeven : ↑(cntF p) % 2 = 0
+hFu : 1 ≤ cntF u
+hc : ↑(cntF p) = ↑p.length - ones p
+hmp : mass p = 2 * ones p - ↑p.length
+hn : mass p + mass u + ↑j = 1
+d : Int := ↑j - ↑i
+hnewkey : runKey p + -2 + 4 * -d * ↑(cntF u) = -2
+hd : 1 ≤ d
+hpd : mass p = -d
+hcross : runKey p + 2 * ↑(cntF p) ^ 2 ≤ 4 * ones p * ↑(cntF p)
+hpA : 0 ≤ ones p
+h : -1 * (2 * (-1 * ↑i + ↑j) * ↑(cntF u)) + ones p ^ 2 + -1 * (-1 * ↑i + ↑j) ^ 2 + 1 ≤ 0
+h_1 : ↑j = -1 * ↑i + ↑j
+h_2 : ones p = -1 * ↑i + ↑j
+h_3 : ↑j = ↑(cntF u)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] i + 1 ≤ j
+    [prop] runKey u = -2
+    [prop] mass u + ↑i + -1 = 0
+    [prop] ↑(cntF u) % 2 = 1
+    [prop] ↑(cntF u) % 2 + -1 ≤ 0
+    [prop] -1 * (↑(cntF u) % 2) ≤ 0
+    [prop] -1 * ↑(cntF u) + 2 * (↑(cntF u) / 2) + ↑(cntF u) % 2 = 0
+    [prop] (↑(cntF p) + ↑(cntF u)) % 2 = 1
+    [prop] (↑(cntF p) + ↑(cntF u)) % 2 + -1 ≤ 0
+    [prop] -1 * ((↑(cntF p) + ↑(cntF u)) % 2) ≤ 0
+    [prop] -1 * ↑(cntF p) + -1 * ↑(cntF u) + 2 * ((↑(cntF p) + ↑(cntF u)) / 2) + (↑(cntF p) + ↑(cntF u)) % 2 = 0
+    [prop] ↑(cntF p) % 2 = 0
+    [prop] ↑(cntF p) % 2 + -1 ≤ 0
+    [prop] -1 * (↑(cntF p) % 2) ≤ 0
+    [prop] -1 * ↑(cntF p) + 2 * (↑(cntF p) / 2) + ↑(cntF p) % 2 = 0
+    [prop] 1 ≤ cntF u
+    [prop] ones p + ↑(cntF p) + -1 * ↑p.length = 0
+    [prop] mass p + -2 * ones p + ↑p.length = 0
+    [prop] mass p + mass u + ↑j + -1 = 0
+    [prop] runKey p + 4 * -(↑j - ↑i) * ↑(cntF u) = 0
+    [prop] ↑i + -1 * ↑j + 1 ≤ 0
+    [prop] mass p + -1 * ↑i + ↑j = 0
+    [prop] runKey p + -1 * (4 * ones p * ↑(cntF p)) + 2 * ↑(cntF p) ^ 2 ≤ 0
+    [prop] -1 * ones p ≤ 0
+    [prop] -1 * (2 * (-1 * ↑i + ↑j) * ↑(cntF u)) + ones p ^ 2 + -1 * (-1 * ↑i + ↑j) ^ 2 + 1 ≤ 0
+    [prop] ↑j = -1 * ↑i + ↑j
+    [prop] ones p = -1 * ↑i + ↑j
+    [prop] ↑j = ↑(cntF u)
+  [eqc] True propositions
+    [prop] ones p = ↑j
+    [prop] ones p = ↑(cntF u)
+    [prop] ones p = -1 * ↑i + ↑j
+    [prop] ↑j = ↑(cntF u)
+    [prop] ↑j = -1 * ↑i + ↑j
+    [prop] runKey p + -1 * (4 * ones p * ↑(cntF p)) + 2 * ↑(cntF p) ^ 2 ≤ 0
+    [prop] ↑i + -1 * ↑j + 1 ≤ 0
+    [prop] -1 * (2 * (-1 * ↑i + ↑j) * ↑(cntF u)) + ones p ^ 2 + -1 * (-1 * ↑i + ↑j) ^ 2 + 1 ≤ 0
+    [prop] ↑(cntF p) % 2 + -1 ≤ 0
+    [prop] ↑(cntF u) % 2 + -1 ≤ 0
+    [prop] (↑(cntF p) + ↑(cntF u)) % 2 + -1 ≤ 0
+    [prop] -1 * ones p ≤ 0
+    [prop] -1 * (↑(cntF p) % 2) ≤ 0
+    [prop] -1 * (↑(cntF u) % 2) ≤ 0
+    [prop] -1 * ((↑(cntF p) + ↑(cntF u)) % 2) ≤ 0
+    [prop] 1 ≤ cntF u
+    [prop] i + 1 ≤ j
+  [eqc] Equivalence classes
+    [eqc] {mass u, 1}
+      [eqc] {↑(cntF u) % 2, (↑(cntF p) + ↑(cntF u)) % 2}
+    [eqc] {runKey u, -2}
+    [eqc] {0,
+        runKey p + 4 * -(↑j - ↑i) * ↑(cntF u),
+        mass p + -1 * ↑i + ↑j,
+        mass p + -2 * ones p + ↑p.length,
+        mass u + ↑i + -1,
+        ones p + ↑(cntF p) + -1 * ↑p.length,
+        mass p + mass u + ↑j + -1,
+        4 * (↑i * ↑(cntF u)) + -4 * (↑j * ↑(cntF u)) + runKey p}
+      [eqc] {↑i,
+          -1 * ↑(cntF p) + -1 * ↑(cntF u) + 2 * ((↑(cntF p) + ↑(cntF u)) / 2) + (↑(cntF p) + ↑(cntF u)) % 2,
+          -1 * ↑(cntF p) + 2 * (↑(cntF p) / 2) + ↑(cntF p) % 2,
+          -1 * ↑(cntF u) + 2 * (↑(cntF u) / 2) + ↑(cntF u) % 2,
+          ↑(cntF p) % 2}
+    [eqc] others
+      [eqc] {ones p, ↑j, ↑(cntF u), -1 * ↑i + ↑j}
+      [eqc] {↑(cntF u) % 2 + -1, (↑(cntF p) + ↑(cntF u)) % 2 + -1}
+      [eqc] {↑i * ↑j, ↑i * ↑(cntF u)}
+      [eqc] {-1 * ones p, -1 * ↑j, -1 * ↑(cntF u)}
+      [eqc] {-1 * ↑i, -1 * (↑(cntF p) % 2)}
+      [eqc] {-1 * (↑(cntF u) % 2), -1 * ((↑(cntF p) + ↑(cntF u)) % 2)}
+      [eqc] {-1 * ↑j ^ 2, -1 * (-1 * ↑i + ↑j) ^ 2}
+      [eqc] {2 * (↑i * ↑j), 2 * (↑i * ↑(cntF u))}
+      [eqc] {ones p ^ 2, ↑j ^ 2, (-1 * ↑i + ↑j) ^ 2}
+  [cases] Case analyses
+    [cases] [1/2]: ↑j = -1 * ↑i + ↑j
+      [cases] source: Model-based theory combination at argument #4 of
+            ↑j ^ 2
+          and
+            (-1 * ↑i + ↑j) ^ 2
+    [cases] [1/2]: ones p = -1 * ↑i + ↑j
+      [cases] source: Model-based theory combination at argument #4 of
+            (-1 * ↑i + ↑j) ^ 2
+          and
+            ones p ^ 2
+    [cases] [1/2]: ↑j = ↑(cntF u)
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑i * ↑j
+          and
+            4 * -(↑j - ↑i) * ↑(cntF u)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] i := 0
+    [assign] j := 1
+    [assign] d := 25
+    [assign] cntF p := 2
+    [assign] cntF u := 1
+    [assign] mass p := -1
+    [assign] mass u := 1
+    [assign] ones p := 1
+    [assign] runKey p := 4
+    [assign] runKey u := -2
+    [assign] p.length := 3
+    [assign] 「ones p ^ 2」 := 0
+    [assign] 「↑i ^ 2」 := 0
+    [assign] 「↑j ^ 2」 := 0
+    [assign] 「↑(cntF p) ^ 2」 := 0
+    [assign] 「(-1 * ↑i + ↑j) ^ 2」 := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] 4 * mass p ^ 2 + -1 * runKey p = 0
+      [_] ↑i + mass u + -1 = 0
+      [_] ↑j + mass u + mass p + -1 = 0
+      [_] mass u + -1 = 0
+      [_] ↑(cntF u) % 2 + -1 = 0
+      [_] ↑(cntF u) + -2 * (↑(cntF u) / 2) + -1 = 0
+      [_] 2 * (↑(cntF u) / 2) + ↑(cntF p) + -2 * ((↑(cntF p) + ↑(cntF u)) / 2) = 0
+      [_] ↑(cntF p) + -2 * (↑(cntF p) / 2) = 0
+      [_] (↑(cntF p) + ↑(cntF u)) % 2 + -1 = 0
+      [_] 2 * ((↑(cntF p) + ↑(cntF u)) / 2) + 3 * mass p + 1 = 0
+      [_] ↑(cntF p) % 2 = 0
+      [_] 2 * (↑(cntF p) / 2) + ones p + -1 * ↑p.length = 0
+      [_] 2 * ones p + -1 * ↑p.length + -1 * mass p = 0
+      [_] ↑p.length + 3 * mass p = 0

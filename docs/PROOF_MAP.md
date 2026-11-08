@@ -1854,3 +1854,17 @@ H26一般counter-band旧jobは512MB STOPPED、隔離を維持。E-601は独立E-
 ### 07:39 E-603 — 第二S残余1の新actual source削減
 
 `PROVED-LEAN`。同じ元Nat0/BlockWord旧履歴/四run/第二S残余1 actual target/j>=1から、同S族を全除去し元lastEndN<=6を供給。全M/L/old履歴でsource不存在やcount上界を入力しない。raw source単調性は任意mixed x、actual adapterは四run。j0では自己sourceが共存するliteral境界を受理。H39の一般counter jobを再開せず新source入力を得た。q1のfullgap、q>=2の第二S、初期S/第一Aは未証明。
+
+2026-11-09 E-605 PROVED-LEAN: 第二S残余1 actual counterのM8/L7/z13/R5..12を元Intp/padded全old履歴で内部供給。E603新source6を消費して旧H39のM9分類を不要にした独立pruning。fullgap E604は未Leanのまま。人間レビュー未。
+
+2026-11-09 E-604をPROVED-LEANへ更新。元Intp/padded/zero-fullpositive/真正四run/第二S残余1の全長actual fullgap。E606は同対象から直後A族も除いて元actual last4へstrict削減し、旧H07一括接続とは独立数学入力で閉じた。E605 M8/L7帯はこのscopeに包含され追加coverageに数えない。既存E601との統合で第二Sの最後S開始以降を供給。初期S/第一A/第二S残余2以上/一般四run/任意run/C1/Q/H/SL/全射性は未解決。H07/H08と昨日H39/H52等のSTOPは保持。H05独立factor certificateは個別受理だが新source4法に不要な純helperなのでpacketへ保持しroot/Audit不採用。
+
+2026-11-09 E607/E608 PROVED-LEAN。第二S残余2 actual counterをM7/L7/z11/R5..11へstrict削減。same-S sourceの全mixed後続S床16をactual内部供給と比較して除去する。直後A sourceは同x/key/primitive奇数性からR5/F5/L<=2又はR7/F11/L<=5の二bandのみ。両者のliteral sourceは存在し、actual counter排除/fullgapは未証明。全oldmass/源前prefixを保持。人間レビュー未。
+
+2026-11-09 E609: q2 actual last4。E610/E611はraw同target/source key/clock/奇数性による限定source域だけ。actual last3はkernel512MBで未接続、q2 fullgap未Lean。一般runの時計成長とA/free課金は別の探索unitへ。
+
+2026-11-09 E612: 最外primitive layerの時計増分を元最初A-run実freeへ限定課金。内側prefixのBlockWord reset/反復単射は未供給。E613 REFUTED: raw及び元zero/fullpositive actual sourceの一定倍率時計packingは、i=2l²/j=i+2の全l族で偽。free不足/正末尾gapを課した反例条件付き案とC1は反証しない。
+
+## 2026-11-09 追加: source時計と時間順会計
+
+E614/E615 PROVED-LEANは全mixed primitive pairのA平方と、元BlockWord境界/relativepositive/free<=3でのi<=12/j<=17のsource半径。clockの両順序と非空actual controlを保持し、既存r3 coverageを再計上しない。E617 PROVED-LEANはforward pairの元actual free>=2、E618 PROVED-LEANは非負key futureの全old源排除とSAAS次Aのactual free。E616時間順J/Z恒等式とE619 forward free>=3はPROVED-PAPERで、時間順producerのkernel接続未、人間レビュー未。H43/H49/H50は一修理後STOPPED、packet隔離。未受理moduleをsplitして採用せず、未証明Prop adapterを作らない。次はH-20261110-01。全runの必要条件と限定域freegapであり、C1/一般rank/全射性は未解決。

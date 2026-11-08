@@ -1,0 +1,25 @@
+{
+  "tag": "H25-source-own-clock-head-collision",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoSActualSourceClock.olean",
+    "Recaman/TwoSActualSourceClock.lean"
+  ],
+  "started_jst": "2026-11-09T06:34:15.335425+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoSActualSourceClock.lean": "acda673595af4b1e08e8e0200f1c9aedb3b00d12404c3a92b3c90d05df853235"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "6542c7fa162a00dbe0b958116f83f3f8041bef9dfa71f81c7e8bdf08a107f1ea",
+  "source_tree_sha256": "369ad4c81056407ac0786fcdee7998a8de34c3a1180fe5ec7a5683690be3bb7b",
+  "source_tree_manifest": "H25-source-own-clock-head-collision-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

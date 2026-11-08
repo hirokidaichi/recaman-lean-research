@@ -1,0 +1,31 @@
+{
+  "tag": "H50-new-chronological-supply-free-key-potential",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ChronologicalSupplyKeyBudget.olean",
+    "Recaman/ChronologicalSupplyKeyBudget.lean"
+  ],
+  "started_jst": "2026-11-09T07:27:21.161546+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ChronologicalSupplyKeyBudget.lean": "f9e60e415cbbe062f02eb924f45eaf6e1c05c4d662ec2f7bf34580d29dd2797d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "source_tree_sha256": "dddced913a14970711003502e9585215deb4a6120eb2a7acebebbc4fff557022",
+  "source_tree_manifest": "H50-new-chronological-supply-free-key-potential-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "50bfd12be0dc0ca43519c4824944e75e990d76d0900d665651456f7ba1cd23b3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4150333750003483,
+  "cpu_seconds": 0.28674099999999997,
+  "finished_jst": "2026-11-09T07:27:21.576498+09:00"
+}

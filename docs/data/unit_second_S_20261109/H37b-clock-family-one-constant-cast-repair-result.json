@@ -1,0 +1,31 @@
+{
+  "tag": "H37b-clock-family-one-constant-cast-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SlowPrimitiveClockPair.olean",
+    "Recaman/SlowPrimitiveClockPair.lean"
+  ],
+  "started_jst": "2026-11-09T06:53:11.705432+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SlowPrimitiveClockPair.lean": "42720e8f664045ac76123d17aaab423c5db28bb4c017d35211f6c50e93897f5d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3111b6813ac8c8830292ec3082fbd4807fca4d7a",
+  "tracked_diff_sha256": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "source_tree_sha256": "8123cd24995f65b456d9ac5309c2a3a5a1478c2d246ffe23982ffad837ec6e79",
+  "source_tree_manifest": "H37b-clock-family-one-constant-cast-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "00208fba127fb2692d35477903e8edb945fae91a6eb5bbe7fb8d0950d711adb5",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4078471669999999,
+  "cpu_seconds": 0.286261,
+  "finished_jst": "2026-11-09T06:53:12.113200+09:00"
+}
