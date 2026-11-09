@@ -1,0 +1,13 @@
+# 06:30 別pass意味監査
+
+E619/620/621/622/623/624/625/626の逐語署名を現sourceと照合した。14新moduleすべての現SHAに-j1 -M512成功receiptがある。凍結25sourceのファイル名SHAとbytesが一致。H20は917jobs/3755宣言、許容公理はpropext/Classical.choice/Quot.soundのみ。H18はfrontierの範囲表記で個別IDが不足、H18Rは証明escape検査と衝突したコメント語で停止。コメントだけを直しH19で現bytes再検証、元のfrozen bytesは.txt archiveで保持。検査script・保護claimは変更なし。
+
+E619は固定f、元基点0のEndN、明示のold BlockWordとrelative strict positivity、同じsegのprimitive key/mass二条件を保持する。futureのactual実現を前提から省いても成立する強い形。source存在や標準軌道を導く定理ではない。r3既存上界に依存するが、全体のr3検査を再実行して新証拠と数えない。128語は内部導出した11符号の先頭Sと末尾ASSに限る。old/futureや間隔以外のhistoryは無制限。
+
+E620のrはfreeの上限。比較する全prefixで同一のrと同一fを保つ。Eの述語はAに含まれ、A=E+freeの分割がある。SAAAではS1,E1,A3,r2、weak E<=Sを満たすがslack=-4になるのでstrict+1が本質。E616のJ/Z恒等式はこの監査では証明していない。
+
+E623の奇偶等号はF3とF4でそれぞれ存在。各固定Fに対するsharpnessではない。F0は既存E618の非負keyを消費。旧供給なしだけでfreeにせず、localSupply=falseとA endpointも必要。BlockWordを外すと旧Sを持つAAAの第三Aに局所prefix外から供給がある。E624は元区間の各indexをList.rangeで一回だけ課金。certified countは下限で、未認証の位置を実供給と決めない。
+
+E625の第5 Aの時点で基点や旧履歴を再設定していない。hsl<=8は矛盾を導く内部分岐。64/128語の各条件は実rank count、初期S、第三Aの局所供給制約から内部供給。E626のi2/j3上限はE622が同じ元条件で達成する。A7の必要候補の実現性は未確認。逆時計や一般C1はこのstatementの外。人間レビュー未。
+
+E622のprefix_supply_exactは私有有限証明書のtransportなのでwrapper判定yesへ訂正。sharp例本体は元countとpositivityを証明するsubstantive theorem。閉じたliteral境界例のbinder欄はno variable binderへ訂正した。G5が明示yes/noを要求するため記述を整え、registry gate再検査でPASS。

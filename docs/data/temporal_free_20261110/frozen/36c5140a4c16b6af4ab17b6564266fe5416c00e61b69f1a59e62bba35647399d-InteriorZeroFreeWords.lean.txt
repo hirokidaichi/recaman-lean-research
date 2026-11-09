@@ -1,0 +1,93 @@
+import Recaman.RunSupplyBudget
+
+namespace Recaman.InteriorZeroFreeWords
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.BlockOldRay
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction Recaman.TwoRunSupply
+
+private abbrev A (n : Nat) := List.replicate n true
+private abbrev S (n : Nat) := List.replicate n false
+
+private def chunk (F : Nat) : List Bool :=
+  (((A (F+2)++S (F+3))++A 1)++S (F+1))++A F
+
+private theorem chunk_profile (F : Nat) : mass (chunk F)= -1 ∧ runKey (chunk F)=4*((F : Int)+1) := by
+  have hA (n : Nat) : runKey (A n)=0 := by
+    have h:=runKey_append_A [] n
+    rw [List.nil_append] at h
+    exact h.trans (by decide)
+  constructor
+  · simp only [chunk,mass_append,mass_replicate_A,mass_rep_false,Int.natCast_add,
+      Int.natCast_one,Int.natCast_ofNat]
+    omega
+  · rw [chunk,runKey_append_A,runKey_append_S,runKey_append_A,runKey_append_S,hA]
+    simp only [mass_append,mass_replicate_A,mass_rep_false,Int.natCast_add,
+      Int.natCast_one,Int.natCast_ofNat]
+    grind only
+
+/-- The suffix of index k supports the kth addition after a single S. -/
+def oldWord : Nat → List Bool
+  | 0 => S 2++A 4
+  | k+1 => chunk (cntF (oldWord k))++oldWord k
+
+theorem old_word_profile (k : Nat) :
+    0<(oldWord k).length ∧ mass (oldWord k)=2-(k : Int) ∧
+      runKey (oldWord k)= -4*(2-(k : Int)) := by
+  induction k with
+  | zero => decide
+  | succ k ih =>
+    obtain ⟨hl,hm,hk⟩:=ih
+    have h:=chunk_profile (cntF (oldWord k))
+    simp only [oldWord,List.length_append,mass_append,runKey_append,h.1,h.2,hm,hk,
+      Int.natCast_succ]
+    omega
+
+theorem old_word_suffix (j k : Nat) (hj : j≤k) : ∃ v, oldWord k=v++oldWord j := by
+  induction k with
+  | zero =>
+    subst j
+    exact ⟨[],rfl⟩
+  | succ k ih =>
+    by_cases h : j=k+1
+    · subst j
+      exact ⟨[],rfl⟩
+    · obtain ⟨v,hv⟩:=ih (by omega)
+      refine ⟨chunk (cntF (oldWord k))++v,?_⟩
+      rw [oldWord,List.append_assoc]
+      exact congrArg (chunk (cntF (oldWord k))++·) hv
+
+theorem charged_prefix_supply (k : Nat) :
+    mass ((oldWord k++S 1)++A k)=1 ∧
+      runKey ((oldWord k++S 1)++A k)= -2 := by
+  obtain ⟨_,hm,hk⟩:=old_word_profile k
+  rw [runKey_append_A,runKey_append_S,hk,hm,mass_append,mass_append,hm,
+    mass_rep_false,mass_replicate_A]
+  simp only [Int.natCast_one]
+  omega
+
+/-- An interior word with forward difference d. No old grammar is assumed. -/
+def interiorWord (d : Nat) : List Bool :=
+  (S 1++A (d+2))++S (2*d+1)
+
+theorem interior_pair_profile (d : Nat) :
+    (interiorWord d).length=3*d+4 ∧ mass (interiorWord d)= -(d : Int) ∧
+      runKey (interiorWord d)=4*(d : Int) ∧
+      mass (interiorWord d++[false])+((d+2 : Nat) : Int)=1 ∧
+      runKey (interiorWord d++[false])= -2 := by
+  have hmass : mass (interiorWord d)= -(d : Int) := by
+    simp only [interiorWord,mass_append,mass_rep_false,mass_replicate_A,
+      Int.natCast_add,Int.natCast_mul,Int.natCast_one,Int.natCast_ofNat]
+    omega
+  have hkey : runKey (interiorWord d)=4*(d : Int) := by
+    rw [interiorWord,runKey_append_S,runKey_append_A,runKey_S,mass_append,
+      mass_rep_false,mass_replicate_A]
+    simp only [Int.natCast_add,Int.natCast_mul,Int.natCast_one,Int.natCast_ofNat]
+    grind only
+  refine ⟨by simp [interiorWord]; omega,hmass,hkey,?_,?_⟩
+  · rw [mass_append,hmass,show mass [false]= -1 by decide]
+    omega
+  · change runKey (interiorWord d++S 1)= -2
+    rw [runKey_append_S,hkey,hmass]
+    omega
+
+end Recaman.InteriorZeroFreeWords

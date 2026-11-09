@@ -1,0 +1,30 @@
+Recaman/InteriorClockGapFamily.lean:50:4: error: Tactic `assumption` failed
+
+d : Nat
+w : List Bool := oldWord (d + 1)
+p : List Bool := interiorWord d
+u : List Bool := [false]
+raw : List Bool := w ++ p ++ u
+h : Nat := raw.length + d + 3
+f : Nat → Bool := trimSSequence (finiteSign raw) 0 h
+n : Nat := h + w.length
+K : Nat := p.length
+B : Nat := h + raw.length
+pad : List Bool := List.replicate h false
+v : List Bool := pad ++ w
+hB : B = n + K + 1
+hn : v.length = n
+hbase : seg f 0 B = pad ++ raw
+hWord : seg f 0 B = v ++ (p ++ u)
+ht : v = seg f 0 n
+⊢ seg f 0 n = v
+Recaman/InteriorClockGapFamily.lean:70:4: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Recaman/InteriorClockGapFamily.lean:81:2: error: (deterministic) timeout at `«tactic execution»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

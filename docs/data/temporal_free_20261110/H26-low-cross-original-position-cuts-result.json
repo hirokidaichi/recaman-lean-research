@@ -1,0 +1,31 @@
+{
+  "tag": "H26-low-cross-original-position-cuts",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossSegmentCuts.olean",
+    "Recaman/LowCrossSegmentCuts.lean"
+  ],
+  "started_jst": "2026-11-10T06:40:26.344163+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossSegmentCuts.lean": "51e6d4481e68821880e17c25dbcbb9e83cd1a4ae09c1b013ed9e0f17cfae0b00"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "source_tree_sha256": "fd44a5213fee0ca9a79b201a9c14d7bad45a392560bdeb8d96affb75d91617f9",
+  "source_tree_manifest": "H26-low-cross-original-position-cuts-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6825267499953043,
+  "cpu_seconds": 0.526218,
+  "finished_jst": "2026-11-10T06:40:27.026636+09:00"
+}

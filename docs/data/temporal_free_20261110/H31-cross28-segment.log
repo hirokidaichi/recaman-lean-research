@@ -1,0 +1,104 @@
+Recaman/LowCrossSegmentCuts.lean:34:70: error: Application type mismatch: The argument
+  Eq.symm (Option.some.inj h2)
+has type
+  f (t - 3 + 2) = (fun i => f (t - 3 + i)) 2
+but is expected to have type
+  f (t - 1) = true
+in the application
+  ⟨Eq.symm (Option.some.inj h1), Eq.symm (Option.some.inj h2)⟩
+Recaman/LowCrossSegmentCuts.lean:35:2: error: No goals to be solved
+Recaman/LowCrossSegmentCuts.lean:135:25: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d ≤ 3
+  0 ≤ c ≤ 6
+  b ≥ 0
+  b ≥ 10
+  a ≥ 0
+  a ≥ -9
+where
+ a := ↑n
+ b := ↑K
+ c := ↑(cntF z)
+ d := ↑(additions f n (t - n))
+Recaman/LowCrossSegmentCuts.lean:156:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  k ≥ 0
+  j ≥ 0
+  i ≥ 0
+  i + j ≥ 0
+  i + j - k ≤ -1
+  g ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e + g ≥ 1
+  c ≥ 0
+  c - d ≥ 0
+  c - e ≤ -1
+where
+ c := ↑a
+ d := ↑n
+ e := ↑b
+ g := ↑K
+ i := ↑(cntF y)
+ j := ↑(subtractions f n (a - n))
+ k := ↑(subtractions f n (b - n))
+Recaman/LowCrossSegmentCuts.lean:160:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  m ≥ 0
+  l ≥ 0
+  k ≥ 0
+  k + l ≥ 0
+  j ≥ 0
+  i ≥ 0
+  i - j ≥ 0
+  i + l - m ≤ -1
+  g ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e + g ≥ 1
+  c ≥ 0
+  c - d ≥ 0
+  c - e ≤ -1
+where
+ c := ↑a
+ d := ↑n
+ e := ↑b
+ g := ↑K
+ i := ↑(subtractions f n (b - n))
+ j := ↑(subtractions f n (a - n))
+ k := ↑(cN (fun x => f x = false) n (b - n))
+ l := ↑(cntF z)
+ m := ↑(subtractions f n K)
+Recaman/LowCrossSegmentCuts.lean:166:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 0
+  m ≥ 0
+  l ≥ 0
+  l + m + o - p + q ≤ -1
+  k ≥ 0
+  j ≥ 0
+  i ≥ 0
+  i - j ≤ 0
+  h ≥ 0
+  h + i - j ≤ 0
+  g ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e + g ≥ 1
+  c ≥ 0
+  c - d ≥ 0
+  c - e ≤ -1
+where
+ c := ↑a
+ d := ↑n
+ e := ↑b
+ g := ↑K
+ h := ↑(subtractions f n (a - n))
+ i := ↑(cntF z)
+ j := ↑(subtractions f n K)
+ k := ↑(additions f n (a - n))
+ l := cross x
+ m := cross y
+ o := cross z
+ p := 4 * (↑(additions f n (b - n)) + 1) * ↑(cntF z)
+ q := 4 * (↑(cN (fun u => f u = true) n (b - n)) + 1) * ↑(cntF z)

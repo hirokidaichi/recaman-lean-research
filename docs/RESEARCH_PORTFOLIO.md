@@ -580,3 +580,11 @@ E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新so
 ## 2026-11-09 追加: source時計と時間順会計
 
 E614/E615 PROVED-LEANは全mixed primitive pairのA平方と、元BlockWord境界/relativepositive/free<=3でのi<=12/j<=17のsource半径。clockの両順序と非空actual controlを保持し、既存r3 coverageを再計上しない。E617 PROVED-LEANはforward pairの元actual free>=2、E618 PROVED-LEANは非負key futureの全old源排除とSAAS次Aのactual free。E616時間順J/Z恒等式とE619 forward free>=3はPROVED-PAPERで、時間順producerのkernel接続未、人間レビュー未。H43/H49/H50は一修理後STOPPED、packet隔離。未受理moduleをsplitして採用せず、未証明Prop adapterを作らない。次はH-20261110-01。全runの必要条件と限定域freegapであり、C1/一般rank/全射性は未解決。
+
+## 2026-11-10 元source時計と重複課金の停止判断
+
+H02一般順位の元count接続、H03の全energy候補、H23の低cross列挙、H31の二端点接着、H39の全d absolute actual glue、H53/H54のQ36長局所、H69の初回A断片mod3強化はSTOPPED。H23の固定リスト順序は実際に不一致。H39RとH54Rは各一修理後も未受理。採用済みsourceは各成功receiptに対応し、失敗bytesはpacketの.txt。資源/tactic/split/import変更だけでは再開しない。
+
+E629逆順はF9まで、Q36のE636は同元旧<=1だけ。Q36長局所には独立したactual source pruningと測定改善が必要。E632の全d word/free0はLean、E631固定例以外の全d absolute正性・両元EndNの接着は紙上。E640の局所clock≡1はLean、初回A断片mod3強化は紙上のまま。
+
+E641が全A3族の第一A交互を、E642が短三Aとrecord二Aの非重複をREFUTED。いずれもC1反例ではない。E643の補正を先に扱い、元短/recordの個別課金を単純に加えない。旧r4同表二回0/0等はそのまま保持し、日付で再開しない。

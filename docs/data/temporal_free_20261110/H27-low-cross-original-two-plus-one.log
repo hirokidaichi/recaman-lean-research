@@ -1,0 +1,14 @@
+Recaman/LowCrossSupplyCount.lean:14:14: error: unsolved goals
+case succ
+P : Nat → Prop
+n K : Nat
+ih : cN P n K = cN (fun i => P (n + i)) 0 K
+⊢ (cN (fun i => P (n + i)) 0 K + if P (n + K) then 1 else 0) =
+    cN (fun i => P (n + i)) 0 K + if P (n + (0 + K)) then 1 else 0
+Recaman/LowCrossSupplyCount.lean:26:13: warning: Possibly looping simp theorem: `shift_count`
+
+Hint: You can disable a simp theorem from the default simp set by passing `- theoremName` to `simp`.
+Recaman/LowCrossSupplyCount.lean:26:2: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

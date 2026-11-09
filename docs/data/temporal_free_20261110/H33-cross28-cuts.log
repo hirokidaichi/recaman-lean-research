@@ -1,0 +1,40 @@
+Recaman/Cross28SourceCuts.lean:98:5: error: unknown tactic
+Recaman/Cross28SourceCuts.lean:97:28: error: unsolved goals
+f : Nat → Bool
+n K a b : Nat
+hna : n ≤ a
+hb : b < n + K
+hb3 : n + 3 ≤ b
+haa : f a = true
+hab : f b = true
+hA : additions f n K ≤ 7
+hAa : additions f n (a - n) = 4
+hSa : subtractions f n (a - n) = 5
+hSb : subtractions f n (b - n) = 6
+hb2 : f (b - 2) = true
+hb1 : f (b - 1) = true
+c : Nat := b - 2 - n
+hs2 : subtractions f n (c + 1) = subtractions f n c
+hs1 : subtractions f n (b - n) = subtractions f n (c + 1)
+hc2 : c + 2 = b - n
+⊢ a - n + 1 ≤ c
+Recaman/Cross28SourceCuts.lean:85:57: error: unsolved goals
+f : Nat → Bool
+n K a b : Nat
+hna : n ≤ a
+hb : b < n + K
+hb3 : n + 3 ≤ b
+haa : f a = true
+hab : f b = true
+hA : additions f n K ≤ 7
+hAa : additions f n (a - n) = 4
+hSa : subtractions f n (a - n) = 5
+hSb : subtractions f n (b - n) = 6
+hb2 : f (b - 2) = true
+hb1 : f (b - 1) = true
+c : Nat := b - 2 - n
+hs2 : subtractions f n (c + 1) = subtractions f n c
+hs1 : subtractions f n (b - n) = subtractions f n (c + 1)
+hc2 : c + 2 = b - n
+hbefore : a - n + 1 ≤ c
+⊢ False

@@ -1,0 +1,18 @@
+{
+  "tag": "H18R-frontier-explicit-ids",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-10T06:28:49.582677+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "38a5f90fa92a9a73fb54a69ffda5e34095c7bfe4fd6c70674f11148b1a26e536"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "ed0c0877c856425029997d0544ff35a09cb85bb0292c74966938617b5aed439b",
+  "source_tree_sha256": "41792a16b5acb7932ce53a4c8c5be12aa24e940589ab1662c07ceaf1129e2cef",
+  "source_tree_manifest": "H18R-frontier-explicit-ids-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

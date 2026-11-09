@@ -1,0 +1,25 @@
+{
+  "tag": "H01R-rank-slack-reflexivity",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/AdditionRankSlack.olean",
+    "Recaman/AdditionRankSlack.lean"
+  ],
+  "started_jst": "2026-11-10T06:03:21.201619+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/AdditionRankSlack.lean": "c3a1de61dd4b6d4b8588488f63dcce0eb7c814058a423c10ec9b450f30a5f75c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "edcaece8ea386fa9bf43dae8d2e51e22aef33aa58dd6c26b0966b54bb364f868",
+  "source_tree_sha256": "cd53dcef549f41f5b1d15b734a0b9531f37dfc2436064fb064f3969c6a343b9f",
+  "source_tree_manifest": "H01R-rank-slack-reflexivity-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

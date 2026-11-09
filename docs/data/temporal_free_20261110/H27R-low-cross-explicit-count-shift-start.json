@@ -1,0 +1,25 @@
+{
+  "tag": "H27R-low-cross-explicit-count-shift",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossSupplyCount.olean",
+    "Recaman/LowCrossSupplyCount.lean"
+  ],
+  "started_jst": "2026-11-10T06:42:05.364031+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossSupplyCount.lean": "f5934413a80773af93000c51ada78ef801a2b274ed33e985d7308bc69db02465"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "source_tree_sha256": "eeab1bb4d708e57e3f39a6962ffdcf2453c340f574621133b7456e9bf6695ae8",
+  "source_tree_manifest": "H27R-low-cross-explicit-count-shift-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

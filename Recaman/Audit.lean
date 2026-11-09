@@ -1,3 +1,45 @@
+import Recaman.TripleRunConsecutiveFirstControl
+import Recaman.TripleRunLocalClockCut
+import Recaman.TripleRunClockResidue
+import Recaman.DeficitRecordControl
+import Recaman.DeficitRecordPredecessor
+import Recaman.DeficitRecordSourceCharge
+import Recaman.OtherSupplyHeightBudget
+import Recaman.OriginalWinHighSubtraction
+import Recaman.ShortSupplyGapBudget
+import Recaman.Cross36OldSourceCut
+import Recaman.SameClockBoundaryControl
+import Recaman.RankTwoBoundaryRay
+import Recaman.RankTwoEqualClock
+import Recaman.FourAdditionsJointSupply
+import Recaman.RankTwoDistinctClocks
+import Recaman.SmallReverseSupplyCount
+import Recaman.ShortSourceTriples
+import Recaman.SourceDeficitBand
+import Recaman.InteriorZeroFreeControl
+import Recaman.InteriorZeroFreeActual
+import Recaman.InteriorZeroFreeWords
+import Recaman.Cross28SupplyCount
+import Recaman.Cross28SourceCuts
+import Recaman.RankThreeReverseClock
+import Recaman.LowCrossSupplyCount
+import Recaman.LowCrossOldClocks
+import Recaman.LowCrossLocalClocks
+import Recaman.OldMassEndpointGate
+import Recaman.RankThreeForwardClock
+import Recaman.RankThreeEarlyFree
+import Recaman.FifthAdditionPrefixShape
+import Recaman.RankThreeFifthWindow
+import Recaman.InitialRankBonus
+import Recaman.EarlySubtractionFloor
+import Recaman.ThresholdPrefixFreeCount
+import Recaman.OldSourceNegativeThreshold
+import Recaman.ForwardFreeThreeControl
+import Recaman.ForwardSourceFreeTwoFactor
+import Recaman.AdditionRankSlack
+import Recaman.ForwardSourceActualFreeThree
+import Recaman.ElevenSignRankPrefix
+import Recaman.FreeTwoTightTail
 import Recaman.UnitOneInitialSource
 import Recaman.UnitOneLastFive
 import Recaman.UnitOneLastFiveBase
@@ -3949,3 +3991,150 @@ import Recaman
 #print axioms Recaman.NonnegativeFutureOldSource.SAAS_next_actual_free
 
 #print axioms Recaman.NonnegativeFutureOldSource.SAAS_clock_two_local_control
+
+#print axioms Recaman.FreeTwoTightTail.tight_free_two_tail
+
+#print axioms Recaman.ElevenSignRankPrefix.eleven_rank_prefix
+
+#print axioms Recaman.ForwardSourceActualFreeThree.forward_pair_needs_three_actual_free
+
+#print axioms Recaman.AdditionRankSlack.rankSlack_mono
+
+#print axioms Recaman.AdditionRankSlack.rank_floor_of_tight
+
+#print axioms Recaman.ForwardSourceFreeTwoFactor.key_mass_rank_two
+
+#print axioms Recaman.ForwardSourceFreeTwoFactor.free_two_unit_factor_band
+
+#print axioms Recaman.ForwardFreeThreeControl.prefix_supply_exact
+
+#print axioms Recaman.ForwardFreeThreeControl.forward_three_free_example
+
+#print axioms Recaman.OldSourceNegativeThreshold.old_source_key_threshold
+
+#print axioms Recaman.OldSourceNegativeThreshold.actual_free_above_old_threshold
+
+#print axioms Recaman.OldSourceNegativeThreshold.odd_threshold_example
+
+#print axioms Recaman.OldSourceNegativeThreshold.even_threshold_example
+
+#print axioms Recaman.ThresholdPrefixFreeCount.certified_prefix_free_count
+
+#print axioms Recaman.ThresholdPrefixFreeCount.four_free_short_prefixes
+
+#print axioms Recaman.EarlySubtractionFloor.two_subtractions_of_three_additions
+
+#print axioms Recaman.InitialRankBonus.initial_two_subtraction_bonus
+
+#print axioms Recaman.RankThreeFifthWindow.fifth_window_at_small_slack
+
+#print axioms Recaman.FifthAdditionPrefixShape.eight_fifth_prefix
+
+#print axioms Recaman.FifthAdditionPrefixShape.nine_fifth_prefix
+
+#print axioms Recaman.RankThreeEarlyFree.rank_three_slack_at_five
+
+#print axioms Recaman.RankThreeForwardClock.rank_three_key_mass
+
+#print axioms Recaman.RankThreeForwardClock.rank_three_forward_clock_band
+
+#print axioms Recaman.OldMassEndpointGate.old_source_passes_mass_gate
+
+#print axioms Recaman.OldMassEndpointGate.mass_gate_certified_free_count
+
+#print axioms Recaman.LowCrossLocalClocks.local_source_at_last_two_S
+
+#print axioms Recaman.LowCrossOldClocks.low_cross_old_after_last_S
+
+#print axioms Recaman.LowCrossSupplyCount.low_cross_original_supply_three
+
+#print axioms Recaman.RankThreeReverseClock.rank_three_reverse_clock_band
+
+#print axioms Recaman.LowCrossLocalClocks.cross28_local_source
+
+#print axioms Recaman.LowCrossOldClocks.cross28_old_cut
+
+#print axioms Recaman.Cross28SourceCuts.local_cut
+
+#print axioms Recaman.Cross28SourceCuts.old_cut
+
+#print axioms Recaman.Cross28SupplyCount.cross28_original_supply_three
+
+#print axioms Recaman.InteriorZeroFreeWords.old_word_profile
+
+#print axioms Recaman.InteriorZeroFreeWords.old_word_suffix
+
+#print axioms Recaman.InteriorZeroFreeWords.interior_pair_profile
+
+#print axioms Recaman.InteriorZeroFreeActual.interior_free_zero
+
+#print axioms Recaman.InteriorZeroFreeControl.zero_free_forward_control
+
+#print axioms Recaman.SourceDeficitBand.two_clock_deficit_charge
+
+#print axioms Recaman.SourceDeficitBand.actual_supply_in_deficit_band
+
+#print axioms Recaman.LowCrossLocalClocks.local_source_small_A
+
+#print axioms Recaman.LowCrossOldClocks.old_source_small_S
+
+#print axioms Recaman.ShortSourceTriples.two_short_endpoints_six_additions
+
+#print axioms Recaman.SmallReverseSupplyCount.small_reverse_supply_bounds
+
+#print axioms Recaman.RankTwoDistinctClocks.reverse_pair_needs_three_actual_free
+
+#print axioms Recaman.RankTwoDistinctClocks.distinct_pair_needs_three_actual_free
+
+#print axioms Recaman.FourAdditionsJointSupply.original_four_additions_supply_one
+
+#print axioms Recaman.RankTwoEqualClock.equal_clock_two_free_shape
+
+#print axioms Recaman.RankTwoBoundaryRay.boundary_ray_source_shape
+
+#print axioms Recaman.RankTwoBoundaryRay.boundary_ray_local_supply_one
+
+#print axioms Recaman.SameClockBoundaryControl.same_clock_two_sources_actual
+
+#print axioms Recaman.Cross36OldSourceCut.old_cross36_cut
+
+#print axioms Recaman.Cross36OldSourceCut.cross36_original_old_count
+
+#print axioms Recaman.ShortSourceTriples.short_endpoint_supplied
+
+#print axioms Recaman.ShortSourceTriples.short_endpoints_triple_budget
+
+#print axioms Recaman.ShortSupplyGapBudget.original_short_supply_charge
+
+#print axioms Recaman.ShortSupplyGapBudget.original_gap_other_supply_budget
+
+#print axioms Recaman.ShortSupplyGapBudget.counter_needs_other_supplies
+
+#print axioms Recaman.ShortSupplyGapBudget.at_most_one_other_supply_free_gap
+
+#print axioms Recaman.OriginalWinHighSubtraction.original_win_short_or_high_S
+
+#print axioms Recaman.OtherSupplyHeightBudget.other_supply_has_old_or_high_source
+
+#print axioms Recaman.OtherSupplyHeightBudget.counter_old_or_high_budget
+
+#print axioms Recaman.DeficitRecordSourceCharge.record_witness_after_earlier
+
+#print axioms Recaman.DeficitRecordSourceCharge.original_record_high_subtraction_count
+
+#print axioms Recaman.DeficitRecordSourceCharge.record_high_witness_exact
+
+#print axioms Recaman.DeficitRecordPredecessor.local_record_supplied_predecessor
+
+#print axioms Recaman.DeficitRecordPredecessor.local_records_pair_into_original_supplies
+
+#print axioms Recaman.DeficitRecordControl.actual_nonshort_record_control
+
+#print axioms Recaman.TripleRunClockResidue.triple_run_residue_one_excluded
+
+#print axioms Recaman.TripleRunLocalClockCut.triple_local_residue_one_excluded
+
+#print axioms Recaman.TripleRunLocalClockCut.actual_triple_run_residue_only_old
+
+#print axioms Recaman.TripleRunConsecutiveFirstControl.consecutive_first_A_local_control
+#print axioms Recaman.DeficitRecordControl.record_pair_overlaps_short_triple

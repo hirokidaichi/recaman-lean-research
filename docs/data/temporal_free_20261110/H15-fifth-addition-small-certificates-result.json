@@ -1,0 +1,31 @@
+{
+  "tag": "H15-fifth-addition-small-certificates",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FifthAdditionPrefixShape.olean",
+    "Recaman/FifthAdditionPrefixShape.lean"
+  ],
+  "started_jst": "2026-11-10T06:23:34.236888+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FifthAdditionPrefixShape.lean": "0f38e0ffc3aacd8ebd58fb397d2d4e812bfa83d90cebb988039b5ef97c532d7e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "2675523572951ed636108754d5a738db7cf357e48a2e14254cbe5d1e084b0edf",
+  "source_tree_sha256": "6d2476b6266e3942ce387f61f3ed89c4eb1fcd5747b2dd687864d3fb1e5cd804",
+  "source_tree_manifest": "H15-fifth-addition-small-certificates-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "2675523572951ed636108754d5a738db7cf357e48a2e14254cbe5d1e084b0edf",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5792202090087812,
+  "cpu_seconds": 0.433068,
+  "finished_jst": "2026-11-10T06:23:34.816048+09:00"
+}

@@ -1,0 +1,412 @@
+import Recaman.OldMassEndpointGate
+
+namespace Recaman.LowCrossLocalClocks
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.BlockOldRay
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction
+
+def cross (x : List Bool) : Int := runKey x+2*(cntF x : Int)^2
+
+theorem cross_nonnegative (x : List Bool) : 0≤cross x := by
+  have h:=runKey_count_lower x
+  unfold cross
+  omega
+
+theorem cross_append (x y : List Bool) :
+    cross (x++y)=cross x+cross y+4*ones x*(cntF y : Int) := by
+  unfold cross
+  have h:=Recaman.SourceCrossSurplus.cross_append x y
+  omega
+
+theorem cross_at_addition (x z : List Bool) :
+    cross (x++[true]++z)=cross x+cross z+4*(ones x+1)*(cntF z : Int) := by
+  rw [cross_append,cross_append,ones_append]
+  have hc : cross [true]=0 := by decide
+  have hf : cntF [true]=0 := by decide
+  have ha : ones [true]=1 := by decide
+  rw [hc,hf,ha]
+  grind only
+
+theorem cross_zero_of_no_A (x : List Bool) (ha : ones x=0) : cross x=0 := by
+  have hu:=Recaman.PrimitiveClockRadius.cross_upper x
+  change cross x≤4*ones x*(cntF x : Int) at hu
+  rw [ha] at hu
+  have hl:=cross_nonnegative x
+  omega
+
+theorem cross_zero_of_no_S (x : List Bool) (hs : cntF x=0) : cross x=0 := by
+  have hu:=Recaman.PrimitiveClockRadius.cross_upper x
+  change cross x≤4*ones x*(cntF x : Int) at hu
+  rw [hs] at hu
+  have hl:=cross_nonnegative x
+  omega
+
+private theorem small_cross_arith (q qp qz a m s : Int)
+    (hQ : q≤20) (hOdd : q%8=4) (hqp : 0≤qp) (hqz : 0≤qz)
+    (ha : 0≤a) (hs : 0≤s) (hm : 1≤m) (hmod : m%2=1)
+    (h0p : a=0 → qp=0) (h0z : s=0 → qz=0)
+    (he : q=qp+qz+2*m^2-2+4*a*m+4*(a+m+2)*s) : m=1 ∧ s≤1 := by
+  have hm5 : m<5 := by
+    by_cases h : m<5
+    · exact h
+    · have h1:=Int.mul_nonneg (show 0≤m-5 by omega) (show 0≤m+5 by omega)
+      have h2:=Int.mul_nonneg ha (show 0≤m by omega)
+      have h3:=Int.mul_nonneg (show 0≤a+m+2 by omega) hs
+      grind only
+  have hm1 : m=1 := by
+    by_cases h : m=1
+    · exact h
+    · have h3 : m=3 := by omega
+      rw [h3] at he
+      have hs0 : s=0 := by
+        by_cases hs' : s=0
+        · exact hs'
+        · have hn:=Int.mul_nonneg ha (show 0≤s by omega)
+          grind only
+      have hqz0:=h0z hs0
+      rw [hs0,hqz0] at he
+      have ha0 : a=0 := by omega
+      have hqp0:=h0p ha0
+      omega
+  rw [hm1] at he
+  refine ⟨hm1,?_⟩
+  have hn:=Int.mul_nonneg ha hs
+  grind only
+
+private theorem mass_one_one_S (y : List Bool) (hm : mass y=1) (hf : cntF y=1) (hk : runKey y= -2) :
+    y=[false,true,true] := by
+  have hc:=cntF_int y
+  have hm':=mass_eq y
+  have hlen : y.length=3 := by omega
+  cases y with
+  | nil => simp at hlen
+  | cons a y =>
+    cases y with
+    | nil => simp at hlen
+    | cons b y =>
+      cases y with
+      | nil => simp at hlen
+      | cons c y =>
+        have h : y=[] := by
+          apply List.eq_nil_of_length_eq_zero
+          simp only [List.length_cons] at hlen
+          omega
+        subst y
+        cases a <;> cases b <;> cases c <;> simp [cntF,mass,runKey,areaW,Recaman.ShortPeriodicSupply.sign] at hm hf hk ⊢
+
+/-- At small odd cross, a local supply endpoint belongs to one of the
+last two subtraction ranks and its source is exactly SAA. -/
+theorem local_source_at_last_two_S (x z : List Bool)
+    (hq : cross (x++[true]++z)≤20) (ho : cross (x++[true]++z)%8=4)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply x=true) :
+    (∃ v, x=v++[false,true,true]) ∧ cntF z≤1 := by
+  have hloc : Recaman.ThreeNonsuppliedData.localSupply
+      (x++List.replicate 0 true++List.replicate 0 false)=true := by
+    simpa only [List.replicate_zero,List.append_nil] using hl
+  obtain ⟨t,ht,hm,hk⟩:=(localSupply_A_S_iff x 0 0).mp hloc
+  let v:=x.take t
+  let y:=x.drop t
+  have hxy : x=v++y := (List.take_append_drop t x).symm
+  have hm1 : mass y=1 := by simpa [y] using hm
+  have hk1 : runKey y= -2 := hk
+  have hodd:=Recaman.MixedASQuarterBudget.source_subtraction_odd y hk1
+  have hc:=cntF_int y
+  have hy:=mass_eq y
+  have hyA : ones y=(cntF y : Int)+1 := by omega
+  have hQy : cross y=2*(cntF y : Int)^2-2 := by unfold cross; rw [hk1]; omega
+  have hQ:=cross_at_addition x z
+  rw [hxy,cross_append v y,hQy,ones_append v y,hyA] at hQ
+  have hEq : cross (x++[true]++z)=cross v+cross z+2*(cntF y : Int)^2-2+
+      4*ones v*(cntF y : Int)+4*(ones v+(cntF y : Int)+2)*(cntF z : Int) := by
+    rw [hxy]
+    grind only
+  obtain ⟨h1,h2⟩:=small_cross_arith (cross (x++[true]++z)) (cross v) (cross z)
+    (ones v) (cntF y : Int) (cntF z : Int) hq ho (cross_nonnegative v) (cross_nonnegative z)
+    (ones_bounds v).1 (by omega) (by omega) hodd (cross_zero_of_no_A v)
+    (fun hs=>cross_zero_of_no_S z (by omega)) hEq
+  have hyword:=mass_one_one_S y hm1 (by omega) hk1
+  exact ⟨⟨v,hxy.trans (congrArg (v++·) hyword)⟩,by omega⟩
+
+private theorem cross28_local_arith (qp qz a m s : Int)
+    (hqp : 0≤qp) (hqz : 0≤qz) (ha : 0≤a) (hs : 0≤s) (hm : 1≤m) (hmod : m%2=1)
+    (h0p : a=0 → qp=0) (h0z : s=0 → qz=0)
+    (he : 28=qp+qz+2*m^2-2+4*a*m+4*(a+m+2)*s) :
+    (m=1 ∧ s≤2 ∧ (s=2 → a=0)) ∨ (m=3 ∧ s=0 ∧ a=1) := by
+  have h5 : m<5 := by
+    by_cases h : m<5
+    · exact h
+    · have h1:=Int.mul_nonneg (show 0≤m-5 by omega) (show 0≤m+5 by omega)
+      have h2:=Int.mul_nonneg ha (show 0≤m by omega)
+      have h3:=Int.mul_nonneg (show 0≤a+m+2 by omega) hs
+      grind only
+  have hCases : m=1 ∨ m=3 := by omega
+  rcases hCases with h1|h3
+  · rw [h1] at he
+    have hn:=Int.mul_nonneg ha hs
+    left
+    refine ⟨h1,by grind only,?_⟩
+    intro h2
+    rw [h2] at he
+    omega
+  · rw [h3] at he
+    have hn:=Int.mul_nonneg ha hs
+    have hs0 : s=0 := by grind only
+    rw [hs0,h0z hs0] at he
+    have ha0 : a≠0 := by
+      intro h
+      rw [h,h0p h] at he
+      omega
+    exact Or.inr ⟨h3,hs0,by omega⟩
+
+private theorem four_signs_one_A_cross_zero (v : List Bool) (hlen : v.length=4)
+    (ha : ones v=1) (hQ : cross v=0) : v=[false,false,false,true] := by
+  cases v with
+  | nil => simp at hlen
+  | cons a v =>
+    cases v with
+    | nil => simp at hlen
+    | cons b v =>
+      cases v with
+      | nil => simp at hlen
+      | cons c v =>
+        cases v with
+        | nil => simp at hlen
+        | cons d v =>
+          have hv : v=[] := by
+            apply List.eq_nil_of_length_eq_zero
+            simp only [List.length_cons] at hlen
+            omega
+          subst v
+          cases a <;> cases b <;> cases c <;> cases d <;>
+            simp [ones,cross,cntF,runKey,areaW,Recaman.ShortPeriodicSupply.sign] at ha hQ ⊢
+
+/-- Seven AS pairs leave either an SAA source or a unique long-source
+endpoint eleven signs from the start. -/
+theorem cross28_local_source (x z : List Bool)
+    (hQ : cross (x++[true]++z)=28) (hS : cntF x+cntF z=6)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply x=true) :
+    ((∃ v, x=v++[false,true,true]) ∧ cntF z≤2 ∧ (cntF z=2 → ones x=2)) ∨
+      (x.length=11 ∧ x[3]?=some true) := by
+  have hloc : Recaman.ThreeNonsuppliedData.localSupply
+      (x++List.replicate 0 true++List.replicate 0 false)=true := by
+    simpa only [List.replicate_zero,List.append_nil] using hl
+  obtain ⟨t,_,hm,hk⟩:=(localSupply_A_S_iff x 0 0).mp hloc
+  let v:=x.take t
+  let y:=x.drop t
+  have hxy : x=v++y := (List.take_append_drop t x).symm
+  have hm1 : mass y=1 := by simpa [y] using hm
+  have hk1 : runKey y= -2 := hk
+  have hodd:=Recaman.MixedASQuarterBudget.source_subtraction_odd y hk1
+  have hc:=cntF_int y
+  have hy:=mass_eq y
+  have hyA : ones y=(cntF y : Int)+1 := by omega
+  have hQy : cross y=2*(cntF y : Int)^2-2 := by unfold cross; rw [hk1]; omega
+  rw [cross_at_addition,hxy,cross_append v y,hQy,ones_append v y,hyA] at hQ
+  have hEq : 28=cross v+cross z+2*(cntF y : Int)^2-2+
+      4*ones v*(cntF y : Int)+4*(ones v+(cntF y : Int)+2)*(cntF z : Int) := by
+    grind only
+  rcases cross28_local_arith (cross v) (cross z) (ones v) (cntF y : Int) (cntF z : Int)
+    (cross_nonnegative v) (cross_nonnegative z) (ones_bounds v).1 (by omega) (by omega) hodd
+    (cross_zero_of_no_A v) (fun hs=>cross_zero_of_no_S z (by omega)) hEq with h1|h3
+  · obtain ⟨hm1',hs,ha⟩:=h1
+    have hyword:=mass_one_one_S y hm1 (by omega) hk1
+    refine Or.inl ⟨⟨v,hxy.trans (congrArg (v++·) hyword)⟩,by omega,?_⟩
+    intro hs2
+    have hav:=ha (by omega)
+    rw [hxy,ones_append,hav,hyA,hm1']
+    decide
+  · obtain ⟨hm3,hs0,ha⟩:=h3
+    have hcX:=cntF_int x
+    have hA : ones x=5 := by rw [hxy,ones_append,ha,hyA,hm3]; decide
+    have hvS : cntF v=3 := by
+      rw [hxy,cntF_append] at hS
+      omega
+    have hvCount:=cntF_int v
+    have hvLen : v.length=4 := by omega
+    have hvQ : cross v=0 := by
+      rw [hm3,hs0,ha,cross_zero_of_no_S z (by omega)] at hEq
+      omega
+    have hvWord:=four_signs_one_A_cross_zero v hvLen ha hvQ
+    exact Or.inr ⟨by omega,by rw [hxy,hvWord]; rfl⟩
+
+/-- With five additions, a long local source spends all five and forces
+cross 16 or at least 36. In the other low bands a local source is SAA. -/
+theorem local_source_small_A (x z : List Bool)
+    (hA : ones (x++[true]++z)≤5)
+    (hQ : cross (x++[true]++z)≤28) (h16 : cross (x++[true]++z)≠16)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply x=true) :
+    ∃ v, x=v++[false,true,true] := by
+  have hloc : Recaman.ThreeNonsuppliedData.localSupply
+      (x++List.replicate 0 true++List.replicate 0 false)=true := by
+    simpa only [List.replicate_zero,List.append_nil] using hl
+  obtain ⟨t,_,hm,hk⟩:=(localSupply_A_S_iff x 0 0).mp hloc
+  let v:=x.take t
+  let y:=x.drop t
+  have hxy : x=v++y := (List.take_append_drop t x).symm
+  have hm1 : mass y=1 := by simpa [y] using hm
+  have hk1 : runKey y= -2 := hk
+  have hodd:=Recaman.MixedASQuarterBudget.source_subtraction_odd y hk1
+  have hc:=cntF_int y
+  have hy:=mass_eq y
+  have hyA : ones y=(cntF y : Int)+1 := by omega
+  have hv0:=(ones_bounds v).1
+  have hz0:=(ones_bounds z).1
+  rw [ones_append,ones_append,show ones [true]=1 by decide,hxy,ones_append,hyA] at hA
+  have hm' : cntF y=1 := by
+    by_cases h : cntF y=1
+    · exact h
+    · have h3 : (cntF y : Int)=3 := by omega
+      have hAv : ones v=0 := by omega
+      have hAz : ones z=0 := by omega
+      have hQy : cross y=16 := by unfold cross; rw [hk1,h3]; decide
+      have hQeq : cross (x++[true]++z)=16+20*(cntF z : Int) := by
+        rw [cross_at_addition,hxy,cross_append v y,ones_append,hyA,h3,hQy,hAv,
+          cross_zero_of_no_A v hAv,cross_zero_of_no_A z hAz]
+        omega
+      omega
+  have hyword:=mass_one_one_S y hm1 hm' hk1
+  exact ⟨v,hxy.trans (congrArg (v++·) hyword)⟩
+
+theorem three_A_short_source_cross (v z : List Bool)
+    (hA : ones ((v++[false,true,true])++[true]++z)≤3) :
+    cross ((v++[false,true,true])++[true]++z)=12*(cntF z : Int) := by
+  have hv:=(ones_bounds v).1
+  have hz:=(ones_bounds z).1
+  rw [ones_append,ones_append,ones_append,show ones [false,true,true]=2 by decide,
+    show ones [true]=1 by decide] at hA
+  have hv0 : ones v=0 := by omega
+  have hz0 : ones z=0 := by omega
+  rw [cross_at_addition,cross_append v [false,true,true],ones_append,hv0,
+    cross_zero_of_no_A v hv0,cross_zero_of_no_A z hz0,
+    show ones [false,true,true]=2 by decide,show cross [false,true,true]=0 by decide]
+  omega
+
+/-- Any local source with at most three earlier additions is SAA,
+independently of the number of earlier subtractions. -/
+theorem local_source_three_prior_A (x : List Bool) (hA : ones x≤3)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply x=true) :
+    ∃ v, x=v++[false,true,true] := by
+  have hloc : Recaman.ThreeNonsuppliedData.localSupply
+      (x++List.replicate 0 true++List.replicate 0 false)=true := by
+    simpa only [List.replicate_zero,List.append_nil] using hl
+  obtain ⟨t,_,hm,hk⟩:=(localSupply_A_S_iff x 0 0).mp hloc
+  let v:=x.take t
+  let y:=x.drop t
+  have hxy : x=v++y := (List.take_append_drop t x).symm
+  have hm1 : mass y=1 := by simpa [y] using hm
+  have hk1 : runKey y= -2 := hk
+  have hodd:=Recaman.MixedASQuarterBudget.source_subtraction_odd y hk1
+  have hc:=cntF_int y
+  have hy:=mass_eq y
+  have hyA : ones y=(cntF y : Int)+1 := by omega
+  have hv0:=(ones_bounds v).1
+  rw [hxy,ones_append,hyA] at hA
+  have hy1 : cntF y=1 := by omega
+  exact ⟨v,hxy.trans (congrArg (v++·) (mass_one_one_S y hm1 hy1 hk1))⟩
+
+private theorem four_signs_one_A_cross_eight (v : List Bool) (hlen : v.length=4)
+    (ha : ones v=1) (hQ : cross v=8) : v=[false,true,false,false] := by
+  cases v with
+  | nil => simp at hlen
+  | cons a v =>
+    cases v with
+    | nil => simp at hlen
+    | cons b v =>
+      cases v with
+      | nil => simp at hlen
+      | cons c v =>
+        cases v with
+        | nil => simp at hlen
+        | cons d v =>
+          have hv : v=[] := by
+            apply List.eq_nil_of_length_eq_zero
+            simp only [List.length_cons] at hlen
+            omega
+          subst v
+          cases a <;> cases b <;> cases c <;> cases d <;>
+            simp [ones,cross,cntF,runKey,areaW,Recaman.ShortPeriodicSupply.sign] at ha hQ ⊢
+
+private theorem cross36_long_arith (qp qz a s : Int)
+    (hp : 0≤qp) (hz : 0≤qz) (ha : 0≤a) (hs : 0≤s)
+    (h0p : a=0 → qp=0) (h0z : s=0 → qz=0)
+    (he : 36=qp+qz+16+12*a+4*(a+5)*s) :
+    (a=0 ∧ s=1 ∧ qz=0) ∨ (a=1 ∧ s=0 ∧ qp=8) := by
+  have hn:=Int.mul_nonneg ha hs
+  have hb : a≤1 ∧ s≤1 := by grind only
+  by_cases h : a=0
+  · have hp0:=h0p h
+    by_cases hs0 : s=0
+    · have hz0:=h0z hs0
+      rw [h,hs0] at he
+      omega
+    · have hs1 : s=1 := by omega
+      rw [h,hs1] at he
+      exact Or.inl ⟨h,hs1,by omega⟩
+  · have ha1 : a=1 := by omega
+    rw [ha1] at he
+    have hs0 : s=0 := by omega
+    have hz0:=h0z hs0
+    rw [hs0] at he
+    exact Or.inr ⟨ha1,hs0,by omega⟩
+
+/-- At nine AS pairs and counts A7/S6, the two long local source
+shapes have different second signs. -/
+theorem cross36_local_source (x z : List Bool)
+    (hQ : cross (x++[true]++z)=36) (hS : cntF x+cntF z=6)
+    (hA : ones (x++[true]++z)=7)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply x=true) :
+    (∃ v, x=v++[false,true,true]) ∨
+    (x.length=9 ∧ x[1]?=some false ∧ ones x=4 ∧ z=[false,true,true]) ∨
+    (x.length=11 ∧ x[1]?=some true ∧ cntF x=6) := by
+  have hloc : Recaman.ThreeNonsuppliedData.localSupply
+      (x++List.replicate 0 true++List.replicate 0 false)=true := by
+    simpa only [List.replicate_zero,List.append_nil] using hl
+  obtain ⟨t,_,hm,hk⟩:=(localSupply_A_S_iff x 0 0).mp hloc
+  let v:=x.take t
+  let y:=x.drop t
+  have hxy : x=v++y := (List.take_append_drop t x).symm
+  have hm1 : mass y=1 := by simpa [y] using hm
+  have hk1 : runKey y= -2 := hk
+  have hodd:=Recaman.MixedASQuarterBudget.source_subtraction_odd y hk1
+  have hc:=cntF_int y
+  have hy:=mass_eq y
+  have hyA : ones y=(cntF y : Int)+1 := by omega
+  have hQy : cross y=2*(cntF y : Int)^2-2 := by unfold cross; rw [hk1]; omega
+  have he:=hQ
+  rw [cross_at_addition,hxy,cross_append v y,hQy,ones_append v y,hyA] at he
+  have hSX:=hS
+  rw [hxy,cntF_append] at hS
+  have hAv:=(ones_bounds v).1
+  have hQv:=cross_nonnegative v
+  have hQz:=cross_nonnegative z
+  have hm5 : (cntF y : Int)≠5 := by
+    intro h
+    rw [h] at he
+    have hp:=Int.mul_nonneg (show 0≤ones v+7 by omega) (show 0≤(cntF z : Int) by omega)
+    grind only
+  have hCases : cntF y=1 ∨ (cntF y : Int)=3 := by omega
+  rcases hCases with h1|h3
+  · exact Or.inl ⟨v,hxy.trans (congrArg (v++·) (mass_one_one_S y hm1 h1 hk1))⟩
+  · rw [h3] at he
+    have hEq : 36=cross v+cross z+16+12*ones v+4*(ones v+5)*(cntF z : Int) := by grind only
+    have hLenX:=cntF_int x
+    have hLenV:=cntF_int v
+    have hLenZ:=cntF_int z
+    have hMz:=mass_eq z
+    rw [ones_append,ones_append,show ones [true]=1 by decide] at hA
+    have hAx : ones x=ones v+4 := by rw [hxy,ones_append,hyA,h3]; decide
+    rcases cross36_long_arith (cross v) (cross z) (ones v) (cntF z : Int)
+      hQv hQz hAv (by omega) (cross_zero_of_no_A v)
+      (fun hz=>cross_zero_of_no_S z (by omega)) hEq with ⟨ha0,hs1,hz0⟩|⟨ha1,hs0,hv8⟩
+    · have hv2 : v.length=2 := by omega
+      have hAt : x[1]?=some false := by
+        rw [hxy,List.getElem?_append_left (by omega),List.getElem?_eq_getElem (by omega)]
+        rw [Recaman.ParitySupply.ones_zero_get v ha0 1 (by omega)]
+      have hKz : runKey z= -2 := by unfold cross at hz0; rw [hs1] at hz0; omega
+      have hzword:=mass_one_one_S z (by omega) (by omega) hKz
+      exact Or.inr (Or.inl ⟨by omega,hAt,by omega,hzword⟩)
+    · have hv4 : v.length=4 := by omega
+      have hvWord:=four_signs_one_A_cross_eight v hv4 ha1 hv8
+      exact Or.inr (Or.inr ⟨by omega,by rw [hxy,hvWord]; rfl,by omega⟩)
+
+end Recaman.LowCrossLocalClocks

@@ -167,6 +167,59 @@
    "hasReport": true
   },
   {
+   "name": "AdditionRankSlack",
+   "lines": 146,
+   "imports": [
+    "MixedPrefixClockSquare"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "rankCost",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "rankSlack_step_A",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "rankSlack_step_S",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "free_prefix_mono",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "additions_split",
+     "line": 85
+    },
+    {
+     "kind": "theorem",
+     "name": "rankSlack_mono",
+     "line": 94
+    },
+    {
+     "kind": "theorem",
+     "name": "rankSlack_zero",
+     "line": 125
+    },
+    {
+     "kind": "theorem",
+     "name": "rank_floor_of_tight",
+     "line": 129
+    }
+   ],
+   "theorems": 7,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "AdjacentRunSupply",
    "lines": 85,
    "imports": [
@@ -273,8 +326,50 @@
   },
   {
    "name": "Audit",
-   "lines": 3951,
+   "lines": 4140,
    "imports": [
+    "TripleRunConsecutiveFirstControl",
+    "TripleRunLocalClockCut",
+    "TripleRunClockResidue",
+    "DeficitRecordControl",
+    "DeficitRecordPredecessor",
+    "DeficitRecordSourceCharge",
+    "OtherSupplyHeightBudget",
+    "OriginalWinHighSubtraction",
+    "ShortSupplyGapBudget",
+    "Cross36OldSourceCut",
+    "SameClockBoundaryControl",
+    "RankTwoBoundaryRay",
+    "RankTwoEqualClock",
+    "FourAdditionsJointSupply",
+    "RankTwoDistinctClocks",
+    "SmallReverseSupplyCount",
+    "ShortSourceTriples",
+    "SourceDeficitBand",
+    "InteriorZeroFreeControl",
+    "InteriorZeroFreeActual",
+    "InteriorZeroFreeWords",
+    "Cross28SupplyCount",
+    "Cross28SourceCuts",
+    "RankThreeReverseClock",
+    "LowCrossSupplyCount",
+    "LowCrossOldClocks",
+    "LowCrossLocalClocks",
+    "OldMassEndpointGate",
+    "RankThreeForwardClock",
+    "RankThreeEarlyFree",
+    "FifthAdditionPrefixShape",
+    "RankThreeFifthWindow",
+    "InitialRankBonus",
+    "EarlySubtractionFloor",
+    "ThresholdPrefixFreeCount",
+    "OldSourceNegativeThreshold",
+    "ForwardFreeThreeControl",
+    "ForwardSourceFreeTwoFactor",
+    "AdditionRankSlack",
+    "ForwardSourceActualFreeThree",
+    "ElevenSignRankPrefix",
+    "FreeTwoTightTail",
     "UnitOneInitialSource",
     "UnitOneLastFive",
     "UnitOneLastFiveBase",
@@ -4211,6 +4306,76 @@
    "theorems": 16,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "Cross28SourceCuts",
+   "lines": 118,
+   "imports": [
+    "LowCrossSegmentCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_cut",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "old_cut",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "old_excludes_final_SAA",
+     "line": 80
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "Cross28SupplyCount",
+   "lines": 92,
+   "imports": [
+    "Cross28SourceCuts",
+    "LowCrossSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "cross28_original_supply_three",
+     "line": 30
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "Cross36OldSourceCut",
+   "lines": 137,
+   "imports": [
+    "LowCrossSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_cross36_cut",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "cross36_original_old_count",
+     "line": 123
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -27529,6 +27694,107 @@
    "hasReport": false
   },
   {
+   "name": "DeficitRecordControl",
+   "lines": 80,
+   "imports": [
+    "DeficitRecordPredecessor",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "recordSign",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_nonshort_record_control",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "record_pair_overlaps_short_triple",
+     "line": 71
+    }
+   ],
+   "theorems": 2,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DeficitRecordPredecessor",
+   "lines": 80,
+   "imports": [
+    "DeficitRecordSourceCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_record_supplied_predecessor",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "local_records_pair_into_original_supplies",
+     "line": 55
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DeficitRecordSourceCharge",
+   "lines": 109,
+   "imports": [
+    "OtherSupplyHeightBudget",
+    "SourceDeficitBand"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "localRecord",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "recordSubtraction",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "deficit_step_at_supply",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "high_S_deficit_le",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "record_witness_after_earlier",
+     "line": 39
+    },
+    {
+     "kind": "theorem",
+     "name": "original_record_high_subtraction_count",
+     "line": 55
+    },
+    {
+     "kind": "theorem",
+     "name": "record_high_witness_exact",
+     "line": 95
+    }
+   ],
+   "theorems": 5,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DelayedOldTargetBudget",
    "lines": 128,
    "imports": [
@@ -28379,6 +28645,29 @@
    "hasReport": true
   },
   {
+   "name": "EarlySubtractionFloor",
+   "lines": 54,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_subtraction",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "two_subtractions_of_three_additions",
+     "line": 20
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ElevenCapacityRigidity",
    "lines": 218,
    "imports": [
@@ -28466,6 +28755,24 @@
    "theorems": 5,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ElevenSignRankPrefix",
+   "lines": 69,
+   "imports": [
+    "FreeTwoTightTail"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "eleven_rank_prefix",
+     "line": 16
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -29626,6 +29933,29 @@
    "hasReport": false
   },
   {
+   "name": "FifthAdditionPrefixShape",
+   "lines": 108,
+   "imports": [
+    "RankThreeFifthWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "eight_fifth_prefix",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "nine_fifth_prefix",
+     "line": 64
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FifthHeadBound",
    "lines": 26,
    "imports": [
@@ -30420,6 +30750,40 @@
    "hasReport": false
   },
   {
+   "name": "ForwardFreeThreeControl",
+   "lines": 100,
+   "imports": [
+    "ForwardSourceActualFreeThree",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "middle",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "controlSign",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "prefix_supply_exact",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "forward_three_free_example",
+     "line": 58
+    }
+   ],
+   "theorems": 2,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ForwardSourceActualFree",
    "lines": 84,
    "imports": [
@@ -30430,6 +30794,66 @@
      "kind": "theorem",
      "name": "forward_pair_needs_two_actual_free",
      "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ForwardSourceActualFreeThree",
+   "lines": 89,
+   "imports": [
+    "ElevenSignRankPrefix",
+    "NonnegativeFutureOldSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "forward_pair_needs_three_actual_free",
+     "line": 47
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ForwardSourceFreeTwoFactor",
+   "lines": 88,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "key_mass_rank_two",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "free_two_unit_factor_band",
+     "line": 61
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FourAdditionsJointSupply",
+   "lines": 114,
+   "imports": [
+    "SmallReverseSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "original_four_additions_supply_one",
+     "line": 47
     }
    ],
    "theorems": 1,
@@ -31777,6 +32201,24 @@
    ],
    "theorems": 3,
    "defs": 4,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FreeTwoTightTail",
+   "lines": 58,
+   "imports": [
+    "ForwardSourceFreeTwoFactor"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "tight_free_two_tail",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -33237,6 +33679,24 @@
    "hasReport": false
   },
   {
+   "name": "InitialRankBonus",
+   "lines": 49,
+   "imports": [
+    "EarlySubtractionFloor"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_two_subtraction_bonus",
+     "line": 17
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "InitialRegion",
    "lines": 71,
    "imports": [
@@ -33538,6 +33998,107 @@
    ],
    "theorems": 10,
    "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InteriorZeroFreeActual",
+   "lines": 84,
+   "imports": [
+    "InteriorZeroFreeWords",
+    "InitialSPaddingPositive",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_ray_end",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "interior_free_zero",
+     "line": 39
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InteriorZeroFreeControl",
+   "lines": 61,
+   "imports": [
+    "ForwardFreeThreeControl"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "history",
+     "line": 9
+    },
+    {
+     "kind": "def",
+     "name": "interior",
+     "line": 12
+    },
+    {
+     "kind": "def",
+     "name": "paddedSign",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_free_forward_control",
+     "line": 28
+    }
+   ],
+   "theorems": 1,
+   "defs": 3,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InteriorZeroFreeWords",
+   "lines": 94,
+   "imports": [
+    "BlockOldRay"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "oldWord",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "old_word_profile",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "old_word_suffix",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "charged_prefix_supply",
+     "line": 60
+    },
+    {
+     "kind": "def",
+     "name": "interiorWord",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "interior_pair_profile",
+     "line": 73
+    }
+   ],
+   "theorems": 4,
+   "defs": 2,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -36899,6 +37460,183 @@
    "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "LowCrossLocalClocks",
+   "lines": 307,
+   "imports": [
+    "OldMassEndpointGate"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "cross",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_nonnegative",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_append",
+     "line": 15
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_at_addition",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_zero_of_no_A",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_zero_of_no_S",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "local_source_at_last_two_S",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "cross28_local_source",
+     "line": 185
+    },
+    {
+     "kind": "theorem",
+     "name": "local_source_small_A",
+     "line": 234
+    },
+    {
+     "kind": "theorem",
+     "name": "three_A_short_source_cross",
+     "line": 270
+    },
+    {
+     "kind": "theorem",
+     "name": "local_source_three_prior_A",
+     "line": 286
+    }
+   ],
+   "theorems": 10,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowCrossOldClocks",
+   "lines": 226,
+   "imports": [
+    "LowCrossLocalClocks"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gate_constraints",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "low_cross_old_after_last_S",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "cross28_old_cut",
+     "line": 141
+    },
+    {
+     "kind": "theorem",
+     "name": "old_source_small_S",
+     "line": 168
+    },
+    {
+     "kind": "theorem",
+     "name": "old_at_three_S_data",
+     "line": 199
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowCrossSegmentCuts",
+   "lines": 84,
+   "imports": [
+    "LowCrossOldClocks"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "split_at_addition",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "low_cross_local_cut",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "low_cross_old_cut",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "SAA_endpoints_rank_strict",
+     "line": 65
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowCrossSupplyCount",
+   "lines": 133,
+   "imports": [
+    "LowCrossSegmentCuts"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "interval_unique_count",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "interval_or_count",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "old_same_rank_unique",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "low_cross_original_supply_three",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "even_cross_local_control",
+     "line": 128
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "LowOldActualSix",
@@ -42025,6 +42763,39 @@
    "hasReport": false
   },
   {
+   "name": "OldMassEndpointGate",
+   "lines": 98,
+   "imports": [
+    "ThresholdPrefixFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "oldPossible",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "old_source_passes_mass_gate",
+     "line": 18
+    },
+    {
+     "kind": "def",
+     "name": "certifiedAt",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_gate_certified_free_count",
+     "line": 67
+    }
+   ],
+   "theorems": 2,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "OldMassFiveBase",
    "lines": 92,
    "imports": [
@@ -42280,6 +43051,40 @@
     }
    ],
    "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSourceNegativeThreshold",
+   "lines": 79,
+   "imports": [
+    "NonnegativeFutureOldSource",
+    "MixedASQuarterBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_source_key_threshold",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_free_above_old_threshold",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "odd_threshold_example",
+     "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "even_threshold_example",
+     "line": 73
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -43992,6 +44797,59 @@
    "defs": 2,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "OriginalWinHighSubtraction",
+   "lines": 77,
+   "imports": [
+    "P2SubtractionLevelSum",
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "original_win_short_or_high_S",
+     "line": 28
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OtherSupplyHeightBudget",
+   "lines": 61,
+   "imports": [
+    "ShortSupplyGapBudget",
+    "OriginalWinHighSubtraction"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "oldOrHighSource",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "local_nonshort_has_high_S",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "other_supply_has_old_or_high_source",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "counter_old_or_high_budget",
+     "line": 48
+    }
+   ],
+   "theorems": 3,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
   },
   {
    "name": "OwnerFamilyLagEleven",
@@ -51762,6 +52620,156 @@
    "hasReport": false
   },
   {
+   "name": "RankThreeEarlyFree",
+   "lines": 74,
+   "imports": [
+    "FifthAdditionPrefixShape",
+    "ThresholdPrefixFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "rank_three_slack_at_five",
+     "line": 36
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankThreeFifthWindow",
+   "lines": 65,
+   "imports": [
+    "InitialRankBonus"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "fifth_window_at_small_slack",
+     "line": 27
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankThreeForwardClock",
+   "lines": 143,
+   "imports": [
+    "RankThreeEarlyFree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "rank_three_key_mass",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "rank_three_forward_clock_band",
+     "line": 89
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankThreeReverseClock",
+   "lines": 117,
+   "imports": [
+    "Cross28SupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "reverse_data",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "rank_three_reverse_clock_band",
+     "line": 45
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankTwoBoundaryRay",
+   "lines": 92,
+   "imports": [
+    "RankTwoEqualClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "boundary_ray_source_shape",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "boundary_ray_local_supply_one",
+     "line": 65
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankTwoDistinctClocks",
+   "lines": 99,
+   "imports": [
+    "RankThreeReverseClock",
+    "SmallReverseSupplyCount",
+    "ForwardSourceActualFreeThree"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "reverse_pair_needs_three_actual_free",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "distinct_pair_needs_three_actual_free",
+     "line": 87
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "RankTwoEqualClock",
+   "lines": 112,
+   "imports": [
+    "FourAdditionsJointSupply",
+    "RankTwoDistinctClocks"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "equal_clock_two_free_shape",
+     "line": 36
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "RayCountFromBase",
    "lines": 91,
    "imports": [
@@ -54893,6 +55901,30 @@
    "hasReport": false
   },
   {
+   "name": "SameClockBoundaryControl",
+   "lines": 53,
+   "imports": [
+    "RankTwoBoundaryRay",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "witnessSign",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "same_clock_two_sources_actual",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SecondAHeadBudgetGap",
    "lines": 122,
    "imports": [
@@ -56632,6 +57664,77 @@
    "hasReport": false
   },
   {
+   "name": "ShortSourceTriples",
+   "lines": 127,
+   "imports": [
+    "LowCrossSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "SAA_suffix_signs",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "two_short_endpoints_six_additions",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "shortEndpoint",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "short_endpoint_supplied",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "short_endpoints_triple_budget",
+     "line": 88
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ShortSupplyGapBudget",
+   "lines": 56,
+   "imports": [
+    "ShortSourceTriples"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "original_short_supply_charge",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "original_gap_other_supply_budget",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "counter_needs_other_supplies",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "at_most_one_other_supply_free_gap",
+     "line": 48
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ShortTargetCounter",
    "lines": 128,
    "imports": [
@@ -57811,6 +58914,29 @@
    "hasReport": false
   },
   {
+   "name": "SmallReverseSupplyCount",
+   "lines": 109,
+   "imports": [
+    "ShortSourceTriples"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "original_end_source",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "small_reverse_supply_bounds",
+     "line": 25
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SourceCrossSurplus",
    "lines": 162,
    "imports": [
@@ -57844,6 +58970,39 @@
     }
    ],
    "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SourceDeficitBand",
+   "lines": 113,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "walk_eq_free_sub_deficit",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "clock_at_start",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "two_clock_deficit_charge",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_supply_in_deficit_band",
+     "line": 83
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -62530,6 +63689,40 @@
    "hasReport": false
   },
   {
+   "name": "ThresholdPrefixFreeCount",
+   "lines": 66,
+   "imports": [
+    "OldSourceNegativeThreshold",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "certifiedFreeAt",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "count_range",
+     "line": 16
+    },
+    {
+     "kind": "theorem",
+     "name": "certified_prefix_free_count",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "four_free_short_prefixes",
+     "line": 55
+    }
+   ],
+   "theorems": 3,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TightAvoidingLagCertificate",
    "lines": 121,
    "imports": [
@@ -63586,6 +64779,77 @@
     }
    ],
    "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TripleRunClockResidue",
+   "lines": 86,
+   "imports": [
+    "LowCrossLocalClocks"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "tripleRuns",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "triple_run_residue_one_excluded",
+     "line": 35
+    }
+   ],
+   "theorems": 1,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TripleRunConsecutiveFirstControl",
+   "lines": 35,
+   "imports": [
+    "TripleRunLocalClockCut",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "controlSign",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "consecutive_first_A_local_control",
+     "line": 18
+    }
+   ],
+   "theorems": 1,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "TripleRunLocalClockCut",
+   "lines": 72,
+   "imports": [
+    "TripleRunClockResidue",
+    "RunSupplyBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "triple_local_residue_one_excluded",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_triple_run_residue_only_old",
+     "line": 53
+    }
+   ],
+   "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -66799,6 +68063,6 @@
    "hasReport": false
   }
  ],
- "total": 901,
+ "total": 944,
  "withReport": 167
 }

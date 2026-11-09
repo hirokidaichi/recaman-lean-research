@@ -1,0 +1,123 @@
+import Recaman.AdditionRankSlack
+import Recaman.NonnegativeFutureOldSource
+
+namespace Recaman.ThirdAdditionRankSlack
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private theorem count_attains_at_hit (P : Nat → Prop) (n q K : Nat)
+    (hq : 0<q) (hK : q≤cN P n K) :
+    ∃ t, t<K ∧ P (n+t) ∧ cN P n (t+1)=q := by
+  induction K with
+  | zero => simp [cN] at hK; omega
+  | succ K ih =>
+    by_cases h : q≤cN P n K
+    · obtain ⟨t,ht,hP,he⟩:=ih h
+      exact ⟨t,by omega,hP,he⟩
+    · by_cases hP : P (n+K)
+      · have hs:=cN_succ_pos P n K hP
+        exact ⟨K,by omega,hP,by omega⟩
+      · rw [cN_succ_neg P n K hP] at hK
+        omega
+
+private theorem slack_multiple_four (f : Nat → Bool) (n r K : Nat) :
+    ∃ z : Int, rankSlack f n r K=4*z := by
+  induction K with
+  | zero => exact ⟨0,by simp [rankSlack_zero]⟩
+  | succ K ih =>
+    obtain ⟨z,hz⟩:=ih
+    cases hf : f (n+K) with
+    | false => exact ⟨z,by rw [rankSlack_step_S f n r K hf,hz]⟩
+    | true =>
+      refine ⟨z+(subtractions f n K : Int)-1-(((additions f n (K+1)-r : Nat) : Int)),?_⟩
+      rw [rankSlack_step_A f n r K hf,hz]
+      omega
+
+/-- The first three additions cannot all meet their rank floors. With a
+cap of two, the third addition is forced free. With a cap of at least
+three, the third addition would occur before the second subtraction. -/
+theorem third_addition_slack (f : Nat → Bool) (n r K : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w) (hr : 2≤r)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hfree : free f n K≤r) (hA : 3≤additions f n K) :
+    4≤rankSlack f n r K := by
+  have hm:=rankSlack_mono f n r K hpos hfree 0 K (by omega) (by omega)
+  rw [rankSlack_zero] at hm
+  obtain ⟨z,hz⟩:=slack_multiple_four f n r K
+  by_contra hbad
+  have htight : rankSlack f n r K=0 := by omega
+  have hhit (q : Nat) (hq : 0<q) (hqa : q≤additions f n K) :
+      ∃ t, t<K ∧ f (n+t)=true ∧ additions f n (t+1)=q ∧ t+1=q+1+(q-r) := by
+    obtain ⟨t,ht,ha,he⟩:=count_attains_at_hit (fun x=>f x=true) n q K hq hqa
+    change additions f n (t+1)=q at he
+    have hs:=rank_floor_of_tight f n r K t hpos hfree htight ht ha
+    rw [he] at hs
+    have hsc : subtractions f n (t+1)=subtractions f n t :=
+      cN_succ_neg _ n t (by rw [ha]; decide)
+    have htally : additions f n (t+1)+subtractions f n (t+1)=t+1 := (cN_walk f n (t+1)).2
+    exact ⟨t,ht,ha,he,by omega⟩
+  obtain ⟨t1,ht1,ha1,hA1,he1⟩:=hhit 1 (by omega) (by omega)
+  obtain ⟨t2,ht2,ha2,hA2,he2⟩:=hhit 2 (by omega) (by omega)
+  obtain ⟨t3,ht3,ha3,hA3,he3⟩:=hhit 3 (by omega) hA
+  have h1 : t1=1 := by omega
+  have h2 : t2=2 := by omega
+  subst t1
+  subst t2
+  have hS3 : subtractions f n 3=1 := by
+    have htally : additions f n 3+subtractions f n 3=3 := (cN_walk f n 3).2
+    omega
+  have hE3 : cN (EndN f 0) n 3=0 := by
+    have hp:=hpos 3 (by omega) (by omega)
+    omega
+  have hf0 : f n=false := by
+    cases hh : f n with
+    | false => rfl
+    | true =>
+      have hp:=hpos 1 (by omega) (by omega)
+      have hs : subtractions f n 1=0 := by simp [subtractions,cN,hh]
+      omega
+  have hp3 : seg f n 3=[false,true,true] := by
+    simp only [show (3 : Nat)=2+1 by decide,seg_succ,ha2]
+    have hp2 : seg f n 2=[false,true] := by
+      simp only [show (2 : Nat)=1+1 by decide,seg_succ,ha1]
+      simp [seg,hf0]
+    rw [hp2]
+  by_cases hr2 : r=2
+  · subst r
+    have h3 : t3=4 := by omega
+    subst t3
+    have hf3 : f (n+3)=false := by
+      cases hh : f (n+3) with
+      | false => rfl
+      | true =>
+        have h4 : additions f n 4=additions f n 3+1 := cN_succ_pos _ n 3 hh
+        have h5 : additions f n 5=additions f n 4+1 := cN_succ_pos _ n 4 ha3
+        omega
+    have hp4 : seg f n 4=[false,true,true,false] := by
+      rw [show (4 : Nat)=3+1 by decide,seg_succ,hp3,hf3]
+      rfl
+    have hfree4:=Recaman.NonnegativeFutureOldSource.SAAS_next_actual_free f n w hw hpre hp4 ha3
+    have hf3c : free f n 3=2 := by
+      have hsplit:=additions_split f n 3
+      omega
+    have hfc : free f n 5=free f n 4+1 :=
+      cN_succ_pos _ n 4 ⟨ha3,hfree4⟩
+    have hb1:=free_prefix_mono f n 3 4 (by omega)
+    have hb2:=free_prefix_mono f n 5 K (by omega)
+    omega
+  · have h3 : t3=3 := by omega
+    subst t3
+    have hloc : Recaman.ThreeNonsuppliedData.localSupply (seg f n ((n+3)-n))=true := by
+      rw [show n+3-n=3 by omega,hp3]
+      decide
+    obtain ⟨ha,t,k,ht,hk,hwin⟩:=(localSupply_seg_iff f n (n+3) (by omega) ha3).mp hloc
+    have hE : EndN f 0 (n+3) := ⟨ha,t,k,by omega,hk,hwin⟩
+    have hE4:=cN_succ_pos (EndN f 0) n 3 hE
+    have hs4 : subtractions f n 4=subtractions f n 3 :=
+      cN_succ_neg _ n 3 (by rw [ha3]; decide)
+    have hp:=hpos 4 (by omega) (by omega)
+    omega
+
+end Recaman.ThirdAdditionRankSlack

@@ -1,0 +1,27 @@
+Recaman/InteriorZeroFreeActual.lean:50:13: error: unsolved goals
+f : Nat → Bool
+n d : Nat
+v : List Bool
+hpre : seg f 0 n = v ++ oldWord (d + 1)
+hword : seg f n (interiorWord d).length = interiorWord d
+a : Nat := d + 2
+s : Nat := 2 * d + 1
+K : Nat := (interiorWord d).length
+hk : K = 1 + a + s
+hW : seg f n K = [false] ++ List.replicate a true ++ List.replicate s false
+ht : List.take (1 + a) ([false] ++ List.replicate a true ++ List.replicate s false) = seg f n (1 + a)
+⊢ a + 1 = 1 + a
+Recaman/InteriorZeroFreeActual.lean:81:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 1
+  e ≥ 0
+  c ≥ 2
+  c - e ≥ 0
+  b ≥ 0
+  b - c + e ≤ 0
+  b + e ≤ 0
+where
+ b := ↑(cN (EndN f 0) (n + (1 + a)) s)
+ c := ↑(additions f n K)
+ e := ↑(free f n K)
+ g := ↑(free f n (interiorWord d).length)

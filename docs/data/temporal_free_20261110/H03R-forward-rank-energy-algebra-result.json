@@ -1,0 +1,31 @@
+{
+  "tag": "H03R-forward-rank-energy-algebra",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ForwardSourceRankEnergy.olean",
+    "Recaman/ForwardSourceRankEnergy.lean"
+  ],
+  "started_jst": "2026-11-10T06:07:50.384812+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ForwardSourceRankEnergy.lean": "6f3c665344e631524997ac4ebf73770ed114be956ed7ba651da0cb3f3229270c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "5b18d58f277df43c747ff6f771e9e4ce78d43dd4ef007af195f264e6d8533140",
+  "source_tree_sha256": "d4cc25205050e6462959d7ee7a6f03259875eefffd01a7bf17891980730db451",
+  "source_tree_manifest": "H03R-forward-rank-energy-algebra-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "5b18d58f277df43c747ff6f771e9e4ce78d43dd4ef007af195f264e6d8533140",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.9682036250014789,
+  "cpu_seconds": 0.8602219999999999,
+  "finished_jst": "2026-11-10T06:07:51.352954+09:00"
+}

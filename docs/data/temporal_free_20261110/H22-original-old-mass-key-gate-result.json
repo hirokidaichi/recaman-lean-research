@@ -1,0 +1,31 @@
+{
+  "tag": "H22-original-old-mass-key-gate",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldMassEndpointGate.olean",
+    "Recaman/OldMassEndpointGate.lean"
+  ],
+  "started_jst": "2026-11-10T06:32:41.035188+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldMassEndpointGate.lean": "dbffd5b62a1afd6e3f00c1b2ffa2a002256ef1c6945686627aa45efe92736681"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "52037eba3b7503206b5d7dcd4de61fcef4c8e6cd56c4804e3821a16f8ab6ab3a",
+  "source_tree_sha256": "04b4b8b0dd755272fa7542dd969cd7fbc6e619b402e8c542c03048cf4455ce48",
+  "source_tree_manifest": "H22-original-old-mass-key-gate-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "52037eba3b7503206b5d7dcd4de61fcef4c8e6cd56c4804e3821a16f8ab6ab3a",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.4689297919976525,
+  "cpu_seconds": 0.300985,
+  "finished_jst": "2026-11-10T06:32:41.504053+09:00"
+}

@@ -1,0 +1,13 @@
+Recaman/LowCrossSegmentCuts.lean:136:12: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  5 ≤ d ≤ 8
+  0 ≤ c ≤ 6
+  b ≥ 0
+  b - d ≥ 1
+  a ≥ 0
+  a + d ≥ 0
+where
+ a := ↑n
+ b := ↑K
+ c := ↑(cntF z)
+ d := ↑(t - n)

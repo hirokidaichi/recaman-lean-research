@@ -1,0 +1,15 @@
+Recaman/Cross36LongFreeCertificate.lean:59:9: error(lean.unknownIdentifier): Unknown constant `Bool.and_eq_true.mp`
+Recaman/Cross36LongFreeCertificate.lean:97:28: error: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)
+  y = [true, false, false, true, false, true, true] ∨ y ∈ []
+
+case inr.inr.inr
+y : List Bool
+h✝ : y = [true, false, false, true, false, true, true] ∨ y ∈ []
+⊢ 4 ≤ List.countP (certifiedAt (middle y)) (List.range 13) ∧ 4 ≤ List.countP (certifiedAt (late y)) (List.range 13)
+Recaman/Cross36LongFreeCertificate.lean:96:37: warning: This simp argument is unused:
+  List.mem_singleton
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [longWords, List.mem_cons] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

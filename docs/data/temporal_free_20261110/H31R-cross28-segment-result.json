@@ -1,0 +1,31 @@
+{
+  "tag": "H31R-cross28-segment",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossSegmentCuts.olean",
+    "Recaman/LowCrossSegmentCuts.lean"
+  ],
+  "started_jst": "2026-11-10T06:49:54.899144+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossSegmentCuts.lean": "db21d41ee872e0bc2100a4d7bad8f8ac2e568dc2d786e53fcda1c671c1ad4d49"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "7885570043beb41126f494a68009144eb85c84f2021e39e5a8fa7b7bb0588fdc",
+  "source_tree_sha256": "82ee058449e56351741ddd5e511e5972de731ea7cea2d27d25da85dff70b8cb7",
+  "source_tree_manifest": "H31R-cross28-segment-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "7885570043beb41126f494a68009144eb85c84f2021e39e5a8fa7b7bb0588fdc",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.792157459014561,
+  "cpu_seconds": 0.631749,
+  "finished_jst": "2026-11-10T06:49:55.691247+09:00"
+}

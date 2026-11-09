@@ -1,0 +1,25 @@
+{
+  "tag": "H34a-count-helpers",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossSupplyCount.olean",
+    "Recaman/LowCrossSupplyCount.lean"
+  ],
+  "started_jst": "2026-11-10T06:53:30.501966+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossSupplyCount.lean": "4a23574eb7a89aa0c81589c04854a81a0adc27af138b31ee93c85a85af16c3d4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "bd85930f26a16345ae604e1e86ce19c9390dce11632d6d9fcded960772d8201a",
+  "source_tree_sha256": "033a4a19dc15ee471cf5df01945e7751b9ac0dff84958190a41adc064392d52a",
+  "source_tree_manifest": "H34a-count-helpers-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

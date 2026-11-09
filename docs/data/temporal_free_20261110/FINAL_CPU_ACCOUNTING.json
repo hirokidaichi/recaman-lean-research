@@ -1,0 +1,33 @@
+{
+  "math_search_worker_started": false,
+  "math_search_cpu_budget_seconds": 0,
+  "math_search_cpu_seconds": 0,
+  "classes": {
+    "Lean individual": {
+      "cpu_seconds": 61.269795,
+      "runs": 97,
+      "failed": 35,
+      "unmeasured": []
+    },
+    "Lean full": {
+      "cpu_seconds": 93.996626,
+      "runs": 6,
+      "failed": 2,
+      "unmeasured": []
+    },
+    "tools regression": {
+      "cpu_seconds": 12.065533,
+      "runs": 1,
+      "failed": 0,
+      "unmeasured": []
+    },
+    "existing probe regression": {
+      "cpu_seconds": 0.060219,
+      "runs": 1,
+      "failed": 0,
+      "unmeasured": []
+    }
+  },
+  "other_guard_and_editing_cpu": "not separately measured",
+  "caps": "Lean individual -j1 -M512/10CPU per process/20wall; full/tools/probe 60CPU per process/90wall; not process-tree cumulative"
+}

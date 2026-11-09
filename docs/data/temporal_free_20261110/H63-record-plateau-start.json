@@ -1,0 +1,25 @@
+{
+  "tag": "H63-record-plateau",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DeficitRecordSourceCharge.olean",
+    "Recaman/DeficitRecordSourceCharge.lean"
+  ],
+  "started_jst": "2026-11-10T07:35:15.311343+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DeficitRecordSourceCharge.lean": "53f161cffab0637cb7584504204e4c6b240007eef2fd0fe9df1b7f3ece5ac1da"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "2226c398eb759b729bcc81782bd13a5ac0468b2223cc024ebdbea1ac8e83a366",
+  "source_tree_sha256": "6c9ac456bede30fa3d51779ec11cee410f6740b5bb24ccce7de10a6f3b3a06f3",
+  "source_tree_manifest": "H63-record-plateau-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

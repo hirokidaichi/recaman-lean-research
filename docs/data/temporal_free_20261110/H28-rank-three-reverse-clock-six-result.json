@@ -1,0 +1,31 @@
+{
+  "tag": "H28-rank-three-reverse-clock-six",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RankThreeReverseClock.olean",
+    "Recaman/RankThreeReverseClock.lean"
+  ],
+  "started_jst": "2026-11-10T06:43:08.085736+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RankThreeReverseClock.lean": "a83a774c12b7ae75637c0bfb1cffc6de6dd80ad2e20572c89af7ffd0d6d9885b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "source_tree_sha256": "4c6f784c2a9be453fffe3dff550c5d7d980f37588b5424e97133d228bf19609c",
+  "source_tree_manifest": "H28-rank-three-reverse-clock-six-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9786433330154978,
+  "cpu_seconds": 0.8254549999999999,
+  "finished_jst": "2026-11-10T06:43:09.064312+09:00"
+}

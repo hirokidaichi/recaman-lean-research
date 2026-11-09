@@ -1,0 +1,30 @@
+Recaman/OldMassEndpointGate.lean:44:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ -2
+  e - g ≥ 1
+  d ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑w.length
+ b := ↑t
+ d := ↑i
+ e := 4 * mass [true] * ↑(cntF x)
+ f := runKey (List.drop t w)
+ g := 4 * mass (List.drop t w) * ↑(cntF x)
+Recaman/OldMassEndpointGate.lean:52:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ -2
+  e - g ≥ 1
+  d ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑w.length
+ b := ↑t
+ d := ↑i
+ e := 4 * mass [true, true] * ↑(cntF x)
+ f := runKey (List.drop t w)
+ g := 4 * mass (List.drop t w) * ↑(cntF x)

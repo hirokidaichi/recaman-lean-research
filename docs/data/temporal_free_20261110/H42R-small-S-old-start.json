@@ -1,0 +1,25 @@
+{
+  "tag": "H42R-small-S-old",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossOldClocks.olean",
+    "Recaman/LowCrossOldClocks.lean"
+  ],
+  "started_jst": "2026-11-10T07:08:54.314277+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossOldClocks.lean": "46f8c0ce9933d772b31fc374f9da482c26ff17b7e94fc4187b3b152f9e7b1210"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "6d1f66a8d5a1b8d91c8a1eb761aa90c7ac7386210da0a2016423ce2a1d544aad",
+  "source_tree_sha256": "d0389cb0fd73e95779dcd946ab3a13ef985f508996fc5d8bacd3de68981cbcf9",
+  "source_tree_manifest": "H42R-small-S-old-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,142 @@
+import Recaman.OldMassEndpointGate
+
+namespace Recaman.SmallCrossPrefixWords
+
+open Recaman.LeadingRunSupply Recaman.CapacityEqualityInduction Recaman.RunSupplyKeys
+
+/-- Count an A once for each later S. -/
+def crossPairs : List Bool → Nat
+  | [] => 0
+  | b::xs => crossPairs xs+(if b then cntF xs else 0)
+
+theorem key_cross_pairs (x : List Bool) :
+    runKey x+2*(cntF x : Int)^2=4*(crossPairs x : Int) := by
+  induction x with
+  | nil => decide
+  | cons b xs ih =>
+    have h:=Recaman.SourceCrossSurplus.cross_append [b] xs
+    cases b with
+    | false =>
+      rw [show runKey [false]+2*(cntF [false] : Int)^2=0 by decide,
+        show ones [false]=0 by decide] at h
+      change runKey (false::xs)+2*(cntF (false::xs) : Int)^2=_ at h
+      simpa only [crossPairs, Bool.false_eq_true, if_false, Nat.add_zero] using h.trans (by omega)
+    | true =>
+      rw [show runKey [true]+2*(cntF [true] : Int)^2=0 by decide,
+        show ones [true]=1 by decide] at h
+      change runKey (true::xs)+2*(cntF (true::xs) : Int)^2=_ at h
+      simp only [crossPairs,if_true,Int.natCast_add]
+      omega
+
+/-- Inserting an A spends the number of still unplaced S signs.
+The enumeration is over the short intervening word only. -/
+def words : Nat → Nat → Nat → Nat → List (List Bool)
+  | 0,a,s,_ => if a=0 ∧ s=0 then [[]] else []
+  | k+1,a,s,b =>
+      (if 0<a ∧ s≤b then (words k (a-1) s (b-s)).map (true::·) else []) ++
+      (if 0<s then (words k a (s-1) b).map (false::·) else [])
+
+theorem mem_cross_bounded_words (x : List Bool) (b : Nat) (h : crossPairs x≤b) :
+    x∈words x.length (x.length-cntF x) (cntF x) b := by
+  induction x generalizing b with
+  | nil => simp [words,cntF]
+  | cons bit xs ih =>
+    have hf:=cntF_int xs
+    have ho:=(ones_bounds xs).1
+    have hlen : cntF xs≤xs.length := by omega
+    cases bit with
+    | false =>
+      have hs : cntF (false::xs)=cntF xs+1 := by simp [cntF,Nat.add_comm]
+      have hCross : crossPairs xs≤b := by simpa [crossPairs] using h
+      simp only [List.length_cons,hs]
+      rw [show xs.length+1-(cntF xs+1)=xs.length-cntF xs by omega]
+      unfold words
+      apply List.mem_append.mpr
+      right
+      rw [if_pos (show 0<cntF xs+1 by omega),show cntF xs+1-1=cntF xs by omega]
+      exact List.mem_map.mpr ⟨xs,ih b hCross,rfl⟩
+    | true =>
+      have hs : cntF (true::xs)=cntF xs := by simp [cntF]
+      have hCross : crossPairs xs+cntF xs≤b := by simpa [crossPairs] using h
+      simp only [List.length_cons,hs]
+      unfold words
+      apply List.mem_append.mpr
+      left
+      rw [if_pos (show 0<xs.length+1-cntF xs ∧ cntF xs≤b by omega),
+        show xs.length+1-cntF xs-1=xs.length-cntF xs by omega]
+      exact List.mem_map.mpr ⟨xs,ih (b-cntF xs) (by omega),rfl⟩
+
+private def p0 : List Bool := [false,false,false,false,false,true,false,true,true,true,true,true,true]
+
+private def p1 : List Bool := [false,false,false,true,false,false,false,true,true,true,true,true,true]
+
+private def p2 : List Bool := [false,false,false,false,true,false,true,false,true,true,true,true,true]
+
+private def p3 : List Bool := [false,false,false,false,false,true,true,true,false,true,true,true,true]
+
+private def p4 : List Bool := [false,true,false,false,false,false,false,true,true,true,true,true,true]
+
+private def p5 : List Bool := [false,false,true,false,false,false,true,false,true,true,true,true,true]
+
+private def p6 : List Bool := [false,false,false,true,false,true,false,false,true,true,true,true,true]
+
+private def p7 : List Bool := [false,false,false,true,false,false,true,true,false,true,true,true,true]
+
+private def p8 : List Bool := [false,false,false,false,true,true,false,true,false,true,true,true,true]
+
+private def p9 : List Bool := [false,false,false,false,true,false,true,true,true,false,true,true,true]
+
+private def p10 : List Bool := [false,false,false,false,false,true,true,true,true,true,false,true,true]
+
+private def oddWords : List (List Bool) := [p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10]
+
+private theorem odd_words_exact : (words 13 7 6 5).filter (fun p => decide (crossPairs p%2=1))=oddWords := by decide
+
+private theorem p0_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p0) := by decide
+
+private theorem p1_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p1) := by decide
+
+private theorem p2_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p2) := by decide
+
+private theorem p3_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p3) := by decide
+
+private theorem p4_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p4) := by decide
+
+private theorem p5_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p5) := by decide
+
+private theorem p6_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p6) := by decide
+
+private theorem p7_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p7) := by decide
+
+private theorem p8_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p8) := by decide
+
+private theorem p9_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p9) := by decide
+
+private theorem p10_cert : 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p10) := by decide
+
+/-- The bounded lists include exactly eleven odd-cross candidates here.
+Each has four positions with an original-history free certificate. -/
+theorem odd_small_cross_four_certified (x : List Bool) (hlen : x.length=13)
+    (hs : cntF x=6) (hc : crossPairs x≤5) (ho : crossPairs x%2=1) :
+    4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt x) := by
+  have hm:=mem_cross_bounded_words x 5 hc
+  rw [hlen,hs] at hm
+  change x∈words 13 7 6 5 at hm
+  have hsmall : x∈oddWords := by
+    rw [← odd_words_exact]
+    exact List.mem_filter.mpr ⟨hm,decide_eq_true ho⟩
+  simp only [oddWords,List.mem_cons,List.not_mem_nil,or_false] at hsmall
+  rcases hsmall with rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl
+  · exact p0_cert
+  · exact p1_cert
+  · exact p2_cert
+  · exact p3_cert
+  · exact p4_cert
+  · exact p5_cert
+  · exact p6_cert
+  · exact p7_cert
+  · exact p8_cert
+  · exact p9_cert
+  · exact p10_cert
+
+end Recaman.SmallCrossPrefixWords

@@ -1,0 +1,25 @@
+{
+  "tag": "H10R-negative-threshold-block-constructors",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSourceNegativeThreshold.olean",
+    "Recaman/OldSourceNegativeThreshold.lean"
+  ],
+  "started_jst": "2026-11-10T06:19:58.600109+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSourceNegativeThreshold.lean": "4bd5a630ddb6771970fc02d5989aa3f87fe90170d601491d11ac3bb8243d23a5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "a5f70c077924e7e971bff62863aafd69496b7b1506527e95ac605dfe9d120156",
+  "source_tree_sha256": "306cefcd55e9f0128ab6e07b2ccdc1e1f0b7bf8e7cdb325b1d8cb67750a963e7",
+  "source_tree_manifest": "H10R-negative-threshold-block-constructors-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

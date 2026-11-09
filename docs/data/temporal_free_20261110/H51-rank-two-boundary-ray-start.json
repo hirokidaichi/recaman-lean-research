@@ -1,0 +1,25 @@
+{
+  "tag": "H51-rank-two-boundary-ray",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RankTwoBoundaryRay.olean",
+    "Recaman/RankTwoBoundaryRay.lean"
+  ],
+  "started_jst": "2026-11-10T07:17:14.561027+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RankTwoBoundaryRay.lean": "77dea3fca4e01c8e648e4565f1cf6daf84f1976b10e23094dc24439db906a782"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "c0ba46a0bd4dbf77b76ddbde688189217e49d3d1c35c290c6c719ffc43826d9d",
+  "source_tree_sha256": "f6bbe404b0f21e32a5b62f4e6cd386957e780329efc878a097d5677e2d2a1865",
+  "source_tree_manifest": "H51-rank-two-boundary-ray-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

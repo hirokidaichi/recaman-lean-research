@@ -1,0 +1,47 @@
+Recaman/ThirdAdditionRankSlack.lean:72:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 3
+  c ≥ 5
+  b ≥ 3
+  0 ≤ a ≤ 2
+where
+ a := ↑(free f n K)
+ b := ↑(additions f n K)
+ c := ↑K
+Recaman/ThirdAdditionRankSlack.lean:98:10: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 2
+  0 ≤ c ≤ 2
+  b ≥ 5
+  a ≥ 3
+where
+ a := ↑(additions f n K)
+ b := ↑K
+ c := ↑(free f n K)
+ d := ↑(additions f n 5)
+Recaman/ThirdAdditionRankSlack.lean:104:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ d ≤ 1
+  0 ≤ c ≤ 2
+  b ≥ 5
+  a ≥ 3
+where
+ a := ↑(additions f n K)
+ b := ↑K
+ c := ↑(free f n K)
+ d := ↑(free f n 3)
+Recaman/ThirdAdditionRankSlack.lean:121:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ e ≤ 3
+  d ≥ 0
+  d - e ≥ -3
+  c ≥ 4
+  b ≥ 3
+  a ≥ 0
+  a ≤ 3
+where
+ a := ↑(free f n K)
+ b := ↑(additions f n K)
+ c := ↑K
+ d := ↑n
+ e := ↑k

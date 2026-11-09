@@ -1,0 +1,118 @@
+import Recaman.LowCrossSegmentCuts
+
+namespace Recaman.Cross28SourceCuts
+
+open Recaman.AdditionRankSlack Recaman.LowCrossLocalClocks Recaman.LowCrossSegmentCuts
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.BlockOldRay
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality
+open Recaman.LineCapacityPeriodic
+
+private theorem split_S (f : Nat → Bool) (n K t : Nat)
+    (hnt : n≤t) (ht : t<n+K) (ha : f t=true) (hS : subtractions f n K=6) :
+    cntF (seg f n (t-n))+cntF (seg f (t+1) (n+K-(t+1)))=6 := by
+  have h := split_at_addition f n K t hnt ht ha
+  have hc : cntF (seg f n K)=6 := by rw [cntF_seg]; exact hS
+  rwa [h,cntF_append,cntF_append,show cntF [true]=0 by decide,Nat.add_zero] at hc
+
+theorem local_cut (f : Nat → Bool) (n K t : Nat)
+    (hnt : n≤t) (ht : t<n+K) (ha : f t=true)
+    (hQ : cross (seg f n K)=28) (hS : subtractions f n K=6)
+    (hl : Recaman.ThreeNonsuppliedData.localSupply (seg f n (t-n))=true) :
+    (t=n+11 ∧ f (n+3)=true) ∨
+      (4≤subtractions f n (t-n) ∧ subtractions f n (t-n)≤6 ∧
+      (subtractions f n (t-n)=4 → t=n+6 ∧ f (n+3)=false) ∧
+      n+3≤t ∧ f (t-3)=false ∧ f (t-2)=true ∧ f (t-1)=true) := by
+  let x:=seg f n (t-n)
+  let z:=seg f (t+1) (n+K-(t+1))
+  have hs : seg f n K=x++[true]++z := split_at_addition f n K t hnt ht ha
+  rw [hs] at hQ
+  rcases cross28_local_source x z hQ (split_S f n K t hnt ht ha hS) hl with h|⟨hlen,h3⟩
+  · obtain ⟨⟨v,hv⟩,hz,ha2⟩:=h
+    have hc := split_S f n K t hnt ht ha hS
+    change cntF x+cntF z=6 at hc
+    have hx : cntF x=subtractions f n (t-n) := cntF_seg f n (t-n)
+    have hvlen : v.length+3=t-n := by
+      have h:=congrArg List.length hv
+      rw [show x.length=t-n from seg_length f n (t-n),List.length_append] at h
+      simpa using h.symm
+    have hcut:=seg_drop f n (t-n) v.length (by omega)
+    change x.drop v.length=seg f (n+v.length) (t-n-v.length) at hcut
+    rw [hv,List.drop_left,show n+v.length=t-3 by omega,show t-n-v.length=3 by omega] at hcut
+    have h0:=seg_get f (t-3) 3 0 (by decide)
+    have h1:=seg_get f (t-3) 3 1 (by decide)
+    have h2:=seg_get f (t-3) 3 2 (by decide)
+    rw [← hcut,show t-3+0=t-3 by omega] at h0
+    rw [← hcut,show t-3+1=t-2 by omega] at h1
+    rw [← hcut,show t-3+2=t-1 by omega] at h2
+    have hSAA: f (t-3)=false := (Option.some.inj h0).symm
+    refine Or.inr ⟨by omega,by omega,?_,by omega,hSAA,(Option.some.inj h1).symm,(Option.some.inj h2).symm⟩
+    intro h4
+    have hA:=ha2 (by omega)
+    have hlen:=cntF_int x
+    have hlen' : x.length=t-n := seg_length f n (t-n)
+    have ht6 : t=n+6 := by omega
+    exact ⟨ht6,by rwa [show n+3=t-3 by omega]⟩
+  · have hlen' : x.length=t-n := seg_length f n (t-n)
+    have h:=seg_get f n (t-n) 3 (by omega)
+    change x[3]?=some (f (n+3)) at h
+    rw [h3] at h
+    exact Or.inl ⟨by omega,(Option.some.inj h).symm⟩
+
+theorem old_cut (f : Nat → Bool) (n K t : Nat) (w : List Bool)
+    (hnt : n≤t) (ht : t<n+K) (ha : f t=true) (hw : BlockWord w)
+    (hQ : cross (seg f n K)=28) (hS : subtractions f n K=6)
+    (ho : tailOldRay w (seg f n (t-n)) 0) :
+    t=n+9 ∧ subtractions f n (t-n)=5 ∧ additions f n (t-n)=4 := by
+  let x:=seg f n (t-n)
+  let z:=seg f (t+1) (n+K-(t+1))
+  have hs : seg f n K=x++[true]++z := split_at_addition f n K t hnt ht ha
+  rw [hs] at hQ
+  obtain ⟨hs5,ha4⟩:=Recaman.LowCrossOldClocks.cross28_old_cut w x z hw
+    (split_S f n K t hnt ht ha hS) hQ ho
+  have hlen:=cntF_int x
+  have hlen' : x.length=t-n := seg_length f n (t-n)
+  have hf : cntF x=subtractions f n (t-n) := cntF_seg f n (t-n)
+  have ha' : ones x=(additions f n (t-n) : Int) := ones_seg_eq_count f n (t-n)
+  exact ⟨by omega,by omega,by omega⟩
+
+/-- An original fifth addition before the last S excludes a short
+supplier at rank six when there are only seven additions. -/
+theorem old_excludes_final_SAA (f : Nat → Bool) (n K a b : Nat)
+    (hna : n≤a) (hb : b<n+K) (hb3 : n+3≤b)
+    (haa : f a=true) (hab : f b=true)
+    (hA : additions f n K≤7) (hAa : additions f n (a-n)=4)
+    (hSa : subtractions f n (a-n)=5) (hSb : subtractions f n (b-n)=6)
+    (hb2 : f (b-2)=true) (hb1 : f (b-1)=true) : False := by
+  let c:=b-2-n
+  have hs2 : subtractions f n (c+1)=subtractions f n c := by
+    apply cN_succ_neg
+    rw [show n+c=b-2 by dsimp [c]; omega,hb2]
+    decide
+  have hs1 : subtractions f n (c+2)=subtractions f n (c+1) := by
+    apply cN_succ_neg
+    rw [show n+(c+1)=b-1 by dsimp [c]; omega,hb1]
+    decide
+  have hc2 : c+2=b-n := by dsimp [c]; omega
+  rw [hc2] at hs1
+  have hbefore : a-n+1≤c := by
+    by_cases h : a-n+1≤c
+    · exact h
+    · have hm : subtractions f n c≤subtractions f n (a-n) :=
+        count_prefix_le (fun t=>f t=false) n c (a-n) (by omega)
+      omega
+  have ha5 : additions f n (a-n+1)=additions f n (a-n)+1 :=
+    cN_succ_pos _ n (a-n) (by rw [show n+(a-n)=a by omega]; exact haa)
+  have hm : additions f n (a-n+1)≤additions f n c :=
+    count_prefix_le (fun t=>f t=true) n (a-n+1) c hbefore
+  have h2 : additions f n (c+1)=additions f n c+1 :=
+    cN_succ_pos _ n c (by rw [show n+c=b-2 by dsimp [c]; omega]; exact hb2)
+  have h1 : additions f n (c+2)=additions f n (c+1)+1 :=
+    cN_succ_pos _ n (c+1) (by rw [show n+(c+1)=b-1 by dsimp [c]; omega]; exact hb1)
+  have h0 : additions f n (b-n+1)=additions f n (b-n)+1 :=
+    cN_succ_pos _ n (b-n) (by rw [show n+(b-n)=b by omega]; exact hab)
+  rw [hc2] at h1
+  have hcap : additions f n (b-n+1)≤additions f n K :=
+    count_prefix_le (fun t=>f t=true) n (b-n+1) K (by omega)
+  omega
+
+end Recaman.Cross28SourceCuts

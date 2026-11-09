@@ -1,0 +1,31 @@
+{
+  "tag": "H44-small-reverse-supply",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SmallReverseSupplyCount.olean",
+    "Recaman/SmallReverseSupplyCount.lean"
+  ],
+  "started_jst": "2026-11-10T07:10:26.931607+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallReverseSupplyCount.lean": "591cd442f982794eb6e4b5716b5c24c8c63d5daa8f481792c437f0c7067639c0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "6d1f66a8d5a1b8d91c8a1eb761aa90c7ac7386210da0a2016423ce2a1d544aad",
+  "source_tree_sha256": "353b1d30838dfa8125f80d276273bc7183c9d7f4581c37e6ed33664650969ce6",
+  "source_tree_manifest": "H44-small-reverse-supply-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6d1f66a8d5a1b8d91c8a1eb761aa90c7ac7386210da0a2016423ce2a1d544aad",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5286761659954209,
+  "cpu_seconds": 0.38102800000000003,
+  "finished_jst": "2026-11-10T07:10:27.460225+09:00"
+}

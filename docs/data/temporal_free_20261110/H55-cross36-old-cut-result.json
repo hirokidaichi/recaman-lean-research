@@ -1,0 +1,31 @@
+{
+  "tag": "H55-cross36-old-cut",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/Cross36OldSourceCut.olean",
+    "Recaman/Cross36OldSourceCut.lean"
+  ],
+  "started_jst": "2026-11-10T07:25:16.355629+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/Cross36OldSourceCut.lean": "06bd531376e5da33df5a2d4218416b7678bafbc4d7a64c3c1b9b4da5bba8603d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9b849087c216983d1e509d22c635ede4f7f7cb21f9680e495bfde8c0a92c09e6",
+  "source_tree_sha256": "a478c54bf483b651998ddaed43f7c9ec7c56f40174a877dbe762c62b2c6458a8",
+  "source_tree_manifest": "H55-cross36-old-cut-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9b849087c216983d1e509d22c635ede4f7f7cb21f9680e495bfde8c0a92c09e6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.9358735830173828,
+  "cpu_seconds": 0.782232,
+  "finished_jst": "2026-11-10T07:25:17.291441+09:00"
+}

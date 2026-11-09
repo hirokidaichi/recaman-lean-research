@@ -1,0 +1,171 @@
+Recaman/InteriorZeroFreeWords.lean:5:60: error: unknown namespace `Recaman.BlockOldRay`
+Recaman/InteriorZeroFreeWords.lean:14:42: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (chunk F)
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/InteriorZeroFreeWords.lean:20:21: error(lean.unknownIdentifier): Unknown identifier `mass_append`
+Recaman/InteriorZeroFreeWords.lean:20:33: error(lean.unknownIdentifier): Unknown identifier `mass_replicate_A`
+Recaman/InteriorZeroFreeWords.lean:20:50: error(lean.unknownIdentifier): Unknown identifier `mass_rep_false`
+Recaman/InteriorZeroFreeWords.lean:21:22: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/InteriorZeroFreeWords.lean:24:15: error(lean.unknownIdentifier): Unknown identifier `mass_append`
+Recaman/InteriorZeroFreeWords.lean:24:27: error(lean.unknownIdentifier): Unknown identifier `mass_replicate_A`
+Recaman/InteriorZeroFreeWords.lean:24:44: error(lean.unknownIdentifier): Unknown identifier `mass_rep_false`
+Recaman/InteriorZeroFreeWords.lean:25:22: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/InteriorZeroFreeWords.lean:26:4: error: `grind` failed
+case grind.1
+x : Sort u_1
+mass : x
+F : Nat
+hA : ∀ (n : Nat), runKey (A n) = 0
+h :
+  ¬-4 * ↑F +
+                4 * (↑F + 1) *
+                  LeadingRunSupply.mass
+                    (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true) +
+              4 * (↑F + 3) * LeadingRunSupply.mass (List.replicate (F + 2) true) +
+            -2 * (↑F + 1) ^ 2 +
+          -2 * (↑F + 3) ^ 2 +
+        -4 =
+      0
+h_1 :
+  LeadingRunSupply.mass (List.replicate (F + 2) true) =
+    LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] ∀ (n : Nat), runKey (List.replicate n true) = 0
+    [prop] ¬-4 * ↑F +
+                      4 * (↑F + 1) *
+                        LeadingRunSupply.mass
+                          (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true) +
+                    4 * (↑F + 3) * LeadingRunSupply.mass (List.replicate (F + 2) true) +
+                  -2 * (↑F + 1) ^ 2 +
+                -2 * (↑F + 3) ^ 2 +
+              -4 =
+            0
+    [prop] runKey (List.replicate 1 true) = 0
+    [prop] runKey (List.replicate (F + 2) true) = 0
+    [prop] LeadingRunSupply.mass (List.replicate (F + 2) true) =
+          LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)
+  [eqc] True propositions
+    [prop] LeadingRunSupply.mass (List.replicate (F + 2) true) =
+          LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)
+    [prop] ∀ (n : Nat), runKey (List.replicate n true) = 0
+  [eqc] False propositions
+    [prop] -4 * ↑F +
+                    4 * (↑F + 1) *
+                      LeadingRunSupply.mass
+                        (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true) +
+                  4 * (↑F + 3) * LeadingRunSupply.mass (List.replicate (F + 2) true) +
+                -2 * (↑F + 1) ^ 2 +
+              -2 * (↑F + 3) ^ 2 +
+            -4 =
+          0
+  [eqc] Equivalence classes
+    [eqc] {LeadingRunSupply.mass (List.replicate (F + 2) true),
+        LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)}
+    [eqc] {0, runKey (List.replicate 1 true), runKey (List.replicate (F + 2) true)}
+    [eqc] {↑F * LeadingRunSupply.mass (List.replicate (F + 2) true),
+        ↑F *
+          LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)}
+    [eqc] {4 * (↑F * LeadingRunSupply.mass (List.replicate (F + 2) true)),
+        4 *
+          (↑F *
+            LeadingRunSupply.mass
+              (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true))}
+  [cases] Case analyses
+    [cases] [1/2]: LeadingRunSupply.mass (List.replicate (F + 2) true) =
+          LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)
+      [cases] source: Model-based theory combination at argument #5 of
+            4 * (↑F + 3) * LeadingRunSupply.mass (List.replicate (F + 2) true)
+          and
+            4 * (↑F + 1) *
+              LeadingRunSupply.mass
+                (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true)
+  [ematch] E-matching patterns
+    [thm] hA: [runKey (A #0)]
+    [thm] hA: [A #0]
+    [thm] hA: [@List.replicate `[Bool] #0 `[true]]
+  [cutsat] Assignment satisfying linear constraints
+    [assign] F := 0
+    [assign] LeadingRunSupply.mass (List.replicate (F + 2) true) := 0
+    [assign] LeadingRunSupply.mass
+          (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true) := 0
+    [assign] 「↑F ^ 2」 := 0
+    [assign] 「(↑F + 1) ^ 2」 := 0
+    [assign] 「(↑F + 3) ^ 2」 := 0
+    [assign] runKey (List.replicate 1 true) := 0
+    [assign] runKey (List.replicate (F + 2) true) := 0
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] LeadingRunSupply.mass (List.replicate (F + 2) true ++ List.replicate (F + 3) false ++ List.replicate 1 true) +
+              -1 * LeadingRunSupply.mass (List.replicate (F + 2) true) =
+            0
+    [diseqs] Disequalities
+      [_] ¬-4 * ↑F ^ 2 + 8 * (↑F * LeadingRunSupply.mass (List.replicate (F + 2) true)) + -20 * ↑F +
+                  16 * LeadingRunSupply.mass (List.replicate (F + 2) true) +
+                -24 =
+              0
+[grind] Diagnostics
+  [thm] E-Matching instances
+    [thm] hA ↦ 2
+Recaman/InteriorZeroFreeWords.lean:34:27: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (oldWord k)
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/InteriorZeroFreeWords.lean:48:4: error: Tactic `subst` failed: did not find equation for eliminating 'j'
+
+case zero
+j : Nat
+hj : j ≤ 0
+⊢ ∃ v, oldWord 0 = v ++ oldWord j
+Recaman/InteriorZeroFreeWords.lean:60:4: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  ((oldWord k ++ S 1) ++ A k)
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/InteriorZeroFreeWords.lean:73:36: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (interiorWord d)
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/InteriorZeroFreeWords.lean:75:6: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (interiorWord d ++ [false])
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/InteriorZeroFreeWords.lean:77:15: error: Function expected at
+  mass
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  (interiorWord d)
+Recaman/InteriorZeroFreeWords.lean:78:28: error(lean.unknownIdentifier): Unknown identifier `mass_append`
+Recaman/InteriorZeroFreeWords.lean:78:40: error(lean.unknownIdentifier): Unknown identifier `mass_rep_false`
+Recaman/InteriorZeroFreeWords.lean:78:55: error(lean.unknownIdentifier): Unknown identifier `mass_replicate_A`
+Recaman/InteriorZeroFreeWords.lean:79:54: error(lean.unknownIdentifier): Unknown constant `Int.natCast_ofNat`
+Recaman/InteriorZeroFreeWords.lean:82:62: error(lean.unknownIdentifier): Unknown identifier `mass_append`
+Recaman/InteriorZeroFreeWords.lean:87:8: error(lean.unknownIdentifier): Unknown identifier `mass_append`

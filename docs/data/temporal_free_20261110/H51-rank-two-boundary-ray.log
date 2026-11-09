@@ -1,0 +1,16 @@
+Recaman/RankTwoBoundaryRay.lean:13:10: error(lean.unknownIdentifier): Unknown identifier `seg_A`
+Recaman/RankTwoBoundaryRay.lean:14:10: error: No goals to be solved
+Recaman/RankTwoBoundaryRay.lean:20:46: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fw f (s + (B + i - s))
+in the target expression
+  mass (seg f s (B + i - s)) = Fw f (B + i) - Fw f s
+
+f : Nat → Bool
+B s i : Nat
+hs : s ≤ B
+hA : ∀ (k : Nat), k < i → f (B + k) = true
+hw : Win f s (B + i - s)
+hAseg : seg f B i = List.replicate i true
+hfull : seg f s (B + i - s) = seg f s (B - s) ++ List.replicate i true
+hm : mass (seg f s (B + i - s)) = Fw f (B + i) - Fw f s
+⊢ runKey (seg f s (B - s)) = -2 ∧ mass (seg f s (B - s)) + ↑i = 1

@@ -1,0 +1,25 @@
+{
+  "tag": "H55a-old-gate-helper",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossOldClocks.olean",
+    "Recaman/LowCrossOldClocks.lean"
+  ],
+  "started_jst": "2026-11-10T07:25:15.181708+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossOldClocks.lean": "72f949cb0b30d55b5f51cf9e64487f94a5a5debf83b841f52225d71375acc083"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9b849087c216983d1e509d22c635ede4f7f7cb21f9680e495bfde8c0a92c09e6",
+  "source_tree_sha256": "c19103bea44992ee0929785e90890bedbd958f25c5da1aefabf9bec3d5d30c93",
+  "source_tree_manifest": "H55a-old-gate-helper-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

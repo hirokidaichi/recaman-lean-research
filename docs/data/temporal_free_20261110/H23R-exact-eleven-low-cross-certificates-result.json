@@ -1,0 +1,31 @@
+{
+  "tag": "H23R-exact-eleven-low-cross-certificates",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SmallCrossPrefixWords.olean",
+    "Recaman/SmallCrossPrefixWords.lean"
+  ],
+  "started_jst": "2026-11-10T06:34:42.422825+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallCrossPrefixWords.lean": "e025946a89fb8711b7ea193cdad96e1de3ba59bb2ef42833991176512719afe8"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "ff1b1da8c1c45d93ec7117b7099e694cf5fef9f546560eb6135a3c0de97ffa2e",
+  "source_tree_sha256": "b1d537620ace2ae95cf85ca6e9ea1463f874cba78d70297df636085ac3480b40",
+  "source_tree_manifest": "H23R-exact-eleven-low-cross-certificates-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ff1b1da8c1c45d93ec7117b7099e694cf5fef9f546560eb6135a3c0de97ffa2e",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 1.207847125013359,
+  "cpu_seconds": 1.061323,
+  "finished_jst": "2026-11-10T06:34:43.630630+09:00"
+}

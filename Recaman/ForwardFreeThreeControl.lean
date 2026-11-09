@@ -1,0 +1,100 @@
+import Recaman.ForwardSourceActualFreeThree
+import Recaman.InitialSPaddingPositive
+
+namespace Recaman.ForwardFreeThreeControl
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality
+open Recaman.LineCapacityPeriodic Recaman.InitialSPaddingPositive
+
+/-- The segment between the two primitive source starts. -/
+def middle : List Bool := [false,false,true,true,true,true,false,true,false,false,false]
+
+def controlSign : Nat → Bool := finiteSign (middle++[false])
+
+private theorem prefix_supply_bits (t : Nat) (ht : t<11) :
+    (controlSign t=true ∧
+      Recaman.ThreeNonsuppliedData.localSupply (seg controlSign 0 t)=true) ↔ t=4 ∨ t=7 := by
+  have hc : t=0 ∨ t=1 ∨ t=2 ∨ t=3 ∨ t=4 ∨ t=5 ∨ t=6 ∨ t=7 ∨ t=8 ∨ t=9 ∨ t=10 := by omega
+  rcases hc with rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl <;> decide
+
+/-- Both supplied additions are counted from the original zero base. -/
+theorem prefix_supply_exact (t : Nat) (ht : t<11) :
+    EndN controlSign 0 t ↔ t=4 ∨ t=7 := by
+  constructor
+  · intro he
+    exact (prefix_supply_bits t ht).mp
+      ⟨he.1,(localSupply_seg_iff controlSign 0 t (Nat.zero_le _) he.1).mpr he⟩
+  · intro hh
+    obtain ⟨ha,hs⟩:=(prefix_supply_bits t ht).mpr hh
+    exact (localSupply_seg_iff controlSign 0 t (Nat.zero_le _) ha).mp hs
+
+private theorem two_clocks_count (k : Nat) :
+    cN (fun t=>t=4 ∨ t=7) 0 k=(if 4<k then 1 else 0)+(if 7<k then 1 else 0) := by
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+    by_cases h4 : k=4
+    · subst k
+      rw [cN_succ_pos _ 0 4 (by decide),ih]
+      decide
+    · by_cases h7 : k=7
+      · subst k
+        rw [cN_succ_pos _ 0 7 (by decide),ih]
+        decide
+      · have hne : ¬(0+k=4 ∨ 0+k=7) := by omega
+        have h4' : (4<k+1)=(4<k) := propext (by omega)
+        have h7' : (7<k+1)=(7<k) := propext (by omega)
+        rw [cN_succ_neg _ 0 k hne,ih]
+        simp only [h4',h7']
+
+private theorem control_count (k : Nat) (hk : k≤11) :
+    cN (EndN controlSign 0) 0 k=(if 4<k then 1 else 0)+(if 7<k then 1 else 0) := by
+  rw [cN_congr (P := EndN controlSign 0) (Q := fun t=>t=4 ∨ t=7) (s := 0) k (fun t _ ht=>prefix_supply_exact t (by omega))]
+  exact two_clocks_count k
+
+/-- A real sign history attains the three-free lower bound, with two
+forward primitive clocks and strict positivity on the charged interval. -/
+theorem forward_three_free_example :
+    seg controlSign 0 11=middle ∧ seg controlSign 0 12=middle++[false] ∧
+    (∀ k, 0<k → k≤11 → cN (EndN controlSign 0) 0 k+1≤subtractions controlSign 0 k) ∧
+    free controlSign 0 11=3 ∧
+    runKey [false]= -2 ∧ runKey (middle++[false])= -2 ∧
+    mass [false]+2=1 ∧ mass (middle++[false])+3=1 ∧
+    EndN controlSign 0 14 ∧ EndN controlSign 0 15 := by
+  have hs1:=cntF_seg controlSign 0 1
+  have hs2:=cntF_seg controlSign 0 2
+  have hs7:=cntF_seg controlSign 0 7
+  rw [show cntF (seg controlSign 0 1)=1 by decide] at hs1
+  rw [show cntF (seg controlSign 0 2)=2 by decide] at hs2
+  rw [show cntF (seg controlSign 0 7)=3 by decide] at hs7
+  have hp (k : Nat) (hk : 0<k) (hkK : k≤11) :
+      cN (EndN controlSign 0) 0 k+1≤subtractions controlSign 0 k := by
+    unfold subtractions
+    rw [control_count k hkK]
+    by_cases h4 : 4<k
+    · by_cases h7 : 7<k
+      · have hh:=count_prefix_le (fun t=>controlSign t=false) 0 7 k (by omega)
+        simp only [if_pos h4,if_pos h7]
+        omega
+      · have hh:=count_prefix_le (fun t=>controlSign t=false) 0 2 k (by omega)
+        simp only [if_pos h4,if_neg h7]
+        omega
+    · have hh:=count_prefix_le (fun t=>controlSign t=false) 0 1 k (by omega)
+      have h7 : ¬7<k := by omega
+      simp only [if_neg h4,if_neg h7]
+      omega
+  have hA:=ones_seg_eq_count controlSign 0 11
+  rw [show ones (seg controlSign 0 11)=5 by decide] at hA
+  have ha : additions controlSign 0 11=5 := by unfold additions; omega
+  have he : cN (EndN controlSign 0) 0 11=2 := by rw [control_count 11 (by decide)]; decide
+  have hf : free controlSign 0 11=3 := by
+    have hh:=additions_split controlSign 0 11
+    omega
+  have h14 : EndN controlSign 0 14 :=
+    (localSupply_seg_iff controlSign 0 14 (by decide) (by decide)).mp (by decide)
+  have h15 : EndN controlSign 0 15 :=
+    (localSupply_seg_iff controlSign 0 15 (by decide) (by decide)).mp (by decide)
+  exact ⟨by decide,by decide,hp,hf,by decide,by decide,by decide,by decide,h14,h15⟩
+
+end Recaman.ForwardFreeThreeControl

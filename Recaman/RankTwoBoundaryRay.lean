@@ -1,0 +1,92 @@
+import Recaman.RankTwoEqualClock
+
+namespace Recaman.RankTwoBoundaryRay
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality
+open Recaman.LineCapacityPeriodic Recaman.LowCrossSupplyCount Recaman.RunSupplyBudget
+
+private theorem ray_source_data (f : Nat → Bool) (B s i : Nat) (hs : s≤B)
+    (hA : ∀ k, k<i → f (B+k)=true) (hw : Win f s (B+i-s)) :
+    runKey (seg f s (B-s))= -2 ∧ mass (seg f s (B-s))+(i : Int)=1 := by
+  have hAseg : seg f B i=List.replicate i true := by
+    apply seg_A
+    intro t ht hti
+    have he:=hA (t-B) (by omega)
+    rwa [Nat.add_sub_cancel' ht] at he
+  have hfull:=seg_add f s (B-s) i
+  rw [show B-s+i=B+i-s by omega,Nat.add_sub_of_le hs,hAseg] at hfull
+  have hm:=seg_mass f s (B+i-s)
+  have hWin:=hw.2.1
+  rw [Nat.add_sub_of_le (show s≤B+i by omega)] at hm hWin
+  have hm1 : mass (seg f s (B+i-s))=1 := by omega
+  have hk : runKey (seg f s (B+i-s))= -2 := by
+    unfold runKey
+    rw [← Ar_areaW,hw.2.2,hm1]
+    decide
+  rw [hfull,runKey_append_A] at hk
+  rw [hfull,mass_append,mass_replicate_A] at hm1
+  exact ⟨hk,hm1⟩
+
+/-- A source at the original BlockWord boundary fixes the only local
+clock and the possible duplicate start when the prefix has two free A. -/
+theorem boundary_ray_source_shape (f : Nat → Bool) (n B T i s j : Nat) (w : List Bool)
+    (hn : n≤B) (hi : i<T) (hs : n≤s) (hsB : s≤B) (hj : j<T)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hA : ∀ k, k<T → f (B+k)=true)
+    (hpos : ∀ k, 0<k → k≤B-n → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hFree : free f n (B-n)≤2)
+    (hroot : Win f n (B+i-n)) (hother : Win f s (B+j-s)) :
+    i=j ∧ (s=n ∨ (s=n+4 ∧ seg f n 4=[false,true,true,false])) := by
+  obtain ⟨hkRoot,hmRoot⟩:=ray_source_data f B n i hn (fun k hk=>hA k (by omega)) hroot
+  obtain ⟨hkOther,hmOther⟩:=ray_source_data f B s j hsB (fun k hk=>hA k (by omega)) hother
+  by_cases heq : s=n
+  · subst s
+    exact ⟨by omega,Or.inl rfl⟩
+  · have hsplit:=seg_add f n (s-n) (B-s)
+    rw [show s-n+(B-s)=B-n by omega,Nat.add_sub_of_le hs] at hsplit
+    rw [hsplit] at hkRoot hmRoot
+    have hf:=free_prefix_mono f n (s-n) (B-n) (by omega)
+    have hpos' (k : Nat) (hk : 0<k) (hk' : k≤s-n) :=
+      hpos k hk (by omega)
+    have hij : i=j := by
+      by_cases h : i=j
+      · exact h
+      · have h3:=Recaman.RankTwoDistinctClocks.distinct_pair_needs_three_actual_free
+          f n (s-n) j i w (seg f s (B-s)) hw hpre hpos'
+          (fun hj=>h hj.symm) hkOther hkRoot hmOther hmRoot
+        omega
+    subst j
+    obtain ⟨h4,hword,_⟩:=Recaman.RankTwoEqualClock.equal_clock_two_free_shape
+      f n (s-n) i w (seg f s (B-s)) hw hpre (by omega) hpos' (by omega)
+      hkOther hkRoot hmOther hmRoot
+    exact ⟨rfl,Or.inr ⟨by omega,by rwa [h4] at hword⟩⟩
+
+theorem boundary_ray_local_supply_one (f : Nat → Bool) (n B T i : Nat) (w : List Bool)
+    (hn : n≤B) (hi : i<T) (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hA : ∀ k, k<T → f (B+k)=true)
+    (hpos : ∀ k, 0<k → k≤B-n → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hFree : free f n (B-n)≤2) (hroot : Win f n (B+i-n)) :
+    cN (fun t=>EndN f 0 t ∧ ∃ s, n≤s ∧ s≤B ∧ Win f s (t-s)) B T=1 := by
+  let P := fun t=>EndN f 0 t ∧ ∃ s, n≤s ∧ s≤B ∧ Win f s (t-s)
+  have honly (t : Nat) (ht : B≤t) (ht' : t<B+T) (hp : P t) : t=B+i := by
+    obtain ⟨_,s,hs,hsB,hW⟩:=hp
+    let j:=t-B
+    have hEq : B+j=t := by dsimp [j]; omega
+    have hw' : Win f s (B+j-s) := by rwa [hEq]
+    have h:=boundary_ray_source_shape f n B T i s j w hn hi hs hsB (by omega)
+      hw hpre hA hpos hFree hroot hw'
+    omega
+  have hle : cN P B T≤1 := by
+    apply interval_unique_count
+    intro a b ha ha' hb hb' hpa hpb
+    exact (honly a ha ha' hpa).trans (honly b hb hb' hpb).symm
+  have hp : P (B+i) :=
+    ⟨⟨hA i hi,n,B+i-n,by omega,by omega,hroot⟩,n,by omega,hn,hroot⟩
+  have hs:=cN_succ_pos P B i hp
+  have ha:=cN_add P B (i+1) (T-(i+1))
+  rw [show i+1+(T-(i+1))=T by omega] at ha
+  change cN P B T=1
+  omega
+
+end Recaman.RankTwoBoundaryRay

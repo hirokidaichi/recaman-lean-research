@@ -1,0 +1,113 @@
+import Recaman.AdditionRankSlack
+
+namespace Recaman.SourceDeficitBand
+
+open Recaman.AdditionRankSlack Recaman.SingleWindowEquality Recaman.RunSupplyBudget
+
+/-- Subtractions minus supplied additions in the original history. -/
+noncomputable def deficit (f : Nat → Bool) (t : Nat) : Int :=
+  (subtractions f 0 t : Int)-cN (EndN f 0) 0 t
+
+theorem walk_eq_free_sub_deficit (f : Nat → Bool) (t : Nat) :
+    Fw f t=(free f 0 t : Int)-deficit f t := by
+  have h:=(cN_walk f 0 t).1
+  rw [Nat.zero_add] at h
+  change Fw f t=0+(additions f 0 t : Int)-subtractions f 0 t at h
+  have hs:=additions_split f 0 t
+  unfold deficit
+  omega
+
+private theorem free_difference (f : Nat → Bool) (a b : Nat) (hab : a≤b) :
+    free f 0 b=free f 0 a+free f a (b-a) := by
+  have h:=cN_add (fun x=>f x=true ∧ ¬EndN f 0 x) 0 a (b-a)
+  rwa [Nat.zero_add,Nat.add_sub_cancel' hab] at h
+
+private theorem ray_walk (f : Nat → Bool) (B i : Nat)
+    (hA : ∀ k, k<i → f (B+k)=true) : Fw f (B+i)=Fw f B+(i : Int) := by
+  have h:=(cN_walk f B i).1
+  rw [count_A_run f B i hA] at h
+  have hS : cN (fun t=>f t=false) B i=0 := by
+    apply cN_zero_of
+    intro t ht ht'
+    have hs:=hA (t-B) (by omega)
+    rw [Nat.add_sub_cancel' ht] at hs
+    rw [hs]
+    decide
+  rw [hS] at h
+  omega
+
+/-- A clock on one final A-ray depends on the original free prefix and
+the original deficit at its actual window start. -/
+theorem clock_at_start (f : Nat → Bool) (B i t : Nat) (ht : t≤B)
+    (hA : ∀ k, k<i → f (B+k)=true) (hw : Win f t (B+i-t)) :
+    (i : Int)+deficit f t=(free f 0 t : Int)+1-Fw f B := by
+  have hWin:=hw.2.1
+  rw [Nat.add_sub_of_le (show t≤B+i by omega)] at hWin
+  rw [ray_walk f B i hA,walk_eq_free_sub_deficit f t] at hWin
+  omega
+
+/-- The exact two-source charge keeps the initial deficit on both sides
+and the original free count on the single interval between the starts. -/
+theorem two_clock_deficit_charge (f : Nat → Bool) (B a b i j : Nat)
+    (hab : a≤b) (hb : b≤B)
+    (hA : ∀ k, k<max i j → f (B+k)=true)
+    (hOuter : Win f a (B+j-a)) (hInner : Win f b (B+i-b)) :
+    (i : Int)+deficit f b=(j : Int)+deficit f a+free f a (b-a) := by
+  have ho:=clock_at_start f B j a (by omega) (fun k hk=>hA k (by omega)) hOuter
+  have hi:=clock_at_start f B i b hb (fun k hk=>hA k (by omega)) hInner
+  have hf:=free_difference f a b hab
+  omega
+
+private theorem count_in_int_band_aux (P : Nat → Prop) (n K : Nat) (L U : Int)
+    (h : ∀ t, n≤t → t<n+K → P t → L≤(t : Int) ∧ (t : Int)≤U) :
+    cN P n K≤(min ((n+K : Nat) : Int) (U+1)-L).toNat := by
+  induction K with
+  | zero => simp [cN]
+  | succ K ih =>
+    have h0:=ih (fun t ht htk=>h t ht (by omega))
+    by_cases he : P (n+K)
+    · obtain ⟨hl,hu⟩:=h (n+K) (by omega) (by omega) he
+      rw [cN_succ_pos P n K he,Int.min_eq_left (by omega)] at ⊢
+      rw [Int.min_eq_left (by omega)] at h0
+      omega
+    · rw [cN_succ_neg P n K he]
+      exact Nat.le_trans h0 (Int.toNat_le_toNat (by
+        have hm : min ((n+K : Nat) : Int) (U+1)≤
+            min ((n+(K+1) : Nat) : Int) (U+1) :=
+          Int.le_min.mpr ⟨Int.le_trans (Int.min_le_left _ _) (by omega),Int.min_le_right _ _⟩
+        omega))
+
+/-- Count distinct actual supplied endpoints with at least one source
+inside the given interval and deficit band. The source choices need not
+be unique or ordered by their clocks. -/
+theorem actual_supply_in_deficit_band (f : Nat → Bool) (a b B T : Nat) (L U : Int)
+    (hab : a≤b) (hb : b≤B) (hLU : L≤U)
+    (hA : ∀ i, i<T → f (B+i)=true) :
+    cN (fun t=>EndN f 0 t ∧ ∃ s, a≤s ∧ s≤b ∧
+      L≤deficit f s ∧ deficit f s≤U ∧ Win f s (t-s)) B T ≤
+        free f a (b-a)+(U-L).toNat+1 := by
+  let P := fun t=>EndN f 0 t ∧ ∃ s, a≤s ∧ s≤b ∧
+    L≤deficit f s ∧ deficit f s≤U ∧ Win f s (t-s)
+  let lo := (B : Int)+free f 0 a+1-Fw f B-U
+  let hi := (B : Int)+free f 0 b+1-Fw f B-L
+  have hband (t : Nat) (ht : B≤t) (htt : t<B+T) (hp : P t) :
+      lo≤(t : Int) ∧ (t : Int)≤hi := by
+    obtain ⟨_,s,hsa,hsb,hsL,hsU,hsW⟩:=hp
+    let i:=t-B
+    have htEq : B+i=t := by dsimp [i]; omega
+    have hW : Win f s (B+i-s) := by rw [htEq]; exact hsW
+    have hClock:=clock_at_start f B i s (by omega) (fun k hk=>hA k (by omega)) hW
+    have hfa:=free_prefix_mono f 0 a s hsa
+    have hfb:=free_prefix_mono f 0 s b hsb
+    dsimp [lo,hi]
+    omega
+  have hcnt:=count_in_int_band_aux P B T lo hi hband
+  have hfree:=free_difference f a b hab
+  have hle : min ((B+T : Nat) : Int) (hi+1)≤hi+1 := Int.min_le_right _ _
+  have he : hi+1-lo=(free f a (b-a) : Int)+(U-L)+1 := by
+    dsimp [lo,hi]
+    omega
+  change cN P B T≤_
+  omega
+
+end Recaman.SourceDeficitBand

@@ -1,0 +1,15 @@
+Recaman/ThirdAdditionRankSlack.lean:49:3: error: unknown tactic
+Recaman/ThirdAdditionRankSlack.lean:45:27: error: unsolved goals
+f : Nat → Bool
+n r K : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w
+hr : 2 ≤ r
+hpos : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hfree : free f n K ≤ r
+hA : 3 ≤ additions f n K
+hm : 0 ≤ rankSlack f n r K
+z : Int
+hz : rankSlack f n r K = 4 * z
+⊢ 4 ≤ rankSlack f n r K

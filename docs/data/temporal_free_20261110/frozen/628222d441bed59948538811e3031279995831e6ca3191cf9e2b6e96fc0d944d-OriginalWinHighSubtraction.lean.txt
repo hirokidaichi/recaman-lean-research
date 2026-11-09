@@ -1,0 +1,78 @@
+import Recaman.P2SubtractionLevelSum
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.OriginalWinHighSubtraction
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality
+open Recaman.P2SubtractionLevelSum Recaman.ShortPeriodicSupply (sign)
+
+private theorem mass_reverse (w : List Bool) : mass w.reverse=mass w := by
+  simp [mass,List.map_reverse,List.sum_reverse]
+
+private theorem moment_reverse_area (w : List Bool) : moment w.reverse=areaW w := by
+  induction w with
+  | nil => decide
+  | cons b w ih =>
+    rw [List.reverse_cons,moment_append,ih,List.length_reverse]
+    cases b <;> simp [moment,areaW,mass,sign] <;> omega
+
+private theorem nat_segment (f : Nat → Bool) (s K : Nat) :
+    segment (fun t=>f t.toNat) (s : Int) K=seg f s K := by
+  unfold segment seg
+  congr 1
+  funext i
+  rw [← Int.natCast_add,Int.toNat_natCast]
+
+/-- The existing P2 level lemma for an original chronological Win.
+A longer supplier contains a subtraction at or above its endpoint height. -/
+theorem original_win_short_or_high_S (f : Nat → Bool) (s t : Nat) (hst : s≤t)
+    (hw : Win f s (t-s)) :
+    seg f s (t-s)=[false,true,true] ∨
+      ∃ c, s≤c ∧ c<t ∧ f c=false ∧ Fw f t≤Fw f c := by
+  by_cases hHigh : ∃ c, s≤c ∧ c<t ∧ f c=false ∧ Fw f t≤Fw f c
+  · exact Or.inr hHigh
+  · let e : Int → Bool := fun z=>f z.toNat
+    let u:=past e (t : Int) (t-s)
+    have hr : u.reverse=seg f s (t-s) := by
+      unfold u
+      rw [past_reverse,show (t : Int)-((t-s : Nat) : Int)=(s : Int) by omega]
+      exact nat_segment f s (t-s)
+    have hF:=hw.2.1
+    rw [Nat.add_sub_cancel' hst] at hF
+    have hMass : mass (seg f s (t-s))=1 := by
+      rw [seg_mass,Nat.add_sub_cancel' hst]
+      omega
+    have hArea : areaW (seg f s (t-s))=0 := by
+      rw [← Ar_areaW]
+      exact hw.2.2
+    have hp : P2 u := by
+      constructor
+      · rw [← mass_reverse u,hr]
+        exact hMass
+      · have h:=moment_reverse_area u.reverse
+        rw [List.reverse_reverse,hr,hArea] at h
+        exact h
+    have hlo (i : Nat) (hi : i<t-s) (hS : e ((t : Int)-((i+1 : Nat) : Int))=false) :
+        mass (past e ((t : Int)-((i+1 : Nat) : Int)) (t-s-(i+1)))≤0 := by
+      let c:=t-(i+1)
+      have hc : (t : Int)-((i+1 : Nat) : Int)=(c : Int) := by dsimp [c]; omega
+      have hL : t-s-(i+1)=c-s := by dsimp [c]; omega
+      have hsc : s≤c := by dsimp [c]; omega
+      have hct : c<t := by dsimp [c]; omega
+      have hfc : f c=false := by rw [hc] at hS; simpa only [e,Int.toNat_natCast] using hS
+      have hlt : Fw f c<Fw f t := by
+        by_cases h : Fw f c<Fw f t
+        · exact h
+        · exact (hHigh ⟨c,hsc,hct,hfc,by omega⟩).elim
+      have hrev : (past e (c : Int) (c-s)).reverse=seg f s (c-s) := by
+        rw [past_reverse,show (c : Int)-((c-s : Nat) : Int)=(s : Int) by omega]
+        exact nat_segment f s (c-s)
+      rw [hc,hL,← mass_reverse (past e (c : Int) (c-s)),hrev,seg_mass,Nat.add_sub_cancel' hsc]
+      omega
+    have hAAS:=past_eq_aas_of_low_subtractions e (t : Int) (t-s) hp hlo
+    left
+    rw [← hr,show u=[true,true,false] from hAAS]
+    decide
+
+end Recaman.OriginalWinHighSubtraction

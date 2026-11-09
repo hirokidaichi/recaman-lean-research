@@ -1,0 +1,31 @@
+{
+  "tag": "H07R-actual-three-free-head-index",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ForwardSourceActualFreeThree.olean",
+    "Recaman/ForwardSourceActualFreeThree.lean"
+  ],
+  "started_jst": "2026-11-10T06:12:09.759073+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ForwardSourceActualFreeThree.lean": "513db4b75f27e1106dc2e1f97e9364a9040c3f7a7c7274c51c0e9526350dec63"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "762d1be34ecf1594d66e7cc3e3bc783fc7c0d9ffe9a415dd3e37ecdcbc4ca445",
+  "source_tree_sha256": "05ecf14fe4c81d05fa6f49b5c2c273b7b5e60d4759d7ca1ebc31c89706f8c86f",
+  "source_tree_manifest": "H07R-actual-three-free-head-index-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "762d1be34ecf1594d66e7cc3e3bc783fc7c0d9ffe9a415dd3e37ecdcbc4ca445",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4460837919905316,
+  "cpu_seconds": 0.316276,
+  "finished_jst": "2026-11-10T06:12:10.205101+09:00"
+}

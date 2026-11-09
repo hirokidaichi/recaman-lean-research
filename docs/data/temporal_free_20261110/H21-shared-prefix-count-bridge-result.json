@@ -1,0 +1,31 @@
+{
+  "tag": "H21-shared-prefix-count-bridge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThresholdPrefixFreeCount.olean",
+    "Recaman/ThresholdPrefixFreeCount.lean"
+  ],
+  "started_jst": "2026-11-10T06:32:40.538955+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThresholdPrefixFreeCount.lean": "4980f16381d5d40fa852b4925492fbcda262313887d0ec3b684bbdba8cda3736"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "52037eba3b7503206b5d7dcd4de61fcef4c8e6cd56c4804e3821a16f8ab6ab3a",
+  "source_tree_sha256": "3d2f10677b86c9d3df82b0d878d8e36807b2fe8b507c1b1109d60cc61f45055d",
+  "source_tree_manifest": "H21-shared-prefix-count-bridge-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "52037eba3b7503206b5d7dcd4de61fcef4c8e6cd56c4804e3821a16f8ab6ab3a",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4604455419757869,
+  "cpu_seconds": 0.29581599999999997,
+  "finished_jst": "2026-11-10T06:32:40.999342+09:00"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H04-free-two-unit-factor",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ForwardSourceFreeTwoFactor.olean",
+    "Recaman/ForwardSourceFreeTwoFactor.lean"
+  ],
+  "started_jst": "2026-11-10T06:09:04.190138+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ForwardSourceFreeTwoFactor.lean": "0e07688415f6861108a9e00e4c0e184710ec85f3a9aa0d450ec308cfb8a26140"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "44250549f71bf5ec9b78dd3237ab69643c8139bf2dd8b6f0a45094cf14c082dd",
+  "source_tree_sha256": "60641d982241f5933eb7f5ad04b33b1a5492f9ceace1d685ed20bb8a0a82473c",
+  "source_tree_manifest": "H04-free-two-unit-factor-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H54R-cross36-long-literals",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/Cross36LongFreeCertificate.olean",
+    "Recaman/Cross36LongFreeCertificate.lean"
+  ],
+  "started_jst": "2026-11-10T07:24:13.098694+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/Cross36LongFreeCertificate.lean": "2366baf6fe846fce725a1ff13e952a8f36550526b853c461779ef1ecd1d90fb0"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "1acc6d68dcf88370bc308290b0982c2ae943fd6f575d2e6b99587053f0479d2c",
+  "source_tree_sha256": "5ac37b851c281e3e1ad3d123f80eac2e00e83e6a7356820953bec5306e2be3b2",
+  "source_tree_manifest": "H54R-cross36-long-literals-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1acc6d68dcf88370bc308290b0982c2ae943fd6f575d2e6b99587053f0479d2c",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.6960517090046778,
+  "cpu_seconds": 0.569827,
+  "finished_jst": "2026-11-10T07:24:13.794686+09:00"
+}

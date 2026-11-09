@@ -1,0 +1,31 @@
+{
+  "tag": "H36-interior-zero-free",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InteriorZeroFreeControl.olean",
+    "Recaman/InteriorZeroFreeControl.lean"
+  ],
+  "started_jst": "2026-11-10T06:57:41.879933+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InteriorZeroFreeControl.lean": "5812f172f7d8d6c461dd3f2dd65e3e3ba444165c22776d59fa216d4ebd01c207"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9a972960fe272a3d57a2a720bbee8dd9e46fb16e5003d501d8cb3497975db6fe",
+  "source_tree_sha256": "186a79a3858655646d4fb944b1f9c0217134b8c61cf9f24916d4fb123bb2ed66",
+  "source_tree_manifest": "H36-interior-zero-free-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9a972960fe272a3d57a2a720bbee8dd9e46fb16e5003d501d8cb3497975db6fe",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7035814999835566,
+  "cpu_seconds": 0.522743,
+  "finished_jst": "2026-11-10T06:57:42.583457+09:00"
+}

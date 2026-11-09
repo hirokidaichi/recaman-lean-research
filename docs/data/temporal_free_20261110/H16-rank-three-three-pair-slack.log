@@ -1,0 +1,122 @@
+Recaman/RankThreeEarlyFree.lean:19:10: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/RankThreeEarlyFree.lean:37:10: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/RankThreeEarlyFree.lean:67:6: error: unsolved goals
+x✝ : Sort u_1
+BlockWord : x✝
+f : Nat → Bool
+n K : Nat
+w : List Bool
+hw : sorry
+hpre : seg f 0 n = w
+hp : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hf : free f n K ≤ 3
+ha : 5 ≤ additions f n K
+h : ¬12 ≤ rankSlack f n 3 K
+hd : rankSlack f n 3 K % 4 = 0
+h8 : rankSlack f n 3 K ≤ 8
+hS : f n = false
+hA4 : additions f n 4 ≤ 2
+hk : 8 ≤ K
+h5 : additions f n 8 = 5
+hl : f (n + (8 - 1)) = true
+hk8 : 8 ≤ 8
+hhead : (seg f n 8).head? = some false
+hcap : ones (List.take 4 (seg f n 8)) ≤ 2
+hOne : ones (seg f n 8) = 5
+hlast : (seg f n 8)[8 - 1]? = some true
+hkey : 2 ≤ RunSupplyKeys.runKey (seg f n 8)
+⊢ Sort ?u.145
+
+x✝ : Sort u_1
+BlockWord : x✝
+f : Nat → Bool
+n K : Nat
+w : List Bool
+hw : sorry
+hpre : seg f 0 n = w
+hp : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hf : free f n K ≤ 3
+ha : 5 ≤ additions f n K
+h : ¬12 ≤ rankSlack f n 3 K
+hd : rankSlack f n 3 K % 4 = 0
+h8 : rankSlack f n 3 K ≤ 8
+hS : f n = false
+hA4 : additions f n 4 ≤ 2
+hk : 8 ≤ K
+h5 : additions f n 8 = 5
+hl : f (n + (8 - 1)) = true
+hk8 : 8 ≤ 8
+hhead : (seg f n 8).head? = some false
+hcap : ones (List.take 4 (seg f n 8)) ≤ 2
+hOne : ones (seg f n 8) = 5
+hlast : (seg f n 8)[8 - 1]? = some true
+hkey : 2 ≤ RunSupplyKeys.runKey (seg f n 8)
+⊢ ?m.425
+Recaman/RankThreeEarlyFree.lean:69:6: error: unsolved goals
+x✝ : Sort u_1
+BlockWord : x✝
+f : Nat → Bool
+n K : Nat
+w : List Bool
+hw : sorry
+hpre : seg f 0 n = w
+hp : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hf : free f n K ≤ 3
+ha : 5 ≤ additions f n K
+h : ¬12 ≤ rankSlack f n 3 K
+hd : rankSlack f n 3 K % 4 = 0
+h8 : rankSlack f n 3 K ≤ 8
+hS : f n = false
+hA4 : additions f n 4 ≤ 2
+hk : 9 ≤ K
+h5 : additions f n 9 = 5
+hl : f (n + (9 - 1)) = true
+hk8 : 8 ≤ 9
+hhead : (seg f n 9).head? = some false
+hcap : ones (List.take 4 (seg f n 9)) ≤ 2
+hOne : ones (seg f n 9) = 5
+hlast : (seg f n 9)[9 - 1]? = some true
+hkey : 8 ≤ RunSupplyKeys.runKey (seg f n 9)
+⊢ Sort ?u.148
+
+x✝ : Sort u_1
+BlockWord : x✝
+f : Nat → Bool
+n K : Nat
+w : List Bool
+hw : sorry
+hpre : seg f 0 n = w
+hp : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hf : free f n K ≤ 3
+ha : 5 ≤ additions f n K
+h : ¬12 ≤ rankSlack f n 3 K
+hd : rankSlack f n 3 K % 4 = 0
+h8 : rankSlack f n 3 K ≤ 8
+hS : f n = false
+hA4 : additions f n 4 ≤ 2
+hk : 9 ≤ K
+h5 : additions f n 9 = 5
+hl : f (n + (9 - 1)) = true
+hk8 : 8 ≤ 9
+hhead : (seg f n 9).head? = some false
+hcap : ones (List.take 4 (seg f n 9)) ≤ 2
+hOne : ones (seg f n 9) = 5
+hlast : (seg f n 9)[9 - 1]? = some true
+hkey : 8 ≤ RunSupplyKeys.runKey (seg f n 9)
+⊢ ?m.435

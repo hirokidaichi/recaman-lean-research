@@ -1,0 +1,31 @@
+{
+  "tag": "H02-third-addition-rank-slack",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ThirdAdditionRankSlack.olean",
+    "Recaman/ThirdAdditionRankSlack.lean"
+  ],
+  "started_jst": "2026-11-10T06:04:27.752952+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ThirdAdditionRankSlack.lean": "69dd49fc09202c5f04cc08d426f9e50bb15881ae26047c60843305d9b2ebbd8a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "86a10f74b721531d2b827b7dd537c66b600b47850423524710500fa94681e93f",
+  "source_tree_sha256": "cee305b0dcbcf6476e0b494e24514c5f991aff4f1d505da723ad8708ef302d26",
+  "source_tree_manifest": "H02-third-addition-rank-slack-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "86a10f74b721531d2b827b7dd537c66b600b47850423524710500fa94681e93f",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.3858302499866113,
+  "cpu_seconds": 0.255196,
+  "finished_jst": "2026-11-10T06:04:28.138716+09:00"
+}

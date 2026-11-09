@@ -1,0 +1,3 @@
+Recaman/SmallCrossPrefixWords.lean:93:110: error: Tactic `decide` proved that the proposition
+  List.filter (fun p => decide (crossPairs p % 2 = 1)) (words 13 7 6 5) = oddWords
+is false

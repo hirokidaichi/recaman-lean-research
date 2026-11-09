@@ -1,0 +1,17 @@
+{
+  "tag": "H72-tools",
+  "argv": [
+    "make",
+    "test-tools"
+  ],
+  "started_jst": "2026-11-10T07:45:20.744653+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "b8633595d553286ff63dd633e8a05fcdeba0074e49e1b97b70d34dce69c57b07",
+  "source_tree_sha256": "5225f066f199ed85f42575dbc6309eb52e6e480c34630cabc24de073fb41c21c",
+  "source_tree_manifest": "H72-tools-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

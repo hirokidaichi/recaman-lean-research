@@ -1,0 +1,11 @@
+Recaman/Cross36LongFreeCertificate.lean:49:16: error: (kernel) excessive memory consumption detected
+Recaman/Cross36LongFreeCertificate.lean:57:10: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/Cross36LongFreeCertificate.lean:56:8: error: (kernel) excessive memory consumption detected

@@ -1,0 +1,96 @@
+import Recaman.ThresholdPrefixFreeCount
+
+namespace Recaman.OldMassEndpointGate
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.BlockOldRay Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+/-- Necessary old-suffix key at the given clock, with exact mass-one and
+mass-two block shapes and a lower key bound at higher masses. -/
+def oldPossible (x : List Bool) (i : Nat) : Bool :=
+  let c := 1-mass x-(i : Int)
+  let k := runKey x+4*c*(cntF x : Int)
+  if c=1 then decide (k= -2)
+  else if c=2 then decide (k= -2 ∨ k=0)
+  else decide (3≤c ∧ k≤0)
+
+theorem old_source_passes_mass_gate (w x : List Bool) (i : Nat) (hw : BlockWord w)
+    (he : tailOldRay w x i) : oldPossible x i=true := by
+  obtain ⟨t,ht,hm,hk⟩:=he
+  have hdrop:=block_suffix hw (w.take t) (w.drop t) (List.take_append_drop t w)
+  have hne : w.drop t≠[] := by
+    intro he
+    have hl:=congrArg List.length he
+    simp only [List.length_drop,List.length_nil] at hl
+    omega
+  have hC := ((sufPos_block hdrop) [] (w.drop t) (by simp) hne).1
+  have hkLo : -2≤runKey (w.drop t) := by
+    have hb:=block_area_quadratic_lower hdrop
+    unfold runKey
+    omega
+  let c:=1-mass x-(i : Int)
+  have hc : c=mass (w.drop t) := by dsimp [c]; omega
+  unfold oldPossible
+  change (if c=1 then decide (runKey x+4*c*(cntF x : Int)= -2)
+    else if c=2 then decide (runKey x+4*c*(cntF x : Int)= -2 ∨ runKey x+4*c*(cntF x : Int)=0)
+    else decide (3≤c ∧ runKey x+4*c*(cntF x : Int)≤0))=true
+  rw [hc]
+  by_cases h1 : mass (w.drop t)=1
+  · rw [if_pos h1]
+    apply decide_eq_true
+    have hz:=block_mass_one hdrop h1
+    rw [hz,show runKey [true]=0 by decide] at hk
+    omega
+  · rw [if_neg h1]
+    by_cases h2 : mass (w.drop t)=2
+    · rw [if_pos h2]
+      apply decide_eq_true
+      rcases block_mass_two hdrop h2 with hz|hz
+      · left
+        rw [hz,show runKey [true,true]=0 by decide] at hk
+        omega
+      · right
+        have hh : runKey (w.drop t)= -2 := by rw [hz]; decide
+        omega
+    · rw [if_neg h2]
+      apply decide_eq_true
+      exact ⟨by omega,by omega⟩
+
+/-- One distinct original index that passes both exclusions is free. -/
+def certifiedAt (x : List Bool) (t : Nat) : Bool :=
+  decide (x[t]?=some true ∧ oldPossible (x.take t) 0=false ∧
+    Recaman.ThreeNonsuppliedData.localSupply (x.take t)=false)
+
+theorem mass_gate_certified_free_count (f : Nat → Bool) (n K : Nat) (w x : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w) (hseg : seg f n K=x) :
+    (List.range K).countP (certifiedAt x)≤free f n K := by
+  rw [← Recaman.ThresholdPrefixFreeCount.count_range (certifiedAt x) n K]
+  unfold free
+  apply cN_mono
+  intro t hnt htk hc
+  obtain ⟨hA,hOld,hLocal⟩:=of_decide_eq_true hc
+  have hclock : n+(t-n)=t := Nat.add_sub_cancel' hnt
+  have hget:=seg_get f n K (t-n) (by omega)
+  rw [hseg,hclock,hA] at hget
+  have ha : f t=true := (Option.some.inj hget).symm
+  refine ⟨ha,?_⟩
+  intro he
+  let z:=x.take (t-n)
+  have hs := seg_take f n K (t-n) (by omega)
+  rw [hseg] at hs
+  have hwhole : seg f 0 t=w++z := by
+    rw [← hclock,seg_add,Nat.zero_add,hpre,← hs]
+  have hL:=(localSupply_seg_iff f 0 t (Nat.zero_le _) ha).mpr he
+  have hh : Recaman.ThreeNonsuppliedData.localSupply ((w++z)++List.replicate 0 true)=true := by
+    simpa only [Nat.sub_zero,hwhole,List.replicate_zero,List.append_nil] using hL
+  rcases (ray_supply_append_iff w z 0).mp hh with ho|hl
+  · have hyes:=old_source_passes_mass_gate w z 0 hw ho
+    change oldPossible z 0=false at hOld
+    rw [hOld] at hyes
+    cases hyes
+  · change Recaman.ThreeNonsuppliedData.localSupply z=false at hLocal
+    simp only [List.replicate_zero,List.append_nil,hLocal] at hl
+    cases hl
+
+end Recaman.OldMassEndpointGate

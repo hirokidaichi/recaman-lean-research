@@ -1,0 +1,10 @@
+Recaman/ShortSourceTriples.lean:71:42: error: unsolved goals
+f : Nat → Bool
+n t : Nat
+ht : n + 3 ≤ t
+hS : f (t - 3) = false
+h2 : f (t - 2) = true
+h1 : f (t - 1) = true
+hA : f t = true
+⊢ Fw f (t - 3) + -1 = Fw f (t - 3) - 1
+Recaman/ShortSourceTriples.lean:118:30: error(lean.unknownIdentifier): Unknown identifier `h`

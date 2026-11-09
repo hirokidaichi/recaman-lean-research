@@ -1,0 +1,31 @@
+{
+  "tag": "H39-interior-gap-family",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InteriorClockGapFamily.olean",
+    "Recaman/InteriorClockGapFamily.lean"
+  ],
+  "started_jst": "2026-11-10T07:01:36.991031+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InteriorClockGapFamily.lean": "089adc66c29e22360dfc88ce612dba9474bf593c119cdf380546416590376262"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9a972960fe272a3d57a2a720bbee8dd9e46fb16e5003d501d8cb3497975db6fe",
+  "source_tree_sha256": "38e5312eb4497cd38f124ae42eb1ba4b015bd1f1cbd31d055daa342e3764f007",
+  "source_tree_manifest": "H39-interior-gap-family-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9a972960fe272a3d57a2a720bbee8dd9e46fb16e5003d501d8cb3497975db6fe",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 7.352814042009413,
+  "cpu_seconds": 7.222823,
+  "finished_jst": "2026-11-10T07:01:44.343782+09:00"
+}

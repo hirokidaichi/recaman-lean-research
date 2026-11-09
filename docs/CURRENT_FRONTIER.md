@@ -1,10 +1,24 @@
 # Current research frontier
 
-最終更新: 2026-11-09。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-10。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
 
-- **E-614 / E-615 / E-617 / E-618 PROVED-LEAN**。単一AS layerのsharp A²>=8i、全mixed prefixの4i+1<=A²、r3の元actual両source半径、時計advanceに必要な元free>=2、非負future keyによる全old源排除とSAAS次Aのfree producer。全run数を許す限定source条件であり一般rank/C1ではない。E-616の時間順key予算とE-619 forward free>=3はPROVED-PAPER（未kernel・人間レビュー未）。
+- **E-637 / E-638 / E-639 PROVED-LEAN**。任意runの元実供給を、区間内SAAのある短供給と残りOに分ける。元padded BlockWordで実gapの反例にはj+4<=3Oが必要。残りOは旧源又は高Sを持ち、厳密な不足新最低だけは高Sを再使用せず数えられる。
+
+- **E-642 REFUTED / E-643 PROVED-PAPER**。短供給の三Aと新最低の二Aは同じ位置を使いうる。重複B+2Cの紙上会計を記録した。Lean化と一般Oの制御が次の課題。
+
+- **E-633 / E-634 / E-635 PROVED-LEAN**。不足帯に入る元Winの実供給数をfree+帯幅+1で抑える。元BlockWord境界・relative strict positiveの二primitive異時計は両順序で空き3個以上。同時計の空き2ではSAASだけ。E-631は任意途中でのfreeだけの課金をREFUTED。
+
+- **E-629 / E-630 / E-636 / E-640 PROVED-LEAN**。逆順の空き<=3では時計上限5/4、F<=9。残るQ36帯は旧供給<=1まで。全A-run長3族の局所時計≡1を排除。E-641は同族の第一A交互課金をREFUTED。
+
+- **E-623 / E-624 / E-625 / E-626 PROVED-LEAN**。旧源の負key閾値は奇数F3と偶数F4で達成例を持つ。局所源も不在の元位置を重複なく数え、rank3の第五Aまでに追加SAペア3組を強制した。同じ元旧履歴・relative positive・実free<=3でforward pairはj=i+1かつi<=2/j<=3。E622で上端達成。任意rank/C1未証明、人間レビュー未。
+
+- **E-622 PROVED-LEAN**。同じ元sign historyでforward clock2/3と元区間の実free=3が共存する。E619の3はこの適用域で達成可能。標準軌道到達やC1の反例ではない。
+
+- **E-619 / E-620 / E-621 PROVED-LEAN**。元BlockWord履歴とrelative positiveで、任意runのforward primitive pairは元区間に実freeを3個以上必要とする。足し算順位のS床から単調slackを導き、free2を因数で11符号へ絞る。末尾ASSを内部供給した128語証明書で最初三Aが元free。E616のJ/Z等式はPROVED-PAPERのまま。任意source数・一般rank・C1は未証明、人間レビュー未。
+
+- **E-614 / E-615 / E-617 / E-618 PROVED-LEAN**。単一AS layerのsharp A²>=8i、全mixed prefixの4i+1<=A²、r3の元actual両source半径、時計advanceに必要な元free>=2、非負future keyによる全old源排除とSAAS次Aのfree producer。全run数を許す限定source条件であり一般rank/C1ではない。E-616の時間順key等式はPROVED-PAPER（人間レビュー未）。E-619は独立な順位slackで上記のとおりPROVED-LEAN。
 
 - **E-612 PROVED-LEAN / E-613 REFUTED**。任意mixed futureへの一layer追加で時計増分dは最初A-runのactual freeで払える（元BlockWord prefixを保持する最外layerに限定）。一方、供給clockの一定倍率成長はzero/fullpositiveの元actual履歴でも偽。時計i=2l²とi+2の全l反証族をLean検査。free不足/正末尾gap条件付きpackingやC1反例ではない。
 
@@ -1015,3 +1029,23 @@ E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新so
 2026-11-09 E-604をPROVED-LEANへ更新。元Intp/padded/zero-fullpositive/真正四run/第二S残余1の全長actual fullgap。E606は同対象から直後A族も除いて元actual last4へstrict削減し、旧H07一括接続とは独立数学入力で閉じた。E605 M8/L7帯はこのscopeに包含され追加coverageに数えない。既存E601との統合で第二Sの最後S開始以降を供給。初期S/第一A/第二S残余2以上/一般四run/任意run/C1/Q/H/SL/全射性は未解決。H07/H08と昨日H39/H52等のSTOPは保持。H05独立factor certificateは個別受理だが新source4法に不要な純helperなのでpacketへ保持しroot/Audit不採用。
 
 2026-11-09 E607/E608 PROVED-LEAN。第二S残余2 actual counterをM7/L7/z11/R5..11へstrict削減。same-S sourceの全mixed後続S床16をactual内部供給と比較して除去する。直後A sourceは同x/key/primitive奇数性からR5/F5/L<=2又はR7/F11/L<=5の二bandのみ。両者のliteral sourceは存在し、actual counter排除/fullgapは未証明。全oldmass/源前prefixを保持。人間レビュー未。
+
+### 2026-11-10 逆順source時計と実供給
+
+- E-627 PROVED-LEAN。元BlockWordの旧sourceには、位置と時計が決める一意の旧suffix massによるkey必要条件がある。局所sourceも不可能と判定した元Aだけを実freeに数える。
+- E-628 PROVED-LEAN。元区間S6/cross<=20/cross≡4 mod8では、局所源は最後2つのS順位に各一本のSAA、旧源は最後S後に高々一本。元EndN総数<=3。旧履歴の長さ・他massを固定しない。
+- E-629 PROVED-LEAN。同じ元positive/free<=3の逆順二primitive sourceでF<=9/i<=5/j<=4。時計差2以上ならi<=2。上端実現や一般rankは未解決。人間レビュー未。
+- E-630 PROVED-LEAN。cross28/S6/A<=7の元供給<=3。第4符号の相反と、旧第五A対末尾SAAの8本予算を同じ元履歴で用いる。上の逆順時計上界の内部入力。
+- E-631 REFUTED。元0からabsolute strict positive、同最終rayに元実時計2/3、途中7符号のfree=0。途中の先行履歴は任意で、relative positive/BlockWord resetは不可。途中区間のfreeだけで時計差を払う補助案の反例。親C1/E619の反例ではない。
+- E-632 PROVED-LEAN。任意dで一つの旧suffix族が S A^(d+2) S^(2d+1) の元実Aすべてを供給し、区間free=0。後続Sに対する二primitive時計2/d+2のword条件も受理。全dをabsolute positiveの両元EndNへ運ぶH39/RはSTOPPED、紙上chainのみ。
+- E-633 PROVED-LEAN。元A-rayでsource始点が一つの区間・不足帯[L,U]に入る実供給は、区間free+(U−L)+1以下。全sourceを覆う帯の供給は未証明。時計差と同元不足の差を保持し、途中で元基点を取り直さない。
+- E-634 PROVED-LEAN。元BlockWord/relative strict positiveで、任意mixed二primitive源の異clockは正逆どちらも元free>=3。逆順の低cross/小A帯ではSAAと端点の三Aが別源で重ならず、旧源は一つのS順位。E-631により任意途中cutへの適用は不可。
+- E-635 PROVED-LEAN。元境界から空き<=2の同時計二源間はSAAS/空き2。元Winが境界からある実A-rayでは全局所時計が同一、別始点はn+4だけ、元局所EndN=1。実同時計の非空例を保持し、境界sourceなしのrayや任意旧源を自動包含しない。
+- E-636 PROVED-LEAN。cross36/S6で旧実供給はn+7又はn+9、同prefixのAS予算で両立不可。元旧計数<=1、A7不要。長局所供給とF9全排除は未証明、H53/H54 STOP。
+- E-637 PROVED-LEAN。任意run/全oldで同区間内SAAを持つ実供給は端点込み三Aを重複なく占める。O=それ以外の実供給で、元padded BlockWord/実gap jのcounterはj+4<=3O。O<=1なら全runの元free-gapを証明。一般O上界は未証明。
+- E-638 PROVED-LEAN。E502を元Winへ輸送し、短SAAなしの元EndNは同窓の旧始点又は端点以上の高さでのSを持つ。counterにはその元実件数の3倍がj+4以上。高S witnessの単射は未供給。
+- E-639 PROVED-LEAN。元不足の厳密な新最低を作る局所非短EndNに限り、高Sの元順序分離・同D/同高さ/間free0と、直前の非record実供給との二件課金。非空例あり。非record供給全体やC1へは未拡張。
+- E-640 PROVED-LEAN。全A-run長3族の局所時計≡1 mod3は不可能。元EndNなら旧源のみ。H69最初A断片剰余の強化は512MB STOP、未採用。
+- E-641 REFUTED。同じ三連A族で連続第四・第五の第一Aがともに元局所供給。元absolute strict positiveと窓長11/23をLean確認。交互課金補助案だけの反証。
+- E-642 REFUTED。元新最低のrecord36と直前実供給35は次の短供給37の三Aと重なる。二費用集合の非重複を仮定しない。数値一般式やC1の反例ではない。
+- E-643 PROVED-PAPER。任意元区間の短三Aと新最低二Aの重複は直前shortなら1、直後shortなら2。3L+2R<=A+B+2Cの集合証明を保存。元cNのkernel化、非recordや補正項の上界は未証明。

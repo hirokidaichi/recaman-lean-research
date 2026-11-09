@@ -1,0 +1,7 @@
+Recaman/ForwardSourceActualFreeThree.lean:67:18: error(lean.unknownIdentifier): Unknown constant `List.getElem?_zero`
+Recaman/ForwardSourceActualFreeThree.lean:67:6: error: Type mismatch: After simplification, term
+  h0
+ has type
+  @Eq (Option Bool) (seg f n 11)[0]? (some false)
+but is expected to have type
+  @Eq (Option Bool) (seg f n 11).head? (some false)

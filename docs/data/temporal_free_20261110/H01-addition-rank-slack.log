@@ -1,0 +1,34 @@
+Recaman/AdditionRankSlack.lean:100:12: error: unsolved goals
+case false
+f : Nat → Bool
+n r K : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hfree : free f n K ≤ r
+t : Nat
+ht : t < K
+hf : f (n + t) = false
+⊢ rankSlack f n r t ≤ rankSlack f n r t
+Recaman/AdditionRankSlack.lean:112:9: error: unsolved goals
+case zero
+f : Nat → Bool
+n r K : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hfree : free f n K ≤ r
+hstep : ∀ (t : Nat), t < K → rankSlack f n r t ≤ rankSlack f n r (t + 1)
+k : Nat
+hk : k ≤ 0
+a✝ : 0 ≤ K
+⊢ rankSlack f n r 0 ≤ rankSlack f n r 0
+Recaman/AdditionRankSlack.lean:116:4: error: unsolved goals
+case pos
+f : Nat → Bool
+n r K : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ K → cN (EndN f 0) n k + 1 ≤ subtractions f n k
+hfree : free f n K ≤ r
+hstep : ∀ (t : Nat), t < K → rankSlack f n r t ≤ rankSlack f n r (t + 1)
+k l : Nat
+ih : k ≤ l → l ≤ K → rankSlack f n r k ≤ rankSlack f n r l
+hk : k ≤ l + 1
+hl : l + 1 ≤ K
+h : k = l + 1
+⊢ rankSlack f n r (l + 1) ≤ rankSlack f n r (l + 1)

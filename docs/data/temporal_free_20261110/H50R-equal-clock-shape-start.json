@@ -1,0 +1,25 @@
+{
+  "tag": "H50R-equal-clock-shape",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RankTwoEqualClock.olean",
+    "Recaman/RankTwoEqualClock.lean"
+  ],
+  "started_jst": "2026-11-10T07:15:50.035768+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RankTwoEqualClock.lean": "3fbfd1c016081a92e09185645b14ab8620e625fd217dfe356128186168e5853f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "source_tree_sha256": "7cf7a15911f4e011d23dc8fa96655dfecc64ebb061b7ecf378831c076c8a32a6",
+  "source_tree_manifest": "H50R-equal-clock-shape-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

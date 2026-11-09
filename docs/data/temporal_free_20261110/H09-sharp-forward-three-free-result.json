@@ -1,0 +1,31 @@
+{
+  "tag": "H09-sharp-forward-three-free",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ForwardFreeThreeControl.olean",
+    "Recaman/ForwardFreeThreeControl.lean"
+  ],
+  "started_jst": "2026-11-10T06:16:21.644973+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ForwardFreeThreeControl.lean": "14c7900c1c05cc1505425e10f588d2fd7b4ca11906eb5ed77de35dc02b2de3ef"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9495d04013080d82180e6d7e9f08feba974715c2c6a5dae852e794a8a90d1fb3",
+  "source_tree_sha256": "443211f9a924637488109b475a26786e39b4352c6b0068505551bfb4f902cdb4",
+  "source_tree_manifest": "H09-sharp-forward-three-free-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "9495d04013080d82180e6d7e9f08feba974715c2c6a5dae852e794a8a90d1fb3",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5896779999893624,
+  "cpu_seconds": 0.422057,
+  "finished_jst": "2026-11-10T06:16:22.234593+09:00"
+}

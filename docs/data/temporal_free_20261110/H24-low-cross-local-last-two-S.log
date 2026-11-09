@@ -1,0 +1,62 @@
+Recaman/LowCrossLocalClocks.lean:17:2: error: Type mismatch
+  SourceCrossSurplus.cross_append x y
+has type
+  runKey (x ++ y) + 2 * ↑(cntF (x ++ y)) ^ 2 =
+    runKey x + 2 * ↑(cntF x) ^ 2 + runKey y + 2 * ↑(cntF y) ^ 2 + 4 * ones x * ↑(cntF y)
+but is expected to have type
+  cross (x ++ y) = cross x + cross y + 4 * ones x * ↑(cntF y)
+Recaman/LowCrossLocalClocks.lean:87:17: error: unsolved goals
+case cons.cons.cons.true.false.true
+hc : ↑(cntF [true, false, true]) = ↑[true, false, true].length - ones [true, false, true]
+hm' : mass [true, false, true] = 2 * ones [true, false, true] - ↑[true, false, true].length
+hlen : [true, false, true].length = 3
+hm : ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign false + ShortPeriodicSupply.sign true) = 1
+hf : True
+hk :
+  2 * (ShortPeriodicSupply.sign true * 3 + (ShortPeriodicSupply.sign false * 2 + ShortPeriodicSupply.sign true)) -
+      (ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign false + ShortPeriodicSupply.sign true)) *
+        (ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign false + ShortPeriodicSupply.sign true) + 1) =
+    -2
+⊢ False
+
+case cons.cons.cons.true.true.false
+hc : ↑(cntF [true, true, false]) = ↑[true, true, false].length - ones [true, true, false]
+hm' : mass [true, true, false] = 2 * ones [true, true, false] - ↑[true, true, false].length
+hlen : [true, true, false].length = 3
+hm : ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign true + ShortPeriodicSupply.sign false) = 1
+hf : True
+hk :
+  2 * (ShortPeriodicSupply.sign true * 3 + (ShortPeriodicSupply.sign true * 2 + ShortPeriodicSupply.sign false)) -
+      (ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign true + ShortPeriodicSupply.sign false)) *
+        (ShortPeriodicSupply.sign true + (ShortPeriodicSupply.sign true + ShortPeriodicSupply.sign false) + 1) =
+    -2
+⊢ False
+Recaman/LowCrossLocalClocks.lean:116:23: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cross y
+in the target expression
+  cross (v ++ y ++ [true]) + cross z + 4 * ones (v ++ y ++ [true]) * ↑(cntF z) =
+    cross (v ++ y) + cross z + 4 * (ones (v ++ y) + 1) * ↑(cntF z)
+
+x z : List Bool
+hq : cross (x ++ [true] ++ z) ≤ 20
+ho : cross (x ++ [true] ++ z) % 8 = 4
+hl : ThreeNonsuppliedData.localSupply x = true
+hloc : ThreeNonsuppliedData.localSupply (x ++ List.replicate 0 true ++ List.replicate 0 false) = true
+t : Nat
+ht : t < x.length
+hm : mass (List.drop t x) + ↑0 = ↑0 + 1
+hk : runKey (List.drop t x) = -2 * (↑0 + 1) ^ 2
+v : List Bool := List.take t x
+y : List Bool := List.drop t x
+hxy : x = v ++ y
+hm1 : mass y = 1
+hk1 : runKey y = -2
+hodd : ↑(cntF y) % 2 = 1
+hc : ↑(cntF y) = ↑y.length - ones y
+hy : mass y = 2 * ones y - ↑y.length
+hyA : ones y = ↑(cntF y) + 1
+hQy : cross y = 2 * ↑(cntF y) ^ 2 - 2
+hQ :
+  cross (v ++ y ++ [true]) + cross z + 4 * ones (v ++ y ++ [true]) * ↑(cntF z) =
+    cross (v ++ y) + cross z + 4 * (ones (v ++ y) + 1) * ↑(cntF z)
+⊢ (∃ v, x = v ++ [false, true, true]) ∧ cntF z ≤ 1

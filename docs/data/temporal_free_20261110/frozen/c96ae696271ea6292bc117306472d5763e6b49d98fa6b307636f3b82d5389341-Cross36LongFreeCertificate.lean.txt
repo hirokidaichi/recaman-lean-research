@@ -1,0 +1,68 @@
+import Recaman.OldMassEndpointGate
+
+namespace Recaman.Cross36LongFreeCertificate
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.RunSupplyKeys
+open Recaman.BlockSuffixPositivity Recaman.OldMassEndpointGate Recaman.SingleWindowEquality
+
+private def middle (y : List Bool) := [false,false]++y++[true,false,true,true]
+private def late (y : List Bool) := [false,true,false,false]++y++[true,true]
+
+private def longWords : List (List Bool) :=
+  [[false,false,true,true,true,true,false], [false,true,false,true,true,false,true],
+   [false,true,true,false,false,true,true], [true,false,false,true,false,true,true]]
+
+private theorem seven_candidates : ∀ a b c d e g h : Bool,
+    let y := [a,b,c,d,e,g,h]
+    ones y=4 → runKey y= -2 → y∈longWords := by decide
+
+private theorem long_word_mem (y : List Bool) (hlen : y.length=7)
+    (ha : ones y=4) (hk : runKey y= -2) : y∈longWords := by
+  cases y with
+  | nil => simp at hlen
+  | cons a y =>
+    cases y with
+    | nil => simp at hlen
+    | cons b y =>
+      cases y with
+      | nil => simp at hlen
+      | cons c y =>
+        cases y with
+        | nil => simp at hlen
+        | cons d y =>
+          cases y with
+          | nil => simp at hlen
+          | cons e y =>
+            cases y with
+            | nil => simp at hlen
+            | cons g y =>
+              cases y with
+              | nil => simp at hlen
+              | cons h y =>
+                have hy : y=[] := by
+                  apply List.eq_nil_of_length_eq_zero
+                  simp only [List.length_cons] at hlen
+                  omega
+                subst y
+                exact seven_candidates a b c d e g h ha hk
+
+private theorem long_word_counts :
+    longWords.all (fun y => decide (
+      4≤(List.range 13).countP (certifiedAt (middle y)) ∧
+      4≤(List.range 13).countP (certifiedAt (late y))))=true := by decide
+
+/-- Only the seven signs of the long primitive source are enumerated.
+Each surrounding word uses the original old-source exclusion gate. -/
+theorem long_source_word_four_free (f : Nat → Bool) (n : Nat) (w y : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w) (hy : y.length=7)
+    (ha : ones y=4) (hk : runKey y= -2)
+    (hword : seg f n 13=[false,false]++y++[true,false,true,true] ∨
+      seg f n 13=[false,true,false,false]++y++[true,true]) :
+    4≤free f n 13 := by
+  have hm:=long_word_mem y hy ha hk
+  have hc:=of_decide_eq_true ((List.all_eq_true.mp long_word_counts) y hm)
+  rcases hword with h|h
+  · exact Nat.le_trans hc.1 (mass_gate_certified_free_count f n 13 w (middle y) hw hpre h)
+  · exact Nat.le_trans hc.2 (mass_gate_certified_free_count f n 13 w (late y) hw hpre h)
+
+end Recaman.Cross36LongFreeCertificate

@@ -1,0 +1,81 @@
+import Recaman.OldMassEndpointGate
+
+namespace Recaman.SmallCrossPrefixWords
+
+open Recaman.LeadingRunSupply Recaman.CapacityEqualityInduction Recaman.RunSupplyKeys
+
+/-- Count an A once for each later S. -/
+def crossPairs : List Bool → Nat
+  | [] => 0
+  | b::xs => crossPairs xs+(if b then cntF xs else 0)
+
+theorem key_cross_pairs (x : List Bool) :
+    runKey x+2*(cntF x : Int)^2=4*(crossPairs x : Int) := by
+  induction x with
+  | nil => decide
+  | cons b xs ih =>
+    have h:=Recaman.SourceCrossSurplus.cross_append [b] xs
+    cases b with
+    | false =>
+      rw [show runKey [false]+2*(cntF [false] : Int)^2=0 by decide,
+        show ones [false]=0 by decide] at h
+      change runKey (false::xs)+2*(cntF (false::xs) : Int)^2=_ at h
+      simpa only [crossPairs, Bool.false_eq_true, if_false, Nat.add_zero] using h.trans (by omega)
+    | true =>
+      rw [show runKey [true]+2*(cntF [true] : Int)^2=0 by decide,
+        show ones [true]=1 by decide] at h
+      change runKey (true::xs)+2*(cntF (true::xs) : Int)^2=_ at h
+      simp only [crossPairs,if_true,Int.natCast_add]
+      omega
+
+/-- Inserting an A spends the number of still unplaced S signs.
+The enumeration is over the short intervening word only. -/
+def words : Nat → Nat → Nat → Nat → List (List Bool)
+  | 0,a,s,_ => if a=0 ∧ s=0 then [[]] else []
+  | k+1,a,s,b =>
+      (if 0<a ∧ s≤b then (words k (a-1) s (b-s)).map (true::·) else []) ++
+      (if 0<s then (words k a (s-1) b).map (false::·) else [])
+
+theorem mem_cross_bounded_words (x : List Bool) (b : Nat) (h : crossPairs x≤b) :
+    x∈words x.length (x.length-cntF x) (cntF x) b := by
+  induction x generalizing b with
+  | nil => simp [words,cntF]
+  | cons bit xs ih =>
+    have hf:=cntF_int xs
+    have ho:=(ones_bounds xs).1
+    have hlen : cntF xs≤xs.length := by omega
+    cases bit with
+    | false =>
+      have hs : cntF (false::xs)=cntF xs+1 := by simp [cntF,Nat.add_comm]
+      have hCross : crossPairs xs≤b := by simpa [crossPairs] using h
+      simp only [List.length_cons,hs]
+      rw [show xs.length+1-(cntF xs+1)=xs.length-cntF xs by omega]
+      unfold words
+      apply List.mem_append.mpr
+      right
+      rw [if_pos (show 0<cntF xs+1 by omega),show cntF xs+1-1=cntF xs by omega]
+      exact List.mem_map.mpr ⟨xs,ih b hCross,rfl⟩
+    | true =>
+      have hs : cntF (true::xs)=cntF xs := by simp [cntF]
+      have hCross : crossPairs xs+cntF xs≤b := by simpa [crossPairs] using h
+      simp only [List.length_cons,hs]
+      unfold words
+      apply List.mem_append.mpr
+      left
+      rw [if_pos (show 0<xs.length+1-cntF xs ∧ cntF xs≤b by omega),
+        show xs.length+1-cntF xs-1=xs.length-cntF xs by omega]
+      exact List.mem_map.mpr ⟨xs,ih (b-cntF xs) (by omega),rfl⟩
+
+/-- The bounded lists include exactly eleven odd-cross candidates here.
+Each has four positions with an original-history free certificate. -/
+theorem odd_small_cross_four_certified (x : List Bool) (hlen : x.length=13)
+    (hs : cntF x=6) (hc : crossPairs x≤5) (ho : crossPairs x%2=1) :
+    4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt x) := by
+  have hm:=mem_cross_bounded_words x 5 hc
+  rw [hlen,hs] at hm
+  change x∈words 13 7 6 5 at hm
+  have hCert : (words 13 7 6 5).all (fun p =>
+      decide (crossPairs p%2=1 → 4≤(List.range 13).countP (Recaman.OldMassEndpointGate.certifiedAt p)))=true := by decide
+  exact (of_decide_eq_true ((List.all_eq_true.mp hCert) x hm)) ho
+
+end Recaman.SmallCrossPrefixWords

@@ -1,0 +1,118 @@
+import Recaman.AdditionRankSlack
+
+namespace Recaman.ForwardSourceRankEnergy
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier Recaman.BlockOldRay Recaman.RunSupplyKeys
+open Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private theorem rank_energy_identity (a r d F : Int) :
+    4*a*(a+d)-2*(a+d)^2-4*d*F-(4*a+2*(a-r)*(a-r+1))=
+      2*((2*r-3)*a-r*(r-1)-d^2-2*d*F) := by grind only
+
+private theorem forward_word_data (p u : List Bool) (i j : Nat) (hij : i<j)
+    (hu : runKey u= -2) (hpu : runKey (p++u)= -2)
+    (hmu : mass u+(i : Int)=1) (hmpu : mass (p++u)+(j : Int)=1) :
+    mass p= -((j-i : Nat) : Int) ∧ cntF p%2=0 ∧
+    runKey p=4*((j-i : Nat) : Int)*(cntF u : Int) := by
+  have hm : mass p= -((j-i : Nat) : Int) := by
+    rw [mass_append] at hmpu
+    omega
+  have hp : cntF p%2=0 := by
+    have h1:=Recaman.MixedASQuarterBudget.source_subtraction_odd u hu
+    have h2:=Recaman.MixedASQuarterBudget.source_subtraction_odd (p++u) hpu
+    rw [cntF_append] at h2
+    omega
+  rw [runKey_append,hu,hm] at hpu
+  simp only [Int.mul_neg,Int.neg_mul] at hpu
+  exact ⟨hm,hp,by omega⟩
+
+private theorem counts_of_mass (f : Nat → Bool) (n K d : Nat)
+    (hm : mass (seg f n K)= -(d : Int)) :
+    subtractions f n K=additions f n K+d := by
+  rw [seg_mass] at hm
+  have h:=(cN_walk f n K).1
+  unfold subtractions additions
+  omega
+
+/-- The two primitive keys determine the mass, parity and area of the same
+interval between the sources. The rank budget uses its original EndN count. -/
+theorem forward_rank_energy (f : Nat → Bool) (n r K i j : Nat) (u : List Bool)
+    (hr : r≤additions f n K)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hfree : free f n K≤r) (hij : i<j)
+    (hu : runKey u= -2) (hpu : runKey (seg f n K++u)= -2)
+    (hmu : mass u+(i : Int)=1) (hmpu : mass (seg f n K++u)+(j : Int)=1) :
+    subtractions f n K=additions f n K+(j-i) ∧
+    subtractions f n K%2=0 ∧
+    runKey (seg f n K)=4*((j-i : Nat) : Int)*(cntF u : Int) ∧
+    0≤rankSlack f n r K ∧
+    rankSlack f n r K=2*((2*(r : Int)-3)*(additions f n K : Int)-
+      (r : Int)*((r : Int)-1)-(((j-i : Nat) : Int))^2-
+      2*((j-i : Nat) : Int)*(cntF u : Int)) := by
+  let a:=additions f n K
+  let d:=j-i
+  obtain ⟨hm,hpar,hkey⟩:=forward_word_data (seg f n K) u i j hij hu hpu hmu hmpu
+  have hS : subtractions f n K=a+d := counts_of_mass f n K d hm
+  rw [cntF_seg] at hpar
+  have hsl:=rankSlack_mono f n r K hpos hfree 0 K (by omega) (by omega)
+  rw [rankSlack_zero] at hsl
+  refine ⟨hS,hpar,hkey,hsl,?_⟩
+  change rankSlack f n r K=2*((2*(r : Int)-3)*(a : Int)-
+    (r : Int)*((r : Int)-1)-(d : Int)^2-2*(d : Int)*(cntF u : Int))
+  unfold rankSlack
+  change 4*(a : Int)*(subtractions f n K : Int)-2*(subtractions f n K : Int)^2-
+    runKey (seg f n K)-rankCost r a=_
+  rw [hS,hkey]
+  unfold rankCost
+  have hra : r≤a := hr
+  have hcast : (((a-r : Nat) : Int))=(a : Int)-(r : Int) := by omega
+  rw [hcast]
+  simp only [Int.natCast_add]
+  exact rank_energy_identity (a : Int) (r : Int) (d : Int) (cntF u : Int)
+
+/-- A forward pair with at most two free additions forces a single band.
+The old prefix and the future word have no length cutoff. -/
+theorem free_two_forward_band (f : Nat → Bool) (n K i j : Nat) (w u : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hfree : free f n K≤2) (hij : i<j)
+    (hu : runKey u= -2) (hpu : runKey (seg f n K++u)= -2)
+    (hmu : mass u+(i : Int)=1) (hmpu : mass (seg f n K++u)+(j : Int)=1) :
+    additions f n K=5 ∧ j=i+1 ∧ cntF u=1 ∧ K=11 ∧
+      runKey (seg f n K)=4 ∧ rankSlack f n 2 K=0 := by
+  let a:=additions f n K
+  let d:=j-i
+  have hAb := positive_r3_additions_free_bound f n 0 K hw
+    (by simpa only [List.replicate_zero,List.append_nil] using hpre) hpos
+    (show free f n K≤3 by omega)
+  change a≤2*free f n K+1 at hAb
+  have ho:=ones_seg_eq_count f n K
+  change ones (seg f n K)=(a : Int) at ho
+  have hc:=(Recaman.MixedPrefixClockSquare.mixed_prefix_clock_square
+    (seg f n K) u i j hij hu hpu hmu hmpu).1
+  rw [ho] at hc
+  have hda : d+2≤a := by omega
+  obtain ⟨hS,hpar,hkey,hsl,he⟩:=forward_rank_energy f n 2 K i j u (by omega) hpos hfree hij hu hpu hmu hmpu
+  change subtractions f n K=a+d at hS
+  change runKey (seg f n K)=4*(d : Int)*(cntF u : Int) at hkey
+  have he' : rankSlack f n 2 K=2*((a : Int)-2-(d : Int)^2-2*(d : Int)*(cntF u : Int)) := by
+    change rankSlack f n 2 K=2*((2*(2 : Int)-3)*(a : Int)-
+      (2 : Int)*((2 : Int)-1)-(d : Int)^2-2*(d : Int)*(cntF u : Int)) at he
+    simpa using he
+  have hOdd:=Recaman.MixedASQuarterBudget.source_subtraction_odd u hu
+  have hF : 1≤cntF u := by omega
+  have hd : 1≤d := by dsimp [d]; omega
+  have hCases : (a=3 ∧ d=1) ∨ (a=4 ∧ d=2) ∨ (a=5 ∧ d=1) ∨ (a=5 ∧ d=3) := by omega
+  have hT : a+subtractions f n K=K := (cN_walk f n K).2
+  rcases hCases with ⟨ha,hd⟩|⟨ha,hd⟩|⟨ha,hd⟩|⟨ha,hd⟩ <;> rw [ha,hd] at he'
+  · omega
+  · omega
+  · have hF1 : cntF u=1 := by omega
+    have hj : j=i+1 := by dsimp [d] at hd; omega
+    have hK : K=11 := by omega
+    have hk : runKey (seg f n K)=4 := by rw [hd,hF1] at hkey; omega
+    exact ⟨ha,hj,hF1,hK,hk,by omega⟩
+  · omega
+
+end Recaman.ForwardSourceRankEnergy

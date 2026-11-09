@@ -1,0 +1,31 @@
+{
+  "tag": "H70-record-short-overlap",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DeficitRecordControl.olean",
+    "Recaman/DeficitRecordControl.lean"
+  ],
+  "started_jst": "2026-11-10T07:42:09.065833+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DeficitRecordControl.lean": "0bb2b32cae16759364b6494e9d589c4ae7506f0bae1e9eb8a5a0454da9b409bd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "6a02a434ce180c8d0f412e1e6a62797ba116bf4c51271863fd8a7b741f45ad75",
+  "source_tree_sha256": "ad4bb3132958865b9649fb514bfe36a2352f711d9fdad412cee301f4664283a3",
+  "source_tree_manifest": "H70-record-short-overlap-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "6a02a434ce180c8d0f412e1e6a62797ba116bf4c51271863fd8a7b741f45ad75",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7603485409927089,
+  "cpu_seconds": 0.609235,
+  "finished_jst": "2026-11-10T07:42:09.826114+09:00"
+}

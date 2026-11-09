@@ -1,0 +1,25 @@
+{
+  "tag": "H23-small-cross-prefix-certificate",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SmallCrossPrefixWords.olean",
+    "Recaman/SmallCrossPrefixWords.lean"
+  ],
+  "started_jst": "2026-11-10T06:33:56.116624+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SmallCrossPrefixWords.lean": "7d12f00e4b60652a46d17ef51957b2bf107995fa1118169d4cc96f5ca60546a1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "52037eba3b7503206b5d7dcd4de61fcef4c8e6cd56c4804e3821a16f8ab6ab3a",
+  "source_tree_sha256": "0bc607b3d506464cc5643705c7a886e1fc69395d6151d4df601579b34e216cc7",
+  "source_tree_manifest": "H23-small-cross-prefix-certificate-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

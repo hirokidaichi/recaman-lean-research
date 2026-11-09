@@ -1,0 +1,89 @@
+import Recaman.ElevenSignRankPrefix
+import Recaman.NonnegativeFutureOldSource
+
+namespace Recaman.ForwardSourceActualFreeThree
+
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.PrefixMassBarrier Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction
+open Recaman.SingleWindowEquality Recaman.LineCapacityPeriodic
+
+private theorem prefix_additions_ceiling (f : Nat → Bool) (n K k : Nat)
+    (hk : 0<k) (hkK : k≤K)
+    (hp : ∀ t, 0<t → t≤K → cN (EndN f 0) n t+1≤subtractions f n t)
+    (hf : free f n K≤2) :
+    2*additions f n k≤k+1 := by
+  have hsum : additions f n k+subtractions f n k=k := (cN_walk f n k).2
+  have hs:=additions_split f n k
+  have hm:=free_prefix_mono f n k K hkK
+  have he:=hp k hk hkK
+  omega
+
+private theorem SAASA_three_free (f : Nat → Bool) (n : Nat) (w : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (h5 : seg f n 5=[false,true,true,false,true])
+    (hpos : cN (EndN f 0) n 3+1≤subtractions f n 3) : 3≤free f n 5 := by
+  have h3 := seg_take f n 5 3 (by decide)
+  have h4 := seg_take f n 5 4 (by decide)
+  rw [h5] at h3 h4
+  change [false,true,true]=seg f n 3 at h3
+  change [false,true,true,false]=seg f n 4 at h4
+  have hs:=cntF_seg f n 3
+  rw [← h3] at hs
+  change 1=subtractions f n 3 at hs
+  have ha:=ones_seg_eq_count f n 3
+  rw [← h3] at ha
+  change (2 : Int)=(additions f n 3 : Int) at ha
+  have hA4 := seg_get f n 5 4 (by decide)
+  rw [h5] at hA4
+  have hA : f (n+4)=true := by simpa using hA4.symm
+  have he:=Recaman.NonnegativeFutureOldSource.SAAS_next_actual_free f n w hw hpre h4.symm hA
+  have hf : free f n 5=free f n 4+1 := cN_succ_pos _ n 4 ⟨hA,he⟩
+  have hF3:=additions_split f n 3
+  have hF4:=free_prefix_mono f n 3 4 (by decide)
+  omega
+
+/-- A forward pair of primitive sources costs three actual free additions
+between their starting points. The entire old BlockWord is retained. -/
+theorem forward_pair_needs_three_actual_free (f : Nat → Bool) (n K i j : Nat) (w u : List Bool)
+    (hw : BlockWord w) (hpre : seg f 0 n=w)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤subtractions f n k)
+    (hij : i<j) (hu : runKey u= -2) (hpu : runKey (seg f n K++u)= -2)
+    (hmu : mass u+(i : Int)=1) (hmpu : mass (seg f n K++u)+(j : Int)=1) :
+    3≤free f n K := by
+  by_cases hf : free f n K≤2
+  · obtain ⟨ha,_,_,hK,hkey⟩:=Recaman.ForwardSourceFreeTwoFactor.free_two_unit_factor_band
+      f n K i j w u hw hpre hpos hf hij hu hpu hmu hmpu
+    subst K
+    obtain ⟨h8,h9,h10⟩:=Recaman.FreeTwoTightTail.tight_free_two_tail f n hpos hf ha hkey
+    have hs0 : f n=false := by
+      cases h : f n with
+      | false => rfl
+      | true =>
+        have hp:=hpos 1 (by decide) (by decide)
+        have hs : subtractions f n 1=0 := by simp [subtractions,cN,h]
+        omega
+    have hhead : (seg f n 11).head?=some false := by
+      have he (xs : List Bool) : xs.head?=xs[0]? := by cases xs <;> rfl
+      rw [he,seg_get f n 11 0 (by decide),Nat.add_zero,hs0]
+    have htail : (seg f n 11).drop 8=[true,false,false] := by
+      rw [seg_drop f n 11 8 (by decide)]
+      change seg f (n+8) 3=[true,false,false]
+      simp [seg, List.range_succ, Nat.add_assoc,h8,h9,h10]
+    have hcap (k z : Nat) (hk : 0<k) (hkK : k≤11) (hz : k+1≤2*z+1) :
+        ones ((seg f n 11).take k)≤(z : Int) := by
+      have hbound:=prefix_additions_ceiling f n 11 k hk hkK hpos hf
+      rw [seg_take f n 11 k hkK,ones_seg_eq_count]
+      change (additions f n k : Int)≤(z : Int)
+      omega
+    have h5:=Recaman.ElevenSignRankPrefix.eleven_rank_prefix _ (seg_length _ _ _)
+      hhead htail (by rw [ones_seg_eq_count]; exact_mod_cast ha) hkey
+      (hcap 4 2 (by decide) (by decide) (by decide))
+      (hcap 6 3 (by decide) (by decide) (by decide))
+      (hcap 8 4 (by decide) (by decide) (by decide))
+    rw [seg_take f n 11 5 (by decide)] at h5
+    have h3:=SAASA_three_free f n w hw hpre h5 (hpos 3 (by decide) (by decide))
+    have hm:=free_prefix_mono f n 5 11 (by decide)
+    omega
+  · omega
+
+end Recaman.ForwardSourceActualFreeThree

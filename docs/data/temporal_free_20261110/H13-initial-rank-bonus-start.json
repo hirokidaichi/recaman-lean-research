@@ -1,0 +1,25 @@
+{
+  "tag": "H13-initial-rank-bonus",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialRankBonus.olean",
+    "Recaman/InitialRankBonus.lean"
+  ],
+  "started_jst": "2026-11-10T06:22:19.190520+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialRankBonus.lean": "0ad054566a9334e50b13a20208930958fd8024c14c3e29ec7887bf1f236cb961"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "2675523572951ed636108754d5a738db7cf357e48a2e14254cbe5d1e084b0edf",
+  "source_tree_sha256": "9d4a08964e9dee2e1d0e3364e3a6329c5a1e8802895eb3270ed8ba8df0999db1",
+  "source_tree_manifest": "H13-initial-rank-bonus-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

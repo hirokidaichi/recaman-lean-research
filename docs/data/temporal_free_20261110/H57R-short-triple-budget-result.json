@@ -1,0 +1,31 @@
+{
+  "tag": "H57R-short-triple-budget",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/ShortSourceTriples.olean",
+    "Recaman/ShortSourceTriples.lean"
+  ],
+  "started_jst": "2026-11-10T07:27:48.710070+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/ShortSourceTriples.lean": "12002775fa9ccd2dda2f8e655834195494504c0f374d5ebfa107b298e7e0c07c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "26ee7f4e1f70fd8578faecf9c162ddca63b168fd152e6f7866467fba3c7a0893",
+  "source_tree_sha256": "b11c60734d4937d2efe18faac67f4df8956b66c235221dd166315bf09ea343ac",
+  "source_tree_manifest": "H57R-short-triple-budget-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "26ee7f4e1f70fd8578faecf9c162ddca63b168fd152e6f7866467fba3c7a0893",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8569239999924321,
+  "cpu_seconds": 0.732488,
+  "finished_jst": "2026-11-10T07:27:49.566938+09:00"
+}

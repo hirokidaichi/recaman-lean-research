@@ -1,0 +1,31 @@
+{
+  "tag": "H52R-same-clock-control",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SameClockBoundaryControl.olean",
+    "Recaman/SameClockBoundaryControl.lean"
+  ],
+  "started_jst": "2026-11-10T07:19:14.039651+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SameClockBoundaryControl.lean": "ea82dc33e71aaf83380240d7e0b6b61ed70eec490817f16085b24f4406d55dd4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "c0ba46a0bd4dbf77b76ddbde688189217e49d3d1c35c290c6c719ffc43826d9d",
+  "source_tree_sha256": "de188b09e1378a3e6a17a082870342a737418c90e36c89e74a3dd8aaa2dae5df",
+  "source_tree_manifest": "H52R-same-clock-control-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c0ba46a0bd4dbf77b76ddbde688189217e49d3d1c35c290c6c719ffc43826d9d",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4062549580121413,
+  "cpu_seconds": 0.271007,
+  "finished_jst": "2026-11-10T07:19:14.445842+09:00"
+}

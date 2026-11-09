@@ -1,0 +1,31 @@
+{
+  "tag": "H48-three-prior-A",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossLocalClocks.olean",
+    "Recaman/LowCrossLocalClocks.lean"
+  ],
+  "started_jst": "2026-11-10T07:13:46.806819+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossLocalClocks.lean": "6d6c5570688d2d2354454824c9d77f57f811b4a98400ebe8776e5723a00e1eab"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "source_tree_sha256": "df11398baaf5edc586ecee33a3cdfcc2c62fbbc0e51b3affdc40e244b854d131",
+  "source_tree_manifest": "H48-three-prior-A-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.400122666003881,
+  "cpu_seconds": 1.250621,
+  "finished_jst": "2026-11-10T07:13:48.206884+09:00"
+}

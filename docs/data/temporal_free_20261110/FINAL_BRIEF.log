@@ -1,0 +1,148 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-10。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+
+- **E-637 / E-638 / E-639 PROVED-LEAN**。任意runの元実供給を、区間内SAAのある短供給と残りOに分ける。元padded BlockWordで実gapの反例にはj+4<=3Oが必要。残りOは旧源又は高Sを持ち、厳密な不足新最低だけは高Sを再使用せず数えられる。
+
+- **E-642 REFUTED / E-643 PROVED-PAPER**。短供給の三Aと新最低の二Aは同じ位置を使いうる。重複B+2Cの紙上会計を記録した。Lean化と一般Oの制御が次の課題。
+
+- **E-633 / E-634 / E-635 PROVED-LEAN**。不足帯に入る元Winの実供給数をfree+帯幅+1で抑える。元BlockWord境界・relative strict positiveの二primitive異時計は両順序で空き3個以上。同時計の空き2ではSAASだけ。E-631は任意途中でのfreeだけの課金をREFUTED。
+
+- **E-629 / E-630 / E-636 / E-640 PROVED-LEAN**。逆順の空き<=3では時計上限5/4、F<=9。残るQ36帯は旧供給<=1まで。全A-run長3族の局所時計≡1を排除。E-641は同族の第一A交互課金をREFUTED。
+
+- **E-623 / E-624 / E-625 / E-626 PROVED-LEAN**。旧源の負key閾値は奇数F3と偶数F4で達成例を持つ。局所源も不在の元位置を重複なく数え、rank3の第五Aまでに追加SAペア3組を強制した。同じ元旧履歴・relative positive・実free<=3でforward pairはj=i+1かつi<=2/j<=3。E622で上端達成。任意rank/C1未証明、人間レビュー未。
+
+- **E-622 PROVED-LEAN**。同じ元sign historyでforward clock2/3と元区間の実free=3が共存する。E619の3はこの適用域で達成可能。標準軌道到達やC1の反例ではない。
+
+- **E-619 / E-620 / E-621 PROVED-LEAN**。元BlockWord履歴とrelative positiveで、任意runのforward primitive pairは元区間に実freeを3個以上必要とする。足し算順位のS床から単調slackを導き、free2を因数で11符号へ絞る。末尾ASSを内部供給した128語証明書で最初三Aが元free。E616のJ/Z等式はPROVED-PAPERのまま。任意source数・一般rank・C1は未証明、人間レビュー未。
+
+- **E-614 / E-615 / E-617 / E-618 PROVED-LEAN**。単一AS layerのsharp A²>=8i、全mixed prefixの4i+1<=A²、r3の元actual両source半径、時計advanceに必要な元free>=2、非負future keyによる全old源排除とSAAS次Aのfree producer。全run数を許す限定source条件であり一般rank/C1ではない。E-616の時間順key等式はPROVED-PAPER（人間レビュー未）。E-619は独立な順位slackで上記のとおりPROVED-LEAN。
+
+- **E-612 PROVED-LEAN / E-613 REFUTED**。任意mixed futureへの一layer追加で時計増分dは最初A-runのactual freeで払える（元BlockWord prefixを保持する最外layerに限定）。一方、供給clockの一定倍率成長はzero/fullpositiveの元actual履歴でも偽。時計i=2l²とi+2の全l反証族をLean検査。free不足/正末尾gap条件付きpackingやC1反例ではない。
+
+- **E-610 / E-611 PROVED-LEAN**。q3同S sourceの二帯と、同target/第三S sourceの平方順序・primitive奇数性による新排除領域。raw条件付きsource定理で、actual接着H30/H32/H34はSTOPPED。q2 fullgapはPAPERのまま、一般C1未証明。
+
+- **E-609 PROVED-LEAN**。残余2 actual counterで同target/source固有時計T=i+R+1と実head会計を結合して直後A族を全排除、元actual last<=4。二形分類は使わない。fullgapのenergy接着は未Lean。
+
+- **E-607 / E-608 PROVED-LEAN**。第二S残余2 actual counterからM7/L7/後続S和11/R5..11を内部供給。同S供給元は後続Sが16以上必要なので除去。直後A供給元はR5/S和5/L<=2又はR7/S和11/L<=5の二帯のみ。raw供給元は実在し、counter不在/fullgapは未証明。全old履歴・他supplier mass・源前prefixを保持。人間レビュー未。
+
+- **E-604 / E-605 / E-606 PROVED-LEAN**。元actual第二S残余1の全長fullgap。新M8/L7 bootstrapと同S/直後A二族排除によりlast4へ。既存域との統合で第二S最後S開始以降を供給。一般四run/任意run/C1は未証明。
+
+- **E-599 / E-601 PROVED-LEAN**。元Intp/padded BlockWord/zero-fullpositive/真正四A-runで、同actual targetが第二A開始以降なら全gap/全run長の元full-tail free>=j+1。第三S全域と第二A内全域を独立source/head供給で閉じ、既存late域へ統合した。全old履歴・他supplier massは無制限。初期S/第一A/第二S、任意run/C1/Q/H/SL/全射性は未証明。人間レビュー未。
+- **E-600 / E-602 / E-603 PROVED-LEAN**。短い前二Aなら元head供給<=M+L+3、whole-A targetによるA族排除、第二S残余1の同S族除去によるactual last<=6。q1 fullgapは独立のE606 source4削減でE-604 PROVED-LEANへ更新（人間レビュー未）。
+
+- **E-583 PROVED-LEAN**。旧履歴から始まる実P2対象窓のある真正四A-runで、元の整数基点・padded BlockWord・zero/fullpositiveのもと、全長で実freeがgap+1以上。headmassや全old履歴を制限しない。E-579の必要条件とE-580の紙上候補はこの証明の前段。
+- **E-581 / E-582 PROVED-LEAN**。任意mixed prefixで選択oldmass>=2なら、遅延に応じた手前A数から全old/localの共通時計帯を得る。最後A-ray直前まで適用すると、反例の前半実供給にgap+1の下限が付く。
+- **E-584 / E-585 PROVED-LEAN**。最後供給7件の区間内旧・初期S源の存在と、初期S源と同じold対象の実平方予算。E-583とcoverageを重複計上しない。
+- **E-586 / E-588 PROVED-LEAN**。同じ元Intp/padded/zero-fullpositive/真正四runで、第三A以降の実対象と、第三S内の残余q<=3又はq+j+1<=vの実対象は全長full-tail free>=j+1。
+- **E-587 / E-589 PROVED-LEAN**。第三Sの対象平方と同separator源の厳密時計を保持。残余S和14ではその源が存在できず、L<=3/s+v>=12では第二Aと第三Sの両源が共存できない。
+- **E-590 PROVED-LEAN**。第三S q>=4の元Intp/padded/zero-fullpositive actual counterでは、実7件から二つの区間内sourceを内部抽出し、同target平方とheadfree会計によりM+L+q+v<=15、q+v<=13、R<=12、T+U<=25、A<=27。全旧履歴・他supplier massを保持。候補上界であり第三S全域のcounter不在ではない。人間レビュー未。
+- **E-591 / E-592 PROVED-LEAN**。L<=3/s+v>=12で第二A/第三SのOR供給を1件へ共同課金し、元最後rayを6件以下へ。一方、元実最後7件なら両sourceの独立clockを内部抽出する。11/06の停止sourceを再使用せず、新しいlate suffix和集合予算で接続した。
+
+
+- **E-594 / E-595 / E-596 PROVED-LEAN**。S/Sの源深さを中間A長未満へ削減し、A長4以下なら二源が同じclockへ重なる。元actual last<=6。さらに同第三S対象の偶奇で第二Aの奇数depthを排除し、L1はlast<=5、元Intpのcounterを残余S和11/R10/A24以下へstrict削減。全旧履歴は保持。
+- **E-593 / E-597 PROVED-LEAN**。任意mixed futureに広げた別の全word交差整数性でA/S源のdepthを4の倍数、quarter上界へ。短Aを挟むS-A-S三族は一clockへ共同課金でき、全oldと任意前置を保つactual予算を供給。旧H08試作はSTOPPEDのまま。
+- **E-598 REFUTED**。全runへ最後供給の固定定数上限を外挿する補助案は、元zero/fullpositive/実targetの明示無限族で偽。同じ族でfullfree>=N+1、N>=1なら全actual last供給<=fullfreeもkernel証明し、C1反例とは区別する。
+
+- **E-568 PROVED-LEAN**: 正三run zerohead/同oldtargetの全正mass・全separator長の元p actual fullgap。mass2残枝を新all-old帯budget E-566とsource floor E-562で閉じ、既存C>=3と合成。合成そのものは追加source edgeではない。
+- **E-575 PROVED-LEAN**: 任意mixed tail/全run数/全headmassで同old targetmass1は元p endpoint-positiveの会計だけでfullgap。一般式free+C>=j+2。狭いmass1 fullgap枝 E-545/E-546/E-547/E-557/E-563/E-572を独立C1 coverage進展として重複計上しない。
+- **E-579 PROVED-LEAN**: 非zeroheadも含むgenuine四run/同oldtarget actualcounterはfree4..13/A30/j13/selectedtargetmass2..14/S30/tail60/oldsuffix35/選んだP2window108以下。j14 actual saturationをhead-A crossで排除。全oldprefix・他supplier massは無制限で反例不在ではない。広い空A区間許可域は E-577 のj16/A35/window128。
+- **E-580 PROVED-PAPER**: 残るj13ならA30/free13/head10/last7/v1/C2..4/T15or16、headmass負。この全分類は紙上のまま。E583が同じ旧対象の反例を排除する。
+
+独立source入力: E-558 early二family共同clock、E-560 low-old/initialS排除、E-561/E-569/E-574 mixedhead circle、E-565 任意mixed old/initial時計順序、E-570 effective-defect local4、E-571 actual mass charge、E-573 old/local共通support課金。E-576 は既存E-438の三run mass-area式のmixedword拡張で、同identityの再発見を別成果と数えない。E-578 は既存E-458供給17とgenuine crossをcoupleしたcounterband。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-637 [PROVED-LEAN] Arbitrary-run short supplier charges and necessary other suppliers — Recaman/ShortSupplyGapBudget.lean
+  E-638 [PROVED-LEAN] Original nonshort suppliers have old or high-S witnesses — Recaman/OtherSupplyHeightBudget.lean
+  E-639 [PROVED-LEAN] Strict deficit records admit disjoint original source charges — Recaman/DeficitRecordSourceCharge.lean
+  E-642 [REFUTED] Short triple and strict deficit record charges are disjoint — Recaman/DeficitRecordControl.lean
+  E-643 [PROVED-PAPER] Exact overlap correction for short triples and deficit records — docs/RESEARCH_NOTE_2026-11-10_SHORT_RECORD_CHARGE.md
+  E-633 [PROVED-LEAN] Original source deficit band bounds actual ray supplies — Recaman/SourceDeficitBand.lean
+  E-634 [PROVED-LEAN] Both orders of distinct primitive clocks need three original free additions — Recaman/RankTwoDistinctClocks.lean
+  E-635 [PROVED-LEAN] Exact duplicate source shape with two original free additions — Recaman/RankTwoBoundaryRay.lean
+  E-631 [REFUTED] Arbitrary interior source gap paid only by its own free additions — Recaman/InteriorZeroFreeControl.lean
+  E-629 [PROVED-LEAN] Reverse primitive clocks at actual free three — Recaman/RankThreeReverseClock.lean
+  E-630 [PROVED-LEAN] Seven AS pairs original supply ceiling — Recaman/Cross28SupplyCount.lean
+  E-636 [PROVED-LEAN] Old supply ranks cannot coexist at cross 36 — Recaman/Cross36OldSourceCut.lean
+  E-640 [PROVED-LEAN] Triple-A run local residue-one exclusion — Recaman/TripleRunLocalClockCut.lean
+  E-641 [REFUTED] Alternate first-A local suppliers in triple-A runs — Recaman/TripleRunConsecutiveFirstControl.lean
+  E-623 [PROVED-LEAN] old-source-negative-key-threshold — Recaman/OldSourceNegativeThreshold.lean
+  E-624 [PROVED-LEAN] certified-prefix-positions-lower-bound-original-free — Recaman/ThresholdPrefixFreeCount.lean
+  E-625 [PROVED-LEAN] initial-and-rank-three-s-subtraction-slack — Recaman/RankThreeEarlyFree.lean
+  E-626 [PROVED-LEAN] rank-three-forward-clock-sharp-band — Recaman/RankThreeForwardClock.lean
+  E-622 [PROVED-LEAN] forward-clock-three-free-sharp-example — Recaman/ForwardFreeThreeControl.lean
+  E-619 [PROVED-LEAN] forward-primitive-pair-needs-three-original-free — Recaman/ForwardSourceActualFreeThree.lean
+  E-620 [PROVED-LEAN] actual-addition-rank-slack-monotone — Recaman/AdditionRankSlack.lean
+  E-621 [PROVED-LEAN] forward-free-two-unit-factor-band — Recaman/ForwardSourceFreeTwoFactor.lean
+  E-614 [PROVED-LEAN] primitive-inner-clock-sharp-A-square — Recaman/PrimitiveClockRadius.lean
+  E-615 [PROVED-LEAN] mixed-prefix-distinct-clock-square-actual-r3-radius — Recaman/MixedPrefixDistinctRadius.lean
+  E-617 [PROVED-LEAN] forward-primitive-pair-needs-two-original-free — Recaman/ForwardSourceActualFree.lean
+  E-618 [PROVED-LEAN] nonnegative-mixed-future-excludes-all-old-sources — Recaman/NonnegativeFutureOldSource.lean
+  E-616 [PROVED-PAPER] all-run-chronological-supplied-free-key-budget — docs/RESEARCH_NOTE_2026-11-09_SOURCE_CLOCK_CHARGE.md
+  E-612 [PROVED-LEAN] primitive-layer-clock-increment-actual-first-free-charge — Recaman/PrimitiveLayerActualFree.lean
+  E-613 [REFUTED] primitive-supply-clock-fixed-ratio-growth — Recaman/PositiveTwoClockHistory.lean
+  E-610 [PROVED-LEAN] residual-three-same-S-depth-source-spectrum — Recaman/ThreeSSelectedSource.lean
+  E-611 [PROVED-LEAN] target-third-S-source-square-order-and-parity-cut — Recaman/TwoSTwoSquareSource.lean
+  E-609 [PROVED-LEAN] residual-two-own-source-clock-actual-last-four — Recaman/TwoSecondSLastFour.lean
+  E-607 [PROVED-LEAN] residual-two-S-source-floor-original-counter-cut — Recaman/TwoSecondSCounterCutBase.lean
+  E-608 [PROVED-LEAN] residual-two-next-A-two-band-source-spectrum — Recaman/TwoSNextASpectrum.lean
+  E-604 [PROVED-LEAN] unit-second-S-full-gap-source-head-factor-chain — Recaman/UnitSecondSNoCounterBase.lean
+  E-605 [PROVED-LEAN] unit-second-S-original-actual-counter-bootstrap — Recaman/UnitSecondSCounterCutBase.lean
+  E-606 [PROVED-LEAN] unit-second-S-next-A-family-original-last-four — Recaman/UnitSecondSLastFour.lean
+  E-599 [PROVED-LEAN] genuine-four-third-S-all-length-original-free-gap — Recaman/FourThirdSFullGapBase.lean
+  E-601 [PROVED-LEAN] genuine-four-second-A-original-free-gap — Recaman/SecondAHeadBudgetGapBase.lean
+  E-600 [PROVED-LEAN] short-early-three-run-original-head-budget — Recaman/ShortEarlyHeadBudget.lean
+  E-602 [PROVED-LEAN] whole-A-target-excludes-shorter-A-source — Recaman/SecondAStartRayBudget.lean
+  E-603 [PROVED-LEAN] unit-second-S-selected-source-actual-last-six — Recaman/UnitSActualLastBudget.lean
+  E-583 [PROVED-LEAN] genuine-four-run-old-target-actual-full-gap — Recaman/FourOldTargetGapBase.lean
+  E-579 [PROVED-LEAN] top-gap-actual-saturation-counter-cut — Recaman/TopGapCounterBase.lean
+  E-580 [PROVED-PAPER] gap-thirteen-actual-source-saturation-necessary-band — docs/RESEARCH_NOTE_2026-11-05_TOP_GAP_SOURCE.md
+  E-581 [PROVED-LEAN] mixed-old-target-delay-sensitive-source-band — Recaman/DelayedOldTargetBudget.lean
+  E-582 [PROVED-LEAN] mixed-old-target-actual-head-supply-floor — Recaman/OldTargetHeadSupplyFloor.lean
+  E-584 [PROVED-LEAN] fourth-seven-old-and-initial-source-witnesses — Recaman/FourthSaturationSources.lean
+  E-585 [PROVED-LEAN] old-target-initial-source-square-budget — Recaman/FourthSaturationSquare.lean
+  E-586 [PROVED-LEAN] four-run-late-local-target-full-gap — Recaman/FourLateLocalTargetGapBase.lean
+  E-588 [PROVED-LEAN] third-separator-short-or-long-ray-full-gap — Recaman/FourThirdSTargetGapBase.lean
+  E-587 [PROVED-LEAN] third-separator-target-source-factor — Recaman/ThirdSTargetProfile.lean
+  E-589 [PROVED-LEAN] third-separator-supplier-squares-and-second-A-collision — Recaman/ThirdSResidualSquare.lean
+  E-590 [PROVED-LEAN] third-separator-residual-actual-saturation-cut — Recaman/ThirdSActualCounterCutBase.lean
+  E-591 [PROVED-LEAN] paired-second-A-third-S-actual-ray-budget — Recaman/ThirdSPairedSupply.lean
+  E-592 [PROVED-LEAN] actual-seven-late-source-witnesses — Recaman/ThirdSSaturatedSources.lean
+  E-594 [PROVED-LEAN] separated-S-depth-and-shared-clock-actual-budget — Recaman/SeparatedSActualBudget.lean
+  E-595 [PROVED-LEAN] third-S-target-even-A-source-and-unit-last-five — Recaman/ThirdSUnitLastBudget.lean
+  E-596 [PROVED-LEAN] unit-second-A-third-S-actual-counter-band — Recaman/UnitThirdSCounterCutBase.lean
+  E-593 [PROVED-LEAN] mixed-A-S-multiple-four-quarter-budget — Recaman/MixedASQuarterBudget.lean
+  E-597 [PROVED-LEAN] mixed-source-short-A-joint-clock-savings — Recaman/MixedThreeFamilyBudget.lean
+  E-598 [REFUTED] run-independent-final-supply-constant-under-zero-positive — Recaman/PaddedLayeredSupply.lean
+  E-568 [PROVED-LEAN] zero-head-old-target-all-masses-full-gap — Recaman/ZeroHeadOldTargetGapBase.lean
+  E-566 [PROVED-LEAN] mass-two-all-old-last-band-budget — Recaman/MassTwoBandBudget.lean
+  E-562 [PROVED-LEAN] bounded-separator-old-source-actual-free-floor — Recaman/BoundedOldActualFree.lean
+  E-575 [PROVED-LEAN] old-target-actual-free-mass-accounting — Recaman/OldTargetFreeAccounting.lean
+  E-545 [PROVED-LEAN] mass-one-target-old-two-actual-free-gap — Recaman/MassOneOldTwoGap.lean
+  E-546 [PROVED-LEAN] mass-one-target-old-three-free-gap — Recaman/MassThreeSeedGapBase.lean
+  E-547 [PROVED-LEAN] mass-one-target-large-old-free-gap — Recaman/LargeSeedGapBase.lean
+  E-557 [PROVED-LEAN] mass-one-no-old-shared-family-full-gap — Recaman/UnitNoOldGapBase.lean
+  E-563 [PROVED-LEAN] mass-one-old-target-zero-head-full-gap — Recaman/MassOneFullGapBase.lean
+  E-572 [PROVED-LEAN] positive-head-unit-defect-full-gap — Recaman/PositiveDefectGapBase.lean
+  E-577 [PROVED-LEAN] four-run-old-target-counter-window-band — Recaman/FourRunOldCounterBandBase.lean
+  E-558 [PROVED-LEAN] mass-one-shared-early-source-clock-collision — Recaman/UnitOneEarlySourceCollision.lean
+  E-560 [PROVED-LEAN] low-old-initial-S-shared-key-exclusion — Recaman/LowOldActualSix.lean
+  E-561 [PROVED-LEAN] mixed-zero-head-seed-parity-circle — Recaman/MixedZeroActualCircle.lean
+  E-569 [PROVED-LEAN] mixed-head-old-two-source-circle — Recaman/MixedActualCircle.lean
+  E-574 [PROVED-LEAN] arbitrary-mixed-head-old-three-circle — Recaman/MixedThirdActualCircle.lean
+  E-565 [PROVED-LEAN] old-initial-source-clock-order — Recaman/OldInitialClockOrder.lean
+  E-570 [PROVED-LEAN] unit-defect-initial-exclusion-local-four — Recaman/UnitDefectLocalFour.lean
+  E-571 [PROVED-LEAN] positive-head-actual-mass-charge-cut — Recaman/PositiveHeadCut.lean
+  E-573 [PROVED-LEAN] double-defect-old-local-overlapping-clock-budget — Recaman/DoubleDefectActualFive.lean
+  E-576 [PROVED-LEAN] primitive-old-target-sharp-A-square-cut — Recaman/PrimitiveOldTargetCut.lean
+  E-438 [PROVED-LEAN] old-target-mass-area-and-three-run-residual — Recaman/OldTargetAreaBudget.lean
+  E-578 [PROVED-LEAN] genuine-four-old-target-cross-counter-band — Recaman/GenuineFourOldCounterBandBase.lean
+  E-458 [PROVED-LEAN] adjacent-A-source-pruning-four-run-actual-seventeen — Recaman/FourRunSupplySeventeen.lean
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 944 (including Audit)
+  Import contracts: 110; audit declarations: 3806

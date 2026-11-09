@@ -1,0 +1,815 @@
+{
+  "files": {
+    "Recaman/AdditionRankSlack.lean": {
+      "sha256": "c3a1de61dd4b6d4b8588488f63dcce0eb7c814058a423c10ec9b450f30a5f75c",
+      "success_tags": [
+        "H01R-rank-slack-reflexivity"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rankCost_step: concrete / proof=work / SUBSTANTIVE\nsegKey_step_A: concrete / proof=work / SUBSTANTIVE\nsegKey_step_S: concrete / proof=work / SUBSTANTIVE\nrankSlack_step_A: concrete / proof=work / SUBSTANTIVE\nrankSlack_step_S: concrete / proof=work / SUBSTANTIVE\nfree_prefix_mono: concrete / proof=work / SUBSTANTIVE\nadditions_split: concrete / proof=work / SUBSTANTIVE\nrankSlack_mono: concrete / proof=work / SUBSTANTIVE\nrankSlack_zero: concrete / proof=wrapper / -\nrank_floor_of_tight: concrete / proof=work / SUBSTANTIVE\n# Recaman/AdditionRankSlack.lean: 9/10 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/Cross28SourceCuts.lean": {
+      "sha256": "7b649e6f9f9a7c98230a3876de8a0fb462cb242927d8dc04030016d75a663181",
+      "success_tags": [
+        "H33R-cross28-cuts"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "split_S: concrete / proof=work / SUBSTANTIVE\nlocal_cut: concrete / proof=work / SUBSTANTIVE\nold_cut: concrete / proof=work / SUBSTANTIVE\nold_excludes_final_SAA: concrete / proof=work / SUBSTANTIVE\n# Recaman/Cross28SourceCuts.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/Cross28SupplyCount.lean": {
+      "sha256": "c01e2f45f22e769ebbbf753648330017ba2606e073759c3fe62e3682c94627a0",
+      "success_tags": [
+        "H34-cross28-count"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "short_unique: concrete / proof=work / SUBSTANTIVE\ncross28_original_supply_three: concrete / proof=work / SUBSTANTIVE\n# Recaman/Cross28SupplyCount.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/Cross36OldSourceCut.lean": {
+      "sha256": "496d5ded707b2969b554b527ac1f3ae11507cc423d587a3b41618a6d411da55d",
+      "success_tags": [
+        "H56-cross36-old-count"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "old_cross36_cut: concrete / proof=work / SUBSTANTIVE\nactual_old_ranks: concrete / proof=work / SUBSTANTIVE\nold_ranks_conflict: concrete / proof=work / SUBSTANTIVE\ncross36_original_old_count: concrete / proof=work / SUBSTANTIVE\n# Recaman/Cross36OldSourceCut.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/DeficitRecordControl.lean": {
+      "sha256": "0bb2b32cae16759364b6494e9d589c4ae7506f0bae1e9eb8a5a0454da9b409bd",
+      "success_tags": [
+        "H70-record-short-overlap"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "supplied_literal: concrete / proof=work / SUBSTANTIVE\nactual_nonshort_record_control: concrete / proof=work / SUBSTANTIVE\nrecord_pair_overlaps_short_triple: concrete / proof=work / SUBSTANTIVE\n# Recaman/DeficitRecordControl.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/DeficitRecordPredecessor.lean": {
+      "sha256": "e3aedef1792952a917463366148088567c815d75db395931f287a09076fc9bc1",
+      "success_tags": [
+        "H65-record-predecessor"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "deficit_step_at_S: concrete / proof=work / SUBSTANTIVE\nlocal_record_supplied_predecessor: concrete / proof=work / SUBSTANTIVE\nlocal_records_pair_into_original_supplies: concrete / proof=work / SUBSTANTIVE\n# Recaman/DeficitRecordPredecessor.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/DeficitRecordSourceCharge.lean": {
+      "sha256": "53f161cffab0637cb7584504204e4c6b240007eef2fd0fe9df1b7f3ece5ac1da",
+      "success_tags": [
+        "H63-record-plateau"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "deficit_step_at_supply: concrete / proof=work / SUBSTANTIVE\nhigh_S_deficit_le: concrete / proof=work / SUBSTANTIVE\nrecord_witness_after_earlier: concrete / proof=work / SUBSTANTIVE\noriginal_record_high_subtraction_count: concrete / proof=work / SUBSTANTIVE\nrecord_high_witness_exact: concrete / proof=work / SUBSTANTIVE\n# Recaman/DeficitRecordSourceCharge.lean: 5/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/EarlySubtractionFloor.lean": {
+      "sha256": "9a9e00a41b0445ae50e3955ec987d71fc2e690605f21df2085010c82a11e324b",
+      "success_tags": [
+        "H12-third-addition-needs-second-S"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "first_subtraction: concrete / proof=work / SUBSTANTIVE\ntwo_subtractions_of_three_additions: concrete / proof=work / SUBSTANTIVE\n# Recaman/EarlySubtractionFloor.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ElevenSignRankPrefix.lean": {
+      "sha256": "d62b86070fa4f0f7f79f102d6f1eae6f736d72ea0f1de3773b7c3f94d1e50179",
+      "success_tags": [
+        "H05R-eleven-sign-128-tail-pruned"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "certificate: concrete / proof=work / SUBSTANTIVE\neleven_rank_prefix: concrete / proof=work / SUBSTANTIVE\n# Recaman/ElevenSignRankPrefix.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/FifthAdditionPrefixShape.lean": {
+      "sha256": "0f38e0ffc3aacd8ebd58fb397d2d4e812bfa83d90cebb988039b5ef97c532d7e",
+      "success_tags": [
+        "H15-fifth-addition-small-certificates"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "eight_certificate: concrete / proof=work / SUBSTANTIVE\neight_fifth_prefix: concrete / proof=work / SUBSTANTIVE\nnine_certificate: concrete / proof=work / SUBSTANTIVE\nnine_fifth_prefix: concrete / proof=work / SUBSTANTIVE\n# Recaman/FifthAdditionPrefixShape.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ForwardFreeThreeControl.lean": {
+      "sha256": "cb916dfa740fc3375d4aadaf9f0547f6825c936d809b702c33748d6ab776e938",
+      "success_tags": [
+        "H09R-sharp-forward-count-normalization"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "prefix_supply_bits: concrete / proof=work / SUBSTANTIVE\nprefix_supply_exact: concrete / proof=wrapper / -\ntwo_clocks_count: concrete / proof=work / SUBSTANTIVE\ncontrol_count: concrete / proof=work / SUBSTANTIVE\nforward_three_free_example: concrete / proof=work / SUBSTANTIVE\n# Recaman/ForwardFreeThreeControl.lean: 4/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ForwardSourceActualFreeThree.lean": {
+      "sha256": "513db4b75f27e1106dc2e1f97e9364a9040c3f7a7c7274c51c0e9526350dec63",
+      "success_tags": [
+        "H07R-actual-three-free-head-index"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "prefix_additions_ceiling: concrete / proof=work / SUBSTANTIVE\nSAASA_three_free: concrete / proof=work / SUBSTANTIVE\nforward_pair_needs_three_actual_free: concrete / proof=work / SUBSTANTIVE\n# Recaman/ForwardSourceActualFreeThree.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ForwardSourceFreeTwoFactor.lean": {
+      "sha256": "0e07688415f6861108a9e00e4c0e184710ec85f3a9aa0d450ec308cfb8a26140",
+      "success_tags": [
+        "H04-free-two-unit-factor"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rank_two_identity: pure-arithmetic / proof=wrapper / -\nkey_mass_rank_two: concrete / proof=work / SUBSTANTIVE\nunit_factor: pure-arithmetic / proof=work / -\nprimitive_difference: concrete / proof=work / SUBSTANTIVE\nfree_two_unit_factor_band: concrete / proof=work / SUBSTANTIVE\n# Recaman/ForwardSourceFreeTwoFactor.lean: 3/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/FourAdditionsJointSupply.lean": {
+      "sha256": "e18a854705afec6bd73621fe7e67dbc0b6b6fdc878f8c624c6f02c5e526f0c05",
+      "success_tags": [
+        "H49-four-A-joint"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rank_step: concrete / proof=work / SUBSTANTIVE\nshort_before_old_impossible: concrete / proof=work / SUBSTANTIVE\noriginal_four_additions_supply_one: concrete / proof=work / SUBSTANTIVE\n# Recaman/FourAdditionsJointSupply.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/FreeTwoTightTail.lean": {
+      "sha256": "ec5a61a570e507e1d53be4523ad43ee500e92748d19788819921e4c9f0ca32ec",
+      "success_tags": [
+        "H06-tight-tail-pruning"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "additions_le_at_prefix: concrete / proof=work / SUBSTANTIVE\ntight_free_two_tail: concrete / proof=work / SUBSTANTIVE\n# Recaman/FreeTwoTightTail.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/InitialRankBonus.lean": {
+      "sha256": "0ad054566a9334e50b13a20208930958fd8024c14c3e29ec7887bf1f236cb961",
+      "success_tags": [
+        "H13-initial-rank-bonus"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rankBonus_step: concrete / proof=work / SUBSTANTIVE\ninitial_two_subtraction_bonus: concrete / proof=work / SUBSTANTIVE\n# Recaman/InitialRankBonus.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/InteriorZeroFreeActual.lean": {
+      "sha256": "5cf6f9a874741e40c83e737851f23c99095b5ee4c361064370524620bcccc6d1",
+      "success_tags": [
+        "H38R-interior-actual"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "actual_ray_end: concrete / proof=work / SUBSTANTIVE\nold_supply: concrete / proof=work / SUBSTANTIVE\ninterior_free_zero: concrete / proof=work / SUBSTANTIVE\n# Recaman/InteriorZeroFreeActual.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/InteriorZeroFreeControl.lean": {
+      "sha256": "5812f172f7d8d6c461dd3f2dd65e3e3ba444165c22776d59fa216d4ebd01c207",
+      "success_tags": [
+        "H36-interior-zero-free"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "end_at_34: concrete / proof=work / SUBSTANTIVE\nend_at_35: concrete / proof=work / SUBSTANTIVE\nend_at_36: concrete / proof=work / SUBSTANTIVE\nzero_free_forward_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/InteriorZeroFreeControl.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/InteriorZeroFreeWords.lean": {
+      "sha256": "4d837d65c153ee3ac3c4a44d8d130f6b27395a1a4f3616250cf7941384f7a179",
+      "success_tags": [
+        "H37R-interior-words"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "chunk_profile: concrete / proof=work / SUBSTANTIVE\nold_word_profile: concrete / proof=work / SUBSTANTIVE\nold_word_suffix: concrete / proof=work / SUBSTANTIVE\ncharged_prefix_supply: concrete / proof=work / SUBSTANTIVE\ninterior_pair_profile: concrete / proof=work / SUBSTANTIVE\n# Recaman/InteriorZeroFreeWords.lean: 5/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/LowCrossLocalClocks.lean": {
+      "sha256": "6d6c5570688d2d2354454824c9d77f57f811b4a98400ebe8776e5723a00e1eab",
+      "success_tags": [
+        "H48-three-prior-A"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "cross_nonnegative: concrete / proof=work / SUBSTANTIVE\ncross_append: concrete / proof=work / SUBSTANTIVE\ncross_at_addition: concrete / proof=work / SUBSTANTIVE\ncross_zero_of_no_A: concrete / proof=work / SUBSTANTIVE\ncross_zero_of_no_S: concrete / proof=work / SUBSTANTIVE\nsmall_cross_arith: pure-arithmetic / proof=work / -\nmass_one_one_S: concrete / proof=work / SUBSTANTIVE\nlocal_source_at_last_two_S: concrete / proof=work / SUBSTANTIVE\ncross28_local_arith: pure-arithmetic / proof=work / -\nfour_signs_one_A_cross_zero: concrete / proof=work / SUBSTANTIVE\ncross28_local_source: concrete / proof=work / SUBSTANTIVE\nlocal_source_small_A: concrete / proof=work / SUBSTANTIVE\nthree_A_short_source_cross: concrete / proof=work / SUBSTANTIVE\nlocal_source_three_prior_A: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowCrossLocalClocks.lean: 12/14 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/LowCrossOldClocks.lean": {
+      "sha256": "72f949cb0b30d55b5f51cf9e64487f94a5a5debf83b841f52225d71375acc083",
+      "success_tags": [
+        "H55a-old-gate-helper"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "gate_constraints: concrete / proof=work / SUBSTANTIVE\nold_before_last_S_arith: pure-arithmetic / proof=work / -\nlow_cross_old_after_last_S: concrete / proof=work / SUBSTANTIVE\ncross28_old_arith: pure-arithmetic / proof=work / -\ncross28_old_cut: concrete / proof=work / SUBSTANTIVE\nold_source_small_S: concrete / proof=work / SUBSTANTIVE\nold_at_three_S_data: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowCrossOldClocks.lean: 5/7 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/LowCrossSegmentCuts.lean": {
+      "sha256": "a51298cb9f8f84473dd46851862dd6cb19f6849755eef65f04b63833ed1a255f",
+      "success_tags": [
+        "H33a-source-split"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "split_at_addition: concrete / proof=work / SUBSTANTIVE\nlow_cross_local_cut: concrete / proof=work / SUBSTANTIVE\nlow_cross_old_cut: concrete / proof=work / SUBSTANTIVE\nSAA_endpoints_rank_strict: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowCrossSegmentCuts.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/LowCrossSupplyCount.lean": {
+      "sha256": "4a23574eb7a89aa0c81589c04854a81a0adc27af138b31ee93c85a85af16c3d4",
+      "success_tags": [
+        "H34a-count-helpers"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "shift_count: concrete / proof=work / SUBSTANTIVE\ninterval_unique_count: concrete / proof=work / SUBSTANTIVE\ninterval_or_count: concrete / proof=work / SUBSTANTIVE\nold_same_rank_unique: concrete / proof=work / SUBSTANTIVE\nlocal_same_rank_unique: concrete / proof=work / SUBSTANTIVE\nlow_cross_original_supply_three: concrete / proof=work / SUBSTANTIVE\neven_cross_local_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/LowCrossSupplyCount.lean: 7/7 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/OldMassEndpointGate.lean": {
+      "sha256": "51abbde99f634f0fcc0b12ef3a5c99df0228545c1a2b2d67fd16821555afce61",
+      "success_tags": [
+        "H22R-old-gate-preserve-mass-term"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "old_source_passes_mass_gate: concrete / proof=work / SUBSTANTIVE\nmass_gate_certified_free_count: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldMassEndpointGate.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/OldSourceNegativeThreshold.lean": {
+      "sha256": "4bd5a630ddb6771970fc02d5989aa3f87fe90170d601491d11ac3bb8243d23a5",
+      "success_tags": [
+        "H10R-negative-threshold-block-constructors"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "old_source_key_threshold: concrete / proof=work / SUBSTANTIVE\nactual_free_above_old_threshold: concrete / proof=work / SUBSTANTIVE\nodd_threshold_example: concrete / proof=work / SUBSTANTIVE\neven_threshold_example: concrete / proof=work / SUBSTANTIVE\n# Recaman/OldSourceNegativeThreshold.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/OriginalWinHighSubtraction.lean": {
+      "sha256": "83a696cdd459356aa64afa343bce121df38fcbe08ca14fafdb013699cec60bbe",
+      "success_tags": [
+        "H59R-original-win-height"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "mass_reverse: concrete / proof=wrapper / -\nmoment_reverse_area: concrete / proof=work / SUBSTANTIVE\nnat_segment: concrete / proof=work / SUBSTANTIVE\noriginal_win_short_or_high_S: concrete / proof=work / SUBSTANTIVE\n# Recaman/OriginalWinHighSubtraction.lean: 3/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/OtherSupplyHeightBudget.lean": {
+      "sha256": "f137db70785847dc79ea56ed5cbbc4cd6e4cbe4cb0575135d6f08b730286bbaf",
+      "success_tags": [
+        "H61-local-high-witness"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "local_nonshort_has_high_S: concrete / proof=work / SUBSTANTIVE\nother_supply_has_old_or_high_source: concrete / proof=work / SUBSTANTIVE\ncounter_old_or_high_budget: concrete / proof=work / SUBSTANTIVE\n# Recaman/OtherSupplyHeightBudget.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankThreeEarlyFree.lean": {
+      "sha256": "614917bd493ad7724ed22e20a9f9c300596ee2329f02731ad80c9262bd230781",
+      "success_tags": [
+        "H16R-rank-three-open-blockword"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rank_slack_divisible: concrete / proof=work / SUBSTANTIVE\nearly_four_free: concrete / proof=work / SUBSTANTIVE\nrank_three_slack_at_five: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankThreeEarlyFree.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankThreeFifthWindow.lean": {
+      "sha256": "b1173709673be30d732680e854fd7e51c7df219afca88bdf76e0269bce0f1288",
+      "success_tags": [
+        "H14-rank-three-fifth-window"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "addition_hit: concrete / proof=work / SUBSTANTIVE\nfifth_window_at_small_slack: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankThreeFifthWindow.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankThreeForwardClock.lean": {
+      "sha256": "84da21e850d8dfc63e22393620520c28b835b99ea86f7f226ffe07486177db63",
+      "success_tags": [
+        "H17-forward-clock-three-sharp-band"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "rank_three_identity: pure-arithmetic / proof=wrapper / -\nrank_three_key_mass: concrete / proof=work / SUBSTANTIVE\nsmall_band: pure-arithmetic / proof=work / -\nkey_difference_data: concrete / proof=work / SUBSTANTIVE\nmass_additions_subtractions: concrete / proof=work / SUBSTANTIVE\nrank_three_forward_clock_band: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankThreeForwardClock.lean: 4/6 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankThreeReverseClock.lean": {
+      "sha256": "58dac7f1965f81ecf73bb4195b64c7c33ee6d7792dea1787a6ecf8ccd156d62b",
+      "success_tags": [
+        "H45a-reverse-data"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "reverse_data: concrete / proof=work / SUBSTANTIVE\nlarge_future_forces_six: pure-arithmetic / proof=work / -\nsmall_future_if_two: pure-arithmetic / proof=work / -\nrank_three_reverse_clock_band: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankThreeReverseClock.lean: 2/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankTwoBoundaryRay.lean": {
+      "sha256": "87a8c368e655122c73c30904559b8ed8484db64bedd2321344829cf70a7e9f91",
+      "success_tags": [
+        "H51R-rank-two-boundary-ray"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "ray_source_data: concrete / proof=work / SUBSTANTIVE\nboundary_ray_source_shape: concrete / proof=work / SUBSTANTIVE\nboundary_ray_local_supply_one: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankTwoBoundaryRay.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankTwoDistinctClocks.lean": {
+      "sha256": "888cb21514e942439aea7cc20a48f669d36b1a1bfffe920a57442e799273f297",
+      "success_tags": [
+        "H45R-reverse-free-three"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "reverse_cross_band: pure-arithmetic / proof=work / -\nreverse_pair_needs_three_actual_free: concrete / proof=work / SUBSTANTIVE\ndistinct_pair_needs_three_actual_free: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankTwoDistinctClocks.lean: 2/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/RankTwoEqualClock.lean": {
+      "sha256": "3fbfd1c016081a92e09185645b14ab8620e625fd217dfe356128186168e5853f",
+      "success_tags": [
+        "H50R-equal-clock-shape"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "four_neutral_shape: concrete / proof=work / SUBSTANTIVE\nequal_clock_two_free_shape: concrete / proof=work / SUBSTANTIVE\n# Recaman/RankTwoEqualClock.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/SameClockBoundaryControl.lean": {
+      "sha256": "ea82dc33e71aaf83380240d7e0b6b61ed70eec490817f16085b24f4406d55dd4",
+      "success_tags": [
+        "H52R-same-clock-control"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "same_clock_two_sources_actual: concrete / proof=work / SUBSTANTIVE\n# Recaman/SameClockBoundaryControl.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ShortSourceTriples.lean": {
+      "sha256": "12002775fa9ccd2dda2f8e655834195494504c0f374d5ebfa107b298e7e0c07c",
+      "success_tags": [
+        "H57R-short-triple-budget"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "SAA_suffix_signs: concrete / proof=work / SUBSTANTIVE\nA_triple_count: concrete / proof=work / SUBSTANTIVE\ntwo_short_endpoints_six_additions: concrete / proof=work / SUBSTANTIVE\nshort_endpoint_supplied: concrete / proof=work / SUBSTANTIVE\nshort_endpoints_triple_budget: concrete / proof=work / SUBSTANTIVE\n# Recaman/ShortSourceTriples.lean: 5/5 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ShortSupplyGapBudget.lean": {
+      "sha256": "05fc33bac4799413858e7982e9faf7749743a126ddf70a7c9ebbadbbcecfeab6",
+      "success_tags": [
+        "H58-short-supply-gap"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "original_short_supply_charge: concrete / proof=work / SUBSTANTIVE\noriginal_gap_other_supply_budget: concrete / proof=work / SUBSTANTIVE\ncounter_needs_other_supplies: concrete / proof=work / SUBSTANTIVE\nat_most_one_other_supply_free_gap: concrete / proof=work / SUBSTANTIVE\n# Recaman/ShortSupplyGapBudget.lean: 4/4 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/SmallReverseSupplyCount.lean": {
+      "sha256": "591cd442f982794eb6e4b5716b5c24c8c63d5daa8f481792c437f0c7067639c0",
+      "success_tags": [
+        "H44-small-reverse-supply"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "original_end_source: concrete / proof=work / SUBSTANTIVE\nsmall_reverse_supply_bounds: concrete / proof=work / SUBSTANTIVE\n# Recaman/SmallReverseSupplyCount.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/SourceDeficitBand.lean": {
+      "sha256": "c538a3a889d15b8c5c0b1331751dbfbfc03970641c5dc93468d8e9c6af8f7943",
+      "success_tags": [
+        "H40R-deficit-band"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "walk_eq_free_sub_deficit: concrete / proof=work / SUBSTANTIVE\nfree_difference: concrete / proof=work / SUBSTANTIVE\nray_walk: concrete / proof=work / SUBSTANTIVE\nclock_at_start: concrete / proof=work / SUBSTANTIVE\ntwo_clock_deficit_charge: concrete / proof=work / SUBSTANTIVE\ncount_in_int_band_aux: concrete / proof=work / SUBSTANTIVE\nactual_supply_in_deficit_band: concrete / proof=work / SUBSTANTIVE\n# Recaman/SourceDeficitBand.lean: 7/7 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/ThresholdPrefixFreeCount.lean": {
+      "sha256": "4980f16381d5d40fa852b4925492fbcda262313887d0ec3b684bbdba8cda3736",
+      "success_tags": [
+        "H21-shared-prefix-count-bridge"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "count_range: concrete / proof=work / SUBSTANTIVE\ncertified_prefix_free_count: concrete / proof=work / SUBSTANTIVE\nfour_free_short_prefixes: concrete / proof=work / SUBSTANTIVE\n# Recaman/ThresholdPrefixFreeCount.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/TripleRunClockResidue.lean": {
+      "sha256": "9816e7d3bd8992073a24c9723dca4e9ed182544eaca449266b32b9621a12f1ce",
+      "success_tags": [
+        "H66-triple-run-residue"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "triple_profile: concrete / proof=work / SUBSTANTIVE\ntriple_run_residue_one_excluded: concrete / proof=work / SUBSTANTIVE\n# Recaman/TripleRunClockResidue.lean: 2/2 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/TripleRunConsecutiveFirstControl.lean": {
+      "sha256": "1e2fb84f4d8507b1306f5e378c431a2564e3b63eefb066cff2943220c81464de",
+      "success_tags": [
+        "H68-triple-first-consecutive"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "consecutive_first_A_local_control: concrete / proof=work / SUBSTANTIVE\n# Recaman/TripleRunConsecutiveFirstControl.lean: 1/1 substantive theorems\n",
+      "lint_stderr": ""
+    },
+    "Recaman/TripleRunLocalClockCut.lean": {
+      "sha256": "fcfde0c491219a11bf98e8a3641d2f506260b067083c5e0ee0269e847870ea15",
+      "success_tags": [
+        "H67-triple-run-actual"
+      ],
+      "lint_exit": 0,
+      "lint_stdout": "triple_drop_profile: concrete / proof=work / SUBSTANTIVE\ntriple_local_residue_one_excluded: concrete / proof=work / SUBSTANTIVE\nactual_triple_run_residue_only_old: concrete / proof=work / SUBSTANTIVE\n# Recaman/TripleRunLocalClockCut.lean: 3/3 substantive theorems\n",
+      "lint_stderr": ""
+    }
+  },
+  "new_module_count": 43,
+  "root_sha256": "71fc2617e06b405304c2253e47218e31c1e0b7b1e96f28ab33df8d7f8d393640",
+  "audit_sha256": "e160863980305d53ec6c9e95e4884a3ea54d1f539b89f9c15e12b9b8b6764251",
+  "final_check_manifest": "H71-final-check-source-tree.json",
+  "frozen_count": 97,
+  "failed_bytes_renamed": [
+    "docs/data/temporal_free_20261110/frozen/14c7900c1c05cc1505425e10f588d2fd7b4ca11906eb5ed77de35dc02b2de3ef-ForwardFreeThreeControl.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/2be54cde41ac94be2a56dc5224ae87f46a610bcf37a89ff759f50ca0f74ea179-ThirdAdditionRankSlack.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/35fc778b63cc143ae941614e3d68f6a89a463cb3549502cd1d607fe8153c9175-SourceDeficitBand.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/36c5140a4c16b6af4ab17b6564266fe5416c00e61b69f1a59e62bba35647399d-InteriorZeroFreeWords.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/4d8b3806474e8179cc6dfd038f48806975a1e09fa41bfe1f8299414188a4fab3-LowCrossOldClocks.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/50731b94621da0e22767e258dc8141491088e6ceda7b3872e32b382ebc98d329-LowCrossLocalClocks.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/5460b028d48979919b14ca1b67debed03d1255895640b45375a33af9f16ca389-ElevenSignRankPrefix.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/5c09f60fe60bccf9ffdca39f4c43a3eb197ca7f61612c7065efeb311175d48e9-Cross28SourceCuts.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/60473a115958da0044e9c3236627027b3e8fbe8713a6e8582379483d9e377d70-RankTwoEqualClock.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/628222d441bed59948538811e3031279995831e6ca3191cf9e2b6e96fc0d944d-OriginalWinHighSubtraction.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/62aa9ea2101fbfc3111a178688ea410bc3688277fbd587338d54762e910e9bd4-OldSourceNegativeThreshold.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/69dd49fc09202c5f04cc08d426f9e50bb15881ae26047c60843305d9b2ebbd8a-ThirdAdditionRankSlack.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/6f3c665344e631524997ac4ebf73770ed114be956ed7ba651da0cb3f3229270c-ForwardSourceRankEnergy.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/77dea3fca4e01c8e648e4565f1cf6daf84f1976b10e23094dc24439db906a782-RankTwoBoundaryRay.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/7d12f00e4b60652a46d17ef51957b2bf107995fa1118169d4cc96f5ca60546a1-SmallCrossPrefixWords.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/85a9ee18bcead1310c7db8da9ccaf2964da90d9538bfab23783b7aa44479b9e4-ShortSourceTriples.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/91d6b6cd49e08fe601c938b79b3b67948d9301ea2ebc88137aa3bbde1fcdee6b-ForwardSourceActualFreeThree.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/99a8d4ecde75f8752a9eb8af9c90a7522f379e3a4d723da0553a6a0e47d06f28-AdditionRankSlack.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/a5b0172d768bba9021b244a489fda67338898d9d4a421e860211da466e4cfcbc-RankTwoDistinctClocks.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/d9c54ad1d6653aa96fae09c38f399ab4af32764f85c646df328d4663d10e7923-RankThreeEarlyFree.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/dbffd5b62a1afd6e3f00c1b2ffa2a002256ef1c6945686627aa45efe92736681-OldMassEndpointGate.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/df33ec3fc960b281d66c600d564ed676f023a19a42a99114831e306498ad01b8-InteriorZeroFreeActual.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/e025946a89fb8711b7ea193cdad96e1de3ba59bb2ef42833991176512719afe8-SmallCrossPrefixWords.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/e851d83afa0aa2f8a6d30144a1d125f659cdc6a5e1034204a76674446361b109-LowCrossSupplyCount.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/f0b64426554a963e2883b504c1b94de86ae97f6697f7dbabb8c57119388579f2-LowCrossOldClocks.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/f6118da965e48b73f9ace01d97bf910ef0ad96724e94a9c2a0229bc3274df5a9-SameClockBoundaryControl.lean.txt",
+    "docs/data/temporal_free_20261110/frozen/f707fc49729ed84ec76caea7a0a18e37bbd6def24e55ead965e736aff3759be4-ForwardSourceRankEnergy.lean.txt"
+  ],
+  "frozen": [
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/05fc33bac4799413858e7982e9faf7749743a126ddf70a7c9ebbadbbcecfeab6-ShortSupplyGapBudget.lean",
+      "sha256": "05fc33bac4799413858e7982e9faf7749743a126ddf70a7c9ebbadbbcecfeab6"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/06bd531376e5da33df5a2d4218416b7678bafbc4d7a64c3c1b9b4da5bba8603d-Cross36OldSourceCut.lean",
+      "sha256": "06bd531376e5da33df5a2d4218416b7678bafbc4d7a64c3c1b9b4da5bba8603d"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/089adc66c29e22360dfc88ce612dba9474bf593c119cdf380546416590376262-InteriorClockGapFamily.lean.txt",
+      "sha256": "089adc66c29e22360dfc88ce612dba9474bf593c119cdf380546416590376262"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/0ad054566a9334e50b13a20208930958fd8024c14c3e29ec7887bf1f236cb961-InitialRankBonus.lean",
+      "sha256": "0ad054566a9334e50b13a20208930958fd8024c14c3e29ec7887bf1f236cb961"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/0badb276d0650731daa84f19a151adad32ee3e366c2f4290ec57b852af5ac11e-DeficitRecordControl.lean",
+      "sha256": "0badb276d0650731daa84f19a151adad32ee3e366c2f4290ec57b852af5ac11e"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/0bb2b32cae16759364b6494e9d589c4ae7506f0bae1e9eb8a5a0454da9b409bd-DeficitRecordControl.lean",
+      "sha256": "0bb2b32cae16759364b6494e9d589c4ae7506f0bae1e9eb8a5a0454da9b409bd"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/0e07688415f6861108a9e00e4c0e184710ec85f3a9aa0d450ec308cfb8a26140-ForwardSourceFreeTwoFactor.lean",
+      "sha256": "0e07688415f6861108a9e00e4c0e184710ec85f3a9aa0d450ec308cfb8a26140"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/0f38e0ffc3aacd8ebd58fb397d2d4e812bfa83d90cebb988039b5ef97c532d7e-FifthAdditionPrefixShape.lean",
+      "sha256": "0f38e0ffc3aacd8ebd58fb397d2d4e812bfa83d90cebb988039b5ef97c532d7e"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/111b577521fd789ec2df70239d80b7898d54af92f6fd3216f9950ebdf3c899cd-LowCrossOldClocks.lean",
+      "sha256": "111b577521fd789ec2df70239d80b7898d54af92f6fd3216f9950ebdf3c899cd"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/12002775fa9ccd2dda2f8e655834195494504c0f374d5ebfa107b298e7e0c07c-ShortSourceTriples.lean",
+      "sha256": "12002775fa9ccd2dda2f8e655834195494504c0f374d5ebfa107b298e7e0c07c"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/14c7900c1c05cc1505425e10f588d2fd7b4ca11906eb5ed77de35dc02b2de3ef-ForwardFreeThreeControl.lean.txt",
+      "sha256": "14c7900c1c05cc1505425e10f588d2fd7b4ca11906eb5ed77de35dc02b2de3ef"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/1e2fb84f4d8507b1306f5e378c431a2564e3b63eefb066cff2943220c81464de-TripleRunConsecutiveFirstControl.lean",
+      "sha256": "1e2fb84f4d8507b1306f5e378c431a2564e3b63eefb066cff2943220c81464de"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/2366baf6fe846fce725a1ff13e952a8f36550526b853c461779ef1ecd1d90fb0-Cross36LongFreeCertificate.lean.txt",
+      "sha256": "2366baf6fe846fce725a1ff13e952a8f36550526b853c461779ef1ecd1d90fb0"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/2be54cde41ac94be2a56dc5224ae87f46a610bcf37a89ff759f50ca0f74ea179-ThirdAdditionRankSlack.lean.txt",
+      "sha256": "2be54cde41ac94be2a56dc5224ae87f46a610bcf37a89ff759f50ca0f74ea179"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/35fc778b63cc143ae941614e3d68f6a89a463cb3549502cd1d607fe8153c9175-SourceDeficitBand.lean.txt",
+      "sha256": "35fc778b63cc143ae941614e3d68f6a89a463cb3549502cd1d607fe8153c9175"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/36c5140a4c16b6af4ab17b6564266fe5416c00e61b69f1a59e62bba35647399d-InteriorZeroFreeWords.lean.txt",
+      "sha256": "36c5140a4c16b6af4ab17b6564266fe5416c00e61b69f1a59e62bba35647399d"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/3fbfd1c016081a92e09185645b14ab8620e625fd217dfe356128186168e5853f-RankTwoEqualClock.lean",
+      "sha256": "3fbfd1c016081a92e09185645b14ab8620e625fd217dfe356128186168e5853f"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/46f8c0ce9933d772b31fc374f9da482c26ff17b7e94fc4187b3b152f9e7b1210-LowCrossOldClocks.lean",
+      "sha256": "46f8c0ce9933d772b31fc374f9da482c26ff17b7e94fc4187b3b152f9e7b1210"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/496d5ded707b2969b554b527ac1f3ae11507cc423d587a3b41618a6d411da55d-Cross36OldSourceCut.lean",
+      "sha256": "496d5ded707b2969b554b527ac1f3ae11507cc423d587a3b41618a6d411da55d"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4980f16381d5d40fa852b4925492fbcda262313887d0ec3b684bbdba8cda3736-ThresholdPrefixFreeCount.lean",
+      "sha256": "4980f16381d5d40fa852b4925492fbcda262313887d0ec3b684bbdba8cda3736"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4a23574eb7a89aa0c81589c04854a81a0adc27af138b31ee93c85a85af16c3d4-LowCrossSupplyCount.lean",
+      "sha256": "4a23574eb7a89aa0c81589c04854a81a0adc27af138b31ee93c85a85af16c3d4"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4ad7a05da0860b9e8ded0abbe89117b232b3752468a6d586168ea8a2b9beceab-DeficitRecordSourceCharge.lean",
+      "sha256": "4ad7a05da0860b9e8ded0abbe89117b232b3752468a6d586168ea8a2b9beceab"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4bd5a630ddb6771970fc02d5989aa3f87fe90170d601491d11ac3bb8243d23a5-OldSourceNegativeThreshold.lean",
+      "sha256": "4bd5a630ddb6771970fc02d5989aa3f87fe90170d601491d11ac3bb8243d23a5"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4d837d65c153ee3ac3c4a44d8d130f6b27395a1a4f3616250cf7941384f7a179-InteriorZeroFreeWords.lean",
+      "sha256": "4d837d65c153ee3ac3c4a44d8d130f6b27395a1a4f3616250cf7941384f7a179"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/4d8b3806474e8179cc6dfd038f48806975a1e09fa41bfe1f8299414188a4fab3-LowCrossOldClocks.lean.txt",
+      "sha256": "4d8b3806474e8179cc6dfd038f48806975a1e09fa41bfe1f8299414188a4fab3"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/50731b94621da0e22767e258dc8141491088e6ceda7b3872e32b382ebc98d329-LowCrossLocalClocks.lean.txt",
+      "sha256": "50731b94621da0e22767e258dc8141491088e6ceda7b3872e32b382ebc98d329"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/513db4b75f27e1106dc2e1f97e9364a9040c3f7a7c7274c51c0e9526350dec63-ForwardSourceActualFreeThree.lean",
+      "sha256": "513db4b75f27e1106dc2e1f97e9364a9040c3f7a7c7274c51c0e9526350dec63"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/51abbde99f634f0fcc0b12ef3a5c99df0228545c1a2b2d67fd16821555afce61-OldMassEndpointGate.lean",
+      "sha256": "51abbde99f634f0fcc0b12ef3a5c99df0228545c1a2b2d67fd16821555afce61"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/51e6d4481e68821880e17c25dbcbb9e83cd1a4ae09c1b013ed9e0f17cfae0b00-LowCrossSegmentCuts.lean",
+      "sha256": "51e6d4481e68821880e17c25dbcbb9e83cd1a4ae09c1b013ed9e0f17cfae0b00"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/53f161cffab0637cb7584504204e4c6b240007eef2fd0fe9df1b7f3ece5ac1da-DeficitRecordSourceCharge.lean",
+      "sha256": "53f161cffab0637cb7584504204e4c6b240007eef2fd0fe9df1b7f3ece5ac1da"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/5460b028d48979919b14ca1b67debed03d1255895640b45375a33af9f16ca389-ElevenSignRankPrefix.lean.txt",
+      "sha256": "5460b028d48979919b14ca1b67debed03d1255895640b45375a33af9f16ca389"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/5812f172f7d8d6c461dd3f2dd65e3e3ba444165c22776d59fa216d4ebd01c207-InteriorZeroFreeControl.lean",
+      "sha256": "5812f172f7d8d6c461dd3f2dd65e3e3ba444165c22776d59fa216d4ebd01c207"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/58dac7f1965f81ecf73bb4195b64c7c33ee6d7792dea1787a6ecf8ccd156d62b-RankThreeReverseClock.lean",
+      "sha256": "58dac7f1965f81ecf73bb4195b64c7c33ee6d7792dea1787a6ecf8ccd156d62b"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/591cd442f982794eb6e4b5716b5c24c8c63d5daa8f481792c437f0c7067639c0-SmallReverseSupplyCount.lean",
+      "sha256": "591cd442f982794eb6e4b5716b5c24c8c63d5daa8f481792c437f0c7067639c0"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/5c09f60fe60bccf9ffdca39f4c43a3eb197ca7f61612c7065efeb311175d48e9-Cross28SourceCuts.lean.txt",
+      "sha256": "5c09f60fe60bccf9ffdca39f4c43a3eb197ca7f61612c7065efeb311175d48e9"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/5cf6f9a874741e40c83e737851f23c99095b5ee4c361064370524620bcccc6d1-InteriorZeroFreeActual.lean",
+      "sha256": "5cf6f9a874741e40c83e737851f23c99095b5ee4c361064370524620bcccc6d1"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/60473a115958da0044e9c3236627027b3e8fbe8713a6e8582379483d9e377d70-RankTwoEqualClock.lean.txt",
+      "sha256": "60473a115958da0044e9c3236627027b3e8fbe8713a6e8582379483d9e377d70"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/614917bd493ad7724ed22e20a9f9c300596ee2329f02731ad80c9262bd230781-RankThreeEarlyFree.lean",
+      "sha256": "614917bd493ad7724ed22e20a9f9c300596ee2329f02731ad80c9262bd230781"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/628222d441bed59948538811e3031279995831e6ca3191cf9e2b6e96fc0d944d-OriginalWinHighSubtraction.lean.txt",
+      "sha256": "628222d441bed59948538811e3031279995831e6ca3191cf9e2b6e96fc0d944d"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/62aa9ea2101fbfc3111a178688ea410bc3688277fbd587338d54762e910e9bd4-OldSourceNegativeThreshold.lean.txt",
+      "sha256": "62aa9ea2101fbfc3111a178688ea410bc3688277fbd587338d54762e910e9bd4"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/66aceab38c80b26f083867d1fe8afeca4e627bb529a841b83682e84c019122ee-LowCrossOldClocks.lean",
+      "sha256": "66aceab38c80b26f083867d1fe8afeca4e627bb529a841b83682e84c019122ee"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/69d74369ff384943806f65255c9f86e2a88071b6029836ed8b01731e7544462d-LowCrossLocalClocks.lean",
+      "sha256": "69d74369ff384943806f65255c9f86e2a88071b6029836ed8b01731e7544462d"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/69dd49fc09202c5f04cc08d426f9e50bb15881ae26047c60843305d9b2ebbd8a-ThirdAdditionRankSlack.lean.txt",
+      "sha256": "69dd49fc09202c5f04cc08d426f9e50bb15881ae26047c60843305d9b2ebbd8a"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/6d6c5570688d2d2354454824c9d77f57f811b4a98400ebe8776e5723a00e1eab-LowCrossLocalClocks.lean",
+      "sha256": "6d6c5570688d2d2354454824c9d77f57f811b4a98400ebe8776e5723a00e1eab"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/6f3c665344e631524997ac4ebf73770ed114be956ed7ba651da0cb3f3229270c-ForwardSourceRankEnergy.lean.txt",
+      "sha256": "6f3c665344e631524997ac4ebf73770ed114be956ed7ba651da0cb3f3229270c"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/70bee6e00ff25844bbc3054979dc408ff9de08bbb0dd0bafaf2e9be47aceb49b-LowCrossLocalClocks.lean",
+      "sha256": "70bee6e00ff25844bbc3054979dc408ff9de08bbb0dd0bafaf2e9be47aceb49b"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/72f949cb0b30d55b5f51cf9e64487f94a5a5debf83b841f52225d71375acc083-LowCrossOldClocks.lean",
+      "sha256": "72f949cb0b30d55b5f51cf9e64487f94a5a5debf83b841f52225d71375acc083"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/7324efb96de2f1ee1b90e950c44aa79e7d967e512477fb4acf924dd612e2e7a3-LowCrossLocalClocks.lean",
+      "sha256": "7324efb96de2f1ee1b90e950c44aa79e7d967e512477fb4acf924dd612e2e7a3"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/77dea3fca4e01c8e648e4565f1cf6daf84f1976b10e23094dc24439db906a782-RankTwoBoundaryRay.lean.txt",
+      "sha256": "77dea3fca4e01c8e648e4565f1cf6daf84f1976b10e23094dc24439db906a782"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/7b649e6f9f9a7c98230a3876de8a0fb462cb242927d8dc04030016d75a663181-Cross28SourceCuts.lean",
+      "sha256": "7b649e6f9f9a7c98230a3876de8a0fb462cb242927d8dc04030016d75a663181"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/7d12f00e4b60652a46d17ef51957b2bf107995fa1118169d4cc96f5ca60546a1-SmallCrossPrefixWords.lean.txt",
+      "sha256": "7d12f00e4b60652a46d17ef51957b2bf107995fa1118169d4cc96f5ca60546a1"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/82c41549095708c69777982ac6067fde996f48f1ea5113942771c4b334acdd73-TripleRunClockResidue.lean.txt",
+      "sha256": "82c41549095708c69777982ac6067fde996f48f1ea5113942771c4b334acdd73"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/83a696cdd459356aa64afa343bce121df38fcbe08ca14fafdb013699cec60bbe-OriginalWinHighSubtraction.lean",
+      "sha256": "83a696cdd459356aa64afa343bce121df38fcbe08ca14fafdb013699cec60bbe"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/84da21e850d8dfc63e22393620520c28b835b99ea86f7f226ffe07486177db63-RankThreeForwardClock.lean",
+      "sha256": "84da21e850d8dfc63e22393620520c28b835b99ea86f7f226ffe07486177db63"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/85a9ee18bcead1310c7db8da9ccaf2964da90d9538bfab23783b7aa44479b9e4-ShortSourceTriples.lean.txt",
+      "sha256": "85a9ee18bcead1310c7db8da9ccaf2964da90d9538bfab23783b7aa44479b9e4"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/87a8c368e655122c73c30904559b8ed8484db64bedd2321344829cf70a7e9f91-RankTwoBoundaryRay.lean",
+      "sha256": "87a8c368e655122c73c30904559b8ed8484db64bedd2321344829cf70a7e9f91"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/880facd7f6c7d6b5a17da5131deac48187b155b4e3a1d1769fee260cbe4c5f74-LowCrossOldClocks.lean",
+      "sha256": "880facd7f6c7d6b5a17da5131deac48187b155b4e3a1d1769fee260cbe4c5f74"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/888cb21514e942439aea7cc20a48f669d36b1a1bfffe920a57442e799273f297-RankTwoDistinctClocks.lean",
+      "sha256": "888cb21514e942439aea7cc20a48f669d36b1a1bfffe920a57442e799273f297"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/8a629ad08cd488f00bfeddfb63f86359f3972817ca01c0fe9f1c2a1b451a2836-ShortSourceTriples.lean",
+      "sha256": "8a629ad08cd488f00bfeddfb63f86359f3972817ca01c0fe9f1c2a1b451a2836"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/8be4a184870b3e861ed21bb1b1a06d0f6bd430ca9e916d0c178df60c2f4ac4ae-ThresholdPrefixFreeCount.lean",
+      "sha256": "8be4a184870b3e861ed21bb1b1a06d0f6bd430ca9e916d0c178df60c2f4ac4ae"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/91d6b6cd49e08fe601c938b79b3b67948d9301ea2ebc88137aa3bbde1fcdee6b-ForwardSourceActualFreeThree.lean.txt",
+      "sha256": "91d6b6cd49e08fe601c938b79b3b67948d9301ea2ebc88137aa3bbde1fcdee6b"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/9816e7d3bd8992073a24c9723dca4e9ed182544eaca449266b32b9621a12f1ce-TripleRunClockResidue.lean",
+      "sha256": "9816e7d3bd8992073a24c9723dca4e9ed182544eaca449266b32b9621a12f1ce"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/99a8d4ecde75f8752a9eb8af9c90a7522f379e3a4d723da0553a6a0e47d06f28-AdditionRankSlack.lean.txt",
+      "sha256": "99a8d4ecde75f8752a9eb8af9c90a7522f379e3a4d723da0553a6a0e47d06f28"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/9a9e00a41b0445ae50e3955ec987d71fc2e690605f21df2085010c82a11e324b-EarlySubtractionFloor.lean",
+      "sha256": "9a9e00a41b0445ae50e3955ec987d71fc2e690605f21df2085010c82a11e324b"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/a51298cb9f8f84473dd46851862dd6cb19f6849755eef65f04b63833ed1a255f-LowCrossSegmentCuts.lean",
+      "sha256": "a51298cb9f8f84473dd46851862dd6cb19f6849755eef65f04b63833ed1a255f"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/a5b0172d768bba9021b244a489fda67338898d9d4a421e860211da466e4cfcbc-RankTwoDistinctClocks.lean.txt",
+      "sha256": "a5b0172d768bba9021b244a489fda67338898d9d4a421e860211da466e4cfcbc"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/a83a774c12b7ae75637c0bfb1cffc6de6dd80ad2e20572c89af7ffd0d6d9885b-RankThreeReverseClock.lean",
+      "sha256": "a83a774c12b7ae75637c0bfb1cffc6de6dd80ad2e20572c89af7ffd0d6d9885b"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/af6f390d1ab7578b8dee973a5835b15841ee2002983342d4ee821b9db3652d65-ThresholdPrefixFreeCount.lean.txt",
+      "sha256": "af6f390d1ab7578b8dee973a5835b15841ee2002983342d4ee821b9db3652d65"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/b1173709673be30d732680e854fd7e51c7df219afca88bdf76e0269bce0f1288-RankThreeFifthWindow.lean",
+      "sha256": "b1173709673be30d732680e854fd7e51c7df219afca88bdf76e0269bce0f1288"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/c01e2f45f22e769ebbbf753648330017ba2606e073759c3fe62e3682c94627a0-Cross28SupplyCount.lean",
+      "sha256": "c01e2f45f22e769ebbbf753648330017ba2606e073759c3fe62e3682c94627a0"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/c3a1de61dd4b6d4b8588488f63dcce0eb7c814058a423c10ec9b450f30a5f75c-AdditionRankSlack.lean",
+      "sha256": "c3a1de61dd4b6d4b8588488f63dcce0eb7c814058a423c10ec9b450f30a5f75c"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/c538a3a889d15b8c5c0b1331751dbfbfc03970641c5dc93468d8e9c6af8f7943-SourceDeficitBand.lean",
+      "sha256": "c538a3a889d15b8c5c0b1331751dbfbfc03970641c5dc93468d8e9c6af8f7943"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/c91fb059c76047dc9161895e5a6dfee70b1331a099bc6eefd535be9e234b5920-LowCrossLocalClocks.lean.txt",
+      "sha256": "c91fb059c76047dc9161895e5a6dfee70b1331a099bc6eefd535be9e234b5920"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/c96ae696271ea6292bc117306472d5763e6b49d98fa6b307636f3b82d5389341-Cross36LongFreeCertificate.lean.txt",
+      "sha256": "c96ae696271ea6292bc117306472d5763e6b49d98fa6b307636f3b82d5389341"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/cb916dfa740fc3375d4aadaf9f0547f6825c936d809b702c33748d6ab776e938-ForwardFreeThreeControl.lean",
+      "sha256": "cb916dfa740fc3375d4aadaf9f0547f6825c936d809b702c33748d6ab776e938"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/d62b86070fa4f0f7f79f102d6f1eae6f736d72ea0f1de3773b7c3f94d1e50179-ElevenSignRankPrefix.lean",
+      "sha256": "d62b86070fa4f0f7f79f102d6f1eae6f736d72ea0f1de3773b7c3f94d1e50179"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/d806e4ddefcf60dbba1f9be2807a8ea2bf007deffee0caaedddab58f4b721539-RankThreeReverseClock.lean",
+      "sha256": "d806e4ddefcf60dbba1f9be2807a8ea2bf007deffee0caaedddab58f4b721539"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/d9c54ad1d6653aa96fae09c38f399ab4af32764f85c646df328d4663d10e7923-RankThreeEarlyFree.lean.txt",
+      "sha256": "d9c54ad1d6653aa96fae09c38f399ab4af32764f85c646df328d4663d10e7923"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/db21d41ee872e0bc2100a4d7bad8f8ac2e568dc2d786e53fcda1c671c1ad4d49-LowCrossSegmentCuts.lean.txt",
+      "sha256": "db21d41ee872e0bc2100a4d7bad8f8ac2e568dc2d786e53fcda1c671c1ad4d49"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/dbffd5b62a1afd6e3f00c1b2ffa2a002256ef1c6945686627aa45efe92736681-OldMassEndpointGate.lean.txt",
+      "sha256": "dbffd5b62a1afd6e3f00c1b2ffa2a002256ef1c6945686627aa45efe92736681"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/df33ec3fc960b281d66c600d564ed676f023a19a42a99114831e306498ad01b8-InteriorZeroFreeActual.lean.txt",
+      "sha256": "df33ec3fc960b281d66c600d564ed676f023a19a42a99114831e306498ad01b8"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/e025946a89fb8711b7ea193cdad96e1de3ba59bb2ef42833991176512719afe8-SmallCrossPrefixWords.lean.txt",
+      "sha256": "e025946a89fb8711b7ea193cdad96e1de3ba59bb2ef42833991176512719afe8"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/e18a854705afec6bd73621fe7e67dbc0b6b6fdc878f8c624c6f02c5e526f0c05-FourAdditionsJointSupply.lean",
+      "sha256": "e18a854705afec6bd73621fe7e67dbc0b6b6fdc878f8c624c6f02c5e526f0c05"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/e3aedef1792952a917463366148088567c815d75db395931f287a09076fc9bc1-DeficitRecordPredecessor.lean",
+      "sha256": "e3aedef1792952a917463366148088567c815d75db395931f287a09076fc9bc1"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/e3b495f1f07d4c2e8c91c6a622b7f430c8f05d1f9e990848c178346e4a5ffa5f-LowCrossSegmentCuts.lean.txt",
+      "sha256": "e3b495f1f07d4c2e8c91c6a622b7f430c8f05d1f9e990848c178346e4a5ffa5f"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/e851d83afa0aa2f8a6d30144a1d125f659cdc6a5e1034204a76674446361b109-LowCrossSupplyCount.lean.txt",
+      "sha256": "e851d83afa0aa2f8a6d30144a1d125f659cdc6a5e1034204a76674446361b109"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/ea82dc33e71aaf83380240d7e0b6b61ed70eec490817f16085b24f4406d55dd4-SameClockBoundaryControl.lean",
+      "sha256": "ea82dc33e71aaf83380240d7e0b6b61ed70eec490817f16085b24f4406d55dd4"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/ec5a61a570e507e1d53be4523ad43ee500e92748d19788819921e4c9f0ca32ec-FreeTwoTightTail.lean",
+      "sha256": "ec5a61a570e507e1d53be4523ad43ee500e92748d19788819921e4c9f0ca32ec"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/eed7679e72ca5f956436d2275ffc330c51fceaafe1fa94ead2aa7a8f7cc422ca-OtherSupplyHeightBudget.lean",
+      "sha256": "eed7679e72ca5f956436d2275ffc330c51fceaafe1fa94ead2aa7a8f7cc422ca"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f086e6d824aea30f8d473cfc34613ec1cf6dd8eaf9dd1ba1bfd2f6de79c2b8a5-LowCrossLocalClocks.lean",
+      "sha256": "f086e6d824aea30f8d473cfc34613ec1cf6dd8eaf9dd1ba1bfd2f6de79c2b8a5"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f0b64426554a963e2883b504c1b94de86ae97f6697f7dbabb8c57119388579f2-LowCrossOldClocks.lean.txt",
+      "sha256": "f0b64426554a963e2883b504c1b94de86ae97f6697f7dbabb8c57119388579f2"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f137db70785847dc79ea56ed5cbbc4cd6e4cbe4cb0575135d6f08b730286bbaf-OtherSupplyHeightBudget.lean",
+      "sha256": "f137db70785847dc79ea56ed5cbbc4cd6e4cbe4cb0575135d6f08b730286bbaf"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f5934413a80773af93000c51ada78ef801a2b274ed33e985d7308bc69db02465-LowCrossSupplyCount.lean",
+      "sha256": "f5934413a80773af93000c51ada78ef801a2b274ed33e985d7308bc69db02465"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f6118da965e48b73f9ace01d97bf910ef0ad96724e94a9c2a0229bc3274df5a9-SameClockBoundaryControl.lean.txt",
+      "sha256": "f6118da965e48b73f9ace01d97bf910ef0ad96724e94a9c2a0229bc3274df5a9"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/f707fc49729ed84ec76caea7a0a18e37bbd6def24e55ead965e736aff3759be4-ForwardSourceRankEnergy.lean.txt",
+      "sha256": "f707fc49729ed84ec76caea7a0a18e37bbd6def24e55ead965e736aff3759be4"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/fcfde0c491219a11bf98e8a3641d2f506260b067083c5e0ee0269e847870ea15-TripleRunLocalClockCut.lean",
+      "sha256": "fcfde0c491219a11bf98e8a3641d2f506260b067083c5e0ee0269e847870ea15"
+    },
+    {
+      "path": "docs/data/temporal_free_20261110/frozen/ffe58c29b7ca807d77b235aba98fee0b067cbed83f97caa71c4516c4c4620cfe-InteriorClockGapFamily.lean.txt",
+      "sha256": "ffe58c29b7ca807d77b235aba98fee0b067cbed83f97caa71c4516c4c4620cfe"
+    }
+  ]
+}

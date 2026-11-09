@@ -1,0 +1,25 @@
+{
+  "tag": "H37R-interior-words",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InteriorZeroFreeWords.olean",
+    "Recaman/InteriorZeroFreeWords.lean"
+  ],
+  "started_jst": "2026-11-10T06:59:07.100571+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InteriorZeroFreeWords.lean": "4d837d65c153ee3ac3c4a44d8d130f6b27395a1a4f3616250cf7941384f7a179"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "9a972960fe272a3d57a2a720bbee8dd9e46fb16e5003d501d8cb3497975db6fe",
+  "source_tree_sha256": "29ce6728d0a00853722226c145e322a06508ae47938c3a8aec91ad15f7d720ad",
+  "source_tree_manifest": "H37R-interior-words-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

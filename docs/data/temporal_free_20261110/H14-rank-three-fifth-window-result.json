@@ -1,0 +1,31 @@
+{
+  "tag": "H14-rank-three-fifth-window",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RankThreeFifthWindow.olean",
+    "Recaman/RankThreeFifthWindow.lean"
+  ],
+  "started_jst": "2026-11-10T06:22:58.702946+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RankThreeFifthWindow.lean": "b1173709673be30d732680e854fd7e51c7df219afca88bdf76e0269bce0f1288"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "2675523572951ed636108754d5a738db7cf357e48a2e14254cbe5d1e084b0edf",
+  "source_tree_sha256": "7dc393976da6c1b125232e62930e9e71e96863031ea8cbbb5a598dfed9569d95",
+  "source_tree_manifest": "H14-rank-three-fifth-window-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "2675523572951ed636108754d5a738db7cf357e48a2e14254cbe5d1e084b0edf",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5593500840186607,
+  "cpu_seconds": 0.407891,
+  "finished_jst": "2026-11-10T06:22:59.262227+09:00"
+}

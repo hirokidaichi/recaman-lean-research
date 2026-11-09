@@ -1,0 +1,25 @@
+{
+  "tag": "H62-record-high-charge",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DeficitRecordSourceCharge.olean",
+    "Recaman/DeficitRecordSourceCharge.lean"
+  ],
+  "started_jst": "2026-11-10T07:34:29.374445+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DeficitRecordSourceCharge.lean": "4ad7a05da0860b9e8ded0abbe89117b232b3752468a6d586168ea8a2b9beceab"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "ed0da2205098a68f97202e5cbd8be66fa9ea50b140e4e4fbe3d47197663f4952",
+  "source_tree_sha256": "b250e62e38123e909824cac6d8ac0a3ae637da39901c3e1da94517155629a9a7",
+  "source_tree_manifest": "H62-record-high-charge-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H49-four-A-joint",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourAdditionsJointSupply.olean",
+    "Recaman/FourAdditionsJointSupply.lean"
+  ],
+  "started_jst": "2026-11-10T07:14:43.826675+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourAdditionsJointSupply.lean": "e18a854705afec6bd73621fe7e67dbc0b6b6fdc878f8c624c6f02c5e526f0c05"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "source_tree_sha256": "afda14fc3fd7874edaca14482e897a2c30429352b76da53ddb98addbea028a7f",
+  "source_tree_manifest": "H49-four-A-joint-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5733409169770312,
+  "cpu_seconds": 0.458055,
+  "finished_jst": "2026-11-10T07:14:44.399211+09:00"
+}

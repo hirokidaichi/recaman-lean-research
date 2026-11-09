@@ -1,0 +1,42 @@
+Recaman/LowCrossOldClocks.lean:42:16: error: unexpected token '='; expected ':=' or '|'
+Recaman/LowCrossOldClocks.lean:42:13: error: Missing cases:
+Recaman/LowCrossOldClocks.lean:39:22: error: unsolved goals
+case neg
+a s z qx qz c k : Int
+hs : 0 ≤ s
+hz : 0 ≤ z
+hqx : 0 ≤ qx
+hqz : 0 ≤ qz
+ha : 0 ≤ a
+hS : s + z = 6
+hc : c = 1 - (a - s)
+hQ : qx + qz + 4 * (a + 1) * z ≤ 20
+hkey : k = qx - 2 * s ^ 2 + 4 * c * s
+hc1 : 1 ≤ c
+hk : k ≤ 0
+h1 : c = 1 → k = -2
+h2 : c = 2 → k = -2 ∨ k = 0
+hzero : s = 0 → qx = 0
+hz0 : ¬z = 0
+h : ¬s = 0
+⊢ 0 < s
+Recaman/LowCrossOldClocks.lean:39:2: error: unsolved goals
+case neg
+a s z qx qz c k : Int
+hs : 0 ≤ s
+hz : 0 ≤ z
+hqx : 0 ≤ qx
+hqz : 0 ≤ qz
+ha : 0 ≤ a
+hS : s + z = 6
+hc : c = 1 - (a - s)
+hQ : qx + qz + 4 * (a + 1) * z ≤ 20
+hkey : k = qx - 2 * s ^ 2 + 4 * c * s
+hc1 : 1 ≤ c
+hk : k ≤ 0
+h1 : c = 1 → k = -2
+h2 : c = 2 → k = -2 ∨ k = 0
+hzero : s = 0 → qx = 0
+hz0 : ¬z = 0
+hs0 : 0 < s
+⊢ z = 0

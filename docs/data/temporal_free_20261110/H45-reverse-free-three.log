@@ -1,0 +1,12 @@
+Recaman/RankTwoDistinctClocks.lean:50:80: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 4
+  0 ≤ e ≤ 2
+  c ≤ 1
+  b ≤ 1
+  b - c ≤ -1
+where
+ b := mass u
+ c := mass (seg f n K ++ u)
+ e := ↑(free f n K)
+ g := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n K)

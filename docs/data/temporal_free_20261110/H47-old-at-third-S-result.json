@@ -1,0 +1,31 @@
+{
+  "tag": "H47-old-at-third-S",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossOldClocks.olean",
+    "Recaman/LowCrossOldClocks.lean"
+  ],
+  "started_jst": "2026-11-10T07:13:15.292781+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossOldClocks.lean": "66aceab38c80b26f083867d1fe8afeca4e627bb529a841b83682e84c019122ee"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "source_tree_sha256": "bbaeae2560db92501886eca644a327b3b2db317d88a73ea40d26d74fe55b2cd3",
+  "source_tree_manifest": "H47-old-at-third-S-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "54f8e279dcd88712e1ff64ec07819ad8d935d9fc5c78de5c639d00d1fb9b97ae",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.183627999998862,
+  "cpu_seconds": 1.014301,
+  "finished_jst": "2026-11-10T07:13:16.476351+09:00"
+}

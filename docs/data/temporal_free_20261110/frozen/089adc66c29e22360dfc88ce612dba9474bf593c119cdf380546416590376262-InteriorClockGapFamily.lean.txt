@@ -1,0 +1,100 @@
+import Recaman.InteriorZeroFreeActual
+
+namespace Recaman.InteriorClockGapFamily
+
+open Recaman.InteriorZeroFreeWords Recaman.InteriorZeroFreeActual Recaman.AdditionRankSlack
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.BlockOldRay
+open Recaman.RunSupplyKeys Recaman.CapacityEqualityInduction Recaman.SingleWindowEquality
+open Recaman.LineCapacityPeriodic Recaman.InitialSPaddingPositive Recaman.InitialSeparatorTrim
+
+private theorem primitive_ray (v u : List Bool) (i : Nat)
+    (hU : 0<u.length) (hM : mass u+(i : Int)=1) (hK : runKey u= -2) :
+    Recaman.ThreeNonsuppliedData.localSupply ((v++u)++List.replicate i true)=true := by
+  have h:=(localSupply_A_S_iff (v++u) i 0).mpr
+    ⟨v.length,by simp; omega,by simpa only [List.drop_left,Int.natCast_zero,Int.zero_add] using hM,
+      by rw [List.drop_left,hK]; decide⟩
+  simpa only [List.replicate_zero,List.append_nil] using h
+
+/-- The same original sign history can have arbitrarily separated forward
+clocks with no free additions between their source starts. Absolute
+positivity holds up to the later endpoint. -/
+theorem unbounded_interior_clock_gap (d : Nat) :
+    ∃ (f : Nat → Bool) (n K B : Nat), B=n+K+1 ∧
+      (∀ k, 0<k → k≤B+(d+2) → cN (EndN f 0) 0 k+1≤subtractions f 0 k) ∧
+      free f n K=0 ∧ (∀ r, r≤d+2 → f (B+r)=true) ∧
+      seg f n K=interiorWord d ∧ seg f (n+K) 1=[false] ∧
+      runKey (seg f (n+K) 1)= -2 ∧ mass (seg f (n+K) 1)+2=1 ∧
+      runKey (seg f n (K+1))= -2 ∧ mass (seg f n (K+1))+((d+2 : Nat) : Int)=1 ∧
+      EndN f 0 (B+2) ∧ EndN f 0 (B+(d+2)) := by
+  let w:=oldWord (d+1)
+  let p:=interiorWord d
+  let u:=[false]
+  let raw:=(w++p)++u
+  let h:=raw.length+d+3
+  let f:=trimSSequence (finiteSign raw) 0 h
+  let n:=h+w.length
+  let K:=p.length
+  let B:=h+raw.length
+  let pad:=List.replicate h false
+  let v:=pad++w
+  have hB : B=n+K+1 := by simp [B,n,K,raw,u]; omega
+  have hn : v.length=n := by simp [v,pad,n]
+  have hbase : seg f 0 B=pad++raw := by
+    have h0:=trimS_prefix (finiteSign raw) 0 h raw.length
+    rwa [finiteSign_seg] at h0
+  have hWord : seg f 0 B=v++(p++u) := by
+    simpa only [raw,v,List.append_assoc] using hbase
+  have hpre : seg f 0 n=v := by
+    have ht:=seg_take f 0 B n (by omega)
+    rw [hWord,← hn,List.take_left] at ht
+    rwa [hn] at ht
+  have hmid : seg f n (K+1)=p++u := by
+    have hd:=seg_drop f 0 B n (by omega)
+    rw [hWord,← hn,List.drop_left,hn,Nat.zero_add,show B-n=K+1 by omega] at hd
+    exact hd.symm
+  have hp : seg f n K=p := by
+    have ht:=seg_take f n (K+1) K (by omega)
+    rw [hmid,show K=p.length by rfl,List.take_left] at ht
+    exact ht.symm
+  have hu : seg f (n+K) 1=u := by
+    have hd:=seg_drop f n (K+1) K (by omega)
+    rw [hmid,show K=p.length by rfl,List.drop_left,show p.length+1-p.length=1 by omega] at hd
+    exact hd.symm
+  have hfree:=interior_free_zero f n d pad hpre hp
+  have hA (r : Nat) : f (B+r)=true := by
+    change trimSSequence (finiteSign raw) 0 h (B+r)=true
+    rw [show B+r=h+(raw.length+r) by simp [B,Nat.add_assoc],trimS_tail_sign,Nat.zero_add]
+    exact finiteSign_after raw r
+  have hwhole : seg f 0 (B+(d+2))=(pad++raw)++List.replicate (d+2) true := by
+    rw [seg_add,Nat.zero_add,hbase]
+    congr 1
+    apply seg_A
+    intro t ht _
+    have he:=hA (t-B)
+    rwa [Nat.add_sub_cancel' ht] at he
+  have hAc : cN (fun t=>f t=true) 0 (B+(d+2))<h := by
+    have ho:=ones_seg_eq_count f 0 (B+(d+2))
+    rw [hwhole,ones_append,ones_append,ones_replicate_S,ones_replicate_A] at ho
+    have hb:=(ones_bounds raw).2
+    dsimp [h] at ho ⊢
+    omega
+  have hpos:=initial_S_positive f h (B+(d+2))
+    (fun t ht=>by simp [f,trimSSequence,ht]) hAc
+  obtain ⟨_,_,_,hm,hk⟩:=interior_pair_profile d
+  change mass (p++u)+((d+2 : Nat) : Int)=1 at hm
+  change runKey (p++u)= -2 at hk
+  have hEnd2 : EndN f 0 (B+2) := by
+    apply actual_ray_end f B 2 (v++p++u)
+    · simpa only [List.append_assoc] using hWord
+    · exact fun r _=>hA r
+    · exact primitive_ray (v++p) u 2 (by decide) (by decide) (by decide)
+  have hEndj : EndN f 0 (B+(d+2)) :=
+    actual_ray_end f B (d+2) _ hWord (fun r _=>hA r)
+      (primitive_ray v (p++u) (d+2) (by simp [u]) hm hk)
+  refine ⟨f,n,K,B,hB,hpos,hfree,fun r _=>hA r,hp,hu,?_,?_,?_,?_,hEnd2,hEndj⟩
+  · rw [hu]; decide
+  · rw [hu]; decide
+  · rw [hmid]; exact hk
+  · rw [hmid]; exact hm
+
+end Recaman.InteriorClockGapFamily

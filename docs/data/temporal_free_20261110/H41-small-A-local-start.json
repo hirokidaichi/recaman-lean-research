@@ -1,0 +1,25 @@
+{
+  "tag": "H41-small-A-local",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossLocalClocks.olean",
+    "Recaman/LowCrossLocalClocks.lean"
+  ],
+  "started_jst": "2026-11-10T07:08:08.998248+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossLocalClocks.lean": "f086e6d824aea30f8d473cfc34613ec1cf6dd8eaf9dd1ba1bfd2f6de79c2b8a5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "6d1f66a8d5a1b8d91c8a1eb761aa90c7ac7386210da0a2016423ce2a1d544aad",
+  "source_tree_sha256": "09a55ae9f7b99b47851b321616438c7b7f1f39a223513d197d49a3c46ec62862",
+  "source_tree_manifest": "H41-small-A-local-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

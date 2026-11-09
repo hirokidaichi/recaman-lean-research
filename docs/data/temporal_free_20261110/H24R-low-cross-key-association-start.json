@@ -1,0 +1,25 @@
+{
+  "tag": "H24R-low-cross-key-association",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowCrossLocalClocks.olean",
+    "Recaman/LowCrossLocalClocks.lean"
+  ],
+  "started_jst": "2026-11-10T06:37:49.688477+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowCrossLocalClocks.lean": "70bee6e00ff25844bbc3054979dc408ff9de08bbb0dd0bafaf2e9be47aceb49b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "e57c7fbf0d22c6017956345a33ceb04a35cae5da71eb0f41631acdc03cfee97b",
+  "source_tree_sha256": "1d24c2ea62963a39ea5748b6613fe3bb41d851624b9d6a1ff0651a0259ba49bc",
+  "source_tree_manifest": "H24R-low-cross-key-association-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

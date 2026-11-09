@@ -1,0 +1,31 @@
+{
+  "tag": "H06-tight-tail-pruning",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FreeTwoTightTail.olean",
+    "Recaman/FreeTwoTightTail.lean"
+  ],
+  "started_jst": "2026-11-10T06:10:42.429699+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FreeTwoTightTail.lean": "ec5a61a570e507e1d53be4523ad43ee500e92748d19788819921e4c9f0ca32ec"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "72d1cb7b53e1f10118cc4ef632eee4024b12f6c8",
+  "tracked_diff_sha256": "762d1be34ecf1594d66e7cc3e3bc783fc7c0d9ffe9a415dd3e37ecdcbc4ca445",
+  "source_tree_sha256": "c9f8315d9e3f6b187642b80b8b392eaa18b86a20d4e9403ebd2cb746a9ea498a",
+  "source_tree_manifest": "H06-tight-tail-pruning-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "762d1be34ecf1594d66e7cc3e3bc783fc7c0d9ffe9a415dd3e37ecdcbc4ca445",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4535365420160815,
+  "cpu_seconds": 0.299164,
+  "finished_jst": "2026-11-10T06:10:42.883181+09:00"
+}
