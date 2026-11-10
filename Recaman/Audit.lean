@@ -1,3 +1,4 @@
+import Recaman.SupplyTrichotomyBudget
 import Recaman.RecordOverlapShiftBounds
 import Recaman.ShortRecordOverlapBudget
 import Recaman.TripleRunConsecutiveFirstControl
@@ -4154,3 +4155,11 @@ import Recaman
 #print axioms Recaman.RecordOverlapShiftBounds.overlap_corrections_bounded
 
 #print axioms Recaman.RecordOverlapShiftBounds.records_need_two_additions
+
+#print axioms Recaman.SupplyTrichotomyBudget.supplied_trichotomy
+
+#print axioms Recaman.SupplyTrichotomyBudget.additions_trichotomy
+
+#print axioms Recaman.SupplyTrichotomyBudget.trichotomy_budget
+
+#print axioms Recaman.SupplyTrichotomyBudget.zero_other_zero_overlap

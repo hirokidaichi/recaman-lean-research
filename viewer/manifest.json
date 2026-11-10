@@ -326,8 +326,9 @@
   },
   {
    "name": "Audit",
-   "lines": 4156,
+   "lines": 4165,
    "imports": [
+    "SupplyTrichotomyBudget",
     "RecordOverlapShiftBounds",
     "ShortRecordOverlapBudget",
     "TripleRunConsecutiveFirstControl",
@@ -59703,6 +59704,40 @@
    "hasReport": false
   },
   {
+   "name": "SupplyTrichotomyBudget",
+   "lines": 92,
+   "imports": [
+    "DeficitRecordPredecessor",
+    "ShortRecordOverlapBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "supplied_trichotomy",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "additions_trichotomy",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "trichotomy_budget",
+     "line": 68
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_other_zero_overlap",
+     "line": 82
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SurvivalCountermodelArithmetic",
    "lines": 391,
    "imports": [
@@ -68207,6 +68242,6 @@
    "hasReport": false
   }
  ],
- "total": 946,
+ "total": 947,
  "withReport": 167
 }

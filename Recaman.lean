@@ -746,3 +746,5 @@ import Recaman.TripleRunConsecutiveFirstControl
 import Recaman.ShortRecordOverlapBudget
 
 import Recaman.RecordOverlapShiftBounds
+
+import Recaman.SupplyTrichotomyBudget
