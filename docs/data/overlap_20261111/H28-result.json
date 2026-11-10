@@ -1,0 +1,31 @@
+{
+  "tag": "H28",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeightWidthFourGap.olean",
+    "Recaman/HeightWidthFourGap.lean"
+  ],
+  "started_jst": "2026-11-11T07:05:05.504990+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeightWidthFourGap.lean": "a62fedbac45f53d5aa72420b3361a7cb395e391da2e12ec589f7b78ce07eed67"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "79fbf180493f95c014847e454c41aa8dbbbfa8503e48b42730206f96518e9ec5",
+  "source_tree_sha256": "3abccd40dd30710b07d70aaaed79d0f7506080e3199fc96fafe7ed5bfcbb17e1",
+  "source_tree_manifest": "H28-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "79fbf180493f95c014847e454c41aa8dbbbfa8503e48b42730206f96518e9ec5",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.450335500005167,
+  "cpu_seconds": 0.29908199999999996,
+  "finished_jst": "2026-11-11T07:05:05.955250+09:00"
+}

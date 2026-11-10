@@ -1,0 +1,8 @@
+Recaman/FloorSupplyTripleCharge.lean:208:2: error: Type mismatch: After simplification, term
+  hfin
+ has type
+  @LE.le Nat instLENat (3 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n K)
+    (cN (floorA f m) n K + 2 * cN (floorA f (m + 1)) n K)
+but is expected to have type
+  @LE.le Nat instLENat (3 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n K)
+    (cN (fun t => Fw f t = m ∧ f t = true) n K + 2 * cN (fun t => Fw f t = m + 1 ∧ f t = true) n K)

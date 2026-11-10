@@ -1,0 +1,38 @@
+Recaman/DepthSixFreeLocation.lean:162:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  u ≥ 1
+  s ≥ 0
+  r ≥ 0
+  p ≥ 0
+  l - o ≥ 0
+  k ≥ 1
+  i - v ≤ -1
+  h ≥ 0
+  8 ≤ g - i ≤ 10
+  g - i - 2*p - r ≥ 4
+  8*g - 8*i - 2*k - l + 3*p - 5*r ≥ 32
+  e ≥ 0
+  e - h ≤ 0
+  d ≥ 0
+  c ≥ 0
+  c - e ≤ 0
+  c - e + u ≥ 0
+  c - h + u ≥ 1
+  c - s ≤ 0
+  c - s + u ≥ 1
+  c + u ≥ 0
+where
+ c := ↑n
+ d := ↑(cN (EndN f 0) n (b - n))
+ e := ↑q
+ g := Fw f b
+ h := ↑z
+ i := Fw f z
+ k := ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n))
+ l := lowAdditionWeights f n (Fw f (b + j) - 1) (b - n)
+ o := (↑j + 1) ^ 2
+ p := ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+ r := ↑(cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n))
+ s := ↑t
+ u := ↑(b - n)
+ v := Fw f t

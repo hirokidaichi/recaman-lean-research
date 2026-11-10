@@ -1,0 +1,117 @@
+import Recaman.LowTargetWeightedGap
+import Recaman.NextHeightSupplyCharge
+
+namespace Recaman.DepthSixGapResidual
+
+open Recaman.LowTargetWeightedGap Recaman.NextHeightSupplyCharge
+open Recaman.FloorSupplyFreeBudget Recaman.GapSquareLowAdditions Recaman.LevelTriangleArea
+open Recaman.AdditionRankSlack Recaman.BlockOldRay Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Classical
+
+private theorem weights_le_three_counts (f : Nat → Bool) (n K : Nat) (r : Int)
+    (P Q R : Nat → Prop)
+    (h : ∀ t, n≤t → t<n+K → lowAdditionWeight f r t≤
+      (if P t then 7 else 0)+(if Q t then 3 else 0)+(if R t then 1 else 0)) :
+    lowAdditionWeights f n r K≤7*(cN P n K : Int)+3*(cN Q n K : Int)+(cN R n K : Int) := by
+  induction K with
+  | zero => simp [cN,lowAdditionWeights]
+  | succ k ih =>
+    have hp := ih (fun t ht hk => h t ht (by omega))
+    have hs := h (n+k) (by omega) (by omega)
+    rw [lowAdditionWeights]
+    by_cases hP : P (n+k) <;> by_cases hQ : Q (n+k) <;> by_cases hR : R (n+k) <;>
+      simp only [hP,hQ,hR,if_true,if_false] at hs <;>
+      simp only [cN,hP,hQ,hR,if_true,if_false] <;> omega
+
+/-- With source height at most four above the floor, the original
+low-addition weights are bounded by eleven times the original free count. -/
+theorem low_weights_le_eleven_free (f : Nat → Bool) (n a K : Nat) (m r : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+4) :
+    lowAdditionWeights f n r K≤11*(free f n K : Int) := by
+  let P := fun t => f t=true ∧ ¬EndN f 0 t
+  let Q := fun t => Fw f t=m+2 ∧ EndN f 0 t
+  let R := fun t => Fw f t=m+3 ∧ EndN f 0 t
+  have hw' := weights_le_three_counts f n K r P Q R (by
+    intro t hnt htK
+    have hmin := hfloor t hnt (by omega)
+    by_cases hA : f t=true ∧ Fw f t<r
+    · rw [lowAdditionWeight,if_pos hA]
+      by_cases he : EndN f 0 t
+      · have hlo : m+2≤Fw f t := by
+          by_cases h : m+2≤Fw f t
+          · exact h
+          · exact (block_prefix_low_clock_not_endable f n a t hw hpre hnt m
+              (fun i hi hj => hfloor i hi (by omega)) (by omega) he).elim
+        rw [if_neg (fun hp : P t => hp.2 he)]
+        by_cases h2 : Fw f t=m+2
+        · rw [if_pos (show Q t from ⟨h2,he⟩),if_neg (fun hR : R t => by have := hR.1; omega)]
+          omega
+        · have h3 : Fw f t=m+3 := by have := hA.2; omega
+          rw [if_neg (fun hQ : Q t => h2 hQ.1),if_pos (show R t from ⟨h3,he⟩)]
+          omega
+      · rw [if_pos (show P t from ⟨hA.1,he⟩),
+          if_neg (fun hq : Q t => he hq.2),if_neg (fun hR : R t => he hR.2)]
+        omega
+    · rw [lowAdditionWeight,if_neg hA]
+      by_cases hp : P t <;> by_cases hq : Q t <;> by_cases hR : R t <;> simp [hp,hq,hR])
+  have h2 := actual_floor_supply_count f n a K m hw hpre hfloor
+  have h3 := next_height_supply_count f n a K m hw hpre hfloor
+  have hm2 : cN (fun t => Fw f t=m ∧ f t=true ∧ ¬EndN f 0 t) n K≤free f n K := by
+    apply cN_mono
+    intro t _ _ h
+    exact h.2
+  have hm3 : cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K≤free f n K := by
+    apply cN_mono
+    intro t _ _ h
+    exact h.2
+  change cN Q n K≤_ at h2
+  change cN R n K≤_ at h3
+  change lowAdditionWeights f n r K≤7*(free f n K : Int)+3*(cN Q n K : Int)+(cN R n K : Int) at hw'
+  omega
+
+/-- The depth-six positive counter is saturated at both free count and
+terminal deficit, and its gap lies in the small remaining band. -/
+theorem positive_depth_six_counter_profile (f : Nat → Bool) (n a b j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))
+    (hcounter : free f n (b-n)≤j) :
+    free f n (b-n)=j ∧ 4≤j ∧ j≤8 ∧ Fw f (b+j)=Fw f n-1 ∧
+      subtractions f n (b-n)=cN (EndN f 0) n (b-n)+1 := by
+  have hfree : 4≤free f n (b-n) := by
+    by_cases h : 4≤free f n (b-n)
+    · exact h
+    · have hgap := positive_r3_free_gap f n a (b-n) j hw hpre (by omega) hpos
+        (show free f n (b-n)≤3 by omega)
+        (by rwa [show n+(b-n)=b by omega]) (by rwa [show n+(b-n)=b by omega])
+      change j+1≤free f n (b-n) at hgap
+      omega
+  have hdown := fw_false_run f b j hS
+  have hwalk := (cN_walk f n (b-n)).1
+  rw [show n+(b-n)=b by omega] at hwalk
+  change Fw f b=Fw f n+(additions f n (b-n) : Int)-subtractions f n (b-n) at hwalk
+  have hP := hpos (b-n) (by omega) (by omega)
+  change cN (EndN f 0) n (b-n)+1≤subtractions f n (b-n) at hP
+  have hpart := additions_split f n (b-n)
+  have ht : Fw f (b+j)=Fw f n-1 := by
+    by_cases hlo : Fw f (b+j)≤Fw f n-2
+    · have h := positive_low_target_free_gap f n a b j (Fw f n-6) hw hpre
+        hnb hfloor hpos hS he (by omega)
+      omega
+    · omega
+  have hs := supplied_gap_square_low_additions f n a b j hw hpre hnb hS he
+  have hl := low_weights_le_eleven_free f n a (b-n) (Fw f n-6) (Fw f (b+j)-1) hw hpre
+    (fun i hi hj => hfloor i hi (by omega)) (by omega)
+  have hj : j≤8 := by
+    by_cases h : j≤8
+    · exact h
+    · have hp := Int.mul_nonneg (show 0≤(j : Int) by omega) (show 0≤(j : Int)-9 by omega)
+      have hpoly : ((j : Int)+1)^2=11*(j : Int)+(j : Int)*((j : Int)-9)+1 := by grind
+      rw [hpoly] at hs
+      omega
+  exact ⟨by omega,by omega,hj,ht,by omega⟩
+
+end Recaman.DepthSixGapResidual

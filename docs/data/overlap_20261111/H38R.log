@@ -1,0 +1,65 @@
+Recaman/GeometricSupplyBudget.lean:69:64: error: Invalid projection: Projections extract constructor fields for one-constructor inductive types. The expression
+  h
+has type `Nat` which is not a one-constructor inductive type.
+Recaman/GeometricSupplyBudget.lean:69:53: error: unsolved goals
+f : Nat → Bool
+m : Int
+l t : Nat
+hA : f t = true
+hF : Fw f t = m + ↑l
+h : Nat
+⊢ False
+Recaman/GeometricSupplyBudget.lean:103:60: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+  a ≥ 0
+where
+ a := ↑H
+Recaman/GeometricSupplyBudget.lean:104:10: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => (if _a then 1 else 0) = if h = l then 1 else 0
+Error: Application type mismatch: The argument
+  instDecidableAnd
+has type
+  Decidable (Fw f t = m + ↑h ∧ f t = true)
+but is expected to have type
+  Decidable _a
+in the application
+  @ite Int _a instDecidableAnd
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+f : Nat → Bool
+m : Int
+H t : Nat
+hAheight : f t = true → m ≤ Fw f t ∧ Fw f t ≤ m + ↑H
+hA : f t = true
+hlo : m ≤ Fw f t
+hhi : Fw f t ≤ m + ↑H
+l : Nat := (Fw f t - m).toNat
+hl : ↑l = Fw f t - m
+hF : Fw f t = m + ↑l
+h : Nat
+he : Fw f t = m + ↑h ∧ f t = true ↔ h = l
+⊢ (if Fw f t = m + ↑h ∧ f t = true then 1 else 0) = if h = l then 1 else 0
+Recaman/GeometricSupplyBudget.lean:134:4: error: Type mismatch
+  cN_step_int (fun t => Fw f t = m + ↑h ∧ P t) n k
+has type
+  ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n (k + 1)) =
+    ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n k) +
+      @ite Int (Fw f (n + k) = m + ↑h ∧ P (n + k)) (propDecidable (Fw f (n + k) = m + ↑h ∧ P (n + k))) 1 0
+but is expected to have type
+  ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n (k + 1)) =
+    ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n k) + @ite Int (Fw f (n + k) = m + ↑h ∧ P (n + k)) instDecidableAnd 1 0
+Recaman/GeometricSupplyBudget.lean:150:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c - 3*d ≥ 0
+  a - 3*b ≥ 0
+  a - 3*b - 3*d + e ≤ -1
+where
+ a := heightCount f (fun t => f t = true) n k m H
+ b := geometric (fun h => lowAdditionWeights f n (m + ↑h - 1) k) H
+ c := geometric (fun h => if Fw f (n + k) = m + ↑h ∧ f (n + k) = true then 1 else 0) H
+ d := geometric (fun h => lowAdditionWeight f (m + ↑h - 1) (n + k)) H
+ e := geometric (fun h => if Fw f (n + k) = m + ↑h ∧ f (n + k) = true then 1 else 0) H

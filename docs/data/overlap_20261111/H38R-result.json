@@ -1,0 +1,31 @@
+{
+  "tag": "H38R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GeometricSupplyBudget.olean",
+    "Recaman/GeometricSupplyBudget.lean"
+  ],
+  "started_jst": "2026-11-11T07:31:37.726441+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GeometricSupplyBudget.lean": "4ee7060e8191916081ec3704537b88b5ee46900336b298e87a246bbfe811c42d"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "35f4aab7d12960e531a868a0ef34a3574ad102be22b76b52626c71427bb2640c",
+  "source_tree_sha256": "31b73a942c0230da2532162d3efc23652c074480d896f781e95ada0f90943b57",
+  "source_tree_manifest": "H38R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "35f4aab7d12960e531a868a0ef34a3574ad102be22b76b52626c71427bb2640c",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.9136543339991476,
+  "cpu_seconds": 0.7106359999999999,
+  "finished_jst": "2026-11-11T07:31:38.640058+09:00"
+}

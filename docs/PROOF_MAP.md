@@ -1874,3 +1874,7 @@ E614/E615 PROVED-LEANは全mixed primitive pairのA平方と、元BlockWord境�
 E619 PROVED-LEAN。E620の順位床、E621の独立因数、元SAASの実freeを接着し、forward二源は空き3以上。E634で逆順も同じ。E626は元free<=3のforward時計<=2/3、E629は逆順<=5/4とF<=9。E635の同時計はSAAS/空き2の元境界付き分類と実ray一時計。E631により任意途中区間へのfree-only延長はREFUTED。
 
 E633は元不足帯内の実時計数をfree+幅+1へ。E637/E638は全runのSAA三A packingと高S/旧源の元必要数。E639は新最低に限る高Sと直前供給の非重複課金。E642が二課金間の非重複を反証し、E643が重複補正をPROVED-PAPERで保存。E640の全A3族時計≡1の局所排除はE641の第一A交互反証を保持する。一般四run/任意run/rank/C1/Q/H/SL/全射性は未証明。次は[元重複補正](HYPOTHESIS_CARD_2026-11-11_SHORT_RECORD_OVERLAP.md)。
+
+### 2026-11-11 高さと面積の元供給会計
+
+E647は短record補正B+C≤L。E654/E655は全途中深さによる局所代替とD4共通旧文脈4代表。E657/E667/E665の元free課金からE663は全run・元正不足・全深さ5の元free-gap、E669は幅4・正不足不要の元gap。E662/E671は同じ実target/sourceの平方と旧面積負債、E668/E670/E676/E677は深さ6counterをj4/5/6、j6の局所source n+2と同target面積−3/−2/1へ削減。E672〜E674は全高さ・全長の元同高供給≤低A奇数重み。E675全高幾何会計はPAPER、H38/R停止。一般C1/Q/H/SL・全射性、深さ6残余は未証明。詳細は11/11 DAILYと高さ面積note。

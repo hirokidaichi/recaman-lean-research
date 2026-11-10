@@ -1,0 +1,31 @@
+{
+  "tag": "H09",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSupplyDowncrossBudget.olean",
+    "Recaman/OldSupplyDowncrossBudget.lean"
+  ],
+  "started_jst": "2026-11-11T06:20:45.373865+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSupplyDowncrossBudget.lean": "a467604cc062dcda709edc4a38f8e6cd194170e8afe1119ce62e1e9195c9f660"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "0fdc4c7f882b8a0ac2598379825d8c448bc4038a0f309d78393e64849f7308b2",
+  "source_tree_sha256": "23143435de0259c2af9a15696d5849d5ed4bd2570a6b32bcb7957c956502f9ee",
+  "source_tree_manifest": "H09-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0fdc4c7f882b8a0ac2598379825d8c448bc4038a0f309d78393e64849f7308b2",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8829703330120537,
+  "cpu_seconds": 0.6542589999999999,
+  "finished_jst": "2026-11-11T06:20:46.256728+09:00"
+}

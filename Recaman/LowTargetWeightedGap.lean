@@ -1,0 +1,139 @@
+import Recaman.GapSquareLowAdditions
+import Recaman.FloorSupplyFreeBudget
+import Recaman.GapTargetHeightBudget
+
+namespace Recaman.LowTargetWeightedGap
+
+open Recaman.GapSquareLowAdditions Recaman.LevelTriangleArea Recaman.FloorSupplyFreeBudget
+open Recaman.GapTargetHeightBudget Recaman.BlockOldRay Recaman.AdditionRankSlack
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Classical
+
+private theorem weights_le_counts (f : Nat → Bool) (n K : Nat) (r α β : Int)
+    (P Q : Nat → Prop)
+    (h : ∀ t, n≤t → t<n+K → lowAdditionWeight f r t≤
+      (if P t then α else 0)+(if Q t then β else 0)) :
+    lowAdditionWeights f n r K≤α*(cN P n K : Int)+β*(cN Q n K : Int) := by
+  classical
+  induction K with
+  | zero => simp [cN,lowAdditionWeights]
+  | succ k ih =>
+    have hp := ih (fun t ht hk => h t ht (by omega))
+    have hs := h (n+k) (by omega) (by omega)
+    rw [lowAdditionWeights]
+    by_cases hP : P (n+k) <;> by_cases hQ : Q (n+k)
+    · rw [if_pos hP,if_pos hQ] at hs
+      rw [cN_succ_pos P n k hP,cN_succ_pos Q n k hQ]
+      push_cast
+      grind
+    · rw [if_pos hP,if_neg hQ] at hs
+      rw [cN_succ_pos P n k hP,cN_succ_neg Q n k hQ]
+      push_cast
+      grind
+    · rw [if_neg hP,if_pos hQ] at hs
+      rw [cN_succ_neg P n k hP,cN_succ_pos Q n k hQ]
+      push_cast
+      grind
+    · rw [if_neg hP,if_neg hQ] at hs
+      rw [cN_succ_neg P n k hP,cN_succ_neg Q n k hQ]
+      omega
+
+/-- The additions below a source at most three above the floor are paid by
+six times the original free count. The only supplied low additions lie
+at floor plus two, whose count is supplied by the floor charge. -/
+theorem low_weights_le_six_free (f : Nat → Bool) (n a K : Nat) (m r : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+3) :
+    lowAdditionWeights f n r K≤6*(free f n K : Int) := by
+  classical
+  let P := fun t => f t=true ∧ ¬EndN f 0 t
+  let Q := fun t => Fw f t=m+2 ∧ EndN f 0 t
+  have hW := weights_le_counts f n K r 5 1 P Q (by
+    intro t hnt htK
+    have hmin := hfloor t hnt (by omega)
+    by_cases hA : f t=true ∧ Fw f t<r
+    · rw [lowAdditionWeight,if_pos hA]
+      by_cases he : EndN f 0 t
+      · have hH : m+2≤Fw f t := by
+          by_cases h : m+2≤Fw f t
+          · exact h
+          · exact (block_prefix_low_clock_not_endable f n a t hw hpre hnt m
+              (fun i hi hj => hfloor i hi (by omega)) (by omega) he).elim
+        have htop : Fw f t=m+2 := by have := hA.2; omega
+        have hQ : Q t := ⟨htop,he⟩
+        rw [if_neg (fun hp : P t => hp.2 he),if_pos hQ]
+        omega
+      · rw [if_pos (show P t from ⟨hA.1,he⟩),if_neg (fun hq : Q t => he hq.2)]
+        omega
+    · rw [lowAdditionWeight,if_neg hA]
+      by_cases hp : P t <;> by_cases hq : Q t <;> simp [hp,hq])
+  have hq := actual_floor_supply_count f n a K m hw hpre hfloor
+  have hmono : cN (fun t => Fw f t=m ∧ f t=true ∧ ¬EndN f 0 t) n K≤free f n K := by
+    apply cN_mono
+    intro t _ _ ht
+    exact ht.2
+  change cN Q n K≤_ at hq
+  change lowAdditionWeights f n r K≤5*(free f n K : Int)+1*(cN Q n K : Int) at hW
+  omega
+
+/-- A supplied target within four levels of a floor forces its full
+original free gap, with arbitrary run counts and no upper walk bound. -/
+theorem positive_low_target_free_gap (f : Nat → Bool) (n a b j : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))
+    (hTarget : Fw f (b+j)≤m+4) :
+    j+1≤free f n (b-n) := by
+  by_cases hr : free f n (b-n)≤3
+  · apply positive_r3_free_gap f n a (b-n) j hw hpre (by omega) hpos hr
+    · rwa [show n+(b-n)=b by omega]
+    · rwa [show n+(b-n)=b by omega]
+  · by_cases h : j+1≤free f n (b-n)
+    · exact h
+    · have hs := supplied_gap_square_low_additions f n a b j hw hpre hnb hS he
+      have hl := low_weights_le_six_free f n a (b-n) m (Fw f (b+j)-1) hw hpre
+        (fun i hi hj => hfloor i hi (by omega)) (by omega)
+      have hp := Int.mul_nonneg (show 0≤(j : Int) by omega) (show 0≤(j : Int)-4 by omega)
+      have heq : ((j : Int)+1)^2=6*(j : Int)+(j : Int)*((j : Int)-4)+1 := by grind
+      rw [heq] at hs
+      omega
+
+/-- Only the height at the start of the final gap needs an upper bound.
+Earlier excursions may rise above it. -/
+theorem positive_terminal_width_eight_free_gap (f : Nat → Bool) (n a b j : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i) (hceil : Fw f b≤m+8)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :
+    j+1≤free f n (b-n) := by
+  by_cases hj : 4≤j
+  · have hdown := fw_false_run f b j hS
+    exact positive_low_target_free_gap f n a b j m hw hpre hnb hfloor hpos hS he (by omega)
+  · by_cases hr : free f n (b-n)≤3
+    · apply positive_r3_free_gap f n a (b-n) j hw hpre (by omega) hpos hr
+      · rwa [show n+(b-n)=b by omega]
+      · rwa [show n+(b-n)=b by omega]
+    · omega
+
+/-- If the relative positive tail never drops more than five from its
+block boundary, a final actual target forces the full free gap. No
+upper bound is placed on the intervening heights. -/
+theorem positive_full_depth_five_free_gap (f : Nat → Bool) (n a b j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-5≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :
+    j+1≤free f n (b-n) := by
+  by_cases h : j+1≤free f n (b-n)
+  · exact h
+  · have hwalk := (cN_walk f n (b-n)).1
+    rw [show n+(b-n)=b by omega] at hwalk
+    change Fw f b=Fw f n+(additions f n (b-n) : Int)-subtractions f n (b-n) at hwalk
+    have hpos' := hpos (b-n) (by omega) (by omega)
+    change cN (EndN f 0) n (b-n)+1≤subtractions f n (b-n) at hpos'
+    have hpart := additions_split f n (b-n)
+    have hdown := fw_false_run f b j hS
+    exact positive_low_target_free_gap f n a b j (Fw f n-5) hw hpre hnb hfloor hpos hS he (by omega)
+
+end Recaman.LowTargetWeightedGap

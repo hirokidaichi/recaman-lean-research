@@ -1,0 +1,12 @@
+Recaman/SupplyDescentSlots.lean:15:6: error: Application type mismatch: The argument
+  List.range (r - Fw f (n + k + 1)).toNat
+has type
+  List Nat
+but is expected to have type
+  List Int
+in the application
+  List.map (fun i => (n + k + 1, floorPotential f n (r - 1) (n + k + 1) + i + 1))
+    (List.range (r - Fw f (n + k + 1)).toNat)
+Recaman/SupplyDescentSlots.lean:25:8: warning: declaration uses `sorry`
+Recaman/SupplyDescentSlots.lean:25:8: warning: declaration uses `sorry`
+Recaman/SupplyDescentSlots.lean:18:8: warning: declaration uses `sorry`

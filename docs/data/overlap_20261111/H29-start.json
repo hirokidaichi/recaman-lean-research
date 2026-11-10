@@ -1,0 +1,25 @@
+{
+  "tag": "H29",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixFreeLocation.olean",
+    "Recaman/DepthSixFreeLocation.lean"
+  ],
+  "started_jst": "2026-11-11T07:09:28.705862+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixFreeLocation.lean": "7a261aa19696dda347270f703c7a4f0929852ec4d058183af6dd38e42e3ff50a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "d8eddd75f17f36919023bbeb41acba82d048ad09e6b962d691cc5d6405674dd3",
+  "source_tree_sha256": "0b2de97fca563930669341a964ddf474cfffd75099ed02780dc7cd4e3a0b063e",
+  "source_tree_manifest": "H29-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

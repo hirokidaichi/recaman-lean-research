@@ -1,0 +1,16 @@
+Recaman/DepthSixGapResidual.lean:90:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  0 ≤ g ≤ 3
+  e ≥ 0
+  e - g ≥ 0
+  e - i ≤ -1
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := ↑j
+ g := ↑(free f n (b - n))
+ i := ↑(cN (fun x => f x = true ∧ ¬EndN f 0 x) n (b - n))

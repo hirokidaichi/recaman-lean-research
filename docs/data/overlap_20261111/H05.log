@@ -1,0 +1,100 @@
+Recaman/OldSameLevelShortReturn.lean:21:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g - i ≤ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+where
+ c := ↑b
+ d := ↑t
+ g := Fw (fun i => f i) (t + (b - t))
+ i := Fw (fun i => f i) t
+Recaman/OldSameLevelShortReturn.lean:26:6: error(lean.unknownIdentifier): Unknown identifier `past_length`
+Recaman/OldSameLevelShortReturn.lean:11:39: error: unsolved goals
+f : Nat → Bool
+t b : Nat
+htb : t ≤ b
+h : Win f t (b - t)
+e : Int → Bool := fun x => f x.toNat
+v : List Bool := past e (↑(t + (b - t))) (b - t)
+hb :
+  mass (past (fun x => f x.toNat) (↑(t + (b - t))) (b - t)) = Fw (fun i => f i) (t + (b - t)) - Fw (fun i => f i) t ∧
+    moment (past (fun x => f x.toNat) (↑(t + (b - t))) (b - t)) = Ar (fun i => f i) t (b - t)
+hm : Fw f (t + (b - t)) = Fw f t + 1
+hP : LeadingRunSupply.P2 v
+hp : (past e (↑(t + (b - t))) (b - t)).length % 4 = 3
+⊢ (b - t) % 4 = 3
+Recaman/OldSameLevelShortReturn.lean:10:16: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:43:2: error: Tactic `apply` failed: could not unify the conclusion of `zero_mass_phase_two_prefix (seg f t (n - t)) hSuffix (u - t)`
+  List.take (u - t) (seg f t (n - t)) = [true, false] ∨
+    List.take (u - t) (seg f t (n - t)) = [false, true] ∨
+      List.take (u - t) (seg f t (n - t)) = [false, true, true, true, false, false]
+with the goal
+  seg f t (u - t) = [true, false] ∨
+    seg f t (u - t) = [false, true] ∨ seg f t (u - t) = [false, true, true, true, false, false]
+
+Note: The full type of `zero_mass_phase_two_prefix (seg f t (n - t)) hSuffix (u - t)` is
+  mass (List.take (u - t) (seg f t (n - t))) = 0 →
+    (List.take (u - t) (seg f t (n - t))).length % 4 = 2 →
+      List.take (u - t) (seg f t (n - t)) = [true, false] ∨
+        List.take (u - t) (seg f t (n - t)) = [false, true] ∨
+          List.take (u - t) (seg f t (n - t)) = [false, true, true, true, false, false]
+
+f : Nat → Bool
+n t u : Nat
+hw : BlockWord (seg f 0 n)
+htu : t ≤ u
+hu : u ≤ n
+hlevel : Fw f t = Fw f u
+hphase : (u - t) % 4 = 2
+hdt : List.drop t (seg f 0 n) = seg f t (n - t)
+hSuffix : BlockWord (seg f t (n - t))
+htake : List.take (u - t) (seg f t (n - t)) = seg f t (u - t)
+hm : mass (seg f t (u - t)) = 0
+⊢ seg f t (u - t) = [true, false] ∨
+    seg f t (u - t) = [false, true] ∨ seg f t (u - t) = [false, true, true, true, false, false]
+Recaman/OldSameLevelShortReturn.lean:35:57: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:40:33: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:42:35: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:29:16: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:58:34: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:60:4: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:63:39: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:64:29: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:65:44: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:66:4: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:48:16: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:79:24: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:80:24: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:81:35: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:83:8: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:84:43: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:85:80: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:90:64: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:91:48: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:93:26: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:96:44: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:97:26: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:104:26: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:105:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:108:22: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:108:53: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:109:4: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:113:36: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:114:36: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:115:53: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:116:46: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:117:37: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:121:30: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:122:58: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:126:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:128:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:131:41: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:134:45: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:134:56: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:136:30: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:137:65: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:141:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:143:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:145:6: error: (kernel) excessive memory consumption detected
+Recaman/OldSameLevelShortReturn.lean:70:8: error: (kernel) excessive memory consumption detected

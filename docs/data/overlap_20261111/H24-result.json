@@ -1,0 +1,31 @@
+{
+  "tag": "H24",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixGapResidual.olean",
+    "Recaman/DepthSixGapResidual.lean"
+  ],
+  "started_jst": "2026-11-11T06:54:30.630456+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixGapResidual.lean": "b4dcb6acb95c95ae326307de0f7d6edc6a8408d63d7d409d5919877d07fbb273"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "c1d510a6d0a4d13f349816d2364c0539d08213d1fa672df6040be73adbecd4b1",
+  "source_tree_sha256": "39ae457b8242d8c5c770b2d4441b1d690b330ea10f51ef233f811794dba4eb04",
+  "source_tree_manifest": "H24-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c1d510a6d0a4d13f349816d2364c0539d08213d1fa672df6040be73adbecd4b1",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.8792972920055036,
+  "cpu_seconds": 0.715452,
+  "finished_jst": "2026-11-11T06:54:31.509674+09:00"
+}

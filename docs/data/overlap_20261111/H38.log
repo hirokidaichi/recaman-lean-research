@@ -1,0 +1,110 @@
+Recaman/GeometricSupplyBudget.lean:50:22: warning: This simp argument is unused:
+  hl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [geometric, show ¬l ≤ 0 by omega, show ¬0 = l by omega]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/GeometricSupplyBudget.lean:67:9: error: unsolved goals
+case zero
+f : Nat → Bool
+m : Int
+l t : Nat
+hA : f t = true
+hF : Fw f t = m + ↑l
+hw : lowAdditionWeight f (m + 0 - 1) t = 0
+⊢ 3 * lowAdditionWeight f (m - 1) t = 0
+Recaman/GeometricSupplyBudget.lean:70:20: warning: This simp argument is unused:
+  hw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [geometric, kernel]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/GeometricSupplyBudget.lean:101:8: error: Type mismatch
+  fun h => if h = l then 1 else 0
+has type
+  Nat → Nat
+but is expected to have type
+  Int → Int
+Recaman/GeometricSupplyBudget.lean:114:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun h => lowAdditionWeight f (m + h - 1) t
+in the target expression
+  3 * geometric (fun h => lowAdditionWeight f (m + ↑h - 1) t) H ≤
+    geometric (fun h => if Fw f t = m + ↑h ∧ f t = true then 1 else 0) H
+
+case neg
+f : Nat → Bool
+m : Int
+H t : Nat
+hAheight : f t = true → m ≤ Fw f t ∧ Fw f t ≤ m + ↑H
+hA : ¬f t = true
+hW : (fun h => lowAdditionWeight f (m + h - 1) t) = fun x => 0
+hC : (fun h => if Fw f t = m + h ∧ f t = true then 1 else 0) = fun x => 0
+⊢ 3 * geometric (fun h => lowAdditionWeight f (m + ↑h - 1) t) H ≤
+    geometric (fun h => if Fw f t = m + ↑h ∧ f t = true then 1 else 0) H
+Recaman/GeometricSupplyBudget.lean:117:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'cN', which is 'noncomputable'
+Recaman/GeometricSupplyBudget.lean:134:4: error: Type mismatch
+  cN_step_int ?m.93 n k
+has type
+  ↑(cN ?m.93 n (k + 1)) = ↑(cN ?m.93 n k) + @ite Int (?m.93 (n + k)) (propDecidable (?m.93 (n + k))) 1 0
+but is expected to have type
+  ↑(cN (fun t => Fw f t = m + h ∧ P t) n (k + 1)) =
+    ↑(cN (fun t => Fw f t = m + h ∧ P t) n k) + @ite Int (Fw f (n + k) = m + h ∧ P (n + k)) instDecidableAnd 1 0
+Recaman/GeometricSupplyBudget.lean:135:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun h => ↑(cN (fun t => Fw f t = m + h ∧ P t) n (k + 1))
+in the target expression
+  geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n (k + 1))) H =
+    geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n k)) H +
+      geometric (fun h => if Fw f (n + k) = m + ↑h ∧ P (n + k) then 1 else 0) H
+
+f : Nat → Bool
+P : Nat → Prop
+n k H : Nat
+m : Int
+h :
+  (fun h => ↑(cN (fun t => Fw f t = m + h ∧ P t) n (k + 1))) = fun h =>
+    ↑(cN (fun t => Fw f t = m + h ∧ P t) n k) + if Fw f (n + k) = m + h ∧ P (n + k) then 1 else 0
+⊢ geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n (k + 1))) H =
+    geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ P t) n k)) H +
+      geometric (fun h => if Fw f (n + k) = m + ↑h ∧ P (n + k) then 1 else 0) H
+Recaman/GeometricSupplyBudget.lean:149:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun h => lowAdditionWeights f n (m + h - 1) (k + 1)
+in the target expression
+  3 * geometric (fun h => lowAdditionWeights f n (m + ↑h - 1) (k + 1)) H ≤
+    heightCount f (fun t => f t = true) n (k + 1) m H
+
+case succ
+f : Nat → Bool
+n H : Nat
+m : Int
+k : Nat
+ih :
+  (∀ (t : Nat), n ≤ t → t < n + k → f t = true → m ≤ Fw f t ∧ Fw f t ≤ m + ↑H) →
+    3 * geometric (fun h => lowAdditionWeights f n (m + ↑h - 1) k) H ≤ heightCount f (fun t => f t = true) n k m H
+hheight : ∀ (t : Nat), n ≤ t → t < n + (k + 1) → f t = true → m ≤ Fw f t ∧ Fw f t ≤ m + ↑H
+hp : 3 * geometric (fun h => lowAdditionWeights f n (m + ↑h - 1) k) H ≤ heightCount f (fun t => f t = true) n k m H
+hs :
+  3 * geometric (fun h => lowAdditionWeight f (m + ↑h - 1) (n + k)) H ≤
+    geometric (fun h => if Fw f (n + k) = m + ↑h ∧ f (n + k) = true then 1 else 0) H
+he :
+  (fun h => lowAdditionWeights f n (m + h - 1) (k + 1)) = fun h =>
+    lowAdditionWeights f n (m + h - 1) k + lowAdditionWeight f (m + h - 1) (n + k)
+⊢ 3 * geometric (fun h => lowAdditionWeights f n (m + ↑h - 1) (k + 1)) H ≤
+    heightCount f (fun t => f t = true) n (k + 1) m H
+Recaman/GeometricSupplyBudget.lean:193:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun h => ↑(cN (fun t => Fw f t = m + h ∧ f t = true) n K)
+in the target expression
+  geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ (fun t => f t = true) t) n K)) H =
+    geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ EndN f 0 t) n K)) H +
+      geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ (fun t => f t = true ∧ ¬EndN f 0 t) t) n K)) H
+
+f : Nat → Bool
+n K H : Nat
+m : Int
+hs :
+  (fun h => ↑(cN (fun t => Fw f t = m + h ∧ f t = true) n K)) = fun h =>
+    ↑(cN (fun t => Fw f t = m + h ∧ EndN f 0 t) n K) + ↑(cN (fun t => Fw f t = m + h ∧ f t = true ∧ ¬EndN f 0 t) n K)
+⊢ geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ (fun t => f t = true) t) n K)) H =
+    geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ EndN f 0 t) n K)) H +
+      geometric (fun h => ↑(cN (fun t => Fw f t = m + ↑h ∧ (fun t => f t = true ∧ ¬EndN f 0 t) t) n K)) H

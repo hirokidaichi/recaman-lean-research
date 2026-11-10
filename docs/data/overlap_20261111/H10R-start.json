@@ -1,0 +1,25 @@
+{
+  "tag": "H10R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FullFloorOldContext.olean",
+    "Recaman/FullFloorOldContext.lean"
+  ],
+  "started_jst": "2026-11-11T06:23:03.840950+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FullFloorOldContext.lean": "7ccadf0487b463a008953a7195aca0be9994271f090f2444986472e0e568e286"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "a39a670ac3dfe5eed40c6623326bbafa566d1b356c5f7f261cb3219dd4af7fd5",
+  "source_tree_sha256": "f4ca4cc39a61e2679738f80c91044ec063e3ef2b9ee34b83e0808a963c5066ff",
+  "source_tree_manifest": "H10R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

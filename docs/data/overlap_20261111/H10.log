@@ -1,0 +1,15 @@
+Recaman/FullFloorOldContext.lean:18:72: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  1 * ?a
+in the target expression
+  ↑k * (H - Fw f n) + ↑1 * (H - Fw f n) ≤ Ar f n k + (Fw f (n + (k + 1)) - Fw f n)
+
+case succ
+f : Nat → Bool
+n : Nat
+H : Int
+k : Nat
+ih : (∀ (i : Nat), i ≤ k → H ≤ Fw f (n + i)) → ↑k * (H - Fw f n) ≤ Ar f n k
+h : ∀ (i : Nat), i ≤ k + 1 → H ≤ Fw f (n + i)
+hp : ↑k * (H - Fw f n) ≤ Ar f n k
+hs : H ≤ Fw f (n + (k + 1))
+⊢ ↑k * (H - Fw f n) + ↑1 * (H - Fw f n) ≤ Ar f n k + (Fw f (n + (k + 1)) - Fw f n)

@@ -1,0 +1,31 @@
+{
+  "tag": "H33Endpoint",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SupplyDescentWeight.olean",
+    "Recaman/SupplyDescentWeight.lean"
+  ],
+  "started_jst": "2026-11-11T07:21:43.293591+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SupplyDescentWeight.lean": "dff328b0ba60cf0ce83604cb361e542ba9a595ef34355b58cd79c3d6c697c6a4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "7aaeefeb512c6b6a5f7aa5d1640fef696bbf7f47b64cca57cab965e18035233f",
+  "source_tree_sha256": "e5569f6c4891f48cbea946f5f947d16a0cb8a9f108b50173c73f44f2110d8442",
+  "source_tree_manifest": "H33Endpoint-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "7aaeefeb512c6b6a5f7aa5d1640fef696bbf7f47b64cca57cab965e18035233f",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.6506949579925276,
+  "cpu_seconds": 0.4740869999999999,
+  "finished_jst": "2026-11-11T07:21:43.944213+09:00"
+}

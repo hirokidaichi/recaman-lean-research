@@ -1,0 +1,31 @@
+{
+  "tag": "H03",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSameLevelStepBudget.olean",
+    "Recaman/OldSameLevelStepBudget.lean"
+  ],
+  "started_jst": "2026-11-11T06:10:11.821071+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSameLevelStepBudget.lean": "f2d962d3cb00aceb4b1a6f203459ceff7cb0579c8c1c295c01ba83a694df7f6f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "f0390409c3478f8b88bce87773d8e12ae1e59c3d5f481622826fe8cdaaa45f0a",
+  "source_tree_sha256": "30850726f25b001538d211f0abe91bec9690ae0c47065c3e9998fd7ed1c124fb",
+  "source_tree_manifest": "H03-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f0390409c3478f8b88bce87773d8e12ae1e59c3d5f481622826fe8cdaaa45f0a",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 2.705758625001181,
+  "cpu_seconds": 1.0189819999999998,
+  "finished_jst": "2026-11-11T06:10:14.526626+09:00"
+}

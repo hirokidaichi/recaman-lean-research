@@ -1,0 +1,208 @@
+import Recaman.SupplyHeightWeightBudget
+
+namespace Recaman.GeometricSupplyBudget
+
+open Recaman.SupplyHeightWeightBudget Recaman.LevelTriangleArea
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Classical
+
+def geometric (g : Nat → Int) : Nat → Int
+  | 0 => g 0
+  | h+1 => 3*geometric g h+g (h+1)
+
+private theorem geometric_add (g v : Nat → Int) :
+    ∀ H, geometric (fun h => g h+v h) H=geometric g H+geometric v H
+  | 0 => rfl
+  | H+1 => by rw [geometric,geometric,geometric,geometric_add g v H]; omega
+
+private theorem geometric_zero : ∀ H, geometric (fun _ => 0) H=0
+  | 0 => rfl
+  | H+1 => by rw [geometric,geometric_zero H]; omega
+
+private def kernel : Nat → Int
+  | 0 => 0
+  | 1 => 0
+  | n+2 => 3*kernel (n+1)+3*(2*((n+1 : Nat) : Int)-1)
+
+private theorem kernel_exact (N : Nat) :
+    kernel (N+1)=(3 : Int)^(N+1)-3*((N+1 : Nat) : Int) := by
+  induction N with
+  | zero => decide
+  | succ n ih =>
+    rw [show n+1+1=n+2 by omega,kernel,ih,
+      show n+2=(n+1)+1 by omega,Int.pow_succ,Int.natCast_add]
+    have hone : ((1 : Nat) : Int)=1 := rfl
+    rw [hone]
+    grind
+
+private theorem kernel_upper (N : Nat) : kernel N≤(3 : Int)^N := by
+  cases N with
+  | zero => decide
+  | succ N => rw [kernel_exact]; omega
+
+private theorem geometric_mark (l H : Nat) :
+    geometric (fun h => if h=l then (1 : Int) else 0) H=
+      if l≤H then (3 : Int)^(H-l) else 0 := by
+  induction H with
+  | zero =>
+    by_cases hl : l=0
+    · rw [hl]; rfl
+    · simp [geometric,hl,show ¬l≤0 by omega,show ¬0=l by omega]
+  | succ H ih =>
+    rw [geometric,ih]
+    by_cases hl : l≤H
+    · rw [if_pos hl,if_pos (show l≤H+1 by omega),if_neg (show ¬H+1=l by omega),
+        show H+1-l=(H-l)+1 by omega,Int.pow_succ]
+      omega
+    · rw [if_neg hl]
+      by_cases he : l=H+1
+      · rw [he,if_pos rfl,if_pos (Nat.le_refl _),Nat.sub_self,Int.pow_zero]; omega
+      · rw [if_neg (show ¬H+1=l by omega),if_neg (show ¬l≤H+1 by omega)]; omega
+
+private theorem geometric_low_at (f : Nat → Bool) (m : Int) (l t : Nat)
+    (hA : f t=true) (hF : Fw f t=m+(l : Int)) :
+    ∀ H, 3*geometric (fun h => lowAdditionWeight f (m+(h : Int)-1) t) H=kernel (H-l) := by
+  intro H
+  induction H with
+  | zero =>
+    have hw : lowAdditionWeight f (m+(0 : Int)-1) t=0 := by
+      rw [lowAdditionWeight,if_neg (fun h => by have := h.2; omega)]
+    simp [geometric,hw,kernel]
+  | succ H ih =>
+    have hstep : 3*geometric (fun h => lowAdditionWeight f (m+(h : Int)-1) t) (H+1)=
+        3*kernel (H-l)+3*lowAdditionWeight f (m+((H+1 : Nat) : Int)-1) t := by
+      rw [geometric]
+      omega
+    rw [hstep]
+    by_cases h : H≤l
+    · have hw : lowAdditionWeight f (m+((H+1 : Nat) : Int)-1) t=0 := by
+        rw [lowAdditionWeight,if_neg (fun h' => by have := h'.2; omega)]
+      rw [show H-l=0 by omega,hw,kernel]
+      by_cases he : H=l
+      · rw [he,Nat.add_sub_cancel_left,kernel]; omega
+      · rw [show H+1-l=0 by omega,kernel]; omega
+    · have hpos : Fw f t<m+((H+1 : Nat) : Int)-1 := by omega
+      rw [lowAdditionWeight,if_pos ⟨hA,hpos⟩]
+      have he : H-l=(H-l-1)+1 := by omega
+      have he2 : H+1-l=(H-l-1)+2 := by omega
+      rw [he2,kernel,←he]
+      omega
+
+private theorem point_weight_budget (f : Nat → Bool) (m : Int) (H t : Nat)
+    (hAheight : f t=true → m≤Fw f t ∧ Fw f t≤m+(H : Int)) :
+    3*geometric (fun h => lowAdditionWeight f (m+(h : Int)-1) t) H≤
+      geometric (fun h => if Fw f t=m+(h : Int) ∧ f t=true then 1 else 0) H := by
+  by_cases hA : f t=true
+  · obtain ⟨hlo,hhi⟩ := hAheight hA
+    let l := (Fw f t-m).toNat
+    have hl : (l : Int)=Fw f t-m := Int.toNat_of_nonneg (by omega)
+    have hF : Fw f t=m+(l : Int) := by omega
+    have hMark : (fun h => if Fw f t=m+(h : Int) ∧ f t=true then (1 : Int) else 0)=
+        (fun h => if h=l then 1 else 0) := by
+      funext h
+      have he : (Fw f t=m+(h : Int) ∧ f t=true) ↔ h=l := by omega
+      rw [he]
+    rw [hMark,geometric_mark,if_pos (show l≤H by omega),
+      geometric_low_at f m l t hA hF H]
+    exact kernel_upper (H-l)
+  · have hW : (fun h => lowAdditionWeight f (m+(h : Int)-1) t)=(fun _ => 0) := by
+      funext h
+      simp [lowAdditionWeight,hA]
+    have hC : (fun h => if Fw f t=m+(h : Int) ∧ f t=true then (1 : Int) else 0)=(fun _ => 0) := by
+      funext h
+      simp [hA]
+    rw [hW,hC,geometric_zero]
+    omega
+
+def heightCount (f : Nat → Bool) (P : Nat → Prop) (n K : Nat) (m : Int) (H : Nat) : Int :=
+  geometric (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ P t) n K : Int)) H
+
+private theorem cN_step_int (P : Nat → Prop) (n k : Nat) :
+    (cN P n (k+1) : Int)=(cN P n k : Int)+(if P (n+k) then 1 else 0) := by
+  by_cases h : P (n+k)
+  · rw [cN_succ_pos P n k h,if_pos h]; omega
+  · rw [cN_succ_neg P n k h,if_neg h]; omega
+
+private theorem height_count_step (f : Nat → Bool) (P : Nat → Prop) (n k H : Nat) (m : Int) :
+    heightCount f P n (k+1) m H=heightCount f P n k m H+
+      geometric (fun h => if Fw f (n+k)=m+(h : Int) ∧ P (n+k) then 1 else 0) H := by
+  unfold heightCount
+  have h : (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ P t) n (k+1) : Int))=
+      (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ P t) n k : Int)+
+        (if Fw f (n+k)=m+(h : Int) ∧ P (n+k) then 1 else 0)) := by
+    funext h
+    exact cN_step_int _ n k
+  rw [h,geometric_add]
+
+private theorem weighted_low_budget (f : Nat → Bool) (n K H : Nat) (m : Int)
+    (hheight : ∀ t, n≤t → t<n+K → f t=true → m≤Fw f t ∧ Fw f t≤m+(H : Int)) :
+    3*geometric (fun h => lowAdditionWeights f n (m+(h : Int)-1) K) H≤
+      heightCount f (fun t => f t=true) n K m H := by
+  induction K with
+  | zero => simp [heightCount,cN,lowAdditionWeights,geometric_zero]
+  | succ k ih =>
+    have hp := ih (fun t ht hk => hheight t ht (by omega))
+    have hs := point_weight_budget f m H (n+k) (hheight (n+k) (by omega) (by omega))
+    have he : (fun h => lowAdditionWeights f n (m+(h : Int)-1) (k+1))=
+        (fun h => lowAdditionWeights f n (m+(h : Int)-1) k+
+          lowAdditionWeight f (m+(h : Int)-1) (n+k)) := by funext h; rfl
+    rw [he,geometric_add,height_count_step]
+    omega
+
+private theorem supplied_weight_le_low (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true) :
+    ∀ H, heightCount f (EndN f 0) n K m H≤
+      geometric (fun h => lowAdditionWeights f n (m+(h : Int)-1) K) H
+  | 0 => by
+    have h := same_height_supply_weight_budget f n a K (m+(0 : Int)-1) hw hpre
+    have he : m+(0 : Int)-1+1=m+(0 : Int) := by omega
+    rw [he] at h
+    exact h
+  | H+1 => by
+    have ih := supplied_weight_le_low f n a K m hw hpre H
+    have hs := same_height_supply_weight_budget f n a K (m+((H+1 : Nat) : Int)-1) hw hpre
+    have he : m+((H+1 : Nat) : Int)-1+1=m+((H+1 : Nat) : Int) := by omega
+    rw [he] at hs
+    unfold heightCount
+    rw [geometric,geometric]
+    change geometric (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ EndN f 0 t) n K : Int)) H≤_ at ih
+    omega
+
+private theorem height_count_partition (f : Nat → Bool) (n K H : Nat) (m : Int) :
+    heightCount f (fun t => f t=true) n K m H=
+      heightCount f (EndN f 0) n K m H+
+      heightCount f (fun t => f t=true ∧ ¬EndN f 0 t) n K m H := by
+  unfold heightCount
+  have hs : (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ f t=true) n K : Int))=
+      (fun h => (cN (fun t => Fw f t=m+(h : Int) ∧ EndN f 0 t) n K : Int)+
+        (cN (fun t => Fw f t=m+(h : Int) ∧ f t=true ∧ ¬EndN f 0 t) n K : Int)) := by
+    funext h
+    have hc := cN_split (fun t => Fw f t=m+(h : Int) ∧ f t=true) (EndN f 0) n K
+    have hE : cN (fun t => (Fw f t=m+(h : Int) ∧ f t=true) ∧ EndN f 0 t) n K=
+        cN (fun t => Fw f t=m+(h : Int) ∧ EndN f 0 t) n K := by
+      apply cN_congr
+      intro t _ _
+      exact ⟨fun ht => ⟨ht.1.1,ht.2⟩,fun ht => ⟨⟨ht.1,ht.2.1⟩,ht.2⟩⟩
+    have hF : cN (fun t => (Fw f t=m+(h : Int) ∧ f t=true) ∧ ¬EndN f 0 t) n K=
+        cN (fun t => Fw f t=m+(h : Int) ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+      apply cN_congr
+      intro t _ _
+      exact and_assoc
+    rw [hE,hF] at hc
+    omega
+  rw [hs,geometric_add]
+
+/-- For arbitrary run counts and original padded block history, actual
+additions and actual free additions satisfy the same geometric-height
+budget. Only the heights of addition clocks need lie in the finite band. -/
+theorem original_geometric_addition_free_budget (f : Nat → Bool) (n a K H : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hheight : ∀ t, n≤t → t<n+K → f t=true → m≤Fw f t ∧ Fw f t≤m+(H : Int)) :
+    2*heightCount f (fun t => f t=true) n K m H≤
+      3*heightCount f (fun t => f t=true ∧ ¬EndN f 0 t) n K m H := by
+  have hLow := weighted_low_budget f n K H m hheight
+  have hSup := supplied_weight_le_low f n a K m hw hpre H
+  have hPart := height_count_partition f n K H m
+  omega
+
+end Recaman.GeometricSupplyBudget

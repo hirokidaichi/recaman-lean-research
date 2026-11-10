@@ -1,0 +1,31 @@
+{
+  "tag": "H13",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FloorSupplyPotential.olean",
+    "Recaman/FloorSupplyPotential.lean"
+  ],
+  "started_jst": "2026-11-11T06:29:26.685394+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FloorSupplyPotential.lean": "94d342b44e6850e75422cc643fa47e921d24e687463dee9f55b7cab9a547028a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "ab374b9d9b879cd6e835827da46c669cd53d5dd2e62393bee56fde2e22054aee",
+  "source_tree_sha256": "3d2483f95336750f88d29906a4268cf8edfab859873bfed36e50482b1db81057",
+  "source_tree_manifest": "H13-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "ab374b9d9b879cd6e835827da46c669cd53d5dd2e62393bee56fde2e22054aee",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8168033749971073,
+  "cpu_seconds": 0.628943,
+  "finished_jst": "2026-11-11T06:29:27.502107+09:00"
+}

@@ -1,0 +1,97 @@
+import Recaman.FloorSupplyPotential
+
+namespace Recaman.SupplyAreaCrossings
+
+open Recaman.FloorSupplyPotential Recaman.SingleWindowEquality
+open Recaman.CapacityEqualityInduction
+
+def areaCrossesDown (p : Nat → Int) (v : Int) (q : Nat) : Prop :=
+  p q<v ∧ v≤p (q-1)
+
+theorem downcross_from_end_values (p : Nat → Int) (a b : Nat) (v : Int)
+    (hab : a≤b) (ha : v≤p a) (hb : p b<v) :
+    ∃ q, a<q ∧ q≤b ∧ areaCrossesDown p v q := by
+  let P := fun i => a≤i ∧ p i<v
+  obtain ⟨q,hq,hP,hfirst⟩ := first_mark P b ⟨b,by omega,hab,hb⟩
+  have hA := hP.1
+  have hlt := hP.2
+  have haq : a<q := by
+    by_cases he : a=q
+    · rw [←he] at hlt
+      omega
+    · omega
+  have hp : v≤p (q-1) := by
+    by_cases h : v≤p (q-1)
+    · exact h
+    · exact (hfirst (q-1) (by omega) ⟨by omega,by omega⟩).elim
+  exact ⟨q,haq,hq,hlt,hp⟩
+
+/-- For any original supplied height r+1, the last downward crossing
+of its source-level potential exists and occurs below the source level. -/
+theorem latest_actual_supply_area_crossing (f : Nat → Bool) (n a t : Nat) (r : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnt : n≤t) (hF : Fw f t=r+1) (he : EndN f 0 t) :
+    let p := floorPotential f n (r-1)
+    ∃ q, n<q ∧ q<t ∧ Fw f q<r ∧ areaCrossesDown p (p t) q ∧
+      ∀ j, q<j → j<t → ¬areaCrossesDown p (p t) j := by
+  let p := floorPotential f n (r-1)
+  change ∃ q, n<q ∧ q<t ∧ Fw f q<r ∧ areaCrossesDown p (p t) q ∧ _
+  obtain ⟨s,hns,hst,hp⟩ := supply_potential_anchor f n a t (r-1) hw hpre hnt (by omega) he
+  change p t≤p s at hp
+  have htstep := floor_potential_step f n (t-1) (r-1) (by omega)
+  rw [show t-1+1=t by omega,hF] at htstep
+  change p t=p (t-1)+(r+1)-(r-1+1) at htstep
+  obtain ⟨q,hsq,hqt,hQ⟩ := downcross_from_end_values p s (t-1) (p t) (by omega) hp (by omega)
+  let Q := fun j => n<j ∧ areaCrossesDown p (p t) j
+  obtain ⟨d,hdt,hdm,hafter⟩ := last_markN Q n (t-n)
+  have hd : d≠0 := by
+    intro hz
+    have hno := hafter (q-n) (by omega) (by omega)
+    rw [Nat.add_sub_cancel' (show n≤q by omega)] at hno
+    exact hno ⟨by omega,hQ⟩
+  have hmark : Q (n+d-1) := hdm.resolve_left hd
+  let u := n+d-1
+  have hun := hmark.1
+  have hcross := hmark.2
+  have huStep := floor_potential_step f n (u-1) (r-1) (by omega)
+  rw [show u-1+1=u by omega] at huStep
+  change p u=p (u-1)+Fw f u-(r-1+1) at huStep
+  have hA := hcross.1
+  have hB := hcross.2
+  refine ⟨u,hun,by dsimp [u]; omega,by omega,hcross,?_⟩
+  intro j hju hjt hj
+  have hno := hafter (j-n) (by dsimp [u] at hju; omega) (by omega)
+  rw [Nat.add_sub_cancel' (show n≤j by omega)] at hno
+  exact hno ⟨by omega,hj⟩
+
+/-- If the later target has no downward crossing after the earlier target,
+the earlier actual addition separates their potential values by three. -/
+theorem supply_potential_spacing_after_last_crossing (f : Nat → Bool) (n t u q : Nat)
+    (r : Int) (hnt : n≤t) (htu : t<u) (hqu : q≤t)
+    (hFt : Fw f t=r+1) (hFu : Fw f u=r+1) (hA : f t=true)
+    (hAfter : ∀ j, q<j → j<u →
+      ¬areaCrossesDown (floorPotential f n (r-1)) (floorPotential f n (r-1) u) j) :
+    floorPotential f n (r-1) t+3≤floorPotential f n (r-1) u := by
+  let p := floorPotential f n (r-1)
+  change p t+3≤p u
+  have h1 : Fw f (t+1)=r+2 := by
+    rcases fw_cases f t with ⟨h,_⟩ | ⟨_,h⟩
+    · omega
+    · simp [hA] at h
+  have hgap : t+1<u := by
+    by_cases he : t+1=u
+    · rw [he] at h1
+      omega
+    · omega
+  have ht := floor_potential_step f n t (r-1) hnt
+  change p (t+1)=p t+Fw f (t+1)-(r-1+1) at ht
+  have hu := floor_potential_step f n (u-1) (r-1) (by omega)
+  rw [show u-1+1=u by omega,hFu] at hu
+  change p u=p (u-1)+(r+1)-(r-1+1) at hu
+  by_cases h : p t+3≤p u
+  · exact h
+  · obtain ⟨j,hjt,hju,hj⟩ := downcross_from_end_values p (t+1) (u-1) (p u)
+      (by omega) (by omega) (by omega)
+    exact (hAfter j (by omega) (by omega) hj).elim
+
+end Recaman.SupplyAreaCrossings

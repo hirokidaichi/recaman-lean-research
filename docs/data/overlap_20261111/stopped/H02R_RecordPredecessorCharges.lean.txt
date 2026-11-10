@@ -1,0 +1,134 @@
+import Recaman.ShortRecordJointCorrection
+import Recaman.SupplyTrichotomyBudget
+
+namespace Recaman.RecordPredecessorCharges
+
+open Recaman.DeficitRecordSourceCharge Recaman.DeficitRecordPredecessor
+open Recaman.ShortSourceTriples Recaman.ShortRecordOverlapBudget Recaman.ShortRecordJointCorrection
+open Recaman.OtherSupplyHeightBudget Recaman.AdditionRankSlack Recaman.SingleWindowEquality
+open Recaman.SupplyTrichotomyBudget Recaman.BlockSuffixPositivity
+
+/-- If a record follows a short endpoint, both earlier additions of that
+triple have actual original suppliers and belong to neither counted class. -/
+theorem short_before_record_has_two_other_supplies (f : Nat → Bool) (n t : Nat)
+    (hs : shortEndpoint f n t) (hr : localRecord f n (t+1)) :
+    (EndN f 0 (t-2) ∧ ¬shortEndpoint f n (t-2) ∧ ¬localRecord f n (t-2)) ∧
+      (EndN f 0 (t-1) ∧ ¬shortEndpoint f n (t-1) ∧ ¬localRecord f n (t-1)) := by
+  have hLater := hr
+  obtain ⟨he, hshort, _, s, hns, hst, hwin⟩ := hr
+  obtain ⟨c, hsc, hct, hcS, hhigh⟩ :=
+    local_nonshort_has_high_S f n s (t+1) hns hst he.1 hwin hshort
+  obtain ⟨hnt, hS, hA2, hA1, hA⟩ := hs
+  have hcut : c ≤ t-3 := by
+    by_cases h : c ≤ t-3
+    · exact h
+    · have hx : c=t-2 ∨ c=t-1 ∨ c=t := by omega
+      rcases hx with rfl | rfl | rfl
+      · rw [hA2] at hcS
+        cases hcS
+      · rw [hA1] at hcS
+        cases hcS
+      · rw [hA] at hcS
+        cases hcS
+  have hheight : Fw f (t+1)=Fw f (t-3)+2 := by
+    have h0 := Fw_succ f (t-3)
+    have h1 := Fw_succ f (t-2)
+    have h2 := Fw_succ f (t-1)
+    have h3 := Fw_succ f t
+    rw [hS, show t-3+1=t-2 by omega] at h0
+    rw [hA2, show t-2+1=t-1 by omega] at h1
+    rw [hA1, show t-1+1=t by omega] at h2
+    rw [hA] at h3
+    simp only [Recaman.ShortPeriodicSupply.sign, if_true, if_false] at h0 h1 h2 h3
+    omega
+  have hbefore : c < t-3 := by
+    by_cases h : c<t-3
+    · exact h
+    · have hh : c=t-3 := by omega
+      rw [hh, hheight] at hhigh
+      omega
+  have hfree := (record_high_witness_exact f n c (t+1) (by omega) hct hLater hhigh).2.1
+  have hEnd (u : Nat) (hcu : c≤u) (hut : u<t+1) (huA : f u=true) : EndN f 0 u := by
+    by_cases h : EndN f 0 u
+    · exact h
+    · exact (not_of_cN_zero (fun x => f x=true ∧ ¬EndN f 0 x) c (t+1-c)
+        hfree u hcu (by omega) ⟨huA,h⟩).elim
+  have hShort : shortEndpoint f n t := ⟨hnt,hS,hA2,hA1,hA⟩
+  exact ⟨⟨hEnd (t-2) (by omega) (by omega) hA2,
+      fun h => by have := short_endpoints_gap f n (t-2) t h hShort (by omega); omega,
+      fun h => short_excludes_previous_record f n t hShort h⟩,
+    ⟨hEnd (t-1) (by omega) (by omega) hA1,
+      fun h => by have := short_endpoints_gap f n (t-1) t h hShort (by omega); omega,
+      fun h => short_endpoint_excludes_two_records f n t hShort h hLater⟩⟩
+
+/-- Every local record charges a distinct other supply. A record following
+a short endpoint charges one additional other supply. -/
+theorem records_and_left_overlaps_le_other (f : Nat → Bool) (n K : Nat) :
+    cN (localRecord f n) n K +
+      cN (fun t => localRecord f n t ∧ shortEndpoint f n (t-1)) n K ≤
+      otherSupplied f n K := by
+  let R := localRecord f n
+  let B := fun t => R t ∧ shortEndpoint f n (t-1)
+  let O := fun t => EndN f 0 t ∧ ¬shortEndpoint f n t ∧ ¬R t
+  change cN R n K + cN B n K ≤ cN O n K
+  induction K using Nat.strongRecOn with
+  | ind K ih =>
+    cases K with
+    | zero => simp [cN]
+    | succ k =>
+      by_cases hr : R (n+k)
+      · by_cases hs : shortEndpoint f n (n+k-1)
+        · have hk : 3≤k := by have := hs.1; omega
+          let d := k-3
+          have hd : d+3=k := by dsimp [d]; omega
+          have hd2 : n+k-1-2=n+d := by dsimp [d]; omega
+          have hd1 : n+k-1-1=n+d+1 := by dsimp [d]; omega
+          have ht : n+k-1+1=n+k := by omega
+          have hp := short_before_record_has_two_other_supplies f n (n+k-1) hs (by rw [ht]; exact hr)
+          rw [hd2,hd1] at hp
+          have hz : cN R (n+d) 3=0 := by
+            apply cN_zero_of
+            intro i hi hie h
+            have hidx : i=n+d ∨ i=n+d+1 ∨ i=n+k-1 := by omega
+            rcases hidx with rfl | rfl | rfl
+            · exact hp.1.2.2 h
+            · exact hp.2.2.2 h
+            · exact h.2.1 hs
+          have hzb : cN B (n+d) 3=0 := by
+            apply cN_zero_of
+            intro i hi hie h
+            exact not_of_cN_zero R (n+d) 3 hz i hi hie h.1
+          have hR := cN_add R n d 3
+          have hB := cN_add B n d 3
+          rw [hd,hz,Nat.add_zero] at hR
+          rw [hd,hzb,Nat.add_zero] at hB
+          have hO := cN_add O n d 2
+          have h2 := cN_succ_pos O (n+d) 1 hp.2
+          have h1 := cN_succ_pos O (n+d) 0 (by simpa only [Nat.add_zero] using hp.1)
+          change cN O (n+d) 2 = cN O (n+d) 1+1 at h2
+          change cN O (n+d) 1 = 1 at h1
+          have hinc := count_prefix_le O n (d+2) (k+1) (by omega)
+          have hprev := ih d (by omega)
+          rw [cN_succ_pos R n k hr, cN_succ_pos B n k ⟨hr,hs⟩, hR,hB]
+          omega
+        · obtain ⟨hnt, he, hn⟩ := local_record_supplied_predecessor f n (n+k) hr
+          let d := k-1
+          have hdk : d+1=k := by dsimp [d]; omega
+          have ht : n+d=n+k-1 := by dsimp [d]; omega
+          have ho : O (n+d) := by rw [ht]; exact ⟨he,hs,hn⟩
+          have hnr : ¬ R (n+d) := by rwa [ht]
+          have hnb : ¬ B (n+d) := fun h => hnr h.1
+          have hR := cN_succ_neg R n d hnr
+          have hB := cN_succ_neg B n d hnb
+          have hO := cN_succ_pos O n d ho
+          rw [hdk] at hR hB hO
+          have hinc := count_prefix_le O n k (k+1) (by omega)
+          have hprev := ih d (by omega)
+          rw [cN_succ_pos R n k hr, cN_succ_neg B n k (fun h => hs h.2),hR,hB]
+          omega
+      · have hprev := ih k (by omega)
+        have hinc := count_prefix_le O n k (k+1) (by omega)
+        rw [cN_succ_neg R n k hr, cN_succ_neg B n k (fun h => hr h.1)]
+        omega
+
+end Recaman.RecordPredecessorCharges

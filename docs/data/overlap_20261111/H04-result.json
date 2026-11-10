@@ -1,0 +1,31 @@
+{
+  "tag": "H04",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldZeroMassPhaseTwo.olean",
+    "Recaman/OldZeroMassPhaseTwo.lean"
+  ],
+  "started_jst": "2026-11-11T06:12:13.559425+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldZeroMassPhaseTwo.lean": "dbc815bdc074fe0a8c6734ad49222ce9f7b8686f41e670b9ea880ed6abe551c1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "891413aecc23338d1504cc98cb71dc7a4251b099b2ac41a398559c8ab9adfec6",
+  "source_tree_sha256": "ff05abfffd759251edc04010b175169956d24d98f427f2e68a6dd590125233d7",
+  "source_tree_manifest": "H04-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "891413aecc23338d1504cc98cb71dc7a4251b099b2ac41a398559c8ab9adfec6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 2.3674151670129504,
+  "cpu_seconds": 1.2570999999999999,
+  "finished_jst": "2026-11-11T06:12:15.926661+09:00"
+}

@@ -1,0 +1,73 @@
+Recaman/RecordPredecessorCharges.lean:23:5: error: unknown tactic
+Recaman/RecordPredecessorCharges.lean:22:25: error: unsolved goals
+f : Nat → Bool
+n t : Nat
+hLater : localRecord f n (t + 1)
+he : EndN f 0 (t + 1)
+hshort : ¬shortEndpoint f n (t + 1)
+left✝ : ∀ (q : Nat), n ≤ q → q ≤ t + 1 → SourceDeficitBand.deficit f (t + 1 + 1) < SourceDeficitBand.deficit f q
+s : Nat
+hns : n ≤ s
+hst : s ≤ t + 1
+hwin : Win f s (t + 1 - s)
+c : Nat
+hsc : s ≤ c
+hct : c < t + 1
+hcS : f c = false
+hhigh : Fw f (t + 1) ≤ Fw f c
+hnt : n + 3 ≤ t
+hS : f (t - 3) = false
+hA2 : f (t - 2) = true
+hA1 : f (t - 1) = true
+hA : f t = true
+⊢ c ≤ t - 3
+Recaman/RecordPredecessorCharges.lean:16:78: error: unsolved goals
+f : Nat → Bool
+n t : Nat
+hLater : localRecord f n (t + 1)
+he : EndN f 0 (t + 1)
+hshort : ¬shortEndpoint f n (t + 1)
+left✝ : ∀ (q : Nat), n ≤ q → q ≤ t + 1 → SourceDeficitBand.deficit f (t + 1 + 1) < SourceDeficitBand.deficit f q
+s : Nat
+hns : n ≤ s
+hst : s ≤ t + 1
+hwin : Win f s (t + 1 - s)
+c : Nat
+hsc : s ≤ c
+hct : c < t + 1
+hcS : f c = false
+hhigh : Fw f (t + 1) ≤ Fw f c
+hnt : n + 3 ≤ t
+hS : f (t - 3) = false
+hA2 : f (t - 2) = true
+hA1 : f (t - 1) = true
+hA : f t = true
+hcut : c ≤ t - 3
+⊢ (EndN f 0 (t - 2) ∧ ¬shortEndpoint f n (t - 2) ∧ ¬localRecord f n (t - 2)) ∧
+    EndN f 0 (t - 1) ∧ ¬shortEndpoint f n (t - 1) ∧ ¬localRecord f n (t - 1)
+Recaman/RecordPredecessorCharges.lean:108:10: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  j ≥ 0
+  i ≥ 0
+  h ≥ 0
+  g ≥ 0
+  g + h ≥ 0
+  g + h - l ≤ 0
+  e ≥ 0
+  c ≥ 0
+  c + e - g ≤ 0
+  c + e - l ≥ -1
+  b ≥ 2
+  a ≥ 0
+  a - b ≤ -2
+where
+ a := ↑n
+ b := ↑(n + k - 1)
+ c := ↑(cN R n d)
+ e := ↑(cN B n d)
+ g := ↑(cN O n d)
+ h := ↑(cN O (n + d) 2)
+ i := ↑(cN O (n + d) 1)
+ j := ↑(cN O (n + d) 0)
+ l := ↑(cN O n (k + 1))

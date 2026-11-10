@@ -1,0 +1,7 @@
+# 全署名補完時の検査エラーと修正
+
+07:44、全型をsourceの := byまで切る最初の補完は、E661の方程式形式に同delimiterがなくValueError substring not foundで停止した。方程式proofの行頭 | を別のdelimiterとし、正しい全型を取得した。
+
+07:45/07:47のfinal_source_auditはE673 descent_slots_exact_weightの逐語チェックで不合格。元gate parserの抽出範囲は方程式proof中の have ih まで伸びるため、正しい型だけの引用とは一致しなかった。正しい全型はそのまま保ち、同じ宣言の完全原文を同じaudit sectionへ逐語で併記した。gateやLean sourceは変更していない。
+
+07:48の再照合で30現module・52署名が成功。FINAL_REGISTRY.logもG1〜G5と保護claimを通過。FULL_SIGNATURE_COMPLETION.jsonには52の全型とhash、FINAL_PACKET_INTEGRITY.jsonには全型引用と65 frozen hashの照合を保存した。

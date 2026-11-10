@@ -1,0 +1,317 @@
+{
+  "entries": [
+    {
+      "id": "E-647",
+      "symbol": "Recaman.ShortRecordJointCorrection.short_endpoint_excludes_two_records",
+      "full_type_sha256": "1558a32e5e32cf3f223ab0ed321a9eed1211f0b199cb188e5cb0801f785277cb",
+      "full_type": "(f : Nat → Bool) (n t : Nat)\n    (hs : shortEndpoint f n t) (hl : localRecord f n (t-1))\n    (hr : localRecord f n (t+1)) : False"
+    },
+    {
+      "id": "E-647",
+      "symbol": "Recaman.ShortRecordJointCorrection.joint_corrections_le_short",
+      "full_type_sha256": "f04d6fedafe1e2d318530f45226bbd5cc1a3721916623336616676a5069f2667",
+      "full_type": "(f : Nat → Bool) (n K : Nat) :\n    cN (fun t => localRecord f n t ∧ shortEndpoint f n (t-1)) n K +\n      cN (fun t => localRecord f n t ∧ t+1 < n+K ∧ shortEndpoint f n (t+1)) n K ≤\n      cN (shortEndpoint f n) n K"
+    },
+    {
+      "id": "E-648",
+      "symbol": "Recaman.OldZeroMassPhaseTwo.zero_mass_phase_two_prefix",
+      "full_type_sha256": "36a7ace6b88e677b6523dcde16baf7e88eec9d20dde7f4ee973e703d4a2939b4",
+      "full_type": "(w : List Bool) (hw : BlockWord w) :\n    ∀ k, mass (w.take k)=0 → (w.take k).length%4=2 →\n      w.take k=[true,false] ∨ w.take k=[false,true] ∨\n      w.take k=[false,true,true,true,false,false]"
+    },
+    {
+      "id": "E-649",
+      "symbol": "Recaman.OldSameLevelShortReturn.old_no_dip_return_shape",
+      "full_type_sha256": "aa4c151796d7d0412e608882ee61ad2129ce27e0c13d33d07a91ef3a44c7191d",
+      "full_type": "(f : Nat → Bool) (n a t u b c : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (ht : t<n) (hu : u<n) (hnb : n≤b) (hbc : b<c)\n    (hwb : Win f t (b-t)) (hwc : Win f u (c-u)) (hlevel : Fw f b=Fw f c)\n    (hA : f b=true) (hfloor : ∀ i, i≤c-b → Fw f b≤Fw f (b+i)) :\n    c=b+2 ∧ u=t+6 ∧ f (b+1)=false ∧\n      seg f t 6=[false,true,true,true,false,false]"
+    },
+    {
+      "id": "E-650",
+      "symbol": "Recaman.OldSameLevelReturnCount.old_supplies_on_floor_le_two",
+      "full_type_sha256": "0f498f68d6ace9eff0d44aba6013a886e24d841b04fec01cdc0824b7ab09a0d4",
+      "full_type": "(f : Nat → Bool) (n a s K : Nat) (H : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hns : n≤s) (hfloor : ∀ t, s≤t → t<s+K → H≤Fw f t) :\n    cN (fun t => Fw f t=H ∧ f t=true ∧ ∃ u, u<n ∧ Win f u (t-u)) s K ≤ 2"
+    },
+    {
+      "id": "E-650",
+      "symbol": "Recaman.OldSameLevelReturnCount.old_floor_return_boundary",
+      "full_type_sha256": "7c8e342b2bbb00440515ec74cc806d95a5d7cdfdbdd0ca22789dc437109f9be4",
+      "full_type": ":\n    BlockWord (seg boundarySign 0 14) ∧ Win boundarySign 0 35 ∧\n    Win boundarySign 6 31 ∧ Fw boundarySign 35=Fw boundarySign 37 ∧\n    boundarySign 35=true ∧ boundarySign 37=true ∧\n    ∀ i, i≤2 → Fw boundarySign 35≤Fw boundarySign (35+i)"
+    },
+    {
+      "id": "E-651",
+      "symbol": "Recaman.OldReturnOneBelow.old_return_gap_one_below",
+      "full_type_sha256": "d6d52c0f103d1263480d8c0d158843b0b50a00617350ebef5176190fa79c155f",
+      "full_type": "(f : Nat → Bool) (n a t u b c : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (ht : t<n) (hu : u<n) (hnb : n≤b) (hbc : b<c)\n    (hwb : Win f t (b-t)) (hwc : Win f u (c-u)) (hlevel : Fw f b=Fw f c)\n    (hA : f b=true) (hfloor : ∀ i, i≤c-b → Fw f b-1≤Fw f (b+i)) :\n    c=b+2 ∨ (c=b+4 ∧ f (b+1)=false ∧ f (b+2)=false ∧ f (b+3)=true)"
+    },
+    {
+      "id": "E-652",
+      "symbol": "Recaman.OldReturnNearFloorCount.three_old_need_dip",
+      "full_type_sha256": "cb3e015d3c357d8ad666f22453846928890a8f1db76d3c983d7068b575ef9097",
+      "full_type": "(f : Nat → Bool) (n a b c d : Nat) (H : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n≤b) (hbc : b<c) (hcd : c<d)\n    (hb : Fw f b=H ∧ f b=true ∧ ∃ u, u<n ∧ Win f u (b-u))\n    (hc : Fw f c=H ∧ f c=true ∧ ∃ u, u<n ∧ Win f u (c-u))\n    (hd : Fw f d=H ∧ f d=true ∧ ∃ u, u<n ∧ Win f u (d-u)) :\n    ∃ i, b≤i ∧ i≤d ∧ Fw f i≤H-2"
+    },
+    {
+      "id": "E-652",
+      "symbol": "Recaman.OldReturnNearFloorCount.old_supplies_near_floor_le_two",
+      "full_type_sha256": "e46b9dc0d3724886b3257c55c91ce7bc538d57088b4265b136b3f81d8f3a3535",
+      "full_type": "(f : Nat → Bool) (n a s K : Nat) (H : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hns : n≤s) (hfloor : ∀ t, s≤t → t<s+K → H-1≤Fw f t) :\n    cN (fun t => Fw f t=H ∧ f t=true ∧ ∃ u, u<n ∧ Win f u (t-u)) s K≤2"
+    },
+    {
+      "id": "E-652",
+      "symbol": "Recaman.OldReturnNearFloorCount.one_below_order_boundaries",
+      "full_type_sha256": "3c1371b8ccd14f6723bea76a8e23ff063d4e0933a7313effae9dc4aa61c29acf",
+      "full_type": ":\n    let f := finiteSign forwardWord\n    let g := finiteSign reverseWord\n    BlockWord (seg f 0 12) ∧ Win f 0 35 ∧ Win f 4 35 ∧\n      Fw f 35=Fw f 39 ∧ seg f 35 4=[true,false,false,true] ∧ f 39=true ∧\n    BlockWord (seg g 0 10) ∧ Win g 4 23 ∧ Win g 0 31 ∧\n      Fw g 27=Fw g 31 ∧ seg g 27 4=[true,false,false,true] ∧ g 31=true"
+    },
+    {
+      "id": "E-653",
+      "symbol": "Recaman.OldSupplyDowncrossBudget.old_supplies_le_downcross_budget",
+      "full_type_sha256": "12b1d87d3bbb5f91e6cc5d73f59a1c9c2088ce2aa8469d9eef38d5ab8e65f25c",
+      "full_type": "(f : Nat → Bool) (n a s K : Nat) (H : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hns : n≤s) :\n    cN (fun t => Fw f t=H ∧ f t=true ∧ ∃ u, u<n ∧ Win f u (t-u)) s K≤\n      2+2*cN (fun t => f t=false ∧ Fw f t=H-1) s K"
+    },
+    {
+      "id": "E-654",
+      "symbol": "Recaman.OldWindowLocalReplacement.replace_old_window_at_one_below",
+      "full_type_sha256": "0585a8d8a51c65a2d6a93870fc57dfea52488061d672f52eea5f25fea3531b5d",
+      "full_type": "(f : Nat → Bool) (n a t b : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (ht : t<n) (hnb : n≤b) (hwin : Win f t (b-t))\n    (hfloor : ∀ i, n≤i → i≤b → Fw f t-1≤Fw f i) :\n    ∃ u, n≤u ∧ u<b ∧ Win f u (b-u)"
+    },
+    {
+      "id": "E-655",
+      "symbol": "Recaman.FullDepthCommonOldContext.full_floor_supply_origin",
+      "full_type_sha256": "46c59afd9e89789eca01828f0e785ee2886627bada28742f339177f92c73b35d",
+      "full_type": "(f : Nat → Bool) (n a b D : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n≤b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-(D : Int)≤Fw f i)\n    (he : EndN f 0 b) :\n    ∃ t, t<b ∧ Win f t (b-t) ∧ (n≤t ∨ Fw f n-Fw f t+2≤(D : Int))"
+    },
+    {
+      "id": "E-655",
+      "symbol": "Recaman.FullDepthCommonOldContext.endable_at_full_depth_two",
+      "full_type_sha256": "0df6fe4a05daf1008ec1260bc814fa88fd18940b2d66886a8601bfe3e6a1ec95",
+      "full_type": "(f : Nat → Bool) (n a b : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n≤b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-2≤Fw f i) :\n    EndN f 0 b ↔ EndN f n b"
+    },
+    {
+      "id": "E-655",
+      "symbol": "Recaman.FullDepthCommonOldContext.full_depth_four_common_context",
+      "full_type_sha256": "01561c062890e4699077c812d6b49e2503ec359be25ded49e7007ded885c9212",
+      "full_type": "(f : Nat → Bool) (n a : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true) :\n    ∃ r ∈ [[],[true],[true,true],aasW], r.IsSuffix (seg f 0 n) ∧\n      ∀ b, n≤b → (∀ i, n≤i → i≤b → Fw f n-4≤Fw f i) →\n        (EndN f 0 b ↔ EndN f (n-r.length) b)"
+    },
+    {
+      "id": "E-655",
+      "symbol": "Recaman.FullDepthCommonOldContext.depth_four_old_context_sharp",
+      "full_type_sha256": "d1107bd15936d90990a61141337cc078f613abcf02b7bfa5c81fd6087e7d2173",
+      "full_type": ":\n    let f := finiteSign sharpWord\n    BlockWord (seg f 0 4) ∧ EndN f 0 11 ∧ ¬EndN f 1 11 ∧\n      ∀ i, 4≤i → i≤11 → Fw f 4-4≤Fw f i"
+    },
+    {
+      "id": "E-656",
+      "symbol": "Recaman.FloorSupplyPotential.actual_floor_supply_downcross",
+      "full_type_sha256": "006544bb9a370d68c3e1aee70027e4f2c1c33a2edeaa46d4277abf93931b4c89",
+      "full_type": "(f : Nat → Bool) (n a t : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnt : n≤t) (hfloor : ∀ i, n≤i → i≤t → m≤Fw f i)\n    (htop : Fw f t=m+2) (he : EndN f 0 t) :\n    ∃ q, n<q ∧ q<t ∧ Fw f q=m ∧\n      floorPotential f n m (q-1)=floorPotential f n m t ∧\n      floorPotential f n m q=floorPotential f n m t-1"
+    },
+    {
+      "id": "E-657",
+      "symbol": "Recaman.FloorSupplyDistinctCharge.actual_floor_supply_injection",
+      "full_type_sha256": "5cc48befca3b512d4a0513d24659d16de3ac9f4705c33680260898aa6ccb3eb4",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    ∃ q : Nat → Nat,\n      (∀ t, n≤t → t<n+K → Fw f t=m+2 → EndN f 0 t →\n        n≤q t ∧ q t<t ∧ Fw f (q t)=m ∧ f (q t)=true ∧ ¬EndN f 0 (q t)) ∧\n      (∀ t u, n≤t → t<u → u<n+K → Fw f t=m+2 → Fw f u=m+2 →\n        EndN f 0 t → EndN f 0 u → q t≠q u)"
+    },
+    {
+      "id": "E-658",
+      "symbol": "Recaman.FloorSupplyFreeBudget.actual_floor_supply_count",
+      "full_type_sha256": "4e7bb8fb0e9c90a0b6b3561759ece20af5edc4cd7e5997e2804add8ac6ef36ef",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤\n      cN (fun t => Fw f t=m ∧ f t=true ∧ ¬EndN f 0 t) n K"
+    },
+    {
+      "id": "E-658",
+      "symbol": "Recaman.FloorSupplyFreeBudget.height_width_three_additions_budget",
+      "full_type_sha256": "cbee03a30b6cbac642fdf07511cf8f225aa9a0975e07b22bd9094f973837f9ba",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hstrip : ∀ i, n≤i → i≤n+K → m≤Fw f i ∧ Fw f i≤m+3) :\n    additions f n K≤2*free f n K"
+    },
+    {
+      "id": "E-658",
+      "symbol": "Recaman.FloorSupplyFreeBudget.height_width_three_free_gap",
+      "full_type_sha256": "b61514f0b985fc3d49587d7ff2da7d8d0481c768b78b82e84dbb06c2cd7b7086",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hstrip : ∀ i, n≤i → i≤b → m≤Fw f i ∧ Fw f i≤m+3)\n    (hS : ∀ t, b≤t → t<b+j → f t=false) (he : EndN f 0 (b+j)) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-659",
+      "symbol": "Recaman.GapTargetHeightBudget.supplied_gap_target_above_floor",
+      "full_type_sha256": "69798bd3e330b703fe7d7fa7a4f4ddf4abab2c43eaab808e9c730a91c72deda5",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n≤b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :\n    m+2≤Fw f (b+j) ∧ (j : Int)+m+2≤Fw f b"
+    },
+    {
+      "id": "E-659",
+      "symbol": "Recaman.GapTargetHeightBudget.positive_width_five_free_gap",
+      "full_type_sha256": "9ff41e11b2346cb9588cc3857b26f382b1f327452767a5e479cf2c8c78ea648f",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i)\n    (hceiling : Fw f b≤m+5)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-661",
+      "symbol": "Recaman.LevelTriangleArea.signed_area_with_low_weights",
+      "full_type_sha256": "43dc76b7f933a800f67ff8bc9d2ad78a620cb2078e44e5d6fc5477b57d09189b",
+      "full_type": "(f : Nat → Bool) (s : Nat) (r : Int) :\n    ∀ K,\n    let E := 2*areaFromLevel f s r K+belowTriangle r (Fw f (s+K))-\n      belowTriangle r (Fw f s)+2*lowAdditionWeights f s r K\n    0≤E ∧ aboveTriangle r (Fw f (s+K))-aboveTriangle r (Fw f s)≤E"
+    },
+    {
+      "id": "E-662",
+      "symbol": "Recaman.GapSquareLowAdditions.supplied_gap_square_low_additions",
+      "full_type_sha256": "5893c776672610442fb23ab5eb9cca97ecffcec1a7003cb45081f2d9f6b36e1b",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :\n    ((j : Int)+1)^2≤lowAdditionWeights f n (Fw f (b+j)-1) (b-n)"
+    },
+    {
+      "id": "E-663",
+      "symbol": "Recaman.LowTargetWeightedGap.low_weights_le_six_free",
+      "full_type_sha256": "04f77daaeb12caaaf83dabd8328f3b95e3fd15460e89223b00f44b33de759d87",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+3) :\n    lowAdditionWeights f n r K≤6*(free f n K : Int)"
+    },
+    {
+      "id": "E-663",
+      "symbol": "Recaman.LowTargetWeightedGap.positive_low_target_free_gap",
+      "full_type_sha256": "7732a854797d1aaecaa4d67d047c23856c5c0be4a718a30f009ab964b57a048c",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))\n    (hTarget : Fw f (b+j)≤m+4) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-663",
+      "symbol": "Recaman.LowTargetWeightedGap.positive_terminal_width_eight_free_gap",
+      "full_type_sha256": "b6201b2a2dad137e81ca3d8240354c3174924b7885ed5ed9b41c0830c50ab473",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i) (hceil : Fw f b≤m+8)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-663",
+      "symbol": "Recaman.LowTargetWeightedGap.positive_full_depth_five_free_gap",
+      "full_type_sha256": "b01951329f5ccad49ea2cfe0421f59b4171326ccc36252a0459569545aa09e92",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-5≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-664",
+      "symbol": "Recaman.SupplyAreaCrossings.latest_actual_supply_area_crossing",
+      "full_type_sha256": "aabd8eedcdc092113d6f4d2d70bbc8cb34353cf7126fb9135e1e8bc1316f6ebd",
+      "full_type": "(f : Nat → Bool) (n a t : Nat) (r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnt : n≤t) (hF : Fw f t=r+1) (he : EndN f 0 t) :\n    let p := floorPotential f n (r-1)\n    ∃ q, n<q ∧ q<t ∧ Fw f q<r ∧ areaCrossesDown p (p t) q ∧\n      ∀ j, q<j → j<t → ¬areaCrossesDown p (p t) j"
+    },
+    {
+      "id": "E-664",
+      "symbol": "Recaman.SupplyAreaCrossings.supply_potential_spacing_after_last_crossing",
+      "full_type_sha256": "0f1e410d2d9a128e48d3a1aebed454c633d9ca2d13bb4485bd09c2e2480a3635",
+      "full_type": "(f : Nat → Bool) (n t u q : Nat)\n    (r : Int) (hnt : n≤t) (htu : t<u) (hqu : q≤t)\n    (hFt : Fw f t=r+1) (hFu : Fw f u=r+1) (hA : f t=true)\n    (hAfter : ∀ j, q<j → j<u →\n      ¬areaCrossesDown (floorPotential f n (r-1)) (floorPotential f n (r-1) u) j) :\n    floorPotential f n (r-1) t+3≤floorPotential f n (r-1) u"
+    },
+    {
+      "id": "E-665",
+      "symbol": "Recaman.NextHeightSupplyCharge.next_height_supply_injection",
+      "full_type_sha256": "8b00670563bafb8f40bcfbcaad12c8af68809eba6c23f5e8aec407cbd82279a2",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    ∃ d : Nat → Nat,\n      (∀ t, n≤t → t<n+K → Fw f t=m+3 → EndN f 0 t →\n        n≤d t ∧ d t<t ∧ Fw f (d t)≤m+1 ∧ f (d t)=true ∧ ¬EndN f 0 (d t)) ∧\n      (∀ t u, n≤t → t<u → u<n+K → Fw f t=m+3 → Fw f u=m+3 →\n        EndN f 0 t → EndN f 0 u → d t≠d u)"
+    },
+    {
+      "id": "E-665",
+      "symbol": "Recaman.NextHeightSupplyCharge.next_height_supply_count",
+      "full_type_sha256": "ec00a7bc4ae9536d1b5ffd77fdcc19fe7bb5470c9112b57fad07492a751dba7b",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    cN (fun t => Fw f t=m+3 ∧ EndN f 0 t) n K≤\n      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K"
+    },
+    {
+      "id": "E-666",
+      "symbol": "Recaman.DepthSixGapResidual.low_weights_le_eleven_free",
+      "full_type_sha256": "6726afb5b24365b6a392514ed72d359ebcfaf6d0f22659fcea2b359bc872d633",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+4) :\n    lowAdditionWeights f n r K≤11*(free f n K : Int)"
+    },
+    {
+      "id": "E-666",
+      "symbol": "Recaman.DepthSixGapResidual.positive_depth_six_counter_profile",
+      "full_type_sha256": "7beabc24ab36ec7f99439728960d0e5c84f067d35c20af074a3ea716709fe289",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))\n    (hcounter : free f n (b-n)≤j) :\n    free f n (b-n)=j ∧ 4≤j ∧ j≤8 ∧ Fw f (b+j)=Fw f n-1 ∧\n      subtractions f n (b-n)=cN (EndN f 0) n (b-n)+1"
+    },
+    {
+      "id": "E-667",
+      "symbol": "Recaman.FloorSupplyPairCharge.floor_supply_pair_charge",
+      "full_type_sha256": "c16f86b99a87a0418284d3ee3769e786d6bca1521576d4bca52ad32a4514f5d8",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    2*cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤\n      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K"
+    },
+    {
+      "id": "E-668",
+      "symbol": "Recaman.DepthSixPairResidual.low_weights_saving_at_second_floor",
+      "full_type_sha256": "bbcd2197ef632f75314247e43fb585a504e932713ade1f986becdcdd68c5e15f",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+4) :\n    lowAdditionWeights f n r K+\n      2*(cN (fun t => Fw f t=m+1 ∧ f t=true) n K : Int)≤\n      8*(free f n K : Int)+\n      3*(cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K : Int)"
+    },
+    {
+      "id": "E-668",
+      "symbol": "Recaman.DepthSixPairResidual.positive_depth_six_counter_gap_le_six",
+      "full_type_sha256": "29e011734d9847d9c611fdcefb40b1eeb6a5bb5450a3713b21c923e8b6f85100",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))\n    (hcounter : free f n (b-n)≤j) :\n    j≤6"
+    },
+    {
+      "id": "E-669",
+      "symbol": "Recaman.HeightWidthFourGap.height_width_four_additions_budget",
+      "full_type_sha256": "795145f0da167cab1eb821d83666a0a08861fcfe00048b387b81b01dea5e088c",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hstrip : ∀ i, n≤i → i≤n+K → m≤Fw f i ∧ Fw f i≤m+4) :\n    2*additions f n K≤5*free f n K"
+    },
+    {
+      "id": "E-669",
+      "symbol": "Recaman.HeightWidthFourGap.height_width_four_free_gap",
+      "full_type_sha256": "72b97e37f1606ccd5de78d67cf1825d18d67c7bfee6da9e685af474fe2dd6104",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hstrip : ∀ i, n≤i → i≤b → m≤Fw f i ∧ Fw f i≤m+4)\n    (hS : ∀ t, b≤t → t<b+j → f t=false) (he : EndN f 0 (b+j)) :\n    j+1≤free f n (b-n)"
+    },
+    {
+      "id": "E-670",
+      "symbol": "Recaman.DepthSixFreeLocation.low_weights_saving_at_high_free",
+      "full_type_sha256": "2a8a0fa0232e3c865dcadd292966187eef1b48baf87c5dc25f4501c3783b51ab",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+4) :\n    let F := free f n K\n    let F1 := cN (fun t => Fw f t=m+1 ∧ f t=true) n K\n    let H := cN (fun t => m+2≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n K\n    let E2 := cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K\n    lowAdditionWeights f n r K+2*(F1 : Int)+5*(H : Int)≤8*(F : Int)+3*(E2 : Int) ∧\n      2*E2+H≤F"
+    },
+    {
+      "id": "E-670",
+      "symbol": "Recaman.DepthSixFreeLocation.positive_depth_six_counter_high_free",
+      "full_type_sha256": "afa81f00d17c64cb72a5f4cb1588b89c4817132a38b5454204b5564416e3aa88",
+      "full_type": "(f : Nat → Bool) (n a b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))\n    (hcounter : free f n (b-n)≤j) :\n    cN (fun t => Fw f n-4≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n (b-n)≤\n      (if j=6 then 0 else 1)"
+    },
+    {
+      "id": "E-671",
+      "symbol": "Recaman.GapSourceDebt.old_gap_square_with_exact_area",
+      "full_type_sha256": "be0539adb041caa01665fe347182c6ce6b584a26d3cf26ddd54203bea33c23b9",
+      "full_type": "(f : Nat → Bool) (n a t b j : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (htn : t<n) (hnb : n<b) (hS : ∀ i, b≤i → i<b+j → f i=false)\n    (hwin : Win f t (b+j-t)) :\n    0<Ar f t (n-t) ∧\n      ((j : Int)+1)^2+Ar f t (n-t)≤\n        lowAdditionWeights f n (Fw f (b+j)-1) (b-n)"
+    },
+    {
+      "id": "E-671",
+      "symbol": "Recaman.GapSourceDebt.local_gap_square_after_source",
+      "full_type_sha256": "8a554c07da8e4ec60252252f03e7c9fcd1ad96ffc67a5a32e53e8ec7b4501011",
+      "full_type": "(f : Nat → Bool) (t b j : Nat)\n    (htb : t<b) (hS : ∀ i, b≤i → i<b+j → f i=false)\n    (hwin : Win f t (b+j-t)) :\n    ((j : Int)+1)^2≤lowAdditionWeights f t (Fw f (b+j)-1) (b-t)"
+    },
+    {
+      "id": "E-671",
+      "symbol": "Recaman.GapSourceDebt.depth_six_gap_six_local_source_before_floor_addition",
+      "full_type_sha256": "17a0ec7e1c73c72ce5b60034bee8380f6c5153410817093947517009db24c63f",
+      "full_type": "(f : Nat → Bool) (n a b t q : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))\n    (hcounter : free f n (b-n)≤6)\n    (hnt : n≤t) (htb : t<b) (hwin : Win f t (b+6-t))\n    (hnq : n≤q) (hqb : q<b) (hq : Fw f q=Fw f n-6) (hqA : f q=true) :\n    t≤q"
+    },
+    {
+      "id": "E-672",
+      "symbol": "Recaman.SupplyDescentSlots.actual_same_height_supply_slots",
+      "full_type_sha256": "5bc8dfc9b6d602ce14d791835289bc79ed9b7bff3861eaff86a6cdc8041dfbf7",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true) :\n    cN (fun t => Fw f t=r+1 ∧ EndN f 0 t) n K≤(descentSlots f n r K).length"
+    },
+    {
+      "id": "E-673",
+      "symbol": "Recaman.SupplyDescentWeight.descent_slots_exact_weight",
+      "full_type_sha256": "f03e36d18e0906ed06cc7399a8206bf7160fedc8b0bac245422a50b9d13e8222",
+      "full_type": "(f : Nat → Bool) (n : Nat) (r : Int) :\n    ∀ K, 2*((descentSlots f n r K).length : Int)=\n      2*lowAdditionWeights f n r K+\n        belowTriangle r (Fw f (n+K))-belowTriangle r (Fw f n)"
+    },
+    {
+      "id": "E-673",
+      "symbol": "Recaman.SupplyDescentWeight.same_height_suppliers_le_low_additions",
+      "full_type_sha256": "e7d2c19cb5f7ab546a2a51340e85a553b07d935ad6c943c329f01a0cb5dfea39",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hend : r≤Fw f (n+K)) :\n    (cN (fun t => Fw f t=r+1 ∧ EndN f 0 t) n K : Int)≤\n      lowAdditionWeights f n r K"
+    },
+    {
+      "id": "E-674",
+      "symbol": "Recaman.SupplyHeightWeightBudget.same_height_supply_weight_budget",
+      "full_type_sha256": "01c11bf891fa002c74d65b256a7af4e6429179889b55c023961a7ec31ec0fbe6",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (r : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true) :\n    (cN (fun t => Fw f t=r+1 ∧ EndN f 0 t) n K : Int)≤\n      lowAdditionWeights f n r K"
+    },
+    {
+      "id": "E-674",
+      "symbol": "Recaman.SupplyHeightWeightBudget.actual_floor_plus_four_count",
+      "full_type_sha256": "03a5879e08bc51318d9e9048910308802e5e766f9d4c70f91d55607780551002",
+      "full_type": "(f : Nat → Bool) (n a K : Nat) (m : Int)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :\n    cN (fun t => Fw f t=m+4 ∧ EndN f 0 t) n K≤6*free f n K"
+    },
+    {
+      "id": "E-676",
+      "symbol": "Recaman.DepthSixSourceClock.gap_six_local_source_clock_two",
+      "full_type_sha256": "c8f03e08043ac520b97fedcdfcbe3a3e898f928008f63d546dc3d39d8f6eab1d",
+      "full_type": "(f : Nat → Bool) (n a b t : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))\n    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤6)\n    (hnt : n≤t) (htb : t<b) (hwin : Win f t (b+6-t)) :\n    t=n+2 ∧ (∀ i, n≤i → i<t → f i=false)"
+    },
+    {
+      "id": "E-677",
+      "symbol": "Recaman.DepthSixSourceArea.gap_six_actual_source_area_spectrum",
+      "full_type_sha256": "1fbe23a66b050478628ba5d894ee08e2f40763bd082d415c6b42283831b314c3",
+      "full_type": "(f : Nat → Bool) (n a b : Nat)\n    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)\n    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)\n    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)\n    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))\n    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤6) :\n    areaFromLevel f n (Fw f n-2) (b+6-n)= -3 ∨\n      areaFromLevel f n (Fw f n-2) (b+6-n)= -2 ∨\n      areaFromLevel f n (Fw f n-2) (b+6-n)=1"
+    }
+  ],
+  "reason": "Full theorem type copied through the proof delimiter, including let bindings. Both := by and equation proof delimiters handled. Gate unchanged."
+}

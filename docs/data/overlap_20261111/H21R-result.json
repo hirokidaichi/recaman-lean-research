@@ -1,0 +1,31 @@
+{
+  "tag": "H21R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowTargetWeightedGap.olean",
+    "Recaman/LowTargetWeightedGap.lean"
+  ],
+  "started_jst": "2026-11-11T06:46:43.350550+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/LowTargetWeightedGap.lean": "9d2e83a3a22b2eee970ed42b9ff5d1431dffadfe5118afeb7e6d1a83c8792afe"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "aa9418ac539ad22ddf476a953a2b89834c6c32acc5b6db237d4eaab9b27b69f0",
+  "source_tree_sha256": "43fa96f42e490cc7f3f9a412cb9a9d455e0e53286439cbbf3b555b9cf220fd69",
+  "source_tree_manifest": "H21R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "aa9418ac539ad22ddf476a953a2b89834c6c32acc5b6db237d4eaab9b27b69f0",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8545187919808086,
+  "cpu_seconds": 0.647311,
+  "finished_jst": "2026-11-11T06:46:44.205005+09:00"
+}

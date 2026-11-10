@@ -1,0 +1,4 @@
+Recaman/FullFloorOldContext.lean:19:4: error: 'change' tactic failed, pattern
+  ↑k * (H - Fw f n) + (H - Fw f n) ≤ ?m.105
+is not definitionally equal to target
+  ↑k * (H - Fw f n) + ↑1 * (H - Fw f n) ≤ Ar f n k + (Fw f (n + (k + 1)) - Fw f n)

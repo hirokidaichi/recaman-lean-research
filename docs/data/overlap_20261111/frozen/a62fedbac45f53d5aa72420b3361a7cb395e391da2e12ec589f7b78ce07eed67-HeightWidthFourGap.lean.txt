@@ -1,0 +1,69 @@
+import Recaman.FloorSupplyPairCharge
+import Recaman.GapTargetHeightBudget
+
+namespace Recaman.HeightWidthFourGap
+
+open Recaman.FloorSupplyPairCharge Recaman.NextHeightSupplyCharge
+open Recaman.GapTargetHeightBudget Recaman.BlockOldRay Recaman.BlockSuffixPositivity
+open Recaman.AdditionRankSlack Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- Both possible supplier heights spend the same low-free pool, with
+two slots per floor-plus-two supplier and one per floor-plus-three supplier. -/
+theorem height_width_four_additions_budget (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hstrip : ∀ i, n≤i → i≤n+K → m≤Fw f i ∧ Fw f i≤m+4) :
+    2*additions f n K≤5*free f n K := by
+  have hfloor (i : Nat) (hni : n≤i) (hiK : i≤n+K) := (hstrip i hni hiK).1
+  let P := fun t => Fw f t=m+2 ∧ EndN f 0 t
+  let Q := fun t => Fw f t=m+3 ∧ EndN f 0 t
+  have hcount : cN (EndN f 0) n K = cN P n K+cN Q n K := by
+    rw [←cN_split (EndN f 0) (fun t => Fw f t=m+2) n K]
+    all_goals try rfl
+    congr 1
+    apply cN_congr
+    intro t hnt htt
+    constructor
+    · rintro ⟨he,hn⟩
+      have hlow : m+2≤Fw f t := by
+        by_cases h : m+2≤Fw f t
+        · exact h
+        · exact (block_prefix_low_clock_not_endable f n a t hw hpre hnt m
+            (fun i hi hj => hfloor i hi (by omega)) (by omega) he).elim
+      have hhigh : Fw f t≤m+3 := by
+        have hup := (hstrip (t+1) (by omega) (by omega)).2
+        rcases fw_cases f t with ⟨h,_⟩ | ⟨_,h⟩
+        · omega
+        · rw [he.1] at h
+          cases h
+      exact ⟨by omega,he⟩
+    · intro h
+      exact ⟨h.2,by have := h.1; omega⟩
+  have h2 := floor_supply_pair_charge f n a K m hw hpre hfloor
+  have h3 := next_height_supply_count f n a K m hw hpre hfloor
+  have hmono : cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K≤free f n K := by
+    apply cN_mono
+    intro t _ _ ht
+    exact ht.2
+  change 2*cN P n K≤_ at h2
+  change cN Q n K≤_ at h3
+  have hsum := additions_split f n K
+  omega
+
+/-- A four-unit strip forces the actual free gap without a relative
+positivity assumption. The final subtraction run may leave the strip. -/
+theorem height_width_four_free_gap (f : Nat → Bool) (n a b j : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hstrip : ∀ i, n≤i → i≤b → m≤Fw f i ∧ Fw f i≤m+4)
+    (hS : ∀ t, b≤t → t<b+j → f t=false) (he : EndN f 0 (b+j)) :
+    j+1≤free f n (b-n) := by
+  have ha := height_width_four_additions_budget f n a (b-n) m hw hpre
+    (fun i hi hj => hstrip i hi (by omega))
+  have hJ := (supplied_gap_target_above_floor f n a b j m hw hpre (by omega)
+    (fun i hi hj => (hstrip i hi hj).1) hS he).2
+  have hB := (hstrip b (by omega) (by omega)).2
+  have hj := supplied_after_S_gap_half_bound f n a b j hw hpre hnb hS he
+  rw [ones_seg_eq_count] at hj
+  change 2*(j : Int)+2≤(additions f n (b-n) : Int) at hj
+  omega
+
+end Recaman.HeightWidthFourGap

@@ -1,0 +1,36 @@
+Recaman/OldSameLevelStepBudget.lean:11:26: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/OldSameLevelStepBudget.lean:29:26: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/OldSameLevelStepBudget.lean:33:29: error: unsolved goals
+x✝ : Sort u_1
+BlockWord : x✝
+f : Nat → Bool
+n a t u b c : Nat
+w : List Bool
+hw : sorry
+hpre : seg f 0 n = w ++ List.replicate a true
+ht : t < n
+hu : u < n
+hnb : n ≤ b
+hbc : b < c
+hwb : Win f t (b - t)
+hwc : Win f u (c - u)
+hlevel : Fw f b = Fw f c
+hA : f b = true
+hfloor : ∀ (i : Nat), i ≤ c - b → Fw f b ≤ Fw f (b + i)
+⊢ c = b + 2 ∧ f (b + 1) = false

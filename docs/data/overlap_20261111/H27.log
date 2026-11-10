@@ -1,0 +1,141 @@
+Recaman/DepthSixPairResidual.lean:89:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  k ≥ 0
+  j ≥ 0
+  h ≥ 0
+  g ≥ 0
+  e ≥ 0
+  e - g ≥ 0
+  d ≥ 0
+  d - e ≥ 0
+  7*d + g + 3*h - i - 2*j ≥ 0
+  8*d - i - 2*k + 3*l ≤ -1
+  b - c ≥ -4
+where
+ b := m
+ c := r
+ d := ↑(free f n K)
+ e := ↑(cN (fun t => Fw f t ≤ m + 1 ∧ f t = true ∧ ¬EndN f 0 t) n K)
+ g := ↑(cN R n K)
+ h := ↑(cN Q n K)
+ i := lowAdditionWeights f n r K
+ j := ↑(cN Z n K)
+ k := ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n K)
+ l := ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n K)
+Recaman/DepthSixPairResidual.lean:123:73: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+Recaman/DepthSixPairResidual.lean:123:42: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 1
+  k ≥ 0
+  8 ≤ i - l ≤ 12
+  g ≥ 0
+  g - k ≤ 0
+  e ≥ 0
+  d ≥ 0
+  d - g ≤ 0
+  c ≥ 0
+  c - d ≥ 1
+  c - g ≥ 0
+  c - k ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := ↑(cN (EndN f 0) n (b - n))
+ g := ↑q
+ i := Fw f b
+ k := ↑z
+ l := Fw f z
+ o := ↑(cN ?m.357 n (b - n))
+Recaman/DepthSixPairResidual.lean:136:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (7 + 1) ^ 2
+in the target expression
+  (↑7 + 1) ^ 2 ≤ lowAdditionWeights f n (Fw f (b + 7) - 1) (b - n)
+
+case neg.inl
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+m : Int := Fw f n - 6
+hFloor : ∀ (i : Nat), n ≤ i → i ≤ n + (b - n) → m ≤ Fw f i
+q : Nat
+hqn : n ≤ q
+hqb : q ≤ b
+hqF : Fw f q = m
+hb : m + 2 ≤ Fw f b
+z : Nat
+hqz : q ≤ z
+hzb : z < b
+hzF : Fw f z = m + 2 - 1
+hzA : f z = true
+hzCount : 1 ≤ cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)
+h2 :
+  2 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n) ≤
+    cN (fun t => Fw f t ≤ m + 1 ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)
+h3 : cN (fun t => Fw f t ≤ m + 1 ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ free f n (b - n)
+hS : ∀ (i : Nat), b ≤ i → i < b + 7 → f i = false
+he : EndN f 0 (b + 7)
+hcounter : free f n (b - n) ≤ 7
+hf : free f n (b - n) = 7
+h4 : 4 ≤ 7
+h8 : 7 ≤ 8
+ht : Fw f (b + 7) = Fw f n - 1
+hdown : Fw f (b + 7) = Fw f b - ↑7
+hs : (↑7 + 1) ^ 2 ≤ lowAdditionWeights f n (Fw f (b + 7) - 1) (b - n)
+hW :
+  lowAdditionWeights f n (Fw f (b + 7) - 1) (b - n) + 2 * ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+h : ¬7 ≤ 6
+⊢ 7 ≤ 6
+Recaman/DepthSixPairResidual.lean:138:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (8 + 1) ^ 2
+in the target expression
+  (↑8 + 1) ^ 2 ≤ lowAdditionWeights f n (Fw f (b + 8) - 1) (b - n)
+
+case neg.inr
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+m : Int := Fw f n - 6
+hFloor : ∀ (i : Nat), n ≤ i → i ≤ n + (b - n) → m ≤ Fw f i
+q : Nat
+hqn : n ≤ q
+hqb : q ≤ b
+hqF : Fw f q = m
+hb : m + 2 ≤ Fw f b
+z : Nat
+hqz : q ≤ z
+hzb : z < b
+hzF : Fw f z = m + 2 - 1
+hzA : f z = true
+hzCount : 1 ≤ cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)
+h2 :
+  2 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n) ≤
+    cN (fun t => Fw f t ≤ m + 1 ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)
+h3 : cN (fun t => Fw f t ≤ m + 1 ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ free f n (b - n)
+hS : ∀ (i : Nat), b ≤ i → i < b + 8 → f i = false
+he : EndN f 0 (b + 8)
+hcounter : free f n (b - n) ≤ 8
+hf : free f n (b - n) = 8
+h4 : 4 ≤ 8
+h8 : 8 ≤ 8
+ht : Fw f (b + 8) = Fw f n - 1
+hdown : Fw f (b + 8) = Fw f b - ↑8
+hs : (↑8 + 1) ^ 2 ≤ lowAdditionWeights f n (Fw f (b + 8) - 1) (b - n)
+hW :
+  lowAdditionWeights f n (Fw f (b + 8) - 1) (b - n) + 2 * ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+h : ¬8 ≤ 6
+⊢ 8 ≤ 6

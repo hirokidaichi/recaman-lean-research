@@ -1,0 +1,25 @@
+{
+  "tag": "H34",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SupplyHeightWeightBudget.olean",
+    "Recaman/SupplyHeightWeightBudget.lean"
+  ],
+  "started_jst": "2026-11-11T07:22:23.473971+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SupplyHeightWeightBudget.lean": "7f81c627984f1e011e253dcf02f2bf3cdcf3f2f410fc0bd2d58f0b43b6215977"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "4706a73ca840155f1b55020491b6e345526e8b952af46646b19bd5270dadd882",
+  "source_tree_sha256": "f0fbc043a7e5755c93b44019a2057d135c19a905198bbc5e8e319adfcd60153f",
+  "source_tree_manifest": "H34-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

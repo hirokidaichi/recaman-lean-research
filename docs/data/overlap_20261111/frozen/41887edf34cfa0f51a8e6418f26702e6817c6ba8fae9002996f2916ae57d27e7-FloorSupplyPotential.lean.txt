@@ -1,0 +1,103 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.FloorSupplyPotential
+
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+open Recaman.CapacityEqualityInduction
+
+/-- Area of the chronological tail, measured from one step above its floor. -/
+def floorPotential (f : Nat → Bool) (n : Nat) (m : Int) (t : Nat) : Int :=
+  Ar f n (t-n)+((t-n : Nat) : Int)*(Fw f n-(m+1))
+
+theorem floor_potential_step (f : Nat → Bool) (n t : Nat) (m : Int) (hnt : n≤t) :
+    floorPotential f n m (t+1)=floorPotential f n m t+Fw f (t+1)-(m+1) := by
+  unfold floorPotential
+  rw [show t+1-n=(t-n)+1 by omega,Ar_succ,show n+(t-n)+1=t+1 by omega,
+    Int.natCast_add,Int.add_mul]
+  have hone : ((1 : Nat) : Int)=1 := rfl
+  rw [hone,Int.one_mul]
+  omega
+
+/-- A downward crossing of a potential level uses a unique unit step
+at a visit to the actual walk floor. -/
+theorem floor_potential_downcross (f : Nat → Bool) (n a b : Nat) (m v : Int)
+    (hna : n≤a) (hab : a≤b)
+    (hfloor : ∀ i, n≤i → i≤b → m≤Fw f i)
+    (ha : v≤floorPotential f n m a) (hb : floorPotential f n m b<v) :
+    ∃ q, a<q ∧ q≤b ∧ Fw f q=m ∧
+      floorPotential f n m (q-1)=v ∧ floorPotential f n m q=v-1 := by
+  let P := fun i => a≤i ∧ floorPotential f n m i<v
+  obtain ⟨q,hqb,hq,hfirst⟩ := first_mark P b ⟨b,by omega,hab,hb⟩
+  have haq : a<q := by
+    have h1 := hq.1
+    have h2 := hq.2
+    by_cases he : a=q
+    · rw [←he] at h2
+      omega
+    · omega
+  have hprev : v≤floorPotential f n m (q-1) := by
+    by_cases h : v≤floorPotential f n m (q-1)
+    · exact h
+    · exact (hfirst (q-1) (by omega) ⟨by omega,by omega⟩).elim
+  have hs := floor_potential_step f n (q-1) m (by omega)
+  rw [show q-1+1=q by omega] at hs
+  have hF := hfloor q (by omega) hqb
+  have hp := hq.2
+  exact ⟨q,haq,hqb,by omega,by omega,by omega⟩
+
+theorem supply_potential_anchor (f : Nat → Bool) (n a t : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnt : n≤t) (htop : Fw f t=m+2) (he : EndN f 0 t) :
+    ∃ s, n≤s ∧ s<t ∧ floorPotential f n m t≤floorPotential f n m s := by
+  obtain ⟨_,u,k,_,htk,hk,hLevel,hArea⟩ := he
+  rw [htk] at hLevel
+  have hu : Fw f u=m+1 := by omega
+  have ha : Ar f u (t-u)=0 := by
+    rw [show t-u=k by omega]
+    exact hArea
+  by_cases hnu : n≤u
+  · refine ⟨u,hnu,by omega,?_⟩
+    have hs := area_split_at f n u t hnu (by omega)
+    rw [ha,hu] at hs
+    have hl : ((t-n : Nat) : Int)=((u-n : Nat) : Int)+((t-u : Nat) : Int) := by omega
+    unfold floorPotential
+    rw [hs,hl,Int.add_mul]
+    have hmul :
+        ((t-u : Nat) : Int)*(m+1-Fw f n)+((t-u : Nat) : Int)*(Fw f n-(m+1))=0 := by
+      rw [←Int.mul_add,show m+1-Fw f n+(Fw f n-(m+1))=0 by omega,Int.mul_zero]
+    omega
+  · have hu' : u<n := by omega
+    have hp := (block_suffix_positive_walk f 0 n a hw hpre u (Nat.zero_le _) (by omega)).2
+    simp only [Nat.zero_add] at hp
+    have hs := area_split_at f u n t (by omega) hnt
+    rw [ha,hu] at hs
+    have hneg : floorPotential f n m t<0 := by
+      unfold floorPotential
+      omega
+    have hz : floorPotential f n m n=0 := by simp [floorPotential,Ar]
+    have hlt : n<t := by
+      by_cases hh : n=t
+      · rw [←hh,hz] at hneg
+        omega
+      · omega
+    exact ⟨n,Nat.le_refl _,hlt,by omega⟩
+
+/-- An actual supply at floor plus two has an original floor visit that
+drops its source-level potential by one. Old and local sources both
+supply the anchor internally. -/
+theorem actual_floor_supply_downcross (f : Nat → Bool) (n a t : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnt : n≤t) (hfloor : ∀ i, n≤i → i≤t → m≤Fw f i)
+    (htop : Fw f t=m+2) (he : EndN f 0 t) :
+    ∃ q, n<q ∧ q<t ∧ Fw f q=m ∧
+      floorPotential f n m (q-1)=floorPotential f n m t ∧
+      floorPotential f n m q=floorPotential f n m t-1 := by
+  obtain ⟨s,hns,hst,ha⟩ := supply_potential_anchor f n a t m hw hpre hnt htop he
+  have hs := floor_potential_step f n (t-1) m (by omega)
+  rw [show t-1+1=t by omega,htop] at hs
+  obtain ⟨q,hsq,hqt,hF,hP,hQ⟩ := floor_potential_downcross f n s (t-1) m
+    (floorPotential f n m t) hns (by omega) (fun i hi hj => hfloor i hi (by omega))
+    ha (by omega)
+  exact ⟨q,by omega,by omega,hF,hP,hQ⟩
+
+end Recaman.FloorSupplyPotential

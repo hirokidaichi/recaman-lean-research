@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "cooperative single Python only; process groups absent after wait4",
+  "results": {
+    "normal": {
+      "exit_code": 0,
+      "reason": "completed",
+      "worker_cpu_seconds": 0.035522,
+      "controller_cpu_seconds": 0.0017389999999999975,
+      "wall_seconds": 0.07058979198336601
+    },
+    "fork": {
+      "exit_code": 0,
+      "reason": "completed",
+      "worker_cpu_seconds": 0.035574999999999996,
+      "controller_cpu_seconds": 0.002057000000000005,
+      "wall_seconds": 0.0642065420106519
+    },
+    "exec": {
+      "exit_code": 0,
+      "reason": "completed",
+      "worker_cpu_seconds": 0.035683,
+      "controller_cpu_seconds": 0.0020450000000000034,
+      "wall_seconds": 0.06213549998938106
+    },
+    "wall": {
+      "exit_code": -9,
+      "reason": "wall/deadline cap",
+      "worker_cpu_seconds": 0.031409999999999993,
+      "controller_cpu_seconds": 0.0022290000000000035,
+      "wall_seconds": 0.17754791700281203
+    },
+    "cpu": {
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)",
+      "worker_cpu_seconds": 1.004974,
+      "controller_cpu_seconds": 0.003093999999999998,
+      "wall_seconds": 1.010094457975356
+    }
+  }
+}

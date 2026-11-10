@@ -1,0 +1,175 @@
+import Recaman.DepthSixPairResidual
+
+namespace Recaman.DepthSixFreeLocation
+
+open Recaman.DepthSixGapResidual Recaman.DepthSixPairResidual Recaman.FloorSupplyPairCharge
+open Recaman.NextHeightSupplyCharge Recaman.LowTargetWeightedGap Recaman.GapSquareLowAdditions
+open Recaman.LevelTriangleArea Recaman.AdditionRankSlack Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Classical
+
+private theorem count_step (P : Nat → Prop) (n k : Nat) :
+    (cN P n (k+1) : Int)=(cN P n k : Int)+(if P (n+k) then 1 else 0) := by
+  by_cases h : P (n+k)
+  · rw [cN_succ_pos P n k h,if_pos h]
+    omega
+  · rw [cN_succ_neg P n k h,if_neg h]
+    omega
+
+private theorem penalized_sum (f : Nat → Bool) (n K : Nat) (r : Int)
+    (P Q R Z Y : Nat → Prop)
+    (h : ∀ t, n≤t → t<n+K → lowAdditionWeight f r t+
+      2*(if Z t then 1 else 0)+4*(if Y t then 1 else 0)≤
+      7*(if P t then 1 else 0)+3*(if Q t then 1 else 0)+(if R t then 1 else 0)) :
+    lowAdditionWeights f n r K+2*(cN Z n K : Int)+4*(cN Y n K : Int)≤
+      7*(cN P n K : Int)+3*(cN Q n K : Int)+(cN R n K : Int) := by
+  induction K with
+  | zero => simp [cN,lowAdditionWeights]
+  | succ k ih =>
+    have hp := ih (fun t ht hk => h t ht (by omega))
+    have hs := h (n+k) (by omega) (by omega)
+    rw [lowAdditionWeights,count_step,count_step,count_step,count_step,count_step]
+    omega
+
+/-- At source height at most floor plus four, free additions above the
+bottom two levels save five units after the floor-plus-three charge. -/
+theorem low_weights_saving_at_high_free (f : Nat → Bool) (n a K : Nat) (m r : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) (hr : r≤m+4) :
+    let F := free f n K
+    let F1 := cN (fun t => Fw f t=m+1 ∧ f t=true) n K
+    let H := cN (fun t => m+2≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n K
+    let E2 := cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K
+    lowAdditionWeights f n r K+2*(F1 : Int)+5*(H : Int)≤8*(F : Int)+3*(E2 : Int) ∧
+      2*E2+H≤F := by
+  dsimp only
+  let P := fun t => f t=true ∧ ¬EndN f 0 t
+  let Q := fun t => Fw f t=m+2 ∧ EndN f 0 t
+  let R := fun t => Fw f t=m+3 ∧ EndN f 0 t
+  let Z := fun t => Fw f t=m+1 ∧ f t=true
+  let Y := fun t => m+2≤Fw f t ∧ P t
+  let L := fun t => Fw f t≤m+1 ∧ P t
+  have hW := penalized_sum f n K r P Q R Z Y (by
+    intro t hnt htK
+    have hlo := hfloor t hnt (by omega)
+    by_cases hA : f t=true
+    · by_cases he : EndN f 0 t
+      · have hHi : m+2≤Fw f t := by
+          by_cases hh : m+2≤Fw f t
+          · exact hh
+          · exact (block_prefix_low_clock_not_endable f n a t hw hpre hnt m
+              (fun i hi hj => hfloor i hi (by omega)) (by omega) he).elim
+        rw [if_neg (fun hp : P t => hp.2 he),
+          if_neg (fun hz : Z t => by have := hz.1; omega),
+          if_neg (fun hy : Y t => hy.2.2 he)]
+        by_cases hr' : Fw f t<r
+        · rw [lowAdditionWeight,if_pos ⟨hA,hr'⟩]
+          by_cases h2 : Fw f t=m+2
+          · rw [if_pos (show Q t from ⟨h2,he⟩),if_neg (fun hR : R t => by have := hR.1; omega)]
+            omega
+          · have h3 : Fw f t=m+3 := by omega
+            rw [if_neg (fun hQ : Q t => h2 hQ.1),if_pos (show R t from ⟨h3,he⟩)]
+            omega
+        · rw [lowAdditionWeight,if_neg (fun h => hr' h.2)]
+          by_cases hQ : Q t <;> by_cases hR : R t <;> simp [hQ,hR]
+      · rw [if_pos (show P t from ⟨hA,he⟩),if_neg (fun hQ : Q t => he hQ.2),
+          if_neg (fun hR : R t => he hR.2)]
+        by_cases hz : Z t
+        · have h := hz.1
+          rw [if_pos hz,if_neg (fun hy : Y t => by have := hy.1; omega)]
+          by_cases hr' : Fw f t<r
+          · rw [lowAdditionWeight,if_pos ⟨hA,hr'⟩]; omega
+          · rw [lowAdditionWeight,if_neg (fun h => hr' h.2)]; omega
+        · rw [if_neg hz]
+          by_cases hy : Y t
+          · have h := hy.1
+            rw [if_pos hy]
+            by_cases hr' : Fw f t<r
+            · rw [lowAdditionWeight,if_pos ⟨hA,hr'⟩]; omega
+            · rw [lowAdditionWeight,if_neg (fun h => hr' h.2)]; omega
+          · rw [if_neg hy]
+            by_cases hr' : Fw f t<r
+            · rw [lowAdditionWeight,if_pos ⟨hA,hr'⟩]; omega
+            · rw [lowAdditionWeight,if_neg (fun h => hr' h.2)]; omega
+    · rw [lowAdditionWeight,if_neg (fun h => hA h.1),if_neg (fun hp : P t => hA hp.1),
+        if_neg (fun hq : Q t => hA hq.2.1),if_neg (fun hR : R t => hA hR.2.1),
+        if_neg (fun hz : Z t => hA hz.2),if_neg (fun hy : Y t => hA hy.2.1)]
+      omega)
+  have hL : cN (fun t => P t ∧ Fw f t≤m+1) n K=cN L n K := by
+    apply cN_congr
+    intro t _ _
+    exact And.comm
+  have hY : cN (fun t => P t ∧ ¬Fw f t≤m+1) n K=cN Y n K := by
+    apply cN_congr
+    intro t _ _
+    exact ⟨fun h => ⟨by have := h.2; omega,h.1⟩,fun h => ⟨h.2,by have := h.1; omega⟩⟩
+  have hp := cN_split P (fun t => Fw f t≤m+1) n K
+  rw [hL,hY] at hp
+  change free f n K = cN L n K+cN Y n K at hp
+  have h2 := floor_supply_pair_charge f n a K m hw hpre hfloor
+  have h3 := next_height_supply_count f n a K m hw hpre hfloor
+  change 2*cN Q n K≤cN L n K at h2
+  change cN R n K≤cN L n K at h3
+  change lowAdditionWeights f n r K+2*(cN Z n K : Int)+5*(cN Y n K : Int)≤
+    8*(free f n K : Int)+3*(cN Q n K : Int) ∧ 2*cN Q n K+cN Y n K≤free f n K
+  change lowAdditionWeights f n r K+2*(cN Z n K : Int)+4*(cN Y n K : Int)≤
+    7*(free f n K : Int)+3*(cN Q n K : Int)+(cN R n K : Int) at hW
+  exact ⟨by omega,by omega⟩
+
+/-- A depth-six positive counter with gap six has every original free
+addition on the bottom two levels. Gaps four and five have at most one
+free addition above those levels. -/
+theorem positive_depth_six_counter_high_free (f : Nat → Bool) (n a b j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))
+    (hcounter : free f n (b-n)≤j) :
+    cN (fun t => Fw f n-4≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n (b-n)≤
+      (if j=6 then 0 else 1) := by
+  obtain ⟨hf,h4,_,ht,_⟩ := positive_depth_six_counter_profile f n a b j hw hpre
+    hnb hfloor hpos hS he hcounter
+  have h6 := positive_depth_six_counter_gap_le_six f n a b j hw hpre hnb hfloor hpos hS he hcounter
+  let m := Fw f n-6
+  have hit : ∃ q, n≤q ∧ q≤b ∧ Fw f q=m := by
+    by_cases h : ∃ q, n≤q ∧ q≤b ∧ Fw f q=m
+    · exact h
+    · have hg := positive_full_depth_five_free_gap f n a b j hw hpre hnb (by
+        intro i hi hib
+        have hh := hfloor i hi hib
+        by_cases hEq : Fw f i=m
+        · exact (h ⟨i,hi,hib,hEq⟩).elim
+        · dsimp [m] at hEq
+          omega) hpos hS he
+      omega
+  obtain ⟨q,hqn,hqb,hqF⟩ := hit
+  have hdown := fw_false_run f b j hS
+  have hb : m+2≤Fw f b := by dsimp [m]; omega
+  obtain ⟨z,hqz,hzb,hzF,hzA⟩ := ivt f b (m+2) hb (b-q) q (by omega) (by omega)
+  have hzCount : 1≤cN (fun t => Fw f t=m+1 ∧ f t=true) n (b-n) := by
+    by_cases h : 1≤cN (fun t => Fw f t=m+1 ∧ f t=true) n (b-n)
+    · exact h
+    · exact (not_of_cN_zero (fun t => Fw f t=m+1 ∧ f t=true) n (b-n)
+        (by omega) z (by omega) (by omega) ⟨by omega,hzA⟩).elim
+  have hs := supplied_gap_square_low_additions f n a b j hw hpre hnb hS he
+  obtain ⟨hW,hE⟩ := low_weights_saving_at_high_free f n a (b-n) m (Fw f (b+j)-1) hw hpre
+    (fun i hi hj => hfloor i hi (by omega)) (by dsimp [m]; omega)
+  have hH : cN (fun t => Fw f n-4≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n (b-n)=
+      cN (fun t => m+2≤Fw f t ∧ f t=true ∧ ¬EndN f 0 t) n (b-n) := by
+    apply cN_congr
+    intro t _ _
+    dsimp [m]
+    omega
+  rw [hH]
+  rcases (show j=4 ∨ j=5 ∨ j=6 by omega) with rfl | rfl | rfl
+  · change (25 : Int)≤_ at hs
+    simp only [Nat.reduceEqDiff,if_false]
+    omega
+  · change (36 : Int)≤_ at hs
+    simp only [Nat.reduceEqDiff,if_false]
+    omega
+  · change (49 : Int)≤_ at hs
+    simp only [if_true]
+    omega
+
+end Recaman.DepthSixFreeLocation

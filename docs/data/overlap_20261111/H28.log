@@ -1,0 +1,47 @@
+Recaman/HeightWidthFourGap.lean:6:35: error: unknown namespace `Recaman.NextHeightSupplyCharge`
+Recaman/HeightWidthFourGap.lean:20:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (fun i => EndN f 0 i ∧ Fw f i = m + 2) n K + cN (fun i => EndN f 0 i ∧ ¬Fw f i = m + 2) n K
+in the target expression
+  cN (EndN f 0) n K = cN P n K + cN Q n K
+
+f : Nat → Bool
+n a K : Nat
+m : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hstrip : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i ∧ Fw f i ≤ m + 4
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+P : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 3 ∧ EndN f 0 t
+⊢ cN (EndN f 0) n K = cN P n K + cN Q n K
+Recaman/HeightWidthFourGap.lean:41:13: error(lean.unknownIdentifier): Unknown identifier `floor_supply_pair_charge`
+Recaman/HeightWidthFourGap.lean:15:38: error: unsolved goals
+f : Nat → Bool
+n a K : Nat
+m : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hstrip : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i ∧ Fw f i ≤ m + 4
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+P : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 3 ∧ EndN f 0 t
+hcount : cN (EndN f 0) n K = cN P n K + cN Q n K
+⊢ 2 * additions f n K ≤ 5 * free f n K
+Recaman/HeightWidthFourGap.lean:64:13: error(lean.unknownIdentifier): Unknown identifier `supplied_after_S_gap_half_bound`
+Recaman/HeightWidthFourGap.lean:58:26: error: unsolved goals
+f : Nat → Bool
+n a b j : Nat
+m : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hstrip : ∀ (i : Nat), n ≤ i → i ≤ b → m ≤ Fw f i ∧ Fw f i ≤ m + 4
+hS : ∀ (t : Nat), b ≤ t → t < b + j → f t = false
+he : EndN f 0 (b + j)
+ha : 2 * additions f n (b - n) ≤ 5 * free f n (b - n)
+hJ : ↑j + m + 2 ≤ Fw f b
+hB : Fw f b ≤ m + 4
+⊢ j + 1 ≤ free f n (b - n)

@@ -4163,3 +4163,109 @@ import Recaman
 #print axioms Recaman.SupplyTrichotomyBudget.trichotomy_budget
 
 #print axioms Recaman.SupplyTrichotomyBudget.zero_other_zero_overlap
+
+#print axioms Recaman.ShortRecordJointCorrection.short_endpoint_excludes_two_records
+
+#print axioms Recaman.ShortRecordJointCorrection.joint_corrections_le_short
+
+#print axioms Recaman.OldZeroMassPhaseTwo.zero_mass_phase_two_prefix
+
+#print axioms Recaman.OldSameLevelShortReturn.old_no_dip_return_shape
+
+#print axioms Recaman.OldSameLevelReturnCount.old_supplies_on_floor_le_two
+
+#print axioms Recaman.OldSameLevelReturnCount.old_floor_return_boundary
+
+#print axioms Recaman.OldReturnOneBelow.old_return_gap_one_below
+
+#print axioms Recaman.OldReturnNearFloorCount.three_old_need_dip
+
+#print axioms Recaman.OldReturnNearFloorCount.old_supplies_near_floor_le_two
+
+#print axioms Recaman.OldReturnNearFloorCount.one_below_order_boundaries
+
+#print axioms Recaman.OldSupplyDowncrossBudget.old_supplies_le_downcross_budget
+
+#print axioms Recaman.OldWindowLocalReplacement.replace_old_window_at_one_below
+
+#print axioms Recaman.FullDepthCommonOldContext.full_floor_supply_origin
+
+#print axioms Recaman.FullDepthCommonOldContext.endable_at_full_depth_two
+
+#print axioms Recaman.FullDepthCommonOldContext.full_depth_four_common_context
+
+#print axioms Recaman.FullDepthCommonOldContext.depth_four_old_context_sharp
+
+#print axioms Recaman.FloorSupplyPotential.actual_floor_supply_downcross
+
+#print axioms Recaman.FloorSupplyDistinctCharge.actual_floor_supply_injection
+
+#print axioms Recaman.FloorSupplyFreeBudget.actual_floor_supply_count
+
+#print axioms Recaman.FloorSupplyFreeBudget.height_width_three_additions_budget
+
+#print axioms Recaman.FloorSupplyFreeBudget.height_width_three_free_gap
+
+#print axioms Recaman.GapTargetHeightBudget.supplied_gap_target_above_floor
+
+#print axioms Recaman.GapTargetHeightBudget.positive_width_five_free_gap
+
+#print axioms Recaman.WidthFourBudgetCounterexample.width_four_breaks_double_free
+
+#print axioms Recaman.LevelTriangleArea.signed_area_with_low_weights
+
+#print axioms Recaman.GapSquareLowAdditions.supplied_gap_square_low_additions
+
+#print axioms Recaman.LowTargetWeightedGap.low_weights_le_six_free
+
+#print axioms Recaman.LowTargetWeightedGap.positive_low_target_free_gap
+
+#print axioms Recaman.LowTargetWeightedGap.positive_terminal_width_eight_free_gap
+
+#print axioms Recaman.LowTargetWeightedGap.positive_full_depth_five_free_gap
+
+#print axioms Recaman.SupplyAreaCrossings.latest_actual_supply_area_crossing
+
+#print axioms Recaman.SupplyAreaCrossings.supply_potential_spacing_after_last_crossing
+
+#print axioms Recaman.NextHeightSupplyCharge.next_height_supply_injection
+
+#print axioms Recaman.NextHeightSupplyCharge.next_height_supply_count
+
+#print axioms Recaman.DepthSixGapResidual.low_weights_le_eleven_free
+
+#print axioms Recaman.DepthSixGapResidual.positive_depth_six_counter_profile
+
+#print axioms Recaman.FloorSupplyPairCharge.floor_supply_pair_charge
+
+#print axioms Recaman.DepthSixPairResidual.low_weights_saving_at_second_floor
+
+#print axioms Recaman.DepthSixPairResidual.positive_depth_six_counter_gap_le_six
+
+#print axioms Recaman.HeightWidthFourGap.height_width_four_additions_budget
+
+#print axioms Recaman.HeightWidthFourGap.height_width_four_free_gap
+
+#print axioms Recaman.DepthSixFreeLocation.low_weights_saving_at_high_free
+
+#print axioms Recaman.DepthSixFreeLocation.positive_depth_six_counter_high_free
+
+#print axioms Recaman.GapSourceDebt.old_gap_square_with_exact_area
+
+#print axioms Recaman.GapSourceDebt.local_gap_square_after_source
+
+#print axioms Recaman.GapSourceDebt.depth_six_gap_six_local_source_before_floor_addition
+
+#print axioms Recaman.SupplyDescentSlots.actual_same_height_supply_slots
+
+#print axioms Recaman.SupplyDescentWeight.descent_slots_exact_weight
+
+#print axioms Recaman.SupplyDescentWeight.same_height_suppliers_le_low_additions
+
+#print axioms Recaman.SupplyHeightWeightBudget.same_height_supply_weight_budget
+
+#print axioms Recaman.SupplyHeightWeightBudget.actual_floor_plus_four_count
+
+#print axioms Recaman.DepthSixSourceClock.gap_six_local_source_clock_two
+
+#print axioms Recaman.DepthSixSourceArea.gap_six_actual_source_area_spectrum

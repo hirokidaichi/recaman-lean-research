@@ -1,0 +1,25 @@
+{
+  "tag": "H26",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FloorSupplyPairCharge.olean",
+    "Recaman/FloorSupplyPairCharge.lean"
+  ],
+  "started_jst": "2026-11-11T07:00:22.000417+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FloorSupplyPairCharge.lean": "168274e72f6947afa6d12d0fcaed36d2ddb815577fc01bef824ad5aee4e0bd32"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "b895150d046f4b770ab8f83e67862e1cffbec5ded6014aaea6d10b1094c40371",
+  "source_tree_sha256": "dca38e5f936dc532466013851349551b9922c28cb7ea4c0cc4ba4413a3acee2b",
+  "source_tree_manifest": "H26-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,90 @@
+import Recaman.GapSourceDebt
+
+namespace Recaman.DepthSixSourceClock
+
+open Recaman.GapSourceDebt Recaman.DepthSixGapResidual Recaman.DepthSixFreeLocation
+open Recaman.FloorSupplyDistinctCharge Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem first_addition_not_supplied (f : Nat → Bool) (n a u : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnu : n≤u) (hS : ∀ i, n≤i → i<u → f i=false) :
+    ¬EndN f 0 u := by
+  have hu := fw_false_run f n (u-n) (fun i hi hj => hS i hi (by omega))
+  rw [show n+(u-n)=u by omega] at hu
+  apply block_prefix_low_clock_not_endable f n a u hw hpre hnu (Fw f u)
+  · intro i hni hiu
+    have hi := fw_false_run f n (i-n) (fun t ht hti => hS t ht (by omega))
+    rw [show n+(i-n)=i by omega] at hi
+    omega
+  · omega
+
+/-- Every local source of the gap-six target in an original depth-six
+positive counter is exactly the second clock after its block boundary.
+All old sources and the preceding source history are retained. -/
+theorem gap_six_local_source_clock_two (f : Nat → Bool) (n a b t : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤6)
+    (hnt : n≤t) (htb : t<b) (hwin : Win f t (b+6-t)) :
+    t=n+2 ∧ (∀ i, n≤i → i<t → f i=false) := by
+  let m := Fw f n-6
+  have hbefore (q : Nat) (hnq : n≤q) (hqb : q<b) (hq : Fw f q=m) (hA : f q=true) : t≤q :=
+    depth_six_gap_six_local_source_before_floor_addition f n a b t q hw hpre hnb hfloor
+      hpos hS he hcounter hnt htb hwin hnq hqb hq hA
+  have hHigh := positive_depth_six_counter_high_free f n a b 6 hw hpre hnb hfloor hpos hS he hcounter
+  simp only [if_true] at hHigh
+  have hnoHigh (q : Nat) (hnq : n≤q) (hqb : q<b)
+      (hq : m+2≤Fw f q) (hA : f q=true) : EndN f 0 q := by
+    by_cases hE : EndN f 0 q
+    · exact hE
+    · have hbad := not_of_cN_zero
+        (fun u => Fw f n-4≤Fw f u ∧ f u=true ∧ ¬EndN f 0 u) n (b-n)
+        (by omega) q hnq (by omega) ⟨by dsimp [m] at hq; omega,hA,hE⟩
+      exact hbad.elim
+  obtain ⟨charge,hcharge,_⟩ := actual_floor_supply_injection f n a (b-n) m hw hpre
+    (fun i hi hj => hfloor i hi (by omega))
+  have hNoLevelTwo (q : Nat) (hnq : n≤q) (hqt : q<t)
+      (hq : Fw f q=m+2) (hA : f q=true) : False := by
+    have hE := hnoHigh q hnq (by omega) (by omega) hA
+    obtain ⟨hcN,hcq,hcF,hcA,_⟩ := hcharge q hnq (by omega) hq hE
+    have hbeforeC := hbefore (charge q) hcN (by omega) hcF hcA
+    omega
+  have htLevel := hwin.2.1
+  rw [show t+(b+6-t)=b+6 by omega] at htLevel
+  obtain ⟨_,_,_,htarget,_⟩ := positive_depth_six_counter_profile f n a b 6 hw hpre
+    hnb hfloor hpos hS he hcounter
+  have htF : Fw f t=m+4 := by dsimp [m]; omega
+  have hAllS : ∀ i, n≤i → i<t → f i=false := by
+    intro i hni hit
+    by_cases hA : f i=true
+    · let P := fun q => n≤q ∧ f q=true
+      obtain ⟨u,hut,hu,hfirst⟩ := first_mark P (t-1) ⟨i,by omega,hni,hA⟩
+      have hnu := hu.1
+      have huA := hu.2
+      have hSbefore (q : Nat) (hnq : n≤q) (hqu : q<u) : f q=false := by
+        cases hq : f q
+        · rfl
+        · exact (hfirst q hqu ⟨hnq,hq⟩).elim
+      have huE := first_addition_not_supplied f n a u hw hpre hnu hSbefore
+      have huLow : Fw f u≤m+1 := by
+        by_cases h : Fw f u≤m+1
+        · exact h
+        · exact (huE (hnoHigh u hnu (by omega) (by omega) huA)).elim
+      have huFloor := hfloor u hnu (by omega)
+      by_cases hFloor : Fw f u=m
+      · have hBefore := hbefore u hnu (by omega) hFloor huA
+        omega
+      · have huF : Fw f u=m+1 := by dsimp [m] at huFloor; dsimp [m]; omega
+        obtain ⟨q,huq,hqt,hqF,hqA⟩ := ivt f t (m+3) (by omega) (t-u) u (by omega) (by omega)
+        exact (hNoLevelTwo q (by omega) hqt (by omega) hqA).elim
+    · cases hi : f i
+      · rfl
+      · exact (hA hi).elim
+  have hwalk := fw_false_run f n (t-n) (fun i hi hj => hAllS i hi (by omega))
+  rw [show n+(t-n)=t by omega] at hwalk
+  refine ⟨by dsimp [m] at htF; omega,hAllS⟩
+
+end Recaman.DepthSixSourceClock

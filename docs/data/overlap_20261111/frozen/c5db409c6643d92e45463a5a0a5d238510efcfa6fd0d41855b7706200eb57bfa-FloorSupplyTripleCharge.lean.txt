@@ -1,0 +1,208 @@
+import Recaman.SupplyAreaCrossings
+import Recaman.FloorSupplyFreeBudget
+
+namespace Recaman.FloorSupplyTripleCharge
+
+open Recaman.SupplyAreaCrossings Recaman.FloorSupplyPotential Recaman.FloorSupplyFreeBudget
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private def floorA (f : Nat → Bool) (m : Int) (i : Nat) : Prop :=
+  Fw f i=m ∧ f i=true
+
+private noncomputable def slotRank (f : Nat → Bool) (n : Nat) (m : Int) (t : Nat) : Nat :=
+  cN (floorA f m) n (t-n)+2*cN (floorA f (m+1)) n (t-n)
+
+private theorem slot_rank_split (f : Nat → Bool) (n q u : Nat) (m : Int)
+    (hn : n≤q) (hqu : q≤u) :
+    slotRank f n m u=slotRank f n m q+cN (floorA f m) q (u-q)+
+      2*cN (floorA f (m+1)) q (u-q) := by
+  unfold slotRank
+  have h0 := cN_add (floorA f m) n (q-n) (u-q)
+  have h1 := cN_add (floorA f (m+1)) n (q-n) (u-q)
+  rw [show q-n+(u-q)=u-n by omega,show n+(q-n)=q by omega] at h0 h1
+  omega
+
+private theorem count_has_mark (P : Nat → Prop) (a b t : Nat)
+    (hat : a≤t) (htb : t<b) (hP : P t) : 1≤cN P a (b-a) := by
+  by_cases h : 1≤cN P a (b-a)
+  · exact h
+  · exact (not_of_cN_zero P a (b-a) (by omega) t hat (by omega) hP).elim
+
+private theorem floor_position_is_A (f : Nat → Bool) (q : Nat) (m : Int)
+    (hF : Fw f q=m) (hn : m≤Fw f (q+1)) : floorA f m q := by
+  refine ⟨hF,?_⟩
+  rcases fw_cases f q with ⟨_,ha⟩ | ⟨hs,_⟩
+  · exact ha
+  · omega
+
+private theorem potential_drop_between_floor_visits (f : Nat → Bool)
+    (n a b : Nat) (m : Int) (hna : n≤a) (hab : a≤b)
+    (ha : Fw f a=m) (hb : Fw f b=m)
+    (hstrip : ∀ i, a≤i → i≤b → m≤Fw f i ∧ Fw f i≤m+1) :
+    floorPotential f n m a-floorPotential f n m b=(cN (floorA f m) a (b-a) : Int) := by
+  let p := floorPotential f n m
+  have hg (K : Nat) (hK : a+K≤b) :
+      p a-Fw f a-(p (a+K)-Fw f (a+K))=(cN (floorA f m) a K : Int) := by
+    induction K with
+    | zero => simp [cN]
+    | succ k ih =>
+      have hh := ih (by omega)
+      have hs := floor_potential_step f n (a+k) m (by omega)
+      change p (a+k+1)=p (a+k)+Fw f (a+k+1)-(m+1) at hs
+      rw [show a+k+1=a+(k+1) by omega] at hs
+      have hF := hstrip (a+k) (by omega) (by omega)
+      by_cases hl : Fw f (a+k)=m
+      · have hA := floor_position_is_A f (a+k) m hl
+          (hstrip (a+k+1) (by omega) (by omega)).1
+        rw [cN_succ_pos _ _ _ hA]
+        omega
+      · rw [cN_succ_neg _ _ _ (fun h => hl h.1)]
+        omega
+  have h := hg (b-a) (by omega)
+  rw [show a+(b-a)=b by omega,ha,hb] at h
+  omega
+
+private theorem earliest_exit (f : Nat → Bool) (q t : Nat) (m : Int)
+    (hqt : q<t) (hq : Fw f q=m) (ht : Fw f t=m+2) :
+    ∃ d, q≤d ∧ d<t ∧ floorA f (m+1) d ∧
+      ∀ i, q≤i → i<d → ¬floorA f (m+1) i := by
+  let P := fun i => q≤i ∧ floorA f (m+1) i
+  obtain ⟨i,hqi,hit,hiF,hiA⟩ := ivt f t (m+2) (by omega) (t-q) q (by omega) (by omega)
+  obtain ⟨d,hdt,hd,hfirst⟩ := first_mark P (t-1)
+    ⟨i,by omega,⟨hqi,by omega,hiA⟩⟩
+  exact ⟨d,hd.1,by omega,hd.2,fun i hqi hid hi => hfirst i hid ⟨hqi,hi⟩⟩
+
+private theorem slot_rank_spacing (f : Nat → Bool) (n q u d e : Nat) (m : Int)
+    (hn : n≤q) (hqu : q<u)
+    (hq : floorA f m q) (hu : floorA f m u)
+    (hqd : q≤d) (hue : u≤e)
+    (hd : floorA f (m+1) d) (he : floorA f (m+1) e)
+    (hfirst : ∀ i, q≤i → i<d → ¬floorA f (m+1) i)
+    (hsecond : ∀ i, u≤i → i<e → ¬floorA f (m+1) i)
+    (hfloor : ∀ i, q≤i → i≤u → m≤Fw f i)
+    (hsep : d=e → floorPotential f n m u+3≤floorPotential f n m q) :
+    slotRank f n m q+3≤slotRank f n m u := by
+  have hsplit := slot_rank_split f n q u m hn (by omega)
+  by_cases heq : d=e
+  · have hU : u≤d := by omega
+    have hstrip (i : Nat) (hqi : q≤i) (hiu : i≤u) : m≤Fw f i ∧ Fw f i≤m+1 := by
+      refine ⟨hfloor i hqi hiu,?_⟩
+      by_cases hh : Fw f i≤m+1
+      · exact hh
+      · obtain ⟨j,hqj,hji,hF,hA⟩ := ivt f i (m+2) (by omega) (i-q) q
+          (by omega) (by have := hq.1; omega)
+        exact (hfirst j hqj (by omega) ⟨by omega,hA⟩).elim
+    have ha := potential_drop_between_floor_visits f n q u m hn (by omega) hq.1 hu.1 hstrip
+    have hp := hsep heq
+    omega
+  · have hdu : d<u := by
+      by_cases h : d<u
+      · exact h
+      · have h1 : d≤e := by
+          by_cases hde : d≤e
+          · exact hde
+          · exact (hfirst e (by omega) (by omega) he).elim
+        have h2 : e≤d := by
+          by_cases hed : e≤d
+          · exact hed
+          · exact (hsecond d (by omega) (by omega) hd).elim
+        exact (heq (by omega)).elim
+    have h0 := count_has_mark (floorA f m) q u q (by omega) hqu hq
+    have h1 := count_has_mark (floorA f (m+1)) q u d hqd hdu hd
+    omega
+
+/-- Each floor-plus-two supplied addition pays three distinct rank slots:
+one for each floor addition and two for each floor-plus-one addition.
+The actual early exit and potential spacing prevent reuse. -/
+theorem floor_supply_triple_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    3*cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤
+      cN (fun t => Fw f t=m ∧ f t=true) n K+
+        2*cN (fun t => Fw f t=m+1 ∧ f t=true) n K := by
+  classical
+  let P := fun t => Fw f t=m+2 ∧ EndN f 0 t
+  let R := slotRank f n m (n+K)
+  let p := floorPotential f n m
+  have hex (t : Nat) (ht : n≤t ∧ t<n+K ∧ P t) :
+      ∃ q d, n<q ∧ q<t ∧ floorA f m q ∧ p q=p t-1 ∧
+        (∀ i, q<i → i<t → ¬areaCrossesDown p (p t) i) ∧
+        q≤d ∧ d<t ∧ floorA f (m+1) d ∧
+        ∀ i, q≤i → i<d → ¬floorA f (m+1) i := by
+    obtain ⟨hnt,htK,htF,htE⟩ := ht
+    obtain ⟨q,hqn,hqt,hqF,hQ,hafter⟩ :=
+      latest_actual_supply_area_crossing f n a t (m+1) hw hpre hnt (by omega) htE
+    have hm : m+1-1=m := by omega
+    rw [hm] at hQ hafter
+    have hmin := hfloor q (by omega) (by omega)
+    have hF : Fw f q=m := by omega
+    have hA := floor_position_is_A f q m hF (hfloor (q+1) (by omega) (by omega))
+    have hstep := floor_potential_step f n (q-1) m (by omega)
+    rw [show q-1+1=q by omega,hF] at hstep
+    change p q=p (q-1)+m-(m+1) at hstep
+    have h1 : p q<p t := hQ.1
+    have h2 : p t≤p (q-1) := hQ.2
+    obtain ⟨d,hqd,hdt,hd,hfirst⟩ := earliest_exit f q t m hqt hF htF
+    exact ⟨q,d,hqn,hqt,hA,by omega,hafter,hqd,hdt,hd,hfirst⟩
+  let Q := fun t => n≤t ∧ t<n+K ∧ P t
+  let q := fun t => if h : Q t then Classical.choose (hex t h) else n
+  let d := fun t => if h : Q t then Classical.choose (Classical.choose_spec (hex t h)) else n
+  have hdata (t : Nat) (ht : Q t) :
+      n<q t ∧ q t<t ∧ floorA f m (q t) ∧ p (q t)=p t-1 ∧
+        (∀ i, q t<i → i<t → ¬areaCrossesDown p (p t) i) ∧
+        q t≤d t ∧ d t<t ∧ floorA f (m+1) (d t) ∧
+        ∀ i, q t≤i → i<d t → ¬floorA f (m+1) i := by
+    simp only [q,d,dif_pos ht]
+    exact Classical.choose_spec (Classical.choose_spec (hex t ht))
+  have hcount : cN P n K≤(List.range (R/3)).length := by
+    apply count_le_of_list_injection P n K (List.range (R/3))
+      (fun t => slotRank f n m (q t)/3)
+    · intro t hnt htK ht
+      obtain ⟨hqn,hqt,hqA,_,_,hqd,hdt,hd,_⟩ := hdata t ⟨hnt,htK,ht⟩
+      have hsplit := slot_rank_split f n (q t) (n+K) m (by omega) (by omega)
+      have h0 := count_has_mark (floorA f m) (q t) (n+K) (q t) (by omega) (by omega) hqA
+      have h1 := count_has_mark (floorA f (m+1)) (q t) (n+K) (d t) hqd (by omega) hd
+      apply List.mem_range.mpr
+      change R=_ at hsplit
+      omega
+    · intro t u hnt htu huK ht hu he
+      obtain ⟨hqnt,hqtt,hqAt,hpt,_,hqdt,hdtt,hdt,hfirst⟩ := hdata t ⟨hnt,by omega,ht⟩
+      obtain ⟨hqnu,hqtu,hqAu,hpu,hafter,hqdu,hdtu,hdu,hsecond⟩ := hdata u ⟨by omega,huK,hu⟩
+      have hspacing (hq : q u≤t) : p t+3≤p u := by
+        have hm : m+1-1=m := by omega
+        have h := supply_potential_spacing_after_last_crossing f n t u (q u) (m+1)
+          hnt htu hq (by have := ht.1; omega) (by have := hu.1; omega) ht.2.1 (by rwa [hm])
+        rwa [hm] at h
+      rcases Nat.lt_trichotomy (q t) (q u) with hlt | heq | hgt
+      · have hs := slot_rank_spacing f n (q t) (q u) (d t) (d u) m (by omega) hlt
+          hqAt hqAu hqdt hqdu hdt hdu hfirst hsecond
+          (fun i hi hj => hfloor i (by omega) (by omega)) (by
+            intro hh
+            have hsp := hspacing (by omega)
+            have hstep := potential_drop_between_floor_visits f n (q t) (q u) m
+              (by omega) (by omega) hqAt.1 hqAu.1 (by
+                intro i hi hj
+                refine ⟨hfloor i (by omega) (by omega),?_⟩
+                by_cases h : Fw f i≤m+1
+                · exact h
+                · obtain ⟨v,hv1,hv2,hvF,hvA⟩ := ivt f i (m+2) (by omega) (i-q t) (q t)
+                    (by omega) (by have := hqAt.1; omega)
+                  exact (hfirst v hv1 (by omega) ⟨by omega,hvA⟩).elim)
+            change p (q t)-p (q u)=_ at hstep
+            omega)
+        omega
+      · have hsp := hspacing (by omega)
+        rw [heq] at hpt
+        omega
+      · have hs := slot_rank_spacing f n (q u) (q t) (d u) (d t) m (by omega) hgt
+          hqAu hqAt hqdu hqdt hdu hdt hsecond hfirst
+          (fun i hi hj => hfloor i (by omega) (by omega)) (by
+            intro _
+            have hsp := hspacing (by omega)
+            omega)
+        omega
+  rw [List.length_range] at hcount
+  change 3*cN P n K≤R
+  omega
+
+end Recaman.FloorSupplyTripleCharge

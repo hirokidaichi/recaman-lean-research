@@ -1,0 +1,124 @@
+Recaman/LowTargetWeightedGap.lean:14:7: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (P t)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/LowTargetWeightedGap.lean:14:30: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (Q t)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/LowTargetWeightedGap.lean:67:4: error: unsolved goals
+case pos
+f : Nat → Bool
+n a K : Nat
+m r : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+hr : r ≤ m + 3
+P : Nat → Prop := fun t => f t = true ∧ ¬EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+t : Nat
+hnt : n ≤ t
+htK : t < n + K
+hmin : m ≤ Fw f t
+hA : ¬(f t = true ∧ Fw f t < r)
+hp : P t
+hq : Q t
+⊢ 0 ≤ sorry () + sorry ()
+
+case neg
+f : Nat → Bool
+n a K : Nat
+m r : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+hr : r ≤ m + 3
+P : Nat → Prop := fun t => f t = true ∧ ¬EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+t : Nat
+hnt : n ≤ t
+htK : t < n + K
+hmin : m ≤ Fw f t
+hA : ¬(f t = true ∧ Fw f t < r)
+hp : P t
+hq : ¬Q t
+⊢ 0 ≤ sorry () + sorry ()
+
+case pos
+f : Nat → Bool
+n a K : Nat
+m r : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+hr : r ≤ m + 3
+P : Nat → Prop := fun t => f t = true ∧ ¬EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+t : Nat
+hnt : n ≤ t
+htK : t < n + K
+hmin : m ≤ Fw f t
+hA : ¬(f t = true ∧ Fw f t < r)
+hp : ¬P t
+hq : Q t
+⊢ 0 ≤ sorry () + sorry ()
+
+case neg
+f : Nat → Bool
+n a K : Nat
+m r : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ n + K → m ≤ Fw f i
+hr : r ≤ m + 3
+P : Nat → Prop := fun t => f t = true ∧ ¬EndN f 0 t
+Q : Nat → Prop := fun t => Fw f t = m + 2 ∧ EndN f 0 t
+t : Nat
+hnt : n ≤ t
+htK : t < n + K
+hmin : m ≤ Fw f t
+hA : ¬(f t = true ∧ Fw f t < r)
+hp : ¬P t
+hq : ¬Q t
+⊢ 0 ≤ sorry () + sorry ()
+Recaman/LowTargetWeightedGap.lean:68:56: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/LowTargetWeightedGap.lean:68:59: warning: This simp argument is unused:
+  hq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/LowTargetWeightedGap.lean:99:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  o ≥ 0
+  l - p ≥ 0
+  k ≥ 0
+  i ≥ 4
+  i - k ≤ 0
+  6*i - l ≥ 0
+  e - g ≥ -4
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := m
+ g := Fw f (b + j)
+ i := ↑(free f n (b - n))
+ k := ↑j
+ l := lowAdditionWeights f n (Fw f (b + j) - 1) (b - n)
+ o := (↑j - 4) * ↑j
+ p := (↑j + 1) ^ 2

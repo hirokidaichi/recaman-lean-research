@@ -1,0 +1,32 @@
+Recaman/SupplyHeightWeightBudget.lean:34:50: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  c ≥ 0
+  b ≥ 0
+  b ≥ 0
+  b ≤ 0
+where
+ b := ↑K
+ c := ↑(cN P n d)
+ e := ↑n
+Recaman/SupplyHeightWeightBudget.lean:39:63: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  c - g ≥ 0
+  b ≥ 0
+  b ≥ 0
+where
+ b := ↑K
+ c := r
+ e := ↑(n + d - 1)
+ g := Fw f (n + (n + d - 1 - n))
+Recaman/SupplyHeightWeightBudget.lean:39:74: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c - e ≥ 0
+  b ≥ 0
+  b ≥ 0
+  b ≤ 0
+where
+ b := ↑K
+ c := r
+ e := Fw f (n + (n + d - 1 - n))

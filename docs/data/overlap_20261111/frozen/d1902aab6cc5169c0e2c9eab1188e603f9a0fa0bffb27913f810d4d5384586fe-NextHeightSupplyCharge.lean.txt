@@ -1,0 +1,141 @@
+import Recaman.SupplyAreaCrossings
+import Recaman.FloorSupplyFreeBudget
+
+namespace Recaman.NextHeightSupplyCharge
+
+open Recaman.SupplyAreaCrossings Recaman.FloorSupplyPotential Recaman.FloorSupplyFreeBudget
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private def sourceBucket (f : Nat → Bool) (n : Nat) (m : Int) (t q d : Nat) : Prop :=
+  let p := floorPotential f n (m+1)
+  (Fw f d=m ∧ q≤d+1 ∧ p d≤p t ∧ p t≤p d+2) ∨
+  (Fw f d=m+1 ∧ q≤d ∧ Fw f q=m+1 ∧ Fw f (q-1)=m+2 ∧ p (q-1)=p t ∧
+    ∀ i, q≤i → i<d → ¬(Fw f i=m+1 ∧ f i=true))
+
+private theorem charge_crossing_to_low_A (f : Nat → Bool) (n t q : Nat) (m : Int)
+    (hnq : n<q) (hqt : q<t) (hF : Fw f q<m+2) (htop : Fw f t=m+3)
+    (hfloor : ∀ i, n≤i → i≤t → m≤Fw f i)
+    (hcross : areaCrossesDown (floorPotential f n (m+1))
+      (floorPotential f n (m+1) t) q) :
+    ∃ d, n≤d ∧ d<t ∧ f d=true ∧ sourceBucket f n m t q d := by
+  let p := floorPotential f n (m+1)
+  have hlo := hfloor q (by omega) (by omega)
+  have hstep := floor_potential_step f n (q-1) (m+1) (by omega)
+  rw [show q-1+1=q by omega] at hstep
+  change p q=p (q-1)+Fw f q-(m+1+1) at hstep
+  have hV : p q<p t := hcross.1
+  have hU : p t≤p (q-1) := hcross.2
+  by_cases hm : Fw f q=m
+  · have ha : f q=true := by
+      have hp := hfloor (q+1) (by omega) (by omega)
+      rcases fw_cases f q with ⟨_,h⟩ | ⟨h,_⟩
+      · exact h
+      · omega
+    refine ⟨q,by omega,hqt,ha,Or.inl ⟨hm,by omega,?_,?_⟩⟩ <;> omega
+  · have h1 : Fw f q=m+1 := by omega
+    rcases fw_cases f (q-1) with ⟨hA,hs⟩ | ⟨hS,_⟩
+    · rw [show q-1+1=q by omega] at hA
+      refine ⟨q-1,by omega,by omega,hs,Or.inl ⟨by omega,by omega,?_,?_⟩⟩ <;> omega
+    · rw [show q-1+1=q by omega] at hS
+      let P := fun i => q≤i ∧ Fw f i=m+1 ∧ f i=true
+      obtain ⟨d0,hq0,hd0,hF0,hdA⟩ := ivt f t (m+2) (by omega) (t-q) q (by omega) (by omega)
+      obtain ⟨d,hd,hm0,hfirst⟩ := first_mark P (t-1) ⟨d0,by omega,by exact ⟨hq0,by omega,hdA⟩⟩
+      refine ⟨d,by have := hm0.1; omega,by omega,hm0.2.2,
+        Or.inr ⟨hm0.2.1,hm0.1,h1,by omega,by omega,?_⟩⟩
+      intro i hqi hid hi
+      exact hfirst i hid ⟨hqi,hi⟩
+
+/-- The floor-plus-three supplies, without any ceiling, inject into
+original free additions at the bottom two levels. A floor arrival and
+its immediately following exit share one three-value area interval. -/
+theorem next_height_supply_injection (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    ∃ d : Nat → Nat,
+      (∀ t, n≤t → t<n+K → Fw f t=m+3 → EndN f 0 t →
+        n≤d t ∧ d t<t ∧ Fw f (d t)≤m+1 ∧ f (d t)=true ∧ ¬EndN f 0 (d t)) ∧
+      (∀ t u, n≤t → t<u → u<n+K → Fw f t=m+3 → Fw f u=m+3 →
+        EndN f 0 t → EndN f 0 u → d t≠d u) := by
+  classical
+  let p := floorPotential f n (m+1)
+  let P := fun t => n≤t ∧ t<n+K ∧ Fw f t=m+3 ∧ EndN f 0 t
+  have hex (t : Nat) (ht : P t) :
+      ∃ q d, n<q ∧ q<t ∧ (∀ j, q<j → j<t → ¬areaCrossesDown p (p t) j) ∧
+        n≤d ∧ d<t ∧ f d=true ∧ sourceBucket f n m t q d := by
+    obtain ⟨hnt,htK,hH,he⟩ := ht
+    obtain ⟨q,hqn,hqt,hF,hcross,hafter⟩ :=
+      latest_actual_supply_area_crossing f n a t (m+2) hw hpre hnt (by omega) he
+    have hp : m+2-1=m+1 := by omega
+    rw [hp] at hcross hafter
+    obtain ⟨d,hdn,hdt,hdA,hbucket⟩ := charge_crossing_to_low_A f n t q m hqn hqt hF hH
+      (fun i hi hj => hfloor i hi (by omega)) hcross
+    exact ⟨q,d,hqn,hqt,hafter,hdn,hdt,hdA,hbucket⟩
+  let q := fun t => if h : P t then Classical.choose (hex t h) else n
+  let d := fun t => if h : P t then Classical.choose (Classical.choose_spec (hex t h)) else n
+  have hdata (t : Nat) (ht : P t) :
+      n<q t ∧ q t<t ∧ (∀ j, q t<j → j<t → ¬areaCrossesDown p (p t) j) ∧
+        n≤d t ∧ d t<t ∧ f (d t)=true ∧ sourceBucket f n m t (q t) (d t) := by
+    simp only [q,d,dif_pos ht]
+    exact Classical.choose_spec (Classical.choose_spec (hex t ht))
+  refine ⟨d,?_,?_⟩
+  · intro t hnt htK htop he
+    obtain ⟨_,_,_,hdn,hdt,hdA,hbucket⟩ := hdata t ⟨hnt,htK,htop,he⟩
+    have hdF : Fw f (d t)≤m+1 := by
+      rcases hbucket with hh | hh
+      · have := hh.1
+        omega
+      · have := hh.1
+        omega
+    exact ⟨hdn,hdt,hdF,hdA,block_prefix_low_clock_not_endable f n a (d t) hw hpre hdn m
+      (fun i hi hj => hfloor i hi (by omega)) hdF⟩
+  · intro t u hnt htu huK htH huH htE huE heq
+    obtain ⟨hqn,hqt,_,_,hdt,_,ht⟩ := hdata t ⟨hnt,by omega,htH,htE⟩
+    obtain ⟨hunq,huqt,hafter,_,_,_,hu⟩ := hdata u ⟨by omega,huK,huH,huE⟩
+    rw [←heq] at hu
+    have spaced (hqu : q u≤t) : p t+3≤p u := by
+      have hh : m+2-1=m+1 := by omega
+      have h := supply_potential_spacing_after_last_crossing f n t u (q u) (m+2)
+        hnt htu hqu (by omega) (by omega) htE.1 (by rwa [hh])
+      rwa [hh] at h
+    rcases ht with ht | ht <;> rcases hu with hu | hu
+    · obtain ⟨_,_,ht1,ht2⟩ := ht
+      obtain ⟨_,huq,hu1,hu2⟩ := hu
+      have hh := spaced (by omega)
+      change p (d t)≤p t at ht1
+      change p u≤p (d t)+2 at hu2
+      omega
+    · have h1 := ht.1
+      have h2 := hu.1
+      omega
+    · have h1 := ht.1
+      have h2 := hu.1
+      omega
+    · obtain ⟨_,hqd,hqtLevel,hqprev,hpT,hfirstT⟩ := ht
+      obtain ⟨_,huqd,hquLevel,huprev,hpU,hfirstU⟩ := hu
+      rcases Nat.lt_trichotomy (q t) (q u) with hlt | hsame | hgt
+      · obtain ⟨i,hiq,hib,hiF,hiA⟩ := ivt f (q u-1) (m+2) (by omega)
+          (q u-1-q t) (q t) (by omega) (by omega)
+        exact hfirstT i hiq (by omega) ⟨by omega,hiA⟩
+      · rw [hsame] at hpT
+        have hs := spaced (by omega)
+        change p (q u-1)=p t at hpT
+        change p (q u-1)=p u at hpU
+        omega
+      · obtain ⟨i,hiq,hib,hiF,hiA⟩ := ivt f (q t-1) (m+2) (by omega)
+          (q t-1-q u) (q u) (by omega) (by omega)
+        exact hfirstU i hiq (by omega) ⟨by omega,hiA⟩
+
+theorem next_height_supply_count (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    cN (fun t => Fw f t=m+3 ∧ EndN f 0 t) n K≤
+      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+  obtain ⟨d,hd,hi⟩ := next_height_supply_injection f n a K m hw hpre hfloor
+  apply count_le_of_interval_injection _ _ n K d
+  · intro t hnt htK ht
+    obtain ⟨hn,ht',hF,hA,hE⟩ := hd t hnt htK ht.1 ht.2
+    exact ⟨hn,by omega,hF,hA,hE⟩
+  · intro t u hnt htu huK ht hu
+    exact hi t u hnt htu huK ht.1 hu.1 ht.2 hu.2
+
+end Recaman.NextHeightSupplyCharge

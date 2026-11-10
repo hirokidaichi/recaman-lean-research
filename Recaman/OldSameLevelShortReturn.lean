@@ -1,0 +1,141 @@
+import Recaman.OldZeroMassPhaseTwo
+
+namespace Recaman.OldSameLevelShortReturn
+
+open Recaman.BlockSameMassSpan Recaman.BlockSuffixPositivity Recaman.OldZeroMassPhaseTwo
+open Recaman.SingleWindowEquality Recaman.LeadingRunSupply Recaman.CapacityEqualityInduction
+open Recaman.ShortPeriodicSupply
+
+private theorem win_phase (f : Nat → Bool) (t b : Nat) (htb : t≤b)
+    (h : Win f t (b-t)) : (b-t)%4=3 := by
+  let e : Int → Bool := fun x => f x.toNat
+  let v := past e ((t+(b-t) : Nat) : Int) (b-t)
+  have hb := past_bridge e 0 t (b-t)
+  simp only [Int.zero_add,e,Int.toNat_natCast] at hb
+  change mass v = Fw f (t+(b-t))-Fw f t ∧ moment v=Ar f t (b-t) at hb
+  have hm := h.2.1
+  have hP : P2 v := ⟨by rw [hb.1,hm]; omega, hb.2.trans h.2.2⟩
+  have hp := p2_count_identities v hP
+  have hl : v.length=b-t := by simp [v,past]
+  rw [hl] at hp
+  omega
+
+private theorem old_segment_phase (f : Nat → Bool) (n t u : Nat)
+    (hw : BlockWord (seg f 0 n)) (htu : t≤u) (hu : u≤n)
+    (hlevel : Fw f t=Fw f u) (hphase : (u-t)%4=2) :
+    seg f t (u-t)=[true,false] ∨ seg f t (u-t)=[false,true] ∨
+      seg f t (u-t)=[false,true,true,true,false,false] := by
+  have hdt : (seg f 0 n).drop t=seg f t (n-t) := by
+    simpa only [Nat.zero_add] using seg_drop f 0 n t (by omega)
+  have hSuffix : BlockWord (seg f t (n-t)) := by
+    rw [←hdt]
+    exact block_suffix hw _ _ (List.take_append_drop t _)
+  have htake : (seg f t (n-t)).take (u-t)=seg f t (u-t) :=
+    seg_take f t (n-t) (u-t) (by omega)
+  have hm : mass (seg f t (u-t))=0 := by
+    rw [seg_mass,show t+(u-t)=u by omega,←hlevel,Int.sub_self]
+  have hp := zero_mass_phase_two_prefix _ hSuffix (u-t)
+  rw [htake,seg_length] at hp
+  exact hp hm hphase
+
+private theorem positive_first_area (f : Nat → Bool) (b : Nat) (hA : f b=true) :
+    ∀ k, (∀ i, i≤k+1 → Fw f b≤Fw f (b+i)) → 1≤Ar f b (k+1) := by
+  intro k
+  induction k with
+  | zero =>
+    intro _
+    have hf : Fw f (b+1)=Fw f b+1 := by
+      rcases fw_cases f b with ⟨h,_⟩ | ⟨_,h⟩
+      · exact h
+      · simp [hA] at h
+    rw [Ar_succ,show b+0+1=b+1 by omega,hf]
+    simp only [Ar]
+    omega
+  | succ k ih =>
+    intro h
+    have hh := ih (fun i hi => h i (by omega))
+    have hl := h (k+1+1) (by omega)
+    rw [Ar_succ,show b+(k+1)+1=b+(k+1+1) by omega]
+    omega
+
+/-- For two old sources at the same height, a return with no intervening
+drop is exactly AS and shifts the old origin by six through SAAASS. -/
+theorem old_no_dip_return_shape (f : Nat → Bool) (n a t u b c : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hu : u<n) (hnb : n≤b) (hbc : b<c)
+    (hwb : Win f t (b-t)) (hwc : Win f u (c-u)) (hlevel : Fw f b=Fw f c)
+    (hA : f b=true) (hfloor : ∀ i, i≤c-b → Fw f b≤Fw f (b+i)) :
+    c=b+2 ∧ u=t+6 ∧ f (b+1)=false ∧
+      seg f t 6=[false,true,true,true,false,false] := by
+  have hft := hwb.2.1
+  have hfu := hwc.2.1
+  rw [show t+(b-t)=b by omega] at hft
+  rw [show u+(c-u)=c by omega] at hfu
+  have hsame : Fw f t=Fw f u := by omega
+  have hold := same_level_old_window_areas f n a t u b c hw hpre ht hu hnb
+    (by omega) hwb hwc hlevel
+  have hs := area_split_at f n b c hnb (by omega)
+  have hlen : ((c-n : Nat) : Int)=((b-n : Nat) : Int)+((c-b : Nat) : Int) := by omega
+  rw [hlen,Int.add_mul,hs,hlevel] at hold
+  have he :
+      ((c-b : Nat) : Int)*(Fw f n-Fw f c+1)
+        + ((c-b : Nat) : Int)*(Fw f c-Fw f n) = (c-b : Nat) := by
+    rw [←Int.mul_add, show Fw f n-Fw f c+1+(Fw f c-Fw f n)=1 by omega,Int.mul_one]
+  have hband : Ar f b (c-b)+(c-b : Nat)≤4 := by omega
+  have hArea := positive_first_area f b hA (c-b-1)
+  rw [show c-b-1+1=c-b by omega] at hArea
+  have hArea := hArea hfloor
+  have hpar := mass_eq (seg f b (c-b))
+  rw [seg_length,seg_mass,show b+(c-b)=c by omega,←hlevel] at hpar
+  have hgap : c=b+2 := by omega
+  have hfirst : Fw f (b+1)=Fw f b+1 := by
+    rcases fw_cases f b with ⟨h,_⟩ | ⟨_,h⟩
+    · exact h
+    · simp [hA] at h
+  have hS : f (b+1)=false := by
+    rcases fw_cases f (b+1) with ⟨h,_⟩ | ⟨_,h⟩
+    · rw [show b+1+1=c by omega,←hlevel,hfirst] at h
+      omega
+    · exact h
+  have hFuture : Ar f b (c-b)=1 := by
+    rw [show c-b=2 by omega,Ar2,hfirst,show b+2=c by omega,←hlevel]
+    omega
+  have hFull : BlockWord (seg f 0 n) := by
+    rw [hpre]
+    exact block_append hw (block_replicate_A a)
+  have hmod1 := win_phase f t b (by omega) hwb
+  have hmod2 := win_phase f u c (by omega) hwc
+  have hspan := area_split_at f t b c (by omega) (by omega)
+  rw [hwb.2.2,hFuture,show Fw f b-Fw f t=1 by omega,Int.mul_one] at hspan
+  have htArea : Ar f t (c-t)=3 := by omega
+  by_cases htu : t≤u
+  · have hsplit := area_split_at f t u c htu (by omega)
+    rw [htArea,hwc.2.2,←hsame,Int.sub_self,Int.mul_zero] at hsplit
+    have hm : (u-t)%4=2 := by omega
+    have hcand := old_segment_phase f n t u hFull htu (by omega) hsame hm
+    rw [Ar_areaW] at hsplit
+    rcases hcand with h | h | h
+    · rw [h,show areaW [true,false]=1 by decide] at hsplit
+      omega
+    · rw [h,show areaW [false,true]= -1 by decide] at hsplit
+      omega
+    · have hl := congrArg List.length h
+      rw [seg_length] at hl
+      change u-t=6 at hl
+      have hu' : u=t+6 := by omega
+      rw [show u-t=6 by omega] at h
+      exact ⟨hgap,hu',hS,h⟩
+  · have hsplit := area_split_at f u t c (by omega) (by omega)
+    rw [hwc.2.2,htArea,hsame,Int.sub_self,Int.mul_zero] at hsplit
+    have hm : (t-u)%4=2 := by omega
+    have hcand := old_segment_phase f n u t hFull (by omega) (by omega) hsame.symm hm
+    rw [Ar_areaW] at hsplit
+    rcases hcand with h | h | h
+    · rw [h,show areaW [true,false]=1 by decide] at hsplit
+      omega
+    · rw [h,show areaW [false,true]= -1 by decide] at hsplit
+      omega
+    · rw [h,show areaW [false,true,true,true,false,false]=3 by decide] at hsplit
+      omega
+
+end Recaman.OldSameLevelShortReturn

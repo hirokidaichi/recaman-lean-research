@@ -1,0 +1,70 @@
+import Recaman.BlockSameMassSpan
+
+namespace Recaman.OldSameLevelStepBudget
+
+open Recaman.BlockSameMassSpan Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.LeadingRunSupply
+
+/-- For two old windows landing at the same level, the intervening area's
+deviation from minus its length is bounded by the original old area span. -/
+theorem old_same_level_step_budget (f : Nat → Bool) (n a t u b c : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hu : u<n) (hnb : n≤b) (hbc : b≤c)
+    (hwb : Win f t (b-t)) (hwc : Win f u (c-u)) (hlevel : Fw f b=Fw f c) :
+    -4≤Ar f b (c-b)+(c-b : Nat) ∧ Ar f b (c-b)+(c-b : Nat)≤4 := by
+  have hOld := same_level_old_window_areas f n a t u b c hw hpre ht hu hnb
+    (by omega) hwb hwc hlevel
+  have hs := area_split_at f n b c hnb hbc
+  have hlen : ((c-n : Nat) : Int) = (b-n : Nat)+(c-b : Nat) := by omega
+  rw [hlen,Int.add_mul,hs,hlevel] at hOld
+  have he :
+      ((c-b : Nat) : Int)*(Fw f n-Fw f c+1)
+        + ((c-b : Nat) : Int)*(Fw f c-Fw f n) = (c-b : Nat) := by
+    rw [←Int.mul_add, show Fw f n-Fw f c+1+(Fw f c-Fw f n)=1 by omega,Int.mul_one]
+  omega
+
+/-- If an old supplied addition is followed by a same-height old supplied
+position without falling below that level, the return consists of A then S. -/
+theorem no_dip_old_return_two (f : Nat → Bool) (n a t u b c : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hu : u<n) (hnb : n≤b) (hbc : b<c)
+    (hwb : Win f t (b-t)) (hwc : Win f u (c-u)) (hlevel : Fw f b=Fw f c)
+    (hA : f b=true) (hfloor : ∀ i, i≤c-b → Fw f b≤Fw f (b+i)) :
+    c=b+2 ∧ f (b+1)=false := by
+  have hband := old_same_level_step_budget f n a t u b c hw hpre ht hu hnb
+    (by omega) hwb hwc hlevel
+  have hfirst : Fw f (b+1)=Fw f b+1 := by
+    rw [Fw_succ,hA]
+    rfl
+  have hAreaAux : ∀ k, k+1≤c-b → 1≤Ar f b (k+1) := by
+    intro k
+    induction k with
+    | zero =>
+      intro _
+      rw [Ar_succ,show b+0+1=b+1 by omega,hfirst]
+      simp [Ar]
+    | succ k ih =>
+      intro hk
+      have hi := ih (by omega)
+      have hf := hfloor (k+1+1) hk
+      rw [Ar_succ,show b+(k+1)+1=b+(k+1+1) by omega]
+      omega
+  have hArea := hAreaAux (c-b-1) (by omega)
+  rw [show c-b-1+1=c-b by omega] at hArea
+  have hlen := seg_length f b (c-b)
+  have hmass := seg_mass f b (c-b)
+  rw [show b+(c-b)=c by omega,←hlevel] at hmass
+  have hpar := mass_eq (seg f b (c-b))
+  rw [hlen,hmass] at hpar
+  have hgap : c=b+2 := by omega
+  refine ⟨hgap,?_⟩
+  have hstep := Fw_succ f (b+1)
+  rw [show b+1+1=c by omega,←hlevel,hfirst] at hstep
+  cases hh : f (b+1) with
+  | false => rfl
+  | true =>
+    rw [hh] at hstep
+    change Fw f b=Fw f b+1+1 at hstep
+    omega
+
+end Recaman.OldSameLevelStepBudget

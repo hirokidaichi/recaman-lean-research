@@ -1,0 +1,25 @@
+{
+  "tag": "H15R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FloorSupplyFreeBudget.olean",
+    "Recaman/FloorSupplyFreeBudget.lean"
+  ],
+  "started_jst": "2026-11-11T06:32:31.528436+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FloorSupplyFreeBudget.lean": "4f266003de13ccd12ff50fb6adfb83193a8146fa30361862d9d8d8803baa6bf4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "e5975a002df8d80e0fd515e5fb4e5ee20c077cf955bd17386230a33fa94592e2",
+  "source_tree_sha256": "88225671802139bc05fe17661bb36312293f5fb2695507094b30710146ad4c02",
+  "source_tree_manifest": "H15R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

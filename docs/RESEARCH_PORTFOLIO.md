@@ -588,3 +588,11 @@ H02一般順位の元count接続、H03の全energy候補、H23の低cross列挙�
 E629逆順はF9まで、Q36のE636は同元旧<=1だけ。Q36長局所には独立したactual source pruningと測定改善が必要。E632の全d word/free0はLean、E631固定例以外の全d absolute正性・両元EndNの接着は紙上。E640の局所clock≡1はLean、初回A断片mod3強化は紙上のまま。
 
 E641が全A3族の第一A交互を、E642が短三Aとrecord二Aの非重複をREFUTED。いずれもC1反例ではない。E643の補正を先に扱い、元短/recordの個別課金を単純に加えない。旧r4同表二回0/0等はそのまま保持し、日付で再開しない。
+
+## 2026-11-11 高さ別sourceと面積
+
+短record補正B+C≤Lの新edgeで全体無変化0。全old/全runの元高さ・面積へ切替え、全深さ5の元正不足free-gapと、深さ6の実j4/5/6残余を供給。E676/E677はj6の局所source n+2と同target面積三値。幅4のA≤2freeは元実5/2でREFUTED、係数付き2A≤5freeで元gapを維持。全高E674は元供給を低Aへ支払う。低Aを全高の無重みfreeへ同時課金する問題は残る。
+
+当日H02/Rのrecord前身輸送、H03/Rの旧同高初期面積、H10/Rの全床旧mass接着、H25/Rの三順位charge、H38/Rの幾何会計元cN輸送は一修理後STOPPED。未受理bytesは11/11 packet .lean.txtへ隔離しroot/Audit未採用。H38の係数だけH37受理でも全会計E675はPAPER。再開条件は、それぞれ独立数学source剪定又は小さい完全certificateと同512MBでの測定改善。資源・tactic・split・import移動だけでは再開しない。
+
+E655のD4四代表は旧E380の端点半径11とは全途中条件が異なる。r4同表12837/40024の二回0/0、旧H06/133core、H21/I25、旧八head/R19/R7R11/cold512等のSTOPは日付resetせず保持。元Aをfreeへ置換しない。幾何重み会計は無重み件数の一般不等式ではなく、一般C1への昇格には追加source順序入力が要る。

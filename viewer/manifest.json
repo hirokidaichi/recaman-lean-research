@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4165,
+   "lines": 4271,
    "imports": [
     "SupplyTrichotomyBudget",
     "RecordOverlapShiftBounds",
@@ -27883,6 +27883,113 @@
    "hasReport": false
   },
   {
+   "name": "DepthSixFreeLocation",
+   "lines": 176,
+   "imports": [
+    "DepthSixPairResidual"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_saving_at_high_free",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_counter_high_free",
+     "line": 122
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixGapResidual",
+   "lines": 117,
+   "imports": [
+    "LowTargetWeightedGap",
+    "NextHeightSupplyCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_eleven_free",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_counter_profile",
+     "line": 76
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixPairResidual",
+   "lines": 143,
+   "imports": [
+    "DepthSixGapResidual",
+    "FloorSupplyPairCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_saving_at_second_floor",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_counter_gap_le_six",
+     "line": 94
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixSourceArea",
+   "lines": 84,
+   "imports": [
+    "DepthSixSourceClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_six_actual_source_area_spectrum",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixSourceClock",
+   "lines": 90,
+   "imports": [
+    "GapSourceDebt"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_six_local_source_clock_two",
+     "line": 25
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DescendingChain",
    "lines": 198,
    "imports": [
@@ -30710,6 +30817,121 @@
    "hasReport": false
   },
   {
+   "name": "FloorSupplyDistinctCharge",
+   "lines": 80,
+   "imports": [
+    "FloorSupplyPotential"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_floor_supply_injection",
+     "line": 37
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FloorSupplyFreeBudget",
+   "lines": 134,
+   "imports": [
+    "FloorSupplyDistinctCharge",
+    "AdditionRankSlack",
+    "SuffixHallOwnerMap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "count_le_of_list_injection",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "count_le_of_interval_injection",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_supply_count",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "height_width_three_additions_budget",
+     "line": 86
+    },
+    {
+     "kind": "theorem",
+     "name": "height_width_three_free_gap",
+     "line": 122
+    }
+   ],
+   "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FloorSupplyPairCharge",
+   "lines": 201,
+   "imports": [
+    "SupplyAreaCrossings",
+    "FloorSupplyFreeBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "floor_supply_pair_charge",
+     "line": 66
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FloorSupplyPotential",
+   "lines": 103,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "floorPotential",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_step",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_downcross",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "supply_potential_anchor",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_supply_downcross",
+     "line": 88
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ForcedCandidateReuseBalance",
    "lines": 112,
    "imports": [
@@ -32226,6 +32448,40 @@
    "hasReport": false
   },
   {
+   "name": "FullDepthCommonOldContext",
+   "lines": 118,
+   "imports": [
+    "OldWindowLocalReplacement",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "full_floor_supply_origin",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "endable_at_full_depth_two",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "full_depth_four_common_context",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "depth_four_old_context_sharp",
+     "line": 100
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "GapFiveClockReduction",
    "lines": 74,
    "imports": [
@@ -32315,6 +32571,80 @@
      "kind": "theorem",
      "name": "last_pair_budget",
      "line": 57
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapSourceDebt",
+   "lines": 102,
+   "imports": [
+    "DepthSixFreeLocation"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_gap_square_with_exact_area",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "local_gap_square_after_source",
+     "line": 35
+    },
+    {
+     "kind": "theorem",
+     "name": "depth_six_gap_six_local_source_before_floor_addition",
+     "line": 65
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapSquareLowAdditions",
+   "lines": 141,
+   "imports": [
+    "LevelTriangleArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_square_from_area_debt",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "supplied_gap_square_low_additions",
+     "line": 125
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "GapTargetHeightBudget",
+   "lines": 56,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "supplied_gap_target_above_floor",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_width_five_free_gap",
+     "line": 41
     }
    ],
    "theorems": 2,
@@ -32925,6 +33255,31 @@
      "kind": "theorem",
      "name": "head_unit_pair_eight",
      "line": 41
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeightWidthFourGap",
+   "lines": 73,
+   "imports": [
+    "FloorSupplyPairCharge",
+    "GapTargetHeightBudget",
+    "NextHeightSupplyCharge"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "height_width_four_additions_budget",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "height_width_four_free_gap",
+     "line": 58
     }
    ],
    "theorems": 2,
@@ -37046,6 +37401,69 @@
    "hasReport": false
   },
   {
+   "name": "LevelTriangleArea",
+   "lines": 116,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "aboveTriangle",
+     "line": 7
+    },
+    {
+     "kind": "def",
+     "name": "belowTriangle",
+     "line": 10
+    },
+    {
+     "kind": "def",
+     "name": "lowAdditionWeight",
+     "line": 13
+    },
+    {
+     "kind": "def",
+     "name": "lowAdditionWeights",
+     "line": 16
+    },
+    {
+     "kind": "def",
+     "name": "areaFromLevel",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "area_from_level_succ",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weight_nonnegative",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_nonnegative",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_append",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "signed_area_with_low_weights",
+     "line": 103
+    }
+   ],
+   "theorems": 5,
+   "defs": 5,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "LevelTwoThree",
    "lines": 138,
    "imports": [
@@ -38159,6 +38577,41 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowTargetWeightedGap",
+   "lines": 139,
+   "imports": [
+    "GapSquareLowAdditions",
+    "FloorSupplyFreeBudget",
+    "GapTargetHeightBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_six_free",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_low_target_free_gap",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_terminal_width_eight_free_gap",
+     "line": 104
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_full_depth_five_free_gap",
+     "line": 122
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -41405,6 +41858,30 @@
    "hasReport": false
   },
   {
+   "name": "NextHeightSupplyCharge",
+   "lines": 142,
+   "imports": [
+    "SupplyAreaCrossings",
+    "FloorSupplyFreeBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "next_height_supply_injection",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "next_height_supply_count",
+     "line": 129
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "NoDoubleAdditionRun",
    "lines": 54,
    "imports": [
@@ -42915,6 +43392,100 @@
    "hasReport": false
   },
   {
+   "name": "OldReturnNearFloorCount",
+   "lines": 116,
+   "imports": [
+    "OldReturnOneBelow",
+    "OldSameLevelReturnCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "count_le_two_of_no_ordered_triple",
+     "line": 20
+    },
+    {
+     "kind": "theorem",
+     "name": "three_old_need_dip",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "old_supplies_near_floor_le_two",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "one_below_order_boundaries",
+     "line": 99
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldReturnOneBelow",
+   "lines": 105,
+   "imports": [
+    "BlockSameMassSpan"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_return_gap_one_below",
+     "line": 45
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSameLevelReturnCount",
+   "lines": 73,
+   "imports": [
+    "OldSameLevelShortReturn",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_supplies_on_floor_le_two",
+     "line": 21
+    },
+    {
+     "kind": "theorem",
+     "name": "old_floor_return_boundary",
+     "line": 60
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSameLevelShortReturn",
+   "lines": 141,
+   "imports": [
+    "OldZeroMassPhaseTwo"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_no_dip_return_shape",
+     "line": 63
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "OldSeedActualGap",
    "lines": 121,
    "imports": [
@@ -43088,6 +43659,24 @@
     }
    ],
    "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldSupplyDowncrossBudget",
+   "lines": 71,
+   "imports": [
+    "OldReturnNearFloorCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_supplies_le_downcross_budget",
+     "line": 31
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -43530,6 +44119,24 @@
    "hasReport": false
   },
   {
+   "name": "OldWindowLocalReplacement",
+   "lines": 63,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "replace_old_window_at_one_below",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "OldZeroInitialSource",
    "lines": 163,
    "imports": [
@@ -43564,6 +44171,24 @@
      "kind": "theorem",
      "name": "old_zero_target_last_five",
      "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldZeroMassPhaseTwo",
+   "lines": 83,
+   "imports": [
+    "BlockSameMassSpan"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "zero_mass_phase_two_prefix",
+     "line": 70
     }
    ],
    "theorems": 1,
@@ -57605,6 +58230,29 @@
    "hasReport": false
   },
   {
+   "name": "ShortRecordJointCorrection",
+   "lines": 67,
+   "imports": [
+    "RecordOverlapShiftBounds"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_endpoint_excludes_two_records",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_corrections_le_short",
+     "line": 28
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ShortRecordOverlapBudget",
    "lines": 447,
    "imports": [
@@ -59652,6 +60300,116 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "SupplyAreaCrossings",
+   "lines": 97,
+   "imports": [
+    "FloorSupplyPotential"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "areaCrossesDown",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "downcross_from_end_values",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "latest_actual_supply_area_crossing",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "supply_potential_spacing_after_last_crossing",
+     "line": 69
+    }
+   ],
+   "theorems": 3,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SupplyDescentSlots",
+   "lines": 82,
+   "imports": [
+    "FloorSupplyFreeBudget",
+    "SupplyAreaCrossings"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "descentSlots",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "crossing_mem_descent_slots",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_same_height_supply_slots",
+     "line": 49
+    }
+   ],
+   "theorems": 2,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SupplyDescentWeight",
+   "lines": 80,
+   "imports": [
+    "SupplyDescentSlots",
+    "LevelTriangleArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "descent_slots_exact_weight",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_suppliers_le_low_additions",
+     "line": 65
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SupplyHeightWeightBudget",
+   "lines": 62,
+   "imports": [
+    "SupplyDescentWeight",
+    "LowTargetWeightedGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_weight_budget",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_plus_four_count",
+     "line": 50
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -68038,6 +68796,25 @@
    "hasReport": false
   },
   {
+   "name": "WidthFourBudgetCounterexample",
+   "lines": 75,
+   "imports": [
+    "FloorSupplyFreeBudget",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "width_four_breaks_double_free",
+     "line": 41
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "WrapObstruction",
    "lines": 153,
    "imports": [
@@ -68242,6 +69019,6 @@
    "hasReport": false
   }
  ],
- "total": 947,
+ "total": 977,
  "withReport": 167
 }

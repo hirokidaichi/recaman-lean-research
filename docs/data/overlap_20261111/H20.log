@@ -1,0 +1,36 @@
+Recaman/GapSquareLowAdditions.lean:110:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  y - z ≥ 1
+  p - 2*u - 2*v + x ≤ 0
+  2*o + p + 2*t ≥ 0
+  l ≥ 0
+  k ≥ 0
+  i - k - m ≥ 1
+  h ≤ 0
+  g - i + k ≥ -1
+  e ≥ 0
+  e - l ≤ 0
+  d ≥ 0
+  d - e ≤ 0
+  c ≥ 0
+  c - d ≥ 1
+  c - e ≥ 1
+  c - l ≥ 0
+where
+ c := ↑b
+ d := ↑n
+ e := ↑s
+ g := Fw f s
+ h := areaFromLevel f s r (b + j - s)
+ i := Fw f b
+ k := ↑j
+ l := ↑q
+ m := Fw f q
+ o := areaFromLevel f s r (q - s)
+ p := belowTriangle r (Fw f q)
+ t := lowAdditionWeights f s r (q - s)
+ u := areaFromLevel f q r (b - q)
+ v := lowAdditionWeights f q r (b - q)
+ x := aboveTriangle r (Fw f b)
+ y := (↑j + 1) * (↑j + 2)
+ z := (↑j + 1) * (↑j + 1 + 1)

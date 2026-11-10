@@ -1,0 +1,55 @@
+Recaman/OldReturnOneBelow.lean:16:26: error: Type mismatch
+  2 * k + 2
+has type
+  Int
+but is expected to have type
+  Nat
+Recaman/OldReturnOneBelow.lean:16:35: error: Type mismatch
+  2 * k + 2
+has type
+  Int
+but is expected to have type
+  Nat
+Recaman/OldReturnOneBelow.lean:15:17: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HAdd Int Nat Nat
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/OldReturnOneBelow.lean:23:2: error: Invalid alternative name `zero`: Expected `ofNat` or `negSucc`
+Recaman/OldReturnOneBelow.lean:29:2: error: Invalid alternative name `succ`: Expected `ofNat` or `negSucc`
+Recaman/OldReturnOneBelow.lean:22:2: error: Alternative `ofNat` has not been provided
+Recaman/OldReturnOneBelow.lean:22:2: error: Alternative `negSucc` has not been provided
+Recaman/OldReturnOneBelow.lean:65:14: error(lean.unknownIdentifier): Unknown identifier `paired_area`
+Recaman/OldReturnOneBelow.lean:50:70: error: unsolved goals
+f : Nat → Bool
+n a t u b c : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+ht : t < n
+hu : u < n
+hnb : n ≤ b
+hbc : b < c
+hwb : Win f t (b - t)
+hwc : Win f u (c - u)
+hlevel : Fw f b = Fw f c
+hA : f b = true
+hfloor : ∀ (i : Nat), i ≤ c - b → Fw f b - 1 ≤ Fw f (b + i)
+hold :
+  t ≤ u + 6 ∧
+    u ≤ t + 6 ∧
+      -4 ≤
+          Ar f n (b - n) + ↑(b - n) * (Fw f n - Fw f c + 1) -
+            (Ar f n (b - n) + Ar f b (c - b) + ↑(c - b) * (Fw f c - Fw f n) +
+              (↑(b - n) * (Fw f n - Fw f c + 1) + ↑(c - b) * (Fw f n - Fw f c + 1))) ∧
+        Ar f n (b - n) + ↑(b - n) * (Fw f n - Fw f c + 1) -
+            (Ar f n (b - n) + Ar f b (c - b) + ↑(c - b) * (Fw f c - Fw f n) +
+              (↑(b - n) * (Fw f n - Fw f c + 1) + ↑(c - b) * (Fw f n - Fw f c + 1))) ≤
+          4
+hs : Ar f n (c - n) = Ar f n (b - n) + Ar f b (c - b) + ↑(c - b) * (Fw f b - Fw f n)
+hlen : ↑(c - n) = ↑(b - n) + ↑(c - b)
+he : ↑(c - b) * (Fw f n - Fw f c + 1) + ↑(c - b) * (Fw f c - Fw f n) = ↑(c - b)
+hband : Ar f b (c - b) + ↑(c - b) ≤ 4
+hpar : Fw f b - Fw f b = 2 * ones (seg f b (c - b)) - ↑(c - b)
+k : Nat := (c - b - 2) / 2
+hk : 2 * k + 2 = c - b
+⊢ c = b + 2 ∨ c = b + 4 ∧ f (b + 1) = false ∧ f (b + 2) = false ∧ f (b + 3) = true

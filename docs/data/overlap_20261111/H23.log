@@ -1,0 +1,84 @@
+Recaman/NextHeightSupplyCharge.lean:34:62: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g - h ≥ 1
+  0 ≤ d - e ≤ 1
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≤ -1
+where
+ a := ↑q
+ b := ↑n
+ c := ↑t
+ d := p (q - 1)
+ e := p t
+ g := floorPotential f n (m + 1) q
+ h := floorPotential f n (m + 1) t
+Recaman/NextHeightSupplyCharge.lean:34:62: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g - h ≥ 3
+  0 ≤ d - e ≤ 1
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≤ -1
+where
+ a := ↑q
+ b := ↑n
+ c := ↑t
+ d := p (q - 1)
+ e := p t
+ g := floorPotential f n (m + 1) t
+ h := floorPotential f n (m + 1) q
+Recaman/NextHeightSupplyCharge.lean:38:77: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d - e ≥ 1
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≤ -1
+where
+ a := ↑q
+ b := ↑n
+ c := ↑t
+ d := floorPotential f n (m + 1) (q - 1)
+ e := floorPotential f n (m + 1) t
+Recaman/NextHeightSupplyCharge.lean:38:77: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d - e ≥ 3
+  c ≥ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≤ -1
+where
+ a := ↑q
+ b := ↑n
+ c := ↑t
+ d := floorPotential f n (m + 1) t
+ e := floorPotential f n (m + 1) (q - 1)
+Recaman/NextHeightSupplyCharge.lean:44:45: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  h - i ≥ 1
+  g ≥ 0
+  e ≥ 0
+  e - g ≥ 0
+  c ≥ 0
+  c - e ≤ 0
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+  a - c ≤ 0
+  a - e ≤ 0
+  a - g ≤ 0
+where
+ a := ↑q
+ b := ↑n
+ c := ↑d0
+ e := ↑(t - 1)
+ g := ↑d
+ h := floorPotential f n (m + 1) t
+ i := floorPotential f n (m + 1) (q - 1)

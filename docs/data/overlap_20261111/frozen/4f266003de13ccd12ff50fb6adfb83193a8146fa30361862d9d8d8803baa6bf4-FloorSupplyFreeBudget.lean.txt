@@ -1,0 +1,125 @@
+import Recaman.FloorSupplyDistinctCharge
+import Recaman.AdditionRankSlack
+import Recaman.SuffixHallOwnerMap
+
+namespace Recaman.FloorSupplyFreeBudget
+
+open Recaman.FloorSupplyDistinctCharge Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Recaman.AdditionRankSlack Recaman.PrefixMassBarrier Recaman.SuffixHallOwnerMap
+
+private noncomputable def marks (P : Nat → Prop) (n K : Nat) : List Nat :=
+  (List.range K).filter (fun i => @decide (P (n+i)) (Classical.propDecidable _))
+
+private theorem mem_marks (P : Nat → Prop) (n K i : Nat) :
+    i∈marks P n K ↔ i<K ∧ P (n+i) := by
+  simp [marks]
+
+private theorem count_eq_marks_length (P : Nat → Prop) (n : Nat) :
+    ∀ K, cN P n K=(marks P n K).length
+  | 0 => rfl
+  | k+1 => by
+    have ih := count_eq_marks_length P n k
+    by_cases h : P (n+k)
+    · rw [cN_succ_pos P n k h,ih]
+      simp [marks,List.range_succ,List.filter_append,h]
+    · rw [cN_succ_neg P n k h,ih]
+      simp [marks,List.range_succ,List.filter_append,h]
+
+private theorem count_le_of_interval_injection (P Q : Nat → Prop) (n K : Nat)
+    (q : Nat → Nat)
+    (hMap : ∀ t, n≤t → t<n+K → P t → n≤q t ∧ q t<n+K ∧ Q (q t))
+    (hInj : ∀ t u, n≤t → t<u → u<n+K → P t → P u → q t≠q u) :
+    cN P n K≤cN Q n K := by
+  let g := fun i => q (n+i)-n
+  have hdata (i : Nat) (hi : i∈marks P n K) :
+      i<K ∧ P (n+i) ∧ n≤q (n+i) ∧ q (n+i)<n+K ∧ Q (q (n+i)) := by
+    obtain ⟨hi,hpi⟩ := (mem_marks P n K i).mp hi
+    exact ⟨hi,hpi,hMap (n+i) (by omega) (by omega) hpi⟩
+  have hn : (marks P n K).Nodup := List.nodup_range.filter _
+  have hmapN := nodup_map_of_inj (marks P n K) g hn (by
+    intro i hi j hj he
+    obtain ⟨hil,hip,hiQ,_,_⟩ := hdata i hi
+    obtain ⟨hjl,hjp,hjQ,_,_⟩ := hdata j hj
+    have hq : q (n+i)=q (n+j) := by dsimp [g] at he; omega
+    rcases Nat.lt_trichotomy i j with hlt | heq | hgt
+    · exact (hInj (n+i) (n+j) (by omega) (by omega) (by omega) hip hjp hq).elim
+    · exact heq
+    · exact (hInj (n+j) (n+i) (by omega) (by omega) (by omega) hjp hip hq.symm).elim)
+  have hsub : (marks P n K).map g ⊆ marks Q n K := by
+    intro i hi
+    obtain ⟨t,ht,rfl⟩ := List.mem_map.mp hi
+    obtain ⟨_,_,hlo,hhi,hq⟩ := hdata t ht
+    apply (mem_marks Q n K _).mpr
+    refine ⟨by dsimp [g]; omega,?_⟩
+    rw [show n+g t=q (n+t) by dsimp [g]; omega]
+    exact hq
+  have hl := hmapN.length_le_of_subset hsub
+  simpa only [List.length_map,←count_eq_marks_length] using hl
+
+/-- Count the actual supplies at floor plus two against actual free
+additions at the original floor. The walk may rise arbitrarily high. -/
+theorem actual_floor_supply_count (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤
+      cN (fun t => Fw f t=m ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+  obtain ⟨q,hq,hi⟩ := actual_floor_supply_injection f n a K m hw hpre hfloor
+  apply count_le_of_interval_injection _ _ n K q
+  · intro t hnt htt ht
+    obtain ⟨hn,ht',hF,hA,hE⟩ := hq t hnt htt ht.1 ht.2
+    exact ⟨hn,by omega,hF,hA,hE⟩
+  · intro t u hnt htu hut ht hu
+    exact hi t u hnt htu hut ht.1 hu.1 ht.2 hu.2
+
+/-- A walk confined to three height units has at least as many original
+free additions as supplied additions, with no bound on its run count. -/
+theorem height_width_three_additions_budget (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hstrip : ∀ i, n≤i → i≤n+K → m≤Fw f i ∧ Fw f i≤m+3) :
+    additions f n K≤2*free f n K := by
+  have hfloor (i : Nat) (hni : n≤i) (hiK : i≤n+K) := (hstrip i hni hiK).1
+  have hcount := actual_floor_supply_count f n a K m hw hpre hfloor
+  have hsup : cN (EndN f 0) n K =
+      cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K := by
+    apply cN_congr
+    intro t hnt htt
+    constructor
+    · intro he
+      have hlow : m+2≤Fw f t := by
+        by_cases h : m+2≤Fw f t
+        · exact h
+        · exact (block_prefix_low_clock_not_endable f n a t hw hpre hnt m
+            (fun i hi hj => hfloor i hi (by omega)) (by omega) he).elim
+      have hhigh : Fw f t≤m+2 := by
+        have hup := (hstrip (t+1) (by omega) (by omega)).2
+        rcases fw_cases f t with ⟨h,_⟩ | ⟨_,h⟩
+        · omega
+        · rw [he.1] at h
+          cases h
+      exact ⟨by omega,he⟩
+    · exact And.right
+  have hmono :
+      cN (fun t => Fw f t=m ∧ f t=true ∧ ¬EndN f 0 t) n K≤free f n K := by
+    apply cN_mono
+    intro t _ _ ht
+    exact ht.2
+  have hsum := additions_split f n K
+  omega
+
+/-- With a padded block prefix and a three-unit strip for the whole
+preceding tail, an actual supplier after j subtractions needs j+1 free
+additions. The final gap is not assumed to stay in the strip. -/
+theorem height_width_three_free_gap (f : Nat → Bool) (n a b j : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hstrip : ∀ i, n≤i → i≤b → m≤Fw f i ∧ Fw f i≤m+3)
+    (hS : ∀ t, b≤t → t<b+j → f t=false) (he : EndN f 0 (b+j)) :
+    j+1≤free f n (b-n) := by
+  have ha := height_width_three_additions_budget f n a (b-n) m hw hpre
+    (fun i hi hj => hstrip i hi (by omega))
+  have hj := supplied_after_S_gap_half_bound f n a b j hw hpre hnb hS he
+  rw [ones_seg_eq_count] at hj
+  change 2*(j : Int)+2≤(additions f n (b-n) : Int) at hj
+  omega
+
+end Recaman.FloorSupplyFreeBudget

@@ -1,8 +1,16 @@
 # Current research frontier
 
-最終更新: 2026-11-10。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-11。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
+
+- **E-663 / E-669 PROVED-LEAN**。元padded BlockWord後、全run・正不足・全途中深さ5なら元free-gap。途中上昇は無制限。別に全途中幅4なら正不足不要で元gap。一般深さ・C1/Q/H/SL/全射性は未証明。
+- **E-668 / E-670 / E-671 / E-676 / E-677 PROVED-LEAN**。深さ6counterはj=free∈{4,5,6}。j6の全freeは底二段、局所sourceはn+2、同targetの元面積は−3/−2/1。全old/source以前prefixを保持。三値にも無限履歴が残る。
+- **E-655 / E-662 / E-674 PROVED-LEAN**。全途中D4の共通旧文脈4代表、同sourceの平方と旧面積負債、任意高さ・全長の元同高供給≤低A奇数重み。元Aをfreeへ置換しない。旧r4表は再実行しない。
+- **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
+- 次の一問はH-20261112-01。同じ深さ6/j6actual targetの旧面積3/2・局所n+2を元時計順序で排除又はstrict削減する。11/11 DAILY末尾と高さ面積noteを読む。
+
+## 11/10までの要約
 
 - **E-637 / E-638 / E-639 PROVED-LEAN**。任意runの元実供給を、区間内SAAのある短供給と残りOに分ける。元padded BlockWordで実gapの反例にはj+4<=3Oが必要。残りOは旧源又は高Sを持ち、厳密な不足新最低だけは高Sを再使用せず数えられる。
 
@@ -66,7 +74,7 @@
 
 ## 次の一問
 
-[H-20261110-01](HYPOTHESIS_CARD_2026-11-10_FORWARD_SOURCE_TEMPORAL_FREE.md): 元actual ordered primitive source/free2からA5/d1/F1と時間順profileを内部供給し、E618のSAAS free producerへ接続して元free>=3へ進められるか。E616/E619 PAPERやfree/head結論を新Prop仮定にしない。H49/H50の旧weighted sourceは再実行せず、source-conditioned temporal pruningという独立入力を得る。q2 fullgapとkernel last3接着はPAPER/STOPPEDを保持し、H27/H32/H34をtactic/resource/splitだけで再開しない。
+[H-20261112-01](HYPOTHESIS_CARD_2026-11-12_DEPTH_SIX_SOURCE_AREA.md)。11/11 DAILY末尾→高さ面積note→同カード。同元padded前史/正不足/全深さ6のj6counterから、局所source n+2又は旧面積3/2の同target familyを元freeとclock順序で共同排除する。最初15分で新source edge/strict削減/補助反例がなければ、j4/5の源前後25分と全高重みの無重み化条件20分へ切替える。source以前prefixをresetせず、H38/R停止実装をそのまま再実行しない。
 
 ## 停止と証拠の境界
 
@@ -74,7 +82,7 @@
 
 未解決: 初期S/第一A/第二S残余2以上の局所対象（q1はE604 PROVED-LEAN）、一般四run/任意run/rank/C1/Q/H/SL/全射性。E-388 COMPUTED/E-404 CONJECTURED/E-384存在方向未Lean・人間レビュー未。r3 kernel countへの依存は維持し、未検証r4表/E384に依存しない。
 
-数学worker未起動/予算0。個別Leanはcurrent bytes/source-tree hash、-j1-M512、10CPU per-process/20wall。tree累積CPU/OS AS capではない。全check/G5/Audit/lint/briefを同期し、元p/P2/actual countを保持する。日次validated snapshotのmain通常pushは継続承認済み。
+11/11数学workerはguard検証後に凍結8CPU秒枠で起動し実測0.952710秒、翌日は0から。個別Leanはcurrent bytes/source-tree hash、-j1-M512、10CPU per-process/20wall。tree累積CPU/OS AS capではない。全check/G5/Audit/lint/briefを同期し、元p/P2/actual countを保持する。日次validated snapshotのmain通常pushは継続承認済み。
 
 以下は継承した過去の証拠・訂正の記録であり、現在の次の一問は上記を優先する。
 
@@ -1052,3 +1060,48 @@ E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新so
 - E-644 PROVED-LEAN。E-643の重複補正を任意の元履歴・始点・長さでLean形式化。3*cN(shortEndpoint)+2*cN(localRecord)<=additions+B+2C。Bは直前位置が短端点のrecord、Cは区間内直後が短端点のrecordで、covered<=additionsをstrong inductionの四境界場合で輸送。B/C個別の上界・非record供給・C1は未。
 - E-645 PROVED-LEAN。E-644の補正項BとCの個別上界をLean化。B<=L, C<=Lは短端点へのt↦t-1, t↦t+1の単射で示す（`RecordOverlapShiftBounds.lean`のcN_shift_pred/succ）。合成で2R<=Aが別経路で得られる。
 - E-646 PROVED-LEAN。供給の三分類と低減予算をLean化（`SupplyTrichotomyBudget.lean`）。cN_split二回とcN_congrで cN(EndN)=L+R+O、additions=free+L+R+O の精密分割を示し、E-644予算から 2L+R<=free+O+B+2C を導く。O=B=C=0なら 2L+R<=free。O自身の上界は未証明。
+
+### 2026-11-11 元供給の高さと面積
+
+- E-647 PROVED-LEAN。短端点の左右に局所非短strict recordは同居できない。元高Sの位置が短端点Aと衝突するため、両補正B+C≤L。Oの一般上界は未証明。
+- E-648/E-649/E-650/E-651/E-652/E-653 PROVED-LEAN。旧zero-mass phase2はAS/SA/SAAASS。旧Win二件が同高Hで途中H−1を割らなければ未来AS/ASSAに絞る。無降下ASでは旧始点+6。三件にはH−2以下が必要。元実SのH−1→H−2をDとすると任意区間の同高旧供給≤2+2D。元actual境界により2/4時計と旧順序両向きを保持。E650個数はE652に包含。
+- E-654/E-655 PROVED-LEAN。旧始点高さ−1を割らない尾部では、旧面積の初回負直前に元局所Winがある。全途中深さDなら供給を局所または旧mass≤D−2で保存。D2は旧不要。D4は共通旧代表[]/A/AA/SAAA、元EndNを双方向保存。過去4符号が必要な元例。端点だけの深さ条件と区別。r4全表は再実行せず、全r4のdepth/C1/Q未証明。
+- E-656/E-657/E-658 PROVED-LEAN。元padded BlockWord後の床mで、元高さm+2の供給は旧・局所を問わず元高さmのfreeへ単射。基準m+1の面積が下がる最後の時刻を使う。任意run/全oldで尾部の高さがm..m+3ならA≤2free、続く実j S後の供給ならfree≥j+1。最後のS-gap自体に幅制約なし。幅4以上と一般C1、標準全射性は未証明。人間レビュー未。
+
+- **E-659 PROVED-LEAN** 同元padded BlockWord後の前尾部全床m、後続j個Sの実EndNなら端点≥m+2かつj≤Fw(b)−m−2。元正不足と終端b≤m+5なら任意runのfullgap。途中天井不要。 元正不足付き幅5の帰結はE663の幅8に包含。元target床は独立入力。
+
+- **E-660 REFUTED** 元BlockWord SAAA後のSSSSAAAASAで幅4・全prefix正不足・実A5/free2。元実供給時刻10/11/13をkernel確認しA≤2freeを反証。 元free-gapやC1の反例ではない。E669の係数付き上限の等号例。
+
+- **E-661 PROVED-LEAN** 任意元符号f・始点・長さ・基準高さ。負面積を低い各元Aの奇数重み2(r−h)−1と下側三角差で補正し、正の部分が上側三角の増分以上。 元旧前史の条件は不要。元gapへの消費はE662。
+
+- **E-662 PROVED-LEAN** 元padded BlockWordと任意混合run、j個S後の元実EndNから(j+1)^2≤W。Wは前尾部の実Aを基準r=実target高さ−1未満で奇数重み付けした和。旧・局所源を内部取得。床・天井・正不足なし。 実Aの重みを元freeで払うには高さ別制御が必要。C1全体は未証明。
+
+- **E-663 PROVED-LEAN** 全床mと元padded BlockWord。基準r≤m+3でW≤6free。元正不足と実target≤m+4又は終端b≤m+8又は全途中深さ≤5で、任意run元fullgap。終端以外の上昇は無制限。 全深さ6以上、より高い実target、一般C1は未解決。E659の幅5帰結を包含。
+
+- **E-664 PROVED-LEAN** 元padded BlockWord後の全高さの実供給で、元供給高さ−1基準の累積面積の最新下降を元区間内に供給。同高供給で後者の最新下降が先行供給以前なら元面積値差≥3。 異なる供給高さ間で像の共有は起こり得る。任意高さの一般償却は未証明。
+
+- **E-665 PROVED-LEAN** 元padded BlockWord後の全床mと任意run。高さm+3の各元実EndNを元時刻の下二段のfreeへ単射し、実計数を上から抑える。各旧履歴・任意上昇を保持。 E657の別高さの像と単純に足せない。E660の反例を保持。
+
+- **E-666 PROVED-LEAN** 元全床m、基準r≤m+4でW≤11free。元正不足と全途中深さ≤6の任意runで、実反例なら4≤j=free≤8、終端不足1、実target高さ=境界−1。 E668が帯を4〜6へ縮める。深さ6の元fullgapと一般C1は未証明。
+
+- **E-667 PROVED-LEAN** 元padded BlockWord、全床mの任意長区間で、床+2の各元実供給に下二段の実freeを2件。最新床下降qと直後の床A又は最初の出口Aの二像が全供給間で非重複。 順位3のH25/Rには依存しない。別高さとの像重複は許す。
+
+- **E-668 PROVED-LEAN** 元padded BlockWord、全床と基準r≤m+4で、床+1の元free一件ごとに従来一様重みを2削減。元正不足と全途中深さ≤6の実反例では床+1の元free≥1を内部供給し、元j=free∈[4,6]へ削減。 残るj4/5/6と任意深さ・C1は未証明。
+
+- **E-669 PROVED-LEAN** 元padded BlockWord後の任意run、前尾部全時刻がm..m+4なら2A≤5free。実後続S後の元EndNならj+1≤free。元正不足も後続S自体の帯内制約も不要。 E660は2A≤5freeの等号例。幅5以上の同じ無条件ギャップは未証明。
+
+- **E-670 PROVED-LEAN** 元padded BlockWord後、床m・基準r≤m+4の低A重みで、床+1のfreeは2、床+2以上のfreeは5の節約となる。元正不足と全深さ6の反例j6なら全元freeは底二段、j4/5は高free≤1。 j4/5/6の実反例不存在は未証明。H29Rで実計数の高さ同値を明示。
+
+- **E-671 PROVED-LEAN** 同元padded前史と実targetで、全旧sourceの厳密正の旧面積Arを平方下界に加える。局所source以後の重みだけで平方を払う。深さ6/j6の元正不足反例なら、各局所target sourceは全元床Aより前に必要。 局所source以前の元prefixをBlockWordへresetしない。残るsource族の同時排除は未証明。
+
+- **E-672 PROVED-LEAN** 全元padded BlockWord前史、任意高さ・任意区間長・任意runの同高実供給を、元source基準面積の下降整数枠(q,v)へ単射する。旧mass・clockを上限で切らない。 異高さ間の像非重複やfreeへの置換は未証明。各高さの枠だけを数える。
+
+- **E-673 PROVED-LEAN** 任意元fで下降枠長の2倍は低A奇数重みの2倍と下側三角端点補正差に一致。元padded前史で終端がsource高さ以上なら、同高の元実供給数≤低い実A重み。開始高さ条件不要。 E674で終端条件も外す。低い実A全体をfreeと同一視しない。
+
+- **E-674 PROVED-LEAN** 全元padded BlockWord前史、任意長・任意高さ・全runで、元同高実供給件数≤同区間の低い元Aの奇数重み。最後の元実供給直後までprefixを取り、両端高さの条件を除去。全床mなら床+4供給≤6free。 高さ別Aを全高共通の無重みfreeへ償却する条件は未知。一般C1は未証明。
+
+- **E-675 PROVED-PAPER** 全元高さを3の逆べき重みで合成し、重み付き全Aの2倍≤重み付きfreeの3倍。任意run/全旧/全高さ幅。有限和の紙上証明をnoteへ保存、Lean未。高いAの重みは小さく、無重みgap/C1は未解決。
+
+- **E-676 PROVED-LEAN** 元深さ6・正不足の実j6counterで、同元targetの各局所sourceはn+2に固定し、元n..n+2はSS。実高free0と、先行床freeを必須にする同元供給課金を結合しsource以前のAを全排除する。 全oldは保持。反例不存在や局所以外の源の排除は未証明。
+
+- **E-677 PROVED-LEAN** 元深さ6・正不足の実j6counterで、同元targetの基準r=Fw(n)−2の面積Ar(n,b+6−n)+2(b+6−n)は−3/−2/1の三値。元Winの旧質量2の正確面積3/2又は局所source n+2/SSから内部供給。 元actual countからの三値必要式。各値の無限history残余とj4/5の排除は未証明。

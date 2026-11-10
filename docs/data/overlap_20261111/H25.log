@@ -1,0 +1,63 @@
+Recaman/FloorSupplyTripleCharge.lean:63:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  g - i + j ≥ 1
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  c - e ≤ 0
+where
+ c := ↑a
+ d := ↑n
+ e := ↑b
+ g := ↑(cN (floorA f m) a (b - a))
+ i := floorPotential f n m a
+ j := floorPotential f n m b
+Recaman/FloorSupplyTripleCharge.lean:202:12: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  v - x ≥ -2
+  s ≥ 0
+  o ≥ 0
+  o - s ≤ 0
+  l - r ≤ -3
+  k ≥ 0
+  k - o ≥ 1
+  k - s ≤ 0
+  j ≥ 0
+  i ≥ 0
+  -2 ≤ 3*h - i ≤ 0
+  -2 ≤ 3*h - j ≤ 0
+  g ≥ 0
+  e ≥ 0
+  e - o ≥ 1
+  e - s ≥ 1
+  c ≥ 0
+  c - e + g ≥ 1
+  c - k ≤ -1
+  c - o ≤ -1
+  b ≥ 0
+  b - c ≥ 0
+  b - e ≤ -1
+  b - k ≥ 1
+  b - s ≥ 1
+where
+ b := ↑t
+ c := ↑n
+ e := ↑u
+ g := ↑K
+ h := ↑(slotRank f n m (q u)) / 3
+ i := ↑(slotRank f n m (q t))
+ j := ↑(slotRank f n m (q u))
+ k := ↑(q t)
+ l := p t
+ o := ↑(q u)
+ r := p u
+ s := ↑(d u)
+ v := floorPotential f n m (q t)
+ x := floorPotential f n m (q u)
+Recaman/FloorSupplyTripleCharge.lean:205:2: error: 'change' tactic failed, pattern
+  3 * cN P n K ≤ R
+is not definitionally equal to target
+  3 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n K ≤
+    cN (fun t => Fw f t = m ∧ f t = true) n K + 2 * cN (fun t => Fw f t = m + 1 ∧ f t = true) n K

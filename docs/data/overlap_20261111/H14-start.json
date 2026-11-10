@@ -1,0 +1,25 @@
+{
+  "tag": "H14",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FloorSupplyDistinctCharge.olean",
+    "Recaman/FloorSupplyDistinctCharge.lean"
+  ],
+  "started_jst": "2026-11-11T06:30:13.440736+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FloorSupplyDistinctCharge.lean": "8ee32d799f161f2c6b743b9f9e3f63f187c2159a63704f1021e3d2ce213b0fb1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "ab374b9d9b879cd6e835827da46c669cd53d5dd2e62393bee56fde2e22054aee",
+  "source_tree_sha256": "60d496effb887c2b83f50065e9e940992a2734b86845a94d75a0d09ebc995cf9",
+  "source_tree_manifest": "H14-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

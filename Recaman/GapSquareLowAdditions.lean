@@ -1,0 +1,141 @@
+import Recaman.LevelTriangleArea
+
+namespace Recaman.GapSquareLowAdditions
+
+open Recaman.LevelTriangleArea Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem area_from_level_split (f : Nat → Bool) (s t b : Nat) (r : Int)
+    (hst : s≤t) (htb : t≤b) :
+    areaFromLevel f s r (b-s)=areaFromLevel f s r (t-s)+areaFromLevel f t r (b-t) := by
+  have hlen : ((b-s : Nat) : Int)=((t-s : Nat) : Int)+((b-t : Nat) : Int) := by omega
+  unfold areaFromLevel
+  rw [area_split_at f s t b hst htb,hlen,Int.add_mul]
+  have hmul : ((b-t : Nat) : Int)*(Fw f t-Fw f s)+
+      ((b-t : Nat) : Int)*(Fw f s-r)=((b-t : Nat) : Int)*(Fw f t-r) := by
+    rw [←Int.mul_add,show Fw f t-Fw f s+(Fw f s-r)=Fw f t-r by omega]
+  omega
+
+private theorem two_area_subtractions (f : Nat → Bool) (b : Nat) (r : Int) :
+    ∀ j : Nat, (∀ i, b≤i → i<b+j → f i=false) →
+      2*areaFromLevel f b r j=(j : Int)*(2*(Fw f b-r)-(j : Int)-1) := by
+  intro j
+  induction j with
+  | zero => simp [areaFromLevel,Ar]
+  | succ j ih =>
+    intro h
+    have hi := ih (fun t ht htj => h t ht (by omega))
+    have hf := fw_false_run f b (j+1) h
+    rw [area_from_level_succ,show b+j+1=b+(j+1) by omega,hf,Int.natCast_add]
+    have hone : ((1 : Nat) : Int)=1 := rfl
+    rw [hone]
+    grind
+
+private theorem target_area_anchor (f : Nat → Bool) (n a b j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :
+    ∃ s, n≤s ∧ s<b ∧ Fw f (b+j)-1≤Fw f s ∧
+      areaFromLevel f s (Fw f (b+j)-1) (b+j-s)≤0 := by
+  obtain ⟨_,t,k,_,htk,hk,hLev,hArea⟩ := he
+  rw [htk] at hLev
+  have htb : t<b := by
+    by_cases h : t<b
+    · exact h
+    · have hdown := fw_false_run f b (t-b) (fun i hi hj => hS i hi (by omega))
+      rw [show b+(t-b)=t by omega] at hdown
+      have he := fw_false_run f b j hS
+      omega
+  have hW : Ar f t (b+j-t)=0 := by
+    rw [show b+j-t=k by omega]
+    exact hArea
+  by_cases hnt : n≤t
+  · refine ⟨t,hnt,htb,by omega,?_⟩
+    unfold areaFromLevel
+    rw [hW,show Fw f t-(Fw f (b+j)-1)=0 by omega,Int.mul_zero,Int.add_zero]
+    omega
+  · refine ⟨n,Nat.le_refl _,hnb,?_,?_⟩
+    · have hp := (block_suffix_positive_walk f 0 n a hw hpre t (Nat.zero_le _) (by omega)).1
+      simp only [Nat.zero_add] at hp
+      omega
+    · have hp := (block_suffix_positive_walk f 0 n a hw hpre t (Nat.zero_le _) (by omega)).2
+      simp only [Nat.zero_add] at hp
+      have hs := area_split_at f t n (b+j) (by omega) (by omega)
+      rw [hW,show Fw f t=Fw f (b+j)-1 by omega] at hs
+      unfold areaFromLevel
+      omega
+
+/-- The square budget preserves any nonnegative area debt at the same
+source and counts low additions only after that source. -/
+theorem gap_square_from_area_debt (f : Nat → Bool) (s b j : Nat) (r debt : Int)
+    (hsb : s<b) (hS : ∀ i, b≤i → i<b+j → f i=false)
+    (htarget : Fw f (b+j)=r+1) (hstart : r≤Fw f s)
+    (hDebt : 0≤debt) (harea : areaFromLevel f s r (b+j-s)≤-debt) :
+    ((j : Int)+1)^2+debt≤lowAdditionWeights f s r (b-s) := by
+  have hdown := fw_false_run f b j hS
+  have hb : Fw f b=r+(j : Int)+1 := by omega
+  have hlow : ∃ q, s≤q ∧ q≤b ∧ Fw f q≤r := by
+    by_cases h : ∃ q, s≤q ∧ q≤b ∧ Fw f q≤r
+    · exact h
+    · have hf (i : Nat) (hi : 1≤i) (hiB : i≤b+j-s) : r+2-1≤Fw f (s+i) := by
+        by_cases hic : s+i≤b
+        · by_cases hh : Fw f (s+i)≤r
+          · exact (h ⟨s+i,by omega,hic,hh⟩).elim
+          · omega
+        · have hd := fw_false_run f b (s+i-b) (fun t ht hj => hS t ht (by omega))
+          rw [show b+(s+i-b)=s+i by omega] at hd
+          omega
+      have hn := shifted_area_nonneg f s (r+2) (b+j-s) hf
+      unfold areaFromLevel at harea
+      rw [show Fw f s-(r+2)+1=Fw f s-r-1 by omega,Int.mul_sub,Int.mul_one] at hn
+      omega
+  obtain ⟨q,hsq,hqb,hqr⟩ := hlow
+  have h0 := (signed_area_with_low_weights f s r (q-s)).1
+  have h1 := (signed_area_with_low_weights f q r (b-q)).2
+  rw [show s+(q-s)=q by omega] at h0
+  rw [show q+(b-q)=b by omega] at h1
+  have hbelowS : belowTriangle r (Fw f s)=0 := by
+    simp [belowTriangle,Int.max_eq_left (show r-Fw f s≤0 by omega)]
+  have hbelowB : belowTriangle r (Fw f b)=0 := by
+    simp [belowTriangle,Int.max_eq_left (show r-Fw f b≤0 by omega)]
+  have haboveQ : aboveTriangle r (Fw f q)=0 := by
+    simp [aboveTriangle,Int.max_eq_left (show Fw f q-r≤0 by omega)]
+  have haboveB : aboveTriangle r (Fw f b)=((j : Int)+1)*((j : Int)+2) := by
+    unfold aboveTriangle
+    rw [Int.max_eq_right (show 0≤Fw f b-r by omega),show Fw f b-r=(j : Int)+1 by omega,show (j : Int)+1+1=(j : Int)+2 by omega]
+  rw [hbelowS] at h0
+  rw [hbelowB,haboveQ,haboveB] at h1
+  have hsplit := area_from_level_split f s q b r hsq hqb
+  have hweights := low_weights_append f s r (q-s) (b-q)
+  rw [show q-s+(b-q)=b-s by omega,show s+(q-s)=q by omega] at hweights
+  have hsum : ((j : Int)+1)*((j : Int)+2)≤
+      2*areaFromLevel f s r (b-s)+2*lowAdditionWeights f s r (b-s) := by omega
+  have hsplit2 := area_from_level_split f s b (b+j) r (by omega) (by omega)
+  rw [show b+j-b=j by omega] at hsplit2
+  have hj := two_area_subtractions f b r j hS
+  rw [show 2*(Fw f b-r)-(j : Int)-1=(j : Int)+1 by omega] at hj
+  have hs : ((j : Int)+1)^2+debt≤lowAdditionWeights f s r (b-s) := by
+    have hpoly : ((j : Int)+1)*((j : Int)+2)+(j : Int)*((j : Int)+1)
+        = 2*((j : Int)+1)^2 := by grind
+    omega
+  exact hs
+
+/-- The same actual supplied target forces a square budget of weighted
+original additions below its source height. The weight at height h below
+r = target height minus one is 2(r-h)-1. No depth or run bound is used. -/
+theorem supplied_gap_square_low_additions (f : Nat → Bool) (n a b j : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j)) :
+    ((j : Int)+1)^2≤lowAdditionWeights f n (Fw f (b+j)-1) (b-n) := by
+  let r := Fw f (b+j)-1
+  change ((j : Int)+1)^2≤lowAdditionWeights f n r (b-n)
+  obtain ⟨s,hns,hsb,hstart,harea⟩ := target_area_anchor f n a b j hw hpre hnb hS he
+  change r≤Fw f s at hstart
+  change areaFromLevel f s r (b+j-s)≤0 at harea
+  have hs := gap_square_from_area_debt f s b j r 0 hsb hS (by dsimp [r]; omega)
+    hstart (by omega) (by omega)
+  have ha := low_weights_append f n r (s-n) (b-s)
+  rw [show s-n+(b-s)=b-n by omega,show n+(s-n)=s by omega] at ha
+  have hn := low_weights_nonnegative f n r (s-n)
+  omega
+
+end Recaman.GapSquareLowAdditions

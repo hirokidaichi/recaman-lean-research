@@ -1,0 +1,26 @@
+Recaman/RecordPredecessorCharges.lean:43:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  e - h ≥ 1
+  d ≥ 0
+  d - g ≤ 0
+  b ≥ 0
+  b - g ≤ 0
+  a ≥ 0
+  a - b ≥ 0
+  a - d ≤ 0
+  a - g ≤ 4
+where
+ a := ↑s
+ b := ↑n
+ d := ↑c
+ e := Fw f c
+ g := ↑(t - 3)
+ h := Fw f t
+Recaman/RecordPredecessorCharges.lean:42:58: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Recaman.ShortPeriodicSupply.sign, if_true] at h0 h1 h2 h3
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

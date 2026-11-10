@@ -1,0 +1,25 @@
+{
+  "tag": "H03R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldSameLevelStepBudget.olean",
+    "Recaman/OldSameLevelStepBudget.lean"
+  ],
+  "started_jst": "2026-11-11T06:10:45.676213+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldSameLevelStepBudget.lean": "974a585873bb7d0ac40ec2690fbfd52c417f389a00c0eb2845844594d916c9bc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "f0390409c3478f8b88bce87773d8e12ae1e59c3d5f481622826fe8cdaaa45f0a",
+  "source_tree_sha256": "86521fa5564de944a94774bbce367ad3fbe3e47313344f715a11112e17b065ad",
+  "source_tree_manifest": "H03R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H17",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapTargetHeightBudget.olean",
+    "Recaman/GapTargetHeightBudget.lean"
+  ],
+  "started_jst": "2026-11-11T06:40:43.215950+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapTargetHeightBudget.lean": "2b22131df9501efa96115f71f008389b66f2f8b9f639f94454a65107b5126adb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "eb1590080758dcc05b4421eaa07ddc600d070e2eaee613ec4e59f81c48798044",
+  "source_tree_sha256": "da19e66dfab747f89030c186d497abe5482e4db41a046a1866f9c1f9bc8dc1ce",
+  "source_tree_manifest": "H17-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "eb1590080758dcc05b4421eaa07ddc600d070e2eaee613ec4e59f81c48798044",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.5988403750234284,
+  "cpu_seconds": 0.386054,
+  "finished_jst": "2026-11-11T06:40:43.814692+09:00"
+}

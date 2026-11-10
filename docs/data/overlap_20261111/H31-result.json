@@ -1,0 +1,31 @@
+{
+  "tag": "H31",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/GapSourceDebt.olean",
+    "Recaman/GapSourceDebt.lean"
+  ],
+  "started_jst": "2026-11-11T07:17:35.861886+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/GapSourceDebt.lean": "8a555a8fcf9821047a40513c003fe5325a150a96bf8a5ddc773bbe106498a13e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "867dcf0db63378dc82e70907eebd68b0f80ccb4b7c555b8ad2b690b953d16ead",
+  "source_tree_sha256": "c67a41a972ef3ecabfc3a9f944a23d75453ce7590ba25a8704e724c357397cc9",
+  "source_tree_manifest": "H31-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "867dcf0db63378dc82e70907eebd68b0f80ccb4b7c555b8ad2b690b953d16ead",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8924375409842469,
+  "cpu_seconds": 0.705693,
+  "finished_jst": "2026-11-11T07:17:36.754250+09:00"
+}

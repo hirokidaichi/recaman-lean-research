@@ -1,0 +1,31 @@
+{
+  "tag": "H07",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldReturnOneBelow.olean",
+    "Recaman/OldReturnOneBelow.lean"
+  ],
+  "started_jst": "2026-11-11T06:17:28.393419+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldReturnOneBelow.lean": "6df5dc08b960338aef62bb81b679cd759fae235cd2ad47bb7659cb4575c5025e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "1c3baaf106189c59c649772872a9e04484cbcbcf8dbd3bc12c386a2dd4ec4556",
+  "source_tree_sha256": "b7069427ea594ec1583e7655a0d4269ea81a731d3cd7512a0edb2085824f6020",
+  "source_tree_manifest": "H07-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1c3baaf106189c59c649772872a9e04484cbcbcf8dbd3bc12c386a2dd4ec4556",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.7850631659966893,
+  "cpu_seconds": 0.58576,
+  "finished_jst": "2026-11-11T06:17:29.178391+09:00"
+}

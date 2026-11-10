@@ -1,0 +1,32 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-11。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+
+- **E-663 / E-669 PROVED-LEAN**。元padded BlockWord後、全run・正不足・全途中深さ5なら元free-gap。途中上昇は無制限。別に全途中幅4なら正不足不要で元gap。一般深さ・C1/Q/H/SL/全射性は未証明。
+- **E-668 / E-670 / E-671 / E-676 / E-677 PROVED-LEAN**。深さ6counterはj=free∈{4,5,6}。j6の全freeは底二段、局所sourceはn+2、同targetの元面積は−3/−2/1。全old/source以前prefixを保持。三値にも無限履歴が残る。
+- **E-655 / E-662 / E-674 PROVED-LEAN**。全途中D4の共通旧文脈4代表、同sourceの平方と旧面積負債、任意高さ・全長の元同高供給≤低A奇数重み。元Aをfreeへ置換しない。旧r4表は再実行しない。
+- **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
+- 次の一問はH-20261112-01。同じ深さ6/j6actual targetの旧面積3/2・局所n+2を元時計順序で排除又はstrict削減する。11/11 DAILY末尾と高さ面積noteを読む。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-663 [PROVED-LEAN] Arbitrary runs at a low target or at full depth five — Recaman/LowTargetWeightedGap.lean
+  E-669 [PROVED-LEAN] Width-four original free gap without relative positivity — Recaman/HeightWidthFourGap.lean
+  E-668 [PROVED-LEAN] Depth-six positive actual counters have gaps at most six — Recaman/DepthSixPairResidual.lean
+  E-670 [PROVED-LEAN] Original depth-six counters concentrate free at the bottom — Recaman/DepthSixFreeLocation.lean
+  E-671 [PROVED-LEAN] Same original source area debt and floor ordering — Recaman/GapSourceDebt.lean
+  E-676 [PROVED-LEAN] gap six local source clock two — Recaman/DepthSixSourceClock.lean
+  E-677 [PROVED-LEAN] gap six actual source area spectrum — Recaman/DepthSixSourceArea.lean
+  E-655 [PROVED-LEAN] full-depth four original old context — Recaman/FullDepthCommonOldContext.lean
+  E-662 [PROVED-LEAN] Actual supplied gap needs a square of low addition weights — Recaman/GapSquareLowAdditions.lean
+  E-674 [PROVED-LEAN] All-interval original same-height supply weight budget — Recaman/SupplyHeightWeightBudget.lean
+  E-647 [PROVED-LEAN] short-record joint image exclusion — Recaman/ShortRecordJointCorrection.lean
+  E-660 [REFUTED] Width four does not imply additions at most double free — Recaman/WidthFourBudgetCounterexample.lean
+  E-675 [PROVED-PAPER] Geometric-height original addition and free budget — docs/RESEARCH_NOTE_2026-11-11_HEIGHT_AREA_CHARGES.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 977 (including Audit)
+  Import contracts: 110; audit declarations: 3870

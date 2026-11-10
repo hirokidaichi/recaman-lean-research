@@ -1,0 +1,25 @@
+{
+  "tag": "H32R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SupplyDescentSlots.olean",
+    "Recaman/SupplyDescentSlots.lean"
+  ],
+  "started_jst": "2026-11-11T07:19:59.398080+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SupplyDescentSlots.lean": "21be9b62a11add60e93b1698773a012e3a1a877305b5f0b506e40618fc03c706"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "7aaeefeb512c6b6a5f7aa5d1640fef696bbf7f47b64cca57cab965e18035233f",
+  "source_tree_sha256": "bb83737ce9db01e2affb453aa0d7ef40eee75537d18f8c95082520b9f9fc3a78",
+  "source_tree_manifest": "H32R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

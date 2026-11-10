@@ -1,0 +1,25 @@
+{
+  "tag": "H23R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NextHeightSupplyCharge.olean",
+    "Recaman/NextHeightSupplyCharge.lean"
+  ],
+  "started_jst": "2026-11-11T06:52:04.187440+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NextHeightSupplyCharge.lean": "f18b039980902945c989d63d91ced8de09d854ecc6c013b87aa6af5d61baa6f3"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "59a0a6ed8971170c713c48ebaf16c59ce52c8fcc1c48226465cb87253c737c0c",
+  "source_tree_sha256": "0c57128f08ec4a9aab3894aa15ddfc19c31bd209ae5f6d68351c6acaf56a8da2",
+  "source_tree_manifest": "H23R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

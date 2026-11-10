@@ -1,0 +1,25 @@
+{
+  "tag": "H39",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixSourceClock.olean",
+    "Recaman/DepthSixSourceClock.lean"
+  ],
+  "started_jst": "2026-11-11T07:33:44.669011+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixSourceClock.lean": "7183bd451541192c6c41279d69f9e125a840d5afe7dea78859f5641d0e053b06"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "4083f5b781fe5a6d4d901ea293a79ccd59ed105f",
+  "tracked_diff_sha256": "a6eb98e616418cd6c476c4531be3b3277a1ed0750cd1a3d2dd9791c8cc7990ac",
+  "source_tree_sha256": "8913976cbcd61f813dbb9285dcbd4d8d8172b061153813f863450ad989539175",
+  "source_tree_manifest": "H39-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

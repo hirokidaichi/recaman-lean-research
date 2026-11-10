@@ -1,0 +1,19 @@
+Recaman/FloorSupplyFreeBudget.lean:122:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  h ≥ 0
+  h - 2*i ≥ 2
+  g ≥ 0
+  e ≥ 0
+  e - i ≤ 0
+  2*e - g ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := ↑(free f n (b - n))
+ g := ↑(additions f n (b - n))
+ h := ↑(cN (fun u => f u = true) n (b - n))
+ i := ↑j

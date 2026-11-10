@@ -1,0 +1,105 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.FullFloorOldContext
+
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+open Recaman.CapacityEqualityInduction Recaman.LeadingRunSupply
+
+private theorem tail_area_of_floor (f : Nat → Bool) (n : Nat) (H : Int) :
+    ∀ K : Nat, (∀ i : Nat, i≤K → H≤Fw f (n+i)) →
+      (K : Int)*(H-Fw f n)≤Ar f n K := by
+  intro K
+  induction K with
+  | zero => simp [Ar]
+  | succ k ih =>
+    intro h
+    have hp := ih (fun i hi => h i (by omega))
+    have hs := h (k+1) (by omega)
+    rw [Ar_succ,show n+k+1=n+(k+1) by omega,Int.natCast_add,Int.add_mul]
+    change (k : Int)*(H-Fw f n)+(H-Fw f n)≤_
+    omega
+
+/-- A window from before a padded block boundary must dip strictly below
+its original starting height somewhere after that boundary. -/
+theorem old_window_dips_below_start (f : Nat → Bool) (n a t b : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hnb : n≤b) (hwin : Win f t (b-t)) :
+    ∃ i, n≤i ∧ i≤b ∧ Fw f i<Fw f t := by
+  by_cases h : ∃ i, n≤i ∧ i≤b ∧ Fw f i<Fw f t
+  · exact h
+  · have hf (i : Nat) (hi : i≤b-n) : Fw f t≤Fw f (n+i) := by
+      by_cases hle : Fw f t≤Fw f (n+i)
+      · exact hle
+      · exact (h ⟨n+i,by omega,by omega,by omega⟩).elim
+    have hp := block_suffix_positive_walk f 0 n a hw hpre t (Nat.zero_le _) (by omega)
+    simp only [Nat.zero_add] at hp
+    have hlo := tail_area_of_floor f n (Fw f t) (b-n) hf
+    have hs := area_split_at f t n b (by omega) hnb
+    rw [hwin.2.2] at hs
+    have hmul :
+        ((b-n : Nat) : Int)*(Fw f t-Fw f n)
+          + ((b-n : Nat) : Int)*(Fw f n-Fw f t)=0 := by
+      rw [←Int.mul_add,show Fw f t-Fw f n+(Fw f n-Fw f t)=0 by omega,Int.mul_zero]
+    omega
+
+/-- The whole tail floor bounds old source mass by one less than the
+depth, with a stronger hypothesis than the endpoint-only radius. -/
+theorem full_floor_old_mass (f : Nat → Bool) (n a t b D : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hnb : n≤b) (hwin : Win f t (b-t))
+    (hfloor : ∀ i, n≤i → i≤b → Fw f n-(D : Int)≤Fw f i) :
+    1≤Fw f n-Fw f t ∧ Fw f n-Fw f t+1≤D := by
+  obtain ⟨i,hi,hib,hl⟩ := old_window_dips_below_start f n a t b hw hpre ht hnb hwin
+  have hp := (block_suffix_positive_walk f 0 n a hw hpre t (Nat.zero_le _) (by omega)).1
+  simp only [Nat.zero_add] at hp
+  have hf := hfloor i hi hib
+  exact ⟨hp,by omega⟩
+
+private theorem low_mass_length (w : List Bool) (hw : BlockWord w)
+    (hm : 1≤mass w) (h3 : mass w≤3) : w.length≤5 := by
+  rcases (show mass w=1 ∨ mass w=2 ∨ mass w=3 by omega) with h | h | h
+  · rw [block_mass_one hw h]
+    decide
+  · rcases block_mass_two hw h with rfl | rfl <;> decide
+  · rcases block_mass_three hw h with rfl | rfl | rfl <;> decide
+
+/-- Under a full depth-four floor, an actual old source needs at most
+five clocks of the padded prefix. All old masses are considered. -/
+theorem old_depth_four_lag_le_five (f : Nat → Bool) (n a t b : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (ht : t<n) (hnb : n≤b) (hwin : Win f t (b-t))
+    (hfloor : ∀ i, n≤i → i≤b → Fw f n-4≤Fw f i) : n-t≤5 := by
+  have hm := full_floor_old_mass f n a t b 4 hw hpre ht hnb hwin hfloor
+  have hFull : BlockWord (seg f 0 n) := by
+    rw [hpre]
+    exact block_append hw (block_replicate_A a)
+  have hd : (seg f 0 n).drop t=seg f t (n-t) := by
+    simpa only [Nat.zero_add] using seg_drop f 0 n t (by omega)
+  have hSuffix : BlockWord (seg f t (n-t)) := by
+    rw [←hd]
+    exact block_suffix hFull _ _ (List.take_append_drop t _)
+  have hMass := seg_mass f t (n-t)
+  rw [show t+(n-t)=n by omega] at hMass
+  have hlen := low_mass_length _ hSuffix (by omega) (by omega)
+  rwa [seg_length] at hlen
+
+/-- The original supply predicate is preserved exactly by retaining the
+last five old clocks under the full depth-four floor. -/
+theorem endable_iff_last_five_of_full_depth_four (f : Nat → Bool) (n a b : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n≤b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-4≤Fw f i) :
+    EndN f 0 b ↔ EndN f (n-5) b := by
+  constructor
+  · rintro ⟨hA,t,k,_,htk,hwin⟩
+    have htn : n-5≤t := by
+      by_cases ht : t<n
+      · have hW : Win f t (b-t) := by
+          rw [show b-t=k by omega]
+          exact hwin
+        have hlag := old_depth_four_lag_le_five f n a t b hw hpre ht hnb hW hfloor
+        omega
+      · omega
+    exact ⟨hA,t,k,htn,htk,hwin⟩
+  · exact end_mono f 0 (n-5) b (Nat.zero_le _)
+
+end Recaman.FullFloorOldContext

@@ -1,0 +1,73 @@
+import Recaman.OldSameLevelShortReturn
+import Recaman.InitialSPaddingPositive
+
+namespace Recaman.OldSameLevelReturnCount
+
+open Recaman.OldSameLevelShortReturn Recaman.RunSupplyBudget Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction Recaman.InitialSPaddingPositive
+
+private theorem count_from_shift (P : Nat → Prop) (s : Nat) :
+    ∀ K, cN P s K = cN (fun i => P (s+i)) 0 K
+  | 0 => rfl
+  | K+1 => by
+    by_cases h : P (s+K)
+    · rw [cN_succ_pos P s K h,cN_succ_pos _ 0 K (by simpa only [Nat.zero_add] using h),
+        count_from_shift P s K]
+    · rw [cN_succ_neg P s K h,cN_succ_neg _ 0 K (by simpa only [Nat.zero_add] using h),
+        count_from_shift P s K]
+
+/-- Within one interval staying above a fixed floor, at most two actual
+old-supplied additions can lie on the floor. No origin is chosen in advance. -/
+theorem old_supplies_on_floor_le_two (f : Nat → Bool) (n a s K : Nat) (H : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hns : n≤s) (hfloor : ∀ t, s≤t → t<s+K → H≤Fw f t) :
+    cN (fun t => Fw f t=H ∧ f t=true ∧ ∃ u, u<n ∧ Win f u (t-u)) s K ≤ 2 := by
+  let P := fun t => Fw f t=H ∧ f t=true ∧ ∃ u, u<n ∧ Win f u (t-u)
+  change cN P s K≤2
+  have hgap (b c : Nat) (hsb : s≤b) (hbc : b<c) (hcK : c<s+K)
+      (hb : P b) (hc : P c) : c=b+2 := by
+    obtain ⟨hbH,hbA,t,ht,htW⟩ := hb
+    obtain ⟨hcH,_,u,hu,huW⟩ := hc
+    have hf (i : Nat) (hi : i≤c-b) : Fw f b≤Fw f (b+i) := by
+      rw [hbH]
+      exact hfloor (b+i) (by omega) (by omega)
+    exact (old_no_dip_return_shape f n a t u b c hw hpre ht hu (by omega) hbc
+      htW huW (hbH.trans hcH.symm) hbA hf).1
+  have bound (m : Nat) (hm : m≤K) : cN P s m≤2 := by
+    induction m with
+    | zero => simp [cN]
+    | succ m ih =>
+      by_cases hp : P (s+m)
+      · have hu : cN P s m≤1 := by
+          rw [count_from_shift]
+          apply cN_le_one_of_unique
+          intro i hi j hj hpi hpj
+          have h1 := hgap (s+i) (s+m) (by omega) (by omega) (by omega) hpi hp
+          have h2 := hgap (s+j) (s+m) (by omega) (by omega) (by omega) hpj hp
+          omega
+        rw [cN_succ_pos P s m hp]
+        omega
+      · rw [cN_succ_neg P s m hp]
+        exact ih (by omega)
+  exact bound K (Nat.le_refl _)
+
+private def oldWord : List Bool := aasW++tripW
+private def approach : List Bool := List.replicate 12 false++[true,false]++List.replicate 7 true
+private def boundarySign : Nat → Bool := finiteSign (oldWord++approach++[true,false])
+
+/-- The two-clock floor return and six-clock shift are attained by actual
+windows in a single original sign history with a genuine BlockWord prefix. -/
+theorem old_floor_return_boundary :
+    BlockWord (seg boundarySign 0 14) ∧ Win boundarySign 0 35 ∧
+    Win boundarySign 6 31 ∧ Fw boundarySign 35=Fw boundarySign 37 ∧
+    boundarySign 35=true ∧ boundarySign 37=true ∧
+    ∀ i, i≤2 → Fw boundarySign 35≤Fw boundarySign (35+i) := by
+  have hseg : seg boundarySign 0 14=oldWord := by decide
+  refine ⟨?_,by unfold Win; decide,by unfold Win; decide,by decide,by decide,by decide,?_⟩
+  · rw [hseg]
+    exact block_append (BlockWord.aas BlockWord.nil) (BlockWord.triple BlockWord.nil)
+  · intro i hi
+    have he : i=0 ∨ i=1 ∨ i=2 := by omega
+    rcases he with rfl | rfl | rfl <;> decide
+
+end Recaman.OldSameLevelReturnCount
