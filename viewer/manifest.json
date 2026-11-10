@@ -326,8 +326,9 @@
   },
   {
    "name": "Audit",
-   "lines": 4147,
+   "lines": 4156,
    "imports": [
+    "RecordOverlapShiftBounds",
     "ShortRecordOverlapBudget",
     "TripleRunConsecutiveFirstControl",
     "TripleRunLocalClockCut",
@@ -53040,6 +53041,50 @@
    "hasReport": false
   },
   {
+   "name": "RecordOverlapShiftBounds",
+   "lines": 145,
+   "imports": [
+    "DeficitRecordPredecessor",
+    "ShortRecordOverlapBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "cN_shift_pred",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "cN_shift_succ",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "records_with_preceding_short",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "records_with_following_short",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "overlap_corrections_bounded",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "records_need_two_additions",
+     "line": 138
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Recovery",
    "lines": 236,
    "imports": [
@@ -68162,6 +68207,6 @@
    "hasReport": false
   }
  ],
- "total": 945,
+ "total": 946,
  "withReport": 167
 }

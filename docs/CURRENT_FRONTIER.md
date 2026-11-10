@@ -6,7 +6,7 @@
 
 - **E-637 / E-638 / E-639 PROVED-LEAN**。任意runの元実供給を、区間内SAAのある短供給と残りOに分ける。元padded BlockWordで実gapの反例にはj+4<=3Oが必要。残りOは旧源又は高Sを持ち、厳密な不足新最低だけは高Sを再使用せず数えられる。
 
-- **E-642 REFUTED / E-643 PROVED-PAPER / E-644 PROVED-LEAN**。短供給の三Aと新最低の二Aは同じ位置を使いうる。重複B+2Cの会計は `Recaman/ShortRecordOverlapBudget.lean` でLean化済み（3L+2R<=additions+B+2C、covered<=additions輸送込み）。補正項B/C自身の個別上界と一般Oの制御が次の課題。
+- **E-642 REFUTED / E-643 PROVED-PAPER / E-644 PROVED-LEAN / E-645 PROVED-LEAN**。短供給の三Aと新最低の二Aは同じ位置を使いうる。重複B+2Cの会計は `Recaman/ShortRecordOverlapBudget.lean` でLean化済み（3L+2R<=additions+B+2C、covered<=additions輸送込み）。E-645で補正項もLean化: BとCはいずれも短端点数L以内（t↦t-1, t↦t+1の単射、`RecordOverlapShiftBounds.lean`）、よってB+2C<=3L。合成で2R<=A（E-639の別経路再现）。残る未知はOの上界とj+4への割戻し。
 
 - **E-633 / E-634 / E-635 PROVED-LEAN**。不足帯に入る元Winの実供給数をfree+帯幅+1で抑える。元BlockWord境界・relative strict positiveの二primitive異時計は両順序で空き3個以上。同時計の空き2ではSAASだけ。E-631は任意途中でのfreeだけの課金をREFUTED。
 
@@ -1050,3 +1050,4 @@ E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新so
 - E-642 REFUTED。元新最低のrecord36と直前実供給35は次の短供給37の三Aと重なる。二費用集合の非重複を仮定しない。数値一般式やC1の反例ではない。
 - E-643 PROVED-PAPER。任意元区間の短三Aと新最低二Aの重複は直前shortなら1、直後shortなら2。3L+2R<=A+B+2Cの集合証明を保存。元cNのkernel化、非recordや補正項の上界は未証明。
 - E-644 PROVED-LEAN。E-643の重複補正を任意の元履歴・始点・長さでLean形式化。3*cN(shortEndpoint)+2*cN(localRecord)<=additions+B+2C。Bは直前位置が短端点のrecord、Cは区間内直後が短端点のrecordで、covered<=additionsをstrong inductionの四境界場合で輸送。B/C個別の上界・非record供給・C1は未。
+- E-645 PROVED-LEAN。E-644の補正項BとCの個別上界をLean化。B<=L, C<=Lは短端点へのt↦t-1, t↦t+1の単射で示す（`RecordOverlapShiftBounds.lean`のcN_shift_pred/succ）。合成で2R<=Aが別経路で得られる。

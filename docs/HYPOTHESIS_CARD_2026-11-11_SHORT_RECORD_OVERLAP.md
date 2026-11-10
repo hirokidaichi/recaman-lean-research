@@ -19,3 +19,5 @@ E642の元29..38履歴はR36、EndN35、L37でC型の重複2を持つ。E631で�
 [11/10 DAILY](RESEARCH_HANDOFF_2026-11-10_DAILY.md)、[任意runの会計](RESEARCH_NOTE_2026-11-10_SHORT_RECORD_CHARGE.md)。
 
 11/10 午後: 不等式は E-644 として Lean 化。形式文は `3*cN (shortEndpoint f n) n K + 2*cN (localRecord f n) n K ≤ additions f n K + cN(rec∧short(t−1)) n K + 2*cN(rec∧t+1<n+K∧short(t+1)) n K`。L/Rは短端点・局所非短recordの区間内count、Bの直前端点は t<n+K-1 から自動内部、Cは直後端点の内部性を明示。E643の紙上のB/C窓と一致することを確認済み。次の未知はB/C自身の上界、非record供給Oの制御、及びこの合計から実際に空きj+4を割り戻す手順。
+
+11/10 午後第二: 補正項の個別上界を E-645 として Lean 化（`Recaman/RecordOverlapShiftBounds.lean`）。B ≤ L と C ≤ L は短端点への単射 t↦t−1、t↦t+1 と窓内像から cN_shift_pred/succ（長さKの誘導）で示す。合成系: B+2C ≤ 3L、及び E-644 との合成で 2*cN(localRecord) ≤ additions（E-639の高S経路とは別の再現）。重複会計は補正込みで完全にLean化済み。残る未知は (i) 非record供給Oの制御、(ii) この合計から実gapの j+4 への割り戻し、(iii) 一般C1。

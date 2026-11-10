@@ -1,3 +1,4 @@
+import Recaman.RecordOverlapShiftBounds
 import Recaman.ShortRecordOverlapBudget
 import Recaman.TripleRunConsecutiveFirstControl
 import Recaman.TripleRunLocalClockCut
@@ -4145,3 +4146,11 @@ import Recaman
 #print axioms Recaman.ShortRecordOverlapBudget.budget_covered
 
 #print axioms Recaman.ShortRecordOverlapBudget.covered_le_additions
+
+#print axioms Recaman.RecordOverlapShiftBounds.records_with_preceding_short
+
+#print axioms Recaman.RecordOverlapShiftBounds.records_with_following_short
+
+#print axioms Recaman.RecordOverlapShiftBounds.overlap_corrections_bounded
+
+#print axioms Recaman.RecordOverlapShiftBounds.records_need_two_additions
