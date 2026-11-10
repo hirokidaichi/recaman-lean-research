@@ -1,6 +1,6 @@
 # H-20261111-01 元short三Aと非短record二Aの重複補正
 
-状態 E643 PROVED-PAPER（Lean未検証）。元全run数の実EndN/freeへ接続する限定会計。人間レビュー未。
+状態 E-644 PROVED-LEAN（`Recaman/ShortRecordOverlapBudget.lean` で Lean 検証済み）。元全run数の実EndN/freeへ接続する限定会計。人間レビュー未。
 
 ## 一問
 
@@ -17,3 +17,5 @@ E642の元29..38履歴はR36、EndN35、L37でC型の重複2を持つ。E631で�
 11/10 H53/H54/H69/H39のSTOPを保持。Q36のF9はE636旧<=1まで、長局所のactual接続は未受理。H54は八語一括512MB/4位置版不受理。H39全d absolute actual glueも不受理。資源/tactic/split/import変更だけでは再開しない。r4同表0/0二回その他の過去STOPはPORTFOLIOを参照。一般四run/任意run/rank/C1/Q/H/SL/全射性は未証明。
 
 [11/10 DAILY](RESEARCH_HANDOFF_2026-11-10_DAILY.md)、[任意runの会計](RESEARCH_NOTE_2026-11-10_SHORT_RECORD_CHARGE.md)。
+
+11/10 午後: 不等式は E-644 として Lean 化。形式文は `3*cN (shortEndpoint f n) n K + 2*cN (localRecord f n) n K ≤ additions f n K + cN(rec∧short(t−1)) n K + 2*cN(rec∧t+1<n+K∧short(t+1)) n K`。L/Rは短端点・局所非短recordの区間内count、Bの直前端点は t<n+K-1 から自動内部、Cは直後端点の内部性を明示。E643の紙上のB/C窓と一致することを確認済み。次の未知はB/C自身の上界、非record供給Oの制御、及びこの合計から実際に空きj+4を割り戻す手順。

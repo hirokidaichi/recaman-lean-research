@@ -24,7 +24,7 @@ phase実績はsetup 1分12.218秒、研究 101分30.739秒、監査 10分37.576�
 - **E633 PROVED-LEAN**。元A-rayのうちWin始点が一定の区間と不足帯にある実供給は、その区間の空きと不足帯幅の和に1を足した数以下。時計と不足の両方を持ち越す。全供給の狭い帯を自動供給しない。
 - **E637〜E639 PROVED-LEAN**。短いSAAの三Aは各族内で重ならない。Oは元実EndNから短窓のあるものを除いた一つの計数。E638は既存E502を元Winへ運び、Oの各件に旧始点か端点以上の高さでのSを与える。局所非短で不足の厳密な新最低を作るE639の部分だけ、高Sを重複なく計数。同高さ・同不足・間free0と直前の非record実供給を得た。非空例を検査。
 - **E640 PROVED-LEAN / E641 REFUTED**。全A-run長3族の局所時計≡1 mod3を排除し、元EndNなら旧源を強制。連続した第一Aが両方局所供給される実例があるため交互課金は偽。H69最初A断片の剰余強化は未Lean。
-- **E642 REFUTED / E643 PROVED-PAPER**。短供給の三Aとrecordの二Aは同じ元Aを使う。record36と直前実供給35が短供給37の三Aに同時に含まれる。異族間の重複を直前型1、直後型2として数える紙上式3L+2R≤A+B+2Cを保存。元cNへの接続と補正項の上界は未証明。
+- **E642 REFUTED / E643 PROVED-PAPER / E644 PROVED-LEAN**。短供給の三Aとrecordの二Aは同じ元Aを使う。record36と直前実供給35が短供給37の三Aに同時に含まれる。E643の紙上式3L+2R≤A+B+2CはE644で`Recaman/ShortRecordOverlapBudget.lean` にLean化済み。形式文は `3*cN(shortEndpoint)+2*cN(localRecord) ≤ additions + B + 2C`。Bは直前位置が短端点のrecord、Cは区間内直後が短端点のrecord。covered<=additions輸送とstrong inductionの四境界(短/重なり/record/none)で閉じる。補正項B/C個別の上界・非record供給・C1は未。
 
 全old historyと元EndNを保持し、Aをfreeに置換していない。四runの既存完了域は再計上しない。第二S残余2はE609の元last4まで。より早い局所対象、一般四run/任意run/rank/C1/Q/H/SL/全射性は未証明。E388 COMPUTED、E404 CONJECTURED、E384存在方向未Leanを保持。新結果の人間レビュー未。
 
@@ -51,3 +51,7 @@ H71で **946 jobs、3806宣言** のLean buildとAuditが成功。許容公理�
 ## 最終判断と次の一問
 
 [H-20261111-01](HYPOTHESIS_CARD_2026-11-11_SHORT_RECORD_OVERLAP.md)が正本。[全run会計ノート](RESEARCH_NOTE_2026-11-10_SHORT_RECORD_CHARGE.md)のE643を、元の短三Aとrecord二Aが重複する位置を内部抽出してLeanへ移せるか。最初15分は元cN補正式、新edge又は反例を判定。E642を保持し、二つの計数を単純加算しない。成立しても非recordと旧源を含むO、補正B/Cの上界が残る。[今日のカード](HYPOTHESIS_CARD_2026-11-10_FORWARD_SOURCE_TEMPORAL_FREE.md)、[順位/時計ノート](RESEARCH_NOTE_2026-11-10_ADDITION_RANK_SLACK.md)も参照。
+
+## 11/10 午後追記（journal実績へ足さない）
+
+上記の次一問を実行し、E-644 PROVED-LEAN を `Recaman/ShortRecordOverlapBudget.lean` で登録した。文・監査・frontier更新は当日journalと H-20261111-01 追記を参照。午前確定journalの実績時間・CPUは変更しない。次の未知は補正項B/Cの個別上界と、この合計から元freeの j+4 へ割り戻す手順。

@@ -326,8 +326,9 @@
   },
   {
    "name": "Audit",
-   "lines": 4140,
+   "lines": 4147,
    "imports": [
+    "ShortRecordOverlapBudget",
     "TripleRunConsecutiveFirstControl",
     "TripleRunLocalClockCut",
     "TripleRunClockResidue",
@@ -57558,6 +57559,104 @@
    "hasReport": false
   },
   {
+   "name": "ShortRecordOverlapBudget",
+   "lines": 447,
+   "imports": [
+    "DeficitRecordPredecessor"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "short_endpoints_gap",
+     "line": 30
+    },
+    {
+     "kind": "theorem",
+     "name": "record_pair_additions",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "record_not_short",
+     "line": 50
+    },
+    {
+     "kind": "theorem",
+     "name": "record_predecessor_not_record",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "record_successor_not_record",
+     "line": 58
+    },
+    {
+     "kind": "theorem",
+     "name": "short_excludes_previous_record",
+     "line": 64
+    },
+    {
+     "kind": "theorem",
+     "name": "triple_cover",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "pair_cover",
+     "line": 76
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_increasing",
+     "line": 81
+    },
+    {
+     "kind": "theorem",
+     "name": "covered_le_additions",
+     "line": 135
+    },
+    {
+     "kind": "theorem",
+     "name": "step_short",
+     "line": 222
+    },
+    {
+     "kind": "theorem",
+     "name": "step_short_overlap",
+     "line": 268
+    },
+    {
+     "kind": "theorem",
+     "name": "step_record_fresh",
+     "line": 282
+    },
+    {
+     "kind": "theorem",
+     "name": "step_record_left",
+     "line": 315
+    },
+    {
+     "kind": "theorem",
+     "name": "step_none",
+     "line": 328
+    },
+    {
+     "kind": "theorem",
+     "name": "budget_covered",
+     "line": 372
+    },
+    {
+     "kind": "theorem",
+     "name": "short_record_overlap_budget",
+     "line": 438
+    }
+   ],
+   "theorems": 17,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ShortReservoirCapacity",
    "lines": 162,
    "imports": [
@@ -68063,6 +68162,6 @@
    "hasReport": false
   }
  ],
- "total": 944,
+ "total": 945,
  "withReport": 167
 }
