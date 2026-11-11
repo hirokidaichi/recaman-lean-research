@@ -1,0 +1,25 @@
+{
+  "tag": "H10",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixHighWindow.olean",
+    "Recaman/DepthSixHighWindow.lean"
+  ],
+  "started_jst": "2026-11-12T06:23:09.814949+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixHighWindow.lean": "4947ab774a57cf22ccda4ff7c2329808188f56fc4c67e83bd1031d9887737753"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "e70edefb5634fd4a5bc63954f403ef1d1be73325944b4ce805ddf444c0087c66",
+  "source_tree_sha256": "effdfb931ffe7d38ef3a3bdbfffa2bb819c34e06518b7944d7d6db7836ce3fbb",
+  "source_tree_manifest": "H10-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

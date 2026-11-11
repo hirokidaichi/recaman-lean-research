@@ -1,0 +1,12 @@
+Recaman/OneFreeStateProjection.lean:13:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/OneFreeStateProjection.lean:18:26: error: Function expected at
+  BlockWord
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  w
+
+Hint: The identifier `BlockWord` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.

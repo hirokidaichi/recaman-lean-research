@@ -1,0 +1,20 @@
+{
+  "tag": "G03",
+  "argv": [
+    "python3",
+    "scripts/harness_gate.py",
+    "--check-registry"
+  ],
+  "started_jst": "2026-11-12T06:43:22.928991+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "scripts/harness_gate.py": "2ecbd40ad679540d9ba04a4349907c5b3300f27b40ca55c48fc03cf14e53f24c"
+  },
+  "scope": "Guard validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "f08353c955721eeeebb6c2db989028da7f757eda625127957e1ca69764a8686e",
+  "source_tree_sha256": "2291c2e6d141b712b716fd51319f67f8db9d497a203e8026c0da616a1fdef214",
+  "source_tree_manifest": "G03-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

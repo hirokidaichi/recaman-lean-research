@@ -1,0 +1,25 @@
+{
+  "tag": "H44",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FirstSFourPrefix.olean",
+    "Recaman/FirstSFourPrefix.lean"
+  ],
+  "started_jst": "2026-11-12T07:27:26.786046+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FirstSFourPrefix.lean": "b2cf9da685847f3eb4ceab0a4d60235af27c054ae4e422ae36d68c41ee85aa9c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "ace1ba4607b4b06fdece5e8d806a95e2d40be3e5d35e0a5ce271267494be68be",
+  "source_tree_sha256": "1c035cd5ad07697fc2df30168f2af158a09de3457aa6794e65d2eba7b51b0371",
+  "source_tree_manifest": "H44-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,49 @@
+Recaman/HighSupplyDownstep.lean:29:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Ar ?f ?t (?k + 1)
+in the target expression
+  Ar f t k = 0
+
+case neg
+f : Nat → Bool
+n a q : Nat
+H : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnq : n ≤ q
+hH : Fw f n < H - 1
+hqH : Fw f q = H
+left✝¹ : f q = true
+t k : Nat
+left✝ : 0 ≤ t
+htk : t + k = q
+hk : 0 < k
+hlev : H = Fw f t + 1
+harea : Ar f t k = 0
+hnt : n ≤ t
+h : ¬∃ i, t ≤ i ∧ i < q ∧ Fw f i < H - 1
+hnonneg : 0 ≤ Ar f t (k - 1) + ↑(k - 1) * (Fw f t - H + 1)
+⊢ ∃ i, t ≤ i ∧ i < q ∧ Fw f i < H - 1
+Recaman/HighSupplyDownstep.lean:34:51: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  l ≥ 0
+  h ≥ 0
+  h - l ≥ 0
+  g - j ≥ 1
+  g - m ≥ 1
+  e ≥ 1
+  e - h + l ≥ 1
+  e + l ≥ 0
+  c - g ≤ -1
+  b ≥ 0
+  b - e - l ≤ 0
+  b - l ≤ 0
+where
+ b := ↑n
+ c := Fw f n
+ e := ↑k
+ g := Fw f t
+ h := ↑i
+ j := Fw f i
+ l := ↑d
+ m := Fw f d

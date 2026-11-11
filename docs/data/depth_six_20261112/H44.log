@@ -1,0 +1,98 @@
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) + 1
+a1 : f (n + 1) = true
+h2 : Fw f (n + 3) = Fw f (n + 2) + 1
+a2 : f (n + 2) = true
+h3 : Fw f (n + 4) = Fw f (n + 3) + 1
+a3 : f (n + 3) = true
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) + 1
+a1 : f (n + 1) = true
+h2 : Fw f (n + 3) = Fw f (n + 2) + 1
+a2 : f (n + 2) = true
+h3 : Fw f (n + 4) = Fw f (n + 3) - 1
+a3 : f (n + 3) = false
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) + 1
+a1 : f (n + 1) = true
+h2 : Fw f (n + 3) = Fw f (n + 2) - 1
+a2 : f (n + 2) = false
+h3 : Fw f (n + 4) = Fw f (n + 3) + 1
+a3 : f (n + 3) = true
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) - 1
+a1 : f (n + 1) = false
+h2 : Fw f (n + 3) = Fw f (n + 2) + 1
+a2 : f (n + 2) = true
+h3 : Fw f (n + 4) = Fw f (n + 3) + 1
+a3 : f (n + 3) = true
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) - 1
+a1 : f (n + 1) = false
+h2 : Fw f (n + 3) = Fw f (n + 2) + 1
+a2 : f (n + 2) = true
+h3 : Fw f (n + 4) = Fw f (n + 3) - 1
+a3 : f (n + 3) = false
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) - 1
+a1 : f (n + 1) = false
+h2 : Fw f (n + 3) = Fw f (n + 2) - 1
+a2 : f (n + 2) = false
+h3 : Fw f (n + 4) = Fw f (n + 3) + 1
+a3 : f (n + 3) = true
+⊢ False
+Recaman/FirstSFourPrefix.lean:30:20: error: unsolved goals
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+h0 : Fw f (n + 1) = Fw f n - 1
+hWord : seg f n 4 = [false, f (n + 1), f (n + 2), f (n + 3)]
+h1 : Fw f (n + 2) = Fw f (n + 1) - 1
+a1 : f (n + 1) = false
+h2 : Fw f (n + 3) = Fw f (n + 2) - 1
+a2 : f (n + 2) = false
+h3 : Fw f (n + 4) = Fw f (n + 3) - 1
+a3 : f (n + 3) = false
+⊢ False

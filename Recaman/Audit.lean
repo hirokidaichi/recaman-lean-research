@@ -4269,3 +4269,77 @@ import Recaman
 #print axioms Recaman.DepthSixSourceClock.gap_six_local_source_clock_two
 
 #print axioms Recaman.DepthSixSourceArea.gap_six_actual_source_area_spectrum
+
+#print axioms Recaman.FloorSupplyPairCharge.floor_supply_pair_charge_after_cut
+
+#print axioms Recaman.DepthSixOldHead.old_gap_six_excludes_head_five
+
+#print axioms Recaman.DepthSixFirstHead.gap_six_first_addition_head
+
+#print axioms Recaman.HighWindowSquareBudget.internal_window_area_budget
+
+#print axioms Recaman.HighWindowSquareBudget.high_window_square_budget
+
+#print axioms Recaman.DepthSixHighWindow.gap_six_high_window_and_first_supply
+
+#print axioms Recaman.DepthSixNestedWindow.positive_depth_six_gap_six_free_gap
+
+#print axioms Recaman.DepthSixFirstHead.old_gap_six_first_head_six
+
+#print axioms Recaman.SFinalWindowLength.window_ending_S_length
+
+#print axioms Recaman.DepthSixOldFive.old_five_counter_area_budget
+
+#print axioms Recaman.DepthSixOldFive.old_five_source_duration_budget
+
+#print axioms Recaman.DepthSixOldFive.old_five_actual_high_source
+
+#print axioms Recaman.OldFiveShortHighWindow.old_five_high_source_is_SAA
+
+#print axioms Recaman.OldFiveShortHighWindow.positive_depth_six_old_five_free_gap
+
+#print axioms Recaman.DepthSixLocalSourcePrefix.local_five_source_prefix_free
+
+#print axioms Recaman.DepthSixLocalSourcePrefix.local_five_source_clock_sixteen
+
+#print axioms Recaman.DepthSixLocalPreBudget.positive_five_weight_budget
+
+#print axioms Recaman.DepthSixOldFour.old_four_counter_area_budget
+
+#print axioms Recaman.DepthSixOldFour.old_four_source_duration_budget
+
+#print axioms Recaman.DepthSixOldFour.old_four_actual_high_source
+
+#print axioms Recaman.OldFourHighWindowSpectrum.old_four_high_source_spectrum
+
+#print axioms Recaman.OldFourFreeHeight.old_four_free_height_le_two
+
+#print axioms Recaman.OldFourFreeHeight.old_four_counter_upper_excursion
+
+#print axioms Recaman.DepthSixFourRefinedWeight.positive_four_eight_high_weight
+
+#print axioms Recaman.OldFourInitialSS.old_four_eight_high_source_budget
+
+#print axioms Recaman.OldFourInitialSS.old_four_counter_initial_SS
+
+#print axioms Recaman.OldFourSecondClockBudget.old_four_second_clock_source_budget
+
+#print axioms Recaman.OldFourHighFreeZero.old_four_counter_high_free_zero
+
+#print axioms Recaman.OldFourGap.positive_depth_six_old_four_free_gap
+
+#print axioms Recaman.SevenWindowPrefixFive.actual_seven_ending_SA
+
+#print axioms Recaman.DepthSixOldSourceGap.positive_depth_six_old_source_free_gap
+
+#print axioms Recaman.DepthSixLocalPrefixPair.local_four_source_prefix_free_one
+
+#print axioms Recaman.FirstSOneFreePrefix.first_S_one_free_additions
+
+#print axioms Recaman.DepthSixLocalSourceClock.local_counter_source_clock_two_or_four
+
+#print axioms Recaman.DepthSixClockFourPrefix.clock_four_actual_prefix_packet
+
+#print axioms Recaman.DepthSixClockFourHighWindow.clock_four_high_source_SAA
+
+#print axioms Recaman.DepthSixClockFourCollision.clock_four_actual_counter_excluded

@@ -1,0 +1,58 @@
+import Recaman.DepthSixFirstHead
+
+namespace Recaman.DepthSixCommonAnchor
+
+open Recaman.DepthSixFirstHead Recaman.DepthSixSourceArea Recaman.DepthSixGapResidual
+open Recaman.DepthSixFreeLocation Recaman.LevelTriangleArea Recaman.AdditionRankSlack
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- Every actual gap-six counter has a common nonpositive area anchor at
+the second original clock, for both old and local final sources. This
+splits only area; the supplied counts retain their original base zero. -/
+theorem gap_six_common_second_clock (f : Nat → Bool) (n a b : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤6) :
+    n+2<b ∧ Fw f (n+2)=Fw f n-2 ∧
+      areaFromLevel f (n+2) (Fw f n-2) (b+6-(n+2))≤0 ∧
+      lowAdditionWeights f n (Fw f n-2) (b-n)≤55 := by
+  obtain ⟨h,hh,hhead,hFirst,hA⟩ := gap_six_first_addition_head f n a b hw hpre
+    hnb hfloor hpos hS he hcounter
+  have hh5 : 5≤h ∧ h≤6 := by omega
+  have hFirst2 : ∀ i, n≤i → i<n+2 → f i=false := fun i hi hj => hFirst i hi (by omega)
+  have hWalk := fw_false_run f n 2 hFirst2
+  have hArea : Ar f n 2= -3 := by
+    rw [Ar_areaW,seg_false f n 2 hFirst2]
+    decide
+  have hspec := gap_six_actual_source_area_spectrum f n a b hw hpre hnb hfloor hpos hS he hcounter
+  have hFull : areaFromLevel f n (Fw f n-2) (b+6-n)≤1 := by omega
+  have hsplit := area_split_at f n (n+2) (b+6) (by omega) (by omega)
+  rw [show n+2-n=2 by omega,hArea,hWalk] at hsplit
+  have hCast : ((b+6-n : Nat) : Int)=((b+6-(n+2) : Nat) : Int)+2 := by omega
+  have hAnchor : areaFromLevel f (n+2) (Fw f n-2) (b+6-(n+2))≤0 := by
+    unfold areaFromLevel at hFull ⊢
+    rw [show Fw f n-(Fw f n-2)=2 by omega,hCast,Int.add_mul] at hFull
+    rw [hWalk,show Fw f n-↑2-(Fw f n-2)=0 by omega,Int.mul_zero]
+    have hDiff : Fw f n-↑2-Fw f n= -2 := by omega
+    rw [hDiff] at hsplit
+    omega
+  obtain ⟨hf,_,_,htarget,_⟩ := positive_depth_six_counter_profile f n a b 6 hw hpre
+    hnb hfloor hpos hS he hcounter
+  have hb := fw_false_run f b 6 hS
+  have hHeadWalk := fw_false_run f n h hFirst
+  obtain ⟨d,hhd,hdb,hd,hdA⟩ := ivt f b (Fw f n-4) (by omega) (b-(n+h)) (n+h)
+    (by omega) (by omega)
+  have hF1 : 1≤cN (fun i => Fw f i=Fw f n-5 ∧ f i=true) n (b-n) := by
+    by_cases hz : 1≤cN (fun i => Fw f i=Fw f n-5 ∧ f i=true) n (b-n)
+    · exact hz
+    · exact (not_of_cN_zero (fun i => Fw f i=Fw f n-5 ∧ f i=true) n (b-n)
+        (by omega) d (by omega) (by omega) ⟨by omega,hdA⟩).elim
+  obtain ⟨hW,hE⟩ := low_weights_saving_at_high_free f n a (b-n) (Fw f n-6) (Fw f n-2)
+    hw hpre (fun i hi hj => hfloor i hi (by omega)) (by omega)
+  have hF1' : 1≤cN (fun i => Fw f i=Fw f n-6+1 ∧ f i=true) n (b-n) := by
+    simpa only [show Fw f n-6+1=Fw f n-5 by omega] using hF1
+  exact ⟨by omega,hWalk,hAnchor,by omega⟩
+
+end Recaman.DepthSixCommonAnchor

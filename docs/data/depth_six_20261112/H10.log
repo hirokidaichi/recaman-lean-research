@@ -1,0 +1,58 @@
+Recaman/DepthSixHighWindow.lean:72:3: error: unknown tactic
+Recaman/DepthSixHighWindow.lean:20:71: error: unsolved goals
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+he : EndN f 0 (b + 6)
+hcounter : cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n) ≤ 6
+hf : free f n (b - n) = 6
+left✝³ : 4 ≤ 6
+left✝² : 6 ≤ 8
+htarget : Fw f (b + 6) = Fw f n - 1
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+r : Int := Fw f n - 2
+hdown : Fw f (b + 6) = Fw f b - ↑6
+hb : Fw f b = r + 7
+hHigh : cN (fun t => Fw f n - 4 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ 0
+hNoHigh : ∀ (q : Nat), n ≤ q → q < b → Fw f n - 4 ≤ Fw f q → f q = true → EndN f 0 q
+hW :
+  lowAdditionWeights f n r (b - n) + 2 * ↑(cN (fun t => Fw f t = Fw f n - 6 + 1 ∧ f t = true) n (b - n)) +
+      5 * ↑(cN (fun t => Fw f n - 6 + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = Fw f n - 6 + 2 ∧ EndN f 0 t) n (b - n))
+hE :
+  2 * cN (fun t => Fw f t = Fw f n - 6 + 2 ∧ EndN f 0 t) n (b - n) +
+      cN (fun t => Fw f n - 6 + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤
+    free f n (b - n)
+hBudget : lowAdditionWeights f n r (b - n) ≤ 57
+q : Nat
+hnq : n ≤ q
+hqb : q < b
+hq : Fw f q = r + 7 - 1
+hqA left✝¹ : f q = true
+u k : Nat
+left✝ : 0 ≤ u
+huk : u + k = q
+hk : 0 < k
+huq : Fw f q = Fw f u + 1
+huArea : Ar f u k = 0
+hu : Fw f u = r + 5
+hnu : n ≤ u
+huWin : Win f u (q - u)
+hspec :
+  areaFromLevel f n (Fw f n - 2) (b + 6 - n) = -3 ∨
+    areaFromLevel f n (Fw f n - 2) (b + 6 - n) = -2 ∨ areaFromLevel f n (Fw f n - 2) (b + 6 - n) = 1
+hFull : areaFromLevel f n r (b + 6 - n) ≤ 1
+htailAr : Ar f b 6 = -21
+htail : areaFromLevel f b r 6 = 21
+ha : areaFromLevel f n r (b + 6 - n) = areaFromLevel f n r (b - n) + 21
+hNew :
+  max 0 5 * (max 0 5 + 1) + max 0 7 * (max 0 7 + 1) - max 0 6 * (max 0 6 + 1) + 2 * ↑(q - u) * (r + 5 - r) ≤
+    2 * lowAdditionWeights f n r (b - n) + 2 * areaFromLevel f n r (b - n) + max 0 2 * (max 0 2 + 1)
+htri : ∀ (d : Int), aboveTriangle r (r + d) = max 0 d * (max 0 d + 1)
+⊢ ∃ u, n ≤ u ∧ u + 3 < b ∧ Fw f u = Fw f n + 3 ∧ Win f u 3 ∧ EndN f 0 (u + 1)

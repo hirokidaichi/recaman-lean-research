@@ -1,0 +1,25 @@
+{
+  "tag": "H31",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SevenWindowPrefixFive.olean",
+    "Recaman/SevenWindowPrefixFive.lean"
+  ],
+  "started_jst": "2026-11-12T07:00:30.105010+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SevenWindowPrefixFive.lean": "72eb7c73d96b7626636a5ebcabdde585cbfec5a510e4950eab637f88dafebd6f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "47cdda3ac0aec2526a0825b77aa6582cbb03b93abdc9a53658f54879d3495bf1",
+  "source_tree_sha256": "a2675986205efb167d431bc39555e32b99e144b61afea0c5ed325b3f64cbf4c9",
+  "source_tree_manifest": "H31-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

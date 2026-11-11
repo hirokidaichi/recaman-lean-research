@@ -1,0 +1,8 @@
+Recaman/DepthSixSourceResidual.lean:26:82: error: Application type mismatch: The argument
+  hS
+has type
+  ∀ (i : Nat), b ≤ i → i < b + AdditionRankSlack.free f n (b - n) → f i = false
+but is expected to have type
+  ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+in the application
+  positive_depth_six_gap_six_free_gap f n a b hw hpre hnb hfloor hpos hS

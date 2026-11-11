@@ -1,0 +1,38 @@
+Recaman/HighWindowSquareBudget.lean:48:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  u ≥ 0
+  n - o + 2*p + 2*u - 2*w - 2*y ≤ 0
+  l - m - 2*v + 2*w - 2*x + 2*y ≤ 0
+  l - m + n - o - 2*v - 2*x + z ≥ 1
+  h - i ≤ 0
+  h - j ≤ 0
+  h - k ≤ 0
+  g - h ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e ≤ 0
+  c ≥ 0
+  a ≥ 0
+  a - c ≥ 0
+  a - d ≤ -1
+where
+ a := ↑t
+ c := ↑s
+ d := ↑q
+ e := ↑b
+ g := Fw f s
+ h := r
+ i := Fw f t
+ j := Fw f q
+ k := Fw f b
+ l := aboveTriangle r (Fw f t)
+ m := aboveTriangle r (Fw f s)
+ n := aboveTriangle r (Fw f b)
+ o := aboveTriangle r (Fw f q)
+ p := ↑(q - t) * (Fw f t - r)
+ u := lowAdditionWeights f t r (q - t)
+ v := areaFromLevel f s r (b - s)
+ w := areaFromLevel f t r (b - t)
+ x := lowAdditionWeights f s r (b - s)
+ y := lowAdditionWeights f t r (b - t)
+ z := 2 * ↑(q - t) * (Fw f t - r)

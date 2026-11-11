@@ -1,0 +1,39 @@
+Recaman/OldFourInitialSS.lean:83:8: error: unsolved goals
+case neg
+f : Nat → Bool
+n a b t : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 4 → f i = false
+he : EndN f 0 (b + 4)
+hcounter : cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n) ≤ 4
+htn : t < n
+hwin : Win f t (b + 4 - t)
+hnS : f n = false
+hnF : Fw f (n + 1) = Fw f n - 1
+hA : f (n + 1) = true
+Q : Nat → Prop := fun i => Fw f n - 4 ≤ Fw f i ∧ f i = true ∧ ¬EndN f 0 i
+i : Nat
+hi : n ≤ i
+hj : i ≤ n + 1
+h : ¬i = n
+hh : i = n + 1
+⊢ Fw f n - 1 ≤ Fw f n - 1
+Recaman/OldFourInitialSS.lean:96:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  i ≥ 0
+  0 ≤ g ≤ 1
+  e ≥ 0
+  0 ≤ d ≤ 4
+  c ≥ 0
+  c - e ≥ 1
+where
+ c := ↑n
+ d := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n))
+ e := ↑t
+ g := ↑(cN Q n (b - n))
+ i := ↑(cN (EndN f 0) n (b - n))

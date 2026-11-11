@@ -1,0 +1,67 @@
+import Recaman.LevelTriangleArea
+
+namespace Recaman.HighWindowSquareBudget
+
+open Recaman.LevelTriangleArea Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem area_split (f : Nat → Bool) (s t b : Nat) (r : Int)
+    (hst : s≤t) (htb : t≤b) :
+    areaFromLevel f s r (b-s)=areaFromLevel f s r (t-s)+areaFromLevel f t r (b-t) := by
+  have hlen : ((b-s : Nat) : Int)=((t-s : Nat) : Int)+((b-t : Nat) : Int) := by omega
+  unfold areaFromLevel
+  rw [area_split_at f s t b hst htb,hlen,Int.add_mul]
+  have hmul : ((b-t : Nat) : Int)*(Fw f t-Fw f s)+
+      ((b-t : Nat) : Int)*(Fw f s-r)=((b-t : Nat) : Int)*(Fw f t-r) := by
+    rw [←Int.mul_add,show Fw f t-Fw f s+(Fw f s-r)=Fw f t-r by omega]
+  omega
+
+/-- An actual high source window costs at least nine extra units beyond
+its triangular rise. This uses its exact zero area and minimum length,
+without assuming an upper bound on the walk's excursions. -/
+theorem high_window_square_budget (f : Nat → Bool) (s t q b : Nat) (r : Int)
+    (hst : s≤t) (htq : t<q) (hqb : q≤b) (hstart : r≤Fw f s)
+    (ht : Fw f t=r+5) (hwin : Win f t (q-t))
+    (hb : Fw f b=r+7) (hS : ∀ i, b≤i → i<b+6 → f i=false) :
+    116≤2*lowAdditionWeights f s r (b-s)+
+      2*areaFromLevel f s r (b+6-s)+aboveTriangle r (Fw f s) := by
+  have hk := win_ge3 f t (q-t) hwin
+  have hq := hwin.2.1
+  rw [show t+(q-t)=q by omega,ht] at hq
+  have hfirst := (signed_area_with_low_weights f s r (t-s)).2
+  have hlast := (signed_area_with_low_weights f q r (b-q)).2
+  rw [show s+(t-s)=t by omega,ht] at hfirst
+  rw [show q+(b-q)=b by omega,hq,hb] at hlast
+  have htriS : belowTriangle r (Fw f s)=0 := by
+    simp [belowTriangle,Int.max_eq_left (show r-Fw f s≤0 by omega)]
+  have htri5 : belowTriangle r (r+5)=0 ∧ aboveTriangle r (r+5)=30 := by
+    simp [belowTriangle,aboveTriangle]
+  have htri6 : belowTriangle r (r+6)=0 ∧ aboveTriangle r (r+6)=42 := by
+    simp [belowTriangle,aboveTriangle]
+  have htri7 : belowTriangle r (r+7)=0 ∧ aboveTriangle r (r+7)=56 := by
+    simp [belowTriangle,aboveTriangle]
+  rw [htriS,htri5.1,htri5.2] at hfirst
+  rw [htri6.1,htri6.2,htri7.1,htri7.2] at hlast
+  have hmid : areaFromLevel f t r (q-t)=5*((q-t : Nat) : Int) := by
+    unfold areaFromLevel
+    rw [hwin.2.2,ht,show r+5-r=5 by omega]
+    omega
+  have hmidW := low_weights_nonnegative f t r (q-t)
+  have ha := area_split f s t b r hst (by omega)
+  have ha2 := area_split f t q b r (by omega) hqb
+  have hw := low_weights_append f s r (t-s) (b-t)
+  rw [show t-s+(b-t)=b-s by omega,show s+(t-s)=t by omega] at hw
+  have hw2 := low_weights_append f t r (q-t) (b-q)
+  rw [show q-t+(b-q)=b-t by omega,show t+(q-t)=q by omega] at hw2
+  have htailAr : Ar f b 6= -21 := by
+    rw [Ar_areaW,seg_false f b 6 hS]
+    decide
+  have htail : areaFromLevel f b r 6=21 := by
+    unfold areaFromLevel
+    rw [htailAr,hb]
+    omega
+  have ha3 := area_split f s b (b+6) r (by omega) (by omega)
+  rw [show b+6-b=6 by omega,htail] at ha3
+  omega
+
+end Recaman.HighWindowSquareBudget

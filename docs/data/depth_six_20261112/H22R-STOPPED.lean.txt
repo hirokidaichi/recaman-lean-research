@@ -1,0 +1,42 @@
+import Recaman.LevelTriangleArea
+
+namespace Recaman.PrefixFreeWeightCost
+
+open Recaman.LevelTriangleArea Recaman.SingleWindowEquality Classical
+
+private theorem count_step (P : Nat → Prop) (n k : Nat) :
+    (cN P n (k+1) : Int)=(cN P n k : Int)+(if P (n+k) then 1 else 0) := by
+  by_cases h : P (n+k)
+  · rw [cN_succ_pos P n k h,if_pos h]
+    omega
+  · rw [cN_succ_neg P n k h,if_neg h]
+    omega
+
+/-- Every actual free addition either has low odd weight at least five
+or contributes once to the high-free count. The same original EndN is
+used on both sides, with no floor or old-prefix restriction. -/
+theorem five_free_le_weights_and_high (f : Nat → Bool) (n : Nat) (r : Int) :
+    ∀ K, 5*(cN (fun i => f i=true ∧ ¬EndN f 0 i) n K : Int)≤
+      lowAdditionWeights f n r K+
+      5*(cN (fun i => r-2≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n K : Int)
+  | 0 => by simp [cN,lowAdditionWeights]
+  | K+1 => by
+    have ih := five_free_le_weights_and_high f n r K
+    have hw := low_weight_nonnegative f r (n+K)
+    have hs : 5*(if f (n+K)=true ∧ ¬EndN f 0 (n+K) then 1 else 0)≤
+        lowAdditionWeight f r (n+K)+
+        5*(if r-2≤Fw f (n+K) ∧ f (n+K)=true ∧ ¬EndN f 0 (n+K) then 1 else 0) := by
+      by_cases hp : f (n+K)=true ∧ ¬EndN f 0 (n+K)
+      · rw [if_pos hp]
+        by_cases hh : r-2≤Fw f (n+K)
+        · rw [if_pos ⟨hh,hp⟩]
+          omega
+        · rw [if_neg (fun h => hh h.1),lowAdditionWeight,
+            if_pos ⟨hp.1,by omega⟩]
+          omega
+      · rw [if_neg hp,if_neg (fun h => hp h.2)]
+        omega
+    rw [lowAdditionWeights,count_step,count_step]
+    omega
+
+end Recaman.PrefixFreeWeightCost

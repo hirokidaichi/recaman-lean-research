@@ -1,0 +1,28 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.OneFreeStateProjection
+
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+open Recaman.ThreeNonsuppliedData
+
+/-- A new projection of the already verified r3 graph, without
+regenerating the graph or rechecking any of its transition rows. -/
+theorem one_free_rows_projection :
+    ((List.range rows.size).all fun i => decide
+      ((stateAt rows i).nonsupplied≤1 → (stateAt rows i).additions≤1))=true := by
+  decide
+
+/-- The projection is transported through the existing simulation of
+the original endability count, keeping the entire padded old history. -/
+theorem one_free_positive_additions (f : Nat → Bool) (n a K : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hfree : cN (fun i => f i=true ∧ ¬EndN f 0 i) n K≤1) :
+    cN (fun i => f i=true) n K≤1 := by
+  obtain ⟨i,hi,hstate⟩ := three_nonsupplied_state_member f n a K hw hpre hpos (by omega)
+  have hproj := of_decide_eq_true (List.all_eq_true.mp one_free_rows_projection i
+    (List.mem_range.mpr hi))
+  rw [hstate] at hproj
+  exact hproj hfree
+
+end Recaman.OneFreeStateProjection

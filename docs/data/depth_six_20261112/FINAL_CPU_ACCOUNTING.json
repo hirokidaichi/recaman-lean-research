@@ -1,0 +1,387 @@
+{
+  "basis": "wait4 measured user+system CPU of completed validation commands including reaped descendants; per-process cap is not a cumulative tree cap",
+  "math_search_worker_launched": false,
+  "math_search_budget_cpu_seconds": 0,
+  "individual_lean_cpu_seconds": 33.579243999999996,
+  "full_check_cpu_seconds": 76.531978,
+  "guard_cpu_seconds": 3.772106,
+  "receipts": [
+    {
+      "tag": "H01",
+      "exit": 0,
+      "cpu_seconds": 1.40316
+    },
+    {
+      "tag": "H02",
+      "exit": 0,
+      "cpu_seconds": 0.6328639999999999
+    },
+    {
+      "tag": "H03",
+      "exit": 0,
+      "cpu_seconds": 0.48176899999999995
+    },
+    {
+      "tag": "H04",
+      "exit": 1,
+      "cpu_seconds": 0.366114
+    },
+    {
+      "tag": "H04R",
+      "exit": 1,
+      "cpu_seconds": 0.382625
+    },
+    {
+      "tag": "H05",
+      "exit": 1,
+      "cpu_seconds": 0.31805300000000003
+    },
+    {
+      "tag": "H05R",
+      "exit": 0,
+      "cpu_seconds": 0.5854079999999999
+    },
+    {
+      "tag": "H06",
+      "exit": 1,
+      "cpu_seconds": 0.749999
+    },
+    {
+      "tag": "H07",
+      "exit": 1,
+      "cpu_seconds": 0.49589799999999995
+    },
+    {
+      "tag": "H07R",
+      "exit": 1,
+      "cpu_seconds": 0.490531
+    },
+    {
+      "tag": "H08",
+      "exit": 1,
+      "cpu_seconds": 0.7154999999999999
+    },
+    {
+      "tag": "H08R",
+      "exit": 0,
+      "cpu_seconds": 0.782324
+    },
+    {
+      "tag": "H09",
+      "exit": 0,
+      "cpu_seconds": 0.799202
+    },
+    {
+      "tag": "H10",
+      "exit": 1,
+      "cpu_seconds": 0.5392049999999999
+    },
+    {
+      "tag": "H10R",
+      "exit": 0,
+      "cpu_seconds": 0.675081
+    },
+    {
+      "tag": "H11",
+      "exit": 0,
+      "cpu_seconds": 0.261681
+    },
+    {
+      "tag": "H12",
+      "exit": 0,
+      "cpu_seconds": 0.64074
+    },
+    {
+      "tag": "G01",
+      "exit": 2,
+      "cpu_seconds": 0.020193
+    },
+    {
+      "tag": "G02",
+      "exit": 0,
+      "cpu_seconds": 0.497483
+    },
+    {
+      "tag": "C01",
+      "exit": 1,
+      "cpu_seconds": 7.593745999999999
+    },
+    {
+      "tag": "C02",
+      "exit": 0,
+      "cpu_seconds": 18.840996
+    },
+    {
+      "tag": "H13",
+      "exit": 0,
+      "cpu_seconds": 0.545374
+    },
+    {
+      "tag": "H14",
+      "exit": 0,
+      "cpu_seconds": 0.787022
+    },
+    {
+      "tag": "H15",
+      "exit": 0,
+      "cpu_seconds": 0.8818109999999999
+    },
+    {
+      "tag": "H16",
+      "exit": 1,
+      "cpu_seconds": 0.8444159999999999
+    },
+    {
+      "tag": "H17",
+      "exit": 0,
+      "cpu_seconds": 0.2692
+    },
+    {
+      "tag": "H18",
+      "exit": 0,
+      "cpu_seconds": 0.350994
+    },
+    {
+      "tag": "H19",
+      "exit": 0,
+      "cpu_seconds": 0.730536
+    },
+    {
+      "tag": "H20",
+      "exit": 0,
+      "cpu_seconds": 0.395528
+    },
+    {
+      "tag": "H21",
+      "exit": 1,
+      "cpu_seconds": 0.35168699999999997
+    },
+    {
+      "tag": "H21R",
+      "exit": 1,
+      "cpu_seconds": 0.359865
+    },
+    {
+      "tag": "H22",
+      "exit": 1,
+      "cpu_seconds": 0.20792
+    },
+    {
+      "tag": "H22R",
+      "exit": 1,
+      "cpu_seconds": 0.23424299999999998
+    },
+    {
+      "tag": "G03",
+      "exit": 0,
+      "cpu_seconds": 0.479703
+    },
+    {
+      "tag": "H23",
+      "exit": 0,
+      "cpu_seconds": 0.634442
+    },
+    {
+      "tag": "H24",
+      "exit": 0,
+      "cpu_seconds": 0.692441
+    },
+    {
+      "tag": "H25",
+      "exit": 1,
+      "cpu_seconds": 0.21210199999999998
+    },
+    {
+      "tag": "C03",
+      "exit": 0,
+      "cpu_seconds": 15.693525
+    },
+    {
+      "tag": "H26",
+      "exit": 0,
+      "cpu_seconds": 0.888252
+    },
+    {
+      "tag": "H27",
+      "exit": 0,
+      "cpu_seconds": 0.3836
+    },
+    {
+      "tag": "H28",
+      "exit": 0,
+      "cpu_seconds": 0.503058
+    },
+    {
+      "tag": "H29",
+      "exit": 0,
+      "cpu_seconds": 0.7661129999999999
+    },
+    {
+      "tag": "H30",
+      "exit": 1,
+      "cpu_seconds": 0.347179
+    },
+    {
+      "tag": "H31",
+      "exit": 0,
+      "cpu_seconds": 0.566776
+    },
+    {
+      "tag": "H32",
+      "exit": 1,
+      "cpu_seconds": 0.6987169999999999
+    },
+    {
+      "tag": "H33",
+      "exit": 0,
+      "cpu_seconds": 0.38414899999999996
+    },
+    {
+      "tag": "H34",
+      "exit": 1,
+      "cpu_seconds": 0.673847
+    },
+    {
+      "tag": "H34R",
+      "exit": 0,
+      "cpu_seconds": 0.693269
+    },
+    {
+      "tag": "H35",
+      "exit": 0,
+      "cpu_seconds": 0.597337
+    },
+    {
+      "tag": "H36",
+      "exit": 0,
+      "cpu_seconds": 0.469283
+    },
+    {
+      "tag": "H37",
+      "exit": 0,
+      "cpu_seconds": 0.726998
+    },
+    {
+      "tag": "H38",
+      "exit": 0,
+      "cpu_seconds": 0.268847
+    },
+    {
+      "tag": "G04",
+      "exit": 0,
+      "cpu_seconds": 0.490446
+    },
+    {
+      "tag": "C04",
+      "exit": 0,
+      "cpu_seconds": 17.803919
+    },
+    {
+      "tag": "G05",
+      "exit": 0,
+      "cpu_seconds": 0.245568
+    },
+    {
+      "tag": "H39",
+      "exit": 1,
+      "cpu_seconds": 0.7188939999999999
+    },
+    {
+      "tag": "H39R",
+      "exit": 0,
+      "cpu_seconds": 0.7528819999999999
+    },
+    {
+      "tag": "H40",
+      "exit": 0,
+      "cpu_seconds": 0.831963
+    },
+    {
+      "tag": "H41",
+      "exit": 0,
+      "cpu_seconds": 0.983535
+    },
+    {
+      "tag": "H42",
+      "exit": 0,
+      "cpu_seconds": 0.261317
+    },
+    {
+      "tag": "H43",
+      "exit": 0,
+      "cpu_seconds": 0.31246399999999996
+    },
+    {
+      "tag": "H44",
+      "exit": 1,
+      "cpu_seconds": 0.265833
+    },
+    {
+      "tag": "H44R",
+      "exit": 0,
+      "cpu_seconds": 0.279881
+    },
+    {
+      "tag": "H45",
+      "exit": 0,
+      "cpu_seconds": 0.48955
+    },
+    {
+      "tag": "H46",
+      "exit": 0,
+      "cpu_seconds": 0.739138
+    },
+    {
+      "tag": "H47",
+      "exit": 1,
+      "cpu_seconds": 0.355252
+    },
+    {
+      "tag": "H47R",
+      "exit": 0,
+      "cpu_seconds": 0.36058799999999996
+    },
+    {
+      "tag": "H48",
+      "exit": 0,
+      "cpu_seconds": 0.773491
+    },
+    {
+      "tag": "H49",
+      "exit": 1,
+      "cpu_seconds": 0.32362199999999997
+    },
+    {
+      "tag": "H49R",
+      "exit": 0,
+      "cpu_seconds": 0.345674
+    },
+    {
+      "tag": "G06",
+      "exit": 0,
+      "cpu_seconds": 0.199831
+    },
+    {
+      "tag": "G07",
+      "exit": 0,
+      "cpu_seconds": 0.543105
+    },
+    {
+      "tag": "C05",
+      "exit": 0,
+      "cpu_seconds": 16.599792
+    },
+    {
+      "tag": "G08",
+      "exit": 1,
+      "cpu_seconds": 0.33088799999999996
+    },
+    {
+      "tag": "G08R",
+      "exit": 0,
+      "cpu_seconds": 0.9648889999999999
+    }
+  ],
+  "unmeasured": "bookkeeping Python, shell, git, unwrapped lint/brief/manifest CPU is not measured and is not zero",
+  "memory_scope": "Individual Lean argv explicitly -M512; full integration check uses standard lake build only after every adopted current source is individually accepted at -M512. No OS AS or process-tree memory cap claimed."
+}

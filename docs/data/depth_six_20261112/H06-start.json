@@ -1,0 +1,25 @@
+{
+  "tag": "H06",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixGapSix.olean",
+    "Recaman/DepthSixGapSix.lean"
+  ],
+  "started_jst": "2026-11-12T06:18:07.988253+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixGapSix.lean": "abfb7b51918230342eb8c5aa92245377fe4f510a6ee0a032ea7311d3b639c4d2"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "8a061c513f9ab232a923db812f13f0b4669eae5019e59c96b0da9c38a14e179f",
+  "source_tree_sha256": "6d965a5ac41c7d94eaaa80c3715cea43b15add2bc142551e59e0874ab655d879",
+  "source_tree_manifest": "H06-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

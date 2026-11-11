@@ -1,0 +1,39 @@
+import Recaman.DepthSixOldFive
+
+namespace Recaman.OldFiveShortHighWindow
+
+open Recaman.DepthSixOldFive Recaman.SFinalWindowLength
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- Every actual supplier at least three above the selected old target
+has the short SAA source, not a longer window. Source length and the
+high-free joint budget are both supplied internally. -/
+theorem old_five_high_source_is_SAA (f : Nat → Bool) (n a b t q : Nat) (d : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+5 → f i=false) (he : EndN f 0 (b+5))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤5)
+    (htn : t<n) (hwin : Win f t (b+5-t))
+    (hnq : n≤q) (hqb : q<b) (hd : 2≤d)
+    (hq : Fw f q=Fw f n-2+d+1) (hqe : EndN f 0 q) :
+    ∃ u, n≤u ∧ u+3=q ∧ Fw f u=Fw f n-2+d ∧ Win f u 3 ∧ d≤5 ∧
+      2*d+5*(cN (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n (b-n) : Int)≤10 := by
+  obtain ⟨u,hnu,huq,hu,hWin,hCost⟩ := old_five_actual_high_source f n a b t q d hw hpre
+    hnb hfloor hpos hS he hcounter htn hwin hnq hqb hd hq hqe
+  have hk := win_ge3 f u (q-u) hWin
+  have hmul := Int.mul_nonneg (show 0≤d-2 by omega) (show 0≤((q-u : Nat) : Int)-1 by omega)
+  have hpoly : (d-2)*(((q-u : Nat) : Int)-1)=
+      d*(((q-u : Nat) : Int)-1)-2*(((q-u : Nat) : Int)-1) := by grind only
+  rw [hpoly] at hmul
+  have hlen : q-u=3 := by
+    rcases window_three_or_at_least_seven f u (q-u) hWin with h | h
+    · exact h
+    · omega
+  have hSmall : 2*d+5*(cN (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i)
+      n (b-n) : Int)≤10 := by
+    rw [hlen] at hCost
+    omega
+  exact ⟨u,hnu,by omega,hu,by rwa [hlen] at hWin,by omega,hSmall⟩
+
+end Recaman.OldFiveShortHighWindow

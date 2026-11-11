@@ -63,16 +63,17 @@ private theorem consecutive_floor_visits_drop_one (f : Nat → Bool)
 /-- Each floor-plus-two supply has two separate original low free A
 positions. The next floor visit, or the first exit if there is no next
 floor visit, is distinct from the payments of all other supplies. -/
-theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
+theorem floor_supply_pair_charge_after_cut (f : Nat → Bool) (n a K c : Nat) (m : Int)
     {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
-    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i)
+    (hcut : ∀ i, n≤i → i<c → Fw f i≠m) :
     2*cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤
-      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+      cN (fun t => c≤t ∧ Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K := by
   classical
   let p := floorPotential f n m
   let P := fun t => Fw f t=m+2 ∧ EndN f 0 t
   let D := fun t => n≤t ∧ t<n+K ∧ P t
-  let Q := fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t
+  let Q := fun t => c≤t ∧ Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t
   have hex (t : Nat) (ht : D t) :
       ∃ q z, n<q ∧ q<z ∧ z<t ∧ Fw f q=m ∧ p q=p t-1 ∧
         (∀ i, q<i → i<t → ¬areaCrossesDown p (p t) i) ∧
@@ -119,8 +120,13 @@ theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
         (∀ i, q t≤i → i<z t → ¬exitA f m i) := by
     simp only [q,z,dif_pos ht]
     exact Classical.choose_spec (Classical.choose_spec (hex t ht))
-  have hQ (i : Nat) (hni : n≤i) (hiK : i<n+K) (ha : lowA f m i) : Q i :=
-    ⟨ha.1,ha.2,block_prefix_low_clock_not_endable f n a i hw hpre hni m
+  have hcutQ (t : Nat) (ht : D t) : c≤q t := by
+    obtain ⟨hn,hqz,hzt,hF,_,_,_,_,_,_⟩ := data t ht
+    by_cases h : c≤q t
+    · exact h
+    · exact (hcut (q t) (by omega) (by omega) hF).elim
+  have hQ (i : Nat) (hci : c≤i) (hni : n≤i) (hiK : i<n+K) (ha : lowA f m i) : Q i :=
+    ⟨hci,ha.1,ha.2,block_prefix_low_clock_not_endable f n a i hw hpre hni m
       (fun j hj hji => hfloor j hj (by omega)) ha.1⟩
   have separated (t u : Nat) (htu : t<u) (ht : D t) (hu : D u) :
       z t<q u ∨ z u<q t := by
@@ -170,7 +176,7 @@ theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
     · intro t hnt htK ht
       have hD : D t := ⟨hnt,htK,ht⟩
       obtain ⟨hn,hqz,hzt,_,_,_,ha,_,_,_⟩ := data t hD
-      exact ⟨by omega,by omega,hQ _ (by omega) (by omega) ha,t,hD,rfl⟩
+      exact ⟨by omega,by omega,hQ _ (hcutQ t hD) (by omega) (by omega) ha,t,hD,rfl⟩
     · intro t u hn htu hu ht he hsame
       have h := separated t u htu ⟨hn,by omega,ht⟩ ⟨by omega,hu,he⟩
       have ht' := (data t ⟨hn,by omega,ht⟩).2.1
@@ -181,7 +187,7 @@ theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
     · intro t hnt htK ht
       have hD : D t := ⟨hnt,htK,ht⟩
       obtain ⟨hn,hqz,hzt,_,_,_,_,ha,_,_⟩ := data t hD
-      refine ⟨by omega,by omega,hQ _ (by omega) (by omega) ha,?_⟩
+      refine ⟨by omega,by omega,hQ _ (by have := hcutQ t hD; omega) (by omega) (by omega) ha,?_⟩
       rintro ⟨u,hu,hEq⟩
       have hu' := (data u hu).2.1
       rcases Nat.lt_trichotomy t u with h | h | h
@@ -197,5 +203,21 @@ theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
   have hQpart := cN_split Q Hit n K
   change 2*cN P n K≤cN Q n K
   omega
+
+/-- The original count is the cut-at-boundary specialization. -/
+theorem floor_supply_pair_charge (f : Nat → Bool) (n a K : Nat) (m : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hfloor : ∀ i, n≤i → i≤n+K → m≤Fw f i) :
+    2*cN (fun t => Fw f t=m+2 ∧ EndN f 0 t) n K≤
+      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+  have h := floor_supply_pair_charge_after_cut f n a K n m hw hpre hfloor
+    (fun i hi hj => by omega)
+  have he : cN (fun t => n≤t ∧ Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K=
+      cN (fun t => Fw f t≤m+1 ∧ f t=true ∧ ¬EndN f 0 t) n K := by
+    apply cN_congr
+    intro t hnt _
+    exact ⟨And.right,fun ht => ⟨hnt,ht⟩⟩
+  rw [he] at h
+  exact h
 
 end Recaman.FloorSupplyPairCharge

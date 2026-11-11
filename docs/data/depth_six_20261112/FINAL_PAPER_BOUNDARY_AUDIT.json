@@ -1,0 +1,15 @@
+{
+  "checked_at_jst": "2026-11-12T07:45:09.690545+09:00",
+  "scope": "independent symbolic boundary and statement audit; no CPU search",
+  "checks": {
+    "E701 q actual": "q at r+5, b=r+6. If free, H>=1; previous A at r+4 must be actual, d3/k>=3 gives 6+5H>=11>9.",
+    "E701 H zero": "q actual source d4 has 4(k-1)+5H<=9, k>=3. Thus H=0 and k=3. H0 makes q-1 actual.",
+    "E701 two-source collision": "outer u=q-3 begins S, inner v=q-4 has A at v+1=u. This uses distinct actual windows, not equal per-source base clocks.",
+    "E701 split base": "source n+2 has original height r; initial SS weights zero; original EndN0 is retained. Internal area identity requires no BlockWord reset.",
+    "E701 excluded extrapolation": "d2 boundary is not covered by the duration producer. Do not infer gap4 fullgap.",
+    "E700 source selection": "actual source after n+4 follows initial four-prefix ceiling. Previous A is actual because H was already spent in original prefix.",
+    "old all-source coverage": "checked old-j4/j5/j6 wrapper is explicitly composition; no independent count of duplicate coverage.",
+    "new bounded units": "whole-day no-change cycle resets only by E695-700 edge, not new module count; old r4 stopped tables remain stopped."
+  },
+  "uncertainty": "E701 kernel connection and human review still pending"
+}

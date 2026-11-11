@@ -1,0 +1,25 @@
+{
+  "tag": "H22",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PrefixFreeWeightCost.olean",
+    "Recaman/PrefixFreeWeightCost.lean"
+  ],
+  "started_jst": "2026-11-12T06:41:46.531465+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PrefixFreeWeightCost.lean": "9ffc5eb80b667e94c341235806fa14f6617baa0576d4598eec37480f0181552f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "f9a8c765770fe60ff09f51dcd04335c6374f1dc45e91cc88e214f95c17aab131",
+  "source_tree_sha256": "2e59a6498a68d95d3fa790e71c6b7d6c244b4ba366363ec62e60062f699d57a6",
+  "source_tree_manifest": "H22-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

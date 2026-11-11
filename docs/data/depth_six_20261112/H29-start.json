@@ -1,0 +1,25 @@
+{
+  "tag": "H29",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldFourFreeHeight.olean",
+    "Recaman/OldFourFreeHeight.lean"
+  ],
+  "started_jst": "2026-11-12T06:56:07.887762+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldFourFreeHeight.lean": "b09d0b20469cb3f23b7676ae31c3b1edb702be5c7f9b2e525809e10303d8a7c5"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "0e18e6b94e6caeadd32edabddf709e5e3e0d07ce3fe1ec30c40c02f2d919ab6b",
+  "source_tree_sha256": "a4011f0466da37038e2d69c56076b1889a72ac3d4588480654b23c224dd8a2d3",
+  "source_tree_manifest": "H29-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

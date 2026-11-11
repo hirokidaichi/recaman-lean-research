@@ -1,0 +1,60 @@
+import Recaman.LagSevenTightObstruction
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.SevenWindowTailSA
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+open Recaman.CapacityEqualityInduction Recaman.ShortPeriodicSupply Recaman.LagSevenTightObstruction
+
+private theorem area_reverse_moment (w : List Bool) : areaW w=moment w.reverse := by
+  induction w with
+  | nil => rfl
+  | cons c w ih =>
+    rw [List.reverse_cons,moment_append]
+    cases c <;> simp [areaW,moment,mass,sign,ih] <;> grind only
+
+/-- The existing four length-seven P2 words leave only SASAASA when
+the original window's final two signs are S,A. No minimality is assumed. -/
+theorem actual_seven_ending_SA (f : Nat → Bool) (t : Nat) (hWin : Win f t 7)
+    (hS : f (t+5)=false) (hA : f (t+6)=true) :
+    seg f t 7=[false,true,false,true,true,false,true] := by
+  have hm : mass (seg f t 7)=1 := by
+    rw [seg_mass,hWin.2.1]
+    omega
+  have hmR : mass (seg f t 7).reverse=mass (seg f t 7) := by
+    simp [mass,List.map_reverse,List.sum_reverse]
+  have hP : P2 (seg f t 7).reverse := by
+    refine ⟨hmR.trans hm,?_⟩
+    rw [←area_reverse_moment,←Ar_areaW]
+    exact hWin.2.2
+  have hcases := p2_length_seven_cases (seg f t 7).reverse hP (by simp [seg_length])
+  rcases hcases with h | h | h | h
+  · have hs := congrArg List.reverse h
+    rw [List.reverse_reverse] at hs
+    change seg f t 7=[false,false,true,true,true,true,false] at hs
+    have h6 := seg_get f t 7 6 (by decide)
+    rw [hs] at h6
+    change some false=some (f (t+6)) at h6
+    rw [hA] at h6
+    cases h6
+  · have hs := congrArg List.reverse h
+    rw [List.reverse_reverse] at hs
+    exact hs
+  · have hs := congrArg List.reverse h
+    rw [List.reverse_reverse] at hs
+    change seg f t 7=[false,true,true,false,false,true,true] at hs
+    have h5 := seg_get f t 7 5 (by decide)
+    rw [hs] at h5
+    change some true=some (f (t+5)) at h5
+    rw [hS] at h5
+    cases h5
+  · have hs := congrArg List.reverse h
+    rw [List.reverse_reverse] at hs
+    change seg f t 7=[true,false,false,true,false,true,true] at hs
+    have h5 := seg_get f t 7 5 (by decide)
+    rw [hs] at h5
+    change some true=some (f (t+5)) at h5
+    rw [hS] at h5
+    cases h5
+
+end Recaman.SevenWindowTailSA

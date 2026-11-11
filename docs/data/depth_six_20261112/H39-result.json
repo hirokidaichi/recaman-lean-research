@@ -1,0 +1,31 @@
+{
+  "tag": "H39",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixFourLocalSourcePrefix.olean",
+    "Recaman/DepthSixFourLocalSourcePrefix.lean"
+  ],
+  "started_jst": "2026-11-12T07:15:50.317428+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixFourLocalSourcePrefix.lean": "e65e646331405692838eb25e731119f4e43c07fa5d616a4d5a5363dd45faa54f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "52707c19eaa33cdb93e42874f21e74a37903a182af86c66419c6497d070e7b46",
+  "source_tree_sha256": "9ba4973ee563adfe640a9d416b400714d83bd45bd51be2be698a5234f0cffd43",
+  "source_tree_manifest": "H39-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "52707c19eaa33cdb93e42874f21e74a37903a182af86c66419c6497d070e7b46",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.8928816249972442,
+  "cpu_seconds": 0.7188939999999999,
+  "finished_jst": "2026-11-12T07:15:51.210243+09:00"
+}

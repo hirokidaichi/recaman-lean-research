@@ -1,0 +1,88 @@
+import Recaman.DepthSixSourceArea
+import Recaman.HighWindowSquareBudget
+
+namespace Recaman.DepthSixHighWindow
+
+open Recaman.DepthSixSourceArea Recaman.DepthSixGapResidual Recaman.DepthSixFreeLocation
+open Recaman.HighWindowSquareBudget Recaman.LevelTriangleArea Recaman.AdditionRankSlack
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Classical
+
+/-- A gap-six actual counter forces a high SAA supply window and also
+supplies its first A from the same original history. No window, head
+count, or source-length bound is assumed. -/
+theorem gap_six_high_window_and_first_supply (f : Nat → Bool) (n a b : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+6 → f i=false) (he : EndN f 0 (b+6))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤6) :
+    ∃ u, n≤u ∧ u+3<b ∧ Fw f u=Fw f n+3 ∧ Win f u 3 ∧ EndN f 0 (u+1) := by
+  obtain ⟨hf,_,_,htarget,_⟩ := positive_depth_six_counter_profile f n a b 6 hw hpre
+    hnb hfloor hpos hS he hcounter
+  let r := Fw f n-2
+  have hdown := fw_false_run f b 6 hS
+  have hb : Fw f b=r+7 := by dsimp [r]; omega
+  have hHigh := positive_depth_six_counter_high_free f n a b 6 hw hpre hnb hfloor hpos hS he hcounter
+  simp only [if_true] at hHigh
+  have hNoHigh (q : Nat) (hnq : n≤q) (hqb : q<b) (hH : Fw f n-4≤Fw f q)
+      (hA : f q=true) : EndN f 0 q := by
+    by_cases h : EndN f 0 q
+    · exact h
+    · exact (not_of_cN_zero
+        (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n (b-n)
+        (by omega) q hnq (by omega) ⟨hH,hA,h⟩).elim
+  obtain ⟨hW,hE⟩ := low_weights_saving_at_high_free f n a (b-n) (Fw f n-6) r hw hpre
+    (fun i hi hj => hfloor i hi (by omega)) (by dsimp [r]; omega)
+  have hBudget : lowAdditionWeights f n r (b-n)≤57 := by omega
+  obtain ⟨q,hnq,hqb,hq,hqA⟩ := ivt f b (r+7) (by omega) (b-n) n (by omega)
+    (by dsimp [r]; omega)
+  have hqe := hNoHigh q hnq hqb (by dsimp [r] at hq; omega) hqA
+  obtain ⟨_,u,k,_,huk,hk,huq,huArea⟩ := hqe
+  rw [huk] at huq
+  have hu : Fw f u=r+5 := by omega
+  have hnu : n≤u := by
+    by_cases h : n≤u
+    · exact h
+    · have hOld := (block_suffix_positive_walk f 0 n a hw hpre u (by omega) (by omega)).1
+      simp only [Nat.zero_add] at hOld
+      dsimp [r] at hu
+      omega
+  have huWin : Win f u (q-u) := by
+    rw [show q-u=k by omega]
+    exact ⟨hk,by rw [huk]; exact huq,huArea⟩
+  have hspec := gap_six_actual_source_area_spectrum f n a b hw hpre hnb hfloor hpos hS he hcounter
+  have hFull : areaFromLevel f n r (b+6-n)≤1 := by dsimp [r]; omega
+  have htailAr : Ar f b 6= -21 := by
+    rw [Ar_areaW,seg_false f b 6 hS]
+    decide
+  have htail : areaFromLevel f b r 6=21 := by
+    unfold areaFromLevel
+    rw [htailAr,hb,show r+7-r=7 by omega]
+    decide
+  have ha := area_from_level_split f n b (b+6) r (by omega) (by omega)
+  rw [show b+6-b=6 by omega,htail] at ha
+  have hNew := internal_window_area_budget f n u q b r hnu (by omega) (by omega)
+    (by dsimp [r]; omega) (by omega) (by omega) (by omega) huWin
+  have htri (d : Int) : aboveTriangle r (r+d)=max 0 d*(max 0 d+1) := by
+    unfold aboveTriangle
+    rw [show r+d-r=d by omega]
+  rw [hu,show Fw f q=r+6 by omega,hb,htri 5,htri 6,htri 7,
+    show Fw f n=r+2 by dsimp [r]; omega,htri 2] at hNew
+  norm_num at hNew
+  have hlen : q-u=3 := by
+    have h3 := win_ge3 f u (q-u) huWin
+    have hdiff : Fw f u-r=5 := by omega
+    rw [hdiff] at hNew
+    omega
+  have hWin3 : Win f u 3 := by rwa [hlen] at huWin
+  obtain ⟨hSu,hA1,_⟩ := win3 f u hWin3
+  have hStep := fw_cases f u
+  have h1 : Fw f (u+1)=Fw f u-1 := by
+    rcases hStep with ⟨_,hA⟩ | ⟨hS,_⟩
+    · simp [hSu] at hA
+    · exact hS
+  exact ⟨u,hnu,by omega,by dsimp [r] at hu; omega,hWin3,
+    hNoHigh (u+1) (by omega) (by omega) (by dsimp [r] at hu; omega) hA1⟩
+
+end Recaman.DepthSixHighWindow

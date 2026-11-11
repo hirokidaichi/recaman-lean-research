@@ -1,0 +1,25 @@
+{
+  "tag": "G08R",
+  "argv": [
+    "python3",
+    "docs/data/depth_six_20261112/final_static_audit.py"
+  ],
+  "started_jst": "2026-11-12T07:41:34.355329+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "docs/data/depth_six_20261112/final_static_audit.py": "bf52a0e442976b60569967abc4e449076b8f2be4d879fdfd13181b5e847981ba"
+  },
+  "scope": "Guard validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "37dd8b75e76772e6aa89db284eb7969c9452332aa61b4cd6c4df77e45c568e4c",
+  "source_tree_sha256": "0e51d8d0222f5d8aefa93d3c5c0a736f94dd058e300300c382d66188f789e97b",
+  "source_tree_manifest": "G08R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "37dd8b75e76772e6aa89db284eb7969c9452332aa61b4cd6c4df77e45c568e4c",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.1219947920035338,
+  "cpu_seconds": 0.9648889999999999,
+  "finished_jst": "2026-11-12T07:41:35.477231+09:00"
+}

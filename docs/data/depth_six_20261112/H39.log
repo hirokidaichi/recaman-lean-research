@@ -1,0 +1,31 @@
+Recaman/DepthSixFourLocalSourcePrefix.lean:67:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  p ≥ 3
+  o ≥ 0
+  0 ≤ m ≤ 1
+  m - o ≥ 0
+  l ≤ 3
+  k - l ≥ 25
+  j ≥ 0
+  i + 8*j ≤ 36
+  h ≥ 0
+  g ≥ 0
+  0 ≤ e ≤ 4
+  d ≥ 0
+  d - g ≤ 0
+  c ≥ 0
+  c - d ≥ 1
+  c - g ≥ 1
+where
+ c := ↑b
+ d := ↑n
+ e := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n))
+ g := ↑t
+ h := ↑(cN (EndN f 0) n (b - n))
+ i := lowAdditionWeights f n (Fw f n - 2) (b - n)
+ j := ↑(cN (fun i => Fw f n - 4 ≤ Fw f i ∧ f i = true ∧ ¬EndN f 0 i) n (b - n))
+ k := lowAdditionWeights f n r (b - n)
+ l := lowAdditionWeights f n r (t - n)
+ m := ↑(cN Q n (t - n))
+ o := ↑(cN P n (t - n))
+ p := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) n (t - n))

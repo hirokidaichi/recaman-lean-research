@@ -1,0 +1,43 @@
+{
+  "nearest_boundary_checkpoints": {
+    "06:30": {
+      "actual_event": "2026-11-12T06:30:10.135393+09:00",
+      "action": "checkpoint",
+      "offset_seconds": 10.135
+    },
+    "07:00": {
+      "actual_event": "2026-11-12T06:59:56.654017+09:00",
+      "action": "checkpoint",
+      "offset_seconds": -3.346
+    },
+    "07:30": {
+      "actual_event": "2026-11-12T07:31:20.338019+09:00",
+      "action": "checkpoint",
+      "offset_seconds": 80.338
+    }
+  },
+  "longest_closed_intervals": [
+    {
+      "start": "2026-11-12T06:21:29.989378+09:00",
+      "end": "2026-11-12T06:26:30.692092+09:00",
+      "phase": "research",
+      "unit": "H-20261112-07-nested-high-window",
+      "seconds": 300.703
+    },
+    {
+      "start": "2026-11-12T07:26:36.939570+09:00",
+      "end": "2026-11-12T07:31:20.338019+09:00",
+      "phase": "research",
+      "unit": "H-20261112-22-clock-four-prefix",
+      "seconds": 283.398
+    },
+    {
+      "start": "2026-11-12T06:38:43.784588+09:00",
+      "end": "2026-11-12T06:43:22.834196+09:00",
+      "phase": "research",
+      "unit": "H-20261112-10-local-source-prefix",
+      "seconds": 279.05
+    }
+  ],
+  "interpretation": "real timestamps only, no rounding a delayed checkpoint back to scheduled boundary; open time absent"
+}

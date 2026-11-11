@@ -1,0 +1,38 @@
+Recaman/OneFreePositivePrefix.lean:21:60: error: No goals to be solved
+Recaman/OneFreePositivePrefix.lean:21:26: error: unsolved goals
+f : Nat → Bool
+n a : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnq : n ≤ n
+hSpos : n < n → 1 ≤ cN (fun i => f i = false) n (n - n)
+he : EndN f 0 n
+hbad : cN (fun i => f i = true) n (n - n) ≤ 1
+h : ¬n < n
+i : Nat
+hi : n ≤ i
+hj : i ≤ n
+hh : i = n
+⊢ Fw f n ≤ Fw f i
+Recaman/OneFreePositivePrefix.lean:59:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (fun i => f i = true) n (K + 1)
+in the target expression
+  cN (fun i => f i = true ∧ ¬EndN f 0 i) n (K + 1) ≤ 1
+
+case pos
+f : Nat → Bool
+n a : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+K : Nat
+hpos : ∀ (k : Nat), 0 < k → k ≤ K + 1 → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) n (K + 1) ≤ 1
+hmono : cN (fun i => f i = true ∧ ¬EndN f 0 i) n K ≤ cN (fun i => f i = true ∧ ¬EndN f 0 i) n (K + 1)
+ihEq : cN (fun i => f i = true) n K = cN (fun i => f i = true ∧ ¬EndN f 0 i) n K
+ihOne : cN (fun i => f i = true) n K ≤ 1
+hA : f (n + K) = true
+hNo : ¬EndN f 0 (n + K)
+⊢ cN (fun i => f i = true) n (K + 1) = cN (fun i => f i = true ∧ ¬EndN f 0 i) n (K + 1) ∧
+    cN (fun i => f i = true) n (K + 1) ≤ 1

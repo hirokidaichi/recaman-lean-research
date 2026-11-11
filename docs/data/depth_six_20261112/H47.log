@@ -1,0 +1,16 @@
+Recaman/FirstSFourPrefix.lean:52:2: error: unsolved goals
+case pos
+f : Nat → Bool
+n : Nat
+hS : f n = false
+hEnd : Fw f (n + 4) = Fw f n - 2
+hCount :
+  Fw f n - 2 = Fw f n + ↑(cN (fun i => f i = true) n 4) - ↑(cN (fun i => f i = false) n 4) ∧
+    cN (fun i => f i = true) n 4 + cN (fun i => f i = false) n 4 = 4
+hA : cN (fun i => f i = true) n 4 = 1
+hS1 : cN (fun i => f i = false) n 1 = 1
+i : Nat
+hni : n ≤ i
+hin : i < n + 4
+h : i = n
+⊢ Fw f n ≤ Fw f n

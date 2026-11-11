@@ -1,0 +1,31 @@
+{
+  "tag": "H30",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SevenWindowTailSA.olean",
+    "Recaman/SevenWindowTailSA.lean"
+  ],
+  "started_jst": "2026-11-12T06:59:20.073462+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SevenWindowTailSA.lean": "e7751c86460e4220a0c7360319397d3dc4a75350b1e38692fc020f1b339aad3e"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "c588401734c25c2307708e0ca486099f82c7f2284699a2f5b1d670ea99d72ba5",
+  "source_tree_sha256": "195e15c03f433511dbb0882ecb84b53728791dfb0658a38153f90cde77429e8f",
+  "source_tree_manifest": "H30-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c588401734c25c2307708e0ca486099f82c7f2284699a2f5b1d670ea99d72ba5",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.47742962499614805,
+  "cpu_seconds": 0.347179,
+  "finished_jst": "2026-11-12T06:59:20.550826+09:00"
+}

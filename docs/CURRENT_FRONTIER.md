@@ -1,14 +1,19 @@
 # Current research frontier
 
-最終更新: 2026-11-11。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-12。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
 
 - **E-663 / E-669 PROVED-LEAN**。元padded BlockWord後、全run・正不足・全途中深さ5なら元free-gap。途中上昇は無制限。別に全途中幅4なら正不足不要で元gap。一般深さ・C1/Q/H/SL/全射性は未証明。
-- **E-668 / E-670 / E-671 / E-676 / E-677 PROVED-LEAN**。深さ6counterはj=free∈{4,5,6}。j6の全freeは底二段、局所sourceはn+2、同targetの元面積は−3/−2/1。全old/source以前prefixを保持。三値にも無限履歴が残る。
+- **E-678 / E-679 / E-680 / E-681 / E-682 / E-683 PROVED-LEAN**。元深さ6のj6反例は、高SAAとその最初Aの二つの実供給窓で排除。正不足/元EndN0/全旧履歴/全run/上excursion無制限を保持。深さ6counterはj=free∈{4,5}へ。E678のcut二像、E679旧head5、E680最初A時計、E681同元高窓area、E682 actual SAAが入力。人間レビュー未。
+- **E-684 / E-685 PROVED-LEAN**。深さ6/j5の選択旧source枝は全長元free-gap。全高実sourceをSAAへ絞り同clockのsign衝突で排除。残る深さ6はj5局所sourceとj4。人間レビュー未。
+- **E-686 PROVED-LEAN**。j5局所target source以前の元free<=1、clock<=n+16。二実位置の小symbolic certificateで全prefix重み輸送を避ける。clock2/4はE697でPROVED-LEANへ。H21/RとH25はSTOPPEDのまま。
+- **E-687 / E-688 / E-689 / E-690 / E-691 / E-692 / E-693 / E-694 PROVED-LEAN**。j4旧sourceのduration13/3又7/内部ceilから、整数罰8・初期SS・第二clock budget9へstrict削減し、元fullgap。E683/E685と合成した全j旧source fullgapはchecked coverage consumer。深さ6counterの残りはj4/5局所sourceのみ。人間レビュー未。
 - **E-655 / E-662 / E-674 PROVED-LEAN**。全途中D4の共通旧文脈4代表、同sourceの平方と旧面積負債、任意高さ・全長の元同高供給≤低A奇数重み。元Aをfreeへ置換しない。旧r4表は再実行しない。
 - **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
-- 次の一問はH-20261112-01。同じ深さ6/j6actual targetの旧面積3/2・局所n+2を元時計順序で排除又はstrict削減する。11/11 DAILY末尾と高さ面積noteを読む。
+- **E-695 / E-696 / E-697 / E-698 / E-699 / E-700 PROVED-LEAN**。j4/5局所source前free<=1と初期S弱化モデルからsource時計n+2/n+4。n+4は元高free一件を消費し、以後の全実高source SAA同士の符号衝突で排除。全旧履歴/全run/上昇無制限を保持。深さ6counterの残りはj4/5・選択源n+2。H49/R coverage consumerは署名監査でshadowed binderがあり採用外、残余の全体合成を独立Lean結果とは数えない。
+- **E-701 PROVED-PAPER**。j5/n+2は元area0からd*(k−1)+5H<=9を供給し、最高二Aのactual SAA衝突で排除、全source元free>=6。元actual anchor/二A接着は未Lean、人間レビュー未。従って紙上残余はj4/n+2。C1全体の証明ではない。
+- 次の一問はH-20261113-01。元j5/n+2 counterからactual高sourceのduration+5H<=9を内部供給し、二実A接着をLeanへ移せるか。E701/H0/供給結論を新Propで仮定しない。
 
 ## 11/10までの要約
 
@@ -74,7 +79,7 @@
 
 ## 次の一問
 
-[H-20261112-01](HYPOTHESIS_CARD_2026-11-12_DEPTH_SIX_SOURCE_AREA.md)。11/11 DAILY末尾→高さ面積note→同カード。同元padded前史/正不足/全深さ6のj6counterから、局所source n+2又は旧面積3/2の同target familyを元freeとclock順序で共同排除する。最初15分で新source edge/strict削減/補助反例がなければ、j4/5の源前後25分と全高重みの無重み化条件20分へ切替える。source以前prefixをresetせず、H38/R停止実装をそのまま再実行しない。
+[当日カード](HYPOTHESIS_CARD_2026-11-12_DEPTH_SIX_SOURCE_AREA.md)と[当日note](RESEARCH_NOTE_2026-11-12_NESTED_SOURCE_AREA.md)。元深さ6の旧sourceは全jで完了。残りj4/5は局所source。j5源前free<=1/clock16、j4はW+8H<=36と局所平方25から源前free<=2を狙う。H21/H22/H25/H30/H32を資源/tactic/import/splitだけで再開しない。
 
 ## 停止と証拠の境界
 
@@ -1105,3 +1110,11 @@ E-604 `PROVED-PAPER` は第二S残余1の全長fullgap紙上chain。E603の新so
 - **E-676 PROVED-LEAN** 元深さ6・正不足の実j6counterで、同元targetの各局所sourceはn+2に固定し、元n..n+2はSS。実高free0と、先行床freeを必須にする同元供給課金を結合しsource以前のAを全排除する。 全oldは保持。反例不存在や局所以外の源の排除は未証明。
 
 - **E-677 PROVED-LEAN** 元深さ6・正不足の実j6counterで、同元targetの基準r=Fw(n)−2の面積Ar(n,b+6−n)+2(b+6−n)は−3/−2/1の三値。元Winの旧質量2の正確面積3/2又は局所source n+2/SSから内部供給。 元actual countからの三値必要式。各値の無限history残余とj4/5の排除は未証明。
+
+## 2026-11-12 途中監査
+
+E-678〜E-683の個別M512検証とG1〜G5は受理、全checkを再確認中。H04/R高下降抽出は一修理後Leanエラー、H06旧/局所別glueはkernel512MB、H07/R共通anchorはcastエラーでSTOPPED、packet隔離/root/Audit未採用。E682/E683はW57とnested actual sourceの独立数学削減後の別bytesだけを使う。数学探索worker未起動、予算0。全体C1/Q/H/SL/全射性は未証明。
+
+E-686はH20/H23/H24個別受理。H21/RとH22/RはLeanエラー、H25はrecursion-depthでSTOPPED。未受理bytesはroot/Audit不採用。次unitは独立j4旧sourceのd*(k−1)+5H<=13と高source3/7分類。
+
+07:11更新: E694 old-j4全長元fullgapを初回M512個別受理、E683/E685と全j old-source consumerへ統合。H30/H32はkernel512MB STOPPEDのまま。H33の新整数罰8、H34初期SS、H35源予算9、小五符号H31という独立剪定後のbytesのみ採用。数学探索worker未起動/予算0。

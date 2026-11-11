@@ -1,0 +1,25 @@
+{
+  "tag": "H07R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixCommonAnchor.olean",
+    "Recaman/DepthSixCommonAnchor.lean"
+  ],
+  "started_jst": "2026-11-12T06:19:32.347331+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixCommonAnchor.lean": "05f66c36de5be79e5ad922ace21c58e60f57bd32b73feaa57227a968234d0e42"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "fa8611c457c767cace0652f42477bbf93c33fe983b4ad615aa82375bdd12f4a3",
+  "source_tree_sha256": "69271ed5adc44dc9024bfbe8d58d655156a092911e954bcf187e42eedcf19f4a",
+  "source_tree_manifest": "H07R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

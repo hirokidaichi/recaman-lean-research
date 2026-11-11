@@ -1,0 +1,16 @@
+Recaman/PrefixFreeWeightCost.lean:40:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e - g ≥ 3
+  d ≥ 0
+  d ≥ 0
+  c ≥ 0
+  b ≥ 0
+  a + 5*b - 5*c ≥ 0
+  a + 5*b - 5*c + d ≤ 4
+where
+ a := lowAdditionWeights f n r K
+ b := ↑(cN (fun i => r - 2 ≤ Fw f i ∧ f i = true ∧ ¬EndN f 0 i) n K)
+ c := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) n K)
+ d := lowAdditionWeight f r (n + K)
+ e := r
+ g := Fw f (n + K)

@@ -1,0 +1,31 @@
+{
+  "tag": "H05R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HighWindowSquareBudget.olean",
+    "Recaman/HighWindowSquareBudget.lean"
+  ],
+  "started_jst": "2026-11-12T06:16:53.520866+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HighWindowSquareBudget.lean": "d55dedcf9f3c37af4ea62c8b8b62d5acf1479dcb6220e8fa0c083baa04571550"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "8a061c513f9ab232a923db812f13f0b4669eae5019e59c96b0da9c38a14e179f",
+  "source_tree_sha256": "8489d0ad63583eb7deed9ed79d15d885e1016502fb0de09d7120d3eb2a534312",
+  "source_tree_manifest": "H05R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "8a061c513f9ab232a923db812f13f0b4669eae5019e59c96b0da9c38a14e179f",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7634061249991646,
+  "cpu_seconds": 0.5854079999999999,
+  "finished_jst": "2026-11-12T06:16:54.284238+09:00"
+}

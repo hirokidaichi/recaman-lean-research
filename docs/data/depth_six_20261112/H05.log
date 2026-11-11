@@ -1,0 +1,105 @@
+Recaman/HighWindowSquareBudget.lean:37:69: error: unsolved goals
+f : Nat → Bool
+s t q b : Nat
+r : Int
+hst : s ≤ t
+htq : t < q
+hqb : q ≤ b
+hstart : r ≤ Fw f s
+ht : Fw f t = r + 5
+hwin : Win f t (q - t)
+hb : Fw f b = r + 7
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hk : 3 ≤ q - t
+hq : Fw f q = r + 5 + 1
+hfirst :
+  aboveTriangle r (r + 5) - aboveTriangle r (Fw f s) ≤
+    2 * areaFromLevel f s r (t - s) + belowTriangle r (r + 5) - belowTriangle r (Fw f s) +
+      2 * lowAdditionWeights f s r (t - s)
+hlast :
+  aboveTriangle r (r + 7) - aboveTriangle r (r + 5 + 1) ≤
+    2 * areaFromLevel f q r (b - q) + belowTriangle r (r + 7) - belowTriangle r (r + 5 + 1) +
+      2 * lowAdditionWeights f q r (b - q)
+htriS : belowTriangle r (Fw f s) = 0
+⊢ max 0 (r - (r + 5)) * (max 0 (r - (r + 5)) + 1) = 0 ∧ max 0 (r + 5 - r) * (max 0 (r + 5 - r) + 1) = 30
+Recaman/HighWindowSquareBudget.lean:39:69: error: unsolved goals
+f : Nat → Bool
+s t q b : Nat
+r : Int
+hst : s ≤ t
+htq : t < q
+hqb : q ≤ b
+hstart : r ≤ Fw f s
+ht : Fw f t = r + 5
+hwin : Win f t (q - t)
+hb : Fw f b = r + 7
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hk : 3 ≤ q - t
+hq : Fw f q = r + 5 + 1
+hfirst :
+  aboveTriangle r (r + 5) - aboveTriangle r (Fw f s) ≤
+    2 * areaFromLevel f s r (t - s) + belowTriangle r (r + 5) - belowTriangle r (Fw f s) +
+      2 * lowAdditionWeights f s r (t - s)
+hlast :
+  aboveTriangle r (r + 7) - aboveTriangle r (r + 5 + 1) ≤
+    2 * areaFromLevel f q r (b - q) + belowTriangle r (r + 7) - belowTriangle r (r + 5 + 1) +
+      2 * lowAdditionWeights f q r (b - q)
+htriS : belowTriangle r (Fw f s) = 0
+htri5 : belowTriangle r (r + 5) = 0 ∧ aboveTriangle r (r + 5) = 30
+⊢ max 0 (r - (r + 6)) * (max 0 (r - (r + 6)) + 1) = 0 ∧ max 0 (r + 6 - r) * (max 0 (r + 6 - r) + 1) = 42
+Recaman/HighWindowSquareBudget.lean:41:69: error: unsolved goals
+f : Nat → Bool
+s t q b : Nat
+r : Int
+hst : s ≤ t
+htq : t < q
+hqb : q ≤ b
+hstart : r ≤ Fw f s
+ht : Fw f t = r + 5
+hwin : Win f t (q - t)
+hb : Fw f b = r + 7
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hk : 3 ≤ q - t
+hq : Fw f q = r + 5 + 1
+hfirst :
+  aboveTriangle r (r + 5) - aboveTriangle r (Fw f s) ≤
+    2 * areaFromLevel f s r (t - s) + belowTriangle r (r + 5) - belowTriangle r (Fw f s) +
+      2 * lowAdditionWeights f s r (t - s)
+hlast :
+  aboveTriangle r (r + 7) - aboveTriangle r (r + 5 + 1) ≤
+    2 * areaFromLevel f q r (b - q) + belowTriangle r (r + 7) - belowTriangle r (r + 5 + 1) +
+      2 * lowAdditionWeights f q r (b - q)
+htriS : belowTriangle r (Fw f s) = 0
+htri5 : belowTriangle r (r + 5) = 0 ∧ aboveTriangle r (r + 5) = 30
+htri6 : belowTriangle r (r + 6) = 0 ∧ aboveTriangle r (r + 6) = 42
+⊢ max 0 (r - (r + 7)) * (max 0 (r - (r + 7)) + 1) = 0 ∧ max 0 (r + 7 - r) * (max 0 (r + 7 - r) + 1) = 56
+Recaman/HighWindowSquareBudget.lean:44:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  belowTriangle r (r + 6)
+in the target expression
+  aboveTriangle r (r + 7) - aboveTriangle r (r + 5 + 1) ≤
+    2 * areaFromLevel f q r (b - q) + belowTriangle r (r + 7) - belowTriangle r (r + 5 + 1) +
+      2 * lowAdditionWeights f q r (b - q)
+
+f : Nat → Bool
+s t q b : Nat
+r : Int
+hst : s ≤ t
+htq : t < q
+hqb : q ≤ b
+hstart : r ≤ Fw f s
+ht : Fw f t = r + 5
+hwin : Win f t (q - t)
+hb : Fw f b = r + 7
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hk : 3 ≤ q - t
+hq : Fw f q = r + 5 + 1
+hfirst : 30 - aboveTriangle r (Fw f s) ≤ 2 * areaFromLevel f s r (t - s) + 0 - 0 + 2 * lowAdditionWeights f s r (t - s)
+hlast :
+  aboveTriangle r (r + 7) - aboveTriangle r (r + 5 + 1) ≤
+    2 * areaFromLevel f q r (b - q) + belowTriangle r (r + 7) - belowTriangle r (r + 5 + 1) +
+      2 * lowAdditionWeights f q r (b - q)
+htriS : belowTriangle r (Fw f s) = 0
+htri5 : belowTriangle r (r + 5) = 0 ∧ aboveTriangle r (r + 5) = 30
+htri6 : belowTriangle r (r + 6) = 0 ∧ aboveTriangle r (r + 6) = 42
+htri7 : belowTriangle r (r + 7) = 0 ∧ aboveTriangle r (r + 7) = 56
+⊢ 116 ≤ 2 * lowAdditionWeights f s r (b - s) + 2 * areaFromLevel f s r (b + 6 - s) + aboveTriangle r (Fw f s)

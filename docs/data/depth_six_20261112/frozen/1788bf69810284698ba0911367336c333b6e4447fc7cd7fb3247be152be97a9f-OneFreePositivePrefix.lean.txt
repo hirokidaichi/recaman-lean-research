@@ -1,0 +1,66 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.OneFreePositivePrefix
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- A supplied addition in a positive original prefix needs at least two
+earlier additions, whether its actual source is old or local. -/
+theorem supplied_prefix_two_additions (f : Nat → Bool) (n a q : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnq : n≤q) (hSpos : n<q → 1≤cN (fun i => f i=false) n (q-n))
+    (he : EndN f 0 q) : 2≤cN (fun i => f i=true) n (q-n) := by
+  by_cases hbad : cN (fun i => f i=true) n (q-n)≤1
+  · have hnlt : n<q := by
+      by_cases h : n<q
+      · exact h
+      · have heq : q=n := by omega
+        subst q
+        exact (block_prefix_low_clock_not_endable f n a n hw hpre (by omega) (Fw f n)
+          (fun i hi hj => by have hh : i=n := by omega; rw [hh]) (by omega) he).elim
+    obtain ⟨_,t,k,_,htk,hk,hLev,hArea⟩ := he
+    have hWin : Win f t k := ⟨hk,hLev,hArea⟩
+    by_cases hnt : n≤t
+    · have h3 := win_ge3 f t k hWin
+      have hCount := cN_walk f t k
+      rw [hLev] at hCount
+      have hAdd := cN_add (fun i => f i=true) n (t-n) k
+      rw [show t-n+k=q-n by omega,show n+(t-n)=t by omega] at hAdd
+      omega
+    · have hWin' : Win f t (q-t) := by rwa [show q-t=k by omega]
+      have hOld := old_window_count_barrier f n a t q hw hpre (by omega) hnlt hWin'
+      rw [ones_seg_eq_count] at hOld
+      have hCount := (cN_walk f n (q-n)).2
+      have hS := hSpos hnlt
+      omega
+  · omega
+
+/-- At most one original free addition in a positive prefix means at
+most one addition in total. No finite-state certificate is required. -/
+theorem one_free_positive_additions (f : Nat → Bool) (n a : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true) :
+    ∀ K, (∀ k, 0<k → k≤K → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k) →
+      cN (fun i => f i=true ∧ ¬EndN f 0 i) n K≤1 →
+      cN (fun i => f i=true) n K=cN (fun i => f i=true ∧ ¬EndN f 0 i) n K ∧
+      cN (fun i => f i=true) n K≤1
+  | 0,_,_ => by simp [cN]
+  | K+1,hpos,hfree => by
+    have hmono := count_prefix_le (fun i => f i=true ∧ ¬EndN f 0 i) n K (K+1) (by omega)
+    obtain ⟨ihEq,ihOne⟩ := one_free_positive_additions f n a hw hpre K
+      (fun k hk hkK => hpos k hk (by omega)) (by omega)
+    by_cases hA : f (n+K)=true
+    · have hNo : ¬EndN f 0 (n+K) := by
+        intro he
+        have hTwo := supplied_prefix_two_additions f n a (n+K) hw hpre (by omega)
+          (by intro hn; have h := hpos K (by omega) (by omega); simpa only [Nat.add_sub_cancel_left] using Nat.le_trans (by omega) h) he
+        rw [Nat.add_sub_cancel_left] at hTwo
+        omega
+      rw [cN_succ_pos (fun i => f i=true) n K hA,
+        cN_succ_pos (fun i => f i=true ∧ ¬EndN f 0 i) n K ⟨hA,hNo⟩] at hfree ⊢
+      exact ⟨by omega,by omega⟩
+    · rw [cN_succ_neg (fun i => f i=true) n K hA,
+        cN_succ_neg (fun i => f i=true ∧ ¬EndN f 0 i) n K (fun h => hA h.1)]
+      exact ⟨ihEq,ihOne⟩
+
+end Recaman.OneFreePositivePrefix

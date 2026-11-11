@@ -1,0 +1,34 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.SFinalWindowLength
+
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem actual_window_phase (f : Nat → Bool) (t k : Nat)
+    (h : Win f t k) : k%4=3 := by
+  let e : Int → Bool := fun x => f x.toNat
+  let v := past e ((t+k : Nat) : Int) k
+  have hb := past_bridge e 0 t k
+  simp only [Int.zero_add,e,Int.toNat_natCast] at hb
+  change mass v=Fw f (t+k)-Fw f t ∧ moment v=Ar f t k at hb
+  have hP : P2 v := ⟨by rw [hb.1,h.2.1]; omega,hb.2.trans h.2.2⟩
+  have hp := p2_count_identities v hP
+  have hl : v.length=k := by simp [v,past]
+  rw [hl] at hp
+  omega
+
+/-- The existing mod-four law and SAA classification imply that an
+actual zero-area window whose last sign is S has length at least seven. -/
+theorem window_ending_S_length (f : Nat → Bool) (t k : Nat) (h : Win f t k)
+    (hS : f (t+k-1)=false) : 7≤k := by
+  have hp := actual_window_phase f t k h
+  by_cases hk : 7≤k
+  · exact hk
+  · have h3 : k=3 := by omega
+    subst k
+    have ha := (win3 f t h).2.2
+    rw [show t+3-1=t+2 by omega] at hS
+    simp [ha] at hS
+
+end Recaman.SFinalWindowLength

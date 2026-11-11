@@ -1,0 +1,52 @@
+import Recaman.SupplyAreaCrossings
+
+namespace Recaman.HighSupplyDownstep
+
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- An actual supply strictly above the old block boundary requires an
+original downward step from its source height, after the boundary. -/
+theorem high_supply_requires_downstep (f : Nat → Bool) (n a q : Nat) (H : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnq : n≤q) (hH : Fw f n<H-1) (hqH : Fw f q=H) (he : EndN f 0 q) :
+    ∃ u, n≤u ∧ u<q ∧ Fw f u=H-1 ∧ f u=false := by
+  obtain ⟨_,t,k,_,htk,hk,hlev,harea⟩ := he
+  rw [htk,hqH] at hlev
+  have hnt : n≤t := by
+    by_cases h : n≤t
+    · exact h
+    · have hOld := (block_suffix_positive_walk f 0 n a hw hpre t (Nat.zero_le _) (by omega)).1
+      simp only [Nat.zero_add] at hOld
+      omega
+  have hLow : ∃ i, t≤i ∧ i<q ∧ Fw f i<H-1 := by
+    by_cases h : ∃ i, t≤i ∧ i<q ∧ Fw f i<H-1
+    · exact h
+    · have hnonneg := shifted_area_nonneg f t H (k-1) (by
+        intro i hi hik
+        by_cases hlow : Fw f (t+i)<H-1
+        · exact (h ⟨t+i,by omega,by omega,hlow⟩).elim
+        · omega)
+      rw [show k=(k-1)+1 by omega,Ar_succ,show t+(k-1)+1=q by omega,hqH] at harea
+      omega
+  obtain ⟨i,hti,hiq,hiH⟩ := hLow
+  let P := fun u => t≤u ∧ Fw f u<H-1
+  obtain ⟨d,hdi,hd,hfirst⟩ := first_mark P i ⟨i,Nat.le_refl _,hti,hiH⟩
+  have htd : t<d := by
+    by_cases h : t<d
+    · exact h
+    · have heq : t=d := by have := hd.1; omega
+      rw [←heq] at hd
+      have := hd.2
+      omega
+  have hprev : H-1≤Fw f (d-1) := by
+    by_cases h : H-1≤Fw f (d-1)
+    · exact h
+    · exact (hfirst (d-1) (by omega) ⟨by omega,by omega⟩).elim
+  rcases fw_cases f (d-1) with ⟨hA,_⟩ | ⟨hS,hs⟩
+  · rw [show d-1+1=d by omega] at hA
+    have := hd.2
+    omega
+  · rw [show d-1+1=d by omega] at hS
+    exact ⟨d-1,by omega,by omega,by have := hd.2; omega,hs⟩
+
+end Recaman.HighSupplyDownstep

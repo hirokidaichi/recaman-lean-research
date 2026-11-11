@@ -1,0 +1,25 @@
+{
+  "tag": "H16",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixOldFive.olean",
+    "Recaman/DepthSixOldFive.lean"
+  ],
+  "started_jst": "2026-11-12T06:32:55.369737+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixOldFive.lean": "e145446b5a195e840445f7fd4d6a8a564e1c19d884740bb317d8d4c435fc684c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "f66fe4020199138bab2c04e136bd84910c6c1e6b8d6ef8fa5a56c81191aa7fac",
+  "source_tree_sha256": "68c9aef0dd2e2cf0504ff03ef3e7ff4c625eeea67f4982d88e9d79b3d8093d9e",
+  "source_tree_manifest": "H16-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

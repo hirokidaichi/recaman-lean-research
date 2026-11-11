@@ -1,0 +1,245 @@
+Recaman/DepthSixGapSix.lean:71:23: error: Tactic `assumption` failed
+
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+he : EndN f 0 (b + 6)
+hcounter : free f n (b - n) ≤ 6
+hf : free f n (b - n) = 6
+left✝³ : 4 ≤ 6
+left✝² : 6 ≤ 8
+htarget : Fw f (b + 6) = Fw f n - 1
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+m : Int := Fw f n - 6
+r : Int := Fw f n - 2
+hdown : Fw f (b + 6) = Fw f b - ↑6
+hb : Fw f b = r + 7
+hHigh : cN (fun t => Fw f n - 4 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ 0
+z : Nat
+hnz : n ≤ z
+hzb : z ≤ b
+hz : Fw f z = m
+d : Nat
+hzd : z ≤ d
+hdb : d < b
+hd : Fw f d = m + 2 - 1
+hdA : f d = true
+hF1 : 1 ≤ cN (fun i => Fw f i = m + 1 ∧ f i = true) n (b - n)
+hW :
+  lowAdditionWeights f n r (b - n) + 2 * ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)) +
+      5 * ↑(cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+hE :
+  2 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n) +
+      cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤
+    free f n (b - n)
+hBudget : lowAdditionWeights f n r (b - n) ≤ 55
+q : Nat
+hnq : n ≤ q
+hqb : q < b
+hq : Fw f q = r + 7 - 1
+hqA left✝¹ : f q = true
+u k : Nat
+left✝ : 0 ≤ u
+huk : u + k = q
+hukPos : 0 < k
+huq : r + 7 - 1 = Fw f u + 1
+huArea : Ar f u k = 0
+hu : Fw f u = r + 5
+hnu : n ≤ u
+⊢ Fw f q = Fw f u + 1
+Recaman/DepthSixGapSix.lean:90:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Ar f t l
+in the target expression
+  Ar f t (b + 6 - t) = Ar f t (n - t) + Ar f n (b + 6 - n) + ↑(b + 6 - n) * (Fw f n - Fw f t)
+
+case pos
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hcounter : free f n (b - n) ≤ 6
+hf : free f n (b - n) = 6
+left✝⁵ : 4 ≤ 6
+left✝⁴ : 6 ≤ 8
+htarget : Fw f (b + 6) = Fw f n - 1
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+m : Int := Fw f n - 6
+r : Int := Fw f n - 2
+hdown : Fw f (b + 6) = Fw f b - ↑6
+hb : Fw f b = r + 7
+hHigh : cN (fun t => Fw f n - 4 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ 0
+z : Nat
+hnz : n ≤ z
+hzb : z ≤ b
+hz : Fw f z = m
+d : Nat
+hzd : z ≤ d
+hdb : d < b
+hd : Fw f d = m + 2 - 1
+hdA : f d = true
+hF1 : 1 ≤ cN (fun i => Fw f i = m + 1 ∧ f i = true) n (b - n)
+hW :
+  lowAdditionWeights f n r (b - n) + 2 * ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)) +
+      5 * ↑(cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+hE :
+  2 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n) +
+      cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤
+    free f n (b - n)
+hBudget : lowAdditionWeights f n r (b - n) ≤ 55
+q : Nat
+hnq : n ≤ q
+hqb : q < b
+hq : Fw f q = r + 7 - 1
+hqA left✝³ : f q = true
+u k : Nat
+left✝² : 0 ≤ u
+huk : u + k = q
+hukPos : 0 < k
+huq : r + 7 - 1 = Fw f u + 1
+huArea : Ar f u k = 0
+hu : Fw f u = r + 5
+hnu : n ≤ u
+huWin : Win f u (q - u)
+left✝¹ : f (b + 6) = true
+t l : Nat
+left✝ : 0 ≤ t
+htl : t + l = b + 6
+hl : 0 < l
+htLev : Fw f (b + 6) = Fw f t + 1
+htArea : Ar f t l = 0
+htb : t < b
+htWin : Win f t (b + 6 - t)
+htn : t < n
+hOld : 1 ≤ Ar f t (n - t)
+hmass : Fw f n - Fw f t = 2
+hquad : 2 * (2 + 1) ≤ 2 * Ar f t (n - t) + 2
+hsplit : Ar f t (b + 6 - t) = Ar f t (n - t) + Ar f n (b + 6 - n) + ↑(b + 6 - n) * (Fw f n - Fw f t)
+⊢ 7 ≤ free f n (b - n)
+Recaman/DepthSixGapSix.lean:115:52: error: unsolved goals
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+hcounter : free f n (b - n) ≤ 6
+hf : free f n (b - n) = 6
+left✝⁵ : 4 ≤ 6
+left✝⁴ : 6 ≤ 8
+htarget : Fw f (b + 6) = Fw f n - 1
+right✝ : subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+m : Int := Fw f n - 6
+r : Int := Fw f n - 2
+hdown : Fw f (b + 6) = Fw f b - ↑6
+hb : Fw f b = r + 7
+hHigh : cN (fun t => Fw f n - 4 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤ 0
+z : Nat
+hnz : n ≤ z
+hzb : z ≤ b
+hz : Fw f z = m
+d : Nat
+hzd : z ≤ d
+hdb : d < b
+hd : Fw f d = m + 2 - 1
+hdA : f d = true
+hF1 : 1 ≤ cN (fun i => Fw f i = m + 1 ∧ f i = true) n (b - n)
+hW :
+  lowAdditionWeights f n r (b - n) + 2 * ↑(cN (fun t => Fw f t = m + 1 ∧ f t = true) n (b - n)) +
+      5 * ↑(cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n)) ≤
+    8 * ↑(free f n (b - n)) + 3 * ↑(cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n))
+hE :
+  2 * cN (fun t => Fw f t = m + 2 ∧ EndN f 0 t) n (b - n) +
+      cN (fun t => m + 2 ≤ Fw f t ∧ f t = true ∧ ¬EndN f 0 t) n (b - n) ≤
+    free f n (b - n)
+hBudget : lowAdditionWeights f n r (b - n) ≤ 55
+q : Nat
+hnq : n ≤ q
+hqb : q < b
+hq : Fw f q = r + 7 - 1
+hqA left✝³ : f q = true
+u k : Nat
+left✝² : 0 ≤ u
+huk : u + k = q
+hukPos : 0 < k
+huq : r + 7 - 1 = Fw f u + 1
+huArea : Ar f u k = 0
+hu : Fw f u = r + 5
+hnu : n ≤ u
+huWin : Win f u (q - u)
+left✝¹ : f (b + 6) = true
+t l : Nat
+left✝ : 0 ≤ t
+htl : t + l = b + 6
+hl : 0 < l
+htLev : Fw f (b + 6) = Fw f t + 1
+htArea : Ar f t l = 0
+htb : t < b
+htWin : Win f t (b + 6 - t)
+htn : ¬t < n
+hnt : n ≤ t
+hEnd : EndN f 0 (b + 6)
+hTime : t = n + 2
+hFirstS : ∀ (i : Nat), n ≤ i → i < t → f i = false
+htu : t ≤ u
+⊢ 0 + 0 = 0
+Recaman/DepthSixGapSix.lean:26:42: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:38:12: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:39:8: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:41:69: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:42:18: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:42:29: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:47:14: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:47:27: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:47:38: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:47:49: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:49:38: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:49:63: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:50:59: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:51:51: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:51:70: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:52:21: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:58:14: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:58:31: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:58:59: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:61:31: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:65:82: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:68:8: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:70:24: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:77:70: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:78:30: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:79:8: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:81:26: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:84:80: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:86:41: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:87:74: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:89:62: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:104:27: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:111:77: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:112:32: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:114:10: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:117:71: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:119:40: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:121:65: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:121:76: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:122:23: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:125:32: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:125:56: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:127:6: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:128:4: error: (kernel) excessive memory consumption detected
+Recaman/DepthSixGapSix.lean:14:8: error: (kernel) excessive memory consumption detected

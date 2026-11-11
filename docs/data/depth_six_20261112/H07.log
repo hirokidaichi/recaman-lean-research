@@ -1,0 +1,32 @@
+Recaman/DepthSixCommonAnchor.lean:36:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fw f (n + 2)
+in the target expression
+  Ar f n (b + 6 - n) + ↑(b + 6 - n) * (Fw f n - (Fw f n - 2)) ≤ 1
+
+f : Nat → Bool
+n a b : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 6 → f i = false
+he : EndN f 0 (b + 6)
+hcounter : cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n) ≤ 6
+h : Nat
+hh : h = 5 ∨ h = 6
+hhead : n + h < b
+hFirst : ∀ (i : Nat), n ≤ i → i < n + h → f i = false
+hA : f (n + h) = true
+hh5 : 5 ≤ h ∧ h ≤ 6
+hFirst2 : ∀ (i : Nat), n ≤ i → i < n + 2 → f i = false
+hWalk : Fw f (n + 2) = Fw f n - ↑2
+hArea : Ar f n 2 = -3
+hspec :
+  areaFromLevel f n (Fw f n - 2) (b + 6 - n) = -3 ∨
+    areaFromLevel f n (Fw f n - 2) (b + 6 - n) = -2 ∨ areaFromLevel f n (Fw f n - 2) (b + 6 - n) = 1
+hFull : Ar f n (b + 6 - n) + ↑(b + 6 - n) * (Fw f n - (Fw f n - 2)) ≤ 1
+hsplit : Ar f n (b + 6 - n) = -3 + Ar f (n + 2) (b + 6 - (n + 2)) + ↑(b + 6 - (n + 2)) * (Fw f n - ↑2 - Fw f n)
+hCast : ↑(b + 6 - n) = ↑(b + 6 - (n + 2)) + 2
+⊢ Ar f (n + 2) (b + 6 - (n + 2)) + ↑(b + 6 - (n + 2)) * (Fw f (n + 2) - (Fw f n - 2)) ≤ 0

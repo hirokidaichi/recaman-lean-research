@@ -1,0 +1,12 @@
+Recaman/PrefixFreeWeightCost.lean:8:43: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (P (n + k))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/PrefixFreeWeightCost.lean:26:17: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (f (n + K) = true ∧ ¬EndN f 0 (n + K))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Recaman/PrefixFreeWeightCost.lean:28:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (r - 2 ≤ Fw f (n + K) ∧ f (n + K) = true ∧ ¬EndN f 0 (n + K))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.

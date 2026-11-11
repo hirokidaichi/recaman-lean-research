@@ -1,0 +1,25 @@
+{
+  "tag": "H04R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HighSupplyDownstep.olean",
+    "Recaman/HighSupplyDownstep.lean"
+  ],
+  "started_jst": "2026-11-12T06:15:25.617140+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HighSupplyDownstep.lean": "251a703057a4082cb79214aac11ad56869b6eb8a9dbf3d0896d2de96c18e47bd"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "64ea5050ee693417cb874c14ff8d9d5eeea7e4872e39f371349770f3b3f176f5",
+  "source_tree_sha256": "0cbe758e3ead981c9116e1e01a633b51cd63603288bcf023067cefebddd033bc",
+  "source_tree_manifest": "H04R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

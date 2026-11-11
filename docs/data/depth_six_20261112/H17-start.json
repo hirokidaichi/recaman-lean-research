@@ -1,0 +1,25 @@
+{
+  "tag": "H17",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SFinalWindowLength.olean",
+    "Recaman/SFinalWindowLength.lean"
+  ],
+  "started_jst": "2026-11-12T06:33:34.074468+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SFinalWindowLength.lean": "6327052dee2491c7650d21c6ac90a53811549e60254739882a1cd303d602656b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "d24c215b38dedf8b1213643be97f2efea029a03b17d748093adabfe5b2822f53",
+  "source_tree_sha256": "368998273a776abd324f73de4a4c7ac9c4e01a3ee9d67b2b2a8442e899a5c76d",
+  "source_tree_manifest": "H17-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

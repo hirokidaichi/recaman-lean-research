@@ -1,0 +1,25 @@
+Research-harness gates for recaman-lean-research (established 2026-09-15, INC-20260915-01).
+
+Each gate maps to an evidence-based root cause of the incident in
+docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md:
+
+  G1 unresolved symbol      a PROVED-LEAN row must cite theorems that exist
+  G2 hard vacuity           no conclusion (or conjunct) may be a hypothesis or `x = x`
+  G3 substantive content    at least one cited theorem is neither pure-arithmetic, nor a
+                            wrapper (only intro/exact/refine/rcases/omega/rfl lines), nor trivial
+  G4 name inflation         no cited theorem/module name contains grand|master|universal|
+                            closure|synthesis|resolution|apex (rows >= NAME_LINT_FROM_ID)
+  G5 statement audit        docs/statement_audits/E-NNN.md exists and quotes every cited
+                            signature verbatim, with a dated reviewer and three completed
+                            checks per theorem (rows >= STATEMENT_AUDIT_FROM_ID)
+  P  protected claims       labels of the central rows in docs/PROTECTED_CLAIMS.tsv must match
+                            the registry; changing them is a human decision
+
+Usage:
+  python3 scripts/harness_gate.py --check-registry [registry.tsv]
+  python3 scripts/harness_gate.py --check-protected [registry.tsv] [protected.tsv]
+  python3 scripts/harness_gate.py --lint-module Recaman/Foo.lean
+  python3 scripts/harness_gate.py --audit-template E-NNN [registry.tsv]   (prints a skeleton)
+Exit status 0 = pass, 1 = gate failure. All classifiers are heuristic and documented; they are
+speed bumps that force a human look, not proofs of quality.
+

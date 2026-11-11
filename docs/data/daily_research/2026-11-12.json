@@ -1,0 +1,603 @@
+{
+  "version": 1,
+  "date": "2026-11-12",
+  "timezone": "Asia/Tokyo",
+  "target_seconds": 7200,
+  "events": [
+    {
+      "at": "2026-11-12T05:59:00.555174+09:00",
+      "action": "start",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T06:00:08.835479+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T06:04:26.169216+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "同actual j6の最初Aが床+1なら、その早いfreeは床+2供給の二像課金に使えない。切断後の元freeでE2≤2、同oldtarget平方49+旧面積2以上とW≤50を衝突させる。source以前prefixはresetしない。"
+    },
+    {
+      "at": "2026-11-12T06:08:56.887280+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H01元cut二像とH02 old/head5矛盾を512MBで個別受理。最初15分gate通過。次は同actual counterから最初Aのhead5/6を内部抽出し、old源枝をhead6へstrict削減。"
+    },
+    {
+      "at": "2026-11-12T06:11:32.833490+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H03 accepted at first attempt; first A is at offset 5 or 6 and an old source forces offset 6. Inspecting the remaining local source offset-5 branch."
+    },
+    {
+      "at": "2026-11-12T06:12:15.136545+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "First-head normalization accepted. Auditing whether the early floor+1 free can still pay floor+3 suppliers; SAA shows that it can, so no false cross-height disjointness is assumed."
+    },
+    {
+      "at": "2026-11-12T06:16:42.478773+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H04/R STOPPED and isolated after one repair. Independent exact high-source window certificate uses Win length >=3 and area 0, avoiding extraction of a downward step."
+    },
+    {
+      "at": "2026-11-12T06:18:40.833143+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H05/R accepted; H06 monolithic old/local glue STOPPED at kernel512MB. New mathematical pruning unifies source-area spectrum at original clock n+2, retaining original f and EndN base0."
+    },
+    {
+      "at": "2026-11-12T06:21:29.989378+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "General exact internal-window area budget accepted (H08/R). Testing independent nested-window mechanism: a supplied first A in an SAA high window ends its own supply window with S and requires length >=7."
+    },
+    {
+      "at": "2026-11-12T06:26:30.692092+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H12 accepted first attempt; j6 completed individually. Auditing exact quantifiers and integration before continuing old-source j5. Main depth6 retains j4/5."
+    },
+    {
+      "at": "2026-11-12T06:28:10.835458+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "06:30 checkpoint. E678-E683 registered, exact signatures audited, all seven changed/new modules linted; C01 full check running. No mathematical search worker started."
+    },
+    {
+      "at": "2026-11-12T06:29:09.518890+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "The previous checkpoint note incorrectly said 06:30; actual journal time was 06:28:10 and is authoritative. j6 audit integration saved. Continuing the new old-source j5 unit, without reopening H04/H06/H07."
+    },
+    {
+      "at": "2026-11-12T06:30:10.135393+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "06:30 real checkpoint. C02 all builds/3879 axiom audits passed. H13 accepted: old j5 counter original area_before_b<=-17 and W+5H<=44. Proceeding to coupled high-supplier branches."
+    },
+    {
+      "at": "2026-11-12T06:34:23.458502+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H18 accepted: every old-j5 actual high source with d>=2 has length3 and 2d+5H<=10. This independent source pruning replaces the H16 long-window glue; stopped bytes remain isolated."
+    },
+    {
+      "at": "2026-11-12T06:38:43.784588+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H20 accepted: same counter W+5H<=44 without old-source restriction. Local-source square36 leaves prefix cost8; testing 5*prefix_free<=prefix_weights+5*global_high_free, so prefix_free<=1."
+    },
+    {
+      "at": "2026-11-12T06:43:22.834196+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "Saving E684/E685 old-source j5 results. H21/R and H22/R stopped after one repair, excluded. Next local unit uses a small complete two-position certificate rather than general weighted-count transport."
+    },
+    {
+      "at": "2026-11-12T06:46:31.082690+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H23/H24 accepted: actual local-source prefix has <=1 free and source clock<=16. Checking a new one-free projection of the existing r3 graph; no transition verification or stopped r4 table rerun."
+    },
+    {
+      "at": "2026-11-12T06:49:02.620852+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H23/H24 source free<=1 and clock<=16 saved. H25 finite projection STOPPED at recursion cap, no resource increase. Auditing the accepted local edge before switching to independent old-j4 source-duration mechanism."
+    },
+    {
+      "at": "2026-11-12T06:50:56.348493+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "Local source edge E686 saved and C03 full check complete/polled. Switching to independent old-j4 exact duration13 budget; no H21/H22/H25 resource or tactic retry."
+    },
+    {
+      "at": "2026-11-12T06:53:00.120503+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "Old-j4 paper audit: duration13 implies d>=3 short SAA; d2 has length3/7, length7 forces H0. Investigating source-sign conflict for an internally supplied excursion ceiling, without assuming a ceiling."
+    },
+    {
+      "at": "2026-11-12T06:57:08.775274+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H28/H29 accepted: old j4 actual counters internally have free height<=boundary+2 and walk<=boundary+4, without assuming a ceiling. Studying the remaining H0 length7 overlap and same-target source types."
+    },
+    {
+      "at": "2026-11-12T06:59:56.654017+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "07:00 boundary checkpoint; exact clock is authoritative. H30 reverse-moment glue STOPPED at kernel512MB. New mathematical pruning fixes only five signs via rise1/area-1, a small complete linear certificate."
+    },
+    {
+      "at": "2026-11-12T07:00:40.706245+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "Actual 07:00 checkpoint (prior boundary checkpoint was 06:59:56). H31 accepted first attempt: five-sign rise1/area-1 certificate supplies actual Win7 endingSA = SASAASA. Continuing actual two-source overlap extraction."
+    },
+    {
+      "at": "2026-11-12T07:05:01.489942+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H32 monolithic seven-overlap glue STOPPED at kernel512MB. Independent pruning couples high-free count with E2 integer parity: W+8H<=36, then original SS anchor yields duration+8H<=9. Testing this new mathematical certificate."
+    },
+    {
+      "at": "2026-11-12T07:09:24.680441+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H33/H34R/H35 accepted: refined high penalty8, original initialSS, source budget9 after n+2. Testing the high-free>=1 branch first, followed by the independently reduced H0 source cases."
+    },
+    {
+      "at": "2026-11-12T07:11:38.040055+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H37 old-j4 full actual freegap accepted first attempt. Saving exact audits and source refinement chain before next local-j4 three-position certificate. Stopped H30/H32 remain isolated."
+    },
+    {
+      "at": "2026-11-12T07:15:02.860280+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "C04 full build999/Audit3901 passed. E687-E694 source statements saved. New local-j4 unit: square25 plus W+8H<=36 gives prefix cost11; high-positive case has <=1 prefix free, H0 forbids three low free positions."
+    },
+    {
+      "at": "2026-11-12T07:18:19.577431+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H39R/H40 accepted local-j4 prefix free<=2/clock16. New independent geometry rules out two floor+1 free positions: no earlier floor A, raise the original prefix floor by one, recovery then forces an excluded high free."
+    },
+    {
+      "at": "2026-11-12T07:22:55.079249+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H41 accepted first attempt: local-j4 prefix free<=1 by original raised-floor geometry. Testing a weakened first-S-only prefix model using existing all-run half-gap A>=2 input, not reopening the stopped symbolic/finite implementations."
+    },
+    {
+      "at": "2026-11-12T07:26:36.939570+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H42/H43 accepted: weakened first-S model gives A<=1 and remaining local sources are clocks2/4. Studying the clock4 prefix area<=4 and its single high free as a bounded new unit before 07:45."
+    },
+    {
+      "at": "2026-11-12T07:31:20.338019+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "07:30 real checkpoint. H45 clock4 prefix packet and H46 all actual high suppliers SAA accepted. Testing their same-clock sign collision; next source clock2 remains separate."
+    },
+    {
+      "at": "2026-11-12T07:32:57.534380+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "H48 clock4 branch excluded in both gaps. Final bounded unit before 07:45: gap5 at original sourceclock2, source duration9 from area0 and W+5H<=44; gap4 clock2 is reserved for handoff."
+    },
+    {
+      "at": "2026-11-12T07:36:39.087862+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:39:20.429794+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:41:23.809682+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:43:44.041276+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:45:09.778399+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:45:53.808732+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:47:21.640496+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:49:49.977466+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "採用29sourceの現bytes/33署名/全import、C05全checkと紙上E701の境界を確認。新規数学探索を終え、確定journal・DAILY・明示path公開の保存へ。"
+    },
+    {
+      "at": "2026-11-12T07:50:36.884640+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:52:44.639183+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:53:41.402313+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:54:48.737708+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": ""
+    },
+    {
+      "at": "2026-11-12T07:55:53.493601+09:00",
+      "action": "checkpoint",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "失敗・採用外sourceのfrozen bytes/CPU receiptとSTOP条件を照合。C05以後のLeanは不変。確定journalを閉じて公開するための最終記録へ。"
+    },
+    {
+      "at": "2026-11-12T07:57:24.963715+09:00",
+      "action": "stop",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "note": "C05/G08R・全意味監査・handoff保存を完了。全Lean/探索計算は終了。確定journalを保存してからhook付き日次commit・origin/main通常push・remote/CI照合を08:00以前に行うため終了。"
+    }
+  ],
+  "segments": [
+    {
+      "start": "2026-11-12T05:59:00.555174+09:00",
+      "end": "2026-11-12T06:00:08.835479+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "waiting",
+      "unit": "prestart"
+    },
+    {
+      "start": "2026-11-12T06:00:08.835479+09:00",
+      "end": "2026-11-12T06:04:26.169216+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "setup",
+      "unit": "H-20261112-01-depth-six-source-area"
+    },
+    {
+      "start": "2026-11-12T06:04:26.169216+09:00",
+      "end": "2026-11-12T06:08:56.887280+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-01-head-five-old-source-cut"
+    },
+    {
+      "start": "2026-11-12T06:08:56.887280+09:00",
+      "end": "2026-11-12T06:11:32.833490+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-02-first-head-normalization"
+    },
+    {
+      "start": "2026-11-12T06:11:32.833490+09:00",
+      "end": "2026-11-12T06:12:15.136545+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-03-head-five-local-area"
+    },
+    {
+      "start": "2026-11-12T06:12:15.136545+09:00",
+      "end": "2026-11-12T06:16:42.478773+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-03-head-five-local-area"
+    },
+    {
+      "start": "2026-11-12T06:16:42.478773+09:00",
+      "end": "2026-11-12T06:18:40.833143+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-05-high-window-square"
+    },
+    {
+      "start": "2026-11-12T06:18:40.833143+09:00",
+      "end": "2026-11-12T06:21:29.989378+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-06-common-anchor"
+    },
+    {
+      "start": "2026-11-12T06:21:29.989378+09:00",
+      "end": "2026-11-12T06:26:30.692092+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-07-nested-high-window"
+    },
+    {
+      "start": "2026-11-12T06:26:30.692092+09:00",
+      "end": "2026-11-12T06:28:10.835458+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-j6-statement-audit"
+    },
+    {
+      "start": "2026-11-12T06:28:10.835458+09:00",
+      "end": "2026-11-12T06:29:09.518890+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-j6-statement-audit"
+    },
+    {
+      "start": "2026-11-12T06:29:09.518890+09:00",
+      "end": "2026-11-12T06:30:10.135393+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-08-old-gap-five"
+    },
+    {
+      "start": "2026-11-12T06:30:10.135393+09:00",
+      "end": "2026-11-12T06:34:23.458502+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-08-old-gap-five"
+    },
+    {
+      "start": "2026-11-12T06:34:23.458502+09:00",
+      "end": "2026-11-12T06:38:43.784588+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-09-all-high-SAA"
+    },
+    {
+      "start": "2026-11-12T06:38:43.784588+09:00",
+      "end": "2026-11-12T06:43:22.834196+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-10-local-source-prefix"
+    },
+    {
+      "start": "2026-11-12T06:43:22.834196+09:00",
+      "end": "2026-11-12T06:46:31.082690+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-old-five-statement-audit"
+    },
+    {
+      "start": "2026-11-12T06:46:31.082690+09:00",
+      "end": "2026-11-12T06:49:02.620852+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-12-one-free-source-projection"
+    },
+    {
+      "start": "2026-11-12T06:49:02.620852+09:00",
+      "end": "2026-11-12T06:50:56.348493+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-local-prefix-statement-audit"
+    },
+    {
+      "start": "2026-11-12T06:50:56.348493+09:00",
+      "end": "2026-11-12T06:53:00.120503+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-13-old-four-duration"
+    },
+    {
+      "start": "2026-11-12T06:53:00.120503+09:00",
+      "end": "2026-11-12T06:57:08.775274+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-13-old-four-duration"
+    },
+    {
+      "start": "2026-11-12T06:57:08.775274+09:00",
+      "end": "2026-11-12T06:59:56.654017+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-15-zero-high-seven-overlap"
+    },
+    {
+      "start": "2026-11-12T06:59:56.654017+09:00",
+      "end": "2026-11-12T07:00:40.706245+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-16-five-sign-certificate"
+    },
+    {
+      "start": "2026-11-12T07:00:40.706245+09:00",
+      "end": "2026-11-12T07:05:01.489942+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-16-five-sign-certificate"
+    },
+    {
+      "start": "2026-11-12T07:05:01.489942+09:00",
+      "end": "2026-11-12T07:09:24.680441+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-17-eight-high-penalty"
+    },
+    {
+      "start": "2026-11-12T07:09:24.680441+09:00",
+      "end": "2026-11-12T07:11:38.040055+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-18-old-four-high-zero"
+    },
+    {
+      "start": "2026-11-12T07:11:38.040055+09:00",
+      "end": "2026-11-12T07:15:02.860280+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-old-four-statement-audit"
+    },
+    {
+      "start": "2026-11-12T07:15:02.860280+09:00",
+      "end": "2026-11-12T07:18:19.577431+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-19-local-four-prefix"
+    },
+    {
+      "start": "2026-11-12T07:18:19.577431+09:00",
+      "end": "2026-11-12T07:22:55.079249+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-20-source-prefix-raised-floor"
+    },
+    {
+      "start": "2026-11-12T07:22:55.079249+09:00",
+      "end": "2026-11-12T07:26:36.939570+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-21-first-S-prefix"
+    },
+    {
+      "start": "2026-11-12T07:26:36.939570+09:00",
+      "end": "2026-11-12T07:31:20.338019+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-22-clock-four-prefix"
+    },
+    {
+      "start": "2026-11-12T07:31:20.338019+09:00",
+      "end": "2026-11-12T07:32:57.534380+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-23-clock-four-source-collision"
+    },
+    {
+      "start": "2026-11-12T07:32:57.534380+09:00",
+      "end": "2026-11-12T07:36:39.087862+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-24-five-second-clock"
+    },
+    {
+      "start": "2026-11-12T07:36:39.087862+09:00",
+      "end": "2026-11-12T07:39:20.429794+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "research",
+      "unit": "H-20261112-24-final-source-coverage"
+    },
+    {
+      "start": "2026-11-12T07:39:20.429794+09:00",
+      "end": "2026-11-12T07:41:23.809682+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "H-20261112-final-semantic-audit"
+    },
+    {
+      "start": "2026-11-12T07:41:23.809682+09:00",
+      "end": "2026-11-12T07:43:44.041276+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "FINAL-verbatim-bytes"
+    },
+    {
+      "start": "2026-11-12T07:43:44.041276+09:00",
+      "end": "2026-11-12T07:45:09.778399+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "FINAL-handoff-review"
+    },
+    {
+      "start": "2026-11-12T07:45:09.778399+09:00",
+      "end": "2026-11-12T07:45:53.808732+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "FINAL-publication-content-review"
+    },
+    {
+      "start": "2026-11-12T07:45:53.808732+09:00",
+      "end": "2026-11-12T07:47:21.640496+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "FINAL-staged-source-compatibility"
+    },
+    {
+      "start": "2026-11-12T07:47:21.640496+09:00",
+      "end": "2026-11-12T07:49:49.977466+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "audit",
+      "unit": "FINAL-scope-answer-audit"
+    },
+    {
+      "start": "2026-11-12T07:49:49.977466+09:00",
+      "end": "2026-11-12T07:50:36.884640+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-daily-journal-publication"
+    },
+    {
+      "start": "2026-11-12T07:50:36.884640+09:00",
+      "end": "2026-11-12T07:52:44.639183+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-cost-and-stop-inventory"
+    },
+    {
+      "start": "2026-11-12T07:52:44.639183+09:00",
+      "end": "2026-11-12T07:53:41.402313+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-reproducible-paths-and-report"
+    },
+    {
+      "start": "2026-11-12T07:53:41.402313+09:00",
+      "end": "2026-11-12T07:54:48.737708+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-authorized-main-snapshot"
+    },
+    {
+      "start": "2026-11-12T07:54:48.737708+09:00",
+      "end": "2026-11-12T07:55:53.493601+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-remote-tip-preservation"
+    },
+    {
+      "start": "2026-11-12T07:55:53.493601+09:00",
+      "end": "2026-11-12T07:57:24.963715+09:00",
+      "session": "0bb9180f-09a1-4aa9-a2fc-0a9a29010939",
+      "phase": "handoff",
+      "unit": "FINAL-evidence-packet-freeze"
+    }
+  ],
+  "unconfirmed_gaps": [],
+  "cursor": null
+}

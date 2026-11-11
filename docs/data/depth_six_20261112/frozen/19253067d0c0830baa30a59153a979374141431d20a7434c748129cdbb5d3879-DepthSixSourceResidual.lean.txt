@@ -1,0 +1,48 @@
+import Recaman.DepthSixLocalSourceClock
+import Recaman.DepthSixClockFourCollision
+import Recaman.DepthSixOldSourceGap
+
+namespace Recaman.DepthSixSourceResidual
+
+open Recaman.DepthSixLocalSourceClock Recaman.DepthSixClockFourCollision Recaman.DepthSixOldSourceGap
+open Recaman.DepthSixGapResidual Recaman.DepthSixPairResidual Recaman.DepthSixNestedWindow
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- Checked coverage consumer only: every depth-six counter has gap four
+or five and every actual final source starts at the original second clock. -/
+theorem depth_six_counter_source_second (f : Nat → Bool) (n a b j t : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+j → f i=false) (he : EndN f 0 (b+j))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤j)
+    (t : Nat) (ht : Win f t (b+j-t)) :
+    (j=4 ∨ j=5) ∧ t=n+2 := by
+  obtain ⟨_,hFour,_,hTarget,_⟩ := positive_depth_six_counter_profile f n a b j hw hpre hnb hfloor hpos hS he hcounter
+  have hSix := positive_depth_six_counter_gap_le_six f n a b j hw hpre hnb hfloor hpos hS he hcounter
+  have hNotSix : j≠6 := by
+    intro hj
+    subst j
+    have h := positive_depth_six_gap_six_free_gap f n a b hw hpre hnb hfloor hpos hS he
+    omega
+  have hj : j=4 ∨ j=5 := by omega
+  have htb : t<b := by
+    by_cases h : t<b
+    · exact h
+    · have hLev := ht.2.1
+      have htEnd : t<b+j := by have := ht.1; omega
+      have hD := fw_false_run f t (b+j-t) (fun i hi hj => hS i (by omega) (by omega))
+      rw [show t+(b+j-t)=b+j by omega] at hLev hD
+      omega
+  have hnt : n≤t := by
+    by_cases h : n≤t
+    · exact h
+    · have h := positive_depth_six_old_source_free_gap f n a b j t hw hpre hnb hfloor hpos hS he (by omega) ht
+      omega
+  obtain ⟨hClocks,_⟩ := local_counter_source_clock_two_or_four f n a b j t hw hpre hnb hfloor hpos hS he hcounter hj hnt htb ht
+  rcases hClocks with h | h
+  · exact ⟨hj,h⟩
+  · subst t
+    exact (clock_four_actual_counter_excluded f n a b j hw hpre hnb hfloor hpos hS he hcounter hj htb ht).elim
+
+end Recaman.DepthSixSourceResidual

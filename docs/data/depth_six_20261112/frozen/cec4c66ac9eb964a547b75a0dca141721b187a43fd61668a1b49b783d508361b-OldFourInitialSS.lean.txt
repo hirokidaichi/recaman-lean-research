@@ -1,0 +1,122 @@
+import Recaman.OldFourFreeHeight
+import Recaman.DepthSixFourRefinedWeight
+
+namespace Recaman.OldFourInitialSS
+
+open Recaman.DepthSixOldFour Recaman.DepthSixFourRefinedWeight Recaman.DepthSixGapResidual
+open Recaman.DepthSixFreeLocation Recaman.HighWindowSquareBudget Recaman.LevelTriangleArea
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- Integer coupling of the two floor payments with the high-free count
+strengthens the same actual source-duration budget from five to eight. -/
+theorem old_four_eight_high_source_budget (f : Nat → Bool) (n a b t q : Nat) (d : Int)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+4 → f i=false) (he : EndN f 0 (b+4))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤4)
+    (htn : t<n) (hwin : Win f t (b+4-t))
+    (hnq : n≤q) (hqb : q<b) (hd : 2≤d)
+    (hq : Fw f q=Fw f n-2+d+1) (hqe : EndN f 0 q) :
+    ∃ u, n≤u ∧ u<q ∧ Fw f u=Fw f n-2+d ∧ Win f u (q-u) ∧
+      d*(((q-u : Nat) : Int)-1)+
+        8*(cN (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n (b-n) : Int)≤13 := by
+  obtain ⟨u,hnu,huq,hu,hWin,_⟩ := old_four_actual_high_source f n a b t q d hw hpre
+    hnb hfloor hpos hS he hcounter htn hwin hnq hqb hd hq hqe
+  have hArea := (old_four_counter_area_budget f n a b t hw hpre hnb hfloor hpos hS he hcounter htn hwin).1
+  have hW := positive_four_eight_high_weight f n a b hw hpre hnb hfloor hpos hS he hcounter
+  obtain ⟨_,_,_,hTarget,_⟩ := positive_depth_six_counter_profile f n a b 4 hw hpre hnb hfloor hpos hS he hcounter
+  have hDown := fw_false_run f b 4 hS
+  let r := Fw f n-2
+  have hB : Fw f b=r+5 := by dsimp [r]; omega
+  have hQ := hWin.2.1
+  rw [show u+(q-u)=q by omega] at hQ
+  have hNew := internal_window_area_budget f n u q b r hnu huq (by omega)
+    (by dsimp [r]; omega) (by dsimp [r]; omega) (by dsimp [r]; omega) (by omega) hWin
+  have htri (z : Int) (hz : 0≤z) : aboveTriangle r (r+z)=z*(z+1) := by
+    unfold aboveTriangle
+    rw [show r+z-r=z by omega,Int.max_eq_right hz]
+  rw [show Fw f u=r+d from hu,show Fw f q=r+(d+1) by dsimp [r]; omega,
+    hB,htri d (by omega),htri (d+1) (by omega),htri 5 (by omega),
+    show Fw f n=r+2 by dsimp [r]; omega,htri 2 (by omega),show r+d-r=d by omega] at hNew
+  have hpoly : d*(d+1)+5*(5+1)-(d+1)*(d+1+1)+2*((q-u : Nat) : Int)*d=
+      28+2*(d*(((q-u : Nat) : Int)-1)) := by grind only
+  rw [hpoly] at hNew
+  refine ⟨u,hnu,huq,hu,hWin,?_⟩
+  change lowAdditionWeights f n r (b-n)+_≤36 at hW
+  change areaFromLevel f n r (b-n)≤-12 at hArea
+  omega
+
+/-- Every original old-source gap-four counter begins with two actual
+subtractions. An early A would consume the only high free, forcing a
+second high free at the compulsory high crossing. -/
+theorem old_four_counter_initial_SS (f : Nat → Bool) (n a b t : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+4 → f i=false) (he : EndN f 0 (b+4))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤4)
+    (htn : t<n) (hwin : Win f t (b+4-t)) : f n=false ∧ f (n+1)=false := by
+  have hnS : f n=false := by
+    cases h : f n
+    · rfl
+    · have hp := hpos 1 (by decide) (by omega)
+      have hz : cN (fun i => f i=false) n 1=0 := by
+        rw [cN_succ_neg _ n 0 (by rw [Nat.add_zero,h]; decide)]
+        rfl
+      rw [hz] at hp
+      omega
+  have hnF : Fw f (n+1)=Fw f n-1 := by
+    rcases fw_cases f n with ⟨_,h⟩ | ⟨h,_⟩
+    · simp [hnS] at h
+    · exact h
+  refine ⟨hnS,?_⟩
+  cases hA : f (n+1)
+  · rfl
+  · let Q := fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i
+    have hNo : ¬EndN f 0 (n+1) := by
+      apply block_prefix_low_clock_not_endable f n a (n+1) hw hpre (by omega) (Fw f n-1)
+      · intro i hi hj
+        by_cases h : i=n
+        · rw [h]
+          omega
+        · have hh : i=n+1 := by omega
+          rw [hh,hnF]
+          omega
+      · omega
+    have hH := positive_depth_six_counter_high_free f n a b 4 hw hpre hnb hfloor hpos hS he hcounter
+    simp only [Nat.reduceEqDiff,if_false] at hH
+    change cN Q n (b-n)≤1 at hH
+    obtain ⟨_,_,_,hTarget,_⟩ := positive_depth_six_counter_profile f n a b 4 hw hpre hnb hfloor hpos hS he hcounter
+    have hDown := fw_false_run f b 4 hS
+    have hn1b : n+1<b := by
+      by_cases h : n+1<b
+      · exact h
+      · have heq : b=n+1 := by omega
+        rw [heq] at hDown hTarget
+        omega
+    have hOne : 1≤cN Q n (b-n) := by
+      by_cases h : 1≤cN Q n (b-n)
+      · exact h
+      · exact (not_of_cN_zero Q n (b-n) (by omega) (n+1) (by omega) (by omega)
+          ⟨by omega,hA,hNo⟩).elim
+    obtain ⟨q,hnq,hqb,hq,hqA⟩ := ivt f b (Fw f n+3) (by omega) (b-n) n (by omega) (by omega)
+    have hNQ : n+1<q := by
+      by_cases h : q=n
+      · rw [h] at hq
+        omega
+      · by_cases h1 : q=n+1
+        · rw [h1,hnF] at hq
+          omega
+        · omega
+    by_cases hqe : EndN f 0 q
+    · obtain ⟨u,_,_,_,hWin,hCost⟩ := old_four_eight_high_source_budget f n a b t q 3 hw hpre
+        hnb hfloor hpos hS he hcounter htn hwin hnq hqb (by omega) (by omega) hqe
+      have hk := win_ge3 f u (q-u) hWin
+      change 3*(_-1)+8*(cN Q n (b-n) : Int)≤13 at hCost
+      omega
+    · have hTwo := two_marks_le_count Q n (n+1) q (b-n) (by omega) hNQ (by omega)
+        ⟨by omega,hA,hNo⟩ ⟨by omega,hqA,hqe⟩
+      omega
+
+end Recaman.OldFourInitialSS

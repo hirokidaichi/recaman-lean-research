@@ -1,0 +1,25 @@
+{
+  "tag": "H18",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldFiveShortHighWindow.olean",
+    "Recaman/OldFiveShortHighWindow.lean"
+  ],
+  "started_jst": "2026-11-12T06:34:07.828631+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OldFiveShortHighWindow.lean": "2b69a30dd6865a2317ea536eef1100a0cfd44c91f805fd8d3369a736702bc3d4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "d24c215b38dedf8b1213643be97f2efea029a03b17d748093adabfe5b2822f53",
+  "source_tree_sha256": "3eb76610e35ae229689089a449d74f32dd6ab6f1414ca711bcf1ed7e14180a8a",
+  "source_tree_manifest": "H18-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

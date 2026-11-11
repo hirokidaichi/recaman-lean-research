@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4271,
+   "lines": 4345,
    "imports": [
     "SupplyTrichotomyBudget",
     "RecordOverlapShiftBounds",
@@ -27883,6 +27883,128 @@
    "hasReport": false
   },
   {
+   "name": "DepthSixClockFourCollision",
+   "lines": 53,
+   "imports": [
+    "DepthSixClockFourHighWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_four_actual_counter_excluded",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixClockFourHighWindow",
+   "lines": 93,
+   "imports": [
+    "DepthSixClockFourPrefix"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_four_high_source_SAA",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixClockFourPrefix",
+   "lines": 82,
+   "imports": [
+    "DepthSixLocalSourceClock",
+    "FirstSFourPrefix"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_four_actual_prefix_packet",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixFirstHead",
+   "lines": 70,
+   "imports": [
+    "DepthSixOldHead"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_six_first_addition_head",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "old_gap_six_first_head_six",
+     "line": 55
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixFourLocalSourcePrefix",
+   "lines": 108,
+   "imports": [
+    "DepthSixFourRefinedWeight",
+    "GapSourceDebt",
+    "OldReturnNearFloorCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_four_source_prefix_free",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "local_four_source_clock_sixteen",
+     "line": 90
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixFourRefinedWeight",
+   "lines": 53,
+   "imports": [
+    "OldFiveShortHighWindow",
+    "GapSourceDebt"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_four_eight_high_weight",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DepthSixFreeLocation",
    "lines": 176,
    "imports": [
@@ -27925,6 +28047,218 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixHighWindow",
+   "lines": 90,
+   "imports": [
+    "DepthSixSourceArea",
+    "HighWindowSquareBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "gap_six_high_window_and_first_supply",
+     "line": 14
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixLocalPreBudget",
+   "lines": 51,
+   "imports": [
+    "OldFiveShortHighWindow",
+    "GapSourceDebt"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_five_weight_budget",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixLocalPrefixPair",
+   "lines": 130,
+   "imports": [
+    "DepthSixFourLocalSourcePrefix",
+    "LowCrossSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_four_source_prefix_free_one",
+     "line": 40
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixLocalSourceClock",
+   "lines": 42,
+   "imports": [
+    "DepthSixLocalPrefixPair",
+    "DepthSixLocalSourcePrefix",
+    "FirstSOneFreePrefix"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_counter_source_clock_two_or_four",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixLocalSourcePrefix",
+   "lines": 108,
+   "imports": [
+    "DepthSixLocalPreBudget",
+    "LowCrossSupplyCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "local_five_source_prefix_free",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "local_five_source_clock_sixteen",
+     "line": 90
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixNestedWindow",
+   "lines": 77,
+   "imports": [
+    "DepthSixHighWindow",
+    "SFinalWindowLength"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_gap_six_free_gap",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixOldFive",
+   "lines": 141,
+   "imports": [
+    "DepthSixNestedWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_five_counter_area_budget",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "old_five_source_duration_budget",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "old_five_actual_high_source",
+     "line": 114
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixOldFour",
+   "lines": 141,
+   "imports": [
+    "DepthSixNestedWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_counter_area_budget",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "old_four_source_duration_budget",
+     "line": 75
+    },
+    {
+     "kind": "theorem",
+     "name": "old_four_actual_high_source",
+     "line": 114
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixOldHead",
+   "lines": 83,
+   "imports": [
+    "DepthSixSourceArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_gap_six_excludes_head_five",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixOldSourceGap",
+   "lines": 27,
+   "imports": [
+    "OldFourGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_old_source_free_gap",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -30616,6 +30950,52 @@
    "hasReport": false
   },
   {
+   "name": "FirstSFourPrefix",
+   "lines": 60,
+   "imports": [
+    "LevelTriangleArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_S_four_words",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "first_S_four_area_le_four",
+     "line": 33
+    },
+    {
+     "kind": "theorem",
+     "name": "first_S_four_ceiling",
+     "line": 41
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FirstSOneFreePrefix",
+   "lines": 44,
+   "imports": [
+    "PrefixMassBarrier"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_S_one_free_additions",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FirstTwoActualBounds",
    "lines": 26,
    "imports": [
@@ -30876,7 +31256,7 @@
   },
   {
    "name": "FloorSupplyPairCharge",
-   "lines": 201,
+   "lines": 223,
    "imports": [
     "SupplyAreaCrossings",
     "FloorSupplyFreeBudget"
@@ -30884,11 +31264,16 @@
    "decls": [
     {
      "kind": "theorem",
-     "name": "floor_supply_pair_charge",
+     "name": "floor_supply_pair_charge_after_cut",
      "line": 66
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_supply_pair_charge",
+     "line": 208
     }
    ],
-   "theorems": 1,
+   "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -33563,6 +33948,34 @@
    "theorems": 12,
    "defs": 1,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "HighWindowSquareBudget",
+   "lines": 106,
+   "imports": [
+    "LevelTriangleArea"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "area_from_level_split",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_window_area_budget",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "high_window_square_budget",
+     "line": 54
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -43135,6 +43548,149 @@
     }
    ],
    "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFiveShortHighWindow",
+   "lines": 99,
+   "imports": [
+    "DepthSixOldFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_five_high_source_is_SAA",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_old_five_free_gap",
+     "line": 42
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourFreeHeight",
+   "lines": 127,
+   "imports": [
+    "OldFourHighWindowSpectrum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_free_height_le_two",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "old_four_counter_upper_excursion",
+     "line": 69
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourGap",
+   "lines": 84,
+   "imports": [
+    "OldFourHighFreeZero",
+    "SevenWindowPrefixFive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_old_four_free_gap",
+     "line": 13
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourHighFreeZero",
+   "lines": 72,
+   "imports": [
+    "OldFourSecondClockBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_counter_high_free_zero",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourHighWindowSpectrum",
+   "lines": 41,
+   "imports": [
+    "DepthSixOldFour"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_high_source_spectrum",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourInitialSS",
+   "lines": 122,
+   "imports": [
+    "OldFourFreeHeight",
+    "DepthSixFourRefinedWeight"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_eight_high_source_budget",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "old_four_counter_initial_SS",
+     "line": 53
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFourSecondClockBudget",
+   "lines": 64,
+   "imports": [
+    "OldFourInitialSS"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_four_second_clock_source_budget",
+     "line": 12
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -55335,6 +55891,29 @@
    "hasReport": false
   },
   {
+   "name": "SFinalWindowLength",
+   "lines": 40,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "window_three_or_at_least_seven",
+     "line": 22
+    },
+    {
+     "kind": "theorem",
+     "name": "window_ending_S_length",
+     "line": 29
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SS2AASCollisionObstruction",
    "lines": 155,
    "imports": [
@@ -57340,6 +57919,24 @@
      "kind": "theorem",
      "name": "seven_positive_key_shape",
      "line": 15
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SevenWindowPrefixFive",
+   "lines": 54,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_seven_ending_SA",
+     "line": 34
     }
    ],
    "theorems": 1,
@@ -69019,6 +69616,6 @@
    "hasReport": false
   }
  ],
- "total": 977,
+ "total": 1005,
  "withReport": 167
 }

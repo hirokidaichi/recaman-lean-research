@@ -1,0 +1,31 @@
+{
+  "tag": "H21R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OneFreePositivePrefix.olean",
+    "Recaman/OneFreePositivePrefix.lean"
+  ],
+  "started_jst": "2026-11-12T06:41:11.923686+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/OneFreePositivePrefix.lean": "e560a7be0fb3a80ed5690a293004edffc08192a2023fc2e2311e52631f861a6c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "c0766c9118e0e6bf8285242860bcc732a7a28e03",
+  "tracked_diff_sha256": "a69a6e68fae56a4675e6c10a45e44816e2e10f3bd9756f21ec4dde9d6f04b0b2",
+  "source_tree_sha256": "065e4a8399a1ee0cfce745eceda6de8873e34f7120bb66a169b1635bebf91666",
+  "source_tree_manifest": "H21R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a69a6e68fae56a4675e6c10a45e44816e2e10f3bd9756f21ec4dde9d6f04b0b2",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.542124582992983,
+  "cpu_seconds": 0.359865,
+  "finished_jst": "2026-11-12T06:41:12.465774+09:00"
+}

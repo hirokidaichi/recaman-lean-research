@@ -1,0 +1,16 @@
+Recaman/OneFreePositivePrefix.lean:21:26: error: unsolved goals
+f : Nat → Bool
+n a : Nat
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnq : n ≤ n
+hSpos : n < n → 1 ≤ cN (fun i => f i = false) n (n - n)
+he : EndN f 0 n
+hbad : cN (fun i => f i = true) n (n - n) ≤ 1
+h : ¬n < n
+i : Nat
+hi : n ≤ i
+hj : i ≤ n
+hh : i = n
+⊢ Fw f n ≤ Fw f n
