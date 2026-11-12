@@ -32,6 +32,18 @@ statement, not evidence that the statement captures the intended mathematical cl
   independent conjectures, counterexample searches, or literature searches; do not have multiple
   workers edit the same module or silently share an unverified assumption.
 
+## Arbitrary-depth priority (user instruction, 2026-11-12)
+
+Starting with the next session, prioritize principles usable at arbitrary excursion depth.
+Follow protocol section 1.8 and record local progress separately from depth-general progress.
+A fixed-depth exclusion, a larger checked cutoff, or a paper-to-Lean connection alone does not
+reset depth-general stagnation. The nominal 100-minute research/audit allocation is local
+completion 30, general-principle exploration/falsification 60, and independent audit 10.
+Reserve at least 25 minutes for a genuinely different mechanism even when local work succeeds.
+After two completed parent cycles without depth-general progress use 20/70/10. Keep evidence
+labels, falsification, all stopped-job restrictions, resource limits and publication gates intact.
+This priority change is not evidence that an arbitrary-depth theorem has been proved.
+
 ## Harness gates (INC-20260915-01)
 
 The 2026-09-15 incident (`docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md`) showed that

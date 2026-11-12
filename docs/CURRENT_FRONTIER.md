@@ -13,7 +13,8 @@
 - **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
 - **E-695 / E-696 / E-697 / E-698 / E-699 / E-700 PROVED-LEAN**。j4/5局所source前free<=1と初期S弱化モデルからsource時計n+2/n+4。n+4は元高free一件を消費し、以後の全実高source SAA同士の符号衝突で排除。全旧履歴/全run/上昇無制限を保持。深さ6counterの残りはj4/5・選択源n+2。H49/R coverage consumerは署名監査でshadowed binderがあり採用外、残余の全体合成を独立Lean結果とは数えない。
 - **E-701 PROVED-PAPER**。j5/n+2は元area0からd*(k−1)+5H<=9を供給し、最高二Aのactual SAA衝突で排除、全source元free>=6。元actual anchor/二A接着は未Lean、人間レビュー未。従って紙上残余はj4/n+2。C1全体の証明ではない。
-- 次の一問はH-20261113-01。元j5/n+2 counterからactual高sourceのduration+5H<=9を内部供給し、二実A接着をLeanへ移せるか。E701/H0/供給結論を新Propで仮定しない。
+- **2026-11-12利用者による次回計画変更**。主課題は[H-20261113-02 任意深さの課金原理](HYPOTHESIS_CARD_2026-11-13_DEPTH_INDEPENDENT_CHARGING.md)。E681/E674を使う重複課金・無重み化の新edge又は一般機構の反証を最初15分で判定。研究・監査100分は局所30/一般化60/監査10、局所成功でも別機構25分以上を確保する。一般化側で2親cycle連続進展なしなら20/70/10。新指標の過去値は未評価で、数学的証拠の追加ではない。
+- 副課題[H-20261113-01](HYPOTHESIS_CARD_2026-11-13_SECOND_CLOCK_FIVE_SOURCE.md)の元j5/n+2接着は局所枠30分以内。成功しても一般化停滞をリセットしない。[一般化tracker](RESEARCH_GENERALIZATION_TRACKER.md)に局所側/一般化側を別記する。
 
 ## 11/10までの要約
 
