@@ -38,10 +38,10 @@ H03/H09/H10の有限不在、E675既存identity、H08helper、module数、local�
 
 [再現packet](data/depth_general_20261113/)、ADOPTED_SOURCES.jsonは最終採用bytesと512MB receiptを照合。有限検算と無限族のPAPER証明を区別し、discovery/holdoutのprefix未見性を主張しない。
 
-## 所有・公開（実施結果は終了時に確定）
+## 所有・公開（研究snapshotの実照合）
 開始main/HEAD=origin/main=e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c、fetch済/差0。開始時未所有dirtyはdocs/data/daily_research/2026-11-07.jsonだけ、保持・stage除外。
 ownedは今日の9 Lean/root/Audit/contracts/registry/statement audits/frontier/proof map/portfolio/当日cards/notes/packet/journal、次回card、tracker、viewer manifest。明示pathだけstageし、stop後の確定journalを含め日次snapshotを通常origin/mainへpush。新規module snapshotの単一commit commandのみRECAMAN_ALLOW_BURST=1、hook/G1–G5/保護claimは維持。
-現時点は未commit/未push。最終snapshot SHA/push/remote照合/hosted CIは保存枠で追記し、確定chat日次報告へも記載する。
+研究snapshot **52e77d2052e40d6a22686d3ad02974221d2eb7ca** を通常pushで **origin/main** へ保存し、`git ls-remote origin refs/heads/main`の完全一致を確認した。hosted CIは07:57:37照合時 **実行中**（[当日snapshot CI](https://github.com/hirokidaichi/recaman-lean-research/actions/runs/43324615586)）。ローカル検証成功とremote到達を区別する。詳細は[公開receipt](data/depth_general_20261113/publication_snapshot/PUBLICATION_RECEIPT.json)。この実照合記録を別のdocs-only commitへ保存し、その最終SHA/remote/CIは自己参照を避け日次chatへ報告する。未保存の研究成果なし。未所有11/07 journalは保持・公開対象外。
 
 ## 次回の一問
 [H-20261114-01](HYPOTHESIS_CARD_2026-11-14_INITIAL_S_FREE_CHARGE.md)。元actual positive/全initialS履歴でexclusive old-S供給Dを元freeへ払うD<=F。最初15分はsource chronology又は明示pairing補正を判定し、有限不在で延長しない。後半25分以上はsource-sensitive adaptive depth-operationという別機構。局所副題j4/n+2は最大30分、d2/k7を消さない。
