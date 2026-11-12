@@ -1,0 +1,48 @@
+Recaman/InitialSLowTargetTransport.lean:20:36: error: Application type mismatch: The argument
+  h
+has type
+  ¬h✝ ≤ t
+of sort `Prop` but is expected to have type
+  Nat
+of sort `Type` in the application
+  fw_false_run f 0 h
+Recaman/InitialSLowTargetTransport.lean:60:4: error: `simp` made no progress
+Recaman/InitialSLowTargetTransport.lean:68:15: error(lean.unknownIdentifier): Unknown identifier `cntF_seg`
+Recaman/InitialSLowTargetTransport.lean:73:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (EndN f h) (h + 0) K
+in the target expression
+  cN (EndN f h) h K = cN (EndN (fun i => f (h + i)) 0) 0 K
+
+f : Nat → Bool
+h K : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+hCeil : ∀ (i : Nat), h ≤ i → i < h + K → f i = true → Fw f i ≤ Fw f h + 1
+hp : ∀ (i : Nat), h ≤ i → i < h + K → (EndN f 0 i ↔ EndN f h i)
+hE0 : cN (EndN f 0) 0 h = 0
+hF0 : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 h = 0
+hS0 : cN (fun i => f i = false) 0 h = h
+⊢ cN (EndN f h) h K = cN (EndN (fun i => f (h + i)) 0) 0 K
+Recaman/InitialSLowTargetTransport.lean:95:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  free f 0 h
+in the target expression
+  free f 0 (h + K) = cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 h + cN (fun i => f i = true ∧ ¬EndN f 0 i) h K
+
+f : Nat → Bool
+h K : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+hCeil : ∀ (i : Nat), h ≤ i → i < h + K → f i = true → Fw f i ≤ Fw f h + 1
+hp : ∀ (i : Nat), h ≤ i → i < h + K → (EndN f 0 i ↔ EndN f h i)
+hE0 : cN (EndN f 0) 0 h = 0
+hS0 : cN (fun i => f i = false) 0 h = h
+hEafter : cN (EndN f 0) h K = cN (EndN (fun i => f (h + i)) 0) 0 K
+hFafter : cN (fun i => f i = true ∧ ¬EndN f 0 i) h K = free (fun i => f (h + i)) 0 K
+hSafter : cN (fun i => f i = false) h K = cN (fun i => f (h + i) = false) 0 K
+he : cN (EndN f 0) 0 (h + K) = 0 + cN (EndN (fun i => f (h + i)) 0) 0 K
+hs : cN (fun i => f i = false) 0 (h + K) = cN (fun i => f i = false) 0 h + cN (fun i => f i = false) h K
+hf : free f 0 (h + K) = cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 h + cN (fun i => f i = true ∧ ¬EndN f 0 i) h K
+hF0 : free f 0 h = 0
+⊢ cN (EndN f 0) 0 (h + K) = cN (EndN (fun i => f (h + i)) 0) 0 K ∧
+    free f 0 (h + K) = free (fun i => f (h + i)) 0 K ∧
+      cN (fun i => f i = false) 0 (h + K) = h + cN (fun i => f (h + i) = false) 0 K ∧
+        ↑(cN (fun i => f i = false) 0 (h + K)) - ↑(cN (EndN f 0) 0 (h + K)) =
+          ↑h + ↑(cN (fun i => f (h + i) = false) 0 K) - ↑(cN (EndN (fun i => f (h + i)) 0) 0 K)

@@ -1,0 +1,499 @@
+{
+  "version": 1,
+  "date": "2026-11-13",
+  "timezone": "Asia/Tokyo",
+  "target_seconds": 7200,
+  "events": [
+    {
+      "at": "2026-11-13T06:00:48.310072+09:00",
+      "action": "start",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": ""
+    },
+    {
+      "at": "2026-11-13T06:02:57.224283+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "主課題の具体候補を、任意深さ/元padded/全prefix正不足でA<=3freeに固定する準備。既知A5/free2とA10/free4、E598族では直ちに破れず、停止H25床三順位/H38幾何輸送と異なる全高無重み候補。探索CPUはまだ0。"
+    },
+    {
+      "at": "2026-11-13T06:07:47.843101+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "任意深さ/元padded/全prefix正不足 A<=3free を凍結。normal/fork/exec/wall/threadedCPU guard実検証後、数学worker予算0→8CPU秒(discovery4/別実装holdout4)を事前再配分。既存表は起動しない。"
+    },
+    {
+      "at": "2026-11-13T06:09:48.385132+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "有限beam118074 visitsと別実装holdout1536 casesでは係数3反例なし。これは証明/一般化進展でない。探索worker実測2.382583CPU秒で終了、再起動しない。残りunitは紙上で非short供給Oと境界負債の必要入力を監査。"
+    },
+    {
+      "at": "2026-11-13T06:13:33.538023+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "倍率3の元history探索は有限不在のみ。既存trichotomyでOが残ることを紙上監査。E674高さ別必要式の緩和モデルを別機構候補として既存反証検索中。"
+    },
+    {
+      "at": "2026-11-13T06:15:13.505328+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H03を初回15分以内で判定:有限不在のみ、方法STOPPED/命題CONJECTURED。残り一般化枠で別の解析的反証H04へ。高さ会計+実語flow+宣言正不足の全深さcを破る族を先に凍結。探索worker追加なし。"
+    },
+    {
+      "at": "2026-11-13T06:17:06.370813+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "全mのS^m A^m宣言mark族でE674高さ必要式+walk-flow+strict prefixからuniform A/freeは導けない紙上no-goを保存。元actualは供給1/free m-1で反証でない。一般化判定は独立audit待ち。"
+    },
+    {
+      "at": "2026-11-13T06:20:18.659723+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "高さ緩和反例を全prefix高さ必要式にも強化。元供給はSAA一件で宣言と異なることを完全面積検査。次の独立機構候補は実二窓の重複面積資源でありH04の仮定改名でない。"
+    },
+    {
+      "at": "2026-11-13T06:23:11.379513+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "元SSAAAASAの二実窓費用24>財布22をLean512認証。既知短record反例と別。交差区間Pを一回補正する新候補を凍結し紙上chain→形式化。局所/後半一般化の時間上限は維持。"
+    },
+    {
+      "at": "2026-11-13T06:25:15.042637+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "元二窓反例H05-R受理。交差区間補正はPAPER全場合のchainを保存。H05-I/Rは唯一修理後omega不受理でSTOPPED・packet隔離、追加修理なし。既存恒等式だけを新Gとして二重計上しない。"
+    },
+    {
+      "at": "2026-11-13T06:27:47.667285+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "相異なる元実targetの任意witness費用の固定倍率Mを、深さ5の周期挿入族で反証する候補を凍結。既存E511/E674/10月窓型LP停止を確認、再実行しない。後半一般化は別の深さ操作原理へ。"
+    },
+    {
+      "at": "2026-11-13T06:30:10.775997+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "06:30確認。深さ5族のΣQ二次/P一次を紙上証明。候補source3以外の同高時刻は面積1又-3であり、最新/最短実Winでもsource共有を避けられないか追加反証pass。元free/C1と区別。"
+    },
+    {
+      "at": "2026-11-13T06:34:03.631046+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "最初一般化blockの証拠をE702宣言no-go/E703元有限kernel反例/E704全N唯一source PAPERに分離。原理の次consumerをsourceでなく下降枠/free支払いに更新。確定parent判定は独立audit後。"
+    },
+    {
+      "at": "2026-11-13T06:34:47.642447+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "source一意性とC1 scopeを監査。E704は最短Winでも窓重複が避けられないPAPER no-go、E674下降枠とは別。選んだtargetの最後S-gapは0でC1反例でない。後半別機構と局所上限を維持。"
+    },
+    {
+      "at": "2026-11-13T06:35:53.916132+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "最初一般化unit群は27分52秒で証拠記録まで完了。待機せず局所30分へ切替。旧一般化30+30を前半実27分52秒/後半予定32分08秒へ再配分し総60を保持、後半独立balanced insertion機構25分以上を確保。局所は07:05:40前後を上限。"
+    },
+    {
+      "at": "2026-11-13T06:41:47.067225+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "局所E701の新producer budget9→k3/H0→二actual SAA衝突→全旧/局所source consumerを512MB個別受理。local_successとG判定は分離。局所30分は上限なので成果記録後に未使用分をGへ移し、固定深さ追加探索はせず独立深さ操作へ。"
+    },
+    {
+      "at": "2026-11-13T06:43:05.300042+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "局所E701採用記録まで06:43に完了。局所30分の未使用約22分をGへ再配分。一般化旧60/局所30→一般化約82/局所約8、独立audit10とhandoff保持。次は高さ会計と独立したbalanced insertionの元actual輸送を25分以上扱う。"
+    },
+    {
+      "at": "2026-11-13T06:49:55.004727+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "balanced insertionの選択窓lawと元positive EndN破壊例を512MB受理。次候補は固定非空mass0/area0 loopが全positive履歴でEndNを保存するか。loop最高上昇Hより深い一意source valleyを作る全loop no-goを紙上攻撃する。後半独立機構継続中。"
+    },
+    {
+      "at": "2026-11-13T06:57:43.398975+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H06二方向のactual EndN変化と二source-area不能を512MB受理。全固定balanced loop no-goは全z PAPER、1274+64の独立有限検算一致。恒等式のみをactual/free輸送完成に数えない。次候補のinitial-S低対象height輸送は既存A-budget trimとscopeを比較中。"
+    },
+    {
+      "at": "2026-11-13T06:58:56.783541+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H06最初15分gate:元neutral挿入でEndNが消失/生成するkernel反例と全固定balanced wordのPAPER no-goで新一般機構反証あり。継続してsource条件と残るconsumerを記録。H06開始06:43、25分以上枠は維持。"
+    },
+    {
+      "at": "2026-11-13T06:59:51.328248+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "07:00確認。E707二方向actual kernel反例、E708全固定balanced挿入no-go PAPERを登録。未Lean全zと具体kernelを分離。H06独立機構は06:43開始、25分確保までsource契約/consumerの監査を継続。"
+    },
+    {
+      "at": "2026-11-13T07:00:49.906206+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "07:00実時計確認。H06反証は完了、待機せず同じ独立source-aware depth-operation blockのH07へ継続。H06+07で25分以上を確保。初期S全源の高さ排除→元EndN0同値→free/不足shiftの新候補をカードへ凍結。"
+    },
+    {
+      "at": "2026-11-13T07:04:34.173079+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H07 source高さ<=cut+1で元全initialS源を内部排除し、元EndN/全free保存と不足がh減る式を512MB一修理で受理。正不足domainは自動保存しない。ceiling2境界反例と既存初期S平方式のscopeを比較し、既存identity重複を避ける。"
+    },
+    {
+      "at": "2026-11-13T07:08:41.018636+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H07のactual/free保存とceiling2/positive-margin境界を512MB受理。H06+H07独立深さ操作は25分以上経過。残り一般化で全初期S源を一つの元clock+二次等式へ分類するH08を先に凍結し、source抽出と逆Win構成を判定する。"
+    },
+    {
+      "at": "2026-11-13T07:12:18.559677+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "E709の高さ条件付き元actual/free接続とE710境界を登録。H08全source二次検査は512MB受理したが既存ray分類のscope展開helperとして独立row/G進展に数えない。次はexclusive initial-S供給を元freeへ払うH09の新不等式を凍結する。"
+    },
+    {
+      "at": "2026-11-13T07:14:02.389637+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "新actual consumer D=exclusive old-S供給<=元freeを凍結。係数1の任意depth不等式、既知族はD/F=1/2で破らない。新source分類を使う別目的beam/independent reverseを当日8秒累積内の新4秒sliceで事前固定。有限不在だけなら15分でSTOP。"
+    },
+    {
+      "at": "2026-11-13T07:16:58.640665+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H09 beam59302/valid59300、reverse holdout192全validでD>Fなし。best h2/AAAASA は既知SSAAAASAのD2/F3、証拠の再発見で新進展なし。紙上chargeでは最新free単射が必要かを別の強い写像候補として先に凍結し、親D<=Fと分離して攻撃する。"
+    },
+    {
+      "at": "2026-11-13T07:22:49.079451+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "H09/H10の実workerは全終了。親D<=Fも最新free単射も有限不在のみ。新charge edgeは未取得なので探索を延長せずmethod STOPPED/命題CONJECTUREDを保持。次は同free plateauで初期S二次hitが再来しないためのsource chronologyを紙上unknownとして分離する。"
+    },
+    {
+      "at": "2026-11-13T07:23:18.933930+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "必要な独立監査を10→25分へ再配分。多数の全長PAPER/actual transport/境界counter/9新moduleのscopeとG5、全check、保存整合を検証するため。旧100分=local30/G60/audit10→実local約7/G約68/audit25、追加15分は残り研究から差引。新数学探索/worker終了、07:45以後も検証/保存のみ。"
+    },
+    {
+      "at": "2026-11-13T07:29:22.710656+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "07:30実時計確認。9採用sourceの最終bytesを個別512MB receiptへ照合、full checkはE709 frontier引用漏れをmetadata修正後成功。1016 build jobs/3923 axiom reports許可集合内。全PAPER/COMPUTED/actual区分とG5語句の正確性を独立監査中。"
+    },
+    {
+      "at": "2026-11-13T07:37:38.849166+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "独立auditでE704の有限F式をH09既知例へ使うpaper根拠の記載不足を検出。全A位置を初期2free/周期2actual2floor-free/終端actualへ尽くし、全N F2N+2/DN+1の証明を補足。新独立進展として数えず、有限外挿を防いだ。"
+    },
+    {
+      "at": "2026-11-13T07:39:11.528703+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "公開対象の検証済み9sourceと当日owned filesを明示whitelist固定、未所有11/07 journalを除外。stop確定値→snapshot通常push/remote一致→docs-only公開receiptという保存手順を準備、まだcommitしていない。数学探索追加なし。"
+    },
+    {
+      "at": "2026-11-13T07:41:49.668886+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "G5/registry再検証はdocs修正後、viewer manifest/diff whitespace/9source hashes/owned whitelist/lock-cache除外を監査。fullLeanは変更なしのため再実行しない。保存先origin/mainは07:39fetchでbaseline一致、hostedCI能力のread確認はbaseline成功のみで当日CIと混同しない。"
+    },
+    {
+      "at": "2026-11-13T07:45:06.526122+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "07:45前後の実時計確認。新数学探索は07:23に終了済、以後独立監査/保存のみ。E704の全N free/D根拠、E708有限horizon、E709 height/margin条件、r3依存と未解決C1を再監査。確定時間はstop後のみ書く。"
+    },
+    {
+      "at": "2026-11-13T07:47:57.907236+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "独立auditor pass完了。全量化PAPER二件/weak-model区別/全N free consumer/9validated source/G5/全check/owned publication候補を確認。G判定は機構no-goを根拠にあり、local E701やhelper/finite不在は数えない。以後handoffとstop後publicationだけ。audit予定25分、確定実績はjournalから集計。"
+    },
+    {
+      "at": "2026-11-13T07:50:20.201196+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "次回premise packet/全量化未知D<=F/既知rayと最新下降枠の違い/停止条件/局所j4境界を明示して保存。make brief同期、staged ownership再確認。09worker再実行なし、handoff open秒を完了実績に先取りしない。"
+    },
+    {
+      "at": "2026-11-13T07:54:18.215750+09:00",
+      "action": "checkpoint",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "次回cardの全量化子・境界・別機構・STOP継承を確認。最終fetch main差0、所有外11/07 journalを保持。採用9 source hashは個別512MB検証bytesと一致。card冒頭の作成時Evidenceを最終結果へ同期。stop後に確定journalを保存し明示pathで通常pushする。"
+    },
+    {
+      "at": "2026-11-13T07:56:49.440424+09:00",
+      "action": "stop",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "note": "研究・独立意味監査・次回handoffを完了。自分の数学workerは全終了。確定journalと検証済みowned snapshotを08:00前にcommit/push/remote照合する余白を確保して閉じる。開始遅れ・公開操作を遡及計上しない。"
+    }
+  ],
+  "segments": [
+    {
+      "start": "2026-11-13T06:00:48.310072+09:00",
+      "end": "2026-11-13T06:02:57.224283+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "setup",
+      "unit": "R-20261113-01/arbitrary-depth-setup"
+    },
+    {
+      "start": "2026-11-13T06:02:57.224283+09:00",
+      "end": "2026-11-13T06:07:47.843101+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "setup",
+      "unit": "H-20261113-03/uniform-ratio-contract"
+    },
+    {
+      "start": "2026-11-13T06:07:47.843101+09:00",
+      "end": "2026-11-13T06:09:48.385132+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-03/uniform-ratio-falsifier"
+    },
+    {
+      "start": "2026-11-13T06:09:48.385132+09:00",
+      "end": "2026-11-13T06:13:33.538023+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-03/uniform-ratio-paper"
+    },
+    {
+      "start": "2026-11-13T06:13:33.538023+09:00",
+      "end": "2026-11-13T06:15:13.505328+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-03/O-boundary-audit"
+    },
+    {
+      "start": "2026-11-13T06:15:13.505328+09:00",
+      "end": "2026-11-13T06:17:06.370813+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-04/height-relaxation-falsifier"
+    },
+    {
+      "start": "2026-11-13T06:17:06.370813+09:00",
+      "end": "2026-11-13T06:20:18.659723+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-04/height-relaxation-proof"
+    },
+    {
+      "start": "2026-11-13T06:20:18.659723+09:00",
+      "end": "2026-11-13T06:23:11.379513+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-04/all-prefix-and-provenance"
+    },
+    {
+      "start": "2026-11-13T06:23:11.379513+09:00",
+      "end": "2026-11-13T06:25:15.042637+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/intersection-correction"
+    },
+    {
+      "start": "2026-11-13T06:25:15.042637+09:00",
+      "end": "2026-11-13T06:27:47.667285+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/paper-intersection-audit"
+    },
+    {
+      "start": "2026-11-13T06:27:47.667285+09:00",
+      "end": "2026-11-13T06:30:10.775997+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/unbounded-witness-load"
+    },
+    {
+      "start": "2026-11-13T06:30:10.775997+09:00",
+      "end": "2026-11-13T06:34:03.631046+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/source-uniqueness"
+    },
+    {
+      "start": "2026-11-13T06:34:03.631046+09:00",
+      "end": "2026-11-13T06:34:47.642447+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/first-block-record"
+    },
+    {
+      "start": "2026-11-13T06:34:47.642447+09:00",
+      "end": "2026-11-13T06:35:53.916132+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-05/consumer-contract"
+    },
+    {
+      "start": "2026-11-13T06:35:53.916132+09:00",
+      "end": "2026-11-13T06:41:47.067225+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-01/clock-two-area-producer"
+    },
+    {
+      "start": "2026-11-13T06:41:47.067225+09:00",
+      "end": "2026-11-13T06:43:05.300042+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-01/result-registration"
+    },
+    {
+      "start": "2026-11-13T06:43:05.300042+09:00",
+      "end": "2026-11-13T06:49:55.004727+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-06/balanced-insertion-proposer"
+    },
+    {
+      "start": "2026-11-13T06:49:55.004727+09:00",
+      "end": "2026-11-13T06:57:43.398975+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-06/universal-neutral-loop-falsifier"
+    },
+    {
+      "start": "2026-11-13T06:57:43.398975+09:00",
+      "end": "2026-11-13T06:58:56.783541+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-06/transport-scope-audit"
+    },
+    {
+      "start": "2026-11-13T06:58:56.783541+09:00",
+      "end": "2026-11-13T06:59:51.328248+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-06/first-gate"
+    },
+    {
+      "start": "2026-11-13T06:59:51.328248+09:00",
+      "end": "2026-11-13T07:00:49.906206+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-06/evidence-registration"
+    },
+    {
+      "start": "2026-11-13T07:00:49.906206+09:00",
+      "end": "2026-11-13T07:04:34.173079+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-07/initial-S-source-exclusion"
+    },
+    {
+      "start": "2026-11-13T07:04:34.173079+09:00",
+      "end": "2026-11-13T07:08:41.018636+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-07/count-transport-and-sharpness"
+    },
+    {
+      "start": "2026-11-13T07:08:41.018636+09:00",
+      "end": "2026-11-13T07:12:18.559677+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-08/quadratic-source-classification"
+    },
+    {
+      "start": "2026-11-13T07:12:18.559677+09:00",
+      "end": "2026-11-13T07:14:02.389637+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-08/helper-to-charge-consumer"
+    },
+    {
+      "start": "2026-11-13T07:14:02.389637+09:00",
+      "end": "2026-11-13T07:16:58.640665+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-09/old-S-free-charge-falsifier"
+    },
+    {
+      "start": "2026-11-13T07:16:58.640665+09:00",
+      "end": "2026-11-13T07:22:49.079451+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-09/pairing-proposer"
+    },
+    {
+      "start": "2026-11-13T07:22:49.079451+09:00",
+      "end": "2026-11-13T07:23:18.933930+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "research",
+      "unit": "H-20261113-09/stop-and-next-edge"
+    },
+    {
+      "start": "2026-11-13T07:23:18.933930+09:00",
+      "end": "2026-11-13T07:29:22.710656+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/independent-statement-and-paper-audit"
+    },
+    {
+      "start": "2026-11-13T07:29:22.710656+09:00",
+      "end": "2026-11-13T07:37:38.849166+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/scope-byte-and-harness-audit"
+    },
+    {
+      "start": "2026-11-13T07:37:38.849166+09:00",
+      "end": "2026-11-13T07:39:11.528703+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/paper-consumer-completeness"
+    },
+    {
+      "start": "2026-11-13T07:39:11.528703+09:00",
+      "end": "2026-11-13T07:41:49.668886+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/publication-plan-and-ownership"
+    },
+    {
+      "start": "2026-11-13T07:41:49.668886+09:00",
+      "end": "2026-11-13T07:45:06.526122+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/final-metadata-and-ownership"
+    },
+    {
+      "start": "2026-11-13T07:45:06.526122+09:00",
+      "end": "2026-11-13T07:47:57.907236+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "audit",
+      "unit": "R-20261113-01/deadline-and-domain-audit"
+    },
+    {
+      "start": "2026-11-13T07:47:57.907236+09:00",
+      "end": "2026-11-13T07:50:20.201196+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "handoff",
+      "unit": "R-20261113-01/validated-daily-handoff"
+    },
+    {
+      "start": "2026-11-13T07:50:20.201196+09:00",
+      "end": "2026-11-13T07:54:18.215750+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "handoff",
+      "unit": "R-20261113-01/next-session-premises-and-freeze"
+    },
+    {
+      "start": "2026-11-13T07:54:18.215750+09:00",
+      "end": "2026-11-13T07:56:49.440424+09:00",
+      "session": "b64e8fc5-d3f4-451f-877c-973cb299b081",
+      "phase": "handoff",
+      "unit": "R-20261113-01/final-snapshot-freeze"
+    }
+  ],
+  "unconfirmed_gaps": [],
+  "cursor": null
+}

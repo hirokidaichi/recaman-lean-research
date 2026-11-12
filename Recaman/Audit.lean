@@ -1,3 +1,12 @@
+import Recaman.InitialSLowTargetTransport
+import Recaman.InitialSTransportBoundary
+import Recaman.InitialSQuadraticSource
+import Recaman.BalancedInsertionArea
+import Recaman.BalancedInsertionCounterexample
+import Recaman.DepthSixClockTwoHighWindow
+import Recaman.DepthSixClockTwoCollision
+import Recaman.DepthSixGapFive
+import Recaman.TwoWindowAreaOverlap
 import Recaman.SupplyTrichotomyBudget
 import Recaman.RecordOverlapShiftBounds
 import Recaman.ShortRecordOverlapBudget
@@ -4343,3 +4352,28 @@ import Recaman
 #print axioms Recaman.DepthSixClockFourHighWindow.clock_four_high_source_SAA
 
 #print axioms Recaman.DepthSixClockFourCollision.clock_four_actual_counter_excluded
+
+-- E-703: actual two-window counterexample; not a C1 counterexample.
+#print axioms Recaman.TwoWindowAreaOverlap.two_actual_windows_exceed_one_resource
+
+-- 2026-11-13 local E701/E705/E706; general C1 remains open.
+#print axioms Recaman.DepthSixClockTwoHighWindow.clock_two_five_actual_high_source
+#print axioms Recaman.DepthSixClockTwoHighWindow.clock_two_five_high_source_SAA
+#print axioms Recaman.DepthSixClockTwoCollision.clock_two_five_actual_counter_excluded
+#print axioms Recaman.DepthSixGapFive.positive_depth_six_gap_five_free_gap
+
+-- E707 actual counterexamples; E708 all-word claim remains PAPER.
+#print axioms Recaman.BalancedInsertionArea.zero_mass_insertion_area
+#print axioms Recaman.BalancedInsertionArea.two_source_splice_height_agreement
+#print axioms Recaman.BalancedInsertionArea.source_level_window_test
+#print axioms Recaman.BalancedInsertionCounterexample.zero_mass_zero_area_changes_original_endability
+#print axioms Recaman.BalancedInsertionCounterexample.neutral_insertion_creates_internal_source
+#print axioms Recaman.BalancedInsertionCounterexample.no_balanced_splice_keeps_both_original_areas
+
+-- Arbitrary-depth restricted transport E709, boundary E710; no C1 claim.
+#print axioms Recaman.InitialSLowTargetTransport.initial_S_low_target_source_iff
+#print axioms Recaman.InitialSLowTargetTransport.initial_S_low_addition_counts
+#print axioms Recaman.InitialSTransportBoundary.ceiling_two_changes_original_supply
+#print axioms Recaman.InitialSTransportBoundary.preserved_free_does_not_preserve_positive_deficit
+-- Source classification helper; no independent coverage/generalization credit.
+#print axioms Recaman.InitialSQuadraticSource.initial_S_source_quadratic_iff

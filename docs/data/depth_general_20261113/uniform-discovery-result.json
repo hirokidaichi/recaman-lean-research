@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-13T06:07:47.887648+09:00",
+  "tag": "uniform-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261113/run_single.py",
+    "--worker",
+    "4",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261113/uniform_three_discovery.py"
+  ],
+  "worker_cpu_cap_seconds": 4,
+  "wall_cap_seconds": 8.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "b2cc2becad5363f1c2d036d6703c04a6f2c5bb49ef1724d736a02da821d60de9",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 25433,
+  "process_group": 25433,
+  "finished_jst": "2026-11-13T06:07:48.134692+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.24713108301511966,
+  "worker_user_seconds": 0.20357799999999998,
+  "worker_sys_seconds": 0.009903,
+  "worker_cpu_seconds": 0.21348099999999998,
+  "worker_maxrss_native": 25690112,
+  "controller_cpu_seconds": 0.001602000000000001,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

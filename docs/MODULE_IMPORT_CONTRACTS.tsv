@@ -1,4 +1,13 @@
 module	direct_imports	purpose
+Recaman.InitialSQuadraticSource	Recaman.InitialSLowTargetTransport	Helper: exhaustive original initial-S source clock and explicit quadratic test, reverse Win constructed
+Recaman.InitialSTransportBoundary	Recaman.InitialSLowTargetTransport;Recaman.InitialSPaddingPositive	Sharp ceiling-two and positive-deficit boundary counterexamples for exact initial-S transport
+Recaman.InitialSLowTargetTransport	Recaman.SeparatorTailFreeGap;Recaman.AdditionRankSlack	Original source exclusion at low targets and exact initial-S supply/free transport; deficit loses h
+Recaman.BalancedInsertionCounterexample	Recaman.BalancedInsertionArea;Recaman.InitialSPaddingPositive;Recaman.AdditionRankSlack	Original positive-history neutral insertion changes EndN in both directions and cannot retain both source areas
+Recaman.BalancedInsertionArea	Recaman.BlockSuffixPositivity	Source-aware zero-mass insertion area law and two-source compatibility; helper contracts only, not full EndN transport
+Recaman.DepthSixGapFive	Recaman.DepthSixClockTwoCollision;Recaman.DepthSixOldSourceGap;Recaman.DepthSixClockFourCollision;Recaman.DepthSixLocalSourceClock	All original old and local source coverage for positive depth-six gap five
+Recaman.DepthSixClockTwoCollision	Recaman.DepthSixClockTwoHighWindow	Original depth-six clock-two gap-five counter excluded by two internally extracted actual SAA sources
+Recaman.DepthSixClockTwoHighWindow	Recaman.DepthSixLocalPreBudget	Original clock-two gap-five source duration and high-free joint budget9; all actual high sources are SAA
+Recaman.TwoWindowAreaOverlap	Recaman.HighWindowSquareBudget;Recaman.InitialSPaddingPositive	Original positive-history two-window area charge counterexample; shared interval resource is spent twice
 Recaman.CapacitySlackCompensation	Recaman.TwoSSAvoidTight;Recaman.PeriodicHallReduction	Slack compensation and universal deletion survival for high-SS windows; subsets containing threshold high-SS windows survive deletion of any subtraction; deletability reduces unconditionally to subsets avoiding high-SS donors
 Recaman.PeriodicHallReduction	Recaman.HallRobustnessTheorem	Complete reduction of Hall condition verification to stratified low-SS subsets; Hall on U reduces to ssCount<=1 for p<=11, clean AAS for p<=7, ssCount<=3 for p<=15, ssCount<=5 for p<=19; logical equivalence between full Hall and low-SS Hall
 Recaman.HallRobustnessTheorem	Recaman.HighSSWrappingTheorem	Immunity of threshold high-SS subsets to Hall condition failure; subsets with high-SS windows satisfy |A|<=|N(A)| when |U|<=|D|; Hall failure subsets are purely low-SS for p<=11, clean AAS for p<=7, SS<=3 for p<=15, SS<=5 for p<=19

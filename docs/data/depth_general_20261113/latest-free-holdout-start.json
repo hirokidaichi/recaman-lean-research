@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-13T07:18:15.469828+09:00",
+  "tag": "latest-free-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261113/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261113/latest_free_search.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "7194a7729a6c485e8bbc6708d19e0eb928d3e705ad8d88b62051207c98f75bcc",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 35293,
+  "process_group": 35293
+}

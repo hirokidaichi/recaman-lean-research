@@ -1,0 +1,25 @@
+{
+  "tag": "H01-F",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixGapFive.olean",
+    "Recaman/DepthSixGapFive.lean"
+  ],
+  "started_jst": "2026-11-13T06:40:13.922500+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixGapFive.lean": "95b825f2537b83c1d83c40aecb704547b5c3ad693890ebdf502fa57ddbfb557f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "5311a8720018b43a2b8ee2bf2f420560aa657bad02011395fde12c1e5264d1a0",
+  "source_tree_sha256": "8b22e3cdece17b1a61de98a2edbed80e8e79ea837a0e248b84b41276e7dea540",
+  "source_tree_manifest": "H01-F-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

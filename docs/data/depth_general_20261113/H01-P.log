@@ -1,0 +1,71 @@
+Recaman/DepthSixClockTwoHighWindow.lean:80:29: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  aboveTriangle r (r + 0)
+in the target expression
+  d * (d + 1) + 6 * (6 + 1) - (d + 1) * (d + 1 + 1) + 2 * ↑(q - u) * (r + 0 + d - (r + 0)) ≤
+    2 * lowAdditionWeights f (n + 2) (r + 0) (b - (n + 2)) + 2 * areaFromLevel f (n + 2) (r + 0) (b - (n + 2)) +
+      aboveTriangle (r + 0) (r + 0)
+
+f : Nat → Bool
+n a b q : Nat
+d : Int
+w : List Bool
+hw : BlockWord w
+hpre : seg f 0 n = w ++ List.replicate a true
+hnb : n < b
+hfloor : ∀ (i : Nat), n ≤ i → i ≤ b → Fw f n - 6 ≤ Fw f i
+hpos : ∀ (k : Nat), 0 < k → k ≤ b - n → cN (EndN f 0) n k + 1 ≤ cN (fun i => f i = false) n k
+hS : ∀ (i : Nat), b ≤ i → i < b + 5 → f i = false
+he : EndN f 0 (b + 5)
+hcounter : cN (fun i => f i = true ∧ ¬EndN f 0 i) n (b - n) ≤ 5
+htb : n + 2 < b
+hwin : Win f (n + 2) (b + 5 - (n + 2))
+hnq : n ≤ q
+hqb : q < b
+hd : 3 ≤ d
+hq : Fw f q = Fw f n - 2 + d + 1
+hWeight :
+  lowAdditionWeights f n (Fw f n - 2) (b - n) +
+      5 * ↑(cN (fun i => Fw f n - 4 ≤ Fw f i ∧ f i = true ∧ ¬EndN f 0 i) n (b - n)) ≤
+    44
+left✝⁴ : AdditionRankSlack.free f n (b - n) = 5
+left✝³ : 4 ≤ 5
+left✝² : 5 ≤ 8
+hTarget : Fw f (b + 5) = Fw f n - 1
+right✝ : AdditionRankSlack.subtractions f n (b - n) = cN (EndN f 0) n (b - n) + 1
+hLevel : Fw f (b + 5) = Fw f (n + 2) + 1
+hn2 : Fw f (n + 2) = Fw f n - 2
+hn1 : Fw f (n + 1) = Fw f n - 1
+left✝¹ : f q = true
+u k : Nat
+left✝ : 0 ≤ u
+huk : u + k = q
+hk : 0 < k
+hlev : Fw f n - 2 + d + 1 = Fw f u + 1
+harea : Ar f u k = 0
+hu : Fw f u = Fw f n - 2 + d
+hnu : n ≤ u
+hnu2 : n + 2 ≤ u
+hWin : Win f u (q - u)
+r : Int := Fw f n - 2
+hn2r : Fw f (n + 2) = r
+hDown : Fw f (b + 5) = Fw f b - ↑5
+hB : Fw f b = r + 6
+htailAr : Ar f b 5 = -15
+htail : areaFromLevel f b r 5 = 15
+hFull : areaFromLevel f (n + 2) r (b + 5 - (n + 2)) = 0
+hArea : 0 = areaFromLevel f (n + 2) r (b - (n + 2)) + 15
+hWeights : lowAdditionWeights f n r (b - n) = lowAdditionWeights f n r 2 + lowAdditionWeights f (n + 2) r (b - (n + 2))
+hW0 : 0 ≤ lowAdditionWeights f n r 2
+hNew :
+  d * (d + 1) + 6 * (6 + 1) - (d + 1) * (d + 1 + 1) + 2 * ↑(q - u) * (r + 0 + d - (r + 0)) ≤
+    2 * lowAdditionWeights f (n + 2) (r + 0) (b - (n + 2)) + 2 * areaFromLevel f (n + 2) (r + 0) (b - (n + 2)) +
+      aboveTriangle (r + 0) (r + 0)
+htri : ∀ (z : Int), 0 ≤ z → aboveTriangle r (r + z) = z * (z + 1)
+hU : Fw f u = r + d
+hQ : Fw f q = r + (d + 1)
+⊢ ∃ u,
+    n + 2 ≤ u ∧
+      u < q ∧
+        Fw f u = Fw f n - 2 + d ∧
+          Win f u (q - u) ∧
+            d * (↑(q - u) - 1) + 5 * ↑(cN (fun i => Fw f n - 4 ≤ Fw f i ∧ f i = true ∧ ¬EndN f 0 i) n (b - n)) ≤ 9

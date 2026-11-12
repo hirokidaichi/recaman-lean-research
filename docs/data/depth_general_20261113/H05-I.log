@@ -1,0 +1,22 @@
+Recaman/WindowAreaIntersection.lean:50:5: error: unknown tactic
+Recaman/WindowAreaIntersection.lean:47:84: error: unsolved goals
+f : Nat → Bool
+t q : Nat
+r : Int
+htq : t < q
+hr : r ≤ Fw f t
+hw : Win f t (q - t)
+hq : Fw f q = Fw f t + 1
+hbelow : ∀ (x : Int), r ≤ x → belowTriangle r x = 0
+⊢ (Fw f t + 1 - r) * (Fw f t + 1 - r + 1) - (Fw f t - r) * (Fw f t - r + 1) = 2 * (Fw f t - r + 1)
+Recaman/WindowAreaIntersection.lean:39:52: error: unsolved goals
+f : Nat → Bool
+t q : Nat
+r : Int
+htq : t < q
+hr : r ≤ Fw f t
+hw : Win f t (q - t)
+hq : Fw f q = Fw f t + 1
+hbelow : ∀ (x : Int), r ≤ x → belowTriangle r x = 0
+htri : aboveTriangle r (Fw f t + 1) - aboveTriangle r (Fw f t) = 2 * (Fw f t - r + 1)
+⊢ windowCharge f r t q ≤ areaSurplus f t r (q - t)

@@ -1,0 +1,16 @@
+Recaman/WindowAreaIntersection.lean:56:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  2*e - g + 2*h ≤ -1
+  c - d ≤ -1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑q
+ b := ↑t
+ c := r
+ d := Fw f q
+ e := lowAdditionWeights f t r (q - t)
+ g := 2 * ↑(q - t) * (Fw f t - r)
+ h := ↑(q - t) * (Fw f t - r)

@@ -1,0 +1,15 @@
+{
+  "unit": "H09 old initial-S exclusive supply/free charge",
+  "allocation": "explicit4 reallocated within daily8, previous measured2.903377, worst after two cpu2 jobs6.903377",
+  "limits": {
+    "cpu_each": 2,
+    "wall_each": 5,
+    "cooperative_algorithm_each": 1.4
+  },
+  "discovery": "beam h1/2/3/4/8/16, tail128, beam40; target D/F",
+  "holdout": "literal reverse h5/9/17 length192/224 each32 seed2026111309, invalid-positive histories excluded and counted",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_dirty_sha256": "bb82f4e4f81737b25393f70315f934997598b883746c7c479ca5086c1c6bcfd6",
+  "worker_sha256": "1bdc2c861f6fe05a69b026721f79555bcc7cdd37f7c6b5a85ac1d5c5e5674c35",
+  "scope": "not old r4 graph or table, no globally fresh-prefix claim"
+}

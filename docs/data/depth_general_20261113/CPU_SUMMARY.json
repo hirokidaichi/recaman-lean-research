@@ -1,0 +1,29 @@
+{
+  "math_budget_seconds": 8,
+  "math_worker_seconds": 3.70125,
+  "math_controller_seconds": 0.016922,
+  "math_completed_tags": [
+    "uniform-discovery",
+    "uniform-holdout",
+    "nested-reverse",
+    "nested-forward",
+    "splice-reverse",
+    "splice-affine",
+    "initial-charge-beam",
+    "initial-charge-holdout",
+    "latest-free-beam",
+    "latest-free-holdout"
+  ],
+  "guard_fixture_worker_seconds": 1.125324,
+  "guard_fixture_controller_seconds": 0.008496,
+  "individual_lean_validation_seconds": 8.693868,
+  "individual_lean_jobs": 18,
+  "integration_check_mixed_cpu_seconds": 23.770352,
+  "integration_scope": "guard/build/axiom audit combined, do not add as pure Lean or double-count subparts",
+  "unmeasured": "ordinary bookkeeping, metadata validators outside wrappers, initial rejected-CLI controller, publication until its own receipts; not zero",
+  "caps": "math one cooperative no-descendant Python worker; validation per-process CPU cap plus process-group wall/deadline; not generic process-tree cumulative cap",
+  "stop": "all mathematical search and Lean validation jobs represented here completed; no running worker",
+  "metadata_guard_validation_seconds": 6.229091,
+  "publication_prep_fetch_seconds": 0.053652,
+  "publication_note": "fetch operational CPU separate; final commit/push receipts are written after journal stop and not backfilled into work"
+}

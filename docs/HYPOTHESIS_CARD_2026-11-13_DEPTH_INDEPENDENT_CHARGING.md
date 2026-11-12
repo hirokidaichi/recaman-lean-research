@@ -2,8 +2,8 @@
 
 - ID H-20261113-02
 - Owner Codex; created 2026-11-12 user-directed planning update
-- Work state unstarted; primary general-principle exploration/falsification
-- Evidence: 新しい数学的証拠なし。次回setupで個別候補のexact statementと既定labelを凍結するまで実装しない。
+- Work state research/audit complete, daily publication pending; primary general-principle exploration/falsification
+- Evidence（11/13 final）: E704/E708 PROVED-PAPERの全量化機構no-go、E709 PROVED-LEANの条件付きactual/free輸送。一般C1未証明・人間レビュー未。下のsetup前契約は作成時の計画として保持する。
 - Parent 11/12 DAILY、E681/E674、protocol 1.8、一般化tracker
 
 ## One bounded decision question
@@ -64,3 +64,13 @@ CPU探索予算は当初0、実行前の契約/累積計測/費用/独立holdout
 同512MB測定改善なしに旧STOPPEDを資源/tactic/import/splitだけで再開しない。
 H49/Rの採用外を重点変更で復活させず、元prefixのreset/結論の仮定化/dummy wrapperも不可。
 G1–G5/保護claim/資源上限を維持し、07:45以後は検証・保存・終了報告へ移る。
+
+## 2026-11-13 setupで凍結した最初のunit
+主unitはH-20261113-03（UNIFORM_ADDITION_FREE）。元padded/全prefix正不足の全長でA<=3freeを反証又は新edgeで証明。深さ上限を仮定せず、既知表/停止輸送を再実行しない。具体仮説は別カードが正本、最初15分gateを適用する。数学探索予算0、guard確認後だけ事前に8へ再配分。
+
+## 2026-11-13 first general block interim
+H03の倍率3は有限不在のみで探索STOPPED/命題CONJECTURED。H04はE702の高さ緩和no-go。H05はE703の元二実窓kernel反例とE704の全N/深さ<=5/唯一sourceによる非有界重複PAPERを得た。親cycleの最終一般化判定は独立audit後。既存E681/E674の再引用や交差P恒等式の包装だけは一般化進展へ重複計上しない。
+次の局所枠はH01を30分以内、後半一般化はこの高さ/窓重複機構とは別のbalanced insertionによる深さ操作を25分以上確保する。
+
+## Final two-axis verdict
+R-20261113-01: local_progressあり(E701 actual接着)、depth_general_progressあり(全量化機構反証E704/E708)。E709はpositive marginを残す条件付きactual/free接続。H08helper/有限不在/local成功だけはGへ数えない。新指標初回判定は連続無し0、次回30/60/10、旧STOPは保持。実績時間はjournal stop後の確定値のみ。

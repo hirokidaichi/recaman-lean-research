@@ -1,0 +1,99 @@
+import Recaman.SeparatorTailFreeGap
+import Recaman.AdditionRankSlack
+
+namespace Recaman.InitialSLowTargetTransport
+
+open Recaman.SeparatorTailFreeGap Recaman.BlockSuffixPositivity Recaman.AdditionRankSlack
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+/-- At most one level above an initial all-S boundary, an actual
+window cannot originate inside the removed prefix. All original
+sources are exhausted before the source cutoff is changed. -/
+theorem initial_S_low_target_source_iff (f : Nat → Bool) (h b : Nat)
+    (hS : ∀ i, i<h → f i=false) (hTarget : Fw f b≤Fw f h+1) :
+    EndN f 0 b ↔ EndN f h b := by
+  constructor
+  · rintro ⟨hA,t,k,_,htk,hWin⟩
+    have ht : h≤t := by
+      by_cases h : h≤t
+      · exact h
+      · have hh := fw_false_run f 0 h (fun i _ hi => hS i (by omega))
+        have ht := fw_false_run f 0 t (fun i _ hi => hS i (by omega))
+        simp only [Nat.zero_add,Fw] at hh ht
+        have hRise := hWin.2.1
+        rw [htk] at hRise
+        omega
+    exact ⟨hA,t,k,ht,htk,hWin⟩
+  · exact end_mono f 0 h b (Nat.zero_le _)
+
+/-- The actual target is transported to the stripped history only
+after the original prefix sources have been excluded. -/
+theorem initial_S_low_target_shift_iff (f : Nat → Bool) (h q : Nat)
+    (hS : ∀ i, i<h → f i=false) (hTarget : Fw f (h+q)≤Fw f h+1) :
+    EndN f 0 (h+q) ↔ EndN (fun i => f (h+i)) 0 q := by
+  have h1 := initial_S_low_target_source_iff f h (h+q) hS hTarget
+  have h2 := endN_nat_shift f h 0 q
+  simp only [Nat.add_zero] at h2
+  exact h1.trans h2
+
+/-- With the height condition only at actual A positions, removing
+an arbitrarily long initial S prefix preserves original supply/free
+counts exactly. The subtraction deficit loses exactly h, so positivity
+of the stripped history is a separate, explicit margin obligation. -/
+theorem initial_S_low_addition_counts (f : Nat → Bool) (h K : Nat)
+    (hS : ∀ i, i<h → f i=false)
+    (hCeil : ∀ i, h≤i → i<h+K → f i=true → Fw f i≤Fw f h+1) :
+    cN (EndN f 0) 0 (h+K)=cN (EndN (fun i => f (h+i)) 0) 0 K ∧
+    free f 0 (h+K)=free (fun i => f (h+i)) 0 K ∧
+    cN (fun i => f i=false) 0 (h+K)=h+cN (fun i => f (h+i)=false) 0 K ∧
+    (cN (fun i => f i=false) 0 (h+K) : Int)-(cN (EndN f 0) 0 (h+K) : Int)=
+      (h : Int)+(cN (fun i => f (h+i)=false) 0 K : Int)-
+        (cN (EndN (fun i => f (h+i)) 0) 0 K : Int) := by
+  have hp (i : Nat) (hi : h≤i) (hiK : i<h+K) : EndN f 0 i ↔ EndN f h i := by
+    by_cases hA : f i=true
+    · exact initial_S_low_target_source_iff f h i hS (hCeil i hi hiK hA)
+    · exact ⟨fun he => (hA he.1).elim,fun he => (hA he.1).elim⟩
+  have hE0 : cN (EndN f 0) 0 h=0 := by
+    apply cN_zero_of
+    intro i _ hi he
+    have hs := hS i (by omega)
+    simp [hs] at he
+  have hF0 : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 h=0 := by
+    apply cN_zero_of
+    intro i _ hi he
+    have hs := hS i (by omega)
+    simp [hs] at he
+  have hS0 : cN (fun i => f i=false) 0 h=h := by
+    have hw : seg f 0 h=List.replicate h false := seg_false f 0 h (fun i _ hi => hS i (by omega))
+    have hc := cntF_seg f 0 h
+    rw [hw,cntF_replicate_S] at hc
+    omega
+  have hEafter : cN (EndN f 0) h K=cN (EndN (fun i => f (h+i)) 0) 0 K := by
+    rw [cN_congr (EndN f 0) (EndN f h) h K hp]
+    rw [←count_nat_shift (EndN f h) h 0 K]
+    simp only [Nat.add_zero]
+    apply cN_congr
+    intro i _ _
+    have hs := endN_nat_shift f h 0 i
+    simpa only [Nat.add_zero] using hs
+  have hFafter : cN (fun i => f i=true ∧ ¬EndN f 0 i) h K=
+      free (fun i => f (h+i)) 0 K := by
+    rw [cN_congr (fun i => f i=true ∧ ¬EndN f 0 i)
+      (fun i => f i=true ∧ ¬EndN f h i) h K
+      (fun i hi hiK => and_congr_right (fun _ => not_congr (hp i hi hiK)))]
+    have hs := free_count_nat_shift f h 0 K
+    simpa only [Nat.add_zero,free] using hs
+  have hSafter : cN (fun i => f i=false) h K=cN (fun i => f (h+i)=false) 0 K := by
+    simpa only [Nat.add_zero] using (count_nat_shift (fun i => f i=false) h 0 K).symm
+  have he := cN_add (EndN f 0) 0 h K
+  have hf := cN_add (fun i => f i=true ∧ ¬EndN f 0 i) 0 h K
+  have hs := cN_add (fun i => f i=false) 0 h K
+  simp only [Nat.zero_add] at he hf hs
+  change free f 0 (h+K)=_+_ at hf
+  change free f 0 h=0 at hF0
+  rw [hE0,hEafter] at he
+  rw [hF0,hFafter] at hf
+  rw [hS0,hSafter] at hs
+  exact ⟨by omega,by omega,hs,by omega⟩
+
+end Recaman.InitialSLowTargetTransport

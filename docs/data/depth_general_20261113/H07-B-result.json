@@ -1,0 +1,31 @@
+{
+  "tag": "H07-B",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSTransportBoundary.olean",
+    "Recaman/InitialSTransportBoundary.lean"
+  ],
+  "started_jst": "2026-11-13T07:07:28.333668+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSTransportBoundary.lean": "7b0a231eec39a8bfc2b0f26a511410567d5db0f421f24d1877793d188de4ad97"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "b85bc2f996f59bf5713bdb2c730f644390fd8a87a50f218f9271ef5c47c72d4b",
+  "source_tree_sha256": "6407949e89b89f3dc079929ac908589c42c31535a1e8367307c0a9fafeb3a356",
+  "source_tree_manifest": "H07-B-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b85bc2f996f59bf5713bdb2c730f644390fd8a87a50f218f9271ef5c47c72d4b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.45681616698857397,
+  "cpu_seconds": 0.295355,
+  "finished_jst": "2026-11-13T07:07:28.790424+09:00"
+}

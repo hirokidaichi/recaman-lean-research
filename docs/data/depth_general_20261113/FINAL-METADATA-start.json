@@ -1,0 +1,19 @@
+{
+  "tag": "FINAL-METADATA",
+  "argv": [
+    "bash",
+    "scripts/check_research_registry.sh"
+  ],
+  "started_jst": "2026-11-13T07:41:42.984756+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "scripts/check_research_registry.sh": "38de208262c923c06a08651fa9f115deb06876b2618824a48a54d6869dc02ae7"
+  },
+  "scope": "Guard validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "a3ce7267433ed5def9eda5a0872c351c82b67ba151548fec0b46b48272ee7577",
+  "source_tree_sha256": "aadc5618f520a968688bedf2082eba18a012bd7d58f659889899097b183040f3",
+  "source_tree_manifest": "FINAL-METADATA-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

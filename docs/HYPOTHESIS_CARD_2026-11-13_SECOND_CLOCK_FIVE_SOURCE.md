@@ -1,7 +1,7 @@
 # Hypothesis card: second-clock gap-five actual source
 
 - ID H-20261113-01
-- Status PROVED-PAPER (E701 mathematical chain; actual Lean connection pending)
+- Status PROVED-LEAN (E701/E705/E706, individual512MB, Audit and full check passed; human review pending)
 - Work state unstarted; secondary local-completion unit, at most 30 minutes
 - Priority updated by user instruction 2026-11-12; main card H-20261113-02
 - Owner Codex; created 2026-11-12
@@ -30,3 +30,10 @@
 j4残余でd2/k7境界を消さず、H49/Rの二修理禁止・採用外、H21/H25/H30/H32と過去全STOPを継承する。
 資源/tactic/import/splitだけの再開は不可。11/12の旧局所無変化0という実績は保持するが、
 新設一般化指標の過去値に転用しない。旧r4二回0/0停止は別保持。
+
+## 2026-11-13 local unit: new producer
+局所開始06:35:53（最初一般化実28分06秒、余剰1分54秒を後半一般化へ移し総60分維持。以前checkpointの27分52秒は概算で確定phase値ではない）。局所上限07:05:53。
+H01-Pはr=r+0のglobal rewrite誤り、一回だけH01-P-Rで局所元source n+2から高sourceのduration+5H<=9を個別512MB受理。初期二時計を高さで除き、area anchorを内部供給。H0や結論を仮定しない。これは旧H49/Rを追加修理したものではない。新budget9を使う独立classification subunitを開始し、全高実窓k3/H0/d<=4を受入に固定。
+
+## Local result
+H01-P/R producer、独立H01-S classification、H01-C collision、H01-F/R全source consumerを512MBで個別受理。H01-Fの一修理はdestructで消えるheを保存するもの。新bound9でstrict pruning後の新bytesであり旧H49/R不採用を維持。lint全substantive。E701の未証明仮定を入力していない。root/Audit/G5を登録し、日末全check待ち。局所枠残余は固定深さj4探索に自動使用せず一般化へ再配分する。

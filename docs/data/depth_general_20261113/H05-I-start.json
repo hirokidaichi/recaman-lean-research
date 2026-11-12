@@ -1,0 +1,25 @@
+{
+  "tag": "H05-I",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/WindowAreaIntersection.olean",
+    "Recaman/WindowAreaIntersection.lean"
+  ],
+  "started_jst": "2026-11-13T06:24:12.120664+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/WindowAreaIntersection.lean": "49867cb46eb469ca9a3ee179aa692f73eafdd5bf3cbbba7c3e70250449bb5fe4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "7f2e5b5aa0adc3ee0d9dc7525bdafac4aa6fc4cc12b72bc5de49260a31aca809",
+  "source_tree_sha256": "f0438d0e4b67d3d874ebcfbac6a653f03fff601c734108ab86e84841d5255b44",
+  "source_tree_manifest": "H05-I-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

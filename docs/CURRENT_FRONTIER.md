@@ -1,20 +1,24 @@
 # Current research frontier
 
-最終更新: 2026-11-12。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-13。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
 
+- **E-709 PROVED-LEAN / E-710 REFUTED**。任意depth/全長のinitial-S履歴で、全A始点がcut+1以下なら初期Sの除去は元actual供給/全freeを厳密保存。不足は除去S数hだけ減る。ceiling2拡張とpositive domain自動保存はkernel反例で停止。全A予算不要だがprefix全Sと高さ条件は重要で、任意padded old prefixのresetやC1 inductionではない。人間レビュー未。
+- 次の未知辺は[H09 exclusive initial-S供給を元freeへ償却](HYPOTHESIS_CARD_2026-11-13_INITIAL_S_FREE_CHARGE.md)。全depthのD<=freeはCONJECTURED。beam/holdoutは有限不在のみでSTOPPED、最新free単射も未証明。二次source分類helperだけをG進展に数えない。
+- **E-707 REFUTED / E-708 PROVED-PAPER**。mass0/area0挿入は元actual EndNを両方向に変え、一件の窓の保存ではfreeを運べない（具体例kernel）。任意固定非空balanced語は、依存して作るpositive履歴の唯一source供給を破る（全z PAPER/未Lean）。履歴依存の条件付き操作は未判定。
+- **E-702 REFUTED / E-703 REFUTED / E-704 PROVED-PAPER**。高さ必要式だけの無重み化は全深さ宣言mark族で破れる（元EndN反例ではない）。別に元実二窓は請求24>財布22をkernel認証。深さ<=5でも、相異なる実targetの唯一sourceを使う窓負荷は全Nで二次増加し元財布は一次増加、固定重複倍率は不可能（全族はPAPER/未Lean・人間レビュー未）。E674の下降枠写像とWin sourceを区別し、次は時計を保つ支払い又は深さ操作へ。元倍率3、一般C1/Q/H/SL/全射性は未証明。
 - **E-663 / E-669 PROVED-LEAN**。元padded BlockWord後、全run・正不足・全途中深さ5なら元free-gap。途中上昇は無制限。別に全途中幅4なら正不足不要で元gap。一般深さ・C1/Q/H/SL/全射性は未証明。
-- **E-678 / E-679 / E-680 / E-681 / E-682 / E-683 PROVED-LEAN**。元深さ6のj6反例は、高SAAとその最初Aの二つの実供給窓で排除。正不足/元EndN0/全旧履歴/全run/上excursion無制限を保持。深さ6counterはj=free∈{4,5}へ。E678のcut二像、E679旧head5、E680最初A時計、E681同元高窓area、E682 actual SAAが入力。人間レビュー未。
-- **E-684 / E-685 PROVED-LEAN**。深さ6/j5の選択旧source枝は全長元free-gap。全高実sourceをSAAへ絞り同clockのsign衝突で排除。残る深さ6はj5局所sourceとj4。人間レビュー未。
+- **E-678 / E-679 / E-680 / E-681 / E-682 / E-683 PROVED-LEAN**。元深さ6のj6反例は、高SAAとその最初Aの二つの実供給窓で排除。正不足/元EndN0/全旧履歴/全run/上excursion無制限を保持。当時深さ6counterはj=free∈{4,5}へ、後続E701後の残余はj4/n+2。E678のcut二像、E679旧head5、E680最初A時計、E681同元高窓area、E682 actual SAAが入力。人間レビュー未。
+- **E-684 / E-685 PROVED-LEAN**。深さ6/j5の選択旧source枝は全長元free-gap。全高実sourceをSAAへ絞り同clockのsign衝突で排除。後続E701後、残る深さ6はj4/n+2。人間レビュー未。
 - **E-686 PROVED-LEAN**。j5局所target source以前の元free<=1、clock<=n+16。二実位置の小symbolic certificateで全prefix重み輸送を避ける。clock2/4はE697でPROVED-LEANへ。H21/RとH25はSTOPPEDのまま。
-- **E-687 / E-688 / E-689 / E-690 / E-691 / E-692 / E-693 / E-694 PROVED-LEAN**。j4旧sourceのduration13/3又7/内部ceilから、整数罰8・初期SS・第二clock budget9へstrict削減し、元fullgap。E683/E685と合成した全j旧source fullgapはchecked coverage consumer。深さ6counterの残りはj4/5局所sourceのみ。人間レビュー未。
+- **E-687 / E-688 / E-689 / E-690 / E-691 / E-692 / E-693 / E-694 PROVED-LEAN**。j4旧sourceのduration13/3又7/内部ceilから、整数罰8・初期SS・第二clock budget9へstrict削減し、元fullgap。E683/E685と合成した全j旧source fullgapはchecked coverage consumer。後続E701後、深さ6counterの残りはj4/n+2のみ。人間レビュー未。
 - **E-655 / E-662 / E-674 PROVED-LEAN**。全途中D4の共通旧文脈4代表、同sourceの平方と旧面積負債、任意高さ・全長の元同高供給≤低A奇数重み。元Aをfreeへ置換しない。旧r4表は再実行しない。
 - **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
-- **E-695 / E-696 / E-697 / E-698 / E-699 / E-700 PROVED-LEAN**。j4/5局所source前free<=1と初期S弱化モデルからsource時計n+2/n+4。n+4は元高free一件を消費し、以後の全実高source SAA同士の符号衝突で排除。全旧履歴/全run/上昇無制限を保持。深さ6counterの残りはj4/5・選択源n+2。H49/R coverage consumerは署名監査でshadowed binderがあり採用外、残余の全体合成を独立Lean結果とは数えない。
-- **E-701 PROVED-PAPER**。j5/n+2は元area0からd*(k−1)+5H<=9を供給し、最高二Aのactual SAA衝突で排除、全source元free>=6。元actual anchor/二A接着は未Lean、人間レビュー未。従って紙上残余はj4/n+2。C1全体の証明ではない。
-- **2026-11-12利用者による次回計画変更**。主課題は[H-20261113-02 任意深さの課金原理](HYPOTHESIS_CARD_2026-11-13_DEPTH_INDEPENDENT_CHARGING.md)。E681/E674を使う重複課金・無重み化の新edge又は一般機構の反証を最初15分で判定。研究・監査100分は局所30/一般化60/監査10、局所成功でも別機構25分以上を確保する。一般化側で2親cycle連続進展なしなら20/70/10。新指標の過去値は未評価で、数学的証拠の追加ではない。
-- 副課題[H-20261113-01](HYPOTHESIS_CARD_2026-11-13_SECOND_CLOCK_FIVE_SOURCE.md)の元j5/n+2接着は局所枠30分以内。成功しても一般化停滞をリセットしない。[一般化tracker](RESEARCH_GENERALIZATION_TRACKER.md)に局所側/一般化側を別記する。
+- **E-695 / E-696 / E-697 / E-698 / E-699 / E-700 PROVED-LEAN**。j4/5局所source前free<=1と初期S弱化モデルからsource時計n+2/n+4。n+4は元高free一件を消費し、以後の全実高source SAA同士の符号衝突で排除。全旧履歴/全run/上昇無制限を保持。後続E701後、深さ6counterの残りはj4・選択源n+2。H49/R coverage consumerは署名監査でshadowed binderがあり採用外、残余の全体合成を独立Lean結果とは数えない。
+- **E-701 / E-705 / E-706 PROVED-LEAN**。j5/n+2の元area0からd*(k−1)+5H<=9、高実source k3/H0、最高二Aのactual SAA衝突を内部供給。E701は元EndNから旧/n+2/n+4を尽くし全source元free>=6。深さ6のLean残余はj4/n+2。局所側のPAPER→Lean接着であり一般化進展として重複計上しない。人間レビュー未、C1全体の証明ではない。
+- **2026-11-12利用者による一般化優先方針**。本日はH-20261113-02を実施。次回主課題は[H-20261114-01 source-sensitive free charge](HYPOTHESIS_CARD_2026-11-14_INITIAL_S_FREE_CHARGE.md)。E681/E674を使う重複課金・無重み化の新edge又は一般機構の反証を最初15分で判定。研究・監査100分は局所30/一般化60/監査10、局所成功でも別機構25分以上を確保する。一般化側で2親cycle連続進展なしなら20/70/10。新指標の過去値は未評価で、数学的証拠の追加ではない。
+- 副課題H-20261113-01の元j5/n+2接着は完了。次回局所副題はj4/n+2で30分上限、local成功だけで一般化停滞をリセットしない。[一般化tracker](RESEARCH_GENERALIZATION_TRACKER.md)に局所側/一般化側を別記する。
 
 ## 11/10までの要約
 

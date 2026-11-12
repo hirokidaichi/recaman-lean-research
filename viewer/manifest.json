@@ -326,8 +326,17 @@
   },
   {
    "name": "Audit",
-   "lines": 4345,
+   "lines": 4379,
    "imports": [
+    "InitialSLowTargetTransport",
+    "InitialSTransportBoundary",
+    "InitialSQuadraticSource",
+    "BalancedInsertionArea",
+    "BalancedInsertionCounterexample",
+    "DepthSixClockTwoHighWindow",
+    "DepthSixClockTwoCollision",
+    "DepthSixGapFive",
+    "TwoWindowAreaOverlap",
     "SupplyTrichotomyBudget",
     "RecordOverlapShiftBounds",
     "ShortRecordOverlapBudget",
@@ -543,6 +552,64 @@
    "theorems": 23,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "BalancedInsertionArea",
+   "lines": 49,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "zero_mass_insertion_area",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "two_source_splice_height_agreement",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "source_level_window_test",
+     "line": 38
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "BalancedInsertionCounterexample",
+   "lines": 144,
+   "imports": [
+    "BalancedInsertionArea",
+    "InitialSPaddingPositive",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "zero_mass_zero_area_changes_original_endability",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "neutral_insertion_creates_internal_source",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "no_balanced_splice_keeps_both_original_areas",
+     "line": 132
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -27938,6 +28005,47 @@
    "hasReport": false
   },
   {
+   "name": "DepthSixClockTwoCollision",
+   "lines": 64,
+   "imports": [
+    "DepthSixClockTwoHighWindow"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_two_five_actual_counter_excluded",
+     "line": 10
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixClockTwoHighWindow",
+   "lines": 116,
+   "imports": [
+    "DepthSixLocalPreBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_two_five_actual_high_source",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "clock_two_five_high_source_SAA",
+     "line": 91
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DepthSixFirstHead",
    "lines": 70,
    "imports": [
@@ -28023,6 +28131,27 @@
     }
    ],
    "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DepthSixGapFive",
+   "lines": 45,
+   "imports": [
+    "DepthSixClockTwoCollision",
+    "DepthSixOldSourceGap",
+    "DepthSixClockFourCollision",
+    "DepthSixLocalSourceClock"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_depth_six_gap_five_free_gap",
+     "line": 15
+    }
+   ],
+   "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -34491,6 +34620,35 @@
    "hasReport": true
   },
   {
+   "name": "InitialSLowTargetTransport",
+   "lines": 100,
+   "imports": [
+    "SeparatorTailFreeGap",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_low_target_source_iff",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_low_target_shift_iff",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_low_addition_counts",
+     "line": 43
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "InitialSPaddingPositive",
    "lines": 63,
    "imports": [
@@ -34526,6 +34684,24 @@
    ],
    "theorems": 4,
    "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSQuadraticSource",
+   "lines": 70,
+   "imports": [
+    "InitialSLowTargetTransport"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "initial_S_source_quadratic_iff",
+     "line": 11
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -34700,6 +34876,30 @@
     }
    ],
    "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSTransportBoundary",
+   "lines": 72,
+   "imports": [
+    "InitialSLowTargetTransport",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ceiling_two_changes_original_supply",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "preserved_free_does_not_preserve_positive_deficit",
+     "line": 38
+    }
+   ],
+   "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -67682,6 +67882,35 @@
    "hasReport": false
   },
   {
+   "name": "TwoWindowAreaOverlap",
+   "lines": 88,
+   "imports": [
+    "HighWindowSquareBudget",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "areaSurplus",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "windowCharge",
+     "line": 17
+    },
+    {
+     "kind": "theorem",
+     "name": "two_actual_windows_exceed_one_resource",
+     "line": 55
+    }
+   ],
+   "theorems": 1,
+   "defs": 2,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TypedNormalProvenance",
    "lines": 673,
    "imports": [
@@ -69616,6 +69845,6 @@
    "hasReport": false
   }
  ],
- "total": 1005,
+ "total": 1014,
  "withReport": 167
 }

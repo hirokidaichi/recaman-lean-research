@@ -1,0 +1,31 @@
+{
+  "tag": "H01-C",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixClockTwoCollision.olean",
+    "Recaman/DepthSixClockTwoCollision.lean"
+  ],
+  "started_jst": "2026-11-13T06:39:37.983971+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixClockTwoCollision.lean": "221384df7ececb11f2c7ddb591738160da007c5e06376ec73406140c8ecf7c0a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "5311a8720018b43a2b8ee2bf2f420560aa657bad02011395fde12c1e5264d1a0",
+  "source_tree_sha256": "d82eb1ecada865bed44272e32ff1a5ef57312e79e4f885d59abe3947abd472bb",
+  "source_tree_manifest": "H01-C-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "5311a8720018b43a2b8ee2bf2f420560aa657bad02011395fde12c1e5264d1a0",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.7712627919972874,
+  "cpu_seconds": 0.60771,
+  "finished_jst": "2026-11-13T06:39:38.755166+09:00"
+}

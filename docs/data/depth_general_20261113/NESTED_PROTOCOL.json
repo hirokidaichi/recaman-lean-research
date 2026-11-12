@@ -1,0 +1,28 @@
+{
+  "unit": "H05/unique-source-family",
+  "purpose": "falsifier of paper all-N formulas, not new search or proof",
+  "allocation": "explicit reallocation of 2 unused worker CPU seconds within day budget8; no rerun uniform workers",
+  "previous_measured_worker_cpu": 2.382583,
+  "new_cpu_cap_each": 1,
+  "new_wall_cap_each": 4,
+  "algorithm_cooperative_cap_each": 0.75,
+  "discovery": [
+    "python3",
+    "docs/data/depth_general_20261113/nested_validate.py",
+    "reverse"
+  ],
+  "holdout": [
+    "python3",
+    "docs/data/depth_general_20261113/nested_validate.py",
+    "forward"
+  ],
+  "ranges": {
+    "reverse": "N0..8",
+    "forward": "N9..24"
+  },
+  "independence": "literal reverse vs every-origin forward, disjoint N but overlapping histories; not fresh global holdout",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_dirty_sha256": "7f2e5b5aa0adc3ee0d9dc7525bdafac4aa6fc4cc12b72bc5de49260a31aca809",
+  "script_sha256": "35b0d8932026748ebffb3398f6135bac74b98f722c7ed7be0a4641155d4b85d6",
+  "controller_launch_note": "first positional-argument CLI rejected before worker creation; CPU unmeasured, not zero; corrected to documented flags before actual launch"
+}

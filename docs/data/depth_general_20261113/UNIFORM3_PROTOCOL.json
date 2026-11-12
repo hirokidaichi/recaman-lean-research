@@ -1,0 +1,41 @@
+{
+  "frozen_at_jst": "2026-11-13T06:07:47.763358+09:00",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "dirty_sha256": "7f2e5b5aa0adc3ee0d9dc7525bdafac4aa6fc4cc12b72bc5de49260a31aca809",
+  "budget_old": 0,
+  "budget_new_worker_cpu_seconds": 8,
+  "contract": "guard-verified cooperative single Python worker with no descendants; no generic process-tree cumulative cap",
+  "argv": [
+    [
+      "python3",
+      "docs/data/depth_general_20261113/run_single.py",
+      "--tag",
+      "uniform-discovery",
+      "--cpu",
+      "4",
+      "--wall",
+      "8",
+      "docs/data/depth_general_20261113/uniform_three_discovery.py"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261113/run_single.py",
+      "--tag",
+      "uniform-holdout",
+      "--cpu",
+      "4",
+      "--wall",
+      "8",
+      "docs/data/depth_general_20261113/uniform_three_holdout.py"
+    ]
+  ],
+  "discovery": "heuristic original affine keys: six full BlockWord roots, tail<=160, beam64; no fixed depth/width",
+  "independent_holdout": "reverse suffix implementation, distinct full roots, terminal lengths192/224, seed2026111303; terminal words longer than all discovery words, prefixes may be known",
+  "acceptance": "explicit original positive-prefix A>3free counter with literal verification; finite absence not proof",
+  "stop": "one launch per frozen worker, cooperative3.3CPU or OS4CPU/8wall, first counter or time cap",
+  "file_sha256": {
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "uniform_three_discovery.py": "b2cc2becad5363f1c2d036d6703c04a6f2c5bb49ef1724d736a02da821d60de9",
+    "uniform_three_holdout.py": "dff1cc05c75570e8189a760c54159bbd1390592db74f0efbd6ac4385a69e828b"
+  }
+}

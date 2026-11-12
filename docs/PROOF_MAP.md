@@ -1891,3 +1891,11 @@ E687旧j4源予算13→E688長さ3/7→E689元内部ceil。別にE690 W+8H→E69
 
 ### 2026-11-12 final source clocks
 E695 source前free1 → E696初期S弱化prefixのA1 → E697時計2/4。E698時計4で高freeを消費 → E699全高SAA → E700二実source衝突、時計4排除。E701時計2/j5は同元area anchorで紙上fullgap、actual kernel接着未。一般C1未。H49R coverage consumerは署名監査で採用外。
+
+## 2026-11-13 任意深さ会計のno-go
+
+E702 REFUTED: 全prefix高さ必要式+実walk-flow+宣言正不足ではuniform A/freeは導けない。宣言markは元EndNでない。
+E703 REFUTED: 元positive二実窓の同財布一回支払いは24>22のkernel反例。
+E704 PROVED-PAPER: 元positive/深さ<=5の相異なるtargetが唯一source3の長いWinを共有し、ΣQ/Pは全Nで非有界。全族は未Lean/人間レビュー未。E674下降枠やC1を反証せず、元actual/freeを支払う新edgeが残る。
+
+E701/E705/E706の局所actual接着がPROVED-LEANとなり、深さ6残余はj4/n+2。E709の全initial-S/対象高さ<=cut+1の元actual/free保存は任意深さの条件付き操作。E710によりpositive marginは別義務。E707/E708は固定中立挿入のsource消失/生成と全固定balanced wordのno-go、adaptive operationは残る。新しい全free償却D<=Fは未証明で、有限不在を証明としない。

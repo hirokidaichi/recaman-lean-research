@@ -1,0 +1,25 @@
+{
+  "tag": "H07-P-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSLowTargetTransport.olean",
+    "Recaman/InitialSLowTargetTransport.lean"
+  ],
+  "started_jst": "2026-11-13T07:02:51.314305+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSLowTargetTransport.lean": "89234e9fe9b7579be4dce3c2a8711efe8bf6fab73101c2ca64930de8e2a750c4"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "b85bc2f996f59bf5713bdb2c730f644390fd8a87a50f218f9271ef5c47c72d4b",
+  "source_tree_sha256": "f996846822109050511d4e0912521ef6207c989a4d7da748e8fb099217752836",
+  "source_tree_manifest": "H07-P-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

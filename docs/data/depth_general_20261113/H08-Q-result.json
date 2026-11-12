@@ -1,0 +1,31 @@
+{
+  "tag": "H08-Q",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSQuadraticSource.olean",
+    "Recaman/InitialSQuadraticSource.lean"
+  ],
+  "started_jst": "2026-11-13T07:09:18.515756+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSQuadraticSource.lean": "541f148232d581b61ec360cbd6300556496c63110fb47e569d79d308eb8969f7"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "b85bc2f996f59bf5713bdb2c730f644390fd8a87a50f218f9271ef5c47c72d4b",
+  "source_tree_sha256": "75bab1a1db3e47dffd05a7980264a8854159734f244fd29b8ff9f96f814df70c",
+  "source_tree_manifest": "H08-Q-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b85bc2f996f59bf5713bdb2c730f644390fd8a87a50f218f9271ef5c47c72d4b",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.8425279580114875,
+  "cpu_seconds": 0.66876,
+  "finished_jst": "2026-11-13T07:09:19.358208+09:00"
+}

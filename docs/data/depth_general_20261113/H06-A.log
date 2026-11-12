@@ -1,0 +1,14 @@
+Recaman/BalancedInsertionArea.lean:11:38: warning: This simp argument is unused:
+  List.length_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaW_append, mass_append, Int.natCast_add, hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/BalancedInsertionArea.lean:11:57: warning: This simp argument is unused:
+  Int.natCast_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [areaW_append, mass_append, List.length_append, hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

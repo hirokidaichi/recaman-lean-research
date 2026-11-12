@@ -1,0 +1,19 @@
+{
+  "unit": "H06-U universal fixed balanced word falsifier",
+  "allocation": "explicit 4 unused worker CPU seconds reallocated within daily8; previous measured2.784283, worst supported total6.784283",
+  "cpu_cap_each": 2,
+  "wall_cap_each": 5,
+  "algorithm_cooperative_each": 1.5,
+  "ranges": {
+    "reverse": "all balanced words lengths2,4,6,8,10,12",
+    "affine": "32 distinct balanced words each length14/16 seed2026111306"
+  },
+  "independence": "reverse moment vs prefix height/area query; disjoint loop lengths; generated histories may overlap, not globally fresh holdout",
+  "argv": [
+    "run_single.py --tag splice-reverse --cpu 2 --wall 5 splice_validate.py reverse",
+    "run_single.py --tag splice-affine --cpu 2 --wall 5 splice_validate.py affine"
+  ],
+  "revision": "e44a4a83a70ac2ddf7ce3c0ec8e6d202d0470c7c",
+  "tracked_diff_sha256": "e537c202b4dfe7517008b6acae03d349ea01155345412f9c9578378ef2237b22",
+  "worker_sha256": "863b816e0be6ed5f2f50c57120db4e731788e9b2802cfd51f3cfe1dc39c0c606"
+}

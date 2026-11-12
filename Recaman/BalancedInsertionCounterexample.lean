@@ -1,0 +1,144 @@
+import Recaman.BalancedInsertionArea
+import Recaman.InitialSPaddingPositive
+import Recaman.AdditionRankSlack
+
+namespace Recaman.BalancedInsertionCounterexample
+
+open Recaman.BalancedInsertionArea Recaman.InitialSPaddingPositive Recaman.AdditionRankSlack
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Recaman.LeadingRunSupply
+
+private def loopWord : List Bool := [true,false,false,true]
+private def oldWord : List Bool := [false,true,true,true]
+private def newWord : List Bool := [false]++loopWord++[true,true,true]
+private def oldF : Nat → Bool := finiteSign oldWord
+private def newF : Nat → Bool := finiteSign newWord
+
+private theorem end_test (f : Nat → Bool) (q : Nat) :
+    EndN f 0 q ↔ f q=true ∧ Recaman.ThreeNonsuppliedData.localSupply (seg f 0 q)=true := by
+  constructor
+  · intro he
+    exact ⟨he.1,(localSupply_seg_iff f 0 q (by omega) he.1).mpr he⟩
+  · rintro ⟨ha,hs⟩
+    exact (localSupply_seg_iff f 0 q (by omega) ha).mp hs
+
+private theorem old_supplied (q : Nat) (hq : q<4) : EndN oldF 0 q ↔ q=3 := by
+  have hh : q=0 ∨ q=1 ∨ q=2 ∨ q=3 := by omega
+  rcases hh with rfl|rfl|rfl|rfl <;> rw [end_test] <;> decide
+
+private theorem new_supplied (q : Nat) (hq : q<8) : EndN newF 0 q ↔ q=6 := by
+  have hh : q=0 ∨ q=1 ∨ q=2 ∨ q=3 ∨ q=4 ∨ q=5 ∨ q=6 ∨ q=7 := by omega
+  rcases hh with rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl <;> rw [end_test] <;> decide
+
+/-- Inserting ASSA after the first S changes the original EndN and
+free markers outside the inserted word, even though the insertion has
+mass zero and area zero, both prefixes have strictly positive original
+deficit, and the corresponding target height is unchanged. -/
+theorem zero_mass_zero_area_changes_original_endability :
+    mass loopWord=0 ∧ areaW loopWord=0 ∧ loopWord.length=4 ∧
+    BlockWord (seg oldF 0 0) ∧ BlockWord (seg newF 0 0) ∧
+    (∀ k, 0<k → k≤3 → cN (EndN oldF 0) 0 k+1≤cN (fun i => oldF i=false) 0 k) ∧
+    (∀ k, 0<k → k≤7 → cN (EndN newF 0) 0 k+1≤cN (fun i => newF i=false) 0 k) ∧
+    EndN oldF 0 3 ∧ ¬EndN newF 0 7 ∧ Fw oldF 3=Fw newF 7 ∧
+    free oldF 0 3=2 ∧ free newF 0 7=3 ∧ ¬EndN oldF 0 2 ∧ EndN newF 0 6 ∧
+    (∀ i, i≤3 → -1≤Fw oldF i) ∧ Fw newF 4= -2 ∧ (∀ i, i≤7 → -2≤Fw newF i) := by
+  have hoE : cN (EndN oldF 0) 0 3=0 := by
+    rw [cN_congr (EndN oldF 0) (fun q => q=3) 0 3 (fun i _ hi => old_supplied i (by omega))]
+    simp [cN]
+  have hnE : cN (EndN newF 0) 0 7=1 := by
+    rw [cN_congr (EndN newF 0) (fun q => q=6) 0 7 (fun i _ hi => new_supplied i (by omega))]
+    simp [cN]
+  have hoA : additions oldF 0 3=2 := by simp [additions,cN,oldF,finiteSign,oldWord]
+  have hnA : additions newF 0 7=4 := by simp [additions,cN,newF,finiteSign,newWord,loopWord]
+  have hoSplit := additions_split oldF 0 3
+  have hnSplit := additions_split newF 0 7
+  refine ⟨by decide,by decide,rfl,BlockWord.nil,BlockWord.nil,?_,?_,
+    (old_supplied 3 (by decide)).mpr rfl,?_,by decide,by omega,by omega,?_,
+    (new_supplied 6 (by decide)).mpr rfl,?_,by decide,?_⟩
+  · intro k hk hk3
+    have he := count_prefix_le (EndN oldF 0) 0 k 3 hk3
+    have hs := count_prefix_le (fun i => oldF i=false) 0 1 k (by omega)
+    have hs1 : cN (fun i => oldF i=false) 0 1=1 := by simp [cN,oldF,finiteSign,oldWord]
+    omega
+  · intro k hk hk7
+    by_cases h3 : 3≤k
+    · have he := count_prefix_le (EndN newF 0) 0 k 7 hk7
+      have hs := count_prefix_le (fun i => newF i=false) 0 3 k h3
+      have hs3 : cN (fun i => newF i=false) 0 3=2 := by simp [cN,newF,finiteSign,newWord,loopWord]
+      omega
+    · have hz : cN (EndN newF 0) 0 k=0 := by
+        apply cN_zero_of
+        intro i hi hj he
+        have h6 := (new_supplied i (by omega)).mp he
+        omega
+      have hs := count_prefix_le (fun i => newF i=false) 0 1 k (by omega)
+      have hs1 : cN (fun i => newF i=false) 0 1=1 := by simp [cN,newF,finiteSign,newWord,loopWord]
+      omega
+  · intro he
+    have hh := (new_supplied 7 (by decide)).mp he
+    omega
+  · intro he
+    have hh := (old_supplied 2 (by decide)).mp he
+    omega
+  · intro i hi
+    have hh : i=0 ∨ i=1 ∨ i=2 ∨ i=3 := by omega
+    rcases hh with rfl|rfl|rfl|rfl <;> decide
+  · intro i hi
+    have hh : i=0 ∨ i=1 ∨ i=2 ∨ i=3 ∨ i=4 ∨ i=5 ∨ i=6 ∨ i=7 := by omega
+    rcases hh with rfl|rfl|rfl|rfl|rfl|rfl|rfl|rfl <;> decide
+
+private def freshOld : Nat → Bool := finiteSign [false,false,true,true]
+private def freshNew : Nat → Bool := finiteSign ([false,false]++loopWord++[true,true])
+
+private theorem negative_height_positive (f : Nat → Bool) (k : Nat) (hF : Fw f k≤ -1) :
+    cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k := by
+  have heA : cN (EndN f 0) 0 k≤cN (fun i => f i=true) 0 k := by
+    apply cN_mono
+    intro i _ _ he
+    exact he.1
+  have hw := (cN_walk f 0 k).1
+  simp only [Nat.zero_add,Fw] at hw
+  omega
+
+/-- A source-level neutral insertion may create a fresh internal
+supplier even though the old cut-origin area remains unchanged. -/
+theorem neutral_insertion_creates_internal_source :
+    mass loopWord=0 ∧ areaW loopWord=0 ∧
+    (∀ k, 0<k → k≤3 → cN (EndN freshOld 0) 0 k+1≤cN (fun i => freshOld i=false) 0 k) ∧
+    (∀ k, 0<k → k≤7 → cN (EndN freshNew 0) 0 k+1≤cN (fun i => freshNew i=false) 0 k) ∧
+    ¬EndN freshOld 0 3 ∧ EndN freshNew 0 7 ∧
+    Fw freshOld 2=Fw freshNew 2 ∧ Ar freshOld 2 1=Ar freshNew 2 5 ∧
+    Win freshNew 4 3 := by
+  refine ⟨by decide,by decide,?_,?_,?_,?_,by decide,by decide,?_⟩
+  · intro k hk hK
+    apply negative_height_positive
+    have hh : k=1 ∨ k=2 ∨ k=3 := by omega
+    rcases hh with rfl|rfl|rfl <;> decide
+  · intro k hk hK
+    apply negative_height_positive
+    have hh : k=1 ∨ k=2 ∨ k=3 ∨ k=4 ∨ k=5 ∨ k=6 ∨ k=7 := by omega
+    rcases hh with rfl|rfl|rfl|rfl|rfl|rfl|rfl <;> decide
+  · rw [end_test]
+    decide
+  · rw [end_test]
+    decide
+  · unfold Win
+    decide
+
+/-- In the original SSAAAAS pair, a nonempty zero-mass splice at
+clock2 cannot preserve the area of both original sources, regardless
+of the inserted area's value. New or alternative sources are a
+separate obligation and are not excluded by this statement. -/
+theorem no_balanced_splice_keeps_both_original_areas (z : List Bool)
+    (hz : mass z=0) (hpos : 0<z.length) :
+    ¬(areaW ([false,false]++z++[true,true,true,true,false])=0 ∧
+      areaW ([false]++z++[true,true])=0) := by
+  rintro ⟨h1,h2⟩
+  have hm := two_source_splice_height_agreement [false,false] [true,true,true,true,false]
+    [false] [true,true] z hz hpos (by decide) (by decide) h1 h2
+  have hSS : mass [false,false]= -2 := by decide
+  have hS : mass [false]= -1 := by decide
+  rw [hSS,hS] at hm
+  omega
+
+end Recaman.BalancedInsertionCounterexample
