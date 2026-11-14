@@ -1,0 +1,21 @@
+{
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "b5f26011fde8d70945ae8cc913e89dd68945f245e3fa97af7d6062658a687b5f",
+  "worker_sha256": "2d7e173f61d8ad711b188c3a6c23ffe4e6f1b7a1e7145d8b04c89d6a5cca143d",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261115/run_single.py",
+    "--tag",
+    "reserve-trim-certificate",
+    "--cpu",
+    "2",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261115/reserve_trim_certificate.py"
+  ],
+  "mathematical_worker_cpu_budget": 5,
+  "completed_math_cpu": 0.225452,
+  "new_job_cpu_cap": 2,
+  "worst_completed_plus_new": 2.225452,
+  "scope": "new source/deficit reserve V2 normalizer test, not rerun of stopped Lean/source table, not a new general proof by computation"
+}

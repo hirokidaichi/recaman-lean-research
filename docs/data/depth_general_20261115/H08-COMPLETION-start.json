@@ -1,0 +1,25 @@
+{
+  "tag": "H08-COMPLETION",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/SuffixSourceCompletion.olean",
+    "Recaman/SuffixSourceCompletion.lean"
+  ],
+  "started_jst": "2026-11-15T07:05:00.053377+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/SuffixSourceCompletion.lean": "0e19bba4d8edcb017ab8087df1632ce7b291854a88c845123e0de4e85d2c63ed"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "685fbe8649343c5d91de853505d144765ae6c701f1b225370cd84cd16c96a0f6",
+  "source_tree_sha256": "ad0cfacfb87058621a998e3618d85f00f735477de008a4ef735ad78b208adca3",
+  "source_tree_manifest": "H08-COMPLETION-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,32 @@
+Recaman/FiniteSuffixPreloading.lean:64:46: error: unsolved goals
+v p : List Bool
+hp : ∀ (q : Nat), q < v.length → ThreeNonsuppliedData.localSupply (p ++ List.take q v) = true
+h : Nat := p.length + v.length + 1
+w : List Bool := List.replicate h false ++ p ++ v
+f : Nat → Bool
+hseg : seg f 0 w.length = w
+⊢ h + (p.length + v.length) = h + p.length + v.length
+Recaman/FiniteSuffixPreloading.lean:85:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d ≤ 0
+  b ≥ 0
+  b - c ≥ 0
+  a ≥ 0
+  a + c - d ≥ 0
+  a + b ≥ 0
+  a + b - e ≤ -1
+where
+ a := ↑p.length
+ b := ↑v.length
+ c := ones v
+ d := ↑(cN (fun u => f u = true) 0 (List.replicate h false ++ p ++ v).length)
+ e := ↑(cN (fun i => f i = true) 0 w.length)
+Recaman/FiniteSuffixPreloading.lean:98:4: error: Type mismatch: After simplification, term
+  Eq.symm ht
+ has type
+  seg f 0 ((List.replicate h false ++ p).length + q) = List.replicate h false ++ p ++ List.take q v
+but is expected to have type
+  seg f 0 (h + p.length + q) = List.replicate h false ++ p ++ List.take q v

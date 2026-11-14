@@ -1,0 +1,35 @@
+Recaman/SuffixSourceCompletion.lean:17:87: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  a ≤ -1
+where
+ a := (List.map sign (areaLoop false n)).sum
+ b := ↑n
+Recaman/SuffixSourceCompletion.lean:17:87: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  a ≤ -1
+where
+ a := (List.map sign (areaLoop true n)).sum
+ b := ↑n
+Recaman/SuffixSourceCompletion.lean:17:31: warning: This simp argument is unused:
+  mass_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [areaLoop, areaW_append, mass, areaW, sign, ih.1, ih.2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/SuffixSourceCompletion.lean:17:43: warning: This simp argument is unused:
+  areaW_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [areaLoop, mass_append, mass, areaW, sign, ih.1, ih.2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/SuffixSourceCompletion.lean:17:72: warning: This simp argument is unused:
+  ih.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [areaLoop, mass_append, areaW_append, mass, areaW, sign, ih.2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

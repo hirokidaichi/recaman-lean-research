@@ -1899,3 +1899,12 @@ E703 REFUTED: 元positive二実窓の同財布一回支払いは24>22のkernel�
 E704 PROVED-PAPER: 元positive/深さ<=5の相異なるtargetが唯一source3の長いWinを共有し、ΣQ/Pは全Nで非有界。全族は未Lean/人間レビュー未。E674下降枠やC1を反証せず、元actual/freeを支払う新edgeが残る。
 
 E701/E705/E706の局所actual接着がPROVED-LEANとなり、深さ6残余はj4/n+2。E709の全initial-S/対象高さ<=cut+1の元actual/free保存は任意深さの条件付き操作。E710によりpositive marginは別義務。E707/E708は固定中立挿入のsource消失/生成と全固定balanced wordのno-go、adaptive operationは残る。新しい全free償却D<=Fは未証明で、有限不在を証明としない。
+
+## 2026-11-15 source-aware depth-operation
+E711 REFUTED: 全元initial-S/正不足でlatest-free injectionは71時計の二exclusive old target/no-free-betweenにより偽。完全PAPER+有限二方式、未Lean。親D<=F/C1は未反証。E712 PROVED-PAPERはsource深さreserve Vと不足reserve Uのmaxから全元actual/free/positiveを保つ最小headを構成、C0/K0も扱う。E713 PROVED-LEANは全C cutの元source二次分類と実損失cN/保持free増分を供給する支持定理。U/V/lossをfreeで払う不等式は未証明。H01/H02失敗bytesはSTOPPED/packet隔離。
+
+2026-11-15 E714: restricted depth6/j4/n+2 actual-source producer, d(k−1)+8H<=12 and d>=3 implies SAA/H0/d<=6. d2/k7 survives; no j4 fullgap or arbitrary-depth coverage. Human review pending.
+
+2026-11-15 E715: every fixed latest-free load is refuted by a full original positive all-N preloaded-source plateau (PAPER, not Lean). E716 constructs one completed suffix Win in Lean, supporting source interpolation only. Full simultaneous-preload consumer H09 is STOPPED/packet-only; no C1/general fullgap claim.
+
+2026-11-15 E715 refinement: unbounded latest-free load at fixed original depth5/initialS2, still PAPER. E717 arbitrary-D height[-3,2]/areaD/no-return loader and E718 original SSAA/free2/height1 positive domain are Lean support only. Full all-N source preloading is not kernel-connected, parent D<=F/C1 remains open.

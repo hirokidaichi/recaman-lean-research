@@ -4377,3 +4377,23 @@ import Recaman
 #print axioms Recaman.InitialSTransportBoundary.preserved_free_does_not_preserve_positive_deficit
 -- Source classification helper; no independent coverage/generalization credit.
 #print axioms Recaman.InitialSQuadraticSource.initial_S_source_quadratic_iff
+
+-- Exact source loss/free cost under arbitrary initial-S cuts; no cost bound/C1 claim.
+#print axioms Recaman.InitialSSourceCut.retained_source_iff
+#print axioms Recaman.InitialSSourceCut.lost_source_iff
+#print axioms Recaman.InitialSSourceCut.cut_tail_count_cost
+
+-- Local j4/second-clock producer only; d2/k7 remains, no general gap claim.
+#print axioms Recaman.DepthSixClockTwoFourBudget.clock_two_four_actual_high_source
+#print axioms Recaman.DepthSixClockTwoFourBudget.clock_two_four_high_source_SAA
+
+-- Constructive completion support; no positivity, orbit or exclusive-family claim.
+#print axioms Recaman.SuffixSourceCompletion.mass_area_word
+#print axioms Recaman.SuffixSourceCompletion.complete_suffix
+#print axioms Recaman.SuffixSourceCompletion.suffix_has_actual_source_completion
+
+-- Bounded-height reservoir and original positive-domain support, not all-N/C1.
+#print axioms Recaman.BoundedHeightAreaLoader.loader_data
+#print axioms Recaman.BoundedHeightAreaLoader.loader_prefix_control
+#print axioms Recaman.BoundedHeightAreaLoader.original_loader_control
+#print axioms Recaman.TwoFreeHeightPositive.SSAA_height_one_positive

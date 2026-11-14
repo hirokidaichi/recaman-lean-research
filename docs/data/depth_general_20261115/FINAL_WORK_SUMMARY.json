@@ -1,0 +1,41 @@
+{
+  "status": "stop",
+  "date": "2026-11-15",
+  "now_jst": "2026-11-15T07:56:48.119628+09:00",
+  "confirmed_work_seconds": 6977.766,
+  "target_seconds": 7200,
+  "shortfall_seconds": 222.234,
+  "excluded_non_work_seconds": {},
+  "unconfirmed_gap_seconds": 0,
+  "open_interval_unconfirmed_seconds": 0,
+  "overtime_work_seconds": 0,
+  "cursor": null,
+  "journal": "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/daily_research/2026-11-15.json",
+  "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+  "parent_cycle": "R-20261115-01",
+  "actual_start_jst": "2026-11-15T06:00:30.353556+09:00",
+  "actual_end_jst": "2026-11-15T07:56:48.119628+09:00",
+  "journal_sha256": "5e0c241a6ec665b02fcbca145edd58e506875b9573e097d9eace65e34b4a216e",
+  "phase_totals": {
+    "phase_seconds": {
+      "setup": 144.843594,
+      "research": 5103.618817,
+      "audit": 1009.715569,
+      "handoff": 719.588092
+    },
+    "research_local_seconds": 600.716887,
+    "research_general_seconds": 4502.90193,
+    "independent_adaptive_operation_seconds": 1775.048789,
+    "independent_operation_scope": "inside general research, not an additional time credit",
+    "nominal_plan_minutes": {
+      "setup": 10,
+      "local": 30,
+      "general": 60,
+      "audit": 10,
+      "handoff": 10
+    },
+    "reallocation": "saved setup and early local completion paid general construction, required semantic audit and final handoff; no future/previous-day credit"
+  },
+  "publication_after_stop_excluded": true,
+  "scope": "confirmed journal intervals, not pure CPU/thought measurement"
+}

@@ -1,0 +1,37 @@
+{
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "f0a686e0316f3cb234d7fcdab97607d45b27f01c1d664802b15d8fde7b6380f7",
+  "source_sha256": "28b41babd888db56b3ceb5519513943ea3df6365444fe15469056b1f52578897",
+  "source_version": "new bounded-height loader, previous increasing-hill certificate unchanged",
+  "new_mathematical_input": "J_D=SAAAS(SA)^(D+3)S4, fixed height[-3,2]/area D/no other height0 area0",
+  "total_math_budget": 5,
+  "previous_measured_worker_cpu": 1.009627,
+  "jobs": [
+    {
+      "tag": "bounded-preload-discovery",
+      "cpu": 1,
+      "wall": 4,
+      "N": [
+        1,
+        2
+      ]
+    },
+    {
+      "tag": "bounded-preload-holdout",
+      "cpu": 1,
+      "wall": 4,
+      "N": [
+        3
+      ]
+    }
+  ],
+  "fixed_loader_D": [
+    2,
+    3,
+    11,
+    100
+  ],
+  "cooperative_stop": 0.7,
+  "holdout": "reverse weighted-area exhaustive at all plateau A; shared construction, not fresh/unseen-prefix holdout",
+  "deadline_jst": "2026-11-15T07:25:00+09:00"
+}

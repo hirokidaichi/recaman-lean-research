@@ -1,0 +1,42 @@
+Recaman/HeightAdaptiveInitialSTrim.lean:14:4: error: `simp` made no progress
+Recaman/HeightAdaptiveInitialSTrim.lean:20:2: error: Type mismatch: After simplification, term
+  he
+ has type
+  Fw f k = 0 - ↑k
+but is expected to have type
+  Fw f k = -↑k
+Recaman/HeightAdaptiveInitialSTrim.lean:44:17: error: Application type mismatch: The argument
+  fun x x_1 => Iff.rfl
+has type
+  ∀ (x : Nat) (x_1 : ?m.192 x), ?m.193 x x_1 ↔ ?m.193 x x_1
+but is expected to have type
+  ∀ (q : Nat), q ≤ K → EndN f 0 (h + q) ↔ EndN (fun i => f i) 0 (h + q)
+in the application
+  And.intro fun x x_1 => Iff.rfl
+Recaman/HeightAdaptiveInitialSTrim.lean:44:48: error: Application type mismatch: The argument
+  rfl
+has type
+  ?m.202 = ?m.202
+but is expected to have type
+  True
+in the application
+  And.intro rfl
+Recaman/HeightAdaptiveInitialSTrim.lean:73:14: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+f : Nat → Bool
+h K R : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+hCeil : ∀ (q : Nat), q ≤ K → Fw f (h + q) - Fw f h ≤ ↑R
+hpos : ∀ (k : Nat), 0 < k → k ≤ h + K → cN (EndN f 0) 0 k + 1 ≤ cN (fun i => f i = false) 0 k
+hh : ¬h ≤ R + 1
+d : Nat := h - (R + 1)
+g : Nat → Bool := fun i => f (d + i)
+hdh : d + (R + 1) = h
+hd : d ≤ h
+hSd : ∀ (i : Nat), i < d → f i = false
+hSg : ∀ (i : Nat), i < R + 1 → g i = false
+hH : Fw f h = -↑h
+hD : Fw f d = -↑d
+hLow : ∀ (i : Nat), d ≤ i → i ≤ h + K → Fw f i ≤ Fw f d + 1
+q : Nat
+⊢ q ≤ K → EndN f 0 (h + q) ↔ EndN g 0 (R + 1 + q)

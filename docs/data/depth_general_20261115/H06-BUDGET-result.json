@@ -1,0 +1,31 @@
+{
+  "tag": "H06-BUDGET",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/DepthSixClockTwoFourBudget.olean",
+    "Recaman/DepthSixClockTwoFourBudget.lean"
+  ],
+  "started_jst": "2026-11-15T06:49:11.673635+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/DepthSixClockTwoFourBudget.lean": "118b69a9e65f8d7b6005ac8bda899a58da5402368f926ca7dc48ff4fe84777d1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "0bcaf64b6df7152b7f0572bcc428a4f21224a68f72f7487b3fb019f748761a8e",
+  "source_tree_sha256": "387094a4b05e7f295fe9b64162e5f5181d5a8e988e32826db0c9ee366d3613f8",
+  "source_tree_manifest": "H06-BUDGET-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "0bcaf64b6df7152b7f0572bcc428a4f21224a68f72f7487b3fb019f748761a8e",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.1369229999982053,
+  "cpu_seconds": 0.8925299999999999,
+  "finished_jst": "2026-11-15T06:49:12.810499+09:00"
+}

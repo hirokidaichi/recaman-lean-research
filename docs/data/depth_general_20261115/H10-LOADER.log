@@ -1,0 +1,113 @@
+Recaman/BoundedHeightAreaLoader.lean:17:48: error: No goals to be solved
+Recaman/BoundedHeightAreaLoader.lean:17:9: error: unsolved goals
+case zero
+k : Nat
+hk : k ≤ 2 * 0
+this : k = 0
+⊢ mass (List.take k (areaLoop false 0)) = -↑(k % 2) ∧ areaW (List.take k (areaLoop false 0)) = -↑((k + 1) / 2)
+Recaman/BoundedHeightAreaLoader.lean:101:17: error: unknown tactic
+Recaman/BoundedHeightAreaLoader.lean:89:4: error: unsolved goals
+case neg.inl
+D k : Nat
+hk : k ≤ (loader D).length
+H : List Bool := [false, true, true, true, false]
+L : List Bool := areaLoop false (D + 3)
+hH : H.length = 5
+hL : L.length = 2 * (D + 3)
+hMH : mass H = 1
+hAH : areaW H = 3
+hML : mass L = 0
+hAL : areaW L = -↑(D + 3)
+hfirst : ¬k ≤ 5
+hmiddle : ¬k ≤ 5 + L.length
+j : Nat := k - (5 + L.length)
+hj : j ≤ 4
+ht : List.take k (loader D) = H ++ L ++ List.take j (List.replicate 4 false)
+hj0 : j = 0
+⊢ (-3 ≤ 1 + 0 + mass (List.replicate (min 0 4) false) ∧ 1 + 0 + mass (List.replicate (min 0 4) false) ≤ 2) ∧
+    (1 + 0 + mass (List.replicate (min 0 4) false) = 0 →
+      3 + ↑(2 * (D + 3)) * 1 + -↑(D + 3) + ↑(min 0 4) * (1 + 0) + areaW (List.replicate (min 0 4) false) = 0 → k = 0)
+
+case neg.inr.inl
+D k : Nat
+hk : k ≤ (loader D).length
+H : List Bool := [false, true, true, true, false]
+L : List Bool := areaLoop false (D + 3)
+hH : H.length = 5
+hL : L.length = 2 * (D + 3)
+hMH : mass H = 1
+hAH : areaW H = 3
+hML : mass L = 0
+hAL : areaW L = -↑(D + 3)
+hfirst : ¬k ≤ 5
+hmiddle : ¬k ≤ 5 + L.length
+j : Nat := k - (5 + L.length)
+hj : j ≤ 4
+ht : List.take k (loader D) = H ++ L ++ List.take j (List.replicate 4 false)
+hj0 : j = 1
+⊢ (-3 ≤ 1 + 0 + mass (List.replicate (min 1 4) false) ∧ 1 + 0 + mass (List.replicate (min 1 4) false) ≤ 2) ∧
+    (1 + 0 + mass (List.replicate (min 1 4) false) = 0 →
+      3 + ↑(2 * (D + 3)) * 1 + -↑(D + 3) + ↑(min 1 4) * (1 + 0) + areaW (List.replicate (min 1 4) false) = 0 → k = 0)
+
+case neg.inr.inr.inl
+D k : Nat
+hk : k ≤ (loader D).length
+H : List Bool := [false, true, true, true, false]
+L : List Bool := areaLoop false (D + 3)
+hH : H.length = 5
+hL : L.length = 2 * (D + 3)
+hMH : mass H = 1
+hAH : areaW H = 3
+hML : mass L = 0
+hAL : areaW L = -↑(D + 3)
+hfirst : ¬k ≤ 5
+hmiddle : ¬k ≤ 5 + L.length
+j : Nat := k - (5 + L.length)
+hj : j ≤ 4
+ht : List.take k (loader D) = H ++ L ++ List.take j (List.replicate 4 false)
+hj0 : j = 2
+⊢ (-3 ≤ 1 + 0 + mass (List.replicate (min 2 4) false) ∧ 1 + 0 + mass (List.replicate (min 2 4) false) ≤ 2) ∧
+    (1 + 0 + mass (List.replicate (min 2 4) false) = 0 →
+      3 + ↑(2 * (D + 3)) * 1 + -↑(D + 3) + ↑(min 2 4) * (1 + 0) + areaW (List.replicate (min 2 4) false) = 0 → k = 0)
+
+case neg.inr.inr.inr.inl
+D k : Nat
+hk : k ≤ (loader D).length
+H : List Bool := [false, true, true, true, false]
+L : List Bool := areaLoop false (D + 3)
+hH : H.length = 5
+hL : L.length = 2 * (D + 3)
+hMH : mass H = 1
+hAH : areaW H = 3
+hML : mass L = 0
+hAL : areaW L = -↑(D + 3)
+hfirst : ¬k ≤ 5
+hmiddle : ¬k ≤ 5 + L.length
+j : Nat := k - (5 + L.length)
+hj : j ≤ 4
+ht : List.take k (loader D) = H ++ L ++ List.take j (List.replicate 4 false)
+hj0 : j = 3
+⊢ (-3 ≤ 1 + 0 + mass (List.replicate (min 3 4) false) ∧ 1 + 0 + mass (List.replicate (min 3 4) false) ≤ 2) ∧
+    (1 + 0 + mass (List.replicate (min 3 4) false) = 0 →
+      3 + ↑(2 * (D + 3)) * 1 + -↑(D + 3) + ↑(min 3 4) * (1 + 0) + areaW (List.replicate (min 3 4) false) = 0 → k = 0)
+
+case neg.inr.inr.inr.inr
+D k : Nat
+hk : k ≤ (loader D).length
+H : List Bool := [false, true, true, true, false]
+L : List Bool := areaLoop false (D + 3)
+hH : H.length = 5
+hL : L.length = 2 * (D + 3)
+hMH : mass H = 1
+hAH : areaW H = 3
+hML : mass L = 0
+hAL : areaW L = -↑(D + 3)
+hfirst : ¬k ≤ 5
+hmiddle : ¬k ≤ 5 + L.length
+j : Nat := k - (5 + L.length)
+hj : j ≤ 4
+ht : List.take k (loader D) = H ++ L ++ List.take j (List.replicate 4 false)
+hj0 : j = 4
+⊢ (-3 ≤ 1 + 0 + mass (List.replicate (min 4 4) false) ∧ 1 + 0 + mass (List.replicate (min 4 4) false) ≤ 2) ∧
+    (1 + 0 + mass (List.replicate (min 4 4) false) = 0 →
+      3 + ↑(2 * (D + 3)) * 1 + -↑(D + 3) + ↑(min 4 4) * (1 + 0) + areaW (List.replicate (min 4 4) false) = 0 → k = 0)

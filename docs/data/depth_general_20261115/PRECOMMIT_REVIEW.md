@@ -1,0 +1,9 @@
+# Daily snapshot ownership and content review
+
+2026-11-15. Five adopted Lean source hashes and the entire current source graph match FULL-CHECK-source-tree.json, whose check/Audit passed. No other session source change was overwritten. Registry/protected/source-level scope checks remain enabled. New theorem signatures and full all-N PAPER source proof are independently audited; human review pending.
+
+Baseline unowned docs/data/daily_research/2026-11-07.json is excluded. Owned policy permits only the five named new modules, root/Audit, current registry/contracts/frontier/proofmap/portfolio/tracker/viewer, today's cards/notes/DAILY/journal/packet/statement audits, and the exact next card. No cache/locks/credential files. Directory-wide git add is not used: the publication driver consumes an explicit list of regular files. No force push, stash/reset or hook bypass.
+
+Publication phase: only after07:45 and stopped journal, finalized durations must be saved before C1. C1 snapshot preserves hooks/G1-G5 and uses the approved burst flag only on that commit command. C2 stores C1's exact SHA/remote/CI receipt without readding modules. The final C2 SHA/remote/CI is reported to chat to avoid a self-reference. Hard publication cutoff07:59:40. Remote advances cause a safe hold for integration, never force. Publication CPU/time after journal stop is not research credit.
+
+Final content review: 20 new Markdown handoff/card/note files and68 local links checked with no missing targets. H02 paper/method statuses are explicit; all five adopted source bytes remain the fullcheck-accepted versions. The next card preserves literal source-family restriction, full old history, endpoint/positive/depth transport obligations, and all stopped-method constraints. No additional mathematics was adopted after07:45.

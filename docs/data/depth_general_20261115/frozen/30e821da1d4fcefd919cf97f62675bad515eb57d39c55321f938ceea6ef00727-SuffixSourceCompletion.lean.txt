@@ -1,0 +1,81 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.SuffixSourceCompletion
+
+open Recaman.LeadingRunSupply Recaman.ShortPeriodicSupply
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+
+def areaLoop (b : Bool) : Nat → List Bool
+  | 0 => []
+  | n+1 => [b,!b] ++ areaLoop b n
+
+theorem area_loop_data (b : Bool) : ∀ n,
+    mass (areaLoop b n)=0 ∧ areaW (areaLoop b n)=if b then (n : Int) else -(n : Int)
+  | 0 => by cases b <;> simp [areaLoop,areaW]
+  | n+1 => by
+    have ih := area_loop_data b n
+    have hp : mass [b,!b]=0 := by cases b <;> decide
+    have ha : areaW [b,!b]=if b then 1 else -1 := by cases b <;> decide
+    rw [areaLoop,mass_append,areaW_append,hp,ih.1,ih.2,ha]
+    cases b <;> simp <;> omega
+
+/-- Exact integer area adjustment, without changing a suffix's mass. -/
+theorem zero_mass_area (a : Int) : ∃ z : List Bool, mass z=0 ∧ areaW z=a := by
+  by_cases ha : 0≤a
+  · refine ⟨areaLoop true a.toNat,?_ ,?_⟩
+    · exact (area_loop_data true _).1
+    · simpa [Int.toNat_of_nonneg ha] using (area_loop_data true a.toNat).2
+  · refine ⟨areaLoop false (-a).toNat,?_,?_⟩
+    · exact (area_loop_data false _).1
+    · have hz := Int.toNat_of_nonneg (show 0≤-a by omega)
+      have hh := (area_loop_data false (-a).toNat).2
+      simp only [Bool.false_eq_true,ite_false,hz] at hh
+      omega
+
+/-- Every requested mass and area is realized by an actual finite word.
+The length is free; a fixed-length parity claim is not being made. -/
+theorem mass_area_word (m a : Int) :
+    ∃ z : List Bool, mass z=m ∧ areaW z=a := by
+  let v := List.replicate m.toNat true ++ List.replicate (-m).toNat false
+  have hv : mass v=m := by
+    dsimp [v]
+    rw [mass_append,mass_replicate_A,mass_rep_false]
+    omega
+  obtain ⟨u,hu,ha⟩ := zero_mass_area (a-areaW v)
+  refine ⟨u++v,?_,?_⟩
+  · rw [mass_append,hu,hv]; omega
+  · rw [areaW_append,hu,ha]; omega
+
+/-- Keep every suffix sign and construct its preceding source, rather
+than assuming a source or a completion predicate. -/
+theorem complete_suffix (v : List Bool) :
+    ∃ p : List Bool, mass (p++v)=1 ∧ areaW (p++v)=0 := by
+  obtain ⟨p,hm,ha⟩ := mass_area_word (1-mass v)
+    (-areaW v-(v.length : Int)*(1-mass v))
+  refine ⟨p,?_,?_⟩
+  · rw [mass_append,hm]; omega
+  · rw [areaW_append,hm,ha]; omega
+
+/-- The constructed completion is a Win in every original realization.
+This neither supplies positivity nor asserts standard-orbit reachability. -/
+theorem suffix_has_actual_source_completion (v : List Bool) :
+    ∃ p : List Bool, ∀ (f : Nat → Bool) (s : Nat),
+      seg f s (p++v).length=p++v →
+      Win f s (p++v).length ∧
+        (f (s+(p++v).length)=true → EndN f 0 (s+(p++v).length)) := by
+  obtain ⟨p,hm,ha⟩ := complete_suffix v
+  have hn : 0<(p++v).length := by
+    by_cases h : (p++v).length=0
+    · have he := List.length_eq_zero_iff.mp h
+      rw [he] at hm
+      simp at hm
+    · omega
+  refine ⟨p,?_⟩
+  intro f s hseg
+  have hM := seg_mass f s (p++v).length
+  rw [hseg,hm] at hM
+  have hAr : Ar f s (p++v).length=0 := by rw [Ar_areaW,hseg,ha]
+  have hWin : Win f s (p++v).length := ⟨hn,by omega,hAr⟩
+  exact ⟨hWin,fun hA => ⟨hA,s,(p++v).length,by omega,rfl,hWin⟩⟩
+
+end Recaman.SuffixSourceCompletion

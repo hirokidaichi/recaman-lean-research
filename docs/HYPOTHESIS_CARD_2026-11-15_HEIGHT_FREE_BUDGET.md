@@ -1,0 +1,15 @@
+# H-20261115-03: initial-S後の上昇高さを元freeで払う
+
+- CONJECTURED; next consumer of H02's adaptive height trim, not a retry of old A<=3free or D<=F search.
+- Exact domain all original f:Nat→Bool,h,K:Nat, f[0,h)=S; every0<k<=h+K has original EndN0 count+1<=S count.
+- Claim: for every0<=q<=K, Fw f(h+q)-Fw f h <= 2*free f0(h+q). In particular the maximum upward height R<=2*fullfree, so H02 would retain at most2free+1 S with source/free/positive transport. No depth/run/length/A cap in the conjecture.
+- Factor1 (even+1) has paper candidate SSSAAAASAAA: last height rise6/free4, full original positive deficit. This auxiliary failure is not a factor2/C1 counterexample; validate all sources independently. E711 plateau has maxrise11 and many precedingfree, and does not refute this budget.
+
+## Frozen falsifier and resource
+Guard tests normal/fork/exec/wall/threadCPU before reallocating mathematical budget0 to5CPU seconds. Job1 fixed71-clock reverse-source certificate and factor1 boundary, cap1CPU/4wall, two independent forward-key/reverse-literal implementations inside one worker (no claim of fresh holdout). Job2 new discovery objective max(prefixrise−2*originalfree), roots initialS h1,2,3,4,8,16,32, beam32, future<=96, max100000 visits/cooperative1.3CPU, cap2CPU/5wall. Job3 independent reverse-literal holdout h5,7,11,19, length128/160, seed2026111503, 16words each, cooperative1.3CPU/cap2CPU/5wall. No old graph/worker/table rerun. Existing prefix data are discovery; holdout suffix/seed differ, prefix unseenness not asserted.
+Freeze argv, current revision/tracked diff and all worker/runner hashes before run. Budget counts worker startup too and parent jobs once. Controller and guardCPU separately. Exact completed wait4 measurements only, unknown is not0. If a counterexample, all original actual sources and positive prefixes must be verified by reverse walk; do not promote source relaxation or map counter to C1. If no new edge/counterexample by first15min, STOP method/leave CONJECTURED, do not increase cutoffs. This is within adaptive depth-operation mechanism, not an additional independent25min credit.
+
+## Finite falsifier result (not a proof)
+06:29 discovery41188 visits/41185 original-positive children and reverse holdout128/128 valid found no factor2 violation. Discovery best informative prefix is already-known S^2 AAA (rise3/free2), not a new edge. No claim of unseen prefixes or unbounded absence. WorkerCPU .092884+.103308; fixed certificate .029260; cumulative mathematicalworker .225452 seconds of5 budget (controller separate). Stop this finite method now; the all-depth height/free claim staysCONJECTURED. Do not enlarge the same beam/cutoff. The factor1(+1) boundary SSSAAAASAAA is exactly verified: original suppliers5←2,8←1,10←7, E3/S4/free4, rise6, allprefix positive. This is only a weaker auxiliary-cost counterexample.
+
+Daily handoff/time: [2026-11-15 DAILY](RESEARCH_HANDOFF_2026-11-15_DAILY.md), [journal](data/daily_research/2026-11-15.json). This unit is part of one parent cycle; no separate120min or CPU credit. The evidence/STOP status above is unchanged by other unit successes.

@@ -1,0 +1,30 @@
+{
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "f0a686e0316f3cb234d7fcdab97607d45b27f01c1d664802b15d8fde7b6380f7",
+  "source_sha256": "9e894ccb6c83429d8285848fa9cbbdb133a9872f7c251d4ece66896d2ef61ab5",
+  "new_mathematical_input": "fixed SSAA original free2 pays global height<=1; initialS2/source1/depth5 for allN",
+  "total_math_budget_seconds": 5,
+  "previous_measured_worker_cpu_seconds": 1.137019,
+  "jobs": [
+    {
+      "tag": "two-free-preload-discovery",
+      "cpu": 1,
+      "wall": 4,
+      "N": [
+        1,
+        2
+      ]
+    },
+    {
+      "tag": "two-free-preload-holdout",
+      "cpu": 1,
+      "wall": 4,
+      "N": [
+        3
+      ]
+    }
+  ],
+  "cooperative_stop": 0.7,
+  "scope": "new positive-domain proof, not old fixed certificate cutoff enlargement; shared constructor/reverse literal all-source checker, no fresh prefix claim",
+  "deadline_jst": "2026-11-15T07:30:00+09:00"
+}

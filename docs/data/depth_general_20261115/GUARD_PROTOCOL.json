@@ -1,0 +1,41 @@
+{
+  "contract": "cooperative single-Python worker, no descendants, process CPU includes threads; not generic process-tree cap nor security sandbox",
+  "guard_jobs": [
+    {
+      "mode": "normal",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "fork",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "exec",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "wall",
+      "cpu": 1,
+      "wall": 0.25
+    },
+    {
+      "mode": "cpu",
+      "cpu": 1,
+      "wall": 3
+    }
+  ],
+  "mathematical_budget_current": 0,
+  "reallocation_only_after_guard_acceptance": {
+    "total_worker_cpu_cap_seconds": 5,
+    "fixed_counter_certificate": 1,
+    "height_free_discovery": 2,
+    "height_free_reverse_holdout": 2
+  },
+  "guard_measurement": "wait4 exact supported child CPU, controller separate; expected CPU/wall signal receipts are tests, not failed math jobs",
+  "source_revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "fixture_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+}

@@ -1,11 +1,23 @@
 # Current research frontier
 
-最終更新: 2026-11-13。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-15（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
 
+- **E-715 REFUTED（全Nの完全PAPER、未Lean）**。固定の深さ上限5/初期S2/元全prefix actual正不足でも、同じ最新freeにN件のexclusive old-source1 targetを集められる。負高さsource preload・全時計一意性と、bounded-height reservoir+最初の実free2で証明。従って深さだけに依存する最新free負荷上限も不可能。全元freeは増えるのでD<=F/C1反例ではない。有限N1..4等はCOMPUTEDで、全NのLean証明とは呼ばない。
+- **E-716 / E-717 / E-718 PROVED-LEAN**。任意finite suffixの一窓completion、全Dの高さ[-3,2]/面積D/zero-area return無しloader、元SSAAからfree2を内部導出するheight1 positive-domain支持。全N source preloadへの接着はPAPER。新一般化coverageをhelper数で二重計上しない。H09同時供給consumerは一修理後STOPPED/packet-only。
+- **E-714 PROVED-LEAN（局所producer）**。元深さ6/j4/n+2の全高actual sourceでd(k−1)+8H<=12、d>=3ならk3/H0/d<=6。d2/k7は等号で残り、元j4 fullgapと一般C1は未証明。
+- 次回主題は[nearest initial-S source budget](HYPOTHESIS_CARD_2026-11-16_NEAREST_INITIAL_SOURCE_BUDGET.md)。元exclusive source h−1/target相対高さ2の件数を、最新だけでなく全過去の実freeへ払う新edgeを15分gateで判定。元全source/positiveを保つreserve counter transportを別機構25分以上へ。E715で停止した最新free固定負荷、旧全STOP、未検証helperの再包装は再開しない。
+
+
+- **E-712 PROVED-PAPER / E-713 PROVED-LEAN**。任意initial-S cutの保持/損失sourceを元quadraticと元local不在から尽くし、保持free=元free+損失を計数。元供給/全free/positiveを保つ最小headはsource深さreserve Vと不足reserve Uのmax（全量化PAPER、未Lean）。高さだけのsafe cut min(h,R+1)は系。U/V又は損失を元freeで払う上界が未知で、一般C1帰納は未完成。H02試作は一修理後STOPPED、採用外。
+
+
+- **E-711 REFUTED（完全PAPER、未Lean）**。元initial-S12・全prefix actual正不足の二exclusive old-S targets62/70の間に元freeがない。間のA67/68/69は過去に用意したlocal source36/49/66で供給され、両targetの唯一source11を全高度/面積六時計で確認。最新free単射は偽、D<=free/C1は未反証。Lean試作は一修理後kernel512MB STOPPED、全bytesをpacketへ隔離しroot/Audit未採用。後続E712/E713でsource/deficit reserveとcut損失会計へ進んだ。
+
+
 - **E-709 PROVED-LEAN / E-710 REFUTED**。任意depth/全長のinitial-S履歴で、全A始点がcut+1以下なら初期Sの除去は元actual供給/全freeを厳密保存。不足は除去S数hだけ減る。ceiling2拡張とpositive domain自動保存はkernel反例で停止。全A予算不要だがprefix全Sと高さ条件は重要で、任意padded old prefixのresetやC1 inductionではない。人間レビュー未。
-- 次の未知辺は[H09 exclusive initial-S供給を元freeへ償却](HYPOTHESIS_CARD_2026-11-13_INITIAL_S_FREE_CHARGE.md)。全depthのD<=freeはCONJECTURED。beam/holdoutは有限不在のみでSTOPPED、最新free単射も未証明。二次source分類helperだけをG進展に数えない。
+- 次の未知辺は[H09 exclusive initial-S供給を元freeへ償却](HYPOTHESIS_CARD_2026-11-13_INITIAL_S_FREE_CHARGE.md)。全depthのD<=freeはCONJECTURED。beam/holdoutは有限不在のみでSTOPPED。後続E711が最新free単射を元71時計historyでREFUTEDとした。二次source分類helperだけをG進展に数えない。
 - **E-707 REFUTED / E-708 PROVED-PAPER**。mass0/area0挿入は元actual EndNを両方向に変え、一件の窓の保存ではfreeを運べない（具体例kernel）。任意固定非空balanced語は、依存して作るpositive履歴の唯一source供給を破る（全z PAPER/未Lean）。履歴依存の条件付き操作は未判定。
 - **E-702 REFUTED / E-703 REFUTED / E-704 PROVED-PAPER**。高さ必要式だけの無重み化は全深さ宣言mark族で破れる（元EndN反例ではない）。別に元実二窓は請求24>財布22をkernel認証。深さ<=5でも、相異なる実targetの唯一sourceを使う窓負荷は全Nで二次増加し元財布は一次増加、固定重複倍率は不可能（全族はPAPER/未Lean・人間レビュー未）。E674の下降枠写像とWin sourceを区別し、次は時計を保つ支払い又は深さ操作へ。元倍率3、一般C1/Q/H/SL/全射性は未証明。
 - **E-663 / E-669 PROVED-LEAN**。元padded BlockWord後、全run・正不足・全途中深さ5なら元free-gap。途中上昇は無制限。別に全途中幅4なら正不足不要で元gap。一般深さ・C1/Q/H/SL/全射性は未証明。
@@ -17,7 +29,7 @@
 - **E-647 PROVED-LEAN / E-660 REFUTED / E-675 PROVED-PAPER**。補正B+C≤L。幅4のA≤2freeは元A5/free2で偽。全高の幾何重み会計はPAPER、係数H37だけLean受理、全cN輸送H38/RはSTOPPED。無重み会計への移行が未知。
 - **E-695 / E-696 / E-697 / E-698 / E-699 / E-700 PROVED-LEAN**。j4/5局所source前free<=1と初期S弱化モデルからsource時計n+2/n+4。n+4は元高free一件を消費し、以後の全実高source SAA同士の符号衝突で排除。全旧履歴/全run/上昇無制限を保持。後続E701後、深さ6counterの残りはj4・選択源n+2。H49/R coverage consumerは署名監査でshadowed binderがあり採用外、残余の全体合成を独立Lean結果とは数えない。
 - **E-701 / E-705 / E-706 PROVED-LEAN**。j5/n+2の元area0からd*(k−1)+5H<=9、高実source k3/H0、最高二Aのactual SAA衝突を内部供給。E701は元EndNから旧/n+2/n+4を尽くし全source元free>=6。深さ6のLean残余はj4/n+2。局所側のPAPER→Lean接着であり一般化進展として重複計上しない。人間レビュー未、C1全体の証明ではない。
-- **2026-11-12利用者による一般化優先方針**。本日はH-20261113-02を実施。次回主課題は[H-20261114-01 source-sensitive free charge](HYPOTHESIS_CARD_2026-11-14_INITIAL_S_FREE_CHARGE.md)。E681/E674を使う重複課金・無重み化の新edge又は一般機構の反証を最初15分で判定。研究・監査100分は局所30/一般化60/監査10、局所成功でも別機構25分以上を確保する。一般化側で2親cycle連続進展なしなら20/70/10。新指標の過去値は未評価で、数学的証拠の追加ではない。
+- **2026-11-12利用者による一般化優先方針**。11/13の履歴を保持し、11/15は最新free/no-goとsource-reserve操作を実施。次回主課題は当日DAILY末尾と11/16カードを正本とする。E681/E674を使う重複課金・無重み化の新edge又は一般機構の反証を最初15分で判定。研究・監査100分は局所30/一般化60/監査10、局所成功でも別機構25分以上を確保する。一般化側で2親cycle連続進展なしなら20/70/10。新指標の過去値は未評価で、数学的証拠の追加ではない。
 - 副課題H-20261113-01の元j5/n+2接着は完了。次回局所副題はj4/n+2で30分上限、local成功だけで一般化停滞をリセットしない。[一般化tracker](RESEARCH_GENERALIZATION_TRACKER.md)に局所側/一般化側を別記する。
 
 ## 11/10までの要約

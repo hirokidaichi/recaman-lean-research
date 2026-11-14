@@ -1,0 +1,102 @@
+import Recaman.SuffixSourceCompletion
+import Recaman.InitialSPaddingPositive
+
+namespace Recaman.FiniteSuffixPreloading
+
+open Recaman.SuffixSourceCompletion Recaman.InitialSPaddingPositive
+open Recaman.LeadingRunSupply Recaman.BlockSuffixPositivity
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem supply_prepend (u v : List Bool)
+    (hv : Recaman.ThreeNonsuppliedData.localSupply v=true) :
+    Recaman.ThreeNonsuppliedData.localSupply (u++v)=true := by
+  obtain ⟨t,ht,hm,ha⟩ := (localSupply_iff v).mp hv
+  apply (localSupply_iff (u++v)).mpr
+  have hd : (u++v).drop (u.length+t)=v.drop t := by
+    rw [List.drop_append,List.drop_eq_nil_of_le (by omega),List.nil_append,
+      show u.length+t-u.length=t by omega]
+  refine ⟨u.length+t,by simp only [List.length_append]; omega,?_,?_⟩
+  · rwa [hd]
+  · rwa [hd]
+
+private theorem whole_supply (v : List Bool) (hm : mass v=1) (ha : areaW v=0) :
+    Recaman.ThreeNonsuppliedData.localSupply v=true := by
+  have hn : 0<v.length := by
+    by_cases h : v.length=0
+    · rw [List.length_eq_zero_iff.mp h] at hm
+      simp at hm
+    · omega
+  exact (localSupply_iff v).mpr ⟨0,hn,by simpa using hm,by simpa [checked_wordArea_eq] using ha⟩
+
+/-- A finite left extension supplies every requested prefix, using
+actual suffix windows, not independent declarations of supply. -/
+theorem preload_prefixes (v : List Bool) : ∀ n : Nat,
+    ∃ p : List Bool, ∀ q, q<n →
+      Recaman.ThreeNonsuppliedData.localSupply (p++v.take q)=true
+  | 0 => by exact ⟨[],fun q hq => by omega⟩
+  | n+1 => by
+    obtain ⟨p,hp⟩ := preload_prefixes v n
+    obtain ⟨z,hm,ha⟩ := complete_suffix (p++v.take n)
+    refine ⟨z++p,?_⟩
+    intro q hq
+    by_cases hqn : q<n
+    · simpa only [List.append_assoc] using supply_prepend z (p++v.take q) (hp q hqn)
+    · have he : q=n := by omega
+      subst q
+      simpa only [List.append_assoc] using whole_supply (z++(p++v.take n)) hm ha
+
+/-- Arbitrary finite future signs can all have actual suppliers in a
+constructed prehistory. Padding also supplies original full-prefix
+positivity. The prehistory's free count is deliberately unrestricted. -/
+theorem positive_history_preloads_finite_suffix (v : List Bool) :
+    ∃ (h : Nat) (p : List Bool), 0<h ∧
+      ∀ f : Nat → Bool,
+        seg f 0 (List.replicate h false++p++v).length=List.replicate h false++p++v →
+        (∀ k, 0<k → k≤(List.replicate h false++p++v).length →
+          cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k) ∧
+        (∀ q, q<v.length → f (h+p.length+q)=true → EndN f 0 (h+p.length+q)) := by
+  obtain ⟨p,hp⟩ := preload_prefixes v v.length
+  let h := p.length+v.length+1
+  let w := List.replicate h false++p++v
+  refine ⟨h,p,by dsimp [h]; omega,?_⟩
+  intro f hseg
+  change seg f 0 w.length=w at hseg
+  have hlen : w.length=h+p.length+v.length := by simp [w]
+  have hhead : seg f 0 h=List.replicate h false := by
+    have hh := seg_take f 0 w.length h (by omega)
+    rw [hseg] at hh
+    simpa [w,List.append_assoc] using hh.symm
+  have hS : ∀ i, i<h → f i=false := by
+    intro i hi
+    have ht := seg_get f 0 h i hi
+    rw [hhead] at ht
+    simpa [hi] using ht.symm
+  have hCount := ones_seg_eq_count f 0 w.length
+  rw [hseg] at hCount
+  have hA : cN (fun i => f i=true) 0 w.length<h := by
+    have hP := ones_bounds p
+    have hV := ones_bounds v
+    have hZero : ones (List.replicate h false)=0 := by
+      induction h with
+      | zero => simp [ones]
+      | succ j ih => simp [List.replicate_succ,ones,ih]
+    simp only [w,ones_append,hZero,Int.zero_add] at hCount
+    dsimp [h]
+    omega
+  refine ⟨initial_S_positive f h w.length hS hA,?_⟩
+  intro q hq hAq
+  have hlocal : Recaman.ThreeNonsuppliedData.localSupply
+      ((List.replicate h false++p)++v.take q)=true := by
+    simpa only [List.append_assoc] using supply_prepend (List.replicate h false)
+      (p++v.take q) (hp q hq)
+  have hprefix : seg f 0 (h+p.length+q)=
+      (List.replicate h false++p)++v.take q := by
+    have ht := seg_take f 0 w.length (h+p.length+q) (by omega)
+    rw [hseg] at ht
+    have hprelen : (List.replicate h false++p).length=h+p.length := by simp
+    rw [show h+p.length+q=(List.replicate h false++p).length+q by omega] at ht
+    simpa only [w,List.take_length_add_append] using ht.symm
+  apply (localSupply_seg_iff f 0 (h+p.length+q) (by omega) hAq).mp
+  simpa only [Nat.sub_zero,hprefix] using hlocal
+
+end Recaman.FiniteSuffixPreloading

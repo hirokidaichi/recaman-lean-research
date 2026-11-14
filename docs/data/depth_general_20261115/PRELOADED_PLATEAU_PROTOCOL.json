@@ -1,0 +1,39 @@
+{
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "685fbe8649343c5d91de853505d144765ae6c701f1b225370cd84cd16c96a0f6",
+  "source_sha256": "022d6a5dae636f798701a12963e34a681c3f2763fe884c33774b84b45af0d2b4",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "contract": "today five guard fixtures passed, cooperative single Python worker, no descendants; not a generic process-tree cap",
+  "total_math_worker_budget_seconds": 5,
+  "previous_measured_math_worker_cpu_seconds": 0.259687,
+  "new_jobs": [
+    {
+      "tag": "preload-discovery",
+      "cpu": 2,
+      "wall": 5,
+      "args": [
+        "discovery"
+      ],
+      "fixed_N": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "tag": "preload-holdout",
+      "cpu": 2,
+      "wall": 5,
+      "args": [
+        "holdout"
+      ],
+      "fixed_N": [
+        4
+      ]
+    }
+  ],
+  "cooperative_stop_seconds": 1.7,
+  "scope": "new deterministic source preloading construction, no beam/table/search, forward indexed source certificate versus reverse literal weighted area; family prefixes overlap, not fresh holdout",
+  "one_repair_limit": 1,
+  "deadline_jst": "2026-11-15T07:20:00+09:00"
+}

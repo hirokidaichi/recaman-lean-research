@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-15T06:36:50.803342+09:00",
+  "tag": "reserve-trim-certificate",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261115/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261115/reserve_trim_certificate.py"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "2d7e173f61d8ad711b188c3a6c23ffe4e6f1b7a1e7145d8b04c89d6a5cca143d",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 45555,
+  "process_group": 45555,
+  "finished_jst": "2026-11-15T06:36:50.840474+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.037261165998643264,
+  "worker_user_seconds": 0.027704,
+  "worker_sys_seconds": 0.0065309999999999995,
+  "worker_cpu_seconds": 0.034235,
+  "worker_maxrss_native": 23101440,
+  "controller_cpu_seconds": 0.001620999999999994,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

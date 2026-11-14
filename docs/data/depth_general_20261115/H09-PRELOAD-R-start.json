@@ -1,0 +1,25 @@
+{
+  "tag": "H09-PRELOAD-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FiniteSuffixPreloading.olean",
+    "Recaman/FiniteSuffixPreloading.lean"
+  ],
+  "started_jst": "2026-11-15T07:09:53.432830+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FiniteSuffixPreloading.lean": "7fc63b2fe87155943bb33da3fecc918816aeef59fb5c42b9cb58929b9b321fa6"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "685fbe8649343c5d91de853505d144765ae6c701f1b225370cd84cd16c96a0f6",
+  "source_tree_sha256": "c8923bd224b0309e776d77612083443a6da625f3a6670bed1c35286055d16cda",
+  "source_tree_manifest": "H09-PRELOAD-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

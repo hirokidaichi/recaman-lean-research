@@ -58,3 +58,15 @@ E701のlocal成功、H08の同値source helper、H03/H09/H10のfinite不在、mo
 次のmainはH-20261114-01。元exclusive initial-S供給D<=freeのsource chronologyを最初15分で判定し、未進展なら別のsource-sensitive adaptive operationへ25分以上。新しいedge/一般機構反証が完了親cycleで2回連続無ければ20/70/10。
 
 当日配分はlocal早期完了でGへ残余を移し、その後必要意味監査のためaudit10→25分予定へ再配分した。実際のclosed phase秒数はPHASE_TOTALS_AT_HANDOFFと最終journal/DAILYが正本。予定値を実績にせず、parentとunit/CPUを二重計上しない。
+
+## 2026-11-15 independently audited mathematical verdict
+
+| 親cycle | 局所側 | 一般化側 | 一般化の連続進展なし回数 | 次の配分 | 根拠 |
+|---|---|---|---|---|---|
+| R-20261115-01 | あり E714 元j4/n+2 source budget12のstrict削減（fullgap未） | あり E715 全N/固定深さ上限5/初期S2でも最新free負荷が非有界 | 0 | 次回30/60/10 | 新しい一般機構no-goは完全PAPER/未Lean・人間レビュー未。helper数やlocal成功でresetしない |
+
+11/14は記録欠落の未評価であり完了親cycleへ数えず、11/13の前回完了値0を保持した。日付resetせず、今回のreset根拠はE715の全固定負荷（深さ依存の上限を含む）の反証である。E711二件例は同じ機構の出発点で、別の一般化成功へ二重計上しない。E712最小headのsource/deficit reserveはPAPER、E713の元cut損失会計はLeanだがreserveを元freeで払えていない。E716/E717/E718はsource preloadの支持であり全N kernel証明や独立coverageではない。
+
+別機構adaptive source-sensitive cutは06:18:38.046926〜06:48:13.095715（29分35.049秒）を確保。localは06:48:13.095715〜06:58:13.812602（10分00.717秒）で新producerを得て早期終了、残余をGと必要auditへ移した。予定値を作業実績とせず、最終phase時間はstop後journal/DAILYを正本とする。最終workはstop後journal/11月15日DAILYの確定値を参照。120分完了へ切り上げず、不足を明記した。
+
+次回主題は H-20261116-01 のnearest initial-S source D_near<=全過去の元free。初回15分で実source edge/strict候補削減/反例がなければ同手法を延長せず、source/deficit reserveによるcounter輸送を別機構25分以上へ。最新free固定負荷、旧finite beam/table、H01/H02/H09や過去STOPの資源/tactic/import/split再開は禁止のまま。一般C1/Q/H/SL/全射性・D<=F全体は未証明。

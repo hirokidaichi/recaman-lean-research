@@ -1,0 +1,90 @@
+import Recaman.BlockSuffixPositivity
+
+namespace Recaman.TwoFreeHeightPositive
+
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+
+/-- Original SSAA internally supplies two free positions. They pay a
+whole-prefix height ceiling of one at arbitrary length and depth. -/
+theorem SSAA_height_one_positive (f : Nat → Bool) (K : Nat)
+    (hpre : seg f 0 4=[false,false,true,true]) (hK : 4≤K)
+    (hheight : ∀ k, 4≤k → k≤K → Fw f k≤1) :
+    (¬EndN f 0 2 ∧ ¬EndN f 0 3) ∧
+    ∀ k, 0<k → k≤K → cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k := by
+  have h0 : f 0=false := by
+    have hh := seg_get f 0 4 0 (by omega)
+    rw [hpre] at hh
+    simpa using hh.symm
+  have h1 : f 1=false := by
+    have hh := seg_get f 0 4 1 (by omega)
+    rw [hpre] at hh
+    simpa using hh.symm
+  have h2 : f 2=true := by
+    have hh := seg_get f 0 4 2 (by omega)
+    rw [hpre] at hh
+    simpa using hh.symm
+  have h3 : f 3=true := by
+    have hh := seg_get f 0 4 3 (by omega)
+    rw [hpre] at hh
+    simpa using hh.symm
+  have hn0 : ¬EndN f 0 0 := by
+    intro he
+    have ha := he.1
+    rw [h0] at ha
+    cases ha
+  have hn1 : ¬EndN f 0 1 := by
+    intro he
+    have ha := he.1
+    rw [h1] at ha
+    cases ha
+  have hsmall (j : Nat) (hj : j≤4) : seg f 0 j=[false,false,true,true].take j := by
+    have ht := seg_take f 0 4 j hj
+    rw [hpre] at ht
+    exact ht.symm
+  have hn2 : ¬EndN f 0 2 := by
+    intro he
+    have hh := (localSupply_seg_iff f 0 2 (by omega) h2).mpr he
+    rw [show 2-0=2 by omega,hsmall 2 (by omega)] at hh
+    have hfalse : Recaman.ThreeNonsuppliedData.localSupply
+        ([false,false,true,true].take 2)=false := by decide
+    rw [hfalse] at hh
+    cases hh
+  have hn3 : ¬EndN f 0 3 := by
+    intro he
+    have hh := (localSupply_seg_iff f 0 3 (by omega) h3).mpr he
+    rw [show 3-0=3 by omega,hsmall 3 (by omega)] at hh
+    have hfalse : Recaman.ThreeNonsuppliedData.localSupply
+        ([false,false,true,true].take 3)=false := by decide
+    rw [hfalse] at hh
+    cases hh
+  have hF : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 4=2 := by
+    simp [cN,h0,h1,h2,h3,hn0,hn1,hn2,hn3]
+  refine ⟨⟨hn2,hn3⟩,?_⟩
+  intro k hk hkK
+  by_cases h4 : 4≤k
+  · have hFbig := count_prefix_le (fun i => f i=true ∧ ¬EndN f 0 i) 0 4 k h4
+    rw [hF] at hFbig
+    have hs := cN_split (fun i => f i=true) (EndN f 0) 0 k
+    have heq : cN (fun i => f i=true ∧ EndN f 0 i) 0 k=cN (EndN f 0) 0 k := by
+      apply cN_congr
+      intro i _ _
+      exact ⟨fun h => h.2,fun h => ⟨h.1,h⟩⟩
+    rw [heq] at hs
+    have hw := (cN_walk f 0 k).1
+    simp only [Nat.zero_add,Fw] at hw
+    have hh := hheight k h4 hkK
+    omega
+  · have he : cN (EndN f 0) 0 k=0 := by
+      apply cN_zero_of
+      intro i _ hik hi
+      have hc : i=0 ∨ i=1 ∨ i=2 ∨ i=3 := by omega
+      rcases hc with rfl|rfl|rfl|rfl
+      · exact hn0 hi
+      · exact hn1 hi
+      · exact hn2 hi
+      · exact hn3 hi
+    have hS := count_prefix_le (fun i => f i=false) 0 1 k (by omega)
+    have hS1 : cN (fun i => f i=false) 0 1=1 := by simp [cN,h0]
+    omega
+
+end Recaman.TwoFreeHeightPositive

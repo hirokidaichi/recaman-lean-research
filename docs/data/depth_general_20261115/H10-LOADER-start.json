@@ -1,0 +1,25 @@
+{
+  "tag": "H10-LOADER",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/BoundedHeightAreaLoader.olean",
+    "Recaman/BoundedHeightAreaLoader.lean"
+  ],
+  "started_jst": "2026-11-15T07:19:22.665355+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/BoundedHeightAreaLoader.lean": "ee2482286826735669ff08c06db16d1c00c110e77f3fc45cd083012f7489ffa1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "f0a686e0316f3cb234d7fcdab97607d45b27f01c1d664802b15d8fde7b6380f7",
+  "source_tree_sha256": "97bf9fe4a8ba123813a67c843723ac3826c9afc1faff57256a0f96198a3831f9",
+  "source_tree_manifest": "H10-LOADER-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

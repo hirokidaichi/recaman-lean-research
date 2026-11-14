@@ -1,0 +1,31 @@
+{
+  "tag": "H11-POSITIVE",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/TwoFreeHeightPositive.olean",
+    "Recaman/TwoFreeHeightPositive.lean"
+  ],
+  "started_jst": "2026-11-15T07:22:24.710551+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/TwoFreeHeightPositive.lean": "79da5fe2954493e0e8547cbcb9c61e23ace0ad155c0e020b1818397f67036a6c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "f0a686e0316f3cb234d7fcdab97607d45b27f01c1d664802b15d8fde7b6380f7",
+  "source_tree_sha256": "7d1685e6e904e9bfb45a86fe3fca6af1f97913189494a0853929534f99ca96df",
+  "source_tree_manifest": "H11-POSITIVE-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "f0a686e0316f3cb234d7fcdab97607d45b27f01c1d664802b15d8fde7b6380f7",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.41031633398961276,
+  "cpu_seconds": 0.273065,
+  "finished_jst": "2026-11-15T07:22:25.120813+09:00"
+}

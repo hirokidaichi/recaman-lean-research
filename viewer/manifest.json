@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4379,
+   "lines": 4399,
    "imports": [
     "InitialSLowTargetTransport",
     "InitialSTransportBoundary",
@@ -2732,6 +2732,44 @@
    "theorems": 7,
    "defs": 2,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "BoundedHeightAreaLoader",
+   "lines": 122,
+   "imports": [
+    "SuffixSourceCompletion"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "area_loop_length",
+     "line": 8
+    },
+    {
+     "kind": "def",
+     "name": "loader",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "loader_data",
+     "line": 41
+    },
+    {
+     "kind": "theorem",
+     "name": "loader_prefix_control",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "original_loader_control",
+     "line": 110
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -28023,6 +28061,30 @@
    "hasReport": false
   },
   {
+   "name": "DepthSixClockTwoFourBudget",
+   "lines": 117,
+   "imports": [
+    "DepthSixLocalPrefixPair",
+    "SFinalWindowLength"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_two_four_actual_high_source",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "clock_two_four_high_source_SAA",
+     "line": 92
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DepthSixClockTwoHighWindow",
    "lines": 116,
    "imports": [
@@ -34702,6 +34764,39 @@
    ],
    "theorems": 1,
    "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSSourceCut",
+   "lines": 113,
+   "imports": [
+    "InitialSQuadraticSource"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "retained_source_iff",
+     "line": 11
+    },
+    {
+     "kind": "def",
+     "name": "cutLoss",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "lost_source_iff",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "cut_tail_count_cost",
+     "line": 82
+    }
+   ],
+   "theorems": 3,
+   "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -61077,6 +61172,49 @@
    "hasReport": false
   },
   {
+   "name": "SuffixSourceCompletion",
+   "lines": 81,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "areaLoop",
+     "line": 8
+    },
+    {
+     "kind": "theorem",
+     "name": "area_loop_data",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "zero_mass_area",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "mass_area_word",
+     "line": 37
+    },
+    {
+     "kind": "theorem",
+     "name": "complete_suffix",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "suffix_has_actual_source_completion",
+     "line": 61
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "SupplyAncestryCounterexample",
    "lines": 89,
    "imports": [
@@ -66782,6 +66920,24 @@
    "hasReport": false
   },
   {
+   "name": "TwoFreeHeightPositive",
+   "lines": 90,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "SSAA_height_one_positive",
+     "line": 9
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TwoLagSevenPhaseConflict",
    "lines": 179,
    "imports": [
@@ -69845,6 +70001,6 @@
    "hasReport": false
   }
  ],
- "total": 1014,
+ "total": 1019,
  "withReport": 167
 }

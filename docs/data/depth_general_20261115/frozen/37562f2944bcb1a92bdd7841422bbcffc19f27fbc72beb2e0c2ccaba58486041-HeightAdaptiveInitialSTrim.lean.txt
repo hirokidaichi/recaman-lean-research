@@ -1,0 +1,107 @@
+import Recaman.InitialSLowTargetTransport
+
+namespace Recaman.HeightAdaptiveInitialSTrim
+
+open Recaman.InitialSLowTargetTransport Recaman.SeparatorTailFreeGap
+open Recaman.BlockSuffixPositivity Recaman.AdditionRankSlack
+open Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+
+private theorem shift_height (f : Nat → Bool) (d : Nat) : ∀ k : Nat,
+    Fw (fun i => f (d+i)) k=Fw f (d+k)-Fw f d
+  | 0 => by simp [Fw]
+  | k+1 => by
+    rw [Fw_succ,shift_height f d k,show d+(k+1)=d+k+1 by omega,Fw_succ]
+    simp only [Nat.add_assoc]
+    omega
+
+private theorem initial_S_height (f : Nat → Bool) (h k : Nat)
+    (hS : ∀ i, i<h → f i=false) (hk : k≤h) : Fw f k= -(k : Int) := by
+  have he := fw_false_run f 0 k (fun i _ hi => hS i (by omega))
+  simpa only [Nat.zero_add,Fw] using he
+
+/-- A history-dependent initial-S cut preserves every original supply
+and free prefix count and the complete positive-deficit domain. Its
+retained head is bounded by the actual upward height budget R+1,
+independently of the number of additions, runs, or depth below the cut.
+The R-dependent cost is not an unweighted free bound or C1 induction. -/
+theorem height_adaptive_initial_S_transport (f : Nat → Bool) (h K R : Nat)
+    (hS : ∀ i, i<h → f i=false)
+    (hCeil : ∀ q, q≤K → Fw f (h+q)-Fw f h≤(R : Int))
+    (hpos : ∀ k, 0<k → k≤h+K →
+      cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k) :
+    let C := min h (R+1)
+    let g := fun i => f (h-C+i)
+    C≤R+1 ∧ (∀ i, i<C → g i=false) ∧
+      (∀ q, q≤K → EndN f 0 (h+q) ↔ EndN g 0 (C+q)) ∧
+      (∀ q, q≤K →
+        cN (EndN f 0) 0 (h+q)=cN (EndN g 0) 0 (C+q) ∧
+        free f 0 (h+q)=free g 0 (C+q)) ∧
+      (∀ k, 0<k → k≤C+K →
+        cN (EndN g 0) 0 k+1≤cN (fun i => g i=false) 0 k) := by
+  dsimp only
+  by_cases hh : h≤R+1
+  · simp only [Nat.min_eq_left hh,Nat.sub_self,Nat.zero_add]
+    exact ⟨hh,hS,fun _ _ => Iff.rfl,fun _ _ => ⟨rfl,rfl⟩,hpos⟩
+  · rw [Nat.min_eq_right (by omega)]
+    let d := h-(R+1)
+    let g := fun i => f (d+i)
+    change R+1≤R+1 ∧ (∀ i, i<R+1 → g i=false) ∧
+      (∀ q, q≤K → EndN f 0 (h+q) ↔ EndN g 0 (R+1+q)) ∧
+      (∀ q, q≤K →
+        cN (EndN f 0) 0 (h+q)=cN (EndN g 0) 0 (R+1+q) ∧
+        free f 0 (h+q)=free g 0 (R+1+q)) ∧
+      (∀ k, 0<k → k≤R+1+K →
+        cN (EndN g 0) 0 k+1≤cN (fun i => g i=false) 0 k)
+    have hdh : d+(R+1)=h := by dsimp [d]; omega
+    have hd : d≤h := by omega
+    have hSd : ∀ i, i<d → f i=false := fun i hi => hS i (by omega)
+    have hSg : ∀ i, i<R+1 → g i=false := by
+      intro i hi
+      exact hS (d+i) (by omega)
+    have hH := initial_S_height f h h hS (Nat.le_refl _)
+    have hD := initial_S_height f h d hS hd
+    have hLow : ∀ i, d≤i → i≤h+K → Fw f i≤Fw f d+1 := by
+      intro i hdi hiK
+      by_cases hih : i≤h
+      · have hi := initial_S_height f h i hS hih
+        omega
+      · have hq := hCeil (i-h) (by omega)
+        rw [show h+(i-h)=i by omega] at hq
+        omega
+    have hTarget : ∀ q, q≤K →
+        EndN f 0 (h+q) ↔ EndN g 0 (R+1+q) := by
+      intro q hq
+      have he := initial_S_low_target_shift_iff f d (R+1+q) hSd
+        (by rw [show d+(R+1+q)=h+q by omega]; exact hLow (h+q) (by omega) (by omega))
+      simpa only [show d+(R+1+q)=h+q by omega] using he
+    have hCounts : ∀ q, q≤K →
+        cN (EndN f 0) 0 (h+q)=cN (EndN g 0) 0 (R+1+q) ∧
+        free f 0 (h+q)=free g 0 (R+1+q) := by
+      intro q hq
+      have he := initial_S_low_addition_counts f d (R+1+q) hSd
+        (fun i hdi hiK _ => hLow i hdi (by omega))
+      rw [show d+(R+1+q)=h+q by omega] at he
+      exact ⟨he.1,he.2.1⟩
+    have hNeg : ∀ k, 0<k → k≤R+1+K → Fw g k≤ -1 := by
+      intro k hk hkK
+      by_cases hkc : k≤R+1
+      · have he := initial_S_height g (R+1) k hSg hkc
+        omega
+      · have hq := hCeil (k-(R+1)) (by omega)
+        have he := shift_height f d k
+        have hdk : d+k=h+(k-(R+1)) := by omega
+        rw [hdk] at he
+        change Fw g k=_ at he
+        omega
+    refine ⟨Nat.le_refl _,hSg,hTarget,hCounts,?_⟩
+    intro k hk hkK
+    have hn := hNeg k hk hkK
+    have hEA : cN (EndN g 0) 0 k≤cN (fun i => g i=true) 0 k := by
+      apply cN_mono
+      intro i _ _ he
+      exact he.1
+    have hw := (cN_walk g 0 k).1
+    simp only [Nat.zero_add,Fw] at hw
+    omega
+
+end Recaman.HeightAdaptiveInitialSTrim

@@ -1,0 +1,122 @@
+Recaman/InitialSFreePlateauCounterexample.lean:22:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:26:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:33:31: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:43:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  a ≥ 0
+  1 ≤ a ≤ 50
+where
+ a := ↑k
+Recaman/InitialSFreePlateauCounterexample.lean:44:12: error: Tactic `subst` failed: did not find equation for eliminating 't'
+
+case inr.inl
+b : Nat
+hb : b = 62 ∨ b = 70
+left✝ : f b = true
+t k : Nat
+ht : 12 ≤ t
+htk : t + k = b
+hWin : Win f t k
+htb : t < b
+hbt : b < 71
+hB : Fw f b = -10
+hT : Fw f t = -11
+hAr : Ar f t (b - t) = 0
+h : ↑⟨t, ⋯⟩ = 13
+⊢ False
+Recaman/InitialSFreePlateauCounterexample.lean:44:12: error: Tactic `subst` failed: did not find equation for eliminating 't'
+
+case inr.inr.inl
+b : Nat
+hb : b = 62 ∨ b = 70
+left✝ : f b = true
+t k : Nat
+ht : 12 ≤ t
+htk : t + k = b
+hWin : Win f t k
+htb : t < b
+hbt : b < 71
+hB : Fw f b = -10
+hT : Fw f t = -11
+hAr : Ar f t (b - t) = 0
+h : ↑⟨t, ⋯⟩ = 33
+⊢ False
+Recaman/InitialSFreePlateauCounterexample.lean:44:12: error: Tactic `subst` failed: did not find equation for eliminating 't'
+
+case inr.inr.inr.inl
+b : Nat
+hb : b = 62 ∨ b = 70
+left✝ : f b = true
+t k : Nat
+ht : 12 ≤ t
+htk : t + k = b
+hWin : Win f t k
+htb : t < b
+hbt : b < 71
+hB : Fw f b = -10
+hT : Fw f t = -11
+hAr : Ar f t (b - t) = 0
+h : ↑⟨t, ⋯⟩ = 61
+⊢ False
+Recaman/InitialSFreePlateauCounterexample.lean:44:12: error: Tactic `subst` failed: did not find equation for eliminating 't'
+
+case inr.inr.inr.inr.inl
+b : Nat
+hb : b = 62 ∨ b = 70
+left✝ : f b = true
+t k : Nat
+ht : 12 ≤ t
+htk : t + k = b
+hWin : Win f t k
+htb : t < b
+hbt : b < 71
+hB : Fw f b = -10
+hT : Fw f t = -11
+hAr : Ar f t (b - t) = 0
+h : ↑⟨t, ⋯⟩ = 65
+⊢ False
+Recaman/InitialSFreePlateauCounterexample.lean:44:12: error: Tactic `subst` failed: did not find equation for eliminating 't'
+
+case inr.inr.inr.inr.inr
+b : Nat
+hb : b = 62 ∨ b = 70
+left✝ : f b = true
+t k : Nat
+ht : 12 ≤ t
+htk : t + k = b
+hWin : Win f t k
+htb : t < b
+hbt : b < 71
+hB : Fw f b = -10
+hT : Fw f t = -11
+hAr : Ar f t (b - t) = 0
+h : ↑⟨t, ⋯⟩ = 69
+⊢ False
+Recaman/InitialSFreePlateauCounterexample.lean:51:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:56:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:61:2: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:83:33: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  1 ≤ a ≤ 71
+where
+ a := ↑k
+ b := Fw f k
+Recaman/InitialSFreePlateauCounterexample.lean:93:4: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+Recaman/InitialSFreePlateauCounterexample.lean:96:4: error: maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

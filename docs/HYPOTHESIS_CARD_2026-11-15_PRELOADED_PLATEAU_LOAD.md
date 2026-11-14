@@ -1,0 +1,17 @@
+# H-20261115-07: latest-freeの任意固定負荷上限をsource前史で攻撃する
+
+Freeze before construction/worker. Parent R-20261115-01; general mechanism, not local completion. Full original initial-S/positive history, arbitrary run/depth, all original source prefix retained. Claim to test: there exists a fixed L such that each latest original free receives at most L exclusive initial-S actual targets. E711 refutes L1 only; no larger bound yet proved/refuted.
+
+## Acceptance / exact construction target
+For every N>=1 construct a finite original word S^h P Z^(N-1) A, Z=ASSSSAAA, P mass1/area0 and first symbol S. Initial all-S cut h+1. Targets h+|P|+8j (0<=j<N) have unique original source h, and no original free between them. All nonempty prefixes are actual positive by h>max normalized height. The intermediate A at cycle offsets5/6/7 must have internally constructed original sources, not declared labels. P's other height0 clocks must have area !=0 so no local alternative is silently added. Then latest-free load >=N; D<=totalfree/C1 are not refuted.
+
+## New mechanism / chain
+Construct the seed suffix backwards at fixed endpoint height1/absolute area0. To supply a fixed future A of height x at relative cycle clockq, choose source height c=x-1 and required suffix-relative area c*q-Ar(Z-prefix,q). A prescribed mass/area word can be made using AS/SA loops at fixed negative height. Sources c=-1,-2,-3 stay before plateau, and all height0 visits in the seed suffix must have nonzero absolute area. Finally attach S A^(m+1) S^(m+3), mass-3/area m^2-7, and fixed-level AS/SA fillers of absolute costs5/7 to match the seed's required initial absolute area. Require m>=2 and excess>=24. Filler coin representation and all-clock uniqueness must be proved, not inferred from finite checks.
+
+## Stop
+25min general paper/falsifier unit; at15min check a real all-N chain or exact defect. No Lean from stopped H01 bytes, no old beam/table rerun. At most bounded new certificate worker after protocol/hash freeze, within remaining declared5 CPU total. A finite N example alone does not prove no fixed L. If source uniqueness fails, keep mechanism CONJECTURED/STOPPED rather than silently use merely nonexclusive targets.
+
+## Final result
+REFUTED E715: every fixed latest-free load bound fails, already with fixed depth bound5/initialS2 for all N. The backwards negative-height seed supplies all intervening A, and all height0/area0 clocks are classified to prove selected targets' unique old source1. H10's bounded loader and H11's SSAA free2/height1 domain refine the original growing-hill proof without invalidating it. Full all-N theorem remains complete PAPER/未Lean/human review pending. E716/E717/E718 are capped accepted support only; H09 failed simultaneous consumer remains STOPPED packet. D<=wholeF/C1 not refuted, standard orbit reachability not claimed. Fixed finite certificates agree but are COMPUTED illustrations, not an infinite proof. See PRELOADED_PLATEAU note's H11 tail and independent quantifier audit. First15min gate passed by the all-N paper/source construction; no search cutoff extension or stopped source retry.
+
+Final daily verification: ./scripts/check.sh passed1021 jobs/3935 allowed axiom reports; final metadata guard passed718 registry entries/315 harness rows and all4 pinned labels. Human review pending. Parent work/time is recorded once in [DAILY](RESEARCH_HANDOFF_2026-11-15_DAILY.md) and [journal](data/daily_research/2026-11-15.json); final stop values are the source of truth, not planned120min.

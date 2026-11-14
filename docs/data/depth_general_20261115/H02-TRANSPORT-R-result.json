@@ -1,0 +1,31 @@
+{
+  "tag": "H02-TRANSPORT-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/HeightAdaptiveInitialSTrim.olean",
+    "Recaman/HeightAdaptiveInitialSTrim.lean"
+  ],
+  "started_jst": "2026-11-15T06:22:43.602603+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/HeightAdaptiveInitialSTrim.lean": "a59b99c3fc2828b797ee1aff624b05737b80492090ddb54a069d1598c6c4263c"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "b5f26011fde8d70945ae8cc913e89dd68945f245e3fa97af7d6062658a687b5f",
+  "source_tree_sha256": "088b99967be465ebf66be9cf1f6e2dd62952ca79c047e8c521097f33e885b946",
+  "source_tree_manifest": "H02-TRANSPORT-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b5f26011fde8d70945ae8cc913e89dd68945f245e3fa97af7d6062658a687b5f",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.5356693339999765,
+  "cpu_seconds": 0.40402299999999997,
+  "finished_jst": "2026-11-15T06:22:44.138212+09:00"
+}

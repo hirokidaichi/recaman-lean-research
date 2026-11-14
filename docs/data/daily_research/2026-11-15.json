@@ -1,0 +1,512 @@
+{
+  "version": 1,
+  "date": "2026-11-15",
+  "timezone": "Asia/Tokyo",
+  "target_seconds": 7200,
+  "events": [
+    {
+      "at": "2026-11-15T06:00:30.353556+09:00",
+      "action": "start",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": ""
+    },
+    {
+      "at": "2026-11-15T06:02:55.197150+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Latest 11/13 DAILY tail/H14 card and current registry/frontier read. Exact original two-exclusive-hit separation producer frozen; all source and old prefix retained. CPU worker budget0; first15min gate, independent depth surgery >=25min reserved. Nov14 unverified, not a completed parent cycle."
+    },
+    {
+      "at": "2026-11-15T06:05:42.923810+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "元EndNを保存する二供給間free producerを紙上検討。直後Aが必ずfreeという強すぎる途中案はSASAASAAAで破れる候補を得たが、二exclusive供給/親D<=Fの反例ではない。Win全sourceの手検算を行い主claimと区別する。数学workerは未起動・CPU予算0。"
+    },
+    {
+      "at": "2026-11-15T06:11:54.996406+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "初回gate内に二exclusive target/no-free-betweenの新source構成候補。正規化P長51、source25/38、target51/59；S^11前置で全prefix負/正不足。実全sourceの検証前なので未昇格。旧beamは再実行しない。CPU探索予算0。"
+    },
+    {
+      "at": "2026-11-15T06:16:31.840164+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "二exclusive old-target/no-free-betweenの完全元履歴反例を紙上保存。全source高度/面積6時計で尽くし、全prefix負からactual正不足。親D<=Fは未反証。Leanは一修理後kernel512MB STOPPED、packet隔離。新一般機構反証で最初gate通過、次は独立depth operationへ。"
+    },
+    {
+      "at": "2026-11-15T06:18:38.046926+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "E711全source紙上反例を登録、H01gate通過/Lean方法STOPPED。別機構H02: C=min(h,R+1)のsource-aware initial-S trimで元EndN/free/positiveを同時輸送するexact contractを凍結。任意run/depth/A数保持、25分以上確保。CPU数学worker未起動0。"
+    },
+    {
+      "at": "2026-11-15T06:20:45.408682+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Adaptive trim C=min(h,R+1)の全source/free/positive chainとSA/SAAA/R0/K0/oscillatory/E711境界を紙上監査。新actual consumerをLean化するが、既存E709のsource iff再引用だけは新一般化進展としない。R+1費用をfreeで払う義務は残る。数学CPUworker未起動0。"
+    },
+    {
+      "at": "2026-11-15T06:25:20.627217+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "H02 adaptive head trim紙上chainは完了。Leanは一修理後実装エラーSTOPPED、隔離・追加修理なし。高さR+1依存の費用を元freeで払う点が未知。E711最新free反証は保持し、独立操作枠で新しい高さ/free consumerを反証可能な式へ絞る。数学worker未起動0。"
+    },
+    {
+      "at": "2026-11-15T06:30:28.801206+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "06:30途中保存。E711固定71語はforward/reverse全source一致、latestfree61共通、D3/free20。H03新高さ<=2freeは41188discovery/128reverse holdout有限不在のみ、方法STOPPED/命題CONJECTURED。数学worker3件実測.225452秒。独立adaptive枠を継続し、紙上操作の未払い費用を監査する。"
+    },
+    {
+      "at": "2026-11-15T06:33:21.533140+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "高さbudget型の未払い費用をsource/positive reserve U,Vへ分解する新exact操作を凍結。C=max(U,V)を元actual有限maxから内部構成し最小性と全source/free/positiveを問う。結論Propや供給族を入力しない。H01/H02停止bytes再利用なし。CPU新worker未追加。"
+    },
+    {
+      "at": "2026-11-15T06:34:24.172419+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "FalsifierでK0時の最小head主張の境界不備を発見。V1強制U>=1は最小でない。唯一の数学修理V2はUを非空copied prefix k1..KのmaxとしてC0を許す。元positiveは空prefixに課さない。定理の仮定化で埋めず、実際の全source/count/minimality proofを監査する。"
+    },
+    {
+      "at": "2026-11-15T06:35:44.676285+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "C*=max(U,V) V2の全source/計数/positive/最小性を紙上確認中。Uはk1..Kだけ、Vはexclusiveoldの一意source深さ。K0/C0を明示し、単なるheight ceilingでは保持できないE711のsource-aware C2候補を区別する。freeに対するU/V上界は未証明。"
+    },
+    {
+      "at": "2026-11-15T06:48:13.095715+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "別機構adaptiveoperation枠は06:18:38から25分超を実施。E712paper/E713全source cost支持定理は記録済、G二重計上なし。局所20/一般化65/必要audit15へ再配分しsetup残余をGへ。局所は新j4/source n+2 budget12を全actualから供給、d2/k7を保持。20分上限で一般化へ戻る。"
+    },
+    {
+      "at": "2026-11-15T06:51:12.554423+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "新j4/source2 actualbudget12とd>=3 source k3/H0/d<=6を初回512MB受理。全j4排除ではなくH1最高Afree/H0下段d2k7を保持するstrict pruning。次の局所判断はd2/k7七符号とH1等号、最大20分を守り一般化へ戻る。"
+    },
+    {
+      "at": "2026-11-15T06:55:00.589321+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "E714 first capped Lean pass accepted, lint2/2 and exact signature audit registered; d2/k7 still survives. No local fullgap or G credit."
+    },
+    {
+      "at": "2026-11-15T06:58:13.812602+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Local producer E714 accepted; local unit ends early without borrowing G. New independent all-N preload construction frozen: test arbitrary fixed latest-free load, retain exclusivity/all original prefixes."
+    },
+    {
+      "at": "2026-11-15T06:59:43.706689+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Backward source preloading gives negative-height seed interpolation; new all-N proof candidate includes initial-S exclusivity via every other height0 area nonzero. Audit exact offset6 area=-16j-11, no worker yet."
+    },
+    {
+      "at": "2026-11-15T07:03:46.391226+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "All-N source preloading proof recorded. N1..3 forward all-source/actualfree certificates passed; fixed N4 reverse all-source certificate passed. Finite evidence only, full no-go remains PAPER. New worker CPU0.749940, total mathematical1.009627."
+    },
+    {
+      "at": "2026-11-15T07:05:00.023412+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "H07 all-N paper plus independent finite certificates completed; begin bounded15min constructive suffix Win support. No negative-height/exclusivity/positive-domain conclusion is assumed or claimed from this helper."
+    },
+    {
+      "at": "2026-11-15T07:08:24.880864+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "H08 accepted after one simp repair, unrestricted source completion only. Freeze new induction: every finite suffix A preloaded from a constructed full prefix, with optional initial-S positive domain; no fullprefix free0/C1/exclusivity claim."
+    },
+    {
+      "at": "2026-11-15T07:10:34.453107+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "H09 one repair still failed in final List.take normalization: STOPPED packet, not adopted/partial-extracted. H08 helper accepted only single-window completion. Return source/area all-N audit and next general charging mechanism."
+    },
+    {
+      "at": "2026-11-15T07:13:42.829721+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "E715 all fixed latest-free load refuted PAPER with exact all-source proof; E716 capped constructive one-window support registered with semantic limits; H09 remains STOPPED not adopted. Two-axis verdict deferred to independent audit."
+    },
+    {
+      "at": "2026-11-15T07:15:21.754417+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "New independent mathematical refinement: replace quadratic high hill by SAAAS(SA)^(D+3)S4, mass-3/area D/maxheight2 and no other height0/area0. This makes H07 unbounded latest-free load possible at fixed original depth7/initialS4. Freeze proof before validation."
+    },
+    {
+      "at": "2026-11-15T07:17:38.543601+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "New fixed-height reservoir proof succeeds: depth7/initialS4 fixed for all N; finite new-construction N1,2 forward and N3 reverse all-source checks passed. Total mathematical worker CPU1.137019, no larger N restart. Formalize bounded-height loader only if exact prefix-source contract can be audited."
+    },
+    {
+      "at": "2026-11-15T07:21:13.051901+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "New positive-domain input: fixed SSAA gives two original free; height<=1 then supplies strictpositive without all-negative heights. Same all-N construction may use initialS2/source1/floor-5, stronger fixed-depth5 no-go. Freeze and audit extra old-source endpoint heights before finite validation."
+    },
+    {
+      "at": "2026-11-15T07:26:56.005932+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "All-N fixed depth5 no-go PAPER stable, E717/E718 individually accepted; next exact family D_near<=allpastfree frozen without a latest-free/FIFO wrapper. Final independent semantic audit and fullcheck next, no counterexample promoted to C1."
+    },
+    {
+      "at": "2026-11-15T07:27:58.815967+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Move to necessary independent audit of all-N original-source uniqueness, fixed-depth5 positive domain and five accepted Lean modules. Unused local10min and saved setup reallocated to G/audit; no stopped source retry, final new-math cutoff07:45 unchanged."
+    },
+    {
+      "at": "2026-11-15T07:29:25.564546+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Independent pass checked all-N source uniqueness, SSAA positive domain, no C1/canonical-orbit claim, E712 C0/h0/K0/qK, E714 d2/k7, and failed H01/H02/H09 isolation. Human review remains pending."
+    },
+    {
+      "at": "2026-11-15T07:31:09.506210+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Fullcheck passed1021 jobs/3935 axiom reports; five final module hashes match their capped receipts. Resource categories segregated and all mathematical workers closed. Audit next exact path ownership and general/local evidence verdict."
+    },
+    {
+      "at": "2026-11-15T07:34:04.685620+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Final original-domain audit: N1 depth4, N>=2 depth5; fixed bound5 enough for no-go. All selected targets have gap0 and large fullfree, consistent with existing depth5 gap theorem. Local sources in X stay beyond cutoff2; no source prefix reset or orbit reachability claim."
+    },
+    {
+      "at": "2026-11-15T07:37:47.770670+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Mathematical independent verdict localE714 yes/generalE715 all-fixed-load no-go yes; streak0 grounded in new PAPER no-go, helpers not double-counted. Nov14 stays unevaluated. Boundary loader without AS kick fails uniqueness; no-padding SAAA fails positivity. Next exact source family card and two-axis tracker saved."
+    },
+    {
+      "at": "2026-11-15T07:41:42.694837+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Prepared reviewable exact-path publication driver with stopped-journal guard, normal explicit-SHA pushes, independent ls-remote and CI reads, C1/C2 receipt separation, hard07:59:40 cutoff. Not executed before authorized07:45 publication window."
+    },
+    {
+      "at": "2026-11-15T07:43:46.643828+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Rewrote current DAILY around stable all-N no-go, minimal-reserve/Lean support limits, local d2/k7 residual, exact CPU, failures and next source-family question. Final journal/publication placeholders intentionally remain pending, not claimed as completed work."
+    },
+    {
+      "at": "2026-11-15T07:44:48.531536+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "New mathematics finished. Full source graph still matches accepted fullcheck; switch to final records, exact-path publication and stopped-journal synchronization. End work by07:59:40/08:00 without extending window."
+    },
+    {
+      "at": "2026-11-15T07:48:02.154683+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Updated every daily card with final evidence and shared journal links, keeping STOPPED/PAPER/Lean distinctions and parent-only time. Metadata final guard passed718 entries/315 harness rows/4 pinned labels; CPU5.760423 separately recorded. No new mathematics after handoff."
+    },
+    {
+      "at": "2026-11-15T07:49:34.689017+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Prepared finalizer that stops the owned session once and derives exact duration/shortfall/phase totals from closed journal, then updates DAILY/frontier/brief. Still active now; no future duration credited. Publication driver requires stopped/finalized journal and exact owned files."
+    },
+    {
+      "at": "2026-11-15T07:53:23.535616+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Final exact-path scope reviewed:195 owned regular files, five accepted Lean modules plus records; protected claims unchanged, staged index empty, 11/07 unowned journal preserved. All mathematical/Lean computations closed. Prepare actual stop then publish; no future time recorded."
+    },
+    {
+      "at": "2026-11-15T07:54:43.611551+09:00",
+      "action": "checkpoint",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Saved exact command index for31 executed research/validation jobs, source/cap/CPU receipts and clear guard-signal semantics. Publication remains separate after stop; no worker/test rerun. Final daily report wording and evidence levels reviewed."
+    },
+    {
+      "at": "2026-11-15T07:56:48.119628+09:00",
+      "action": "stop",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "note": "Research and independent audit complete; all mathematical workers stopped, adopted Lean/fullcheck passed. Close confirmed handoff before final snapshot publication; do not credit later save/push time."
+    }
+  ],
+  "segments": [
+    {
+      "start": "2026-11-15T06:00:30.353556+09:00",
+      "end": "2026-11-15T06:02:55.197150+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "setup",
+      "unit": "R-20261115-01/setup"
+    },
+    {
+      "start": "2026-11-15T06:02:55.197150+09:00",
+      "end": "2026-11-15T06:05:42.923810+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-01/source-chronology-proposer"
+    },
+    {
+      "start": "2026-11-15T06:05:42.923810+09:00",
+      "end": "2026-11-15T06:11:54.996406+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-01/two-window-chronology-falsifier"
+    },
+    {
+      "start": "2026-11-15T06:11:54.996406+09:00",
+      "end": "2026-11-15T06:16:31.840164+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-01/reverse-source-certificate"
+    },
+    {
+      "start": "2026-11-15T06:16:31.840164+09:00",
+      "end": "2026-11-15T06:18:38.046926+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-01/paper-counterexample-record"
+    },
+    {
+      "start": "2026-11-15T06:18:38.046926+09:00",
+      "end": "2026-11-15T06:20:45.408682+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-02/height-adaptive-cut-proposer"
+    },
+    {
+      "start": "2026-11-15T06:20:45.408682+09:00",
+      "end": "2026-11-15T06:25:20.627217+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-02/paper-chain-and-boundaries"
+    },
+    {
+      "start": "2026-11-15T06:25:20.627217+09:00",
+      "end": "2026-11-15T06:30:28.801206+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-02/height-cost-falsifier"
+    },
+    {
+      "start": "2026-11-15T06:30:28.801206+09:00",
+      "end": "2026-11-15T06:33:21.533140+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-02/height-cost-and-actual-spectrum"
+    },
+    {
+      "start": "2026-11-15T06:33:21.533140+09:00",
+      "end": "2026-11-15T06:34:24.172419+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-04/minimal-source-reserve-cut"
+    },
+    {
+      "start": "2026-11-15T06:34:24.172419+09:00",
+      "end": "2026-11-15T06:35:44.676285+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-04/zero-head-boundary-repair"
+    },
+    {
+      "start": "2026-11-15T06:35:44.676285+09:00",
+      "end": "2026-11-15T06:48:13.095715+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-04/minimal-cut-proof-audit"
+    },
+    {
+      "start": "2026-11-15T06:48:13.095715+09:00",
+      "end": "2026-11-15T06:51:12.554423+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-06/local-clock-two-four-budget"
+    },
+    {
+      "start": "2026-11-15T06:51:12.554423+09:00",
+      "end": "2026-11-15T06:55:00.589321+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-06/local-budget-residual-falsifier"
+    },
+    {
+      "start": "2026-11-15T06:55:00.589321+09:00",
+      "end": "2026-11-15T06:58:13.812602+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-06/local-signature-audit"
+    },
+    {
+      "start": "2026-11-15T06:58:13.812602+09:00",
+      "end": "2026-11-15T06:59:43.706689+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-07/preloaded-plateau-load"
+    },
+    {
+      "start": "2026-11-15T06:59:43.706689+09:00",
+      "end": "2026-11-15T07:03:46.391226+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-07/all-N-paper-chain"
+    },
+    {
+      "start": "2026-11-15T07:03:46.391226+09:00",
+      "end": "2026-11-15T07:05:00.023412+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-07/finite-independent-certificates"
+    },
+    {
+      "start": "2026-11-15T07:05:00.023412+09:00",
+      "end": "2026-11-15T07:08:24.880864+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-08/suffix-source-completion"
+    },
+    {
+      "start": "2026-11-15T07:08:24.880864+09:00",
+      "end": "2026-11-15T07:10:34.453107+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-09/all-finite-suffix-preloading"
+    },
+    {
+      "start": "2026-11-15T07:10:34.453107+09:00",
+      "end": "2026-11-15T07:13:42.829721+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-07/all-source-semantic-review"
+    },
+    {
+      "start": "2026-11-15T07:13:42.829721+09:00",
+      "end": "2026-11-15T07:15:21.754417+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-07/all-N-registered"
+    },
+    {
+      "start": "2026-11-15T07:15:21.754417+09:00",
+      "end": "2026-11-15T07:17:38.543601+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-10/bounded-height-area-reservoir"
+    },
+    {
+      "start": "2026-11-15T07:17:38.543601+09:00",
+      "end": "2026-11-15T07:21:13.051901+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-10/fixed-depth-seven-no-go"
+    },
+    {
+      "start": "2026-11-15T07:21:13.051901+09:00",
+      "end": "2026-11-15T07:26:56.005932+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "H-20261115-11/two-free-depth-five-domain"
+    },
+    {
+      "start": "2026-11-15T07:26:56.005932+09:00",
+      "end": "2026-11-15T07:27:58.815967+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "research",
+      "unit": "R-20261115-01/next-consumer-and-scope"
+    },
+    {
+      "start": "2026-11-15T07:27:58.815967+09:00",
+      "end": "2026-11-15T07:29:25.564546+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/independent-semantic-audit"
+    },
+    {
+      "start": "2026-11-15T07:29:25.564546+09:00",
+      "end": "2026-11-15T07:31:09.506210+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/all-quantifier-statement-audit"
+    },
+    {
+      "start": "2026-11-15T07:31:09.506210+09:00",
+      "end": "2026-11-15T07:34:04.685620+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/resource-and-adoption-audit"
+    },
+    {
+      "start": "2026-11-15T07:34:04.685620+09:00",
+      "end": "2026-11-15T07:37:47.770670+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/fixed-depth-source-domain-audit"
+    },
+    {
+      "start": "2026-11-15T07:37:47.770670+09:00",
+      "end": "2026-11-15T07:41:42.694837+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/general-local-continuation-verdict"
+    },
+    {
+      "start": "2026-11-15T07:41:42.694837+09:00",
+      "end": "2026-11-15T07:43:46.643828+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/explicit-path-publication-review"
+    },
+    {
+      "start": "2026-11-15T07:43:46.643828+09:00",
+      "end": "2026-11-15T07:44:48.531536+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "audit",
+      "unit": "R-20261115-01/daily-handoff-content-review"
+    },
+    {
+      "start": "2026-11-15T07:44:48.531536+09:00",
+      "end": "2026-11-15T07:48:02.154683+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "handoff",
+      "unit": "R-20261115-01/final-journal-and-publication-preparation"
+    },
+    {
+      "start": "2026-11-15T07:48:02.154683+09:00",
+      "end": "2026-11-15T07:49:34.689017+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "handoff",
+      "unit": "R-20261115-01/cards-and-final-evidence-sync"
+    },
+    {
+      "start": "2026-11-15T07:49:34.689017+09:00",
+      "end": "2026-11-15T07:53:23.535616+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "handoff",
+      "unit": "R-20261115-01/stopped-journal-save-review"
+    },
+    {
+      "start": "2026-11-15T07:53:23.535616+09:00",
+      "end": "2026-11-15T07:54:43.611551+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "handoff",
+      "unit": "R-20261115-01/precommit-content-scope"
+    },
+    {
+      "start": "2026-11-15T07:54:43.611551+09:00",
+      "end": "2026-11-15T07:56:48.119628+09:00",
+      "session": "b62344cd-d73e-435a-94aa-0274cd820461",
+      "phase": "handoff",
+      "unit": "R-20261115-01/reproducibility-command-handoff"
+    }
+  ],
+  "unconfirmed_gaps": [],
+  "cursor": null
+}

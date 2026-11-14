@@ -1,0 +1,25 @@
+{
+  "tag": "H05-SOURCE-COST",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSSourceCut.olean",
+    "Recaman/InitialSSourceCut.lean"
+  ],
+  "started_jst": "2026-11-15T06:41:36.244474+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSSourceCut.lean": "ee9b01ad8e781c22a67d4dc459152b45de235c5828fc4ababfac4214da1e1304"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "b5f26011fde8d70945ae8cc913e89dd68945f245e3fa97af7d6062658a687b5f",
+  "source_tree_sha256": "dce46da6a8ce0bdfd6a8894daaad79209698fafb6dfe749b6a474a0a1972fbaa",
+  "source_tree_manifest": "H05-SOURCE-COST-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,27 @@
+# H-20261115-02: 全source/free/positiveを保つ高さ依存のinitial-S trim
+
+- Evidence PROVED-PAPER for the constructive height-based trim; Lean method STOPPED after one repair (signature/normalization diagnostics); independent general-principle mechanism from H01 chronology; one agent separates proposer/falsifier/formalizer/auditor.
+- Original f:Nat→Bool; h,K,R:Nat; initial f[0,h)=S; full original positive deficit on[0,h+K]. At every q<=K, Fw f(h+q)-Fw f h<=R. Define C=min h (R+1), g(i)=trimSSequence f h C i. No A/run/depth/length bound.
+
+## Exact operation question and acceptance
+Does this internally chosen C preserve every original EndN target f(h+q) iff g(C+q) for q<=K, all original whole-prefix free counts, and the full positive deficit on[0,C+K]? A trailing S-gap and original actual target should therefore transport to the shorter actual history while preserving the same free-gap failure, with no assumed EndN family/defined Prop supplying the result.
+Success is the exact constructive operation with all consumers, not a single chosen-window area identity or a height/free assumption wrapping the desired conclusion. C need not be a constant; record R dependence and which depth cost remains. Scope: initial-S original histories only, not arbitrary padded old prefix reset and not a complete depth induction.
+
+## Informal chain / weakest obligation
+If h<=R+1 then C=h and history is identical. Otherwise C=R+1: copied future has absolute height<=−1 and initial S is negative, which supplies positive deficit internally from supplied<=A. Removed source t<h−C would require relative target height>=C+2, excluded by R=C−1. Only after exhausting removed sources use original endN_nat_shift to transfer all remaining sources, then cN/free. This is a source-aware, history-dependent cut, not a fixed neutral insertion.
+E709 source-cut transport and E710 SA boundary are inputs. The new consumer is simultaneous full actual/free/positive transport with C<=R+1, independent of A count. Search existing trim/height results first. Do not call the derived source iff alone a new principle or G progress.
+
+## Falsifier / costs / gate
+Attack h0,K0,R0,C0; original SA (automatic full stripping fails but C>=1 should prevent it); SAAA high-target supply; new E711 preloaded plateau. Test a high up-excursion with many A and a low oscillatory path to distinguish height budget from old2A−1 trim. Paper-only CPU search0, no discovery/holdout ranges; analytical cases before Lean. Individual -j1/-M512/10CPU/20wall, one repair; all statements/lint/Audit/fullcheck and semantic audit required. New source iff + positive wrapper without the complete cN/free consumer is not acceptance. Reserve this mechanism>=25 minutes; first15min decision, then either a new edge/strict pruning or a different specific operation, no same unknown renamed. No oldSTOP restart. End new math07:45/overall08:00.
+
+## Paper falsifier and dependency chain (before Lean)
+SA:h1,K1,R1 givesC1, identity, so E710's full-strip failure is not silently excluded. SAAA:h1/R3 gives identity; h10 followed byAAA givesC4 and retains the last-S SAA source. K0: allcounts0 and C>=1 unlessh0/identity. R0: C=min(h,1), copied future is never above its boundary and negative after trim. Oscillatory(AS)^N hasR1 soC2 for everyN; old2A−1 bound grows, making the scope distinction real. E711's high preloaded part hasR11 (relative to its h12 boundary), soC12/identity; the counterexample is not erased. No weakened-history mark is substituted.
+Complete chain: C=h branch identity; otherwise d=h−R−1, g(i)=f(d+i), and d+R+1=h. All initial removed sources have height>=Fw(d)+1, so any Win ending at future target (whose height<=Fw(h)+R=Fw(d)−1) is impossible. Use E709 only after that bound to transport all remaining source clocks. Its full counts give actual supplies and free exactly for each prefix. g's retained initialS has negative walk and all copied future levels<=−1; EndN<=A and cN_walk then supply original positive deficit internally. The residual cost R+1 is not paid by free; this is not a constant depth bound or full C1 induction. The elementary source-iff reuse alone is not counted as a new general edge.
+
+06:22 first Lean diagnostic: explicit parentheses needed around target iff after q<=K implication (signature precedence), two elementary normalization diagnostics and small identity branch simplification. One permitted repair changes the signature to its intended quantifiers and fixes those implementation details. Same512MB/10CPU/20wall. A second failure stops the bytes; no further tweak.
+
+06:23 repaired Lean still failed implementation normalization and one multi-line iff parenthesization. Method STOPPED, full bytes packet .lean.txt, not root/Audit. No additional repair/split/import/resource change. The complete informal all-source/count/positive argument remains paper-level. Max-rise R+1 is an unpaid residual cost. A budget expressed directly by original free would be a new consumer; do not count an E709 wrapper as solving that cost.
+
+Daily handoff/time: [2026-11-15 DAILY](RESEARCH_HANDOFF_2026-11-15_DAILY.md), [journal](data/daily_research/2026-11-15.json). This unit is part of one parent cycle; no separate120min or CPU credit. The evidence/STOP status above is unchanged by other unit successes.
+
+Final mathematical status: PROVED-PAPER as the height-only corollary of E712; the implementation method remains STOPPED. This is not a second independent generalization credit, a paid free bound, or a Lean result.

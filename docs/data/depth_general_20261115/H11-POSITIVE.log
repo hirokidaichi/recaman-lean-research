@@ -1,0 +1,33 @@
+Recaman/TwoFreeHeightPositive.lean:30:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f 0
+in the target expression
+  EndN f 0 0
+
+f : Nat → Bool
+K : Nat
+hpre : seg f 0 4 = [false, false, true, true]
+hK : 4 ≤ K
+hheight : ∀ (k : Nat), 4 ≤ k → k ≤ K → Fw f k ≤ 1
+h0 : f 0 = false
+h1 : f 1 = false
+h2 : f 2 = true
+h3 : f 3 = true
+h : EndN f 0 0
+⊢ False
+Recaman/TwoFreeHeightPositive.lean:31:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  f 1
+in the target expression
+  EndN f 0 1
+
+f : Nat → Bool
+K : Nat
+hpre : seg f 0 4 = [false, false, true, true]
+hK : 4 ≤ K
+hheight : ∀ (k : Nat), 4 ≤ k → k ≤ K → Fw f k ≤ 1
+h0 : f 0 = false
+h1 : f 1 = false
+h2 : f 2 = true
+h3 : f 3 = true
+hn0 : ¬EndN f 0 0
+h : EndN f 0 1
+⊢ False

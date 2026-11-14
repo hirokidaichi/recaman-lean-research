@@ -1,0 +1,112 @@
+import Recaman.InitialSPaddingPositive
+import Recaman.AdditionRankSlack
+
+set_option maxRecDepth 4096
+
+namespace Recaman.InitialSFreePlateauCounterexample
+
+open Recaman.InitialSPaddingPositive Recaman.AdditionRankSlack
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality
+open Recaman.CapacityEqualityInduction
+
+private def word : List Bool :=
+  List.replicate 12 false ++ List.replicate 11 true ++
+  List.replicate 16 false ++ List.replicate 3 true ++
+  List.replicate 3 false ++ List.replicate 4 true ++
+  [false,true] ++ List.replicate 4 false ++ List.replicate 7 true ++
+  [true] ++ List.replicate 4 false ++ List.replicate 4 true
+
+private def f : Nat → Bool := finiteSign word
+
+private theorem level_sources : ∀ t : Fin 71,
+    Fw f t.val = -11 ↔
+      t.val=11 ∨ t.val=13 ∨ t.val=33 ∨ t.val=61 ∨ t.val=65 ∨ t.val=69 := by
+  decide
+
+private theorem negative_prefix : ∀ k : Fin 72,
+    k.val=0 ∨ Fw f k.val ≤ -1 := by
+  decide
+
+private theorem no_local (b : Nat) (hb : b=62 ∨ b=70) : ¬EndN f 12 b := by
+  rintro ⟨_,t,k,ht,htk,hWin⟩
+  have htb : t<b := by have := hWin.1; omega
+  have hbt : b<71 := by omega
+  have hB : Fw f b = -10 := by
+    rcases hb with rfl|rfl <;> decide
+  have hT : Fw f t = -11 := by
+    have hRise := hWin.2.1
+    rw [htk] at hRise
+    omega
+  have hCases := (level_sources ⟨t,by omega⟩).mp hT
+  change t=11 ∨ t=13 ∨ t=33 ∨ t=61 ∨ t=65 ∨ t=69 at hCases
+  have hAr : Ar f t (b-t)=0 := by
+    rw [show b-t=k by omega]
+    exact hWin.2.2
+  rcases hCases with h|h|h|h|h|h
+  · omega
+  all_goals subst t
+  all_goals rcases hb with rfl|rfl
+  all_goals first | omega | (revert hAr; decide)
+
+private theorem supplied_67 : EndN f 0 67 := by
+  refine ⟨by decide,36,31,by omega,by omega,?_⟩
+  unfold Win
+  decide
+
+private theorem supplied_68 : EndN f 0 68 := by
+  refine ⟨by decide,49,19,by omega,by omega,?_⟩
+  unfold Win
+  decide
+
+private theorem supplied_69 : EndN f 0 69 := by
+  refine ⟨by decide,66,3,by omega,by omega,?_⟩
+  unfold Win
+  decide
+
+/-- Two exclusive initial-S supplied additions can share their latest
+original free addition. Intermediate additions are genuinely supplied
+by local sources, and every original prefix has positive deficit.
+This refutes the latest-free injection, not the aggregate D ≤ free. -/
+theorem two_old_targets_without_an_intermediate_free :
+    ∃ (g : Nat → Bool) (h K q1 q2 : Nat),
+      (∀ i, i<h → g i=false) ∧
+      (∀ k, 0<k → k≤h+K →
+        cN (EndN g 0) 0 k+1≤cN (fun i => g i=false) 0 k) ∧
+      h≤q1 ∧ q1<q2 ∧ q2<h+K ∧
+      EndN g 0 q1 ∧ ¬EndN g h q1 ∧
+      EndN g 0 q2 ∧ ¬EndN g h q2 ∧
+      (∀ p, q1<p → p<q2 → g p=true → EndN g 0 p) := by
+  refine ⟨f,12,59,62,70,?_,?_,by omega,by omega,by omega,?_,
+    no_local 62 (Or.inl rfl),?_,no_local 70 (Or.inr rfl),?_⟩
+  · intro i hi
+    have hAll : ∀ j : Fin 12, f j.val=false := by decide
+    exact hAll ⟨i,hi⟩
+  · intro k hk hk71
+    have hn := negative_prefix ⟨k,by omega⟩
+    change k=0 ∨ Fw f k≤ -1 at hn
+    have hneg : Fw f k≤ -1 := by omega
+    have hEA : cN (EndN f 0) 0 k≤cN (fun i => f i=true) 0 k := by
+      apply cN_mono
+      intro i _ _ he
+      exact he.1
+    have hw := (cN_walk f 0 k).1
+    simp only [Nat.zero_add,Fw] at hw
+    omega
+  · refine ⟨by decide,11,51,by omega,by omega,?_⟩
+    unfold Win
+    decide
+  · refine ⟨by decide,11,59,by omega,by omega,?_⟩
+    unfold Win
+    decide
+  · intro p hp hq ha
+    have hCases : p=63 ∨ p=64 ∨ p=65 ∨ p=66 ∨ p=67 ∨ p=68 ∨ p=69 := by omega
+    rcases hCases with rfl|rfl|rfl|rfl|rfl|rfl|rfl
+    · exact ((by decide : f 63≠true) ha).elim
+    · exact ((by decide : f 64≠true) ha).elim
+    · exact ((by decide : f 65≠true) ha).elim
+    · exact ((by decide : f 66≠true) ha).elim
+    · exact supplied_67
+    · exact supplied_68
+    · exact supplied_69
+
+end Recaman.InitialSFreePlateauCounterexample

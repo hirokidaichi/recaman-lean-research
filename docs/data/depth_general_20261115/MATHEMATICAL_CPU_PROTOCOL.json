@@ -1,0 +1,39 @@
+{
+  "revision": "3780dbe7c49f03f245f21f487ea262a122ca6cb1",
+  "tracked_diff_sha256": "b5f26011fde8d70945ae8cc913e89dd68945f245e3fa97af7d6062658a687b5f",
+  "files": {
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "counter_certificate.py": "34349c007a1f0579043737260ef4b40bb1e872b25d0ef8a47d492e8dfe12aef4",
+    "height_free_probe.py": "4b52c01166323060d3cd699d0e412fafcc8dc4701c6643720b319f9bc4863b96"
+  },
+  "math_worker_cpu_budget": 5,
+  "jobs": [
+    {
+      "tag": "counter-certificate",
+      "cpu": 1,
+      "wall": 4,
+      "script": "counter_certificate.py",
+      "args": []
+    },
+    {
+      "tag": "height-free-discovery",
+      "cpu": 2,
+      "wall": 5,
+      "script": "height_free_probe.py",
+      "args": [
+        "discovery"
+      ]
+    },
+    {
+      "tag": "height-free-holdout",
+      "cpu": 2,
+      "wall": 5,
+      "script": "height_free_probe.py",
+      "args": [
+        "holdout"
+      ]
+    }
+  ],
+  "discovery": "hand-derived exact71-clock source certificate; separate new height-minus-two-free objective, not old D/F beam",
+  "holdout": "separate reverse literal implementation/roots/seeds; no claim of unseen prefixes"
+}
