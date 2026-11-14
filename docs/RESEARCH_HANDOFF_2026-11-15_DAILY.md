@@ -43,7 +43,7 @@ local_progress: **あり**（E714の元actual producer/strict候補削減、full
 ## 所有と日次公開
 開始main/HEAD=origin/main=3780dbe7c49f03f245f21f487ea262a122ca6cb1、開始fetch/途中fetchで差0。未所有docs/data/daily_research/2026-11-07.jsonを保持し除外。対象は5採用Lean/root/Audit/contracts/registry/statement audits/frontier/proof map/portfolio/tracker/viewer、当日cards/notes/packet/確定journal、次回card。[明示所有path](data/depth_general_20261115/OWNED_PATHS.json)だけをstage/commitする。単一研究snapshot commit commandのみRECAMAN_ALLOW_BURST=1、hook/G1–G5/保護claim・通常pushを維持。
 
-@@PUBLICATION@@
+研究snapshot **84788fba54c6f4627f3f5be1d5e78a410d854edc** を通常pushで **origin/main** へ保存し、`git ls-remote origin refs/heads/main`の完全一致を確認。hosted CIは未確認（該当SHAのrun未取得）。ローカル全体検証とremote到達を区別する。[公開receipt](data/depth_general_20261115/publication_snapshot/PUBLICATION_RECEIPT.json)を参照。この照合記録をdocs-onlyの最終commitへ保存し、そのSHA/remote/CIは自己参照を避け当日chatへ報告する。未保存の研究成果なし。
 
 ## 次の一問・追加handoff（最終判断）
 入口は本DAILY末尾、[全N noteのH11末尾](RESEARCH_NOTE_2026-11-15_PRELOADED_PLATEAU.md)、[reserve note](RESEARCH_NOTE_2026-11-15_SOURCE_RESERVE_TRIM.md)、[H-20261116-01](HYPOTHESIS_CARD_2026-11-16_NEAREST_INITIAL_SOURCE_BUDGET.md)。次は全initial-S/元actual positiveで、唯一の近い旧source h-1（target相対高さ2）からのexclusive供給件数D_nearを**全過去の元free**で払うD_near<=Fについて新source edgeを探す。全Dの証明へ昇格せず、FIFO/最新未使用freeの同値wrapperを進展にしない。最初15分で新edge/strict候補削減/反例なしなら同手法を延長せず、別機構source/deficit reserveによるcounter輸送を25分以上へ。
