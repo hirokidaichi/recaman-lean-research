@@ -4397,3 +4397,7 @@ import Recaman
 #print axioms Recaman.BoundedHeightAreaLoader.loader_prefix_control
 #print axioms Recaman.BoundedHeightAreaLoader.original_loader_control
 #print axioms Recaman.TwoFreeHeightPositive.SSAA_height_one_positive
+
+-- Earliest original supply after an initial S block follows two free additions.
+#print axioms Recaman.InitialSFirstTwoFree.supplied_addition_has_two_free
+#print axioms Recaman.InitialSFirstTwoFree.initial_S_second_addition_free

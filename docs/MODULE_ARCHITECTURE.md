@@ -108,3 +108,7 @@ rootへ追加したconsumerの3主要定理をAuditへ登録した。
 Int上の実周期符号列から7bit窓を構成して全periodへtelescopingする。`supplied_window_iff`が
 本来のP2と一致を保証し、opaqueな状態閉包を仮定しない。lag11陰性対照を含む5主要宣言をAuditへ登録。
 全lagの供給不足・Recamán実軌道の周期性排除はこのmoduleの結論ではない。
+
+## 2026-11-16 nearest initial-S free positions
+
+`InitialSFirstTwoFree` は `BlockSuffixPositivity` だけを直接importする。初期Sの最初の二つの加算が元freeであることと、任意の元供給がその後にあることを示す。全 D_near の支払いでも、reserve U/V の上界でもない。

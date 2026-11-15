@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "date": "2026-11-16",
+  "timezone": "Asia/Tokyo",
+  "note": "H-20261116-01 session. Execution clock was 2026-11-15 afternoon JST, after the closed 2026-11-15 journal. This file does not reopen that journal.",
+  "events": [
+    {
+      "at": "2026-11-15T11:20:00+09:00",
+      "action": "start",
+      "session": "nearest-initial-source-20261116",
+      "note": "Read frontier, 11/16 card, E-712..E-718, and the generalization tracker before any new claim."
+    },
+    {
+      "at": "2026-11-15T11:40:00+09:00",
+      "action": "checkpoint",
+      "session": "nearest-initial-source-20261116",
+      "note": "Froze the portion: the first two additions after an initial S block are free, so every original supply follows them. Exhaustive source words through length 22 have F>=2 D_near. Sharp family D=N, F=2N, U=2, V=1."
+    },
+    {
+      "at": "2026-11-15T11:47:00+09:00",
+      "action": "checkpoint",
+      "session": "nearest-initial-source-20261116",
+      "note": "E-719 Lean accepted with standard axioms. E-720 paper family shows reserves do not bound D_near. E-721 records the finite scan. 2 D_near<=F remains conjectured. Next card is the free-height ridge."
+    }
+  ]
+}

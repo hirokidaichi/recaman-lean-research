@@ -1,0 +1,2 @@
+python3 docs/data/depth_general_20261116/check_nearest_free.py --maxn 16
+g++ -O3 -std=c++17 -o /tmp/near_fast docs/data/depth_general_20261116/scan_source_words.cpp && /tmp/near_fast 22

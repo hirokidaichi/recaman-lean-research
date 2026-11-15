@@ -1,13 +1,16 @@
 # Current research frontier
 
-最終更新: 2026-11-15（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-16カードのセッション（実行時計は東京2026-11-15午後）。一般C1/Q/H/SL/全射性は未証明。
 
 ## Research brief
 
+- **E-719 PROVED-LEAN**。初期Sの最初の二つの加算は元free。任意の元供給、とくに exclusive 高さ2 targetの最初の一つは、その二つのfreeより後にある。後続targetへの別free単射ではなく、D_near≤F でもない。
+- **E-720 PROVED-PAPER**。任意Nと h≥2 で `S^h AAA (SSSSAAAA)^{N-1}` は正不足、source h−1 の高さ2 targetがN、freeが2N、U=2、V=1。比1/2は等式。U/Vは D_near を抑えない。一般historyの 2 D_near≤F は CONJECTURED。
+- **E-721 COMPUTED**。source相対長22まで F<2 D_near は0。有限検査であり証明ではない。
 - **E-715 REFUTED（全Nの完全PAPER、未Lean）**。固定の深さ上限5/初期S2/元全prefix actual正不足でも、同じ最新freeにN件のexclusive old-source1 targetを集められる。負高さsource preload・全時計一意性と、bounded-height reservoir+最初の実free2で証明。従って深さだけに依存する最新free負荷上限も不可能。全元freeは増えるのでD<=F/C1反例ではない。有限N1..4等はCOMPUTEDで、全NのLean証明とは呼ばない。
 - **E-716 / E-717 / E-718 PROVED-LEAN**。任意finite suffixの一窓completion、全Dの高さ[-3,2]/面積D/zero-area return無しloader、元SSAAからfree2を内部導出するheight1 positive-domain支持。全N source preloadへの接着はPAPER。新一般化coverageをhelper数で二重計上しない。H09同時供給consumerは一修理後STOPPED/packet-only。
 - **E-714 PROVED-LEAN（局所producer）**。元深さ6/j4/n+2の全高actual sourceでd(k−1)+8H<=12、d>=3ならk3/H0/d<=6。d2/k7は等号で残り、元j4 fullgapと一般C1は未証明。
-- 次回主題は[nearest initial-S source budget](HYPOTHESIS_CARD_2026-11-16_NEAREST_INITIAL_SOURCE_BUDGET.md)。元exclusive source h−1/target相対高さ2の件数を、最新だけでなく全過去の実freeへ払う新edgeを15分gateで判定。元全source/positiveを保つreserve counter transportを別機構25分以上へ。E715で停止した最新free固定負荷、旧全STOP、未検証helperの再包装は再開しない。
+- 2026-11-16カードの最近傍sourceは、最初の供給を二つのfreeで払うところまでPROVED-LEAN、全Nの比1/2とreserve非依存はPROVED-PAPER。次回は[free高さの稜線](HYPOTHESIS_CARD_2026-11-17_FREE_HEIGHT_RIDGE.md)。F≥1ならsource相対高さH≤Fか、またはその反例語。2 D_near≤F は未証明のまま。E715で停止した最新free固定負荷、旧全STOP、未検証helperの再包装は再開しない。
 
 
 - **E-712 PROVED-PAPER / E-713 PROVED-LEAN**。任意initial-S cutの保持/損失sourceを元quadraticと元local不在から尽くし、保持free=元free+損失を計数。元供給/全free/positiveを保つ最小headはsource深さreserve Vと不足reserve Uのmax（全量化PAPER、未Lean）。高さだけのsafe cut min(h,R+1)は系。U/V又は損失を元freeで払う上界が未知で、一般C1帰納は未完成。H02試作は一修理後STOPPED、採用外。
