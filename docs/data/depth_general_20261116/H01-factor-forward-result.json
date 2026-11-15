@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-16T07:01:25.281513+09:00",
+  "tag": "H01-factor-forward",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261116/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261116/nearest_factor_probe.py",
+    "forward"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 4.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "a6d016e470d962e65d6ce9f36321be94cc574670cce9d791406e590e856fb00a",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 62037,
+  "process_group": 62037,
+  "finished_jst": "2026-11-16T07:01:26.559226+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.2778129159996752,
+  "worker_user_seconds": 1.261712,
+  "worker_sys_seconds": 0.009111,
+  "worker_cpu_seconds": 1.270823,
+  "worker_maxrss_native": 23150592,
+  "controller_cpu_seconds": 0.001870999999999996,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

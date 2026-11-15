@@ -1,0 +1,112 @@
+import Recaman.SameSourceLowCrossings
+import Recaman.InitialSLowTargetTransport
+
+namespace Recaman.NearestInitialSourcePair
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.SameSourceLowCrossings Recaman.InitialSLowTargetTransport
+open Classical
+
+/-- An exclusive height-two target internally determines the nearest
+initial S source; no new family-of-sources assumption is introduced. -/
+theorem nearest_source_window (f : Nat → Bool) (h b : Nat)
+    (hS : ∀ i, i<h → f i=false) (hhb : h≤b)
+    (he : EndN f 0 b) (hn : ¬EndN f h b)
+    (hheight : Fw f b-Fw f h=2) :
+    0<h ∧ Win f (h-1) (b-(h-1)) := by
+  obtain ⟨ha,t,k,_,htk,hw⟩ := he
+  have ht : t<h := by
+    by_cases hc : t<h
+    · exact hc
+    · exact (hn ⟨ha,t,k,by omega,htk,hw⟩).elim
+  have hstep := fw_false_run f t (h-t) (fun i _ hi => hS i (by omega))
+  rw [show t+(h-t)=h by omega] at hstep
+  have hr := hw.2.1
+  rw [htk] at hr
+  have hts : t=h-1 := by omega
+  exact ⟨by omega,by simpa only [←hts,show b-t=k by omega] using hw⟩
+
+/-- Each original exclusive nearest-source target injects into each
+of the two lowest tail A levels, for arbitrary depth and duration. -/
+theorem nearest_level_count (f : Nat → Bool) (h K : Nat) (l : Int)
+    (hS : ∀ i, i<h → f i=false)
+    (hl : Fw f h≤l) (hu : l≤Fw f h+1) :
+    cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤
+      cN (fun t => Fw f t=l ∧ f t=true) h K := by
+  by_cases hh : h=0
+  · subst h
+    have hz : cN (fun t => EndN f 0 t ∧ ¬EndN f 0 t ∧ Fw f t-Fw f 0=2) 0 K=0 :=
+      cN_zero_of _ _ _ (fun i _ _ hi => hi.2.1 hi.1)
+    omega
+  have hs := hS (h-1) (by omega)
+  have hstep := fw_false_run f (h-1) 1 (fun i hi hi1 => by
+    have hie : i=h-1 := by omega
+    simpa only [hie] using hs)
+  rw [show h-1+1=h by omega] at hstep
+  let P := fun t => f t=true ∧ h-1≤t ∧ Win f (h-1) (t-(h-1))
+  let Q := fun t => Fw f t=l ∧ f t=true
+  have hm : cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤cN P h K := by
+    apply cN_mono
+    intro t hht _ ht
+    have hw := nearest_source_window f h t hS hht ht.1 ht.2.1 ht.2.2
+    exact ⟨ht.1.1,by omega,hw.2⟩
+  have hp := cN_add P (h-1) 1 K
+  have hq := cN_add Q (h-1) 1 K
+  have hp0 : cN P (h-1) 1=0 := by simp [cN,P,hs]
+  have hq0 : cN Q (h-1) 1=0 := by simp [cN,Q,hs]
+  rw [show h-1+1=h by omega,hp0] at hp
+  rw [show h-1+1=h by omega,hq0] at hq
+  have hc := same_source_level_count f (h-1) (1+K) l (by omega) (by omega)
+  change cN P (h-1) (1+K)≤cN Q (h-1) (1+K) at hc
+  rw [hp,hq] at hc
+  exact Nat.le_trans hm (by simpa using hc)
+
+/-- Low A retain their exact original supplied/free tags. In
+particular the pair cannot silently be counted as two free events. -/
+theorem nearest_pair_actual_count (f : Nat → Bool) (h K : Nat)
+    (hS : ∀ i, i<h → f i=false) :
+    2*cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬EndN f 0 t) h K+
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ EndN f h t) h K := by
+  let L := fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true
+  have hc0 := nearest_level_count f h K (Fw f h) hS (by omega) (by omega)
+  have hc1 := nearest_level_count f h K (Fw f h+1) hS (by omega) (by omega)
+  have hsplit := cN_split L (fun t => Fw f t=Fw f h) h K
+  have h0 : cN (fun t => L t ∧ Fw f t=Fw f h) h K=cN (fun t => Fw f t=Fw f h ∧ f t=true) h K := by
+    apply cN_congr
+    intro t _ _
+    dsimp [L]
+    constructor
+    · intro ht; exact ⟨ht.2,ht.1.2⟩
+    · intro ht; exact ⟨⟨Or.inl ht.1,ht.2⟩,ht.1⟩
+  have h1 : cN (fun t => L t ∧ ¬Fw f t=Fw f h) h K=cN (fun t => Fw f t=Fw f h+1 ∧ f t=true) h K := by
+    apply cN_congr
+    intro t _ _
+    dsimp [L]
+    constructor
+    · rintro ⟨⟨ha|ha,hA⟩,hn⟩
+      · exact (hn ha).elim
+      · exact ⟨ha,hA⟩
+    · intro ht; exact ⟨⟨Or.inr ht.1,ht.2⟩,by omega⟩
+  rw [h0,h1] at hsplit
+  have he := cN_split L (EndN f 0) h K
+  have hlocal : cN (fun t => L t ∧ EndN f 0 t) h K=
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ EndN f h t) h K := by
+    apply cN_congr
+    intro t _ _
+    dsimp [L]
+    constructor
+    · rintro ⟨⟨hc,hA⟩,ht⟩
+      exact ⟨hc,hA,(initial_S_low_target_source_iff f h t hS (by rcases hc with hc|hc <;> omega)).mp ht⟩
+    · rintro ⟨hc,hA,ht⟩
+      exact ⟨⟨hc,hA⟩,end_mono f 0 h t (Nat.zero_le _) ht⟩
+  have hf : cN (fun t => L t ∧ ¬EndN f 0 t) h K=
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬EndN f 0 t) h K := by
+    apply cN_congr
+    intro t _ _
+    dsimp [L]
+    exact and_assoc
+  rw [hlocal,hf] at he
+  omega
+
+end Recaman.NearestInitialSourcePair

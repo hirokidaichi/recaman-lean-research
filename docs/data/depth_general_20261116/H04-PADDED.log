@@ -1,0 +1,34 @@
+Recaman/PaddedInitialSTrimBoundary.lean:21:66: error: don't know how to synthesize placeholder
+context:
+ht : 4 ≤ 8
+ht12 : 8 < 12
+h : EndN f 0 8
+hl : ThreeNonsuppliedData.localSupply (seg f 0 (8 - 0)) = true
+⊢ Nat
+Recaman/PaddedInitialSTrimBoundary.lean:34:66: error: don't know how to synthesize placeholder
+context:
+ht : 4 ≤ 7
+ht11 : 7 < 11
+h : EndN g 0 7
+hl : ThreeNonsuppliedData.localSupply (seg g 0 (7 - 0)) = true
+⊢ Nat
+Recaman/PaddedInitialSTrimBoundary.lean:87:53: error: Tactic `decide` failed for proposition
+  cN (fun i => f i = false) 4 1 = 1
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun i => f i = false) 4 1) 1
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun i => f i = false) 4 1).beq 1 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯
+Recaman/PaddedInitialSTrimBoundary.lean:101:53: error: Tactic `decide` failed for proposition
+  cN (fun i => g i = false) 4 1 = 1
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun i => g i = false) 4 1) 1
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun i => g i = false) 4 1).beq 1 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯

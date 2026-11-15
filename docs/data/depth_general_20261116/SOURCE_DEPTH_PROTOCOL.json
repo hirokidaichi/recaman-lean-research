@@ -1,0 +1,46 @@
+{
+  "candidate": "H-20261116-02 old exclusive source depth d<=all past original free, fullprefix actual positive; endpoint included",
+  "mechanism": "source-survival reserve V, original initial-S quadratic/source keys; not generic height maximum beam or old stopped H03",
+  "modes": {
+    "discovery": {
+      "h": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "max_suffix_length": 16,
+      "evaluator": "all-source forward key set",
+      "cpu_cap": 3,
+      "cooperative_stop": 2.15,
+      "wall_cap": 6
+    },
+    "holdout": {
+      "h": [
+        9,
+        10,
+        12
+      ],
+      "max_suffix_length": 12,
+      "evaluator": "independent reverse literal all-source area",
+      "cpu_cap": 3,
+      "cooperative_stop": 2.15,
+      "wall_cap": 6
+    }
+  },
+  "stop": "One frozen pass each, no cutoff increase or resource-only retry. Finite absence only COMPUTED/methodSTOPPED; counter gets independent explicit-source verification before REFUTED. Histories may share suffix patterns; no statistically independent fresh holdout claim.",
+  "worker_sha256": "5abcdb29230bda110f01f7e590ab16d1fbfdf476e08659db9f5d2f6909db1588",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "438f4d545f0802d19c6b6b24b9a6ce3593c0c5a7367e8a950a2b5fc7b9951ffb",
+  "new_Lean_source_hashes": {
+    "Recaman/SameSourceLowCrossings.lean": "5d1b6d1a16a08033382399dafe13de8332a3a56c502b10af25074137c6922753",
+    "Recaman/NearestInitialSourcePair.lean": "4abeeaba87e065d80b4c5f6f895de331d0ce8aca406cf652ad0f55492b0cffab"
+  },
+  "all_other_old_sources_preserved": true,
+  "separate_budget": "6 mathematical worker CPU cap, guard/Lean/controller not charged as mathematical worker"
+}

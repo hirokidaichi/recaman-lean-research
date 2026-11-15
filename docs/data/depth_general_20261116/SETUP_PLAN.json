@@ -1,0 +1,27 @@
+{
+  "parent": "R-20261116-01",
+  "session": "552000a3-4f01-4fc0-94bf-3e7247e6d9d2",
+  "actual_start": "2026-11-16T06:02:16.218992+09:00",
+  "baseline_HEAD": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "branch": "main",
+  "remote": "origin/main",
+  "fetched_remote_matches": true,
+  "unowned_paths": [
+    "docs/data/daily_research/2026-11-07.json"
+  ],
+  "initial_math_worker_cpu_budget": 0,
+  "nominal_minutes": {
+    "setup": 10,
+    "local": 30,
+    "general": 60,
+    "audit": 10,
+    "handoff": 10
+  },
+  "late_start_policy": "No retroactive credit or08:00 extension; protect audit/publication, shorten local vs general1:2 if necessary. Saved setup may fund G/audit.",
+  "first_general_unit": "H01 first15min, D_near<=low original free at height<=Fw(h)+1",
+  "independent_general_unit": "H02 >=25min, actual old-source depth V<=whole original free for source-sensitive cut",
+  "local": "optional j4/n+2 residual only after new mathematical input, max30min, d2/k7 kept",
+  "last_completed_G_streak": 0,
+  "new_math_cutoff": "07:45",
+  "publication": "after07:45, stopped finalized journal first, exact owned files/hooks/burst flag on single snapshot command only; normal origin/main push + SHA/CI distinction"
+}

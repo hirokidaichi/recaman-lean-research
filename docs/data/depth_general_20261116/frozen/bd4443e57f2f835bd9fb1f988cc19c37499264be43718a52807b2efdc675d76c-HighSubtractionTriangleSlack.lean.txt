@@ -1,0 +1,139 @@
+import Recaman.HighWindowSquareBudget
+
+namespace Recaman.HighSubtractionTriangleSlack
+
+open Recaman.HighWindowSquareBudget Recaman.LevelTriangleArea
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+
+/-- Exact discarded resource in the signed triangle inequality. -/
+def triangleSlack (f : Nat → Bool) (s : Nat) (r : Int) (K : Nat) : Int :=
+  2*areaFromLevel f s r K+belowTriangle r (Fw f (s+K))-belowTriangle r (Fw f s)+
+    2*lowAdditionWeights f s r K-aboveTriangle r (Fw f (s+K))+aboveTriangle r (Fw f s)
+
+theorem slack_nonnegative (f : Nat → Bool) (s : Nat) (r : Int) (K : Nat) :
+    0≤triangleSlack f s r K := by
+  have hh := (signed_area_with_low_weights f s r K).2
+  unfold triangleSlack
+  omega
+
+theorem slack_append (f : Nat → Bool) (s : Nat) (r : Int) (a b : Nat) :
+    triangleSlack f s r (a+b)=triangleSlack f s r a+triangleSlack f (s+a) r b := by
+  have ha := area_from_level_split f s (s+a) (s+a+b) r (by omega) (by omega)
+  rw [show s+a+b-s=a+b by omega,show s+a-s=a by omega,show s+a+b-(s+a)=b by omega] at ha
+  unfold triangleSlack
+  rw [low_weights_append]
+  rw [show s+(a+b)=s+a+b by omega]
+  omega
+
+/-- A high original S spends its exact strict triangle slack. -/
+theorem high_S_single_slack (f : Nat → Bool) (t : Nat) (r : Int)
+    (hS : f t=false) (hHigh : r+1≤Fw f t) :
+    triangleSlack f t r 1=4*(Fw f t-r)-2 := by
+  have hs : Fw f (t+1)=Fw f t-1 := by
+    rcases fw_cases f t with ⟨_,hA⟩|⟨hh,_⟩
+    · simp [hS] at hA
+    · exact hh
+  have hAr : areaFromLevel f t r 1=Fw f t-1-r := by
+    simp [areaFromLevel,Ar,hs]
+    omega
+  have hW : lowAdditionWeights f t r 1=0 := by simp [lowAdditionWeights,lowAdditionWeight,hS]
+  have hB0 : belowTriangle r (Fw f t)=0 := by simp [belowTriangle,Int.max_eq_left (show r-Fw f t≤0 by omega)]
+  have hB1 : belowTriangle r (Fw f (t+1))=0 := by
+    rw [hs]
+    simp [belowTriangle,Int.max_eq_left (show r-(Fw f t-1)≤0 by omega)]
+  have hT0 : aboveTriangle r (Fw f t)=(Fw f t-r)*(Fw f t-r+1) := by
+    simp [aboveTriangle,Int.max_eq_right (show 0≤Fw f t-r by omega)]
+  have hT1 : aboveTriangle r (Fw f (t+1))=(Fw f t-r-1)*(Fw f t-r) := by
+    rw [hs]
+    unfold aboveTriangle
+    rw [Int.max_eq_right (show 0≤Fw f t-1-r by omega)]
+    grind only
+  unfold triangleSlack
+  rw [hAr,hW,hB0,hB1,hT0,hT1]
+  grind only
+
+/-- One original high S anywhere in an interval makes its discarded
+resource at least two, regardless of all earlier sign history. -/
+theorem high_S_strict_slack (f : Nat → Bool) (s K z : Nat) (r : Int)
+    (hsz : s≤z) (hzK : z<s+K) (hS : f z=false) (hHigh : r+1≤Fw f z) :
+    2≤triangleSlack f s r K := by
+  have h0 := slack_append f s r (z-s) (K-(z-s))
+  rw [show z-s+(K-(z-s))=K by omega,show s+(z-s)=z by omega] at h0
+  have h1 := slack_append f z r 1 (K-(z-s)-1)
+  rw [show 1+(K-(z-s)-1)=K-(z-s) by omega] at h1
+  have hn0 := slack_nonnegative f s r (z-s)
+  have hn1 := slack_nonnegative f (z+1) r (K-(z-s)-1)
+  have hsingle := high_S_single_slack f z r hS hHigh
+  omega
+
+/-- E681's unused resource is exactly the two external triangle
+slacks and the internal low-A weight, in the unchanged original word. -/
+theorem internal_window_exact_slack (f : Nat → Bool) (s t q b : Nat) (r : Int)
+    (hst : s≤t) (htq : t<q) (hqb : q≤b) (hsF : r≤Fw f s)
+    (htF : r≤Fw f t) (hqF : r≤Fw f q) (hbF : r≤Fw f b)
+    (hWin : Win f t (q-t)) :
+    2*lowAdditionWeights f s r (b-s)+2*areaFromLevel f s r (b-s)+aboveTriangle r (Fw f s)-
+      (aboveTriangle r (Fw f t)+aboveTriangle r (Fw f b)-aboveTriangle r (Fw f q)+
+        2*((q-t : Nat) : Int)*(Fw f t-r))=
+      triangleSlack f s r (t-s)+triangleSlack f q r (b-q)+2*lowAdditionWeights f t r (q-t) := by
+  have hz (x : Int) (hx : r≤x) : belowTriangle r x=0 := by
+    simp [belowTriangle,Int.max_eq_left (show r-x≤0 by omega)]
+  have hmid : areaFromLevel f t r (q-t)=((q-t : Nat) : Int)*(Fw f t-r) := by
+    unfold areaFromLevel
+    rw [hWin.2.2,Int.zero_add]
+  have ha := area_from_level_split f s t b r hst (by omega)
+  have ha2 := area_from_level_split f t q b r (by omega) hqb
+  have hw := low_weights_append f s r (t-s) (b-t)
+  rw [show t-s+(b-t)=b-s by omega,show s+(t-s)=t by omega] at hw
+  have hw2 := low_weights_append f t r (q-t) (b-q)
+  rw [show q-t+(b-q)=b-t by omega,show t+(q-t)=q by omega] at hw2
+  unfold triangleSlack
+  rw [show s+(t-s)=t by omega,show q+(b-q)=b by omega,
+    hz _ hsF,hz _ htF,hz _ hqF,hz _ hbF]
+  rw [hmid] at ha2
+  omega
+
+/-- A tight actual-window budget forbids any external high S.
+The cap is geometric; no free/supply-family conclusion is assumed. -/
+theorem tight_window_no_external_high_S (f : Nat → Bool) (s t q b : Nat) (r : Int)
+    (hst : s≤t) (htq : t<q) (hqb : q≤b) (hsF : r≤Fw f s)
+    (htF : r≤Fw f t) (hqF : r≤Fw f q) (hbF : r≤Fw f b)
+    (hWin : Win f t (q-t))
+    (hcap : 2*lowAdditionWeights f s r (b-s)+2*areaFromLevel f s r (b-s)+aboveTriangle r (Fw f s)≤
+      aboveTriangle r (Fw f t)+aboveTriangle r (Fw f b)-aboveTriangle r (Fw f q)+
+        2*((q-t : Nat) : Int)*(Fw f t-r)) :
+    ∀ z, (s≤z ∧ z<t) ∨ (q≤z ∧ z<b) → f z=false → Fw f z≤r := by
+  have he := internal_window_exact_slack f s t q b r hst htq hqb hsF htF hqF hbF hWin
+  have hn0 := slack_nonnegative f s r (t-s)
+  have hn1 := slack_nonnegative f q r (b-q)
+  have hw := low_weights_nonnegative f t r (q-t)
+  intro z hz hzS
+  by_cases h : Fw f z≤r
+  · exact h
+  · rcases hz with hz|hz
+    · have hh := high_S_strict_slack f s (t-s) z r hz.1 (by omega) hzS (by omega)
+      omega
+    · have hh := high_S_strict_slack f q (b-q) z r hz.1 (by omega) hzS (by omega)
+      omega
+
+/-- Above r, forbidding a high S makes the original interval all A. -/
+theorem no_high_S_duration (f : Nat → Bool) (q K : Nat) (r : Int)
+    (hstart : r<Fw f q)
+    (hNo : ∀ z, q≤z → z<q+K → f z=false → Fw f z≤r) :
+    Fw f (q+K)=Fw f q+(K : Int) := by
+  have hh : ∀ k, k≤K → Fw f (q+k)=Fw f q+(k : Int) := by
+    intro k hk
+    induction k with
+    | zero => simp
+    | succ k ih =>
+      have hi := ih (by omega)
+      have hA : f (q+k)=true := by
+        cases hf : f (q+k) with
+        | true => rfl
+        | false => have hn := hNo (q+k) (by omega) (by omega) hf; omega
+      rw [show q+(k+1)=q+k+1 by omega,Fw_succ,hA]
+      change Fw f (q+k)+1=Fw f q+((k+1 : Nat) : Int)
+      omega
+  exact hh K (Nat.le_refl _)
+
+end Recaman.HighSubtractionTriangleSlack

@@ -1,0 +1,25 @@
+{
+  "tag": "H02-BOOT-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSOneHeadPositive.olean",
+    "Recaman/InitialSOneHeadPositive.lean"
+  ],
+  "started_jst": "2026-11-16T06:45:31.080674+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSOneHeadPositive.lean": "8cf429199326b242f34af4b44ae52fe54ecc64875c1b7cfa915a55bb3d055616"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "001da62eb58af9bb91d3f765207e7c5a1d7965e76533b0bbe65640e546aa7ab8",
+  "source_tree_sha256": "9df197ef927a906a1913f220ee0556bf51ec72faa61b1e68d31df1289f58f20a",
+  "source_tree_manifest": "H02-BOOT-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

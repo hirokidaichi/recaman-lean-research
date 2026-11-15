@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-16T07:33:37.627940+09:00",
+  "tag": "H04-flux-reverse",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261116/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261116/padded_flux_certificate.py",
+    "reverse"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "6510b5c50ed2617527bf95c9c133ef6eaa3681f8835dcd021a1d742d95e9f23f",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 63595,
+  "process_group": 63595,
+  "finished_jst": "2026-11-16T07:33:37.663614+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.03576458297902718,
+  "worker_user_seconds": 0.026003,
+  "worker_sys_seconds": 0.0057139999999999995,
+  "worker_cpu_seconds": 0.031716999999999995,
+  "worker_maxrss_native": 23019520,
+  "controller_cpu_seconds": 0.0013800000000000002,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

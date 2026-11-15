@@ -1,0 +1,85 @@
+Recaman/NearestInitialSourcePair.lean:19:5: error: unknown tactic
+Recaman/NearestInitialSourcePair.lean:18:19: error: unsolved goals
+f : Nat → Bool
+h b : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+hhb : h ≤ b
+hn : ¬EndN f h b
+hheight : Fw f b - Fw f h = 2
+ha : f b = true
+t k : Nat
+left✝ : 0 ≤ t
+htk : t + k = b
+hw : Win f t k
+⊢ t < h
+Recaman/NearestInitialSourcePair.lean:16:35: error: unsolved goals
+f : Nat → Bool
+h b : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+hhb : h ≤ b
+hn : ¬EndN f h b
+hheight : Fw f b - Fw f h = 2
+ha : f b = true
+t k : Nat
+left✝ : 0 ≤ t
+htk : t + k = b
+hw : Win f t k
+ht : t < h
+⊢ 0 < h ∧ Win f (h - 1) (b - (h - 1))
+Recaman/NearestInitialSourcePair.lean:41:85: error: No goals to be solved
+Recaman/NearestInitialSourcePair.lean:41:56: error: unsolved goals
+f : Nat → Bool
+h K : Nat
+l : Int
+hS : ∀ (i : Nat), i < h → f i = false
+hl : Fw f h ≤ l
+hu : l ≤ Fw f h + 1
+hh : ¬h = 0
+hs : f (h - 1) = false
+i : Nat
+hi : h - 1 ≤ i
+hi1 : i < h - 1 + 1
+this : i = h - 1
+⊢ f i = false
+Recaman/NearestInitialSourcePair.lean:105:5: error: unknown tactic
+Recaman/NearestInitialSourcePair.lean:101:86: error: unsolved goals
+f : Nat → Bool
+h K : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+L : Nat → Prop := fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true
+hc0 : cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t - Fw f h = 2) h K ≤ cN (fun t => Fw f t = Fw f h ∧ f t = true) h K
+hc1 :
+  cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t - Fw f h = 2) h K ≤ cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+hsplit : cN L h K = cN (fun t => Fw f t = Fw f h ∧ f t = true) h K + cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+h0 : cN (fun t => L t ∧ Fw f t = Fw f h) h K = cN (fun t => Fw f t = Fw f h ∧ f t = true) h K
+h1 : cN (fun t => L t ∧ ¬Fw f t = Fw f h) h K = cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+he : cN L h K = cN (fun i => L i ∧ EndN f 0 i) h K + cN (fun i => L i ∧ ¬EndN f 0 i) h K
+hlocal :
+  cN (fun t => L t ∧ EndN f 0 t) h K =
+    cN (fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ EndN f h t) h K
+t : Nat
+a✝¹ : h ≤ t
+a✝ : t < h + K
+⊢ ((Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true) ∧ ¬EndN f 0 t ↔
+    (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ ¬EndN f 0 t
+Recaman/NearestInitialSourcePair.lean:67:85: error: unsolved goals
+f : Nat → Bool
+h K : Nat
+hS : ∀ (i : Nat), i < h → f i = false
+L : Nat → Prop := fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true
+hc0 : cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t - Fw f h = 2) h K ≤ cN (fun t => Fw f t = Fw f h ∧ f t = true) h K
+hc1 :
+  cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t - Fw f h = 2) h K ≤ cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+hsplit : cN L h K = cN (fun t => Fw f t = Fw f h ∧ f t = true) h K + cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+h0 : cN (fun t => L t ∧ Fw f t = Fw f h) h K = cN (fun t => Fw f t = Fw f h ∧ f t = true) h K
+h1 : cN (fun t => L t ∧ ¬Fw f t = Fw f h) h K = cN (fun t => Fw f t = Fw f h + 1 ∧ f t = true) h K
+he : cN L h K = cN (fun i => L i ∧ EndN f 0 i) h K + cN (fun i => L i ∧ ¬EndN f 0 i) h K
+hlocal :
+  cN (fun t => L t ∧ EndN f 0 t) h K =
+    cN (fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ EndN f h t) h K
+hf :
+  cN (fun t => L t ∧ ¬EndN f 0 t) h K =
+    cN (fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ ¬EndN f 0 t) h K
+⊢ 2 * cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t - Fw f h = 2) h K ≤
+    cN (fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ ¬EndN f 0 t) h K +
+      cN (fun t => (Fw f t = Fw f h ∨ Fw f t = Fw f h + 1) ∧ f t = true ∧ EndN f h t) h K

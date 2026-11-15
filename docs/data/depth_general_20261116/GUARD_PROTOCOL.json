@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-16",
+  "contract": "Cooperative single Python worker; audit rejects descendants/exec/ctypes, process CPU includes threads. Not generic tree cumulative cap or security sandbox.",
+  "math_worker_budget_before_guard": 0,
+  "guard_jobs": [
+    {
+      "mode": "normal",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "fork",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "exec",
+      "cpu": 1,
+      "wall": 3
+    },
+    {
+      "mode": "wall",
+      "cpu": 1,
+      "wall": 0.25
+    },
+    {
+      "mode": "cpu",
+      "cpu": 1,
+      "wall": 3
+    }
+  ],
+  "requested_budget_after_acceptance": {
+    "discovery": 3,
+    "independent_reverse_validation": 3,
+    "total_worker_cap": 6
+  },
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "hashes": {
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  "stop": "All five tests must match expected status/log before new mathematical worker; no resource-only retry after CPU stop."
+}

@@ -1,0 +1,31 @@
+{
+  "tag": "H04-PADDED",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/PaddedInitialSTrimBoundary.olean",
+    "Recaman/PaddedInitialSTrimBoundary.lean"
+  ],
+  "started_jst": "2026-11-16T07:23:40.489738+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/PaddedInitialSTrimBoundary.lean": "2523bcecb6cde44a1c395c0f9964102551fcb3070669a11c1897276ebebb9682"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "b5190d87d4062d9e95f0c9dfb0eaf4ac6797d6901b3bb2ad5c656b115c49e69f",
+  "source_tree_sha256": "7e7ea22c6af0bfd7182ae62921d4270879fe39ac07a56a1da3d3aec0e3e42f09",
+  "source_tree_manifest": "H04-PADDED-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "b5190d87d4062d9e95f0c9dfb0eaf4ac6797d6901b3bb2ad5c656b115c49e69f",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.7690222499950323,
+  "cpu_seconds": 0.590284,
+  "finished_jst": "2026-11-16T07:23:41.258673+09:00"
+}

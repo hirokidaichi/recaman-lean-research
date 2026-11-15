@@ -1,0 +1,22 @@
+{
+  "candidate": "unbounded free jump under one tail-S deletion after same padded old BlockWord, all-m exact family",
+  "source_sha256": "6510b5c50ed2617527bf95c9c133ef6eaa3681f8835dcd021a1d742d95e9f23f",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "fcc5635b2b647d15b9eeeca30bb70f2d5403296c75890be04c0005a4122ecd0a",
+  "modes": {
+    "reverse": [
+      1,
+      8
+    ],
+    "forward": [
+      9,
+      24
+    ]
+  },
+  "each_cpu_cap": 1,
+  "each_wall_cap": 3,
+  "cooperative_stop": 0.7,
+  "mathematical_used_before": 2.113555,
+  "daily_total_cap": 6,
+  "stop": "two formula-validation passes only; no enlargement, all-m proof is source classification on paper; not fresh holdout"
+}

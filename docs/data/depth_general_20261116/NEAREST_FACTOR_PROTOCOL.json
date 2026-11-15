@@ -1,0 +1,33 @@
+{
+  "candidate": "2 D_near<=F_low, stronger than open D_near<=F_low; only exact actual counterexample would refute corresponding statement",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "source_sha256": "a6d016e470d962e65d6ce9f36321be94cc574670cce9d791406e590e856fb00a",
+  "tracked_diff_sha256": "3eab8fa54ade812b206dc5821854bc37383ce3037e78ebfe63348e2b09aac01b",
+  "modes": {
+    "forward": {
+      "h": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "suffix_max": 18,
+      "evaluator": "all original source-key clock lists"
+    },
+    "reverse": {
+      "h": [
+        17,
+        31
+      ],
+      "suffix_max": 14,
+      "evaluator": "independent literal backward all-source area"
+    }
+  },
+  "each_cpu_cap": 2,
+  "cooperative_stop": 1.4,
+  "each_wall_cap": 4,
+  "daily_total_cpu_cap": 6,
+  "mathematical_actual_used_before": 0.69207,
+  "stop": "One frozen pass each, no enlarged cutoffs or resource retry. Finite absence STOPPED method, claim CONJECTURED. These are related/reused sign-prefix spaces, not fresh independent holdout.",
+  "new_mathematical_input": "E719 two ordered low images plus E723 nonshort cancellation. No free-image assumption."
+}

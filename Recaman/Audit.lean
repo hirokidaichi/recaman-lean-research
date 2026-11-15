@@ -4397,3 +4397,33 @@ import Recaman
 #print axioms Recaman.BoundedHeightAreaLoader.loader_prefix_control
 #print axioms Recaman.BoundedHeightAreaLoader.original_loader_control
 #print axioms Recaman.TwoFreeHeightPositive.SSAA_height_one_positive
+
+-- Same original source, two ordered low-A injections; not a free-count bound.
+#print axioms Recaman.SameSourceLowCrossings.ordered_low_predecessor
+#print axioms Recaman.SameSourceLowCrossings.same_source_level_count
+
+-- Nearest original source extracted internally; exact low actual/free split.
+#print axioms Recaman.NearestInitialSourcePair.nearest_source_window
+#print axioms Recaman.NearestInitialSourcePair.nearest_pair_actual_count
+
+-- Actual low-ceiling initial-S transport now pays the positive margin internally.
+#print axioms Recaman.InitialSOneHeadPositive.first_S_height_one_positive
+#print axioms Recaman.InitialSOneHeadPositive.one_head_preserves_actual_free_positive
+#print axioms Recaman.InitialSOneHeadPositive.retained_head_preserves_actual_free_positive
+
+-- Same-source ordered pair cancels short suppliers; only long actual images remain unpaid.
+#print axioms Recaman.SameSourceNonshortCharge.ordered_nonshort_predecessor
+#print axioms Recaman.SameSourceNonshortCharge.same_source_nonshort_count
+#print axioms Recaman.NearestInitialNonshortCharge.nearest_nonshort_count
+#print axioms Recaman.NearestInitialNonshortCharge.nearest_free_nonshort_budget
+#print axioms Recaman.NearestInitialNonshortCharge.nearest_counter_has_long_low_source
+
+-- Strict high-S slack and original tight seven-window counter prefix.
+#print axioms Recaman.HighSubtractionTriangleSlack.high_S_strict_slack
+#print axioms Recaman.HighSubtractionTriangleSlack.internal_window_exact_slack
+#print axioms Recaman.DepthSixTightSevenWindow.clock_two_four_internal_seven_end
+#print axioms Recaman.DepthSixTightSevenWindow.clock_two_four_internal_seven_prefix_area
+
+-- Preserving the old BlockWord does not preserve crossing suppliers under a tail-S deletion.
+#print axioms Recaman.PaddedInitialSTrimBoundary.padded_prefix_one_S_trim_changes_actual_free
+#print axioms Recaman.InitialSOneHeadPositive.padded_first_S_height_one_positive

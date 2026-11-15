@@ -1,0 +1,28 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-16（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+
+- **E-719 / E-720 / E-723 PROVED-LEAN**。同じ元sourceのtargetは二つの低Aへ順序単射。短SAAを内部消去してD_near<=F_two+O_two、反例なら長さ>=7/二つの低source高さの元local Winを内部抽出。O/free償却と異source族の負荷、D<=F/C1は未証明。
+- **E-722 PROVED-LEAN**。任意元padded old prefix/firstS/相対ceiling1からpositiveを内部供給。global initial-Sだけの保持C操作は明示ceiling C+1下で全actual/free/positiveを同時保存、下深さ/run/長さ無制限。任意上昇やold prefix後へのsource輸送は含めない。
+- **E-721 REFUTED（全h PAPER） / E-726 REFUTED（m1 kernel） / E-727 REFUTED（全m PAPER）**。D2固定でも源生存Vは非有界。同じold SAAAの後で一Sを削ると、h4/C3/幅4/両positive固定でもfree増加mは非有界。件数だけのhead費用/削除本数だけのfree費用を停止。全m未Lean、人間レビュー未、C1 counterではない。
+- **E-724 PROVED-LEAN / E-725 PROVED-PAPER（局所）**。深さ6/j4/n+2内部Win7枝で窓外highS0、b=u+9、元prefixmass2/area-33へstrict削減。最高actual枝の全source選択はPAPER、H03-REDUCE kernel512MB STOPPED/packet-only。最高free枝とprefix不存在/j4 fullgapは未証明。
+- 次回は[H-20261117-01](HYPOTHESIS_CARD_2026-11-17_SOURCE_ANCESTOR_FREE_CHARGE.md)の固定ancestor-free mapを15分gateで判定し、[旧floor clearance輸送](HYPOTHESIS_CARD_2026-11-17_OLD_FLOOR_GUARDED_TRIM.md)へ別機構25分以上。有限不在probeと全旧STOPは再開せず、local/G判定を分離する。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-719 [PROVED-LEAN] Ordered low-addition injections for one original source — Recaman/SameSourceLowCrossings.lean
+  E-720 [PROVED-LEAN] Nearest initial source exact two-level actual count — Recaman/NearestInitialSourcePair.lean
+  E-723 [PROVED-LEAN] Common-source low images cancel every internal short supplier — Recaman/NearestInitialNonshortCharge.lean
+  E-722 [PROVED-LEAN] Retained initial S head pays original positive transport — Recaman/InitialSOneHeadPositive.lean
+  E-721 [REFUTED] Exclusive-target count alone cannot bound source survival reserve — docs/RESEARCH_NOTE_2026-11-16_SOURCE_COUNT_RESERVE.md
+  E-726 [REFUTED] Initial-S trimming cannot cross an unchanged padded old prefix — Recaman/PaddedInitialSTrimBoundary.lean
+  E-727 [REFUTED] One padded-tail S deletion has unbounded original free cost — docs/RESEARCH_NOTE_2026-11-16_PADDED_SOURCE_FLUX.md
+  E-724 [PROVED-LEAN] Tight internal seven-window fixes original endpoint and prefix area — Recaman/DepthSixTightSevenWindow.lean
+  E-725 [PROVED-PAPER] High actual predecessor reduces to the tight seven-source prefix — docs/RESEARCH_NOTE_2026-11-16_TIGHT_SEVEN_PREFIX.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 1027 (including Audit)
+  Import contracts: 132; audit declarations: 3953

@@ -1,0 +1,14 @@
+# Final semantic/source/content audit, 2026-11-16
+
+Same-agent independent pass, human review still pending. No new mathematical exploration after the07:34:50 audit transition. Fullcheck-R passed1029 jobs/3953 permitted-axiom reports; first fullcheck stopped at missing frontier references before Lean build and was rerun after docs synchronization. Source tree hash3484d005ff7929f9a93d4f6684ed4665359b1f14232b19bf0717ec49aec89263 matches final accepted Lean/root/Audit.
+
+- E719/E723 are fixed-source image injections. Images may be original supplied; long actual low-source obligation remains unpaid. Fixed-source families cannot be summed as disjoint free claims. Strong2D_near<=Flow remains CONJECTURED; finite absence methodsSTOPPED.
+- E722 transports actual/free/domain only for a global initial all-S prefix with explicit C-dependent ceiling. Positive bootstrap extends to padded old prefix, source transport does not. Corrected shorthand C1 to C=1 in the registry to avoid confusion with central C1.
+- E721 all-h/D2/U2/Vh and E727 all-m/one-S/free-jumpm have complete paper all-source classifications. Finite receipts do not make the all-parameter results Lean. E726 is the finite m1 kernel countermodel. All histories are sign histories, no standard orbit reachability.
+- E724 conditional internalWin7 branch is kernel accepted and fixes endpoint/prefix only. E725 highest-actual-A source choice is PAPER; H03-REDUCE failed512MB at first pass. Its .lean bytes are isolated as .lean.txt and absent from root/Audit; no resource/tactic/import/helper-split retry. Highest-free branch and prefix existence are still open.
+- First-S ceiling1 failure at startsA/ceiling2, zero-head SA failure, and padded-prefix SAAA/S4A4->S3A4 are retained. All source-earlier prefixes/other masses remain in the adopted EndN0 statements. No arithmetic helper or same identity is counted as independent G success.
+- New source hashes match accepted -j1/-M512 receipts. No gate/hooks/protected claims changes; no sorry/admit/native_decide/customaxiom. Unused hhb binder warning is redundant scope, not a semantic or acceptance failure.
+- Ownership baseline main/origin-main6ce2d14, unowned11/07 journal preserved/excluded. No cache/lock/auth files included. Exact owned paths are frozen before publication; a subsequent remote advance blocks publication pending safe integration, never force.
+- Daily parent one, previous G-streak0, final G0 supported by new paid-positive operation and quantified no-go, not helper/module counts. Mixed06:37:44--06:41:04 local preparation is conservatively shifted from G in final phase accounting; independent mechanism26m36.209587s remains >=25m. No gaps/waiting credited.
+
+Next candidates are plans, not results. Publication occurs only after stopped journal and exact final values saved; its CPU/time is not returned to work. Final receipt has two exact SHA checks, with local/remote/hosted CI distinguished.

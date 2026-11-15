@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4399,
+   "lines": 4429,
    "imports": [
     "InitialSLowTargetTransport",
     "InitialSTransportBoundary",
@@ -28515,6 +28515,30 @@
    "hasReport": false
   },
   {
+   "name": "DepthSixTightSevenWindow",
+   "lines": 150,
+   "imports": [
+    "HighSubtractionTriangleSlack",
+    "DepthSixClockTwoFourBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "clock_two_four_internal_seven_end",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "clock_two_four_internal_seven_prefix_area",
+     "line": 81
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "DescendingChain",
    "lines": 198,
    "imports": [
@@ -34019,6 +34043,59 @@
    "hasReport": false
   },
   {
+   "name": "HighSubtractionTriangleSlack",
+   "lines": 140,
+   "imports": [
+    "HighWindowSquareBudget"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "triangleSlack",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "slack_nonnegative",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "slack_append",
+     "line": 19
+    },
+    {
+     "kind": "theorem",
+     "name": "high_S_single_slack",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "high_S_strict_slack",
+     "line": 57
+    },
+    {
+     "kind": "theorem",
+     "name": "internal_window_exact_slack",
+     "line": 71
+    },
+    {
+     "kind": "theorem",
+     "name": "tight_window_no_external_high_S",
+     "line": 99
+    },
+    {
+     "kind": "theorem",
+     "name": "no_high_S_duration",
+     "line": 121
+    }
+   ],
+   "theorems": 7,
+   "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "HighTargetBase",
    "lines": 92,
    "imports": [
@@ -34706,6 +34783,41 @@
     }
    ],
    "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialSOneHeadPositive",
+   "lines": 146,
+   "imports": [
+    "FirstSOneFreePrefix",
+    "SourceDeficitBand",
+    "InitialSLowTargetTransport"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "first_S_height_one_positive",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "one_head_preserves_actual_free_positive",
+     "line": 34
+    },
+    {
+     "kind": "theorem",
+     "name": "retained_head_preserves_actual_free_positive",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "padded_first_S_height_one_positive",
+     "line": 125
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -42313,6 +42425,65 @@
    "hasReport": true
   },
   {
+   "name": "NearestInitialNonshortCharge",
+   "lines": 136,
+   "imports": [
+    "SameSourceNonshortCharge",
+    "NearestInitialSourcePair",
+    "SFinalWindowLength"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "nearest_nonshort_count",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "nearest_free_nonshort_budget",
+     "line": 61
+    },
+    {
+     "kind": "theorem",
+     "name": "nearest_counter_has_long_low_source",
+     "line": 90
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "NearestInitialSourcePair",
+   "lines": 112,
+   "imports": [
+    "SameSourceLowCrossings",
+    "InitialSLowTargetTransport"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "nearest_source_window",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "nearest_level_count",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "nearest_pair_actual_count",
+     "line": 66
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "NegativeEpoch",
    "lines": 271,
    "imports": [
@@ -47171,6 +47342,25 @@
    "theorems": 14,
    "defs": 3,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PaddedInitialSTrimBoundary",
+   "lines": 106,
+   "imports": [
+    "InitialSOneHeadPositive",
+    "InitialSPaddingPositive"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "padded_prefix_one_S_trim_changes_actual_free",
+     "line": 39
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -57467,6 +57657,59 @@
    ],
    "theorems": 1,
    "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SameSourceLowCrossings",
+   "lines": 102,
+   "imports": [
+    "SupplyAreaCrossings",
+    "FloorSupplyFreeBudget"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_visit_after_anchor",
+     "line": 18
+    },
+    {
+     "kind": "theorem",
+     "name": "ordered_low_predecessor",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "same_source_level_count",
+     "line": 79
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SameSourceNonshortCharge",
+   "lines": 99,
+   "imports": [
+    "SameSourceLowCrossings",
+    "ShortSourceTriples"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "ordered_nonshort_predecessor",
+     "line": 42
+    },
+    {
+     "kind": "theorem",
+     "name": "same_source_nonshort_count",
+     "line": 76
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -70001,6 +70244,6 @@
    "hasReport": false
   }
  ],
- "total": 1019,
+ "total": 1027,
  "withReport": 167
 }

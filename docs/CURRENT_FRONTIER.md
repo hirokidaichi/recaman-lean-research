@@ -1,8 +1,16 @@
 # Current research frontier
 
-最終更新: 2026-11-15（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-16（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
 
 ## Research brief
+
+- **E-719 / E-720 / E-723 PROVED-LEAN**。同じ元sourceのtargetは二つの低Aへ順序単射。短SAAを内部消去してD_near<=F_two+O_two、反例なら長さ>=7/二つの低source高さの元local Winを内部抽出。O/free償却と異source族の負荷、D<=F/C1は未証明。
+- **E-722 PROVED-LEAN**。任意元padded old prefix/firstS/相対ceiling1からpositiveを内部供給。global initial-Sだけの保持C操作は明示ceiling C+1下で全actual/free/positiveを同時保存、下深さ/run/長さ無制限。任意上昇やold prefix後へのsource輸送は含めない。
+- **E-721 REFUTED（全h PAPER） / E-726 REFUTED（m1 kernel） / E-727 REFUTED（全m PAPER）**。D2固定でも源生存Vは非有界。同じold SAAAの後で一Sを削ると、h4/C3/幅4/両positive固定でもfree増加mは非有界。件数だけのhead費用/削除本数だけのfree費用を停止。全m未Lean、人間レビュー未、C1 counterではない。
+- **E-724 PROVED-LEAN / E-725 PROVED-PAPER（局所）**。深さ6/j4/n+2内部Win7枝で窓外highS0、b=u+9、元prefixmass2/area-33へstrict削減。最高actual枝の全source選択はPAPER、H03-REDUCE kernel512MB STOPPED/packet-only。最高free枝とprefix不存在/j4 fullgapは未証明。
+- 次回は[H-20261117-01](HYPOTHESIS_CARD_2026-11-17_SOURCE_ANCESTOR_FREE_CHARGE.md)の固定ancestor-free mapを15分gateで判定し、[旧floor clearance輸送](HYPOTHESIS_CARD_2026-11-17_OLD_FLOOR_GUARDED_TRIM.md)へ別機構25分以上。有限不在probeと全旧STOPは再開せず、local/G判定を分離する。
+
+## Previous research brief (2026-11-15)
 
 - **E-715 REFUTED（全Nの完全PAPER、未Lean）**。固定の深さ上限5/初期S2/元全prefix actual正不足でも、同じ最新freeにN件のexclusive old-source1 targetを集められる。負高さsource preload・全時計一意性と、bounded-height reservoir+最初の実free2で証明。従って深さだけに依存する最新free負荷上限も不可能。全元freeは増えるのでD<=F/C1反例ではない。有限N1..4等はCOMPUTEDで、全NのLean証明とは呼ばない。
 - **E-716 / E-717 / E-718 PROVED-LEAN**。任意finite suffixの一窓completion、全Dの高さ[-3,2]/面積D/zero-area return無しloader、元SSAAからfree2を内部導出するheight1 positive-domain支持。全N source preloadへの接着はPAPER。新一般化coverageをhelper数で二重計上しない。H09同時供給consumerは一修理後STOPPED/packet-only。

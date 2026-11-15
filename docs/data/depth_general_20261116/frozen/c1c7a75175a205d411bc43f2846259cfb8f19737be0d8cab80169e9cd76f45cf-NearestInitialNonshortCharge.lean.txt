@@ -1,0 +1,87 @@
+import Recaman.SameSourceNonshortCharge
+import Recaman.NearestInitialSourcePair
+
+namespace Recaman.NearestInitialNonshortCharge
+
+open Recaman.SameSourceNonshortCharge Recaman.NearestInitialSourcePair
+open Recaman.ShortSourceTriples Recaman.InitialSLowTargetTransport
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Classical
+
+/-- Cancelling internal SAA images leaves an original nonshort low A
+for every exclusive nearest-source target, with ordered distinct images. -/
+theorem nearest_nonshort_count (f : Nat → Bool) (h K : Nat)
+    (hS : ∀ i, i<h → f i=false) :
+    cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬shortEndpoint f h t) h K := by
+  by_cases hh : h=0
+  · subst h
+    have hz : cN (fun t => EndN f 0 t ∧ ¬EndN f 0 t ∧ Fw f t-Fw f 0=2) 0 K=0 :=
+      cN_zero_of _ _ _ (fun i _ _ hi => hi.2.1 hi.1)
+    omega
+  let s := h-1
+  have hs : s+1=h := by dsimp [s]; omega
+  have hS0 := hS s (by dsimp [s]; omega)
+  have hstep := fw_false_run f s 1 (fun i hi hi1 => by
+    have hie : i=s := by omega
+    simpa only [hie] using hS0)
+  rw [hs] at hstep
+  let P := fun t => f t=true ∧ s≤t ∧ Win f s (t-s)
+  let Q := fun t => (Fw f t=Fw f s-1 ∨ Fw f t=Fw f s) ∧ f t=true ∧ ¬shortEndpoint f s t
+  have hm : cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤cN P h K := by
+    apply cN_mono
+    intro t hht _ ht
+    have hw := nearest_source_window f h t hS hht ht.1 ht.2.1 ht.2.2
+    exact ⟨ht.1.1,by dsimp [s]; omega,hw.2⟩
+  have hp := cN_add P s 1 K
+  have hq := cN_add Q s 1 K
+  have hp0 : cN P s 1=0 := by simp [cN,P,hS0]
+  have hq0 : cN Q s 1=0 := by simp [cN,Q,hS0]
+  rw [hs,hp0] at hp
+  rw [hs,hq0] at hq
+  have hc := same_source_nonshort_count f s (1+K)
+  change cN P s (1+K)≤cN Q s (1+K) at hc
+  rw [hp,hq] at hc
+  have hmono : cN Q h K≤
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬shortEndpoint f h t) h K := by
+    apply cN_mono
+    intro t _ _ ht
+    rcases ht with ⟨ht,hA,hn⟩
+    refine ⟨?_,hA,?_⟩
+    · rcases ht with ht|ht
+      · exact Or.inl (by omega)
+      · exact Or.inr (by omega)
+    · intro hc
+      exact hn ⟨by have := hc.1; omega,hc.2⟩
+  exact Nat.le_trans hm (Nat.le_trans (by simpa using hc) hmono)
+
+/-- The unpaid image class consists only of original local supplies
+without an internal SAA; no short supplier is charged as free. -/
+theorem nearest_free_nonshort_budget (f : Nat → Bool) (h K : Nat)
+    (hS : ∀ i, i<h → f i=false) :
+    cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬EndN f 0 t) h K+
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ EndN f h t ∧ ¬shortEndpoint f h t) h K := by
+  let P := fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬shortEndpoint f h t
+  have hb := nearest_nonshort_count f h K hS
+  have hsplit := cN_split P (EndN f 0) h K
+  have hlocal : cN (fun t => P t ∧ EndN f 0 t) h K=
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ EndN f h t ∧ ¬shortEndpoint f h t) h K := by
+    apply cN_congr
+    intro t _ _
+    dsimp [P]
+    constructor
+    · rintro ⟨⟨hc,hA,hn⟩,he⟩
+      exact ⟨hc,(initial_S_low_target_source_iff f h t hS (by rcases hc with hc|hc <;> omega)).mp he,hn⟩
+    · rintro ⟨hc,he,hn⟩
+      exact ⟨⟨hc,he.1,hn⟩,end_mono f 0 h t (Nat.zero_le _) he⟩
+  have hf : cN (fun t => P t ∧ ¬EndN f 0 t) h K≤
+      cN (fun t => (Fw f t=Fw f h ∨ Fw f t=Fw f h+1) ∧ f t=true ∧ ¬EndN f 0 t) h K := by
+    apply cN_mono
+    intro t _ _ ht
+    exact ⟨ht.1.1,ht.1.2.1,ht.2⟩
+  rw [hlocal] at hsplit
+  change cN (fun t => EndN f 0 t ∧ ¬EndN f h t ∧ Fw f t-Fw f h=2) h K≤cN P h K at hb
+  omega
+
+end Recaman.NearestInitialNonshortCharge

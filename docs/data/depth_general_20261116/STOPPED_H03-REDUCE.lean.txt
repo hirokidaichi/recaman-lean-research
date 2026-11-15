@@ -1,0 +1,150 @@
+import Recaman.DepthSixTightSevenWindow
+import Recaman.SevenWindowPrefixFive
+
+namespace Recaman.DepthSixSevenSourceReduction
+
+open Recaman.DepthSixTightSevenWindow Recaman.DepthSixClockTwoFourBudget
+open Recaman.DepthSixFourRefinedWeight Recaman.DepthSixGapResidual
+open Recaman.HighWindowSquareBudget Recaman.LevelTriangleArea Recaman.SevenWindowPrefixFive
+open Recaman.BlockSuffixPositivity Recaman.SingleWindowEquality Recaman.CapacityEqualityInduction
+open Recaman.LeadingRunSupply
+
+-- Existing mod-four arithmetic transported to the original window, not new coverage.
+private theorem window_at_most_nine (f : Nat → Bool) (t k : Nat)
+    (h : Win f t k) (hk : k≤9) : k=3 ∨ k=7 := by
+  let e : Int → Bool := fun x => f x.toNat
+  let v := past e ((t+k : Nat) : Int) k
+  have hb := past_bridge e 0 t k
+  simp only [Int.zero_add,e,Int.toNat_natCast] at hb
+  change mass v=Fw f (t+k)-Fw f t ∧ moment v=Ar f t k at hb
+  have hp : P2 v := ⟨by rw [hb.1,h.2.1]; omega,hb.2.trans h.2.2⟩
+  have hi := p2_count_identities v hp
+  have hl : v.length=k := by simp [v,past]
+  rw [hl] at hi
+  omega
+
+/-- The actual predecessor of a high SAA internally supplies the
+length-seven branch, exact final offset and unchanged prefix area. -/
+theorem clock_two_four_high_predecessor_reduction (f : Nat → Bool) (n a b q : Nat)
+    {w : List Bool} (hw : BlockWord w) (hpre : seg f 0 n=w++List.replicate a true)
+    (hnb : n<b) (hfloor : ∀ i, n≤i → i≤b → Fw f n-6≤Fw f i)
+    (hpos : ∀ k, 0<k → k≤b-n → cN (EndN f 0) n k+1≤cN (fun i => f i=false) n k)
+    (hS : ∀ i, b≤i → i<b+4 → f i=false) (he : EndN f 0 (b+4))
+    (hcounter : cN (fun i => f i=true ∧ ¬EndN f 0 i) n (b-n)≤4)
+    (htb : n+2<b) (hwin : Win f (n+2) (b+4-(n+2)))
+    (hnq : n≤q) (hqb : q<b) (hqF : Fw f q=Fw f n+2) (hqe : EndN f 0 q) :
+    ∃ v, n+2≤v ∧ v+8=q ∧ b=v+9 ∧ Win f v 7 ∧
+      seg f v 7=[false,true,false,true,true,false,true] ∧
+      Fw f v-Fw f (n+2)=2 ∧ Ar f (n+2) (v-(n+2))= -33 := by
+  obtain ⟨x,hnx,hxq,hxF,hOuter,hZero,_⟩ := clock_two_four_high_source_SAA f n a b q 3
+    hw hpre hnb hfloor hpos hS he hcounter htb hwin hnq hqb (by omega) (by omega) hqe
+  obtain ⟨hSx,hAx1,hAx2⟩ := win3 f x hOuter
+  have hpA : f (q-1)=true := by simpa only [show q-1=x+2 by omega] using hAx2
+  have hpF : Fw f (q-1)=Fw f n+1 := by
+    have hh := Fw_succ f (q-1)
+    rw [show q-1+1=q by omega,hpA] at hh
+    change Fw f q=Fw f (q-1)+1 at hh
+    omega
+  have hpE : EndN f 0 (q-1) := by
+    by_cases hh : EndN f 0 (q-1)
+    · exact hh
+    · exact (not_of_cN_zero
+        (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n (b-n)
+        hZero (q-1) (by omega) (by omega) ⟨by omega,hpA,hh⟩).elim
+  obtain ⟨_,v,k,_,hvk,hk,hRise,hAr⟩ := hpE
+  rw [hvk,hpF] at hRise
+  have hvF : Fw f v=Fw f n := by omega
+  have hnv : n≤v := by
+    by_cases hh : n≤v
+    · exact hh
+    · have hOld := (block_suffix_positive_walk f 0 n a hw hpre v (by omega) (by omega)).1
+      simp only [Nat.zero_add] at hOld
+      omega
+  have hInner : Win f v (q-1-v) := by
+    rw [show q-1-v=k by omega]
+    exact ⟨hk,by rw [hvk,hpF]; omega,hAr⟩
+  have hWeight := positive_four_eight_high_weight f n a b hw hpre hnb hfloor hpos hS he hcounter
+  obtain ⟨_,_,_,hTarget,_⟩ := positive_depth_six_counter_profile f n a b 4 hw hpre
+    hnb hfloor hpos hS he hcounter
+  have hLevel := hwin.2.1
+  rw [show n+2+(b+4-(n+2))=b+4 by omega] at hLevel
+  let r := Fw f n-2
+  have hn2r : Fw f (n+2)=r := by dsimp [r]; omega
+  have hn1 : Fw f (n+1)=Fw f n-1 := by
+    rcases fw_cases f n with ⟨h0,_⟩|⟨h0,_⟩
+    · rcases fw_cases f (n+1) with ⟨h1,_⟩|⟨h1,_⟩ <;>
+        rw [show n+1+1=n+2 by omega] at h1 <;> dsimp [r] at hn2r <;> omega
+    · exact h0
+  have hn1S : f (n+1)=false := by
+    rcases fw_cases f (n+1) with ⟨h1,hA⟩|⟨h1,hS⟩
+    · rw [show n+1+1=n+2 by omega] at h1
+      dsimp [r] at hn2r
+      omega
+    · exact hS
+  have hDown := fw_false_run f b 4 hS
+  have hbF : Fw f b=r+5 := by dsimp [r]; omega
+  have htailAr : Ar f b 4= -10 := by rw [Ar_areaW,seg_false f b 4 hS]; decide
+  have htail : areaFromLevel f b r 4=10 := by
+    unfold areaFromLevel
+    rw [htailAr,hbF,show r+5-r=5 by omega]
+    decide
+  have hFull : areaFromLevel f (n+2) r (b+4-(n+2))=0 := by
+    unfold areaFromLevel
+    rw [hwin.2.2,hn2r]
+    simp
+  have hArea := area_from_level_split f (n+2) b (b+4) r (by omega) (by omega)
+  rw [hFull,show b+4-b=4 by omega,htail] at hArea
+  have hFirstAr : Ar f n 2= -3 := by
+    change Ar f n 0+(Fw f (n+1)-Fw f n)+(Fw f (n+2)-Fw f n)= -3
+    simp only [Ar,hn1,hn2r]
+    dsimp [r]
+    omega
+  have hFirst : areaFromLevel f n r 2=1 := by
+    unfold areaFromLevel
+    rw [hFirstAr]
+    dsimp [r]
+    omega
+  have hWhole := area_from_level_split f n (n+2) b r (by omega) (by omega)
+  rw [show n+2-n=2 by omega,hFirst] at hWhole
+  have hBudget := internal_window_area_budget f n v (q-1) b r hnv (by omega) (by omega)
+    (by dsimp [r]; omega) (by dsimp [r]; omega) (by dsimp [r]; omega) (by omega) hInner
+  have htri (z : Int) (hz : 0≤z) : aboveTriangle r (r+z)=z*(z+1) := by
+    unfold aboveTriangle
+    rw [show r+z-r=z by omega,Int.max_eq_right hz]
+  have hnF : Fw f n=r+2 := by dsimp [r]; omega
+  have hpF' : Fw f (q-1)=r+3 := by dsimp [r]; omega
+  rw [hvF,hnF,hpF',hbF,htri 2 (by omega),htri 3 (by omega),htri 5 (by omega),
+    show r+2-r=2 by omega] at hBudget
+  have hH := Nat.zero_le (cN (fun i => Fw f n-4≤Fw f i ∧ f i=true ∧ ¬EndN f 0 i) n (b-n))
+  have hLen : q-1-v≤9 := by
+    change lowAdditionWeights f n r (b-n)+_≤36 at hWeight
+    omega
+  have h7 : q-1-v=7 := by
+    rcases window_at_most_nine f v (q-1-v) hInner hLen with h3|h7
+    · have hW3 : Win f v 3 := by rwa [h3] at hInner
+      have hA := (win3 f v hW3).2.1
+      rw [show v+1=x by omega,hSx] at hA
+      cases hA
+    · exact h7
+  have hW7 : Win f v 7 := by rwa [h7] at hInner
+  have hWord := actual_seven_ending_SA f v hW7
+    (by simpa only [show v+5=x by omega] using hSx)
+    (by simpa only [show v+6=x+1 by omega] using hAx1)
+  have hnv2 : n+2≤v := by
+    by_cases hn0 : v=n
+    · have hGet := seg_get f v 7 1 (by decide)
+      rw [hWord] at hGet
+      change some true=some (f (v+1)) at hGet
+      rw [hn0,hn1S] at hGet
+      cases hGet
+    · by_cases hv1 : v=n+1
+      · rw [hv1,hn1] at hvF
+        omega
+      · omega
+  obtain ⟨hEnd,_⟩ := clock_two_four_internal_seven_end f n a b v (q-1) hw hpre hnb hfloor
+    hpos hS he hcounter htb hwin hnv2 (by omega) (by omega) hvF hW7
+  obtain ⟨hMass,hPrefix⟩ := clock_two_four_internal_seven_prefix_area f n a b v (q-1) hw hpre hnb hfloor
+    hpos hS he hcounter htb hwin hnv2 (by omega) (by omega) hvF hW7
+  exact ⟨v,hnv2,by omega,hEnd,hW7,hWord,hMass,hPrefix⟩
+
+end Recaman.DepthSixSevenSourceReduction

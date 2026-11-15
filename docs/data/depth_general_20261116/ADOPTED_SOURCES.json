@@ -1,0 +1,66 @@
+[
+  {
+    "file": "Recaman/SameSourceLowCrossings.lean",
+    "sha256": "5d1b6d1a16a08033382399dafe13de8332a3a56c502b10af25074137c6922753",
+    "accepted_capped_tag": "H01-PAIR",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/NearestInitialSourcePair.lean",
+    "sha256": "4abeeaba87e065d80b4c5f6f895de331d0ce8aca406cf652ad0f55492b0cffab",
+    "accepted_capped_tag": "H01-NEAR-R",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/InitialSOneHeadPositive.lean",
+    "sha256": "97c7c4a43ecf8309e0cf538fcf05034965c24ed9e76fe6f8a8c5aec1e32dab34",
+    "accepted_capped_tag": "H04-POSITIVE",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/SameSourceNonshortCharge.lean",
+    "sha256": "d949799da07716357127f62447ba01402142c5bfdd63094ec37a10651ec3e192",
+    "accepted_capped_tag": "H01-NONSHORT",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/NearestInitialNonshortCharge.lean",
+    "sha256": "4d30943001d5d6a92eb12157cad52bb0d9e64f6f660776f4e4f3ed3ded194234",
+    "accepted_capped_tag": "H01-LONG",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/HighSubtractionTriangleSlack.lean",
+    "sha256": "a8c600535eebcc579f48cd34e72f0c727a95d0001aa729ca15b12ce33d05d69f",
+    "accepted_capped_tag": "H03-SLACK-R",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/DepthSixTightSevenWindow.lean",
+    "sha256": "f2660aa6fdf55378bd9a728b2beb5f0871deb27460faee9881f381145fc6a0c9",
+    "accepted_capped_tag": "H03-PREFIX",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  },
+  {
+    "file": "Recaman/PaddedInitialSTrimBoundary.lean",
+    "sha256": "dd737870c02fb7f62aceede3f61707c8a88da892a77d5050a4f8cf473b24a761",
+    "accepted_capped_tag": "H04-PADDED-R",
+    "max_memory_MB": 512,
+    "individual_cpu_cap_seconds": 10,
+    "individual_group_wall_cap_seconds": 20
+  }
+]

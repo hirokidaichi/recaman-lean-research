@@ -1,0 +1,27 @@
+Recaman/InitialSOneHeadPositive.lean:20:15: error(lean.unknownIdentifier): Unknown identifier `Recaman.RunSupplyBudget.count_prefix_le`
+Recaman/InitialSOneHeadPositive.lean:63:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fw ?f (?k + 1)
+in the target expression
+  Fw (fun i => f (s + i)) k + ShortPeriodicSupply.sign (f (s + k)) = Fw f (s + (k + 1)) - Fw f s
+
+case succ
+f : Nat → Bool
+h K : Nat
+hh : 1 ≤ h
+hS : ∀ (i : Nat), i < h → f i = false
+hCeil : ∀ (t : Nat), h ≤ t → t ≤ h + K → Fw f t ≤ Fw f h + 2
+s : Nat := h - 1
+hs : s + 1 = h
+hfirst : f s = false
+hStep : Fw f h = Fw f s - ↑1
+hrem : ∀ (i : Nat), i < s → f i = false
+htarget : ∀ (t : Nat), s ≤ t → t ≤ h + K → Fw f t ≤ Fw f s + 1
+hcounts :
+  cN (EndN f 0) 0 (h + K) = cN (EndN (fun i => f (s + i)) 0) 0 (K + 1) ∧
+    free f 0 (h + K) = free (fun i => f (s + i)) 0 (K + 1) ∧
+      cN (fun i => f i = false) 0 (h + K) = s + cN (fun i => f (s + i) = false) 0 (K + 1) ∧
+        ↑(cN (fun i => f i = false) 0 (h + K)) - ↑(cN (EndN f 0) 0 (h + K)) =
+          ↑s + ↑(cN (fun i => f (s + i) = false) 0 (K + 1)) - ↑(cN (EndN (fun i => f (s + i)) 0) 0 (K + 1))
+k : Nat
+ih : Fw (fun i => f (s + i)) k = Fw f (s + k) - Fw f s
+⊢ Fw (fun i => f (s + i)) k + ShortPeriodicSupply.sign (f (s + k)) = Fw f (s + (k + 1)) - Fw f s

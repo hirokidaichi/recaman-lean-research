@@ -1,0 +1,25 @@
+{
+  "tag": "H01-LONG",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/NearestInitialNonshortCharge.olean",
+    "Recaman/NearestInitialNonshortCharge.lean"
+  ],
+  "started_jst": "2026-11-16T06:58:20.769769+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/NearestInitialNonshortCharge.lean": "4d30943001d5d6a92eb12157cad52bb0d9e64f6f660776f4e4f3ed3ded194234"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "23f561cf0a5100c7495c43444d30e7cbdaf489655671caa8b9a15a84f4d9e446",
+  "source_tree_sha256": "c31877579449987f4fa43333030c3b2f9066da4b2bbb2eb670f490cb47584d96",
+  "source_tree_manifest": "H01-LONG-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

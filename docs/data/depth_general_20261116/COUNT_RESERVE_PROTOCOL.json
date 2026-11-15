@@ -1,0 +1,28 @@
+{
+  "question": "For all g:Nat->Nat, count-only head budget g(D) cannot preserve all actual old targets of every initial-S positive history. Counterfamily S^h A^(2h) S^(h-1) A, h>=2, D2/U2/Vh/F2h-1.",
+  "source_sha256": "4fede9a67fafe1e4c21775c5266b1e2121ce8881b8d025b7938a5578927a5027",
+  "revision": "6ce2d14072e4858ff528a86a549e6ea7929e345c",
+  "tracked_diff_sha256": "438f4d545f0802d19c6b6b24b9a6ce3593c0c5a7367e8a950a2b5fc7b9951ffb",
+  "modes": {
+    "reverse": {
+      "h": [
+        2,
+        24
+      ],
+      "cpu_cap": 1,
+      "wall_cap": 4,
+      "cooperative_stop": 0.7
+    },
+    "forward": {
+      "h": [
+        25,
+        64
+      ],
+      "cpu_cap": 1,
+      "wall_cap": 4,
+      "cooperative_stop": 0.7
+    }
+  },
+  "budget_reallocation": "from unused actual portion of mathematical total6CPU, exact new all-h certificate not old finite-absence restart; measured total so far .544228",
+  "scope": "finite formula verification only; all h proof is exact source enumeration on paper; related known sharp three-run Win is input, not new coverage"
+}
