@@ -45,7 +45,7 @@ H03-REDUCEはkernel512MBで初回STOPPED、修理0、[隔離source](data/depth_g
 
 ## 保存・公開
 
-@@PUBLICATION@@
+研究snapshot **280916df6668f2f1a4df3ff3771192df6ff3105b** を通常pushで **origin/main** へ保存し、`git ls-remote origin refs/heads/main`の完全一致を確認。hosted CIは未確認（該当SHAのrun未取得）。ローカル全体検証とremote到達を区別する。[公開receipt](data/depth_general_20261116/publication_snapshot/PUBLICATION_RECEIPT.json)を参照。この照合記録をdocs-onlyの最終commitへ保存し、そのSHA/remote/CIは自己参照を避け当日chatへ報告する。未保存の研究成果なし。
 
 ## 最終追加handoff
 
