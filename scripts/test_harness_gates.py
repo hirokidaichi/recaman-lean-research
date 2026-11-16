@@ -63,7 +63,7 @@ class HarnessGateTests(unittest.TestCase):
         return result
 
     def test_live_registry_and_protected_claims(self):
-        for args in [["--check-registry"], ["--check-protected"]]:
+        for args in [["--check-registry"], ["--check-protected"], ["--check-pins-static"]]:
             with self.subTest(args=args):
                 result = self.run_gate(*args, cwd=ROOT)
                 self.assertEqual(result.returncode, 0, result.stderr)
@@ -166,6 +166,47 @@ class HarnessGateTests(unittest.TestCase):
         self.audit.write_text(before + after, encoding="utf-8")
         self.assert_rejected("G5", CONDITIONAL + ": needs exactly one completed check 3")
 
+    def pins_fixture(self, rows, lean=None, lock="Recaman.a\tdef\t0\t0\n"):
+        pins = self.root / "PINS.tsv"
+        pins.write_text("id\tpin\tnote\n" + "".join("\t".join(r) + "\n" for r in rows), encoding="utf-8")
+        source = self.root / "Pins.lean"
+        source.write_text(lean if lean is not None else (ROOT / "docs/protected_pins/ProtectedStatements.lean").read_text(encoding="utf-8"),
+                          encoding="utf-8")
+        lockfile = self.root / "definitions.lock"
+        lockfile.write_text(lock, encoding="utf-8")
+        return self.run_gate("--check-pins-static", ROOT / "docs/PROTECTED_CLAIMS.tsv", pins, source, lockfile)
+
+    LIVE_PINS = [["E-001", "RecamanProtected.E001", "n"], ["E-067", "RecamanProtected.E067", "n"],
+                 ["E-070", "RecamanProtected.E070", "n"], ["E-179", "-", "unpinned: reason"]]
+
+    def test_g6_static_accepts_live_shape(self):
+        result = self.pins_fixture(self.LIVE_PINS)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("3 of 4 protected claims pinned", result.stdout)
+
+    def test_g6_static_rejects_missing_or_unexplained_rows(self):
+        cases = {
+            "has no row": [r for r in self.LIVE_PINS if r[0] != "E-070"],
+            "without an \"unpinned: <reason>\" note": self.LIVE_PINS[:3] + [["E-179", "-", "later"]],
+            "is not a `def ... : Prop`": self.LIVE_PINS[:2] + [["E-070", "RecamanProtected.E999", "n"]] + self.LIVE_PINS[3:],
+            "which is not in": self.LIVE_PINS + [["E-500", "-", "unpinned: x"]],
+        }
+        for detail, rows in cases.items():
+            with self.subTest(detail=detail):
+                result = self.pins_fixture(rows)
+                self.assertEqual(result.returncode, 1, result.stdout)
+                self.assertIn(detail, result.stderr)
+
+    def test_g6_static_rejects_commented_out_pin_and_empty_lock(self):
+        text = (ROOT / "docs/protected_pins/ProtectedStatements.lean").read_text(encoding="utf-8")
+        commented = text.replace("def E070 : Prop :=", "/- def E070 : Prop := -/ def E070x : Prop :=")
+        result = self.pins_fixture(self.LIVE_PINS, lean=commented)
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("E-070 pin RecamanProtected.E070 is not", result.stderr)
+        result = self.pins_fixture(self.LIVE_PINS, lock="# only comments\n")
+        self.assertEqual(result.returncode, 1, result.stdout)
+        self.assertIn("is empty", result.stderr)
+
     def test_p_protected_label_changed(self):
         original = (ROOT / "docs/EVIDENCE_REGISTRY.tsv").read_text(encoding="utf-8")
         self.registry.write_text(original.replace("E-070\tCONJECTURED", "E-070\tPROVED-LEAN"), encoding="utf-8")
@@ -222,6 +263,7 @@ class RegistryWrapperTests(unittest.TestCase):
         self.assertIn("1 entries, 1 PROVED-LEAN", result.stdout)
         self.assertIn("delegated --check-registry", result.stdout)
         self.assertIn("delegated --check-protected", result.stdout)
+        self.assertIn("delegated --check-pins-static", result.stdout)
 
     def test_link_checks_do_not_launch_rg(self):
         marker = self.root / "rg-called"

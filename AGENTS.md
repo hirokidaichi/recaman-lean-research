@@ -70,6 +70,24 @@ what they check so you can work with them rather than around them.
   E-067, E-070 and E-179. Do not edit that file: changing a central label is a human decision
   and the commit needs `RECAMAN_HUMAN_APPROVED=1`. Never write that an issue is CLOSED in the
   docs unless it is closed on GitHub.
+- **Central statements are pinned in Lean (G6).** `docs/protected_pins/ProtectedStatements.lean`
+  states E-001, E-067 and E-070 as Lean `Prop`s in library vocabulary (E-179 is unpinned with a
+  reason in `PINS.tsv`), and `definitions.lock` freezes by hash every definition they mention.
+  `scripts/check.sh` runs `python3 scripts/harness_lean.py --check-pins`: a pinned claim may be
+  `PROVED-LEAN` only if one of its audit symbols proves the pinned `Prop` (unfold, intro, apply,
+  close the rest by `assumption`), and any change to a pinned definition fails the check. A
+  restricted theorem (for example E-128's `ssCount ≤ 1` capacity) or a conditional one (E-510's
+  `LineCapacity e`) is rejected. `docs/protected_pins/` is human-owned like
+  `PROTECTED_CLAIMS.tsv`: do not edit it or run `--update-lock`; commits touching it need
+  `RECAMAN_HUMAN_APPROVED=1`.
+- **Run the vacuity lint before registering (report-only).** `python3 scripts/harness_lean.py
+  --vacuity-row E-NNN` (or `--vacuity-module Recaman/Foo.lean`) reports, from the elaborated
+  proof terms, hypotheses the proof never uses, a hypothesis equal to the conclusion,
+  contradictory hypotheses and library-free automation; `?` means a timeout, not "clean". Paste
+  its output into the G5 statement audit and explain every `FLAG`. It does not block commits, and
+  a clean report is not evidence of substance. `FLAG`s on rows that are already registered (for
+  example E-720 `hhb`, E-718 `hK`) are informational: do not edit a registered theorem's
+  signature to silence one (G5 quotes it verbatim); leave a note for the human monitor instead.
 - **No inflated names (G4).** Theorem and module names containing grand, master, universal,
   closure, synthesis, resolution or apex are rejected for new rows. Name the inequality or
   invariant actually proven.
@@ -112,8 +130,10 @@ formal statement is weaker than its prose description has failed the audit even 
 
 ## Validation and handoff
 
-- Run `python3 scripts/harness_gate.py --lint-module <file>` on any new Lean file and
-  `bash scripts/test_harness_gates.sh` after touching the gates.
+- Run `python3 scripts/harness_gate.py --lint-module <file>` and
+  `python3 scripts/harness_lean.py --vacuity-module <file>` on any new Lean file,
+  `bash scripts/test_harness_gates.sh` after touching the gates and `make test-lean-gates`
+  after touching `scripts/harness_lean.py` or `scripts/lean/`.
 - Run `./scripts/check.sh` after Lean changes. New major theorems must be added to
   `Recaman/Audit.lean`.
 - Do not add `sorry`, `admit`, `native_decide`, or user-defined axioms.

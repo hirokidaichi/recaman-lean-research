@@ -138,3 +138,4 @@ echo "Research registry audit: $RECAMAN_ROW_COUNT entries, $RECAMAN_PROVED_LEAN_
 # PROVED-LEAN rows, and pinned labels for the central claims. See scripts/harness_gate.py.
 python3 scripts/harness_gate.py --check-registry
 python3 scripts/harness_gate.py --check-protected
+python3 scripts/harness_gate.py --check-pins-static

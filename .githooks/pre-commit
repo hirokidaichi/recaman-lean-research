@@ -23,6 +23,14 @@ if git diff --cached --name-only | grep -qx 'docs/PROTECTED_CLAIMS.tsv'; then
     exit 1
   fi
 fi
+# - docs/protected_pins/ (G6: the Lean statements of the central claims and the lock of the
+#   definitions they use) is human-owned for the same reason.
+if git diff --cached --name-only | grep -q '^docs/protected_pins/'; then
+  if [[ "${RECAMAN_HUMAN_APPROVED:-0}" != "1" ]]; then
+    echo "error: docs/protected_pins/ is staged; pinned central statements change only with RECAMAN_HUMAN_APPROVED=1" >&2
+    exit 1
+  fi
+fi
 # - At most one new Recaman module per commit, and at least 30 minutes after the previous commit
 #   that added one, unless RECAMAN_ALLOW_BURST=1. One module a minute was the incident's signature:
 #   no falsifier step can run at that pace.

@@ -1,0 +1,8 @@
+case	pin	theorem	expected	why
+E067-lag7-from-E071	PinFixtures.E067_lag7	Recaman.ShortPeriodicSupply.exists_phase_without_short_supply	pass	positive control: the pins use the vocabulary of the proved partial result
+E067-from-E071	RecamanProtected.E067	Recaman.ShortPeriodicSupply.exists_phase_without_short_supply	fail	a lag <= 7 result must not satisfy the all-lag claim
+E070-lowSS-from-E128	PinFixtures.E070_lowSS	Recaman.LowSSPeriodicSupply.periodic_lowSS_capacity	pass	positive control: E-128 proves the ssCount <= 1 restriction; its missing positivity hypothesis is allowed
+E070-from-E128	RecamanProtected.E070	Recaman.LowSSPeriodicSupply.periodic_lowSS_capacity	fail	the ssCount <= 1 hypothesis cannot be discharged from the pin
+E070-from-E510	RecamanProtected.E070	Recaman.LineCapacityPeriodic.periodic_capacity_of_line	fail	E-510 assumes the open conjecture H (and states supply in other vocabulary)
+E070-vacuous	RecamanProtected.E070	PinFixtures.vacuous_capacity	fail	conclusion-as-hypothesis theorem of the 2026-09-15 kind
+E001-from-conditional-coverage	RecamanProtected.E001	Recaman.all_targetResolvable_implies_surjective	fail	surjectivity from an unproved resolution hypothesis (the E-338..E-342 shape)

@@ -1,0 +1,30 @@
+# G6 definitions lock: every library constant the pinned statements mention, with
+# 64-bit fingerprints of its type and value. Human-owned (RECAMAN_HUMAN_APPROVED=1).
+# Regenerate only after reviewing the change: python3 scripts/harness_lean.py --update-lock
+# Drift limited to auxiliary names (*.match_N, *._f) usually comes from editing a
+# neighbouring definition that shares the matcher; `#print` the pinned definitions
+# before regenerating. Drift only causes false rejections, never acceptances.
+# toolchain: leanprover/lean4:v4.33.1
+# name	kind	type	value
+Recaman.CanSubtract	def	066858d2e83936c5	73e3c27059afb514
+Recaman.LagElevenPeriodic.subPhases	def	b92987f32f7dedec	624eba7fed6d33b5
+Recaman.ShortPeriodicSupply.P2	def	a05b9a9f521fa8b5	69b423d44aeb8f7d
+Recaman.ShortPeriodicSupply.sign	def	73af1562cc89797b	469fadc82498c597
+Recaman.ShortPeriodicSupply.signSum	def	06173216d9b91b4c	0ea8fefa8ad71888
+Recaman.ShortPeriodicSupply.signSum._f	def	46cd54ba4b4676f4	d0676c4f08015823
+Recaman.ShortPeriodicSupply.suppliedCount.match_1	def	2a58ab230c11ec06	aa27874e39d333b4
+Recaman.State	inductive	b234f3fe5ad0f103	ctors=[Recaman.State.mk]
+Recaman.State.mk	ctor	bce102fb08fbe664	-
+Recaman.State.seen	def	c308be8d41ae5c10	59ac424c53537c35
+Recaman.State.value	def	d259580617250569	c0146cbe225caab8
+Recaman.a	def	36a075148bcf33f0	0e0cb55c29c97aa3
+Recaman.initial	def	7674dd2cd0a77769	87e917fd1e6f8e8d
+Recaman.instDecidableCanSubtract	def	2891a5eb772f1a51	a3957b6d1f3966fb
+Recaman.nextValue	def	fae22f4de7f3a2da	13c85c2881b95dd1
+Recaman.stateAt	def	23bc580e2827f5bd	b9845f3a7937f573
+Recaman.stateAt._f	def	d36c2d2fa6e3b808	db3c57c3f118f33f
+Recaman.stateAt.match_1	def	39eda74e60713997	1f0da1e0215d2799
+Recaman.step	def	ff98aaebc972a42b	3b6b419fb14cfb0e
+RecamanProtected.E001	def	4217c7d6fcc8398b	005b1784b6b22216
+RecamanProtected.E067	def	4217c7d6fcc8398b	48a6149e8383ef4f
+RecamanProtected.E070	def	4217c7d6fcc8398b	6b2e06e7939f3383

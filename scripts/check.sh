@@ -78,4 +78,13 @@ if rg -n --glob '*.lean' '\b(sorry|admit|native_decide|axiom)\b' .; then
   exit 1
 fi
 
+# G6 (Lean half): pinned central statements elaborate, are not vacuous, the definitions
+# they mention match docs/protected_pins/definitions.lock, and any pinned claim labelled
+# PROVED-LEAN is proved by one of its audit symbols.
+python3 scripts/harness_lean.py --check-pins
+
+# Vacuity lint, report-only: unused hypotheses, conclusion-as-hypothesis, contradictory
+# hypotheses and library-free automation for the newest PROVED-LEAN rows.
+python3 scripts/harness_lean.py --vacuity-recent 5 || echo "warning: the vacuity lint did not run" >&2
+
 echo "All Lean builds and audits passed."

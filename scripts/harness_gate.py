@@ -15,10 +15,16 @@ docs/INCIDENT_REPORT_2026-09-15_VACUOUS_SYNTHESIS_LOOP.md:
                             checks per theorem (rows >= STATEMENT_AUDIT_FROM_ID)
   P  protected claims       labels of the central rows in docs/PROTECTED_CLAIMS.tsv must match
                             the registry; changing them is a human decision
+  G6 statement pins         static half: every protected row has a Lean pin in
+                            docs/protected_pins/ (or an "unpinned: <reason>" note) and the
+                            definitions lock exists. The Lean half (pins elaborate, definitions
+                            unchanged, PROVED-LEAN pinned claims really proved) is
+                            scripts/harness_lean.py --check-pins, run by scripts/check.sh.
 
 Usage:
   python3 scripts/harness_gate.py --check-registry [registry.tsv]
   python3 scripts/harness_gate.py --check-protected [registry.tsv] [protected.tsv]
+  python3 scripts/harness_gate.py --check-pins-static [protected.tsv] [PINS.tsv] [pins.lean] [lock]
   python3 scripts/harness_gate.py --lint-module Recaman/Foo.lean
   python3 scripts/harness_gate.py --audit-template E-NNN [registry.tsv]   (prints a skeleton)
 Exit status 0 = pass, 1 = gate failure. All classifiers are heuristic and documented; they are
@@ -289,6 +295,68 @@ def check_protected(reg='docs/EVIDENCE_REGISTRY.tsv', prot='docs/PROTECTED_CLAIM
     return 0
 
 
+def check_pins_static(prot='docs/PROTECTED_CLAIMS.tsv', pins='docs/protected_pins/PINS.tsv',
+                      lean='docs/protected_pins/ProtectedStatements.lean',
+                      lock='docs/protected_pins/definitions.lock'):
+    """G6, static half (no Lean needed): every protected row has a pin or a reason."""
+    errors = []
+    for path in (pins, lean, lock):
+        if not os.path.isfile(path):
+            errors.append(f'G6 missing {path}')
+    if errors:
+        for e in errors:
+            print('error:', e, file=sys.stderr)
+        return 1
+    protected = []
+    with open(prot, encoding='utf-8') as fh:
+        next(fh)
+        for line in fh:
+            cols = line.rstrip('\n').split('\t')
+            if cols and cols[0].startswith('E-'):
+                protected.append(cols[0])
+    rows = {}
+    with open(pins, encoding='utf-8') as fh:
+        header = next(fh).rstrip('\n').split('\t')
+        if header[:3] != ['id', 'pin', 'note']:
+            errors.append(f'G6 {pins} header must be id/pin/note')
+        for line in fh:
+            if not line.strip() or line.startswith('#'):
+                continue
+            cols = line.rstrip('\n').split('\t')
+            if len(cols) < 3 or not cols[2].strip():
+                errors.append(f'G6 {pins} row {cols[0]} needs id, pin and note')
+                continue
+            rows[cols[0]] = cols
+    source = strip_comments(open(lean, encoding='utf-8').read())
+    for rid in protected:
+        if rid not in rows:
+            errors.append(f'G6 protected {rid} has no row in {pins} (pin it or write "unpinned: <reason>")')
+            continue
+        _, pin, note = rows[rid][:3]
+        if pin == '-':
+            if not note.startswith('unpinned:') or not note[len('unpinned:'):].strip():
+                errors.append(f'G6 {rid} is unpinned without an "unpinned: <reason>" note')
+        else:
+            short = pin.removeprefix('RecamanProtected.')
+            if pin == short or not re.search(rf'^def\s+{re.escape(short)}\s*:\s*Prop\b', source, re.M):
+                errors.append(f'G6 {rid} pin {pin} is not a `def ... : Prop` in namespace RecamanProtected of {lean}')
+    for rid in rows:
+        if rid not in protected:
+            errors.append(f'G6 {pins} pins {rid}, which is not in {prot}')
+    entries = [l for l in open(lock, encoding='utf-8').read().splitlines() if l and not l.startswith('#')]
+    if not entries:
+        errors.append(f'G6 {lock} is empty (python3 scripts/harness_lean.py --update-lock)')
+    for e in errors:
+        print('error:', e, file=sys.stderr)
+    if errors:
+        return 1
+    pinned = sum(1 for r in rows.values() if r[1] != '-')
+    print(f'G6 static: {pinned} of {len(protected)} protected claims pinned, '
+          f'{len(protected) - pinned} unpinned with a reason; lock has {len(entries)} entries '
+          f'(Lean half runs in scripts/check.sh).')
+    return 0
+
+
 def lint_module(path):
     src = open(path, encoding='utf-8').read()
     ths = list(rv.theorems(src))
@@ -315,7 +383,8 @@ def audit_template(rid, reg='docs/EVIDENCE_REGISTRY.tsv'):
     out = [f'# Statement audit: {rid}', '',
            f'- artifact: `{row[4]}`', '- reviewer: TODO (name, YYYY-MM-DD)',
            '- For every theorem below, answer the three checks. A "no" on check 1 or a "yes" on check 2/3',
-           '  means the row must not be described as resolving anything unconditional.', '']
+           '  means the row must not be described as resolving anything unconditional.',
+           f'- vacuity lint (advisory): paste the output of `python3 scripts/harness_lean.py --vacuity-row {rid}`', '']
     for sym in row[5].split(';'):
         hit = idx.get(sym)
         out.append(f'## {sym}')
@@ -341,6 +410,8 @@ if __name__ == '__main__':
         sys.exit(check_registry(*args[1:2]))
     if args[0] == '--check-protected':
         sys.exit(check_protected(*args[1:3]))
+    if args[0] == '--check-pins-static':
+        sys.exit(check_pins_static(*args[1:5]))
     if args[0] == '--lint-module':
         sys.exit(lint_module(args[1]))
     if args[0] == '--audit-template':
