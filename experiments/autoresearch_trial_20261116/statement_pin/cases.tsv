@@ -1,0 +1,7 @@
+case	pin	theorem	expected_exact	expected_implies	why
+E511-real	RecamanPins.E511	Recaman.CleanWindowCapacity.clean_capacity	pass	pass	positive control: the registered E-511 theorem proves its pinned statement
+E511-dropNodup	RecamanPins.E511_dropNodup	Recaman.CleanWindowCapacity.clean_capacity	fail	fail	the theorem needs Nodup, so it does not prove the stronger mutant
+E511-strict	RecamanPins.E511_strict	Recaman.CleanWindowCapacity.clean_capacity	fail	fail	< is not proved
+E511-extraHyp	RecamanPins.E511_extraHyp	Recaman.CleanWindowCapacity.clean_capacity	fail	pass	weaker mutant: implied but not identical
+E070-from-E510	RecamanPins.E070	Recaman.LineCapacityPeriodic.periodic_capacity_of_line	fail	fail	E-510 assumes the open LineCapacity e (H); citing it for E-070 must be rejected
+E070-vacuous	RecamanPins.E070	RecamanPins.vacuous_capacity	fail	fail	conclusion-as-hypothesis theorem of the 2026-09-15 kind

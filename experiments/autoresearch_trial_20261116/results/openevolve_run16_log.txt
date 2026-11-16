@@ -1,0 +1,47 @@
+2026-11-16 10:14:47,484 - INFO - Evaluated program 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7 in 2.59s: combined_score=0.2850, best_hplus=0.0000, hits=0.0000, max_u_at_hplus0=2.0000, seconds=2.5400, calls=600000.0000
+2026-11-16 10:15:10,137 - INFO - New best program d471d44e-5692-4031-8bca-baf749915f3f replaces 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7 (combined_score: 0.2850 → 0.5550, +0.2700)
+2026-11-16 10:15:10,137 - INFO - Iteration 1: Program d471d44e-5692-4031-8bca-baf749915f3f (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 22.05s
+2026-11-16 10:15:10,137 - INFO - Metrics: combined_score=0.5550, best_hplus=0.0000, hits=0.0000, max_u_at_hplus0=3.0000, seconds=2.4800, calls=499527.0000
+2026-11-16 10:15:10,137 - INFO - 🌟 New best solution found at iteration 1: d471d44e-5692-4031-8bca-baf749915f3f
+2026-11-16 10:15:13,230 - INFO - New best program 79bbdb75-a0f8-4742-9558-28d225c9a980 replaces d471d44e-5692-4031-8bca-baf749915f3f (combined_score: 0.5550 → 1.1300, +0.5750)
+2026-11-16 10:15:13,230 - INFO - Iteration 2: Program 79bbdb75-a0f8-4742-9558-28d225c9a980 (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 25.14s
+2026-11-16 10:15:13,230 - INFO - Metrics: combined_score=1.1300, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=1.4100, calls=330673.0000
+2026-11-16 10:15:13,231 - INFO - 🌟 New best solution found at iteration 2: 79bbdb75-a0f8-4742-9558-28d225c9a980
+2026-11-16 10:15:41,843 - INFO - Iteration 4: Program e5cb4ed5-fac8-4159-8ba8-a6f26ece0714 (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 28.61s
+2026-11-16 10:15:41,843 - INFO - Metrics: combined_score=1.1300, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.8500, calls=476468.0000
+2026-11-16 10:16:08,806 - INFO - Iteration 5: Program c82da674-46e8-4eb2-96d1-9f079281fd65 (parent: d471d44e-5692-4031-8bca-baf749915f3f) completed in 26.97s
+2026-11-16 10:16:08,806 - INFO - Metrics: combined_score=0.5550, best_hplus=0.0000, hits=0.0000, max_u_at_hplus0=4.0000, seconds=4.3400, calls=575817.0000
+2026-11-16 10:16:29,968 - INFO - New best program 694b0a58-2acc-490e-9159-5076e842a1e8 replaces 79bbdb75-a0f8-4742-9558-28d225c9a980 (combined_score: 1.1300 → 1.1450, +0.0150)
+2026-11-16 10:16:29,968 - INFO - Iteration 6: Program 694b0a58-2acc-490e-9159-5076e842a1e8 (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 21.16s
+2026-11-16 10:16:29,968 - INFO - Metrics: combined_score=1.1450, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.4300, calls=599885.0000
+2026-11-16 10:16:29,968 - INFO - 🌟 New best solution found at iteration 6: 694b0a58-2acc-490e-9159-5076e842a1e8
+2026-11-16 10:16:48,652 - INFO - Iteration 7: Program 67e07f41-17cd-4d12-a14d-c0df0a49838e (parent: e5cb4ed5-fac8-4159-8ba8-a6f26ece0714) completed in 18.69s
+2026-11-16 10:16:48,652 - INFO - Metrics: combined_score=1.0400, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=3.0000, seconds=1.9200, calls=341576.0000
+2026-11-16 10:17:11,497 - INFO - Iteration 8: Program 57a3548f-93f7-4bed-b047-f54d3a324c4d (parent: c82da674-46e8-4eb2-96d1-9f079281fd65) completed in 22.83s
+2026-11-16 10:17:11,497 - INFO - Metrics: combined_score=1.1300, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=1.6900, calls=330673.0000
+2026-11-16 10:17:18,080 - INFO - Iteration 3: Program 102f366f-4376-44e8-95e9-5e8be5963014 (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 127.94s
+2026-11-16 10:17:18,081 - INFO - Metrics: combined_score=0.0000, error=timeout (100 s)
+2026-11-16 10:17:31,090 - INFO - Iteration 9: Program b56220eb-d6eb-4ea4-a09a-dff0c69cc8f5 (parent: c82da674-46e8-4eb2-96d1-9f079281fd65) completed in 19.59s
+2026-11-16 10:17:31,090 - INFO - Metrics: combined_score=1.1450, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.4600, calls=599885.0000
+Iteration 10: only 2 of 3 SEARCH block(s) matched the parent program
+2026-11-16 10:17:37,461 - INFO - Iteration 10: Program cedc7d8a-b6c3-44d0-8935-55dc8da9acab (parent: 67e07f41-17cd-4d12-a14d-c0df0a49838e) completed in 19.38s
+2026-11-16 10:17:37,461 - INFO - Metrics: combined_score=1.1300, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.9300, calls=476468.0000
+2026-11-16 10:17:53,814 - INFO - New best program 8a2c1925-aecf-4a9a-87dd-fd22377446b2 replaces 694b0a58-2acc-490e-9159-5076e842a1e8 (combined_score: 1.1450 → 1.2200, +0.0750)
+2026-11-16 10:17:53,815 - INFO - Iteration 11: Program 8a2c1925-aecf-4a9a-87dd-fd22377446b2 (parent: 694b0a58-2acc-490e-9159-5076e842a1e8) completed in 22.73s
+2026-11-16 10:17:53,815 - INFO - Metrics: combined_score=1.2200, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.6400, calls=599902.0000
+2026-11-16 10:17:53,815 - INFO - 🌟 New best solution found at iteration 11: 8a2c1925-aecf-4a9a-87dd-fd22377446b2
+2026-11-16 10:17:58,900 - INFO - Iteration 12: Program f020f602-922a-4a5f-a8e1-5bb14827fe8c (parent: e5cb4ed5-fac8-4159-8ba8-a6f26ece0714) completed in 21.45s
+2026-11-16 10:17:58,900 - INFO - Metrics: combined_score=1.1300, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=3.5500, calls=600000.0000
+2026-11-16 10:18:12,974 - INFO - Iteration 13: Program e265738a-e162-4602-b182-02749eff6dc8 (parent: c82da674-46e8-4eb2-96d1-9f079281fd65) completed in 19.16s
+2026-11-16 10:18:12,975 - INFO - Metrics: combined_score=1.1450, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.4400, calls=599885.0000
+Iteration 14: only 1 of 2 SEARCH block(s) matched the parent program
+2026-11-16 10:18:18,046 - INFO - Iteration 14: Program c874c3db-48e2-4d5d-b947-827f906db5c2 (parent: cedc7d8a-b6c3-44d0-8935-55dc8da9acab) completed in 19.14s
+2026-11-16 10:18:18,046 - INFO - Metrics: combined_score=1.0400, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=3.0000, seconds=1.8300, calls=305207.0000
+2026-11-16 10:18:33,302 - INFO - Iteration 15: Program 2c8d4bf2-c388-40a9-9b3d-851557690ace (parent: 1d15ae51-74a1-4a03-a321-bbf2d1ed39b7) completed in 20.33s
+2026-11-16 10:18:33,302 - INFO - Metrics: combined_score=1.2200, best_hplus=1.0000, hits=1.0000, max_u_at_hplus0=4.0000, seconds=2.5000, calls=599902.0000
+2026-11-16 10:18:37,457 - INFO - New best program 3b9a7b87-cb2b-4cd0-b324-2089f8380e5e replaces 8a2c1925-aecf-4a9a-87dd-fd22377446b2 (combined_score: 1.2200 → 1.6450, +0.4250)
+2026-11-16 10:18:37,457 - INFO - Iteration 16: Program 3b9a7b87-cb2b-4cd0-b324-2089f8380e5e (parent: fb0e51d6-5529-48ff-8daa-69a98e76e697) completed in 19.41s
+2026-11-16 10:18:37,457 - INFO - Metrics: combined_score=1.6450, best_hplus=1.0000, hits=2.0000, max_u_at_hplus0=4.0000, seconds=2.4100, calls=599910.0000
+2026-11-16 10:18:37,457 - INFO - 🌟 New best solution found at iteration 16: 3b9a7b87-cb2b-4cd0-b324-2089f8380e5e
+real 233.31
+exit=0

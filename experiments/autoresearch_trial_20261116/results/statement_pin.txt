@@ -1,0 +1,13 @@
+ok  E511-real        exact    got=pass expected=pass   0.3s  
+ok  E511-real        implies  got=pass expected=pass   0.2s  
+ok  E511-dropNodup   exact    got=fail expected=fail   0.3s  Type mismatch
+ok  E511-dropNodup   implies  got=fail expected=fail   0.2s  Tactic `assumption` failed | open goal ⊢ B✝.Nodup
+ok  E511-strict      exact    got=fail expected=fail   0.3s  Type mismatch
+ok  E511-strict      implies  got=fail expected=fail   0.3s  Tactic `apply` failed: could not unify the conclusion of `Recaman.CleanWindowCapacity.clean_capacity`
+ok  E511-extraHyp    exact    got=fail expected=fail   0.3s  Type mismatch
+ok  E511-extraHyp    implies  got=pass expected=pass   0.3s  
+ok  E070-from-E510   exact    got=fail expected=fail   0.3s  Type mismatch
+ok  E070-from-E510   implies  got=fail expected=fail   0.3s  Tactic `assumption` failed | open goal ⊢ Recaman.LineCapacityPeriodic.LineCapacity e✝
+ok  E070-vacuous     exact    got=fail expected=fail   0.2s  Type mismatch
+ok  E070-vacuous     implies  got=fail expected=fail   0.2s  Tactic `assumption` failed | open goal ⊢ Recaman.LineCapacityPeriodic.suppliedPhases e✝ t✝ p✝ ≤ Recaman.LineCapacityPeriodic.subtractionPhases e✝ t✝ p✝
+12/12 checks matched expectations

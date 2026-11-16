@@ -1,0 +1,76 @@
+module Recaman.CleanWindowCapacity: 12 theorems, 0 flagged
+ok   Recaman.CleanWindowCapacity.past_succ hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.p2_pos hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.window_mass_A hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.clean_capacity hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.walk_bad_return hyps=7 unused=[] concl=hyp=false False=- shallow=- objects=false
+ok   Recaman.CleanWindowCapacity.past_rebase hyps=1 unused=[] concl=hyp=false False=- shallow=grind objects=true
+ok   Recaman.CleanWindowCapacity.window_step hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.clean_start_S hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.sign_cases hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.clean_not_shared hyps=5 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.window_area hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CleanWindowCapacity.walk_return hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=false
+module Recaman.CapacityEqualityInduction: 27 theorems, 0 flagged
+ok   Recaman.CapacityEqualityInduction.mass_cntF hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.BlockWord.brecOn hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.segment_add hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.segment_one hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.last_mark hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=false
+ok   Recaman.CapacityEqualityInduction.segment_true hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.countP_succ_le hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.past_reverse hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.no_p2_suffix hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_pad hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.cntF_reverse hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_of_block hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.hcap_of_eqclassW hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.past_succ hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_free hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.cntF.eq_def hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_aas hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.countP_le_succ hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_of_drops hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_triple hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_append hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.hcap_step hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.cntF_append hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.countP_eq_zero_of hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.segment_succ hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.not_of_countP_eq_zero hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.CapacityEqualityInduction.dense_nil hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.TightSubsetDecomposition: 11 theorems, 1 flagged
+ok   Recaman.TightSubsetDecomposition.aas_window_avoids_s_star hyps=10 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.mem_of_subset_nodup_length_eq hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=false
+FLAG Recaman.TightSubsetDecomposition.tight_triple_lag7_spans_neighborhood hyps=4 unused=[_hA3] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.all_aas_subset_avoids_s_star hyps=10 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.grand_tight_subset_decomposition_synthesis hyps=12 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.tight_triple_collision_forces_triple_endpoint_coverage hyps=13 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.mem_neighborhood_iff_exists_singleton hyps=0 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.neighborhood_collision_forces_non_aas hyps=11 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.tight_triple_lag7_covers_aas_endpoints hyps=12 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.tight_triple_collision_iff_lag7_covers hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.TightSubsetDecomposition.tight_triple_survives_of_lag7_not_covers hyps=5 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.SameSourceLowCrossings: 3 theorems, 0 flagged
+ok   Recaman.SameSourceLowCrossings.low_visit_after_anchor hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.SameSourceLowCrossings.same_source_level_count hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.SameSourceLowCrossings.ordered_low_predecessor hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.NearestInitialSourcePair: 3 theorems, 1 flagged
+ok   Recaman.NearestInitialSourcePair.nearest_level_count hyps=3 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.NearestInitialSourcePair.nearest_pair_actual_count hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+FLAG Recaman.NearestInitialSourcePair.nearest_source_window hyps=5 unused=[hhb] concl=hyp=false False=- shallow=- objects=true
+module Recaman.InitialSOneHeadPositive: 4 theorems, 0 flagged
+ok   Recaman.InitialSOneHeadPositive.one_head_preserves_actual_free_positive hyps=3 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.InitialSOneHeadPositive.first_S_height_one_positive hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.InitialSOneHeadPositive.padded_first_S_height_one_positive hyps=6 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.InitialSOneHeadPositive.retained_head_preserves_actual_free_positive hyps=4 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.NearestInitialNonshortCharge: 3 theorems, 0 flagged
+ok   Recaman.NearestInitialNonshortCharge.nearest_counter_has_long_low_source hyps=2 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.NearestInitialNonshortCharge.nearest_nonshort_count hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.NearestInitialNonshortCharge.nearest_free_nonshort_budget hyps=1 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.DepthSixTightSevenWindow: 2 theorems, 0 flagged
+ok   Recaman.DepthSixTightSevenWindow.clock_two_four_internal_seven_prefix_area hyps=15 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.DepthSixTightSevenWindow.clock_two_four_internal_seven_end hyps=15 unused=[] concl=hyp=false False=- shallow=- objects=true
+module Recaman.DepthSixClockTwoFourBudget: 2 theorems, 0 flagged
+ok   Recaman.DepthSixClockTwoFourBudget.clock_two_four_high_source_SAA hyps=15 unused=[] concl=hyp=false False=- shallow=- objects=true
+ok   Recaman.DepthSixClockTwoFourBudget.clock_two_four_actual_high_source hyps=15 unused=[] concl=hyp=false False=- shallow=- objects=true

@@ -1,0 +1,10 @@
+# git 82ad51a, 2026-11-16, budget 5,000,000 evaluations per run, task rediscover (n=34)
+{"task": "rediscover", "strategy": "random_words.py", "n": 34, "seed": 0, "calls": 5000000, "seconds": 53.82, "best_hplus": 0, "best_hplus_word": "AAAASAAAAAASAAASAAAAAAAAASAAASAAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "SSASSSSSSAASAASASAASSASSSASSSAAASA"}
+{"task": "rediscover", "strategy": "random_words.py", "n": 34, "seed": 1, "calls": 5000000, "seconds": 54.79, "best_hplus": 0, "best_hplus_word": "SAAAAAAAASAAASSSSAAAAASASSAAAASAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "AASASSSSAASASSASSAASAAAASASAASSASA"}
+# rediscover: 0/2 seeds found an H+ violation; best hplus per seed = [0, 0]
+{"task": "rediscover", "strategy": "anneal.py", "n": 34, "seed": 0, "calls": 5000000, "seconds": 20.6, "best_hplus": 0, "best_hplus_word": "AAAAASSAAAASAAASAAAAAAAASAAAAAAAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "SSASSSSSSAASAASASAASSASSSASSSAAASA"}
+{"task": "rediscover", "strategy": "anneal.py", "n": 34, "seed": 1, "calls": 5000000, "seconds": 22.86, "best_hplus": 0, "best_hplus_word": "AASSAAAASAAAAAASAAASAAAAASAAAAAAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "AASASSSSAASASSASSAASAAAASASAASSASA"}
+# rediscover: 0/2 seeds found an H+ violation; best hplus per seed = [0, 0]
+{"task": "rediscover", "strategy": "blocks.py", "n": 34, "seed": 0, "calls": 5000000, "seconds": 39.14, "best_hplus": 0, "best_hplus_word": "SAAAAAAAAASAAASSAAAASAAASSAAAASAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "SSSSSSSSSAAASSSAAAAASSSSSSAAAASSSA"}
+{"task": "rediscover", "strategy": "blocks.py", "n": 34, "seed": 1, "calls": 5000000, "seconds": 61.71, "best_hplus": 0, "best_hplus_word": "AAAASSAAAASAAASSSSAAAASAAAAAAAAAAA", "first_hplus_hit": null, "best_h": 0, "best_h_word": "AASSSAAAASAAASSSSAAAASAAAAAAAAAAAA"}
+# rediscover: 0/2 seeds found an H+ violation; best hplus per seed = [0, 0]

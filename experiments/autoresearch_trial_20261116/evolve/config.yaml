@@ -1,0 +1,48 @@
+# OpenEvolve 0.4.1 trial: evolve the falsifier search strategy, evaluator fixed.
+# LLM calls go through `claude -p` (Claude Code CLI login, no API key).
+max_iterations: 16
+checkpoint_interval: 4
+log_level: INFO
+random_seed: 20261116
+
+llm:
+  provider: "claude_code"
+  models:
+    - name: "sonnet"
+      weight: 1.0
+      max_tokens: 16000
+      timeout: 300
+      retries: 1
+      max_budget_usd: 1.0
+      # set by run_openevolve.sh to an empty scratch directory
+      cwd: null
+
+prompt:
+  system_message: |
+    You improve a Python search strategy for a combinatorics falsification benchmark.
+    The function search(n, evaluate, budget, rng) must look for a word over {A,S} of
+    length n = 34 with hplus = e + u - s >= 1 (definitions in the module docstring).
+    Such words exist but are extremely rare; plain annealing on hplus never finds one
+    because almost every word sits on a plateau hplus = 0 with u = 0.
+    Score = best hplus + 0.15*min(5, max u among words with hplus >= 0)
+            + 0.03*min(5, max u among words with hplus >= -1), averaged over 2 seeds,
+    300,000 evaluate() calls per seed (the call budget is enforced; exceeding it just
+    stops the search). Use only the Python standard library and the given rng.
+    Ideas worth trying: structured constructions (deep down-excursions create unclean
+    windows), objectives that reward u before hplus, exhaustive search over a
+    low-dimensional family, tabu search, crossover of good words.
+    Do not read files or use tools; answer with the code change only.
+  num_top_programs: 3
+  num_diverse_programs: 2
+
+database:
+  population_size: 60
+  archive_size: 20
+  num_islands: 2
+  migration_interval: 6
+
+evaluator:
+  timeout: 120
+  max_retries: 1
+  cascade_evaluation: false
+  parallel_evaluations: 2

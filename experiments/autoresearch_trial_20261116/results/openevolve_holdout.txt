@@ -1,0 +1,10 @@
+# 2026-11-16 holdout (seeds never used during evolution), task rediscover n=34
+anneal          seeds100-109 @300k : 0/10
+evolved_iter1   seeds100-109 @300k : 1/10 (first hit at 60,188 calls)
+anneal          seeds0-1     @5M   : 0/2 (results/bench_baselines.jsonl)
+evolved_iter1   seeds100-104 @5M   : 5/5 (first hits at 485298, 379362, 739700, 1007700, 547037 calls); every hit is SAAASSSSAAAASASSSAAASAAASSAAAASAAA (E-511)
+anneal          seeds100-104 @5M   : 0/5 best hplus [0, 0, 0, 0, 0]
+evolved_run16   seeds100-109 @  300,000: 5/10 median first hit 53207 distinct words 1
+evolved_run16   seeds100-109 @1,000,000: 8/10 median first hit 200846 distinct words 1
+evolved_iter1   seeds100-109 @  300,000: 1/10 median first hit 60188 distinct words 1
+evolved_iter1   seeds100-109 @1,000,000: 2/10 median first hit 460833 distinct words 1
