@@ -1,0 +1,40 @@
+{
+  "frozen_utc": "2026-11-17T00:31:55.298120+00:00",
+  "revision": "82ad51a053117a325ef8b41d41a089c5ad056094",
+  "hashes": {
+    "docs/data/prehistory_cost_20261117/guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+    "docs/data/prehistory_cost_20261117/run_single.py": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+    "docs/data/prehistory_cost_20261117/source_cost.py": "f5b5a3e983add8eaba95ce4545b61b9f74f70a37f4ef8e1b3f045bd3bf7b71ac",
+    "docs/HYPOTHESIS_CARD_2026-11-17_PREHISTORY_FREE_COST.md": "bc7910e4c18352aa36100238f8c12c912af72329399a392de594b083a817eb7e"
+  },
+  "worker_cpu_budget_seconds": 12,
+  "jobs": [
+    {
+      "tag": "discovery",
+      "cpu": 5,
+      "wall": 8,
+      "script": "source_cost.py",
+      "args": [
+        "discovery"
+      ]
+    },
+    {
+      "tag": "holdout",
+      "cpu": 5,
+      "wall": 8,
+      "script": "source_cost.py",
+      "args": [
+        "holdout"
+      ]
+    },
+    {
+      "tag": "audit",
+      "cpu": 2,
+      "wall": 5,
+      "script": "audit.py",
+      "args": []
+    }
+  ],
+  "holdout": "M5/7 with frozen new order seed, same constructed family; no statistical independence/exhaustiveness claim",
+  "no_retry": "cap or finite absence stops each method; no old stopped job resumed"
+}

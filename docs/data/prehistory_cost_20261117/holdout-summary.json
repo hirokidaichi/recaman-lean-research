@@ -1,0 +1,44 @@
+{
+  "mode": "holdout",
+  "parameters": {
+    "M": [
+      5,
+      7
+    ],
+    "orders_per_M": 24,
+    "seed": 17001117,
+    "length_cap": 12000
+  },
+  "records": [
+    {
+      "M": 5,
+      "h": 45,
+      "T": 711,
+      "length": 752,
+      "low_free": 290,
+      "prehistory_free": 331,
+      "min_height": -48,
+      "max_height": 0,
+      "word_sha256": "66486aa8590030e690d4f061f9b181c56b92ef75d5d64e28c3e9868064d77556",
+      "certificate": "holdout-best-M5.json",
+      "accepted": 9,
+      "skipped_over_length": 15
+    },
+    {
+      "M": 7,
+      "h": 53,
+      "T": 971,
+      "length": 1028,
+      "low_free": 408,
+      "prehistory_free": 457,
+      "min_height": -56,
+      "max_height": 0,
+      "word_sha256": "1dbf2b7f2f41b7ba2fe00ddda77f5fd9a2f3f07495d6a4fe69b2072ee11f4b90",
+      "certificate": "holdout-best-M7.json",
+      "accepted": 4,
+      "skipped_over_length": 20
+    }
+  ],
+  "counterexample": false,
+  "worker_python_cpu_seconds": 0.14760399999999999
+}

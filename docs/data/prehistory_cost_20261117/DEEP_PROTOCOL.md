@@ -1,0 +1,9 @@
+# New strict input and deep preparation mechanism
+
+Frozen before execution. The unit-loop constructor stays within original height>=H(h)-3. Its entire domain satisfies the desired cost bound by the existing floor-free theorem, so it is unsuitable for finding a counter. This is a mathematical reason to stop that grammar, not finite absence as a reason to enlarge it.
+
+A new generator replaces negative area correction of sized by balanced valleys S^k A^k with areak^2, decomposingd greedily into squares. These valleys can reach arbitrarily far below the previous floor. Positive corrections use A^k S^k withk<=-c so added heights remain<=0 in the normalized source coordinates. All requested windows, the original source0 uniqueness argument and globally padded positivity remain subject to exact full-source evaluation. Original source_cost.py is used only for the unchanged evaluator/order generator, not its stopped constructor.
+
+The separate paper first-four-A/global-minimum argument rules outM<=3. Frozen discovery: M4/5,32 orders each, seed174511. Frozen holdout: M6/8,16 orders each, seed178611. Both length cap12000,2CPU/4wall seconds, cooperative1.6CPU. Same construction family with different parameters, not independent statistical holdout. Stop on first exact parent counter or on cap; no repair or range extension. A signed-square construction is a different unbounded-depth mechanism, not a resource retry of the stopped unit-loop method.
+
+These4 workerCPU seconds are reallocated from unused initial12CPU budget. The earlier solver cases stay unknown/STOPPED; no solver retry. Reserve an independent reverse audit of only the best deep discovery/holdout records after seeing their lengths, with at most2CPU/5wall; freeze its exact inputs before running. No counter claim without that audit. Record this supplementary validation allocation separately.

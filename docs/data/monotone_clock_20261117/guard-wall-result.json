@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-17T09:13:25.690990+09:00",
+  "tag": "guard-wall",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/monotone_clock_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/monotone_clock_20261117/guard_fixture.py",
+    "wall"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 0.15,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+  "runner_sha256": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+  "pid": 67309,
+  "process_group": 67309,
+  "finished_jst": "2026-11-17T09:13:25.867765+09:00",
+  "exit_code": -9,
+  "reason": "wall/deadline cap",
+  "wall_seconds": 0.17687404100433923,
+  "worker_user_seconds": 0.025061,
+  "worker_sys_seconds": 0.009093,
+  "worker_cpu_seconds": 0.034154000000000004,
+  "worker_maxrss_native": 22953984,
+  "controller_cpu_seconds": 0.002680999999999994,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

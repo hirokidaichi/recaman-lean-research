@@ -1,8 +1,13 @@
 # Current research frontier
 
-最終更新: 2026-11-16（研究・検証終了、journal確定）。一般C1/Q/H/SL/全射性は未証明。確定時間・CPU・公開結果は当日DAILY/journalを参照。
+最終更新: 2026-11-17（利用者指示による前史費用の反証調査）。一般C1/Q/H/SL/全射性は未証明。直近日次cycleは11/16のまま。追加調査の記録は下記ノートとpacketを参照。
 
 ## Research brief
+
+- **E-728 PROVED-PAPER（未Lean・人間レビュー未）**。全元sourceを保つZ^M plateauの費用M<=F_low(T)はCONJECTURED。M<=3は全長/全深さで成立、前史の床>=H(h)-3なら全Mで成立。第一族source間隔>=12/T>=h+12M-6。反例候補はM>=4/最低高さ<=H(h)-4へ。浅い生成器は既存床原理の域内で反証不能、深い生成器94履歴にも反例なし、制約探索はunknown。全方法STOPPED、finite absenceで再開しない。[調査ノート](RESEARCH_NOTE_2026-11-17_PREHISTORY_COST_FALSIFICATION.md)。local進展のみ、depth-general停滞のresetなし。
+- 続行候補はM4/free<=3におけるsource key順序の紙上削減（15分gate）。今回の追加調査は既存H01/H02日次計画の実施・完了を意味しない。次の日次計画は下記11/16記録と新しいSTOPを併せて評価する。
+
+## Previous research brief (2026-11-16)
 
 - **E-719 / E-720 / E-723 PROVED-LEAN**。同じ元sourceのtargetは二つの低Aへ順序単射。短SAAを内部消去してD_near<=F_two+O_two、反例なら長さ>=7/二つの低source高さの元local Winを内部抽出。O/free償却と異source族の負荷、D<=F/C1は未証明。
 - **E-722 PROVED-LEAN**。任意元padded old prefix/firstS/相対ceiling1からpositiveを内部供給。global initial-Sだけの保持C操作は明示ceiling C+1下で全actual/free/positiveを同時保存、下深さ/run/長さ無制限。任意上昇やold prefix後へのsource輸送は含めない。

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_single.py", line 18, in <module>
+    worker(sys.argv[2:]);raise SystemExit(0)
+    ~~~~~~^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_single.py", line 15, in worker
+    runpy.run_path(script,run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/deep_audit.py", line 6, in <module>
+    exec(compile((P/'audit.py').read_text().split('\nchecked=[]')[0],str(P/'audit.py'),'exec'),ns)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/audit.py", line 4, in <module>
+    P=Path(__file__).resolve().parent
+           ^^^^^^^^
+NameError: name '__file__' is not defined. Did you mean: '__name__'?

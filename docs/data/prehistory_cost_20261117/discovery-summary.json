@@ -1,0 +1,44 @@
+{
+  "mode": "discovery",
+  "parameters": {
+    "M": [
+      3,
+      4
+    ],
+    "orders_per_M": 48,
+    "seed": 20261117,
+    "length_cap": 12000
+  },
+  "records": [
+    {
+      "M": 3,
+      "h": 36,
+      "T": 470,
+      "length": 495,
+      "low_free": 183,
+      "prehistory_free": 215,
+      "min_height": -39,
+      "max_height": 0,
+      "word_sha256": "aebfd56babe34cb755756647f0e0951bd1472836bdb17efd6898dcca22a426fe",
+      "certificate": "discovery-best-M3.json",
+      "accepted": 42,
+      "skipped_over_length": 6
+    },
+    {
+      "M": 4,
+      "h": 41,
+      "T": 599,
+      "length": 632,
+      "low_free": 240,
+      "prehistory_free": 277,
+      "min_height": -44,
+      "max_height": 0,
+      "word_sha256": "e56576bac44dc42e7172c3a3927c2b90f59f930f6f4435a0fd17587e88a4bc45",
+      "certificate": "discovery-best-M4.json",
+      "accepted": 26,
+      "skipped_over_length": 22
+    }
+  ],
+  "counterexample": false,
+  "worker_python_cpu_seconds": 0.330949
+}

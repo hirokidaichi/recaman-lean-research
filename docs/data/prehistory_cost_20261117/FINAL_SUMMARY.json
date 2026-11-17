@@ -1,0 +1,121 @@
+{
+  "recorded_jst": "2026-11-17T09:54:03.791279+09:00",
+  "source_revision": "82ad51a053117a325ef8b41d41a089c5ad056094",
+  "parent_status": "CONJECTURED",
+  "paper_result": "E-728, not Lean or human-reviewed",
+  "counterexample_found": false,
+  "local_progress": "M<=3; floor>=H(h)-3; source spacing and T bound",
+  "depth_general_progress": false,
+  "daily_parent_cycle_created": false,
+  "tracker_reset": false,
+  "checkpoints_jst": {
+    "setup_observed": "2026-11-17T09:29:47+09:00",
+    "card_frozen": "2026-11-17T09:31:08+09:00",
+    "shallow_constructor": "09:32",
+    "solver_model_frozen": "09:37:16",
+    "first_reverse_audit": "09:41:12",
+    "deep_constructor": "09:44:00",
+    "deep_audit_initial_failure": "09:45:07",
+    "deep_audit_r1_pass": "09:45:41"
+  },
+  "time_accounting": "Unscheduled continuation, not a completed 100-minute daily cycle. Separate mechanism reservation was made; a completed 25-minute allocation is not certified. Human/model thinking and reading phases lack independent timers; no nominal duration is reported as actual. Publication/validation is separate.",
+  "mathematical_worker_cpu_seconds": 3.7818339999999995,
+  "guard_worker_cpu_seconds": 2.419279,
+  "controller_cpu_seconds": 0.05687400000000001,
+  "unmeasured": "Tool orchestration, source/doc reading and editing, setup/package installation, validation/publication CPU; not claimed zero.",
+  "math_receipts": [
+    {
+      "file": "docs/data/prehistory_cost_20261117/audit-result.json",
+      "exit_code": 0,
+      "cpu": 0.09137799999999999,
+      "wall": 0.119956042006379
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/constraint-controls-result.json",
+      "exit_code": 0,
+      "cpu": 0.8716209999999999,
+      "wall": 0.9014120830106549
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/constraint-discovery-result.json",
+      "exit_code": 0,
+      "cpu": 1.044571,
+      "wall": 1.0838383329974022
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/constraint-holdout-result.json",
+      "exit_code": 0,
+      "cpu": 0.808703,
+      "wall": 0.8478009999962524
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/deep-audit-r1-result.json",
+      "exit_code": 0,
+      "cpu": 0.045505,
+      "wall": 0.05944316601380706
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/deep-audit-result.json",
+      "exit_code": 1,
+      "cpu": 0.049551,
+      "wall": 0.06338474998483434
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/deep-discovery-result.json",
+      "exit_code": 0,
+      "cpu": 0.113829,
+      "wall": 0.12222229098551907
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/deep-holdout-result.json",
+      "exit_code": 0,
+      "cpu": 0.191914,
+      "wall": 0.19689795799786225
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/discovery-result.json",
+      "exit_code": 0,
+      "cpu": 0.37573199999999995,
+      "wall": 0.4146703750011511
+    },
+    {
+      "file": "docs/data/prehistory_cost_20261117/holdout-result.json",
+      "exit_code": 0,
+      "cpu": 0.18902999999999998,
+      "wall": 0.19695374998264015
+    }
+  ],
+  "source_hash_checks": {
+    "matching_entries": 26,
+    "explicit_mutable_records": [
+      {
+        "record": "docs/data/prehistory_cost_20261117/PROTOCOL.json",
+        "file": "docs/HYPOTHESIS_CARD_2026-11-17_PREHISTORY_FREE_COST.md",
+        "recorded_sha256": "bc7910e4c18352aa36100238f8c12c912af72329399a392de594b083a817eb7e",
+        "current_sha256": "2683b89811bedc3c6e2936d006a1185ebbf4c376c4fc4b3c95208b22cb70bc78",
+        "reason": "outcome appended/card wording clarified, or explicit technical audit-plan amendment; original hash retained"
+      },
+      {
+        "record": "docs/data/prehistory_cost_20261117/DEEP_AUDIT_HASHES.json",
+        "file": "docs/data/prehistory_cost_20261117/DEEP_AUDIT_PROTOCOL.md",
+        "recorded_sha256": "7d1ca8f20eb817f6811392c68341bc0f55344a6369a446006d6d5de89f371201",
+        "current_sha256": "dace1b62128de4d65011fae5b32c5de47ee93545b6058a59c556decf6f68cf30",
+        "reason": "outcome appended/card wording clarified, or explicit technical audit-plan amendment; original hash retained"
+      }
+    ]
+  },
+  "stopped_methods": [
+    "unit-loop source-order construction: known shallow-floor domain",
+    "deep-valley source-order construction: finite absence only",
+    "exact SMT model: unknown at fixed limits; no retry"
+  ],
+  "audit_failure": "Initial deep_audit.py failed on undefined __file__ before mathematics; unchanged failure retained; one separately hashed technical R1 passed.",
+  "validation": [
+    "git diff --check passed",
+    "bash scripts/check_research_registry.sh passed: 728 entries, 464 PROVED-LEAN, G1-G5/protected labels pass",
+    "python3 viewer/gen_manifest.py --check passed; no Lean changed or Lean build claimed"
+  ],
+  "excluded_other_session_file": "docs/data/daily_research/2026-11-07.json",
+  "publication_base_revision": "52742c8cda6e000c86e4e0e067ef2573bb2c96c9",
+  "remote_integration": "Fast-forwarded two unrelated remote commits; original experiment source revision remains 82ad51a. New G6/harness instructions read; protected definitions and pins unchanged by this work."
+}

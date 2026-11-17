@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-17T09:37:16.823014+09:00",
+  "tag": "z3-guard-fork",
+  "argv": [
+    "/private/tmp/recaman-prehistory-cost-20261117-venv/bin/python",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_z3.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/guard_fixture.py",
+    "fork"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+  "runner_sha256": "051b0e07570e821279994fa83744295b04fe5e714793c4ee23a341a14a1d3d55",
+  "pid": 71695,
+  "process_group": 71695,
+  "finished_jst": "2026-11-17T09:37:16.913296+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.09039120801026002,
+  "worker_user_seconds": 0.050488,
+  "worker_sys_seconds": 0.013387,
+  "worker_cpu_seconds": 0.063875,
+  "worker_maxrss_native": 33144832,
+  "controller_cpu_seconds": 0.002527000000000005,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

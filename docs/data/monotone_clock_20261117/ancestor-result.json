@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-17T09:15:16.245957+09:00",
+  "tag": "ancestor",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/monotone_clock_20261117/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/monotone_clock_20261117/check_ancestor.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "ca17ca2d67b28779fd62fbd15d2fa5a69554e99571165cc7a3fd97183e8f3809",
+  "runner_sha256": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+  "pid": 67526,
+  "process_group": 67526,
+  "finished_jst": "2026-11-17T09:15:17.288133+09:00",
+  "exit_code": -24,
+  "reason": "signal 24 (see CPU cap and output)",
+  "wall_seconds": 1.0423409579962026,
+  "worker_user_seconds": 0.968206,
+  "worker_sys_seconds": 0.040291,
+  "worker_cpu_seconds": 1.008497,
+  "worker_maxrss_native": 59277312,
+  "controller_cpu_seconds": 0.003868999999999994,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

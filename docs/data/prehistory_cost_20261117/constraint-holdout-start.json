@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-17T09:37:35.741392+09:00",
+  "tag": "constraint-holdout",
+  "argv": [
+    "/private/tmp/recaman-prehistory-cost-20261117-venv/bin/python",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_z3.py",
+    "--worker",
+    "3",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/constraint_cost.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 3,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "4621bdbd51690835e1330c25daeca91a1ff8d483654caed03bc1d6f93259aa7d",
+  "runner_sha256": "051b0e07570e821279994fa83744295b04fe5e714793c4ee23a341a14a1d3d55",
+  "pid": 72076,
+  "process_group": 72076
+}

@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-17T09:31:55.374091+09:00",
+  "tag": "guard-normal",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/guard_fixture.py",
+    "normal"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+  "runner_sha256": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+  "pid": 70584,
+  "process_group": 70584,
+  "finished_jst": "2026-11-17T09:31:55.434025+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.06050583400065079,
+  "worker_user_seconds": 0.029224,
+  "worker_sys_seconds": 0.009113999999999999,
+  "worker_cpu_seconds": 0.038338,
+  "worker_maxrss_native": 23003136,
+  "controller_cpu_seconds": 0.0021130000000000003,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

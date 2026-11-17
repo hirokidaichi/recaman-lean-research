@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-17T09:44:03.903778+09:00",
+  "tag": "deep-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/prehistory_cost_20261117/deep_source_cost.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 4.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "1fed3b9e3ce6e5c4166f94b23ed281d8f8a5cf8c9b254d9623db0fa63ddd90e0",
+  "runner_sha256": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+  "pid": 72940,
+  "process_group": 72940,
+  "finished_jst": "2026-11-17T09:44:04.100574+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.19689795799786225,
+  "worker_user_seconds": 0.177784,
+  "worker_sys_seconds": 0.01413,
+  "worker_cpu_seconds": 0.191914,
+  "worker_maxrss_native": 26771456,
+  "controller_cpu_seconds": 0.0029479999999999975,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}
