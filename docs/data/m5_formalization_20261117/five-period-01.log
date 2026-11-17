@@ -1,0 +1,66 @@
+Recaman/FivePeriodSourceCost.lean:14:48: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (fivePeriods.take k.val)
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/FivePeriodSourceCost.lean:17:4: error: Function expected at
+  mass
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (fivePeriods.take (8 * j.val + 5))
+
+Hint: The identifier `mass` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/FivePeriodSourceCost.lean:30:17: error: don't know how to synthesize implicit argument `mass`
+  @first_family ?m.110 ?m.111 ⟨j, hj⟩
+context:
+f : Nat → Bool
+T j u k : Nat
+hj : j < 5
+huk : u + k = T + 8 * j + 5
+hw : Win f u k
+htake : List.take (8 * j + 5) fivePeriods = seg f T (8 * j + 5)
+hword : seg f T 40 = fivePeriods
+⊢ ?m.110
+Recaman/FivePeriodSourceCost.lean:30:17: error: don't know how to synthesize implicit argument
+  @first_family ?m.110 ?m.111 ⟨j, hj⟩
+context:
+f : Nat → Bool
+T j u k : Nat
+hj : j < 5
+huk : u + k = T + 8 * j + 5
+hw : Win f u k
+htake : List.take (8 * j + 5) fivePeriods = seg f T (8 * j + 5)
+hword : seg f T 40 = fivePeriods
+⊢ Sort ?u.85
+Recaman/FivePeriodSourceCost.lean:26:63: error: unsolved goals
+f : Nat → Bool
+T j u k : Nat
+hj : j < 5
+huk : u + k = T + 8 * j + 5
+hw : Win f u k
+htake : List.take (8 * j + 5) fivePeriods = seg f T (8 * j + 5)
+hword : seg f T 40 = fivePeriods
+⊢ u < T ∧ Fw f u = Fw f T - 4 ∧ Ar f u (T - u) = -(24 * ↑j + 15)
+Recaman/FivePeriodSourceCost.lean:98:2: error: Type mismatch: After simplification, term
+  hl
+ has type
+  5 ≤ L.length
+but is expected to have type
+  5 ≤ (List.filter (fun i => decide (Fw f i = Fw f T - 4)) (List.range T)).length
+Recaman/FivePeriodSourceCost.lean:132:67: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 0
+  b ≥ 0
+  a ≥ 1
+  a - b ≤ 0
+  a - c ≤ 0
+where
+ a := ↑h
+ b := ↑T
+ c := ↑i

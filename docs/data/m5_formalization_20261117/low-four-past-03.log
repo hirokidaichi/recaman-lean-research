@@ -1,0 +1,62 @@
+Recaman/LowFreeFourPast.lean:145:89: error: Application type mismatch: The argument
+  hex
+has type
+  ∃ z, z < v ∧ f z = true ∧ Fw f z < ell
+but is expected to have type
+  ∃ i, i ≤ v ∧ f i = true ∧ Fw f i < ell
+in the application
+  first_mark (fun z => f z = true ∧ Fw f z < ell) v hex
+Recaman/LowFreeFourPast.lean:163:52: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c_1 ≥ 1
+  b_1 ≥ 0
+  b_1 - c_1 ≤ -1
+  y ≥ 0
+  t ≥ 0
+  t - y ≤ -1
+  r ≥ 0
+  r - y ≤ -1
+  p ≥ 2
+  n ≥ 0
+  n - y ≤ -1
+  m ≥ 4
+  0 ≤ l ≤ 2
+  k ≥ 0
+  k - l ≥ 2
+  g ≥ 0
+  e ≥ 0
+  e - g ≤ -1
+  e - y ≥ 0
+  0 ≤ d ≤ 4
+  b ≥ 0
+  b - g ≥ 1
+  b - y ≥ 0
+  a ≥ 1
+  a + a_1 ≤ -2
+  a + x ≤ -2
+  a + s ≤ -2
+  a + o ≥ 2
+  a + j ≤ -4
+  a + c ≥ 2
+where
+ a := ↑h
+ b := ↑T
+ c := Fw f T
+ d := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i ∧ Fw f i ≤ 1 - ↑h) 0 T)
+ e := ↑u
+ g := ↑w
+ j := Fw f w
+ k := ↑(cN L 0 T)
+ l := ↑(cN L 0 v)
+ m := ↑(cN (fun i => f i = true) 0 v)
+ n := ↑q
+ o := Fw f q
+ p := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i ∧ Fw f i ≤ 1 - ↑h) 0 q)
+ r := ↑i
+ s := Fw f i
+ t := ↑hex.choose
+ x := Fw f hex.choose
+ y := ↑z
+ a_1 := Fw f z
+ b_1 := ↑(cN L 0 q)
+ c_1 := ↑(cN L 0 (z + 1))

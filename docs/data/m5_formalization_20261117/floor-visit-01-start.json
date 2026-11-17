@@ -1,0 +1,25 @@
+{
+  "tag": "floor-visit-01",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FloorVisitFreeCount.olean",
+    "Recaman/FloorVisitFreeCount.lean"
+  ],
+  "started_jst": "2026-11-17T23:24:50.164237+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/FloorVisitFreeCount.lean": "c14b5f4a08091c04d3968fbb1628b60e2b5cce90ed219960683b5366513d1f24"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "8db8960af2044def9ecd6128b37825ce6b70acc4",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "b99487b0f44c12f69362a30cfbf6bce7d9513ea1a625f7a8d928311bf0a6f5f8",
+  "source_tree_manifest": "floor-visit-01-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

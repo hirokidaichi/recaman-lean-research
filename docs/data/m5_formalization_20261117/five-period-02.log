@@ -1,0 +1,13 @@
+Recaman/FivePeriodSourceCost.lean:55:13: error(lean.unknownIdentifier): Unknown constant `Nat.cast_add`
+Recaman/FivePeriodSourceCost.lean:55:26: error(lean.unknownIdentifier): Unknown constant `Nat.cast_mul`
+Recaman/FivePeriodSourceCost.lean:55:39: error(lean.unknownIdentifier): Unknown constant `Nat.cast_ofNat`
+Recaman/FivePeriodSourceCost.lean:55:2: error: `simp` made no progress
+Recaman/FivePeriodSourceCost.lean:99:2: error: Type mismatch: After simplification, term
+  hl
+ has type
+  5 ≤
+    (List.filter (fun u => @decide (Fw f u = Fw f T - 4) ((Fw f u).instDecidableEq (Fw f T - 4))) (List.range T)).length
+but is expected to have type
+  5 ≤
+    (List.filter (fun i => @decide (Fw f i = Fw f T - 4) (Classical.propDecidable (Fw f i = Fw f T - 4)))
+        (List.range T)).length

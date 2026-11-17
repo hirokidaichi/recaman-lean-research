@@ -1,13 +1,13 @@
 # Current research frontier
 
-最終更新: 2026-11-17（利用者指示の23時までのM5追加調査）。一般C1/Q/H/SL/全射性は未証明。朝の追加unitと夜の時間指定parentを区別する。直近の自動日次cycleは11/16、夜の結果は下記ノートとEVENING handoffを参照。
+最終更新: 2026-11-17（23時の調査後、利用者の追加指示によるM5成果のLean化）。一般C1/Q/H/SL/全射性は未証明。直近の自動日次cycleは11/16。本unitは既存PAPERの形式化であり、日次cycle・一般化停滞counterを更新しない。
 
 ## Research brief
 
-- **E-735 PROVED-PAPER（全体未Lean・人間レビュー未）**。M5/low free<=4は任意深さ・上昇幅・長さで不存在。必要な深い最低点から最初のR帰還が七段以上なのに、元old A<=3/元総free4/全sourceを保持した面積分類から七段回復が不可能。R以後の高いfreeを使う前に排除する。[紙上証明と監査](RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md)。一般の費用予想は未証明、反例にはM>=6/low free>=5が必要。
-- **E-734/E-736/E-737/E-738 PROVED-LEAN（条件とproducerを分離）**。四根151節点のkernel certificateを任意の元履歴長へ接続。元floorの全A始点面積/偶奇、全old sourceのadmission、元A3/free2から三連A形を形式化した。E729/E730と元free予算の接続はPAPERのためM5全体をLean済みとは呼ばない。これらの局所形式化をgeneralizationへ重複加算しない。
+- **E-743 PROVED-LEAN（人間レビュー未）**。M5に必要な元の5周期供給は過去low free>=5を要求する。任意深さ・上昇幅・前史長でM5/low4を排除。元initial-S h、境界Win、literal Z^5、第一族5targetの元EndNから導出し、未証明のold A/area/free予算を仮定しない。24間隔側だけで排除できるので、16間隔側や全source一意性を加えた元PC5も排除される。元履歴/全source/Nat0 freeを保持。[形式化カード](HYPOTHESIS_CARD_2026-11-17_M5_FORMALIZATION.md)、[意味監査](data/m5_formalization_20261117/SEMANTIC_AUDIT.md)。
+- **E-739 / E-740 / E-741 / E-742 PROVED-LEAN**。深い帰還の3 low free、深い最低点前A<=3、初回Rの元総free<=4、元floor>=-h-4、床+2の全訪問の相異なるfree支払を接続。E-734 / E-736 / E-737 / E-738の全old-source producerと三連Aを消費し、従来PAPERだったE729/E730の必要辺を閉じた。E-735は歴史的PAPER記録として残し、全結論のLean証拠はE743。固定free4の結果で一般M費用は未証明。局所形式化を一般化進展へ重複加算しない。
 - **E-732 PROVED-LEAN / E-733 REFUTED（全族PAPER）**。old A予算pと未来A高さ帯bから全old source半径2p+b、双方向窓輸送、元old free会計を保存。別に「R後にlow freeが無ければ正の低source keyは生めない」は全m>=8の前置き再帰で反証。m8は両高さoffset6/19だがold low free39355なのでPC5反例ではない。旧stockを捨てた一般機構を停止し、元予算を残す。
-- **停止と次の判断**。A<=7/free4は元A8反例（E-731）。旧49型直接Lean certificateはCPU60でSTOPPED、新しい三角面積/三連Aの緩和が実装可能にした。三連Aを無視した弱モデルには七段/relaxed free4 counterがある。旧r4/SMT/loaders/失敗packetを再開せず、次は元free予算から旧Aの配置・面積の制約をどう得るかを検討する。M6調査を自動開始しない。一般C1/Q/H/SL/全射性は未証明。
+- **停止と次の判断**。A<=7/free4は元A8反例（E-731）。旧49型直接Lean certificateはCPU60でSTOPPEDのまま。三連Aを無視した弱モデルには七段/relaxed free4 counterがある。旧r4/SMT/loaders/失敗packetを再開せず、次の数学的課題は第五freeを許したときの元old A配置・面積制約。M6調査を自動開始しない。全M費用の反例にはM>=6/low free>=5が必要だが、その不存在や実orbit到達は未証明。
 
 ## Earlier research brief (2026-11-17 morning, historical)
 

@@ -1,6 +1,6 @@
 # M5 / low free4: the first return is already impossible
 
-結論：**M=5・low free<=4を満たす元履歴は存在しない**。前史の深さ・上昇幅・長さを制限せず、元の履歴と全供給元を保持した紙上証明が得られた（E-735 **PROVED-PAPER**、全体は未Lean・人間レビュー未）。R以後に高いfreeを用意する前に、必要な深い最低点からRへ戻る段階で矛盾する。
+結論：**M=5・low free<=4を満たす元履歴は存在しない**。前史の深さ・上昇幅・長さを制限せず、元の履歴と全供給元を保持する。E-735は紙上証明の記録（**PROVED-PAPER**）。23時後の利用者指示で全結論をE-743 **PROVED-LEAN**まで形式化した（人間レビュー未）。R以後に高いfreeを用意する前に、必要な深い最低点からRへ戻る段階で矛盾する。
 
 新しい有限部分はE-734のLean証明を使う。ただし、そのLean定理は**明示的なold-source面積条件付き**であり、後続E736/E737は元floor/count/三連A形から条件を生成し、E738はその三連A形を元A3/free2から生成した。E729/E730と元free予算の接続は以下の紙上証明である。旧49型の直接Lean検証はCPU上限でSTOPPEDのまま。有限探索で反例が無かったことを証明へ読み替えていない。一般Mの費用不等式・C1・全射性は未証明。
 
@@ -93,10 +93,15 @@ The boundary is nonvacuous. S8 AAAA S AAA has four original free, at clocks8,9,1
 
 ## Audit, provenance and next decision
 
-Baseline08fc48f20e395adc56a1ab2c8a3dac223560723d. Frozen protocols, exact source/input hashes, original full-source certificates, guard/CPU/wall receipts, stopped bytes and separate semantic audit are in[data/post_return_high_free_20261117](data/post_return_high_free_20261117/SEMANTIC_AUDIT.md). E734 is conditional PROVED-LEAN; E736/E737/E738 now check the section2 source producer and original triple classification. E729/E730 and the remaining original budget/parent connection remain PAPER. The requested M5 conclusion is therefore PROVED-PAPER, not fully Lean-checked or human-reviewed. Full repository validation/publication receipts are recorded separately.
+Baseline08fc48f20e395adc56a1ab2c8a3dac223560723d. Frozen protocols, exact source/input hashes, original full-source certificates, guard/CPU/wall receipts, stopped bytes and separate semantic audit are in[data/post_return_high_free_20261117](data/post_return_high_free_20261117/SEMANTIC_AUDIT.md). E734 is conditional PROVED-LEAN; E736/E737/E738 now check the section2 source producer and original triple classification. At the23:00 handoff, E729/E730 and the remaining original budget/parent connection were PAPER. The later user-requested formalization E739–E743 now supplies those dependencies and the full M5 conclusion in Lean; human review remains pending. Full repository validation/publication receipts are recorded separately.
 
 The useful next mathematical question is how the old-area/free interface changes with a fifth paid free; do not automatically enlarge the stopped exact table, rerun the old SMT/generators, or assume a uniform M bound from this case. The current user scope remains M5. Generalization progress comes from the source-preserving interface and the G0 mechanism counter, not from increasing M or counting modules. The25-minute distinct mechanism reservation was observed for25m02s, with exact clocks in DISTINCT_GENERAL_PHASE.json; nominal allocations are not elapsed-work claims.
 
 ## Targeted assumption audit after the formal producers
 
 Dropping the contiguous-three restriction while keeping only the general r<=3 floor envelope admits the exact relaxed word `AAAASAAASSASASASAAA`, reaching height7 at relaxed paid4. At future clock6 it requests j3/C1, inside the generic area/parity interval but outside EVERY contiguous-three case (tri3=6; permitted C=-6,-5,-2 or3-6s). The later incompatible admissions are recorded too. Thus retaining the original old-A chronology is essential to this proof. This is a counter to the deliberately weakened source model, not an original PC5 history; no common original past is asserted. Both the weakened witness and the original rise6/free4, rise7/free5 boundary words passed separate forward/reverse source checks. Frozen protocol/output: CONTIGUITY_AUDIT_PROTOCOL.md and contiguity-audit-summary.json in the packet.
+
+
+## Post-deadline formalization update
+
+The explicit follow-up request to formalize and commit produced E739–E743. The first24-key family alone forces five prior low free from raw initial-S/boundary-window/literal-plateau assumptions, so the full simultaneous24/16 parent with low4 is excluded. The endpoint floor argument also drops the positive-prefix premise. No extra finite search or stopped-certificate restart was used. See [formalization card](HYPOTHESIS_CARD_2026-11-17_M5_FORMALIZATION.md) and [separate semantic audit](data/m5_formalization_20261117/SEMANTIC_AUDIT.md). This does not add another independent generalization advance to the evening unit.

@@ -1,0 +1,6 @@
+Recaman/InitialLowFreeRanks.lean:56:4: error: Type mismatch: After simplification, term
+  Fw_succ f u
+ has type
+  @Eq Int (Fw f (u + 1)) (Fw f u + -1)
+but is expected to have type
+  @Eq Int (Fw f (u + 1)) (Fw f u - 1)

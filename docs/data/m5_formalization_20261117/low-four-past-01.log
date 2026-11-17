@@ -1,0 +1,48 @@
+Recaman/LowFreeFourPast.lean:123:22: error(lean.unknownIdentifier): Unknown constant `Nat.strong_induction_on`
+Recaman/LowFreeFourPast.lean:163:15: error: Tactic `rcases` failed: `right✝ : ∀ (i : Nat), i < z → ¬(f i = true ∧ Fw f i < ell)` is not an inductive datatype
+Recaman/LowFreeFourPast.lean:231:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  x ≥ 2
+  s ≥ 0
+  s - x ≥ 0
+  r ≥ 0
+  0 ≤ r + s ≤ 4
+  p ≥ 0
+  p - r ≤ 0
+  o ≥ 3
+  n ≥ 3
+  m ≤ -4
+  l ≤ -2
+  k ≥ 0
+  k - m ≥ 0
+  j - l ≥ 3
+  i ≥ 0
+  i - k ≤ -1
+  i - k + m ≤ -1
+  e ≥ 4
+  0 ≤ d ≤ 2
+  d - r - s ≤ -2
+  c ≥ 0
+  b ≥ 0
+  b - c ≤ -1
+  b - k + m ≥ 0
+  a ≥ 0
+  a - c ≥ 1
+  a - k + m ≥ 0
+where
+ a := ↑T
+ b := ↑u
+ c := ↑w
+ d := ↑(cN L 0 v)
+ e := ↑(cN (fun i => f i = true) 0 v)
+ i := ↑q
+ j := Fw f q
+ k := ↑t
+ l := Fw f t
+ m := Fw (fun i => f (t + i)) (v - t)
+ n := Fw (fun i => f (t + i)) (T - t)
+ o := ↑(cN (fun i => g i = true ∧ ¬EndN g 0 i ∧ Fw g i ≤ 1 - ↑2) 0 (T - t))
+ p := ↑(cN (fun i => g i = true ∧ ¬EndN g 0 i ∧ Fw g i ≤ 1 - 2) 0 (T - t))
+ r := ↑(cN (fun i => L (t + i)) 0 (T - t))
+ s := ↑(cN L 0 t)
+ x := ↑(cN L 0 q)

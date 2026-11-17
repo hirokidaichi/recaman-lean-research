@@ -1,4 +1,9 @@
 import Recaman.InitialSLowTargetTransport
+import Recaman.InitialLowFreeRanks
+import Recaman.LowFreeFourPast
+import Recaman.LowFreeFourFloor
+import Recaman.FloorVisitFreeCount
+import Recaman.FivePeriodSourceCost
 import Recaman.InitialSTransportBoundary
 import Recaman.InitialSQuadraticSource
 import Recaman.BalancedInsertionArea
@@ -4457,3 +4462,16 @@ import Recaman
 
 #print axioms Recaman.ThreeAdditionPrefix.three_additions_two_free_shape
 #print axioms Recaman.ThreeAdditionPrefix.three_additions_at_floor_shape
+
+-- Original low-free budget, source-preserving comparison and unrestricted floor.
+#print axioms Recaman.InitialLowFreeRanks.early_free_is_low
+#print axioms Recaman.InitialLowFreeRanks.three_low_free_of_deep_return
+#print axioms Recaman.LowFreeFourPast.low_actual_cut_iff
+#print axioms Recaman.LowFreeFourPast.old_additions_le_three
+#print axioms Recaman.LowFreeFourFloor.first_return_total_free
+#print axioms Recaman.LowFreeFourFloor.low_four_original_floor
+#print axioms Recaman.FloorVisitFreeCount.original_floor_visit_count
+#print axioms Recaman.FivePeriodSourceCost.plateau_source_key
+#print axioms Recaman.FivePeriodSourceCost.five_distinct_original_sources
+#print axioms Recaman.FivePeriodSourceCost.five_periods_need_five_low_free
+#print axioms Recaman.FivePeriodSourceCost.original_boundary_five_period_cost

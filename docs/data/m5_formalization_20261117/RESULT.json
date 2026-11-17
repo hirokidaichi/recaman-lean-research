@@ -1,0 +1,90 @@
+{
+  "status": "PROVED-LEAN",
+  "human_review": "pending",
+  "evidence_rows": [
+    "E-739",
+    "E-740",
+    "E-741",
+    "E-742",
+    "E-743"
+  ],
+  "baseline": "8db8960af2044def9ecd6128b37825ce6b70acc4",
+  "validated_source_tree_sha256": "64a03e77b6b64b5f1d90e4c9ec3a5e9b01120381256db0d97d07d6bbdb001837",
+  "completed_local_validation_jst": "2026-11-17T23:31:51.617400+09:00",
+  "recorded_jst": "2026-11-17T23:32:57.595019+09:00",
+  "full_check": {
+    "exit_code": 0,
+    "build_jobs": 1039,
+    "axiom_declarations": 3984,
+    "new_module_public_vacuity_theorems": 22,
+    "new_module_vacuity_flags": 0,
+    "new_module_vacuity_unknown": 0,
+    "registered_new_symbols": 11,
+    "protected_labels_and_pins": "unchanged",
+    "whitespace": "Owned source and documentation diff passes. Exact raw CLI logs/template stdout retain their original trailing whitespace/blank terminal lines; the whole-packet diff reports those byte-preservation exceptions."
+  },
+  "modules": {
+    "InitialLowFreeRanks": {
+      "sha256": "23bb94ad5b7a324ccf6270321fd15508f51020fcae46a0908ea53da2fa1653fd",
+      "direct_compile_attempts": 4,
+      "direct_compile_cpu_seconds": 4.062239,
+      "accepted_direct_tags": [
+        "early-ranks-03",
+        "early-ranks-final"
+      ]
+    },
+    "LowFreeFourPast": {
+      "sha256": "8db155a30a9cea5fc6a8983ed65d14f1182d18c96185407d6069860e05db11b3",
+      "direct_compile_attempts": 4,
+      "direct_compile_cpu_seconds": 3.871539,
+      "accepted_direct_tags": [
+        "low-four-past-02",
+        "low-four-past-04"
+      ]
+    },
+    "LowFreeFourFloor": {
+      "sha256": "9c3703dba4fc4db3f1a1e260a4f42e4e19b31077b6b4b113c66fa261b93d9869",
+      "direct_compile_attempts": 2,
+      "direct_compile_cpu_seconds": 1.225443,
+      "accepted_direct_tags": [
+        "low-four-floor-02"
+      ]
+    },
+    "FloorVisitFreeCount": {
+      "sha256": "c14b5f4a08091c04d3968fbb1628b60e2b5cce90ed219960683b5366513d1f24",
+      "direct_compile_attempts": 1,
+      "direct_compile_cpu_seconds": 0.754119,
+      "accepted_direct_tags": [
+        "floor-visit-01"
+      ]
+    },
+    "FivePeriodSourceCost": {
+      "sha256": "e0681139735e4bd725ca7063ba4b61b37326c195db47cacd8e31bc9aced849fd",
+      "direct_compile_attempts": 3,
+      "direct_compile_cpu_seconds": 1.8835089999999999,
+      "accepted_direct_tags": [
+        "five-period-03"
+      ]
+    }
+  },
+  "failed_elaboration_tags": [
+    "five-period-02",
+    "low-four-floor-01",
+    "low-four-past-03",
+    "five-period-01",
+    "early-ranks-02",
+    "early-ranks-01",
+    "low-four-past-01"
+  ],
+  "mathematical_counterexample_to_target": false,
+  "resource_cap_reached": false,
+  "new_finite_discovery_or_holdout": false,
+  "old_stopped_jobs_resumed": false,
+  "local_progress": "Existing PAPER M5 exclusion fully formalized from raw original-history assumptions.",
+  "depth_general_progress": "No separately counted advance or daily tracker reset; same mathematical result as earlier PAPER.",
+  "preserved_unrelated_file": {
+    "path": "docs/data/daily_research/2026-11-07.json",
+    "sha256": "54f4b4002b04b5c3bf0980d20e89431020147f1ad651fe1bff6780b20fbd0d75"
+  },
+  "publication": "Pending commit and normal fast-forward origin/main push; verify remote SHA separately."
+}

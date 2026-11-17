@@ -1,0 +1,28 @@
+Recaman/InitialLowFreeRanks.lean:50:11: error: Application type mismatch: The argument
+  huk
+has type
+  u + (q - u) = q
+but is expected to have type
+  u + 3 = q
+in the application
+  And.intro huk
+Recaman/InitialLowFreeRanks.lean:61:23: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/InitialLowFreeRanks.lean:63:2: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+Recaman/InitialLowFreeRanks.lean:159:61: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  0 ≤ e ≤ 2
+  b ≥ 0
+  b - g ≤ 0
+  a ≥ 1
+  a + d ≥ 2
+  a + c ≤ -2
+where
+ a := ↑h
+ b := ↑x
+ c := Fw f x
+ d := Fw f T
+ e := ↑(cN L 0 T)
+ g := ↑v

@@ -1,0 +1,31 @@
+{
+  "tag": "low-four-past-02",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/LowFreeFourPast.olean",
+    "Recaman/LowFreeFourPast.lean"
+  ],
+  "started_jst": "2026-11-17T23:17:43.245908+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/LowFreeFourPast.lean": "219f4d17cf591b9120ab9521dca03bf76e7fba22c43677586c42597da6cdbc90"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "8db8960af2044def9ecd6128b37825ce6b70acc4",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "61be480b38e905c232803fbef28ad857045a0fb64068a4177f26ab512e231da9",
+  "source_tree_manifest": "low-four-past-02-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.3039718329964671,
+  "cpu_seconds": 1.031705,
+  "finished_jst": "2026-11-17T23:17:44.549805+09:00"
+}

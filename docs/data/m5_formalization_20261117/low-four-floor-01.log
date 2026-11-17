@@ -1,0 +1,31 @@
+Recaman/LowFreeFourFloor.lean:58:36: error: Ambiguous term
+  first_mark
+Possible interpretations:
+  LowFreeFourPast.first_mark (fun i => v ≤ i ∧ d ≤ Fw f i) (T + 1)
+    (Exists.intro T
+      ⟨?m.37, ⟨hvT, hT⟩⟩) : ∃ q, q < T + 1 ∧ (v ≤ q ∧ d ≤ Fw f q) ∧ ∀ (i : Nat), i < q → ¬(v ≤ i ∧ d ≤ Fw f i)
+  
+  SingleWindowEquality.first_mark (fun i => v ≤ i ∧ d ≤ Fw f i) (T + 1)
+    (Exists.intro T
+      ⟨?m.37, ⟨hvT, hT⟩⟩) : ∃ b, b ≤ T + 1 ∧ (v ≤ b ∧ d ≤ Fw f b) ∧ ∀ (i : Nat), i < b → ¬(v ≤ i ∧ d ≤ Fw f i)
+Recaman/LowFreeFourFloor.lean:58:9: error: Tactic `rcases` failed: `x✝ : ?m.46` is not an inductive datatype
+Recaman/LowFreeFourFloor.lean:80:44: warning: Variable name `hvR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hvR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Recaman/LowFreeFourFloor.lean:108:25: warning: This simp argument is unused:
+  h0
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [oldPaid, if_false, h1, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Recaman/LowFreeFourFloor.lean:108:28: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [oldPaid, h0, h1, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

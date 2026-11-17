@@ -1,0 +1,220 @@
+import Recaman.SFinalWindowLength
+
+namespace Recaman.InitialLowFreeRanks
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.CapacityEqualityInduction Recaman.SFinalWindowLength
+open Recaman.ShortPeriodicSupply (sign)
+
+set_option maxHeartbeats 2000000
+
+theorem count_rank_clock (P : Nat → Prop) (r : Nat) : ∀ K,
+    r < cN P 0 K → ∃ q, q<K ∧ P q ∧ cN P 0 q=r := by
+  intro K
+  induction K with
+  | zero => simp [cN]
+  | succ K ih =>
+    intro hr
+    by_cases h : r<cN P 0 K
+    · obtain ⟨q,hq,hP,he⟩ := ih h
+      exact ⟨q,by omega,hP,he⟩
+    · by_cases hP : P K
+      · have hs := cN_succ_pos P 0 K (by simpa using hP)
+        exact ⟨K,by omega,hP,by omega⟩
+      · have hs := cN_succ_neg P 0 K (by simpa using hP)
+        omega
+
+theorem first_two_not_supplied (f : Nat → Bool) (q : Nat)
+    (hc : cN (fun i => f i=true) 0 q≤1) : ¬EndN f 0 q := by
+  rintro ⟨_,u,k,_,huk,hW⟩
+  have hs := cN_sub0 (fun i => f i=true) u q (by have := hW.1; omega)
+  have hk : q-u=k := by omega
+  rw [hk] at hs
+  have hw := cN_walk f u k
+  have hlen := win_ge3 f u k hW
+  have hm := hW.2.1
+  omega
+
+theorem small_rank_window (f : Nat → Bool) (q : Nat)
+    (hc : cN (fun i => f i=true) 0 q≤3) (he : EndN f 0 q) :
+    ∃ u, u+3=q ∧ Win f u 3 := by
+  obtain ⟨_,u,k,_,huk,hW⟩ := he
+  have hs := cN_sub0 (fun i => f i=true) u q (by have := hW.1; omega)
+  have hk : q-u=k := by omega
+  rw [hk] at hs
+  have hw := cN_walk f u k
+  have hm := hW.2.1
+  have hsmall := window_three_or_at_least_seven f u k hW
+  have hk3 : k=3 := by omega
+  rw [hk3] at huk hW
+  exact ⟨u,huk,hW⟩
+
+theorem SAA_window (f : Nat → Bool) (u : Nat)
+    (h0 : f u=false) (h1 : f (u+1)=true) (h2 : f (u+2)=true) :
+    Win f u 3 := by
+  have a : Fw f (u+1)=Fw f u-1 := by
+    have ha := Fw_succ f u
+    simp [h0,sign] at ha
+    omega
+  have b : Fw f (u+2)=Fw f (u+1)+1 := by
+    simpa [Nat.add_assoc,h1,sign] using Fw_succ f (u+1)
+  have c : Fw f (u+3)=Fw f (u+2)+1 := by
+    simpa [Nat.add_assoc,h2,sign] using Fw_succ f (u+2)
+  refine ⟨by decide,by omega,?_⟩
+  rw [Ar3]
+  omega
+
+theorem initial_subtractions (f : Nat → Bool) (h : Nat)
+    (hS : ∀ i, i<h → f i=false) :
+    cN (fun i => f i=false) 0 h=h := by
+  have ha : cN (fun i => f i=true) 0 h=0 := by
+    apply cN_zero_of
+    intro i _ hi ht
+    have hs := hS i (by omega)
+    simp [hs] at ht
+  have hw := (cN_walk f 0 h).2
+  omega
+
+/-- Every free among the first three original additions is low relative
+to the initial S run. No positivity or bound on later heights is used. -/
+theorem early_free_is_low (f : Nat → Bool) (h q : Nat) (hh : 1≤h)
+    (hS : ∀ i, i<h → f i=false) (hA : f q=true)
+    (hc : cN (fun i => f i=true) 0 q≤2) (hfree : ¬EndN f 0 q) :
+    Fw f q≤1-(h : Int) := by
+  have hhq : h≤q := by
+    by_cases ht : q<h
+    · have hs := hS q ht
+      simp [hs] at hA
+    · omega
+  have hs0 := initial_subtractions f h hS
+  have hs := count_prefix_le (fun i => f i=false) 0 h q hhq
+  have hw := cN_walk f 0 q
+  simp only [Nat.zero_add,Fw] at hw
+  by_cases hl : Fw f q≤1-(h : Int)
+  · exact hl
+  · have ha2 : cN (fun i => f i=true) 0 q=2 := by omega
+    have hsq : cN (fun i => f i=false) 0 q=h := by omega
+    have hq : q=h+2 := by omega
+    have hsplit := cN_sub0 (fun i => f i=false) h q hhq
+    have hz : cN (fun i => f i=false) h (q-h)=0 := by omega
+    have hat (i : Nat) (hi : h≤i) (hiq : i<q) : f i=true := by
+      have hn := not_of_cN_zero (fun j => f j=false) h (q-h) hz i hi (by omega)
+      cases hs : f i
+      · exact (hn hs).elim
+      · rfl
+    have h0 : f (h-1)=false := hS _ (by omega)
+    have h1 : f (h-1+1)=true := hat _ (by omega) (by omega)
+    have h2 : f (h-1+2)=true := hat _ (by omega) (by omega)
+    exact (hfree ⟨hA,h-1,3,Nat.zero_le _,by omega,SAA_window f _ h0 h1 h2⟩).elim
+
+theorem two_low_free_of_two_additions (f : Nat → Bool) (h K : Nat) (hh : 1≤h)
+    (hS : ∀ i, i<h → f i=false) (hA : 2≤cN (fun i => f i=true) 0 K) :
+    2≤cN (fun i => f i=true ∧ ¬EndN f 0 i ∧ Fw f i≤1-(h : Int)) 0 K := by
+  obtain ⟨u,hu,huA,huC⟩ := count_rank_clock (fun i => f i=true) 0 K (by omega)
+  obtain ⟨v,hv,hvA,hvC⟩ := count_rank_clock (fun i => f i=true) 1 K (by omega)
+  have huv : u<v := by
+    by_cases he : v≤u
+    · have hm := count_prefix_le (fun i => f i=true) 0 v u he
+      omega
+    · omega
+  have huf := first_two_not_supplied f u (by omega)
+  have hvf := first_two_not_supplied f v (by omega)
+  exact two_marks_le_count _ 0 u v K (Nat.zero_le _) huv (by omega)
+    ⟨huA,huf,early_free_is_low f h u hh hS huA (by omega) huf⟩
+    ⟨hvA,hvf,early_free_is_low f h v hh hS hvA (by omega) hvf⟩
+
+/-- If the third original A is supplied, the fourth cannot be supplied.
+The two short windows would require opposite signs at one original clock. -/
+theorem fourth_free_after_third_actual (f : Nat → Bool) (t q : Nat)
+    (htq : t<q) (htC : cN (fun i => f i=true) 0 t=2)
+    (hqC : cN (fun i => f i=true) 0 q=3) (hte : EndN f 0 t) :
+    ¬EndN f 0 q := by
+  intro hqe
+  obtain ⟨u,hut,huW⟩ := small_rank_window f t (by omega) hte
+  obtain ⟨v,hvq,hvW⟩ := small_rank_window f q (by omega) hqe
+  obtain ⟨huS,hu1,hu2⟩ := win3 f u huW
+  obtain ⟨hvS,hv1,hv2⟩ := win3 f v hvW
+  have hs := cN_succ_pos (fun i => f i=true) 0 t (by simpa using hte.1)
+  have hsplit := cN_sub0 (fun i => f i=true) (t+1) q (by omega)
+  have hz : cN (fun i => f i=true) (t+1) (q-(t+1))=0 := by omega
+  have hvt : v+2≤t := by
+    by_cases hl : t+1≤v+2
+    · exact (not_of_cN_zero (fun i => f i=true) (t+1) (q-(t+1)) hz
+        (v+2) hl (by omega) hv2).elim
+    · omega
+  have heq : v=u+1 := by omega
+  rw [heq,hu1] at hvS
+  contradiction
+
+/-- A deep visit followed by recovery costs three ORIGINAL low free A.
+The proof keeps all Nat0 suppliers and requires no positive-prefix premise. -/
+theorem three_low_free_of_deep_return (f : Nat → Bool) (h T x : Nat)
+    (hh : 1≤h) (hS : ∀ i, i<h → f i=false) (hxT : x≤T)
+    (hx : Fw f x ≤ -(h : Int)-2) (hend : 2-(h : Int)≤Fw f T) :
+    3≤cN (fun i => f i=true ∧ ¬EndN f 0 i ∧ Fw f i≤1-(h : Int)) 0 T := by
+  let L := fun i => f i=true ∧ ¬EndN f 0 i ∧ Fw f i≤1-(h : Int)
+  by_cases hlow : 3≤cN L 0 T
+  · exact hlow
+  · have hbound : cN L 0 T≤2 := by omega
+    obtain ⟨v,_,hvT,hmin⟩ := exists_minimum_visit f 0 T
+    simp only [Nat.zero_add] at hvT hmin
+    have hmv := hmin x (Nat.zero_le _) hxT
+    have hvlt : v<T := by
+      by_cases he : v=T
+      · rw [he] at hmv
+        omega
+      · omega
+    have hw := cN_walk f v (T-v)
+    rw [Nat.add_sub_cancel' (by omega : v≤T)] at hw
+    have hsplit := cN_sub0 (fun i => f i=true) v T (by omega)
+    have hfour : 4≤cN (fun i => f i=true) 0 T := by omega
+    obtain ⟨t,htT,htA,htC⟩ := count_rank_clock (fun i => f i=true) 2 T (by omega)
+    obtain ⟨q,hqT,hqA,hqC⟩ := count_rank_clock (fun i => f i=true) 3 T (by omega)
+    have htq : t<q := by
+      by_cases he : q≤t
+      · have hm := count_prefix_le (fun i => f i=true) 0 q t he
+        omega
+      · omega
+    have htwoT := two_low_free_of_two_additions f h t hh hS (by omega)
+    have hte : EndN f 0 t := by
+      by_cases he : EndN f 0 t
+      · exact he
+      · have hl : L t := ⟨htA,he,early_free_is_low f h t hh hS htA (by omega) he⟩
+        have hs := cN_succ_pos L 0 t (by simpa using hl)
+        have hm := count_prefix_le L 0 (t+1) T (by omega)
+        change 2≤cN L 0 t at htwoT
+        omega
+    have hqf := fourth_free_after_third_actual f t q htq htC hqC hte
+    have htwoQ := two_low_free_of_two_additions f h q hh hS (by omega)
+    change 2≤cN L 0 q at htwoQ
+    have hqhigh : 1-(h : Int)<Fw f q := by
+      by_cases hl : Fw f q≤1-(h : Int)
+      · have hs := cN_succ_pos L 0 q (by simpa only [Nat.zero_add] using And.intro hqA (And.intro hqf hl))
+        have hm := count_prefix_le L 0 (q+1) T (by omega)
+        omega
+      · omega
+    have hwq := cN_walk f 0 q
+    simp only [Nat.zero_add,Fw] at hwq
+    have hsbound : cN (fun i => f i=false) 0 q≤h+1 := by omega
+    have hqv : q<v := by
+      by_cases hvq : v≤q
+      · have hm := count_prefix_le (fun i => f i=false) 0 v q hvq
+        have hwv := (cN_walk f 0 v).1
+        simp only [Nat.zero_add,Fw] at hwv
+        omega
+      · omega
+    have hvA : f v=true := by
+      have hm := hmin (v+1) (Nat.zero_le _) (by omega)
+      rcases fw_cases f v with ⟨_,ha⟩|⟨_,_⟩
+      · exact ha
+      · omega
+    have hvf := block_prefix_low_clock_not_endable f 0 0 v BlockWord.nil
+      (by simp [seg]) (Nat.zero_le _) (Fw f v)
+      (fun i _ hi => hmin i (Nat.zero_le _) (by omega)) (by omega)
+    have hLv : L v := ⟨hvA,hvf,by omega⟩
+    have hbefore := count_prefix_le L 0 q v (by omega)
+    have hs := cN_succ_pos L 0 v (by simpa using hLv)
+    have hm := count_prefix_le L 0 (v+1) T (by omega)
+    omega
+
+end Recaman.InitialLowFreeRanks

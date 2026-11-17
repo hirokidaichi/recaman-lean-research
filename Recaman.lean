@@ -883,3 +883,8 @@ import Recaman.OldAreaRecoveryBound
 import Recaman.OldFloorAreaSpectrum
 import Recaman.ThreeOldAdditionRecovery
 import Recaman.ThreeAdditionPrefix
+import Recaman.InitialLowFreeRanks
+import Recaman.LowFreeFourPast
+import Recaman.LowFreeFourFloor
+import Recaman.FloorVisitFreeCount
+import Recaman.FivePeriodSourceCost

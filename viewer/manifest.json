@@ -326,9 +326,14 @@
   },
   {
    "name": "Audit",
-   "lines": 4459,
+   "lines": 4477,
    "imports": [
     "InitialSLowTargetTransport",
+    "InitialLowFreeRanks",
+    "LowFreeFourPast",
+    "LowFreeFourFloor",
+    "FloorVisitFreeCount",
+    "FivePeriodSourceCost",
     "InitialSTransportBoundary",
     "InitialSQuadraticSource",
     "BalancedInsertionArea",
@@ -31229,6 +31234,39 @@
    "hasReport": false
   },
   {
+   "name": "FivePeriodSourceCost",
+   "lines": 140,
+   "imports": [
+    "FloorVisitFreeCount"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "plateau_source_key",
+     "line": 23
+    },
+    {
+     "kind": "theorem",
+     "name": "five_distinct_original_sources",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "five_periods_need_five_low_free",
+     "line": 105
+    },
+    {
+     "kind": "theorem",
+     "name": "original_boundary_five_period_cost",
+     "line": 127
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "FiveSSClassification",
    "lines": 114,
    "imports": [
@@ -31528,6 +31566,25 @@
    ],
    "theorems": 4,
    "defs": 1,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FloorVisitFreeCount",
+   "lines": 113,
+   "imports": [
+    "FloorSupplyFreeBudget",
+    "LowFreeFourFloor"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "original_floor_visit_count",
+     "line": 41
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -34695,6 +34752,64 @@
     }
    ],
    "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "InitialLowFreeRanks",
+   "lines": 220,
+   "imports": [
+    "SFinalWindowLength"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "count_rank_clock",
+     "line": 11
+    },
+    {
+     "kind": "theorem",
+     "name": "first_two_not_supplied",
+     "line": 27
+    },
+    {
+     "kind": "theorem",
+     "name": "small_rank_window",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "SAA_window",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_subtractions",
+     "line": 67
+    },
+    {
+     "kind": "theorem",
+     "name": "early_free_is_low",
+     "line": 80
+    },
+    {
+     "kind": "theorem",
+     "name": "two_low_free_of_two_additions",
+     "line": 110
+    },
+    {
+     "kind": "theorem",
+     "name": "fourth_free_after_third_actual",
+     "line": 128
+    },
+    {
+     "kind": "theorem",
+     "name": "three_low_free_of_deep_return",
+     "line": 151
+    }
+   ],
+   "theorems": 9,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -38875,6 +38990,74 @@
     }
    ],
    "theorems": 5,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowFreeFourFloor",
+   "lines": 160,
+   "imports": [
+    "LowFreeFourPast",
+    "ThreeAdditionPrefix"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "last_minimum",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "first_return",
+     "line": 54
+    },
+    {
+     "kind": "theorem",
+     "name": "first_return_total_free",
+     "line": 79
+    },
+    {
+     "kind": "theorem",
+     "name": "low_four_original_floor",
+     "line": 125
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "LowFreeFourPast",
+   "lines": 216,
+   "imports": [
+    "InitialLowFreeRanks",
+    "OldAdditionSourceRadius"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "downward_crossing",
+     "line": 12
+    },
+    {
+     "kind": "theorem",
+     "name": "shifted_height",
+     "line": 28
+    },
+    {
+     "kind": "theorem",
+     "name": "low_actual_cut_iff",
+     "line": 38
+    },
+    {
+     "kind": "theorem",
+     "name": "old_additions_le_three",
+     "line": 122
+    }
+   ],
+   "theorems": 4,
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
@@ -70439,6 +70622,6 @@
    "hasReport": false
   }
  ],
- "total": 1032,
+ "total": 1037,
  "withReport": 167
 }
