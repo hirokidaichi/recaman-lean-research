@@ -1,0 +1,21 @@
+{
+  "verified_jst": "2026-11-17T09:55:30.819687+09:00",
+  "research_snapshot_sha": "ceb55ff5cee8adf20f1f6ba974ffe2389e479d36",
+  "verified_origin_main_sha": "ceb55ff5cee8adf20f1f6ba974ffe2389e479d36",
+  "push": "normal fast-forward",
+  "validation": {
+    "pre_commit": "passed",
+    "module_graph": "1026/1026 library modules, acyclic;132 import contracts",
+    "registry": "728 entries;464 PROVED-LEAN;320 G1-G5 rows passed",
+    "protected_labels": "4 unchanged",
+    "G6_static": "passed;3 of4 pinned,1 reasoned unpinned,22 definition lock entries",
+    "viewer_manifest": "up to date",
+    "diff_whitespace": "passed",
+    "Lean_build": "not run: no Lean source changes in this snapshot; paper claims remain unformalized",
+    "hosted_CI": "not checked; no green-CI claim"
+  },
+  "unrelated_work_preserved": [
+    "docs/data/daily_research/2026-11-07.json"
+  ],
+  "receipt_scope": "This receipt records the already verified research snapshot, not its own future commit."
+}
