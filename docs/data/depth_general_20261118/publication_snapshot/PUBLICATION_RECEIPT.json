@@ -1,0 +1,40 @@
+{
+  "research_snapshot_sha": "4f3ce9f050733b15e0e2426cc7c2e3249cc54a08",
+  "destination": "origin/main",
+  "normal_push": "success",
+  "ls_remote_matches": true,
+  "remote_sha": "4f3ce9f050733b15e0e2426cc7c2e3249cc54a08",
+  "checked_at_jst": "2026-11-18T07:58:31.355364+09:00",
+  "hosted_ci": {
+    "sha": "4f3ce9f050733b15e0e2426cc7c2e3249cc54a08",
+    "status": "observed",
+    "scope": "Read after normal push, separate from local verification",
+    "total_count": 1,
+    "runs": [
+      {
+        "id": 44195140993,
+        "status": "in_progress",
+        "conclusion": null,
+        "url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44195140993",
+        "event": "push"
+      }
+    ]
+  },
+  "journal_stop": "2026-11-18T07:58:17.976694+09:00",
+  "validated_source_hashes": {
+    "HighRunFreePayment": {
+      "path": "Recaman/HighRunFreePayment.lean",
+      "sha256": "e896c06f3e8a3fb60047598e200fca806ec6c45149a09a02479d5a21a7d20573"
+    },
+    "CommonSourceHitSpacing": {
+      "path": "Recaman/CommonSourceHitSpacing.lean",
+      "sha256": "85b7d52bc9fab5956b8edeb327f14a442bcfa1f0b9f40a1e31e4535a2cfb081a"
+    },
+    "TwoLevelVisitCounterexample": {
+      "path": "Recaman/TwoLevelVisitCounterexample.lean",
+      "sha256": "8ad9665b80d2c3e4ee34b079c167b6a0cf6965c8ac95a25f4e6b93e41353d629"
+    }
+  },
+  "scope": "C1 research snapshot; subsequent exact docs-only receipt commit records this SHA, its own final SHA is reported in chat",
+  "ci_observed_jst": "2026-11-18T07:59:11.024434+09:00"
+}

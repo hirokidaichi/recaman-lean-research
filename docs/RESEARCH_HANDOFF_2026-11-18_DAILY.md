@@ -57,7 +57,9 @@ H01の160時計counter certificateは512MB kernel-memoryを含む失敗、初回
 ## 保存・公開
 
 <!-- PUBLICATION_BEGIN -->
-未実施。07:45以降、確定journal stop→実績保存→owned pathsのみsnapshot commit→origin/main通常push→ls-remote完全一致の順。最終SHA/CIは実際に確認して保存する。予定をpush成功と呼ばない。
+研究snapshot **4f3ce9f050733b15e0e2426cc7c2e3249cc54a08** を **origin/main** へ通常pushし、`git ls-remote origin refs/heads/main`との完全一致を確認（2026-11-18T07:58:31.355364+09:00）。hosted CIの実観測は[receipt](data/depth_general_20261118/publication_snapshot/PUBLICATION_RECEIPT.json)とCI_SNAPSHOT.json参照、完了成功とは推定しない。ローカル全体検証/remote到達/hosted CIを分ける。
+
+この照合記録はdocs-onlyの最終commitへ保存し、その自己SHA/remote照合/CIは当日chatへ報告する。未保存の研究成果なし。他sessionの11/07 journalは変更せず対象外。
 <!-- PUBLICATION_END -->
 
 ## 最終追加handoff
