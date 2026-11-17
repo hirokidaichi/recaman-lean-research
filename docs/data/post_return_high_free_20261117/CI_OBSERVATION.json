@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-11-17 13:54:51 UTC",
+  "run_id": 44095987395,
+  "sha": "9bda0fded3df98906c668589a934227a9e0045cb",
+  "jobs": [
+    {
+      "id": 134083110685,
+      "name": "Research harness (macos-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-17T13:45:55Z",
+      "completed_at": "2026-11-17T13:46:36Z",
+      "current_steps": []
+    },
+    {
+      "id": 134083111074,
+      "name": "Research harness (ubuntu-latest)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-17T13:45:55Z",
+      "completed_at": "2026-11-17T13:46:17Z",
+      "current_steps": []
+    },
+    {
+      "id": 134083543308,
+      "name": "Lean Audit & Empirical Regression Suite",
+      "status": "in_progress",
+      "conclusion": null,
+      "started_at": "2026-11-17T13:46:38Z",
+      "completed_at": null,
+      "current_steps": [
+        "Build deep trace certificates sequentially"
+      ]
+    }
+  ]
+}

@@ -71,3 +71,9 @@ python3 docs/data/post_return_high_free_20261117/audit_packet.py
 局所側はM5の紙上排除。一般化側は条件を明示したE-732の全source輸送と、E-733の任意旧stockを無視する一般機構の反証。M5という数値更新、補題数、PAPERのLean接続だけではtrackerをresetしない。前回の連続進展なし0に対し、今回もこの一般的な根拠により0を維持する。
 
 一般費用不等式の反例は今や **M>=6・low free>=5** を要する。ただしM6の探索は開始していない。次の決定点は、より大きい元free予算から旧Aの配置と面積の制約をどう導くか。単なるA総数の上限やsourceの偶奇だけでは不足することが今回の反例で分かった。旧停止表を大きくする方法は継続しない。
+
+## 公開後の確認
+
+検証済み研究commit `9bda0fded3df98906c668589a934227a9e0045cb` を通常のfast-forwardで `origin/main` へpushし、remote SHAとの一致を確認した。[PUBLICATION.json](data/post_return_high_free_20261117/PUBLICATION.json)に所有範囲、hook成功、無関係な11/07記録のhash保存を記録。追補はキー差の正規化を明記した文書と監査・公開receiptだけで、Leanソースは全体検証時の1033ファイルと一致する。G5の引用11署名も原文との完全一致を再確認した。
+
+[GitHub CI](https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44095987395)は22:54:51 JST時点でLinux/macOSの研究ハーネスが成功し、Lean全体検証は進行中。ローカルの全体検証成功とは別の観測であり、リモートLean検証の成功を先取りしない。保存追補commit自身のSHAはgit履歴と会話を正本とし、自己参照SHA記入のための再commitは行わない。23時の最終時計確認も会話に残す。

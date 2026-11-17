@@ -1,0 +1,77 @@
+{
+  "recorded_jst": "2026-11-17T22:48:52.274481+09:00",
+  "status": "PASS",
+  "quoted_signatures": 11,
+  "rows": [
+    {
+      "row": "E-732",
+      "symbol": "old_source_distance",
+      "module": "Recaman/OldAdditionSourceRadius.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-732",
+      "symbol": "original_source_iff",
+      "module": "Recaman/OldAdditionSourceRadius.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-732",
+      "symbol": "original_free_ledger",
+      "module": "Recaman/OldAdditionSourceRadius.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-734",
+      "symbol": "actual_implies_possible",
+      "module": "Recaman/OldAreaRecoveryBound.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-734",
+      "symbol": "recovery_bound_of_old_area_admission",
+      "module": "Recaman/OldAreaRecoveryBound.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-736",
+      "symbol": "original_floor_area_spectrum",
+      "module": "Recaman/OldFloorAreaSpectrum.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-737",
+      "symbol": "consecutive_three_suffix_admitted",
+      "module": "Recaman/ThreeOldAdditionRecovery.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-737",
+      "symbol": "original_crossing_admitted",
+      "module": "Recaman/ThreeOldAdditionRecovery.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-737",
+      "symbol": "original_recovery_below_seven",
+      "module": "Recaman/ThreeOldAdditionRecovery.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-738",
+      "symbol": "three_additions_two_free_shape",
+      "module": "Recaman/ThreeAdditionPrefix.lean",
+      "verbatim_signature_match": true
+    },
+    {
+      "row": "E-738",
+      "symbol": "three_additions_at_floor_shape",
+      "module": "Recaman/ThreeAdditionPrefix.lean",
+      "verbatim_signature_match": true
+    }
+  ],
+  "fullcheck_source_files": 1033,
+  "changed_since_fullcheck": [],
+  "scope": "Exact multiline quoted theorem signatures compared with accepted Lean source. Every Lean file in the successful fullcheck source manifest still matches. This is not a substitute for semantic proof.",
+  "setup_note": "Initial inline parser expected lowercase artifact and stopped at E732 capital Artifact before any comparison; case-insensitive metadata lookup fixed it. No Lean source or signature changed."
+}

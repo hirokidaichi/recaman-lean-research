@@ -1,17 +1,18 @@
 {
   "parent_cycle": "R-20261117-EVENING",
   "recorded_jst": "2026-11-17T22:43:54.206278+09:00",
-  "phase": "mathematics closed; audit and publication closing",
+  "phase": "mathematics and semantic audit complete; published; final receipt publication and deadline CI observation",
   "user_scope": "M=5 / original low free<=4; simultaneous 24/16 supplier families; unchanged Nat0 history, every supplier, unrestricted depth/upper height/length; counterexample-first",
   "clock": {
     "initial_observed_jst": "2026-11-17T20:20:07+09:00",
     "requested_deadline_jst": "2026-11-17T23:00:00+09:00",
     "new_implementation_stopped_by_jst": "2026-11-17T22:20:00+09:00",
-    "actual_final_close": "not yet observed; later publication receipt and conversation are authoritative",
+    "actual_final_close": "Final23:00 clock confirmation is recorded in the conversation; this receipt closes mathematical/semantic work earlier and does not claim future elapsed time.",
     "distinct_general_phase": "DISTINCT_GENERAL_PHASE.json",
     "distinct_general_seconds": 1502.26643,
     "active_minutes_claimed": null,
-    "note": "Neither the entire deadline window nor the nominal 100-minute allocation is claimed as measured active mathematical work. Evening parent is distinct from morning units and automatic daily cycles."
+    "note": "Neither the entire deadline window nor the nominal 100-minute allocation is claimed as measured active mathematical work. Evening parent is distinct from morning units and automatic daily cycles.",
+    "mathematical_and_semantic_audit_closed_jst": "2026-11-17T22:55:40.603096+09:00"
   },
   "bounded_question": "Can original PC5/low4 realize both source inventories using post-R high free?",
   "acceptance_test": "Exact original-parent counterexample, or complete all-history exclusion/strict necessary source-free edge with explicit dependencies.",
@@ -87,7 +88,9 @@
     "input_hash_audit": "PASS1093/1093 FINAL_INPUT_HASH_AUDIT.json",
     "viewer_manifest": "regenerated for5 modules; python3 viewer/gen_manifest.py --check PASS;1032 modules/167 reports",
     "failed_initial_fullcheck": "index used E731 instead of E-731; fixed documentation link, not Lean resource retry",
-    "precommit_and_push": "pending subsequent publication verification"
+    "precommit_and_push": "PASS research commit9bda0fded3df98906c668589a934227a9e0045cb, normal origin/main push, remote SHA verified; PUBLICATION.json",
+    "verbatim_signature_audit": "PASS11/11 and1033/1033 unchanged fullcheck sources; FINAL_SIGNATURE_AUDIT.json",
+    "remote_ci": "Both harness jobs succeeded; remote Lean suite still in progress at recorded observation. No remote fullcheck success claimed."
   },
   "measured_job_cpu": {
     "mathematical_worker_seconds": 1.58783,
@@ -149,5 +152,6 @@
   },
   "next_decision": "Any counter to the general cost claim now needs M>=6 and low free>=5. Determine original-free constraints on old A placement/area; no M6 work has begun and no stopped table extension is authorized by this result.",
   "commands_and_exact_outputs": "Each run has argv/start/result/log and frozen source/input hashes; see README.md. Full validation command bash ./scripts/check.sh. Final gate/push commands will be preserved in publication receipt.",
-  "ownership": "OWNED_PATHS.json; unrelated docs/data/daily_research/2026-11-07.json excluded"
+  "ownership": "OWNED_PATHS.json; unrelated docs/data/daily_research/2026-11-07.json excluded",
+  "updated_jst": "2026-11-17T22:55:40.603096+09:00"
 }

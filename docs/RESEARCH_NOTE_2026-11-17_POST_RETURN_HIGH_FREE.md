@@ -12,7 +12,7 @@ Let h>=1, T>=h, the first h signs be S, and the original history through T+41 ha
 
     F_low(T)=#{q<T: original free(q), H(q)<=d-1} <=4.
 
-All upper heights, depths, runs, lengths and high free remain unrestricted. No standard-orbit realization is claimed. The two necessary source families from E728 have levels c/c+1 and keys24j+15/16j+11 for j0..4. Their full original source sets, including alternatives, are retained.
+All upper heights, depths, runs, lengths and high free remain unrestricted. No standard-orbit realization is claimed. The two necessary source families from E728 have levels c/c+1 and **normalized key differences** K_c(u)-K_c(T)=24j+15 and K_(c+1)(u)-K_(c+1)(T)=16j+11 for j0..4, with u<T in each family. These are differences in the same original history, not absolute K values or a reset at T. Their full original source sets, including alternatives, are retained.
 
 ## 1. The exact original prefix that must exist
 
