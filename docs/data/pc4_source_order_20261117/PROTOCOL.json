@@ -1,0 +1,36 @@
+{
+  "frozen_jst": "2026-11-17T10:10:57.063932+09:00",
+  "source_revision": "8fd17a6bfb9d706f57239591ecbb3be0ebc166df",
+  "hashes": {
+    "docs/data/pc4_source_order_20261117/run_single.py": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+    "docs/data/pc4_source_order_20261117/guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+    "docs/data/pc4_source_order_20261117/probe.py": "5a255860c2b2e502e27eaa68baa255d45f2a13d369d04c170b4041991ac3b452",
+    "docs/HYPOTHESIS_CARD_2026-11-17_FOUR_PERIOD_SOURCE_ORDER.md": "1a622d0f6874186aac9ab761ba3ffbaccc8bcc51cfac9bd64c9c8610f256a146"
+  },
+  "discovery": "all4096 length12 words; h1..4; all prefix endpoints; includes previously inspected prefix space, not fresh holdout",
+  "holdout": "h2/7/19,d0/4/5/8,r3/17/41, two orders of deep return and balanced upper hill; plus h2/7/19,r6/17/65/129 high-free family; no statistical independence/exhaustiveness claim",
+  "jobs": [
+    {
+      "tag": "discovery",
+      "cpu": 4,
+      "wall": 7,
+      "script": "probe.py",
+      "args": [
+        "discovery"
+      ]
+    },
+    {
+      "tag": "holdout",
+      "cpu": 4,
+      "wall": 7,
+      "script": "probe.py",
+      "args": [
+        "holdout"
+      ]
+    }
+  ],
+  "audit_reservation": "2CPU/5wall, independent forward-area checker if new certificate/necessary interface survives; protocol frozen separately",
+  "no_retry": "No further search after finite absence; one technical verification repair only; no old stopped mathematical job reopened",
+  "guard": "same source hash as previous validated single-worker guard; fresh normal/fork/exec/wall/thread CPU fixtures before research jobs;2CPU/3wall each except cpu1/wall0.15",
+  "budget": "math8CPU+independent audit2CPU; guard separate; external/tool/setup CPU unmeasured, not zero"
+}

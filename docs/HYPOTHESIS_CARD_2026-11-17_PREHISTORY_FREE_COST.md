@@ -41,3 +41,7 @@ First gate: the unit-loop constructor stopped after its frozen jobs09:32; a diff
 One deep validation initialization failure was explicitly corrected once (missing __file__ in reused verifier namespace); inputs/claims/resources unchanged, failed version retained. This is the recorded technical amendment to that audit's no-repair plan, not a mathematical conjecture repair or reopening of prior stopped work. No further repair.
 
 Local progress: paper M<=3 and restricted-floor consumer. Depth-general progress: not established; no tracker reset and no daily parent cycle retrospectively created. Generalized source spacing remains unpaid in free units. Planned25-minute independent-mechanism reservation is not automatically a completed25minutes; final actual checkpoints/limits are recorded without inflating elapsed time. No Lean changes, no protected claims changed. Preserve the unrelated11/07 journal.
+
+## Subsequent explicit M4 continuation (E729)
+
+H-20261117-PC4 proves on paper that no M4/low free<=3 original history exists, with depth and upper excursions unrestricted. Low-free3 internally supplies a floor via the original first-return rank bound; all source-height visits then inject/count into disjoint free wallets. See RESEARCH_NOTE_2026-11-17_FOUR_PERIOD_SOURCE_ORDER.md. Thus the parent inequality now holds for M<=4; every M>=4 plateau needs at least four low free. General M<=F_low for M>=5/free>=4 stays CONJECTURED. This follow-up does not rewrite the earlier stopped jobs or turn them into proofs.

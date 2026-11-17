@@ -1,0 +1,82 @@
+{
+  "recorded_jst": "2026-11-17T10:20:03.087042+09:00",
+  "source_revision": "8fd17a6bfb9d706f57239591ecbb3be0ebc166df",
+  "question": "M4 with original low free<=3, no assumed depth/upper/length/run cap",
+  "conclusion": "No such original history exists: PROVED-PAPER E729; new chain not Lean-checked, human review pending.",
+  "stronger_statement": "initial-S h, original positive prefixes, H(T)=2-h, low free<=3 imply source-height (-h-2) visit count<=low free<=3",
+  "proof_inputs": [
+    "E379 original floor recovery",
+    "E414 original total-free3 count bound, only at proved first-return prefix",
+    "E658 original floor supply injection/count",
+    "new disjoint payment of all floor+2 visits"
+  ],
+  "local_progress": "PC4 excluded at all original depths/upper heights; no four-source order is realizable",
+  "uniform_depth_general_progress": false,
+  "scope_note": "The floor is derived, not assumed. This fixed-free-budget result is not an arbitrary-rank charging law; no daily cycle/tracker reset.",
+  "remaining": "M5/low free4 and general M<=F_low/C1; need a new mathematical interface, not stopped r4/SMT/generator retries",
+  "checkpoints_jst": {
+    "setup": "10:07:16",
+    "card_written": "10:09:02",
+    "probe_protocol_frozen": "10:10:57",
+    "discovery": "10:11:12",
+    "holdout": "10:11:16",
+    "complete_paper_candidate": "10:13:12",
+    "independent_audit": "10:15:11",
+    "separate_semantic_audit_record": "10:16:39"
+  },
+  "time_accounting": "Unscheduled bounded unit, completed before its first15-minute gate. A25-minute distinct floor-accounting/audit reservation was made; it is not claimed as25 elapsed work minutes. The question was decided earlier, so the unused reservation was not spent on additional searches. Model reasoning/reading phase times were not independently timed; no nominal100-minute cycle is reported. Publication/validation is separate.",
+  "mathematical_worker_cpu_seconds": 0.25107199999999996,
+  "guard_worker_cpu_seconds": 1.144573,
+  "controller_cpu_seconds": 0.019886000000000015,
+  "math_receipts": [
+    {
+      "file": "docs/data/pc4_source_order_20261117/audit-result.json",
+      "cpu": 0.03888,
+      "wall": 0.057694624993018806,
+      "exit_code": 0
+    },
+    {
+      "file": "docs/data/pc4_source_order_20261117/discovery-result.json",
+      "cpu": 0.12125299999999999,
+      "wall": 0.1454623749887105,
+      "exit_code": 0
+    },
+    {
+      "file": "docs/data/pc4_source_order_20261117/holdout-result.json",
+      "cpu": 0.09093899999999999,
+      "wall": 0.11876925002434291,
+      "exit_code": 0
+    }
+  ],
+  "unmeasured": "Tool orchestration, source/doc editing and reading, checks/publication CPU; not zero.",
+  "probes": {
+    "discovery": {
+      "words": 4096,
+      "depth_cases": 2636,
+      "last_minimum_cases": 99,
+      "floor_visit_cases": 64364
+    },
+    "holdout": {
+      "words": 84,
+      "depth_cases": 114,
+      "last_minimum_cases": 0,
+      "floor_visit_cases": 13371
+    }
+  },
+  "holdout_limitation": "Zero eligible last-minimum interfaces. Targeted independent certificate controls are verification, not replacement holdout.",
+  "independent_audit": "10 fixed cases, passed; full forward-area source tables and disjoint maps saved",
+  "failure_or_repair": "No mathematical/certificate job failed or was retried; CPU/wall guard kills expected. Dropped-terminal auxiliary is REFUTED by S/T1/m-2, not a parent counter.",
+  "source_hash_checks": {
+    "matching_entries": 6,
+    "evolved_card": [
+      {
+        "file": "docs/HYPOTHESIS_CARD_2026-11-17_FOUR_PERIOD_SOURCE_ORDER.md",
+        "frozen_sha256": "1a622d0f6874186aac9ab761ba3ffbaccc8bcc51cfac9bd64c9c8610f256a146",
+        "current_sha256": "3afa2e4d6586f3715bdaa57135972fcf6cc01776000cebf286fb7daa312226c4",
+        "reason": "card status/outcomes appended after completion; original hypothesis preserved"
+      }
+    ]
+  },
+  "stopped": "Finite structural probe completed its frozen two jobs; no enlargement. All old stops preserved.",
+  "unrelated_file_preserved": "docs/data/daily_research/2026-11-07.json"
+}
