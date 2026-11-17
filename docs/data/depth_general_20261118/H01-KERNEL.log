@@ -1,0 +1,278 @@
+Recaman/AncestorSourceCollision.lean:7:5: error: unknown namespace `Recaman.InitialSPaddingPositive`
+Recaman/AncestorSourceCollision.lean:16:33: error(lean.unknownIdentifier): Unknown identifier `finiteSign`
+Recaman/AncestorSourceCollision.lean:24:42: error: Tactic `decide` failed for proposition
+  ∀ (k : Fin 160), H (↑k + 1) = H ↑k + sign (ancestrySign ↑k) ∧ B (↑k + 1) = B ↑k + H (↑k + 1)
+because its `Decidable` instance
+  Nat.decidableForallFin fun k => H (↑k + 1) = H ↑k + sign (ancestrySign ↑k) ∧ B (↑k + 1) = B ↑k + H (↑k + 1)
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `decidable_of_iff`, `instDecidableAnd`, `instDecidableEqBool`, `Bool.decEq`, `Int.decEq`, `Int.instDecidableEq`, `Nat.decidableBallLT`, and `Nat.decidableForallFin`, reduction got stuck at the `Decidable` instance
+  match H (↑⟨0, ⋯⟩ + 1), H ↑⟨0, ⋯⟩ + sign (ancestrySign ↑⟨0, ⋯⟩) with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+Recaman/AncestorSourceCollision.lean:25:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:29:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:30:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:31:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:45:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fw ancestrySign (k + 1)
+in the target expression
+  Ar ancestrySign 0 (k + 1) = Ar ancestrySign 0 k + (Fw ancestrySign k + sign (ancestrySign k) - 0)
+
+case succ
+k : Nat
+ih : k ≤ 160 → Fw ancestrySign k = H k ∧ Ar ancestrySign 0 k = B k
+hk : k + 1 ≤ 160
+hi : Fw ancestrySign k = H k ∧ Ar ancestrySign 0 k = B k
+hs : H (↑⟨k, ⋯⟩ + 1) = H ↑⟨k, ⋯⟩ + sign (ancestrySign ↑⟨k, ⋯⟩) ∧ B (↑⟨k, ⋯⟩ + 1) = B ↑⟨k, ⋯⟩ + H (↑⟨k, ⋯⟩ + 1)
+hf : Fw ancestrySign (k + 1) = H (k + 1)
+ha : Ar ancestrySign 0 (k + 1) = Ar ancestrySign 0 k + (Fw ancestrySign k + sign (ancestrySign k) - 0)
+⊢ Ar ancestrySign 0 (k + 1) = B (k + 1)
+Recaman/AncestorSourceCollision.lean:38:22: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:39:35: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:33:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:61:41: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ h ≤ 159
+  g ≥ 0
+  g - h ≥ 1
+  d - e - f ≤ -1
+  c - i ≤ 0
+  b ≥ 0
+  0 ≤ a ≤ 160
+  a - b ≥ 1
+where
+ a := ↑(clock j)
+ b := ↑u
+ c := H (clock j)
+ d := B (clock j)
+ e := B ↑⟨u, ⋯⟩
+ f := ↑(clock j - ↑⟨u, ⋯⟩) * H ↑⟨u, ⋯⟩
+ g := ↑(source j)
+ h := ↑↑⟨u, ⋯⟩
+ i := H ↑⟨u, ⋯⟩
+Recaman/AncestorSourceCollision.lean:68:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ c ≤ 159
+  b ≤ -1
+  0 ≤ a ≤ 160
+  a - c ≥ 1
+where
+ a := ↑(clock j)
+ b := Ar ancestrySign u (clock j - u)
+ c := ↑↑⟨u, ⋯⟩
+Recaman/AncestorSourceCollision.lean:51:36: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:53:74: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:56:37: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:64:15: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:65:34: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:48:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:72:60: error: Tactic `decide` failed for proposition
+  ∀ (j : Fin 4), ancestrySign (clock j) = true
+because its `Decidable` instance
+  Nat.decidableForallFin fun j => ancestrySign (clock j) = true
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `decidable_of_iff`, `instDecidableEqBool`, `Bool.decEq`, `Nat.decidableBallLT`, and `Nat.decidableForallFin`, reduction got stuck at the `Decidable` instance
+  match ancestrySign (clock ⟨0, ⋯⟩), true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/AncestorSourceCollision.lean:74:79: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:70:16: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:91:7: error: Function expected at
+  shortEndpoint
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  ancestrySign
+
+Hint: The identifier `shortEndpoint` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Recaman/AncestorSourceCollision.lean:99:59: error: Tactic `decide` failed for proposition
+  ∀ (i : Fin 19), ancestrySign ↑i = false
+because its `Decidable` instance
+  Nat.decidableForallFin fun i => ancestrySign ↑i = false
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `decidable_of_iff`, `instDecidableEqBool`, `Bool.decEq`, `Nat.decidableBallLT`, and `Nat.decidableForallFin`, reduction got stuck at the `Decidable` instance
+  match ancestrySign ↑⟨0, ⋯⟩, false with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/AncestorSourceCollision.lean:109:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≤ -1
+  c ≥ 0
+  c + d ≥ 0
+  b ≥ 0
+  b - c ≥ 0
+  b - c - d ≤ 0
+  1 ≤ a ≤ 160
+where
+ a := ↑k
+ b := ↑(cN (EndN ancestrySign 0) 0 k)
+ c := ↑(cN (fun i => ancestrySign i = false) 0 k)
+ d := H k
+ e := H ↑⟨k, ⋯⟩
+Recaman/AncestorSourceCollision.lean:125:68: error: Tactic `decide` failed for proposition
+  Fw ancestrySign 75 - Fw ancestrySign 17 = 2
+because its `Decidable` instance
+  (Fw ancestrySign 75 - Fw ancestrySign 17).instDecidableEq 2
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqBool`, `Bool.decEq`, `Int.decEq`, and `Int.instDecidableEq`, reduction got stuck at the `Decidable` instance
+  match Fw ancestrySign 75 - Fw ancestrySign 17, 2 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+Recaman/AncestorSourceCollision.lean:125:78: error: Tactic `decide` failed for proposition
+  Fw ancestrySign 159 - Fw ancestrySign 17 = 2
+because its `Decidable` instance
+  (Fw ancestrySign 159 - Fw ancestrySign 17).instDecidableEq 2
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqBool`, `Bool.decEq`, `Int.decEq`, and `Int.instDecidableEq`, reduction got stuck at the `Decidable` instance
+  match Fw ancestrySign 159 - Fw ancestrySign 17, 2 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+Recaman/AncestorSourceCollision.lean:125:91: error: Tactic `decide` failed for proposition
+  ancestrySign 19 = true
+because its `Decidable` instance
+  instDecidableEqBool (ancestrySign 19) true
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqBool` and `Bool.decEq`, reduction got stuck at the `Decidable` instance
+  match ancestrySign 19, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/AncestorSourceCollision.lean:125:106: error: Tactic `decide` failed for proposition
+  Fw ancestrySign 19 ≤ Fw ancestrySign 17 + 1
+because its `Decidable` instance
+  (Fw ancestrySign 19).decLe (Fw ancestrySign 17 + 1)
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqBool`, `Bool.decEq`, `Int.decLe`, and `Int.decNonneg`, reduction got stuck at the `Decidable` instance
+  match Fw ancestrySign 17 + 1 - Fw ancestrySign 19 with
+  | Int.ofNat m => isTrue ⋯
+  | Int.negSucc i => isFalse ⋯
+Recaman/AncestorSourceCollision.lean:145:7: error: Function expected at
+  shortEndpoint
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  ancestrySign
+Recaman/AncestorSourceCollision.lean:147:26: error: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)
+  ↑j = 0
+
+case inl
+x✝ : Sort u_1
+shortEndpoint : x✝
+hS : ∀ (i : Nat), i < 19 → ancestrySign i = false
+hpos : ∀ (k : Nat), 0 < k → k ≤ 160 → cN (EndN ancestrySign 0) 0 k + 1 ≤ cN (fun i => ancestrySign i = false) 0 k
+h75 : EndN ancestrySign 0 75
+h159 : EndN ancestrySign 0 159
+hnot : ∀ (j : Fin 4), ↑j < 2 → ¬EndN ancestrySign 17 (clock j)
+ha19 : cN (fun i => ancestrySign i = true) 0 19 = 0
+hf19 : ¬EndN ancestrySign 0 19
+j : Fin 2
+a : Nat := [57, 129][↑j]!
+t : Nat := [75, 159][↑j]!
+jj : Fin 4 := ⟨↑j + 2, ⋯⟩
+hclock : clock jj = a
+hs : source jj = 18
+hraw : EndN ancestrySign 0 a
+hlen : 18 < a
+hwin : Win ancestrySign 18 (a - 18)
+h : ↑j = 0
+⊢ ancestrySign a = true ∧ Fw ancestrySign a = Fw ancestrySign 17 ∧ ¬sorry
+Recaman/AncestorSourceCollision.lean:147:26: error: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)
+  ↑j = 1
+
+case inr
+x✝ : Sort u_1
+shortEndpoint : x✝
+hS : ∀ (i : Nat), i < 19 → ancestrySign i = false
+hpos : ∀ (k : Nat), 0 < k → k ≤ 160 → cN (EndN ancestrySign 0) 0 k + 1 ≤ cN (fun i => ancestrySign i = false) 0 k
+h75 : EndN ancestrySign 0 75
+h159 : EndN ancestrySign 0 159
+hnot : ∀ (j : Fin 4), ↑j < 2 → ¬EndN ancestrySign 17 (clock j)
+ha19 : cN (fun i => ancestrySign i = true) 0 19 = 0
+hf19 : ¬EndN ancestrySign 0 19
+j : Fin 2
+a : Nat := [57, 129][↑j]!
+t : Nat := [75, 159][↑j]!
+jj : Fin 4 := ⟨↑j + 2, ⋯⟩
+hclock : clock jj = a
+hs : source jj = 18
+hraw : EndN ancestrySign 0 a
+hlen : 18 < a
+hwin : Win ancestrySign 18 (a - 18)
+h : ↑j = 1
+⊢ ancestrySign a = true ∧ Fw ancestrySign a = Fw ancestrySign 17 ∧ ¬sorry
+Recaman/AncestorSourceCollision.lean:158:103: error: Tactic `decide` failed for proposition
+  ∀ (j : Fin 2) (x : Fin 160), [57, 129][↑j]! < ↑x → ↑x < [75, 159][↑j]! → ancestrySign ↑x = true → H ↑x ≠ H 17
+because its `Decidable` instance
+  Nat.decidableForallFin fun j =>
+    ∀ (x : Fin 160), [57, 129][↑j]! < ↑x → ↑x < [75, 159][↑j]! → ancestrySign ↑x = true → H ↑x ≠ H 17
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `decidable_of_iff`, `forall_prop_decidable`, `instDecidableEqBool`, `Bool.decEq`, `Nat.decLe`, `Nat.decLt`, `Nat.decidableBallLT`, and `Nat.decidableForallFin`, reduction got stuck at the `Decidable` instance
+  match ancestrySign ↑⟨58, ⋯⟩, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/AncestorSourceCollision.lean:108:37: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:116:44: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:117:85: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:121:4: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:124:58: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:129:32: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:131:37: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:132:32: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:135:32: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:143:34: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:150:44: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:151:73: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:155:39: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:156:50: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:156:50: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:160:31: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:160:65: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:81:8: error: (kernel) excessive memory consumption detected
+Recaman/AncestorSourceCollision.lean:156:34: warning: This simp argument is unused:
+  t
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [h] at hxt
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

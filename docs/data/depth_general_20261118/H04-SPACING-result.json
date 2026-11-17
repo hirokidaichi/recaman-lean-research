@@ -1,0 +1,31 @@
+{
+  "tag": "H04-SPACING",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/CommonSourceHitSpacing.olean",
+    "Recaman/CommonSourceHitSpacing.lean"
+  ],
+  "started_jst": "2026-11-18T07:16:35.281669+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/CommonSourceHitSpacing.lean": "85b7d52bc9fab5956b8edeb327f14a442bcfa1f0b9f40a1e31e4535a2cfb081a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "tracked_diff_sha256": "17a1f99969e2d5ef87a1a31330234ba45b40d2e2b47c6054a0d26ced3e94539f",
+  "source_tree_sha256": "05c41aaa897d751d67407aa5b0bb39ad925d2fa1c55f2175a82642f9bd9a2c00",
+  "source_tree_manifest": "H04-SPACING-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "17a1f99969e2d5ef87a1a31330234ba45b40d2e2b47c6054a0d26ced3e94539f",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.4845059160143137,
+  "cpu_seconds": 0.322028,
+  "finished_jst": "2026-11-18T07:16:35.766114+09:00"
+}

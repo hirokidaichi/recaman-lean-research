@@ -1,3 +1,6 @@
+import Recaman.TwoLevelVisitCounterexample
+import Recaman.CommonSourceHitSpacing
+import Recaman.HighRunFreePayment
 import Recaman.InitialSLowTargetTransport
 import Recaman.InitialLowFreeRanks
 import Recaman.LowFreeFourPast
@@ -4475,3 +4478,11 @@ import Recaman
 #print axioms Recaman.FivePeriodSourceCost.five_distinct_original_sources
 #print axioms Recaman.FivePeriodSourceCost.five_periods_need_five_low_free
 #print axioms Recaman.FivePeriodSourceCost.original_boundary_five_period_cost
+
+#print axioms Recaman.HighRunFreePayment.above_old_ceiling_run_free
+#print axioms Recaman.HighRunFreePayment.high_run_original_free_count
+#print axioms Recaman.HighRunFreePayment.strict_new_minimum_two_free
+
+#print axioms Recaman.CommonSourceHitSpacing.common_source_hit_gap
+
+#print axioms Recaman.TwoLevelVisitCounterexample.positive_two_level_visit_counter

@@ -1,0 +1,104 @@
+{
+  "mode": "holdout",
+  "frozen_lengths": [
+    15,
+    16
+  ],
+  "checked": 7230,
+  "eligible": 7230,
+  "tests": 16496,
+  "counter": {
+    "word": "SSAAASSSSAAAASA",
+    "T": 15,
+    "l": 0,
+    "H": [
+      0,
+      -1,
+      -2,
+      -1,
+      0,
+      1,
+      0,
+      -1,
+      -2,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "B": [
+      0,
+      -1,
+      -3,
+      -4,
+      -4,
+      -3,
+      -3,
+      -4,
+      -6,
+      -9,
+      -11,
+      -12,
+      -12,
+      -11,
+      -11,
+      -10
+    ],
+    "source_sets": [
+      [],
+      [],
+      [],
+      [],
+      [
+        1
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        8
+      ],
+      [
+        1
+      ],
+      [],
+      [
+        7
+      ]
+    ],
+    "free": [
+      2,
+      3,
+      9,
+      10
+    ],
+    "visits": [
+      0,
+      4,
+      6,
+      12,
+      14
+    ],
+    "lower_visits": [
+      2,
+      8,
+      10
+    ],
+    "band_free": [
+      3
+    ],
+    "lhs": 5,
+    "rhs": 4,
+    "all_A_reverse_checked": true,
+    "word_sha256": "dd023e7be13d3d7c512d114f6447553fbbfa372ef32889d53a50f7a82b6e93fc"
+  },
+  "complete_frozen_range": false,
+  "stop": "first_counter",
+  "cpu_seconds": 0.07643
+}

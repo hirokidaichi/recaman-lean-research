@@ -1,0 +1,238 @@
+{
+  "measured_seconds": {
+    "guard": 1.117846,
+    "individual_lean": 5.986549999999999,
+    "math_worker": 1.4387889999999999
+  },
+  "mathematical_budget_seconds": 6,
+  "rows": [
+    {
+      "file": "H01-KERNEL-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 3.224391,
+      "controller_cpu_seconds": null,
+      "exit_code": 1
+    },
+    {
+      "file": "H02-FREE-R-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.349668,
+      "controller_cpu_seconds": null,
+      "exit_code": 0
+    },
+    {
+      "file": "H02-FREE-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.309547,
+      "controller_cpu_seconds": null,
+      "exit_code": 1
+    },
+    {
+      "file": "H03-FOUR-R-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.333462,
+      "controller_cpu_seconds": null,
+      "exit_code": 1
+    },
+    {
+      "file": "H03-FOUR-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.459325,
+      "controller_cpu_seconds": null,
+      "exit_code": 1
+    },
+    {
+      "file": "H04-SPACING-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.322028,
+      "controller_cpu_seconds": null,
+      "exit_code": 0
+    },
+    {
+      "file": "H05-TWO-LEVEL-R-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.7442939999999999,
+      "controller_cpu_seconds": null,
+      "exit_code": 0
+    },
+    {
+      "file": "H05-TWO-LEVEL-result.json",
+      "group": "individual_lean",
+      "cpu_seconds": 0.243835,
+      "controller_cpu_seconds": null,
+      "exit_code": 1
+    },
+    {
+      "file": "ancestor-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.185879,
+      "controller_cpu_seconds": 0.0015130000000000005,
+      "exit_code": 0
+    },
+    {
+      "file": "ancestor-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.136676,
+      "controller_cpu_seconds": 0.0019230000000000046,
+      "exit_code": 0
+    },
+    {
+      "file": "bounded-ancestor-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.13341999999999998,
+      "controller_cpu_seconds": 0.0013870000000000028,
+      "exit_code": 0
+    },
+    {
+      "file": "bounded-ancestor-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.051105,
+      "controller_cpu_seconds": 0.0013509999999999946,
+      "exit_code": 0
+    },
+    {
+      "file": "bounded-padding-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.043058,
+      "controller_cpu_seconds": 0.0013689999999999918,
+      "exit_code": 0
+    },
+    {
+      "file": "bounded-padding-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.088871,
+      "controller_cpu_seconds": 0.0016100000000000073,
+      "exit_code": 0
+    },
+    {
+      "file": "coupled-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.031108999999999998,
+      "controller_cpu_seconds": 0.0014079999999999995,
+      "exit_code": 0
+    },
+    {
+      "file": "coupled-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.119318,
+      "controller_cpu_seconds": 0.001423000000000011,
+      "exit_code": 0
+    },
+    {
+      "file": "genuine-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.031181999999999998,
+      "controller_cpu_seconds": 0.0013820000000000048,
+      "exit_code": 0
+    },
+    {
+      "file": "genuine-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.044177,
+      "controller_cpu_seconds": 0.0013280000000000063,
+      "exit_code": 0
+    },
+    {
+      "file": "guard-cpu-result.json",
+      "group": "guard",
+      "cpu_seconds": 1.0055539999999998,
+      "controller_cpu_seconds": 0.0021129999999999986,
+      "exit_code": -24
+    },
+    {
+      "file": "guard-exec-result.json",
+      "group": "guard",
+      "cpu_seconds": 0.028633,
+      "controller_cpu_seconds": 0.0013919999999999991,
+      "exit_code": 0
+    },
+    {
+      "file": "guard-fork-result.json",
+      "group": "guard",
+      "cpu_seconds": 0.028402,
+      "controller_cpu_seconds": 0.0013589999999999982,
+      "exit_code": 0
+    },
+    {
+      "file": "guard-normal-result.json",
+      "group": "guard",
+      "cpu_seconds": 0.028584,
+      "controller_cpu_seconds": 0.0015210000000000007,
+      "exit_code": 0
+    },
+    {
+      "file": "guard-wall-result.json",
+      "group": "guard",
+      "cpu_seconds": 0.026673,
+      "controller_cpu_seconds": 0.001548,
+      "exit_code": -9
+    },
+    {
+      "file": "padding-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.06823399999999999,
+      "controller_cpu_seconds": 0.0013940000000000063,
+      "exit_code": 0
+    },
+    {
+      "file": "padding-gain-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.032191,
+      "controller_cpu_seconds": 0.0012750000000000053,
+      "exit_code": 0
+    },
+    {
+      "file": "padding-gain-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.073614,
+      "controller_cpu_seconds": 0.0013960000000000014,
+      "exit_code": 0
+    },
+    {
+      "file": "padding-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.17034899999999997,
+      "controller_cpu_seconds": 0.0015020000000000137,
+      "exit_code": 0
+    },
+    {
+      "file": "two-level-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.061654999999999995,
+      "controller_cpu_seconds": 0.0015079999999999972,
+      "exit_code": 0
+    },
+    {
+      "file": "two-level-family-discovery-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.030497999999999997,
+      "controller_cpu_seconds": 0.001354000000000001,
+      "exit_code": 0
+    },
+    {
+      "file": "two-level-family-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.031613,
+      "controller_cpu_seconds": 0.0014639999999999974,
+      "exit_code": 0
+    },
+    {
+      "file": "two-level-holdout-result.json",
+      "group": "math_worker",
+      "cpu_seconds": 0.10583999999999999,
+      "controller_cpu_seconds": 0.001474999999999998,
+      "exit_code": 0
+    }
+  ],
+  "unmeasured": "root builds, module/vacuity lint, fullcheck, bookkeeping and publication CPU were not instrumented and are UNKNOWN, not0",
+  "contract": "mathematical jobs one cooperative no-child Python; Lean individual 10CPU/process not tree total,512MB/20wall; failed CPU included",
+  "no_prior_day_cpu_added": true,
+  "measured_python_controller_seconds": 0.03399500000000004,
+  "controller_scope": "Sum ONLY of measured cooperative-Python supervisors; Lean/build/lint/bookkeeping/publication controllers UNKNOWN, not0.",
+  "aborted_final_validation": {
+    "wait4_observed_cpu_seconds": 12.956699,
+    "complete_process_tree_cpu_seconds": null,
+    "wall_seconds": 20.014210499997716,
+    "reason": "20-wall cap after successful build/axiom/G6; final advisory recent-vacuity unfinished; not a complete tree CPU measurement, no resource-only retry"
+  }
+}

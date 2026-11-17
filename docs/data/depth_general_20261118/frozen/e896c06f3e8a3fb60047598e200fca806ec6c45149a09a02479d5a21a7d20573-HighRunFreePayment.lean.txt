@@ -1,0 +1,105 @@
+import Recaman.InitialLowFreeRanks
+import Recaman.AdditionRankSlack
+
+namespace Recaman.HighRunFreePayment
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.InitialLowFreeRanks Recaman.AdditionRankSlack
+open Recaman.CapacityEqualityInduction
+open Recaman.ShortPeriodicSupply (sign)
+
+/-- Beyond the old maximum plus one, an A in a single original A-run
+has no old or local supplier. All original source clocks are considered. -/
+theorem above_old_ceiling_run_free (f : Nat → Bool) (n q : Nat) (M : Int)
+    (hnq : n≤q) (hOld : ∀ i, i≤n → Fw f i≤M)
+    (hRun : ∀ i, n≤i → i≤q → f i=true) (hHigh : M+2≤Fw f q) :
+    f q=true ∧ ¬EndN f 0 q := by
+  refine ⟨hRun q hnq (by omega),?_⟩
+  rintro ⟨_,u,k,_,huk,hw⟩
+  have hsrc := hw.2.1
+  rw [huk] at hsrc
+  by_cases hun : u≤n
+  · have hm := hOld u hun
+    omega
+  · have hs : cN (fun i => f i=false) u k=0 := by
+      apply cN_zero_of
+      intro i hui hik hf
+      have ha := hRun i (by omega) (by omega)
+      simp [ha] at hf
+    have hc := cN_walk f u k
+    have hk := Recaman.SingleWindowEquality.win_ge3 f u k hw
+    rw [huk] at hc
+    omega
+
+private theorem count_all_marks (P : Nat → Prop) (s : Nat) : ∀ d,
+    (∀ q, s≤q → q<s+d → P q) → cN P s d=d
+  | 0, _ => rfl
+  | d+1, h => by
+    rw [cN_succ_pos P s d (h (s+d) (by omega) (by omega)),
+      count_all_marks P s d (fun q hq hqd => h q hq (by omega))]
+
+/-- The high part of an original A-run pays for its own height gain.
+The subtraction b+2 accounts for the old ceiling and its first record. -/
+theorem high_run_original_free_count (f : Nat → Bool) (n K b : Nat)
+    (hOld : ∀ i, i≤n → Fw f i≤Fw f n+(b : Int))
+    (hRun : ∀ i, n≤i → i<n+K → f i=true) :
+    K-(b+2)≤free f n K := by
+  by_cases hK : b+2≤K
+  · let P := fun i => f i=true ∧ ¬EndN f 0 i
+    have hHeight (q : Nat) (hnq : n≤q) (hq : q<n+K) :
+        Fw f q=Fw f n+((q-n : Nat) : Int) := by
+      have hs0 : cN (fun i => f i=false) n (q-n)=0 := by
+        apply cN_zero_of
+        intro i hi hj hs
+        have ha := hRun i hi (by omega)
+        simp [ha] at hs
+      have hc := cN_walk f n (q-n)
+      rw [Nat.add_sub_cancel' hnq] at hc
+      omega
+    have hall (q : Nat) (hq : n+b+2≤q) (hqK : q<n+K) : P q := by
+      apply above_old_ceiling_run_free f n q (Fw f n+(b : Int)) (by omega) hOld
+      · intro i hi hj
+        exact hRun i hi (by omega)
+      · have hh := hHeight q (by omega) hqK
+        omega
+    have hCount : cN P (n+(b+2)) (K-(b+2))=K-(b+2) := by
+      apply count_all_marks
+      intro q hq hqK
+      exact hall q (by omega) (by omega)
+    have hsplit := cN_add P n (b+2) (K-(b+2))
+    rw [Nat.add_sub_cancel' hK] at hsplit
+    change K-(b+2)≤cN P n K
+    omega
+  · have hz : K-(b+2)=0 := by omega
+    rw [hz]
+    exact Nat.zero_le _
+
+/-- Two A immediately after a strict new original minimum are free.
+The proof never discards older source alternatives or changes Nat0. -/
+theorem strict_new_minimum_two_free (f : Nat → Bool) (v : Nat)
+    (hMin : ∀ i, i<v → Fw f v<Fw f i)
+    (hA : f v=true) (hA1 : f (v+1)=true) :
+    (f v=true ∧ ¬EndN f 0 v) ∧
+    (f (v+1)=true ∧ ¬EndN f 0 (v+1)) := by
+  have hstep : Fw f (v+1)=Fw f v+1 := by
+    simpa [hA,sign] using Fw_succ f v
+  refine ⟨⟨hA,?_⟩,⟨hA1,?_⟩⟩
+  · rintro ⟨_,u,k,_,huk,hw⟩
+    have hu : u<v := by have := hw.1;omega
+    have hh := hMin u hu
+    have hs := hw.2.1
+    rw [huk] at hs
+    omega
+  · rintro ⟨_,u,k,_,huk,hw⟩
+    have hs := hw.2.1
+    rw [huk,hstep] at hs
+    have hu : u=v := by
+      by_cases hlt : u<v
+      · have hh := hMin u hlt
+        omega
+      · have := hw.1
+        omega
+    have hk := Recaman.SingleWindowEquality.win_ge3 f u k hw
+    omega
+
+end Recaman.HighRunFreePayment

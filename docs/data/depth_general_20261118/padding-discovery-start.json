@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-18T06:33:12.234941+09:00",
+  "tag": "padding-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/padding_positive.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 4.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "ae356555ae7813a8dc7e8bf0f409171b9b981781eb07d8c7b3b0ef32b02d1c2a",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 22006,
+  "process_group": 22006
+}

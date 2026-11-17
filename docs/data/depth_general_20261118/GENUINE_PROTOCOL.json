@@ -1,0 +1,33 @@
+{
+  "frozen_at_jst": "2026-11-18T06:26:51.120491+09:00",
+  "new_math_input": "Insert AS at the cut so f(h)=A; seed SASSSAA A3S8A5 and r7+8j, two pre-target AS and21 compensated AS at -3; maps use latest-before-source, not fallback.",
+  "map_unchanged": true,
+  "formula": {
+    "psi": "32j^2+48j+23",
+    "q": "32j^2+64j+39",
+    "P": "8N-1",
+    "h": "P+1",
+    "source": "P",
+    "local_source": "P+4",
+    "rho": "P+1",
+    "load": "N",
+    "length": "32N^2+8N+7"
+  },
+  "discovery_N": [
+    1,
+    2
+  ],
+  "holdout_N": [
+    3,
+    5
+  ],
+  "source_sha256": "8b79935dbf712b24243df5c94852681bfe7b97f24eb57bc924385683fcda9782",
+  "prior_dependency_sha256": "e9cca5540df45e04964a6dea8eda7af2c4cb4fc8f382fce48db9d83ef8668810",
+  "caps_cpu_per_split": [
+    1,
+    1
+  ],
+  "wall_seconds": 3,
+  "total_math_allowance_stays": 6,
+  "scope": "All-source finite verification only; all-N claim uses independent exhaustive key classification; not retrying STOPPED Lean certificate."
+}

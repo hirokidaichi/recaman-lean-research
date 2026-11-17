@@ -92,3 +92,13 @@ E719のA像をfreeへ置換せず、local/finite不在/helper数ではresetし�
 別機構の観測区間は21:03:00.296670〜21:28:02.563100 JST、25分02.266秒（[receipt](data/post_return_high_free_20261117/DISTINCT_GENERAL_PHASE.json)）。夜枠はユーザー指示の20:20:07〜23:00、実装停止は22:20。以後は意味監査・全体検証・記録・保存。枠全体をactive数学時間や自動日次の100分実績に換算せず、朝の追加unitや11/16自動cycleと二重計上しない。終了・保存の実時刻は[引継ぎ](RESEARCH_HANDOFF_2026-11-17_EVENING.md)とpacketの記録を参照。
 
 旧49型直接certificateは60CPUでSTOPPEDのまま。新しい三角面積と三連A分類による四根モデルは異なる数学入力で、同じ上限内で受理。旧r4/SMT/生成器を含む停止を解除しない。次に反例を探すならM>=6かつlow free>=5が必要だが、今夜はM6を開始していない。次の論点は元free予算から旧A配置・面積をどう制限するかであり、停止表の単純拡大は継続しない。
+
+## 2026-11-18 mathematical verdict (confirmed journal/publication in DAILY)
+
+| Parent | Local | Depth-general | Consecutive no general progress | Next allocation | New evidence |
+|---|---|---|---|---|---|
+| R-20261118-01 | E747 four-original-A/triple PROVED-PAPER; implementation STOPPED | E744/E745/E750 all-N general-mechanism no-go; E748 original-source spacing; E749 kernel counter | 0, from prior completed0 by NEW evidence, not date/local/module reset | 30/60/10, distinct mechanism>=25min | Fixed bands and initial runs do not repair ancestor-prefix charging, whole-free padding cost, or all-visit telescoping |
+
+The all-N constructions remain PAPER/human review pending. E746 high-run payment is support, not separately counted as another parent success. E747 local success and E743 completed M5 do not reset general stagnation. No new C1 proof/counter, D<=all original low free remains unknown. Keep original actual/old-stock/Nat0 free and source-before prefixes. New no-go families explicitly retain ALL old sources; extra cross-copy suppliers only lower the free upper bound in E750.
+
+Distinct depth-operation mechanism conservatively26min34.181sec in three disjoint intervals (DISTINCT_MECHANISM receipt); ancestor preparation excluded, no parent/CPU double counting. Local work stopped early under one-repair rule, unused local allocation transferred to the distinct two-level mechanism and required semantic audit. Final measured phase/CPU/shortfall and late checkpoints are DAILY/journal authoritative; planned minutes are not work. First-failure-source chronology is next, with a different orbit-condition audit mechanism and a fresh precise card before each unit. No unknown positivity conclusion or charge injection may be supplied as a new Prop.

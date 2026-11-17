@@ -1,0 +1,23 @@
+Recaman/FourAdditionPrefix.lean:75:4: error: Tactic `assumption` failed
+
+f : Nat → Bool
+v : Nat
+hA : cN (fun i => f i = true) 0 v = 4
+hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v ≤ 3
+t : Nat
+ht : t < v
+he : EndN f 0 t
+hm : cN (fun i => f i = true) 0 (t + 1) ≤ cN (fun i => f i = true) 0 v
+hs : cN (fun i => f i = true) 0 (t + 1) = cN (fun i => f i = true) 0 t + 1
+u : Nat
+hu : u + 3 = t
+hW : Win f u 3
+left✝ : f u = false
+h1 : f (u + 1) = true
+h2 : f (u + 2) = true
+a : Nat := u + 1
+ha : a + 3 ≤ v
+h1' : f a = true
+h2' : f (a + 1) = true
+heq : a + 2 = t
+⊢ f t = true

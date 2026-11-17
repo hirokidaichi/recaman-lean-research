@@ -1,0 +1,26 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-18 日次研究。一般C1/Q/H/SL/全射性とD_near<=元low freeは未証明。local/generalを分け、一般機構の全量化反証を得た。全PAPER族は未Lean・人間レビュー未。
+
+- **E-744 REFUTED（全N PAPER）**。真initial-S h1/全高度[-4,2]を固定しても、低A像の唯一source4以前の元free wallet{1}へN-1件を請求できる。固定mapだけでなく、source以前freeだけを許す全割当の全固定容量が不可能。全元low freeは>=N+2なのでD=Nの親C1反例ではない。[源会計](RESEARCH_NOTE_2026-11-18_COUPLED_SOURCE_ANCESTRY.md)。
+- **E-745 REFUTED（全N PAPER）**。一つの初期S追加g=S++fは、両元positive/初期S1→2/幅6固定でも全freeを非有界に変える。関連LOW freeは保存される。無条件positive閉性はCONJECTURED、finite absence方法STOPPED。[深さ操作](RESEARCH_NOTE_2026-11-18_GLOBAL_PADDING_GAIN.md)。
+- **E-746 / E-748 PROVED-LEAN**。元高A-runが実free下界を供給し、同一sourceの先のhitがAなら次hitまで>=8時計。任意深さ・高さ・長さ、全source保持。紙上族の全接着や時計からfreeへの置換は未証明。逐語監査とvacuity0FLAG/0unknownを保存。
+- **E-749 PROVED-LEAN / E-750 REFUTED（全N PAPER）**。元positive15時計でV0=5>V-2(3)+band free(1)、またV0>全low free4。さらにW^N A/W=SSAAASSSSAAAASASでは初期S2/床-3/上1/幅4固定で誤差>=N。E742の床+2を一段広げ、固定境界補正で全訪問を払う一般機構を停止。選択されたexclusive target数/C1の反例ではない。[二層会計](RESEARCH_NOTE_2026-11-18_TWO_LEVEL_VISIT_BALANCE.md)。
+- **E-747 PROVED-PAPER（local）**。最初の四Aは元free>=3、A4/free<=3ならAAAと外側A1。Leanは一修理後STOPPED/隔離、root/Audit不採用。M5/E743完了域や旧全STOPを再実行しない。次はpaddingの最初の失敗点に短SAA sourceが残れるかを元全sourceから判定し、別機構>=25minは必要な軌道条件の独立監査へ。C1と元positive閉性は未証明。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-744 [REFUTED] Original source-prefix free wallets have unbounded repeated load — docs/RESEARCH_NOTE_2026-11-18_COUPLED_SOURCE_ANCESTRY.md
+  E-745 [REFUTED] One initial subtraction has unbounded total free cost in fixed bands — docs/RESEARCH_NOTE_2026-11-18_GLOBAL_PADDING_GAIN.md
+  E-746 [PROVED-LEAN] Original high A runs pay free additions — Recaman/HighRunFreePayment.lean
+  E-748 [PROVED-LEAN] Two hits of an unchanged source are eight clocks apart after an A — Recaman/CommonSourceHitSpacing.lean
+  E-749 [PROVED-LEAN] Original positive visits exceed the two-level free payment — Recaman/TwoLevelVisitCounterexample.lean
+  E-750 [REFUTED] Fixed-band two-level visit accounting has unbounded additive error — docs/RESEARCH_NOTE_2026-11-18_TWO_LEVEL_VISIT_BALANCE.md
+  E-747 [PROVED-PAPER] Four original additions with only three free force a triple — docs/HYPOTHESIS_CARD_2026-11-18_FOUR_ADDITION_PREFIX.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 1040 (including Audit)
+  Import contracts: 135; audit declarations: 3989

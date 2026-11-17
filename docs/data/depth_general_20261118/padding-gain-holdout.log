@@ -1,0 +1,55 @@
+{
+  "mode": "holdout",
+  "rows": [
+    {
+      "N": 4,
+      "f_length": 263,
+      "g_length": 264,
+      "genuine_initial_runs": [
+        2,
+        3
+      ],
+      "f_positive": true,
+      "g_positive": true,
+      "f_free": 126,
+      "g_free": 122,
+      "supply_gain": 4,
+      "new_source": 0,
+      "gain_targets": [
+        11,
+        59,
+        143,
+        263
+      ],
+      "low_free_unchanged": 74,
+      "min_g_deficit_after_second_clock": 2
+    },
+    {
+      "N": 7,
+      "f_length": 839,
+      "g_length": 840,
+      "genuine_initial_runs": [
+        2,
+        3
+      ],
+      "f_positive": true,
+      "g_positive": true,
+      "f_free": 408,
+      "g_free": 401,
+      "supply_gain": 7,
+      "new_source": 0,
+      "gain_targets": [
+        11,
+        59,
+        143,
+        263,
+        419,
+        611,
+        839
+      ],
+      "low_free_unchanged": 254,
+      "min_g_deficit_after_second_clock": 2
+    }
+  ],
+  "cpu_seconds": 0.042552999999999994
+}

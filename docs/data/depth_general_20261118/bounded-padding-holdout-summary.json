@@ -1,0 +1,46 @@
+{
+  "mode": "holdout",
+  "rows": [
+    {
+      "N": 3,
+      "f_length": 26863,
+      "g_length": 26864,
+      "seed_D": 26841,
+      "loader_SA": 1,
+      "loader_AS": 8950,
+      "height_g": [
+        -4,
+        2
+      ],
+      "height_f": [
+        -3,
+        3
+      ],
+      "positive_f": true,
+      "positive_g": true,
+      "free_f": 13086,
+      "free_g": 13082,
+      "gain_count": 4,
+      "boundary_targets": [
+        26847,
+        26855,
+        26863
+      ],
+      "gain_targets": [
+        11,
+        26847,
+        26855,
+        26863
+      ],
+      "low_free_equal": 4130,
+      "literal_reverse_queries": 14,
+      "every_A_reverse_checked": false,
+      "source0_all_clock_classification": [
+        0
+      ],
+      "f_sha256": "4ea86b79049923ef9411ced4b086fb51d995f3bf2685f1bcf12a3cbbfe07a662",
+      "g_sha256": "156ef1786273c5a870b3023bdcea264e71dcc4b0e501bc2cff6b9e0b7fa18341"
+    }
+  ],
+  "cpu_seconds": 0.057475
+}

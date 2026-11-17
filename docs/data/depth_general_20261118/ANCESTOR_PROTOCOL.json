@@ -1,0 +1,42 @@
+{
+  "frozen_at_jst": "2026-11-18T06:08:50.498948+09:00",
+  "base_revision": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "new_math_cpu_allowance_seconds": 6,
+  "prior_math_workers_today": 0,
+  "guard_receipt": "GUARD_VALIDATION.json",
+  "contract": "single cooperative Python/no children; cumulative actual worker CPU from wait4 summed across calls; not a process-tree cap",
+  "discovery": {
+    "controls": [
+      "E711 original71-clock history h12",
+      "E715 N2 bounded-depth constructed history h2"
+    ],
+    "additional_if_no_counter": "h1,2,3/all S-A suffixes length0..12; this new fixed-map property only"
+  },
+  "independent_holdout": {
+    "controls": [
+      "E715 N3 historical constructor; verification control, not fresh construction holdout"
+    ],
+    "additional_if_no_counter": "h4,7,12/all suffixes length0..10, not read in discovery"
+  },
+  "counter_acceptance": "all source sets from Nat0; independent reverse checker and raw boundary/positive audit; finite collision refutes only rho load1",
+  "stop": "stop fixed map on first collision/undefined; do not extend finite absence or retry capped query",
+  "gate_jst": "2026-11-18T06:22:48+09:00",
+  "argv_template": [
+    "python3",
+    "docs/data/depth_general_20261118/run_single.py",
+    "--tag",
+    "ancestor-<split>",
+    "--cpu",
+    "3",
+    "--wall",
+    "6",
+    "docs/data/depth_general_20261118/ancestor_map.py",
+    "<split>"
+  ],
+  "hashes": {
+    "docs/data/depth_general_20261118/ancestor_map.py": "889730ef5b108b5a80302e0f2ad26421bd890f8c50c7548923638751d8ebc87f",
+    "docs/data/depth_general_20261118/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "docs/data/depth_general_20261115/two_free_plateau_certificate.py": "9e894ccb6c83429d8285848fa9cbbdb133a9872f7c251d4ece66896d2ef61ab5",
+    "docs/HYPOTHESIS_CARD_2026-11-18_ANCESTOR_FREE_AND_OLD_STOCK.md": "3fb77d0090e2adde5e8c54e0cc32cdf27f8633f821ef393a55796b1987e7d8b2"
+  }
+}

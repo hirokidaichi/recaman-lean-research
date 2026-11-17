@@ -1,0 +1,38 @@
+{
+  "frozen_at_jst": "2026-11-18T06:14:08.514775+09:00",
+  "new_mathematical_input": "Two fixed source potentials coupled by an AS at each old target, 7 compensated AS loops at -3 and (r-4)/2 neutral loop pairs at -2/-3; r advances by6, not a larger absence cutoff.",
+  "candidate_map_unchanged": true,
+  "formula": {
+    "r_j": "4+6j",
+    "psi_j": "18j^2+18j+5",
+    "q_j": "18j^2+30j+11",
+    "shared_local_source": 2,
+    "padding": "P=6N-2",
+    "global_initial_cut": "h=P+1",
+    "predicted_shared_rho": "P+3 for j>=1",
+    "predicted_load": "N-1"
+  },
+  "discovery_N": [
+    1,
+    2,
+    3
+  ],
+  "holdout_N": [
+    4,
+    7,
+    11
+  ],
+  "verification": "forward (height,key) bank versus independent literal reverse mass/area for EVERY A; exact source uniqueness, original positive prefixes, actual frozen rho, no missing alternatives",
+  "worker_source_sha256": "e9cca5540df45e04964a6dea8eda7af2c4cb4fc8f382fce48db9d83ef8668810",
+  "prior_math_cpu_measured": 0.322555,
+  "total_math_allowance_today": 6,
+  "additional_worst_case_caps": [
+    1,
+    2
+  ],
+  "wall_caps": [
+    3,
+    4
+  ],
+  "stop": "on discrepancy one cause-based repair, then STOPPED; no cap increase. Counter to fixed map, not D<=F. All-N proof must classify every clock, finite outputs COMPUTED only."
+}

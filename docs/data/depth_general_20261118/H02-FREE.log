@@ -1,0 +1,15 @@
+Recaman/HighRunFreePayment.lean:30:15: error(lean.unknownIdentifier): Unknown identifier `Recaman.BlockSuffixPositivity.win_ge3`
+Recaman/HighRunFreePayment.lean:67:61: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  g ≥ 0
+  e ≥ 0
+  c ≥ 0
+  a ≥ 0
+  a - c ≥ 2
+  a - c - e ≤ 2
+where
+ a := ↑K
+ c := ↑b
+ e := ↑d
+ g := ↑n
+Recaman/HighRunFreePayment.lean:101:15: error(lean.unknownIdentifier): Unknown identifier `Recaman.BlockSuffixPositivity.win_ge3`

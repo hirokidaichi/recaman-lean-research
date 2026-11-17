@@ -1,0 +1,62 @@
+Recaman/FourAdditionPrefix.lean:18:5: error: unknown tactic
+Recaman/FourAdditionPrefix.lean:17:20: error: unsolved goals
+f : Nat → Bool
+v : Nat
+hA : 4 ≤ cN (fun i => f i = true) 0 v
+a : Nat
+ha : a < v
+haA : f a = true
+haC : cN (fun i => f i = true) 0 a = 0
+b : Nat
+hb : b < v
+hbA : f b = true
+hbC : cN (fun i => f i = true) 0 b = 1
+c : Nat
+hc : c < v
+hcA : f c = true
+hcC : cN (fun i => f i = true) 0 c = 2
+d : Nat
+hd : d < v
+hdA : f d = true
+hdC : cN (fun i => f i = true) 0 d = 3
+⊢ a < b
+Recaman/FourAdditionPrefix.lean:12:52: error: unsolved goals
+f : Nat → Bool
+v : Nat
+hA : 4 ≤ cN (fun i => f i = true) 0 v
+a : Nat
+ha : a < v
+haA : f a = true
+haC : cN (fun i => f i = true) 0 a = 0
+b : Nat
+hb : b < v
+hbA : f b = true
+hbC : cN (fun i => f i = true) 0 b = 1
+c : Nat
+hc : c < v
+hcA : f c = true
+hcC : cN (fun i => f i = true) 0 c = 2
+d : Nat
+hd : d < v
+hdA : f d = true
+hdC : cN (fun i => f i = true) 0 d = 3
+hab : a < b
+⊢ 3 ≤ cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v
+Recaman/FourAdditionPrefix.lean:53:5: error: unknown tactic
+Recaman/FourAdditionPrefix.lean:52:38: error: unsolved goals
+f : Nat → Bool
+v : Nat
+hA : cN (fun i => f i = true) 0 v = 4
+hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v ≤ 3
+⊢ ∃ t, t < v ∧ EndN f 0 t
+Recaman/FourAdditionPrefix.lean:51:48: error: unsolved goals
+f : Nat → Bool
+v : Nat
+hA : cN (fun i => f i = true) 0 v = 4
+hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v ≤ 3
+hex : ∃ t, t < v ∧ EndN f 0 t
+⊢ ∃ a,
+    a + 3 ≤ v ∧
+      f a = true ∧
+        f (a + 1) = true ∧
+          f (a + 2) = true ∧ cN (fun i => f i = true) 0 a + cN (fun i => f i = true) (a + 3) (v - a - 3) = 1

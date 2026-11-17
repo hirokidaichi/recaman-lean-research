@@ -1,0 +1,76 @@
+Recaman/TwoLevelVisitCounterexample.lean:5:37: error: unknown namespace `Recaman.AdditionRankSlack`
+Recaman/TwoLevelVisitCounterexample.lean:9:30: error(lean.unknownIdentifier): Unknown identifier `finiteSign`
+Recaman/TwoLevelVisitCounterexample.lean:15:65: error: failed to synthesize
+  Decidable (∀ (q : Fin 15), f ↑q = true ∧ localSupply (seg f 0 ↑q) = true ↔ actual ↑q)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+Recaman/TwoLevelVisitCounterexample.lean:33:64: error: Tactic `decide` failed for proposition
+  ∀ (k : Fin 16), 0 < ↑k → cN actual 0 ↑k + 1 ≤ cN (fun i => f i = false) 0 ↑k
+because its `Decidable` instance
+  Nat.decidableForallFin fun k => 0 < ↑k → cN actual 0 ↑k + 1 ≤ cN (fun i => f i = false) 0 ↑k
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decidable_of_decidable_of_iff`, `decidable_of_iff`, `forall_prop_decidable`, `instDecidableEqBool`, `Bool.decEq`, `Classical.propDecidable`, `Nat.decLe`, `Nat.decLt`, `Nat.decidableBallLT`, and `Nat.decidableForallFin`, reduction got stuck at the `Decidable` instance
+  match (cN actual 0 ↑⟨1, ⋯⟩ + 1).ble (cN (fun i => f i = false) 0 ↑⟨1, ⋯⟩), true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+Recaman/TwoLevelVisitCounterexample.lean:34:16: error: Tactic `decide` failed for proposition
+  Fw f 15 = 1
+because its `Decidable` instance
+  (Fw f 15).instDecidableEq 1
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqBool`, `Bool.decEq`, `Int.decEq`, and `Int.instDecidableEq`, reduction got stuck at the `Decidable` instance
+  match Fw f 15, 1 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+Recaman/TwoLevelVisitCounterexample.lean:34:26: error: Tactic `decide` failed for proposition
+  cN (fun q => Fw f q = 0) 0 15 = 5
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun q => Fw f q = 0) 0 15) 5
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun q => Fw f q = 0) 0 15).beq 5 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯
+Recaman/TwoLevelVisitCounterexample.lean:34:36: error: Tactic `decide` failed for proposition
+  cN (fun q => Fw f q = -2) 0 15 = 3
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun q => Fw f q = -2) 0 15) 3
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun q => Fw f q = -2) 0 15).beq 3 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯
+Recaman/TwoLevelVisitCounterexample.lean:44:4: error: Tactic `decide` failed for proposition
+  cN (fun q => f q = true ∧ ¬actual q ∧ -2 < Fw f q ∧ Fw f q ≤ 0) 0 15 = 1
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun q => f q = true ∧ ¬actual q ∧ -2 < Fw f q ∧ Fw f q ≤ 0) 0 15) 1
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun q => f q = true ∧ ¬actual q ∧ -2 < Fw f q ∧ Fw f q ≤ 0) 0 15).beq 1 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯
+Recaman/TwoLevelVisitCounterexample.lean:47:4: error: Tactic `decide` failed for proposition
+  cN (fun q => f q = true ∧ ¬actual q ∧ Fw f q ≤ 0) 0 15 = 4
+because its `Decidable` instance
+  instDecidableEqNat (cN (fun q => f q = true ∧ ¬actual q ∧ Fw f q ≤ 0) 0 15) 4
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `instDecidableEqNat`, `Classical.propDecidable`, and `Nat.decEq`, reduction got stuck at the `Decidable` instance
+  match h : (cN (fun q => f q = true ∧ ¬actual q ∧ Fw f q ≤ 0) 0 15).beq 4 with
+  | true => isTrue ⋯
+  | false => isFalse ⋯

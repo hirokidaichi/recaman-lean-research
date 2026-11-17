@@ -1,0 +1,79 @@
+{
+  "mode": "discovery",
+  "rows": [
+    {
+      "N": 2,
+      "f_length": 59,
+      "g_length": 60,
+      "genuine_initial_runs": [
+        2,
+        3
+      ],
+      "f_positive": true,
+      "g_positive": true,
+      "f_free": 28,
+      "g_free": 26,
+      "supply_gain": 2,
+      "new_source": 0,
+      "gain_targets": [
+        11,
+        59
+      ],
+      "low_free_unchanged": 14,
+      "min_g_deficit_after_second_clock": 2,
+      "f": "SSAAAAAASSASSSSSASASASASASASASSSSSAAAAAAAAAAAAAAAASSSSSSSSA",
+      "g": "SSSAAAAAASSASSSSSASASASASASASASSSSSAAAAAAAAAAAAAAAASSSSSSSSA",
+      "f_sources": {
+        "4": [
+          1
+        ],
+        "36": [
+          33
+        ],
+        "40": [
+          1
+        ]
+      },
+      "g_sources": {
+        "5": [
+          2
+        ],
+        "11": [
+          0
+        ],
+        "37": [
+          34
+        ],
+        "41": [
+          2
+        ],
+        "59": [
+          0
+        ]
+      }
+    },
+    {
+      "N": 3,
+      "f_length": 143,
+      "g_length": 144,
+      "genuine_initial_runs": [
+        2,
+        3
+      ],
+      "f_positive": true,
+      "g_positive": true,
+      "f_free": 68,
+      "g_free": 65,
+      "supply_gain": 3,
+      "new_source": 0,
+      "gain_targets": [
+        11,
+        59,
+        143
+      ],
+      "low_free_unchanged": 38,
+      "min_g_deficit_after_second_clock": 2
+    }
+  ],
+  "cpu_seconds": 0.0015380000000000012
+}

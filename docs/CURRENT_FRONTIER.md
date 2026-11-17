@@ -1,8 +1,16 @@
 # Current research frontier
 
-最終更新: 2026-11-17（23時の調査後、利用者の追加指示によるM5成果のLean化）。一般C1/Q/H/SL/全射性は未証明。直近の自動日次cycleは11/16。本unitは既存PAPERの形式化であり、日次cycle・一般化停滞counterを更新しない。
+最終更新: 2026-11-18 日次研究。一般C1/Q/H/SL/全射性とD_near<=元low freeは未証明。local/generalを分け、一般機構の全量化反証を得た。全PAPER族は未Lean・人間レビュー未。
 
 ## Research brief
+
+- **E-744 REFUTED（全N PAPER）**。真initial-S h1/全高度[-4,2]を固定しても、低A像の唯一source4以前の元free wallet{1}へN-1件を請求できる。固定mapだけでなく、source以前freeだけを許す全割当の全固定容量が不可能。全元low freeは>=N+2なのでD=Nの親C1反例ではない。[源会計](RESEARCH_NOTE_2026-11-18_COUPLED_SOURCE_ANCESTRY.md)。
+- **E-745 REFUTED（全N PAPER）**。一つの初期S追加g=S++fは、両元positive/初期S1→2/幅6固定でも全freeを非有界に変える。関連LOW freeは保存される。無条件positive閉性はCONJECTURED、finite absence方法STOPPED。[深さ操作](RESEARCH_NOTE_2026-11-18_GLOBAL_PADDING_GAIN.md)。
+- **E-746 / E-748 PROVED-LEAN**。元高A-runが実free下界を供給し、同一sourceの先のhitがAなら次hitまで>=8時計。任意深さ・高さ・長さ、全source保持。紙上族の全接着や時計からfreeへの置換は未証明。逐語監査とvacuity0FLAG/0unknownを保存。
+- **E-749 PROVED-LEAN / E-750 REFUTED（全N PAPER）**。元positive15時計でV0=5>V-2(3)+band free(1)、またV0>全low free4。さらにW^N A/W=SSAAASSSSAAAASASでは初期S2/床-3/上1/幅4固定で誤差>=N。E742の床+2を一段広げ、固定境界補正で全訪問を払う一般機構を停止。選択されたexclusive target数/C1の反例ではない。[二層会計](RESEARCH_NOTE_2026-11-18_TWO_LEVEL_VISIT_BALANCE.md)。
+- **E-747 PROVED-PAPER（local）**。最初の四Aは元free>=3、A4/free<=3ならAAAと外側A1。Leanは一修理後STOPPED/隔離、root/Audit不採用。M5/E743完了域や旧全STOPを再実行しない。次はpaddingの最初の失敗点に短SAA sourceが残れるかを元全sourceから判定し、別機構>=25minは必要な軌道条件の独立監査へ。C1と元positive閉性は未証明。
+
+## Previous research brief (2026-11-17 late formalization)
 
 - **E-743 PROVED-LEAN（人間レビュー未）**。M5に必要な元の5周期供給は過去low free>=5を要求する。任意深さ・上昇幅・前史長でM5/low4を排除。元initial-S h、境界Win、literal Z^5、第一族5targetの元EndNから導出し、未証明のold A/area/free予算を仮定しない。24間隔側だけで排除できるので、16間隔側や全source一意性を加えた元PC5も排除される。元履歴/全source/Nat0 freeを保持。[形式化カード](HYPOTHESIS_CARD_2026-11-17_M5_FORMALIZATION.md)、[意味監査](data/m5_formalization_20261117/SEMANTIC_AUDIT.md)。
 - **E-739 / E-740 / E-741 / E-742 PROVED-LEAN**。深い帰還の3 low free、深い最低点前A<=3、初回Rの元総free<=4、元floor>=-h-4、床+2の全訪問の相異なるfree支払を接続。E-734 / E-736 / E-737 / E-738の全old-source producerと三連Aを消費し、従来PAPERだったE729/E730の必要辺を閉じた。E-735は歴史的PAPER記録として残し、全結論のLean証拠はE743。固定free4の結果で一般M費用は未証明。局所形式化を一般化進展へ重複加算しない。

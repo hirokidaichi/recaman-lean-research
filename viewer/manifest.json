@@ -326,8 +326,11 @@
   },
   {
    "name": "Audit",
-   "lines": 4477,
+   "lines": 4488,
    "imports": [
+    "TwoLevelVisitCounterexample",
+    "CommonSourceHitSpacing",
+    "HighRunFreePayment",
     "InitialSLowTargetTransport",
     "InitialLowFreeRanks",
     "LowFreeFourPast",
@@ -3985,6 +3988,25 @@
    "theorems": 3,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CommonSourceHitSpacing",
+   "lines": 46,
+   "imports": [
+    "SameSourceLowCrossings",
+    "SFinalWindowLength"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "common_source_hit_gap",
+     "line": 26
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -33981,6 +34003,35 @@
    "theorems": 5,
    "defs": 0,
    "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "HighRunFreePayment",
+   "lines": 105,
+   "imports": [
+    "InitialLowFreeRanks",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "above_old_ceiling_run_free",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "high_run_original_free_count",
+     "line": 43
+    },
+    {
+     "kind": "theorem",
+     "name": "strict_new_minimum_two_free",
+     "line": 79
+    }
+   ],
+   "theorems": 3,
+   "defs": 0,
+   "hasEnglishDocstring": false,
    "hasReport": false
   },
   {
@@ -67622,6 +67673,25 @@
    "hasReport": false
   },
   {
+   "name": "TwoLevelVisitCounterexample",
+   "lines": 58,
+   "imports": [
+    "InitialSPaddingPositive",
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "positive_two_level_visit_counter",
+     "line": 29
+    }
+   ],
+   "theorems": 1,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "TwoRunSupply",
    "lines": 242,
    "imports": [
@@ -70622,6 +70692,6 @@
    "hasReport": false
   }
  ],
- "total": 1037,
+ "total": 1040,
  "withReport": 167
 }

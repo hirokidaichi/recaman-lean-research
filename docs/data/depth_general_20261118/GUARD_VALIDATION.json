@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "mode": "normal",
+      "accepted_contract": true,
+      "cpu": 0.028584,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "fork",
+      "accepted_contract": true,
+      "cpu": 0.028402,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "exec",
+      "accepted_contract": true,
+      "cpu": 0.028633,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "wall",
+      "accepted_contract": true,
+      "cpu": 0.026673,
+      "exit_code": -9,
+      "reason": "wall/deadline cap"
+    },
+    {
+      "mode": "cpu",
+      "accepted_contract": true,
+      "cpu": 1.0055539999999998,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)"
+    }
+  ],
+  "scope": "cooperative one-Python no descendants, process CPU includes threads; no generic process-tree or OS AS claim"
+}

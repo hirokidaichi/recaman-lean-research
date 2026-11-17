@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-18T06:58:46.117511+09:00",
+  "tag": "bounded-ancestor-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/bounded_ancestor_source.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 4.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "f730c916dc3ae16cf1f3bd91b62df48a0b678fe0b97defbe3af2a0ec3799e650",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 23595,
+  "process_group": 23595
+}

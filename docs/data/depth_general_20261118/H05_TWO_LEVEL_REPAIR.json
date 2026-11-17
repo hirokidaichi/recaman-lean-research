@@ -1,0 +1,7 @@
+{
+  "repair": 1,
+  "limit": 1,
+  "cause": "missing existing finiteSign namespace/import plus cN uses classical ifs and actual is opaque to decidability synthesis",
+  "fix": "import existing AdditionRankSlack, unfold concrete predicates before decide, expand bounded original counts with simp and explicit finite prefix cases",
+  "resources": "unchanged -j1 -M512/10CPU/20wall; no resource failure in first attempt"
+}

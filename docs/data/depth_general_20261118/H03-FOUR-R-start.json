@@ -1,0 +1,25 @@
+{
+  "tag": "H03-FOUR-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourAdditionPrefix.olean",
+    "Recaman/FourAdditionPrefix.lean"
+  ],
+  "started_jst": "2026-11-18T07:12:34.607295+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/FourAdditionPrefix.lean": "be796e9b2c9368e9577520a37cb5aac4b617a59bd3b720406919c45a47687a98"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_tree_sha256": "97e1fc49a57e3ec6d2cd6f727f69c967e633bacaaa84cafc71f7438ad724a045",
+  "source_tree_manifest": "H03-FOUR-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

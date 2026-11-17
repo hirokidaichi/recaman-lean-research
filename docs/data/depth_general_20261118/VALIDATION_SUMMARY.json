@@ -1,0 +1,50 @@
+{
+  "fullcheck_log": "FULLCHECK.log",
+  "jobs": 1042,
+  "permitted_axiom_declarations": 3989,
+  "G6": {
+    "pinned": 3,
+    "unpinned_with_reason": 1,
+    "locked_definitions": 22,
+    "lock_changed": false
+  },
+  "new_module_vacuity": {
+    "HighRunFreePayment": [
+      0,
+      0,
+      3
+    ],
+    "CommonSourceHitSpacing": [
+      0,
+      0,
+      1
+    ],
+    "TwoLevelVisitCounterexample": [
+      0,
+      0,
+      1
+    ]
+  },
+  "vacuity_tuple": "flagged,unknown,theorems; advisory, not proof of substance",
+  "gate_changes": false,
+  "adopted_sources": "ADOPTED_SOURCES.json",
+  "failed_lean_adopted": false,
+  "human_review": "pending for all new mathematics",
+  "hosted_ci": "not checked yet; local fullcheck is separate",
+  "cpu_scope": "CPU_SUMMARY.json: fullcheck CPU UNKNOWN, not0",
+  "first_fullcheck": "PASS, same unchanged accepted Lean sources",
+  "final_metadata_recheck": {
+    "status": "STOPPED at20wall",
+    "log": "FINAL-G2-FULLCHECK.log",
+    "completed": [
+      "1042-job build",
+      "3989 permitted-axiom audit",
+      "G6 pins/22 definition lock",
+      "static registry/G1-G5"
+    ],
+    "unfinished": "final recent-vacuity after citation subset change",
+    "no_retry": true
+  },
+  "G2_excluded_helper": "strict_new_minimum_two_free: unchanged ordinary audited helper, excluded from E746 claim/symbols",
+  "initial_fullcheck_status": "PASS"
+}

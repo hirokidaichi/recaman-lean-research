@@ -1,0 +1,24 @@
+{
+  "at_jst": "2026-11-18T06:06:51.914490+09:00",
+  "parent": "R-20261118-01",
+  "session": "6959042b-280b-4f0b-9c83-25040ec43614",
+  "branch": "main",
+  "head": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "origin_main": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "unowned": [
+    "docs/data/daily_research/2026-11-07.json"
+  ],
+  "unowned_sha256": "54f4b4002b04b5c3bf0980d20e89431020147f1ad651fe1bff6780b20fbd0d75",
+  "math_worker_initial_cpu_budget": 0,
+  "lean_contract": "individual -j1 -M512, 10 CPU seconds per process,20 wall; not tree cumulative cap",
+  "plan_minutes": {
+    "setup": 10,
+    "local": 30,
+    "general": 60,
+    "independent_audit": 10,
+    "handoff": 10
+  },
+  "prior_general_stagnation": 0,
+  "prior_completed_cycle": "R-20261117-EVENING; final M5 formalization is local, not another general cycle",
+  "late_adjustment": "Actual start 06:01:43; keep audit/publication margin, reduce local first. Exact times only after checkpoints."
+}

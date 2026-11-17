@@ -1,0 +1,163 @@
+import Recaman.NearestInitialNonshortCharge
+import Recaman.InitialLowFreeRanks
+
+namespace Recaman.AncestorSourceCollision
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.InitialSPaddingPositive Recaman.ShortSourceTriples
+open Recaman.InitialLowFreeRanks Recaman.CapacityEqualityInduction
+open Recaman.ShortPeriodicSupply (sign)
+open Classical
+set_option maxHeartbeats 2000000
+set_option maxRecDepth 4096
+
+private def word : List Bool := [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,false,false,true,false,false,false,false,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,true,false,false,false,false,true,false,true,false,true,false,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true]
+/-- One original finite history; no supplied/free labels are declared. -/
+def ancestrySign : Nat → Bool := finiteSign word
+private def moments : List (Int × Int) := [(0,0),(-1,-1),(-2,-3),(-3,-6),(-4,-10),(-5,-15),(-6,-21),(-7,-28),(-8,-36),(-9,-45),(-10,-55),(-11,-66),(-12,-78),(-13,-91),(-14,-105),(-15,-120),(-16,-136),(-17,-153),(-18,-171),(-19,-190),(-18,-208),(-17,-225),(-16,-241),(-15,-256),(-14,-270),(-13,-283),(-14,-297),(-15,-312),(-14,-326),(-15,-341),(-16,-357),(-17,-374),(-18,-392),(-19,-411),(-18,-429),(-19,-448),(-18,-466),(-19,-485),(-18,-503),(-19,-522),(-18,-540),(-19,-559),(-18,-577),(-19,-596),(-18,-614),(-19,-633),(-18,-651),(-19,-670),(-20,-690),(-21,-711),(-22,-733),(-23,-756),(-22,-778),(-21,-799),(-20,-819),(-19,-838),(-18,-856),(-17,-873),(-16,-889),(-15,-904),(-14,-918),(-13,-931),(-12,-943),(-11,-954),(-10,-964),(-9,-973),(-8,-981),(-7,-988),(-8,-996),(-9,-1005),(-10,-1015),(-11,-1026),(-12,-1038),(-13,-1051),(-14,-1065),(-15,-1080),(-14,-1094),(-15,-1109),(-16,-1125),(-17,-1142),(-18,-1160),(-17,-1177),(-18,-1195),(-17,-1212),(-18,-1230),(-17,-1247),(-18,-1265),(-19,-1284),(-18,-1302),(-19,-1321),(-18,-1339),(-19,-1358),(-18,-1376),(-19,-1395),(-18,-1413),(-19,-1432),(-18,-1450),(-19,-1469),(-18,-1487),(-19,-1506),(-18,-1524),(-19,-1543),(-18,-1561),(-19,-1580),(-18,-1598),(-19,-1617),(-18,-1635),(-19,-1654),(-20,-1674),(-21,-1695),(-22,-1717),(-23,-1740),(-24,-1764),(-25,-1789),(-26,-1815),(-27,-1842),(-28,-1870),(-29,-1899),(-28,-1927),(-27,-1954),(-26,-1980),(-25,-2005),(-24,-2029),(-23,-2052),(-22,-2074),(-21,-2095),(-20,-2115),(-19,-2134),(-18,-2152),(-17,-2169),(-16,-2185),(-15,-2200),(-14,-2214),(-13,-2227),(-12,-2239),(-11,-2250),(-10,-2260),(-9,-2269),(-8,-2277),(-7,-2284),(-6,-2290),(-5,-2295),(-4,-2299),(-3,-2302),(-2,-2304),(-1,-2305),(-2,-2307),(-3,-2310),(-4,-2314),(-5,-2319),(-6,-2325),(-7,-2332),(-8,-2340),(-9,-2349),(-10,-2359),(-11,-2370),(-12,-2382),(-13,-2395),(-14,-2409),(-15,-2424),(-14,-2438)]
+private def H (k : Nat) : Int := (moments[k]!).1
+private def B (k : Nat) : Int := (moments[k]!).2
+private def clock (j : Fin 4) : Nat := [75,159,57,129][j.val]!
+private def source (j : Fin 4) : Nat := [16,16,18,18][j.val]!
+private theorem checked_steps : ∀ k : Fin 160,
+    H (k.val+1)=H k.val+sign (ancestrySign k.val) ∧
+    B (k.val+1)=B k.val+H (k.val+1) := by decide
+private theorem checked_sources : ∀ j : Fin 4, ∀ u : Fin 160,
+    u.val<clock j →
+    ((H (clock j)=H u.val+1 ∧ B (clock j)=B u.val+((clock j-u.val : Nat) : Int)*H u.val) ↔
+      u.val=source j) := by decide
+private theorem clock_bound : ∀ j : Fin 4, clock j≤160 := by decide
+private theorem source_bound : ∀ j : Fin 4, source j<clock j := by decide
+private theorem checked_heights : ∀ k : Fin 161, 0<k.val → H k.val≤ -1 := by decide
+
+private theorem profile_correct (k : Nat) (hk : k≤160) :
+    Fw ancestrySign k=H k ∧ Ar ancestrySign 0 k=B k := by
+  induction k with
+  | zero => exact ⟨by decide,by decide⟩
+  | succ k ih =>
+    have hi := ih (by omega)
+    have hs := checked_steps ⟨k,by omega⟩
+    have hf : Fw ancestrySign (k+1)=H (k+1) := by
+      rw [Fw_succ,hi.1];exact hs.1.symm
+    refine ⟨hf,?_⟩
+    have ha := Ar_succ ancestrySign 0 k
+    simp only [Nat.zero_add,Fw] at ha
+    rw [hf,hi.2] at ha
+    omega
+
+private theorem exact_source (j : Fin 4) (u : Nat) (hu : u<clock j) :
+    Win ancestrySign u (clock j-u) ↔ u=source j := by
+  have hq := clock_bound j
+  have hpu := profile_correct u (by omega)
+  have hpq := profile_correct (clock j) hq
+  have ha := area_split_at ancestrySign 0 u (clock j) (Nat.zero_le _) (by omega)
+  simp only [Nat.sub_zero,Fw] at ha
+  rw [hpu.1,hpu.2,hpq.2] at ha
+  have hc := checked_sources j ⟨u,by omega⟩ hu
+  constructor
+  · intro hw
+    have hf := hw.2.1
+    rw [Nat.add_sub_cancel' (by omega : u≤clock j),hpq.1,hpu.1] at hf
+    exact hc.mp ⟨hf,by rw [hw.2.2] at ha;omega⟩
+  · intro he
+    have hs := hc.mpr he
+    refine ⟨by omega,?_,?_⟩
+    · rw [Nat.add_sub_cancel' (by omega : u≤clock j),hpq.1,hpu.1]
+      exact hs.1
+    · have hb := hs.2
+      omega
+
+private theorem original_actual (j : Fin 4) : EndN ancestrySign 0 (clock j) := by
+  have hA : ancestrySign (clock j)=true := by
+    have h : ∀ j : Fin 4, ancestrySign (clock j)=true := by decide
+    exact h j
+  refine ⟨hA,source j,clock j-source j,Nat.zero_le _,by have := source_bound j;omega,?_⟩
+  exact (exact_source j (source j) (source_bound j)).mpr rfl
+
+/-- Two genuine exclusive old targets have distinct latest nonshort
+low images, but BOTH images have exactly the same earlier local source.
+There is no A at/before that source; the same first low free19 is the
+unchanged ancestor-map fallback for both. No orbit reachability is claimed. -/
+theorem two_targets_share_earliest_ancestor_free :
+    (∀ i, i<19 → ancestrySign i=false) ∧
+    (∀ k, 0<k → k≤160 → cN (EndN ancestrySign 0) 0 k+1≤
+      cN (fun i => ancestrySign i=false) 0 k) ∧
+    EndN ancestrySign 0 75 ∧ ¬EndN ancestrySign 17 75 ∧
+    EndN ancestrySign 0 159 ∧ ¬EndN ancestrySign 17 159 ∧
+    Fw ancestrySign 75-Fw ancestrySign 17=2 ∧
+    Fw ancestrySign 159-Fw ancestrySign 17=2 ∧
+    (∀ j : Fin 2, let a := [57,129][j.val]!; let t := [75,159][j.val]!;
+      ancestrySign a=true ∧ Fw ancestrySign a=Fw ancestrySign 17 ∧
+      ¬shortEndpoint ancestrySign 17 a ∧ EndN ancestrySign 0 a ∧
+      Win ancestrySign 18 (a-18) ∧
+      (∀ u k, u+k=a → Win ancestrySign u k → u=18) ∧
+      (∀ x, a<x → x<t → ancestrySign x=true → Fw ancestrySign x≠Fw ancestrySign 17)) ∧
+    ancestrySign 19=true ∧ ¬EndN ancestrySign 0 19 ∧
+    Fw ancestrySign 19≤Fw ancestrySign 17+1 := by
+  have hS : ∀ i, i<19 → ancestrySign i=false := by
+    intro i hi
+    have hc : ∀ i : Fin 19, ancestrySign i.val=false := by decide
+    exact hc ⟨i,hi⟩
+  have hpos (k : Nat) (hk : 0<k) (hK : k≤160) :
+      cN (EndN ancestrySign 0) 0 k+1≤cN (fun i => ancestrySign i=false) 0 k := by
+    have he : cN (EndN ancestrySign 0) 0 k≤cN (fun i => ancestrySign i=true) 0 k :=
+      cN_mono _ _ _ _ (fun _ _ _ h => h.1)
+    have hw := (cN_walk ancestrySign 0 k).1
+    simp only [Nat.zero_add,Fw] at hw
+    have hf := (profile_correct k hK).1
+    have hn := checked_heights ⟨k,by omega⟩ hk
+    omega
+  have h75 := original_actual (0 : Fin 4)
+  have h159 := original_actual (1 : Fin 4)
+  change EndN ancestrySign 0 75 at h75
+  change EndN ancestrySign 0 159 at h159
+  have hnot (j : Fin 4) (hj : j.val<2) : ¬EndN ancestrySign 17 (clock j) := by
+    rintro ⟨_,u,k,hu,huk,hw⟩
+    have hlt : u<clock j := by have := hw.1;omega
+    have he : u=source j := (exact_source j u hlt).mp (by simpa [show clock j-u=k by omega] using hw)
+    have hs : source j=16 := by
+      have hc : ∀ j : Fin 4, j.val<2 → source j=16 := by decide
+      exact hc j hj
+    omega
+  have ha19 : cN (fun i => ancestrySign i=true) 0 19=0 :=
+    cN_zero_of _ _ _ (fun i _ hi ht => by have hs := hS i (by omega);simp [hs] at ht)
+  have hf19 := first_two_not_supplied ancestrySign 19 (by omega)
+  refine ⟨hS,hpos,h75,hnot 0 (by decide),h159,hnot 1 (by decide),by decide,by decide,?_,by decide,hf19,by decide⟩
+  intro j
+  let a : Nat := [57,129][j.val]!
+  let t : Nat := [75,159][j.val]!
+  let jj : Fin 4 := ⟨j.val+2,by omega⟩
+  have hclock : clock jj=a := by
+    have h : j.val=0 ∨ j.val=1 := by omega
+    rcases h with h|h <;> simp [clock,jj,a,h]
+  have hs : source jj=18 := by
+    have h : j.val=0 ∨ j.val=1 := by omega
+    rcases h with h|h <;> simp [source,jj,h]
+  have hraw := original_actual jj
+  rw [hclock] at hraw
+  have hlen : 18<a := by
+    have h : j.val=0 ∨ j.val=1 := by omega
+    rcases h with h|h <;> simp [a,h]
+  have hwin : Win ancestrySign 18 (a-18) := by
+    rw [←hclock]
+    exact (exact_source jj 18 (by omega)).mpr hs.symm
+  have hdata : ancestrySign a=true ∧ Fw ancestrySign a=Fw ancestrySign 17 ∧
+      ¬shortEndpoint ancestrySign 17 a := by
+    have h : j.val=0 ∨ j.val=1 := by omega
+    rcases h with h|h <;> subst h <;> decide
+  refine ⟨hdata.1,hdata.2.1,hdata.2.2,hraw,hwin,?_,?_⟩
+  · intro u k huk hw
+    have hu : u<clock jj := by have := hw.1;omega
+    have he := (exact_source jj u hu).mp (by simpa [show clock jj-u=k by omega] using hw)
+    exact he.trans hs
+  · intro x hax hxt hA
+    have hx : x<160 := by
+      have h : j.val=0 ∨ j.val=1 := by omega
+      rcases h with h|h <;> simp [t,h] at hxt <;> omega
+    have hc : ∀ j : Fin 2, ∀ x : Fin 160,
+        [57,129][j.val]!<x.val → x.val<[75,159][j.val]! → ancestrySign x.val=true → H x.val≠H 17 := by decide
+    have hp := hc j ⟨x,hx⟩ hax hxt hA
+    rw [(profile_correct x (by omega)).1,(profile_correct 17 (by omega)).1]
+    exact hp
+
+end Recaman.AncestorSourceCollision

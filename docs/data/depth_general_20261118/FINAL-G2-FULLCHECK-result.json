@@ -1,0 +1,24 @@
+{
+  "tag": "FINAL-G2-FULLCHECK",
+  "argv": [
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-18T07:53:59.899255+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "./scripts/check.sh": "2a6d345688d4846c03830dad5e3818d61ec2b4f4a0c061985171b297f718ee84"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "3b9ded9a199330f5ad3901b3008c23902bcc9341",
+  "tracked_diff_sha256": "1939e9a4ac63517872f1d48079eb5dd71aceafd433b8aa0a4170b425bd629a6b",
+  "source_tree_sha256": "6109c88d5ef9b1f364fe595a74726ce6ad41515de5fd634877f3316e1a586fe5",
+  "source_tree_manifest": "FINAL-G2-FULLCHECK-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1939e9a4ac63517872f1d48079eb5dd71aceafd433b8aa0a4170b425bd629a6b",
+  "exit_code": -9,
+  "reason": "wall/deadline cap",
+  "wall_seconds": 20.014210499997716,
+  "cpu_seconds": 12.956699,
+  "finished_jst": "2026-11-18T07:54:19.913284+09:00"
+}

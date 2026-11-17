@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-18T06:38:37.893534+09:00",
+  "tag": "padding-gain-holdout",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261118/padding_gain_family.py",
+    "holdout"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "4d26445ed327837d27bc364934451378aa14be9754d5fa365dca7935883f674c",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 22321,
+  "process_group": 22321,
+  "finished_jst": "2026-11-18T06:38:37.997672+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.10421654197853059,
+  "worker_user_seconds": 0.067397,
+  "worker_sys_seconds": 0.0062169999999999994,
+  "worker_cpu_seconds": 0.073614,
+  "worker_maxrss_native": 24543232,
+  "controller_cpu_seconds": 0.0013960000000000014,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

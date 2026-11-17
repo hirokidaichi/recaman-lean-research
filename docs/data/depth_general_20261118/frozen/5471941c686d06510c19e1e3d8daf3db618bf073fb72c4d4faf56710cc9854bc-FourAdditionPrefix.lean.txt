@@ -1,0 +1,81 @@
+import Recaman.ThreeAdditionPrefix
+import Recaman.InitialLowFreeRanks
+
+namespace Recaman.FourAdditionPrefix
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.InitialLowFreeRanks
+
+/-- The fourth original addition forces a third original free addition. -/
+theorem four_additions_have_three_free (f : Nat → Bool) (v : Nat)
+    (hA : 4 ≤ cN (fun i => f i=true) 0 v) :
+    3 ≤ cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v := by
+  obtain ⟨a,ha,haA,haC⟩ := count_rank_clock (fun i => f i=true) 0 v (by omega)
+  obtain ⟨b,hb,hbA,hbC⟩ := count_rank_clock (fun i => f i=true) 1 v (by omega)
+  obtain ⟨c,hc,hcA,hcC⟩ := count_rank_clock (fun i => f i=true) 2 v (by omega)
+  obtain ⟨d,hd,hdA,hdC⟩ := count_rank_clock (fun i => f i=true) 3 v (by omega)
+  have hab : a<b := by
+    by_contra hn
+    have := count_prefix_le (fun i => f i=true) 0 b a (by omega)
+    omega
+  have hcd : c<d := by
+    by_contra hn
+    have := count_prefix_le (fun i => f i=true) 0 d c (by omega)
+    omega
+  have haf := first_two_not_supplied f a (by omega)
+  have hbf := first_two_not_supplied f b (by omega)
+  have hex : ∃ q, q<v ∧ 2≤cN (fun i => f i=true) 0 q ∧
+      f q=true ∧ ¬EndN f 0 q := by
+    by_cases he : EndN f 0 c
+    · exact ⟨d,hd,by omega,hdA,fourth_free_after_third_actual f c d hcd hcC hdC he⟩
+    · exact ⟨c,hc,by omega,hcA,he⟩
+  obtain ⟨q,hq,hqC,hqA,hqF⟩ := hex
+  have hbq : b<q := by
+    by_contra hn
+    have := count_prefix_le (fun i => f i=true) 0 q b (by omega)
+    omega
+  have htwo := two_marks_le_count (fun i => f i=true ∧ ¬EndN f 0 i)
+    0 a b q (Nat.zero_le _) hab (by omega) ⟨haA,haf⟩ ⟨hbA,hbf⟩
+  have hs := cN_succ_pos (fun i => f i=true ∧ ¬EndN f 0 i) 0 q
+    (by simpa using And.intro hqA hqF)
+  have hm := count_prefix_le (fun i => f i=true ∧ ¬EndN f 0 i) 0 (q+1) v (by omega)
+  omega
+
+/-- With only three original free, four original A contain AAA and
+exactly one A elsewhere, retaining every original supplier. -/
+theorem four_additions_three_free_has_triple (f : Nat → Bool) (v : Nat)
+    (hA : cN (fun i => f i=true) 0 v=4)
+    (hfree : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v ≤ 3) :
+    ∃ a, a+3≤v ∧ f a=true ∧ f (a+1)=true ∧ f (a+2)=true ∧
+      cN (fun i => f i=true) 0 a +
+      cN (fun i => f i=true) (a+3) (v-a-3)=1 := by
+  have hex : ∃ t, t<v ∧ EndN f 0 t := by
+    by_contra hn
+    have hc : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v=
+        cN (fun i => f i=true) 0 v := by
+      apply cN_congr
+      intro t _ ht
+      exact ⟨And.left,fun h => ⟨h,fun he => hn ⟨t,by omega,he⟩⟩⟩
+    omega
+  obtain ⟨t,ht,he⟩ := hex
+  have hm := count_prefix_le (fun i => f i=true) 0 (t+1) v (by omega)
+  have hs := cN_succ_pos (fun i => f i=true) 0 t (by simpa using he.1)
+  obtain ⟨u,hu,hW⟩ := small_rank_window f t (by omega) he
+  obtain ⟨_,h1,h2⟩ := win3 f u hW
+  let a := u+1
+  have ha : a+3≤v := by dsimp [a]; omega
+  have h1' : f a=true := h1
+  have h2' : f (a+1)=true := by simpa only [a,Nat.add_assoc] using h2
+  have h3' : f (a+2)=true := by
+    have heq : a+2=t := by dsimp [a]; omega
+    rwa [heq]
+  have hcount : cN (fun i => f i=true) a 3=3 := by
+    rw [show 3=2+1 from rfl,cN_succ_pos _ _ 2 h3',
+      show 2=1+1 from rfl,cN_succ_pos _ _ 1 h2',
+      show 1=0+1 from rfl,cN_succ_pos _ _ 0 (by simpa using h1')]
+    simp [cN]
+  have hsplit := cN_sub0 (fun i => f i=true) a v (by omega)
+  have hsplit' := cN_sub (fun i => f i=true) a 3 (v-a) (by omega)
+  exact ⟨a,ha,h1',h2',h3',by omega⟩
+
+end Recaman.FourAdditionPrefix
