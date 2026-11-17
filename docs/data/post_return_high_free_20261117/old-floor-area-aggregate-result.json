@@ -1,0 +1,25 @@
+{
+  "tag": "old-floor-area-aggregate",
+  "argv": [
+    "lake",
+    "build",
+    "Recaman.OldFloorAreaSpectrum",
+    "Recaman"
+  ],
+  "started_jst": "2026-11-17T22:01:15.366643+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {},
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "c95da296ae025f98b0278870be3f166344faac242e78d27fd62b3fd358c3f4e6",
+  "source_tree_sha256": "f5239d674ab29ba17b402ce07dc1446844aeb4c71a4c628fed9de69f73138f22",
+  "source_tree_manifest": "old-floor-area-aggregate-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "c95da296ae025f98b0278870be3f166344faac242e78d27fd62b3fd358c3f4e6",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 1.827336667018244,
+  "cpu_seconds": 3.077724,
+  "finished_jst": "2026-11-17T22:01:17.193916+09:00"
+}

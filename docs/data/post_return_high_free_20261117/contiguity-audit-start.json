@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-11-17T22:13:55.704894+09:00",
+  "tag": "contiguity-audit",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/contiguity_audit.py"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 4.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "a74c2ac0be08add3936a6845448622c70b6a8d76ceb7903b4690e2898dcea8e5",
+  "runner_sha256": "a598bbd8b520a7941fff1c8b18c5243f0a50836ec52287828db64bcb5162ab1d",
+  "pid": 58174,
+  "process_group": 58174
+}

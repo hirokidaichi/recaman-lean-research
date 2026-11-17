@@ -1,0 +1,23 @@
+{
+  "tag": "three-addition-prefix-lean-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/ThreeAdditionPrefix.lean"
+  ],
+  "started_jst": "2026-11-17T22:17:40.467753+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/ThreeAdditionPrefix.lean": "04d9fa3e3c1469493fcea224f4f573be7b3af404b81d33933a4b8daf1a29aebc"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "ffc8431c9c03f2115e4ab384848a451de8b421c89b3dab87455b14828134c54e",
+  "source_tree_sha256": "48072655df6af7d9177c259533ba736a19abb7048ef35e28261a42c5d467b6cc",
+  "source_tree_manifest": "three-addition-prefix-lean-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

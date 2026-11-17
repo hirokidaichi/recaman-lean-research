@@ -1,0 +1,15 @@
+{
+  "status": "STOPPED",
+  "source_sha256": "bcc0071e82cf98a30af29f6703659b75b6bec3d82275b00cd445046443e2514f",
+  "source_file": "stopped/FourFreeFirstRise.lean.txt",
+  "first_job": "first-rise-lean-result.json",
+  "observed_exit_code": 152,
+  "cpu_seconds": 60.112662,
+  "explanation": "lake propagated the Lean CPU-limit termination (128+SIGXCPU); runner reason=completed describes the outer process only, not successful verification",
+  "no_resource_retry": true,
+  "no_split_or_tactic_only_retry": true,
+  "root_imported": false,
+  "audit_imported": false,
+  "PC5_status": "CONJECTURED; finite forest remains COMPUTED",
+  "reopen_gate": "a genuinely new mathematical source/free reduction or separate human-complete proof; not more fuel, CPU, memory, tactic, imports or splitting this failed packet"
+}

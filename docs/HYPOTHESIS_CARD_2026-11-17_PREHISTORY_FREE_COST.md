@@ -49,3 +49,7 @@ H-20261117-PC4 proves on paper that no M4/low free<=3 original history exists, w
 ## Subsequent explicit M5 continuation
 
 H-PC5/E730 supplies a strict PROVED-PAPER necessary condition, not a decision of existence. With low free4, the derived deep last minimum has at most3 preceding A; the first return prefix has original total free<=4. At least4 targets of each required source family have all sources after that minimum. Complete source sets are retained via an explicitly proved height exclusion where a comparison cut is used. M5, all-M cost and C1 remain open. The new finite run-family search is STOPPED with0 low4 eligible histories; no larger retry. See RESEARCH_NOTE_2026-11-17_FIVE_PERIOD_SOURCE_ORDER.md and its independent verification/semantic-audit packet.
+
+## Subsequent evening decision,2026-11-17 (E735)
+
+The explicit23:00 continuation settles PC5/low4 negatively on paper with no depth/upper/length restriction. E730's original old A<=3/first-return total free<=4, the newly derived old-area spectrum and the arbitrary-length recovery bound contradict the required seven-level rise. E734/E736/E737/E738 check the central recovery/source/triple components; E729/E730 and the original budget/parent connection remain PAPER. General M<=F_low is still CONJECTURED; a counter now needs M>=6 and low free>=5. This does not revive any earlier stopped search. See RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md and RESEARCH_HANDOFF_2026-11-17_EVENING.md. Historical outcomes above describe their own checkpoints.

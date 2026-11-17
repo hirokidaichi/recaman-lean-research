@@ -1,5 +1,7 @@
 # M4 / low free3: last-minimum return and source-visit accounting
 
+後続の夜調査でM5/low free<=4も全深さ・全上昇幅で排除した（[E735紙上証明](RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md)、全体未Lean・人間レビュー未）。以下はこのノート作成時点の証拠と停止記録を保持する。
+
 結論：**M=4・low free<=3を満たす元履歴は存在しない**。前史の深さ・上昇幅・長さ・run数を制限せず、必要な四つの供給元を置けないことを紙上で示した。以下の強い訪問数上界を **PROVED-PAPER（E-729、未Lean・人間レビュー未）** とする。初稿のCONJECTUREDから、反証passと[別の意味監査](data/pc4_source_order_20261117/SEMANTIC_AUDIT.md)を経て判定した。一般のM<=F_lowやC1は未証明。
 
 ## Objects and precise target

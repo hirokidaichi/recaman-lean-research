@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4429,
+   "lines": 4459,
    "imports": [
     "InitialSLowTargetTransport",
     "InitialSTransportBoundary",
@@ -43971,6 +43971,107 @@
    "hasReport": false
   },
   {
+   "name": "OldAdditionSourceRadius",
+   "lines": 120,
+   "imports": [
+    "SeparatorTailFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "old_source_distance",
+     "line": 14
+    },
+    {
+     "kind": "theorem",
+     "name": "source_clock_ge_cut",
+     "line": 25
+    },
+    {
+     "kind": "theorem",
+     "name": "window_nat_shift",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "original_source_iff",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "endN_cut_iff",
+     "line": 72
+    },
+    {
+     "kind": "theorem",
+     "name": "future_free_transport",
+     "line": 84
+    },
+    {
+     "kind": "theorem",
+     "name": "original_free_ledger",
+     "line": 108
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "OldAreaRecoveryBound",
+   "lines": 200,
+   "imports": [
+    "BlockSuffixPositivity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "oldAllowed",
+     "line": 17
+    },
+    {
+     "kind": "def",
+     "name": "possible",
+     "line": 28
+    },
+    {
+     "kind": "def",
+     "name": "oldPaid",
+     "line": 31
+    },
+    {
+     "kind": "def",
+     "name": "nextPaid",
+     "line": 33
+    },
+    {
+     "kind": "def",
+     "name": "check",
+     "line": 36
+    },
+    {
+     "kind": "theorem",
+     "name": "four_roots_checked",
+     "line": 46
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_implies_possible",
+     "line": 83
+    },
+    {
+     "kind": "theorem",
+     "name": "recovery_bound_of_old_area_admission",
+     "line": 188
+    }
+   ],
+   "theorems": 3,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "OldContextBudget",
    "lines": 173,
    "imports": [
@@ -44038,6 +44139,44 @@
    ],
    "theorems": 2,
    "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "OldFloorAreaSpectrum",
+   "lines": 99,
+   "imports": [
+    "OldAreaRecoveryBound"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "additionHeights",
+     "line": 9
+    },
+    {
+     "kind": "theorem",
+     "name": "twice_area_identity",
+     "line": 13
+    },
+    {
+     "kind": "theorem",
+     "name": "addition_heights_nonnegative",
+     "line": 31
+    },
+    {
+     "kind": "theorem",
+     "name": "addition_heights_rank_upper",
+     "line": 40
+    },
+    {
+     "kind": "theorem",
+     "name": "original_floor_area_spectrum",
+     "line": 65
+    }
+   ],
+   "theorems": 4,
+   "defs": 1,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -64450,6 +64589,29 @@
    "hasReport": false
   },
   {
+   "name": "ThreeAdditionPrefix",
+   "lines": 107,
+   "imports": [
+    "ThreeOldAdditionRecovery"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "three_additions_two_free_shape",
+     "line": 10
+    },
+    {
+     "kind": "theorem",
+     "name": "three_additions_at_floor_shape",
+     "line": 82
+    }
+   ],
+   "theorems": 2,
+   "defs": 0,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
    "name": "ThreeGapInteriorA",
    "lines": 71,
    "imports": [
@@ -65339,6 +65501,39 @@
    ],
    "theorems": 17,
    "defs": 15,
+   "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "ThreeOldAdditionRecovery",
+   "lines": 184,
+   "imports": [
+    "OldFloorAreaSpectrum"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "consecutive_three_suffix_admitted",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "original_old_bridge_admitted",
+     "line": 117
+    },
+    {
+     "kind": "theorem",
+     "name": "original_crossing_admitted",
+     "line": 148
+    },
+    {
+     "kind": "theorem",
+     "name": "original_recovery_below_seven",
+     "line": 171
+    }
+   ],
+   "theorems": 4,
+   "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": false
   },
@@ -70244,6 +70439,6 @@
    "hasReport": false
   }
  ],
- "total": 1027,
+ "total": 1032,
  "withReport": 167
 }

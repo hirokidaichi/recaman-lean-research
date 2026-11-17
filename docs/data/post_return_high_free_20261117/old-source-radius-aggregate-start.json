@@ -1,0 +1,25 @@
+{
+  "tag": "old-source-radius-aggregate",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman.olean",
+    "Recaman.lean"
+  ],
+  "started_jst": "2026-11-17T21:08:05.638288+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman.lean": "390e03246775a2db36ebf36a418664a8c5721c3b25a2b1f4276d41f42beb55f1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "a46b08cb5c5e46c06d8ed6e3e284b0dc1305be230ffe4496ff2a65dacd9fed30",
+  "source_tree_sha256": "7ec569157e20b1f42ef5d8f243ca34fbae532836fdc45174ec8ad12688c47df8",
+  "source_tree_manifest": "old-source-radius-aggregate-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

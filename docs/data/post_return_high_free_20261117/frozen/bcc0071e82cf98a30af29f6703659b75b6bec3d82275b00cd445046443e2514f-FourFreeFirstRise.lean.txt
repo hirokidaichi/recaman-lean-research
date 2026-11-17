@@ -1,0 +1,166 @@
+import Recaman.BlockSuffixPositivity
+
+set_option maxRecDepth 10000
+set_option maxHeartbeats 2000000
+
+namespace Recaman.FourFreeFirstRise
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.ThreeNonsuppliedData (localSupply)
+open Recaman.ShortPeriodicSupply (sign)
+
+/-! The roots are full literal histories. Certificate fuel is not a
+bound on an actual future: the semantic induction below has arbitrary K.
+The original-to-root reduction is a separate paper argument. -/
+
+def roots : List (List Bool × Nat) :=
+  [(List.replicate 8 false, 0)] ++
+  (List.range 7).map (fun x =>
+    (List.replicate (8-x) false ++ [true] ++ List.replicate (x+1) false, 1)) ++
+  (List.range 7).flatMap (fun x =>
+    (List.range (min (x+1) 6 + 1)).map (fun y =>
+      (List.replicate (8-x) false ++ [true] ++ List.replicate (x+1-y) false ++
+        [true] ++ List.replicate (y+1) false, 2))) ++
+  (List.range 7).map (fun x =>
+    (List.replicate (8-x) false ++ [true,true,true] ++ List.replicate (x+3) false, 2))
+
+def nextFree (w : List Bool) (a : Nat) : Nat :=
+  a + if localSupply w then 0 else 1
+
+def check : Nat → List Bool → Int → Nat → Bool
+  | 0, _, _, _ => false
+  | fuel+1, w, h, a =>
+    decide (h < 7) &&
+      ((if 1 < h then check fuel (w ++ [false]) (h-1) a else true) &&
+       (if nextFree w a ≤ 4 then check fuel (w ++ [true]) (h+1) (nextFree w a) else true))
+
+/-- Ordinary kernel reduction certifies every root. There is no external
+table hypothesis and no assumed bound on an original trace length. -/
+theorem roots_checked : roots.all (fun r => check 14 r.1 0 r.2) = true := by
+  decide
+
+private def Good (w : List Bool) (h : Int) (a : Nat) : Prop :=
+  ∃ fuel, check fuel w h a = true
+
+private theorem good_height (w : List Bool) (h : Int) (a : Nat)
+    (hg : Good w h a) : h < 7 := by
+  obtain ⟨fuel,hg⟩ := hg
+  cases fuel with
+  | zero => simp [check] at hg
+  | succ fuel =>
+    simp only [check, Bool.and_eq_true, decide_eq_true_eq] at hg
+    exact hg.1
+
+private theorem good_S (w : List Bool) (h : Int) (a : Nat)
+    (hg : Good w h a) (hh : 1 < h) : Good (w ++ [false]) (h-1) a := by
+  obtain ⟨fuel,hg⟩ := hg
+  cases fuel with
+  | zero => simp [check] at hg
+  | succ fuel =>
+    simp only [check, Bool.and_eq_true, decide_eq_true_eq] at hg
+    exact ⟨fuel, by simpa only [if_pos hh] using hg.2.1⟩
+
+private theorem good_A (w : List Bool) (h : Int) (a : Nat)
+    (hg : Good w h a) (ha : nextFree w a ≤ 4) :
+    Good (w ++ [true]) (h+1) (nextFree w a) := by
+  obtain ⟨fuel,hg⟩ := hg
+  cases fuel with
+  | zero => simp [check] at hg
+  | succ fuel =>
+    simp only [check, Bool.and_eq_true, decide_eq_true_eq] at hg
+    exact ⟨fuel, by simpa only [if_pos ha] using hg.2.2⟩
+
+private theorem original_free_A_step (f : Nat → Bool) (n : Nat) (hA : f n = true) :
+    cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (n+1) =
+      nextFree (seg f 0 n) (cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n) := by
+  have he := localSupply_seg_iff f 0 n (Nat.zero_le _) hA
+  cases hl : localSupply (seg f 0 n) with
+  | false =>
+    have hn : ¬EndN f 0 n := by
+      intro hh
+      have ht := he.mpr hh
+      rw [Nat.sub_zero,hl] at ht
+      contradiction
+    rw [cN_succ_pos _ 0 n (by simpa only [Nat.zero_add] using And.intro hA hn)]
+    simp [nextFree,hl]
+  | true =>
+    have hy : EndN f 0 n := he.mp (by simpa only [Nat.sub_zero] using hl)
+    rw [cN_succ_neg _ 0 n (by
+      intro hh
+      exact hh.2 hy)]
+    simp [nextFree,hl]
+
+private theorem original_prefix_good (f : Nat → Bool) (v K : Nat)
+    (hroot : (seg f 0 v, cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v) ∈ roots)
+    (hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v+K) ≤ 4)
+    (hfloor : ∀ j, 0 < j → j ≤ K → Fw f v < Fw f (v+j)) :
+    ∀ j, j ≤ K → Good (seg f 0 (v+j)) (Fw f (v+j)-Fw f v)
+      (cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v+j)) := by
+  intro j
+  induction j with
+  | zero =>
+    intro _
+    simp only [Nat.add_zero,Int.sub_self]
+    exact ⟨14,List.all_eq_true.mp roots_checked _ hroot⟩
+  | succ j ih =>
+    intro hj
+    have hg := ih (by omega)
+    let n := v+j
+    have hclock : v+(j+1)=n+1 := by dsimp [n]; omega
+    have hpos := hfloor (j+1) (by omega) hj
+    rw [hclock] at hpos ⊢
+    have hc : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (n+1) ≤ 4 := by
+      have hm := count_prefix_le (fun i => f i = true ∧ ¬EndN f 0 i)
+        0 (n+1) (v+K) (by dsimp [n]; omega)
+      omega
+    change Good (seg f 0 n) (Fw f n-Fw f v)
+      (cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n) at hg
+    cases hs : f n with
+    | false =>
+      have hw : seg f 0 (n+1)=seg f 0 n ++ [false] := by
+        rw [seg_succ]
+        simp only [Nat.zero_add,hs]
+      have hh : Fw f (n+1)-Fw f v=(Fw f n-Fw f v)-1 := by
+        rw [Fw_succ,hs]
+        simp only [sign]
+        omega
+      have hf : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (n+1) =
+          cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n := by
+        apply cN_succ_neg
+        intro ht
+        have htA := ht.1
+        simp only [Nat.zero_add,hs] at htA
+        contradiction
+      have hhi : 1 < Fw f n-Fw f v := by omega
+      rw [hw,hh,hf]
+      exact good_S _ _ _ hg hhi
+    | true =>
+      have hw : seg f 0 (n+1)=seg f 0 n ++ [true] := by
+        rw [seg_succ]
+        simp only [Nat.zero_add,hs]
+      have hh : Fw f (n+1)-Fw f v=(Fw f n-Fw f v)+1 := by
+        rw [Fw_succ,hs]
+        simp only [sign]
+        omega
+      have hf := original_free_A_step f n hs
+      have hb : nextFree (seg f 0 n)
+          (cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n) ≤ 4 := by
+        rw [←hf]
+        exact hc
+      rw [hw,hh,hf]
+      exact good_A _ _ _ hg hb
+
+/-- From any of the49 explicit original prefix/free pairs, four original
+free cannot recover seven levels without revisiting the old floor.
+K is arbitrary. The original-to-root coverage is not assumed as a theorem
+and is not part of this Lean declaration. -/
+theorem four_free_recovery_bound (f : Nat → Bool) (v K : Nat)
+    (hroot : (seg f 0 v, cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v) ∈ roots)
+    (hfree : cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v+K) ≤ 4)
+    (hfloor : ∀ j, 0 < j → j ≤ K → Fw f v < Fw f (v+j)) :
+    Fw f (v+K) < Fw f v+7 := by
+  have hg := original_prefix_good f v K hroot hfree hfloor K (Nat.le_refl _)
+  have hh := good_height _ _ _ hg
+  omega
+
+end Recaman.FourFreeFirstRise

@@ -1,5 +1,7 @@
 # M5 / low free4: original chronology before the last minimum
 
+後続の夜調査でM5/low free<=4も全深さ・全上昇幅で排除した（[E735紙上証明](RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md)、全体未Lean・人間レビュー未）。以下はこのノート作成時点の証拠と停止記録を保持する。
+
 結論：**M=5・low free<=4の実現可否は未決着**。反例は得られず、不存在も証明していない。ただし深さ・上昇幅・長さを制限せず、候補が満たすべき次の条件を紙上で得た（**E-730 PROVED-PAPER、未Lean・人間レビュー未**）。
 
 1. 最後のglobal minimum以前のAは高々3個。

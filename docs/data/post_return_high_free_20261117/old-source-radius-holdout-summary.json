@@ -1,0 +1,43 @@
+{
+  "split": "holdout",
+  "words": 1024,
+  "eligible_conditions": 250518,
+  "all_source_comparisons": 250518,
+  "invalid_variant_counters": {
+    "height_omitted": {
+      "word": "SSSSSSSSAA",
+      "u": 7,
+      "v": 8,
+      "q": 10,
+      "p": 0,
+      "b": 0,
+      "sources": [
+        7
+      ]
+    },
+    "radius_minus_one": {
+      "word": "SSSSSSSSAA",
+      "u": 7,
+      "v": 8,
+      "q": 10,
+      "p": 0,
+      "b": 1,
+      "sources": [
+        7
+      ]
+    },
+    "coefficient_one": {
+      "word": "SSSSSSSSAA",
+      "u": 7,
+      "v": 9,
+      "q": 10,
+      "p": 1,
+      "b": 0,
+      "sources": [
+        7
+      ]
+    }
+  },
+  "cpu_seconds": 0.14598099999999997,
+  "evidence": "COMPUTED; no proof from finite absence"
+}

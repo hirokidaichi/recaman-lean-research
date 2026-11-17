@@ -1,0 +1,107 @@
+import Recaman.ThreeOldAdditionRecovery
+
+namespace Recaman.ThreeAdditionPrefix
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.LeadingRunSupply
+
+/-- An actual target among only three original additions forces the
+three additions to be consecutive, with the original prefix unchanged. -/
+theorem three_additions_two_free_shape (f : Nat → Bool) (v : Nat)
+    (hA : cN (fun i => f i=true) 0 v=3)
+    (hfree : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v ≤ 2) :
+    ∃ a b, seg f 0 v=List.replicate a false ++ List.replicate 3 true ++ List.replicate b false := by
+  have hex : ∃ t, t<v ∧ EndN f 0 t := by
+    apply Classical.byContradiction
+    intro hn
+    have he (t : Nat) (ht : t<v) : ¬EndN f 0 t := by
+      intro he
+      exact hn ⟨t,ht,he⟩
+    have hc : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v=cN (fun i => f i=true) 0 v := by
+      apply cN_congr
+      intro t _ ht
+      exact ⟨And.left,fun h => ⟨h,he t (by omega)⟩⟩
+    omega
+  obtain ⟨t,ht,hAt,u,k,_,huk,hW⟩ := hex
+  have hbefore := count_prefix_le (fun i => f i=true) 0 (t+1) v (by omega)
+  have hstep := cN_succ_pos (fun i => f i=true) 0 t (by simpa using hAt)
+  have hsplit := cN_sub0 (fun i => f i=true) u t (by have := hW.1; omega)
+  have hsub : t-u=k := by omega
+  rw [hsub] at hsplit
+  have hw := cN_walk f u k
+  have hk3 := win_ge3 f u k hW
+  have hmass := hW.2.1
+  have hk : k=3 := by omega
+  subst k
+  obtain ⟨hS,h1,h2⟩ := win3 f u hW
+  let a := u+1
+  have ha : a+3 ≤ v := by dsimp [a]; omega
+  have h1' : f a=true := h1
+  have h2' : f (a+1)=true := by simpa only [a,Nat.add_assoc] using h2
+  have h3' : f (a+2)=true := by
+    have he : a+2=t := by dsimp [a]; omega
+    rwa [he]
+  have hcount3 : cN (fun i => f i=true) a 3=3 := by
+    rw [show 3=2+1 from rfl,cN_succ_pos _ _ 2 h3',
+      show 2=1+1 from rfl,cN_succ_pos _ _ 1 h2',
+      show 1=0+1 from rfl,cN_succ_pos _ _ 0 (by simpa using h1')]
+    simp [cN]
+  have hc0 := cN_sub0 (fun i => f i=true) a v (by omega)
+  have hc1 := cN_sub (fun i => f i=true) a 3 (v-a) (by omega)
+  have hzero : cN (fun i => f i=true) 0 a=0 := by omega
+  let b := v-(a+3)
+  have hzero' : cN (fun i => f i=true) (a+3) b=0 := by
+    have hb : b=v-a-3 := by dsimp [b]; omega
+    rw [hb]
+    omega
+  have hpre : seg f 0 a=List.replicate a false := by
+    apply seg_false
+    intro i hi hia
+    have hn := not_of_cN_zero (fun j => f j=true) 0 a hzero i hi hia
+    cases hs : f i
+    · rfl
+    · exact (hn hs).elim
+  have htail : seg f (a+3) b=List.replicate b false := by
+    apply seg_false
+    intro i hi hib
+    have hn := not_of_cN_zero (fun j => f j=true) (a+3) b hzero' i hi hib
+    cases hs : f i
+    · rfl
+    · exact (hn hs).elim
+  have hmid : seg f a 3=List.replicate 3 true := by
+    change [f a,f (a+1),f (a+2)]=[true,true,true]
+    rw [h1',h2',h3']
+  refine ⟨a,b,?_⟩
+  have hv : v=a+3+b := by dsimp [b]; omega
+  rw [hv,seg_add,seg_add]
+  simp only [Nat.zero_add]
+  rw [hpre,hmid,htail]
+
+/-- The original floor pays the final S run needed by the complete
+old-source spectrum; it is not a condition imposed on a reset history. -/
+theorem three_additions_at_floor_shape (f : Nat → Bool) (v : Nat)
+    (hA : cN (fun i => f i=true) 0 v=3)
+    (hfree : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v ≤ 2)
+    (hfloor : ∀ i, i ≤ v → Fw f v ≤ Fw f i) :
+    ∃ a b, 3 ≤ b ∧
+      seg f 0 v=List.replicate a false ++ List.replicate 3 true ++ List.replicate b false := by
+  obtain ⟨a,b,hseg⟩ := three_additions_two_free_shape f v hA hfree
+  have hv : v=a+3+b := by
+    have hl := congrArg List.length hseg
+    simp only [seg_length,List.length_append,List.length_replicate] at hl
+    omega
+  have hm := seg_mass f 0 v
+  rw [hseg,mass_append,mass_append,mass_rep_false,mass_replicate_A,mass_rep_false] at hm
+  simp only [Nat.zero_add,Fw] at hm
+  have htake := seg_take f 0 v a (by omega)
+  rw [hseg] at htake
+  have hp : seg f 0 a=List.replicate a false := by
+    rw [←htake,List.append_assoc,List.take_append_of_le_length (by simp),List.take_replicate]
+    simp
+  have hma := seg_mass f 0 a
+  rw [hp,mass_rep_false] at hma
+  simp only [Nat.zero_add,Fw] at hma
+  have hf := hfloor a (by omega)
+  exact ⟨a,b,by omega,hseg⟩
+
+end Recaman.ThreeAdditionPrefix

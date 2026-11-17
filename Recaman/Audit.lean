@@ -4427,3 +4427,33 @@ import Recaman
 -- Preserving the old BlockWord does not preserve crossing suppliers under a tail-S deletion.
 #print axioms Recaman.PaddedInitialSTrimBoundary.padded_prefix_one_S_trim_changes_actual_free
 #print axioms Recaman.InitialSOneHeadPositive.padded_first_S_height_one_positive
+
+-- Old A budget, complete source transport and the unchanged old free ledger.
+#print axioms Recaman.OldAdditionSourceRadius.old_source_distance
+#print axioms Recaman.OldAdditionSourceRadius.source_clock_ge_cut
+#print axioms Recaman.OldAdditionSourceRadius.window_nat_shift
+#print axioms Recaman.OldAdditionSourceRadius.original_source_iff
+#print axioms Recaman.OldAdditionSourceRadius.endN_cut_iff
+#print axioms Recaman.OldAdditionSourceRadius.future_free_transport
+#print axioms Recaman.OldAdditionSourceRadius.original_free_ledger
+
+-- Explicit old-area relaxation; the original producer is separately paper-audited.
+#print axioms Recaman.OldAreaRecoveryBound.four_roots_checked
+#print axioms Recaman.OldAreaRecoveryBound.actual_implies_possible
+#print axioms Recaman.OldAreaRecoveryBound.recovery_bound_of_old_area_admission
+
+#print axioms Recaman.OldFloorAreaSpectrum.twice_area_identity
+#print axioms Recaman.OldFloorAreaSpectrum.addition_heights_nonnegative
+#print axioms Recaman.OldFloorAreaSpectrum.addition_heights_rank_upper
+#print axioms Recaman.OldFloorAreaSpectrum.original_floor_area_spectrum
+
+#print axioms Recaman.ThreeOldAdditionRecovery.consecutive_three_suffix_admitted
+
+#print axioms Recaman.ThreeOldAdditionRecovery.original_old_bridge_admitted
+
+#print axioms Recaman.ThreeOldAdditionRecovery.original_crossing_admitted
+
+#print axioms Recaman.ThreeOldAdditionRecovery.original_recovery_below_seven
+
+#print axioms Recaman.ThreeAdditionPrefix.three_additions_two_free_shape
+#print axioms Recaman.ThreeAdditionPrefix.three_additions_at_floor_shape

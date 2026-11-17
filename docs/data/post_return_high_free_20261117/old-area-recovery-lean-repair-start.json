@@ -1,0 +1,25 @@
+{
+  "tag": "old-area-recovery-lean-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/OldAreaRecoveryBound.olean",
+    "Recaman/OldAreaRecoveryBound.lean"
+  ],
+  "started_jst": "2026-11-17T21:45:42.625933+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/OldAreaRecoveryBound.lean": "a61139daf93406e1c7942055212af5eb7f84e9d8f7bafea3f95d7a23bbe936fb"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "257d77ef5210de5b52b39b3188a237ef3a83d84adae23af7675460eac4960873",
+  "source_tree_sha256": "860de8dbd1b0b0a71bae713d31555c6f0924fa7128df10f2455d41310b5d8b8a",
+  "source_tree_manifest": "old-area-recovery-lean-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

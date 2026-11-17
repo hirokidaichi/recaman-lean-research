@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-11-17T20:52:06.644619+09:00",
+  "tag": "original-four-audit",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/original_four_audit.py"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "3107b9366f064d137c44154a262764adbc6e97ef5e4462962c5f166542bc5e22",
+  "runner_sha256": "a598bbd8b520a7941fff1c8b18c5243f0a50836ec52287828db64bcb5162ab1d",
+  "pid": 24410,
+  "process_group": 24410
+}

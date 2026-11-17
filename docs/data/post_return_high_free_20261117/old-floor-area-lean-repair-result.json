@@ -1,0 +1,29 @@
+{
+  "tag": "old-floor-area-lean-repair",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldFloorAreaSpectrum.lean"
+  ],
+  "started_jst": "2026-11-17T22:00:13.543603+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/OldFloorAreaSpectrum.lean": "7d81c86ca05857fe9a1e4caa77c9c4f2ffe2fd8ca4fee3b9bf32c29a1ece39ac"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "a2b34f0d84de3cc09fa7ddfcc9e9afbc33e3a86efd4fecc80252cd00ff6bdf86",
+  "source_tree_sha256": "5d6d7c2c1bef3dfe2abb050f65cd10d4acc23fe6223514793cdadabef5caf385",
+  "source_tree_manifest": "old-floor-area-lean-repair-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a2b34f0d84de3cc09fa7ddfcc9e9afbc33e3a86efd4fecc80252cd00ff6bdf86",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.708886958018411,
+  "cpu_seconds": 0.5510349999999999,
+  "finished_jst": "2026-11-17T22:00:14.252427+09:00"
+}

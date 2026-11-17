@@ -1,0 +1,78 @@
+Recaman/OldAreaRecoveryBound.lean:90:8: error(lean.unknownIdentifier): Unknown constant `Bool.or_eq_true.mpr`
+Recaman/OldAreaRecoveryBound.lean:91:2: error: No goals to be solved
+Recaman/OldAreaRecoveryBound.lean:107:20: error: Application type mismatch: The argument
+  he
+has type
+  EndN f 0 n
+but is expected to have type
+  EndN f 0 (0 + n)
+in the application
+  h.right he
+Recaman/OldAreaRecoveryBound.lean:154:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  s ≥ 0
+  r ≥ 0
+  r - s ≥ 0
+  q ≥ 0
+  o ≥ 0
+  o - q ≥ 0
+  0 ≤ m ≤ 4
+  k - l ≥ 1
+  i ≥ 0
+  h ≥ 0
+  g ≥ 0
+  g - i ≥ 1
+  0 ≤ e ≤ 4
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  0 ≤ b ≤ 3
+where
+ b := ↑p
+ c := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v)
+ d := ↑(oldPaid p)
+ e := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v + K))
+ g := ↑K
+ h := ↑v
+ i := ↑(n - v)
+ k := Fw f (n + 1)
+ l := Fw f v
+ m := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (n + 1))
+ o := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n)
+ q := ↑a
+ r := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v + j))
+ s := ↑h₂.choose
+Recaman/OldAreaRecoveryBound.lean:173:8: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  s ≥ 0
+  r ≥ 0
+  r - s ≥ 0
+  q ≥ 0
+  o ≥ 0
+  o - q ≥ 0
+  0 ≤ m ≤ 4
+  k - l ≥ 1
+  i ≥ 0
+  h ≥ 0
+  g ≥ 0
+  g - i ≥ 1
+  0 ≤ e ≤ 4
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  0 ≤ b ≤ 3
+where
+ b := ↑p
+ c := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 v)
+ d := ↑(oldPaid p)
+ e := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v + K))
+ g := ↑K
+ h := ↑v
+ i := ↑(n - v)
+ k := Fw f (n + 1)
+ l := Fw f v
+ m := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (n + 1))
+ o := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 n)
+ q := ↑a
+ r := ↑(cN (fun i => f i = true ∧ ¬EndN f 0 i) 0 (v + j))
+ s := ↑h₂.choose

@@ -78,3 +78,17 @@ E701のlocal成功、H08の同値source helper、H03/H09/H10のfinite不在、mo
 | R-20261116-01 | あり E724元internal7終端/prefixstrict削減、E725 PAPER/実装STOP | あり E722 paid-positive actual/free輸送、E721/E727全量化no-go、E723非short長源counter edge | 0（前回0から新証拠、日付resetなし） | 30/60/10、別機構>=25min | 全旧履歴保持、明示ceiling/未払いO/未Lean全族の範囲を維持 |
 
 E719のA像をfreeへ置換せず、local/finite不在/helper数ではresetしない。E722のpositive bootstrapは任意padded prefixへ適用できるが、source transportはglobal initial-Sに限り、E726/E727で単純なold-prefix拡張/固定削除費用を反証。一般C1/全D無料課金は未証明。H03-REDUCE512MB STOPPEDは独立に保持。H02別機構はlocal準備を除き26分36.209秒、全phase/作業時間はstop後11/16 DAILY/journal正本。次の固定ancestor-free mapは未実行の候補で、定義だけを進展としない。
+
+## 2026-11-17 evening verdict (same-agent separate auditor role)
+
+| 親cycle | 局所側 | 一般化側 | 連続進展なし | 次の配分 | 根拠 |
+|---|---|---|---|---|---|
+| R-20261117-EVENING | あり E-735 M5/low4 の元履歴排除 PROVED-PAPER | あり E-732 全旧source/元free輸送 PROVED-LEAN、E-733 旧stockを無視するG0一般機構 REFUTED | 0（前回0から、新証拠による維持） | 30/60/10、別機構>=25min | 深さ・上昇・長さ非有界。E-732はold A/未来高さ帯の明示条件付き、E-733全族はPAPER・人間レビュー未 |
+
+局所結果は、必要な深い最低点から最初のRへの帰還に七段以上必要なのに、元のlow4から導く全source面積条件では七段へ届かない、という排除である。E-734/736/737/738は面積・旧A配置・回復のLean接続。E-729/E-730と親条件から元free予算への接続はPAPERのままで、無条件PC5をPROVED-LEANへ上げない。Mの数値更新やモジュール数だけを一般化進展とは数えない。
+
+一般化側では、E-732が任意の旧A予算pと未来高さ帯bについて全旧sourceの半径2p+bを証明し、元Nat0の旧free台帳を保持して全source窓を双方向に輸送する。一般のfreeからpの上界を供給したわけではない。E-733は全m>=8の明示履歴族で、R後の新low freeがなくても両低層に正keyを準備できることを示す。旧stockを捨てる一般機構を排除した根拠であり、m8の旧low free39355を予算4の反例と呼ばない。一般C1/全射性/全M費用不等式は未証明。
+
+別機構の観測区間は21:03:00.296670〜21:28:02.563100 JST、25分02.266秒（[receipt](data/post_return_high_free_20261117/DISTINCT_GENERAL_PHASE.json)）。夜枠はユーザー指示の20:20:07〜23:00、実装停止は22:20。以後は意味監査・全体検証・記録・保存。枠全体をactive数学時間や自動日次の100分実績に換算せず、朝の追加unitや11/16自動cycleと二重計上しない。終了・保存の実時刻は[引継ぎ](RESEARCH_HANDOFF_2026-11-17_EVENING.md)とpacketの記録を参照。
+
+旧49型直接certificateは60CPUでSTOPPEDのまま。新しい三角面積と三連A分類による四根モデルは異なる数学入力で、同じ上限内で受理。旧r4/SMT/生成器を含む停止を解除しない。次に反例を探すならM>=6かつlow free>=5が必要だが、今夜はM6を開始していない。次の論点は元free予算から旧A配置・面積をどう制限するかであり、停止表の単純拡大は継続しない。

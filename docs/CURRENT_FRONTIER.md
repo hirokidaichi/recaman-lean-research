@@ -1,13 +1,21 @@
 # Current research frontier
 
-最終更新: 2026-11-17（利用者指示による前史費用の反証調査）。一般C1/Q/H/SL/全射性は未証明。直近日次cycleは11/16のまま。追加調査の記録は下記ノートとpacketを参照。
+最終更新: 2026-11-17（利用者指示の23時までのM5追加調査）。一般C1/Q/H/SL/全射性は未証明。朝の追加unitと夜の時間指定parentを区別する。直近の自動日次cycleは11/16、夜の結果は下記ノートとEVENING handoffを参照。
 
 ## Research brief
+
+- **E-735 PROVED-PAPER（全体未Lean・人間レビュー未）**。M5/low free<=4は任意深さ・上昇幅・長さで不存在。必要な深い最低点から最初のR帰還が七段以上なのに、元old A<=3/元総free4/全sourceを保持した面積分類から七段回復が不可能。R以後の高いfreeを使う前に排除する。[紙上証明と監査](RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md)。一般の費用予想は未証明、反例にはM>=6/low free>=5が必要。
+- **E-734/E-736/E-737/E-738 PROVED-LEAN（条件とproducerを分離）**。四根151節点のkernel certificateを任意の元履歴長へ接続。元floorの全A始点面積/偶奇、全old sourceのadmission、元A3/free2から三連A形を形式化した。E729/E730と元free予算の接続はPAPERのためM5全体をLean済みとは呼ばない。これらの局所形式化をgeneralizationへ重複加算しない。
+- **E-732 PROVED-LEAN / E-733 REFUTED（全族PAPER）**。old A予算pと未来A高さ帯bから全old source半径2p+b、双方向窓輸送、元old free会計を保存。別に「R後にlow freeが無ければ正の低source keyは生めない」は全m>=8の前置き再帰で反証。m8は両高さoffset6/19だがold low free39355なのでPC5反例ではない。旧stockを捨てた一般機構を停止し、元予算を残す。
+- **停止と次の判断**。A<=7/free4は元A8反例（E-731）。旧49型直接Lean certificateはCPU60でSTOPPED、新しい三角面積/三連Aの緩和が実装可能にした。三連Aを無視した弱モデルには七段/relaxed free4 counterがある。旧r4/SMT/loaders/失敗packetを再開せず、次は元free予算から旧Aの配置・面積の制約をどう得るかを検討する。M6調査を自動開始しない。一般C1/Q/H/SL/全射性は未証明。
+
+## Earlier research brief (2026-11-17 morning, historical)
 
 - **E-730 PROVED-PAPER（未Lean・人間レビュー未）**。M5/low free4は未決着。元initial-S h/H(T)=2-h/low free<=4/最低高さ<=-h-5なら、最後のglobal minimum以前のA<=3、そこから最初の帰還prefixの元総free<=4。元全sourceの高さ排除と厳密な輸送を証明し、各source族5対象中少なくとも4対象の**全供給元**を最小値後へ追い込む。深さ・上昇幅・長さは無制限。[PC5必要条件と停止記録](RESEARCH_NOTE_2026-11-17_FIVE_PERIOD_SOURCE_ORDER.md)。29,096履歴の有限族はlow4該当0でSTOPPED。M5不存在・一般M費用・C1は未証明、日次trackerはresetしない。
 - **E-729 PROVED-PAPER（未Lean・人間レビュー未）**。元initial-S h/全prefix正不足/H(T)=2-h/low free<=3なら、元高さ-h-2の全訪問数<=low free<=3。最後のglobal minimumから最初に戻るprefixだけに既存全free3定理を適用して床>=-h-4を内部供給し、床+2のS/free A/actual A訪問を異なる三高さのfreeで払う。深さ・上昇幅・長さを仮定で制限せず、M4に必要な四sourceを全順序で排除。[PC4紙上証明](RESEARCH_NOTE_2026-11-17_FOUR_PERIOD_SOURCE_ORDER.md)。全M予想は未証明。次の最小未解決費用はM5/low free4。固定free予算の接続として記録し、日次generalization trackerはresetしない。
 - **E-728 PROVED-PAPER（未Lean・人間レビュー未）**。全元sourceを保つZ^M plateauの費用M<=F_low(T)はCONJECTURED。M<=3は全長/全深さで成立、前史の床>=H(h)-3なら全Mで成立。第一族source間隔>=12/T>=h+12M-6。反例候補はM>=4/最低高さ<=H(h)-4へ。浅い生成器は既存床原理の域内で反証不能、深い生成器94履歴にも反例なし、制約探索はunknown。全方法STOPPED、finite absenceで再開しない。[調査ノート](RESEARCH_NOTE_2026-11-17_PREHISTORY_COST_FALSIFICATION.md)。local進展のみ、depth-general停滞のresetなし。
 - E728のM4候補は後続E729で全深さ排除。floor-visit会計は床>=H(h)-4なら全Mに使えるため、全般の反例にはM>=5/low free>=4/最低高さ<=H(h)-5が必要。M5のfirst-return接続はE730で得たが、最小値後に両族の正確な24/16 keyを同時に準備できるかは未決着。停止済みr4表/SMT/生成器を資源や範囲だけ増やして再開しない。今回の追加調査は既存H01/H02日次計画の実施・完了を意味しない。
+
 
 ## Previous research brief (2026-11-16)
 

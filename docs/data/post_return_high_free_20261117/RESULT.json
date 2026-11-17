@@ -1,0 +1,153 @@
+{
+  "parent_cycle": "R-20261117-EVENING",
+  "recorded_jst": "2026-11-17T22:43:54.206278+09:00",
+  "phase": "mathematics closed; audit and publication closing",
+  "user_scope": "M=5 / original low free<=4; simultaneous 24/16 supplier families; unchanged Nat0 history, every supplier, unrestricted depth/upper height/length; counterexample-first",
+  "clock": {
+    "initial_observed_jst": "2026-11-17T20:20:07+09:00",
+    "requested_deadline_jst": "2026-11-17T23:00:00+09:00",
+    "new_implementation_stopped_by_jst": "2026-11-17T22:20:00+09:00",
+    "actual_final_close": "not yet observed; later publication receipt and conversation are authoritative",
+    "distinct_general_phase": "DISTINCT_GENERAL_PHASE.json",
+    "distinct_general_seconds": 1502.26643,
+    "active_minutes_claimed": null,
+    "note": "Neither the entire deadline window nor the nominal 100-minute allocation is claimed as measured active mathematical work. Evening parent is distinct from morning units and automatic daily cycles."
+  },
+  "bounded_question": "Can original PC5/low4 realize both source inventories using post-R high free?",
+  "acceptance_test": "Exact original-parent counterexample, or complete all-history exclusion/strict necessary source-free edge with explicit dependencies.",
+  "stopping_condition": "Counterexample ends the tested conjecture; fixed worker/Lean caps and one cause-specific repair rule; no expansion of stopped methods; implementation closed by22:20 and final handoff at23:00.",
+  "conclusion": {
+    "label": "PROVED-PAPER",
+    "registry": "E-735",
+    "claim": "Original PC5/low4 is impossible: required first return R rises at least seven levels from the last minimum, whereas the all-original-source recovery bound forbids seven.",
+    "all_source_scope": "Both necessary supplier families and every alternative original source remain in the parent; the first-return necessary condition alone gives contradiction.",
+    "human_review": "pending",
+    "whole_claim_proved_lean": false,
+    "remaining_paper_interfaces": [
+      "E-729 floor-visit payment in original PC domain",
+      "E-730 original old-A confinement and total-free bound at first R",
+      "the two post-minimum original frees and parent budget connection"
+    ],
+    "unrestricted": [
+      "prehistory depth",
+      "upper height",
+      "history length",
+      "number of post-R high free"
+    ],
+    "not_claimed": [
+      "standard Recaman orbit realization",
+      "general M/free-rank theorem",
+      "C1",
+      "surjectivity",
+      "M6 investigation"
+    ]
+  },
+  "hypothesis_outcomes": {
+    "PC5_RH_first_rise": "PROVED-PAPER E-735",
+    "old_source_radius": "PROVED-LEAN E-732; old A and future band explicit",
+    "old_area_recovery": "PROVED-LEAN E-734; source admission explicit",
+    "old_floor_spectrum": "PROVED-LEAN E-736",
+    "original_old_admission": "PROVED-LEAN E-737; original floor/count/triple explicit",
+    "original_three_addition_shape": "PROVED-LEAN E-738",
+    "A_le_7_at_original_free4": "REFUTED E-731",
+    "zero_new_low_free_prevents_positive_late_keys": "REFUTED E-733; all-m paper recurrence; not budget4 counter"
+  },
+  "falsification": {
+    "original_counter": "SSAAASSSSAAAASA; A8/free4, original positive prefix",
+    "weakened_contiguity_counter": "AAAASAAASSASASASAAA; relaxed paid4/rise7; j3/C1 first incompatible old-source request; no common original past asserted",
+    "original_boundaries": [
+      "S8 AAAA S AAA: free4/rise6",
+      "append A: free5/rise7"
+    ],
+    "G0_counter": "all m>=8; m8 original history length118100, old low free39355, positive offsets6/19 at both low heights; no free after R",
+    "stopped_direct_lean": "RECOVERY_KERNEL_STOP.json retains its historical PC5 status at the cap; E-735 is later new-model work",
+    "not_restarted": [
+      "49-profile direct Lean certificate",
+      "old r4 tables",
+      "old SMT",
+      "old loaders/generators",
+      "failed finite corpus"
+    ]
+  },
+  "validation": {
+    "full_repository": "PASS fullcheck-links-fixed-result.json at22:23:20 JST;1034 build jobs;3973 axiom declarations",
+    "new_module_lint": "five modules passed",
+    "registered_row_vacuity": {
+      "rows": 5,
+      "symbols": 11,
+      "FLAG": 0,
+      "unknown": 0
+    },
+    "protected_pins": {
+      "checked": 3,
+      "unpin_with_reason": 1,
+      "definition_hashes": 22,
+      "changed": false
+    },
+    "input_hash_audit": "PASS1093/1093 FINAL_INPUT_HASH_AUDIT.json",
+    "viewer_manifest": "regenerated for5 modules; python3 viewer/gen_manifest.py --check PASS;1032 modules/167 reports",
+    "failed_initial_fullcheck": "index used E731 instead of E-731; fixed documentation link, not Lean resource retry",
+    "precommit_and_push": "pending subsequent publication verification"
+  },
+  "measured_job_cpu": {
+    "mathematical_worker_seconds": 1.58783,
+    "guard_selftest_worker_seconds": 1.1368639999999999,
+    "recorded_lean_validation_wait4_seconds": 97.550827,
+    "math_receipts": [
+      "contiguity-audit-result.json",
+      "corpus-discovery-result.json",
+      "corpus-holdout-result.json",
+      "first-rise-audit-result.json",
+      "first-rise-discovery-result.json",
+      "g0-explicit-audit-result.json",
+      "g0-explicit-discovery-result.json",
+      "g0-explicit-holdout-result.json",
+      "old-area-spectrum-audit-result.json",
+      "old-area-spectrum-discovery-result.json",
+      "old-source-radius-discovery-result.json",
+      "old-source-radius-holdout-result.json",
+      "original-four-audit-result.json",
+      "original-four-discovery-result.json",
+      "radius-sharpness-discovery-result.json",
+      "radius-sharpness-holdout-result.json"
+    ],
+    "guard_receipts": [
+      "guard-cpu-result.json",
+      "guard-exec-result.json",
+      "guard-fork-result.json",
+      "guard-normal-result.json",
+      "guard-wall-result.json"
+    ],
+    "validation_receipts": [
+      "first-rise-lean-result.json",
+      "fullcheck-links-fixed-result.json",
+      "fullcheck-result.json",
+      "old-admission-aggregate-result.json",
+      "old-admission-lean-repair-result.json",
+      "old-admission-lean-result.json",
+      "old-area-recovery-aggregate-result.json",
+      "old-area-recovery-lean-repair-result.json",
+      "old-area-recovery-lean-result.json",
+      "old-floor-area-aggregate-result.json",
+      "old-floor-area-first-result.json",
+      "old-floor-area-lean-repair-result.json",
+      "old-floor-area-lean-result.json",
+      "old-source-radius-aggregate-result.json",
+      "old-source-radius-lean-result.json",
+      "three-addition-prefix-aggregate-result.json",
+      "three-addition-prefix-lean-repair-result.json",
+      "three-addition-prefix-lean-result.json"
+    ],
+    "scope": "Partial disjoint guarded-job metrics only; includes failed/capped jobs. Does not include every shell, standalone lint/vacuity, human reasoning or final publication. Per-process CPU caps are not cumulative tree caps."
+  },
+  "research_progress": {
+    "local": "E-735 arbitrary-depth M5/low4 exclusion, PAPER",
+    "depth_general": "E-732 conditional all-source transport with original free ledger; E-733 all-parameter no-go for discarding old stock",
+    "no_progress_streak": 0,
+    "reset_basis": "new general interface and mechanism refutation, not local M5/module count/finite range",
+    "next_allocation": "30/60/10 with distinct mechanism>=25min; planned, not work completed"
+  },
+  "next_decision": "Any counter to the general cost claim now needs M>=6 and low free>=5. Determine original-free constraints on old A placement/area; no M6 work has begun and no stopped table extension is authorized by this result.",
+  "commands_and_exact_outputs": "Each run has argv/start/result/log and frozen source/input hashes; see README.md. Full validation command bash ./scripts/check.sh. Final gate/push commands will be preserved in publication receipt.",
+  "ownership": "OWNED_PATHS.json; unrelated docs/data/daily_research/2026-11-07.json excluded"
+}

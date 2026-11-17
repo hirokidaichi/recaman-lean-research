@@ -1,0 +1,99 @@
+import Recaman.OldAreaRecoveryBound
+
+namespace Recaman.OldFloorAreaSpectrum
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.OldAreaRecoveryBound
+
+/-- Sum of the ORIGINAL A-start heights above a fixed reference level. -/
+def additionHeights (f : Nat → Bool) (s : Nat) (m : Int) : Nat → Int
+  | 0 => 0
+  | k+1 => additionHeights f s m k + if f (s+k) then Fw f (s+k)-m else 0
+
+theorem twice_area_identity (f : Nat → Bool) (s : Nat) (m : Int) : ∀ K,
+    2*(Ar f s K+(K : Int)*(Fw f s-m)) =
+      4*additionHeights f s m K+2*(cN (fun i => f i=true) s K : Int)+
+      (Fw f s-m)*(Fw f s-m-1)-
+      (Fw f (s+K)-m)*(Fw f (s+K)-m-1)
+  | 0 => by simp [Ar,additionHeights,cN]
+  | k+1 => by
+    have ih := twice_area_identity f s m k
+    rcases fw_cases f (s+k) with ⟨hh,hA⟩ | ⟨hh,hS⟩
+    · rw [Ar_succ,additionHeights,hA,cN_succ_pos _ _ _ hA]
+      simp only [ite_true,Int.natCast_add,Int.natCast_one]
+      rw [show s+(k+1)=s+k+1 by omega,hh]
+      grind only
+    · rw [Ar_succ,additionHeights,hS,cN_succ_neg _ _ _ (by simp [hS])]
+      simp only [Bool.false_eq_true,ite_false,Int.natCast_add,Int.natCast_one]
+      rw [show s+(k+1)=s+k+1 by omega,hh]
+      grind only
+
+theorem addition_heights_nonnegative (f : Nat → Bool) (s : Nat) (m : Int) :
+    ∀ K, (∀ i, i < K → m ≤ Fw f (s+i)) → 0 ≤ additionHeights f s m K
+  | 0, _ => by simp [additionHeights]
+  | k+1, hf => by
+    have ih := addition_heights_nonnegative f s m k (fun i hi => hf i (by omega))
+    have hk := hf k (by omega)
+    rw [additionHeights]
+    cases hs : f (s+k) <;> simp <;> omega
+
+theorem addition_heights_rank_upper (f : Nat → Bool) (s : Nat) (m : Int) : ∀ K,
+    2*additionHeights f s m K ≤
+      2*(cN (fun i => f i=true) s K : Int)*(Fw f s-m)+
+      (cN (fun i => f i=true) s K : Int)*((cN (fun i => f i=true) s K : Int)-1)
+  | 0 => by simp [additionHeights,cN]
+  | k+1 => by
+    have ih := addition_heights_rank_upper f s m k
+    have hw := (cN_walk f s k).1
+    have hu : Fw f (s+k)-m ≤ Fw f s-m+(cN (fun i => f i=true) s k : Int) := by omega
+    cases hs : f (s+k)
+    · rw [additionHeights,hs,cN_succ_neg _ _ _ (by simp [hs])]
+      simpa using ih
+    · rw [additionHeights,hs,cN_succ_pos _ _ _ hs]
+      simp only [ite_true,Int.natCast_add,Int.natCast_one]
+      grind only
+
+private theorem twice_triangle (j : Int) : 2*(j*(j+1)/2)=j*(j+1) := by
+  have hj : j%2=0 ∨ j%2=1 := by omega
+  have hm : (j*(j+1))%2=0 := by
+    rw [Int.mul_emod,Int.add_emod]
+    rcases hj with hj | hj <;> simp [hj]
+  omega
+
+/-- The floor is an original bridge condition; no area or source-admission
+bound is assumed. Empty bridges and every number of old A are included. -/
+theorem original_floor_area_spectrum (f : Nat → Bool) (s K : Nat)
+    (hfloor : ∀ i, i ≤ K → Fw f (s+K) ≤ Fw f (s+i)) :
+    let j := Fw f s-Fw f (s+K);
+    let r := (cN (fun i => f i=true) s K : Int);
+    let tri := j*(j+1)/2;
+    -tri+r*(1-2*j) ≤ Ar f s K ∧ Ar f s K ≤ r^2-tri ∧
+      (Ar f s K-r+tri)%2=0 := by
+  dsimp only
+  let m := Fw f (s+K)
+  let j := Fw f s-m
+  let r := (cN (fun i => f i=true) s K : Int)
+  let W := additionHeights f s m K
+  let tri := j*(j+1)/2
+  have hi := twice_area_identity f s m K
+  have hn : 0 ≤ W := addition_heights_nonnegative f s m K
+    (fun i hi => hfloor i (by omega))
+  have hu := addition_heights_rank_upper f s m K
+  have hw := cN_walk f s K
+  have hk : (K : Int)=2*r+j := by dsimp [r,j,m]; omega
+  have ht := twice_triangle j
+  have he : Ar f s K= -tri+r*(1-2*j)+2*W := by
+    change 2*(Ar f s K+(K : Int)*j)=4*W+2*r+j*(j-1)-(m-m)*(m-m-1) at hi
+    rw [Int.sub_self] at hi
+    rw [hk] at hi
+    change 2*tri=j*(j+1) at ht
+    grind only
+  change 2*W ≤ 2*r*j+r*(r-1) at hu
+  change -tri+r*(1-2*j) ≤ Ar f s K ∧ Ar f s K ≤ r^2-tri ∧
+    (Ar f s K-r+tri)%2=0
+  refine ⟨by omega,by grind only,?_⟩
+  have hp : Ar f s K-r+tri=2*(W-r*j) := by grind only
+  rw [hp]
+  omega
+
+end Recaman.OldFloorAreaSpectrum

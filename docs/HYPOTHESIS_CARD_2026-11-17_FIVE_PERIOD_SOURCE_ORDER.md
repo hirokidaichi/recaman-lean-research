@@ -1,6 +1,6 @@
 # H-20261117-PC5: five periods with at most four original low free
 
-- Owner: Codex, explicit user continuation2026-11-17. PC5 status CONJECTURED; bounded reduction unit completed, finite method STOPPED. Original frozen card retained in the packet.
+- Owner: Codex, explicit user continuation2026-11-17. Initial PC5 status CONJECTURED; evening outcome PROVED-PAPER nonexistence E735. The earlier bounded reduction unit completed, finite method STOPPED. Original frozen card retained in the packet.
 - Parent H-PC/E728/E729; unscheduled bounded unit, not a new daily cycle. Previous stops remain stopped.
 
 ## Exact question
@@ -40,3 +40,7 @@ Discovery24,960 and frozen holdout4,136 positive histories produced no counter b
 Clarification of initial caution: the old A10/free4 example is a padded-old-prefix tail counter. It refutes a blind broader rank-four extrapolation but is not automatically a counter in the global initial-S original-free4 domain. No rank-four theorem was assumed or derived here.
 
 Acceptance is the strict new original-source chronology condition. Local progress only; no uniform arbitrary-rank charge or depth-general tracker reset. The first15-minute decision is to stop finite search and the unresolved visit-bound method; the separate old-source transport mechanism supplies the paper reduction. The reserved25-minute different-mechanism interval is not misreported as fully spent: actual elapsed/unused time is in RESULT.json. No nominal daily parent cycle is completed. Remaining work is a new proof/countermodel for simultaneous exact source keys after the minimum; old r4 tables, SMT and loaders stay stopped. No Lean changes or protected-claim changes.
+
+## Subsequent evening decision,2026-11-17 (E735)
+
+The explicit23:00 continuation settles PC5/low4 negatively on paper with no depth/upper/length restriction. E730's original old A<=3/first-return total free<=4, the newly derived old-area spectrum and the arbitrary-length recovery bound contradict the required seven-level rise. E734/E736/E737/E738 check the central recovery/source/triple components; E729/E730 and the original budget/parent connection remain PAPER. General M<=F_low is still CONJECTURED; a counter now needs M>=6 and low free>=5. This does not revive any earlier stopped search. See RESEARCH_NOTE_2026-11-17_POST_RETURN_HIGH_FREE.md and RESEARCH_HANDOFF_2026-11-17_EVENING.md. Historical outcomes above describe their own checkpoints.

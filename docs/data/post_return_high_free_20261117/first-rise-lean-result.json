@@ -1,0 +1,31 @@
+{
+  "tag": "first-rise-lean",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/FourFreeFirstRise.olean",
+    "Recaman/FourFreeFirstRise.lean"
+  ],
+  "started_jst": "2026-11-17T21:28:48.635149+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "Recaman/FourFreeFirstRise.lean": "bcc0071e82cf98a30af29f6703659b75b6bec3d82275b00cd445046443e2514f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "257d77ef5210de5b52b39b3188a237ef3a83d84adae23af7675460eac4960873",
+  "source_tree_sha256": "6b8fb1ea6d5de719af4d11df73ebbbca671000fef899e7f036549b8c192d7452",
+  "source_tree_manifest": "first-rise-lean-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "257d77ef5210de5b52b39b3188a237ef3a83d84adae23af7675460eac4960873",
+  "exit_code": 152,
+  "reason": "completed",
+  "wall_seconds": 60.42936524999095,
+  "cpu_seconds": 60.112662,
+  "finished_jst": "2026-11-17T21:29:49.063347+09:00"
+}

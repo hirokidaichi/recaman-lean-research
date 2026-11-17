@@ -1,0 +1,147 @@
+Recaman/ThreeOldAdditionRecovery.lean:30:71: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  -1 ≤ 2*b - c ≤ 0
+  a + b ≤ -1
+where
+ a := areaW (List.replicate t false)
+ b := ↑t * (↑t + 1) / 2
+ c := ↑t * (↑t + 1)
+Recaman/ThreeOldAdditionRecovery.lean:49:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  -1 ≤ 2*d - e ≤ 0
+  c + d ≤ 0
+  a ≥ 3
+where
+ a := ↑b
+ c := areaW (List.replicate 1 true ++ List.replicate b false)
+ d := (↑b - ↑1) * (↑b - ↑1 + 1) / 2
+ e := (↑b - ↑1) * (↑b - ↑1 + 1)
+Recaman/ThreeOldAdditionRecovery.lean:54:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  -1 ≤ 2*d - e ≤ 0
+  c + d ≤ 3
+  a ≥ 3
+where
+ a := ↑b
+ c := areaW (List.replicate 2 true ++ List.replicate b false)
+ d := (↑b - ↑2) * (↑b - ↑2 + 1) / 2
+ e := (↑b - ↑2) * (↑b - ↑2 + 1)
+Recaman/ThreeOldAdditionRecovery.lean:63:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  mass (List.replicate ?k true)
+in the target expression
+  -(-↑s + mass [true, true, true] + mass (List.replicate b false)) = ↑s + ↑b - 3
+
+s b : Nat
+hb : 3 ≤ b
+w : List Bool := List.replicate s false ++ List.replicate 3 true ++ List.replicate b false
+j : Int := ↑s + ↑b - 3
+⊢ -(-↑s + mass [true, true, true] + mass (List.replicate b false)) = ↑s + ↑b - 3
+Recaman/ThreeOldAdditionRecovery.lean:68:65: error: `grind` failed
+case grind.1.1.1
+s b : Nat
+hb : 3 ≤ b
+w : List Bool := List.replicate s false ++ List.replicate 3 true ++ List.replicate b false
+j : Int := ↑s + ↑b - 3
+hm : -mass w = j
+hj : 0 ≤ j
+hs : ↑s ≤ j
+ha :
+  2 * areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) =
+    ↑3 * (↑3 + 1) - ↑s * (↑s + 1) - ↑b * (↑b + 1) - 2 * ↑s * ↑3 + 2 * ↑b * (↑3 - ↑s)
+h :
+  ¬2 * areaW (List.replicate s false ++ [true, true, true] ++ List.replicate b false) + 12 * ↑s +
+          (↑s + ↑b - 3) * (↑s + ↑b - 3 + 1) +
+        -18 =
+      0
+h_1 : ↑s + 1 = ↑s + ↑b - 3 + 1
+h_2 : b = 3
+h_3 : ↑s = 3 - ↑s
+⊢ False
+[grind] Goal diagnostics
+  [facts] Asserted facts
+    [prop] 3 ≤ b
+    [prop] -1 * mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + -1 * ↑s + -1 * ↑b +
+            3 =
+          0
+    [prop] -1 * ↑s + -1 * ↑b + 3 ≤ 0
+    [prop] -1 * ↑b + 3 ≤ 0
+    [prop] 2 * areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + 6 * ↑s +
+                  ↑s * (↑s + 1) +
+                ↑b * (↑b + 1) +
+              -1 * (2 * ↑b * (3 - ↑s)) +
+            -12 =
+          0
+    [prop] ¬2 * areaW (List.replicate s false ++ [true, true, true] ++ List.replicate b false) + 12 * ↑s +
+                (↑s + ↑b - 3) * (↑s + ↑b - 3 + 1) +
+              -18 =
+            0
+    [prop] ↑s + 1 = ↑s + ↑b - 3 + 1
+    [prop] b = 3
+    [prop] ↑s = 3 - ↑s
+  [eqc] True propositions
+    [prop] ↑s = 3 - ↑s
+    [prop] ↑s = ↑s + ↑b - 3
+    [prop] ↑s + 1 = ↑s + ↑b - 3 + 1
+    [prop] b = 3
+    [prop] -1 * ↑s + -1 * ↑b + 3 ≤ 0
+    [prop] -1 * ↑b + 3 ≤ 0
+    [prop] 3 ≤ b
+  [eqc] False propositions
+    [prop] 2 * areaW (List.replicate s false ++ [true, true, true] ++ List.replicate b false) + 12 * ↑s +
+              (↑s + ↑b - 3) * (↑s + ↑b - 3 + 1) +
+            -18 =
+          0
+  [eqc] Equivalence classes
+    [eqc] {b, 3}
+    [eqc] {0,
+        2 * areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + 6 * ↑s + ↑s * (↑s + 1) +
+              ↑b * (↑b + 1) +
+            -1 * (2 * ↑b * (3 - ↑s)) +
+          -12,
+        -1 * mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + -1 * ↑s + -1 * ↑b + 3}
+    [eqc] others
+      [eqc] {↑s, 3 - ↑s, ↑s + ↑b - 3}
+      [eqc] {↑b, ↑3, 3}
+      [eqc] {↑s + 1, ↑s + ↑b - 3 + 1}
+      [eqc] {↑s * (↑s + 1), (↑s + ↑b - 3) * (↑s + ↑b - 3 + 1)}
+  [cases] Case analyses
+    [cases] [1/2]: ↑s + 1 = ↑s + ↑b - 3 + 1
+      [cases] source: Model-based theory combination at argument #5 of
+            (↑s + ↑b - 3) * (↑s + ↑b - 3 + 1)
+          and
+            ↑s * (↑s + 1)
+    [cases] [1/2]: b = 3
+      [cases] source: Model-based theory combination at argument #1 of
+            List.replicate b false
+          and
+            List.replicate 3 true
+    [cases] [1/2]: ↑s = 3 - ↑s
+      [cases] source: Model-based theory combination at argument #5 of
+            ↑b * ↑s
+          and
+            2 * ↑b * (3 - ↑s)
+  [cutsat] Assignment satisfying linear constraints
+    [assign] s := 0
+    [assign] b := 3
+    [assign] j := 5
+    [assign] areaW (List.replicate s false ++ [true, true, true] ++ List.replicate b false) := 0
+    [assign] areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) := 9
+    [assign] mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) := 0
+    [assign] 「↑s ^ 2」 := 0
+    [assign] 「↑b ^ 2」 := 9
+  [ring] Ring `Int`
+    [basis] Basis
+      [_] ↑b + mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + ↑s + -3 = 0
+      [_] mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + ↑s = 0
+      [_] 2 * ↑s + -3 = 0
+      [_] 8 * areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false) + 15 = 0
+    [diseqs] Disequalities
+      [_] ¬8 * areaW (List.replicate s false ++ [true, true, true] ++ List.replicate b false) + 15 = 0
+Recaman/ThreeOldAdditionRecovery.lean:103:6: error: Type mismatch
+  old_three_S (b - (u - a - 3))
+has type
+  oldAllowed 3 (-mass (List.replicate (b - (u - a - 3)) false)) (areaW (List.replicate (b - (u - a - 3)) false)) = true
+but is expected to have type
+  oldAllowed 3 (-mass (List.drop (u - a - 3) (List.replicate b false)))
+      (areaW (List.drop (u - a - 3) (List.replicate b false))) =
+    true

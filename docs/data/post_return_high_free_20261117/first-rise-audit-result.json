@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-17T21:01:32.681127+09:00",
+  "tag": "first-rise-audit",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/run_single.py",
+    "--worker",
+    "2",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/first_rise_audit.py"
+  ],
+  "worker_cpu_cap_seconds": 2,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "48fb1c2d9cb86ed7fab8833c468d1b0085a6bc216f9989e2c93fa8701a86e4dd",
+  "runner_sha256": "a598bbd8b520a7941fff1c8b18c5243f0a50836ec52287828db64bcb5162ab1d",
+  "pid": 29897,
+  "process_group": 29897,
+  "finished_jst": "2026-11-17T21:01:32.743506+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.06340237500262447,
+  "worker_user_seconds": 0.0341,
+  "worker_sys_seconds": 0.008369,
+  "worker_cpu_seconds": 0.042469,
+  "worker_maxrss_native": 23887872,
+  "controller_cpu_seconds": 0.0019959999999999978,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

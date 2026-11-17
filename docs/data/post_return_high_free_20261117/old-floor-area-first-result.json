@@ -1,0 +1,30 @@
+{
+  "tag": "old-floor-area-first",
+  "argv": [
+    "./scripts/lakew",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "Recaman/OldFloorAreaSpectrum.lean"
+  ],
+  "started_jst": "2026-11-17T21:59:28.886120+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/lakew": "64f286c51f28738cf79195904ab33f90660eef0b29d5e61f2fbbf42298a14d82",
+    "Recaman/OldFloorAreaSpectrum.lean": "9df8261e464007d65f390eb84d8d6d6768890a0fb3c7a5ddb22735afc695822b"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "a2b34f0d84de3cc09fa7ddfcc9e9afbc33e3a86efd4fecc80252cd00ff6bdf86",
+  "source_tree_sha256": "f7f1a5afaf20ac952e50f9466356aea8c69dbcf96522dea26fd2ed7c0a3ff561",
+  "source_tree_manifest": "old-floor-area-first-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a2b34f0d84de3cc09fa7ddfcc9e9afbc33e3a86efd4fecc80252cd00ff6bdf86",
+  "exit_code": 127,
+  "reason": "completed",
+  "wall_seconds": 0.2912434579920955,
+  "cpu_seconds": 0.013586999999999998,
+  "finished_jst": "2026-11-17T21:59:29.175708+09:00"
+}

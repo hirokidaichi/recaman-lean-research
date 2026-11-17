@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-11-17T20:53:58.654061+09:00",
+  "tag": "first-rise-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/run_single.py",
+    "--worker",
+    "4",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/post_return_high_free_20261117/first_rise_query.py"
+  ],
+  "worker_cpu_cap_seconds": 4,
+  "wall_cap_seconds": 7.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "bd0ed5ecde451fb711c40f04503abde3902f4bc35c373d1e6151fd2fb9e12020",
+  "runner_sha256": "a598bbd8b520a7941fff1c8b18c5243f0a50836ec52287828db64bcb5162ab1d",
+  "pid": 24861,
+  "process_group": 24861
+}

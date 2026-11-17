@@ -1,0 +1,25 @@
+{
+  "tag": "fullcheck-links-fixed",
+  "argv": [
+    "bash",
+    "./scripts/check.sh"
+  ],
+  "started_jst": "2026-11-17T22:23:00.674773+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "./scripts/check.sh": "2a6d345688d4846c03830dad5e3818d61ec2b4f4a0c061985171b297f718ee84"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "08fc48f20e395adc56a1ab2c8a3dac223560723d",
+  "tracked_diff_sha256": "1c1ee593c72901e3b0c3b5164547e085dd23900701dda441b5985ef7fc3f93e3",
+  "source_tree_sha256": "6206703c798dbdd2dd9b86cc836900ab91729c9eca991e0215483aba8b90b1e4",
+  "source_tree_manifest": "fullcheck-links-fixed-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "1c1ee593c72901e3b0c3b5164547e085dd23900701dda441b5985ef7fc3f93e3",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 19.690110583003843,
+  "cpu_seconds": 14.840516,
+  "finished_jst": "2026-11-17T22:23:20.364737+09:00"
+}

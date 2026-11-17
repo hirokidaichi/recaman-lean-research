@@ -1,0 +1,184 @@
+import Recaman.OldFloorAreaSpectrum
+
+namespace Recaman.ThreeOldAdditionRecovery
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.LeadingRunSupply Recaman.OldAreaRecoveryBound
+open Recaman.OldFloorAreaSpectrum
+
+private theorem three_run_area (s r b : Nat) :
+    2*areaW (List.replicate s false ++ List.replicate r true ++ List.replicate b false) =
+      (r : Int)*(r+1)-(s : Int)*(s+1)-(b : Int)*(b+1)-
+      2*(s : Int)*r+2*(b : Int)*(r-s) := by
+  have hS := twice_area_replicate_S s
+  have hA := twice_area_replicate_A r
+  have hB := twice_area_replicate_S b
+  simp only [areaW_append,mass_append,mass_rep_false,mass_replicate_A,List.length_replicate]
+  grind only
+
+private theorem old_three_left (j C : Int) (hj : 0 ≤ j)
+    (hc : C= -(j*(j+1)/2) ∨ (2 ≤ j ∧ C=1-j*(j+1)/2) ∨
+      (1 ≤ j ∧ C=4-j*(j+1)/2)) : oldAllowed 3 j C=true := by
+  unfold oldAllowed
+  rw [if_neg (by omega),if_neg (by decide)]
+  apply Bool.or_eq_true_iff.mpr
+  exact Or.inl (decide_eq_true_eq.mpr hc)
+
+private theorem old_three_S (t : Nat) :
+    oldAllowed 3 (-mass (List.replicate t false)) (areaW (List.replicate t false))=true := by
+  have ha := twice_area_replicate_S t
+  have hd : 2*areaW (List.replicate t false)= -((t : Int)*(t+1)) := by grind only
+  have hc : areaW (List.replicate t false)= -((t : Int)*(t+1)/2) := by omega
+  rw [mass_rep_false,Int.neg_neg]
+  exact old_three_left _ _ (by omega) (Or.inl hc)
+
+private theorem old_three_AS (r b : Nat) (hr : r=1 ∨ r=2) (hb : 3 ≤ b) :
+    oldAllowed 3 (-mass (List.replicate r true ++ List.replicate b false))
+      (areaW (List.replicate r true ++ List.replicate b false))=true := by
+  have ha := three_run_area 0 r b
+  simp only [List.replicate_zero,List.nil_append,Int.natCast_zero,Int.zero_mul,
+    Int.zero_add,Int.sub_zero] at ha
+  rw [mass_append,mass_replicate_A,mass_rep_false]
+  have hj : -((r : Int)+ -(b : Int))=(b : Int)-r := by omega
+  rw [hj]
+  apply old_three_left _ _ (by rcases hr with rfl|rfl <;> omega)
+  rcases hr with rfl | rfl
+  · right; left
+    refine ⟨by omega,?_⟩
+    have hd : 2*areaW (List.replicate 1 true ++ List.replicate b false)=
+        2-((b : Int)-1)*((b : Int)-1+1) := by grind only
+    change areaW (List.replicate 1 true ++ List.replicate b false)=
+      1-((b : Int)-1)*((b : Int)-1+1)/2
+    omega
+  · right; right
+    refine ⟨by omega,?_⟩
+    have hd : 2*areaW (List.replicate 2 true ++ List.replicate b false)=
+        8-((b : Int)-2)*((b : Int)-2+1) := by grind only
+    change areaW (List.replicate 2 true ++ List.replicate b false)=
+      4-((b : Int)-2)*((b : Int)-2+1)/2
+    omega
+
+private theorem old_three_SAS (s b : Nat) (hb : 3 ≤ b) :
+    oldAllowed 3 (-mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false))
+      (areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false))=true := by
+  let w := List.replicate s false ++ List.replicate 3 true ++ List.replicate b false
+  let j := (s : Int)+(b : Int)-3
+  have hm : -mass w=j := by
+    change -(mass (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false))=
+      (s : Int)+(b : Int)-3
+    rw [mass_append,mass_append,mass_rep_false,mass_replicate_A,mass_rep_false]
+    omega
+  have hj : 0 ≤ j := by dsimp [j]; omega
+  have hs : (s : Int) ≤ j := by dsimp [j]; omega
+  have ha := three_run_area s 3 b
+  have hd : 2*areaW w=18-j*(j+1)-12*(s : Int) := by
+    change 2*areaW (List.replicate s false ++ List.replicate 3 true ++ List.replicate b false)=
+      18-((s : Int)+(b : Int)-3)*((s : Int)+(b : Int)-3+1)-12*(s : Int)
+    grind only
+  have hc : areaW w=9-j*(j+1)/2-6*(s : Int) := by omega
+  change oldAllowed 3 (-mass w) (areaW w)=true
+  rw [hm]
+  unfold oldAllowed
+  rw [if_neg (by omega),if_neg (by decide)]
+  apply Bool.or_eq_true_iff.mpr
+  right
+  apply List.any_eq_true.mpr
+  exact ⟨s,List.mem_range.mpr (by omega),decide_eq_true_eq.mpr hc⟩
+
+/-- Every suffix of the literal original three-A prefix is admitted;
+all run lengths and all suffix clocks remain quantified. -/
+theorem consecutive_three_suffix_admitted (a b u : Nat) (hb : 3 ≤ b) :
+    let w := (List.replicate a false ++ List.replicate 3 true ++ List.replicate b false).drop u
+    oldAllowed 3 (-mass w) (areaW w)=true := by
+  dsimp only
+  by_cases hu : u ≤ a
+  · rw [List.append_assoc,List.drop_append_of_le_length (by simpa),List.drop_replicate,
+      ←List.append_assoc]
+    exact old_three_SAS (a-u) b hb
+  · have hau : a-u=0 := by omega
+    rw [List.append_assoc,List.drop_append,List.drop_replicate,List.length_replicate,hau,
+      List.replicate_zero,List.nil_append]
+    by_cases hmid : u-a < 3
+    · have hc : u-a=1 ∨ u-a=2 := by omega
+      rcases hc with hc | hc
+      · rw [hc]
+        simp only [List.drop_append,List.length_replicate,List.drop_replicate]
+        exact old_three_AS 2 b (Or.inr rfl) hb
+      · rw [hc]
+        simp only [List.drop_append,List.length_replicate,List.drop_replicate]
+        exact old_three_AS 1 b (Or.inl rfl) hb
+    · rw [List.drop_append,List.length_replicate,List.drop_replicate,
+        show 3-(u-a)=0 by omega,List.replicate_zero,List.nil_append]
+      rw [List.drop_replicate]
+      exact old_three_S (b-(u-a-3))
+
+/-- This produces the old-area condition from original floor/count data
+and, only for p=3, the original literal contiguous-three prefix. -/
+theorem original_old_bridge_admitted (f : Nat → Bool) (u v p : Nat)
+    (huv : u ≤ v) (hp : p < 4)
+    (hcount : cN (fun i => f i=true) 0 v ≤ p)
+    (hfloor : ∀ i, i ≤ v → Fw f v ≤ Fw f i)
+    (hthree : p=3 → ∃ a b, 3 ≤ b ∧
+      seg f 0 v=List.replicate a false ++ List.replicate 3 true ++ List.replicate b false) :
+    oldAllowed p (Fw f u-Fw f v) (Ar f u (v-u))=true := by
+  by_cases hsmall : p ≤ 2
+  · have hf := original_floor_area_spectrum f u (v-u)
+      (fun i hi => by rw [Nat.add_sub_cancel' huv]; exact hfloor (u+i) (by omega))
+    rw [Nat.add_sub_cancel' huv] at hf
+    have hc := cN_sub0 (fun i => f i=true) u v huv
+    have hj : 0 ≤ Fw f u-Fw f v := by have := hfloor u huv; omega
+    unfold oldAllowed
+    rw [if_neg (by omega),if_pos hsmall]
+    apply List.any_eq_true.mpr
+    refine ⟨cN (fun i => f i=true) u (v-u),List.mem_range.mpr (by omega),?_⟩
+    exact decide_eq_true_eq.mpr hf
+  · have hp3 : p=3 := by omega
+    obtain ⟨a,b,hb,hseg⟩ := hthree hp3
+    have hz := seg_drop f 0 v u huv
+    simp only [Nat.zero_add] at hz
+    rw [hseg] at hz
+    have ha := consecutive_three_suffix_admitted a b u hb
+    dsimp only at ha
+    rw [hz,←Ar_areaW,seg_mass,Nat.add_sub_cancel' huv] at ha
+    rw [hp3]
+    have hn : -(Fw f v-Fw f u)=Fw f u-Fw f v := by omega
+    rwa [hn] at ha
+
+/-- Every crossing window of the unchanged original history is admitted. -/
+theorem original_crossing_admitted (f : Nat → Bool) (v q p u k : Nat)
+    (hvq : v ≤ q) (huv : u < v) (huk : u+k=q) (hW : Win f u k) (hp : p < 4)
+    (hcount : cN (fun i => f i=true) 0 v ≤ p)
+    (hfloor : ∀ i, i ≤ v → Fw f v ≤ Fw f i)
+    (hthree : p=3 → ∃ a b, 3 ≤ b ∧
+      seg f 0 v=List.replicate a false ++ List.replicate 3 true ++ List.replicate b false) :
+    oldAllowed p (Fw f q-Fw f v-1)
+      ((Fw f q-Fw f v-1)*((q-v : Nat) : Int)-Ar f v (q-v))=true := by
+  have hb := original_old_bridge_admitted f u v p (by omega) hp hcount hfloor hthree
+  have hh := hW.2.1
+  rw [huk] at hh
+  have hz : Ar f u (q-u)=0 := by rw [show q-u=k by omega]; exact hW.2.2
+  have hs := area_split_at f u v q (by omega) hvq
+  rw [hz] at hs
+  have hj : Fw f q-Fw f v-1=Fw f u-Fw f v := by omega
+  have hc : (Fw f q-Fw f v-1)*((q-v : Nat) : Int)-Ar f v (q-v)=Ar f u (v-u) := by
+    rw [hj]
+    grind only
+  rw [hc,hj]
+  exact hb
+
+/-- An original-history recovery bound with no old-area admission premise.
+The paper first-three argument supplies the explicit literal p=3 shape. -/
+theorem original_recovery_below_seven (f : Nat → Bool) (v K p : Nat) (hp : p < 4)
+    (hcount : cN (fun i => f i=true) 0 v ≤ p)
+    (hfloor : ∀ i, i ≤ v → Fw f v ≤ Fw f i)
+    (hthree : p=3 → ∃ a b, 3 ≤ b ∧
+      seg f 0 v=List.replicate a false ++ List.replicate 3 true ++ List.replicate b false)
+    (hpaid : oldPaid p ≤ cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 v)
+    (hfree : cN (fun i => f i=true ∧ ¬EndN f 0 i) 0 (v+K) ≤ 4)
+    (hstrict : ∀ j, 0 < j → j ≤ K → Fw f v < Fw f (v+j)) :
+    Fw f (v+K) < Fw f v+7 := by
+  apply recovery_bound_of_old_area_admission f v K p hp hpaid hfree hstrict
+  intro q hvq _ u k huv huk hW
+  exact original_crossing_admitted f v q p u k hvq huv huk hW hp hcount hfloor hthree
+
+end Recaman.ThreeOldAdditionRecovery

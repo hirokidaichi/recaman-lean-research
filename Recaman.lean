@@ -878,3 +878,8 @@ import Recaman.FirstSFourPrefix
 import Recaman.DepthSixClockFourPrefix
 import Recaman.DepthSixClockFourHighWindow
 import Recaman.DepthSixClockFourCollision
+import Recaman.OldAdditionSourceRadius
+import Recaman.OldAreaRecoveryBound
+import Recaman.OldFloorAreaSpectrum
+import Recaman.ThreeOldAdditionRecovery
+import Recaman.ThreeAdditionPrefix
