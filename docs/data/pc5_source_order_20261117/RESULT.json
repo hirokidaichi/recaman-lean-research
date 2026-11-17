@@ -1,0 +1,130 @@
+{
+  "conclusion": "PC5 unresolved; E730 PROVED-PAPER necessary chronology only, no new Lean theorem",
+  "base_revision": "42e30c65f8b3ab54d71a6144e25c209b62c52f37",
+  "hypothesis_status": {
+    "PC5": "CONJECTURED",
+    "auxiliary_A_all_visits": "CONJECTURED",
+    "chronology_B": "PROVED-PAPER",
+    "new_run_family_method": "STOPPED"
+  },
+  "exact_new_edge": "At most3 A before deep last global minimum; first-return original total free<=4; at least4 targets per family have all sources after minimum",
+  "local_progress": true,
+  "uniform_depth_general_progress": false,
+  "daily_tracker_reset": false,
+  "discovery": {
+    "mode": "discovery",
+    "counts": {
+      "words": 24960,
+      "positive": 24960,
+      "low4": 0,
+      "deep_low4": 0,
+      "auxiliary_A_counter": 0,
+      "auxiliary_B_counter": 0,
+      "parent_counter": 0
+    },
+    "counterexample": false,
+    "best": {
+      "5": {
+        "h": 2,
+        "T": 16,
+        "min_height": -7,
+        "last_minimum": 7,
+        "A_before_minimum": 0,
+        "total_free": 5,
+        "low_free": 5,
+        "source_visits": 3
+      },
+      "7": {
+        "h": 2,
+        "T": 22,
+        "min_height": -9,
+        "last_minimum": 9,
+        "A_before_minimum": 0,
+        "total_free": 7,
+        "low_free": 7,
+        "source_visits": 3
+      }
+    },
+    "cpu_seconds": 0.5159050000000001,
+    "evidence": "COMPUTED finite family only"
+  },
+  "holdout": {
+    "mode": "holdout",
+    "counts": {
+      "words": 4136,
+      "positive": 4136,
+      "low4": 0,
+      "deep_low4": 0,
+      "auxiliary_A_counter": 0,
+      "auxiliary_B_counter": 0,
+      "parent_counter": 0
+    },
+    "counterexample": false,
+    "best": {
+      "6": {
+        "h": 3,
+        "T": 25,
+        "min_height": -9,
+        "last_minimum": 13,
+        "A_before_minimum": 2,
+        "total_free": 8,
+        "low_free": 8,
+        "source_visits": 3
+      },
+      "10": {
+        "h": 3,
+        "T": 33,
+        "min_height": -13,
+        "last_minimum": 17,
+        "A_before_minimum": 2,
+        "total_free": 12,
+        "low_free": 12,
+        "source_visits": 2
+      }
+    },
+    "cpu_seconds": 0.119422,
+    "evidence": "COMPUTED finite family only"
+  },
+  "audit": {
+    "cases": 11,
+    "result": "PASS",
+    "best_records_full_source_tables_match": 4,
+    "guarded_all_source_transport": true,
+    "unguarded_transport_refuted": true,
+    "naive_at_most_one_A_extension_refuted": true,
+    "evidence": "COMPUTED fixed verification cases; not holdout or a PC5 counter"
+  },
+  "resource_budget": {
+    "mathematical_jobs_cpu_caps_seconds": 10,
+    "mathematical_jobs_wall_caps_seconds": 19,
+    "paid_services": 0,
+    "technical_repairs_used": 0,
+    "mathematical_retries": 0
+  },
+  "measured_mathematical_worker_cpu_seconds": 0.753396,
+  "measured_guard_worker_cpu_seconds": 1.149503,
+  "measured_controller_cpu_seconds": 0.019305999999999993,
+  "time_accounting": {
+    "unit_start_observed_jst": "2026-11-17T11:03:38+09:00",
+    "first_protocol_frozen_jst": "2026-11-17T11:11:30.722957+09:00",
+    "decision_observed_jst": "2026-11-17T11:23:01+09:00",
+    "total_wall_to_decision_seconds": 1163,
+    "different_mechanism_reservation_seconds": 1500,
+    "exclusive_mechanism_seconds": "not separately measured; part of total wall, not a completed25-minute block",
+    "unused_different_mechanism_reservation_at_least_seconds": 337,
+    "nominal_daily_cycle": false,
+    "note": "Even the entire research wall1163s is below reserved1500s; at least337s unused, actual unused larger because setup/probes overlap. Publication/validation follows decision and is excluded. The15-minute gate produced a local strict edge, not a generalization reset; no finite-absence extension."
+  },
+  "validation": {
+    "registry": "730 entries,464 PROVED-LEAN; G1-G5 pass",
+    "G6": "static pins pass; Lean half not rerun because no Lean changes",
+    "architecture": "1026 of1026 library modules;132 frontier import contracts pass",
+    "manifest": "up to date1027 modules167 reports",
+    "diff_check": "pass",
+    "full_lean_build": "not run: no Lean changes",
+    "frozen_hashes": "pass; original card bytes retained in CARD_FROZEN.md"
+  },
+  "remaining_uncertainty": "Simultaneous post-minimum24/16-spaced source keys with original low4, all original sources and full boundary uniqueness remain unclassified.",
+  "stop_recommendation": "Do not extend run-family ranges or restart old r4/SMT/loaders. A new source-payment argument or exact countermodel is needed.",
+  "recorded_jst": "2026-11-17T11:23:54.544128+09:00"
+}

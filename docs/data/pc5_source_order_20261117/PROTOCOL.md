@@ -1,0 +1,13 @@
+# New chronology-family falsifier, frozen before execution
+
+Target PC5 retains original0 history/all sources, positive prefixes, H(T)=2-h, low free<=4 and all Z5A sources. Also test stronger auxiliary A (all c=-h-2 visits<=4) and B (last global minimum m<=-h-5 implies at most3 A before it when low free<=4). An auxiliary violation is not a parent counter.
+
+This is a new run-family/last-minimum falsifier, not a restart/extension of the stopped SMT, backwards loader, D/free beam or r4 closure table. No generic r4 reachable-state table is built. Discovery and holdout keep all original sources and high free; finite parameter ranges do not claim to bound the parent.
+
+For each h,d,pre, use prefix S^h + pre + S^(mass(pre)+d), skipping a nonpositive final S length; then each tail with s S and d+2+s A, so the endpoint is2-h. No assumptions are made that the final S run reaches the actual last global minimum; recompute that from the whole original word. The pre family is either A^r (large upper reservoir) or A^a S^g A^b with a+b<=3 (few-A prehistory with separated sources). Enumerate each arrangement of the specified tail S slots exactly.
+
+Discovery: h2/5,d5/7; reservoir r0/1/2/3/4/7/31; few-A(a,b)=(1,1),(1,2),(2,1),g1/4/9; s0/1/2/3. Holdout frozen independently of outcomes: h3/11,d6/10; reservoir r2/3/5/19/73; few-A(a,b)=(1,1),(1,2),(2,1),g2/7; s0/2. These are new tuples of the same family, not statistical independence or an exhaustive infinite class. Duplicate words are skipped within each job. Stop at first auxiliary or parent counter; preserve exact word/all sources/free. Keep the best low-free word at each d otherwise. No range extension after finite absence.
+
+Each job4CPU/7wall seconds, cooperative3.5CPU cutoff. Independent certificate audit reservation2CPU/5wall, frozen separately. Same single-process Python guard, fresh normal/fork/exec/wall/thread-CPU controls before jobs. No native loading/child execution. Guard cost separate. A mathematical failure or resource cap stops this method without repair; at most one separately recorded technical certificate-verifier repair. All source and dependency hashes fixed in HASHES.json before execution.
+
+Paper mechanism B is independent of finite absence: two recovery free leave at most2 low free before v. If at least4 A precede v, first-three/ fourth-A facts force the fourth free to be high and the earlier floor>=-h-1. A subsequent first A below that floor would be a new-minimum low free, impossible before v. Thus the low descent is monotone; exact height exclusion of all old sources permits an original-free-preserving comparison at its first entry. E728's three-free recovery would then exceed the remaining2. This chain is still under falsification/audit; no new BlockWord is assumed.

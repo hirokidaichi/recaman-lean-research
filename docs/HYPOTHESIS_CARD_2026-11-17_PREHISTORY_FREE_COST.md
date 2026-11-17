@@ -45,3 +45,7 @@ Local progress: paper M<=3 and restricted-floor consumer. Depth-general progress
 ## Subsequent explicit M4 continuation (E729)
 
 H-20261117-PC4 proves on paper that no M4/low free<=3 original history exists, with depth and upper excursions unrestricted. Low-free3 internally supplies a floor via the original first-return rank bound; all source-height visits then inject/count into disjoint free wallets. See RESEARCH_NOTE_2026-11-17_FOUR_PERIOD_SOURCE_ORDER.md. Thus the parent inequality now holds for M<=4; every M>=4 plateau needs at least four low free. General M<=F_low for M>=5/free>=4 stays CONJECTURED. This follow-up does not rewrite the earlier stopped jobs or turn them into proofs.
+
+## Subsequent explicit M5 continuation
+
+H-PC5/E730 supplies a strict PROVED-PAPER necessary condition, not a decision of existence. With low free4, the derived deep last minimum has at most3 preceding A; the first return prefix has original total free<=4. At least4 targets of each required source family have all sources after that minimum. Complete source sets are retained via an explicitly proved height exclusion where a comparison cut is used. M5, all-M cost and C1 remain open. The new finite run-family search is STOPPED with0 low4 eligible histories; no larger retry. See RESEARCH_NOTE_2026-11-17_FIVE_PERIOD_SOURCE_ORDER.md and its independent verification/semantic-audit packet.

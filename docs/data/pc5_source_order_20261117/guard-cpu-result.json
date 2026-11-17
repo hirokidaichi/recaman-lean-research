@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-17T11:13:29.614357+09:00",
+  "tag": "guard-cpu",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/pc5_source_order_20261117/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/pc5_source_order_20261117/guard_fixture.py",
+    "cpu"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 3.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+  "runner_sha256": "c5ab6fe235049e677e1a80e8c3ff7bfa871ed77f52c9a7b20aac29dd622f3a71",
+  "pid": 23509,
+  "process_group": 23509,
+  "finished_jst": "2026-11-17T11:13:30.650678+09:00",
+  "exit_code": -24,
+  "reason": "signal 24 (see CPU cap and output)",
+  "wall_seconds": 1.0364382090047002,
+  "worker_user_seconds": 0.987999,
+  "worker_sys_seconds": 0.018056,
+  "worker_cpu_seconds": 1.006055,
+  "worker_maxrss_native": 22953984,
+  "controller_cpu_seconds": 0.0032510000000000004,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}
