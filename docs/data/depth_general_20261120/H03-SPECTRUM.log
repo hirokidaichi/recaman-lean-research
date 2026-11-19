@@ -1,0 +1,37 @@
+Recaman/PaddingSourceSpectrum.lean:23:72: error: unsolved goals
+f : Nat → Bool
+d q : Nat
+hs : seg (trimSSequence f 0 d) 0 (d + q) = List.replicate d false ++ seg f 0 q
+hm : -↑d + mass (seg f 0 q) = Fw (trimSSequence f 0 d) (d + q)
+hf : mass (seg f 0 q) = Fw f q
+ha : 2 * areaW (List.replicate d false) = -↑d * (↑d + 1)
+⊢ areaW (List.replicate d false) + ↑q * -↑d + Ar f 0 q = areaW (List.replicate d false) + Ar f 0 q + ↑q * -↑d
+Recaman/PaddingSourceSpectrum.lean:74:2: error: Type mismatch
+  Iff.trans hs
+    (padded_root_equations f (d - i) q
+      (Decidable.byContradiction fun a => added_source_equations._proof_1_3 d i q hi a))
+has type
+  Win (trimSSequence f 0 d) i (d - i + q) ↔ Fw f q = ↑(d - i) + 1 ∧ 2 * Ar f 0 q = ↑(d - i) * (2 * ↑q + ↑(d - i) + 1)
+but is expected to have type
+  Win (trimSSequence f 0 d) i (d + q - i) ↔ Fw f q = ↑(d - i) + 1 ∧ 2 * Ar f 0 q = ↑(d - i) * (2 * ↑q + ↑(d - i) + 1)
+Recaman/PaddingSourceSpectrum.lean:110:61: error: Tactic `assumption` failed
+
+f : Nat → Bool
+d q : Nat
+htail : (fun t => trimSSequence f 0 d (d + t)) = f
+hA : f q = true
+r : Nat
+hr : 1 ≤ r
+hrd : r ≤ d
+hH : Fw f q = ↑r + 1
+hB : 2 * Ar f 0 q = ↑r * (2 * ↑q + ↑r + 1)
+i : Nat := d - r
+hi : i < d
+hrem : d - i = r
+⊢ Fw f q = ↑r + 1 ∧ 2 * Ar f 0 q = ↑r * (2 * ↑q + ↑r + 1)
+Recaman/PaddingSourceSpectrum.lean:127:6: error: Type mismatch: After simplification, term
+  hB
+ has type
+  @Eq Int (2 * Ar f 0 q) (↑r * (2 * ↑q + ↑r + 1))
+but is expected to have type
+  @Eq Int (2 * Ar f 0 q) (↑r * (2 * ↑q + (↑r + 1)))

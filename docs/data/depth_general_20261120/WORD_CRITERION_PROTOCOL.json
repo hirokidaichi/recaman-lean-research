@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-11-20T06:39:32.334729+09:00",
+  "version": "H05-v1 coherent state, exactly one explicit repair from v0",
+  "question": "Falsify arbitrary-word geometric criterion vs actual seeded greedy decisions; early sources and future seed entries all included",
+  "discovery": "ALL words length0..7 plus five explicit known/special controls; predicate is new, histories overlap old work and are not fresh",
+  "holdout": "N/A for PAPER theorem; no absence/cutoff claim, no further range expansion",
+  "cpu_total_budget": 2,
+  "observed_prior": 0.217712,
+  "new_cap": 1,
+  "worst_cumulative": 1.217712,
+  "source_sha256": "ba4dacef17bc1cbbfba4cacdb393d0f5a812b6218d8a03aadb03453a30fe3c16",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "word-criterion",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/word_criterion.py",
+    "docs/data/depth_general_20261120/WORD_CRITERION_CONTROLS.json"
+  ],
+  "stop": "Any v1 mismatch stops this method, no second hypothesis repair or resource change"
+}

@@ -1,0 +1,33 @@
+{
+  "observed_jst": "2026-11-20T07:42:58.765207+09:00",
+  "scope": "Final PAPER registry/frontier/graph/manifests; no new Lean adoption or current full build claimed",
+  "checks": [
+    {
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "exit": 0,
+      "log": "FINAL_ARCHITECTURE.log"
+    },
+    {
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "exit": 0,
+      "log": "FINAL_REGISTRY.log"
+    },
+    {
+      "argv": [
+        "make",
+        "check-manifest"
+      ],
+      "exit": 0,
+      "log": "FINAL_MANIFEST_CHECK.log"
+    }
+  ],
+  "registry_rows": 762,
+  "protected_labels_pins": "included in registry harness checks",
+  "proof_bytes": "1041 prior fullcheck source hashes match; prior exit0 remains historical"
+}

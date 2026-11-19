@@ -1,0 +1,22 @@
+import Recaman.SeededReplay
+
+namespace Recaman.RelaxedStockReplay
+
+/-- An explicitly supplied old stock; canonical prefix reachability is not claimed. -/
+def seed : State := ⟨20200,[0,12169,14178,14194,16196,18193,20200]⟩
+
+def signs : List Bool :=
+  [false,false,true,true,true,false,false,false,false,true,true,true,true,false,true,false,true]
+
+/-- Actual greedy transitions, retaining the complete seed stock and all new visits. -/
+theorem seventeen_clock_seeded_replay :
+    (∀ q : Fin 17, decide (¬ CanSubtract (2000+q.val+1)
+      (SeededReplay.run 2000 seed q.val)) = signs[q.val]!) ∧
+    (List.range 18).map (fun q => (SeededReplay.run 2000 seed q).value) =
+      [20200,18199,16197,18200,20204,22209,20203,18196,16188,
+       14179,16189,18200,20212,22225,20211,22226,20210,22227] ∧
+    0∈seed.seen ∧ seed.value∈seed.seen ∧ seed.seen.length≤2000+1 ∧
+    (∀ z∈seed.seen,z≤2000*(2000+1)/2) := by
+  decide
+
+end Recaman.RelaxedStockReplay

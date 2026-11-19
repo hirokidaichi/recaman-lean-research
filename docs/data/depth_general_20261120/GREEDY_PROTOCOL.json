@@ -1,0 +1,32 @@
+{
+  "frozen_at": "2026-11-20T06:30:12.430875+09:00",
+  "question": "New H02 constructed word actual greedy finite-State feasibility, all S freshness including future-A seed entries; not canonical reachability",
+  "inputs": [
+    "ACTIVATION_DISCOVERY.json",
+    "ACTIVATION_LINEAR.json"
+  ],
+  "split": "discovery root18; separately already-frozen affine m1/m3 as realization holdout. Those words have already been source-audited; numerical greedy predicate is new, not independent historical source data.",
+  "budget_today": 2,
+  "observed_previous": 0.182698,
+  "new_cap": 1,
+  "worst_cumulative": 1.182698,
+  "source_sha256": "cd49918438b0358b3e497b8d1d38e78c3d7cc9973703c87c8dd98eea4cc22751",
+  "input_sha256": {
+    "ACTIVATION_DISCOVERY.json": "4f029e0c472a0d2226529b65014333edc9a83c9d58fa1b3ca9ab267b8e6b72e3",
+    "ACTIVATION_LINEAR.json": "1d2e4d2113cbe7a1d13e2ea9f01dca1f08c3b6fdc1c00383283dd5ba0ae0b797"
+  },
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "greedy-realization",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/greedy_realization.py",
+    "docs/data/depth_general_20261120/GREEDY_REALIZATION.json"
+  ],
+  "stop": "first sign mismatch/collision, do not repair clock or stock merely to pass without new independent mathematics"
+}

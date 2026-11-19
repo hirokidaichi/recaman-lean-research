@@ -1,0 +1,107 @@
+{
+  "mathematical_budget_seconds": 2,
+  "mathematical_jobs": [
+    {
+      "receipt": "activation-discovery-result.json",
+      "CPU": 0.036298,
+      "exit": 0
+    },
+    {
+      "receipt": "activation-holdout-result.json",
+      "CPU": 0.079324,
+      "exit": 0
+    },
+    {
+      "receipt": "activation-linear-result.json",
+      "CPU": 0.067076,
+      "exit": 0
+    },
+    {
+      "receipt": "candidate-height-result.json",
+      "CPU": 0.034179,
+      "exit": 0
+    },
+    {
+      "receipt": "greedy-realization-result.json",
+      "CPU": 0.035013999999999997,
+      "exit": 0
+    },
+    {
+      "receipt": "source-capacity-result.json",
+      "CPU": 0.048988,
+      "exit": 0
+    },
+    {
+      "receipt": "source-spacing-result.json",
+      "CPU": 0.030788,
+      "exit": 0
+    },
+    {
+      "receipt": "word-criterion-result.json",
+      "CPU": 0.033458,
+      "exit": 0
+    },
+    {
+      "receipt": "rank-predicate-result.json",
+      "CPU": 0.04570199999999999,
+      "exit": 0
+    },
+    {
+      "receipt": "band-translation-result.json",
+      "CPU": 0.06902,
+      "exit": 0
+    }
+  ],
+  "mathematical_observed_CPU_seconds": 0.479847,
+  "guard_jobs": [
+    {
+      "receipt": "guard-cpu-result.json",
+      "CPU": 1.004421,
+      "exit": -24
+    },
+    {
+      "receipt": "guard-exec-result.json",
+      "CPU": 0.028838999999999997,
+      "exit": 0
+    },
+    {
+      "receipt": "guard-fork-result.json",
+      "CPU": 0.029228999999999998,
+      "exit": 0
+    },
+    {
+      "receipt": "guard-normal-result.json",
+      "CPU": 0.031702999999999995,
+      "exit": 0
+    },
+    {
+      "receipt": "guard-wall-result.json",
+      "CPU": 0.025807999999999998,
+      "exit": -9
+    }
+  ],
+  "guard_observed_CPU_seconds": 1.12,
+  "Lean_validation_jobs": [
+    {
+      "receipt": "H03-SPECTRUM-R-result.json",
+      "CPU": 0.571261,
+      "exit": 0
+    },
+    {
+      "receipt": "H03-SPECTRUM-result.json",
+      "CPU": 0.7641979999999999,
+      "exit": 1
+    },
+    {
+      "receipt": "H03-VACUITY-result.json",
+      "CPU": 1.265606,
+      "exit": 2
+    }
+  ],
+  "Lean_validation_observed_CPU_seconds": 2.601065,
+  "unmeasured": "Bookkeeping/static/lint/git/journal and Lean-controller CPU not measured as a daily total; not0. Math/guard controllers have the separate measured partial fields above. No generic process-tree cumulative total/cap is claimed.",
+  "contract": "cooperative single-Python math guard verified today; Lean10CPU per-process/-j1/-M512/20wall separately measured, not a generic tree cumulative or OS AS cap",
+  "all_launched_jobs_completed": true,
+  "math_controller_observed_CPU_seconds": 0.016144,
+  "guard_controller_observed_CPU_seconds": 0.007884
+}

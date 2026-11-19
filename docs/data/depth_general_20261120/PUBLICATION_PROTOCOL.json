@@ -1,0 +1,15 @@
+{
+  "destination": "origin/main",
+  "authorized": "2026-11-01 validated daily snapshot exception; single commit env RECAMAN_ALLOW_BURST=1; hooks/protected/G1-G5 enabled",
+  "window": "07:45+ prepare/finalize, actual journal stop by07:57, normal push/remote check before08:00",
+  "C1": "exact owned validated snapshot, carrying152 old11/19 owned changes without rewriting past records",
+  "C2": "exact docs-only receipt commit including C1 SHA/log/CI observation and DAILY",
+  "final_self_receipt": "/tmp/recaman-20261120-final-publication.json, no recursive third commit",
+  "unowned_excluded": [
+    "docs/data/daily_research/2026-11-07.json"
+  ],
+  "preflight_changed_owned_count": 285,
+  "untracked_packet_whitespace_check": "PASS, no exceptions",
+  "CI": "GitHub connector workflow wrapper filters PR-triggered runs, so main push actions must be read using gh API exact head_sha; bounded read, no CI trigger or mutation",
+  "deadline_rule": "No force/blanket stage/default resource rescue/deadline extension. Failure preserves artifacts and reports exact unpushed paths."
+}

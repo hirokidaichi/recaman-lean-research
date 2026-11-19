@@ -1,0 +1,62 @@
+import Recaman.InitialSOneHeadPositive
+import Recaman.SFinalWindowLength
+
+namespace Recaman.InitialSPaddingFreeThree
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply
+open Recaman.CapacityEqualityInduction
+open Recaman.ShortPeriodicSupply (sign)
+
+private theorem padded_walk (f g : Nat → Bool) (h0 : g 0=false)
+    (hs : ∀ i, g (i+1)=f i) : ∀ K,
+    Fw g (K+1)=Fw f K-1 ∧ Ar g 0 (K+1)=Ar f 0 K-((K+1 : Nat) : Int)
+  | 0 => by simp [Fw,Ar,h0,sign]
+  | K+1 => by
+    obtain ⟨hF,hB⟩ := padded_walk f g h0 hs K
+    have hF' : Fw g (K+1+1)=Fw f (K+1)-1 := by
+      rw [Fw_succ,Fw_succ,hs K,hF]
+      omega
+    refine ⟨hF',?_⟩
+    rw [show K+1+1=(K+1)+1 by omega,Ar_succ,Ar_succ]
+    simp only [Nat.zero_add,Fw] at *
+    omega
+
+private theorem endpoint_padded_area :
+    ∀ w ∈ Recaman.ThreeNonsuppliedData.endpointWords, areaW (false::w)<0 := by decide
+
+/-- A new initial source cannot supply a window until four ORIGINAL
+free additions have occurred. No positive domain for the padded word is assumed. -/
+theorem padded_root_window_cost (f g : Nat → Bool) (K : Nat)
+    (h0 : g 0=false) (hs : ∀ i, g (i+1)=f i)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k)
+    (hw : Win g 0 (K+1)) : 4≤free f 0 K := by
+  apply Classical.byContradiction
+  intro hn
+  have hf : free f 0 K≤3 := by omega
+  obtain ⟨hF,hB⟩ := padded_walk f g h0 hs K
+  have hH := hw.2.1
+  have hAr := hw.2.2
+  simp only [Nat.zero_add,Fw] at hH
+  have hK : 0<K := by
+    by_cases hk : K=0
+    · subst K
+      simp [Fw] at hF
+      omega
+    · omega
+  have hp := hpos K hK (by omega)
+  have hsum := additions_split f 0 K
+  have hwalk := (cN_walk f 0 K).1
+  have hend : cN (EndN f 0) 0 K+1=cN (fun i => f i=false) 0 K := by
+    unfold free at hf
+    unfold additions free at hsum
+    simp only [Nat.zero_add,Fw] at hwalk
+    omega
+  have hwords := three_nonsupplied_excursion_word f 0 0 K
+    (β:=[]) BlockWord.nil (by simp [seg]) hpos hf hend
+  have hneg := endpoint_padded_area (seg f 0 K) hwords
+  simp only [areaW,sign,seg_length] at hneg
+  rw [←Ar_areaW] at hneg
+  omega
+
+end Recaman.InitialSPaddingFreeThree

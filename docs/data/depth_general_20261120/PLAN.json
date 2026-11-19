@@ -1,0 +1,22 @@
+{
+  "parent": "R-20261120-01",
+  "session": "0abc5a83-4549-40cf-8910-3e0ca8d68bfc",
+  "nominal_minutes": {
+    "setup": 10,
+    "local": 30,
+    "general": 60,
+    "audit": 10,
+    "handoff": 10
+  },
+  "actual_plan": "Setup completes by06:05; first general30 (15-minute gate), local<=25, distinct general30 (>=25 genuinely different), independent audit15 by07:45; handoff from07:45; actual journal stop no later07:57, publication until08:00. Early setup saving covers publication margin; audit +5 from local -5. Do not count publication after stop. Shorter local is an upper bound, not a need to fill.",
+  "general_stagnation_inherited": 0,
+  "math_worker_budget_seconds": 0,
+  "local_progress": null,
+  "depth_general_progress": null,
+  "proposer": "same agent, separate pass",
+  "falsifier": "same agent, before any formalization",
+  "formalizer": "same agent, only after complete dependency chain and source interface audit",
+  "auditor": "same agent, separate pass by07:45",
+  "preexisting_unpublished": "11/19 explicit 152 changed owned paths, hashes in BASELINE; immutable prior journals and failed packets preserved. Validate and publish during today authorized saving window.",
+  "stops": "All prior STOPPED jobs inherited; no source/tactic/import/split-only rerun; no M6/R5/old table extension."
+}

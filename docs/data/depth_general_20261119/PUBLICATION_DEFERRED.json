@@ -1,0 +1,11 @@
+{
+  "status": "NOT_COMMITTED_NOT_PUSHED",
+  "reason": "Final evidence preservation and bookkeeping did not finish before 08:00. Snapshot publisher rejected the invocation at its real-clock precondition; no approval or hook bypass. Raw whitespace inspection found zero exceptions. Journal stopped at 08:03:55.508972; 235.509 seconds after 08:00 excluded from confirmed work. Finalizer initially rejected phase totals because raw segment durations included overtime; corrected to intersect each interval with 06:00-08:00, leaving journal bytes unchanged. Post-deadline actions are limited to closing actual records and reporting.",
+  "observed_jst": "2026-11-19T08:05:02.218089+09:00",
+  "head": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "staged_paths": [],
+  "hosted_ci": "not started for today: no new commit or push",
+  "retry": "Next authorized daily publication window only",
+  "unsaved": "All owned today changes remain saved on local filesystem, uncommitted and unpushed; explicit paths in OWNED_PATHS.json",
+  "unowned": "docs/data/daily_research/2026-11-07.json preserved and excluded"
+}

@@ -1,0 +1,25 @@
+{
+  "tag": "H06-COVER",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/VisitedCoverCost.olean",
+    "Recaman/VisitedCoverCost.lean"
+  ],
+  "started_jst": "2026-11-19T07:05:42.315094+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/VisitedCoverCost.lean": "a0ef7ad79133f95b664ea0ab2b0dd07dd93039828e3c60e001d4184e19316a0a"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "tracked_diff_sha256": "8c7723d08854aff1e6326a3ae672829a03bc2f3d82eefa5219a92e28d905d650",
+  "source_tree_sha256": "221eba0c4860d6feafbd656eb01f95a10ad213daabb33faf4077da87ecb20ae3",
+  "source_tree_manifest": "H06-COVER-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

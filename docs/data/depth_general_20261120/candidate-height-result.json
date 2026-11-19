@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-20T07:03:31.471880+09:00",
+  "tag": "candidate-height",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/candidate_height.py",
+    "docs/data/depth_general_20261120/CANDIDATE_HEIGHT_CONTROLS.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "d90b0ab58b85d15ebe37457c05d00134f3a9b337811f27a2be820c68cd53d804",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 79339,
+  "process_group": 79339,
+  "finished_jst": "2026-11-20T07:03:31.509261+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.03746924997540191,
+  "worker_user_seconds": 0.026892,
+  "worker_sys_seconds": 0.007287,
+  "worker_cpu_seconds": 0.034179,
+  "worker_maxrss_native": 23592960,
+  "controller_cpu_seconds": 0.0017649999999999992,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

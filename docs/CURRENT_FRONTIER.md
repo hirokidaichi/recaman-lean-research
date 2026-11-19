@@ -1,8 +1,41 @@
 # Current research frontier
 
-最終更新: 2026-11-18 日次研究。一般C1/Q/H/SL/全射性とD_near<=元low freeは未証明。local/generalを分け、一般機構の全量化反証を得た。全PAPER族は未Lean・人間レビュー未。
+## 2026-11-20: activation cost and actual numerical freshness (PAPER / human review pending)
+
+- **E-758 REFUTED:** source0 activation need not pay two original PRIOR free per added S. An unbounded exact original-positive family has r55m+18/Fprior104m+37; rational families refute every coefficient above 1+sqrt(3)/2 with any fixed correction. This is not C1 or canonical-orbit refutation; original LOW free is2 and the displayed numerical seed has no canonical prehistory.
+- **E-759 PROVED-PAPER:** two explicit chronological height/area collision tests characterize arbitrary finite greedy words from a coherent finite State, with complete future seed stock. The displayed constructor fails canonical global clock cost. Integer-mean balanced square exclusion is a supporting corollary, not another progress cycle.
+- **E-760 PROVED-PAPER:** actual S freshness improves common unchanged-source hit span from raw8 per gap to10(M-1)-2 parity. Raw positive Z^2 control shows the numerical premise is essential.
+- **E-761 PROVED-PAPER:** bounded nonnegative rejected-candidate band has paid rank (floor(Y/3)+1)H-floor(c/3) at clocks>=max(1,Y), arbitrary depth. Fixed numeric-source/height uses have a finite fresh-value wallet and a value/clock cardinality bound. H unbounded above and non-P2 numerical reuse remain possible in the present argument; no LOW-free conversion is supplied.
+
+Current notes/cards: [DAILY](RESEARCH_HANDOFF_2026-11-20_DAILY.md), [activation](RESEARCH_NOTE_2026-11-20_ACTIVATION_PLATEAU_COST.md), [word criterion](RESEARCH_NOTE_2026-11-20_GREEDY_WORD_COLLISIONS.md), [rank](RESEARCH_NOTE_2026-11-20_CANDIDATE_HEIGHT_POTENTIAL.md). All-parameter proofs are PAPER, finite exact checks COMPUTED, no new Lean adoption. H01 last-minimum induction STOPPED with parent all-R floor CONJECTURED. H03 kernel accepted but rejected as E713 reproof; vacuity helper512MB STOPPED before theorem probe, quarantined bytes never root/Audit. All old stops and E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean remain.
+
+Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-depth countermechanism and paid numerical rank); no-general-progress streak0 based on this evidence. Next30/60/10 with >=25min distinct mechanism. Confirmed work and publication values are in DAILY/journal after stop, not this statement.
+
+
+最終更新: 2026-11-20 日次研究（確定実績はDAILY/journal参照）。任意深さの新しい反例機構と実greedyの支払済みrankをPAPERで得た。一般C1/Q/H/SL/全射性と原LOW-free会計への接続は未証明。
 
 ## Research brief
+
+- **E-758 REFUTED / 全族PAPER**。S前置き活性化のprior free>=2r+2は偽。任意mのr55m+18/Fprior104m+37、全c>1+sqrt(3)/2と固定修正を破る有理族。全old/元positiveを保持、LOW free2の高所targetでC1反例ではない。
+- **E-759 PROVED-PAPER**。任意有限sign語の時系列衝突検査と、coherent有限Stateのgreedy実行可能性が同値。全future候補seedも保持。表示seedはcanonical全clock費用を払わず、原freeを未知seed過去へ輸送しない。
+- **E-760 PROVED-PAPER**。実greedyの同一元P2源M hitはspan>=10(M-1)-2 parity。raw8反復はS再訪で失格、実freshnessをraw C1の仮定へ足さない。
+- **E-761 PROVED-PAPER**。候補c in[0,Y]/clock>=max(1,Y)でPhi=(floor(Y/3)+1)H-floor(c/3)が増加。固定源の有限walletと値/clock容量を内部供給。全A被覆/H上界/原LOW-free払いは未供給。全PAPERは未Lean・人間レビュー未。
+- **停止と局所**。H01最低点帰納は支払えないprefixでSTOPPED、全R floorはCONJECTURED。H03はE-713同値再証明で不採用、vacuity helper512MB STOPPED/bytes隔離。E-757の元free3による第五free末尾削減は前日PAPER支持、再実行なし。全旧STOP/E-388 COMPUTED/E-404 CONJECTURED/E-384存在未Leanを保持。
+- **次の未払い**。raw signの元LOW freeと実数値band/rankの接続、又は必要なcanonical条件の厳密監査。local_progress0/general_progressあり、連続なし0。次30/60/10/別機構25分以上。実績・CPU・公開SHAは[DAILY](RESEARCH_HANDOFF_2026-11-20_DAILY.md)/journalを正本とする。
+
+
+- **E-762 REFUTED / 全T PAPER**: 任意有限greedy語の全元source/free/LOWfreeを保持し、全stockの数値平行移動と元非正A候補preseedで全候補c>clockにできる。全Y同時にE761の選択event0。原語だけの無条件band被覆を停止、canonical-only条件は未反証。支持する正のconsumerはM<=K*(H_Q+floor(x/(b+1))+2)、endpoint Hへ支払い、全大域H上界を入力しない。[輸送と境界](RESEARCH_NOTE_2026-11-20_NUMERIC_BAND_TRANSLATION.md)。
+
+## Previous research brief (2026-11-19)
+
+- **E-751 / E-754 PROVED-PAPER（未Lean・人間レビュー未）**。元positiveな履歴では、新しい初期sourceは対象より前に元free>=4を要求する。任意数dの初期S追加でも元最初4freeが失われず、min(4,F)を正確保存。元総free<=4なら全actual/free/正不足を任意dへ輸送、全F<=d+4又は元H<=d+3ならpositiveを内部供給する。一般padding閉性とC1は未証明。[四free potential](RESEARCH_NOTE_2026-11-19_FIRST_FOUR_PADDING_POTENTIAL.md)。
+- **E-756 PROVED-PAPER**。各gainは一意activation r=H-1を持ち、元free rank k>=4/r<=k-2で深さ重みを支払う。T=(R-4)+なら件数<=T/重み和<=T(T+3)/2、R>=5でd>=R-3に対象有限prefixのtag安定。E721の旧族を新発見やfresh holdoutへ数えない。[深さrank](RESEARCH_NOTE_2026-11-19_HEAD_DEPTH_RANK_BUDGET.md)。
+- **E-752 REFUTED（全N/L PAPER）**。明示した任意old stockから、任意固定長Lのgreedyな直前A-tailとW^N Aを実行できる。local novelty/容量/三角範囲/parity/固定lookbehindだけのfilterを排除。canonical prefix到達は未構成、元rawfreeをorbit全過去のfreeへ置換しない。元WのD_near=2/F_low=4N+1でC1反例ではない。[visited stock](RESEARCH_NOTE_2026-11-19_RELAXED_VISITED_STOCK.md)。
+- **E-753 PROVED-PAPER（local）**。u>=1で最初の不足0が短Win3なら、その内側二Aの少なくとも一つが元actual、全供給源の長さ>=7。短い最終源を全排除したわけではない。H01/H03/H04は一修理後、H02有限Leanは512MB初回でSTOPPED。全bytes隔離、当日新Lean採用なし。E757は元free3の全prefix area<=長さ-2から第五free候補末尾を削減するPAPER支持。
+- **E-755 PROVED-PAPER**。全canonical履歴を覆うlist VはupperTri(t)<=a(t)+2t(|V|-1)を満たす。Sの全新規着地をVへ単射し既存clock ledgerへ接続、E752全N/Lをglobal費用で排除。Leanは512MB初回STOPPED、到達十分条件や元free課金/C1は未証明。[全履歴費用](RESEARCH_NOTE_2026-11-19_VISITED_COVER_COST.md)。
+- **次の未払い**。第五freeの保持候補はr1/H2/不足2/面積q+1又r2/H3/不足1/面積2q+3の二枝に限るが未証明。次回mainは任意Rの元LOW freeで新最低点・帰還深さを払う原理とし、whole-free activation費用は別機構へ。旧r4表/STOPPED実装は再開しない。local/general判定と別機構の確定実績は当日DAILY/journalを正本とする。
+
+## Previous research brief (2026-11-18)
 
 - **E-744 REFUTED（全N PAPER）**。真initial-S h1/全高度[-4,2]を固定しても、低A像の唯一source4以前の元free wallet{1}へN-1件を請求できる。固定mapだけでなく、source以前freeだけを許す全割当の全固定容量が不可能。全元low freeは>=N+2なのでD=Nの親C1反例ではない。[源会計](RESEARCH_NOTE_2026-11-18_COUPLED_SOURCE_ANCESTRY.md)。
 - **E-745 REFUTED（全N PAPER）**。一つの初期S追加g=S++fは、両元positive/初期S1→2/幅6固定でも全freeを非有界に変える。関連LOW freeは保存される。無条件positive閉性はCONJECTURED、finite absence方法STOPPED。[深さ操作](RESEARCH_NOTE_2026-11-18_GLOBAL_PADDING_GAIN.md)。
@@ -1166,3 +1199,5 @@ E-678〜E-683の個別M512検証とG1〜G5は受理、全checkを再確認中。
 E-686はH20/H23/H24個別受理。H21/RとH22/RはLeanエラー、H25はrecursion-depthでSTOPPED。未受理bytesはroot/Audit不採用。次unitは独立j4旧sourceのd*(k−1)+5H<=13と高source3/7分類。
 
 07:11更新: E694 old-j4全長元fullgapを初回M512個別受理、E683/E685と全j old-source consumerへ統合。H30/H32はkernel512MB STOPPEDのまま。H33の新整数罰8、H34初期SS、H35源予算9、小五符号H31という独立剪定後のbytesのみ採用。数学探索worker未起動/予算0。
+
+2026-11-19 publication: daily journal closed; 7051.156 confirmed seconds, 235.509 overtime excluded. Owned results locally saved but not committed/pushed because the 08:00 deadline was missed; see latest DAILY tail and PUBLICATION_DEFERRED.json. Retry only in the next authorized window.

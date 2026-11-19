@@ -1,0 +1,65 @@
+import Recaman.SubtractionLedger
+import Init.Data.List.Perm
+
+namespace Recaman.VisitedCoverCost
+
+/-- Zero and the actual fresh subtraction arrivals, with their real values. -/
+private def landings : Nat → List Nat
+  | 0 => [0]
+  | t+1 => if CanSubtract (t+1) (stateAt t) then a (t+1)::landings t else landings t
+
+private theorem landing_mem_seen (t : Nat) :
+    ∀ z, z∈landings t → z∈valuesThrough t := by
+  induction t with
+  | zero => simpa [landings,valuesThrough,stateAt,initial]
+  | succ t ih =>
+    intro z hz
+    by_cases hc : CanSubtract (t+1) (stateAt t)
+    · simp only [landings,if_pos hc,List.mem_cons] at hz
+      rcases hz with he | ho
+      · rw [he]
+        exact current_mem_valuesThrough (t+1)
+      · exact valuesThrough_persist (ih z ho)
+    · simp only [landings,if_neg hc] at hz
+      exact valuesThrough_persist (ih z hz)
+
+private theorem landings_nodup (t : Nat) : (landings t).Nodup := by
+  induction t with
+  | zero => simp [landings]
+  | succ t ih =>
+    by_cases hc : CanSubtract (t+1) (stateAt t)
+    · rw [landings,if_pos hc,List.nodup_cons]
+      refine ⟨?_,ih⟩
+      intro hm
+      have hs := landing_mem_seen t (a (t+1)) hm
+      have hv := a_succ_of_canSubtract hc
+      rw [hv] at hs
+      exact hc.2 hs
+    · simpa [landings,hc] using ih
+
+private theorem landings_length (t : Nat) : (landings t).length=subCount t+1 := by
+  induction t with
+  | zero => rfl
+  | succ t ih =>
+    by_cases hc : CanSubtract (t+1) (stateAt t) <;>
+      simp [landings,hc,subCount_succ,ih,Nat.add_assoc]
+
+/-- An actual full-history list cover must pay for all fresh S arrivals.
+This is a necessary bound, not a reachability or coverage criterion. -/
+theorem actual_visited_cover_cost (t : Nat) (V : List Nat)
+    (hcover : valuesThrough t ⊆ V) :
+    upperTri t≤a t+2*t*(V.length-1) := by
+  have hsub : landings t ⊆ V := by
+    intro z hz
+    exact hcover (landing_mem_seen t z hz)
+  have hlen := (landings_nodup t).length_le_of_subset hsub
+  rw [landings_length] at hlen
+  have hc : subCount t≤V.length-1 := by omega
+  have hm : subSum t≤t*(V.length-1) :=
+    Nat.le_trans (subSum_le_mul_subCount t) (Nat.mul_le_mul_left t hc)
+  have h2 := Nat.mul_le_mul_left 2 hm
+  have hl := ledger_identity t
+  rw [Nat.mul_assoc] at h2
+  omega
+
+end Recaman.VisitedCoverCost

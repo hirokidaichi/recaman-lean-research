@@ -1,0 +1,31 @@
+{
+  "tag": "H01-ROOT-COST-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/InitialSPaddingFreeThree.olean",
+    "Recaman/InitialSPaddingFreeThree.lean"
+  ],
+  "started_jst": "2026-11-19T06:18:11.081934+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/InitialSPaddingFreeThree.lean": "6c4cb52034cb0da947a8401c6d2bd38eb8d6eade7f8f9cf2e0e7b9c85c7fba23"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "tracked_diff_sha256": "a2eb833a5f761b33b158b065d6d5d3a76a1009fb3692af98ccf861be2dd51f5c",
+  "source_tree_sha256": "9a0dd5434a6bb32b1bf6d44f2a4a5985924491d14927fbf5a84f4cd08680ad2d",
+  "source_tree_manifest": "H01-ROOT-COST-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "dirty_source_hash": "a2eb833a5f761b33b158b065d6d5d3a76a1009fb3692af98ccf861be2dd51f5c",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 0.464714040979743,
+  "cpu_seconds": 0.31109,
+  "finished_jst": "2026-11-19T06:18:11.546597+09:00"
+}

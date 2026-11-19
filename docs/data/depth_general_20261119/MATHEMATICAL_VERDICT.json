@@ -1,0 +1,45 @@
+{
+  "at_jst": "2026-11-19T07:41:35.530213+09:00",
+  "parent": "R-20261119-01",
+  "local_progress": {
+    "value": true,
+    "evidence": [
+      "E753",
+      "E757",
+      "E751 source-height consequence"
+    ],
+    "scope": "PAPER source/last-sign reductions, not full fifth-free/short-source elimination"
+  },
+  "depth_general_progress": {
+    "value": true,
+    "evidence": [
+      "E754",
+      "E756",
+      "E752",
+      "E755"
+    ],
+    "scope": "PAPER original-free rank potential/depth transport; arbitrary-seed local-filter no-go and global actual-history cost; C1 not proved"
+  },
+  "no_general_progress_streak_before": 0,
+  "no_general_progress_streak_after_if_parent_completed": 0,
+  "next_nominal_minutes": {
+    "local": 30,
+    "general": 60,
+    "audit": 10
+  },
+  "old_controls_not_new_evidence": [
+    "E721/E408 all-r single hill",
+    "head-depth worker r1/2/7/13 not fresh histories"
+  ],
+  "new_lean_adopted": [],
+  "five_stopped_methods": [
+    "H01-rootcost",
+    "H02-local17",
+    "H03-repeated",
+    "H04-inner",
+    "H06-cover"
+  ],
+  "next_main": "uniform R original LOW free cost for a new minimum and return",
+  "next_distinct": "uniform r root activation prior WHOLE free cost2r+2",
+  "completed_parent_only_after_journal_stop": true
+}

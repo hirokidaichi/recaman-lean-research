@@ -1,0 +1,40 @@
+{
+  "scope": "current static checks, not whole Lean build",
+  "checks": [
+    {
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "exit": 0,
+      "log": "CURRENT_ARCHITECTURE.log"
+    },
+    {
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "exit": 0,
+      "log": "CURRENT_REGISTRY.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/harness_gate.py",
+        "--check-protected"
+      ],
+      "exit": 0,
+      "log": "CURRENT_PROTECTED.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/harness_gate.py",
+        "--check-pins-static"
+      ],
+      "exit": 0,
+      "log": "CURRENT_PINS_STATIC.log"
+    }
+  ],
+  "first_registry_failure": "E757 was only spelled without hyphen in carried frontier; current brief now explicitly references E-757, no gate changed"
+}

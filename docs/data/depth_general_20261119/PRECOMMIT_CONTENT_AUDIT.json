@@ -1,0 +1,86 @@
+{
+  "at_jst": "2026-11-19T07:47:59.129958+09:00",
+  "parent": "R-20261119-01",
+  "owned_paths": 145,
+  "index_empty": true,
+  "failed_lean_attempts": [
+    {
+      "receipt": "H01-ROOT-COST-R-result.json",
+      "source_sha256": {
+        "Recaman/InitialSPaddingFreeThree.lean": "6c4cb52034cb0da947a8401c6d2bd38eb8d6eade7f8f9cf2e0e7b9c85c7fba23"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H01-ROOT-COST-result.json",
+      "source_sha256": {
+        "Recaman/InitialSPaddingFreeThree.lean": "61ee73925a2788671aecbbfe23a845e584b02a3e0722f3c298fdf74c83c5b498"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H02-LOCAL17-result.json",
+      "source_sha256": {
+        "Recaman/RelaxedStockReplay.lean": "45844d11a02d1c7c07a1c4c21e45e09dea1c6b78d21778343d1504bd0973ab02"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H03-REPEATED-R-result.json",
+      "source_sha256": {
+        "Recaman/RepeatedVisitFreeGap.lean": "db6ef17ccf0134638960d694b55fd61f829de9460898bb577e698df96c29daf1"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H03-REPEATED-result.json",
+      "source_sha256": {
+        "Recaman/RepeatedVisitFreeGap.lean": "145c56e2a8dadf885e7987aa758728628156a89ddf2c5a19835f8287e158284b"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H04-INNER-R-result.json",
+      "source_sha256": {
+        "Recaman/FirstFailureInnerSource.lean": "54044aa1ed03b7b606f3189fd265ba989438b8f492b2fb22cee80d6c3beb098a"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H04-INNER-result.json",
+      "source_sha256": {
+        "Recaman/FirstFailureInnerSource.lean": "949c1545b09bc498b0d0a3c0b0078b1fe7b8d4f4577347d9bbcb26bb0fe45f68"
+      },
+      "exit_code": 1
+    },
+    {
+      "receipt": "H06-COVER-result.json",
+      "source_sha256": {
+        "Recaman/VisitedCoverCost.lean": "a0ef7ad79133f95b664ea0ab2b0dd07dd93039828e3c60e001d4184e19316a0a"
+      },
+      "exit_code": 1
+    }
+  ],
+  "frozen_source_blobs_verified": 8,
+  "failed_lean_not_adopted": true,
+  "accepted_existing_lean_matches_completed_fullcheck": true,
+  "paper_scientific_file_hashes": {
+    "docs/RESEARCH_NOTE_2026-11-19_FIRST_FOUR_PADDING_POTENTIAL.md": "45907c530ad1b83911d597f05be2d278dc3cc751569a2b568905d508fa8c31d3",
+    "docs/RESEARCH_NOTE_2026-11-19_HEAD_DEPTH_RANK_BUDGET.md": "0f901d4dc016b0d71505cf45dc12e3289a41e43eb7bea399987d3956a971d403",
+    "docs/RESEARCH_NOTE_2026-11-19_PADDING_ROOT_FREE_BUDGET.md": "0ac51781708710d428b801fee4226c7a2d3f249ffece4f766bb5f0421424214f",
+    "docs/RESEARCH_NOTE_2026-11-19_RELAXED_VISITED_STOCK.md": "df092e0b9089c2b177d19f990843072f14ec71d3f3cdde934084b14522110207",
+    "docs/RESEARCH_NOTE_2026-11-19_VISITED_COVER_COST.md": "a9843ac0548e5c24cfdb8a31e33c1ec1393eb7493a0b9e976e4fa38c379994b4",
+    "docs/EVIDENCE_REGISTRY.tsv": "b1e6c8e012f85c1ba2ecf48bf1d8839c0ad1e9cb040e053c3f614ce61453c054"
+  },
+  "final_header_and_journal_updates_expected": "handoff/card parent totals/frontier/tracker only after stop; make brief re-sync then",
+  "excluded_unowned_preserved": [
+    "docs/data/daily_research/2026-11-07.json"
+  ],
+  "gate_and_protected_edits": false,
+  "new_proved_lean_rows": 0,
+  "no_caps_or_hooks_bypassed": true,
+  "publication_still_pending": true,
+  "final_scope_wording_review_jst": "2026-11-19T07:53:00.342880+09:00",
+  "finite_prefix_bound_explicit": true,
+  "paper_statement_appendix_sha256": "a7f52a16a8d673c6f9309ea613f5c168e76baa3bc6be3e23f4c28506e01c171a"
+}

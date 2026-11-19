@@ -1,0 +1,14 @@
+# Reproduction and stop-state packet
+
+Read the final 2026-11-19 DAILY tail, current cards, registry and stopped journal first. Reproduction metadata is NOT authorization to rerun a stopped unit or an old control. There is one parent R-20261119-01, with session in BASELINE.json.
+
+- Scientific PAPER notes are frozen in PRECOMMIT_CONTENT_AUDIT scientific_file_hashes (cards later gain parent-journal totals). E751--757 do not include any new PROVED-LEAN result.
+- Eight individual Lean attempts have actual -j1/-M512 argv, source-tree manifests, completed wait4 CPU, exact logs and eight frozen source blobs. Five final source versions are STOPPED_*.lean.txt. None is imported by Recaman.lean or Audit.lean. Resource failures had zero repairs; the other three methods exhausted one repair. Do not resurrect through a wrapper/private helper/import/tactic/resource change.
+- The cooperative Python runner's current-day normal/fork/exec/wall/thread-CPU guard receipts validate only its declared no-child contract. Mathematical budget2CPU seconds was frozen before each sequential allocation; cumulative measured worker CPU .137116s. Controllers/Lean/guard/fullcheck are separate. Generic process-tree cumulative cap/OS AS guarantee remains unavailable.
+- RELAXED_STOCK_PROTOCOL and PRECEDING_TAIL_PROTOCOL freeze numerical local-replay tests. TAIL_ANNOTATION_CORRECTION records the unmeasured blanket-positive field correction. Raw outputs are preserved.
+- HEAD_DEPTH_PROTOCOL's r1/2/7/13 are old E721-family histories; HEAD_DEPTH_NOVELTY_CORRECTION withdraws fresh-history/independent holdout language. They tested a new pair/spectrum predicate only. Do not enlarge r to manufacture freshness.
+- FULLCHECK.log completed the UNCHANGED accepted Lean graph:1042 jobs/3989 declarations/G6+22 locks/latest9-theorem advisory vacuity clean. New PAPER rows after it have final static gates; no fullcheck is claimed for unadopted failed bytes. FULLCHECK_MEASUREMENT_NOTE corrects the raw normal-completion flag's generic-tree overclaim.
+- DISTINCT_MECHANISM gives conservative27m52.990409s within the parent research intervals, excluding mixed/local validation; never add it to parent time. PHASE_TOTALS_AT_HANDOFF is a closed-interval snapshot, FINAL_WORK_SUMMARY is authoritative only after actual stop.
+- OWNED_PATHS names all publication paths and anticipated post-stop records. No locks/caches/credentials, protected claims, gates or unrelated11/07 journal. Final scripts stop-independent: finalize_work READS a stopped journal; publish_snapshot requires it already stopped, uses enabled hooks and normal exact-SHA origin/main push; publish_receipt saves the C1 publication in a second docs-only commit. No force push or ambient add.
+
+Canonical-orbit reachability, abstract original EndN/free counts, exact finite computations and PAPER all-parameter arguments are distinct. A green existing-library check never upgrades a new PAPER claim.

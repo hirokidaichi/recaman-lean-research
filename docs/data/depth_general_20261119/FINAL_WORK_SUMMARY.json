@@ -1,0 +1,28 @@
+{
+  "journal": "docs/data/daily_research/2026-11-19.json",
+  "parent": "R-20261119-01",
+  "session": "3e3b2bfb-dcb1-4749-be0d-bdbc3bc6070f",
+  "actual_start": "2026-11-19T06:02:28.843670+09:00",
+  "actual_stop": "2026-11-19T08:03:55.508972+09:00",
+  "confirmed_work_seconds": 7051.156,
+  "shortfall_seconds": 148.844,
+  "excluded_non_work_seconds": {},
+  "unconfirmed_gap_seconds": 0,
+  "overtime_work_seconds": 235.509,
+  "open_interval_unconfirmed_seconds": 0,
+  "phase_seconds": {
+    "setup": 206.30050899999998,
+    "research": 4872.913934000002,
+    "audit": 1065.9137309999999,
+    "handoff": 906.0281560000001
+  },
+  "allocation_seconds": {
+    "setup": 206.30050899999998,
+    "general_research": 3959.9568590000003,
+    "local_research": 912.957075,
+    "audit": 1065.9137309999999,
+    "handoff": 906.0281560000001
+  },
+  "distinct_mechanism_seconds": 1672.990409,
+  "scope": "confirmed journal intervals, not pure CPU/thinking. Publication after stop is excluded. No prior-day work added."
+}

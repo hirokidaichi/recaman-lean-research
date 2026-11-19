@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-19T07:23:33.569915+09:00",
+  "tag": "head-depth-rank",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261119/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261119/head_depth_rank.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 2.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "d4a2da5ea0c718614565493a0c92c7b5d1ba3cf05c3b9836b03a4ea7712066ce",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 46141,
+  "process_group": 46141,
+  "finished_jst": "2026-11-19T07:23:33.641144+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.07131570798810571,
+  "worker_user_seconds": 0.027979,
+  "worker_sys_seconds": 0.007607,
+  "worker_cpu_seconds": 0.035586,
+  "worker_maxrss_native": 23183360,
+  "controller_cpu_seconds": 0.0019839999999999997,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

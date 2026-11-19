@@ -1,0 +1,26 @@
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-19 日次研究（確定、実績はDAILY/journal参照）。一般C1/Q/H/SL/全射性とD_near<=元low freeは未証明。local/generalを分け、一般機構の全量化反証を得た。全PAPER族は未Lean・人間レビュー未。
+
+- **E-751 / E-754 PROVED-PAPER（未Lean・人間レビュー未）**。元positiveな履歴では、新しい初期sourceは対象より前に元free>=4を要求する。任意数dの初期S追加でも元最初4freeが失われず、min(4,F)を正確保存。元総free<=4なら全actual/free/正不足を任意dへ輸送、全F<=d+4又は元H<=d+3ならpositiveを内部供給する。一般padding閉性とC1は未証明。[四free potential](RESEARCH_NOTE_2026-11-19_FIRST_FOUR_PADDING_POTENTIAL.md)。
+- **E-756 PROVED-PAPER**。各gainは一意activation r=H-1を持ち、元free rank k>=4/r<=k-2で深さ重みを支払う。T=(R-4)+なら件数<=T/重み和<=T(T+3)/2、R>=5でd>=R-3に対象有限prefixのtag安定。E721の旧族を新発見やfresh holdoutへ数えない。[深さrank](RESEARCH_NOTE_2026-11-19_HEAD_DEPTH_RANK_BUDGET.md)。
+- **E-752 REFUTED（全N/L PAPER）**。明示した任意old stockから、任意固定長Lのgreedyな直前A-tailとW^N Aを実行できる。local novelty/容量/三角範囲/parity/固定lookbehindだけのfilterを排除。canonical prefix到達は未構成、元rawfreeをorbit全過去のfreeへ置換しない。元WのD_near=2/F_low=4N+1でC1反例ではない。[visited stock](RESEARCH_NOTE_2026-11-19_RELAXED_VISITED_STOCK.md)。
+- **E-753 PROVED-PAPER（local）**。u>=1で最初の不足0が短Win3なら、その内側二Aの少なくとも一つが元actual、全供給源の長さ>=7。短い最終源を全排除したわけではない。H01/H03/H04は一修理後、H02有限Leanは512MB初回でSTOPPED。全bytes隔離、当日新Lean採用なし。E757は元free3の全prefix area<=長さ-2から第五free候補末尾を削減するPAPER支持。
+- **E-755 PROVED-PAPER**。全canonical履歴を覆うlist VはupperTri(t)<=a(t)+2t(|V|-1)を満たす。Sの全新規着地をVへ単射し既存clock ledgerへ接続、E752全N/Lをglobal費用で排除。Leanは512MB初回STOPPED、到達十分条件や元free課金/C1は未証明。[全履歴費用](RESEARCH_NOTE_2026-11-19_VISITED_COVER_COST.md)。
+- **次の未払い**。第五freeの保持候補はr1/H2/不足2/面積q+1又r2/H3/不足1/面積2q+3の二枝に限るが未証明。次回mainは任意Rの元LOW freeで新最低点・帰還深さを払う原理とし、whole-free activation費用は別機構へ。旧r4表/STOPPED実装は再開しない。local/general判定と別機構の確定実績は当日DAILY/journalを正本とする。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-751 [PROVED-PAPER] A new initial root source requires four prior original free additions — docs/RESEARCH_NOTE_2026-11-19_PADDING_ROOT_FREE_BUDGET.md
+  E-754 [PROVED-PAPER] Arbitrary initial subtraction depth retains four original free additions — docs/RESEARCH_NOTE_2026-11-19_FIRST_FOUR_PADDING_POTENTIAL.md
+  E-756 [PROVED-PAPER] Padding activations pay their depth through original free ranks — docs/RESEARCH_NOTE_2026-11-19_HEAD_DEPTH_RANK_BUDGET.md
+  E-752 [REFUTED] Finite greedy lookbehind cannot exclude the repeated visit counter — docs/RESEARCH_NOTE_2026-11-19_RELAXED_VISITED_STOCK.md
+  E-753 [PROVED-PAPER] A short first failure contains an earlier long original source — docs/HYPOTHESIS_CARD_2026-11-19_FAILURE_INNER_SOURCE.md
+  E-755 [PROVED-PAPER] Actual visited covers pay the global clock ledger — docs/RESEARCH_NOTE_2026-11-19_VISITED_COVER_COST.md
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 1040 (including Audit)
+  Import contracts: 135; audit declarations: 3989

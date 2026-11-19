@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-20T07:17:00.773218+09:00",
+  "tag": "source-capacity",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/source_capacity.py",
+    "docs/data/depth_general_20261120/SOURCE_CAPACITY_CONTROLS.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "feef52e4d628a4fd4191ab257688f8ce61b71ab857b057b262eb6b2cf82cab80",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 88931,
+  "process_group": 88931
+}

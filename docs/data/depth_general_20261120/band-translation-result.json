@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-20T07:27:22.843498+09:00",
+  "tag": "band-translation",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/band_translation.py",
+    "docs/data/depth_general_20261120/CANDIDATE_HEIGHT_CONTROLS.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "352397bcfeb5f29299f4543c8ea42053a074dec869ddd775ec7cff97f3028184",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 316,
+  "process_group": 316,
+  "finished_jst": "2026-11-20T07:27:22.915448+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.07204724999610335,
+  "worker_user_seconds": 0.062396,
+  "worker_sys_seconds": 0.006624,
+  "worker_cpu_seconds": 0.06902,
+  "worker_maxrss_native": 23478272,
+  "controller_cpu_seconds": 0.0014409999999999996,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

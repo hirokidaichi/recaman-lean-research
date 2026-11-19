@@ -1,0 +1,19 @@
+{
+  "started_jst": "2026-11-20T07:21:18.155904+09:00",
+  "tag": "rank-predicate",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/rank_predicate.py",
+    "docs/data/depth_general_20261120/CANDIDATE_HEIGHT_CONTROLS.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "3ecd10e1f2052056d41bda7b86f45237ad1a758900be32d5eac3aabbc42c679c",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 92008,
+  "process_group": 92008
+}

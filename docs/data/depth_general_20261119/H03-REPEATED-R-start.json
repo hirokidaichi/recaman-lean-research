@@ -1,0 +1,25 @@
+{
+  "tag": "H03-REPEATED-R",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-j1",
+    "-M512",
+    "-o",
+    ".lake/build/lib/lean/Recaman/RepeatedVisitFreeGap.olean",
+    "Recaman/RepeatedVisitFreeGap.lean"
+  ],
+  "started_jst": "2026-11-19T06:39:12.670933+09:00",
+  "wall_cap_seconds": 20,
+  "cpu_limit_per_process_seconds": 10,
+  "source_sha256": {
+    "Recaman/RepeatedVisitFreeGap.lean": "db6ef17ccf0134638960d694b55fd61f829de9460898bb577e698df96c29daf1"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "tracked_diff_sha256": "a10c95a4d86247afd58947c8ec50055f6002492b786611d26ba82ebcd30f4285",
+  "source_tree_sha256": "c2a8645646f1120add4b090d004d88228c0d1a021cf78aa43de64a71528783b1",
+  "source_tree_manifest": "H03-REPEATED-R-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files"
+}

@@ -1,0 +1,46 @@
+Recaman/VisitedCoverCost.lean:7:12: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:7:12: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:14:12: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Recaman/VisitedCoverCost.lean:14:19: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:14:19: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:14:19: error: (kernel) declaration type mismatch, '_private.Recaman.VisitedCoverCost.0.Recaman.VisitedCoverCost.landings.eq_1' has type
+  landings 0 = landings 0
+but it is expected to have type
+  landings 0 = [0]
+Recaman/VisitedCoverCost.lean:14:19: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:11:16: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:28:18: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:28:18: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:28:18: error: (kernel) declaration type mismatch, '_private.Recaman.VisitedCoverCost.0.Recaman.VisitedCoverCost.landings.eq_1' has type
+  landings 0 = landings 0
+but it is expected to have type
+  landings 0 = [0]
+Recaman/VisitedCoverCost.lean:28:18: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:26:16: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:45:12: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:45:12: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:45:12: error: (kernel) declaration type mismatch, '_private.Recaman.VisitedCoverCost.0.Recaman.VisitedCoverCost.landings.eq_1' has type
+  landings 0 = landings 0
+but it is expected to have type
+  landings 0 = [0]
+Recaman/VisitedCoverCost.lean:45:12: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:40:16: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:62:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?n * ?m * ?k
+in the target expression
+  2 * subSum t ≤ 2 * (t * (V.length - 1))
+
+t : Nat
+V : List Nat
+hcover : valuesThrough t ⊆ V
+hsub : landings t ⊆ V
+hlen : subCount t + 1 ≤ V.length
+hc : subCount t ≤ V.length - 1
+hm : subSum t ≤ t * (V.length - 1)
+h2 : 2 * subSum t ≤ 2 * (t * (V.length - 1))
+hl : a t + 2 * subSum t = upperTri t
+⊢ upperTri t ≤ a t + 2 * t * (V.length - 1)
+Recaman/VisitedCoverCost.lean:57:40: error: (kernel) excessive memory consumption detected
+Recaman/VisitedCoverCost.lean:49:8: error: (kernel) excessive memory consumption detected

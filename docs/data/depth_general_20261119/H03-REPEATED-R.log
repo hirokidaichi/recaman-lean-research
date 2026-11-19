@@ -1,0 +1,18 @@
+Recaman/RepeatedVisitFreeGap.lean:105:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  c ≥ 0
+  c - d - e ≥ 1
+  b ≥ 0
+  a ≥ 0
+  a - b ≥ 1
+where
+ a := ↑N
+ b := ↑j
+ c := ↑(j + 1) * ↑(cN (fun r => height r = l) 0 16)
+ d := ↑j * ↑(cN (fun r => height r = l) 0 16)
+ e := ↑(cN (fun r => height r = l) 0 16)
+Recaman/RepeatedVisitFreeGap.lean:154:72: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`

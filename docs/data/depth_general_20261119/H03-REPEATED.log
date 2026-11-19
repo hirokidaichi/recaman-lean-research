@@ -1,0 +1,35 @@
+Recaman/RepeatedVisitFreeGap.lean:104:37: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  cN (fun q => Fw (word N) q = l) (16 * j) 16
+in the target expression
+  j * cN (fun r => height r = l) 0 16 + cN (fun q => Fw (word N) q = l) (0 + 16 * j) 16 =
+    (j + 1) * cN (fun r => height r = l) 0 16
+
+N : Nat
+l : Int
+j : Nat
+hj : j + 1 ≤ N
+⊢ j * cN (fun r => height r = l) 0 16 + cN (fun q => Fw (word N) q = l) (0 + 16 * j) 16 =
+    (j + 1) * cN (fun r => height r = l) 0 16
+Recaman/RepeatedVisitFreeGap.lean:142:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  f ≥ 0
+  e ≥ 0
+  d ≥ 0
+  d - e ≥ 0
+  0 ≤ c ≤ 4
+  b ≥ 0
+  4*b - d ≤ -5
+  4*b - d + e ≥ 0
+  4*b - f ≥ 0
+  a ≥ 1
+  a - b ≥ 1
+where
+ a := ↑N
+ b := ↑j
+ c := ↑(cN (fun x => word N x = true ∧ ¬EndN (word N) 0 x) (16 * j) 16)
+ d := ↑(cN (fun q => word N q = true ∧ ¬EndN (word N) 0 q) 0 (16 * j + 16))
+ e := ↑(cN (fun q => word N q = true ∧ ¬EndN (word N) 0 q) (0 + 16 * j) 16)
+ f := ↑(free (word N) 0 (16 * j))
+Recaman/RepeatedVisitFreeGap.lean:153:72: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`

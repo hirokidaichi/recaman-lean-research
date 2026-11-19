@@ -1,0 +1,66 @@
+{
+  "frozen_at": "2026-11-20T06:13:27.236560+09:00",
+  "parent": "R-20261120-01",
+  "new_question": "Counter to ALL-r original-positive activation priorfree>=2r+2, using a high plateau W, not an old hill or a larger absence graph",
+  "discovery": {
+    "N": 2,
+    "z": 10,
+    "U": 20,
+    "h": 2,
+    "r": 18,
+    "word": "SS A^30 W^2 S^9 A"
+  },
+  "holdout": [
+    {
+      "m": 1,
+      "N": 2,
+      "z": 54,
+      "U": 68,
+      "r": 66
+    },
+    {
+      "m": 2,
+      "N": 4,
+      "z": 235,
+      "U": 265,
+      "r": 263
+    }
+  ],
+  "holdout_scope": "Previously unused constructed witnesses in a separate all-m algebraic family; not statistically independent or an absence/cutoff claim. W itself is old E750 input.",
+  "all_m_candidate": "m>=1,N=2m,z=64m^2-11m+1,U=64m^2+5m-1,r=U-2; f=SS A^(U+z) W^N S^(z-1), targetA; upper Fprior<=U+z-1+4N=128m^2+2m-1 <2r+2 by8m-3. Root area z^2-U^2+N(16z-10)=0.",
+  "checks": "Every A all original suppliers independently forward H/B and reverse literal mass/weighted moment; all nonempty original positive prefixes; target free and padded sole root0; no tag assumptions",
+  "math_cpu_today_authorized": 2,
+  "worst_caps": "discovery1 + holdout1 <=2CPU, wall5 each. Cooperative no descendants; measured guard separate.",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "tracked_diff_sha256": "d576123b21624ad5eb853899d8692d9847db9d170baa7f7ce1d95263bcf69888",
+  "hashes": {
+    "activation_plateau.py": "39d53f207d2f8f98e0eccfc932ea1ef144ee317d652b97cd84978a8409f88105",
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775"
+  },
+  "argv_discovery": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "activation-discovery",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/activation_plateau.py",
+    "discovery",
+    "docs/data/depth_general_20261120/ACTIVATION_DISCOVERY.json"
+  ],
+  "argv_holdout": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "activation-holdout",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/activation_plateau.py",
+    "holdout",
+    "docs/data/depth_general_20261120/ACTIVATION_HOLDOUT.json"
+  ]
+}

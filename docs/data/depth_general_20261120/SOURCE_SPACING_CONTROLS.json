@@ -1,0 +1,228 @@
+{
+  "balanced8_startA": [
+    {
+      "word": "AAAASSSS",
+      "area": 16
+    },
+    {
+      "word": "AAASASSS",
+      "area": 14
+    },
+    {
+      "word": "AAASSASS",
+      "area": 12
+    },
+    {
+      "word": "AAASSSAS",
+      "area": 10
+    },
+    {
+      "word": "AAASSSSA",
+      "area": 8
+    },
+    {
+      "word": "AASAASSS",
+      "area": 12
+    },
+    {
+      "word": "AASASASS",
+      "area": 10
+    },
+    {
+      "word": "AASASSAS",
+      "area": 8
+    },
+    {
+      "word": "AASASSSA",
+      "area": 6
+    },
+    {
+      "word": "AASSAASS",
+      "area": 8
+    },
+    {
+      "word": "AASSASAS",
+      "area": 6
+    },
+    {
+      "word": "AASSASSA",
+      "area": 4
+    },
+    {
+      "word": "AASSSAAS",
+      "area": 4
+    },
+    {
+      "word": "AASSSASA",
+      "area": 2
+    },
+    {
+      "word": "AASSSSAA",
+      "area": 0
+    },
+    {
+      "word": "ASAAASSS",
+      "area": 10
+    },
+    {
+      "word": "ASAASASS",
+      "area": 8
+    },
+    {
+      "word": "ASAASSAS",
+      "area": 6
+    },
+    {
+      "word": "ASAASSSA",
+      "area": 4
+    },
+    {
+      "word": "ASASAASS",
+      "area": 6
+    },
+    {
+      "word": "ASASASAS",
+      "area": 4
+    },
+    {
+      "word": "ASASASSA",
+      "area": 2
+    },
+    {
+      "word": "ASASSAAS",
+      "area": 2
+    },
+    {
+      "word": "ASASSASA",
+      "area": 0
+    },
+    {
+      "word": "ASASSSAA",
+      "area": -2
+    },
+    {
+      "word": "ASSAAASS",
+      "area": 4
+    },
+    {
+      "word": "ASSAASAS",
+      "area": 2
+    },
+    {
+      "word": "ASSAASSA",
+      "area": 0
+    },
+    {
+      "word": "ASSASAAS",
+      "area": 0
+    },
+    {
+      "word": "ASSASASA",
+      "area": -2
+    },
+    {
+      "word": "ASSASSAA",
+      "area": -4
+    },
+    {
+      "word": "ASSSAAAS",
+      "area": -2
+    },
+    {
+      "word": "ASSSAASA",
+      "area": -4
+    },
+    {
+      "word": "ASSSASAA",
+      "area": -6
+    },
+    {
+      "word": "ASSSSAAA",
+      "area": -8
+    }
+  ],
+  "unique_minimum_word": "ASSSSAAA",
+  "raw_positive_counter": {
+    "word": "SSAAASSSSAAAASSSSAAAA",
+    "sources": [
+      [],
+      [],
+      [],
+      [],
+      [
+        1
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        8
+      ],
+      [
+        1
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        16
+      ],
+      [
+        1
+      ]
+    ],
+    "deficits": [
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      3,
+      4,
+      5,
+      5,
+      5,
+      4,
+      3,
+      4,
+      5,
+      6,
+      7,
+      7,
+      7,
+      6,
+      5
+    ],
+    "free": [
+      2,
+      3,
+      9,
+      10,
+      17,
+      18
+    ],
+    "hits": [
+      4,
+      12,
+      20
+    ],
+    "source": 1,
+    "raw_span": 16,
+    "proposed_greedy_span_lower": 20,
+    "S_landing_collision": [
+      7,
+      15
+    ],
+    "same_value": 9989996,
+    "clock": 10000,
+    "current": 10000000
+  },
+  "scope": "fixed structural counterfactuals, no finite absence/C1 claim"
+}

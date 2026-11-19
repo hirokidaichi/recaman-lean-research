@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-11-20T07:21:18.113135+09:00",
+  "query": "The original candidate-height finite worker tested floor, per-height drop and same-candidate ascent, but NOT the principal across-DIFFERENT-candidate Phi. Close this verification gap with an independent new predicate, no new mathematical claim from absence.",
+  "source_sha256": "3ecd10e1f2052056d41bda7b86f45237ad1a758900be32d5eac3aabbc42c679c",
+  "old_trace_sha256": "5d4e0f5772dcdcf457da5db9894762ad0b1a8ef9b2a3ebb93382085f48c18df4",
+  "range": "all19 existing traces, Y0..100 frozen; not fresh histories or statistical holdout",
+  "prior_math_CPU": 0.365125,
+  "new_cap": 1,
+  "supported_worst_cumulative": 1.365125,
+  "total_math_budget": 2,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "rank-predicate",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/rank_predicate.py",
+    "docs/data/depth_general_20261120/CANDIDATE_HEIGHT_CONTROLS.json"
+  ],
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "stop": "first replay/rank/height mismatch; no silent threshold repair"
+}

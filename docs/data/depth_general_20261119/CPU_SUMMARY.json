@@ -1,0 +1,123 @@
+{
+  "mathematical": {
+    "jobs": [
+      {
+        "receipt": "head-depth-rank-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.035586,
+        "controller_cpu_seconds": 0.0019839999999999997
+      },
+      {
+        "receipt": "preceding-tail-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.033263,
+        "controller_cpu_seconds": 0.0016020000000000027
+      },
+      {
+        "receipt": "relaxed-stock-discovery-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.032521,
+        "controller_cpu_seconds": 0.001626000000000006
+      },
+      {
+        "receipt": "relaxed-stock-holdout-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.035746,
+        "controller_cpu_seconds": 0.0017630000000000076
+      }
+    ],
+    "observed_cpu_seconds": 0.13711600000000002
+  },
+  "guard": {
+    "jobs": [
+      {
+        "receipt": "guard-cpu-result.json",
+        "exit_code": -24,
+        "observed_cpu_seconds": 1.0040129999999998,
+        "controller_cpu_seconds": 0.003030000000000003
+      },
+      {
+        "receipt": "guard-exec-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.032945999999999996,
+        "controller_cpu_seconds": 0.0016520000000000007
+      },
+      {
+        "receipt": "guard-fork-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.033337,
+        "controller_cpu_seconds": 0.001612000000000004
+      },
+      {
+        "receipt": "guard-normal-result.json",
+        "exit_code": 0,
+        "observed_cpu_seconds": 0.032506,
+        "controller_cpu_seconds": 0.0016939999999999959
+      },
+      {
+        "receipt": "guard-wall-result.json",
+        "exit_code": -9,
+        "observed_cpu_seconds": 0.028241,
+        "controller_cpu_seconds": 0.0019400000000000008
+      }
+    ],
+    "observed_cpu_seconds": 1.1310429999999998
+  },
+  "individual_lean": {
+    "jobs": [
+      {
+        "receipt": "H01-ROOT-COST-R-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.31109,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H01-ROOT-COST-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.489969,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H02-LOCAL17-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.460403,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H03-REPEATED-R-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.7526390000000001,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H03-REPEATED-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.759951,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H04-INNER-R-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.248443,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H04-INNER-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.25729199999999997,
+        "controller_cpu_seconds": "UNMEASURED"
+      },
+      {
+        "receipt": "H06-COVER-result.json",
+        "exit_code": 1,
+        "observed_cpu_seconds": 0.449107,
+        "controller_cpu_seconds": "UNMEASURED"
+      }
+    ],
+    "observed_cpu_seconds": 3.728894
+  },
+  "mathematical_budget_seconds": 2,
+  "fullcheck_observed_wait4_cpu_seconds": 15.594477000000001,
+  "unmeasured": "separate lints/static checks/manifest/journal/git/publication and controller CPU where absent; not0",
+  "resource_scope": "per-process Lean cap is not generic process-tree cumulative cap; raw fullcheck complete_tree_measurement flag is not sufficient evidence of generic completeness"
+}

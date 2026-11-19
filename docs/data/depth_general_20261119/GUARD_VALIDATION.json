@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "mode": "normal",
+      "accepted_contract": true,
+      "worker_cpu_seconds": 0.032506,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "fork",
+      "accepted_contract": true,
+      "worker_cpu_seconds": 0.033337,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "exec",
+      "accepted_contract": true,
+      "worker_cpu_seconds": 0.032945999999999996,
+      "exit_code": 0,
+      "reason": "completed"
+    },
+    {
+      "mode": "wall",
+      "accepted_contract": true,
+      "worker_cpu_seconds": 0.028241,
+      "exit_code": -9,
+      "reason": "wall/deadline cap"
+    },
+    {
+      "mode": "cpu",
+      "accepted_contract": true,
+      "worker_cpu_seconds": 1.0040129999999998,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)"
+    }
+  ],
+  "scope": "one cooperative Python/no descendants; thread CPU covered; not adversarial security sandbox or process-tree contract"
+}

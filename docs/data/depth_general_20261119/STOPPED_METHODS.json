@@ -1,0 +1,90 @@
+{
+  "scope": "TODAY ONLY; inherited BASELINE/PORTFOLIO/DAILY stopped methods remain independently in force",
+  "parent": "R-20261119-01",
+  "methods": [
+    {
+      "unit": "H01",
+      "receipt": "H01_ROOT_STOP.json",
+      "metadata": {
+        "at_jst": "2026-11-19T06:20:04.614040+09:00",
+        "status": "STOPPED",
+        "attempts": 2,
+        "repairs": 1,
+        "cause": "Second capped attempt still fails change: 0+(K+1) is not definitionally the requested K+1. No further cosmetic/tactic/import/resource/split retry.",
+        "source_sha256": "6c4cb52034cb0da947a8401c6d2bd38eb8d6eade7f8f9cf2e0e7b9c85c7fba23",
+        "quarantined": "docs/data/depth_general_20261119/STOPPED_InitialSPaddingFreeThree.lean.txt",
+        "root_Audit_adopted": false,
+        "math_status": "complete PAPER argument, no PROVED-LEAN claim",
+        "cpu_scope": "both terminated normally with measured wait4 CPU; no mathematical search worker"
+      },
+      "state": "STOPPED, not a theorem refutation",
+      "reopen_rule": "No same-byte/date/tactic/import/split/resource-only retry or accepted-private-fragment extraction. A future different bounded unit needs independent mathematical input; the original repair budget remains exhausted where used.",
+      "resource_extra_rule": "One ordinary correction already exhausted."
+    },
+    {
+      "unit": "H02",
+      "receipt": "H02_LOCAL_STOP.json",
+      "metadata": {
+        "status": "STOPPED",
+        "reason": "kernel excessive memory at explicit -M512; resource failure permits no tactic/split/import/resource-only repair",
+        "attempts": 1,
+        "repairs": 0,
+        "adopted": false,
+        "bytes": "docs/data/depth_general_20261119/STOPPED_RelaxedStockReplay.lean.txt",
+        "result": "H02-LOCAL17-result.json"
+      },
+      "state": "STOPPED, not a theorem refutation",
+      "reopen_rule": "No same-byte/date/tactic/import/split/resource-only retry or accepted-private-fragment extraction. A future different bounded unit needs independent mathematical input; the original repair budget remains exhausted where used.",
+      "resource_extra_rule": "Resource-stopped H02/H06 require independent mathematics and demonstrated improvement at the same512MB before reconsideration."
+    },
+    {
+      "unit": "H03",
+      "receipt": "H03_STOP.json",
+      "metadata": {
+        "status": "STOPPED",
+        "attempts": 2,
+        "ordinary_repairs": 1,
+        "final_reason": "omega did not normalize (j+1)*symbolic_count; no third compile or split/private fragment adoption",
+        "bytes": "docs/data/depth_general_20261119/STOPPED_RepeatedVisitFreeGap.lean.txt",
+        "adopted": false,
+        "result": "H03-REPEATED-R-result.json"
+      },
+      "state": "STOPPED, not a theorem refutation",
+      "reopen_rule": "No same-byte/date/tactic/import/split/resource-only retry or accepted-private-fragment extraction. A future different bounded unit needs independent mathematical input; the original repair budget remains exhausted where used.",
+      "resource_extra_rule": "One ordinary correction already exhausted."
+    },
+    {
+      "unit": "H04",
+      "receipt": "H04_STOP.json",
+      "metadata": {
+        "status": "STOPPED",
+        "reason": "namespace count_prefix_le still unresolved after one ordinary repair; no third compile, no helper split adoption",
+        "attempts": 2,
+        "repairs": 1,
+        "adopted": false,
+        "bytes": "docs/data/depth_general_20261119/STOPPED_FirstFailureInnerSource.lean.txt",
+        "result": "H04-INNER-R-result.json"
+      },
+      "state": "STOPPED, not a theorem refutation",
+      "reopen_rule": "No same-byte/date/tactic/import/split/resource-only retry or accepted-private-fragment extraction. A future different bounded unit needs independent mathematical input; the original repair budget remains exhausted where used.",
+      "resource_extra_rule": "One ordinary correction already exhausted."
+    },
+    {
+      "unit": "H06",
+      "receipt": "H06_STOP.json",
+      "metadata": {
+        "status": "STOPPED",
+        "reason": "kernel excessive memory under512MB at new recursive landing-list definition; no repair/resource/tactic/import-only restart",
+        "attempts": 1,
+        "repairs": 0,
+        "adopted": false,
+        "bytes": "docs/data/depth_general_20261119/STOPPED_VisitedCoverCost.lean.txt",
+        "result": "H06-COVER-result.json"
+      },
+      "state": "STOPPED, not a theorem refutation",
+      "reopen_rule": "No same-byte/date/tactic/import/split/resource-only retry or accepted-private-fragment extraction. A future different bounded unit needs independent mathematical input; the original repair budget remains exhausted where used.",
+      "resource_extra_rule": "Resource-stopped H02/H06 require independent mathematics and demonstrated improvement at the same512MB before reconsideration."
+    }
+  ],
+  "new_lean_adopted": 0
+}

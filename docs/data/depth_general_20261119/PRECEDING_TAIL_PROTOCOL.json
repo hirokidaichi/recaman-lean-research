@@ -1,0 +1,55 @@
+{
+  "frozen_at": "2026-11-19T06:32:13.020250+09:00",
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "tracked_diff_sha256": "0200748aa434c7f2db807ef46346c50441f79f1922cebd6b977d02166506823e",
+  "worker_sha256": "0cbb75aed08a490b6b03a86ae3e865957d8d79b8b22ae2298d88b9159552eb91",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261119/run_single.py",
+    "--tag",
+    "preceding-tail",
+    "--cpu",
+    "1",
+    "--wall",
+    "2",
+    "docs/data/depth_general_20261119/preceding_tail.py"
+  ],
+  "mathematical_budget_seconds": 2,
+  "measured_prior_worker_cpu": 0.068267,
+  "new_cap": 1,
+  "worst_cumulative": 1.068267,
+  "discovery_pairs": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      10
+    ]
+  ],
+  "holdout_pairs": [
+    [
+      5,
+      17
+    ],
+    [
+      11,
+      31
+    ],
+    [
+      2,
+      64
+    ]
+  ],
+  "scope": "new pairs, existing word controls not fresh histories"
+}

@@ -1,0 +1,159 @@
+import Recaman.InitialSOneHeadPositive
+import Recaman.InitialLowFreeRanks
+
+namespace Recaman.RepeatedVisitFreeGap
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.AdditionRankSlack Recaman.InitialSOneHeadPositive
+open Recaman.ShortPeriodicSupply (sign)
+
+/-- W repeated N times, then additions; the counted last clock is its first extra A. -/
+def motif (r : Nat) : Bool :=
+  [false,false,true,true,true,false,false,false,false,true,true,true,true,false,true,false].getD r true
+
+def word (N q : Nat) : Bool := if q<16*N then motif (q%16) else true
+
+private def height (r : Nat) : Int :=
+  [0,-1,-2,-1,0,1,0,-1,-2,-3,-2,-1,0,1,0,1,0].getD r 0
+private def marked (r : Nat) : Prop := r=4 ∨ r=11 ∨ r=12 ∨ r=14
+private def optional (r : Nat) : Prop := r=2 ∨ r=3 ∨ r=9 ∨ r=10
+
+private theorem sign_in_copy (N j r : Nat) (hj : j<N) (hr : r<16) :
+    word N (16*j+r)=motif r := by
+  unfold word
+  rw [if_pos (by omega), show (16*j+r)%16=r by omega]
+
+private theorem copy_prefix (N j r : Nat) (hj : j<N) (hr : r≤16) :
+    seg (word N) (16*j) r=seg motif 0 r := by
+  unfold seg
+  apply List.map_congr_left
+  intro i hi
+  have hir := List.mem_range.mp hi
+  simpa only [Nat.zero_add] using sign_in_copy N j i hj (by omega)
+
+private theorem actual_in_copy (N j r : Nat) (hj : j<N) (hr : r<16)
+    (hm : marked r) : EndN (word N) 0 (16*j+r) := by
+  have hc : ∀ r : Fin 16, marked r →
+      motif r=true ∧ Recaman.ThreeNonsuppliedData.localSupply (seg motif 0 r)=true := by
+    unfold marked motif
+    decide
+  have hh := hc ⟨r,hr⟩ hm
+  have ha : word N (16*j+r)=true := (sign_in_copy N j r hj hr).trans hh.1
+  have hs : Recaman.ThreeNonsuppliedData.localSupply
+      (seg (word N) (16*j) ((16*j+r)-(16*j)))=true := by
+    rw [show (16*j+r)-(16*j)=r by omega, copy_prefix N j r hj (by omega)]
+    exact hh.2
+  have he := (localSupply_seg_iff (word N) (16*j) (16*j+r) (by omega) ha).mp hs
+  obtain ⟨hA,u,k,hu,huk,hw⟩ := he
+  exact ⟨hA,u,k,by omega,huk,hw⟩
+
+private theorem count_shift (P : Nat → Prop) (s : Nat) : ∀ K,
+    cN P s K=cN (fun i => P (s+i)) 0 K
+  | 0 => rfl
+  | K+1 => by
+    classical
+    have ih := count_shift P s K
+    by_cases hp : P (s+K) <;> simp [cN,ih,hp]
+
+private theorem free_in_copy (N j : Nat) (hj : j<N) :
+    free (word N) (16*j) 16≤4 := by
+  have hc : ∀ r : Fin 16, motif r=true → optional r ∨ marked r := by
+    unfold motif optional marked
+    decide
+  unfold free
+  rw [count_shift]
+  have hb : cN (fun r => word N (16*j+r)=true ∧ ¬EndN (word N) 0 (16*j+r)) 0 16≤
+      cN optional 0 16 := by
+    apply cN_mono
+    intro r _ hr hh
+    have hr16 : r<16 := by omega
+    have hA : motif r=true := (sign_in_copy N j r hj hr16).symm.trans hh.1
+    rcases hc ⟨r,hr16⟩ hA with ho | hm
+    · exact ho
+    · exact (hh.2 (actual_in_copy N j r hj hr16 hm)).elim
+  have h4 : cN optional 0 16=4 := by simp [cN,optional]
+  omega
+
+private theorem walk_in_word (N q : Nat) (hq : q≤16*N) :
+    Fw (word N) q=height (q%16) := by
+  induction q with
+  | zero => rfl
+  | succ q ih =>
+    have hs : word N q=motif (q%16) := by simp [word,show q<16*N by omega]
+    have ht : ∀ r : Fin 16,
+        height ((r.val+1)%16)=height r+sign (motif r) := by decide
+    rw [Fw_succ,ih (by omega),hs]
+    have he := ht ⟨q%16,by omega⟩
+    rw [show (q+1)%16=(q%16+1)%16 by omega]
+    exact he.symm
+
+private theorem visits_in_copy (N j : Nat) (l : Int) (hj : j<N) :
+    cN (fun q => Fw (word N) q=l) (16*j) 16=cN (fun r => height r=l) 0 16 := by
+  rw [count_shift]
+  apply cN_congr
+  intro r _ hr
+  have hw := walk_in_word N (16*j+r) (by omega)
+  rw [show (16*j+r)%16=r by omega] at hw
+  rw [hw]
+
+private theorem visits_blocks (N : Nat) (l : Int) : ∀ j, j≤N →
+    cN (fun q => Fw (word N) q=l) 0 (16*j)=j*cN (fun r => height r=l) 0 16
+  | 0, _ => by simp [cN]
+  | j+1, hj => by
+    rw [show 16*(j+1)=16*j+16 by omega,cN_add,
+      visits_blocks N l j (by omega),Nat.zero_add,visits_in_copy N j l (by omega)]
+    omega
+
+/-- All original suppliers are retained. The four copy-contained actuals
+pay a uniform free upper bound; exact visits exceed it by at least N. -/
+theorem repeated_original_visit_free_gap (N : Nat) (hN : 1≤N) :
+    (∀ k, 0<k → k≤16*N+1 →
+      cN (EndN (word N) 0) 0 k+1≤cN (fun q => word N q=false) 0 k) ∧
+    free (word N) 0 (16*N+1)≤4*N+1 ∧
+    cN (fun q => Fw (word N) q=0) 0 (16*N+1)=5*N+1 ∧
+    cN (fun q => Fw (word N) q= -2) 0 (16*N+1)=3*N ∧
+    (∀ q, q≤16*N+1 → -3≤Fw (word N) q ∧ Fw (word N) q≤1) := by
+  have hend : Fw (word N) (16*N)=0 := by
+    rw [walk_in_word N (16*N) (by omega),show (16*N)%16=0 by omega]
+    rfl
+  have hlast : Fw (word N) (16*N+1)=1 := by
+    rw [Fw_succ,hend]
+    simp [word,sign]
+  have hband (q : Nat) (hq : q≤16*N+1) :
+      -3≤Fw (word N) q ∧ Fw (word N) q≤1 := by
+    by_cases h : q≤16*N
+    · rw [walk_in_word N q h]
+      have hc : ∀ r : Fin 16, -3≤height r ∧ height r≤1 := by decide
+      exact hc ⟨q%16,by omega⟩
+    · have he : q=16*N+1 := by omega
+      rw [he,hlast]
+      omega
+  have hf : ∀ j, j≤N → free (word N) 0 (16*j)≤4*j := by
+    intro j
+    induction j with
+    | zero => simp [free,cN]
+    | succ j ih =>
+      intro hj
+      have hi := ih (by omega)
+      have hc := free_in_copy N j (by omega)
+      have hs := cN_add (fun q => word N q=true ∧ ¬EndN (word N) 0 q) 0 (16*j) 16
+      unfold free at hi hc ⊢
+      simp only [Nat.zero_add] at hs
+      rw [show 16*(j+1)=16*j+16 by omega,hs]
+      omega
+  have hfree := hf N (by omega)
+  have htail := cN_succ_le (fun q => word N q=true ∧ ¬EndN (word N) 0 q) 0 (16*N)
+  change free (word N) 0 (16*N+1)≤free (word N) 0 (16*N)+1 at htail
+  have h5 : cN (fun r => height r=0) 0 16=5 := by simp [cN,height]
+  have h3 : cN (fun r => height r= -2) 0 16=3 := by simp [cN,height]
+  have hv0 := visits_blocks N 0 N (by omega)
+  have hv2 := visits_blocks N (-2) N (by omega)
+  rw [h5] at hv0
+  rw [h3] at hv2
+  have hv0last := cN_succ_pos (fun q => Fw (word N) q=0) 0 (16*N) (by simpa using hend)
+  have hv2last := cN_succ_neg (fun q => Fw (word N) q= -2) 0 (16*N) (by simpa [hend])
+  refine ⟨first_S_height_one_positive (word N) (16*N+1) ?_
+    (fun q hq => (hband q hq).2),by omega,by omega,by omega,hband⟩
+  simp [word,motif,show 0<16*N by omega]
+
+end Recaman.RepeatedVisitFreeGap

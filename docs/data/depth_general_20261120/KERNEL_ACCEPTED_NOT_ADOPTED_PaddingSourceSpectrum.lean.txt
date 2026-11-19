@@ -1,0 +1,150 @@
+import Recaman.InitialSeparatorTrim
+import Recaman.OldAdditionSourceRadius
+
+namespace Recaman.PaddingSourceSpectrum
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.InitialSeparatorTrim Recaman.OldAdditionSourceRadius
+open Recaman.LeadingRunSupply
+
+set_option maxHeartbeats 2000000
+
+private theorem padded_data (f : Nat → Bool) (d q : Nat) :
+    Fw (trimSSequence f 0 d) (d+q)=Fw f q-(d : Int) ∧
+    2*Ar (trimSSequence f 0 d) 0 (d+q)=
+      2*Ar f 0 q-2*(d : Int)*(q : Int)-(d : Int)*(d+1) := by
+  have hs := trimS_prefix f 0 d q
+  have hm := seg_mass (trimSSequence f 0 d) 0 (d+q)
+  have hf := seg_mass f 0 q
+  simp only [Nat.zero_add,Fw,Int.sub_zero] at hm hf
+  rw [hs,mass_append,mass_rep_false] at hm
+  have ha := twice_area_replicate_S d
+  have harea : Ar (trimSSequence f 0 d) 0 (d+q)=
+      areaW (List.replicate d false)+Ar f 0 q+(q : Int)*(-(d : Int)) := by
+    rw [Ar_areaW,hs,areaW_append,←Ar_areaW,seg_length,mass_rep_false]
+    omega
+  constructor
+  · omega
+  · rw [harea]
+    grind
+
+/-- A literal added S head produces the root equation, without any
+positive-deficit, free-count or orbit-realization assumption. -/
+theorem padded_root_equations (f : Nat → Bool) (r q : Nat) (hr : 1≤r) :
+    Win (trimSSequence f 0 r) 0 (r+q) ↔
+      Fw f q=(r : Int)+1 ∧
+      2*Ar f 0 q=(r : Int)*(2*(q : Int)+r+1) := by
+  obtain ⟨hheight,harea⟩ := padded_data f r q
+  constructor
+  · rintro ⟨_,hH,hB⟩
+    simp only [Nat.zero_add,Fw,Int.zero_add] at hH
+    refine ⟨by omega,?_⟩
+    rw [hB] at harea
+    grind
+  · rintro ⟨hH,hB⟩
+    refine ⟨by omega,?_,?_⟩
+    · simp only [Nat.zero_add,Fw,Int.zero_add]
+      omega
+    · have hz : 2*Ar (trimSSequence f 0 r) 0 (r+q)=0 := by
+        rw [harea]
+        grind
+      omega
+
+private theorem head_suffix_eq (f : Nat → Bool) (d i : Nat) (hi : i≤d) :
+    (fun k => trimSSequence f 0 d (i+k))=trimSSequence f 0 (d-i) := by
+  funext k
+  by_cases hk : k<d-i
+  · have hki : i+k<d := by omega
+    simp only [trimSSequence,if_pos hk,if_pos hki]
+  · have hki : ¬i+k<d := by omega
+    simp only [trimSSequence,if_neg hk,if_neg hki,Nat.zero_add]
+    congr 1
+    omega
+
+/-- Every individual new source sees exactly its remaining S head;
+the equation retains the complete original f-prefix through q. -/
+theorem added_source_equations (f : Nat → Bool) (d i q : Nat) (hi : i<d) :
+    Win (trimSSequence f 0 d) i (d+q-i) ↔
+      Fw f q=((d-i : Nat) : Int)+1 ∧
+      2*Ar f 0 q=((d-i : Nat) : Int)*(2*(q : Int)+(d-i : Nat)+1) := by
+  have hs := window_nat_shift (trimSSequence f 0 d) i 0 (d+q-i)
+  simp only [Nat.add_zero] at hs
+  rw [head_suffix_eq f d i (by omega)] at hs
+  have hclock : d+q-i=(d-i)+q := by omega
+  rw [hclock] at hs
+  simpa only [hclock] using hs.trans (padded_root_equations f (d-i) q (by omega))
+
+/-- Exhaust all old and added sources before assigning the actual tag.
+Existing co-suppliers are retained by the left disjunct. -/
+theorem padded_actual_iff (f : Nat → Bool) (d q : Nat) :
+    EndN (trimSSequence f 0 d) 0 (d+q) ↔
+      EndN f 0 q ∨ (f q=true ∧ ∃ r : Nat, 1≤r ∧ r≤d ∧
+        Fw f q=(r : Int)+1 ∧
+        2*Ar f 0 q=(r : Int)*(2*(q : Int)+r+1)) := by
+  have htail : (fun t => trimSSequence f 0 d (d+t))=f := by
+    funext t
+    simpa only [Nat.zero_add] using trimS_tail_sign f 0 d t
+  constructor
+  · rintro ⟨hA,u,k,_,huk,hW⟩
+    have hfA : f q=true := by
+      simpa only [trimS_tail_sign,Nat.zero_add] using hA
+    by_cases hdu : d≤u
+    · left
+      have hs := window_nat_shift (trimSSequence f 0 d) d (u-d) k
+      rw [Nat.add_sub_cancel' hdu,htail] at hs
+      exact ⟨hfA,u-d,k,Nat.zero_le _,by omega,hs.mp hW⟩
+    · right
+      refine ⟨hfA,d-u,by omega,by omega,?_⟩
+      have hk : k=d+q-u := by omega
+      rw [hk] at hW
+      exact (added_source_equations f d u q (by omega)).mp hW
+  · intro he
+    rcases he with ⟨hA,u,k,_,huk,hW⟩ | ⟨hA,r,hr,hrd,hH,hB⟩
+    · refine ⟨?_,d+u,k,Nat.zero_le _,by omega,?_⟩
+      · simpa only [trimS_tail_sign,Nat.zero_add] using hA
+      · have hs := window_nat_shift (trimSSequence f 0 d) d u k
+        rw [htail] at hs
+        exact hs.mpr hW
+    · let i := d-r
+      have hi : i<d := by dsimp [i]; omega
+      have hrem : d-i=r := by dsimp [i]; omega
+      have hW := (added_source_equations f d i q hi).mpr (by
+        rw [hrem]
+        exact ⟨hH,hB⟩)
+      exact ⟨by simpa only [trimS_tail_sign,Nat.zero_add] using hA,
+        i,d+q-i,Nat.zero_le _,by omega,hW⟩
+
+/-- The complete producer has a closed height/area test. No conclusion
+about free gains or positive transport is assumed or asserted here. -/
+theorem padded_actual_height_iff (f : Nat → Bool) (d q : Nat) :
+    EndN (trimSSequence f 0 d) 0 (d+q) ↔
+      EndN f 0 q ∨ (f q=true ∧ 2≤Fw f q ∧ Fw f q≤(d : Int)+1 ∧
+        2*Ar f 0 q=(Fw f q-1)*(2*(q : Int)+Fw f q)) := by
+  rw [padded_actual_iff]
+  constructor
+  · rintro (he | ⟨hA,r,hr,hrd,hH,hB⟩)
+    · exact Or.inl he
+    · right
+      refine ⟨hA,by omega,by omega,?_⟩
+      rw [hH]
+      simpa only [Int.add_sub_cancel,Int.add_assoc] using hB
+  · rintro (he | ⟨hA,hlo,hhi,hB⟩)
+    · exact Or.inl he
+    · right
+      let r := (Fw f q-1).toNat
+      have hc : (r : Int)=Fw f q-1 := Int.toNat_of_nonneg (by omega)
+      refine ⟨hA,r,by omega,by omega,by omega,?_⟩
+      rw [hc]
+      grind
+
+/-- At most one source clock in the added head can supply a target.
+This does not remove any alternative original source. -/
+theorem added_source_unique (f : Nat → Bool) (d i j q : Nat)
+    (hi : i<d) (hj : j<d)
+    (hI : Win (trimSSequence f 0 d) i (d+q-i))
+    (hJ : Win (trimSSequence f 0 d) j (d+q-j)) : i=j := by
+  have h1 := (added_source_equations f d i q hi).mp hI
+  have h2 := (added_source_equations f d j q hj).mp hJ
+  omega
+
+end Recaman.PaddingSourceSpectrum

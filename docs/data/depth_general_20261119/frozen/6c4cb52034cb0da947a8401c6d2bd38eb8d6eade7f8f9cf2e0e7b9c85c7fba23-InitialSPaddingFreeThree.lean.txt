@@ -1,0 +1,68 @@
+import Recaman.InitialSOneHeadPositive
+import Recaman.SFinalWindowLength
+
+namespace Recaman.InitialSPaddingFreeThree
+
+open Recaman.SingleWindowEquality Recaman.BlockSuffixPositivity
+open Recaman.AdditionRankSlack Recaman.LeadingRunSupply
+open Recaman.CapacityEqualityInduction
+open Recaman.ShortPeriodicSupply (sign)
+
+private theorem padded_walk (f g : Nat → Bool) (h0 : g 0=false)
+    (hs : ∀ i, g (i+1)=f i) : ∀ K,
+    Fw g (K+1)=Fw f K-1 ∧ Ar g 0 (K+1)=Ar f 0 K-((K+1 : Nat) : Int)
+  | 0 => by simp [Fw,Ar,h0,sign]
+  | K+1 => by
+    obtain ⟨hF,hB⟩ := padded_walk f g h0 hs K
+    have hF' : Fw g (K+1+1)=Fw f (K+1)-1 := by
+      rw [Fw_succ g (K+1),Fw_succ f K,hs K,hF]
+      omega
+    refine ⟨hF',?_⟩
+    rw [Ar_succ g 0 (K+1),Ar_succ f 0 K]
+    simp only [Nat.zero_add]
+    rw [hB,hF']
+    change Ar f 0 K-((K+1 : Nat) : Int)+(Fw f (K+1)-1-0)=
+      Ar f 0 K+(Fw f (K+1)-0)-((K+1+1 : Nat) : Int)
+    omega
+
+private theorem endpoint_padded_area :
+    ∀ w ∈ Recaman.ThreeNonsuppliedData.endpointWords, areaW (false::w)<0 := by decide
+
+/-- A new initial source cannot supply a window until four ORIGINAL
+free additions have occurred. No positive domain for the padded word is assumed. -/
+theorem padded_root_window_cost (f g : Nat → Bool) (K : Nat)
+    (h0 : g 0=false) (hs : ∀ i, g (i+1)=f i)
+    (hpos : ∀ k, 0<k → k≤K → cN (EndN f 0) 0 k+1≤cN (fun i => f i=false) 0 k)
+    (hw : Win g 0 (K+1)) : 4≤free f 0 K := by
+  apply Classical.byContradiction
+  intro hn
+  have hf : free f 0 K≤3 := by omega
+  obtain ⟨hF,hB⟩ := padded_walk f g h0 hs K
+  have hH : Fw g (K+1)=1 := by
+    have hh := hw.2.1
+    change Fw g (K+1)=0+1 at hh
+    exact hh
+  have hAr := hw.2.2
+  have hHf : Fw f K=2 := by omega
+  have hK : 0<K := by
+    by_cases hk : K=0
+    · subst K
+      simp [Fw] at hHf
+    · omega
+  have hp := hpos K hK (by omega)
+  have hsum := additions_split f 0 K
+  have hwalk := (cN_walk f 0 K).1
+  have hend : cN (EndN f 0) 0 K+1=cN (fun i => f i=false) 0 K := by
+    unfold free at hf
+    unfold additions free at hsum
+    simp only [Nat.zero_add] at hwalk
+    change Fw f K=0+(cN (fun i => f i=true) 0 K : Int)-(cN (fun i => f i=false) 0 K : Int) at hwalk
+    omega
+  have hwords := three_nonsupplied_excursion_word f 0 0 K
+    (β:=[]) BlockWord.nil (by simp [seg]) hpos hf hend
+  have hneg := endpoint_padded_area (seg f 0 K) hwords
+  simp [areaW,sign,seg_length] at hneg
+  rw [←Ar_areaW] at hneg
+  omega
+
+end Recaman.InitialSPaddingFreeThree

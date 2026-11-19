@@ -1,0 +1,31 @@
+{
+  "frozen_at": "2026-11-20T06:17:29.949110+09:00",
+  "new_question": "All-m affine, rather than prior quadratic, root plateau construction; leading coefficient104/55<2",
+  "family": "m>=0,N=6m+2,z=25m+10,U=55m+20,r=55m+18; root equation and priorfree upper104m+37",
+  "verification_parameters": [
+    1,
+    3
+  ],
+  "scope": "New exact constructed witnesses; no finite absence, old graph or cutoff increase. Data support all-m PAPER argument separately. Initial m0 was discovery.",
+  "cpu_budget_total": 2,
+  "previous_math_cpu_observed": 0.115622,
+  "new_per_process_cap": 1,
+  "supported_cumulative_with_full_new_second": 1.1156220000000001,
+  "wall_seconds": 5,
+  "revision": "353a56fb513cdea6445c72bdd9690300f5d6e58c",
+  "source_sha256": "525ffe5cb89c1e42314353cc5ed62bb91dff0e594b2f3a7aad50bf70310ec233",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261120/run_single.py",
+    "--tag",
+    "activation-linear",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261120/activation_linear.py",
+    "linear",
+    "docs/data/depth_general_20261120/ACTIVATION_LINEAR.json"
+  ]
+}

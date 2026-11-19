@@ -1936,3 +1936,25 @@ This is local completion of the already-established PAPER result, not a fresh ge
 ## 2026-11-18 — source-prefix and all-visit no-go boundaries
 
 E744 (REFUTED, all-N PAPER): fixed h/depth/width do not bound load on image-source-prefix free. E745 (REFUTED, all-N PAPER): a global initial S has unbounded WHOLE-free effect, even both original-positive and width fixed; LOW free remains equal. E746's original high-run free and E748's common-source gap>=8 are PROVED-LEAN supports, not the all-N glue. E747 four-A/triple is PROVED-PAPER only, failed implementation STOPPED. E749 kernel15-clock original-positive counter and E750 all-N W^N A construction refute unrestricted two-level all-visit payment and every fixed additive correction in the fixed geometry. E742 floor+2 and E743 M5 are intact; D_near<=all low free/C1/positive padding closure remain open. See 11/18 DAILY and the three mathematical notes; human review pending.
+
+## 2026-11-19: arbitrary head/free reserve (PAPER)
+
+E751: 元positive+newrootWin -> 元priorfree>=4（既存free3/不足1の8終端語を全negative padded areaへ消費）。E754: added sourceの残S r>=2なら元高さr+1/free>=r+2、r1はE751 -> 元最初4free保持 -> min(4,F)保存 -> 元F<=4全actual/free/positive輸送、明示ceiling3ならpositive。全d/全履歴/全source、未Lean・人間レビュー未。無制限positive閉性/C1は未接続。
+
+E752: all-(N,L) arbitrary-State greedy replay -> local stock/固定lookbehindだけでE750を除外する方法no-go。実canonical prefix/rawfreeのscopeは別。exact all-N original source分類はD_near2/F_low4N+1を供給し、親C1反例への誤昇格を防ぐ。E753は短いfirstfailureの内側long sourceを元countから供給するlocal枝削減。四停止Lean packetsの未受理private bytesを採用せず、既存Recaman/root/Auditを保持した。
+
+E756 PAPERはg_dの全new-source parabolaと一意activationから、元free rank k>=4/r<=k-2を供給。重み和<=T(T+3)/2と有限depth安定を導く。E754の全F<=d+4 positive criterionも原reserveを内部消費。E755 PAPERは全S新規着地を全visited coverへ単射し既存clock ledgerへ接続して全N/L弱seedを排除する。E757は最後H2から元free3の全prefix areaを抑え第五free候補の末尾freeを除く。全て未Lean、人間レビュー未。旧E721全r族の再利用はsupportで、独立新発見へ数えない。
+
+## 2026-11-20 New edges and unpaid consumers
+
+- **E-758 REFUTED:** source0 activation need not pay two original PRIOR free per added S. An unbounded exact original-positive family has r55m+18/Fprior104m+37; rational families refute every coefficient above 1+sqrt(3)/2 with any fixed correction. This is not C1 or canonical-orbit refutation; original LOW free is2 and the displayed numerical seed has no canonical prehistory.
+- **E-759 PROVED-PAPER:** two explicit chronological height/area collision tests characterize arbitrary finite greedy words from a coherent finite State, with complete future seed stock. The displayed constructor fails canonical global clock cost. Integer-mean balanced square exclusion is a supporting corollary, not another progress cycle.
+- **E-760 PROVED-PAPER:** actual S freshness improves common unchanged-source hit span from raw8 per gap to10(M-1)-2 parity. Raw positive Z^2 control shows the numerical premise is essential.
+- **E-761 PROVED-PAPER:** bounded nonnegative rejected-candidate band has paid rank (floor(Y/3)+1)H-floor(c/3) at clocks>=max(1,Y), arbitrary depth. Fixed numeric-source/height uses have a finite fresh-value wallet and a value/clock cardinality bound. H unbounded above and non-P2 numerical reuse remain possible in the present argument; no LOW-free conversion is supplied.
+
+Current notes/cards: [DAILY](RESEARCH_HANDOFF_2026-11-20_DAILY.md), [activation](RESEARCH_NOTE_2026-11-20_ACTIVATION_PLATEAU_COST.md), [word criterion](RESEARCH_NOTE_2026-11-20_GREEDY_WORD_COLLISIONS.md), [rank](RESEARCH_NOTE_2026-11-20_CANDIDATE_HEIGHT_POTENTIAL.md). All-parameter proofs are PAPER, finite exact checks COMPUTED, no new Lean adoption. H01 last-minimum induction STOPPED with parent all-R floor CONJECTURED. H03 kernel accepted but rejected as E713 reproof; vacuity helper512MB STOPPED before theorem probe, quarantined bytes never root/Audit. All old stops and E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean remain.
+
+Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-depth countermechanism and paid numerical rank); no-general-progress streak0 based on this evidence. Next30/60/10 with >=25min distinct mechanism. Confirmed work and publication values are in DAILY/journal after stop, not this statement.
+
+
+- **E-762 REFUTED / 全T PAPER**: 任意有限greedy語の全元source/free/LOWfreeを保持し、全stockの数値平行移動と元非正A候補preseedで全候補c>clockにできる。全Y同時にE761の選択event0。原語だけの無条件band被覆を停止、canonical-only条件は未反証。支持する正のconsumerはM<=K*(H_Q+floor(x/(b+1))+2)、endpoint Hへ支払い、全大域H上界を入力しない。[輸送と境界](RESEARCH_NOTE_2026-11-20_NUMERIC_BAND_TRANSLATION.md)。

@@ -1,0 +1,31 @@
+{
+  "started_jst": "2026-11-20T06:17:29.998787+09:00",
+  "tag": "activation-linear",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261120/activation_linear.py",
+    "linear",
+    "docs/data/depth_general_20261120/ACTIVATION_LINEAR.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "525ffe5cb89c1e42314353cc5ed62bb91dff0e594b2f3a7aad50bf70310ec233",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 47050,
+  "process_group": 47050,
+  "finished_jst": "2026-11-20T06:17:30.101802+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.103094499965664,
+  "worker_user_seconds": 0.060344999999999996,
+  "worker_sys_seconds": 0.006731,
+  "worker_cpu_seconds": 0.067076,
+  "worker_maxrss_native": 23904256,
+  "controller_cpu_seconds": 0.001467999999999997,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

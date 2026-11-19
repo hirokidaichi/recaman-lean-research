@@ -1,0 +1,66 @@
+Recaman/InitialSPaddingFreeThree.lean:18:31: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Fw g (K + 1)
+in the target expression
+  Fw g K + sign (g K) + sign (f K) = Fw f (K + 1) - 1
+
+f g : Nat → Bool
+h0 : g 0 = false
+hs : ∀ (i : Nat), g (i + 1) = f i
+K : Nat
+hF : Fw g (K + 1) = Fw f K - 1
+hB : Ar g 0 (K + 1) = Ar f 0 K - ↑(K + 1)
+⊢ Fw g K + sign (g K) + sign (f K) = Fw f (K + 1) - 1
+Recaman/InitialSPaddingFreeThree.lean:23:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  a + b + c - d + e + h + i ≤ -2
+where
+ a := Fw f K
+ b := ↑K
+ c := sign (f K)
+ d := Ar f 0 (K + 1)
+ e := Ar g 0 K
+ h := Fw g (Nat.add 0 K)
+ i := sign (g (Nat.add 0 K))
+Recaman/InitialSPaddingFreeThree.lean:45:6: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  0 ≤ a ≤ 3
+where
+ a := ↑(free f 0 0)
+Recaman/InitialSPaddingFreeThree.lean:54:4: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  d ≥ 0
+  -3 ≤ d - e ≤ 0
+  c ≥ 0
+  c - d ≥ 2
+  b ≥ 1
+  0 ≤ a ≤ 3
+where
+ a := ↑(free f 0 K)
+ b := ↑K
+ c := ↑(cN (fun i => f i = false) 0 K)
+ d := ↑(cN (EndN f 0) 0 K)
+ e := ↑(cN (fun x => f x = true) 0 K)
+Recaman/InitialSPaddingFreeThree.lean:60:2: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  e ≥ 0
+  c - d - e ≤ -1
+  b ≥ 0
+  -1 ≤ b + c - d - e ≤ 2
+  a ≥ 1
+  a + h ≤ -2
+where
+ a := ↑K
+ b := ↑(additions f 0 K)
+ c := Fw f (0 + K)
+ d := Fw f 0
+ e := ↑(cN (fun i => f i = true) 0 K)
+ h := (if false = true then 1 else -1) * (↑K + 1)
+Recaman/InitialSPaddingFreeThree.lean:40:13: warning: This simp argument is unused:
+  Nat.zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fw] at hH
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

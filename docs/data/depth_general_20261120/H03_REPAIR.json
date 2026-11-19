@@ -1,0 +1,6 @@
+{
+  "attempt": "H03-SPECTRUM-R",
+  "ordinary_repair_number": 1,
+  "cause": "The first compile reported only associativity/clock-normalization and an unassembled conjunction, not resource exhaustion or a missing mathematical input. One batch source revision fixes area sum order, transports the rewritten clock to the goal, explicitly constructs the two derived conjuncts and normalizes Int addition association.",
+  "restrictions": "No further repair, import split, helper extraction or cap increase if this attempt fails; all failed bytes frozen by runner."
+}
