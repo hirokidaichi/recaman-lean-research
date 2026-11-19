@@ -60,7 +60,9 @@ CPU実測: 数学worker0.479847秒、同controller部分0.016144秒、guard1.120
 main/HEAD/origin-main 353a56fb513cdea6445c72bdd9690300f5d6e58cをfetch確認。index空。11/19未公開成果152変更pathは同chat所有としてhash固定、前日journalを変更せず当日07:45以降へ公開持越し。他session11/07 journalは除外。旧全STOPPEDと禁止事項を継承。
 
 <!-- PUBLICATION_BEGIN -->
-未実行。公開済みとは呼ばない。
+研究snapshot **cdcc349ad4aac7b10e145865f158715607ee5ff8** を **origin/main** へ通常pushし、`git ls-remote origin refs/heads/main`との完全一致を確認（2026-11-20T07:57:34.781736+09:00）。hosted CI観測 **pending_or_in_progress for research snapshot; final receipt commit CI separately unconfirmed**。詳細は[receipt](data/depth_general_20261120/publication_snapshot/PUBLICATION_RECEIPT.json)とCI_SNAPSHOT.json参照、完了成功とは推定しない。ローカル全体検証/remote到達/hosted CIを分ける。
+
+この照合記録はdocs-onlyの最終commitへ保存し、その自己SHA/remote照合/CIは当日chatへ報告する。未保存の研究成果なし。他sessionの11/07 journalは変更せず対象外。
 <!-- PUBLICATION_END -->
 
 ## 追加handoff / 未完了unit
