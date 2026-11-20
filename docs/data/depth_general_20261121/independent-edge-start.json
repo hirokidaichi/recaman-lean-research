@@ -1,0 +1,20 @@
+{
+  "started_jst": "2026-11-21T06:48:28.490817+09:00",
+  "tag": "independent-edge",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261121/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261121/independent_edge_audit.py",
+    "docs/data/depth_general_20261121/INDEPENDENT_EDGE_INPUT.json",
+    "docs/data/depth_general_20261121/INDEPENDENT_EDGE_OUTPUT.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "9c7c79d834844c32e51fa4c71b3dc86368be421247a6568f40ffb9ffd3c5c363",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 82126,
+  "process_group": 82126
+}

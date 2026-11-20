@@ -1,0 +1,28 @@
+{
+  "frozen_at": "2026-11-21T06:34:21.770315+09:00",
+  "question": "H04 floor-raising, recursive lower floor and fixed-source horizon on numerical-positive weighted histories",
+  "source_sha256": "55d98f0084f6c51692cc573b2f1223f3fcbc130c3f4656466a2499e8e2ab9f2d",
+  "input_sha256": "6d9678a2722812332d1e6d9890a2c16b2bd1cbdd00c59800b021ff7c955fbcb0",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.068273,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.068273,
+  "wall_cap": 5,
+  "contract": "today-verified cooperative one Python with no descendants, exact wait4; not generic process-tree/OS AS",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "numeric-horizon",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/numeric_horizon.py",
+    "docs/data/depth_general_20261121/NUMERIC_HORIZON_INPUT.json",
+    "docs/data/depth_general_20261121/NUMERIC_HORIZON_OUTPUT.json"
+  ],
+  "stop": "first unexpected discrepancy or cap failure. One mathematical repair only if independent diagnosis, no resource/tactic/range rescue."
+}

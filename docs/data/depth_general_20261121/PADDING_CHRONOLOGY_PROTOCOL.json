@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-21T06:31:48.510722+09:00",
+  "card": "H-20261121-03",
+  "question": "S-side admission iff d<r despite exact full original A-source/free/LOWfree/positive preservation",
+  "source_sha256": "c7bd3a00471b1e66d3b2313c8819c2fddf8a1fa48da65f162396e3b3e87af853",
+  "input_sha256": "450e56c1e8e8ac18907fa4ca39f74bbf22c23a4b797ed74bf7ea8068b6213a3d",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "math_total_budget_seconds": 2,
+  "prior_math_measured": 0.035591,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.035591,
+  "wall_cap": 5,
+  "contract": "today verified cooperative single Python no descendants, exact wait4 usage; no generic tree cap or OS AS",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "padding-chronology",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/padding_chronology.py",
+    "docs/data/depth_general_20261121/PADDING_CHRONOLOGY_INPUT.json",
+    "docs/data/depth_general_20261121/PADDING_CHRONOLOGY_OUTPUT.json"
+  ],
+  "stop": "first unexpected assertion, source disagreement or execution error; at most one mathematical repair with declared new bytes/cost before rerun; no cap rescue"
+}

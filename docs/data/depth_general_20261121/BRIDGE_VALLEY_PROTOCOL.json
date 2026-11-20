@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-21T06:16:37.507141+09:00",
+  "question": "H02 exact same-source LOW target bridge free-birth; new two-source valley preload class preserving original full-history positive/chronology",
+  "role": "falsifier",
+  "math_total_budget_seconds": 2,
+  "prior_math_measured": 0,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1,
+  "wall_cap": 5,
+  "contract": "current-day verified cooperative single Python, no descendants/fork/exec, wait4 measured, not generic process-tree cumulative cap/OS AS",
+  "source_sha256": "684a4bfcae3ec73b19b3d54e10b7e0e05fe3a8b24c63e4a07a252a32e6167e54",
+  "input_sha256": "4355c49e72cd3151843877b2ac2d1ea2a06e73be57132d4c6cfd42c2ddda453d",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "bridge-valleys",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/bridge_valleys.py",
+    "docs/data/depth_general_20261121/BRIDGE_VALLEY_INPUT.json",
+    "docs/data/depth_general_20261121/BRIDGE_VALLEY_OUTPUT.json"
+  ],
+  "stop": "first source-method disagreement or unexpected computation failure; no cap/range rescue. If class has no full chronological counter, do not call parent proved/refuted and stop this ansatz at15min."
+}

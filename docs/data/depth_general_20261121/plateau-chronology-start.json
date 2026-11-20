@@ -1,0 +1,20 @@
+{
+  "started_jst": "2026-11-21T06:56:22.371929+09:00",
+  "tag": "plateau-chronology",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261121/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261121/plateau_chronology.py",
+    "docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_INPUT.json",
+    "docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_OUTPUT.json"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 5.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "a397f42902305090e6c45a50a6725bdbc955f7bc4302f6bc754e1e88bf8e0242",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 87777,
+  "process_group": 87777
+}

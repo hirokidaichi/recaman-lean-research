@@ -1,0 +1,242 @@
+{
+  "parent": "R-20261121-01",
+  "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+  "journal": "docs/data/daily_research/2026-11-21.json",
+  "actual_start": "2026-11-21T06:01:12.788289+09:00",
+  "actual_stop": "2026-11-21T07:55:31.131739+09:00",
+  "allocation_seconds": {
+    "setup": 254.937304,
+    "general_research": 4646.478968000001,
+    "audit": 1327.4325519999998,
+    "handoff": 629.494626,
+    "local_research": 0.0
+  },
+  "target_seconds": 7200,
+  "local_progress": 0,
+  "depth_general_progress": true,
+  "general_stagnation_streak": 0,
+  "next_allocation": "30/60/10",
+  "cpu_summary": {
+    "date": "2026-11-21",
+    "mathematical_worker_budget_seconds": 2,
+    "mathematical_worker_cpu_seconds": 0.33654,
+    "guard_worker_cpu_seconds": 1.127909,
+    "mathematical_jobs": [
+      {
+        "tag": "bridge-valleys",
+        "cpu": 0.035591,
+        "exit": 0
+      },
+      {
+        "tag": "filled-stock",
+        "cpu": 0.03009,
+        "exit": 0
+      },
+      {
+        "tag": "floor-cut",
+        "cpu": 0.036432,
+        "exit": 0
+      },
+      {
+        "tag": "generic-seed",
+        "cpu": 0.045222,
+        "exit": 0
+      },
+      {
+        "tag": "independent-edge",
+        "cpu": 0.04083,
+        "exit": 0
+      },
+      {
+        "tag": "low-seed",
+        "cpu": 0.0373,
+        "exit": 0
+      },
+      {
+        "tag": "numeric-horizon",
+        "cpu": 0.041468,
+        "exit": 0
+      },
+      {
+        "tag": "padding-chronology",
+        "cpu": 0.032681999999999996,
+        "exit": 0
+      },
+      {
+        "tag": "plateau-chronology",
+        "cpu": 0.036925,
+        "exit": 0
+      }
+    ],
+    "guard_jobs": [
+      {
+        "tag": "guard-cpu",
+        "cpu": 1.003862,
+        "exit": -24
+      },
+      {
+        "tag": "guard-exec",
+        "cpu": 0.029382999999999996,
+        "exit": 0
+      },
+      {
+        "tag": "guard-fork",
+        "cpu": 0.037294999999999995,
+        "exit": 0
+      },
+      {
+        "tag": "guard-normal",
+        "cpu": 0.031493999999999994,
+        "exit": 0
+      },
+      {
+        "tag": "guard-wall",
+        "cpu": 0.025875,
+        "exit": -9
+      }
+    ],
+    "controller_cpu_seconds_measured": 0.024347000000000008,
+    "lean_validation": {
+      "launched": false,
+      "measured_cpu_seconds": null,
+      "reason": "No Lean changes/adoption; stopped helper512MB not retried"
+    },
+    "other_tools_cpu": "not globally measured, not zero",
+    "contract": "current-day verified cooperative single Python/no descendants and wait4; not generic tree/OS AS",
+    "all_owned_worker_processes_finished": true
+  },
+  "confirmed_work_seconds": 6858.343,
+  "shortfall_seconds": 341.657,
+  "excluded_non_work_seconds": {},
+  "unconfirmed_gap_seconds": 0,
+  "overtime_work_seconds": 0,
+  "open_interval_unconfirmed_seconds": 0,
+  "distinct_mechanism": {
+    "mechanism": "H04 numerical positivity, last-floor clock/value potential and actual stock/source/free consumers; different from H02/H03 padding and H05 chronology",
+    "segments": [
+      {
+        "start": "2026-11-21T06:32:35.265082+09:00",
+        "end": "2026-11-21T06:34:07.946880+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/numeric-floor-raising-and-source-horizon"
+      },
+      {
+        "start": "2026-11-21T06:34:07.946880+09:00",
+        "end": "2026-11-21T06:36:28.334952+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/numeric-floor-raising-and-source-horizon"
+      },
+      {
+        "start": "2026-11-21T06:36:28.334952+09:00",
+        "end": "2026-11-21T06:37:50.031483+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/numeric-floor-raising-and-source-horizon"
+      },
+      {
+        "start": "2026-11-21T06:37:50.031483+09:00",
+        "end": "2026-11-21T06:39:37.386567+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/bounded-value-last-floor-cut"
+      },
+      {
+        "start": "2026-11-21T06:39:37.386567+09:00",
+        "end": "2026-11-21T06:42:42.904229+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/joint-clock-value-floor-potential"
+      },
+      {
+        "start": "2026-11-21T06:42:42.904229+09:00",
+        "end": "2026-11-21T06:43:47.094647+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/joint-clock-value-floor-potential"
+      },
+      {
+        "start": "2026-11-21T06:43:47.094647+09:00",
+        "end": "2026-11-21T06:44:55.342066+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/joint-clock-value-floor-potential"
+      },
+      {
+        "start": "2026-11-21T06:44:55.342066+09:00",
+        "end": "2026-11-21T06:46:07.408705+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/triangular-initial-floor-and-gate"
+      },
+      {
+        "start": "2026-11-21T06:46:07.408705+09:00",
+        "end": "2026-11-21T06:47:22.652045+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/triangular-initial-floor-and-gate"
+      },
+      {
+        "start": "2026-11-21T06:47:22.652045+09:00",
+        "end": "2026-11-21T06:48:57.580725+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/independent-escape-audit-and-first-gate"
+      },
+      {
+        "start": "2026-11-21T06:48:57.580725+09:00",
+        "end": "2026-11-21T06:50:07.059278+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/source-free-consumer-semantic-audit"
+      },
+      {
+        "start": "2026-11-21T06:50:07.059278+09:00",
+        "end": "2026-11-21T06:52:10.735626+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/source-free-consumer-semantic-audit"
+      },
+      {
+        "start": "2026-11-21T07:00:37.960656+09:00",
+        "end": "2026-11-21T07:01:53.792290+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/filled-stock-prefix-and-original-free-consumer"
+      },
+      {
+        "start": "2026-11-21T07:01:53.792290+09:00",
+        "end": "2026-11-21T07:03:04.231281+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/filled-stock-prefix-and-original-free-consumer"
+      },
+      {
+        "start": "2026-11-21T07:03:04.231281+09:00",
+        "end": "2026-11-21T07:04:55.200321+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/finite-Q-and-source-consumer-proof-audit"
+      },
+      {
+        "start": "2026-11-21T07:04:55.200321+09:00",
+        "end": "2026-11-21T07:06:54.006367+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/finite-Q-and-source-consumer-proof-audit"
+      },
+      {
+        "start": "2026-11-21T07:06:54.006367+09:00",
+        "end": "2026-11-21T07:07:38.875943+09:00",
+        "session": "ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad",
+        "phase": "research",
+        "unit": "H-20261121-04/semantic-boundary-completion"
+      }
+    ],
+    "confirmed_seconds": 1596.385831,
+    "contained_in_parent": true,
+    "scope": "Journal-confirmed mechanism intervals include proof/falsifier/semantic audit, not pure thinking or CPU; no waiting, future credit, H03/H05 unit or duplicate CPU added."
+  },
+  "scope": "Confirmed checked intervals, not pure thinking/CPU; post-stop publication excluded; no previous-day time added."
+}

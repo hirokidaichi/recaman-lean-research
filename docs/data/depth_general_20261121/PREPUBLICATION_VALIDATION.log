@@ -1,0 +1,56 @@
+$ ['bash', 'scripts/check_research_registry.sh']
+Research registry audit: 767 entries, 477 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 333 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+G6 static: 3 of 4 protected claims pinned, 1 unpinned with a reason; lock has 22 entries (Lean half runs in scripts/check.sh).
+
+$ ['bash', 'scripts/check_module_architecture.sh']
+Module graph audit: Recaman root reaches 1039 of 1039 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 135 frontier modules match their direct-import boundary.
+
+$ ['python3', 'viewer/gen_manifest.py', '--check']
+manifest.json is up to date: 1040 modules, 167 reports
+
+$ ['make', 'brief']
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-20 日次研究（確定実績はDAILY/journal参照）。任意深さの新しい反例機構と実greedyの支払済みrankをPAPERで得た。一般C1/Q/H/SL/全射性と原LOW-free会計への接続は未証明。
+
+- **現在の一問**: 元positive/initial-S h/return2-hの最低点深さを、元LOWfreeのDISTINCT affine candidate classesで払えるか。次回cardはCONJECTURED/未実行であり、新進展に数えない。
+- **得た新edge**: S-head admissionの完全閾値とno-go、数値positiveからのPnext<=3P-1時間potential、coherent plateau接着、generic seed最小class会計、LOWfree一stock固定負荷の全N反証。
+- **未払い**: 初期stockの元符号前史/canonical由来、数値残額から元LOW class予算、任意の交互回復でのdisjoint支払い。H01/H02/C1/Q/H/SL/全射性は未証明。
+- **監査境界**: E767自身は新minimum差をdisjoint recovery stripで払えている。補助負荷反例をC1反例へ上げず、有限prefixごとのseedを一無限Stateへ接着しない。Lean helper512MB等の停止も再開しない。
+- **継続**: local0/general新証拠あり、親cycle連続進展なし0（新証拠による維持）。次30/60/10/別機構>=25min、当日別機構1596.385831sは親内。確定実績/CPU/公開SHAはstop後[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md)/journal。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 1040 (including Audit)
+  Import contracts: 135; audit declarations: 3989
+
+$ ['git', 'diff', '--check']
+
+$ make brief (after current metadata correction)
+RECAMÁN RESEARCH FRONTIER BRIEF
+Source: docs/CURRENT_FRONTIER.md / Research brief
+最終更新: 2026-11-21 日次研究（実績はstop後DAILY/journalで確定）。任意深さのS admission・数値時間potential・元LOWfree seed負荷の新証拠はPAPER、一般C1は未証明。
+
+- **現在の一問**: 元positive/initial-S h/return2-hの最低点深さを、元LOWfreeのDISTINCT affine candidate classesで払えるか。次回cardはCONJECTURED/未実行であり、新進展に数えない。
+- **得た新edge**: S-head admissionの完全閾値とno-go、数値positiveからのPnext<=3P-1時間potential、coherent plateau接着、generic seed最小class会計、LOWfree一stock固定負荷の全N反証。
+- **未払い**: 初期stockの元符号前史/canonical由来、数値残額から元LOW class予算、任意の交互回復でのdisjoint支払い。H01/H02/C1/Q/H/SL/全射性は未証明。
+- **監査境界**: E767自身は新minimum差をdisjoint recovery stripで払えている。補助負荷反例をC1反例へ上げず、有限prefixごとのseedを一無限Stateへ接着しない。Lean helper512MB等の停止も再開しない。
+- **継続**: local0/general新証拠あり、親cycle連続進展なし0（新証拠による維持）。次30/60/10/別機構>=25min、当日別機構1596.385831sは親内。確定実績/CPU/公開SHAはstop後[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md)/journal。
+
+[EVIDENCE — labels read from EVIDENCE_REGISTRY.tsv]
+  E-001 [CONJECTURED] global — docs/CURRENT_FRONTIER.md
+  E-067 [CONJECTURED] periodic-word-obstruction — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-070 [CONJECTURED] periodic-supply-capacity — docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md
+  E-179 [COMPUTED] high-ss-local-donation — docs/data/issue73_20260911/capacity_extremal/local_surplus.txt
+
+[SOURCE COUNTS — run make check to verify]
+  Lean source files: 1040 (including Audit)
+  Import contracts: 135; audit declarations: 3989

@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-21T06:41:07.015296+09:00",
+  "card": "H04 strengthening, not failed-claim repair",
+  "question": "2X(last-floor)+elapsed<=2X(cut), Pnext<=3P-1, explicit finite witness and weak-model sharpness",
+  "source_sha256": "2455b44d0e239a0055d4e40e9a5528f9bf36d5ca3ae028ff62cb7e08436ae2fd",
+  "input_sha256": "b55b6fb2e9e53dd9008ab11417f7f988b363028a240d4d6f5b1f0655f4b02653",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.109741,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.109741,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "floor-cut",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/floor_cut_potential.py",
+    "docs/data/depth_general_20261121/FLOOR_CUT_INPUT.json",
+    "docs/data/depth_general_20261121/FLOOR_CUT_OUTPUT.json"
+  ],
+  "contract": "today-verified cooperative single Python, no descendants, wait4 exact, not generic tree/OS AS",
+  "stop": "first unexpected disagreement; one mathematical repair only after diagnosis/freeze, no cap rescue"
+}

@@ -1,5 +1,25 @@
 # Current research frontier
 
+最終更新: 2026-11-21 日次研究（確定実績はDAILY/journal参照）。任意深さのS admission・数値時間potential・元LOWfree seed負荷の新証拠はPAPER、一般C1は未証明。
+
+## 2026-11-21: S admission, numerical floor time and seed reuse (PAPER / human review pending)
+
+- **E-763 REFUTED**: all original A-source/free/LOWfree/positive data do not supply S novelty under arbitrary head depth. The exact new-head S threshold is derived; LOWfree2 admits arbitrarily late first obstruction. Main return/C1 remains outside this counterfamily.
+- **E-764 PROVED-PAPER**: the joint last-floor clock/value potential supplies explicit old-P2-source last-use and original-total-free exit clocks. One fixed infinite positive weighted walk has cumulative H tending to infinity. Numerical value/base remain paid inputs, and non-P2 blockers remain possible.
+- **E-765 PROVED-PAPER**: OLD E758 cost counters survive full original/padded S chronology and complete coherent finite seed replay. W's every finite prefix is admissible, but no fixed numerical State realizes W forever. This is not canonical reachability.
+- **E-766 PROVED-PAPER**: outside finitely many exceptional base clocks, exact minimum coherent stock size is1+K (or2+K with0), K distinct ORIGINAL-free candidate affine classes. It is not F and exceptions are not erased.
+- **E-767 REFUTED**: one seed value can force arbitrarily many ORIGINAL LOWfree A even with all positive prefixes, coherent chronology and return2-h. Other stock grows; disjoint recovery strips pay this family's full depth, so it is NOT a C1 counter.
+
+[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md), [S threshold](RESEARCH_NOTE_2026-11-21_S_HEAD_ADMISSION.md), [numeric time](RESEARCH_NOTE_2026-11-21_NUMERIC_SOURCE_HORIZON.md), [plateau](RESEARCH_NOTE_2026-11-21_PLATEAU_CHRONOLOGY.md), [seed classes](RESEARCH_NOTE_2026-11-21_SEED_CLASS_REUSE.md), [LOW reuse](RESEARCH_NOTE_2026-11-21_LOW_SEED_REUSE.md). All unbounded arguments are PAPER, finite predicates COMPUTED, no new Lean adoption. All original sources/stock-before prefixes remain; arbitrary State/finite completion/canonical/infinite history are distinct. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean and all old STOPPED states are unchanged.
+
+## Research brief
+
+- **現在の一問**: 元positive/initial-S h/return2-hの最低点深さを、元LOWfreeのDISTINCT affine candidate classesで払えるか。次回cardはCONJECTURED/未実行であり、新進展に数えない。
+- **得た新edge**: S-head admissionの完全閾値とno-go、数値positiveからのPnext<=3P-1時間potential、coherent plateau接着、generic seed最小class会計、LOWfree一stock固定負荷の全N反証。
+- **未払い**: 初期stockの元符号前史/canonical由来、数値残額から元LOW class予算、任意の交互回復でのdisjoint支払い。H01/H02/C1/Q/H/SL/全射性は未証明。
+- **監査境界**: E767自身は新minimum差をdisjoint recovery stripで払えている。補助負荷反例をC1反例へ上げず、有限prefixごとのseedを一無限Stateへ接着しない。Lean helper512MB等の停止も再開しない。
+- **継続**: local0/general新証拠あり、親cycle連続進展なし0（新証拠による維持）。次30/60/10/別機構>=25min、当日別機構1596.385831sは親内。確定実績/CPU/公開SHAはstop後[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md)/journal。
+
 ## 2026-11-20: activation cost and actual numerical freshness (PAPER / human review pending)
 
 - **E-758 REFUTED:** source0 activation need not pay two original PRIOR free per added S. An unbounded exact original-positive family has r55m+18/Fprior104m+37; rational families refute every coefficient above 1+sqrt(3)/2 with any fixed correction. This is not C1 or canonical-orbit refutation; original LOW free is2 and the displayed numerical seed has no canonical prehistory.
@@ -14,7 +34,7 @@ Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-dept
 
 最終更新: 2026-11-20 日次研究（確定実績はDAILY/journal参照）。任意深さの新しい反例機構と実greedyの支払済みrankをPAPERで得た。一般C1/Q/H/SL/全射性と原LOW-free会計への接続は未証明。
 
-## Research brief
+## Previous research brief (2026-11-20)
 
 - **E-758 REFUTED / 全族PAPER**。S前置き活性化のprior free>=2r+2は偽。任意mのr55m+18/Fprior104m+37、全c>1+sqrt(3)/2と固定修正を破る有理族。全old/元positiveを保持、LOW free2の高所targetでC1反例ではない。
 - **E-759 PROVED-PAPER**。任意有限sign語の時系列衝突検査と、coherent有限Stateのgreedy実行可能性が同値。全future候補seedも保持。表示seedはcanonical全clock費用を払わず、原freeを未知seed過去へ輸送しない。

@@ -1958,3 +1958,17 @@ Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-dept
 
 
 - **E-762 REFUTED / 全T PAPER**: 任意有限greedy語の全元source/free/LOWfreeを保持し、全stockの数値平行移動と元非正A候補preseedで全候補c>clockにできる。全Y同時にE761の選択event0。原語だけの無条件band被覆を停止、canonical-only条件は未反証。支持する正のconsumerはM<=K*(H_Q+floor(x/(b+1))+2)、endpoint Hへ支払い、全大域H上界を入力しない。[輸送と境界](RESEARCH_NOTE_2026-11-20_NUMERIC_BAND_TRANSLATION.md)。
+
+## 2026-11-21 chronological/source-time/stock boundary
+
+
+- **E-763 REFUTED**: all original A-source/free/LOWfree/positive data do not supply S novelty under arbitrary head depth. The exact new-head S threshold is derived; LOWfree2 admits arbitrarily late first obstruction. Main return/C1 remains outside this counterfamily.
+- **E-764 PROVED-PAPER**: the joint last-floor clock/value potential supplies explicit old-P2-source last-use and original-total-free exit clocks. One fixed infinite positive weighted walk has cumulative H tending to infinity. Numerical value/base remain paid inputs, and non-P2 blockers remain possible.
+- **E-765 PROVED-PAPER**: OLD E758 cost counters survive full original/padded S chronology and complete coherent finite seed replay. W's every finite prefix is admissible, but no fixed numerical State realizes W forever. This is not canonical reachability.
+- **E-766 PROVED-PAPER**: outside finitely many exceptional base clocks, exact minimum coherent stock size is1+K (or2+K with0), K distinct ORIGINAL-free candidate affine classes. It is not F and exceptions are not erased.
+- **E-767 REFUTED**: one seed value can force arbitrarily many ORIGINAL LOWfree A even with all positive prefixes, coherent chronology and return2-h. Other stock grows; disjoint recovery strips pay this family's full depth, so it is NOT a C1 counter.
+
+[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md), [S threshold](RESEARCH_NOTE_2026-11-21_S_HEAD_ADMISSION.md), [numeric time](RESEARCH_NOTE_2026-11-21_NUMERIC_SOURCE_HORIZON.md), [plateau](RESEARCH_NOTE_2026-11-21_PLATEAU_CHRONOLOGY.md), [seed classes](RESEARCH_NOTE_2026-11-21_SEED_CLASS_REUSE.md), [LOW reuse](RESEARCH_NOTE_2026-11-21_LOW_SEED_REUSE.md). All unbounded arguments are PAPER, finite predicates COMPUTED, no new Lean adoption. All original sources/stock-before prefixes remain; arbitrary State/finite completion/canonical/infinite history are distinct. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean and all old STOPPED states are unchanged.
+
+
+Stop constant seed-load and A-tag-only numerical depth transport; do not restart prior stopped graph/Lean/checker jobs. No global C1 or canonical conclusion. Next distinct LOW candidate-class potential is untested.

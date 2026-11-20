@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-21",
+  "mathematical_worker_budget_seconds": 2,
+  "mathematical_worker_cpu_seconds": 0.33654,
+  "guard_worker_cpu_seconds": 1.127909,
+  "mathematical_jobs": [
+    {
+      "tag": "bridge-valleys",
+      "cpu": 0.035591,
+      "exit": 0
+    },
+    {
+      "tag": "filled-stock",
+      "cpu": 0.03009,
+      "exit": 0
+    },
+    {
+      "tag": "floor-cut",
+      "cpu": 0.036432,
+      "exit": 0
+    },
+    {
+      "tag": "generic-seed",
+      "cpu": 0.045222,
+      "exit": 0
+    },
+    {
+      "tag": "independent-edge",
+      "cpu": 0.04083,
+      "exit": 0
+    },
+    {
+      "tag": "low-seed",
+      "cpu": 0.0373,
+      "exit": 0
+    },
+    {
+      "tag": "numeric-horizon",
+      "cpu": 0.041468,
+      "exit": 0
+    },
+    {
+      "tag": "padding-chronology",
+      "cpu": 0.032681999999999996,
+      "exit": 0
+    },
+    {
+      "tag": "plateau-chronology",
+      "cpu": 0.036925,
+      "exit": 0
+    }
+  ],
+  "guard_jobs": [
+    {
+      "tag": "guard-cpu",
+      "cpu": 1.003862,
+      "exit": -24
+    },
+    {
+      "tag": "guard-exec",
+      "cpu": 0.029382999999999996,
+      "exit": 0
+    },
+    {
+      "tag": "guard-fork",
+      "cpu": 0.037294999999999995,
+      "exit": 0
+    },
+    {
+      "tag": "guard-normal",
+      "cpu": 0.031493999999999994,
+      "exit": 0
+    },
+    {
+      "tag": "guard-wall",
+      "cpu": 0.025875,
+      "exit": -9
+    }
+  ],
+  "controller_cpu_seconds_measured": 0.024347000000000008,
+  "lean_validation": {
+    "launched": false,
+    "measured_cpu_seconds": null,
+    "reason": "No Lean changes/adoption; stopped helper512MB not retried"
+  },
+  "other_tools_cpu": "not globally measured, not zero",
+  "contract": "current-day verified cooperative single Python/no descendants and wait4; not generic tree/OS AS",
+  "all_owned_worker_processes_finished": true
+}

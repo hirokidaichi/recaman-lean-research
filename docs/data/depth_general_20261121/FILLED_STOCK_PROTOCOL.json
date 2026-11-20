@@ -1,0 +1,28 @@
+{
+  "frozen_at": "2026-11-21T07:05:56.625741+09:00",
+  "question": "H04 NEW actual filled-stock producer and global original old-source cutoff, no prefix reset",
+  "source_sha256": "029f2f9d2ddf0b28a11fd9d48aaa55a41e42bc202375012526619fdab4bfb41d",
+  "input_sha256": "b1375b8baf04c4ccd41774e1dea2157f2179238e877c74d85c24f4850db05ad8",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.223928,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.223928,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "filled-stock",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/filled_stock_consumer.py",
+    "docs/data/depth_general_20261121/FILLED_STOCK_INPUT.json",
+    "docs/data/depth_general_20261121/FILLED_STOCK_OUTPUT.json"
+  ],
+  "contract": "today-verified cooperative one Python, no descendants, wait4 exact, not generic tree/OS AS",
+  "stop": "first incorrect producer/source/cutoff stops the consumer, one mathematical repair maximum, no resource rescue"
+}

@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-21T07:29:00.090871+09:00",
+  "results": [
+    {
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "exit": 0,
+      "wall_seconds": 6.972854375024326,
+      "output": "Research registry audit: 767 entries, 477 PROVED-LEAN rows linked to Recaman/Audit.lean.\nHarness gates G1-G5: 333 PROVED-LEAN rows >= E-344 pass.\nProtected claims: 4 central rows keep their pinned labels.\nG6 static: 3 of 4 protected claims pinned, 1 unpinned with a reason; lock has 22 entries (Lean half runs in scripts/check.sh).\n"
+    },
+    {
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "exit": 0,
+      "wall_seconds": 2.821688708034344,
+      "output": "Module graph audit: Recaman root reaches 1039 of 1039 library modules; Audit is a separate acyclic entry point.\nImport contract audit: 135 frontier modules match their direct-import boundary.\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "viewer/gen_manifest.py",
+        "--check"
+      ],
+      "exit": 0,
+      "wall_seconds": 0.11629679193720222,
+      "output": "manifest.json is up to date: 1040 modules, 167 reports\n"
+    },
+    {
+      "argv": [
+        "make",
+        "brief"
+      ],
+      "exit": 0,
+      "wall_seconds": 0.05790329200681299,
+      "output": "RECAM\u00c1N RESEARCH FRONTIER BRIEF\nSource: docs/CURRENT_FRONTIER.md / Research brief\n\u6700\u7d42\u66f4\u65b0: 2026-11-20 \u65e5\u6b21\u7814\u7a76\uff08\u78ba\u5b9a\u5b9f\u7e3e\u306fDAILY/journal\u53c2\u7167\uff09\u3002\u4efb\u610f\u6df1\u3055\u306e\u65b0\u3057\u3044\u53cd\u4f8b\u6a5f\u69cb\u3068\u5b9fgreedy\u306e\u652f\u6255\u6e08\u307frank\u3092PAPER\u3067\u5f97\u305f\u3002\u4e00\u822cC1/Q/H/SL/\u5168\u5c04\u6027\u3068\u539fLOW-free\u4f1a\u8a08\u3078\u306e\u63a5\u7d9a\u306f\u672a\u8a3c\u660e\u3002\n\n- **\u73fe\u5728\u306e\u4e00\u554f**: \u5143positive/initial-S h/return2-h\u306e\u6700\u4f4e\u70b9\u6df1\u3055\u3092\u3001\u5143LOWfree\u306eDISTINCT affine candidate classes\u3067\u6255\u3048\u308b\u304b\u3002\u6b21\u56decard\u306fCONJECTURED/\u672a\u5b9f\u884c\u3067\u3042\u308a\u3001\u65b0\u9032\u5c55\u306b\u6570\u3048\u306a\u3044\u3002\n- **\u5f97\u305f\u65b0edge**: S-head admission\u306e\u5b8c\u5168\u95be\u5024\u3068no-go\u3001\u6570\u5024positive\u304b\u3089\u306ePnext<=3P-1\u6642\u9593potential\u3001coherent plateau\u63a5\u7740\u3001generic seed\u6700\u5c0fclass\u4f1a\u8a08\u3001LOWfree\u4e00stock\u56fa\u5b9a\u8ca0\u8377\u306e\u5168N\u53cd\u8a3c\u3002\n- **\u672a\u6255\u3044**: \u521d\u671fstock\u306e\u5143\u7b26\u53f7\u524d\u53f2/canonical\u7531\u6765\u3001\u6570\u5024\u6b8b\u984d\u304b\u3089\u5143LOW class\u4e88\u7b97\u3001\u4efb\u610f\u306e\u4ea4\u4e92\u56de\u5fa9\u3067\u306edisjoint\u652f\u6255\u3044\u3002H01/H02/C1/Q/H/SL/\u5168\u5c04\u6027\u306f\u672a\u8a3c\u660e\u3002\n- **\u76e3\u67fb\u5883\u754c**: E767\u81ea\u8eab\u306f\u65b0minimum\u5dee\u3092disjoint recovery strip\u3067\u6255\u3048\u3066\u3044\u308b\u3002\u88dc\u52a9\u8ca0\u8377\u53cd\u4f8b\u3092C1\u53cd\u4f8b\u3078\u4e0a\u3052\u305a\u3001\u6709\u9650prefix\u3054\u3068\u306eseed\u3092\u4e00\u7121\u9650State\u3078\u63a5\u7740\u3057\u306a\u3044\u3002Lean helper512MB\u7b49\u306e\u505c\u6b62\u3082\u518d\u958b\u3057\u306a\u3044\u3002\n- **\u7d99\u7d9a**: local0/general\u65b0\u8a3c\u62e0\u3042\u308a\u3001\u89aacycle\u9023\u7d9a\u9032\u5c55\u306a\u30570\uff08\u65b0\u8a3c\u62e0\u306b\u3088\u308b\u7dad\u6301\uff09\u3002\u6b2130/60/10/\u5225\u6a5f\u69cb>=25min\u3001\u5f53\u65e5\u5225\u6a5f\u69cb1596.385831s\u306f\u89aa\u5185\u3002\u78ba\u5b9a\u5b9f\u7e3e/CPU/\u516c\u958bSHA\u306fstop\u5f8c[DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md)/journal\u3002\n\n[EVIDENCE \u2014 labels read from EVIDENCE_REGISTRY.tsv]\n  E-001 [CONJECTURED] global \u2014 docs/CURRENT_FRONTIER.md\n  E-067 [CONJECTURED] periodic-word-obstruction \u2014 docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md\n  E-070 [CONJECTURED] periodic-supply-capacity \u2014 docs/HYPOTHESIS_CARD_2026-09-07_MACRO_INDUCTION.md\n  E-179 [COMPUTED] high-ss-local-donation \u2014 docs/data/issue73_20260911/capacity_extremal/local_surplus.txt\n\n[SOURCE COUNTS \u2014 run make check to verify]\n  Lean source files: 1040 (including Audit)\n  Import contracts: 135; audit declarations: 3989\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "wall_seconds": 0.05051574995741248,
+      "output": ""
+    }
+  ],
+  "all_passed": true,
+  "python_sources_ast_parse": "pass",
+  "log_sha256": "a1cd7b42dff2864ffa1d0d0deb954e704776dcc96e0db0461809cb819cac9de8",
+  "scope": "docs/static consistency, not Lean verification; no gates/Lean changed or stopped job retried",
+  "metadata_fix_recheck": {
+    "at": "2026-11-21T07:35:06.808058+09:00",
+    "argv": [
+      "make",
+      "brief"
+    ],
+    "exit": 0,
+    "current_date": "2026-11-21",
+    "exact_one_research_brief": true
+  },
+  "final_incremental_content_check": {
+    "at": "2026-11-21T07:53:50.836810+09:00",
+    "git_diff_check_exit": 0,
+    "output": "",
+    "owned_index_paths": 120,
+    "owned_unstaged_updates": [
+      "docs/RESEARCH_HANDOFF_2026-11-21_DAILY.md",
+      "docs/data/daily_research/2026-11-21.json",
+      "docs/data/depth_general_20261121/OWNED_CONTENT_AUDIT.json",
+      "docs/data/depth_general_20261121/finalize_work.py"
+    ],
+    "previous_day_unchanged": true,
+    "scope": "Handoff text and publication utilities updated after preliminary stage; restage after actual stop"
+  }
+}

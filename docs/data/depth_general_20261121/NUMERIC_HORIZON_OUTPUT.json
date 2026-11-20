@@ -1,0 +1,89 @@
+{
+  "PASS": true,
+  "rows": [
+    {
+      "label": "discovery",
+      "x": 0,
+      "b": 0,
+      "positive_prefixes": 37
+    },
+    {
+      "label": "discovery",
+      "x": 1,
+      "b": 0,
+      "positive_prefixes": 52
+    },
+    {
+      "label": "discovery",
+      "x": 3,
+      "b": 0,
+      "positive_prefixes": 147
+    },
+    {
+      "label": "discovery",
+      "x": 0,
+      "b": 2,
+      "positive_prefixes": 62
+    },
+    {
+      "label": "discovery",
+      "x": 1,
+      "b": 2,
+      "positive_prefixes": 65
+    },
+    {
+      "label": "discovery",
+      "x": 3,
+      "b": 2,
+      "positive_prefixes": 107
+    },
+    {
+      "label": "unused_parameter_controls",
+      "x": 2,
+      "b": 1,
+      "positive_prefixes": 88
+    },
+    {
+      "label": "unused_parameter_controls",
+      "x": 7,
+      "b": 1,
+      "positive_prefixes": 250
+    },
+    {
+      "label": "unused_parameter_controls",
+      "x": 2,
+      "b": 3,
+      "positive_prefixes": 99
+    },
+    {
+      "label": "unused_parameter_controls",
+      "x": 7,
+      "b": 3,
+      "positive_prefixes": 194
+    }
+  ],
+  "totals": {
+    "positive_prefixes": 1103,
+    "floor_edge_targets": 2683,
+    "recurrence_targets": 10583,
+    "literal_source_hits": 367,
+    "source_cutoff_checks": 96
+  },
+  "near_boundary_fixtures": [
+    {
+      "x": 5,
+      "b": 0,
+      "last_floor_return": 8,
+      "last_value": 1,
+      "cutoff": 11
+    },
+    {
+      "x": 20,
+      "b": 3,
+      "last_floor_return": 38,
+      "last_value": 1,
+      "cutoff": 41
+    }
+  ],
+  "scope": "Finite falsifier on all short numerical-positive weighted words and unused parameters; not a proof or canonical reachability"
+}

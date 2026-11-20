@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-21T06:48:28.414265+09:00",
+  "question": "NEW generic S-admission equality and independent rational escape/triangular-floor predicates",
+  "source_sha256": "9c7c79d834844c32e51fa4c71b3dc86368be421247a6568f40ffb9ffd3c5c363",
+  "input_sha256": "fec9748548cf4560b68d0cc2afc6315f5c79914447763fb4220c1e5a15581108",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.146173,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.146173,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "independent-edge",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/independent_edge_audit.py",
+    "docs/data/depth_general_20261121/INDEPENDENT_EDGE_INPUT.json",
+    "docs/data/depth_general_20261121/INDEPENDENT_EDGE_OUTPUT.json"
+  ],
+  "contract": "today-verified cooperative single Python no descendants, exact wait4; not generic tree/OS AS",
+  "stop": "first disagreement, no resource/cutoff rescue; one explicitly frozen mathematical repair at most",
+  "split_scope": "unused length7 parameter controls on a new generic predicate; not independent orbit data"
+}

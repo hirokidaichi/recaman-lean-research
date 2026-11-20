@@ -22,3 +22,15 @@ STOP the H01 last-minimum/IH route unless a genuinely new paid prefix edge is fi
 Controls: E760 raw SSAA Z^2 A violates chronology and is outside the new domain; it is NOT a counter to this restricted statement. E750 W-family and the H09 coherent SSAA example satisfy relevant positivity/shape controls but have no floor violation; they are OLD controls, not new discoveries/fresh holdout. A new counter to this auxiliary would also refute the unrestricted uniform-floor auxiliary, but must never be promoted to a parent C1 counter without its additional target conditions.
 
 All old STOPPED methods/checker512MB/r4/H52/49-profile/one-repair restrictions persist. H03 equivalent E713 reproof remains quarantined, no root/Audit adoption. Mathematical CPU starts0 next day until current-day contract/protocol/cumulative cap is verified and frozen. New Lean requires current admissible lint/vacuity/G5/Audit/fullcheck; today's stopped checker is not rescued by default build. The plan itself is not general progress or future120-minute completion.
+
+## Actual setup freeze 2026-11-21T06:05:27.678210+09:00
+
+Parent R-20261121-01, session ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad. The original exact floor question above is retained. First concrete non-IH mechanism is H-20261121-02: repeated same-source LOW targets must have a NEW original LOW-free between them. This is an auxiliary to falsify, not an assumed input or an equivalent matching with all free as its neighborhood. Prior raw latest-free counter E715 is an OLD weakened-history control; chronological I/II must be checked instead of deleting that history. First15min gate begins at actual research checkpoint; no unlaunched math CPU. H01 last-minimum induction remains STOPPED.
+
+## End-of-research status
+
+Main all-R original LOW-free floor and same-source LOW-free birth remain CONJECTURED. The compact two-valley construction method is STOPPED after12 full-source models all fail S chronology; no finite absence proof. New E763--E767 general mechanisms are separate evidence. E767's family itself pays its depth by disjoint monotone recovery strips, not a proof of arbitrary recovery. Next distinct LOW candidate-class inequality is untested. No old stopped job or completed fixed-depth domain rerun.
+
+## Confirmed parent journal
+
+R-20261121-01: 2026-11-21T06:01:12.788289+09:00 to 2026-11-21T07:55:31.131739+09:00; confirmed_work_seconds=6858.343, shortfall=341.657s, waiting/gap/overtime0. This is ONE shared parent total, not additional card time. See [DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md) and packet FINAL_WORK_SUMMARY.json for allocation/CPU/evidence/next question.

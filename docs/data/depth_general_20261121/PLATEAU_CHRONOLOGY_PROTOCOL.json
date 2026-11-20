@@ -1,0 +1,30 @@
+{
+  "frozen_at": "2026-11-21T06:56:22.288104+09:00",
+  "card": "H05",
+  "question": "NEW full I/II and actual complete seed replay on OLD E758 f/g and W periods, exact phase certificate and x-3b-38n-21 identity",
+  "source_sha256": "a397f42902305090e6c45a50a6725bdbc955f7bc4302f6bc754e1e88bf8e0242",
+  "input_sha256": "f802cca4bf105b5a92e46c21b26fb4264075585a21765d3a2e1246c30d04acb4",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.187003,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.187003,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "plateau-chronology",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/plateau_chronology.py",
+    "docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_INPUT.json",
+    "docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_OUTPUT.json"
+  ],
+  "contract": "verified cooperative single Python no descendants, wait4 exact, not generic tree/OS AS",
+  "split_scope": "ALL E758 histories are OLD, unused only for this numerical S predicate; no fresh orbit/independent holdout assertion",
+  "stop": "first collision/replay mismatch stops blanket candidate; no cutoff/resource rescue, at most one explicitly frozen mathematical repair"
+}

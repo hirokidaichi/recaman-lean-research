@@ -1,0 +1,30 @@
+{
+  "frozen_at": "2026-11-21T07:21:31.742878+09:00",
+  "card": "H07",
+  "question": "NEW all-N LOWfree reuse with main return, old-head parity exclusion and complete original LOW census",
+  "source_sha256": "4623eb8ff8a33e1b37dc941c80bd7524f753aefd12c22076cae3ffb2810d6d03",
+  "input_sha256": "cee7db464c3b90300021111d91d636b3879eac060efd8a96ba5c182fd81b5d0c",
+  "revision": "b7a07c7d834c9e663acdb48b2bc32b196aaa24e2",
+  "tracked_diff_sha256": "9ca96fb83732702497a0538bbdb07048952a9bdd228b065dc7e1471221548587",
+  "prior_math_measured": 0.29924,
+  "math_total_budget_seconds": 2,
+  "new_per_process_CPU_cap": 1,
+  "supported_worst_cumulative": 1.29924,
+  "wall_cap": 5,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261121/run_single.py",
+    "--tag",
+    "low-seed",
+    "--cpu",
+    "1",
+    "--wall",
+    "5",
+    "docs/data/depth_general_20261121/low_seed_reuse.py",
+    "docs/data/depth_general_20261121/LOW_SEED_INPUT.json",
+    "docs/data/depth_general_20261121/LOW_SEED_OUTPUT.json"
+  ],
+  "contract": "today-verified cooperative one Python no descendants, exact wait4, not generic tree/OS AS",
+  "stop": "first source/chronology/parity/positive/actual replay disagreement; one mathematical repair maximum, no resource/cutoff rescue",
+  "split_scope": "new odd family, N1/2 discovery and N3 frozen parameter control; not statistical or canonical holdout"
+}
