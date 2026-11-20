@@ -19,7 +19,9 @@ Parent R-20261121-01/session ccf8396e-b8e9-4ce2-8f71-f3b1f3bd3aad、実setup開�
 main/HEAD/origin-main b7a07c7d834c9e663acdb48b2bc32b196aaa24e2をfetch確認、index空。11/07他session journalはhash固定/対象外。11/20 journal/DAILY/packetを変更しない。数学worker予算0から開始、探索/guard/Lean/その他未測定を別計上する。[PLAN](data/depth_general_20261121/PLAN.json)。
 
 <!-- PUBLICATION_BEGIN -->
-未実行。07:45以降、journal stop/確定値保存後に明示owned pathsだけcommitしorigin/mainへ通常push・remoteSHA照合。公開済みとは呼ばない。
+研究snapshot **e9aab9a5cb1f75937c80dd38527a827efdde5ab8** を **origin/main** へ通常pushし、`git ls-remote origin refs/heads/main`との完全一致を確認（2026-11-21T07:56:00.682621+09:00）。hosted CI観測 **workflow_runs: CI:in_progress/None; check_runs: Research harness (ubuntu-latest):in_progress/None, Research harness (macos-latest):in_progress/None**。詳細は[receipt](data/depth_general_20261121/publication_snapshot/PUBLICATION_RECEIPT.json)とCI_SNAPSHOT.json参照、完了成功とは推定しない。ローカル全体検証/remote到達/hosted CIを分ける。
+
+この照合記録はdocs-onlyの最終commitへ保存し、その自己SHA/remote照合/CIは当日chatへ報告する。未保存の研究成果なし。他sessionの11/07 journalは変更せず対象外。
 <!-- PUBLICATION_END -->
 
 ## 追加handoff / 未完了unit

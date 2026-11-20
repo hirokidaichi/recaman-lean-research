@@ -1,0 +1,129 @@
+Running pre-commit checks...
+Module graph audit: Recaman root reaches 1039 of 1039 library modules; Audit is a separate acyclic entry point.
+Import contract audit: 135 frontier modules match their direct-import boundary.
+Research registry audit: 767 entries, 477 PROVED-LEAN rows linked to Recaman/Audit.lean.
+Harness gates G1-G5: 333 PROVED-LEAN rows >= E-344 pass.
+Protected claims: 4 central rows keep their pinned labels.
+G6 static: 3 of 4 protected claims pinned, 1 unpinned with a reason; lock has 22 entries (Lean half runs in scripts/check.sh).
+manifest.json is up to date: 1040 modules, 167 reports
+Pre-commit checks passed.
+[main e9aab9a] research: record numerical floor potential and original LOW seed reuse (2026-11-21)
+ 121 files changed, 16262 insertions(+), 2 deletions(-)
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_CHRONOLOGICAL_SOURCE_BRIDGE.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_GENERIC_SEED_CLASSES.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_LOW_SEED_REUSE.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_NUMERIC_SOURCE_HORIZON.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_PADDING_CHRONOLOGY.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-21_PLATEAU_NUMERICAL_CHRONOLOGY.md
+ create mode 100644 docs/HYPOTHESIS_CARD_2026-11-22_LOW_CANDIDATE_CLASS_DEPTH.md
+ create mode 100644 docs/RESEARCH_HANDOFF_2026-11-21_DAILY.md
+ create mode 100644 docs/RESEARCH_NOTE_2026-11-21_LOW_SEED_REUSE.md
+ create mode 100644 docs/RESEARCH_NOTE_2026-11-21_NUMERIC_SOURCE_HORIZON.md
+ create mode 100644 docs/RESEARCH_NOTE_2026-11-21_PLATEAU_CHRONOLOGY.md
+ create mode 100644 docs/RESEARCH_NOTE_2026-11-21_SEED_CLASS_REUSE.md
+ create mode 100644 docs/RESEARCH_NOTE_2026-11-21_S_HEAD_ADMISSION.md
+ create mode 100644 docs/data/daily_research/2026-11-21.json
+ create mode 100644 docs/data/depth_general_20261121/ADOPTED_SOURCES.json
+ create mode 100644 docs/data/depth_general_20261121/BASELINE.json
+ create mode 100644 docs/data/depth_general_20261121/BRIDGE_VALLEY_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/BRIDGE_VALLEY_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/BRIDGE_VALLEY_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/CPU_SUMMARY.json
+ create mode 100644 docs/data/depth_general_20261121/DISTINCT_MECHANISM.json
+ create mode 100644 docs/data/depth_general_20261121/FILLED_STOCK_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/FILLED_STOCK_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/FILLED_STOCK_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/FINAL_WORK_SUMMARY.json
+ create mode 100644 docs/data/depth_general_20261121/FIRST_GATE.md
+ create mode 100644 docs/data/depth_general_20261121/FLOOR_CUT_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/FLOOR_CUT_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/FLOOR_CUT_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/GENERIC_SEED_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/GENERIC_SEED_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/GENERIC_SEED_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/GUARD_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/GUARD_VALIDATION.json
+ create mode 100644 docs/data/depth_general_20261121/H04_FIRST_GATE.json
+ create mode 100644 docs/data/depth_general_20261121/INDEPENDENT_EDGE_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/INDEPENDENT_EDGE_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/INDEPENDENT_EDGE_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/LOW_SEED_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/LOW_SEED_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/LOW_SEED_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/NUMERIC_HORIZON_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/NUMERIC_HORIZON_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/NUMERIC_HORIZON_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/OWNED_CONTENT_AUDIT.json
+ create mode 100644 docs/data/depth_general_20261121/OWNED_PATHS.json
+ create mode 100644 docs/data/depth_general_20261121/PADDING_CHRONOLOGY_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/PADDING_CHRONOLOGY_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/PADDING_CHRONOLOGY_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/PAPER_STATEMENT_AUDIT.md
+ create mode 100644 docs/data/depth_general_20261121/PLAN.json
+ create mode 100644 docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_INPUT.json
+ create mode 100644 docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_OUTPUT.json
+ create mode 100644 docs/data/depth_general_20261121/PLATEAU_CHRONOLOGY_PROTOCOL.json
+ create mode 100644 docs/data/depth_general_20261121/PREPUBLICATION_VALIDATION.json
+ create mode 100644 docs/data/depth_general_20261121/PREPUBLICATION_VALIDATION.log
+ create mode 100644 docs/data/depth_general_20261121/REALLOCATION.json
+ create mode 100644 docs/data/depth_general_20261121/REPRODUCIBILITY_README.md
+ create mode 100644 docs/data/depth_general_20261121/bridge-valleys-result.json
+ create mode 100644 docs/data/depth_general_20261121/bridge-valleys-start.json
+ create mode 100644 docs/data/depth_general_20261121/bridge-valleys.log
+ create mode 100644 docs/data/depth_general_20261121/bridge_valleys.py
+ create mode 100644 docs/data/depth_general_20261121/filled-stock-result.json
+ create mode 100644 docs/data/depth_general_20261121/filled-stock-start.json
+ create mode 100644 docs/data/depth_general_20261121/filled-stock.log
+ create mode 100644 docs/data/depth_general_20261121/filled_stock_consumer.py
+ create mode 100644 docs/data/depth_general_20261121/finalize_work.py
+ create mode 100644 docs/data/depth_general_20261121/floor-cut-result.json
+ create mode 100644 docs/data/depth_general_20261121/floor-cut-start.json
+ create mode 100644 docs/data/depth_general_20261121/floor-cut.log
+ create mode 100644 docs/data/depth_general_20261121/floor_cut_potential.py
+ create mode 100644 docs/data/depth_general_20261121/generic-seed-result.json
+ create mode 100644 docs/data/depth_general_20261121/generic-seed-start.json
+ create mode 100644 docs/data/depth_general_20261121/generic-seed.log
+ create mode 100644 docs/data/depth_general_20261121/generic_seed_reuse.py
+ create mode 100644 docs/data/depth_general_20261121/guard-cpu-result.json
+ create mode 100644 docs/data/depth_general_20261121/guard-cpu-start.json
+ create mode 100644 docs/data/depth_general_20261121/guard-cpu.log
+ create mode 100644 docs/data/depth_general_20261121/guard-exec-result.json
+ create mode 100644 docs/data/depth_general_20261121/guard-exec-start.json
+ create mode 100644 docs/data/depth_general_20261121/guard-exec.log
+ create mode 100644 docs/data/depth_general_20261121/guard-fork-result.json
+ create mode 100644 docs/data/depth_general_20261121/guard-fork-start.json
+ create mode 100644 docs/data/depth_general_20261121/guard-fork.log
+ create mode 100644 docs/data/depth_general_20261121/guard-normal-result.json
+ create mode 100644 docs/data/depth_general_20261121/guard-normal-start.json
+ create mode 100644 docs/data/depth_general_20261121/guard-normal.log
+ create mode 100644 docs/data/depth_general_20261121/guard-wall-result.json
+ create mode 100644 docs/data/depth_general_20261121/guard-wall-start.json
+ create mode 100644 docs/data/depth_general_20261121/guard-wall.log
+ create mode 100644 docs/data/depth_general_20261121/guard_fixture.py
+ create mode 100644 docs/data/depth_general_20261121/independent-edge-result.json
+ create mode 100644 docs/data/depth_general_20261121/independent-edge-start.json
+ create mode 100644 docs/data/depth_general_20261121/independent-edge.log
+ create mode 100644 docs/data/depth_general_20261121/independent_edge_audit.py
+ create mode 100644 docs/data/depth_general_20261121/low-seed-result.json
+ create mode 100644 docs/data/depth_general_20261121/low-seed-start.json
+ create mode 100644 docs/data/depth_general_20261121/low-seed.log
+ create mode 100644 docs/data/depth_general_20261121/low_seed_reuse.py
+ create mode 100644 docs/data/depth_general_20261121/numeric-horizon-result.json
+ create mode 100644 docs/data/depth_general_20261121/numeric-horizon-start.json
+ create mode 100644 docs/data/depth_general_20261121/numeric-horizon.log
+ create mode 100644 docs/data/depth_general_20261121/numeric_horizon.py
+ create mode 100644 docs/data/depth_general_20261121/observe_ci.py
+ create mode 100644 docs/data/depth_general_20261121/padding-chronology-result.json
+ create mode 100644 docs/data/depth_general_20261121/padding-chronology-start.json
+ create mode 100644 docs/data/depth_general_20261121/padding-chronology.log
+ create mode 100644 docs/data/depth_general_20261121/padding_chronology.py
+ create mode 100644 docs/data/depth_general_20261121/plateau-chronology-result.json
+ create mode 100644 docs/data/depth_general_20261121/plateau-chronology-start.json
+ create mode 100644 docs/data/depth_general_20261121/plateau-chronology.log
+ create mode 100644 docs/data/depth_general_20261121/plateau_chronology.py
+ create mode 100644 docs/data/depth_general_20261121/publish_receipt.py
+ create mode 100644 docs/data/depth_general_20261121/publish_snapshot.py
+ create mode 100644 docs/data/depth_general_20261121/run_single.py
+
+To https://github.com/hirokidaichi/recaman-lean-research.git
+   b7a07c7..e9aab9a  e9aab9a5cb1f75937c80dd38527a827efdde5ab8 -> main

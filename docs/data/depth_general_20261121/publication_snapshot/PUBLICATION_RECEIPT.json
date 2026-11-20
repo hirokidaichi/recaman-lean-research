@@ -1,0 +1,64 @@
+{
+  "research_snapshot_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8",
+  "destination": "origin/main",
+  "normal_push": "success",
+  "ls_remote_matches": true,
+  "remote_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8",
+  "checked_at_jst": "2026-11-21T07:56:00.682621+09:00",
+  "hosted_ci": [
+    {
+      "kind": "workflow_runs",
+      "state": "observed",
+      "runs": [
+        {
+          "id": 44832923971,
+          "name": "CI",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        }
+      ]
+    },
+    {
+      "kind": "check_runs",
+      "state": "observed",
+      "runs": [
+        {
+          "id": 136622095277,
+          "name": "Research harness (ubuntu-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971/job/136622095277",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        },
+        {
+          "id": 136622094800,
+          "name": "Research harness (macos-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971/job/136622094800",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        }
+      ]
+    }
+  ],
+  "journal_stop": "2026-11-21T07:55:31.131739+09:00",
+  "validation_scope": {
+    "new_lean_adopted": [],
+    "new_research_labels": {
+      "E-763": "REFUTED",
+      "E-764": "PROVED-PAPER",
+      "E-765": "PROVED-PAPER",
+      "E-766": "PROVED-PAPER",
+      "E-767": "REFUTED"
+    },
+    "finite_predicates": "COMPUTED, full protocols/receipts/outputs in packet",
+    "human_review": "pending",
+    "validation_scope": "docs/static gates only, no Lean build/adoption, no STOPPED helper retry",
+    "protected_files_changed": false,
+    "unresolved": "C1/Q/H/SL/surjectivity and arbitrary LOW class/free charging"
+  },
+  "scope": "Validated research snapshot; subsequent exact docs-only receipt commit records this SHA, its own final SHA is reported in chat",
+  "hosted_ci_checked_at": "2026-11-21T07:56:07.275482+09:00"
+}

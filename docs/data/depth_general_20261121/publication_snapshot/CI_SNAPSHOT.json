@@ -1,0 +1,43 @@
+{
+  "sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8",
+  "at": "2026-11-21T07:56:07.275482+09:00",
+  "observations": [
+    {
+      "kind": "workflow_runs",
+      "state": "observed",
+      "runs": [
+        {
+          "id": 44832923971,
+          "name": "CI",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        }
+      ]
+    },
+    {
+      "kind": "check_runs",
+      "state": "observed",
+      "runs": [
+        {
+          "id": 136622095277,
+          "name": "Research harness (ubuntu-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971/job/136622095277",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        },
+        {
+          "id": 136622094800,
+          "name": "Research harness (macos-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44832923971/job/136622094800",
+          "head_sha": "e9aab9a5cb1f75937c80dd38527a827efdde5ab8"
+        }
+      ]
+    }
+  ],
+  "scope": "Read-only current observation, not a claim that CI completed or the final receipt commit was checked"
+}
