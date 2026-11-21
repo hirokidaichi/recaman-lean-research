@@ -33,7 +33,9 @@ H01 K_LOW-depth remains CONJECTURED; finite table method and nested construction
 No final parent verdict or future120min claimed here. Current mathematical CPU starts0, guard5 passed and separately measured1.120772CPU; first budget2 extended to3 solely for one independent repaired-family verification because per-process integer1 did not fit .986113 remaining. Actual worker receipts are packet authoritative, guard/Lean/other unmeasured CPU separate. No Lean process launched at this checkpoint.
 
 <!-- PUBLICATION_BEGIN -->
-未公開。07:45以降、検証済み所有パスのみ、journal stop後の確定値を保存して通常origin/mainへcommit/push、ls-remote照合。既存承認済みsingle-command RECAMAN_ALLOW_BURST=1、他gate維持。SHA/CIは結果観測後のみ記入。
+研究snapshot **a8d1933fcbdbc4832010015420af47a380b932c5** を **origin/main** へ通常pushし、`git ls-remote origin refs/heads/main`との完全一致を確認（2026-11-22T07:56:42.223852+09:00）。hosted CI観測 **workflow_runs: CI:in_progress/None; check_runs: Research harness (macos-latest):in_progress/None, Research harness (ubuntu-latest):in_progress/None**。詳細は[receipt](data/depth_general_20261122/publication_snapshot/PUBLICATION_RECEIPT.json)とCI_SNAPSHOT.json参照、完了成功とは推定しない。ローカル静的検証（新Lean全体buildなし）/remote到達/hosted CIを分ける。
+
+この照合記録はdocs-onlyの最終commitへ保存し、その自己SHA/remote照合/CIは当日chatへ報告する。未保存の研究成果なし。他sessionの11/07 journalは変更せず対象外。
 <!-- PUBLICATION_END -->
 
 ## 追加handoff

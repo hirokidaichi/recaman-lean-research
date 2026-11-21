@@ -1,0 +1,66 @@
+{
+  "research_snapshot_sha": "a8d1933fcbdbc4832010015420af47a380b932c5",
+  "destination": "origin/main",
+  "normal_push": "success",
+  "ls_remote_matches": true,
+  "remote_sha": "a8d1933fcbdbc4832010015420af47a380b932c5",
+  "checked_at_jst": "2026-11-22T07:56:42.223852+09:00",
+  "hosted_ci": [
+    {
+      "kind": "workflow_runs",
+      "state": "observed",
+      "query_url": "https://api.github.com/repos/hirokidaichi/recaman-lean-research/actions/runs?head_sha=a8d1933fcbdbc4832010015420af47a380b932c5&per_page=10",
+      "runs": [
+        {
+          "id": 44959309021,
+          "name": "CI",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        }
+      ]
+    },
+    {
+      "kind": "check_runs",
+      "state": "observed",
+      "query_url": "https://api.github.com/repos/hirokidaichi/recaman-lean-research/commits/a8d1933fcbdbc4832010015420af47a380b932c5/check-runs",
+      "runs": [
+        {
+          "id": 137014358916,
+          "name": "Research harness (macos-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021/job/137014358916",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        },
+        {
+          "id": 137014358836,
+          "name": "Research harness (ubuntu-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021/job/137014358836",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        }
+      ]
+    }
+  ],
+  "journal_stop": "2026-11-22T07:56:23.947516+09:00",
+  "validation_scope": {
+    "new_Lean_modules_adopted": [],
+    "root_or_Audit_changes": false,
+    "new_registry_rows": [
+      "E-768",
+      "E-769",
+      "E-770",
+      "E-771"
+    ],
+    "scope": "PAPER and exact REFUTED counterevidence with finite COMPUTED support; human review pending. Existing E114 rederivation excluded.",
+    "failed_finite_Lean": "First attempt512MB STOPPED, repair0, packet-only; never adopted",
+    "local_validation": "architecture/registry/G1-G5/protected/G6-static/viewer/brief, Python and owned source/text/hash checks; not a new Lean build",
+    "inherited_helper_stop": "HarnessTools512MB STOPPED not retried through unbounded default check.sh; gates unchanged"
+  },
+  "scope": "Validated research snapshot; subsequent exact docs-only receipt commit records this SHA, its own final SHA is reported in chat",
+  "hosted_ci_checked_at": "2026-11-21 22:57:13 UTC",
+  "ci_provider": "connected GitHub GET"
+}

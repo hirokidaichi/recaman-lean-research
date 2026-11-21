@@ -1,0 +1,46 @@
+{
+  "sha": "a8d1933fcbdbc4832010015420af47a380b932c5",
+  "at": "2026-11-21 22:57:13 UTC",
+  "provider": "connected GitHub GET",
+  "observations": [
+    {
+      "kind": "workflow_runs",
+      "state": "observed",
+      "query_url": "https://api.github.com/repos/hirokidaichi/recaman-lean-research/actions/runs?head_sha=a8d1933fcbdbc4832010015420af47a380b932c5&per_page=10",
+      "runs": [
+        {
+          "id": 44959309021,
+          "name": "CI",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        }
+      ]
+    },
+    {
+      "kind": "check_runs",
+      "state": "observed",
+      "query_url": "https://api.github.com/repos/hirokidaichi/recaman-lean-research/commits/a8d1933fcbdbc4832010015420af47a380b932c5/check-runs",
+      "runs": [
+        {
+          "id": 137014358916,
+          "name": "Research harness (macos-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021/job/137014358916",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        },
+        {
+          "id": 137014358836,
+          "name": "Research harness (ubuntu-latest)",
+          "status": "in_progress",
+          "conclusion": null,
+          "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959309021/job/137014358836",
+          "head_sha": "a8d1933fcbdbc4832010015420af47a380b932c5"
+        }
+      ]
+    }
+  ],
+  "scope": "Read-only exact research-snapshot SHA observation after verified normal push; in_progress is not success. Final receipt commit observed separately in chat."
+}
