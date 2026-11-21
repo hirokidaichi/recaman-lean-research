@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-22T06:54:19.477542+09:00",
+  "tag": "three-class-raw",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261122/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261122/three_class_raw_audit.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 10.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "8c71a88a7bbaa805c5b34215263b8c1107987468e0435013738b5d6525afea27",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 59969,
+  "process_group": 59969,
+  "finished_jst": "2026-11-22T06:54:20.070474+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.593022583052516,
+  "worker_user_seconds": 0.572144,
+  "worker_sys_seconds": 0.008737,
+  "worker_cpu_seconds": 0.580881,
+  "worker_maxrss_native": 23052288,
+  "controller_cpu_seconds": 0.0018269999999999953,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

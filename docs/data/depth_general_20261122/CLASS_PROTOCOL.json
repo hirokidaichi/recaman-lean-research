@@ -1,0 +1,65 @@
+{
+  "frozen_at": "2026-11-22T06:07:28.038347+09:00",
+  "source_head": "bbc8cd8811def7c281171fd96f8251b545764d4e",
+  "dirty_research_hashes": {
+    "docs/data/depth_general_20261122/class_probe.py": "2215e373f29820777873f6b89eecb606b4e499b8c13343e57577e331e9544702",
+    "docs/HYPOTHESIS_CARD_2026-11-22_LOW_CANDIDATE_CLASS_DEPTH.md": "6ce2cbdb0b76923903b5c655274cd1b01baec97bed7409b967622986d845e7d4"
+  },
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "jobs": [
+    {
+      "tag": "class-discovery",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "class-discovery",
+        "--cpu",
+        "1",
+        "--wall",
+        "10",
+        "docs/data/depth_general_20261122/class_probe.py",
+        "--h-lo",
+        "1",
+        "--h-hi",
+        "4",
+        "--core-lo",
+        "2",
+        "--core-hi",
+        "18",
+        "--soft-cpu",
+        ".65"
+      ]
+    },
+    {
+      "tag": "class-holdout",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "class-holdout",
+        "--cpu",
+        "1",
+        "--wall",
+        "10",
+        "docs/data/depth_general_20261122/class_probe.py",
+        "--h-lo",
+        "5",
+        "--h-hi",
+        "8",
+        "--core-lo",
+        "20",
+        "--core-hi",
+        "22",
+        "--soft-cpu",
+        ".65"
+      ]
+    }
+  ],
+  "total_math_worker_cpu_cap_seconds": 2,
+  "individual_cap": 1,
+  "soft_cap_each": 0.65,
+  "discovery_holdout": "disjoint initial h/core lengths; prior E767 words are OLD controls, not fresh holdout",
+  "acceptance": "literal source/positive/I/II/return, K_LOW < D exact counter then independent replay. Finite absence not proof. partial census marked.",
+  "repairs_allowed": 1
+}

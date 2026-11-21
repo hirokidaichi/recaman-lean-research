@@ -1,0 +1,35 @@
+{
+  "frozen_at": "2026-11-22T07:03:23.246712+09:00",
+  "statement": "H06 all-prefix capacity for ANY integer uppercut R, common lowerfloor ell, arbitrary endpoint; full source-visit identity includes -1_{v>0}",
+  "direct_method": "independent literal mass/area windows, no reused hash supplier implementation; check full initial+final state visits",
+  "discovery_lengths": [
+    0,
+    6
+  ],
+  "separate_parameter_control_lengths": [
+    7,
+    9
+  ],
+  "floor_margins": [
+    0,
+    1
+  ],
+  "cuts": "all ell..maxH+1 including positive/negative",
+  "negative": "AA/v1 invalidates UNCORRECTED exact equality, not the +1 upper capacity",
+  "source_sha256": "77fe3f8999517f6aa9280dd509f51dabf18a6dc9fe4c0b36f73f9c18caa41467",
+  "math_cpu_prior": 1.884105,
+  "math_total_cap": 3,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "all-prefix-capacity",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/all_prefix_capacity_audit.py"
+  ],
+  "soft_cpu": 0.65,
+  "stop": "first failed predicate or cap, no range extension; finite evidence is not unbounded proof"
+}

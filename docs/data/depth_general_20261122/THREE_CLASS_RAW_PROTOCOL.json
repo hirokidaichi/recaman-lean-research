@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-22T06:54:19.438136+09:00",
+  "role": "independent audit of NEW H05 local raw theorem, not progress from finite absence",
+  "predicate": "RAW/maximalhead/return2-h/K<=3 => F=K andD<=1; ALL original suppliers retained, no positive/I/II filters",
+  "heads": [
+    1,
+    4,
+    9
+  ],
+  "max_core_length": 28,
+  "pruning": "only monotone distinct LOW class support>3, or impossible remaining return distance; no bound on raw free used",
+  "source_sha256": "8c71a88a7bbaa805c5b34215263b8c1107987468e0435013738b5d6525afea27",
+  "proof_sha256": "3f2de41a23bdb1017a9fa512ce48b5ec4c9d9a0fa33800f0b768a74a128f2115",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "three-class-raw",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/three_class_raw_audit.py"
+  ],
+  "math_total_cap": 3,
+  "soft_cpu": 0.55,
+  "stop": "first counter or CPU; partial census labelled and never extended",
+  "distinction": "new K-support/principal singleton predicate/raw domain independent of old H01 positive-S-chronology first-upcrossing census; no old stopped r4/table job"
+}

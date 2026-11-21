@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-11-22T06:10:42.696257+09:00",
+  "question": "nested balanced zero-mean bridges at a new minimum may reuse both outer/inner free class while depth rises",
+  "exact_family": "odd d in discovery1,3/holdout5,7; core A^(3d) S^(4d) Z_(2d+1) A^d; h=coreA+3; full S^h core AA",
+  "area_identity": "outer area relative(root-1)=(4d)(2d+2)=8d(d+1); inner length8(d+1) times depth d cancels; all old sources/I/II/positive checked",
+  "acceptance": "exact K_LOW<D full coherent counter, or exposed source/chronology obstruction, no finite absence proof",
+  "prior_workers_cpu_seconds": 0.880803,
+  "total_budget_seconds": 2,
+  "hash": "f41eccc399708dec474d784811518f9d55eaa4e4a75650ecb0c32a4ae9f6faa3",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "nested",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/nested_probe.py"
+  ],
+  "repair_allowed": 1
+}

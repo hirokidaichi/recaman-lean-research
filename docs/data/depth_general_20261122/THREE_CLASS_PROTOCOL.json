@@ -1,0 +1,29 @@
+{
+  "frozen_at": "2026-11-22T06:51:17.932815+09:00",
+  "question": "H05 KLOW<=3 => singleton/Flow=K and D<=1 on RAW maximal-head/return domain",
+  "new_predicates": [
+    "ALL bottom two level A are original free",
+    "all bottom two level candidate pairs distinct",
+    "irreducible high-loop area1 or>=4, never3",
+    "new K3 implication with exact singleton/count/depth",
+    "nonmaximal Sh+2 A4 is an EXPECTED counter to dropping maximality"
+  ],
+  "discovery": "irreducible positive Dyck semilength1..3,h2/7,D0..4,lower-AS0/1,head-AS0..2",
+  "parameter_controls": "semilength1..5,h11/15,D0..6,lower-AS0..2,head-AS0..3; report nonvacuous population separately",
+  "not_a_restart": "broader RAW domain/new conditional class predicate/proof grammar; no old positive/chronology census enlargement or stopped graph/table. Simple monotone/Z1 words are OLD controls, not new C1 cutoffs.",
+  "source_sha256": "2e83c6c44c5c811c659fdf7bc2d35a5258572ca68640a6f1c0d9eba2b138c3f4",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "three-class",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/three_class_probe.py"
+  ],
+  "math_total_cap": 3,
+  "soft_cap": 0.65,
+  "finite_scope": "support only; all-history claim requires complete paper source/loop proof; no proof from finite absence"
+}

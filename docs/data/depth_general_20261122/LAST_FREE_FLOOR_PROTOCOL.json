@@ -1,0 +1,27 @@
+{
+  "frozen_at": "2026-11-22T07:19:12.692364+09:00",
+  "question": "H08 last LOWER-CLOSED selected free-event prefix supplies its own class-minimum floor and preserves all past original tags/classes; quantitative class-height-span capacity",
+  "source_sha256": "50ccacc9ae97c34de6600c8fb96e9378e746ff502993a8448944beaa67456999",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "last-free-floor",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/last_free_floor_audit.py"
+  ],
+  "math_cpu_prior": 2.148633,
+  "math_total_cap": 4,
+  "soft_cpu": 0.65,
+  "discovery": "raw word lengths0..7",
+  "separate_parameter_controls": "length8..10, all cuts min-1..max+1; NEW predicates not fresh orbit data",
+  "direct_method": "literal original windows in full word and SAME Nat0 prefix; all actual supplier sets before cutoff preserved",
+  "negative_controls": [
+    "tail-S: floor only through last-selected prefix, not entireword",
+    "OLD E767 N1: arbitrary repeated-one-class subfamily omits lower free mass, invalid premise"
+  ],
+  "stop": "counter/cap, no extension; range completeness explicit"
+}

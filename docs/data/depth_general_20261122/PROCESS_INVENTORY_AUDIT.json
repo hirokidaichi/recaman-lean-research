@@ -1,0 +1,155 @@
+{
+  "at": "2026-11-22T07:44:36.265393+09:00",
+  "all_started_jobs_have_final_receipts": true,
+  "count": 21,
+  "receipts": [
+    {
+      "tag": "adjacent-class",
+      "start": "2026-11-22T07:10:54.343302+09:00",
+      "finish": "2026-11-22T07:10:54.505288+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "adjacent-counter-audit",
+      "start": "2026-11-22T07:12:32.264002+09:00",
+      "finish": "2026-11-22T07:12:32.319683+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "all-prefix-capacity",
+      "start": "2026-11-22T07:03:23.285057+09:00",
+      "finish": "2026-11-22T07:03:23.389480+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "blocker-age",
+      "start": "2026-11-22T06:17:16.152292+09:00",
+      "finish": "2026-11-22T06:17:16.224193+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "class-clock-capacity",
+      "start": "2026-11-22T06:59:26.610714+09:00",
+      "finish": "2026-11-22T06:59:26.709122+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "class-discovery",
+      "start": "2026-11-22T06:07:36.589574+09:00",
+      "finish": "2026-11-22T06:07:36.793576+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "class-holdout",
+      "start": "2026-11-22T06:08:12.452875+09:00",
+      "finish": "2026-11-22T06:08:13.149272+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "fixed-head-age",
+      "start": "2026-11-22T06:39:04.006094+09:00",
+      "finish": "2026-11-22T06:39:04.112343+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "guard-cpu",
+      "start": "2026-11-22T06:06:37.833231+09:00",
+      "finish": "2026-11-22T06:06:38.847325+09:00",
+      "exit": -24,
+      "reason": "signal 24 (see CPU cap and output)"
+    },
+    {
+      "tag": "guard-exec",
+      "start": "2026-11-22T06:06:37.515903+09:00",
+      "finish": "2026-11-22T06:06:37.549334+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "guard-fork",
+      "start": "2026-11-22T06:06:37.441928+09:00",
+      "finish": "2026-11-22T06:06:37.474942+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "guard-normal",
+      "start": "2026-11-22T06:06:37.332386+09:00",
+      "finish": "2026-11-22T06:06:37.397140+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "guard-wall",
+      "start": "2026-11-22T06:06:37.593162+09:00",
+      "finish": "2026-11-22T06:06:37.771663+09:00",
+      "exit": -9,
+      "reason": "wall/deadline cap"
+    },
+    {
+      "tag": "last-free-floor",
+      "start": "2026-11-22T07:19:12.740065+09:00",
+      "finish": "2026-11-22T07:19:12.898830+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "local-m4-attempt1",
+      "start": "2026-11-22T06:41:38.160738+09:00",
+      "finish": "2026-11-22T06:41:43.128469+09:00",
+      "exit": 1,
+      "reason": "completed"
+    },
+    {
+      "tag": "low-age",
+      "start": "2026-11-22T06:24:37.839864+09:00",
+      "finish": "2026-11-22T06:24:37.874830+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "low-age-independent",
+      "start": "2026-11-22T06:31:06.291519+09:00",
+      "finish": "2026-11-22T06:31:06.363654+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "nested",
+      "start": "2026-11-22T06:10:42.736689+09:00",
+      "finish": "2026-11-22T06:10:42.773889+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "positive-age",
+      "start": "2026-11-22T06:21:07.222945+09:00",
+      "finish": "2026-11-22T06:21:07.259934+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "three-class",
+      "start": "2026-11-22T06:51:17.974719+09:00",
+      "finish": "2026-11-22T06:51:18.081932+09:00",
+      "exit": 0,
+      "reason": "completed"
+    },
+    {
+      "tag": "three-class-raw",
+      "start": "2026-11-22T06:54:19.477542+09:00",
+      "finish": "2026-11-22T06:54:20.070474+09:00",
+      "exit": 0,
+      "reason": "completed"
+    }
+  ],
+  "scope": "Previously completed wait4 receipts only; no worker/Lean/guard rerun. Deliberate guard stop signals and failed finite Lean are retained."
+}

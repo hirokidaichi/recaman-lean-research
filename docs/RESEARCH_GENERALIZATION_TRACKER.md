@@ -132,3 +132,15 @@ The all-parameter arguments are PAPER/human review pending, finite controls COMP
 Distinct H04 confirmed1596.385831s is INSIDE this parent, not added. Local allocation was transferred to new general mechanisms and necessary meaning audit for lack of a new local producer; fixed-depth completed results/stopped checker were not rerun. Final actual phase/CPU/shortfall/publication are in11/21 DAILY/journal after stop.
 
 Parent R-20261121-01 finalized: actual 2026-11-21T06:01:12.788289+09:00 to 2026-11-21T07:55:31.131739+09:00, confirmed_work_seconds=6858.343, shortfall=341.657s, waiting/gap/overtime0. Distinct1596.385831s is contained in the parent, not added. Local0/general new evidence/streak0/next30-60-10 unchanged. Publication after stop is excluded.
+
+## 2026-11-22 parent verdict (confirmed totals after stop)
+
+| Parent | local_progress | depth_general_progress | Consecutive no general progress | Next |
+|---|---|---|---|---|
+| R-20261122-01 | yes E769 PROVED-PAPER class-to-original-free singleton/K3 corner; new Lean adoption0, H04 first512MB STOPPED | yes E768 fixed-LOW numeric age no-go, E770 all-depth class-clock capacity plus internally supplied original-prefix floor, E771 actual adjacent-class-gap counter |0 from previous0 by NEW evidence, not date/local/module count |30/60/10; distinct>=25min; source-key jump cost |
+
+Original all-source/free/class coordinates are preserved; numeric seed/cardinality/canonical reachability are separate. E114 age bound/consumer rederivation was rejected as OLD, H01 finite absence/partial stops and H04 failed Lean are NOT new general evidence. E769 alone would not reset general stagnation. E770 bounds unweighted clock multiplicity using actual class-height span; it does NOT supply the missing D/span lower bound by class COUNT. E771's empty two-height gap is not a C1 counter (K8>=D5).
+
+Distinct H02/H03 confirmed1513.545289s (06:14:44.728659--06:39:58.273948) is INSIDE this parent; no local Lean implementation in that interval. Local H04/H05 closed early after a resource STOP and completed paper corner; unused local budget transferred to new class-clock/floor mechanisms and necessary independent audit. Planned minutes are never recorded as actual. Exact phase/CPU/shortfall/publication values finalize only after journal stop in11/22 DAILY/FINAL_WORK_SUMMARY. All previous STOPPED gates and one-repair limits remain, no date reset.
+
+Parent R-20261122-01 finalized: 2026-11-22T06:02:27.853806+09:00 to 2026-11-22T07:56:23.947516+09:00, confirmed_work_seconds=6836.094, shortfall=363.906s, waiting/gap/overtime0. Distinct1513.545289s is INSIDE the parent. Local E769 PAPER/adoptedLean0; general new evidence/streak0/next30-60-10. Post-stop publication excluded.

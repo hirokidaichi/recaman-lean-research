@@ -1,0 +1,21 @@
+{
+  "frozen_at": "2026-11-22T06:31:06.248764+09:00",
+  "old_math_cap": 2,
+  "new_math_cap": 3,
+  "measured_prior": 1.013887,
+  "reason": "One cause-based mathematical exception repair m10; independent fresh m14/22/26 replay/source/key audit, negative m10 retained. Per-process hard CPU1 cannot fit prior remaining.986113; fixed extra1 allowance, no old stopped search restart.",
+  "source_sha256": "ce757fca25c3141441cab00666687075417cfb9e1249f0fee7dbec78341ea8ab",
+  "proof_sha256": "57e5a8e9ec80e9f8c6035234b2dceb4582d7ee426debbbe98d877d0198213a77",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "low-age-independent",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/low_age_independent.py"
+  ],
+  "acceptance": "explicit natural greedy seed, all literal source-window sums independently, exact9 LOW/7free/6classes/D3/return/positive; one negative m10. Another failure stops repaired family, no second repair."
+}

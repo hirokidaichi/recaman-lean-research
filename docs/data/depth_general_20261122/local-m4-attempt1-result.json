@@ -1,0 +1,28 @@
+{
+  "tag": "local-m4-attempt1",
+  "argv": [
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "-j1",
+    "/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean"
+  ],
+  "started_jst": "2026-11-22T06:41:38.160738+09:00",
+  "wall_cap_seconds": 90,
+  "cpu_limit_per_process_seconds": 60,
+  "source_sha256": {
+    "/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean": "af3e7a51294bb3a288e2db60870f114aacc6bff3cf100c2d0c164d103b787d6f"
+  },
+  "scope": "Lean validation only; per-process CPU cap is not a cumulative process-tree cap; final wait4 includes reaped descendants",
+  "revision": "bbc8cd8811def7c281171fd96f8251b545764d4e",
+  "tracked_diff_sha256": "53c4da6c57c749429bb72889200393019dfacc99fb20b954e3972b8b43447c3b",
+  "source_tree_sha256": "6109c88d5ef9b1f364fe595a74726ce6ad41515de5fd634877f3316e1a586fe5",
+  "source_tree_manifest": "local-m4-attempt1-source-tree.json",
+  "legacy_dirty_hash_scope": "tracked git diff only; source_tree_sha256 includes untracked Lean files",
+  "exit_code": 1,
+  "reason": "completed",
+  "wall_seconds": 4.967787250061519,
+  "cpu_seconds": 1.112495,
+  "finished_jst": "2026-11-22T06:41:43.128469+09:00"
+}

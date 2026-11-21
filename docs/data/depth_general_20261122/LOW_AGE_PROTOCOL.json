@@ -1,0 +1,30 @@
+{
+  "frozen_at": "2026-11-22T06:24:37.800459+09:00",
+  "hypothesis": "strict E114 inequality on original-positive/initial-S/return2-h and LOW-original-free A",
+  "family_card": "H-20261122-02 latest freeze",
+  "discovery_m": [
+    4,
+    6,
+    8
+  ],
+  "untouched_m": [
+    10,
+    18,
+    30
+  ],
+  "source_sha256": "d427fad91a3b1dbfe68a5086acc221bd6d02179f1695b341be6ec515e86d169d",
+  "math_cpu_prior": 0.983101,
+  "math_total_cap": 2,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "low-age",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/low_age_probe.py"
+  ],
+  "accepted_payload": "full original and numeric sources, complete exact seed, all greedy signs, positive deficits, return, LOW, equality. Failed family parameter is preserved, no silent removal."
+}

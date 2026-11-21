@@ -1,0 +1,11 @@
+# H-20261123-01: one empty LOW band pays a lower source-key cost
+
+CONJECTURED / NEXT SESSION ONLY / UNEXECUTED on11/22. Read latest DAILY tail/current source/registry first. E771 explicitly refutes adjacent-two-level birth; do not reuse that statement under a new name. E770 bounds clock duplication but leaves class-height-span payment unknown.
+
+For EVERY maximal-initial-S^h/h>=1/original-positive/return2-h/full-I-II finite word, let ell=minH, R=1-h and k_t count DISTINCT ORIGINAL LOWfree candidate pairs at preheight t. Let[r,s] be ONE maximal contiguous band of empty class heights with ell+2<=r<=s<=-h-1 (strictly below the original head); g=s-r+1. Proposed precise inequality: sum_(ell<=t<r) max(k_t-1,0)>=g-1. This is a SINGLE-band cost, not the full C1 inequality or an identity; separate bands may still reuse the same lower excess, so no global sum without a new maximum-load proof.
+
+Freeze an individual producer before tests: from the LAST original global minimum, take the FIRST upward A at preheight s that exits the empty band. It is actual because k_s=0. Trace EVERY original Win supplier at height s-1, including old sources and sources after the minimum, through H06's full output inventory; seek distinct source KEYS forced by the gap, charged to genuinely distinct lower free pairs. No desired excess/charge/headfree Prop may be input. E771's g2 band with three classes at-16 MUST remain admissible; its old source18 is not discarded.
+
+First15min accept only a new key-multiplicity/payment edge or exact counter with all old sources/actual free counts/coherent replay. Finite absence/candidate selection is not progress; otherwise STOP this particular band-cost mechanism and switch to a genuinely different prefix-capacity dual/necessary canonical condition audit for>=25min. Mathematical CPU starts0 and requires current-day verified contract/frozen source/argv/cumulative cap; no old H01/H05/H07 finite scan/r4/512MB helper/failed Lean restart via date/tactics/imports/resources.
+
+Current H01 KLOW>=D/C1/Q/H/SL/surjectivity remain open. H04 finite certificate512MB first failure stays isolated. Next nominal30local/60general/10audit, setup/handoff10 each, all measured work/journal/authorized normal origin-main publication rules retained. General streak currently0 because11/22 had new evidence, not because this future card exists.

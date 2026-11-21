@@ -1,0 +1,24 @@
+{
+  "frozen_at": "2026-11-22T06:41:38.105651+09:00",
+  "question": "H04 exact m4 actual+original Nat0 counter payload only",
+  "source_sha256": "af3e7a51294bb3a288e2db60870f114aacc6bff3cf100c2d0c164d103b787d6f",
+  "frozen_source": "LowNumericAgeCounterexample.lean.txt",
+  "scratch": "/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_lean.py",
+    "local-m4-attempt1",
+    "lake",
+    "env",
+    "lean",
+    "-M512",
+    "-j1",
+    "/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean"
+  ],
+  "memory_MiB": 512,
+  "cpu_cap_per_process": 60,
+  "wall_cap": 90,
+  "repair_max": 1,
+  "resource_failure": "immediate STOPPED, no resources/import/tactic/split resurrection",
+  "adoption": "quarantined; existing HarnessTools512 STOPPED prevents required full gates, do not retry it through default unbounded build or claim PROVED-LEAN"
+}

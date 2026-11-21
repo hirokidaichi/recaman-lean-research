@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-11-22T06:59:26.571992+09:00",
+  "question": "H06 new class-to-unweighted-clock capacity at all levels, exact edge-crossing supply and per-class lower-A budget",
+  "source_sha256": "68883c0c545baa92136a6c3c3607b0db589c3fc19139d1eb60ae81805b7533cb",
+  "math_cpu_prior": 1.794977,
+  "math_total_cap": 3,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "class-clock-capacity",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/class_clock_capacity_probe.py"
+  ],
+  "soft_cpu": 0.65,
+  "discovery": "raw length0..8",
+  "separate_parameter_controls": "raw length9..11; some words appeared in old work, NEW predicates only, not fresh orbit data",
+  "acceptance": "all-pair load/bottom singleton/source visit cardinality/union of full old output classes/per-height actual+free capacity and whole main-domain recurrence; full paper proof still required",
+  "partial_stop": "no extension if resource reached; exact counts only completed predicates, not all ranges"
+}

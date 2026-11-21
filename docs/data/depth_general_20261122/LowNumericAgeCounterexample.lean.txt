@@ -1,0 +1,112 @@
+import Recaman.InitialSPaddingPositive
+import Recaman.SeededReplay
+
+namespace Recaman.LowNumericAgeCounterexample
+
+open Recaman.InitialSPaddingPositive Recaman.SingleWindowEquality
+open Recaman.BlockSuffixPositivity Recaman.ThreeNonsuppliedData
+open Recaman.ShortPeriodicSupply (sign)
+
+set_option maxRecDepth 10000
+
+/-- The complete original m4 word; no source-prefix reset. -/
+def word : List Bool :=
+  [false,false,false,false,false,false,false,false,false,false,
+   true,false,false,false,false,true,true,true,true,true,
+   false,false,false,true,true,true]
+
+def signAt : Nat → Bool := finiteSign word
+
+/-- Arbitrary coherent finite state, not the canonical initial state. -/
+def seed : State := ⟨115,[0,1,16,40,49,67,115]⟩
+
+private def actual (t : Nat) : Prop := t=17 ∨ t=25
+
+private theorem supplied_iff (t : Nat) (ht : t<26) :
+    EndN signAt 0 t ↔ actual t := by
+  have hc : ∀ q : Fin 26,
+      (signAt q=true ∧ localSupply (seg signAt 0 q)=true) ↔ actual q := by
+    unfold actual signAt word
+    decide
+  constructor
+  · intro he
+    exact (hc ⟨t,ht⟩).mp
+      ⟨he.1,(localSupply_seg_iff signAt 0 t (by omega) he.1).mpr he⟩
+  · intro ha
+    have hp := (hc ⟨t,ht⟩).mpr ha
+    exact (localSupply_seg_iff signAt 0 t (by omega) hp.1).mp hp.2
+
+/-- Every sign is an exact greedy Basic.step decision with the full seed. -/
+theorem greedy_replay :
+    seed.value ∈ seed.seen ∧
+    (∀ q : Fin 26, signAt q.val =
+      decide (¬ CanSubtract (q.val+1) (SeededReplay.run 0 seed q.val))) := by
+  decide
+
+/-- The initial S run, entire original floor and terminal return. -/
+theorem head_floor_return :
+    (∀ i : Fin 10, signAt i.val=false) ∧ signAt 10=true ∧
+    Fw signAt 26= -8 ∧ Fw signAt 15= -13 ∧
+    (∀ i : Fin 27, -13≤Fw signAt i.val) := by
+  decide
+
+/-- Positivity is for the real original all-source EndN census. -/
+theorem original_positive :
+    ∀ k, 0<k → k≤26 →
+      cN (EndN signAt 0) 0 k+1≤cN (fun i => signAt i=false) 0 k := by
+  apply initial_S_positive signAt 10 26
+  · intro i hi
+    exact head_floor_return.1 ⟨i,hi⟩
+  · have hc : cN (fun i => signAt i=true) 0 26=9 := by
+      simp [cN,signAt,word,finiteSign]
+    omega
+
+/-- All seven original LOWfree positions, including all old suppliers. -/
+theorem original_low_positions :
+    ∀ q : Fin 26,
+      (signAt q.val=true ∧ ¬EndN signAt 0 q.val ∧ Fw signAt q.val≤ -9) ↔
+      q.val ∈ ([10,15,16,18,19,23,24] : List Nat) := by
+  have hc : ∀ q : Fin 26,
+      (signAt q.val=true ∧ ¬actual q.val ∧ Fw signAt q.val≤ -9) ↔
+      q.val ∈ ([10,15,16,18,19,23,24] : List Nat) := by
+    unfold actual signAt word
+    decide
+  intro q
+  rw [supplied_iff q.val q.isLt]
+  exact hc q
+
+theorem original_low_count :
+    cN (fun q => signAt q=true ∧ ¬EndN signAt 0 q ∧ Fw signAt q≤ -9) 0 26=7 := by
+  rw [cN_congr _ (fun q => signAt q=true ∧ ¬actual q ∧ Fw signAt q≤ -9)
+    0 26 (fun q _ hq => by rw [supplied_iff q (by omega)])]
+  simp [cN,actual,signAt,word,finiteSign,Fw,sign]
+
+def lowCandidatePairs : List (Int × Int) :=
+  ([10,15,16,18,19,23,24] : List Nat).map fun q =>
+    (Fw signAt q-1, ((q+1 : Nat) : Int)*(Fw signAt q-1)-Ar signAt 0 q)
+
+theorem distinct_low_classes : lowCandidatePairs.eraseDups.length=6 := by
+  decide
+
+/-- Original LOWfree target has an actual non-P2 numerical source at the
+old E114 equality boundary. This is not a C1 counterexample. -/
+theorem low_numeric_age_counter :
+    signAt 23=true ∧ ¬EndN signAt 0 23 ∧ Fw signAt 23= -11 ∧
+    Fw signAt 15= -13 ∧
+    (SeededReplay.run 0 seed 15).value=17 ∧
+    (SeededReplay.run 0 seed 23).value=41 ∧
+    (SeededReplay.run 0 seed 23).value-24=(SeededReplay.run 0 seed 15).value ∧
+    4*24=8*(8+4) := by
+  refine ⟨by decide,?_,by decide,by decide,by decide,by decide,by decide,by decide⟩
+  rw [supplied_iff 23 (by omega)]
+  decide
+
+#print axioms greedy_replay
+#print axioms head_floor_return
+#print axioms original_positive
+#print axioms original_low_positions
+#print axioms original_low_count
+#print axioms distinct_low_classes
+#print axioms low_numeric_age_counter
+
+end Recaman.LowNumericAgeCounterexample

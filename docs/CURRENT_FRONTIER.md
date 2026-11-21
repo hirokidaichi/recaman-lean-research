@@ -1,6 +1,24 @@
 # Current research frontier
 
-最終更新: 2026-11-21 日次研究（確定実績はDAILY/journal参照）。任意深さのS admission・数値時間potential・元LOWfree seed負荷の新証拠はPAPER、一般C1は未証明。
+最終更新: 2026-11-22 日次研究（確定実績はDAILY/journal参照）。元LOW classからclock容量を払う新PAPERと実source-gap反例。一般C1未証明。
+
+## 2026-11-22: original class-clock capacity and source-key no-go (PAPER / human review pending)
+
+- **E-768 REFUTED**: fixed h10/D3/original LOWfree7/classes6 allow unbounded non-P2 numerical source age/clock in an actual coherent full-positive/return history. All-even m10 fails and is explicitly excluded by a single derived collision exception. High stock/value/base grow; NOT canonical/C1. OLD E114 age inequality is INPUT, its rederivation is excluded from progress.
+- **E-769 PROVED-PAPER**: at most3 distinct LOWfree classes force singleton free clocks and additional D<=1, on the explicitly MAXIMAL-head/return subdomain. Complete original sources and the j1 actual head-loop exception are retained. Nonmaximal S3A4/h1 is an applicability negative. This is LOCAL progress.
+- **E-770 PROVED-PAPER**: same-pair repeat charges to lower original A with explicit multiplicity/boundary; full old output crossing inventories supply an all-depth unweighted clock recurrence. The last-selected ORIGINAL prefix supplies its floor, yielding free-clock capacity from K and the actual class height span; on ONE infinite word class finiteness iff clock finiteness below each cut. No unknown floor/coverage Prop, no shifted origin. The missing D/span lower payment remains.
+- **E-771 REFUTED**: an actual coherent S13/return-11/D5/FLOW8/K8 counter has adjacent LOW levels-15/-14 with only actual A, supplied by original sources18/27. No one-class-per-two-heights support rule; no C1 counter.
+
+[DAILY](RESEARCH_HANDOFF_2026-11-22_DAILY.md), [fixed LOW age](RESEARCH_NOTE_2026-11-22_LOW_NUMERIC_AGE.md), [three classes](RESEARCH_NOTE_2026-11-22_THREE_LOW_CLASSES.md), [all-prefix capacity](RESEARCH_NOTE_2026-11-22_CLASS_CLOCK_CAPACITY.md), [internally supplied floor](RESEARCH_NOTE_2026-11-22_LAST_FREE_CLASS_FLOOR.md), [gap counter](RESEARCH_NOTE_2026-11-22_ADJACENT_CLASS_COUNTER.md). All unbounded arguments PAPER/unreviewed, finite controls COMPUTED. New finite m4 Lean first-attempt512MB FAILED/STOPPED, repair0, no Recaman/root/Audit adoption; old HarnessTools512 and all prior stops untouched. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean remain.
+
+## Research brief
+
+- **現在の一問**: 欠落LOW高さ帯をold source-keyが飛び越す費用を、全元lower class多重度へ重複なく課金できるか。主K_LOW-depth/span不等式はCONJECTURED。
+- **新edge**: E-770の原class→clock再帰とlast-selected prefix floor producer。元Aをfreeへ置換せず全旧出力・最大負荷・境界を払い、class高さspanから無重みfree時計容量へ消費。
+- **反証**: E-768固定LOW財布からsource age上界は偽、E-771隣接2高さごとのclass birthは偽。両方とも全元source/actual replay保持、C1反例へ昇格しない。
+- **局所**: E-769 maximal-head/K<=3のsingleton/D<=1はPAPER。H04 finite certificate512MB STOPPED/未採用、旧E114再証明は新進展でない。
+- **未払い**: class高さspan/return-gapをclass件数で払う下界、複数の空帯で同じold keyを重複請求しない機構、canonical初期stock。C1/Q/H/SL/全射性は未証明。
+- **継続**: local PAPERあり/新Lean採用0、general新証拠あり/連続進展なし0（新証拠による維持）。次30/60/10、別機構>=25min確保済1513.545289sは親内。確定実績/CPU/公開SHAはDAILY/journal参照。
 
 ## 2026-11-21: S admission, numerical floor time and seed reuse (PAPER / human review pending)
 
@@ -12,7 +30,7 @@
 
 [DAILY](RESEARCH_HANDOFF_2026-11-21_DAILY.md), [S threshold](RESEARCH_NOTE_2026-11-21_S_HEAD_ADMISSION.md), [numeric time](RESEARCH_NOTE_2026-11-21_NUMERIC_SOURCE_HORIZON.md), [plateau](RESEARCH_NOTE_2026-11-21_PLATEAU_CHRONOLOGY.md), [seed classes](RESEARCH_NOTE_2026-11-21_SEED_CLASS_REUSE.md), [LOW reuse](RESEARCH_NOTE_2026-11-21_LOW_SEED_REUSE.md). All unbounded arguments are PAPER, finite predicates COMPUTED, no new Lean adoption. All original sources/stock-before prefixes remain; arbitrary State/finite completion/canonical/infinite history are distinct. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean and all old STOPPED states are unchanged.
 
-## Research brief
+## Previous research brief (2026-11-21)
 
 - **現在の一問**: 元positive/initial-S h/return2-hの最低点深さを、元LOWfreeのDISTINCT affine candidate classesで払えるか。次回cardはCONJECTURED/未実行であり、新進展に数えない。
 - **得た新edge**: S-head admissionの完全閾値とno-go、数値positiveからのPnext<=3P-1時間potential、coherent plateau接着、generic seed最小class会計、LOWfree一stock固定負荷の全N反証。

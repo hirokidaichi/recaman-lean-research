@@ -1972,3 +1972,13 @@ Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-dept
 
 
 Stop constant seed-load and A-tag-only numerical depth transport; do not restart prior stopped graph/Lean/checker jobs. No global C1 or canonical conclusion. Next distinct LOW candidate-class potential is untested.
+
+## 2026-11-22: original free classes to clocks (PAPER / no new Lean adoption)
+
+E766 original affine pair vocabulary (INPUT) -> new same-pair bridge needs a lower A at height r-2 -> per-class load1+a_(r-2). Full original actual sources give m_r<=k_r+N_(r-1); edge conservation supplies N_v=a_v+a_(v-1)+end_indicator-initial_side_indicator. These NEW producers -> all-depth all-A/free-clock recurrence with explicit multiplicity and boundary1 (E770), never A=free.
+
+E770's last-selected ORIGINAL free-event prefix supplies minimum=min selected free preheight, with every Nat0 past supplier/tag/class preserved. Its all-prefix recurrence -> unweighted free-clock capacity from distinct K and actual class height span; ONE infinite original word has finite selected classes iff finite selected free CLOCKS. No class finiteness/span bound is assumed true for C1/canonical histories, and no numerical State is glued across prefixes. All PAPER/human review pending.
+
+E769 LOCAL K<=3/maximal-head return: global-minimum bottom pairs singleton -> exact old-source/high-loop analysis -> original F=K<=3/D<=1. D3 head-AS j1 is supplied and retained. Nonmaximal S3A4/h1 prevents broadening the quantifier. Old E767 K4/F5/D3 is a boundary input, not a new row.
+
+E768 fixed h10/D3/F7/K6 actual family refutes age/clock bound from LOW wallets alone, at OLD E114 equality; high stock/value/base still grow. E771 admissible33-clock class-gap counter refutes adjacent-level birth, with nonshort old source18 to29 and short27 to30. Both preserve all original suppliers and are NOT C1 counters. Future height payment must price old source-key jumps and duplicate claims across missing bands. H04 finite certificate512MB FAILED/STOPPED/repair0 remains isolated; root/Audit/library unchanged, old HarnessTools stopper not rerun.

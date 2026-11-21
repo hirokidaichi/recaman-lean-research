@@ -1,0 +1,1038 @@
+{
+  "parameters": {
+    "h_lo": 1,
+    "h_hi": 4,
+    "core_lo": 2,
+    "core_hi": 18,
+    "soft_cpu": 0.65
+  },
+  "nodes": 160307,
+  "census": {
+    "h1/core2": {
+      "complete": 1,
+      "min_slack": 2,
+      "sample": {
+        "word": "SAA",
+        "h": 1,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            -2
+          ]
+        ]
+      }
+    },
+    "h1/core4": {
+      "complete": 1,
+      "min_slack": 3,
+      "sample": {
+        "word": "SASAA",
+        "h": 1,
+        "depth": 0,
+        "K_LOW": 3,
+        "F_LOW": 3,
+        "total_free": 3,
+        "classes": [
+          [
+            -2,
+            -6
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            -3
+          ]
+        ]
+      }
+    },
+    "h1/core6": {
+      "complete": 3,
+      "min_slack": 2,
+      "sample": {
+        "word": "SASSAAA",
+        "h": 1,
+        "depth": 1,
+        "K_LOW": 3,
+        "F_LOW": 3,
+        "total_free": 3,
+        "classes": [
+          [
+            -3,
+            -11
+          ],
+          [
+            -2,
+            -7
+          ],
+          [
+            -2,
+            -3
+          ]
+        ]
+      }
+    },
+    "h1/core8": {
+      "complete": 10,
+      "min_slack": 2,
+      "sample": {
+        "word": "SASSAAAAS",
+        "h": 1,
+        "depth": 1,
+        "K_LOW": 3,
+        "F_LOW": 3,
+        "total_free": 4,
+        "classes": [
+          [
+            -3,
+            -11
+          ],
+          [
+            -2,
+            -7
+          ],
+          [
+            -2,
+            -3
+          ]
+        ]
+      }
+    },
+    "h1/core10": {
+      "complete": 31,
+      "min_slack": 1,
+      "sample": {
+        "word": "SASSSSAAAAA",
+        "h": 1,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 5,
+        "classes": [
+          [
+            -5,
+            -24
+          ],
+          [
+            -4,
+            -18
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            6
+          ]
+        ]
+      }
+    },
+    "h1/core12": {
+      "complete": 96,
+      "min_slack": 1,
+      "sample": {
+        "word": "SASSSSAAAAAAS",
+        "h": 1,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 6,
+        "classes": [
+          [
+            -5,
+            -24
+          ],
+          [
+            -4,
+            -18
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            6
+          ]
+        ]
+      }
+    },
+    "h1/core14": {
+      "complete": 297,
+      "min_slack": 1,
+      "sample": {
+        "word": "SASSSSAAAAAAASS",
+        "h": 1,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 7,
+        "classes": [
+          [
+            -5,
+            -24
+          ],
+          [
+            -4,
+            -18
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            6
+          ]
+        ]
+      }
+    },
+    "h1/core16": {
+      "complete": 938,
+      "min_slack": 1,
+      "sample": {
+        "word": "SASSASSSSAAAASAAA",
+        "h": 1,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 6,
+        "total_free": 6,
+        "classes": [
+          [
+            -6,
+            -41
+          ],
+          [
+            -5,
+            -32
+          ],
+          [
+            -3,
+            -11
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -2,
+            0
+          ]
+        ]
+      }
+    },
+    "h1/core18": {
+      "complete": 2971,
+      "min_slack": 1,
+      "sample": {
+        "word": "SASASSASSSSAAAASAAA",
+        "h": 1,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 7,
+        "classes": [
+          [
+            -6,
+            -52
+          ],
+          [
+            -5,
+            -41
+          ],
+          [
+            -3,
+            -16
+          ],
+          [
+            -2,
+            -6
+          ],
+          [
+            -2,
+            -3
+          ]
+        ]
+      }
+    },
+    "h2/core2": {
+      "complete": 1,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSAA",
+        "h": 2,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            -4
+          ]
+        ]
+      }
+    },
+    "h2/core4": {
+      "complete": 2,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSAAAS",
+        "h": 2,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            -4
+          ]
+        ]
+      }
+    },
+    "h2/core6": {
+      "complete": 5,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSAAASAS",
+        "h": 2,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 3,
+        "classes": [
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            -4
+          ]
+        ]
+      }
+    },
+    "h2/core8": {
+      "complete": 16,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSAAAAASSS",
+        "h": 2,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 4,
+        "classes": [
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            -4
+          ]
+        ]
+      }
+    },
+    "h2/core10": {
+      "complete": 47,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSASSSSAAAAA",
+        "h": 2,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 5,
+        "classes": [
+          [
+            -6,
+            -30
+          ],
+          [
+            -5,
+            -23
+          ],
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            4
+          ]
+        ]
+      }
+    },
+    "h2/core12": {
+      "complete": 147,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSASSSSAAAAAAS",
+        "h": 2,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 6,
+        "classes": [
+          [
+            -6,
+            -30
+          ],
+          [
+            -5,
+            -23
+          ],
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            4
+          ]
+        ]
+      }
+    },
+    "h2/core14": {
+      "complete": 447,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSASSSSAAAAAAASS",
+        "h": 2,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 7,
+        "classes": [
+          [
+            -6,
+            -30
+          ],
+          [
+            -5,
+            -23
+          ],
+          [
+            -3,
+            -6
+          ],
+          [
+            -2,
+            4
+          ]
+        ]
+      }
+    },
+    "h2/core16": {
+      "complete": 1418,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSASSASSSSAAAASAAA",
+        "h": 2,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 6,
+        "total_free": 6,
+        "classes": [
+          [
+            -7,
+            -48
+          ],
+          [
+            -6,
+            -38
+          ],
+          [
+            -4,
+            -15
+          ],
+          [
+            -3,
+            -6
+          ],
+          [
+            -3,
+            -3
+          ]
+        ]
+      }
+    },
+    "h2/core18": {
+      "complete": 4425,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSASASSASSSSAAAASAAA",
+        "h": 2,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 7,
+        "classes": [
+          [
+            -7,
+            -59
+          ],
+          [
+            -6,
+            -47
+          ],
+          [
+            -4,
+            -20
+          ],
+          [
+            -3,
+            -9
+          ],
+          [
+            -3,
+            -6
+          ]
+        ]
+      }
+    },
+    "h3/core2": {
+      "complete": 1,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSAA",
+        "h": 3,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            -7
+          ]
+        ]
+      }
+    },
+    "h3/core4": {
+      "complete": 2,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSAAAS",
+        "h": 3,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            -7
+          ]
+        ]
+      }
+    },
+    "h3/core6": {
+      "complete": 5,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSAAASAS",
+        "h": 3,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 3,
+        "classes": [
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            -7
+          ]
+        ]
+      }
+    },
+    "h3/core8": {
+      "complete": 16,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSAAAAASSS",
+        "h": 3,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 4,
+        "classes": [
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            -7
+          ]
+        ]
+      }
+    },
+    "h3/core10": {
+      "complete": 46,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSASSSSAAAAA",
+        "h": 3,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 5,
+        "classes": [
+          [
+            -7,
+            -37
+          ],
+          [
+            -6,
+            -29
+          ],
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            1
+          ]
+        ]
+      }
+    },
+    "h3/core12": {
+      "complete": 145,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSASSSSAAAAAAS",
+        "h": 3,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 6,
+        "classes": [
+          [
+            -7,
+            -37
+          ],
+          [
+            -6,
+            -29
+          ],
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            1
+          ]
+        ]
+      }
+    },
+    "h3/core14": {
+      "complete": 442,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSASSSSAAAAAAASS",
+        "h": 3,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 7,
+        "classes": [
+          [
+            -7,
+            -37
+          ],
+          [
+            -6,
+            -29
+          ],
+          [
+            -4,
+            -10
+          ],
+          [
+            -3,
+            1
+          ]
+        ]
+      }
+    },
+    "h3/core16": {
+      "complete": 1411,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSASSASSSSAAAASAAA",
+        "h": 3,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 6,
+        "total_free": 6,
+        "classes": [
+          [
+            -8,
+            -56
+          ],
+          [
+            -7,
+            -45
+          ],
+          [
+            -5,
+            -20
+          ],
+          [
+            -4,
+            -10
+          ],
+          [
+            -4,
+            -7
+          ]
+        ]
+      }
+    },
+    "h3/core18": {
+      "complete": 4388,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSASASSASSSSAAAASAAA",
+        "h": 3,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 7,
+        "classes": [
+          [
+            -8,
+            -67
+          ],
+          [
+            -7,
+            -54
+          ],
+          [
+            -5,
+            -25
+          ],
+          [
+            -4,
+            -13
+          ],
+          [
+            -4,
+            -10
+          ]
+        ]
+      }
+    },
+    "h4/core2": {
+      "complete": 1,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSSAA",
+        "h": 4,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -11
+          ]
+        ]
+      }
+    },
+    "h4/core4": {
+      "complete": 2,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSSAAAS",
+        "h": 4,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 2,
+        "classes": [
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -11
+          ]
+        ]
+      }
+    },
+    "h4/core6": {
+      "complete": 5,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSSAAASAS",
+        "h": 4,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 3,
+        "classes": [
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -11
+          ]
+        ]
+      }
+    },
+    "h4/core8": {
+      "complete": 16,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSSAAAAASSS",
+        "h": 4,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 4,
+        "classes": [
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -11
+          ]
+        ]
+      }
+    },
+    "h4/core10": {
+      "complete": 46,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSASSSSAAAAA",
+        "h": 4,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 5,
+        "classes": [
+          [
+            -8,
+            -45
+          ],
+          [
+            -7,
+            -36
+          ],
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -3
+          ]
+        ]
+      }
+    },
+    "h4/core12": {
+      "complete": 145,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSASSSSAAAAAAS",
+        "h": 4,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 6,
+        "classes": [
+          [
+            -8,
+            -45
+          ],
+          [
+            -7,
+            -36
+          ],
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -3
+          ]
+        ]
+      }
+    },
+    "h4/core14": {
+      "complete": 441,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSASSSSAAAAAAASS",
+        "h": 4,
+        "depth": 3,
+        "K_LOW": 4,
+        "F_LOW": 5,
+        "total_free": 7,
+        "classes": [
+          [
+            -8,
+            -45
+          ],
+          [
+            -7,
+            -36
+          ],
+          [
+            -5,
+            -15
+          ],
+          [
+            -4,
+            -3
+          ]
+        ]
+      }
+    },
+    "h4/core16": {
+      "complete": 1407,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSASSASSSSAAAASAAA",
+        "h": 4,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 6,
+        "total_free": 6,
+        "classes": [
+          [
+            -9,
+            -65
+          ],
+          [
+            -8,
+            -53
+          ],
+          [
+            -6,
+            -26
+          ],
+          [
+            -5,
+            -15
+          ],
+          [
+            -5,
+            -12
+          ]
+        ]
+      }
+    },
+    "h4/core18": {
+      "complete": 4362,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSASASSASSSSAAAASAAA",
+        "h": 4,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 7,
+        "classes": [
+          [
+            -9,
+            -76
+          ],
+          [
+            -8,
+            -62
+          ],
+          [
+            -6,
+            -31
+          ],
+          [
+            -5,
+            -18
+          ],
+          [
+            -5,
+            -15
+          ]
+        ]
+      }
+    }
+  },
+  "witness": null,
+  "nearest": {
+    "word": "SASSSSAAAAA",
+    "h": 1,
+    "depth": 3,
+    "K_LOW": 4,
+    "F_LOW": 5,
+    "total_free": 5,
+    "classes": [
+      [
+        -5,
+        -24
+      ],
+      [
+        -4,
+        -18
+      ],
+      [
+        -2,
+        -3
+      ],
+      [
+        -1,
+        6
+      ]
+    ],
+    "slack": 1
+  },
+  "stopped": null,
+  "worker_internal_cpu_seconds": 0.15162799999999999
+}

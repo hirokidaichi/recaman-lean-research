@@ -704,3 +704,17 @@ Parent R-20261120-01: local_progress=0; depth_general_progress=yes (new all-dept
 
 
 Stop constant seed-load and A-tag-only numerical depth transport; do not restart prior stopped graph/Lean/checker jobs. No global C1 or canonical conclusion. Next distinct LOW candidate-class potential is untested.
+
+## 2026-11-22: original class-clock capacity / source-key boundaries
+
+E768 REFUTED: with fixed initial h10/additional D3/LOWfree7/classes6, actual coherent full-positive return histories have non-P2 numeric source age2m/clockm²+2m unbounded (even m>=4 except10, explicit all-stock/head proof). This stops LOW-only numerical age/strictness payment. Keep the m10 old-head collision and single mathematical exception; high stock/value/base grow. OLD E114 nonunit collision inequality/consumer were rederived then rejected by source novelty audit, NOT re-registered.
+
+E769 PROVED-PAPER is LOCAL: maximal head/return/K<=3 gives original singleton free clocks and D<=1; all old sources and the D3 j1 supplied loop retained. Nonmaximal S3A4/h1 is an essential negative. K4/F5/D3 from OLD E767 is not new evidence. All arbitrary-K/span/C1 claims remain open.
+
+E770 PROVED-PAPER: candidate-pair repeats pay one lower original A per same-pair bridge, with explicit inter-class duplication; exact full-source output crossing inventories pay all-A capacity. The all-depth recurrence is derived rather than an unknown Prop. Last-selected original FREE prefix supplies its own floor while preserving every strict past supplier, so actual class HEIGHT SPAN bounds unweighted selected FREE CLOCKS; ONE infinite word has finite selected classes iff finite selected free clocks. This is a new floor producer/all-prefix consumer, NOT a resurrection of the old last-minimum positive-child induction. Do not apply it to an arbitrary single-class subfamily or extend its floor through a later all-S tail; span-to-count/clock costs remain unpaid.
+
+E771 REFUTED: full-positive/coherent S13...33-clock counter with D5/F8/K8 has adjacent heights-15/-14 with no free class; targets29/30 are supplied by ALL source sets{18}/{27}. Stop the adjacent-two-level birth route, not C1/K>=D. First raw counter failed S chronology and is retained only as a weakened-model control. New producer must price old SOURCE KEYS and lower-class multiplicity, allowing jumps.
+
+H04 fresh finite m4 Lean certificate hit512MB on FIRST attempt, repair0, all source/logs in depth_general_20261122/*.lean.txt; no Recaman/root/Audit/PROVED-LEAN adoption. Do not fix its Decidable diagnostic after a resource STOP or rescue via import/tactic/split/resources. Reopen only with independent mathematical pruning/smaller certificate and measured same512MB improvement. Inherited HarnessTools512 STOPPED was NOT retried through the default unbounded check.sh; no gates changed/disabled. All previous H52/r4 two0/0/49 profile/old arithmetic/memory/one-repair restrictions persist without date reset.
+
+New finite capacities/negative controls are COMPUTED support. General progress is E768/E770/E771 new mechanism evidence; local E769 PAPER, adopted Lean0. One parent/no double counting, streak0 from new evidence. Next30/60/10 and source-key empty-band cost (not the refuted adjacent-birth rule). Final actual time/CPU/normal main publication are DAILY/journal authoritative.

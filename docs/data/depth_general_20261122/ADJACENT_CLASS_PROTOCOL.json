@@ -1,0 +1,24 @@
+{
+  "frozen_at": "2026-11-22T07:10:54.292851+09:00",
+  "question": "H07 adjacent LOW class birth, admissible original-positive/return/fullI-II domain",
+  "source_sha256": "62b98af7f134271847e53fedbfd19c60621877111e9ed31f6b5f85bcd3d37357",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "adjacent-class",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/adjacent_class_probe.py"
+  ],
+  "math_cpu_prior": 1.967009,
+  "math_total_cap": 3,
+  "soft_cpu": 0.65,
+  "discovery": "h7/2..4A-runs/Afirst lengths1..3/Sgaps1..6/core<=32",
+  "separate_parameter_controls": "h13/5A-runs/A1..3/S1..4/core<=40",
+  "negative_control": "save first RAW gap counter; do not promote to admissible if positive/I-II fails",
+  "acceptance": "first admissible full actual-source counter includes complete coherent generic seed replay; otherwise exact partial counts/stop and no extension",
+  "not_restart": "new adjacent-class-empty-band predicate/profile architecture from H05/H06 mathematical inputs, not an old bounded-free/r4/first census retry"
+}

@@ -1,0 +1,170 @@
+{
+  "parameters": {
+    "h_lo": 5,
+    "h_hi": 8,
+    "core_lo": 20,
+    "core_hi": 22,
+    "soft_cpu": 0.65
+  },
+  "nodes": 659200,
+  "census": {
+    "h5/core20": {
+      "complete": 13961,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSSASASSASSSSAAAASAAAAS",
+        "h": 5,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 8,
+        "classes": [
+          [
+            -10,
+            -86
+          ],
+          [
+            -9,
+            -71
+          ],
+          [
+            -7,
+            -38
+          ],
+          [
+            -6,
+            -24
+          ],
+          [
+            -6,
+            -21
+          ]
+        ]
+      }
+    },
+    "h5/core22": {
+      "complete": 43883,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSSASASSASSSSAAAASAAAAASS",
+        "h": 5,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 9,
+        "classes": [
+          [
+            -10,
+            -86
+          ],
+          [
+            -9,
+            -71
+          ],
+          [
+            -7,
+            -38
+          ],
+          [
+            -6,
+            -24
+          ],
+          [
+            -6,
+            -21
+          ]
+        ]
+      }
+    },
+    "h6/core20": {
+      "complete": 13961,
+      "min_slack": 1,
+      "sample": {
+        "word": "SSSSSSASASSASSSSAAAASAAAAS",
+        "h": 6,
+        "depth": 4,
+        "K_LOW": 5,
+        "F_LOW": 7,
+        "total_free": 8,
+        "classes": [
+          [
+            -11,
+            -97
+          ],
+          [
+            -10,
+            -81
+          ],
+          [
+            -8,
+            -46
+          ],
+          [
+            -7,
+            -31
+          ],
+          [
+            -7,
+            -28
+          ]
+        ]
+      }
+    },
+    "h6/core22": {
+      "complete": 23046,
+      "min_slack": 2,
+      "sample": {
+        "word": "SSSSSSAAAAAAAAAAASASSSSSSSSS",
+        "h": 6,
+        "depth": 0,
+        "K_LOW": 2,
+        "F_LOW": 2,
+        "total_free": 11,
+        "classes": [
+          [
+            -7,
+            -28
+          ],
+          [
+            -6,
+            -22
+          ]
+        ]
+      }
+    }
+  },
+  "witness": null,
+  "nearest": {
+    "word": "SSSSSASASSASSSSAAAASAAAAS",
+    "h": 5,
+    "depth": 4,
+    "K_LOW": 5,
+    "F_LOW": 7,
+    "total_free": 8,
+    "classes": [
+      [
+        -10,
+        -86
+      ],
+      [
+        -9,
+        -71
+      ],
+      [
+        -7,
+        -38
+      ],
+      [
+        -6,
+        -24
+      ],
+      [
+        -6,
+        -21
+      ]
+    ],
+    "slack": 1
+  },
+  "stopped": "cooperative CPU budget; partial census is not exhaustive",
+  "worker_internal_cpu_seconds": 0.650083
+}

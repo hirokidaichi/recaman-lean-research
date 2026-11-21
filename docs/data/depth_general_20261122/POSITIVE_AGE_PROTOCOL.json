@@ -1,0 +1,31 @@
+{
+  "frozen_at": "2026-11-22T06:21:07.184274+09:00",
+  "all_parameter_candidate": "EVERY even m>=4, h=m+3/global base m\u00b2-m-4, full S^h A^(m+1) S^(m-1) AS, initial current V_h and complete seed0/current/Cj excluding C2",
+  "exact_acceptance": "full actual replay, original positive at every prefix, original return2-h, depth0, final A original-free/nonP2-source h/age2m/equality4n=L\u00b2+4L; target is HIGH by1 not LOW",
+  "discovery": [
+    4,
+    6
+  ],
+  "unused_parameter_holdout": [
+    10,
+    18
+  ],
+  "negative_odd_controls": [
+    3,
+    5
+  ],
+  "math_cpu_prior": 0.953209,
+  "math_total_cap": 2,
+  "source_sha256": "acceacdd0587a3ef659632f92bc71a312ff2a2507d2749dc182053fea236ac36",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "positive-age",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/positive_age_probe.py"
+  ]
+}

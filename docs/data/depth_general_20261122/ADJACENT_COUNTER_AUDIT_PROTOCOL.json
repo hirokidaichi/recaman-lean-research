@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-11-22T07:12:32.212771+09:00",
+  "role": "independent exact verification of discovered finite admissible counter, NOT fresh search/holdout",
+  "old_math_cap": 3,
+  "new_math_cap": 4,
+  "prior_measured": 2.110794,
+  "reason": "New admissible counter requires independent direct literal supplier/chronology/full-stock replay. Per-process1 hard cap would exceed previous remaining budget; allocate one capped verification job only.",
+  "input_sha256": "5d8ce0324fb0d765f1e1e2fdbb8fc8077728d98077d24237e5fd56ae76a0a9da",
+  "source_sha256": "b9fff453a30afc2a3e0f9eb7fa1fb6dd1c32ad78787333988fe23fc269a93a2d",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261122/run_single.py",
+    "--tag",
+    "adjacent-counter-audit",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261122/adjacent_counter_audit.py"
+  ],
+  "acceptance": "exact actual Natural Basic-style decisions, all literal original suppliers, prefixpositive/return/min/LOWclasses and both missing heights, full I/II; no source truncation/canonical claim",
+  "repair_max": 1
+}

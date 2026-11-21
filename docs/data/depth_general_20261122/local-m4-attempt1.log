@@ -1,0 +1,31 @@
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:21:4: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:34:48: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:25:16: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:40:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:47:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:61:15: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:62:4: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:54:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:65:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:78:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:84:4: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:88:8: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:102:2: error: failed to synthesize
+  Decidable ¬actual 23
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:101:26: error: (kernel) excessive memory consumption detected
+/var/folders/c4/jkpc1x5n6gjd_81db4bpt2qw0000gn/T/recaman-low-age-9lsw657w/LowNumericAgeCounterexample.lean:93:8: error: (kernel) excessive memory consumption detected
+'Recaman.LowNumericAgeCounterexample.greedy_replay' depends on axioms: [propext, Quot.sound, greedy_replay, seed]
+'Recaman.LowNumericAgeCounterexample.head_floor_return' depends on axioms: [head_floor_return]
+'Recaman.LowNumericAgeCounterexample.original_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ original_positive]
+'Recaman.LowNumericAgeCounterexample.original_low_positions' depends on axioms: [sorryAx, original_low_positions]
+'Recaman.LowNumericAgeCounterexample.original_low_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ original_low_count]
+'Recaman.LowNumericAgeCounterexample.distinct_low_classes' depends on axioms: [distinct_low_classes, lowCandidatePairs]
+'Recaman.LowNumericAgeCounterexample.low_numeric_age_counter' depends on axioms: [sorryAx, low_numeric_age_counter]

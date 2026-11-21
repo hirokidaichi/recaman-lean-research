@@ -1,0 +1,240 @@
+{
+  "parent": "R-20261122-01",
+  "session": "45f3710c-fdb7-4f12-9cb5-4071951492ef",
+  "journal": "docs/data/daily_research/2026-11-22.json",
+  "actual_start": "2026-11-22T06:02:27.853806+09:00",
+  "actual_stop": "2026-11-22T07:56:23.947516+09:00",
+  "allocation_seconds": {
+    "setup": 300.236185,
+    "general_research": 3430.825892,
+    "local_research": 1087.496232,
+    "audit": 1345.373268,
+    "handoff": 672.162133
+  },
+  "late_checkpoint_intervals": [
+    {
+      "start": "2026-11-22T06:40:23.005437+09:00",
+      "end": "2026-11-22T06:47:59.309789+09:00",
+      "seconds": 456.304352,
+      "unit": "H-20261122-04/local-finite-certificate"
+    },
+    {
+      "start": "2026-11-22T07:12:32.393267+09:00",
+      "end": "2026-11-22T07:17:36.907750+09:00",
+      "seconds": 304.514483,
+      "unit": "H-20261122-07/general-exact-gap-counter"
+    },
+    {
+      "start": "2026-11-22T07:33:28.855959+09:00",
+      "end": "2026-11-22T07:39:30.133392+09:00",
+      "seconds": 361.277433,
+      "unit": "R-20261122-01/static-gates-and-publication-preflight"
+    }
+  ],
+  "local_progress": "yes E769 PAPER; adopted Lean0",
+  "depth_general_progress": true,
+  "general_stagnation_streak": 0,
+  "next_allocation": "30/60/10",
+  "cpu_summary": {
+    "all_own_jobs_finished": true,
+    "rows": [
+      {
+        "path": "docs/data/depth_general_20261122/adjacent-class-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.143785,
+        "controller_cpu_seconds": 0.002043999999999997,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/adjacent-counter-audit-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.037839,
+        "controller_cpu_seconds": 0.0020269999999999993,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/all-prefix-capacity-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.082904,
+        "controller_cpu_seconds": 0.0013970000000000024,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/blocker-age-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.040608,
+        "controller_cpu_seconds": 0.001456000000000006,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/class-clock-capacity-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.089128,
+        "controller_cpu_seconds": 0.0015229999999999966,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/class-discovery-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.190945,
+        "controller_cpu_seconds": 0.0015299999999999966,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/class-holdout-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.689858,
+        "controller_cpu_seconds": 0.001834999999999998,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/fixed-head-age-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.070689,
+        "controller_cpu_seconds": 0.0017100000000000006,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/guard-cpu-result.json",
+        "kind": "guard",
+        "cpu_seconds": 1.002122,
+        "controller_cpu_seconds": 0.002381000000000001,
+        "exit_code": -24,
+        "reason": "signal 24 (see CPU cap and output)"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/guard-exec-result.json",
+        "kind": "guard",
+        "cpu_seconds": 0.029819,
+        "controller_cpu_seconds": 0.0013569999999999988,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/guard-fork-result.json",
+        "kind": "guard",
+        "cpu_seconds": 0.029721,
+        "controller_cpu_seconds": 0.001572999999999998,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/guard-normal-result.json",
+        "kind": "guard",
+        "cpu_seconds": 0.031014,
+        "controller_cpu_seconds": 0.0015999999999999999,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/guard-wall-result.json",
+        "kind": "guard",
+        "cpu_seconds": 0.028095999999999996,
+        "controller_cpu_seconds": 0.0016560000000000004,
+        "exit_code": -9,
+        "reason": "wall/deadline cap"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/last-free-floor-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.127605,
+        "controller_cpu_seconds": 0.0018869999999999928,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/local-m4-attempt1-result.json",
+        "kind": "lean_validation",
+        "cpu_seconds": 1.112495,
+        "controller_cpu_seconds": null,
+        "exit_code": 1,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/low-age-independent-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.047209999999999995,
+        "controller_cpu_seconds": 0.0015670000000000007,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/low-age-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.030786,
+        "controller_cpu_seconds": 0.001454000000000003,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/nested-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.031798,
+        "controller_cpu_seconds": 0.001690000000000004,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/positive-age-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.029892,
+        "controller_cpu_seconds": 0.0014750000000000024,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/three-class-raw-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.580881,
+        "controller_cpu_seconds": 0.0018269999999999953,
+        "exit_code": 0,
+        "reason": "completed"
+      },
+      {
+        "path": "docs/data/depth_general_20261122/three-class-result.json",
+        "kind": "mathematical_worker",
+        "cpu_seconds": 0.08231,
+        "controller_cpu_seconds": 0.001650999999999998,
+        "exit_code": 0,
+        "reason": "completed"
+      }
+    ],
+    "math_worker_cap_history_seconds": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "totals": {
+      "mathematical_worker": 2.2762379999999998,
+      "guard": 1.1207719999999999,
+      "lean_validation": 1.112495
+    },
+    "controller_cpu_measured_separately": 0.03363999999999999,
+    "other_tool_bookkeeping_cpu": "not globally measured, not zero",
+    "scope": "math: current-day verified cooperative single-Python/no children only; Lean: fixed per-process cap/wait4 validation, NOT generic process-tree cumulative cap/OS AS; yesterday usage excluded"
+  },
+  "distinct_mechanism": {
+    "start": "2026-11-22T06:14:44.728659+09:00",
+    "through_checkpoint": "2026-11-22T06:39:58.273948+09:00",
+    "confirmed_seconds": 1513.545289,
+    "mechanism": "H02/H03 numeric exceptional-source provenance / LOW age no-go, independent of H01 class recovery",
+    "scope": "inside parent journal research, not extra work or CPU; source search/novelty correction/proof/falsifier/count/source/domain audits included, no local Lean implementation in interval"
+  },
+  "confirmed_work_seconds": 6836.094,
+  "target_seconds": 7200,
+  "shortfall_seconds": 363.906,
+  "excluded_non_work_seconds": {},
+  "unconfirmed_gap_seconds": 0,
+  "overtime_work_seconds": 0,
+  "open_interval_unconfirmed_seconds": 0,
+  "scope": "Actual confirmed checked intervals, not pure thinking/CPU; no previous-day time or post-stop commit/push added. No backdated checkpoints."
+}

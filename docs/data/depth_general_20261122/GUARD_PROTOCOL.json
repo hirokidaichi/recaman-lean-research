@@ -1,0 +1,86 @@
+{
+  "at": "2026-11-22T06:06:26.691668+09:00",
+  "jobs": [
+    {
+      "mode": "normal",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "guard-normal",
+        "--cpu",
+        "1",
+        "--wall",
+        "3",
+        "docs/data/depth_general_20261122/guard_fixture.py",
+        "normal"
+      ]
+    },
+    {
+      "mode": "fork",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "guard-fork",
+        "--cpu",
+        "1",
+        "--wall",
+        "3",
+        "docs/data/depth_general_20261122/guard_fixture.py",
+        "fork"
+      ]
+    },
+    {
+      "mode": "exec",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "guard-exec",
+        "--cpu",
+        "1",
+        "--wall",
+        "3",
+        "docs/data/depth_general_20261122/guard_fixture.py",
+        "exec"
+      ]
+    },
+    {
+      "mode": "wall",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "guard-wall",
+        "--cpu",
+        "1",
+        "--wall",
+        "0.15",
+        "docs/data/depth_general_20261122/guard_fixture.py",
+        "wall"
+      ]
+    },
+    {
+      "mode": "cpu",
+      "argv": [
+        "python3",
+        "docs/data/depth_general_20261122/run_single.py",
+        "--tag",
+        "guard-cpu",
+        "--cpu",
+        "1",
+        "--wall",
+        "3",
+        "docs/data/depth_general_20261122/guard_fixture.py",
+        "cpu"
+      ]
+    }
+  ],
+  "hashes": {
+    "run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da"
+  },
+  "contract": "Current-day cooperative single-Python/no descendants/fork/exec, threads share per-process CPU; wait4 exact usage. Not generic tree or OS AS control.",
+  "mathematical_budget_initial": 0
+}
