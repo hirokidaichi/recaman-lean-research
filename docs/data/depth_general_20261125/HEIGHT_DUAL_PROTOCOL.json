@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-25T06:21:03.125931+09:00",
+  "new_predicate": "ALL primal basis resolvent dual condition; finite optimal weight distortion; original EndN independently reverse weighted area",
+  "source_sha256": "8a3687ee3e6f4db9e0094d646282c9e97e62d2dd0c83f282e5244997e9ab2440",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H02-dual-2af602dc54443c492346ee24f0ecb09869cc93fa7967d6f7e4e22749dafee947.md",
+  "card_sha256": "2af602dc54443c492346ee24f0ecb09869cc93fa7967d6f7e4e22749dafee947",
+  "C_controls": [
+    "5/4",
+    "3/2",
+    "2",
+    "5",
+    "20",
+    "4/3",
+    "7/3",
+    "11/2"
+  ],
+  "H_primal_basis": "2..12",
+  "H_recurrence": 40,
+  "nongeometric": "20 Random(2026112502) fixed positive integer profiles, H2/5/8/11",
+  "literal_EndN_control": "H3 ALL u<q reverse signed weights",
+  "math_budget_seconds": 3,
+  "used_before": 0.341746,
+  "remaining_before": 2.658254,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261125/run_single.py",
+    "--tag",
+    "height-dual-controls",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261125/height_dual_controls.py"
+  ],
+  "stop": "fixed ranges; one repair max, no resource/range extension"
+}

@@ -1,0 +1,52 @@
+{
+  "at": "2026-11-25T06:18:51.502953+09:00",
+  "parent": "R-20261125-01",
+  "new_predicate": "exact height convolution saturation, critical weight threshold, all-profile distortion; weaker declared-mark walk prefix construction with original EndN falsifier",
+  "source_sha256": "7068475cab035cca49724d0d0ceabf80ac5645cedc42bd54ff2191e17cfba305",
+  "card_sha256": "b22a4c5bb0fe7cfb363b097167817c4e49df785c65a0c6bb8bbab688b6a212a6",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H02-b22a4c5bb0fe7cfb363b097167817c4e49df785c65a0c6bb8bbab688b6a212a6.md",
+  "discovery": {
+    "height_profiles": "0..60 recurrence; q=1/3,2/5,9/20,1/2; H=2,5,12,30,60",
+    "walks": "H1..8 all prefixes",
+    "literal_EndN": "H1..4 ALL source clocks"
+  },
+  "holdout": {
+    "height_profiles": "same recurrence, unused q=1/4,3/7,5/11",
+    "walks": "H9,10 all prefixes",
+    "literal_EndN": "H5 ALL source clocks"
+  },
+  "freshness": "held-out parameters, same formula/implementation, not independent history holdout; no canonical claim",
+  "math_budget_seconds": 3,
+  "used_before": 0.235699,
+  "remaining_before": 2.764301,
+  "worker_cap_seconds": 1,
+  "wall_cap_seconds": 10,
+  "one_repair_max": true,
+  "stop": "fixed ranges only; failed resource/tactic job not retried by cap/range changes",
+  "argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "height-kernel-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/height_kernel_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "height-kernel-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/height_kernel_probe.py",
+      "holdout"
+    ]
+  ]
+}

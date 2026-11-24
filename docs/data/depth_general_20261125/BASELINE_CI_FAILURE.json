@@ -1,0 +1,35 @@
+{
+  "observed_jst": "2026-11-25T07:42:28.934342+09:00",
+  "baseline_sha": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "run_id": 44959364645,
+  "run_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959364645",
+  "baseline_status": "completed/failure",
+  "successful_jobs": [
+    {
+      "id": 137014538999,
+      "name": "Research harness (ubuntu-latest)"
+    },
+    {
+      "id": 137014539230,
+      "name": "Research harness (macos-latest)"
+    }
+  ],
+  "failed_job": {
+    "id": 137014683516,
+    "name": "Lean Audit & Empirical Regression Suite",
+    "started_at": "2026-11-21T22:58:07Z",
+    "completed_at": "2026-11-21T23:46:08Z",
+    "last_step": "Build deep trace certificates sequentially",
+    "full_suite": "not started/pending at job loss"
+  },
+  "annotation_level": "failure",
+  "annotation_message": "The hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.",
+  "root_cause": "unconfirmed; do not infer OOM/CPU or a mathematical/code failure",
+  "commands": [
+    "gh api repos/hirokidaichi/recaman-lean-research/actions/runs/44959364645/jobs",
+    "gh api repos/hirokidaichi/recaman-lean-research/actions/jobs/137014683516",
+    "gh api repos/hirokidaichi/recaman-lean-research/check-runs/137014683516",
+    "gh api repos/hirokidaichi/recaman-lean-research/check-runs/137014683516/annotations"
+  ],
+  "scope": "Observed BASELINE hosted CI, not Nov25 snapshot CI. No workflow/gate change or failed-job rerun; no new Lean adopted."
+}

@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-25T06:18:51.546861+09:00",
+  "tag": "height-kernel-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/height_kernel_probe.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 10.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "7068475cab035cca49724d0d0ceabf80ac5645cedc42bd54ff2191e17cfba305",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 29552,
+  "process_group": 29552,
+  "finished_jst": "2026-11-25T06:18:51.619099+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.07232679100707173,
+  "worker_user_seconds": 0.033374,
+  "worker_sys_seconds": 0.008926,
+  "worker_cpu_seconds": 0.042300000000000004,
+  "worker_maxrss_native": 23707648,
+  "controller_cpu_seconds": 0.0016439999999999996,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

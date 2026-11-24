@@ -1,0 +1,44 @@
+{
+  "all_pass": true,
+  "range_complete": true,
+  "counts": {
+    "discovery_states": 256,
+    "original_cut_strip_checks": 7403,
+    "positive_strip": 4294,
+    "repeated_departures": 639,
+    "clipped": 0,
+    "new_uniform_horizon_targets": 72,
+    "unused_parameters_states": 16,
+    "full_original_S_lift_sharp_slope": 3
+  },
+  "exact_T33_equalities": [
+    {
+      "a": 0,
+      "T": 20,
+      "Tnext": 38
+    },
+    {
+      "a": 1,
+      "T": 33,
+      "Tnext": 71
+    },
+    {
+      "a": 7,
+      "T": 111,
+      "Tnext": 269
+    },
+    {
+      "a": 31,
+      "T": 423,
+      "Tnext": 1061
+    },
+    {
+      "a": 101,
+      "T": 1333,
+      "Tnext": 3371
+    }
+  ],
+  "finite_only": true,
+  "scope": "NEW literal A interval producer and T33/W34 consumer; finite parameters not proof or fresh orbit holdout",
+  "worker_internal_cpu_seconds": 0.055353
+}

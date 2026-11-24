@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-23T06:21:41.774707+09:00",
+  "card": "H-20261123-02",
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "source_sha256": {
+    "actual_floor_sharp_probe.py": "a51a8a6095ef8aa0b6299df5e0d0de13f003b95b1de6b6964ef3bffbee8745bb",
+    "actual_floor_independent.py": "a44e33590b5af432c7d577872553071ffa6aae39de12c4a61b6632624cdefdb7"
+  },
+  "candidate": "ALL b>=1, coherent initial current1/fullseen{0,1}, f=A(AS)^b A, original cuts c1=1/c2=2b+2 have P0=b+2/P1=3b+5/P2=9b+10. Thus no uniform alpha<9 with fixed additive C for ALL actual two-floor iterations. Upper9 from OLD E764.",
+  "discovery": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "parameter_holdout": [
+    61,
+    97,
+    257,
+    1021
+  ],
+  "boundary": [
+    0
+  ],
+  "independent_fixed_inputs": [
+    2,
+    5,
+    13,
+    31,
+    67
+  ],
+  "independent_scope": "direct natural Basic-style choices and literal mass/area, not fresh orbit range",
+  "argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261123/run_single.py",
+      "--tag",
+      "actual-floor-sharp",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261123/actual_floor_sharp_probe.py"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261123/run_single.py",
+      "--tag",
+      "actual-floor-independent",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261123/actual_floor_independent.py"
+    ]
+  ],
+  "math_budget_total": 3,
+  "math_used_before": 1.5073979999999998,
+  "launch_rule": "sequential, each launch requires remaining>=1; guard and controller separate; no old CPU carried",
+  "repair_max": 1,
+  "stop": "failed candidate/old equivalence/second repair; no resource increase to failing job, no Lean/adoption",
+  "counter_scope": "full arbitrary finite State; no original positive/initialSh/canonical prehistory, no fixed infinite-State gluing",
+  "old_negative": "E764 raw all-level AAASAS fails S novelty; not used as actual sharpness"
+}

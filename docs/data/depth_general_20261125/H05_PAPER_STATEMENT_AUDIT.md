@@ -1,0 +1,9 @@
+# H05 complete scalar-filter language audit
+
+PAPER/unreviewed, no Lean. EVERY finite word including empty; existential base/current/FULL initial stock, not preservation of a given seed or canonical source history. Four literal conditions are cardinality, current triangular parity, ALL-seed triangular range, E755 sorted scalar cost. No prefix matching/chronological realization is silently added to them.
+
+K is distinct original-free candidate pairs, not F. At b1000N² all distinct pair values are distinct; a free candidate cannot equal current because that would itself be original Win0. High seed cardinalityK+1, low interval lengthb/2-K, exact totalb/2+1. Every output and candidate>b, every interval value<b/2, so the COMPLETE added interval preserves ALL S freshness. Future free blockers remain in seen from the start. All high entries are<=upperTri(b) from101N+.102<=500N²+.5, includingN1. Parityeven, sorted surplus x+b²/4. Bounds do not presuppose replay success.
+
+The reverse direction uses OLD E759 coherent necessity. Bad I/II words can still pass scalar filters, but their proposed replay fails; they are never called realizable. Discovery63words/58good/5bad; independent reverse/direct-area parameter holdout195words/152good/43bad, including three sharp family words. Full huge seed is exact interval+finite high set; not sampling or omitting low entries. CPU/caps/source/card frozen before launch, repair0. These finite controls are COMPUTED, all-word proof is in the note.
+
+This is a NEW all-word producer/general filter no-go, not a parameter tweak or re-quotation of E759/E766/E774. It may count once as parent depth_general_progress, but cannot turn canonical reachability, infinite one-State execution, C1/Q/H/SL or LOW classes into a proof. The interval supplies unconstrained old values with no constructed source-before past, which is precisely the remaining provenance issue.

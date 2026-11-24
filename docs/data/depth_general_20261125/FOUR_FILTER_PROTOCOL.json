@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-25T06:54:29.729722+09:00",
+  "new_predicate": "all-word I/II language iff coherent seed passing FOUR specified numeric canonical filters; exact dense interval filling, full original/free co-suppliers",
+  "source_sha256": "d2df1846dcbe0f4d049883c4fa82e9549a1ca81b7d827cd699b820432f84b6ee",
+  "card_sha256": "59aaad27bd5830068194164360501e741445d412f7dbe36971069167171d7581",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H05-59aaad27bd5830068194164360501e741445d412f7dbe36971069167171d7581.md",
+  "discovery": "ALL words length0..5, forward sources/prefix-area chronology",
+  "holdout": "ALL unused words length6/7 plus W_n n1/3/7; reverse sources/direct segment-area chronology; same constructive formula shared",
+  "representation": "exact full finite seed [0,L] union high points, no materialization, cardinality/algebra exact; not canonical prehistory",
+  "math_budget_seconds": 3,
+  "used_before": 0.6867449999999999,
+  "remaining_before": 2.313255,
+  "fixed_argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "four-filter-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/four_filter_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "four-filter-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/four_filter_probe.py",
+      "holdout"
+    ]
+  ],
+  "stop": "fixed ranges, one repair max, no resource extension; finite controls not all-word proof"
+}

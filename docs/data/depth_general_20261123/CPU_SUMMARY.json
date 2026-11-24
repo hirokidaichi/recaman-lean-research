@@ -1,0 +1,168 @@
+{
+  "math_budget_seconds": 5,
+  "budget_history": "0->3 after validated guard;3->4 for NEW clipped transport;4->5 for NEW departure-A strip; every increase prospective, not failed-job rescue",
+  "math_worker_cpu_seconds": 3.342435,
+  "guard_worker_cpu_seconds": 1.1298199999999998,
+  "math_jobs": [
+    {
+      "tag": "actual-floor-independent",
+      "cpu_seconds": 0.050351,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "actual-floor-independent-result.json"
+    },
+    {
+      "tag": "actual-floor-sharp",
+      "cpu_seconds": 0.034518,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "actual-floor-sharp-result.json"
+    },
+    {
+      "tag": "all-free-stock-loss",
+      "cpu_seconds": 0.054894,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "all-free-stock-loss-result.json"
+    },
+    {
+      "tag": "band-cost-discovery-repair1",
+      "cpu_seconds": 0.25376499999999996,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "band-cost-discovery-repair1-result.json"
+    },
+    {
+      "tag": "band-cost-discovery",
+      "cpu_seconds": 1.006247,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)",
+      "receipt": "band-cost-discovery-result.json"
+    },
+    {
+      "tag": "band-cost-holdout",
+      "cpu_seconds": 0.247386,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "band-cost-holdout-result.json"
+    },
+    {
+      "tag": "clock-budget-stock-loss",
+      "cpu_seconds": 0.056237999999999996,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "clock-budget-stock-loss-result.json"
+    },
+    {
+      "tag": "departure-strip-independent",
+      "cpu_seconds": 0.2219,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "departure-strip-independent-result.json"
+    },
+    {
+      "tag": "departure-strip",
+      "cpu_seconds": 0.089803,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "departure-strip-result.json"
+    },
+    {
+      "tag": "low-clipping",
+      "cpu_seconds": 0.036442,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "low-clipping-result.json"
+    },
+    {
+      "tag": "low-stock-loss",
+      "cpu_seconds": 0.034928,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "low-stock-loss-result.json"
+    },
+    {
+      "tag": "stock-floor-discount",
+      "cpu_seconds": 0.340822,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "stock-floor-discount-result.json"
+    },
+    {
+      "tag": "stock-floor-independent",
+      "cpu_seconds": 0.044683,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "stock-floor-independent-result.json"
+    },
+    {
+      "tag": "stock-packing-lift",
+      "cpu_seconds": 0.065132,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "stock-packing-lift-result.json"
+    },
+    {
+      "tag": "stock-transport",
+      "cpu_seconds": 0.531491,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "stock-transport-result.json"
+    },
+    {
+      "tag": "transport-horizon",
+      "cpu_seconds": 0.24068799999999999,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "transport-horizon-result.json"
+    },
+    {
+      "tag": "transport-negatives",
+      "cpu_seconds": 0.033146999999999996,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "transport-negatives-result.json"
+    }
+  ],
+  "guard_jobs": [
+    {
+      "tag": "guard-cpu",
+      "cpu_seconds": 1.0010539999999999,
+      "exit_code": -24,
+      "reason": "signal 24 (see CPU cap and output)",
+      "receipt": "guard-cpu-result.json"
+    },
+    {
+      "tag": "guard-exec",
+      "cpu_seconds": 0.034060999999999994,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "guard-exec-result.json"
+    },
+    {
+      "tag": "guard-fork",
+      "cpu_seconds": 0.033162,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "guard-fork-result.json"
+    },
+    {
+      "tag": "guard-normal",
+      "cpu_seconds": 0.032372,
+      "exit_code": 0,
+      "reason": "completed",
+      "receipt": "guard-normal-result.json"
+    },
+    {
+      "tag": "guard-wall",
+      "cpu_seconds": 0.029171,
+      "exit_code": -9,
+      "reason": "wall/deadline cap",
+      "receipt": "guard-wall-result.json"
+    }
+  ],
+  "controller_cpu_seconds": 0.04282000000000001,
+  "Lean_validation": "unlaunched today; no new Lean adopted",
+  "other_tool_cpu": "not globally measured, not0",
+  "scope": "exact wait4 under verified cooperative single-Python/no children, not generic process-tree cap; killed H01 included; no previous-day time/CPU"
+}

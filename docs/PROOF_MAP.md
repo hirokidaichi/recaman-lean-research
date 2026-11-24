@@ -1982,3 +1982,26 @@ E770's last-selected ORIGINAL free-event prefix supplies minimum=min selected fr
 E769 LOCAL K<=3/maximal-head return: global-minimum bottom pairs singleton -> exact old-source/high-loop analysis -> original F=K<=3/D<=1. D3 head-AS j1 is supplied and retained. Nonmaximal S3A4/h1 prevents broadening the quantifier. Old E767 K4/F5/D3 is a boundary input, not a new row.
 
 E768 fixed h10/D3/F7/K6 actual family refutes age/clock bound from LOW wallets alone, at OLD E114 equality; high stock/value/base still grow. E771 admissible33-clock class-gap counter refutes adjacent-level birth, with nonshort old source18 to29 and short27 to30. Both preserve all original suppliers and are NOT C1 counters. Future height payment must price old source-key jumps and duplicate claims across missing bands. H04 finite certificate512MB FAILED/STOPPED/repair0 remains isolated; root/Audit/library unchanged, old HarnessTools stopper not rerun.
+
+
+## 2026-11-23: actual numerical-stock producer (E772-E774)
+
+- E772 PROVED-PAPER (not Lean/human review pending): SAME original actual State -> fresh primitive S return values disjoint OLD V -> exact old stock price -> clipped old/current/return transport -> departure A upincrements<=1 -> supplied disjoint visited interval -> W=12a+15x-10K,15Wnext<=34W-30 -> arbitrary-depth numerical floor and original-source expiry. Full original H/B/source prefix retained. Final proof: RESEARCH_NOTE_2026-11-23_DEPARTURE_STOCK_STRIP.md; intermediate stock/transport notes remain valid. No root/Audit module adopted.
+- E773 REFUTED smaller uniform P two-floor coefficient, with full original S/positive/return actual family. Does not contradict W and does not prove canonical/all-j optimality.
+- E774 REFUTED fixed LINEAR ALLfree/class payment for numerical stock loss, with four explicit necessary clock filters. Full seed/high-free grow; no nonlinear class bound or C1 refutation.
+- Missing C1 edge: initial numerical/seed provenance and a depth/span payment by ORIGINAL LOW classes. OLD E674/E681/E770 and E762 remain INPUT; no unweighted substitution or conclusion Prop adapter. H01 exact single-band excess inequality stays CONJECTURED/method STOPPED.
+
+
+## 2026-11-25: 高さ重みの正確な能力限界 (PAPER)
+
+E674必要cone -> 非負有限resolventの全primal基底/双対 -> **E775** 全非幾何profileの最小偏りv_H。E675のcapacity3/2は指数3が最適。全prefix/unit-flow/return付き宣言歩みへのM増幅が必要性を保存し、head/depthだけの有限境界も支払い不能。元EndNへは逆接続せず、source時計/面積は未払い。未Lean・人間レビュー未。[note](RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md)。C1/Q/H/SL/全射性は未証明。
+
+
+## 2026-11-25: 元stage supplierを払う制限会計
+
+**E776 PAPER/人間レビュー未**。任意old前史 -> 二stage下peakの完全な内部source分類 -> 元actual E=L+O_c -> disjoint整数下降run会計 -> F+O_c>=H+3/2A<=3(F+O_c)-a_H-2。空前史ASAA族で両境界sharp。O_cは旧供給負債でD_depthと別、全LOW/class/C1へ置換しない。[note](RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md)。
+
+
+## 2026-11-25: 数値S新規性と前史の三段階
+
+E777の全n ASAA chronology producer -> E759完全seed consumerで容量sharp。E778は全finite語の四scalar条件を完全stock増補で供給。E779は全rのcoherent/4filter語でもANY一歩前が無い族を与え、finite-State初期化と実行済み前史を分離。E780は逆にOLD E774のstocklossを全old/free保存の任意有限lookbehindへ運び、有限検査だけの救済を排除。PAPER/人間レビュー未、新Lean0。元LOW/class/C1/canonical全前史は未供給。各note/当日DAILY参照。

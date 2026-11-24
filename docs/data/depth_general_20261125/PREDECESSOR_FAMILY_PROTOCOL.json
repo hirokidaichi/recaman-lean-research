@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-25T07:02:51.220551+09:00",
+  "new_predicate": "ALL-r explicit coherent but word-language one-step-inextendable family, full source and immutable class inventory; new mathematical parameter producer, not a failed resource retry",
+  "source_sha256": "b3aca8124a49bf24d48fb6010fc905474e8993b40013b08e201d6e2f801ed00b",
+  "card_sha256": "45e95d6bd7a4fc5a4606eadc3d13a498e916394c3cd9179c3ae8fe1fb4d162ca",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H06-family-45e95d6bd7a4fc5a4606eadc3d13a498e916394c3cd9179c3ae8fe1fb4d162ca.md",
+  "discovery": "r6/7/9/10 forward full sources and I/II, old r6 fixed counter reused not fresh",
+  "holdout": "unused r12/13/15/16 reverse sources/direct chronological area, exact E778 full-interval seed",
+  "math_budget_seconds": 3,
+  "used_before": 0.830932,
+  "remaining_before": 2.169068,
+  "fixed_argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "predecessor-family-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/predecessor_family_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "predecessor-family-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/predecessor_family_probe.py",
+      "holdout"
+    ]
+  ],
+  "stop": "fixed cases, one repair maximum, no range/cap extension; all-r statement from complete phase proof, not finite absence"
+}

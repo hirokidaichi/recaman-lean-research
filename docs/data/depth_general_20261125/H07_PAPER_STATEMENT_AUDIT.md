@@ -1,0 +1,14 @@
+# H07 full-stock / actual past / source audit
+
+PAPER/unreviewed, no Lean. New full-State inverse and paid finite past predicate applied to OLD E774 exact full seed. Displayed oldV0 has neither previous current I±a. This is seed nonreachability, not word nonreachability. The inverse lemma alone is an OLD-style necessary audit, not new generalization progress.
+
+ALL L>=0 and k20n+15>=max(15,L); x translated upward, all original V0 entries including the entire loss interval retained. Add ALL p_j and rejected candidates c_j from the start, no State switch/deletion. Every A lookbehind is forced by a present positive blocker. Additional values fall in four explicit S-output gaps or below minimum; full old S freshness survives. Added low values lie below BOTH x/y and high values above BOTH, so stock loss is identical even with coincidences among old/new entries.
+
+Four filters are checked at the real initial clock a-L/currentp_L/FULL Vplus, not only after the prefix. Cardinal margin k²+k-6-3L, full-stock range withk>=L, exact parity by reversing A clocks, sorted cost with monotonic s and>=15k4 all supplied. Supporting forward scalar identities checked by direct substitution: S-new surplus increment0, A-repeat2s, A-new2(u+1); not a separate progress row.
+
+Original raw sign origin0 includes A^L; no resetting to tail. OldA source mass permits only first3 tail As, areas9/5/1; tailAA candidates l²+2l+9/l²+5, nonzero. WholeE1, wholeF=L+3k+1, classcount<=F. Relative tail-positive/return/LOW unchanged, but WHOLE0 strict positive is false in the A-prefix. This exact limitation is preserved. Canonical prehistory BEFORE the initialized seed remains missing, and growing L changes the full initial State.
+
+Tiny exhaustive576coherent States compare inverse formula to all possible previous seen/current updates. New prefix controls k15L0/1/3/5 and heldoutk35L2/10/35 preserve greedy/all original sources/fourfilters/loss824or4724. Old family is not fresh data. Both source/card/argv freezes prelaunch, repair0, same1CPU10wall no-child contract. Finite controls COMPUTED, all-(L,k) proof PAPER. Restricted depth2/local-provenance result does not alone reset general-depth stagnation.
+
+## Distinct-set versus ordered-list clarification
+The complete seenV is a SET of distinct values, as in the source stock/filter notes. The inverse iff concerns existence of a predecessor with the same resulting distinct set, NOT equality to a fixed ordered/multiplicity seen list. Forward numerical replay uses any complete initial listing and normal value recording, preserving all old entries. Prefix A outputs may add duplicates, which do not enter |V|. Missing previous-current membership still excludes EVERY list predecessor of the old displayedV0. Clarification recorded before final semantic adoption, no worker/source or mathematical parameter change.

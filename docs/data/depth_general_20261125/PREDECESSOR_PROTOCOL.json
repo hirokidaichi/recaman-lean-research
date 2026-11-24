@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-25T06:59:47.312188+09:00",
+  "new_predicate": "word-language coherent one-step predecessor criterion; explicit w19 both prepends impossible; not seed-specific OLD E752 predecessor obstruction",
+  "source_sha256": "fb3cb532f897d2b8d7c431ac7d5914495a43892030ee226e7773790a4cd70beb",
+  "card_sha256": "49f8e018ffd11d3b0b1936ca771b3faf80fba18d08686af0f84b4e0ed908c0e8",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H06-49f8e018ffd11d3b0b1936ca771b3faf80fba18d08686af0f84b4e0ed908c0e8.md",
+  "discovery": "literal w19 and ALL words0..8 criterion/direct-prepend comparison; minimal full high seed numerical replay at b100N\u00b2",
+  "holdout": "same exact candidate is discovery, not fresh; independent direct-area/reverse-sources; b1000N\u00b2 E778 full interval+high seed and four filters",
+  "math_budget_seconds": 3,
+  "used_before": 0.75859,
+  "remaining_before": 2.24141,
+  "fixed_argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "predecessor-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/predecessor_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "predecessor-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/predecessor_probe.py",
+      "holdout"
+    ]
+  ],
+  "scope": "having one executed coherent past step, NOT merely positive initial base; no canonical reachability/C1 claim",
+  "stop": "fixed candidate/small controls, one repair max; no range/resource extension; mathematical counter stops false candidate"
+}

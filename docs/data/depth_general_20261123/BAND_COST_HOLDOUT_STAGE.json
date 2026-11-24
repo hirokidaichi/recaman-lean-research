@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-23T06:09:48.171995+09:00",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "band-cost-holdout",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/band_cost_probe.py",
+    "holdout"
+  ],
+  "used_mathematical_worker_cpu": 1.260012,
+  "budget_total": 3,
+  "worker_source_sha256": "0930a9ebc1100780a5a99861bbc6ae52dd218eadddfa2382b79d3a125bcfa25c",
+  "scope": "PREDECLARED disjoint parameter holdout for new inequality after one implementation repair; no new predicate/range extension, not fresh orbit histories"
+}

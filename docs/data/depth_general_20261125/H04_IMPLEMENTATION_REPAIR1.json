@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-25T06:47:50.045480+09:00",
+  "first_launch": "FAILED, counted worker CPU0.046653",
+  "prelaunch_hash_protocol": "NOT completed: freeze script parse failed but shell continued into worker command; actual card already stated exact n ranges and3CPU budget/1CPU10wall contract",
+  "failed_source_archive": "docs/data/depth_general_20261125/frozen_inputs/H04-FAILED-UNFROZEN-f127ab70c1440a0eeea6695f56d2be19ecdb3ab92a2aa46200989e4e1b69de60.py.txt",
+  "failed_source_sha256": "f127ab70c1440a0eeea6695f56d2be19ecdb3ab92a2aa46200989e4e1b69de60",
+  "first_failure": "Python SyntaxError else1 in prescribed-value update, not mathematical counter",
+  "repair_number": 1,
+  "change": "whitespace in Python ternary; remove unfrozen auxiliary K=F assertion, report K as observation only; n range/caps/primary hypothesis unchanged",
+  "next_tags": [
+    "staged-greedy-discovery-repair1",
+    "staged-greedy-holdout"
+  ],
+  "one_repair_max": true,
+  "no_more_repairs": "Any subsequent failure stops this implementation; no resource/import/range rescue"
+}

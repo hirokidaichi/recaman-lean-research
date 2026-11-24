@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-23T06:52:34.469774+09:00",
+  "new_input": "Explicit AAASSSA current1000/fullstock0,984,999,1000 gives y998 and Knext3<unclipped4; distinct negative to omitted clipping. AASSA sparse equality repeats departure A value. Newly derived exact inputs, not extending completed enumeration or repairing it.",
+  "source_sha256": "cb8ebaa9d263d49679d464b81d2e2e6bd3457ff2ce297e1ff3c5686bc3e83f54",
+  "budget_total": 4,
+  "measured_used_before": 2.574395,
+  "remaining_before": 1.425605,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "transport-negatives",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/transport_negative_controls.py"
+  ],
+  "stop": "two frozen cases only; no retry/range extension"
+}

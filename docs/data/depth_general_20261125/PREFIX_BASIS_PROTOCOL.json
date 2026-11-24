@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-25T06:25:25.528924+09:00",
+  "new_predicate": "primal basis M amplification transported to all-prefix stage walks; exact boundary budget and original EndN negative control",
+  "source_sha256": "52ccca45b49cfc6cb0cd8a14e3be4792d9ba406a39448716612c32c7d783fca4",
+  "card_sha256": "8cec7a4e94b4aa482bf95d32857646adee2d5d0430db9aea1c793054b021bc0c",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H02-prefix-8cec7a4e94b4aa482bf95d32857646adee2d5d0430db9aea1c793054b021bc0c.md",
+  "fixed_cases": "H2..5, all t0..H, M1/3/11, ALL prefixes; three fixed weights per walk; two explicit dual-violation counters; literal ALL-source EndN on H2 flat M6 only",
+  "math_budget_seconds": 3,
+  "used_before": 0.43281899999999995,
+  "remaining_before": 2.567181,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261125/run_single.py",
+    "--tag",
+    "prefix-basis-controls",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261125/prefix_basis_controls.py"
+  ],
+  "stop": "fixed cases only, one repair max, no range/cap extension"
+}

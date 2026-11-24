@@ -1,0 +1,34 @@
+{
+  "mode": "discovery",
+  "range_complete": true,
+  "stop": "FROZEN_RANGE_COMPLETE",
+  "counts": {
+    "states": 120,
+    "positive_head_states": 102,
+    "original_positive_return_endpoints": 947,
+    "cut_checks": 10793,
+    "decreasing_current": 40,
+    "nonempty_generated_loss": 2,
+    "seed_only_loss": 38
+  },
+  "planned_states": 120,
+  "largest": {
+    "x0": 96,
+    "b": 0,
+    "density": 0.375,
+    "seed": 101,
+    "Q": 38,
+    "cut": 17,
+    "nextcut": 38,
+    "h": 6,
+    "F_before": 5,
+    "Lgen": 7,
+    "x": 89,
+    "y": 67,
+    "margin": -9
+  },
+  "counter": null,
+  "worker_internal_cpu_seconds": 0.067222,
+  "finite_only": true,
+  "scope": "NEW original provenance loss predicate; parameter holdout, not fresh canonical data"
+}

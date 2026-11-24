@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-25T07:41:12.855141+09:00",
+  "sha": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "scope": "BASELINE remote SHA only, NOT today new snapshot CI",
+  "argv": [
+    "gh",
+    "api",
+    "repos/hirokidaichi/recaman-lean-research/actions/runs?head_sha=ebb302144e5ce1bfb21c8e4124604fb91690f11b&per_page=3"
+  ],
+  "exit_code": 0,
+  "runs": [
+    {
+      "id": 44959364645,
+      "name": "CI",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_sha": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+      "html_url": "https://github.com/hirokidaichi/recaman-lean-research/actions/runs/44959364645"
+    }
+  ],
+  "git_author_identity_available": true
+}

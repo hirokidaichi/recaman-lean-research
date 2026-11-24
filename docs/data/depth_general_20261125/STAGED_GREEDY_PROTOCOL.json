@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-25T06:47:50.045480+09:00",
+  "source_sha256": "801a2ace3909a388b0a962c470ee3111cc336022e2929174e08d50df6d6af2c8",
+  "card_sha256": "cf837a83948591daa208539320419d4cd3f97e4a3e5d9ead9035de5389b941f5",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H04-cf837a83948591daa208539320419d4cd3f97e4a3e5d9ead9035de5389b941f5.md",
+  "discovery": "n1..5, full ALL-source/I/II/replay",
+  "holdout": "n7/11/17/23, reverse original source/replay/area formulas",
+  "math_budget_seconds": 3,
+  "used_before": 0.613426,
+  "remaining_before": 2.386574,
+  "fixed_argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "staged-greedy-discovery-repair1",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/staged_greedy_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "staged-greedy-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/staged_greedy_probe.py",
+      "holdout"
+    ]
+  ],
+  "prelaunch_protocol_scope": "THIS corrected version only; initial failed version was not hash-frozen before launch; failure and CPU preserved",
+  "stop": "one repair exhausted; no range/cap extension; no all-n inference from finite absence"
+}

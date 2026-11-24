@@ -1,0 +1,29 @@
+# H-20261125-05: four numeric canonical filters add no finite-word exclusion
+
+**Current verdict: E778 PROVED-PAPER, human review pending, not Lean. Four specified scalar canonical filters add zero exclusion to coherent finite-word language; true prior history not constructed. Earlier proposer text is chronological.**
+
+CONJECTURED proposer, before new worker/adoption. ONE parent; necessary-orbit-condition audit, not old E774 stock-loss experiment. E759 I/II theorem, E766 generic candidate classes and the FOUR named old filters are inputs, not new results.
+
+For EVERY finite sign word w (including empty), proposed equivalence: E759 I/II holds IFF w has a coherent finite-State greedy realization whose COMPLETE initial seen V at base b passes ALL FOUR literal conditions
+
+    |V|<=b+1; current x == upperTri(b) mod2;
+    every v in V is in[0,upperTri(b)];
+    upperTri(b)<=x+s(2b-s+1), s=|V|-1.
+
+This is NOT canonical prehistory and not a State-to-State transport of given old stock. It says these four numeric necessary filters cannot exclude ANY already coherent-admissible finite word. No other canonical condition is silently included.
+
+Proposed complete producer: N=length(w)+1, b=1000N^2, x=100(b+N)N. Retain ALL original free candidates C_q=x+(b+q+1)(H(q)-1)-B(q); let K be their distinct affine-pair count. Use the FULL explicit seed
+
+    V=[0, b/2-K-1] union {x} union {C_q: original free A}.
+
+K<=N-1, b>4N², all high entries/outputs strictly>b and <=upperTri(b). Thus the added dense interval never hits ANY S landing; all future blockers remain. It has EXACT |V|=b/2+1, because generic b makes distinct affine pairs distinct numerical values, original-free candidates differ from current, and the interval is disjoint from high entries. Current/triangular parity both even. With s=b/2, the sorted cover RHS exceeds upperTri(b) by x+b²/4. Prove all these bounds and empty-word boundary before adoption. The interval is not a constructed past and its many fake old values must remain visible.
+
+Acceptance: complete all-word explicit seed proof with exact filter/supplier scope, OR a counter to positivity/seed separation/filters/greedy chronology. First gate15min: finite absence or the old generic seed alone is insufficient. No resource/range extension. One repair maximum. Discovery all words lengths0..5, holdout all words6/7 plus W_n n1/3/7, including bad I/II words as negative replay controls. Use exact interval-membership plus finite high set, not materializing millions of seed entries; record interval/count/full recipe. Current math use0.686745 of3CPU, remaining2.313255, per worker1CPU/10wall under verified no-child contract. Source/card/hash/argv frozen before launch. No generic process-tree cap, no canonical holdout, no new Lean arithmetic wrapper.
+
+Created 2026-11-25T06:53:06.593287+09:00
+
+## Current verdict 2026-11-25T06:56:45.716043+09:00
+E778 PROVED-PAPER/unreviewed, complete all-word iff proof and FULL seed interval cost producer. Finite controls COMPUTED, repair0/new Lean0. Four scalar filters do NOT supply chronological past. See H05_PAPER_STATEMENT_AUDIT.md; parent continues, no finalized time prepaid.
+
+## Confirmed shared parent journal
+R-20261125-01: actual work2026-11-25T06:00:10.966235+09:00 to2026-11-25T07:57:01.375602+09:00, confirmed7010.409s, shortfall189.591s, waiting13.202s excluded, gap/overtime0. ONE shared parent total, not extra per card. See DAILY/FINAL_WORK_SUMMARY.

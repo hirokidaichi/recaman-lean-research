@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-25T06:13:01.499962+09:00",
+  "new_predicate": "E660 whole-versus-suffix original positive scope; literal generated firstbirths on exactlargest discovery; E774 seedpartition atcut2",
+  "source_sha256": "15544475fd0149479f091ed21ed21ea819e074938a3ac52b1713ecd3ac2d649b",
+  "frozen_cases": [
+    "E660 SAAASSSSAAAASA",
+    "new discovery x96 b0/density.375 seed101 Q38 cut17 next38",
+    "OLD E774 k15 fullseed atcut2"
+  ],
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261125/run_single.py",
+    "--tag",
+    "generated-stock-controls",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261125/generated_stock_controls.py"
+  ],
+  "math_budget": 3,
+  "used_before": 0.201604,
+  "remaining_before": 2.798396,
+  "stop": "three controls only, no range/resource retry, one repair max"
+}

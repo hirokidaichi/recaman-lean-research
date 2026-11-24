@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-23T07:01:27.825278+09:00",
+  "candidate": "ALL odd l>=5 SS A^l S^l AA family, x10l^2/b=l(l-4), exact full seed, original LOWfree/classes4/positive/return/D0/unique supplier, clipping2l-1 unbounded",
+  "card_sha256": "88739d03794743f07d0b3c0dfcc2a9f3b830bf6082108b850b2b45c9c8dc186a",
+  "source_sha256": "b3e58c32cb710472d2f93df264fe512bfc284f03a96c4f71d6544ba2e8b014fb",
+  "discovery": [
+    5,
+    7,
+    9
+  ],
+  "unused_parameters": [
+    11,
+    19,
+    31
+  ],
+  "budget": 4,
+  "measured_used_before": 2.84823,
+  "remaining_before": 1.15177,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "low-clipping",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/low_clipping_family.py"
+  ],
+  "scope": "new exact producer/counter to LOW-only numerical clipping price; not another parent or fresh orbit holdout",
+  "stop": "six fixed cases; no range extension or resource retry; one correction maximum"
+}

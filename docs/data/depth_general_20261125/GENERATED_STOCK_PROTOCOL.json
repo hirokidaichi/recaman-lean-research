@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-25T06:05:39.892565+09:00",
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "candidate": "ALL original actual positive/head/return/floor cuts: Lgen=|(V_c\\V0) intersect[y,x-1]|<=h+2F_original(c); no seed deletion or source rebase",
+  "card_sha256": "d22e0008532973f9a521214e7c98c9c8f0ce5e18c1a348e758e891e889d0e322",
+  "source_sha256": "484b2f039aa716b942b5850f6cccc3973e2aa5bc2d124ca0d82def6b6ca28a7d",
+  "discovery": {
+    "x": [
+      12,
+      24,
+      48,
+      96,
+      192
+    ],
+    "b": [
+      0,
+      3,
+      11,
+      29
+    ],
+    "density": [
+      0,
+      0.125,
+      0.375
+    ],
+    "seed": [
+      101,
+      509
+    ],
+    "Qmax": 64
+  },
+  "parameter_holdout": {
+    "x": [
+      17,
+      39,
+      83,
+      167
+    ],
+    "b": [
+      2,
+      7,
+      23
+    ],
+    "density": [
+      0,
+      0.2,
+      0.6
+    ],
+    "seed": [
+      1103,
+      1901
+    ],
+    "Qmax": 80
+  },
+  "seed_recipe": "FULL V0=0,x plus random values1..2x EXCEPT first S candidate x-b-1, random.Random(seed+1000003*x+10007*b). Keep every chosen value thereafter; no posthoc stock removal.",
+  "argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "generated-stock-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/generated_stock_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "generated-stock-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/generated_stock_probe.py",
+      "holdout"
+    ]
+  ],
+  "math_budget_seconds": 3,
+  "math_used_before": 0,
+  "guard_cpu_separate": 1.128257,
+  "per_worker_cpu": 1,
+  "wall": 10,
+  "soft_gate_cpu": 0.6,
+  "launch_rule": "sequential, next launch only if measured remaining>=1; counter triggers independent exact audit not extra search",
+  "stop": "first exact counter or fixed range/soft gate; no range extension, one repair max",
+  "scope": "new predicate, no old census/failed Lean rerun; finite COMPUTED only"
+}

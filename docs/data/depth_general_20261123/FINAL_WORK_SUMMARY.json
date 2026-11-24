@@ -1,0 +1,240 @@
+{
+  "parent": "R-20261123-01",
+  "session": "62df7b3b-3aba-4c20-86a4-99614c15021e",
+  "actual_start": "2026-11-23T06:02:22.769093+09:00",
+  "last_confirmed_work_end": "2026-11-23T07:26:53.834720+09:00",
+  "ordinary_stop": null,
+  "closed_by": "recover",
+  "recovery_at": "2026-11-23T10:25:46.921691+09:00",
+  "unconfirmed_gap": [
+    {
+      "start": "2026-11-23T07:26:53.834720+09:00",
+      "end": "2026-11-23T10:25:46.921691+09:00",
+      "session": "62df7b3b-3aba-4c20-86a4-99614c15021e",
+      "phase": "audit",
+      "unit": "R-20261123-01/frontier-proof-map-and-stop-synchronization",
+      "reason": "Last confirmed checkpoint 07:26:53.834720 JST; next actual validation-clock response was 10:24:21 JST, already after08:00. Continuity of this tail is unconfirmed and is excluded as a gap. No backfilled work, no new research/start, no out-of-window commit/push. Own completed static processes reaped. Ordinary predeadline stop was missed."
+    }
+  ],
+  "allocation_seconds": {
+    "setup": 363.845084,
+    "general_research": 3891.8457289999988,
+    "audit": 815.374814
+  },
+  "late_checkpoint_intervals": [
+    {
+      "start": "2026-11-23T06:08:26.614177+09:00",
+      "end": "2026-11-23T06:13:53.270689+09:00",
+      "seconds": 326.656512,
+      "unit": "H-20261123-01/source-key-band-cost"
+    },
+    {
+      "start": "2026-11-23T06:13:53.270689+09:00",
+      "end": "2026-11-23T06:20:31.655770+09:00",
+      "seconds": 398.385081,
+      "unit": "H-20261123-01/last-upcross-key-audit"
+    },
+    {
+      "start": "2026-11-23T06:22:00.736528+09:00",
+      "end": "2026-11-23T06:27:31.809481+09:00",
+      "seconds": 331.072953,
+      "unit": "H-20261123-02/full-stock-sharp-family-paper"
+    },
+    {
+      "start": "2026-11-23T06:30:33.380727+09:00",
+      "end": "2026-11-23T06:38:45.651173+09:00",
+      "seconds": 492.270446,
+      "unit": "H-20261123-03/independent-stock-discount-audit"
+    }
+  ],
+  "local_progress": 0,
+  "depth_general_progress": true,
+  "general_stagnation_streak": 0,
+  "next_allocation": "30/60/10",
+  "reason": "Next observed clock after07:26:53 checkpoint was10:24, outside08:00. Continuity unconfirmed; recovery excludes entire tail. No backfill, new start/research or out-of-window publication. Postdeadline record closure/static checking excluded.",
+  "confirmed_work_seconds": 5071.066,
+  "target_seconds": 7200,
+  "shortfall_seconds": 2128.934,
+  "excluded_non_work_seconds": {},
+  "unconfirmed_gap_seconds": 1986.165,
+  "overtime_work_seconds": 0,
+  "open_interval_unconfirmed_seconds": 0,
+  "cpu_summary": {
+    "math_budget_seconds": 5,
+    "budget_history": "0->3 after validated guard;3->4 for NEW clipped transport;4->5 for NEW departure-A strip; every increase prospective, not failed-job rescue",
+    "math_worker_cpu_seconds": 3.342435,
+    "guard_worker_cpu_seconds": 1.1298199999999998,
+    "math_jobs": [
+      {
+        "tag": "actual-floor-independent",
+        "cpu_seconds": 0.050351,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "actual-floor-independent-result.json"
+      },
+      {
+        "tag": "actual-floor-sharp",
+        "cpu_seconds": 0.034518,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "actual-floor-sharp-result.json"
+      },
+      {
+        "tag": "all-free-stock-loss",
+        "cpu_seconds": 0.054894,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "all-free-stock-loss-result.json"
+      },
+      {
+        "tag": "band-cost-discovery-repair1",
+        "cpu_seconds": 0.25376499999999996,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "band-cost-discovery-repair1-result.json"
+      },
+      {
+        "tag": "band-cost-discovery",
+        "cpu_seconds": 1.006247,
+        "exit_code": -24,
+        "reason": "signal 24 (see CPU cap and output)",
+        "receipt": "band-cost-discovery-result.json"
+      },
+      {
+        "tag": "band-cost-holdout",
+        "cpu_seconds": 0.247386,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "band-cost-holdout-result.json"
+      },
+      {
+        "tag": "clock-budget-stock-loss",
+        "cpu_seconds": 0.056237999999999996,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "clock-budget-stock-loss-result.json"
+      },
+      {
+        "tag": "departure-strip-independent",
+        "cpu_seconds": 0.2219,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "departure-strip-independent-result.json"
+      },
+      {
+        "tag": "departure-strip",
+        "cpu_seconds": 0.089803,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "departure-strip-result.json"
+      },
+      {
+        "tag": "low-clipping",
+        "cpu_seconds": 0.036442,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "low-clipping-result.json"
+      },
+      {
+        "tag": "low-stock-loss",
+        "cpu_seconds": 0.034928,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "low-stock-loss-result.json"
+      },
+      {
+        "tag": "stock-floor-discount",
+        "cpu_seconds": 0.340822,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "stock-floor-discount-result.json"
+      },
+      {
+        "tag": "stock-floor-independent",
+        "cpu_seconds": 0.044683,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "stock-floor-independent-result.json"
+      },
+      {
+        "tag": "stock-packing-lift",
+        "cpu_seconds": 0.065132,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "stock-packing-lift-result.json"
+      },
+      {
+        "tag": "stock-transport",
+        "cpu_seconds": 0.531491,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "stock-transport-result.json"
+      },
+      {
+        "tag": "transport-horizon",
+        "cpu_seconds": 0.24068799999999999,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "transport-horizon-result.json"
+      },
+      {
+        "tag": "transport-negatives",
+        "cpu_seconds": 0.033146999999999996,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "transport-negatives-result.json"
+      }
+    ],
+    "guard_jobs": [
+      {
+        "tag": "guard-cpu",
+        "cpu_seconds": 1.0010539999999999,
+        "exit_code": -24,
+        "reason": "signal 24 (see CPU cap and output)",
+        "receipt": "guard-cpu-result.json"
+      },
+      {
+        "tag": "guard-exec",
+        "cpu_seconds": 0.034060999999999994,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "guard-exec-result.json"
+      },
+      {
+        "tag": "guard-fork",
+        "cpu_seconds": 0.033162,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "guard-fork-result.json"
+      },
+      {
+        "tag": "guard-normal",
+        "cpu_seconds": 0.032372,
+        "exit_code": 0,
+        "reason": "completed",
+        "receipt": "guard-normal-result.json"
+      },
+      {
+        "tag": "guard-wall",
+        "cpu_seconds": 0.029171,
+        "exit_code": -9,
+        "reason": "wall/deadline cap",
+        "receipt": "guard-wall-result.json"
+      }
+    ],
+    "controller_cpu_seconds": 0.04282000000000001,
+    "Lean_validation": "unlaunched today; no new Lean adopted",
+    "other_tool_cpu": "not globally measured, not0",
+    "scope": "exact wait4 under verified cooperative single-Python/no children, not generic process-tree cap; killed H01 included; no previous-day time/CPU"
+  },
+  "distinct_mechanism": {
+    "parent": "R-20261123-01",
+    "start": "2026-11-23T06:20:31.655770+09:00",
+    "end": "2026-11-23T07:03:05.724211+09:00",
+    "confirmed_seconds": 2554.068441,
+    "minimum_seconds": 1500,
+    "met": true,
+    "mechanism": "Continuous numerical actual stock/floor/no-go research H02-H06, genuinely distinct from H01 class-band tracing",
+    "scope": "INSIDE shared parent, not extra time; later numerical units/audits remain parent work, not additional parent cycles"
+  }
+}

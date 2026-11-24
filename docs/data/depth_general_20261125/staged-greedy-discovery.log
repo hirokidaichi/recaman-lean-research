@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/run_single.py", line 18, in <module>
+    worker(sys.argv[2:]);raise SystemExit(0)
+    ~~~~~~^^^^^^^^^^^^^^
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/run_single.py", line 15, in worker
+    runpy.run_path(script,run_name='__main__')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 259, in _get_code_from_file
+  File "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/staged_greedy_probe.py", line 38
+    value+=(-1 if actual=='S'else1)*(b+q+1);seen.add(value);assert value==X[q+1]
+            ^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'else' after 'if' expression

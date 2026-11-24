@@ -1,0 +1,306 @@
+{
+  "at": "2026-11-23T10:28:26.308454+09:00",
+  "postdeadline_record_audit": true,
+  "confirmed_work_not_added": true,
+  "new_Lean_adoption": false,
+  "index_untouched": true,
+  "foreign_unchanged": {
+    "docs/data/daily_research/2026-11-07.json": "54f4b4002b04b5c3bf0980d20e89431020147f1ad651fe1bff6780b20fbd0d75"
+  },
+  "protocol_hash_checks": [
+    {
+      "protocol": "TRANSPORT_HORIZON_PROTOCOL.json",
+      "sha256": "1316b9e15b944f491ab6ca648007fa382c1d96ee91a5b3f0b681ba44730eb956",
+      "stored": "docs/data/depth_general_20261123/transport_horizon_probe.py"
+    },
+    {
+      "protocol": "ACTUAL_FLOOR_PROTOCOL.json",
+      "sha256": "a51a8a6095ef8aa0b6299df5e0d0de13f003b95b1de6b6964ef3bffbee8745bb",
+      "stored": "docs/data/depth_general_20261123/actual_floor_sharp_probe.py"
+    },
+    {
+      "protocol": "ACTUAL_FLOOR_PROTOCOL.json",
+      "sha256": "a44e33590b5af432c7d577872553071ffa6aae39de12c4a61b6632624cdefdb7",
+      "stored": "docs/data/depth_general_20261123/actual_floor_independent.py"
+    },
+    {
+      "protocol": "STOCK_FLOOR_PROTOCOL.json",
+      "sha256": "c152693c30c3e8cabdc67e9adf518a761e322850e674031e5a2d370c8082c390",
+      "stored": "docs/data/depth_general_20261123/stock_floor_probe.py"
+    },
+    {
+      "protocol": "STOCK_FLOOR_PROTOCOL.json",
+      "sha256": "305ecc9ea360a85b6b336e3fd55112cddff5790479a64d131d310392b28cc2e0",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/305ecc9ea360a85b6b336e3fd55112cddff5790479a64d131d310392b28cc2e0-HYPOTHESIS_CARD_2026-11-23_STOCK_FLOOR_DISCOUNT.md"
+    },
+    {
+      "protocol": "DEPARTURE_STRIP_INDEPENDENT_PROTOCOL.json",
+      "sha256": "3d3c0620c73d650f1e6a6fb7004cc03476149dc387bdeeaafb6139787b8532fe",
+      "stored": "docs/data/depth_general_20261123/departure_strip_independent.py"
+    },
+    {
+      "protocol": "STOCK_PACKING_LIFT_PROTOCOL.json",
+      "sha256": "389398bbba1a20856190c44ca90a555d22056685d5102eac4004d019bc85784a",
+      "stored": "docs/data/depth_general_20261123/stock_packing_and_lift.py"
+    },
+    {
+      "protocol": "STOCK_PACKING_LIFT_PROTOCOL.json",
+      "sha256": "7f1cb77c31a71c57b91b452ecf1d8aee38903428a7b75fb16c4673766696d705",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/7f1cb77c31a71c57b91b452ecf1d8aee38903428a7b75fb16c4673766696d705-HYPOTHESIS_CARD_2026-11-23_STOCK_PACKING_FLOOR.md"
+    },
+    {
+      "protocol": "LOW_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "81dd27ba02053a32bba6bd6385f900ed86a20e22943c1f7616fa804393c5ad5a",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/81dd27ba02053a32bba6bd6385f900ed86a20e22943c1f7616fa804393c5ad5a-HYPOTHESIS_CARD_2026-11-23_LOW_STOCK_LOSS.md"
+    },
+    {
+      "protocol": "LOW_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "e4d4a8cdb2a4638a4a4a69f20ac2715fd7b75fd84567a49a70c935b449176837",
+      "stored": "docs/data/depth_general_20261123/low_stock_loss.py"
+    },
+    {
+      "protocol": "STOCK_TRANSPORT_PROTOCOL.json",
+      "sha256": "48dfc818bc15c32d9a7dd41d86560146d4065163cd3da69c2a260680f47399ed",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/48dfc818bc15c32d9a7dd41d86560146d4065163cd3da69c2a260680f47399ed-HYPOTHESIS_CARD_2026-11-23_STOCK_TRANSPORT.md"
+    },
+    {
+      "protocol": "STOCK_TRANSPORT_PROTOCOL.json",
+      "sha256": "0e34393e85798bb8c6ddfc2d3ca160536dee4184e6614e0fee5ec521b2d66f42",
+      "stored": "docs/data/depth_general_20261123/stock_transport_probe.py"
+    },
+    {
+      "protocol": "TRANSPORT_NEGATIVE_PROTOCOL.json",
+      "sha256": "cb8ebaa9d263d49679d464b81d2e2e6bd3457ff2ce297e1ff3c5686bc3e83f54",
+      "stored": "docs/data/depth_general_20261123/transport_negative_controls.py"
+    },
+    {
+      "protocol": "STOCK_FLOOR_INDEPENDENT_PROTOCOL.json",
+      "sha256": "1e37b6384dba05fbd9a3f45fdd5af18d3f55014d921e89c343cb030e0230d1ed",
+      "stored": "docs/data/depth_general_20261123/stock_floor_independent.py"
+    },
+    {
+      "protocol": "LOW_CLIPPING_PROTOCOL.json",
+      "sha256": "88739d03794743f07d0b3c0dfcc2a9f3b830bf6082108b850b2b45c9c8dc186a",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/88739d03794743f07d0b3c0dfcc2a9f3b830bf6082108b850b2b45c9c8dc186a-HYPOTHESIS_CARD_2026-11-23_LOW_CLIPPING_COST.md"
+    },
+    {
+      "protocol": "LOW_CLIPPING_PROTOCOL.json",
+      "sha256": "b3e58c32cb710472d2f93df264fe512bfc284f03a96c4f71d6544ba2e8b014fb",
+      "stored": "docs/data/depth_general_20261123/low_clipping_family.py"
+    },
+    {
+      "protocol": "BAND_COST_PROTOCOL.json",
+      "sha256": "bbd34ddc3994b5ba23a8876fb1661b044b3aaf102f9f072e8ef6d6a68a259d0b",
+      "stored": "docs/data/depth_general_20261123/band_cost_probe_attempt1.py.txt"
+    },
+    {
+      "protocol": "BAND_COST_PROTOCOL.json",
+      "sha256": "c514b26c76dad3c58e3e27ff2b32384cd5c961f002aaa262652f88838f5d84ff",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/c514b26c76dad3c58e3e27ff2b32384cd5c961f002aaa262652f88838f5d84ff-band-card-before-implementation-repair.md"
+    },
+    {
+      "protocol": "ALL_FREE_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "421e8243ccec1bb67d01fd0fe0b77469cc7252d9ed020738d6a38e8962b00b79",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/421e8243ccec1bb67d01fd0fe0b77469cc7252d9ed020738d6a38e8962b00b79-HYPOTHESIS_CARD_2026-11-23_ALL_FREE_STOCK_LOSS.md"
+    },
+    {
+      "protocol": "ALL_FREE_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "47f4432719eb79dfb78d6b4c5ebcb7eca8057663ed7da3062dc153311d7987d8",
+      "stored": "docs/data/depth_general_20261123/all_free_stock_loss.py"
+    },
+    {
+      "protocol": "DEPARTURE_STRIP_PROTOCOL.json",
+      "sha256": "e24f9fe728837faa782c59698eca678cb0d201f44e6b81f99cc3df44d9ac0d64",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/e24f9fe728837faa782c59698eca678cb0d201f44e6b81f99cc3df44d9ac0d64-HYPOTHESIS_CARD_2026-11-23_DEPARTURE_STOCK_STRIP.md"
+    },
+    {
+      "protocol": "DEPARTURE_STRIP_PROTOCOL.json",
+      "sha256": "74068547fe5b0085fe9d8a22ab253b0e217b83ae2a72a6d6f17962c11f7cb410",
+      "stored": "docs/data/depth_general_20261123/departure_strip_probe.py"
+    },
+    {
+      "protocol": "CLOCK_BUDGET_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "8c55a5f8dfab5b1fa6fbafa5af741d8c7cc99256bd49fa9ae73260e1ac7d5e91",
+      "stored": "docs/data/depth_general_20261123/frozen_inputs/8c55a5f8dfab5b1fa6fbafa5af741d8c7cc99256bd49fa9ae73260e1ac7d5e91-HYPOTHESIS_CARD_2026-11-23_CLOCK_BUDGET_STOCK_LOSS.md"
+    },
+    {
+      "protocol": "CLOCK_BUDGET_STOCK_LOSS_PROTOCOL.json",
+      "sha256": "c1e0838be1a21c3d86ecde747ad58caf7486e69f0d65cfa94c707ef39dc95d40",
+      "stored": "docs/data/depth_general_20261123/clock_budget_stock_loss.py"
+    },
+    {
+      "protocol": "GUARD_PROTOCOL.json",
+      "sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+      "stored": "docs/data/depth_general_20261123/run_single.py"
+    },
+    {
+      "protocol": "GUARD_PROTOCOL.json",
+      "sha256": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+      "stored": "docs/data/depth_general_20261123/guard_fixture.py"
+    }
+  ],
+  "finished_worker_receipts": 22,
+  "owned_file_count": 158,
+  "hashes": {
+    "docs/CURRENT_FRONTIER.md": "00e73541a8d152e166ef81e57a9986d6b7a95d05cffbdc22837074ec3fc05508",
+    "docs/EVIDENCE_REGISTRY.tsv": "5270453c68524a9c394655e6d33ba95b1eac001591546783c8d96bf37d6e616a",
+    "docs/HYPOTHESIS_CARD_2026-11-23_ACTUAL_FLOOR_POTENTIAL.md": "718e380c701e6d7210be58c220efa5094c904f22455a98928b5c625812f1c38e",
+    "docs/HYPOTHESIS_CARD_2026-11-23_ALL_FREE_STOCK_LOSS.md": "fe6a746d196cdaab308df246bd26bf71dac4b8af5d963c61f669794fab0b5a8f",
+    "docs/HYPOTHESIS_CARD_2026-11-23_CLOCK_BUDGET_STOCK_LOSS.md": "7bd8e80c0e13f757c42532a4ecd3ade81bcd2f112a9895a6e7fda77aa7316f48",
+    "docs/HYPOTHESIS_CARD_2026-11-23_DEPARTURE_STOCK_STRIP.md": "72b444b55ec51ef23a2278d6ad92ad28181b6341c79749110deb3e930851f5fe",
+    "docs/HYPOTHESIS_CARD_2026-11-23_LOW_CLIPPING_COST.md": "d2dae92b647368a41af73239a8769316893b915b7dda86c42784b5966d70e9db",
+    "docs/HYPOTHESIS_CARD_2026-11-23_LOW_STOCK_LOSS.md": "ad52aaea7b4b65de3ce63da9982a5909dd1e07f70fba169182bf6da1c19b0de0",
+    "docs/HYPOTHESIS_CARD_2026-11-23_SOURCE_KEY_BAND_COST.md": "f88b0b524442408211a2379ada3461d8091b5cf250a0997196f91f6d5ec03f86",
+    "docs/HYPOTHESIS_CARD_2026-11-23_STOCK_FLOOR_DISCOUNT.md": "2bc00e9c2fad4941ccbf7a96e18fdb194cf8864b362ad668c0d433d6177d0c88",
+    "docs/HYPOTHESIS_CARD_2026-11-23_STOCK_PACKING_FLOOR.md": "adb07fb95a159e75112ee01e55ae2f50be2b94ff9a2689b94b5ac3add666c48a",
+    "docs/HYPOTHESIS_CARD_2026-11-23_STOCK_TRANSPORT.md": "7c8f52ab55c7e7903cc5f1165b399f256b2d0eaa1ec423f580e368436eaf85d7",
+    "docs/PROOF_MAP.md": "8ae4180b9b9ff3a0cbea4692cca57bc7d6acea1388794deeb3fdbc565c670c5e",
+    "docs/RESEARCH_GENERALIZATION_TRACKER.md": "6e141912980ac4f3ce4e087f2feff8922f976e399732904391315f611dbc23fa",
+    "docs/RESEARCH_HANDOFF_2026-11-23_DAILY.md": "f4266bcf4d2c412f1e48a49b9b6ab94bfa0885d413ef6a032df0c7976ed48d89",
+    "docs/RESEARCH_NOTE_2026-11-23_ACTUAL_FLOOR_SHARPNESS.md": "f4ed5b6e6ee743b7720d60c6ad356b67eab262d79b64a431d4a6d219550583ea",
+    "docs/RESEARCH_NOTE_2026-11-23_ALL_FREE_STOCK_LOSS.md": "da06a7ad0cc950030aa2a7a3c9a7085d37b685cd68d79abc6c5ff540885a50c6",
+    "docs/RESEARCH_NOTE_2026-11-23_CLOCK_BUDGET_STOCK_LOSS.md": "98f235adb76fab0dba388b2e15920cbc9f274e0abb31f5478e099c22e5c86428",
+    "docs/RESEARCH_NOTE_2026-11-23_DEPARTURE_STOCK_STRIP.md": "f6297472e20c83b93c1271eae8881d2b866c34c47103868ec4498c70bf942ef4",
+    "docs/RESEARCH_NOTE_2026-11-23_EMPTY_BAND_COST.md": "68eb5f8693c030f6a13bd640b54e66cb8936e2b9f5047fda4e608e2d24f24a2e",
+    "docs/RESEARCH_NOTE_2026-11-23_LOW_CLIPPING_COUNTER.md": "ff8c497229e4b7c0d48c38b96e4a04ec8e1d407f134a460a00d884c0c8cbfad9",
+    "docs/RESEARCH_NOTE_2026-11-23_LOW_STOCK_LOSS.md": "fc9958474144b62120c3cf16d5413a8c72ee8b5864061a8cc285e87203e042cf",
+    "docs/RESEARCH_NOTE_2026-11-23_STOCK_FLOOR_POTENTIAL.md": "9c0e92823ecb10223b455a5425ac0b12bd22ecb613fcd384c65454a5d4aab99a",
+    "docs/RESEARCH_NOTE_2026-11-23_STOCK_TRANSPORT_POTENTIAL.md": "4fb82f41d8b8b839c2f073b5f405081919fb6e16bac6d501b7f99d81e02eccbf",
+    "docs/RESEARCH_PORTFOLIO.md": "a271e2831e1066c40382ea156ae7690ed00811d36d13d5901c72c178bffa4278",
+    "docs/data/daily_research/2026-11-23.json": "3c0469324be5214cc93554ed28b05a5269cee17abfb520a663000f8a87ecf628",
+    "docs/data/depth_general_20261123/ACTUAL_FLOOR_PROTOCOL.json": "7634e24f01fc6aa81e613b28010cde00295d6529145313bbc595dc4dffc22458",
+    "docs/data/depth_general_20261123/ACTUAL_FLOOR_VERIFICATION.json": "32915507d083ef85e108be65b70c3dafd6586138960203a3983b4226c60d5a08",
+    "docs/data/depth_general_20261123/ALL_FREE_STOCK_LOSS_PROTOCOL.json": "d02abc93c1f6f7f3e2f769945ab815835e9a40eeb184a66472d69ac471009b95",
+    "docs/data/depth_general_20261123/BAND_COST_HOLDOUT_STAGE.json": "23593275657389f006702030e62f9d201857ff3122fb40c4c828baf4738e4681",
+    "docs/data/depth_general_20261123/BAND_COST_IMPLEMENTATION_REPAIR1.json": "0f01b30d50791d21ab830a0db2bab4880a296156c153bb1cf5739cb81ade9619",
+    "docs/data/depth_general_20261123/BAND_COST_PROTOCOL.json": "96290e24155a7157740fd32bae2b07859868692b3f5d2810d5e4c8a7f06de556",
+    "docs/data/depth_general_20261123/BASELINE.json": "baa78d42e231f2a355b10c1957548c1b7e42cb53ca519d3325f6ad361134fcaf",
+    "docs/data/depth_general_20261123/CLOCK_BUDGET_STOCK_LOSS_PROTOCOL.json": "8f286d30331ed08719c64733ae529307422bae12b6a41acbb3c68c9913dd1f57",
+    "docs/data/depth_general_20261123/CPU_SUMMARY.json": "cfb29156e0af9411fd3954359231455a9456734bc73a330f5b8159be8bc39c50",
+    "docs/data/depth_general_20261123/DEPARTURE_STRIP_INDEPENDENT_PROTOCOL.json": "fd45eb73ad6fec949d5388ae20aa8c99abf88d96c91271f7acb87065d84e3db6",
+    "docs/data/depth_general_20261123/DEPARTURE_STRIP_PROTOCOL.json": "0ebd33802b5d4a165db6d3327cb1187beddb3536739db90d7556663caad596f4",
+    "docs/data/depth_general_20261123/DISTINCT_MECHANISM.json": "5500f1223571fcea3bb35f45846f2f1fc074eb7a3686a7317f408aa653009ac9",
+    "docs/data/depth_general_20261123/FINAL_WORK_SUMMARY.json": "892325464673041d0c0eb5aad15a855bcf1f977ad44dcaddd012ec93d16f8c3f",
+    "docs/data/depth_general_20261123/GUARD_PROTOCOL.json": "ef4d9f44f6687a4b43c85406c1ef4465932d0ba7adc164b2f4f0d7c867762771",
+    "docs/data/depth_general_20261123/GUARD_VALIDATION.json": "7d7c46c7313fea5674782a6c1f742ecb1e2536c8b8c125f35e52abb44fa18f24",
+    "docs/data/depth_general_20261123/LOW_CLIPPING_PROTOCOL.json": "f946118ba102db0a32a12dc2b43b1b09d9530261d9ca25d32b5b56f1b3701408",
+    "docs/data/depth_general_20261123/LOW_STOCK_LOSS_PROTOCOL.json": "0fc2e02a8c797bf05668e12e677c1b00c7a24ee248a87bce6369344a7237fc26",
+    "docs/data/depth_general_20261123/NEW_REGISTRY_ROWS.json": "df84142d55afc05ec6a6c4c1dda2a5dc290ff75ad161c7315af2f36d025ac2e5",
+    "docs/data/depth_general_20261123/PAPER_STATEMENT_AUDIT.md": "739929ff20fec125fd93ab8a790cd95616b88b8aed78d49c82c5d63e4fef6bde",
+    "docs/data/depth_general_20261123/PLAN.json": "909a8f66833194ea4363cfd3283e63687e918e75a4eb1cac9859765dc119b8db",
+    "docs/data/depth_general_20261123/STOCK_FLOOR_INDEPENDENT_PROTOCOL.json": "12cb871307cf3ab6f4b98ffc0e943951764eabbdc8a68b43d61e8d2e2cb5b06b",
+    "docs/data/depth_general_20261123/STOCK_FLOOR_PROTOCOL.json": "cbbf98707fef5e6e8347e001a8e092cb1e227fbfd39f66f8a8a43bff69083fec",
+    "docs/data/depth_general_20261123/STOCK_PACKING_LIFT_PROTOCOL.json": "df189776bb5960d835bfcc253cd24afbb728250d90dce69217f06ae90a38bd38",
+    "docs/data/depth_general_20261123/STOCK_TRANSPORT_PROTOCOL.json": "d0b8d9ef498511d5c6194af3f5206636524e20d979e323372327ca22f0d8c840",
+    "docs/data/depth_general_20261123/TRANSPORT_HORIZON_PROTOCOL.json": "c47ae24cff992376a6971035e091c58094d28c99268e271771f0e21697a0d288",
+    "docs/data/depth_general_20261123/TRANSPORT_NEGATIVE_PROTOCOL.json": "a1e39971cf38987ddedaf645ed5d47117e4e525f2b4e5fbe0ac3362731a27d42",
+    "docs/data/depth_general_20261123/UNPUBLISHED_HANDOFF.json": "235636257cf8d12eab481c04f7c689be780b82747c91803da4ee7a691da01b10",
+    "docs/data/depth_general_20261123/actual-floor-independent-result.json": "398d6baa734a3725c6a2e57f92e16193bd9cafb20cb7606454fd237436a85865",
+    "docs/data/depth_general_20261123/actual-floor-independent-start.json": "46b15215e9272259145c6efd2e42b6b1c5f9ca42a3e0a1410cbd28ec9526a375",
+    "docs/data/depth_general_20261123/actual-floor-independent.log": "80d35c0b7f6e1f0e963e9d94685fb68ffac76bcba27e006b14ef6b9010ebda4f",
+    "docs/data/depth_general_20261123/actual-floor-sharp-result.json": "e14bffab8026e370f2c4d4de1aa9454a87cf0641be89b02162e6a5cd6931501d",
+    "docs/data/depth_general_20261123/actual-floor-sharp-start.json": "347651d916471cd0f8dc96bdf60392b6157f58a94247a6e6e11c408457e7ee3e",
+    "docs/data/depth_general_20261123/actual-floor-sharp.log": "bc026dfa3fd0df6ae93a1d22cbd6781431099e6195cb61bea9cafbb6d928fa5b",
+    "docs/data/depth_general_20261123/actual_floor_independent.py": "a44e33590b5af432c7d577872553071ffa6aae39de12c4a61b6632624cdefdb7",
+    "docs/data/depth_general_20261123/actual_floor_sharp_probe.py": "a51a8a6095ef8aa0b6299df5e0d0de13f003b95b1de6b6964ef3bffbee8745bb",
+    "docs/data/depth_general_20261123/all-free-stock-loss-result.json": "ca226790c4adf224a068a6f4fcd179a46fd66e16b8b64f4665769d4b7640204b",
+    "docs/data/depth_general_20261123/all-free-stock-loss-start.json": "bd7fdf8dcc4df04b386ecf0ad831ca0f77065ee09457c2503b31c363504be568",
+    "docs/data/depth_general_20261123/all-free-stock-loss.log": "a0c9923a6d4944b9ec2b68dc0a47fb80b2f01fe4427ee847ec834c9d67f50567",
+    "docs/data/depth_general_20261123/all_free_stock_loss.py": "47f4432719eb79dfb78d6b4c5ebcb7eca8057663ed7da3062dc153311d7987d8",
+    "docs/data/depth_general_20261123/band-cost-discovery-repair1-result.json": "c236d6eb07616e1c8f8dd2306fae3e12011e1e82f0986d48cecdabcb6d47d809",
+    "docs/data/depth_general_20261123/band-cost-discovery-repair1-start.json": "61ac793841d29bd60000fb1bc4414d91007857b258cd2b3d220edb929bbe26bb",
+    "docs/data/depth_general_20261123/band-cost-discovery-repair1.log": "a62a8337ee3c9884f735ed4da8209b8a77953f2e4c442c3e198895b5832b3bed",
+    "docs/data/depth_general_20261123/band-cost-discovery-result.json": "a61ee7badf763c0c9efd9f8cf4078efa8ec78488b351347f435ace1c03afafad",
+    "docs/data/depth_general_20261123/band-cost-discovery-start.json": "19eace531f57ed40e61898bc05ac22390c2194a1dfefea9aca91b15d05fab756",
+    "docs/data/depth_general_20261123/band-cost-discovery.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/data/depth_general_20261123/band-cost-holdout-result.json": "afdc20b9c322bc09a09527ca9a35ea0b7903427b7669fcdfaaf7ac110f70d568",
+    "docs/data/depth_general_20261123/band-cost-holdout-start.json": "f7d3d4c7ebf640bcfaf9c152d3dd6497e197d3166fc2bf1ebe6a67a321fb13f5",
+    "docs/data/depth_general_20261123/band-cost-holdout.log": "bfb29885e9183f1859f9fc2359a52d8c69e32bd040b8a4260d056c2c05d043f7",
+    "docs/data/depth_general_20261123/band_cost_probe.py": "0930a9ebc1100780a5a99861bbc6ae52dd218eadddfa2382b79d3a125bcfa25c",
+    "docs/data/depth_general_20261123/band_cost_probe_attempt1.py.txt": "bbd34ddc3994b5ba23a8876fb1661b044b3aaf102f9f072e8ef6d6a68a259d0b",
+    "docs/data/depth_general_20261123/clock-budget-stock-loss-result.json": "ffa2f810c708df78c6dd135dced2e0ab9d5bf1d5b2d2cb26af0a95666ffad958",
+    "docs/data/depth_general_20261123/clock-budget-stock-loss-start.json": "bf58a454bad39b60f3d851987ec505544d786acea05f47e5f25ea2da52793674",
+    "docs/data/depth_general_20261123/clock-budget-stock-loss.log": "eb2dff3c42f5a8e1422f06ea25cf803de19824f11baa55bb73c65663ff4062d1",
+    "docs/data/depth_general_20261123/clock_budget_stock_loss.py": "c1e0838be1a21c3d86ecde747ad58caf7486e69f0d65cfa94c707ef39dc95d40",
+    "docs/data/depth_general_20261123/departure-strip-independent-result.json": "ab816394109d13e97f0c9d3ff5e155912387d25ba78aaf84cbbea6bf6de02fcd",
+    "docs/data/depth_general_20261123/departure-strip-independent-start.json": "7f300ab5535815c8ecbe253f526a1e96eacb828597daddb74cac81e020282efd",
+    "docs/data/depth_general_20261123/departure-strip-independent.log": "10f87809f4132b1300d42722c1621c71dd991e255f8f840a29fc7bdd3bd623dd",
+    "docs/data/depth_general_20261123/departure-strip-result.json": "c68c826f75e745332e6791a3782bc0f491c46436b6037a5b6916fc3c7bd1cb7b",
+    "docs/data/depth_general_20261123/departure-strip-start.json": "d45c6e797e1fb556cca3ee66aa06067037e5981cc0581a90264394b84af79ea0",
+    "docs/data/depth_general_20261123/departure-strip.log": "5e7b60e49fc53c91cc63f10aee4048bb7960c68853b5a752ae61cb459ae8e063",
+    "docs/data/depth_general_20261123/departure_strip_independent.py": "3d3c0620c73d650f1e6a6fb7004cc03476149dc387bdeeaafb6139787b8532fe",
+    "docs/data/depth_general_20261123/departure_strip_probe.py": "74068547fe5b0085fe9d8a22ab253b0e217b83ae2a72a6d6f17962c11f7cb410",
+    "docs/data/depth_general_20261123/frozen_inputs/305ecc9ea360a85b6b336e3fd55112cddff5790479a64d131d310392b28cc2e0-HYPOTHESIS_CARD_2026-11-23_STOCK_FLOOR_DISCOUNT.md": "305ecc9ea360a85b6b336e3fd55112cddff5790479a64d131d310392b28cc2e0",
+    "docs/data/depth_general_20261123/frozen_inputs/421e8243ccec1bb67d01fd0fe0b77469cc7252d9ed020738d6a38e8962b00b79-HYPOTHESIS_CARD_2026-11-23_ALL_FREE_STOCK_LOSS.md": "421e8243ccec1bb67d01fd0fe0b77469cc7252d9ed020738d6a38e8962b00b79",
+    "docs/data/depth_general_20261123/frozen_inputs/48dfc818bc15c32d9a7dd41d86560146d4065163cd3da69c2a260680f47399ed-HYPOTHESIS_CARD_2026-11-23_STOCK_TRANSPORT.md": "48dfc818bc15c32d9a7dd41d86560146d4065163cd3da69c2a260680f47399ed",
+    "docs/data/depth_general_20261123/frozen_inputs/7f1cb77c31a71c57b91b452ecf1d8aee38903428a7b75fb16c4673766696d705-HYPOTHESIS_CARD_2026-11-23_STOCK_PACKING_FLOOR.md": "7f1cb77c31a71c57b91b452ecf1d8aee38903428a7b75fb16c4673766696d705",
+    "docs/data/depth_general_20261123/frozen_inputs/81dd27ba02053a32bba6bd6385f900ed86a20e22943c1f7616fa804393c5ad5a-HYPOTHESIS_CARD_2026-11-23_LOW_STOCK_LOSS.md": "81dd27ba02053a32bba6bd6385f900ed86a20e22943c1f7616fa804393c5ad5a",
+    "docs/data/depth_general_20261123/frozen_inputs/88739d03794743f07d0b3c0dfcc2a9f3b830bf6082108b850b2b45c9c8dc186a-HYPOTHESIS_CARD_2026-11-23_LOW_CLIPPING_COST.md": "88739d03794743f07d0b3c0dfcc2a9f3b830bf6082108b850b2b45c9c8dc186a",
+    "docs/data/depth_general_20261123/frozen_inputs/8c55a5f8dfab5b1fa6fbafa5af741d8c7cc99256bd49fa9ae73260e1ac7d5e91-HYPOTHESIS_CARD_2026-11-23_CLOCK_BUDGET_STOCK_LOSS.md": "8c55a5f8dfab5b1fa6fbafa5af741d8c7cc99256bd49fa9ae73260e1ac7d5e91",
+    "docs/data/depth_general_20261123/frozen_inputs/c514b26c76dad3c58e3e27ff2b32384cd5c961f002aaa262652f88838f5d84ff-band-card-before-implementation-repair.md": "c514b26c76dad3c58e3e27ff2b32384cd5c961f002aaa262652f88838f5d84ff",
+    "docs/data/depth_general_20261123/frozen_inputs/e24f9fe728837faa782c59698eca678cb0d201f44e6b81f99cc3df44d9ac0d64-HYPOTHESIS_CARD_2026-11-23_DEPARTURE_STOCK_STRIP.md": "e24f9fe728837faa782c59698eca678cb0d201f44e6b81f99cc3df44d9ac0d64",
+    "docs/data/depth_general_20261123/frozen_inputs/f56fd43f823d9f441e634357b50ff52af01639174c6df1c6cac799090ae73dc3-HYPOTHESIS_CARD_2026-11-23_ACTUAL_FLOOR_POTENTIAL.md": "f56fd43f823d9f441e634357b50ff52af01639174c6df1c6cac799090ae73dc3",
+    "docs/data/depth_general_20261123/guard-cpu-result.json": "2d8ceb0189c0cd21ca2ded06dadef4d5664a2c6d4c52248d4755840b4291f447",
+    "docs/data/depth_general_20261123/guard-cpu-start.json": "f67c2b68dad58d8dfd2fe8856e94bb2a9bd4c9518b5f21b370fa37520c371e80",
+    "docs/data/depth_general_20261123/guard-cpu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/data/depth_general_20261123/guard-exec-result.json": "8f4190f97ec0616dc4f1c231a7286b9e0629d188a8d27a74b95f26f85f6f18fe",
+    "docs/data/depth_general_20261123/guard-exec-start.json": "9e7018ffa7d8e9f1fd61ad0ade76c89e82ce550c84f08158d45653fd0d1c3714",
+    "docs/data/depth_general_20261123/guard-exec.log": "55bab98b28431720c2356de1b8167a42d4a8deba74a0ff94292dcbc301fba310",
+    "docs/data/depth_general_20261123/guard-fork-result.json": "6859115fcd69816fb81e2b18138e72b516ccf2331c31c9b037963ed113f3eee0",
+    "docs/data/depth_general_20261123/guard-fork-start.json": "5dd4561acf211915e5bb853f79cb197a23b32c122446bb3d68a2d159196ce540",
+    "docs/data/depth_general_20261123/guard-fork.log": "e16343397e111d74b92a23d86d7a54235b9b351bbf5017a2084f66b2faa8a72e",
+    "docs/data/depth_general_20261123/guard-normal-result.json": "10eff0714c35267ebf61edd1b37f7751ae0e3d2bb139b447538281aad5d2ac31",
+    "docs/data/depth_general_20261123/guard-normal-start.json": "013efa32242bae83ca6aa77440ef11e9b8eba5bff971dfaa1efeb97a51bd8427",
+    "docs/data/depth_general_20261123/guard-normal.log": "eb02b3fb0b29e5d487133ccbf391127e4889a9cf61d93233a7eea18c5580ea36",
+    "docs/data/depth_general_20261123/guard-wall-result.json": "59cf59665b430a666eade5bc3899d4783e57b7346b86e86b968a21fece6db609",
+    "docs/data/depth_general_20261123/guard-wall-start.json": "e4298962c26eecf9da21f9cd40f9bd4120f0fb87d8131702356f0f7b963520dc",
+    "docs/data/depth_general_20261123/guard-wall.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/data/depth_general_20261123/guard_fixture.py": "439e58e539878d2e95f11922de42721e3f0ebd9735832cd920d4b87ff54ae1da",
+    "docs/data/depth_general_20261123/low-clipping-result.json": "ebfbd3ced9596277c229d87a59bc3ea5ffc489c3917ee20cbba820c83180c290",
+    "docs/data/depth_general_20261123/low-clipping-start.json": "8256b408c83484d9a9087f3a96346b1c94fac6a39504644417ae670c655c1533",
+    "docs/data/depth_general_20261123/low-clipping.log": "49b7766521462028d570a7ac3239391f6588d072bcbb431dd0f3d9545edcff26",
+    "docs/data/depth_general_20261123/low-stock-loss-result.json": "d12c5a65dc002b45b20c130c0edd7f30c018c4b1b7188a5d57989381a4c31538",
+    "docs/data/depth_general_20261123/low-stock-loss-start.json": "b5baacee652eeed43fa61b2f43de6bce053e9b4c68273918671653bcffa0e5d5",
+    "docs/data/depth_general_20261123/low-stock-loss.log": "f75f0fc39c23be8c79641338b897e7801aaa2023b142a44d7a63676d3fe13fd7",
+    "docs/data/depth_general_20261123/low_clipping_family.py": "b3e58c32cb710472d2f93df264fe512bfc284f03a96c4f71d6544ba2e8b014fb",
+    "docs/data/depth_general_20261123/low_stock_loss.py": "e4d4a8cdb2a4638a4a4a69f20ac2715fd7b75fd84567a49a70c935b449176837",
+    "docs/data/depth_general_20261123/run_single.py": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+    "docs/data/depth_general_20261123/run_static_validation.py": "d802ef9da2cc2ba2613220c3486012d326444b94161da9ffa7c102f03c262709",
+    "docs/data/depth_general_20261123/stock-floor-discount-result.json": "8bb0f2f9c92e924955d5603dc174b677c4a9d6b3528e6e9d909eb12e121f4ec2",
+    "docs/data/depth_general_20261123/stock-floor-discount-start.json": "e890ef1fc4c6f5e68b4dd1e464090ac8a49a6df75ef444f34768eaec9d8b04c1",
+    "docs/data/depth_general_20261123/stock-floor-discount.log": "5f6f7f0240bf38717a70c16dcc3ce54dbf99fe5aace80982135ee60cf5b0962f",
+    "docs/data/depth_general_20261123/stock-floor-independent-result.json": "400564bfd60d29f9e4b7a05832e656680108bd82e21c5fa9362c12b73f0472fd",
+    "docs/data/depth_general_20261123/stock-floor-independent-start.json": "491e4fb20d3cd87244d722754cf355d12348fe9350ac298c5ac69bd21a40a9b2",
+    "docs/data/depth_general_20261123/stock-floor-independent.log": "df48477ce7164237dd7518ff848703c48213b3ac9151fb7b3254c34f0fb8fe32",
+    "docs/data/depth_general_20261123/stock-packing-lift-result.json": "35f0496a1157b7bd3e80fbfbebcaad86490605e2deedae92ee31197c33c970b2",
+    "docs/data/depth_general_20261123/stock-packing-lift-start.json": "012591ab4c6c75045ded61410fff8f8d2c3e080bf1cc73c7e0b918ba4193c40c",
+    "docs/data/depth_general_20261123/stock-packing-lift.log": "62dded69da6fb7f139d3c547b14799ce8952e66a66bab1ce9a28e199068a2823",
+    "docs/data/depth_general_20261123/stock-transport-result.json": "fc275a5f9d8bc03d29e3e28a1b55de5343bfca8443cedbca7a4d249beb1373ff",
+    "docs/data/depth_general_20261123/stock-transport-start.json": "2ad1aed8606ba8fcfd370128f1d2f9da8d4def35557c7710a6321eb799e109e0",
+    "docs/data/depth_general_20261123/stock-transport.log": "afbdfbb930a1cf0164423c38c00adc089f4c888ce37630eb337be737af22ce9a",
+    "docs/data/depth_general_20261123/stock_floor_independent.py": "1e37b6384dba05fbd9a3f45fdd5af18d3f55014d921e89c343cb030e0230d1ed",
+    "docs/data/depth_general_20261123/stock_floor_probe.py": "c152693c30c3e8cabdc67e9adf518a761e322850e674031e5a2d370c8082c390",
+    "docs/data/depth_general_20261123/stock_packing_and_lift.py": "389398bbba1a20856190c44ca90a555d22056685d5102eac4004d019bc85784a",
+    "docs/data/depth_general_20261123/stock_transport_probe.py": "0e34393e85798bb8c6ddfc2d3ca160536dee4184e6614e0fee5ec521b2d66f42",
+    "docs/data/depth_general_20261123/transport-horizon-result.json": "e7d01486d42fe68a909d31d70ff9b91e647bc3923503e494d5155ca9bf02ccd0",
+    "docs/data/depth_general_20261123/transport-horizon-start.json": "db258e303fca5ce414b99063878f64694efc87878a8c94954954aeb27a46c5ad",
+    "docs/data/depth_general_20261123/transport-horizon.log": "6b9b20a38af9c1b6bb2ccf62c26f741abc5a84a2d9853ee3208a94a06240641d",
+    "docs/data/depth_general_20261123/transport-negatives-result.json": "bcae74af306d6652dae2ba871708dee5532c83a05bc31ca5d26d841922870717",
+    "docs/data/depth_general_20261123/transport-negatives-start.json": "6ebc1ad44b99341268907e4ecbdcb41ed4327b09ac9045fff058ad682681a62b",
+    "docs/data/depth_general_20261123/transport-negatives.log": "730512e6ad643f1bb7484957d44e1f85a6e24bcae182d55f6f81306e5f271cd2",
+    "docs/data/depth_general_20261123/transport_horizon_probe.py": "1316b9e15b944f491ab6ca648007fa382c1d96ee91a5b3f0b681ba44730eb956",
+    "docs/data/depth_general_20261123/transport_negative_controls.py": "cb8ebaa9d263d49679d464b81d2e2e6bd3457ff2ce297e1ff3c5686bc3e83f54",
+    "docs/data/depth_general_20261123/validation-architecture.json": "84db2a7a38999a2bc40c4a79e3b8c0824167e93f55b6f19232bd21c2c13a8c3c",
+    "docs/data/depth_general_20261123/validation-architecture.log": "228f5a742a503375ffc962f64f8a27e71308645e6c51da0fd0f79ccc1505861d",
+    "docs/data/depth_general_20261123/validation-brief.json": "162fd24bf00f0e5f5101664aa4335af978bb7206a18acee6ae99032c27580d88",
+    "docs/data/depth_general_20261123/validation-brief.log": "e49d7e6b86948cc9d91d0648d6d97a4f18db4d1c0da373db80c7a383ff00c638",
+    "docs/data/depth_general_20261123/validation-manifest.json": "ced8560f41cd1934ea34d6503d134c4ff1225a74202a22ff99db4a32340ac778",
+    "docs/data/depth_general_20261123/validation-manifest.log": "a0090ac4fa2d915bd70575435f89c1008e21f4cee293fdc682dac63203dc3934",
+    "docs/data/depth_general_20261123/validation-registry.json": "7f03cd1b573e15b2765ad24d0a68e95d6ae5f65beab0e25287bf3e30119d8d66",
+    "docs/data/depth_general_20261123/validation-registry.log": "ca358a32662ead7921c5cc21eb68ab9b452f98d7d550d83c89ad19bb1283cc24"
+  },
+  "static_checks": "architecture/registry/G1-G5/protected/G6-static/manifest/brief passed10:24, excluded from journal; new Lean build not run",
+  "publication": "not performed, window missed",
+  "reason": "next real clock10:24 after last07:26:53 checkpoint; recover closes gap, ordinary stop absent",
+  "remaining": "all owned changes uncommitted/unpushed; human paper review and no full Lean adoption; next permitted window publication"
+}

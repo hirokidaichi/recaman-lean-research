@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-23T10:27:35.086315+09:00",
+  "publication": "not attempted, outside permitted window",
+  "new_commit_sha": null,
+  "local_HEAD": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "destination": "origin/main",
+  "last_ls_remote_sha": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "ls_remote_observed": "2026-11-23T10:25 JST",
+  "matches_initial_HEAD": true,
+  "today_changes_in_remote": false,
+  "hosted_CI_for_today": "not triggered/not confirmed; no new commit",
+  "retry": "next explicitly permitted research/publication window only, fetch/preserve remote updates first",
+  "ordinary_stop": false,
+  "journal_closed_by_recover": "2026-11-23T10:25:46.921691+09:00",
+  "excluded_foreign": {
+    "docs/data/daily_research/2026-11-07.json": "54f4b4002b04b5c3bf0980d20e89431020147f1ad651fe1bff6780b20fbd0d75"
+  },
+  "new_Lean_adoption": false,
+  "static_checks": {
+    "architecture": {
+      "at": "2026-11-23T10:24:24.471299+09:00",
+      "argv": [
+        "bash",
+        "scripts/check_module_architecture.sh"
+      ],
+      "exit_code": 0,
+      "scope": "static/tool validation, no new Lean build or hosted CI; not mathematical CPU"
+    },
+    "registry": {
+      "at": "2026-11-23T10:24:28.075771+09:00",
+      "argv": [
+        "bash",
+        "scripts/check_research_registry.sh"
+      ],
+      "exit_code": 0,
+      "scope": "static/tool validation, no new Lean build or hosted CI; not mathematical CPU"
+    },
+    "manifest": {
+      "at": "2026-11-23T10:24:21.444425+09:00",
+      "argv": [
+        "python3",
+        "viewer/gen_manifest.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "scope": "static/tool validation, no new Lean build or hosted CI; not mathematical CPU"
+    },
+    "brief": {
+      "at": "2026-11-23T10:24:21.242146+09:00",
+      "argv": [
+        "make",
+        "brief"
+      ],
+      "exit_code": 0,
+      "scope": "static/tool validation, no new Lean build or hosted CI; not mathematical CPU"
+    }
+  },
+  "scope": "Postdeadline record preservation only, not new mathematical research or credited time"
+}

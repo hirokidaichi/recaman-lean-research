@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-23T06:30:33.647363+09:00",
+  "source_sha256": "1e37b6384dba05fbd9a3f45fdd5af18d3f55014d921e89c343cb030e0230d1ed",
+  "role": "independent signed-word/minimal required initial stock/direct natural replay, not first state-enumeration worker",
+  "discovery": "(base,current)=(0,1),(1,2),(3,5), all lengths1..7",
+  "parameter_holdout": "(2,4),(7,9), lengths8..9; not fresh orbit histories",
+  "scope_controls": "illegal raw ASA with forbidden S4; duplicate list not cardinality; above-current stock not paid; sparse x5/V0,2,3,4,5/b4,7,19 equality",
+  "math_budget_total": 3,
+  "measured_used_before": 1.9330889999999998,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "stock-floor-independent",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/stock_floor_independent.py"
+  ],
+  "soft_cpu": 0.65,
+  "stop": "first error/declared range/soft gate, no range extension",
+  "repair_max": 1,
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b"
+}

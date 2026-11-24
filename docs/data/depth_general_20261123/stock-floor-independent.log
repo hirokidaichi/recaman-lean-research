@@ -1,0 +1,61 @@
+{
+  "all_pass": true,
+  "range_complete": true,
+  "counts": {
+    "discovery_actual_words": 99,
+    "nonempty_floor_returns": 81,
+    "noncontiguous_old_stock": 226,
+    "two_floor_checks": 254,
+    "parameter_holdout_actual_words": 181,
+    "sparse_stock_time_equalities": 3
+  },
+  "scope_negatives": {
+    "without_S_freshness": {
+      "x": 5,
+      "b": 0,
+      "stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "raw_word": "ASA",
+      "actual_nextP": 17,
+      "claimed_bound": 13,
+      "bad_S_lands_on_old4": true
+    },
+    "duplicates_not_distinct": {
+      "x": 2,
+      "b": 0,
+      "seen_list": [
+        0,
+        1,
+        1,
+        1,
+        2
+      ],
+      "word": "A",
+      "nextP": 7,
+      "valid_K": 1,
+      "invalid_K": 3
+    },
+    "above_current_not_paid": {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1,
+        100,
+        101
+      ],
+      "word": "A",
+      "nextP": 5,
+      "valid_K": 0,
+      "invalid_all_positive_stock": 3
+    }
+  },
+  "scope": "new inequality on independently constructed actual finite words; no new canonical or LOWfree proof",
+  "worker_internal_cpu_seconds": 0.009322999999999998
+}

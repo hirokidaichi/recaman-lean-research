@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-23T06:04:39.461848+09:00",
+  "parent": "R-20261123-01",
+  "session": "62df7b3b-3aba-4c20-86a4-99614c15021e",
+  "actual_setup_start": "2026-11-23T06:02:22.769093+09:00",
+  "deadline": "2026-11-23T08:00:00+09:00",
+  "exploration_stop": "2026-11-23T07:45:00+09:00",
+  "nominal_minutes": {
+    "setup": 10,
+    "local": 30,
+    "general": 60,
+    "audit": 10,
+    "handoff": 10
+  },
+  "delay_adjustment": "Compress setup toward06:10 using verified live sources/recent context; keep local:general1:2 and independent audit. Nominal research06:10-07:40, audit07:40-07:50, handoff through deadline; final stop leaves publication margin, never backfill delay or add post-stop time. Any further reduction preserves necessary audit and local:general1:2; audit overrun charged local first.",
+  "first_gate": "H01 exact empty-band excess >=g-1, at most15 actual research minutes; full-source counter or new producer only, finite absence insufficient",
+  "distinct_general_mechanism": "Reserve second general30min with genuinely different mechanism >=25min; exact candidate frozen before that unit, no same unknown renamed",
+  "local_scope": "Only a genuinely new local producer if identified; no finite512MB or HarnessTools retry. Otherwise reallocate to new general work and audit with recorded reasons.",
+  "math_budget_initial_seconds": 0,
+  "math_budget_after_current_guard_pass_seconds": 3,
+  "worker_cap_cpu_seconds": 1,
+  "worker_wall_seconds": 10,
+  "contract": "current-day verified cooperative single-Python/no descendants/exec, exact wait4 usage, not generic process-tree/OS AS; controller/guard/Lean separate",
+  "new_Lean_planned": false,
+  "stops": "all previous stopped jobs inherit, no date/resource/tactic/import/split reset"
+}

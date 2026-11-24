@@ -1,0 +1,108 @@
+{
+  "all_pass": true,
+  "range_complete": true,
+  "counts": {
+    "discovery_states": 372,
+    "all_cut_stock_step_checks": 36782,
+    "K_positive": 32943,
+    "nonempty_return": 15733,
+    "iterated_stock_checks": 76468,
+    "primitive_excursions": 27959,
+    "parameter_holdout_states": 48
+  },
+  "equalities": [
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 1,
+      "end": 2,
+      "next_cut": 2,
+      "K": 1,
+      "P": 5,
+      "nextP": 10
+    },
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 1,
+      "end": 3,
+      "next_cut": 2,
+      "K": 1,
+      "P": 5,
+      "nextP": 10
+    },
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 1,
+      "end": 4,
+      "next_cut": 2,
+      "K": 1,
+      "P": 5,
+      "nextP": 10
+    },
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 1,
+      "end": 5,
+      "next_cut": 2,
+      "K": 1,
+      "P": 5,
+      "nextP": 10
+    },
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 2,
+      "end": 5,
+      "next_cut": 5,
+      "K": 2,
+      "P": 10,
+      "nextP": 21
+    },
+    {
+      "x": 1,
+      "b": 0,
+      "stock": [
+        0,
+        1
+      ],
+      "cut": 4,
+      "end": 5,
+      "next_cut": 5,
+      "K": 2,
+      "P": 10,
+      "nextP": 21
+    }
+  ],
+  "future_stock_negative": {
+    "oldK": 1,
+    "illegal_futureK": 8,
+    "P": 26,
+    "actual_nextP": 73,
+    "invalid_bound": 45
+  },
+  "scope": "new exact inequality controls, arbitrary original cuts/full past; finite not proof",
+  "worker_internal_cpu_seconds": 0.307144
+}

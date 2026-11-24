@@ -1,0 +1,18 @@
+{
+  "started_jst": "2026-11-23T06:51:55.735724+09:00",
+  "tag": "stock-transport",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261123/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261123/stock_transport_probe.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 10.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "0e34393e85798bb8c6ddfc2d3ca160536dee4184e6614e0fee5ec521b2d66f42",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 58399,
+  "process_group": 58399
+}

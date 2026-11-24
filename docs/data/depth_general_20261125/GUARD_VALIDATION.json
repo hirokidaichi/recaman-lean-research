@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-25T06:04:26.281337+09:00",
+  "all_pass": true,
+  "guard_cpu_seconds": 1.128257,
+  "jobs": [
+    {
+      "mode": "normal",
+      "exit_code": 0,
+      "cpu_seconds": 0.033037,
+      "reason": "completed"
+    },
+    {
+      "mode": "fork",
+      "exit_code": 0,
+      "cpu_seconds": 0.03211,
+      "reason": "completed"
+    },
+    {
+      "mode": "exec",
+      "exit_code": 0,
+      "cpu_seconds": 0.031127,
+      "reason": "completed"
+    },
+    {
+      "mode": "wall",
+      "exit_code": -9,
+      "cpu_seconds": 0.030149999999999996,
+      "reason": "wall/deadline cap"
+    },
+    {
+      "mode": "cpu",
+      "exit_code": -24,
+      "cpu_seconds": 1.001833,
+      "reason": "signal 24 (see CPU cap and output)"
+    }
+  ],
+  "contract": "exact cooperative single Python/no children/all threads RLIMIT_CPU/wait4, NOT generic tree or OS AS cap",
+  "math_allocation_before": 0,
+  "math_allocation_after": 3,
+  "scope": "current-day contract validation, not mathematical evidence or previous-day CPU"
+}

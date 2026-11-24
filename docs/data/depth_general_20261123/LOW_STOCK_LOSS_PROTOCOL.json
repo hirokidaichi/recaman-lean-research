@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-23T07:07:30.354281+09:00",
+  "candidate": "ALL odd l>=7 H06 PLUS ENTIRE old interval[y,x-1], Kold=2l+2/Knext5/lost subset2l, original LOW4/positive/return/D0/source4<-1 unchanged",
+  "new_input": "No S landing enters added interval; exact full old set loss, strictly stronger than prior minimal-stock length counter. Not its finite range extension.",
+  "card_sha256": "81dd27ba02053a32bba6bd6385f900ed86a20e22943c1f7616fa804393c5ad5a",
+  "source_sha256": "e4d4a8cdb2a4638a4a4a69f20ac2715fd7b75fd84567a49a70c935b449176837",
+  "discovery": [
+    7,
+    9
+  ],
+  "unused_parameters": [
+    13,
+    23,
+    41
+  ],
+  "budget": 4,
+  "measured_used_before": 2.884672,
+  "remaining_before": 1.115328,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "low-stock-loss",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/low_stock_loss.py"
+  ],
+  "stop": "five new-predicate cases, one correction max, no resources/ranges for failure"
+}

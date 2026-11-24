@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-23T06:22:00.571208+09:00",
+  "all_pass": true,
+  "math_total_including_killed_H01": 1.5922669999999999,
+  "math_budget_total": 3,
+  "jobs": [
+    {
+      "tag": "actual-floor-sharp",
+      "exit_code": 0,
+      "reason": "completed",
+      "worker_cpu_seconds": 0.034518,
+      "wall_seconds": 0.058827584027312696,
+      "finished_jst": "2026-11-23T06:22:00.460132+09:00"
+    },
+    {
+      "tag": "actual-floor-independent",
+      "exit_code": 0,
+      "reason": "completed",
+      "worker_cpu_seconds": 0.050351,
+      "wall_seconds": 0.05820804100949317,
+      "finished_jst": "2026-11-23T06:22:00.565560+09:00"
+    }
+  ],
+  "scope": "finite exact verification only, paper all-b argument separate"
+}

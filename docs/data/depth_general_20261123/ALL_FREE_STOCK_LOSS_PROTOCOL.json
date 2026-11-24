@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-23T07:11:47.113041+09:00",
+  "candidate": "k20n+5,l3k,b4k^2-k-2; SS A^l S^l AA, fullseed+interval minus S holes; ALLfree/classes3k+1, loss5k^2-5k-2 (k>=25), LOW4/positive/return/D0/source4<-1",
+  "new_input": "new b/l arithmetic and protected S-hole producer; cannot infer ALLfree-linear failure from prior LOW4 family",
+  "card_sha256": "421e8243ccec1bb67d01fd0fe0b77469cc7252d9ed020738d6a38e8962b00b79",
+  "source_sha256": "47f4432719eb79dfb78d6b4c5ebcb7eca8057663ed7da3062dc153311d7987d8",
+  "discovery": [
+    5,
+    25
+  ],
+  "unused_parameters": [
+    45,
+    65,
+    85
+  ],
+  "budget": 4,
+  "measured_used_before": 2.9196,
+  "remaining_before": 1.0804,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "all-free-stock-loss",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/all_free_stock_loss.py"
+  ],
+  "stop": "five exact new family controls, max1 correction, no range/resource retry"
+}

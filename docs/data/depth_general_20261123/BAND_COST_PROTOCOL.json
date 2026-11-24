@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-23T06:07:59.856782+09:00",
+  "id": "H-20261123-01",
+  "label": "CONJECTURED",
+  "exact_candidate": "For all maximal initialS h>=1/original-positive/return2-h/fullI-II words and one maximal empty class band ell+2<=r<=s<=-h-1, sum_(ell<=t<r)max(k_t-1,0)>=s-r (=g-1)",
+  "worker_source_sha256": "bbd34ddc3994b5ba23a8876fb1661b044b3aaf102f9f072e8ef6d6a68a259d0b",
+  "card_sha256": "c514b26c76dad3c58e3e27ff2b32384cd5c961f002aaa262652f88838f5d84ff",
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b",
+  "discovery": {
+    "mode": "discovery",
+    "attempt_limit": 14000,
+    "LCG_seed": 23061123,
+    "run_pairs": "3..5",
+    "run_lengths": "1..4 using high16+ bits",
+    "core_length_max": 76,
+    "terminal_A": "2+sumS-sumA, 1..24",
+    "head": "sum all core A+1, not dropped old history"
+  },
+  "held_out_parameters": {
+    "mode": "holdout",
+    "attempt_limit": 8000,
+    "LCG_seed": 23161123,
+    "run_pairs": "6..8",
+    "run_lengths": "1..5",
+    "other_constraints": "same exact return/core max76/tail1..24"
+  },
+  "old_control": "E771 exact h13/core, NEW single-band cost gap2/excess2; not fresh history or rerun adjacent-birth job",
+  "new_predicate_scope": "new class excess/source-key inequality, profiles may overlap prior histories; finite absence is COMPUTED only, not proof or general progress",
+  "all_sources": "full original O-pair bank for every A, independent literal audit required for accepted strong counter",
+  "math_budget_total_seconds": 3,
+  "initial_budget": 0,
+  "current_guard": "GUARD_VALIDATION.json all_pass1.129820CPU separate",
+  "argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261123/run_single.py",
+      "--tag",
+      "band-cost-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261123/band_cost_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261123/run_single.py",
+      "--tag",
+      "band-cost-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261123/band_cost_probe.py",
+      "holdout"
+    ]
+  ],
+  "worker_soft_cpu_seconds": 0.65,
+  "one_worker_hard_cpu_seconds": 1,
+  "stop": "first full-I-II counter or declared range/soft limit, no extension; 15 actual research min gate regardless of finite absence",
+  "repair_max": 1,
+  "Lean": "none started/planned; all old stops inherited"
+}

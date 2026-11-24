@@ -1,0 +1,38 @@
+{
+  "all_pass": true,
+  "range_complete": true,
+  "counts": {
+    "uniform_floor_targets": 1878,
+    "nonvacuous_excluded_source_positions": 574,
+    "literal_original_source_hits": 353,
+    "discovery_states": 27,
+    "unused_parameters_states": 9,
+    "zero_source_floor_targets": 7,
+    "zero_source_exclusion_positions": 231
+  },
+  "zero_source": [
+    {
+      "initial_base": 0,
+      "first_A_current": 1,
+      "source0_excluded_from": 6
+    },
+    {
+      "initial_base": 1,
+      "first_A_current": 2,
+      "source0_excluded_from": 18
+    },
+    {
+      "initial_base": 3,
+      "first_A_current": 4,
+      "source0_excluded_from": 42
+    },
+    {
+      "initial_base": 7,
+      "first_A_current": 8,
+      "source0_excluded_from": 91
+    }
+  ],
+  "finite_only": true,
+  "scope": "new rational uniform thresholds and complete original-source exclusions; independent predicates on direct actual States; no fresh orbit ranges",
+  "worker_internal_cpu_seconds": 0.20662
+}

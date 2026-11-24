@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-23T07:21:00.775923+09:00",
+  "candidate": "NEW all old departure A outputs upincrement<=1 fillsstrip[x+a+1,y-1], Kn>=clippedold+max0R; 13Tnext<=33T-166; W12a+15x-10K,15Wnext<=34W-30",
+  "card_sha256": "e24f9fe728837faa782c59698eca678cb0d201f44e6b81f99cc3df44d9ac0d64",
+  "source_sha256": "74068547fe5b0085fe9d8a22ab253b0e217b83ae2a72a6d6f17962c11f7cb410",
+  "discovery": "x1..8/b0,1,5,17/four masks/two extra choices, endpoints12/20/28/all cuts",
+  "unused_parameters": "x13,21/b3,9/four stocks/endpoints16,24,36/all cuts",
+  "math_budget_before": 4,
+  "math_budget_after": 5,
+  "measured_used_before": 3.030732,
+  "remaining_before": 1.969268,
+  "reallocation_reason": "NEW A up-crossing strip producer and paid potential, not a failed resource retry or range extension",
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "departure-strip",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/departure_strip_probe.py"
+  ],
+  "stop": "one exact fixed predicate verification, max1 repair, no resource/range retry"
+}

@@ -1,0 +1,24 @@
+# H-20261125-04: S freshness of the sharp staged source family
+
+**Current verdict: E777 PROVED-PAPER, human review pending, not Lean. All-n S chronology and complete coherent finite seed, not canonical past. Initial hash-freeze/syntax failure retained; one implementation repair exhausted.**
+
+CONJECTURED proposer, before new computation/adoption. ONE shared parent. Independent numerical chronology consumer of E776; E759/E766 constructor/minimum and E775 weight barrier are OLD inputs here, not re-proved as progress. No old S-padding counter/job is rerun.
+
+For EVERY n>=1 take the COMPLETE original word W_n=S^(2n+2)(ASAA)^n A S^(2n+1)AA of length8n+6, with original ALL sources/free at0. E776 gives E=n/F=2n+3/A=3n+3/O_cut0. Proposed: ALL E759 I/II chronology tests hold, so there is a coherent finite State whose exact greedy continuation follows W_n, retaining ALL future-free seed blockers and every S novelty. No canonical prehistory is claimed. This would make coefficient3/2 and free-head boundary sharp even with actual numerical S admission, not only in raw sign words.
+
+Proposed complete S classification to falsify: initial head S landings have new lower heights and no prior A. Internal S in cycle i=0..n-1 lands at relative floor height2i; the same-height head-state area is1-6i^2-i (never0), and the only same-height prior ascent boundary gives AS area1. There is no earlier A candidate at height2i. Final descent S lands at relative k=0..2n. Relative area from head same-height output is6n^2+3n+1-(6n+2)k, nonzero since its root is n+(n+1)/(6n+2) strictly between n and n+1. Other same-height ascent sources stay above k, except the first peak of an AS dip; compute that possible negative-one contribution explicitly and show complete area remains positive (minimum3). Every earlier matching A candidate has preheight k+1 and thereafter stays above k until this descent, giving strictly positive area. This must exhaust ALL old outputs and earlier A, not only chosen suppliers. FinalAA add no S.
+
+Acceptance: a complete all-n I/II proof plus explicit E759 coherent full-seed replay producer, OR exact immutable-collision counter. If only finite absence at15min, STOP this mechanism and switch, no range/resource extension. Source/headfree/chronology conclusion not a new Prop input. All source sets and full seed stay in scope. One repair maximum. New Lean requires genuine library statement/gates; no arithmetic wrapper.
+
+Frozen resource plan: current mathematical worker use0.566773 of prospective3CPU today; remaining2.433227. Per-worker1CPU/10wall, verified cooperative Python no-descendant contract, not generic process tree. Discovery n1..5; independent parameter controls n7/11/17/23 with reverse source census and exact full-seed replay. Source/card/argv hashes must be frozen before launching. Existing data are discovery, not fresh canonical holdout. E759 generic seed's noncanonical cost obstruction is already OLD and must remain distinct from sign-word nonrealizability.
+
+Created 2026-11-25T06:46:12.159309+09:00
+
+## Falsifier/implementation record 2026-11-25T06:49:45.844902+09:00
+Initial hash-freeze helper parsed incorrectly and the shell still launched a syntax-invalid worker (0.046653CPU measured); prelaunch hash freeze was NOT completed for that attempt. Failure bytes/result retained. The ONE repair fixed else1 syntax and removed an unfrozen auxiliary K=F assertion; primary n ranges/caps/claim unchanged. Corrected protocol hash was saved before both successful workers. Discovery n1..5 and reverse-source holdout7/11/17/23 passed all I/II, actual full-seed replay and displayed phase-area identities. No further repair or range extension permitted. CPU/other helper failure not silently0. All-n source/S proof follows separately, finite controls COMPUTED.
+
+## Current verdict 2026-11-25T06:51:11.817574+09:00
+E777 PROVED-PAPER/unreviewed. Complete all-n I/II proof and E759 full-seed consumer, finite controls COMPUTED. New Lean0, repair1 exhausted, displayed seed known noncanonical only. Parent continues to a genuinely new four-filter language question.
+
+## Confirmed shared parent journal
+R-20261125-01: actual work2026-11-25T06:00:10.966235+09:00 to2026-11-25T07:57:01.375602+09:00, confirmed7010.409s, shortfall189.591s, waiting13.202s excluded, gap/overtime0. ONE shared parent total, not extra per card. See DAILY/FINAL_WORK_SUMMARY.

@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-23T06:28:47.374418+09:00",
+  "id": "H-20261123-03",
+  "source_sha256": "c152693c30c3e8cabdc67e9adf518a761e322850e674031e5a2d370c8082c390",
+  "card_sha256": "305ecc9ea360a85b6b336e3fd55112cddff5790479a64d131d310392b28cc2e0",
+  "candidate": "ALL actual original floor cuts: Pnext<=3P-1-4K, cnext<=c+2x-1-ceil(4K/3); primitive3t+6z+4N<=6x; all-depth weighted recurrence and P2<=9P0-8-12K0",
+  "discovery": "x1..5,b0/1/3/7, every below-x stock subset and three exact high-stock choices, Q18",
+  "held_out_parameters": "x6/9,b2/5,four predeclared masks and three high-stock choices,Q22; no fresh orbit claim",
+  "scope": "new inequality natural-state/cut/stock predicates, not rerun old E764/source horizon checks",
+  "negative": "illegal future-stock count on x1/b7 gives73>45; oldcut K1 valid, futureK8 invalid",
+  "math_budget_total": 3,
+  "math_used_before": 1.5922669999999999,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "stock-floor-discount",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/stock_floor_probe.py"
+  ],
+  "soft_cpu": 0.65,
+  "stop": "declared range/soft gate or first counter; no extension; one repair maximum",
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b"
+}

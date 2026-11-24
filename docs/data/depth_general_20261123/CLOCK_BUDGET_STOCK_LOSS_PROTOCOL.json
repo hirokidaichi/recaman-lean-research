@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-23T07:14:12.457727+09:00",
+  "candidate": "k20n+15,l3k,b5k^2-k-2/full seed+S-disjoint interval; loss4k^2-5k-1/ALLfree3k+1/LOW4; passescardinality/parity/ALLseedrange/E755sortedcover",
+  "new_input": "H08 exceededclockcardinality, this new modular/no-hole/budget producer attacks that missing hypothesis without dropping stock. No stopped-job resource retry.",
+  "card_sha256": "8c55a5f8dfab5b1fa6fbafa5af741d8c7cc99256bd49fa9ae73260e1ac7d5e91",
+  "source_sha256": "c1e0838be1a21c3d86ecde747ad58caf7486e69f0d65cfa94c707ef39dc95d40",
+  "discovery": [
+    15,
+    35
+  ],
+  "unused_parameters": [
+    55,
+    75,
+    95
+  ],
+  "budget": 4,
+  "measured_used_before": 2.974494,
+  "remaining_before": 1.025506,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "clock-budget-stock-loss",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/clock_budget_stock_loss.py"
+  ],
+  "stop": "five fixed new family/filter cases, one correction max, no range/resource retry"
+}

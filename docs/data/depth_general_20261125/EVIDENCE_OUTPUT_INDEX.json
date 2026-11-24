@@ -1,0 +1,416 @@
+{
+  "at": "2026-11-25T07:38:17.674597+09:00",
+  "all_pass": true,
+  "prose_metric_checks": [
+    {
+      "tag": "generated-stock-discovery",
+      "field": "planned_states",
+      "value": 120
+    },
+    {
+      "tag": "generated-stock-holdout",
+      "field": "planned_states",
+      "value": 72
+    },
+    {
+      "tag": "generated-stock-discovery",
+      "field": "range_complete",
+      "value": true
+    },
+    {
+      "tag": "generated-stock-discovery",
+      "field": "counter",
+      "value": null
+    },
+    {
+      "tag": "generated-stock-holdout",
+      "field": "range_complete",
+      "value": true
+    },
+    {
+      "tag": "generated-stock-holdout",
+      "field": "counter",
+      "value": null
+    },
+    {
+      "tag": "height-kernel-discovery",
+      "field": "prefix_inequality_checks",
+      "value": 11626
+    },
+    {
+      "tag": "height-kernel-holdout",
+      "field": "prefix_inequality_checks",
+      "value": 56952
+    },
+    {
+      "tag": "height-dual-controls",
+      "field": "primal_basis_checks",
+      "value": 704
+    },
+    {
+      "tag": "height-dual-controls",
+      "field": "perturbed_optimal_profiles_refuted",
+      "value": 79
+    },
+    {
+      "tag": "prefix-basis-controls",
+      "field": "basis_walks",
+      "value": 54
+    },
+    {
+      "tag": "prefix-basis-controls",
+      "field": "prefix_inequality_checks",
+      "value": 17022
+    },
+    {
+      "tag": "staged-source-discovery",
+      "field": "complete_words_checked",
+      "value": 351
+    },
+    {
+      "tag": "staged-source-discovery",
+      "field": "original_A_targets_checked",
+      "value": 3942
+    },
+    {
+      "tag": "staged-source-holdout",
+      "field": "complete_words_checked",
+      "value": 40
+    },
+    {
+      "tag": "staged-source-holdout",
+      "field": "original_A_targets_checked",
+      "value": 1269
+    },
+    {
+      "tag": "four-filter-discovery",
+      "field": "counts/words",
+      "value": 63
+    },
+    {
+      "tag": "four-filter-discovery",
+      "field": "counts/chronology_good",
+      "value": 58
+    },
+    {
+      "tag": "four-filter-discovery",
+      "field": "counts/chronology_bad",
+      "value": 5
+    },
+    {
+      "tag": "four-filter-holdout",
+      "field": "counts/words",
+      "value": 195
+    },
+    {
+      "tag": "four-filter-holdout",
+      "field": "counts/chronology_good",
+      "value": 152
+    },
+    {
+      "tag": "four-filter-holdout",
+      "field": "counts/chronology_bad",
+      "value": 43
+    },
+    {
+      "tag": "predecessor-discovery",
+      "field": "small_control_counts/words",
+      "value": 511
+    },
+    {
+      "tag": "predecessor-discovery",
+      "field": "small_control_counts/admissible",
+      "value": 387
+    },
+    {
+      "tag": "predecessor-discovery",
+      "field": "small_control_counts/both_prepend_bad",
+      "value": 0
+    },
+    {
+      "tag": "stock-lookbehind-discovery",
+      "field": "tiny_inverse_cases",
+      "value": 576
+    }
+  ],
+  "worker_output_receipts": [
+    {
+      "tag": "four-filter-discovery",
+      "source_sha256": "d2df1846dcbe0f4d049883c4fa82e9549a1ca81b7d827cd699b820432f84b6ee",
+      "output_sha256": "41ff20ceae708dce3187eaa262b9441eaa83f9d943b75d92da59d2cfe59efd40",
+      "exit_code": 0,
+      "CPU": 0.036015
+    },
+    {
+      "tag": "four-filter-holdout",
+      "source_sha256": "d2df1846dcbe0f4d049883c4fa82e9549a1ca81b7d827cd699b820432f84b6ee",
+      "output_sha256": "aea6e479bcf67acdc8bbb8ac1caefdd352fd2985bf262d11849e651d1837bdfa",
+      "exit_code": 0,
+      "CPU": 0.035829999999999994
+    },
+    {
+      "tag": "generated-stock-controls",
+      "source_sha256": "15544475fd0149479f091ed21ed21ea819e074938a3ac52b1713ecd3ac2d649b",
+      "output_sha256": "bbcc94607a347775f0e3db7af3231b0ef14610314ac5466608a2e2ef9c7f90ea",
+      "exit_code": 0,
+      "CPU": 0.034095
+    },
+    {
+      "tag": "generated-stock-discovery",
+      "source_sha256": "484b2f039aa716b942b5850f6cccc3973e2aa5bc2d124ca0d82def6b6ca28a7d",
+      "output_sha256": "1fc3adf2aeea79ed0311f3c136b825905b60102fde12de2993db430f36f074a4",
+      "exit_code": 0,
+      "CPU": 0.102014
+    },
+    {
+      "tag": "generated-stock-holdout",
+      "source_sha256": "484b2f039aa716b942b5850f6cccc3973e2aa5bc2d124ca0d82def6b6ca28a7d",
+      "output_sha256": "b069a5ba25eed347cf3b29d12a2e2ec6d83fb9bed26af7d950821549c7738c41",
+      "exit_code": 0,
+      "CPU": 0.09959
+    },
+    {
+      "tag": "height-dual-controls",
+      "source_sha256": "8a3687ee3e6f4db9e0094d646282c9e97e62d2dd0c83f282e5244997e9ab2440",
+      "output_sha256": "f2b78d8ef4b418e5b89de0f4b0a5de64dfeef3bd1223df2235c0f12ea288f352",
+      "exit_code": 0,
+      "CPU": 0.09107299999999999
+    },
+    {
+      "tag": "height-kernel-discovery",
+      "source_sha256": "7068475cab035cca49724d0d0ceabf80ac5645cedc42bd54ff2191e17cfba305",
+      "output_sha256": "ed2f586153c620f6e3efea2b614d21fed162bf7b6e3425c56c2ae39445320d04",
+      "exit_code": 0,
+      "CPU": 0.042300000000000004
+    },
+    {
+      "tag": "height-kernel-holdout",
+      "source_sha256": "7068475cab035cca49724d0d0ceabf80ac5645cedc42bd54ff2191e17cfba305",
+      "output_sha256": "68c0fe568e040cac0baf215be5caa32d6572c4cc0eee2b12752aaad3db73f67b",
+      "exit_code": 0,
+      "CPU": 0.063747
+    },
+    {
+      "tag": "predecessor-discovery",
+      "source_sha256": "fb3cb532f897d2b8d7c431ac7d5914495a43892030ee226e7773790a4cd70beb",
+      "output_sha256": "074ab424e1e5a4beae8ab82484ab26aa72b15468ea5a65eedfc8aa72f78ec1b1",
+      "exit_code": 0,
+      "CPU": 0.038513
+    },
+    {
+      "tag": "predecessor-family-discovery",
+      "source_sha256": "b3aca8124a49bf24d48fb6010fc905474e8993b40013b08e201d6e2f801ed00b",
+      "output_sha256": "cbb7782e0b316e492129fc50ffeffba14c1dc99324b85ecf5d186279a7f5b049",
+      "exit_code": 0,
+      "CPU": 0.034136
+    },
+    {
+      "tag": "predecessor-family-holdout",
+      "source_sha256": "b3aca8124a49bf24d48fb6010fc905474e8993b40013b08e201d6e2f801ed00b",
+      "output_sha256": "7af28570a9c10e512c0a231c4e45a539bf911b21694687185184ce0b095d110c",
+      "exit_code": 0,
+      "CPU": 0.048729999999999996
+    },
+    {
+      "tag": "predecessor-holdout",
+      "source_sha256": "fb3cb532f897d2b8d7c431ac7d5914495a43892030ee226e7773790a4cd70beb",
+      "output_sha256": "c0da1e41a8f21edbe9c870bf305af0ccee3643d17f9821cc254a988255cf3650",
+      "exit_code": 0,
+      "CPU": 0.033829
+    },
+    {
+      "tag": "prefix-basis-controls",
+      "source_sha256": "52ccca45b49cfc6cb0cd8a14e3be4792d9ba406a39448716612c32c7d783fca4",
+      "output_sha256": "cf4b1f48691ee325878545db080d96147f4dce0a46e219bc5e300196f90bd0e6",
+      "exit_code": 0,
+      "CPU": 0.045634
+    },
+    {
+      "tag": "staged-greedy-discovery-repair1",
+      "source_sha256": "801a2ace3909a388b0a962c470ee3111cc336022e2929174e08d50df6d6af2c8",
+      "output_sha256": "f9489a7d7ee9a68c4c32708f88cc973ef32d6d47c24bce5c1171b07fa1bc953c",
+      "exit_code": 0,
+      "CPU": 0.033074
+    },
+    {
+      "tag": "staged-greedy-discovery",
+      "source_sha256": "f127ab70c1440a0eeea6695f56d2be19ecdb3ab92a2aa46200989e4e1b69de60",
+      "output_sha256": "0ea280feedff81e8c6e454a49dc2fb9b92b9a21456e8063625c8074bc54ba3a4",
+      "exit_code": 1,
+      "CPU": 0.046653
+    },
+    {
+      "tag": "staged-greedy-holdout",
+      "source_sha256": "801a2ace3909a388b0a962c470ee3111cc336022e2929174e08d50df6d6af2c8",
+      "output_sha256": "e6d2ab605a0b13b18a9cadba60e85712014d2d605a2d8c13c1be68701db18d4c",
+      "exit_code": 0,
+      "CPU": 0.040244999999999996
+    },
+    {
+      "tag": "staged-source-discovery",
+      "source_sha256": "cfe588204ba9dedaa38eefa7ac9fb308dee2634c0271c80839b38f05bde858f3",
+      "output_sha256": "2825339530998ec916e29e29d1aa844b1145d42b3520331ee3df63bd5df1fd6f",
+      "exit_code": 0,
+      "CPU": 0.041725
+    },
+    {
+      "tag": "staged-source-holdout",
+      "source_sha256": "cfe588204ba9dedaa38eefa7ac9fb308dee2634c0271c80839b38f05bde858f3",
+      "output_sha256": "79f558b1f4523fd7ff517c4c58f1d2cb6418c41faf35c1ff0b3dd92b17bdf809",
+      "exit_code": 0,
+      "CPU": 0.046595
+    },
+    {
+      "tag": "stock-lookbehind-discovery",
+      "source_sha256": "639bbbdb9c9a07ca54431b74e541368ce97f10f58a550f49d054a92b9f89fc7b",
+      "output_sha256": "dc4901b2516e25c73ccdab27a04ffe744eddcdd306d320d0e8fa131ea3dc8a15",
+      "exit_code": 0,
+      "CPU": 0.053849
+    },
+    {
+      "tag": "stock-lookbehind-holdout",
+      "source_sha256": "639bbbdb9c9a07ca54431b74e541368ce97f10f58a550f49d054a92b9f89fc7b",
+      "output_sha256": "caab4a379aeca9bf077404e5d78dd8debe8754436a9311b8f312b7f63b958020",
+      "exit_code": 0,
+      "CPU": 0.042651999999999995
+    }
+  ],
+  "local_links_checked": 32,
+  "links": [
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_HANDOFF_2026-11-25_DAILY.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STAGED_GREEDY_SHARPNESS.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_FOUR_FILTER_LANGUAGE.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_COHERENT_PREDECESSOR.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STOCK_LOOKBEHIND.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "data/daily_research/2026-11-25.json"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "HYPOTHESIS_CARD_2026-11-26_CROSS_BLOCK_CHARGING.md"
+    },
+    {
+      "from": "docs/CURRENT_FRONTIER.md",
+      "target": "HYPOTHESIS_CARD_2026-11-26_VISITED_GAP_BRIDGES.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "data/depth_general_20261125/"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_HEIGHT_KERNEL_BARRIER.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STAGED_GREEDY_SHARPNESS.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_STAGED_GREEDY_SHARPNESS.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_FOUR_FILTER_LANGUAGE.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_FOUR_FILTER_LANGUAGE.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_COHERENT_PREDECESSOR.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_COHERENT_PREDECESSOR.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_STOCK_LOOKBEHIND.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_STOCK_LOOKBEHIND.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "RESEARCH_NOTE_2026-11-25_GENERATED_STOCK_AUDIT.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-25_GENERATED_STOCK_LOSS.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "data/daily_research/2026-11-25.json"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "data/depth_general_20261125/CPU_SUMMARY.json"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-26_CROSS_BLOCK_CHARGING.md"
+    },
+    {
+      "from": "docs/RESEARCH_HANDOFF_2026-11-25_DAILY.md",
+      "target": "HYPOTHESIS_CARD_2026-11-26_VISITED_GAP_BRIDGES.md"
+    },
+    {
+      "from": "docs/RESEARCH_NOTE_2026-11-25_COHERENT_PREDECESSOR.md",
+      "target": "data/depth_general_20261125"
+    },
+    {
+      "from": "docs/RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md",
+      "target": "data/depth_general_20261125"
+    },
+    {
+      "from": "docs/RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md",
+      "target": "data/depth_general_20261125"
+    }
+  ],
+  "scope": "Output-to-prose/source/card scope audit, not a new mathematical computation or independent proof. No worker rerun. All unbounded claims remain PAPER/human review pending.",
+  "nuances": [
+    "H06 discovery high-only coherent seed has9 entries and no required0; independent four-filter witness includes0 in its full interval. Neither is canonical.",
+    "H01 parameter ranges have8 nonempty generated-loss examples only; candidate remains CONJECTURED/methodSTOPPED.",
+    "H04 first failed attempt NOT prelaunch hash-frozen; corrected version is prospectively frozen, failure retained.",
+    "H07 whole0 prefix startsA and is not strictly positive; positive is the tail with complete original sources retained."
+  ]
+}

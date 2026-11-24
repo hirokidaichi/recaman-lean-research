@@ -1,0 +1,265 @@
+{
+  "all_pass": true,
+  "counts": {
+    "primitive_Dyck_packing_checks": 2056,
+    "discovery_stock_checks": 7953,
+    "packing_strictly_stronger": 4304,
+    "nonempty_return_packing_gain": 1608,
+    "parameter_holdout_stock_checks": 189
+  },
+  "full_old_S_lift": [
+    {
+      "label": "discovery",
+      "x": 1,
+      "h": 2,
+      "b_at_retained_cut": 5,
+      "initial_base": 3,
+      "complete_initial_stock": [
+        0,
+        10
+      ],
+      "initial_current": 10,
+      "original_actual": {
+        "4": [
+          1
+        ]
+      },
+      "LOW_free_classes": 4,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        7,
+        20,
+        43
+      ],
+      "original_floor_cuts": [
+        2,
+        3,
+        10
+      ]
+    },
+    {
+      "label": "discovery",
+      "x": 3,
+      "h": 2,
+      "b_at_retained_cut": 7,
+      "initial_base": 5,
+      "complete_initial_stock": [
+        0,
+        1,
+        2,
+        16
+      ],
+      "initial_current": 16,
+      "original_actual": {
+        "4": [
+          1
+        ]
+      },
+      "LOW_free_classes": 6,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        13,
+        30,
+        65
+      ],
+      "original_floor_cuts": [
+        2,
+        3,
+        14
+      ]
+    },
+    {
+      "label": "discovery",
+      "x": 7,
+      "h": 3,
+      "b_at_retained_cut": 9,
+      "initial_base": 6,
+      "complete_initial_stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        31
+      ],
+      "initial_current": 31,
+      "original_actual": {
+        "5": [
+          2
+        ]
+      },
+      "LOW_free_classes": 8,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        23,
+        44,
+        91
+      ],
+      "original_floor_cuts": [
+        3,
+        4,
+        19
+      ]
+    },
+    {
+      "label": "discovery",
+      "x": 5,
+      "h": 5,
+      "b_at_retained_cut": 11,
+      "initial_base": 6,
+      "complete_initial_stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        50
+      ],
+      "initial_current": 50,
+      "original_actual": {
+        "7": [
+          4
+        ]
+      },
+      "LOW_free_classes": 10,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        21,
+        46,
+        105
+      ],
+      "original_floor_cuts": [
+        5,
+        6,
+        25
+      ]
+    },
+    {
+      "label": "parameter_holdout",
+      "x": 2,
+      "h": 4,
+      "b_at_retained_cut": 17,
+      "initial_base": 13,
+      "complete_initial_stock": [
+        0,
+        1,
+        64
+      ],
+      "initial_current": 64,
+      "original_actual": {
+        "6": [
+          3
+        ]
+      },
+      "LOW_free_classes": 16,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        21,
+        58,
+        153
+      ],
+      "original_floor_cuts": [
+        4,
+        5,
+        36
+      ]
+    },
+    {
+      "label": "parameter_holdout",
+      "x": 11,
+      "h": 7,
+      "b_at_retained_cut": 29,
+      "initial_base": 22,
+      "complete_initial_stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        193
+      ],
+      "initial_current": 193,
+      "original_actual": {
+        "9": [
+          6
+        ]
+      },
+      "LOW_free_classes": 28,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        51,
+        112,
+        279
+      ],
+      "original_floor_cuts": [
+        7,
+        8,
+        63
+      ]
+    },
+    {
+      "label": "parameter_holdout",
+      "x": 19,
+      "h": 9,
+      "b_at_retained_cut": 43,
+      "initial_base": 34,
+      "complete_initial_stock": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        370
+      ],
+      "initial_current": 370,
+      "original_actual": {
+        "11": [
+          8
+        ]
+      },
+      "LOW_free_classes": 42,
+      "original_positive_min": 1,
+      "D": 0,
+      "P0_P1_P2": [
+        81,
+        170,
+        421
+      ],
+      "original_floor_cuts": [
+        9,
+        10,
+        93
+      ]
+    }
+  ],
+  "scope": "new packing and complete old-history numerical sharpness predicates, finite COMPUTED only; paper all-parameter proof separate",
+  "worker_internal_cpu_seconds": 0.028765
+}

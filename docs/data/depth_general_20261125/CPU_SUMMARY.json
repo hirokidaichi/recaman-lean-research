@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-25T07:21:16.820126+09:00",
+  "mathematical_worker_budget_seconds": 3,
+  "mathematical_worker_count": 20,
+  "mathematical_worker_cpu_seconds": 1.010299,
+  "mathematical_controller_cpu_seconds": 0.03500200000000001,
+  "failed_mathematical_receipts": [
+    {
+      "tag": "staged-greedy-discovery",
+      "CPU": 0.046653,
+      "exit": 1
+    }
+  ],
+  "guard_worker_count": 5,
+  "guard_worker_cpu_seconds": 1.128257,
+  "guard_controller_cpu_seconds": 0.008410999999999997,
+  "all_workers_finished_with_wait4_receipts": true,
+  "Lean_validation": "not launched today/new Lean0",
+  "other_tool_and_freeze_helper_CPU": "unmeasured, NOT zero; initial H04 freezer parse failure included here",
+  "scope": "current-day exact wait4 single-cooperative-worker CPU, no generic process-tree/OS AS claim; old days not added"
+}

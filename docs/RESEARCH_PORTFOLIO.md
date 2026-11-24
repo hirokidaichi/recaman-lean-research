@@ -718,3 +718,29 @@ E771 REFUTED: full-positive/coherent S13...33-clock counter with D5/F8/K8 has ad
 H04 fresh finite m4 Lean certificate hit512MB on FIRST attempt, repair0, all source/logs in depth_general_20261122/*.lean.txt; no Recaman/root/Audit/PROVED-LEAN adoption. Do not fix its Decidable diagnostic after a resource STOP or rescue via import/tactic/split/resources. Reopen only with independent mathematical pruning/smaller certificate and measured same512MB improvement. Inherited HarnessTools512 STOPPED was NOT retried through the default unbounded check.sh; no gates changed/disabled. All previous H52/r4 two0/0/49 profile/old arithmetic/memory/one-repair restrictions persist without date reset.
 
 New finite capacities/negative controls are COMPUTED support. General progress is E768/E770/E771 new mechanism evidence; local E769 PAPER, adopted Lean0. One parent/no double counting, streak0 from new evidence. Next30/60/10 and source-key empty-band cost (not the refuted adjacent-birth rule). Final actual time/CPU/normal main publication are DAILY/journal authoritative.
+
+
+## 2026-11-23: stock-aware floor potential and stopped payment paths
+
+E772 PAPER (unreviewed, no Lean) supplies actual old/fresh/clipped/A-output strip producers and Wnext<=(34W-30)/15 at arbitrary depth. It still pays numerical initial base/value/stock, not original LOWfree. E773's full original S lift refutes a P two-floor coefficient<9 with any fixed correction; E774 refutes LINEAR ALLfree/class payment of stock loss even with cardinality/parity/ALL-seed range/E755 sorted-cover necessary filters. Canonical chronology and C1 remain open. Exact notes/cards/protocols and unchanged full source banks are in11/23 DAILY/packet.
+
+STOPPED H-20261123-01 single empty-band census/tracing method: exact conjecture remains CONJECTURED. First worker cursor loop CPU-killed, ONE implementation-only cursor correction consumed; fixed discovery/holdout both had only ONE nontrivial gap, no new injection/counter. No range extension or repeated CPU check without independent mathematical input; source-order observation is supporting only. Do not count E674/E681 re-use or A-to-free replacement as progress.
+
+H08's coherent ALLfree counter FAILED the canonical cardinality applicability test (not its stated finite-State theorem). Preserve its full seed; do not remove stock to hide the failure. H09 is a separately proved modular/S-disjoint producer passing FOUR named necessary tests; those still do not constitute a canonical past. E774 stops a fixed-linear-payment route, not the parent C1 claim or every nonlinear/provenance-specific method.
+
+All earlier STOPPED512MB/H52/r4/H49/old finite certificate/vacuity helper restrictions inherit unchanged; no date reset/resource/tactic/import retry. No new Lean today. Reopening the band mechanism requires a genuinely supplied class-excess injection or exact all-source counter, not more finite absence. Next provenance question must keep initial seed mass as an explicit unpaid boundary and attack E660 before any A/free substitution.
+
+
+## 2026-11-25: E775 all-profile height-weight barrier
+
+PAPER/unreviewed。高さ必要式の線形weightだけで無重み化する旧E702経路について、固定Cの全profile最小偏りを正確化。C3/2で指数3が必要で、非幾何profileや有限head/depth境界だけでは回避不可。全prefix/flow/return付き宣言ledgerの全基底輸送で示した。元EndN/greedy/canonical反例ではない。E675/E702はOLDで再計上しない。次は実source時計・面積/初出由来などconeの外の新入力を要求する。H01 generated-stock有限不在は新edgeなしで方法STOPPED、元課金仮説CONJECTURED。全旧STOPPED/job/gate/one-repair制限は日付resetせず継承。
+
+
+## 2026-11-25: E776 staged original suppliers
+
+PAPER/unreviewed、明示stage grammarに限るactual会計。全old historyとco-supplierを残してF+O_cへ容量3/2を供給、O_c0のASAA全n族でsharp。旧source負債をfreeへ仮定置換しない。one-supply-per-stage案はpeak bank見落としで不採用、無負債free>=head案もO_c2例で反証。どちらもC1反例としない。次は一般下降でのsource bank再使用、又は本族のS freshness/数値実現性。旧STOPPED制約はすべて継承。
+
+
+## 2026-11-25: scalar条件と有限前史の選別限界
+
+E777/E778/E779/E780はPAPER/unreviewed、有限controlsはCOMPUTED。四scalar budgetは全coherent finite-word languageを保存(E778)。coherent one-step pastは真に別の条件(E779全r反例)だが、OLD stockloss counterは全stock/blockerを払えば任意有限Alookbehindへ運べる(E780)。固定lookbehind長や四filter未来反復だけでstockloss no-goを消す路線は停止。canonical時刻0までの前史は未構成。H04syntax/hash-freeze不備を事後固定成功へ書き換えず保存、修理1消費済。一般phase/source再使用にはE776の単一銀行を越える新数学が必要。全旧STOPPED制約継承。

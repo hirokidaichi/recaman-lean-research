@@ -1,0 +1,46 @@
+# H-20261125-02: exact height-kernel threshold and unavoidable weight distortion
+
+**Current verdict: E775 PROVED-PAPER, human review pending, not Lean. Exact all-profile barrier for the necessary DECLARED count cone; no original EndN/C1 counter. Earlier proposals below are historical and archived.**
+
+CONJECTURED proposer statement before falsification/adoption. ONE parent R-20261125-01, a genuinely distinct analytic height-convolution mechanism from H01 numerical first-birth loss. Reserve>=25 actual minutes; coefficient choices/worker calls are not separate parents. E674/E675 and OLD E706 unweighted weak-model no-go are INPUT, not new results. No stopped source/table/tactic job resumes.
+
+## Exact statements to attack
+
+For arbitrary finite H and nonnegative integer A_h,E_h,F_h (0<=h<=H), require A_h=E_h+F_h and
+
+    E_h<=sum_(t=0..h-2)(2(h-t)-3)A_t.                (K)
+
+For EVERY real q in(0,1) let kappa(q)=q^2(1+q)/(1-q)^2. Proposed: a finite height-independent C(q) such that sum q^h A_h<=C(q)sum q^h F_h for ALL such integer cones exists IFF kappa(q)<1, i.e. q<qstar, qstar^3+2qstar-1=0. In that domain the BEST uniform C is exactly1/(1-kappa(q)). This is not simply replacing geometric3 by another coefficient: the NEW obligation is necessity/optimality and the all-profile exponential barrier below.
+
+Let rho=1/qstar, unique real root>2 of rho^3-2rho^2-1=0. Define g0=g1=1, g_h=sum_(t<=h-2)(2(h-t)-3)g_t for h>=2. Proposed g2=1,g3=4 and g_h=2g_(h-1)+g_(h-3) for h>=4, with rho^(h-2)<=g_h<=rho^(h-1) for h>=1. This gives an exact all-height saturation counterprofile, not an actual EndN ledger.
+
+For ANY positive weights w0..wH and fixed finite C>0 satisfying sum w_h A_h<=C sum w_h F_h on the ENTIRE cone, proposed necessary distortion
+
+    max(w)/min(w) >= g_H/(2C) >=rho^(H-2)/(2C).       (D)
+
+Thus no subexponential-distortion height-weight profile can provide such uniform capacity from(K) alone. Quantify over ALL profiles, not only geometric weights. Need a matching exponential upper family and explicit failure at/beyond qstar. No unweighted actual theorem/C1 is inferred.
+
+## Walk/prefix strengthening and producer
+
+Construct a UNIT-step word with exactly g_h upward crossings at each edge: ascend stageh using (AS)^(g_h-1)A, h0..H, then descend S^(H+1). Prepend S^(H+2) for an all-negative height barrier and append AA for return2-(H+2). Mark only stage0/stage1 A and final AA free (four marks), all other A supplied. Lower counts are complete before upper marks start, so(K) holds at EVERY prefix, crossing-flow conservation is actual, and S-declaredE>=1 follows from S-A>=1. This is explicitly DECLARED marking, not original EndN: identify the first false mark using literal source windows in a small case. Prefix/flow validity must not be promoted to actual greedy/canonical validity. Initial head grows only linearly; add a linear-head boundary to(D) only if separately proved.
+
+Acceptance: full q threshold/optimality, exact all-profile distortion and walk-prefix construction with marker-versus-actual negative audit, OR a counter. Finite controls only COMPUTED. Search portfolio before proposing; old balanced-splice and geometric3 formulas already rejected as OLD. This unit never reopens OLD unweighted A<=3free search or calls a relaxed marker an actual source. The parent free/depth/canonical problems remain open.
+
+First gate15min inside this mechanism: continue only with a new optimality/no-go producer, not a parameter tweak of E675. A full new exponential distortion no-go could be depth_general_progress in its WEAK-model scope; if only an old weighted identity remains, record no general progress. No new Lean unless substantive intended statement/gates are available. Current-day math budget3CPU, measured used0.235699 before this unit, verified no-child1CPU/10wall per worker. Freeze exact discovery/independent controls/source hashes before launch. One repair maximum, no range/resource retry. Previous-day CPU/time excluded.
+
+## Boundary falsifier before computation
+2026-11-25T06:17:52.354659+09:00 — The walk/prefix strengthening requires H>=1. H=0 has no stage1 and the final AA reaches absolute0, so the all-negative-prefix sentence is false there. Cone threshold remains all finite H>=0; distortion estimates below use H>=1. This proposer boundary correction is frozen before worker launch, not a successful all-domain computation.
+
+## Prospective stronger obligation: fixed-capacity optimal distortion
+
+2026-11-25T06:20:16.791592+09:00 — Before a new dual-control worker: for each fixed C>1 put a=C-1. Let r0=1,r1=0 and r_n=sum_(d=2..n)(2d-3)r_(n-d). Set v0=v1=1 and v_n=max(1,a^(-1)sum_(d=2..n)r_d v_(n-d)). Proposed exact MINIMUM max(w)/min(w) over all positive weights supporting capacity C on the finite cone is v_H. Prove the resolvent dual criterion for ALL integer inputs, not just testing the displayed saturation profile. Proposed exponential rate rho_C, the unique positive root>2 of a*rho_C^3-2a*rho_C^2-rho_C-C=0; rho_C>rho. In particular C=3/2 forces exponent3 even for nongeometric profiles: v=[1,1,2,8,22,66,200,...], eventual recurrence v_n=2v_(n-1)+2v_(n-2)+3v_(n-3) for n>=5 and (2/9)3^H<=v_H<=(8/27)3^H for H>=2. This sharper claim concerns the COUNT CONE; the prefix-walk strengthening only transfers the earlier exponent-rho lower bound. Do not silently transfer the sharper primal basis profiles to original actual histories.
+
+## New prefix basis producer to audit
+
+2026-11-25T06:21:49.028917+09:00 — The previous restriction that the sharp C-dependent exponent only transfers to the bare cone can be strengthened IF the following construction survives audit. For fixed H>=2, t in[0,H] and integer M>=1, use counts A_h=1+M*r_(h-t) (r negative index0), F_h=1+M*[h=t], E_h=M*(r_(h-t)-[h=t]). Construct the same staged (AS)^(A_h-1)A ascent after S^(H+2), descend S^(H+1), append AA FREE at levels0,1. Final A/F gain one at0,1. Every prefix E_h<=K A follows because all lower stages finish first; all heights remain negative and return2-head holds. Thus every dual primal basis is approximated after division by M, while preserving unit flow, original-prefix strict deficit and return. For a dual violation delta=sum w_h*r_(h-t)-C*w_t>0, choose M>(C-1)*(sum w_h+w0+w1)/delta to obtain a finite weak-walk counter. This would transfer the EXACT all-profile optimum to this prefix/return/flow class. Marks are still not EndN, and actual-free counts are never replaced by them. This is a new producer rather than an assumption of the desired actual conclusion; verify all stages, boundary and prefix constraints before adoption.
+
+## Current audited verdict 2026-11-25T06:34:44.745120+09:00
+E775 PROVED-PAPER, human review pending, no Lean. Exact all-profile optimality and full prefix basis transport proved in the note; finite controls remain COMPUTED. H02 continues until at least06:40:02 for its distinct25min and original-source semantic audit. No completed-parent/streak/time total is prepaid. See packet/H02_PAPER_STATEMENT_AUDIT.md.
+
+## Confirmed shared parent journal
+R-20261125-01: actual work2026-11-25T06:00:10.966235+09:00 to2026-11-25T07:57:01.375602+09:00, confirmed7010.409s, shortfall189.591s, waiting13.202s excluded, gap/overtime0. ONE shared parent total, not extra per card. See DAILY/FINAL_WORK_SUMMARY.

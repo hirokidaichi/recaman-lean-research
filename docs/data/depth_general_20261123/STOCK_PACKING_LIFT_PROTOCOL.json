@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-23T06:39:58.405978+09:00",
+  "source_sha256": "389398bbba1a20856190c44ca90a555d22056685d5102eac4004d019bc85784a",
+  "card_sha256": "7f1cb77c31a71c57b91b452ecf1d8aee38903428a7b75fb16c4673766696d705",
+  "candidate": "All actual floor cuts, any OLD3-separatedW in[3,x-1], d=max(K,ceil(13|W|/5)): Pnext<=3P-1-4d/time<=c+2x-1-ceil4d/3; plus all x>=1,h>=2,b>=h+3 full initialS lift of coefficient9 sharpness",
+  "discovery": "primitive Dyck semilength1..9; statex1..8/b0,1,4/all lowerstock subsets/Q22; lift(1,2,5),(3,2,7),(7,3,9),(5,5,11)",
+  "parameter_holdout": "statex11,16,23/b3,9/four fixed masks/Q22; lift(2,4,17),(11,7,29),(19,9,43)",
+  "new_input": "literal primitive-area spectrum and sparse OLDstock packing; full original initialS/source chronology lift, not a range extension of failed band census or old E764 weak model",
+  "math_budget_total": 3,
+  "measured_used_before": 1.977772,
+  "remaining_before": 1.022228,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "stock-packing-lift",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/stock_packing_and_lift.py"
+  ],
+  "stop": "one fixed verification, no resource-only retry or range extension; all old stops inherit",
+  "repair_max": 1,
+  "revision": "ebb302144e5ce1bfb21c8e4124604fb91690f11b"
+}

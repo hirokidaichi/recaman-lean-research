@@ -1,0 +1,113 @@
+{
+  "parent": "R-20261125-01",
+  "session": "b0dc7157-d226-442b-9e58-e4de75cf1b6a",
+  "journal": "docs/data/daily_research/2026-11-25.json",
+  "actual_run_start": "2026-11-25T05:59:57.764529+09:00",
+  "actual_work_start": "2026-11-25T06:00:10.966235+09:00",
+  "actual_stop": "2026-11-25T07:57:01.375602+09:00",
+  "allocation_seconds": {
+    "setup": 328.96628499999997,
+    "general_research": 3617.5113549999996,
+    "local_research": 760.864812,
+    "audit": 1608.584507,
+    "handoff": 694.4824080000001
+  },
+  "late_checkpoint_intervals": [
+    {
+      "start": "2026-11-25T06:53:06.566083+09:00",
+      "end": "2026-11-25T06:58:35.488753+09:00",
+      "seconds": 328.92267,
+      "unit": "H-20261125-05/four-numeric-filter-language"
+    },
+    {
+      "start": "2026-11-25T07:01:34.792986+09:00",
+      "end": "2026-11-25T07:08:03.935140+09:00",
+      "seconds": 389.142154,
+      "unit": "H-20261125-06/unbounded-coherent-no-predecessor-family"
+    },
+    {
+      "start": "2026-11-25T07:12:13.306870+09:00",
+      "end": "2026-11-25T07:18:38.308687+09:00",
+      "seconds": 385.001817,
+      "unit": "H-20261125-07/full-stock-past-application"
+    },
+    {
+      "start": "2026-11-25T07:20:03.274388+09:00",
+      "end": "2026-11-25T07:27:20.399300+09:00",
+      "seconds": 437.124912,
+      "unit": "E775-E780/set-list-and-original-origin-audit"
+    },
+    {
+      "start": "2026-11-25T07:27:20.399300+09:00",
+      "end": "2026-11-25T07:32:38.316820+09:00",
+      "seconds": 317.91752,
+      "unit": "publication/owned-source-and-journal-provenance"
+    },
+    {
+      "start": "2026-11-25T07:36:45.689883+09:00",
+      "end": "2026-11-25T07:42:28.975140+09:00",
+      "seconds": 343.285257,
+      "unit": "evidence/finite-output-to-paper-consistency"
+    }
+  ],
+  "local_progress": "yes restricted E776 and paid-prefix E780; new Lean0",
+  "depth_general_progress": true,
+  "general_progress_evidence": [
+    "E775 all-profile barrier",
+    "E778 all-word complete-seed producer",
+    "E779 all-r executed-past no-go"
+  ],
+  "general_stagnation_streak": 0,
+  "prior_completed_streak": 0,
+  "Nov24": "missing/unevaluated, not a completed parent",
+  "next_allocation": "30/60/10, distinct mechanism>=25min",
+  "cpu_summary": {
+    "at": "2026-11-25T07:21:16.820126+09:00",
+    "mathematical_worker_budget_seconds": 3,
+    "mathematical_worker_count": 20,
+    "mathematical_worker_cpu_seconds": 1.010299,
+    "mathematical_controller_cpu_seconds": 0.03500200000000001,
+    "failed_mathematical_receipts": [
+      {
+        "tag": "staged-greedy-discovery",
+        "CPU": 0.046653,
+        "exit": 1
+      }
+    ],
+    "guard_worker_count": 5,
+    "guard_worker_cpu_seconds": 1.128257,
+    "guard_controller_cpu_seconds": 0.008410999999999997,
+    "all_workers_finished_with_wait4_receipts": true,
+    "Lean_validation": "not launched today/new Lean0",
+    "other_tool_and_freeze_helper_CPU": "unmeasured, NOT zero; initial H04 freezer parse failure included here",
+    "scope": "current-day exact wait4 single-cooperative-worker CPU, no generic process-tree/OS AS claim; old days not added"
+  },
+  "distinct_mechanism": {
+    "at": "2026-11-25T06:29:07.266456+09:00",
+    "mechanism_start": "2026-11-25T06:15:02.714113+09:00",
+    "gate_due": "06:30:02.714113",
+    "new_producer": "resolvent ALL-basis dual condition and exact optimal spread v_H, fixed-C exponent rho_C; prefix/return M-amplification transports every primal basis",
+    "continuation": "continue through >=06:40:02.714113 for distinct-mechanism >=25min; paper/semantic audit ongoing, no resource retry",
+    "falsifier": "H=0 walk boundary excluded before launch; H3 original supplied differs from declared; prefix-basis H2 M6 actual_E3 vs declared_E6 catches omitted lower-stage peak sources in an exploratory actual-source classification",
+    "evidence": "paper chain complete subject to current single-agent auditor role and human review; finite controls COMPUTED only",
+    "new_math_worker_used_seconds": 0.47845299999999996,
+    "next_question": "classify ALL original sources of staged words, including lower-stage peaks and initial-head source; do not assume one supplied target per stage",
+    "fifteen_minute_gate_confirmed_at": "2026-11-25T06:31:38.256899+09:00",
+    "gate_verdict": "CONTINUE: new all-profile optimality and exact finite prefix producer, not only q coefficient tweak",
+    "latest_semantic_audit_at": "2026-11-25T06:38:10.992842+09:00",
+    "current_actual_source_consumer": "H03 complete internal source classification retains stage h-2 peak bank, pays all arbitrary old co-suppliers by explicit D_cut instead of deleting them; not yet worker-validated/adopted",
+    "distinct_mechanism_confirmed_end": "2026-11-25T06:40:20.286865+09:00",
+    "distinct_mechanism_confirmed_seconds": 1517.572752,
+    "scope": "Continuous independent HEIGHT mechanism including H03 opening notation/source-consumer audit after06:39:56 checkpoint; inside ONE parent, not added time. No claim that literal H02-tag alone exceeded25min."
+  },
+  "confirmed_work_seconds": 7010.409,
+  "target_seconds": 7200,
+  "shortfall_seconds": 189.591,
+  "excluded_non_work_seconds": {
+    "waiting": 13.202
+  },
+  "unconfirmed_gap_seconds": 0,
+  "overtime_work_seconds": 0,
+  "open_interval_unconfirmed_seconds": 0,
+  "scope": "Checked actual intervals, not pure CPU/thinking. Waiting/old days/post-stop publication excluded; no backfill. One parent only."
+}

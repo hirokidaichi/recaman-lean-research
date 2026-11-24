@@ -1,0 +1,29 @@
+{
+  "started_jst": "2026-11-23T07:01:27.868478+09:00",
+  "tag": "low-clipping",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261123/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261123/low_clipping_family.py"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 10.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "b3e58c32cb710472d2f93df264fe512bfc284f03a96c4f71d6544ba2e8b014fb",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 65182,
+  "process_group": 65182,
+  "finished_jst": "2026-11-23T07:01:27.939547+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.07117687503341585,
+  "worker_user_seconds": 0.028366,
+  "worker_sys_seconds": 0.008076,
+  "worker_cpu_seconds": 0.036442,
+  "worker_maxrss_native": 23724032,
+  "controller_cpu_seconds": 0.0020100000000000014,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

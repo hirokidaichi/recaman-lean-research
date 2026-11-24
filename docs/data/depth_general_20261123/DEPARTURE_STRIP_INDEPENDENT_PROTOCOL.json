@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-23T07:22:37.455872+09:00",
+  "new_input": "independent abstract two-case strip consumer and explicitly clipped original controls, necessary because first new sample hadzero clips",
+  "source_sha256": "3d3c0620c73d650f1e6a6fb7004cc03476149dc387bdeeaafb6139787b8532fe",
+  "abstract_parameters": "a0,1,4,17/z1..6/s0..10/m0..s/r0..7/all feasible M",
+  "actual_controls": "OLD AAASSSA1000/b0, AASSA5/b4, H09 k15/35 wholeoriginalwords and fullstock, NEW strip/W predicates only",
+  "math_budget": 5,
+  "measured_used_before": 3.120535,
+  "remaining_before": 1.879465,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "departure-strip-independent",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/departure_strip_independent.py"
+  ],
+  "stop": "one fixed validation, no range or resource extension"
+}

@@ -1,0 +1,30 @@
+{
+  "started_jst": "2026-11-25T06:40:20.328355+09:00",
+  "tag": "staged-source-discovery",
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/run_single.py",
+    "--worker",
+    "1",
+    "/Users/hirokidaichi/ghq/github.com/hirokidaichi/recaman-lean-research/docs/data/depth_general_20261125/staged_source_probe.py",
+    "discovery"
+  ],
+  "worker_cpu_cap_seconds": 1,
+  "wall_cap_seconds": 10.0,
+  "contract": "one cooperative Python process, no descendants, all threads share CPU cap; not a security sandbox",
+  "worker_source_sha256": "cfe588204ba9dedaa38eefa7ac9fb308dee2634c0271c80839b38f05bde858f3",
+  "runner_sha256": "d0fad5af3c38a89ff0eb454509f74362a29371b57fc151066e9544af4b6c0775",
+  "pid": 44748,
+  "process_group": 44748,
+  "finished_jst": "2026-11-25T06:40:20.386176+09:00",
+  "exit_code": 0,
+  "reason": "completed",
+  "wall_seconds": 0.05790658306796104,
+  "worker_user_seconds": 0.034543,
+  "worker_sys_seconds": 0.007182,
+  "worker_cpu_seconds": 0.041725,
+  "worker_maxrss_native": 23953408,
+  "controller_cpu_seconds": 0.0015429999999999923,
+  "descendants_allowed": false,
+  "cpu_measurement_complete_for_supported_contract": true
+}

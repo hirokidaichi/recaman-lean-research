@@ -1,0 +1,7 @@
+# H04 chronology/realization audit
+
+PAPER/unreviewed, not Lean. Every n>=1 and ALL S/prior output/earlier-A pairs are quantified. Head S have new heights; internal S have exactly two possible prior same-height states (one at i0), areas1 and1-6i²-i; no prior A candidate at that height. Final descent head collision root lies strictly between consecutive integers. All ascent same-height outputs stay above the landing level except first-AS peaks, whose full area is3r(2r-1)>0. ALL matching earlier A candidates remain above landing level. No unknown chronology Prop is assumed.
+
+E759 generic full-seed existence is OLD input; the NEW producer is the explicit complete all-n I/II exclusion. Future-free blockers remain in the original seed. Original segment F/E count comes from E776, no canonical/global free substitution. Displayed seed noncanonical is OLD cost audit and does not show the word itself noncanonical. K=F was observed in finite controls only, not adopted as universal.
+
+Initial hash-freeze helper failed and the first syntax-invalid worker still launched: NOT prelaunch hash frozen. Failed bytes/0.046653CPU/receipts preserved, helperCPU unknown. ONE implementation repair fixed syntax and removed unfrozen auxiliary assertion; source/card/argv frozen before successful n1..5 and7/11/17/23 controls. No cap/range changes or further repairs. Finite controls COMPUTED; all-n evidence is the PAPER classification.

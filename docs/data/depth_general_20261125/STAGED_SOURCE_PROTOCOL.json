@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-25T06:39:02.673166+09:00",
+  "parent": "R-20261125-01",
+  "candidate": "H03 full original sources/debt of staged words, not old unrestricted ratio census",
+  "source_sha256": "cfe588204ba9dedaa38eefa7ac9fb308dee2634c0271c80839b38f05bde858f3",
+  "card_sha256": "3401324ab326313f29571e6569e351e55eb6951c131b08830720d0c78c5508cd",
+  "frozen_card": "docs/data/depth_general_20261125/frozen_inputs/H03-3401324ab326313f29571e6569e351e55eb6951c131b08830720d0c78c5508cd.md",
+  "discovery": "H2..4 ALL positive a in1..3, origin0; sharp family n1..8; three fixed controls",
+  "holdout": "H5..8 ten Random(2026112503) tuples each, a1..7; sharp n9..16; reverse literal mass/weighted-area ALL original u<q; five fixed nonempty prehistories times three tuples",
+  "freshness": "unused parameter ranges; same sign family, different reverse source evaluator; not canonical orbit holdout",
+  "special_negative_controls": [
+    "H2 a7,1,7: actualE3 disproves omitted peak-source guess",
+    "H5 a1,1,1,2,1,1: F6<head7 but D2; never drop the debt or call it C1 counter",
+    "H2 a2,1,1: sharp D0 boundary F5/A6/E1"
+  ],
+  "math_budget_seconds": 3,
+  "used_before": 0.478453,
+  "remaining_before": 2.521547,
+  "per_worker_cpu": 1,
+  "per_worker_wall": 10,
+  "stop": "fixed ranges only; no resource/range retry, one repair max",
+  "argvs": [
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "staged-source-discovery",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/staged_source_probe.py",
+      "discovery"
+    ],
+    [
+      "python3",
+      "docs/data/depth_general_20261125/run_single.py",
+      "--tag",
+      "staged-source-holdout",
+      "--cpu",
+      "1",
+      "--wall",
+      "10",
+      "docs/data/depth_general_20261125/staged_source_probe.py",
+      "holdout"
+    ]
+  ],
+  "notation_audit_at": "2026-11-25T06:40:20.286495+09:00",
+  "current_notation": "O_c is exclusive-old supply; established D_depth remains extra depth below first head and is0 on these examples. Historical protocol D labels are not identified with it."
+}

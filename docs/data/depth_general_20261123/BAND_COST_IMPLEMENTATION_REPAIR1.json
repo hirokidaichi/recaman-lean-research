@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-23T06:09:23.809821+09:00",
+  "repair": 1,
+  "maximum_repairs": 1,
+  "failed_source_sha256": "bbd34ddc3994b5ba23a8876fb1661b044b3aaf102f9f072e8ef6d6a68a259d0b",
+  "repaired_source_sha256": "0930a9ebc1100780a5a99861bbc6ae52dd218eadddfa2382b79d3a125bcfa25c",
+  "cause": "Missing r=s+1 after processing an empty band; exact OLD E771 control loops in analyze before returning, hence discovery range not reached. No usable finite output from killed job.",
+  "change": "One control-flow update only; no mathematical predicate/range/parameter/resources change. Preserve original source/log/result, no increase to failing worker cap.",
+  "failed_worker_cpu_seconds": 1.006247,
+  "budget_total_cpu_seconds": 3,
+  "remaining_measured": 1.993753,
+  "argv": [
+    "python3",
+    "docs/data/depth_general_20261123/run_single.py",
+    "--tag",
+    "band-cost-discovery-repair1",
+    "--cpu",
+    "1",
+    "--wall",
+    "10",
+    "docs/data/depth_general_20261123/band_cost_probe.py",
+    "discovery"
+  ],
+  "stop": "Any second implementation/resource failure stops this finite method; no repair2/extension. Exact conjecture remains separate."
+}

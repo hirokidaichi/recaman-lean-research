@@ -1,0 +1,34 @@
+{
+  "mode": "holdout",
+  "range_complete": true,
+  "stop": "FROZEN_RANGE_COMPLETE",
+  "counts": {
+    "states": 72,
+    "positive_head_states": 66,
+    "original_positive_return_endpoints": 737,
+    "cut_checks": 10353,
+    "decreasing_current": 6,
+    "nonempty_generated_loss": 6,
+    "seed_only_loss": 0
+  },
+  "planned_states": 72,
+  "largest": {
+    "x0": 83,
+    "b": 23,
+    "density": 0.6,
+    "seed": 1103,
+    "Q": 29,
+    "cut": 4,
+    "nextcut": 29,
+    "h": 1,
+    "F_before": 2,
+    "Lgen": 1,
+    "x": 85,
+    "y": 79,
+    "margin": -4
+  },
+  "counter": null,
+  "worker_internal_cpu_seconds": 0.061819,
+  "finite_only": true,
+  "scope": "NEW original provenance loss predicate; parameter holdout, not fresh canonical data"
+}

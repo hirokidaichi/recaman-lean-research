@@ -1,6 +1,45 @@
 # Current research frontier
 
-最終更新: 2026-11-22 日次研究（確定実績はDAILY/journal参照）。元LOW classからclock容量を払う新PAPERと実source-gap反例。一般C1未証明。
+最終更新: 2026-11-25 日次研究（確定実績はDAILY/journal参照）。高さだけの線形会計の限界、元stage source会計、scalar条件と実行済み前史の差をPAPERで確定。C1未証明。
+
+## 2026-11-25: paid height/source/stock and executed-past boundaries
+
+- **E-775 PROVED-PAPER**: E674 necessary integer coneの全primal基底/双対から、任意正weightの固定C最小偏りv_Hを正確化。C3/2では指数3が必要十分。全prefix/unit-flow/return付き宣言ledgerへ全基底をM増幅で輸送し、M非依存head/depth境界でも回避不能。元EndN/C1の反例ではない。E675/E702はOLD。
+- **E-776 PROVED-PAPER (restricted grammar/local)**: 任意の全old前史を残してstage上昇語の内部supplierを二stage下peakへ全分類。元ALLfree Fとexclusive-before-cut供給O_cでF+O_c>=H+3、2A<=3(F+O_c)-a_H-2。旧/内部共supplierも保存。O_cとD_depthは別、LOW/classes/C1へ置換しない。
+- **E-777 PROVED-PAPER**: 全nのsharp ASAA族で全I/II S chronologyを面積式から内部供給し、完全future-free seedでcoherent finite-State実行可能。E776の容量3/2/boundaryはS freshness込みでもsharp。表示seedの非canonical性と語自体の非到達を混同しない。
+- **E-778 PROVED-PAPER**: EVERY coherent-admissible finite wordが、完全な低区間seenを増補して指定4数値canonical必要条件を通せる。全S着地>bと区間<b/2を払い、正確seed数b/2+1/全range/parity/sorted費用を供給。四scalar filterはfinite-word languageを一つも追加排除しない。canonical前史を作っていない。
+- **E-779 REFUTED**: coherent有限語の一歩前閉性。全rのAAS S^r A^r (SA)^t SS族は完全chronology/4filter/actual seedで実行できるが、A/Sいずれのprependもimmutable S回帰でANY coherent predecessorが無い。正base初期化と実行済み前史は別。初期AでC1領域外。
+- **E-780 PROVED-PAPER (local/provenance)**: OLD E774全stockへ全p_j/c_jを追加し、任意有限A^L lookbehindを実行、開始clockで4filterと同stocklossを保持。whole原点0のA-prefixとfreeも数える。元表示seedは一歩前不能でも、必要blockerを払えば有限lookbehindだけではno-goを除けない。未知canonical以前は未構成。
+
+全unbounded証拠はPAPER/人間レビュー未、有限controlsはCOMPUTED。新Lean/root/Audit0、旧512MB/table/source停止は全て継承。H01 generated-stock課金はCONJECTURED/方法STOPPED、8非空有限例のみ・新free edgeなし。H04初回syntax workerと事前hash helper失敗は保存、一回実装修理後の成功だけを検証済みとし、初回を事前hash固定済みとは呼ばない。E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean維持。
+
+[DAILY](RESEARCH_HANDOFF_2026-11-25_DAILY.md), [height](RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md), [original suppliers](RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md), [greedy sharpness](RESEARCH_NOTE_2026-11-25_STAGED_GREEDY_SHARPNESS.md), [four filters](RESEARCH_NOTE_2026-11-25_FOUR_FILTER_LANGUAGE.md), [one executed step](RESEARCH_NOTE_2026-11-25_COHERENT_PREDECESSOR.md), [paid lookbehind](RESEARCH_NOTE_2026-11-25_STOCK_LOOKBEHIND.md), [journal](data/daily_research/2026-11-25.json)。Nov23/24の未公開160pathsを含む保存・公開状況はDAILYの公開欄参照、旧journal実績は加算/改変しない。
+
+## Research brief
+
+- **現在の一問**: E776の単一stage source銀行を、複数balanced block間の元supplier再使用まで同じF+O_cへ払えるか。全Rを量化した[next main card](HYPOTHESIS_CARD_2026-11-26_CROSS_BLOCK_CHARGING.md)はCONJECTURED/未実行。
+- **新edge**: E775全profile障壁、E778全word stock増補、E779任意深さのcoherent前史no-go。候補/係数/CPU jobごとに親cycleを増やさない。
+- **局所**: E776実source/F+O容量、E780全old stock/wholefree保存の有限lookbehind。固定depth2応用だけで一般化停滞をresetしない。
+- **未払い**: 複数blockの同free重複負荷、O_cからLOWfree/classes、時刻0までの実行済みcanonical前史。ALLfree/seed数/D_depth/O_cを相互置換しない。C1/Q/H/SL/全射性は未証明。
+- **次の別機構**: [visited gap bridges](HYPOTHESIS_CARD_2026-11-26_VISITED_GAP_BRIDGES.md)は追加の真の訪問在庫条件を監査する未実行案。カード作成は進展でない。次setupで旧経路検索/全量化子/受入/停止と新CPU0から固定。
+- **継続**: 親R-20261125-01確定、phase/CPU/不足/公開SHAはDAILY/journal参照。前回完了11/23のgeneral停滞0、11/24欠落は未評価。今回general新証拠E775/E778/E779により連続進展なし0、localとは独立に判定。次30/60/10、旧停止は日付resetしない。
+
+## 2026-11-23: actual stock strips and paid floor time (PAPER / human review pending)
+
+- **E-772 PROVED-PAPER**: original fresh S floor returns price OLD numerical stock K; old/current/return transport keeps numeric clipping. Consecutive departure A outputs rise by at most1, internally supplying EVERY visited integer in their upward strip despite repeated/decreasing A. With all sources/stock retained, W=12(base+cut)+15current-10K obeys15Wnext<=34W-30 at arbitrary depth; the uniform numerical floor/source horizon improves OLD base3 clocks from the8th raised level. Initial base/current remain paid. Earlier51/20 and the supporting T33 bound stay valid, not counted as separate cycles.
+- **E-773 REFUTED**: no uniform P2<=alpha P0+C with alpha<9/fixedC even on actual coherent S^h/full-original-positive/return histories. The all-parameter full-S lift has P0=b+2x,P2=9b+2x-4, ONLY actual target h+2/source h-1. Finite-State, NOT canonical/C1 or all-j actual optimality.
+- **E-774 REFUTED**: original SS A^l S^l AA family has ALLfree/classes3k+1 but numerical old-to-next stock loss4k^2-5k-1, while LOW4/head2/D0/positive/return/full old sources hold. Four SPECIFIED necessary canonical filters (cardinality/current parity/ALL-seed triangular range/E755 sorted clock cover) pass; canonical prehistory is NOT supplied. No fixed linear free/class stock-loss payment survives; no nonlinear class/C1 refutation.
+
+[DAILY](RESEARCH_HANDOFF_2026-11-23_DAILY.md), [stock floor](RESEARCH_NOTE_2026-11-23_STOCK_FLOOR_POTENTIAL.md), [clipped transport](RESEARCH_NOTE_2026-11-23_STOCK_TRANSPORT_POTENTIAL.md), [A strip/final potential](RESEARCH_NOTE_2026-11-23_DEPARTURE_STOCK_STRIP.md), [full-S sharpness](RESEARCH_NOTE_2026-11-23_ACTUAL_FLOOR_SHARPNESS.md), [strongest stock-loss counter](RESEARCH_NOTE_2026-11-23_CLOCK_BUDGET_STOCK_LOSS.md). All unbounded arguments PAPER/unreviewed; finite controls COMPUTED. No new Lean/root/Audit adoption. H01 band-cost method STOPPED, its conjecture still open; every prior512MB/job stop inherited. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean unchanged.
+
+## Previous research brief (2026-11-23)
+
+- **現在の一問**: 切り落とされる元stockを初期seed由来と元語内で初出した値に分け、後者だけなら元freeから一様な課金ができるか。全old source-prefix/seed境界を残す。次cardの作成自体は進展でない。
+- **新edge**: fresh floor-Sとold値のinjection、clipped transport、実departure Aのupcrossing帯からWnext<=(34W-30)/15を内部供給。元Aをfreeへ置換しない。
+- **反証**: actual全S履歴でもP二段倍率9未満は不可。全free/classesによるold-stock損失の固定線形課金も、4必要時計条件だけでは不可。どちらもC1反例でない。
+- **局所**: local_progress0/new Lean0。完了域・E701・既存512MB停止sourceは再実行せず、独立新入力がない局所枠を新一般機構と必要監査へ移した。
+- **未払い**: 数値初期value/base/seed stockの元符号前史、元LOW class件数からdepth/spanの支払い、非線形/由来別stock課金。C1/Q/H/SL/全射性は未証明。
+- **継続**: general新証拠あり/進展なし連続0（新producer/no-goによる維持、日付resetでない）。次30/60/10。独立数値機構2554.068441sは親内、追加加算なし。確定実績/CPUはDAILY/journal参照。時計応答10:24で期限超過を確認、journal recover閉鎖・本日commit/push未実施。
 
 ## 2026-11-22: original class-clock capacity and source-key no-go (PAPER / human review pending)
 
@@ -11,7 +50,7 @@
 
 [DAILY](RESEARCH_HANDOFF_2026-11-22_DAILY.md), [fixed LOW age](RESEARCH_NOTE_2026-11-22_LOW_NUMERIC_AGE.md), [three classes](RESEARCH_NOTE_2026-11-22_THREE_LOW_CLASSES.md), [all-prefix capacity](RESEARCH_NOTE_2026-11-22_CLASS_CLOCK_CAPACITY.md), [internally supplied floor](RESEARCH_NOTE_2026-11-22_LAST_FREE_CLASS_FLOOR.md), [gap counter](RESEARCH_NOTE_2026-11-22_ADJACENT_CLASS_COUNTER.md). All unbounded arguments PAPER/unreviewed, finite controls COMPUTED. New finite m4 Lean first-attempt512MB FAILED/STOPPED, repair0, no Recaman/root/Audit adoption; old HarnessTools512 and all prior stops untouched. E388 COMPUTED/E404 CONJECTURED/E384 existence-unLean remain.
 
-## Research brief
+## Previous research brief (2026-11-22)
 
 - **現在の一問**: 欠落LOW高さ帯をold source-keyが飛び越す費用を、全元lower class多重度へ重複なく課金できるか。主K_LOW-depth/span不等式はCONJECTURED。
 - **新edge**: E-770の原class→clock再帰とlast-selected prefix floor producer。元Aをfreeへ置換せず全旧出力・最大負荷・境界を払い、class高さspanから無重みfree時計容量へ消費。
