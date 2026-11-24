@@ -77,7 +77,9 @@ foreign **docs/data/daily_research/2026-11-07.json**（sha25654f4b4002b04b5c3bf0
 既存baseline SHA ebb302144e5ce1bfb21c8e4124604fb91690f11bのhosted CIは失敗していた。Ubuntu/macOSのResearch harnessは成功したが、Lean Audit jobはdeep trace certificates構築中に「hosted runner lost communication」で終了し、完全suiteは未開始。CPU/メモリ/通信の根本原因は未確認で、数式/source失敗とは断定しない。[既存CI記録](data/depth_general_20261125/BASELINE_CI_FAILURE.json)。ゲート/workflowを変更せず、新pushのCIとは分けて観測する。
 
 <!-- PUBLICATION_BEGIN -->
-公開はjournal stop後の確定snapshotについて07:45以降に実行する。commit/push/CI成功はまだ確認していない。SHA/remote照合をpublication receiptへ保存してここへ追記する。
+研究snapshot **535244ed5a68925c5ed0a6064eecc800f433e2b0** を **origin/main** へ通常pushし、`git ls-remote origin refs/heads/main`との完全一致を確認（2026-11-25T07:57:26.210574+09:00）。hosted CI観測 **workflow_runs: CI:queued/None; check_runs: Research harness (ubuntu-latest):in_progress/None, Research harness (macos-latest):queued/None**。詳細は[receipt](data/depth_general_20261125/publication_snapshot/PUBLICATION_RECEIPT.json) / CI_SNAPSHOT.json。完了成功を推定しない。ローカル静的検証/remote到達/hosted CIを区別する。
+
+Nov23未公開158paths・Nov24管理2pathsと当日の検証済み研究・確定journalを保存し、この研究snapshotの未保存対象なし。旧実績を当日へ加算せず、foreign Nov07 journalは保持・対象外。新Lean0/全PAPER human review pending。この照合はdocs-only最終commitへ保存し、その自己SHA/remote照合/最終CIは当日chatへ報告する。
 <!-- PUBLICATION_END -->
 
 ## 末尾handoff：次の二問と停止継承
