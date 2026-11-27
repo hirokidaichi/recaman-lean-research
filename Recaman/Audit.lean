@@ -4525,3 +4525,9 @@ import Recaman
 #print axioms Recaman.SharpThreeSpacingCapacity.actual_height_exp_twenty_elevenths
 #print axioms Recaman.SharpThreeSpacingCapacity.actual_height_exp_199_110
 #print axioms Recaman.SharpThreeSpacingCapacity.low_weights_exp_199_110
+
+#print axioms Recaman.CanonicalStepSpectrum.canonical_step_difference_realized
+#print axioms Recaman.CanonicalStepSpectrum.canonical_consecutive_incident_steps
+#print axioms Recaman.CanonicalStepSpectrum.canonical_odd_even_neighbor
+#print axioms Recaman.CanonicalStepSpectrum.canonical_separated_set_clock_budget
+#print axioms Recaman.CanonicalStepSpectrum.canonical_distinct_sum_le_upperTri_top

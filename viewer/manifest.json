@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4527,
+   "lines": 4533,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -3445,6 +3445,49 @@
      "kind": "theorem",
      "name": "canonical_noSS_iff_clean",
      "line": 76
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CanonicalStepSpectrum",
+   "lines": 400,
+   "imports": [
+    "CanonicalGapCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "canonical_step_difference_realized",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_consecutive_incident_steps",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_odd_even_neighbor",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_separated_set_clock_budget",
+     "line": 178
+    },
+    {
+     "kind": "def",
+     "name": "topUpperTriSum",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_distinct_sum_le_upperTri_top",
+     "line": 373
     }
    ],
    "theorems": 5,
@@ -71136,6 +71179,6 @@
    "hasReport": false
   }
  ],
- "total": 1046,
+ "total": 1047,
  "withReport": 167
 }

@@ -897,3 +897,4 @@ import Recaman.SupplyExcursionSpacing
 import Recaman.ExponentialHeightCascade
 import Recaman.ArbitraryDepthFreeGap
 import Recaman.SharpThreeSpacingCapacity
+import Recaman.CanonicalStepSpectrum
