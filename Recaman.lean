@@ -895,3 +895,4 @@ import Recaman.CanonicalGapCapacity
 import Recaman.CrossBlockReuseUnbounded
 import Recaman.SupplyExcursionSpacing
 import Recaman.ExponentialHeightCascade
+import Recaman.ArbitraryDepthFreeGap

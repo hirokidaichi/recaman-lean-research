@@ -4509,3 +4509,11 @@ import Recaman
 #print axioms Recaman.ExponentialHeightCascade.exponential_cascade_ratio_approx
 #print axioms Recaman.ExponentialHeightCascade.exponential_actual_endn_lower_bound
 #print axioms Recaman.ExponentialHeightCascade.no_subexponential_five_thirds_bound
+
+#print axioms Recaman.ArbitraryDepthFreeGap.low_weights_le_two_dyadic_free
+#print axioms Recaman.ArbitraryDepthFreeGap.low_weights_le_pow_two_free
+#print axioms Recaman.ArbitraryDepthFreeGap.low_weights_five_three_spacing
+#print axioms Recaman.ArbitraryDepthFreeGap.arbitrary_target_height_free_gap_square
+#print axioms Recaman.ArbitraryDepthFreeGap.arbitrary_target_height_free_gap
+#print axioms Recaman.ArbitraryDepthFreeGap.positive_arbitrary_depth_free_gap_profile
+#print axioms Recaman.ArbitraryDepthFreeGap.positive_depth_seven_counter_profile

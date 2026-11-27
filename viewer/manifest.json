@@ -325,8 +325,56 @@
    "hasReport": true
   },
   {
+   "name": "ArbitraryDepthFreeGap",
+   "lines": 580,
+   "imports": [
+    "SupplyExcursionSpacing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_two_dyadic_free",
+     "line": 333
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_pow_two_free",
+     "line": 355
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_five_three_spacing",
+     "line": 385
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_target_height_free_gap_square",
+     "line": 481
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_target_height_free_gap",
+     "line": 494
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_arbitrary_depth_free_gap_profile",
+     "line": 511
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_seven_counter_profile",
+     "line": 547
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Audit",
-   "lines": 4511,
+   "lines": 4519,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -71030,6 +71078,6 @@
    "hasReport": false
   }
  ],
- "total": 1044,
+ "total": 1045,
  "withReport": 167
 }
