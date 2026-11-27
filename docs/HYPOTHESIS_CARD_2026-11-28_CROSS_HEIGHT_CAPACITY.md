@@ -20,6 +20,6 @@
 
 ## 2. Next Open Residual Question (`CONJECTURED`)
 
-1. **Closing `[5/3, 1.77397]`**: Does any actual-`EndN` family achieve exponential growth strictly above `5/3` (e.g., via multi-level `AA` overflow cascades), OR does a global cross-height inequality coupling height-`r` free oscillations `F_r` (which `E-793` had to pay in bulk) with `r + 1` overflow lower the upper bound further toward `5/3`?
-2. **Beyond static seen-set filters (`E-791 STOPPED`)**: Formalize genuinely global clock-0 ledger/Eulerian-trail invariants on `Recaman.Basic.a` (such as the unconditional quadratic distinct-seen cardinality bound `2 * upperTri(b + 1 - |V|) ≤ upperTri(b) + a b`, exact mod-4 even/odd visit capacities, and disjoint multi-point cluster clock budgets).
+1. **Closing `[5/3, 1.77397]`**: `E-796 REFUTED` eliminated pointwise replacement of `3 * AA_{r-1}` by ANY upper-free term `C * F_{≥ r-1}` (via the `D = 13` exact two-potential resonance `Δp_{r-2} == drop_{r-2} == 169`, which also proved asymptotic constant-1 sharpness of `E-794`). Because that resonance consumes lower-height free additions `F_{< r-1}` inside its dip, the remaining open question is whether stacking lower-height cascades inside the resonant dip breaks `5/3` from below, OR whether a global bound coupling `F_{< r-1}` lowers the upper bound further toward `5/3`.
+2. **Beyond static seen-set filters (`E-791 STOPPED`, `E-795 PROVED-LEAN`)**: Global clock-0 ledger/parity/cut/multi-point cluster invariants are now formalized in `Recaman/CanonicalPathInvariants.lean` (`E-795`). Separating canonical Recamán from `E-759` finite words requires genuine clock-0 deterministic recurrence reachability.
 3. **Non-claims**: Neither `C1` nor protected claims (`E-001`, `E-067`, `E-070`, `E-179`) are proved.

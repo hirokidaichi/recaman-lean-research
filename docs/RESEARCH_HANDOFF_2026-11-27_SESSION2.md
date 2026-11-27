@@ -6,7 +6,7 @@
 
 ## 1. Conclusion First
 
-Session 2 (`R-20261127-02`, including the 30-min extension) resolved **both** tracks of `H-20261128-01` and delivered **6 new `PROVED-LEAN` modules** (41 newly audited theorems, **0 vacuity flags**, **0 warnings**, standard axioms only, all commits naturally spaced `≥ 30 min` without `RECAMAN_ALLOW_BURST=1`), **2 `PROVED-PAPER` results**, and **1 `REFUTED` conjecture** (`E-787`..`E-795`):
+Session 2 (`R-20261127-02`, including the 30-min extension) resolved **both** tracks of `H-20261128-01` and delivered **6 new `PROVED-LEAN` modules** (41 newly audited theorems, **0 vacuity flags**, **0 warnings**, standard axioms only, all commits naturally spaced `≥ 30 min` without `RECAMAN_ALLOW_BURST=1`), **2 `PROVED-PAPER` results**, and **2 `REFUTED` conjectures** (`E-787`..`E-796`):
 
 1. **Narrowed the `PROVED-LEAN` actual-`EndN` exponential growth bracket from `[5/3, 2]` → `[5/3, 199/110]` (`E-788`) → `[5/3, 190/107] = [1.6667, 1.7757]` (`E-794`)**, strictly breaking the `E-785`/`E-788` 3-spacing cone barrier (`1.8067`) directly on actual `EndN` via a new **coupled two-height 3+1 slot injection** (`3 * E_{r+1} + E_r ≤ W(r) + 3 * AA_{r-1}`) and zero-slack rational telescoping across `[1/2, κ_joint ≈ 0.563708)`.
 2. **Resolved `H-20261128-01` Track A (`E-789 PROVED-PAPER`)**: proved that `E-759 = (0, 0)` coherent finite-State greedy realizability (passing all 8 filters of `E-782`) still permits fixed-height-strip exponential growth `Ω(3^{H/3}) = Ω(1.44225^H)` via a `Δ = 3` unit-shift cascade with height-`-1` `(SA)^{p_k}` buffers.
@@ -29,8 +29,9 @@ Session 2 (`R-20261127-02`, including the 30-min extension) resolved **both** tr
 | `E-793` | `REFUTED` | `docs/RESEARCH_NOTE_2026-11-27_EXCURSION_CLIMB_SPACING.md` | — | — | Free-only overflow `C2` refuted (`21 > 19 + 0` minimal; `2k - 9 → +∞` empty-prefix family refutes all `C * F_{r-1}`) |
 | `E-794` | `PROVED-LEAN` | `Recaman/JointHeightSpacingCapacity.lean` | 8 | `0 flagged / 0 unknown` | Coupled `3*E_{r+1}+E_r ≤ W(r)+3*AA_{r-1}` + joint cone `[1/2, κ_joint)` breaking `1.8067`: `9/5`, `16/9`, `190/107` (`1.7757`) |
 | `E-795` | `PROVED-LEAN` | `Recaman/CanonicalPathInvariants.lean` | 8 | `0 flagged / 0 unknown` | Unconditional clock-0 `subSum` complement, quadratic distinct-seen lower bound `2*upperTri(b+1-|V|) ≤ upperTri b + a b`, mod-4 parity cap, cut connectivity, and multi-point cluster clock budget `m + ∑|C_i| ≤ b + 1 - θ` |
+| `E-796` | `REFUTED` | `docs/RESEARCH_NOTE_2026-11-27_RESONANT_OVERFLOW_REFUTATION.md` | — | — | Exact `D=13` two-potential resonance (`Δp_{14} == drop_{14} == 169`) refutes ALL upper-free overflow bounds `C*F_{≥ r-1}` (`F_{≥ 15} = 205` const while `3*E_{17}+E_{16}-W = 3k-1 → +∞`) and proves asymptotic constant-1 sharpness of `E-794` |
 
-Across **both** sprints (`R-20261127-01` + `R-20261127-02`, `E-781`..`E-795`): **10 new `PROVED-LEAN` modules, 60 audited theorems, 0 flagged / 0 unknown vacuity lint, 0 warnings, 0 `RECAMAN_ALLOW_BURST=1`**.
+Across **both** sprints (`R-20261127-01` + `R-20261127-02`, `E-781`..`E-796`): **10 new `PROVED-LEAN` modules, 60 audited theorems, 0 flagged / 0 unknown vacuity lint, 0 warnings, 0 `RECAMAN_ALLOW_BURST=1`**.
 
 ## 3. Changed Files (Session 2)
 
