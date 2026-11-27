@@ -4498,3 +4498,9 @@ import Recaman
 #print axioms Recaman.CrossBlockReuseUnbounded.cross_block_reuse_counts
 #print axioms Recaman.CrossBlockReuseUnbounded.no_linear_cross_block_capacity
 #print axioms Recaman.CrossBlockReuseUnbounded.h20261126_two_block_counter
+
+#print axioms Recaman.SupplyExcursionSpacing.actual_same_height_supply_three_slots
+#print axioms Recaman.SupplyExcursionSpacing.same_height_supply_three_spacing_budget
+#print axioms Recaman.SupplyExcursionSpacing.actual_floor_plus_four_three_spacing
+#print axioms Recaman.SupplyExcursionSpacing.dyadic_height_weighted_capacity
+#print axioms Recaman.SupplyExcursionSpacing.actual_height_exp_two_bound

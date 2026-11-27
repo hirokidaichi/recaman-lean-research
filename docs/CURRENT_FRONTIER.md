@@ -1,15 +1,25 @@
 # Current research frontier
 
-最終更新: 2026-11-27 研究（R-20261127-01）。標準Recamán軌道の空間gap容量（E-781）と多block source bank再利用の線形容量不在（E-783）をLean 4で無条件証明、8条件空間橋格子の語選別no-go（E-782）とgreedy実行可能な無界比族（E-784）をPAPERで確定。C1/Q/H/SL/全射性は未証明。
+最終更新: 2026-11-27 研究（R-20261127-01）。標準Recamán軌道の空間gap容量（E-781）、多block source bank再利用の線形容量不在（E-783）、および実EndN任意高さの下降excursion 3間隔予算とq=1/2二進重み容量（E-785）をLean 4で無条件証明（全3モジュールvacuity 0 flagged / 0 unknown）。8条件空間橋格子の語選別no-go（E-782）、greedy実行可能な無界比族（E-784）、および実EndNの固定高さ帯[0,H+1]での指数成長下界Ω((5/3)^H)（E-786）をPAPERで確定し、実EndNの指数成長基数を[5/3, 1.8067]へ挟み込んだ。C1/Q/H/SL/全射性は未証明。
 
-## 2026-11-27: canonical spatial gap capacity (LEAN) and cross-block bank reuse refutation (LEAN + PAPER)
+## 2026-11-27: canonical spatial gap capacity (LEAN), cross-block reuse refutation (LEAN + PAPER), excursion 3-spacing dyadic capacity (LEAN), and exponential actual-EndN cascade (PAPER)
 
 - **E-781 PROVED-LEAN**: 標準Recamán実軌道 `a` / `valuesThrough b` の任意時刻 `b` に対する空間的不変量を `Recaman/CanonicalGapCapacity.lean` で形式化（`walk_peak_le_upperTri`, `empty_gap_prefix_trapped`, `no_empty_gap_gt_clock`, `empty_gap_tail_peak_le`, `empty_gap_distinct_tail_count_le`, `multi_gap_rank_bound`；vacuity 0 flagged / 0 unknown）。`H-20261126-02` の隣接gap `≤ b` の必要性を厳密に強化し、空帯上の相異訪問数 `≤ b + 1 - g` と全 `θ` の降順gap-rank `≤ b - θ` を確立。
 - **E-782 PROVED-PAPER**: E-778 の4 scalar条件に E-781 の4空間条件を加えた計8条件を厳密な distinct seen 集合 `V` で課しても、coherent有限語のlanguageを1語も狭めない（`b = 1000 N^2`, 剰余回避歩幅 `d = b - 200 N` の橋格子 `G_d`）。`H-20261126-02` の literal 歩幅 `b` 格子は E-781 の `f7/f8` で失格することも確認。併せて E-779 の系として、`H ≤ 1`（C1正不足域を含む）の全coherent語が任意長 `S^L ++ w` のcoherent前史を許すことを証明。静的空間gap選別は STOPPED。
 - **E-783 PROVED-LEAN**: `H-20261126-01` の多block stage語 `U ++ S^m ++ V_1 ++ ... ++ V_R ++ AA`（全旧前史 `U` 任意、原点 `0`・共supplier保持）について、`Recaman/CrossBlockReuseUnbounded.lean` で厳密分割 `A = L_int + (F + O_c)`、最小2-block反例 `[(1,2,1,1),(1,1,1,2)]`（`A=12, L_int≥4, 3(F+O_c)-3 < 2A`）、および任意の定数 `C, K` に対する単一bank block再利用族 `C(F + O_c) + K < A` を無条件証明（vacuity 0 flagged / 0 unknown）。`D_depth = 0`・`F >> m` であり C1 反例ではない。
 - **E-784 REFUTED**: `E-759 (I)/(II) = 0`（よって `E-782` の8条件 coherent有限Stateで実greedy実行可能）を課しても、多block stage語の線形容量 `A ≤ C(F + O_c) + K` は反証される。2-block最小coherent反例 `[(2,1,1),(1,1,1,2)]`（`2A=22 > 21`、8条件実greedy照合済）と、全 `k ≥ 3` の単位shift族（`ΔΦ_{h-1}(V) = +1`, `u=6k+2, h=2u, K=3u`, 6高度帯すべての多項式分離で `E-759 = (0,0)`, `A/(F+O_c) = 2k - O(1) → ∞`）を PAPER 証明。時刻0からのcanonical前史やC1反例ではない。線形多block `A/(F+O_c)` 課金は STOPPED。
+- **E-785 PROVED-LEAN**: 全元padded `BlockWord` 前史・任意区間長・任意高さ `r : Int` について、下降excursionの唯一出口 `d`（`Fw f d = r - 1 ∧ f d = true`）への3-for-1スロット単射により `3 * E_{r+1} ≤ lowAdditionWeights f n r K + 2 * A_{r-1}` を `Recaman/SupplyExcursionSpacing.lean` で無条件証明（`actual_same_height_supply_three_slots`, `same_height_supply_three_spacing_budget`, `actual_floor_plus_four_three_spacing`, `dyadic_height_weighted_capacity`, `actual_height_exp_two_bound`；vacuity 0 flagged / 0 unknown）。E-674を全高さで厳密強化し、E-783多block族の全高さ `H = 3k` と差3で漸近一致する。床 `m` 上で床+4実供給 `3 * E_{m+4} ≤ 8 * free`（E-674の `6 * free` を2.25倍超改善）、任意高さ上限 `H` で2進重み容量 `dyadicAdditions ≤ 3 * dyadicFree`（`q = 1/2, C = 3`）と `A_{m+h} ≤ 3 * 2^h * free` を確立し、実EndNをE-775の緩和cone障壁（`q < 0.4534, ρ ≈ 2.2056`）から厳密分離（新cone `ρ ≈ 1.8067 < 2`）。
+- **E-786 PROVED-PAPER**: 全高さ `H ≥ 2`・全 `ε > 0`・任意旧前史 `U` に対し、相対高さ帯 `[0, H + 1]` 内の明示再帰平衡語 `B_H = V_0^{(H)} ++ V_H^R`（`ΔΦ_{H-1}(V_H) = 0` より `D_{H+1}(V_H) = |V_H| = 2 A(V_H)` が恒等成立）が実 `EndN` 上で `A(B_H)/(F + O_c) ≥ (12/25 - ε) · (5/3)^H` を達成することを PAPER 証明。実 `EndN` 上の全多項式上界と `q > 3/5` の一様幾何重み容量を反証し、`E-785` と併せて実 `EndN` の指数成長基数を `[5/3, 1.8067]`（重み閾値 `κ ∈ [0.5535, 0.6000]`）へ挟み込んだ。`V_H` は整数平均高さで greedy 実行は未構成、C1 反例ではない。
 
-[spatial note](RESEARCH_NOTE_2026-11-27_SPATIAL_GAP_INVENTORY.md), [spatial card](HYPOTHESIS_CARD_2026-11-27_SPATIAL_GAP_INVENTORY.md), [cross-block note](RESEARCH_NOTE_2026-11-27_CROSS_BLOCK_REUSE.md), [cross-block card](HYPOTHESIS_CARD_2026-11-27_CROSS_BLOCK_REUSE.md)。
+[DAILY](RESEARCH_HANDOFF_2026-11-27_DAILY.md), [spatial note](RESEARCH_NOTE_2026-11-27_SPATIAL_GAP_INVENTORY.md), [spatial card](HYPOTHESIS_CARD_2026-11-27_SPATIAL_GAP_INVENTORY.md), [cross-block note](RESEARCH_NOTE_2026-11-27_CROSS_BLOCK_REUSE.md), [cross-block card](HYPOTHESIS_CARD_2026-11-27_CROSS_BLOCK_REUSE.md), [excursion spacing note](RESEARCH_NOTE_2026-11-27_EXCURSION_SPACING.md), [excursion spacing card](HYPOTHESIS_CARD_2026-11-27_EXCURSION_SPACING.md), [exponential cascade note](RESEARCH_NOTE_2026-11-27_EXPONENTIAL_CASCADE.md), [exponential cascade card](HYPOTHESIS_CARD_2026-11-27_EXPONENTIAL_CASCADE.md)。
+
+## Research brief
+
+- **現在の一問**: 実EndNの固定床・高さ幅 `H`（`Fw ∈ [m, m+H]`）において、指数成長基数 `ρ_actual ∈ [5/3, 1.8067]`（幾何重み閾値 `κ ∈ [0.5535, 0.6000]`）の真値を確定し、`E-786` の `(5/3)^H` 再帰カスケードが `E-759 = (0,0)` coherent greedy 実行可能性下でも成立するか、あるいは `S` 新規性・複数高さ結合が指数基数を押し下げるかを判定する。[next main card](HYPOTHESIS_CARD_2026-11-28_CROSS_HEIGHT_CAPACITY.md) は `CONJECTURED`/未実行。
+- **新edge**: 標準軌道空間gap容量 `E-781`（Lean）、静的8条件語選別no-go `E-782`（PAPER）、多block bank再利用の線形容量反証 `E-783`（Lean）/`E-784`（PAPER）、実EndN任意高さ3間隔強化と `q = 1/2` 二進重み容量 `E-785`（Lean、E-775障壁を実EndN上で直接突破）、および実EndN指数成長下界 `Ω((5/3)^H)` `E-786`（PAPER、実EndNの多項式上界を反証し成長基数を `[5/3, 1.8067]` へ狭窄）。
+- **停止経路**: 静的scalar+空間gap条件のみによる有限語選別（`E-782` で STOPPED）、定数勾配の多block線形 `A/(F+O_c)` 課金（`E-783`/`E-784` で STOPPED）、および実EndNの固定高さ多項式容量探索（`E-786` で反証済み）。
+- **未払い**: `E-786` の Lean 化および coherent greedy (`E-759 = (0,0)`) 版、`[5/3, 1.8067]` の精密決定、`O_c` や全freeから `LOW-free`/class数/`D_depth` への変換、時刻0からのcanonical前史構成。C1/Q/H/SL/全射性および固定保護命題（E-001/E-067/E-070/E-179）は未証明。
+- **継続**: 親 `R-20261127-01` 完了。`local_progress = yes`（`E-783` 最小2-block反例、`E-784` 最小coherent 2-block反例、`E-785` 床+4改善）、`depth_general_progress = yes`（`E-781`..`E-786` の任意深さ定理・反証群）。一般化連続停滞 `0`（前回 `0` から新証拠により維持）、次回配分 `30/60/10`（別機構 `>= 25min`）。旧STOPPED制約はすべて継承。
 
 ## 2026-11-25: paid height/source/stock and executed-past boundaries
 
@@ -24,7 +34,7 @@
 
 [DAILY](RESEARCH_HANDOFF_2026-11-25_DAILY.md), [height](RESEARCH_NOTE_2026-11-25_HEIGHT_KERNEL_BARRIER.md), [original suppliers](RESEARCH_NOTE_2026-11-25_STAGED_ORIGINAL_SUPPLIERS.md), [greedy sharpness](RESEARCH_NOTE_2026-11-25_STAGED_GREEDY_SHARPNESS.md), [four filters](RESEARCH_NOTE_2026-11-25_FOUR_FILTER_LANGUAGE.md), [one executed step](RESEARCH_NOTE_2026-11-25_COHERENT_PREDECESSOR.md), [paid lookbehind](RESEARCH_NOTE_2026-11-25_STOCK_LOOKBEHIND.md), [journal](data/daily_research/2026-11-25.json)。Nov23/24の未公開160pathsを含む保存・公開状況はDAILYの公開欄参照、旧journal実績は加算/改変しない。
 
-## Research brief
+## Previous research brief (2026-11-25)
 
 - **現在の一問**: E776の単一stage source銀行を、複数balanced block間の元supplier再使用まで同じF+O_cへ払えるか。全Rを量化した[next main card](HYPOTHESIS_CARD_2026-11-26_CROSS_BLOCK_CHARGING.md)はCONJECTURED/未実行。
 - **新edge**: E775全profile障壁、E778全word stock増補、E779任意深さのcoherent前史no-go。候補/係数/CPU jobごとに親cycleを増やさない。

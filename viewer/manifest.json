@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4500,
+   "lines": 4506,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -62162,6 +62162,49 @@
    "hasReport": false
   },
   {
+   "name": "SupplyExcursionSpacing",
+   "lines": 822,
+   "imports": [
+    "SupplyHeightWeightBudget"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "lastAbove",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_same_height_supply_three_slots",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_three_spacing_budget",
+     "line": 426
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_plus_four_three_spacing",
+     "line": 492
+    },
+    {
+     "kind": "theorem",
+     "name": "dyadic_height_weighted_capacity",
+     "line": 770
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_two_bound",
+     "line": 799
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "SupplyHeightWeightBudget",
    "lines": 62,
    "imports": [
@@ -70914,6 +70957,6 @@
    "hasReport": false
   }
  ],
- "total": 1042,
+ "total": 1043,
  "withReport": 167
 }
