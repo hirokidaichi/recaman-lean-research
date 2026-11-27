@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4540,
+   "lines": 4549,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -35938,6 +35938,75 @@
    "hasReport": false
   },
   {
+   "name": "JointHeightSpacingCapacity",
+   "lines": 1591,
+   "imports": [
+    "ExcursionClimbSpacing",
+    "SharpThreeSpacingCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "jointK",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "jointL",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "jointM",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_joint_height_supply_aa_slots",
+     "line": 428
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_height_supply_aa_spacing_budget",
+     "line": 881
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_height_weighted_capacity",
+     "line": 1421
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_height_exp_bound",
+     "line": 1458
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_low_weights_bound",
+     "line": 1478
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_nine_fifths",
+     "line": 1541
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_sixteen_ninths",
+     "line": 1558
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_190_107",
+     "line": 1577
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "JointShiftedCircle",
    "lines": 104,
    "imports": [
@@ -71222,6 +71291,6 @@
    "hasReport": false
   }
  ],
- "total": 1048,
+ "total": 1049,
  "withReport": 167
 }
