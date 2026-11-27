@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4495,
+   "lines": 4500,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -4570,6 +4570,169 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "CrossBlockReuseUnbounded",
+   "lines": 1002,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "asRep",
+     "line": 29
+    },
+    {
+     "kind": "def",
+     "name": "stageWord",
+     "line": 33
+    },
+    {
+     "kind": "def",
+     "name": "stagedBlock",
+     "line": 36
+    },
+    {
+     "kind": "def",
+     "name": "repeatWord",
+     "line": 39
+    },
+    {
+     "kind": "def",
+     "name": "MatchesAt",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "InternalSupplied",
+     "line": 47
+    },
+    {
+     "kind": "def",
+     "name": "ExclusiveOldSupplied",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "additions_partition_after_cut",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_add",
+     "line": 175
+    },
+    {
+     "kind": "def",
+     "name": "famH",
+     "line": 301
+    },
+    {
+     "kind": "def",
+     "name": "famA",
+     "line": 302
+    },
+    {
+     "kind": "def",
+     "name": "famBank",
+     "line": 303
+    },
+    {
+     "kind": "def",
+     "name": "famLift",
+     "line": 304
+    },
+    {
+     "kind": "def",
+     "name": "bankStages",
+     "line": 306
+    },
+    {
+     "kind": "def",
+     "name": "repeatStages",
+     "line": 309
+    },
+    {
+     "kind": "def",
+     "name": "bankBlock",
+     "line": 312
+    },
+    {
+     "kind": "def",
+     "name": "repeatBlock",
+     "line": 313
+    },
+    {
+     "kind": "def",
+     "name": "familyTail",
+     "line": 315
+    },
+    {
+     "kind": "def",
+     "name": "familyWord",
+     "line": 319
+    },
+    {
+     "kind": "theorem",
+     "name": "bankBlock_eq",
+     "line": 322
+    },
+    {
+     "kind": "theorem",
+     "name": "repeatBlock_eq",
+     "line": 334
+    },
+    {
+     "kind": "theorem",
+     "name": "bankBlock_length",
+     "line": 345
+    },
+    {
+     "kind": "theorem",
+     "name": "repeatBlock_length",
+     "line": 354
+    },
+    {
+     "kind": "def",
+     "name": "bankSupplierClock",
+     "line": 484
+    },
+    {
+     "kind": "def",
+     "name": "repeatTargetClock",
+     "line": 488
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_block_reuse_counts",
+     "line": 770
+    },
+    {
+     "kind": "theorem",
+     "name": "no_linear_cross_block_capacity",
+     "line": 825
+    },
+    {
+     "kind": "def",
+     "name": "minCounterTail",
+     "line": 876
+    },
+    {
+     "kind": "def",
+     "name": "minCounterWord",
+     "line": 879
+    },
+    {
+     "kind": "theorem",
+     "name": "h20261126_two_block_counter",
+     "line": 882
+    }
+   ],
+   "theorems": 9,
+   "defs": 21,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -70751,6 +70914,6 @@
    "hasReport": false
   }
  ],
- "total": 1041,
+ "total": 1042,
  "withReport": 167
 }

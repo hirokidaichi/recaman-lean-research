@@ -4493,3 +4493,8 @@ import Recaman
 #print axioms Recaman.CanonicalGapCapacity.empty_gap_tail_peak_le
 #print axioms Recaman.CanonicalGapCapacity.empty_gap_distinct_tail_count_le
 #print axioms Recaman.CanonicalGapCapacity.multi_gap_rank_bound
+
+#print axioms Recaman.CrossBlockReuseUnbounded.additions_partition_after_cut
+#print axioms Recaman.CrossBlockReuseUnbounded.cross_block_reuse_counts
+#print axioms Recaman.CrossBlockReuseUnbounded.no_linear_cross_block_capacity
+#print axioms Recaman.CrossBlockReuseUnbounded.h20261126_two_block_counter

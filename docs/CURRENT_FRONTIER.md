@@ -1,13 +1,15 @@
 # Current research frontier
 
-最終更新: 2026-11-27 研究（R-20261127-01 進行中）。標準Recamán軌道の空間gap容量をLean 4証明（E-781）、8条件空間橋格子の語選別no-goをPAPER確定（E-782）。C1未証明。
+最終更新: 2026-11-27 研究（R-20261127-01）。標準Recamán軌道の空間gap容量（E-781）と多block source bank再利用の線形容量不在（E-783）をLean 4で無条件証明、8条件空間橋格子の語選別no-go（E-782）とgreedy実行可能な無界比族（E-784）をPAPERで確定。C1/Q/H/SL/全射性は未証明。
 
-## 2026-11-27: canonical spatial gap capacity (LEAN) and cross-block reuse (in progress)
+## 2026-11-27: canonical spatial gap capacity (LEAN) and cross-block bank reuse refutation (LEAN + PAPER)
 
 - **E-781 PROVED-LEAN**: 標準Recamán実軌道 `a` / `valuesThrough b` の任意時刻 `b` に対する空間的不変量を `Recaman/CanonicalGapCapacity.lean` で形式化（`walk_peak_le_upperTri`, `empty_gap_prefix_trapped`, `no_empty_gap_gt_clock`, `empty_gap_tail_peak_le`, `empty_gap_distinct_tail_count_le`, `multi_gap_rank_bound`；vacuity 0 flagged / 0 unknown）。`H-20261126-02` の隣接gap `≤ b` の必要性を厳密に強化し、空帯上の相異訪問数 `≤ b + 1 - g` と全 `θ` の降順gap-rank `≤ b - θ` を確立。
 - **E-782 PROVED-PAPER**: E-778 の4 scalar条件に E-781 の4空間条件を加えた計8条件を厳密な distinct seen 集合 `V` で課しても、coherent有限語のlanguageを1語も狭めない（`b = 1000 N^2`, 剰余回避歩幅 `d = b - 200 N` の橋格子 `G_d`）。`H-20261126-02` の literal 歩幅 `b` 格子は E-781 の `f7/f8` で失格することも確認。併せて E-779 の系として、`H ≤ 1`（C1正不足域を含む）の全coherent語が任意長 `S^L ++ w` のcoherent前史を許すことを証明。静的空間gap選別は STOPPED。
+- **E-783 PROVED-LEAN**: `H-20261126-01` の多block stage語 `U ++ S^m ++ V_1 ++ ... ++ V_R ++ AA`（全旧前史 `U` 任意、原点 `0`・共supplier保持）について、`Recaman/CrossBlockReuseUnbounded.lean` で厳密分割 `A = L_int + (F + O_c)`、最小2-block反例 `[(1,2,1,1),(1,1,1,2)]`（`A=12, L_int≥4, 3(F+O_c)-3 < 2A`）、および任意の定数 `C, K` に対する単一bank block再利用族 `C(F + O_c) + K < A` を無条件証明（vacuity 0 flagged / 0 unknown）。`D_depth = 0`・`F >> m` であり C1 反例ではない。
+- **E-784 REFUTED**: `E-759 (I)/(II) = 0`（よって `E-782` の8条件 coherent有限Stateで実greedy実行可能）を課しても、多block stage語の線形容量 `A ≤ C(F + O_c) + K` は反証される。2-block最小coherent反例 `[(2,1,1),(1,1,1,2)]`（`2A=22 > 21`、8条件実greedy照合済）と、全 `k ≥ 3` の単位shift族（`ΔΦ_{h-1}(V) = +1`, `u=6k+2, h=2u, K=3u`, 6高度帯すべての多項式分離で `E-759 = (0,0)`, `A/(F+O_c) = 2k - O(1) → ∞`）を PAPER 証明。時刻0からのcanonical前史やC1反例ではない。線形多block `A/(F+O_c)` 課金は STOPPED。
 
-[spatial note](RESEARCH_NOTE_2026-11-27_SPATIAL_GAP_INVENTORY.md), [spatial card](HYPOTHESIS_CARD_2026-11-27_SPATIAL_GAP_INVENTORY.md)。
+[spatial note](RESEARCH_NOTE_2026-11-27_SPATIAL_GAP_INVENTORY.md), [spatial card](HYPOTHESIS_CARD_2026-11-27_SPATIAL_GAP_INVENTORY.md), [cross-block note](RESEARCH_NOTE_2026-11-27_CROSS_BLOCK_REUSE.md), [cross-block card](HYPOTHESIS_CARD_2026-11-27_CROSS_BLOCK_REUSE.md)。
 
 ## 2026-11-25: paid height/source/stock and executed-past boundaries
 
