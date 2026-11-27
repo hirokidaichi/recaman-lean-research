@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4488,
+   "lines": 4495,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -3000,6 +3000,65 @@
    "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "CanonicalGapCapacity",
+   "lines": 217,
+   "imports": [
+    "OrbitBounds",
+    "History"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "a_add_upperTri_mono",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "a_le_a_add_upperTri_diff",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_peak_le_upperTri",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_prefix_trapped",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "no_empty_gap_gt_clock",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_tail_peak_le",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_distinct_tail_count_le",
+     "line": 140
+    },
+    {
+     "kind": "def",
+     "name": "GapChain",
+     "line": 165
+    },
+    {
+     "kind": "theorem",
+     "name": "multi_gap_rank_bound",
+     "line": 189
+    }
+   ],
+   "theorems": 8,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "CanonicalGrowthRecovery",
@@ -70692,6 +70751,6 @@
    "hasReport": false
   }
  ],
- "total": 1040,
+ "total": 1041,
  "withReport": 167
 }

@@ -1,6 +1,13 @@
 # Current research frontier
 
-最終更新: 2026-11-25 日次研究（確定実績はDAILY/journal参照）。高さだけの線形会計の限界、元stage source会計、scalar条件と実行済み前史の差をPAPERで確定。C1未証明。
+最終更新: 2026-11-27 研究（R-20261127-01 進行中）。標準Recamán軌道の空間gap容量をLean 4証明（E-781）、8条件空間橋格子の語選別no-goをPAPER確定（E-782）。C1未証明。
+
+## 2026-11-27: canonical spatial gap capacity (LEAN) and cross-block reuse (in progress)
+
+- **E-781 PROVED-LEAN**: 標準Recamán実軌道 `a` / `valuesThrough b` の任意時刻 `b` に対する空間的不変量を `Recaman/CanonicalGapCapacity.lean` で形式化（`walk_peak_le_upperTri`, `empty_gap_prefix_trapped`, `no_empty_gap_gt_clock`, `empty_gap_tail_peak_le`, `empty_gap_distinct_tail_count_le`, `multi_gap_rank_bound`；vacuity 0 flagged / 0 unknown）。`H-20261126-02` の隣接gap `≤ b` の必要性を厳密に強化し、空帯上の相異訪問数 `≤ b + 1 - g` と全 `θ` の降順gap-rank `≤ b - θ` を確立。
+- **E-782 PROVED-PAPER**: E-778 の4 scalar条件に E-781 の4空間条件を加えた計8条件を厳密な distinct seen 集合 `V` で課しても、coherent有限語のlanguageを1語も狭めない（`b = 1000 N^2`, 剰余回避歩幅 `d = b - 200 N` の橋格子 `G_d`）。`H-20261126-02` の literal 歩幅 `b` 格子は E-781 の `f7/f8` で失格することも確認。併せて E-779 の系として、`H ≤ 1`（C1正不足域を含む）の全coherent語が任意長 `S^L ++ w` のcoherent前史を許すことを証明。静的空間gap選別は STOPPED。
+
+[spatial note](RESEARCH_NOTE_2026-11-27_SPATIAL_GAP_INVENTORY.md), [spatial card](HYPOTHESIS_CARD_2026-11-27_SPATIAL_GAP_INVENTORY.md)。
 
 ## 2026-11-25: paid height/source/stock and executed-past boundaries
 

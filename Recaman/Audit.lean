@@ -4486,3 +4486,10 @@ import Recaman
 #print axioms Recaman.CommonSourceHitSpacing.common_source_hit_gap
 
 #print axioms Recaman.TwoLevelVisitCounterexample.positive_two_level_visit_counter
+
+#print axioms Recaman.CanonicalGapCapacity.walk_peak_le_upperTri
+#print axioms Recaman.CanonicalGapCapacity.empty_gap_prefix_trapped
+#print axioms Recaman.CanonicalGapCapacity.no_empty_gap_gt_clock
+#print axioms Recaman.CanonicalGapCapacity.empty_gap_tail_peak_le
+#print axioms Recaman.CanonicalGapCapacity.empty_gap_distinct_tail_count_le
+#print axioms Recaman.CanonicalGapCapacity.multi_gap_rank_bound

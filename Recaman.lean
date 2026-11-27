@@ -891,3 +891,4 @@ import Recaman.LowFreeFourPast
 import Recaman.LowFreeFourFloor
 import Recaman.FloorVisitFreeCount
 import Recaman.FivePeriodSourceCost
+import Recaman.CanonicalGapCapacity
