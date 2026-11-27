@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4519,
+   "lines": 4527,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -59337,6 +59337,64 @@
    "hasReport": true
   },
   {
+   "name": "SharpThreeSpacingCapacity",
+   "lines": 735,
+   "imports": [
+    "ArbitraryDepthFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "coneK",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "coneM",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_height_weighted_capacity",
+     "line": 517
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_height_exp_bound",
+     "line": 552
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_low_weights_bound",
+     "line": 577
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_arbitrary_target_free_gap_square",
+     "line": 671
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_twenty_elevenths",
+     "line": 690
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_199_110",
+     "line": 708
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_exp_199_110",
+     "line": 722
+    }
+   ],
+   "theorems": 7,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ShortBlockerRigidity",
    "lines": 135,
    "imports": [
@@ -71078,6 +71136,6 @@
    "hasReport": false
   }
  ],
- "total": 1045,
+ "total": 1046,
  "withReport": 167
 }

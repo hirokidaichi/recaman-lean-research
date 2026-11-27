@@ -4517,3 +4517,11 @@ import Recaman
 #print axioms Recaman.ArbitraryDepthFreeGap.arbitrary_target_height_free_gap
 #print axioms Recaman.ArbitraryDepthFreeGap.positive_arbitrary_depth_free_gap_profile
 #print axioms Recaman.ArbitraryDepthFreeGap.positive_depth_seven_counter_profile
+
+#print axioms Recaman.SharpThreeSpacingCapacity.rational_height_weighted_capacity
+#print axioms Recaman.SharpThreeSpacingCapacity.rational_height_exp_bound
+#print axioms Recaman.SharpThreeSpacingCapacity.rational_low_weights_bound
+#print axioms Recaman.SharpThreeSpacingCapacity.rational_arbitrary_target_free_gap_square
+#print axioms Recaman.SharpThreeSpacingCapacity.actual_height_exp_twenty_elevenths
+#print axioms Recaman.SharpThreeSpacingCapacity.actual_height_exp_199_110
+#print axioms Recaman.SharpThreeSpacingCapacity.low_weights_exp_199_110
