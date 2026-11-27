@@ -901,3 +901,4 @@ import Recaman.CanonicalStepSpectrum
 import Recaman.ExcursionClimbSpacing
 import Recaman.JointHeightSpacingCapacity
 import Recaman.CanonicalPathInvariants
+import Recaman.ExactFiveThirdsCapacity

@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4558,
+   "lines": 4567,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -30536,6 +30536,60 @@
    ],
    "theorems": 10,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ExactFiveThirdsCapacity",
+   "lines": 1756,
+   "imports": [
+    "ExcursionClimbSpacing",
+    "SharpThreeSpacingCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_double_ascent_spacing_slots",
+     "line": 542
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_double_ascent_spacing_budget",
+     "line": 1066
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_eight_slot_double_ascent_budget",
+     "line": 1209
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_triangular_capacity",
+     "line": 1586
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_level_bound",
+     "line": 1604
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_strip_additions_bound",
+     "line": 1640
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_low_weights_bound",
+     "line": 1682
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_free_gap_square",
+     "line": 1743
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -71360,6 +71414,6 @@
    "hasReport": false
   }
  ],
- "total": 1050,
+ "total": 1051,
  "withReport": 167
 }
