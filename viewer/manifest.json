@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4549,
+   "lines": 4558,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -3407,6 +3407,75 @@
    "defs": 1,
    "hasEnglishDocstring": true,
    "hasReport": true
+  },
+  {
+   "name": "CanonicalPathInvariants",
+   "lines": 688,
+   "imports": [
+    "CanonicalStepSpectrum",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "stepDist",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "evenClockCount",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "oddClockCount",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "subSum_add_upperTri_complement_le",
+     "line": 167
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_succ_le_cover_length",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_distinct_cover_quadratic_bound",
+     "line": 260
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_even_visit_count_le",
+     "line": 274
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_odd_visit_count_le",
+     "line": 306
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_cut_crossing_step",
+     "line": 341
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_interior_cluster_entry_exit_span",
+     "line": 364
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_disjoint_clusters_clock_budget",
+     "line": 513
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "CanonicalSSFreeSupply",
@@ -71291,6 +71360,6 @@
    "hasReport": false
   }
  ],
- "total": 1049,
+ "total": 1050,
  "withReport": 167
 }
