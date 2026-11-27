@@ -2,7 +2,8 @@
 
 - **Date**: 2026-11-27
 - **Hypothesis Card**: [`docs/HYPOTHESIS_CARD_2026-11-27_EXPONENTIAL_CASCADE.md`](HYPOTHESIS_CARD_2026-11-27_EXPONENTIAL_CASCADE.md)
-- **Status**: **`E-786 PROVED-PAPER`** (human review pending; Lean formalization deferred)
+- **Status**: **`E-786 PROVED-LEAN`** (`Recaman/ExponentialHeightCascade.lean`, 0 vacuity flags, 0 unknowns; human review pending)
+- **Lean 4 Formalization**: [`Recaman/ExponentialHeightCascade.lean`](../Recaman/ExponentialHeightCascade.lean) (`cascade_lift_step`, `exponential_cascade_ratio_approx`, `exponential_actual_endn_lower_bound`, `no_subexponential_five_thirds_bound`)
 - **Reproducible Verification Script**: [`docs/data/depth_general_20261127/exponential_cascade_audit.py`](data/depth_general_20261127/exponential_cascade_audit.py)
 
 ## 1. Main Theorem

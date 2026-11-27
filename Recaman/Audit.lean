@@ -4504,3 +4504,8 @@ import Recaman
 #print axioms Recaman.SupplyExcursionSpacing.actual_floor_plus_four_three_spacing
 #print axioms Recaman.SupplyExcursionSpacing.dyadic_height_weighted_capacity
 #print axioms Recaman.SupplyExcursionSpacing.actual_height_exp_two_bound
+
+#print axioms Recaman.ExponentialHeightCascade.cascade_lift_step
+#print axioms Recaman.ExponentialHeightCascade.exponential_cascade_ratio_approx
+#print axioms Recaman.ExponentialHeightCascade.exponential_actual_endn_lower_bound
+#print axioms Recaman.ExponentialHeightCascade.no_subexponential_five_thirds_bound

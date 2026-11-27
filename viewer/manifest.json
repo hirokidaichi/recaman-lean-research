@@ -326,7 +326,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4506,
+   "lines": 4511,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -30503,6 +30503,79 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "ExponentialHeightCascade",
+   "lines": 1304,
+   "imports": [
+    "CrossBlockReuseUnbounded"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "saRep",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "padH",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "bankWord",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "cycleWord",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "liftWord",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "bankWord_length",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "cycleWord_length",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "liftWord_length",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "cascade_lift_step",
+     "line": 719
+    },
+    {
+     "kind": "theorem",
+     "name": "exponential_cascade_ratio_approx",
+     "line": 1120
+    },
+    {
+     "kind": "theorem",
+     "name": "exponential_actual_endn_lower_bound",
+     "line": 1158
+    },
+    {
+     "kind": "theorem",
+     "name": "no_subexponential_five_thirds_bound",
+     "line": 1235
+    }
+   ],
+   "theorems": 7,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "ExtendedHistoryBudgetClosure",
@@ -70957,6 +71030,6 @@
    "hasReport": false
   }
  ],
- "total": 1043,
+ "total": 1044,
  "withReport": 167
 }

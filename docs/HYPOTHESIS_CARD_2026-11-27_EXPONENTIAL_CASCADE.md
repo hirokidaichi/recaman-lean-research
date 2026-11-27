@@ -4,7 +4,7 @@
 - **Date**: 2026-11-27
 - **Parent Cycle**: `R-20261127-01`
 - **Track**: Depth-general actual-`EndN` height-growth lower bound (closing the polynomial-vs-exponential gap between `E-783` `Ω(H)` and `E-785` `O(2^H)` / `O(1.8067^H)`)
-- **Status**: **`PROVED-PAPER`** (`E-786`, exact recursive construction + Python literal actual-`EndN` & schedule verification; Lean formalization deferred)
+- **Status**: **`PROVED-LEAN`** (`E-786`, `Recaman/ExponentialHeightCascade.lean`, 0 vacuity flags, 0 unknowns; plus Python literal actual-`EndN` & schedule verification)
 
 ## 1. Exact Mathematical Claim
 
