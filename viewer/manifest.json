@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4533,
+   "lines": 4540,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -30594,6 +30594,49 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "ExcursionClimbSpacing",
+   "lines": 624,
+   "imports": [
+    "SupplyExcursionSpacing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_same_height_supply_aa_slots",
+     "line": 282
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_aa_spacing_budget",
+     "line": 486
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_min_level_budget",
+     "line": 534
+    },
+    {
+     "kind": "theorem",
+     "name": "as_plateau_no_overflow_budget",
+     "line": 550
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_plus_two_aa_budget",
+     "line": 589
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_plus_four_aa_budget",
+     "line": 614
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "ExponentialHeightCascade",
@@ -71179,6 +71222,6 @@
    "hasReport": false
   }
  ],
- "total": 1047,
+ "total": 1048,
  "withReport": 167
 }

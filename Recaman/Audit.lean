@@ -4531,3 +4531,10 @@ import Recaman
 #print axioms Recaman.CanonicalStepSpectrum.canonical_odd_even_neighbor
 #print axioms Recaman.CanonicalStepSpectrum.canonical_separated_set_clock_budget
 #print axioms Recaman.CanonicalStepSpectrum.canonical_distinct_sum_le_upperTri_top
+
+#print axioms Recaman.ExcursionClimbSpacing.actual_same_height_supply_aa_slots
+#print axioms Recaman.ExcursionClimbSpacing.same_height_supply_aa_spacing_budget
+#print axioms Recaman.ExcursionClimbSpacing.same_height_supply_min_level_budget
+#print axioms Recaman.ExcursionClimbSpacing.as_plateau_no_overflow_budget
+#print axioms Recaman.ExcursionClimbSpacing.floor_plus_two_aa_budget
+#print axioms Recaman.ExcursionClimbSpacing.actual_floor_plus_four_aa_budget
