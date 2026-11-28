@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4610,
+   "lines": 4619,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -45009,6 +45009,99 @@
    "hasReport": false
   },
   {
+   "name": "NumericStockStripPotential",
+   "lines": 834,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "seenCountIn",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "missingCountIn",
+     "line": 47
+    },
+    {
+     "kind": "def",
+     "name": "stockBelow",
+     "line": 51
+    },
+    {
+     "kind": "def",
+     "name": "floorP",
+     "line": 55
+    },
+    {
+     "kind": "def",
+     "name": "floorW",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "floorT",
+     "line": 63
+    },
+    {
+     "kind": "def",
+     "name": "IsLastFloorVisit",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "primitive_excursion_area_lower_bound",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_cut_stock_discount",
+     "line": 488
+    },
+    {
+     "kind": "theorem",
+     "name": "departure_strip_stock_transport",
+     "line": 528
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_W_recurrence",
+     "line": 601
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_T_recurrence",
+     "line": 618
+    },
+    {
+     "kind": "def",
+     "name": "sharpTState",
+     "line": 628
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_T_sharp",
+     "line": 634
+    },
+    {
+     "kind": "theorem",
+     "name": "iterated_floorW_envelope_beats_three_pow",
+     "line": 725
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_floor_potentials",
+     "line": 814
+    }
+   ],
+   "theorems": 8,
+   "defs": 8,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "OffsetHeadBound",
    "lines": 26,
    "imports": [
@@ -71815,6 +71908,6 @@
    "hasReport": false
   }
  ],
- "total": 1055,
+ "total": 1056,
  "withReport": 167
 }

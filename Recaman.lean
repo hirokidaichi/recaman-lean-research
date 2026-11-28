@@ -906,3 +906,4 @@ import Recaman.CoherentGreedyFreshness
 import Recaman.HeightConvolutionCapacity
 import Recaman.DynamicPredecessorObstruction
 import Recaman.NumericCandidateRankPotential
+import Recaman.NumericStockStripPotential
