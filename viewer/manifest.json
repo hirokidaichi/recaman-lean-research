@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4588,
+   "lines": 4598,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -29449,6 +29449,99 @@
    ],
    "theorems": 18,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "DynamicPredecessorObstruction",
+   "lines": 1328,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordSign",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_realizes_of_fresh",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_realizes_iff_fresh",
+     "line": 389
+    },
+    {
+     "kind": "def",
+     "name": "BlocksSPredecessor",
+     "line": 426
+    },
+    {
+     "kind": "def",
+     "name": "BlocksAPredecessorI",
+     "line": 431
+    },
+    {
+     "kind": "def",
+     "name": "BlocksAPredecessorII",
+     "line": 436
+    },
+    {
+     "kind": "theorem",
+     "name": "blocksSPredecessor_forbids_S_before",
+     "line": 490
+    },
+    {
+     "kind": "theorem",
+     "name": "blocksAPredecessor_forbids_A_before",
+     "line": 519
+    },
+    {
+     "kind": "theorem",
+     "name": "no_predecessor_forbids_nonzero_clock_replay",
+     "line": 559
+    },
+    {
+     "kind": "theorem",
+     "name": "no_predecessor_forbids_all_canonical_clocks",
+     "line": 576
+    },
+    {
+     "kind": "def",
+     "name": "e779Word",
+     "line": 598
+    },
+    {
+     "kind": "theorem",
+     "name": "e779Word_fresh",
+     "line": 865
+    },
+    {
+     "kind": "theorem",
+     "name": "e779Word_arbitrary_depth_dynamic_separation",
+     "line": 1135
+    },
+    {
+     "kind": "def",
+     "name": "initialSWitnessI",
+     "line": 1290
+    },
+    {
+     "kind": "def",
+     "name": "initialSWitnessII",
+     "line": 1296
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_dynamic_separation_witnesses",
+     "line": 1304
+    }
+   ],
+   "theorems": 9,
+   "defs": 7,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -71629,6 +71722,6 @@
    "hasReport": false
   }
  ],
- "total": 1053,
+ "total": 1054,
  "withReport": 167
 }
