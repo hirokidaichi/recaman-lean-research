@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4627,
+   "lines": 4634,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -28491,6 +28491,120 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "DeltaTwoCoherentCascade",
+   "lines": 4691,
+   "imports": [
+    "DynamicPredecessorObstruction",
+    "ExponentialHeightCascade"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordPot",
+     "line": 38
+    },
+    {
+     "kind": "def",
+     "name": "dphiW",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "FreshWord",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "VisitsAt",
+     "line": 50
+    },
+    {
+     "kind": "def",
+     "name": "CandAt",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "KeyAt",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "SLandAt",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_append",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "keyAt_append",
+     "line": 322
+    },
+    {
+     "kind": "theorem",
+     "name": "sLandAt_append",
+     "line": 366
+    },
+    {
+     "kind": "theorem",
+     "name": "keyAt_repeatWord",
+     "line": 411
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_repeatWord",
+     "line": 445
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_asRep_append_saRep",
+     "line": 682
+    },
+    {
+     "kind": "def",
+     "name": "elevateWord",
+     "line": 697
+    },
+    {
+     "kind": "def",
+     "name": "archWord",
+     "line": 1165
+    },
+    {
+     "kind": "def",
+     "name": "v0Word",
+     "line": 1169
+    },
+    {
+     "kind": "structure",
+     "name": "StageInv",
+     "line": 2208
+    },
+    {
+     "kind": "theorem",
+     "name": "delta2_coherent_cascade_word_ratio",
+     "line": 4444
+    },
+    {
+     "kind": "theorem",
+     "name": "delta2_coherent_cascade_replay_stage",
+     "line": 4505
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_delta2_exponential_lower_bound",
+     "line": 4578
+    }
+   ],
+   "theorems": 9,
+   "defs": 11,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -71972,6 +72086,6 @@
    "hasReport": false
   }
  ],
- "total": 1057,
+ "total": 1058,
  "withReport": 167
 }

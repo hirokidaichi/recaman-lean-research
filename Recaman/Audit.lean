@@ -4625,3 +4625,10 @@ import Recaman
 #print axioms Recaman.FreshSourceHitSpacing.original_win_source_clock_capacity
 #print axioms Recaman.FreshSourceHitSpacing.raw_nonfresh_counterexample_beats_fresh_span
 #print axioms Recaman.FreshSourceHitSpacing.canonical_orbit_fresh_source_spacing
+
+#print axioms Recaman.DeltaTwoCoherentCascade.fresh_append
+#print axioms Recaman.DeltaTwoCoherentCascade.fresh_repeatWord
+#print axioms Recaman.DeltaTwoCoherentCascade.fresh_asRep_append_saRep
+#print axioms Recaman.DeltaTwoCoherentCascade.delta2_coherent_cascade_word_ratio
+#print axioms Recaman.DeltaTwoCoherentCascade.delta2_coherent_cascade_replay_stage
+#print axioms Recaman.DeltaTwoCoherentCascade.seeded_replay_delta2_exponential_lower_bound
