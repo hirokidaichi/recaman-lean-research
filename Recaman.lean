@@ -902,3 +902,4 @@ import Recaman.ExcursionClimbSpacing
 import Recaman.JointHeightSpacingCapacity
 import Recaman.CanonicalPathInvariants
 import Recaman.ExactFiveThirdsCapacity
+import Recaman.CoherentGreedyFreshness

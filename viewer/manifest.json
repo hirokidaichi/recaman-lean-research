@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4567,
+   "lines": 4577,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -4178,6 +4178,126 @@
    "theorems": 3,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "CoherentGreedyFreshness",
+   "lines": 658,
+   "imports": [
+    "SeededReplay",
+    "FloorSupplyPotential",
+    "CrossBlockReuseUnbounded"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "replaySign",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "canonicalOrbitSign",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "TypeIFresh",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "TypeIIFresh",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "replay_value_eq_abel_potential",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_typeIFresh",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_typeIIFresh",
+     "line": 162
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_greedyFresh",
+     "line": 217
+    },
+    {
+     "kind": "def",
+     "name": "wordHeight",
+     "line": 238
+    },
+    {
+     "kind": "def",
+     "name": "wordRelPot",
+     "line": 242
+    },
+    {
+     "kind": "def",
+     "name": "wordPotDrift",
+     "line": 246
+    },
+    {
+     "kind": "def",
+     "name": "wordPotMinUpTo",
+     "line": 250
+    },
+    {
+     "kind": "def",
+     "name": "wordPotMaxUpTo",
+     "line": 255
+    },
+    {
+     "kind": "def",
+     "name": "wordPotSpan",
+     "line": 260
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandingIndices",
+     "line": 264
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandings",
+     "line": 268
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIFresh_periodic_s_count_le_drift",
+     "line": 462
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_s_count_le_drift",
+     "line": 603
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_zero_drift_repeat_bound",
+     "line": 615
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_unit_drift_at_most_one_s_landing",
+     "line": 633
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_zero_drift_forbids_long_repeat",
+     "line": 649
+    }
+   ],
+   "theorems": 9,
+   "defs": 12,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -71414,6 +71534,6 @@
    "hasReport": false
   }
  ],
- "total": 1051,
+ "total": 1052,
  "withReport": 167
 }
