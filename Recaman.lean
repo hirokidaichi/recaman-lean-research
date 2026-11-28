@@ -905,3 +905,4 @@ import Recaman.ExactFiveThirdsCapacity
 import Recaman.CoherentGreedyFreshness
 import Recaman.HeightConvolutionCapacity
 import Recaman.DynamicPredecessorObstruction
+import Recaman.NumericCandidateRankPotential

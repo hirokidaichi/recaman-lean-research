@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4598,
+   "lines": 4610,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -44916,6 +44916,99 @@
    "hasReport": true
   },
   {
+   "name": "NumericCandidateRankPotential",
+   "lines": 1096,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "replayCand",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "bandRank",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "sharpFloorState",
+     "line": 53
+    },
+    {
+     "kind": "def",
+     "name": "sharpBandState",
+     "line": 57
+    },
+    {
+     "kind": "def",
+     "name": "bandSelectedClocks",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_area_bridge_identity",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "small_candidate_permanent_floor",
+     "line": 212
+    },
+    {
+     "kind": "theorem",
+     "name": "small_candidate_floor_sharp",
+     "line": 301
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_rank_strict_mono",
+     "line": 378
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_fixed_height_sharp",
+     "line": 450
+    },
+    {
+     "kind": "theorem",
+     "name": "same_candidate_same_height_fresh_wallet",
+     "line": 734
+    },
+    {
+     "kind": "theorem",
+     "name": "same_candidate_late_strict_ascent",
+     "line": 811
+    },
+    {
+     "kind": "theorem",
+     "name": "original_win_source_finite_capacity",
+     "line": 852
+    },
+    {
+     "kind": "theorem",
+     "name": "replay_fw_lower_bound",
+     "line": 905
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_finite_horizon_count_le",
+     "line": 966
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_candidate_band_bounds",
+     "line": 1051
+    }
+   ],
+   "theorems": 11,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "OffsetHeadBound",
    "lines": 26,
    "imports": [
@@ -71722,6 +71815,6 @@
    "hasReport": false
   }
  ],
- "total": 1054,
+ "total": 1055,
  "withReport": 167
 }
