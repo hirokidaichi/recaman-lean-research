@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4634,
+   "lines": 4644,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -49452,6 +49452,115 @@
    "hasReport": false
   },
   {
+   "name": "PeriodicGreedyDriftCapacity",
+   "lines": 1165,
+   "imports": [
+    "CoherentGreedyFreshness",
+    "ExactFiveThirdsCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordLevelAdditionsUpTo",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "wordLevelAdditions",
+     "line": 65
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandingsUpTo",
+     "line": 69
+    },
+    {
+     "kind": "def",
+     "name": "wordLowWeightsUpTo",
+     "line": 75
+    },
+    {
+     "kind": "def",
+     "name": "wordLowWeights",
+     "line": 81
+    },
+    {
+     "kind": "def",
+     "name": "wordUpperExcessUpTo",
+     "line": 85
+    },
+    {
+     "kind": "def",
+     "name": "wordUpperExcess",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "balanced_word_sLandings_eq_levelAdditions",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "balanced_word_area_potential_identity",
+     "line": 291
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIFresh_periodic_neg_drift_capacity",
+     "line": 336
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_capacity",
+     "line": 372
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_exact_capacity",
+     "line": 388
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_periodic_neg_drift_exact_capacity",
+     "line": 409
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIIFresh_periodic_residue_order",
+     "line": 601
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_typeIIFresh_residue_order",
+     "line": 721
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_as_run_bound",
+     "line": 764
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_pos_drift_top_collapse",
+     "line": 997
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_top_golden_capacity",
+     "line": 1073
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_periodic_top_golden_capacity",
+     "line": 1147
+    }
+   ],
+   "theorems": 12,
+   "defs": 7,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "PeriodicHallReduction",
    "lines": 227,
    "imports": [
@@ -72086,6 +72195,6 @@
    "hasReport": false
   }
  ],
- "total": 1058,
+ "total": 1059,
  "withReport": 167
 }
