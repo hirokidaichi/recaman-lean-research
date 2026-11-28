@@ -325,8 +325,56 @@
    "hasReport": true
   },
   {
+   "name": "ArbitraryDepthFreeGap",
+   "lines": 580,
+   "imports": [
+    "SupplyExcursionSpacing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_two_dyadic_free",
+     "line": 333
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_le_pow_two_free",
+     "line": 355
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_five_three_spacing",
+     "line": 385
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_target_height_free_gap_square",
+     "line": 481
+    },
+    {
+     "kind": "theorem",
+     "name": "arbitrary_target_height_free_gap",
+     "line": 494
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_arbitrary_depth_free_gap_profile",
+     "line": 511
+    },
+    {
+     "kind": "theorem",
+     "name": "positive_depth_seven_counter_profile",
+     "line": 547
+    }
+   ],
+   "theorems": 7,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "Audit",
-   "lines": 4488,
+   "lines": 4644,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -3002,6 +3050,65 @@
    "hasReport": true
   },
   {
+   "name": "CanonicalGapCapacity",
+   "lines": 217,
+   "imports": [
+    "OrbitBounds",
+    "History"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "a_add_upperTri_mono",
+     "line": 29
+    },
+    {
+     "kind": "theorem",
+     "name": "a_le_a_add_upperTri_diff",
+     "line": 45
+    },
+    {
+     "kind": "theorem",
+     "name": "walk_peak_le_upperTri",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_prefix_trapped",
+     "line": 70
+    },
+    {
+     "kind": "theorem",
+     "name": "no_empty_gap_gt_clock",
+     "line": 92
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_tail_peak_le",
+     "line": 102
+    },
+    {
+     "kind": "theorem",
+     "name": "empty_gap_distinct_tail_count_le",
+     "line": 140
+    },
+    {
+     "kind": "def",
+     "name": "GapChain",
+     "line": 165
+    },
+    {
+     "kind": "theorem",
+     "name": "multi_gap_rank_bound",
+     "line": 189
+    }
+   ],
+   "theorems": 8,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "CanonicalGrowthRecovery",
    "lines": 66,
    "imports": [
@@ -3302,6 +3409,75 @@
    "hasReport": true
   },
   {
+   "name": "CanonicalPathInvariants",
+   "lines": 688,
+   "imports": [
+    "CanonicalStepSpectrum",
+    "SubtractionLedger"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "stepDist",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "evenClockCount",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "oddClockCount",
+     "line": 53
+    },
+    {
+     "kind": "theorem",
+     "name": "subSum_add_upperTri_complement_le",
+     "line": 167
+    },
+    {
+     "kind": "theorem",
+     "name": "subCount_succ_le_cover_length",
+     "line": 244
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_distinct_cover_quadratic_bound",
+     "line": 260
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_even_visit_count_le",
+     "line": 274
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_odd_visit_count_le",
+     "line": 306
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_cut_crossing_step",
+     "line": 341
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_interior_cluster_entry_exit_span",
+     "line": 364
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_disjoint_clusters_clock_budget",
+     "line": 513
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "CanonicalSSFreeSupply",
    "lines": 84,
    "imports": [
@@ -3338,6 +3514,49 @@
      "kind": "theorem",
      "name": "canonical_noSS_iff_clean",
      "line": 76
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "CanonicalStepSpectrum",
+   "lines": 400,
+   "imports": [
+    "CanonicalGapCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "canonical_step_difference_realized",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_consecutive_incident_steps",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_odd_even_neighbor",
+     "line": 100
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_separated_set_clock_budget",
+     "line": 178
+    },
+    {
+     "kind": "def",
+     "name": "topUpperTriSum",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_distinct_sum_le_upperTri_top",
+     "line": 373
     }
    ],
    "theorems": 5,
@@ -3962,6 +4181,126 @@
    "hasReport": false
   },
   {
+   "name": "CoherentGreedyFreshness",
+   "lines": 658,
+   "imports": [
+    "SeededReplay",
+    "FloorSupplyPotential",
+    "CrossBlockReuseUnbounded"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "replaySign",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "canonicalOrbitSign",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "TypeIFresh",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "TypeIIFresh",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "replay_value_eq_abel_potential",
+     "line": 90
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_typeIFresh",
+     "line": 133
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_typeIIFresh",
+     "line": 162
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_greedyFresh",
+     "line": 217
+    },
+    {
+     "kind": "def",
+     "name": "wordHeight",
+     "line": 238
+    },
+    {
+     "kind": "def",
+     "name": "wordRelPot",
+     "line": 242
+    },
+    {
+     "kind": "def",
+     "name": "wordPotDrift",
+     "line": 246
+    },
+    {
+     "kind": "def",
+     "name": "wordPotMinUpTo",
+     "line": 250
+    },
+    {
+     "kind": "def",
+     "name": "wordPotMaxUpTo",
+     "line": 255
+    },
+    {
+     "kind": "def",
+     "name": "wordPotSpan",
+     "line": 260
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandingIndices",
+     "line": 264
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandings",
+     "line": 268
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIFresh_periodic_s_count_le_drift",
+     "line": 462
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_s_count_le_drift",
+     "line": 603
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_zero_drift_repeat_bound",
+     "line": 615
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_unit_drift_at_most_one_s_landing",
+     "line": 633
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_zero_drift_forbids_long_repeat",
+     "line": 649
+    }
+   ],
+   "theorems": 9,
+   "defs": 12,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "CombExit",
    "lines": 72,
    "imports": [
@@ -4511,6 +4850,169 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "CrossBlockReuseUnbounded",
+   "lines": 1002,
+   "imports": [
+    "AdditionRankSlack"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "asRep",
+     "line": 29
+    },
+    {
+     "kind": "def",
+     "name": "stageWord",
+     "line": 33
+    },
+    {
+     "kind": "def",
+     "name": "stagedBlock",
+     "line": 36
+    },
+    {
+     "kind": "def",
+     "name": "repeatWord",
+     "line": 39
+    },
+    {
+     "kind": "def",
+     "name": "MatchesAt",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "InternalSupplied",
+     "line": 47
+    },
+    {
+     "kind": "def",
+     "name": "ExclusiveOldSupplied",
+     "line": 51
+    },
+    {
+     "kind": "theorem",
+     "name": "additions_partition_after_cut",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "Ar_add",
+     "line": 175
+    },
+    {
+     "kind": "def",
+     "name": "famH",
+     "line": 301
+    },
+    {
+     "kind": "def",
+     "name": "famA",
+     "line": 302
+    },
+    {
+     "kind": "def",
+     "name": "famBank",
+     "line": 303
+    },
+    {
+     "kind": "def",
+     "name": "famLift",
+     "line": 304
+    },
+    {
+     "kind": "def",
+     "name": "bankStages",
+     "line": 306
+    },
+    {
+     "kind": "def",
+     "name": "repeatStages",
+     "line": 309
+    },
+    {
+     "kind": "def",
+     "name": "bankBlock",
+     "line": 312
+    },
+    {
+     "kind": "def",
+     "name": "repeatBlock",
+     "line": 313
+    },
+    {
+     "kind": "def",
+     "name": "familyTail",
+     "line": 315
+    },
+    {
+     "kind": "def",
+     "name": "familyWord",
+     "line": 319
+    },
+    {
+     "kind": "theorem",
+     "name": "bankBlock_eq",
+     "line": 322
+    },
+    {
+     "kind": "theorem",
+     "name": "repeatBlock_eq",
+     "line": 334
+    },
+    {
+     "kind": "theorem",
+     "name": "bankBlock_length",
+     "line": 345
+    },
+    {
+     "kind": "theorem",
+     "name": "repeatBlock_length",
+     "line": 354
+    },
+    {
+     "kind": "def",
+     "name": "bankSupplierClock",
+     "line": 484
+    },
+    {
+     "kind": "def",
+     "name": "repeatTargetClock",
+     "line": 488
+    },
+    {
+     "kind": "theorem",
+     "name": "cross_block_reuse_counts",
+     "line": 770
+    },
+    {
+     "kind": "theorem",
+     "name": "no_linear_cross_block_capacity",
+     "line": 825
+    },
+    {
+     "kind": "def",
+     "name": "minCounterTail",
+     "line": 876
+    },
+    {
+     "kind": "def",
+     "name": "minCounterWord",
+     "line": 879
+    },
+    {
+     "kind": "theorem",
+     "name": "h20261126_two_block_counter",
+     "line": 882
+    }
+   ],
+   "theorems": 9,
+   "defs": 21,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -27992,6 +28494,120 @@
    "hasReport": false
   },
   {
+   "name": "DeltaTwoCoherentCascade",
+   "lines": 4691,
+   "imports": [
+    "DynamicPredecessorObstruction",
+    "ExponentialHeightCascade"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordPot",
+     "line": 38
+    },
+    {
+     "kind": "def",
+     "name": "dphiW",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "FreshWord",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "VisitsAt",
+     "line": 50
+    },
+    {
+     "kind": "def",
+     "name": "CandAt",
+     "line": 54
+    },
+    {
+     "kind": "def",
+     "name": "KeyAt",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "SLandAt",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_append",
+     "line": 166
+    },
+    {
+     "kind": "theorem",
+     "name": "keyAt_append",
+     "line": 322
+    },
+    {
+     "kind": "theorem",
+     "name": "sLandAt_append",
+     "line": 366
+    },
+    {
+     "kind": "theorem",
+     "name": "keyAt_repeatWord",
+     "line": 411
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_repeatWord",
+     "line": 445
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_asRep_append_saRep",
+     "line": 682
+    },
+    {
+     "kind": "def",
+     "name": "elevateWord",
+     "line": 697
+    },
+    {
+     "kind": "def",
+     "name": "archWord",
+     "line": 1165
+    },
+    {
+     "kind": "def",
+     "name": "v0Word",
+     "line": 1169
+    },
+    {
+     "kind": "structure",
+     "name": "StageInv",
+     "line": 2208
+    },
+    {
+     "kind": "theorem",
+     "name": "delta2_coherent_cascade_word_ratio",
+     "line": 4444
+    },
+    {
+     "kind": "theorem",
+     "name": "delta2_coherent_cascade_replay_stage",
+     "line": 4505
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_delta2_exponential_lower_bound",
+     "line": 4578
+    }
+   ],
+   "theorems": 9,
+   "defs": 11,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "DemandProvenanceCounterexample",
    "lines": 88,
    "imports": [
@@ -28947,6 +29563,99 @@
    ],
    "theorems": 18,
    "defs": 1,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "DynamicPredecessorObstruction",
+   "lines": 1328,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordSign",
+     "line": 44
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_realizes_of_fresh",
+     "line": 158
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_realizes_iff_fresh",
+     "line": 389
+    },
+    {
+     "kind": "def",
+     "name": "BlocksSPredecessor",
+     "line": 426
+    },
+    {
+     "kind": "def",
+     "name": "BlocksAPredecessorI",
+     "line": 431
+    },
+    {
+     "kind": "def",
+     "name": "BlocksAPredecessorII",
+     "line": 436
+    },
+    {
+     "kind": "theorem",
+     "name": "blocksSPredecessor_forbids_S_before",
+     "line": 490
+    },
+    {
+     "kind": "theorem",
+     "name": "blocksAPredecessor_forbids_A_before",
+     "line": 519
+    },
+    {
+     "kind": "theorem",
+     "name": "no_predecessor_forbids_nonzero_clock_replay",
+     "line": 559
+    },
+    {
+     "kind": "theorem",
+     "name": "no_predecessor_forbids_all_canonical_clocks",
+     "line": 576
+    },
+    {
+     "kind": "def",
+     "name": "e779Word",
+     "line": 598
+    },
+    {
+     "kind": "theorem",
+     "name": "e779Word_fresh",
+     "line": 865
+    },
+    {
+     "kind": "theorem",
+     "name": "e779Word_arbitrary_depth_dynamic_separation",
+     "line": 1135
+    },
+    {
+     "kind": "def",
+     "name": "initialSWitnessI",
+     "line": 1290
+    },
+    {
+     "kind": "def",
+     "name": "initialSWitnessII",
+     "line": 1296
+    },
+    {
+     "kind": "theorem",
+     "name": "initial_S_dynamic_separation_witnesses",
+     "line": 1304
+    }
+   ],
+   "theorems": 9,
+   "defs": 7,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -30158,6 +30867,60 @@
    "hasReport": false
   },
   {
+   "name": "ExactFiveThirdsCapacity",
+   "lines": 1756,
+   "imports": [
+    "ExcursionClimbSpacing",
+    "SharpThreeSpacingCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_double_ascent_spacing_slots",
+     "line": 542
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_double_ascent_spacing_budget",
+     "line": 1066
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_eight_slot_double_ascent_budget",
+     "line": 1209
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_triangular_capacity",
+     "line": 1586
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_level_bound",
+     "line": 1604
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_strip_additions_bound",
+     "line": 1640
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_low_weights_bound",
+     "line": 1682
+    },
+    {
+     "kind": "theorem",
+     "name": "exact_five_thirds_free_gap_square",
+     "line": 1743
+    }
+   ],
+   "theorems": 8,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ExactOrbitNonperiodicity",
    "lines": 149,
    "imports": [
@@ -30281,6 +31044,122 @@
    "defs": 0,
    "hasEnglishDocstring": false,
    "hasReport": true
+  },
+  {
+   "name": "ExcursionClimbSpacing",
+   "lines": 624,
+   "imports": [
+    "SupplyExcursionSpacing"
+   ],
+   "decls": [
+    {
+     "kind": "theorem",
+     "name": "actual_same_height_supply_aa_slots",
+     "line": 282
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_aa_spacing_budget",
+     "line": 486
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_min_level_budget",
+     "line": 534
+    },
+    {
+     "kind": "theorem",
+     "name": "as_plateau_no_overflow_budget",
+     "line": 550
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_plus_two_aa_budget",
+     "line": 589
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_plus_four_aa_budget",
+     "line": 614
+    }
+   ],
+   "theorems": 6,
+   "defs": 0,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "ExponentialHeightCascade",
+   "lines": 1304,
+   "imports": [
+    "CrossBlockReuseUnbounded"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "saRep",
+     "line": 32
+    },
+    {
+     "kind": "def",
+     "name": "padH",
+     "line": 41
+    },
+    {
+     "kind": "def",
+     "name": "bankWord",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "cycleWord",
+     "line": 46
+    },
+    {
+     "kind": "def",
+     "name": "liftWord",
+     "line": 49
+    },
+    {
+     "kind": "theorem",
+     "name": "bankWord_length",
+     "line": 52
+    },
+    {
+     "kind": "theorem",
+     "name": "cycleWord_length",
+     "line": 59
+    },
+    {
+     "kind": "theorem",
+     "name": "liftWord_length",
+     "line": 65
+    },
+    {
+     "kind": "theorem",
+     "name": "cascade_lift_step",
+     "line": 719
+    },
+    {
+     "kind": "theorem",
+     "name": "exponential_cascade_ratio_approx",
+     "line": 1120
+    },
+    {
+     "kind": "theorem",
+     "name": "exponential_actual_endn_lower_bound",
+     "line": 1158
+    },
+    {
+     "kind": "theorem",
+     "name": "no_subexponential_five_thirds_bound",
+     "line": 1235
+    }
+   ],
+   "theorems": 7,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
   },
   {
    "name": "ExtendedHistoryBudgetClosure",
@@ -33127,6 +34006,70 @@
    "hasReport": false
   },
   {
+   "name": "FreshSourceHitSpacing",
+   "lines": 447,
+   "imports": [
+    "CommonSourceHitSpacing",
+    "NumericCandidateRankPotential"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "bridgeZ",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "rawNonFreshWord",
+     "line": 52
+    },
+    {
+     "kind": "def",
+     "name": "rawNonFreshSign",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_eight_bridge_unique_Z",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "consecutive_gap_eight_forbidden_on_replay",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "common_source_two_step_gap_ge_twenty",
+     "line": 248
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_common_source_hit_span",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "original_win_source_clock_capacity",
+     "line": 331
+    },
+    {
+     "kind": "theorem",
+     "name": "raw_nonfresh_counterexample_beats_fresh_span",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_fresh_source_spacing",
+     "line": 422
+    }
+   ],
+   "theorems": 7,
+   "defs": 3,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "FullDepthCommonOldContext",
    "lines": 118,
    "imports": [
@@ -33939,6 +34882,101 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeightConvolutionCapacity",
+   "lines": 1448,
+   "imports": [
+    "ExactFiveThirdsCapacity",
+    "ExcursionClimbSpacing",
+    "ArbitraryDepthFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "levelSumH",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "levelWeightSumH",
+     "line": 53
+    },
+    {
+     "kind": "def",
+     "name": "triSumH",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "tailSumH",
+     "line": 67
+    },
+    {
+     "kind": "def",
+     "name": "convFree2",
+     "line": 72
+    },
+    {
+     "kind": "def",
+     "name": "convFree3",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "convFree_triangular_capacity",
+     "line": 836
+    },
+    {
+     "kind": "theorem",
+     "name": "low_high_free_split_triangular_capacity",
+     "line": 847
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_strip_convolution",
+     "line": 861
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_strip_capacity",
+     "line": 921
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_low_weights_bound",
+     "line": 1048
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_free_gap_square",
+     "line": 1208
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_seven_low_weights",
+     "line": 1227
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_seven_counter_profile",
+     "line": 1283
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_eight_low_weights",
+     "line": 1313
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_eight_counter_profile",
+     "line": 1418
+    }
+   ],
+   "theorems": 10,
+   "defs": 6,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -35506,6 +36544,75 @@
    "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "JointHeightSpacingCapacity",
+   "lines": 1591,
+   "imports": [
+    "ExcursionClimbSpacing",
+    "SharpThreeSpacingCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "jointK",
+     "line": 42
+    },
+    {
+     "kind": "def",
+     "name": "jointL",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "jointM",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_joint_height_supply_aa_slots",
+     "line": 428
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_height_supply_aa_spacing_budget",
+     "line": 881
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_height_weighted_capacity",
+     "line": 1421
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_height_exp_bound",
+     "line": 1458
+    },
+    {
+     "kind": "theorem",
+     "name": "joint_rational_low_weights_bound",
+     "line": 1478
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_nine_fifths",
+     "line": 1541
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_sixteen_ninths",
+     "line": 1558
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_190_107",
+     "line": 1577
+    }
+   ],
+   "theorems": 8,
+   "defs": 3,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -43987,6 +45094,192 @@
    "hasReport": true
   },
   {
+   "name": "NumericCandidateRankPotential",
+   "lines": 1096,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "replayCand",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "bandRank",
+     "line": 49
+    },
+    {
+     "kind": "def",
+     "name": "sharpFloorState",
+     "line": 53
+    },
+    {
+     "kind": "def",
+     "name": "sharpBandState",
+     "line": 57
+    },
+    {
+     "kind": "def",
+     "name": "bandSelectedClocks",
+     "line": 62
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_area_bridge_identity",
+     "line": 195
+    },
+    {
+     "kind": "theorem",
+     "name": "small_candidate_permanent_floor",
+     "line": 212
+    },
+    {
+     "kind": "theorem",
+     "name": "small_candidate_floor_sharp",
+     "line": 301
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_rank_strict_mono",
+     "line": 378
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_fixed_height_sharp",
+     "line": 450
+    },
+    {
+     "kind": "theorem",
+     "name": "same_candidate_same_height_fresh_wallet",
+     "line": 734
+    },
+    {
+     "kind": "theorem",
+     "name": "same_candidate_late_strict_ascent",
+     "line": 811
+    },
+    {
+     "kind": "theorem",
+     "name": "original_win_source_finite_capacity",
+     "line": 852
+    },
+    {
+     "kind": "theorem",
+     "name": "replay_fw_lower_bound",
+     "line": 905
+    },
+    {
+     "kind": "theorem",
+     "name": "candidate_band_finite_horizon_count_le",
+     "line": 966
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_candidate_band_bounds",
+     "line": 1051
+    }
+   ],
+   "theorems": 11,
+   "defs": 5,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "NumericStockStripPotential",
+   "lines": 834,
+   "imports": [
+    "CoherentGreedyFreshness"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "seenCountIn",
+     "line": 43
+    },
+    {
+     "kind": "def",
+     "name": "missingCountIn",
+     "line": 47
+    },
+    {
+     "kind": "def",
+     "name": "stockBelow",
+     "line": 51
+    },
+    {
+     "kind": "def",
+     "name": "floorP",
+     "line": 55
+    },
+    {
+     "kind": "def",
+     "name": "floorW",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "floorT",
+     "line": 63
+    },
+    {
+     "kind": "def",
+     "name": "IsLastFloorVisit",
+     "line": 69
+    },
+    {
+     "kind": "theorem",
+     "name": "primitive_excursion_area_lower_bound",
+     "line": 249
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_cut_stock_discount",
+     "line": 488
+    },
+    {
+     "kind": "theorem",
+     "name": "departure_strip_stock_transport",
+     "line": 528
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_W_recurrence",
+     "line": 601
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_T_recurrence",
+     "line": 618
+    },
+    {
+     "kind": "def",
+     "name": "sharpTState",
+     "line": 628
+    },
+    {
+     "kind": "theorem",
+     "name": "floor_potential_T_sharp",
+     "line": 634
+    },
+    {
+     "kind": "theorem",
+     "name": "iterated_floorW_envelope_beats_three_pow",
+     "line": 725
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_floor_potentials",
+     "line": 814
+    }
+   ],
+   "theorems": 8,
+   "defs": 8,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "OffsetHeadBound",
    "lines": 26,
    "imports": [
@@ -48155,6 +49448,115 @@
    ],
    "theorems": 13,
    "defs": 8,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
+   "name": "PeriodicGreedyDriftCapacity",
+   "lines": 1165,
+   "imports": [
+    "CoherentGreedyFreshness",
+    "ExactFiveThirdsCapacity"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "wordLevelAdditionsUpTo",
+     "line": 59
+    },
+    {
+     "kind": "def",
+     "name": "wordLevelAdditions",
+     "line": 65
+    },
+    {
+     "kind": "def",
+     "name": "wordSLandingsUpTo",
+     "line": 69
+    },
+    {
+     "kind": "def",
+     "name": "wordLowWeightsUpTo",
+     "line": 75
+    },
+    {
+     "kind": "def",
+     "name": "wordLowWeights",
+     "line": 81
+    },
+    {
+     "kind": "def",
+     "name": "wordUpperExcessUpTo",
+     "line": 85
+    },
+    {
+     "kind": "def",
+     "name": "wordUpperExcess",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "balanced_word_sLandings_eq_levelAdditions",
+     "line": 217
+    },
+    {
+     "kind": "theorem",
+     "name": "balanced_word_area_potential_identity",
+     "line": 291
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIFresh_periodic_neg_drift_capacity",
+     "line": 336
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_capacity",
+     "line": 372
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_exact_capacity",
+     "line": 388
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_periodic_neg_drift_exact_capacity",
+     "line": 409
+    },
+    {
+     "kind": "theorem",
+     "name": "typeIIFresh_periodic_residue_order",
+     "line": 601
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_typeIIFresh_residue_order",
+     "line": 721
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_neg_drift_as_run_bound",
+     "line": 764
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_pos_drift_top_collapse",
+     "line": 997
+    },
+    {
+     "kind": "theorem",
+     "name": "seeded_replay_periodic_top_golden_capacity",
+     "line": 1073
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_periodic_top_golden_capacity",
+     "line": 1147
+    }
+   ],
+   "theorems": 12,
+   "defs": 7,
    "hasEnglishDocstring": true,
    "hasReport": false
   },
@@ -58994,6 +60396,64 @@
    "hasReport": true
   },
   {
+   "name": "SharpThreeSpacingCapacity",
+   "lines": 735,
+   "imports": [
+    "ArbitraryDepthFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "coneK",
+     "line": 45
+    },
+    {
+     "kind": "def",
+     "name": "coneM",
+     "line": 48
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_height_weighted_capacity",
+     "line": 517
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_height_exp_bound",
+     "line": 552
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_low_weights_bound",
+     "line": 577
+    },
+    {
+     "kind": "theorem",
+     "name": "rational_arbitrary_target_free_gap_square",
+     "line": 671
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_twenty_elevenths",
+     "line": 690
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_199_110",
+     "line": 708
+    },
+    {
+     "kind": "theorem",
+     "name": "low_weights_exp_199_110",
+     "line": 722
+    }
+   ],
+   "theorems": 7,
+   "defs": 2,
+   "hasEnglishDocstring": true,
+   "hasReport": false
+  },
+  {
    "name": "ShortBlockerRigidity",
    "lines": 135,
    "imports": [
@@ -61937,6 +63397,49 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "SupplyExcursionSpacing",
+   "lines": 822,
+   "imports": [
+    "SupplyHeightWeightBudget"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "lastAbove",
+     "line": 63
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_same_height_supply_three_slots",
+     "line": 231
+    },
+    {
+     "kind": "theorem",
+     "name": "same_height_supply_three_spacing_budget",
+     "line": 426
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_floor_plus_four_three_spacing",
+     "line": 492
+    },
+    {
+     "kind": "theorem",
+     "name": "dyadic_height_weighted_capacity",
+     "line": 770
+    },
+    {
+     "kind": "theorem",
+     "name": "actual_height_exp_two_bound",
+     "line": 799
+    }
+   ],
+   "theorems": 5,
+   "defs": 1,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -70692,6 +72195,6 @@
    "hasReport": false
   }
  ],
- "total": 1040,
+ "total": 1059,
  "withReport": 167
 }
