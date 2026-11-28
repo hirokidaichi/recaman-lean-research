@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4577,
+   "lines": 4588,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -34611,6 +34611,101 @@
    "theorems": 2,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "HeightConvolutionCapacity",
+   "lines": 1448,
+   "imports": [
+    "ExactFiveThirdsCapacity",
+    "ExcursionClimbSpacing",
+    "ArbitraryDepthFreeGap"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "levelSumH",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "levelWeightSumH",
+     "line": 53
+    },
+    {
+     "kind": "def",
+     "name": "triSumH",
+     "line": 58
+    },
+    {
+     "kind": "def",
+     "name": "tailSumH",
+     "line": 67
+    },
+    {
+     "kind": "def",
+     "name": "convFree2",
+     "line": 72
+    },
+    {
+     "kind": "def",
+     "name": "convFree3",
+     "line": 78
+    },
+    {
+     "kind": "theorem",
+     "name": "convFree_triangular_capacity",
+     "line": 836
+    },
+    {
+     "kind": "theorem",
+     "name": "low_high_free_split_triangular_capacity",
+     "line": 847
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_strip_convolution",
+     "line": 861
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_strip_capacity",
+     "line": 921
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_low_weights_bound",
+     "line": 1048
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_five_thirds_free_gap_square",
+     "line": 1208
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_seven_low_weights",
+     "line": 1227
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_seven_counter_profile",
+     "line": 1283
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_eight_low_weights",
+     "line": 1313
+    },
+    {
+     "kind": "theorem",
+     "name": "sharp_depth_eight_counter_profile",
+     "line": 1418
+    }
+   ],
+   "theorems": 10,
+   "defs": 6,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -71534,6 +71629,6 @@
    "hasReport": false
   }
  ],
- "total": 1052,
+ "total": 1053,
  "withReport": 167
 }
