@@ -4617,3 +4617,11 @@ import Recaman
 #print axioms Recaman.NumericStockStripPotential.floor_potential_T_sharp
 #print axioms Recaman.NumericStockStripPotential.iterated_floorW_envelope_beats_three_pow
 #print axioms Recaman.NumericStockStripPotential.canonical_orbit_floor_potentials
+
+#print axioms Recaman.FreshSourceHitSpacing.gap_eight_bridge_unique_Z
+#print axioms Recaman.FreshSourceHitSpacing.consecutive_gap_eight_forbidden_on_replay
+#print axioms Recaman.FreshSourceHitSpacing.common_source_two_step_gap_ge_twenty
+#print axioms Recaman.FreshSourceHitSpacing.fresh_common_source_hit_span
+#print axioms Recaman.FreshSourceHitSpacing.original_win_source_clock_capacity
+#print axioms Recaman.FreshSourceHitSpacing.raw_nonfresh_counterexample_beats_fresh_span
+#print axioms Recaman.FreshSourceHitSpacing.canonical_orbit_fresh_source_spacing

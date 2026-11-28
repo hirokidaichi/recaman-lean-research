@@ -374,7 +374,7 @@
   },
   {
    "name": "Audit",
-   "lines": 4619,
+   "lines": 4627,
    "imports": [
     "TwoLevelVisitCounterexample",
     "CommonSourceHitSpacing",
@@ -33889,6 +33889,70 @@
    "theorems": 1,
    "defs": 0,
    "hasEnglishDocstring": false,
+   "hasReport": false
+  },
+  {
+   "name": "FreshSourceHitSpacing",
+   "lines": 447,
+   "imports": [
+    "CommonSourceHitSpacing",
+    "NumericCandidateRankPotential"
+   ],
+   "decls": [
+    {
+     "kind": "def",
+     "name": "bridgeZ",
+     "line": 48
+    },
+    {
+     "kind": "def",
+     "name": "rawNonFreshWord",
+     "line": 52
+    },
+    {
+     "kind": "def",
+     "name": "rawNonFreshSign",
+     "line": 56
+    },
+    {
+     "kind": "theorem",
+     "name": "gap_eight_bridge_unique_Z",
+     "line": 91
+    },
+    {
+     "kind": "theorem",
+     "name": "consecutive_gap_eight_forbidden_on_replay",
+     "line": 150
+    },
+    {
+     "kind": "theorem",
+     "name": "common_source_two_step_gap_ge_twenty",
+     "line": 248
+    },
+    {
+     "kind": "theorem",
+     "name": "fresh_common_source_hit_span",
+     "line": 279
+    },
+    {
+     "kind": "theorem",
+     "name": "original_win_source_clock_capacity",
+     "line": 331
+    },
+    {
+     "kind": "theorem",
+     "name": "raw_nonfresh_counterexample_beats_fresh_span",
+     "line": 407
+    },
+    {
+     "kind": "theorem",
+     "name": "canonical_orbit_fresh_source_spacing",
+     "line": 422
+    }
+   ],
+   "theorems": 7,
+   "defs": 3,
+   "hasEnglishDocstring": true,
    "hasReport": false
   },
   {
@@ -71908,6 +71972,6 @@
    "hasReport": false
   }
  ],
- "total": 1056,
+ "total": 1057,
  "withReport": 167
 }
